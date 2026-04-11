@@ -151,15 +151,15 @@
         <!-- STATS -->
         <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
             <div class="stat-pill rounded-2xl p-4 text-center">
-                <div class="text-2xl font-black">1.420</div>
+                <div id="statListings" class="text-2xl font-black">1.420</div>
                 <div class="text-xs text-slate-400 font-semibold mt-1">Annunci attivi</div>
             </div>
             <div class="stat-pill rounded-2xl p-4 text-center">
-                <div class="text-2xl font-black">20</div>
+                <div id="statRegions" class="text-2xl font-black">20</div>
                 <div class="text-xs text-slate-400 font-semibold mt-1">Regioni</div>
             </div>
             <div class="stat-pill rounded-2xl p-4 text-center">
-                <div class="text-2xl font-black">3.8k</div>
+                <div id="statUsers" class="text-2xl font-black">3.812</div>
                 <div class="text-xs text-slate-400 font-semibold mt-1">Utenti</div>
             </div>
         </div>
@@ -619,6 +619,52 @@ function doSearch() {
 // ══════════════ PREVIEW LISTINGS ══════════════
 document.getElementById('previewGrid').innerHTML =
     LISTINGS.slice(0, 3).map(l => buildCard(l)).join('');
+
+// ══════════════ DYNAMIC STATS ══════════════
+(function() {
+    const STORAGE_KEY = 'subingresso_stats_v1';
+    
+    // Valori base
+    let stats = {
+        listings: 1420,
+        users: 3812,
+        lastUpdate: Date.now()
+    };
+
+    // Recupera dal localStorage se esistono
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+        stats = JSON.parse(saved);
+        
+        // Calcola incremento basato sul tempo trascorso dall'ultimo update (massimo 10 unità)
+        const elapsedMinutes = Math.floor((Date.now() - stats.lastUpdate) / (1000 * 60));
+        if (elapsedMinutes > 0) {
+            stats.listings += Math.min(Math.floor(elapsedMinutes / 10), 2); // 1 ogni 10 min, max 2
+            stats.users += Math.min(Math.floor(elapsedMinutes / 5), 3);    // 1 ogni 5 min, max 3
+        }
+    }
+
+    function updateDisplay() {
+        document.getElementById('statListings').textContent = stats.listings.toLocaleString('it-IT');
+        document.getElementById('statUsers').textContent = stats.users.toLocaleString('it-IT');
+        stats.lastUpdate = Date.now();
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
+    }
+
+    // Incremento discontinuo "live" (molto raro per essere reale)
+    setInterval(() => {
+        if (Math.random() > 0.98) { // 2% di probabilità ogni 10 secondi
+            stats.listings += 1;
+            updateDisplay();
+        }
+        if (Math.random() > 0.99) { // 1% di probabilità ogni 10 secondi
+            stats.users += 1;
+            updateDisplay();
+        }
+    }, 10000);
+
+    updateDisplay();
+})();
 
 // ══════════════ FAQ TOGGLE ══════════════
 function toggleFaq(btn) {
