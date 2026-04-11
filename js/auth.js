@@ -341,11 +341,11 @@ window.updateAuthNav = async function () {
 
         nav.innerHTML = `
             <a href="dashboard.html"
-                class="text-sm font-bold text-blue-600 hover:text-blue-700 px-4 py-2 rounded-xl border border-blue-100 hover:bg-blue-50 transition-all duration-300 flex items-center gap-2">
-                <div class="w-5 h-5 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-[10px] font-black">
+                class="text-sm font-bold text-blue-600 hover:text-blue-700 p-2 lg:px-4 lg:py-2 rounded-xl border border-blue-100 lg:border-blue-100 hover:bg-blue-50 transition-all duration-300 flex items-center gap-2">
+                <div class="w-6 h-6 lg:w-5 lg:h-5 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-[10px] font-black shrink-0">
                     ${initial}
                 </div>
-                <span>Area Personale</span>
+                <span class="hidden lg:inline">Area Personale</span>
             </a>`;
     }
 };
