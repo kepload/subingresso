@@ -127,11 +127,11 @@
                 </button>
 
                 <!-- contact button -->
-                <button onclick="showContact()"
+                <button onclick="makeCall()"
                         id="contactBtn"
                         class="w-full border border-slate-200 text-slate-700 py-3.5 rounded-xl font-black hover:bg-slate-50 transition active:scale-[.98] flex items-center justify-center gap-2">
                     <i class="fas fa-phone-alt text-slate-400"></i>
-                    Mostra telefono
+                    Chiama il venditore
                 </button>
 
                 <!-- contact revealed -->
@@ -304,11 +304,29 @@ if (!listing) {
 
 })(); // end async init
 
-// ── Reveal phone (requires login) ────────────────────────
-function showContact() {
+// ── Direct call (requires login) ────────────────────────
+function makeCall() {
     requireAuth(function () {
+        const listing = _currentListing;
+        if (!listing || !listing.tel) {
+            alert('Numero di telefono non disponibile.');
+            return;
+        }
+        
+        // Se è un annuncio di archivio con asterischi
+        if (listing.tel.includes('*')) {
+            alert('Il numero è oscurato per privacy in questo annuncio di archivio.');
+            return;
+        }
+
+        const cleanTel = listing.tel.replace(/\D/g, '');
+        
+        // Mostra comunque le info nel box sotto se l'utente vuole vederle
         document.getElementById('contactBtn').classList.add('hidden');
         document.getElementById('contactInfo').classList.remove('hidden');
+
+        // Apre il tastierino numerico
+        window.location.href = `tel:${cleanTel}`;
     });
 }
 
