@@ -6,49 +6,75 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 
 // Funzione di attesa per rispettare i limiti API (2 RPM)
-const wait = (ms) => new Promise(res => setTimeout(ms, res));
+const wait = (ms) => new Promise(res => setTimeout(res, ms));
 
 async function callAI(prompt) {
-    console.log("...attendo 45 secondi prima della prossima chiamata API...");
-    await wait(45000); // Pausa di 45 secondi tra ogni richiesta
+    console.log(`...attendo 45 secondi prima della prossima chiamata API (limite sicurezza)...`);
+    await wait(45000);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
     const result = await model.generateContent(prompt);
     return result.response.text();
 }
 
 async function run() {
-    console.log("🚀 Avvio generazione articolo giornaliero (MODALITÀ SLOW ATTIVA)...");
+    console.log("🚀 Avvio generazione articolo PREMIUM (Multi-step)...");
     
-    // 1. Recupero titoli esistenti
-    const { data: existing } = await supabase.from('blog_posts').select('title').limit(20);
-    const titles = existing ? existing.map(p => p.title).join(", ") : "";
+    // 1. Recupero titoli esistenti per Internal Linking
+    const { data: existing } = await supabase.from('blog_posts').select('title').limit(30);
+    const titles = existing ? existing.map(p => p.title).join(", ") : "Nessuno";
 
-    // 2. Chiamate concatenate con pause pesanti
-    console.log("Step 1: Scelta argomento...");
-    const topic = await callAI(`Sei un esperto di commercio ambulante in Italia. ARCHIVIO: [${titles}]. Trova un tema tecnico o normativo NON trattato. Restituisci solo il TITOLO.`);
-    
-    console.log("Step 2: Creazione scaletta...");
-    const outline = await callAI(`Crea una scaletta professionale per: "${topic}". Solo punti elenco.`);
-    
-    console.log("Step 3: Scrittura contenuto Deep (1200 parole)...");
-    const content = await callAI(`Scrivi un articolo tecnico di oltre 1200 parole basato su questa scaletta: ${outline}. Usa HTML (h2, p, strong, table). Sii estremamente autorevole e includi consigli pratici.`);
-    
-    console.log("Step 4: Generazione metadati SEO...");
-    const metadata = await callAI(`Per questo articolo: ${content}. Genera un JSON pulito: {"slug": "...", "excerpt": "..."}`);
+    // STEP 1: Scelta argomento e Keyword
+    console.log("Step 1: Ricerca Keyword e Argomento...");
+    const plan = await callAI(`Sei un esperto SEO e di commercio ambulante. ARCHIVIO: [${titles}]. 
+    Trova un argomento tecnico/normativo NON trattato. 
+    Restituisci un JSON: {"topic": "...", "keywords": ["kw1", "kw2", "kw3"]}`);
+    const planObj = JSON.parse(plan.replace(/```json|```/g, '').trim());
 
+    // STEP 2: Scaletta
+    console.log(`Step 2: Scaletta per ${planObj.topic}...`);
+    const outline = await callAI(`Crea una scaletta dettagliata in 6 capitoli per l'articolo: "${planObj.topic}". 
+    Focus su queste keywords: ${planObj.keywords.join(", ")}.`);
+
+    // STEP 3: Scrittura Parte 1 (Intro e primi 2 capitoli)
+    console.log("Step 3: Scrittura Parte 1...");
+    const part1 = await callAI(`Scrivi la prima parte (Intro + primi 2 capitoli) dell'articolo basato su questa scaletta: ${outline}. 
+    Usa HTML (h2, p, strong). Sii tecnico e approfondito. Non concludere l'articolo.`);
+
+    // STEP 4: Scrittura Parte 2 (Capitoli centrali + Tabella)
+    console.log("Step 4: Scrittura Parte 2...");
+    const part2 = await callAI(`Continua l'articolo tecnico dopo questo testo: [${part1.slice(-200)}]. 
+    Scrivi i capitoli 3, 4 e 5 della scaletta: ${outline}. 
+    Includi una tabella HTML dettagliata (table, tr, td) con dati o costi d'esempio. Usa HTML.`);
+
+    // STEP 5: Scrittura Parte 3 (Conclusioni + FAQ)
+    console.log("Step 5: Scrittura Parte 3...");
+    const part3 = await callAI(`Concludi l'articolo tecnico dopo questo testo: [${part2.slice(-200)}]. 
+    Scrivi il capitolo 6 della scaletta: ${outline}. 
+    Aggiungi una sezione FAQ con 4 domande e risposte frequenti usando HTML.`);
+
+    // STEP 6: Internal Linking Review
+    console.log("Step 6: Revisione Link Interni...");
+    const fullContent = part1 + part2 + part3;
+    const finalContent = await callAI(`Analizza questo articolo: [${fullContent.slice(0, 1000)}...]. 
+    Se pertinente, inserisci un link HTML naturale verso uno di questi articoli esistenti: [${titles}]. 
+    Restituisci l'intero articolo aggiornato.`);
+
+    // STEP 7: Metadata
+    console.log("Step 7: Metadati SEO...");
+    const metadata = await callAI(`Genera JSON per l'articolo "${planObj.topic}": {"slug": "...", "excerpt": "..."}`);
     const meta = JSON.parse(metadata.replace(/```json|```/g, '').trim());
 
     // 3. Pubblicazione
     const { error } = await supabase.from('blog_posts').insert({
-        title: topic,
-        slug: (meta.slug || topic.toLowerCase().replace(/ /g, '-')) + '-' + Date.now(),
-        excerpt: meta.excerpt || "",
-        content: content,
+        title: planObj.topic,
+        slug: (meta.slug || planObj.topic.toLowerCase().replace(/ /g, '-')) + '-' + Date.now(),
+        excerpt: meta.excerpt,
+        content: finalContent,
         published_at: new Date().toISOString()
     });
 
     if (error) throw error;
-    console.log("✅ Articolo pubblicato con successo!");
+    console.log("✅ Articolo PREMIUM pubblicato con successo!");
 }
 
 run().catch(console.error);
