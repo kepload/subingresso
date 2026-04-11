@@ -12,6 +12,11 @@ const STALL_DATA = {
 
 const REGIONI = Object.keys(STALL_DATA);
 
+const MERCI = [
+    "Alimentari", "Ortofrutta", "Abbigliamento", "Calzature", 
+    "Fiori e Piante", "Casalinghi", "Somministrazione", "Produttori", "Altro"
+];
+
 const COMUNI_IT = [
     "Roma", "Milano", "Napoli", "Torino", "Palermo", "Genova", "Bologna", "Firenze", "Bari", "Catania",
     "Venezia", "Verona", "Messina", "Padova", "Trieste", "Taranto", "Brescia", "Parma", "Prato", "Modena",
@@ -27,6 +32,19 @@ const COMUNI_IT = [
 ];
 
 // ── Funzioni Utility ──────────────────────────────────────
+
+function escapeHTML(str) {
+    if (!str) return "";
+    return str.replace(/[&<>"']/g, function(m) {
+        return {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        }[m];
+    });
+}
 
 function formatDate(dateStr) {
     if (!dateStr) return '—';
@@ -114,7 +132,7 @@ function normalizeText(t) {
 // ── Card Builder ──────────────────────────────────────────
 
 function buildCard(l, isSmall = false, distance = null) {
-    const href = `href="annuncio.html?id=${l.id}"`;
+    const href = `href="annuncio.html?id=${escapeHTML(l.id)}"`;
     const distTag = (distance !== null && distance !== Infinity) 
         ? `<span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded-lg shadow-sm">a ${Math.round(distance)} km</span>`
         : '';
@@ -126,10 +144,10 @@ function buildCard(l, isSmall = false, distance = null) {
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
                 <i class="fas fa-store text-5xl"></i>
             </div>
-            ${l.img_urls && l.img_urls[0] ? `<img src="${l.img_urls[0]}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : ''}
+            ${l.img_urls && l.img_urls[0] ? `<img src="${escapeHTML(l.img_urls[0])}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : ''}
             
             <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-                <span class="bg-white/90 backdrop-blur text-slate-900 text-[10px] font-black px-3 py-1.5 rounded-xl uppercase tracking-widest shadow-sm">${l.stato}</span>
+                <span class="bg-white/90 backdrop-blur text-slate-900 text-[10px] font-black px-3 py-1.5 rounded-xl uppercase tracking-widest shadow-sm">${escapeHTML(l.stato)}</span>
                 ${distTag}
             </div>
         </div>
@@ -137,15 +155,15 @@ function buildCard(l, isSmall = false, distance = null) {
         <!-- body -->
         <div class="p-5 flex-grow flex flex-col">
             <div class="flex items-center gap-2 mb-3">
-                <span class="text-[10px] font-black text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-1 rounded-lg">${l.tipo}</span>
-                <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider">• ${l.merce}</span>
+                <span class="text-[10px] font-black text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-1 rounded-lg">${escapeHTML(l.tipo)}</span>
+                <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider">• ${escapeHTML(l.merce)}</span>
             </div>
             
-            <h3 class="text-lg font-black text-slate-900 leading-tight group-hover:text-blue-600 transition-colors mb-2 line-clamp-2">${l.titolo}</h3>
+            <h3 class="text-lg font-black text-slate-900 leading-tight group-hover:text-blue-600 transition-colors mb-2 line-clamp-2">${escapeHTML(l.titolo)}</h3>
             
             <div class="flex items-center gap-2 text-slate-400 font-bold text-xs mb-4">
                 <i class="fas fa-map-marker-alt text-blue-400"></i>
-                <span class="truncate">${l.comune}, ${l.regione}</span>
+                <span class="truncate">${escapeHTML(l.comune)}, ${escapeHTML(l.regione)}</span>
             </div>
 
             <div class="mt-auto pt-4 border-t border-slate-50 flex items-center justify-between">
