@@ -654,6 +654,12 @@ document.getElementById('previewGrid').innerHTML =
         }
     }
 
+    function formatCompact(val) {
+        if (val >= 1000000) return `€${(val / 1000000).toFixed(1)}M`;
+        if (val >= 1000) return `€${Math.round(val / 1000)}k`;
+        return `€${val}`;
+    }
+
     function updateDisplay(targetEl) {
         if (targetEl) {
             targetEl.classList.remove('stat-update');
@@ -662,7 +668,7 @@ document.getElementById('previewGrid').innerHTML =
         }
         listingsEl.textContent = stats.listings.toLocaleString('it-IT');
         usersEl.textContent = stats.users.toLocaleString('it-IT');
-        valueEl.textContent = `€ ${stats.value.toLocaleString('it-IT')}`;
+        valueEl.textContent = formatCompact(stats.value);
         stats.lastUpdate = Date.now();
         localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
     }
