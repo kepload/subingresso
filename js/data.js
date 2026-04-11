@@ -114,14 +114,13 @@ function normalizeText(t) {
 // ── Card Builder ──────────────────────────────────────────
 
 function buildCard(l, isSmall = false, distance = null) {
-    const tag = isSmall ? 'div' : 'a';
     const href = `href="annuncio.html?id=${l.id}"`;
     const distTag = (distance !== null && distance !== Infinity) 
         ? `<span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded-lg shadow-sm">a ${Math.round(distance)} km</span>`
         : '';
 
     return `
-    <${tag} ${!isSmall ? href : ''} class="group bg-white rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full">
+    <a ${href} class="group bg-white rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full">
         <!-- cover -->
         <div class="relative h-48 sm:h-52 bg-slate-100 overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
@@ -159,7 +158,7 @@ function buildCard(l, isSmall = false, distance = null) {
                 </div>
             </div>
         </div>
-    </${tag}>`;
+    </a>`;
 }
 
 // ── Demo Data (Fallback) ──────────────────────────────────
