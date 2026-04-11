@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Valore Posteggio — Subingresso.it</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .step-card { display: none; }
+        .step-card.active { display: block; animation: slideUp 0.4s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .option-card {
+            border: 2px solid #f1f5f9;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .option-card.selected {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+        }
+        .result-box {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            transition: transform 0.3s ease;
+        }
+        .result-box:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+<header class="bg-white border-b border-slate-100 py-6">
+    <div class="max-w-3xl mx-auto px-6 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 opacity-60 hover:opacity-100 transition">
+            <i class="fas fa-arrow-left text-xs"></i>
+            <span class="text-xs font-bold uppercase tracking-widest">Torna alla home</span>
+        </a>
+        <span class="text-xs font-black text-blue-600 uppercase tracking-widest">Strumento Gratuito</span>
+    </div>
+</header>
+
+<main class="max-w-2xl mx-auto px-6 py-12 flex-grow w-full">
+    
+    <div class="text-center mb-12">
+        <h1 class="text-3xl font-black tracking-tight mb-3">Quanto vale il tuo posteggio?</h1>
+        <p class="text-slate-500 font-medium text-sm">Ottieni una stima realistica basata su zona, settore e incassi.</p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="w-full bg-slate-200 h-1.5 rounded-full mb-10 overflow-hidden">
+        <div id="progressBar" class="bg-blue-600 h-full w-[16%] transition-all duration-500"></div>
+    </div>
+
+    <div id="calculatorForm" class="bg-white rounded-[32px] border border-slate-100 p-8 shadow-xl shadow-slate-200/50">
+        
+        <!-- STEP 1: Incasso -->
+        <div class="step-card active" data-step="1">
+            <h2 class="text-xl font-black mb-6">1. Qual è l'incasso medio giornaliero?</h2>
+            <p class="text-sm text-slate-400 mb-6 font-medium leading-relaxed">Considera una giornata tipo di lavoro (al netto dell'IVA).</p>
+            <div class="relative">
+                <span class="absolute left-5 top-1/2 -translate-y-1/2 font-black text-slate-400 text-xl">€</span>
+                <input type="number" id="incasso" placeholder="Es: 600" 
+                       class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-5 pl-12 pr-6 text-2xl font-black outline-none focus:border-blue-600 transition">
+            </div>
+            <button onclick="nextStep(1)" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
+        </div>
+
+        <!-- STEP 2: Luogo (NEW) -->
+        <div class="step-card" data-step="2">
+            <h2 class="text-xl font-black mb-6">2. Dove si trova il mercato?</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('luogo', 1.0, this)">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-city"></i></div>
+                    <div>
+                        <p class="font-bold">Grande Metropoli / Centro Storico</p>
+                        <p class="text-xs text-slate-400 font-medium">Roma, Milano, Torino, Napoli o centri ad alto turismo.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('luogo', 0.7, this)">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-building"></i></div>
+                    <div>
+                        <p class="font-bold">Capoluogo di Provincia / Città Media</p>
+                        <p class="text-xs text-slate-400 font-medium">Città sopra i 50.000 abitanti.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('luogo', 0.4, this)">
+                    <div class="w-12 h-12 bg-slate-50 text-slate-400 rounded-xl flex items-center justify-center"><i class="fas fa-home"></i></div>
+                    <div>
+                        <p class="font-bold">Piccolo Comune / Periferia</p>
+                        <p class="text-xs text-slate-400 font-medium">Mercati locali o di quartiere a bassa affluenza.</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="nextStep(2)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
+        </div>
+
+        <!-- STEP 3: Settore -->
+        <div class="step-card" data-step="3">
+            <h2 class="text-xl font-black mb-6">3. In quale settore operi?</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('settore', 1.25, this)">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center"><i class="fas fa-utensils"></i></div>
+                    <div>
+                        <p class="font-bold">Alimentare / Somministrazione</p>
+                        <p class="text-xs text-slate-400 font-medium">Gastronomia, Ortofrutta, Panificati.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('settore', 1.0, this)">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-tshirt"></i></div>
+                    <div>
+                        <p class="font-bold">Non Alimentare</p>
+                        <p class="text-xs text-slate-400 font-medium">Abbigliamento, Calzature, Casalinghi.</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="nextStep(3)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
+        </div>
+
+        <!-- STEP 4: Posizione -->
+        <div class="step-card" data-step="4">
+            <h2 class="text-xl font-black mb-6">4. Com'è posizionato il banco?</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('posizione', 1.20, this)">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><i class="fas fa-star"></i></div>
+                    <div>
+                        <p class="font-bold">Angolare / Testata / Fronte</p>
+                        <p class="text-xs text-slate-400 font-medium">+20% di visibilità e spazio espositivo.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('posizione', 1.0, this)">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-400 rounded-xl flex items-center justify-center"><i class="fas fa-border-all"></i></div>
+                    <div>
+                        <p class="font-bold">In linea / Centrale</p>
+                        <p class="text-xs text-slate-400 font-medium">Posizionamento standard tra altri banchi.</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="nextStep(4)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
+        </div>
+
+        <!-- STEP 5: Scadenza -->
+        <div class="step-card" data-step="5">
+            <h2 class="text-xl font-black mb-6">5. La concessione è rinnovata al 2032?</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('rinnovo', 1.30, this)">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center"><i class="fas fa-check-double"></i></div>
+                    <div>
+                        <p class="font-bold">Sì, Rinnovo 2032 Formalizzato</p>
+                        <p class="text-xs text-slate-400 font-medium">Massima sicurezza per l'acquirente.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('rinnovo', 0.90, this)">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center"><i class="fas fa-clock"></i></div>
+                    <div>
+                        <p class="font-bold">Ancora in fase di istruttoria</p>
+                        <p class="text-xs text-slate-400 font-medium">Valore ridotto per incertezza normativa.</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="calculate()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition">Vedi Risultato</button>
+        </div>
+
+        <!-- STEP 6: Risultato -->
+        <div class="step-card text-center" data-step="6">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-[20px] flex items-center justify-center mx-auto mb-6 text-xl shadow-lg shadow-blue-100">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <h2 class="text-2xl font-black mb-8 leading-tight">Il potenziale della tua attività</h2>
+            
+            <div class="grid grid-cols-1 gap-6 mb-10">
+                <!-- Valore Vendita -->
+                <div class="result-box border-2 border-slate-100 p-6 rounded-3xl text-left relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-widest">Opzione Vendita</div>
+                    <p class="text-slate-400 text-xs font-black uppercase tracking-widest mb-1">Prezzo stimato di cessione</p>
+                    <p id="finalPrice" class="text-4xl font-black text-slate-900 leading-none mb-2">€ --</p>
+                    <p class="text-emerald-600 text-xs font-bold leading-relaxed italic">Incasso immediato per la tua azienda</p>
+                </div>
+
+                <!-- Valore Affitto -->
+                <div class="result-box border-2 border-slate-100 p-6 rounded-3xl text-left relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-violet-600 text-white text-[10px] font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-widest">Opzione Affitto</div>
+                    <p class="text-slate-400 text-xs font-black uppercase tracking-widest mb-1">Canone mensile stimato</p>
+                    <p id="finalRent" class="text-4xl font-black text-slate-900 leading-none mb-2">€ --</p>
+                    <p class="text-violet-600 text-xs font-bold leading-relaxed italic">Rendita fissa mensile senza lavorare</p>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 rounded-2xl p-6 text-left mb-10 border border-blue-100">
+                <p class="text-[11px] text-blue-700 font-bold leading-relaxed">
+                    <i class="fas fa-lightbulb mr-1"></i>
+                    <strong>SUGGERIMENTO:</strong> Abbiamo oltre 5.000 utenti in cerca di banchi in questo settore. Pubblica ora per ricevere le prime offerte entro 48 ore.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <a href="vendi.html" class="block w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-lg">
+                    Inserisci Annuncio Gratis
+                </a>
+                <button onclick="location.reload()" class="block w-full text-sm font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest">Ricalcola stima</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Guida SEO sotto il calcolatore -->
+    <div class="mt-20 prose prose-slate max-w-none">
+        <h2 class="text-2xl font-black text-slate-900 mb-6 text-center">Come calcoliamo questi valori?</h2>
+        <div class="grid md:grid-cols-2 gap-8 text-sm">
+            <div class="bg-white p-6 rounded-2xl border border-slate-100">
+                <h4 class="font-black mb-2 text-blue-600">Per la Vendita (Subingresso)</h4>
+                <p class="text-slate-500 font-medium">Utilizziamo il <strong>Coefficiente Geografico 2026</strong>: moltiplichiamo l'incasso per un fattore base che viene corretto pesantemente in base alla città e alla stabilità normativa (Rinnovo 2032).</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-100">
+                <h4 class="font-black mb-2 text-violet-600">Per l'Affitto (Gestione)</h4>
+                <p class="text-slate-500 font-medium">Il canone riflette la redditività operativa: è calcolato in modo che l'affittuario possa coprire i costi e avere un margine, garantendo al proprietario una rendita passiva costante.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="py-12 border-t border-slate-100 text-center">
+    <p class="text-xs text-slate-300 font-black uppercase tracking-[.2em]">Subingresso.it Data Intelligence</p>
+</footer>
+
+<script>
+    let currentStep = 1;
+    const TOTAL_STEPS = 6;
+    let factors = {
+        incasso: 0,
+        luogo: 1,
+        settore: 1,
+        posizione: 1,
+        rinnovo: 1
+    };
+
+    function selectOption(key, value, element) {
+        factors[key] = value;
+        const cards = element.parentElement.querySelectorAll('.option-card');
+        cards.forEach(c => c.classList.remove('selected'));
+        element.classList.add('selected');
+    }
+
+    function nextStep(step) {
+        if (step === 1) {
+            const inc = document.getElementById('incasso').value;
+            if (!inc || inc <= 0) {
+                alert('Inserisci un incasso valido per continuare.');
+                return;
+            }
+            factors.incasso = parseFloat(inc);
+        }
+
+        document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
+        currentStep++;
+        document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+        
+        const progress = (currentStep / TOTAL_STEPS) * 100;
+        document.getElementById('progressBar').style.width = `${progress}%`;
+    }
+
+    function calculate() {
+        // Logica Vendita raffinata
+        // Base: incasso * 80 (standard più prudente rispetto a 100)
+        const base = factors.incasso * 80;
+        
+        // Applicazione moltiplicatori
+        const total = base * factors.luogo * factors.settore * factors.posizione * factors.rinnovo;
+        
+        // Arrotondamento ai 500 euro
+        const final = Math.round(total / 500) * 500;
+        
+        // Logica Affitto
+        // L'affitto è meno influenzato dal luogo rispetto alla vendita
+        // Base affitto: incasso * 1.5 (giornata singola) * correttivi
+        let rentBase = (factors.incasso * 1.8) * factors.settore * (factors.luogo * 1.2); 
+        const finalRent = Math.round(rentBase / 25) * 25;
+
+        document.getElementById('finalPrice').textContent = `€ ${final.toLocaleString('it-IT')}`;
+        document.getElementById('finalRent').textContent = `€ ${finalRent.toLocaleString('it-IT')}`;
+        
+        document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
+        currentStep = 6;
+        document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+        document.getElementById('progressBar').style.width = `100%`;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Tecnico — Subingresso.it</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .prose p { margin-bottom: 1.5rem; color: #475569; line-height: 1.8; }
+        .prose h2 { font-weight: 800; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; color: #0f172a; }
+        .prose strong { color: #1e293b; }
+        .prose ul, .prose ol { margin-bottom: 1.5rem; }
+        .prose table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        .prose th { background: #f8fafc; text-align: left; padding: 12px; border: 1px solid #e2e8f0; font-size: 0.875rem; color: #1e293b; }
+        .prose td { padding: 12px; border: 1px solid #e2e8f0; font-size: 0.875rem; color: #475569; }
+        
+        .cta-button {
+            display: inline-flex; align-items: center; gap: 12px;
+            background: #2563eb; color: white; font-weight: 800;
+            padding: 16px 28px; border-radius: 18px;
+            box-shadow: 0 10px 20px -5px rgba(37,99,235,0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.8rem;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(37,99,235,0.4);
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+<header class="border-b border-slate-50 py-6">
+    <div class="max-w-3xl mx-auto px-6 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 opacity-60 hover:opacity-100 transition">
+            <i class="fas fa-arrow-left text-xs"></i>
+            <span class="text-xs font-bold uppercase tracking-widest">Torna alla piattaforma</span>
+        </a>
+        <span class="text-xs font-black text-slate-300 uppercase tracking-[.2em]">Archivio Dinamico IA</span>
+    </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-6 py-16">
+    <div id="loading" class="text-center py-20">
+        <i class="fas fa-spinner fa-spin text-blue-600 text-3xl"></i>
+    </div>
+    <div id="blogContainer" class="hidden"></div>
+</main>
+
+<footer class="py-20 border-t border-slate-50 mt-20 text-center">
+    <p class="text-xs text-slate-300 font-bold uppercase tracking-widest">Subingresso.it — Risorse IA per Ambulanti</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/data.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const slug = params.get('post');
+const container = document.getElementById('blogContainer');
+const loading = document.getElementById('loading');
+
+async function loadBlog() {
+    try {
+        const { data: posts, error } = await _supabase
+            .from('blog_posts')
+            .select('*')
+            .order('published_at', { ascending: false });
+
+        if (error) throw error;
+
+        loading.classList.add('hidden');
+        container.classList.remove('hidden');
+
+        if (slug) {
+            const post = posts.find(p => p.slug === slug);
+            if (post) {
+                renderPost(post);
+            } else {
+                container.innerHTML = `<div class="text-center">Post non trovato. <a href="blog.html" class="text-blue-600 underline">Torna all'indice</a></div>`;
+            }
+        } else {
+            renderList(posts);
+        }
+    } catch (err) {
+        console.error(err);
+        loading.innerHTML = `<p class="text-red-500">Errore nel caricamento del blog. Verifica la connessione.</p>`;
+    }
+}
+
+function renderPost(post) {
+    const date = new Date(post.published_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+    container.innerHTML = `
+        <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
+        <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${post.title}</h1>
+        <div class="prose font-medium text-left">${post.content}</div>
+        <div class="mt-20 p-10 bg-slate-50 rounded-[40px] border border-slate-100 text-center">
+            <div class="bg-blue-600 text-white w-16 h-16 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-100 mx-auto mb-6 text-center">
+                <i class="fas fa-rocket text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-black tracking-tight mb-4 text-slate-900 text-center">Passa all'azione oggi stesso</h3>
+            <p class="text-slate-500 font-medium mb-8 max-w-md mx-auto italic text-sm text-center">Subingresso.it è il partner tecnico che ti accompagna nella compravendita del tuo posteggio.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="vendi.html" class="bg-blue-600 text-white font-black px-10 py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-center">Voglio Vendere</a>
+                <a href="annunci.html" class="bg-white text-slate-900 border border-slate-200 font-black px-10 py-5 rounded-2xl hover:bg-slate-50 transition shadow-sm text-center">Voglio Comprare</a>
+            </div>
+        </div>
+        <div class="mt-12 pt-10 border-t border-slate-100 text-left">
+            <a href="blog.html" class="text-sm font-bold text-slate-400 hover:text-blue-600 transition">← Torna all'indice degli articoli</a>
+        </div>
+    `;
+}
+
+function renderList(posts) {
+    if (posts.length === 0) {
+        container.innerHTML = `<h1 class="text-3xl font-black tracking-tight mb-12 text-left">Archivio Tecnico & Guide</h1><p class="text-slate-400">Nessun articolo presente al momento.</p>`;
+        return;
+    }
+    container.innerHTML = `
+        <h1 class="text-3xl font-black tracking-tight mb-12 text-left">Archivio Tecnico & Guide</h1>
+        <div class="grid gap-12 text-left">
+            ${posts.map(p => {
+                const date = new Date(p.published_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+                return `
+                <a href="blog.html?post=${p.slug}" class="block group border-b border-slate-50 pb-8 last:border-0 text-left">
+                    <p class="text-xs font-bold text-slate-400 uppercase mb-2 text-left">${date}</p>
+                    <h2 class="text-2xl font-black group-hover:text-blue-600 transition tracking-tight leading-tight text-left">${p.title}</h2>
+                    <p class="text-slate-500 text-sm mt-3 font-medium leading-relaxed text-left">${p.excerpt || 'Guida tecnica completa con riferimenti normativi e consigli pratici.'}</p>
+                    <p class="text-blue-600 text-xs font-black uppercase tracking-widest mt-4 text-left">Leggi la guida completa →</p>
+                </a>
+                `;
+            }).join('')}
+        </div>
+    `;
+}
+
+document.addEventListener('DOMContentLoaded', loadBlog);
+</script>
+</body>
+</html>

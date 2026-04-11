@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaggi — Subingresso.it</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        * { box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        #messagesContainer {
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+        .msg-bubble-mine  { background: #2563eb; color: white; border-radius: 18px 18px 4px 18px; }
+        .msg-bubble-other { background: white; color: #0f172a; border-radius: 18px 18px 18px 4px; border: 1px solid #f1f5f9; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="bg-blue-600 text-white w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
+                <i class="fas fa-store text-lg"></i>
+            </div>
+            <span class="text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
+        </a>
+        <nav class="hidden lg:flex gap-10 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
+            <a href="index.html"   class="hover:text-slate-900 transition">Home</a>
+            <a href="annunci.html" class="hover:text-slate-900 transition">Annunci</a>
+            <a href="messaggi.html" class="text-blue-600">Messaggi</a>
+        </nav>
+        <div class="flex items-center gap-3">
+            <div id="authNav" class="flex items-center gap-3"></div>
+            <a href="dashboard.html" class="text-sm font-bold text-slate-500 hover:text-slate-900 transition hidden lg:flex items-center gap-2">
+                <i class="fas fa-tachometer-alt text-xs"></i> Dashboard
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main class="flex-grow max-w-6xl mx-auto w-full px-4 py-6">
+
+    <!-- Not logged in -->
+    <div id="notLoggedIn" class="hidden text-center py-24">
+        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-lock text-blue-400 text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-black mb-2">Accedi per vedere i messaggi</h2>
+        <button onclick="openAuthModal('login')" class="mt-4 bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+            Accedi
+        </button>
+    </div>
+
+    <!-- Loading -->
+    <div id="loadingState" class="text-center py-24">
+        <i class="fas fa-spinner fa-spin text-blue-300 text-4xl"></i>
+    </div>
+
+    <!-- Chat layout -->
+    <div id="chatLayout" class="hidden h-[calc(100vh-140px)] flex gap-4">
+
+        <!-- ── Left: conversation list ── -->
+        <div class="w-80 flex-shrink-0 bg-white rounded-2xl border border-slate-100 flex flex-col overflow-hidden">
+            <div class="p-4 border-b border-slate-100">
+                <h2 class="font-black text-base">Conversazioni</h2>
+            </div>
+            <div id="convList" class="flex-grow overflow-y-auto divide-y divide-slate-50">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+
+        <!-- ── Right: chat window ── -->
+        <div class="flex-grow bg-white rounded-2xl border border-slate-100 flex flex-col overflow-hidden">
+
+            <!-- Chat header (empty state) -->
+            <div id="chatEmpty" class="flex-grow flex flex-col items-center justify-center text-slate-300">
+                <i class="fas fa-comment-alt text-6xl mb-4"></i>
+                <p class="font-bold text-slate-400">Seleziona una conversazione</p>
+            </div>
+
+            <!-- Chat header (active) -->
+            <div id="chatHeader" class="hidden p-4 border-b border-slate-100 flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-user text-blue-500 text-sm"></i>
+                </div>
+                <div>
+                    <p id="chatOtherName" class="font-black text-sm"></p>
+                    <a id="chatListingLink" href="#" class="text-xs text-blue-600 hover:underline font-semibold truncate max-w-xs block"></a>
+                </div>
+            </div>
+
+            <!-- Messages area -->
+            <div id="messagesContainer" class="hidden flex-grow p-4 space-y-3 overflow-y-auto">
+                <!-- Messages injected here -->
+            </div>
+
+            <!-- Message input -->
+            <div id="chatInputArea" class="hidden p-4 border-t border-slate-100">
+                <form onsubmit="sendMessage(event)" class="flex gap-3">
+                    <input id="msgInput" type="text" placeholder="Scrivi un messaggio…" autocomplete="off"
+                        class="flex-grow border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+                    <button type="submit"
+                        class="bg-blue-600 text-white px-5 py-3 rounded-xl font-bold hover:bg-blue-700 transition active:scale-95 flex items-center gap-2">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="hidden sm:inline">Invia</span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/auth.js"></script>
+<script>
+
+let _currentUser   = null;
+let _conversations = [];
+let _activeConvId  = null;
+let _realtimeChannel = null;
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const { data: { user } } = await _supabase.auth.getUser();
+    document.getElementById('loadingState').classList.add('hidden');
+
+    if (!user) {
+        document.getElementById('notLoggedIn').classList.remove('hidden');
+        return;
+    }
+
+    _currentUser = user;
+    document.getElementById('chatLayout').classList.remove('hidden');
+    document.getElementById('chatLayout').classList.add('flex');
+
+    await loadConversations();
+
+    // Open conv from URL param
+    const params = new URLSearchParams(location.search);
+    const convParam = params.get('conv');
+    if (convParam) openConversation(convParam);
+});
+
+// ── Load conversation list ───────────────────────────────
+async function loadConversations() {
+    const { data, error } = await _supabase
+        .from('conversazioni')
+        .select(`
+            id, created_at,
+            annuncio:annunci(id, titolo, regione),
+            acquirente:profiles!conversazioni_acquirente_id_fkey(id, nome, cognome),
+            venditore:profiles!conversazioni_venditore_id_fkey(id, nome, cognome)
+        `)
+        .or(`acquirente_id.eq.${_currentUser.id},venditore_id.eq.${_currentUser.id}`)
+        .order('created_at', { ascending: false });
+
+    _conversations = data || [];
+    renderConvList();
+}
+
+function renderConvList() {
+    const list = document.getElementById('convList');
+    if (_conversations.length === 0) {
+        list.innerHTML = `<div class="p-6 text-center text-slate-400 text-sm font-semibold">Nessuna conversazione.</div>`;
+        return;
+    }
+    list.innerHTML = _conversations.map(c => {
+        const isAcquirente = c.acquirente?.id === _currentUser.id;
+        const other = isAcquirente ? c.venditore : c.acquirente;
+        const otherName = other ? `${other.nome || ''} ${other.cognome || ''}`.trim() || 'Utente' : 'Utente';
+        const active = c.id === _activeConvId;
+        return `
+        <button onclick="openConversation('${c.id}')"
+            class="w-full text-left px-4 py-3.5 hover:bg-blue-50 transition flex items-center gap-3 ${active ? 'bg-blue-50 border-r-2 border-blue-600' : ''}">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-user text-blue-500 text-sm"></i>
+            </div>
+            <div class="flex-grow min-w-0">
+                <p class="font-black text-sm text-slate-900">${otherName}</p>
+                <p class="text-xs text-slate-400 font-semibold truncate">${c.annuncio?.titolo || 'Annuncio'}</p>
+            </div>
+        </button>`;
+    }).join('');
+}
+
+// ── Open a conversation ──────────────────────────────────
+async function openConversation(convId) {
+    _activeConvId = convId;
+    renderConvList();
+
+    const conv = _conversations.find(c => c.id === convId);
+    if (!conv) return;
+
+    const isAcquirente = conv.acquirente?.id === _currentUser.id;
+    const other = isAcquirente ? conv.venditore : conv.acquirente;
+    const otherName = other ? `${other.nome || ''} ${other.cognome || ''}`.trim() || 'Utente' : 'Utente';
+
+    document.getElementById('chatEmpty').classList.add('hidden');
+    document.getElementById('chatHeader').classList.remove('hidden');
+    document.getElementById('messagesContainer').classList.remove('hidden');
+    document.getElementById('chatInputArea').classList.remove('hidden');
+
+    document.getElementById('chatOtherName').textContent = otherName;
+    const link = document.getElementById('chatListingLink');
+    link.textContent = conv.annuncio?.titolo || 'Annuncio';
+    if (conv.annuncio?.id) link.href = `annuncio.html?id=${conv.annuncio.id}`;
+
+    await loadMessages(convId);
+    setupRealtime(convId);
+
+    // Mark messages as read
+    await _supabase
+        .from('messaggi')
+        .update({ letto: true })
+        .eq('conversazione_id', convId)
+        .neq('mittente_id', _currentUser.id);
+
+    updateAuthNav();
+}
+
+// ── Load messages ────────────────────────────────────────
+async function loadMessages(convId) {
+    const { data } = await _supabase
+        .from('messaggi')
+        .select('*')
+        .eq('conversazione_id', convId)
+        .order('created_at', { ascending: true });
+
+    renderMessages(data || []);
+}
+
+function renderMessages(msgs) {
+    const container = document.getElementById('messagesContainer');
+    if (msgs.length === 0) {
+        container.innerHTML = `<div class="text-center text-slate-300 text-sm font-semibold py-8">
+            <i class="fas fa-comment-alt text-3xl mb-2 block"></i>
+            Inizia la conversazione!
+        </div>`;
+        return;
+    }
+    container.innerHTML = msgs.map(m => {
+        const mine = m.mittente_id === _currentUser.id;
+        const time = new Date(m.created_at).toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+        return `
+        <div class="flex ${mine ? 'justify-end' : 'justify-start'}">
+            <div class="max-w-[75%]">
+                <div class="px-4 py-2.5 text-sm font-semibold leading-relaxed ${mine ? 'msg-bubble-mine' : 'msg-bubble-other'}">${escapeHtml(m.testo)}</div>
+                <p class="text-[10px] text-slate-400 mt-1 ${mine ? 'text-right' : 'text-left'} font-semibold">${time}</p>
+            </div>
+        </div>`;
+    }).join('');
+    container.scrollTop = container.scrollHeight;
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Send message ─────────────────────────────────────────
+async function sendMessage(e) {
+    e.preventDefault();
+    const input = document.getElementById('msgInput');
+    const testo = input.value.trim();
+    if (!testo || !_activeConvId) return;
+
+    input.value = '';
+    await _supabase.from('messaggi').insert({
+        conversazione_id: _activeConvId,
+        mittente_id: _currentUser.id,
+        testo
+    });
+    // Message will appear via realtime subscription
+}
+
+// ── Realtime subscription ────────────────────────────────
+function setupRealtime(convId) {
+    if (_realtimeChannel) _supabase.removeChannel(_realtimeChannel);
+
+    _realtimeChannel = _supabase
+        .channel(`messages-${convId}`)
+        .on('postgres_changes', {
+            event: 'INSERT',
+            schema: 'public',
+            table: 'messaggi',
+            filter: `conversazione_id=eq.${convId}`
+        }, async () => {
+            await loadMessages(convId);
+            // Mark incoming as read
+            await _supabase
+                .from('messaggi')
+                .update({ letto: true })
+                .eq('conversazione_id', convId)
+                .neq('mittente_id', _currentUser.id);
+            updateAuthNav();
+        })
+        .subscribe();
+}
+
+</script>
+</body>
+</html>

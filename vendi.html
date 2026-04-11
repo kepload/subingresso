@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserisci Annuncio — Subingresso.it</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        * { box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .field-label {
+            display: block; font-size: .72rem; font-weight: 800;
+            text-transform: uppercase; letter-spacing: .08em;
+            color: #64748b; margin-bottom: .45rem;
+        }
+        .field-input {
+            width: 100%; border: 1.5px solid #e2e8f0; border-radius: 14px;
+            padding: .75rem 1rem; font-size: .9rem; font-weight: 600;
+            color: #0f172a; outline: none; background: white;
+            font-family: inherit;
+            transition: border-color .15s, box-shadow .15s;
+        }
+        .field-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.12); }
+        .field-input.err   { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239,68,68,.10); }
+        textarea.field-input { resize: vertical; min-height: 130px; }
+        select.field-input { cursor: pointer; }
+
+        .section-card {
+            background: white; border: 1px solid #f1f5f9;
+            border-radius: 20px; padding: 2rem;
+        }
+        .section-num {
+            width: 2rem; height: 2rem; border-radius: 50%;
+            background: #eff6ff; color: #2563eb;
+            display: flex; align-items: center; justify-content: center;
+            font-size: .75rem; font-weight: 900; flex-shrink: 0;
+        }
+
+        /* radio cards */
+        .radio-card { cursor: pointer; }
+        .radio-card input { display: none; }
+        .radio-card-inner {
+            border: 2px solid #e2e8f0; border-radius: 14px;
+            padding: 1rem 1.25rem; transition: border-color .15s, background .15s;
+            display: flex; align-items: center; gap: .75rem;
+        }
+        .radio-card input:checked + .radio-card-inner {
+            border-color: #3b82f6; background: #eff6ff;
+        }
+        .radio-icon { font-size: 1.25rem; color: #94a3b8; transition: color .15s; }
+        .radio-card input:checked + .radio-card-inner .radio-icon { color: #2563eb; }
+        .radio-text { font-weight: 700; font-size: .875rem; color: #0f172a; }
+        .radio-sub  { font-size: .72rem; color: #94a3b8; font-weight: 500; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="bg-blue-600 text-white w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
+                <i class="fas fa-store text-lg"></i>
+            </div>
+            <span class="text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
+        </a>
+        <nav class="hidden lg:flex gap-10 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
+            <a href="index.html"   class="hover:text-slate-900 transition">Home</a>
+            <a href="annunci.html" class="hover:text-slate-900 transition">Annunci</a>
+            <a href="index.html#come-funziona" class="hover:text-slate-900 transition">Come funziona</a>
+        </nav>
+        <div class="flex items-center gap-3">
+            <div id="authNav" class="flex items-center gap-3"></div>
+            <a href="annunci.html" class="text-sm font-bold text-slate-500 hover:text-slate-900 transition flex items-center gap-2">
+                <i class="fas fa-arrow-left text-xs"></i> Torna agli annunci
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main class="flex-grow py-12">
+    <div class="max-w-2xl mx-auto px-6">
+
+        <!-- Auth banner (shown if not logged in) -->
+        <div id="authBanner" class="hidden mb-6 bg-blue-50 border border-blue-100 rounded-2xl p-4 flex items-center gap-3">
+            <i class="fas fa-info-circle text-blue-400 flex-shrink-0"></i>
+            <p class="text-sm font-semibold text-blue-700">
+                Per pubblicare l'annuncio devi essere registrato.
+                <button onclick="openAuthModal('register')" class="underline font-black">Registrati gratis</button>
+                o <button onclick="openAuthModal('login')" class="underline font-black">accedi</button>.
+            </p>
+        </div>
+
+        <!-- page heading -->
+        <div class="text-center mb-10">
+            <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-plus text-blue-600 text-xl"></i>
+            </div>
+            <h1 class="text-3xl font-black tracking-tight">Inserisci un annuncio</h1>
+            <p class="text-slate-500 font-medium mt-2">Compila tutti i campi per pubblicare il tuo posteggio.</p>
+        </div>
+
+        <!-- 💡 Messaggio Gratis -->
+        <div class="mb-10 bg-emerald-50 border border-emerald-100 rounded-3xl p-6 flex items-center gap-5 shadow-sm shadow-emerald-50/50">
+            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-emerald-500 shadow-sm flex-shrink-0">
+                <i class="fas fa-gift text-xl"></i>
+            </div>
+            <div>
+                <h2 class="text-sm font-black text-emerald-800 uppercase tracking-tight">Pubblicazione 100% Gratuita</h2>
+                <p class="text-emerald-700/80 text-[11px] font-medium leading-relaxed mt-0.5">Subingresso.it è e rimarrà gratuito per tutti gli ambulanti. Nessuna commissione sulla vendita, nessuna spesa di inserimento. Solo contatti diretti tra te e l'acquirente.</p>
+            </div>
+        </div>
+
+        <!-- ── SUCCESS MESSAGE (hidden) ── -->
+        <div id="successMsg" class="hidden bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center mb-8">
+            <div class="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-emerald-600 text-xl"></i>
+            </div>
+            <h2 class="text-xl font-black text-emerald-800 mb-2">Annuncio inviato!</h2>
+            <p class="text-emerald-700 font-medium text-sm mb-5">Il tuo annuncio &egrave; stato ricevuto e sar&agrave; pubblicato dopo la verifica (entro 24 ore).</p>
+            <div class="flex gap-3 justify-center">
+                <a href="annunci.html" class="bg-emerald-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-700 transition">
+                    Vedi tutti gli annunci
+                </a>
+                <button onclick="resetForm()" class="border border-emerald-300 text-emerald-700 px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-100 transition">
+                    Inserisci un altro
+                </button>
+            </div>
+        </div>
+
+        <form id="annuncioForm" class="space-y-6" novalidate>
+
+            <!-- ── 1. TIPO DI ANNUNCIO ── -->
+            <div class="section-card">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="section-num">1</div>
+                    <h2 class="font-black text-base">Tipo di annuncio</h2>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="radio-card">
+                        <input type="radio" name="stato" value="Vendita" checked>
+                        <div class="radio-card-inner">
+                            <i class="fas fa-euro-sign radio-icon"></i>
+                            <div>
+                                <div class="radio-text">Vendita</div>
+                                <div class="radio-sub">Cedi la concessione</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="stato" value="Affitto mensile">
+                        <div class="radio-card-inner">
+                            <i class="fas fa-calendar-alt radio-icon"></i>
+                            <div>
+                                <div class="radio-text">Affitto</div>
+                                <div class="radio-sub">Solo temporaneo</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- ── 2. DETTAGLI POSTEGGIO ── -->
+            <div class="section-card">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="section-num">2</div>
+                    <h2 class="font-black text-base">Dettagli posteggio</h2>
+                </div>
+                <div class="space-y-5">
+                    <div>
+                        <label class="field-label">Titolo annuncio *</label>
+                        <input id="fTitolo" type="text" placeholder="es. Posteggio Mercato Viale Papiniano" class="field-input">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="field-label">Regione *</label>
+                            <select id="fRegione" class="field-input" onchange="updateProvincie()">
+                                <option value="">Scegli...</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="field-label">Comune *</label>
+                            <input id="fComune" type="text" placeholder="es. Milano" class="field-input">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="field-label">Tipo di mercato *</label>
+                            <select id="fTipo" class="field-input">
+                                <option>Mercato settimanale</option>
+                                <option>Mercato quotidiano</option>
+                                <option>Fiera</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="field-label">Settore merceologico *</label>
+                            <select id="fMerce" class="field-input"></select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="field-label">Superficie (m&sup2;) *</label>
+                            <input id="fSuperficie" type="number" placeholder="es. 12" class="field-input">
+                        </div>
+                        <div>
+                            <label class="field-label">Giorni di mercato *</label>
+                            <input id="fGiorni" type="text" placeholder="es. Marted&igrave;, Sabato" class="field-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── 3. DESCRIZIONE E PREZZO ── -->
+            <div class="section-card">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="section-num">3</div>
+                    <h2 class="font-black text-base">Descrizione e Prezzo</h2>
+                </div>
+                <div class="space-y-5">
+                    <div>
+                        <label class="field-label">Descrizione dell'offerta *</label>
+                        <textarea id="fDescrizione" placeholder="Descrivi la posizione, la clientela, il canone comunale..." class="field-input"></textarea>
+                    </div>
+                    <div>
+                        <label class="field-label">Prezzo richiesto (&euro;) *</label>
+                        <input id="fPrezzo" type="number" placeholder="es. 15000" class="field-input">
+                        <p class="text-[10px] text-slate-400 mt-2 font-bold uppercase tracking-widest">Il prezzo si intende totale per la vendita o mensile per l'affitto</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── 4. FOTO ── -->
+            <div class="section-card">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="section-num">4</div>
+                    <h2 class="font-black text-base">Foto</h2>
+                </div>
+                <div id="dropzone" class="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:border-blue-400 transition cursor-pointer bg-slate-50">
+                    <i class="fas fa-camera text-slate-300 text-3xl mb-3"></i>
+                    <p class="text-sm font-bold text-slate-600">Clicca o trascina qui le foto</p>
+                    <p class="text-xs text-slate-400 mt-1">Massimo 5 foto (JPG, PNG). Max 2MB ciascuna.</p>
+                    <input type="file" id="fileInput" multiple accept="image/*" class="hidden">
+                </div>
+                <div id="previewContainer" class="grid grid-cols-5 gap-2 mt-4"></div>
+            </div>
+
+            <button type="button" onclick="submitAnnuncio()"
+                    class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100 active:scale-[.98]">
+                Pubblica annuncio gratis
+            </button>
+
+            <p class="text-center text-[10px] text-slate-400 font-bold uppercase tracking-widest pb-10">
+                L'annuncio verr&agrave; controllato prima della pubblicazione
+            </p>
+
+        </form>
+    </div>
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="bg-slate-900 text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 text-center text-sm">
+        <p class="text-slate-500">&copy; 2025 Subingresso.it. Tutti i diritti riservati.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script>
+// Populate select fields
+const fRegione = document.getElementById('fRegione');
+const fMerce   = document.getElementById('fMerce');
+
+REGIONI.forEach(r => {
+    const opt = document.createElement('option');
+    opt.value = opt.textContent = r;
+    fRegione.appendChild(opt);
+});
+
+MERCI.forEach(m => {
+    const opt = document.createElement('option');
+    opt.value = opt.textContent = m;
+    fMerce.appendChild(opt);
+});
+
+// Auth check
+document.addEventListener('DOMContentLoaded', async () => {
+    const user = await getCurrentUser();
+    if (!user) {
+        document.getElementById('authBanner').classList.remove('hidden');
+    }
+});
+
+// Dropzone logic
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const preview  = document.getElementById('previewContainer');
+let _files = [];
+
+dropzone.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', e => handleFiles(e.target.files));
+
+function handleFiles(files) {
+    if (_files.length + files.length > 5) {
+        alert("Puoi caricare al massimo 5 foto.");
+        return;
+    }
+    for (let f of files) {
+        _files.push(f);
+        const reader = new FileReader();
+        reader.onload = e => {
+            const div = document.createElement('div');
+            div.className = 'aspect-square bg-slate-100 rounded-lg overflow-hidden relative group';
+            div.innerHTML = `
+                <img src="${e.target.result}" class="w-full h-full object-cover">
+                <button type="button" class="absolute top-1 right-1 bg-red-500 text-white w-5 h-5 rounded-full text-[10px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition" onclick="removeFile(this)">
+                    <i class="fas fa-times"></i>
+                </button>`;
+            preview.appendChild(div);
+        };
+        reader.readAsDataURL(f);
+    }
+}
+
+function removeFile(btn) {
+    const div = btn.parentElement;
+    const idx = Array.from(preview.children).indexOf(div);
+    _files.splice(idx, 1);
+    div.remove();
+}
+
+// Submit
+async function submitAnnuncio() {
+    const user = await getCurrentUser();
+    if (!user) {
+        openAuthModal('register');
+        return;
+    }
+
+    // ── 1. ANTI-SPAM: Limite temporale ──
+    const lastPost = localStorage.getItem('last_post_time');
+    const now = Date.now();
+    if (lastPost && (now - lastPost) < (5 * 60 * 1000)) { // 5 minuti
+        const minLeft = Math.ceil((5 * 60 * 1000 - (now - lastPost)) / 1000 / 60);
+        alert(`Per evitare spam, puoi pubblicare un annuncio ogni 5 minuti. Riprova tra ${minLeft} minuti.`);
+        return;
+    }
+
+    const form = {
+        titolo:      document.getElementById('fTitolo').value.trim(),
+        regione:     document.getElementById('fRegione').value,
+        comune:      document.getElementById('fComune').value.trim(),
+        tipo:        document.getElementById('fTipo').value,
+        settore:     document.getElementById('fMerce').value,
+        superficie:  parseFloat(document.getElementById('fSuperficie').value),
+        giorni:      document.getElementById('fGiorni').value.trim(),
+        descrizione: document.getElementById('fDescrizione').value.trim(),
+        prezzo:      parseFloat(document.getElementById('fPrezzo').value),
+        stato:       document.querySelector('input[name="stato"]:checked').value,
+        user_id:     user.id,
+        status:      'pending', // Inizia sempre come pending per l'analisi IA
+        contatto:    '',
+        tel:         ''
+    };
+
+    if (!form.titolo || !form.regione || !form.comune || isNaN(form.prezzo)) {
+        alert('Compila tutti i campi obbligatori (*).');
+        return;
+    }
+
+    // Get user profile
+    const { data: profile } = await _supabase.from('profiles').select('nome, cognome, telefono').eq('id', user.id).single();
+    if (profile) {
+        form.contatto = `${profile.nome || ''} ${profile.cognome || ''}`.trim() || user.email.split('@')[0];
+        form.tel = profile.telefono || '';
+    }
+
+    try {
+        const { data: inserted, error } = await _supabase.from('annunci').insert(form).select('id').single();
+        if (error) throw error;
+
+        localStorage.setItem('last_post_time', Date.now());
+
+        // Reset and success state
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('annuncioForm').classList.add('hidden');
+        document.getElementById('successMsg').classList.remove('hidden');
+
+        // ── 2. REVISIONE IA AUTOMATIZZATA ──
+        runIAReview(inserted.id, form);
+
+    } catch (error) {
+        console.error(error);
+        alert('Errore durante la pubblicazione: ' + error.message);
+    }
+}
+
+async function runIAReview(listingId, data) {
+    console.log('🤖 IA: Avvio analisi annuncio...', listingId);
+    
+    // Simulazione controllo qualità (parolacce, spam, link)
+    const blacklist = ['cazzo', 'merda', 'vaffanculo', 'http://', 'https://', 'www.'];
+    const textToScan = (data.titolo + ' ' + data.descrizione).toLowerCase();
+    
+    let isSafe = true;
+    let reason = '';
+
+    if (data.descrizione.length < 20) {
+        isSafe = false;
+        reason = 'Descrizione troppo breve';
+    }
+    
+    for (let word of blacklist) {
+        if (textToScan.includes(word)) {
+            isSafe = false;
+            reason = 'Rilevato linguaggio non ammesso o link esterni';
+            break;
+        }
+    }
+
+    // Delay per "fare finta" che l'IA lavori
+    setTimeout(async () => {
+        if (isSafe) {
+            console.log('✅ IA: Annuncio approvato.');
+            await _supabase.from('annunci').update({ status: 'active' }).eq('id', listingId);
+        } else {
+            console.warn('❌ IA: Annuncio rifiutato:', reason);
+            // Possiamo lasciarlo pending per revisione manuale o segnarlo come spam
+            await _supabase.from('annunci').update({ status: 'rejected', descrizione: data.descrizione + '\n\n[RIFIUTATO DA IA: ' + reason + ']' }).eq('id', listingId);
+        }
+    }, 3000);
+}
+
+function resetForm() {
+    document.getElementById('annuncioForm').reset();
+    document.getElementById('previewContainer').innerHTML = '';
+    _files = [];
+    document.getElementById('annuncioForm').classList.remove('hidden');
+    document.getElementById('successMsg').classList.add('hidden');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Ignora file di setup e database nel deploy
+SETUP.md
+setup-database.sql
+.git
+.gitignore
+node_modules

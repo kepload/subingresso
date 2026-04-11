@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annuncio — Subingresso.it</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        * { box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .detail-row { display: flex; gap: .5rem; align-items: flex-start; padding: .75rem 0; border-bottom: 1px solid #f1f5f9; }
+        .detail-row:last-child { border-bottom: none; }
+        .detail-icon { width: 2rem; color: #94a3b8; font-size: .875rem; flex-shrink: 0; padding-top: 2px; }
+        .detail-label { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #94a3b8; }
+        .detail-val   { font-weight: 700; font-size: .9rem; color: #0f172a; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="bg-blue-600 text-white w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
+                <i class="fas fa-store text-lg"></i>
+            </div>
+            <span class="text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
+        </a>
+        <nav class="hidden lg:flex gap-10 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
+            <a href="index.html"   class="hover:text-slate-900 transition">Home</a>
+            <a href="annunci.html" class="hover:text-slate-900 transition">Annunci</a>
+        </nav>
+        <div class="flex items-center gap-3">
+            <div id="authNav" class="flex items-center gap-3"></div>
+            <a href=\"vendi.html\" class=\"hidden lg:flex bg-slate-900 text-white px-5 py-2.5 rounded-[14px] text-sm font-bold hover:bg-blue-600 transition-all duration-300 shadow-sm hidden lg:block">
+                + Inserisci annuncio
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main id="mainContent" class="flex-grow max-w-7xl mx-auto px-6 py-10 w-full">
+
+    <!-- breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-8">
+        <a href="index.html"   class="hover:text-blue-600 transition">Home</a>
+        <i class="fas fa-chevron-right text-[10px]"></i>
+        <a href="annunci.html" class="hover:text-blue-600 transition">Annunci</a>
+        <i class="fas fa-chevron-right text-[10px]"></i>
+        <span id="bcRegione" class="text-slate-600"></span>
+    </nav>
+
+    <!-- 404 state -->
+    <div id="notFound" class="hidden text-center py-24">
+        <i class="fas fa-store text-slate-200 text-6xl mb-4"></i>
+        <p class="text-slate-400 font-bold text-xl">Annuncio non trovato</p>
+        <a href="annunci.html" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
+            Torna agli annunci
+        </a>
+    </div>
+
+    <!-- detail layout -->
+    <div id="detailLayout" class="hidden grid lg:grid-cols-3 gap-8">
+
+        <!-- LEFT: main content -->
+        <div class="lg:col-span-2 space-y-6">
+
+            <!-- image placeholder -->
+            <div class="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl h-56 flex items-center justify-center relative overflow-hidden">
+                <i class="fas fa-store text-blue-200 text-7xl"></i>
+                <span id="statoBadge"
+                      class="absolute top-4 left-4 text-white text-xs font-black px-3 py-1.5 rounded-xl shadow"></span>
+            </div>
+
+            <!-- title block -->
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span id="badgeTipo"   class="bg-blue-50 text-blue-700 text-xs font-black px-3 py-1.5 rounded-full"></span>
+                    <span id="badgeMerce"  class="bg-slate-100 text-slate-600 text-xs font-black px-3 py-1.5 rounded-full"></span>
+                </div>
+                <h1 id="titolo" class="text-2xl font-black tracking-tight leading-snug"></h1>
+                <p id="luogo" class="text-slate-500 font-semibold mt-2 text-sm flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-blue-500"></i>
+                    <span></span>
+                </p>
+            </div>
+
+            <!-- description -->
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <h2 class="font-black text-base mb-4">Descrizione</h2>
+                <p id="descrizione" class="text-slate-600 font-medium leading-relaxed text-sm"></p>
+            </div>
+
+            <!-- altri annunci della stessa regione -->
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <h2 class="font-black text-base mb-5">Altri annunci nella stessa regione</h2>
+                <div id="relatedGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT: sidebar -->
+        <div class="space-y-5">
+
+            <!-- price card -->
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Prezzo richiesto</p>
+                <p id="prezzo" class="text-4xl font-black text-slate-900 mb-1"></p>
+                <p id="prezzoSub" class="text-slate-400 text-sm font-medium mb-5"></p>
+
+                <!-- Messaggio diretto (visibile dopo login) -->
+                <button onclick="startChat()"
+                        id="chatBtn"
+                        class="w-full bg-blue-600 text-white py-3.5 rounded-xl font-black hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-2 mb-3">
+                    <i class="fas fa-comment-alt"></i>
+                    Manda un messaggio
+                </button>
+
+                <!-- WhatsApp -->
+                <button onclick="openWhatsApp()"
+                        id="whatsappBtn"
+                        class="w-full bg-emerald-500 text-white py-3.5 rounded-xl font-black hover:bg-emerald-600 transition active:scale-[.98] flex items-center justify-center gap-2 mb-3">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    Contatta su WhatsApp
+                </button>
+
+                <!-- contact button -->
+                <button onclick="showContact()"
+                        id="contactBtn"
+                        class="w-full border border-slate-200 text-slate-700 py-3.5 rounded-xl font-black hover:bg-slate-50 transition active:scale-[.98] flex items-center justify-center gap-2">
+                    <i class="fas fa-phone-alt text-slate-400"></i>
+                    Mostra telefono
+                </button>
+
+                <!-- contact revealed -->
+                <div id="contactInfo" class="hidden mt-4 bg-slate-50 rounded-xl p-4 space-y-2">
+                    <div class="flex items-center gap-3 text-sm font-semibold">
+                        <i class="fas fa-user text-slate-400 w-4"></i>
+                        <span id="cNome"></span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-semibold text-blue-600">
+                        <i class="fas fa-phone text-slate-400 w-4"></i>
+                        <span id="cTel"></span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Specifica sempre che hai trovato l'annuncio su Subingresso.it.
+                    </p>
+                </div>
+
+                <p class="text-xs text-slate-400 mt-4 text-center">
+                    Pubblicato il <span id="dataPub" class="font-semibold"></span>
+                </p>
+            </div>
+
+            <!-- details card -->
+            <div class="bg-white rounded-2xl border border-slate-100 p-6">
+                <h2 class="font-black text-base mb-2">Scheda tecnica</h2>
+                <div id="detailRows"></div>
+            </div>
+
+            <!-- CTA -->
+            <div class="bg-blue-600 rounded-2xl p-6 text-white text-center">
+                <i class="fas fa-plus-circle text-2xl mb-3 opacity-80"></i>
+                <p class="font-black text-base mb-1">Hai un posteggio da vendere?</p>
+                <p class="text-blue-200 text-sm font-medium mb-4">Inserisci il tuo annuncio gratuitamente.</p>
+                <a href="vendi.html" class="block bg-white text-blue-700 py-2.5 rounded-xl font-black text-sm hover:bg-blue-50 transition">
+                    Inserisci annuncio
+                </a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="bg-slate-900 text-white py-10 mt-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        <div class="flex items-center gap-3">
+            <div class="bg-blue-600 w-8 h-8 rounded-lg flex items-center justify-center text-xs">
+                <i class="fas fa-store"></i>
+            </div>
+            <span class="font-extrabold">Subingresso<span class="text-blue-400">.it</span></span>
+        </div>
+        <p class="text-slate-500">&copy; 2025 Subingresso.it. Tutti i diritti riservati.</p>
+        <div class="flex gap-6 text-slate-400 text-xs font-semibold">
+            <a href="#" class="hover:text-white transition">Privacy</a>
+            <a href="#" class="hover:text-white transition">Termini</a>
+            <a href="#" class="hover:text-white transition">Contatti</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script>
+let _currentListing = null;
+
+async function loadListing() {
+    const params   = new URLSearchParams(location.search);
+    const idParam  = params.get('id');
+    let listing    = null;
+
+    // UUID from Supabase
+    if (idParam && idParam.includes('-')) {
+        try {
+            const { data } = await _supabase.from('annunci').select('*').eq('id', idParam).single();
+            if (data) listing = { ...data, data: data.data || data.created_at?.split('T')[0] };
+        } catch (_) {}
+    }
+
+    // Fallback: numeric id from static demo data
+    if (!listing) {
+        const numId = parseInt(idParam);
+        listing = LISTINGS.find(l => l.id === numId);
+    }
+
+    return listing;
+}
+
+(async function init() {
+    const listing = await loadListing();
+    _currentListing = listing;
+
+if (!listing) {
+    document.getElementById('notFound').classList.remove('hidden');
+} else {
+    document.title = `${listing.titolo} — Subingresso.it`;
+
+    document.getElementById('detailLayout').classList.remove('hidden');
+    document.getElementById('detailLayout').classList.add('grid');
+
+    // breadcrumb
+    document.getElementById('bcRegione').textContent = listing.regione;
+
+    // stato badge
+    const statoBadge = document.getElementById('statoBadge');
+    statoBadge.textContent = listing.stato;
+    statoBadge.className += listing.stato === 'Vendita'
+        ? ' bg-emerald-500'
+        : ' bg-violet-500';
+    statoBadge.classList.add('absolute','top-4','left-4','text-white','text-xs','font-black','px-3','py-1.5','rounded-xl','shadow');
+
+    document.getElementById('badgeTipo').textContent   = listing.tipo;
+    document.getElementById('badgeMerce').textContent  = listing.merce;
+    document.getElementById('titolo').textContent      = listing.titolo;
+    document.querySelector('#luogo span').textContent  = `${listing.comune}, ${listing.provincia} (${listing.regione})`;
+    document.getElementById('descrizione').textContent = listing.descrizione;
+
+    // price
+    const prezzoEl = document.getElementById('prezzo');
+    if (listing.stato === 'Affitto mensile') {
+        prezzoEl.innerHTML = `&euro;&nbsp;${listing.prezzo.toLocaleString('it-IT')}`;
+        document.getElementById('prezzoSub').textContent = 'al mese';
+    } else {
+        prezzoEl.innerHTML = `&euro;&nbsp;${listing.prezzo.toLocaleString('it-IT')}`;
+        document.getElementById('prezzoSub').textContent = 'prezzo richiesto · trattabile';
+    }
+
+    document.getElementById('dataPub').textContent = formatDate(listing.data);
+
+    // contact
+    document.getElementById('cNome').textContent = listing.contatto;
+    document.getElementById('cTel').textContent  = listing.tel || 'Contatto riservato';
+
+    // detail rows
+    const rows = [
+        { icon:'fa-map-marker-alt', label:'Regione',    val: listing.regione },
+        { icon:'fa-city',           label:'Comune',     val: `${listing.comune} (${listing.provincia})` },
+        { icon:'fa-store',          label:'Tipo',       val: listing.tipo },
+        { icon:'fa-tag',            label:'Merce',      val: listing.merce },
+        { icon:'fa-ruler-combined', label:'Superficie', val: `${listing.superficie} m²` },
+        { icon:'fa-calendar-alt',   label:'Giorni',     val: listing.giorni },
+        { icon:'fa-exchange-alt',   label:'Stato',      val: listing.stato },
+    ];
+    document.getElementById('detailRows').innerHTML = rows.map(r => `
+        <div class="detail-row">
+            <div class="detail-icon"><i class="fas ${r.icon}"></i></div>
+            <div>
+                <div class="detail-label">${r.label}</div>
+                <div class="detail-val">${r.val}</div>
+            </div>
+        </div>`).join('');
+
+    // related
+    const related = LISTINGS.filter(l => l.regione === listing.regione && l.id !== listing.id).slice(0, 2);
+    document.getElementById('relatedGrid').innerHTML = related.length
+        ? related.map(l => buildCard(l)).join('')
+        : '<p class="text-slate-400 text-sm font-medium col-span-2">Nessun altro annuncio in questa regione al momento.</p>';
+
+    // Hide chat button if this is your own listing
+    const { data: { user } } = await _supabase.auth.getUser();
+    if (user && listing.user_id && listing.user_id === user.id) {
+        document.getElementById('chatBtn').textContent = '';
+        document.getElementById('chatBtn').innerHTML = '<i class="fas fa-check-circle mr-2"></i> Questo è il tuo annuncio';
+        document.getElementById('chatBtn').disabled = true;
+        document.getElementById('chatBtn').className = 'w-full bg-slate-100 text-slate-400 py-3.5 rounded-xl font-black cursor-default flex items-center justify-center gap-2 mb-3 text-sm';
+    }
+}
+
+})(); // end async init
+
+// ── Reveal phone (requires login) ────────────────────────
+function showContact() {
+    requireAuth(function () {
+        document.getElementById('contactBtn').classList.add('hidden');
+        document.getElementById('contactInfo').classList.remove('hidden');
+    });
+}
+
+// ── Start chat (requires login) ───────────────────────────
+async function startChat() {
+    requireAuth(async function (user) {
+        const listing = _currentListing;
+        if (!listing) return;
+
+        // Se è un annuncio demo (id numerico), non c'è una vera chat nel DB
+        if (typeof listing.id === 'number' || !listing.user_id) {
+            alert('Questa funzione è disponibile solo per gli annunci reali inseriti dagli utenti. Per gli annunci storici, usa i contatti telefonici se disponibili.');
+            return;
+        }
+
+        if (listing.user_id === user.id) {
+            alert('Non puoi iniziare una chat con te stesso.');
+            return;
+        }
+
+        // Create or find existing conversation
+        try {
+            const { data: existing } = await _supabase
+                .from('conversazioni')
+                .select('id')
+                .eq('annuncio_id', listing.id)
+                .eq('acquirente_id', user.id)
+                .maybeSingle();
+
+            let convId = existing?.id;
+
+            if (!convId) {
+                const { data: created, error } = await _supabase
+                    .from('conversazioni')
+                    .insert({
+                        annuncio_id:   listing.id,
+                        acquirente_id: user.id,
+                        venditore_id:  listing.user_id
+                    })
+                    .select('id')
+                    .single();
+
+                if (error) throw error;
+                convId = created.id;
+            }
+
+            location.href = `messaggi.html?conv=${convId}`;
+        } catch (err) {
+            console.error(err);
+            alert('Errore nella creazione della chat. Riprova più tardi.');
+        }
+    });
+}
+
+// ── Open WhatsApp (requires login) ────────────────────────
+function openWhatsApp() {
+    requireAuth(function () {
+        const listing = _currentListing;
+        if (!listing || !listing.tel) {
+            alert('Numero di telefono non disponibile per questo annuncio.');
+            return;
+        }
+        
+        // Check for placeholder stars
+        if (listing.tel.includes('*')) {
+            alert('Il numero di telefono è parzialmente oscurato per privacy in questo annuncio di archivio.');
+            return;
+        }
+
+        const cleanTel = listing.tel.replace(/\D/g, '');
+        let finalTel = cleanTel;
+        
+        // Fix per prefisso internazionale Italia se mancante
+        if (finalTel.startsWith('3') && finalTel.length === 10) {
+            finalTel = '39' + finalTel;
+        }
+        
+        const text = encodeURIComponent(`Ciao! 👋 Ti contatto da Subingresso.it in merito all'annuncio: "${listing.titolo}". 
+
+Sarei interessato a ricevere maggiori informazioni. Grazie!`);
+        const waUrl = `https://api.whatsapp.com/send?phone=${finalTel}&text=${text}`;
+        window.open(waUrl, '_blank');
+    });
+}
+</script>
+</body>
+</html>

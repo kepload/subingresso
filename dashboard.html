@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Subingresso.it</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        * { box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="bg-blue-600 text-white w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
+                <i class="fas fa-store text-lg"></i>
+            </div>
+            <span class="text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
+        </a>
+        <nav class="hidden lg:flex gap-10 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
+            <a href="index.html"   class="hover:text-slate-900 transition">Home</a>
+            <a href="annunci.html" class="hover:text-slate-900 transition">Annunci</a>
+            <a href="dashboard.html" class="text-blue-600">Dashboard</a>
+        </nav>
+        <div class="flex items-center gap-3">
+            <div id="authNav" class="flex items-center gap-3"></div>
+            <a href=\"vendi.html\" class=\"hidden lg:flex bg-slate-900 text-white px-5 py-2.5 rounded-[14px] text-sm font-bold hover:bg-blue-600 transition-all duration-300 shadow-sm hidden lg:block">
+                + Inserisci annuncio
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<main class="flex-grow max-w-5xl mx-auto px-6 py-10 w-full">
+
+    <!-- Loading state -->
+    <div id="loadingState" class="text-center py-24">
+        <i class="fas fa-spinner fa-spin text-blue-300 text-4xl"></i>
+        <p class="text-slate-400 font-semibold mt-4">Caricamento…</p>
+    </div>
+
+    <!-- Not logged in state -->
+    <div id="notLoggedIn" class="hidden text-center py-24">
+        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-lock text-blue-400 text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-black mb-2">Accedi per vedere la dashboard</h2>
+        <p class="text-slate-400 font-medium mb-6">Registrati o accedi per gestire i tuoi annunci.</p>
+        <button onclick="openAuthModal('login')" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+            Accedi / Registrati
+        </button>
+    </div>
+
+    <!-- Dashboard content -->
+    <div id="dashContent" class="hidden space-y-8">
+
+        <!-- Welcome + stats bar -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <h1 id="welcomeTitle" class="text-3xl font-black tracking-tight">Ciao!</h1>
+                <p class="text-slate-400 font-medium mt-1 text-sm" id="userEmail"></p>
+            </div>
+            <a href="vendi.html" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-sm">
+                <i class="fas fa-plus"></i> Nuovo annuncio
+            </a>
+        </div>
+
+        <!-- Banner annunci in attesa (visibile solo al proprietario del sito) -->
+        <div id="pendingBanner" class="hidden bg-amber-50 border border-amber-200 rounded-2xl p-4 flex items-start gap-3">
+            <i class="fas fa-clock text-amber-500 mt-0.5 flex-shrink-0"></i>
+            <div class="flex-grow">
+                <p class="text-sm font-black text-amber-800">Annunci in attesa di revisione</p>
+                <div id="pendingList" class="mt-3 space-y-2"></div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="border-b border-slate-200 flex gap-6">
+            <button id="tabMieiAnnunci" onclick="showTab('annunci')"
+                class="pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition">
+                I miei annunci
+            </button>
+            <button id="tabMessaggi" onclick="showTab('messaggi')"
+                class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition">
+                Conversazioni
+            </button>
+            <button id="tabProfilo" onclick="showTab('profilo')"
+                class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition">
+                Profilo
+            </button>
+        </div>
+
+        <!-- ── TAB: I miei annunci ── -->
+        <div id="sectionAnnunci">
+            <div id="myListingsGrid" class="space-y-4">
+                <div class="text-center py-12 text-slate-400">
+                    <i class="fas fa-spinner fa-spin text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── TAB: Conversazioni ── -->
+        <div id="sectionMessaggi" class="hidden">
+            <div id="myConvsGrid" class="space-y-3">
+                <div class="text-center py-12 text-slate-400">
+                    <i class="fas fa-spinner fa-spin text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── TAB: Profilo ── -->
+        <div id="sectionProfilo" class="hidden">
+            <div class="bg-white rounded-2xl border border-slate-100 p-6 max-w-lg">
+                <h2 class="font-black text-base mb-5">Modifica profilo</h2>
+                <form id="profileForm" onsubmit="saveProfile(event)" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Nome</label>
+                            <input id="pNome" type="text" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Cognome</label>
+                            <input id="pCognome" type="text" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Telefono</label>
+                        <input id="pTelefono" type="tel" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+                    </div>
+                    <div id="profileMsg" class="hidden text-sm font-semibold text-emerald-600 flex items-center gap-2">
+                        <i class="fas fa-check-circle"></i> Profilo aggiornato!
+                    </div>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
+                        Salva modifiche
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="bg-slate-900 text-white py-10 mt-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        <div class="flex items-center gap-3">
+            <div class="bg-blue-600 w-8 h-8 rounded-lg flex items-center justify-center text-xs">
+                <i class="fas fa-store"></i>
+            </div>
+            <span class="font-extrabold">Subingresso<span class="text-blue-400">.it</span></span>
+        </div>
+        <p class="text-slate-500">&copy; 2025 Subingresso.it. Tutti i diritti riservati.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script>
+
+let _currentUser = null;
+
+// ── Init ─────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', async () => {
+    const { data: { user } } = await _supabase.auth.getUser();
+    document.getElementById('loadingState').classList.add('hidden');
+
+    if (!user) {
+        document.getElementById('notLoggedIn').classList.remove('hidden');
+        return;
+    }
+
+    _currentUser = user;
+    document.getElementById('dashContent').classList.remove('hidden');
+
+    // Welcome text
+    const { data: profile } = await _supabase.from('profiles').select('*').eq('id', user.id).single();
+    const nome = profile?.nome || 'Utente';
+    document.getElementById('welcomeTitle').textContent = `Ciao, ${nome}!`;
+    document.getElementById('userEmail').textContent = user.email;
+
+    // Pre-fill profile form
+    if (profile) {
+        document.getElementById('pNome').value     = profile.nome     || '';
+        document.getElementById('pCognome').value  = profile.cognome  || '';
+        document.getElementById('pTelefono').value = profile.telefono || '';
+    }
+
+    loadMyListings();
+    loadMyConversations();
+    loadPendingListings();
+});
+
+// ── Tabs ─────────────────────────────────────────────────
+function showTab(tab) {
+    ['annunci', 'messaggi', 'profilo'].forEach(t => {
+        const section = document.getElementById(`section${t.charAt(0).toUpperCase() + t.slice(1)}`);
+        if (section) section.classList.toggle('hidden', t !== tab);
+    });
+
+    document.getElementById('tabMieiAnnunci').className = `pb-3 text-sm font-black border-b-2 transition ${tab === 'annunci'  ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-400 hover:text-slate-700'}`;
+    document.getElementById('tabMessaggi').className    = `pb-3 text-sm font-black border-b-2 transition ${tab === 'messaggi' ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-400 hover:text-slate-700'}`;
+    document.getElementById('tabProfilo').className     = `pb-3 text-sm font-black border-b-2 transition ${tab === 'profilo'  ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-400 hover:text-slate-700'}`;
+}
+
+// ── My Listings ─────────────────────────────────────────
+async function loadMyListings() {
+    const grid = document.getElementById('myListingsGrid');
+    const { data, error } = await _supabase
+        .from('annunci')
+        .select('*')
+        .eq('user_id', _currentUser.id)
+        .order('created_at', { ascending: false });
+
+    if (error || !data || data.length === 0) {
+        grid.innerHTML = `
+            <div class="text-center py-16 bg-white rounded-2xl border border-slate-100">
+                <i class="fas fa-store text-slate-200 text-5xl mb-4"></i>
+                <p class="text-slate-400 font-bold">Nessun annuncio ancora</p>
+                <a href="vendi.html" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
+                    + Inserisci il primo annuncio
+                </a>
+            </div>`;
+        return;
+    }
+
+    grid.innerHTML = data.map(l => {
+        const statusColor = l.status === 'active' ? 'bg-emerald-100 text-emerald-700' :
+                            l.status === 'sold'   ? 'bg-slate-100 text-slate-500' : 'bg-red-100 text-red-600';
+        const statusLabel = l.status === 'active' ? 'Attivo' : l.status === 'sold' ? 'Venduto' : 'Eliminato';
+        return `
+        <div class="bg-white rounded-2xl border border-slate-100 p-5 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between hover:shadow-md transition">
+            <div class="flex-grow">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="text-xs font-black px-2 py-1 rounded-lg ${statusColor}">${statusLabel}</span>
+                    <span class="text-xs text-slate-400 font-semibold">${l.stato} · ${l.tipo}</span>
+                </div>
+                <h3 class="font-black text-slate-900 text-base leading-snug">${l.titolo}</h3>
+                <p class="text-slate-400 text-xs font-semibold mt-1">
+                    <i class="fas fa-map-marker-alt mr-1"></i>${l.comune || ''}, ${l.regione || ''} ·
+                    <i class="fas fa-euro-sign mx-1"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'} ·
+                    ${new Date(l.created_at).toLocaleDateString('it-IT')}
+                </p>
+            </div>
+            <div class="flex gap-2 flex-shrink-0">
+                ${l.status === 'active' ? `
+                <button onclick="markAsSold('${l.id}')"
+                    class="text-xs font-bold px-4 py-2 border border-slate-200 rounded-xl hover:bg-slate-50 transition text-slate-600">
+                    Segna venduto
+                </button>` : ''}
+                <button onclick="deleteListing('${l.id}')"
+                    class="text-xs font-bold px-4 py-2 border border-red-100 rounded-xl hover:bg-red-50 transition text-red-500">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+// ── Pending listings (admin view) ────────────────────────
+// Mostra gli annunci "pending" solo all'amministratore del sito.
+async function loadPendingListings() {
+    // Restringi solo a kycykuardit@gmail.com
+    if (_currentUser.email !== 'kycykuardit@gmail.com') return;
+
+    const { data } = await _supabase
+        .from('annunci')
+        .select('id, titolo, comune, regione, prezzo, user_id')
+        .eq('status', 'pending')
+        .order('created_at', { ascending: true });
+
+    if (!data || data.length === 0) return;
+
+    document.getElementById('pendingBanner').classList.remove('hidden');
+    document.getElementById('pendingList').innerHTML = data.map(l => `
+        <div class="bg-white rounded-xl border border-amber-100 p-3 flex items-center justify-between gap-3">
+            <div class="min-w-0">
+                <p class="font-black text-sm text-slate-900 truncate">${l.titolo}</p>
+                <p class="text-xs text-slate-400 font-semibold">${l.comune || ''}, ${l.regione || ''} · €${l.prezzo?.toLocaleString('it-IT') || '—'}</p>
+            </div>
+            <div class="flex gap-2 flex-shrink-0">
+                <button onclick="approvaAnnuncio('${l.id}')"
+                    class="text-xs font-bold px-3 py-1.5 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition">
+                    <i class="fas fa-check mr-1"></i>Approva
+                </button>
+                <button onclick="rifiutaAnnuncio('${l.id}')"
+                    class="text-xs font-bold px-3 py-1.5 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                    <i class="fas fa-times mr-1"></i>Rifiuta
+                </button>
+            </div>
+        </div>`).join('');
+}
+
+async function approvaAnnuncio(id) {
+    await _supabase.from('annunci').update({ status: 'active' }).eq('id', id);
+    loadPendingListings();
+}
+
+async function rifiutaAnnuncio(id) {
+    if (!confirm('Rifiutare e eliminare questo annuncio?')) return;
+    await _supabase.from('annunci').update({ status: 'deleted' }).eq('id', id);
+    loadPendingListings();
+}
+
+async function markAsSold(id) {
+    if (!confirm('Segno questo annuncio come venduto?')) return;
+    await _supabase.from('annunci').update({ status: 'sold' }).eq('id', id);
+    loadMyListings();
+}
+
+async function deleteListing(id) {
+    if (!confirm('Vuoi eliminare questo annuncio? L\'azione non è reversibile.')) return;
+    await _supabase.from('annunci').update({ status: 'deleted' }).eq('id', id);
+    loadMyListings();
+}
+
+// ── My Conversations ─────────────────────────────────────
+async function loadMyConversations() {
+    const grid = document.getElementById('myConvsGrid');
+    const { data, error } = await _supabase
+        .from('conversazioni')
+        .select(`
+            id, created_at,
+            annuncio:annunci(id, titolo, regione),
+            acquirente:profiles!conversazioni_acquirente_id_fkey(id, nome, cognome),
+            venditore:profiles!conversazioni_venditore_id_fkey(id, nome, cognome)
+        `)
+        .or(`acquirente_id.eq.${_currentUser.id},venditore_id.eq.${_currentUser.id}`)
+        .order('created_at', { ascending: false });
+
+    if (error || !data || data.length === 0) {
+        grid.innerHTML = `
+            <div class="text-center py-16 bg-white rounded-2xl border border-slate-100">
+                <i class="fas fa-comments text-slate-200 text-5xl mb-4"></i>
+                <p class="text-slate-400 font-bold">Nessuna conversazione ancora</p>
+                <p class="text-slate-400 text-sm mt-1">Quando contatti un venditore, la chat apparirà qui.</p>
+            </div>`;
+        return;
+    }
+
+    grid.innerHTML = data.map(c => {
+        const isAcquirente = c.acquirente?.id === _currentUser.id;
+        const other = isAcquirente ? c.venditore : c.acquirente;
+        const otherName = other ? `${other.nome || ''} ${other.cognome || ''}`.trim() || 'Utente' : 'Utente';
+        const listing = c.annuncio;
+        return `
+        <a href="messaggi.html?conv=${c.id}" class="block bg-white rounded-2xl border border-slate-100 p-5 hover:shadow-md hover:border-blue-100 transition">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-user text-blue-500"></i>
+                </div>
+                <div class="flex-grow min-w-0">
+                    <p class="font-black text-slate-900 text-sm">${otherName}</p>
+                    <p class="text-xs text-slate-400 font-semibold truncate mt-0.5">
+                        Re: ${listing?.titolo || 'Annuncio eliminato'}
+                    </p>
+                </div>
+                <div class="text-xs text-slate-400 font-semibold flex-shrink-0">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </a>`;
+    }).join('');
+}
+
+// ── Save Profile ─────────────────────────────────────────
+async function saveProfile(e) {
+    e.preventDefault();
+    const { error } = await _supabase.from('profiles').upsert({
+        id: _currentUser.id,
+        nome:     document.getElementById('pNome').value.trim(),
+        cognome:  document.getElementById('pCognome').value.trim(),
+        telefono: document.getElementById('pTelefono').value.trim()
+    });
+    if (!error) {
+        const msg = document.getElementById('profileMsg');
+        msg.classList.remove('hidden');
+        setTimeout(() => msg.classList.add('hidden'), 3000);
+        updateAuthNav();
+    }
+}
+
+</script>
+</body>
+</html>
