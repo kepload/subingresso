@@ -138,12 +138,36 @@ const REGIONI = Object.keys(STALL_DATA).sort();
 // ── Comuni italiani per autocomplete ──
 const COMUNI_IT = ["Roma","Milano","Napoli","Torino","Palermo","Genova","Bologna","Firenze","Bari","Catania","Venezia","Verona"].sort();
 
-// ══════════════ FUZZY SEARCH ══════════════
+// ══════════════ FUZZY SEARCH (Levenshtein) ══════════════
+function levenshtein(a, b) {
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+    const matrix = [];
+    for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+    for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j] + 1);
+            }
+        }
+    }
+    return matrix[b.length][a.length];
+}
+
 function fuzzyScore(target, query) {
-    const t = target.toLowerCase();
-    const q = query.toLowerCase();
+    const t = target.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const q = query.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    
     if (t.includes(q)) return 100;
-    return 0;
+    
+    const distance = levenshtein(t, q);
+    const maxLength = Math.max(t.length, q.length);
+    const score = Math.round((1 - distance / maxLength) * 100);
+    
+    return score > 60 ? score : 0; // Soglia di tolleranza
 }
 
 // ── COORDINATE PROVINCE (Semplificate per calcolo vicinanza) ──
@@ -176,12 +200,22 @@ function getCityCoords(cityName) {
     const city = cityName.trim();
     if (PROVINCE_COORDS[city]) return PROVINCE_COORDS[city];
     
-    // Fallback: cerca se il nome è contenuto in una delle chiavi
+    // Fallback fuzzy: cerca la città più simile
+    let bestMatch = null;
+    let maxScore = 0;
+    
     for (let key in PROVINCE_COORDS) {
-        if (city.toLowerCase().includes(key.toLowerCase()) || key.toLowerCase().includes(city.toLowerCase())) {
-            return PROVINCE_COORDS[key];
+        const score = fuzzyScore(key, city);
+        if (score > maxScore) {
+            maxScore = score;
+            bestMatch = key;
         }
     }
+    
+    if (maxScore > 75) { // Solo se molto simile (es: bresca -> brescia)
+        return PROVINCE_COORDS[bestMatch];
+    }
+    
     return null;
 }
 

@@ -286,21 +286,32 @@ function applyFilters() {
         if (l.prezzo > prezzoMax)             return false;
         if (l.superficie < supMin)            return false;
         
-        // Ricerca testuale avanzata (senza accenti)
         if (q) {
             const searchField = normalizeText(`${l.titolo} ${l.comune} ${l.regione} ${l.settore || ''} ${l.merce || ''}`);
-            if (!searchField.includes(q)) return false;
+            // Se non c'è corrispondenza esatta, calcoliamo un punteggio fuzzy
+            if (!searchField.includes(q)) {
+                // Dividiamo in parole e controlliamo se almeno una è simile a q
+                const words = searchField.split(' ');
+                const hasFuzzyMatch = words.some(w => fuzzyScore(w, q) > 70);
+                if (!hasFuzzyMatch) return false;
+            }
         }
         return true;
     });
 
     // ── LOGICA VICINANZA (FALLBACK) ──
     let isProximitySearch = false;
-    // Se non ci sono risultati o se la ricerca è molto specifica (comune)
+    let fallbackCity = '';
+    
     if (results.length === 0 && q && q.length > 2) {
         const searchCoords = getCityCoords(qRaw);
         if (searchCoords) {
             isProximitySearch = true;
+            // Cerchiamo qual era la città intesa (per il sottotitolo)
+            for (let key in PROVINCE_COORDS) {
+                if (PROVINCE_COORDS[key] === searchCoords) { fallbackCity = key; break; }
+            }
+
             results = LISTINGS.map(l => {
                 const cityCoords = getCityCoords(l.comune) || getCityCoords(l.regione);
                 let distance = Infinity;
@@ -308,20 +319,10 @@ function applyFilters() {
                     distance = getDistanceKM(searchCoords[0], searchCoords[1], cityCoords[0], cityCoords[1]);
                 }
                 return { ...l, _distance: distance };
-            }).filter(l => l._distance <= 400); // Limite 400km come richiesto
+            }).filter(l => l._distance <= 400);
             
             results.sort((a, b) => a._distance - b._distance);
         }
-    }
-
-    // sort standard (se non è ricerca per vicinanza)
-    if (!isProximitySearch) {
-        results.sort((a, b) => {
-            if (sort === 'prezzoAsc')  return a.prezzo - b.prezzo;
-            if (sort === 'prezzoDesc') return b.prezzo - a.prezzo;
-            if (sort === 'superficie') return b.superficie - a.superficie;
-            return new Date(b.data) - new Date(a.data);
-        });
     }
 
     // render
@@ -338,12 +339,12 @@ function applyFilters() {
     }
 
     count.textContent = isProximitySearch 
-        ? `Nessun risultato esatto per "${q}", ecco i più vicini:` 
+        ? `Nessun risultato esatto per "${qRaw}", ecco i più vicini a ${fallbackCity || qRaw}:` 
         : `${results.length} annunci trovati`;
 
     // subtitle
     const sub = document.getElementById('subtitle');
-    if (isProximitySearch) sub.textContent = `Annunci vicino a ${q.charAt(0).toUpperCase() + q.slice(1)}`;
+    if (isProximitySearch) sub.textContent = `Annunci vicino a ${fallbackCity || qRaw}`;
     else if (regione) sub.textContent = `Posteggi disponibili in ${regione}`;
     else if (q)  sub.textContent = `Risultati per "${q}"`;
     else         sub.textContent = 'Tutti i posteggi disponibili';
