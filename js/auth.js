@@ -341,8 +341,8 @@ window.updateAuthNav = async function () {
 
         nav.innerHTML = `
             <a href="dashboard.html"
-                class="bg-blue-600 text-white px-5 py-2.5 rounded-[14px] text-sm font-bold hover:bg-blue-700 transition shadow-sm flex items-center gap-2">
-                <div class="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center text-[10px] font-black">
+                class="text-sm font-bold text-blue-600 hover:text-blue-700 px-4 py-2 rounded-xl border border-blue-100 hover:bg-blue-50 transition-all duration-300 flex items-center gap-2">
+                <div class="w-5 h-5 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-[10px] font-black">
                     ${initial}
                 </div>
                 <span>Area Personale</span>
@@ -351,11 +351,7 @@ window.updateAuthNav = async function () {
                 class="relative text-slate-400 hover:text-blue-600 transition text-xl flex items-center px-2">
                 <i class="fas fa-comment-alt"></i>
                 ${unread > 0 ? `<span class="absolute -top-1.5 -right-0.5 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-black leading-none border-2 border-white">${unread > 9 ? '9+' : unread}</span>` : ''}
-            </a>
-            <button onclick="signOut()"
-                class="hidden lg:block text-xs text-slate-400 hover:text-red-500 transition font-semibold ml-2">
-                Esci
-            </button>`;
+            </a>`;
     }
 };
 

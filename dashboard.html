@@ -118,7 +118,22 @@
         <!-- ── TAB: Profilo ── -->
         <div id="sectionProfilo" class="hidden">
             <div class="bg-white rounded-2xl border border-slate-100 p-6 max-w-lg">
-                <h2 class="font-black text-base mb-5">Modifica profilo</h2>
+                <div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-50">
+                    <div class="relative group">
+                        <div id="avatarContainer" class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl font-black overflow-hidden border-4 border-white shadow-sm">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <label class="absolute -bottom-1 -right-1 w-8 h-8 bg-white border border-slate-100 rounded-full flex items-center justify-center shadow-sm cursor-pointer hover:bg-slate-50 transition">
+                            <i class="fas fa-camera text-blue-600 text-xs"></i>
+                            <input type="file" id="avatarInput" accept="image/*" class="hidden" onchange="uploadAvatar()">
+                        </label>
+                    </div>
+                    <div>
+                        <h2 id="profileNameDisplay" class="font-black text-xl text-slate-900">Il mio profilo</h2>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-0.5" id="userEmailDisplay"></p>
+                    </div>
+                </div>
+
                 <form id="profileForm" onsubmit="saveProfile(event)" class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
@@ -134,12 +149,19 @@
                         <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Telefono</label>
                         <input id="pTelefono" type="tel" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
                     </div>
+                    
                     <div id="profileMsg" class="hidden text-sm font-semibold text-emerald-600 flex items-center gap-2">
                         <i class="fas fa-check-circle"></i> Profilo aggiornato!
                     </div>
-                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
-                        Salva modifiche
-                    </button>
+
+                    <div class="flex items-center justify-between pt-4">
+                        <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
+                            Salva modifiche
+                        </button>
+                        <button type="button" onclick="signOut()" class="text-xs font-black text-red-400 hover:text-red-600 transition flex items-center gap-2 uppercase tracking-widest">
+                            <i class="fas fa-sign-out-alt"></i> Esci dall'account
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -192,12 +214,50 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('pNome').value     = profile.nome     || '';
         document.getElementById('pCognome').value  = profile.cognome  || '';
         document.getElementById('pTelefono').value = profile.telefono || '';
+        document.getElementById('profileNameDisplay').textContent = `${profile.nome || 'Utente'} ${profile.cognome || ''}`;
+        
+        if (profile.avatar_url) {
+            document.getElementById('avatarContainer').innerHTML = `<img src="${profile.avatar_url}" class="w-full h-full object-cover">`;
+        }
     }
+    document.getElementById('userEmailDisplay').textContent = user.email;
 
     loadMyListings();
     loadMyConversations();
     loadPendingListings();
 });
+
+// ── Upload Avatar ────────────────────────────────────────
+async function uploadAvatar() {
+    const file = document.getElementById('avatarInput').files[0];
+    if (!file) return;
+
+    const fileExt = file.name.split('.').pop();
+    const filePath = `${_currentUser.id}/${Math.random()}.${fileExt}`;
+
+    try {
+        // 1. Carica su Storage
+        const { error: uploadError } = await _supabase.storage
+            .from('avatars')
+            .upload(filePath, file);
+
+        if (uploadError) throw uploadError;
+
+        // 2. Prendi URL pubblico
+        const { data: { publicUrl } } = _supabase.storage
+            .from('avatars')
+            .getPublicUrl(filePath);
+
+        // 3. Salva nel profilo
+        await _supabase.from('profiles').update({ avatar_url: publicUrl }).eq('id', _currentUser.id);
+
+        // 4. Aggiorna UI
+        document.getElementById('avatarContainer').innerHTML = `<img src="${publicUrl}" class="w-full h-full object-cover">`;
+        updateAuthNav();
+    } catch (err) {
+        alert("Errore caricamento immagine: " + err.message);
+    }
+}
 
 // ── Tabs ─────────────────────────────────────────────────
 function showTab(tab) {

@@ -383,6 +383,28 @@ async function submitAnnuncio() {
     }
 
     try {
+        // ── 1. CARICAMENTO IMMAGINI SU STORAGE ──
+        const imageUrls = [];
+        for (let file of _files) {
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+            const filePath = `listings/${fileName}`;
+
+            const { error: uploadError } = await _supabase.storage
+                .from('listings')
+                .upload(filePath, file);
+
+            if (!uploadError) {
+                const { data: { publicUrl } } = _supabase.storage
+                    .from('listings')
+                    .getPublicUrl(filePath);
+                imageUrls.push(publicUrl);
+            }
+        }
+
+        form.dettagli_extra = { images: imageUrls };
+
+        // ── 2. INSERIMENTO ANNUNCIO ──
         const { data: inserted, error } = await _supabase.from('annunci').insert(form).select('id').single();
         if (error) throw error;
 
