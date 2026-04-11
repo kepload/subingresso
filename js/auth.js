@@ -346,10 +346,6 @@ window.updateAuthNav = async function () {
                     ${initial}
                 </div>
                 <span>Area Personale</span>
-            </a>
-            <a href="vendi.html" title="Inserisci Annuncio"
-                class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-50 transition relative">
-                <i class="fas fa-plus text-xs"></i>
             </a>`;
     }
 };
