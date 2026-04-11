@@ -80,6 +80,14 @@
             font-size: .65rem; font-weight: 900; text-transform: uppercase;
             letter-spacing: .1em; color: #cbd5e1; padding: 10px 18px 4px;
         }
+
+        /* ── stats animation ── */
+        @keyframes stat-pulse {
+            0% { transform: scale(1); color: #0f172a; }
+            50% { transform: scale(1.1); color: #2563eb; }
+            100% { transform: scale(1); color: #0f172a; }
+        }
+        .stat-update { animation: stat-pulse 0.6s ease-out; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-white text-slate-900">
@@ -623,43 +631,58 @@ document.getElementById('previewGrid').innerHTML =
 // ══════════════ DYNAMIC STATS ══════════════
 (function() {
     const STORAGE_KEY = 'subingresso_stats_v1';
+    const listingsEl = document.getElementById('statListings');
+    const usersEl    = document.getElementById('statUsers');
     
-    // Valori base
     let stats = {
         listings: 1420,
         users: 3812,
         lastUpdate: Date.now()
     };
 
-    // Recupera dal localStorage se esistono
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
         stats = JSON.parse(saved);
-        
-        // Calcola incremento basato sul tempo trascorso dall'ultimo update (massimo 10 unità)
         const elapsedMinutes = Math.floor((Date.now() - stats.lastUpdate) / (1000 * 60));
         if (elapsedMinutes > 0) {
-            stats.listings += Math.min(Math.floor(elapsedMinutes / 10), 2); // 1 ogni 10 min, max 2
-            stats.users += Math.min(Math.floor(elapsedMinutes / 5), 3);    // 1 ogni 5 min, max 3
+            stats.listings += Math.min(Math.floor(elapsedMinutes / 10), 2);
+            stats.users += Math.min(Math.floor(elapsedMinutes / 5), 3);
         }
     }
 
-    function updateDisplay() {
-        document.getElementById('statListings').textContent = stats.listings.toLocaleString('it-IT');
-        document.getElementById('statUsers').textContent = stats.users.toLocaleString('it-IT');
+    function updateDisplay(targetEl) {
+        if (targetEl) {
+            targetEl.classList.remove('stat-update');
+            void targetEl.offsetWidth; // Trigger reflow
+            targetEl.classList.add('stat-update');
+        }
+        listingsEl.textContent = stats.listings.toLocaleString('it-IT');
+        usersEl.textContent = stats.users.toLocaleString('it-IT');
         stats.lastUpdate = Date.now();
         localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
     }
 
-    // Incremento discontinuo "live" (molto raro per essere reale)
+    // Incremento "garantito" dopo 4 secondi per mostrare vita
+    setTimeout(() => {
+        stats.users += 1;
+        updateDisplay(usersEl);
+    }, 4000);
+
+    // Incremento "garantito" annunci dopo 12 secondi
+    setTimeout(() => {
+        stats.listings += 1;
+        updateDisplay(listingsEl);
+    }, 12000);
+
+    // Loop discontinuo più frequente
     setInterval(() => {
-        if (Math.random() > 0.98) { // 2% di probabilità ogni 10 secondi
-            stats.listings += 1;
-            updateDisplay();
-        }
-        if (Math.random() > 0.99) { // 1% di probabilità ogni 10 secondi
+        const rnd = Math.random();
+        if (rnd > 0.95) { // 5% chance ogni 10s
             stats.users += 1;
-            updateDisplay();
+            updateDisplay(usersEl);
+        } else if (rnd > 0.90) { // Altro 5% chance per annunci
+            stats.listings += 1;
+            updateDisplay(listingsEl);
         }
     }, 10000);
 
