@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifica Annuncio — Subingresso.it</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        * { box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .field-label {
+            display: block; font-size: .72rem; font-weight: 800;
+            text-transform: uppercase; letter-spacing: .08em;
+            color: #64748b; margin-bottom: .45rem;
+        }
+        .field-input {
+            width: 100%; border: 1.5px solid #e2e8f0; border-radius: 14px;
+            padding: .75rem 1rem; font-size: .9rem; font-weight: 600;
+            color: #0f172a; outline: none; background: white;
+            font-family: inherit;
+            transition: border-color .15s, box-shadow .15s;
+        }
+        .field-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.12); }
+        textarea.field-input { resize: vertical; min-height: 130px; }
+
+        .section-card {
+            background: white; border: 1px solid #f1f5f9;
+            border-radius: 20px; padding: 2rem;
+        }
+        .section-num {
+            width: 2rem; height: 2rem; border-radius: 50%;
+            background: #eff6ff; color: #2563eb;
+            display: flex; align-items: center; justify-content: center;
+            font-size: .75rem; font-weight: 900; flex-shrink: 0;
+        }
+
+        /* radio cards */
+        .radio-card { cursor: pointer; }
+        .radio-card input { display: none; }
+        .radio-card-inner {
+            border: 2px solid #e2e8f0; border-radius: 14px;
+            padding: 1rem 1.25rem; transition: border-color .15s, background .15s;
+            display: flex; align-items: center; gap: .75rem;
+        }
+        .radio-card input:checked + .radio-card-inner {
+            border-color: #3b82f6; background: #eff6ff;
+        }
+        .radio-icon { font-size: 1.25rem; color: #94a3b8; transition: color .15s; }
+        .radio-card input:checked + .radio-card-inner .radio-icon { color: #2563eb; }
+        .radio-text { font-weight: 700; font-size: .875rem; color: #0f172a; }
+        .radio-sub  { font-size: .72rem; color: #94a3b8; font-weight: 500; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="bg-blue-600 text-white w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
+                <i class="fas fa-store text-lg"></i>
+            </div>
+            <span class="text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="dashboard.html" class="text-sm font-bold text-slate-500 hover:text-slate-900 transition flex items-center gap-2">
+                <i class="fas fa-arrow-left text-xs"></i> Torna alla dashboard
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="flex-grow py-12">
+    <div class="max-w-2xl mx-auto px-6">
+
+        <div id="loading" class="text-center py-20">
+            <i class="fas fa-spinner fa-spin text-blue-600 text-3xl"></i>
+            <p class="text-slate-400 font-bold mt-4">Caricamento dati annuncio...</p>
+        </div>
+
+        <div id="editContainer" class="hidden">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl font-black tracking-tight">Modifica Annuncio</h1>
+                <p class="text-slate-500 font-medium mt-2">Aggiorna le informazioni del tuo posteggio.</p>
+            </div>
+
+            <form id="annuncioForm" class="space-y-6">
+                <!-- 1. TIPO DI ANNUNCIO -->
+                <div class="section-card">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="section-num">1</div>
+                        <h2 class="font-black text-base">Tipo di annuncio</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="radio-card">
+                            <input type="radio" name="stato" value="Vendita" id="radioVendita">
+                            <div class="radio-card-inner">
+                                <i class="fas fa-euro-sign radio-icon"></i>
+                                <div><div class="radio-text">Vendita</div></div>
+                            </div>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="stato" value="Affitto mensile" id="radioAffitto">
+                            <div class="radio-card-inner">
+                                <i class="fas fa-calendar-alt radio-icon"></i>
+                                <div><div class="radio-text">Affitto</div></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. DETTAGLI -->
+                <div class="section-card">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="section-num">2</div>
+                        <h2 class="font-black text-base">Dettagli</h2>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <label class="field-label">Titolo *</label>
+                            <input id="fTitolo" type="text" class="field-input">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="field-label">Regione *</label>
+                                <select id="fRegione" class="field-input"></select>
+                            </div>
+                            <div>
+                                <label class="field-label">Comune *</label>
+                                <input id="fComune" type="text" class="field-input">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="field-label">Superficie (m&sup2;) *</label>
+                                <input id="fSuperficie" type="number" class="field-input">
+                            </div>
+                            <div>
+                                <label class="field-label">Prezzo richiesto (&euro;) *</label>
+                                <input id="fPrezzo" type="number" class="field-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DESCRIZIONE -->
+                <div class="section-card">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="section-num">3</div>
+                        <h2 class="font-black text-base">Descrizione</h2>
+                    </div>
+                    <textarea id="fDescrizione" class="field-input"></textarea>
+                </div>
+
+                <button type="button" onclick="updateAnnuncio()"
+                        class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100 active:scale-[.98]">
+                    Salva Modifiche
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const listingId = params.get('id');
+
+document.addEventListener('DOMContentLoaded', async () => {
+    if (!listingId) { location.href = 'dashboard.html'; return; }
+
+    const user = await getCurrentUser();
+    if (!user) { location.href = 'index.html'; return; }
+
+    // Populate regions
+    const fReg = document.getElementById('fRegione');
+    REGIONI.forEach(r => {
+        const opt = document.createElement('option');
+        opt.value = opt.textContent = r;
+        fReg.appendChild(opt);
+    });
+
+    // Load data
+    const { data: l, error } = await _supabase.from('annunci').select('*').eq('id', listingId).single();
+    
+    if (error || !l || l.user_id !== user.id) {
+        alert("Annuncio non trovato o non autorizzato.");
+        location.href = 'dashboard.html';
+        return;
+    }
+
+    // Fill form
+    document.getElementById('fTitolo').value = l.titolo;
+    document.getElementById('fRegione').value = l.regione;
+    document.getElementById('fComune').value = l.comune;
+    document.getElementById('fSuperficie').value = l.superficie;
+    document.getElementById('fPrezzo').value = l.prezzo;
+    document.getElementById('fDescrizione').value = l.descrizione;
+    
+    if (l.stato === 'Vendita') document.getElementById('radioVendita').checked = true;
+    else document.getElementById('radioAffitto').checked = true;
+
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('editContainer').classList.remove('hidden');
+});
+
+async function updateAnnuncio() {
+    const updated = {
+        titolo: document.getElementById('fTitolo').value.trim(),
+        regione: document.getElementById('fRegione').value,
+        comune: document.getElementById('fComune').value.trim(),
+        superficie: parseFloat(document.getElementById('fSuperficie').value),
+        prezzo: parseFloat(document.getElementById('fPrezzo').value),
+        descrizione: document.getElementById('fDescrizione').value.trim(),
+        stato: document.querySelector('input[name="stato"]:checked').value,
+        status: 'pending' // Torna in pending per verifica IA dopo modifica
+    };
+
+    const { error } = await _supabase.from('annunci').update(updated).eq('id', listingId);
+
+    if (error) {
+        alert("Errore durante l'aggiornamento: " + error.message);
+    } else {
+        alert("Annuncio aggiornato con successo! Sarà visibile dopo una breve verifica.");
+        location.href = 'dashboard.html';
+    }
+}
+</script>
+</body>
+</html>

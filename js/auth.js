@@ -340,20 +340,20 @@ window.updateAuthNav = async function () {
         } catch (_) {}
 
         nav.innerHTML = `
-            <a href="messaggi.html" title="Messaggi"
-                class="relative text-slate-400 hover:text-blue-600 transition text-xl flex items-center">
-                <i class="fas fa-comment-alt"></i>
-                ${unread > 0 ? `<span class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-black leading-none">${unread > 9 ? '9+' : unread}</span>` : ''}
-            </a>
             <a href="dashboard.html"
-                class="hidden lg:flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-slate-900 transition">
-                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-black text-xs">
+                class="bg-blue-600 text-white px-5 py-2.5 rounded-[14px] text-sm font-bold hover:bg-blue-700 transition shadow-sm flex items-center gap-2">
+                <div class="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center text-[10px] font-black">
                     ${initial}
                 </div>
-                <span>${nome}</span>
+                <span>Area Personale</span>
+            </a>
+            <a href="messaggi.html" title="Messaggi"
+                class="relative text-slate-400 hover:text-blue-600 transition text-xl flex items-center px-2">
+                <i class="fas fa-comment-alt"></i>
+                ${unread > 0 ? `<span class="absolute -top-1.5 -right-0.5 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-black leading-none border-2 border-white">${unread > 9 ? '9+' : unread}</span>` : ''}
             </a>
             <button onclick="signOut()"
-                class="hidden lg:block text-xs text-slate-400 hover:text-red-500 transition font-semibold">
+                class="hidden lg:block text-xs text-slate-400 hover:text-red-500 transition font-semibold ml-2">
                 Esci
             </button>`;
     }
