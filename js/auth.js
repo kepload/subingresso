@@ -347,10 +347,9 @@ window.updateAuthNav = async function () {
                 </div>
                 <span>Area Personale</span>
             </a>
-            <a href="messaggi.html" title="Messaggi"
-                class="relative text-slate-400 hover:text-blue-600 transition text-xl flex items-center px-2">
-                <i class="fas fa-comment-alt"></i>
-                ${unread > 0 ? `<span class="absolute -top-1.5 -right-0.5 bg-red-500 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-black leading-none border-2 border-white">${unread > 9 ? '9+' : unread}</span>` : ''}
+            <a href="vendi.html" title="Inserisci Annuncio"
+                class="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-50 transition relative">
+                <i class="fas fa-plus text-xs"></i>
             </a>`;
     }
 };
