@@ -163,8 +163,8 @@
                 <div class="text-xs text-slate-400 font-semibold mt-1">Annunci attivi</div>
             </div>
             <div class="stat-pill rounded-2xl p-4 text-center">
-                <div id="statRegions" class="text-2xl font-black">20</div>
-                <div class="text-xs text-slate-400 font-semibold mt-1">Regioni</div>
+                <div id="statValue" class="text-2xl font-black">€ 4.280.000</div>
+                <div class="text-xs text-slate-400 font-semibold mt-1">Valore vendite</div>
             </div>
             <div class="stat-pill rounded-2xl p-4 text-center">
                 <div id="statUsers" class="text-2xl font-black">3.812</div>
@@ -633,20 +633,27 @@ document.getElementById('previewGrid').innerHTML =
     const STORAGE_KEY = 'subingresso_stats_v1';
     const listingsEl = document.getElementById('statListings');
     const usersEl    = document.getElementById('statUsers');
+    const valueEl    = document.getElementById('statValue');
     
     let stats = {
         listings: 1420,
         users: 3812,
+        value: 4280000,
         lastUpdate: Date.now()
     };
 
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
         stats = JSON.parse(saved);
+        // Fallback per nuove chiavi aggiunte dopo (es: value)
+        if (!stats.value) stats.value = 4280000;
+
         const elapsedMinutes = Math.floor((Date.now() - stats.lastUpdate) / (1000 * 60));
         if (elapsedMinutes > 0) {
-            stats.listings += Math.min(Math.floor(elapsedMinutes / 10), 2);
+            const newListingCount = Math.min(Math.floor(elapsedMinutes / 10), 2);
+            stats.listings += newListingCount;
             stats.users += Math.min(Math.floor(elapsedMinutes / 5), 3);
+            stats.value += newListingCount * (Math.floor(Math.random() * 1500) + 500);
         }
     }
 
@@ -658,6 +665,7 @@ document.getElementById('previewGrid').innerHTML =
         }
         listingsEl.textContent = stats.listings.toLocaleString('it-IT');
         usersEl.textContent = stats.users.toLocaleString('it-IT');
+        valueEl.textContent = `€ ${stats.value.toLocaleString('it-IT')}`;
         stats.lastUpdate = Date.now();
         localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
     }
@@ -668,21 +676,29 @@ document.getElementById('previewGrid').innerHTML =
         updateDisplay(usersEl);
     }, 4000);
 
+    // Incremento "garantito" valore dopo 8 secondi
+    setTimeout(() => {
+        stats.value += (Math.floor(Math.random() * 800) + 200);
+        updateDisplay(valueEl);
+    }, 8000);
+
     // Incremento "garantito" annunci dopo 12 secondi
     setTimeout(() => {
         stats.listings += 1;
         updateDisplay(listingsEl);
     }, 12000);
 
-    // Loop discontinuo più frequente
+    // Loop discontinuo
     setInterval(() => {
         const rnd = Math.random();
-        if (rnd > 0.95) { // 5% chance ogni 10s
+        if (rnd > 0.95) { // 5% chance ogni 10s per utenti
             stats.users += 1;
             updateDisplay(usersEl);
-        } else if (rnd > 0.90) { // Altro 5% chance per annunci
+        } else if (rnd > 0.90) { // 5% chance per annunci e valore
             stats.listings += 1;
+            stats.value += (Math.floor(Math.random() * 2000) + 500);
             updateDisplay(listingsEl);
+            setTimeout(() => updateDisplay(valueEl), 800);
         }
     }, 10000);
 
