@@ -1,13 +1,8 @@
 // ============================================================
 //  Subingresso.it — Moderazione automatica con Gemini AI
-//
-//  ISTRUZIONI:
-//  1. Vai su https://aistudio.google.com/app/apikey
-//  2. Clicca "Create API Key" → copia la chiave
-//  3. Incollala qui sotto al posto di 'LA-TUA-CHIAVE-QUI'
 // ============================================================
 
-const GEMINI_API_KEY = 'AIzaSyCSIgeP_IJolISl_I1C1qCGN7C2UBhgNvw';
+const GEMINI_API_KEY = window.ENV_GEMINI_API_KEY || ''; // Caricata dinamicamente
 
 const _GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 

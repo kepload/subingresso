@@ -1,9 +1,9 @@
 /**
  * Subingresso.it — Generatore Articoli Blog "Deep Content"
- * Questo script esegue 5 chiamate API concatenate per creare un articolo di alta qualità.
+ * NOTA: La chiave API è ora gestita tramite GitHub Secrets / Environment Variables.
  */
 
-const GEMINI_API_KEY = 'AIzaSyCSIgeP_IJolISl_I1C1qCGN7C2UBhgNvw';
+const GEMINI_API_KEY = window.ENV_GEMINI_API_KEY || ''; // Caricata dinamicamente
 const _GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${GEMINI_API_KEY}`;
 
 async function callAI(prompt) {
