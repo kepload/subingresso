@@ -261,6 +261,7 @@
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/data.js?v=2"></script>
 <script src="js/auth.js?v=2"></script>
+<script src="js/blog-generator.js?v=2"></script>
 <script>
 
 let _currentUser = null;
@@ -394,7 +395,33 @@ async function deleteBlogPost(id) {
 }
 
 async function generateArticleNow() {
-    alert("Comando inviato al Robot! L'articolo apparirà tra qualche minuto (il processo è in modalità 'slow' per sicurezza).");
+    if (!window.ENV_GEMINI_API_KEY) {
+        const key = prompt("Inserisci la tua GEMINI_API_KEY per generare l'articolo ora (non verrà salvata):");
+        if (!key) return;
+        window.ENV_GEMINI_API_KEY = key;
+    }
+
+    const btn = document.getElementById('forceBlogBtn');
+    const originalContent = btn.innerHTML;
+    btn.onclick = null;
+    btn.classList.add('opacity-50', 'cursor-not-allowed');
+    btn.innerHTML = `
+        <div class="text-[10px] font-black text-white/70 uppercase tracking-widest mb-1">Robot Blog</div>
+        <div class="text-white font-black flex items-center justify-center md:justify-start gap-2">
+            Generazione... <i class="fas fa-spinner fa-spin"></i>
+        </div>
+    `;
+
+    try {
+        await generateAndPublish();
+        loadAdminBlog();
+    } catch (e) {
+        alert("Errore durante la generazione: " + e.message);
+    } finally {
+        btn.innerHTML = originalContent;
+        btn.onclick = generateArticleNow;
+        btn.classList.remove('opacity-50', 'cursor-not-allowed');
+    }
 }
 
 // ── Upload Avatar ────────────────────────────────────────

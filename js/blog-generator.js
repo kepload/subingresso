@@ -100,6 +100,12 @@ window.generateAndPublish = async function() {
         published_at: new Date().toISOString()
     });
 
-    if (error) console.error("Errore pubblicazione:", error);
-    else alert("Articolo 'Deep Content' pubblicato con successo!");
+    if (error) {
+        console.error("Errore pubblicazione:", error);
+        throw error;
+    } else {
+        console.log("Articolo pubblicato!");
+        if (typeof loadAdminBlog === 'function') loadAdminBlog();
+        alert("Articolo 'Deep Content' pubblicato con successo!");
+    }
 };
