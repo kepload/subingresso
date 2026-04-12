@@ -560,9 +560,27 @@ function doSearch() {
         </div>`).join('');
 })();
 
-// ══════════════ PREVIEW LISTINGS ══════════════
-document.getElementById('previewGrid').innerHTML =
-    LISTINGS.slice(0, 3).map(l => buildCard(l)).join('');
+// ══════════════ PREVIEW LISTINGS (Real Data) ══════════════
+async function loadRecentListings() {
+    try {
+        const { data, error } = await _supabase
+            .from('annunci')
+            .select('*')
+            .eq('status', 'active')
+            .order('created_at', { ascending: false })
+            .limit(3);
+
+        if (!error && data && data.length > 0) {
+            document.getElementById('previewGrid').innerHTML = data.map(l => buildCard(l)).join('');
+        } else {
+            // Fallback ai dati demo se non ci sono annunci reali
+            document.getElementById('previewGrid').innerHTML = LISTINGS.slice(0, 3).map(l => buildCard(l)).join('');
+        }
+    } catch (e) {
+        document.getElementById('previewGrid').innerHTML = LISTINGS.slice(0, 3).map(l => buildCard(l)).join('');
+    }
+}
+loadRecentListings();
 
 // ══════════════ DYNAMIC STATS ══════════════
 (function() {
