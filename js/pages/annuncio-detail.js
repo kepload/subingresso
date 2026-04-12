@@ -167,18 +167,34 @@ async function initPage() {
         }
     }
 
-    // Check proprietario (cambia pulsante Chat)
+    // Check proprietario (UI Speciale per il possessore)
     try {
         const { data: { user } } = await _supabase.auth.getUser();
         if (user && listing.user_id && listing.user_id === user.id) {
-            const btn = document.getElementById('chatBtn');
-            if (btn) {
-                btn.innerHTML = '<i class="fas fa-check-circle"></i> Gestisci annuncio';
-                btn.onclick = () => location.href = 'dashboard.html';
-                btn.className = 'w-full bg-slate-900 text-white py-4 rounded-2xl font-black hover:bg-blue-600 transition flex items-center justify-center gap-3 shadow-lg shadow-slate-200';
+            // 1. Aggiungiamo un badge sopra il titolo
+            const titoloEl = document.getElementById('titolo');
+            if (titoloEl) {
+                const badge = document.createElement('div');
+                badge.className = 'inline-flex items-center gap-2 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg mb-4 shadow-sm';
+                badge.innerHTML = '<i class="fas fa-user-check text-blue-400"></i> Il tuo annuncio';
+                titoloEl.parentNode.insertBefore(badge, titoloEl);
             }
+
+            // 2. Trasformiamo il pulsante chat in "Modifica Annuncio" (più utile di Gestisci)
+            const chatBtn = document.getElementById('chatBtn');
+            if (chatBtn) {
+                chatBtn.innerHTML = '<i class="fas fa-edit"></i> Modifica Annuncio';
+                chatBtn.onclick = () => location.href = `modifica-annuncio.html?id=${listing.id}`;
+                chatBtn.className = 'w-full bg-blue-600 text-white py-4 rounded-2xl font-black hover:bg-blue-700 transition flex items-center justify-center gap-3 shadow-xl shadow-blue-100';
+            }
+
+            // 3. Nascondiamo il pulsante chiama/whatsapp (inutili per se stessi)
+            const contactBtn = document.getElementById('contactBtn');
+            if (contactBtn) contactBtn.classList.add('hidden');
         }
-    } catch (e) {}
+    } catch (e) {
+        console.error("Errore check proprietario:", e);
+    }
 }
 
 // ── Azioni ──────────────────────────────────────────────
