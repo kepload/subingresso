@@ -69,14 +69,14 @@
                 <h1 id="welcomeTitle" class="text-3xl font-black tracking-tight">Ciao!</h1>
                 <p class="text-slate-400 font-medium mt-1 text-sm" id="userEmail"></p>
             </div>
-            <div class="flex items-center gap-2">
-                <div id="adminBadge" class="hidden bg-slate-900 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
-                    <i class="fas fa-shield-alt text-blue-400"></i> Admin Mode
+            <div class="flex flex-wrap items-center gap-2">
+                <div id="adminBadge" class="hidden bg-slate-900 text-white px-5 py-3 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2 border border-transparent">
+                    <i class="fas fa-shield-alt text-blue-400"></i> Admin
                 </div>
-                <a href="vendi.html" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-sm">
+                <a href="vendi.html" class="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-blue-700 transition shadow-sm border border-transparent">
                     <i class="fas fa-plus"></i> Nuovo annuncio
                 </a>
-                <button id="adminLogout" onclick="signOut()" class="bg-red-50 text-red-600 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest flex items-center gap-2 hover:bg-red-100 transition">
+                <button id="adminLogout" onclick="signOut()" class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-5 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-red-100 transition border border-red-100/50">
                     <i class="fas fa-sign-out-alt"></i> Esci
                 </button>
             </div>
