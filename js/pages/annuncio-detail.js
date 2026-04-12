@@ -118,10 +118,12 @@ async function initPage() {
 
     // Immagini (Placeholder o Reali)
     const coverContainer = document.querySelector('.bg-gradient-to-br.from-slate-100');
-    if (coverContainer && listing.img_urls && listing.img_urls[0]) {
+    const firstImg = (listing.img_urls && listing.img_urls[0]) || (listing.dettagli_extra && listing.dettagli_extra.images && listing.dettagli_extra.images[0]);
+    
+    if (coverContainer && firstImg) {
         // Rimuoviamo l'icona e mettiamo l'immagine
         coverContainer.innerHTML = `
-            <img src="${escapeHTML(listing.img_urls[0])}" class="w-full h-full object-cover">
+            <img src="${escapeHTML(firstImg)}" class="w-full h-full object-cover">
             <span id="statoBadge" class="absolute top-6 left-6 text-white text-xs font-black px-4 py-2 rounded-xl shadow-lg uppercase tracking-widest ${listing.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'}">${escapeHTML(listing.stato)}</span>
         `;
     }

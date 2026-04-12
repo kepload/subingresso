@@ -457,17 +457,26 @@ async function loadMyListings() {
         const statusLabel = l.status === 'active' ? 'Attivo' : l.status === 'pending' ? 'In Revisione' : l.status === 'sold' ? 'Venduto' : 'Eliminato';
         return `
         <div class="bg-white rounded-2xl border border-slate-100 p-5 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between hover:shadow-md transition">
-            <div class="flex-grow">
-                <div class="flex items-center gap-2 mb-1">
-                    <span class="text-xs font-black px-2 py-1 rounded-lg ${statusColor}">${statusLabel}</span>
-                    <span class="text-xs text-slate-400 font-semibold">${l.stato} · ${l.tipo}</span>
+            <div class="flex items-center gap-4 flex-grow">
+                <!-- Thumbnail -->
+                <div class="w-16 h-16 bg-slate-100 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center text-slate-300">
+                    ${(() => {
+                        const img = (l.img_urls && l.img_urls[0]) || (l.dettagli_extra && l.dettagli_extra.images && l.dettagli_extra.images[0]);
+                        return img ? `<img src="${escapeHTML(img)}" class="w-full h-full object-cover">` : '<i class="fas fa-store"></i>';
+                    })()}
                 </div>
-                <h3 class="font-black text-slate-900 text-base leading-snug">${l.titolo}</h3>
-                <p class="text-slate-400 text-xs font-semibold mt-1">
-                    <i class="fas fa-map-marker-alt mr-1"></i>${l.comune || ''}, ${l.regione || ''} ·
-                    <i class="fas fa-euro-sign mx-1"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'} ·
-                    ${new Date(l.created_at).toLocaleDateString('it-IT')}
-                </p>
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-xs font-black px-2 py-1 rounded-lg ${statusColor}">${statusLabel}</span>
+                        <span class="text-xs text-slate-400 font-semibold">${l.stato} · ${l.tipo}</span>
+                    </div>
+                    <h3 class="font-black text-slate-900 text-base leading-snug">${l.titolo}</h3>
+                    <p class="text-slate-400 text-xs font-semibold mt-1">
+                        <i class="fas fa-map-marker-alt mr-1"></i>${l.comune || ''}, ${l.regione || ''} ·
+                        <i class="fas fa-euro-sign mx-1"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'} ·
+                        ${new Date(l.created_at).toLocaleDateString('it-IT')}
+                    </p>
+                </div>
             </div>
             <div class="flex gap-2 flex-shrink-0">
                 ${l.status !== 'deleted' ? `

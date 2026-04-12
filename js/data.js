@@ -144,7 +144,10 @@ function buildCard(l, isSmall = false, distance = null) {
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
                 <i class="fas fa-store text-5xl"></i>
             </div>
-            ${l.img_urls && l.img_urls[0] ? `<img src="${escapeHTML(l.img_urls[0])}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : ''}
+            ${(() => {
+                const img = (l.img_urls && l.img_urls[0]) || (l.dettagli_extra && l.dettagli_extra.images && l.dettagli_extra.images[0]);
+                return img ? `<img src="${escapeHTML(img)}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
+            })()}
             
             <div class="absolute top-4 left-4 flex flex-wrap gap-2">
                 <span class="bg-white/90 backdrop-blur text-slate-900 text-[10px] font-black px-3 py-1.5 rounded-xl uppercase tracking-widest shadow-sm">${escapeHTML(l.stato)}</span>
