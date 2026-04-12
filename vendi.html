@@ -229,7 +229,7 @@
                 <div id="previewContainer" class="grid grid-cols-5 gap-2 mt-4"></div>
             </div>
 
-            <button type="button" onclick="submitAnnuncio()"
+            <button type="button" id="submitBtn" onclick="submitAnnuncio()"
                     class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100 active:scale-[.98]">
                 Pubblica annuncio gratis
             </button>
@@ -246,10 +246,10 @@
 <footer></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase-config.js"></script>
-<script src="js/data.js"></script>
-<script src="js/ui-components.js"></script>
-<script src="js/auth.js"></script>
+<script src="js/supabase-config.js?v=2"></script>
+<script src="js/data.js?v=2"></script>
+<script src="js/ui-components.js?v=2"></script>
+<script src="js/auth.js?v=2"></script>
 <script>
 // Populate select fields
 const fRegione = document.getElementById('fRegione');
@@ -321,12 +321,20 @@ async function submitAnnuncio() {
         return;
     }
 
+    // UI Loading
+    const btn = document.getElementById('submitBtn');
+    const originalBtnHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
+
     // ── 1. ANTI-SPAM: Limite temporale ──
     const lastPost = localStorage.getItem('last_post_time');
     const now = Date.now();
     if (lastPost && (now - lastPost) < (5 * 60 * 1000)) { // 5 minuti
         const minLeft = Math.ceil((5 * 60 * 1000 - (now - lastPost)) / 1000 / 60);
         alert(`Per evitare spam, puoi pubblicare un annuncio ogni 5 minuti. Riprova tra ${minLeft} minuti.`);
+        btn.disabled = false;
+        btn.innerHTML = originalBtnHTML;
         return;
     }
 
@@ -342,13 +350,15 @@ async function submitAnnuncio() {
         prezzo:      parseFloat(document.getElementById('fPrezzo').value),
         stato:       document.querySelector('input[name="stato"]:checked').value,
         user_id:     user.id,
-        status:      'pending', // Inizia sempre come pending per l'analisi IA
+        status:      'pending', 
         contatto:    '',
         tel:         ''
     };
 
     if (!form.titolo || !form.regione || !form.comune || isNaN(form.prezzo)) {
         alert('Compila tutti i campi obbligatori (*).');
+        btn.disabled = false;
+        btn.innerHTML = originalBtnHTML;
         return;
     }
 
@@ -365,7 +375,7 @@ async function submitAnnuncio() {
         for (let file of _files) {
             const fileExt = file.name.split('.').pop();
             const fileName = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-            const filePath = fileName; // Rimuovo il prefisso ridondante listings/
+            const filePath = fileName; 
 
             const { error: uploadError } = await _supabase.storage
                 .from('listings')
@@ -373,7 +383,7 @@ async function submitAnnuncio() {
 
             if (uploadError) {
                 console.error("Errore upload immagine:", uploadError);
-                continue; // Salta questa immagine ma continua con le altre
+                continue; 
             }
 
             const { data: { publicUrl } } = _supabase.storage
@@ -381,11 +391,6 @@ async function submitAnnuncio() {
                 .getPublicUrl(filePath);
             
             if (publicUrl) imageUrls.push(publicUrl);
-        }
-
-        // Se l'utente ha messo foto ma nessuna è stata caricata, avvisa
-        if (_files.length > 0 && imageUrls.length === 0) {
-            throw new Error("Errore nel caricamento delle immagini. Verifica la connessione o i permessi del database.");
         }
 
         form.dettagli_extra = { images: imageUrls };
@@ -407,6 +412,8 @@ async function submitAnnuncio() {
     } catch (error) {
         console.error(error);
         alert('Errore durante la pubblicazione: ' + error.message);
+        btn.disabled = false;
+        btn.innerHTML = originalBtnHTML;
     }
 }
 
