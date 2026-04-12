@@ -1,15 +1,14 @@
 /**
  * Subingresso.it — Generatore Articoli Blog "Deep Content"
- * NOTA: La chiave API è ora gestita tramite GitHub Secrets / Environment Variables.
  */
 
-const GEMINI_API_KEY = window.ENV_GEMINI_API_KEY || ''; // Caricata dinamicamente
-const _GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${GEMINI_API_KEY}`;
-
 async function callAI(prompt) {
-    if (!GEMINI_API_KEY) throw new Error("GEMINI_API_KEY mancante o non valida.");
+    const apiKey = window.ENV_GEMINI_API_KEY || '';
+    if (!apiKey) throw new Error("GEMINI_API_KEY mancante o non valida.");
     
-    const res = await fetch(_GEMINI_URL, {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${apiKey}`;
+    
+    const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
