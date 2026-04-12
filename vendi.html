@@ -400,7 +400,17 @@ async function submitAnnuncio() {
         form.dettagli_extra = { images: imageUrls };
 
         // ── 2. INSERIMENTO ANNUNCIO ──
-        const { data: inserted, error } = await _supabase.from('annunci').insert(form).select('id').single();
+        let { data: inserted, error } = await _supabase.from('annunci').insert(form).select('id').single();
+        
+        // Fallback: se la colonna expires_at non esiste ancora nel DB, riprova senza
+        if (error && error.message.includes('expires_at')) {
+            console.warn("Colonna expires_at mancante, riprovo senza...");
+            delete form.expires_at;
+            const retry = await _supabase.from('annunci').insert(form).select('id').single();
+            inserted = retry.data;
+            error = retry.error;
+        }
+
         if (error) throw error;
 
         localStorage.setItem('last_post_time', Date.now());
