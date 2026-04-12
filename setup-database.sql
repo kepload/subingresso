@@ -39,7 +39,7 @@ create trigger on_auth_user_created
 -- ── 2. ANNUNCI ─────────────────────────────────────────────
 create table if not exists public.annunci (
     id          uuid default gen_random_uuid() primary key,
-    user_id     uuid references auth.users(id) on delete cascade not null,
+    user_id     uuid references public.profiles(id) on delete cascade not null,
     titolo      text not null,
     descrizione text,
     stato       text default 'Vendita',         -- Vendita / Affitto d'azienda
@@ -71,10 +71,12 @@ create index if not exists annunci_user_id_idx   on public.annunci(user_id);
 create table if not exists public.conversazioni (
     id              uuid default gen_random_uuid() primary key,
     annuncio_id     uuid references public.annunci(id) on delete cascade not null,
-    acquirente_id   uuid references auth.users(id) on delete cascade not null,
-    venditore_id    uuid references auth.users(id) on delete cascade not null,
+    acquirente_id   uuid not null,
+    venditore_id    uuid not null,
     created_at      timestamptz default now(),
-    unique(annuncio_id, acquirente_id)   -- una sola conversazione per annuncio/acquirente
+    unique(annuncio_id, acquirente_id),   -- una sola conversazione per annuncio/acquirente
+    constraint conversazioni_acquirente_id_fkey foreign key (acquirente_id) references public.profiles(id) on delete cascade,
+    constraint conversazioni_venditore_id_fkey foreign key (venditore_id) references public.profiles(id) on delete cascade
 );
 
 create index if not exists conv_acquirente_idx on public.conversazioni(acquirente_id);
@@ -85,7 +87,7 @@ create index if not exists conv_venditore_idx  on public.conversazioni(venditore
 create table if not exists public.messaggi (
     id                  uuid default gen_random_uuid() primary key,
     conversazione_id    uuid references public.conversazioni(id) on delete cascade not null,
-    mittente_id         uuid references auth.users(id) on delete cascade not null,
+    mittente_id         uuid references public.profiles(id) on delete cascade not null,
     testo               text not null,
     letto               boolean default false,
     created_at          timestamptz default now()

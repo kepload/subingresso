@@ -511,12 +511,25 @@ async function loadPendingListings() {
     if (_currentUser.email !== 'kycykuardit@gmail.com') return;
 
     try {
-        // Cerchiamo TUTTI gli annunci pending (Supabase RLS deve permetterlo all'admin)
-        const { data, error } = await _supabase
+        // Tentativo 1: Con join profili
+        // Nota: se la relazione non viene trovata, assicurarsi che user_id in 'annunci' referenzi 'profiles(id)'
+        let { data, error } = await _supabase
             .from('annunci')
             .select('*, profiles(nome, cognome, telefono)')
             .eq('status', 'pending')
             .order('created_at', { ascending: true });
+
+        // Se il join fallisce (errore relazione), tenta con sintassi esplicita o fallback
+        if (error && (error.message.includes('relationship') || error.code === 'PGRST200')) {
+            console.warn("Relazione profili non trovata, tento fallback...");
+            const fallback = await _supabase
+                .from('annunci')
+                .select('*')
+                .eq('status', 'pending')
+                .order('created_at', { ascending: true });
+            data = fallback.data;
+            error = fallback.error;
+        }
 
         if (error) {
             console.error("Errore recupero annunci pending:", error);
@@ -532,9 +545,8 @@ async function loadPendingListings() {
         }
 
         list.innerHTML = data.map(l => {
-            const user = l.profiles;
-            const cleanTel = user?.telefono ? user.telefono.replace(/\D/g, '') : '';
-            const waUrl = cleanTel ? `https://api.whatsapp.com/send?phone=39${cleanTel}&text=Ciao ${user?.nome || ''}, ti contatto per il tuo annuncio su Subingresso.it...` : '#';
+            const user = l.profiles || {}; // Gestione fallback se profiles è null
+            const cleanTel = user.telefono ? user.telefono.replace(/\D/g, '') : (l.tel ? l.tel.replace(/\D/g, '') : '');
             
             return `
             <div class="bg-white rounded-2xl border border-amber-100 p-4 shadow-sm">
@@ -546,7 +558,7 @@ async function loadPendingListings() {
                         </div>
                         <p class="font-black text-slate-900 text-base leading-tight">${l.titolo}</p>
                         <p class="text-xs text-slate-500 font-medium mt-1">
-                            Utente: <strong class="text-slate-700">${user?.nome || 'Anonimo'} ${user?.cognome || ''}</strong> · 
+                            Autore: <strong class="text-slate-700">${user.nome || l.contatto || 'Anonimo'}</strong> · 
                             Loc: <strong class="text-slate-700">${l.comune || ''} (${l.regione || ''})</strong>
                         </p>
                     </div>
