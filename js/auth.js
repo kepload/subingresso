@@ -257,12 +257,16 @@ window.handleRegister = async function (e) {
 
 // ── Sign out ─────────────────────────────────────────────
 window.signOut = async function () {
-    await _supabase.auth.signOut();
-    updateAuthNav();
-    const protectedPages = ['dashboard.html', 'messaggi.html'];
-    if (protectedPages.some(p => location.pathname.endsWith(p))) {
-        location.href = 'index.html';
-    }
+    try {
+        await _supabase.auth.signOut();
+    } catch (e) { console.error("Sign out error:", e); }
+    
+    // Pulizia estrema: svuota il contenuto protetto se presente e reindirizza alla home
+    const dash = document.getElementById('dashContent');
+    if (dash) dash.innerHTML = ''; 
+    
+    // Reindirizzamento universale alla home per azzerare lo stato JS
+    window.location.href = 'index.html';
 };
 
 // ── Get current user ─────────────────────────────────────

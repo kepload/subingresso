@@ -268,14 +268,17 @@ let _currentUser = null;
 // ── Init ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
     const { data: { user } } = await _supabase.auth.getUser();
-    document.getElementById('loadingState').classList.add('hidden');
-
+    
     if (!user) {
+        document.getElementById('loadingState').classList.add('hidden');
+        document.getElementById('dashContent').innerHTML = ''; // Sicurezza: svuota tutto
         document.getElementById('notLoggedIn').classList.remove('hidden');
+        location.href = 'index.html'; // Reindirizza subito
         return;
     }
 
     _currentUser = user;
+    document.getElementById('loadingState').classList.add('hidden');
     document.getElementById('dashContent').classList.remove('hidden');
 
     if (user.email === 'kycykuardit@gmail.com') {
