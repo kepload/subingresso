@@ -11,24 +11,45 @@ const wait = (ms) => new Promise(res => setTimeout(res, ms));
 async function callAI(prompt) {
     console.log(`...attendo 45 secondi prima della prossima chiamata API (limite sicurezza)...`);
     await wait(45000);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
-    const result = await model.generateContent(prompt);
-    return result.response.text();
+    try {
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+        const result = await model.generateContent(prompt);
+        const text = result.response.text();
+        if (!text) throw new Error("Risposta vuota dall'IA");
+        return text;
+    } catch (err) {
+        console.error("Errore chiamata Gemini:", err.message);
+        throw err;
+    }
+}
+
+function cleanJSON(text) {
+    try {
+        return JSON.parse(text.replace(/```json|```/g, '').trim());
+    } catch (e) {
+        const match = text.match(/\{[\s\S]*\}/);
+        if (match) return JSON.parse(match[0]);
+        throw new Error("Impossibile estrarre JSON dalla risposta: " + text.slice(0, 100));
+    }
 }
 
 async function run() {
     console.log("🚀 Avvio generazione articolo PREMIUM (Multi-step)...");
     
-    // 1. Recupero titoli esistenti per Internal Linking
-    const { data: existing } = await supabase.from('blog_posts').select('title').limit(30);
+    // 1. Recupero titoli esistenti
+    const { data: existing, error: fetchError } = await supabase.from('blog_posts').select('title').limit(30);
+    if (fetchError) {
+        console.error("Errore recupero blog_posts: Assicurati che la tabella esista!", fetchError.message);
+        throw fetchError;
+    }
     const titles = existing ? existing.map(p => p.title).join(", ") : "Nessuno";
 
-    // STEP 1: Scelta argomento e Keyword
-    console.log("Step 1: Ricerca Keyword e Argomento...");
+    // STEP 1: Scelta argomento
+    console.log("Step 1: Ricerca Keyword...");
     const plan = await callAI(`Sei un esperto SEO e di commercio ambulante. ARCHIVIO: [${titles}]. 
     Trova un argomento tecnico/normativo NON trattato. 
-    Restituisci un JSON: {"topic": "...", "keywords": ["kw1", "kw2", "kw3"]}`);
-    const planObj = JSON.parse(plan.replace(/```json|```/g, '').trim());
+    Restituisci solo JSON: {"topic": "...", "keywords": ["kw1", "kw2"]}`);
+    const planObj = cleanJSON(plan);
 
     // STEP 2: Scaletta
     console.log(`Step 2: Scaletta per ${planObj.topic}...`);
@@ -62,7 +83,7 @@ async function run() {
     // STEP 7: Metadata
     console.log("Step 7: Metadati SEO...");
     const metadata = await callAI(`Genera JSON per l'articolo "${planObj.topic}": {"slug": "...", "excerpt": "..."}`);
-    const meta = JSON.parse(metadata.replace(/```json|```/g, '').trim());
+    const meta = cleanJSON(metadata);
 
     // 3. Pubblicazione
     const { error } = await supabase.from('blog_posts').insert({
