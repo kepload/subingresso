@@ -420,9 +420,6 @@ async function submitAnnuncio() {
         document.getElementById('annuncioForm').classList.add('hidden');
         document.getElementById('successMsg').classList.remove('hidden');
 
-        // ── 2. REVISIONE IA AUTOMATIZZATA ──
-        runIAReview(inserted.id, form);
-
     } catch (error) {
         console.error(error);
         alert('Errore durante la pubblicazione: ' + error.message);
