@@ -365,18 +365,27 @@ async function submitAnnuncio() {
         for (let file of _files) {
             const fileExt = file.name.split('.').pop();
             const fileName = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-            const filePath = `listings/${fileName}`;
+            const filePath = fileName; // Rimuovo il prefisso ridondante listings/
 
             const { error: uploadError } = await _supabase.storage
                 .from('listings')
                 .upload(filePath, file);
 
-            if (!uploadError) {
-                const { data: { publicUrl } } = _supabase.storage
-                    .from('listings')
-                    .getPublicUrl(filePath);
-                imageUrls.push(publicUrl);
+            if (uploadError) {
+                console.error("Errore upload immagine:", uploadError);
+                continue; // Salta questa immagine ma continua con le altre
             }
+
+            const { data: { publicUrl } } = _supabase.storage
+                .from('listings')
+                .getPublicUrl(filePath);
+            
+            if (publicUrl) imageUrls.push(publicUrl);
+        }
+
+        // Se l'utente ha messo foto ma nessuna è stata caricata, avvisa
+        if (_files.length > 0 && imageUrls.length === 0) {
+            throw new Error("Errore nel caricamento delle immagini. Verifica la connessione o i permessi del database.");
         }
 
         form.dettagli_extra = { images: imageUrls };

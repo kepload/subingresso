@@ -118,7 +118,13 @@ async function initPage() {
 
     // Immagini (Placeholder o Reali)
     const coverContainer = document.querySelector('.bg-gradient-to-br.from-slate-100');
-    const firstImg = (listing.img_urls && listing.img_urls[0]) || (listing.dettagli_extra && listing.dettagli_extra.images && listing.dettagli_extra.images[0]);
+    
+    let extra = listing.dettagli_extra;
+    if (typeof extra === 'string') {
+        try { extra = JSON.parse(extra); } catch(e) { extra = null; }
+    }
+    
+    const firstImg = (listing.img_urls && listing.img_urls[0]) || (extra && extra.images && extra.images[0]);
     
     if (coverContainer && firstImg) {
         // Rimuoviamo l'icona e mettiamo l'immagine

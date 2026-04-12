@@ -145,7 +145,11 @@ function buildCard(l, isSmall = false, distance = null) {
                 <i class="fas fa-store text-5xl"></i>
             </div>
             ${(() => {
-                const img = (l.img_urls && l.img_urls[0]) || (l.dettagli_extra && l.dettagli_extra.images && l.dettagli_extra.images[0]);
+                let extra = l.dettagli_extra;
+                if (typeof extra === 'string') {
+                    try { extra = JSON.parse(extra); } catch(e) { extra = null; }
+                }
+                const img = (l.img_urls && l.img_urls[0]) || (extra && extra.images && extra.images[0]);
                 return img ? `<img src="${escapeHTML(img)}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
             })()}
             
