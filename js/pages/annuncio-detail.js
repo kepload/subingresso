@@ -170,7 +170,11 @@ async function initPage() {
     // Check proprietario (UI Speciale per il possessore)
     try {
         const { data: { user } } = await _supabase.auth.getUser();
-        if (user && listing.user_id && listing.user_id === user.id) {
+        console.log("👤 Utente corrente:", user?.id);
+        console.log("📝 Proprietario annuncio:", listing.user_id);
+
+        if (user && listing.user_id && String(listing.user_id).trim() === String(user.id).trim()) {
+            console.log("✅ Match proprietario confermato!");
             // 1. Aggiungiamo un badge sopra il titolo
             const titoloEl = document.getElementById('titolo');
             if (titoloEl) {
@@ -180,20 +184,27 @@ async function initPage() {
                 titoloEl.parentNode.insertBefore(badge, titoloEl);
             }
 
-            // 2. Trasformiamo il pulsante chat in "Modifica Annuncio" (più utile di Gestisci)
+            // 2. Trasformiamo il pulsante chat in "Modifica Annuncio"
             const chatBtn = document.getElementById('chatBtn');
             if (chatBtn) {
                 chatBtn.innerHTML = '<i class="fas fa-edit"></i> Modifica Annuncio';
-                chatBtn.onclick = () => location.href = `modifica-annuncio.html?id=${listing.id}`;
+                chatBtn.onclick = () => {
+                    console.log("🚀 Reindirizzamento a modifica...");
+                    location.href = `modifica-annuncio.html?id=${listing.id}`;
+                };
                 chatBtn.className = 'w-full bg-blue-600 text-white py-4 rounded-2xl font-black hover:bg-blue-700 transition flex items-center justify-center gap-3 shadow-xl shadow-blue-100';
             }
 
-            // 3. Nascondiamo il pulsante chiama/whatsapp (inutili per se stessi)
+            // 3. Nascondiamo il pulsante chiama/whatsapp
             const contactBtn = document.getElementById('contactBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
             if (contactBtn) contactBtn.classList.add('hidden');
+            if (whatsappBtn) whatsappBtn.classList.add('hidden');
+        } else {
+            console.log("ℹ️ Visitatore normale o ID non corrispondenti.");
         }
     } catch (e) {
-        console.error("Errore check proprietario:", e);
+        console.error("❌ Errore check proprietario:", e);
     }
 }
 
