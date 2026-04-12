@@ -155,6 +155,21 @@
                     <textarea id="fDescrizione" class="field-input"></textarea>
                 </div>
 
+                <!-- 4. FOTO -->
+                <div class="section-card">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="section-num">4</div>
+                        <h2 class="font-black text-base">Foto</h2>
+                    </div>
+                    <div id="dropzone" class="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:border-blue-400 transition cursor-pointer bg-slate-50">
+                        <i class="fas fa-camera text-slate-300 text-3xl mb-3"></i>
+                        <p class="text-sm font-bold text-slate-600">Clicca per aggiungere foto</p>
+                        <p class="text-xs text-slate-400 mt-1">Massimo 5 foto totali.</p>
+                        <input type="file" id="fileInput" multiple accept="image/*" class="hidden">
+                    </div>
+                    <div id="previewContainer" class="grid grid-cols-5 gap-2 mt-4"></div>
+                </div>
+
                 <button type="button" onclick="updateAnnuncio()"
                         class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100 active:scale-[.98]">
                     Salva Modifiche
@@ -206,29 +221,108 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (l.stato === 'Vendita') document.getElementById('radioVendita').checked = true;
     else document.getElementById('radioAffitto').checked = true;
 
+    // Foto esistenti
+    let extra = l.dettagli_extra;
+    if (typeof extra === 'string') { try { extra = JSON.parse(extra); } catch(e) {} }
+    const existingImages = (l.img_urls) || (extra && extra.images) || [];
+    existingImages.forEach(url => addPreview(url, true));
+
     document.getElementById('loading').classList.add('hidden');
     document.getElementById('editContainer').classList.remove('hidden');
 });
 
-async function updateAnnuncio() {
-    const updated = {
-        titolo: document.getElementById('fTitolo').value.trim(),
-        regione: document.getElementById('fRegione').value,
-        comune: document.getElementById('fComune').value.trim(),
-        superficie: parseFloat(document.getElementById('fSuperficie').value),
-        prezzo: parseFloat(document.getElementById('fPrezzo').value),
-        descrizione: document.getElementById('fDescrizione').value.trim(),
-        stato: document.querySelector('input[name="stato"]:checked').value,
-        status: 'pending' // Torna in pending per verifica IA dopo modifica
-    };
+// ── Gestione Foto ──
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const preview  = document.getElementById('previewContainer');
+let _newFiles = [];
+let _currentImageUrls = [];
 
-    const { error } = await _supabase.from('annunci').update(updated).eq('id', listingId);
+dropzone.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', e => handleFiles(e.target.files));
 
-    if (error) {
-        alert("Errore durante l'aggiornamento: " + error.message);
+function handleFiles(files) {
+    for (let f of files) {
+        if (_newFiles.length + _currentImageUrls.length >= 5) { alert("Massimo 5 foto."); break; }
+        _newFiles.push(f);
+        const reader = new FileReader();
+        reader.onload = e => addPreview(e.target.result, false);
+        reader.readAsDataURL(f);
+    }
+}
+
+function addPreview(src, isExisting) {
+    if (isExisting) _currentImageUrls.push(src);
+    const div = document.createElement('div');
+    div.className = 'aspect-square bg-slate-100 rounded-lg overflow-hidden relative group';
+    div.innerHTML = `
+        <img src="${src}" class="w-full h-full object-cover">
+        <button type="button" class="absolute top-1 right-1 bg-red-500 text-white w-5 h-5 rounded-full text-[10px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition" onclick="removePreview(this, ${isExisting})">
+            <i class="fas fa-times"></i>
+        </button>`;
+    preview.appendChild(div);
+}
+
+function removePreview(btn, isExisting) {
+    const div = btn.parentElement;
+    const idx = Array.from(preview.children).indexOf(div);
+    if (isExisting) {
+        // Rimuovi dalle URL correnti (bisogna trovare l'indice corretto tra le URL esistenti)
+        const url = div.querySelector('img').src;
+        _currentImageUrls = _currentImageUrls.filter(u => u !== url);
     } else {
-        alert("Annuncio aggiornato con successo! Sarà visibile dopo una breve verifica.");
+        // Rimuovi dai nuovi file (l'indice è relativo ai soli nuovi file inseriti dopo quelli esistenti)
+        const existingCount = preview.querySelectorAll('img[src^="http"]').length;
+        _newFiles.splice(idx - existingCount, 1);
+    }
+    div.remove();
+}
+
+async function updateAnnuncio() {
+    const btn = document.querySelector('button[onclick="updateAnnuncio()"]');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Salvataggio...';
+
+    try {
+        const user = await getCurrentUser();
+        
+        // 1. Upload nuove foto
+        const newUrls = [];
+        for (let file of _newFiles) {
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+            const { error: upErr } = await _supabase.storage.from('listings').upload(fileName, file);
+            if (!upErr) {
+                const { data: { publicUrl } } = _supabase.storage.from('listings').getPublicUrl(fileName);
+                newUrls.push(publicUrl);
+            }
+        }
+
+        const finalImages = [..._currentImageUrls, ...newUrls];
+
+        const updated = {
+            titolo: document.getElementById('fTitolo').value.trim(),
+            regione: document.getElementById('fRegione').value,
+            comune: document.getElementById('fComune').value.trim(),
+            superficie: parseFloat(document.getElementById('fSuperficie').value),
+            prezzo: parseFloat(document.getElementById('fPrezzo').value),
+            descrizione: document.getElementById('fDescrizione').value.trim(),
+            stato: document.querySelector('input[name="stato"]:checked').value,
+            dettagli_extra: { images: finalImages },
+            status: 'pending' 
+        };
+
+        const { error } = await _supabase.from('annunci').update(updated).eq('id', listingId);
+
+        if (error) throw error;
+        
+        alert("Annuncio aggiornato con successo!");
         location.href = 'dashboard.html';
+
+    } catch (err) {
+        alert("Errore: " + err.message);
+        btn.disabled = false;
+        btn.innerHTML = 'Salva Modifiche';
     }
 }
 </script>
