@@ -338,6 +338,9 @@ async function submitAnnuncio() {
         return;
     }
 
+    const expiresAt = new Date();
+    expiresAt.setDate(expiresAt.getDate() + 100);
+
     const form = {
         titolo:      document.getElementById('fTitolo').value.trim(),
         regione:     document.getElementById('fRegione').value,
@@ -351,6 +354,7 @@ async function submitAnnuncio() {
         stato:       document.querySelector('input[name="stato"]:checked').value,
         user_id:     user.id,
         status:      'pending', 
+        expires_at:  expiresAt.toISOString(),
         contatto:    '',
         tel:         ''
     };

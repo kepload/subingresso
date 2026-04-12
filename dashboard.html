@@ -481,7 +481,7 @@ async function loadMyListings() {
                     <p class="text-slate-400 text-xs font-semibold mt-1">
                         <i class="fas fa-map-marker-alt mr-1"></i>${l.comune || ''}, ${l.regione || ''} ·
                         <i class="fas fa-euro-sign mx-1"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'} ·
-                        ${new Date(l.created_at).toLocaleDateString('it-IT')}
+                        Scade il: ${l.expires_at ? new Date(l.expires_at).toLocaleDateString('it-IT') : '100 gg'}
                     </p>
                 </div>
             </div>

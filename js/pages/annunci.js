@@ -165,6 +165,7 @@ async function loadListings() {
             .from('annunci')
             .select('*')
             .eq('status', 'active')
+            .or(`expires_at.gt.${new Date().toISOString()},expires_at.is.null`)
             .order('created_at', { ascending: false });
 
         if (!error && data && data.length > 0) {
