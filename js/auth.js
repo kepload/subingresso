@@ -350,7 +350,10 @@ window.updateAuthNav = async function () {
                     ${initial}
                 </div>
                 <span class="hidden lg:inline">Area Personale</span>
-            </a>`;
+            </a>
+            <button onclick="signOut()" class="text-xs font-black text-slate-400 hover:text-red-500 transition-colors uppercase tracking-widest px-2">
+                Esci
+            </button>`;
     }
 };
 
