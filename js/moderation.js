@@ -31,8 +31,24 @@ window.moderaAnnuncio = async function (dati) {
     if (!GEMINI_API_KEY || GEMINI_API_KEY === 'LA-TUA-CHIAVE-QUI') {
         return { status: 'active', reason: 'Moderazione non configurata.' };
     }
+    
+    // 2. Trova dinamicamente il modello
+    let targetModel = 'gemini-1.5-flash';
+    try {
+        const modelsRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${GEMINI_API_KEY}`);
+        const modelsData = await modelsRes.json();
+        if (modelsData.models) {
+            const valid = modelsData.models.filter(m => m.supportedGenerationMethods?.includes('generateContent') && m.name.includes('gemini'));
+            if (valid.length > 0) {
+                const best = valid.find(m => m.name.includes('gemini-1.5-flash')) || valid[0];
+                targetModel = best.name.replace('models/', '');
+            }
+        }
+    } catch(e) {}
+    
+    const _GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${targetModel}:generateContent?key=${GEMINI_API_KEY}`;
 
-    // 2. Tronca descrizione (risparmio token)
+    // 3. Tronca descrizione (risparmio token)
     const descrBreve = (dati.descrizione || '').slice(0, 1000);
 
     const prompt = `Sei il moderatore di Subingresso.it. Analizza e rispondi SOLO JSON: {"status":"active"|"pending"|"rejected","reason":"..."}
