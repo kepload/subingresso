@@ -110,19 +110,21 @@ async function generateDeepArticle() {
 
     // 2. SCALETTA
     console.log(`2/5 - Scaletta per: ${topic}`);
-    const outline = await callAI(`Crea una scaletta professionale in 5 punti per l'articolo: "${topic}".`);
+    const outline = await callAI(`Crea una scaletta professionale in 3 GRANDI sezioni per l'articolo: "${topic}". Non fare micro-capitoli, pensa a 3 argomenti ampi e approfonditi.`);
 
     // 3. PARTE 1
     console.log("3/5 - Sviluppo Parte 1...");
-    const contentPart1 = await callAI(`Scrivi la prima parte (Intro + Analisi) dell'articolo: "${topic}". 
+    const contentPart1 = await callAI(`Scrivi la prima parte (Introduzione e Prima Sezione Principale) dell'articolo: "${topic}". 
     Usa HTML (h2, p, strong). 
-    IMPORTANTE: Scrivi in modo MOLTO SEMPLICE e CHIARO. Il tuo pubblico sono venditori ambulanti (spesso anziani o stranieri). Niente burocratese, niente paroloni difficili. Usa un tono amichevole, diretto e pratico.`);
+    IMPORTANTE: Scrivi in modo MOLTO SEMPLICE e CHIARO. Il tuo pubblico sono venditori ambulanti.
+    ATTENZIONE: Sviluppa paragrafi lunghi, discorsivi e scorrevoli. Non fare liste di puntini e non dividere il testo in blocchetti da 10 righe. Scrivi come in una vera rivista.`);
 
     // 4. PARTE 2
     console.log("4/5 - Sviluppo Parte 2...");
-    const contentPart2 = await callAI(`Completa l'articolo: "${topic}" con consigli pratici e una tabella HTML di esempio. 
+    const contentPart2 = await callAI(`Completa l'articolo: "${topic}" sviluppando la Seconda e Terza Sezione Principale. Includi consigli pratici e una tabella HTML di esempio. 
     Usa HTML. 
-    IMPORTANTE: Mantieni un linguaggio FACILISSIMO DA CAPIRE. Niente termini legali complessi. Fai esempi concreti della vita da mercato.`);
+    IMPORTANTE: Mantieni un linguaggio FACILISSIMO DA CAPIRE.
+    ATTENZIONE: Scrivi testi ampi, paragrafi corposi e ben collegati tra loro. Evita i micro-paragrafi e i continui sottotitoli che frammentano troppo la lettura.`);
 
     // 5. SEO & ASSEMBLAGGIO
     console.log("5/5 - Rifinitura...");

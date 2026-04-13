@@ -53,26 +53,28 @@ async function run() {
 
     // STEP 2: Scaletta
     console.log(`Step 2: Scaletta per ${planObj.topic}...`);
-    const outline = await callAI(`Crea una scaletta dettagliata in 6 capitoli per l'articolo: "${planObj.topic}". 
-    Focus su queste keywords: ${planObj.keywords.join(", ")}.`);
+    const outline = await callAI(`Crea una scaletta dettagliata in 3 GRANDI sezioni (più un'introduzione e una conclusione) per l'articolo: "${planObj.topic}". 
+    Focus su queste keywords: ${planObj.keywords.join(", ")}. Non fare micro-capitoli, pensa a blocchi ampi.`);
 
     // STEP 3: Scrittura Parte 1 (Intro e primi 2 capitoli)
     console.log("Step 3: Scrittura Parte 1...");
-    const part1 = await callAI(`Scrivi la prima parte (Intro + primi 2 capitoli) dell'articolo basato su questa scaletta: ${outline}. 
+    const part1 = await callAI(`Scrivi la prima parte (Introduzione e Prima Sezione) dell'articolo basato su questa scaletta: ${outline}. 
     Usa HTML (h2, p, strong). Non concludere l'articolo.
-    IMPORTANTE: Scrivi in modo MOLTO SEMPLICE e CHIARO. Il tuo pubblico sono venditori ambulanti (spesso anziani o stranieri). Niente burocratese o paroloni legali complessi. Usa un tono amichevole e molto pratico.`);
+    IMPORTANTE: Scrivi in modo MOLTO SEMPLICE e CHIARO. Il tuo pubblico sono venditori ambulanti (spesso anziani o stranieri). Niente burocratese o paroloni legali complessi. Usa un tono amichevole e molto pratico.
+    ATTENZIONE: Sviluppa paragrafi lunghi, discorsivi e scorrevoli. Non fare liste infinite di puntini e non dividere il testo in blocchetti da 10 righe. Scrivi in modo fluido.`);
 
     // STEP 4: Scrittura Parte 2 (Capitoli centrali + Tabella)
     console.log("Step 4: Scrittura Parte 2...");
     const part2 = await callAI(`Continua l'articolo dopo questo testo: [${part1.slice(-200)}]. 
-    Scrivi i capitoli 3, 4 e 5 della scaletta: ${outline}. 
+    Scrivi la Seconda e Terza Sezione della scaletta: ${outline}. 
     Includi una tabella HTML dettagliata (table, tr, td) con dati o costi d'esempio. Usa HTML.
-    IMPORTANTE: Mantieni un linguaggio FACILISSIMO DA CAPIRE. Niente termini difficili. Fai esempi concreti legati alla vita del mercato (furgoni, posteggi, spunta).`);
+    IMPORTANTE: Mantieni un linguaggio FACILISSIMO DA CAPIRE. Niente termini difficili. Fai esempi concreti legati alla vita del mercato (furgoni, posteggi, spunta).
+    ATTENZIONE: Scrivi testi ampi e paragrafi corposi. Evita i micro-paragrafi e l'eccesso di sottotitoli che frammentano troppo la lettura.`);
 
     // STEP 5: Scrittura Parte 3 (Conclusioni + FAQ)
     console.log("Step 5: Scrittura Parte 3...");
     const part3 = await callAI(`Concludi l'articolo dopo questo testo: [${part2.slice(-200)}]. 
-    Scrivi il capitolo 6 della scaletta: ${outline}. 
+    Scrivi la Conclusione della scaletta: ${outline}. 
     Aggiungi una sezione FAQ con 4 domande e risposte frequenti usando HTML.
     IMPORTANTE: Rispondi alle FAQ in modo super diretto, come se parlassi a un amico al bar. Usa parole semplici.`);
 
