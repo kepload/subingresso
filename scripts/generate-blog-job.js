@@ -59,19 +59,22 @@ async function run() {
     // STEP 3: Scrittura Parte 1 (Intro e primi 2 capitoli)
     console.log("Step 3: Scrittura Parte 1...");
     const part1 = await callAI(`Scrivi la prima parte (Intro + primi 2 capitoli) dell'articolo basato su questa scaletta: ${outline}. 
-    Usa HTML (h2, p, strong). Sii tecnico e approfondito. Non concludere l'articolo.`);
+    Usa HTML (h2, p, strong). Non concludere l'articolo.
+    IMPORTANTE: Scrivi in modo MOLTO SEMPLICE e CHIARO. Il tuo pubblico sono venditori ambulanti (spesso anziani o stranieri). Niente burocratese o paroloni legali complessi. Usa un tono amichevole e molto pratico.`);
 
     // STEP 4: Scrittura Parte 2 (Capitoli centrali + Tabella)
     console.log("Step 4: Scrittura Parte 2...");
-    const part2 = await callAI(`Continua l'articolo tecnico dopo questo testo: [${part1.slice(-200)}]. 
+    const part2 = await callAI(`Continua l'articolo dopo questo testo: [${part1.slice(-200)}]. 
     Scrivi i capitoli 3, 4 e 5 della scaletta: ${outline}. 
-    Includi una tabella HTML dettagliata (table, tr, td) con dati o costi d'esempio. Usa HTML.`);
+    Includi una tabella HTML dettagliata (table, tr, td) con dati o costi d'esempio. Usa HTML.
+    IMPORTANTE: Mantieni un linguaggio FACILISSIMO DA CAPIRE. Niente termini difficili. Fai esempi concreti legati alla vita del mercato (furgoni, posteggi, spunta).`);
 
     // STEP 5: Scrittura Parte 3 (Conclusioni + FAQ)
     console.log("Step 5: Scrittura Parte 3...");
-    const part3 = await callAI(`Concludi l'articolo tecnico dopo questo testo: [${part2.slice(-200)}]. 
+    const part3 = await callAI(`Concludi l'articolo dopo questo testo: [${part2.slice(-200)}]. 
     Scrivi il capitolo 6 della scaletta: ${outline}. 
-    Aggiungi una sezione FAQ con 4 domande e risposte frequenti usando HTML.`);
+    Aggiungi una sezione FAQ con 4 domande e risposte frequenti usando HTML.
+    IMPORTANTE: Rispondi alle FAQ in modo super diretto, come se parlassi a un amico al bar. Usa parole semplici.`);
 
     // STEP 6: Internal Linking Review
     console.log("Step 6: Revisione Link Interni...");

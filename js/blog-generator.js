@@ -114,11 +114,15 @@ async function generateDeepArticle() {
 
     // 3. PARTE 1
     console.log("3/5 - Sviluppo Parte 1...");
-    const contentPart1 = await callAI(`Scrivi la prima parte (Intro + Analisi tecnica) dell'articolo: "${topic}". Usa HTML (h2, p, strong). Sii professionale.`);
+    const contentPart1 = await callAI(`Scrivi la prima parte (Intro + Analisi) dell'articolo: "${topic}". 
+    Usa HTML (h2, p, strong). 
+    IMPORTANTE: Scrivi in modo MOLTO SEMPLICE e CHIARO. Il tuo pubblico sono venditori ambulanti (spesso anziani o stranieri). Niente burocratese, niente paroloni difficili. Usa un tono amichevole, diretto e pratico.`);
 
     // 4. PARTE 2
     console.log("4/5 - Sviluppo Parte 2...");
-    const contentPart2 = await callAI(`Completa l'articolo: "${topic}" con consigli pratici e una tabella HTML di esempio. Usa HTML.`);
+    const contentPart2 = await callAI(`Completa l'articolo: "${topic}" con consigli pratici e una tabella HTML di esempio. 
+    Usa HTML. 
+    IMPORTANTE: Mantieni un linguaggio FACILISSIMO DA CAPIRE. Niente termini legali complessi. Fai esempi concreti della vita da mercato.`);
 
     // 5. SEO & ASSEMBLAGGIO
     console.log("5/5 - Rifinitura...");
