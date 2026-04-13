@@ -20,6 +20,8 @@ async function callAI(prompt) {
                 m.supportedGenerationMethods && 
                 m.supportedGenerationMethods.includes('generateContent') && 
                 m.name.includes('gemini') && 
+                !m.name.includes('-tts') &&
+                !m.name.includes('-vision') &&
                 m.name !== 'models/gemini-pro'
             );
         }
@@ -69,15 +71,8 @@ async function callAI(prompt) {
             
             if (data.error) {
                 lastError = new Error(`Errore Google AI (${targetModel}): ${data.error.message}`);
-                // Se è sovraccarico o la quota è superata (o a zero per quel modello), passa al prossimo
-                const isOverloaded = data.error.message.toLowerCase().includes('high demand') || data.error.code === 503;
-                const isQuota = data.error.code === 429 || data.error.message.toLowerCase().includes('quota');
-                
-                if (isOverloaded || isQuota) {
-                    console.warn(`[WARN] ${targetModel} inaccessibile (${data.error.code}). Provo un altro modello...`);
-                    continue; 
-                }
-                throw lastError; // Se è un altro errore, fermati
+                console.warn(`[WARN] ${targetModel} ha fallito (${data.error.code}): ${data.error.message}. Provo un altro modello...`);
+                continue; // Prova sempre il prossimo modello per QUALSIASI errore (quota, tts, overload, not found)
             }
 
             const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -89,10 +84,8 @@ async function callAI(prompt) {
             
         } catch (e) {
             lastError = e;
-            if (e.message.toLowerCase().includes('high demand') || e.message.toLowerCase().includes('quota')) {
-                continue;
-            }
-            throw e;
+            console.warn(`[WARN] Eccezione con ${targetModel}: ${e.message}. Provo un altro modello...`);
+            continue;
         }
     }
     
