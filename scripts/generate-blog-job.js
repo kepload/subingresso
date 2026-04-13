@@ -34,7 +34,7 @@ function cleanJSON(text) {
 }
 
 async function run() {
-    console.log("🚀 Avvio generazione articolo PREMIUM (Multi-step)...");
+    console.log("🚀 Avvio generazione articolo PREMIUM (Mega-Redazione)...");
     
     // 1. Recupero titoli esistenti
     const { data: existing, error: fetchError } = await supabase.from('blog_posts').select('title').limit(30);
@@ -44,53 +44,57 @@ async function run() {
     }
     const titles = existing ? existing.map(p => p.title).join(", ") : "Nessuno";
 
-    // STEP 1: Scelta argomento
-    console.log("Step 1: Ricerca Keyword...");
-    const plan = await callAI(`Sei un esperto SEO e di commercio ambulante. ARCHIVIO: [${titles}]. 
-    Trova un argomento tecnico/normativo NON trattato. 
-    Restituisci solo JSON: {"topic": "...", "keywords": ["kw1", "kw2"]}`);
+    // STEP 1: Scelta Intento Popolare
+    console.log("Step 1: Ricerca Intento...");
+    const plan = await callAI(`Sei un esperto SEO per venditori ambulanti. ARCHIVIO: [${titles}]. 
+    Scegli un "Intento di Ricerca Popolare e Pratico". La gente cerca: "Come vendere la licenza in fiera", "Quanto costa un furgone negozio usato?", "Passaggio di proprietà posteggio: errori da evitare".
+    Restituisci SOLO JSON: {"topic": "...", "keywords": ["kw1", "kw2"]}. Scegli un tema molto concreto e pratico.`);
     const planObj = cleanJSON(plan);
 
-    // STEP 2: Scaletta
-    console.log(`Step 2: Scaletta per ${planObj.topic}...`);
-    const outline = await callAI(`Crea una scaletta dettagliata in 3 GRANDI sezioni (più un'introduzione e una conclusione) per l'articolo: "${planObj.topic}". 
-    Focus su queste keywords: ${planObj.keywords.join(", ")}. Non fare micro-capitoli, pensa a blocchi ampi.`);
+    // STEP 2: I Problemi
+    console.log(`Step 2: Ricerca Problemi per ${planObj.topic}...`);
+    const problems = await callAI(`Per l'articolo intitolato "${planObj.topic}", elenca 3 problemi concreti, paure o fregature che un venditore ambulante rischia di affrontare su questo tema (es. costi nascosti, tempi biblici in Comune, truffe). Sii breve.`);
 
-    // STEP 3: Scrittura Parte 1 (Intro e primi 2 capitoli)
-    console.log("Step 3: Scrittura Parte 1...");
-    const part1 = await callAI(`Scrivi la prima parte (Introduzione e Prima Sezione) dell'articolo basato su questa scaletta: ${outline}. 
+    // STEP 3: Scaletta Pratica
+    console.log("Step 3: Scaletta...");
+    const outline = await callAI(`Crea una scaletta in 3 Macro-Sezioni per l'articolo "${planObj.topic}", basata su questi problemi: [${problems}]. 
+    Focus: 1) Il Problema reale, 2) Le Soluzioni e i trucchi del mestiere, 3) Costi e Tempi. Niente micro-capitoli.`);
+
+    // STEP 4: Scrittura Parte 1
+    console.log("Step 4: Scrittura Parte 1...");
+    const part1 = await callAI(`Scrivi l'Introduzione e la Prima Sezione della scaletta: ${outline}. 
     Usa HTML (h2, p, strong). Non concludere l'articolo.
-    IMPORTANTE: Scrivi in modo MOLTO SEMPLICE e CHIARO. Il tuo pubblico sono venditori ambulanti (spesso anziani o stranieri). Niente burocratese o paroloni legali complessi. Usa un tono amichevole e molto pratico.
-    ATTENZIONE: Sviluppa paragrafi lunghi, discorsivi e scorrevoli. Non fare liste infinite di puntini e non dividere il testo in blocchetti da 10 righe. Scrivi in modo fluido.`);
+    IMPORTANTE: Scrivi in modo MOLTO SEMPLICE, schietto e diretto. Il tuo pubblico sono venditori ambulanti (spesso anziani o stranieri). Niente burocratese.
+    ATTENZIONE: Sviluppa paragrafi lunghi e fluidi. Niente liste della spesa, niente testo frammentato.`);
 
-    // STEP 4: Scrittura Parte 2 (Capitoli centrali + Tabella)
-    console.log("Step 4: Scrittura Parte 2...");
+    // STEP 5: Scrittura Parte 2 (Costi e Trucchi)
+    console.log("Step 5: Scrittura Parte 2...");
     const part2 = await callAI(`Continua l'articolo dopo questo testo: [${part1.slice(-200)}]. 
-    Scrivi la Seconda e Terza Sezione della scaletta: ${outline}. 
-    Includi una tabella HTML dettagliata (table, tr, td) con dati o costi d'esempio. Usa HTML.
-    IMPORTANTE: Mantieni un linguaggio FACILISSIMO DA CAPIRE. Niente termini difficili. Fai esempi concreti legati alla vita del mercato (furgoni, posteggi, spunta).
-    ATTENZIONE: Scrivi testi ampi e paragrafi corposi. Evita i micro-paragrafi e l'eccesso di sottotitoli che frammentano troppo la lettura.`);
+    Scrivi le ultime due Sezioni (Soluzioni/Trucchi e Costi/Tempi) della scaletta: ${outline}. 
+    Includi una tabella HTML molto pratica (es. stima costi, documenti necessari).
+    IMPORTANTE: Mantieni un linguaggio FACILISSIMO e schietto. Fai esempi da mercato. Paragrafi corposi, evita i micro-paragrafi.`);
 
-    // STEP 5: Scrittura Parte 3 (Conclusioni + FAQ)
-    console.log("Step 5: Scrittura Parte 3...");
-    const part3 = await callAI(`Concludi l'articolo dopo questo testo: [${part2.slice(-200)}]. 
-    Scrivi la Conclusione della scaletta: ${outline}. 
-    Aggiungi una sezione FAQ con 4 domande e risposte frequenti usando HTML.
-    IMPORTANTE: Rispondi alle FAQ in modo super diretto, come se parlassi a un amico al bar. Usa parole semplici.`);
+    // STEP 6: FAQ
+    console.log("Step 6: FAQ...");
+    const part3 = await callAI(`Per l'articolo "${planObj.topic}", scrivi una sezione conclusiva "FAQ Rapide" con 3 domande e risposte.
+    Usa HTML (h3, p). Fai domande secche che un ambulante ti farebbe al bar ("Ma il comune può bloccarmi?") e rispondi in 2 righe in modo chiarissimo.`);
 
-    // STEP 6: Internal Linking Review
-    console.log("Step 6: Revisione Link Interni...");
+    // STEP 7: Internal Linking & Conversion
+    console.log("Step 7: Conversion & Link...");
     const fullContent = part1 + part2 + part3;
     const finalContent = await callAI(`Analizza questo articolo: [${fullContent.slice(0, 1000)}...]. 
-    Se pertinente, inserisci un link HTML naturale verso uno di questi articoli esistenti: [${titles}]. 
-    Restituisci l'intero articolo aggiornato.`);
+    Fai 2 cose:
+    1. Inserisci un link HTML naturale verso uno di questi articoli (se pertinente): [${titles}].
+    2. ALLA FINE dell'articolo, aggiungi una "Call To Action" potente: dì al lettore che se vuole comprare o vendere una licenza, un posteggio o un furgone senza impazzire, deve cercare o mettere un annuncio gratis su Subingresso.it.
+    Restituisci l'intero articolo HTML aggiornato.`);
 
-    // STEP 7: Metadata
-    console.log("Step 7: Metadati SEO...");
-    const metadata = await callAI(`Genera JSON per l'articolo "${planObj.topic}": {"slug": "...", "excerpt": "..."}`);
+    // STEP 8: Metadata
+    console.log("Step 8: Metadati SEO...");
+    const metadata = await callAI(`Genera JSON per l'articolo "${planObj.topic}": {"slug": "...", "excerpt": "..."}.
+    L'excerpt deve essere super pratico e invogliare l'ambulante a leggere (max 150 caratteri).`);
     const meta = cleanJSON(metadata);
 
-    // 3. Pubblicazione
+    // Pubblicazione
     const { error } = await supabase.from('blog_posts').insert({
         title: planObj.topic,
         slug: (meta.slug || planObj.topic.toLowerCase().replace(/ /g, '-')) + '-' + Date.now(),
@@ -100,7 +104,7 @@ async function run() {
     });
 
     if (error) throw error;
-    console.log("✅ Articolo PREMIUM pubblicato con successo!");
+    console.log("✅ Articolo PREMIUM (Mega-Redazione) pubblicato con successo!");
 }
 
 run().catch(console.error);

@@ -93,7 +93,7 @@ async function callAI(prompt) {
 }
 
 async function generateDeepArticle() {
-    console.log("🚀 Inizio generazione articolo intelligente...");
+    console.log("🚀 Inizio generazione Redazione Pratica...");
 
     // 0. RECUPERO TITOLI ESISTENTI
     let existingTitles = 'Nessuno';
@@ -104,48 +104,59 @@ async function generateDeepArticle() {
         }
     } catch (e) { console.warn("Errore recupero archivio:", e); }
 
-    // 1. SCELTA TOPIC
-    console.log("1/5 - Scelta tema...");
-    const topic = await callAI(`Sei un esperto di commercio ambulante. ARCHIVIO: [${existingTitles}]. Individua un nuovo tema tecnico/normativo caldissimo per il blog. Restituisci solo il TITOLO.`);
+    // 1. L'ANALISTA SEO E L'INTENTO
+    console.log("1/7 - Studio dell'Intento di Ricerca...");
+    const topic = await callAI(`Sei un esperto SEO per il mercato del commercio ambulante. ARCHIVIO: [${existingTitles}]. 
+    Scegli un "Intento di Ricerca Popolare e Pratico". La gente cerca cose terra-terra: "Come vendere la licenza senza farsi fregare", "Quanto costa un posteggio fisso?", "Subingresso licenza: quanto tempo ci vuole?".
+    Restituisci SOLO un TITOLO acchiappa-click basato su un problema reale degli ambulanti. Non fare titoli accademici o legali.`);
 
-    // 2. SCALETTA
-    console.log(`2/5 - Scaletta per: ${topic}`);
-    const outline = await callAI(`Crea una scaletta professionale in 3 GRANDI sezioni per l'articolo: "${topic}". Non fare micro-capitoli, pensa a 3 argomenti ampi e approfonditi.`);
+    // 2. I PROBLEMI
+    console.log(`2/7 - Ricerca dei Problemi per: ${topic}`);
+    const problems = await callAI(`Per l'articolo intitolato "${topic}", elenca 3 problemi concreti o paure che un venditore ambulante ha riguardo a questo argomento (es. burocrazia lenta, truffe, spese nascoste). Restituisci solo un breve elenco.`);
 
-    // 3. PARTE 1
-    console.log("3/5 - Sviluppo Parte 1...");
-    const contentPart1 = await callAI(`Scrivi la prima parte (Introduzione e Prima Sezione Principale) dell'articolo: "${topic}". 
-    Usa HTML (h2, p, strong). 
-    IMPORTANTE: Scrivi in modo MOLTO SEMPLICE e CHIARO. Il tuo pubblico sono venditori ambulanti.
-    ATTENZIONE: Sviluppa paragrafi lunghi, discorsivi e scorrevoli. Non fare liste di puntini e non dividere il testo in blocchetti da 10 righe. Scrivi come in una vera rivista.`);
+    // 3. LA SCALETTA PRATICA
+    console.log("3/7 - Creazione Scaletta Pratica...");
+    const outline = await callAI(`Crea una scaletta in 3 Macro-Sezioni per l'articolo "${topic}", basandoti su questi problemi: [${problems}]. 
+    Le sezioni devono essere: 1) Il Problema, 2) La Soluzione Pratica (i "trucchi del mestiere"), 3) Quanto costa/Quanto tempo serve. Non fare micro-capitoli.`);
 
-    // 4. PARTE 2
-    console.log("4/5 - Sviluppo Parte 2...");
-    const contentPart2 = await callAI(`Completa l'articolo: "${topic}" sviluppando la Seconda e Terza Sezione Principale. Includi consigli pratici e una tabella HTML di esempio. 
-    Usa HTML. 
-    IMPORTANTE: Mantieni un linguaggio FACILISSIMO DA CAPIRE.
-    ATTENZIONE: Scrivi testi ampi, paragrafi corposi e ben collegati tra loro. Evita i micro-paragrafi e i continui sottotitoli che frammentano troppo la lettura.`);
+    // 4. PARTE 1 (IL PROBLEMA E I TRUCCHI)
+    console.log("4/7 - Scrittura Prima Parte...");
+    const contentPart1 = await callAI(`Scrivi l'Introduzione e le prime due Sezioni della scaletta: ${outline}.
+    Usa HTML (h2, p, strong).
+    IMPORTANTE: Scrivi "come se parlassi a un amico al bar", con tono diretto, schietto e molto semplice. Usa un linguaggio facilissimo da capire. Rivolgiti a venditori ambulanti.
+    ATTENZIONE: Sviluppa paragrafi lunghi e discorsivi, niente liste infinite di puntini, niente blocchetti da 10 righe.`);
 
-    // 5. SEO & ASSEMBLAGGIO
-    console.log("5/5 - Rifinitura...");
+    // 5. PARTE 2 (COSTI, TEMPI E TABELLA)
+    console.log("5/7 - Scrittura Seconda Parte...");
+    const contentPart2 = await callAI(`Completa l'articolo: "${topic}" sviluppando l'ultima Sezione (Costi/Tempi/Soluzione Finale) dalla scaletta: ${outline}.
+    Includi una tabella HTML di esempio molto pratica.
+    IMPORTANTE: Alla fine del testo, fai capire al lettore che se vuole comprare o vendere posteggi/licenze/furgoni, il posto migliore e più sicuro è inserire un annuncio o cercare su "Subingresso.it".
+    Usa HTML. Linguaggio facile, schietto e diretto.`);
+
+    // 6. FAQ SECCHE
+    console.log("6/7 - FAQ...");
+    const faq = await callAI(`Per l'articolo "${topic}", scrivi 3 Domande e Risposte Frequenti.
+    Usa HTML (h3, p). Fai domande secche ("E se il comune mi blocca?", "Posso vendere solo il furgone?") e risposte direttissime, senza giri di parole.`);
+
+    // 7. SEO E ASSEMBLAGGIO
+    console.log("7/7 - Rifinitura SEO...");
+    const fullText = contentPart1 + contentPart2 + faq;
     const finalRaw = await callAI(`Prendi questo testo ed estrai un JSON pulito con questi campi: title, slug, excerpt, content.
-    TESTO: ${contentPart1} ${contentPart2}
+    TESTO: ${fullText}
     RESTITUISCI SOLO JSON: {"title": "...", "slug": "...", "excerpt": "...", "content": "..."}`);
 
     try {
-        // Pulizia aggressiva del JSON
         const cleanJson = finalRaw.replace(/```json|```/g, '').trim();
         const match = cleanJson.match(/\{[\s\S]*\}/);
         if (!match) throw new Error("JSON non trovato nella risposta");
         return JSON.parse(match[0]);
     } catch (e) {
         console.error("Errore parsing JSON IA:", e, finalRaw);
-        // Fallback manuale se l'IA impazzisce col JSON
         return {
             title: topic,
             slug: topic.toLowerCase().replace(/[^a-z0-9]/g, '-'),
-            excerpt: "Nuova guida tecnica per operatori su aree pubbliche.",
-            content: contentPart1 + contentPart2
+            excerpt: "Guida pratica per operatori su aree pubbliche: problemi reali e soluzioni veloci.",
+            content: fullText
         };
     }
 }
