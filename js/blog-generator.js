@@ -31,7 +31,19 @@ async function callAI(prompt) {
     }
     
     if (validModelsList.length === 0) {
-        validModelsList = [{ name: 'models/gemini-1.5-flash-8b' }];
+        validModelsList = [
+            { name: 'models/gemini-1.5-flash-8b' },
+            { name: 'models/gemini-1.5-flash' },
+            { name: 'models/gemini-2.0-flash' }
+        ];
+    } else {
+        // Forza l'inserimento dei modelli gratuiti e veloci nel caso l'API non li elenchi
+        const ensureModels = ['models/gemini-1.5-flash-8b', 'models/gemini-1.5-flash'];
+        ensureModels.forEach(m => {
+            if (!validModelsList.find(v => v.name === m)) {
+                validModelsList.push({ name: m, supportedGenerationMethods: ['generateContent'] });
+            }
+        });
     }
     
     // Ordina per preferenza: prima i modelli più leggeri/veloci e meno soggetti a limiti
@@ -64,9 +76,12 @@ async function callAI(prompt) {
             
             if (data.error) {
                 lastError = new Error(`Errore Google AI (${targetModel}): ${data.error.message}`);
-                // Se è sovraccarico, passiamo al prossimo modello
-                if (data.error.message.toLowerCase().includes('high demand') || data.error.code === 503) {
-                    console.warn(`[WARN] ${targetModel} in high demand. Provo un altro modello...`);
+                // Se è sovraccarico o la quota è superata (o a zero per quel modello), passa al prossimo
+                const isOverloaded = data.error.message.toLowerCase().includes('high demand') || data.error.code === 503;
+                const isQuota = data.error.code === 429 || data.error.message.toLowerCase().includes('quota');
+                
+                if (isOverloaded || isQuota) {
+                    console.warn(`[WARN] ${targetModel} inaccessibile (${data.error.code}). Provo un altro modello...`);
                     continue; 
                 }
                 throw lastError; // Se è un altro errore, fermati
@@ -81,7 +96,7 @@ async function callAI(prompt) {
             
         } catch (e) {
             lastError = e;
-            if (e.message.toLowerCase().includes('high demand')) {
+            if (e.message.toLowerCase().includes('high demand') || e.message.toLowerCase().includes('quota')) {
                 continue;
             }
             throw e;
