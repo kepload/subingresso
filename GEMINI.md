@@ -65,3 +65,5 @@ Per risparmiare contesto, **NON leggere mai l'intero HTML** se devi modificare s
 - `ReferenceError: MERCI is not defined`: Risolto centralizzando la costante in `data.js`.
 - `XSS in buildCard`: Risolto usando `escapeHTML` per ID, Titoli e Immagini.
 - `Redundant Profiles`: Il profilo viene creato via Trigger SQL, `auth.js` fa solo il sync se necessario.
+- `Database Setup Errors`: Usa SEMPRE il file sul desktop `SETUP_DEF_SUBINGRESSO.sql` per riconfigurare Supabase (contiene RLS fixati e relazioni corrette).
+- `Gemini API "Model not found"`: Alcune chiavi non supportano "1.5-flash". I generatori JS ora fetchano dinamicamente i modelli supportati o usano `gemini-pro` come fallback.
