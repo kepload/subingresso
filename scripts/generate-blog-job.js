@@ -12,7 +12,10 @@ async function callAI(prompt) {
     console.log(`...attendo 45 secondi prima della prossima chiamata API (limite sicurezza)...`);
     await wait(45000);
     try {
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ 
+            model: "gemini-1.5-flash",
+            systemInstruction: "Sei un copywriter e assistente tecnico. Rispondi SEMPRE E SOLO con il contenuto richiesto. È SEVERAMENTE VIETATO usare convenevoli, saluti, conferme o frasi introduttive come 'Certamente', 'Ecco a te', 'Ecco l'articolo'. Inizia direttamente con l'output richiesto (es. i tag HTML o il JSON)."
+        });
         const result = await model.generateContent(prompt);
         const text = result.response.text();
         if (!text) throw new Error("Risposta vuota dall'IA");

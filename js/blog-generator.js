@@ -62,6 +62,7 @@ async function callAI(prompt) {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
+                    system_instruction: { parts: [{ text: "Sei un copywriter e assistente tecnico. Rispondi SEMPRE E SOLO con il contenuto richiesto. È SEVERAMENTE VIETATO usare convenevoli, saluti, conferme o frasi introduttive come 'Certamente', 'Ecco a te', 'Ecco l'articolo'. Inizia direttamente con l'output richiesto (es. i tag HTML o il JSON)." }] },
                     contents: [{ parts: [{ text: prompt }] }],
                     generationConfig: { temperature: 0.7, maxOutputTokens: 2000 }
                 })
