@@ -6,8 +6,7 @@ async function callAI(prompt) {
     const apiKey = window.ENV_GEMINI_API_KEY || '';
     if (!apiKey) throw new Error("GEMINI_API_KEY mancante o non valida.");
     
-    // 1. Trova dinamicamente il modello disponibile per QUESTA specifica chiave
-    let targetModel = 'gemini-1.5-flash';
+    let validModelsList = [];
     try {
         const modelsRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
         const modelsData = await modelsRes.json();
@@ -17,56 +16,79 @@ async function callAI(prompt) {
         }
         
         if (modelsData.models) {
-            const validModels = modelsData.models.filter(m => 
+            validModelsList = modelsData.models.filter(m => 
                 m.supportedGenerationMethods && 
                 m.supportedGenerationMethods.includes('generateContent') && 
                 m.name.includes('gemini') && 
                 m.name !== 'models/gemini-pro'
             );
-            
-            if (validModels.length === 0) {
-                throw new Error("La tua chiave API non ha accesso a nessun modello Gemini. Verifica su Google AI Studio.");
-            }
-            
-            // Preferiamo 1.5 flash, poi pro, altrimenti prendiamo il primo disponibile
-            const bestModel = validModels.find(m => m.name.includes('gemini-1.5-flash')) || 
-                              validModels.find(m => m.name.includes('gemini-1.5-pro')) || 
-                              validModels[0];
-                              
-            targetModel = bestModel.name.replace('models/', '');
-            console.log("Modello autoselezionato dall'API:", targetModel);
         }
     } catch (err) {
         if (err.message.includes('permessi') || err.message.includes('nessun modello')) {
-            throw err; // Rilancia errori critici (es. chiave disabilitata)
+            throw err; // Rilancia errori critici
         }
         console.warn("Impossibile caricare lista modelli, uso default.", err);
     }
     
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${targetModel}:generateContent?key=${apiKey}`;
+    if (validModelsList.length === 0) {
+        validModelsList = [{ name: 'models/gemini-1.5-flash' }];
+    }
     
-    const res = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.7, maxOutputTokens: 2000 }
-        })
+    // Ordina per preferenza: vogliamo modelli stabili prima, poi quelli più recenti/sperimentali
+    const prefs = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro', 'gemini-2.5-pro', 'gemini-2.5-flash'];
+    validModelsList.sort((a, b) => {
+        let idxA = prefs.findIndex(p => a.name.includes(p));
+        let idxB = prefs.findIndex(p => b.name.includes(p));
+        if (idxA === -1) idxA = 99;
+        if (idxB === -1) idxB = 99;
+        return idxA - idxB;
     });
-    
-    const data = await res.json();
-    
-    if (data.error) {
-        console.error("Errore API Gemini:", data.error);
-        throw new Error(`Errore Google AI (${targetModel}): ${data.error.message}`);
-    }
 
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) {
-        console.error("Risposta API inattesa:", data);
-        throw new Error("L'IA non ha restituito testo. Riprova tra un istante.");
+    let lastError = null;
+
+    for (const modelObj of validModelsList) {
+        const targetModel = modelObj.name.replace('models/', '');
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${targetModel}:generateContent?key=${apiKey}`;
+        
+        try {
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: prompt }] }],
+                    generationConfig: { temperature: 0.7, maxOutputTokens: 2000 }
+                })
+            });
+            
+            const data = await res.json();
+            
+            if (data.error) {
+                lastError = new Error(`Errore Google AI (${targetModel}): ${data.error.message}`);
+                // Se è sovraccarico, passiamo al prossimo modello
+                if (data.error.message.toLowerCase().includes('high demand') || data.error.code === 503) {
+                    console.warn(`[WARN] ${targetModel} in high demand. Provo un altro modello...`);
+                    continue; 
+                }
+                throw lastError; // Se è un altro errore, fermati
+            }
+
+            const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (!text) {
+                lastError = new Error("L'IA non ha restituito testo.");
+                continue;
+            }
+            return text; // Trovato modello funzionante, ritorna il testo
+            
+        } catch (e) {
+            lastError = e;
+            if (e.message.toLowerCase().includes('high demand')) {
+                continue;
+            }
+            throw e;
+        }
     }
-    return text;
+    
+    throw lastError || new Error("Nessun modello Gemini disponibile al momento. Riprova più tardi.");
 }
 
 async function generateDeepArticle() {
