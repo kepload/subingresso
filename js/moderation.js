@@ -33,14 +33,14 @@ window.moderaAnnuncio = async function (dati) {
     }
     
     // 2. Trova dinamicamente il modello
-    let targetModel = 'gemini-1.5-flash';
+    let targetModel = 'gemini-1.5-flash-8b';
     try {
         const modelsRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${GEMINI_API_KEY}`);
         const modelsData = await modelsRes.json();
         if (modelsData.models) {
             const valid = modelsData.models.filter(m => m.supportedGenerationMethods?.includes('generateContent') && m.name.includes('gemini'));
             if (valid.length > 0) {
-                const best = valid.find(m => m.name.includes('gemini-1.5-flash')) || valid[0];
+                const best = valid.find(m => m.name.includes('gemini-1.5-flash-8b')) || valid.find(m => m.name.includes('gemini-1.5-flash')) || valid[0];
                 targetModel = best.name.replace('models/', '');
             }
         }

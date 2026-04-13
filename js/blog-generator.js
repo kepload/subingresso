@@ -31,11 +31,11 @@ async function callAI(prompt) {
     }
     
     if (validModelsList.length === 0) {
-        validModelsList = [{ name: 'models/gemini-1.5-flash' }];
+        validModelsList = [{ name: 'models/gemini-1.5-flash-8b' }];
     }
     
-    // Ordina per preferenza: vogliamo modelli stabili prima, poi quelli più recenti/sperimentali
-    const prefs = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro', 'gemini-2.5-pro', 'gemini-2.5-flash'];
+    // Ordina per preferenza: prima i modelli più leggeri/veloci e meno soggetti a limiti
+    const prefs = ['gemini-1.5-flash-8b', 'gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro', 'gemini-2.5-pro', 'gemini-2.5-flash'];
     validModelsList.sort((a, b) => {
         let idxA = prefs.findIndex(p => a.name.includes(p));
         let idxB = prefs.findIndex(p => b.name.includes(p));
