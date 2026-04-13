@@ -32,21 +32,15 @@ async function callAI(prompt) {
     
     if (validModelsList.length === 0) {
         validModelsList = [
+            { name: 'models/gemini-2.5-flash' },
+            { name: 'models/gemini-2.0-flash' },
             { name: 'models/gemini-1.5-flash' },
-            { name: 'models/gemini-2.0-flash' }
+            { name: 'models/gemini-pro' }
         ];
-    } else {
-        // Forza l'inserimento del modello gratuito e veloce nel caso l'API non lo elenchi
-        const ensureModels = ['models/gemini-1.5-flash'];
-        ensureModels.forEach(m => {
-            if (!validModelsList.find(v => v.name === m)) {
-                validModelsList.push({ name: m, supportedGenerationMethods: ['generateContent'] });
-            }
-        });
     }
     
-    // Ordina per preferenza: prima i modelli più leggeri/veloci e meno soggetti a limiti
-    const prefs = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro', 'gemini-2.5-pro', 'gemini-2.5-flash'];
+    // Ordina per preferenza
+    const prefs = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-2.5-pro'];
     validModelsList.sort((a, b) => {
         let idxA = prefs.findIndex(p => a.name.includes(p));
         let idxB = prefs.findIndex(p => b.name.includes(p));
