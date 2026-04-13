@@ -6,7 +6,44 @@ async function callAI(prompt) {
     const apiKey = window.ENV_GEMINI_API_KEY || '';
     if (!apiKey) throw new Error("GEMINI_API_KEY mancante o non valida.");
     
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+    // 1. Trova dinamicamente il modello disponibile per QUESTA specifica chiave
+    let targetModel = 'gemini-1.5-flash';
+    try {
+        const modelsRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+        const modelsData = await modelsRes.json();
+        
+        if (modelsData.error) {
+             throw new Error(`Errore permessi API Key: ${modelsData.error.message}`);
+        }
+        
+        if (modelsData.models) {
+            const validModels = modelsData.models.filter(m => 
+                m.supportedGenerationMethods && 
+                m.supportedGenerationMethods.includes('generateContent') && 
+                m.name.includes('gemini') && 
+                m.name !== 'models/gemini-pro'
+            );
+            
+            if (validModels.length === 0) {
+                throw new Error("La tua chiave API non ha accesso a nessun modello Gemini. Verifica su Google AI Studio.");
+            }
+            
+            // Preferiamo 1.5 flash, poi pro, altrimenti prendiamo il primo disponibile
+            const bestModel = validModels.find(m => m.name.includes('gemini-1.5-flash')) || 
+                              validModels.find(m => m.name.includes('gemini-1.5-pro')) || 
+                              validModels[0];
+                              
+            targetModel = bestModel.name.replace('models/', '');
+            console.log("Modello autoselezionato dall'API:", targetModel);
+        }
+    } catch (err) {
+        if (err.message.includes('permessi') || err.message.includes('nessun modello')) {
+            throw err; // Rilancia errori critici (es. chiave disabilitata)
+        }
+        console.warn("Impossibile caricare lista modelli, uso default.", err);
+    }
+    
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${targetModel}:generateContent?key=${apiKey}`;
     
     const res = await fetch(url, {
         method: 'POST',
@@ -21,7 +58,7 @@ async function callAI(prompt) {
     
     if (data.error) {
         console.error("Errore API Gemini:", data.error);
-        throw new Error(`Errore Google AI: ${data.error.message}`);
+        throw new Error(`Errore Google AI (${targetModel}): ${data.error.message}`);
     }
 
     const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
