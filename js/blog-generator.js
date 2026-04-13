@@ -124,19 +124,22 @@ async function generateDeepArticle() {
     const contentPart1 = await callAI(`Scrivi l'Introduzione e le prime due Sezioni della scaletta: ${outline}.
     Usa HTML (h2, p, strong).
     IMPORTANTE: Scrivi "come se parlassi a un amico al bar", con tono diretto, schietto e molto semplice. Usa un linguaggio facilissimo da capire. Rivolgiti a venditori ambulanti.
-    ATTENZIONE: Sviluppa paragrafi lunghi e discorsivi, niente liste infinite di puntini, niente blocchetti da 10 righe.`);
+    ATTENZIONE: Sviluppa paragrafi lunghi e discorsivi, niente liste infinite di puntini, niente blocchetti da 10 righe.
+    DIVIETO ASSOLUTO: Non inserire mai preamboli, saluti o conferme (es. "Certo, ecco l'articolo", "Ecco a te la prima parte"). Inizia SUBITO a scrivere il contenuto HTML e basta.`);
 
     // 5. PARTE 2 (COSTI, TEMPI E TABELLA)
     console.log("5/7 - Scrittura Seconda Parte...");
     const contentPart2 = await callAI(`Completa l'articolo: "${topic}" sviluppando l'ultima Sezione (Costi/Tempi/Soluzione Finale) dalla scaletta: ${outline}.
     Includi una tabella HTML di esempio molto pratica.
     IMPORTANTE: Alla fine del testo, fai capire al lettore che se vuole comprare o vendere posteggi/licenze/furgoni, il posto migliore e più sicuro è inserire un annuncio o cercare su "Subingresso.it".
-    Usa HTML. Linguaggio facile, schietto e diretto.`);
+    Usa HTML. Linguaggio facile, schietto e diretto.
+    DIVIETO ASSOLUTO: Non inserire MAI testi del tipo "Ecco la seconda parte", "Certamente, continuo l'articolo". Inizia direttamente con i tag HTML della nuova sezione.`);
 
     // 6. FAQ SECCHE
     console.log("6/7 - FAQ...");
     const faq = await callAI(`Per l'articolo "${topic}", scrivi 3 Domande e Risposte Frequenti.
-    Usa HTML (h3, p). Fai domande secche ("E se il comune mi blocca?", "Posso vendere solo il furgone?") e risposte direttissime, senza giri di parole.`);
+    Usa HTML (h3, p). Fai domande secche ("E se il comune mi blocca?", "Posso vendere solo il furgone?") e risposte direttissime, senza giri di parole.
+    DIVIETO ASSOLUTO: Non inserire convenevoli o introduzioni (es. "Ecco le FAQ richieste"). Inizia subito con il tag <h3> della prima domanda.`);
 
     // 7. SEO E ASSEMBLAGGIO
     console.log("7/7 - Rifinitura SEO...");

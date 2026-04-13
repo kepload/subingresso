@@ -65,19 +65,22 @@ async function run() {
     const part1 = await callAI(`Scrivi l'Introduzione e la Prima Sezione della scaletta: ${outline}. 
     Usa HTML (h2, p, strong). Non concludere l'articolo.
     IMPORTANTE: Scrivi in modo MOLTO SEMPLICE, schietto e diretto. Il tuo pubblico sono venditori ambulanti (spesso anziani o stranieri). Niente burocratese.
-    ATTENZIONE: Sviluppa paragrafi lunghi e fluidi. Niente liste della spesa, niente testo frammentato.`);
+    ATTENZIONE: Sviluppa paragrafi lunghi e fluidi. Niente liste della spesa, niente testo frammentato.
+    DIVIETO ASSOLUTO: Non inserire mai preamboli o saluti iniziali (es. "Certo, ecco l'articolo"). Inizia SUBITO con l'HTML.`);
 
     // STEP 5: Scrittura Parte 2 (Costi e Trucchi)
     console.log("Step 5: Scrittura Parte 2...");
     const part2 = await callAI(`Continua l'articolo dopo questo testo: [${part1.slice(-200)}]. 
     Scrivi le ultime due Sezioni (Soluzioni/Trucchi e Costi/Tempi) della scaletta: ${outline}. 
     Includi una tabella HTML molto pratica (es. stima costi, documenti necessari).
-    IMPORTANTE: Mantieni un linguaggio FACILISSIMO e schietto. Fai esempi da mercato. Paragrafi corposi, evita i micro-paragrafi.`);
+    IMPORTANTE: Mantieni un linguaggio FACILISSIMO e schietto. Fai esempi da mercato. Paragrafi corposi, evita i micro-paragrafi.
+    DIVIETO ASSOLUTO: Non inserire convenevoli. Inizia direttamente con i nuovi tag HTML.`);
 
     // STEP 6: FAQ
     console.log("Step 6: FAQ...");
     const part3 = await callAI(`Per l'articolo "${planObj.topic}", scrivi una sezione conclusiva "FAQ Rapide" con 3 domande e risposte.
-    Usa HTML (h3, p). Fai domande secche che un ambulante ti farebbe al bar ("Ma il comune può bloccarmi?") e rispondi in 2 righe in modo chiarissimo.`);
+    Usa HTML (h3, p). Fai domande secche che un ambulante ti farebbe al bar ("Ma il comune può bloccarmi?") e rispondi in 2 righe in modo chiarissimo.
+    DIVIETO ASSOLUTO: Non inserire frasi introduttive. Inizia subito con <h3>.`);
 
     // STEP 7: Internal Linking & Conversion
     console.log("Step 7: Conversion & Link...");
