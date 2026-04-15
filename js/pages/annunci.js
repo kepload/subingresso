@@ -161,12 +161,28 @@ if (sBar) sBar.addEventListener('input', applyFilters);
 // ── Load listings from Supabase (real data) ──────────────
 async function loadListings() {
     try {
-        const { data, error } = await _supabase
+        const user = await getCurrentUser();
+        
+        // Costruiamo la query base: tutti gli annunci attivi non scaduti
+        let query = _supabase
             .from('annunci')
             .select('*')
-            .eq('status', 'active')
             .or(`expires_at.gt.${new Date().toISOString()},expires_at.is.null`)
             .order('created_at', { ascending: false });
+
+        // Se l'utente è loggato, può vedere i propri annunci (qualsiasi status) 
+        // ALTRIMENTI vede solo quelli active.
+        // Nota: La RLS del DB garantisce già che l'utente non possa vedere i pending degli altri.
+        // Ma per pulizia lato client, se non siamo admin o proprietari, filtriamo gli active.
+        if (user) {
+            // Se loggato, la RLS ci permette di tirare giù i nostri pending + tutti gli active.
+            // Usiamo una condizione OR logica per lo status: (status = active OR user_id = mio_id)
+            query = query.or(`status.eq.active,user_id.eq.${user.id}`);
+        } else {
+            query = query.eq('status', 'active');
+        }
+
+        const { data, error } = await query;
 
         if (!error && data && data.length > 0) {
             LISTINGS.length = 0;

@@ -155,6 +155,7 @@ function buildCard(l, isSmall = false, distance = null) {
             
             <div class="absolute top-4 left-4 flex flex-wrap gap-2">
                 <span class="bg-white/90 backdrop-blur text-slate-900 text-[10px] font-black px-3 py-1.5 rounded-xl uppercase tracking-widest shadow-sm">${escapeHTML(l.stato)}</span>
+                ${l.status && l.status !== 'active' ? `<span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1.5 rounded-xl uppercase tracking-widest shadow-sm">In Revisione</span>` : ''}
                 ${distTag}
             </div>
         </div>

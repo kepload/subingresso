@@ -413,6 +413,11 @@ async function submitAnnuncio() {
 
         if (error) throw error;
 
+        // IA Review in background
+        if (inserted && inserted.id) {
+            runIAReview(inserted.id, form);
+        }
+
         localStorage.setItem('last_post_time', Date.now());
 
         // Reset and success state
