@@ -15,6 +15,7 @@ const UI = {
         <nav class="hidden lg:flex gap-10 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
             <a href="index.html"   class="nav-link-home hover:text-slate-900 transition">Home</a>
             <a href="annunci.html" class="nav-link-annunci hover:text-slate-900 transition">Annunci</a>
+            <a href="blog.html"    class="nav-link-blog hover:text-slate-900 transition">Blog</a>
             <a href="index.html#borsino" class="hover:text-slate-900 transition">Prezzi</a>
             <a href="index.html#come-funziona" class="hover:text-slate-900 transition">Come funziona</a>
         </nav>
@@ -83,6 +84,8 @@ function initUI() {
             headerEl.querySelector('.nav-link-home')?.classList.add('text-blue-600');
         } else if (page.includes('annunci.html')) {
             headerEl.querySelector('.nav-link-annunci')?.classList.add('text-blue-600');
+        } else if (page.includes('blog.html')) {
+            headerEl.querySelector('.nav-link-blog')?.classList.add('text-blue-600');
         }
     }
 
