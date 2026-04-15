@@ -36,15 +36,15 @@
             <i class="fas fa-arrow-left text-xs"></i>
             <span class="text-xs font-bold uppercase tracking-widest">Torna alla home</span>
         </a>
-        <span class="text-xs font-black text-blue-600 uppercase tracking-widest">Strumento Gratuito</span>
+        <span class="text-xs font-black text-blue-600 uppercase tracking-widest">Strumento Professionale</span>
     </div>
 </header>
 
-<main class="max-w-2xl mx-auto px-6 py-12 flex-grow w-full">
+<main class="max-w-2xl mx-auto px-6 py-12 flex-grow w-full text-left">
     
     <div class="text-center mb-12">
         <h1 class="text-3xl font-black tracking-tight mb-3 text-slate-900">Quanto vale il tuo posteggio?</h1>
-        <p class="text-slate-500 font-medium text-sm">Calcola la stima commerciale del tuo banco in meno di un minuto.</p>
+        <p class="text-slate-500 font-medium text-sm">Calcola la stima commerciale del tuo banco basata sui prezzi medi 2026.</p>
     </div>
 
     <!-- Progress Bar -->
@@ -57,10 +57,10 @@
         <!-- STEP 1: Fatturato Annuo -->
         <div class="step-card active" data-step="1">
             <h2 class="text-xl font-black mb-6">1. Qual è il fatturato medio annuo?</h2>
-            <p class="text-sm text-slate-400 mb-6 font-medium leading-relaxed">Indica il volume d'affari complessivo generato dal posteggio nell'ultimo anno.</p>
+            <p class="text-sm text-slate-400 mb-6 font-medium leading-relaxed">Indica il volume d'affari complessivo (al netto dell'IVA) generato dal posteggio.</p>
             <div class="relative">
                 <span class="absolute left-5 top-1/2 -translate-y-1/2 font-black text-slate-400 text-xl">€</span>
-                <input type="number" id="fatturato" placeholder="Es: 45000" 
+                <input type="number" id="fatturato" placeholder="Es: 60000" 
                        class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-5 pl-12 pr-6 text-2xl font-black outline-none focus:border-blue-600 transition">
             </div>
             <button onclick="nextStep(1)" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
@@ -68,135 +68,125 @@
 
         <!-- STEP 2: Frequenza Mercato -->
         <div class="step-card" data-step="2">
-            <h2 class="text-xl font-black mb-6">2. Tipologia / Frequenza del Mercato?</h2>
+            <h2 class="text-xl font-black mb-6">2. Tipologia del Mercato</h2>
             <div class="grid grid-cols-1 gap-4">
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 1.0, this)">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-day"></i></div>
-                    <div>
-                        <p class="font-bold text-slate-900">Mercato Giornaliero</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Presenza fissa ogni giorno.</p>
-                    </div>
-                </div>
-                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 0.3, this)">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-week"></i></div>
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-week"></i></div>
                     <div>
                         <p class="font-bold text-slate-900">Mercato Settimanale / Fiera</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Presenza limitata a pochi giorni a settimana.</p>
+                        <p class="text-xs text-slate-400 font-medium">L'opzione più diffusa in Italia.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 2.2, this)">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-day"></i></div>
+                    <div>
+                        <p class="font-bold text-slate-900">Mercato Giornaliero / Fisso</p>
+                        <p class="text-xs text-slate-400 font-medium">Presenza costante (fino a 6 giorni su 7).</p>
                     </div>
                 </div>
             </div>
             <button onclick="nextStep(2)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
-        <!-- STEP 3: Zona Geografica -->
+        <!-- STEP 3: Tipologia Piazza (LOCATION FOCUS) -->
         <div class="step-card" data-step="3">
-            <h2 class="text-xl font-black mb-6">3. Dove si trova il posteggio?</h2>
-            <div class="grid grid-cols-1 gap-4 text-left">
-                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 1.2, this)">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><i class="fas fa-city"></i></div>
+            <h2 class="text-xl font-black mb-6">3. In che tipo di piazza si trova?</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 2.5, this)">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center"><i class="fas fa-crown"></i></div>
                     <div>
-                        <p class="font-bold text-slate-900">Città / Area Nord</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Centri ad alto traffico o regioni del Nord Italia.</p>
+                        <p class="font-bold text-slate-900">Piazza Storica / Alta Affluenza Turistica</p>
+                        <p class="text-xs text-slate-400 font-medium">Grandi città d'arte o mercati storici rinomati.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 1.5, this)">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-city"></i></div>
+                    <div>
+                        <p class="font-bold text-slate-900">Città Capoluogo / Centro Urbano</p>
+                        <p class="text-xs text-slate-400 font-medium">Zona centrale di città medie o grandi.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 1.0, this)">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-store-alt"></i></div>
                     <div>
-                        <p class="font-bold text-slate-900">Provincia / Centro Italia</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Zone provinciali o regioni del Centro Italia.</p>
-                    </div>
-                </div>
-                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 0.8, this)">
-                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center"><i class="fas fa-tree"></i></div>
-                    <div>
-                        <p class="font-bold text-slate-900">Periferia / Sud Italia</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Piccoli comuni o regioni del Sud Italia.</p>
+                        <p class="font-bold text-slate-900">Mercato Rionale / Periferico</p>
+                        <p class="text-xs text-slate-400 font-medium">Mercati di quartiere o piccoli comuni di provincia.</p>
                     </div>
                 </div>
             </div>
             <button onclick="nextStep(3)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
-        <!-- STEP 4: Metri Quadri -->
+        <!-- STEP 4: Metri Quadri (REDUCED IMPACT) -->
         <div class="step-card" data-step="4">
-            <h2 class="text-xl font-black mb-6">4. Qual è la dimensione del banco?</h2>
-            <div class="grid grid-cols-1 gap-4 text-left">
-                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('mq', 0.9, this)">
+            <h2 class="text-xl font-black mb-6">4. Dimensione del Posteggio</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('mq', 1.0, this)">
+                    <div class="w-12 h-12 bg-slate-50 text-slate-400 rounded-xl flex items-center justify-center"><i class="fas fa-th-large"></i></div>
+                    <div>
+                        <p class="font-bold text-slate-900">Standard / Grande (Oltre 10mq)</p>
+                        <p class="text-xs text-slate-400 font-medium">Posteggio di dimensioni regolari.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('mq', 0.85, this)">
                     <div class="w-12 h-12 bg-slate-50 text-slate-400 rounded-xl flex items-center justify-center"><i class="fas fa-th"></i></div>
                     <div>
-                        <p class="font-bold text-slate-900">Fino a 10mq (Piccolo)</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Posteggio di dimensioni ridotte.</p>
-                    </div>
-                </div>
-                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('mq', 1.0, this)">
-                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-th-large"></i></div>
-                    <div>
-                        <p class="font-bold text-slate-900">Da 10 a 20mq (Medio)</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Dimensione standard per la categoria.</p>
-                    </div>
-                </div>
-                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('mq', 1.15, this)">
-                    <div class="w-12 h-12 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center"><i class="fas fa-layer-group"></i></div>
-                    <div>
-                        <p class="font-bold text-slate-900">Oltre 20mq (Grande)</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Posteggio ampio o con testate esterne.</p>
+                        <p class="font-bold text-slate-900">Ridotto (Sotto 10mq)</p>
+                        <p class="text-xs text-slate-400 font-medium">Dimensioni piccole che limitano l'esposizione.</p>
                     </div>
                 </div>
             </div>
-            <button onclick="calculate()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition">Vedi Stima</button>
+            <button onclick="calculate()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition">Vedi Valutazione Finale</button>
         </div>
 
         <!-- STEP 5: Risultato -->
         <div class="step-card text-center" data-step="5">
             <div class="w-16 h-16 bg-blue-600 text-white rounded-[20px] flex items-center justify-center mx-auto mb-6 text-xl shadow-lg shadow-blue-100">
-                <i class="fas fa-chart-line"></i>
+                <i class="fas fa-coins"></i>
             </div>
-            <h2 class="text-2xl font-black mb-8 leading-tight">Valore Stimato della Licenza</h2>
+            <h2 class="text-2xl font-black mb-8 leading-tight text-slate-900">Il Valore della tua Licenza</h2>
             
             <div class="result-box border-2 border-blue-100 p-8 rounded-[40px] text-center mb-10 bg-white">
-                <p class="text-slate-400 text-xs font-black uppercase tracking-widest mb-2">Valore commerciale stimato</p>
+                <p class="text-slate-400 text-xs font-black uppercase tracking-widest mb-2">Valore di mercato stimato</p>
                 <p id="finalPrice" class="text-5xl font-black text-slate-900 leading-none mb-4">€ --</p>
-                <p class="text-emerald-600 text-sm font-bold bg-emerald-50 py-2 px-4 rounded-full inline-block">Prezzo consigliato di cessione</p>
+                <p class="text-emerald-600 text-sm font-bold bg-emerald-50 py-2 px-4 rounded-full inline-block">Potenziale di realizzo immediato</p>
             </div>
             
             <div class="bg-blue-50 rounded-2xl p-6 text-left mb-10 border border-blue-100">
-                <p class="text-[11px] text-blue-700 font-bold leading-relaxed text-center">
-                    <i class="fas fa-info-circle mr-1"></i>
-                    <strong>NOTA:</strong> Questa è una stima automatica basata sui dati di mercato 2026. Per una valutazione definitiva, consulta un esperto o carica un annuncio.
+                <p class="text-[11px] text-blue-700 font-bold leading-relaxed text-center italic">
+                    <i class="fas fa-exclamation-triangle mr-1"></i>
+                    Questa valutazione tiene conto del valore della licenza e dell'avviamento commerciale. Il prezzo può variare in base alla merce trattata.
                 </p>
             </div>
 
             <div class="space-y-4">
                 <a href="vendi.html" class="block w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-lg">
-                    Vendi ora il tuo posteggio
+                    Pubblica ora su Subingresso.it
                 </a>
-                <button onclick="location.reload()" class="block w-full text-sm font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest">Nuova Valutazione</button>
+                <button onclick="location.reload()" class="block w-full text-sm font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest">Ricalcola stima</button>
             </div>
         </div>
 
     </div>
 
     <!-- Guida SEO sotto il calcolatore -->
-    <div class="mt-20 prose prose-slate max-w-none">
-        <h2 class="text-2xl font-black text-slate-900 mb-6 text-center">Come viene calcolato il prezzo?</h2>
-        <p class="text-slate-500 text-sm text-center font-medium leading-relaxed max-w-lg mx-auto mb-8">
-            Il nostro algoritmo analizza il fatturato e lo corregge in base a parametri di redditività e stabilità geografica, fornendo un valore di mercato coerente.
-        </p>
+    <div class="mt-20 prose prose-slate max-w-none text-left">
+        <h2 class="text-2xl font-black text-slate-900 mb-6 text-center">Come calcoliamo il prezzo del posteggio?</h2>
         <div class="grid md:grid-cols-2 gap-8 text-sm">
             <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                <h4 class="font-black mb-2 text-blue-600">Redditività Commerciale</h4>
-                <p class="text-slate-500 font-medium text-left">Il fatturato annuo è la base del valore. Un posteggio che genera reddito costante è un investimento sicuro per chi acquista.</p>
+                <h4 class="font-black mb-2 text-blue-600">Location over Quantity</h4>
+                <p class="text-slate-500 font-medium">Il mercato ambulante si basa sul passaggio. Una piazza storica in un centro turistico può valere fino a 3 volte di più rispetto a un mercato rionale di periferia, indipendentemente dalla metratura.</p>
             </div>
             <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                <h4 class="font-black mb-2 text-violet-600">Posizione & Spazio</h4>
-                <p class="text-slate-500 font-medium text-left">La zona geografica e la dimensione del banco definiscono il potenziale di crescita e l'affluenza di clientela stimata.</p>
+                <h4 class="font-black mb-2 text-violet-600">Avviamento e Redditività</h4>
+                <p class="text-slate-500 font-medium">Moltiplichiamo il fatturato medio annuo per un coefficiente di stabilità commerciale, premiando le attività con incassi consolidati e piazze ad alta frequentazione.</p>
             </div>
         </div>
     </div>
 </main>
 
 <footer class="py-12 border-t border-slate-100 text-center">
-    <p class="text-xs text-slate-300 font-black uppercase tracking-[.2em]">Subingresso.it — Algoritmo Valutativo 2026</p>
+    <p class="text-xs text-slate-300 font-black uppercase tracking-[.2em]">Subingresso.it — Market Intelligence Specialist</p>
 </footer>
 
 <script>
@@ -220,7 +210,7 @@
         if (step === 1) {
             const fat = document.getElementById('fatturato').value;
             if (!fat || fat <= 0) {
-                alert('Inserisci un fatturato valido per continuare.');
+                alert('Inserisci il fatturato annuo per continuare.');
                 return;
             }
             factors.fatturato = parseFloat(fat);
@@ -235,12 +225,16 @@
     }
 
     function calculate() {
-        // FORMULA CONCORDATA: (Fatturato * 0.20) * Frequenza * Zona * Mq
-        const base = factors.fatturato * 0.20;
+        // FORMULA POTENZIATA
+        // Base: 25% del fatturato (aumentato dal 20%)
+        const base = factors.fatturato * 0.25;
+        
+        // La zona (piazza) ora pesa moltissimo (fino a x2.5)
+        // La frequenza pesa per chi lavora tutti i giorni (x2.2)
         const total = base * factors.frequenza * factors.zona * factors.mq;
         
-        // Arrotondamento ai 500 euro per professionalità
-        const final = Math.round(total / 500) * 500;
+        // Arrotondamento ai 1.000 euro per cifre più importanti
+        const final = Math.round(total / 1000) * 1000;
 
         document.getElementById('finalPrice').textContent = `€ ${final.toLocaleString('it-IT')}`;
         
