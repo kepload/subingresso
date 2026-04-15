@@ -49,7 +49,7 @@
 
     <!-- Progress Bar -->
     <div class="w-full bg-slate-200 h-1.5 rounded-full mb-10 overflow-hidden">
-        <div id="progressBar" class="bg-blue-600 h-full w-[20%] transition-all duration-500"></div>
+        <div id="progressBar" class="bg-blue-600 h-full w-[15%] transition-all duration-500"></div>
     </div>
 
     <div id="calculatorForm" class="bg-white rounded-[32px] border border-slate-100 p-8 shadow-xl shadow-slate-200/50">
@@ -95,7 +95,7 @@
             <button onclick="nextStep(2)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
-        <!-- STEP 2.5: Durata Fiera (ONLY FOR FIERA) -->
+        <!-- STEP 2.5: Durata Fiera -->
         <div class="step-card" data-step="2.5">
             <h2 class="text-xl font-black mb-6">Quanti giorni dura la fiera?</h2>
             <p class="text-sm text-slate-400 mb-6 font-medium leading-relaxed">La durata dell'evento influenza pesantemente il valore della concessione.</p>
@@ -154,6 +154,28 @@
             <button onclick="nextStep(3)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
+        <!-- STEP 3.5: Settore (NEW) -->
+        <div class="step-card" data-step="3.5">
+            <h2 class="text-xl font-black mb-6">In quale settore operi?</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('settore', 1.35, this)">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center"><i class="fas fa-utensils"></i></div>
+                    <div>
+                        <p class="font-bold text-slate-900">Alimentare / Somministrazione</p>
+                        <p class="text-xs text-slate-400 font-medium">Gastronomia, Ortofrutta, Panineria, ecc.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('settore', 1.0, this)">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-tshirt"></i></div>
+                    <div>
+                        <p class="font-bold text-slate-900">Non Alimentare</p>
+                        <p class="text-xs text-slate-400 font-medium">Abbigliamento, Casalinghi, Fiori, ecc.</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="nextStep(3.5)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
+        </div>
+
         <!-- STEP 4: Metri Quadri -->
         <div class="step-card" data-step="4">
             <h2 class="text-xl font-black mb-6">4. Dimensione del Posteggio</h2>
@@ -192,7 +214,7 @@
             <div class="bg-blue-50 rounded-2xl p-6 text-left mb-10 border border-blue-100">
                 <p class="text-[11px] text-blue-700 font-bold leading-relaxed text-center italic">
                     <i class="fas fa-exclamation-triangle mr-1"></i>
-                    Valutazione basata su dati di mercato 2026. Per fiere e mercati storici la domanda è attualmente altissima.
+                    Valutazione basata su dati di mercato 2026. La componente alimentare e la piazza storica sono i fattori di valore primari.
                 </p>
             </div>
 
@@ -208,22 +230,22 @@
 
     <!-- Guida SEO -->
     <div class="mt-20 prose prose-slate max-w-none text-left">
-        <h2 class="text-2xl font-black text-slate-900 mb-6 text-center">Calcolo differenziato per Fiere</h2>
+        <h2 class="text-2xl font-black text-slate-900 mb-6 text-center">Settore Alimentare: Perché vale di più?</h2>
         <div class="grid md:grid-cols-2 gap-8 text-sm">
             <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                <h4 class="font-black mb-2 text-purple-600">Perché separare le Fiere?</h4>
-                <p class="text-slate-500 font-medium">Una fiera di 3 giorni può generare la redditività di mesi di mercato ordinario. Il valore della licenza riflette questa "densità" di incasso e l'esclusività dell'evento.</p>
+                <h4 class="font-black mb-2 text-orange-600">Licenze Alimentari</h4>
+                <p class="text-slate-500 font-medium">Richiedono requisiti professionali (REC/SAB) e offrono stabilità negli incassi. Le concessioni per somministrazione hanno storicamente una domanda molto più alta sul mercato.</p>
             </div>
             <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                <h4 class="font-black mb-2 text-blue-600">Mercati e Piazze</h4>
-                <p class="text-slate-500 font-medium">La location rimane il fattore numero uno. Più la piazza è ambita e storica, più alto sarà il moltiplicatore applicato al fatturato.</p>
+                <h4 class="font-black mb-2 text-blue-600">Location e Avviamento</h4>
+                <p class="text-slate-500 font-medium">Il nostro algoritmo incrocia la piazza con il settore merceologico per darti una stima fedele ai prezzi reali richiesti oggi dagli ambulanti.</p>
             </div>
         </div>
     </div>
 </main>
 
 <footer class="py-12 border-t border-slate-100 text-center">
-    <p class="text-xs text-slate-300 font-black uppercase tracking-[.2em]">Subingresso.it — Specialist Data Analysis</p>
+    <p class="text-xs text-slate-300 font-black uppercase tracking-[.2em]">Subingresso.it — Professional Valuation Engine</p>
 </footer>
 
 <script>
@@ -234,6 +256,7 @@
         frequenza: 1,
         durataFiera: 1,
         zona: 1,
+        settore: 1,
         mq: 1
     };
 
@@ -266,6 +289,10 @@
             }
         } else if (currentStep == 2.5) {
             currentStep = 3;
+        } else if (currentStep == 3) {
+            currentStep = 3.5;
+        } else if (currentStep == 3.5) {
+            currentStep = 4;
         } else {
             currentStep = Math.floor(currentStep + 1);
         }
@@ -273,42 +300,43 @@
         const nextCard = document.querySelector(`[data-step="${currentStep}"]`);
         nextCard.classList.add('active');
         
-        // Update progress bar (mappando gli step reali)
+        // Update progress bar
         let progressPercent = 0;
-        if (currentStep == 1) progressPercent = 20;
-        if (currentStep == 2) progressPercent = 40;
-        if (currentStep == 2.5) progressPercent = 50;
-        if (currentStep == 3) progressPercent = 65;
+        if (currentStep == 1) progressPercent = 15;
+        if (currentStep == 2) progressPercent = 30;
+        if (currentStep == 2.5) progressPercent = 40;
+        if (currentStep == 3) progressPercent = 55;
+        if (currentStep == 3.5) progressPercent = 70;
         if (currentStep == 4) progressPercent = 85;
         if (currentStep == 5) progressPercent = 100;
         document.getElementById('progressBar').style.width = `${progressPercent}%`;
     }
 
     function calculate() {
-        // BASE POTENZIATA: 40% del fatturato (riflette meglio l'avviamento commerciale)
+        // BASE POTENZIATA: 40% del fatturato
         let base = factors.fatturato * 0.40;
         
         let multiplierFrequenza = factors.frequenza;
         
-        // Se è un mercato settimanale, alziamo il peso base (da 1.0 a 1.4)
+        // Mercato settimanale potenziato (da 1.0 a 1.4)
         if (factors.frequenza === 1.0) {
             multiplierFrequenza = 1.4;
         }
         
-        // Se è una fiera, usiamo un moltiplicatore ancora più alto basato sulla durata
+        // Fiera potenziata
         if (factors.frequenza === 'fiera') {
             multiplierFrequenza = 2.2 * factors.durataFiera;
         }
 
-        // Calcolo Totale
-        let total = base * multiplierFrequenza * factors.zona * factors.mq;
+        // Calcolo Finale con Bonus Settore (+35% per Alimentare)
+        let total = base * multiplierFrequenza * factors.zona * factors.settore * factors.mq;
         
-        // Protezione Valore Minimo (Nessuna licenza seria vale meno di 5000€ se ha fatturato)
+        // Protezione Valore Minimo
         if (factors.fatturato > 0 && total < 5000) {
             total = 5000 + (factors.fatturato * 0.1);
         }
 
-        // Arrotondamento ai 1.000 euro per cifre professionali
+        // Arrotondamento ai 1.000 euro
         const final = Math.round(total / 1000) * 1000;
 
         document.getElementById('finalPrice').textContent = `€ ${final.toLocaleString('it-IT')}`;
