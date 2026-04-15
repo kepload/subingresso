@@ -49,7 +49,7 @@
 
     <!-- Progress Bar -->
     <div class="w-full bg-slate-200 h-1.5 rounded-full mb-10 overflow-hidden">
-        <div id="progressBar" class="bg-blue-600 h-full w-[25%] transition-all duration-500"></div>
+        <div id="progressBar" class="bg-blue-600 h-full w-[20%] transition-all duration-500"></div>
     </div>
 
     <div id="calculatorForm" class="bg-white rounded-[32px] border border-slate-100 p-8 shadow-xl shadow-slate-200/50">
@@ -66,15 +66,22 @@
             <button onclick="nextStep(1)" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
         </div>
 
-        <!-- STEP 2: Frequenza Mercato -->
+        <!-- STEP 2: Tipologia del Mercato -->
         <div class="step-card" data-step="2">
             <h2 class="text-xl font-black mb-6">2. Tipologia del Mercato</h2>
             <div class="grid grid-cols-1 gap-4">
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 1.0, this)">
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-week"></i></div>
                     <div>
-                        <p class="font-bold text-slate-900">Mercato Settimanale / Fiera</p>
+                        <p class="font-bold text-slate-900">Mercato Settimanale</p>
                         <p class="text-xs text-slate-400 font-medium">L'opzione più diffusa in Italia.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 'fiera', this)">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center"><i class="fas fa-tent"></i></div>
+                    <div>
+                        <p class="font-bold text-slate-900">Fiera / Evento Speciale</p>
+                        <p class="text-xs text-slate-400 font-medium">Eventi periodici o fiere patronali/settoriali.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 2.2, this)">
@@ -88,7 +95,37 @@
             <button onclick="nextStep(2)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
-        <!-- STEP 3: Tipologia Piazza (LOCATION FOCUS) -->
+        <!-- STEP 2.5: Durata Fiera (ONLY FOR FIERA) -->
+        <div class="step-card" data-step="2.5">
+            <h2 class="text-xl font-black mb-6">Quanti giorni dura la fiera?</h2>
+            <p class="text-sm text-slate-400 mb-6 font-medium leading-relaxed">La durata dell'evento influenza pesantemente il valore della concessione.</p>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 0.8, this)">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center">1</div>
+                    <div>
+                        <p class="font-bold text-slate-900">1 Giorno</p>
+                        <p class="text-xs text-slate-400 font-medium text-left">Fiera secca o evento singolo.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 1.5, this)">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center">2-3</div>
+                    <div>
+                        <p class="font-bold text-slate-900">2-3 Giorni</p>
+                        <p class="text-xs text-slate-400 font-medium text-left">Fiera del weekend o festa patronale breve.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 2.5, this)">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center">5+</div>
+                    <div>
+                        <p class="font-bold text-slate-900">Oltre 5 Giorni</p>
+                        <p class="text-xs text-slate-400 font-medium text-left">Grandi fiere campionarie o eventi di lunga durata.</p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="nextStep(2.5)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
+        </div>
+
+        <!-- STEP 3: Tipologia Piazza -->
         <div class="step-card" data-step="3">
             <h2 class="text-xl font-black mb-6">3. In che tipo di piazza si trova?</h2>
             <div class="grid grid-cols-1 gap-4">
@@ -117,7 +154,7 @@
             <button onclick="nextStep(3)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
-        <!-- STEP 4: Metri Quadri (REDUCED IMPACT) -->
+        <!-- STEP 4: Metri Quadri -->
         <div class="step-card" data-step="4">
             <h2 class="text-xl font-black mb-6">4. Dimensione del Posteggio</h2>
             <div class="grid grid-cols-1 gap-4">
@@ -155,7 +192,7 @@
             <div class="bg-blue-50 rounded-2xl p-6 text-left mb-10 border border-blue-100">
                 <p class="text-[11px] text-blue-700 font-bold leading-relaxed text-center italic">
                     <i class="fas fa-exclamation-triangle mr-1"></i>
-                    Questa valutazione tiene conto del valore della licenza e dell'avviamento commerciale. Il prezzo può variare in base alla merce trattata.
+                    Valutazione basata su dati di mercato 2026. Per fiere e mercati storici la domanda è attualmente altissima.
                 </p>
             </div>
 
@@ -169,24 +206,24 @@
 
     </div>
 
-    <!-- Guida SEO sotto il calcolatore -->
+    <!-- Guida SEO -->
     <div class="mt-20 prose prose-slate max-w-none text-left">
-        <h2 class="text-2xl font-black text-slate-900 mb-6 text-center">Come calcoliamo il prezzo del posteggio?</h2>
+        <h2 class="text-2xl font-black text-slate-900 mb-6 text-center">Calcolo differenziato per Fiere</h2>
         <div class="grid md:grid-cols-2 gap-8 text-sm">
             <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                <h4 class="font-black mb-2 text-blue-600">Location over Quantity</h4>
-                <p class="text-slate-500 font-medium">Il mercato ambulante si basa sul passaggio. Una piazza storica in un centro turistico può valere fino a 3 volte di più rispetto a un mercato rionale di periferia, indipendentemente dalla metratura.</p>
+                <h4 class="font-black mb-2 text-purple-600">Perché separare le Fiere?</h4>
+                <p class="text-slate-500 font-medium">Una fiera di 3 giorni può generare la redditività di mesi di mercato ordinario. Il valore della licenza riflette questa "densità" di incasso e l'esclusività dell'evento.</p>
             </div>
             <div class="bg-white p-6 rounded-2xl border border-slate-100">
-                <h4 class="font-black mb-2 text-violet-600">Avviamento e Redditività</h4>
-                <p class="text-slate-500 font-medium">Moltiplichiamo il fatturato medio annuo per un coefficiente di stabilità commerciale, premiando le attività con incassi consolidati e piazze ad alta frequentazione.</p>
+                <h4 class="font-black mb-2 text-blue-600">Mercati e Piazze</h4>
+                <p class="text-slate-500 font-medium">La location rimane il fattore numero uno. Più la piazza è ambita e storica, più alto sarà il moltiplicatore applicato al fatturato.</p>
             </div>
         </div>
     </div>
 </main>
 
 <footer class="py-12 border-t border-slate-100 text-center">
-    <p class="text-xs text-slate-300 font-black uppercase tracking-[.2em]">Subingresso.it — Market Intelligence Specialist</p>
+    <p class="text-xs text-slate-300 font-black uppercase tracking-[.2em]">Subingresso.it — Specialist Data Analysis</p>
 </footer>
 
 <script>
@@ -195,6 +232,7 @@
     let factors = {
         fatturato: 0,
         frequenza: 1,
+        durataFiera: 1,
         zona: 1,
         mq: 1
     };
@@ -216,24 +254,52 @@
             factors.fatturato = parseFloat(fat);
         }
 
-        document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
-        currentStep++;
-        document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+        const prevCard = document.querySelector(`[data-step="${currentStep}"]`);
+        prevCard.classList.remove('active');
+
+        // Logica di instradamento dinamico
+        if (currentStep == 2) {
+            if (factors.frequenza === 'fiera') {
+                currentStep = 2.5;
+            } else {
+                currentStep = 3;
+            }
+        } else if (currentStep == 2.5) {
+            currentStep = 3;
+        } else {
+            currentStep = Math.floor(currentStep + 1);
+        }
+
+        const nextCard = document.querySelector(`[data-step="${currentStep}"]`);
+        nextCard.classList.add('active');
         
-        const progress = (currentStep / TOTAL_STEPS) * 100;
-        document.getElementById('progressBar').style.width = `${progress}%`;
+        // Update progress bar (mappando gli step reali)
+        let progressPercent = 0;
+        if (currentStep == 1) progressPercent = 20;
+        if (currentStep == 2) progressPercent = 40;
+        if (currentStep == 2.5) progressPercent = 50;
+        if (currentStep == 3) progressPercent = 65;
+        if (currentStep == 4) progressPercent = 85;
+        if (currentStep == 5) progressPercent = 100;
+        document.getElementById('progressBar').style.width = `${progressPercent}%`;
     }
 
     function calculate() {
-        // FORMULA POTENZIATA
-        // Base: 25% del fatturato (aumentato dal 20%)
-        const base = factors.fatturato * 0.25;
+        // Base: 25% del fatturato
+        let base = factors.fatturato * 0.25;
         
-        // La zona (piazza) ora pesa moltissimo (fino a x2.5)
-        // La frequenza pesa per chi lavora tutti i giorni (x2.2)
-        const total = base * factors.frequenza * factors.zona * factors.mq;
+        let multiplierFrequenza = factors.frequenza;
         
-        // Arrotondamento ai 1.000 euro per cifre più importanti
+        // Se è una fiera, usiamo un moltiplicatore base fiera corretto dalla durata
+        if (factors.frequenza === 'fiera') {
+            // Una fiera vale mediamente più di un mercato settimanale singolo (x1.5 base)
+            // moltiplicato per la densità dei giorni
+            multiplierFrequenza = 1.8 * factors.durataFiera;
+        }
+
+        const total = base * multiplierFrequenza * factors.zona * factors.mq;
+        
+        // Arrotondamento ai 1.000 euro
         const final = Math.round(total / 1000) * 1000;
 
         document.getElementById('finalPrice').textContent = `€ ${final.toLocaleString('it-IT')}`;
