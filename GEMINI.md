@@ -1,70 +1,40 @@
 # 🗺️ Mappa Strategica Subingresso.it (Guida per Gemini)
 
-Questo file serve a ottimizzare l'uso del contesto e a garantire che ogni modifica sia sicura, veloce e priva di bug.
+Questo file è il "Manuale Operativo" per Gemini. Serve a garantire modifiche sicure, veloci e a basso consumo di contesto.
 
-## 📂 Architettura del Progetto
+## 🧠 Strategia di Gestione Contesto (Efficienza)
 
-Per risparmiare contesto, **NON leggere mai l'intero HTML** se devi modificare solo la logica. Cerca i file `.js` corrispondenti.
+1. **Approccio Chirurgico:** NON leggere mai interi file HTML o JS se non necessario. Usa `grep_search` per trovare le righe interessate.
+2. **Uso dei Sub-Agenti (Mandatorio per Task Complessi):**
+   - **`codebase_investigator`**: Per analisi architetturali o ricerche su più file.
+   - **`generalist`**: Per modifiche ripetitive o batch (es. aggiornare 3+ file contemporaneamente).
+   - *Obiettivo:* Riassumere il lavoro pesante in un unico messaggio nella chat principale.
+3. **Memoria di Progetto:** Usa `save_memory(scope='project')` per salvare fatti strutturali (schema DB, colori, API key simulate) che devono persistere tra le sessioni.
 
-### ⚙️ Core Logic (Cartella `/js`)
-- `supabase-config.js`: Configurazione client Supabase. **Critico per connessione DB.**
-- `data.js`: **Il "Cervello" dei dati.** Contiene:
-    - Costanti globali: `MERCI`, `REGIONI`, `COMUNI_IT`.
-    - Utility: `formatPrice()`, `formatDate()`, `getDistanceKM()`.
-    - Sicurezza: `escapeHTML()` (usa SEMPRE questa per iniettare testo nell'HTML).
-    - UI Globale: `buildCard()` (genera le card degli annunci in tutto il sito).
-- `ui-components.js`: Gestisce Header e Footer dinamici. Se devi cambiare il menu, modifica questo file.
-- `auth.js`: Gestione sessione, login, registrazione e sync profili.
-- `moderation.js`: Logica di filtraggio contenuti e IA review (lato client).
+## 📂 Architettura & Core Logic (Cartella `/js`)
 
-### 📄 Pagine HTML (Struttura Leggera)
-- `index.html`: Home page + Borsino prezzi + FAQ.
-- `annunci.html`: Pagina di ricerca con filtri e mappa.
-- `annuncio.html`: Dettaglio singolo annuncio (WhatsApp integration).
-- `vendi.html`: Form di inserimento (usa `MERCI` da `data.js`).
-- `dashboard.html`: Gestione annunci dell'utente loggato.
+- `supabase-config.js`: Connessione DB.
+- `data.js`: **Il Cervello.** Contiene `MERCI`, `REGIONI`, `COMUNI_IT`, `formatPrice()`, `buildCard()`.
+- `ui-components.js`: Header/Footer dinamici. Modifica qui per cambiare menu o navigazione.
+- `auth.js`: Sessioni e sync profili.
+- `moderation.js`: Filtraggio contenuti IA (client-side).
 
----
+## 🛡️ Protocolli di Sicurezza & Qualità
 
-## 🛡️ Protocolli di Sicurezza (Anti-Bug)
+- **XSS Prevention:** Usa SEMPRE `escapeHTML()` da `data.js` prima di iniettare testo fornito dall'utente. Mai `.innerHTML` diretto su dati variabili.
+- **Supabase RLS:** Verifica sempre la Row Level Security dopo modifiche alle query.
+- **Validazione:** Ogni campo in `vendi.html` deve essere sincronizzato con la funzione `submitAnnuncio()` e lo schema DB.
 
-### 1. Prevenzione XSS (Mandatorio)
-- **MAI** usare `.innerHTML = data.titolo` direttamente.
-- **SEMPRE** usare `escapeHTML(data.titolo)` prima di iniettare dati forniti dall'utente.
-- Preferisci `.textContent` per elementi semplici.
+## 🚀 Workflow di Pubblicazione (GitHub/Vercel)
 
-### 2. Privacy & Supabase (RLS)
-- I dati degli utenti (telefoni, nomi) nella tabella `profiles` devono essere protetti.
-- Quando modifichi query, verifica sempre che la Row Level Security (RLS) su Supabase sia attiva.
+### 🚨 REGOLA D'ORO (Mandatoria)
+Dopo **OGNI** modifica ai file, esegui il push per attivare la build su Vercel:
+1. `git add .`
+2. `git commit -m "Descrizione precisa della modifica"`
+3. `git push`
 
-### 3. Gestione Errori
-- Se una pagina non carica i dropdown (es. Merci o Regioni), il colpevole è quasi sempre in `js/data.js`.
-- Se il login fallisce o la navbar non si aggiorna, controlla `js/auth.js`.
-
----
-
-## 🚀 Istruzioni per Gemini (Efficienza Contesto)
-
-1. **Prima di agire:** Leggi solo gli script collegati alla funzionalità richiesta.
-2. **Componenti UI:** Se l'utente chiede di cambiare un link nel menu, NON toccare gli HTML, vai su `js/ui-components.js`.
-3. **Dati:** Se manca una categoria merceologica, aggiungila in `js/data.js` alla costante `MERCI`.
-4. **Validazione:** Ogni nuovo campo nel form di `vendi.html` deve essere aggiunto anche alla funzione `submitAnnuncio()` e verificato lato Supabase.
-
----
-
-## 🛰️ Protocollo di Pubblicazione (GitHub/Vercel)
-
-### 🚨 Regola d'Oro (Mandatoria)
-- **Dopo OGNI modifica** ai file, DEVI eseguire il push su GitHub.
-- Comandi: `git add .` -> `git commit -m "Descrizione modifica"` -> `git push`.
-- Questo garantisce che le modifiche siano subito visibili su Vercel.
-
----
-
-## 🐛 Bug Storici Risolti (Da non ripetere)
-- `ReferenceError: MERCI is not defined`: Risolto centralizzando la costante in `data.js`.
-- `XSS in buildCard`: Risolto usando `escapeHTML` per ID, Titoli e Immagini.
-- `Redundant Profiles`: Il profilo viene creato via Trigger SQL, `auth.js` fa solo il sync se necessario.
-- `Database Setup Errors`: Usa SEMPRE il file sul desktop `SETUP_DEF_SUBINGRESSO.sql` per riconfigurare Supabase (contiene RLS fixati, inclusi i permessi per Admin sul Blog).
-- `Gemini API "Model not found" & "Quota exceeded"`: Il fetch dinamico ora implementa un *Retry Loop*. Prova in sequenza i modelli disponibili (escludendo -tts e -vision). Ignora automaticamente errori di quota o sovraccarico passando al modello successivo.
-- `AI Generatore - Testi robotici o elenchi puntati`: La "Mega-Redazione" ora usa chiamate multi-step per creare articoli orientati alla conversione. Imposta sempre `systemInstruction` rigide per bloccare convenevoli/saluti e impone paragrafi lunghi, senza liste, con CTA finale.
+## 🐛 Bug Storici & Soluzioni
+- `ReferenceError`: Centralizzato tutto in `data.js`.
+- `Gemini API "Quota exceeded"`: Implementato Retry Loop con modelli alternativi.
+- `AI Generatore`: Usa chiamate multi-step, no elenchi puntati, solo paragrafi lunghi e CTA.
+- `Database Setup`: Usa `SETUP_DEF_SUBINGRESSO.sql` per ripristinare i permessi corretti (specialmente per Admin/Blog).
