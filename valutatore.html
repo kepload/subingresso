@@ -250,16 +250,27 @@
                 </div>
             </div>
 
-            <!-- Box Affitto (L'esca dell'entrata passiva) -->
+            <!-- Box Affitto (Rendimento Potenziale) -->
             <div class="rent-box p-8 rounded-[40px] text-center mb-10 shadow-lg shadow-emerald-50 relative overflow-hidden">
                 <div class="absolute -right-6 -top-6 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl"></div>
                 <p class="text-emerald-700 text-[10px] font-black uppercase tracking-[.2em] mb-2 italic">
-                    <i class="fas fa-money-bill-trend-up mr-1"></i> Opzione Rendita Passiva
+                    <i class="fas fa-money-bill-trend-up mr-1"></i> Rendita Passiva Stimata
                 </p>
-                <h3 class="text-lg font-black text-slate-900 leading-tight mb-2">Affitto Gestione Annuo</h3>
-                <p id="rentValue" class="text-3xl font-black text-emerald-600 mb-4">€ --</p>
-                <div class="bg-emerald-600/10 py-2 px-4 rounded-xl inline-block border border-emerald-600/20">
-                    <p class="text-emerald-700 font-bold text-[10px] uppercase tracking-wider leading-tight">Guadagno automatico senza lavorare</p>
+                <h3 class="text-lg font-black text-slate-900 leading-tight mb-2">Canone di Affitto Consigliato</h3>
+                
+                <div class="flex flex-col gap-1 mb-4">
+                    <p id="rentValue" class="text-3xl font-black text-emerald-600">€ --</p>
+                    <p id="rentMonthly" class="text-sm font-bold text-emerald-700/60 uppercase tracking-widest">€ -- / mese</p>
+                </div>
+
+                <div class="bg-emerald-600/10 py-3 px-4 rounded-2xl inline-block border border-emerald-600/20 w-full">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-[10px] font-black uppercase text-emerald-800/50">Indice di Redditività</span>
+                        <span id="roiValue" class="text-xs font-black text-emerald-700">--%</span>
+                    </div>
+                    <div class="w-full bg-emerald-200/50 h-1.5 rounded-full overflow-hidden">
+                        <div id="roiBar" class="bg-emerald-500 h-full w-0 transition-all duration-1000"></div>
+                    </div>
                 </div>
             </div>
 
@@ -352,18 +363,29 @@
         
         if (factors.fatturato > 0 && totale < 6000) totale = 6000 + (factors.fatturato * 0.15);
 
-        // Calcolo Affitto (14% del valore di vendita come base rendita passiva annua)
-        let rentAvg = totale * 0.14 * factors.stagionalita;
-        if (rentAvg < 1200) rentAvg = 1200; // Minimo 100€ al mese
+        // Calcolo Affitto (22% del valore di vendita — Rendita Alta)
+        let rentAvg = totale * 0.22 * factors.stagionalita;
+        if (rentAvg < 2400) rentAvg = 2400; // Minimo 200€ al mese
+
+        let rentMonthly = rentAvg / 12;
 
         let min = totale * 0.85;
         let max = totale * 1.15;
-        const round = (val) => Math.round(val / 1000) * 1000;
+        const round = (val) => Math.round(val / 100) * 100; // Arrotondamento più fine
 
-        document.getElementById('priceMin').textContent = `€ ${round(min).toLocaleString('it-IT')}`;
-        document.getElementById('priceMax').textContent = `€ ${round(max).toLocaleString('it-IT')}`;
-        document.getElementById('totalAvg').textContent = `Target Vendita: € ${round(totale).toLocaleString('it-IT')}`;
-        document.getElementById('rentValue').textContent = `€ ${round(rentAvg).toLocaleString('it-IT')}`;
+        document.getElementById('priceMin').textContent = `€ ${Math.round(min/1000)*1000.toLocaleString('it-IT')}`;
+        document.getElementById('priceMax').textContent = `€ ${Math.round(max/1000)*1000.toLocaleString('it-IT')}`;
+        document.getElementById('totalAvg').textContent = `Target Vendita: € ${Math.round(totale/1000)*1000.toLocaleString('it-IT')}`;
+        
+        document.getElementById('rentValue').textContent = `€ ${Math.round(rentAvg).toLocaleString('it-IT')} / anno`;
+        document.getElementById('rentMonthly').textContent = `€ ${Math.round(rentMonthly).toLocaleString('it-IT')} / mese`;
+
+        // Calcolo ROI (ritorno sull'investimento ipotetico per chi affitta)
+        let roi = (rentAvg / totale) * 100;
+        document.getElementById('roiValue').textContent = `${roi.toFixed(1)}%`;
+        setTimeout(() => {
+            document.getElementById('roiBar').style.width = `${Math.min(roi * 3, 100)}%`;
+        }, 500);
     }
 </script>
 
