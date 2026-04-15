@@ -285,21 +285,30 @@
     }
 
     function calculate() {
-        // Base: 25% del fatturato
-        let base = factors.fatturato * 0.25;
+        // BASE POTENZIATA: 40% del fatturato (riflette meglio l'avviamento commerciale)
+        let base = factors.fatturato * 0.40;
         
         let multiplierFrequenza = factors.frequenza;
         
-        // Se è una fiera, usiamo un moltiplicatore base fiera corretto dalla durata
+        // Se è un mercato settimanale, alziamo il peso base (da 1.0 a 1.4)
+        if (factors.frequenza === 1.0) {
+            multiplierFrequenza = 1.4;
+        }
+        
+        // Se è una fiera, usiamo un moltiplicatore ancora più alto basato sulla durata
         if (factors.frequenza === 'fiera') {
-            // Una fiera vale mediamente più di un mercato settimanale singolo (x1.5 base)
-            // moltiplicato per la densità dei giorni
-            multiplierFrequenza = 1.8 * factors.durataFiera;
+            multiplierFrequenza = 2.2 * factors.durataFiera;
         }
 
-        const total = base * multiplierFrequenza * factors.zona * factors.mq;
+        // Calcolo Totale
+        let total = base * multiplierFrequenza * factors.zona * factors.mq;
         
-        // Arrotondamento ai 1.000 euro
+        // Protezione Valore Minimo (Nessuna licenza seria vale meno di 5000€ se ha fatturato)
+        if (factors.fatturato > 0 && total < 5000) {
+            total = 5000 + (factors.fatturato * 0.1);
+        }
+
+        // Arrotondamento ai 1.000 euro per cifre professionali
         const final = Math.round(total / 1000) * 1000;
 
         document.getElementById('finalPrice').textContent = `€ ${final.toLocaleString('it-IT')}`;
