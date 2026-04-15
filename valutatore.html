@@ -10,20 +10,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .step-card { display: none; }
-        .step-card.active { display: block; animation: slideUp 0.4s ease-out; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .step-card.active { display: block; animation: slideUp 0.3s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .option-card {
             border: 2px solid #f1f5f9;
             transition: all 0.2s ease;
             cursor: pointer;
         }
+        .option-card:hover { border-color: #cbd5e1; background-color: #f8fafc; }
         .option-card.selected {
             border-color: #2563eb;
             background-color: #eff6ff;
-        }
-        .result-box {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            transition: transform 0.3s ease;
         }
     </style>
 </head>
@@ -31,24 +28,29 @@
 
 <header class="bg-white border-b border-slate-100 py-6">
     <div class="max-w-3xl mx-auto px-6 flex justify-between items-center">
-        <a href="index.html" class="flex items-center gap-2 opacity-60 hover:opacity-100 transition">
+        <a href="index.html" class="flex items-center gap-2 opacity-60 hover:opacity-100 transition text-slate-900">
             <i class="fas fa-arrow-left text-xs"></i>
-            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Torna alla home</span>
+            <span class="text-xs font-bold uppercase tracking-widest">Esci</span>
         </a>
-        <span class="text-xs font-black text-blue-600 uppercase tracking-widest">Algoritmo Valutativo 2026</span>
+        <span class="text-xs font-black text-blue-600 uppercase tracking-widest">Fast Valuator 2026</span>
     </div>
 </header>
 
 <main class="max-w-2xl mx-auto px-6 py-12 flex-grow w-full text-left">
     
-    <div class="text-center mb-10">
-        <h1 class="text-3xl font-black tracking-tight mb-2 text-slate-900">Quanto vale il tuo posteggio?</h1>
-        <p class="text-slate-500 font-medium text-sm">Ottieni una stima professionale basata su fatturato e qualità della piazza.</p>
+    <div class="flex justify-between items-end mb-6">
+        <div>
+            <h1 class="text-3xl font-black tracking-tight text-slate-900">Valutazione Posteggio</h1>
+            <p class="text-slate-500 font-medium text-sm">Stima immediata del valore commerciale.</p>
+        </div>
+        <button id="backBtn" onclick="prevStep()" class="hidden text-xs font-black uppercase tracking-widest text-slate-400 hover:text-blue-600 transition">
+            <i class="fas fa-arrow-left mr-1"></i> Indietro
+        </button>
     </div>
 
     <!-- Progress Bar -->
-    <div class="w-full bg-slate-200 h-1.5 rounded-full mb-10 overflow-hidden">
-        <div id="progressBar" class="bg-blue-600 h-full w-[20%] transition-all duration-500"></div>
+    <div class="w-full bg-slate-200 h-1 rounded-full mb-10 overflow-hidden">
+        <div id="progressBar" class="bg-blue-600 h-full w-[15%] transition-all duration-500"></div>
     </div>
 
     <div id="calculatorForm" class="bg-white rounded-[32px] border border-slate-100 p-8 shadow-xl shadow-slate-200/50">
@@ -56,54 +58,41 @@
         <!-- STEP 1: Dati Finanziari -->
         <div class="step-card active" data-step="1">
             <h2 class="text-xl font-black mb-6">1. Qual è il fatturato medio annuo?</h2>
-            <p class="text-sm text-slate-400 mb-6 font-medium leading-relaxed">Indica il volume d'affari complessivo (al netto dell'IVA) generato dal posteggio nell'ultimo anno.</p>
+            <p class="text-sm text-slate-400 mb-6 font-medium leading-relaxed">Indica il volume d'affari complessivo (al netto dell'IVA) generato dal posteggio.</p>
             <div class="relative">
                 <span class="absolute left-5 top-1/2 -translate-y-1/2 font-black text-slate-400 text-xl">€</span>
-                <input type="number" id="fatturato" placeholder="Es: 65000" 
+                <input type="number" id="fatturato" placeholder="Es: 65000" autofocus
                         class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-5 pl-12 pr-6 text-2xl font-black outline-none focus:border-blue-600 transition">
             </div>
-            <button onclick="nextStep(1)" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
+            <button onclick="nextStep()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
         </div>
 
-        <!-- STEP 2: Frequenza e Stagionalità -->
+        <!-- STEP 2: Frequenza -->
         <div class="step-card" data-step="2">
-            <h2 class="text-xl font-black mb-6">2. Frequenza e Stagionalità</h2>
-            <div class="grid grid-cols-1 gap-4 mb-8">
+            <h2 class="text-xl font-black mb-6">2. Tipologia del Mercato</h2>
+            <div class="grid grid-cols-1 gap-4">
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 1.4, this)">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-week"></i></div>
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-week text-lg"></i></div>
                     <div>
                         <p class="font-bold">Mercato Settimanale</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">L'opzione più comune in Italia.</p>
+                        <p class="text-xs text-slate-400 font-medium">L'opzione più comune in Italia.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 'fiera', this)">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center"><i class="fas fa-tent"></i></div>
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center"><i class="fas fa-tent text-lg"></i></div>
                     <div>
                         <p class="font-bold">Fiera / Evento Speciale</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Appuntamenti periodici o annuali.</p>
+                        <p class="text-xs text-slate-400 font-medium">Appuntamenti periodici o annuali.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 2.2, this)">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-day"></i></div>
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-day text-lg"></i></div>
                     <div>
                         <p class="font-bold">Mercato Giornaliero</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Operatività su 5-6 giorni.</p>
+                        <p class="text-xs text-slate-400 font-medium">Operatività su 5-6 giorni.</p>
                     </div>
                 </div>
             </div>
-            
-            <h3 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">L'attività è stagionale?</h3>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="option-card p-4 rounded-xl text-center" onclick="selectOption('stagionalita', 1.0, this)">
-                    <p class="font-bold">Annuale</p>
-                    <p class="text-[10px] text-slate-400">Tutto l'anno</p>
-                </div>
-                <div class="option-card p-4 rounded-xl text-center" onclick="selectOption('stagionalita', 0.65, this)">
-                    <p class="font-bold">Stagionale</p>
-                    <p class="text-[10px] text-slate-400">Solo alcuni mesi</p>
-                </div>
-            </div>
-            <button onclick="nextStep(2)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
         <!-- STEP 2.5: Durata Fiera -->
@@ -123,52 +112,81 @@
                     <p class="font-bold">Settimana o più</p>
                 </div>
             </div>
-            <button onclick="nextStep(2.5)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
-        <!-- STEP 3: Piazza e Affluenza -->
+        <!-- STEP 2.7: Stagionalità -->
+        <div class="step-card" data-step="2.7">
+            <h2 class="text-xl font-black mb-6">L'attività è stagionale?</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('stagionalita', 1.0, this)">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-sun text-lg"></i></div>
+                    <div>
+                        <p class="font-bold">Annuale</p>
+                        <p class="text-xs text-slate-400 font-medium">Operativo tutto l'anno.</p>
+                    </div>
+                </div>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('stagionalita', 0.65, this)">
+                    <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center"><i class="fas fa-umbrella-beach text-lg"></i></div>
+                    <div>
+                        <p class="font-bold">Stagionale</p>
+                        <p class="text-xs text-slate-400 font-medium">Solo alcuni mesi (es: località di mare o montagna).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 3: Piazza -->
         <div class="step-card" data-step="3">
             <h2 class="text-xl font-black mb-6">3. In che tipo di piazza si trova?</h2>
             <div class="grid grid-cols-1 gap-4">
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 2.8, this)">
-                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center"><i class="fas fa-crown"></i></div>
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center"><i class="fas fa-crown text-lg"></i></div>
                     <div>
                         <p class="font-bold">Piazza Storica / Turistica</p>
-                        <p class="text-xs text-slate-400 font-medium">Centri storici di grandi città o zone di alto prestigio.</p>
+                        <p class="text-xs text-slate-400 font-medium">Massimo prestigio e afflusso turistico.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 1.6, this)">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-city"></i></div>
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-city text-lg"></i></div>
                     <div>
                         <p class="font-bold">Città Capoluogo / Centro</p>
-                        <p class="text-xs text-slate-400 font-medium">Buon afflusso costante di clientela locale.</p>
+                        <p class="text-xs text-slate-400 font-medium">Flusso costante di clientela locale.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 1.0, this)">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-store-alt"></i></div>
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-store-alt text-lg"></i></div>
                     <div>
                         <p class="font-bold">Mercato Rionale / Periferico</p>
-                        <p class="text-xs text-slate-400 font-medium">Mercato di quartiere o piccoli comuni.</p>
+                        <p class="text-xs text-slate-400 font-medium">Mercato ordinario di quartiere.</p>
                     </div>
                 </div>
             </div>
-            <button onclick="nextStep(3)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
-        <!-- STEP 4: Settore e Posizione -->
-        <div class="step-card" data-step="4">
-            <h2 class="text-xl font-black mb-6">4. Settore e Posizione Banco</h2>
-            <div class="grid grid-cols-2 gap-4 mb-8">
-                <div class="option-card p-4 rounded-xl text-center" onclick="selectOption('settore', 1.4, this)">
-                    <p class="font-bold">Alimentare</p>
-                    <p class="text-[10px] text-slate-400 text-center">Somministrazione</p>
+        <!-- STEP 3.5: Settore -->
+        <div class="step-card" data-step="3.5">
+            <h2 class="text-xl font-black mb-6">In quale settore operi?</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('settore', 1.4, this)">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center"><i class="fas fa-utensils text-lg"></i></div>
+                    <div>
+                        <p class="font-bold">Alimentare / Somministrazione</p>
+                        <p class="text-xs text-slate-400 font-medium text-left">Gastronomia, Ortofrutta, Panineria, ecc.</p>
+                    </div>
                 </div>
-                <div class="option-card p-4 rounded-xl text-center" onclick="selectOption('settore', 1.0, this)">
-                    <p class="font-bold">Non Alim.</p>
-                    <p class="text-[10px] text-slate-400 text-center">Abbigliamento/Altro</p>
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('settore', 1.0, this)">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-tshirt text-lg"></i></div>
+                    <div>
+                        <p class="font-bold">Non Alimentare</p>
+                        <p class="text-xs text-slate-400 font-medium text-left">Abbigliamento, Casalinghi, Fiori, ecc.</p>
+                    </div>
                 </div>
             </div>
-            <h3 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Posizionamento specifico:</h3>
+        </div>
+
+        <!-- STEP 4: Posizione -->
+        <div class="step-card" data-step="4">
+            <h2 class="text-xl font-black mb-6">Posizionamento del Banco</h2>
             <div class="grid grid-cols-1 gap-4 text-left">
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('posizione', 1.35, this)">
                     <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center"><i class="fas fa-star"></i></div>
@@ -185,29 +203,27 @@
                     </div>
                 </div>
             </div>
-            <button onclick="nextStep(4)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
         <!-- STEP 5: Anzianità -->
         <div class="step-card" data-step="5">
-            <h2 class="text-xl font-black mb-6">5. Anzianità Licenza</h2>
+            <h2 class="text-xl font-black mb-6">Anzianità Licenza</h2>
             <div class="grid grid-cols-1 gap-4 text-left">
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('anni', 1.3, this)">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center"><i class="fas fa-check-double"></i></div>
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center"><i class="fas fa-check-double text-lg"></i></div>
                     <div>
                         <p class="font-bold">Storica (Oltre 10 anni)</p>
                         <p class="text-xs text-slate-400 font-medium text-left">Massimo avviamento e stabilità.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('anni', 1.0, this)">
-                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-clock"></i></div>
+                    <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-clock text-lg"></i></div>
                     <div>
                         <p class="font-bold">Recente (Sotto 10 anni)</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Attività più giovane o subentro recente.</p>
+                        <p class="text-xs text-slate-400 font-medium text-left">Attività giovane o subentro recente.</p>
                     </div>
                 </div>
             </div>
-            <button onclick="calculate()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition">Calcola Valore Finale</button>
         </div>
 
         <!-- STEP 6: Risultato -->
@@ -217,28 +233,21 @@
             </div>
             <h2 class="text-2xl font-black mb-4 leading-tight text-slate-900">Valutazione Commerciale</h2>
             
-            <div class="result-box border-4 border-blue-600 p-8 rounded-[40px] text-center mb-10 bg-white">
-                <p class="text-slate-400 text-[10px] font-black uppercase tracking-[.2em] mb-2">Range di Vendita Consigliato</p>
+            <div class="result-box border-4 border-blue-600 p-8 rounded-[40px] text-center mb-10 bg-white shadow-xl shadow-blue-50">
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-[.2em] mb-2">Prezzo di Mercato Stimato</p>
                 <div class="flex items-center justify-center gap-4 mb-4">
-                    <span id="priceMin" class="text-2xl font-black text-slate-400">€ --</span>
-                    <span class="text-3xl font-black text-slate-300">—</span>
+                    <span id="priceMin" class="text-2xl font-black text-slate-300">€ --</span>
+                    <span class="text-3xl font-black text-slate-200">—</span>
                     <span id="priceMax" class="text-4xl font-black text-blue-600">€ --</span>
                 </div>
                 <div class="bg-blue-50 py-2 px-6 rounded-full inline-block">
-                    <p id="totalAvg" class="text-blue-700 font-black text-xs uppercase tracking-widest">Prezzo Consigliato: € --</p>
+                    <p id="totalAvg" class="text-blue-700 font-black text-xs uppercase tracking-widest">Target: € --</p>
                 </div>
-            </div>
-
-            <div class="bg-slate-50 rounded-3xl p-6 text-left mb-10 border border-slate-100">
-                <p class="text-[11px] text-slate-500 font-bold leading-relaxed">
-                    <i class="fas fa-info-circle mr-1 text-blue-600"></i>
-                    Questa stima considera l'avviamento commerciale e la qualità del posizionamento. Per ottenere il prezzo massimo, assicurati di avere tutti i documenti del rinnovo 2032 pronti.
-                </p>
             </div>
 
             <div class="space-y-4">
                 <a href="vendi.html" class="block w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-lg">
-                    Inserisci Annuncio Gratis
+                    Vendi ora il tuo posteggio
                 </a>
                 <button onclick="location.reload()" class="block w-full text-xs font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest">Nuova Valutazione</button>
             </div>
@@ -254,6 +263,7 @@
 
 <script>
     let currentStep = 1;
+    let history = [1];
     let factors = {
         fatturato: 0,
         frequenza: 1,
@@ -267,13 +277,20 @@
 
     function selectOption(key, value, element) {
         factors[key] = value;
+        
+        // Highlight selection
         const cards = element.parentElement.querySelectorAll('.option-card');
         cards.forEach(c => c.classList.remove('selected'));
         element.classList.add('selected');
+
+        // Fast forward to next step
+        setTimeout(() => {
+            if (currentStep < 6) nextStep();
+        }, 150);
     }
 
-    function nextStep(step) {
-        if (step === 1) {
+    function nextStep() {
+        if (currentStep === 1) {
             const fat = document.getElementById('fatturato').value;
             if (!fat || fat <= 0) { alert('Inserisci il fatturato.'); return; }
             factors.fatturato = parseFloat(fat);
@@ -282,61 +299,72 @@
         const prevCard = document.querySelector(`[data-step="${currentStep}"]`);
         prevCard.classList.remove('active');
 
-        if (currentStep == 2) {
-            currentStep = (factors.frequenza === 'fiera') ? 2.5 : 3;
-        } else if (currentStep == 2.5) {
-            currentStep = 3;
-        } else if (currentStep == 3) {
-            currentStep = 4;
-        } else if (currentStep == 4) {
-            currentStep = 5;
-        } else {
-            currentStep = Math.floor(currentStep + 1);
+        // Dynamic routing logic
+        let next = 1;
+        if (currentStep == 1) next = 2;
+        else if (currentStep == 2) next = (factors.frequenza === 'fiera') ? 2.5 : 2.7;
+        else if (currentStep == 2.5) next = 2.7;
+        else if (currentStep == 2.7) next = 3;
+        else if (currentStep == 3) next = 3.5;
+        else if (currentStep == 3.5) next = 4;
+        else if (currentStep == 4) next = 5;
+        else if (currentStep == 5) {
+            calculate();
+            next = 6;
         }
 
-        document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+        currentStep = next;
+        history.push(currentStep);
+        
+        const nextCard = document.querySelector(`[data-step="${currentStep}"]`);
+        nextCard.classList.add('active');
+        
+        document.getElementById('backBtn').classList.toggle('hidden', currentStep === 1 || currentStep === 6);
+        updateProgress();
+    }
+
+    function prevStep() {
+        if (history.length <= 1) return;
+        
+        const currentCard = document.querySelector(`[data-step="${currentStep}"]`);
+        currentCard.classList.remove('active');
+        
+        history.pop();
+        currentStep = history[history.length - 1];
+        
+        const nextCard = document.querySelector(`[data-step="${currentStep}"]`);
+        nextCard.classList.add('active');
+        
+        document.getElementById('backBtn').classList.toggle('hidden', currentStep === 1);
         updateProgress();
     }
 
     function updateProgress() {
-        const steps = [1, 2, 2.5, 3, 4, 5, 6];
+        const steps = [1, 2, 2.5, 2.7, 3, 3.5, 4, 5, 6];
         const idx = steps.indexOf(currentStep);
         const progress = (idx / (steps.length - 1)) * 100;
         document.getElementById('progressBar').style.width = `${progress}%`;
     }
 
     function calculate() {
-        // --- FORMULA SEMPLIFICATA E POTENZIATA ---
-        
-        // Base: 45% del fatturato annuo (l'avviamento puro)
+        // --- Algoritmo Potenziato 2026 ---
         let base = factors.fatturato * 0.45;
-        
-        // Moltiplicatori
         let moltFrequenza = (factors.frequenza === 'fiera') ? (2.2 * factors.durataFiera) : factors.frequenza;
         
-        // Calcolo Totale Combinato
         let totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
         
-        // Protezione Valore Minimo (Soglia dignità commerciale)
+        // Min Value Protection
         if (factors.fatturato > 0 && totale < 6000) {
             totale = 6000 + (factors.fatturato * 0.15);
         }
 
-        // Range Output (85% - 115%)
         let min = totale * 0.85;
         let max = totale * 1.15;
-
-        // Arrotondamento ai 1.000€ per cifre importanti
         const round = (val) => Math.round(val / 1000) * 1000;
 
         document.getElementById('priceMin').textContent = `€ ${round(min).toLocaleString('it-IT')}`;
         document.getElementById('priceMax').textContent = `€ ${round(max).toLocaleString('it-IT')}`;
-        document.getElementById('totalAvg').textContent = `Prezzo Consigliato: € ${round(totale).toLocaleString('it-IT')}`;
-        
-        document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
-        currentStep = 6;
-        document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
-        updateProgress();
+        document.getElementById('totalAvg').textContent = `Target: € ${round(totale).toLocaleString('it-IT')}`;
     }
 </script>
 
