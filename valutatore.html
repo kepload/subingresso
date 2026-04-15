@@ -35,44 +35,32 @@
             <i class="fas fa-arrow-left text-xs"></i>
             <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Torna alla home</span>
         </a>
-        <span class="text-xs font-black text-blue-600 uppercase tracking-widest">Algoritmo Valutativo Avanzato</span>
+        <span class="text-xs font-black text-blue-600 uppercase tracking-widest">Algoritmo Valutativo 2026</span>
     </div>
 </header>
 
 <main class="max-w-2xl mx-auto px-6 py-12 flex-grow w-full text-left">
     
     <div class="text-center mb-10">
-        <h1 class="text-3xl font-black tracking-tight mb-2 text-slate-900">Perizia Commerciale Posteggio</h1>
-        <p class="text-slate-500 font-medium text-sm">Stima analitica basata su Valore Concessione + Avviamento.</p>
+        <h1 class="text-3xl font-black tracking-tight mb-2 text-slate-900">Quanto vale il tuo posteggio?</h1>
+        <p class="text-slate-500 font-medium text-sm">Ottieni una stima professionale basata su fatturato e qualità della piazza.</p>
     </div>
 
     <!-- Progress Bar -->
     <div class="w-full bg-slate-200 h-1.5 rounded-full mb-10 overflow-hidden">
-        <div id="progressBar" class="bg-blue-600 h-full w-[12%] transition-all duration-500"></div>
+        <div id="progressBar" class="bg-blue-600 h-full w-[20%] transition-all duration-500"></div>
     </div>
 
     <div id="calculatorForm" class="bg-white rounded-[32px] border border-slate-100 p-8 shadow-xl shadow-slate-200/50">
         
         <!-- STEP 1: Dati Finanziari -->
         <div class="step-card active" data-step="1">
-            <h2 class="text-xl font-black mb-6">1. Dati Economici dell'Attività</h2>
-            <div class="space-y-6">
-                <div>
-                    <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Fatturato Annuo Medio (€)</label>
-                    <div class="relative">
-                        <span class="absolute left-5 top-1/2 -translate-y-1/2 font-black text-slate-400 text-xl">€</span>
-                        <input type="number" id="fatturato" placeholder="Es: 65000" 
-                               class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-4 pl-12 pr-6 text-xl font-black outline-none focus:border-blue-600 transition">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Canone Annuo (TOSAP/COSAP) (€)</label>
-                    <div class="relative">
-                        <span class="absolute left-5 top-1/2 -translate-y-1/2 font-black text-slate-400 text-xl">€</span>
-                        <input type="number" id="canone" placeholder="Es: 800" 
-                               class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-4 pl-12 pr-6 text-xl font-black outline-none focus:border-blue-600 transition">
-                    </div>
-                </div>
+            <h2 class="text-xl font-black mb-6">1. Qual è il fatturato medio annuo?</h2>
+            <p class="text-sm text-slate-400 mb-6 font-medium leading-relaxed">Indica il volume d'affari complessivo (al netto dell'IVA) generato dal posteggio nell'ultimo anno.</p>
+            <div class="relative">
+                <span class="absolute left-5 top-1/2 -translate-y-1/2 font-black text-slate-400 text-xl">€</span>
+                <input type="number" id="fatturato" placeholder="Es: 65000" 
+                        class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-5 pl-12 pr-6 text-2xl font-black outline-none focus:border-blue-600 transition">
             </div>
             <button onclick="nextStep(1)" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
         </div>
@@ -81,21 +69,21 @@
         <div class="step-card" data-step="2">
             <h2 class="text-xl font-black mb-6">2. Frequenza e Stagionalità</h2>
             <div class="grid grid-cols-1 gap-4 mb-8">
-                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 1.5, this)">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 1.4, this)">
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-week"></i></div>
                     <div>
                         <p class="font-bold">Mercato Settimanale</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Frequenza standard mono-settimanale.</p>
+                        <p class="text-xs text-slate-400 font-medium text-left">L'opzione più comune in Italia.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 'fiera', this)">
                     <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center"><i class="fas fa-tent"></i></div>
                     <div>
-                        <p class="font-bold">Fiera / Evento</p>
+                        <p class="font-bold">Fiera / Evento Speciale</p>
                         <p class="text-xs text-slate-400 font-medium text-left">Appuntamenti periodici o annuali.</p>
                     </div>
                 </div>
-                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 2.5, this)">
+                <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('frequenza', 2.2, this)">
                     <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-day"></i></div>
                     <div>
                         <p class="font-bold">Mercato Giornaliero</p>
@@ -110,9 +98,9 @@
                     <p class="font-bold">Annuale</p>
                     <p class="text-[10px] text-slate-400">Tutto l'anno</p>
                 </div>
-                <div class="option-card p-4 rounded-xl text-center" onclick="selectOption('stagionalita', 0.6, this)">
+                <div class="option-card p-4 rounded-xl text-center" onclick="selectOption('stagionalita', 0.65, this)">
                     <p class="font-bold">Stagionale</p>
-                    <p class="text-[10px] text-slate-400">3-5 mesi</p>
+                    <p class="text-[10px] text-slate-400">Solo alcuni mesi</p>
                 </div>
             </div>
             <button onclick="nextStep(2)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
@@ -120,7 +108,7 @@
 
         <!-- STEP 2.5: Durata Fiera -->
         <div class="step-card" data-step="2.5">
-            <h2 class="text-xl font-black mb-6">Durata della Fiera</h2>
+            <h2 class="text-xl font-black mb-6">Quanti giorni dura la fiera?</h2>
             <div class="grid grid-cols-1 gap-4">
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 0.8, this)">
                     <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center font-bold">1</div>
@@ -140,27 +128,27 @@
 
         <!-- STEP 3: Piazza e Affluenza -->
         <div class="step-card" data-step="3">
-            <h2 class="text-xl font-black mb-6">3. Piazza e Flusso Clientela</h2>
+            <h2 class="text-xl font-black mb-6">3. In che tipo di piazza si trova?</h2>
             <div class="grid grid-cols-1 gap-4">
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 2.8, this)">
                     <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center"><i class="fas fa-crown"></i></div>
                     <div>
-                        <p class="font-bold">Centro Storico / Piazza Turistica</p>
-                        <p class="text-xs text-slate-400 font-medium">Massima affluenza e prestigio.</p>
+                        <p class="font-bold">Piazza Storica / Turistica</p>
+                        <p class="text-xs text-slate-400 font-medium">Centri storici di grandi città o zone di alto prestigio.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 1.6, this)">
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-city"></i></div>
                     <div>
                         <p class="font-bold">Città Capoluogo / Centro</p>
-                        <p class="text-xs text-slate-400 font-medium">Buon afflusso costante.</p>
+                        <p class="text-xs text-slate-400 font-medium">Buon afflusso costante di clientela locale.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('zona', 1.0, this)">
                     <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-store-alt"></i></div>
                     <div>
-                        <p class="font-bold">Rionale / Periferico</p>
-                        <p class="text-xs text-slate-400 font-medium">Mercato locale ordinario.</p>
+                        <p class="font-bold">Mercato Rionale / Periferico</p>
+                        <p class="text-xs text-slate-400 font-medium">Mercato di quartiere o piccoli comuni.</p>
                     </div>
                 </div>
             </div>
@@ -173,11 +161,11 @@
             <div class="grid grid-cols-2 gap-4 mb-8">
                 <div class="option-card p-4 rounded-xl text-center" onclick="selectOption('settore', 1.4, this)">
                     <p class="font-bold">Alimentare</p>
-                    <p class="text-[10px] text-slate-400">Somministrazione</p>
+                    <p class="text-[10px] text-slate-400 text-center">Somministrazione</p>
                 </div>
                 <div class="option-card p-4 rounded-xl text-center" onclick="selectOption('settore', 1.0, this)">
                     <p class="font-bold">Non Alim.</p>
-                    <p class="text-[10px] text-slate-400">Abbigliamento/Altro</p>
+                    <p class="text-[10px] text-slate-400 text-center">Abbigliamento/Altro</p>
                 </div>
             </div>
             <h3 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Posizionamento specifico:</h3>
@@ -186,51 +174,51 @@
                     <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center"><i class="fas fa-star"></i></div>
                     <div>
                         <p class="font-bold">Angolare / Testata / Fronte</p>
-                        <p class="text-xs text-slate-400 font-medium">Massima visibilità.</p>
+                        <p class="text-xs text-slate-400 font-medium">Massima visibilità espositiva.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('posizione', 1.0, this)">
                     <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center"><i class="fas fa-grip-lines"></i></div>
                     <div>
                         <p class="font-bold">In linea / Centrale</p>
-                        <p class="text-xs text-slate-400 font-medium">Posizione standard.</p>
+                        <p class="text-xs text-slate-400 font-medium">Posizione standard tra altri banchi.</p>
                     </div>
                 </div>
             </div>
             <button onclick="nextStep(4)" class="w-full bg-slate-900 text-white font-black py-5 rounded-2xl mt-8">Continua</button>
         </div>
 
-        <!-- STEP 5: Anzianità e Rinnovo -->
+        <!-- STEP 5: Anzianità -->
         <div class="step-card" data-step="5">
-            <h2 class="text-xl font-black mb-6">5. Anzianità e Rinnovo 2032</h2>
+            <h2 class="text-xl font-black mb-6">5. Anzianità Licenza</h2>
             <div class="grid grid-cols-1 gap-4 text-left">
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('anni', 1.3, this)">
                     <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center"><i class="fas fa-check-double"></i></div>
                     <div>
-                        <p class="font-bold">Storico (Oltre 10 anni)</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Massima anzianità e rinnovo formalizzato.</p>
+                        <p class="font-bold">Storica (Oltre 10 anni)</p>
+                        <p class="text-xs text-slate-400 font-medium text-left">Massimo avviamento e stabilità.</p>
                     </div>
                 </div>
                 <div class="option-card p-5 rounded-2xl flex items-center gap-4" onclick="selectOption('anni', 1.0, this)">
                     <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center"><i class="fas fa-clock"></i></div>
                     <div>
                         <p class="font-bold">Recente (Sotto 10 anni)</p>
-                        <p class="text-xs text-slate-400 font-medium text-left">Attività più giovane o rinnovo in corso.</p>
+                        <p class="text-xs text-slate-400 font-medium text-left">Attività più giovane o subentro recente.</p>
                     </div>
                 </div>
             </div>
-            <button onclick="calculate()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition">Genera Perizia Finale</button>
+            <button onclick="calculate()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition">Calcola Valore Finale</button>
         </div>
 
         <!-- STEP 6: Risultato -->
         <div class="step-card text-center" data-step="6">
             <div class="w-16 h-16 bg-blue-600 text-white rounded-[20px] flex items-center justify-center mx-auto mb-6 text-xl shadow-lg shadow-blue-100">
-                <i class="fas fa-file-invoice-dollar"></i>
+                <i class="fas fa-coins"></i>
             </div>
-            <h2 class="text-2xl font-black mb-4 leading-tight text-slate-900">Risultato della Valutazione</h2>
+            <h2 class="text-2xl font-black mb-4 leading-tight text-slate-900">Valutazione Commerciale</h2>
             
-            <div class="result-box border-4 border-blue-600 p-8 rounded-[40px] text-center mb-8 bg-white">
-                <p class="text-slate-400 text-[10px] font-black uppercase tracking-[.2em] mb-2">Range di Valore Commerciale</p>
+            <div class="result-box border-4 border-blue-600 p-8 rounded-[40px] text-center mb-10 bg-white">
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-[.2em] mb-2">Range di Vendita Consigliato</p>
                 <div class="flex items-center justify-center gap-4 mb-4">
                     <span id="priceMin" class="text-2xl font-black text-slate-400">€ --</span>
                     <span class="text-3xl font-black text-slate-300">—</span>
@@ -241,22 +229,18 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-4 mb-10 text-left">
-                <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                    <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Valore Concessione</p>
-                    <p id="valConcessione" class="text-lg font-black text-slate-900">€ --</p>
-                </div>
-                <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                    <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Valore Avviamento</p>
-                    <p id="valAvviamento" class="text-lg font-black text-slate-900">€ --</p>
-                </div>
+            <div class="bg-slate-50 rounded-3xl p-6 text-left mb-10 border border-slate-100">
+                <p class="text-[11px] text-slate-500 font-bold leading-relaxed">
+                    <i class="fas fa-info-circle mr-1 text-blue-600"></i>
+                    Questa stima considera l'avviamento commerciale e la qualità del posizionamento. Per ottenere il prezzo massimo, assicurati di avere tutti i documenti del rinnovo 2032 pronti.
+                </p>
             </div>
 
             <div class="space-y-4">
                 <a href="vendi.html" class="block w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-lg">
-                    Pubblica Annuncio con questa stima
+                    Inserisci Annuncio Gratis
                 </a>
-                <button onclick="location.reload()" class="block w-full text-xs font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest">Nuova Perizia</button>
+                <button onclick="location.reload()" class="block w-full text-xs font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest">Nuova Valutazione</button>
             </div>
         </div>
 
@@ -272,7 +256,6 @@
     let currentStep = 1;
     let factors = {
         fatturato: 0,
-        canone: 0,
         frequenza: 1,
         stagionalita: 1,
         durataFiera: 1,
@@ -292,10 +275,8 @@
     function nextStep(step) {
         if (step === 1) {
             const fat = document.getElementById('fatturato').value;
-            const can = document.getElementById('canone').value;
             if (!fat || fat <= 0) { alert('Inserisci il fatturato.'); return; }
             factors.fatturato = parseFloat(fat);
-            factors.canone = parseFloat(can) || 0;
         }
 
         const prevCard = document.querySelector(`[data-step="${currentStep}"]`);
@@ -325,33 +306,29 @@
     }
 
     function calculate() {
-        // --- FORMULA RICHIESTA ---
+        // --- FORMULA SEMPLIFICATA E POTENZIATA ---
         
-        // 1. Valore Concessione
-        let moltTipo = (factors.frequenza === 'fiera') ? (2.0 * factors.durataFiera) : factors.frequenza;
-        let valConcessione = factors.canone * moltTipo * factors.posizione * factors.zona * factors.anni * factors.stagionalita;
+        // Base: 45% del fatturato annuo (l'avviamento puro)
+        let base = factors.fatturato * 0.45;
         
-        // Correzione realistica per canoni bassi
-        if (valConcessione < 2000) valConcessione = 2000 + (factors.canone * 5);
+        // Moltiplicatori
+        let moltFrequenza = (factors.frequenza === 'fiera') ? (2.2 * factors.durataFiera) : factors.frequenza;
+        
+        // Calcolo Totale Combinato
+        let totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
+        
+        // Protezione Valore Minimo (Soglia dignità commerciale)
+        if (factors.fatturato > 0 && totale < 6000) {
+            totale = 6000 + (factors.fatturato * 0.15);
+        }
 
-        // 2. Avviamento
-        // (fatturato_mensile * 12) = fatturato annuo
-        let valAvviamento = factors.fatturato * factors.settore * factors.zona * factors.stagionalita;
-        // L'avviamento pesa circa il 35-50% del fatturato annuo rettificato
-        valAvviamento = valAvviamento * 0.45;
-
-        // 3. Totale Base
-        let totale = valConcessione + valAvviamento;
-        
         // Range Output (85% - 115%)
         let min = totale * 0.85;
         let max = totale * 1.15;
 
-        // Arrotondamento ai 500€
-        const round = (val) => Math.round(val / 500) * 500;
+        // Arrotondamento ai 1.000€ per cifre importanti
+        const round = (val) => Math.round(val / 1000) * 1000;
 
-        document.getElementById('valConcessione').textContent = `€ ${round(valConcessione).toLocaleString('it-IT')}`;
-        document.getElementById('valAvviamento').textContent = `€ ${round(valAvviamento).toLocaleString('it-IT')}`;
         document.getElementById('priceMin').textContent = `€ ${round(min).toLocaleString('it-IT')}`;
         document.getElementById('priceMax').textContent = `€ ${round(max).toLocaleString('it-IT')}`;
         document.getElementById('totalAvg').textContent = `Prezzo Consigliato: € ${round(totale).toLocaleString('it-IT')}`;
