@@ -34,8 +34,8 @@ const COMUNI_IT = [
 // ── Funzioni Utility ──────────────────────────────────────
 
 function escapeHTML(str) {
-    if (!str) return "";
-    return str.replace(/[&<>"']/g, function(m) {
+    if (str === null || str === undefined) return "";
+    return String(str).replace(/[&<>"']/g, function(m) {
         return {
             '&': '&amp;',
             '<': '&lt;',
@@ -79,8 +79,8 @@ function levenshtein(a, b) {
 
 function fuzzyScore(target, query) {
     if (!target || !query) return 0;
-    const t = target.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const q = query.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const t = String(target).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const q = String(query).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     
     if (t.includes(q)) return 100;
     
@@ -126,7 +126,8 @@ function getCityCoords(cityName) {
 }
 
 function normalizeText(t) {
-    return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    if (!t) return "";
+    return String(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 }
 
 // ── Card Builder ──────────────────────────────────────────
