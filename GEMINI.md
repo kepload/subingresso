@@ -10,6 +10,9 @@ Questo file è il "Manuale Operativo" per Gemini. Serve a garantire modifiche si
    - **`generalist`**: Per modifiche ripetitive o batch (es. aggiornare 3+ file contemporaneamente).
    - *Obiettivo:* Riassumere il lavoro pesante in un unico messaggio nella chat principale.
 3. **Memoria di Progetto:** Usa `save_memory(scope='project')` per salvare fatti strutturali (schema DB, colori, API key simulate) che devono persistere tra le sessioni.
+4. **Monitoraggio Contesto (Mandatorio):** 
+   - Alla fine di ogni messaggio, fornisci una stima del consumo del contesto.
+   - Dopo una funzione pesante o dopo circa 10-15 messaggi, suggerisci esplicitamente all'utente di aprire una nuova chat per mantenere le performance elevate.
 
 ## 📂 Architettura & Core Logic (Cartella `/js`)
 
