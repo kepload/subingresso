@@ -16,8 +16,6 @@ const UI = {
             <a href="index.html"   class="nav-link-home hover:text-slate-900 transition">Home</a>
             <a href="annunci.html" class="nav-link-annunci hover:text-slate-900 transition">Annunci</a>
             <a href="blog.html"    class="nav-link-blog hover:text-slate-900 transition">Blog</a>
-            <a href="index.html#borsino" class="hover:text-slate-900 transition">Prezzi</a>
-            <a href="index.html#come-funziona" class="hover:text-slate-900 transition">Come funziona</a>
         </nav>
         <div class="flex items-center gap-2 sm:gap-3">
             <div id="authNav" class="flex items-center gap-2 sm:gap-3"></div>
