@@ -190,22 +190,5 @@ function buildCard(l, isSmall = false, distance = null) {
     </a>`;
 }
 
-// ── Demo Data (Fallback) ──────────────────────────────────
-const LISTINGS = [
-    {
-        id: 1,
-        titolo: "Posteggio Mercato Storico",
-        comune: "Salò",
-        provincia: "BS",
-        regione: "Lombardia",
-        tipo: "Mercato settimanale",
-        merce: "Alimentari",
-        prezzo: 12000,
-        superficie: 32,
-        giorni: "Sabato",
-        stato: "Vendita",
-        contatto: "Marco",
-        data: "2025-01-10",
-        descrizione: "Ottima posizione fronte lago, alta affluenza."
-    }
-];
+// ── Demo Data (Fallback — vuoto, i dati reali vengono da Supabase) ──
+const LISTINGS = [];

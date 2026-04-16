@@ -353,7 +353,7 @@ async function submitAnnuncio() {
         prezzo:      parseFloat(document.getElementById('fPrezzo').value),
         stato:       document.querySelector('input[name="stato"]:checked').value,
         user_id:     user.id,
-        status:      'pending', 
+        status:      checkContent(document.getElementById('fTitolo').value.trim(), document.getElementById('fDescrizione').value.trim()),
         expires_at:  expiresAt.toISOString(),
         contatto:    '',
         tel:         ''
@@ -414,11 +414,6 @@ async function submitAnnuncio() {
 
         if (error) throw error;
 
-        // IA Review in background
-        if (inserted && inserted.id) {
-            runIAReview(inserted.id, form);
-        }
-
         localStorage.setItem('last_post_time', Date.now());
 
         // Reset and success state
@@ -434,40 +429,12 @@ async function submitAnnuncio() {
     }
 }
 
-async function runIAReview(listingId, data) {
-    console.log('🤖 IA: Avvio analisi annuncio...', listingId);
-    
-    // Simulazione controllo qualità (parolacce, spam, link)
-    const blacklist = ['cazzo', 'merda', 'vaffanculo', 'http://', 'https://', 'www.'];
-    const textToScan = (data.titolo + ' ' + data.descrizione).toLowerCase();
-    
-    let isSafe = true;
-    let reason = '';
-
-    if (data.descrizione.length < 20) {
-        isSafe = false;
-        reason = 'Descrizione troppo breve';
-    }
-    
-    for (let word of blacklist) {
-        if (textToScan.includes(word)) {
-            isSafe = false;
-            reason = 'Rilevato linguaggio non ammesso o link esterni';
-            break;
-        }
-    }
-
-    // Delay per "fare finta" che l'IA lavori
-    setTimeout(async () => {
-        if (isSafe) {
-            console.log('✅ IA: Annuncio approvato.');
-            await _supabase.from('annunci').update({ status: 'active' }).eq('id', listingId);
-        } else {
-            console.warn('❌ IA: Annuncio rifiutato:', reason);
-            // Possiamo lasciarlo pending per revisione manuale o segnarlo come spam
-            await _supabase.from('annunci').update({ status: 'rejected', descrizione: data.descrizione + '\n\n[RIFIUTATO DA IA: ' + reason + ']' }).eq('id', listingId);
-        }
-    }, 3000);
+function checkContent(titolo, descrizione) {
+    const blacklist = ['cazzo', 'merda', 'vaffanculo'];
+    const testo = (titolo + ' ' + descrizione).toLowerCase();
+    if (descrizione.length < 20) return 'pending';
+    if (blacklist.some(w => testo.includes(w))) return 'pending';
+    return 'active';
 }
 
 function resetForm() {
