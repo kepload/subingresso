@@ -116,43 +116,78 @@ async function generateDeepArticle() {
 
     Restituisci SOLO il titolo dell'articolo, senza spiegazioni.`);
 
+    const STILE = `
+REGOLE DI STILE (rispetta sempre):
+- Tono: come se parlassi a un amico al bar. Diretto, schietto, semplice.
+- Ogni <h3> introduce un sotto-argomento e deve essere seguito da MAX 2-3 paragrafi brevi (3-4 righe ciascuno).
+- Usa <strong> per evidenziare concetti chiave (1-2 per paragrafo, non di più).
+- Per i consigli pratici usa questo box evidenziato: <div style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem 1.2rem;margin:1.2rem 0;border-radius:8px"><strong>💡 Consiglio pratico:</strong> testo del consiglio.</div>
+- VIETATO: paragrafi di 10+ righe, elenchi puntati infiniti, linguaggio tecnico/legale.
+- VIETATO ASSOLUTO: preamboli, saluti, conferme tipo "Ecco l'articolo", "Certamente". Inizia SEMPRE con il primo tag HTML.`;
+
     // 2. I PROBLEMI
-    console.log(`2/7 - Ricerca dei Problemi per: ${topic}`);
-    const problems = await callAI(`Per l'articolo intitolato "${topic}", elenca 3 problemi concreti o paure che un venditore ambulante ha riguardo a questo argomento (es. burocrazia lenta, truffe, spese nascoste). Restituisci solo un breve elenco.`);
+    console.log(`2/10 - Problemi per: ${topic}`);
+    const problems = await callAI(`Per l'articolo "${topic}", elenca 3 problemi concreti o paure tipiche di un venditore ambulante su questo tema (es. burocrazia, truffe, spese nascoste). Solo un elenco breve.`);
 
-    // 3. LA SCALETTA PRATICA
-    console.log("3/7 - Creazione Scaletta Pratica...");
-    const outline = await callAI(`Crea una scaletta in 3 Macro-Sezioni per l'articolo "${topic}", basandoti su questi problemi: [${problems}]. 
-    Le sezioni devono essere: 1) Il Problema, 2) La Soluzione Pratica (i "trucchi del mestiere"), 3) Quanto costa/Quanto tempo serve. Non fare micro-capitoli.`);
+    // 3. LA SCALETTA
+    console.log("3/10 - Scaletta...");
+    const outline = await callAI(`Crea una scaletta per l'articolo "${topic}" con questi problemi come base: [${problems}].
+    Struttura: 3 macro-sezioni, ognuna con 2 sotto-punti specifici.
+    Sezione 1: "Il Problema" (cosa va storto nella realtà).
+    Sezione 2: "Come Si Fa" (trucchi pratici, step concreti).
+    Sezione 3: "Numeri e Tempi" (costi reali, tempi burocratici, cosa aspettarsi).
+    Restituisci solo la scaletta, senza commenti.`);
 
-    // 4. PARTE 1 (IL PROBLEMA E I TRUCCHI)
-    console.log("4/7 - Scrittura Prima Parte...");
-    const contentPart1 = await callAI(`Scrivi l'Introduzione e le prime due Sezioni della scaletta: ${outline}.
-    Usa HTML (h2, p, strong).
-    IMPORTANTE: Scrivi "come se parlassi a un amico al bar", con tono diretto, schietto e molto semplice. Usa un linguaggio facilissimo da capire. Rivolgiti a venditori ambulanti.
-    ATTENZIONE: Sviluppa paragrafi lunghi e discorsivi, niente liste infinite di puntini, niente blocchetti da 10 righe.
-    DIVIETO ASSOLUTO: Non inserire mai preamboli, saluti o conferme (es. "Certo, ecco l'articolo", "Ecco a te la prima parte"). Inizia SUBITO a scrivere il contenuto HTML e basta.`);
+    // 4. INTRO HOOK
+    console.log("4/10 - Intro...");
+    const intro = await callAI(`Scrivi l'introduzione dell'articolo intitolato "${topic}".
+    L'intro deve: iniziare con una domanda o una situazione concreta che il lettore riconosce subito, poi spiegare in 2-3 frasi di cosa parlerà l'articolo e perché vale la pena leggerlo fino in fondo.
+    Usa <p> e <strong>. MAX 3 paragrafi totali.
+    ${STILE}`);
 
-    // 5. PARTE 2 (COSTI, TEMPI E TABELLA)
-    console.log("5/7 - Scrittura Seconda Parte...");
-    const contentPart2 = await callAI(`Completa l'articolo: "${topic}" sviluppando l'ultima Sezione (Costi/Tempi/Soluzione Finale) dalla scaletta: ${outline}.
-    Includi una tabella HTML di esempio molto pratica.
-    IMPORTANTE: Alla fine del testo, fai capire al lettore che se vuole comprare o vendere posteggi/licenze/furgoni, il posto migliore e più sicuro è inserire un annuncio o cercare su "Subingresso.it".
-    Usa HTML. Linguaggio facile, schietto e diretto.
-    DIVIETO ASSOLUTO: Non inserire MAI testi del tipo "Ecco la seconda parte", "Certamente, continuo l'articolo". Inizia direttamente con i tag HTML della nuova sezione.`);
+    // 5. SEZIONE 1 — IL PROBLEMA
+    console.log("5/10 - Sezione 1: Il Problema...");
+    const sezione1 = await callAI(`Scrivi la prima macro-sezione dell'articolo "${topic}" seguendo questa scaletta: [${outline}].
+    Concentrati solo sulla parte "Il Problema": spiega cosa va storto nella realtà, con esempi concreti e situazioni che il lettore ambulante conosce bene.
+    Struttura: <h2>titolo sezione</h2>, poi 2 sotto-argomenti ognuno con <h3>titolo</h3> e 2-3 paragrafi brevi.
+    ${STILE}`);
 
-    // 6. FAQ SECCHE
-    console.log("6/7 - FAQ...");
-    const faq = await callAI(`Per l'articolo "${topic}", scrivi 3 Domande e Risposte Frequenti.
-    Usa HTML (h3, p). Fai domande secche ("E se il comune mi blocca?", "Posso vendere solo il furgone?") e risposte direttissime, senza giri di parole.
-    DIVIETO ASSOLUTO: Non inserire convenevoli o introduzioni (es. "Ecco le FAQ richieste"). Inizia subito con il tag <h3> della prima domanda.`);
+    // 6. SEZIONE 2 — LA SOLUZIONE
+    console.log("6/10 - Sezione 2: Come Si Fa...");
+    const sezione2 = await callAI(`Scrivi la seconda macro-sezione dell'articolo "${topic}" seguendo questa scaletta: [${outline}].
+    Concentrati solo sulla parte "Come Si Fa": dai consigli pratici e trucchi del mestiere step by step.
+    Struttura: <h2>titolo sezione</h2>, poi 2 sotto-argomenti ognuno con <h3>titolo</h3> e 2-3 paragrafi brevi. Aggiungi almeno 1 box consiglio pratico.
+    ${STILE}`);
 
-    // 7. SEO E ASSEMBLAGGIO
-    console.log("7/7 - Rifinitura SEO...");
-    const fullText = contentPart1 + contentPart2 + faq;
-    const finalRaw = await callAI(`Prendi questo testo ed estrai un JSON pulito con questi campi: title, slug, excerpt, content.
+    // 7. SEZIONE 3 — NUMERI E TEMPI
+    console.log("7/10 - Sezione 3: Numeri e Tempi...");
+    const sezione3 = await callAI(`Scrivi la terza macro-sezione dell'articolo "${topic}" seguendo questa scaletta: [${outline}].
+    Concentrati solo sulla parte "Numeri e Tempi": costi reali, tempi burocratici, cosa aspettarsi concretamente.
+    Includi una tabella HTML pratica con esempi di numeri reali (inventali verosimili se necessario).
+    Struttura: <h2>titolo sezione</h2>, poi 2 sotto-argomenti con <h3> e paragrafi brevi, poi la tabella.
+    ${STILE}`);
+
+    // 8. BOX CTA SUBINGRESSO
+    console.log("8/10 - CTA Subingresso.it...");
+    const cta = await callAI(`Scrivi un breve paragrafo di chiusura per l'articolo "${topic}".
+    Deve invitare il lettore, in modo naturale e non pubblicitario, a cercare o pubblicare annunci su Subingresso.it se vuole comprare o vendere posteggi, licenze o furgoni attrezzati.
+    Usa questo box HTML: <div style="background:#f0fdf4;border:2px solid #86efac;padding:1.2rem 1.5rem;border-radius:12px;margin:2rem 0"><strong>📢 Cerchi o vendi un posteggio?</strong><br>testo invito...</div>
+    VIETATO: preamboli. Inizia direttamente con il tag <div>.`);
+
+    // 9. FAQ
+    console.log("9/10 - FAQ...");
+    const faq = await callAI(`Per l'articolo "${topic}", scrivi 3 domande e risposte frequenti.
+    Usa <h2>Domande Frequenti</h2> come titolo, poi per ogni FAQ: <h3>domanda diretta?</h3> e <p>risposta secca in 2-3 righe.</p>
+    Le domande devono essere quelle che si farebbe davvero un ambulante ("E se il comune non approva?", "Ci vogliono soldi subito?").
+    ${STILE}`);
+
+    // 10. SEO E ASSEMBLAGGIO
+    console.log("10/10 - Assemblaggio SEO...");
+    const fullText = intro + sezione1 + sezione2 + sezione3 + cta + faq;
+    const finalRaw = await callAI(`Dato questo testo HTML di un articolo, restituisci un JSON con: title (titolo accattivante), slug (URL-friendly), excerpt (riassunto 1 frase), content (tutto il testo HTML invariato).
     TESTO: ${fullText}
-    RESTITUISCI SOLO JSON: {"title": "...", "slug": "...", "excerpt": "...", "content": "..."}`);
+    RESTITUISCI SOLO JSON VALIDO, nient'altro: {"title": "...", "slug": "...", "excerpt": "...", "content": "..."}`);
+
 
     try {
         const cleanJson = finalRaw.replace(/```json|```/g, '').trim();
