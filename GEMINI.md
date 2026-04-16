@@ -31,7 +31,7 @@ Questo file è il "Manuale Operativo" per Gemini. Serve a garantire modifiche si
 ## 🚀 Workflow di Pubblicazione (GitHub/Vercel)
 
 ### 🚨 REGOLA D'ORO (Mandatoria)
-Dopo **OGNI** modifica ai file, esegui il push per attivare la build su Vercel:
+Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per attivare la build su Vercel. Non aspettare che l'utente lo chieda:
 1. `git add .`
 2. `git commit -m "Descrizione precisa della modifica"`
 3. `git push`
@@ -41,3 +41,18 @@ Dopo **OGNI** modifica ai file, esegui il push per attivare la build su Vercel:
 - `Gemini API "Quota exceeded"`: Implementato Retry Loop con modelli alternativi.
 - `AI Generatore`: Usa chiamate multi-step, no elenchi puntati, solo paragrafi lunghi e CTA.
 - `Database Setup`: Usa `SETUP_DEF_SUBINGRESSO.sql` per ripristinare i permessi corretti (specialmente per Admin/Blog).
+- **`let history`** in `valutatore.html` causava crash silenzioso dell'intero script — rinominato in `stepHistory`. MAI usare `history` come nome variabile (conflitto con `window.history`).
+- **Input `type="number"` con locale italiano**: usare sempre `type="text" inputmode="numeric"` + parsing manuale (strip punti, replace virgola→punto, parseFloat).
+- **Immagini annunci**: salvate in `dettagli_extra.images` E in `img_urls` (array). Devono essere in entrambi i campi o non appaiono in `buildCard()`.
+- **Conversazioni/Messaggi**: `SETUP_DEF_SUBINGRESSO.sql` ora include le policy RLS mancanti per `conversazioni` e `messaggi`.
+
+## 🔍 Ricerca Annunci (`js/pages/annunci.js`)
+- Se il testo cercato è un luogo riconoscibile (`getCityCoords` lo trova), mostra **sempre** tutti gli annunci entro 200km ordinati per distanza — non solo come fallback.
+- `PROVINCE_COORDS` in `data.js`: aggiungere qui nuovi comuni se la ricerca per vicinanza non li trova. Toscolano Maderno già aggiunto.
+
+## 🤖 Blog Generator (`js/blog-generator.js`)
+- **11 chiamate API sequenziali** (~2-3 min totali). Gira nel browser: se chiudi la pagina si interrompe.
+- Ogni call ha il suo `maxTokens`: sezioni contenuto → 4000, revisione → 8000, metadati SEO → 500.
+- Lo step finale chiede **solo** `title/slug/excerpt` (NON il content nel JSON) — il content viene usato direttamente dalla variabile JS.
+- Pulizia markdown: prima regex locale, poi AI solo se trovate tabelle `| pipe |` residue.
+- Anti-duplicati: prompt con lista temi vietati + controllo similarità titolo (>50% parole) prima di pubblicare.
