@@ -398,6 +398,7 @@ async function submitAnnuncio() {
         }
 
         form.dettagli_extra = { images: imageUrls };
+        form.img_urls = imageUrls;
 
         // ── 2. INSERIMENTO ANNUNCIO ──
         let { data: inserted, error } = await _supabase.from('annunci').insert(form).select('id').single();

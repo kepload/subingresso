@@ -309,7 +309,8 @@ async function updateAnnuncio() {
             descrizione: document.getElementById('fDescrizione').value.trim(),
             stato: document.querySelector('input[name="stato"]:checked').value,
             dettagli_extra: { images: finalImages },
-            status: 'pending' 
+            img_urls: finalImages,
+            status: 'pending'
         };
 
         const { error } = await _supabase.from('annunci').update(updated).eq('id', listingId);
