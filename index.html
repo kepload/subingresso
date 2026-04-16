@@ -396,12 +396,12 @@ let acIndex  = -1;
 let acItems  = [];
 
 function highlight(text, q) {
-    if (!q) return text;
+    if (!q) return escapeHTML(text);
     const i = text.toLowerCase().indexOf(q.toLowerCase());
-    if (i === -1) return text;
-    return text.slice(0, i)
-         + `<span class="ac-highlight">${text.slice(i, i + q.length)}</span>`
-         + text.slice(i + q.length);
+    if (i === -1) return escapeHTML(text);
+    return escapeHTML(text.slice(0, i))
+         + `<span class="ac-highlight">${escapeHTML(text.slice(i, i + q.length))}</span>`
+         + escapeHTML(text.slice(i + q.length));
 }
 
 function buildAcList(q) {
@@ -457,7 +457,7 @@ function buildAcList(q) {
                             <i class="fas fa-store" style="flex-shrink:0"></i>
                             <span>${highlight(l.comune, q)}</span>
                         </div>
-                        <div style="font-size:.72rem;color:#94a3b8;padding-left:26px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:340px">${l.titolo}</div>
+                        <div style="font-size:.72rem;color:#94a3b8;padding-left:26px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:340px">${escapeHTML(l.titolo)}</div>
                      </div>`;
         });
     }
