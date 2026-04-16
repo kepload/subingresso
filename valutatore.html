@@ -314,9 +314,9 @@
 
     function nextStep() {
         if (currentStep === 1) {
-            const fat = document.getElementById('fatturato').value;
-            if (!fat || fat <= 0) { alert('Inserisci il fatturato.'); return; }
-            factors.fatturato = parseFloat(fat);
+            const fat = document.getElementById('fatturato').valueAsNumber;
+            if (isNaN(fat) || fat <= 0) { alert('Inserisci il fatturato.'); return; }
+            factors.fatturato = fat;
         }
 
         const prevCard = document.querySelector(`[data-step="${currentStep}"]`);
