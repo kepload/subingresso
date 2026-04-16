@@ -107,9 +107,14 @@ async function generateDeepArticle() {
 
     // 1. L'ANALISTA SEO E L'INTENTO
     console.log("1/7 - Studio dell'Intento di Ricerca...");
-    const topic = await callAI(`Sei un esperto SEO per il mercato del commercio ambulante. ARCHIVIO: [${existingTitles}]. 
-    Scegli un "Intento di Ricerca Popolare e Pratico". La gente cerca cose terra-terra: "Come vendere la licenza senza farsi fregare", "Quanto costa un posteggio fisso?", "Subingresso licenza: quanto tempo ci vuole?".
-    Restituisci SOLO un TITOLO acchiappa-click basato su un problema reale degli ambulanti. Non fare titoli accademici o legali.`);
+    const topic = await callAI(`Sei un esperto SEO per il mercato del commercio ambulante italiano.
+    ARCHIVIO TITOLI GIÀ PUBBLICATI (ASSOLUTAMENTE VIETATI - non ripetere né parafrasare nessuno di questi): [${existingTitles}]
+
+    REGOLA ASSOLUTA: l'argomento scelto deve essere COMPLETAMENTE DIVERSO da tutti i titoli in archivio. Se l'archivio contiene già articoli su "licenza", "vendere" o "prezzo", scegli un tema diverso.
+
+    TEMI TRA CUI SCEGLIERE (preferisci quelli assenti dall'archivio): costi annui del posteggio, differenza tra mercato settimanale e giornaliero, come trovare un buon posteggio, burocrazia del subingresso step by step, errori nel contratto di affitto posteggio, come valutare un posteggio prima di comprarlo, tasse e contributi dell'ambulante, mercati più redditizi d'Italia, passaggio di licenza ambulante, consigli per il primo anno da ambulante, furgone attrezzato comprare o affittare, come aumentare il fatturato al mercato, posteggio fisso vs itinerante.
+
+    Restituisci SOLO il titolo dell'articolo, senza spiegazioni.`);
 
     // 2. I PROBLEMI
     console.log(`2/7 - Ricerca dei Problemi per: ${topic}`);
@@ -165,11 +170,30 @@ async function generateDeepArticle() {
     }
 }
 
+function titlesAreTooSimilar(a, b) {
+    const normalize = s => s.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+    const wordsA = new Set(normalize(a).split(/\s+/).filter(w => w.length > 3));
+    const wordsB = new Set(normalize(b).split(/\s+/).filter(w => w.length > 3));
+    let shared = 0;
+    wordsA.forEach(w => { if (wordsB.has(w)) shared++; });
+    const similarity = shared / Math.max(wordsA.size, wordsB.size, 1);
+    return similarity > 0.5; // più del 50% di parole in comune = troppo simile
+}
+
 // Esporta per l'uso
 window.generateAndPublish = async function() {
     const post = await generateDeepArticle();
     console.log("✅ Articolo generato con successo!", post.title);
-    
+
+    // Controllo anti-duplicato sul titolo finale
+    const { data: existing } = await _supabase.from('blog_posts').select('title').limit(30);
+    if (existing) {
+        const duplicate = existing.find(p => titlesAreTooSimilar(p.title, post.title));
+        if (duplicate) {
+            throw new Error(`Titolo troppo simile a uno già pubblicato: "${duplicate.title}". Riprova per generare un argomento diverso.`);
+        }
+    }
+
     // Pubblica su Supabase
     const { data, error } = await _supabase.from('blog_posts').insert({
         title: post.title,
