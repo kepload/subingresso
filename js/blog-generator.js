@@ -2,7 +2,7 @@
  * Subingresso.it — Generatore Articoli Blog "Deep Content"
  */
 
-async function callAI(prompt) {
+async function callAI(prompt, maxTokens = 2000) {
     const apiKey = window.ENV_GEMINI_API_KEY || '';
     if (!apiKey) throw new Error("GEMINI_API_KEY mancante o non valida.");
     
@@ -64,7 +64,7 @@ async function callAI(prompt) {
                 body: JSON.stringify({
                     system_instruction: { parts: [{ text: "Sei un copywriter e assistente tecnico. Rispondi SEMPRE E SOLO con il contenuto richiesto. È SEVERAMENTE VIETATO usare convenevoli, saluti, conferme o frasi introduttive come 'Certamente', 'Ecco a te', 'Ecco l'articolo'. Inizia direttamente con l'output richiesto (es. i tag HTML o il JSON)." }] },
                     contents: [{ parts: [{ text: prompt }] }],
-                    generationConfig: { temperature: 0.7, maxOutputTokens: 2000 }
+                    generationConfig: { temperature: 0.7, maxOutputTokens: maxTokens }
                 })
             });
             
@@ -143,78 +143,85 @@ REGOLE DI STILE (rispetta sempre):
     const intro = await callAI(`Scrivi l'introduzione dell'articolo intitolato "${topic}".
     L'intro deve: iniziare con una domanda o una situazione concreta che il lettore riconosce subito, poi spiegare in 2-3 frasi di cosa parlerà l'articolo e perché vale la pena leggerlo fino in fondo.
     Usa <p> e <strong>. MAX 3 paragrafi totali.
-    ${STILE}`);
+    ${STILE}`, 3000);
 
     // 5. SEZIONE 1 — IL PROBLEMA
-    console.log("5/10 - Sezione 1: Il Problema...");
+    console.log("5/11 - Sezione 1: Il Problema...");
     const sezione1 = await callAI(`Scrivi la prima macro-sezione dell'articolo "${topic}" seguendo questa scaletta: [${outline}].
     Concentrati solo sulla parte "Il Problema": spiega cosa va storto nella realtà, con esempi concreti e situazioni che il lettore ambulante conosce bene.
     Struttura: <h2>titolo sezione</h2>, poi 2 sotto-argomenti ognuno con <h3>titolo</h3> e 2-3 paragrafi brevi.
-    ${STILE}`);
+    ${STILE}`, 4000);
 
     // 6. SEZIONE 2 — LA SOLUZIONE
-    console.log("6/10 - Sezione 2: Come Si Fa...");
+    console.log("6/11 - Sezione 2: Come Si Fa...");
     const sezione2 = await callAI(`Scrivi la seconda macro-sezione dell'articolo "${topic}" seguendo questa scaletta: [${outline}].
     Concentrati solo sulla parte "Come Si Fa": dai consigli pratici e trucchi del mestiere step by step.
     Struttura: <h2>titolo sezione</h2>, poi 2 sotto-argomenti ognuno con <h3>titolo</h3> e 2-3 paragrafi brevi. Aggiungi almeno 1 box consiglio pratico.
-    ${STILE}`);
+    ${STILE}`, 4000);
 
     // 7. SEZIONE 3 — NUMERI E TEMPI
-    console.log("7/10 - Sezione 3: Numeri e Tempi...");
+    console.log("7/11 - Sezione 3: Numeri e Tempi...");
     const sezione3 = await callAI(`Scrivi la terza macro-sezione dell'articolo "${topic}" seguendo questa scaletta: [${outline}].
     Concentrati solo sulla parte "Numeri e Tempi": costi reali, tempi burocratici, cosa aspettarsi concretamente.
     Includi una tabella con esempi di numeri reali (inventali verosimili se necessario).
     FORMATO TABELLA OBBLIGATORIO — usa SOLO questo HTML, mai Markdown con | pipe |:
     <table style="width:100%;border-collapse:collapse;margin:1.5rem 0"><thead><tr style="background:#2563eb;color:#fff"><th style="padding:10px;text-align:left">Voce</th><th style="padding:10px;text-align:left">Minimo</th><th style="padding:10px;text-align:left">Medio</th><th style="padding:10px;text-align:left">Note</th></tr></thead><tbody><tr style="background:#f8fafc"><td style="padding:10px;border-bottom:1px solid #e2e8f0">...</td>...</tr></tbody></table>
     Struttura: <h2>titolo sezione</h2>, poi 2 sotto-argomenti con <h3> e paragrafi brevi, poi la tabella HTML.
-    ${STILE}`);
+    ${STILE}`, 4000);
 
     // 8. BOX CTA SUBINGRESSO
-    console.log("8/10 - CTA Subingresso.it...");
+    console.log("8/11 - CTA Subingresso.it...");
     const cta = await callAI(`Scrivi un breve paragrafo di chiusura per l'articolo "${topic}".
     Deve invitare il lettore, in modo naturale e non pubblicitario, a cercare o pubblicare annunci su Subingresso.it se vuole comprare o vendere posteggi, licenze o furgoni attrezzati.
     Usa questo box HTML: <div style="background:#f0fdf4;border:2px solid #86efac;padding:1.2rem 1.5rem;border-radius:12px;margin:2rem 0"><strong>📢 Cerchi o vendi un posteggio?</strong><br>testo invito...</div>
-    VIETATO: preamboli. Inizia direttamente con il tag <div>.`);
+    VIETATO: preamboli. Inizia direttamente con il tag <div>.`, 1000);
 
     // 9. FAQ
-    console.log("9/10 - FAQ...");
+    console.log("9/11 - FAQ...");
     const faq = await callAI(`Per l'articolo "${topic}", scrivi 3 domande e risposte frequenti.
     Usa <h2>Domande Frequenti</h2> come titolo, poi per ogni FAQ: <h3>domanda diretta?</h3> e <p>risposta secca in 2-3 righe.</p>
     Le domande devono essere quelle che si farebbe davvero un ambulante ("E se il comune non approva?", "Ci vogliono soldi subito?").
-    ${STILE}`);
+    ${STILE}`, 2000);
 
-    // 10. REVISIONE QUALITÀ
-    console.log("10/11 - Revisione qualità del testo...");
+    // 10. REVISIONE QUALITÀ — correzione markdown con regex locale + AI solo se necessario
+    console.log("10/11 - Revisione qualità...");
     const rawText = intro + sezione1 + sezione2 + sezione3 + cta + faq;
-    const fullText = await callAI(`Sei un editor HTML. Ricevi il testo di un articolo e devi restituirlo corretto e pulito.
 
-    PROBLEMI DA CORREGGERE (controlla uno per uno):
-    1. Tabelle in formato Markdown (con | pipe | e :---:) → convertile in <table> HTML con style inline come questo: <table style="width:100%;border-collapse:collapse;margin:1.5rem 0"><thead><tr style="background:#2563eb;color:#fff"><th style="padding:10px;text-align:left">...</th></tr></thead><tbody><tr style="background:#f8fafc"><td style="padding:10px;border-bottom:1px solid #e2e8f0">...</td></tr></tbody></table>
-    2. Testo con asterischi Markdown (**testo**) → converti in <strong>testo</strong>
-    3. Titoli con # Markdown (## Titolo) → converti in <h2>Titolo</h2> o <h3>
-    4. Frasi di introduzione strane tipo "Ecco la sezione", "Certamente" → eliminale
-    5. Paragrafi più lunghi di 5 righe → spezzali in due paragrafi <p> separati
+    // Pulizia locale rapida (non consuma token)
+    let fullText = rawText
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/^#{1,2} (.+)$/gm, '<h2>$1</h2>')
+        .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+        .replace(/(Ecco |Certamente[,.]? |Ecco a te |Ecco la |Ecco il )[^\n<]*/gi, '')
+        .replace(/\n{3,}/g, '\n\n');
 
-    Restituisci SOLO il testo HTML corretto, senza spiegazioni, senza commenti, senza JSON.
+    // Se ci sono ancora tabelle markdown, chiedi all'AI di convertirle
+    if (fullText.includes('| ---') || fullText.includes('|---') || /\|.+\|.+\|/.test(fullText)) {
+        console.log("10b/11 - Conversione tabelle markdown...");
+        fullText = await callAI(`Converti tutte le tabelle in formato Markdown (con | pipe |) in tabelle HTML con questo stile:
+        <table style="width:100%;border-collapse:collapse;margin:1.5rem 0"><thead><tr style="background:#2563eb;color:#fff"><th style="padding:10px;text-align:left">...</th></tr></thead><tbody><tr style="background:#f8fafc"><td style="padding:10px;border-bottom:1px solid #e2e8f0">...</td></tr></tbody></table>
+        Non toccare nient'altro. Restituisci SOLO il testo HTML completo corretto.
+        TESTO: ${fullText}`, 8000);
+    }
 
-    TESTO DA CORREGGERE:
-    ${rawText}`);
-
-    // 11. SEO E ASSEMBLAGGIO FINALE
-    console.log("11/11 - Assemblaggio SEO...");
-    const finalRaw = await callAI(`Dato questo testo HTML di un articolo, restituisci un JSON con: title (titolo accattivante), slug (URL-friendly), excerpt (riassunto 1 frase max 160 caratteri), content (tutto il testo HTML invariato).
-    TESTO: ${fullText}
-    RESTITUISCI SOLO JSON VALIDO, nient'altro: {"title": "...", "slug": "...", "excerpt": "...", "content": "..."}`);
-
-
+    // 11. SEO: chiedi SOLO title, slug, excerpt — il content lo usiamo direttamente
+    console.log("11/11 - Generazione metadati SEO...");
+    const metaRaw = await callAI(`Leggi questo articolo e restituisci SOLO un JSON con 3 campi:
+    - title: titolo SEO accattivante (max 70 caratteri)
+    - slug: URL slug (solo lettere minuscole e trattini)
+    - excerpt: riassunto di 1 frase (max 160 caratteri)
+    NON includere il campo "content". RESTITUISCI SOLO JSON VALIDO.
+    ARTICOLO: ${fullText.substring(0, 1500)}
+    FORMATO: {"title": "...", "slug": "...", "excerpt": "..."}`, 500);
 
     try {
-        const cleanJson = finalRaw.replace(/```json|```/g, '').trim();
+        const cleanJson = metaRaw.replace(/```json|```/g, '').trim();
         const match = cleanJson.match(/\{[\s\S]*\}/);
         if (!match) throw new Error("JSON non trovato nella risposta");
-        return JSON.parse(match[0]);
+        const meta = JSON.parse(match[0]);
+        return { title: meta.title || topic, slug: meta.slug, excerpt: meta.excerpt, content: fullText };
     } catch (e) {
-        console.error("Errore parsing JSON IA:", e, finalRaw);
+        console.error("Errore parsing JSON metadati:", e, metaRaw);
         return {
             title: topic,
             slug: topic.toLowerCase().replace(/[^a-z0-9]/g, '-'),
