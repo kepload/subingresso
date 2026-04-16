@@ -43,56 +43,66 @@ function applyFilters() {
     LAST_SEARCH_QUERY = qRaw; 
     const q         = normalizeText(qRaw);
 
-    let results = LISTINGS.filter(l => {
-        if (regione && l.regione !== regione) return false;
-        if (tipo    && l.tipo    !== tipo)    return false;
-        if (stato   && l.stato   !== stato)   return false;
-        if (l.prezzo > prezzoMax)             return false;
-        if (l.superficie < supMin)            return false;
-        
-        if (q) {
-            const searchField = normalizeText(`${l.titolo} ${l.comune} ${l.regione} ${l.settore || ''} ${l.merce || ''}`);
-            if (!searchField.includes(q)) {
-                const words = searchField.split(' ');
-                const hasFuzzyMatch = words.some(w => fuzzyScore(w, q) > 70);
-                if (!hasFuzzyMatch) return false;
-            }
-        }
-        return true;
-    });
-
-    // ── LOGICA VICINANZA (FALLBACK) ──
+    // ── LOGICA VICINANZA (SEMPRE ATTIVA SE IL TESTO È UN LUOGO) ──
     let isProximitySearch = false;
-    let fallbackCity = '';
-    
-    if (results.length === 0 && q && q.length > 2) {
-        const searchCoords = getCityCoords(qRaw);
-        if (searchCoords) {
-            isProximitySearch = true;
-            for (let key in PROVINCE_COORDS) {
-                if (PROVINCE_COORDS[key] === searchCoords) { fallbackCity = key; break; }
-            }
+    let searchCity = '';
+    let results = [];
 
-            results = LISTINGS.map(l => {
-                const cityCoords = getCityCoords(l.comune) || getCityCoords(l.regione);
-                let distance = Infinity;
-                if (cityCoords) {
-                    distance = getDistanceKM(searchCoords[0], searchCoords[1], cityCoords[0], cityCoords[1]);
-                }
-                return { ...l, _distance: distance };
-            }).filter(l => l._distance <= 400);
-            
-            results.sort((a, b) => a._distance - b._distance);
+    const searchCoords = q && q.length > 1 ? getCityCoords(qRaw) : null;
+
+    if (searchCoords) {
+        // Ricerca per luogo: mostra tutti gli annunci entro 200km, ordinati per distanza
+        isProximitySearch = true;
+        for (let key in PROVINCE_COORDS) {
+            if (PROVINCE_COORDS[key] === searchCoords) { searchCity = key; break; }
         }
-    }
 
-    // Sort manuale (se non è ricerca per vicinanza)
-    if (!isProximitySearch && fSort) {
-        const sortVal = fSort.value;
-        if (sortVal === 'prezzoAsc') results.sort((a, b) => (a.prezzo || 0) - (b.prezzo || 0));
-        else if (sortVal === 'prezzoDesc') results.sort((a, b) => (b.prezzo || 0) - (a.prezzo || 0));
-        else if (sortVal === 'superficie') results.sort((a, b) => (b.superficie || 0) - (a.superficie || 0));
-        // 'data' è il default (già ordinati da Supabase)
+        results = LISTINGS
+            .map(l => {
+                const cityCoords = getCityCoords(l.comune) || getCityCoords(l.regione);
+                const distance = cityCoords
+                    ? getDistanceKM(searchCoords[0], searchCoords[1], cityCoords[0], cityCoords[1])
+                    : Infinity;
+                return { ...l, _distance: distance };
+            })
+            .filter(l => {
+                if (l._distance > 200) return false;
+                if (regione && l.regione !== regione) return false;
+                if (tipo    && l.tipo    !== tipo)    return false;
+                if (stato   && l.stato   !== stato)   return false;
+                if (l.prezzo > prezzoMax)             return false;
+                if (l.superficie < supMin)            return false;
+                return true;
+            });
+
+        results.sort((a, b) => a._distance - b._distance);
+    } else {
+        // Ricerca per testo libero (settore, parola chiave, ecc.)
+        results = LISTINGS.filter(l => {
+            if (regione && l.regione !== regione) return false;
+            if (tipo    && l.tipo    !== tipo)    return false;
+            if (stato   && l.stato   !== stato)   return false;
+            if (l.prezzo > prezzoMax)             return false;
+            if (l.superficie < supMin)            return false;
+
+            if (q) {
+                const searchField = normalizeText(`${l.titolo} ${l.comune} ${l.regione} ${l.settore || ''} ${l.merce || ''}`);
+                if (!searchField.includes(q)) {
+                    const words = searchField.split(' ');
+                    const hasFuzzyMatch = words.some(w => fuzzyScore(w, q) > 70);
+                    if (!hasFuzzyMatch) return false;
+                }
+            }
+            return true;
+        });
+
+        // Sort manuale
+        if (fSort) {
+            const sortVal = fSort.value;
+            if (sortVal === 'prezzoAsc') results.sort((a, b) => (a.prezzo || 0) - (b.prezzo || 0));
+            else if (sortVal === 'prezzoDesc') results.sort((a, b) => (b.prezzo || 0) - (a.prezzo || 0));
+            else if (sortVal === 'superficie') results.sort((a, b) => (b.superficie || 0) - (a.superficie || 0));
+        }
     }
 
     // render
@@ -109,17 +119,17 @@ function applyFilters() {
     }
 
     if (count) {
-        count.textContent = isProximitySearch 
-            ? `Nessun risultato esatto per "${qRaw}", ecco i più vicini a ${fallbackCity || qRaw}:` 
+        count.textContent = isProximitySearch
+            ? `${results.length} annunci entro 200km da ${searchCity || qRaw}`
             : `${results.length} annunci trovati`;
     }
 
     // subtitle
     const sub = document.getElementById('subtitle');
     if (sub) {
-        if (isProximitySearch) sub.textContent = `Annunci vicino a ${fallbackCity || qRaw}`;
+        if (isProximitySearch) sub.textContent = `Posteggi vicino a ${searchCity || qRaw} (ordinati per distanza)`;
         else if (regione) sub.textContent = `Posteggi disponibili in ${regione}`;
-        else if (q)  sub.textContent = `Risultati per "${q}"`;
+        else if (q)  sub.textContent = `Risultati per "${qRaw}"`;
         else         sub.textContent = 'Tutti i posteggi disponibili';
     }
 
