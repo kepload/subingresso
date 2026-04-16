@@ -5,6 +5,8 @@
 
 (function () {
 
+let _profileCache = null; // { id, nome } — evita query ripetute sulla navbar
+
 // ── Inject modal HTML ──────────────────────────────────────
 const modalHTML = `
 <div id="authOverlay" class="fixed inset-0 z-[999] flex items-center justify-center p-4 hidden" style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)">
@@ -243,9 +245,12 @@ window.handleRegister = async function (e) {
             return;
         }
 
-        if (data?.user) {
+        if (data?.user && data?.session) {
+            // Session presente = conferma email disabilitata, utente subito attivo
             await _supabase.from('profiles').upsert({ id: data.user.id, nome, cognome, telefono });
+            _profileCache = { id: data.user.id, nome };
         }
+        // Se session è null la conferma email è pending: il profilo verrà creato al primo login
 
         _showAuthSuccess('Account creato! Controlla la tua email per confermare, poi accedi.');
         setTimeout(() => switchAuthTab('login'), 4000);
@@ -257,6 +262,7 @@ window.handleRegister = async function (e) {
 
 // ── Sign out ─────────────────────────────────────────────
 window.signOut = async function () {
+    _profileCache = null;
     try {
         await _supabase.auth.signOut();
     } catch (e) { console.error("Sign out error:", e); }
@@ -319,8 +325,25 @@ window.updateAuthNav = async function () {
     } else {
         let nome = user.email.split('@')[0];
         try {
-            const { data: profile } = await _supabase.from('profiles').select('nome').eq('id', user.id).single();
-            if (profile?.nome) nome = profile.nome;
+            if (_profileCache && _profileCache.id === user.id) {
+                nome = _profileCache.nome;
+            } else {
+                const { data: profile } = await _supabase.from('profiles').select('nome').eq('id', user.id).single();
+                if (profile?.nome) {
+                    nome = profile.nome;
+                    _profileCache = { id: user.id, nome: profile.nome };
+                } else {
+                    // Profilo assente: utente confermato via email ma profilo non ancora creato
+                    // Lo creiamo ora dai metadati salvati al signUp
+                    const meta = user.user_metadata || {};
+                    if (meta.nome) {
+                        nome = meta.nome;
+                        _supabase.from('profiles')
+                            .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '' })
+                            .then(() => { _profileCache = { id: user.id, nome: meta.nome }; });
+                    }
+                }
+            }
         } catch (e) {}
         
         const initial = nome.charAt(0).toUpperCase();

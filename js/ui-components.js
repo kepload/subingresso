@@ -62,7 +62,6 @@ const UI = {
             <p class="text-slate-500">&copy; 2025 Subingresso.it. Tutti i diritti riservati.</p>
             <div class="flex items-center gap-4">
                 <a href="blog.html" class="text-[10px] text-slate-700 hover:text-slate-500 transition uppercase font-bold tracking-widest">Blog</a>
-                <p class="text-slate-600 text-xs">Sito dimostrativo &mdash; dati di esempio</p>
             </div>
         </div>
     </div>`
@@ -78,9 +77,7 @@ function initUI() {
         
         // Attiva link corrente
         const page = window.location.pathname;
-        if (page.includes('index.html') || page === '/') {
-            headerEl.querySelector('.nav-link-home')?.classList.add('text-blue-600');
-        } else if (page.includes('annunci.html')) {
+        if (page.includes('annunci.html')) {
             headerEl.querySelector('.nav-link-annunci')?.classList.add('text-blue-600');
         } else if (page.includes('blog.html')) {
             headerEl.querySelector('.nav-link-blog')?.classList.add('text-blue-600');
