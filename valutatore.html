@@ -68,6 +68,7 @@
                 <input type="text" inputmode="numeric" id="fatturato" placeholder="Es: 65000" autofocus
                         class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-5 pl-12 pr-6 text-2xl font-black outline-none focus:border-blue-600 transition">
             </div>
+            <div id="debugMsg" style="display:none;background:#fee2e2;color:#991b1b;padding:10px;border-radius:8px;margin-top:8px;font-size:13px;font-weight:bold;"></div>
             <button onclick="nextStep()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
         </div>
 
@@ -312,11 +313,18 @@
         setTimeout(() => { if (currentStep < 6) nextStep(); }, 150);
     }
 
+    function showDebug(msg) {
+        const el = document.getElementById('debugMsg');
+        if (el) { el.style.display = 'block'; el.textContent = msg; }
+    }
+
     function nextStep() {
+        showDebug('');
         if (currentStep === 1) {
             const raw = document.getElementById('fatturato').value.trim().replace(/\./g, '').replace(',', '.');
             const fat = parseFloat(raw);
-            if (isNaN(fat) || fat <= 0) { alert('Inserisci un fatturato valido (es: 65000).'); return; }
+            showDebug('DEBUG: raw="' + raw + '" fat=' + fat + ' isNaN=' + isNaN(fat));
+            if (isNaN(fat) || fat <= 0) { showDebug('ERRORE: valore non valido. raw="' + document.getElementById('fatturato').value + '"'); return; }
             factors.fatturato = fat;
         }
 
