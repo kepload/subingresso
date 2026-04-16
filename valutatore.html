@@ -68,8 +68,7 @@
                 <input type="text" inputmode="numeric" id="fatturato" placeholder="Es: 65000" autofocus
                         class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-5 pl-12 pr-6 text-2xl font-black outline-none focus:border-blue-600 transition">
             </div>
-            <div id="debugMsg" style="display:none;background:#fee2e2;color:#991b1b;padding:10px;border-radius:8px;margin-top:8px;font-size:13px;font-weight:bold;"></div>
-            <button onclick="var d=document.getElementById('debugMsg'); d.style.display='block'; try { d.textContent='nextStep tipo: '+typeof nextStep; nextStep(); d.textContent='OK - step avanzato'; } catch(e) { d.textContent='ERRORE: '+e.message; }" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
+            <button onclick="nextStep()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
         </div>
 
         <!-- STEP 2: Frequenza -->
@@ -292,9 +291,9 @@
 </footer>
 
 <script>
-    let currentStep = 1;
-    let history = [1];
-    let factors = {
+    var currentStep = 1;
+    var stepHistory = [1];
+    var factors = {
         fatturato: 0,
         frequenza: 1,
         stagionalita: 1,
@@ -307,31 +306,23 @@
 
     function selectOption(key, value, element) {
         factors[key] = value;
-        const cards = element.parentElement.querySelectorAll('.option-card');
-        cards.forEach(c => c.classList.remove('selected'));
+        var cards = element.parentElement.querySelectorAll('.option-card');
+        cards.forEach(function(c) { c.classList.remove('selected'); });
         element.classList.add('selected');
-        setTimeout(() => { if (currentStep < 6) nextStep(); }, 150);
-    }
-
-    function showDebug(msg) {
-        const el = document.getElementById('debugMsg');
-        if (el) { el.style.display = 'block'; el.textContent = msg; }
+        setTimeout(function() { if (currentStep < 6) nextStep(); }, 150);
     }
 
     function nextStep() {
-        showDebug('');
         if (currentStep === 1) {
-            const raw = document.getElementById('fatturato').value.trim().replace(/\./g, '').replace(',', '.');
-            const fat = parseFloat(raw);
-            showDebug('DEBUG: raw="' + raw + '" fat=' + fat + ' isNaN=' + isNaN(fat));
-            if (isNaN(fat) || fat <= 0) { showDebug('ERRORE: valore non valido. raw="' + document.getElementById('fatturato').value + '"'); return; }
+            var raw = document.getElementById('fatturato').value.trim().replace(/\./g, '').replace(',', '.');
+            var fat = parseFloat(raw);
+            if (isNaN(fat) || fat <= 0) { alert('Inserisci il fatturato (es: 65000).'); return; }
             factors.fatturato = fat;
         }
 
-        const prevCard = document.querySelector(`[data-step="${currentStep}"]`);
-        prevCard.classList.remove('active');
+        document.querySelector('[data-step="' + currentStep + '"]').classList.remove('active');
 
-        let next = 1;
+        var next = currentStep;
         if (currentStep == 1) next = 2;
         else if (currentStep == 2) next = (factors.frequenza === 'fiera') ? 2.5 : 2.7;
         else if (currentStep == 2.5) next = 2.7;
@@ -342,58 +333,57 @@
         else if (currentStep == 5) { calculate(); next = 6; }
 
         currentStep = next;
-        history.push(currentStep);
-        document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+        stepHistory.push(currentStep);
+        document.querySelector('[data-step="' + currentStep + '"]').classList.add('active');
         document.getElementById('backBtn').classList.toggle('hidden', currentStep === 1 || currentStep === 6);
         updateProgress();
     }
 
     function prevStep() {
-        if (history.length <= 1) return;
-        document.querySelector(`[data-step="${currentStep}"]`).classList.remove('active');
-        history.pop();
-        currentStep = history[history.length - 1];
-        document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+        if (stepHistory.length <= 1) return;
+        document.querySelector('[data-step="' + currentStep + '"]').classList.remove('active');
+        stepHistory.pop();
+        currentStep = stepHistory[stepHistory.length - 1];
+        document.querySelector('[data-step="' + currentStep + '"]').classList.add('active');
         document.getElementById('backBtn').classList.toggle('hidden', currentStep === 1);
         updateProgress();
     }
 
     function updateProgress() {
-        const steps = [1, 2, 2.5, 2.7, 3, 3.5, 4, 5, 6];
-        const idx = steps.indexOf(currentStep);
-        const progress = (idx / (steps.length - 1)) * 100;
-        document.getElementById('progressBar').style.width = `${progress}%`;
+        var steps = [1, 2, 2.5, 2.7, 3, 3.5, 4, 5, 6];
+        var idx = steps.indexOf(currentStep);
+        var progress = (idx / (steps.length - 1)) * 100;
+        document.getElementById('progressBar').style.width = progress + '%';
+    }
+
+    function fmt(n) {
+        return Math.round(n).toLocaleString('it-IT');
     }
 
     function calculate() {
-        let base = factors.fatturato * 0.45;
-        let moltFrequenza = (factors.frequenza === 'fiera') ? (2.2 * factors.durataFiera) : factors.frequenza;
-        let totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
-        
+        var base = factors.fatturato * 0.45;
+        var moltFrequenza = (factors.frequenza === 'fiera') ? (2.2 * factors.durataFiera) : factors.frequenza;
+        var totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
+
         if (factors.fatturato > 0 && totale < 6000) totale = 6000 + (factors.fatturato * 0.15);
 
-        // Calcolo Affitto (22% del valore di vendita — Rendita Alta)
-        let rentAvg = totale * 0.22 * factors.stagionalita;
-        if (rentAvg < 2400) rentAvg = 2400; // Minimo 200€ al mese
+        var rentAvg = totale * 0.22 * factors.stagionalita;
+        if (rentAvg < 2400) rentAvg = 2400;
+        var rentMonthly = rentAvg / 12;
 
-        let rentMonthly = rentAvg / 12;
+        var min = totale * 0.85;
+        var max = totale * 1.15;
 
-        let min = totale * 0.85;
-        let max = totale * 1.15;
-        const round = (val) => Math.round(val / 100) * 100; // Arrotondamento più fine
+        document.getElementById('priceMin').textContent = '€ ' + fmt(Math.round(min / 1000) * 1000);
+        document.getElementById('priceMax').textContent = '€ ' + fmt(Math.round(max / 1000) * 1000);
+        document.getElementById('totalAvg').textContent = 'Target Vendita: € ' + fmt(Math.round(totale / 1000) * 1000);
+        document.getElementById('rentValue').textContent = '€ ' + fmt(rentAvg) + ' / anno';
+        document.getElementById('rentMonthly').textContent = '€ ' + fmt(rentMonthly) + ' / mese';
 
-        document.getElementById('priceMin').textContent = `€ ${Math.round(min/1000)*1000.toLocaleString('it-IT')}`;
-        document.getElementById('priceMax').textContent = `€ ${Math.round(max/1000)*1000.toLocaleString('it-IT')}`;
-        document.getElementById('totalAvg').textContent = `Target Vendita: € ${Math.round(totale/1000)*1000.toLocaleString('it-IT')}`;
-        
-        document.getElementById('rentValue').textContent = `€ ${Math.round(rentAvg).toLocaleString('it-IT')} / anno`;
-        document.getElementById('rentMonthly').textContent = `€ ${Math.round(rentMonthly).toLocaleString('it-IT')} / mese`;
-
-        // Calcolo ROI (ritorno sull'investimento ipotetico per chi affitta)
-        let roi = (rentAvg / totale) * 100;
-        document.getElementById('roiValue').textContent = `${roi.toFixed(1)}%`;
-        setTimeout(() => {
-            document.getElementById('roiBar').style.width = `${Math.min(roi * 3, 100)}%`;
+        var roi = (rentAvg / totale) * 100;
+        document.getElementById('roiValue').textContent = roi.toFixed(1) + '%';
+        setTimeout(function() {
+            document.getElementById('roiBar').style.width = Math.min(roi * 3, 100) + '%';
         }, 500);
     }
 </script>
