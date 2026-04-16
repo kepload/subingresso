@@ -163,8 +163,10 @@ REGOLE DI STILE (rispetta sempre):
     console.log("7/10 - Sezione 3: Numeri e Tempi...");
     const sezione3 = await callAI(`Scrivi la terza macro-sezione dell'articolo "${topic}" seguendo questa scaletta: [${outline}].
     Concentrati solo sulla parte "Numeri e Tempi": costi reali, tempi burocratici, cosa aspettarsi concretamente.
-    Includi una tabella HTML pratica con esempi di numeri reali (inventali verosimili se necessario).
-    Struttura: <h2>titolo sezione</h2>, poi 2 sotto-argomenti con <h3> e paragrafi brevi, poi la tabella.
+    Includi una tabella con esempi di numeri reali (inventali verosimili se necessario).
+    FORMATO TABELLA OBBLIGATORIO — usa SOLO questo HTML, mai Markdown con | pipe |:
+    <table style="width:100%;border-collapse:collapse;margin:1.5rem 0"><thead><tr style="background:#2563eb;color:#fff"><th style="padding:10px;text-align:left">Voce</th><th style="padding:10px;text-align:left">Minimo</th><th style="padding:10px;text-align:left">Medio</th><th style="padding:10px;text-align:left">Note</th></tr></thead><tbody><tr style="background:#f8fafc"><td style="padding:10px;border-bottom:1px solid #e2e8f0">...</td>...</tr></tbody></table>
+    Struttura: <h2>titolo sezione</h2>, poi 2 sotto-argomenti con <h3> e paragrafi brevi, poi la tabella HTML.
     ${STILE}`);
 
     // 8. BOX CTA SUBINGRESSO
@@ -181,12 +183,29 @@ REGOLE DI STILE (rispetta sempre):
     Le domande devono essere quelle che si farebbe davvero un ambulante ("E se il comune non approva?", "Ci vogliono soldi subito?").
     ${STILE}`);
 
-    // 10. SEO E ASSEMBLAGGIO
-    console.log("10/10 - Assemblaggio SEO...");
-    const fullText = intro + sezione1 + sezione2 + sezione3 + cta + faq;
-    const finalRaw = await callAI(`Dato questo testo HTML di un articolo, restituisci un JSON con: title (titolo accattivante), slug (URL-friendly), excerpt (riassunto 1 frase), content (tutto il testo HTML invariato).
+    // 10. REVISIONE QUALITÀ
+    console.log("10/11 - Revisione qualità del testo...");
+    const rawText = intro + sezione1 + sezione2 + sezione3 + cta + faq;
+    const fullText = await callAI(`Sei un editor HTML. Ricevi il testo di un articolo e devi restituirlo corretto e pulito.
+
+    PROBLEMI DA CORREGGERE (controlla uno per uno):
+    1. Tabelle in formato Markdown (con | pipe | e :---:) → convertile in <table> HTML con style inline come questo: <table style="width:100%;border-collapse:collapse;margin:1.5rem 0"><thead><tr style="background:#2563eb;color:#fff"><th style="padding:10px;text-align:left">...</th></tr></thead><tbody><tr style="background:#f8fafc"><td style="padding:10px;border-bottom:1px solid #e2e8f0">...</td></tr></tbody></table>
+    2. Testo con asterischi Markdown (**testo**) → converti in <strong>testo</strong>
+    3. Titoli con # Markdown (## Titolo) → converti in <h2>Titolo</h2> o <h3>
+    4. Frasi di introduzione strane tipo "Ecco la sezione", "Certamente" → eliminale
+    5. Paragrafi più lunghi di 5 righe → spezzali in due paragrafi <p> separati
+
+    Restituisci SOLO il testo HTML corretto, senza spiegazioni, senza commenti, senza JSON.
+
+    TESTO DA CORREGGERE:
+    ${rawText}`);
+
+    // 11. SEO E ASSEMBLAGGIO FINALE
+    console.log("11/11 - Assemblaggio SEO...");
+    const finalRaw = await callAI(`Dato questo testo HTML di un articolo, restituisci un JSON con: title (titolo accattivante), slug (URL-friendly), excerpt (riassunto 1 frase max 160 caratteri), content (tutto il testo HTML invariato).
     TESTO: ${fullText}
     RESTITUISCI SOLO JSON VALIDO, nient'altro: {"title": "...", "slug": "...", "excerpt": "...", "content": "..."}`);
+
 
 
     try {
