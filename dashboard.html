@@ -431,7 +431,13 @@ async function uploadAvatar() {
             .from('avatars')
             .getPublicUrl(filePath);
 
-        await _supabase.from('profiles').update({ avatar_url: publicUrl }).eq('id', _currentUser.id);
+        const { error: dbError } = await _supabase
+            .from('profiles')
+            .update({ avatar_url: publicUrl })
+            .eq('id', _currentUser.id);
+
+        if (dbError) throw dbError;
+
         const img = `<img src="${publicUrl}" class="w-full h-full object-cover">`;
         document.getElementById('avatarContainer').innerHTML = img;
         document.getElementById('welcomeAvatar').innerHTML   = img;
