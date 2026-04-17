@@ -171,30 +171,35 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // ── Load conversation list ───────────────────────────────
 async function loadConversations() {
-    const { data, error } = await _supabase
+    // Step 1: conversazioni + titolo annuncio (join diretto su FK)
+    const { data: convs, error } = await _supabase
         .from('conversazioni')
-        .select(`
-            id, created_at, acquirente_id, venditore_id,
-            annuncio:annunci(id, titolo, regione),
-            acquirente:profiles!conversazioni_acquirente_id_fkey(id, nome, cognome),
-            venditore:profiles!conversazioni_venditore_id_fkey(id, nome, cognome)
-        `)
+        .select('id, created_at, acquirente_id, venditore_id, annuncio:annunci(id, titolo)')
         .or(`acquirente_id.eq.${_currentUser.id},venditore_id.eq.${_currentUser.id}`)
         .order('created_at', { ascending: false });
 
-    if (error) {
-        // Fallback: query senza join se PostgREST non risolve le relazioni
-        console.warn('loadConversations: join fallito, uso query base.', error.message);
-        const { data: simple, error: err2 } = await _supabase
-            .from('conversazioni')
-            .select('id, created_at, acquirente_id, venditore_id, annuncio_id')
-            .or(`acquirente_id.eq.${_currentUser.id},venditore_id.eq.${_currentUser.id}`)
-            .order('created_at', { ascending: false });
-        if (err2) console.error('loadConversations fallback error:', err2.message);
-        _conversations = simple || [];
-    } else {
-        _conversations = data || [];
-    }
+    if (error) console.error('loadConversazioni error:', error.message);
+
+    const list = convs || [];
+    if (!list.length) { _conversations = []; renderConvList(); return; }
+
+    // Step 2: profili separati — evita il join profiles che rompe PostgREST
+    const userIds = [...new Set(list.flatMap(c => [c.acquirente_id, c.venditore_id]))];
+    const { data: profiles } = await _supabase
+        .from('profiles')
+        .select('id, nome, cognome')
+        .in('id', userIds);
+
+    const pm = {};
+    (profiles || []).forEach(p => { pm[p.id] = p; });
+
+    // Step 3: merge
+    _conversations = list.map(c => ({
+        ...c,
+        acquirente: pm[c.acquirente_id] || null,
+        venditore:  pm[c.venditore_id]  || null,
+    }));
+
     renderConvList();
 }
 
