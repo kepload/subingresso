@@ -2,18 +2,6 @@
 
 Questo file è il "Manuale Operativo" per Gemini. Serve a garantire modifiche sicure, veloci e a basso consumo di contesto.
 
-## 🧠 Strategia di Gestione Contesto (Efficienza)
-
-1. **Approccio Chirurgico:** NON leggere mai interi file HTML o JS se non necessario. Usa `grep_search` per trovare le righe interessate.
-2. **Uso dei Sub-Agenti (Mandatorio per Task Complessi):**
-   - **`codebase_investigator`**: Per analisi architetturali o ricerche su più file.
-   - **`generalist`**: Per modifiche ripetitive o batch (es. aggiornare 3+ file contemporaneamente).
-   - *Obiettivo:* Riassumere il lavoro pesante in un unico messaggio nella chat principale.
-3. **Memoria di Progetto:** Usa `save_memory(scope='project')` per salvare fatti strutturali (schema DB, colori, API key simulate) che devono persistere tra le sessioni.
-4. **Monitoraggio Contesto (Mandatorio):** 
-   - Alla fine di ogni messaggio, fornisci una stima del consumo del contesto.
-   - Dopo una funzione pesante o dopo circa 10-15 messaggi, suggerisci esplicitamente all'utente di aprire una nuova chat per mantenere le performance elevate.
-
 ## 📂 Architettura & Core Logic (Cartella `/js`)
 
 - `supabase-config.js`: Connessione DB.
@@ -37,6 +25,10 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 3. `git push`
 
 ## 🐛 Bug Storici & Soluzioni
+- **`expires_at`**: la colonna potrebbe non esistere nel DB. La query in `annunci.js` NON filtra su di essa — non reintrodurre quel filtro.
+- **`LISTINGS` in `data.js` è vuoto** — i dati arrivano solo da Supabase. Non rimettere dati demo.
+- **Status annunci**: `checkContent()` sincrona in `vendi.html` imposta `status: 'active'/'pending'` direttamente all'insert. NON usare il pattern insert-pending + setTimeout-update (fallisce silenziosamente per RLS).
+- **Contatti protetti**: `annuncio-detail.js` maschera numeri di telefono nella descrizione e cambia label pulsanti per utenti non loggati. `onAuthStateChange → restoreContactUI()` ripristina tutto dopo login.
 - `ReferenceError`: Centralizzato tutto in `data.js`.
 - `Gemini API "Quota exceeded"`: Implementato Retry Loop con modelli alternativi.
 - `AI Generatore`: Usa chiamate multi-step, no elenchi puntati, solo paragrafi lunghi e CTA.
