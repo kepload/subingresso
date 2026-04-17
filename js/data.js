@@ -202,14 +202,18 @@ function buildCard(l, isSmall = false, distance = null) {
             ${l.contatto ? `
                 ${profiloUrl
                     ? `<a href="${profiloUrl}" onclick="event.stopPropagation()" class="flex items-center gap-1.5 mb-2 sm:mb-3 hover:bg-blue-50 rounded-xl px-1.5 py-1 -mx-1.5 transition w-fit max-w-full">
-                        <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                            <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
+                        <div class="relative flex-shrink-0">
+                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                                <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
+                            </div>
+                            <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-blue-600 rounded-full flex items-center justify-center border-[1.5px] border-white">
+                                <i class="fas fa-check text-[5px] text-white"></i>
+                            </div>
                         </div>
                         <span class="text-[11px] font-bold text-slate-400 truncate hover:text-blue-600 transition">${escapeHTML(l.contatto)}</span>
-                        <i class="fas fa-external-link-alt text-[8px] text-slate-300 flex-shrink-0"></i>
                     </a>`
                     : `<div class="flex items-center gap-1.5 mb-2 sm:mb-3">
-                        <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                             <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
                         </div>
                         <span class="text-[11px] font-bold text-slate-400 truncate">${escapeHTML(l.contatto)}</span>
