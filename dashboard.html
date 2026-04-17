@@ -162,16 +162,14 @@
         <!-- ── TAB: Profilo ── -->
         <div id="sectionProfilo" class="hidden">
             <div class="bg-white rounded-2xl border border-slate-100 p-6 max-w-lg">
-                <div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-50">
-                    <div class="relative group">
-                        <div id="avatarContainer" class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl font-black overflow-hidden border-4 border-white shadow-sm">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <label class="absolute -bottom-1 -right-1 w-8 h-8 bg-white border border-slate-100 rounded-full flex items-center justify-center shadow-sm cursor-pointer hover:bg-slate-50 transition">
-                            <i class="fas fa-camera text-blue-600 text-xs"></i>
-                            <input type="file" id="avatarInput" accept="image/*" class="hidden" onchange="uploadAvatar()">
-                        </label>
+                <div class="flex flex-col items-center gap-4 mb-8 pb-6 border-b border-slate-100 text-center">
+                    <div id="avatarContainer" class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-3xl font-black overflow-hidden border-4 border-white shadow-md">
+                        <i class="fas fa-user"></i>
                     </div>
+                    <label class="cursor-pointer inline-flex items-center gap-2 text-xs font-black text-blue-600 border border-blue-100 bg-blue-50 hover:bg-blue-100 transition px-4 py-2 rounded-xl">
+                        <i class="fas fa-camera"></i> Cambia foto profilo
+                        <input type="file" id="avatarInput" accept="image/*" class="hidden" onchange="uploadAvatar()">
+                    </label>
                     <div>
                         <h2 id="profileNameDisplay" class="font-black text-xl text-slate-900">Il mio profilo</h2>
                         <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-0.5" id="userEmailDisplay"></p>
