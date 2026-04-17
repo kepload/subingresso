@@ -285,7 +285,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('pNome').value     = profile.nome     || '';
         document.getElementById('pCognome').value  = profile.cognome  || '';
         document.getElementById('pTelefono').value = profile.telefono || '';
-        document.getElementById('profileNameDisplay').textContent = `${profile.nome || 'Utente'} ${profile.cognome || ''}`;
+        const nameEl = document.getElementById('profileNameDisplay');
+        if (nameEl) nameEl.textContent = `${profile.nome || 'Utente'} ${profile.cognome || ''}`;
         
         if (profile.avatar_url) {
             const img = `<img src="${profile.avatar_url}" class="w-full h-full object-cover">`;
@@ -431,21 +432,11 @@ async function uploadAvatar() {
             .from('avatars')
             .getPublicUrl(filePath);
 
-        console.log("📸 URL generato:", publicUrl);
-
-        const { data: upsertData, error: dbError } = await _supabase
+        const { error: dbError } = await _supabase
             .from('profiles')
-            .upsert({ id: _currentUser.id, avatar_url: publicUrl })
-            .select();
-
-        console.log("💾 Upsert result:", upsertData, "Error:", dbError);
+            .upsert({ id: _currentUser.id, avatar_url: publicUrl });
 
         if (dbError) throw dbError;
-
-        // Verifica immediata: rileggi il profilo dal DB
-        const { data: check } = await _supabase.from('profiles').select('avatar_url').eq('id', _currentUser.id).single();
-        console.log("🔍 Profilo riletto dal DB:", check);
-        alert("Salvato nel DB: " + (check?.avatar_url ? "SÌ ✅" : "NO ❌ - avatar_url: " + JSON.stringify(check)));
 
         const img = `<img src="${publicUrl}" class="w-full h-full object-cover">`;
         document.getElementById('avatarContainer').innerHTML = img;
