@@ -52,6 +52,7 @@
                             <i class="fas fa-store text-blue-400"></i>
                         </span>
                     </div>
+                    <div id="profileBadges" class="flex flex-wrap justify-center sm:justify-start gap-2 mt-3"></div>
                     <p class="text-xs text-slate-400 font-semibold mt-4 flex items-center justify-center sm:justify-start gap-1.5">
                         <i class="fas fa-shield-alt text-emerald-400"></i>
                         Controlla sempre la data di iscrizione e il numero di annunci prima di procedere.
@@ -131,6 +132,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const count = listings ? listings.length : 0;
     document.getElementById('profileListingCount').innerHTML = `<i class="fas fa-store text-blue-400"></i> ${count} annunci attivi`;
+    document.getElementById('profileBadges').innerHTML = getProfileBadges(profile.created_at, count);
 
     // Populate listings grid
     const grid = document.getElementById('profileListingsGrid');

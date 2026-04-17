@@ -170,17 +170,17 @@ async function initPage() {
     // Seller card
     if (listing.user_id) {
         try {
-            const { data: seller } = await _supabase
-                .from('profiles')
-                .select('nome, avatar_url, created_at')
-                .eq('id', listing.user_id)
-                .single();
+            const [{ data: seller }, { count: sellerCount }] = await Promise.all([
+                _supabase.from('profiles').select('nome, avatar_url, created_at').eq('id', listing.user_id).single(),
+                _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('user_id', listing.user_id).eq('status', 'active')
+            ]);
 
             if (seller) {
                 const card     = document.getElementById('sellerCard');
                 const avatarEl = document.getElementById('sellerAvatar');
                 const nameEl   = document.getElementById('sellerName');
                 const sinceEl  = document.getElementById('sellerSince');
+                const badgeEl  = document.getElementById('sellerBadge');
                 const linkEl   = document.getElementById('sellerProfileLink');
 
                 if (seller.avatar_url) {
@@ -190,8 +190,9 @@ async function initPage() {
                 }
                 nameEl.textContent  = seller.nome || 'Utente';
                 sinceEl.textContent = `Iscritto dal ${new Date(seller.created_at).toLocaleDateString('it-IT', { month: 'long', year: 'numeric' })}`;
-                if (linkEl) linkEl.href = `profilo.html?id=${listing.user_id}`;
-                if (card)   card.classList.remove('hidden');
+                if (badgeEl) badgeEl.innerHTML = getProfileBadges(seller.created_at, sellerCount || 0);
+                if (linkEl)  linkEl.href = `profilo.html?id=${listing.user_id}`;
+                if (card)    card.classList.remove('hidden');
             }
         } catch (_) {}
     }

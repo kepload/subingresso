@@ -58,6 +58,26 @@ function formatPrice(l) {
     return l.stato === 'Affitto mensile' ? `€ ${p} /mese` : `€ ${p}`;
 }
 
+// ══════════════ BADGE PROFILO ══════════════
+function getProfileBadges(createdAt, activeListings) {
+    const days = Math.floor((Date.now() - new Date(createdAt)) / 86400000);
+
+    let b;
+    if (days < 30)        b = { label: 'Nuovo Iscritto', icon: 'fa-seedling',    cls: 'bg-amber-50 text-amber-700 border-amber-200' };
+    else if (days < 180)  b = { label: 'In Crescita',    icon: 'fa-chart-line',  cls: 'bg-blue-50 text-blue-700 border-blue-200' };
+    else if (days < 365)  b = { label: 'Affidabile',     icon: 'fa-check-circle',cls: 'bg-emerald-50 text-emerald-700 border-emerald-200' };
+    else                  b = { label: 'Veterano',        icon: 'fa-award',       cls: 'bg-indigo-50 text-indigo-700 border-indigo-200' };
+
+    const pill = (icon, label, cls) =>
+        `<span class="inline-flex items-center gap-1.5 text-[11px] font-black px-2.5 py-1 rounded-lg border ${cls}"><i class="fas ${icon} text-[10px]"></i> ${label}</span>`;
+
+    let html = pill(b.icon, b.label, b.cls);
+    if (activeListings >= 5)
+        html += ' ' + pill('fa-star', 'Top Venditore', 'bg-yellow-50 text-yellow-700 border-yellow-200');
+
+    return html;
+}
+
 // ══════════════ FUZZY SEARCH (Levenshtein) ══════════════
 function levenshtein(a, b) {
     if (a.length === 0) return b.length;
