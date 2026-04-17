@@ -155,66 +155,78 @@ function normalizeText(t) {
 // ── Card Builder ──────────────────────────────────────────
 
 function buildCard(l, isSmall = false, distance = null) {
-    const href = `href="annuncio.html?id=${escapeHTML(l.id)}"`;
-    const distTag = (distance !== null && distance !== Infinity) 
+    const annuncioUrl = `annuncio.html?id=${escapeHTML(l.id)}`;
+    const profiloUrl  = l.user_id ? `profilo.html?id=${escapeHTML(l.user_id)}` : null;
+    const distTag = (distance !== null && distance !== Infinity)
         ? `<span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded-lg shadow-sm">a ${Math.round(distance)} km</span>`
         : '';
 
+    const imgTag = (() => {
+        let extra = l.dettagli_extra;
+        if (typeof extra === 'string') { try { extra = JSON.parse(extra); } catch(e) { extra = null; } }
+        const img = (l.img_urls && l.img_urls[0]) || (extra && extra.images && extra.images[0]);
+        return img ? `<img src="${escapeHTML(img)}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
+    })();
+
     return `
-    <a ${href} class="group bg-white rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full">
+    <div class="group bg-white rounded-2xl sm:rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full">
         <!-- cover -->
-        <div class="relative h-48 sm:h-52 bg-slate-100 overflow-hidden">
+        <a href="${annuncioUrl}" class="block relative h-32 sm:h-48 bg-slate-100 overflow-hidden flex-shrink-0">
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
-                <i class="fas fa-store text-5xl"></i>
+                <i class="fas fa-store text-4xl sm:text-5xl"></i>
             </div>
-            ${(() => {
-                let extra = l.dettagli_extra;
-                if (typeof extra === 'string') {
-                    try { extra = JSON.parse(extra); } catch(e) { extra = null; }
-                }
-                const img = (l.img_urls && l.img_urls[0]) || (extra && extra.images && extra.images[0]);
-                return img ? `<img src="${escapeHTML(img)}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
-            })()}
-            
-            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
-                <span class="${l.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'} text-white text-[10px] font-black px-3 py-1.5 rounded-xl uppercase tracking-widest shadow-sm">${escapeHTML(l.stato)}</span>
-                ${l.status && l.status !== 'active' ? `<span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1.5 rounded-xl uppercase tracking-widest shadow-sm">In Revisione</span>` : ''}
+            ${imgTag}
+            <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                <span class="${l.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'} text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-sm">${escapeHTML(l.stato)}</span>
+                ${l.status && l.status !== 'active' ? `<span class="bg-amber-500 text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-sm">In Revisione</span>` : ''}
                 ${distTag}
             </div>
-        </div>
+        </a>
 
         <!-- body -->
-        <div class="p-5 flex-grow flex flex-col">
-            <div class="flex items-center gap-2 mb-3">
-                <span class="text-[10px] font-black text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-1 rounded-lg">${escapeHTML(l.tipo)}</span>
-                <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider">• ${escapeHTML(l.merce)}</span>
+        <div class="p-3 sm:p-5 flex-grow flex flex-col">
+            <div class="flex items-center gap-1.5 mb-2">
+                <span class="text-[10px] font-black text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-lg">${escapeHTML(l.tipo)}</span>
+                <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider truncate">• ${escapeHTML(l.merce)}</span>
             </div>
-            
-            <h3 class="text-lg font-black text-slate-900 leading-tight group-hover:text-blue-600 transition-colors mb-2 line-clamp-2">${escapeHTML(l.titolo)}</h3>
-            
-            <div class="flex items-center gap-2 text-slate-400 font-bold text-xs mb-4">
-                <i class="fas fa-map-marker-alt text-blue-400"></i>
+
+            <a href="${annuncioUrl}" class="block mb-1.5">
+                <h3 class="text-sm sm:text-lg font-black text-slate-900 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">${escapeHTML(l.titolo)}</h3>
+            </a>
+
+            <div class="flex items-center gap-1.5 text-slate-400 font-bold text-[11px] sm:text-xs mb-2 sm:mb-3">
+                <i class="fas fa-map-marker-alt text-blue-400 flex-shrink-0"></i>
                 <span class="truncate">${escapeHTML(l.comune)}, ${escapeHTML(l.regione)}</span>
             </div>
 
             ${l.contatto ? `
-                <div class="flex items-center gap-1.5 mb-3">
-                    <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                        <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
-                    </div>
-                    <span class="text-[11px] font-bold text-slate-400 truncate">${escapeHTML(l.contatto)}</span>
-                </div>` : ''}
-            <div class="mt-auto pt-4 border-t border-slate-50 flex items-center justify-between">
+                ${profiloUrl
+                    ? `<a href="${profiloUrl}" onclick="event.stopPropagation()" class="flex items-center gap-1.5 mb-2 sm:mb-3 hover:bg-blue-50 rounded-xl px-1.5 py-1 -mx-1.5 transition w-fit max-w-full">
+                        <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                            <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
+                        </div>
+                        <span class="text-[11px] font-bold text-slate-400 truncate hover:text-blue-600 transition">${escapeHTML(l.contatto)}</span>
+                        <i class="fas fa-external-link-alt text-[8px] text-slate-300 flex-shrink-0"></i>
+                    </a>`
+                    : `<div class="flex items-center gap-1.5 mb-2 sm:mb-3">
+                        <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                            <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
+                        </div>
+                        <span class="text-[11px] font-bold text-slate-400 truncate">${escapeHTML(l.contatto)}</span>
+                    </div>`
+                }` : ''}
+
+            <div class="mt-auto pt-3 sm:pt-4 border-t border-slate-50 flex items-center justify-between">
                 <div>
-                    <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest leading-none mb-1">Prezzo</p>
-                    <p class="text-xl font-black text-slate-900 leading-none">${formatPrice(l)}</p>
+                    <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest leading-none mb-0.5">Prezzo</p>
+                    <p class="text-base sm:text-xl font-black text-slate-900 leading-none">${formatPrice(l)}</p>
                 </div>
-                <div class="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-300 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                <a href="${annuncioUrl}" class="w-9 h-9 sm:w-10 sm:h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-300 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                     <i class="fas fa-chevron-right text-xs"></i>
-                </div>
+                </a>
             </div>
         </div>
-    </a>`;
+    </div>`;
 }
 
 // ── Demo Data (Fallback — vuoto, i dati reali vengono da Supabase) ──
