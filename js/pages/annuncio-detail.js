@@ -206,7 +206,7 @@ async function initPage() {
             if (descrEl) {
                 descrEl.textContent = maskPhones(descrEl.textContent);
                 descrEl.insertAdjacentHTML('afterend', `
-                    <div class="mt-5 bg-blue-50 border border-blue-100 rounded-2xl p-4 flex flex-wrap items-center gap-4">
+                    <div id="loginContactBanner" class="mt-5 bg-blue-50 border border-blue-100 rounded-2xl p-4 flex flex-wrap items-center gap-4">
                         <div class="w-9 h-9 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
                             <i class="fas fa-lock text-blue-600 text-sm"></i>
                         </div>
@@ -318,8 +318,33 @@ function maskPhones(text) {
     return text.replace(/(\+?39[\s\-]?)?\b(3\d{2}|0\d{1,3})([\s\-]?\d{3,4}){1,3}\b/g, '●●● ●●●●●●●');
 }
 
+// Ripristina pulsanti e descrizione dopo il login
+function restoreContactUI() {
+    document.getElementById('loginContactBanner')?.remove();
+
+    const chatBtn = document.getElementById('chatBtn');
+    const waBtn   = document.getElementById('whatsappBtn');
+    const callBtn = document.getElementById('contactBtn');
+    if (chatBtn) chatBtn.innerHTML = '<i class="fas fa-comment-alt"></i> Invia Messaggio';
+    if (waBtn)   waBtn.innerHTML   = '<i class="fab fa-whatsapp text-xl"></i> WhatsApp';
+    if (callBtn) callBtn.innerHTML = '<i class="fas fa-phone-alt text-slate-400"></i> Chiama Ora';
+
+    // Ripristina descrizione originale (senza mascheratura)
+    const descrEl = document.getElementById('descrizione');
+    if (descrEl && _currentListing?.descrizione) {
+        descrEl.textContent = _currentListing.descrizione;
+    }
+}
+
 // Inizializza
 document.addEventListener('DOMContentLoaded', initPage);
+
+// Quando l'utente effettua il login, aggiorna l'UI senza ricaricare la pagina
+try {
+    _supabase.auth.onAuthStateChange((event) => {
+        if (event === 'SIGNED_IN') restoreContactUI();
+    });
+} catch (e) {}
 
 // Export globali per HTML
 window.makeCall = makeCall;
