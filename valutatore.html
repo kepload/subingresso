@@ -367,8 +367,8 @@
 
         if (factors.fatturato > 0 && totale < 6000) totale = 6000 + (factors.fatturato * 0.15);
 
-        var rentAvg = totale * 0.22 * factors.stagionalita;
-        if (rentAvg < 2400) rentAvg = 2400;
+        var rentAvg = totale * 0.27 * factors.stagionalita;
+        if (rentAvg < 3000) rentAvg = 3000;
         var rentMonthly = rentAvg / 12;
 
         var min = totale * 0.85;
