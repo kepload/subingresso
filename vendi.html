@@ -403,10 +403,17 @@ async function submitAnnuncio() {
         // ── 2. INSERIMENTO ANNUNCIO ──
         let { data: inserted, error } = await _supabase.from('annunci').insert(form).select('id').single();
         
-        // Fallback: se la colonna expires_at non esiste ancora nel DB, riprova senza
+        // Fallback: colonne opzionali non ancora presenti nel DB
         if (error && error.message.includes('expires_at')) {
             console.warn("Colonna expires_at mancante, riprovo senza...");
             delete form.expires_at;
+            const retry = await _supabase.from('annunci').insert(form).select('id').single();
+            inserted = retry.data;
+            error = retry.error;
+        }
+        if (error && error.message.includes('img_urls')) {
+            console.warn("Colonna img_urls mancante, riprovo senza...");
+            delete form.img_urls;
             const retry = await _supabase.from('annunci').insert(form).select('id').single();
             inserted = retry.data;
             error = retry.error;

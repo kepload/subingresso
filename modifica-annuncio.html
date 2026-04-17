@@ -313,7 +313,15 @@ async function updateAnnuncio() {
             status: 'pending'
         };
 
-        const { error } = await _supabase.from('annunci').update(updated).eq('id', listingId);
+        let { error } = await _supabase.from('annunci').update(updated).eq('id', listingId);
+
+        if (error && error.message.includes('img_urls')) {
+            console.warn("Colonna img_urls mancante, riprovo senza...");
+            const fallback = { ...updated };
+            delete fallback.img_urls;
+            const retry = await _supabase.from('annunci').update(fallback).eq('id', listingId);
+            error = retry.error;
+        }
 
         if (error) throw error;
         

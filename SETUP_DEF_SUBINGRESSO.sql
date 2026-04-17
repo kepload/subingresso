@@ -207,7 +207,14 @@ BEGIN
     END IF;
 END $$;
 
--- ── 8. RELOAD SCHEMA CACHE ──────────────────────────────────
+-- ── 8. COLONNE MANCANTI (ALTER TABLE sicuro) ────────────────
+-- Aggiunge colonne nuove senza toccare dati esistenti
+ALTER TABLE public.annunci ADD COLUMN IF NOT EXISTS img_urls    text[];
+ALTER TABLE public.annunci ADD COLUMN IF NOT EXISTS expires_at  timestamptz;
+ALTER TABLE public.annunci ADD COLUMN IF NOT EXISTS provincia   text;
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS avatar_url text;
+
+-- ── 9. RELOAD SCHEMA CACHE ──────────────────────────────────
 -- Forza PostgREST a ricaricare lo schema (risolve errori "column not found")
 NOTIFY pgrst, 'reload schema';
 
