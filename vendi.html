@@ -279,6 +279,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+// Nascondi il banner appena l'utente fa login
+try {
+    _supabase.auth.onAuthStateChange((event) => {
+        if (event === 'SIGNED_IN') {
+            document.getElementById('authBanner').classList.add('hidden');
+        }
+    });
+} catch (e) {}
+
 // Dropzone logic
 const dropzone = document.getElementById('dropzone');
 const fileInput = document.getElementById('fileInput');
