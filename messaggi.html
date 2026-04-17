@@ -206,17 +206,14 @@ async function loadConversations() {
         if (!lastMsgMap[m.conversazione_id]) lastMsgMap[m.conversazione_id] = m;
     });
 
-    // Step 4: merge + ordina per data ultimo messaggio (conv con messaggi prima)
+    // Step 4: merge, filtra vuote, ordina per data ultimo messaggio
     _conversations = list.map(c => ({
         ...c,
         acquirente:  pm[c.acquirente_id] || null,
         venditore:   pm[c.venditore_id]  || null,
         lastMessage: lastMsgMap[c.id]    || null,
-    })).sort((a, b) => {
-        const ta = a.lastMessage?.created_at || a.created_at;
-        const tb = b.lastMessage?.created_at || b.created_at;
-        return new Date(tb) - new Date(ta);
-    });
+    })).filter(c => c.lastMessage !== null)
+       .sort((a, b) => new Date(b.lastMessage.created_at) - new Date(a.lastMessage.created_at));
 
     renderConvList();
 }
