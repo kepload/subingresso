@@ -49,18 +49,12 @@
         }
         .search-active { animation: searchPulse 0.5s ease; border-color: #3b82f6 !important; }
 
-        /* Mobile filter panel slide */
-        #filtersPanel {
-            max-height: 0; overflow: hidden;
-            transition: max-height 0.35s ease, opacity 0.25s ease;
-            opacity: 0;
+        /* Mobile filters bottom sheet */
+        #mobileFiltersSheet {
+            transform: translateY(100%);
+            transition: transform 0.32s cubic-bezier(.32,1,.23,1);
         }
-        #filtersPanel.open {
-            max-height: 800px; opacity: 1;
-        }
-        @media (min-width: 1024px) {
-            #filtersPanel { max-height: none; opacity: 1; overflow: visible; }
-        }
+        #mobileFiltersSheet.open { transform: translateY(0); }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
@@ -91,20 +85,9 @@
 <main class="flex-grow max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-10 w-full">
     <div class="flex flex-col lg:flex-row gap-1 lg:gap-8">
 
-        <!-- ── FILTERS SIDEBAR ── -->
-        <aside class="lg:w-64 flex-shrink-0">
-            <!-- Mobile toggle button -->
-            <button id="filterToggleBtn" onclick="toggleFilters()"
-                class="lg:hidden w-full flex items-center justify-between bg-white border border-slate-200 rounded-2xl px-5 py-3.5 mb-3 font-black text-sm text-slate-700 hover:border-blue-400 transition active:scale-[.98]">
-                <span class="flex items-center gap-2">
-                    <i class="fas fa-sliders-h text-blue-600"></i>
-                    Filtri
-                    <span id="filterBadge" class="hidden bg-blue-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full"></span>
-                </span>
-                <i id="filterArrow" class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
-            </button>
-
-            <div id="filtersPanel" class="bg-white rounded-2xl border border-slate-100 p-6 space-y-6 lg:sticky lg:top-28">
+        <!-- ── FILTERS SIDEBAR (desktop only) ── -->
+        <aside class="hidden lg:block lg:w-64 lg:flex-shrink-0">
+            <div class="bg-white rounded-2xl border border-slate-100 p-6 space-y-6 sticky top-28">
                 <div class="flex justify-between items-center">
                     <h2 class="font-black text-sm">Filtri</h2>
                     <button onclick="clearFilters()" class="text-xs text-blue-600 font-bold hover:underline">Azzera</button>
@@ -177,13 +160,20 @@
                     </div>
                     <i class="fas fa-bullhorn absolute -bottom-4 -right-4 text-6xl text-white/10 transform -rotate-12"></i>
                 </div>
-            </div><!-- /filtersPanel -->
+            </div>
         </aside>
 
         <!-- ── RESULTS ── -->
         <div class="flex-grow">
             <div class="flex justify-between items-center mb-2 lg:mb-5">
-                <p id="resultCount" class="text-sm font-semibold text-slate-500"></p>
+                <div class="flex items-center gap-2">
+                    <p id="resultCount" class="text-sm font-semibold text-slate-500"></p>
+                    <button onclick="openMobileFilters()" class="lg:hidden flex items-center gap-1.5 bg-slate-900 text-white text-xs font-black px-3 py-1.5 rounded-xl hover:bg-blue-600 transition active:scale-95">
+                        <i class="fas fa-sliders-h text-[10px]"></i>
+                        Filtri
+                        <span id="filterBadge" class="hidden bg-blue-500 text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center"></span>
+                    </button>
+                </div>
                 <select id="sortBy" class="filter-input w-auto text-xs" onchange="applyFilters()" style="padding:.45rem .8rem;">
                     <option value="data">Più recenti</option>
                     <option value="prezzoAsc">Prezzo crescente</option>
@@ -239,6 +229,65 @@
                 Attiva Notifiche Gratis
             </button>
             <p class="text-[10px] text-slate-400 text-center font-bold uppercase tracking-widest">Servizio esclusivo per utenti registrati</p>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════ MOBILE FILTERS BOTTOM SHEET ══════════════ -->
+<div id="mobileFiltersOverlay" class="lg:hidden fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 hidden" onclick="closeMobileFilters()"></div>
+<div id="mobileFiltersSheet" class="lg:hidden fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-3xl shadow-2xl max-h-[88vh] overflow-y-auto">
+    <!-- Handle -->
+    <div class="flex justify-center pt-3 pb-1">
+        <div class="w-10 h-1 bg-slate-200 rounded-full"></div>
+    </div>
+    <div class="px-6 pb-8 pt-2">
+        <div class="flex justify-between items-center mb-5">
+            <h2 class="font-black text-lg">Filtri</h2>
+            <button onclick="closeMobileFilters()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 transition">
+                <i class="fas fa-times text-sm"></i>
+            </button>
+        </div>
+        <div class="space-y-5">
+            <div>
+                <label class="filter-label">Regione</label>
+                <select id="m_fRegione" class="filter-input"><option value="">Tutte le regioni</option></select>
+            </div>
+            <div>
+                <label class="filter-label">Tipo di mercato</label>
+                <select id="m_fTipo" class="filter-input">
+                    <option value="">Tutti i tipi</option>
+                    <option>Mercato settimanale</option>
+                    <option>Mercato quotidiano</option>
+                    <option>Fiera</option>
+                </select>
+            </div>
+            <div>
+                <label class="filter-label">Tipo di annuncio</label>
+                <select id="m_fStato" class="filter-input">
+                    <option value="">Vendita e affitto</option>
+                    <option>Vendita</option>
+                    <option>Affitto mensile</option>
+                </select>
+            </div>
+            <div>
+                <label class="filter-label">Prezzo massimo</label>
+                <div class="flex items-center gap-2">
+                    <span class="text-slate-400 font-semibold text-sm">&euro;</span>
+                    <input id="m_fPrezzoMax" type="number" min="0" step="1000" placeholder="Nessun limite" class="filter-input flex-grow">
+                </div>
+            </div>
+            <div>
+                <label class="filter-label">Superficie minima (m&sup2;)</label>
+                <input id="m_fSup" type="number" min="0" step="1" placeholder="Qualsiasi" class="filter-input">
+            </div>
+        </div>
+        <div class="flex gap-3 mt-7">
+            <button onclick="resetMobileFilters()" class="flex-1 border border-slate-200 text-slate-600 py-4 rounded-2xl font-black text-sm hover:bg-slate-50 transition">
+                Azzera
+            </button>
+            <button onclick="applyMobileFilters()" class="flex-[2] bg-blue-600 text-white py-4 rounded-2xl font-black text-sm hover:bg-blue-700 transition shadow-lg shadow-blue-100">
+                Mostra risultati
+            </button>
         </div>
     </div>
 </div>

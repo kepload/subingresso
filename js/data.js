@@ -216,8 +216,11 @@ function buildCard(l, isSmall = false, distance = null) {
                 ${profiloUrl
                     ? `<a href="${profiloUrl}" onclick="event.stopPropagation()" class="flex items-center gap-1.5 mb-2 sm:mb-3 hover:bg-blue-50 rounded-xl px-1.5 py-1 -mx-1.5 transition w-fit max-w-full">
                         <div class="relative flex-shrink-0" title="${_sellerBadge.label}">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
-                                <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
+                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center overflow-hidden">
+                                ${USER_AVATARS[l.user_id]
+                                    ? `<img src="${escapeHTML(USER_AVATARS[l.user_id])}" class="w-full h-full object-cover">`
+                                    : `<span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>`
+                                }
                             </div>
                             <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 ${_sellerBadge.bg} rounded-full flex items-center justify-center border-[1.5px] border-white">
                                 <i class="fas ${_sellerBadge.icon} text-[5px] text-white"></i>
@@ -248,3 +251,6 @@ function buildCard(l, isSmall = false, distance = null) {
 
 // ── Demo Data (Fallback — vuoto, i dati reali vengono da Supabase) ──
 const LISTINGS = [];
+
+// Cache avatar URL per user_id — popolata da annunci.js dopo il fetch profiles
+const USER_AVATARS = {};

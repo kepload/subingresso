@@ -218,6 +218,14 @@ async function loadListings() {
                 ...l,
                 data: l.data || l.created_at?.split('T')[0] || new Date().toISOString().split('T')[0]
             }));
+
+            // Fetch avatar URL per ogni venditore unico
+            const uniqueIds = [...new Set(data.map(l => l.user_id).filter(Boolean))];
+            if (uniqueIds.length) {
+                const { data: profiles } = await _supabase
+                    .from('profiles').select('id, avatar_url').in('id', uniqueIds);
+                if (profiles) profiles.forEach(p => { if (p.avatar_url) USER_AVATARS[p.id] = p.avatar_url; });
+            }
         }
     } catch (e) {
         console.error("Supabase load failed:", e);
@@ -282,19 +290,51 @@ async function submitAlert() {
     });
 }
 
-// Mobile: toggle pannello filtri
-function toggleFilters() {
-    const panel = document.getElementById('filtersPanel');
-    const arrow = document.getElementById('filterArrow');
-    if (!panel) return;
-    const isOpen = panel.classList.contains('open');
-    panel.classList.toggle('open', !isOpen);
-    if (arrow) arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+// Mobile filters bottom sheet
+function openMobileFilters() {
+    const overlay = document.getElementById('mobileFiltersOverlay');
+    const sheet   = document.getElementById('mobileFiltersSheet');
+    if (!sheet) return;
+
+    // Popola regioni se vuote
+    const mReg = document.getElementById('m_fRegione');
+    if (mReg && mReg.options.length <= 1) {
+        REGIONI.forEach(r => { const o = document.createElement('option'); o.value = o.textContent = r; mReg.appendChild(o); });
+    }
+
+    // Sincronizza valori dal sidebar desktop
+    [['fRegione','m_fRegione'],['fTipo','m_fTipo'],['fStato','m_fStato'],['fPrezzoMax','m_fPrezzoMax'],['fSup','m_fSup']]
+        .forEach(([src, dst]) => { const s = document.getElementById(src), d = document.getElementById(dst); if (s && d) d.value = s.value; });
+
+    overlay?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => sheet.classList.add('open'));
+}
+
+function closeMobileFilters() {
+    const overlay = document.getElementById('mobileFiltersOverlay');
+    const sheet   = document.getElementById('mobileFiltersSheet');
+    sheet?.classList.remove('open');
+    setTimeout(() => { overlay?.classList.add('hidden'); document.body.style.overflow = ''; }, 320);
+}
+
+function applyMobileFilters() {
+    [['m_fRegione','fRegione'],['m_fTipo','fTipo'],['m_fStato','fStato'],['m_fPrezzoMax','fPrezzoMax'],['m_fSup','fSup']]
+        .forEach(([src, dst]) => { const s = document.getElementById(src), d = document.getElementById(dst); if (s && d) d.value = s.value; });
+    closeMobileFilters();
+    applyFilters();
+}
+
+function resetMobileFilters() {
+    ['m_fRegione','m_fTipo','m_fStato','m_fPrezzoMax','m_fSup'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
 }
 
 // Esporta funzioni globali per i click negli HTML
-window.applyFilters = applyFilters;
-window.toggleFilters = toggleFilters;
+window.applyFilters       = applyFilters;
+window.openMobileFilters  = openMobileFilters;
+window.closeMobileFilters = closeMobileFilters;
+window.applyMobileFilters = applyMobileFilters;
+window.resetMobileFilters = resetMobileFilters;
 window.clearFilters = clearFilters;
 window.openAlertModal = openAlertModal;
 window.closeAlertModal = closeAlertModal;
