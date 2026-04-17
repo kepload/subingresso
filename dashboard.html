@@ -433,8 +433,7 @@ async function uploadAvatar() {
 
         const { error: dbError } = await _supabase
             .from('profiles')
-            .update({ avatar_url: publicUrl })
-            .eq('id', _currentUser.id);
+            .upsert({ id: _currentUser.id, avatar_url: publicUrl });
 
         if (dbError) throw dbError;
 
@@ -443,7 +442,8 @@ async function uploadAvatar() {
         document.getElementById('welcomeAvatar').innerHTML   = img;
         updateAuthNav();
     } catch (err) {
-        alert("Errore caricamento immagine: " + err.message);
+        console.error("uploadAvatar error:", err);
+        alert("Errore caricamento immagine: " + (err.message || JSON.stringify(err)));
     }
 }
 
