@@ -84,27 +84,27 @@
         <div class="space-y-6">
 
             <!-- price card -->
-            <div class="bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
-                <p class="text-[10px] font-black uppercase tracking-[.15em] text-slate-400 mb-2">Valore richiesto</p>
-                <div class="flex items-baseline gap-1 mb-1">
-                    <p id="prezzo" class="text-4xl font-black text-slate-900"></p>
+            <div class="bg-white rounded-3xl border border-slate-100 p-5 shadow-sm">
+                <p class="text-[10px] font-black uppercase tracking-[.15em] text-slate-400 mb-1">Valore richiesto</p>
+                <div class="flex items-baseline gap-1 mb-0.5">
+                    <p id="prezzo" class="text-3xl font-black text-slate-900"></p>
                 </div>
-                <p id="prezzoSub" class="text-slate-400 text-xs font-bold uppercase tracking-wider mb-8"></p>
+                <p id="prezzoSub" class="text-slate-400 text-xs font-bold uppercase tracking-wider mb-4"></p>
 
-                <div class="space-y-3">
-                    <button onclick="startChat()" id="chatBtn" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-3 shadow-lg shadow-blue-100">
+                <div class="space-y-2">
+                    <button onclick="startChat()" id="chatBtn" class="w-full bg-blue-600 text-white py-3 rounded-2xl font-black hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-3 shadow-lg shadow-blue-100">
                         <i class="fas fa-comment-alt"></i> Invia Messaggio
                     </button>
-                    <button onclick="openWhatsApp()" id="whatsappBtn" class="w-full bg-emerald-500 text-white py-4 rounded-2xl font-black hover:bg-emerald-600 transition active:scale-[.98] flex items-center justify-center gap-3 shadow-lg shadow-emerald-100">
+                    <button onclick="openWhatsApp()" id="whatsappBtn" class="w-full bg-emerald-500 text-white py-3 rounded-2xl font-black hover:bg-emerald-600 transition active:scale-[.98] flex items-center justify-center gap-3 shadow-lg shadow-emerald-100">
                         <i class="fab fa-whatsapp text-xl"></i> WhatsApp
                     </button>
-                    <button onclick="makeCall()" id="contactBtn" class="w-full border-2 border-slate-100 text-slate-700 py-4 rounded-2xl font-black hover:bg-slate-50 transition active:scale-[.98] flex items-center justify-center gap-3">
+                    <button onclick="makeCall()" id="contactBtn" class="w-full border-2 border-slate-100 text-slate-700 py-3 rounded-2xl font-black hover:bg-slate-50 transition active:scale-[.98] flex items-center justify-center gap-3">
                         <i class="fas fa-phone-alt text-slate-400"></i> Chiama Ora
                     </button>
                 </div>
 
                 <!-- contact revealed -->
-                <div id="contactInfo" class="hidden mt-6 bg-slate-50 rounded-2xl p-5 space-y-3 border border-slate-100">
+                <div id="contactInfo" class="hidden mt-4 bg-slate-50 rounded-2xl p-4 space-y-3 border border-slate-100">
                     <div class="flex items-center gap-3 text-sm font-bold">
                         <i class="fas fa-user text-slate-400 w-5"></i>
                         <span id="cNome"></span>
@@ -119,11 +119,19 @@
                     </p>
                 </div>
 
-                <div class="mt-8 pt-6 border-t border-slate-50 text-center">
+                <div class="mt-4 pt-4 border-t border-slate-50 text-center">
                     <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest">
                         Pubblicato il <span id="dataPub"></span>
                     </p>
                 </div>
+            </div>
+
+            <!-- details card -->
+            <div class="bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
+                <h2 class="font-black text-lg text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-list-ul text-blue-600 text-sm"></i> Scheda tecnica
+                </h2>
+                <div id="detailRows" class="space-y-1"></div>
             </div>
 
             <!-- seller card -->
@@ -137,14 +145,6 @@
                     </div>
                 </a>
                 <div id="sellerBadge" class="flex flex-wrap gap-1.5"></div>
-            </div>
-
-            <!-- details card -->
-            <div class="bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
-                <h2 class="font-black text-lg text-slate-900 mb-4 flex items-center gap-2">
-                    <i class="fas fa-list-ul text-blue-600 text-sm"></i> Scheda tecnica
-                </h2>
-                <div id="detailRows" class="space-y-1"></div>
             </div>
 
             <!-- CTA -->
