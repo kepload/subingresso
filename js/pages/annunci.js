@@ -115,7 +115,18 @@ function applyFilters() {
         if (empty) empty.classList.remove('hidden');
     } else {
         if (empty) empty.classList.add('hidden');
-        if (grid) grid.innerHTML = results.map(l => buildCard(l, true, l._distance)).join('');
+        if (grid) grid.innerHTML = results.map((l, i) =>
+            `<div class="card-animate" style="animation-delay:${Math.min(i, 6) * 45}ms">${buildCard(l, true, l._distance)}</div>`
+        ).join('');
+    }
+
+    // Aggiorna badge filtri attivi su mobile
+    const activeCount = [regione, tipo, stato, q, (prezzoMax !== Infinity ? 1 : 0), (supMin > 0 ? 1 : 0)]
+        .filter(Boolean).length;
+    const badge = document.getElementById('filterBadge');
+    if (badge) {
+        if (activeCount > 0) { badge.textContent = activeCount; badge.classList.remove('hidden'); }
+        else { badge.classList.add('hidden'); }
     }
 
     if (count) {
@@ -164,9 +175,17 @@ function clearFilters() {
     applyFilters();
 }
 
-// live search
+// live search con feedback visivo
 const sBar = document.getElementById('searchBar');
-if (sBar) sBar.addEventListener('input', applyFilters);
+if (sBar) {
+    sBar.addEventListener('input', () => {
+        // Pulse sulla barra di ricerca
+        sBar.parentElement.classList.remove('search-active');
+        void sBar.parentElement.offsetWidth; // reflow per riavviare animazione
+        sBar.parentElement.classList.add('search-active');
+        applyFilters();
+    });
+}
 
 // ── Load listings from Supabase (real data) ──────────────
 async function loadListings() {
@@ -263,8 +282,19 @@ async function submitAlert() {
     });
 }
 
+// Mobile: toggle pannello filtri
+function toggleFilters() {
+    const panel = document.getElementById('filtersPanel');
+    const arrow = document.getElementById('filterArrow');
+    if (!panel) return;
+    const isOpen = panel.classList.contains('open');
+    panel.classList.toggle('open', !isOpen);
+    if (arrow) arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+
 // Esporta funzioni globali per i click negli HTML
 window.applyFilters = applyFilters;
+window.toggleFilters = toggleFilters;
 window.clearFilters = clearFilters;
 window.openAlertModal = openAlertModal;
 window.closeAlertModal = closeAlertModal;

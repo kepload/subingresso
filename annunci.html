@@ -33,6 +33,34 @@
             transition: background .15s;
         }
         .chip:hover { background: #dbeafe; }
+
+        /* Card entrance animation */
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(14px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .card-animate { animation: cardIn 0.28s ease both; }
+
+        /* Search bar pulse when searching */
+        @keyframes searchPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(59,130,246,0.35); }
+            70%  { box-shadow: 0 0 0 7px rgba(59,130,246,0); }
+            100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+        }
+        .search-active { animation: searchPulse 0.5s ease; border-color: #3b82f6 !important; }
+
+        /* Mobile filter panel slide */
+        #filtersPanel {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.35s ease, opacity 0.25s ease;
+            opacity: 0;
+        }
+        #filtersPanel.open {
+            max-height: 800px; opacity: 1;
+        }
+        @media (min-width: 1024px) {
+            #filtersPanel { max-height: none; opacity: 1; overflow: visible; }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
@@ -65,7 +93,18 @@
 
         <!-- ── FILTERS SIDEBAR ── -->
         <aside class="lg:w-64 flex-shrink-0">
-            <div class="bg-white rounded-2xl border border-slate-100 p-6 space-y-6 sticky top-28">
+            <!-- Mobile toggle button -->
+            <button id="filterToggleBtn" onclick="toggleFilters()"
+                class="lg:hidden w-full flex items-center justify-between bg-white border border-slate-200 rounded-2xl px-5 py-3.5 mb-3 font-black text-sm text-slate-700 hover:border-blue-400 transition active:scale-[.98]">
+                <span class="flex items-center gap-2">
+                    <i class="fas fa-sliders-h text-blue-600"></i>
+                    Filtri
+                    <span id="filterBadge" class="hidden bg-blue-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full"></span>
+                </span>
+                <i id="filterArrow" class="fas fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+            </button>
+
+            <div id="filtersPanel" class="bg-white rounded-2xl border border-slate-100 p-6 space-y-6 lg:sticky lg:top-28">
                 <div class="flex justify-between items-center">
                     <h2 class="font-black text-sm">Filtri</h2>
                     <button onclick="clearFilters()" class="text-xs text-blue-600 font-bold hover:underline">Azzera</button>
@@ -138,7 +177,7 @@
                     </div>
                     <i class="fas fa-bullhorn absolute -bottom-4 -right-4 text-6xl text-white/10 transform -rotate-12"></i>
                 </div>
-            </div>
+            </div><!-- /filtersPanel -->
         </aside>
 
         <!-- ── RESULTS ── -->
