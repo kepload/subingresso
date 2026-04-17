@@ -192,6 +192,39 @@ create policy "Admin modifica blog" on public.blog_posts for update using (auth.
 drop policy if exists "Admin eliminazione blog" on public.blog_posts;
 create policy "Admin eliminazione blog" on public.blog_posts for delete using (auth.email() = 'kycykuardit@gmail.com');
 
+-- ── 6b. PROTEZIONE STATUS ANNUNCI (Anti-bypass) ─────────────
+-- Impedisce agli utenti normali di pubblicare direttamente come 'active'
+-- bypassando la moderazione tramite chiamate API dirette a Supabase.
+CREATE OR REPLACE FUNCTION public.enforce_annunci_status()
+RETURNS TRIGGER LANGUAGE plpgsql SECURITY DEFINER AS $$
+BEGIN
+  -- Admin può fare tutto
+  IF auth.email() = 'kycykuardit@gmail.com' THEN
+    RETURN NEW;
+  END IF;
+
+  -- INSERT: utenti normali partono sempre da 'pending'
+  IF TG_OP = 'INSERT' THEN
+    NEW.status = 'pending';
+    RETURN NEW;
+  END IF;
+
+  -- UPDATE: utenti normali non possono promuoversi ad 'active' da soli
+  IF TG_OP = 'UPDATE' THEN
+    IF NEW.status = 'active' AND OLD.status != 'active' THEN
+      NEW.status = OLD.status; -- ripristina il valore precedente
+    END IF;
+  END IF;
+
+  RETURN NEW;
+END;
+$$;
+
+DROP TRIGGER IF EXISTS trg_enforce_annunci_status ON public.annunci;
+CREATE TRIGGER trg_enforce_annunci_status
+  BEFORE INSERT OR UPDATE ON public.annunci
+  FOR EACH ROW EXECUTE FUNCTION public.enforce_annunci_status();
+
 -- ── 7. REALTIME ─────────────────────────────────────────────
 -- Aggiunge le tabelle alla replica in tempo reale (se non già presenti)
 DO $$

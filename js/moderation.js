@@ -48,14 +48,22 @@ window.moderaAnnuncio = async function (dati) {
     
     const _GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${targetModel}:generateContent?key=${GEMINI_API_KEY}`;
 
-    // 3. Tronca descrizione (risparmio token)
-    const descrBreve = (dati.descrizione || '').slice(0, 1000);
+    // 3. Sanifica input prima di inserirli nel prompt (anti prompt-injection)
+    const _sanitize = str => String(str || '')
+        .replace(/["""]/g, "'")          // apici neutralizzati
+        .replace(/[\r\n\t]+/g, ' ')      // no newline nel prompt
+        .replace(/[{}[\]]/g, '')         // no strutture JSON iniettabili
+        .trim();
+
+    const safeTitolo  = _sanitize(dati.titolo).slice(0, 200);
+    const safePrezzo  = Number(dati.prezzo) || 0;
+    const descrBreve  = _sanitize(dati.descrizione).slice(0, 1000);
 
     const prompt = `Sei il moderatore di Subingresso.it. Analizza e rispondi SOLO JSON: {"status":"active"|"pending"|"rejected","reason":"..."}
 
 Dati:
-Titolo: ${dati.titolo}
-Prezzo: €${dati.prezzo}
+Titolo: ${safeTitolo}
+Prezzo: €${safePrezzo}
 Descrizione: ${descrBreve}
 
 Regole:

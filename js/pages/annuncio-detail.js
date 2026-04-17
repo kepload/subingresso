@@ -22,7 +22,7 @@ async function loadListing() {
         console.log("📡 Interrogazione Supabase...");
         const { data, error } = await _supabase
             .from('annunci')
-            .select('*')
+            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at')
             .eq('id', idParam)
             .maybeSingle();
 
@@ -210,6 +210,18 @@ async function initPage() {
         console.log("👤 Utente corrente:", user?.id);
         console.log("📝 Proprietario annuncio:", listing.user_id);
 
+        // Fetch tel/email solo per utenti autenticati (mai esposto a utenti anonimi)
+        if (user && listing.id) {
+            const { data: contactData } = await _supabase
+                .from('annunci').select('tel, email').eq('id', listing.id).single();
+            if (contactData) {
+                _currentListing.tel   = contactData.tel;
+                _currentListing.email = contactData.email;
+                const telEl = document.getElementById('cTel');
+                if (telEl) telEl.textContent = contactData.tel || 'Contatto riservato';
+            }
+        }
+
         if (user && listing.user_id && String(listing.user_id).trim() === String(user.id).trim()) {
             console.log("✅ Match proprietario confermato!");
             // 1. Aggiungiamo un badge sopra il titolo
@@ -343,7 +355,7 @@ function maskPhones(text) {
 }
 
 // Ripristina pulsanti e descrizione dopo il login
-function restoreContactUI() {
+async function restoreContactUI() {
     document.getElementById('loginContactBanner')?.remove();
 
     const chatBtn = document.getElementById('chatBtn');
@@ -357,6 +369,20 @@ function restoreContactUI() {
     const descrEl = document.getElementById('descrizione');
     if (descrEl && _currentListing?.descrizione) {
         descrEl.textContent = _currentListing.descrizione;
+    }
+
+    // Fetch tel/email ora che l'utente è autenticato
+    if (_currentListing?.id) {
+        try {
+            const { data: contactData } = await _supabase
+                .from('annunci').select('tel, email').eq('id', _currentListing.id).single();
+            if (contactData) {
+                _currentListing.tel   = contactData.tel;
+                _currentListing.email = contactData.email;
+                const telEl = document.getElementById('cTel');
+                if (telEl) telEl.textContent = contactData.tel || 'Contatto riservato';
+            }
+        } catch (_) {}
     }
 }
 
