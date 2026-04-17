@@ -90,9 +90,72 @@ function initUI() {
     }
 }
 
+// ── COOKIE BANNER ────────────────────────────────────────────
+function initCookieBanner() {
+    if (localStorage.getItem('cookie_consent')) return;
+
+    const banner = document.createElement('div');
+    banner.id = 'cookieBanner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Consenso cookie');
+    banner.innerHTML = `
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+            <div class="flex items-start gap-3 flex-1 min-w-0">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="fas fa-cookie-bite text-white text-sm"></i>
+                </div>
+                <div class="min-w-0">
+                    <p class="text-slate-900 font-black text-sm sm:text-base leading-snug">Usiamo i cookie</p>
+                    <p class="text-slate-500 font-medium text-xs sm:text-sm mt-0.5 leading-relaxed">
+                        Per migliorare la tua esperienza e analizzare il traffico.
+                        <a href="privacy.html" class="text-blue-600 hover:underline font-bold ml-0.5 whitespace-nowrap">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+            <div class="flex gap-2.5 w-full sm:w-auto flex-shrink-0">
+                <button id="cookieDeny"
+                    class="flex-1 sm:flex-none px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors duration-150 whitespace-nowrap">
+                    Solo necessari
+                </button>
+                <button id="cookieAccept"
+                    class="flex-1 sm:flex-none px-5 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-150 whitespace-nowrap shadow-sm shadow-blue-100">
+                    Accetta tutti
+                </button>
+            </div>
+        </div>
+    `;
+
+    Object.assign(banner.style, {
+        position:     'fixed',
+        bottom:       '0',
+        left:         '0',
+        right:        '0',
+        zIndex:       '9999',
+        background:   '#ffffff',
+        borderTop:    '1px solid #f1f5f9',
+        padding:      'clamp(14px, 3vw, 22px) clamp(16px, 4vw, 32px)',
+        boxShadow:    '0 -8px 32px rgba(15,23,42,.08)',
+        transform:    'translateY(100%)',
+        transition:   'transform 0.35s cubic-bezier(0.34, 1.26, 0.64, 1)',
+    });
+
+    document.body.appendChild(banner);
+    requestAnimationFrame(() => { banner.style.transform = 'translateY(0)'; });
+
+    function _dismiss(choice) {
+        localStorage.setItem('cookie_consent', choice);
+        banner.style.transform = 'translateY(110%)';
+        banner.addEventListener('transitionend', () => banner.remove(), { once: true });
+    }
+
+    document.getElementById('cookieAccept').addEventListener('click', () => _dismiss('all'));
+    document.getElementById('cookieDeny').addEventListener('click',   () => _dismiss('essential'));
+}
+
 // Inizializza al caricamento
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initUI);
+    document.addEventListener('DOMContentLoaded', () => { initUI(); initCookieBanner(); });
 } else {
     initUI();
+    initCookieBanner();
 }
