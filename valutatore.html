@@ -360,6 +360,13 @@
         return Math.round(n).toLocaleString('it-IT');
     }
 
+    function snap(n) {
+        if (n >= 50000) return Math.round(n / 5000) * 5000;
+        if (n >= 10000) return Math.round(n / 1000) * 1000;
+        if (n >= 1000)  return Math.round(n / 500)  * 500;
+        return Math.round(n / 50) * 50;
+    }
+
     function calculate() {
         var base = factors.fatturato * 0.45;
         var moltFrequenza = (factors.frequenza === 'fiera') ? (2.2 * factors.durataFiera) : factors.frequenza;
@@ -368,15 +375,16 @@
         if (totale < factors.fatturato * 0.5) totale = factors.fatturato * 0.5;
 
         var rentAvg = totale * 0.27 * factors.stagionalita;
-        if (rentAvg < 3000) rentAvg = 3000;
+        var rentFloor = factors.fatturato * 0.3;
+        if (rentAvg < rentFloor) rentAvg = rentFloor;
         var rentMonthly = rentAvg / 12;
 
         var min = totale * 0.85;
         var max = totale * 1.15;
 
-        document.getElementById('priceMin').textContent = '€ ' + fmt(Math.round(min / 1000) * 1000);
-        document.getElementById('priceMax').textContent = '€ ' + fmt(Math.round(max / 1000) * 1000);
-        document.getElementById('totalAvg').textContent = 'Target Vendita: € ' + fmt(Math.round(totale / 1000) * 1000);
+        document.getElementById('priceMin').textContent = '€ ' + fmt(snap(min));
+        document.getElementById('priceMax').textContent = '€ ' + fmt(snap(max));
+        document.getElementById('totalAvg').textContent = 'Target Vendita: € ' + fmt(snap(totale));
         document.getElementById('rentValue').textContent = '€ ' + fmt(rentAvg) + ' / anno';
         document.getElementById('rentMonthly').textContent = '€ ' + fmt(rentMonthly) + ' / mese';
 
