@@ -167,6 +167,35 @@ async function initPage() {
         }
     }
 
+    // Seller card
+    if (listing.user_id) {
+        try {
+            const { data: seller } = await _supabase
+                .from('profiles')
+                .select('nome, avatar_url, created_at')
+                .eq('id', listing.user_id)
+                .single();
+
+            if (seller) {
+                const card     = document.getElementById('sellerCard');
+                const avatarEl = document.getElementById('sellerAvatar');
+                const nameEl   = document.getElementById('sellerName');
+                const sinceEl  = document.getElementById('sellerSince');
+                const linkEl   = document.getElementById('sellerProfileLink');
+
+                if (seller.avatar_url) {
+                    avatarEl.innerHTML = `<img src="${escapeHTML(seller.avatar_url)}" class="w-full h-full object-cover">`;
+                } else {
+                    avatarEl.textContent = (seller.nome || 'U').charAt(0).toUpperCase();
+                }
+                nameEl.textContent  = seller.nome || 'Utente';
+                sinceEl.textContent = `Iscritto dal ${new Date(seller.created_at).toLocaleDateString('it-IT', { month: 'long', year: 'numeric' })}`;
+                if (linkEl) linkEl.href = `profilo.html?id=${listing.user_id}`;
+                if (card)   card.classList.remove('hidden');
+            }
+        } catch (_) {}
+    }
+
     // Check proprietario (UI Speciale per il possessore)
     try {
         const { data: { user } } = await _supabase.auth.getUser();

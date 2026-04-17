@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilo Venditore — Subingresso.it</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        * { box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+
+<header></header>
+
+<main class="flex-grow max-w-5xl mx-auto px-6 py-12 w-full">
+
+    <!-- Not found -->
+    <div id="notFound" class="hidden text-center py-24">
+        <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-user-slash text-slate-300 text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-black mb-2">Profilo non trovato</h2>
+        <p class="text-slate-400 font-medium mb-6">Questo utente non esiste o è stato eliminato.</p>
+        <a href="annunci.html" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+            Torna agli annunci
+        </a>
+    </div>
+
+    <!-- Loading -->
+    <div id="loadingState" class="text-center py-24">
+        <i class="fas fa-spinner fa-spin text-blue-300 text-4xl"></i>
+    </div>
+
+    <!-- Profile content -->
+    <div id="profileContent" class="hidden space-y-8">
+
+        <!-- Header card -->
+        <div class="bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                <div id="profileAvatar" class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-black text-3xl overflow-hidden flex-shrink-0 border-4 border-white shadow-md"></div>
+                <div class="text-center sm:text-left">
+                    <h1 id="profileName" class="text-3xl font-black tracking-tight text-slate-900"></h1>
+                    <div class="flex flex-col sm:flex-row items-center gap-3 mt-3">
+                        <span id="profileSince" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-lg">
+                            <i class="fas fa-calendar-check text-slate-400"></i>
+                        </span>
+                        <span id="profileListingCount" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-lg">
+                            <i class="fas fa-store text-blue-400"></i>
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-400 font-semibold mt-4 flex items-center justify-center sm:justify-start gap-1.5">
+                        <i class="fas fa-shield-alt text-emerald-400"></i>
+                        Controlla sempre la data di iscrizione e il numero di annunci prima di procedere.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Listings -->
+        <div>
+            <h2 class="text-xl font-black tracking-tight mb-5">Annunci attivi</h2>
+            <div id="profileListingsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="col-span-3 text-center py-12 text-slate-400">
+                    <i class="fas fa-spinner fa-spin text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js?v=3"></script>
+<script src="js/data.js?v=3"></script>
+<script src="js/ui-components.js?v=3"></script>
+<script src="js/auth.js?v=3"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    const userId = new URLSearchParams(location.search).get('id');
+
+    if (!userId) {
+        document.getElementById('loadingState').classList.add('hidden');
+        document.getElementById('notFound').classList.remove('hidden');
+        return;
+    }
+
+    // Fetch profile
+    const { data: profile, error } = await _supabase
+        .from('profiles')
+        .select('nome, cognome, avatar_url, created_at')
+        .eq('id', userId)
+        .single();
+
+    document.getElementById('loadingState').classList.add('hidden');
+
+    if (error || !profile) {
+        document.getElementById('notFound').classList.remove('hidden');
+        return;
+    }
+
+    // Fetch active listings
+    const { data: listings } = await _supabase
+        .from('annunci')
+        .select('*')
+        .eq('user_id', userId)
+        .eq('status', 'active')
+        .order('created_at', { ascending: false });
+
+    // Populate header
+    const nome = profile.nome || 'Utente';
+    document.title = `${nome} — Profilo Venditore`;
+
+    const avatarEl = document.getElementById('profileAvatar');
+    if (profile.avatar_url) {
+        avatarEl.innerHTML = `<img src="${escapeHTML(profile.avatar_url)}" class="w-full h-full object-cover">`;
+    } else {
+        avatarEl.textContent = nome.charAt(0).toUpperCase();
+    }
+
+    document.getElementById('profileName').textContent = nome;
+
+    const joinDate = new Date(profile.created_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+    document.getElementById('profileSince').innerHTML = `<i class="fas fa-calendar-check text-slate-400"></i> Iscritto dal ${joinDate}`;
+
+    const count = listings ? listings.length : 0;
+    document.getElementById('profileListingCount').innerHTML = `<i class="fas fa-store text-blue-400"></i> ${count} annunci attivi`;
+
+    // Populate listings grid
+    const grid = document.getElementById('profileListingsGrid');
+    if (!listings || listings.length === 0) {
+        grid.innerHTML = `
+            <div class="col-span-3 text-center py-12 bg-white rounded-2xl border border-slate-100">
+                <i class="fas fa-store text-slate-200 text-4xl mb-3"></i>
+                <p class="text-slate-400 font-bold">Nessun annuncio attivo al momento</p>
+            </div>`;
+    } else {
+        grid.innerHTML = listings.map(l => buildCard(l)).join('');
+    }
+
+    document.getElementById('profileContent').classList.remove('hidden');
+});
+</script>
+</body>
+</html>
