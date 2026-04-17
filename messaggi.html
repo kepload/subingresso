@@ -193,12 +193,30 @@ async function loadConversations() {
     const pm = {};
     (profiles || []).forEach(p => { pm[p.id] = p; });
 
-    // Step 3: merge
+    // Step 3: ultimo messaggio per ogni conversazione
+    const convIds = list.map(c => c.id);
+    const { data: allMsgs } = await _supabase
+        .from('messaggi')
+        .select('conversazione_id, testo, created_at, mittente_id')
+        .in('conversazione_id', convIds)
+        .order('created_at', { ascending: false });
+
+    const lastMsgMap = {};
+    (allMsgs || []).forEach(m => {
+        if (!lastMsgMap[m.conversazione_id]) lastMsgMap[m.conversazione_id] = m;
+    });
+
+    // Step 4: merge + ordina per data ultimo messaggio (conv con messaggi prima)
     _conversations = list.map(c => ({
         ...c,
-        acquirente: pm[c.acquirente_id] || null,
-        venditore:  pm[c.venditore_id]  || null,
-    }));
+        acquirente:  pm[c.acquirente_id] || null,
+        venditore:   pm[c.venditore_id]  || null,
+        lastMessage: lastMsgMap[c.id]    || null,
+    })).sort((a, b) => {
+        const ta = a.lastMessage?.created_at || a.created_at;
+        const tb = b.lastMessage?.created_at || b.created_at;
+        return new Date(tb) - new Date(ta);
+    });
 
     renderConvList();
 }
@@ -210,19 +228,31 @@ function renderConvList() {
         return;
     }
     list.innerHTML = _conversations.map(c => {
-        const isAcquirente = c.acquirente?.id === _currentUser.id;
+        const isAcquirente = (c.acquirente?.id ?? c.acquirente_id) === _currentUser.id;
         const other = isAcquirente ? c.venditore : c.acquirente;
         const otherName = other ? `${other.nome || ''} ${other.cognome || ''}`.trim() || 'Utente' : 'Utente';
+        const initial = otherName.charAt(0).toUpperCase();
         const active = c.id === _activeConvId;
+
+        const lm = c.lastMessage;
+        let preview = '<span class="italic">Nessun messaggio</span>';
+        if (lm) {
+            const prefix = lm.mittente_id === _currentUser.id ? 'Tu: ' : '';
+            preview = escapeHtml(prefix + lm.testo).slice(0, 60) + (lm.testo.length > 60 ? '…' : '');
+        }
+
         return `
         <button onclick="openConversation('${c.id}')"
             class="w-full text-left px-4 py-3.5 hover:bg-blue-50 transition flex items-center gap-3 ${active ? 'bg-blue-50 border-r-2 border-blue-600' : ''}">
-            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-user text-blue-500 text-sm"></i>
+            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-black">
+                ${initial}
             </div>
             <div class="flex-grow min-w-0">
-                <p class="font-black text-sm text-slate-900">${otherName}</p>
-                <p class="text-xs text-slate-400 font-semibold truncate">${c.annuncio?.titolo || 'Annuncio'}</p>
+                <div class="flex items-center justify-between gap-2">
+                    <p class="font-black text-sm text-slate-900 truncate">${escapeHtml(otherName)}</p>
+                    ${lm ? `<p class="text-[10px] text-slate-400 font-semibold flex-shrink-0">${new Date(lm.created_at).toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit' })}</p>` : ''}
+                </div>
+                <p class="text-xs text-slate-400 font-medium truncate mt-0.5">${preview}</p>
             </div>
         </button>`;
     }).join('');
