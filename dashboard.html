@@ -65,9 +65,18 @@
 
         <!-- Welcome + stats bar -->
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-                <h1 id="welcomeTitle" class="text-3xl font-black tracking-tight">Ciao!</h1>
-                <p class="text-slate-400 font-medium mt-1 text-sm" id="userEmail"></p>
+            <div class="flex items-center gap-4">
+                <button onclick="showTab('profilo')" title="Modifica profilo">
+                    <div id="welcomeAvatar" class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-xl font-black overflow-hidden border-2 border-blue-200 hover:border-blue-400 transition flex-shrink-0">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </button>
+                <div>
+                    <h1 id="welcomeTitle" class="text-3xl font-black tracking-tight">Ciao!</h1>
+                    <button onclick="showTab('profilo')" class="text-xs text-blue-500 font-bold hover:underline mt-0.5 flex items-center gap-1">
+                        <i class="fas fa-camera text-[10px]"></i> Modifica profilo e foto
+                    </button>
+                </div>
             </div>
             <div class="flex flex-wrap items-center gap-2">
                 <div id="adminBadge" class="hidden bg-slate-900 text-white px-5 py-3 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2 border border-transparent">
@@ -271,7 +280,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('profileNameDisplay').textContent = `${profile.nome || 'Utente'} ${profile.cognome || ''}`;
         
         if (profile.avatar_url) {
-            document.getElementById('avatarContainer').innerHTML = `<img src="${profile.avatar_url}" class="w-full h-full object-cover">`;
+            const img = `<img src="${profile.avatar_url}" class="w-full h-full object-cover">`;
+            document.getElementById('avatarContainer').innerHTML = img;
+            document.getElementById('welcomeAvatar').innerHTML   = img;
+        } else {
+            document.getElementById('welcomeAvatar').textContent = nome.charAt(0).toUpperCase();
         }
     }
     document.getElementById('userEmailDisplay').textContent = user.email;
