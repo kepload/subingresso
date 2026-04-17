@@ -207,14 +207,41 @@ BEGIN
     END IF;
 END $$;
 
--- ── 8. COLONNE MANCANTI (ALTER TABLE sicuro) ────────────────
+-- ── 8. STORAGE BUCKETS ──────────────────────────────────────
+insert into storage.buckets (id, name, public)
+values ('avatars', 'avatars', true)
+on conflict (id) do nothing;
+
+insert into storage.buckets (id, name, public)
+values ('listings', 'listings', true)
+on conflict (id) do nothing;
+
+-- Policy storage: chiunque può leggere
+drop policy if exists "Lettura pubblica avatars"   on storage.objects;
+drop policy if exists "Lettura pubblica listings"  on storage.objects;
+create policy "Lettura pubblica avatars"  on storage.objects for select using (bucket_id = 'avatars');
+create policy "Lettura pubblica listings" on storage.objects for select using (bucket_id = 'listings');
+
+-- Policy storage: solo utenti autenticati possono caricare nella propria cartella
+drop policy if exists "Upload avatar autenticato"   on storage.objects;
+drop policy if exists "Upload listing autenticato"  on storage.objects;
+create policy "Upload avatar autenticato"  on storage.objects for insert with check (bucket_id = 'avatars'   and auth.uid()::text = (storage.foldername(name))[1]);
+create policy "Upload listing autenticato" on storage.objects for insert with check (bucket_id = 'listings'  and auth.uid()::text = (storage.foldername(name))[1]);
+
+-- Policy storage: solo il proprietario può eliminare i propri file
+drop policy if exists "Delete avatar proprietario"   on storage.objects;
+drop policy if exists "Delete listing proprietario"  on storage.objects;
+create policy "Delete avatar proprietario"  on storage.objects for delete using (bucket_id = 'avatars'   and auth.uid()::text = (storage.foldername(name))[1]);
+create policy "Delete listing proprietario" on storage.objects for delete using (bucket_id = 'listings'  and auth.uid()::text = (storage.foldername(name))[1]);
+
+-- ── 9. COLONNE MANCANTI (ALTER TABLE sicuro) ────────────────
 -- Aggiunge colonne nuove senza toccare dati esistenti
 ALTER TABLE public.annunci ADD COLUMN IF NOT EXISTS img_urls    text[];
 ALTER TABLE public.annunci ADD COLUMN IF NOT EXISTS expires_at  timestamptz;
 ALTER TABLE public.annunci ADD COLUMN IF NOT EXISTS provincia   text;
 ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS avatar_url text;
 
--- ── 9. RELOAD SCHEMA CACHE ──────────────────────────────────
+-- ── 10. RELOAD SCHEMA CACHE ──────────────────────────────────
 -- Forza PostgREST a ricaricare lo schema (risolve errori "column not found")
 NOTIFY pgrst, 'reload schema';
 
