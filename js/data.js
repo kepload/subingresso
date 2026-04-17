@@ -197,18 +197,13 @@ function buildCard(l, isSmall = false, distance = null) {
                 <span class="truncate">${escapeHTML(l.comune)}, ${escapeHTML(l.regione)}</span>
             </div>
 
-            ${(() => {
-                const seller = l.profiles;
-                if (!seller) return '';
-                const avatar = seller.avatar_url
-                    ? `<img src="${escapeHTML(seller.avatar_url)}" class="w-full h-full object-cover">`
-                    : `<span class="text-[9px] font-black text-blue-600">${escapeHTML((seller.nome || 'U').charAt(0).toUpperCase())}</span>`;
-                return `
+            ${l.contatto ? `
                 <div class="flex items-center gap-1.5 mb-3">
-                    <div class="w-5 h-5 rounded-full bg-blue-100 overflow-hidden flex items-center justify-center flex-shrink-0">${avatar}</div>
-                    <span class="text-[11px] font-bold text-slate-400 truncate">${escapeHTML(seller.nome || 'Utente')}</span>
-                </div>`;
-            })()}
+                    <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
+                    </div>
+                    <span class="text-[11px] font-bold text-slate-400 truncate">${escapeHTML(l.contatto)}</span>
+                </div>` : ''}
             <div class="mt-auto pt-4 border-t border-slate-50 flex items-center justify-between">
                 <div>
                     <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest leading-none mb-1">Prezzo</p>

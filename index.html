@@ -487,7 +487,7 @@ async function loadRecentListings() {
     try {
         const { data, error } = await _supabase
             .from('annunci')
-            .select('*, profiles(nome, avatar_url)')
+            .select('*')
             .eq('status', 'active')
             .or(`expires_at.gt.${new Date().toISOString()},expires_at.is.null`)
             .order('created_at', { ascending: false })
