@@ -138,8 +138,6 @@ async function initPage() {
     const techRows = [
         { icon:'fa-store',          label:'Tipo',       val: listing.tipo },
         { icon:'fa-tag',            label:'Merce',      val: listing.merce },
-        { icon:'fa-map-marker-alt', label:'Regione',    val: listing.regione },
-        { icon:'fa-city',           label:'Comune',     val: `${listing.comune} (${listing.provincia || ''})` },
         { icon:'fa-ruler-combined', label:'Superficie', val: `${listing.superficie} m²` },
         { icon:'fa-calendar-alt',   label:'Giorni',     val: listing.giorni },
         { icon:'fa-exchange-alt',   label:'Stato',      val: listing.stato },
