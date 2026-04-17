@@ -173,11 +173,10 @@ async function loadListings() {
     try {
         const user = await getCurrentUser();
         
-        // Costruiamo la query base: tutti gli annunci attivi non scaduti
+        // Costruiamo la query base: tutti gli annunci attivi
         let query = _supabase
             .from('annunci')
             .select('*')
-            .or(`expires_at.gt.${new Date().toISOString()},expires_at.is.null`)
             .order('created_at', { ascending: false });
 
         // Se l'utente è loggato, può vedere i propri annunci (qualsiasi status) 
@@ -202,7 +201,7 @@ async function loadListings() {
             }));
         }
     } catch (e) {
-        console.warn("Supabase load failed, using demo data.");
+        console.error("Supabase load failed:", e);
     }
     applyFilters();
 }
