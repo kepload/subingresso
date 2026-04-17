@@ -184,7 +184,7 @@ function buildCard(l, isSmall = false, distance = null) {
     return `
     <div class="group bg-white rounded-2xl sm:rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full">
         <!-- cover -->
-        <a href="${annuncioUrl}" class="block relative h-32 sm:h-48 bg-slate-100 overflow-hidden flex-shrink-0">
+        <a href="${annuncioUrl}" class="block relative h-24 sm:h-36 bg-slate-100 overflow-hidden flex-shrink-0">
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
                 <i class="fas fa-store text-4xl sm:text-5xl"></i>
             </div>
