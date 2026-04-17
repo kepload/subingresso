@@ -176,7 +176,7 @@ async function loadListings() {
         // Costruiamo la query base: tutti gli annunci attivi
         let query = _supabase
             .from('annunci')
-            .select('*')
+            .select('*, profiles(nome, avatar_url)')
             .order('created_at', { ascending: false });
 
         // Se l'utente è loggato, può vedere i propri annunci (qualsiasi status) 
