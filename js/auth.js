@@ -317,10 +317,6 @@ window.updateAuthNav = async function () {
             <button onclick="openAuthModal('login')"
                 class="text-sm font-bold text-blue-600 hover:text-blue-700 px-4 py-2 rounded-xl border border-blue-100 hover:bg-blue-50 transition-all duration-300">
                 Accedi
-            </button>
-            <button onclick="openAuthModal('register')"
-                class="hidden sm:block bg-blue-600 text-white px-5 py-2.5 rounded-[14px] text-sm font-bold hover:bg-blue-700 transition shadow-sm">
-                Registrati
             </button>`;
     } else {
         let nome = user.email.split('@')[0];
