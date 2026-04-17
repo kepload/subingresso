@@ -71,6 +71,14 @@ async function initPage() {
 
     // UI Update
     document.title = `${listing.titolo} — Subingresso.it`;
+
+    // OG / meta tag dinamici
+    const _setMeta = (id, val) => { const el = document.getElementById(id); if (el && val) el.setAttribute('content', val); };
+    const _desc = `${listing.stato} posteggio ${listing.tipo || ''} a ${listing.comune} (${listing.regione}) — €${Number(listing.prezzo || 0).toLocaleString('it-IT')}. ${(listing.descrizione || '').substring(0, 100)}`;
+    _setMeta('metaDesc', _desc);
+    _setMeta('ogTitle', document.title);
+    _setMeta('ogDesc', _desc);
+    _setMeta('ogUrl', window.location.href);
     if (notFoundEl) notFoundEl.classList.add('hidden');
     if (detailEl) {
         detailEl.classList.remove('hidden');
@@ -132,6 +140,7 @@ async function initPage() {
             <img src="${escapeHTML(firstImg)}" class="w-full h-full object-cover">
             <span id="statoBadge" class="absolute top-6 left-6 text-white text-xs font-black px-4 py-2 rounded-xl shadow-lg uppercase tracking-widest ${listing.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'}">${escapeHTML(listing.stato)}</span>
         `;
+        _setMeta('ogImage', firstImg);
     }
 
     // Scheda tecnica (Sicurezza: escapeHTML)

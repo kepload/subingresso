@@ -63,10 +63,10 @@
     </div>
 
     <!-- Chat layout -->
-    <div id="chatLayout" class="hidden h-[calc(100vh-140px)] flex gap-4">
+    <div id="chatLayout" class="hidden h-[calc(100vh-140px)] gap-4">
 
         <!-- ── Left: conversation list ── -->
-        <div class="w-80 flex-shrink-0 bg-white rounded-2xl border border-slate-100 flex flex-col overflow-hidden">
+        <div id="convPanel" class="w-full md:w-80 md:flex-shrink-0 bg-white rounded-2xl border border-slate-100 flex flex-col overflow-hidden">
             <div class="p-4 border-b border-slate-100">
                 <h2 class="font-black text-base">Conversazioni</h2>
             </div>
@@ -76,7 +76,7 @@
         </div>
 
         <!-- ── Right: chat window ── -->
-        <div class="flex-grow bg-white rounded-2xl border border-slate-100 flex flex-col overflow-hidden">
+        <div id="chatPanel" class="hidden flex-grow bg-white rounded-2xl border border-slate-100 flex-col overflow-hidden">
 
             <!-- Chat header (empty state) -->
             <div id="chatEmpty" class="flex-grow flex flex-col items-center justify-center text-slate-300">
@@ -86,10 +86,13 @@
 
             <!-- Chat header (active) -->
             <div id="chatHeader" class="hidden p-4 border-b border-slate-100 flex items-center gap-3">
-                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                <button onclick="backToConversations()" class="md:hidden text-slate-400 hover:text-slate-900 transition flex-shrink-0">
+                    <i class="fas fa-arrow-left text-sm"></i>
+                </button>
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-user text-blue-500 text-sm"></i>
                 </div>
-                <div>
+                <div class="min-w-0">
                     <p id="chatOtherName" class="font-black text-sm"></p>
                     <a id="chatListingLink" href="#" class="text-xs text-blue-600 hover:underline font-semibold truncate max-w-xs block"></a>
                 </div>
@@ -138,8 +141,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         _currentUser = user;
-        document.getElementById('chatLayout').classList.remove('hidden');
-        document.getElementById('chatLayout').classList.add('flex');
+        const layout = document.getElementById('chatLayout');
+        layout.classList.remove('hidden');
+        layout.classList.add('flex');
+        // Su desktop mostra subito il pannello chat (vuoto)
+        if (window.innerWidth >= 768) {
+            document.getElementById('chatPanel').classList.remove('hidden');
+            document.getElementById('chatPanel').classList.add('flex');
+        }
 
         await loadConversations();
 
@@ -202,6 +211,15 @@ function renderConvList() {
     }).join('');
 }
 
+// ── Mobile: torna alla lista ─────────────────────────────
+function backToConversations() {
+    document.getElementById('convPanel').classList.remove('hidden');
+    document.getElementById('convPanel').classList.add('flex');
+    document.getElementById('chatPanel').classList.add('hidden');
+    document.getElementById('chatPanel').classList.remove('flex');
+    _activeConvId = null;
+}
+
 // ── Open a conversation ──────────────────────────────────
 async function openConversation(convId) {
     _activeConvId = convId;
@@ -218,6 +236,14 @@ async function openConversation(convId) {
     document.getElementById('chatHeader').classList.remove('hidden');
     document.getElementById('messagesContainer').classList.remove('hidden');
     document.getElementById('chatInputArea').classList.remove('hidden');
+
+    // Mobile: nascondi lista, mostra pannello chat
+    if (window.innerWidth < 768) {
+        document.getElementById('convPanel').classList.add('hidden');
+        document.getElementById('convPanel').classList.remove('flex');
+        document.getElementById('chatPanel').classList.remove('hidden');
+        document.getElementById('chatPanel').classList.add('flex');
+    }
 
     document.getElementById('chatOtherName').textContent = otherName;
     const link = document.getElementById('chatListingLink');
