@@ -680,10 +680,8 @@ async function saveProfile(e) {
         telefono: document.getElementById('pTelefono').value.trim()
     });
     if (!error) {
-        const msg = document.getElementById('profileMsg');
-        msg.classList.remove('hidden');
-        setTimeout(() => msg.classList.add('hidden'), 3000);
         updateAuthNav();
+        setTimeout(() => closeProfiloModal(), 800);
     }
 }
 
