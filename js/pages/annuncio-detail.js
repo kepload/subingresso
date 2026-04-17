@@ -200,8 +200,32 @@ async function initPage() {
             const whatsappBtn = document.getElementById('whatsappBtn');
             if (contactBtn) contactBtn.classList.add('hidden');
             if (whatsappBtn) whatsappBtn.classList.add('hidden');
-        } else {
-            console.log("ℹ️ Visitatore normale o ID non corrispondenti.");
+        } else if (!user) {
+            // Utente non loggato: maschera numeri di telefono nella descrizione
+            const descrEl = document.getElementById('descrizione');
+            if (descrEl) {
+                descrEl.textContent = maskPhones(descrEl.textContent);
+                descrEl.insertAdjacentHTML('afterend', `
+                    <div class="mt-5 bg-blue-50 border border-blue-100 rounded-2xl p-4 flex flex-wrap items-center gap-4">
+                        <div class="w-9 h-9 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-lock text-blue-600 text-sm"></i>
+                        </div>
+                        <div class="flex-grow min-w-0">
+                            <p class="font-black text-sm text-slate-900">Accedi per vedere i contatti completi</p>
+                            <p class="text-xs text-slate-500 font-medium mt-0.5">I numeri di telefono sono visibili solo agli utenti registrati.</p>
+                        </div>
+                        <button onclick="openAuthModal('register')" class="bg-blue-600 text-white px-5 py-2.5 rounded-xl font-black text-xs hover:bg-blue-700 transition whitespace-nowrap">
+                            Registrati gratis
+                        </button>
+                    </div>`);
+            }
+            // Aggiorna label pulsanti con lucchetto
+            const chatBtn = document.getElementById('chatBtn');
+            const waBtn   = document.getElementById('whatsappBtn');
+            const callBtn = document.getElementById('contactBtn');
+            if (chatBtn) chatBtn.innerHTML = '<i class="fas fa-lock text-blue-200 mr-2"></i> Accedi per scrivere';
+            if (waBtn)   waBtn.innerHTML   = '<i class="fab fa-whatsapp text-xl mr-1"></i><i class="fas fa-lock text-emerald-200 text-xs"></i> Accedi per WhatsApp';
+            if (callBtn) callBtn.innerHTML = '<i class="fas fa-lock text-slate-400 mr-2"></i> Accedi per chiamare';
         }
     } catch (e) {
         console.error("❌ Errore check proprietario:", e);
@@ -287,6 +311,11 @@ function openWhatsApp() {
         const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
         window.open(`https://api.whatsapp.com/send?phone=${finalTel}&text=${text}`, '_blank');
     });
+}
+
+// Maschera numeri di telefono italiani (mobile 3xx e fissi 0x)
+function maskPhones(text) {
+    return text.replace(/(\+?39[\s\-]?)?\b(3\d{2}|0\d{1,3})([\s\-]?\d{3,4}){1,3}\b/g, '●●● ●●●●●●●');
 }
 
 // Inizializza
