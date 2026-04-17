@@ -6,6 +6,7 @@
     <title>Blog Tecnico — Subingresso.it</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; animation: fadeIn 0.5s ease-in-out; }
@@ -110,10 +111,12 @@ async function loadBlog() {
 
 function renderPost(post) {
     const date = new Date(post.published_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+    const safeTitle = escapeHTML(post.title);
+    const safeContent = DOMPurify.sanitize(post.content);
     container.innerHTML = `
         <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
-        <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${post.title}</h1>
-        <div class="prose font-medium text-left">${post.content}</div>
+        <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>
+        <div class="prose font-medium text-left">${safeContent}</div>
         <div class="mt-20 p-10 bg-slate-50 rounded-[40px] border border-slate-100 text-center">
             <div class="bg-blue-600 text-white w-16 h-16 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-100 mx-auto mb-6 text-center">
                 <i class="fas fa-rocket text-2xl"></i>
@@ -141,11 +144,14 @@ function renderList(posts) {
         <div class="grid gap-12 text-left">
             ${posts.map(p => {
                 const date = new Date(p.published_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+                const safeSlug = encodeURIComponent(p.slug);
+                const safeTitle = escapeHTML(p.title);
+                const safeExcerpt = escapeHTML(p.excerpt || 'Guida tecnica completa con riferimenti normativi e consigli pratici.');
                 return `
-                <a href="blog.html?post=${p.slug}" class="block group border-b border-slate-50 pb-8 last:border-0 text-left">
+                <a href="blog.html?post=${safeSlug}" class="block group border-b border-slate-50 pb-8 last:border-0 text-left">
                     <p class="text-xs font-bold text-slate-400 uppercase mb-2 text-left">${date}</p>
-                    <h2 class="text-2xl font-black group-hover:text-blue-600 transition tracking-tight leading-tight text-left">${p.title}</h2>
-                    <p class="text-slate-500 text-sm mt-3 font-medium leading-relaxed text-left">${p.excerpt || 'Guida tecnica completa con riferimenti normativi e consigli pratici.'}</p>
+                    <h2 class="text-2xl font-black group-hover:text-blue-600 transition tracking-tight leading-tight text-left">${safeTitle}</h2>
+                    <p class="text-slate-500 text-sm mt-3 font-medium leading-relaxed text-left">${safeExcerpt}</p>
                     <p class="text-blue-600 text-xs font-black uppercase tracking-widest mt-4 text-left">Leggi la guida completa →</p>
                 </a>
                 `;

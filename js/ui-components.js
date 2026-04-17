@@ -52,9 +52,9 @@ const UI = {
                 <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-4">Informazioni</h4>
                 <ul class="space-y-2.5 text-slate-400 font-medium text-sm">
                     <li><a href="index.html#come-funziona" class="hover:text-white transition">Come funziona</a></li>
-                    <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-white transition">Termini di servizio</a></li>
-                    <li><a href="#" class="hover:text-white transition">Contatti</a></li>
+                    <li><a href="privacy.html"   class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="termini.html"   class="hover:text-white transition">Termini di servizio</a></li>
+                    <li><a href="contatti.html"  class="hover:text-white transition">Contatti</a></li>
                 </ul>
             </div>
         </div>

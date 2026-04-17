@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti — Subingresso.it</title>
+    <meta name="description" content="Contatta il team di Subingresso.it per assistenza, segnalazioni o informazioni sulla piattaforma.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+
+<header></header>
+
+<main class="flex-grow max-w-3xl mx-auto px-6 py-16 w-full">
+    <div class="bg-white rounded-3xl border border-slate-100 p-8 md:p-12 shadow-sm">
+        <h1 class="text-3xl font-black tracking-tight mb-3">Contatti</h1>
+        <p class="text-slate-500 font-medium mb-10">Hai domande, segnalazioni o hai bisogno di assistenza? Scrivici, ti risponderemo entro 24 ore lavorative.</p>
+
+        <div class="space-y-6">
+            <!-- Email -->
+            <div class="flex items-start gap-5 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                <div class="bg-blue-600 text-white w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-100">
+                    <i class="fas fa-envelope text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="font-black text-slate-900 mb-1">Supporto generale</h3>
+                    <p class="text-slate-500 text-sm mb-2">Per domande sulla piattaforma, problemi con annunci o il tuo account.</p>
+                    <a href="mailto:info@subingresso.it" class="text-blue-600 font-bold text-sm hover:underline">info@subingresso.it</a>
+                </div>
+            </div>
+
+            <!-- Segnalazioni -->
+            <div class="flex items-start gap-5 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                <div class="bg-amber-500 text-white w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-amber-100">
+                    <i class="fas fa-flag text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="font-black text-slate-900 mb-1">Segnalazioni e abusi</h3>
+                    <p class="text-slate-500 text-sm mb-2">Per segnalare annunci falsi, comportamenti scorretti o contenuti inappropriati.</p>
+                    <a href="mailto:info@subingresso.it?subject=Segnalazione" class="text-blue-600 font-bold text-sm hover:underline">info@subingresso.it</a>
+                </div>
+            </div>
+
+            <!-- FAQ rapide -->
+            <div class="mt-10">
+                <h2 class="text-xl font-black tracking-tight mb-6 text-slate-900">Domande frequenti</h2>
+                <div class="space-y-4">
+                    <details class="group bg-slate-50 rounded-2xl border border-slate-100 p-5">
+                        <summary class="font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+                            Come pubblico un annuncio?
+                            <i class="fas fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-slate-500 text-sm mt-3 leading-relaxed">Registrati o accedi al tuo account, poi clicca su "Inserisci annuncio" in alto a destra. Compila il modulo con i dettagli del posteggio e pubblica.</p>
+                    </details>
+                    <details class="group bg-slate-50 rounded-2xl border border-slate-100 p-5">
+                        <summary class="font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+                            Il servizio è gratuito?
+                            <i class="fas fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-slate-500 text-sm mt-3 leading-relaxed">Sì, la pubblicazione degli annunci su Subingresso.it è completamente gratuita per tutti gli utenti.</p>
+                    </details>
+                    <details class="group bg-slate-50 rounded-2xl border border-slate-100 p-5">
+                        <summary class="font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+                            Come contatto un venditore?
+                            <i class="fas fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-slate-500 text-sm mt-3 leading-relaxed">Accedi al tuo account e apri la pagina dell'annuncio che ti interessa. Troverai i pulsanti per contattare il venditore via chat interna, WhatsApp o telefono.</p>
+                    </details>
+                    <details class="group bg-slate-50 rounded-2xl border border-slate-100 p-5">
+                        <summary class="font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+                            Come elimino il mio account?
+                            <i class="fas fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-slate-500 text-sm mt-3 leading-relaxed">Scrivici a <a href="mailto:info@subingresso.it?subject=Cancellazione account" class="text-blue-600 font-semibold hover:underline">info@subingresso.it</a> con oggetto "Cancellazione account" e provvederemo entro 48 ore lavorative.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/ui-components.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
