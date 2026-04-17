@@ -242,19 +242,6 @@ async function initPage() {
             const descrEl = document.getElementById('descrizione');
             if (descrEl) {
                 descrEl.textContent = maskPhones(descrEl.textContent);
-                descrEl.insertAdjacentHTML('afterend', `
-                    <div id="loginContactBanner" class="mt-5 bg-blue-50 border border-blue-100 rounded-2xl p-4 flex flex-wrap items-center gap-4">
-                        <div class="w-9 h-9 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-lock text-blue-600 text-sm"></i>
-                        </div>
-                        <div class="flex-grow min-w-0">
-                            <p class="font-black text-sm text-slate-900">Accedi per vedere i contatti completi</p>
-                            <p class="text-xs text-slate-500 font-medium mt-0.5">I numeri di telefono sono visibili solo agli utenti registrati.</p>
-                        </div>
-                        <button onclick="openAuthModal('register')" class="bg-blue-600 text-white px-5 py-2.5 rounded-xl font-black text-xs hover:bg-blue-700 transition whitespace-nowrap">
-                            Registrati gratis
-                        </button>
-                    </div>`);
             }
             // Aggiorna label pulsanti con lucchetto
             const chatBtn = document.getElementById('chatBtn');
