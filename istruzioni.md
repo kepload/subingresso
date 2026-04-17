@@ -72,6 +72,27 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 ## 📱 Chat responsive (`messaggi.html`)
 - I due pannelli hanno id `convPanel` (lista) e `chatPanel` (chat). Su mobile si alterna la visibilità tra i due. `backToConversations()` torna alla lista. NON fondere i due div o si rompe il comportamento mobile.
 
+## 🖼️ Avatar venditori nelle card (`data.js` + `annunci.js`)
+- `USER_AVATARS` è una cache globale definita in `data.js` (`const USER_AVATARS = {}`). NON fare join `profiles` nella query annunci (rompe PostgREST) — invece `annunci.js` fa un fetch separato a `profiles(id, avatar_url)` dopo aver caricato i listing, con `.in('id', uniqueIds)`.
+- `buildCard()` legge `USER_AVATARS[l.user_id]` per mostrare la foto; se assente mostra la lettera iniziale.
+- Il badge venditore (`_sellerBadge`) usa la data dell'inserzione più vecchia dello stesso `user_id` come proxy della data di iscrizione.
+
+## 🃏 Struttura card annunci (`buildCard` in `data.js`)
+- La card è un `<div class="group ...">` NON un `<a>` — ha link separati: cover → `annuncioUrl`, titolo → `annuncioUrl`, venditore → `profiloUrl`, freccia → `annuncioUrl`. NON tornare a wrapper `<a>` unico o il link profilo smette di funzionare.
+- Il link venditore usa `onclick="event.stopPropagation()"` ed è un `<a>` reale a `profilo.html?id=USER_ID`.
+
+## 📐 Dimensioni immagine
+- **Card anteprima**: `h-20` mobile, `h-28` desktop (rapporto ~5:1 su mobile).
+- **Pagina annuncio** (`annuncio.html`): `h-44` mobile, `h-80` desktop.
+
+## 🔍 Filtri mobile (`annunci.html` + `annunci.js`)
+- Su mobile il sidebar filtri è `hidden lg:block` — NON è visibile. Il bottone "Filtri" è accanto al contatore risultati e apre un bottom-sheet (`#mobileFiltersSheet`).
+- Gli input del bottom-sheet usano il prefisso `m_` (`m_fRegione`, `m_fTipo`, `m_fStato`, `m_fPrezzoMax`, `m_fSup`). `applyMobileFilters()` copia i valori `m_` → sidebar e chiama `applyFilters()`.
+- `openMobileFilters()` sincronizza i valori dal sidebar → `m_` prima di aprire. NON modificare gli ID `m_` o la sincronizzazione si rompe.
+
+## 🚫 Banner login rimosso (`annuncio-detail.js`)
+- Il blocco `loginContactBanner` ("Accedi per vedere i contatti") è stato rimosso — era ridondante con i pulsanti lucchetto. La logica di mascheramento numeri e i lock sui pulsanti restano intatti.
+
 ## 🔍 Ricerca Annunci (`js/pages/annunci.js`)
 - Se il testo cercato è un luogo riconoscibile (`getCityCoords` lo trova), mostra **sempre** tutti gli annunci entro 200km ordinati per distanza — non solo come fallback.
 - `PROVINCE_COORDS` in `data.js`: aggiungere qui nuovi comuni se la ricerca per vicinanza non li trova. Toscolano Maderno già aggiunto.
