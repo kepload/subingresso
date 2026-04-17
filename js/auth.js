@@ -362,9 +362,18 @@ window.updateAuthNav = async function () {
             }
         } catch (_) {}
 
+        const badgeHtml = unread > 0
+            ? `<span class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-black min-w-[16px] h-4 px-0.5 rounded-full flex items-center justify-center leading-none">${unread > 9 ? '9+' : unread}</span>`
+            : '';
+
         nav.innerHTML = `
+            <a href="messaggi.html" title="Messaggi"
+                class="relative p-2 rounded-xl hover:bg-slate-100 transition-all duration-200 flex items-center justify-center">
+                <i class="fas fa-comment-alt text-slate-400 text-sm"></i>
+                ${badgeHtml}
+            </a>
             <a href="dashboard.html"
-                class="text-sm font-bold text-blue-600 hover:text-blue-700 p-2 lg:px-4 lg:py-2 rounded-xl border border-blue-100 lg:border-blue-100 hover:bg-blue-50 transition-all duration-300 flex items-center gap-2">
+                class="text-sm font-bold text-blue-600 hover:text-blue-700 p-2 lg:px-4 lg:py-2 rounded-xl border border-blue-100 hover:bg-blue-50 transition-all duration-300 flex items-center gap-2">
                 <div class="w-6 h-6 lg:w-5 lg:h-5 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-[10px] font-black shrink-0">
                     ${initial}
                 </div>
