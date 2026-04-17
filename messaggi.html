@@ -174,7 +174,7 @@ async function loadConversations() {
     const { data, error } = await _supabase
         .from('conversazioni')
         .select(`
-            id, created_at,
+            id, created_at, acquirente_id, venditore_id,
             annuncio:annunci(id, titolo, regione),
             acquirente:profiles!conversazioni_acquirente_id_fkey(id, nome, cognome),
             venditore:profiles!conversazioni_venditore_id_fkey(id, nome, cognome)
@@ -182,7 +182,19 @@ async function loadConversations() {
         .or(`acquirente_id.eq.${_currentUser.id},venditore_id.eq.${_currentUser.id}`)
         .order('created_at', { ascending: false });
 
-    _conversations = data || [];
+    if (error) {
+        // Fallback: query senza join se PostgREST non risolve le relazioni
+        console.warn('loadConversations: join fallito, uso query base.', error.message);
+        const { data: simple, error: err2 } = await _supabase
+            .from('conversazioni')
+            .select('id, created_at, acquirente_id, venditore_id, annuncio_id')
+            .or(`acquirente_id.eq.${_currentUser.id},venditore_id.eq.${_currentUser.id}`)
+            .order('created_at', { ascending: false });
+        if (err2) console.error('loadConversations fallback error:', err2.message);
+        _conversations = simple || [];
+    } else {
+        _conversations = data || [];
+    }
     renderConvList();
 }
 
@@ -225,10 +237,26 @@ async function openConversation(convId) {
     _activeConvId = convId;
     renderConvList();
 
-    const conv = _conversations.find(c => c.id === convId);
-    if (!conv) return;
+    let conv = _conversations.find(c => c.id === convId);
 
-    const isAcquirente = conv.acquirente?.id === _currentUser.id;
+    // Se la conv non è in lista (lista vuota o errore), fetch diretto dal DB
+    if (!conv) {
+        const { data, error } = await _supabase
+            .from('conversazioni')
+            .select('id, created_at, acquirente_id, venditore_id, annuncio_id')
+            .eq('id', convId)
+            .single();
+        if (error || !data) {
+            console.error('openConversation: conversazione non trovata o accesso negato.', error?.message);
+            return;
+        }
+        conv = data;
+        _conversations.unshift(conv);
+        renderConvList();
+    }
+
+    // Calcola nome interlocutore (con o senza dati join)
+    const isAcquirente = (conv.acquirente?.id ?? conv.acquirente_id) === _currentUser.id;
     const other = isAcquirente ? conv.venditore : conv.acquirente;
     const otherName = other ? `${other.nome || ''} ${other.cognome || ''}`.trim() || 'Utente' : 'Utente';
 
