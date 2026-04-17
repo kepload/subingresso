@@ -376,10 +376,11 @@ async function submitAnnuncio() {
     try {
         // ── 1. CARICAMENTO IMMAGINI SU STORAGE ──
         const imageUrls = [];
+        let failedUploads = 0;
         for (let file of _files) {
             const fileExt = file.name.split('.').pop();
             const fileName = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-            const filePath = fileName; 
+            const filePath = fileName;
 
             const { error: uploadError } = await _supabase.storage
                 .from('listings')
@@ -387,13 +388,14 @@ async function submitAnnuncio() {
 
             if (uploadError) {
                 console.error("Errore upload immagine:", uploadError);
-                continue; 
+                failedUploads++;
+                continue;
             }
 
             const { data: { publicUrl } } = _supabase.storage
                 .from('listings')
                 .getPublicUrl(filePath);
-            
+
             if (publicUrl) imageUrls.push(publicUrl);
         }
 
@@ -426,7 +428,14 @@ async function submitAnnuncio() {
         // Reset and success state
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.getElementById('annuncioForm').classList.add('hidden');
-        document.getElementById('successMsg').classList.remove('hidden');
+        const successEl = document.getElementById('successMsg');
+        successEl.classList.remove('hidden');
+        if (failedUploads > 0) {
+            const warn = document.createElement('div');
+            warn.className = 'mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 font-semibold';
+            warn.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i>${failedUploads} foto non sono state caricate per un errore di rete. Puoi aggiungerle dalla dashboard modificando l'annuncio.`;
+            successEl.appendChild(warn);
+        }
 
     } catch (error) {
         console.error(error);

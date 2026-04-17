@@ -128,24 +128,36 @@ let _activeConvId  = null;
 let _realtimeChannel = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const { data: { user } } = await _supabase.auth.getUser();
-    document.getElementById('loadingState').classList.add('hidden');
+    try {
+        const { data: { user } } = await _supabase.auth.getUser();
+        document.getElementById('loadingState').classList.add('hidden');
 
-    if (!user) {
-        document.getElementById('notLoggedIn').classList.remove('hidden');
-        return;
+        if (!user) {
+            document.getElementById('notLoggedIn').classList.remove('hidden');
+            return;
+        }
+
+        _currentUser = user;
+        document.getElementById('chatLayout').classList.remove('hidden');
+        document.getElementById('chatLayout').classList.add('flex');
+
+        await loadConversations();
+
+        // Open conv from URL param
+        const params = new URLSearchParams(location.search);
+        const convParam = params.get('conv');
+        if (convParam) openConversation(convParam);
+    } catch (err) {
+        document.getElementById('loadingState').innerHTML = `
+            <div class="text-center py-24">
+                <i class="fas fa-wifi text-slate-300 text-5xl mb-4"></i>
+                <p class="font-black text-slate-700 mb-2">Errore di connessione</p>
+                <p class="text-slate-400 text-sm mb-6">Verifica la connessione internet e riprova.</p>
+                <button onclick="location.reload()" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
+                    Ricarica la pagina
+                </button>
+            </div>`;
     }
-
-    _currentUser = user;
-    document.getElementById('chatLayout').classList.remove('hidden');
-    document.getElementById('chatLayout').classList.add('flex');
-
-    await loadConversations();
-
-    // Open conv from URL param
-    const params = new URLSearchParams(location.search);
-    const convParam = params.get('conv');
-    if (convParam) openConversation(convParam);
 });
 
 // ── Load conversation list ───────────────────────────────

@@ -280,12 +280,24 @@ function removePreview(btn, isExisting) {
 
 async function updateAnnuncio() {
     const btn = document.querySelector('button[onclick="updateAnnuncio()"]');
+
+    // Validazione campi obbligatori
+    const titolo = document.getElementById('fTitolo').value.trim();
+    const regione = document.getElementById('fRegione').value;
+    const comune = document.getElementById('fComune').value.trim();
+    const prezzo = parseFloat(document.getElementById('fPrezzo').value);
+
+    if (!titolo || !regione || !comune || isNaN(prezzo) || prezzo <= 0) {
+        alert('Compila tutti i campi obbligatori: Titolo, Regione, Comune e Prezzo.');
+        return;
+    }
+
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Salvataggio...';
 
     try {
         const user = await getCurrentUser();
-        
+
         // 1. Upload nuove foto
         const newUrls = [];
         for (let file of _newFiles) {
@@ -301,11 +313,11 @@ async function updateAnnuncio() {
         const finalImages = [..._currentImageUrls, ...newUrls];
 
         const updated = {
-            titolo: document.getElementById('fTitolo').value.trim(),
-            regione: document.getElementById('fRegione').value,
-            comune: document.getElementById('fComune').value.trim(),
+            titolo,
+            regione,
+            comune,
             superficie: parseFloat(document.getElementById('fSuperficie').value),
-            prezzo: parseFloat(document.getElementById('fPrezzo').value),
+            prezzo,
             descrizione: document.getElementById('fDescrizione').value.trim(),
             stato: document.querySelector('input[name="stato"]:checked').value,
             dettagli_extra: { images: finalImages },
