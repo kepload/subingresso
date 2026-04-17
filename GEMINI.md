@@ -2,6 +2,18 @@
 
 Questo file è il "Manuale Operativo" per Gemini. Serve a garantire modifiche sicure, veloci e a basso consumo di contesto.
 
+## 🧠 Strategia di Gestione Contesto (Efficienza)
+
+1. **Approccio Chirurgico:** NON leggere mai interi file HTML o JS se non necessario. Usa `grep_search` per trovare le righe interessate.
+2. **Uso dei Sub-Agenti (Mandatorio per Task Complessi):**
+   - **`codebase_investigator`**: Per analisi architetturali o ricerche su più file.
+   - **`generalist`**: Per modifiche ripetitive o batch (es. aggiornare 3+ file contemporaneamente).
+   - *Obiettivo:* Riassumere il lavoro pesante in un unico messaggio nella chat principale.
+3. **Memoria di Progetto:** Usa `save_memory(scope='project')` per salvare fatti strutturali (schema DB, colori, API key simulate) che devono persistere tra le sessioni.
+4. **Monitoraggio Contesto (Mandatorio):** 
+   - Alla fine di ogni messaggio, fornisci una stima del consumo del contesto.
+   - Dopo una funzione pesante o dopo circa 10-15 messaggi, suggerisci esplicitamente all'utente di aprire una nuova chat per mantenere le performance elevate.
+
 ## 📂 Architettura & Core Logic (Cartella `/js`)
 
 - `supabase-config.js`: Connessione DB.
