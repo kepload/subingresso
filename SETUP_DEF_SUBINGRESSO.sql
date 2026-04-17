@@ -207,4 +207,8 @@ BEGIN
     END IF;
 END $$;
 
+-- ── 8. RELOAD SCHEMA CACHE ──────────────────────────────────
+-- Forza PostgREST a ricaricare lo schema (risolve errori "column not found")
+NOTIFY pgrst, 'reload schema';
+
 -- ✅ SETUP COMPLETATO!
