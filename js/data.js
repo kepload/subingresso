@@ -161,6 +161,19 @@ function buildCard(l, isSmall = false, distance = null) {
         ? `<span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded-lg shadow-sm">a ${Math.round(distance)} km</span>`
         : '';
 
+    // Badge venditore: usa oldest listing come proxy data iscrizione
+    const _sellerBadge = (() => {
+        const userListings = Array.isArray(LISTINGS) ? LISTINGS.filter(x => x.user_id === l.user_id) : [];
+        const activeCount  = userListings.length;
+        const oldest       = userListings.reduce((o, c) => new Date(c.created_at) < new Date(o.created_at) ? c : o, l);
+        const days         = Math.floor((Date.now() - new Date(oldest.created_at)) / 86400000);
+        if (activeCount >= 5) return { icon: 'fa-star',         bg: 'bg-yellow-500', label: 'Top Venditore' };
+        if (days >= 365)      return { icon: 'fa-award',        bg: 'bg-indigo-500', label: 'Veterano' };
+        if (days >= 180)      return { icon: 'fa-check-circle', bg: 'bg-emerald-500',label: 'Affidabile' };
+        if (days >= 30)       return { icon: 'fa-chart-line',   bg: 'bg-blue-600',   label: 'In Crescita' };
+        return                       { icon: 'fa-seedling',     bg: 'bg-amber-500',  label: 'Nuovo Iscritto' };
+    })();
+
     const imgTag = (() => {
         let extra = l.dettagli_extra;
         if (typeof extra === 'string') { try { extra = JSON.parse(extra); } catch(e) { extra = null; } }
@@ -202,12 +215,12 @@ function buildCard(l, isSmall = false, distance = null) {
             ${l.contatto ? `
                 ${profiloUrl
                     ? `<a href="${profiloUrl}" onclick="event.stopPropagation()" class="flex items-center gap-1.5 mb-2 sm:mb-3 hover:bg-blue-50 rounded-xl px-1.5 py-1 -mx-1.5 transition w-fit max-w-full">
-                        <div class="relative flex-shrink-0">
+                        <div class="relative flex-shrink-0" title="${_sellerBadge.label}">
                             <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
                                 <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
                             </div>
-                            <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-blue-600 rounded-full flex items-center justify-center border-[1.5px] border-white">
-                                <i class="fas fa-check text-[5px] text-white"></i>
+                            <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 ${_sellerBadge.bg} rounded-full flex items-center justify-center border-[1.5px] border-white">
+                                <i class="fas ${_sellerBadge.icon} text-[5px] text-white"></i>
                             </div>
                         </div>
                         <span class="text-[11px] font-bold text-slate-400 truncate hover:text-blue-600 transition">${escapeHTML(l.contatto)}</span>
