@@ -324,8 +324,9 @@ async function submitAnnuncio() {
         return;
     }
 
-    // UI Loading
+    // UI Loading — disabilita subito per evitare double submit
     const btn = document.getElementById('submitBtn');
+    if (btn.disabled) return;
     const originalBtnHTML = btn.innerHTML;
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
@@ -362,11 +363,22 @@ async function submitAnnuncio() {
         tel:         ''
     };
 
-    if (!form.titolo || !form.regione || !form.comune || isNaN(form.prezzo)) {
-        alert('Compila tutti i campi obbligatori (*).');
-        btn.disabled = false;
-        btn.innerHTML = originalBtnHTML;
-        return;
+    const descrizioneLen = form.descrizione.length;
+    if (!form.titolo) {
+        alert('Inserisci un titolo per il tuo annuncio.');
+        btn.disabled = false; btn.innerHTML = originalBtnHTML; return;
+    }
+    if (!form.regione || !form.comune) {
+        alert('Seleziona la regione e inserisci il comune.');
+        btn.disabled = false; btn.innerHTML = originalBtnHTML; return;
+    }
+    if (isNaN(form.prezzo) || form.prezzo < 100) {
+        alert('Il prezzo minimo è 100 €.');
+        btn.disabled = false; btn.innerHTML = originalBtnHTML; return;
+    }
+    if (descrizioneLen < 50) {
+        alert(`La descrizione è troppo breve (${descrizioneLen} caratteri). Scrivi almeno 50 caratteri per descrivere il tuo posteggio.`);
+        btn.disabled = false; btn.innerHTML = originalBtnHTML; return;
     }
 
     // Get user profile

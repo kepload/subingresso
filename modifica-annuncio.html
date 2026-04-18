@@ -288,11 +288,20 @@ async function updateAnnuncio() {
     const comune = document.getElementById('fComune').value.trim();
     const prezzo = parseFloat(document.getElementById('fPrezzo').value);
 
-    if (!titolo || !regione || !comune || isNaN(prezzo) || prezzo <= 0) {
-        alert('Compila tutti i campi obbligatori: Titolo, Regione, Comune e Prezzo.');
+    const descrizione = document.getElementById('fDescrizione').value.trim();
+    if (!titolo || !regione || !comune) {
+        alert('Compila tutti i campi obbligatori: Titolo, Regione e Comune.');
         return;
     }
-
+    if (isNaN(prezzo) || prezzo < 100) {
+        alert('Il prezzo minimo è 100 €.');
+        return;
+    }
+    if (descrizione.length < 50) {
+        alert(`La descrizione è troppo breve (${descrizione.length} caratteri). Scrivi almeno 50 caratteri.`);
+        return;
+    }
+    if (btn.disabled) return;
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Salvataggio...';
 
