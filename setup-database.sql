@@ -4,9 +4,6 @@
 --  Questo file può essere eseguito più volte senza errori.
 -- ============================================================
 
--- ── 1. PULIZIA PRELIMINARE (Opzionale, garantisce zero errori)
--- Non cancelliamo le tabelle per non perdere dati, ma resettiamo le funzioni e trigger
-
 -- ── 2. PROFILI UTENTI ──────────────────────────────────────
 create table if not exists public.profiles (
     id          uuid references auth.users(id) on delete cascade primary key,
@@ -17,7 +14,6 @@ create table if not exists public.profiles (
     created_at  timestamptz default now()
 );
 
--- Funzione per creare profilo automatico
 create or replace function public.handle_new_user()
 returns trigger language plpgsql security definer as $$
 begin
@@ -42,7 +38,7 @@ create trigger on_auth_user_created
   for each row execute procedure public.handle_new_user();
 
 
--- ── 3. ANNUNCI (Relazione corretta con Profiles) ────────────
+-- ── 3. ANNUNCI ──────────────────────────────────────────────
 create table if not exists public.annunci (
     id          uuid default gen_random_uuid() primary key,
     user_id     uuid references public.profiles(id) on delete cascade not null,
@@ -64,12 +60,12 @@ create table if not exists public.annunci (
     email       text,
     img_urls    text[],
     expires_at  timestamptz,
-    status      text default 'pending', -- pending / active / sold / deleted
+    status      text default 'pending',
     created_at  timestamptz default now()
 );
 
-create index if not exists annunci_status_idx    on public.annunci(status);
-create index if not exists annunci_user_id_idx   on public.annunci(user_id);
+create index if not exists annunci_status_idx  on public.annunci(status);
+create index if not exists annunci_user_id_idx on public.annunci(user_id);
 
 
 -- ── 4. CONVERSAZIONI & MESSAGGI ─────────────────────────────
@@ -94,7 +90,7 @@ create table if not exists public.messaggi (
 );
 
 
--- ── 5. BLOG (Robot IA) ──────────────────────────────────────
+-- ── 5. BLOG ─────────────────────────────────────────────────
 create table if not exists public.blog_posts (
     id          uuid default gen_random_uuid() primary key,
     slug        text unique not null,
@@ -107,57 +103,107 @@ create table if not exists public.blog_posts (
 );
 
 
--- ── 6. SICUREZZA (Row Level Security) ───────────────────────
+-- ── 6. ALERTS ───────────────────────────────────────────────
+create table if not exists public.alerts (
+    id         uuid default gen_random_uuid() primary key,
+    user_id    uuid references public.profiles(id) on delete cascade not null,
+    comune     text,
+    lat        float8,
+    lng        float8,
+    created_at timestamptz default now()
+);
+
+-- Aggiunge colonne se la tabella esisteva già senza di esse
+alter table public.alerts add column if not exists comune text;
+alter table public.alerts add column if not exists lat    float8;
+alter table public.alerts add column if not exists lng    float8;
+
+-- Rende nullable eventuali vecchie colonne regione/tipo
+DO $$ BEGIN ALTER TABLE public.alerts ALTER COLUMN regione DROP NOT NULL;
+EXCEPTION WHEN undefined_column THEN NULL; END $$;
+DO $$ BEGIN ALTER TABLE public.alerts ALTER COLUMN tipo DROP NOT NULL;
+EXCEPTION WHEN undefined_column THEN NULL; END $$;
+
+
+-- ── 7. ROW LEVEL SECURITY ───────────────────────────────────
 alter table public.profiles      enable row level security;
 alter table public.annunci       enable row level security;
 alter table public.conversazioni enable row level security;
 alter table public.messaggi      enable row level security;
 alter table public.blog_posts    enable row level security;
+alter table public.alerts        enable row level security;
 
--- Reset e creazione Policy Profili
+-- Profili
 drop policy if exists "Lettura pubblica profili" on public.profiles;
-drop policy if exists "Tutti possono leggere i profili" on public.profiles;
 create policy "Lettura pubblica profili" on public.profiles for select using (true);
-
 drop policy if exists "Update proprio profilo" on public.profiles;
-drop policy if exists "Utente modifica solo il proprio profilo" on public.profiles;
 create policy "Update proprio profilo" on public.profiles for update using (auth.uid() = id);
-
 drop policy if exists "Inserimento profilo" on public.profiles;
-drop policy if exists "Trigger inserisce profilo" on public.profiles;
 create policy "Inserimento profilo" on public.profiles for insert with check (true);
 
--- Policy Annunci
+-- Annunci
 drop policy if exists "Lettura pubblica annunci" on public.annunci;
-drop policy if exists "Tutti possono vedere gli annunci attivi" on public.annunci;
 create policy "Lettura pubblica annunci" on public.annunci for select using (status = 'active' or auth.uid() = user_id or auth.email() = 'kycykuardit@gmail.com');
-
 drop policy if exists "Inserimento annunci" on public.annunci;
 create policy "Inserimento annunci" on public.annunci for insert with check (auth.uid() = user_id);
-
 drop policy if exists "Gestione propri annunci" on public.annunci;
 create policy "Gestione propri annunci" on public.annunci for update using (auth.uid() = user_id or auth.email() = 'kycykuardit@gmail.com');
 
--- Policy Blog
+-- Blog
 drop policy if exists "Lettura pubblica blog" on public.blog_posts;
 create policy "Lettura pubblica blog" on public.blog_posts for select using (true);
 
--- ── 7. REALTIME ─────────────────────────────────────────────
--- Aggiunge le tabelle alla replica in tempo reale (se non già presenti)
+-- Alerts
+drop policy if exists "Lettura propri alert" on public.alerts;
+create policy "Lettura propri alert" on public.alerts for select using (auth.uid() = user_id);
+drop policy if exists "Inserimento alert" on public.alerts;
+create policy "Inserimento alert" on public.alerts for insert with check (auth.uid() = user_id);
+drop policy if exists "Cancellazione alert" on public.alerts;
+create policy "Cancellazione alert" on public.alerts for delete using (auth.uid() = user_id);
+
+-- Conversazioni
+drop policy if exists "Lettura conversazioni proprie" on public.conversazioni;
+create policy "Lettura conversazioni proprie" on public.conversazioni for select using (auth.uid() = acquirente_id or auth.uid() = venditore_id);
+drop policy if exists "Inserimento conversazioni" on public.conversazioni;
+create policy "Inserimento conversazioni" on public.conversazioni for insert with check (auth.uid() = acquirente_id);
+
+-- Messaggi
+drop policy if exists "Lettura messaggi propri" on public.messaggi;
+create policy "Lettura messaggi propri" on public.messaggi
+  for select using (exists (
+    select 1 from public.conversazioni c
+    where c.id = conversazione_id and (c.acquirente_id = auth.uid() or c.venditore_id = auth.uid())
+  ));
+drop policy if exists "Inserimento messaggi" on public.messaggi;
+create policy "Inserimento messaggi" on public.messaggi
+  for insert with check (auth.uid() = mittente_id and exists (
+    select 1 from public.conversazioni c
+    where c.id = conversazione_id and (c.acquirente_id = auth.uid() or c.venditore_id = auth.uid())
+  ));
+drop policy if exists "Aggiornamento messaggi letti" on public.messaggi;
+create policy "Aggiornamento messaggi letti" on public.messaggi
+  for update using (exists (
+    select 1 from public.conversazioni c
+    where c.id = conversazione_id and (c.acquirente_id = auth.uid() or c.venditore_id = auth.uid())
+  ));
+
+
+-- ── 8. REALTIME ─────────────────────────────────────────────
 DO $$
 BEGIN
-    IF NOT EXISTS (SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'messaggi') THEN
-        ALTER PUBLICATION supabase_realtime ADD TABLE public.messaggi;
-    END IF;
-    IF NOT EXISTS (SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'conversazioni') THEN
-        ALTER PUBLICATION supabase_realtime ADD TABLE public.conversazioni;
-    END IF;
-    IF NOT EXISTS (SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'blog_posts') THEN
-        ALTER PUBLICATION supabase_realtime ADD TABLE public.blog_posts;
-    END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'messaggi') THEN
+    ALTER PUBLICATION supabase_realtime ADD TABLE public.messaggi;
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'conversazioni') THEN
+    ALTER PUBLICATION supabase_realtime ADD TABLE public.conversazioni;
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'blog_posts') THEN
+    ALTER PUBLICATION supabase_realtime ADD TABLE public.blog_posts;
+  END IF;
 END $$;
 
--- ── 8. STORAGE BUCKETS ──────────────────────────────────────
+
+-- ── 9. STORAGE BUCKETS ──────────────────────────────────────
 insert into storage.buckets (id, name, public) values ('avatars', 'avatars', true) on conflict do nothing;
 insert into storage.buckets (id, name, public) values ('listings', 'listings', true) on conflict do nothing;
 
@@ -167,50 +213,13 @@ drop policy if exists "Utente carica proprio avatar" on storage.objects;
 create policy "Utente carica proprio avatar" on storage.objects for insert with check (bucket_id = 'avatars' and auth.uid()::text = (storage.foldername(name))[1]);
 drop policy if exists "Utente aggiorna proprio avatar" on storage.objects;
 create policy "Utente aggiorna proprio avatar" on storage.objects for update using (bucket_id = 'avatars' and auth.uid()::text = (storage.foldername(name))[1]);
-
 drop policy if exists "Listings pubblici leggibili" on storage.objects;
 create policy "Listings pubblici leggibili" on storage.objects for select using (bucket_id = 'listings');
 drop policy if exists "Utente carica immagini annuncio" on storage.objects;
 create policy "Utente carica immagini annuncio" on storage.objects for insert with check (bucket_id = 'listings' and auth.uid() is not null);
 
 
--- ── 9. POLICY CONVERSAZIONI & MESSAGGI ──────────────────────
-drop policy if exists "Lettura conversazioni proprie" on public.conversazioni;
-create policy "Lettura conversazioni proprie" on public.conversazioni for select using (auth.uid() = acquirente_id or auth.uid() = venditore_id);
-drop policy if exists "Inserimento conversazioni" on public.conversazioni;
-create policy "Inserimento conversazioni" on public.conversazioni for insert with check (auth.uid() = acquirente_id);
-
-drop policy if exists "Lettura messaggi propri" on public.messaggi;
-create policy "Lettura messaggi propri" on public.messaggi
-  for select using (
-    exists (
-      select 1 from public.conversazioni c
-      where c.id = conversazione_id
-        and (c.acquirente_id = auth.uid() or c.venditore_id = auth.uid())
-    )
-  );
-drop policy if exists "Inserimento messaggi" on public.messaggi;
-create policy "Inserimento messaggi" on public.messaggi
-  for insert with check (
-    auth.uid() = mittente_id and
-    exists (
-      select 1 from public.conversazioni c
-      where c.id = conversazione_id
-        and (c.acquirente_id = auth.uid() or c.venditore_id = auth.uid())
-    )
-  );
-drop policy if exists "Aggiornamento messaggi letti" on public.messaggi;
-create policy "Aggiornamento messaggi letti" on public.messaggi
-  for update using (
-    exists (
-      select 1 from public.conversazioni c
-      where c.id = conversazione_id
-        and (c.acquirente_id = auth.uid() or c.venditore_id = auth.uid())
-    )
-  );
-
-
--- ── 10. TRIGGER STATUS ANNUNCI (Admin bypass) ────────────────
+-- ── 10. TRIGGER STATUS ANNUNCI ───────────────────────────────
 create or replace function public.enforce_annunci_status()
 returns trigger language plpgsql security definer as $$
 begin
@@ -236,36 +245,8 @@ create trigger trg_enforce_annunci_status
   for each row execute procedure public.enforce_annunci_status();
 
 
--- ── 11. ALERTS (Notifiche per nuovi annunci) ─────────────────
-create table if not exists public.alerts (
-    id         uuid default gen_random_uuid() primary key,
-    user_id    uuid references public.profiles(id) on delete cascade not null,
-    comune     text,
-    lat        float8,
-    lng        float8,
-    created_at timestamptz default now()
-);
-
--- Aggiunge/normalizza colonne se la tabella esiste già
-alter table public.alerts add column if not exists comune text;
-alter table public.alerts add column if not exists lat    float8;
-alter table public.alerts add column if not exists lng    float8;
--- Rende nullable le vecchie colonne regione/tipo se esistono
-DO $$ BEGIN
-  ALTER TABLE public.alerts ALTER COLUMN regione DROP NOT NULL;
-EXCEPTION WHEN undefined_column THEN NULL; END $$;
-DO $$ BEGIN
-  ALTER TABLE public.alerts ALTER COLUMN tipo DROP NOT NULL;
-EXCEPTION WHEN undefined_column THEN NULL; END $$;
-
-alter table public.alerts enable row level security;
-
-drop policy if exists "Lettura propri alert" on public.alerts;
-create policy "Lettura propri alert" on public.alerts for select using (auth.uid() = user_id);
-drop policy if exists "Inserimento alert" on public.alerts;
-create policy "Inserimento alert" on public.alerts for insert with check (auth.uid() = user_id);
-drop policy if exists "Cancellazione alert" on public.alerts;
-create policy "Cancellazione alert" on public.alerts for delete using (auth.uid() = user_id);
+-- ── 11. RELOAD SCHEMA CACHE (obbligatorio dopo ALTER TABLE) ──
+NOTIFY pgrst, 'reload schema';
 
 
 -- ✅ SETUP COMPLETATO!
