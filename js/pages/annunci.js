@@ -259,26 +259,12 @@ document.addEventListener('DOMContentLoaded', loadListings);
 // ── ALERT MODAL FUNCTIONS ──────────────────────────
 function openAlertModal() {
     requireAuth(function() {
-        const aReg = document.getElementById('aRegione');
-        const aMer = document.getElementById('aMerce');
-        
-        if (aReg && aReg.options.length <= 1) {
-            REGIONI.forEach(r => {
-                const opt = document.createElement('option');
-                opt.value = opt.textContent = r;
-                aReg.appendChild(opt);
-            });
-        }
-        if (aMer && aMer.options.length <= 1) {
-            MERCI.forEach(m => {
-                const opt = document.createElement('option');
-                opt.value = opt.textContent = m;
-                aMer.appendChild(opt);
-            });
-        }
-
         const modal = document.getElementById('alertModal');
         if (modal) modal.classList.remove('hidden');
+        const input = document.getElementById('aComune');
+        if (input) { input.value = ''; }
+        const err = document.getElementById('aCoordError');
+        if (err) err.classList.add('hidden');
     });
 }
 
@@ -289,24 +275,30 @@ function closeAlertModal() {
 
 async function submitAlert() {
     requireAuth(async function(user) {
-        const aReg = document.getElementById('aRegione');
-        const aMer = document.getElementById('aMerce');
-        const regione = aReg ? aReg.value : '';
-        const merce   = aMer ? aMer.value : '';
-        
-        const { error } = await _supabase.from('alerts').insert({
-            user_id: user.id,
-            regione: regione,
-            tipo: merce
-        });
+        const input  = document.getElementById('aComune');
+        const errEl  = document.getElementById('aCoordError');
+        const comune = input ? input.value.trim() : '';
+
+        if (errEl) errEl.classList.add('hidden');
+
+        // Geocodifica lato client
+        const coords = comune ? getCityCoords(comune) : null;
+        if (comune && !coords) {
+            if (errEl) errEl.classList.remove('hidden');
+            return;
+        }
+
+        const record = { user_id: user.id, comune: comune || null };
+        if (coords) { record.lat = coords[0]; record.lng = coords[1]; }
+
+        const { error } = await _supabase.from('alerts').insert(record);
 
         if (!error) {
-            alert('🔔 Alert attivato! Ti contatteremo su WhatsApp appena ci sono novità per ' + (regione || 'tutta Italia') + '.');
             closeAlertModal();
+            alert('🔔 Alert attivato! Riceverai una email quando esce un annuncio' + (comune ? ' vicino a ' + comune : '') + '.');
         } else {
-            // Mock success if table not yet migrated
-            alert('🔔 Alert attivato! Ti contatteremo su WhatsApp appena ci sono novità per ' + (regione || 'tutta Italia') + '.');
-            closeAlertModal();
+            console.error('Alert error:', error);
+            alert('Errore durante il salvataggio dell\'alert. Riprova.');
         }
     });
 }

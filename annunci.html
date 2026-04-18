@@ -218,16 +218,10 @@
         </div>
         <div class="p-10 space-y-6">
             <div>
-                <label class="filter-label">Regione di interesse</label>
-                <select id="aRegione" class="filter-input">
-                    <option value="">Tutte le regioni</option>
-                </select>
-            </div>
-            <div>
-                <label class="filter-label">Tipo di merce</label>
-                <select id="aMerce" class="filter-input">
-                    <option value="">Qualsiasi merce</option>
-                </select>
+                <label class="filter-label">Città o zona di interesse</label>
+                <input id="aComune" type="text" placeholder="Es. Milano, Bologna, Napoli…" class="filter-input" autocomplete="off" />
+                <p id="aCoordError" class="hidden text-xs text-red-500 font-bold mt-1">Città non trovata. Prova con un comune più grande vicino.</p>
+                <p class="text-[11px] text-slate-400 mt-1">Ti avvisiamo per tutti gli annunci entro 200 km dalla città inserita.</p>
             </div>
             <button onclick="submitAlert()" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black hover:bg-blue-700 transition shadow-lg shadow-blue-100">
                 Attiva Notifiche Gratis

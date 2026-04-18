@@ -1,8 +1,7 @@
 // ============================================================
 //  Subingresso.it — Edge Function: notifica email nuovo annuncio
 //  Trigger: Database Webhook su INSERT nella tabella `annunci`
-//  Invia email agli utenti che hanno un alert che matcha
-//  regione e/o tipo merce del nuovo annuncio.
+//  Invia email agli utenti il cui alert è entro 200km dall'annuncio.
 // ============================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
@@ -12,12 +11,55 @@ const SUPABASE_URL               = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY  = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const FROM_EMAIL                 = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL                   = 'https://www.subingresso.it';
+const RADIUS_KM                  = 200;
+
+// Coordinate città italiane (specchio di data.js)
+const PROVINCE_COORDS: Record<string, [number, number]> = {
+  "Roma": [41.89, 12.49], "Milano": [45.46, 9.19], "Napoli": [40.85, 14.26], "Torino": [45.07, 7.68],
+  "Palermo": [38.11, 13.36], "Genova": [44.40, 8.94], "Bologna": [44.49, 11.34], "Firenze": [43.76, 11.25],
+  "Bari": [41.11, 16.87], "Catania": [37.50, 15.08], "Venezia": [45.44, 12.31], "Verona": [45.43, 10.99],
+  "Brescia": [45.54, 10.21], "Bergamo": [45.69, 9.67], "Salò": [45.60, 10.52], "Desenzano": [45.47, 10.53],
+  "Toscolano": [45.68, 10.60], "Toscolano Maderno": [45.68, 10.60], "Maderno": [45.68, 10.60],
+  "Gardone": [45.62, 10.55], "Gargnano": [45.70, 10.65], "Limone": [45.81, 10.79],
+  "Aosta": [45.73, 7.31],
+  // Regioni come fallback
+  "Lombardia": [45.46, 9.19], "Lazio": [41.89, 12.49], "Campania": [40.85, 14.26],
+  "Piemonte": [45.07, 7.68], "Sicilia": [38.11, 13.36], "Liguria": [44.40, 8.94],
+  "Emilia-Romagna": [44.49, 11.34], "Toscana": [43.76, 11.25], "Puglia": [41.11, 16.87],
+  "Veneto": [45.44, 12.31], "Calabria": [38.90, 16.60], "Sardegna": [40.12, 9.01],
+  "Abruzzo": [42.35, 13.39], "Marche": [43.61, 13.50], "Friuli-Venezia Giulia": [46.06, 13.23],
+  "Trentino-Alto Adige": [46.07, 11.12], "Umbria": [43.10, 12.38], "Basilicata": [40.64, 15.80],
+  "Molise": [41.56, 14.66], "Valle d'Aosta": [45.73, 7.31]
+};
+
+function getDistanceKM(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function getCityCoords(cityName: string): [number, number] | null {
+  if (!cityName) return null;
+  const city = cityName.trim();
+  if (PROVINCE_COORDS[city]) return PROVINCE_COORDS[city];
+  // Fuzzy: cerca corrispondenza parziale case-insensitive
+  const lower = city.toLowerCase();
+  for (const key of Object.keys(PROVINCE_COORDS)) {
+    if (key.toLowerCase().includes(lower) || lower.includes(key.toLowerCase())) {
+      return PROVINCE_COORDS[key];
+    }
+  }
+  return null;
+}
 
 Deno.serve(async (req) => {
   try {
     const payload = await req.json();
 
-    // Accetta solo INSERT su annunci
     if (payload.type !== 'INSERT' || payload.table !== 'annunci') {
       return new Response('Ignored', { status: 200 });
     }
@@ -27,47 +69,53 @@ Deno.serve(async (req) => {
       titolo: string;
       prezzo: number;
       regione: string;
-      tipo: string;
+      comune: string;
       status: string;
       user_id: string;
     };
 
-    // Processa solo annunci attivi
     if (annuncio.status !== 'active') {
       return new Response('Not active', { status: 200 });
     }
 
+    // Coordine dell'annuncio: prima prova comune, poi regione
+    const annuncioCoords = getCityCoords(annuncio.comune) || getCityCoords(annuncio.regione);
+
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-    // 1. Trova tutti gli alert che matchano regione e/o tipo
-    //    Un alert matcha se: (regione vuota O regione uguale) E (tipo vuoto O tipo uguale)
+    // Tutti gli alert tranne quello del venditore stesso
     const { data: alerts } = await supabase
       .from('alerts')
-      .select('user_id, regione, tipo')
-      .neq('user_id', annuncio.user_id); // non notificare il venditore stesso
+      .select('user_id, comune, lat, lng')
+      .neq('user_id', annuncio.user_id);
 
     if (!alerts || alerts.length === 0) {
       return new Response('No alerts', { status: 200 });
     }
 
-    const matchingAlerts = alerts.filter(a => {
-      const regioneMatch = !a.regione || a.regione === annuncio.regione;
-      const tipoMatch    = !a.tipo    || a.tipo    === annuncio.tipo;
-      return regioneMatch && tipoMatch;
-    });
+    const matchingUserIds: string[] = [];
 
-    if (matchingAlerts.length === 0) {
-      return new Response('No matching alerts', { status: 200 });
+    for (const a of alerts) {
+      // Se l'alert non ha coordinate → notifica per tutta Italia
+      if (!a.lat || !a.lng) {
+        matchingUserIds.push(a.user_id);
+        continue;
+      }
+      // Se l'annuncio non ha coordinate → notifica tutti gli alert senza filtro geografico
+      if (!annuncioCoords) {
+        matchingUserIds.push(a.user_id);
+        continue;
+      }
+      const dist = getDistanceKM(a.lat, a.lng, annuncioCoords[0], annuncioCoords[1]);
+      if (dist <= RADIUS_KM) {
+        matchingUserIds.push(a.user_id);
+      }
     }
 
-    // 2. Deduplica user_id (un utente può avere più alert)
-    const uniqueUserIds = [...new Set(matchingAlerts.map(a => a.user_id))];
-
-    // 3. Recupera le email degli utenti
-    const emailPromises = uniqueUserIds.map(uid =>
-      supabase.auth.admin.getUserById(uid)
-    );
-    const usersResults = await Promise.all(emailPromises);
+    const uniqueUserIds = [...new Set(matchingUserIds)];
+    if (uniqueUserIds.length === 0) {
+      return new Response('No matching alerts', { status: 200 });
+    }
 
     const prezzoStr = annuncio.prezzo
       ? new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(annuncio.prezzo)
@@ -75,14 +123,16 @@ Deno.serve(async (req) => {
 
     const annuncioUrl = `${SITE_URL}/annuncio.html?id=${annuncio.id}`;
     const titoloSafe  = (annuncio.titolo || 'Nuovo annuncio').replace(/[<>]/g, '');
-    const regioneStr  = annuncio.regione || 'Italia';
-    const tipoStr     = annuncio.tipo    || '';
+    const luogoStr    = annuncio.comune || annuncio.regione || 'Italia';
 
-    // 4. Invia email a ciascun utente
-    const sendResults = await Promise.all(
+    const emailPromises = uniqueUserIds.map(uid => supabase.auth.admin.getUserById(uid));
+    const usersResults  = await Promise.all(emailPromises);
+
+    let sent = 0;
+    await Promise.all(
       usersResults.map(async ({ data }) => {
         const email = data?.user?.email;
-        if (!email) return null;
+        if (!email) return;
 
         const res = await fetch('https://api.resend.com/emails', {
           method: 'POST',
@@ -93,7 +143,7 @@ Deno.serve(async (req) => {
           body: JSON.stringify({
             from: FROM_EMAIL,
             to:   email,
-            subject: `🔔 Nuovo annuncio per il tuo alert — ${titoloSafe}`,
+            subject: `🔔 Nuovo annuncio vicino a te — ${titoloSafe}`,
             html: `
               <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:520px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #f1f5f9;">
                 <div style="background:#2563eb;padding:28px 32px;">
@@ -102,24 +152,18 @@ Deno.serve(async (req) => {
                 <div style="padding:32px;">
                   <p style="margin:0 0 6px;color:#2563eb;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">🔔 Il tuo alert ha trovato qualcosa</p>
                   <h2 style="margin:0 0 20px;font-size:20px;font-weight:900;color:#0f172a;">${titoloSafe}</h2>
-
                   <div style="background:#f8fafc;border-radius:12px;padding:20px;margin-bottom:24px;">
                     <table style="width:100%;border-collapse:collapse;">
                       <tr>
                         <td style="color:#64748b;font-size:13px;padding:4px 0;">Zona</td>
-                        <td style="color:#0f172a;font-size:14px;font-weight:600;text-align:right;">${regioneStr}</td>
+                        <td style="color:#0f172a;font-size:14px;font-weight:600;text-align:right;">${luogoStr}</td>
                       </tr>
-                      ${tipoStr ? `<tr>
-                        <td style="color:#64748b;font-size:13px;padding:4px 0;">Categoria</td>
-                        <td style="color:#0f172a;font-size:14px;font-weight:600;text-align:right;">${tipoStr}</td>
-                      </tr>` : ''}
                       <tr>
                         <td style="color:#64748b;font-size:13px;padding:4px 0;">Prezzo</td>
                         <td style="color:#2563eb;font-size:16px;font-weight:900;text-align:right;">${prezzoStr}</td>
                       </tr>
                     </table>
                   </div>
-
                   <a href="${annuncioUrl}"
                      style="display:inline-block;background:#2563eb;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">
                     Vedi annuncio →
@@ -137,18 +181,15 @@ Deno.serve(async (req) => {
           }),
         });
 
-        if (!res.ok) {
-          const err = await res.text();
-          console.error(`Resend error per ${email}:`, res.status, err);
-          return null;
+        if (res.ok) {
+          sent++;
+          console.log(`Email inviata a ${email}`);
+        } else {
+          console.error(`Resend error per ${email}:`, await res.text());
         }
-
-        console.log(`Email alert inviata a ${email} per annuncio ${annuncio.id}`);
-        return email;
       })
     );
 
-    const sent = sendResults.filter(Boolean).length;
     return new Response(`OK — ${sent} email inviate`, { status: 200 });
 
   } catch (e) {
