@@ -206,24 +206,26 @@
 <footer></footer>
 
 <!-- ══════════════ ALERT MODAL ══════════════ -->
-<div id="alertModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-6">
-    <div class="bg-white rounded-[40px] w-full max-w-md overflow-hidden shadow-2xl animate-in zoom-in duration-300">
-        <div class="bg-blue-600 p-10 text-white relative">
-            <button onclick="closeAlertModal()" class="absolute top-6 right-6 text-white/50 hover:text-white transition">
+<div id="alertModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl animate-in zoom-in duration-300">
+        <div class="bg-blue-600 px-6 py-5 text-white relative flex items-center gap-3">
+            <i class="fas fa-bell text-xl text-blue-200"></i>
+            <div>
+                <h2 class="text-lg font-black leading-tight">Crea il tuo Alert</h2>
+                <p class="text-blue-100 text-xs font-medium">Ti avvisiamo via email appena esce un annuncio vicino a te.</p>
+            </div>
+            <button onclick="closeAlertModal()" class="absolute top-4 right-4 text-white/50 hover:text-white transition">
                 <i class="fas fa-times"></i>
             </button>
-            <i class="fas fa-bell text-4xl mb-4 text-blue-200"></i>
-            <h2 class="text-2xl font-black mb-2">Crea il tuo Alert</h2>
-            <p class="text-blue-100 text-sm font-medium">Ricevi una notifica istantanea appena viene pubblicato un posteggio con questi requisiti.</p>
         </div>
-        <div class="p-10 space-y-6">
+        <div class="p-6 space-y-4">
             <div>
                 <label class="filter-label">Città o zona di interesse</label>
                 <input id="aComune" type="text" placeholder="Es. Milano, Bologna, Napoli…" class="filter-input" autocomplete="off" />
                 <p id="aCoordError" class="hidden text-xs text-red-500 font-bold mt-1">Città non trovata. Prova con un comune più grande vicino.</p>
                 <p class="text-[11px] text-slate-400 mt-1">Ti avvisiamo per tutti gli annunci entro 200 km dalla città inserita.</p>
             </div>
-            <button onclick="submitAlert()" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-black hover:bg-blue-700 transition shadow-lg shadow-blue-100">
+            <button onclick="submitAlert()" class="w-full bg-blue-600 text-white py-3 rounded-2xl font-black hover:bg-blue-700 transition shadow-lg shadow-blue-100">
                 Attiva Notifiche Gratis
             </button>
             <p class="text-[10px] text-slate-400 text-center font-bold uppercase tracking-widest">Servizio esclusivo per utenti registrati</p>

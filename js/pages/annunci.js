@@ -262,7 +262,7 @@ function openAlertModal() {
         const modal = document.getElementById('alertModal');
         if (modal) modal.classList.remove('hidden');
         const input = document.getElementById('aComune');
-        if (input) { input.value = ''; }
+        if (input) input.value = LAST_SEARCH_QUERY || '';
         const err = document.getElementById('aCoordError');
         if (err) err.classList.add('hidden');
     });
