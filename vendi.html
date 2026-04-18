@@ -376,10 +376,6 @@ async function submitAnnuncio() {
         alert('Il prezzo minimo è 100 €.');
         btn.disabled = false; btn.innerHTML = originalBtnHTML; return;
     }
-    if (descrizioneLen < 50) {
-        alert(`La descrizione è troppo breve (${descrizioneLen} caratteri). Scrivi almeno 50 caratteri per descrivere il tuo posteggio.`);
-        btn.disabled = false; btn.innerHTML = originalBtnHTML; return;
-    }
 
     // Get user profile
     const { data: profile } = await _supabase.from('profiles').select('nome, cognome, telefono').eq('id', user.id).single();
