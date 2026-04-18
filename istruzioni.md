@@ -28,6 +28,14 @@ Questo file è il "Manuale Operativo" per Gemini. Serve a garantire modifiche si
 - **Supabase RLS:** Verifica sempre la Row Level Security dopo modifiche alle query.
 - **Validazione:** Ogni campo in `vendi.html` deve essere sincronizzato con la funzione `submitAnnuncio()` e lo schema DB.
 
+## 🔐 Sicurezza Repository (REGOLE CRITICHE)
+
+- **MAI committare `node_modules/`** — già in `.gitignore`. Se GitHub segnala secret esposti, controllare prima se è colpa di node_modules entrato per errore.
+- **`.gitignore` minimo obbligatorio:** `.vercel`, `node_modules/`, `package-lock.json`, `package.json`
+- **Chiavi API e secret** non vanno mai in file JS committati. Usare solo variabili d'ambiente Supabase (Dashboard → Edge Functions → Secrets).
+- **`SUPABASE_ANON_KEY`** in `supabase-config.js` è pubblica per design — non è un secret da nascondere.
+- **`SUPABASE_SERVICE_ROLE_KEY`** è solo nelle Edge Functions come env var — MAI nei file JS del frontend.
+
 ## 🚀 Workflow di Pubblicazione (GitHub/Vercel)
 
 ### 🚨 REGOLA D'ORO (Mandatoria)
