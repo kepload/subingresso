@@ -251,8 +251,12 @@ alter table public.alerts add column if not exists comune text;
 alter table public.alerts add column if not exists lat    float8;
 alter table public.alerts add column if not exists lng    float8;
 -- Rende nullable le vecchie colonne regione/tipo se esistono
-alter table public.alerts alter column regione drop not null;
-alter table public.alerts alter column tipo    drop not null;
+DO $$ BEGIN
+  ALTER TABLE public.alerts ALTER COLUMN regione DROP NOT NULL;
+EXCEPTION WHEN undefined_column THEN NULL; END $$;
+DO $$ BEGIN
+  ALTER TABLE public.alerts ALTER COLUMN tipo DROP NOT NULL;
+EXCEPTION WHEN undefined_column THEN NULL; END $$;
 
 alter table public.alerts enable row level security;
 
