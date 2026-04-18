@@ -105,19 +105,35 @@ function applyFilters() {
         }
     }
 
-    // render
+    // render con transizione
     const grid   = document.getElementById('resultsGrid');
     const empty  = document.getElementById('emptyState');
     const count  = document.getElementById('resultCount');
 
-    if (results.length === 0) {
-        if (grid) grid.innerHTML = '';
-        if (empty) empty.classList.remove('hidden');
+    const doRender = () => {
+        if (results.length === 0) {
+            if (grid) grid.innerHTML = '';
+            if (empty) empty.classList.remove('hidden');
+        } else {
+            if (empty) empty.classList.add('hidden');
+            if (grid) {
+                grid.innerHTML = results.map((l, i) =>
+                    `<div class="card-animate" style="animation-delay:${Math.min(i, 6) * 45}ms">${buildCard(l, true, l._distance)}</div>`
+                ).join('');
+            }
+        }
+    };
+
+    // Se il grid ha già contenuto, fade-out → svuota → fade-in
+    if (grid && grid.children.length > 0) {
+        grid.style.transition = 'opacity 0.15s ease';
+        grid.style.opacity = '0';
+        setTimeout(() => {
+            doRender();
+            grid.style.opacity = '1';
+        }, 160);
     } else {
-        if (empty) empty.classList.add('hidden');
-        if (grid) grid.innerHTML = results.map((l, i) =>
-            `<div class="card-animate" style="animation-delay:${Math.min(i, 6) * 45}ms">${buildCard(l, true, l._distance)}</div>`
-        ).join('');
+        doRender();
     }
 
     // Aggiorna badge filtri attivi su mobile
@@ -130,9 +146,14 @@ function applyFilters() {
     }
 
     if (count) {
-        count.textContent = isProximitySearch
-            ? `${results.length} annunci entro 200km da ${searchCity || qRaw}`
-            : `${results.length} annunci trovati`;
+        count.style.transition = 'opacity 0.15s ease';
+        count.style.opacity = '0';
+        setTimeout(() => {
+            count.textContent = isProximitySearch
+                ? `${results.length} annunci entro 200km da ${searchCity || qRaw}`
+                : `${results.length} annunci trovati`;
+            count.style.opacity = '1';
+        }, 160);
     }
 
     // subtitle
