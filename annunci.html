@@ -173,6 +173,10 @@
                         Filtri
                         <span id="filterBadge" class="hidden bg-blue-500 text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center"></span>
                     </button>
+                    <button onclick="openAlertModal()" class="lg:hidden flex items-center gap-1.5 bg-blue-600 text-white text-xs font-black px-3 py-1.5 rounded-xl hover:bg-blue-700 transition active:scale-95">
+                        <i class="fas fa-bell text-[10px]"></i>
+                        Alert
+                    </button>
                 </div>
                 <select id="sortBy" class="filter-input w-auto text-xs" onchange="applyFilters()" style="padding:.45rem .8rem;">
                     <option value="data">Più recenti</option>
