@@ -298,7 +298,7 @@ async function submitAlert() {
             alert('🔔 Alert attivato! Riceverai una email quando esce un annuncio' + (comune ? ' vicino a ' + comune : '') + '.');
         } else {
             console.error('Alert error:', error);
-            alert('Errore durante il salvataggio dell\'alert. Riprova.');
+            alert('Errore: ' + (error.message || error.code || JSON.stringify(error)));
         }
     });
 }
