@@ -246,10 +246,13 @@ create table if not exists public.alerts (
     created_at timestamptz default now()
 );
 
--- Aggiunge le colonne se la tabella esiste già senza di esse
+-- Aggiunge/normalizza colonne se la tabella esiste già
 alter table public.alerts add column if not exists comune text;
 alter table public.alerts add column if not exists lat    float8;
 alter table public.alerts add column if not exists lng    float8;
+-- Rende nullable le vecchie colonne regione/tipo se esistono
+alter table public.alerts alter column regione drop not null;
+alter table public.alerts alter column tipo    drop not null;
 
 alter table public.alerts enable row level security;
 
