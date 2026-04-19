@@ -13,8 +13,8 @@ const UI = {
             <span class="text-lg sm:text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
         </a>
         <nav class="hidden lg:flex absolute left-1/2 -translate-x-1/2 gap-12 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
+            <a href="valutatore.html" class="nav-link-valutatore hover:text-slate-900 transition">Calcolatore</a>
             <a href="annunci.html" class="nav-link-annunci hover:text-slate-900 transition">Annunci</a>
-            <a href="valutatore.html" class="hover:text-slate-900 transition">Calcolatore</a>
             <a href="blog.html"    class="nav-link-blog hover:text-slate-900 transition">Blog</a>
         </nav>
         <div class="flex items-center gap-2 sm:gap-3">
@@ -81,6 +81,8 @@ function initUI() {
             headerEl.querySelector('.nav-link-annunci')?.classList.add('text-blue-600');
         } else if (page.includes('blog.html')) {
             headerEl.querySelector('.nav-link-blog')?.classList.add('text-blue-600');
+        } else if (page.includes('valutatore.html')) {
+            headerEl.querySelector('.nav-link-valutatore')?.classList.add('text-blue-600');
         }
     }
 
