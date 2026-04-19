@@ -72,7 +72,7 @@ function initUI() {
     const footerEl = document.querySelector('footer');
 
     if (headerEl) {
-        headerEl.className = "bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100";
+        headerEl.className = "bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 relative";
         headerEl.innerHTML = UI.header;
         
         // Attiva link corrente
