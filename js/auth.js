@@ -374,7 +374,7 @@ window.updateAuthNav = async function () {
             </a>
             <a href="dashboard.html" title="Area personale"
                 class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-100 hover:bg-slate-200 transition-all duration-200 flex items-center justify-center shrink-0">
-                <span class="text-xs font-black text-slate-600">${initial}</span>
+                <i class="fas fa-user text-sm text-slate-500"></i>
             </a>`;
     }
 };
