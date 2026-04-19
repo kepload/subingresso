@@ -5,19 +5,19 @@
 
 const UI = {
     header: `
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 grid grid-cols-3 items-center">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            <div class="bg-blue-600 text-white w-9 h-9 sm:w-11 h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
+            <div class="bg-blue-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
                 <i class="fas fa-store text-sm sm:text-lg"></i>
             </div>
             <span class="text-lg sm:text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
         </a>
-        <nav class="hidden lg:flex absolute left-1/2 -translate-x-1/2 gap-12 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
+        <nav class="hidden lg:flex justify-center gap-12 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
             <a href="valutatore.html" class="nav-link-valutatore hover:text-slate-900 transition">Calcolatore</a>
             <a href="annunci.html" class="nav-link-annunci hover:text-slate-900 transition">Annunci</a>
             <a href="blog.html"    class="nav-link-blog hover:text-slate-900 transition">Blog</a>
         </nav>
-        <div class="flex items-center gap-2 sm:gap-3">
+        <div class="flex items-center justify-end gap-2 sm:gap-3">
             <div id="authNav" class="flex items-center gap-2 sm:gap-3"></div>
             <a href="vendi.html" class="bg-slate-900 text-white w-9 h-9 sm:w-10 sm:h-10 lg:w-auto lg:px-7 lg:py-3 rounded-lg sm:rounded-xl lg:rounded-[16px] text-xs sm:text-sm font-bold hover:bg-blue-600 transition-all duration-300 shadow-sm flex items-center justify-center gap-2">
                 <i class="fas fa-plus text-[10px] sm:text-xs"></i>
