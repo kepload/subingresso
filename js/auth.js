@@ -368,16 +368,13 @@ window.updateAuthNav = async function () {
 
         nav.innerHTML = `
             <a href="messaggi.html" title="Messaggi"
-                class="relative p-2 rounded-xl hover:bg-slate-100 transition-all duration-200 flex items-center justify-center">
-                <i class="fas fa-comment-alt text-slate-400 text-sm"></i>
+                class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-all duration-200 flex items-center justify-center shrink-0">
+                <i class="fas fa-comment-alt text-sm"></i>
                 ${badgeHtml}
             </a>
-            <a href="dashboard.html"
-                class="text-sm font-bold text-blue-600 hover:text-blue-700 p-2 lg:px-4 lg:py-2 rounded-xl border border-blue-100 hover:bg-blue-50 transition-all duration-300 flex items-center gap-2">
-                <div class="w-6 h-6 lg:w-5 lg:h-5 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-[10px] font-black shrink-0">
-                    ${initial}
-                </div>
-                <span class="hidden lg:inline">Area Personale</span>
+            <a href="dashboard.html" title="Area personale"
+                class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-100 hover:bg-slate-200 transition-all duration-200 flex items-center justify-center shrink-0">
+                <span class="text-xs font-black text-slate-600">${initial}</span>
             </a>`;
     }
 };
