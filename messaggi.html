@@ -225,17 +225,18 @@ function renderConvList() {
         return;
     }
     list.innerHTML = _conversations.map(c => {
-        const isAcquirente = (c.acquirente?.id ?? c.acquirente_id) === _currentUser.id;
-        const other = isAcquirente ? c.venditore : c.acquirente;
-        const otherName = other ? `${other.nome || ''} ${other.cognome || ''}`.trim() || 'Utente' : 'Utente';
-        const initial = otherName.charAt(0).toUpperCase();
+        const titolo = c.annuncio?.titolo || 'Annuncio';
+        const venditoreName = c.venditore
+            ? `${c.venditore.nome || ''} ${c.venditore.cognome || ''}`.trim() || 'Venditore'
+            : 'Venditore';
+        const initial = titolo.charAt(0).toUpperCase();
         const active = c.id === _activeConvId;
 
         const lm = c.lastMessage;
         let preview = '<span class="italic">Nessun messaggio</span>';
         if (lm) {
             const prefix = lm.mittente_id === _currentUser.id ? 'Tu: ' : '';
-            preview = escapeHtml(prefix + lm.testo).slice(0, 60) + (lm.testo.length > 60 ? '…' : '');
+            preview = escapeHtml(prefix + lm.testo).slice(0, 55) + (lm.testo.length > 55 ? '…' : '');
         }
 
         return `
@@ -246,9 +247,10 @@ function renderConvList() {
             </div>
             <div class="flex-grow min-w-0">
                 <div class="flex items-center justify-between gap-2">
-                    <p class="font-black text-sm text-slate-900 truncate">${escapeHtml(otherName)}</p>
+                    <p class="font-black text-sm text-slate-900 truncate">${escapeHtml(titolo)}</p>
                     ${lm ? `<p class="text-[10px] text-slate-400 font-semibold flex-shrink-0">${new Date(lm.created_at).toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit' })}</p>` : ''}
                 </div>
+                <p class="text-[11px] text-blue-500 font-semibold truncate">Venditore: ${escapeHtml(venditoreName)}</p>
                 <p class="text-xs text-slate-400 font-medium truncate mt-0.5">${preview}</p>
             </div>
         </button>`;
@@ -287,10 +289,11 @@ async function openConversation(convId) {
         renderConvList();
     }
 
-    // Calcola nome interlocutore (con o senza dati join)
-    const isAcquirente = (conv.acquirente?.id ?? conv.acquirente_id) === _currentUser.id;
-    const other = isAcquirente ? conv.venditore : conv.acquirente;
-    const otherName = other ? `${other.nome || ''} ${other.cognome || ''}`.trim() || 'Utente' : 'Utente';
+    // Titolo chat: posteggio + venditore
+    const _chatTitolo = conv.annuncio?.titolo || 'Annuncio';
+    const _chatVenditore = conv.venditore
+        ? `${conv.venditore.nome || ''} ${conv.venditore.cognome || ''}`.trim() || 'Venditore'
+        : 'Venditore';
 
     document.getElementById('chatEmpty').classList.add('hidden');
     document.getElementById('chatHeader').classList.remove('hidden');
@@ -305,9 +308,9 @@ async function openConversation(convId) {
         document.getElementById('chatPanel').classList.add('flex');
     }
 
-    document.getElementById('chatOtherName').textContent = otherName;
+    document.getElementById('chatOtherName').textContent = _chatTitolo;
     const link = document.getElementById('chatListingLink');
-    link.textContent = conv.annuncio?.titolo || 'Annuncio';
+    link.textContent = `Venditore: ${_chatVenditore} · Vedi annuncio →`;
     if (conv.annuncio?.id) link.href = `annuncio.html?id=${conv.annuncio.id}`;
 
     await loadMessages(convId);
