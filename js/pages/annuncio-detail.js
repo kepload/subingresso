@@ -22,7 +22,7 @@ async function loadListing() {
         console.log("📡 Interrogazione Supabase...");
         const { data, error } = await _supabase
             .from('annunci')
-            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, visualizzazioni')
+            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at')
             .eq('id', idParam)
             .maybeSingle();
 
@@ -118,16 +118,21 @@ async function initPage() {
     setTxt('descrizione', listing.descrizione);
     setTxt('dataPub', formatDate(listing.data));
 
-    // Visualizzazioni — mostra contatore (dato già in listing dalla select)
-    const vcEl  = document.getElementById('viewCount');
-    const vcVal = document.getElementById('viewCountVal');
-    if (vcEl && vcVal) {
-        vcVal.textContent = (listing.visualizzazioni || 0) + 2;
-        vcEl.classList.remove('hidden');
-        vcEl.classList.add('flex');
-    }
-    // Traccia visita diretta (+2) — ogni apertura della pagina conta
-    _supabase.rpc('increment_views', { listing_id: listing.id, amount: 2 }).catch(() => {});
+    // Traccia visita diretta (+2) e mostra contatore — completamente asincrono e isolato
+    (async () => {
+        try {
+            await _supabase.rpc('increment_views', { listing_id: listing.id, amount: 2 });
+            const { data: vd } = await _supabase
+                .from('annunci').select('visualizzazioni').eq('id', listing.id).maybeSingle();
+            const vcEl = document.getElementById('viewCount');
+            const vcVal = document.getElementById('viewCountVal');
+            if (vcEl && vcVal && vd?.visualizzazioni != null) {
+                vcVal.textContent = vd.visualizzazioni;
+                vcEl.classList.remove('hidden');
+                vcEl.classList.add('flex');
+            }
+        } catch (_) {}
+    })();
     setTxt('cNome', listing.contatto || 'Privato');
     setTxt('cTel', listing.tel || 'Contatto riservato');
 
