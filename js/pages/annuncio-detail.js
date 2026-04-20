@@ -22,7 +22,7 @@ async function loadListing() {
         console.log("📡 Interrogazione Supabase...");
         const { data, error } = await _supabase
             .from('annunci')
-            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at')
+            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, visualizzazioni')
             .eq('id', idParam)
             .maybeSingle();
 
@@ -118,18 +118,14 @@ async function initPage() {
     setTxt('descrizione', listing.descrizione);
     setTxt('dataPub', formatDate(listing.data));
 
-    // Visualizzazioni — fetch separato per non rompere la query principale
-    // (la colonna potrebbe non esistere ancora se il SQL non è stato eseguito)
-    _supabase.from('annunci').select('visualizzazioni').eq('id', listing.id).maybeSingle()
-        .then(({ data: vData }) => {
-            const vcEl  = document.getElementById('viewCount');
-            const vcVal = document.getElementById('viewCountVal');
-            if (vcEl && vcVal && vData && vData.visualizzazioni != null) {
-                vcVal.textContent = vData.visualizzazioni + 2;
-                vcEl.classList.remove('hidden');
-                vcEl.classList.add('flex');
-            }
-        }).catch(() => {});
+    // Visualizzazioni — mostra contatore (dato già in listing dalla select)
+    const vcEl  = document.getElementById('viewCount');
+    const vcVal = document.getElementById('viewCountVal');
+    if (vcEl && vcVal) {
+        vcVal.textContent = (listing.visualizzazioni || 0) + 2;
+        vcEl.classList.remove('hidden');
+        vcEl.classList.add('flex');
+    }
     // Traccia visita diretta (+2) — ogni apertura della pagina conta
     _supabase.rpc('increment_views', { listing_id: listing.id, amount: 2 }).catch(() => {});
     setTxt('cNome', listing.contatto || 'Privato');
@@ -157,7 +153,7 @@ async function initPage() {
     }
 
     // Immagini (Placeholder o Reali)
-    const coverContainer = document.querySelector('.bg-gradient-to-br.from-slate-100');
+    const coverContainer = document.getElementById('coverDiv');
     
     let extra = listing.dettagli_extra;
     if (typeof extra === 'string') {
