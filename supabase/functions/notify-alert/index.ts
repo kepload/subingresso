@@ -60,7 +60,7 @@ Deno.serve(async (req) => {
   try {
     const payload = await req.json();
 
-    if (payload.type !== 'INSERT' || payload.table !== 'annunci') {
+    if (payload.table !== 'annunci') {
       return new Response('Ignored', { status: 200 });
     }
 
@@ -68,13 +68,24 @@ Deno.serve(async (req) => {
       id: string;
       titolo: string;
       prezzo: number;
+      tipo: string;
+      merce: string;
+      superficie: number;
       regione: string;
       comune: string;
       status: string;
       user_id: string;
     };
 
-    if (annuncio.status !== 'active') {
+    // Invia solo quando un annuncio diventa attivo:
+    // - INSERT diretto come active (admin)
+    // - UPDATE da non-active → active (approvazione admin)
+    const isNewActive = payload.type === 'INSERT' && annuncio.status === 'active';
+    const isJustApproved = payload.type === 'UPDATE'
+      && annuncio.status === 'active'
+      && payload.old_record?.status !== 'active';
+
+    if (!isNewActive && !isJustApproved) {
       return new Response('Not active', { status: 200 });
     }
 
@@ -93,27 +104,20 @@ Deno.serve(async (req) => {
       return new Response('No alerts', { status: 200 });
     }
 
-    const matchingUserIds: string[] = [];
+    // Mappa user_id → alert (per costruire il link di ricerca personalizzato)
+    const matchingAlerts = new Map<string, typeof alerts[0]>();
 
     for (const a of alerts) {
+      if (matchingAlerts.has(a.user_id)) continue; // già matchato
       // Se l'alert non ha coordinate → notifica per tutta Italia
-      if (!a.lat || !a.lng) {
-        matchingUserIds.push(a.user_id);
-        continue;
-      }
-      // Se l'annuncio non ha coordinate → notifica tutti gli alert senza filtro geografico
-      if (!annuncioCoords) {
-        matchingUserIds.push(a.user_id);
-        continue;
-      }
+      if (!a.lat || !a.lng) { matchingAlerts.set(a.user_id, a); continue; }
+      // Se l'annuncio non ha coordinate → notifica tutti
+      if (!annuncioCoords) { matchingAlerts.set(a.user_id, a); continue; }
       const dist = getDistanceKM(a.lat, a.lng, annuncioCoords[0], annuncioCoords[1]);
-      if (dist <= RADIUS_KM) {
-        matchingUserIds.push(a.user_id);
-      }
+      if (dist <= RADIUS_KM) matchingAlerts.set(a.user_id, a);
     }
 
-    const uniqueUserIds = [...new Set(matchingUserIds)];
-    if (uniqueUserIds.length === 0) {
+    if (matchingAlerts.size === 0) {
       return new Response('No matching alerts', { status: 200 });
     }
 
@@ -124,15 +128,29 @@ Deno.serve(async (req) => {
     const annuncioUrl = `${SITE_URL}/annuncio.html?id=${annuncio.id}`;
     const titoloSafe  = (annuncio.titolo || 'Nuovo annuncio').replace(/[<>]/g, '');
     const luogoStr    = annuncio.comune || annuncio.regione || 'Italia';
+    const tipoSafe    = (annuncio.tipo   || '').replace(/[<>]/g, '');
+    const merceSafe   = (annuncio.merce  || '').replace(/[<>]/g, '');
+    const dettagliRows = [
+      tipoSafe  ? `<tr><td style="color:#64748b;font-size:13px;padding:4px 0;">Tipo</td><td style="color:#0f172a;font-size:14px;font-weight:600;text-align:right;">${tipoSafe}</td></tr>` : '',
+      merceSafe ? `<tr><td style="color:#64748b;font-size:13px;padding:4px 0;">Settore</td><td style="color:#0f172a;font-size:14px;font-weight:600;text-align:right;">${merceSafe}</td></tr>` : '',
+    ].join('');
 
-    const emailPromises = uniqueUserIds.map(uid => supabase.auth.admin.getUserById(uid));
-    const usersResults  = await Promise.all(emailPromises);
+    const userFetches = [...matchingAlerts.keys()].map(uid => supabase.auth.admin.getUserById(uid));
+    const usersResults = await Promise.all(userFetches);
 
     let sent = 0;
     await Promise.all(
-      usersResults.map(async ({ data }) => {
+      usersResults.map(async ({ data }, idx) => {
         const email = data?.user?.email;
         if (!email) return;
+
+        const uid = [...matchingAlerts.keys()][idx];
+        const alert = matchingAlerts.get(uid)!;
+        // Link ricerca pre-filtrata sulla zona dell'alert
+        const searchParams = new URLSearchParams();
+        if (alert.comune) searchParams.set('q', alert.comune);
+        else if (annuncio.regione) searchParams.set('regione', annuncio.regione);
+        const cercaUrl = `${SITE_URL}/annunci.html?${searchParams.toString()}`;
 
         const res = await fetch('https://api.resend.com/emails', {
           method: 'POST',
@@ -143,7 +161,7 @@ Deno.serve(async (req) => {
           body: JSON.stringify({
             from: FROM_EMAIL,
             to:   email,
-            subject: `🔔 Nuovo annuncio vicino a te — ${titoloSafe}`,
+            subject: `🔔 Nuova piazza disponibile vicino a te — ${titoloSafe}`,
             html: `
               <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:520px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #f1f5f9;">
                 <div style="background:#2563eb;padding:28px 32px;">
@@ -158,6 +176,7 @@ Deno.serve(async (req) => {
                         <td style="color:#64748b;font-size:13px;padding:4px 0;">Zona</td>
                         <td style="color:#0f172a;font-size:14px;font-weight:600;text-align:right;">${luogoStr}</td>
                       </tr>
+                      ${dettagliRows}
                       <tr>
                         <td style="color:#64748b;font-size:13px;padding:4px 0;">Prezzo</td>
                         <td style="color:#2563eb;font-size:16px;font-weight:900;text-align:right;">${prezzoStr}</td>
@@ -165,8 +184,13 @@ Deno.serve(async (req) => {
                     </table>
                   </div>
                   <a href="${annuncioUrl}"
-                     style="display:inline-block;background:#2563eb;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">
-                    Vedi annuncio →
+                     style="display:inline-block;background:#2563eb;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;margin-bottom:12px;">
+                    Vedi questo annuncio →
+                  </a>
+                  <br>
+                  <a href="${cercaUrl}"
+                     style="display:inline-block;color:#2563eb;padding:10px 0;text-decoration:none;font-size:13px;font-weight:600;">
+                    Vedi tutti gli annunci nella tua zona →
                   </a>
                 </div>
                 <div style="padding:20px 32px;border-top:1px solid #f1f5f9;text-align:center;">
