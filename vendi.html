@@ -290,8 +290,7 @@
                                 </button>
                             </div>
                             <textarea id="fDescrizione" placeholder="Descrivi la posizione, la clientela, il canone comunale..." class="field-input mt-1"></textarea>
-                            <p id="descCount" class="text-[10px] text-slate-400 mt-1 font-bold text-right transition-colors">0 / min. 50 caratteri</p>
-                        </div>
+                                        </div>
 
                         <div>
                             <label class="field-label">Foto <span class="text-slate-400 font-medium normal-case">(opzionale, ma aumenta le risposte)</span></label>
@@ -384,8 +383,6 @@ function _validateStep(n) {
     if (n === 5) {
         if (!document.getElementById('fTitolo').value.trim())
             return _err('Inserisci un titolo per il tuo annuncio.');
-        if (document.getElementById('fDescrizione').value.trim().length < 50)
-            return _err('La descrizione deve essere di almeno 50 caratteri.');
     }
     return true;
 }
@@ -471,15 +468,8 @@ function useTemplate() {
         `Superficie ${sup} m², giorni di mercato: ${giorni}. ` +
         `Canone comunale regolare e in regola con tutti i permessi. ` +
         `Ottima posizione con clientela fissa. Per informazioni contattatemi.`;
-    _updateDescCount();
 }
 
-function _updateDescCount() {
-    const len = document.getElementById('fDescrizione').value.trim().length;
-    const el  = document.getElementById('descCount');
-    el.textContent   = len + ' / min. 50 caratteri';
-    el.style.color   = len >= 50 ? '#16a34a' : '#94a3b8';
-}
 
 // ── Init ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
@@ -510,8 +500,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
     });
 
-    // Contatore descrizione
-    document.getElementById('fDescrizione').addEventListener('input', _updateDescCount);
 
     // Auth
     const user = await getCurrentUser();
@@ -700,8 +688,6 @@ function resetForm() {
     selectTipo('Mercato settimanale', 0);
 
     // Reset UI
-    document.getElementById('descCount').textContent = '0 / min. 50 caratteri';
-    document.getElementById('descCount').style.color = '#94a3b8';
     clearStepError();
     document.getElementById('formWrapper').classList.remove('hidden');
     document.getElementById('successMsg').classList.add('hidden');
