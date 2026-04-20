@@ -246,7 +246,7 @@ function buildCard(l, isSmall = false, distance = null) {
                     }
                 </div>
                 <div class="flex items-center gap-2">
-                    ${l.visualizzazioni ? `<span class="text-[10px] text-slate-300 font-bold flex items-center gap-1" title="Visualizzazioni"><i class="fas fa-eye text-[9px]"></i> ${l.visualizzazioni}</span>` : ''}
+                    ${l.visualizzazioni ? `<span class="flex items-center gap-1 bg-slate-100 px-2 py-1 rounded-lg" title="Visualizzazioni"><i class="fas fa-eye text-[10px] text-slate-500"></i><span class="text-[11px] font-black text-slate-700">${l.visualizzazioni}</span></span>` : ''}
                     <a href="${annuncioUrl}" class="w-9 h-9 sm:w-10 sm:h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-300 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                         <i class="fas fa-chevron-right text-xs"></i>
                     </a>
