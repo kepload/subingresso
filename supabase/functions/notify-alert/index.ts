@@ -80,10 +80,13 @@ Deno.serve(async (req) => {
     // Invia solo quando un annuncio diventa attivo:
     // - INSERT diretto come active (admin)
     // - UPDATE da non-active → active (approvazione admin)
+    //   RICHIEDE old_record != null: senza di esso non possiamo distinguere
+    //   l'approvazione da un UPDATE di visualizzazioni/altri campi → falsi positivi
     const isNewActive = payload.type === 'INSERT' && annuncio.status === 'active';
     const isJustApproved = payload.type === 'UPDATE'
+      && payload.old_record != null
       && annuncio.status === 'active'
-      && payload.old_record?.status !== 'active';
+      && payload.old_record.status !== 'active';
 
     if (!isNewActive && !isJustApproved) {
       return new Response('Not active', { status: 200 });
