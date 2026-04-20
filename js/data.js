@@ -266,21 +266,18 @@ const USER_AVATARS = {};
 const _viewedPreviews = new Set();
 function observeCardViews() {
     const cards = document.querySelectorAll('[data-listing-id]');
-    console.log('[views] observeCardViews chiamato, card trovate:', cards.length);
     if (!cards.length) return;
 
     function _trackCard(card) {
         const id = card.dataset.listingId;
         if (!id || _viewedPreviews.has(id)) return;
         const r = card.getBoundingClientRect();
-        const visible = r.bottom > 0 && r.top < window.innerHeight;
-        console.log('[views] card', id.slice(0,8), '| top:', Math.round(r.top), 'bottom:', Math.round(r.bottom), 'viewport:', window.innerHeight, '| visibile:', visible);
-        if (visible) {
+        if (r.bottom > 0 && r.top < window.innerHeight) {
             _viewedPreviews.add(id);
-            console.log('[views] RPC +1 per', id.slice(0,8));
-            _supabase.rpc('increment_views', { listing_id: id, amount: 1 })
-                .then(res => console.log('[views] RPC ok', res))
-                .catch(e => console.warn('[views] RPC errore', e));
+            (async () => {
+                const { error } = await _supabase.rpc('increment_views', { listing_id: id, amount: 1 });
+                if (error) console.warn('[views +1]', error);
+            })();
         }
     }
 
