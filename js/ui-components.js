@@ -5,7 +5,7 @@
 
 const UI = {
     header: `
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 grid grid-cols-3 items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between lg:grid lg:grid-cols-3">
         <a href="index.html" class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <div class="bg-blue-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
                 <i class="fas fa-store text-sm sm:text-lg"></i>
