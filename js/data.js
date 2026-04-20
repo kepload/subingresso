@@ -190,7 +190,7 @@ function buildCard(l, isSmall = false, distance = null) {
             </div>
             ${imgTag}
             <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                <span class="${l.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'} text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-sm">${escapeHTML(l.stato)}</span>
+                <span class="${l.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'} text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-sm">${l.stato === 'Affitto mensile' ? 'Affitto' : escapeHTML(l.stato)}</span>
                 ${l.status && l.status !== 'active' ? `<span class="bg-amber-500 text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-sm">In Revisione</span>` : ''}
                 ${distTag}
             </div>
