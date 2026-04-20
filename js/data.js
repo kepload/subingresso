@@ -238,8 +238,12 @@ function buildCard(l, isSmall = false, distance = null) {
 
             <div class="mt-auto pt-3 sm:pt-4 border-t border-slate-50 flex items-center justify-between">
                 <div>
-                    <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest leading-none mb-0.5">Prezzo</p>
-                    <p class="text-base sm:text-xl font-black text-slate-900 leading-none">${formatPrice(l)}</p>
+                    <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest leading-none mb-0.5">${l.stato === 'Affitto mensile' ? 'Affitto' : 'Prezzo'}</p>
+                    ${l.stato === 'Affitto mensile' && l.prezzo
+                        ? `<p class="text-base sm:text-xl font-black text-slate-900 leading-none">€ ${Math.round(l.prezzo / 12).toLocaleString('it-IT')}<span class="text-xs font-bold text-slate-400 ml-0.5">/mese</span></p>
+                           <p class="text-[10px] font-semibold text-slate-400 mt-0.5">€ ${l.prezzo.toLocaleString('it-IT')} /anno</p>`
+                        : `<p class="text-base sm:text-xl font-black text-slate-900 leading-none">${formatPrice(l)}</p>`
+                    }
                 </div>
                 <a href="${annuncioUrl}" class="w-9 h-9 sm:w-10 sm:h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-300 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                     <i class="fas fa-chevron-right text-xs"></i>

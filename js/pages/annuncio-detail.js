@@ -74,7 +74,10 @@ async function initPage() {
 
     // OG / meta tag dinamici
     const _setMeta = (id, val) => { const el = document.getElementById(id); if (el && val) el.setAttribute('content', val); };
-    const _desc = `${listing.stato} posteggio ${listing.tipo || ''} a ${listing.comune} (${listing.regione}) — €${Number(listing.prezzo || 0).toLocaleString('it-IT')}. ${(listing.descrizione || '').substring(0, 100)}`;
+    const _prezzoOg = (listing.stato === 'Affitto mensile' && listing.prezzo)
+        ? `€${Math.round(listing.prezzo / 12).toLocaleString('it-IT')}/mese`
+        : `€${Number(listing.prezzo || 0).toLocaleString('it-IT')}`;
+    const _desc = `${listing.stato} posteggio ${listing.tipo || ''} a ${listing.comune} (${listing.regione}) — ${_prezzoOg}. ${(listing.descrizione || '').substring(0, 100)}`;
     _setMeta('metaDesc', _desc);
     _setMeta('ogTitle', document.title);
     _setMeta('ogDesc', _desc);
@@ -117,11 +120,19 @@ async function initPage() {
     // Prezzo (Sicurezza: localeString)
     const prezzoEl = document.getElementById('prezzo');
     if (prezzoEl) {
-        prezzoEl.textContent = `€ ${Number(listing.prezzo || 0).toLocaleString('it-IT')}`;
+        if (listing.stato === 'Affitto mensile' && listing.prezzo) {
+            prezzoEl.textContent = `€ ${Math.round(listing.prezzo / 12).toLocaleString('it-IT')}`;
+        } else {
+            prezzoEl.textContent = `€ ${Number(listing.prezzo || 0).toLocaleString('it-IT')}`;
+        }
     }
     const prezzoSub = document.getElementById('prezzoSub');
     if (prezzoSub) {
-        prezzoSub.textContent = listing.stato === 'Affitto mensile' ? 'al mese' : 'prezzo richiesto · trattabile';
+        if (listing.stato === 'Affitto mensile' && listing.prezzo) {
+            prezzoSub.textContent = `/mese · € ${Number(listing.prezzo).toLocaleString('it-IT')} /anno`;
+        } else {
+            prezzoSub.textContent = 'prezzo richiesto · trattabile';
+        }
     }
 
     // Immagini (Placeholder o Reali)
