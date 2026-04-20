@@ -22,7 +22,7 @@ async function loadListing() {
         console.log("📡 Interrogazione Supabase...");
         const { data, error } = await _supabase
             .from('annunci')
-            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, visualizzazioni')
+            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at')
             .eq('id', idParam)
             .maybeSingle();
 
@@ -118,16 +118,18 @@ async function initPage() {
     setTxt('descrizione', listing.descrizione);
     setTxt('dataPub', formatDate(listing.data));
 
-    // Visualizzazioni — mostra contatore e traccia visita diretta (+2)
-    const vcEl  = document.getElementById('viewCount');
-    const vcVal = document.getElementById('viewCountVal');
-    if (vcEl && vcVal) {
-        const currentViews = (listing.visualizzazioni || 0);
-        // Mostra il totale stimato (+2 perché stiamo per aggiungere questa visita)
-        vcVal.textContent  = currentViews + 2;
-        vcEl.classList.remove('hidden');
-        vcEl.classList.add('flex');
-    }
+    // Visualizzazioni — fetch separato per non rompere la query principale
+    // (la colonna potrebbe non esistere ancora se il SQL non è stato eseguito)
+    _supabase.from('annunci').select('visualizzazioni').eq('id', listing.id).maybeSingle()
+        .then(({ data: vData }) => {
+            const vcEl  = document.getElementById('viewCount');
+            const vcVal = document.getElementById('viewCountVal');
+            if (vcEl && vcVal && vData && vData.visualizzazioni != null) {
+                vcVal.textContent = vData.visualizzazioni + 2;
+                vcEl.classList.remove('hidden');
+                vcEl.classList.add('flex');
+            }
+        }).catch(() => {});
     // Traccia visita diretta (+2) — una sola volta per sessione per annuncio
     const _vKey = `v2_${listing.id}`;
     if (!sessionStorage.getItem(_vKey)) {
