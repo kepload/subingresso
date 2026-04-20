@@ -261,3 +261,21 @@ const LISTINGS = [];
 
 // Cache avatar URL per user_id — popolata da annunci.js dopo il fetch profiles
 const USER_AVATARS = {};
+
+// ── Tracking visualizzazioni anteprima card (shared tra tutte le pagine) ──
+const _viewedPreviews = new Set();
+function observeCardViews() {
+    if (!('IntersectionObserver' in window)) return;
+    const cards = document.querySelectorAll('[data-listing-id]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const id = entry.target.dataset.listingId;
+            if (!id || _viewedPreviews.has(id)) return;
+            _viewedPreviews.add(id);
+            observer.unobserve(entry.target);
+            _supabase.rpc('increment_views', { listing_id: id, amount: 1 }).catch(() => {});
+        });
+    }, { threshold: 0.5 });
+    cards.forEach(c => observer.observe(c));
+}

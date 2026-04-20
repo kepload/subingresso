@@ -244,6 +244,7 @@ async function initPage() {
         if (related.length > 0) {
             relatedSection.classList.remove('hidden');
             relatedGrid.innerHTML = related.map(l => buildCard(l)).join('');
+            observeCardViews();
         }
     }
 

@@ -499,8 +499,10 @@ async function loadRecentListings() {
             // Fallback ai dati demo se non ci sono annunci reali
             document.getElementById('previewGrid').innerHTML = LISTINGS.slice(0, 3).map(l => buildCard(l)).join('');
         }
+        observeCardViews();
     } catch (e) {
         document.getElementById('previewGrid').innerHTML = LISTINGS.slice(0, 3).map(l => buildCard(l)).join('');
+        observeCardViews();
     }
 }
 loadRecentListings();

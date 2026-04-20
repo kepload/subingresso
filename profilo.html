@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>`;
     } else {
         grid.innerHTML = listings.map(l => buildCard(l)).join('');
+        observeCardViews();
     }
 
     document.getElementById('profileContent').classList.remove('hidden');
