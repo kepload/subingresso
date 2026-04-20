@@ -121,7 +121,7 @@ async function initPage() {
     // Traccia visita diretta (+2) e mostra contatore — completamente asincrono e isolato
     (async () => {
         try {
-            await _supabase.rpc('increment_views', { listing_id: listing.id, amount: 2 });
+            await _supabase.rpc('increment_views', { listing_id: listing.id, amount: Math.random() < 0.5 ? 1 : 2 });
             const { data: vd } = await _supabase
                 .from('annunci').select('visualizzazioni').eq('id', listing.id).maybeSingle();
             const vcEl = document.getElementById('viewCount');
