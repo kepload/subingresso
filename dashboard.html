@@ -489,6 +489,7 @@ async function loadMyListings() {
         .from('annunci')
         .select('*')
         .eq('user_id', _currentUser.id)
+        .neq('status', 'deleted')
         .order('created_at', { ascending: false });
 
     if (error || !data || data.length === 0) {
