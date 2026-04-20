@@ -312,6 +312,11 @@ async function openConversation(convId) {
 
     await loadMessages(convId);
     setupRealtime(convId);
+    // Scroll di sicurezza dopo che il pannello è visibile e i dati sono caricati
+    setTimeout(() => {
+        const c = document.getElementById('messagesContainer');
+        if (c) c.scrollTop = c.scrollHeight;
+    }, 80);
 
     // Mark messages as read
     await _supabase
@@ -354,7 +359,10 @@ function renderMessages(msgs) {
             </div>
         </div>`;
     }).join('');
-    container.scrollTop = container.scrollHeight;
+    // Doppio frame: garantisce lo scroll dopo che il browser ha dipinto il contenuto
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => { container.scrollTop = container.scrollHeight; });
+    });
 }
 
 function escapeHtml(str) {

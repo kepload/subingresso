@@ -182,7 +182,7 @@ function buildCard(l, isSmall = false, distance = null) {
     })();
 
     return `
-    <div class="group bg-white rounded-2xl sm:rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full">
+    <div data-listing-id="${escapeHTML(l.id)}" class="group bg-white rounded-2xl sm:rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full">
         <!-- cover -->
         <a href="${annuncioUrl}" class="block relative h-20 sm:h-28 bg-slate-100 overflow-hidden flex-shrink-0">
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
@@ -245,9 +245,12 @@ function buildCard(l, isSmall = false, distance = null) {
                         : `<p class="text-base sm:text-xl font-black text-slate-900 leading-none">${formatPrice(l)}</p>`
                     }
                 </div>
-                <a href="${annuncioUrl}" class="w-9 h-9 sm:w-10 sm:h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-300 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                    <i class="fas fa-chevron-right text-xs"></i>
-                </a>
+                <div class="flex items-center gap-2">
+                    ${l.visualizzazioni ? `<span class="text-[10px] text-slate-300 font-bold flex items-center gap-1" title="Visualizzazioni"><i class="fas fa-eye text-[9px]"></i> ${l.visualizzazioni}</span>` : ''}
+                    <a href="${annuncioUrl}" class="w-9 h-9 sm:w-10 sm:h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-300 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>`;

@@ -120,6 +120,7 @@ function applyFilters() {
                 grid.innerHTML = results.map((l, i) =>
                     `<div class="card-animate" style="animation-delay:${Math.min(i, 6) * 45}ms">${buildCard(l, true, l._distance)}</div>`
                 ).join('');
+                _observeCardViews();
             }
         }
     };
@@ -169,6 +170,25 @@ function applyFilters() {
 
     // JSON-LD ItemList — aggiornato automaticamente ad ogni filtro/render
     _injectItemListLd(results, regione, tipo, q);
+}
+
+// ── Tracciamento visualizzazioni anteprima (+1) ──────────
+const _viewedPreviews = new Set(); // IDs già contati in questa sessione
+
+function _observeCardViews() {
+    if (!('IntersectionObserver' in window)) return;
+    const cards = document.querySelectorAll('[data-listing-id]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const id = entry.target.dataset.listingId;
+            if (!id || _viewedPreviews.has(id)) return;
+            _viewedPreviews.add(id);
+            observer.unobserve(entry.target);
+            _supabase.rpc('increment_views', { listing_id: id, amount: 1 }).catch(() => {});
+        });
+    }, { threshold: 0.5 });
+    cards.forEach(c => observer.observe(c));
 }
 
 function _injectItemListLd(items, regione, tipo, q) {

@@ -71,14 +71,19 @@
                     <span id="badgeMerce"  class="bg-slate-50 text-slate-500 text-[10px] font-black px-3 py-1.5 rounded-lg uppercase tracking-wider border border-slate-100"></span>
                 </div>
                 <h1 id="titolo" class="text-3xl font-black tracking-tight leading-tight text-slate-900"></h1>
-                <div class="flex items-center justify-between mt-3">
+                <div class="flex items-center justify-between mt-3 gap-2">
                     <div id="luogo" class="text-slate-500 font-bold text-sm flex items-center gap-2">
                         <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-500">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <span></span>
                     </div>
-                    <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest">Pubblicato il <span id="dataPub"></span></p>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <span id="viewCount" class="hidden items-center gap-1 text-[10px] text-slate-400 font-bold">
+                            <i class="fas fa-eye text-[9px]"></i> <span id="viewCountVal">0</span>
+                        </span>
+                        <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest">Pubblicato il <span id="dataPub"></span></p>
+                    </div>
                 </div>
             </div>
 
