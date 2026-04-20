@@ -589,9 +589,9 @@ async function submitAnnuncio() {
     // Anti-spam
     const lastPost = localStorage.getItem('last_post_time');
     const now = Date.now();
-    if (lastPost && (now - lastPost) < 5 * 60 * 1000) {
-        const minLeft = Math.ceil((5 * 60 * 1000 - (now - lastPost)) / 60000);
-        _err(`Puoi pubblicare un annuncio ogni 5 minuti. Riprova tra ${minLeft} minuti.`);
+    if (lastPost && (now - lastPost) < 60 * 1000) {
+        _err('Puoi pubblicare un annuncio ogni minuto. Riprova tra poco.');
+
         btn.disabled = false; btn.innerHTML = orig; return;
     }
     localStorage.setItem('last_post_time', now);
