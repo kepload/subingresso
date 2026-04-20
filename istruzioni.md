@@ -63,7 +63,9 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 
 ## 📊 Visualizzazioni Annunci (Aprile 2026)
 - Colonna `visualizzazioni integer DEFAULT 0` in `annunci`. Funzione DB: `increment_views(listing_id uuid, amount integer)` SECURITY DEFINER con GRANT a anon/authenticated.
-- Anteprima card: +1 via IntersectionObserver in `annunci.js` (`_observeCardViews()`), Set `_viewedPreviews` in memoria.
+- Anteprima card: +1 via `observeCardViews()` in `data.js` (pubblica, no underscore) — `requestAnimationFrame` + `getBoundingClientRect` + scroll listener. Chiamarla dopo ogni render di `buildCard()`.
+- **`_supabase.rpc().catch()` NON ESISTE** in Supabase JS v2 — usare sempre `async/await`: `const { error } = await _supabase.rpc(...)`.
+- Visita diretta: random 1-2 views (`Math.random() < 0.5 ? 1 : 2`) invece di fisso.
 - Visita diretta: +2 via RPC in `annuncio-detail.js` ad ogni apertura pagina.
 - **`visualizzazioni` NON va nella select principale di `annuncio-detail.js`** — se la colonna manca o RLS la blocca, tutta la query restituisce errore e l'annuncio non si carica. Fetchare in IIFE asincrona isolata dopo il caricamento della pagina.
 - Display: `#viewCount` (span con `id`) + `#viewCountVal` nel title block di `annuncio.html`. Mostrato solo se il fetch ha successo.
@@ -169,6 +171,12 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Ordine nav: **Calcolatore | Annunci | Blog**.
 - Bottoni header: messaggi e profilo sono `w-9/w-10 rounded-lg/xl bg-slate-100` — icona `fa-user` per profilo (non più lettera iniziale).
 - `dashboard.html` ha header hardcoded (non usa `ui-components.js`) — aggiornarlo manualmente se si modifica la nav.
+
+## 📧 Edge Functions — Alert Email (`notify-alert`)
+- `SITE_URL = 'https://subingresso.it'` (senza www) in tutte e 3 le notify functions.
+- Email parte su INSERT active (admin) O UPDATE pending→active — ma UPDATE richiede `payload.old_record != null`, altrimenti ogni `increment_views` triggerava email false.
+- Per far funzionare approvazione admin via UPDATE: abilitare **"Include old record"** nel webhook Supabase → Database → Webhooks → `notify-alert`.
+- Email include link diretto all'annuncio + link ricerca pre-filtrata sulla zona dell'alert.
 
 ## 🤖 Blog Generator (`js/blog-generator.js`)
 - **11 chiamate API sequenziali** (~2-3 min totali). Gira nel browser: se chiudi la pagina si interrompe.
