@@ -43,9 +43,11 @@ const UI = {
             <div>
                 <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-4">Navigazione</h4>
                 <ul class="space-y-2.5 text-slate-400 font-medium text-sm">
-                    <li><a href="index.html"   class="hover:text-white transition">Home</a></li>
-                    <li><a href="annunci.html" class="hover:text-white transition">Annunci</a></li>
-                    <li><a href="vendi.html"   class="hover:text-white transition">Inserisci annuncio</a></li>
+                    <li><a href="index.html"      class="hover:text-white transition">Home</a></li>
+                    <li><a href="annunci.html"    class="hover:text-white transition">Annunci</a></li>
+                    <li><a href="valutatore.html" class="hover:text-white transition">Calcolatore</a></li>
+                    <li><a href="blog.html"       class="hover:text-white transition">Blog</a></li>
+                    <li><a href="vendi.html"      class="hover:text-white transition">Inserisci annuncio</a></li>
                 </ul>
             </div>
             <div>
@@ -59,7 +61,7 @@ const UI = {
             </div>
         </div>
         <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p class="text-slate-500">&copy; 2025 Subingresso.it. Tutti i diritti riservati.</p>
+            <p class="text-slate-500">&copy; 2026 Subingresso.it. Tutti i diritti riservati.</p>
             <div class="flex items-center gap-4">
                 <a href="blog.html" class="text-[10px] text-slate-700 hover:text-slate-500 transition uppercase font-bold tracking-widest">Blog</a>
             </div>

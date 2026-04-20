@@ -378,6 +378,10 @@ async function submitAnnuncio() {
         alert('Il prezzo minimo è 100 €.');
         btn.disabled = false; btn.innerHTML = originalBtnHTML; return;
     }
+    if (form.prezzo > 10000000) {
+        alert('Il prezzo massimo è 10.000.000 €.');
+        btn.disabled = false; btn.innerHTML = originalBtnHTML; return;
+    }
 
     // Get user profile
     const { data: profile } = await _supabase.from('profiles').select('nome, cognome, telefono').eq('id', user.id).single();
