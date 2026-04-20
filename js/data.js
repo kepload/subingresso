@@ -265,19 +265,33 @@ const USER_AVATARS = {};
 // ── Tracking visualizzazioni anteprima card (shared tra tutte le pagine) ──
 const _viewedPreviews = new Set();
 function observeCardViews() {
-    if (!('IntersectionObserver' in window)) return;
     const cards = document.querySelectorAll('[data-listing-id]');
     if (!cards.length) return;
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            const id = entry.target.dataset.listingId;
-            if (!id || _viewedPreviews.has(id)) return;
+
+    function _trackCard(card) {
+        const id = card.dataset.listingId;
+        if (!id || _viewedPreviews.has(id)) return;
+        const r = card.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < window.innerHeight) {
             _viewedPreviews.add(id);
-            observer.unobserve(entry.target);
             _supabase.rpc('increment_views', { listing_id: id, amount: 1 })
                 .catch(e => console.warn('[views +1]', e));
+        }
+    }
+
+    // Controlla subito le card già visibili (dopo il layout)
+    requestAnimationFrame(() => cards.forEach(_trackCard));
+
+    // Controlla su scroll le card che entrano in viewport
+    function _onScroll() {
+        let pending = false;
+        cards.forEach(card => {
+            if (!_viewedPreviews.has(card.dataset.listingId)) {
+                _trackCard(card);
+                pending = true;
+            }
         });
-    }, { threshold: 0.1 });
-    cards.forEach(c => observer.observe(c));
+        if (!pending) window.removeEventListener('scroll', _onScroll);
+    }
+    window.addEventListener('scroll', _onScroll, { passive: true });
 }
