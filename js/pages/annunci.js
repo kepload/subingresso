@@ -166,6 +166,35 @@ function applyFilters() {
     }
 
     renderChips(regione, tipo, stato, q);
+
+    // JSON-LD ItemList — aggiornato automaticamente ad ogni filtro/render
+    _injectItemListLd(results, regione, tipo, q);
+}
+
+function _injectItemListLd(items, regione, tipo, q) {
+    const name = [
+        'Annunci posteggi mercatali',
+        regione ? `in ${regione}` : '',
+        tipo    ? `— ${tipo}`    : '',
+        q       ? `— ${q}`      : '',
+    ].filter(Boolean).join(' ');
+
+    const ld = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": name,
+        "numberOfItems": items.length,
+        "itemListElement": items.slice(0, 20).map((l, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "url": `https://www.subingresso.it/annuncio?id=${l.id}`,
+            "name": l.titolo
+        }))
+    };
+
+    let el = document.getElementById('_ldItemList');
+    if (!el) { el = document.createElement('script'); el.id = '_ldItemList'; el.type = 'application/ld+json'; document.head.appendChild(el); }
+    el.textContent = JSON.stringify(ld);
 }
 
 function renderChips(regione, tipo, stato, q) {

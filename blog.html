@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Tecnico — Subingresso.it</title>
+    <title>Blog & Guide per Ambulanti — Subingresso.it</title>
+    <meta name="description" id="metaBlogDesc" content="Guide tecniche, aggiornamenti normativi e risorse pratiche per ambulanti e titolari di posteggi mercatali.">
+    <meta property="og:title" id="ogBlogTitle" content="Blog & Guide per Ambulanti — Subingresso.it">
+    <meta property="og:description" id="ogBlogDesc" content="Guide tecniche, aggiornamenti normativi e risorse pratiche per ambulanti e titolari di posteggi mercatali.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="ogBlogUrl" content="https://www.subingresso.it/blog">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" id="canonicalBlog" href="https://www.subingresso.it/blog">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
@@ -113,6 +120,38 @@ function renderPost(post) {
     const date = new Date(post.published_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
     const safeTitle = escapeHTML(post.title);
     const safeContent = DOMPurify.sanitize(post.content);
+
+    // Aggiorna meta tag dinamicamente per ogni post
+    document.title = `${post.title} — Subingresso.it`;
+    const _sm = (id, val) => { const el = document.getElementById(id); if (el && val) el.setAttribute('content', val); };
+    const _desc = post.excerpt || post.title;
+    _sm('metaBlogDesc', _desc);
+    _sm('ogBlogTitle',  `${post.title} — Subingresso.it`);
+    _sm('ogBlogDesc',   _desc);
+    const postUrl = `https://www.subingresso.it/blog?post=${encodeURIComponent(post.slug)}`;
+    _sm('ogBlogUrl', postUrl);
+    const canon = document.getElementById('canonicalBlog');
+    if (canon) canon.href = postUrl;
+
+    // JSON-LD BlogPosting — generato automaticamente per ogni articolo
+    const _ld = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": _desc,
+        "datePublished": post.published_at,
+        "url": postUrl,
+        "inLanguage": "it-IT",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Subingresso.it",
+            "url": "https://www.subingresso.it"
+        }
+    };
+    let _ldEl = document.getElementById('_ldBlog');
+    if (!_ldEl) { _ldEl = document.createElement('script'); _ldEl.id = '_ldBlog'; _ldEl.type = 'application/ld+json'; document.head.appendChild(_ldEl); }
+    _ldEl.textContent = JSON.stringify(_ld);
+
     container.innerHTML = `
         <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
         <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>

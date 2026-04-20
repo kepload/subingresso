@@ -82,6 +82,12 @@ async function initPage() {
     _setMeta('ogTitle', document.title);
     _setMeta('ogDesc', _desc);
     _setMeta('ogUrl', window.location.href);
+
+    // Canonical (aggiornato dinamicamente per ogni annuncio)
+    let _can = document.getElementById('_canonical');
+    if (!_can) { _can = document.createElement('link'); _can.id = '_canonical'; _can.rel = 'canonical'; document.head.appendChild(_can); }
+    _can.href = window.location.href;
+
     if (notFoundEl) notFoundEl.classList.add('hidden');
     if (detailEl) {
         detailEl.classList.remove('hidden');
@@ -148,11 +154,51 @@ async function initPage() {
     if (coverContainer && firstImg) {
         // Rimuoviamo l'icona e mettiamo l'immagine
         coverContainer.innerHTML = `
-            <img src="${escapeHTML(firstImg)}" class="w-full h-full object-cover">
+            <img src="${escapeHTML(firstImg)}" alt="${escapeHTML(listing.titolo)}" class="w-full h-full object-cover">
             <span id="statoBadge" class="absolute top-6 left-6 text-white text-xs font-black px-4 py-2 rounded-xl shadow-lg uppercase tracking-widest ${listing.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'}">${escapeHTML(listing.stato)}</span>
         `;
         _setMeta('ogImage', firstImg);
     }
+
+    // JSON-LD strutturato (Product + BreadcrumbList) — generato automaticamente per ogni annuncio
+    const _jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Product",
+                "name": listing.titolo,
+                "description": _desc,
+                "url": window.location.href,
+                ...(firstImg ? { "image": firstImg } : {}),
+                "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "EUR",
+                    "price": listing.stato === 'Affitto mensile'
+                        ? Math.round((listing.prezzo || 0) / 12)
+                        : (listing.prezzo || 0),
+                    "availability": "https://schema.org/InStock"
+                },
+                "additionalProperty": [
+                    listing.tipo       && { "@type": "PropertyValue", "name": "Tipo",       "value": listing.tipo },
+                    listing.comune     && { "@type": "PropertyValue", "name": "Comune",     "value": listing.comune },
+                    listing.regione    && { "@type": "PropertyValue", "name": "Regione",    "value": listing.regione },
+                    listing.superficie && { "@type": "PropertyValue", "name": "Superficie", "value": `${listing.superficie} m²` },
+                    listing.giorni     && { "@type": "PropertyValue", "name": "Giorni",     "value": listing.giorni },
+                ].filter(Boolean)
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://www.subingresso.it/" },
+                    { "@type": "ListItem", "position": 2, "name": "Annunci", "item": "https://www.subingresso.it/annunci" },
+                    { "@type": "ListItem", "position": 3, "name": listing.titolo }
+                ]
+            }
+        ]
+    };
+    let _ldEl = document.getElementById('_jsonLd');
+    if (!_ldEl) { _ldEl = document.createElement('script'); _ldEl.id = '_jsonLd'; _ldEl.type = 'application/ld+json'; document.head.appendChild(_ldEl); }
+    _ldEl.textContent = JSON.stringify(_jsonLd);
 
     // Scheda tecnica (Sicurezza: escapeHTML)
     const techRows = [
