@@ -130,12 +130,15 @@ async function initPage() {
                 vcEl.classList.add('flex');
             }
         }).catch(() => {});
-    // Traccia visita diretta (+2) — una sola volta per sessione per annuncio
-    const _vKey = `v2_${listing.id}`;
-    if (!sessionStorage.getItem(_vKey)) {
-        sessionStorage.setItem(_vKey, '1');
-        _supabase.rpc('increment_views', { listing_id: listing.id, amount: 2 }).catch(() => {});
-    }
+    // Traccia visita diretta (+2) — una sola volta per sessione
+    // try/catch: sessionStorage può lanciare in Safari private o iOS
+    try {
+        const _vKey = `v2_${listing.id}`;
+        if (!sessionStorage.getItem(_vKey)) {
+            sessionStorage.setItem(_vKey, '1');
+            _supabase.rpc('increment_views', { listing_id: listing.id, amount: 2 }).catch(() => {});
+        }
+    } catch (_) { /* storage non disponibile, tracciamento saltato */ }
     setTxt('cNome', listing.contatto || 'Privato');
     setTxt('cTel', listing.tel || 'Contatto riservato');
 
