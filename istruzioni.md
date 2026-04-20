@@ -70,7 +70,7 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Join profiles in `conversazioni` rompe PostgREST** (stesso problema di `annunci`). `messaggi.html` usa 3 fetch separati: (1) conv+annuncio, (2) profiles con `.in('id', userIds)`, (3) lastMessage per ogni conv. Merge manuale. NON usare `acquirente:profiles!fkey(...)` nella select.
 - **`tel`/`email` mai esposti a utenti anonimi**: `annuncio-detail.js` fa `select(...)` senza `tel`/`email`. Li fetcha separatamente solo dopo `auth.getUser()` confermato. `restoreContactUI()` è `async` e fetcha `tel` dopo login.
 - **Trigger `trg_enforce_annunci_status`** in `SETUP_DEF_SUBINGRESSO.sql`: forza `status='pending'` su INSERT per non-admin, blocca promozione ad `active` via UPDATE. **Da eseguire nel SQL Editor di Supabase** per attivarlo.
-- **Validazioni `vendi.html` e `modifica-annuncio.html`**: prezzo minimo 100€, descrizione minima 50 caratteri. Double submit bloccato con `if (btn.disabled) return` come prima istruzione del submit handler.
+- **Validazioni `vendi.html`**: prezzo minimo 100€, max 10.000.000€. Nessun minimo sulla descrizione. Double submit bloccato con `if (btn.disabled) return`. `modifica-annuncio.html` ha ancora le sue validazioni separate.
 
 ## 🔒 Sicurezza Blog (`blog.html`)
 - **DOMPurify** caricato da CDN prima di `data.js`. Il contenuto dei post (`post.content`) DEVE passare per `DOMPurify.sanitize()` prima di essere iniettato in `innerHTML`. Titolo, excerpt e slug usano `escapeHTML()` / `encodeURIComponent()`.
@@ -108,6 +108,41 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 ## 🔍 Ricerca Annunci (`js/pages/annunci.js`)
 - Se il testo cercato è un luogo riconoscibile (`getCityCoords` lo trova), mostra **sempre** tutti gli annunci entro 200km ordinati per distanza — non solo come fallback.
 - `PROVINCE_COORDS` in `data.js`: aggiungere qui nuovi comuni se la ricerca per vicinanza non li trova. Toscolano Maderno già aggiunto.
+
+## 🔐 Admin Check (Aprile 2026)
+- L'accesso admin NON usa più email hardcodata — legge `profiles.is_admin = true` dal DB.
+- Colonna aggiunta con: `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS is_admin boolean DEFAULT false;`
+- Per assegnare admin: `UPDATE profiles SET is_admin = true WHERE id = (SELECT id FROM auth.users WHERE email = '...');`
+- In `dashboard.html`: variabile `_isAdmin` impostata dopo il fetch del profilo. Tutte le funzioni admin la usano.
+
+## 🧙 Form `vendi.html` — Wizard 5 Step (Aprile 2026)
+- Completamente riscritto come wizard a step. NON è più un form unico.
+- `fTipo`, `fMerce`, `fGiorni` sono `<input type="hidden">` aggiornati via JS (non più select).
+- `stato` sono radio hidden aggiornati da `selectStato()`.
+- Step 1 auto-avanza al click. Step 5 ha auto-suggest del titolo da comune+tipo+settore.
+- Nessun minimo di caratteri sulla descrizione. Prezzo: min 100€, max 10.000.000€.
+- Anti-spam: 1 minuto (era 5). Timestamp impostato PRIMA dell'insert, rimosso su errore.
+
+## 💶 Prezzi Affitto — Annuali (Aprile 2026)
+- Il DB ora salva il **prezzo annuale** per gli affitti (il vecchio mensile × 12 è stato aggiornato via SQL).
+- Display: mostra `prezzo ÷ 12 /mese` in grande + `prezzo /anno` sotto — sia in card (`data.js`) che in dettaglio (`annuncio-detail.js`).
+- Badge sulle card: mostra "Affitto" (non "Affitto mensile").
+- `formatPrice()` in `data.js` rimane per la vendita. Per l'affitto la card usa HTML inline con calcolo ÷12.
+
+## 🗑️ Eliminazione Annunci
+- `status='deleted'` = eliminato. NON viene fatto un DELETE fisico dal DB.
+- `annunci.js`: filtra `.neq('status','deleted')` anche per utenti loggati (era bug: li mostrava con badge rosso).
+- `dashboard.html` `loadMyListings()`: filtra `.neq('status','deleted')`.
+- Admin ha sezione "Tutti gli annunci" con tasto Elimina su ciascuno (`deleteAnnuncio(id)`).
+
+## 📊 Dashboard Admin — Statistiche
+- 5 card: Annunci Totali · **Annunci Attivi** (verde, `admStatAttivi`) · Utenti Iscritti · In Attesa · Robot Blog.
+
+## 🧭 Navigazione Header (Aprile 2026)
+- Layout: `flex justify-between` sotto `lg`, `grid grid-cols-3` da `lg` in su — centramento corretto della nav.
+- Ordine nav: **Calcolatore | Annunci | Blog**.
+- Bottoni header: messaggi e profilo sono `w-9/w-10 rounded-lg/xl bg-slate-100` — icona `fa-user` per profilo (non più lettera iniziale).
+- `dashboard.html` ha header hardcoded (non usa `ui-components.js`) — aggiornarlo manualmente se si modifica la nav.
 
 ## 🤖 Blog Generator (`js/blog-generator.js`)
 - **11 chiamate API sequenziali** (~2-3 min totali). Gira nel browser: se chiudi la pagina si interrompe.
