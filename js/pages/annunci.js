@@ -224,9 +224,7 @@ async function loadListings() {
         // Nota: La RLS del DB garantisce già che l'utente non possa vedere i pending degli altri.
         // Ma per pulizia lato client, se non siamo admin o proprietari, filtriamo gli active.
         if (user) {
-            // Se loggato, la RLS ci permette di tirare giù i nostri pending + tutti gli active.
-            // Usiamo una condizione OR logica per lo status: (status = active OR user_id = mio_id)
-            query = query.or(`status.eq.active,user_id.eq.${user.id}`);
+            query = query.neq('status', 'deleted').or(`status.eq.active,user_id.eq.${user.id}`);
         } else {
             query = query.eq('status', 'active');
         }
