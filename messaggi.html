@@ -250,7 +250,7 @@ function renderConvList() {
                     <p class="font-black text-sm text-slate-900 truncate">${escapeHtml(titolo)}</p>
                     ${lm ? `<p class="text-[10px] text-slate-400 font-semibold flex-shrink-0">${new Date(lm.created_at).toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit' })}</p>` : ''}
                 </div>
-                <p class="text-[11px] text-blue-500 font-semibold truncate">Venditore: ${escapeHtml(venditoreName)}</p>
+                <p class="text-[11px] text-blue-500 font-semibold truncate">${escapeHtml(venditoreName)}</p>
                 <p class="text-xs text-slate-400 font-medium truncate mt-0.5">${preview}</p>
             </div>
         </button>`;
@@ -310,7 +310,7 @@ async function openConversation(convId) {
 
     document.getElementById('chatOtherName').textContent = _chatTitolo;
     const link = document.getElementById('chatListingLink');
-    link.textContent = `Venditore: ${_chatVenditore} · Vedi annuncio →`;
+    link.textContent = `${_chatVenditore} · Vedi annuncio →`;
     if (conv.annuncio?.id) link.href = `annuncio.html?id=${conv.annuncio.id}`;
 
     await loadMessages(convId);
