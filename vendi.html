@@ -250,14 +250,26 @@
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
                     <h2 class="text-2xl font-black mb-1">Quanto chiedi?</h2>
-                    <p id="prezzoSub" class="text-slate-500 font-medium mb-8 text-sm">Prezzo totale di vendita.</p>
+                    <p id="prezzoSub" class="text-slate-500 font-medium mb-6 text-sm">Prezzo totale di vendita.</p>
 
-                    <div class="relative">
-                        <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl font-black text-slate-300 pointer-events-none">€</span>
-                        <input id="fPrezzo" type="text" inputmode="numeric"
-                            placeholder="15000"
-                            class="field-input text-3xl font-black pl-12 py-6"
-                            onkeydown="if(event.key==='Enter'){event.preventDefault();nextStep();}">
+                    <!-- Badge ANNO (solo affitto) -->
+                    <div id="annoBadge" class="hidden mb-5 bg-blue-50 border border-blue-200 rounded-2xl px-5 py-3 flex items-center gap-3">
+                        <i class="fas fa-calendar-alt text-blue-500 text-xl"></i>
+                        <div>
+                            <div class="text-blue-700 font-black text-base uppercase tracking-wide">Prezzo per ANNO</div>
+                            <div class="text-blue-500 text-xs font-semibold">Inserisci il canone annuale totale di affitto</div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center gap-3">
+                        <div class="relative flex-1">
+                            <span class="absolute left-5 top-1/2 -translate-y-1/2 text-2xl font-black text-slate-300 pointer-events-none">€</span>
+                            <input id="fPrezzo" type="text" inputmode="numeric"
+                                placeholder="15000"
+                                class="field-input text-3xl font-black pl-12 py-6"
+                                onkeydown="if(event.key==='Enter'){event.preventDefault();nextStep();}">
+                        </div>
+                        <span id="annoLabel" class="hidden text-2xl font-black text-blue-600 whitespace-nowrap">/ ANNO</span>
                     </div>
                     <p class="text-[10px] text-slate-400 mt-3 font-bold uppercase tracking-widest">Min. 100 € — Max. 10.000.000 €</p>
 
@@ -438,10 +450,12 @@ function _buildSettorePills() {
 
 // ── Step 4: Label prezzo ──────────────────────────────────
 function _updatePrezzoLabel() {
-    document.getElementById('prezzoSub').textContent =
-        document.getElementById('statoAffitto').checked
-            ? 'Canone mensile di affitto.'
-            : 'Prezzo totale di vendita.';
+    const isAffitto = document.getElementById('statoAffitto').checked;
+    document.getElementById('prezzoSub').textContent = isAffitto
+        ? 'Canone annuale di affitto.'
+        : 'Prezzo totale di vendita.';
+    document.getElementById('annoBadge').classList.toggle('hidden', !isAffitto);
+    document.getElementById('annoLabel').classList.toggle('hidden', !isAffitto);
 }
 
 // ── Step 5: Auto-suggest title ────────────────────────────
@@ -462,11 +476,13 @@ function useTemplate() {
     const merce   = document.getElementById('fMerce').value            || '[settore]';
     const giorni  = document.getElementById('fGiorni').value           || '[giorni]';
     const sup     = document.getElementById('fSuperficie').value       || '[m²]';
-    const azione  = document.getElementById('statoAffitto').checked ? 'Affitto' : 'Vendita';
+    const isAffitto = document.getElementById('statoAffitto').checked;
+    const azione    = isAffitto ? 'Affitto' : 'Vendita';
+    const prezzoNote = isAffitto ? 'Canone annuale concordabile. ' : '';
     document.getElementById('fDescrizione').value =
         `${azione} posteggio al ${tipo.toLowerCase()} di ${comune}, settore ${merce}. ` +
         `Superficie ${sup} m², giorni di mercato: ${giorni}. ` +
-        `Canone comunale regolare e in regola con tutti i permessi. ` +
+        `${prezzoNote}Canone comunale regolare e in regola con tutti i permessi. ` +
         `Ottima posizione con clientela fissa. Per informazioni contattatemi.`;
 }
 
