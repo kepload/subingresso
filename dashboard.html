@@ -250,6 +250,7 @@
 <script>
 
 let _currentUser = null;
+let _isAdmin = false;
 
 // ── Init ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
@@ -267,17 +268,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('loadingState').classList.add('hidden');
     document.getElementById('dashContent').classList.remove('hidden');
 
-    if (user.email === 'kycykuardit@gmail.com') {
+    // Fetch profile first — necessario per il check admin
+    const { data: profile } = await _supabase.from('profiles').select('*').eq('id', user.id).single();
+    const nome = profile?.nome || 'Utente';
+
+    // Admin check via DB (non più email hardcodata)
+    _isAdmin = profile?.is_admin === true;
+    if (_isAdmin) {
         document.getElementById('adminBadge').classList.remove('hidden');
         document.getElementById('adminLogout').classList.remove('hidden');
         document.getElementById('adminPanel').classList.remove('hidden');
         loadAdminStats();
         loadAdminBlog();
     }
-
-    // Welcome text
-    const { data: profile } = await _supabase.from('profiles').select('*').eq('id', user.id).single();
-    const nome = profile?.nome || 'Utente';
     document.getElementById('welcomeTitle').textContent = `Ciao, ${nome}!`;
     document.getElementById('userEmail').textContent = user.email;
 
@@ -542,7 +545,7 @@ async function loadMyListings() {
 
 // ── Pending listings (admin view) ────────────────────────
 async function loadPendingListings() {
-    if (_currentUser.email !== 'kycykuardit@gmail.com') return;
+    if (!_isAdmin) return;
 
     try {
         // Tentativo 1: Con join profili

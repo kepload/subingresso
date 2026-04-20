@@ -342,8 +342,6 @@ window.updateAuthNav = async function () {
             }
         } catch (e) {}
         
-        const initial = nome.charAt(0).toUpperCase();
-
         let unread = 0;
         try {
             const { data: convs } = await _supabase
