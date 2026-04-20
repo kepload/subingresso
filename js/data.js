@@ -267,6 +267,7 @@ const _viewedPreviews = new Set();
 function observeCardViews() {
     if (!('IntersectionObserver' in window)) return;
     const cards = document.querySelectorAll('[data-listing-id]');
+    if (!cards.length) return;
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
@@ -274,8 +275,9 @@ function observeCardViews() {
             if (!id || _viewedPreviews.has(id)) return;
             _viewedPreviews.add(id);
             observer.unobserve(entry.target);
-            _supabase.rpc('increment_views', { listing_id: id, amount: 1 }).catch(() => {});
+            _supabase.rpc('increment_views', { listing_id: id, amount: 1 })
+                .catch(e => console.warn('[views +1]', e));
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
     cards.forEach(c => observer.observe(c));
 }

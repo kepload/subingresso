@@ -2,6 +2,13 @@
 
 Questo file è il "Manuale Operativo" per Gemini. Serve a garantire modifiche sicure, veloci e a basso consumo di contesto.
 
+## 🎯 Business Focus (IMPORTANTE)
+
+- **Core attuale:** Subingresso e compravendita di **posteggi mercatali** (mercati pubblici su suolo pubblico, licenze ambulanti tipo A e B).
+- **Espansione futura:** Tutte le **licenze pubbliche** italiane (licenze commerciali, autorizzazioni amministrative, concessioni).
+- **NON è un sito di ristoranti, bar o locali** — il settore è esclusivamente il commercio ambulante su aree pubbliche e le licenze/autorizzazioni pubbliche.
+- Nelle descrizioni, copy e SEO usare sempre termini corretti: "posteggio mercatale", "licenza ambulante", "commercio su aree pubbliche", "subingresso", "autorizzazione amministrativa".
+
 ## 🧠 Strategia di Gestione Contesto (Efficienza)
 
 1. **Approccio Chirurgico:** NON leggere mai interi file HTML o JS se non necessario. Usa `grep_search` per trovare le righe interessate.
@@ -53,6 +60,25 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Avatar upload**: bucket Supabase Storage `avatars` (pubblico). Usa `upsert` non `update` per salvare `avatar_url` in `profiles`. Bucket creato via `SETUP_DEF_SUBINGRESSO.sql`.
 - **Modal profilo in dashboard**: aperto da `goToProfilo()` (click avatar o link in cima). NON esiste più la tab "Profilo" — è diventato un popup. Elemento `profileNameDisplay` rimosso dal DOM: usare `if (nameEl)` prima di settare `.textContent` o crasha silenziosamente bloccando tutto il codice successivo (incluso caricamento avatar).
 - **Storage buckets nel SQL**: sezione 8 del `SETUP_DEF_SUBINGRESSO.sql` crea `avatars` e `listings` con policy RLS. Rieseguire il file completo per crearli.
+
+## 📊 Visualizzazioni Annunci (Aprile 2026)
+- Colonna `visualizzazioni integer DEFAULT 0` in `annunci`. Funzione DB: `increment_views(listing_id uuid, amount integer)` SECURITY DEFINER con GRANT a anon/authenticated.
+- Anteprima card: +1 via IntersectionObserver in `annunci.js` (`_observeCardViews()`), Set `_viewedPreviews` in memoria.
+- Visita diretta: +2 via RPC in `annuncio-detail.js` ad ogni apertura pagina.
+- **`visualizzazioni` NON va nella select principale di `annuncio-detail.js`** — se la colonna manca o RLS la blocca, tutta la query restituisce errore e l'annuncio non si carica. Fetchare in IIFE asincrona isolata dopo il caricamento della pagina.
+- Display: `#viewCount` (span con `id`) + `#viewCountVal` nel title block di `annuncio.html`. Mostrato solo se il fetch ha successo.
+
+## 🖼️ Immagine Annuncio (`annuncio.html`)
+- Il div copertina ha `id="coverDiv"`. Usare `getElementById('coverDiv')` in `annuncio-detail.js` — MAI `querySelector` su classi CSS Tailwind (fragile e causa immagine non caricata).
+
+## 💬 Chat / Conversazioni (`messaggi.html`)
+- La lista conversazioni mostra **titolo posteggio** (primario) + **nome venditore** (secondario in blu) — non il nome utente.
+- L'header della chat aperta mostra titolo posteggio in `#chatOtherName` e `"{nome venditore} · Vedi annuncio →"` in `#chatListingLink`.
+
+## 🔍 SEO & Google (Aprile 2026)
+- `api/sitemap.js`: sitemap dinamica Vercel, auto-include annunci attivi e blog da Supabase. `vercel.json` ha rewrite `/sitemap.xml → /api/sitemap`. Il file statico `sitemap.xml` è stato eliminato.
+- Google Search Console verificato (file `googlead37f27accd4fd2b.html` in root). Sitemap inviato.
+- JSON-LD Product+BreadcrumbList iniettato dinamicamente da `annuncio-detail.js`. JSON-LD ItemList da `annunci.js`. JSON-LD BlogPosting da `blog.html` in `renderPost()`.
 
 ## 🐛 Bug Storici & Soluzioni
 - **`expires_at`**: la colonna potrebbe non esistere nel DB. La query in `annunci.js` NON filtra su di essa — non reintrodurre quel filtro.
