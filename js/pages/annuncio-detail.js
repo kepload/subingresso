@@ -325,26 +325,30 @@ async function initPage() {
 
     // Check proprietario (UI Speciale per il possessore)
     try {
-        const { data: { user } } = await _supabase.auth.getUser();
+        const { data: _authData } = await _supabase.auth.getUser();
+        const user = _authData?.user ?? null;
         console.log("👤 Utente corrente:", user?.id);
         console.log("📝 Proprietario annuncio:", listing.user_id);
 
-        // Fetch tel/email solo per utenti autenticati (mai esposto a utenti anonimi)
-        if (user && listing.id) {
-            const { data: contactData } = await _supabase
-                .from('annunci').select('tel, email').eq('id', listing.id).single();
-            if (contactData) {
-                let finalTel = contactData.tel;
-                if (!finalTel && listing.user_id) {
-                    const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
-                    if (seller && seller.telefono) finalTel = seller.telefono;
+        if (user) {
+            _contactFetched = true; // loggato — settato subito, prima di qualsiasi fetch
+
+            // Fetch tel/email solo per utenti autenticati (mai esposto a utenti anonimi)
+            if (listing.id) {
+                const { data: contactData } = await _supabase
+                    .from('annunci').select('tel, email').eq('id', listing.id).single();
+                if (contactData) {
+                    let finalTel = contactData.tel;
+                    if (!finalTel && listing.user_id) {
+                        const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
+                        if (seller && seller.telefono) finalTel = seller.telefono;
+                    }
+                    _currentListing.tel   = finalTel;
+                    _currentListing.email = contactData.email;
+                    const telEl = document.getElementById('cTel');
+                    if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
                 }
-                _currentListing.tel   = finalTel;
-                _currentListing.email = contactData.email;
-                const telEl = document.getElementById('cTel');
-                if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
             }
-            _contactFetched = true;
         }
 
         if (user && listing.user_id && String(listing.user_id).trim() === String(user.id).trim()) {
@@ -509,6 +513,7 @@ async function restoreContactUI() {
     }
 
     // Fetch tel/email ora che l'utente è autenticato
+    _contactFetched = true; // loggato — settato subito, prima del fetch
     if (_currentListing?.id) {
         try {
             const { data: contactData } = await _supabase
@@ -521,7 +526,6 @@ async function restoreContactUI() {
                 }
                 _currentListing.tel   = finalTel;
                 _currentListing.email = contactData.email;
-                _contactFetched = true;
                 const telEl = document.getElementById('cTel');
                 if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
             }
