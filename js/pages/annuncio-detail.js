@@ -22,7 +22,7 @@ async function loadListing() {
         console.log("📡 Interrogazione Supabase...");
         const { data, error } = await _supabase
             .from('annunci')
-            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier, video_url')
+            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier')
             .eq('id', idParam)
             .maybeSingle();
 
@@ -145,26 +145,6 @@ async function initPage() {
     setTxt('badgeMerce', listing.merce);
     setTxt('titolo', listing.titolo);
     setTxt('descrizione', listing.descrizione);
-
-    if (isFeatured && listing.video_url) {
-        let ytId = '';
-        const url = listing.video_url;
-        if (url.includes('youtube.com/watch')) {
-            try { ytId = new URL(url).searchParams.get('v'); } catch(e) {}
-        } else if (url.includes('youtu.be/')) {
-            ytId = url.split('youtu.be/')[1]?.split('?')[0];
-        }
-        
-        if (ytId) {
-            const descrEl = document.getElementById('descrizione');
-            if (descrEl) {
-                const iframeWrap = document.createElement('div');
-                iframeWrap.className = 'w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-md border border-slate-100';
-                iframeWrap.innerHTML = `<iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${escapeHTML(ytId)}" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-                descrEl.parentNode.insertBefore(iframeWrap, descrEl);
-            }
-        }
-    }
 
     setTxt('dataPub', formatDate(listing.data));
 

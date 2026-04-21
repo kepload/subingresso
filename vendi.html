@@ -304,11 +304,6 @@
                             <textarea id="fDescrizione" placeholder="Descrivi la posizione, la clientela, il canone comunale..." class="field-input mt-1"></textarea>
                             </div>
 
-                            <div>
-                            <label class="field-label">Link YouTube <span class="text-slate-400 font-medium normal-case">(opzionale)</span></label>
-                            <input id="fVideoUrl" type="url" placeholder="es. https://www.youtube.com/watch?v=..." class="field-input">
-                            <p class="text-[10px] text-amber-600 mt-1.5 font-semibold bg-amber-50 px-2 py-1 rounded-md inline-block"><i class="fas fa-crown"></i> Il video sarà visibile sull'annuncio esclusivamente attivando la Vetrina Premium.</p>
-                            </div>
                         <div>
                             <label class="field-label">Foto <span class="text-slate-400 font-medium normal-case">(opzionale, ma aumenta le risposte)</span></label>
                             <div id="dropzone" class="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center hover:border-blue-400 transition cursor-pointer bg-slate-50">
@@ -616,7 +611,6 @@ async function submitAnnuncio() {
         superficie:  parseFloat(document.getElementById('fSuperficie').value),
         giorni:      document.getElementById('fGiorni').value.trim(),
         descrizione: document.getElementById('fDescrizione').value.trim(),
-        video_url:   document.getElementById('fVideoUrl').value.trim() || null,
         prezzo:      parseFloat(document.getElementById('fPrezzo').value),
         stato:       document.querySelector('input[name="stato"]:checked').value,
         user_id:     user.id,

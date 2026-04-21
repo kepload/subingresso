@@ -151,15 +151,9 @@
                 <div class="section-card">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="section-num">3</div>
-                        <h2 class="font-black text-base">Descrizione e Link</h2>
+                        <h2 class="font-black text-base">Descrizione</h2>
                     </div>
                     <textarea id="fDescrizione" class="field-input mb-4"></textarea>
-
-                    <div>
-                        <label class="field-label">Link YouTube <span class="text-slate-400 font-medium normal-case">(opzionale)</span></label>
-                        <input id="fVideoUrl" type="url" placeholder="es. https://www.youtube.com/watch?v=..." class="field-input">
-                        <p class="text-[10px] text-amber-600 mt-1.5 font-semibold bg-amber-50 px-2 py-1 rounded-md inline-block"><i class="fas fa-crown"></i> Il video sarà visibile sull'annuncio esclusivamente attivando la Vetrina Premium.</p>
-                    </div>
                 </div>
 
                 <!-- 4. FOTO -->
@@ -227,7 +221,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('fSuperficie').value = l.superficie;
     document.getElementById('fPrezzo').value = l.prezzo;
     document.getElementById('fDescrizione').value = l.descrizione;
-    if (l.video_url) document.getElementById('fVideoUrl').value = l.video_url;
 
     if (l.stato === 'Vendita') document.getElementById('radioVendita').checked = true;    else document.getElementById('radioAffitto').checked = true;
 
@@ -338,7 +331,6 @@ async function updateAnnuncio() {
             superficie: parseFloat(document.getElementById('fSuperficie').value),
             prezzo,
             descrizione: document.getElementById('fDescrizione').value.trim(),
-            video_url: document.getElementById('fVideoUrl').value.trim() || null,
             stato: document.querySelector('input[name="stato"]:checked').value,
             dettagli_extra: { images: finalImages },
             img_urls: finalImages,
