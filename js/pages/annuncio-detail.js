@@ -113,20 +113,29 @@ async function initPage() {
     const isFeatured = listing.featured === true
         && listing.featured_until
         && new Date(listing.featured_until) > new Date();
-    if (isFeatured) {
-        const titoloEl = document.getElementById('titolo');
-        if (titoloEl && !document.getElementById('featuredBanner')) {
-            const banner = document.createElement('div');
-            banner.id = 'featuredBanner';
-            banner.className = 'inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-400 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg mb-3 shadow-sm';
-            banner.innerHTML = '<i class="fas fa-star"></i> Annuncio in Vetrina';
-            titoloEl.parentNode.insertBefore(banner, titoloEl);
 
-            const badgeVerificato = document.createElement('div');
-            badgeVerificato.className = 'inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg mb-3 shadow-sm ml-2';
-            badgeVerificato.innerHTML = '<i class="fas fa-shield-alt"></i> Dati Verificati';
-            titoloEl.parentNode.insertBefore(badgeVerificato, titoloEl);
+    let badgeContainer = document.getElementById('titleBadges');
+    if (!badgeContainer) {
+        const titoloEl = document.getElementById('titolo');
+        if (titoloEl) {
+            badgeContainer = document.createElement('div');
+            badgeContainer.id = 'titleBadges';
+            badgeContainer.className = 'flex flex-wrap items-center gap-2 mb-3';
+            titoloEl.parentNode.insertBefore(badgeContainer, titoloEl);
         }
+    }
+
+    if (isFeatured && badgeContainer && !document.getElementById('featuredBanner')) {
+        const banner = document.createElement('div');
+        banner.id = 'featuredBanner';
+        banner.className = 'inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-400 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm';
+        banner.innerHTML = '<i class="fas fa-star"></i> Annuncio in Vetrina';
+        badgeContainer.appendChild(banner);
+
+        const badgeVerificato = document.createElement('div');
+        badgeVerificato.className = 'inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm';
+        badgeVerificato.innerHTML = '<i class="fas fa-shield-alt"></i> Dati Verificati';
+        badgeContainer.appendChild(badgeVerificato);
     }
 
     // Campi base (Sicurezza: textContent)
@@ -341,11 +350,19 @@ async function initPage() {
             console.log("✅ Match proprietario confermato!");
             // 1. Aggiungiamo un badge sopra il titolo
             const titoloEl = document.getElementById('titolo');
-            if (titoloEl) {
+            let badgeContainer = document.getElementById('titleBadges');
+            if (!badgeContainer && titoloEl) {
+                badgeContainer = document.createElement('div');
+                badgeContainer.id = 'titleBadges';
+                badgeContainer.className = 'flex flex-wrap items-center gap-2 mb-3';
+                titoloEl.parentNode.insertBefore(badgeContainer, titoloEl);
+            }
+            if (badgeContainer && !document.getElementById('ownerBadge')) {
                 const badge = document.createElement('div');
-                badge.className = 'inline-flex items-center gap-2 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg mb-4 shadow-sm';
+                badge.id = 'ownerBadge';
+                badge.className = 'inline-flex items-center gap-2 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm';
                 badge.innerHTML = '<i class="fas fa-user-check text-blue-400"></i> Il tuo annuncio';
-                titoloEl.parentNode.insertBefore(badge, titoloEl);
+                badgeContainer.appendChild(badge);
             }
 
             // 2. Trasformiamo il pulsante chat in "Modifica Annuncio"
