@@ -215,6 +215,10 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Cron `unfeature-expired-daily`:** pg_cron schedule `'0 3 * * *'` chiama funzione `unfeature_expired()` che azzera `featured*` per annunci con `featured_until < now()`. Se l'Editor web di Supabase mangia gli asterischi, riscriverli a mano.
 - **Secrets Supabase necessari:** `STRIPE_SECRET_KEY` (sk_live/sk_test) e `STRIPE_WEBHOOK_SECRET` (whsec_). Setup step-by-step in `SETUP_STRIPE.md`.
 - **Fiscalità:** Stripe NON è Merchant of Record — serve P.IVA per fatturazione elettronica SDI. Alternativa valutabile in futuro: Lemon Squeezy (MoR, 5% + €0,50).
+- **CRITICO deploy CLI:** `create-checkout-session` va deployata con `--no-verify-jwt` (come `stripe-webhook`). Il gateway Supabase con JWT verify ON restituisce 401 perché il token `sb_publishable_...` (nuovo formato anon key) non supera la validazione gateway — la function già valida il token manualmente dentro il codice.
+- **CRITICO fetch Edge Functions dal browser:** aggiungere sempre `'apikey': SUPABASE_ANON_KEY` negli headers del `fetch()` diretto oltre ad `Authorization: Bearer <token>`. Senza questo header Supabase restituisce 401.
+- **Views automatiche vetrina:** `PATCH_FEATURED_VIEWS.sql` — eseguire in SQL Editor per cron `increment-featured-views` (ogni 6h, +3-8 views casuali per annuncio in vetrina attiva).
+- **Card featured redesign:** glow box-shadow aureo, sfondo `bg-gradient-to-b from-amber-50/50 to-white`, barra top 3px, badge crown + animate-pulse, footer strip "Annuncio in Vetrina ★★★★★".
 
 ## ⚠️ Note Operative Deploy & Troubleshooting (Supabase)
 - **Supabase CLI su Windows:** L'installazione di `supabase` via npm globale fallisce tipicamente su Windows. Per fare il deploy delle Edge Functions, usare l'eseguibile standalone (scaricato da GitHub Releases) o aggiornare il codice manualmente dalla Dashboard web (copia-incolla).
