@@ -22,7 +22,7 @@ async function loadListing() {
         console.log("📡 Interrogazione Supabase...");
         const { data, error } = await _supabase
             .from('annunci')
-            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier')
+            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier, video_url')
             .eq('id', idParam)
             .maybeSingle();
 
@@ -121,6 +121,11 @@ async function initPage() {
             banner.className = 'inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-400 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg mb-3 shadow-sm';
             banner.innerHTML = '<i class="fas fa-star"></i> Annuncio in Vetrina';
             titoloEl.parentNode.insertBefore(banner, titoloEl);
+
+            const badgeVerificato = document.createElement('div');
+            badgeVerificato.className = 'inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg mb-3 shadow-sm ml-2';
+            badgeVerificato.innerHTML = '<i class="fas fa-shield-alt"></i> Dati Verificati';
+            titoloEl.parentNode.insertBefore(badgeVerificato, titoloEl);
         }
     }
 
@@ -131,6 +136,27 @@ async function initPage() {
     setTxt('badgeMerce', listing.merce);
     setTxt('titolo', listing.titolo);
     setTxt('descrizione', listing.descrizione);
+
+    if (isFeatured && listing.video_url) {
+        let ytId = '';
+        const url = listing.video_url;
+        if (url.includes('youtube.com/watch')) {
+            try { ytId = new URL(url).searchParams.get('v'); } catch(e) {}
+        } else if (url.includes('youtu.be/')) {
+            ytId = url.split('youtu.be/')[1]?.split('?')[0];
+        }
+        
+        if (ytId) {
+            const descrEl = document.getElementById('descrizione');
+            if (descrEl) {
+                const iframeWrap = document.createElement('div');
+                iframeWrap.className = 'w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-md border border-slate-100';
+                iframeWrap.innerHTML = `<iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/${escapeHTML(ytId)}" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                descrEl.parentNode.insertBefore(iframeWrap, descrEl);
+            }
+        }
+    }
+
     setTxt('dataPub', formatDate(listing.data));
 
     // Traccia visita diretta (+2) e mostra contatore — completamente asincrono e isolato
@@ -375,6 +401,7 @@ function makeCall() {
         const info = document.getElementById('contactInfo');
         if (btn) btn.classList.add('hidden');
         if (info) info.classList.remove('hidden');
+        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
         window.location.href = `tel:${cleanTel}`;
     });
 }
@@ -434,6 +461,7 @@ function openWhatsApp() {
         const cleanTel = listing.tel.replace(/\D/g, '');
         let finalTel = cleanTel.startsWith('3') && cleanTel.length === 10 ? '39' + cleanTel : cleanTel;
         const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
+        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
         window.open(`https://api.whatsapp.com/send?phone=${finalTel}&text=${text}`, '_blank');
     });
 }
