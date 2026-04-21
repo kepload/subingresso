@@ -402,35 +402,33 @@ async function initPage() {
 // ── Azioni ──────────────────────────────────────────────
 
 function makeCall() {
-    requireAuth(async function () {
-        const listing = _currentListing;
-        if (!listing) return;
+    const listing = _currentListing;
+    if (!listing) return;
 
-        let tel = listing.tel;
-        if (!tel && listing.user_id) {
-            const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
-            if (seller && seller.telefono) {
-                tel = seller.telefono;
-                listing.tel = tel;
+    const tel = listing.tel;
+    if (!tel) {
+        // Se non abbiamo il telefono, proviamo a richiederlo o mostriamo errore
+        requireAuth(async function() {
+            // Se arriviamo qui dopo il login, il numero dovrebbe essere stato caricato da restoreContactUI
+            const updatedListing = _currentListing;
+            if (updatedListing?.tel) {
+                const clean = updatedListing.tel.replace(/\D/g, '');
+                window.location.href = `tel:${clean}`;
+            } else {
+                alert('Numero di telefono non disponibile.');
             }
-        }
+        });
+        return;
+    }
 
-        if (!tel) {
-            alert('Numero di telefono non disponibile.');
-            return;
-        }
-        if (tel.includes('*')) {
-            alert('Numero oscurato per questo annuncio di archivio.');
-            return;
-        }
-        const cleanTel = tel.replace(/\D/g, '');
-        const btn = document.getElementById('contactBtn');
-        const info = document.getElementById('contactInfo');
-        if (btn) btn.classList.add('hidden');
-        if (info) info.classList.remove('hidden');
-        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
-        window.location.href = `tel:${cleanTel}`;
-    });
+    if (tel.includes('*')) {
+        alert('Numero oscurato per questo annuncio di archivio.');
+        return;
+    }
+
+    const cleanTel = tel.replace(/\D/g, '');
+    if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+    window.location.href = `tel:${cleanTel}`;
 }
 
 async function startChat() {
@@ -479,29 +477,36 @@ async function startChat() {
 }
 
 function openWhatsApp() {
-    requireAuth(async function () {
-        const listing = _currentListing;
-        if (!listing) return;
+    const listing = _currentListing;
+    if (!listing) return;
 
-        let tel = listing.tel;
-        if (!tel && listing.user_id) {
-            const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
-            if (seller && seller.telefono) {
-                tel = seller.telefono;
-                listing.tel = tel;
+    const tel = listing.tel;
+    if (!tel) {
+        requireAuth(async function() {
+            const updatedListing = _currentListing;
+            if (updatedListing?.tel) {
+                const clean = updatedListing.tel.replace(/\D/g, '');
+                let finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
+                const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${updatedListing.titolo}". Grazie!`);
+                window.open(`https://api.whatsapp.com/send?phone=${finalTel}&text=${text}`, '_blank');
+            } else {
+                alert('WhatsApp non disponibile per questo annuncio.');
             }
-        }
+        });
+        return;
+    }
 
-        if (!tel || tel.includes('*')) {
-            alert('WhatsApp non disponibile per questo annuncio.');
-            return;
-        }
-        const cleanTel = tel.replace(/\D/g, '');
-        let finalTel = cleanTel.startsWith('3') && cleanTel.length === 10 ? '39' + cleanTel : cleanTel;
-        const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
-        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
-        window.open(`https://api.whatsapp.com/send?phone=${finalTel}&text=${text}`, '_blank');
-    });
+    if (tel.includes('*')) {
+        alert('WhatsApp non disponibile per questo annuncio.');
+        return;
+    }
+
+    const cleanTel = tel.replace(/\D/g, '');
+    let finalTel = cleanTel.startsWith('3') && cleanTel.length === 10 ? '39' + cleanTel : cleanTel;
+    const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
+    
+    if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+    window.open(`https://api.whatsapp.com/send?phone=${finalTel}&text=${text}`, '_blank');
 }
 
 // Maschera numeri di telefono italiani (mobile 3xx e fissi 0x)
