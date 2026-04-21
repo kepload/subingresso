@@ -333,10 +333,15 @@ async function initPage() {
             const { data: contactData } = await _supabase
                 .from('annunci').select('tel, email').eq('id', listing.id).single();
             if (contactData) {
-                _currentListing.tel   = contactData.tel;
+                let finalTel = contactData.tel;
+                if (!finalTel && listing.user_id) {
+                    const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
+                    if (seller && seller.telefono) finalTel = seller.telefono;
+                }
+                _currentListing.tel   = finalTel;
                 _currentListing.email = contactData.email;
                 const telEl = document.getElementById('cTel');
-                if (telEl) telEl.textContent = contactData.tel || 'Contatto riservato';
+                if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
             }
         }
 
@@ -527,10 +532,15 @@ async function restoreContactUI() {
             const { data: contactData } = await _supabase
                 .from('annunci').select('tel, email').eq('id', _currentListing.id).single();
             if (contactData) {
-                _currentListing.tel   = contactData.tel;
+                let finalTel = contactData.tel;
+                if (!finalTel && _currentListing.user_id) {
+                    const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', _currentListing.user_id).single();
+                    if (seller && seller.telefono) finalTel = seller.telefono;
+                }
+                _currentListing.tel   = finalTel;
                 _currentListing.email = contactData.email;
                 const telEl = document.getElementById('cTel');
-                if (telEl) telEl.textContent = contactData.tel || 'Contatto riservato';
+                if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
             }
         } catch (_) {}
     }
