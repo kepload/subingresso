@@ -82,29 +82,44 @@ Deno.serve(async (req) => {
       created_at: string;
     };
 
-    // Log diagnostico (visibile in Supabase → Logs)
+    // Log diagnostico COMPLETO (visibile in Supabase → Logs)
+    // Cattura tutto il payload per debug se ancora arrivano falsi positivi
     console.log(JSON.stringify({
       event: 'notify-alert:received',
       type: payload.type,
       annuncio_id: annuncio?.id,
+      titolo: annuncio?.titolo,
       new_status: annuncio?.status,
       has_old_record: payload.old_record != null,
       old_status: payload.old_record?.status ?? null,
+      old_record_keys: payload.old_record ? Object.keys(payload.old_record) : null,
       created_at: annuncio?.created_at,
+      age_hours: annuncio?.created_at
+        ? ((Date.now() - new Date(annuncio.created_at).getTime()) / 3600000).toFixed(2)
+        : null,
     }));
 
-    // ── CONTROLLO 1: tipo evento ──
-    // INSERT già active (admin pubblica) OPPURE UPDATE che porta ad active.
-    // Se old_record c'è: richiedo pending→active (strict, evita riattivazioni).
-    // Se old_record manca: lascio passare — freschezza+dedup bloccano spam.
+    // ── CONTROLLO 1: tipo evento (STRICT) ──
+    // INSERT + status=active → OK (admin pubblica direttamente)
+    // UPDATE + status=active + old_record.status=='pending' → OK (prima approvazione)
+    // TUTTO IL RESTO → NO EMAIL. Nessun fallback permissivo.
+    // Se webhook non include old_record: UPDATE non manda mai email.
+    //   In quel caso l'approvazione admin è silenziosa (accettabile trade-off:
+    //   meglio zero email rispetto a email fantasma).
     const isNewActive = payload.type === 'INSERT' && annuncio.status === 'active';
-    const isUpdateToActive = payload.type === 'UPDATE' && annuncio.status === 'active';
-    const hasOldRecord = payload.old_record != null;
-    const isJustApproved = isUpdateToActive
-      && (!hasOldRecord || payload.old_record.status === 'pending');
+    const isJustApproved = payload.type === 'UPDATE'
+      && annuncio.status === 'active'
+      && payload.old_record != null
+      && payload.old_record.status === 'pending';
 
     if (!isNewActive && !isJustApproved) {
-      console.log('notify-alert:skipped (not a new/approved active listing)');
+      console.log(JSON.stringify({
+        event: 'notify-alert:skipped',
+        reason: 'not a new insert active or a pending→active approval',
+        type: payload.type,
+        new_status: annuncio.status,
+        old_status: payload.old_record?.status ?? null,
+      }));
       return new Response('Not active', { status: 200 });
     }
 

@@ -24,17 +24,27 @@ Deno.serve(async (req) => {
     // Determina il tipo di notifica
     let tipo: 'ricevuto' | 'online' | null = null;
 
+    // Log diagnostico completo
+    console.log(JSON.stringify({
+      event: 'notify-seller:received',
+      type: payload.type,
+      annuncio_id: record?.id,
+      new_status: record?.status,
+      has_old_record: oldRecord != null,
+      old_status: oldRecord?.status ?? null,
+    }));
+
+    // STRICT: solo INSERT o UPDATE pending→active esplicito.
+    // Niente fallback permissivo → se old_record manca, UPDATE non invia nulla.
     if (payload.type === 'INSERT') {
       tipo = 'ricevuto';
-    } else if (payload.type === 'UPDATE' && record.status === 'active') {
-      // Se old_record è presente: richiedo pending→active (strict).
-      // Se manca: lascio passare (webhook potrebbe non includerlo) e mi affido
-      //          al check freschezza lato client: se created_at è vecchio, skip.
-      const freshEnough = record.created_at
-        ? (Date.now() - new Date(record.created_at).getTime()) < 24 * 60 * 60 * 1000
-        : true;
-      if (!oldRecord && freshEnough) tipo = 'online';
-      else if (oldRecord?.status === 'pending') tipo = 'online';
+    } else if (
+      payload.type === 'UPDATE'
+      && record.status === 'active'
+      && oldRecord != null
+      && oldRecord.status === 'pending'
+    ) {
+      tipo = 'online';
     }
 
     if (!tipo) return new Response('Ignored', { status: 200 });
