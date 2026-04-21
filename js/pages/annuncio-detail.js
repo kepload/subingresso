@@ -195,15 +195,29 @@ async function initPage() {
         try { extra = JSON.parse(extra); } catch(e) { extra = null; }
     }
     
-    const firstImg = (listing.img_urls && listing.img_urls[0]) || (extra && extra.images && extra.images[0]);
+    const allImgs = (listing.img_urls && listing.img_urls.length > 0) ? listing.img_urls : (extra && extra.images ? extra.images : []);
+    const showImgs = isFeatured ? allImgs : (allImgs.length > 0 ? [allImgs[0]] : []);
     
-    if (coverContainer && firstImg) {
-        // Rimuoviamo l'icona e mettiamo l'immagine
+    if (coverContainer && showImgs.length > 0) {
+        let imgsHtml = '';
+        if (showImgs.length === 1) {
+            imgsHtml = `<img src="${escapeHTML(showImgs[0])}" alt="${escapeHTML(listing.titolo)}" class="w-full h-full object-cover">`;
+        } else {
+            imgsHtml = `
+                <div class="flex overflow-x-auto snap-x snap-mandatory h-full w-full no-scrollbar">
+                    ${showImgs.map(img => `<img src="${escapeHTML(img)}" alt="${escapeHTML(listing.titolo)}" class="w-full h-full object-cover flex-shrink-0 snap-center min-w-full">`).join('')}
+                </div>
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-sm text-white text-[10px] font-black px-3 py-1.5 rounded-full z-10 pointer-events-none flex items-center gap-1.5 shadow-md">
+                    <i class="fas fa-arrows-alt-h"></i> Scorri le ${showImgs.length} foto
+                </div>
+            `;
+        }
+
         coverContainer.innerHTML = `
-            <img src="${escapeHTML(firstImg)}" alt="${escapeHTML(listing.titolo)}" class="w-full h-full object-cover">
-            <span id="statoBadge" class="absolute top-6 left-6 text-white text-xs font-black px-4 py-2 rounded-xl shadow-lg uppercase tracking-widest ${listing.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'}">${escapeHTML(listing.stato)}</span>
+            ${imgsHtml}
+            <span id="statoBadge" class="absolute top-6 left-6 z-10 text-white text-xs font-black px-4 py-2 rounded-xl shadow-lg uppercase tracking-widest ${listing.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'}">${escapeHTML(listing.stato)}</span>
         `;
-        _setMeta('ogImage', firstImg);
+        _setMeta('ogImage', showImgs[0]);
     }
 
     // JSON-LD strutturato (Product + BreadcrumbList) — generato automaticamente per ogni annuncio

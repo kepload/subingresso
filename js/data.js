@@ -190,7 +190,20 @@ function buildCard(l, isSmall = false, distance = null) {
     const imgTag = (() => {
         let extra = l.dettagli_extra;
         if (typeof extra === 'string') { try { extra = JSON.parse(extra); } catch(e) { extra = null; } }
-        const img = (l.img_urls && l.img_urls[0]) || (extra && extra.images && extra.images[0]);
+        
+        let img = null;
+        const allImgs = (l.img_urls && l.img_urls.length > 0) ? l.img_urls : (extra && extra.images && extra.images.length > 0 ? extra.images : []);
+        
+        if (allImgs.length > 0) {
+            if (featured && allImgs.length > 1) {
+                // Rotazione Dinamica Vetrina: Sceglie una foto a caso per questo render
+                const randomIdx = Math.floor(Math.random() * allImgs.length);
+                img = allImgs[randomIdx];
+            } else {
+                img = allImgs[0];
+            }
+        }
+
         return img ? `<img src="${escapeHTML(img)}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
     })();
 
