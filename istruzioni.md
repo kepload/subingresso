@@ -172,6 +172,16 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Bottoni header: messaggi e profilo sono `w-9/w-10 rounded-lg/xl bg-slate-100` — icona `fa-user` per profilo (non più lettera iniziale).
 - `dashboard.html` ha header hardcoded (non usa `ui-components.js`) — aggiornarlo manualmente se si modifica la nav.
 
+## 📬 Email Settimanali (Digest + Stats) — Aprile 2026
+- 3 nuove Edge Functions: `weekly-buyer-digest` (lunedì: top annunci in zona), `weekly-seller-stats` (lunedì: views/delta ai venditori), `email-unsubscribe` (1-click da link email).
+- Tabelle dedicate: `weekly_digest_log(user_id, week_start)` PK anti-doppio-invio; `weekly_stats_snapshot(user_id, week_start, total_views, active_listings)` per delta settimana-su-settimana.
+- Colonne nuove `profiles`: `email_digest bool`, `email_stats bool`, `unsub_token text` (UUID senza trattini, indexed).
+- UI preferenze: 2 checkbox nel modal profilo di `dashboard.html` (pre-fill da profile, update via saveProfile).
+- Pagina `unsubscribe.html` (noindex): chiama edge function `email-unsubscribe` via POST con `{token, type}`. type può essere `digest`, `stats`, `all`.
+- **Verify JWT deve essere DISATTIVATO** sulle 3 function (cron + unsubscribe accedono senza utente loggato).
+- Cron Supabase via `pg_cron` + `pg_net`: `0 9 * * 1` (lunedì 9:00 UTC). Setup completo in `SETUP_WEEKLY_EMAILS.md`.
+- Regole anti-spam: digest skip se <3 annunci rilevanti per utente; stats skip se 0 views settimana; entrambi skip se già inviato (via log/snapshot).
+
 ## 📧 Edge Functions — Alert Email (`notify-alert` + `notify-seller`)
 - `SITE_URL = 'https://subingresso.it'` (senza www) in tutte e 3 le notify functions.
 - **Check UPDATE STRICT**: richiede `old_record.status === 'pending'` (non `!== 'active'`, che passava con undefined → email fantasma). Solo prima approvazione pending→active triggera email, le riattivazioni da 'deleted'/'scaduto' non mandano nulla.

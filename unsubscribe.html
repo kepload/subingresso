@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disiscrizione email — Subingresso.it</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+
+<div class="max-w-md w-full bg-white rounded-3xl shadow-lg border border-slate-100 overflow-hidden">
+    <div class="bg-blue-600 p-8 text-center">
+        <a href="/" class="text-white text-2xl font-black tracking-tight">Subingresso<span class="opacity-70">.it</span></a>
+    </div>
+
+    <div class="p-8" id="content">
+        <div id="loading" class="text-center py-8">
+            <i class="fas fa-spinner fa-spin text-3xl text-blue-500"></i>
+            <p class="mt-4 text-slate-500 font-medium text-sm">Disiscrizione in corso...</p>
+        </div>
+
+        <div id="success" class="hidden text-center py-4">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-green-600 text-2xl"></i>
+            </div>
+            <h1 class="text-2xl font-black text-slate-900 mb-2">Disiscrizione effettuata</h1>
+            <p class="text-slate-500 font-medium text-sm mb-6" id="successMsg">Non riceverai più questo tipo di email.</p>
+            <p class="text-xs text-slate-400 mb-6">Puoi sempre riattivare le notifiche dalla tua dashboard &gt; Preferenze email.</p>
+            <a href="/" class="inline-block bg-slate-900 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-slate-800 transition-colors">
+                Torna al sito →
+            </a>
+        </div>
+
+        <div id="error" class="hidden text-center py-4">
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-exclamation text-red-600 text-2xl"></i>
+            </div>
+            <h1 class="text-2xl font-black text-slate-900 mb-2">Link non valido</h1>
+            <p class="text-slate-500 font-medium text-sm mb-6" id="errorMsg">Il link di disiscrizione è scaduto o non valido.</p>
+            <a href="/dashboard.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition-colors">
+                Gestisci dal tuo account →
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script>
+(async () => {
+    const params = new URLSearchParams(location.search);
+    const token = params.get('t');
+    const type  = params.get('type') || 'all';
+
+    const loading = document.getElementById('loading');
+    const success = document.getElementById('success');
+    const errorEl = document.getElementById('error');
+    const successMsg = document.getElementById('successMsg');
+    const errorMsg   = document.getElementById('errorMsg');
+
+    if (!token) {
+        loading.classList.add('hidden');
+        errorEl.classList.remove('hidden');
+        errorMsg.textContent = 'Link non valido: token mancante.';
+        return;
+    }
+
+    try {
+        const res = await fetch(`${SUPABASE_URL}/functions/v1/email-unsubscribe`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+            body: JSON.stringify({ token, type })
+        });
+        const data = await res.json();
+
+        loading.classList.add('hidden');
+
+        if (data.ok) {
+            success.classList.remove('hidden');
+            if (type === 'digest')      successMsg.textContent = 'Non riceverai più il riepilogo settimanale degli annunci.';
+            else if (type === 'stats')  successMsg.textContent = 'Non riceverai più le statistiche settimanali dei tuoi annunci.';
+            else                        successMsg.textContent = 'Sei stato disiscritto da tutte le email promozionali.';
+        } else {
+            errorEl.classList.remove('hidden');
+            errorMsg.textContent = data.error || 'Impossibile completare la disiscrizione.';
+        }
+    } catch (e) {
+        loading.classList.add('hidden');
+        errorEl.classList.remove('hidden');
+        errorMsg.textContent = 'Errore di connessione. Riprova tra qualche minuto.';
+    }
+})();
+</script>
+
+</body>
+</html>

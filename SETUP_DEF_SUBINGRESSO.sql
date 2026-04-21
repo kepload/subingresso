@@ -285,7 +285,40 @@ create table if not exists public.notify_alert_log (
 alter table public.notify_alert_log enable row level security;
 -- Solo service_role legge/scrive (edge function). Nessuna policy = nessun accesso client.
 
--- ── 11. RELOAD SCHEMA CACHE ──────────────────────────────────
+-- ── 11. EMAIL WEEKLY DIGEST & STATS ──────────────────────────
+-- Preferenze email per utente (default ON, facile disattivare via unsubscribe)
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS email_digest boolean DEFAULT true;
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS email_stats  boolean DEFAULT true;
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS unsub_token  text DEFAULT replace(gen_random_uuid()::text, '-', '');
+
+-- Backfill token per profili esistenti (idempotente)
+UPDATE public.profiles SET unsub_token = replace(gen_random_uuid()::text, '-', '')
+WHERE unsub_token IS NULL;
+
+-- Index per lookup rapido via token in email-unsubscribe
+create index if not exists idx_profiles_unsub_token on public.profiles (unsub_token);
+
+-- Snapshot settimanale views (per calcolare delta settimana-su-settimana)
+create table if not exists public.weekly_stats_snapshot (
+    user_id         uuid not null,
+    week_start      date not null,
+    total_views     integer default 0,
+    active_listings integer default 0,
+    sent_at         timestamptz default now(),
+    primary key (user_id, week_start)
+);
+alter table public.weekly_stats_snapshot enable row level security;
+
+-- Log digest acquirenti (evita doppio invio nella stessa settimana)
+create table if not exists public.weekly_digest_log (
+    user_id    uuid not null,
+    week_start date not null,
+    sent_at    timestamptz default now(),
+    primary key (user_id, week_start)
+);
+alter table public.weekly_digest_log enable row level security;
+
+-- ── 12. RELOAD SCHEMA CACHE ──────────────────────────────────
 -- Forza PostgREST a ricaricare lo schema (risolve errori "column not found")
 NOTIFY pgrst, 'reload schema';
 
