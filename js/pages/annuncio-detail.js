@@ -416,10 +416,6 @@ function makeCall() {
         if (tel.includes('*')) { alert('Numero oscurato per questo annuncio di archivio.'); return; }
 
         const cleanTel = tel.replace(/\D/g, '');
-        const btn  = document.getElementById('contactBtn');
-        const info = document.getElementById('contactInfo');
-        if (btn)  btn.classList.add('hidden');
-        if (info) info.classList.remove('hidden');
         if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
         window.location.href = `tel:${cleanTel}`;
     });
