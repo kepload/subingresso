@@ -397,17 +397,28 @@ async function initPage() {
 // ── Azioni ──────────────────────────────────────────────
 
 function makeCall() {
-    requireAuth(function () {
+    requireAuth(async function () {
         const listing = _currentListing;
-        if (!listing || !listing.tel) {
+        if (!listing) return;
+
+        let tel = listing.tel;
+        if (!tel && listing.user_id) {
+            const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
+            if (seller && seller.telefono) {
+                tel = seller.telefono;
+                listing.tel = tel;
+            }
+        }
+
+        if (!tel) {
             alert('Numero di telefono non disponibile.');
             return;
         }
-        if (listing.tel.includes('*')) {
+        if (tel.includes('*')) {
             alert('Numero oscurato per questo annuncio di archivio.');
             return;
         }
-        const cleanTel = listing.tel.replace(/\D/g, '');
+        const cleanTel = tel.replace(/\D/g, '');
         const btn = document.getElementById('contactBtn');
         const info = document.getElementById('contactInfo');
         if (btn) btn.classList.add('hidden');
@@ -463,13 +474,24 @@ async function startChat() {
 }
 
 function openWhatsApp() {
-    requireAuth(function () {
+    requireAuth(async function () {
         const listing = _currentListing;
-        if (!listing || !listing.tel || listing.tel.includes('*')) {
+        if (!listing) return;
+
+        let tel = listing.tel;
+        if (!tel && listing.user_id) {
+            const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
+            if (seller && seller.telefono) {
+                tel = seller.telefono;
+                listing.tel = tel;
+            }
+        }
+
+        if (!tel || tel.includes('*')) {
             alert('WhatsApp non disponibile per questo annuncio.');
             return;
         }
-        const cleanTel = listing.tel.replace(/\D/g, '');
+        const cleanTel = tel.replace(/\D/g, '');
         let finalTel = cleanTel.startsWith('3') && cleanTel.length === 10 ? '39' + cleanTel : cleanTel;
         const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
         if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
