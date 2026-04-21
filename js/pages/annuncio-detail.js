@@ -229,7 +229,7 @@ async function initPage() {
                 "name": listing.titolo,
                 "description": _desc,
                 "url": window.location.href,
-                ...(firstImg ? { "image": firstImg } : {}),
+                ...(showImgs[0] ? { "image": showImgs[0] } : {}),
                 "offers": {
                     "@type": "Offer",
                     "priceCurrency": "EUR",
