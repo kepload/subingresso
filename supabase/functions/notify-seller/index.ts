@@ -26,9 +26,15 @@ Deno.serve(async (req) => {
 
     if (payload.type === 'INSERT') {
       tipo = 'ricevuto';
-    } else if (payload.type === 'UPDATE' && record.status === 'active' && oldRecord?.status === 'pending') {
-      // Strict: solo pending→active (prima approvazione). Evita email su riattivazioni random.
-      tipo = 'online';
+    } else if (payload.type === 'UPDATE' && record.status === 'active') {
+      // Se old_record è presente: richiedo pending→active (strict).
+      // Se manca: lascio passare (webhook potrebbe non includerlo) e mi affido
+      //          al check freschezza lato client: se created_at è vecchio, skip.
+      const freshEnough = record.created_at
+        ? (Date.now() - new Date(record.created_at).getTime()) < 24 * 60 * 60 * 1000
+        : true;
+      if (!oldRecord && freshEnough) tipo = 'online';
+      else if (oldRecord?.status === 'pending') tipo = 'online';
     }
 
     if (!tipo) return new Response('Ignored', { status: 200 });

@@ -94,13 +94,14 @@ Deno.serve(async (req) => {
     }));
 
     // ── CONTROLLO 1: tipo evento ──
-    // INSERT già active (admin pubblica) OPPURE UPDATE pending→active (prima approvazione)
-    // Strict: richiedo old_record.status === 'pending' per evitare riattivazioni/UPDATE random
+    // INSERT già active (admin pubblica) OPPURE UPDATE che porta ad active.
+    // Se old_record c'è: richiedo pending→active (strict, evita riattivazioni).
+    // Se old_record manca: lascio passare — freschezza+dedup bloccano spam.
     const isNewActive = payload.type === 'INSERT' && annuncio.status === 'active';
-    const isJustApproved = payload.type === 'UPDATE'
-      && payload.old_record != null
-      && annuncio.status === 'active'
-      && payload.old_record.status === 'pending';
+    const isUpdateToActive = payload.type === 'UPDATE' && annuncio.status === 'active';
+    const hasOldRecord = payload.old_record != null;
+    const isJustApproved = isUpdateToActive
+      && (!hasOldRecord || payload.old_record.status === 'pending');
 
     if (!isNewActive && !isJustApproved) {
       console.log('notify-alert:skipped (not a new/approved active listing)');
