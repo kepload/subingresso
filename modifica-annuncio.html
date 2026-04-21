@@ -154,6 +154,17 @@
                         <h2 class="font-black text-base">Descrizione</h2>
                     </div>
                     <textarea id="fDescrizione" class="field-input mb-4"></textarea>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                        <div>
+                            <label class="field-label">Nome Contatto *</label>
+                            <input id="fNome" type="text" placeholder="Il tuo nome" class="field-input bg-blue-50/50">
+                        </div>
+                        <div>
+                            <label class="field-label">Telefono (WhatsApp) *</label>
+                            <input id="fTel" type="tel" placeholder="es. 333 1234567" class="field-input bg-blue-50/50">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 4. FOTO -->
@@ -221,6 +232,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('fSuperficie').value = l.superficie;
     document.getElementById('fPrezzo').value = l.prezzo;
     document.getElementById('fDescrizione').value = l.descrizione;
+    if (l.contatto) document.getElementById('fNome').value = l.contatto;
+    if (l.tel) document.getElementById('fTel').value = l.tel;
 
     if (l.stato === 'Vendita') document.getElementById('radioVendita').checked = true;    else document.getElementById('radioAffitto').checked = true;
 
@@ -291,8 +304,15 @@ async function updateAnnuncio() {
     const prezzo = parseFloat(document.getElementById('fPrezzo').value);
 
     const descrizione = document.getElementById('fDescrizione').value.trim();
+    const nome = document.getElementById('fNome').value.trim();
+    const tel = document.getElementById('fTel').value.trim();
+
     if (!titolo || !regione || !comune) {
         alert('Compila tutti i campi obbligatori: Titolo, Regione e Comune.');
+        return;
+    }
+    if (!nome || !tel) {
+        alert('Compila i campi contatto: Nome e Telefono.');
         return;
     }
     if (isNaN(prezzo) || prezzo < 100) {
@@ -330,7 +350,9 @@ async function updateAnnuncio() {
             comune,
             superficie: parseFloat(document.getElementById('fSuperficie').value),
             prezzo,
-            descrizione: document.getElementById('fDescrizione').value.trim(),
+            descrizione,
+            contatto: nome,
+            tel: tel,
             stato: document.querySelector('input[name="stato"]:checked').value,
             dettagli_extra: { images: finalImages },
             img_urls: finalImages,

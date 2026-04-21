@@ -304,6 +304,17 @@
                             <textarea id="fDescrizione" placeholder="Descrivi la posizione, la clientela, il canone comunale..." class="field-input mt-1"></textarea>
                             </div>
 
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="field-label">Nome Contatto *</label>
+                                <input id="fNome" type="text" placeholder="Il tuo nome" class="field-input bg-blue-50/50">
+                            </div>
+                            <div>
+                                <label class="field-label">Telefono (WhatsApp) *</label>
+                                <input id="fTel" type="tel" placeholder="es. 333 1234567" class="field-input bg-blue-50/50">
+                            </div>
+                        </div>
+
                         <div>
                             <label class="field-label">Foto <span class="text-slate-400 font-medium normal-case">(opzionale, ma aumenta le risposte)</span></label>
                             <div id="dropzone" class="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center hover:border-blue-400 transition cursor-pointer bg-slate-50">
@@ -398,6 +409,10 @@ function _validateStep(n) {
     if (n === 5) {
         if (!document.getElementById('fTitolo').value.trim())
             return _err('Inserisci un titolo per il tuo annuncio.');
+        if (!document.getElementById('fNome').value.trim())
+            return _err('Inserisci il nome di contatto.');
+        if (!document.getElementById('fTel').value.trim())
+            return _err('Inserisci un numero di telefono (WhatsApp).');
     }
     return true;
 }
@@ -522,7 +537,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Auth
     const user = await getCurrentUser();
-    if (!user) document.getElementById('authBanner').classList.remove('hidden');
+    if (!user) {
+        document.getElementById('authBanner').classList.remove('hidden');
+    } else {
+        const { data: profile } = await _supabase.from('profiles').select('nome, cognome, telefono').eq('id', user.id).single();
+        if (profile) {
+            document.getElementById('fNome').value = `${profile.nome || ''} ${profile.cognome || ''}`.trim() || user.email.split('@')[0];
+            document.getElementById('fTel').value = profile.telefono || '';
+        } else {
+            document.getElementById('fNome').value = user.email.split('@')[0];
+        }
+    }
 });
 
 try {
@@ -616,15 +641,9 @@ async function submitAnnuncio() {
         user_id:     user.id,
         status:      checkContent(document.getElementById('fTitolo').value.trim(), document.getElementById('fDescrizione').value.trim()),
         expires_at:  expiresAt.toISOString(),
-        contatto:    '',
-        tel:         ''
+        contatto:    document.getElementById('fNome').value.trim(),
+        tel:         document.getElementById('fTel').value.trim()
     };
-
-    const { data: profile } = await _supabase.from('profiles').select('nome, cognome, telefono').eq('id', user.id).single();
-    if (profile) {
-        form.contatto = `${profile.nome || ''} ${profile.cognome || ''}`.trim() || user.email.split('@')[0];
-        form.tel = profile.telefono || '';
-    }
 
     try {
         const imageUrls = [];
