@@ -22,7 +22,7 @@ async function loadListing() {
         console.log("📡 Interrogazione Supabase...");
         const { data, error } = await _supabase
             .from('annunci')
-            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at')
+            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier')
             .eq('id', idParam)
             .maybeSingle();
 
@@ -106,6 +106,21 @@ async function initPage() {
             statoBadge.classList.add('bg-emerald-500');
         } else {
             statoBadge.classList.add('bg-blue-600');
+        }
+    }
+
+    // Banner "In Vetrina" se l'annuncio è featured e non scaduto
+    const isFeatured = listing.featured === true
+        && listing.featured_until
+        && new Date(listing.featured_until) > new Date();
+    if (isFeatured) {
+        const titoloEl = document.getElementById('titolo');
+        if (titoloEl && !document.getElementById('featuredBanner')) {
+            const banner = document.createElement('div');
+            banner.id = 'featuredBanner';
+            banner.className = 'inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-400 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg mb-3 shadow-sm';
+            banner.innerHTML = '<i class="fas fa-star"></i> Annuncio in Vetrina';
+            titoloEl.parentNode.insertBefore(banner, titoloEl);
         }
     }
 

@@ -75,7 +75,13 @@ function applyFilters() {
                 return true;
             });
 
-        results.sort((a, b) => a._distance - b._distance);
+        // Featured sempre in cima, poi per distanza
+        results.sort((a, b) => {
+            const fa = isListingFeatured(a) ? 1 : 0;
+            const fb = isListingFeatured(b) ? 1 : 0;
+            if (fa !== fb) return fb - fa;
+            return a._distance - b._distance;
+        });
     } else {
         // Ricerca per testo libero (settore, parola chiave, ecc.)
         results = LISTINGS.filter(l => {
@@ -97,12 +103,18 @@ function applyFilters() {
         });
 
         // Sort manuale
-        if (fSort) {
-            const sortVal = fSort.value;
-            if (sortVal === 'prezzoAsc') results.sort((a, b) => (a.prezzo || 0) - (b.prezzo || 0));
-            else if (sortVal === 'prezzoDesc') results.sort((a, b) => (b.prezzo || 0) - (a.prezzo || 0));
-            else if (sortVal === 'superficie') results.sort((a, b) => (b.superficie || 0) - (a.superficie || 0));
-        }
+        const sortVal = fSort ? fSort.value : '';
+        if (sortVal === 'prezzoAsc') results.sort((a, b) => (a.prezzo || 0) - (b.prezzo || 0));
+        else if (sortVal === 'prezzoDesc') results.sort((a, b) => (b.prezzo || 0) - (a.prezzo || 0));
+        else if (sortVal === 'superficie') results.sort((a, b) => (b.superficie || 0) - (a.superficie || 0));
+        // else: ordine naturale da Supabase (created_at DESC)
+
+        // Featured sempre in cima (stable sort: non disturba l'ordine tra non-featured)
+        results.sort((a, b) => {
+            const fa = isListingFeatured(a) ? 1 : 0;
+            const fb = isListingFeatured(b) ? 1 : 0;
+            return fb - fa;
+        });
     }
 
     // render con transizione

@@ -154,11 +154,24 @@ function normalizeText(t) {
 
 // ── Card Builder ──────────────────────────────────────────
 
+function isListingFeatured(l) {
+    return l && l.featured === true
+        && l.featured_until
+        && new Date(l.featured_until) > new Date();
+}
+
 function buildCard(l, isSmall = false, distance = null) {
     const annuncioUrl = `annuncio.html?id=${escapeHTML(l.id)}`;
     const profiloUrl  = l.user_id ? `profilo.html?id=${escapeHTML(l.user_id)}` : null;
     const distTag = (distance !== null && distance !== Infinity)
         ? `<span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded-lg shadow-sm">a ${Math.round(distance)} km</span>`
+        : '';
+    const featured = isListingFeatured(l);
+    const featuredBorder = featured
+        ? 'ring-2 ring-amber-300 shadow-lg shadow-amber-100/60'
+        : 'border border-slate-100';
+    const featuredBadge = featured
+        ? `<span class="bg-gradient-to-r from-amber-400 to-orange-400 text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-sm flex items-center gap-1"><i class="fas fa-star text-[9px]"></i> Vetrina</span>`
         : '';
 
     // Badge venditore: usa oldest listing come proxy data iscrizione
@@ -182,7 +195,8 @@ function buildCard(l, isSmall = false, distance = null) {
     })();
 
     return `
-    <div data-listing-id="${escapeHTML(l.id)}" class="group bg-white rounded-2xl sm:rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full">
+    <div data-listing-id="${escapeHTML(l.id)}" class="group bg-white rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full relative">
+        ${featured ? `<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 z-10"></div>` : ''}
         <!-- cover -->
         <a href="${annuncioUrl}" class="block relative h-20 sm:h-28 bg-slate-100 overflow-hidden flex-shrink-0">
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
@@ -190,6 +204,7 @@ function buildCard(l, isSmall = false, distance = null) {
             </div>
             ${imgTag}
             <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                ${featuredBadge}
                 <span class="${l.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'} text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-sm">${l.stato === 'Affitto mensile' ? 'Affitto' : escapeHTML(l.stato)}</span>
                 ${l.status && l.status !== 'active' ? `<span class="bg-amber-500 text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-sm">In Revisione</span>` : ''}
                 ${distTag}

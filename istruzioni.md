@@ -197,3 +197,26 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Lo step finale chiede **solo** `title/slug/excerpt` (NON il content nel JSON) — il content viene usato direttamente dalla variabile JS.
 - Pulizia markdown: prima regex locale, poi AI solo se trovate tabelle `| pipe |` residue.
 - Anti-duplicati: prompt con lista temi vietati + controllo similarità titolo (>50% parole) prima di pubblicare.
+
+## 💎 Sistema Vetrina a Pagamento (Aprile 2026)
+- **Tier attivi:** €19 per 30 giorni, €39 per 90 giorni (-32% sul tier breve). Prezzi hardcoded server-side in `supabase/functions/create-checkout-session/index.ts` (TIERS = `{ '30d': 1900, '90d': 3900 }`) — il client NON può passare un amount custom.
+- **Schema DB:** colonne nuove su `annunci`: `featured bool`, `featured_until timestamptz`, `featured_tier text`, `featured_since timestamptz`. Tabella nuova `payments` con RLS (ogni utente vede solo le proprie righe). Setup completo in `SETUP_VETRINA.sql`.
+- **Trigger `enforce_annunci_status` esteso:** ora blocca anche auto-modifiche al campo `featured*` da parte di utenti non-admin/non-service_role. Solo il webhook (service_role) può promuovere un annuncio a `featured = true`.
+- **Edge Functions:**
+  - `create-checkout-session` — **Verify JWT = ON**. Valida ownership + status `active`, crea sessione Stripe Checkout via fetch diretto (no SDK Deno → evita polyfill issues), passa metadata `user_id/annuncio_id/tier` sia su session che su payment_intent.
+  - `stripe-webhook` — **Verify JWT = OFF** (Stripe non manda JWT). Verifica firma HMAC-SHA256 manuale con tolleranza 5 min anti-replay. Gestisce `checkout.session.completed` / `expired` / `async_payment_failed`. Se annuncio già in vetrina non scaduta → estende da `featured_until` (utente non perde giorni).
+- **Frontend:**
+  - `dashboard.html`: bottone "Metti in vetrina" sugli annunci `active`, modal con 2 tier, `startCheckout(tier)` chiama l'edge function con bearer token. Toast `?vetrina=annullata` se utente torna dal Checkout senza pagare.
+  - `grazie.html`: polling ogni 2s (max 20s) su `payments` via `stripe_session_id`. 4 stati (checking/success/slow/error).
+  - `data.js`: helper `isListingFeatured(l)` + card con ring `ring-2 ring-amber-300` e badge "Vetrina" ⭐ quando featured non scaduto.
+  - `js/pages/annunci.js`: ordinamento featured-first in entrambi i branch (prossimità + testo). Sort stabile: prima criterio normale, poi risort per `featured`.
+  - `annuncio-detail.js`: select include `featured, featured_until, featured_tier` + banner gradient amber-orange sopra il titolo.
+- **Idempotenza:** upsert su `stripe_session_id` (unique) in `payments` → doppio webhook non duplica la riga. `featured_until` calcolato da `now()` oppure da `featured_until` esistente se in estensione.
+- **Cron `unfeature-expired-daily`:** pg_cron schedule `'0 3 * * *'` chiama funzione `unfeature_expired()` che azzera `featured*` per annunci con `featured_until < now()`. Se l'Editor web di Supabase mangia gli asterischi, riscriverli a mano.
+- **Secrets Supabase necessari:** `STRIPE_SECRET_KEY` (sk_live/sk_test) e `STRIPE_WEBHOOK_SECRET` (whsec_). Setup step-by-step in `SETUP_STRIPE.md`.
+- **Fiscalità:** Stripe NON è Merchant of Record — serve P.IVA per fatturazione elettronica SDI. Alternativa valutabile in futuro: Lemon Squeezy (MoR, 5% + €0,50).
+
+## ⚠️ Note Operative Deploy & Troubleshooting (Supabase)
+- **Supabase CLI su Windows:** L'installazione di `supabase` via npm globale fallisce tipicamente su Windows. Per fare il deploy delle Edge Functions, usare l'eseguibile standalone (scaricato da GitHub Releases) o aggiornare il codice manualmente dalla Dashboard web (copia-incolla).
+- **Bug SQL Editor (Asterischi Cron):** Copiando/incollando orari cron come `'0 9 * * 1'` direttamente nell'SQL Editor web di Supabase, a volte l'interfaccia rimuove gli asterischi creando spazi vuoti (causando l'errore `invalid schedule`). Per risolvere, assicurati di copiare la query da un file `.sql` locale pulito o riscrivi gli asterischi a mano.
+- **Webhook e old_record:** Il check `STRICT` in `notify-alert` e `notify-seller` richiede rigorosamente `old_record.status === 'pending'`. Non inserire logiche di "fallback" se il webhook non include l'old_record, altrimenti update banali (es. contatore visite) causeranno false email di "nuovo annuncio".

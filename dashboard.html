@@ -61,6 +61,17 @@
         </button>
     </div>
 
+    <!-- Toast pagamento annullato -->
+    <div id="paymentCanceledToast" class="hidden max-w-5xl mx-auto mb-4">
+        <div class="bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl px-5 py-3 flex items-center gap-3 text-sm font-semibold">
+            <i class="fas fa-info-circle text-amber-500"></i>
+            Pagamento annullato. Nessun addebito è stato effettuato.
+            <button onclick="document.getElementById('paymentCanceledToast').classList.add('hidden')" class="ml-auto text-amber-500 hover:text-amber-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- Dashboard content -->
     <div id="dashContent" class="hidden space-y-8">
 
@@ -182,6 +193,96 @@
     </div>
 </main>
 
+<!-- ══════════════ MODAL VETRINA ══════════════ -->
+<div id="vetrinaModal" class="hidden fixed inset-0 z-[999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)" onclick="closeVetrinaModal()">
+    <div class="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+
+        <!-- Header -->
+        <div class="bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 p-6 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+            <div class="relative">
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg mb-3">
+                    <i class="fas fa-star"></i> Vetrina in Evidenza
+                </div>
+                <h2 class="font-black text-2xl text-white leading-tight">Fai notare il tuo annuncio</h2>
+                <p class="text-white/90 text-sm font-semibold mt-1" id="vetrinaListingTitle">—</p>
+            </div>
+        </div>
+
+        <!-- Benefici -->
+        <div class="px-6 pt-6 pb-2">
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <div>
+                    <div class="w-10 h-10 mx-auto bg-amber-50 rounded-xl flex items-center justify-center mb-2">
+                        <i class="fas fa-arrow-up text-amber-500"></i>
+                    </div>
+                    <p class="text-[10px] font-black text-slate-500 uppercase tracking-wider leading-tight">In cima ai risultati</p>
+                </div>
+                <div>
+                    <div class="w-10 h-10 mx-auto bg-amber-50 rounded-xl flex items-center justify-center mb-2">
+                        <i class="fas fa-star text-amber-500"></i>
+                    </div>
+                    <p class="text-[10px] font-black text-slate-500 uppercase tracking-wider leading-tight">Badge distintivo</p>
+                </div>
+                <div>
+                    <div class="w-10 h-10 mx-auto bg-amber-50 rounded-xl flex items-center justify-center mb-2">
+                        <i class="fas fa-eye text-amber-500"></i>
+                    </div>
+                    <p class="text-[10px] font-black text-slate-500 uppercase tracking-wider leading-tight">Più visualizzazioni</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tier options -->
+        <div class="p-6 space-y-3">
+            <button id="tier30d" onclick="startCheckout('30d')" class="w-full text-left bg-white border-2 border-slate-100 hover:border-amber-300 hover:bg-amber-50/30 rounded-2xl p-5 transition group">
+                <div class="flex items-center justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <h3 class="font-black text-slate-900 text-lg">Vetrina 30 giorni</h3>
+                        </div>
+                        <p class="text-xs text-slate-500 font-semibold">Per un test rapido o un'offerta breve.</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <p class="text-2xl font-black text-slate-900">€19</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">una tantum</p>
+                    </div>
+                </div>
+            </button>
+
+            <button id="tier90d" onclick="startCheckout('90d')" class="relative w-full text-left bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl p-5 transition group">
+                <span class="absolute -top-2.5 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">Più scelto · -32%</span>
+                <div class="flex items-center justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <h3 class="font-black text-slate-900 text-lg">Vetrina 90 giorni</h3>
+                        </div>
+                        <p class="text-xs text-slate-500 font-semibold">Equivale a €13/mese. Ideale per annunci premium.</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <p class="text-2xl font-black text-slate-900">€39</p>
+                        <p class="text-[10px] font-bold text-amber-600 uppercase tracking-widest">invece di €57</p>
+                    </div>
+                </div>
+            </button>
+
+            <div class="text-center pt-2">
+                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest flex items-center justify-center gap-2">
+                    <i class="fas fa-lock"></i> Pagamento sicuro Stripe · carta, Apple/Google Pay
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="closeVetrinaModal()" class="text-xs font-black text-slate-500 hover:text-slate-700 uppercase tracking-widest">
+                Annulla
+            </button>
+            <p class="text-[10px] text-slate-400 font-bold" id="vetrinaLoadingMsg"></p>
+        </div>
+    </div>
+</div>
+
 <!-- ══════════════ MODAL PROFILO ══════════════ -->
 <div id="profiloModal" class="hidden fixed inset-0 z-[999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)" onclick="closeProfiloModal()">
     <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
@@ -276,6 +377,15 @@
 
 let _currentUser = null;
 let _isAdmin = false;
+
+// ── Toast "vetrina annullata" da querystring ─────────────
+(() => {
+    const q = new URLSearchParams(location.search);
+    if (q.get('vetrina') === 'annullata') {
+        document.getElementById('paymentCanceledToast')?.classList.remove('hidden');
+        history.replaceState(null, '', location.pathname); // pulisci querystring
+    }
+})();
 
 // ── Init ─────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
@@ -530,30 +640,51 @@ async function loadMyListings() {
                             l.status === 'pending'  ? 'bg-amber-100 text-amber-700' :
                             l.status === 'sold'   ? 'bg-slate-100 text-slate-500' : 'bg-red-100 text-red-600';
         const statusLabel = l.status === 'active' ? 'Attivo' : l.status === 'pending' ? 'In Revisione' : l.status === 'sold' ? 'Venduto' : 'Eliminato';
+
+        // Stato vetrina
+        const isFeatured = l.featured === true && l.featured_until && new Date(l.featured_until) > new Date();
+        const featuredUntilStr = isFeatured
+            ? new Date(l.featured_until).toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })
+            : '';
+
+        // Border speciale se in vetrina
+        const cardBorder = isFeatured
+            ? 'border-2 border-amber-300 shadow-md shadow-amber-100'
+            : 'border border-slate-100';
+
         return `
-        <div class="bg-white rounded-2xl border border-slate-100 p-5 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between hover:shadow-md transition">
-            <div class="flex items-center gap-4 flex-grow">
+        <div class="bg-white rounded-2xl ${cardBorder} p-5 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between hover:shadow-md transition">
+            <div class="flex items-center gap-4 flex-grow min-w-0">
                 <!-- Thumbnail -->
-                <div class="w-16 h-16 bg-slate-100 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center text-slate-300">
+                <div class="w-16 h-16 bg-slate-100 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center text-slate-300 relative">
                     ${(() => {
                         const img = (l.img_urls && l.img_urls[0]) || (l.dettagli_extra && l.dettagli_extra.images && l.dettagli_extra.images[0]);
                         return img ? `<img src="${escapeHTML(img)}" class="w-full h-full object-cover">` : '<i class="fas fa-store"></i>';
                     })()}
+                    ${isFeatured ? `<div class="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-md border-2 border-white" title="In Vetrina"><i class="fas fa-star text-white text-[10px]"></i></div>` : ''}
                 </div>
-                <div>
-                    <div class="flex items-center gap-2 mb-1">
+                <div class="min-w-0">
+                    <div class="flex items-center gap-2 mb-1 flex-wrap">
                         <span class="text-xs font-black px-2 py-1 rounded-lg ${statusColor}">${statusLabel}</span>
-                        <span class="text-xs text-slate-400 font-semibold">${l.stato} · ${l.tipo}</span>
+                        ${isFeatured ? `<span class="text-[10px] font-black px-2 py-1 rounded-lg bg-gradient-to-r from-amber-400 to-orange-400 text-white uppercase tracking-wider"><i class="fas fa-star mr-1"></i>In Vetrina · fino al ${featuredUntilStr}</span>` : ''}
+                        <span class="text-xs text-slate-400 font-semibold">${escapeHTML(l.stato || '')} · ${escapeHTML(l.tipo || '')}</span>
                     </div>
-                    <h3 class="font-black text-slate-900 text-base leading-snug">${l.titolo}</h3>
-                    <p class="text-slate-400 text-xs font-semibold mt-1">
-                        <i class="fas fa-map-marker-alt mr-1"></i>${l.comune || ''}, ${l.regione || ''} ·
-                        <i class="fas fa-euro-sign mx-1"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'} ·
-                        Scade il: ${l.expires_at ? new Date(l.expires_at).toLocaleDateString('it-IT') : '100 gg'}
+                    <h3 class="font-black text-slate-900 text-base leading-snug truncate">${escapeHTML(l.titolo || '')}</h3>
+                    <p class="text-slate-400 text-xs font-semibold mt-1 truncate">
+                        <i class="fas fa-map-marker-alt mr-1"></i>${escapeHTML(l.comune || '')}, ${escapeHTML(l.regione || '')} ·
+                        <i class="fas fa-euro-sign mx-1"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'}
                     </p>
                 </div>
             </div>
-            <div class="flex gap-2 flex-shrink-0">
+            <div class="flex flex-wrap gap-2 flex-shrink-0">
+                ${l.status === 'active' ? `
+                <button onclick='openVetrinaModal(${JSON.stringify({ id: l.id, titolo: l.titolo, featured: isFeatured, featured_until: l.featured_until }).replace(/'/g, "&apos;")})'
+                    class="text-xs font-black px-4 py-2 rounded-xl transition inline-flex items-center gap-1.5 ${isFeatured
+                        ? 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
+                        : 'bg-gradient-to-r from-amber-400 to-orange-400 text-white hover:from-amber-500 hover:to-orange-500 shadow-sm'}">
+                    <i class="fas fa-star"></i>${isFeatured ? 'Estendi vetrina' : 'Metti in vetrina'}
+                </button>` : ''}
+
                 ${l.status !== 'deleted' ? `
                 <button onclick="location.href='modifica-annuncio.html?id=${l.id}'"
                     class="text-xs font-bold px-4 py-2 border border-blue-100 rounded-xl hover:bg-blue-50 transition text-blue-600">
@@ -797,6 +928,84 @@ async function deleteListing(id) {
     await _supabase.from('annunci').update({ status: 'deleted' }).eq('id', id);
     loadMyListings();
 }
+
+// ── Vetrina Modal ─────────────────────────────────────────
+let _vetrinaTarget = null;
+
+function openVetrinaModal(listing) {
+    _vetrinaTarget = listing;
+    const titleEl = document.getElementById('vetrinaListingTitle');
+    if (titleEl) titleEl.textContent = listing.titolo || 'Il tuo annuncio';
+
+    // Reset stati bottoni
+    document.getElementById('tier30d').disabled = false;
+    document.getElementById('tier90d').disabled = false;
+    document.getElementById('vetrinaLoadingMsg').textContent = '';
+
+    document.getElementById('vetrinaModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeVetrinaModal() {
+    document.getElementById('vetrinaModal').classList.add('hidden');
+    document.body.style.overflow = '';
+    _vetrinaTarget = null;
+}
+
+async function startCheckout(tier) {
+    if (!_vetrinaTarget || !_vetrinaTarget.id) return;
+
+    const btn30 = document.getElementById('tier30d');
+    const btn90 = document.getElementById('tier90d');
+    const msg   = document.getElementById('vetrinaLoadingMsg');
+
+    btn30.disabled = true;
+    btn90.disabled = true;
+    (tier === '30d' ? btn30 : btn90).classList.add('opacity-60', 'cursor-wait');
+    msg.textContent = 'Preparazione checkout…';
+
+    try {
+        const { data: { session } } = await _supabase.auth.getSession();
+        if (!session) {
+            alert('Sessione scaduta. Accedi nuovamente.');
+            location.reload();
+            return;
+        }
+
+        const res = await fetch(`${SUPABASE_URL}/functions/v1/create-checkout-session`, {
+            method: 'POST',
+            headers: {
+                'Content-Type':  'application/json',
+                'Authorization': `Bearer ${session.access_token}`,
+            },
+            body: JSON.stringify({
+                annuncio_id: _vetrinaTarget.id,
+                tier,
+            }),
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.url) {
+            throw new Error(data.error || 'Errore creazione sessione');
+        }
+
+        // Redirect a Stripe Checkout
+        window.location.href = data.url;
+
+    } catch (e) {
+        console.error('checkout error:', e);
+        msg.textContent = '';
+        alert('Errore: ' + (e.message || 'impossibile avviare il pagamento'));
+        btn30.disabled = false;
+        btn90.disabled = false;
+        btn30.classList.remove('opacity-60', 'cursor-wait');
+        btn90.classList.remove('opacity-60', 'cursor-wait');
+    }
+}
+
+window.openVetrinaModal  = openVetrinaModal;
+window.closeVetrinaModal = closeVetrinaModal;
+window.startCheckout     = startCheckout;
 
 </script>
 </body>
