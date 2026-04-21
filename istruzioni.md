@@ -172,10 +172,13 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Bottoni header: messaggi e profilo sono `w-9/w-10 rounded-lg/xl bg-slate-100` — icona `fa-user` per profilo (non più lettera iniziale).
 - `dashboard.html` ha header hardcoded (non usa `ui-components.js`) — aggiornarlo manualmente se si modifica la nav.
 
-## 📧 Edge Functions — Alert Email (`notify-alert`)
+## 📧 Edge Functions — Alert Email (`notify-alert` + `notify-seller`)
 - `SITE_URL = 'https://subingresso.it'` (senza www) in tutte e 3 le notify functions.
-- Email parte su INSERT active (admin) O UPDATE pending→active — ma UPDATE richiede `payload.old_record != null`, altrimenti ogni `increment_views` triggerava email false.
-- Per far funzionare approvazione admin via UPDATE: abilitare **"Include old record"** nel webhook Supabase → Database → Webhooks → `notify-alert`.
+- **Check UPDATE STRICT**: richiede `old_record.status === 'pending'` (non `!== 'active'`, che passava con undefined → email fantasma). Solo prima approvazione pending→active triggera email, le riattivazioni da 'deleted'/'scaduto' non mandano nulla.
+- **Controllo freschezza** (`notify-alert`): annuncio con `created_at > 24h` → skip (evita email su riattivazioni vecchie).
+- **Tabella `notify_alert_log(user_id, annuncio_id, sent_at)`** PK composita: dedup hard — una sola email per coppia utente/annuncio, per sempre. Creata in `SETUP_DEF_SUBINGRESSO.sql` sezione 10. Se email fallisce via Resend, rollback della riga (retry possibile).
+- Richiede **"Include old record"** abilitato nel webhook Supabase → Database → Webhooks → `notify-alert` e `notify-seller`, altrimenti UPDATE pending→active non triggerano email.
+- Log diagnostico all'inizio della function: `type`, `has_old_record`, `old_status`, `new_status`, `created_at` — visibile in Supabase → Logs.
 - Email include link diretto all'annuncio + link ricerca pre-filtrata sulla zona dell'alert.
 
 ## 🤖 Blog Generator (`js/blog-generator.js`)

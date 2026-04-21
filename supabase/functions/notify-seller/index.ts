@@ -26,7 +26,8 @@ Deno.serve(async (req) => {
 
     if (payload.type === 'INSERT') {
       tipo = 'ricevuto';
-    } else if (payload.type === 'UPDATE' && record.status === 'active' && oldRecord?.status !== 'active') {
+    } else if (payload.type === 'UPDATE' && record.status === 'active' && oldRecord?.status === 'pending') {
+      // Strict: solo pending→active (prima approvazione). Evita email su riattivazioni random.
       tipo = 'online';
     }
 

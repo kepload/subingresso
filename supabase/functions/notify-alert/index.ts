@@ -1,7 +1,11 @@
 // ============================================================
 //  Subingresso.it — Edge Function: notifica email nuovo annuncio
-//  Trigger: Database Webhook su INSERT nella tabella `annunci`
+//  Trigger: Database Webhook su INSERT/UPDATE nella tabella `annunci`
 //  Invia email agli utenti il cui alert è entro 200km dall'annuncio.
+//  Controlli anti-spam:
+//   1. Solo INSERT active OPPURE UPDATE pending→active (strict)
+//   2. Annuncio deve essere fresco (created_at > ora - 24h)
+//   3. Dedup via tabella notify_alert_log (UNIQUE user_id+annuncio_id)
 // ============================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
@@ -12,6 +16,7 @@ const SUPABASE_SERVICE_ROLE_KEY  = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const FROM_EMAIL                 = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL                   = 'https://subingresso.it';
 const RADIUS_KM                  = 200;
+const MAX_AGE_HOURS              = 24;
 
 // Coordinate città italiane (specchio di data.js)
 const PROVINCE_COORDS: Record<string, [number, number]> = {
@@ -46,7 +51,6 @@ function getCityCoords(cityName: string): [number, number] | null {
   if (!cityName) return null;
   const city = cityName.trim();
   if (PROVINCE_COORDS[city]) return PROVINCE_COORDS[city];
-  // Fuzzy: cerca corrispondenza parziale case-insensitive
   const lower = city.toLowerCase();
   for (const key of Object.keys(PROVINCE_COORDS)) {
     if (key.toLowerCase().includes(lower) || lower.includes(key.toLowerCase())) {
@@ -61,7 +65,7 @@ Deno.serve(async (req) => {
     const payload = await req.json();
 
     if (payload.table !== 'annunci') {
-      return new Response('Ignored', { status: 200 });
+      return new Response('Ignored (wrong table)', { status: 200 });
     }
 
     const annuncio = payload.record as {
@@ -75,24 +79,46 @@ Deno.serve(async (req) => {
       comune: string;
       status: string;
       user_id: string;
+      created_at: string;
     };
 
-    // Invia solo quando un annuncio diventa attivo:
-    // - INSERT diretto come active (admin)
-    // - UPDATE da non-active → active (approvazione admin)
-    //   RICHIEDE old_record != null: senza di esso non possiamo distinguere
-    //   l'approvazione da un UPDATE di visualizzazioni/altri campi → falsi positivi
+    // Log diagnostico (visibile in Supabase → Logs)
+    console.log(JSON.stringify({
+      event: 'notify-alert:received',
+      type: payload.type,
+      annuncio_id: annuncio?.id,
+      new_status: annuncio?.status,
+      has_old_record: payload.old_record != null,
+      old_status: payload.old_record?.status ?? null,
+      created_at: annuncio?.created_at,
+    }));
+
+    // ── CONTROLLO 1: tipo evento ──
+    // INSERT già active (admin pubblica) OPPURE UPDATE pending→active (prima approvazione)
+    // Strict: richiedo old_record.status === 'pending' per evitare riattivazioni/UPDATE random
     const isNewActive = payload.type === 'INSERT' && annuncio.status === 'active';
     const isJustApproved = payload.type === 'UPDATE'
       && payload.old_record != null
       && annuncio.status === 'active'
-      && payload.old_record.status !== 'active';
+      && payload.old_record.status === 'pending';
 
     if (!isNewActive && !isJustApproved) {
+      console.log('notify-alert:skipped (not a new/approved active listing)');
       return new Response('Not active', { status: 200 });
     }
 
-    // Coordine dell'annuncio: prima prova comune, poi regione
+    // ── CONTROLLO 2: freschezza annuncio ──
+    // Se l'annuncio ha più di MAX_AGE_HOURS, non è "nuova opportunità"
+    // ma una riattivazione/refresh → skip
+    if (annuncio.created_at) {
+      const ageMs = Date.now() - new Date(annuncio.created_at).getTime();
+      const ageHours = ageMs / (1000 * 60 * 60);
+      if (ageHours > MAX_AGE_HOURS) {
+        console.log(`notify-alert:skipped (annuncio troppo vecchio: ${ageHours.toFixed(1)}h)`);
+        return new Response('Listing too old', { status: 200 });
+      }
+    }
+
     const annuncioCoords = getCityCoords(annuncio.comune) || getCityCoords(annuncio.regione);
 
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
@@ -107,14 +133,11 @@ Deno.serve(async (req) => {
       return new Response('No alerts', { status: 200 });
     }
 
-    // Mappa user_id → alert (per costruire il link di ricerca personalizzato)
     const matchingAlerts = new Map<string, typeof alerts[0]>();
 
     for (const a of alerts) {
-      if (matchingAlerts.has(a.user_id)) continue; // già matchato
-      // Se l'alert non ha coordinate → notifica per tutta Italia
+      if (matchingAlerts.has(a.user_id)) continue;
       if (!a.lat || !a.lng) { matchingAlerts.set(a.user_id, a); continue; }
-      // Se l'annuncio non ha coordinate → notifica tutti
       if (!annuncioCoords) { matchingAlerts.set(a.user_id, a); continue; }
       const dist = getDistanceKM(a.lat, a.lng, annuncioCoords[0], annuncioCoords[1]);
       if (dist <= RADIUS_KM) matchingAlerts.set(a.user_id, a);
@@ -138,7 +161,32 @@ Deno.serve(async (req) => {
       merceSafe ? `<tr><td style="color:#64748b;font-size:13px;padding:4px 0;">Settore</td><td style="color:#0f172a;font-size:14px;font-weight:600;text-align:right;">${merceSafe}</td></tr>` : '',
     ].join('');
 
-    const userFetches = [...matchingAlerts.keys()].map(uid => supabase.auth.admin.getUserById(uid));
+    const candidateUids = [...matchingAlerts.keys()];
+
+    // ── CONTROLLO 3: dedup via notify_alert_log ──
+    // INSERT con ON CONFLICT DO NOTHING e returning: se la riga esiste già,
+    // non torna niente → skip quell'utente per questo annuncio
+    const { data: inserted, error: logErr } = await supabase
+      .from('notify_alert_log')
+      .upsert(
+        candidateUids.map(uid => ({ user_id: uid, annuncio_id: annuncio.id })),
+        { onConflict: 'user_id,annuncio_id', ignoreDuplicates: true }
+      )
+      .select('user_id');
+
+    if (logErr) {
+      console.error('notify-alert:log error', logErr);
+      return new Response('Log error', { status: 500 });
+    }
+
+    const freshUids = new Set((inserted ?? []).map(r => r.user_id));
+    if (freshUids.size === 0) {
+      console.log('notify-alert:skipped (tutti gli utenti hanno già ricevuto email per questo annuncio)');
+      return new Response('All already notified', { status: 200 });
+    }
+
+    const freshUidList = candidateUids.filter(uid => freshUids.has(uid));
+    const userFetches = freshUidList.map(uid => supabase.auth.admin.getUserById(uid));
     const usersResults = await Promise.all(userFetches);
 
     let sent = 0;
@@ -147,9 +195,8 @@ Deno.serve(async (req) => {
         const email = data?.user?.email;
         if (!email) return;
 
-        const uid = [...matchingAlerts.keys()][idx];
+        const uid = freshUidList[idx];
         const alert = matchingAlerts.get(uid)!;
-        // Link ricerca pre-filtrata sulla zona dell'alert
         const searchParams = new URLSearchParams();
         if (alert.comune) searchParams.set('q', alert.comune);
         else if (annuncio.regione) searchParams.set('regione', annuncio.regione);
@@ -212,6 +259,12 @@ Deno.serve(async (req) => {
           sent++;
           console.log(`Email inviata a ${email}`);
         } else {
+          // Rollback: se l'email fallisce, rimuovo dal log così un retry può ritentare
+          await supabase
+            .from('notify_alert_log')
+            .delete()
+            .eq('user_id', uid)
+            .eq('annuncio_id', annuncio.id);
           console.error(`Resend error per ${email}:`, await res.text());
         }
       })

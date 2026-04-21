@@ -274,7 +274,18 @@ ALTER TABLE public.annunci ADD COLUMN IF NOT EXISTS expires_at  timestamptz;
 ALTER TABLE public.annunci ADD COLUMN IF NOT EXISTS provincia   text;
 ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS avatar_url text;
 
--- ── 10. RELOAD SCHEMA CACHE ──────────────────────────────────
+-- ── 10. LOG NOTIFICHE ALERT (anti-duplicati) ────────────────
+-- Blocca email duplicate: una sola email per coppia (utente, annuncio)
+create table if not exists public.notify_alert_log (
+    user_id     uuid not null,
+    annuncio_id uuid not null,
+    sent_at     timestamptz default now(),
+    primary key (user_id, annuncio_id)
+);
+alter table public.notify_alert_log enable row level security;
+-- Solo service_role legge/scrive (edge function). Nessuna policy = nessun accesso client.
+
+-- ── 11. RELOAD SCHEMA CACHE ──────────────────────────────────
 -- Forza PostgREST a ricaricare lo schema (risolve errori "column not found")
 NOTIFY pgrst, 'reload schema';
 
