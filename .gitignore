@@ -4,3 +4,4 @@ package-lock.json
 package.json
 tailwind.input.css
 tailwind.config.js
+scripts/.bin/
