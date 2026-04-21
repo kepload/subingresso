@@ -196,7 +196,6 @@ function buildCard(l, isSmall = false, distance = null) {
 
     return `
     <div data-listing-id="${escapeHTML(l.id)}" class="group ${featured ? 'bg-gradient-to-b from-amber-50/50 to-white' : 'bg-white'} rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full relative">
-        ${featured ? `<div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-amber-500 via-yellow-400 to-orange-500 z-10"></div>` : ''}
         <!-- cover -->
         <a href="${annuncioUrl}" class="block relative h-20 sm:h-28 bg-slate-100 overflow-hidden flex-shrink-0">
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
