@@ -431,25 +431,34 @@ async function initPage() {
 
 // ── Azioni ──────────────────────────────────────────────
 
+function executeCall(listing) {
+    if (!listing.telFetched) {
+        alert('Recupero numero in corso, riprova tra un istante...');
+        return;
+    }
+    let tel = listing.tel;
+    if (!tel || String(tel).includes('*')) { alert('Numero di telefono non disponibile.'); return; }
+    const clean = String(tel).replace(/\D/g, '');
+    if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio.'); return; }
+    if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+    window.location.href = `tel:${clean}`;
+}
+
 function makeCall() {
     const listing = _currentListing;
     if (!listing) return;
 
     if (_contactFetched) {
-        if (!listing.telFetched) {
-            alert('Recupero numero in corso, riprova tra un istante...');
-            return;
-        }
-        let tel = listing.tel;
-        if (!tel || String(tel).includes('*')) { alert('Numero di telefono non disponibile.'); return; }
-        const clean = String(tel).replace(/\D/g, '');
-        if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio.'); return; }
-        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
-        window.location.href = `tel:${clean}`;
+        executeCall(listing);
         return;
     }
 
-    requireAuth(function () {});
+    requireAuth(async function () {
+        if (!listing.telFetched) {
+            await fetchContactInfo(listing);
+        }
+        executeCall(listing);
+    });
 }
 
 async function startChat() {
@@ -497,27 +506,36 @@ async function startChat() {
     });
 }
 
+function executeWhatsApp(listing) {
+    if (!listing.telFetched) {
+        alert('Recupero numero in corso, riprova tra un istante...');
+        return;
+    }
+    let tel = listing.tel;
+    if (!tel || String(tel).includes('*')) { alert('WhatsApp non disponibile per questo annuncio.'); return; }
+    const clean = String(tel).replace(/\D/g, '');
+    if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio per WhatsApp.'); return; }
+    const finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
+    const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
+    if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+    window.location.href = `https://wa.me/${finalTel}?text=${text}`;
+}
+
 function openWhatsApp() {
     const listing = _currentListing;
     if (!listing) return;
 
     if (_contactFetched) {
-        if (!listing.telFetched) {
-            alert('Recupero numero in corso, riprova tra un istante...');
-            return;
-        }
-        let tel = listing.tel;
-        if (!tel || String(tel).includes('*')) { alert('WhatsApp non disponibile per questo annuncio.'); return; }
-        const clean = String(tel).replace(/\D/g, '');
-        if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio per WhatsApp.'); return; }
-        const finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
-        const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
-        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
-        window.location.href = `https://wa.me/${finalTel}?text=${text}`;
+        executeWhatsApp(listing);
         return;
     }
 
-    requireAuth(function () {});
+    requireAuth(async function () {
+        if (!listing.telFetched) {
+            await fetchContactInfo(listing);
+        }
+        executeWhatsApp(listing);
+    });
 }
 
 // Maschera numeri di telefono italiani (mobile 3xx e fissi 0x)
