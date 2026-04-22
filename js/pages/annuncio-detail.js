@@ -6,7 +6,45 @@
 let _currentListing = null;
 let _contactFetched = false; // true dopo che initPage ha fetchato tel per utente loggato
 
-async function loadListing() {
+// Helper to fetch contact info robustly
+async function fetchContactInfo(listing) {
+    if (!listing) return;
+    let finalTel = null;
+    let finalEmail = null;
+
+    try {
+        if (listing.id) {
+            const { data: contactData } = await _supabase
+                .from('annunci').select('tel, email').eq('id', listing.id).maybeSingle();
+            if (contactData) {
+                finalTel = contactData.tel;
+                finalEmail = contactData.email;
+            }
+        }
+    } catch (e) {
+        console.error("Errore fetch contatto annuncio:", e);
+    }
+
+    // Fallback: se tel è vuoto o non ha numeri, prendilo dal profilo venditore
+    const cleanTel = finalTel ? String(finalTel).replace(/\D/g, '') : '';
+    if (!cleanTel && listing.user_id) {
+        try {
+            const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).maybeSingle();
+            if (seller && seller.telefono) {
+                finalTel = seller.telefono;
+            }
+        } catch (e) {
+            console.error("Errore fetch contatto venditore:", e);
+        }
+    }
+
+    listing.tel = finalTel;
+    listing.email = finalEmail;
+    listing.telFetched = true;
+
+    const telEl = document.getElementById('cTel');
+    if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
+}
     const params   = new URLSearchParams(location.search);
     const idParam  = params.get('id');
     console.log("🔍 Tentativo caricamento ID:", idParam);
@@ -334,24 +372,7 @@ async function initPage() {
             _contactFetched = true; // loggato — settato subito, prima di qualsiasi fetch
 
             // Fetch tel/email solo per utenti autenticati (mai esposto a utenti anonimi)
-            if (listing.id) {
-                const { data: contactData } = await _supabase
-                    .from('annunci').select('tel, email').eq('id', listing.id).single();
-                if (contactData) {
-                    let finalTel = contactData.tel;
-                    if (!finalTel && listing.user_id) {
-                        const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
-                        if (seller && seller.telefono) finalTel = seller.telefono;
-                    }
-                    _currentListing.tel   = finalTel;
-                    _currentListing.email = contactData.email;
-                    _currentListing.telFetched = true;
-                    const telEl = document.getElementById('cTel');
-                    if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
-                } else {
-                    _currentListing.telFetched = true;
-                }
-            }
+            await fetchContactInfo(_currentListing);
         }
 
         if (user && listing.user_id && String(listing.user_id).trim() === String(user.id).trim()) {
@@ -422,6 +443,7 @@ function makeCall() {
         let tel = listing.tel;
         if (!tel || String(tel).includes('*')) { alert('Numero di telefono non disponibile.'); return; }
         const clean = String(tel).replace(/\D/g, '');
+        if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio.'); return; }
         if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
         window.location.href = `tel:${clean}`;
         return;
@@ -487,6 +509,7 @@ function openWhatsApp() {
         let tel = listing.tel;
         if (!tel || String(tel).includes('*')) { alert('WhatsApp non disponibile per questo annuncio.'); return; }
         const clean = String(tel).replace(/\D/g, '');
+        if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio per WhatsApp.'); return; }
         const finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
         const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
         if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
@@ -522,26 +545,7 @@ async function restoreContactUI() {
     // Fetch tel/email ora che l'utente è autenticato
     _contactFetched = true; // loggato — settato subito, prima del fetch
     if (_currentListing?.id) {
-        try {
-            const { data: contactData } = await _supabase
-                .from('annunci').select('tel, email').eq('id', _currentListing.id).single();
-            if (contactData) {
-                let finalTel = contactData.tel;
-                if (!finalTel && _currentListing.user_id) {
-                    const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', _currentListing.user_id).single();
-                    if (seller && seller.telefono) finalTel = seller.telefono;
-                }
-                _currentListing.tel   = finalTel;
-                _currentListing.email = contactData.email;
-                _currentListing.telFetched = true;
-                const telEl = document.getElementById('cTel');
-                if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
-            } else {
-                _currentListing.telFetched = true;
-            }
-        } catch (_) {
-            _currentListing.telFetched = true;
-        }
+        await fetchContactInfo(_currentListing);
     }
 }
 
