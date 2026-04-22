@@ -345,8 +345,11 @@ async function initPage() {
                     }
                     _currentListing.tel   = finalTel;
                     _currentListing.email = contactData.email;
+                    _currentListing.telFetched = true;
                     const telEl = document.getElementById('cTel');
                     if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
+                } else {
+                    _currentListing.telFetched = true;
                 }
             }
         }
@@ -413,10 +416,14 @@ function makeCall() {
 
     // Utente loggato: tel già caricato da initPage — azione diretta (no async, no popup blocker)
     if (_contactFetched) {
+        if (!listing.telFetched) {
+            alert('Recupero numero in corso, riprova tra un istante...');
+            return;
+        }
         const tel = listing.tel;
         if (!tel || tel.includes('*')) { alert('Numero di telefono non disponibile.'); return; }
         const clean = tel.replace(/\D/g, '');
-        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+        _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
         window.location.href = `tel:${clean}`;
         return;
     }
@@ -476,13 +483,17 @@ function openWhatsApp() {
 
     // Utente loggato: tel già caricato da initPage — azione diretta (no async, no popup blocker)
     if (_contactFetched) {
+        if (!listing.telFetched) {
+            alert('Recupero numero in corso, riprova tra un istante...');
+            return;
+        }
         const tel = listing.tel;
         if (!tel || tel.includes('*')) { alert('WhatsApp non disponibile per questo annuncio.'); return; }
         const clean = tel.replace(/\D/g, '');
         const finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
         const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
-        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
-        window.open(`https://api.whatsapp.com/send?phone=${finalTel}&text=${text}`, '_blank');
+        _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+        window.location.href = `https://wa.me/${finalTel}?text=${text}`;
         return;
     }
 
@@ -526,10 +537,15 @@ async function restoreContactUI() {
                 }
                 _currentListing.tel   = finalTel;
                 _currentListing.email = contactData.email;
+                _currentListing.telFetched = true;
                 const telEl = document.getElementById('cTel');
                 if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
+            } else {
+                _currentListing.telFetched = true;
             }
-        } catch (_) {}
+        } catch (_) {
+            _currentListing.telFetched = true;
+        }
     }
 }
 
