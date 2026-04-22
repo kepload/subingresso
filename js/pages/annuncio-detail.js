@@ -411,25 +411,31 @@ async function initPage() {
 // ── Azioni ──────────────────────────────────────────────
 
 function makeCall() {
-    const listing = _currentListing;
-    if (!listing) return;
+    requireAuth(async function () {
+        const listing = _currentListing;
+        if (!listing) return;
 
-    // Utente loggato: tel già caricato da initPage — azione diretta (no async, no popup blocker)
-    if (_contactFetched) {
-        if (!listing.telFetched) {
-            alert('Recupero numero in corso, riprova tra un istante...');
-            return;
+        // Assicurati di avere il numero aggiornato
+        let tel = listing.tel;
+        if (!tel && listing.user_id) {
+            try {
+                const { data: contactData } = await _supabase.from('annunci').select('tel').eq('id', listing.id).maybeSingle();
+                tel = contactData?.tel;
+                if (!tel) {
+                    const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
+                    if (seller && seller.telefono) tel = seller.telefono;
+                }
+                listing.tel = tel; // salva per cache futura
+            } catch (e) {
+                console.error(e);
+            }
         }
-        const tel = listing.tel;
-        if (!tel || tel.includes('*')) { alert('Numero di telefono non disponibile.'); return; }
-        const clean = tel.replace(/\D/g, '');
-        _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
-        window.location.href = `tel:${clean}`;
-        return;
-    }
 
-    // Utente non loggato: apre il modal login; dopo login restoreContactUI setta tel e ripristina i pulsanti
-    requireAuth(function () {});
+        if (!tel || String(tel).includes('*')) { alert('Numero di telefono non disponibile.'); return; }
+        const clean = String(tel).replace(/\D/g, '');
+        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+        window.location.href = `tel:${clean}`;
+    });
 }
 
 async function startChat() {
@@ -478,27 +484,33 @@ async function startChat() {
 }
 
 function openWhatsApp() {
-    const listing = _currentListing;
-    if (!listing) return;
+    requireAuth(async function () {
+        const listing = _currentListing;
+        if (!listing) return;
 
-    // Utente loggato: tel già caricato da initPage — azione diretta (no async, no popup blocker)
-    if (_contactFetched) {
-        if (!listing.telFetched) {
-            alert('Recupero numero in corso, riprova tra un istante...');
-            return;
+        // Assicurati di avere il numero aggiornato
+        let tel = listing.tel;
+        if (!tel && listing.user_id) {
+            try {
+                const { data: contactData } = await _supabase.from('annunci').select('tel').eq('id', listing.id).maybeSingle();
+                tel = contactData?.tel;
+                if (!tel) {
+                    const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).single();
+                    if (seller && seller.telefono) tel = seller.telefono;
+                }
+                listing.tel = tel; // salva per cache futura
+            } catch (e) {
+                console.error(e);
+            }
         }
-        const tel = listing.tel;
-        if (!tel || tel.includes('*')) { alert('WhatsApp non disponibile per questo annuncio.'); return; }
-        const clean = tel.replace(/\D/g, '');
+
+        if (!tel || String(tel).includes('*')) { alert('WhatsApp non disponibile per questo annuncio.'); return; }
+        const clean = String(tel).replace(/\D/g, '');
         const finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
         const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
-        _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+        if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
         window.location.href = `https://wa.me/${finalTel}?text=${text}`;
-        return;
-    }
-
-    // Utente non loggato: apre il modal login; dopo login restoreContactUI setta tel e ripristina i pulsanti
-    requireAuth(function () {});
+    });
 }
 
 // Maschera numeri di telefono italiani (mobile 3xx e fissi 0x)
