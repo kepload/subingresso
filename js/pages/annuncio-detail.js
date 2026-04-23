@@ -45,6 +45,8 @@ async function fetchContactInfo(listing) {
     const telEl = document.getElementById('cTel');
     if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
 }
+
+async function loadListing() {
     const params   = new URLSearchParams(location.search);
     const idParam  = params.get('id');
     console.log("🔍 Tentativo caricamento ID:", idParam);
@@ -440,7 +442,7 @@ function executeCall(listing) {
     if (!tel || String(tel).includes('*')) { alert('Numero di telefono non disponibile.'); return; }
     const clean = String(tel).replace(/\D/g, '');
     if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio.'); return; }
-    if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+    if (typeof listing.id !== 'number') (async () => { try { await _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }); } catch(_){} })();
     window.location.href = `tel:${clean}`;
 }
 
@@ -517,7 +519,7 @@ function executeWhatsApp(listing) {
     if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio per WhatsApp.'); return; }
     const finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
     const text = encodeURIComponent(`Ciao! Ti contatto da Subingresso.it per: "${listing.titolo}". Grazie!`);
-    if (typeof listing.id !== 'number') _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }).catch(()=>{});
+    if (typeof listing.id !== 'number') (async () => { try { await _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }); } catch(_){} })();
     window.location.href = `https://wa.me/${finalTel}?text=${text}`;
 }
 
