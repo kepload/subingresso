@@ -519,7 +519,7 @@ function executeWhatsApp(listing) {
     if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio per WhatsApp.'); return; }
     const finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
     const luogo = [listing.comune, listing.provincia ? `(${listing.provincia})` : ''].filter(Boolean).join(' ');
-    const text = encodeURIComponent(`Ciao! Ho visto il tuo annuncio su Subingresso.it: "${listing.titolo}"${luogo ? ` a ${luogo}` : ''}. Sei ancora disponibile? Grazie mille 🙏`);
+    const text = encodeURIComponent(`Ciao! Ho visto il tuo annuncio su Subingresso.it: "${listing.titolo}"${luogo ? ` a ${luogo}` : ''}. È ancora disponibile? Grazie mille 🙏`);
     if (typeof listing.id !== 'number') (async () => { try { await _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }); } catch(_){} })();
     window.location.href = `https://wa.me/${finalTel}?text=${text}`;
 }
