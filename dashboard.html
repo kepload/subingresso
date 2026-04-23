@@ -653,55 +653,51 @@ async function loadMyListings() {
             : 'border border-slate-100';
 
         return `
-        <div class="bg-white rounded-2xl ${cardBorder} p-5 flex flex-col md:flex-row gap-4 md:items-center justify-between hover:shadow-md transition">
-            <div class="flex items-center gap-4 flex-grow min-w-0">
-                <!-- Thumbnail -->
-                <div class="w-16 h-16 bg-slate-100 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center text-slate-300 relative">
-                    ${(() => {
-                        const img = (l.img_urls && l.img_urls[0]) || (l.dettagli_extra && l.dettagli_extra.images && l.dettagli_extra.images[0]);
-                        return img ? `<img src="${escapeHTML(img)}" class="w-full h-full object-cover">` : '<i class="fas fa-store"></i>';
-                    })()}
-                    ${isFeatured ? `<div class="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-md border-2 border-white" title="In Vetrina"><i class="fas fa-star text-white text-[10px]"></i></div>` : ''}
-                </div>
-                <div class="min-w-0">
-                    <div class="flex items-center gap-2 mb-1 flex-wrap">
-                        <span class="text-xs font-black px-2 py-1 rounded-lg ${statusColor}">${statusLabel}</span>
-                        ${isFeatured ? `<span class="text-[10px] font-black px-2 py-1 rounded-lg bg-gradient-to-r from-amber-400 to-orange-400 text-white uppercase tracking-wider"><i class="fas fa-star mr-1"></i>In Vetrina · fino al ${featuredUntilStr}</span>` : ''}
-                        <span class="text-xs text-slate-400 font-semibold">${escapeHTML(l.stato || '')} · ${escapeHTML(l.tipo || '')}</span>
-                    </div>
-                    <h3 class="font-black text-slate-900 text-base leading-snug truncate">${escapeHTML(l.titolo || '')}</h3>
-                    <p class="text-slate-400 text-xs font-semibold mt-1 truncate">
-                        <i class="fas fa-map-marker-alt mr-1"></i>${escapeHTML(l.comune || '')}, ${escapeHTML(l.regione || '')} ·
-                        <i class="fas fa-euro-sign mx-1"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'}
-                        ${l.visualizzazioni ? ` · <i class="fas fa-eye ml-1 mr-0.5"></i>${l.visualizzazioni}` : ''}
-                        ${isFeatured ? ` · <i class="fas fa-phone-alt text-emerald-500 ml-1 mr-0.5"></i><span class="text-emerald-600 font-bold">${l.tel_clicks || 0} click</span>` : ''}
-                    </p>
-                </div>
+        <div class="bg-white rounded-2xl ${cardBorder} p-3 md:p-5 flex items-start gap-3 md:gap-4 hover:shadow-md transition">
+            <!-- Thumbnail -->
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-slate-100 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center text-slate-300 relative mt-0.5 md:mt-0">
+                ${(() => {
+                    const img = (l.img_urls && l.img_urls[0]) || (l.dettagli_extra && l.dettagli_extra.images && l.dettagli_extra.images[0]);
+                    return img ? `<img src="${escapeHTML(img)}" class="w-full h-full object-cover">` : '<i class="fas fa-store text-sm md:text-base"></i>';
+                })()}
+                ${isFeatured ? `<div class="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-md border-2 border-white"><i class="fas fa-star text-white text-[8px]"></i></div>` : ''}
             </div>
-            <div class="flex flex-wrap gap-2 w-full md:w-auto">
-                ${l.status === 'active' ? `
-                <button onclick='openVetrinaModal(${JSON.stringify({ id: l.id, titolo: l.titolo, featured: isFeatured, featured_until: l.featured_until }).replace(/'/g, "&apos;")})'
-                    class="text-xs font-black px-4 py-2 rounded-xl transition inline-flex items-center gap-1.5 ${isFeatured
-                        ? 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
-                        : 'bg-gradient-to-r from-amber-400 to-orange-400 text-white hover:from-amber-500 hover:to-orange-500 shadow-sm'}">
-                    <i class="fas fa-star"></i>${isFeatured ? 'Estendi vetrina' : 'Metti in vetrina'}
-                </button>` : ''}
-
-                ${l.status !== 'deleted' ? `
-                <button onclick="location.href='modifica-annuncio.html?id=${l.id}'"
-                    class="text-xs font-bold px-4 py-2 border border-blue-100 rounded-xl hover:bg-blue-50 transition text-blue-600">
-                    <i class="fas fa-edit mr-1"></i>Modifica
-                </button>` : ''}
-
-                ${l.status === 'active' ? `
-                <button onclick="markAsSold('${l.id}')"
-                    class="text-xs font-bold px-4 py-2 border border-slate-200 rounded-xl hover:bg-slate-50 transition text-slate-600">
-                    Segna venduto
-                </button>` : ''}
-                <button onclick="deleteListing('${l.id}')"
-                    class="text-xs font-bold px-4 py-2 border border-red-100 rounded-xl hover:bg-red-50 transition text-red-500">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
+            <!-- Content: info + actions in one column -->
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5 mb-0.5 flex-wrap">
+                    <span class="text-[10px] font-black px-1.5 py-0.5 rounded-md ${statusColor}">${statusLabel}</span>
+                    ${isFeatured ? `<span class="text-[9px] font-black px-1.5 py-0.5 rounded-md bg-gradient-to-r from-amber-400 to-orange-400 text-white uppercase tracking-wide"><i class="fas fa-star mr-0.5"></i>Vetrina<span class="hidden sm:inline"> · ${featuredUntilStr}</span></span>` : ''}
+                    <span class="text-[10px] text-slate-400 font-semibold truncate">${escapeHTML(l.stato || '')} · ${escapeHTML(l.tipo || '')}</span>
+                </div>
+                <h3 class="font-black text-slate-900 text-sm md:text-base leading-snug truncate">${escapeHTML(l.titolo || '')}</h3>
+                <p class="text-[11px] text-slate-400 font-medium mt-0.5 truncate">
+                    <i class="fas fa-map-marker-alt mr-1"></i>${escapeHTML(l.comune || '')}, ${escapeHTML(l.regione || '')} ·
+                    <i class="fas fa-euro-sign mx-0.5"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'}${l.visualizzazioni ? ` · <i class="fas fa-eye ml-0.5 mr-0.5"></i>${l.visualizzazioni}` : ''}${isFeatured ? ` · <i class="fas fa-phone-alt text-emerald-500 ml-0.5 mr-0.5"></i><span class="text-emerald-600 font-bold">${l.tel_clicks || 0} click</span>` : ''}
+                </p>
+                <!-- Actions -->
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                    ${l.status === 'active' ? `
+                    <button onclick='openVetrinaModal(${JSON.stringify({ id: l.id, titolo: l.titolo, featured: isFeatured, featured_until: l.featured_until }).replace(/'/g, "&apos;")})'
+                        class="text-[11px] font-black px-2.5 py-1.5 rounded-lg transition inline-flex items-center gap-1 ${isFeatured
+                            ? 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
+                            : 'bg-gradient-to-r from-amber-400 to-orange-400 text-white hover:from-amber-500 hover:to-orange-500 shadow-sm'}">
+                        <i class="fas fa-star text-[10px]"></i><span class="hidden sm:inline">${isFeatured ? 'Estendi' : 'Vetrina'}</span>
+                    </button>` : ''}
+                    ${l.status !== 'deleted' ? `
+                    <button onclick="location.href='modifica-annuncio.html?id=${l.id}'"
+                        class="text-[11px] font-bold px-2.5 py-1.5 border border-blue-100 rounded-lg hover:bg-blue-50 transition text-blue-600 inline-flex items-center gap-1">
+                        <i class="fas fa-edit text-[10px]"></i><span class="hidden sm:inline">Modifica</span>
+                    </button>` : ''}
+                    ${l.status === 'active' ? `
+                    <button onclick="markAsSold('${l.id}')"
+                        class="text-[11px] font-bold px-2.5 py-1.5 border border-slate-200 rounded-lg hover:bg-slate-50 transition text-slate-500 inline-flex items-center gap-1">
+                        <i class="fas fa-check text-[10px]"></i><span class="hidden sm:inline">Venduto</span>
+                    </button>` : ''}
+                    <button onclick="deleteListing('${l.id}')"
+                        class="text-[11px] font-bold px-2.5 py-1.5 border border-red-100 rounded-lg hover:bg-red-50 transition text-red-400 inline-flex items-center gap-1">
+                        <i class="fas fa-trash-alt text-[10px]"></i>
+                    </button>
+                </div>
             </div>
         </div>`;
     }).join('');
