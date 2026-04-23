@@ -653,7 +653,7 @@ async function loadMyListings() {
             : 'border border-slate-100';
 
         return `
-        <div class="bg-white rounded-2xl ${cardBorder} p-5 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between hover:shadow-md transition">
+        <div class="bg-white rounded-2xl ${cardBorder} p-5 flex flex-col md:flex-row gap-4 md:items-center justify-between hover:shadow-md transition">
             <div class="flex items-center gap-4 flex-grow min-w-0">
                 <!-- Thumbnail -->
                 <div class="w-16 h-16 bg-slate-100 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center text-slate-300 relative">
@@ -889,7 +889,7 @@ async function loadMyConversations() {
                     <i class="fas fa-user text-blue-500"></i>
                 </div>
                 <div class="flex-grow min-w-0">
-                    <p class="font-black text-slate-900 text-sm">${otherName}</p>
+                    <p class="font-black text-slate-900 text-sm truncate">${otherName}</p>
                     <p class="text-xs text-slate-400 font-semibold truncate mt-0.5">
                         Re: ${listing?.titolo || 'Annuncio eliminato'}
                     </p>
