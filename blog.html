@@ -16,14 +16,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; animation: fadeIn 0.5s ease-in-out; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .prose p { margin-bottom: 1.5rem; color: #475569; line-height: 1.8; }
         .prose h2 { font-weight: 800; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; color: #0f172a; }
         .prose strong { color: #1e293b; }
         .prose ul, .prose ol { margin-bottom: 1.5rem; }
-        .prose table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
-        .prose th { background: #f8fafc; text-align: left; padding: 12px; border: 1px solid #e2e8f0; font-size: 0.875rem; color: #1e293b; }
+        .prose table { width: 100%; border-collapse: collapse; margin: 2rem 0; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .prose th { background: #f8fafc; text-align: left; padding: 12px; border: 1px solid #e2e8f0; font-size: 0.875rem; color: #1e293b; white-space: nowrap; }
         .prose td { padding: 12px; border: 1px solid #e2e8f0; font-size: 0.875rem; color: #475569; }
         
         .cta-button {
