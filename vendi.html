@@ -410,6 +410,8 @@ function _validateStep(n) {
     if (n === 5) {
         if (!document.getElementById('fTitolo').value.trim())
             return _err('Inserisci un titolo per il tuo annuncio.');
+        if (document.getElementById('fDescrizione').value.trim().length < 10)
+            return _err('La descrizione deve essere di almeno 10 caratteri.');
         if (!document.getElementById('fNome').value.trim())
             return _err('Inserisci il nome di contatto.');
         if (!document.getElementById('fTel').value.trim())
@@ -722,7 +724,7 @@ async function submitAnnuncio() {
 function checkContent(titolo, descrizione) {
     const blacklist = ['cazzo', 'merda', 'vaffanculo'];
     const testo = (titolo + ' ' + descrizione).toLowerCase();
-    if (descrizione.length < 20) return 'pending';
+    if (descrizione.length < 10) return 'pending';
     if (blacklist.some(w => testo.includes(w))) return 'pending';
     return 'active';
 }
