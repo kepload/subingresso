@@ -366,7 +366,7 @@ window.handleForgotPassword = async function (e) {
     const email = document.getElementById('forgotEmail').value.trim();
     try {
         const { error } = await _supabase.auth.resetPasswordForEmail(email, {
-            redirectTo: window.location.origin + '/reset-password.html'
+            redirectTo: 'https://subingresso.it/reset-password.html'
         });
         _setBtnLoading('forgotBtn', false, '<i class="fas fa-paper-plane"></i> Invia link');
         if (error) { _showAuthError('Errore. Controlla l\'email e riprova.'); return; }
