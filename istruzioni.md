@@ -120,6 +120,9 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 ## 🃏 Struttura card annunci (`buildCard` in `data.js`)
 - La card è un `<div class="group ...">` NON un `<a>` — ha link separati: cover → `annuncioUrl`, titolo → `annuncioUrl`, venditore → `profiloUrl`, freccia → `annuncioUrl`. NON tornare a wrapper `<a>` unico o il link profilo smette di funzionare.
 - Il link venditore usa `onclick="event.stopPropagation()"` ed è un `<a>` reale a `profilo.html?id=USER_ID`.
+- **Bordo laterale sinistro**: `border-l-[3px] border-l-emerald-400` per Vendita, `border-l-[3px] border-l-blue-400` per Affitto. Le card featured mantengono solo il bordo dorato. Variabile `statoBorder` in `buildCard`.
+- **Badge "Dati Verificati" rimosso** dalle card featured — era fuorviante.
+- **`settore` NON è una colonna diretta** della tabella `annunci` — non usarla in `select()` esplicite o la query fallisce. È dentro `dettagli_extra` o non esiste. Usare sempre `select('*')` per annunci.
 
 ## 📐 Dimensioni immagine
 - **Card anteprima**: `h-20` mobile, `h-28` desktop (rapporto ~5:1 su mobile).
@@ -152,10 +155,11 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Anti-spam: 1 minuto (era 5). Timestamp impostato PRIMA dell'insert, rimosso su errore.
 
 ## 💶 Prezzi Affitto — Annuali (Aprile 2026)
-- Il DB ora salva il **prezzo annuale** per gli affitti (il vecchio mensile × 12 è stato aggiornato via SQL).
-- Display: mostra `prezzo ÷ 12 /mese` in grande + `prezzo /anno` sotto — sia in card (`data.js`) che in dettaglio (`annuncio-detail.js`).
+- Il DB salva il **prezzo annuale** per gli affitti.
+- Display: solo prezzo annuale ovunque — **nessun calcolo mensile**. Card mostra `€ X.XXX /anno`, pagina annuncio mostra `€ X.XXX` con `/anno` inline (span) + sottotitolo `/anno · trattabile`.
 - Badge sulle card: mostra "Affitto" (non "Affitto mensile").
-- `formatPrice()` in `data.js` rimane per la vendita. Per l'affitto la card usa HTML inline con calcolo ÷12.
+- `formatPrice()` in `data.js`: affitto → `€ X /anno`, vendita → `€ X`.
+- **`#prezzoMobile`** in `annuncio.html`: elemento `lg:hidden` sotto il titolo per mostrare il prezzo in cima su mobile. Aggiornato da `annuncio-detail.js` insieme a `#prezzo`.
 
 ## 🗑️ Eliminazione Annunci
 - `status='deleted'` = eliminato. NON viene fatto un DELETE fisico dal DB.
