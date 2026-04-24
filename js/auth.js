@@ -211,7 +211,10 @@ function _injectVisitorPopup() {
     document.body.insertAdjacentHTML('beforeend', `
     <div id="visitorPopup" class="fixed inset-0 z-[998] flex items-center justify-center p-4 hidden"
          style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)">
-      <div class="bg-white rounded-3xl w-full max-w-sm shadow-2xl p-8 text-center" onclick="event.stopPropagation()">
+      <div class="bg-white rounded-3xl w-full max-w-sm shadow-2xl p-8 text-center relative" onclick="event.stopPropagation()">
+        <button onclick="closeVisitorPopup()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-slate-300 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition">
+          <i class="fas fa-times"></i>
+        </button>
         <div class="text-4xl mb-3">🎁</div>
         <h2 class="text-xl font-black text-slate-800 mb-2">Vendi il tuo posteggio?</h2>
         <p class="text-sm text-slate-500 mb-5 leading-relaxed">
@@ -230,12 +233,16 @@ function _injectVisitorPopup() {
 
 function _scheduleVisitorPopup() {
     if (sessionStorage.getItem('_vp')) return;
-    sessionStorage.setItem('_vp', '1');
-    setTimeout(() => {
+    setTimeout(async () => {
+        try {
+            const { data } = await _supabase.auth.getSession();
+            if (data?.session) return;
+        } catch (_) {}
+        sessionStorage.setItem('_vp', '1');
         _injectVisitorPopup();
         const el = document.getElementById('visitorPopup');
         if (el) { el.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-    }, 4000);
+    }, 8000);
 }
 
 window.closeVisitorPopup = function () {
