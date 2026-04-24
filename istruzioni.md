@@ -190,7 +190,7 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Controllo freschezza** (`notify-alert`): annuncio con `created_at > 24h` → skip (evita email su riattivazioni vecchie).
 - **Tabella `notify_alert_log(user_id, annuncio_id, sent_at)`** PK composita: dedup hard — una sola email per coppia utente/annuncio, per sempre. Se email fallisce via Resend, rollback della riga (retry possibile).
 - **RESEND_API_KEY** aggiunta ai secret Supabase Edge Functions (Aprile 2026). Chiave attiva su resend.com.
-- **Dominio `subingresso.it` su Resend**: record DNS aggiunti su Aruba (TXT DKIM `resend._domainkey` + TXT SPF `send`). Verifica in corso — una volta verde le email partono.
+- **Dominio `subingresso.it` su Resend**: VERIFICATO (Aprile 2026). Record DNS su Aruba: TXT `resend._domainkey` (DKIM) + TXT `send` (SPF) + MX `send` (bounce, aggiunto via Gestione Avanzata → Terzo livello). FROM fisso: `noreply@subingresso.it`. Sistema alert email funzionante end-to-end.
 - **Debug**: per testare senza creare annunci, chiamare la function direttamente con payload JSON. Vedere `net._http_response` in SQL Editor per verificare se la chiamata è partita dal trigger.
 - Email include link diretto all'annuncio + link ricerca pre-filtrata sulla zona dell'alert.
 
