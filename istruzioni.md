@@ -233,6 +233,26 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Admin Vetrina gratuita**: `adminOpenVetrinaModal(id)` → modal durata → `adminGrantVetrina(30|90)` scrive `featured=true`, `featured_until`, `featured_tier='admin_free'`. `adminRevokeVetrina(id)` azzera tutto. Se il trigger DB blocca, mostra toast di errore.
 - **Moderazione vetrina**: se un utente modifica un annuncio in vetrina, `status` torna `pending` automaticamente (non visibile pubblicamente). L'admin approva/elimina come al solito; i campi `featured*` restano invariati fino all'approvazione o eliminazione.
 
+## 📅 Scadenza Post + Privilegio Vetrina (Aprile 2026)
+- **Post normale scade in 100 giorni.** Colonna `expires_at timestamptz` su `annunci` — **SQL da eseguire in Supabase se non ancora fatto:**
+  ```sql
+  ALTER TABLE annunci ADD COLUMN IF NOT EXISTS expires_at timestamptz;
+  UPDATE annunci SET expires_at = created_at + INTERVAL '100 days' WHERE expires_at IS NULL AND status != 'deleted';
+  ```
+- **Vetrina 30gg → post esteso a max 200 giorni** da `created_at`. **Vetrina 90gg → max 300 giorni.** Cap non superabile: una seconda vetrina non aumenta ulteriormente.
+- Logica in `adminGrantVetrina(days)` (`dashboard.html`): fetch `created_at`+`expires_at`, calcola cap, usa `MAX(current, cap)`, aggiorna `expires_at` insieme ai campi `featured*`.
+- **`stripe-webhook` edge function (Supabase) da aggiornare manualmente** con la stessa logica: su `checkout.session.completed` leggere `created_at` dell'annuncio e impostare `expires_at` al cap del tier (`30d`→200gg, `90d`→300gg).
+- **NON filtrare su `expires_at` nelle query** finché la colonna non è popolata per tutti i post (evita di nascondere post esistenti). Abilitare il filtro `.or('expires_at.is.null,expires_at.gt.<now>')` solo dopo aver eseguito l'UPDATE sopra.
+
+## 🔍 Ricerca Annunci — Tasto Cerca (Aprile 2026)
+- La `searchBar` in `annunci.html` NON lancia più la ricerca automatica sull'input. Mostra solo il pulse visivo.
+- Bottone **"Cerca"** (blu, dentro la barra) + tasto **Invio** avviano `applyFilters()`. I filtri sidebar (regione, tipo, stato, prezzo, superficie) restano live con `onchange`.
+
+## 💎 Modal Vetrina — Note UI (Aprile 2026)
+- Modal compatto senza scroll (`max-w-md`, no `overflow-y-auto`). Bottom sheet su mobile, centrato su desktop.
+- **4 benefit in griglia** (ordine): +Visualizzazioni · Vendi prima · In cima · Post più lungo.
+- **Badge "Dati Verificati"** rimosso da `annuncio-detail.js` — era fuorviante, nessuna verifica reale avviene.
+
 ## ⚠️ Note Operative Deploy & Troubleshooting (Supabase)
 - **Supabase CLI su Windows:** L'installazione di `supabase` via npm globale fallisce tipicamente su Windows. Per fare il deploy delle Edge Functions, usare l'eseguibile standalone (scaricato da GitHub Releases) o aggiornare il codice manualmente dalla Dashboard web (copia-incolla).
 - **Bug SQL Editor (Asterischi Cron):** Copiando/incollando orari cron come `'0 9 * * 1'` direttamente nell'SQL Editor web di Supabase, a volte l'interfaccia rimuove gli asterischi creando spazi vuoti (causando l'errore `invalid schedule`). Per risolvere, assicurati di copiare la query da un file `.sql` locale pulito o riscrivi gli asterischi a mano.
