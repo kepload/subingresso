@@ -382,6 +382,32 @@
     </div>
 </div>
 
+<!-- ══════════════ MODAL ADMIN VETRINA GRATIS ══════════════ -->
+<div id="adminVetrinaModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.72);backdrop-filter:blur(4px)">
+    <div class="bg-white rounded-2xl w-full max-w-xs shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+        <div class="p-6 text-center">
+            <div class="w-14 h-14 rounded-2xl mx-auto flex items-center justify-center mb-4 bg-amber-100">
+                <i class="fas fa-star text-amber-500 text-xl"></i>
+            </div>
+            <h3 class="font-black text-lg text-slate-900 mb-1">Vetrina gratuita</h3>
+            <p class="text-sm text-slate-500 font-semibold mb-5">Scegli per quanti giorni attivare la vetrina su questo annuncio.</p>
+            <div class="flex gap-3">
+                <button onclick="adminGrantVetrina(30)"
+                    class="flex-1 py-3 rounded-xl border-2 border-amber-200 text-sm font-black text-amber-700 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition">
+                    30 giorni
+                </button>
+                <button onclick="adminGrantVetrina(90)"
+                    class="flex-1 py-3 rounded-xl bg-amber-500 text-sm font-black text-white hover:bg-amber-600 transition">
+                    90 giorni
+                </button>
+            </div>
+        </div>
+        <div class="px-6 pb-5 text-center">
+            <button onclick="adminCloseVetrinaModal()" class="text-xs font-black text-slate-400 hover:text-slate-600 uppercase tracking-widest transition">Annulla</button>
+        </div>
+    </div>
+</div>
+
 <!-- ══════════════ FOOTER ══════════════ -->
 <footer class="bg-slate-900 text-white py-10 mt-10">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
@@ -852,7 +878,7 @@ async function loadAllListings() {
 
     const { data, error } = await _supabase
         .from('annunci')
-        .select('id, titolo, comune, regione, status, stato, created_at')
+        .select('id, titolo, comune, regione, status, stato, created_at, featured, featured_until')
         .neq('status', 'deleted')
         .order('created_at', { ascending: false })
         .limit(100);
@@ -875,20 +901,31 @@ async function loadAllListings() {
     list.innerHTML = data.map(l => {
         const sc = statusColors[l.status] || 'bg-slate-100 text-slate-500';
         const sl = statusLabels[l.status] || l.status;
+        const isFeatured = l.featured && l.featured_until && new Date(l.featured_until) > new Date();
+        const featuredUntilStr = isFeatured
+            ? new Date(l.featured_until).toLocaleDateString('it-IT', { day: '2-digit', month: 'short' })
+            : '';
         return `
         <div class="flex items-center justify-between gap-3 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition">
             <div class="min-w-0 flex-1">
                 <div class="flex items-center gap-2 flex-wrap">
                     <span class="text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider ${sc}">${sl}</span>
+                    ${isFeatured ? `<span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 uppercase tracking-wider"><i class="fas fa-star mr-0.5"></i> Vetrina fino al ${featuredUntilStr}</span>` : ''}
                     <span class="text-[10px] text-slate-400 font-bold">${new Date(l.created_at).toLocaleDateString('it-IT')}</span>
                 </div>
                 <p class="font-bold text-sm text-slate-900 truncate mt-0.5">${l.titolo || '—'}</p>
                 <p class="text-xs text-slate-400 font-medium">${l.comune || ''} · ${l.stato || ''}</p>
             </div>
-            <button onclick="deleteAnnuncio('${l.id}')"
-                class="flex-shrink-0 bg-red-50 text-red-500 border border-red-100 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-red-500 hover:text-white hover:border-red-500 transition">
-                <i class="fas fa-trash-alt mr-1"></i> Elimina
-            </button>
+            <div class="flex items-center gap-2 flex-shrink-0">
+                ${isFeatured
+                    ? `<button onclick="adminRevokeVetrina('${l.id}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star-half-alt mr-1"></i> Revoca</button>`
+                    : `<button onclick="adminOpenVetrinaModal('${l.id}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star mr-1"></i> Vetrina</button>`
+                }
+                <button onclick="deleteAnnuncio('${l.id}')"
+                    class="bg-red-50 text-red-500 border border-red-100 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-red-500 hover:text-white hover:border-red-500 transition">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
         </div>`;
     }).join('');
 }
@@ -906,6 +943,68 @@ async function deleteAnnuncio(id) {
         loadAllListings();
         loadAdminStats();
     }
+}
+
+// ── Admin Vetrina gratuita ────────────────────────────────
+let _adminVetrinaTarget = null;
+
+function adminOpenVetrinaModal(id) {
+    _adminVetrinaTarget = id;
+    document.getElementById('adminVetrinaModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function adminCloseVetrinaModal() {
+    document.getElementById('adminVetrinaModal').classList.add('hidden');
+    document.body.style.overflow = '';
+    _adminVetrinaTarget = null;
+}
+
+async function adminGrantVetrina(days) {
+    const id = _adminVetrinaTarget;
+    adminCloseVetrinaModal();
+    if (!id) return;
+
+    const now   = new Date();
+    const until = new Date(now);
+    until.setDate(until.getDate() + days);
+
+    const { error } = await _supabase.from('annunci').update({
+        featured:       true,
+        featured_until: until.toISOString(),
+        featured_since: now.toISOString(),
+        featured_tier:  'admin_free',
+    }).eq('id', id);
+
+    if (error) {
+        await showConfirm({
+            title:   'Errore attivazione vetrina',
+            message: error.message,
+            okLabel: 'OK',
+            variant: 'admin',
+        });
+    } else {
+        loadAllListings();
+    }
+}
+
+async function adminRevokeVetrina(id) {
+    const ok = await showConfirm({
+        title:   'Revocare la vetrina?',
+        message: 'L\'annuncio tornerà normale e non sarà più in evidenza nella lista risultati.',
+        okLabel: 'Revoca vetrina',
+        variant: 'warning',
+    });
+    if (!ok) return;
+
+    const { error } = await _supabase.from('annunci').update({
+        featured:       false,
+        featured_until: null,
+        featured_since: null,
+        featured_tier:  null,
+    }).eq('id', id);
+
+    if (!error) loadAllListings();
 }
 
 // ── My Conversations ─────────────────────────────────────
