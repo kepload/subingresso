@@ -167,9 +167,10 @@ function buildCard(l, isSmall = false, distance = null) {
         ? `<span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded-lg shadow-sm">a ${Math.round(distance)} km</span>`
         : '';
     const featured = isListingFeatured(l);
+    const statoBorder = l.stato === 'Affitto mensile' ? 'border-l-[3px] border-l-blue-400' : 'border-l-[3px] border-l-emerald-400';
     const featuredBorder = featured
         ? 'shadow-[0_0_0_2px_rgb(251,191,36),0_10px_40px_rgba(245,158,11,0.30)]'
-        : 'border border-slate-100';
+        : `border border-slate-100 ${statoBorder}`;
     const featuredBadge = featured
         ? `<span class="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-md flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-white/90 animate-pulse flex-shrink-0"></span><i class="fas fa-crown text-[9px]"></i> In Evidenza</span>`
         : '';
