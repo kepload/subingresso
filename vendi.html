@@ -602,6 +602,19 @@ function removeFile(btn) {
     div.remove();
 }
 
+// ── Vetrina welcome (10 giorni gratis primo annuncio) ─────
+async function _tryGrantWelcomeVetrina(userId, annuncioId) {
+    try {
+        const { data: profile } = await _supabase
+            .from('profiles').select('vetrina_welcome_days').eq('id', userId).single();
+        if (!profile?.vetrina_welcome_days || profile.vetrina_welcome_days < 1) return;
+        await _supabase.rpc('grant_welcome_vetrina', {
+            p_annuncio_id: annuncioId,
+            p_user_id: userId
+        });
+    } catch (_) {}
+}
+
 // ── Submit ────────────────────────────────────────────────
 async function submitAnnuncio() {
     if (!_validateStep(5)) return;
@@ -675,6 +688,9 @@ async function submitAnnuncio() {
         }
 
         if (error) throw error;
+
+        // Prova ad attivare la vetrina gratis se l'utente ha ancora il credito
+        _tryGrantWelcomeVetrina(user.id, inserted.id);
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.getElementById('formWrapper').classList.add('hidden');
