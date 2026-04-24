@@ -290,8 +290,8 @@ async function initPage() {
             {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://www.subingresso.it/" },
-                    { "@type": "ListItem", "position": 2, "name": "Annunci", "item": "https://www.subingresso.it/annunci" },
+                    { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://subingresso.it/" },
+                    { "@type": "ListItem", "position": 2, "name": "Annunci", "item": "https://subingresso.it/annunci" },
                     { "@type": "ListItem", "position": 3, "name": listing.titolo }
                 ]
             }

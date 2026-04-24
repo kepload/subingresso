@@ -202,7 +202,7 @@ function _injectItemListLd(items, regione, tipo, q) {
         "itemListElement": items.slice(0, 20).map((l, i) => ({
             "@type": "ListItem",
             "position": i + 1,
-            "url": `https://www.subingresso.it/annuncio?id=${l.id}`,
+            "url": `https://subingresso.it/annuncio?id=${l.id}`,
             "name": l.titolo
         }))
     };

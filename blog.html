@@ -9,9 +9,9 @@
     <meta property="og:title" id="ogBlogTitle" content="Blog & Guide per Ambulanti — Subingresso.it">
     <meta property="og:description" id="ogBlogDesc" content="Guide tecniche, aggiornamenti normativi e risorse pratiche per ambulanti e titolari di posteggi mercatali.">
     <meta property="og:type" content="website">
-    <meta property="og:url" id="ogBlogUrl" content="https://www.subingresso.it/blog">
+    <meta property="og:url" id="ogBlogUrl" content="https://subingresso.it/blog">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" id="canonicalBlog" href="https://www.subingresso.it/blog">
+    <link rel="canonical" id="canonicalBlog" href="https://subingresso.it/blog">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
@@ -129,7 +129,7 @@ function renderPost(post) {
     _sm('metaBlogDesc', _desc);
     _sm('ogBlogTitle',  `${post.title} — Subingresso.it`);
     _sm('ogBlogDesc',   _desc);
-    const postUrl = `https://www.subingresso.it/blog?post=${encodeURIComponent(post.slug)}`;
+    const postUrl = `https://subingresso.it/blog?post=${encodeURIComponent(post.slug)}`;
     _sm('ogBlogUrl', postUrl);
     const canon = document.getElementById('canonicalBlog');
     if (canon) canon.href = postUrl;
@@ -146,7 +146,7 @@ function renderPost(post) {
         "publisher": {
             "@type": "Organization",
             "name": "Subingresso.it",
-            "url": "https://www.subingresso.it"
+            "url": "https://subingresso.it"
         }
     };
     let _ldEl = document.getElementById('_ldBlog');
