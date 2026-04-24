@@ -55,7 +55,7 @@ function formatDate(dateStr) {
 function formatPrice(l) {
     if (!l.prezzo) return 'Trattativa riservata';
     const p = l.prezzo.toLocaleString('it-IT');
-    return l.stato === 'Affitto mensile' ? `€ ${p} /mese` : `€ ${p}`;
+    return l.stato === 'Affitto mensile' ? `€ ${p} /anno` : `€ ${p}`;
 }
 
 // ══════════════ BADGE PROFILO ══════════════
@@ -266,9 +266,8 @@ function buildCard(l, isSmall = false, distance = null) {
             <div class="mt-auto pt-3 sm:pt-4 border-t border-slate-50 flex items-center justify-between">
                 <div>
                     <p class="text-[10px] text-slate-400 font-black uppercase tracking-widest leading-none mb-0.5">${l.stato === 'Affitto mensile' ? 'Affitto' : 'Prezzo'}</p>
-                    ${l.stato === 'Affitto mensile' && l.prezzo
-                        ? `<p class="text-base sm:text-xl font-black text-slate-900 leading-none">€ ${Math.round(l.prezzo / 12).toLocaleString('it-IT')}<span class="text-xs font-bold text-slate-400 ml-0.5">/mese</span></p>
-                           <p class="text-[10px] font-semibold text-slate-400 mt-0.5">€ ${l.prezzo.toLocaleString('it-IT')} /anno</p>`
+                    ${l.prezzo
+                        ? `<p class="text-base sm:text-xl font-black text-slate-900 leading-none">€ ${l.prezzo.toLocaleString('it-IT')}<span class="text-xs font-bold text-slate-400 ml-0.5">${l.stato === 'Affitto mensile' ? '/anno' : ''}</span></p>`
                         : `<p class="text-base sm:text-xl font-black text-slate-900 leading-none">${formatPrice(l)}</p>`
                     }
                 </div>
