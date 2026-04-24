@@ -240,29 +240,33 @@ function buildCard(l, isSmall = false, distance = null) {
                 <span class="truncate">${escapeHTML(l.comune)}, ${escapeHTML(l.regione)}</span>
             </div>
 
-            ${l.contatto ? `
-                ${profiloUrl
-                    ? `<a href="${profiloUrl}" onclick="event.stopPropagation()" class="flex items-center gap-1.5 mb-2 sm:mb-3 hover:bg-blue-50 rounded-xl px-1.5 py-1 -mx-1.5 transition w-fit max-w-full">
-                        <div class="relative flex-shrink-0" title="${_sellerBadge.label}">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center overflow-hidden">
-                                ${USER_AVATARS[l.user_id]
-                                    ? `<img src="${escapeHTML(USER_AVATARS[l.user_id])}" class="w-full h-full object-cover">`
-                                    : `<span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>`
-                                }
+            ${(l.contatto || l.user_id) ? `
+                ${(() => {
+                    const displayName = (l.user_id && USER_NAMES[l.user_id]) ? USER_NAMES[l.user_id] : (l.contatto || '');
+                    const initial = displayName ? escapeHTML(displayName.charAt(0).toUpperCase()) : '?';
+                    const nameHtml = `<span class="text-[11px] font-bold text-slate-400 truncate hover:text-blue-600 transition">${escapeHTML(displayName)}</span>`;
+                    const avatarHtml = USER_AVATARS[l.user_id]
+                        ? `<img src="${escapeHTML(USER_AVATARS[l.user_id])}" class="w-full h-full object-cover">`
+                        : `<span class="text-[9px] font-black text-blue-600">${initial}</span>`;
+                    if (profiloUrl) {
+                        return `<a href="${profiloUrl}" onclick="event.stopPropagation()" class="flex items-center gap-1.5 mb-2 sm:mb-3 hover:bg-blue-50 rounded-xl px-1.5 py-1 -mx-1.5 transition w-fit max-w-full">
+                            <div class="relative flex-shrink-0" title="${_sellerBadge.label}">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center overflow-hidden">${avatarHtml}</div>
+                                <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 ${_sellerBadge.bg} rounded-full flex items-center justify-center border-[1.5px] border-white">
+                                    <i class="fas ${_sellerBadge.icon} text-[5px] text-white"></i>
+                                </div>
                             </div>
-                            <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 ${_sellerBadge.bg} rounded-full flex items-center justify-center border-[1.5px] border-white">
-                                <i class="fas ${_sellerBadge.icon} text-[5px] text-white"></i>
+                            ${nameHtml}
+                        </a>`;
+                    } else {
+                        return `<div class="flex items-center gap-1.5 mb-2 sm:mb-3">
+                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                <span class="text-[9px] font-black text-blue-600">${initial}</span>
                             </div>
-                        </div>
-                        <span class="text-[11px] font-bold text-slate-400 truncate hover:text-blue-600 transition">${escapeHTML(l.contatto)}</span>
-                    </a>`
-                    : `<div class="flex items-center gap-1.5 mb-2 sm:mb-3">
-                        <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                            <span class="text-[9px] font-black text-blue-600">${escapeHTML(l.contatto.charAt(0).toUpperCase())}</span>
-                        </div>
-                        <span class="text-[11px] font-bold text-slate-400 truncate">${escapeHTML(l.contatto)}</span>
-                    </div>`
-                }` : ''}
+                            <span class="text-[11px] font-bold text-slate-400 truncate">${escapeHTML(displayName)}</span>
+                        </div>`;
+                    }
+                })()}` : ''}
 
             <div class="mt-auto pt-3 sm:pt-4 border-t border-slate-50 flex items-center justify-between">
                 <div>
@@ -292,6 +296,9 @@ const LISTINGS = [];
 
 // Cache avatar URL per user_id — popolata da annunci.js dopo il fetch profiles
 const USER_AVATARS = {};
+
+// Cache nome attuale venditore — popolata da annunci.js dopo il fetch profiles
+const USER_NAMES = {};
 
 // ── Tracking visualizzazioni anteprima card (shared tra tutte le pagine) ──
 const _viewedPreviews = new Set();

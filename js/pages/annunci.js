@@ -283,12 +283,15 @@ async function loadListings() {
                 data: l.data || l.created_at?.split('T')[0] || new Date().toISOString().split('T')[0]
             }));
 
-            // Fetch avatar URL per ogni venditore unico
+            // Fetch avatar e nome attuale per ogni venditore unico
             const uniqueIds = [...new Set(data.map(l => l.user_id).filter(Boolean))];
             if (uniqueIds.length) {
                 const { data: profiles } = await _supabase
-                    .from('profiles').select('id, avatar_url').in('id', uniqueIds);
-                if (profiles) profiles.forEach(p => { if (p.avatar_url) USER_AVATARS[p.id] = p.avatar_url; });
+                    .from('profiles').select('id, avatar_url, nome').in('id', uniqueIds);
+                if (profiles) profiles.forEach(p => {
+                    if (p.avatar_url) USER_AVATARS[p.id] = p.avatar_url;
+                    if (p.nome) USER_NAMES[p.id] = p.nome;
+                });
             }
         }
     } catch (e) {
