@@ -60,9 +60,31 @@ const modalHTML = `
         class="w-full bg-blue-600 text-white py-3.5 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-2">
         <i class="fas fa-sign-in-alt"></i> Accedi
       </button>
+      <div class="flex items-center justify-between pt-1">
+        <p class="text-xs text-slate-400 font-medium">
+          Non hai un account?
+          <button type="button" onclick="switchAuthTab('register')" class="text-blue-600 font-bold hover:underline">Registrati gratis</button>
+        </p>
+        <button type="button" onclick="switchAuthTab('forgot')" class="text-xs text-slate-400 hover:text-slate-600 font-semibold transition">
+          Password dimenticata?
+        </button>
+      </div>
+    </form>
+
+    <!-- ── Forgot Password Form ── -->
+    <form id="forgotForm" class="p-6 space-y-4 hidden" onsubmit="handleForgotPassword(event)">
+      <div>
+        <p class="text-sm font-semibold text-slate-600 mb-4">Inserisci la tua email e ti mandiamo un link per reimpostare la password.</p>
+        <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Email</label>
+        <input id="forgotEmail" type="email" placeholder="la-tua@email.it" required autocomplete="email"
+          class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+      </div>
+      <button type="submit" id="forgotBtn"
+        class="w-full bg-blue-600 text-white py-3.5 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-2">
+        <i class="fas fa-paper-plane"></i> Invia link
+      </button>
       <p class="text-center text-xs text-slate-400 font-medium pt-1">
-        Non hai un account?
-        <button type="button" onclick="switchAuthTab('register')" class="text-blue-600 font-bold hover:underline">Registrati gratis</button>
+        <button type="button" onclick="switchAuthTab('login')" class="text-blue-600 font-bold hover:underline">← Torna al login</button>
       </p>
     </form>
 
@@ -123,18 +145,18 @@ function initAuthModal() {
 
 // ── Tab switching ─────────────────────────────────────────
 window.switchAuthTab = function (tab) {
-    const isLogin = tab === 'login';
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-    const tabLogin = document.getElementById('tabLogin');
+    const isLogin    = tab === 'login';
+    const isRegister = tab === 'register';
+    const isForgot   = tab === 'forgot';
+    document.getElementById('loginForm')?.classList.toggle('hidden', !isLogin);
+    document.getElementById('registerForm')?.classList.toggle('hidden', !isRegister);
+    document.getElementById('forgotForm')?.classList.toggle('hidden', !isForgot);
+    const tabLogin    = document.getElementById('tabLogin');
     const tabRegister = document.getElementById('tabRegister');
-    
-    if (loginForm) loginForm.classList.toggle('hidden', !isLogin);
-    if (registerForm) registerForm.classList.toggle('hidden', isLogin);
     if (tabLogin) tabLogin.className =
         `flex-1 py-5 text-sm font-black tracking-tight transition ${isLogin ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-400 hover:text-slate-700'}`;
     if (tabRegister) tabRegister.className =
-        `flex-1 py-5 text-sm font-black tracking-tight transition ${!isLogin ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-400 hover:text-slate-700'}`;
+        `flex-1 py-5 text-sm font-black tracking-tight transition ${isRegister ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-400 hover:text-slate-700'}`;
     _hideAuthFeedback();
 };
 
@@ -333,6 +355,25 @@ window.handleRegister = async function (e) {
     } catch (err) {
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
         _showAuthError('Errore durante la registrazione.');
+    }
+};
+
+// ── Forgot Password ──────────────────────────────────────
+window.handleForgotPassword = async function (e) {
+    e.preventDefault();
+    _hideAuthFeedback();
+    _setBtnLoading('forgotBtn', true, '<i class="fas fa-paper-plane"></i> Invia link');
+    const email = document.getElementById('forgotEmail').value.trim();
+    try {
+        const { error } = await _supabase.auth.resetPasswordForEmail(email, {
+            redirectTo: window.location.origin + '/reset-password.html'
+        });
+        _setBtnLoading('forgotBtn', false, '<i class="fas fa-paper-plane"></i> Invia link');
+        if (error) { _showAuthError('Errore. Controlla l\'email e riprova.'); return; }
+        _showAuthSuccess('Link inviato! Controlla la tua email.');
+    } catch (err) {
+        _setBtnLoading('forgotBtn', false, '<i class="fas fa-paper-plane"></i> Invia link');
+        _showAuthError('Errore di connessione. Riprova.');
     }
 };
 
