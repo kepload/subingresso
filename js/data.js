@@ -169,9 +169,9 @@ function buildCard(l, isSmall = false, distance = null) {
     const featured = isListingFeatured(l);
     const isAffitto = l.stato === 'Affitto mensile';
     const statoBorder = isAffitto ? 'border-l-[3px] border-l-blue-400' : 'border-l-[3px] border-l-emerald-400';
-    const statoBg = isAffitto ? 'bg-blue-50/40' : 'bg-emerald-50/40';
+    const statoBg = isAffitto ? 'bg-blue-50/70' : 'bg-emerald-50/70';
     const featuredBorder = featured
-        ? `shadow-[0_0_0_2px_rgb(251,191,36),0_10px_40px_rgba(245,158,11,0.30)] ${statoBorder}`
+        ? 'shadow-[0_0_0_2px_rgb(251,191,36),0_10px_40px_rgba(245,158,11,0.30)]'
         : `border border-slate-100 ${statoBorder}`;
     const featuredBadge = featured
         ? `<span class="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-md flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-white/90 animate-pulse flex-shrink-0"></span><i class="fas fa-crown text-[9px]"></i> In Evidenza</span>`
@@ -211,7 +211,7 @@ function buildCard(l, isSmall = false, distance = null) {
     })();
 
     return `
-    <div data-listing-id="${escapeHTML(l.id)}" class="group ${featured ? `bg-gradient-to-b ${isAffitto ? 'from-amber-50/60 to-blue-50/30' : 'from-amber-50/60 to-emerald-50/30'}` : statoBg} rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full relative">
+    <div data-listing-id="${escapeHTML(l.id)}" class="group ${featured ? 'bg-gradient-to-b from-amber-50/50 to-white' : statoBg} rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full relative">
         <!-- cover -->
         <a href="${annuncioUrl}" class="block relative h-20 sm:h-28 bg-slate-100 overflow-hidden flex-shrink-0">
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
