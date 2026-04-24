@@ -395,11 +395,11 @@
             <div class="flex gap-3">
                 <button onclick="adminGrantVetrina(30)"
                     class="flex-1 py-3 rounded-xl border-2 border-amber-200 text-sm font-black text-amber-700 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition">
-                    60 giorni
+                    30 giorni
                 </button>
                 <button onclick="adminGrantVetrina(90)"
                     class="flex-1 py-3 rounded-xl bg-amber-500 text-sm font-black text-white hover:bg-amber-600 transition">
-                    180 giorni
+                    90 giorni
                 </button>
             </div>
         </div>
@@ -968,14 +968,28 @@ async function adminGrantVetrina(days) {
 
     const now   = new Date();
     const until = new Date(now);
-    until.setDate(until.getDate() + days * 2);
+    until.setDate(until.getDate() + days);
 
-    const { error } = await _supabase.from('annunci').update({
+    // Estendi scadenza post: 30gg vetrina → max 200gg, 90gg vetrina → max 300gg
+    const { data: ann } = await _supabase.from('annunci').select('created_at, expires_at').eq('id', id).single();
+    const capDays = days >= 90 ? 300 : 200;
+    let newExpiry = null;
+    if (ann?.created_at) {
+        const cap = new Date(ann.created_at);
+        cap.setDate(cap.getDate() + capDays);
+        const cur = ann.expires_at ? new Date(ann.expires_at) : new Date(0);
+        newExpiry = (cur > cap ? cur : cap).toISOString();
+    }
+
+    const updateData = {
         featured:       true,
         featured_until: until.toISOString(),
         featured_since: now.toISOString(),
         featured_tier:  'admin_free',
-    }).eq('id', id);
+    };
+    if (newExpiry) updateData.expires_at = newExpiry;
+
+    const { error } = await _supabase.from('annunci').update(updateData).eq('id', id);
 
     if (error) {
         await showConfirm({

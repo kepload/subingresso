@@ -173,10 +173,6 @@ async function initPage() {
         banner.innerHTML = '<i class="fas fa-star"></i> Annuncio in Vetrina';
         badgeContainer.appendChild(banner);
 
-        const badgeVerificato = document.createElement('div');
-        badgeVerificato.className = 'inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm';
-        badgeVerificato.innerHTML = '<i class="fas fa-shield-alt"></i> Dati Verificati';
-        badgeContainer.appendChild(badgeVerificato);
     }
 
     // Campi base (Sicurezza: textContent)
