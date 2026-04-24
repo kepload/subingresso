@@ -187,16 +187,20 @@ function _setBtnLoading(btnId, loading, defaultHTML) {
 function _injectVisitorPopup() {
     if (document.getElementById('visitorPopup')) return;
     document.body.insertAdjacentHTML('beforeend', `
-    <div id="visitorPopup" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:w-80 z-[998] transition-all duration-500 ease-out"
-         style="transform:translateY(120%);opacity:0">
-      <div class="bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 relative">
-        <button onclick="closeVisitorPopup()" class="absolute top-3 right-3 text-slate-300 hover:text-slate-500 transition text-lg leading-none">&times;</button>
-        <div class="text-3xl mb-2">🎁</div>
-        <p class="font-black text-slate-800 text-base leading-snug mb-1">Vendi il tuo posteggio?</p>
-        <p class="text-sm text-slate-500 mb-4">Iscriviti gratis e ottieni <span class="font-bold text-amber-500">10 giorni di vetrina</span> per il tuo primo annuncio.</p>
+    <div id="visitorPopup" class="fixed inset-0 z-[998] flex items-center justify-center p-4 hidden"
+         style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)">
+      <div class="bg-white rounded-3xl w-full max-w-sm shadow-2xl p-8 text-center" onclick="event.stopPropagation()">
+        <div class="text-4xl mb-3">🎁</div>
+        <h2 class="text-xl font-black text-slate-800 mb-2">Vendi il tuo posteggio?</h2>
+        <p class="text-sm text-slate-500 mb-5 leading-relaxed">
+          Iscriviti gratis e ottieni <span class="font-bold text-amber-500">10 giorni di vetrina</span> — il tuo annuncio in cima a tutti i risultati.
+        </p>
         <button onclick="closeVisitorPopup(); openAuthModal('register')"
-          class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition active:scale-[.98]">
+          class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
           Registrati gratis →
+        </button>
+        <button onclick="closeVisitorPopup()" class="text-xs text-slate-400 hover:text-slate-600 transition">
+          Esplora prima gli annunci
         </button>
       </div>
     </div>`);
@@ -207,16 +211,14 @@ function _scheduleVisitorPopup() {
     sessionStorage.setItem('_vp', '1');
     setTimeout(() => {
         _injectVisitorPopup();
-        requestAnimationFrame(() => {
-            const el = document.getElementById('visitorPopup');
-            if (el) { el.style.transform = 'translateY(0)'; el.style.opacity = '1'; }
-        });
+        const el = document.getElementById('visitorPopup');
+        if (el) { el.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
     }, 4000);
 }
 
 window.closeVisitorPopup = function () {
     const el = document.getElementById('visitorPopup');
-    if (el) { el.style.transform = 'translateY(120%)'; el.style.opacity = '0'; }
+    if (el) { el.classList.add('hidden'); document.body.style.overflow = ''; }
 };
 
 // ── Popup benvenuto nuovo utente ─────────────────────────

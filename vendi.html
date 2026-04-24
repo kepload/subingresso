@@ -607,12 +607,13 @@ async function _tryGrantWelcomeVetrina(userId, annuncioId) {
     try {
         const { data: profile } = await _supabase
             .from('profiles').select('vetrina_welcome_days').eq('id', userId).single();
-        if (!profile?.vetrina_welcome_days || profile.vetrina_welcome_days < 1) return;
-        await _supabase.rpc('grant_welcome_vetrina', {
+        if (!profile?.vetrina_welcome_days || profile.vetrina_welcome_days < 1) return false;
+        const { error } = await _supabase.rpc('grant_welcome_vetrina', {
             p_annuncio_id: annuncioId,
             p_user_id: userId
         });
-    } catch (_) {}
+        return !error;
+    } catch (_) { return false; }
 }
 
 // ── Submit ────────────────────────────────────────────────
@@ -689,13 +690,19 @@ async function submitAnnuncio() {
 
         if (error) throw error;
 
-        // Prova ad attivare la vetrina gratis se l'utente ha ancora il credito
-        _tryGrantWelcomeVetrina(user.id, inserted.id);
+        const vetranaGranted = await _tryGrantWelcomeVetrina(user.id, inserted.id);
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.getElementById('formWrapper').classList.add('hidden');
         const successEl = document.getElementById('successMsg');
         successEl.classList.remove('hidden');
+
+        if (vetranaGranted) {
+            const vetrinaBanner = document.createElement('div');
+            vetrinaBanner.className = 'mt-4 bg-amber-50 border border-amber-300 rounded-xl p-4 text-sm text-amber-800 font-semibold flex items-center gap-2';
+            vetrinaBanner.innerHTML = '<i class="fas fa-star text-amber-500"></i> Il tuo annuncio è in vetrina gratis per 10 giorni — apparirà in cima a tutti i risultati!';
+            successEl.appendChild(vetrinaBanner);
+        }
         if (failedUploads > 0) {
             const warn = document.createElement('div');
             warn.className = 'mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 font-semibold';
