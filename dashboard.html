@@ -164,10 +164,6 @@
                 class="pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap">
                 I miei annunci
             </button>
-            <button id="tabMessaggi" onclick="showTab('messaggi')"
-                class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap">
-                Conversazioni
-            </button>
             <button id="tabAlert" onclick="showTab('alert')"
                 class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
                 <i class="fas fa-bell text-xs"></i> Alert
@@ -184,14 +180,6 @@
             </div>
         </div>
 
-        <!-- ── TAB: Conversazioni ── -->
-        <div id="sectionMessaggi" class="hidden">
-            <div id="myConvsGrid" class="space-y-3">
-                <div class="text-center py-12 text-slate-400">
-                    <i class="fas fa-spinner fa-spin text-2xl"></i>
-                </div>
-            </div>
-        </div>
 
         <!-- ── TAB: Alert ── -->
         <div id="sectionAlert" class="hidden">
@@ -480,7 +468,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('userEmailDisplay').textContent = user.email;
 
     loadMyListings();
-    loadMyConversations();
     loadPendingListings();
 });
 
@@ -651,17 +638,15 @@ function closeProfiloModal() {
 let _alertsLoaded = false;
 
 function showTab(tab) {
-    ['annunci', 'messaggi', 'alert'].forEach(t => {
-        const key = t === 'annunci' ? 'Annunci' : t === 'messaggi' ? 'Messaggi' : 'Alert';
-        const section = document.getElementById(`section${key}`);
+    ['annunci', 'alert'].forEach(t => {
+        const section = document.getElementById(t === 'annunci' ? 'sectionAnnunci' : 'sectionAlert');
         if (section) section.classList.toggle('hidden', t !== tab);
     });
 
     const active   = 'pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap';
     const inactive = 'pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap';
-    document.getElementById('tabMieiAnnunci').className = tab === 'annunci'  ? active : inactive;
-    document.getElementById('tabMessaggi').className    = tab === 'messaggi' ? active : inactive;
-    document.getElementById('tabAlert').className       = (tab === 'alert'   ? active : inactive) + ' flex items-center gap-1.5';
+    document.getElementById('tabMieiAnnunci').className = tab === 'annunci' ? active : inactive;
+    document.getElementById('tabAlert').className       = (tab === 'alert'  ? active : inactive) + ' flex items-center gap-1.5';
 
     if (tab === 'alert' && !_alertsLoaded) {
         _alertsLoaded = true;
