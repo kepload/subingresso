@@ -98,7 +98,7 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Join profiles in `conversazioni` rompe PostgREST** (stesso problema di `annunci`). `messaggi.html` usa 3 fetch separati: (1) conv+annuncio, (2) profiles con `.in('id', userIds)`, (3) lastMessage per ogni conv. Merge manuale. NON usare `acquirente:profiles!fkey(...)` nella select.
 - **`tel`/`email` mai esposti a utenti anonimi**: `annuncio-detail.js` fa `select(...)` senza `tel`/`email`. Li fetcha separatamente solo dopo `auth.getUser()` confermato. `restoreContactUI()` è `async` e fetcha `tel` dopo login.
 - **Trigger `trg_enforce_annunci_status`** in `SETUP_DEF_SUBINGRESSO.sql`: forza `status='pending'` su INSERT per non-admin, blocca promozione ad `active` via UPDATE. **Da eseguire nel SQL Editor di Supabase** per attivarlo.
-- **Validazioni `vendi.html`**: prezzo minimo 100€, max 10.000.000€. Nessun minimo sulla descrizione. Double submit bloccato con `if (btn.disabled) return`. `modifica-annuncio.html` ha ancora le sue validazioni separate.
+- **Validazioni `vendi.html`**: prezzo minimo 100€, max 10.000.000€. Descrizione minimo 10 caratteri (check in step 5 + `checkContent`). Double submit bloccato con `if (btn.disabled) return`. `modifica-annuncio.html` ha ancora le sue validazioni separate.
 
 ## 🔒 Sicurezza Blog (`blog.html`)
 - **DOMPurify** caricato da CDN prima di `data.js`. Il contenuto dei post (`post.content`) DEVE passare per `DOMPurify.sanitize()` prima di essere iniettato in `innerHTML`. Titolo, excerpt e slug usano `escapeHTML()` / `encodeURIComponent()`.
@@ -112,15 +112,16 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 ## 📱 Chat responsive (`messaggi.html`)
 - I due pannelli hanno id `convPanel` (lista) e `chatPanel` (chat). Su mobile si alterna la visibilità tra i due. `backToConversations()` torna alla lista. NON fondere i due div o si rompe il comportamento mobile.
 
-## 🖼️ Avatar venditori nelle card (`data.js` + `annunci.js`)
-- `USER_AVATARS` è una cache globale definita in `data.js` (`const USER_AVATARS = {}`). NON fare join `profiles` nella query annunci (rompe PostgREST) — invece `annunci.js` fa un fetch separato a `profiles(id, avatar_url)` dopo aver caricato i listing, con `.in('id', uniqueIds)`.
-- `buildCard()` legge `USER_AVATARS[l.user_id]` per mostrare la foto; se assente mostra la lettera iniziale.
+## 🖼️ Avatar e nome venditori nelle card (`data.js` + `annunci.js`)
+- `USER_AVATARS` e `USER_NAMES` sono cache globali in `data.js`. NON fare join `profiles` nella query annunci (rompe PostgREST) — `annunci.js` fa un fetch separato `profiles(id, avatar_url, nome)` con `.in('id', uniqueIds)` e popola entrambe le cache.
+- `buildCard()` usa `USER_NAMES[l.user_id]` come nome primario, `l.contatto` come fallback. Questo garantisce che se l'utente cambia nome nel profilo, tutte le sue card si aggiornano.
 - Il badge venditore (`_sellerBadge`) usa la data dell'inserzione più vecchia dello stesso `user_id` come proxy della data di iscrizione.
 
 ## 🃏 Struttura card annunci (`buildCard` in `data.js`)
 - La card è un `<div class="group ...">` NON un `<a>` — ha link separati: cover → `annuncioUrl`, titolo → `annuncioUrl`, venditore → `profiloUrl`, freccia → `annuncioUrl`. NON tornare a wrapper `<a>` unico o il link profilo smette di funzionare.
 - Il link venditore usa `onclick="event.stopPropagation()"` ed è un `<a>` reale a `profilo.html?id=USER_ID`.
-- **Bordo laterale sinistro**: `border-l-[3px] border-l-emerald-400` per Vendita, `border-l-[3px] border-l-blue-400` per Affitto. Le card featured mantengono solo il bordo dorato. Variabile `statoBorder` in `buildCard`.
+- **Bordo laterale sinistro**: `border-l-[3px] border-l-emerald-400` per Vendita, `border-l-[3px] border-l-blue-400` per Affitto. Le card featured NON hanno la striscia — mantengono solo il ring dorato. Variabile `statoBorder` in `buildCard`, inclusa in `featuredBorder` solo per le card normali.
+- **Tinta sfondo card**: `bg-emerald-50/70` per Vendita, `bg-blue-50/70` per Affitto. Featured: `bg-gradient-to-b from-amber-50/50 to-white` invariato. NON usare `bg-white` fisso.
 - **Badge "Dati Verificati" rimosso** dalle card featured — era fuorviante.
 - **`settore` NON è una colonna diretta** della tabella `annunci` — non usarla in `select()` esplicite o la query fallisce. È dentro `dettagli_extra` o non esiste. Usare sempre `select('*')` per annunci.
 
@@ -278,6 +279,10 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Supabase → Authentication → URL Configuration: `Site URL = https://subingresso.it`, `Redirect URLs` deve includere `https://subingresso.it/**`.
 - **Email templates Supabase** aggiornati in italiano: "Confirm signup" e "Reset password" — modificare in Authentication → Email Templates. Tasto unico `{{ .ConfirmationURL }}`.
 - Rate limit Supabase: 1 email/ora per stesso indirizzo. Per test usare alias Gmail `+test1`, `+test2` o confermare manualmente da Dashboard → Authentication → Users.
+
+## ⚡ Performance Header & Loading (Aprile 2026)
+- **`updateAuthNav()` in `auth.js`**: usa `getSession()` (legge localStorage, nessuna rete) per mostrare i bottoni istantaneamente. Il badge messaggi non letti viene caricato in background in una IIFE asincrona separata. NON tornare a `getUser()` per il primo render — farebbe aspettare 1-2s il caricamento dei bottoni header.
+- **Skeleton loader `annunci.html`**: `resultsGrid` contiene 6 card placeholder statiche con animazione pulse. Vengono rimpiazzate automaticamente dal primo `applyFilters()` senza JS aggiuntivo. NON rimuovere — senza di loro la pagina sembra vuota durante il caricamento.
 
 ## ⚠️ Note Operative Deploy & Troubleshooting (Supabase)
 - **Supabase CLI su Windows:** L'installazione di `supabase` via npm globale fallisce tipicamente su Windows. Per fare il deploy delle Edge Functions, usare l'eseguibile standalone (scaricato da GitHub Releases) o aggiornare il codice manualmente dalla Dashboard web (copia-incolla).
