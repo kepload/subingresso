@@ -203,56 +203,60 @@
 
 <!-- ══════════════ MODAL VETRINA ══════════════ -->
 <div id="vetrinaModal" class="hidden fixed inset-0 z-[999] flex items-end sm:items-center justify-center sm:p-4" style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)" onclick="closeVetrinaModal()">
-    <div class="bg-white rounded-t-3xl sm:rounded-3xl w-full max-w-lg shadow-2xl max-h-[92dvh] overflow-y-auto" onclick="event.stopPropagation()">
+    <div class="bg-white rounded-t-3xl sm:rounded-3xl w-full max-w-md shadow-2xl" onclick="event.stopPropagation()">
 
         <!-- Header -->
-        <div class="bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 p-6 relative overflow-hidden sticky top-0 z-10">
-            <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-            <button onclick="closeVetrinaModal()" class="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center bg-white/20 hover:bg-white/30 text-white rounded-lg transition">
-                <i class="fas fa-times text-sm"></i>
+        <div class="bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 px-5 pt-5 pb-4 relative overflow-hidden rounded-t-3xl sm:rounded-t-3xl">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-12 translate-x-12"></div>
+            <button onclick="closeVetrinaModal()" class="absolute top-3 right-3 z-10 w-7 h-7 flex items-center justify-center bg-white/20 hover:bg-white/30 text-white rounded-lg transition">
+                <i class="fas fa-times text-xs"></i>
             </button>
             <div class="relative">
-                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg mb-3">
-                    <i class="fas fa-star"></i> Vetrina in Evidenza
-                </div>
-                <h2 class="font-black text-2xl text-white leading-tight">Fai notare il tuo annuncio</h2>
-                <p class="text-white/90 text-sm font-semibold mt-1" id="vetrinaListingTitle">—</p>
+                <span class="inline-flex items-center gap-1.5 bg-white/20 text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-lg">
+                    <i class="fas fa-star text-[8px]"></i> Vetrina in Evidenza
+                </span>
+                <h2 class="font-black text-xl text-white leading-tight mt-1.5">Fai notare il tuo annuncio</h2>
+                <p class="text-white/85 text-xs font-semibold mt-0.5 truncate pr-6" id="vetrinaListingTitle">—</p>
             </div>
         </div>
 
         <!-- Benefici -->
-        <div class="px-6 pt-6 pb-2">
-            <div class="grid grid-cols-3 gap-3 text-center">
-                <div>
-                    <div class="w-10 h-10 mx-auto bg-amber-50 rounded-xl flex items-center justify-center mb-2">
-                        <i class="fas fa-arrow-up text-amber-500"></i>
+        <div class="px-5 pt-4 pb-3 border-b border-slate-100">
+            <div class="grid grid-cols-4 gap-2 text-center">
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-arrow-up text-amber-500 text-xs"></i>
                     </div>
-                    <p class="text-[10px] font-black text-slate-500 uppercase tracking-wider leading-tight">In cima ai risultati</p>
+                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">In cima</p>
                 </div>
-                <div>
-                    <div class="w-10 h-10 mx-auto bg-amber-50 rounded-xl flex items-center justify-center mb-2">
-                        <i class="fas fa-star text-amber-500"></i>
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-star text-amber-500 text-xs"></i>
                     </div>
-                    <p class="text-[10px] font-black text-slate-500 uppercase tracking-wider leading-tight">Badge distintivo</p>
+                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Badge</p>
                 </div>
-                <div>
-                    <div class="w-10 h-10 mx-auto bg-amber-50 rounded-xl flex items-center justify-center mb-2">
-                        <i class="fas fa-eye text-amber-500"></i>
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-eye text-amber-500 text-xs"></i>
                     </div>
-                    <p class="text-[10px] font-black text-slate-500 uppercase tracking-wider leading-tight">Più visualizzazioni</p>
+                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">+Views</p>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-calendar-plus text-amber-500 text-xs"></i>
+                    </div>
+                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Post più lungo</p>
                 </div>
             </div>
         </div>
 
         <!-- Tier options -->
-        <div class="p-6 space-y-3">
-            <button id="tier30d" onclick="startCheckout('30d')" class="w-full text-left bg-white border-2 border-slate-100 hover:border-amber-300 hover:bg-amber-50/30 rounded-2xl p-5 transition group">
-                <div class="flex items-center justify-between gap-4">
+        <div class="px-5 pt-4 pb-3 space-y-2.5">
+            <button id="tier30d" onclick="startCheckout('30d')" class="w-full text-left bg-white border-2 border-slate-100 hover:border-amber-300 hover:bg-amber-50/30 rounded-2xl px-4 py-3 transition">
+                <div class="flex items-center justify-between gap-3">
                     <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <h3 class="font-black text-slate-900 text-lg">Vetrina 30 giorni</h3>
-                        </div>
-                        <p class="text-xs text-slate-500 font-semibold">Per un test rapido o un'offerta breve.</p>
+                        <h3 class="font-black text-slate-900 text-base leading-tight">Vetrina 30 giorni</h3>
+                        <p class="text-[11px] text-slate-400 font-semibold mt-0.5">Per un test rapido o un'offerta breve.</p>
                     </div>
                     <div class="text-right flex-shrink-0">
                         <p class="text-2xl font-black text-slate-900">€19</p>
@@ -261,14 +265,12 @@
                 </div>
             </button>
 
-            <button id="tier90d" onclick="startCheckout('90d')" class="relative w-full text-left bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl p-5 transition group">
-                <span class="absolute -top-2.5 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">Più scelto · -32%</span>
-                <div class="flex items-center justify-between gap-4">
+            <button id="tier90d" onclick="startCheckout('90d')" class="relative w-full text-left bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl px-4 py-3 transition">
+                <span class="absolute -top-2.5 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full shadow-sm">Più scelto · -32%</span>
+                <div class="flex items-center justify-between gap-3">
                     <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <h3 class="font-black text-slate-900 text-lg">Vetrina 90 giorni</h3>
-                        </div>
-                        <p class="text-xs text-slate-500 font-semibold">Equivale a €13/mese. Ideale per annunci premium.</p>
+                        <h3 class="font-black text-slate-900 text-base leading-tight">Vetrina 90 giorni</h3>
+                        <p class="text-[11px] text-slate-400 font-semibold mt-0.5">Equivale a €13/mese. Ideale per annunci premium.</p>
                     </div>
                     <div class="text-right flex-shrink-0">
                         <p class="text-2xl font-black text-slate-900">€39</p>
@@ -276,20 +278,17 @@
                     </div>
                 </div>
             </button>
-
-            <div class="text-center pt-2">
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest flex items-center justify-center gap-2">
-                    <i class="fas fa-lock"></i> Pagamento sicuro Stripe · carta, Apple/Google Pay
-                </p>
-            </div>
         </div>
 
         <!-- Footer -->
-        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-            <button onclick="closeVetrinaModal()" class="text-xs font-black text-slate-500 hover:text-slate-700 uppercase tracking-widest">
+        <div class="px-5 pb-5 flex items-center justify-between gap-3">
+            <button onclick="closeVetrinaModal()" class="text-xs font-black text-slate-400 hover:text-slate-600 uppercase tracking-widest transition flex-shrink-0">
                 Annulla
             </button>
-            <p class="text-[10px] text-slate-400 font-bold" id="vetrinaLoadingMsg"></p>
+            <p class="text-[9px] text-slate-400 font-bold flex items-center gap-1.5 truncate">
+                <i class="fas fa-lock text-slate-300 flex-shrink-0"></i> Pagamento sicuro Stripe · carta, Apple/Google Pay
+            </p>
+            <p class="text-[10px] text-slate-400 font-bold flex-shrink-0" id="vetrinaLoadingMsg"></p>
         </div>
     </div>
 </div>
