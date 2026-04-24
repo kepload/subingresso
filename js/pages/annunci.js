@@ -261,7 +261,7 @@ async function loadListings() {
         // Costruiamo la query base: tutti gli annunci attivi
         let query = _supabase
             .from('annunci')
-            .select('id, titolo, comune, regione, stato, tipo, merce, settore, prezzo, superficie, status, user_id, created_at, data, img_urls, dettagli_extra, visualizzazioni, featured, featured_until, featured_tier, featured_since, contatto, expires_at')
+            .select('*')
             .order('created_at', { ascending: false });
 
         // Se l'utente è loggato, può vedere i propri annunci (qualsiasi status) 
