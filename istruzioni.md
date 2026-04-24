@@ -184,11 +184,14 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 
 ## 📧 Edge Functions — Alert Email (`notify-alert` + `notify-seller`)
 - `SITE_URL = 'https://subingresso.it'` (senza www) in tutte e 3 le notify functions.
-- **Check UPDATE STRICT**: richiede `old_record.status === 'pending'` (non `!== 'active'`, che passava con undefined → email fantasma). Solo prima approvazione pending→active triggera email, le riattivazioni da 'deleted'/'scaduto' non mandano nulla.
+- **NON usare il webhook UI di Supabase** per `notify-alert` — l'interfaccia converte automaticamente al tipo "Edge Functions" e non include `old_record`. Usare invece un **trigger PostgreSQL diretto via pg_net** (già attivo in prod).
+- **Trigger attivo in DB**: `notify_alert_trigger` AFTER INSERT OR UPDATE ON `annunci` → chiama `public.notify_alert_on_annunci()` via `net.http_post()`. Include sempre `old_record` per UPDATE. Exception handler interno: errori HTTP non bloccano mai le operazioni DB.
+- **Logica attuale**: qualunque evento con `status='active'` + annuncio fresco (<24h) → invia. Il dedup log previene email doppie (non serve più dipendere da `old_record`).
 - **Controllo freschezza** (`notify-alert`): annuncio con `created_at > 24h` → skip (evita email su riattivazioni vecchie).
-- **Tabella `notify_alert_log(user_id, annuncio_id, sent_at)`** PK composita: dedup hard — una sola email per coppia utente/annuncio, per sempre. Creata in `SETUP_DEF_SUBINGRESSO.sql` sezione 10. Se email fallisce via Resend, rollback della riga (retry possibile).
-- Richiede **"Include old record"** abilitato nel webhook Supabase → Database → Webhooks → `notify-alert` e `notify-seller`, altrimenti UPDATE pending→active non triggerano email.
-- Log diagnostico all'inizio della function: `type`, `has_old_record`, `old_status`, `new_status`, `created_at` — visibile in Supabase → Logs.
+- **Tabella `notify_alert_log(user_id, annuncio_id, sent_at)`** PK composita: dedup hard — una sola email per coppia utente/annuncio, per sempre. Se email fallisce via Resend, rollback della riga (retry possibile).
+- **RESEND_API_KEY** aggiunta ai secret Supabase Edge Functions (Aprile 2026). Chiave attiva su resend.com.
+- **Dominio `subingresso.it` su Resend**: record DNS aggiunti su Aruba (TXT DKIM `resend._domainkey` + TXT SPF `send`). Verifica in corso — una volta verde le email partono.
+- **Debug**: per testare senza creare annunci, chiamare la function direttamente con payload JSON. Vedere `net._http_response` in SQL Editor per verificare se la chiamata è partita dal trigger.
 - Email include link diretto all'annuncio + link ricerca pre-filtrata sulla zona dell'alert.
 
 ## 🤖 Blog Generator (`js/blog-generator.js`)
