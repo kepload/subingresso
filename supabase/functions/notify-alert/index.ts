@@ -90,35 +90,22 @@ Deno.serve(async (req) => {
       annuncio_id: annuncio?.id,
       titolo: annuncio?.titolo,
       new_status: annuncio?.status,
-      has_old_record: payload.old_record != null,
-      old_status: payload.old_record?.status ?? null,
-      old_record_keys: payload.old_record ? Object.keys(payload.old_record) : null,
       created_at: annuncio?.created_at,
       age_hours: annuncio?.created_at
         ? ((Date.now() - new Date(annuncio.created_at).getTime()) / 3600000).toFixed(2)
         : null,
     }));
 
-    // ── CONTROLLO 1: tipo evento (STRICT) ──
-    // INSERT + status=active → OK (admin pubblica direttamente)
-    // UPDATE + status=active + old_record.status=='pending' → OK (prima approvazione)
-    // TUTTO IL RESTO → NO EMAIL. Nessun fallback permissivo.
-    // Se webhook non include old_record: UPDATE non manda mai email.
-    //   In quel caso l'approvazione admin è silenziosa (accettabile trade-off:
-    //   meglio zero email rispetto a email fantasma).
-    const isNewActive = payload.type === 'INSERT' && annuncio.status === 'active';
-    const isJustApproved = payload.type === 'UPDATE'
-      && annuncio.status === 'active'
-      && payload.old_record != null
-      && payload.old_record.status === 'pending';
-
-    if (!isNewActive && !isJustApproved) {
+    // ── CONTROLLO 1: status active + annuncio fresco ──
+    // Qualunque evento (INSERT o UPDATE) su un annuncio active e fresco (<24h)
+    // può inviare email. Il dedup log (CONTROLLO 3) previene email doppie,
+    // quindi non serve dipendere da old_record (che Supabase non sempre include).
+    if (annuncio.status !== 'active') {
       console.log(JSON.stringify({
         event: 'notify-alert:skipped',
-        reason: 'not a new insert active or a pending→active approval',
+        reason: 'status non active',
         type: payload.type,
         new_status: annuncio.status,
-        old_status: payload.old_record?.status ?? null,
       }));
       return new Response('Not active', { status: 200 });
     }
@@ -275,13 +262,9 @@ Deno.serve(async (req) => {
           sent++;
           console.log(`Email inviata a ${email}`);
         } else {
-          // Rollback: se l'email fallisce, rimuovo dal log così un retry può ritentare
-          await supabase
-            .from('notify_alert_log')
-            .delete()
-            .eq('user_id', uid)
-            .eq('annuncio_id', annuncio.id);
-          console.error(`Resend error per ${email}:`, await res.text());
+          const resendBody = await res.text();
+          console.error(`Resend error per ${email}:`, resendBody);
+          await supabase.from('notify_alert_log').delete().eq('user_id', uid).eq('annuncio_id', annuncio.id);
         }
       })
     );
