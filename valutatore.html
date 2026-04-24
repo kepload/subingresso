@@ -330,7 +330,7 @@
         if (currentStep === 1) {
             var raw = document.getElementById('fatturato').value.trim().replace(/\./g, '').replace(',', '.');
             var fat = parseFloat(raw);
-            if (isNaN(fat) || fat < 100) { alert('Inserisci un fatturato di almeno € 100.'); return; }
+            if (isNaN(fat) || fat < 100) { showToast('Inserisci un fatturato di almeno € 100.', 'warning'); return; }
             factors.fatturato = fat;
         }
 

@@ -337,10 +337,10 @@ async function submitAlert() {
 
         if (!error) {
             closeAlertModal();
-            alert('🔔 Alert attivato! Riceverai una email quando esce un annuncio' + (comune ? ' vicino a ' + comune : '') + '.');
+            showToast('Alert attivato! Riceverai una email quando esce un annuncio' + (comune ? ' vicino a ' + comune : '') + '.', 'success');
         } else {
             console.error('Alert error:', error);
-            alert('Errore durante il salvataggio dell\'alert. Riprova.');
+            showToast('Errore durante il salvataggio dell\'alert. Riprova.', 'error');
         }
     });
 }

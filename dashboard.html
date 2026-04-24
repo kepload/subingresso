@@ -566,7 +566,7 @@ async function saveBlogChanges() {
         closeBlogEditor();
         loadAdminBlog();
     } else {
-        alert("Errore durante il salvataggio: " + error.message);
+        showToast('Errore durante il salvataggio: ' + error.message, 'error');
     }
     
     btn.disabled = false;
@@ -607,7 +607,7 @@ async function generateArticleNow() {
         await generateAndPublish();
         loadAdminBlog();
     } catch (e) {
-        alert("Errore durante la generazione: " + e.message);
+        showToast('Errore durante la generazione: ' + e.message, 'error');
     } finally {
         btn.innerHTML = originalContent;
         btn.onclick = generateArticleNow;
@@ -646,7 +646,7 @@ async function uploadAvatar() {
         updateAuthNav();
     } catch (err) {
         console.error("uploadAvatar error:", err);
-        alert("Errore caricamento immagine: " + (err.message || JSON.stringify(err)));
+        showToast('Errore caricamento immagine: ' + (err.message || 'errore sconosciuto'), 'error');
     }
 }
 
@@ -1240,7 +1240,7 @@ async function startCheckout(tier) {
     try {
         const { data: { session } } = await _supabase.auth.getSession();
         if (!session) {
-            alert('Sessione scaduta. Accedi nuovamente.');
+            showToast('Sessione scaduta. Accedi nuovamente.', 'warning');
             location.reload();
             return;
         }
@@ -1269,7 +1269,7 @@ async function startCheckout(tier) {
     } catch (e) {
         console.error('checkout error:', e);
         msg.textContent = '';
-        alert('Errore: ' + (e.message || 'impossibile avviare il pagamento'));
+        showToast('Errore: ' + (e.message || 'impossibile avviare il pagamento'), 'error');
         btn30.disabled = false;
         btn90.disabled = false;
         btn30.classList.remove('opacity-60', 'cursor-wait');

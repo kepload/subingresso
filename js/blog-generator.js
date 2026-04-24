@@ -270,6 +270,6 @@ window.generateAndPublish = async function() {
     } else {
         console.log("Articolo pubblicato!");
         if (typeof loadAdminBlog === 'function') loadAdminBlog();
-        alert("Articolo 'Deep Content' pubblicato con successo!");
+        showToast("Articolo pubblicato con successo!", 'success');
     }
 };

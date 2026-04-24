@@ -429,7 +429,7 @@ async function sendMessage(e) {
     if (error) {
         input.value = testo; // ripristina su errore
         console.error('sendMessage error:', error.message);
-        alert('Errore invio messaggio. Riprova.');
+        showToast('Errore invio messaggio. Riprova.', 'error');
         return;
     }
 

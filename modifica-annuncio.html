@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const { data: l, error } = await _supabase.from('annunci').select('*').eq('id', listingId).single();
     
     if (error || !l || l.user_id !== user.id) {
-        alert("Annuncio non trovato o non autorizzato.");
+        showToast('Annuncio non trovato o non autorizzato.', 'error');
         location.href = 'dashboard.html';
         return;
     }
@@ -259,7 +259,7 @@ fileInput.addEventListener('change', e => handleFiles(e.target.files));
 
 function handleFiles(files) {
     for (let f of files) {
-        if (_newFiles.length + _currentImageUrls.length >= 5) { alert("Massimo 5 foto."); break; }
+        if (_newFiles.length + _currentImageUrls.length >= 5) { showToast('Massimo 5 foto consentite.', 'warning'); break; }
         _newFiles.push(f);
         const reader = new FileReader();
         reader.onload = e => addPreview(e.target.result, false);
@@ -308,19 +308,19 @@ async function updateAnnuncio() {
     const tel = document.getElementById('fTel').value.trim();
 
     if (!titolo || !regione || !comune) {
-        alert('Compila tutti i campi obbligatori: Titolo, Regione e Comune.');
+        showToast('Compila tutti i campi obbligatori: Titolo, Regione e Comune.', 'warning');
         return;
     }
     if (!nome || !tel) {
-        alert('Compila i campi contatto: Nome e Telefono.');
+        showToast('Compila i campi contatto: Nome e Telefono.', 'warning');
         return;
     }
     if (isNaN(prezzo) || prezzo < 100) {
-        alert('Il prezzo minimo è 100 €.');
+        showToast('Il prezzo minimo è 100 €.', 'warning');
         return;
     }
     if (descrizione.length < 50) {
-        alert(`La descrizione è troppo breve (${descrizione.length} caratteri). Scrivi almeno 50 caratteri.`);
+        showToast(`La descrizione è troppo breve (${descrizione.length} caratteri). Scrivi almeno 50 caratteri.`, 'warning');
         return;
     }
     if (btn.disabled) return;
@@ -371,11 +371,11 @@ async function updateAnnuncio() {
 
         if (error) throw error;
         
-        alert("Annuncio aggiornato con successo!");
-        location.href = 'dashboard.html';
+        showToast('Annuncio aggiornato con successo!', 'success');
+        setTimeout(() => { location.href = 'dashboard.html'; }, 1200);
 
     } catch (err) {
-        alert("Errore: " + err.message);
+        showToast('Errore: ' + err.message, 'error');
         btn.disabled = false;
         btn.innerHTML = 'Salva Modifiche';
     }

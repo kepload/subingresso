@@ -326,3 +326,39 @@ function observeCardViews() {
     }
     window.addEventListener('scroll', _onScroll, { passive: true });
 }
+
+// ── Toast notifications ───────────────────────────────────
+function showToast(message, type = 'info') {
+    let container = document.getElementById('_toastContainer');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = '_toastContainer';
+        container.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:99999;display:flex;flex-direction:column;gap:10px;max-width:340px;width:calc(100vw - 48px)';
+        document.body.appendChild(container);
+    }
+
+    const cfg = {
+        success: { bg: 'bg-emerald-600', icon: 'fa-check-circle' },
+        error:   { bg: 'bg-red-600',     icon: 'fa-times-circle' },
+        warning: { bg: 'bg-amber-500',   icon: 'fa-exclamation-triangle' },
+        info:    { bg: 'bg-blue-600',    icon: 'fa-info-circle' },
+    };
+    const { bg, icon } = cfg[type] || cfg.info;
+
+    const toast = document.createElement('div');
+    toast.className = `${bg} text-white px-4 py-3 rounded-2xl shadow-lg flex items-start gap-3 text-sm font-semibold leading-snug`;
+    toast.style.cssText = 'opacity:0;transform:translateY(12px);transition:opacity 0.22s,transform 0.22s';
+    toast.innerHTML = `<i class="fas ${icon} mt-0.5 flex-shrink-0"></i><span>${escapeHTML(String(message))}</span>`;
+
+    container.appendChild(toast);
+    requestAnimationFrame(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)';
+    });
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(12px)';
+        setTimeout(() => toast.remove(), 250);
+    }, 4000);
+}

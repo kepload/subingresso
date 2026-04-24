@@ -435,13 +435,13 @@ async function initPage() {
 
 function executeCall(listing) {
     if (!listing.telFetched) {
-        alert('Recupero numero in corso, riprova tra un istante...');
+        showToast('Recupero numero in corso, riprova tra un istante…', 'info');
         return;
     }
     let tel = listing.tel;
-    if (!tel || String(tel).includes('*')) { alert('Numero di telefono non disponibile.'); return; }
+    if (!tel || String(tel).includes('*')) { showToast('Numero di telefono non disponibile.', 'error'); return; }
     const clean = String(tel).replace(/\D/g, '');
-    if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio.'); return; }
+    if (!clean) { showToast('Nessun numero di telefono valido associato a questo annuncio.', 'error'); return; }
     if (typeof listing.id !== 'number') (async () => { try { await _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }); } catch(_){} })();
     window.location.href = `tel:${clean}`;
 }
@@ -467,7 +467,7 @@ async function startChat() {
     requireAuth(async function (user) {
         const listing = _currentListing;
         if (!listing || typeof listing.id === 'number' || !listing.user_id) {
-            alert('Questa funzione è disponibile solo per gli annunci reali carichi sul database.');
+            showToast('Questa funzione è disponibile solo per gli annunci reali.', 'warning');
             return;
         }
         if (listing.user_id === user.id) {
@@ -503,20 +503,20 @@ async function startChat() {
             location.href = `messaggi.html?conv=${convId}`;
         } catch (err) {
             console.error(err);
-            alert('Errore nella chat. Riprova.');
+            showToast('Errore nella chat. Riprova.', 'error');
         }
     });
 }
 
 function executeWhatsApp(listing) {
     if (!listing.telFetched) {
-        alert('Recupero numero in corso, riprova tra un istante...');
+        showToast('Recupero numero in corso, riprova tra un istante…', 'info');
         return;
     }
     let tel = listing.tel;
-    if (!tel || String(tel).includes('*')) { alert('WhatsApp non disponibile per questo annuncio.'); return; }
+    if (!tel || String(tel).includes('*')) { showToast('WhatsApp non disponibile per questo annuncio.', 'error'); return; }
     const clean = String(tel).replace(/\D/g, '');
-    if (!clean) { alert('Nessun numero di telefono valido associato a questo annuncio per WhatsApp.'); return; }
+    if (!clean) { showToast('Nessun numero di telefono valido associato a questo annuncio.', 'error'); return; }
     const finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
     const luogo = [listing.comune, listing.provincia ? `(${listing.provincia})` : ''].filter(Boolean).join(' ');
     const text = encodeURIComponent(`Ciao! Ho visto il tuo annuncio su Subingresso.it: "${listing.titolo}"${luogo ? ` a ${luogo}` : ''}. È ancora disponibile? Grazie mille 🙏`);
