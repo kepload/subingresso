@@ -253,6 +253,25 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **4 benefit in griglia** (ordine): +Visualizzazioni · Vendi prima · In cima · Post più lungo.
 - **Badge "Dati Verificati"** rimosso da `annuncio-detail.js` — era fuorviante, nessuna verifica reale avviene.
 
+## 🔔 Popup & Onboarding (Aprile 2026)
+- **Popup visitatori** (`auth.js`): modal centrato con blur, appare dopo 8s, verifica sessione al momento dello show (`getSession()`), una volta per sessione (`sessionStorage._vp`). NON usare slide-up — è un modal full overlay come gli altri.
+- **Popup benvenuto nuovo utente** (`auth.js`): appare al primo login quando il profilo viene creato dai metadati. Salvato in `localStorage._welc_<userId>` per non riapparire. Porta a `vendi.html`.
+- **Vetrina welcome 10 giorni**: colonna `vetrina_welcome_days int2 DEFAULT 0` in `profiles`. All'upsert del profilo nuovo si setta a 10. In `vendi.html` → `_tryGrantWelcomeVetrina()` chiama RPC `grant_welcome_vetrina(p_annuncio_id, p_user_id)` dopo insert. Funzione SQL usa `SET LOCAL session_replication_role='replica'` per bypassare il trigger. Vale solo per 1 annuncio (credito azzerato dopo). Banner dorato nella success page se attivata.
+- **SQL da eseguire se non fatto**: `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS vetrina_welcome_days int2 DEFAULT 0;` + funzioni `grant_welcome_vetrina` e `delete_my_account` (vedere sessione Aprile 2026).
+
+## 🗑️ Eliminazione Account (Aprile 2026)
+- Sezione "Zona pericolosa" in fondo al modal profilo (`dashboard.html`). Richiede di scrivere `ELIMINA` nel campo di testo.
+- Funzione SQL `delete_my_account()` SECURITY DEFINER: elimina messaggi → conversazioni → notify_alert_log → annunci → profiles → auth.users in cascata. NON fare `user_id = NULL` su annunci (NOT NULL constraint).
+- Modal profilo su mobile: bottom sheet (`items-end`), `max-h-[92dvh]`, contenuto `overflow-y-auto flex-1`.
+
+## 🔑 Recupero Password (Aprile 2026)
+- Link "Password dimenticata?" nel form login del modal (`auth.js`) — apre tab `forgot` con campo email.
+- `handleForgotPassword()` chiama `resetPasswordForEmail` con `redirectTo: 'https://subingresso.it/reset-password.html'` hardcoded — NON usare `window.location.origin` (cambia su vercel.app).
+- Pagina `reset-password.html`: rileva token nell'URL (hash o query param), ascolta `onAuthStateChange PASSWORD_RECOVERY`, timeout 6s → mostra "Link non valido". Se accesso diretto senza token → redirect a `index.html`.
+- Supabase → Authentication → URL Configuration: `Site URL = https://subingresso.it`, `Redirect URLs` deve includere `https://subingresso.it/**`.
+- **Email templates Supabase** aggiornati in italiano: "Confirm signup" e "Reset password" — modificare in Authentication → Email Templates. Tasto unico `{{ .ConfirmationURL }}`.
+- Rate limit Supabase: 1 email/ora per stesso indirizzo. Per test usare alias Gmail `+test1`, `+test2` o confermare manualmente da Dashboard → Authentication → Users.
+
 ## ⚠️ Note Operative Deploy & Troubleshooting (Supabase)
 - **Supabase CLI su Windows:** L'installazione di `supabase` via npm globale fallisce tipicamente su Windows. Per fare il deploy delle Edge Functions, usare l'eseguibile standalone (scaricato da GitHub Releases) o aggiornare il codice manualmente dalla Dashboard web (copia-incolla).
 - **Bug SQL Editor (Asterischi Cron):** Copiando/incollando orari cron come `'0 9 * * 1'` direttamente nell'SQL Editor web di Supabase, a volte l'interfaccia rimuove gli asterischi creando spazi vuoti (causando l'errore `invalid schedule`). Per risolvere, assicurati di copiare la query da un file `.sql` locale pulito o riscrivi gli asterischi a mano.
