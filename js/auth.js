@@ -430,77 +430,76 @@ window.updateAuthNav = async function () {
     const nav = document.getElementById('authNav');
     if (!nav) return;
 
-    let user = null;
+    // Fase 1: legge dal localStorage — nessuna rete, istantaneo
+    let session = null;
     try {
-        const { data } = await _supabase.auth.getUser();
-        user = data?.user;
+        const { data } = await _supabase.auth.getSession();
+        session = data?.session;
     } catch (e) {}
 
-    if (!user) {
+    if (!session?.user) {
         nav.innerHTML = `
             <button onclick="openAuthModal('login')"
                 class="text-sm font-bold text-blue-600 hover:text-blue-700 px-4 py-2 rounded-xl border border-blue-100 hover:bg-blue-50 transition-all duration-300">
                 Accedi
             </button>`;
         _scheduleVisitorPopup();
-    } else {
-        let nome = user.email.split('@')[0];
-        try {
-            if (_profileCache && _profileCache.id === user.id) {
-                nome = _profileCache.nome;
+        return;
+    }
+
+    // Fase 2: utente loggato — mostra icone subito, poi aggiorna badge in background
+    const user = session.user;
+    const msgIconId = 'navMsgIcon_' + Date.now();
+    nav.innerHTML = `
+        <a href="messaggi.html" title="Messaggi"
+            class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-all duration-200 flex items-center justify-center shrink-0">
+            <i class="fas fa-comment-alt text-sm"></i>
+            <span id="${msgIconId}"></span>
+        </a>
+        <a href="dashboard.html" title="Area personale"
+            class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-100 hover:bg-slate-200 transition-all duration-200 flex items-center justify-center shrink-0">
+            <i class="fas fa-user text-sm text-slate-500"></i>
+        </a>`;
+
+    // Cache profilo in background (per usi successivi, non blocca la nav)
+    if (!(_profileCache && _profileCache.id === user.id)) {
+        _supabase.from('profiles').select('nome').eq('id', user.id).single().then(({ data: profile }) => {
+            if (profile?.nome) {
+                _profileCache = { id: user.id, nome: profile.nome };
             } else {
-                const { data: profile } = await _supabase.from('profiles').select('nome').eq('id', user.id).single();
-                if (profile?.nome) {
-                    nome = profile.nome;
-                    _profileCache = { id: user.id, nome: profile.nome };
-                } else {
-                    // Profilo assente: utente confermato via email ma profilo non ancora creato
-                    // Lo creiamo ora dai metadati salvati al signUp
-                    const meta = user.user_metadata || {};
-                    if (meta.nome) {
-                        nome = meta.nome;
-                        _supabase.from('profiles')
-                            .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '', vetrina_welcome_days: 10 })
-                            .then(() => { _profileCache = { id: user.id, nome: meta.nome }; });
-                        _showWelcomeNewPopup(user.id);
-                    }
+                const meta = user.user_metadata || {};
+                if (meta.nome) {
+                    _supabase.from('profiles')
+                        .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '', vetrina_welcome_days: 10 })
+                        .then(() => { _profileCache = { id: user.id, nome: meta.nome }; });
+                    _showWelcomeNewPopup(user.id);
                 }
             }
-        } catch (e) {}
-        
-        let unread = 0;
+        }).catch(() => {});
+    }
+
+    // Badge messaggi non letti in background
+    (async () => {
         try {
             const { data: convs } = await _supabase
                 .from('conversazioni')
                 .select('id')
                 .or(`acquirente_id.eq.${user.id},venditore_id.eq.${user.id}`);
-            if (convs && convs.length > 0) {
-                const convIds = convs.map(c => c.id);
-                const { count } = await _supabase
-                    .from('messaggi')
-                    .select('id', { count: 'exact', head: true })
-                    .eq('letto', false)
-                    .neq('mittente_id', user.id)
-                    .in('conversazione_id', convIds);
-                unread = count || 0;
+            if (!convs || convs.length === 0) return;
+            const convIds = convs.map(c => c.id);
+            const { count } = await _supabase
+                .from('messaggi')
+                .select('id', { count: 'exact', head: true })
+                .eq('letto', false)
+                .neq('mittente_id', user.id)
+                .in('conversazione_id', convIds);
+            const unread = count || 0;
+            if (unread > 0) {
+                const badgeEl = document.getElementById(msgIconId);
+                if (badgeEl) badgeEl.outerHTML = `<span class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-black min-w-[16px] h-4 px-0.5 rounded-full flex items-center justify-center leading-none">${unread > 9 ? '9+' : unread}</span>`;
             }
         } catch (_) {}
-
-        const badgeHtml = unread > 0
-            ? `<span class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-black min-w-[16px] h-4 px-0.5 rounded-full flex items-center justify-center leading-none">${unread > 9 ? '9+' : unread}</span>`
-            : '';
-
-        nav.innerHTML = `
-            <a href="messaggi.html" title="Messaggi"
-                class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-all duration-200 flex items-center justify-center shrink-0">
-                <i class="fas fa-comment-alt text-sm"></i>
-                ${badgeHtml}
-            </a>
-            <a href="dashboard.html" title="Area personale"
-                class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-100 hover:bg-slate-200 transition-all duration-200 flex items-center justify-center shrink-0">
-                <i class="fas fa-user text-sm text-slate-500"></i>
-            </a>`;
-    }
+    })();
 };
 
 // ── Init ─────────────────────────────────────────────────
