@@ -240,15 +240,16 @@ function clearFilters() {
     applyFilters();
 }
 
-// live search con feedback visivo
+// Feedback visivo su input + Enter per cercare
 const sBar = document.getElementById('searchBar');
 if (sBar) {
     sBar.addEventListener('input', () => {
-        // Pulse sulla barra di ricerca
         sBar.parentElement.classList.remove('search-active');
-        void sBar.parentElement.offsetWidth; // reflow per riavviare animazione
+        void sBar.parentElement.offsetWidth;
         sBar.parentElement.classList.add('search-active');
-        applyFilters();
+    });
+    sBar.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') applyFilters();
     });
 }
 

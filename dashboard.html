@@ -395,11 +395,11 @@
             <div class="flex gap-3">
                 <button onclick="adminGrantVetrina(30)"
                     class="flex-1 py-3 rounded-xl border-2 border-amber-200 text-sm font-black text-amber-700 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition">
-                    30 giorni
+                    60 giorni
                 </button>
                 <button onclick="adminGrantVetrina(90)"
                     class="flex-1 py-3 rounded-xl bg-amber-500 text-sm font-black text-white hover:bg-amber-600 transition">
-                    90 giorni
+                    180 giorni
                 </button>
             </div>
         </div>
@@ -968,7 +968,7 @@ async function adminGrantVetrina(days) {
 
     const now   = new Date();
     const until = new Date(now);
-    until.setDate(until.getDate() + days);
+    until.setDate(until.getDate() + days * 2);
 
     const { error } = await _supabase.from('annunci').update({
         featured:       true,
