@@ -207,16 +207,15 @@ async function initPage() {
     if (luogoSpan) luogoSpan.textContent = `${listing.comune}, ${listing.provincia || ''} (${listing.regione})`;
 
     // Prezzo (Sicurezza: localeString)
+    const _prezzoStr = listing.prezzo
+        ? `€ ${Number(listing.prezzo).toLocaleString('it-IT')}${listing.stato === 'Affitto mensile' ? '<span class="text-xl font-bold text-slate-400 ml-1">/anno</span>' : ''}`
+        : 'Trattativa riservata';
     const prezzoEl = document.getElementById('prezzo');
-    if (prezzoEl) {
-        prezzoEl.textContent = `€ ${Number(listing.prezzo || 0).toLocaleString('it-IT')}`;
-    }
+    if (prezzoEl) prezzoEl.innerHTML = _prezzoStr;
+    const prezzoMobile = document.getElementById('prezzoMobile');
+    if (prezzoMobile) prezzoMobile.innerHTML = _prezzoStr;
     const prezzoSub = document.getElementById('prezzoSub');
-    if (prezzoSub) {
-        prezzoSub.textContent = listing.stato === 'Affitto mensile'
-            ? '/anno · trattabile'
-            : 'prezzo richiesto · trattabile';
-    }
+    if (prezzoSub) prezzoSub.textContent = 'prezzo richiesto · trattabile';
 
     // Immagini (Placeholder o Reali)
     const coverContainer = document.getElementById('coverDiv');
