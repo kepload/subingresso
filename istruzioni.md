@@ -220,6 +220,19 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Views automatiche vetrina:** `PATCH_FEATURED_VIEWS.sql` — eseguire in SQL Editor per cron `increment-featured-views` (ogni 6h, +3-8 views casuali per annuncio in vetrina attiva).
 - **Card featured redesign:** glow box-shadow aureo, sfondo `bg-gradient-to-b from-amber-50/50 to-white`, barra top 3px, badge crown + animate-pulse, footer strip "Annuncio in Vetrina ★★★★★".
 
+## 🔔 Notifiche UI (Aprile 2026)
+- **`showToast(message, type)`** in `data.js` — globale su tutte le pagine. Tipi: `success`/`error`/`warning`/`info`. Appare bottom-right, auto-dismiss 4s. Sostituisce tutti i `alert()` del sito.
+- **`showConfirm({title, message, okLabel, variant})`** in `dashboard.html` — restituisce `Promise<bool>`. Varianti: `danger`/`warning`/`alert`/`admin`. Sostituisce tutti i `confirm()` della dashboard. NON è in `data.js`, solo in dashboard.
+- **NON usare mai `alert()` o `confirm()` nativi** — usare sempre le versioni interne.
+
+## 🗂️ Dashboard Utente (Aprile 2026)
+- **Tab**: "I miei annunci" | "Alert" — la tab "Conversazioni" è stata rimossa.
+- **Tab Alert**: `#sectionAlert`, badge `#alertBadge`, lazy-load con flag `_alertsLoaded`. Funzioni: `loadMyAlerts()`, `deleteAlert(id)`.
+- **Pannello Moderazione Admin** (`#pendingReviewSection`): `hidden` di default, appare solo se `loadPendingListings()` trova annunci pending. Badge numerico `#pendingCount`.
+- **Modal Vetrina mobile**: bottom sheet su mobile (`items-end`), `max-h-[92dvh] overflow-y-auto`, tasto X nel header gradiente.
+- **Admin Vetrina gratuita**: `adminOpenVetrinaModal(id)` → modal durata → `adminGrantVetrina(30|90)` scrive `featured=true`, `featured_until`, `featured_tier='admin_free'`. `adminRevokeVetrina(id)` azzera tutto. Se il trigger DB blocca, mostra toast di errore.
+- **Moderazione vetrina**: se un utente modifica un annuncio in vetrina, `status` torna `pending` automaticamente (non visibile pubblicamente). L'admin approva/elimina come al solito; i campi `featured*` restano invariati fino all'approvazione o eliminazione.
+
 ## ⚠️ Note Operative Deploy & Troubleshooting (Supabase)
 - **Supabase CLI su Windows:** L'installazione di `supabase` via npm globale fallisce tipicamente su Windows. Per fare il deploy delle Edge Functions, usare l'eseguibile standalone (scaricato da GitHub Releases) o aggiornare il codice manualmente dalla Dashboard web (copia-incolla).
 - **Bug SQL Editor (Asterischi Cron):** Copiando/incollando orari cron come `'0 9 * * 1'` direttamente nell'SQL Editor web di Supabase, a volte l'interfaccia rimuove gli asterischi creando spazi vuoti (causando l'errore `invalid schedule`). Per risolvere, assicurati di copiare la query da un file `.sql` locale pulito o riscrivi gli asterischi a mano.
