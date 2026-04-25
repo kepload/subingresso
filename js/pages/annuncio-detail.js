@@ -47,51 +47,33 @@ async function fetchContactInfo(listing) {
 }
 
 async function loadListing() {
-    const params   = new URLSearchParams(location.search);
-    const idParam  = params.get('id');
-    console.log("🔍 Tentativo caricamento ID:", idParam);
-    
-    let listing    = null;
+    const params  = new URLSearchParams(location.search);
+    const idParam = params.get('id');
+    if (!idParam) return null;
 
-    if (!idParam) {
-        console.error("❌ Nessun ID trovato nella URL!");
-        return null;
-    }
+    let listing = null;
 
-    // 1. Tenta il caricamento da Supabase (Annunci REALI)
     try {
-        console.log("📡 Interrogazione Supabase...");
         const { data, error } = await _supabase
             .from('annunci')
             .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier')
             .eq('id', idParam)
             .maybeSingle();
 
-        if (error) {
-            console.error("❌ Errore query Supabase:", error);
-        }
-
         if (data) {
-            console.log("✅ Annuncio trovato su DB:", data);
-            listing = { 
-                ...data, 
+            listing = {
+                ...data,
                 data: data.data || data.created_at?.split('T')[0],
-                // Normalizziamo settore/merce se i nomi dei campi differiscono nel DB
                 merce: data.merce || data.settore || 'Altro'
             };
-        } else {
-            console.warn("⚠️ Nessun annuncio reale trovato con questo ID.");
         }
     } catch (e) {
-        console.error("❌ Eccezione durante il caricamento:", e);
+        console.error("Errore caricamento annuncio:", e);
     }
 
-    // 2. Fallback: Dati demo statici
     if (!listing) {
-        console.log("🧩 Tentativo fallback su dati demo...");
         const numId = parseInt(idParam);
         listing = LISTINGS.find(l => l.id === numId);
-        if (listing) console.log("✅ Annuncio demo trovato:", listing);
     }
 
     return listing;
@@ -362,8 +344,6 @@ async function initPage() {
     try {
         const { data: _authData } = await _supabase.auth.getUser();
         const user = _authData?.user ?? null;
-        console.log("👤 Utente corrente:", user?.id);
-        console.log("📝 Proprietario annuncio:", listing.user_id);
 
         if (user) {
             _contactFetched = true; // loggato — settato subito, prima di qualsiasi fetch
@@ -373,7 +353,6 @@ async function initPage() {
         }
 
         if (user && listing.user_id && String(listing.user_id).trim() === String(user.id).trim()) {
-            console.log("✅ Match proprietario confermato!");
             // 1. Aggiungiamo un badge sopra il titolo
             const titoloEl = document.getElementById('titolo');
             let badgeContainer = document.getElementById('titleBadges');
@@ -395,10 +374,7 @@ async function initPage() {
             const chatBtn = document.getElementById('chatBtn');
             if (chatBtn) {
                 chatBtn.innerHTML = '<i class="fas fa-edit"></i> Modifica Annuncio';
-                chatBtn.onclick = () => {
-                    console.log("🚀 Reindirizzamento a modifica...");
-                    location.href = `modifica-annuncio.html?id=${listing.id}`;
-                };
+                chatBtn.onclick = () => { location.href = `modifica-annuncio.html?id=${listing.id}`; };
                 chatBtn.className = 'w-full bg-blue-600 text-white py-4 rounded-2xl font-black hover:bg-blue-700 transition flex items-center justify-center gap-3 shadow-xl shadow-blue-100';
             }
 
@@ -422,7 +398,7 @@ async function initPage() {
             if (callBtn) callBtn.innerHTML = '<i class="fas fa-lock text-slate-400 mr-2"></i> Accedi per chiamare';
         }
     } catch (e) {
-        console.error("❌ Errore check proprietario:", e);
+        console.error("Errore check proprietario:", e);
     }
 }
 
@@ -463,6 +439,14 @@ async function startChat() {
         const listing = _currentListing;
         if (!listing || typeof listing.id === 'number' || !listing.user_id) {
             showToast('Questa funzione è disponibile solo per gli annunci reali.', 'warning');
+            return;
+        }
+        if (listing.status === 'deleted') {
+            showToast('Questo annuncio non è più disponibile.', 'warning');
+            return;
+        }
+        if (listing.status === 'pending') {
+            showToast('Questo annuncio è in attesa di approvazione.', 'info');
             return;
         }
         if (listing.user_id === user.id) {

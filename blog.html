@@ -44,15 +44,7 @@
 </head>
 <body class="bg-white text-slate-900">
 
-<header class="border-b border-slate-50 py-6">
-    <div class="max-w-3xl mx-auto px-6 flex justify-between items-center">
-        <a href="index.html" class="flex items-center gap-2 opacity-60 hover:opacity-100 transition">
-            <i class="fas fa-arrow-left text-xs"></i>
-            <span class="text-xs font-bold uppercase tracking-widest">Torna alla piattaforma</span>
-        </a>
-        <span class="text-xs font-black text-slate-300 uppercase tracking-[.2em]">Archivio Dinamico IA</span>
-    </div>
-</header>
+<header></header>
 
 <main class="max-w-3xl mx-auto px-6 py-16">
     <!-- Banner Calcolatore -->
@@ -76,13 +68,13 @@
     <div id="blogContainer" class="hidden"></div>
 </main>
 
-<footer class="py-20 border-t border-slate-50 mt-20 text-center">
-    <p class="text-xs text-slate-300 font-bold uppercase tracking-widest">Subingresso.it — Risorse IA per Ambulanti</p>
-</footer>
+<footer></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/data.js?v=6"></script>
+<script src="js/ui-components.js?v=2"></script>
+<script src="js/auth.js?v=2"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const slug = params.get('post');

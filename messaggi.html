@@ -64,7 +64,7 @@
     </div>
 
     <!-- Chat layout -->
-    <div id="chatLayout" class="hidden h-[calc(100vh-140px)] gap-4">
+    <div id="chatLayout" class="hidden h-[calc(100dvh-140px)] gap-4">
 
         <!-- ── Left: conversation list ── -->
         <div id="convPanel" class="w-full md:w-80 md:flex-shrink-0 bg-white rounded-2xl border border-slate-100 flex flex-col overflow-hidden">
@@ -130,7 +130,8 @@ let _currentUser     = null;
 let _conversations   = [];
 let _activeConvId    = null;
 let _realtimeChannel = null;
-let _renderedMsgIds  = new Set(); // dedup tra insert ottimistico e evento realtime
+let _renderedMsgIds  = new Set();
+let _pollInterval    = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -208,8 +209,11 @@ async function loadConversations() {
         acquirente:  pm[c.acquirente_id] || null,
         venditore:   pm[c.venditore_id]  || null,
         lastMessage: lastMsgMap[c.id]    || null,
-    })).filter(c => c.lastMessage !== null)
-       .sort((a, b) => new Date(b.lastMessage.created_at) - new Date(a.lastMessage.created_at));
+    })).sort((a, b) => {
+        const ta = a.lastMessage ? new Date(a.lastMessage.created_at) : new Date(a.created_at);
+        const tb = b.lastMessage ? new Date(b.lastMessage.created_at) : new Date(b.created_at);
+        return tb - ta;
+    });
 
     renderConvList();
 }
@@ -468,7 +472,34 @@ function setupRealtime(convId) {
             }
             updateAuthNav();
         })
-        .subscribe();
+        .subscribe((status) => {
+            if (status === 'SUBSCRIBED') {
+                if (_pollInterval) { clearInterval(_pollInterval); _pollInterval = null; }
+            } else if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT' || status === 'CLOSED') {
+                // Realtime non disponibile: polling ogni 15s
+                if (!_pollInterval) {
+                    _pollInterval = setInterval(() => {
+                        if (_activeConvId) _pollNewMessages(_activeConvId);
+                    }, 15000);
+                }
+            }
+        });
+}
+
+async function _pollNewMessages(convId) {
+    const { data: msgs } = await _supabase
+        .from('messaggi')
+        .select('id, conversazione_id, mittente_id, testo, created_at, letto')
+        .eq('conversazione_id', convId)
+        .order('created_at', { ascending: false })
+        .limit(10);
+    if (!msgs) return;
+    msgs.reverse().forEach(msg => {
+        if (_renderedMsgIds.has(msg.id)) return;
+        _renderedMsgIds.add(msg.id);
+        appendMessage(msg);
+        updateConvLastMessage(convId, msg);
+    });
 }
 
 </script>

@@ -44,6 +44,7 @@
             transition: all .15s; background: white;
             touch-action: manipulation; user-select: none;
         }
+        .tipo-card.selected { border-color: #2563eb; background: #eff6ff; }
         .tipo-card:active { transform: scale(.97); }
 
         /* Tipo mercato buttons */
@@ -369,6 +370,10 @@ function goToStep(n) {
     document.getElementById('stepName').textContent  = STEP_NAMES[_step];
     document.getElementById('progressBar').style.width = (_step / 5 * 100) + '%';
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (_step === 1) {
+        const isAffitto = document.getElementById('statoAffitto').checked;
+        document.querySelectorAll('.tipo-card').forEach((c, i) => c.classList.toggle('selected', i === (isAffitto ? 1 : 0)));
+    }
     if (_step === 4) _updatePrezzoLabel();
     if (_step === 5) _suggestTitle();
     if (_step > 1) _saveDraft();
@@ -477,8 +482,10 @@ function _validateStep(n) {
             return _err('La descrizione deve essere di almeno 10 caratteri.');
         if (!document.getElementById('fNome').value.trim())
             return _err('Inserisci il nome di contatto.');
-        if (!document.getElementById('fTel').value.trim())
-            return _err('Inserisci un numero di telefono (WhatsApp).');
+        const _tel = document.getElementById('fTel').value.trim();
+        if (!_tel) return _err('Inserisci un numero di telefono (WhatsApp).');
+        if (!/^\+?[\d\s\-\(\)]{8,15}$/.test(_tel))
+            return _err('Inserisci un numero di telefono valido (es. 347 1234567).');
     }
     return true;
 }
