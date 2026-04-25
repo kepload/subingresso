@@ -8,9 +8,10 @@
 //  IMPORTANTE: "Verify JWT" deve essere DISATTIVATO
 // ============================================================
 
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')!;
-const FROM           = 'Subingresso.it <noreply@subingresso.it>';
-const SITE_URL       = 'https://subingresso.it';
+const RESEND_API_KEY  = Deno.env.get('RESEND_API_KEY')!;
+const SUPABASE_ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY')!;
+const FROM            = 'Subingresso.it <noreply@subingresso.it>';
+const SITE_URL        = 'https://subingresso.it';
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -29,6 +30,7 @@ Deno.serve(async (req) => {
       u.searchParams.set('token', hash);
       u.searchParams.set('type', type);
       u.searchParams.set('redirect_to', redirect_to || SITE_URL);
+      u.searchParams.set('apikey', SUPABASE_ANON_KEY);
       return u.toString();
     };
 
