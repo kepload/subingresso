@@ -349,25 +349,21 @@ window.handleRegister = async function (e) {
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
 
         if (error) {
-            _showAuthError(error.message);
+            // Rate limit → crea account via admin API (bypass) poi accedi
+            if (/rate.?limit|too many/i.test(error.message)) {
+                await _registerBypass(email, password, nome, cognome, telefono);
+            } else {
+                _showAuthError(error.message);
+            }
             return;
         }
 
         if (data?.user && data?.session) {
             // Session presente = conferma email disabilitata, utente subito attivo
             await _supabase.from('profiles').upsert({ id: data.user.id, nome, cognome, telefono, vetrina_welcome_days: 10 });
-            _profileCache = { id: data.user.id, nome };
-            _showAuthSuccess('Benvenuto! Account creato con successo.');
-            setTimeout(() => {
-                closeAuthModal();
-                updateAuthNav();
-                if (typeof window.__onLoginSuccess === 'function') {
-                    window.__onLoginSuccess();
-                    window.__onLoginSuccess = null;
-                }
-            }, 1500);
+            await _afterRegisterSuccess(nome);
         } else {
-            // Se session è null la conferma email è pending
+            // Session null = conferma email abilitata e in attesa
             _showAuthSuccess('Account creato! Controlla la tua email per confermare, poi accedi.');
             setTimeout(() => switchAuthTab('login'), 4000);
         }
@@ -376,6 +372,45 @@ window.handleRegister = async function (e) {
         _showAuthError('Errore durante la registrazione.');
     }
 };
+
+// ── Register helpers ─────────────────────────────────────
+async function _afterRegisterSuccess(nome) {
+    _profileCache = { id: (await getCurrentUser())?.id, nome };
+    _showAuthSuccess('Benvenuto! Account creato con successo.');
+    setTimeout(() => {
+        closeAuthModal();
+        updateAuthNav();
+        if (typeof window.__onLoginSuccess === 'function') {
+            window.__onLoginSuccess();
+            window.__onLoginSuccess = null;
+        }
+    }, 1500);
+}
+
+async function _registerBypass(email, password, nome, cognome, telefono) {
+    try {
+        const res = await fetch(`${SUPABASE_URL}/functions/v1/register-bypass`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+            body: JSON.stringify({ email, password, nome, cognome, telefono }),
+        });
+        const result = await res.json();
+        if (!res.ok) {
+            _showAuthError(result.error || 'Errore durante la registrazione.');
+            return;
+        }
+        // Account creato — ora accedi
+        const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email, password });
+        if (siErr || !si?.session) {
+            _showAuthSuccess('Account creato! Accedi con le tue credenziali.');
+            setTimeout(() => switchAuthTab('login'), 2000);
+            return;
+        }
+        await _afterRegisterSuccess(nome);
+    } catch (_) {
+        _showAuthError('Errore durante la registrazione. Riprova.');
+    }
+}
 
 // ── Forgot Password ──────────────────────────────────────
 window.handleForgotPassword = async function (e) {
