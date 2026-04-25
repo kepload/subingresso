@@ -8,10 +8,11 @@
 //  IMPORTANTE: "Verify JWT" deve essere DISATTIVATO
 // ============================================================
 
-const RESEND_API_KEY  = Deno.env.get('RESEND_API_KEY')!;
+const RESEND_API_KEY    = Deno.env.get('RESEND_API_KEY')!;
+const SUPABASE_URL      = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY')!;
-const FROM            = 'Subingresso.it <noreply@subingresso.it>';
-const SITE_URL        = 'https://subingresso.it';
+const FROM              = 'Subingresso.it <noreply@subingresso.it>';
+const SITE_URL          = 'https://subingresso.it';
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -22,11 +23,10 @@ Deno.serve(async (req) => {
     const { user, email_data } = await req.json();
     if (!user?.email || !email_data) return ok();
 
-    const { token_hash, token_hash_new, redirect_to, email_action_type, site_url } = email_data;
-    const base = (site_url || '').replace(/\/$/, '');
+    const { token_hash, token_hash_new, redirect_to, email_action_type } = email_data;
 
     const link = (type: string, hash: string) => {
-      const u = new URL(`${base}/auth/v1/verify`);
+      const u = new URL(`${SUPABASE_URL}/auth/v1/verify`);
       u.searchParams.set('token', hash);
       u.searchParams.set('type', type);
       u.searchParams.set('redirect_to', redirect_to || SITE_URL);
