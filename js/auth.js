@@ -355,7 +355,7 @@ window.handleRegister = async function (e) {
 
         if (data?.user && data?.session) {
             // Session presente = conferma email disabilitata, utente subito attivo
-            await _supabase.from('profiles').upsert({ id: data.user.id, nome, cognome, telefono });
+            await _supabase.from('profiles').upsert({ id: data.user.id, nome, cognome, telefono, vetrina_welcome_days: 10 });
             _profileCache = { id: data.user.id, nome };
             _showAuthSuccess('Benvenuto! Account creato con successo.');
             setTimeout(() => { closeAuthModal(); updateAuthNav(); }, 1500);
