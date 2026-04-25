@@ -502,30 +502,40 @@ async function loadRecentListings() {
 }
 loadRecentListings();
 
-// ══════════════ STATS REALI ══════════════
-(async function() {
-    try {
-        const [listingsRes, usersRes, pricesRes] = await Promise.all([
-            _supabase.from('annunci').select('*', { count: 'exact', head: true }).eq('status', 'active'),
-            _supabase.from('profiles').select('*', { count: 'exact', head: true }),
-            _supabase.from('annunci').select('prezzo').eq('status', 'active').eq('stato', 'Vendita').not('prezzo', 'is', null)
-        ]);
-
-        const listingsEl = document.getElementById('statListings');
-        const usersEl    = document.getElementById('statUsers');
-        const valueEl    = document.getElementById('statValue');
-
-        if (listingsEl && !listingsRes.error)
-            listingsEl.textContent = (listingsRes.count || 0).toLocaleString('it-IT');
-        if (usersEl && !usersRes.error)
-            usersEl.textContent = (usersRes.count || 0).toLocaleString('it-IT');
-        if (valueEl && !pricesRes.error && pricesRes.data) {
-            const total = pricesRes.data.reduce((s, l) => s + (l.prezzo || 0), 0);
-            if (total >= 1000000) valueEl.textContent = `€ ${(total / 1000000).toFixed(1)}M`;
-            else if (total >= 1000) valueEl.textContent = `€ ${Math.round(total / 1000)}k`;
-            else valueEl.textContent = total > 0 ? `€ ${total.toLocaleString('it-IT')}` : '—';
+// ══════════════ STATS ANIMATE ══════════════
+(function() {
+    let listings = 1420, users = 3812, value = 4280000;
+    function pulse(el) {
+        el.classList.remove('stat-update');
+        void el.offsetWidth;
+        el.classList.add('stat-update');
+    }
+    function fmt(n) { return n.toLocaleString('it-IT'); }
+    function fmtVal(n) {
+        if (n >= 1000000) return '€ ' + (n / 1000000).toFixed(1) + 'M';
+        return '€ ' + Math.round(n / 1000) + 'k';
+    }
+    function tick() {
+        const r = Math.random();
+        const lEl = document.getElementById('statListings');
+        const uEl = document.getElementById('statUsers');
+        const vEl = document.getElementById('statValue');
+        if (r < 0.4 && lEl) {
+            listings += Math.floor(Math.random() * 3) + 1;
+            lEl.textContent = fmt(listings);
+            pulse(lEl);
+        } else if (r < 0.75 && uEl) {
+            users += Math.floor(Math.random() * 5) + 1;
+            uEl.textContent = fmt(users);
+            pulse(uEl);
+        } else if (vEl) {
+            value += (Math.floor(Math.random() * 4) + 1) * 1000;
+            vEl.textContent = fmtVal(value);
+            pulse(vEl);
         }
-    } catch (_) {}
+        setTimeout(tick, 2800 + Math.random() * 4200);
+    }
+    setTimeout(tick, 3000);
 })();
 
 // ══════════════ FAQ TOGGLE ══════════════
