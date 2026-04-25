@@ -358,7 +358,14 @@ window.handleRegister = async function (e) {
             await _supabase.from('profiles').upsert({ id: data.user.id, nome, cognome, telefono, vetrina_welcome_days: 10 });
             _profileCache = { id: data.user.id, nome };
             _showAuthSuccess('Benvenuto! Account creato con successo.');
-            setTimeout(() => { closeAuthModal(); updateAuthNav(); }, 1500);
+            setTimeout(() => {
+                closeAuthModal();
+                updateAuthNav();
+                if (typeof window.__onLoginSuccess === 'function') {
+                    window.__onLoginSuccess();
+                    window.__onLoginSuccess = null;
+                }
+            }, 1500);
         } else {
             // Se session è null la conferma email è pending
             _showAuthSuccess('Account creato! Controlla la tua email per confermare, poi accedi.');
