@@ -265,7 +265,7 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Popup visitatori** (`auth.js`): modal centrato con blur, appare dopo 8s, verifica sessione al momento dello show (`getSession()`), una volta per sessione (`sessionStorage._vp`). NON usare slide-up — è un modal full overlay come gli altri.
 - **Popup benvenuto nuovo utente** (`auth.js`): appare al primo login quando il profilo viene creato dai metadati. Salvato in `localStorage._welc_<userId>` per non riapparire. Porta a `vendi.html`.
 - **Vetrina welcome 10 giorni**: colonna `vetrina_welcome_days int2 DEFAULT 0` in `profiles`. All'upsert del profilo nuovo si setta a 10. In `vendi.html` → `_tryGrantWelcomeVetrina()` chiama RPC `grant_welcome_vetrina(p_annuncio_id, p_user_id)` dopo insert. Funzione SQL usa `SET LOCAL session_replication_role='replica'` per bypassare il trigger. Vale solo per 1 annuncio (credito azzerato dopo). Banner dorato nella success page se attivata.
-- **SQL da eseguire se non fatto**: `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS vetrina_welcome_days int2 DEFAULT 0;` + funzioni `grant_welcome_vetrina` e `delete_my_account` (vedere sessione Aprile 2026).
+- **SQL già eseguito** (Aprile 2026): `grant_welcome_vetrina` deployata e funzionante. Colonna `vetrina_welcome_days` aggiunta. `SETUP_WELCOME_VETRINA.sql` eseguito con successo.
 
 ## 🗑️ Eliminazione Account (Aprile 2026)
 - Sezione "Zona pericolosa" in fondo al modal profilo (`dashboard.html`). Richiede di scrivere `ELIMINA` nel campo di testo.
@@ -288,3 +288,11 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Supabase CLI su Windows:** L'installazione di `supabase` via npm globale fallisce tipicamente su Windows. Per fare il deploy delle Edge Functions, usare l'eseguibile standalone (scaricato da GitHub Releases) o aggiornare il codice manualmente dalla Dashboard web (copia-incolla).
 - **Bug SQL Editor (Asterischi Cron):** Copiando/incollando orari cron come `'0 9 * * 1'` direttamente nell'SQL Editor web di Supabase, a volte l'interfaccia rimuove gli asterischi creando spazi vuoti (causando l'errore `invalid schedule`). Per risolvere, assicurati di copiare la query da un file `.sql` locale pulito o riscrivi gli asterischi a mano.
 - **Webhook e old_record:** Il check `STRICT` in `notify-alert` e `notify-seller` richiede rigorosamente `old_record.status === 'pending'`. Non inserire logiche di "fallback" se il webhook non include l'old_record, altrimenti update banali (es. contatore visite) causeranno false email di "nuovo annuncio".
+
+## 📧 Email Rate Limit Bypass (Aprile 2026)
+- **Problema**: Supabase free plan limita a 2 email auth/ora. Il rate limit si applica PRIMA del Send Email Hook, non bypassabile gratis.
+- **Soluzione**: Edge Function `register-bypass` — se `signUp` fallisce con rate limit, crea utente via `admin.auth.admin.createUser({ email_confirm: true })` + `signInWithPassword`. Utente registrato e loggato senza email.
+- **`pending_email_verifications`**: tabella dove vengono salvati questi utenti per verifica notturna. SQL in `SETUP_EMAIL_BYPASS.sql` (non ancora eseguito — la tabella non è critica, il bypass funziona anche senza).
+- **Send Email Hook**: configurato in Auth → Hooks → Send Email → Edge Function `send-auth-email` via Resend. Funziona per i primi 2/ora normalmente.
+- **Vetrina prezzi aggiornati**: 3 tier — 10d €14, 30d €24 (CONSIGLIATO), 90d €54. Edge Functions `create-checkout-session` e `stripe-webhook` aggiornate con nuovi importi.
+- **`_afterRegisterSuccess()` e `_registerBypass()`**: helper in `auth.js` per evitare duplicazione codice nella gestione post-registrazione.
