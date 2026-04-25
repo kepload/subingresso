@@ -357,6 +357,8 @@
 // ── Step Management ───────────────────────────────────────
 let _step = 1;
 const STEP_NAMES = ['', 'Tipo annuncio', 'Posizione', 'Il posteggio', 'Prezzo', 'Descrizione e foto'];
+const _DRAFT_KEY = 'subingresso_draft_v1';
+let _pendingDraft = null;
 
 function goToStep(n) {
     document.getElementById('step' + _step).classList.remove('active');
@@ -369,6 +371,67 @@ function goToStep(n) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (_step === 4) _updatePrezzoLabel();
     if (_step === 5) _suggestTitle();
+    if (_step > 1) _saveDraft();
+}
+
+function _saveDraft() {
+    const stato = document.querySelector('input[name="stato"]:checked')?.value || 'Vendita';
+    const regione = document.getElementById('fRegione').value;
+    const comune  = document.getElementById('fComune').value.trim();
+    if (!regione && !comune) return; // niente da salvare
+    const draft = {
+        stato, regione, comune,
+        tipo:        document.getElementById('fTipo').value,
+        giorni:      document.getElementById('fGiorni').value,
+        merce:       document.getElementById('fMerce').value,
+        superficie:  document.getElementById('fSuperficie').value,
+        prezzo:      document.getElementById('fPrezzo').value,
+        titolo:      document.getElementById('fTitolo').value.trim(),
+        descrizione: document.getElementById('fDescrizione').value.trim(),
+        nome:        document.getElementById('fNome').value.trim(),
+        tel:         document.getElementById('fTel').value.trim(),
+        step:        _step,
+    };
+    localStorage.setItem(_DRAFT_KEY, JSON.stringify(draft));
+}
+
+function _clearDraft() {
+    localStorage.removeItem(_DRAFT_KEY);
+    const banner = document.getElementById('draftBanner');
+    if (banner) banner.remove();
+    _pendingDraft = null;
+}
+
+function _applyPendingDraft() {
+    if (!_pendingDraft) return;
+    const d = _pendingDraft;
+    if (d.stato === 'Affitto mensile') document.getElementById('statoAffitto').checked = true;
+    else document.getElementById('statoVendita').checked = true;
+    document.getElementById('fRegione').value    = d.regione || '';
+    document.getElementById('fComune').value     = d.comune  || '';
+    document.getElementById('fTipo').value       = d.tipo    || 'Mercato settimanale';
+    const tipoIdx = ['Mercato settimanale', 'Mercato quotidiano', 'Fiera'].indexOf(d.tipo);
+    for (let i = 0; i < 3; i++) {
+        const b = document.getElementById('tipoBtn' + i);
+        if (b) b.classList.toggle('on', i === tipoIdx);
+    }
+    if (d.giorni) {
+        document.getElementById('fGiorni').value = d.giorni;
+        const gg = d.giorni.split(', ');
+        document.querySelectorAll('.day-pill').forEach(p => { if (gg.includes(p.dataset.day)) p.classList.add('on'); });
+    }
+    if (d.merce) {
+        document.getElementById('fMerce').value = d.merce;
+        document.querySelectorAll('.settore-pill').forEach(p => { if (p.textContent === d.merce) p.classList.add('on'); });
+    }
+    document.getElementById('fSuperficie').value = d.superficie || '';
+    document.getElementById('fPrezzo').value     = d.prezzo     || '';
+    document.getElementById('fTitolo').value     = d.titolo     || '';
+    document.getElementById('fDescrizione').value = d.descrizione || '';
+    if (d.nome) document.getElementById('fNome').value = d.nome;
+    if (d.tel)  document.getElementById('fTel').value  = d.tel;
+    _clearDraft();
+    goToStep(d.step && d.step > 1 ? d.step : 2);
 }
 
 function nextStep() {
@@ -537,7 +600,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
     });
 
-
     // Auth
     const user = await getCurrentUser();
     if (!user) {
@@ -551,6 +613,28 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('fNome').value = user.email.split('@')[0];
         }
     }
+
+    // Controlla bozza salvata
+    try {
+        const saved = localStorage.getItem(_DRAFT_KEY);
+        if (saved) {
+            _pendingDraft = JSON.parse(saved);
+            const banner = document.createElement('div');
+            banner.id = 'draftBanner';
+            banner.className = 'mb-6 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 flex flex-wrap items-center justify-between gap-3';
+            banner.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-history text-amber-500"></i>
+                    <span class="text-sm font-bold text-amber-800">Hai una bozza salvata. Vuoi continuare da dove eri rimasto?</span>
+                </div>
+                <div class="flex gap-2">
+                    <button type="button" onclick="_applyPendingDraft()" class="text-xs font-black bg-amber-500 text-white px-4 py-2 rounded-xl hover:bg-amber-600 transition">Ripristina</button>
+                    <button type="button" onclick="_clearDraft()" class="text-xs font-black text-amber-600 hover:text-amber-800 transition px-2">Scarta</button>
+                </div>`;
+            const formWrapper = document.getElementById('formWrapper');
+            if (formWrapper) formWrapper.insertBefore(banner, formWrapper.firstChild);
+        }
+    } catch (_) {}
 });
 
 try {
@@ -693,6 +777,7 @@ async function submitAnnuncio() {
         if (error) throw error;
 
         const vetranaGranted = await _tryGrantWelcomeVetrina(user.id, inserted.id);
+        _clearDraft();
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.getElementById('formWrapper').classList.add('hidden');

@@ -135,6 +135,14 @@ async function initPage() {
         detailEl.classList.add('grid');
     }
 
+    // Mostra barra contatti fissa su mobile
+    const mobileCta = document.getElementById('mobileCta');
+    if (mobileCta) {
+        mobileCta.classList.add('visible');
+        const mainContent = document.getElementById('mainContent');
+        if (mainContent) mainContent.classList.add('has-cta');
+    }
+
     // Breadcrumb
     const bcReg = document.getElementById('bcRegione');
     if (bcReg) bcReg.textContent = listing.regione;

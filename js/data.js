@@ -207,7 +207,7 @@ function buildCard(l, isSmall = false, distance = null) {
             }
         }
 
-        return img ? `<img src="${escapeHTML(img)}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
+        return img ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
     })();
 
     return `
@@ -248,7 +248,7 @@ function buildCard(l, isSmall = false, distance = null) {
                     const initial = displayName ? escapeHTML(displayName.charAt(0).toUpperCase()) : '?';
                     const nameHtml = `<span class="text-[11px] font-bold text-slate-400 truncate hover:text-blue-600 transition">${escapeHTML(displayName)}</span>`;
                     const avatarHtml = USER_AVATARS[l.user_id]
-                        ? `<img src="${escapeHTML(USER_AVATARS[l.user_id])}" class="w-full h-full object-cover">`
+                        ? `<img src="${escapeHTML(USER_AVATARS[l.user_id])}" alt="${escapeHTML(displayName)}" class="w-full h-full object-cover">`
                         : `<span class="text-[9px] font-black text-blue-600">${initial}</span>`;
                     if (profiloUrl) {
                         return `<a href="${profiloUrl}" onclick="event.stopPropagation()" class="flex items-center gap-1.5 mb-2 sm:mb-3 hover:bg-blue-50 rounded-xl px-1.5 py-1 -mx-1.5 transition w-fit max-w-full">

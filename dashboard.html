@@ -1193,6 +1193,8 @@ async function deleteAlert(id) {
 // ── Save Profile ─────────────────────────────────────────
 async function saveProfile(e) {
     e.preventDefault();
+    const btn = document.querySelector('#profileForm button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Salvataggio…'; }
     const { error } = await _supabase.from('profiles').upsert({
         id: _currentUser.id,
         nome:     document.getElementById('pNome').value.trim(),
@@ -1201,9 +1203,13 @@ async function saveProfile(e) {
         email_digest: document.getElementById('pEmailDigest').checked,
         email_stats:  document.getElementById('pEmailStats').checked
     });
+    if (btn) { btn.disabled = false; btn.textContent = 'Salva modifiche'; }
     if (!error) {
         updateAuthNav();
+        showToast('Profilo aggiornato!', 'success');
         setTimeout(() => closeProfiloModal(), 800);
+    } else {
+        showToast('Errore nel salvataggio. Riprova.', 'error');
     }
 }
 

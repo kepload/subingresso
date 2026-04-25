@@ -296,6 +296,22 @@ async function loadListings() {
         }
     } catch (e) {
         console.error("Supabase load failed:", e);
+        const grid  = document.getElementById('resultsGrid');
+        const empty = document.getElementById('emptyState');
+        const count = document.getElementById('resultCount');
+        if (grid)  grid.innerHTML = '';
+        if (count) count.textContent = '';
+        if (empty) {
+            empty.innerHTML = `
+                <i class="fas fa-wifi text-slate-200 text-6xl mb-4"></i>
+                <p class="text-slate-400 font-bold text-lg">Impossibile caricare gli annunci</p>
+                <p class="text-slate-400 text-sm mt-1">Controlla la connessione e riprova.</p>
+                <button onclick="loadListings()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
+                    Riprova
+                </button>`;
+            empty.classList.remove('hidden');
+        }
+        return;
     }
     applyFilters();
 }
@@ -390,6 +406,7 @@ function resetMobileFilters() {
 
 // Esporta funzioni globali per i click negli HTML
 window.applyFilters       = applyFilters;
+window.loadListings       = loadListings;
 window.openMobileFilters  = openMobileFilters;
 window.closeMobileFilters = closeMobileFilters;
 window.applyMobileFilters = applyMobileFilters;

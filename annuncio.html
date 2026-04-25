@@ -24,6 +24,9 @@
         .detail-icon { width: 2rem; color: #94a3b8; font-size: .875rem; flex-shrink: 0; padding-top: 2px; }
         .detail-label { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #94a3b8; }
         .detail-val   { font-weight: 700; font-size: .9rem; color: #0f172a; }
+        #mobileCta { display: none; }
+        @media (max-width: 1023px) { #mobileCta.visible { display: flex; } }
+        #mainContent.has-cta { padding-bottom: 5.5rem; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
@@ -166,6 +169,16 @@
         <div id="relatedGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </div>
 </main>
+
+<!-- ══════════════ MOBILE CTA (fixed bottom, solo mobile) ══════════════ -->
+<div id="mobileCta" class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-100 px-4 gap-3" style="padding-top:.75rem;padding-bottom:calc(.75rem + env(safe-area-inset-bottom))">
+    <button onclick="startChat()" class="flex-1 bg-blue-600 text-white py-3 rounded-2xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-2 shadow-lg shadow-blue-100">
+        <i class="fas fa-comment-alt"></i> Invia Messaggio
+    </button>
+    <button onclick="openWhatsApp()" class="flex-1 bg-emerald-500 text-white py-3 rounded-2xl font-black text-sm hover:bg-emerald-600 transition active:scale-[.98] flex items-center justify-center gap-2 shadow-lg shadow-emerald-100">
+        <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+    </button>
+</div>
 
 <!-- ══════════════ FOOTER (Dinamico) ══════════════ -->
 <footer></footer>
