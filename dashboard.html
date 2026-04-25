@@ -252,32 +252,50 @@
 
         <!-- Tier options -->
         <div class="px-5 pt-4 pb-3 space-y-2.5">
-            <button id="tier30d" onclick="startCheckout('30d')" class="w-full text-left bg-white border-2 border-slate-100 hover:border-amber-300 hover:bg-amber-50/30 rounded-2xl px-4 py-3 transition">
+
+            <!-- 10 giorni -->
+            <button id="tier10d" onclick="startCheckout('10d')" class="w-full text-left bg-white border-2 border-slate-100 hover:border-slate-200 rounded-2xl px-4 py-3 transition">
                 <div class="flex items-center justify-between gap-3">
                     <div>
-                        <h3 class="font-black text-slate-900 text-base leading-tight">Vetrina 30 giorni</h3>
-                        <p class="text-[11px] text-slate-400 font-semibold mt-0.5">Per un test rapido o un'offerta breve.</p>
+                        <h3 class="font-black text-slate-700 text-sm leading-tight">Vetrina 10 giorni</h3>
+                        <p class="text-[10px] text-slate-400 font-semibold mt-0.5">Prova rapida · €1,40/giorno</p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                        <p class="text-2xl font-black text-slate-900">€19</p>
+                        <p class="text-xl font-black text-slate-700">€14</p>
                         <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">una tantum</p>
                     </div>
                 </div>
             </button>
 
-            <button id="tier90d" onclick="startCheckout('90d')" class="relative w-full text-left bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 hover:border-amber-400 rounded-2xl px-4 py-3 transition">
-                <span class="absolute -top-2.5 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full shadow-sm">Più scelto · -32%</span>
+            <!-- 30 giorni — CONSIGLIATO -->
+            <button id="tier30d" onclick="startCheckout('30d')" class="relative w-full text-left bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-400 hover:border-amber-500 rounded-2xl px-4 py-3.5 transition shadow-sm shadow-amber-100">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-0.5 rounded-full shadow-md whitespace-nowrap">⭐ Più scelto · miglior valore</span>
                 <div class="flex items-center justify-between gap-3">
                     <div>
-                        <h3 class="font-black text-slate-900 text-base leading-tight">Vetrina 90 giorni</h3>
-                        <p class="text-[11px] text-slate-400 font-semibold mt-0.5">Equivale a €13/mese. Ideale per annunci premium.</p>
+                        <h3 class="font-black text-slate-900 text-base leading-tight">Vetrina 30 giorni</h3>
+                        <p class="text-[11px] text-amber-700 font-bold mt-0.5">€0,80/giorno · -43% vs 10 giorni</p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                        <p class="text-2xl font-black text-slate-900">€39</p>
-                        <p class="text-[10px] font-bold text-amber-600 uppercase tracking-widest">invece di €57</p>
+                        <p class="text-2xl font-black text-slate-900">€24</p>
+                        <p class="text-[10px] font-bold text-amber-600 uppercase tracking-widest">una tantum</p>
                     </div>
                 </div>
             </button>
+
+            <!-- 90 giorni -->
+            <button id="tier90d" onclick="startCheckout('90d')" class="w-full text-left bg-white border-2 border-slate-100 hover:border-slate-200 rounded-2xl px-4 py-3 transition">
+                <div class="flex items-center justify-between gap-3">
+                    <div>
+                        <h3 class="font-black text-slate-700 text-sm leading-tight">Vetrina 90 giorni</h3>
+                        <p class="text-[10px] text-slate-400 font-semibold mt-0.5">Lunga durata · €0,60/giorno · invece di €72</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <p class="text-xl font-black text-slate-700">€54</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">una tantum</p>
+                    </div>
+                </div>
+            </button>
+
         </div>
 
         <!-- Footer -->
@@ -420,14 +438,18 @@
             </div>
             <h3 class="font-black text-lg text-slate-900 mb-1">Vetrina gratuita</h3>
             <p class="text-sm text-slate-500 font-semibold mb-5">Scegli per quanti giorni attivare la vetrina su questo annuncio.</p>
-            <div class="flex gap-3">
+            <div class="flex gap-2">
+                <button onclick="adminGrantVetrina(10)"
+                    class="flex-1 py-3 rounded-xl border-2 border-slate-200 text-sm font-black text-slate-600 hover:bg-slate-100 transition">
+                    10 gg
+                </button>
                 <button onclick="adminGrantVetrina(30)"
                     class="flex-1 py-3 rounded-xl border-2 border-amber-200 text-sm font-black text-amber-700 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition">
-                    30 giorni
+                    30 gg
                 </button>
                 <button onclick="adminGrantVetrina(90)"
                     class="flex-1 py-3 rounded-xl bg-amber-500 text-sm font-black text-white hover:bg-amber-600 transition">
-                    90 giorni
+                    90 gg
                 </button>
             </div>
         </div>
@@ -1026,9 +1048,9 @@ async function adminGrantVetrina(days) {
     const until = new Date(now);
     until.setDate(until.getDate() + days);
 
-    // Estendi scadenza post: 30gg vetrina → max 200gg, 90gg vetrina → max 300gg
+    // Estendi scadenza post: 10gg vetrina → max 120gg, 30gg → max 200gg, 90gg → max 300gg
     const { data: ann } = await _supabase.from('annunci').select('created_at, expires_at').eq('id', id).single();
-    const capDays = days >= 90 ? 300 : 200;
+    const capDays = days >= 90 ? 300 : days >= 30 ? 200 : 120;
     let newExpiry = null;
     if (ann?.created_at) {
         const cap = new Date(ann.created_at);
@@ -1288,8 +1310,10 @@ function openVetrinaModal(listing) {
     if (titleEl) titleEl.textContent = listing.titolo || 'Il tuo annuncio';
 
     // Reset stati bottoni
-    document.getElementById('tier30d').disabled = false;
-    document.getElementById('tier90d').disabled = false;
+    ['tier10d', 'tier30d', 'tier90d'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) { btn.disabled = false; btn.classList.remove('opacity-60', 'cursor-wait'); }
+    });
     document.getElementById('vetrinaLoadingMsg').textContent = '';
 
     document.getElementById('vetrinaModal').classList.remove('hidden');
@@ -1305,13 +1329,12 @@ function closeVetrinaModal() {
 async function startCheckout(tier) {
     if (!_vetrinaTarget || !_vetrinaTarget.id) return;
 
-    const btn30 = document.getElementById('tier30d');
-    const btn90 = document.getElementById('tier90d');
-    const msg   = document.getElementById('vetrinaLoadingMsg');
+    const allBtns = ['tier10d', 'tier30d', 'tier90d'].map(id => document.getElementById(id)).filter(Boolean);
+    const activeBtn = document.getElementById('tier' + tier);
+    const msg = document.getElementById('vetrinaLoadingMsg');
 
-    btn30.disabled = true;
-    btn90.disabled = true;
-    (tier === '30d' ? btn30 : btn90).classList.add('opacity-60', 'cursor-wait');
+    allBtns.forEach(b => { b.disabled = true; });
+    if (activeBtn) activeBtn.classList.add('opacity-60', 'cursor-wait');
     msg.textContent = 'Preparazione checkout…';
 
     try {
@@ -1340,17 +1363,13 @@ async function startCheckout(tier) {
             throw new Error(data.error || 'Errore creazione sessione');
         }
 
-        // Redirect a Stripe Checkout
         window.location.href = data.url;
 
     } catch (e) {
         console.error('checkout error:', e);
         msg.textContent = '';
         showToast('Errore: ' + (e.message || 'impossibile avviare il pagamento'), 'error');
-        btn30.disabled = false;
-        btn90.disabled = false;
-        btn30.classList.remove('opacity-60', 'cursor-wait');
-        btn90.classList.remove('opacity-60', 'cursor-wait');
+        allBtns.forEach(b => { b.disabled = false; b.classList.remove('opacity-60', 'cursor-wait'); });
     }
 }
 
