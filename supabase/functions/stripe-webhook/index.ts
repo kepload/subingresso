@@ -18,6 +18,12 @@ const TIER_DAYS: Record<string, number> = {
   '90d': 90,
 };
 
+const TIER_EXPIRY_CAP_DAYS: Record<string, number> = {
+  '10d': 130,
+  '30d': 200,
+  '90d': 300,
+};
+
 Deno.serve(async (req) => {
   if (req.method !== 'POST') {
     return new Response('Method not allowed', { status: 405 });
@@ -79,7 +85,7 @@ Deno.serve(async (req) => {
         // Se l'annuncio è già featured e non scaduto, estendi a partire da featured_until
         const { data: currentAnn } = await admin
           .from('annunci')
-          .select('featured, featured_until')
+          .select('featured, featured_until, created_at, expires_at')
           .eq('id', annuncioId)
           .single();
 
@@ -89,6 +95,14 @@ Deno.serve(async (req) => {
 
         const until = new Date(startFrom.getTime() + days * 24 * 60 * 60 * 1000);
 
+        const createdAt = currentAnn?.created_at ? new Date(currentAnn.created_at) : now;
+        const expiryCapDays = TIER_EXPIRY_CAP_DAYS[tier] || 100;
+        const cappedExpiresAt = new Date(createdAt.getTime() + expiryCapDays * 24 * 60 * 60 * 1000);
+        const currentExpiresAt = currentAnn?.expires_at ? new Date(currentAnn.expires_at) : null;
+        const nextExpiresAt = currentExpiresAt && currentExpiresAt > cappedExpiresAt
+          ? currentExpiresAt
+          : cappedExpiresAt;
+
         // 2. Attiva vetrina
         const { error: updErr } = await admin
           .from('annunci')
@@ -97,6 +111,7 @@ Deno.serve(async (req) => {
             featured_until: until.toISOString(),
             featured_tier:  tier,
             featured_since: (currentAnn?.featured ? undefined : now.toISOString()),
+            expires_at:      nextExpiresAt.toISOString(),
           })
           .eq('id', annuncioId)
           .eq('user_id', userId); // double-check proprietà

@@ -295,7 +295,7 @@ function buildCard(l, isSmall = false, distance = null) {
             }
         }
 
-        return img ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
+        return img ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
     })();
 
     return `

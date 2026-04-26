@@ -6,7 +6,7 @@
 
 const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
-const SITE              = 'https://www.subingresso.it';
+const SITE              = 'https://subingresso.it';
 
 const STATIC_PAGES = [
     { loc: '/',           changefreq: 'daily',   priority: '1.0' },

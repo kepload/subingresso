@@ -228,7 +228,7 @@ function chip(label, fn) {
         const el = document.getElementById(id);
         if (el) el.addEventListener('click', fn);
     }, 0);
-    return `<span class="chip" id="${id}">${label} <i class="fas fa-times text-blue-400"></i></span>`;
+    return `<span class="chip" id="${id}">${escapeHTML(label)} <i class="fas fa-times text-blue-400"></i></span>`;
 }
 
 function clearFilters() {
@@ -261,7 +261,7 @@ async function loadListings() {
         // Costruiamo la query base: tutti gli annunci attivi
         let query = _supabase
             .from('annunci')
-            .select('*')
+            .select('id, user_id, titolo, stato, status, tipo, settore, regione, comune, superficie, prezzo, contatto, dettagli_extra, img_urls, created_at, featured, featured_until, visualizzazioni')
             .order('created_at', { ascending: false });
 
         // Se l'utente è loggato, può vedere i propri annunci (qualsiasi status) 
@@ -274,12 +274,24 @@ async function loadListings() {
             query = query.eq('status', 'active');
         }
 
-        const { data, error } = await query;
+        let { data, error } = await query;
+        if (error && /column|schema|PGRST204/i.test(`${error.message || ''} ${error.code || ''}`)) {
+            console.warn('Optimized listing select failed, retrying with select(*)', error);
+            let fallbackQuery = _supabase
+                .from('annunci')
+                .select('*')
+                .order('created_at', { ascending: false });
+            fallbackQuery = user
+                ? fallbackQuery.neq('status', 'deleted').or(`status.eq.active,user_id.eq.${user.id}`)
+                : fallbackQuery.eq('status', 'active');
+            ({ data, error } = await fallbackQuery);
+        }
 
         if (!error && data && data.length > 0) {
             LISTINGS.length = 0;
             data.forEach(l => LISTINGS.push({
                 ...l,
+                merce: l.merce || l.settore || 'Altro',
                 data: l.data || l.created_at?.split('T')[0] || new Date().toISOString().split('T')[0]
             }));
 

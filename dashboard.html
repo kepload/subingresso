@@ -568,20 +568,24 @@ async function loadAdminBlog() {
         list.innerHTML = '<p class="text-xs text-slate-400 italic">Nessun articolo nel blog.</p>';
         return;
     }
-    list.innerHTML = data.map(p => `
-        <div class="flex items-center justify-between gap-3 p-3 bg-slate-50 rounded-xl hover:bg-blue-50 transition cursor-pointer group" onclick="window.open('blog.html?post=' + '${p.slug}', '_blank')">
+    list.innerHTML = data.map(p => {
+        const safeTitle = escapeHTML(p.title || '');
+        const safeSlug  = encodeURIComponent(p.slug || '');
+        const safeId    = escapeHTML(p.id || '');
+        return `
+        <div class="flex items-center justify-between gap-3 p-3 bg-slate-50 rounded-xl hover:bg-blue-50 transition cursor-pointer group" onclick="window.open('blog.html?post=${safeSlug}', '_blank')">
             <div class="min-w-0 flex-grow">
-                <p class="text-sm font-bold text-slate-900 truncate group-hover:text-blue-600">${p.title}</p>
+                <p class="text-sm font-bold text-slate-900 truncate group-hover:text-blue-600">${safeTitle}</p>
                 <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">${new Date(p.published_at).toLocaleDateString('it-IT')}</p>
             </div>
             <div class="flex items-center gap-1">
-                <button onclick="event.stopPropagation(); deleteBlogPost('${p.id}')" class="text-red-400 hover:text-red-600 transition p-2">
+                <button onclick="event.stopPropagation(); deleteBlogPost('${safeId}')" class="text-red-400 hover:text-red-600 transition p-2">
                     <i class="fas fa-trash-alt text-xs"></i>
                 </button>
                 <i class="fas fa-external-link-alt text-[10px] text-slate-300 mr-1"></i>
             </div>
         </div>
-    `).join('');
+    `; }).join('');
 }
 
 let _editingBlogId = null;
@@ -896,6 +900,11 @@ async function loadPendingListings() {
         list.innerHTML = data.map(l => {
             const user = l.profiles || {}; // Gestione fallback se profiles è null
             const cleanTel = user.telefono ? user.telefono.replace(/\D/g, '') : (l.tel ? l.tel.replace(/\D/g, '') : '');
+            const safeId = escapeHTML(l.id || '');
+            const safeTitle = escapeHTML(l.titolo || '');
+            const safeAuthor = escapeHTML(user.nome || l.contatto || 'Anonimo');
+            const safeComune = escapeHTML(l.comune || '');
+            const safeRegione = escapeHTML(l.regione || '');
             
             return `
             <div class="bg-white rounded-2xl border border-amber-100 p-4 shadow-sm">
@@ -905,17 +914,17 @@ async function loadPendingListings() {
                             <span class="bg-amber-100 text-amber-700 text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider">Revisione</span>
                             <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">${new Date(l.created_at).toLocaleDateString('it-IT')}</span>
                         </div>
-                        <p class="font-black text-slate-900 text-base leading-tight break-words">${l.titolo}</p>
+                        <p class="font-black text-slate-900 text-base leading-tight break-words">${safeTitle}</p>
                         <p class="text-xs text-slate-500 font-medium mt-1">
-                            Autore: <strong class="text-slate-700">${user.nome || l.contatto || 'Anonimo'}</strong> · 
-                            Loc: <strong class="text-slate-700">${l.comune || ''} (${l.regione || ''})</strong>
+                            Autore: <strong class="text-slate-700">${safeAuthor}</strong> ·
+                            Loc: <strong class="text-slate-700">${safeComune} (${safeRegione})</strong>
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-2 items-center">
-                        <button onclick="approvaAnnuncio('${l.id}')" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-black hover:bg-blue-700 transition shadow-sm">
+                        <button onclick="approvaAnnuncio('${safeId}')" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-black hover:bg-blue-700 transition shadow-sm">
                             Approva
                         </button>
-                        <button onclick="rifiutaAnnuncio('${l.id}')" class="bg-white text-red-500 border border-red-100 px-4 py-2 rounded-xl text-xs font-black hover:bg-red-50 transition">
+                        <button onclick="rifiutaAnnuncio('${safeId}')" class="bg-white text-red-500 border border-red-100 px-4 py-2 rounded-xl text-xs font-black hover:bg-red-50 transition">
                             Elimina
                         </button>
                     </div>
@@ -979,11 +988,15 @@ async function loadAllListings() {
 
     list.innerHTML = data.map(l => {
         const sc = statusColors[l.status] || 'bg-slate-100 text-slate-500';
-        const sl = statusLabels[l.status] || l.status;
+        const sl = escapeHTML(statusLabels[l.status] || l.status || '');
         const isFeatured = l.featured && l.featured_until && new Date(l.featured_until) > new Date();
         const featuredUntilStr = isFeatured
             ? new Date(l.featured_until).toLocaleDateString('it-IT', { day: '2-digit', month: 'short' })
             : '';
+        const safeId = escapeHTML(l.id || '');
+        const safeTitle = escapeHTML(l.titolo || '—');
+        const safeComune = escapeHTML(l.comune || '');
+        const safeStato = escapeHTML(l.stato || '');
         return `
         <div class="flex items-center justify-between gap-3 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition">
             <div class="min-w-0 flex-1">
@@ -992,15 +1005,15 @@ async function loadAllListings() {
                     ${isFeatured ? `<span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 uppercase tracking-wider"><i class="fas fa-star mr-0.5"></i> Vetrina fino al ${featuredUntilStr}</span>` : ''}
                     <span class="text-[10px] text-slate-400 font-bold">${new Date(l.created_at).toLocaleDateString('it-IT')}</span>
                 </div>
-                <p class="font-bold text-sm text-slate-900 truncate mt-0.5">${l.titolo || '—'}</p>
-                <p class="text-xs text-slate-400 font-medium">${l.comune || ''} · ${l.stato || ''}</p>
+                <p class="font-bold text-sm text-slate-900 truncate mt-0.5">${safeTitle}</p>
+                <p class="text-xs text-slate-400 font-medium">${safeComune} · ${safeStato}</p>
             </div>
             <div class="flex items-center gap-2 flex-shrink-0">
                 ${isFeatured
-                    ? `<button onclick="adminRevokeVetrina('${l.id}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star-half-alt mr-1"></i> Revoca</button>`
-                    : `<button onclick="adminOpenVetrinaModal('${l.id}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star mr-1"></i> Vetrina</button>`
+                    ? `<button onclick="adminRevokeVetrina('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star-half-alt mr-1"></i> Revoca</button>`
+                    : `<button onclick="adminOpenVetrinaModal('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star mr-1"></i> Vetrina</button>`
                 }
-                <button onclick="deleteAnnuncio('${l.id}')"
+                <button onclick="deleteAnnuncio('${safeId}')"
                     class="bg-red-50 text-red-500 border border-red-100 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-red-500 hover:text-white hover:border-red-500 transition">
                     <i class="fas fa-trash-alt"></i>
                 </button>
@@ -1129,16 +1142,19 @@ async function loadMyConversations() {
         const other = isAcquirente ? c.venditore : c.acquirente;
         const otherName = other ? `${other.nome || ''} ${other.cognome || ''}`.trim() || 'Utente' : 'Utente';
         const listing = c.annuncio;
+        const safeConvId = escapeHTML(c.id || '');
+        const safeOtherName = escapeHTML(otherName);
+        const safeListingTitle = escapeHTML(listing?.titolo || 'Annuncio eliminato');
         return `
-        <a href="messaggi.html?conv=${c.id}" class="block bg-white rounded-2xl border border-slate-100 p-5 hover:shadow-md hover:border-blue-100 transition">
+        <a href="messaggi.html?conv=${safeConvId}" class="block bg-white rounded-2xl border border-slate-100 p-5 hover:shadow-md hover:border-blue-100 transition">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-user text-blue-500"></i>
                 </div>
                 <div class="flex-grow min-w-0">
-                    <p class="font-black text-slate-900 text-sm truncate">${otherName}</p>
+                    <p class="font-black text-slate-900 text-sm truncate">${safeOtherName}</p>
                     <p class="text-xs text-slate-400 font-semibold truncate mt-0.5">
-                        Re: ${listing?.titolo || 'Annuncio eliminato'}
+                        Re: ${safeListingTitle}
                     </p>
                 </div>
                 <div class="text-xs text-slate-400 font-semibold flex-shrink-0">

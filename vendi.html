@@ -672,6 +672,15 @@ function _handleFiles(files) {
         return;
     }
     for (let f of files) {
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
+        if (!allowedTypes.includes(f.type)) {
+            _err('Carica solo immagini JPG, PNG, WebP o AVIF.');
+            continue;
+        }
+        if (f.size > 5 * 1024 * 1024) {
+            _err('Ogni foto deve pesare al massimo 5 MB.');
+            continue;
+        }
         _files.push(f);
         const reader = new FileReader();
         reader.onload = ev => {
