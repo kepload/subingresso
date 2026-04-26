@@ -240,7 +240,7 @@ function normalizeText(t) {
     return String(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 }
 
-function getOptimizedImageUrl(url, width = 640, quality = 72) {
+function getOptimizedImageUrl(url, width = 480, quality = 64, resize = 'contain') {
     if (!url || typeof url !== 'string') return url;
     try {
         const u = new URL(url);
@@ -249,7 +249,7 @@ function getOptimizedImageUrl(url, width = 640, quality = 72) {
         u.pathname = u.pathname.replace(marker, '/storage/v1/render/image/public/');
         u.searchParams.set('width', String(width));
         u.searchParams.set('quality', String(quality));
-        u.searchParams.set('resize', 'cover');
+        u.searchParams.set('resize', resize);
         return u.toString();
     } catch (_) {
         return url;
@@ -338,8 +338,8 @@ function buildCard(l, isSmall = false, distance = null) {
             }
         }
 
-        const src = getOptimizedImageUrl(img, featured ? 960 : 640, featured ? 78 : 72);
-        return img ? `<img src="${escapeHTML(src)}" data-fallback-src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
+        const src = getOptimizedImageUrl(img, featured ? 640 : 480, featured ? 68 : 62, 'contain');
+        return img ? `<img src="${escapeHTML(src)}" data-fallback-src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc" class="absolute inset-0 w-full h-full object-contain p-1.5 transition-transform duration-700">` : '';
     })();
 
     return `
