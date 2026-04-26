@@ -339,7 +339,7 @@ function buildCard(l, isSmall = false, distance = null) {
         }
 
         const src = getOptimizedImageUrl(img, featured ? 640 : 480, featured ? 68 : 62, 'cover');
-        return img ? `<img src="${escapeHTML(src)}" data-fallback-src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc" class="absolute inset-1 w-[calc(100%-0.5rem)] h-[calc(100%-0.5rem)] rounded-xl object-cover group-hover:scale-[1.02] transition-transform duration-700">` : '';
+        return img ? `<img src="${escapeHTML(src)}" data-fallback-src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">` : '';
     })();
 
     return `
