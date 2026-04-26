@@ -343,9 +343,15 @@ async function updateAnnuncio() {
         // 1. Upload nuove foto
         const newUrls = [];
         for (let file of _newFiles) {
-            const fileExt = file.name.split('.').pop();
+            const uploadFile = typeof prepareImageForUpload === 'function'
+                ? await prepareImageForUpload(file)
+                : file;
+            const fileExt = uploadFile.name.split('.').pop();
             const fileName = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-            const { error: upErr } = await _supabase.storage.from('listings').upload(fileName, file);
+            const { error: upErr } = await _supabase.storage.from('listings').upload(fileName, uploadFile, {
+                contentType: uploadFile.type || 'image/webp',
+                cacheControl: '31536000'
+            });
             if (!upErr) {
                 const { data: { publicUrl } } = _supabase.storage.from('listings').getPublicUrl(fileName);
                 newUrls.push(publicUrl);

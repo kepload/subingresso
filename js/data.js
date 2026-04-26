@@ -240,6 +240,49 @@ function normalizeText(t) {
     return String(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 }
 
+function getOptimizedImageUrl(url, width = 640, quality = 72) {
+    if (!url || typeof url !== 'string') return url;
+    try {
+        const u = new URL(url);
+        const marker = '/storage/v1/object/public/';
+        if (!u.pathname.includes(marker)) return url;
+        u.pathname = u.pathname.replace(marker, '/storage/v1/render/image/public/');
+        u.searchParams.set('width', String(width));
+        u.searchParams.set('quality', String(quality));
+        u.searchParams.set('resize', 'cover');
+        return u.toString();
+    } catch (_) {
+        return url;
+    }
+}
+
+async function prepareImageForUpload(file, maxSide = 1600, quality = 0.82) {
+    if (!file || !file.type || !file.type.startsWith('image/')) return file;
+
+    try {
+        const bitmap = await createImageBitmap(file);
+        const scale = Math.min(1, maxSide / Math.max(bitmap.width, bitmap.height));
+        const w = Math.max(1, Math.round(bitmap.width * scale));
+        const h = Math.max(1, Math.round(bitmap.height * scale));
+
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d', { alpha: true });
+        ctx.drawImage(bitmap, 0, 0, w, h);
+        bitmap.close?.();
+
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', quality));
+        if (!blob || blob.size >= file.size) return file;
+
+        const baseName = file.name.replace(/\.[^.]+$/, '') || 'image';
+        return new File([blob], `${baseName}.webp`, { type: 'image/webp', lastModified: Date.now() });
+    } catch (e) {
+        console.warn('Image compression skipped:', e);
+        return file;
+    }
+}
+
 // ── Card Builder ──────────────────────────────────────────
 
 function isListingFeatured(l) {
@@ -295,7 +338,8 @@ function buildCard(l, isSmall = false, distance = null) {
             }
         }
 
-        return img ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
+        const src = getOptimizedImageUrl(img, featured ? 960 : 640, featured ? 78 : 72);
+        return img ? `<img src="${escapeHTML(src)}" data-fallback-src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">` : '';
     })();
 
     return `

@@ -766,9 +766,15 @@ async function submitAnnuncio() {
         const imageUrls = [];
         let failedUploads = 0;
         for (let file of _files) {
-            const ext  = file.name.split('.').pop();
+            const uploadFile = typeof prepareImageForUpload === 'function'
+                ? await prepareImageForUpload(file)
+                : file;
+            const ext  = uploadFile.name.split('.').pop();
             const path = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${ext}`;
-            const { error: upErr } = await _supabase.storage.from('listings').upload(path, file);
+            const { error: upErr } = await _supabase.storage.from('listings').upload(path, uploadFile, {
+                contentType: uploadFile.type || 'image/webp',
+                cacheControl: '31536000'
+            });
             if (upErr) { failedUploads++; continue; }
             const { data: { publicUrl } } = _supabase.storage.from('listings').getPublicUrl(path);
             if (publicUrl) imageUrls.push(publicUrl);
