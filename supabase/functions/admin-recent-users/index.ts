@@ -10,13 +10,13 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
 const CORS = {
   'Access-Control-Allow-Origin':  '*',
-  'Access-Control-Allow-Methods': 'GET, DELETE, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
-  if (req.method !== 'GET' && req.method !== 'DELETE') {
+  if (req.method !== 'GET' && req.method !== 'POST' && req.method !== 'DELETE') {
     return json({ error: 'Method not allowed' }, 405);
   }
 
@@ -63,6 +63,10 @@ Deno.serve(async (req) => {
       if (deleteErr) return json({ error: deleteErr.message }, 500);
 
       return json({ success: true, deleted: { id: userId, email: targetData.user.email } });
+    }
+
+    if (!SUPABASE_SERVICE_ROLE_KEY) {
+      return json({ error: 'SUPABASE_SERVICE_ROLE_KEY mancante nei secrets della funzione' }, 500);
     }
 
     const { data, error } = await admin.auth.admin.listUsers({

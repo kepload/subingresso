@@ -597,15 +597,20 @@ async function loadAdminRecentUsers() {
         if (!token) throw new Error('Sessione admin non trovata');
 
         const res = await fetch(`${SUPABASE_URL}/functions/v1/admin-recent-users`, {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'apikey': SUPABASE_ANON_KEY,
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
             }
         });
 
-        const payload = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(payload.error || 'Errore caricamento utenti');
+        const raw = await res.text();
+        let payload = {};
+        try { payload = raw ? JSON.parse(raw) : {}; } catch (_) {}
+        if (!res.ok) {
+            throw new Error(payload.error || raw || `Errore caricamento utenti (${res.status})`);
+        }
 
         const users = payload.users || [];
         if (!users.length) {
