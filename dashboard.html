@@ -152,9 +152,22 @@
 
             <!-- Blog Management -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
-                <h3 class="font-black text-slate-900 mb-4 flex items-center gap-2">
-                    <i class="fas fa-newspaper"></i> Gestione Blog (Ultimi 5)
-                </h3>
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-newspaper"></i> Gestione Blog (Ultimi 5)
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="importBlogBatch('INSERT_BLOG_POSTS.sql', this)" class="bg-slate-900 text-white px-3 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-700 transition">
+                            Importa 8
+                        </button>
+                        <button onclick="importBlogBatch('INSERT_BLOG_POSTS_2.sql', this)" class="bg-slate-900 text-white px-3 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-700 transition">
+                            Importa 9
+                        </button>
+                        <button onclick="importBlogBatch('INSERT_BLOG_POSTS_GARDA.sql', this)" class="bg-blue-600 text-white px-3 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 transition">
+                            Importa Garda
+                        </button>
+                    </div>
+                </div>
                 <div id="adminBlogList" class="space-y-3"></div>
             </div>
         </div>
@@ -671,6 +684,80 @@ async function generateArticleNow() {
 }
 
 // ── Upload Avatar ────────────────────────────────────────
+function parseBlogSqlInterval(value) {
+    const match = String(value || '').match(/^\s*(\d+)\s+(hour|hours|day|days)\s*$/i);
+    const date = new Date();
+    if (!match) return date.toISOString();
+
+    const amount = Number(match[1]);
+    const unit = match[2].toLowerCase();
+    if (unit.startsWith('hour')) {
+        date.setHours(date.getHours() - amount);
+    } else {
+        date.setDate(date.getDate() - amount);
+    }
+    return date.toISOString();
+}
+
+function parseBlogBatchSql(sqlText) {
+    const chunks = sqlText.split(/INSERT INTO public\.blog_posts/i).slice(1);
+    return chunks.map(chunk => {
+        const values = [...chunk.matchAll(/\$v\$([\s\S]*?)\$v\$/g)].map(m => m[1].trim());
+        if (values.length < 6) return null;
+
+        const intervalMatch = chunk.match(/now\(\)\s*-\s*interval\s*'([^']+)'/i);
+        return {
+            slug: values[0],
+            title: values[1],
+            excerpt: values[2],
+            content: values[3],
+            category: values[4],
+            author: values[5],
+            published_at: parseBlogSqlInterval(intervalMatch?.[1])
+        };
+    }).filter(Boolean);
+}
+
+async function importBlogBatch(fileName, btn) {
+    if (!_isAdmin) {
+        showToast('Solo gli admin possono importare articoli.', 'error');
+        return;
+    }
+
+    const original = btn?.innerHTML;
+    if (btn) {
+        btn.disabled = true;
+        btn.classList.add('opacity-60', 'cursor-not-allowed');
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    }
+
+    try {
+        const res = await fetch(fileName, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`File non trovato: ${fileName}`);
+
+        const posts = parseBlogBatchSql(await res.text());
+        if (!posts.length) throw new Error('Nessun articolo valido trovato nel file.');
+
+        const { error } = await _supabase
+            .from('blog_posts')
+            .upsert(posts, { onConflict: 'slug' });
+
+        if (error) throw error;
+
+        showToast(`${posts.length} articoli importati nel blog.`, 'success');
+        loadAdminBlog();
+        loadAdminStats();
+    } catch (e) {
+        showToast('Import blog fallito: ' + e.message, 'error');
+    } finally {
+        if (btn) {
+            btn.disabled = false;
+            btn.classList.remove('opacity-60', 'cursor-not-allowed');
+            btn.innerHTML = original;
+        }
+    }
+}
+
 async function uploadAvatar() {
     const file = document.getElementById('avatarInput').files[0];
     if (!file) return;
