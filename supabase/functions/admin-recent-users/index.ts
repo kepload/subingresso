@@ -1,6 +1,6 @@
 // ============================================================
 //  Subingresso.it — Edge Function: ultimi utenti admin dashboard
-//  Restituisce le ultime iscrizioni con email, solo per admin.
+//  Restituisce le ultime iscrizioni con email e permette delete account, solo per admin.
 // ============================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
@@ -10,13 +10,15 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
 const CORS = {
   'Access-Control-Allow-Origin':  '*',
-  'Access-Control-Allow-Methods': 'GET, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
-  if (req.method !== 'GET')     return json({ error: 'Method not allowed' }, 405);
+  if (req.method !== 'GET' && req.method !== 'DELETE') {
+    return json({ error: 'Method not allowed' }, 405);
+  }
 
   try {
     const authHeader = req.headers.get('Authorization') || '';
@@ -37,6 +39,30 @@ Deno.serve(async (req) => {
 
     if (profileErr || profile?.is_admin !== true) {
       return json({ error: 'Forbidden' }, 403);
+    }
+
+    if (req.method === 'DELETE') {
+      const body = await req.json().catch(() => null);
+      const userId = String(body?.user_id || '').trim();
+      const email = String(body?.email || '').trim().toLowerCase();
+
+      if (!userId) return json({ error: 'User id mancante' }, 400);
+      if (userId === requester.id) {
+        return json({ error: 'Non puoi eliminare il tuo account admin da qui.' }, 400);
+      }
+
+      const { data: targetData, error: targetErr } = await admin.auth.admin.getUserById(userId);
+      if (targetErr || !targetData?.user) return json({ error: 'Utente non trovato' }, 404);
+
+      const targetEmail = (targetData.user.email || '').toLowerCase();
+      if (email && email !== targetEmail) {
+        return json({ error: 'Email di conferma non corrisponde all’utente.' }, 400);
+      }
+
+      const { error: deleteErr } = await admin.auth.admin.deleteUser(userId);
+      if (deleteErr) return json({ error: deleteErr.message }, 500);
+
+      return json({ success: true, deleted: { id: userId, email: targetData.user.email } });
     }
 
     const { data, error } = await admin.auth.admin.listUsers({
