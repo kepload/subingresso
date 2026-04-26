@@ -240,7 +240,7 @@ function normalizeText(t) {
     return String(t).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 }
 
-function getOptimizedImageUrl(url, width = 480, quality = 64, resize = 'contain') {
+function getOptimizedImageUrl(url, width = 480, quality = 64, resize = 'cover') {
     if (!url || typeof url !== 'string') return url;
     try {
         const u = new URL(url);
@@ -338,8 +338,8 @@ function buildCard(l, isSmall = false, distance = null) {
             }
         }
 
-        const src = getOptimizedImageUrl(img, featured ? 640 : 480, featured ? 68 : 62, 'contain');
-        return img ? `<img src="${escapeHTML(src)}" data-fallback-src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc" class="absolute inset-0 w-full h-full object-contain p-1.5 transition-transform duration-700">` : '';
+        const src = getOptimizedImageUrl(img, featured ? 640 : 480, featured ? 68 : 62, 'cover');
+        return img ? `<img src="${escapeHTML(src)}" data-fallback-src="${escapeHTML(img)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">` : '';
     })();
 
     return `
