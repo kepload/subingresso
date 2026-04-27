@@ -350,33 +350,8 @@ window.handleRegister = async function (e) {
     const password = document.getElementById('regPassword').value;
 
     try {
-        const { data, error } = await _supabase.auth.signUp({
-            email,
-            password,
-            options: { data: { nome, cognome, telefono } }
-        });
-
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
-
-        if (error) {
-            // Rate limit → crea account via admin API (bypass) poi accedi
-            if (/rate.?limit|too many/i.test(error.message)) {
-                await _registerBypass(email, password, nome, cognome, telefono);
-            } else {
-                _showAuthError(error.message);
-            }
-            return;
-        }
-
-        if (data?.user && data?.session) {
-            // Session presente = conferma email disabilitata, utente subito attivo
-            await _supabase.from('profiles').upsert({ id: data.user.id, nome, cognome, telefono, vetrina_welcome_days: 10 });
-            await _afterRegisterSuccess(nome);
-        } else {
-            // Session null = conferma email abilitata e in attesa
-            _showAuthSuccess('Account creato! Controlla la tua email per confermare, poi accedi.');
-            setTimeout(() => switchAuthTab('login'), 4000);
-        }
+        await _registerBypass(email, password, nome, cognome, telefono);
     } catch (err) {
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
         _showAuthError('Errore durante la registrazione.');
