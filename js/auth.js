@@ -237,6 +237,7 @@ function _injectVisitorPopup() {
 function _scheduleVisitorPopup() {
     if (sessionStorage.getItem('_vp')) return;
     setTimeout(async () => {
+        if (sessionStorage.getItem('_vp')) return;
         try {
             const { data } = await _supabase.auth.getSession();
             if (data?.session) return;
@@ -246,6 +247,15 @@ function _scheduleVisitorPopup() {
         const el = document.getElementById('visitorPopup');
         if (el) { el.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
     }, 8000);
+}
+
+function _suppressVisitorPopup() {
+    sessionStorage.setItem('_vp', '1');
+    const el = document.getElementById('visitorPopup');
+    if (el) {
+        el.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
 }
 
 window.closeVisitorPopup = function () {
@@ -375,6 +385,7 @@ window.handleRegister = async function (e) {
 
 // ── Register helpers ─────────────────────────────────────
 async function _afterRegisterSuccess(nome) {
+    _suppressVisitorPopup();
     _profileCache = { id: (await getCurrentUser())?.id, nome };
     _showAuthSuccess('Benvenuto! Account creato con successo.');
     setTimeout(() => {
@@ -495,6 +506,7 @@ window.updateAuthNav = async function () {
     }
 
     // Fase 2: utente loggato — mostra icone subito, poi aggiorna badge in background
+    _suppressVisitorPopup();
     const user = session.user;
     const msgIconId = 'navMsgIcon_' + Date.now();
     nav.innerHTML = `
@@ -561,7 +573,8 @@ if (document.readyState === 'loading') {
 }
 
 try {
-    _supabase.auth.onAuthStateChange(() => {
+    _supabase.auth.onAuthStateChange((_event, session) => {
+        if (session?.user) _suppressVisitorPopup();
         updateAuthNav();
     });
 } catch (e) {}
