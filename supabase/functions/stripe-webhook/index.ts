@@ -13,13 +13,13 @@ const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
 const TIER_DAYS: Record<string, number> = {
-  '10d': 10,
+  '7d': 7,
   '30d': 30,
   '90d': 90,
 };
 
 const TIER_EXPIRY_CAP_DAYS: Record<string, number> = {
-  '10d': 130,
+  '7d': 120,
   '30d': 200,
   '90d': 300,
 };

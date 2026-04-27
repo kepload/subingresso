@@ -157,7 +157,8 @@
                 .eq('id', payment.annuncio_id)
                 .maybeSingle();
 
-            const tierLabel = payment.tier === '90d' ? '90 giorni' : '30 giorni';
+            const tierLabels = { '7d': '7 giorni', '30d': '30 giorni', '90d': '90 giorni' };
+            const tierLabel = tierLabels[payment.tier] || 'vetrina';
             const untilStr  = ann?.featured_until
                 ? new Date(ann.featured_until).toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' })
                 : null;
