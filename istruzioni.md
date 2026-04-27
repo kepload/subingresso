@@ -296,3 +296,9 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Send Email Hook**: configurato in Auth → Hooks → Send Email → Edge Function `send-auth-email` via Resend. Funziona per i primi 2/ora normalmente.
 - **Vetrina prezzi aggiornati**: 3 tier — 10d €14, 30d €24 (CONSIGLIATO), 90d €54. Edge Functions `create-checkout-session` e `stripe-webhook` aggiornate con nuovi importi.
 - **`_afterRegisterSuccess()` e `_registerBypass()`**: helper in `auth.js` per evitare duplicazione codice nella gestione post-registrazione.
+
+## Stato Ultima Sessione Codex (27 Aprile 2026)
+- Ultimo commit pushato: `c2c6eb8 Suppress visitor popup after authentication`.
+- `js/auth.js`: il popup visitatore "Vendi il tuo posteggio?" non deve piu' apparire dopo registrazione/login. `_suppressVisitorPopup()` imposta `sessionStorage._vp = 1`, chiude il popup se gia' presente e viene chiamata dopo registrazione, quando `updateAuthNav()` trova una sessione e su `onAuthStateChange`.
+- Motivo della fix: il timer degli 8 secondi poteva partire quando l'utente era ancora anonimo e mostrare il popup anche subito dopo la registrazione. Ora il timeout ricontrolla `_vp` appena prima dello show.
+- Working tree pulito dopo il push.
