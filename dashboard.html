@@ -1127,8 +1127,9 @@ async function loadAllListings() {
         const safeTitle = escapeHTML(l.titolo || '—');
         const safeComune = escapeHTML(l.comune || '');
         const safeStato = escapeHTML(l.stato || '');
+        const safeUrl = `annuncio.html?id=${encodeURIComponent(l.id || '')}`;
         return `
-        <div class="flex items-center justify-between gap-3 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition">
+        <div onclick="window.open('${safeUrl}', '_blank')" class="flex items-center justify-between gap-3 py-2.5 px-3 rounded-xl hover:bg-blue-50 transition cursor-pointer">
             <div class="min-w-0 flex-1">
                 <div class="flex items-center gap-2 flex-wrap">
                     <span class="text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider ${sc}">${sl}</span>
@@ -1140,10 +1141,10 @@ async function loadAllListings() {
             </div>
             <div class="flex items-center gap-2 flex-shrink-0">
                 ${isFeatured
-                    ? `<button onclick="adminRevokeVetrina('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star-half-alt mr-1"></i> Revoca</button>`
-                    : `<button onclick="adminOpenVetrinaModal('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star mr-1"></i> Vetrina</button>`
+                    ? `<button onclick="event.stopPropagation(); adminRevokeVetrina('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star-half-alt mr-1"></i> Revoca</button>`
+                    : `<button onclick="event.stopPropagation(); adminOpenVetrinaModal('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star mr-1"></i> Vetrina</button>`
                 }
-                <button onclick="deleteAnnuncio('${safeId}')"
+                <button onclick="event.stopPropagation(); deleteAnnuncio('${safeId}')"
                     class="bg-red-50 text-red-500 border border-red-100 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-red-500 hover:text-white hover:border-red-500 transition">
                     <i class="fas fa-trash-alt"></i>
                 </button>
