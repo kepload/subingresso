@@ -294,7 +294,7 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Soluzione**: Edge Function `register-bypass` — se `signUp` fallisce con rate limit, crea utente via `admin.auth.admin.createUser({ email_confirm: true })` + `signInWithPassword`. Utente registrato e loggato senza email.
 - **`pending_email_verifications`**: tabella dove vengono salvati questi utenti per verifica notturna. SQL in `SETUP_EMAIL_BYPASS.sql` (non ancora eseguito — la tabella non è critica, il bypass funziona anche senza).
 - **Send Email Hook**: configurato in Auth → Hooks → Send Email → Edge Function `send-auth-email` via Resend. Funziona per i primi 2/ora normalmente.
-- **Vetrina prezzi aggiornati**: 3 tier — 10d €19,90, 30d €34,90, 90d €59,90 (MIGLIOR VALORE). Edge Functions `create-checkout-session` e `stripe-webhook` aggiornate con nuovi importi.
+- **Vetrina prezzi aggiornati**: 3 tier — 10d €19,90, 30d €39,90, 90d €59,90 (MIGLIOR VALORE). Edge Functions `create-checkout-session` e `stripe-webhook` aggiornate con nuovi importi.
 - **`_afterRegisterSuccess()` e `_registerBypass()`**: helper in `auth.js` per evitare duplicazione codice nella gestione post-registrazione.
 
 ## Stato Ultima Sessione Codex (27 Aprile 2026)
