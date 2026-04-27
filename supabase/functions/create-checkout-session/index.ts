@@ -13,7 +13,7 @@ const SITE_URL                  = 'https://subingresso.it';
 
 // Prezzi (centesimi) — fonte di verità server-side, non fidarsi del client
 const TIERS: Record<string, { amount: number; days: number; label: string }> = {
-  '7d':  { amount: 790,  days: 7,  label: 'Vetrina 7 giorni' },
+  '10d': { amount: 1400, days: 10, label: 'Vetrina 10 giorni' },
   '30d': { amount: 2400, days: 30, label: 'Vetrina 30 giorni' },
   '90d': { amount: 5400, days: 90, label: 'Vetrina 90 giorni' },
 };
