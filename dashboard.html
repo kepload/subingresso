@@ -108,7 +108,7 @@
         <!-- ── ADMIN PANEL (Exclusive) ── -->
         <div id="adminPanel" class="hidden space-y-6">
             <!-- Stats Cards -->
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center md:text-left">
                     <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Annunci Totali</div>
                     <div id="admStatAnnunci" class="text-2xl font-black text-slate-900">—</div>
@@ -125,11 +125,13 @@
                     <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">In Attesa</div>
                     <div id="admStatPending" class="text-2xl font-black text-amber-500">—</div>
                 </div>
-                <div id="forceBlogBtn" onclick="generateArticleNow()" class="bg-blue-600 p-5 rounded-2xl shadow-lg shadow-blue-100 cursor-pointer hover:bg-blue-700 transition group text-center md:text-left">
-                    <div class="text-[10px] font-black text-white/70 uppercase tracking-widest mb-1">Robot Blog</div>
-                    <div class="text-white font-black flex items-center justify-center md:justify-start gap-2">
-                        Scrivi Ora <i class="fas fa-robot group-hover:animate-bounce"></i>
-                    </div>
+                <div class="bg-white p-5 rounded-2xl border border-amber-100 shadow-sm text-center md:text-left">
+                    <div class="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1">In Vetrina</div>
+                    <div id="admStatVetrina" class="text-2xl font-black text-amber-500">—</div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center md:text-left">
+                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Lotteria Attiva</div>
+                    <div id="admStatLotteria" class="text-2xl font-black text-slate-900">—</div>
                 </div>
             </div>
 
@@ -168,6 +170,27 @@
                     <i class="fas fa-newspaper"></i> Gestione Blog (Ultimi 5)
                 </h3>
                 <div id="adminBlogList" class="space-y-3"></div>
+            </div>
+
+            <!-- Strumenti -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6">
+                <h3 class="font-black text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-toolbox"></i> Strumenti
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <button id="forceBlogBtn" onclick="generateArticleNow()" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-bold text-slate-700 hover:bg-slate-100 transition">
+                        <i class="fas fa-robot text-blue-500"></i> Genera articolo blog
+                    </button>
+                    <a href="https://dashboard.stripe.com" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-bold text-slate-700 hover:bg-slate-100 transition">
+                        <i class="fas fa-credit-card text-violet-500"></i> Stripe
+                    </a>
+                    <a href="https://vercel.com/dashboard" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-bold text-slate-700 hover:bg-slate-100 transition">
+                        <i class="fas fa-cloud text-slate-800"></i> Vercel
+                    </a>
+                    <a href="https://supabase.com/dashboard" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-bold text-slate-700 hover:bg-slate-100 transition">
+                        <i class="fas fa-database text-emerald-500"></i> Supabase
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -563,15 +586,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // ── Admin Logic ──────────────────────────────────────────
 async function loadAdminStats() {
-    const { count: totalAnnunci } = await _supabase.from('annunci').select('*', { count: 'exact', head: true });
-    const { count: totalAttivi }  = await _supabase.from('annunci').select('*', { count: 'exact', head: true }).eq('status', 'active');
-    const { count: totalUtenti }  = await _supabase.from('profiles').select('*', { count: 'exact', head: true });
-    const { count: totalPending } = await _supabase.from('annunci').select('*', { count: 'exact', head: true }).eq('status', 'pending');
+    const { count: totalAnnunci }  = await _supabase.from('annunci').select('*', { count: 'exact', head: true });
+    const { count: totalAttivi }   = await _supabase.from('annunci').select('*', { count: 'exact', head: true }).eq('status', 'active');
+    const { count: totalUtenti }   = await _supabase.from('profiles').select('*', { count: 'exact', head: true });
+    const { count: totalPending }  = await _supabase.from('annunci').select('*', { count: 'exact', head: true }).eq('status', 'pending');
+    const { count: totalVetrina }  = await _supabase.from('annunci').select('*', { count: 'exact', head: true })
+        .eq('featured', true).gt('featured_until', new Date().toISOString());
+    const { count: totalLotteria } = await _supabase.from('profiles').select('*', { count: 'exact', head: true })
+        .eq('welcome_lottery_eligible', true);
 
-    document.getElementById('admStatAnnunci').textContent = totalAnnunci || 0;
-    document.getElementById('admStatAttivi').textContent  = totalAttivi  || 0;
-    document.getElementById('admStatUtenti').textContent  = totalUtenti  || 0;
-    document.getElementById('admStatPending').textContent = totalPending || 0;
+    document.getElementById('admStatAnnunci').textContent  = totalAnnunci  || 0;
+    document.getElementById('admStatAttivi').textContent   = totalAttivi   || 0;
+    document.getElementById('admStatUtenti').textContent   = totalUtenti   || 0;
+    document.getElementById('admStatPending').textContent  = totalPending  || 0;
+    document.getElementById('admStatVetrina').textContent  = totalVetrina  || 0;
+    document.getElementById('admStatLotteria').textContent = totalLotteria || 0;
 }
 
 async function loadAdminRecentUsers() {
@@ -778,6 +807,7 @@ async function generateArticleNow() {
     }
 
     const btn = document.getElementById('forceBlogBtn');
+    if (!btn) return;
     const originalContent = btn.innerHTML;
     btn.onclick = null;
     btn.classList.add('opacity-50', 'cursor-not-allowed');
