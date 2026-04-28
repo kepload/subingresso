@@ -109,6 +109,22 @@ async function loadBlog() {
     }
 }
 
+function _insertBlogPromo(html) {
+    // Inietta dopo il 3° paragrafo. Se l'articolo è troppo corto non inserisce nulla.
+    let count = 0, splitAt = -1, idx = 0;
+    while (idx < html.length) {
+        const found = html.indexOf('</p>', idx);
+        if (found === -1) break;
+        idx = found + 4;
+        if (++count === 3) { splitAt = idx; break; }
+    }
+    if (splitAt === -1) return html;
+    const promo = `<div class="blog-promo not-prose my-8 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
+        Hai un posteggio da cedere?&nbsp;<a href="#" onclick="sessionStorage.setItem('_reg_src','popup'); openAuthModal('register'); return false;" class="font-semibold text-blue-600 hover:underline">Registrati e pubblica il tuo annuncio →</a>
+    </div>`;
+    return html.slice(0, splitAt) + promo + html.slice(splitAt);
+}
+
 function renderPost(post) {
     const date = new Date(post.published_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
     const safeTitle = escapeHTML(post.title);
@@ -148,7 +164,7 @@ function renderPost(post) {
     container.innerHTML = `
         <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
         <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>
-        <div class="prose font-medium text-left">${safeContent}</div>
+        <div class="prose font-medium text-left">${_insertBlogPromo(safeContent)}</div>
         <div class="mt-20 p-10 bg-slate-50 rounded-[40px] border border-slate-100 text-center">
             <div class="bg-blue-600 text-white w-16 h-16 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-100 mx-auto mb-6 text-center">
                 <i class="fas fa-rocket text-2xl"></i>
@@ -164,6 +180,10 @@ function renderPost(post) {
             <a href="blog.html" class="text-sm font-bold text-slate-400 hover:text-blue-600 transition">← Torna all'indice degli articoli</a>
         </div>
     `;
+    // Nascondi la promo agli utenti già loggati
+    _supabase.auth.getSession().then(({ data: { session } }) => {
+        if (session) document.querySelectorAll('.blog-promo').forEach(el => el.remove());
+    });
 }
 
 function renderList(posts) {
