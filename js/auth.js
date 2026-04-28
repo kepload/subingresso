@@ -223,7 +223,7 @@ function _injectVisitorPopup() {
         <p class="text-sm text-slate-500 mb-5 leading-relaxed">
           Iscriviti gratis e prova a vincere <span class="font-bold text-amber-500">30 giorni di Vetrina</span> — il tuo annuncio in cima a tutti i risultati.
         </p>
-        <button onclick="closeVisitorPopup(); openAuthModal('register')"
+        <button onclick="closeVisitorPopup(); sessionStorage.setItem('_reg_src','popup'); openAuthModal('register')"
           class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
           Registrati e tenta la fortuna →
         </button>
@@ -633,8 +633,10 @@ window.updateAuthNav = async function () {
             } else {
                 const meta = user.user_metadata || {};
                 if (meta.nome) {
+                    const _lottEligible = sessionStorage.getItem('_reg_src') === 'popup';
+                    sessionStorage.removeItem('_reg_src');
                     _supabase.from('profiles')
-                        .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '', welcome_lottery_eligible: true })
+                        .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '', welcome_lottery_eligible: _lottEligible })
                         .then(() => { _profileCache = { id: user.id, nome: meta.nome }; });
                     _showWelcomeNewPopup(user.id);
                 }
