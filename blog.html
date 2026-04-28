@@ -112,8 +112,8 @@ function _insertBlogPromo(html) {
         if (++count === 3) { splitAt = idx; break; }
     }
     if (splitAt === -1) return html;
-    const promo = `<div class="blog-promo not-prose my-8 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
-        Hai un posteggio da cedere?&nbsp;<a href="#" onclick="sessionStorage.setItem('_reg_src','popup'); openAuthModal('register'); return false;" class="font-semibold text-blue-600 hover:underline">Registrati e pubblica il tuo annuncio →</a>
+    const promo = `<div class="blog-promo not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-slate-600">
+        🎰 Nuovo su Subingresso? <a href="#" onclick="sessionStorage.setItem('_reg_src','popup'); openAuthModal('register'); return false;" class="font-bold text-amber-700 hover:underline">Registrati e prova a vincere 30 giorni di Vetrina gratis →</a>
     </div>`;
     return html.slice(0, splitAt) + promo + html.slice(splitAt);
 }
