@@ -274,12 +274,12 @@ function _injectWelcomePopup() {
         <h2 class="text-xl font-black text-slate-800 mb-1">Benvenuto su Subingresso.it!</h2>
         <p class="text-sm text-slate-500 mb-4">Il tuo account è attivo.</p>
         <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-5">
-          <p class="text-sm font-bold text-amber-700">🎁 Hai 10 giorni di vetrina gratis</p>
-          <p class="text-xs text-amber-600 mt-1">Il tuo primo annuncio sarà in cima a tutti i risultati.</p>
+          <p class="text-sm font-bold text-amber-700">🎰 Prova a vincere 30 giorni di Vetrina</p>
+          <p class="text-xs text-amber-600 mt-1">Pubblica il tuo primo annuncio entro 30 giorni e tenta la fortuna. Valore €39,90.</p>
         </div>
         <button onclick="closeWelcomeNewPopup(); window.location.href='vendi.html'"
           class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
-          Pubblica il tuo primo annuncio →
+          Tenta la fortuna →
         </button>
         <button onclick="closeWelcomeNewPopup()" class="text-xs text-slate-400 hover:text-slate-600 transition">
           Esplora prima gli annunci
@@ -504,7 +504,7 @@ window.updateAuthNav = async function () {
                 const meta = user.user_metadata || {};
                 if (meta.nome) {
                     _supabase.from('profiles')
-                        .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '', vetrina_welcome_days: 10 })
+                        .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '', welcome_lottery_eligible: true })
                         .then(() => { _profileCache = { id: user.id, nome: meta.nome }; });
                     _showWelcomeNewPopup(user.id);
                 }

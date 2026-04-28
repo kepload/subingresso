@@ -704,17 +704,14 @@ function removeFile(btn) {
     div.remove();
 }
 
-// ── Vetrina welcome (10 giorni gratis primo annuncio) ─────
+// ── Lotteria vetrina welcome (0,1% → 30 giorni, entro 30gg iscrizione) ─────
 async function _tryGrantWelcomeVetrina(userId, annuncioId) {
     try {
-        const { data: profile } = await _supabase
-            .from('profiles').select('vetrina_welcome_days').eq('id', userId).single();
-        if (!profile?.vetrina_welcome_days || profile.vetrina_welcome_days < 1) return false;
-        const { error } = await _supabase.rpc('grant_welcome_vetrina', {
+        const { data: won, error } = await _supabase.rpc('grant_welcome_vetrina', {
             p_annuncio_id: annuncioId,
             p_user_id: userId
         });
-        return !error;
+        return !error && won === true;
     } catch (_) { return false; }
 }
 
@@ -808,8 +805,8 @@ async function submitAnnuncio() {
 
         if (vetranaGranted) {
             const vetrinaBanner = document.createElement('div');
-            vetrinaBanner.className = 'mt-4 bg-amber-50 border border-amber-300 rounded-xl p-4 text-sm text-amber-800 font-semibold flex items-center gap-2';
-            vetrinaBanner.innerHTML = '<i class="fas fa-star text-amber-500"></i> Il tuo annuncio è in vetrina gratis per 10 giorni — apparirà in cima a tutti i risultati!';
+            vetrinaBanner.className = 'mt-4 bg-gradient-to-r from-amber-400 to-yellow-300 border-2 border-amber-500 rounded-xl p-5 text-center shadow-lg';
+            vetrinaBanner.innerHTML = '<div class="text-3xl mb-1">🏆</div><p class="text-amber-900 font-black text-base">HAI VINTO!</p><p class="text-amber-800 font-bold text-sm mt-1">Il tuo annuncio è in Vetrina gratis per 30 giorni!</p><p class="text-amber-700 text-xs mt-1">Apparirà in cima a tutti i risultati — valore €39,90</p>';
             successEl.appendChild(vetrinaBanner);
         }
         if (failedUploads > 0) {
