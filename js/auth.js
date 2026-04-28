@@ -295,7 +295,7 @@ window.closeWelcomeNewPopup = function () {
 
 async function _tryLottery() {
     const btn = document.getElementById('lotteryBtn');
-    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Estrazione in corso...'; }
+    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>...'; }
     let won = false;
     try {
         const { data: { session } } = await _supabase.auth.getSession();
@@ -304,6 +304,98 @@ async function _tryLottery() {
             won = data === true;
         }
     } catch (_) {}
+    _spinWheel(won);
+}
+window._tryLottery = _tryLottery;
+
+function _spinWheel(won) {
+    const inner = document.querySelector('#welcomeNewPopup > div');
+    if (!inner) return;
+
+    inner.innerHTML = `
+        <p id="wheelLabel" class="text-slate-600 font-semibold text-sm mb-4">La ruota sta girando...</p>
+        <div class="relative mx-auto" style="width:220px;height:220px">
+            <div style="position:absolute;top:1px;left:50%;transform:translateX(-50%);z-index:10;width:0;height:0;
+                border-left:9px solid transparent;border-right:9px solid transparent;border-top:18px solid #0f172a;
+                filter:drop-shadow(0 1px 3px rgba(0,0,0,0.35))"></div>
+            <canvas id="fortuneWheel" width="220" height="220" style="border-radius:50%;box-shadow:0 4px 24px rgba(0,0,0,0.12)"></canvas>
+        </div>
+        <div class="flex items-center justify-center gap-5 mt-4 text-xs text-slate-400">
+            <span class="flex items-center gap-1.5">
+                <span class="inline-block w-3 h-3 rounded-sm" style="background:#f59e0b"></span>Vetrina 30gg
+            </span>
+            <span class="flex items-center gap-1.5">
+                <span class="inline-block w-3 h-3 rounded-sm" style="background:#94a3b8"></span>Riprova
+            </span>
+        </div>`;
+
+    const canvas = document.getElementById('fortuneWheel');
+    const ctx = canvas.getContext('2d');
+    const CX = 110, CY = 110, R = 106;
+    const n = 4;
+    const arc = Math.PI * 2 / n;
+    const segs = [
+        '#f59e0b',  // dorato — vincente
+        '#cbd5e1',  // grigio chiaro
+        '#94a3b8',  // grigio medio
+        '#cbd5e1',  // grigio chiaro
+    ];
+
+    function drawWheel(rot) {
+        ctx.clearRect(0, 0, 220, 220);
+        for (let i = 0; i < n; i++) {
+            const s = rot + i * arc - Math.PI / 2;
+            ctx.beginPath();
+            ctx.moveTo(CX, CY);
+            ctx.arc(CX, CY, R, s, s + arc);
+            ctx.fillStyle = segs[i];
+            ctx.fill();
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 4;
+            ctx.stroke();
+        }
+        // Cerchio esterno
+        ctx.beginPath();
+        ctx.arc(CX, CY, R, 0, Math.PI * 2);
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 4;
+        ctx.stroke();
+        // Centro
+        ctx.beginPath();
+        ctx.arc(CX, CY, 13, 0, Math.PI * 2);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+        ctx.strokeStyle = '#e2e8f0';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    }
+
+    // Target: pointer fisso in cima, spicchio 0 al centro = rotazione 7π/4 + giri interi
+    // Spicchi 1-3 (grigio) = 5π/4, 3π/4, π/4
+    const spins = (4 + Math.floor(Math.random() * 3)) * Math.PI * 2;
+    const jitter = (Math.random() - 0.5) * arc * 0.42;
+    const loseAngles = [5 * Math.PI / 4, 3 * Math.PI / 4, Math.PI / 4];
+    const target = won
+        ? spins + 7 * Math.PI / 4 + jitter
+        : spins + loseAngles[Math.floor(Math.random() * 3)] + jitter;
+
+    const dur = 4200;
+    const t0 = performance.now();
+    function easeOut(t) { return 1 - Math.pow(1 - t, 4); }
+
+    drawWheel(0);
+    requestAnimationFrame(function frame(now) {
+        const p = Math.min((now - t0) / dur, 1);
+        drawWheel(target * easeOut(p));
+        if (p < 1) {
+            requestAnimationFrame(frame);
+        } else {
+            setTimeout(() => _showLotteryResult(won), 800);
+        }
+    });
+}
+
+function _showLotteryResult(won) {
     const inner = document.querySelector('#welcomeNewPopup > div');
     if (!inner) return;
     if (won) {
@@ -330,7 +422,6 @@ async function _tryLottery() {
           <button onclick="closeWelcomeNewPopup()" class="text-xs text-slate-400 hover:text-slate-600 transition">Chiudi</button>`;
     }
 }
-window._tryLottery = _tryLottery;
 
 function _showWelcomeNewPopup(userId) {
     if (localStorage.getItem('_welc_' + userId)) return;
