@@ -169,7 +169,8 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Admin ha sezione "Tutti gli annunci" con tasto Elimina su ciascuno (`deleteAnnuncio(id)`).
 
 ## 📊 Dashboard Admin — Statistiche
-- 5 card: Annunci Totali · **Annunci Attivi** (verde, `admStatAttivi`) · Utenti Iscritti · In Attesa · Robot Blog.
+- 6 card (grid 2×3): Annunci Totali · **Annunci Attivi** (verde, `admStatAttivi`) · Utenti Iscritti · In Attesa · **In Vetrina** (amber, `admStatVetrina`) · **Lotteria Attiva** (`admStatLotteria`, utenti con `welcome_lottery_eligible=true`).
+- Robot Blog rimosso dalle stat card. Il bottone `forceBlogBtn` esiste ancora nel DOM ma è nascosto — `generateArticleNow()` ha null-check per non crashare se il bottone non c'è.
 
 ## 🧭 Navigazione Header (Aprile 2026)
 - Layout: `flex justify-between` sotto `lg`, `grid grid-cols-3` da `lg` in su — centramento corretto della nav.
@@ -262,10 +263,15 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Badge "Dati Verificati"** rimosso da `annuncio-detail.js` — era fuorviante, nessuna verifica reale avviene.
 
 ## 🔔 Popup & Onboarding (Aprile 2026)
-- **Popup visitatori** (`auth.js`): modal centrato con blur, appare dopo 8s, verifica sessione al momento dello show (`getSession()`), una volta per sessione (`sessionStorage._vp`). NON usare slide-up — è un modal full overlay come gli altri.
-- **Popup benvenuto nuovo utente** (`auth.js`): appare al primo login quando il profilo viene creato dai metadati. Salvato in `localStorage._welc_<userId>` per non riapparire. Porta a `vendi.html`.
-- **Vetrina welcome 10 giorni**: colonna `vetrina_welcome_days int2 DEFAULT 0` in `profiles`. All'upsert del profilo nuovo si setta a 10. In `vendi.html` → `_tryGrantWelcomeVetrina()` chiama RPC `grant_welcome_vetrina(p_annuncio_id, p_user_id)` dopo insert. Funzione SQL usa `SET LOCAL session_replication_role='replica'` per bypassare il trigger. Vale solo per 1 annuncio (credito azzerato dopo). Banner dorato nella success page se attivata.
-- **SQL già eseguito** (Aprile 2026): `grant_welcome_vetrina` deployata e funzionante. Colonna `vetrina_welcome_days` aggiunta. `SETUP_WELCOME_VETRINA.sql` eseguito con successo.
+- **Popup visitatori** (`auth.js`): modal centrato con blur, appare dopo 8s, verifica sessione al momento dello show (`getSession()`), una volta per sessione (`sessionStorage._vp`). NON usare slide-up — è un modal full overlay come gli altri. Copy: "Registrati e prova a vincere 30 giorni di Vetrina".
+- **Popup benvenuto nuovo utente** (`auth.js`): appare al primo login quando il profilo viene creato dai metadati. Salvato in `localStorage._welc_<userId>` per non riapparire. Mostra ruota della fortuna al click.
+- **Lotteria vetrina welcome** (sostituisce il vecchio sistema dei 10 giorni garantiti):
+  - Colonne `profiles`: `welcome_lottery_eligible bool DEFAULT true`, `welcome_lottery_won bool DEFAULT false`.
+  - **Eleggibilità solo da popup/promo**: il visitor popup setta `sessionStorage._reg_src='popup'` prima di aprire il modal di registrazione. L'upsert del profilo legge e consuma il flag — se assente setta `welcome_lottery_eligible=false`. Registrazione normale → NON eleggibile.
+  - **Flusso**: click "Tenta la fortuna" nel popup benvenuto → RPC `try_welcome_lottery(p_user_id)` → controlla `eligible=true` + `created_at` entro 30 giorni → tira dado (`random() < 0.001`, 0,1%) → setta `eligible=false` sempre; se vince setta `won=true` → risultato mostrato via ruota animata canvas (4 spicchi: 1 dorato + 3 grigi, 4 secondi easing-out).
+  - Se non clicca entro 30 giorni dall'iscrizione → opportunità persa per sempre.
+  - Alla pubblicazione del primo annuncio (`vendi.html` → `_tryGrantWelcomeVetrina`) → RPC `grant_welcome_vetrina(annuncio_id, user_id)` → se `won=true` applica 30gg vetrina (`featured_tier='welcome_lottery'`) e setta `won=false`.
+  - SQL: `SETUP_WELCOME_VETRINA.sql` (da eseguire su Supabase: aggiunge colonne, crea `try_welcome_lottery`, aggiorna `grant_welcome_vetrina`).
 
 ## 🗑️ Eliminazione Account (Aprile 2026)
 - Sezione "Zona pericolosa" in fondo al modal profilo (`dashboard.html`). Richiede di scrivere `ELIMINA` nel campo di testo.
@@ -296,6 +302,19 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Send Email Hook**: configurato in Auth → Hooks → Send Email → Edge Function `send-auth-email` via Resend. Funziona per i primi 2/ora normalmente.
 - **Vetrina prezzi aggiornati**: 3 tier — 10d €19,90, 30d €39,90, 90d €59,90 (MIGLIOR VALORE). Edge Functions `create-checkout-session` e `stripe-webhook` aggiornate con nuovi importi.
 - **`_afterRegisterSuccess()` e `_registerBypass()`**: helper in `auth.js` per evitare duplicazione codice nella gestione post-registrazione.
+
+## 🏠 Home Page — Ordine Sezioni (Aprile 2026)
+- Ordine attuale: Hero → **Ultimi Annunci** (12 card, bottone "Vedi tutti" in fondo) → Vendi in 3 passi → FAQ.
+- La sezione "Vendi in 3 passi" è stata spostata sotto gli annunci. NON rimetterla sopra.
+- `loadRecentListings()` in `index.html`: `.limit(12)`, ordine `created_at DESC`, fallback su `LISTINGS.slice(0,12)`.
+
+## 📣 Blog — Promo Inline (Aprile 2026)
+- Funzione `_insertBlogPromo(html)` in `blog.html`: inietta un banner dopo il 3° `</p>` dell'articolo.
+- Visibile solo agli utenti non loggati (auth check post-render rimuove `.blog-promo` se sessione attiva).
+- Copy: "🎰 Nuovo su Subingresso? Registrati e prova a vincere 30 giorni di Vetrina gratis →". Sfondo ambrato (`bg-amber-50 border-amber-200`).
+- Click setta `sessionStorage._reg_src='popup'` → utente è eleggibile alla lotteria.
+- Se l'articolo ha meno di 3 paragrafi il banner non viene inserito.
+- Banner calcolatore in cima al blog: riga singola compatta (`py-3`), solo titolo + bottone "Calcola →". Spazio superiore `pt-8` (ridotto da `py-16`).
 
 ## Stato Ultima Sessione Codex (27 Aprile 2026)
 - Sessione dedicata al blog SEO e alla pulizia dei file SQL temporanei.
