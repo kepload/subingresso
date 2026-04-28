@@ -299,10 +299,11 @@ async function loadListings() {
             const uniqueIds = [...new Set(data.map(l => l.user_id).filter(Boolean))];
             if (uniqueIds.length) {
                 const { data: profiles } = await _supabase
-                    .from('profiles').select('id, avatar_url, nome').in('id', uniqueIds);
+                    .from('profiles').select('id, avatar_url, nome, cognome').in('id', uniqueIds);
                 if (profiles) profiles.forEach(p => {
                     if (p.avatar_url) USER_AVATARS[p.id] = p.avatar_url;
-                    if (p.nome) USER_NAMES[p.id] = p.nome;
+                    const fullName = [p.nome, p.cognome].filter(Boolean).join(' ').trim();
+                    if (fullName) USER_NAMES[p.id] = fullName;
                 });
             }
         }

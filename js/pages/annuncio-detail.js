@@ -51,10 +51,15 @@ async function loadListing() {
     const idParam = params.get('id');
     if (!idParam) return null;
 
+    // Usa i dati pre-renderizzati dal server se disponibili (evita un secondo fetch)
+    if (window.__SSR_LISTING__ && window.__SSR_LISTING__.id) {
+        return window.__SSR_LISTING__;
+    }
+
     let listing = null;
 
     try {
-        const { data, error } = await _supabase
+        const { data } = await _supabase
             .from('annunci')
             .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier')
             .eq('id', idParam)
@@ -92,8 +97,14 @@ async function initPage() {
         return;
     }
 
-    // UI Update
-    document.title = `${listing.titolo} — Subingresso.it`;
+    // UI Update — formato SEO allineato con SSR (api/annuncio.js buildTitle)
+    const _titleParts = [listing.stato || 'Annuncio', 'posteggio'];
+    if (listing.tipo)  _titleParts.push(listing.tipo);
+    if (listing.settore && listing.settore !== listing.tipo) _titleParts.push(listing.settore);
+    if (listing.comune)  _titleParts.push(`a ${listing.comune}`);
+    if (listing.provincia)      _titleParts.push(`(${listing.provincia})`);
+    else if (listing.regione)   _titleParts.push(`(${listing.regione})`);
+    document.title = `${_titleParts.join(' ')} – Subingresso.it`;
 
     // OG / meta tag dinamici
     const _setMeta = (id, val) => { const el = document.getElementById(id); if (el && val) el.setAttribute('content', val); };
@@ -298,23 +309,32 @@ async function initPage() {
             </div>`).join('');
     }
 
-    // Annunci correlati
-    const relatedSection = document.getElementById('relatedSection');
-    const relatedGrid    = document.getElementById('relatedGrid');
-    if (relatedSection && relatedGrid) {
-        const related = LISTINGS.filter(l => l.regione === listing.regione && l.id !== listing.id).slice(0, 3);
-        if (related.length > 0) {
-            relatedSection.classList.remove('hidden');
-            relatedGrid.innerHTML = related.map(l => buildCard(l)).join('');
-            observeCardViews();
-        }
-    }
+    // Annunci correlati — fetch da Supabase nella stessa regione
+    (async () => {
+        const relatedSection = document.getElementById('relatedSection');
+        const relatedGrid    = document.getElementById('relatedGrid');
+        if (!relatedSection || !relatedGrid || !listing.regione) return;
+        try {
+            const { data: related } = await _supabase
+                .from('annunci')
+                .select('*')
+                .eq('status', 'active')
+                .eq('regione', listing.regione)
+                .neq('id', listing.id)
+                .limit(3);
+            if (related && related.length > 0) {
+                relatedSection.classList.remove('hidden');
+                relatedGrid.innerHTML = related.map(l => buildCard(l)).join('');
+                observeCardViews();
+            }
+        } catch (_) {}
+    })();
 
     // Seller card
     if (listing.user_id) {
         try {
             const [{ data: seller }, { count: sellerCount }] = await Promise.all([
-                _supabase.from('profiles').select('nome, avatar_url, created_at').eq('id', listing.user_id).single(),
+                _supabase.from('profiles').select('nome, cognome, avatar_url, created_at').eq('id', listing.user_id).single(),
                 _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('user_id', listing.user_id).eq('status', 'active')
             ]);
 
@@ -326,12 +346,13 @@ async function initPage() {
                 const badgeEl  = document.getElementById('sellerBadge');
                 const linkEl   = document.getElementById('sellerProfileLink');
 
+                const sellerFullName = [seller.nome, seller.cognome].filter(Boolean).join(' ').trim();
                 if (seller.avatar_url) {
                     avatarEl.innerHTML = `<img src="${escapeHTML(seller.avatar_url)}" class="w-full h-full object-cover">`;
                 } else {
-                    avatarEl.textContent = (seller.nome || 'U').charAt(0).toUpperCase();
+                    avatarEl.textContent = (sellerFullName || 'U').charAt(0).toUpperCase();
                 }
-                nameEl.textContent  = seller.nome || 'Utente';
+                nameEl.textContent  = sellerFullName || 'Utente';
                 sinceEl.textContent = `Iscritto dal ${new Date(seller.created_at).toLocaleDateString('it-IT', { month: 'long', year: 'numeric' })}`;
                 if (badgeEl) badgeEl.innerHTML = getProfileBadges(seller.created_at, sellerCount || 0);
                 if (linkEl)  linkEl.href = `profilo.html?id=${listing.user_id}`;

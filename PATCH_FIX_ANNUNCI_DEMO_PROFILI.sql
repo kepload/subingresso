@@ -54,10 +54,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0001-4000-8000-000000000000',
     titolo = 'Vendo posteggio abbigliamento donna - Milano',
     descrizione = 'Cedo posteggio non alimentare in mercato settimanale a Milano, settore abbigliamento donna. Lo spazio e adatto a banco, appendiabiti e piccola scorta giornaliera. La posizione e su una corsia di passaggio ordinario, senza promesse di incassi o numeri gonfiati. Attivita portata avanti da anni con clientela di zona. Documentazione da verificare con il Comune e con il proprio consulente prima del subingresso. Inclusi struttura banco, teli e parte dell attrezzatura.',
-    superficie = 32,
+    tipo = 'Mercato settimanale',
+    superficie = 60,
     giorni = 'Lunedi, Mercoledi, Venerdi, Sabato',
     prezzo = 42000,
-    contatto = 'Lucia R.'
+    contatto = 'Lucia Rinaldi'
 WHERE user_id = 'a1b2c3d4-0001-4000-8000-000000000000'
    OR (contatto = 'Carla M.' AND titolo ILIKE '%Porta Genova%');
 
@@ -65,10 +66,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0002-4000-8000-000000000000',
     titolo = 'Posteggio calzature in vendita - Sirmione',
     descrizione = 'Vendo posteggio non alimentare al mercato settimanale di Sirmione, settore calzature e accessori. Lo spazio consente espositori scarpe, banco e ombrellone. Nei periodi turistici il passaggio aumenta, ma chi compra deve valutare posizione, concessione, concorrenza e stagionalita. Cessione per cambio zona di lavoro. Attrezzatura base inclusa, merce da trattare separatamente se interessa.',
-    superficie = 28,
+    tipo = 'Mercato settimanale',
+    superficie = 50,
     giorni = 'Venerdi',
     prezzo = 36000,
-    contatto = 'Youssef E.'
+    contatto = 'Youssef El Amrani'
 WHERE user_id = 'a1b2c3d4-0002-4000-8000-000000000000'
    OR (contatto = 'Marco V.' AND titolo ILIKE '%Sirmione%');
 
@@ -76,10 +78,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0003-4000-8000-000000000000',
     titolo = 'Vendo posteggio bigiotteria e accessori - Lazise',
     descrizione = 'Cedo posteggio non alimentare al mercato di Lazise, adatto a bigiotteria, accessori moda e piccoli articoli regalo. Dimensione comoda per banco modulare, espositori verticali e scorta leggera. Il lavoro e piu interessante nei mesi di maggiore movimento sul lago, mentre fuori stagione richiede continuita e prezzi corretti. Cedo per motivi familiari. Disponibile a mostrare posizione e documenti prima di trattare.',
-    superficie = 24,
+    tipo = 'Mercato settimanale',
+    superficie = 45,
     giorni = 'Lunedi',
     prezzo = 24000,
-    contatto = 'Fatima B.'
+    contatto = 'Fatima Benali'
 WHERE user_id = 'a1b2c3d4-0003-4000-8000-000000000000'
    OR (contatto = 'Elena R.' AND titolo ILIKE '%Lazise%');
 
@@ -87,10 +90,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0004-4000-8000-000000000000',
     titolo = 'Posteggio tessuti e merceria in vendita - Torri del Benaco',
     descrizione = 'Vendo posteggio non alimentare per tessuti, filati e merceria al mercato settimanale di Torri del Benaco. Spazio adatto a banco lungo, portarotoli e qualche espositore laterale. Clientela soprattutto locale, con aumento di passaggio nei periodi turistici. Attrezzatura compresa: banconi, teli, struttura e pesi. Cedo per pensionamento. Prima del subingresso vanno controllati concessione, autorizzazione e compatibilita del settore merceologico.',
-    superficie = 30,
+    tipo = 'Mercato settimanale',
+    superficie = 55,
     giorni = 'Giovedi',
     prezzo = 19000,
-    contatto = 'Giovanna F.'
+    contatto = 'Giovanna Ferrara'
 WHERE user_id = 'a1b2c3d4-0004-4000-8000-000000000000'
    OR (contatto = 'Giovanna F.' AND titolo ILIKE '%Torri del Benaco%');
 
@@ -98,10 +102,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0005-4000-8000-000000000000',
     titolo = 'Posteggio abbigliamento in vendita - Desenzano del Garda',
     descrizione = 'Vendo posteggio non alimentare al mercato settimanale di Desenzano del Garda, settore abbigliamento uomo e donna. Lo spazio permette esposizione ordinata con appendiabiti, banco e deposito leggero. Il mercato lavora con residenti e visitatori, ma il prezzo tiene conto anche della stagionalita e della necessita di gestire bene assortimento e margini. Cedo per riorganizzazione attivita. Documentazione disponibile in fase di trattativa.',
-    superficie = 40,
+    tipo = 'Mercato settimanale',
+    superficie = 70,
     giorni = 'Martedi',
     prezzo = 46000,
-    contatto = 'Karim A.'
+    contatto = 'Karim Ait Lahcen'
 WHERE user_id = 'a1b2c3d4-0005-4000-8000-000000000000'
    OR (contatto = 'Roberto A.' AND titolo ILIKE '%Desenzano%');
 
@@ -109,10 +114,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0006-4000-8000-000000000000',
     titolo = 'Cedo posteggio ortofrutta - Verona',
     descrizione = 'Vendo posteggio alimentare in mercato rionale a Verona, settore frutta e verdura. Spazio adatto a banco ortofrutta, cassette, bilance e piccola scorta giornaliera. La clientela e prevalentemente di quartiere, quindi conta molto la continuita nella presenza e nella qualita della merce. Sono incluse due bilance certificate, cassette e parte della struttura. Cessione per pensionamento. Verificare requisiti alimentari e autorizzazione prima del subingresso.',
-    superficie = 35,
+    tipo = 'Mercato settimanale',
+    superficie = 65,
     giorni = 'Martedi, Giovedi, Sabato',
     prezzo = 23000,
-    contatto = 'Luigi B.'
+    contatto = 'Luigi Bianchi'
 WHERE user_id = 'a1b2c3d4-0006-4000-8000-000000000000'
    OR (contatto = 'Luigi B.' AND titolo ILIKE '%ortofrutta%');
 
@@ -120,10 +126,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0007-4000-8000-000000000000',
     titolo = 'Vendo posteggio pelletteria e borse - Bergamo',
     descrizione = 'Cedo posteggio non alimentare in zona Bergamo, settore borse, cinture, portafogli e piccola pelletteria. Spazio sufficiente per espositori su piu lati e banco centrale. Lavoro indicato per chi ha gia fornitori e sa gestire assortimento, prezzo medio e rotazione merce. Il valore riguarda il posteggio e l attrezzatura, non vengono promessi incassi. Inclusi espositori, bacheche porta-borse e teli.',
-    superficie = 27,
+    tipo = 'Mercato settimanale',
+    superficie = 50,
     giorni = 'Sabato, Domenica',
     prezzo = 28000,
-    contatto = 'Samira O.'
+    contatto = 'Samira Oudghiri'
 WHERE user_id = 'a1b2c3d4-0007-4000-8000-000000000000'
    OR (contatto = 'Stefania C.' AND titolo ILIKE '%Bergamo%');
 
@@ -131,10 +138,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0008-4000-8000-000000000000',
     titolo = 'Posteggio casalinghi in vendita - Peschiera del Garda',
     descrizione = 'Vendo posteggio non alimentare al mercato settimanale di Peschiera del Garda, settore casalinghi, piccoli articoli per la casa e oggettistica. Spazio adatto a banconi bassi, espositori e merce non ingombrante. Il movimento cambia molto tra stagione turistica e mesi ordinari, quindi la valutazione va fatta guardando posizione, giorni effettivi e concorrenza. Cedo per motivi personali. Attrezzatura base inclusa.',
-    superficie = 30,
+    tipo = 'Mercato settimanale',
+    superficie = 55,
     giorni = 'Mercoledi',
     prezzo = 17500,
-    contatto = 'Antonio P.'
+    contatto = 'Antonio Perini'
 WHERE user_id = 'a1b2c3d4-0008-4000-8000-000000000000'
    OR (contatto = 'Antonio P.' AND titolo ILIKE '%Peschiera%');
 
@@ -142,10 +150,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0009-4000-8000-000000000000',
     titolo = 'Vendo posteggio abbigliamento bambino - Como',
     descrizione = 'Cedo posteggio non alimentare in mercato di zona a Como, settore abbigliamento bambino. Spazio adatto a appendiabiti, scaffali per taglie e banco. Clientela soprattutto locale, quindi il lavoro dipende da assortimento, prezzo e presenza costante. Attrezzatura compresa: appendiabiti, scaffali, banco e copertura. Possibile trattativa separata per parte dello stock. Prima di procedere consiglio verifica della concessione e delle regole comunali sul subingresso.',
-    superficie = 30,
+    tipo = 'Mercato settimanale',
+    superficie = 55,
     giorni = 'Lunedi, Giovedi',
     prezzo = 25000,
-    contatto = 'Hassan R.'
+    contatto = 'Hassan Rachidi'
 WHERE user_id = 'a1b2c3d4-0009-4000-8000-000000000000'
    OR (contatto = 'Mirella G.' AND titolo ILIKE '%Como%');
 
@@ -153,10 +162,11 @@ UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0010-4000-8000-000000000000',
     titolo = 'Affitto posteggio abbigliamento donna - Brescia',
     descrizione = 'Affitto posteggio non alimentare in mercato settimanale a Brescia, settore abbigliamento donna. La proposta e per subentro temporaneo con accordo scritto e durata da definire tra le parti, nel rispetto delle regole comunali. Spazio adatto a struttura portaabiti, banco e piccolo deposito. Non e una vendita della concessione: si valuta affitto del ramo operativo e uso dell attrezzatura. Richiesta serieta e verifica documentale prima di iniziare.',
-    superficie = 32,
+    tipo = 'Mercato settimanale',
+    superficie = 60,
     giorni = 'Martedi, Sabato',
     prezzo = 4200,
-    contatto = 'Nadia C.'
+    contatto = 'Nadia Conti'
 WHERE user_id = 'a1b2c3d4-0010-4000-8000-000000000000'
    OR (contatto = 'Federico N.' AND titolo ILIKE '%Triumplina%');
 
