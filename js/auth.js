@@ -218,14 +218,14 @@ function _injectVisitorPopup() {
         <button onclick="closeVisitorPopup()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-slate-300 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition">
           <i class="fas fa-times"></i>
         </button>
-        <div class="text-4xl mb-3">🎁</div>
+        <div class="text-4xl mb-3">🎰</div>
         <h2 class="text-xl font-black text-slate-800 mb-2">Vendi il tuo posteggio?</h2>
         <p class="text-sm text-slate-500 mb-5 leading-relaxed">
-          Iscriviti gratis e ottieni <span class="font-bold text-amber-500">10 giorni di vetrina</span> — il tuo annuncio in cima a tutti i risultati.
+          Iscriviti gratis e prova a vincere <span class="font-bold text-amber-500">30 giorni di Vetrina</span> — il tuo annuncio in cima a tutti i risultati. Valore €39,90.
         </p>
         <button onclick="closeVisitorPopup(); openAuthModal('register')"
           class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
-          Registrati gratis →
+          Registrati e tenta la fortuna →
         </button>
         <button onclick="closeVisitorPopup()" class="text-xs text-slate-400 hover:text-slate-600 transition">
           Esplora prima gli annunci
@@ -275,9 +275,9 @@ function _injectWelcomePopup() {
         <p class="text-sm text-slate-500 mb-4">Il tuo account è attivo.</p>
         <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-5">
           <p class="text-sm font-bold text-amber-700">🎰 Prova a vincere 30 giorni di Vetrina</p>
-          <p class="text-xs text-amber-600 mt-1">Pubblica il tuo primo annuncio entro 30 giorni e tenta la fortuna. Valore €39,90.</p>
+          <p class="text-xs text-amber-600 mt-1">Clicca il bottone — scopri subito se hai vinto. Valore €39,90.</p>
         </div>
-        <button onclick="closeWelcomeNewPopup(); window.location.href='vendi.html'"
+        <button id="lotteryBtn" onclick="_tryLottery()"
           class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
           Tenta la fortuna →
         </button>
@@ -292,6 +292,45 @@ window.closeWelcomeNewPopup = function () {
     const el = document.getElementById('welcomeNewPopup');
     if (el) { el.classList.add('hidden'); document.body.style.overflow = ''; }
 };
+
+async function _tryLottery() {
+    const btn = document.getElementById('lotteryBtn');
+    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Estrazione in corso...'; }
+    let won = false;
+    try {
+        const { data: { session } } = await _supabase.auth.getSession();
+        if (session) {
+            const { data } = await _supabase.rpc('try_welcome_lottery', { p_user_id: session.user.id });
+            won = data === true;
+        }
+    } catch (_) {}
+    const inner = document.querySelector('#welcomeNewPopup > div');
+    if (!inner) return;
+    if (won) {
+        inner.innerHTML = `
+          <div class="text-5xl mb-3">🏆</div>
+          <h2 class="text-xl font-black text-amber-600 mb-2">HAI VINTO!</h2>
+          <div class="bg-amber-50 border border-amber-300 rounded-xl px-4 py-3 mb-5">
+            <p class="text-sm font-bold text-amber-700">⭐ 30 giorni di Vetrina gratuita</p>
+            <p class="text-xs text-amber-600 mt-1">Pubblica un annuncio e si attiva automaticamente. Valore €39,90.</p>
+          </div>
+          <button onclick="closeWelcomeNewPopup(); window.location.href='vendi.html'"
+            class="w-full bg-amber-500 text-white py-4 rounded-xl font-black text-sm hover:bg-amber-600 transition active:scale-[.98]">
+            Pubblica ora e attiva la vetrina →
+          </button>`;
+    } else {
+        inner.innerHTML = `
+          <div class="text-5xl mb-3">😔</div>
+          <h2 class="text-xl font-black text-slate-800 mb-2">Non hai vinto questa volta</h2>
+          <p class="text-sm text-slate-500 mb-5">La fortuna non era dalla tua parte. Puoi comunque pubblicare il tuo annuncio gratuitamente!</p>
+          <button onclick="closeWelcomeNewPopup(); window.location.href='vendi.html'"
+            class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
+            Pubblica annuncio →
+          </button>
+          <button onclick="closeWelcomeNewPopup()" class="text-xs text-slate-400 hover:text-slate-600 transition">Chiudi</button>`;
+    }
+}
+window._tryLottery = _tryLottery;
 
 function _showWelcomeNewPopup(userId) {
     if (localStorage.getItem('_welc_' + userId)) return;
