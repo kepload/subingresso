@@ -221,7 +221,7 @@ function _injectVisitorPopup() {
         <div class="text-4xl mb-3">🎰</div>
         <h2 class="text-xl font-black text-slate-800 mb-2">Vendi il tuo posteggio?</h2>
         <p class="text-sm text-slate-500 mb-5 leading-relaxed">
-          Iscriviti gratis e prova a vincere <span class="font-bold text-amber-500">30 giorni di Vetrina</span> — il tuo annuncio in cima a tutti i risultati. Valore €39,90.
+          Iscriviti gratis e prova a vincere <span class="font-bold text-amber-500">30 giorni di Vetrina</span> — il tuo annuncio in cima a tutti i risultati.
         </p>
         <button onclick="closeVisitorPopup(); openAuthModal('register')"
           class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
@@ -275,7 +275,7 @@ function _injectWelcomePopup() {
         <p class="text-sm text-slate-500 mb-4">Il tuo account è attivo.</p>
         <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-5">
           <p class="text-sm font-bold text-amber-700">🎰 Prova a vincere 30 giorni di Vetrina</p>
-          <p class="text-xs text-amber-600 mt-1">Clicca il bottone — scopri subito se hai vinto. Valore €39,90.</p>
+          <p class="text-xs text-amber-600 mt-1">Clicca il bottone e scopri subito se hai vinto.</p>
         </div>
         <button id="lotteryBtn" onclick="_tryLottery()"
           class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
@@ -312,7 +312,7 @@ async function _tryLottery() {
           <h2 class="text-xl font-black text-amber-600 mb-2">HAI VINTO!</h2>
           <div class="bg-amber-50 border border-amber-300 rounded-xl px-4 py-3 mb-5">
             <p class="text-sm font-bold text-amber-700">⭐ 30 giorni di Vetrina gratuita</p>
-            <p class="text-xs text-amber-600 mt-1">Pubblica un annuncio e si attiva automaticamente. Valore €39,90.</p>
+            <p class="text-xs text-amber-600 mt-1">Pubblica un annuncio e si attiva automaticamente.</p>
           </div>
           <button onclick="closeWelcomeNewPopup(); window.location.href='vendi.html'"
             class="w-full bg-amber-500 text-white py-4 rounded-xl font-black text-sm hover:bg-amber-600 transition active:scale-[.98]">
