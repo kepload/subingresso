@@ -146,6 +146,27 @@
     </div>
 </section>
 
+<!-- ══════════════ ULTIMI ANNUNCI ══════════════ -->
+<section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+                <h2 class="text-3xl font-black tracking-tight">Ultimi annunci</h2>
+                <p class="text-slate-500 font-medium mt-1 text-sm">Posteggi inseriti di recente</p>
+            </div>
+            <a href="annunci.html" class="text-blue-600 font-bold text-sm hover:underline flex items-center gap-2">
+                Vedi tutti <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="previewGrid"></div>
+        <div class="text-center mt-10">
+            <a href="annunci.html" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-sm hover:bg-blue-700 transition active:scale-[.98]">
+                Vedi tutti gli annunci <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- ══════════════ COME FUNZIONA ══════════════ -->
 <section id="come-funziona" class="py-20 border-t border-slate-100">
     <div class="max-w-7xl mx-auto px-6">
@@ -176,23 +197,6 @@
                 <p class="text-slate-500 font-medium leading-relaxed text-sm">Concludi l'affare privatamente. Subingresso.it non trattiene alcuna provvigione sulla tua vendita.</p>
             </div>
         </div>
-    </div>
-</section>
-
-
-<!-- ══════════════ ULTIMI ANNUNCI ══════════════ -->
-<section class="py-16 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="flex justify-between items-end mb-10">
-            <div>
-                <h2 class="text-3xl font-black tracking-tight">Ultimi annunci</h2>
-                <p class="text-slate-500 font-medium mt-1 text-sm">Posteggi inseriti di recente</p>
-            </div>
-            <a href="annunci.html" class="text-blue-600 font-bold text-sm hover:underline flex items-center gap-2">
-                Vedi tutti <i class="fas fa-arrow-right text-xs"></i>
-            </a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="previewGrid"></div>
     </div>
 </section>
 
@@ -486,17 +490,16 @@ async function loadRecentListings() {
             .eq('status', 'active')
             .or(`expires_at.gt.${new Date().toISOString()},expires_at.is.null`)
             .order('created_at', { ascending: false })
-            .limit(3);
+            .limit(12);
 
         if (!error && data && data.length > 0) {
             document.getElementById('previewGrid').innerHTML = data.map(l => buildCard(l)).join('');
         } else {
-            // Fallback ai dati demo se non ci sono annunci reali
-            document.getElementById('previewGrid').innerHTML = LISTINGS.slice(0, 3).map(l => buildCard(l)).join('');
+            document.getElementById('previewGrid').innerHTML = LISTINGS.slice(0, 12).map(l => buildCard(l)).join('');
         }
         observeCardViews();
     } catch (e) {
-        document.getElementById('previewGrid').innerHTML = LISTINGS.slice(0, 3).map(l => buildCard(l)).join('');
+        document.getElementById('previewGrid').innerHTML = LISTINGS.slice(0, 12).map(l => buildCard(l)).join('');
         observeCardViews();
     }
 }
