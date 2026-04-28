@@ -7,8 +7,8 @@
 --  2. riassegna SOLO gli annunci demo gia' creati;
 --  3. corregge descrizioni, superfici e prezzi troppo inventati.
 --
---  La patch tocca solo annunci con user_id demo oppure con i vecchi
---  contatti demo usati nel seed precedente.
+--  La patch tocca solo annunci riconoscibili come demo tramite:
+--  user_id demo, vecchi contatti, nuovi contatti o titoli demo.
 -- ============================================================
 
 INSERT INTO auth.users (
@@ -60,7 +60,11 @@ SET user_id = 'a1b2c3d4-0001-4000-8000-000000000000',
     prezzo = 42000,
     contatto = 'Lucia Rinaldi'
 WHERE user_id = 'a1b2c3d4-0001-4000-8000-000000000000'
-   OR (contatto = 'Carla M.' AND titolo ILIKE '%Porta Genova%');
+   OR contatto IN ('Carla M.', 'Lucia R.', 'Lucia Rinaldi')
+   OR titolo IN (
+      'Vendo posteggio abbigliamento donna - Mercato Porta Genova, Milano',
+      'Vendo posteggio abbigliamento donna - Milano'
+   );
 
 UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0002-4000-8000-000000000000',
@@ -72,7 +76,11 @@ SET user_id = 'a1b2c3d4-0002-4000-8000-000000000000',
     prezzo = 36000,
     contatto = 'Youssef El Amrani'
 WHERE user_id = 'a1b2c3d4-0002-4000-8000-000000000000'
-   OR (contatto = 'Marco V.' AND titolo ILIKE '%Sirmione%');
+   OR contatto IN ('Marco V.', 'Youssef E.', 'Youssef El Amrani')
+   OR titolo IN (
+      'Posteggio calzature in vendita - Mercato di Sirmione',
+      'Posteggio calzature in vendita - Sirmione'
+   );
 
 UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0003-4000-8000-000000000000',
@@ -84,7 +92,11 @@ SET user_id = 'a1b2c3d4-0003-4000-8000-000000000000',
     prezzo = 24000,
     contatto = 'Fatima Benali'
 WHERE user_id = 'a1b2c3d4-0003-4000-8000-000000000000'
-   OR (contatto = 'Elena R.' AND titolo ILIKE '%Lazise%');
+   OR contatto IN ('Elena R.', 'Fatima B.', 'Fatima Benali')
+   OR titolo IN (
+      'Vendo posteggio bigiotteria e accessori - Lazise, Lago di Garda',
+      'Vendo posteggio bigiotteria e accessori - Lazise'
+   );
 
 UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0004-4000-8000-000000000000',
@@ -96,7 +108,8 @@ SET user_id = 'a1b2c3d4-0004-4000-8000-000000000000',
     prezzo = 19000,
     contatto = 'Giovanna Ferrara'
 WHERE user_id = 'a1b2c3d4-0004-4000-8000-000000000000'
-   OR (contatto = 'Giovanna F.' AND titolo ILIKE '%Torri del Benaco%');
+   OR contatto IN ('Giovanna F.', 'Giovanna Ferrara')
+   OR titolo = 'Posteggio tessuti e merceria in vendita - Torri del Benaco';
 
 UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0005-4000-8000-000000000000',
@@ -108,7 +121,11 @@ SET user_id = 'a1b2c3d4-0005-4000-8000-000000000000',
     prezzo = 46000,
     contatto = 'Karim Ait Lahcen'
 WHERE user_id = 'a1b2c3d4-0005-4000-8000-000000000000'
-   OR (contatto = 'Roberto A.' AND titolo ILIKE '%Desenzano%');
+   OR contatto IN ('Roberto A.', 'Karim A.', 'Karim Ait Lahcen')
+   OR titolo IN (
+      'Posteggio abbigliamento 40 mq - Grande Mercato di Desenzano del Garda',
+      'Posteggio abbigliamento in vendita - Desenzano del Garda'
+   );
 
 UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0006-4000-8000-000000000000',
@@ -120,7 +137,11 @@ SET user_id = 'a1b2c3d4-0006-4000-8000-000000000000',
     prezzo = 23000,
     contatto = 'Luigi Bianchi'
 WHERE user_id = 'a1b2c3d4-0006-4000-8000-000000000000'
-   OR (contatto = 'Luigi B.' AND titolo ILIKE '%ortofrutta%');
+   OR contatto IN ('Luigi B.', 'Luigi Bianchi')
+   OR titolo IN (
+      'Cedo posteggio ortofrutta - Mercato rionale Porta Vescovo, Verona',
+      'Cedo posteggio ortofrutta - Verona'
+   );
 
 UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0007-4000-8000-000000000000',
@@ -132,7 +153,11 @@ SET user_id = 'a1b2c3d4-0007-4000-8000-000000000000',
     prezzo = 28000,
     contatto = 'Samira Oudghiri'
 WHERE user_id = 'a1b2c3d4-0007-4000-8000-000000000000'
-   OR (contatto = 'Stefania C.' AND titolo ILIKE '%Bergamo%');
+   OR contatto IN ('Stefania C.', 'Samira O.', 'Samira Oudghiri')
+   OR titolo IN (
+      'Vendo posteggio pelletteria e borse - Bergamo, mercato weekend',
+      'Vendo posteggio pelletteria e borse - Bergamo'
+   );
 
 UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0008-4000-8000-000000000000',
@@ -144,7 +169,11 @@ SET user_id = 'a1b2c3d4-0008-4000-8000-000000000000',
     prezzo = 17500,
     contatto = 'Antonio Perini'
 WHERE user_id = 'a1b2c3d4-0008-4000-8000-000000000000'
-   OR (contatto = 'Antonio P.' AND titolo ILIKE '%Peschiera%');
+   OR contatto IN ('Antonio P.', 'Antonio Perini')
+   OR titolo IN (
+      'Posteggio oggettistica e casalinghi in vendita - Peschiera del Garda',
+      'Posteggio casalinghi in vendita - Peschiera del Garda'
+   );
 
 UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0009-4000-8000-000000000000',
@@ -156,7 +185,11 @@ SET user_id = 'a1b2c3d4-0009-4000-8000-000000000000',
     prezzo = 25000,
     contatto = 'Hassan Rachidi'
 WHERE user_id = 'a1b2c3d4-0009-4000-8000-000000000000'
-   OR (contatto = 'Mirella G.' AND titolo ILIKE '%Como%');
+   OR contatto IN ('Mirella G.', 'Hassan R.', 'Hassan Rachidi')
+   OR titolo IN (
+      'Vendo posteggio abbigliamento bambino - Mercato di Camerlata, Como',
+      'Vendo posteggio abbigliamento bambino - Como'
+   );
 
 UPDATE public.annunci
 SET user_id = 'a1b2c3d4-0010-4000-8000-000000000000',
@@ -168,7 +201,11 @@ SET user_id = 'a1b2c3d4-0010-4000-8000-000000000000',
     prezzo = 4200,
     contatto = 'Nadia Conti'
 WHERE user_id = 'a1b2c3d4-0010-4000-8000-000000000000'
-   OR (contatto = 'Federico N.' AND titolo ILIKE '%Triumplina%');
+   OR contatto IN ('Federico N.', 'Nadia C.', 'Nadia Conti')
+   OR titolo IN (
+      'Affitto posteggio abbigliamento donna - Mercato Via Triumplina, Brescia',
+      'Affitto posteggio abbigliamento donna - Brescia'
+   );
 
 SELECT
   a.id,
