@@ -300,7 +300,7 @@ function buildCard(l, isSmall = false, distance = null) {
     const featured = isListingFeatured(l);
     const isAffitto = l.stato === 'Affitto mensile';
     const statoBorder = isAffitto ? 'border-l-[3px] border-l-blue-400' : 'border-l-[3px] border-l-emerald-400';
-    const statoBg = isAffitto ? 'bg-blue-50/70' : 'bg-emerald-50/70';
+    const statoBg = isAffitto ? 'bg-blue-100/70' : 'bg-emerald-100/70';
     const featuredBorder = featured
         ? 'shadow-[0_0_0_2px_rgb(251,191,36),0_10px_40px_rgba(245,158,11,0.30)]'
         : `border border-slate-100 ${statoBorder}`;
@@ -343,7 +343,7 @@ function buildCard(l, isSmall = false, distance = null) {
     })();
 
     return `
-    <div data-listing-id="${escapeHTML(l.id)}" class="group ${featured ? 'bg-gradient-to-b from-amber-50/50 to-white' : statoBg} rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full relative">
+    <div data-listing-id="${escapeHTML(l.id)}" class="group ${featured ? 'bg-orange-100/70' : statoBg} rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full relative">
         <!-- cover -->
         <a href="${annuncioUrl}" class="block relative h-20 sm:h-28 bg-slate-100 overflow-hidden flex-shrink-0">
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
@@ -417,7 +417,7 @@ function buildCard(l, isSmall = false, distance = null) {
                     </a>
                 </div>
             </div>
-            ${featured ? `<div class="mt-3 -mx-3 sm:-mx-5 -mb-3 sm:-mb-5 bg-gradient-to-r from-amber-50 to-orange-50 border-t border-amber-200/50 px-3 sm:px-5 py-2 flex items-center justify-between">
+            ${featured ? `<div class="mt-3 -mx-3 sm:-mx-5 -mb-3 sm:-mb-5 bg-gradient-to-r from-amber-100/80 to-orange-100/80 border-t border-amber-200/70 px-3 sm:px-5 py-2 flex items-center justify-between">
                 <span class="text-[10px] font-black text-amber-600 uppercase tracking-wider flex items-center gap-1.5"><i class="fas fa-crown text-[8px]"></i> Annuncio in Vetrina</span>
                 <span class="text-[10px] text-amber-400">★★★★★</span>
             </div>` : ''}
