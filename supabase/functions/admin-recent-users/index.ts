@@ -1,6 +1,7 @@
 // ============================================================
 //  Subingresso.it — Edge Function: ultimi utenti admin dashboard
-//  Restituisce le ultime iscrizioni con email e permette delete account, solo per admin.
+//  Usa RPC admin_get_recent_users (SECURITY DEFINER) invece
+//  dell'Auth Admin API che restituisce "Database error finding users"
 // ============================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
@@ -27,10 +28,12 @@ Deno.serve(async (req) => {
 
     const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
+    // Verifica che il chiamante sia autenticato
     const { data: userRes, error: userErr } = await admin.auth.getUser(token);
     const requester = userRes?.user;
     if (userErr || !requester) return json({ error: 'Unauthorized' }, 401);
 
+    // Verifica che sia admin
     const { data: profile, error: profileErr } = await admin
       .from('profiles')
       .select('is_admin')
@@ -41,61 +44,82 @@ Deno.serve(async (req) => {
       return json({ error: 'Forbidden' }, 403);
     }
 
+    // ── DELETE: elimina account utente ──────────────────────
     if (req.method === 'DELETE') {
       const body = await req.json().catch(() => null);
       const userId = String(body?.user_id || '').trim();
-      const email = String(body?.email || '').trim().toLowerCase();
+      const email  = String(body?.email  || '').trim().toLowerCase();
 
       if (!userId) return json({ error: 'User id mancante' }, 400);
       if (userId === requester.id) {
         return json({ error: 'Non puoi eliminare il tuo account admin da qui.' }, 400);
       }
 
-      const { data: targetData, error: targetErr } = await admin.auth.admin.getUserById(userId);
-      if (targetErr || !targetData?.user) return json({ error: 'Utente non trovato' }, 404);
+      // Verifica utente via RPC (evita Auth Admin API)
+      const { data: targetRows, error: targetErr } = await admin
+        .rpc('admin_get_recent_users', { p_limit: 1000 });
 
-      const targetEmail = (targetData.user.email || '').toLowerCase();
+      const target = (targetRows as Array<Record<string, unknown>> || []).find(u => u.id === userId);
+      if (targetErr || !target) return json({ error: 'Utente non trovato' }, 404);
+
+      const targetEmail = String(target.email || '').toLowerCase();
       if (email && email !== targetEmail) {
-        return json({ error: 'Email di conferma non corrisponde all’utente.' }, 400);
+        return json({ error: "Email di conferma non corrisponde all'utente." }, 400);
       }
 
       const { error: deleteErr } = await admin.auth.admin.deleteUser(userId);
       if (deleteErr) return json({ error: deleteErr.message }, 500);
 
-      return json({ success: true, deleted: { id: userId, email: targetData.user.email } });
+      return json({ success: true, deleted: { id: userId, email: target.email } });
     }
 
+    // ── GET/POST: lista ultimi iscritti via RPC ─────────────
     if (!SUPABASE_SERVICE_ROLE_KEY) {
       return json({ error: 'SUPABASE_SERVICE_ROLE_KEY mancante nei secrets della funzione' }, 500);
     }
 
-    // Usa REST API diretta per evitare incompatibilità SDK su Deno
-    const usersRes = await fetch(`${SUPABASE_URL}/auth/v1/admin/users?page=1&per_page=50`, {
-      headers: {
-        'apikey': SUPABASE_SERVICE_ROLE_KEY,
-        'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-      }
-    });
-    if (!usersRes.ok) {
-      const errBody = await usersRes.text().catch(() => `HTTP ${usersRes.status}`);
-      return json({ error: `Errore listUsers: ${errBody}` }, 500);
-    }
-    const usersData = await usersRes.json();
+    // RPC SECURITY DEFINER che legge auth.users direttamente
+    const { data: authRows, error: rpcErr } = await admin
+      .rpc('admin_get_recent_users', { p_limit: 50 });
 
-    const users = ((usersData.users || []) as Array<Record<string, unknown>>)
+    if (rpcErr) {
+      // Funzione SQL non ancora creata: istruzioni per l'admin
+      if (rpcErr.code === '42883' || rpcErr.message?.includes('does not exist')) {
+        return json({
+          error: 'Funzione SQL mancante. Esegui SETUP_ADMIN_USERS_FN.sql nel SQL Editor di Supabase.',
+        }, 500);
+      }
+      return json({ error: rpcErr.message }, 500);
+    }
+
+    const rows = (authRows as Array<Record<string, unknown>> || []);
+
+    // Arricchisce con nome/cognome da profiles
+    const ids = rows.map(u => u.id as string).filter(Boolean);
+    const { data: profiles } = ids.length
+      ? await admin.from('profiles').select('id, nome, cognome').in('id', ids)
+      : { data: [] };
+
+    const profileMap = new Map((profiles || []).map((p: Record<string, unknown>) => [p.id, p]));
+
+    const users = rows
       .sort((a, b) => new Date(String(b.created_at || 0)).getTime() - new Date(String(a.created_at || 0)).getTime())
       .slice(0, 5)
-      .map((user: Record<string, unknown>) => ({
-        id: user.id,
-        email: user.email,
-        created_at: user.created_at,
-        last_sign_in_at: user.last_sign_in_at,
-        confirmed_at: user.email_confirmed_at,
-        nome: (user.user_metadata as Record<string, unknown>)?.nome || '',
-        cognome: (user.user_metadata as Record<string, unknown>)?.cognome || '',
-      }));
+      .map((u: Record<string, unknown>) => {
+        const p = profileMap.get(String(u.id)) as Record<string, unknown> || {};
+        return {
+          id:              u.id,
+          email:           u.email,
+          created_at:      u.created_at,
+          last_sign_in_at: u.last_sign_in_at,
+          confirmed_at:    u.confirmed_at,
+          nome:            p.nome    || '',
+          cognome:         p.cognome || '',
+        };
+      });
 
     return json({ users });
+
   } catch (e) {
     console.error('admin-recent-users error:', e);
     return json({ error: 'Errore interno' }, 500);
