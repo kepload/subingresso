@@ -118,17 +118,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         .order('created_at', { ascending: false });
 
     // Populate header
-    const nome = profile.nome || 'Utente';
-    document.title = `${nome} — Profilo Venditore`;
+    const nomeCompleto = [profile.nome, profile.cognome].filter(Boolean).join(' ').trim() || 'Utente';
+    if (typeof USER_NAMES !== 'undefined') USER_NAMES[userId] = nomeCompleto;
+    if (profile.avatar_url && typeof USER_AVATARS !== 'undefined') USER_AVATARS[userId] = profile.avatar_url;
+    document.title = `${nomeCompleto} — Profilo Venditore`;
 
     const avatarEl = document.getElementById('profileAvatar');
     if (profile.avatar_url) {
         avatarEl.innerHTML = `<img src="${escapeHTML(profile.avatar_url)}" class="w-full h-full object-cover">`;
     } else {
-        avatarEl.textContent = nome.charAt(0).toUpperCase();
+        avatarEl.textContent = nomeCompleto.charAt(0).toUpperCase();
     }
 
-    document.getElementById('profileName').textContent = nome;
+    document.getElementById('profileName').textContent = nomeCompleto;
 
     const joinDate = new Date(profile.created_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
     document.getElementById('profileSince').innerHTML = `<i class="fas fa-calendar-check text-slate-400"></i> Iscritto dal ${joinDate}`;
