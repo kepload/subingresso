@@ -5,7 +5,6 @@
 
 const params = new URLSearchParams(location.search);
 
-// Populate regione select
 const fRegione = document.getElementById('fRegione');
 if (fRegione) {
     REGIONI.forEach(r => {
@@ -15,7 +14,6 @@ if (fRegione) {
     });
 }
 
-// Pre-select from URL
 if (params.get('regione') && fRegione) fRegione.value = params.get('regione');
 if (params.get('q')) {
     const sBar = document.getElementById('searchBar');
@@ -24,26 +22,124 @@ if (params.get('q')) {
 
 let LAST_SEARCH_QUERY = '';
 
+// ── CONSTANTS ──
+const SECTOR_KEYWORDS = [
+    'frutta', 'verdura', 'abbigliamento', 'calzature', 'pesce', 'fiori', 'formaggi',
+    'salumi', 'dolci', 'giocattoli', 'biancheria', 'borse', 'ferramenta', 'piante',
+    'cosmetici', 'libri', 'accessori', 'intimo', 'artigianato', 'alimentari',
+    'elettronica', 'tessuti', 'scarpe', 'cappelli', 'spezie', 'casalinghi'
+];
+const SEARCH_HISTORY_KEY = '_sub_searches';
+const PLACEHOLDER_TEXTS = [
+    'Cerca comune, città…',
+    'Es. Milano, Roma, Napoli…',
+    'Es. frutta, abbigliamento…',
+    'Es. mercato settimanale…',
+    'Es. Lombardia, affitto…',
+];
+
+// ── SEARCH HISTORY ──
+function getSearchHistory() {
+    try { return JSON.parse(localStorage.getItem(SEARCH_HISTORY_KEY) || '[]'); } catch { return []; }
+}
+function saveSearchHistory(q) {
+    if (!q || q.length < 2) return;
+    let h = getSearchHistory().filter(x => x !== q);
+    h.unshift(q);
+    localStorage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(h.slice(0, 5)));
+}
+function removeFromHistory(q) {
+    localStorage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(getSearchHistory().filter(x => x !== q)));
+}
+
+// ── AUTOCOMPLETE ──
+let _sugActiveIdx = -1;
+
+function _hideSuggestions() {
+    const ul = document.getElementById('searchSuggestions');
+    if (ul) { ul.classList.add('hidden'); ul.innerHTML = ''; }
+    _sugActiveIdx = -1;
+}
+
+function _showSuggestions(input) {
+    const ul = document.getElementById('searchSuggestions');
+    if (!ul) return;
+    const q = input.value.trim();
+    const qNorm = normalizeText(q);
+    let html = '';
+
+    if (!q) {
+        const history = getSearchHistory();
+        if (!history.length) { _hideSuggestions(); return; }
+        html += `<li class="sug-section">Ricerche recenti</li>`;
+        history.forEach(h => {
+            const safe = h.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+            html += `<li data-val="${escapeHTML(h)}"><i class="fas fa-clock-rotate-left text-slate-300 text-[11px] w-4 flex-shrink-0"></i><span class="flex-1 truncate">${escapeHTML(h)}</span><button class="sug-del" onclick="_removeHistory(event,'${escapeHTML(safe)}')"><i class="fas fa-times text-[10px]"></i></button></li>`;
+        });
+    } else {
+        const cities = Object.keys(PROVINCE_COORDS)
+            .filter(c => {
+                const cn = normalizeText(c);
+                return cn.startsWith(qNorm) || (qNorm.length >= 3 && cn.includes(qNorm));
+            })
+            .sort((a, b) => {
+                const aN = normalizeText(a), bN = normalizeText(b);
+                return (aN.startsWith(qNorm) ? 0 : 1) - (bN.startsWith(qNorm) ? 0 : 1) || a.localeCompare(b, 'it');
+            })
+            .slice(0, 6);
+
+        const sectors = SECTOR_KEYWORDS
+            .filter(s => s.startsWith(qNorm) || (qNorm.length >= 3 && s.includes(qNorm)))
+            .slice(0, 3);
+
+        if (!cities.length && !sectors.length) { _hideSuggestions(); return; }
+
+        if (cities.length) {
+            html += `<li class="sug-section">Comuni / Città</li>`;
+            cities.forEach(c => {
+                html += `<li data-val="${escapeHTML(c)}"><i class="fas fa-map-marker-alt text-blue-300 text-[11px] w-4 flex-shrink-0"></i>${escapeHTML(c)}</li>`;
+            });
+        }
+        if (sectors.length) {
+            html += `<li class="sug-section">Settore merceologico</li>`;
+            sectors.forEach(s => {
+                html += `<li data-val="${escapeHTML(s)}"><i class="fas fa-tag text-slate-300 text-[11px] w-4 flex-shrink-0"></i>${escapeHTML(s)}</li>`;
+            });
+        }
+    }
+
+    _sugActiveIdx = -1;
+    ul.innerHTML = html;
+    ul.classList.remove('hidden');
+}
+
 // ── FILTER & RENDER ──
 function applyFilters() {
-    const fReg     = document.getElementById('fRegione');
-    const fTipo    = document.getElementById('fTipo');
-    const fStato   = document.getElementById('fStato');
-    const fPMax    = document.getElementById('fPrezzoMax');
-    const fSupMin  = document.getElementById('fSup');
-    const fSBar    = document.getElementById('searchBar');
-    const fSort    = document.getElementById('sortBy');
+    const fReg    = document.getElementById('fRegione');
+    const fTipo   = document.getElementById('fTipo');
+    const fStato  = document.getElementById('fStato');
+    const fPMin   = document.getElementById('fPrezzoMin');
+    const fPMax   = document.getElementById('fPrezzoMax');
+    const fSupMin = document.getElementById('fSup');
+    const fSBar   = document.getElementById('searchBar');
+    const fSort   = document.getElementById('sortBy');
 
-    const regione   = fReg ? fReg.value : '';
-    const tipo      = fTipo ? fTipo.value : '';
+    const regione   = fReg   ? fReg.value   : '';
+    const tipo      = fTipo  ? fTipo.value  : '';
     const stato     = fStato ? fStato.value : '';
-    const prezzoMax = (fPMax && fPMax.value) ? parseFloat(fPMax.value) : Infinity;
-    const supMin    = (fSupMin && fSupMin.value) ? parseFloat(fSupMin.value) : 0;
+    const prezzoMin = (fPMin && fPMin.value)     ? parseFloat(fPMin.value)   : 0;
+    const prezzoMax = (fPMax && fPMax.value)     ? parseFloat(fPMax.value)   : Infinity;
+    const supMin    = (fSupMin && fSupMin.value)  ? parseFloat(fSupMin.value) : 0;
     const qRaw      = fSBar ? fSBar.value.trim() : '';
-    LAST_SEARCH_QUERY = qRaw; 
-    const q         = normalizeText(qRaw);
+    LAST_SEARCH_QUERY = qRaw;
+    const q = normalizeText(qRaw);
 
-    // ── LOGICA VICINANZA (SEMPRE ATTIVA SE IL TESTO È UN LUOGO) ──
+    if (qRaw.length >= 2) saveSearchHistory(qRaw);
+    _hideSuggestions();
+
+    const radiusEl = document.getElementById('radiusKm');
+    const radius   = radiusEl ? (parseInt(radiusEl.value) || 200) : 200;
+
     let isProximitySearch = false;
     let searchCity = '';
     let results = [];
@@ -51,7 +147,6 @@ function applyFilters() {
     const searchCoords = q && q.length > 1 ? getCityCoords(qRaw) : null;
 
     if (searchCoords) {
-        // Ricerca per luogo: mostra tutti gli annunci entro 200km, ordinati per distanza
         isProximitySearch = true;
         for (let key in PROVINCE_COORDS) {
             if (PROVINCE_COORDS[key] === searchCoords) { searchCity = key; break; }
@@ -66,16 +161,16 @@ function applyFilters() {
                 return { ...l, _distance: distance };
             })
             .filter(l => {
-                if (l._distance > 200) return false;
-                if (regione && l.regione !== regione) return false;
-                if (tipo    && l.tipo    !== tipo)    return false;
-                if (stato   && l.stato   !== stato)   return false;
-                if (l.prezzo > prezzoMax)             return false;
-                if (l.superficie < supMin)            return false;
+                if (l._distance > radius)                  return false;
+                if (regione && l.regione !== regione)      return false;
+                if (tipo    && l.tipo    !== tipo)         return false;
+                if (stato   && l.stato   !== stato)        return false;
+                if (prezzoMin > 0 && l.prezzo < prezzoMin) return false;
+                if (l.prezzo > prezzoMax)                  return false;
+                if (l.superficie < supMin)                 return false;
                 return true;
             });
 
-        // Featured sempre in cima, poi per distanza
         results.sort((a, b) => {
             const fa = isListingFeatured(a) ? 1 : 0;
             const fb = isListingFeatured(b) ? 1 : 0;
@@ -83,33 +178,30 @@ function applyFilters() {
             return a._distance - b._distance;
         });
     } else {
-        // Ricerca per testo libero (settore, parola chiave, ecc.)
         results = LISTINGS.filter(l => {
-            if (regione && l.regione !== regione) return false;
-            if (tipo    && l.tipo    !== tipo)    return false;
-            if (stato   && l.stato   !== stato)   return false;
-            if (l.prezzo > prezzoMax)             return false;
-            if (l.superficie < supMin)            return false;
+            if (regione && l.regione !== regione)      return false;
+            if (tipo    && l.tipo    !== tipo)         return false;
+            if (stato   && l.stato   !== stato)        return false;
+            if (prezzoMin > 0 && l.prezzo < prezzoMin) return false;
+            if (l.prezzo > prezzoMax)                  return false;
+            if (l.superficie < supMin)                 return false;
 
             if (q) {
-                const searchField = normalizeText(`${l.titolo} ${l.comune} ${l.regione} ${l.settore || ''} ${l.merce || ''}`);
+                const desc = typeof l.dettagli_extra === 'object' ? (l.dettagli_extra?.descrizione || '') : '';
+                const searchField = normalizeText(`${l.titolo} ${l.comune} ${l.regione} ${l.settore || ''} ${l.merce || ''} ${desc}`);
                 if (!searchField.includes(q)) {
-                    const words = searchField.split(' ');
-                    const hasFuzzyMatch = words.some(w => fuzzyScore(w, q) > 70);
+                    const hasFuzzyMatch = searchField.split(' ').some(w => fuzzyScore(w, q) > 70);
                     if (!hasFuzzyMatch) return false;
                 }
             }
             return true;
         });
 
-        // Sort manuale
         const sortVal = fSort ? fSort.value : '';
-        if (sortVal === 'prezzoAsc') results.sort((a, b) => (a.prezzo || 0) - (b.prezzo || 0));
+        if (sortVal === 'prezzoAsc')       results.sort((a, b) => (a.prezzo || 0) - (b.prezzo || 0));
         else if (sortVal === 'prezzoDesc') results.sort((a, b) => (b.prezzo || 0) - (a.prezzo || 0));
         else if (sortVal === 'superficie') results.sort((a, b) => (b.superficie || 0) - (a.superficie || 0));
-        // else: ordine naturale da Supabase (created_at DESC)
 
-        // Featured sempre in cima (stable sort: non disturba l'ordine tra non-featured)
         results.sort((a, b) => {
             const fa = isListingFeatured(a) ? 1 : 0;
             const fb = isListingFeatured(b) ? 1 : 0;
@@ -117,15 +209,23 @@ function applyFilters() {
         });
     }
 
-    // render con transizione
-    const grid   = document.getElementById('resultsGrid');
-    const empty  = document.getElementById('emptyState');
-    const count  = document.getElementById('resultCount');
+    const radiusRow = document.getElementById('radiusRow');
+    if (radiusRow) radiusRow.classList.toggle('visible', isProximitySearch);
+
+    const grid  = document.getElementById('resultsGrid');
+    const empty = document.getElementById('emptyState');
+    const count = document.getElementById('resultCount');
 
     const doRender = () => {
         if (results.length === 0) {
             if (grid) grid.innerHTML = '';
-            if (empty) empty.classList.remove('hidden');
+            if (empty) {
+                empty.innerHTML = _buildEmptyState(
+                    isProximitySearch, searchCoords, searchCity, qRaw, radius,
+                    regione, tipo, stato, prezzoMin, prezzoMax, supMin
+                );
+                empty.classList.remove('hidden');
+            }
         } else {
             if (empty) empty.classList.add('hidden');
             if (grid) {
@@ -137,25 +237,19 @@ function applyFilters() {
         }
     };
 
-    // Se il grid ha già contenuto, fade-out → svuota → fade-in
     if (grid && grid.children.length > 0) {
         grid.style.transition = 'opacity 0.15s ease';
         grid.style.opacity = '0';
-        setTimeout(() => {
-            doRender();
-            grid.style.opacity = '1';
-        }, 160);
+        setTimeout(() => { doRender(); grid.style.opacity = '1'; }, 160);
     } else {
         doRender();
     }
 
-    // Aggiorna badge filtri attivi su mobile
-    const activeCount = [regione, tipo, stato, q, (prezzoMax !== Infinity ? 1 : 0), (supMin > 0 ? 1 : 0)]
-        .filter(Boolean).length;
+    const activeCount = [regione, tipo, stato, q, (prezzoMin > 0 ? 1 : 0), (prezzoMax < Infinity ? 1 : 0), (supMin > 0 ? 1 : 0)].filter(Boolean).length;
     const badge = document.getElementById('filterBadge');
     if (badge) {
         if (activeCount > 0) { badge.textContent = activeCount; badge.classList.remove('hidden'); }
-        else { badge.classList.add('hidden'); }
+        else badge.classList.add('hidden');
     }
 
     if (count) {
@@ -163,111 +257,203 @@ function applyFilters() {
         count.style.opacity = '0';
         setTimeout(() => {
             count.textContent = isProximitySearch
-                ? `${results.length} annunci entro 200km da ${searchCity || qRaw}`
+                ? `${results.length} annunci entro ${radius} km da ${searchCity || qRaw}`
                 : `${results.length} annunci trovati`;
             count.style.opacity = '1';
         }, 160);
     }
 
-    // subtitle
     const sub = document.getElementById('subtitle');
     if (sub) {
         if (isProximitySearch) sub.textContent = `Posteggi vicino a ${searchCity || qRaw} (ordinati per distanza)`;
-        else if (regione) sub.textContent = `Posteggi disponibili in ${regione}`;
-        else if (q)  sub.textContent = `Risultati per "${qRaw}"`;
-        else         sub.textContent = 'Tutti i posteggi disponibili';
+        else if (regione)      sub.textContent = `Posteggi disponibili in ${regione}`;
+        else if (q)            sub.textContent = `Risultati per "${qRaw}"`;
+        else                   sub.textContent = 'Tutti i posteggi disponibili';
     }
 
-    renderChips(regione, tipo, stato, q);
-
-    // JSON-LD ItemList — aggiornato automaticamente ad ogni filtro/render
+    renderChips(regione, tipo, stato, q, prezzoMin, prezzoMax, supMin);
     _injectItemListLd(results, regione, tipo, q);
 }
 
-// ── Tracciamento visualizzazioni anteprima (+1) ──────────
+// ── SMART EMPTY STATE ──
+function _buildEmptyState(isProximity, coords, searchCity, qRaw, radius, regione, tipo, stato, prezzoMin, prezzoMax, supMin) {
+    if (isProximity && coords) {
+        const nearby = _getNearestCitiesWithListings(coords, 4);
+        const nbHtml = nearby.length
+            ? `<div class="mt-5 flex flex-wrap justify-center gap-2">${nearby.map(c => {
+                const safe = c.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+                return `<button onclick="_searchCity('${safe}')" class="chip">${escapeHTML(c)}</button>`;
+              }).join('')}</div>`
+            : '';
+        return `
+            <i class="fas fa-map-marker-alt text-slate-200 text-6xl mb-4"></i>
+            <p class="text-slate-400 font-bold text-lg">Nessun posteggio entro ${radius} km da ${escapeHTML(searchCity || qRaw)}</p>
+            <p class="text-slate-400 text-sm mt-1">Prova ad ampliare il raggio o cerca in un'altra zona.</p>
+            ${nbHtml}
+            <button onclick="clearFilters()" class="mt-5 text-xs text-blue-600 font-bold hover:underline">Azzera tutti i filtri</button>`;
+    }
 
+    if (qRaw) {
+        return `
+            <i class="fas fa-search text-slate-200 text-6xl mb-4"></i>
+            <p class="text-slate-400 font-bold text-lg">Nessun risultato per <span class="text-slate-600">"${escapeHTML(qRaw)}"</span></p>
+            <p class="text-slate-400 text-sm mt-1">Prova con un termine diverso o esplora tutti gli annunci.</p>
+            <button onclick="clearFilters()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">Vedi tutti gli annunci</button>`;
+    }
+
+    const hints = [];
+    if (prezzoMax < Infinity) hints.push('Rimuovi il limite di prezzo massimo');
+    if (prezzoMin > 0)        hints.push('Rimuovi il prezzo minimo');
+    if (supMin > 0)           hints.push('Rimuovi il filtro superficie');
+    if (tipo)                 hints.push(`Rimuovi il tipo "${tipo}"`);
+    if (stato)                hints.push(`Rimuovi "${stato}"`);
+    if (regione)              hints.push(`Rimuovi la regione "${regione}"`);
+
+    return `
+        <i class="fas fa-filter text-slate-200 text-6xl mb-4"></i>
+        <p class="text-slate-400 font-bold text-lg">Nessun posteggio con questi filtri</p>
+        <p class="text-slate-400 text-sm mt-1">Prova a rimuovere qualche filtro per vedere più risultati.</p>
+        ${hints.length ? `<p class="text-slate-400 text-xs mt-2 font-medium">${escapeHTML(hints[0])}</p>` : ''}
+        <button onclick="clearFilters()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">Azzera tutti i filtri</button>`;
+}
+
+function _getNearestCitiesWithListings(coords, maxCount) {
+    const seen = new Set();
+    const cities = [];
+    LISTINGS.forEach(l => {
+        const cc = getCityCoords(l.comune) || getCityCoords(l.regione);
+        if (!cc) return;
+        const d = getDistanceKM(coords[0], coords[1], cc[0], cc[1]);
+        const name = l.comune || l.regione;
+        if (name && !seen.has(name)) { seen.add(name); cities.push({ name, d }); }
+    });
+    return cities.sort((a, b) => a.d - b.d).slice(0, maxCount).map(c => c.name);
+}
+
+window._searchCity = function(city) {
+    const sBar = document.getElementById('searchBar');
+    if (sBar) sBar.value = city;
+    applyFilters();
+};
+
+window._removeHistory = function(e, q) {
+    e.stopPropagation();
+    removeFromHistory(q);
+    const sBar = document.getElementById('searchBar');
+    if (sBar) _showSuggestions(sBar);
+};
+
+// ── JSON-LD ItemList ──
 function _injectItemListLd(items, regione, tipo, q) {
-    const name = [
-        'Annunci posteggi mercatali',
-        regione ? `in ${regione}` : '',
-        tipo    ? `— ${tipo}`    : '',
-        q       ? `— ${q}`      : '',
-    ].filter(Boolean).join(' ');
-
+    const name = ['Annunci posteggi mercatali', regione ? `in ${regione}` : '', tipo ? `— ${tipo}` : '', q ? `— ${q}` : ''].filter(Boolean).join(' ');
     const ld = {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": name,
+        "@context": "https://schema.org", "@type": "ItemList", "name": name,
         "numberOfItems": items.length,
         "itemListElement": items.slice(0, 20).map((l, i) => ({
-            "@type": "ListItem",
-            "position": i + 1,
-            "url": `https://subingresso.it/annuncio?id=${l.id}`,
-            "name": l.titolo
+            "@type": "ListItem", "position": i + 1,
+            "url": `https://subingresso.it/annuncio?id=${l.id}`, "name": l.titolo
         }))
     };
-
     let el = document.getElementById('_ldItemList');
     if (!el) { el = document.createElement('script'); el.id = '_ldItemList'; el.type = 'application/ld+json'; document.head.appendChild(el); }
     el.textContent = JSON.stringify(ld);
 }
 
-function renderChips(regione, tipo, stato, q) {
+// ── CHIPS ──
+function renderChips(regione, tipo, stato, q, prezzoMin, prezzoMax, supMin) {
     const container = document.getElementById('activeChips');
     if (!container) return;
     container.innerHTML = '';
-    if (regione) container.innerHTML += chip(regione, () => { document.getElementById('fRegione').value = ''; applyFilters(); });
-    if (tipo)    container.innerHTML += chip(tipo,    () => { document.getElementById('fTipo').value = ''; applyFilters(); });
-    if (stato)   container.innerHTML += chip(stato,   () => { document.getElementById('fStato').value = ''; applyFilters(); });
-    if (q)       container.innerHTML += chip(`"${q}"`, () => { document.getElementById('searchBar').value = ''; applyFilters(); });
+    if (regione)          container.innerHTML += chip(regione,  () => { document.getElementById('fRegione').value = ''; applyFilters(); });
+    if (tipo)             container.innerHTML += chip(tipo,     () => { document.getElementById('fTipo').value = ''; applyFilters(); });
+    if (stato)            container.innerHTML += chip(stato,    () => { document.getElementById('fStato').value = ''; applyFilters(); });
+    if (q)                container.innerHTML += chip(`"${q}"`, () => { document.getElementById('searchBar').value = ''; applyFilters(); });
+    if (prezzoMin > 0)    container.innerHTML += chip(`min €${prezzoMin.toLocaleString('it')}`, () => { const el = document.getElementById('fPrezzoMin'); if (el) el.value = ''; applyFilters(); });
+    if (prezzoMax < Infinity) container.innerHTML += chip(`max €${prezzoMax.toLocaleString('it')}`, () => { const el = document.getElementById('fPrezzoMax'); if (el) el.value = ''; applyFilters(); });
+    if (supMin > 0)       container.innerHTML += chip(`≥${supMin}m²`, () => { const el = document.getElementById('fSup'); if (el) el.value = ''; applyFilters(); });
 }
 
 function chip(label, fn) {
     const id = 'chip_' + Math.random().toString(36).slice(2);
-    setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('click', fn);
-    }, 0);
+    setTimeout(() => { const el = document.getElementById(id); if (el) el.addEventListener('click', fn); }, 0);
     return `<span class="chip" id="${id}">${escapeHTML(label)} <i class="fas fa-times text-blue-400"></i></span>`;
 }
 
 function clearFilters() {
-    const ids = ['fRegione', 'fTipo', 'fStato', 'fPrezzoMax', 'fSup', 'searchBar'];
-    ids.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.value = '';
+    ['fRegione', 'fTipo', 'fStato', 'fPrezzoMin', 'fPrezzoMax', 'fSup', 'searchBar'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.value = '';
     });
     applyFilters();
 }
 
-// Feedback visivo su input + Enter per cercare
+// ── Search bar interactions ──
 const sBar = document.getElementById('searchBar');
 if (sBar) {
     sBar.addEventListener('input', () => {
         sBar.parentElement.classList.remove('search-active');
         void sBar.parentElement.offsetWidth;
         sBar.parentElement.classList.add('search-active');
+        _showSuggestions(sBar);
     });
+    sBar.addEventListener('focus', () => _showSuggestions(sBar));
+    sBar.addEventListener('blur',  () => setTimeout(_hideSuggestions, 200));
     sBar.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') applyFilters();
+        const ul = document.getElementById('searchSuggestions');
+        const items = ul ? [...ul.querySelectorAll('li[data-val]')] : [];
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            _sugActiveIdx = Math.min(_sugActiveIdx + 1, items.length - 1);
+            items.forEach((li, i) => li.classList.toggle('sug-active', i === _sugActiveIdx));
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            _sugActiveIdx = Math.max(_sugActiveIdx - 1, -1);
+            items.forEach((li, i) => li.classList.toggle('sug-active', i === _sugActiveIdx));
+        } else if (e.key === 'Enter') {
+            if (_sugActiveIdx >= 0 && items[_sugActiveIdx]) {
+                sBar.value = items[_sugActiveIdx].dataset.val;
+                _hideSuggestions();
+            }
+            applyFilters();
+        } else if (e.key === 'Escape') {
+            _hideSuggestions();
+            sBar.blur();
+        }
     });
 }
 
-// ── Load listings from Supabase (real data) ──────────────
+const _sugUl = document.getElementById('searchSuggestions');
+if (_sugUl) {
+    _sugUl.addEventListener('mousedown', (e) => {
+        const li = e.target.closest('li[data-val]');
+        if (li && !e.target.closest('.sug-del')) {
+            e.preventDefault();
+            if (sBar) sBar.value = li.dataset.val;
+            _hideSuggestions();
+            applyFilters();
+        }
+    });
+}
+
+// Rotating placeholder
+let _phIdx = 0;
+setInterval(() => {
+    const sb = document.getElementById('searchBar');
+    if (sb && document.activeElement !== sb && !sb.value) {
+        _phIdx = (_phIdx + 1) % PLACEHOLDER_TEXTS.length;
+        sb.placeholder = PLACEHOLDER_TEXTS[_phIdx];
+    }
+}, 3000);
+
+// ── Load listings from Supabase ──────────────────────────────
 async function loadListings() {
     try {
         const user = await getCurrentUser();
-        
-        // Costruiamo la query base: tutti gli annunci attivi
+
         let query = _supabase
             .from('annunci')
             .select('id, user_id, titolo, stato, status, tipo, settore, regione, comune, superficie, prezzo, contatto, dettagli_extra, img_urls, created_at, featured, featured_until, visualizzazioni')
             .order('created_at', { ascending: false });
 
-        // Se l'utente è loggato, può vedere i propri annunci (qualsiasi status) 
-        // ALTRIMENTI vede solo quelli active.
-        // Nota: La RLS del DB garantisce già che l'utente non possa vedere i pending degli altri.
-        // Ma per pulizia lato client, se non siamo admin o proprietari, filtriamo gli active.
         if (user) {
             query = query.neq('status', 'deleted').or(`status.eq.active,user_id.eq.${user.id}`);
         } else {
@@ -295,7 +481,6 @@ async function loadListings() {
                 data: l.data || l.created_at?.split('T')[0] || new Date().toISOString().split('T')[0]
             }));
 
-            // Fetch avatar e nome attuale per ogni venditore unico
             const uniqueIds = [...new Set(data.map(l => l.user_id).filter(Boolean))];
             if (uniqueIds.length) {
                 const { data: profiles } = await _supabase
@@ -319,9 +504,7 @@ async function loadListings() {
                 <i class="fas fa-wifi text-slate-200 text-6xl mb-4"></i>
                 <p class="text-slate-400 font-bold text-lg">Impossibile caricare gli annunci</p>
                 <p class="text-slate-400 text-sm mt-1">Controlla la connessione e riprova.</p>
-                <button onclick="loadListings()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
-                    Riprova
-                </button>`;
+                <button onclick="loadListings()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">Riprova</button>`;
             empty.classList.remove('hidden');
         }
         return;
@@ -331,7 +514,7 @@ async function loadListings() {
 
 document.addEventListener('DOMContentLoaded', loadListings);
 
-// ── ALERT MODAL FUNCTIONS ──────────────────────────
+// ── ALERT MODAL ──────────────────────────────────────────────
 function openAlertModal() {
     requireAuth(function() {
         const modal = document.getElementById('alertModal');
@@ -356,7 +539,6 @@ async function submitAlert() {
 
         if (errEl) errEl.classList.add('hidden');
 
-        // Geocodifica lato client
         const coords = comune ? getCityCoords(comune) : null;
         if (comune && !coords) {
             if (errEl) errEl.classList.remove('hidden');
@@ -373,25 +555,23 @@ async function submitAlert() {
             showToast('Alert attivato! Riceverai una email quando esce un annuncio' + (comune ? ' vicino a ' + comune : '') + '.', 'success');
         } else {
             console.error('Alert error:', error);
-            showToast('Errore durante il salvataggio dell\'alert. Riprova.', 'error');
+            showToast("Errore durante il salvataggio dell'alert. Riprova.", 'error');
         }
     });
 }
 
-// Mobile filters bottom sheet
+// ── MOBILE FILTERS ───────────────────────────────────────────
 function openMobileFilters() {
     const overlay = document.getElementById('mobileFiltersOverlay');
     const sheet   = document.getElementById('mobileFiltersSheet');
     if (!sheet) return;
 
-    // Popola regioni se vuote
     const mReg = document.getElementById('m_fRegione');
     if (mReg && mReg.options.length <= 1) {
         REGIONI.forEach(r => { const o = document.createElement('option'); o.value = o.textContent = r; mReg.appendChild(o); });
     }
 
-    // Sincronizza valori dal sidebar desktop
-    [['fRegione','m_fRegione'],['fTipo','m_fTipo'],['fStato','m_fStato'],['fPrezzoMax','m_fPrezzoMax'],['fSup','m_fSup']]
+    [['fRegione','m_fRegione'],['fTipo','m_fTipo'],['fStato','m_fStato'],['fPrezzoMin','m_fPrezzoMin'],['fPrezzoMax','m_fPrezzoMax'],['fSup','m_fSup']]
         .forEach(([src, dst]) => { const s = document.getElementById(src), d = document.getElementById(dst); if (s && d) d.value = s.value; });
 
     overlay?.classList.remove('hidden');
@@ -407,24 +587,26 @@ function closeMobileFilters() {
 }
 
 function applyMobileFilters() {
-    [['m_fRegione','fRegione'],['m_fTipo','fTipo'],['m_fStato','fStato'],['m_fPrezzoMax','fPrezzoMax'],['m_fSup','fSup']]
+    [['m_fRegione','fRegione'],['m_fTipo','fTipo'],['m_fStato','fStato'],['m_fPrezzoMin','fPrezzoMin'],['m_fPrezzoMax','fPrezzoMax'],['m_fSup','fSup']]
         .forEach(([src, dst]) => { const s = document.getElementById(src), d = document.getElementById(dst); if (s && d) d.value = s.value; });
     closeMobileFilters();
     applyFilters();
 }
 
 function resetMobileFilters() {
-    ['m_fRegione','m_fTipo','m_fStato','m_fPrezzoMax','m_fSup'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+    ['m_fRegione', 'm_fTipo', 'm_fStato', 'm_fPrezzoMin', 'm_fPrezzoMax', 'm_fSup'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.value = '';
+    });
 }
 
-// Esporta funzioni globali per i click negli HTML
+// ── EXPORTS ──────────────────────────────────────────────────
 window.applyFilters       = applyFilters;
 window.loadListings       = loadListings;
 window.openMobileFilters  = openMobileFilters;
 window.closeMobileFilters = closeMobileFilters;
 window.applyMobileFilters = applyMobileFilters;
 window.resetMobileFilters = resetMobileFilters;
-window.clearFilters = clearFilters;
-window.openAlertModal = openAlertModal;
-window.closeAlertModal = closeAlertModal;
-window.submitAlert = submitAlert;
+window.clearFilters       = clearFilters;
+window.openAlertModal     = openAlertModal;
+window.closeAlertModal    = closeAlertModal;
+window.submitAlert        = submitAlert;

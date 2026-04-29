@@ -56,6 +56,18 @@
         }
         .search-active { animation: searchPulse 0.5s ease; border-color: #3b82f6 !important; }
 
+        /* Autocomplete suggestions */
+        #searchSuggestions { position:absolute; left:-1px; right:-1px; top:calc(100% + 6px); background:#fff; border:1px solid #e2e8f0; border-radius:16px; box-shadow:0 8px 32px rgba(15,23,42,.13); z-index:200; overflow:hidden; max-height:256px; overflow-y:auto; }
+        #searchSuggestions li { padding:.55rem 1rem; font-size:.8rem; font-weight:600; cursor:pointer; display:flex; align-items:center; gap:.5rem; color:#0f172a; border-bottom:1px solid #f8fafc; transition:background .1s; list-style:none; }
+        #searchSuggestions li:last-child { border-bottom:none; }
+        #searchSuggestions li:hover, #searchSuggestions li.sug-active { background:#eff6ff; color:#2563eb; }
+        #searchSuggestions .sug-section { padding:.3rem 1rem .2rem; font-size:.65rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#94a3b8; background:#f8fafc; cursor:default; pointer-events:none; }
+        #searchSuggestions .sug-del { margin-left:auto; flex-shrink:0; color:#cbd5e1; background:none; border:none; cursor:pointer; padding:2px 6px; border-radius:4px; transition:color .15s; }
+        #searchSuggestions .sug-del:hover { color:#ef4444; }
+        /* Radius row */
+        #radiusRow { display:none; align-items:center; gap:.5rem; }
+        #radiusRow.visible { display:flex; }
+
         /* Mobile filters bottom sheet */
         #mobileFiltersSheet {
             transform: translateY(100%);
@@ -80,14 +92,15 @@
                 </div>
             </div>
             <!-- quick search bar — full width su mobile -->
-            <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-2xl px-4 py-2.5 w-full lg:max-w-sm">
+            <div id="searchBarWrapper" class="relative flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-2xl px-4 py-2.5 w-full lg:max-w-sm">
                 <i class="fas fa-search text-slate-400 text-sm flex-shrink-0"></i>
-                <input id="searchBar" type="text" placeholder="Cerca comune, città…"
+                <input id="searchBar" type="text" placeholder="Cerca comune, città…" autocomplete="off"
                        class="bg-transparent outline-none w-full text-sm font-semibold placeholder:text-slate-400 placeholder:font-normal min-w-0">
                 <button onclick="applyFilters()"
                         class="flex-shrink-0 bg-blue-600 text-white text-xs font-black px-3 py-1.5 rounded-xl hover:bg-blue-700 transition active:scale-95">
                     Cerca
                 </button>
+                <ul id="searchSuggestions" class="hidden"></ul>
             </div>
         </div>
         <!-- active chips -->
@@ -137,12 +150,16 @@
 
                 <!-- Prezzo -->
                 <div>
-                    <label class="filter-label">Prezzo massimo</label>
-                    <div class="flex items-center gap-2">
+                    <label class="filter-label">Fascia di prezzo</label>
+                    <div class="flex items-center gap-1">
                         <span class="text-slate-400 font-semibold text-sm">&euro;</span>
+                        <input id="fPrezzoMin" type="number" min="0" step="1000"
+                               placeholder="Min"
+                               class="filter-input" onchange="applyFilters()">
+                        <span class="text-slate-300 font-semibold text-sm px-0.5">–</span>
                         <input id="fPrezzoMax" type="number" min="0" step="1000"
-                               placeholder="Nessun limite"
-                               class="filter-input flex-grow" onchange="applyFilters()">
+                               placeholder="Max"
+                               class="filter-input" onchange="applyFilters()">
                     </div>
                 </div>
 
@@ -180,6 +197,16 @@
         <div class="flex-grow">
             <div class="flex flex-col gap-2 mb-2 lg:mb-5">
                 <p id="resultCount" class="text-xs font-semibold text-slate-500"></p>
+                <div id="radiusRow">
+                    <i class="fas fa-circle-dot text-blue-400 text-xs"></i>
+                    <span class="text-xs font-semibold text-slate-500">Raggio:</span>
+                    <select id="radiusKm" class="filter-input w-auto text-xs" onchange="applyFilters()" style="padding:.35rem .7rem;">
+                        <option value="50">50 km</option>
+                        <option value="100">100 km</option>
+                        <option value="200" selected>200 km</option>
+                        <option value="500">Tutta Italia</option>
+                    </select>
+                </div>
                 <div class="flex items-center gap-2">
                 <button onclick="openMobileFilters()" class="lg:hidden flex items-center gap-1.5 bg-slate-900 text-white text-xs font-black px-3 py-1.5 rounded-xl hover:bg-blue-600 transition active:scale-95">
                     <i class="fas fa-sliders-h text-[10px]"></i>
@@ -210,15 +237,8 @@
                 <div class="sk-pulse bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hidden xl:block"><div class="h-20 md:h-28 bg-slate-100"></div><div class="p-4 space-y-3"><div class="h-3 bg-slate-100 rounded w-2/5"></div><div class="h-4 bg-slate-100 rounded w-2/3"></div><div class="h-3 bg-slate-100 rounded w-1/2"></div><div class="flex items-center gap-2 mt-4"><div class="w-6 h-6 bg-slate-100 rounded-full"></div><div class="h-3 bg-slate-100 rounded w-1/4"></div></div><div class="pt-3 border-t border-slate-50 flex justify-between items-center"><div class="h-5 bg-slate-100 rounded w-1/3"></div><div class="w-9 h-9 bg-slate-100 rounded-xl"></div></div></div></div>
             </div>
 
-            <!-- Empty state -->
-            <div id="emptyState" class="hidden text-center py-24">
-                <i class="fas fa-store text-slate-200 text-6xl mb-4"></i>
-                <p class="text-slate-400 font-bold text-lg">Nessun annuncio trovato</p>
-                <p class="text-slate-400 text-sm mt-1">Prova a modificare i filtri di ricerca.</p>
-                <button onclick="clearFilters()" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
-                    Azzera filtri
-                </button>
-            </div>
+            <!-- Empty state — contenuto iniettato dinamicamente da annunci.js -->
+            <div id="emptyState" class="hidden text-center py-24"></div>
         </div>
 
     </div>
@@ -292,10 +312,12 @@
                 </select>
             </div>
             <div>
-                <label class="filter-label">Prezzo massimo</label>
-                <div class="flex items-center gap-2">
+                <label class="filter-label">Fascia di prezzo</label>
+                <div class="flex items-center gap-1">
                     <span class="text-slate-400 font-semibold text-sm">&euro;</span>
-                    <input id="m_fPrezzoMax" type="number" min="0" step="1000" placeholder="Nessun limite" class="filter-input flex-grow">
+                    <input id="m_fPrezzoMin" type="number" min="0" step="1000" placeholder="Min" class="filter-input">
+                    <span class="text-slate-300 font-semibold text-sm px-0.5">–</span>
+                    <input id="m_fPrezzoMax" type="number" min="0" step="1000" placeholder="Max" class="filter-input">
                 </div>
             </div>
             <div>
