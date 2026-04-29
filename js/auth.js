@@ -519,10 +519,15 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
         });
         const result = await res.json();
         if (!res.ok) {
-            if (res.status === 409) {
+            if (res.status === 409 || res.status >= 500) {
                 const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email, password });
                 if (!siErr && si?.session) {
                     await _afterRegisterSuccess(nome, welcomeLotteryEligible);
+                    return;
+                }
+                if (res.status >= 500) {
+                    _showAuthError('Account forse creato, ma il server ha risposto con errore. Prova ad accedere con la stessa email e password.');
+                    setTimeout(() => switchAuthTab('login'), 2500);
                     return;
                 }
             }
