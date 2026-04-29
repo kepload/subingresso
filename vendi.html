@@ -579,6 +579,32 @@ function useTemplate() {
 
 
 // ── Init ──────────────────────────────────────────────────
+async function prefillContactFromSession(force = false) {
+    try {
+        const user = await getCurrentUser();
+        if (!user) return null;
+
+        const nomeEl = document.getElementById('fNome');
+        const telEl  = document.getElementById('fTel');
+        const { data: profile } = await _supabase
+            .from('profiles')
+            .select('nome, cognome, telefono')
+            .eq('id', user.id)
+            .maybeSingle();
+
+        const fullName = profile ? `${profile.nome || ''} ${profile.cognome || ''}`.trim() : '';
+        if (nomeEl && (force || !nomeEl.value.trim())) {
+            nomeEl.value = fullName || user.email.split('@')[0];
+        }
+        if (telEl && (force || !telEl.value.trim())) {
+            telEl.value = profile?.telefono || '';
+        }
+        return user;
+    } catch (_) {
+        return null;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     // Popola regioni
     const sel = document.getElementById('fRegione');
@@ -608,17 +634,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Auth
-    const user = await getCurrentUser();
+    const user = await prefillContactFromSession();
     if (!user) {
         document.getElementById('authBanner').classList.remove('hidden');
-    } else {
-        const { data: profile } = await _supabase.from('profiles').select('nome, cognome, telefono').eq('id', user.id).single();
-        if (profile) {
-            document.getElementById('fNome').value = `${profile.nome || ''} ${profile.cognome || ''}`.trim() || user.email.split('@')[0];
-            document.getElementById('fTel').value = profile.telefono || '';
-        } else {
-            document.getElementById('fNome').value = user.email.split('@')[0];
-        }
     }
 
     // Controlla bozza salvata
@@ -645,8 +663,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 try {
-    _supabase.auth.onAuthStateChange(event => {
-        if (event === 'SIGNED_IN') document.getElementById('authBanner').classList.add('hidden');
+    _supabase.auth.onAuthStateChange(async event => {
+        if (event === 'SIGNED_IN') {
+            document.getElementById('authBanner').classList.add('hidden');
+            await prefillContactFromSession();
+        }
     });
 } catch (e) {}
 
@@ -707,20 +728,42 @@ function removeFile(btn) {
 // ── Lotteria vetrina welcome (0,1% → 30 giorni, entro 30gg iscrizione) ─────
 async function _tryGrantWelcomeVetrina(userId, annuncioId) {
     try {
-        const { data: won, error } = await _supabase.rpc('grant_welcome_vetrina', {
-            p_annuncio_id: annuncioId,
-            p_user_id: userId
+        const winKey = '_welcome_vetrina_won_' + userId;
+        if (localStorage.getItem(winKey) !== '1') return false;
+
+        const { data: { session } } = await _supabase.auth.getSession();
+        if (!session?.access_token) return false;
+
+        const res = await fetch(`${SUPABASE_URL}/functions/v1/grant-welcome-vetrina`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${session.access_token}`,
+            },
+            body: JSON.stringify({ annuncio_id: annuncioId }),
         });
-        return !error && won === true;
+        const result = await res.json().catch(() => ({}));
+        if (res.ok && result.granted === true) localStorage.removeItem(winKey);
+        return res.ok && result.granted === true;
     } catch (_) { return false; }
 }
 
 // ── Submit ────────────────────────────────────────────────
 async function submitAnnuncio() {
-    if (!_validateStep(5)) return;
-
     const user = await getCurrentUser();
-    if (!user) { openAuthModal('register'); return; }
+    if (!user) {
+        window.__onLoginSuccess = async () => {
+            document.getElementById('authBanner').classList.add('hidden');
+            await prefillContactFromSession();
+            submitAnnuncio();
+        };
+        openAuthModal('register');
+        return;
+    }
+
+    await prefillContactFromSession();
+    if (!_validateStep(5)) return;
 
     const btn = document.getElementById('submitBtn');
     if (btn.disabled) return;
@@ -729,14 +772,15 @@ async function submitAnnuncio() {
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
 
     // Anti-spam
-    const lastPost = localStorage.getItem('last_post_time');
+    const lastPostKey = 'last_post_time_' + user.id;
+    const lastPost = localStorage.getItem(lastPostKey);
     const now = Date.now();
     if (lastPost && (now - lastPost) < 60 * 1000) {
         _err('Puoi pubblicare un annuncio ogni minuto. Riprova tra poco.');
 
         btn.disabled = false; btn.innerHTML = orig; return;
     }
-    localStorage.setItem('last_post_time', now);
+    localStorage.setItem(lastPostKey, now);
 
     const expiresAt = new Date();
     expiresAt.setDate(expiresAt.getDate() + 100);
@@ -819,7 +863,7 @@ async function submitAnnuncio() {
     } catch (err) {
         console.error(err);
         _err('Errore durante la pubblicazione. Riprova tra poco.');
-        localStorage.removeItem('last_post_time');
+        localStorage.removeItem(lastPostKey);
         btn.disabled = false;
         btn.innerHTML = orig;
     }

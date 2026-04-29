@@ -302,6 +302,7 @@ async function _tryLottery() {
         if (session) {
             const { data } = await _supabase.rpc('try_welcome_lottery', { p_user_id: session.user.id });
             won = data === true;
+            if (won) localStorage.setItem('_welcome_vetrina_won_' + session.user.id, '1');
         }
     } catch (_) {}
     _spinWheel(won);
@@ -470,6 +471,8 @@ window.handleLogin = async function (e) {
 // ── Register ─────────────────────────────────────────────
 window.handleRegister = async function (e) {
     e.preventDefault();
+    const registerBtn = document.getElementById('registerBtn');
+    if (registerBtn?.disabled) return;
     _hideAuthFeedback();
     _setBtnLoading('registerBtn', true, '<i class="fas fa-user-plus"></i> Crea account');
 
@@ -481,11 +484,11 @@ window.handleRegister = async function (e) {
 
     try {
         const _lottEligible = sessionStorage.getItem('_reg_src') === 'popup';
-        _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
         await _registerBypass(email, password, nome, cognome, telefono, _lottEligible);
     } catch (err) {
-        _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
         _showAuthError('Errore durante la registrazione.');
+    } finally {
+        _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
     }
 };
 
@@ -508,6 +511,7 @@ async function _afterRegisterSuccess(nome, showWelcome = false) {
 
 async function _registerBypass(email, password, nome, cognome, telefono, welcomeLotteryEligible = false) {
     try {
+        const cleanEmail = email.trim().toLowerCase();
         const res = await fetch(`${SUPABASE_URL}/functions/v1/register-bypass`, {
             method: 'POST',
             headers: {
@@ -515,19 +519,20 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
                 'apikey': SUPABASE_ANON_KEY,
                 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
             },
-            body: JSON.stringify({ email, password, nome, cognome, telefono, welcome_lottery_eligible: welcomeLotteryEligible }),
+            body: JSON.stringify({ email: cleanEmail, password, nome, cognome, telefono, welcome_lottery_eligible: welcomeLotteryEligible }),
         });
-        const result = await res.json();
+        const result = await res.json().catch(() => ({}));
         if (!res.ok) {
             if (res.status === 409 || res.status >= 500) {
-                const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email, password });
+                const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email: cleanEmail, password });
                 if (!siErr && si?.session) {
                     await _afterRegisterSuccess(nome, welcomeLotteryEligible);
                     return;
                 }
                 if (res.status >= 500) {
-                    _showAuthError('Account forse creato, ma il server ha risposto con errore. Prova ad accedere con la stessa email e password.');
-                    setTimeout(() => switchAuthTab('login'), 2500);
+                    const recovered = await _registerWithSupabaseAuth(cleanEmail, password, nome, cognome, telefono, welcomeLotteryEligible);
+                    if (recovered) return;
+                    _showAuthError('Registrazione temporaneamente non disponibile. Riprova tra poco o accedi se hai già creato l\'account.');
                     return;
                 }
             }
@@ -535,7 +540,7 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
             return;
         }
         // Account creato — ora accedi
-        const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email, password });
+        const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email: cleanEmail, password });
         if (siErr || !si?.session) {
             _showAuthSuccess('Account creato! Accedi con le tue credenziali.');
             setTimeout(() => switchAuthTab('login'), 2000);
@@ -544,6 +549,38 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
         await _afterRegisterSuccess(nome, welcomeLotteryEligible);
     } catch (_) {
         _showAuthError('Errore durante la registrazione. Riprova.');
+    }
+}
+
+async function _registerWithSupabaseAuth(email, password, nome, cognome, telefono, welcomeLotteryEligible = false) {
+    try {
+        const { data, error } = await _supabase.auth.signUp({
+            email,
+            password,
+            options: {
+                data: { nome: nome || '', cognome: cognome || '', telefono: telefono || '' }
+            }
+        });
+        if (error) return false;
+
+        if (data?.session) {
+            const userId = data.session.user.id;
+            await _supabase.from('profiles').upsert({
+                id: userId,
+                nome: nome || '',
+                cognome: cognome || '',
+                telefono: telefono || '',
+                welcome_lottery_eligible: welcomeLotteryEligible
+            });
+            await _afterRegisterSuccess(nome, welcomeLotteryEligible);
+            return true;
+        }
+
+        _showAuthSuccess('Account creato! Controlla la tua email per confermare la registrazione.');
+        setTimeout(() => switchAuthTab('login'), 2500);
+        return true;
+    } catch (_) {
+        return false;
     }
 }
 

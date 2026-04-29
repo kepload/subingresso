@@ -24,21 +24,25 @@ Deno.serve(async (req) => {
     if (!body) return json({ error: 'Body mancante' }, 400);
 
     const { email, password, nome, cognome, telefono, welcome_lottery_eligible } = body;
-    if (!email || !password) return json({ error: 'Email e password obbligatorie' }, 400);
+    const cleanEmail = String(email || '').trim().toLowerCase();
+    const cleanPassword = String(password || '');
+    if (!cleanEmail || !cleanPassword) return json({ error: 'Email e password obbligatorie' }, 400);
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
       return json({ error: 'Email non valida' }, 400);
     }
-    if (password.length < 6) {
+    if (cleanPassword.length < 6) {
       return json({ error: 'Password troppo corta' }, 400);
     }
 
-    const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+    const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
     const eligible = welcome_lottery_eligible === true;
 
     const { data: userData, error: createErr } = await admin.auth.admin.createUser({
-      email,
-      password,
+      email: cleanEmail,
+      password: cleanPassword,
       email_confirm: true,
       user_metadata: { nome: nome || '', cognome: cognome || '', telefono: telefono || '' },
     });
@@ -51,16 +55,16 @@ Deno.serve(async (req) => {
 
       if (!duplicate) return json({ error: createErr.message }, 400);
 
-      const existing = await findUserByEmail(admin, email);
+      const existing = await findUserByEmail(admin, cleanEmail);
       if (existing && !existing.email_confirmed_at) {
         const { error: updateErr } = await admin.auth.admin.updateUserById(existing.id, {
-          password,
+          password: cleanPassword,
           email_confirm: true,
           user_metadata: { nome: nome || '', cognome: cognome || '', telefono: telefono || '' },
         });
         if (updateErr) return json({ error: updateErr.message }, 400);
         await upsertProfile(admin, existing.id, nome, cognome, telefono, eligible);
-        await logPendingVerification(admin, existing.id, email);
+        await logPendingVerification(admin, existing.id, cleanEmail);
         return json({ success: true });
       }
 
@@ -72,7 +76,7 @@ Deno.serve(async (req) => {
     }
 
     await upsertProfile(admin, userData.user.id, nome, cognome, telefono, eligible);
-    await logPendingVerification(admin, userData.user.id, email);
+    await logPendingVerification(admin, userData.user.id, cleanEmail);
 
     return json({ success: true });
   } catch (e) {
@@ -107,14 +111,18 @@ async function upsertProfile(
   telefono: string,
   welcomeLotteryEligible: boolean,
 ) {
-  const { error } = await admin.from('profiles').upsert({
-    id:                       userId,
-    nome:                     nome     || '',
-    cognome:                  cognome  || '',
-    telefono:                 telefono || '',
-    welcome_lottery_eligible: welcomeLotteryEligible,
-  });
-  if (error) console.error('register-bypass profile upsert error:', error);
+  try {
+    const { error } = await admin.from('profiles').upsert({
+      id:                       userId,
+      nome:                     nome     || '',
+      cognome:                  cognome  || '',
+      telefono:                 telefono || '',
+      welcome_lottery_eligible: welcomeLotteryEligible,
+    });
+    if (error) console.error('register-bypass profile upsert error:', error);
+  } catch (e) {
+    console.error('register-bypass profile upsert exception:', e);
+  }
 }
 
 async function logPendingVerification(admin: ReturnType<typeof createClient>, userId: string, email: string) {
