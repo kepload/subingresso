@@ -8,6 +8,7 @@
     <meta name="robots" content="noindex, nofollow">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         * { box-sizing: border-box; }
@@ -132,6 +133,29 @@
                 <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center md:text-left">
                     <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Lotteria Attiva</div>
                     <div id="admStatLotteria" class="text-2xl font-black text-slate-900">—</div>
+                </div>
+            </div>
+
+            <!-- Growth Chart -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-chart-line text-blue-500"></i> Crescita del sito
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(nuovi per settimana)</span>
+                    </h3>
+                    <div class="flex gap-1.5">
+                        <button id="chartBtn8"  onclick="setChartPeriod(8)"  class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-blue-600 text-white">8 sett.</button>
+                        <button id="chartBtn12" onclick="setChartPeriod(12)" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">12 sett.</button>
+                        <button id="chartBtn24" onclick="setChartPeriod(24)" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">6 mesi</button>
+                    </div>
+                </div>
+                <div class="relative h-56">
+                    <canvas id="growthChart"></canvas>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-4 text-xs font-bold text-slate-500">
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-blue-500"></span>Iscritti</span>
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-emerald-500"></span>Annunci</span>
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-amber-400"></span>Vetrine acquistate</span>
                 </div>
             </div>
 
@@ -533,6 +557,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('adminLogout').classList.remove('hidden');
         document.getElementById('adminPanel').classList.remove('hidden');
         loadAdminStats();
+        loadAdminGrowthChart();
         loadAdminRecentUsers();
         loadAdminBlog();
         loadAllListings();
@@ -581,6 +606,135 @@ async function loadAdminStats() {
     document.getElementById('admStatPending').textContent  = totalPending  || 0;
     document.getElementById('admStatVetrina').textContent  = totalVetrina  || 0;
     document.getElementById('admStatLotteria').textContent = totalLotteria || 0;
+}
+
+// ── Growth Chart ─────────────────────────────────────────
+let _growthChart = null;
+let _rawGrowthData = null;
+
+async function loadAdminGrowthChart(weeks = 8) {
+    const canvas = document.getElementById('growthChart');
+    if (!canvas) return;
+
+    if (!_rawGrowthData) {
+        const cutoff = new Date();
+        cutoff.setDate(cutoff.getDate() - 180);
+        const cutoffISO = cutoff.toISOString();
+
+        const [prRes, anRes, pmRes, ftRes] = await Promise.all([
+            _supabase.from('profiles').select('created_at').gte('created_at', cutoffISO),
+            _supabase.from('annunci').select('created_at').gte('created_at', cutoffISO).neq('status', 'deleted'),
+            _supabase.from('payments').select('created_at').gte('created_at', cutoffISO),
+            _supabase.from('annunci').select('featured_since').gte('featured_since', cutoffISO).not('featured_since', 'is', null),
+        ]);
+
+        // Usa payments se accessibile, altrimenti featured_since come proxy vetrine
+        const usePayments = !pmRes.error && Array.isArray(pmRes.data) && pmRes.data.length > 0;
+        _rawGrowthData = {
+            profiles: (prRes.data || []).map(r => r.created_at),
+            annunci:  (anRes.data  || []).map(r => r.created_at),
+            vetrine:  usePayments
+                ? (pmRes.data).map(r => r.created_at)
+                : (ftRes.data || []).map(r => r.featured_since),
+        };
+    }
+
+    const now = new Date();
+    const labels = [], pData = [], aData = [], vData = [];
+
+    const countInRange = (arr, s, e) => arr.filter(d => d >= s && d < e).length;
+
+    for (let i = weeks - 1; i >= 0; i--) {
+        const wEnd = new Date(now);
+        wEnd.setDate(now.getDate() - i * 7);
+        const wStart = new Date(wEnd);
+        wStart.setDate(wEnd.getDate() - 7);
+        const s = wStart.toISOString(), e = wEnd.toISOString();
+        labels.push(wStart.toLocaleDateString('it-IT', { day: '2-digit', month: '2-digit' }));
+        pData.push(countInRange(_rawGrowthData.profiles, s, e));
+        aData.push(countInRange(_rawGrowthData.annunci,  s, e));
+        vData.push(countInRange(_rawGrowthData.vetrine,  s, e));
+    }
+
+    const ds = (label, color, data) => ({
+        label, data,
+        borderColor: color,
+        backgroundColor: color + '18',
+        borderWidth: 2.5,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        pointBackgroundColor: '#fff',
+        pointBorderColor: color,
+        pointBorderWidth: 2,
+        tension: 0.4,
+        fill: true,
+    });
+
+    const chartData = {
+        labels,
+        datasets: [
+            ds('Iscritti',  '#3b82f6', pData),
+            ds('Annunci',   '#10b981', aData),
+            ds('Vetrine',   '#f59e0b', vData),
+        ],
+    };
+
+    if (_growthChart) {
+        _growthChart.data = chartData;
+        _growthChart.update('active');
+        return;
+    }
+
+    _growthChart = new Chart(canvas.getContext('2d'), {
+        type: 'line',
+        data: chartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    backgroundColor: '#0f172a',
+                    titleColor: '#94a3b8',
+                    bodyColor: '#f8fafc',
+                    titleFont: { family: 'Plus Jakarta Sans', weight: '800', size: 11 },
+                    bodyFont:  { family: 'Plus Jakarta Sans', weight: '600', size: 12 },
+                    padding: 12, cornerRadius: 12, boxPadding: 4,
+                    callbacks: {
+                        title: (items) => `Settimana dal ${items[0].label}`,
+                        label: (item) => ` ${item.dataset.label}: ${item.parsed.y}`,
+                    },
+                },
+            },
+            scales: {
+                x: {
+                    grid: { color: '#f1f5f9' },
+                    border: { display: false },
+                    ticks: { font: { family: 'Plus Jakarta Sans', weight: '700', size: 10 }, color: '#94a3b8' },
+                },
+                y: {
+                    grid: { color: '#f1f5f9' },
+                    border: { display: false },
+                    beginAtZero: true,
+                    ticks: {
+                        font: { family: 'Plus Jakarta Sans', weight: '700', size: 10 },
+                        color: '#94a3b8',
+                        precision: 0,
+                        stepSize: 1,
+                    },
+                },
+            },
+        },
+    });
+}
+
+function setChartPeriod(weeks) {
+    [8, 12, 24].forEach(w => {
+        const btn = document.getElementById(`chartBtn${w}`);
+        if (btn) btn.className = `text-[11px] font-black px-3 py-1.5 rounded-lg transition ${weeks === w ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`;
+    });
+    loadAdminGrowthChart(weeks);
 }
 
 async function loadAdminRecentUsers() {
