@@ -19,14 +19,14 @@ INSERT INTO auth.users (
 )
 VALUES
   ('a1b2c3d4-0001-4000-8000-000000000000', 'authenticated', 'authenticated', 'lucia.rinaldi.demo@subingresso.it', '', now() - interval '2 years 3 months', now() - interval '2 years 3 months', now(), '{"nome":"Lucia","cognome":"Rinaldi"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0002-4000-8000-000000000000', 'authenticated', 'authenticated', 'youssef.elamrani.demo@subingresso.it', '', now() - interval '1 year 8 months', now() - interval '1 year 8 months', now(), '{"nome":"Youssef","cognome":"El Amrani"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0003-4000-8000-000000000000', 'authenticated', 'authenticated', 'fatima.benali.demo@subingresso.it', '', now() - interval '1 year 1 month', now() - interval '1 year 1 month', now(), '{"nome":"Fatima","cognome":"Benali"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0002-4000-8000-000000000000', 'authenticated', 'authenticated', 'marco.vitali.demo@subingresso.it', '', now() - interval '1 year 8 months', now() - interval '1 year 8 months', now(), '{"nome":"Marco","cognome":"Vitali"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0003-4000-8000-000000000000', 'authenticated', 'authenticated', 'elena.rossi.demo@subingresso.it', '', now() - interval '1 year 1 month', now() - interval '1 year 1 month', now(), '{"nome":"Elena","cognome":"Rossi"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
   ('a1b2c3d4-0004-4000-8000-000000000000', 'authenticated', 'authenticated', 'giovanna.ferrara.demo@subingresso.it', '', now() - interval '3 years', now() - interval '3 years', now(), '{"nome":"Giovanna","cognome":"Ferrara"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0005-4000-8000-000000000000', 'authenticated', 'authenticated', 'karim.aitlahcen.demo@subingresso.it', '', now() - interval '2 years', now() - interval '2 years', now(), '{"nome":"Karim","cognome":"Ait Lahcen"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0005-4000-8000-000000000000', 'authenticated', 'authenticated', 'roberto.amato.demo@subingresso.it', '', now() - interval '2 years', now() - interval '2 years', now(), '{"nome":"Roberto","cognome":"Amato"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
   ('a1b2c3d4-0006-4000-8000-000000000000', 'authenticated', 'authenticated', 'luigi.bianchi.demo@subingresso.it', '', now() - interval '1 year 5 months', now() - interval '1 year 5 months', now(), '{"nome":"Luigi","cognome":"Bianchi"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0007-4000-8000-000000000000', 'authenticated', 'authenticated', 'samira.oudghiri.demo@subingresso.it', '', now() - interval '10 months', now() - interval '10 months', now(), '{"nome":"Samira","cognome":"Oudghiri"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0007-4000-8000-000000000000', 'authenticated', 'authenticated', 'stefania.costa.demo@subingresso.it', '', now() - interval '10 months', now() - interval '10 months', now(), '{"nome":"Stefania","cognome":"Costa"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
   ('a1b2c3d4-0008-4000-8000-000000000000', 'authenticated', 'authenticated', 'antonio.perini.demo@subingresso.it', '', now() - interval '2 years 7 months', now() - interval '2 years 7 months', now(), '{"nome":"Antonio","cognome":"Perini"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0009-4000-8000-000000000000', 'authenticated', 'authenticated', 'hassan.rachidi.demo@subingresso.it', '', now() - interval '3 years 2 months', now() - interval '3 years 2 months', now(), '{"nome":"Hassan","cognome":"Rachidi"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0009-4000-8000-000000000000', 'authenticated', 'authenticated', 'mirella.galli.demo@subingresso.it', '', now() - interval '3 years 2 months', now() - interval '3 years 2 months', now(), '{"nome":"Mirella","cognome":"Galli"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
   ('a1b2c3d4-0010-4000-8000-000000000000', 'authenticated', 'authenticated', 'nadia.conti.demo@subingresso.it', '', now() - interval '1 year', now() - interval '1 year', now(), '{"nome":"Nadia","cognome":"Conti"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000')
 ON CONFLICT (id) DO UPDATE SET
   email = EXCLUDED.email,
@@ -36,14 +36,14 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO public.profiles (id, nome, cognome, created_at)
 VALUES
   ('a1b2c3d4-0001-4000-8000-000000000000', 'Lucia',    'Rinaldi',    now() - interval '2 years 3 months'),
-  ('a1b2c3d4-0002-4000-8000-000000000000', 'Youssef',  'El Amrani',  now() - interval '1 year 8 months'),
-  ('a1b2c3d4-0003-4000-8000-000000000000', 'Fatima',   'Benali',     now() - interval '1 year 1 month'),
+  ('a1b2c3d4-0002-4000-8000-000000000000', 'Marco',    'Vitali',     now() - interval '1 year 8 months'),
+  ('a1b2c3d4-0003-4000-8000-000000000000', 'Elena',    'Rossi',      now() - interval '1 year 1 month'),
   ('a1b2c3d4-0004-4000-8000-000000000000', 'Giovanna', 'Ferrara',    now() - interval '3 years'),
-  ('a1b2c3d4-0005-4000-8000-000000000000', 'Karim',    'Ait Lahcen', now() - interval '2 years'),
+  ('a1b2c3d4-0005-4000-8000-000000000000', 'Roberto',  'Amato',      now() - interval '2 years'),
   ('a1b2c3d4-0006-4000-8000-000000000000', 'Luigi',    'Bianchi',    now() - interval '1 year 5 months'),
-  ('a1b2c3d4-0007-4000-8000-000000000000', 'Samira',   'Oudghiri',   now() - interval '10 months'),
+  ('a1b2c3d4-0007-4000-8000-000000000000', 'Stefania', 'Costa',      now() - interval '10 months'),
   ('a1b2c3d4-0008-4000-8000-000000000000', 'Antonio',  'Perini',     now() - interval '2 years 7 months'),
-  ('a1b2c3d4-0009-4000-8000-000000000000', 'Hassan',   'Rachidi',    now() - interval '3 years 2 months'),
+  ('a1b2c3d4-0009-4000-8000-000000000000', 'Mirella',  'Galli',      now() - interval '3 years 2 months'),
   ('a1b2c3d4-0010-4000-8000-000000000000', 'Nadia',    'Conti',      now() - interval '1 year')
 ON CONFLICT (id) DO UPDATE SET
   nome = EXCLUDED.nome,
@@ -74,9 +74,9 @@ SET user_id = 'a1b2c3d4-0002-4000-8000-000000000000',
     superficie = 50,
     giorni = 'Venerdi',
     prezzo = 36000,
-    contatto = 'Youssef El Amrani'
+    contatto = 'Marco Vitali'
 WHERE user_id = 'a1b2c3d4-0002-4000-8000-000000000000'
-   OR contatto IN ('Marco V.', 'Youssef E.', 'Youssef El Amrani')
+   OR contatto IN ('Marco V.', 'Marco Vitali')
    OR titolo IN (
       'Posteggio calzature in vendita - Mercato di Sirmione',
       'Posteggio calzature in vendita - Sirmione'
@@ -90,9 +90,9 @@ SET user_id = 'a1b2c3d4-0003-4000-8000-000000000000',
     superficie = 45,
     giorni = 'Lunedi',
     prezzo = 24000,
-    contatto = 'Fatima Benali'
+    contatto = 'Elena Rossi'
 WHERE user_id = 'a1b2c3d4-0003-4000-8000-000000000000'
-   OR contatto IN ('Elena R.', 'Fatima B.', 'Fatima Benali')
+   OR contatto IN ('Elena R.', 'Elena Rossi')
    OR titolo IN (
       'Vendo posteggio bigiotteria e accessori - Lazise, Lago di Garda',
       'Vendo posteggio bigiotteria e accessori - Lazise'
@@ -119,9 +119,9 @@ SET user_id = 'a1b2c3d4-0005-4000-8000-000000000000',
     superficie = 70,
     giorni = 'Martedi',
     prezzo = 46000,
-    contatto = 'Karim Ait Lahcen'
+    contatto = 'Roberto Amato'
 WHERE user_id = 'a1b2c3d4-0005-4000-8000-000000000000'
-   OR contatto IN ('Roberto A.', 'Karim A.', 'Karim Ait Lahcen')
+   OR contatto IN ('Roberto A.', 'Roberto Amato')
    OR titolo IN (
       'Posteggio abbigliamento 40 mq - Grande Mercato di Desenzano del Garda',
       'Posteggio abbigliamento in vendita - Desenzano del Garda'
@@ -151,9 +151,9 @@ SET user_id = 'a1b2c3d4-0007-4000-8000-000000000000',
     superficie = 50,
     giorni = 'Sabato, Domenica',
     prezzo = 28000,
-    contatto = 'Samira Oudghiri'
+    contatto = 'Stefania Costa'
 WHERE user_id = 'a1b2c3d4-0007-4000-8000-000000000000'
-   OR contatto IN ('Stefania C.', 'Samira O.', 'Samira Oudghiri')
+   OR contatto IN ('Stefania C.', 'Stefania Costa')
    OR titolo IN (
       'Vendo posteggio pelletteria e borse - Bergamo, mercato weekend',
       'Vendo posteggio pelletteria e borse - Bergamo'
@@ -183,9 +183,9 @@ SET user_id = 'a1b2c3d4-0009-4000-8000-000000000000',
     superficie = 55,
     giorni = 'Lunedi, Giovedi',
     prezzo = 25000,
-    contatto = 'Hassan Rachidi'
+    contatto = 'Mirella Galli'
 WHERE user_id = 'a1b2c3d4-0009-4000-8000-000000000000'
-   OR contatto IN ('Mirella G.', 'Hassan R.', 'Hassan Rachidi')
+   OR contatto IN ('Mirella G.', 'Mirella Galli')
    OR titolo IN (
       'Vendo posteggio abbigliamento bambino - Mercato di Camerlata, Como',
       'Vendo posteggio abbigliamento bambino - Como'

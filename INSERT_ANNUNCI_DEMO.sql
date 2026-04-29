@@ -15,14 +15,14 @@ INSERT INTO auth.users (
 )
 VALUES
   ('a1b2c3d4-0001-4000-8000-000000000000', 'authenticated', 'authenticated', 'lucia.rinaldi.demo@subingresso.it', '', now() - interval '2 years 3 months', now() - interval '2 years 3 months', now(), '{"nome":"Lucia","cognome":"Rinaldi"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0002-4000-8000-000000000000', 'authenticated', 'authenticated', 'youssef.elamrani.demo@subingresso.it', '', now() - interval '1 year 8 months', now() - interval '1 year 8 months', now(), '{"nome":"Youssef","cognome":"El Amrani"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0003-4000-8000-000000000000', 'authenticated', 'authenticated', 'fatima.benali.demo@subingresso.it', '', now() - interval '1 year 1 month', now() - interval '1 year 1 month', now(), '{"nome":"Fatima","cognome":"Benali"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0002-4000-8000-000000000000', 'authenticated', 'authenticated', 'marco.vitali.demo@subingresso.it', '', now() - interval '1 year 8 months', now() - interval '1 year 8 months', now(), '{"nome":"Marco","cognome":"Vitali"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0003-4000-8000-000000000000', 'authenticated', 'authenticated', 'elena.rossi.demo@subingresso.it', '', now() - interval '1 year 1 month', now() - interval '1 year 1 month', now(), '{"nome":"Elena","cognome":"Rossi"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
   ('a1b2c3d4-0004-4000-8000-000000000000', 'authenticated', 'authenticated', 'giovanna.ferrara.demo@subingresso.it', '', now() - interval '3 years', now() - interval '3 years', now(), '{"nome":"Giovanna","cognome":"Ferrara"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0005-4000-8000-000000000000', 'authenticated', 'authenticated', 'karim.aitlahcen.demo@subingresso.it', '', now() - interval '2 years', now() - interval '2 years', now(), '{"nome":"Karim","cognome":"Ait Lahcen"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0005-4000-8000-000000000000', 'authenticated', 'authenticated', 'roberto.amato.demo@subingresso.it', '', now() - interval '2 years', now() - interval '2 years', now(), '{"nome":"Roberto","cognome":"Amato"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
   ('a1b2c3d4-0006-4000-8000-000000000000', 'authenticated', 'authenticated', 'luigi.bianchi.demo@subingresso.it', '', now() - interval '1 year 5 months', now() - interval '1 year 5 months', now(), '{"nome":"Luigi","cognome":"Bianchi"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0007-4000-8000-000000000000', 'authenticated', 'authenticated', 'samira.oudghiri.demo@subingresso.it', '', now() - interval '10 months', now() - interval '10 months', now(), '{"nome":"Samira","cognome":"Oudghiri"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0007-4000-8000-000000000000', 'authenticated', 'authenticated', 'stefania.costa.demo@subingresso.it', '', now() - interval '10 months', now() - interval '10 months', now(), '{"nome":"Stefania","cognome":"Costa"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
   ('a1b2c3d4-0008-4000-8000-000000000000', 'authenticated', 'authenticated', 'antonio.perini.demo@subingresso.it', '', now() - interval '2 years 7 months', now() - interval '2 years 7 months', now(), '{"nome":"Antonio","cognome":"Perini"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
-  ('a1b2c3d4-0009-4000-8000-000000000000', 'authenticated', 'authenticated', 'hassan.rachidi.demo@subingresso.it', '', now() - interval '3 years 2 months', now() - interval '3 years 2 months', now(), '{"nome":"Hassan","cognome":"Rachidi"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
+  ('a1b2c3d4-0009-4000-8000-000000000000', 'authenticated', 'authenticated', 'mirella.galli.demo@subingresso.it', '', now() - interval '3 years 2 months', now() - interval '3 years 2 months', now(), '{"nome":"Mirella","cognome":"Galli"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000'),
   ('a1b2c3d4-0010-4000-8000-000000000000', 'authenticated', 'authenticated', 'nadia.conti.demo@subingresso.it', '', now() - interval '1 year', now() - interval '1 year', now(), '{"nome":"Nadia","cognome":"Conti"}', '{"provider":"email","providers":["email"]}', false, '00000000-0000-0000-0000-000000000000')
 ON CONFLICT (id) DO UPDATE SET
   email = EXCLUDED.email,
@@ -32,14 +32,14 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO public.profiles (id, nome, cognome, created_at)
 VALUES
   ('a1b2c3d4-0001-4000-8000-000000000000', 'Lucia',    'Rinaldi',    now() - interval '2 years 3 months'),
-  ('a1b2c3d4-0002-4000-8000-000000000000', 'Youssef',  'El Amrani',  now() - interval '1 year 8 months'),
-  ('a1b2c3d4-0003-4000-8000-000000000000', 'Fatima',   'Benali',     now() - interval '1 year 1 month'),
+  ('a1b2c3d4-0002-4000-8000-000000000000', 'Marco',    'Vitali',     now() - interval '1 year 8 months'),
+  ('a1b2c3d4-0003-4000-8000-000000000000', 'Elena',    'Rossi',      now() - interval '1 year 1 month'),
   ('a1b2c3d4-0004-4000-8000-000000000000', 'Giovanna', 'Ferrara',    now() - interval '3 years'),
-  ('a1b2c3d4-0005-4000-8000-000000000000', 'Karim',    'Ait Lahcen', now() - interval '2 years'),
+  ('a1b2c3d4-0005-4000-8000-000000000000', 'Roberto',  'Amato',      now() - interval '2 years'),
   ('a1b2c3d4-0006-4000-8000-000000000000', 'Luigi',    'Bianchi',    now() - interval '1 year 5 months'),
-  ('a1b2c3d4-0007-4000-8000-000000000000', 'Samira',   'Oudghiri',   now() - interval '10 months'),
+  ('a1b2c3d4-0007-4000-8000-000000000000', 'Stefania', 'Costa',      now() - interval '10 months'),
   ('a1b2c3d4-0008-4000-8000-000000000000', 'Antonio',  'Perini',     now() - interval '2 years 7 months'),
-  ('a1b2c3d4-0009-4000-8000-000000000000', 'Hassan',   'Rachidi',    now() - interval '3 years 2 months'),
+  ('a1b2c3d4-0009-4000-8000-000000000000', 'Mirella',  'Galli',      now() - interval '3 years 2 months'),
   ('a1b2c3d4-0010-4000-8000-000000000000', 'Nadia',    'Conti',      now() - interval '1 year')
 ON CONFLICT (id) DO UPDATE SET
   nome = EXCLUDED.nome,
@@ -62,8 +62,8 @@ WHERE user_id IN (
 OR contatto IN (
   'Carla M.', 'Marco V.', 'Elena R.', 'Giovanna F.', 'Roberto A.',
   'Luigi B.', 'Stefania C.', 'Antonio P.', 'Mirella G.', 'Federico N.',
-  'Lucia R.', 'Youssef E.', 'Fatima B.', 'Karim A.', 'Samira O.',
-  'Hassan R.', 'Nadia C.'
+  'Lucia R.', 'Marco V.', 'Elena R.', 'Roberto A.', 'Stefania C.',
+  'Mirella G.', 'Nadia C.'
 );
 
 INSERT INTO annunci (
@@ -87,7 +87,7 @@ VALUES
   'Vendo posteggio non alimentare al mercato settimanale di Sirmione, settore calzature e accessori. Lo spazio consente espositori scarpe, banco e ombrellone. Nei periodi turistici il passaggio aumenta, ma chi compra deve valutare posizione, concessione, concorrenza e stagionalita. Cessione per cambio zona di lavoro. Attrezzatura base inclusa, merce da trattare separatamente se interessa.',
   'Vendita', 'Mercato settimanale', 'Calzature', 'Lombardia', 'BS', 'Sirmione',
   50, 'Venerdi',
-  36000, 'Youssef El Amrani', 'active',
+  36000, 'Marco Vitali', 'active',
   now() - interval '7 days', now() - interval '7 days' + interval '200 days',
   '{}', '{}'
 ),
@@ -97,7 +97,7 @@ VALUES
   'Cedo posteggio non alimentare al mercato di Lazise, adatto a bigiotteria, accessori moda e piccoli articoli regalo. Dimensione comoda per banco modulare, espositori verticali e scorta leggera. Il lavoro e piu interessante nei mesi di maggiore movimento sul lago, mentre fuori stagione richiede continuita e prezzi corretti. Cedo per motivi familiari. Disponibile a mostrare posizione e documenti prima di trattare.',
   'Vendita', 'Mercato settimanale', 'Bigiotteria e accessori', 'Veneto', 'VR', 'Lazise',
   45, 'Lunedi',
-  24000, 'Fatima Benali', 'active',
+  24000, 'Elena Rossi', 'active',
   now() - interval '31 days', now() - interval '31 days' + interval '200 days',
   '{}', '{}'
 ),
@@ -117,7 +117,7 @@ VALUES
   'Vendo posteggio non alimentare al mercato settimanale di Desenzano del Garda, settore abbigliamento uomo e donna. Lo spazio permette esposizione ordinata con appendiabiti, banco e deposito leggero. Il mercato lavora con residenti e visitatori, ma il prezzo tiene conto anche della stagionalita e della necessita di gestire bene assortimento e margini. Cedo per riorganizzazione attivita. Documentazione disponibile in fase di trattativa.',
   'Vendita', 'Mercato settimanale', 'Abbigliamento', 'Lombardia', 'BS', 'Desenzano del Garda',
   70, 'Martedi',
-  46000, 'Karim Ait Lahcen', 'active',
+  46000, 'Roberto Amato', 'active',
   now() - interval '12 days', now() - interval '12 days' + interval '200 days',
   '{}', '{}'
 ),
@@ -137,7 +137,7 @@ VALUES
   'Cedo posteggio non alimentare in zona Bergamo, settore borse, cinture, portafogli e piccola pelletteria. Spazio sufficiente per espositori su piu lati e banco centrale. Lavoro indicato per chi ha gia fornitori e sa gestire assortimento, prezzo medio e rotazione merce. Il valore riguarda il posteggio e l attrezzatura, non vengono promessi incassi. Inclusi espositori, bacheche porta-borse e teli.',
   'Vendita', 'Mercato settimanale', 'Pelletteria e borse', 'Lombardia', 'BG', 'Bergamo',
   50, 'Sabato, Domenica',
-  28000, 'Samira Oudghiri', 'active',
+  28000, 'Stefania Costa', 'active',
   now() - interval '38 days', now() - interval '38 days' + interval '200 days',
   '{}', '{}'
 ),
@@ -157,7 +157,7 @@ VALUES
   'Cedo posteggio non alimentare in mercato di zona a Como, settore abbigliamento bambino. Spazio adatto a appendiabiti, scaffali per taglie e banco. Clientela soprattutto locale, quindi il lavoro dipende da assortimento, prezzo e presenza costante. Attrezzatura compresa: appendiabiti, scaffali, banco e copertura. Possibile trattativa separata per parte dello stock. Prima di procedere consiglio verifica della concessione e delle regole comunali sul subingresso.',
   'Vendita', 'Mercato settimanale', 'Abbigliamento bambino', 'Lombardia', 'CO', 'Como',
   55, 'Lunedi, Giovedi',
-  25000, 'Hassan Rachidi', 'active',
+  25000, 'Mirella Galli', 'active',
   now() - interval '9 days', now() - interval '9 days' + interval '200 days',
   '{}', '{}'
 ),
