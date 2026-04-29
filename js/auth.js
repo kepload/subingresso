@@ -480,8 +480,42 @@ window.handleRegister = async function (e) {
     const password = document.getElementById('regPassword').value;
 
     try {
+        const _lottEligible = sessionStorage.getItem('_reg_src') === 'popup';
+        const { data, error } = await _supabase.auth.signUp({
+            email,
+            password,
+            options: {
+                emailRedirectTo: 'https://subingresso.it',
+                data: { nome, cognome, telefono, welcome_lottery_eligible: _lottEligible },
+            },
+        });
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
-        await _registerBypass(email, password, nome, cognome, telefono);
+
+        if (!error) {
+            if (data?.session) {
+                await _afterRegisterSuccess(nome);
+                return;
+            }
+            _suppressVisitorPopup();
+            _showAuthSuccess('Account creato! Controlla la tua email per confermare la registrazione.');
+            setTimeout(() => switchAuthTab('login'), 2500);
+            return;
+        }
+
+        const msg = String(error.message || '').toLowerCase();
+        const canBypass =
+            msg.includes('rate limit') ||
+            msg.includes('email') ||
+            msg.includes('confirmation') ||
+            msg.includes('confirm') ||
+            msg.includes('hook');
+
+        if (canBypass) {
+            await _registerBypass(email, password, nome, cognome, telefono);
+            return;
+        }
+
+        _showAuthError(error.message || 'Errore durante la registrazione.');
     } catch (err) {
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
         _showAuthError('Errore durante la registrazione.');

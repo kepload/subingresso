@@ -55,22 +55,31 @@ Deno.serve(async (req) => {
       return json({ error: createErr.message }, 400);
     }
 
+    if (!userData?.user?.id) {
+      return json({ error: 'Utente non creato' }, 500);
+    }
+
     const userId = userData.user.id;
 
-    // Crea profilo con credito vetrina welcome
-    await admin.from('profiles').upsert({
+    const { error: profileErr } = await admin.from('profiles').upsert({
       id:                  userId,
       nome:                nome     || '',
       cognome:             cognome  || '',
       telefono:            telefono || '',
-      vetrina_welcome_days: 10,
+      welcome_lottery_eligible: false,
     });
+    if (profileErr) {
+      console.error('register-bypass profile upsert error:', profileErr);
+    }
 
     // Salva per verifica email notturna
-    await admin.from('pending_email_verifications').insert({
+    const { error: pendingErr } = await admin.from('pending_email_verifications').insert({
       user_id: userId,
       email,
-    }).catch(() => {}); // non critico, non blocca la registrazione
+    });
+    if (pendingErr) {
+      console.error('register-bypass pending email log error:', pendingErr);
+    }
 
     return json({ success: true });
 
