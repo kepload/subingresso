@@ -507,11 +507,22 @@ async function _registerBypass(email, password, nome, cognome, telefono) {
     try {
         const res = await fetch(`${SUPABASE_URL}/functions/v1/register-bypass`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+            headers: {
+                'Content-Type': 'application/json',
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            },
             body: JSON.stringify({ email, password, nome, cognome, telefono }),
         });
         const result = await res.json();
         if (!res.ok) {
+            if (res.status === 409) {
+                const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email, password });
+                if (!siErr && si?.session) {
+                    await _afterRegisterSuccess(nome);
+                    return;
+                }
+            }
             _showAuthError(result.error || 'Errore durante la registrazione.');
             return;
         }
