@@ -102,17 +102,36 @@ Deno.serve(async (req) => {
 
     const profileMap = new Map((profiles || []).map((p: Record<string, unknown>) => [p.id, p]));
 
+    // Gli utenti creati via register-bypass hanno email_confirmed_at valorizzato
+    // per poter accedere subito. La verifica reale si legge dalla coda pending.
+    const { data: pendingRows, error: pendingErr } = ids.length
+      ? await admin
+          .from('pending_email_verifications')
+          .select('user_id, verified_at')
+          .in('user_id', ids)
+      : { data: [], error: null };
+
+    if (pendingErr) console.error('admin-recent-users pending lookup error:', pendingErr);
+    const pendingMap = new Map(
+      (pendingRows || [])
+        .filter((p: Record<string, unknown>) => !p.verified_at)
+        .map((p: Record<string, unknown>) => [String(p.user_id), true])
+    );
+
     const users = rows
       .sort((a, b) => new Date(String(b.created_at || 0)).getTime() - new Date(String(a.created_at || 0)).getTime())
       .slice(0, 5)
       .map((u: Record<string, unknown>) => {
         const p = profileMap.get(String(u.id)) as Record<string, unknown> || {};
+        const verificationPending = pendingMap.has(String(u.id));
         return {
           id:              u.id,
           email:           u.email,
           created_at:      u.created_at,
           last_sign_in_at: u.last_sign_in_at,
           confirmed_at:    u.confirmed_at,
+          email_verified:  Boolean(u.confirmed_at) && !verificationPending,
+          verification_pending: verificationPending,
           nome:            p.nome    || '',
           cognome:         p.cognome || '',
         };
