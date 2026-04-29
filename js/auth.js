@@ -481,41 +481,8 @@ window.handleRegister = async function (e) {
 
     try {
         const _lottEligible = sessionStorage.getItem('_reg_src') === 'popup';
-        const { data, error } = await _supabase.auth.signUp({
-            email,
-            password,
-            options: {
-                emailRedirectTo: 'https://subingresso.it',
-                data: { nome, cognome, telefono, welcome_lottery_eligible: _lottEligible },
-            },
-        });
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
-
-        if (!error) {
-            if (data?.session) {
-                await _afterRegisterSuccess(nome);
-                return;
-            }
-            _suppressVisitorPopup();
-            _showAuthSuccess('Account creato! Controlla la tua email per confermare la registrazione.');
-            setTimeout(() => switchAuthTab('login'), 2500);
-            return;
-        }
-
-        const msg = String(error.message || '').toLowerCase();
-        const canBypass =
-            msg.includes('rate limit') ||
-            msg.includes('email') ||
-            msg.includes('confirmation') ||
-            msg.includes('confirm') ||
-            msg.includes('hook');
-
-        if (canBypass) {
-            await _registerBypass(email, password, nome, cognome, telefono);
-            return;
-        }
-
-        _showAuthError(error.message || 'Errore durante la registrazione.');
+        await _registerBypass(email, password, nome, cognome, telefono, _lottEligible);
     } catch (err) {
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
         _showAuthError('Errore durante la registrazione.');
@@ -523,13 +490,15 @@ window.handleRegister = async function (e) {
 };
 
 // ── Register helpers ─────────────────────────────────────
-async function _afterRegisterSuccess(nome) {
+async function _afterRegisterSuccess(nome, showWelcome = false) {
     _suppressVisitorPopup();
-    _profileCache = { id: (await getCurrentUser())?.id, nome };
+    const user = await getCurrentUser();
+    _profileCache = { id: user?.id, nome };
     _showAuthSuccess('Benvenuto! Account creato con successo.');
     setTimeout(() => {
         closeAuthModal();
         updateAuthNav();
+        if (showWelcome && user?.id) _showWelcomeNewPopup(user.id);
         if (typeof window.__onLoginSuccess === 'function') {
             window.__onLoginSuccess();
             window.__onLoginSuccess = null;
@@ -537,7 +506,7 @@ async function _afterRegisterSuccess(nome) {
     }, 1500);
 }
 
-async function _registerBypass(email, password, nome, cognome, telefono) {
+async function _registerBypass(email, password, nome, cognome, telefono, welcomeLotteryEligible = false) {
     try {
         const res = await fetch(`${SUPABASE_URL}/functions/v1/register-bypass`, {
             method: 'POST',
@@ -546,14 +515,14 @@ async function _registerBypass(email, password, nome, cognome, telefono) {
                 'apikey': SUPABASE_ANON_KEY,
                 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
             },
-            body: JSON.stringify({ email, password, nome, cognome, telefono }),
+            body: JSON.stringify({ email, password, nome, cognome, telefono, welcome_lottery_eligible: welcomeLotteryEligible }),
         });
         const result = await res.json();
         if (!res.ok) {
             if (res.status === 409) {
                 const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email, password });
                 if (!siErr && si?.session) {
-                    await _afterRegisterSuccess(nome);
+                    await _afterRegisterSuccess(nome, welcomeLotteryEligible);
                     return;
                 }
             }
@@ -567,7 +536,7 @@ async function _registerBypass(email, password, nome, cognome, telefono) {
             setTimeout(() => switchAuthTab('login'), 2000);
             return;
         }
-        await _afterRegisterSuccess(nome);
+        await _afterRegisterSuccess(nome, welcomeLotteryEligible);
     } catch (_) {
         _showAuthError('Errore durante la registrazione. Riprova.');
     }
