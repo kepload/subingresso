@@ -69,23 +69,30 @@ Deno.serve(async (req) => {
       return json({ error: 'SUPABASE_SERVICE_ROLE_KEY mancante nei secrets della funzione' }, 500);
     }
 
-    const { data, error } = await admin.auth.admin.listUsers({
-      page: 1,
-      perPage: 50,
+    // Usa REST API diretta per evitare incompatibilità SDK su Deno
+    const usersRes = await fetch(`${SUPABASE_URL}/auth/v1/admin/users?page=1&per_page=50`, {
+      headers: {
+        'apikey': SUPABASE_SERVICE_ROLE_KEY,
+        'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+      }
     });
-    if (error) return json({ error: error.message }, 500);
+    if (!usersRes.ok) {
+      const errBody = await usersRes.text().catch(() => `HTTP ${usersRes.status}`);
+      return json({ error: `Errore listUsers: ${errBody}` }, 500);
+    }
+    const usersData = await usersRes.json();
 
-    const users = (data?.users || [])
-      .sort((a, b) => new Date(b.created_at || 0).getTime() - new Date(a.created_at || 0).getTime())
+    const users = ((usersData.users || []) as Array<Record<string, unknown>>)
+      .sort((a, b) => new Date(String(b.created_at || 0)).getTime() - new Date(String(a.created_at || 0)).getTime())
       .slice(0, 5)
-      .map(user => ({
+      .map((user: Record<string, unknown>) => ({
         id: user.id,
         email: user.email,
         created_at: user.created_at,
         last_sign_in_at: user.last_sign_in_at,
         confirmed_at: user.email_confirmed_at,
-        nome: user.user_metadata?.nome || '',
-        cognome: user.user_metadata?.cognome || '',
+        nome: (user.user_metadata as Record<string, unknown>)?.nome || '',
+        cognome: (user.user_metadata as Record<string, unknown>)?.cognome || '',
       }));
 
     return json({ users });
