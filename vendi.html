@@ -751,8 +751,21 @@ async function _tryGrantWelcomeVetrina(userId, annuncioId) {
 
 // ── Submit ────────────────────────────────────────────────
 async function submitAnnuncio() {
-    const user = await getCurrentUser();
+    const btn = document.getElementById('submitBtn');
+    if (btn.disabled) return;
+    const orig = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Verifica in corso...';
+
+    let user = null;
+    try {
+        const { data } = await _supabase.auth.getSession();
+        user = data?.session?.user || null;
+    } catch (_) {}
+
     if (!user) {
+        btn.disabled = false;
+        btn.innerHTML = orig;
         window.__onLoginSuccess = async () => {
             document.getElementById('authBanner').classList.add('hidden');
             await prefillContactFromSession();
@@ -763,12 +776,12 @@ async function submitAnnuncio() {
     }
 
     await prefillContactFromSession();
-    if (!_validateStep(5)) return;
+    if (!_validateStep(5)) {
+        btn.disabled = false;
+        btn.innerHTML = orig;
+        return;
+    }
 
-    const btn = document.getElementById('submitBtn');
-    if (btn.disabled) return;
-    const orig = btn.innerHTML;
-    btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
 
     // Anti-spam
