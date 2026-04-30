@@ -1131,10 +1131,11 @@ async function loadMyListings() {
     }
 
     grid.innerHTML = data.map(l => {
-        const statusColor = l.status === 'active' ? 'bg-emerald-100 text-emerald-700' :
-                            l.status === 'pending'  ? 'bg-amber-100 text-amber-700' :
-                            l.status === 'sold'   ? 'bg-slate-100 text-slate-500' : 'bg-red-100 text-red-600';
-        const statusLabel = l.status === 'active' ? 'Attivo' : l.status === 'pending' ? 'In Revisione' : l.status === 'sold' ? 'Venduto' : 'Eliminato';
+        const statusColor = l.status === 'active'   ? 'bg-emerald-100 text-emerald-700' :
+                            l.status === 'pending'   ? 'bg-amber-100 text-amber-700' :
+                            l.status === 'rejected'  ? 'bg-red-100 text-red-700' :
+                            l.status === 'sold'      ? 'bg-slate-100 text-slate-500' : 'bg-slate-100 text-slate-400';
+        const statusLabel = l.status === 'active' ? 'Attivo' : l.status === 'pending' ? 'In Revisione' : l.status === 'rejected' ? 'Rifiutato' : l.status === 'sold' ? 'Venduto' : 'Eliminato';
 
         // Stato vetrina
         const isFeatured = l.featured === true && l.featured_until && new Date(l.featured_until) > new Date();
@@ -1169,6 +1170,10 @@ async function loadMyListings() {
                     <i class="fas fa-map-marker-alt mr-1"></i>${escapeHTML(l.comune || '')}, ${escapeHTML(l.regione || '')} ·
                     <i class="fas fa-euro-sign mx-0.5"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'}${l.visualizzazioni ? ` · <i class="fas fa-eye ml-0.5 mr-0.5"></i>${l.visualizzazioni}` : ''}${isFeatured ? ` · <i class="fas fa-phone-alt text-emerald-500 ml-0.5 mr-0.5"></i><span class="text-emerald-600 font-bold">${l.tel_clicks || 0} click</span>` : ''}
                 </p>
+                ${l.status === 'rejected' && l.dettagli_extra?.rejection_reason ? `
+                <div class="mt-1.5 bg-red-50 border border-red-100 rounded-lg px-2.5 py-1.5">
+                    <p class="text-[11px] text-red-700 font-semibold leading-snug"><i class="fas fa-exclamation-circle mr-1"></i>${escapeHTML(l.dettagli_extra.rejection_reason)}</p>
+                </div>` : ''}
                 <!-- Actions -->
                 <div class="flex flex-wrap gap-1.5 mt-2">
                     ${l.status === 'active' ? `
@@ -1178,7 +1183,12 @@ async function loadMyListings() {
                             : 'bg-gradient-to-r from-amber-400 to-orange-400 text-white hover:from-amber-500 hover:to-orange-500 shadow-sm'}">
                         <i class="fas fa-star text-[10px]"></i><span class="hidden sm:inline">${isFeatured ? 'Estendi' : 'Vetrina'}</span>
                     </button>` : ''}
-                    ${l.status !== 'deleted' ? `
+                    ${l.status === 'rejected' ? `
+                    <button onclick="location.href='modifica-annuncio.html?id=${l.id}'"
+                        class="text-[11px] font-black px-3 py-1.5 bg-orange-500 rounded-lg hover:bg-orange-600 transition text-white inline-flex items-center gap-1.5 shadow-sm">
+                        <i class="fas fa-pen text-[10px]"></i> Correggi
+                    </button>` : ''}
+                    ${l.status !== 'deleted' && l.status !== 'rejected' ? `
                     <button onclick="location.href='modifica-annuncio.html?id=${l.id}'"
                         class="text-[11px] font-bold px-2.5 py-1.5 border border-blue-100 rounded-lg hover:bg-blue-50 transition text-blue-600 inline-flex items-center gap-1">
                         <i class="fas fa-edit text-[10px]"></i><span class="hidden sm:inline">Modifica</span>
@@ -1332,7 +1342,7 @@ async function confirmReject() {
     const extra = (current?.dettagli_extra && typeof current.dettagli_extra === 'object') ? { ...current.dettagli_extra } : {};
     extra.rejection_reason = reason;
 
-    const { error } = await _supabase.from('annunci').update({ status: 'deleted', dettagli_extra: extra }).eq('id', id);
+    const { error } = await _supabase.from('annunci').update({ status: 'rejected', dettagli_extra: extra }).eq('id', id);
     if (!error) {
         showToast('Annuncio rifiutato. Email inviata al venditore.', 'info');
         loadPendingListings();
@@ -1368,10 +1378,12 @@ async function loadAllListings() {
     }
 
     const statusColors = {
-        active:  'bg-emerald-100 text-emerald-700',
-        pending: 'bg-amber-100 text-amber-700',
+        active:   'bg-emerald-100 text-emerald-700',
+        pending:  'bg-amber-100 text-amber-700',
+        rejected: 'bg-red-100 text-red-700',
+        sold:     'bg-slate-100 text-slate-500',
     };
-    const statusLabels = { active: 'Attivo', pending: 'In attesa' };
+    const statusLabels = { active: 'Attivo', pending: 'In attesa', rejected: 'Rifiutato', sold: 'Venduto' };
 
     list.innerHTML = data.map(l => {
         const sc = statusColors[l.status] || 'bg-slate-100 text-slate-500';

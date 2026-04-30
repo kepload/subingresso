@@ -46,7 +46,7 @@ Deno.serve(async (req) => {
       tipo = 'online';
     } else if (
       payload.type === 'UPDATE'
-      && record.status === 'deleted'
+      && record.status === 'rejected'
       && oldRecord != null
       && oldRecord.status === 'pending'
     ) {
@@ -116,13 +116,13 @@ Deno.serve(async (req) => {
               <p style="margin:0;font-size:14px;font-weight:600;color:#7f1d1d;line-height:1.5;">${motivazione}</p>
             </div>
             <p style="color:#64748b;font-size:14px;line-height:1.6;margin:0 0 24px;">
-              Puoi pubblicare un nuovo annuncio tenendo conto di queste indicazioni. Se hai bisogno di aiuto o chiarimenti, scrivici pure tramite il modulo di contatto.
+              Puoi correggere il tuo annuncio direttamente dalla dashboard tenendo conto delle indicazioni sopra. Una volta corretto, verrà rimesso in coda per la revisione.
             </p>
             <div style="display:flex;gap:12px;flex-wrap:wrap;">
-              <a href="${SITE_URL}/vendi" style="display:inline-block;background:#2563eb;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">
-                Pubblica un nuovo annuncio →
+              <a href="${SITE_URL}/modifica-annuncio.html?id=${record.id}" style="display:inline-block;background:#ea580c;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">
+                ✏️ Correggi annuncio →
               </a>
-              <a href="${SITE_URL}/contatti" style="display:inline-block;background:#f8fafc;color:#334155;border:1px solid #e2e8f0;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">
+              <a href="${SITE_URL}/contatti.html" style="display:inline-block;background:#f8fafc;color:#334155;border:1px solid #e2e8f0;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">
                 Contattaci
               </a>
             </div>
