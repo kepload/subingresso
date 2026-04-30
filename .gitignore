@@ -5,3 +5,4 @@ package.json
 tailwind.input.css
 tailwind.config.js
 scripts/.bin/
+.claude/settings.local.json
