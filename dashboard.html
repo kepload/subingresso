@@ -1325,8 +1325,8 @@ async function confirmReject() {
         if (!reason) { showToast('Scrivi il motivo.', 'warning'); return; }
     }
 
-    closeRejectModal();
     const id = _rejectTargetId;
+    closeRejectModal();
 
     const { data: current } = await _supabase.from('annunci').select('dettagli_extra').eq('id', id).maybeSingle();
     const extra = (current?.dettagli_extra && typeof current.dettagli_extra === 'object') ? { ...current.dettagli_extra } : {};
