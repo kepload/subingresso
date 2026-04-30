@@ -823,6 +823,30 @@ function setChartPeriod(mode) {
 
 let _allAdminUsers = [];
 
+function _isToday(dateStr) {
+    if (!dateStr) return false;
+    const d = new Date(dateStr);
+    const now = new Date();
+    return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth() && d.getDate() === now.getDate();
+}
+
+function _renderUsersWithDividers(users) {
+    const todayUsers = users.filter(u => _isToday(u.created_at));
+    const olderUsers = users.filter(u => !_isToday(u.created_at));
+    let html = '';
+    if (todayUsers.length) {
+        html += `<div class="flex items-center gap-2 mb-1"><span class="text-[10px] font-black uppercase tracking-widest text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">Oggi</span><div class="flex-1 border-t border-emerald-100"></div></div>`;
+        html += todayUsers.map(_buildUserRow).join('');
+    }
+    if (todayUsers.length && olderUsers.length) {
+        html += `<div class="flex items-center gap-2 my-2"><div class="flex-1 border-t border-slate-200"></div><span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Precedenti</span><div class="flex-1 border-t border-slate-200"></div></div>`;
+    }
+    if (olderUsers.length) {
+        html += olderUsers.map(_buildUserRow).join('');
+    }
+    return html;
+}
+
 function _buildUserRow(u) {
     const email      = escapeHTML(u.email || 'Email non disponibile');
     const emailAttr  = escapeHTML(u.email || '');
@@ -884,7 +908,7 @@ async function loadAdminRecentUsers() {
             return;
         }
 
-        list.innerHTML = _allAdminUsers.slice(0, 5).map(_buildUserRow).join('');
+        list.innerHTML = _renderUsersWithDividers(_allAdminUsers.slice(0, 5));
 
         const btn = document.getElementById('allUsersBtn');
         if (btn) btn.textContent = `Vedi tutti (${_allAdminUsers.length})`;
@@ -920,7 +944,7 @@ function renderAllUsers(users) {
     const list = document.getElementById('allUsersList');
     if (!list) return;
     list.innerHTML = users.length
-        ? users.map(_buildUserRow).join('')
+        ? _renderUsersWithDividers(users)
         : '<p class="text-xs text-slate-400 italic text-center py-8">Nessun utente trovato.</p>';
     document.getElementById('allUsersModalTitle').textContent =
         `Tutti gli utenti (${_allAdminUsers.length})`;
