@@ -366,7 +366,10 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Banner mobile homepage**: prima della sezione "Vendi in 3 passi", visibile solo su mobile (`md:hidden`), link verde a valutatore.html.
 
 ### Pendenze
-- **Label "Mercato Rionale / Periferico"** non piace all'utente ("non da l'idea di quello che è"). Opzioni proposte non ancora scelte: "Piccolo Comune / Quartiere", "Paese o Periferia", "Mercato Non di Punta". Da rinominare.
+(nessuna)
+
+### Note label zona
+- Step 3 valutatore: la terza opzione zona ha label utente-facing **"Piccolo Comune / Quartiere"** (rinominata 1 mag 2026, prima era "Mercato Rionale / Periferico" — non chiaro all'utente). Tag interno `_ZONA_LABELS['0.65']` resta `'rionale'` per non spezzare i log Supabase storici. Anche il copy SEO/FAQ sotto la pagina mantiene la parola "rionale" per posizionamento (keyword cercata).
 
 ## Stato Ultima Sessione Codex (27 Aprile 2026)
 - Sessione dedicata al blog SEO e alla pulizia dei file SQL temporanei.
