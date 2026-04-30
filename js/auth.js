@@ -593,8 +593,17 @@ async function _registerWithSupabaseAuth(email, password, nome, cognome, telefon
             return true;
         }
 
+        // signUp senza sessione immediata: prova comunque il login diretto
+        // (succede quando Supabase ha email-confirm ON, ma il bypass non era disponibile)
+        const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email, password });
+        if (!siErr && si?.session) {
+            await _storePasswordCredential(email, password, `${nome || ''} ${cognome || ''}`.trim() || email);
+            await _afterRegisterSuccess(nome, welcomeLotteryEligible);
+            return true;
+        }
+
         await _storePasswordCredential(email, password, `${nome || ''} ${cognome || ''}`.trim() || email);
-        _showAuthSuccess('Account creato! Controlla la tua email per confermare la registrazione.');
+        _showAuthSuccess('Account creato! Accedi con le tue credenziali.');
         setTimeout(() => switchAuthTab('login'), 2500);
         return true;
     } catch (_) {

@@ -728,9 +728,6 @@ function removeFile(btn) {
 // ── Lotteria vetrina welcome (0,1% → 30 giorni, entro 30gg iscrizione) ─────
 async function _tryGrantWelcomeVetrina(userId, annuncioId) {
     try {
-        const winKey = '_welcome_vetrina_won_' + userId;
-        if (localStorage.getItem(winKey) !== '1') return false;
-
         const { data: { session } } = await _supabase.auth.getSession();
         if (!session?.access_token) return false;
 
@@ -744,7 +741,9 @@ async function _tryGrantWelcomeVetrina(userId, annuncioId) {
             body: JSON.stringify({ annuncio_id: annuncioId }),
         });
         const result = await res.json().catch(() => ({}));
-        if (res.ok && result.granted === true) localStorage.removeItem(winKey);
+        if (res.ok && result.granted === true) {
+            localStorage.removeItem('_welcome_vetrina_won_' + userId);
+        }
         return res.ok && result.granted === true;
     } catch (_) { return false; }
 }
