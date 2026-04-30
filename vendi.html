@@ -1100,9 +1100,18 @@ async function submitAnnuncio() {
         }
 
     } catch (err) {
-        console.error(err);
-        _err('Errore durante la pubblicazione. Riprova tra poco.');
+        console.error('Pubblicazione fallita:', err);
         localStorage.removeItem(lastPostKey);
+        const code = err?.code ? ` [${err.code}]` : '';
+        const detail = (err?.message || err?.error_description || err?.hint || '').toString().slice(0, 140);
+        const isAuthError = /jwt|JWT|auth|RLS|permission|policy|unauthor/i.test(detail);
+        if (isAuthError) {
+            _err('Sessione scaduta. Ricarica la pagina, accedi di nuovo e riprova.');
+        } else if (detail) {
+            _err(`Errore durante la pubblicazione${code}: ${detail}`);
+        } else {
+            _err('Errore durante la pubblicazione. Riprova tra poco.');
+        }
         _resetBtn();
     }
 }
