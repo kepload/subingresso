@@ -864,6 +864,13 @@ async function _tryGrantWelcomeVetrina(userId, annuncioId) {
 }
 
 // ── Submit ────────────────────────────────────────────────
+function _withTimeout(promise, ms, label) {
+    return Promise.race([
+        promise,
+        new Promise((_, reject) => setTimeout(() => reject(new Error(label || 'Operazione scaduta')), ms))
+    ]);
+}
+
 async function submitAnnuncio() {
     const btn = document.getElementById('submitBtn');
     if (btn.disabled) return;
@@ -876,9 +883,14 @@ async function submitAnnuncio() {
     // Controlla auth prima di disabilitare il bottone
     let user = null;
     try {
-        const { data } = await _supabase.auth.getSession();
+        const { data } = await _withTimeout(_supabase.auth.getSession(), 3000, 'Sessione non disponibile');
         user = data?.session?.user || null;
-    } catch (_) {}
+    } catch (err) {
+        console.error(err);
+        _err('Connessione lenta. Riprova tra qualche secondo.');
+        _resetBtn();
+        return;
+    }
 
     if (!user) {
         window.__onLoginSuccess = async () => {
@@ -892,7 +904,7 @@ async function submitAnnuncio() {
     }
 
     // Valida prima di bloccare il bottone
-    await prefillContactFromSession();
+    await _withTimeout(prefillContactFromSession(), 1800, 'Profilo non disponibile').catch(() => null);
     if (!_validateStep(5)) {
         _resetBtn();
         return;
@@ -966,16 +978,28 @@ async function submitAnnuncio() {
         };
         form.img_urls = imageUrls;
 
-        let { data: inserted, error } = await _supabase.from('annunci').insert(form).select('id').single();
+        let { data: inserted, error } = await _withTimeout(
+            _supabase.from('annunci').insert(form).select('id').single(),
+            20000,
+            'Pubblicazione scaduta'
+        );
 
         if (error && error.message.includes('expires_at')) {
             delete form.expires_at;
-            const r = await _supabase.from('annunci').insert(form).select('id').single();
+            const r = await _withTimeout(
+                _supabase.from('annunci').insert(form).select('id').single(),
+                20000,
+                'Pubblicazione scaduta'
+            );
             inserted = r.data; error = r.error;
         }
         if (error && error.message.includes('img_urls')) {
             delete form.img_urls;
-            const r = await _supabase.from('annunci').insert(form).select('id').single();
+            const r = await _withTimeout(
+                _supabase.from('annunci').insert(form).select('id').single(),
+                20000,
+                'Pubblicazione scaduta'
+            );
             inserted = r.data; error = r.error;
         }
 
