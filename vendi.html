@@ -690,30 +690,30 @@ function _prefillFromCache() {
 
 async function prefillContactFromSession(force = false) {
     try {
-        let user = null;
-        const { data: sessionData } = await _supabase.auth.getSession();
-        user = sessionData?.session?.user || null;
-        if (!user && typeof getCurrentUser === 'function') {
-            user = await getCurrentUser();
+        // Legge sessione direttamente da localStorage (NIENTE supabase-js che hanga)
+        const stored = _getStoredSupabaseSession();
+        const user = stored?.user || null;
+        const accessToken = stored?.access_token || null;
+        if (!user || !accessToken) {
+            console.warn('Prefill: nessuna sessione in localStorage');
+            return null;
         }
-        if (!user) return null;
 
         const nomeEl = document.getElementById('fNome');
         const telEl  = document.getElementById('fTel');
         const meta = user.user_metadata || {};
 
-        // Fetch diretto profilo via PostgREST (bypassa il client supabase-js
-        // che a volte hanga, vedi bug INSERT risolto con _directInsertAnnuncio)
+        // Fetch diretto profilo via PostgREST (NO client supabase-js)
         let profile = null;
         try {
             const ctrl = new AbortController();
             const t = setTimeout(() => ctrl.abort(), 5000);
             const res = await fetch(
-                `${SUPABASE_URL}/rest/v1/profiles?id=eq.${user.id}&select=nome,cognome,telefono`,
+                `${SUPABASE_URL}/rest/v1/profiles?id=eq.${encodeURIComponent(user.id)}&select=nome,cognome,telefono`,
                 {
                     headers: {
                         'apikey': SUPABASE_ANON_KEY,
-                        'Authorization': `Bearer ${(await _supabase.auth.getSession()).data?.session?.access_token || SUPABASE_ANON_KEY}`,
+                        'Authorization': `Bearer ${accessToken}`,
                         'Accept': 'application/json'
                     },
                     signal: ctrl.signal
@@ -723,9 +723,12 @@ async function prefillContactFromSession(force = false) {
             if (res.ok) {
                 const arr = await res.json();
                 profile = Array.isArray(arr) && arr.length > 0 ? arr[0] : null;
+                console.log('Prefill: profile fetched', profile);
+            } else {
+                console.warn('Prefill: profile fetch HTTP', res.status, await res.text().catch(()=>''));
             }
         } catch (e) {
-            console.warn('Fetch profilo fallito:', e);
+            console.warn('Prefill: fetch profilo fallito:', e);
         }
 
         // Costruisce il nome evitando duplicazioni (es. nome="Ardit Kycyku" + cognome="Kycyku")
