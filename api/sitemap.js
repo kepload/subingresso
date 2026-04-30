@@ -8,6 +8,18 @@ const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
 
+// "Reggio Emilia" → "reggio-emilia"
+function cityToSlug(city) {
+    return city.toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[àá]/g, 'a')
+        .replace(/[èéê]/g, 'e')
+        .replace(/[ìí]/g, 'i')
+        .replace(/[òó]/g, 'o')
+        .replace(/[ùú]/g, 'u')
+        .replace(/[^a-z0-9-]/g, '');
+}
+
 const STATIC_PAGES = [
     { loc: '/',           changefreq: 'daily',   priority: '1.0' },
     { loc: '/annunci',    changefreq: 'daily',   priority: '0.9' },
@@ -32,14 +44,26 @@ module.exports = async function handler(req, res) {
 
     let listings = [];
     let posts    = [];
+    let cities   = [];
 
     try {
-        const [lRes, pRes] = await Promise.all([
+        const [lRes, pRes, cRes] = await Promise.all([
             fetch(`${SUPABASE_URL}/rest/v1/annunci?select=id,created_at&status=eq.active`, { headers }),
             fetch(`${SUPABASE_URL}/rest/v1/blog_posts?select=slug,published_at`,           { headers }),
+            fetch(`${SUPABASE_URL}/rest/v1/annunci?select=comune&status=eq.active&comune=not.is.null`, { headers }),
         ]);
         if (lRes.ok) listings = await lRes.json();
         if (pRes.ok) posts    = await pRes.json();
+        if (cRes.ok) {
+            const raw = await cRes.json();
+            // Distinct comuni non vuoti
+            const seen = new Set();
+            for (const r of raw) {
+                const c = (r.comune || '').trim();
+                if (c) seen.add(c);
+            }
+            cities = Array.from(seen);
+        }
     } catch (_) {
         // fallback: solo pagine statiche
     }
@@ -58,13 +82,22 @@ module.exports = async function handler(req, res) {
                 '0.8'
             )
         ),
-        // Un URL per ogni post del blog (generato automaticamente)
+        // Un URL per ogni post del blog
         ...posts.map(p =>
             urlTag(
                 `${SITE}/blog?post=${encodeURIComponent(p.slug)}`,
                 p.published_at ? p.published_at.split('T')[0] : today,
                 'monthly',
                 '0.7'
+            )
+        ),
+        // Una pagina per ogni città con annunci attivi
+        ...cities.map(c =>
+            urlTag(
+                `${SITE}/annunci/${cityToSlug(c)}`,
+                today,
+                'weekly',
+                '0.8'
             )
         ),
     ];
