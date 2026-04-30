@@ -701,11 +701,32 @@ async function prefillContactFromSession(force = false) {
         const nomeEl = document.getElementById('fNome');
         const telEl  = document.getElementById('fTel');
         const meta = user.user_metadata || {};
-        const { data: profile } = await _supabase
-            .from('profiles')
-            .select('nome, cognome, telefono')
-            .eq('id', user.id)
-            .maybeSingle();
+
+        // Fetch diretto profilo via PostgREST (bypassa il client supabase-js
+        // che a volte hanga, vedi bug INSERT risolto con _directInsertAnnuncio)
+        let profile = null;
+        try {
+            const ctrl = new AbortController();
+            const t = setTimeout(() => ctrl.abort(), 5000);
+            const res = await fetch(
+                `${SUPABASE_URL}/rest/v1/profiles?id=eq.${user.id}&select=nome,cognome,telefono`,
+                {
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${(await _supabase.auth.getSession()).data?.session?.access_token || SUPABASE_ANON_KEY}`,
+                        'Accept': 'application/json'
+                    },
+                    signal: ctrl.signal
+                }
+            );
+            clearTimeout(t);
+            if (res.ok) {
+                const arr = await res.json();
+                profile = Array.isArray(arr) && arr.length > 0 ? arr[0] : null;
+            }
+        } catch (e) {
+            console.warn('Fetch profilo fallito:', e);
+        }
 
         // Costruisce il nome evitando duplicazioni (es. nome="Ardit Kycyku" + cognome="Kycyku")
         const _smartName = (n, c) => {
@@ -1113,22 +1134,39 @@ async function submitAnnuncio() {
         };
         const imageUrls = [];
         let failedUploads = 0;
-        for (let file of _files) {
+        const accessTokenForUpload = _currentSession?.access_token || SUPABASE_ANON_KEY;
+        for (let i = 0; i < _files.length; i++) {
+            const file = _files[i];
             try {
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Caricamento foto...';
+                btn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Caricamento foto ${i+1}/${_files.length}...`;
                 const prepared = await _prepareListingImage(file);
                 const storagePath = `${user.id}/${prepared.path}`;
-                const { error: upErr } = await _withTimeout(
-                    _supabase.storage.from('listings').upload(storagePath, prepared.file, {
-                        contentType: prepared.file.type || 'image/webp',
-                        cacheControl: '31536000'
-                    }),
-                    12000,
-                    'Upload foto scaduto'
+                // Upload diretto (bypassa il client supabase-js per evitare lock interni)
+                const upCtrl = new AbortController();
+                const upTimer = setTimeout(() => upCtrl.abort(), 25000);
+                const upRes = await fetch(
+                    `${SUPABASE_URL}/storage/v1/object/listings/${storagePath}`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Authorization': `Bearer ${accessTokenForUpload}`,
+                            'Content-Type': prepared.file.type || 'image/webp',
+                            'Cache-Control': '31536000',
+                            'x-upsert': 'false'
+                        },
+                        body: prepared.file,
+                        signal: upCtrl.signal
+                    }
                 );
-                if (upErr) { failedUploads++; continue; }
-                const { data: { publicUrl } } = _supabase.storage.from('listings').getPublicUrl(storagePath);
-                if (publicUrl) imageUrls.push(publicUrl);
+                clearTimeout(upTimer);
+                if (!upRes.ok) {
+                    console.warn(`Foto ${i+1} upload HTTP ${upRes.status}`);
+                    failedUploads++;
+                    continue;
+                }
+                const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/listings/${storagePath}`;
+                imageUrls.push(publicUrl);
             } catch (imgErr) {
                 console.warn('Foto saltata durante la pubblicazione:', imgErr);
                 failedUploads++;
