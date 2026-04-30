@@ -600,8 +600,21 @@ function resetMobileFilters() {
 }
 
 // ── EXPORTS ──────────────────────────────────────────────────
+function toggleDesktopFilters() {
+    const panel = document.getElementById('desktopFiltersPanel');
+    const btn = document.getElementById('desktopFilterToggle');
+    if (!panel) return;
+    const opening = panel.classList.contains('hidden');
+    panel.classList.toggle('hidden', !opening);
+    if (btn) {
+        btn.classList.toggle('bg-blue-600', opening);
+        btn.classList.toggle('bg-slate-900', !opening);
+    }
+}
+
 window.applyFilters       = applyFilters;
 window.loadListings       = loadListings;
+window.toggleDesktopFilters = toggleDesktopFilters;
 window.openMobileFilters  = openMobileFilters;
 window.closeMobileFilters = closeMobileFilters;
 window.applyMobileFilters = applyMobileFilters;

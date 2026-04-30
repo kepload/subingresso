@@ -82,15 +82,15 @@
 <header></header>
 
 <!-- ══════════════ PAGE TITLE ══════════════ -->
-<div class="bg-white border-b border-slate-100 py-4 lg:py-6">
+<div class="bg-white border-b border-slate-100 py-4 lg:py-4">
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(520px,0.95fr)] gap-5 lg:gap-8 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,560px)_minmax(360px,1fr)] gap-4 lg:gap-8 items-start">
             <div class="flex flex-col gap-4 text-left">
                 <div>
                     <h1 class="text-2xl lg:text-3xl font-black tracking-tight">Annunci</h1>
                     <p id="subtitle" class="text-slate-500 font-medium mt-0.5 text-xs lg:text-sm">Tutti i posteggi disponibili</p>
                 </div>
-                <div id="searchBarWrapper" class="relative flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-2xl px-4 py-2.5 w-full max-w-xl">
+                <div id="searchBarWrapper" class="relative flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-2xl px-4 py-2.5 w-full max-w-lg">
                     <i class="fas fa-search text-slate-400 text-sm flex-shrink-0"></i>
                     <input id="searchBar" type="text" placeholder="Cerca comune, città…" autocomplete="off"
                            class="bg-transparent outline-none w-full text-sm font-semibold placeholder:text-slate-400 placeholder:font-normal min-w-0">
@@ -103,7 +103,18 @@
                 <div id="activeChips" class="flex flex-wrap gap-2"></div>
             </div>
 
-            <div class="hidden lg:block bg-slate-50/80 border border-slate-200 rounded-2xl p-4">
+            <div class="hidden lg:flex flex-col items-end gap-3">
+                <div class="flex items-center gap-2">
+                    <button id="desktopFilterToggle" onclick="toggleDesktopFilters()" class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2.5 rounded-xl font-black text-xs hover:bg-blue-600 transition active:scale-95">
+                        <i class="fas fa-sliders-h text-[10px]"></i>
+                        Filtri
+                    </button>
+                    <button onclick="openAlertModal()" class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2.5 rounded-xl font-black text-xs hover:bg-blue-700 transition active:scale-95">
+                        <i class="fas fa-bell text-[10px]"></i>
+                        Alert
+                    </button>
+                </div>
+                <div id="desktopFiltersPanel" class="hidden w-full bg-slate-50/80 border border-slate-200 rounded-2xl p-4">
                 <div class="flex items-center justify-between mb-3">
                     <h2 class="font-black text-sm">Filtri</h2>
                     <button onclick="clearFilters()" class="text-xs text-blue-600 font-bold hover:underline">Azzera</button>
@@ -120,7 +131,6 @@
                         <select id="fTipo" class="filter-input" onchange="applyFilters()">
                             <option value="">Tutti i tipi</option>
                             <option>Mercato settimanale</option>
-                            <option>Mercato quotidiano</option>
                             <option>Fiera</option>
                         </select>
                     </div>
@@ -150,11 +160,8 @@
                     <button onclick="applyFilters()" class="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-black text-xs hover:bg-blue-700 transition active:scale-95">
                         Applica
                     </button>
-                    <button onclick="openAlertModal()" class="flex items-center gap-2 bg-white border border-blue-100 text-blue-700 px-4 py-2.5 rounded-xl font-black text-xs hover:bg-blue-50 transition active:scale-95">
-                        <i class="fas fa-bell text-[10px]"></i>
-                        Alert annunci
-                    </button>
-                    <p class="text-[11px] text-slate-400 font-semibold leading-snug">Email quando esce un posteggio nella tua zona.</p>
+                    <p class="text-[11px] text-slate-400 font-semibold leading-snug">Usa i filtri per restringere gli annunci.</p>
+                </div>
                 </div>
             </div>
         </div>
@@ -270,7 +277,6 @@
                 <select id="m_fTipo" class="filter-input">
                     <option value="">Tutti i tipi</option>
                     <option>Mercato settimanale</option>
-                    <option>Mercato quotidiano</option>
                     <option>Fiera</option>
                 </select>
             </div>
