@@ -503,3 +503,33 @@ function showToast(message, type = 'info') {
         setTimeout(() => toast.remove(), 250);
     }, 4000);
 }
+
+// ── Phone normalizer ─────────────────────────────────────
+// Gestisce: +39, 0039, spazi, trattini, punti, parentesi, slash.
+// Restituisce il numero pulito pronto per salvare e mostrare.
+function normalizePhone(raw) {
+    if (!raw) return '';
+    let n = raw.trim();
+    // Rimuovi caratteri non utili mantenendo + iniziale
+    n = n.replace(/[\s\-\.\(\)\/]/g, '');
+    // Rimuovi prefisso internazionale italiano
+    // +3906... (fisso Roma) → 06...
+    if (n.startsWith('+390')) n = '0' + n.slice(4);
+    // +393... (mobile) → 3...
+    else if (n.startsWith('+39')) n = n.slice(3);
+    // 00390... → 0...
+    else if (n.startsWith('00390')) n = '0' + n.slice(5);
+    // 0039... → strip prefix
+    else if (n.startsWith('0039')) n = n.slice(4);
+    // 39XXXXXXXXXX (12 cifre, 39 iniziale) → togli il 39
+    else if (/^39\d{10}$/.test(n)) n = n.slice(2);
+    // Formatta numero mobile (3XX XXXXXXX) con spazio per leggibilità
+    if (/^3\d{9}$/.test(n)) n = n.slice(0, 3) + ' ' + n.slice(3);
+    return n;
+}
+
+// Controlla che il telefono abbia almeno 6 cifre e max 13 (fissi + mobili IT)
+function isValidPhone(tel) {
+    const digits = tel.replace(/\D/g, '');
+    return digits.length >= 6 && digits.length <= 13;
+}

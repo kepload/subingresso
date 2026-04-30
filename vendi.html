@@ -313,7 +313,9 @@
                             </div>
                             <div>
                                 <label class="field-label">Telefono (WhatsApp) *</label>
-                                <input id="fTel" type="tel" placeholder="es. 333 1234567" class="field-input bg-blue-50/50">
+                                <input id="fTel" type="tel" placeholder="es. 347 1234567 (anche con +39)" class="field-input bg-blue-50/50"
+                                    oninput="this.value = normalizePhone(this.value)"
+                                    onblur="this.value = normalizePhone(this.value)">
                             </div>
                         </div>
 
@@ -482,10 +484,11 @@ function _validateStep(n) {
             return _err('La descrizione deve essere di almeno 10 caratteri.');
         if (!document.getElementById('fNome').value.trim())
             return _err('Inserisci il nome di contatto.');
-        const _tel = document.getElementById('fTel').value.trim();
+        const _tel = normalizePhone(document.getElementById('fTel').value);
+        document.getElementById('fTel').value = _tel;
         if (!_tel) return _err('Inserisci un numero di telefono (WhatsApp).');
-        if (!/^\+?[\d\s\-\(\)]{8,15}$/.test(_tel))
-            return _err('Inserisci un numero di telefono valido (es. 347 1234567).');
+        if (!isValidPhone(_tel))
+            return _err('Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567');
     }
     return true;
 }
@@ -597,7 +600,7 @@ async function prefillContactFromSession(force = false) {
             nomeEl.value = fullName || user.email.split('@')[0];
         }
         if (telEl && (force || !telEl.value.trim())) {
-            telEl.value = profile?.telefono || '';
+            telEl.value = normalizePhone(profile?.telefono || '');
         }
         return user;
     } catch (_) {
@@ -753,9 +756,10 @@ async function submitAnnuncio() {
     const btn = document.getElementById('submitBtn');
     if (btn.disabled) return;
     const orig = btn.innerHTML;
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Verifica in corso...';
 
+    const _resetBtn = () => { btn.disabled = false; btn.innerHTML = orig; };
+
+    // Controlla auth prima di disabilitare il bottone
     let user = null;
     try {
         const { data } = await _supabase.auth.getSession();
@@ -763,8 +767,6 @@ async function submitAnnuncio() {
     } catch (_) {}
 
     if (!user) {
-        btn.disabled = false;
-        btn.innerHTML = orig;
         window.__onLoginSuccess = async () => {
             document.getElementById('authBanner').classList.add('hidden');
             await prefillContactFromSession();
@@ -774,13 +776,11 @@ async function submitAnnuncio() {
         return;
     }
 
+    // Valida prima di bloccare il bottone
     await prefillContactFromSession();
-    if (!_validateStep(5)) {
-        btn.disabled = false;
-        btn.innerHTML = orig;
-        return;
-    }
+    if (!_validateStep(5)) return;
 
+    btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
 
     // Anti-spam
@@ -788,9 +788,9 @@ async function submitAnnuncio() {
     const lastPost = localStorage.getItem(lastPostKey);
     const now = Date.now();
     if (lastPost && (now - lastPost) < 60 * 1000) {
+        _resetBtn();
         _err('Puoi pubblicare un annuncio ogni minuto. Riprova tra poco.');
-
-        btn.disabled = false; btn.innerHTML = orig; return;
+        return;
     }
     localStorage.setItem(lastPostKey, now);
 
@@ -876,8 +876,7 @@ async function submitAnnuncio() {
         console.error(err);
         _err('Errore durante la pubblicazione. Riprova tra poco.');
         localStorage.removeItem(lastPostKey);
-        btn.disabled = false;
-        btn.innerHTML = orig;
+        _resetBtn();
     }
 }
 
