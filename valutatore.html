@@ -175,15 +175,15 @@
         <div class="step-card" data-step="2.5">
             <h2 class="text-xl font-black mb-3">Quanti giorni dura la fiera?</h2>
             <div class="grid grid-cols-1 gap-3">
-                <div class="option-card p-4 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 0.8, this)">
+                <div class="option-card p-4 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 0.2, this)">
                     <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center font-bold">1</div>
                     <p class="font-bold text-left">Giorno singolo</p>
                 </div>
-                <div class="option-card p-4 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 1.6, this)">
+                <div class="option-card p-4 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 0.35, this)">
                     <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center font-bold">3</div>
                     <p class="font-bold text-left">Weekend (2-3 giorni)</p>
                 </div>
-                <div class="option-card p-4 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 2.8, this)">
+                <div class="option-card p-4 rounded-2xl flex items-center gap-4" onclick="selectOption('durataFiera', 0.5, this)">
                     <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center font-bold">5+</div>
                     <p class="font-bold text-left">Settimana o più</p>
                 </div>
@@ -424,7 +424,7 @@
 
     // ── Lookup etichette leggibili dai valori dei moltiplicatori ─
     var _FREQ_LABELS  = { '1.4': 'settimanale', 'fiera': 'fiera', '2.2': 'giornaliero' };
-    var _FIERA_LABELS = { '0.8': '1_giorno', '1.6': 'weekend', '2.8': 'settimana_piu' };
+    var _FIERA_LABELS = { '0.2': '1_giorno', '0.35': 'weekend', '0.5': 'settimana_piu' };
     var _STAG_LABELS  = { '1': 'annuale', '0.65': 'stagionale' };
     var _ZONA_LABELS  = { '2.8': 'storica_turistica', '1.6': 'capoluogo', '0.6': 'rionale' };
     var _SETT_LABELS  = { '1.4': 'alimentare', '1': 'non_alimentare' };
@@ -542,7 +542,7 @@
 
     function calculate() {
         var base = factors.fatturato * 2.0;
-        var moltFrequenza = (factors.frequenza === 'fiera') ? (2.2 * factors.durataFiera) : factors.frequenza;
+        var moltFrequenza = (factors.frequenza === 'fiera') ? factors.durataFiera : factors.frequenza;
         var totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
 
         var rentAvg = totale * 0.27 * factors.stagionalita;
