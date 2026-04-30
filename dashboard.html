@@ -178,17 +178,23 @@
             <!-- All Listings -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <h3 class="font-black text-slate-900 mb-4 flex items-center gap-2">
-                    <i class="fas fa-list"></i> Tutti gli annunci
+                    <i class="fas fa-list text-blue-500"></i> Annunci
                 </h3>
                 <div id="adminAllList" class="space-y-2"></div>
+                <button onclick="openAllListingsModal()" class="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-xs font-black text-slate-500 hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-list"></i> <span id="allListingsBtn">Vedi tutti</span>
+                </button>
             </div>
 
             <!-- Blog Management -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <h3 class="font-black text-slate-900 mb-4 flex items-center gap-2">
-                    <i class="fas fa-newspaper"></i> Gestione Blog (Ultimi 5)
+                    <i class="fas fa-newspaper text-blue-500"></i> Blog
                 </h3>
-                <div id="adminBlogList" class="space-y-3"></div>
+                <div id="adminBlogList" class="space-y-2"></div>
+                <button onclick="openAllBlogModal()" class="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-xs font-black text-slate-500 hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-newspaper"></i> <span id="allBlogBtn">Vedi tutti</span>
+                </button>
             </div>
 
         </div>
@@ -508,6 +514,46 @@
             </div>
         </div>
         <div id="allUsersList" class="overflow-y-auto flex-1 p-4 space-y-2">
+            <div class="text-center py-8 text-slate-300"><i class="fas fa-spinner fa-spin"></i></div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════ MODAL TUTTI GLI ANNUNCI ══════════════ -->
+<div id="allListingsModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.72);backdrop-filter:blur(4px)" onclick="closeAllListingsModal()">
+    <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl flex flex-col overflow-hidden max-h-[88vh]" onclick="event.stopPropagation()">
+        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between shrink-0">
+            <h3 class="font-black text-slate-900 flex items-center gap-2"><i class="fas fa-list text-blue-500"></i> <span id="allListingsModalTitle">Tutti gli annunci</span></h3>
+            <button onclick="closeAllListingsModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 font-black text-lg transition flex items-center justify-center">×</button>
+        </div>
+        <div class="px-6 py-3 border-b border-slate-100 shrink-0">
+            <div class="relative">
+                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                <input id="listingSearchInput" type="text" placeholder="Cerca per titolo, comune, stato..." oninput="filterListings()"
+                    class="w-full pl-8 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+            </div>
+        </div>
+        <div id="allListingsList" class="overflow-y-auto flex-1 p-4 space-y-1">
+            <div class="text-center py-8 text-slate-300"><i class="fas fa-spinner fa-spin"></i></div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════ MODAL TUTTI GLI ARTICOLI BLOG ══════════════ -->
+<div id="allBlogModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.72);backdrop-filter:blur(4px)" onclick="closeAllBlogModal()">
+    <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl flex flex-col overflow-hidden max-h-[88vh]" onclick="event.stopPropagation()">
+        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between shrink-0">
+            <h3 class="font-black text-slate-900 flex items-center gap-2"><i class="fas fa-newspaper text-blue-500"></i> <span id="allBlogModalTitle">Tutti gli articoli</span></h3>
+            <button onclick="closeAllBlogModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 font-black text-lg transition flex items-center justify-center">×</button>
+        </div>
+        <div class="px-6 py-3 border-b border-slate-100 shrink-0">
+            <div class="relative">
+                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                <input id="blogSearchInput" type="text" placeholder="Cerca per titolo..." oninput="filterBlogPosts()"
+                    class="w-full pl-8 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+            </div>
+        </div>
+        <div id="allBlogList" class="overflow-y-auto flex-1 p-4 space-y-2">
             <div class="text-center py-8 text-slate-300"><i class="fas fa-spinner fa-spin"></i></div>
         </div>
     </div>
@@ -1004,31 +1050,61 @@ async function deleteAdminUser(userId, email, btn) {
     }
 }
 
+let _allBlogPosts = [];
+
+function _buildBlogRow(p) {
+    const safeTitle = escapeHTML(p.title || '');
+    const safeSlug  = encodeURIComponent(p.slug || '');
+    const safeId    = escapeHTML(p.id || '');
+    return `
+    <div class="flex items-center justify-between gap-3 p-3 bg-slate-50 rounded-xl hover:bg-blue-50 transition cursor-pointer group" onclick="window.open('blog.html?post=${safeSlug}', '_blank')">
+        <div class="min-w-0 flex-grow">
+            <p class="text-sm font-bold text-slate-900 truncate group-hover:text-blue-600">${safeTitle}</p>
+            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">${new Date(p.published_at).toLocaleDateString('it-IT')}</p>
+        </div>
+        <div class="flex items-center gap-1 shrink-0">
+            <button onclick="event.stopPropagation(); deleteBlogPost('${safeId}')" class="text-red-400 hover:text-red-600 transition p-2">
+                <i class="fas fa-trash-alt text-xs"></i>
+            </button>
+            <i class="fas fa-external-link-alt text-[10px] text-slate-300 mr-1"></i>
+        </div>
+    </div>`;
+}
+
 async function loadAdminBlog() {
-    const { data } = await _supabase.from('blog_posts').select('id, title, content, published_at, slug').order('published_at', { ascending: false }).limit(5);
     const list = document.getElementById('adminBlogList');
+    const { data } = await _supabase.from('blog_posts').select('id, title, published_at, slug').order('published_at', { ascending: false }).limit(500);
     if (!data || data.length === 0) {
         list.innerHTML = '<p class="text-xs text-slate-400 italic">Nessun articolo nel blog.</p>';
         return;
     }
-    list.innerHTML = data.map(p => {
-        const safeTitle = escapeHTML(p.title || '');
-        const safeSlug  = encodeURIComponent(p.slug || '');
-        const safeId    = escapeHTML(p.id || '');
-        return `
-        <div class="flex items-center justify-between gap-3 p-3 bg-slate-50 rounded-xl hover:bg-blue-50 transition cursor-pointer group" onclick="window.open('blog.html?post=${safeSlug}', '_blank')">
-            <div class="min-w-0 flex-grow">
-                <p class="text-sm font-bold text-slate-900 truncate group-hover:text-blue-600">${safeTitle}</p>
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">${new Date(p.published_at).toLocaleDateString('it-IT')}</p>
-            </div>
-            <div class="flex items-center gap-1">
-                <button onclick="event.stopPropagation(); deleteBlogPost('${safeId}')" class="text-red-400 hover:text-red-600 transition p-2">
-                    <i class="fas fa-trash-alt text-xs"></i>
-                </button>
-                <i class="fas fa-external-link-alt text-[10px] text-slate-300 mr-1"></i>
-            </div>
-        </div>
-    `; }).join('');
+    _allBlogPosts = data;
+    list.innerHTML = _allBlogPosts.slice(0, 5).map(_buildBlogRow).join('');
+    const btn = document.getElementById('allBlogBtn');
+    if (btn) btn.textContent = `Vedi tutti (${_allBlogPosts.length})`;
+}
+
+function openAllBlogModal() {
+    document.getElementById('allBlogModal').classList.remove('hidden');
+    document.getElementById('blogSearchInput').value = '';
+    renderAllBlog(_allBlogPosts);
+}
+function closeAllBlogModal() { document.getElementById('allBlogModal').classList.add('hidden'); }
+
+function filterBlogPosts() {
+    const q = document.getElementById('blogSearchInput').value.toLowerCase().trim();
+    const filtered = q ? _allBlogPosts.filter(p => (p.title || '').toLowerCase().includes(q)) : _allBlogPosts;
+    renderAllBlog(filtered);
+    document.getElementById('allBlogModalTitle').textContent = q ? `${filtered.length} risultati` : `Tutti gli articoli (${_allBlogPosts.length})`;
+}
+
+function renderAllBlog(posts) {
+    const list = document.getElementById('allBlogList');
+    if (!list) return;
+    list.innerHTML = posts.length
+        ? posts.map(_buildBlogRow).join('')
+        : '<p class="text-xs text-slate-400 italic text-center py-8">Nessun articolo trovato.</p>';
+    document.getElementById('allBlogModalTitle').textContent = `Tutti gli articoli (${_allBlogPosts.length})`;
 }
 
 let _editingBlogId = null;
@@ -1455,6 +1531,45 @@ async function rifiutaAnnuncio(id) {
     showRejectModal(id);
 }
 
+let _allAdminListings = [];
+
+const _listingStatusColors = { active: 'bg-emerald-100 text-emerald-700', pending: 'bg-amber-100 text-amber-700', rejected: 'bg-red-100 text-red-700', sold: 'bg-slate-100 text-slate-500' };
+const _listingStatusLabels = { active: 'Attivo', pending: 'In attesa', rejected: 'Rifiutato', sold: 'Venduto' };
+
+function _buildListingRow(l) {
+    const sc = _listingStatusColors[l.status] || 'bg-slate-100 text-slate-500';
+    const sl = escapeHTML(_listingStatusLabels[l.status] || l.status || '');
+    const isFeatured = l.featured && l.featured_until && new Date(l.featured_until) > new Date();
+    const featuredUntilStr = isFeatured ? new Date(l.featured_until).toLocaleDateString('it-IT', { day: '2-digit', month: 'short' }) : '';
+    const safeId    = escapeHTML(l.id || '');
+    const safeTitle = escapeHTML(l.titolo || '—');
+    const safeComune = escapeHTML(l.comune || '');
+    const safeStato  = escapeHTML(l.stato || '');
+    const safeUrl   = `annuncio.html?id=${encodeURIComponent(l.id || '')}`;
+    return `
+    <div onclick="window.open('${safeUrl}', '_blank')" class="flex items-center justify-between gap-3 py-2.5 px-3 rounded-xl hover:bg-blue-50 transition cursor-pointer">
+        <div class="min-w-0 flex-1">
+            <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider ${sc}">${sl}</span>
+                ${isFeatured ? `<span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 uppercase tracking-wider"><i class="fas fa-star mr-0.5"></i> Vetrina fino al ${featuredUntilStr}</span>` : ''}
+                <span class="text-[10px] text-slate-400 font-bold">${new Date(l.created_at).toLocaleDateString('it-IT')}</span>
+            </div>
+            <p class="font-bold text-sm text-slate-900 truncate mt-0.5">${safeTitle}</p>
+            <p class="text-xs text-slate-400 font-medium">${safeComune} · ${safeStato}</p>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+            ${isFeatured
+                ? `<button onclick="event.stopPropagation(); adminRevokeVetrina('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star-half-alt mr-1"></i> Revoca</button>`
+                : `<button onclick="event.stopPropagation(); adminOpenVetrinaModal('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star mr-1"></i> Vetrina</button>`
+            }
+            <button onclick="event.stopPropagation(); deleteAnnuncio('${safeId}')"
+                class="bg-red-50 text-red-500 border border-red-100 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-red-500 hover:text-white hover:border-red-500 transition">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+    </div>`;
+}
+
 async function loadAllListings() {
     if (!_isAdmin) return;
     const list = document.getElementById('adminAllList');
@@ -1465,60 +1580,44 @@ async function loadAllListings() {
         .select('id, titolo, comune, regione, status, stato, created_at, featured, featured_until')
         .neq('status', 'deleted')
         .order('created_at', { ascending: false })
-        .limit(100);
+        .limit(500);
 
-    if (error || !data) {
-        list.innerHTML = '<div class="text-red-500 text-xs font-bold p-2">Errore caricamento annunci.</div>';
-        return;
-    }
-    if (data.length === 0) {
-        list.innerHTML = '<div class="text-slate-400 text-xs font-bold p-2 italic">Nessun annuncio presente.</div>';
-        return;
-    }
+    if (error || !data) { list.innerHTML = '<div class="text-red-500 text-xs font-bold p-2">Errore caricamento annunci.</div>'; return; }
+    if (data.length === 0) { list.innerHTML = '<div class="text-slate-400 text-xs font-bold p-2 italic">Nessun annuncio presente.</div>'; return; }
 
-    const statusColors = {
-        active:   'bg-emerald-100 text-emerald-700',
-        pending:  'bg-amber-100 text-amber-700',
-        rejected: 'bg-red-100 text-red-700',
-        sold:     'bg-slate-100 text-slate-500',
-    };
-    const statusLabels = { active: 'Attivo', pending: 'In attesa', rejected: 'Rifiutato', sold: 'Venduto' };
+    _allAdminListings = data;
+    list.innerHTML = _allAdminListings.slice(0, 5).map(_buildListingRow).join('');
+    const btn = document.getElementById('allListingsBtn');
+    if (btn) btn.textContent = `Vedi tutti (${_allAdminListings.length})`;
+}
 
-    list.innerHTML = data.map(l => {
-        const sc = statusColors[l.status] || 'bg-slate-100 text-slate-500';
-        const sl = escapeHTML(statusLabels[l.status] || l.status || '');
-        const isFeatured = l.featured && l.featured_until && new Date(l.featured_until) > new Date();
-        const featuredUntilStr = isFeatured
-            ? new Date(l.featured_until).toLocaleDateString('it-IT', { day: '2-digit', month: 'short' })
-            : '';
-        const safeId = escapeHTML(l.id || '');
-        const safeTitle = escapeHTML(l.titolo || '—');
-        const safeComune = escapeHTML(l.comune || '');
-        const safeStato = escapeHTML(l.stato || '');
-        const safeUrl = `annuncio.html?id=${encodeURIComponent(l.id || '')}`;
-        return `
-        <div onclick="window.open('${safeUrl}', '_blank')" class="flex items-center justify-between gap-3 py-2.5 px-3 rounded-xl hover:bg-blue-50 transition cursor-pointer">
-            <div class="min-w-0 flex-1">
-                <div class="flex items-center gap-2 flex-wrap">
-                    <span class="text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider ${sc}">${sl}</span>
-                    ${isFeatured ? `<span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 uppercase tracking-wider"><i class="fas fa-star mr-0.5"></i> Vetrina fino al ${featuredUntilStr}</span>` : ''}
-                    <span class="text-[10px] text-slate-400 font-bold">${new Date(l.created_at).toLocaleDateString('it-IT')}</span>
-                </div>
-                <p class="font-bold text-sm text-slate-900 truncate mt-0.5">${safeTitle}</p>
-                <p class="text-xs text-slate-400 font-medium">${safeComune} · ${safeStato}</p>
-            </div>
-            <div class="flex items-center gap-2 flex-shrink-0">
-                ${isFeatured
-                    ? `<button onclick="event.stopPropagation(); adminRevokeVetrina('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star-half-alt mr-1"></i> Revoca</button>`
-                    : `<button onclick="event.stopPropagation(); adminOpenVetrinaModal('${safeId}')" class="bg-amber-50 text-amber-600 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-amber-500 hover:text-white hover:border-amber-500 transition"><i class="fas fa-star mr-1"></i> Vetrina</button>`
-                }
-                <button onclick="event.stopPropagation(); deleteAnnuncio('${safeId}')"
-                    class="bg-red-50 text-red-500 border border-red-100 px-3 py-1.5 rounded-xl text-xs font-black hover:bg-red-500 hover:text-white hover:border-red-500 transition">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </div>
-        </div>`;
-    }).join('');
+function openAllListingsModal() {
+    document.getElementById('allListingsModal').classList.remove('hidden');
+    document.getElementById('listingSearchInput').value = '';
+    renderAllListings(_allAdminListings);
+}
+function closeAllListingsModal() { document.getElementById('allListingsModal').classList.add('hidden'); }
+
+function filterListings() {
+    const q = document.getElementById('listingSearchInput').value.toLowerCase().trim();
+    const filtered = q
+        ? _allAdminListings.filter(l =>
+            (l.titolo || '').toLowerCase().includes(q) ||
+            (l.comune || '').toLowerCase().includes(q) ||
+            (l.stato  || '').toLowerCase().includes(q) ||
+            (_listingStatusLabels[l.status] || '').toLowerCase().includes(q))
+        : _allAdminListings;
+    renderAllListings(filtered);
+    document.getElementById('allListingsModalTitle').textContent = q ? `${filtered.length} risultati` : `Tutti gli annunci (${_allAdminListings.length})`;
+}
+
+function renderAllListings(listings) {
+    const list = document.getElementById('allListingsList');
+    if (!list) return;
+    list.innerHTML = listings.length
+        ? listings.map(_buildListingRow).join('')
+        : '<p class="text-xs text-slate-400 italic text-center py-8">Nessun annuncio trovato.</p>';
+    document.getElementById('allListingsModalTitle').textContent = `Tutti gli annunci (${_allAdminListings.length})`;
 }
 
 async function deleteAnnuncio(id) {
