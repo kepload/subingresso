@@ -38,8 +38,46 @@ DROP TRIGGER IF EXISTS  notify_alert_update   ON public.annunci;
 DROP TRIGGER IF EXISTS " notify_seller_insert" ON public.annunci;
 DROP TRIGGER IF EXISTS  notify_seller_update  ON public.annunci;
 
--- Function async per notify-seller (analoga a notify_alert_on_annunci)
--- Sostituire SERVICE_ROLE_JWT con la propria chiave service_role.
+-- IMPORTANTE: il body di pg_net.http_post DEVE essere jsonb (NON ::text).
+-- Una versione precedente di notify_alert_on_annunci usava ::text con
+-- EXCEPTION WHEN OTHERS THEN NULL: l'errore di tipo veniva silenziato e
+-- nessuna email partiva. Ricreiamo entrambe le function correttamente.
+
+CREATE OR REPLACE FUNCTION public.notify_alert_on_annunci()
+RETURNS trigger
+LANGUAGE plpgsql
+SECURITY DEFINER
+AS $$
+BEGIN
+  BEGIN
+    PERFORM net.http_post(
+      url := 'https://mhfbtltgwibwmsudsuvf.supabase.co/functions/v1/notify-alert',
+      headers := jsonb_build_object(
+        'Content-Type', 'application/json',
+        'Authorization', 'Bearer SERVICE_ROLE_JWT'
+      ),
+      body := jsonb_build_object(
+        'type', TG_OP,
+        'table', TG_TABLE_NAME,
+        'schema', TG_TABLE_SCHEMA,
+        'record', to_jsonb(NEW),
+        'old_record', CASE WHEN TG_OP = 'UPDATE' THEN to_jsonb(OLD) ELSE NULL END
+      )
+    );
+  EXCEPTION WHEN OTHERS THEN
+    RAISE WARNING 'notify trigger: %', SQLERRM;
+  END;
+  RETURN NEW;
+END;
+$$;
+
+DROP TRIGGER IF EXISTS notify_alert_trigger ON public.annunci;
+CREATE TRIGGER notify_alert_trigger
+  AFTER INSERT OR UPDATE ON public.annunci
+  FOR EACH ROW
+  EXECUTE FUNCTION public.notify_alert_on_annunci();
+
+-- Function async per notify-seller (stessa struttura).
 CREATE OR REPLACE FUNCTION public.notify_seller_on_annunci()
 RETURNS trigger
 LANGUAGE plpgsql
@@ -59,9 +97,10 @@ BEGIN
         'schema', TG_TABLE_SCHEMA,
         'record', to_jsonb(NEW),
         'old_record', CASE WHEN TG_OP = 'UPDATE' THEN to_jsonb(OLD) ELSE NULL END
-      )::text
+      )
     );
-  EXCEPTION WHEN OTHERS THEN NULL;
+  EXCEPTION WHEN OTHERS THEN
+    RAISE WARNING 'notify trigger: %', SQLERRM;
   END;
   RETURN NEW;
 END;
