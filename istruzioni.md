@@ -330,6 +330,14 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Sitemap già registrata** su Search Console — nessuna azione necessaria, Google ricicla automaticamente.
 - **"Discovered not indexed"** (42 pagine in Search Console): normale per sito giovane, si risolve con tempo + traffico. Non richiedere indicizzazione manuale.
 
+## 🐌 Pubblicazione Annuncio — Timeout & Sessione (Aprile 2026)
+- **Timeout INSERT su `annunci` = 45 secondi** (vendi.html, `_withTimeout`). Il DB Supabase può impiegare 20+ secondi a causa del trigger `notify_alert_trigger` AFTER INSERT che chiama `pg_net.http_post()`. NON abbassare il timeout sotto i 30s o gli utenti vedranno "Pubblicazione scaduta".
+- **Diagnostica DB lento**: `DIAGNOSE_PUBLISH_SLOW.sql` nella root — query per ispezionare trigger su annunci, sorgente delle function trigger, coda `pg_net`, replica identity. Sezione 6 commentata: `ALTER TABLE public.annunci DISABLE TRIGGER notify_alert_trigger;` come workaround se la coda pg_net è intasata.
+- **JWT auto-refresh prima dell'INSERT** (vendi.html, `_isSessionExpired` + `_refreshSessionIfNeeded`): se `expires_at` è entro 30s, forza `refreshSession()`. Se l'INSERT fallisce con errore JWT/auth/RLS, refresha e ritenta UNA volta. Senza questo gli utenti con token scaduto in localStorage vedevano "Errore durante la pubblicazione" senza recovery.
+- **Fallback sessione `_getSessionForSubmit`**: se `getSession()` non trova nulla, prova `setSession()` da localStorage; se anche quello fallisce, usa la sessione stored direttamente (NON ritornare null, scatena auth modal inutile su utenti già loggati).
+- **Login timeout 12s** (auth.js, `handleLogin`): `signInWithPassword` può hangare a vita su connessioni lente. `Promise.race` con timeout evita il bottone "Attendi…" stuck.
+- **Errore di pubblicazione**: il catch block in `submitAnnuncio` mostra ora `Errore [code]: <message Supabase reale>` (max 160 char). Niente più messaggi generici che nascondono RLS/JWT/column errors. Indispensabile per diagnosticare.
+
 ## Stato Ultima Sessione Codex (27 Aprile 2026)
 - Sessione dedicata al blog SEO e alla pulizia dei file SQL temporanei.
 - Analisi competitor/mercato: Subingresso.it ha prodotto piu' moderno dei competitor verticali, ma dominio giovane e bassa autorita SEO. La strategia migliore e' long-tail operativo: spuntista, decadenza concessione, trasferimento familiare, subingresso locale, guide regionali e problemi concreti degli ambulanti.
