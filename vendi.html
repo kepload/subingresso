@@ -689,8 +689,19 @@ async function prefillContactFromSession(force = false) {
             .eq('id', user.id)
             .maybeSingle();
 
-        const profileName = profile ? `${profile.nome || ''} ${profile.cognome || ''}`.trim() : '';
-        const metaName = `${meta.nome || meta.first_name || ''} ${meta.cognome || meta.last_name || ''}`.trim();
+        // Costruisce il nome evitando duplicazioni (es. nome="Ardit Kycyku" + cognome="Kycyku")
+        const _smartName = (n, c) => {
+            const nome = (n || '').trim();
+            const cognome = (c || '').trim();
+            if (!nome && !cognome) return '';
+            if (!cognome) return nome;
+            if (!nome) return cognome;
+            // se cognome e' gia' contenuto in nome, ritorna solo nome
+            if (nome.toLowerCase().includes(cognome.toLowerCase())) return nome;
+            return `${nome} ${cognome}`;
+        };
+        const profileName = profile ? _smartName(profile.nome, profile.cognome) : '';
+        const metaName = _smartName(meta.nome || meta.first_name, meta.cognome || meta.last_name);
         const fullName = profileName || metaName || meta.full_name || meta.name || '';
         const phone = profile?.telefono || meta.telefono || meta.tel || meta.phone || meta.phone_number || '';
 
