@@ -377,7 +377,7 @@
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/data.js?v=6"></script>
 <script src="js/ui-components.js?v=2"></script>
-<script src="js/auth.js?v=2"></script>
+<script src="js/auth.js?v=4"></script>
 <script>
 
 // ── Step Management ───────────────────────────────────────
@@ -923,7 +923,7 @@ async function _refreshSessionIfNeeded(session) {
 async function _getSessionForSubmit() {
     let session = null;
     try {
-        const { data } = await _withTimeout(_supabase.auth.getSession(), 10000, 'Sessione non disponibile');
+        const { data } = await _withTimeout(_supabase.auth.getSession(), 8000, 'Sessione non disponibile');
         session = data?.session || null;
     } catch (err) {
         console.warn('getSession lento, provo fallback locale', err);
@@ -941,15 +941,20 @@ async function _getSessionForSubmit() {
                 5000,
                 'Ripristino sessione scaduto'
             );
-            session = data?.session || null;
+            session = data?.session || stored;
         } catch (err) {
-            console.warn('Fallback sessione locale non riuscito', err);
-            return null;
+            console.warn('Fallback sessione locale non riuscito, uso stored', err);
+            session = stored;
         }
     }
 
-    // Refresh forzato se il JWT è (quasi) scaduto, così l'INSERT non fallisce con auth error
-    return await _refreshSessionIfNeeded(session) || session;
+    if (!session?.user) return null;
+
+    // Refresh non bloccante: se la sessione e' (quasi) scaduta prova a refresharla,
+    // ma non bloccare il submit se il refresh fallisce — l'INSERT ha gia' un proprio
+    // retry su auth error che chiamera' refreshSession() di nuovo.
+    const refreshed = await _refreshSessionIfNeeded(session).catch(() => null);
+    return refreshed || session;
 }
 
 async function submitAnnuncio() {

@@ -460,8 +460,15 @@ window.handleLogin = async function (e) {
     const email    = document.getElementById('loginEmail').value.trim();
     const password = document.getElementById('loginPassword').value;
 
+    const timeout = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Login timeout')), 12000)
+    );
+
     try {
-        const { error } = await _supabase.auth.signInWithPassword({ email, password });
+        const { error } = await Promise.race([
+            _supabase.auth.signInWithPassword({ email, password }),
+            timeout
+        ]);
         _setBtnLoading('loginBtn', false, '<i class="fas fa-sign-in-alt"></i> Accedi');
 
         if (error) {
@@ -478,7 +485,10 @@ window.handleLogin = async function (e) {
         }
     } catch (err) {
         _setBtnLoading('loginBtn', false, '<i class="fas fa-sign-in-alt"></i> Accedi');
-        _showAuthError('Errore di connessione. Verifica la configurazione.');
+        const msg = (err?.message || '').toLowerCase().includes('timeout')
+            ? 'Login lento: ricarica la pagina e riprova.'
+            : 'Errore di connessione. Riprova tra poco.';
+        _showAuthError(msg);
     }
 };
 
