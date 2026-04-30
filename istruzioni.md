@@ -341,6 +341,28 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Login timeout 12s** (auth.js, `handleLogin`): `signInWithPassword` può hangare a vita su connessioni lente. `Promise.race` con timeout evita il bottone "Attendi…" stuck.
 - **Errore di pubblicazione**: il catch block in `submitAnnuncio` mostra ora `Errore [code]: <message Supabase reale>` (max 160 char). Niente più messaggi generici che nascondono RLS/JWT/column errors. Indispensabile per diagnosticare.
 
+## Sessione 30 Aprile – 1 Maggio 2026
+
+### Valutatore — Cambamenti principali
+- **`SETUP_VALUTATORE_LOGS.sql` eseguito** su Supabase: tabella `valutatore_logs` + 2 RPC (`link_valutatore_to_user`, `link_valutatore_to_annuncio`). Tutto funzionante.
+- **SEO completo valutatore.html**: title, meta, OG, Twitter Card, JSON-LD WebApplication + FAQPage (6 domande), preconnect. Sitemap: priority 0.9, weekly.
+- **Step 6 redesign**: valore vendita (verde/emerald) in cima, box affitto (blu) sotto, due CTA "Voglio Vendere" / "Voglio Affittare" → entrambi linkano `vendi.html`. Affitto mensile rimosso (solo annuale). Numero con spazio sottile come separatore migliaia (`toLocaleString('it-IT').replace(/\./g,' ')`).
+- **Formula calcolatore** (stato attuale):
+  ```js
+  var base = factors.fatturato * 2.0;
+  var moltFrequenza = (factors.frequenza === 'fiera') ? (2.2 * factors.durataFiera) : factors.frequenza;
+  var totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
+  var rentAvg = totale * 0.27 * factors.stagionalita;
+  ```
+  Zona: storica=2.8, capoluogo=1.6, rionale=0.6. Floor rimosso.
+  Calibrazione: base alzata da 0.45→0.65→1.2→2.0 per stare sopra 1× fatturato per i casi rionali.
+- **Bug fix noto**: non usare mai `history` come nome variabile JS → conflitto con `window.history` → crasha tutto. Il nome corretto usato qui è `stepHistory`.
+- **Banner mobile homepage**: prima della sezione "Vendi in 3 passi", visibile solo su mobile (`md:hidden`), link verde a valutatore.html.
+
+### Pendenze
+- **Label "Mercato Rionale / Periferico"** non piace all'utente ("non da l'idea di quello che è"). Opzioni proposte non ancora scelte: "Piccolo Comune / Quartiere", "Paese o Periferia", "Mercato Non di Punta". Da rinominare.
+- **Formula base ancora "troppo poco"** per l'utente (ultimo feedback sessione): alzata a 2.0 ma potrebbe servire ulteriore calibrazione.
+
 ## Stato Ultima Sessione Codex (27 Aprile 2026)
 - Sessione dedicata al blog SEO e alla pulizia dei file SQL temporanei.
 - Analisi competitor/mercato: Subingresso.it ha prodotto piu' moderno dei competitor verticali, ma dominio giovane e bassa autorita SEO. La strategia migliore e' long-tail operativo: spuntista, decadenza concessione, trasferimento familiare, subingresso locale, guide regionali e problemi concreti degli ambulanti.
