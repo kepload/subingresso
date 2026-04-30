@@ -130,7 +130,8 @@
             <form id="annuncioForm" novalidate>
 
                 <!-- Hidden inputs letti da submitAnnuncio -->
-                <input type="hidden" id="fTipo"   value="Mercato settimanale">
+                <input type="hidden" id="fTipo"      value="Mercato settimanale">
+                <input type="hidden" id="fNomeFiera" value="">
                 <input type="hidden" id="fMerce"  value="">
                 <input type="hidden" id="fGiorni" value="">
                 <input type="radio" name="stato" value="Vendita"         id="statoVendita" class="hidden" checked>
@@ -213,13 +214,15 @@
                     <button type="button" onclick="prevStep()" class="flex items-center gap-1.5 text-slate-400 hover:text-slate-700 text-sm font-bold mb-6 transition">
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
-                    <h2 class="text-2xl font-black mb-1">Com'è il posteggio?</h2>
-                    <p class="text-slate-500 font-medium mb-8 text-sm">Giorni, settore e dimensioni.</p>
+                    <h2 class="text-2xl font-black mb-1" id="step3Title">Com'è il posteggio?</h2>
+                    <p class="text-slate-500 font-medium mb-8 text-sm" id="step3Sub">Giorni, settore e dimensioni.</p>
 
                     <div class="space-y-8">
-                        <div>
+
+                        <!-- Giorni (solo mercato settimanale/quotidiano) -->
+                        <div id="step3Giorni">
                             <label class="field-label">Giorni di mercato *</label>
-                            <div class="flex gap-1.5 mt-1">
+                            <div class="flex gap-1.5 mt-1 flex-wrap">
                                 <button type="button" class="day-pill" data-day="Lunedì"    onclick="toggleDay(this)">Lun</button>
                                 <button type="button" class="day-pill" data-day="Martedì"   onclick="toggleDay(this)">Mar</button>
                                 <button type="button" class="day-pill" data-day="Mercoledì" onclick="toggleDay(this)">Mer</button>
@@ -227,6 +230,38 @@
                                 <button type="button" class="day-pill" data-day="Venerdì"   onclick="toggleDay(this)">Ven</button>
                                 <button type="button" class="day-pill" data-day="Sabato"    onclick="toggleDay(this)">Sab</button>
                                 <button type="button" class="day-pill" data-day="Domenica"  onclick="toggleDay(this)">Dom</button>
+                            </div>
+                        </div>
+
+                        <!-- Campi specifici fiera -->
+                        <div id="step3Fiera" class="hidden space-y-6">
+                            <div>
+                                <label class="field-label">Nome della fiera <span class="text-slate-400 font-medium normal-case text-xs">(opzionale)</span></label>
+                                <input id="fNomeFieraInput" type="text" placeholder="es. Fiera di Sant'Ambrogio" class="field-input"
+                                    oninput="document.getElementById('fNomeFiera').value=this.value.trim()">
+                            </div>
+                            <div>
+                                <label class="field-label">Periodo dell'anno *</label>
+                                <select id="fPeriodo" class="field-input" onchange="document.getElementById('fGiorni').value=this.value">
+                                    <option value="">Scegli il periodo...</option>
+                                    <option>Gennaio</option>
+                                    <option>Febbraio</option>
+                                    <option>Marzo</option>
+                                    <option>Aprile</option>
+                                    <option>Maggio</option>
+                                    <option>Giugno</option>
+                                    <option>Luglio</option>
+                                    <option>Agosto</option>
+                                    <option>Settembre</option>
+                                    <option>Ottobre</option>
+                                    <option>Novembre</option>
+                                    <option>Dicembre</option>
+                                    <option>Primavera (Mar–Mag)</option>
+                                    <option>Estate (Giu–Ago)</option>
+                                    <option>Autunno (Set–Nov)</option>
+                                    <option>Inverno (Dic–Feb)</option>
+                                    <option>Tutto l'anno</option>
+                                </select>
                             </div>
                         </div>
 
@@ -376,6 +411,7 @@ function goToStep(n) {
         const isAffitto = document.getElementById('statoAffitto').checked;
         document.querySelectorAll('.tipo-card').forEach((c, i) => c.classList.toggle('selected', i === (isAffitto ? 1 : 0)));
     }
+    if (_step === 3) _toggleStep3Fields();
     if (_step === 4) _updatePrezzoLabel();
     if (_step === 5) _suggestTitle();
     if (_step > 1) _saveDraft();
@@ -388,9 +424,10 @@ function _saveDraft() {
     if (!regione && !comune) return; // niente da salvare
     const draft = {
         stato, regione, comune,
-        tipo:        document.getElementById('fTipo').value,
-        giorni:      document.getElementById('fGiorni').value,
-        merce:       document.getElementById('fMerce').value,
+        tipo:       document.getElementById('fTipo').value,
+        giorni:     document.getElementById('fGiorni').value,
+        nomeFiera:  document.getElementById('fNomeFiera').value,
+        merce:      document.getElementById('fMerce').value,
         superficie:  document.getElementById('fSuperficie').value,
         prezzo:      document.getElementById('fPrezzo').value,
         titolo:      document.getElementById('fTitolo').value.trim(),
@@ -426,6 +463,13 @@ function _applyPendingDraft() {
         document.getElementById('fGiorni').value = d.giorni;
         const gg = d.giorni.split(', ');
         document.querySelectorAll('.day-pill').forEach(p => { if (gg.includes(p.dataset.day)) p.classList.add('on'); });
+        const periodoEl = document.getElementById('fPeriodo');
+        if (periodoEl) periodoEl.value = d.giorni;
+    }
+    if (d.nomeFiera) {
+        document.getElementById('fNomeFiera').value = d.nomeFiera;
+        const inputEl = document.getElementById('fNomeFieraInput');
+        if (inputEl) inputEl.value = d.nomeFiera;
     }
     if (d.merce) {
         document.getElementById('fMerce').value = d.merce;
@@ -460,8 +504,16 @@ function _validateStep(n) {
             return _err('Inserisci il comune.');
     }
     if (n === 3) {
-        if (!document.getElementById('fGiorni').value)
-            return _err('Seleziona almeno un giorno di mercato.');
+        const isFiera = document.getElementById('fTipo').value === 'Fiera';
+        if (isFiera) {
+            const periodo = document.getElementById('fPeriodo').value;
+            if (!periodo) return _err('Indica il periodo dell\'anno in cui si svolge la fiera.');
+            document.getElementById('fGiorni').value = periodo;
+            document.getElementById('fNomeFiera').value = document.getElementById('fNomeFieraInput').value.trim();
+        } else {
+            if (!document.getElementById('fGiorni').value)
+                return _err('Seleziona almeno un giorno di mercato.');
+        }
         if (!document.getElementById('fMerce').value)
             return _err('Seleziona il settore merceologico.');
         const sup = parseFloat(document.getElementById('fSuperficie').value.replace(',', '.'));
@@ -511,6 +563,17 @@ function selectStato(val) {
     goToStep(2);
 }
 
+// ── Step 3: Toggle campi fiera vs mercato ─────────────────
+function _toggleStep3Fields() {
+    const isFiera = document.getElementById('fTipo').value === 'Fiera';
+    document.getElementById('step3Giorni').classList.toggle('hidden', isFiera);
+    document.getElementById('step3Fiera').classList.toggle('hidden', !isFiera);
+    document.getElementById('step3Title').textContent = isFiera ? 'Com\'è la fiera?' : 'Com\'è il posteggio?';
+    document.getElementById('step3Sub').textContent   = isFiera
+        ? 'Nome, periodo e dimensioni.'
+        : 'Giorni, settore e dimensioni.';
+}
+
 // ── Step 2: Tipo mercato ──────────────────────────────────
 function selectTipo(val, idx) {
     document.getElementById('fTipo').value = val;
@@ -556,28 +619,44 @@ function _updatePrezzoLabel() {
 function _suggestTitle() {
     const el = document.getElementById('fTitolo');
     if (el.value.trim()) return;
-    const comune = document.getElementById('fComune').value.trim();
-    const tipo   = document.getElementById('fTipo').value;
-    const merce  = document.getElementById('fMerce').value;
-    const short  = { 'Mercato settimanale': 'Settimanale', 'Mercato quotidiano': 'Quotidiano', 'Fiera': 'Fiera' }[tipo] || tipo;
-    if (comune && merce) el.value = `Posteggio ${short} ${comune} – ${merce}`;
+    const comune     = document.getElementById('fComune').value.trim();
+    const tipo       = document.getElementById('fTipo').value;
+    const merce      = document.getElementById('fMerce').value;
+    const nomeFiera  = document.getElementById('fNomeFiera').value.trim();
+    if (tipo === 'Fiera') {
+        const nome = nomeFiera || 'Fiera';
+        if (comune && merce) el.value = `Posteggio ${nome} a ${comune} – ${merce}`;
+    } else {
+        const short = { 'Mercato settimanale': 'Settimanale', 'Mercato quotidiano': 'Quotidiano' }[tipo] || tipo;
+        if (comune && merce) el.value = `Posteggio ${short} ${comune} – ${merce}`;
+    }
 }
 
 // ── Step 5: Template descrizione ─────────────────────────
 function useTemplate() {
-    const comune  = document.getElementById('fComune').value.trim()    || '[comune]';
-    const tipo    = document.getElementById('fTipo').value             || 'mercato';
-    const merce   = document.getElementById('fMerce').value            || '[settore]';
-    const giorni  = document.getElementById('fGiorni').value           || '[giorni]';
-    const sup     = document.getElementById('fSuperficie').value       || '[m²]';
-    const isAffitto = document.getElementById('statoAffitto').checked;
-    const azione    = isAffitto ? 'Affitto' : 'Vendita';
+    const comune    = document.getElementById('fComune').value.trim()  || '[comune]';
+    const tipo      = document.getElementById('fTipo').value           || 'mercato';
+    const merce     = document.getElementById('fMerce').value          || '[settore]';
+    const giorni    = document.getElementById('fGiorni').value         || '[giorni]';
+    const sup       = document.getElementById('fSuperficie').value     || '[m²]';
+    const nomeFiera = document.getElementById('fNomeFiera').value.trim();
+    const isAffitto  = document.getElementById('statoAffitto').checked;
+    const azione     = isAffitto ? 'Affitto' : 'Vendita';
     const prezzoNote = isAffitto ? 'Canone annuale concordabile. ' : '';
-    document.getElementById('fDescrizione').value =
-        `${azione} posteggio al ${tipo.toLowerCase()} di ${comune}, settore ${merce}. ` +
-        `Superficie ${sup} m², giorni di mercato: ${giorni}. ` +
-        `${prezzoNote}Canone comunale regolare e in regola con tutti i permessi. ` +
-        `Ottima posizione con clientela fissa. Per informazioni contattatemi.`;
+    if (tipo === 'Fiera') {
+        const nomeParte = nomeFiera ? ` (${nomeFiera})` : '';
+        document.getElementById('fDescrizione').value =
+            `${azione} posteggio alla fiera di ${comune}${nomeParte}, settore ${merce}. ` +
+            `Superficie ${sup} m². La fiera si svolge in ${giorni}. ` +
+            `${prezzoNote}Concessione in regola con tutti i permessi. ` +
+            `Ottima posizione. Per informazioni contattatemi.`;
+    } else {
+        document.getElementById('fDescrizione').value =
+            `${azione} posteggio al ${tipo.toLowerCase()} di ${comune}, settore ${merce}. ` +
+            `Superficie ${sup} m², giorni di mercato: ${giorni}. ` +
+            `${prezzoNote}Canone comunale regolare e in regola con tutti i permessi. ` +
+            `Ottima posizione con clientela fissa. Per informazioni contattatemi.`;
+    }
 }
 
 
@@ -839,7 +918,8 @@ async function submitAnnuncio() {
             if (publicUrl) imageUrls.push(publicUrl);
         }
 
-        form.dettagli_extra = { images: imageUrls };
+        const nomeFiera = document.getElementById('fNomeFiera').value.trim();
+        form.dettagli_extra = { images: imageUrls, ...(nomeFiera ? { nome_fiera: nomeFiera } : {}) };
         form.img_urls = imageUrls;
 
         let { data: inserted, error } = await _supabase.from('annunci').insert(form).select('id').single();
