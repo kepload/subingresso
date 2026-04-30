@@ -895,31 +895,61 @@ function _getStoredSupabaseSession() {
     return null;
 }
 
+function _isSessionExpired(session) {
+    if (!session?.expires_at) return false;
+    return (session.expires_at * 1000) < (Date.now() + 30 * 1000);
+}
+
+async function _refreshSessionIfNeeded(session) {
+    if (!session) return null;
+    if (!_isSessionExpired(session)) return session;
+    try {
+        const { data, error } = await _withTimeout(
+            _supabase.auth.refreshSession(),
+            8000,
+            'Refresh sessione scaduto'
+        );
+        if (error) {
+            console.warn('refreshSession error:', error);
+            return null;
+        }
+        return data?.session || null;
+    } catch (err) {
+        console.warn('refreshSession fallita:', err);
+        return null;
+    }
+}
+
 async function _getSessionForSubmit() {
+    let session = null;
     try {
         const { data } = await _withTimeout(_supabase.auth.getSession(), 10000, 'Sessione non disponibile');
-        if (data?.session?.user) return data.session;
+        session = data?.session || null;
     } catch (err) {
         console.warn('getSession lento, provo fallback locale', err);
     }
 
-    const stored = _getStoredSupabaseSession();
-    if (!stored) return null;
-
-    try {
-        const { data } = await _withTimeout(
-            _supabase.auth.setSession({
-                access_token: stored.access_token,
-                refresh_token: stored.refresh_token
-            }),
-            5000,
-            'Ripristino sessione scaduto'
-        );
-        return data?.session || stored;
-    } catch (err) {
-        console.warn('Fallback sessione locale non riuscito', err);
-        return stored;
+    if (!session) {
+        const stored = _getStoredSupabaseSession();
+        if (!stored) return null;
+        try {
+            const { data } = await _withTimeout(
+                _supabase.auth.setSession({
+                    access_token: stored.access_token,
+                    refresh_token: stored.refresh_token
+                }),
+                5000,
+                'Ripristino sessione scaduto'
+            );
+            session = data?.session || null;
+        } catch (err) {
+            console.warn('Fallback sessione locale non riuscito', err);
+            return null;
+        }
     }
+
+    // Refresh forzato se il JWT è (quasi) scaduto, così l'INSERT non fallisce con auth error
+    return await _refreshSessionIfNeeded(session) || session;
 }
 
 async function submitAnnuncio() {
@@ -933,9 +963,10 @@ async function submitAnnuncio() {
 
     // Controlla auth prima di disabilitare il bottone
     let user = null;
+    let _currentSession = null;
     try {
-        const session = await _getSessionForSubmit();
-        user = session?.user || null;
+        _currentSession = await _getSessionForSubmit();
+        user = _currentSession?.user || null;
     } catch (err) {
         console.error(err);
         _err('Sessione non caricata. Ricarica la pagina e riprova.');
@@ -1062,6 +1093,20 @@ async function submitAnnuncio() {
             inserted = r.data; error = r.error;
         }
 
+        // Auth error → tenta refresh JWT una sola volta e ripeti
+        if (error && /jwt|JWT|expired|auth|RLS|permission|policy|unauthor/i.test(error.message || '')) {
+            console.warn('Auth error sull\'INSERT, provo refresh sessione:', error);
+            const refreshed = await _refreshSessionIfNeeded({ ...(_currentSession || {}), expires_at: 0 });
+            if (refreshed?.user) {
+                const r = await _withTimeout(
+                    _supabase.from('annunci').insert(form).select('id').single(),
+                    20000,
+                    'Pubblicazione scaduta'
+                );
+                inserted = r.data; error = r.error;
+            }
+        }
+
         if (error) throw error;
 
         // Salva nome/tel per pre-fill ai prossimi annunci
@@ -1103,12 +1148,9 @@ async function submitAnnuncio() {
         console.error('Pubblicazione fallita:', err);
         localStorage.removeItem(lastPostKey);
         const code = err?.code ? ` [${err.code}]` : '';
-        const detail = (err?.message || err?.error_description || err?.hint || '').toString().slice(0, 140);
-        const isAuthError = /jwt|JWT|auth|RLS|permission|policy|unauthor/i.test(detail);
-        if (isAuthError) {
-            _err('Sessione scaduta. Ricarica la pagina, accedi di nuovo e riprova.');
-        } else if (detail) {
-            _err(`Errore durante la pubblicazione${code}: ${detail}`);
+        const detail = (err?.message || err?.error_description || err?.hint || '').toString().slice(0, 160);
+        if (detail) {
+            _err(`Errore${code}: ${detail}`);
         } else {
             _err('Errore durante la pubblicazione. Riprova tra poco.');
         }
