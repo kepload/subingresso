@@ -541,7 +541,7 @@
     }
 
     function calculate() {
-        var base = factors.fatturato * 0.45;
+        var base = factors.fatturato * 0.65;
         var moltFrequenza = (factors.frequenza === 'fiera') ? (2.2 * factors.durataFiera) : factors.frequenza;
         var totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
 
