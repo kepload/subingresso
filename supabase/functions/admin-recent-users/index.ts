@@ -80,10 +80,9 @@ Deno.serve(async (req) => {
 
     // RPC SECURITY DEFINER che legge auth.users direttamente
     const { data: authRows, error: rpcErr } = await admin
-      .rpc('admin_get_recent_users', { p_limit: 50 });
+      .rpc('admin_get_recent_users', { p_limit: 2000 });
 
     if (rpcErr) {
-      // Funzione SQL non ancora creata: istruzioni per l'admin
       if (rpcErr.code === '42883' || rpcErr.message?.includes('does not exist')) {
         return json({
           error: 'Funzione SQL mancante. Esegui SETUP_ADMIN_USERS_FN.sql nel SQL Editor di Supabase.',
@@ -93,47 +92,59 @@ Deno.serve(async (req) => {
     }
 
     const rows = (authRows as Array<Record<string, unknown>> || []);
-
-    // Arricchisce con nome/cognome da profiles
     const ids = rows.map(u => u.id as string).filter(Boolean);
-    const { data: profiles } = ids.length
-      ? await admin.from('profiles').select('id, nome, cognome').in('id', ids)
-      : { data: [] };
 
-    const profileMap = new Map((profiles || []).map((p: Record<string, unknown>) => [p.id, p]));
+    // Fetch parallelo: profili + pending verifications + annunci counts
+    const [profilesRes, pendingRes, annunciRes] = await Promise.all([
+      ids.length
+        ? admin.from('profiles').select('id, nome, cognome').in('id', ids)
+        : Promise.resolve({ data: [] }),
+      ids.length
+        ? admin.from('pending_email_verifications').select('user_id, verified_at').in('user_id', ids)
+        : Promise.resolve({ data: [], error: null }),
+      ids.length
+        ? admin.from('annunci').select('user_id, status').in('user_id', ids)
+        : Promise.resolve({ data: [] }),
+    ]);
 
-    // Gli utenti creati via register-bypass hanno email_confirmed_at valorizzato
-    // per poter accedere subito. La verifica reale si legge dalla coda pending.
-    const { data: pendingRows, error: pendingErr } = ids.length
-      ? await admin
-          .from('pending_email_verifications')
-          .select('user_id, verified_at')
-          .in('user_id', ids)
-      : { data: [], error: null };
-
-    if (pendingErr) console.error('admin-recent-users pending lookup error:', pendingErr);
-    const pendingMap = new Map(
-      (pendingRows || [])
-        .filter((p: Record<string, unknown>) => !p.verified_at)
-        .map((p: Record<string, unknown>) => [String(p.user_id), true])
+    const profileMap = new Map(
+      ((profilesRes.data || []) as Array<Record<string, unknown>>).map(p => [String(p.id), p])
     );
+
+    const pendingMap = new Map(
+      ((pendingRes.data || []) as Array<Record<string, unknown>>)
+        .filter(p => !p.verified_at)
+        .map(p => [String(p.user_id), true])
+    );
+
+    // Conta annunci per utente
+    const annunciMap = new Map<string, { total: number; active: number }>();
+    for (const a of (annunciRes.data || []) as Array<Record<string, unknown>>) {
+      const key = String(a.user_id);
+      if (!annunciMap.has(key)) annunciMap.set(key, { total: 0, active: 0 });
+      const entry = annunciMap.get(key)!;
+      entry.total++;
+      if (a.status === 'active') entry.active++;
+    }
 
     const users = rows
       .sort((a, b) => new Date(String(b.created_at || 0)).getTime() - new Date(String(a.created_at || 0)).getTime())
-      .slice(0, 5)
       .map((u: Record<string, unknown>) => {
         const p = profileMap.get(String(u.id)) as Record<string, unknown> || {};
         const verificationPending = pendingMap.has(String(u.id));
+        const counts = annunciMap.get(String(u.id)) || { total: 0, active: 0 };
         return {
-          id:              u.id,
-          email:           u.email,
-          created_at:      u.created_at,
-          last_sign_in_at: u.last_sign_in_at,
-          confirmed_at:    u.confirmed_at,
-          email_verified:  Boolean(u.confirmed_at) && !verificationPending,
+          id:                   u.id,
+          email:                u.email,
+          created_at:           u.created_at,
+          last_sign_in_at:      u.last_sign_in_at,
+          confirmed_at:         u.confirmed_at,
+          email_verified:       Boolean(u.confirmed_at) && !verificationPending,
           verification_pending: verificationPending,
-          nome:            p.nome    || '',
-          cognome:         p.cognome || '',
+          nome:                 p.nome    || '',
+          cognome:              p.cognome || '',
+          annunci_active:       counts.active,
+          annunci_total:        counts.total,
         };
       });
 

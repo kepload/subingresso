@@ -171,13 +171,16 @@
             <!-- Recent Users -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <h3 class="font-black text-slate-900 mb-4 flex items-center gap-2">
-                    <i class="fas fa-users"></i> Ultimi 5 iscritti
+                    <i class="fas fa-users"></i> Ultimi iscritti
                 </h3>
                 <div id="adminRecentUsersList" class="space-y-2">
                     <div class="text-center py-6 text-slate-300">
                         <i class="fas fa-spinner fa-spin"></i>
                     </div>
                 </div>
+                <button onclick="openAllUsersModal()" class="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-xs font-black text-slate-500 hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-users"></i> <span id="allUsersBtn">Vedi tutti</span>
+                </button>
             </div>
 
             <!-- All Listings -->
@@ -498,6 +501,26 @@
     </div>
 </div>
 
+<!-- ══════════════ MODAL TUTTI GLI UTENTI ══════════════ -->
+<div id="allUsersModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.72);backdrop-filter:blur(4px)" onclick="closeAllUsersModal()">
+    <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl flex flex-col overflow-hidden max-h-[88vh]" onclick="event.stopPropagation()">
+        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between shrink-0">
+            <h3 class="font-black text-slate-900 flex items-center gap-2"><i class="fas fa-users text-blue-500"></i> <span id="allUsersModalTitle">Tutti gli utenti</span></h3>
+            <button onclick="closeAllUsersModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 font-black text-lg transition flex items-center justify-center">×</button>
+        </div>
+        <div class="px-6 py-3 border-b border-slate-100 shrink-0">
+            <div class="relative">
+                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                <input id="userSearchInput" type="text" placeholder="Cerca per email o nome..." oninput="filterUsers()"
+                    class="w-full pl-8 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+            </div>
+        </div>
+        <div id="allUsersList" class="overflow-y-auto flex-1 p-4 space-y-2">
+            <div class="text-center py-8 text-slate-300"><i class="fas fa-spinner fa-spin"></i></div>
+        </div>
+    </div>
+</div>
+
 <!-- ══════════════ MODAL RIFIUTA ANNUNCIO ══════════════ -->
 <div id="rejectModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.72);backdrop-filter:blur(4px)">
     <div class="bg-white rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
@@ -811,6 +834,40 @@ function setChartPeriod(mode) {
     loadAdminGrowthChart(mode);
 }
 
+let _allAdminUsers = [];
+
+function _buildUserRow(u) {
+    const email      = escapeHTML(u.email || 'Email non disponibile');
+    const emailAttr  = escapeHTML(u.email || '');
+    const idAttr     = escapeHTML(u.id || '');
+    const name       = escapeHTML([u.nome, u.cognome].filter(Boolean).join(' ') || 'Nome non indicato');
+    const created    = u.created_at
+        ? new Date(u.created_at).toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })
+        : '—';
+    const emailVerified = typeof u.email_verified === 'boolean' ? u.email_verified : Boolean(u.confirmed_at);
+    const statusLabel = emailVerified ? 'Confermata' : 'Non confermata';
+    const statusClass = emailVerified ? 'text-emerald-600 bg-emerald-50' : 'text-amber-600 bg-amber-50';
+    const activeAnn  = u.annunci_active ?? 0;
+    const totalAnn   = u.annunci_total  ?? 0;
+
+    return `
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 p-3 bg-slate-50 rounded-xl">
+            <div class="min-w-0">
+                <p class="text-sm font-black text-slate-900 truncate">${email}</p>
+                <p class="text-xs text-slate-500 font-semibold truncate">${name} · <span class="text-slate-400">${created}</span></p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0 flex-wrap">
+                <span class="text-[10px] font-black px-2 py-1 rounded-lg bg-blue-50 text-blue-700" title="Annunci attivi / totali">
+                    <i class="fas fa-list mr-1"></i>${activeAnn} att. · ${totalAnn} tot.
+                </span>
+                <span class="text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-lg ${statusClass}">${statusLabel}</span>
+                <button onclick="deleteAdminUser('${idAttr}', '${emailAttr}', this)" class="text-red-500 hover:text-white hover:bg-red-600 border border-red-100 bg-white px-2.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition">
+                    Elimina
+                </button>
+            </div>
+        </div>`;
+}
+
 async function loadAdminRecentUsers() {
     const list = document.getElementById('adminRecentUsersList');
     if (!list) return;
@@ -832,47 +889,54 @@ async function loadAdminRecentUsers() {
         const raw = await res.text();
         let payload = {};
         try { payload = raw ? JSON.parse(raw) : {}; } catch (_) {}
-        if (!res.ok) {
-            throw new Error(payload.error || raw || `Errore caricamento utenti (${res.status})`);
-        }
+        if (!res.ok) throw new Error(payload.error || raw || `Errore (${res.status})`);
 
-        const users = payload.users || [];
-        if (!users.length) {
+        _allAdminUsers = payload.users || [];
+        if (!_allAdminUsers.length) {
             list.innerHTML = '<p class="text-xs text-slate-400 italic">Nessun utente trovato.</p>';
             return;
         }
 
-        list.innerHTML = users.map(u => {
-            const email = escapeHTML(u.email || 'Email non disponibile');
-            const emailAttr = escapeHTML(u.email || '');
-            const idAttr = escapeHTML(u.id || '');
-            const name = escapeHTML([u.nome, u.cognome].filter(Boolean).join(' ') || 'Nome non indicato');
-            const created = u.created_at
-                ? new Date(u.created_at).toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
-                : 'Data non disponibile';
-            const emailVerified = typeof u.email_verified === 'boolean' ? u.email_verified : Boolean(u.confirmed_at);
-            const status = emailVerified ? 'Confermata' : 'Non confermata';
-            const statusClass = emailVerified ? 'text-emerald-600 bg-emerald-50' : 'text-amber-600 bg-amber-50';
+        list.innerHTML = _allAdminUsers.slice(0, 5).map(_buildUserRow).join('');
 
-            return `
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 p-3 bg-slate-50 rounded-xl">
-                    <div class="min-w-0">
-                        <p class="text-sm font-black text-slate-900 truncate">${email}</p>
-                        <p class="text-xs text-slate-500 font-bold truncate">${name}</p>
-                    </div>
-                    <div class="flex items-center gap-2 shrink-0">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">${created}</span>
-                        <span class="text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-lg ${statusClass}">${status}</span>
-                        <button onclick="deleteAdminUser('${idAttr}', '${emailAttr}', this)" class="text-red-500 hover:text-white hover:bg-red-600 border border-red-100 bg-white px-2.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition">
-                            Elimina
-                        </button>
-                    </div>
-                </div>
-            `;
-        }).join('');
+        const btn = document.getElementById('allUsersBtn');
+        if (btn) btn.textContent = `Vedi tutti (${_allAdminUsers.length})`;
+
     } catch (e) {
         list.innerHTML = `<p class="text-xs text-red-500 font-bold">Errore: ${escapeHTML(e.message)}</p>`;
     }
+}
+
+function openAllUsersModal() {
+    document.getElementById('allUsersModal').classList.remove('hidden');
+    document.getElementById('userSearchInput').value = '';
+    renderAllUsers(_allAdminUsers);
+}
+
+function closeAllUsersModal() {
+    document.getElementById('allUsersModal').classList.add('hidden');
+}
+
+function filterUsers() {
+    const q = document.getElementById('userSearchInput').value.toLowerCase().trim();
+    const filtered = q
+        ? _allAdminUsers.filter(u =>
+            (u.email || '').toLowerCase().includes(q) ||
+            ([u.nome, u.cognome].filter(Boolean).join(' ')).toLowerCase().includes(q))
+        : _allAdminUsers;
+    renderAllUsers(filtered);
+    document.getElementById('allUsersModalTitle').textContent =
+        q ? `${filtered.length} risultati` : `Tutti gli utenti (${_allAdminUsers.length})`;
+}
+
+function renderAllUsers(users) {
+    const list = document.getElementById('allUsersList');
+    if (!list) return;
+    list.innerHTML = users.length
+        ? users.map(_buildUserRow).join('')
+        : '<p class="text-xs text-slate-400 italic text-center py-8">Nessun utente trovato.</p>';
+    document.getElementById('allUsersModalTitle').textContent =
+        `Tutti gli utenti (${_allAdminUsers.length})`;
 }
 
 async function deleteAdminUser(userId, email, btn) {
