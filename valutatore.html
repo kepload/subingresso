@@ -341,16 +341,12 @@
                 <p class="text-[10px] font-black uppercase tracking-widest text-blue-600 text-center mb-3">
                     <i class="fas fa-money-bill-trend-up mr-1"></i> Se preferisci affittarlo
                 </p>
-                <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="grid grid-cols-2 gap-2 text-center">
                     <div>
-                        <p class="text-[9px] font-bold uppercase text-blue-600/60 tracking-wider mb-1">Al mese</p>
-                        <p id="rentMonthly" class="text-lg font-black text-blue-700">€ --</p>
-                    </div>
-                    <div class="border-x border-blue-100">
                         <p class="text-[9px] font-bold uppercase text-blue-600/60 tracking-wider mb-1">All'anno</p>
                         <p id="rentValue" class="text-lg font-black text-blue-700">€ --</p>
                     </div>
-                    <div>
+                    <div class="border-l border-blue-100">
                         <p class="text-[9px] font-bold uppercase text-blue-600/60 tracking-wider mb-1">Rendimento</p>
                         <p id="roiValue" class="text-lg font-black text-blue-700">--%</p>
                     </div>
@@ -630,7 +626,6 @@
         document.getElementById('priceMax').textContent = '€ ' + fmt(snap(max));
         document.getElementById('totalAvg').textContent = '€ ' + fmt(snap(totale));
         document.getElementById('rentValue').textContent = '€ ' + fmt(rentAvg);
-        document.getElementById('rentMonthly').textContent = '€ ' + fmt(rentMonthly);
 
         var roi = (rentAvg / totale) * 100;
         document.getElementById('roiValue').textContent = roi.toFixed(1) + '%';
