@@ -871,6 +871,15 @@ function _withTimeout(promise, ms, label) {
     ]);
 }
 
+async function _prepareListingImage(file) {
+    const prepared = typeof prepareImageForUpload === 'function'
+        ? await _withTimeout(prepareImageForUpload(file), 7000, 'Preparazione foto scaduta')
+        : file;
+    const ext  = (prepared.name || file.name || 'foto.webp').split('.').pop();
+    const path = `${Date.now()}-${Math.random().toString(36).substring(7)}.${ext}`;
+    return { file: prepared, path };
+}
+
 function _getStoredSupabaseSession() {
     try {
         for (let i = 0; i < localStorage.length; i++) {
@@ -993,19 +1002,27 @@ async function submitAnnuncio() {
         const imageUrls = [];
         let failedUploads = 0;
         for (let file of _files) {
-            const uploadFile = typeof prepareImageForUpload === 'function'
-                ? await prepareImageForUpload(file)
-                : file;
-            const ext  = uploadFile.name.split('.').pop();
-            const path = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${ext}`;
-            const { error: upErr } = await _supabase.storage.from('listings').upload(path, uploadFile, {
-                contentType: uploadFile.type || 'image/webp',
-                cacheControl: '31536000'
-            });
-            if (upErr) { failedUploads++; continue; }
-            const { data: { publicUrl } } = _supabase.storage.from('listings').getPublicUrl(path);
-            if (publicUrl) imageUrls.push(publicUrl);
+            try {
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Caricamento foto...';
+                const prepared = await _prepareListingImage(file);
+                const storagePath = `${user.id}/${prepared.path}`;
+                const { error: upErr } = await _withTimeout(
+                    _supabase.storage.from('listings').upload(storagePath, prepared.file, {
+                        contentType: prepared.file.type || 'image/webp',
+                        cacheControl: '31536000'
+                    }),
+                    12000,
+                    'Upload foto scaduto'
+                );
+                if (upErr) { failedUploads++; continue; }
+                const { data: { publicUrl } } = _supabase.storage.from('listings').getPublicUrl(storagePath);
+                if (publicUrl) imageUrls.push(publicUrl);
+            } catch (imgErr) {
+                console.warn('Foto saltata durante la pubblicazione:', imgErr);
+                failedUploads++;
+            }
         }
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
 
         const nomeFiera  = document.getElementById('fNomeFiera').value.trim();
         const noteFiera  = (document.getElementById('fNoteFiera')?.value || '').trim();
@@ -1057,7 +1074,11 @@ async function submitAnnuncio() {
                 .then(() => {}).catch(() => {});
         }
 
-        const vetranaGranted = await _tryGrantWelcomeVetrina(user.id, inserted.id);
+        const vetranaGranted = await _withTimeout(
+            _tryGrantWelcomeVetrina(user.id, inserted.id),
+            5000,
+            'Vetrina welcome scaduta'
+        ).catch(() => false);
         _clearDraft();
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
