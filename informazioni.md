@@ -5,7 +5,7 @@
 - Registrazione: decisione prodotto = gli utenti devono poter entrare subito anche senza email verificata. La verifica email diventa non bloccante e va recuperata piu' avanti.
 - `register-bypass`: deve creare/abilitare l'utente con `email_confirm: true`, salvare la mail in `pending_email_verifications`, creare/aggiornare `profiles`, e non bloccare mai la registrazione per errori di tracking verifica.
 - Edge Functions modificate in repo ma NON deployate automaticamente da Vercel: `register-bypass` e `admin-recent-users` vanno deployate su Supabase manualmente/CLI.
-- Deploy CLI tentato: `supabase functions deploy register-bypass --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt`, bloccato per mancanza `SUPABASE_ACCESS_TOKEN`.
+- Deploy CLI: `npx.cmd supabase functions deploy register-bypass --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt`. Il `SUPABASE_ACCESS_TOKEN` adesso e' salvato in `.claude/settings.local.json` (verificato funzionante 30 apr).
 - Ruota welcome: deve apparire subito dopo registrazione partita dal popup (`sessionStorage._reg_src='popup'`). Il profilo riceve `welcome_lottery_eligible=true`; registrazione normale invece `false`.
 - Admin utenti recenti: non usare solo `auth.users.email_confirmed_at` per dire "Confermata", perche' il bypass lo valorizza per permettere login. Usare `email_verified=false` se esiste riga non verificata in `pending_email_verifications`.
 - Commit principali: `455d053 Allow immediate signup access`, `055a123 Recover from signup function errors`, `e6a1f68 Show pending email verification in admin`.
@@ -16,9 +16,52 @@
 - Corretto flusso pubblicazione: se l'utente clicca "Pubblica" da anonimo, dopo registrazione/login il submit riprende automaticamente e precompila nome/telefono dal profilo. Commit: `19df5cf Harden registration and listing flow`.
 - `register-bypass` in repo e' stato reso piu' robusto: email normalizzata, client Supabase service_role senza sessione persistente, profilo/log verifica non fatali. In produzione pero' la function rispondeva ancora 500 finche' non viene deployata.
 - Aggiunta Edge Function `grant-welcome-vetrina`: applica la vetrina welcome solo con JWT valido e annuncio di proprieta'. Il frontend la chiama solo se `localStorage._welcome_vetrina_won_<userId>='1'`, evitando chiamate/RPC inutili nel percorso normale.
-- Deploy Supabase non eseguito: serve `SUPABASE_ACCESS_TOKEN`. Comandi utili:
+- Deploy Supabase Edge Functions: `SUPABASE_ACCESS_TOKEN` in `.claude/settings.local.json`. Comandi:
   - `npx.cmd supabase functions deploy register-bypass --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt`
   - `npx.cmd supabase functions deploy grant-welcome-vetrina --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt`
+- In alternativa per query SQL/DDL al DB live (senza CLI): Supabase Management API → `POST https://api.supabase.com/v1/projects/mhfbtltgwibwmsudsuvf/database/query` con `Authorization: Bearer <SUPABASE_ACCESS_TOKEN>`.
 - Migliorato supporto Password Manager Chrome/Google: campi auth con `name`/`autocomplete` corretti e chiamata a `navigator.credentials.store()` dopo login/registrazione riusciti. Commit: `619a778 Improve password manager support`.
 - Migliorato feedback del bottone finale in `vendi.html`: al click mostra subito "Verifica in corso...", poi "Pubblicazione in corso..."; se manca login o validazione fallisce, il bottone si riattiva. Commit: `385bb5e Improve listing submit feedback`.
 - Stato SEO da ricordare: Search Console mostra sitemap riuscita con 44 URL, ma solo 2 pagine indicizzate e 21 "Rilevata, ma attualmente non indicizzata". Priorita' futura: pagine regionali/landing long-tail e backlink settoriali/locali.
+
+## Sessione 30 Aprile 2026 (sera) — Fix pubblicazione lenta + email rotte
+
+### Problema iniziale
+- Pubblicazione annuncio falliva con timeout (20s prima, poi 45s). DB benchmark mostrava INSERT lento 15-20s.
+
+### Causa root
+- 5 trigger AFTER INSERT/UPDATE su `annunci`: `notify-alert`, `notify_alert_update`, `notify_alert_trigger` (custom), `" notify_seller_insert"` (con spazio iniziale!), `notify_seller_update`. Tutti sincroni tranne il custom. Per ogni INSERT, 3 chiamate HTTP sincrone con timeout 5s + 3 email duplicate alla stessa edge function `notify-alert`.
+
+### Fix DB (applicati via Management API, non solo committati)
+- Drop dei 4 webhook UI sincroni: `"notify-alert"`, `notify_alert_update`, `" notify_seller_insert"`, `notify_seller_update`.
+- Creata function async `notify_seller_on_annunci()` con `pg_net.http_post()` + nuovo trigger `notify_seller_trigger`.
+- Trigger finali su `annunci`: `notify_alert_trigger` (async), `notify_seller_trigger` (async), `trg_enforce_annunci_status` (BEFORE locale). Patch idempotente in `PATCH_REMOVE_DUPLICATE_TRIGGERS_20260430.sql`.
+- **CRITICO**: `pg_net.http_post(url text, body jsonb, ...)` — il body DEVE essere `jsonb`, NON `::text`. La function originale usava `body := jsonb_build_object(...)::text` con `EXCEPTION WHEN OTHERS THEN NULL` → il type mismatch veniva silenziato → nessuna email partiva. Ora corretto + `RAISE WARNING` invece di `NULL`.
+- Risultato: INSERT da 15-20s a <800ms. Email funzionano (verificato con INSERT di test che ha generato 200 OK su entrambe le edge function).
+
+### Fix client (vendi.html)
+- Il client `supabase-js@2` aveva episodi di hang/lock interni: l'INSERT timeout-ava 45s anche quando il server rispondeva in 1s.
+- Sostituito tutto con fetch diretto a PostgREST/Storage:
+  - `_directInsertAnnuncio()` per INSERT su annunci
+  - `prefillContactFromSession()` legge sessione da localStorage via `_getStoredSupabaseSession()` e fetcha `/rest/v1/profiles` direttamente. NIENTE `_supabase.auth.getSession()` (era la chiamata che hangava anche dentro gli header del fetch).
+  - Upload foto via `fetch POST /storage/v1/object/listings/...` con timeout 25s e progress "1/N".
+- Cache localStorage (`_profile_nome`, `_profile_tel`) per prefill istantaneo al prossimo caricamento.
+- Login (`auth.js handleLogin`): timeout 12s su `signInWithPassword` per evitare bottone "Attendi…" stuck.
+- Smart name: evita duplicazione tipo `nome="Ardit Kycyku" + cognome="Kycyku" → "Ardit Kycyku Kycyku"`.
+- Cache bust: `auth.js?v=4` su tutte le pagine.
+
+### File diagnostici
+- `DIAGNOSE_PUBLISH_SLOW.sql`: query per ispezionare trigger su annunci, function bodies, coda pg_net, replica identity.
+- `PATCH_REMOVE_DUPLICATE_TRIGGERS_20260430.sql`: idempotente, riproduce le modifiche DB.
+
+### Commit principali (in ordine)
+- `6f9cf4f Show detailed publish error message`
+- `1d1304c Auto-refresh JWT scaduto`
+- `a9de110 Login timeout 12s`
+- `7f6fc0e Increase publish timeout to 45s + diagnostic SQL`
+- `47fc4fb Remove 3 duplicate notify-alert triggers`
+- `960252c Convert notify-seller webhooks to async`
+- `839c751 Fix critico: pg_net body deve essere jsonb non ::text`
+- `c7d62d8 Direct fetch INSERT + prefill cache`
+- `db1a251 Fetch diretto profile + storage upload`
+- `f8709dd Prefill leggi sessione da localStorage senza supabase-js`
