@@ -308,6 +308,55 @@
 </footer>
 
 <script>
+    // ── Session anonima persistente ───────────────────────────
+    var _VAL_SESSION = localStorage.getItem('_val_session');
+    if (!_VAL_SESSION) {
+        _VAL_SESSION = 'vs_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 9);
+        localStorage.setItem('_val_session', _VAL_SESSION);
+    }
+
+    // ── Lookup etichette leggibili dai valori dei moltiplicatori ─
+    var _FREQ_LABELS  = { '1.4': 'settimanale', 'fiera': 'fiera', '2.2': 'giornaliero' };
+    var _FIERA_LABELS = { '0.8': '1_giorno', '1.6': 'weekend', '2.8': 'settimana_piu' };
+    var _STAG_LABELS  = { '1': 'annuale', '0.65': 'stagionale' };
+    var _ZONA_LABELS  = { '2.8': 'storica_turistica', '1.6': 'capoluogo', '1': 'rionale' };
+    var _SETT_LABELS  = { '1.4': 'alimentare', '1': 'non_alimentare' };
+    var _POS_LABELS   = { '1.35': 'angolare', '1': 'linea' };
+    var _ANNI_LABELS  = { '1.3': 'storica', '1': 'recente' };
+
+    function _label(map, val) { return map[String(val)] || null; }
+
+    // ── Salvataggio silenzioso al completamento ───────────────
+    function _saveValutatoreLog(prezzo_min, prezzo_avg, prezzo_max, affitto_annuo, affitto_mensile) {
+        var payload = {
+            session_token:   _VAL_SESSION,
+            fatturato:       factors.fatturato,
+            frequenza:       _label(_FREQ_LABELS,  factors.frequenza),
+            durata_fiera:    factors.frequenza === 'fiera' ? _label(_FIERA_LABELS, factors.durataFiera) : null,
+            stagionalita:    _label(_STAG_LABELS,  factors.stagionalita),
+            zona:            _label(_ZONA_LABELS,  factors.zona),
+            settore:         _label(_SETT_LABELS,  factors.settore),
+            posizione:       _label(_POS_LABELS,   factors.posizione),
+            anzianita:       _label(_ANNI_LABELS,  factors.anni),
+            prezzo_min:      Math.round(prezzo_min),
+            prezzo_avg:      Math.round(prezzo_avg),
+            prezzo_max:      Math.round(prezzo_max),
+            affitto_annuo:   Math.round(affitto_annuo),
+            affitto_mensile: Math.round(affitto_mensile),
+        };
+        // Dati incompleti → non salvare (es. step saltato)
+        if (!payload.frequenza || !payload.stagionalita || !payload.zona || !payload.settore) return;
+
+        fetch('https://mhfbtltgwibwmsudsuvf.supabase.co/rest/v1/valutatore_logs', {
+            method: 'POST',
+            headers: {
+                'apikey':       'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+        }).catch(function() {}); // fire-and-forget
+    }
+
     var currentStep = 1;
     var stepHistory = [1];
     var factors = {
@@ -410,6 +459,8 @@
         setTimeout(function() {
             document.getElementById('roiBar').style.width = Math.min(roi * 3, 100) + '%';
         }, 500);
+
+        _saveValutatoreLog(min, totale, max, rentAvg, rentMonthly);
     }
 </script>
 

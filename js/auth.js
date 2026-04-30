@@ -477,6 +477,7 @@ window.handleLogin = async function (e) {
         }
 
         await _storePasswordCredential(email, password, email);
+        _linkValutatoreSession();
         closeAuthModal();
         updateAuthNav();
         if (typeof window.__onLoginSuccess === 'function') {
@@ -517,8 +518,16 @@ window.handleRegister = async function (e) {
 };
 
 // ── Register helpers ─────────────────────────────────────
+function _linkValutatoreSession() {
+    const token = localStorage.getItem('_val_session');
+    if (!token) return;
+    _supabase.rpc('link_valutatore_to_user', { p_session_token: token })
+        .then(() => {}).catch(() => {});
+}
+
 async function _afterRegisterSuccess(nome, showWelcome = false) {
     _suppressVisitorPopup();
+    _linkValutatoreSession();
     const user = await getCurrentUser();
     _profileCache = { id: user?.id, nome };
     _showAuthSuccess('Benvenuto! Account creato con successo.');

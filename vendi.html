@@ -1218,6 +1218,12 @@ async function submitAnnuncio() {
 
         if (error) throw error;
 
+        // Collega eventuale valutazione precedente a questo annuncio (fire-and-forget)
+        if (inserted?.id) {
+            _supabase.rpc('link_valutatore_to_annuncio', { p_annuncio_id: inserted.id })
+                .then(() => {}).catch(() => {});
+        }
+
         // Salva nome/tel per pre-fill ai prossimi annunci
         if (form.contatto) localStorage.setItem('_vc_nome', form.contatto);
         if (form.tel)      localStorage.setItem('_vc_tel',  form.tel);
