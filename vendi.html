@@ -832,6 +832,7 @@ function removeFile(btn) {
 // ── Lotteria vetrina welcome (0,1% → 30 giorni, entro 30gg iscrizione) ─────
 async function _tryGrantWelcomeVetrina(userId, annuncioId) {
     try {
+        if (localStorage.getItem('_welcome_vetrina_won_' + userId) !== '1') return false;
         const { data: { session } } = await _supabase.auth.getSession();
         if (!session?.access_token) return false;
 
@@ -895,28 +896,30 @@ async function submitAnnuncio() {
     }
     localStorage.setItem(lastPostKey, now);
 
-    const expiresAt = new Date();
-    expiresAt.setDate(expiresAt.getDate() + 100);
-
-    const form = {
-        titolo:      document.getElementById('fTitolo').value.trim(),
-        regione:     document.getElementById('fRegione').value,
-        comune:      document.getElementById('fComune').value.trim(),
-        tipo:        document.getElementById('fTipo').value,
-        settore:     document.getElementById('fMerce').value,
-        superficie:  parseFloat(document.getElementById('fSuperficie').value),
-        giorni:      document.getElementById('fGiorni').value.trim(),
-        descrizione: document.getElementById('fDescrizione').value.trim(),
-        prezzo:      parseFloat(document.getElementById('fPrezzo').value),
-        stato:       document.querySelector('input[name="stato"]:checked').value,
-        user_id:     user.id,
-        status:      checkContent(document.getElementById('fTitolo').value.trim(), document.getElementById('fDescrizione').value.trim()),
-        expires_at:  expiresAt.toISOString(),
-        contatto:    document.getElementById('fNome').value.trim(),
-        tel:         document.getElementById('fTel').value.trim()
-    };
-
     try {
+        const expiresAt = new Date();
+        expiresAt.setDate(expiresAt.getDate() + 100);
+
+        const statoChecked = document.querySelector('input[name="stato"]:checked');
+        if (!statoChecked) throw new Error('Nessun tipo di annuncio selezionato.');
+
+        const form = {
+            titolo:      document.getElementById('fTitolo').value.trim(),
+            regione:     document.getElementById('fRegione').value,
+            comune:      document.getElementById('fComune').value.trim(),
+            tipo:        document.getElementById('fTipo').value,
+            settore:     document.getElementById('fMerce').value,
+            superficie:  parseFloat(document.getElementById('fSuperficie').value),
+            giorni:      document.getElementById('fGiorni').value.trim(),
+            descrizione: document.getElementById('fDescrizione').value.trim(),
+            prezzo:      parseFloat(document.getElementById('fPrezzo').value),
+            stato:       statoChecked.value,
+            user_id:     user.id,
+            status:      checkContent(document.getElementById('fTitolo').value.trim(), document.getElementById('fDescrizione').value.trim()),
+            expires_at:  expiresAt.toISOString(),
+            contatto:    document.getElementById('fNome').value.trim(),
+            tel:         document.getElementById('fTel').value.trim()
+        };
         const imageUrls = [];
         let failedUploads = 0;
         for (let file of _files) {
