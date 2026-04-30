@@ -187,16 +187,12 @@
                         </div>
                         <div>
                             <label class="field-label">Tipo di mercato *</label>
-                            <div class="grid grid-cols-3 gap-3 mt-1">
+                            <div class="grid grid-cols-2 gap-3 mt-1">
                                 <button type="button" class="tipo-btn on" id="tipoBtn0" onclick="selectTipo('Mercato settimanale', 0)">
                                     <i class="fas fa-calendar-week text-blue-500 text-xl mb-2 block"></i>
                                     <div class="text-xs font-black">Settimanale</div>
                                 </button>
-                                <button type="button" class="tipo-btn" id="tipoBtn1" onclick="selectTipo('Mercato quotidiano', 1)">
-                                    <i class="fas fa-sun text-amber-500 text-xl mb-2 block"></i>
-                                    <div class="text-xs font-black">Quotidiano</div>
-                                </button>
-                                <button type="button" class="tipo-btn" id="tipoBtn2" onclick="selectTipo('Fiera', 2)">
+                                <button type="button" class="tipo-btn" id="tipoBtn1" onclick="selectTipo('Fiera', 1)">
                                     <i class="fas fa-star text-purple-500 text-xl mb-2 block"></i>
                                     <div class="text-xs font-black">Fiera</div>
                                 </button>
@@ -241,9 +237,9 @@
                                     oninput="document.getElementById('fNomeFiera').value=this.value.trim()">
                             </div>
                             <div>
-                                <label class="field-label">Informazioni sulla fiera <span class="text-slate-400 font-medium normal-case text-xs">(opzionale)</span></label>
+                                <label class="field-label">Data e durata della fiera <span class="text-slate-400 font-medium normal-case text-xs">(opzionale)</span></label>
                                 <textarea id="fNoteFiera" rows="3" class="field-input" style="resize:vertical;min-height:80px;"
-                                    placeholder="es. Fiera annuale, si tiene ogni ottobre per 5 giorni nel centro storico. Concessione decennale tipo A. Affluenza media 10.000 persone."></textarea>
+                                    placeholder="es. Ogni ottobre, durata 5 giorni. Oppure: dal 12 al 16 settembre."></textarea>
                             </div>
                         </div>
 
@@ -449,9 +445,10 @@ function _applyPendingDraft() {
     else document.getElementById('statoVendita').checked = true;
     document.getElementById('fRegione').value    = d.regione || '';
     document.getElementById('fComune').value     = d.comune  || '';
-    document.getElementById('fTipo').value       = d.tipo    || 'Mercato settimanale';
-    const tipoIdx = ['Mercato settimanale', 'Mercato quotidiano', 'Fiera'].indexOf(d.tipo);
-    for (let i = 0; i < 3; i++) {
+    const draftTipo = d.tipo === 'Mercato quotidiano' ? 'Mercato settimanale' : (d.tipo || 'Mercato settimanale');
+    document.getElementById('fTipo').value = draftTipo;
+    const tipoIdx = ['Mercato settimanale', 'Fiera'].indexOf(draftTipo);
+    for (let i = 0; i < 2; i++) {
         const b = document.getElementById('tipoBtn' + i);
         if (b) b.classList.toggle('on', i === tipoIdx);
     }
@@ -576,7 +573,7 @@ function _toggleStep3Fields() {
 // ── Step 2: Tipo mercato ──────────────────────────────────
 function selectTipo(val, idx) {
     document.getElementById('fTipo').value = val;
-    for (let i = 0; i < 3; i++)
+    for (let i = 0; i < 2; i++)
         document.getElementById('tipoBtn' + i).classList.toggle('on', i === idx);
 }
 
@@ -639,7 +636,7 @@ function _suggestTitle() {
         const nome = nomeFiera || 'Fiera';
         if (comune && merce) el.value = `Posteggio ${nome} a ${comune} – ${merce}`;
     } else {
-        const short = { 'Mercato settimanale': 'Settimanale', 'Mercato quotidiano': 'Quotidiano' }[tipo] || tipo;
+        const short = { 'Mercato settimanale': 'Settimanale' }[tipo] || tipo;
         if (comune && merce) el.value = `Posteggio ${short} ${comune} – ${merce}`;
     }
 }
