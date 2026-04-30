@@ -43,13 +43,13 @@ const modalHTML = `
     <form id="loginForm" class="p-6 space-y-4" onsubmit="handleLogin(event)">
       <div>
         <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Email</label>
-        <input id="loginEmail" type="email" placeholder="la-tua@email.it" required autocomplete="email"
+        <input id="loginEmail" name="email" type="email" placeholder="la-tua@email.it" required autocomplete="username"
           class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
       </div>
       <div>
         <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Password</label>
         <div class="relative">
-          <input id="loginPassword" type="password" placeholder="••••••••" required autocomplete="current-password"
+          <input id="loginPassword" name="password" type="password" placeholder="••••••••" required autocomplete="current-password"
             class="w-full border border-slate-200 rounded-xl px-4 py-3 pr-11 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
           <button type="button" onclick="togglePwd('loginPassword')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition">
             <i class="fas fa-eye text-sm"></i>
@@ -76,7 +76,7 @@ const modalHTML = `
       <div>
         <p class="text-sm font-semibold text-slate-600 mb-4">Inserisci la tua email e ti mandiamo un link per reimpostare la password.</p>
         <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Email</label>
-        <input id="forgotEmail" type="email" placeholder="la-tua@email.it" required autocomplete="email"
+        <input id="forgotEmail" name="email" type="email" placeholder="la-tua@email.it" required autocomplete="username"
           class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
       </div>
       <button type="submit" id="forgotBtn"
@@ -93,29 +93,29 @@ const modalHTML = `
       <div class="grid grid-cols-2 gap-3">
         <div>
           <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Nome *</label>
-          <input id="regNome" type="text" placeholder="Mario" required
+          <input id="regNome" name="given-name" type="text" placeholder="Mario" required autocomplete="given-name"
             class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
         </div>
         <div>
           <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Cognome *</label>
-          <input id="regCognome" type="text" placeholder="Rossi" required
+          <input id="regCognome" name="family-name" type="text" placeholder="Rossi" required autocomplete="family-name"
             class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
         </div>
       </div>
       <div>
         <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Email *</label>
-        <input id="regEmail" type="email" placeholder="la-tua@email.it" required autocomplete="email"
+        <input id="regEmail" name="email" type="email" placeholder="la-tua@email.it" required autocomplete="username"
           class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
       </div>
       <div>
         <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Telefono</label>
-        <input id="regTelefono" type="tel" placeholder="347 1234567"
+        <input id="regTelefono" name="tel" type="tel" placeholder="347 1234567" autocomplete="tel"
           class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
       </div>
       <div>
         <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Password * (min. 6 caratteri)</label>
         <div class="relative">
-          <input id="regPassword" type="password" placeholder="Minimo 6 caratteri" required minlength="6" autocomplete="new-password"
+          <input id="regPassword" name="password" type="password" placeholder="Minimo 6 caratteri" required minlength="6" autocomplete="new-password"
             class="w-full border border-slate-200 rounded-xl px-4 py-3 pr-11 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
           <button type="button" onclick="togglePwd('regPassword')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition">
             <i class="fas fa-eye text-sm"></i>
@@ -439,6 +439,19 @@ window.togglePwd = function (id) {
 };
 
 // ── Login ────────────────────────────────────────────────
+async function _storePasswordCredential(email, password, name = '') {
+    try {
+        if (!email || !password) return;
+        if (!window.PasswordCredential || !navigator.credentials?.store) return;
+        const cred = new PasswordCredential({
+            id: email,
+            password,
+            name: name || email
+        });
+        await navigator.credentials.store(cred);
+    } catch (_) {}
+}
+
 window.handleLogin = async function (e) {
     e.preventDefault();
     _hideAuthFeedback();
@@ -456,6 +469,7 @@ window.handleLogin = async function (e) {
             return;
         }
 
+        await _storePasswordCredential(email, password, email);
         closeAuthModal();
         updateAuthNav();
         if (typeof window.__onLoginSuccess === 'function') {
@@ -526,6 +540,7 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
             if (res.status === 409 || res.status >= 500) {
                 const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email: cleanEmail, password });
                 if (!siErr && si?.session) {
+                    await _storePasswordCredential(cleanEmail, password, `${nome || ''} ${cognome || ''}`.trim() || cleanEmail);
                     await _afterRegisterSuccess(nome, welcomeLotteryEligible);
                     return;
                 }
@@ -546,6 +561,7 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
             setTimeout(() => switchAuthTab('login'), 2000);
             return;
         }
+        await _storePasswordCredential(cleanEmail, password, `${nome || ''} ${cognome || ''}`.trim() || cleanEmail);
         await _afterRegisterSuccess(nome, welcomeLotteryEligible);
     } catch (_) {
         _showAuthError('Errore durante la registrazione. Riprova.');
@@ -572,10 +588,12 @@ async function _registerWithSupabaseAuth(email, password, nome, cognome, telefon
                 telefono: telefono || '',
                 welcome_lottery_eligible: welcomeLotteryEligible
             });
+            await _storePasswordCredential(email, password, `${nome || ''} ${cognome || ''}`.trim() || email);
             await _afterRegisterSuccess(nome, welcomeLotteryEligible);
             return true;
         }
 
+        await _storePasswordCredential(email, password, `${nome || ''} ${cognome || ''}`.trim() || email);
         _showAuthSuccess('Account creato! Controlla la tua email per confermare la registrazione.');
         setTimeout(() => switchAuthTab('login'), 2500);
         return true;
