@@ -141,12 +141,12 @@
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <h3 class="font-black text-slate-900 flex items-center gap-2">
                         <i class="fas fa-chart-line text-blue-500"></i> Crescita del sito
-                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(nuovi per settimana)</span>
+                        <span id="chartSubtitle" class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(nuovi per mese)</span>
                     </h3>
                     <div class="flex gap-1.5">
-                        <button id="chartBtn8"  onclick="setChartPeriod(8)"  class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-blue-600 text-white">8 sett.</button>
-                        <button id="chartBtn12" onclick="setChartPeriod(12)" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">12 sett.</button>
-                        <button id="chartBtn24" onclick="setChartPeriod(24)" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">6 mesi</button>
+                        <button id="chartBtnMese"    onclick="setChartPeriod('mese')"    class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-blue-600 text-white">Mese</button>
+                        <button id="chartBtnAnno"    onclick="setChartPeriod('anno')"    class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">Anno</button>
+                        <button id="chartBtnStorico" onclick="setChartPeriod('storico')" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">Storico</button>
                     </div>
                 </div>
                 <div class="relative h-56">
@@ -661,24 +661,20 @@ async function loadAdminStats() {
 // ── Growth Chart ─────────────────────────────────────────
 let _growthChart = null;
 let _rawGrowthData = null;
+let _chartMode = 'mese';
 
-async function loadAdminGrowthChart(weeks = 8) {
+async function loadAdminGrowthChart(mode = 'mese') {
+    _chartMode = mode;
     const canvas = document.getElementById('growthChart');
     if (!canvas) return;
 
     if (!_rawGrowthData) {
-        const cutoff = new Date();
-        cutoff.setDate(cutoff.getDate() - 180);
-        const cutoffISO = cutoff.toISOString();
-
         const [prRes, anRes, pmRes, ftRes] = await Promise.all([
-            _supabase.from('profiles').select('created_at').gte('created_at', cutoffISO),
-            _supabase.from('annunci').select('created_at').gte('created_at', cutoffISO).neq('status', 'deleted'),
-            _supabase.from('payments').select('created_at').gte('created_at', cutoffISO),
-            _supabase.from('annunci').select('featured_since').gte('featured_since', cutoffISO).not('featured_since', 'is', null),
+            _supabase.from('profiles').select('created_at'),
+            _supabase.from('annunci').select('created_at').neq('status', 'deleted'),
+            _supabase.from('payments').select('created_at'),
+            _supabase.from('annunci').select('featured_since').not('featured_since', 'is', null),
         ]);
-
-        // Usa payments se accessibile, altrimenti featured_since come proxy vetrine
         const usePayments = !pmRes.error && Array.isArray(pmRes.data) && pmRes.data.length > 0;
         _rawGrowthData = {
             profiles: (prRes.data || []).map(r => r.created_at),
@@ -691,19 +687,44 @@ async function loadAdminGrowthChart(weeks = 8) {
 
     const now = new Date();
     const labels = [], pData = [], aData = [], vData = [];
-
     const countInRange = (arr, s, e) => arr.filter(d => d >= s && d < e).length;
 
-    for (let i = weeks - 1; i >= 0; i--) {
-        const wEnd = new Date(now);
-        wEnd.setDate(now.getDate() - i * 7);
-        const wStart = new Date(wEnd);
-        wStart.setDate(wEnd.getDate() - 7);
-        const s = wStart.toISOString(), e = wEnd.toISOString();
-        labels.push(wStart.toLocaleDateString('it-IT', { day: '2-digit', month: '2-digit' }));
-        pData.push(countInRange(_rawGrowthData.profiles, s, e));
-        aData.push(countInRange(_rawGrowthData.annunci,  s, e));
-        vData.push(countInRange(_rawGrowthData.vetrine,  s, e));
+    if (mode === 'mese') {
+        for (let i = 11; i >= 0; i--) {
+            const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+            const s = d.toISOString();
+            const e = new Date(d.getFullYear(), d.getMonth() + 1, 1).toISOString();
+            labels.push(d.toLocaleDateString('it-IT', { month: 'short', year: '2-digit' }));
+            pData.push(countInRange(_rawGrowthData.profiles, s, e));
+            aData.push(countInRange(_rawGrowthData.annunci,  s, e));
+            vData.push(countInRange(_rawGrowthData.vetrine,  s, e));
+        }
+    } else if (mode === 'anno') {
+        const startYear = 2024;
+        for (let y = startYear; y <= now.getFullYear(); y++) {
+            const s = new Date(y, 0, 1).toISOString();
+            const e = new Date(y + 1, 0, 1).toISOString();
+            labels.push(String(y));
+            pData.push(countInRange(_rawGrowthData.profiles, s, e));
+            aData.push(countInRange(_rawGrowthData.annunci,  s, e));
+            vData.push(countInRange(_rawGrowthData.vetrine,  s, e));
+        }
+    } else {
+        // storico: tutti i mesi dal primo record ad oggi
+        const allDates = [..._rawGrowthData.profiles, ..._rawGrowthData.annunci, ..._rawGrowthData.vetrine].filter(Boolean);
+        if (allDates.length === 0) return;
+        const earliest = new Date(allDates.reduce((a, b) => a < b ? a : b));
+        let cur = new Date(earliest.getFullYear(), earliest.getMonth(), 1);
+        const endMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+        while (cur <= endMonth) {
+            const s = cur.toISOString();
+            const e = new Date(cur.getFullYear(), cur.getMonth() + 1, 1).toISOString();
+            labels.push(cur.toLocaleDateString('it-IT', { month: 'short', year: '2-digit' }));
+            pData.push(countInRange(_rawGrowthData.profiles, s, e));
+            aData.push(countInRange(_rawGrowthData.annunci,  s, e));
+            vData.push(countInRange(_rawGrowthData.vetrine,  s, e));
+            cur = new Date(cur.getFullYear(), cur.getMonth() + 1, 1);
+        }
     }
 
     const ds = (label, color, data) => ({
@@ -752,7 +773,7 @@ async function loadAdminGrowthChart(weeks = 8) {
                     bodyFont:  { family: 'Plus Jakarta Sans', weight: '600', size: 12 },
                     padding: 12, cornerRadius: 12, boxPadding: 4,
                     callbacks: {
-                        title: (items) => `Settimana dal ${items[0].label}`,
+                        title: (items) => _chartMode === 'anno' ? `Anno ${items[0].label}` : `Mese: ${items[0].label}`,
                         label: (item) => ` ${item.dataset.label}: ${item.parsed.y}`,
                     },
                 },
@@ -779,12 +800,15 @@ async function loadAdminGrowthChart(weeks = 8) {
     });
 }
 
-function setChartPeriod(weeks) {
-    [8, 12, 24].forEach(w => {
-        const btn = document.getElementById(`chartBtn${w}`);
-        if (btn) btn.className = `text-[11px] font-black px-3 py-1.5 rounded-lg transition ${weeks === w ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`;
+function setChartPeriod(mode) {
+    const subtitles = { mese: '(nuovi per mese)', anno: '(nuovi per anno)', storico: '(storico completo)' };
+    ['Mese', 'Anno', 'Storico'].forEach(m => {
+        const btn = document.getElementById(`chartBtn${m}`);
+        if (btn) btn.className = `text-[11px] font-black px-3 py-1.5 rounded-lg transition ${mode === m.toLowerCase() ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`;
     });
-    loadAdminGrowthChart(weeks);
+    const sub = document.getElementById('chartSubtitle');
+    if (sub) sub.textContent = subtitles[mode] || '';
+    loadAdminGrowthChart(mode);
 }
 
 async function loadAdminRecentUsers() {
