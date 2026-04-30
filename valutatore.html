@@ -545,7 +545,9 @@
         var moltFrequenza = (factors.frequenza === 'fiera') ? factors.durataFiera : factors.frequenza;
         var totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
 
-        var rentAvg = totale * 0.27 * factors.stagionalita;
+        var rentRaw = totale * 0.27 * factors.stagionalita;
+        var rentCap = factors.fatturato * 0.35 * factors.stagionalita;
+        var rentAvg = Math.min(rentRaw, rentCap);
         var rentMonthly = rentAvg / 12;
 
         var min = totale * 0.85;
