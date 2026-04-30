@@ -498,6 +498,56 @@
     </div>
 </div>
 
+<!-- ══════════════ MODAL RIFIUTA ANNUNCIO ══════════════ -->
+<div id="rejectModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.72);backdrop-filter:blur(4px)">
+    <div class="bg-white rounded-2xl w-full max-w-sm shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+        <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-times text-red-500"></i>
+                </div>
+                <div>
+                    <h3 class="font-black text-base text-slate-900">Rifiuta annuncio</h3>
+                    <p class="text-xs text-slate-400 font-semibold">Il venditore riceverà un'email con la motivazione</p>
+                </div>
+            </div>
+            <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Motivo del rifiuto *</p>
+            <div class="space-y-1.5" id="rejectReasons">
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 cursor-pointer">
+                    <input type="radio" name="rejectReason" value="Descrizione insufficiente — l'annuncio è troppo vago o la descrizione è troppo breve." class="accent-red-500">
+                    <span class="text-sm font-semibold text-slate-700">Descrizione insufficiente</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 cursor-pointer">
+                    <input type="radio" name="rejectReason" value="Dati mancanti — mancano informazioni essenziali come prezzo, comune o tipo di licenza." class="accent-red-500">
+                    <span class="text-sm font-semibold text-slate-700">Dati mancanti</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 cursor-pointer">
+                    <input type="radio" name="rejectReason" value="Fuori categoria — l'annuncio non riguarda posteggi mercatali o licenze ambulanti." class="accent-red-500">
+                    <span class="text-sm font-semibold text-slate-700">Fuori categoria</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 cursor-pointer">
+                    <input type="radio" name="rejectReason" value="Contenuto non appropriato o fuorviante." class="accent-red-500">
+                    <span class="text-sm font-semibold text-slate-700">Contenuto non appropriato</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 cursor-pointer">
+                    <input type="radio" name="rejectReason" value="Annuncio duplicato — hai già un annuncio simile attivo." class="accent-red-500">
+                    <span class="text-sm font-semibold text-slate-700">Duplicato</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 cursor-pointer">
+                    <input type="radio" name="rejectReason" value="altro" class="accent-red-500" id="rejectReasonAltro">
+                    <span class="text-sm font-semibold text-slate-700">Altro</span>
+                </label>
+            </div>
+            <textarea id="rejectReasonText" placeholder="Scrivi il motivo..." rows="2"
+                class="hidden w-full mt-2 border border-slate-200 rounded-xl px-3 py-2 text-sm font-semibold outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition resize-none"></textarea>
+        </div>
+        <div class="px-6 pb-5 flex gap-3">
+            <button onclick="closeRejectModal()" class="flex-1 py-3 rounded-xl border-2 border-slate-200 text-sm font-black text-slate-600 hover:bg-slate-50 transition">Annulla</button>
+            <button onclick="confirmReject()" class="flex-1 py-3 rounded-xl bg-red-600 text-sm font-black text-white hover:bg-red-700 transition">Rifiuta</button>
+        </div>
+    </div>
+</div>
+
 <!-- ══════════════ FOOTER ══════════════ -->
 <footer class="bg-slate-900 text-white py-10 mt-10">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
@@ -1217,10 +1267,13 @@ async function loadPendingListings() {
                     </div>
                     <div class="flex flex-wrap gap-2 items-center">
                         <button onclick="approvaAnnuncio('${safeId}')" class="bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-black hover:bg-blue-700 transition shadow-sm">
-                            Approva
+                            <i class="fas fa-check mr-1"></i>Approva
+                        </button>
+                        <button onclick="location.href='modifica-annuncio.html?id=${safeId}'" class="bg-white text-blue-600 border border-blue-100 px-4 py-2 rounded-xl text-xs font-black hover:bg-blue-50 transition">
+                            <i class="fas fa-edit mr-1"></i>Modifica
                         </button>
                         <button onclick="rifiutaAnnuncio('${safeId}')" class="bg-white text-red-500 border border-red-100 px-4 py-2 rounded-xl text-xs font-black hover:bg-red-50 transition">
-                            Elimina
+                            <i class="fas fa-times mr-1"></i>Rifiuta
                         </button>
                     </div>
                 </div>
@@ -1239,19 +1292,58 @@ async function approvaAnnuncio(id) {
     }
 }
 
-async function rifiutaAnnuncio(id) {
-    const ok = await showConfirm({
-        title:   'Rifiutare e eliminare?',
-        message: 'L\'annuncio verrà rimosso definitivamente dal sito. Questa azione non è reversibile.',
-        okLabel: 'Rifiuta ed elimina',
-        variant: 'admin',
+let _rejectTargetId = null;
+let _rejectResolve  = null;
+
+function showRejectModal(id) {
+    _rejectTargetId = id;
+    document.querySelectorAll('input[name="rejectReason"]').forEach(r => r.checked = false);
+    document.getElementById('rejectReasonText').classList.add('hidden');
+    document.getElementById('rejectReasonText').value = '';
+    document.getElementById('rejectModal').classList.remove('hidden');
+    // Mostra textarea se si seleziona Altro
+    document.getElementById('rejectReasonAltro').addEventListener('change', function() {
+        document.getElementById('rejectReasonText').classList.toggle('hidden', !this.checked);
     });
-    if (!ok) return;
-    const { error } = await _supabase.from('annunci').update({ status: 'deleted' }).eq('id', id);
+    document.querySelectorAll('input[name="rejectReason"]:not(#rejectReasonAltro)').forEach(r => {
+        r.addEventListener('change', () => document.getElementById('rejectReasonText').classList.add('hidden'));
+    });
+}
+
+function closeRejectModal() {
+    document.getElementById('rejectModal').classList.add('hidden');
+    _rejectTargetId = null;
+}
+
+async function confirmReject() {
+    const selected = document.querySelector('input[name="rejectReason"]:checked');
+    if (!selected) { showToast('Seleziona un motivo.', 'warning'); return; }
+
+    let reason = selected.value;
+    if (reason === 'altro') {
+        reason = document.getElementById('rejectReasonText').value.trim();
+        if (!reason) { showToast('Scrivi il motivo.', 'warning'); return; }
+    }
+
+    closeRejectModal();
+    const id = _rejectTargetId;
+
+    const { data: current } = await _supabase.from('annunci').select('dettagli_extra').eq('id', id).maybeSingle();
+    const extra = (current?.dettagli_extra && typeof current.dettagli_extra === 'object') ? { ...current.dettagli_extra } : {};
+    extra.rejection_reason = reason;
+
+    const { error } = await _supabase.from('annunci').update({ status: 'deleted', dettagli_extra: extra }).eq('id', id);
     if (!error) {
+        showToast('Annuncio rifiutato. Email inviata al venditore.', 'info');
         loadPendingListings();
         loadAdminStats();
+    } else {
+        showToast('Errore durante il rifiuto.', 'error');
     }
+}
+
+async function rifiutaAnnuncio(id) {
+    showRejectModal(id);
 }
 
 async function loadAllListings() {

@@ -209,6 +209,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const user = await getCurrentUser();
     if (!user) { location.href = 'index.html'; return; }
 
+    // Check if user is admin
+    const { data: profile } = await _supabase.from('profiles').select('is_admin').eq('id', user.id).maybeSingle();
+    const _isAdmin = profile?.is_admin === true;
+
     // Populate regions
     const fReg = document.getElementById('fRegione');
     REGIONI.forEach(r => {
@@ -219,8 +223,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Load data
     const { data: l, error } = await _supabase.from('annunci').select('*').eq('id', listingId).single();
-    
-    if (error || !l || l.user_id !== user.id) {
+
+    if (error || !l || (l.user_id !== user.id && !_isAdmin)) {
         showToast('Annuncio non trovato o non autorizzato.', 'error');
         location.href = 'dashboard.html';
         return;

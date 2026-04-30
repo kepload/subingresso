@@ -22,7 +22,7 @@ Deno.serve(async (req) => {
     const oldRecord = payload.old_record;
 
     // Determina il tipo di notifica
-    let tipo: 'ricevuto' | 'online' | null = null;
+    let tipo: 'ricevuto' | 'online' | 'rifiutato' | null = null;
 
     // Log diagnostico completo
     console.log(JSON.stringify({
@@ -34,8 +34,7 @@ Deno.serve(async (req) => {
       old_status: oldRecord?.status ?? null,
     }));
 
-    // STRICT: solo INSERT o UPDATE pending→active esplicito.
-    // Niente fallback permissivo → se old_record manca, UPDATE non invia nulla.
+    // STRICT: solo INSERT o UPDATE pending→active/deleted esplicito.
     if (payload.type === 'INSERT') {
       tipo = 'ricevuto';
     } else if (
@@ -45,6 +44,13 @@ Deno.serve(async (req) => {
       && oldRecord.status === 'pending'
     ) {
       tipo = 'online';
+    } else if (
+      payload.type === 'UPDATE'
+      && record.status === 'deleted'
+      && oldRecord != null
+      && oldRecord.status === 'pending'
+    ) {
+      tipo = 'rifiutato';
     }
 
     if (!tipo) return new Response('Ignored', { status: 200 });
@@ -84,6 +90,47 @@ Deno.serve(async (req) => {
             <p style="margin:0;color:#94a3b8;font-size:12px;">
               Subingresso.it · La piattaforma italiana per la compravendita di concessioni mercatali<br>
               <a href="${SITE_URL}/privacy.html" style="color:#94a3b8;">Privacy</a> · <a href="${SITE_URL}/termini.html" style="color:#94a3b8;">Termini</a>
+            </p>
+          </div>
+        </div>`;
+    } else if (tipo === 'rifiutato') {
+      const extra = record.dettagli_extra;
+      const motivazione = (extra?.rejection_reason && extra.rejection_reason !== 'altro')
+        ? extra.rejection_reason
+        : (extra?.rejection_reason || 'Il contenuto non rispettava le linee guida della piattaforma.');
+
+      subject = `❌ Annuncio non approvato — ${titoloSafe}`;
+      bodyHtml = `
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:520px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #f1f5f9;">
+          <div style="background:#dc2626;padding:28px 32px;">
+            <span style="color:#fff;font-size:22px;font-weight:900;letter-spacing:-0.5px;">Subingresso<span style="opacity:.7">.it</span></span>
+          </div>
+          <div style="padding:32px;">
+            <p style="margin:0 0 6px;color:#dc2626;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">❌ Annuncio non approvato</p>
+            <h2 style="margin:0 0 12px;font-size:20px;font-weight:900;color:#0f172a;">${titoloSafe}</h2>
+            <p style="color:#64748b;font-size:14px;line-height:1.6;margin:0 0 20px;">
+              Abbiamo esaminato il tuo annuncio ma purtroppo non possiamo pubblicarlo al momento.
+            </p>
+            <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:16px 20px;margin:0 0 24px;">
+              <p style="margin:0 0 6px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#dc2626;">Motivo</p>
+              <p style="margin:0;font-size:14px;font-weight:600;color:#7f1d1d;line-height:1.5;">${motivazione}</p>
+            </div>
+            <p style="color:#64748b;font-size:14px;line-height:1.6;margin:0 0 24px;">
+              Puoi pubblicare un nuovo annuncio tenendo conto di queste indicazioni. Se hai bisogno di aiuto o chiarimenti, scrivici pure tramite il modulo di contatto.
+            </p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="${SITE_URL}/vendi" style="display:inline-block;background:#2563eb;color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">
+                Pubblica un nuovo annuncio →
+              </a>
+              <a href="${SITE_URL}/contatti" style="display:inline-block;background:#f8fafc;color:#334155;border:1px solid #e2e8f0;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">
+                Contattaci
+              </a>
+            </div>
+          </div>
+          <div style="padding:20px 32px;border-top:1px solid #f1f5f9;text-align:center;">
+            <p style="margin:0;color:#94a3b8;font-size:12px;">
+              Subingresso.it · La piattaforma italiana per la compravendita di concessioni mercatali<br>
+              <a href="${SITE_URL}/privacy" style="color:#94a3b8;">Privacy</a> · <a href="${SITE_URL}/termini" style="color:#94a3b8;">Termini</a>
             </p>
           </div>
         </div>`;
