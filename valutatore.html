@@ -541,12 +541,14 @@
     }
 
     function calculate() {
-        var base = factors.fatturato * 1.0;
+        // Premio commerciale +18%: il valutatore mostra prezzi leggermente sopravvalutati
+        // per incentivare i venditori a pubblicare l'annuncio (logica business, non perizia).
+        var base = factors.fatturato * 1.18;
         var moltFrequenza = (factors.frequenza === 'fiera') ? factors.durataFiera : factors.frequenza;
         var totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
 
         var rentRaw = totale * 0.25;
-        var rentCap = factors.fatturato * 0.50 * factors.stagionalita;
+        var rentCap = factors.fatturato * 0.58 * factors.stagionalita;
         var rentAvg = Math.min(rentRaw, rentCap);
         var rentMonthly = rentAvg / 12;
 

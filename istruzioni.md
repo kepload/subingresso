@@ -349,15 +349,16 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Step 6 redesign**: valore vendita (verde/emerald) in cima, box affitto (blu) sotto, due CTA "Voglio Vendere" / "Voglio Affittare" → entrambi linkano `vendi.html`. Affitto mensile rimosso (solo annuale). Numero con spazio sottile come separatore migliaia (`toLocaleString('it-IT').replace(/\./g,' ')`).
 - **Formula calcolatore** (stato attuale, ricalibrata 1 mag 2026 — output prima erano esplosivi: 5k fatturato → 95k valore):
   ```js
-  var base = factors.fatturato * 1.0;
+  var base = factors.fatturato * 1.18;  // premio commerciale +18% per spingere alla pubblicazione
   var moltFrequenza = (factors.frequenza === 'fiera') ? factors.durataFiera : factors.frequenza;
   var totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
   var rentRaw = totale * 0.25;
-  var rentCap = factors.fatturato * 0.50 * factors.stagionalita;
+  var rentCap = factors.fatturato * 0.58 * factors.stagionalita;
   var rentAvg = Math.min(rentRaw, rentCap);
   ```
   Moltiplicatori: giornaliero=1.5 / settimanale=1.0 / fiera=durataFiera (1g=0.3, weekend=0.5, sett+=0.7); zona storica=2.0 / capoluogo=1.25 / rionale=0.65; alimentare=1.3, non-alim=1.0; angolare=1.25, linea=1.0; anni storica=1.25, recente=1.0; stagionale=0.7, annuale=1.0.
-  Calibrazione obiettivo: fatturato 5k → top assoluto ~30k, caso settimanale-storica-alim ~20k, affitto top ~2.5k (cap al 50% del fatturato). Per fatturato 30k rionale dà 13-19k (range copy SEO 8-20k); per 100k alim storica top dà ~600k.
+  Calibrazione obiettivo: fatturato 5k → top assoluto ~36k, caso settimanale-storica-alim ~24k, affitto top ~2.9k (cap al 58% del fatturato, premio +16%). Per fatturato 30k rionale dà ~15-23k; per 100k alim storica top dà ~720k.
+  **`base * 1.18` è una scelta business** — il valutatore deve sopravvalutare leggermente per convincere il venditore a pubblicare. Non spingerlo oltre +20% (diventa "non credibile"). NON è un bug, è una calibrazione voluta.
   **Quando si toccano i moltiplicatori, aggiornare _FREQ_LABELS / _ZONA_LABELS / _SETT_LABELS / _POS_LABELS / _ANNI_LABELS / _STAG_LABELS / _FIERA_LABELS** in `valutatore.html` (chiavi devono essere stringhe corrispondenti al nuovo valore — String(1.0)='1', String(2.0)='2'). Se non corrispondono, `_label()` ritorna null e `_saveValutatoreLog` skippa il salvataggio Supabase.
 - **Bug fix noto**: non usare mai `history` come nome variabile JS → conflitto con `window.history` → crasha tutto. Il nome corretto usato qui è `stepHistory`.
 - **Banner mobile homepage**: prima della sezione "Vendi in 3 passi", visibile solo su mobile (`md:hidden`), link verde a valutatore.html.
