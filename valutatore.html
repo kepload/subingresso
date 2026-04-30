@@ -597,7 +597,7 @@
     }
 
     function fmt(n) {
-        return Math.round(n).toLocaleString('it-IT');
+        return Math.round(n).toLocaleString('it-IT').replace(/\./g, ' ');
     }
 
     function snap(n) {
