@@ -405,7 +405,10 @@ function goToStep(n) {
     }
     if (_step === 3) _toggleStep3Fields();
     if (_step === 4) _updatePrezzoLabel();
-    if (_step === 5) _suggestTitle();
+    if (_step === 5) {
+        _suggestTitle();
+        prefillContactFromSession();
+    }
     if (_step > 1) _saveDraft();
 }
 
@@ -672,23 +675,33 @@ function useTemplate() {
 // ── Init ──────────────────────────────────────────────────
 async function prefillContactFromSession(force = false) {
     try {
-        const user = await getCurrentUser();
+        let user = null;
+        const { data: sessionData } = await _supabase.auth.getSession();
+        user = sessionData?.session?.user || null;
+        if (!user && typeof getCurrentUser === 'function') {
+            user = await getCurrentUser();
+        }
         if (!user) return null;
 
         const nomeEl = document.getElementById('fNome');
         const telEl  = document.getElementById('fTel');
+        const meta = user.user_metadata || {};
         const { data: profile } = await _supabase
             .from('profiles')
             .select('nome, cognome, telefono')
             .eq('id', user.id)
             .maybeSingle();
 
-        const fullName = profile ? `${profile.nome || ''} ${profile.cognome || ''}`.trim() : '';
+        const profileName = profile ? `${profile.nome || ''} ${profile.cognome || ''}`.trim() : '';
+        const metaName = `${meta.nome || meta.first_name || ''} ${meta.cognome || meta.last_name || ''}`.trim();
+        const fullName = profileName || metaName || meta.full_name || meta.name || '';
+        const phone = profile?.telefono || meta.telefono || meta.tel || meta.phone || meta.phone_number || '';
+
         if (nomeEl && (force || !nomeEl.value.trim())) {
             nomeEl.value = fullName || user.email.split('@')[0];
         }
         if (telEl && (force || !telEl.value.trim())) {
-            telEl.value = normalizePhone(profile?.telefono || '');
+            telEl.value = normalizePhone(phone);
         }
         return user;
     } catch (_) {
