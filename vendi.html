@@ -871,6 +871,48 @@ function _withTimeout(promise, ms, label) {
     ]);
 }
 
+function _getStoredSupabaseSession() {
+    try {
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (!key || !key.startsWith('sb-') || !key.endsWith('-auth-token')) continue;
+            const raw = localStorage.getItem(key);
+            if (!raw) continue;
+            const parsed = JSON.parse(raw);
+            const session = parsed.currentSession || parsed;
+            if (session?.access_token && session?.refresh_token && session?.user) return session;
+        }
+    } catch (_) {}
+    return null;
+}
+
+async function _getSessionForSubmit() {
+    try {
+        const { data } = await _withTimeout(_supabase.auth.getSession(), 10000, 'Sessione non disponibile');
+        if (data?.session?.user) return data.session;
+    } catch (err) {
+        console.warn('getSession lento, provo fallback locale', err);
+    }
+
+    const stored = _getStoredSupabaseSession();
+    if (!stored) return null;
+
+    try {
+        const { data } = await _withTimeout(
+            _supabase.auth.setSession({
+                access_token: stored.access_token,
+                refresh_token: stored.refresh_token
+            }),
+            5000,
+            'Ripristino sessione scaduto'
+        );
+        return data?.session || stored;
+    } catch (err) {
+        console.warn('Fallback sessione locale non riuscito', err);
+        return stored;
+    }
+}
+
 async function submitAnnuncio() {
     const btn = document.getElementById('submitBtn');
     if (btn.disabled) return;
@@ -883,11 +925,11 @@ async function submitAnnuncio() {
     // Controlla auth prima di disabilitare il bottone
     let user = null;
     try {
-        const { data } = await _withTimeout(_supabase.auth.getSession(), 3000, 'Sessione non disponibile');
-        user = data?.session?.user || null;
+        const session = await _getSessionForSubmit();
+        user = session?.user || null;
     } catch (err) {
         console.error(err);
-        _err('Connessione lenta. Riprova tra qualche secondo.');
+        _err('Sessione non caricata. Ricarica la pagina e riprova.');
         _resetBtn();
         return;
     }
