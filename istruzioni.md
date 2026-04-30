@@ -347,6 +347,8 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **`SETUP_VALUTATORE_LOGS.sql` eseguito** su Supabase: tabella `valutatore_logs` + 2 RPC (`link_valutatore_to_user`, `link_valutatore_to_annuncio`). Tutto funzionante.
 - **SEO completo valutatore.html**: title, meta, OG, Twitter Card, JSON-LD WebApplication + FAQPage (6 domande), preconnect. Sitemap: priority 0.9, weekly.
 - **Step 6 redesign**: valore vendita (verde/emerald) in cima, box affitto (blu) sotto, due CTA "Voglio Vendere" / "Voglio Affittare" → entrambi linkano `vendi.html`. Affitto mensile rimosso (solo annuale). Numero con spazio sottile come separatore migliaia (`toLocaleString('it-IT').replace(/\./g,' ')`).
+- **Box affitto UI**: cifra `text-4xl font-black text-blue-700` con `/anno` accanto in `text-3xl font-bold text-blue-400` (flex items-baseline). Sotto piccolo solo "rendimento stimato X%". Niente "all'anno" sotto (ridondante con "/anno" grande).
+- **Disclaimer pattern**: NON inline nello step risultato (era invadente). Sotto "Nuova Valutazione" c'è una micro-link `text-[11px] underline` "Stima orientativa — leggi le note" che linka `#disclaimer`. La sezione `#disclaimer` (con `scroll-mt-20`) è in fondo alla pagina, dopo le FAQ, prima del footer — paragrafo che spiega "stima orientativa, ogni mercato ha caratteristiche uniche, prezzi variano nel tempo, non è perizia".
 - **Formula calcolatore** (stato attuale, ricalibrata 1 mag 2026 — output prima erano esplosivi: 5k fatturato → 95k valore):
   ```js
   var base = factors.fatturato * 1.18;  // premio commerciale +18% per spingere alla pubblicazione
