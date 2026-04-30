@@ -105,10 +105,6 @@
             border-color: #2563eb;
             background-color: #eff6ff;
         }
-        .rent-box {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border: 2px solid #bbf7d0;
-        }
     </style>
 </head>
 <body class="bg-neutral-100 text-slate-900 min-h-screen flex flex-col">
@@ -317,68 +313,68 @@
 
         <!-- STEP 6: Risultato -->
         <div class="step-card" data-step="6">
-            <div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-lg shadow-lg shadow-blue-100">
-                <i class="fas fa-coins"></i>
-            </div>
-            <h2 class="text-xl font-black mb-1 leading-tight text-slate-900 text-center">Valutazione Commerciale</h2>
-            <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 text-center mb-5">Stima basata sui dati inseriti</p>
 
-            <!-- Box Vendita -->
-            <div class="border-2 border-blue-600 rounded-3xl p-4 mb-3 bg-white shadow-xl shadow-blue-50">
-                <p class="text-[9px] font-black uppercase tracking-[.15em] text-slate-400 mb-3">Prezzo di Mercato Stimato</p>
-                <!-- Target principale — full width, nessun rischio overflow -->
-                <div class="bg-blue-600 rounded-2xl p-4 text-center mb-3">
-                    <p class="text-[9px] font-black uppercase tracking-wider text-blue-200 mb-1">Target di Vendita</p>
-                    <p id="totalAvg" class="text-3xl font-black text-white leading-tight">€ --</p>
+            <!-- Header -->
+            <div class="text-center mb-7">
+                <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl shadow-lg shadow-blue-100">
+                    <i class="fas fa-coins"></i>
                 </div>
-                <!-- Min / Max — testo piccolo su flex, non può traboccare -->
-                <div class="flex items-center justify-between px-1">
-                    <div class="text-center">
-                        <p class="text-[8px] font-black uppercase tracking-wider text-slate-400 mb-0.5">Minimo</p>
-                        <p id="priceMin" class="text-sm font-black text-slate-400">€ --</p>
-                    </div>
-                    <div class="flex-1 h-px bg-slate-100 mx-4"></div>
-                    <div class="text-center">
-                        <p class="text-[8px] font-black uppercase tracking-wider text-slate-500 mb-0.5">Massimo</p>
-                        <p id="priceMax" class="text-sm font-black text-slate-600">€ --</p>
-                    </div>
-                </div>
+                <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Valutazione completata</p>
             </div>
 
-            <!-- Box Affitto -->
-            <div class="rent-box rounded-3xl p-4 mb-6 relative overflow-hidden">
-                <div class="absolute -right-6 -top-6 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
-                <p class="text-[9px] font-black uppercase tracking-[.15em] text-emerald-700 mb-3">
-                    <i class="fas fa-money-bill-trend-up mr-1"></i> Rendita Passiva Stimata
+            <!-- Valore principale -->
+            <div class="text-center mb-1">
+                <p class="text-xs font-semibold text-slate-400 mb-1">Il tuo posteggio vale circa</p>
+                <p id="totalAvg" class="text-5xl font-black text-blue-600 leading-none tracking-tight">€ --</p>
+            </div>
+
+            <!-- Range min / max -->
+            <div class="flex items-center justify-center gap-2 text-xs text-slate-400 font-semibold mb-8">
+                <span>da <span id="priceMin" class="text-slate-600 font-black">€ --</span></span>
+                <span class="text-slate-200">·</span>
+                <span>fino a <span id="priceMax" class="text-slate-600 font-black">€ --</span></span>
+            </div>
+
+            <!-- Affitto -->
+            <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-4 mb-7">
+                <p class="text-[10px] font-black uppercase tracking-widest text-emerald-600 text-center mb-3">
+                    <i class="fas fa-money-bill-trend-up mr-1"></i> Se preferisci affittarlo
                 </p>
-                <!-- Annuale / Mensile — flex con testo contenuto -->
-                <div class="flex gap-2 mb-3">
-                    <div class="flex-1 bg-white/70 rounded-2xl p-3 text-center min-w-0">
-                        <p class="text-[8px] font-black uppercase tracking-wider text-emerald-600/70 mb-1">Annuale</p>
-                        <p id="rentValue" class="text-base font-black text-emerald-700 leading-tight truncate">€ --</p>
+                <div class="grid grid-cols-3 gap-2 text-center">
+                    <div>
+                        <p class="text-[9px] font-bold uppercase text-emerald-600/60 tracking-wider mb-1">Al mese</p>
+                        <p id="rentMonthly" class="text-lg font-black text-emerald-700">€ --</p>
                     </div>
-                    <div class="flex-1 bg-white/70 rounded-2xl p-3 text-center min-w-0">
-                        <p class="text-[8px] font-black uppercase tracking-wider text-emerald-600/70 mb-1">Mensile</p>
-                        <p id="rentMonthly" class="text-base font-black text-emerald-700 leading-tight truncate">€ --</p>
+                    <div class="border-x border-emerald-100">
+                        <p class="text-[9px] font-bold uppercase text-emerald-600/60 tracking-wider mb-1">All'anno</p>
+                        <p id="rentValue" class="text-lg font-black text-emerald-700">€ --</p>
                     </div>
-                </div>
-                <div class="bg-emerald-600/10 py-3 px-4 rounded-2xl border border-emerald-600/20">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-[9px] font-black uppercase tracking-wider text-emerald-800/50">Indice di Redditività</span>
-                        <span id="roiValue" class="text-sm font-black text-emerald-700">--%</span>
-                    </div>
-                    <div class="w-full bg-emerald-200/50 h-1.5 rounded-full overflow-hidden">
-                        <div id="roiBar" class="bg-emerald-500 h-full w-0 transition-all duration-1000"></div>
+                    <div>
+                        <p class="text-[9px] font-bold uppercase text-emerald-600/60 tracking-wider mb-1">Rendimento</p>
+                        <p id="roiValue" class="text-lg font-black text-emerald-700">--%</p>
                     </div>
                 </div>
             </div>
 
-            <div class="space-y-3">
-                <a href="vendi.html" class="block w-full bg-blue-600 text-white font-black py-4 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-sm text-center">
-                    Pubblica Annuncio Gratis
+            <!-- Azione -->
+            <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 text-center mb-3">Cosa vuoi fare?</p>
+            <div class="grid grid-cols-2 gap-3 mb-4">
+                <a href="vendi.html" class="flex flex-col items-center gap-1.5 bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-blue-700 transition shadow-lg shadow-blue-100 text-center">
+                    <i class="fas fa-tag text-xl"></i>
+                    <span class="text-sm">Voglio Vendere</span>
+                    <span class="text-[10px] font-medium opacity-70">Pubblica l'annuncio →</span>
                 </a>
-                <button onclick="location.reload()" class="block w-full text-xs font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest py-2">Nuova Valutazione</button>
+                <a href="vendi.html" class="flex flex-col items-center gap-1.5 bg-emerald-600 text-white font-black py-5 rounded-2xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-100 text-center">
+                    <i class="fas fa-handshake text-xl"></i>
+                    <span class="text-sm">Voglio Affittare</span>
+                    <span class="text-[10px] font-medium opacity-70">Metti in affitto →</span>
+                </a>
             </div>
+
+            <button onclick="location.reload()" class="w-full text-xs font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest py-2">
+                <i class="fas fa-redo mr-1 text-[10px]"></i> Nuova Valutazione
+            </button>
+
         </div>
 
     </div>
@@ -637,9 +633,6 @@
 
         var roi = (rentAvg / totale) * 100;
         document.getElementById('roiValue').textContent = roi.toFixed(1) + '%';
-        setTimeout(function() {
-            document.getElementById('roiBar').style.width = Math.min(roi * 3, 100) + '%';
-        }, 500);
 
         _saveValutatoreLog(min, totale, max, rentAvg, rentMonthly);
     }
