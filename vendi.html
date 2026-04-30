@@ -241,33 +241,25 @@
                                     oninput="document.getElementById('fNomeFiera').value=this.value.trim()">
                             </div>
                             <div>
-                                <label class="field-label">Periodo dell'anno *</label>
-                                <select id="fPeriodo" class="field-input" onchange="document.getElementById('fGiorni').value=this.value">
-                                    <option value="">Scegli il periodo...</option>
-                                    <option>Gennaio</option>
-                                    <option>Febbraio</option>
-                                    <option>Marzo</option>
-                                    <option>Aprile</option>
-                                    <option>Maggio</option>
-                                    <option>Giugno</option>
-                                    <option>Luglio</option>
-                                    <option>Agosto</option>
-                                    <option>Settembre</option>
-                                    <option>Ottobre</option>
-                                    <option>Novembre</option>
-                                    <option>Dicembre</option>
-                                    <option>Primavera (Mar–Mag)</option>
-                                    <option>Estate (Giu–Ago)</option>
-                                    <option>Autunno (Set–Nov)</option>
-                                    <option>Inverno (Dic–Feb)</option>
-                                    <option>Tutto l'anno</option>
-                                </select>
+                                <label class="field-label">Informazioni sulla fiera <span class="text-slate-400 font-medium normal-case text-xs">(opzionale)</span></label>
+                                <textarea id="fNoteFiera" rows="3" class="field-input" style="resize:vertical;min-height:80px;"
+                                    placeholder="es. Fiera annuale, si tiene ogni ottobre per 5 giorni nel centro storico. Concessione decennale tipo A. Affluenza media 10.000 persone."></textarea>
                             </div>
                         </div>
 
                         <div>
                             <label class="field-label">Settore merceologico *</label>
-                            <div id="settorePills" class="flex flex-wrap gap-2 mt-1"></div>
+                            <div class="grid grid-cols-2 gap-3 mt-1">
+                                <button type="button" class="tipo-btn" id="macroAlim" onclick="selectMacro('alimentare')">
+                                    <i class="fas fa-apple-alt text-green-500 text-xl mb-1 block"></i>
+                                    <div class="text-xs font-black">Alimentare</div>
+                                </button>
+                                <button type="button" class="tipo-btn" id="macroNonAlim" onclick="selectMacro('non-alimentare')">
+                                    <i class="fas fa-tshirt text-blue-500 text-xl mb-1 block"></i>
+                                    <div class="text-xs font-black">Non alimentare</div>
+                                </button>
+                            </div>
+                            <div id="sottocategoriePills" class="hidden flex-wrap gap-2 mt-3"></div>
                         </div>
 
                         <div>
@@ -427,6 +419,7 @@ function _saveDraft() {
         tipo:       document.getElementById('fTipo').value,
         giorni:     document.getElementById('fGiorni').value,
         nomeFiera:  document.getElementById('fNomeFiera').value,
+        noteFiera:  document.getElementById('fNoteFiera')?.value || '',
         merce:      document.getElementById('fMerce').value,
         superficie:  document.getElementById('fSuperficie').value,
         prezzo:      document.getElementById('fPrezzo').value,
@@ -472,8 +465,14 @@ function _applyPendingDraft() {
         if (inputEl) inputEl.value = d.nomeFiera;
     }
     if (d.merce) {
-        document.getElementById('fMerce').value = d.merce;
-        document.querySelectorAll('.settore-pill').forEach(p => { if (p.textContent === d.merce) p.classList.add('on'); });
+        const macro = _getMacroFromMerce(d.merce);
+        if (macro) {
+            selectMacro(macro);
+            document.querySelectorAll('.settore-pill').forEach(p => { if (p.textContent === d.merce) { p.classList.add('on'); document.getElementById('fMerce').value = d.merce; } });
+        }
+    }
+    if (d.noteFiera && document.getElementById('fNoteFiera')) {
+        document.getElementById('fNoteFiera').value = d.noteFiera;
     }
     document.getElementById('fSuperficie').value = d.superficie || '';
     document.getElementById('fPrezzo').value     = d.prezzo     || '';
@@ -506,9 +505,6 @@ function _validateStep(n) {
     if (n === 3) {
         const isFiera = document.getElementById('fTipo').value === 'Fiera';
         if (isFiera) {
-            const periodo = document.getElementById('fPeriodo').value;
-            if (!periodo) return _err('Indica il periodo dell\'anno in cui si svolge la fiera.');
-            document.getElementById('fGiorni').value = periodo;
             document.getElementById('fNomeFiera').value = document.getElementById('fNomeFieraInput').value.trim();
         } else {
             if (!document.getElementById('fGiorni').value)
@@ -588,21 +584,34 @@ function toggleDay(btn) {
     document.getElementById('fGiorni').value = days.join(', ');
 }
 
-// ── Step 3: Settore pills ─────────────────────────────────
-function _buildSettorePills() {
-    const container = document.getElementById('settorePills');
-    MERCI.forEach(m => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'settore-pill';
-        btn.textContent = m;
-        btn.onclick = function () {
-            document.querySelectorAll('.settore-pill').forEach(p => p.classList.remove('on'));
-            btn.classList.add('on');
-            document.getElementById('fMerce').value = m;
-        };
-        container.appendChild(btn);
-    });
+// ── Step 3: Settore a due livelli ────────────────────────
+const _SETTORI = {
+    alimentare: ['Frutta e verdura', 'Pesce', 'Carne', 'Formaggi e salumi', 'Pane e prodotti da forno', 'Gastronomia / cibi pronti', 'Dolci e pasticceria', 'Biologico e km0', 'Altro alimentare'],
+    'non-alimentare': ['Abbigliamento e accessori', 'Calzature', 'Biancheria e tessuti', 'Fiori e piante', 'Casalinghi', 'Libri e giocattoli', 'Gioielli e bigiotteria', 'Elettronica', 'Antiquariato', 'Altro non alimentare'],
+};
+
+function selectMacro(tipo) {
+    document.getElementById('macroAlim').classList.toggle('on', tipo === 'alimentare');
+    document.getElementById('macroNonAlim').classList.toggle('on', tipo === 'non-alimentare');
+    document.getElementById('fMerce').value = '';
+    const pills = document.getElementById('sottocategoriePills');
+    pills.innerHTML = _SETTORI[tipo].map(s =>
+        `<button type="button" class="settore-pill" onclick="selectSettore(this)">${s}</button>`
+    ).join('');
+    pills.classList.remove('hidden');
+    pills.style.display = 'flex';
+}
+
+function selectSettore(btn) {
+    document.querySelectorAll('.settore-pill').forEach(p => p.classList.remove('on'));
+    btn.classList.add('on');
+    document.getElementById('fMerce').value = btn.textContent;
+}
+
+function _getMacroFromMerce(merce) {
+    if (_SETTORI.alimentare.includes(merce)) return 'alimentare';
+    if (_SETTORI['non-alimentare'].includes(merce)) return 'non-alimentare';
+    return null;
 }
 
 // ── Step 4: Label prezzo ──────────────────────────────────
@@ -695,9 +704,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         opt.value = opt.textContent = r;
         sel.appendChild(opt);
     });
-
-    // Popola settore pills
-    _buildSettorePills();
 
     // Autocomplete comuni (filtra on input)
     const comuneInput = document.getElementById('fComune');
@@ -918,8 +924,13 @@ async function submitAnnuncio() {
             if (publicUrl) imageUrls.push(publicUrl);
         }
 
-        const nomeFiera = document.getElementById('fNomeFiera').value.trim();
-        form.dettagli_extra = { images: imageUrls, ...(nomeFiera ? { nome_fiera: nomeFiera } : {}) };
+        const nomeFiera  = document.getElementById('fNomeFiera').value.trim();
+        const noteFiera  = (document.getElementById('fNoteFiera')?.value || '').trim();
+        form.dettagli_extra = {
+            images: imageUrls,
+            ...(nomeFiera ? { nome_fiera: nomeFiera } : {}),
+            ...(noteFiera ? { note_fiera: noteFiera } : {}),
+        };
         form.img_urls = imageUrls;
 
         let { data: inserted, error } = await _supabase.from('annunci').insert(form).select('id').single();
@@ -989,10 +1000,16 @@ function resetForm() {
 
     // Reset pill e hidden inputs
     document.querySelectorAll('.day-pill').forEach(p => p.classList.remove('on'));
-    document.querySelectorAll('.settore-pill').forEach(p => p.classList.remove('on'));
-    document.getElementById('fGiorni').value = '';
-    document.getElementById('fMerce').value  = '';
-    document.getElementById('fTipo').value   = 'Mercato settimanale';
+    document.getElementById('sottocategoriePills').innerHTML = '';
+    document.getElementById('sottocategoriePills').classList.add('hidden');
+    document.getElementById('macroAlim').classList.remove('on');
+    document.getElementById('macroNonAlim').classList.remove('on');
+    document.getElementById('fGiorni').value    = '';
+    document.getElementById('fMerce').value     = '';
+    document.getElementById('fNomeFiera').value = '';
+    document.getElementById('fNomeFieraInput').value = '';
+    if (document.getElementById('fNoteFiera')) document.getElementById('fNoteFiera').value = '';
+    document.getElementById('fTipo').value      = 'Mercato settimanale';
     document.getElementById('statoVendita').checked = true;
     selectTipo('Mercato settimanale', 0);
 
