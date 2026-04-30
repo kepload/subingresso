@@ -1075,8 +1075,8 @@ async function submitAnnuncio() {
 
         let { data: inserted, error } = await _withTimeout(
             _supabase.from('annunci').insert(form).select('id').single(),
-            20000,
-            'Pubblicazione scaduta'
+            45000,
+            'Pubblicazione scaduta (server lento, riprova)'
         );
 
         if (error && error.message.includes('expires_at')) {
