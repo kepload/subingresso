@@ -316,6 +316,20 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Se l'articolo ha meno di 3 paragrafi il banner non viene inserito.
 - Banner calcolatore in cima al blog: riga singola compatta (`py-3`), solo titolo + bottone "Calcola →". Spazio superiore `pt-8` (ridotto da `py-16`).
 
+## Sessione 30 Aprile 2026
+
+### Bug Fix vendi.html
+- **Anti-spam NaN**: `localStorage.getItem()` ritorna stringa → `Date.now() - "123..."` dava NaN. Fix: `parseInt(localStorage.getItem(lastPostKey)) || 0`.
+- **Rimozione foto**: `FileReader.onload` è asincrono → DOM e `_files[]` potevano andare fuori ordine. Fix: `WeakMap` (`_fileMap`) che mappa ogni `div` al suo `File`. `removeFile()` usa `_files.indexOf(div._fileRef)` invece dell'indice DOM.
+
+### Pagine SEO per Città
+- **`api/annunci-citta.js`**: nuova Vercel serverless function. Serve `/annunci/milano`, `/annunci/roma` ecc. con HTML SSR completo — meta tag, listing cards visibili a Google, JSON-LD ItemList+BreadcrumbList, testo SEO, canonical.
+- **`vercel.json`**: aggiunto rewrite `"/annunci/:citta"` → `"/api/annunci-citta?citta=:citta"`. Non entra in conflitto con `/annunci` (file statico).
+- **`api/sitemap.js`**: aggiunti `cityToSlug()` e terza query distinct `comune` da annunci attivi. Ogni città ottiene URL in sitemap (weekly, 0.8). Auto-aggiornato ad ogni crawl.
+- **Logica 404**: città senza annunci → risposta 404 + `meta name="robots" content="noindex"`. Google non indicizza pagine vuote.
+- **Sitemap già registrata** su Search Console — nessuna azione necessaria, Google ricicla automaticamente.
+- **"Discovered not indexed"** (42 pagine in Search Console): normale per sito giovane, si risolve con tempo + traffico. Non richiedere indicizzazione manuale.
+
 ## Stato Ultima Sessione Codex (27 Aprile 2026)
 - Sessione dedicata al blog SEO e alla pulizia dei file SQL temporanei.
 - Analisi competitor/mercato: Subingresso.it ha prodotto piu' moderno dei competitor verticali, ma dominio giovane e bassa autorita SEO. La strategia migliore e' long-tail operativo: spuntista, decadenza concessione, trasferimento familiare, subingresso locale, guide regionali e problemi concreti degli ambulanti.
