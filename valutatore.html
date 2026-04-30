@@ -147,6 +147,7 @@
             <div class="relative">
                 <span class="absolute left-5 top-1/2 -translate-y-1/2 font-black text-slate-400 text-xl">€</span>
                 <input type="text" inputmode="numeric" id="fatturato" placeholder="Es: 65000" autofocus
+                        onkeydown="if(event.key==='Enter'){nextStep();}"
                         class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-5 pl-12 pr-6 text-2xl font-black outline-none focus:border-blue-600 transition">
             </div>
             <button onclick="nextStep()" class="w-full bg-blue-600 text-white font-black py-5 rounded-2xl mt-8 hover:bg-blue-700 transition shadow-lg shadow-blue-100">Continua</button>
