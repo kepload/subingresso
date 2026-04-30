@@ -292,14 +292,6 @@
                 <p class="text-[10px] text-blue-400 font-semibold mt-1.5">rendimento stimato <span id="roiValue">--%</span></p>
             </div>
 
-            <!-- Disclaimer -->
-            <div class="flex items-start gap-2 bg-slate-50 border border-slate-100 rounded-xl px-3 py-2.5 mb-4">
-                <i class="fas fa-info-circle text-slate-400 text-xs mt-0.5 flex-shrink-0"></i>
-                <p class="text-[11px] text-slate-500 leading-relaxed">
-                    Stima <strong class="text-slate-700">orientativa</strong> calcolata sui dati raccolti da Subingresso.it. Ogni mercato e ogni licenza hanno caratteristiche proprie e i prezzi possono variare nel tempo: usa il risultato come punto di partenza per la trattativa, non come perizia ufficiale.
-                </p>
-            </div>
-
             <!-- CTA -->
             <div class="grid grid-cols-2 gap-3 mb-3">
                 <a href="vendi.html" class="flex flex-col items-center gap-1 bg-emerald-600 text-white font-black py-4 rounded-2xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-100 text-center">
@@ -315,6 +307,10 @@
             <button onclick="location.reload()" class="w-full text-xs font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest py-1.5">
                 <i class="fas fa-redo mr-1 text-[10px]"></i> Nuova Valutazione
             </button>
+
+            <p class="text-center mt-1">
+                <a href="#disclaimer" class="text-[11px] text-slate-400 hover:text-blue-600 underline transition">Stima orientativa — leggi le note</a>
+            </p>
 
         </div>
 
@@ -408,6 +404,14 @@
                 </details>
 
             </div>
+        </div>
+
+        <!-- Disclaimer / Note sulla valutazione -->
+        <div id="disclaimer" class="mt-16 pt-10 border-t border-slate-100 scroll-mt-20">
+            <h2 class="text-lg font-black tracking-tight text-slate-900 mb-3">Note sulla valutazione</h2>
+            <p class="text-sm text-slate-500 leading-relaxed">
+                Il valore mostrato è una <strong class="text-slate-700">stima orientativa</strong> calcolata sui dati raccolti da Subingresso.it e sui parametri medi del mercato ambulante italiano. Ogni posteggio ha però caratteristiche uniche — concorrenza locale, flusso di clienti, condizioni della concessione, normative comunali — che il calcolatore non può cogliere singolarmente. Inoltre i prezzi del subingresso variano nel tempo in base alla domanda, all'inflazione e alle modifiche normative regionali. Usa il risultato come punto di partenza per la trattativa, non come perizia ufficiale: il prezzo finale è sempre frutto di accordo tra le parti.
+            </p>
         </div>
 
     </div>
