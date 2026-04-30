@@ -215,7 +215,7 @@
 
                     <div class="space-y-8">
 
-                        <!-- Giorni (solo mercato settimanale/quotidiano) -->
+                        <!-- Giorni (solo mercato settimanale) -->
                         <div id="step3Giorni">
                             <label class="field-label">Giorni di mercato *</label>
                             <div class="flex gap-1.5 mt-1 flex-wrap">
@@ -445,7 +445,7 @@ function _applyPendingDraft() {
     else document.getElementById('statoVendita').checked = true;
     document.getElementById('fRegione').value    = d.regione || '';
     document.getElementById('fComune').value     = d.comune  || '';
-    const draftTipo = d.tipo === 'Mercato quotidiano' ? 'Mercato settimanale' : (d.tipo || 'Mercato settimanale');
+    const draftTipo = d.tipo === 'Fiera' ? 'Fiera' : 'Mercato settimanale';
     document.getElementById('fTipo').value = draftTipo;
     const tipoIdx = ['Mercato settimanale', 'Fiera'].indexOf(draftTipo);
     for (let i = 0; i < 2; i++) {
