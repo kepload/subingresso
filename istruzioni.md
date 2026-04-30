@@ -347,21 +347,23 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **`SETUP_VALUTATORE_LOGS.sql` eseguito** su Supabase: tabella `valutatore_logs` + 2 RPC (`link_valutatore_to_user`, `link_valutatore_to_annuncio`). Tutto funzionante.
 - **SEO completo valutatore.html**: title, meta, OG, Twitter Card, JSON-LD WebApplication + FAQPage (6 domande), preconnect. Sitemap: priority 0.9, weekly.
 - **Step 6 redesign**: valore vendita (verde/emerald) in cima, box affitto (blu) sotto, due CTA "Voglio Vendere" / "Voglio Affittare" → entrambi linkano `vendi.html`. Affitto mensile rimosso (solo annuale). Numero con spazio sottile come separatore migliaia (`toLocaleString('it-IT').replace(/\./g,' ')`).
-- **Formula calcolatore** (stato attuale):
+- **Formula calcolatore** (stato attuale, ricalibrata 1 mag 2026 — output prima erano esplosivi: 5k fatturato → 95k valore):
   ```js
-  var base = factors.fatturato * 2.0;
-  var moltFrequenza = (factors.frequenza === 'fiera') ? (2.2 * factors.durataFiera) : factors.frequenza;
+  var base = factors.fatturato * 1.0;
+  var moltFrequenza = (factors.frequenza === 'fiera') ? factors.durataFiera : factors.frequenza;
   var totale = base * moltFrequenza * factors.zona * factors.settore * factors.posizione * factors.anni * factors.stagionalita;
-  var rentAvg = totale * 0.27 * factors.stagionalita;
+  var rentRaw = totale * 0.25;
+  var rentCap = factors.fatturato * 0.50 * factors.stagionalita;
+  var rentAvg = Math.min(rentRaw, rentCap);
   ```
-  Zona: storica=2.8, capoluogo=1.6, rionale=0.6. Floor rimosso.
-  Calibrazione: base alzata da 0.45→0.65→1.2→2.0 per stare sopra 1× fatturato per i casi rionali.
+  Moltiplicatori: giornaliero=1.5 / settimanale=1.0 / fiera=durataFiera (1g=0.3, weekend=0.5, sett+=0.7); zona storica=2.0 / capoluogo=1.25 / rionale=0.65; alimentare=1.3, non-alim=1.0; angolare=1.25, linea=1.0; anni storica=1.25, recente=1.0; stagionale=0.7, annuale=1.0.
+  Calibrazione obiettivo: fatturato 5k → top assoluto ~30k, caso settimanale-storica-alim ~20k, affitto top ~2.5k (cap al 50% del fatturato). Per fatturato 30k rionale dà 13-19k (range copy SEO 8-20k); per 100k alim storica top dà ~600k.
+  **Quando si toccano i moltiplicatori, aggiornare _FREQ_LABELS / _ZONA_LABELS / _SETT_LABELS / _POS_LABELS / _ANNI_LABELS / _STAG_LABELS / _FIERA_LABELS** in `valutatore.html` (chiavi devono essere stringhe corrispondenti al nuovo valore — String(1.0)='1', String(2.0)='2'). Se non corrispondono, `_label()` ritorna null e `_saveValutatoreLog` skippa il salvataggio Supabase.
 - **Bug fix noto**: non usare mai `history` come nome variabile JS → conflitto con `window.history` → crasha tutto. Il nome corretto usato qui è `stepHistory`.
 - **Banner mobile homepage**: prima della sezione "Vendi in 3 passi", visibile solo su mobile (`md:hidden`), link verde a valutatore.html.
 
 ### Pendenze
 - **Label "Mercato Rionale / Periferico"** non piace all'utente ("non da l'idea di quello che è"). Opzioni proposte non ancora scelte: "Piccolo Comune / Quartiere", "Paese o Periferia", "Mercato Non di Punta". Da rinominare.
-- **Formula base ancora "troppo poco"** per l'utente (ultimo feedback sessione): alzata a 2.0 ma potrebbe servire ulteriore calibrazione.
 
 ## Stato Ultima Sessione Codex (27 Aprile 2026)
 - Sessione dedicata al blog SEO e alla pulizia dei file SQL temporanei.
