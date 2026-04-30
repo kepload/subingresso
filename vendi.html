@@ -357,7 +357,7 @@
                         </div>
                     </div>
 
-                    <button type="button" id="submitBtn" onclick="submitAnnuncio()"
+                    <button type="button" id="submitBtn"
                         class="w-full mt-8 bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100 active:scale-[.98]">
                         Pubblica annuncio gratis
                     </button>
@@ -694,11 +694,15 @@ async function prefillContactFromSession(force = false) {
         const fullName = profileName || metaName || meta.full_name || meta.name || '';
         const phone = profile?.telefono || meta.telefono || meta.tel || meta.phone || meta.phone_number || '';
 
+        // Fallback localStorage: dati usati nell'ultimo annuncio pubblicato
+        const cachedNome = localStorage.getItem('_vc_nome') || '';
+        const cachedTel  = localStorage.getItem('_vc_tel')  || '';
+
         if (nomeEl && (force || !nomeEl.value.trim())) {
-            nomeEl.value = fullName || user.email.split('@')[0];
+            nomeEl.value = fullName || cachedNome || user.email.split('@')[0];
         }
         if (telEl && (force || !telEl.value.trim())) {
-            telEl.value = normalizePhone(phone);
+            telEl.value = normalizePhone(phone || cachedTel);
         }
         return user;
     } catch (_) {
@@ -707,6 +711,12 @@ async function prefillContactFromSession(force = false) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+    const submitBtn = document.getElementById('submitBtn');
+    if (submitBtn && !submitBtn.dataset.bound) {
+        submitBtn.dataset.bound = '1';
+        submitBtn.addEventListener('click', submitAnnuncio);
+    }
+
     // Popola regioni
     const sel = document.getElementById('fRegione');
     REGIONI.forEach(r => {
@@ -857,9 +867,11 @@ async function _tryGrantWelcomeVetrina(userId, annuncioId) {
 async function submitAnnuncio() {
     const btn = document.getElementById('submitBtn');
     if (btn.disabled) return;
-    const orig = btn.innerHTML;
+    const orig = btn.dataset.origHtml || btn.innerHTML;
+    btn.dataset.origHtml = orig;
 
     const _resetBtn = () => { btn.disabled = false; btn.innerHTML = orig; };
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Verifica in corso...';
 
     // Controlla auth prima di disabilitare il bottone
     let user = null;
@@ -874,13 +886,17 @@ async function submitAnnuncio() {
             await prefillContactFromSession();
             submitAnnuncio();
         };
+        _resetBtn();
         openAuthModal('register');
         return;
     }
 
     // Valida prima di bloccare il bottone
     await prefillContactFromSession();
-    if (!_validateStep(5)) return;
+    if (!_validateStep(5)) {
+        _resetBtn();
+        return;
+    }
 
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
@@ -939,8 +955,12 @@ async function submitAnnuncio() {
 
         const nomeFiera  = document.getElementById('fNomeFiera').value.trim();
         const noteFiera  = (document.getElementById('fNoteFiera')?.value || '').trim();
+        if (form.tipo === 'Fiera' && !form.giorni) {
+            form.giorni = noteFiera || nomeFiera || 'Fiera';
+        }
         form.dettagli_extra = {
             images: imageUrls,
+            settore: form.settore,
             ...(nomeFiera ? { nome_fiera: nomeFiera } : {}),
             ...(noteFiera ? { note_fiera: noteFiera } : {}),
         };
@@ -960,6 +980,16 @@ async function submitAnnuncio() {
         }
 
         if (error) throw error;
+
+        // Salva nome/tel per pre-fill ai prossimi annunci
+        if (form.contatto) localStorage.setItem('_vc_nome', form.contatto);
+        if (form.tel)      localStorage.setItem('_vc_tel',  form.tel);
+        if (form.contatto || form.tel) {
+            _supabase.from('profiles')
+                .update({ nome: form.contatto || undefined, telefono: form.tel || undefined })
+                .eq('id', user.id)
+                .then(() => {}).catch(() => {});
+        }
 
         const vetranaGranted = await _tryGrantWelcomeVetrina(user.id, inserted.id);
         _clearDraft();
@@ -989,6 +1019,8 @@ async function submitAnnuncio() {
         _resetBtn();
     }
 }
+
+window.submitAnnuncio = submitAnnuncio;
 
 function checkContent(titolo, descrizione) {
     const blacklist = ['cazzo', 'merda', 'vaffanculo'];
