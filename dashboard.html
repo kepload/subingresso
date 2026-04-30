@@ -122,17 +122,9 @@
                     <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Utenti Iscritti</div>
                     <div id="admStatUtenti" class="text-2xl font-black text-slate-900">—</div>
                 </div>
-                <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center md:text-left">
-                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">In Attesa</div>
-                    <div id="admStatPending" class="text-2xl font-black text-amber-500">—</div>
-                </div>
                 <div class="bg-white p-5 rounded-2xl border border-amber-100 shadow-sm text-center md:text-left">
                     <div class="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1">In Vetrina</div>
                     <div id="admStatVetrina" class="text-2xl font-black text-amber-500">—</div>
-                </div>
-                <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center md:text-left">
-                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Lotteria Attiva</div>
-                    <div id="admStatLotteria" class="text-2xl font-black text-slate-900">—</div>
                 </div>
             </div>
 
@@ -667,18 +659,13 @@ async function loadAdminStats() {
     const { count: totalAnnunci }  = await _supabase.from('annunci').select('*', { count: 'exact', head: true });
     const { count: totalAttivi }   = await _supabase.from('annunci').select('*', { count: 'exact', head: true }).eq('status', 'active');
     const { count: totalUtenti }   = await _supabase.from('profiles').select('*', { count: 'exact', head: true });
-    const { count: totalPending }  = await _supabase.from('annunci').select('*', { count: 'exact', head: true }).eq('status', 'pending');
     const { count: totalVetrina }  = await _supabase.from('annunci').select('*', { count: 'exact', head: true })
         .eq('featured', true).gt('featured_until', new Date().toISOString());
-    const { count: totalLotteria } = await _supabase.from('profiles').select('*', { count: 'exact', head: true })
-        .eq('welcome_lottery_eligible', true);
 
-    document.getElementById('admStatAnnunci').textContent  = totalAnnunci  || 0;
-    document.getElementById('admStatAttivi').textContent   = totalAttivi   || 0;
-    document.getElementById('admStatUtenti').textContent   = totalUtenti   || 0;
-    document.getElementById('admStatPending').textContent  = totalPending  || 0;
-    document.getElementById('admStatVetrina').textContent  = totalVetrina  || 0;
-    document.getElementById('admStatLotteria').textContent = totalLotteria || 0;
+    document.getElementById('admStatAnnunci').textContent = totalAnnunci || 0;
+    document.getElementById('admStatAttivi').textContent  = totalAttivi  || 0;
+    document.getElementById('admStatUtenti').textContent  = totalUtenti  || 0;
+    document.getElementById('admStatVetrina').textContent = totalVetrina || 0;
 }
 
 // ── Growth Chart ─────────────────────────────────────────
