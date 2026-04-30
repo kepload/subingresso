@@ -403,7 +403,11 @@ function goToStep(n) {
     if (_step === 4) _updatePrezzoLabel();
     if (_step === 5) {
         _suggestTitle();
-        prefillContactFromSession();
+        // force=true: se al primo arrivo i campi non sono stati riempiti
+        // (race condition con getSession), riprova ad ogni accesso a step 5
+        prefillContactFromSession(/* force */ false);
+        // Re-applica anche dalla cache localStorage subito (sync, no network)
+        _prefillFromCache();
     }
     if (_step > 1) _saveDraft();
 }
@@ -670,6 +674,20 @@ function useTemplate() {
 
 
 // ── Init ──────────────────────────────────────────────────
+// Riempie i campi nome/tel da localStorage (immediato, no network)
+function _prefillFromCache() {
+    const nomeEl = document.getElementById('fNome');
+    const telEl  = document.getElementById('fTel');
+    if (nomeEl && !nomeEl.value.trim()) {
+        const cached = localStorage.getItem('_vc_nome') || localStorage.getItem('_profile_nome') || '';
+        if (cached) nomeEl.value = cached;
+    }
+    if (telEl && !telEl.value.trim()) {
+        const cached = localStorage.getItem('_vc_tel') || localStorage.getItem('_profile_tel') || '';
+        if (cached) telEl.value = cached;
+    }
+}
+
 async function prefillContactFromSession(force = false) {
     try {
         let user = null;
@@ -715,8 +733,12 @@ async function prefillContactFromSession(force = false) {
         if (telEl && (force || !telEl.value.trim())) {
             telEl.value = normalizePhone(phone || cachedTel);
         }
+        // Cache profilo per i prossimi caricamenti (no race condition al prossimo refresh)
+        if (fullName) localStorage.setItem('_profile_nome', fullName);
+        if (phone)    localStorage.setItem('_profile_tel', normalizePhone(phone));
         return user;
-    } catch (_) {
+    } catch (e) {
+        console.warn('prefillContactFromSession failed:', e);
         return null;
     }
 }
@@ -752,7 +774,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
     });
 
-    // Auth
+    // Prefill immediato dalla cache (sync, no network) — evita race con getSession
+    _prefillFromCache();
+
+    // Auth + prefill da DB (async, sovrascrive solo se la cache era vuota)
     const user = await prefillContactFromSession();
     if (!user) {
         document.getElementById('authBanner').classList.remove('hidden');
@@ -931,6 +956,46 @@ async function _refreshSessionIfNeeded(session) {
     }
 }
 
+// INSERT diretto via fetch su PostgREST (bypassa il client supabase-js
+// per evitare bug di locking interno e timeout silenziosi).
+async function _directInsertAnnuncio(form, accessToken, timeoutMs) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/annunci?select=id`, {
+            method: 'POST',
+            headers: {
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${accessToken}`,
+                'Content-Type': 'application/json',
+                'Prefer': 'return=representation',
+                'Accept': 'application/vnd.pgrst.object+json'
+            },
+            body: JSON.stringify(form),
+            signal: controller.signal
+        });
+        clearTimeout(timer);
+        if (!res.ok) {
+            let detail = `HTTP ${res.status}`;
+            try {
+                const errBody = await res.json();
+                detail = errBody?.message || errBody?.error_description || JSON.stringify(errBody).slice(0, 160);
+                return { data: null, error: { code: errBody?.code, message: detail } };
+            } catch (_) {
+                return { data: null, error: { code: String(res.status), message: detail } };
+            }
+        }
+        const data = await res.json();
+        return { data, error: null };
+    } catch (err) {
+        clearTimeout(timer);
+        if (err.name === 'AbortError') {
+            return { data: null, error: { code: 'TIMEOUT', message: 'Pubblicazione scaduta (server lento, riprova)' } };
+        }
+        return { data: null, error: { code: 'FETCH_ERROR', message: err.message || 'Errore di rete' } };
+    }
+}
+
 async function _getSessionForSubmit() {
     let session = null;
     try {
@@ -1084,28 +1149,19 @@ async function submitAnnuncio() {
         };
         form.img_urls = imageUrls;
 
-        let { data: inserted, error } = await _withTimeout(
-            _supabase.from('annunci').insert(form).select('id').single(),
-            45000,
-            'Pubblicazione scaduta (server lento, riprova)'
-        );
+        const accessToken = _currentSession?.access_token;
+        if (!accessToken) throw new Error('Token sessione mancante. Ricarica la pagina e riloggati.');
 
-        if (error && error.message.includes('expires_at')) {
+        let { data: inserted, error } = await _directInsertAnnuncio(form, accessToken, 30000);
+
+        if (error && /expires_at/i.test(error.message || '')) {
             delete form.expires_at;
-            const r = await _withTimeout(
-                _supabase.from('annunci').insert(form).select('id').single(),
-                20000,
-                'Pubblicazione scaduta'
-            );
+            const r = await _directInsertAnnuncio(form, accessToken, 30000);
             inserted = r.data; error = r.error;
         }
-        if (error && error.message.includes('img_urls')) {
+        if (error && /img_urls/i.test(error.message || '')) {
             delete form.img_urls;
-            const r = await _withTimeout(
-                _supabase.from('annunci').insert(form).select('id').single(),
-                20000,
-                'Pubblicazione scaduta'
-            );
+            const r = await _directInsertAnnuncio(form, accessToken, 30000);
             inserted = r.data; error = r.error;
         }
 
@@ -1113,12 +1169,8 @@ async function submitAnnuncio() {
         if (error && /jwt|JWT|expired|auth|RLS|permission|policy|unauthor/i.test(error.message || '')) {
             console.warn('Auth error sull\'INSERT, provo refresh sessione:', error);
             const refreshed = await _refreshSessionIfNeeded({ ...(_currentSession || {}), expires_at: 0 });
-            if (refreshed?.user) {
-                const r = await _withTimeout(
-                    _supabase.from('annunci').insert(form).select('id').single(),
-                    20000,
-                    'Pubblicazione scaduta'
-                );
+            if (refreshed?.access_token) {
+                const r = await _directInsertAnnuncio(form, refreshed.access_token, 30000);
                 inserted = r.data; error = r.error;
             }
         }
