@@ -8,6 +8,8 @@ const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
 
+const { CAPOLUOGHI } = require('./_capoluoghi.js');
+
 // "Reggio Emilia" → "reggio-emilia"
 function cityToSlug(city) {
     return city.toLowerCase()
@@ -94,7 +96,7 @@ module.exports = async function handler(req, res) {
                 '0.7'
             )
         ),
-        // Una pagina per ogni città con annunci attivi (lastmod = annuncio più recente)
+        // Una pagina per ogni città con annunci attivi (lastmod = annuncio più recente, alta priorità)
         ...cities.map(c =>
             urlTag(
                 `${SITE}/annunci/${cityToSlug(c.name)}`,
@@ -104,6 +106,14 @@ module.exports = async function handler(req, res) {
             )
         ),
     ];
+
+    // Tutti i capoluoghi italiani che NON sono già stati aggiunti dalla query annunci.
+    // Pagina placeholder indicizzabile (200 OK con FAQ + CTA), priorità più bassa.
+    const slugsAlreadyAdded = new Set(cities.map(c => cityToSlug(c.name)));
+    for (const cap of CAPOLUOGHI) {
+        if (slugsAlreadyAdded.has(cap.slug)) continue;
+        parts.push(urlTag(`${SITE}/annunci/${cap.slug}`, today, 'monthly', '0.5'));
+    }
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${parts.join('\n')}\n</urlset>`;
 

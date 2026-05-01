@@ -1,11 +1,15 @@
 // ============================================================
 //  Subingresso.it — SSR Pagina Annunci per Città (Vercel Serverless)
 //  Es.: /annunci/milano → listing attivi a Milano con meta tag ottimizzati
+//  Le città capoluogo (lista in _capoluoghi.js) rispondono SEMPRE 200
+//  con placeholder utile anche se non hanno annunci attivi.
 // ============================================================
 
 const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
+
+const { CAPOLUOGHI_BY_SLUG } = require('./_capoluoghi.js');
 
 const MESI_IT = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
 
@@ -91,6 +95,180 @@ function buildCard(l) {
   </a>`;
 }
 
+// ============================================================
+//  Pagina placeholder per città capoluogo senza annunci.
+//  200 OK + indicizzabile + contenuto onesto + CTA + FAQ schema.
+// ============================================================
+function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
+    const today    = new Date();
+    const monthYr  = `${MESI_IT[today.getMonth()]} ${today.getFullYear()}`;
+    const todayIso = today.toISOString().split('T')[0];
+
+    const title       = `Posteggi Mercatali ${cityName} ${monthYr} · Subingresso.it`;
+    const description = `Cerchi un posteggio mercatale a ${cityName}? Subingresso.it è il marketplace italiano per concessioni e licenze ambulanti. Pubblica gratis il tuo annuncio o ricevi un avviso sui nuovi posteggi a ${cityName}.`;
+
+    const faq = [
+        {
+            q: `Come funziona il commercio ambulante a ${cityName}?`,
+            a: `A ${cityName} i mercati settimanali e i posteggi sono gestiti dal Comune. Per esercitare serve una concessione di posteggio (tipo A) o un'autorizzazione itinerante (tipo B), insieme alla partita IVA con codice ATECO commercio ambulante e all'iscrizione INPS commercianti.`
+        },
+        {
+            q: `Quando si liberano i posteggi al mercato di ${cityName}?`,
+            a: `I posteggi si liberano per cessione (subingresso), decadenza o nuovi bandi pubblici. Il Comune di ${cityName} pubblica sull'Albo Pretorio gli avvisi per l'assegnazione dei posteggi liberi, di solito tra marzo-aprile e settembre-ottobre.`
+        },
+        {
+            q: `Come fare il subingresso di un posteggio a ${cityName}?`,
+            a: `Il subingresso richiede un atto notarile di cessione d'azienda tra venditore e acquirente, seguito da una SCIA al SUAP del Comune di ${cityName} entro 30 giorni. La pratica completa richiede 3-6 settimane e costa 800-2.500 euro di notarile.`
+        },
+        {
+            q: `Quanto costa un posteggio mercatale a ${cityName}?`,
+            a: `Il prezzo di un posteggio mercatale a ${cityName} varia in base a zona, settore merceologico, dimensioni del banco, giorni di mercato e anni di concessione residui. Su Subingresso.it pubblichiamo gli annunci attivi con prezzi reali appena diventano disponibili.`
+        },
+        {
+            q: `Come pubblicare un annuncio per vendere un posteggio a ${cityName}?`,
+            a: `La pubblicazione su Subingresso.it è gratuita. Vai sulla pagina "Vendi", crea un account e inserisci i dati del tuo posteggio: foto del banco, fatturato medio, posizione nel mercato, prezzo richiesto. L'annuncio è online subito dopo la moderazione.`
+        }
+    ];
+
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'BreadcrumbList',
+                'itemListElement': [
+                    { '@type': 'ListItem', 'position': 1, 'name': 'Home',    'item': `${SITE}/` },
+                    { '@type': 'ListItem', 'position': 2, 'name': 'Annunci', 'item': `${SITE}/annunci` },
+                    { '@type': 'ListItem', 'position': 3, 'name': cityName,  'item': canonicalUrl }
+                ]
+            },
+            {
+                '@type': 'FAQPage',
+                'mainEntity': faq.map(f => ({
+                    '@type': 'Question',
+                    'name':  f.q,
+                    'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+                }))
+            }
+        ]
+    };
+
+    const faqHtml = faq.map(f => `
+      <details style="background:#fff;border:1px solid #f1f5f9;border-radius:14px;padding:16px 20px;margin-bottom:10px;">
+        <summary style="font-size:15px;font-weight:800;color:#0f172a;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+          ${esc(f.q)}
+          <i class="fas fa-chevron-down" style="color:#94a3b8;font-size:12px;"></i>
+        </summary>
+        <p style="margin:12px 0 0;font-size:14px;color:#64748b;line-height:1.7;">${esc(f.a)}</p>
+      </details>`).join('');
+
+    return `<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>${esc(title)}</title>
+  <meta name="description" content="${esc(description)}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:title"       content="${esc(title)}">
+  <meta property="og:description" content="${esc(description)}">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="${esc(canonicalUrl)}">
+  <meta property="og:updated_time" content="${esc(todayIso)}">
+  <meta name="twitter:card"       content="summary_large_image">
+  <link rel="canonical" href="${esc(canonicalUrl)}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script type="application/ld+json">${safeJson(jsonLd)}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    * { box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; margin: 0; }
+    details[open] summary i.fa-chevron-down { transform: rotate(180deg); }
+    details summary i.fa-chevron-down { transition: transform .2s; }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main style="max-width:880px;margin:0 auto;padding:32px 16px 64px;">
+
+    <!-- Breadcrumb -->
+    <nav style="font-size:13px;color:#94a3b8;margin-bottom:24px;">
+      <a href="/" style="color:#64748b;text-decoration:none;font-weight:600;">Home</a>
+      <span style="margin:0 6px;">›</span>
+      <a href="/annunci" style="color:#64748b;text-decoration:none;font-weight:600;">Annunci</a>
+      <span style="margin:0 6px;">›</span>
+      <span style="color:#0f172a;font-weight:700;">${esc(cityName)}</span>
+    </nav>
+
+    <!-- Hero -->
+    <div style="margin-bottom:32px;">
+      <h1 style="margin:0 0 12px;font-size:clamp(28px,5vw,40px);font-weight:900;color:#0f172a;line-height:1.1;letter-spacing:-.02em;">
+        Posteggi Mercatali a <span style="color:#2563eb;">${esc(cityName)}</span>
+      </h1>
+      <p style="margin:0;font-size:17px;color:#64748b;font-weight:500;line-height:1.55;">
+        Cerchi un posteggio in vendita o vuoi vendere il tuo? ${esc(cityName)} è una piazza che seguiamo da vicino${regione ? ` in ${esc(regione)}` : ''}.
+      </p>
+    </div>
+
+    <!-- Status box: onesto, nessun annuncio finto -->
+    <div style="background:#fff;border:1px solid #f1f5f9;border-radius:20px;padding:28px;margin-bottom:32px;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:#fef3c7;border:1px solid #fde68a;color:#92400e;font-size:13px;font-weight:800;padding:8px 16px;border-radius:999px;margin-bottom:20px;">
+        <i class="fas fa-clock" style="font-size:11px;"></i>
+        0 annunci attivi a ${esc(cityName)} in questo momento
+      </div>
+      <h2 style="margin:0 0 12px;font-size:22px;font-weight:900;color:#0f172a;">Sii il primo a pubblicare</h2>
+      <p style="margin:0 0 24px;font-size:15px;color:#64748b;line-height:1.6;max-width:560px;margin-left:auto;margin-right:auto;">
+        Quando arriverà il primo annuncio a ${esc(cityName)} comparirà automaticamente in questa pagina.
+        Puoi pubblicare gratis il tuo posteggio in vendita o affitto, oppure cercare in altre zone d'Italia.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a href="/vendi" style="background:#10b981;color:#fff;padding:14px 24px;border-radius:12px;font-weight:800;font-size:14px;text-decoration:none;box-shadow:0 8px 16px -4px rgba(16,185,129,.3);">
+          <i class="fas fa-plus" style="margin-right:6px;"></i> Pubblica annuncio gratis
+        </a>
+        <a href="/annunci" style="background:#fff;color:#2563eb;border:1px solid #bfdbfe;padding:14px 24px;border-radius:12px;font-weight:800;font-size:14px;text-decoration:none;">
+          <i class="fas fa-search" style="margin-right:6px;"></i> Cerca in tutta Italia
+        </a>
+      </div>
+    </div>
+
+    <!-- Testo SEO -->
+    <section style="background:#fff;border:1px solid #f1f5f9;border-radius:20px;padding:32px;margin-bottom:32px;">
+      <h2 style="margin:0 0 14px;font-size:20px;font-weight:900;color:#0f172a;">
+        Il commercio ambulante a ${esc(cityName)}
+      </h2>
+      <p style="margin:0 0 12px;font-size:14px;color:#64748b;line-height:1.75;">
+        Il mercato dei posteggi a ${esc(cityName)}${regione ? `, in ${esc(regione)}` : ''}, è regolato dal Comune attraverso concessioni di durata di norma <strong>dodici anni</strong>. Per ottenere un posteggio si può partecipare a un <strong>bando pubblico</strong> oppure rilevare un'attività esistente tramite <strong>subingresso</strong>: un atto notarile di cessione d'azienda fra venditore e acquirente.
+      </p>
+      <p style="margin:0 0 12px;font-size:14px;color:#64748b;line-height:1.75;">
+        Su Subingresso.it segniamo solo gli annunci reali, pubblicati dai titolari delle concessioni o dagli eredi. Niente intermediazioni, niente commissioni: il contatto è sempre diretto. Quando arriva il primo annuncio per ${esc(cityName)}, lo trovi qui aggiornato in tempo reale.
+      </p>
+      <p style="margin:0;font-size:14px;color:#64748b;line-height:1.75;">
+        Se hai un posteggio a ${esc(cityName)} e vuoi capire quanto vale prima di metterlo in vendita, parti dal <a href="/valutatore" style="color:#2563eb;font-weight:700;">valutatore gratuito</a>. Se cerchi posteggi simili in altre città italiane, puoi <a href="/annunci" style="color:#2563eb;font-weight:700;">sfogliare gli annunci attivi</a> filtrando per zona, settore e tipologia.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-top:32px;">
+      <h2 style="margin:0 0 16px;font-size:20px;font-weight:900;color:#0f172a;">
+        Domande frequenti — Posteggi a ${esc(cityName)}
+      </h2>
+      ${faqHtml}
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/ui-components.js?v=9"></script>
+
+</body>
+</html>`;
+}
+
 module.exports = async function handler(req, res) {
     const citySlug = (req.query && req.query.citta) ? String(req.query.citta).trim().toLowerCase() : '';
 
@@ -99,7 +277,11 @@ module.exports = async function handler(req, res) {
         return;
     }
 
-    const cityName     = slugToCity(citySlug);
+    // Lookup capoluogo: se lo slug è in lista usiamo il nome leggibile della costante
+    // (gestisce correttamente "L'Aquila", "Cortina d'Ampezzo", "Forlì" ecc.).
+    const capInfo  = CAPOLUOGHI_BY_SLUG[citySlug];
+    const cityName = capInfo ? capInfo.name : slugToCity(citySlug);
+    const regione  = capInfo ? capInfo.regione : '';
     const canonicalUrl = `${SITE}/annunci/${citySlug}`;
 
     let listings   = [];
@@ -128,7 +310,15 @@ module.exports = async function handler(req, res) {
         }
     } catch (_) {}
 
+    // Branch placeholder: città capoluogo senza annunci → 200 OK indicizzabile.
+    // Slug non riconosciuti (non capoluogo + zero annunci) → 404 + noindex come prima.
     if (listings.length === 0) {
+        if (capInfo) {
+            res.setHeader('Content-Type', 'text/html; charset=utf-8');
+            res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
+            res.status(200).send(renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl));
+            return;
+        }
         res.status(404).setHeader('Content-Type', 'text/html; charset=utf-8').send(`<!DOCTYPE html>
 <html lang="it"><head><meta charset="UTF-8"><title>Nessun annuncio a ${esc(cityName)} — Subingresso.it</title>
 <meta name="robots" content="noindex"><link rel="canonical" href="${SITE}/annunci">
