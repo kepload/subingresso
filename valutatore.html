@@ -272,24 +272,44 @@
         <!-- STEP 6: Risultato -->
         <div class="step-card" data-step="6">
 
-            <!-- Valore principale -->
-            <div class="text-center mb-3">
-                <p id="totalAvg" class="text-5xl font-black text-emerald-600 leading-none tracking-tight">€ --</p>
-                <div class="flex items-center justify-center gap-2 text-xs text-slate-400 font-semibold mt-2">
-                    <span>da <span id="priceMin" class="text-slate-600 font-black">€ --</span></span>
-                    <span class="text-slate-200">·</span>
-                    <span>fino a <span id="priceMax" class="text-slate-600 font-black">€ --</span></span>
+            <!-- Header risultato con reload icon -->
+            <div class="flex items-center justify-between mb-3">
+                <p class="text-[10px] font-black uppercase tracking-[.18em] text-slate-400">La tua stima</p>
+                <button onclick="location.reload()" title="Nuova valutazione"
+                        class="w-8 h-8 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition flex items-center justify-center">
+                    <i class="fas fa-redo text-xs"></i>
+                </button>
+            </div>
+
+            <!-- Card VENDITA (verde) -->
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/40 border border-emerald-100 rounded-2xl px-4 py-4 mb-2.5">
+                <p class="text-[9px] font-black uppercase tracking-[.18em] text-emerald-600 mb-1.5 flex items-center gap-1.5">
+                    <i class="fas fa-tag text-[10px]"></i> Cessione
+                </p>
+                <p class="leading-none">
+                    <span id="totalAvg" class="text-5xl font-black text-emerald-700 tracking-tight">€ --</span>
+                </p>
+                <div class="flex items-center gap-2 text-[11px] font-bold text-emerald-700/60 mt-2.5">
+                    <span>da € <span id="priceMin">--</span></span>
+                    <span class="text-emerald-300">·</span>
+                    <span>a € <span id="priceMax">--</span></span>
                 </div>
             </div>
 
-            <!-- Affitto -->
-            <div class="bg-blue-50 border border-blue-100 rounded-2xl px-4 py-3 mb-4 text-center">
-                <p class="text-[9px] font-black uppercase tracking-widest text-blue-500 mb-1">Se lo affitti</p>
-                <p class="leading-none flex items-baseline justify-center gap-1.5">
-                    <span id="rentValue" class="text-4xl font-black text-blue-700">€ --</span>
-                    <span class="text-3xl font-bold text-blue-400">/anno</span>
+            <!-- Card AFFITTO (blu) -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100/40 border border-blue-100 rounded-2xl px-4 py-4 mb-4">
+                <p class="text-[9px] font-black uppercase tracking-[.18em] text-blue-600 mb-1.5 flex items-center gap-1.5">
+                    <i class="fas fa-handshake text-[10px]"></i> Affitto annuo
                 </p>
-                <p class="text-[10px] text-blue-400 font-semibold mt-1.5">rendimento stimato <span id="roiValue">--%</span></p>
+                <p class="leading-none flex items-baseline gap-1.5">
+                    <span class="text-5xl font-black text-blue-700 tracking-tight">€ <span id="rentValue">--</span></span>
+                    <span class="text-2xl font-bold text-blue-400">/anno</span>
+                </p>
+                <div class="flex items-center gap-2 text-[11px] font-bold text-blue-700/60 mt-2.5">
+                    <span>≈ € <span id="rentMonthly">--</span> / mese</span>
+                    <span class="text-blue-300">·</span>
+                    <span>ROI <span id="roiValue">--</span>%</span>
+                </div>
             </div>
 
             <!-- CTA primarie: Vendi / Affitta -->
@@ -321,19 +341,10 @@
             </div>
 
             <!-- Link soft: annunci simili (poco enfatizzato) -->
-            <p class="text-center text-xs text-slate-400 font-semibold mb-2">
-                <a id="valSimiliLink" href="annunci.html" class="hover:text-blue-600 hover:underline transition">
-                    <i class="fas fa-search text-[10px] mr-1"></i>
+            <p class="text-center text-[11px] text-slate-300 font-semibold mt-2">
+                <a id="valSimiliLink" href="annunci.html" class="hover:text-blue-600 transition">
                     Vedi annunci simili al tuo →
                 </a>
-            </p>
-
-            <button onclick="location.reload()" class="w-full text-xs font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest py-1.5">
-                <i class="fas fa-redo mr-1 text-[10px]"></i> Nuova Valutazione
-            </button>
-
-            <p class="text-center mt-1">
-                <a href="#disclaimer" class="text-[11px] text-slate-400 hover:text-blue-600 underline transition">Stima orientativa</a>
             </p>
 
         </div>
@@ -623,14 +634,17 @@
     }
 
     function fmt(n) {
-        return Math.round(n).toLocaleString('it-IT').replace(/\./g, ' ');
+        if (n == null || isNaN(n)) return '--';
+        return Math.round(n).toLocaleString('it-IT').replace(/\./g, ' ');
     }
 
-    function snap(n) {
-        if (n >= 50000) return Math.round(n / 5000) * 5000;
-        if (n >= 10000) return Math.round(n / 1000) * 1000;
-        if (n >= 1000)  return Math.round(n / 500)  * 500;
-        return Math.round(n / 50) * 50;
+
+
+    // Snap piu' fine per valori piccoli (affitti mensili).
+    function snapSmall(n) {
+        if (n >= 1000) return Math.round(n / 100) * 100;
+        if (n >= 100)  return Math.round(n / 10)  * 10;
+        return Math.round(n);
     }
 
     function calculate() {
@@ -648,13 +662,17 @@
         var min = totale * 0.85;
         var max = totale * 1.15;
 
-        document.getElementById('priceMin').textContent = '€ ' + fmt(snap(min));
-        document.getElementById('priceMax').textContent = '€ ' + fmt(snap(max));
+        // Vendita
+        document.getElementById('priceMin').textContent = fmt(snap(min));
+        document.getElementById('priceMax').textContent = fmt(snap(max));
         document.getElementById('totalAvg').textContent = '€ ' + fmt(snap(totale));
-        document.getElementById('rentValue').textContent = '€ ' + fmt(rentAvg);
+
+        // Affitto (snap per coerenza visiva con vendita)
+        document.getElementById('rentValue').textContent   = fmt(snap(rentAvg));
+        document.getElementById('rentMonthly').textContent = fmt(snapSmall(rentMonthly));
 
         var roi = (rentAvg / totale) * 100;
-        document.getElementById('roiValue').textContent = roi.toFixed(1) + '%';
+        document.getElementById('roiValue').textContent = roi.toFixed(1);
 
         _saveValutatoreLog(min, totale, max, rentAvg, rentMonthly);
         _valUpdateSaveCard();
