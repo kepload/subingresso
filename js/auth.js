@@ -496,6 +496,11 @@ window.handleLogin = async function (e) {
 
         await _storePasswordCredential(email, password, email);
         _linkValutatoreSession();
+        if (typeof window.processPendingSaveListing === 'function') {
+            window.processPendingSaveListing().catch(() => {});
+        } else if (typeof window.loadSavedListingsCache === 'function') {
+            window.loadSavedListingsCache().catch(() => {});
+        }
         closeAuthModal();
         updateAuthNav();
         if (typeof window.__onLoginSuccess === 'function') {
@@ -549,6 +554,10 @@ async function _afterRegisterSuccess(nome, showWelcome = false) {
     const user = await getCurrentUser();
     _profileCache = { id: user?.id, nome };
     _showAuthSuccess('Benvenuto! Account creato con successo.');
+    // Salva annuncio se l'utente aveva cliccato "preferiti" da anonimo
+    if (typeof window.processPendingSaveListing === 'function') {
+        window.processPendingSaveListing().catch(() => {});
+    }
     setTimeout(() => {
         closeAuthModal();
         updateAuthNav();
@@ -732,6 +741,10 @@ window.updateAuthNav = async function () {
 
     // Fase 2: utente loggato — mostra icone subito, poi aggiorna badge in background
     _suppressVisitorPopup();
+    // Carica cache preferiti per il rendering dei cuoricini sulle card
+    if (typeof window.loadSavedListingsCache === 'function') {
+        window.loadSavedListingsCache().catch(() => {});
+    }
     const user = session.user;
     const msgIconId = 'navMsgIcon_' + Date.now();
     nav.innerHTML = `

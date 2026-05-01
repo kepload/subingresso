@@ -225,6 +225,11 @@
                 class="pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap">
                 I miei annunci
             </button>
+            <button id="tabPreferiti" onclick="showTab('preferiti')"
+                class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
+                <i class="fas fa-heart text-xs"></i> Preferiti
+                <span id="savedBadge" class="hidden bg-red-500 text-white text-[10px] font-black rounded-full px-1.5 py-0.5 leading-none"></span>
+            </button>
             <button id="tabAlert" onclick="showTab('alert')"
                 class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
                 <i class="fas fa-bell text-xs"></i> Alert
@@ -236,6 +241,22 @@
         <div id="sectionAnnunci">
             <div id="myListingsGrid" class="space-y-4">
                 <div class="text-center py-12 text-slate-400">
+                    <i class="fas fa-spinner fa-spin text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ── TAB: Preferiti ── -->
+        <div id="sectionPreferiti" class="hidden">
+            <div class="flex items-center justify-between py-4">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Annunci che hai salvato per dopo</p>
+                <a href="annunci.html" class="inline-flex items-center gap-2 text-xs font-black text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-xl transition">
+                    <i class="fas fa-search"></i> Cerca annunci
+                </a>
+            </div>
+            <div id="mySavedGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="text-center py-12 text-slate-400 col-span-full">
                     <i class="fas fa-spinner fa-spin text-2xl"></i>
                 </div>
             </div>
@@ -664,8 +685,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=3"></script>
-<script src="js/data.js?v=6"></script>
-<script src="js/auth.js?v=5"></script>
+<script src="js/data.js?v=7"></script>
+<script src="js/auth.js?v=6"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <script>
 
@@ -1308,19 +1329,106 @@ async function confirmDeleteAccount() {
 let _alertsLoaded = false;
 
 function showTab(tab) {
-    ['annunci', 'alert'].forEach(t => {
-        const section = document.getElementById(t === 'annunci' ? 'sectionAnnunci' : 'sectionAlert');
+    const sectionMap = { annunci: 'sectionAnnunci', preferiti: 'sectionPreferiti', alert: 'sectionAlert' };
+    Object.entries(sectionMap).forEach(([t, id]) => {
+        const section = document.getElementById(id);
         if (section) section.classList.toggle('hidden', t !== tab);
     });
 
     const active   = 'pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap';
     const inactive = 'pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap';
     document.getElementById('tabMieiAnnunci').className = tab === 'annunci' ? active : inactive;
-    document.getElementById('tabAlert').className       = (tab === 'alert'  ? active : inactive) + ' flex items-center gap-1.5';
+    document.getElementById('tabPreferiti').className   = (tab === 'preferiti' ? active : inactive) + ' flex items-center gap-1.5';
+    document.getElementById('tabAlert').className       = (tab === 'alert'     ? active : inactive) + ' flex items-center gap-1.5';
 
     if (tab === 'alert' && !_alertsLoaded) {
         _alertsLoaded = true;
         loadMyAlerts();
+    }
+    if (tab === 'preferiti' && !_savedLoaded) {
+        _savedLoaded = true;
+        loadMySaved();
+    }
+}
+
+// ── Preferiti ────────────────────────────────────────────
+let _savedLoaded = false;
+async function loadMySaved() {
+    const grid = document.getElementById('mySavedGrid');
+    if (!grid) return;
+    if (!_currentUser) {
+        grid.innerHTML = '<p class="text-center text-slate-400 py-8 col-span-full">Accedi per vedere i preferiti.</p>';
+        return;
+    }
+
+    const { data: saved, error: errSaved } = await _supabase
+        .from('saved_listings')
+        .select('annuncio_id, created_at')
+        .eq('user_id', _currentUser.id)
+        .order('created_at', { ascending: false });
+
+    if (errSaved) {
+        grid.innerHTML = `<p class="text-center text-red-500 py-8 col-span-full">Errore: ${escapeHTML(errSaved.message)}</p>`;
+        return;
+    }
+
+    const ids = (saved || []).map(r => r.annuncio_id);
+    if (!ids.length) {
+        grid.innerHTML = `
+            <div class="text-center py-16 bg-white rounded-2xl border border-slate-100 col-span-full">
+                <i class="fas fa-heart text-slate-200 text-5xl mb-4"></i>
+                <p class="text-slate-400 font-bold">Nessun annuncio salvato</p>
+                <p class="text-slate-300 text-xs mt-1">Premi il cuoricino su un annuncio per salvarlo qui</p>
+                <a href="annunci.html" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
+                    Sfoglia annunci →
+                </a>
+            </div>`;
+        return;
+    }
+
+    const { data: listings, error: errLst } = await _supabase
+        .from('annunci')
+        .select('*')
+        .in('id', ids)
+        .eq('status', 'active');
+
+    if (errLst) {
+        grid.innerHTML = `<p class="text-center text-red-500 py-8 col-span-full">Errore: ${escapeHTML(errLst.message)}</p>`;
+        return;
+    }
+
+    // Riempi la cache SAVED_IDS in modo che il cuoricino sia rosso
+    if (typeof SAVED_IDS !== 'undefined') {
+        SAVED_IDS.clear();
+        ids.forEach(id => SAVED_IDS.add(id));
+    }
+
+    // Fetch profili per le card
+    const userIds = Array.from(new Set((listings || []).map(l => l.user_id).filter(Boolean)));
+    if (userIds.length) {
+        const { data: profs } = await _supabase
+            .from('profiles')
+            .select('id, nome, cognome, avatar_url')
+            .in('id', userIds);
+        (profs || []).forEach(p => {
+            if (p.avatar_url) USER_AVATARS[p.id] = p.avatar_url;
+            const fullName = [p.nome, p.cognome].filter(Boolean).join(' ').trim();
+            if (fullName) USER_NAMES[p.id] = fullName;
+        });
+    }
+
+    // Ordina secondo l'ordine dei preferiti (più recenti prima)
+    const orderedListings = ids
+        .map(id => (listings || []).find(l => l.id === id))
+        .filter(Boolean);
+
+    grid.innerHTML = orderedListings.map(l => buildCard(l)).join('');
+
+    // Badge contatore sulla tab
+    const badge = document.getElementById('savedBadge');
+    if (badge) {
+        badge.textContent = orderedListings.length;
+        badge.classList.toggle('hidden', orderedListings.length === 0);
     }
 }
 

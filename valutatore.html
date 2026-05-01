@@ -292,7 +292,7 @@
                 <p class="text-[10px] text-blue-400 font-semibold mt-1.5">rendimento stimato <span id="roiValue">--%</span></p>
             </div>
 
-            <!-- CTA -->
+            <!-- CTA primarie: Vendi / Affitta -->
             <div class="grid grid-cols-2 gap-3 mb-3">
                 <a href="vendi.html" class="flex flex-col items-center gap-1 bg-emerald-600 text-white font-black py-4 rounded-2xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-100 text-center">
                     <i class="fas fa-tag text-lg"></i>
@@ -303,6 +303,30 @@
                     <span class="text-sm">Voglio Affittare</span>
                 </a>
             </div>
+
+            <!-- CTA registrazione (lead capture) -->
+            <div id="valSaveCard" class="bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl p-4 mb-3 text-white">
+                <div class="flex items-start gap-3 mb-3">
+                    <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-file-pdf text-amber-300"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="font-black text-sm leading-tight">Salva la tua valutazione</p>
+                        <p class="text-white/70 text-xs font-medium mt-0.5 leading-snug">Report PDF dettagliato, alert su nuovi annunci nella tua zona, salvataggio preferiti.</p>
+                    </div>
+                </div>
+                <button id="valSaveBtn" onclick="_valOpenSave()" class="w-full bg-white text-slate-900 font-black py-2.5 rounded-xl hover:bg-amber-300 transition text-sm">
+                    Crea account gratuito →
+                </button>
+            </div>
+
+            <!-- Link soft: annunci simili (poco enfatizzato) -->
+            <p class="text-center text-xs text-slate-400 font-semibold mb-2">
+                <a id="valSimiliLink" href="annunci.html" class="hover:text-blue-600 hover:underline transition">
+                    <i class="fas fa-search text-[10px] mr-1"></i>
+                    Vedi annunci simili al tuo →
+                </a>
+            </p>
 
             <button onclick="location.reload()" class="w-full text-xs font-bold text-slate-400 hover:text-slate-900 transition uppercase tracking-widest py-1.5">
                 <i class="fas fa-redo mr-1 text-[10px]"></i> Nuova Valutazione
@@ -428,6 +452,11 @@
         </nav>
     </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js?v=2"></script>
+<script src="js/data.js?v=7"></script>
+<script src="js/auth.js?v=6"></script>
 
 <script>
     // ── Tracking acquisizione (Ondata 1) — fallback se l'utente atterra
@@ -628,7 +657,46 @@
         document.getElementById('roiValue').textContent = roi.toFixed(1) + '%';
 
         _saveValutatoreLog(min, totale, max, rentAvg, rentMonthly);
+        _valUpdateSaveCard();
     }
+
+    // ── Stato card "Salva valutazione" in base al login ────────
+    function _valUpdateSaveCard() {
+        var card = document.getElementById('valSaveCard');
+        var btn  = document.getElementById('valSaveBtn');
+        if (!card || !btn) return;
+        // Se supabase non è ancora pronto, riprova dopo
+        if (typeof _supabase === 'undefined' || !_supabase || !_supabase.auth) {
+            setTimeout(_valUpdateSaveCard, 400);
+            return;
+        }
+        _supabase.auth.getUser().then(function(res) {
+            if (res && res.data && res.data.user) {
+                // Utente già loggato: il log è già stato collegato via link_valutatore_to_user
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i> Valutazione salvata nel tuo account';
+                btn.disabled = true;
+                btn.classList.remove('hover:bg-amber-300');
+                btn.classList.add('bg-emerald-100', 'text-emerald-700', 'cursor-default');
+                btn.classList.remove('bg-white', 'text-slate-900');
+            }
+        }).catch(function(){});
+    }
+
+    // Click "Crea account" → apre il modal auth con focus sulla tab Registrati
+    function _valOpenSave() {
+        try {
+            // Marca l'intent in sessionStorage così auth.js dopo il signup
+            // sa che il trigger viene dal valutatore (per analytics futuri)
+            sessionStorage.setItem('_post_auth_intent', 'valutatore_save');
+        } catch (_) {}
+        if (typeof window.openAuthModal === 'function') {
+            window.openAuthModal('register');
+        } else {
+            // Fallback: niente modal disponibile, manda a una pagina di registrazione
+            location.href = 'index.html#register';
+        }
+    }
+    window._valOpenSave = _valOpenSave;
 </script>
 
 </body>

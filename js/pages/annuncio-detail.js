@@ -399,11 +399,15 @@ async function initPage() {
                 chatBtn.className = 'w-full bg-blue-600 text-white py-4 rounded-2xl font-black hover:bg-blue-700 transition flex items-center justify-center gap-3 shadow-xl shadow-blue-100';
             }
 
-            // 3. Nascondiamo il pulsante chiama/whatsapp
+            // 3. Nascondiamo il pulsante chiama/whatsapp/salva (proprio annuncio)
             const contactBtn = document.getElementById('contactBtn');
             const whatsappBtn = document.getElementById('whatsappBtn');
+            const saveBtn = document.getElementById('saveBtn');
+            const saveBtnMobile = document.getElementById('saveBtnMobile');
             if (contactBtn) contactBtn.classList.add('hidden');
             if (whatsappBtn) whatsappBtn.classList.add('hidden');
+            if (saveBtn) saveBtn.classList.add('hidden');
+            if (saveBtnMobile) saveBtnMobile.classList.add('hidden');
         } else if (!user) {
             // Utente non loggato: maschera numeri di telefono nella descrizione
             const descrEl = document.getElementById('descrizione');
@@ -584,3 +588,47 @@ try {
 window.makeCall = makeCall;
 window.startChat = startChat;
 window.openWhatsApp = openWhatsApp;
+
+// ── Salva preferito (annuncio corrente) ────────────────────
+async function _saveCurrentListing() {
+    if (!_currentListing || !_currentListing.id) return;
+    if (typeof window.toggleSaveListing === 'function') {
+        await window.toggleSaveListing(_currentListing.id, null);
+        _refreshLocalSaveButtons();
+    }
+}
+
+function _refreshLocalSaveButtons() {
+    if (!_currentListing) return;
+    const saved = (typeof SAVED_IDS !== 'undefined') && SAVED_IDS.has(_currentListing.id);
+    const desktopBtn = document.getElementById('saveBtn');
+    const desktopLabel = document.getElementById('saveBtnLabel');
+    const mobileBtn  = document.getElementById('saveBtnMobile');
+
+    if (desktopBtn) {
+        const icon = desktopBtn.querySelector('i');
+        if (saved) {
+            if (icon) icon.className = 'fas fa-heart text-red-500';
+            if (desktopLabel) desktopLabel.textContent = 'Salvato nei Preferiti';
+            desktopBtn.classList.add('bg-red-50', 'border-red-100');
+            desktopBtn.classList.remove('border-slate-100');
+        } else {
+            if (icon) icon.className = 'far fa-heart text-slate-400';
+            if (desktopLabel) desktopLabel.textContent = 'Salva nei Preferiti';
+            desktopBtn.classList.remove('bg-red-50', 'border-red-100');
+            desktopBtn.classList.add('border-slate-100');
+        }
+    }
+    if (mobileBtn) {
+        const icon = mobileBtn.querySelector('i');
+        if (icon) icon.className = saved ? 'fas fa-heart text-red-500' : 'far fa-heart text-slate-400';
+    }
+}
+
+// Sync iniziale del bottone "Salva" quando i preferiti vengono caricati
+window.addEventListener('listingLoaded', _refreshLocalSaveButtons);
+// Sync periodico dopo il primo render della pagina annuncio
+setTimeout(_refreshLocalSaveButtons, 1500);
+setTimeout(_refreshLocalSaveButtons, 4000);
+
+window._saveCurrentListing = _saveCurrentListing;

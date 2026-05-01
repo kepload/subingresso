@@ -356,6 +356,14 @@ function buildCard(l, isSmall = false, distance = null) {
                 ${l.status && l.status !== 'active' ? `<span class="bg-amber-500 text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-sm">In Revisione</span>` : ''}
                 ${distTag}
             </div>
+            <button type="button"
+                    data-save-id="${escapeHTML(l.id)}"
+                    data-saved="${SAVED_IDS.has(l.id) ? '1' : '0'}"
+                    onclick="event.preventDefault(); event.stopPropagation(); toggleSaveListing('${escapeHTML(l.id)}', this)"
+                    title="${SAVED_IDS.has(l.id) ? 'Rimuovi dai preferiti' : 'Salva nei preferiti'}"
+                    class="absolute top-2.5 right-2.5 w-8 h-8 bg-white/95 hover:bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 active:scale-95 transition">
+                <i class="${SAVED_IDS.has(l.id) ? 'fas fa-heart text-red-500' : 'far fa-heart text-slate-400'}"></i>
+            </button>
         </a>
 
         <!-- body -->
@@ -433,6 +441,105 @@ const USER_AVATARS = {};
 
 // Cache nome attuale venditore — popolata da annunci.js dopo il fetch profiles
 const USER_NAMES = {};
+
+// Cache annunci salvati nei preferiti — popolata da auth.js dopo login
+const SAVED_IDS = new Set();
+
+// Toggle "Salva preferito" — chiamata dal cuoricino sulle card e dalla pagina annuncio.
+// Se utente non loggato → apre modal registrazione e marca l'intent in sessionStorage.
+async function toggleSaveListing(annuncioId, btnEl) {
+    if (!annuncioId) return;
+    if (typeof _supabase === 'undefined' || !_supabase) return;
+
+    const { data: sess } = await _supabase.auth.getSession();
+    if (!sess?.session?.user) {
+        // Non loggato → memorizza intent + apre modal
+        try { sessionStorage.setItem('_pending_save_listing', String(annuncioId)); } catch (_) {}
+        if (typeof window.openAuthModal === 'function') window.openAuthModal('register');
+        return;
+    }
+
+    const userId    = sess.session.user.id;
+    const wasSaved  = SAVED_IDS.has(annuncioId);
+    // Optimistic UI
+    if (wasSaved) SAVED_IDS.delete(annuncioId);
+    else          SAVED_IDS.add(annuncioId);
+    _refreshSaveButtons(annuncioId);
+
+    try {
+        if (wasSaved) {
+            const { error } = await _supabase
+                .from('saved_listings')
+                .delete()
+                .eq('user_id', userId)
+                .eq('annuncio_id', annuncioId);
+            if (error) throw error;
+        } else {
+            const { error } = await _supabase
+                .from('saved_listings')
+                .insert({ user_id: userId, annuncio_id: annuncioId });
+            if (error && !String(error.message || '').includes('duplicate')) throw error;
+        }
+    } catch (e) {
+        // Revert su errore
+        if (wasSaved) SAVED_IDS.add(annuncioId);
+        else          SAVED_IDS.delete(annuncioId);
+        _refreshSaveButtons(annuncioId);
+        console.warn('[saved_listings]', e);
+    }
+}
+
+// Aggiorna tutti i bottoni "salva" di un annuncio sulla pagina corrente
+function _refreshSaveButtons(annuncioId) {
+    const saved = SAVED_IDS.has(annuncioId);
+    document.querySelectorAll(`[data-save-id="${annuncioId}"]`).forEach(el => {
+        const icon = el.querySelector('i');
+        el.setAttribute('data-saved', saved ? '1' : '0');
+        el.setAttribute('title', saved ? 'Rimuovi dai preferiti' : 'Salva nei preferiti');
+        if (icon) {
+            icon.className = saved ? 'fas fa-heart text-red-500' : 'far fa-heart text-slate-400';
+        }
+    });
+}
+
+// Carica gli ID dei preferiti dell'utente loggato e popola SAVED_IDS.
+// Chiamata da auth.js dopo login + da pagine che mostrano card.
+async function loadSavedListingsCache() {
+    if (typeof _supabase === 'undefined' || !_supabase) return;
+    try {
+        const { data: sess } = await _supabase.auth.getSession();
+        if (!sess?.session?.user) { SAVED_IDS.clear(); return; }
+        const { data, error } = await _supabase
+            .from('saved_listings')
+            .select('annuncio_id')
+            .eq('user_id', sess.session.user.id);
+        if (error) return;
+        SAVED_IDS.clear();
+        (data || []).forEach(r => SAVED_IDS.add(r.annuncio_id));
+        // Aggiorna i bottoni già renderizzati
+        document.querySelectorAll('[data-save-id]').forEach(el => {
+            const id = el.getAttribute('data-save-id');
+            if (id) _refreshSaveButtons(id);
+        });
+    } catch (_) {}
+}
+
+// Auto-salva l'annuncio in sessionStorage dopo registrazione/login completati.
+// Chiamata da auth.js al termine del flusso post-auth.
+async function processPendingSaveListing() {
+    let pending = null;
+    try { pending = sessionStorage.getItem('_pending_save_listing'); } catch (_) {}
+    if (!pending) return;
+    try { sessionStorage.removeItem('_pending_save_listing'); } catch (_) {}
+    await loadSavedListingsCache();
+    if (!SAVED_IDS.has(pending)) {
+        await toggleSaveListing(pending, null);
+    }
+}
+
+window.toggleSaveListing       = toggleSaveListing;
+window.loadSavedListingsCache  = loadSavedListingsCache;
+window.processPendingSaveListing = processPendingSaveListing;
 
 // ── Tracking visualizzazioni anteprima card (shared tra tutte le pagine) ──
 const _viewedPreviews = new Set();
