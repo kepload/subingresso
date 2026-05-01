@@ -15,6 +15,17 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Highlight temporaneo della valutazione appena salvata (post calcolatore) */
+        @keyframes valutazione-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); border-color: #10b981; }
+            50%      { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.18); border-color: #059669; }
+        }
+        .valutazione-highlight {
+            animation: valutazione-pulse 1.4s ease-in-out 4;
+            border-color: #10b981 !important;
+            background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 70%);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900">
@@ -1432,7 +1443,7 @@ async function loadMyValutazioni() {
             ? `<span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-600" title="Hai pubblicato un annuncio collegato a questa valutazione"><i class="fas fa-check mr-1"></i>Pubblicato</span>`
             : '';
         return `
-        <div class="bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-md transition p-4 flex flex-col sm:flex-row gap-4 sm:items-center">
+        <div data-valutazione-id="${escapeHTML(v.id)}" data-session-token="${escapeHTML(v.session_token || '')}" class="valutazione-card bg-white rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-md transition p-4 flex flex-col sm:flex-row gap-4 sm:items-center">
             <div class="flex-1 min-w-0">
                 <div class="flex items-center gap-2 flex-wrap mb-1.5">
                     <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">${escapeHTML(_vFmtDate(v.created_at))}</span>
@@ -1468,6 +1479,23 @@ async function loadMyValutazioni() {
         badge.textContent = data.length;
         badge.classList.toggle('hidden', data.length === 0);
     }
+
+    // Highlight della valutazione appena fatta (se l'utente arriva dal valutatore)
+    _highlightFreshValutazione();
+}
+
+function _highlightFreshValutazione() {
+    let token = null;
+    try { token = sessionStorage.getItem('_highlight_session'); } catch (_) {}
+    if (!token) return;
+    try { sessionStorage.removeItem('_highlight_session'); } catch (_) {}
+
+    const card = document.querySelector(`.valutazione-card[data-session-token="${CSS.escape(token)}"]`);
+    if (!card) return;
+
+    card.classList.add('valutazione-highlight');
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => card.classList.remove('valutazione-highlight'), 6000);
 }
 
 // ── Preferiti ────────────────────────────────────────────

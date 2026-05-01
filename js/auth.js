@@ -551,12 +551,17 @@ async function _linkValutatoreSession() {
 }
 
 // Se l'utente aveva cliccato "Crea account" dal valutatore, dopo signup va alla
-// dashboard sulla tab "Valutazioni" (dove troverà il report appena salvato).
+// dashboard sulla tab "Valutazioni" (dove troverà il report appena salvato),
+// con la valutazione corrente evidenziata.
 function _checkPostAuthIntent() {
     let intent = null;
     try { intent = sessionStorage.getItem('_post_auth_intent'); } catch (_) {}
     if (intent === 'valutatore_save') {
-        try { sessionStorage.removeItem('_post_auth_intent'); } catch (_) {}
+        try {
+            sessionStorage.removeItem('_post_auth_intent');
+            const session = localStorage.getItem('_val_session') || '';
+            if (session) sessionStorage.setItem('_highlight_session', session);
+        } catch (_) {}
         location.href = 'dashboard.html#valutazioni';
         return true;
     }

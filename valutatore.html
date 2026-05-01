@@ -732,13 +732,13 @@
     }
 
     function _valGoToReport() {
-        var session = '';
-        try { session = localStorage.getItem('_val_session') || ''; } catch (_) {}
-        if (session) {
-            location.href = 'report.html?session=' + encodeURIComponent(session);
-        } else {
-            location.href = 'report.html';
-        }
+        // Memorizza il session_token della valutazione appena fatta così la
+        // dashboard la evidenzia (lampeggio) appena la lista viene renderizzata.
+        try {
+            var session = localStorage.getItem('_val_session') || '';
+            if (session) sessionStorage.setItem('_highlight_session', session);
+        } catch (_) {}
+        location.href = 'dashboard.html#valutazioni';
     }
     window._valGoToReport = _valGoToReport;
 
