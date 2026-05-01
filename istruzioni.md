@@ -415,3 +415,18 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 
 ### Restano da accorciare (priorità)
 ~~~14 articoli~~~ **Nessuno** sopra i 4.500 char. Eventuali batch futuri possono lavorare su articoli 3.500-4.500 (zona grigia) se lo stile è ancora datato.
+
+### Nuovo filone: 20 articoli "Bandi posteggi per regione" (1 mag 2026)
+- Slug pattern: `bandi-posteggi-mercatali-{regione}` (lombardia, veneto, piemonte, emilia-romagna, liguria, friuli-venezia-giulia, trentino-alto-adige, valle-d-aosta, toscana, marche, lazio, umbria, abruzzo, molise, campania, puglia, basilicata, calabria, sicilia, sardegna).
+- **Categoria DB**: `Bandi` (nuova). Distinta dalle precedenti `Guide Regionali`/`Compravendita`/`Guida`.
+- Lunghezza: 2.150-2.725 char di testo (sotto il target standard di 2.300-3.200 — voluto: pubblico include molti ambulanti stranieri, frasi corte e vocabolario base).
+- Stile semplificato per non-madrelingua: termini tecnici spiegati al primo uso ("bando = annuncio pubblico del Comune", "concessione = permesso", "subingresso = comprare un posteggio già attivo"). Frasi 10-15 parole. Grassetti 15-21 per articolo per scorrimento veloce.
+- Struttura uniforme: dove cercare i bandi (Albo Pretorio comunale + BUR/BURP/BURC/GURS regionale + portale SUAP) → quando escono (mar-apr e set-ott, 30 gg dalla pubblicazione per la domanda) → documenti (P.IVA + INPS commercianti + HACCP per alimentari) → graduatoria → alternativa subingresso → CTA.
+- Date di pubblicazione **scaglionate** (29 apr → 1 mag 2026) con offset di ~2h tra articoli per simulare pubblicazione spalmata invece di un dump simultaneo (Google se ne accorgerebbe).
+- **Per Google Discover futuro**: serve aggiungere immagine di copertina (1200×675) a ciascun articolo + schema `NewsArticle` JSON-LD (oggi gli articoli sono solo testo, niente og:image custom). Quando si vuole spingere Discover, modificare il renderer `blog.html` per emettere `NewsArticle` schema e aggiungere campo `cover_image_url` alla tabella `blog_posts`.
+
+### Filoni futuri suggeriti (long-tail)
+- **Mercati storici per nome** (30-40 articoli): Porta Palazzo, Senigallia Naviglio, Vucciria/Capo/Ballarò, Pignasecca, Sant'Ambrogio, Esquilino, Mercato delle Erbe, Prato della Valle, Fera 'O Luni, ecc.
+- **Domande pratiche specifiche** (15-20 articoli): "Chi paga il notaio nel subingresso", "Posteggio in comproprietà fra fratelli", "Decadenza per assenze come si difende", "Ricorso TAR posteggio mercatale".
+- **Settori specifici** (10-12 articoli): banco fiori, ortofrutta, abbigliamento usato, alimentari, artigianato.
+- **Stagionali ricorrenti** (5-6): bandi anno X, mercatini di Natale, sagre primavera, Black Friday ambulanti.
