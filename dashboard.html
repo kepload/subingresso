@@ -186,6 +186,26 @@
                 </button>
             </div>
 
+            <!-- Valutatore Logs -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-calculator text-emerald-500"></i> Valutazioni
+                    </h3>
+                    <div id="valStatsBadges" class="flex flex-wrap gap-1.5 text-[10px] font-black uppercase tracking-widest">
+                        <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-lg">30g: <span id="valStat30d">—</span></span>
+                        <span class="bg-blue-50 text-blue-600 px-2.5 py-1 rounded-lg">Registrati: <span id="valStatReg">—</span></span>
+                        <span class="bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-lg">Pubblicato: <span id="valStatPub">—</span></span>
+                    </div>
+                </div>
+                <div id="adminValutatoreList" class="space-y-2">
+                    <div class="text-center py-6 text-slate-300"><i class="fas fa-spinner fa-spin"></i></div>
+                </div>
+                <button onclick="openAllValutatoreModal()" class="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-xs font-black text-slate-500 hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-calculator"></i> <span id="allValutatoreBtn">Mostra altre</span>
+                </button>
+            </div>
+
             <!-- Blog Management -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <h3 class="font-black text-slate-900 mb-4 flex items-center gap-2">
@@ -539,6 +559,26 @@
     </div>
 </div>
 
+<!-- ══════════════ MODAL TUTTE LE VALUTAZIONI ══════════════ -->
+<div id="allValutatoreModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.72);backdrop-filter:blur(4px)" onclick="closeAllValutatoreModal()">
+    <div class="bg-white rounded-2xl w-full max-w-3xl shadow-2xl flex flex-col overflow-hidden max-h-[88vh]" onclick="event.stopPropagation()">
+        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between shrink-0">
+            <h3 class="font-black text-slate-900 flex items-center gap-2"><i class="fas fa-calculator text-emerald-500"></i> <span id="allValutatoreModalTitle">Tutte le valutazioni</span></h3>
+            <button onclick="closeAllValutatoreModal()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-500 font-black text-lg transition flex items-center justify-center">×</button>
+        </div>
+        <div class="px-6 py-3 border-b border-slate-100 shrink-0">
+            <div class="relative">
+                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                <input id="valutatoreSearchInput" type="text" placeholder="Cerca per email, settore, zona, regione..." oninput="filterValutatore()"
+                    class="w-full pl-8 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+            </div>
+        </div>
+        <div id="allValutatoreList" class="overflow-y-auto flex-1 p-4 space-y-2">
+            <div class="text-center py-8 text-slate-300"><i class="fas fa-spinner fa-spin"></i></div>
+        </div>
+    </div>
+</div>
+
 <!-- ══════════════ MODAL TUTTI GLI ARTICOLI BLOG ══════════════ -->
 <div id="allBlogModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center p-4" style="background:rgba(15,23,42,0.72);backdrop-filter:blur(4px)" onclick="closeAllBlogModal()">
     <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl flex flex-col overflow-hidden max-h-[88vh]" onclick="event.stopPropagation()">
@@ -625,7 +665,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=3"></script>
 <script src="js/data.js?v=6"></script>
-<script src="js/auth.js?v=4"></script>
+<script src="js/auth.js?v=5"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <script>
 
@@ -672,6 +712,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadAdminRecentUsers();
         loadAdminBlog();
         loadAllListings();
+        loadAdminValutatoreLogs();
     }
     document.getElementById('welcomeTitle').textContent = `Ciao, ${nome}!`;
     document.getElementById('userEmail').textContent = user.email;
@@ -1995,6 +2036,161 @@ async function startCheckout(tier) {
 window.openVetrinaModal  = openVetrinaModal;
 window.closeVetrinaModal = closeVetrinaModal;
 window.startCheckout     = startCheckout;
+
+// ════════════ ADMIN: Valutatore Logs ════════════
+let _allValutatoreLogs = [];
+
+function _fmtEur(v)        { return v == null ? '—' : '€ ' + Number(v).toLocaleString('it-IT'); }
+function _fmtZona(z)       { return ({ storica_turistica:'Storica', capoluogo:'Capoluogo', rionale:'Rionale' })[z] || (z || '—'); }
+function _fmtSettore(s)    { return s === 'alimentare' ? 'Alimentare' : s === 'non_alimentare' ? 'Non alim.' : (s || '—'); }
+function _fmtFreq(f)       { return ({ settimanale:'Settimanale', giornaliero:'Giornaliero', fiera:'Fiera' })[f] || (f || '—'); }
+function _fmtRelDate(iso) {
+    if (!iso) return '—';
+    const diff = (Date.now() - new Date(iso).getTime()) / 1000;
+    if (diff < 60)        return Math.round(diff) + 's fa';
+    if (diff < 3600)      return Math.round(diff / 60) + 'm fa';
+    if (diff < 86400)     return Math.round(diff / 3600) + 'h fa';
+    if (diff < 86400 * 7) return Math.round(diff / 86400) + 'g fa';
+    return new Date(iso).toLocaleDateString('it-IT', { day:'2-digit', month:'short' });
+}
+
+function _renderValutatoreRow(l) {
+    const created  = _fmtRelDate(l.created_at);
+    const fatturato = _fmtEur(l.fatturato);
+    const stima    = _fmtEur(l.prezzo_avg);
+    const zona     = _fmtZona(l.zona);
+    const settore  = _fmtSettore(l.settore);
+    const freq     = _fmtFreq(l.frequenza);
+    const device   = l.device_type || '—';
+    const geo      = [l.country, l.region].filter(Boolean).join(' / ') || '—';
+    const utm      = l.utm_source ? escapeHTML(l.utm_source) : null;
+    const tempo    = l.tempo_compilazione_sec != null ? `${l.tempo_compilazione_sec}s` : '—';
+
+    // Status badges (registrato + pubblicato)
+    const badges = [];
+    if (l.user_email) {
+        badges.push(`<span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-blue-50 text-blue-600" title="Registrato come ${escapeHTML(l.user_email)}"><i class="fas fa-user mr-1"></i>${escapeHTML(l.user_email.split('@')[0]).slice(0,18)}</span>`);
+    }
+    if (l.annuncio_id) {
+        badges.push(`<span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-600" title="Ha pubblicato un annuncio"><i class="fas fa-check mr-1"></i>Pubblicato</span>`);
+    }
+    if (utm) {
+        badges.push(`<span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-purple-50 text-purple-600" title="Acquisizione: ${utm}"><i class="fas fa-bullhorn mr-1"></i>${utm}</span>`);
+    }
+
+    return `
+    <div class="border border-slate-100 rounded-2xl p-3 hover:bg-slate-50/50 transition">
+        <div class="flex items-start justify-between gap-3 mb-2">
+            <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                    <span class="text-sm font-black text-slate-900">${stima}</span>
+                    <span class="text-[10px] font-bold text-slate-300">stima</span>
+                    <span class="text-slate-200">·</span>
+                    <span class="text-xs font-bold text-slate-600">${fatturato}<span class="text-slate-300 font-normal">/anno</span></span>
+                </div>
+                <div class="flex items-center gap-1.5 flex-wrap mt-1.5">
+                    ${badges.join('')}
+                </div>
+            </div>
+            <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest shrink-0">${created}</span>
+        </div>
+        <div class="flex items-center gap-3 flex-wrap text-[10px] font-bold text-slate-400 uppercase tracking-wide">
+            <span><i class="fas fa-map-marker-alt mr-1 text-slate-300"></i>${escapeHTML(zona)}</span>
+            <span><i class="fas fa-tags mr-1 text-slate-300"></i>${escapeHTML(settore)}</span>
+            <span><i class="fas fa-calendar mr-1 text-slate-300"></i>${escapeHTML(freq)}</span>
+            <span><i class="fas fa-mobile-alt mr-1 text-slate-300"></i>${escapeHTML(device)}</span>
+            <span><i class="fas fa-globe mr-1 text-slate-300"></i>${escapeHTML(geo)}</span>
+            <span><i class="fas fa-stopwatch mr-1 text-slate-300"></i>${tempo}</span>
+        </div>
+    </div>`;
+}
+
+async function loadAdminValutatoreLogs() {
+    const list = document.getElementById('adminValutatoreList');
+    if (!list) return;
+
+    try {
+        const { data: sessionData } = await _supabase.auth.getSession();
+        const token = sessionData?.session?.access_token;
+        if (!token) throw new Error('Sessione admin non trovata');
+
+        const res = await fetch(`${SUPABASE_URL}/functions/v1/admin-valutatore-logs?limit=500`, {
+            method: 'GET',
+            headers: {
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${token}`,
+            }
+        });
+
+        const raw = await res.text();
+        let payload = {};
+        try { payload = raw ? JSON.parse(raw) : {}; } catch (_) {}
+        if (!res.ok) throw new Error(payload.error || raw || `Errore (${res.status})`);
+
+        _allValutatoreLogs = payload.logs || [];
+        const stats = payload.stats || {};
+
+        // Stats badges
+        const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v ?? '—'; };
+        setTxt('valStat30d', stats.totale_30d);
+        setTxt('valStatReg', stats.registrati_30d);
+        setTxt('valStatPub', stats.pubblicato_30d);
+
+        if (!_allValutatoreLogs.length) {
+            list.innerHTML = '<p class="text-xs text-slate-400 italic text-center py-4">Nessuna valutazione ancora.</p>';
+            return;
+        }
+
+        list.innerHTML = _allValutatoreLogs.slice(0, 5).map(_renderValutatoreRow).join('');
+
+        const btn = document.getElementById('allValutatoreBtn');
+        if (btn) btn.textContent = `Mostra altre (${_allValutatoreLogs.length})`;
+
+    } catch (e) {
+        list.innerHTML = `<p class="text-xs text-red-500 font-bold">Errore: ${escapeHTML(e.message)}</p>`;
+    }
+}
+
+function openAllValutatoreModal() {
+    document.getElementById('allValutatoreModal').classList.remove('hidden');
+    document.getElementById('valutatoreSearchInput').value = '';
+    renderAllValutatore(_allValutatoreLogs);
+}
+
+function closeAllValutatoreModal() {
+    document.getElementById('allValutatoreModal').classList.add('hidden');
+}
+
+function filterValutatore() {
+    const q = document.getElementById('valutatoreSearchInput').value.toLowerCase().trim();
+    const filtered = q
+        ? _allValutatoreLogs.filter(l => {
+            const blob = [
+                l.user_email, l.zona, l.settore, l.frequenza, l.device_type,
+                l.country, l.region, l.utm_source, l.utm_campaign, l.referrer,
+                String(l.fatturato || ''), String(l.prezzo_avg || ''),
+            ].filter(Boolean).join(' ').toLowerCase();
+            return blob.includes(q);
+        })
+        : _allValutatoreLogs;
+    renderAllValutatore(filtered);
+    document.getElementById('allValutatoreModalTitle').textContent =
+        q ? `${filtered.length} risultati` : `Tutte le valutazioni (${_allValutatoreLogs.length})`;
+}
+
+function renderAllValutatore(logs) {
+    const list = document.getElementById('allValutatoreList');
+    if (!list) return;
+    list.innerHTML = logs.length
+        ? logs.map(_renderValutatoreRow).join('')
+        : '<p class="text-xs text-slate-400 italic text-center py-8">Nessuna valutazione trovata.</p>';
+    document.getElementById('allValutatoreModalTitle').textContent =
+        `Tutte le valutazioni (${_allValutatoreLogs.length})`;
+}
+
+window.openAllValutatoreModal  = openAllValutatoreModal;
+window.closeAllValutatoreModal = closeAllValutatoreModal;
+window.filterValutatore        = filterValutatore;
 
 </script>
 </body>

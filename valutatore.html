@@ -430,12 +430,45 @@
 </footer>
 
 <script>
+    // ── Tracking acquisizione (Ondata 1) — fallback se l'utente atterra
+    // direttamente sul valutatore senza passare da auth.js
+    try {
+        if (!sessionStorage.getItem('_acq_captured')) {
+            var _params = new URLSearchParams(location.search);
+            var _ref = document.referrer || '';
+            var _refExt = _ref && _ref.indexOf('subingresso.it') === -1;
+            sessionStorage.setItem('_acq_captured',    '1');
+            sessionStorage.setItem('_acq_landing_path', location.pathname + (location.search || ''));
+            sessionStorage.setItem('_acq_referrer',     _refExt ? _ref : '');
+            sessionStorage.setItem('_acq_utm_source',   _params.get('utm_source')   || '');
+            sessionStorage.setItem('_acq_utm_medium',   _params.get('utm_medium')   || '');
+            sessionStorage.setItem('_acq_utm_campaign', _params.get('utm_campaign') || '');
+        }
+    } catch (_) {}
+
     // ── Session anonima persistente ───────────────────────────
     var _VAL_SESSION = localStorage.getItem('_val_session');
     if (!_VAL_SESSION) {
         _VAL_SESSION = 'vs_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 9);
         localStorage.setItem('_val_session', _VAL_SESSION);
     }
+
+    // ── Tracking apertura valutatore (per tempo_compilazione_sec) ─
+    var _VAL_START_TS = Date.now();
+
+    // ── Detect device type (mobile/tablet/desktop) ───────────
+    function _detectDevice() {
+        var ua = navigator.userAgent || '';
+        if (/iPad|Android(?!.*Mobile)|Tablet/i.test(ua)) return 'tablet';
+        if (/Mobi|Android|iPhone|iPod|BlackBerry|Windows Phone/i.test(ua)) return 'mobile';
+        return 'desktop';
+    }
+
+    // ── Geo lookup non bloccante (Vercel header) ─────────────
+    var _GEO = { country: null, region: null };
+    fetch('/api/geo').then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(g){ if (g) _GEO = { country: g.country || null, region: g.region || null }; })
+        .catch(function(){});
 
     // ── Lookup etichette leggibili dai valori dei moltiplicatori ─
     var _FREQ_LABELS  = { '1': 'settimanale', 'fiera': 'fiera', '1.5': 'giornaliero' };
@@ -450,6 +483,10 @@
 
     // ── Salvataggio silenzioso al completamento ───────────────
     function _saveValutatoreLog(prezzo_min, prezzo_avg, prezzo_max, affitto_annuo, affitto_mensile) {
+        // Recupero dati di acquisizione catturati al primo hit dalla sessione (vedi auth.js)
+        var ss = (function(){ try { return window.sessionStorage; } catch(_) { return null; } })();
+        var get = function(k) { try { return ss ? (ss.getItem(k) || null) : null; } catch(_) { return null; } };
+
         var payload = {
             session_token:   _VAL_SESSION,
             fatturato:       factors.fatturato,
@@ -465,6 +502,18 @@
             prezzo_max:      Math.round(prezzo_max),
             affitto_annuo:   Math.round(affitto_annuo),
             affitto_mensile: Math.round(affitto_mensile),
+
+            // Ondata 1 — tracking acquisizione (no PII)
+            referrer:               get('_acq_referrer')     || null,
+            utm_source:             get('_acq_utm_source')   || null,
+            utm_medium:             get('_acq_utm_medium')   || null,
+            utm_campaign:           get('_acq_utm_campaign') || null,
+            landing_path:           get('_acq_landing_path') || null,
+            device_type:            _detectDevice(),
+            country:                _GEO.country,
+            region:                 _GEO.region,
+            tempo_compilazione_sec: Math.round((Date.now() - _VAL_START_TS) / 1000),
+            algoritmo_version:      '1.0',
         };
         // Dati incompleti → non salvare (es. step saltato)
         if (!payload.frequenza || !payload.stagionalita || !payload.zona || !payload.settore) return;

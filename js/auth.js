@@ -5,6 +5,24 @@
 
 (function () {
 
+// ── Tracking acquisizione (Ondata 1) ────────────────────────
+// Al primo hit della sessione cattura referrer esterno, UTM e landing path.
+// Persiste in sessionStorage per essere letto dal valutatore al completamento.
+try {
+    if (!sessionStorage.getItem('_acq_captured')) {
+        const params = new URLSearchParams(location.search);
+        const ref    = document.referrer || '';
+        const refIsExternal = ref && !ref.includes('subingresso.it');
+
+        sessionStorage.setItem('_acq_captured',     '1');
+        sessionStorage.setItem('_acq_landing_path',  location.pathname + (location.search || ''));
+        sessionStorage.setItem('_acq_referrer',      refIsExternal ? ref : '');
+        sessionStorage.setItem('_acq_utm_source',    params.get('utm_source')   || '');
+        sessionStorage.setItem('_acq_utm_medium',    params.get('utm_medium')   || '');
+        sessionStorage.setItem('_acq_utm_campaign',  params.get('utm_campaign') || '');
+    }
+} catch (_) { /* private mode: ignora */ }
+
 let _profileCache = null; // { id, nome } — evita query ripetute sulla navbar
 
 // ── Inject modal HTML ──────────────────────────────────────
