@@ -423,7 +423,14 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Stile semplificato per non-madrelingua: termini tecnici spiegati al primo uso ("bando = annuncio pubblico del Comune", "concessione = permesso", "subingresso = comprare un posteggio già attivo"). Frasi 10-15 parole. Grassetti 15-21 per articolo per scorrimento veloce.
 - Struttura uniforme: dove cercare i bandi (Albo Pretorio comunale + BUR/BURP/BURC/GURS regionale + portale SUAP) → quando escono (mar-apr e set-ott, 30 gg dalla pubblicazione per la domanda) → documenti (P.IVA + INPS commercianti + HACCP per alimentari) → graduatoria → alternativa subingresso → CTA.
 - Date di pubblicazione **scaglionate** (29 apr → 1 mag 2026) con offset di ~2h tra articoli per simulare pubblicazione spalmata invece di un dump simultaneo (Google se ne accorgerebbe).
-- **Per Google Discover futuro**: serve aggiungere immagine di copertina (1200×675) a ciascun articolo + schema `NewsArticle` JSON-LD (oggi gli articoli sono solo testo, niente og:image custom). Quando si vuole spingere Discover, modificare il renderer `blog.html` per emettere `NewsArticle` schema e aggiungere campo `cover_image_url` alla tabella `blog_posts`.
+- **Google Discover ready (1 mag 2026)**: implementato. Colonna `cover_image_url text` aggiunta a `blog_posts` (nullable). I 20 articoli "Bandi" hanno cover Pexels (CDN Cloudflare con `?auto=compress&cs=tinysrgb&w=X&h=Y&fit=crop` per resize on-the-fly + WebP/AVIF auto, peso ~80-150KB invece di 4MB). `blog.html` ora:
+  - Emette `<img>` hero in `renderPost` con `loading="eager" fetchpriority="high"` + `srcset` 4-step (600/900/1200/1600w) + `sizes="(max-width:768px) 100vw, 768px"` + `aspect-[16/9]` per evitare CLS.
+  - Emette `<img>` thumbnail in `renderList` con `loading="lazy" decoding="async"` + `srcset` 3-step.
+  - Schema `NewsArticle` (era `BlogPosting`) con `image` array a 3 aspect ratios (16:9, 4:3, 1:1) + `datePublished` + `dateModified` + `author` Organization.
+  - `og:image` + `twitter:image` dinamici per ogni post (fallback Pexels generico se cover_image_url null per non rompere social share).
+  - `<link rel="preconnect" href="https://images.pexels.com" crossorigin>` per accelerare il primo fetch.
+- **Helper `_pexelsUrl(base, w, h)`** in blog.html: incolla parametri di resize all'URL Pexels base. Salvare nel DB l'URL nudo `https://images.pexels.com/photos/{id}/pexels-photo-{id}.jpeg` (senza query string), il renderer aggiunge i parametri dinamicamente per ogni dimensione richiesta.
+- **Articoli vecchi senza cover**: gestiti con graceful fallback (no hero img mostrata in pagina detail né thumbnail in lista). og:image usa una foto generica per non rompere lo share.
 
 ### Filoni futuri suggeriti (long-tail)
 - **Mercati storici per nome** (30-40 articoli): Porta Palazzo, Senigallia Naviglio, Vucciria/Capo/Ballarò, Pignasecca, Sant'Ambrogio, Esquilino, Mercato delle Erbe, Prato della Valle, Fera 'O Luni, ecc.

@@ -10,8 +10,11 @@
     <meta property="og:description" id="ogBlogDesc" content="Guide tecniche, aggiornamenti normativi e risorse pratiche per ambulanti e titolari di posteggi mercatali.">
     <meta property="og:type" content="website">
     <meta property="og:url" id="ogBlogUrl" content="https://subingresso.it/blog">
+    <meta property="og:image" id="ogBlogImage" content="https://images.pexels.com/photos/1187299/pexels-photo-1187299.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" id="twitterImage" content="https://images.pexels.com/photos/1187299/pexels-photo-1187299.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop">
     <link rel="canonical" id="canonicalBlog" href="https://subingresso.it/blog">
+    <link rel="preconnect" href="https://images.pexels.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
@@ -118,6 +121,14 @@ function _insertBlogPromo(html) {
     return html.slice(0, splitAt) + promo + html.slice(splitAt);
 }
 
+// Helper: builds Pexels CDN URL with on-the-fly resize (auto WebP/AVIF, lossy compression).
+// Saves bandwidth: a 1200x675 hero is ~80-150KB instead of the full 4MB original.
+function _pexelsUrl(base, w, h) {
+    if (!base) return '';
+    const sep = base.includes('?') ? '&' : '?';
+    return base + sep + 'auto=compress&cs=tinysrgb&w=' + w + (h ? '&h=' + h : '') + '&fit=crop';
+}
+
 function renderPost(post) {
     const date = new Date(post.published_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
     const safeTitle = escapeHTML(post.title);
@@ -135,26 +146,48 @@ function renderPost(post) {
     const canon = document.getElementById('canonicalBlog');
     if (canon) canon.href = postUrl;
 
-    // JSON-LD BlogPosting — generato automaticamente per ogni articolo
+    // og:image dinamico (1200x630 = standard OG / Discover). Fallback su una foto generica se l'articolo non ha cover (per non rompere lo share sui social).
+    const cover = post.cover_image_url || '';
+    const ogBase = cover || 'https://images.pexels.com/photos/1187299/pexels-photo-1187299.jpeg';
+    const ogImage = _pexelsUrl(ogBase, 1200, 630);
+    _sm('ogBlogImage', ogImage);
+    _sm('twitterImage', ogImage);
+
+    // JSON-LD NewsArticle (preferito da Google Discover) con image array a 3 aspect ratios.
     const _ld = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
+        "@type": "NewsArticle",
         "headline": post.title,
         "description": _desc,
         "datePublished": post.published_at,
+        "dateModified": post.published_at,
         "url": postUrl,
         "inLanguage": "it-IT",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Subingresso.it",
-            "url": "https://subingresso.it"
-        }
+        "author":    { "@type": "Organization", "name": post.author || "Redazione Subingresso", "url": "https://subingresso.it" },
+        "publisher": { "@type": "Organization", "name": "Subingresso.it", "url": "https://subingresso.it" }
     };
+    // NewsArticle richiede image. Discover predilige 3 aspect ratios: 16:9, 4:3, 1:1. Sempre populato (anche fallback).
+    _ld.image = [
+        _pexelsUrl(ogBase, 1200, 675),
+        _pexelsUrl(ogBase, 1200, 900),
+        _pexelsUrl(ogBase, 1200, 1200),
+    ];
     let _ldEl = document.getElementById('_ldBlog');
     if (!_ldEl) { _ldEl = document.createElement('script'); _ldEl.id = '_ldBlog'; _ldEl.type = 'application/ld+json'; document.head.appendChild(_ldEl); }
     _ldEl.textContent = JSON.stringify(_ld);
 
+    // Hero image markup. Eager + fetchpriority=high perché è above the fold.
+    const heroHtml = cover ? `
+        <img src="${escapeHTML(_pexelsUrl(cover, 1200, 675))}"
+             srcset="${escapeHTML(_pexelsUrl(cover, 600, 338))} 600w, ${escapeHTML(_pexelsUrl(cover, 900, 506))} 900w, ${escapeHTML(_pexelsUrl(cover, 1200, 675))} 1200w, ${escapeHTML(_pexelsUrl(cover, 1600, 900))} 1600w"
+             sizes="(max-width: 768px) 100vw, 768px"
+             alt="${safeTitle}"
+             loading="eager" fetchpriority="high" decoding="async"
+             class="w-full aspect-[16/9] object-cover rounded-3xl mb-8 bg-slate-100">
+    ` : '';
+
     container.innerHTML = `
+        ${heroHtml}
         <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
         <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>
         <div class="prose font-medium text-left">${_insertBlogPromo(safeContent)}</div>
@@ -192,8 +225,18 @@ function renderList(posts) {
                 const safeSlug = encodeURIComponent(p.slug);
                 const safeTitle = escapeHTML(p.title);
                 const safeExcerpt = escapeHTML(p.excerpt || 'Guida tecnica completa con riferimenti normativi e consigli pratici.');
+                const cover = p.cover_image_url || '';
+                const thumbHtml = cover ? `
+                    <img src="${escapeHTML(_pexelsUrl(cover, 600, 338))}"
+                         srcset="${escapeHTML(_pexelsUrl(cover, 400, 225))} 400w, ${escapeHTML(_pexelsUrl(cover, 600, 338))} 600w, ${escapeHTML(_pexelsUrl(cover, 900, 506))} 900w"
+                         sizes="(max-width: 768px) 100vw, 720px"
+                         alt="${safeTitle}"
+                         loading="lazy" decoding="async"
+                         class="w-full aspect-[16/9] object-cover rounded-2xl mb-4 bg-slate-100">
+                ` : '';
                 return `
                 <a href="blog.html?post=${safeSlug}" class="block group border-b border-slate-50 pb-8 last:border-0 text-left">
+                    ${thumbHtml}
                     <p class="text-xs font-bold text-slate-400 uppercase mb-2 text-left">${date}</p>
                     <h2 class="text-2xl font-black group-hover:text-blue-600 transition tracking-tight leading-tight text-left">${safeTitle}</h2>
                     <p class="text-slate-500 text-sm mt-3 font-medium leading-relaxed text-left">${safeExcerpt}</p>
