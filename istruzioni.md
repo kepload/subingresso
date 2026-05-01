@@ -382,3 +382,27 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Regola editoriale blog da mantenere: niente articoli enciclopedici lunghi; target 2.200-3.200 caratteri, leggibili da telefono, paragrafi corti, `<h2>`, qualche `<strong>`, CTA finale verso `/vendi.html` e `/annunci.html`. Evitare promesse tipo "annunci verificati", "centinaia di annunci", "migliori offerte".
 - Cleanup SQL: rimossi i file temporanei blog `INSERT_BLOG_POSTS*.sql`, `REWRITE_BLOG_POSTS_READABLE_BATCH_*.sql`, `REWRITE_OLD_LONG_BLOG_BATCH_1.sql`, `COMPLETE_SHORT_BLOG_POSTS.sql`, `UPDATE_BLOG_POSTS_OPERATIVI_DATE_OGGI.sql`. Conservati invece gli SQL infrastrutturali (`SETUP_*`, `PATCH_*`, `setup-database.sql`) perche' ancora utili.
 - Nota SEO realistica: gli articoli fiscali/normativi generici difficilmente supereranno INPS, Agenzia Entrate, commercialisti e AI Overview. Le chance vere sono query specifiche e calde: "spuntista mercato", "decadenza concessione ambulante", "trasferire posteggio a figlio", "subingresso posteggio mercatale [citta]", "vendere posteggio mercato [regione]".
+
+## Sessione 1 Maggio 2026 (parte 2)
+
+### Geo SEO `/annunci/[citta]` — pagine ottimizzate per AI Overview
+- `api/annunci-citta.js`: aggiunti **FAQPage** schema (5 Q&A con dati reali dal DB) + **AggregateOffer** schema (lowPrice/highPrice/offerCount). Restano `ItemList` e `BreadcrumbList`. Le risposte FAQ citano "Subingresso.it" ed elencano numero annunci e range prezzi calcolati al volo dalla query — l'AI Overview cita queste frasi.
+- **Banner freshness verde** sotto l'hero: dot pulsante CSS, "Aggiornato oggi · {Mese Anno}", "Ultimo annuncio pubblicato {X ore/giorni fa}", range prezzi compatto (es. "da €5k a €25k"). Calcolato da `relativeTime(listings[0].created_at)`.
+- **Title/meta CTR-optimized**: pattern `Posteggi Mercatali {Citta} {Mese Anno} | {N} Annunci da €{minK} · Subingresso.it`. Mese/anno auto-aggiornato senza intervento manuale. Meta desc cita range prezzi reale + "zero commissioni" + timestamp ultimo annuncio.
+- `og:updated_time` + `article:modified_time` aggiunti al `<head>`.
+- `api/sitemap.js`: per ogni città `lastmod` = max(`created_at`) degli annunci attivi (era `today` fisso). `changefreq` da `weekly` a `daily`. Quando arriva un nuovo annuncio in una città, la sitemap dice a Google che la pagina è cambiata.
+
+### Riscrittura 10 articoli blog in stile umano
+- Articoli toccati (eseguito via `supabase db query --linked --file ...`): `migliori-mercati-lago-di-garda-posteggi-ambulanti`, `costi-nascosti-posteggio-mercatale`, `vendere-la-tua-licenza-ambulante--la-guida-per-non-farti-fregare-sul-prezzo--723`, `posteggi-mercatali-piemonte-liguria`, `affittare-o-vendere-posteggio-mercatale-quando-conviene`, `come-negoziare-prezzo-posteggio-mercatale`, `come-valutare-posteggio-mercatale-prima-di-comprarlo`, `eredita-licenza-ambulante-successione-posteggio-mercatale-guida-eredi`, `mercati-turistici-o-mercati-rionali-dove-conviene-banco`, `comprare-posteggio-lago-di-garda-turismo-stagionalita`.
+- Lunghezza: da 5.500-6.800 a 3.100-3.500 caratteri (-45%).
+- **Stile umano** da replicare per le prossime riscritture: paragrafi 2-3 righe, frasi nette alternate a una più lunga ogni tanto, numeri concreti (`4.500€ INPS`, `40-80% del fatturato`, `8-15 mila per furgone usato`), espressioni reali da ambulante (*"fai conto"*, *"spendi e dormi"*, *"non ti salva da una posizione brutta"*, *"piacere"*, *"al banco"*), niente trattini lunghi (—), niente `"esploriamo" / "approfondiamo" / "in conclusione"`, niente liste perfette uniformi. Variare attacco dei paragrafi.
+- File SQL temporaneo `REWRITE_BLOG_HUMAN_BATCH_20260501.sql` rimosso dopo esecuzione.
+
+### Tabella `blog_posts` — colonne attuali
+- `id, slug, title, excerpt, content, category, author, published_at`. **NON ha `updated_at`** — UPDATE su content non aggiornano timestamp. Se serve forzare freshness, aggiornare `published_at` esplicitamente.
+
+### CLI Supabase — esecuzione SQL diretta
+- `./scripts/.bin/supabase.exe db query --linked --file <file.sql> --output json` esegue SQL contro il progetto linkato. Token in `.claude/settings.local.json` (`env.SUPABASE_ACCESS_TOKEN`). Soluzione comoda per UPDATE batch senza usare il SQL Editor web.
+
+### Restano da accorciare (priorità)
+~14 articoli ancora sopra i 4.500 char: `aprire-attivita-ambulante-da-zero-o-comprare-posteggio-avviato`, `licenza-ambulante-tipo-a-tipo-b-differenze`, `mercato-settimanale-fiera-differenze-posteggio`, `posteggi-mercatali-lombardia-guida-acquisto-vendita`, `rinnovo-concessione-posteggio-mercatale`, `posteggi-mercatali-emilia-romagna-guida`, `come-fare-subingresso-guida-completa`, `posteggi-mercatali-veneto-guida-acquisto-vendita`, `vendere-posteggio-mercatale-guida`, `quanto-vale-un-posteggio-mercatale`, `posteggi-mercatali-campania-sicilia-comprare-vendere-licenze-sud`, `il-commercio-ambulante-2-0-nuove-regolamentazioni-sull-ecommerce-e-la-vendita-digitale-342`, `nuove-sentenze-commercio-ambulante-futuro-757`, `mercato-settimanale-fiera-differenze-posteggio`.
