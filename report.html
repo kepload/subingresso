@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://subingresso.it/report">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <title>Report Valutazione — Subingresso.it</title>
+    <meta name="description" content="Report dettagliato della tua valutazione posteggio: stima, comparabili, checklist documenti.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            .print-page { page-break-after: always; }
+            .shadow-xl, .shadow-lg, .shadow-md, .shadow-sm { box-shadow: none !important; }
+            .bg-slate-50 { background: white !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen">
+
+<!-- Header (no-print) -->
+<header class="no-print bg-white border-b border-slate-100 py-4 sticky top-0 z-40">
+    <div class="max-w-4xl mx-auto px-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2.5">
+            <div class="bg-blue-600 text-white w-9 h-9 rounded-xl flex items-center justify-center shadow-md shadow-blue-100">
+                <i class="fas fa-exchange-alt text-sm"></i>
+            </div>
+            <span class="text-xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
+        </a>
+        <div class="flex items-center gap-2">
+            <button onclick="window.print()" class="bg-slate-900 text-white px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-blue-600 transition flex items-center gap-2">
+                <i class="fas fa-print text-[10px]"></i> Stampa / PDF
+            </button>
+            <a href="dashboard.html" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-slate-200 transition flex items-center gap-2">
+                <i class="fas fa-arrow-left text-[10px]"></i> Dashboard
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Loading state -->
+<div id="loading" class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <i class="fas fa-spinner fa-spin text-4xl text-slate-300 mb-4"></i>
+    <p class="text-slate-500 font-bold">Carico il report...</p>
+</div>
+
+<!-- Error state -->
+<div id="errorState" class="hidden max-w-2xl mx-auto px-6 py-20 text-center">
+    <i class="fas fa-exclamation-circle text-5xl text-amber-300 mb-4"></i>
+    <h2 class="text-2xl font-black text-slate-900 mb-2">Report non disponibile</h2>
+    <p id="errorMsg" class="text-slate-500 font-medium mb-6">Effettua il login per visualizzare il tuo report.</p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="valutatore.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-700 transition">
+            <i class="fas fa-calculator mr-2"></i> Fai una nuova valutazione
+        </a>
+        <a href="index.html" class="bg-slate-100 text-slate-700 px-6 py-3 rounded-xl font-black text-sm hover:bg-slate-200 transition">
+            Torna alla home
+        </a>
+    </div>
+</div>
+
+<!-- Report content -->
+<main id="reportContent" class="hidden max-w-4xl mx-auto px-6 py-10 space-y-8">
+
+    <!-- Hero -->
+    <section class="bg-white rounded-3xl border border-slate-100 p-6 sm:p-10 shadow-sm">
+        <div class="flex items-start justify-between gap-4 mb-6">
+            <div>
+                <p class="text-[10px] font-black uppercase tracking-[.2em] text-blue-600 mb-1">Report Valutazione</p>
+                <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900">Stima del tuo posteggio</h1>
+                <p id="reportSubtitle" class="text-slate-500 font-medium text-sm mt-1"></p>
+            </div>
+            <div id="reportLogo" class="hidden sm:flex items-center gap-2 text-slate-300">
+                <div class="bg-blue-600 text-white w-9 h-9 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-exchange-alt text-sm"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stima principale -->
+        <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-2xl p-6 border border-emerald-100 mb-4">
+            <p class="text-[10px] font-black uppercase tracking-[.2em] text-emerald-600 mb-2">Valore stimato di cessione</p>
+            <p class="text-5xl sm:text-6xl font-black text-emerald-700 leading-none tracking-tight">
+                € <span id="rPrezzoAvg">—</span>
+            </p>
+            <div class="flex items-center gap-2 text-xs font-bold text-emerald-700/70 mt-3">
+                <span>da € <span id="rPrezzoMin">—</span></span>
+                <span>·</span>
+                <span>a € <span id="rPrezzoMax">—</span></span>
+            </div>
+        </div>
+
+        <!-- Affitto -->
+        <div class="bg-blue-50 rounded-2xl p-5 border border-blue-100">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+                <div>
+                    <p class="text-[10px] font-black uppercase tracking-[.2em] text-blue-600 mb-1">Se lo affitti</p>
+                    <p class="text-3xl font-black text-blue-700 leading-none">
+                        € <span id="rAffittoAnnuo">—</span><span class="text-lg font-bold text-blue-400">/anno</span>
+                    </p>
+                    <p class="text-xs font-semibold text-blue-500 mt-1">€ <span id="rAffittoMese">—</span> al mese</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-[10px] font-black uppercase tracking-[.2em] text-blue-600 mb-1">Rendimento</p>
+                    <p class="text-2xl font-black text-blue-700"><span id="rRoi">—</span>%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dati inseriti -->
+    <section class="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 shadow-sm">
+        <h2 class="text-lg font-black text-slate-900 mb-5 flex items-center gap-2">
+            <i class="fas fa-list-ul text-blue-500"></i> Dati della tua attività
+        </h2>
+        <dl id="rDati" class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3"></dl>
+    </section>
+
+    <!-- Come si scompone il valore -->
+    <section class="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 shadow-sm">
+        <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+            <i class="fas fa-chart-pie text-emerald-500"></i> Come si compone il tuo valore
+        </h2>
+        <p class="text-sm text-slate-500 font-medium mb-5 leading-relaxed">Partiamo dal tuo fatturato annuo e applichiamo i moltiplicatori standard del mercato ambulante italiano.</p>
+        <div id="rBreakdown" class="space-y-2.5"></div>
+    </section>
+
+    <!-- Comparabili -->
+    <section id="rCompSection" class="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 shadow-sm">
+        <div class="flex items-center justify-between gap-3 mb-5 flex-wrap">
+            <h2 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                <i class="fas fa-store text-amber-500"></i> Annunci simili sulla piattaforma
+            </h2>
+            <a href="annunci.html" class="text-xs font-black text-blue-600 hover:underline no-print">Vedi tutti →</a>
+        </div>
+        <div id="rCompList" class="space-y-2"></div>
+        <p id="rCompEmpty" class="hidden text-sm text-slate-400 italic">Nessun annuncio simile attivo al momento. Sii il primo a pubblicare!</p>
+    </section>
+
+    <!-- Documenti necessari -->
+    <section class="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 shadow-sm">
+        <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
+            <i class="fas fa-folder-open text-blue-500"></i> Documenti per la cessione
+        </h2>
+        <p class="text-sm text-slate-500 font-medium mb-5 leading-relaxed">Per perfezionare un subingresso servono questi documenti. Procurarli prima di pubblicare l'annuncio velocizza la trattativa.</p>
+        <ul class="space-y-2.5 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i><div><strong class="text-slate-900">Concessione mercatale</strong><span class="text-slate-500"> — titolo autorizzativo del Comune in corso di validità.</span></div></li>
+            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i><div><strong class="text-slate-900">DURC</strong><span class="text-slate-500"> — Documento Unico di Regolarità Contributiva, deve essere regolare al momento della cessione.</span></div></li>
+            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i><div><strong class="text-slate-900">Visura camerale</strong><span class="text-slate-500"> — aggiornata con codici ATECO della tua attività ambulante.</span></div></li>
+            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i><div><strong class="text-slate-900">Carta d'esercizio</strong><span class="text-slate-500"> — obbligatoria in molte Regioni (es. Lombardia, Veneto, Emilia).</span></div></li>
+            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i><div><strong class="text-slate-900">Atto notarile di cessione d'azienda</strong><span class="text-slate-500"> — o di ramo d'azienda, da depositare al SUAP del Comune.</span></div></li>
+            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-0.5 flex-shrink-0"></i><div><strong class="text-slate-900">Pratica SUAP di subingresso</strong><span class="text-slate-500"> — entro i termini stabiliti dal regolamento comunale.</span></div></li>
+        </ul>
+    </section>
+
+    <!-- Prossimi passi -->
+    <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+        <h2 class="text-lg font-black mb-2 flex items-center gap-2">
+            <i class="fas fa-flag-checkered text-amber-300"></i> Prossimi passi
+        </h2>
+        <p class="text-white/70 text-sm font-medium mb-5">Trasforma la stima in vendita reale.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 no-print">
+            <a href="vendi.html" class="flex items-center gap-3 bg-white text-slate-900 rounded-2xl p-4 hover:bg-amber-300 transition group">
+                <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition flex-shrink-0">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <div class="min-w-0">
+                    <p class="font-black text-sm leading-tight">Pubblica annuncio gratis</p>
+                    <p class="text-xs font-medium text-slate-500 leading-tight">Visibile in tutta Italia</p>
+                </div>
+            </a>
+            <a href="annunci.html" class="flex items-center gap-3 bg-white text-slate-900 rounded-2xl p-4 hover:bg-amber-300 transition group">
+                <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition flex-shrink-0">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="min-w-0">
+                    <p class="font-black text-sm leading-tight">Cerca un altro posteggio</p>
+                    <p class="text-xs font-medium text-slate-500 leading-tight">Filtra per zona e settore</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="border-t border-slate-200 pt-6">
+        <p class="text-xs text-slate-400 leading-relaxed">
+            <strong class="text-slate-600">Nota sulla valutazione.</strong> Il valore mostrato è una <strong>stima orientativa</strong> calcolata sui parametri medi del mercato ambulante italiano. Ogni posteggio ha caratteristiche uniche — concorrenza locale, flusso clienti, regolamenti comunali — che il calcolatore non può cogliere singolarmente. Usa il risultato come punto di partenza per la trattativa, non come perizia ufficiale.
+            Report generato il <span id="rGenDate">—</span> · Subingresso.it · Algoritmo v<span id="rAlgVer">—</span>
+        </p>
+    </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js?v=2"></script>
+<script src="js/data.js?v=7"></script>
+<script src="js/auth.js?v=7"></script>
+
+<script>
+(function() {
+    const params  = new URLSearchParams(location.search);
+    const sessionParam = params.get('session');
+    const idParam      = params.get('id');
+
+    const elLoading = document.getElementById('loading');
+    const elError   = document.getElementById('errorState');
+    const elContent = document.getElementById('reportContent');
+    const elErrMsg  = document.getElementById('errorMsg');
+
+    function showError(msg) {
+        elLoading.classList.add('hidden');
+        elContent.classList.add('hidden');
+        elError.classList.remove('hidden');
+        if (msg) elErrMsg.textContent = msg;
+    }
+
+    function fmt(n) {
+        if (n == null || isNaN(n)) return '—';
+        return Math.round(n).toLocaleString('it-IT');
+    }
+
+    function _waitForSupabase(maxMs = 4000) {
+        return new Promise((resolve, reject) => {
+            const start = Date.now();
+            (function check() {
+                if (typeof _supabase !== 'undefined' && _supabase && _supabase.auth) return resolve();
+                if (Date.now() - start > maxMs) return reject(new Error('Supabase non caricato'));
+                setTimeout(check, 80);
+            })();
+        });
+    }
+
+    async function loadReport() {
+        try {
+            await _waitForSupabase();
+
+            const { data: sess } = await _supabase.auth.getSession();
+            if (!sess?.session?.user) {
+                showError('Devi essere loggato per visualizzare il tuo report. Accedi e riprova.');
+                return;
+            }
+            const userId = sess.session.user.id;
+
+            // Query: prima per id (più preciso), poi per session_token + user_id
+            let query = _supabase.from('valutatore_logs').select('*').eq('user_id', userId);
+            if (idParam) {
+                query = query.eq('id', idParam);
+            } else if (sessionParam) {
+                query = query.eq('session_token', sessionParam);
+            }
+            const { data: logs, error } = await query.order('created_at', { ascending: false }).limit(1);
+
+            if (error) { showError('Errore caricamento: ' + error.message); return; }
+            if (!logs || !logs.length) {
+                showError('Valutazione non trovata. Prova a rifarne una nuova.');
+                return;
+            }
+            const log = logs[0];
+            renderReport(log);
+            // Carica i comparabili in parallelo (non bloccante)
+            loadComparables(log).catch(() => {});
+
+            elLoading.classList.add('hidden');
+            elContent.classList.remove('hidden');
+        } catch (e) {
+            showError('Errore di connessione. Riprova tra poco.');
+            console.warn(e);
+        }
+    }
+
+    function renderReport(log) {
+        // Subtitle
+        const subt = document.getElementById('reportSubtitle');
+        const created = log.created_at ? new Date(log.created_at) : new Date();
+        subt.textContent = 'Valutazione del ' + created.toLocaleDateString('it-IT', {
+            day: '2-digit', month: 'long', year: 'numeric'
+        });
+
+        // Stima principale
+        document.getElementById('rPrezzoAvg').textContent = fmt(log.prezzo_avg);
+        document.getElementById('rPrezzoMin').textContent = fmt(log.prezzo_min);
+        document.getElementById('rPrezzoMax').textContent = fmt(log.prezzo_max);
+
+        // Affitto
+        document.getElementById('rAffittoAnnuo').textContent = fmt(log.affitto_annuo);
+        document.getElementById('rAffittoMese').textContent  = fmt(log.affitto_mensile);
+        const roi = (log.prezzo_avg && log.affitto_annuo) ? (log.affitto_annuo / log.prezzo_avg * 100) : 0;
+        document.getElementById('rRoi').textContent = roi.toFixed(1);
+
+        // Dati inseriti
+        const labels = {
+            fatturato: { l: 'Fatturato annuo dichiarato', f: v => '€ ' + fmt(v) },
+            frequenza: { l: 'Tipo di mercato', f: v => ({
+                settimanale: 'Settimanale',
+                giornaliero: 'Giornaliero',
+                fiera:       'Fiera / Evento',
+            })[v] || v },
+            durata_fiera: { l: 'Durata fiera', f: v => ({
+                '1_giorno':       '1 giorno',
+                'weekend':        'Weekend (2-3 gg)',
+                'settimana_piu':  'Settimana o più',
+            })[v] || v },
+            stagionalita: { l: 'Stagionalità', f: v => v === 'annuale' ? 'Annuale' : v === 'stagionale' ? 'Stagionale' : v },
+            zona:         { l: 'Tipo di piazza', f: v => ({
+                storica_turistica: 'Storica / Turistica',
+                capoluogo:         'Capoluogo / Centro',
+                rionale:           'Piccolo Comune / Rionale',
+            })[v] || v },
+            settore:      { l: 'Settore merceologico', f: v => v === 'alimentare' ? 'Alimentare / Somministrazione' : v === 'non_alimentare' ? 'Non alimentare' : v },
+            posizione:    { l: 'Posizione del banco', f: v => v === 'angolare' ? 'Angolare / Testata' : v === 'linea' ? 'In linea' : v },
+            anzianita:    { l: 'Anzianità licenza', f: v => v === 'storica' ? 'Storica (>10 anni)' : v === 'recente' ? 'Recente (<10 anni)' : v },
+        };
+        const dl = document.getElementById('rDati');
+        dl.innerHTML = '';
+        Object.keys(labels).forEach(k => {
+            const v = log[k];
+            if (v == null || v === '') return;
+            const cfg = labels[k];
+            const item = document.createElement('div');
+            item.className = 'flex items-baseline justify-between gap-4 border-b border-slate-50 pb-2.5';
+            item.innerHTML = `
+                <dt class="text-xs font-bold text-slate-400 uppercase tracking-wider">${cfg.l}</dt>
+                <dd class="text-sm font-black text-slate-900 text-right">${escapeHTML(cfg.f(v))}</dd>`;
+            dl.appendChild(item);
+        });
+
+        // Breakdown — spiegazione moltiplicatori
+        const breakdownContainer = document.getElementById('rBreakdown');
+        const factors = computeFactorImpact(log);
+        breakdownContainer.innerHTML = factors.map(f => {
+            const isPos = f.delta > 0;
+            const isNeg = f.delta < 0;
+            const color = isPos ? 'text-emerald-600' : isNeg ? 'text-red-500' : 'text-slate-400';
+            const sign  = isPos ? '+' : '';
+            const arrow = isPos ? 'fa-arrow-up' : isNeg ? 'fa-arrow-down' : 'fa-minus';
+            return `
+            <div class="flex items-center justify-between gap-4 bg-slate-50 rounded-xl px-4 py-2.5">
+                <div class="flex items-center gap-3 min-w-0 flex-1">
+                    <i class="fas ${arrow} ${color} text-xs flex-shrink-0"></i>
+                    <span class="text-sm font-bold text-slate-700 truncate">${escapeHTML(f.label)}</span>
+                </div>
+                <span class="text-sm font-black ${color} flex-shrink-0">${sign}${f.delta}%</span>
+            </div>`;
+        }).join('');
+
+        // Footer disclaimer
+        document.getElementById('rGenDate').textContent = created.toLocaleDateString('it-IT');
+        document.getElementById('rAlgVer').textContent = log.algoritmo_version || '1.0';
+    }
+
+    // Mappa moltiplicatori → impatto % rispetto al valore neutro 1.0
+    function computeFactorImpact(log) {
+        const items = [];
+        const M = {
+            settimanale: 0,   giornaliero: 50,   fiera: -50,
+            '1_giorno':-70,   'weekend': -50,    'settimana_piu': -30,
+            annuale: 0,       stagionale: -30,
+            storica_turistica: 100, capoluogo: 25,  rionale: -35,
+            alimentare: 30,   non_alimentare: 0,
+            angolare: 25,     linea: 0,
+            storica: 25,      recente: 0,
+        };
+        const labels = {
+            frequenza:    { settimanale:'Mercato settimanale', giornaliero:'Mercato giornaliero', fiera:'Fiera / Evento' },
+            durata_fiera: { '1_giorno':'Fiera 1 giorno', 'weekend':'Fiera weekend', 'settimana_piu':'Fiera settimana+' },
+            stagionalita: { annuale:'Apertura annuale', stagionale:'Apertura stagionale' },
+            zona:         { storica_turistica:'Piazza storica/turistica', capoluogo:'Capoluogo', rionale:'Piccolo Comune' },
+            settore:      { alimentare:'Settore alimentare', non_alimentare:'Settore non alimentare' },
+            posizione:    { angolare:'Posizione angolare', linea:'Posizione in linea' },
+            anzianita:    { storica:'Licenza storica (>10 anni)', recente:'Licenza recente' },
+        };
+        ['frequenza', 'durata_fiera', 'stagionalita', 'zona', 'settore', 'posizione', 'anzianita'].forEach(k => {
+            const v = log[k];
+            if (!v) return;
+            if (k === 'durata_fiera' && log.frequenza !== 'fiera') return;
+            const delta = M[v];
+            if (delta == null) return;
+            items.push({ label: (labels[k] && labels[k][v]) || v, delta });
+        });
+        return items;
+    }
+
+    async function loadComparables(log) {
+        const list = document.getElementById('rCompList');
+        const empty = document.getElementById('rCompEmpty');
+        if (!list) return;
+        list.innerHTML = '<div class="text-center py-4 text-slate-300"><i class="fas fa-spinner fa-spin"></i></div>';
+        try {
+            // Cerca annunci attivi nello stesso range di prezzo
+            const minP = (log.prezzo_avg || 10000) * 0.5;
+            const maxP = (log.prezzo_avg || 10000) * 1.5;
+            const { data, error } = await _supabase
+                .from('annunci')
+                .select('id, titolo, comune, regione, prezzo, stato, dettagli_extra, img_urls')
+                .eq('status', 'active')
+                .gte('prezzo', Math.round(minP))
+                .lte('prezzo', Math.round(maxP))
+                .order('created_at', { ascending: false })
+                .limit(5);
+
+            if (error) throw error;
+            if (!data || !data.length) {
+                list.innerHTML = '';
+                empty.classList.remove('hidden');
+                return;
+            }
+            list.innerHTML = data.map(l => `
+                <a href="annuncio.html?id=${escapeHTML(l.id)}" class="flex items-center justify-between gap-4 bg-slate-50 hover:bg-blue-50 rounded-2xl px-4 py-3 transition border border-transparent hover:border-blue-100">
+                    <div class="min-w-0 flex-1">
+                        <p class="font-black text-sm text-slate-900 truncate">${escapeHTML(l.titolo || '—')}</p>
+                        <p class="text-xs text-slate-400 font-bold mt-0.5">
+                            <i class="fas fa-map-marker-alt mr-1"></i>${escapeHTML(l.comune || '')}, ${escapeHTML(l.regione || '')}
+                        </p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <p class="font-black text-base text-slate-900">€ ${fmt(l.prezzo)}</p>
+                        <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">${escapeHTML(l.stato === 'Affitto mensile' ? 'Affitto' : l.stato || '')}</p>
+                    </div>
+                </a>
+            `).join('');
+        } catch (e) {
+            list.innerHTML = '';
+            empty.classList.remove('hidden');
+        }
+    }
+
+    loadReport();
+})();
+</script>
+
+</body>
+</html>

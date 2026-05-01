@@ -495,12 +495,13 @@ window.handleLogin = async function (e) {
         }
 
         await _storePasswordCredential(email, password, email);
-        _linkValutatoreSession();
+        await _linkValutatoreSession();
         if (typeof window.processPendingSaveListing === 'function') {
             window.processPendingSaveListing().catch(() => {});
         } else if (typeof window.loadSavedListingsCache === 'function') {
             window.loadSavedListingsCache().catch(() => {});
         }
+        if (_checkPostAuthIntent()) return; // redirect al report → stop
         closeAuthModal();
         updateAuthNav();
         if (typeof window.__onLoginSuccess === 'function') {
@@ -541,16 +542,33 @@ window.handleRegister = async function (e) {
 };
 
 // ── Register helpers ─────────────────────────────────────
-function _linkValutatoreSession() {
+async function _linkValutatoreSession() {
     const token = localStorage.getItem('_val_session');
     if (!token) return;
-    _supabase.rpc('link_valutatore_to_user', { p_session_token: token })
-        .then(() => {}).catch(() => {});
+    try {
+        await _supabase.rpc('link_valutatore_to_user', { p_session_token: token });
+    } catch (_) {}
+}
+
+// Se l'utente aveva cliccato "Crea account" dal valutatore, dopo signup va al report.
+function _checkPostAuthIntent() {
+    let intent = null;
+    try { intent = sessionStorage.getItem('_post_auth_intent'); } catch (_) {}
+    if (intent === 'valutatore_save') {
+        try { sessionStorage.removeItem('_post_auth_intent'); } catch (_) {}
+        let session = '';
+        try { session = localStorage.getItem('_val_session') || ''; } catch (_) {}
+        const url = 'report.html' + (session ? '?session=' + encodeURIComponent(session) : '');
+        location.href = url;
+        return true;
+    }
+    return false;
 }
 
 async function _afterRegisterSuccess(nome, showWelcome = false) {
     _suppressVisitorPopup();
-    _linkValutatoreSession();
+    // Aspetta il link valutatore prima di un eventuale redirect al report
+    await _linkValutatoreSession();
     const user = await getCurrentUser();
     _profileCache = { id: user?.id, nome };
     _showAuthSuccess('Benvenuto! Account creato con successo.');
@@ -559,6 +577,7 @@ async function _afterRegisterSuccess(nome, showWelcome = false) {
         window.processPendingSaveListing().catch(() => {});
     }
     setTimeout(() => {
+        if (_checkPostAuthIntent()) return; // redirect al report → stop
         closeAuthModal();
         updateAuthNav();
         if (showWelcome && user?.id) _showWelcomeNewPopup(user.id);

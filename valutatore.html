@@ -456,7 +456,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/data.js?v=7"></script>
-<script src="js/auth.js?v=6"></script>
+<script src="js/auth.js?v=7"></script>
 
 <script>
     // ── Tracking acquisizione (Ondata 1) — fallback se l'utente atterra
@@ -672,15 +672,34 @@
         }
         _supabase.auth.getUser().then(function(res) {
             if (res && res.data && res.data.user) {
-                // Utente già loggato: il log è già stato collegato via link_valutatore_to_user
-                btn.innerHTML = '<i class="fas fa-check mr-2"></i> Valutazione salvata nel tuo account';
-                btn.disabled = true;
-                btn.classList.remove('hover:bg-amber-300');
-                btn.classList.add('bg-emerald-100', 'text-emerald-700', 'cursor-default');
-                btn.classList.remove('bg-white', 'text-slate-900');
+                // Loggato: trasforma in link al report dettagliato.
+                // Lascio un piccolo delay perché il fetch del log appena fatto
+                // potrebbe non essere ancora propagato.
+                btn.innerHTML = '<i class="fas fa-file-pdf mr-2"></i> Vai al report dettagliato →';
+                btn.disabled = false;
+                btn.classList.remove('bg-white', 'text-slate-900', 'hover:bg-amber-300');
+                btn.classList.add('bg-amber-300', 'text-slate-900', 'hover:bg-amber-400');
+                btn.onclick = _valGoToReport;
+
+                // Aggiorna anche la descrizione della card per coerenza
+                var desc = card.querySelector('p.text-white\\/70');
+                if (desc) {
+                    desc.textContent = 'La tua valutazione è già nel tuo account. Apri il report dettagliato con stima, fattori, comparabili e checklist.';
+                }
             }
         }).catch(function(){});
     }
+
+    function _valGoToReport() {
+        var session = '';
+        try { session = localStorage.getItem('_val_session') || ''; } catch (_) {}
+        if (session) {
+            location.href = 'report.html?session=' + encodeURIComponent(session);
+        } else {
+            location.href = 'report.html';
+        }
+    }
+    window._valGoToReport = _valGoToReport;
 
     // Click "Crea account" → apre il modal auth con focus sulla tab Registrati
     function _valOpenSave() {
