@@ -404,5 +404,14 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 ### CLI Supabase — esecuzione SQL diretta
 - `./scripts/.bin/supabase.exe db query --linked --file <file.sql> --output json` esegue SQL contro il progetto linkato. Token in `.claude/settings.local.json` (`env.SUPABASE_ACCESS_TOKEN`). Soluzione comoda per UPDATE batch senza usare il SQL Editor web.
 
+### Aggiunta grassetti chiave al primo batch di 10
+- Su tutti i 10 articoli del batch precedente sono stati aggiunti **3-8 grassetti** sulla frase chiave del paragrafo (non interi paragrafi).
+- Regola: bold solo sulle frasi che riassumono il punto, mai parole banali, max 1-2 per paragrafo. Esempi: *"il posteggio non è più tuo"*, *"non è il prezzo finale"*, *"venditore che ha fretta strana"*, *"il Garda non ti salva"*.
+
+### Batch 2 — riscrittura altri 10 articoli (1 mag 2026)
+- Articoli toccati: `mercato-settimanale-fiera-differenze-posteggio`, `rinnovo-concessione-posteggio-mercatale`, `posteggi-mercatali-campania-sicilia-comprare-vendere-licenze-sud`, `posteggi-mercatali-emilia-romagna-guida`, `posteggi-mercatali-veneto-guida-acquisto-vendita`, `licenza-ambulante-tipo-a-tipo-b-differenze`, `posteggi-mercatali-lombardia-guida-acquisto-vendita`, `aprire-attivita-ambulante-da-zero-o-comprare-posteggio-avviato`, `come-fare-subingresso-guida-completa`, `vendere-posteggio-mercatale-guida`.
+- Lunghezze: 3.100-3.600 char (testo 2.800-3.220), grassetti 7-11 per articolo, integrati direttamente in fase di stesura.
+- Tutti gli articoli > 4.500 char ora sono **zero**: il blog è completamente normalizzato.
+
 ### Restano da accorciare (priorità)
-~14 articoli ancora sopra i 4.500 char: `aprire-attivita-ambulante-da-zero-o-comprare-posteggio-avviato`, `licenza-ambulante-tipo-a-tipo-b-differenze`, `mercato-settimanale-fiera-differenze-posteggio`, `posteggi-mercatali-lombardia-guida-acquisto-vendita`, `rinnovo-concessione-posteggio-mercatale`, `posteggi-mercatali-emilia-romagna-guida`, `come-fare-subingresso-guida-completa`, `posteggi-mercatali-veneto-guida-acquisto-vendita`, `vendere-posteggio-mercatale-guida`, `quanto-vale-un-posteggio-mercatale`, `posteggi-mercatali-campania-sicilia-comprare-vendere-licenze-sud`, `il-commercio-ambulante-2-0-nuove-regolamentazioni-sull-ecommerce-e-la-vendita-digitale-342`, `nuove-sentenze-commercio-ambulante-futuro-757`, `mercato-settimanale-fiera-differenze-posteggio`.
+~~~14 articoli~~~ **Nessuno** sopra i 4.500 char. Eventuali batch futuri possono lavorare su articoli 3.500-4.500 (zona grigia) se lo stile è ancora datato.
