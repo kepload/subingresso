@@ -437,3 +437,14 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - **Domande pratiche specifiche** (15-20 articoli): "Chi paga il notaio nel subingresso", "Posteggio in comproprietà fra fratelli", "Decadenza per assenze come si difende", "Ricorso TAR posteggio mercatale".
 - **Settori specifici** (10-12 articoli): banco fiori, ortofrutta, abbigliamento usato, alimentari, artigianato.
 - **Stagionali ricorrenti** (5-6): bandi anno X, mercatini di Natale, sagre primavera, Black Friday ambulanti.
+
+### Pagine geo `/annunci/[citta]` — placeholder indicizzabile (1 mag 2026)
+- **`api/_capoluoghi.js`** (nuovo): costante condivisa con 141 città italiane (105 capoluoghi di provincia + 14 turistiche tipo Sirmione/Capri/Taormina + 11 Lago di Garda/Romagna + 11 Riviera/altre). Esporta `CAPOLUOGHI` (array) e `CAPOLUOGHI_BY_SLUG` (map per lookup O(1)).
+- **`api/annunci-citta.js`**: nuovo branch nel handler. Quando una città non ha annunci attivi e lo **slug è nella lista capoluoghi** → risponde **200 OK + indicizzabile** con template `renderEmptyCityPage()` (status box "0 annunci attivi a X in questo momento" + CTA verso /vendi e /annunci + sezione info commercio ambulante della città + FAQ 5 Q&A). Schema `BreadcrumbList` + `FAQPage`. Niente AggregateOffer/ItemList senza dati. Niente claim falsi.
+- Slug **non in lista** + 0 annunci → 404 + noindex (anti-spam SEO).
+- Quando arriva il primo annuncio reale per una città placeholder (es. Roma), la pagina si auto-popola con la lista vera al successivo crawl: zero modifiche al codice.
+- **`api/sitemap.js`**: include tutte le 141 città a prescindere dagli annunci. Citta CON annunci → priority 0.8, changefreq daily, lastmod = max(created_at). Città SENZA annunci → priority 0.5, changefreq monthly, lastmod = today.
+- **Test smoke** (5 scenari verificati): milano→full-list, napoli→placeholder, roma→placeholder, inventato→404, salo→full-list. Tutti passano.
+
+### Importante: lookup città con accenti
+Il bug più sottile risolto: `slugToCity('salo')` ritorna `'Salo'` senza accento → query Supabase `comune=ilike.Salo` non matcha annunci con `comune='Salò'`. Soluzione: lookup PRIMA in `CAPOLUOGHI_BY_SLUG` (che ha il nome corretto con accento), fallback su `slugToCity()` solo per slug non riconosciuti. Tutte le città italiane con accenti (Forlì, Salò, L'Aquila, Cefalù, Cortina d'Ampezzo) sono in lista esplicita.
