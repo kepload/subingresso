@@ -105,6 +105,8 @@
             border-color: #2563eb;
             background-color: #eff6ff;
         }
+        /* Step finale: nascondi gli elementi pre-risultato per stare in una sola vista */
+        body.is-result .pre-result { display: none; }
     </style>
 </head>
 <body class="bg-neutral-100 text-slate-900 min-h-screen flex flex-col">
@@ -121,9 +123,9 @@
     </div>
 </header>
 
-<main class="max-w-2xl mx-auto px-6 py-8 flex-grow w-full text-left" style="min-height:calc(100vh - 68px)">
-    
-    <div class="flex justify-between items-end mb-3">
+<main class="max-w-2xl mx-auto px-6 py-6 flex-grow w-full text-left">
+
+    <div class="pre-result flex justify-between items-end mb-3">
         <div>
             <h1 class="text-2xl font-black tracking-tight text-slate-900">Valutatore Posteggio di Mercato</h1>
             <p class="text-slate-500 font-medium text-sm">Calcola gratis il prezzo di subingresso in 2 minuti.</p>
@@ -134,11 +136,11 @@
     </div>
 
     <!-- Progress Bar -->
-    <div class="w-full bg-slate-200 h-1 rounded-full mb-5 overflow-hidden">
+    <div class="pre-result w-full bg-slate-200 h-1 rounded-full mb-4 overflow-hidden">
         <div id="progressBar" class="bg-blue-600 h-full w-[15%] transition-all duration-500"></div>
     </div>
 
-    <div id="calculatorForm" class="bg-white rounded-[32px] border border-slate-100 p-4 sm:p-6 shadow-xl shadow-slate-200/50">
+    <div id="calculatorForm" class="bg-white rounded-[32px] border border-slate-100 p-4 sm:p-5 shadow-xl shadow-slate-200/50">
         
         <!-- STEP 1: Dati Finanziari -->
         <div class="step-card active" data-step="1">
@@ -273,75 +275,75 @@
         <div class="step-card" data-step="6">
 
             <!-- Header risultato con reload icon -->
-            <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center justify-between mb-2">
                 <p class="text-[10px] font-black uppercase tracking-[.18em] text-slate-400">La tua stima</p>
                 <button onclick="location.reload()" title="Nuova valutazione"
-                        class="w-8 h-8 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition flex items-center justify-center">
-                    <i class="fas fa-redo text-xs"></i>
+                        class="w-7 h-7 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition flex items-center justify-center">
+                    <i class="fas fa-redo text-[11px]"></i>
                 </button>
             </div>
 
-            <!-- Card VENDITA (verde) -->
-            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/40 border border-emerald-100 rounded-2xl px-4 py-4 mb-2.5">
-                <p class="text-[9px] font-black uppercase tracking-[.18em] text-emerald-600 mb-1.5 flex items-center gap-1.5">
-                    <i class="fas fa-tag text-[10px]"></i> Cessione
-                </p>
-                <p class="leading-none">
-                    <span id="totalAvg" class="text-5xl font-black text-emerald-700 tracking-tight">€ --</span>
-                </p>
-                <div class="flex items-center gap-2 text-[11px] font-bold text-emerald-700/60 mt-2.5">
-                    <span>da € <span id="priceMin">--</span></span>
-                    <span class="text-emerald-300">·</span>
-                    <span>a € <span id="priceMax">--</span></span>
+            <!-- Card VENDITA (verde) — numero a sinistra, range a destra -->
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/40 border border-emerald-100 rounded-2xl px-4 py-3 mb-2 flex items-center justify-between gap-3">
+                <div class="min-w-0">
+                    <p class="text-[9px] font-black uppercase tracking-[.18em] text-emerald-600 mb-0.5 flex items-center gap-1.5">
+                        <i class="fas fa-tag text-[10px]"></i> Cessione
+                    </p>
+                    <p class="leading-none">
+                        <span id="totalAvg" class="text-4xl font-black text-emerald-700 tracking-tight">€ --</span>
+                    </p>
+                </div>
+                <div class="text-right text-[11px] font-bold text-emerald-700/70 leading-tight shrink-0">
+                    <p>da <span class="text-emerald-700">€ <span id="priceMin">--</span></span></p>
+                    <p class="mt-0.5">a <span class="text-emerald-700">€ <span id="priceMax">--</span></span></p>
                 </div>
             </div>
 
-            <!-- Card AFFITTO (blu) -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100/40 border border-blue-100 rounded-2xl px-4 py-4 mb-4">
-                <p class="text-[9px] font-black uppercase tracking-[.18em] text-blue-600 mb-1.5 flex items-center gap-1.5">
-                    <i class="fas fa-handshake text-[10px]"></i> Affitto annuo
-                </p>
-                <p class="leading-none flex items-baseline gap-1.5">
-                    <span class="text-5xl font-black text-blue-700 tracking-tight">€ <span id="rentValue">--</span></span>
-                    <span class="text-2xl font-bold text-blue-400">/anno</span>
-                </p>
-                <div class="flex items-center gap-2 text-[11px] font-bold text-blue-700/60 mt-2.5">
-                    <span>≈ € <span id="rentMonthly">--</span> / mese</span>
-                    <span class="text-blue-300">·</span>
-                    <span>ROI <span id="roiValue">--</span>%</span>
+            <!-- Card AFFITTO (blu) — numero a sinistra, mese+ROI a destra -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100/40 border border-blue-100 rounded-2xl px-4 py-3 mb-3 flex items-center justify-between gap-3">
+                <div class="min-w-0">
+                    <p class="text-[9px] font-black uppercase tracking-[.18em] text-blue-600 mb-0.5 flex items-center gap-1.5">
+                        <i class="fas fa-handshake text-[10px]"></i> Affitto annuo
+                    </p>
+                    <p class="leading-none flex items-baseline gap-1">
+                        <span class="text-4xl font-black text-blue-700 tracking-tight">€ <span id="rentValue">--</span></span>
+                        <span class="text-base font-bold text-blue-400">/anno</span>
+                    </p>
+                </div>
+                <div class="text-right text-[11px] font-bold text-blue-700/70 leading-tight shrink-0">
+                    <p>≈ <span class="text-blue-700">€ <span id="rentMonthly">--</span></span> /mese</p>
+                    <p class="mt-0.5">ROI <span class="text-blue-700"><span id="roiValue">--</span>%</span></p>
                 </div>
             </div>
 
             <!-- CTA primarie: Vendi / Affitta -->
-            <div class="grid grid-cols-2 gap-3 mb-3">
-                <a href="vendi.html" class="flex flex-col items-center gap-1 bg-emerald-600 text-white font-black py-4 rounded-2xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-100 text-center">
-                    <i class="fas fa-tag text-lg"></i>
-                    <span class="text-sm">Voglio Vendere</span>
+            <div class="grid grid-cols-2 gap-2.5 mb-2.5">
+                <a href="vendi.html" class="flex flex-col items-center gap-0.5 bg-emerald-600 text-white font-black py-3 rounded-2xl hover:bg-emerald-700 transition shadow-md shadow-emerald-100 text-center">
+                    <i class="fas fa-tag text-base"></i>
+                    <span class="text-xs">Voglio Vendere</span>
                 </a>
-                <a href="vendi.html" class="flex flex-col items-center gap-1 bg-blue-600 text-white font-black py-4 rounded-2xl hover:bg-blue-700 transition shadow-lg shadow-blue-100 text-center">
-                    <i class="fas fa-handshake text-lg"></i>
-                    <span class="text-sm">Voglio Affittare</span>
+                <a href="vendi.html" class="flex flex-col items-center gap-0.5 bg-blue-600 text-white font-black py-3 rounded-2xl hover:bg-blue-700 transition shadow-md shadow-blue-100 text-center">
+                    <i class="fas fa-handshake text-base"></i>
+                    <span class="text-xs">Voglio Affittare</span>
                 </a>
             </div>
 
-            <!-- CTA registrazione (lead capture) -->
-            <div id="valSaveCard" class="bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl p-4 mb-3 text-white">
-                <div class="flex items-start gap-3 mb-3">
-                    <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-file-pdf text-amber-300"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <p id="valSaveTitle" class="font-black text-sm leading-tight">Salva la tua valutazione</p>
-                        <p id="valSaveDesc" class="text-white/70 text-xs font-medium mt-0.5 leading-snug">Report PDF dettagliato, alert su nuovi annunci nella tua zona, salvataggio preferiti.</p>
-                    </div>
+            <!-- CTA registrazione (lead capture) — compatta, due colonne -->
+            <div id="valSaveCard" class="bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl p-3 mb-2 text-white flex items-center gap-3">
+                <div class="w-9 h-9 bg-white/15 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-file-pdf text-amber-300 text-sm"></i>
                 </div>
-                <button id="valSaveBtn" onclick="_valOpenSave()" class="w-full bg-white text-slate-900 font-black py-2.5 rounded-xl hover:bg-amber-300 transition text-sm">
-                    Crea account gratuito →
+                <div class="flex-1 min-w-0">
+                    <p id="valSaveTitle" class="font-black text-xs leading-tight">Salva la tua valutazione</p>
+                    <p id="valSaveDesc" class="text-white/60 text-[10px] font-medium leading-snug mt-0.5">PDF, alert annunci e preferiti</p>
+                </div>
+                <button id="valSaveBtn" onclick="_valOpenSave()" class="bg-white text-slate-900 font-black px-3 py-2 rounded-xl hover:bg-amber-300 transition text-xs whitespace-nowrap shrink-0">
+                    Crea account →
                 </button>
             </div>
 
-            <!-- Link soft: annunci simili (poco enfatizzato) -->
-            <p class="text-center text-[11px] text-slate-300 font-semibold mt-2">
+            <!-- Link soft: annunci simili -->
+            <p class="text-center text-[11px] text-slate-300 font-semibold">
                 <a id="valSimiliLink" href="annunci.html" class="hover:text-blue-600 transition">
                     Vedi annunci simili al tuo →
                 </a>
@@ -616,6 +618,8 @@
         document.querySelector('[data-step="' + currentStep + '"]').classList.add('active');
         document.getElementById('backBtn').classList.toggle('hidden', currentStep === 1);
         updateProgress();
+        // Step 6: nasconde titolo+progress per stare in una vista
+        document.body.classList.toggle('is-result', currentStep === 6);
 
         // Calcolo dopo il render — protetto da try/catch già al suo interno
         if (next === 6) {
@@ -630,6 +634,7 @@
         currentStep = stepHistory[stepHistory.length - 1];
         document.querySelector('[data-step="' + currentStep + '"]').classList.add('active');
         document.getElementById('backBtn').classList.toggle('hidden', currentStep === 1);
+        document.body.classList.toggle('is-result', currentStep === 6);
         updateProgress();
     }
 
