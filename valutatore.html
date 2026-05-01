@@ -523,7 +523,7 @@
         currentStep = next;
         stepHistory.push(currentStep);
         document.querySelector('[data-step="' + currentStep + '"]').classList.add('active');
-        document.getElementById('backBtn').classList.toggle('hidden', currentStep === 1 || currentStep === 6);
+        document.getElementById('backBtn').classList.toggle('hidden', currentStep === 1);
         updateProgress();
     }
 

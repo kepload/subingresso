@@ -541,9 +541,9 @@ function openWhatsApp() {
     });
 }
 
-// Maschera numeri di telefono italiani (mobile 3xx e fissi 0x)
+// Maschera numeri di telefono italiani (mobile 3xx e fissi 0x). Separatori: spazio, trattino, punto.
 function maskPhones(text) {
-    return text.replace(/(\+?39[\s\-]?)?\b(3\d{2}|0\d{1,3})([\s\-]?\d{3,4}){1,3}\b/g, '●●● ●●●●●●●');
+    return text.replace(/(\+?39[\s\-\.]?)?\b(3\d{2}|0\d{1,3})([\s\-\.]?\d{3,4}){1,3}\b/g, '●●● ●●●●●●●');
 }
 
 // Ripristina pulsanti e descrizione dopo il login

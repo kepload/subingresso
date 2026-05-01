@@ -138,11 +138,11 @@
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="field-label">Superficie (m&sup2;) *</label>
-                                <input id="fSuperficie" type="number" class="field-input">
+                                <input id="fSuperficie" type="text" inputmode="decimal" class="field-input">
                             </div>
                             <div>
                                 <label class="field-label">Prezzo richiesto (&euro;) *</label>
-                                <input id="fPrezzo" type="number" class="field-input">
+                                <input id="fPrezzo" type="text" inputmode="numeric" class="field-input">
                             </div>
                         </div>
                     </div>
@@ -315,7 +315,7 @@ async function updateAnnuncio() {
     const titolo = document.getElementById('fTitolo').value.trim();
     const regione = document.getElementById('fRegione').value;
     const comune = document.getElementById('fComune').value.trim();
-    const prezzo = parseFloat(document.getElementById('fPrezzo').value);
+    const prezzo = parseFloat(document.getElementById('fPrezzo').value.replace(/\./g, '').replace(',', '.'));
 
     const descrizione = document.getElementById('fDescrizione').value.trim();
     const nome = document.getElementById('fNome').value.trim();
@@ -333,8 +333,8 @@ async function updateAnnuncio() {
         showToast('Il prezzo minimo è 100 €.', 'warning');
         return;
     }
-    if (descrizione.length < 50) {
-        showToast(`La descrizione è troppo breve (${descrizione.length} caratteri). Scrivi almeno 50 caratteri.`, 'warning');
+    if (descrizione.length < 10) {
+        showToast(`La descrizione è troppo breve (${descrizione.length} caratteri). Scrivi almeno 10 caratteri.`, 'warning');
         return;
     }
     if (btn.disabled) return;
@@ -368,7 +368,7 @@ async function updateAnnuncio() {
             titolo,
             regione,
             comune,
-            superficie: parseFloat(document.getElementById('fSuperficie').value),
+            superficie: parseFloat(document.getElementById('fSuperficie').value.replace(',', '.')),
             prezzo,
             descrizione,
             contatto: nome,
@@ -391,7 +391,7 @@ async function updateAnnuncio() {
 
         if (error) throw error;
         
-        showToast('Annuncio aggiornato con successo!', 'success');
+        showToast('Modifiche inviate per revisione. L\'annuncio tornerà online dopo l\'approvazione admin.', 'success');
         setTimeout(() => { location.href = 'dashboard.html'; }, 1200);
 
     } catch (err) {
