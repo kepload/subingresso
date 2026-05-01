@@ -115,6 +115,18 @@
         body.is-result #seoContent,
         body.is-result #siteFooter { display: none !important; }
         body.is-result #calculatorForm { width: 100%; }
+
+        /* Mobile only: niente centratura verticale (su schermo basso resta troppo spazio sopra),
+           e card "Salva la tua valutazione" più compatta (descrizione nascosta, niente icona). */
+        @media (max-width: 640px) {
+            main { justify-content: flex-start !important; padding-top: 1rem; }
+            #valSaveDesc { display: none; }
+            #valSaveCard { padding: 0.625rem 0.75rem; gap: 0.5rem; }
+            #valSaveCard > div:first-child { width: 1.75rem; height: 1.75rem; }
+            #valSaveCard > div:first-child i { font-size: 0.7rem; }
+            #valSaveTitle { font-size: 0.78rem; }
+            #valSaveBtn { font-size: 0.68rem; padding: 0.4rem 0.65rem; }
+        }
     </style>
 </head>
 <body class="bg-neutral-100 text-slate-900 min-h-screen flex flex-col">
