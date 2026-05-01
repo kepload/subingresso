@@ -65,3 +65,17 @@
 - `c7d62d8 Direct fetch INSERT + prefill cache`
 - `db1a251 Fetch diretto profile + storage upload`
 - `f8709dd Prefill leggi sessione da localStorage senza supabase-js`
+
+## Sessione 1 Maggio 2026 - Pulizia incoerenze sito
+
+- Commit pushato: `6c76084 Clean up site inconsistencies`.
+- Rimossa dai meta/SSR la promessa fuorviante "annunci verificati"; usare "contatto diretto" finche' non esiste una verifica reale.
+- Filtri annunci: label utente "Affitto" ma valore interno ancora `Affitto mensile` per compatibilita' con i dati esistenti.
+- Input numerici nei filtri annunci convertiti a `type="text" inputmode="numeric"`; parsing italiano in `js/pages/annunci.js` con punti migliaia e virgola decimale.
+- SSR `api/annuncio.js` e `api/annunci-citta.js`: l'affitto annuale ora funziona sia con `Affitto` sia con `Affitto mensile`; prezzo mobile SSR usa lo stesso markup con `/anno`.
+- Dashboard: rimossi join fragili `profiles!` da conversazioni e join diretto `profiles(...)` da pending listings; usare fetch separati su `profiles` + merge manuale.
+- `modifica-annuncio.html`: preserva `dettagli_extra` esistente quando aggiorna le immagini, invece di sovrascriverlo con solo `{ images }`.
+- `.vercelignore`: esclusi dal deploy file `.md`, `.sql`, `.claude`, `.vercel`, `scripts/.bin`, `supabase/.temp`.
+- Eliminati SQL demo/vecchi non piu' utili: `INSERT_ANNUNCI_DEMO.sql`, `INSERT_PROFILI_DEMO.sql`, `PATCH_FIX_ANNUNCI_DEMO_PROFILI.sql`.
+- Conservati SQL infrastrutturali/diagnostici (`SETUP_*`, `PATCH_*` non demo, `DIAGNOSE_PUBLISH_SLOW.sql`, `setup-database.sql`) perche' ancora utili.
+- Verifiche eseguite: `node --check` sui JS, grep pattern vecchi (`Annunci verificati`, `profiles!`, `type="number"`, `annua e mensile`) senza risultati.
