@@ -645,7 +645,12 @@
         return Math.round(n).toLocaleString('it-IT').replace(/\./g, ' ');
     }
 
-
+    function snap(n) {
+        if (n >= 50000) return Math.round(n / 5000) * 5000;
+        if (n >= 10000) return Math.round(n / 1000) * 1000;
+        if (n >= 1000)  return Math.round(n / 500)  * 500;
+        return Math.round(n / 50) * 50;
+    }
 
     // Snap piu' fine per valori piccoli (affitti mensili).
     function snapSmall(n) {
