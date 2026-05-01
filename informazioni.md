@@ -177,3 +177,58 @@ Primi iscritti non pubblicavano. Aggiunta welcome email transazionale subito dop
 - Transazionali: `send-auth-email` (5), `notify-seller` (3), `notify-alert` (1), `notify-message` (1), **`welcome-email` (1, NUOVO)**.
 - Cron settimanali: `weekly-seller-stats` (1), `weekly-buyer-digest` (1).
 - Cap consigliato: max 1 email/settimana per utente sommando tutte le sorgenti.
+
+## Sessione 2 Maggio 2026 - Strategia infra-costi e analisi competitor
+
+### Limiti email Supabase: NON applicabili
+- Il limite "2 email/ora" del SMTP built-in Supabase è bypassato: tutte le email auth passano dall'Auth Hook `send-auth-email` → Resend. Tutte le transazionali e cron chiamano direttamente Resend. Quindi i limiti veri sono solo quelli di Resend.
+
+### Soglie upgrade tier free → pagamento (ordine in cui satureranno)
+- **Vercel Hobby → Pro $20/mese**: già *fuori policy* (sito commerciale). Tecnicamente da fare ora ma utente ha detto "aggiornerò quando rompono". OK così.
+- **Resend Free (3000/mese, 100/giorno) → Pro $20/mese**: si satura PRIMA per via dei cron settimanali. Soglia pratica ~80-100 utenti email-attivi totali. **Quick win gratis prima dell'upgrade**: spalmare `weekly-buyer-digest` (lunedì) e `weekly-seller-stats` (giovedì) su giorni diversi → dimezza il picco giornaliero.
+- **Supabase Free → Pro $25/mese**: il vincolo NON è MAU (50k irraggiungibili nel settore), ma **storage foto 1GB**. Soglia ~300-400 annunci con foto (5 × 500KB).
+
+### Costi a regime realistico (TAM 10-20k utenti, NON 50k+)
+- Anno 1 (2026): tutto free → **€0-20/mese**
+- Anno 2-3: Resend Pro + magari Vercel → **€20-40/mese**
+- Plateau (anno 3-4+): stack ottimizzato → **€30-50/mese** (~€500/anno)
+- Il €135/mese probabilmente non si raggiungerà mai: era scenario 5k+ utenti attivi che è oltre il TAM realistico del settore (150k ambulanti totali in Italia, ~5-10% turnover/anno).
+
+### Stack ottimizzato per quando avrà senso (>2k utenti)
+- **Cloudflare Pages** (gratis, anche commerciale, illimitato) → sostituisce Vercel
+- **Cloudflare R2** (storage foto: 10GB free + ZERO egress, S3-compatible) → sostituisce Supabase Storage
+- **Brevo** ($9/mese Starter, $25/mese 40k email) → sostituisce Resend Pro/Scale (taglia 65-70% costo email)
+- **Supabase Pro** ($25) → resta, è il cuore (DB+Auth+Edge Functions). Migrare significa riscrivere tutto, non conviene.
+- Effort migrazione: Vercel→Pages 1-2h, Resend→Brevo 2-3h (cambio API in 7 edge functions), Supabase→R2 4-6h (script migrazione foto + cambio URL in DB + upload via API S3).
+
+### Analisi mercato e TAM
+- **Ambulanti Italia**: ~150k operatori, 5-10% turnover annuo = 7.500-15.000 transazioni teoriche/anno. Quote di mercato realistica per Subingresso: 30-60% nel medio termine = 500-3.500 transazioni/anno gestite.
+- **Plateau utenti realistico**: 10-20k registrati totali, 2.500-6.000 MAU.
+- **38.000 cessioni di attività commerciali** censite in Italia nel 2025 (+18% vs 2022, +12% prevista 2026). Mercato totale "cessione attività con licenza" = miliardi/anno.
+
+### Mercati adiacenti per espansione (TAM "trasferimenti licenze IT")
+Stima totale ~€0.5-5 miliardi/anno. Difficoltà ingresso (1=facile, 5=quasi impossibile):
+- ✅ **Edicole** (1/5) — nessun verticale, target affine, anno 2
+- ✅ **Autoscuole** (1/5) — vergine, ticket €50-200k, anno 2
+- ✅ **Compro Oro** (1-2/5) — vergine, anno 2-3
+- 🟡 **Taxi/NCC** (2/5) — niente leader verticale, ticket €100-180k, anno 3
+- 🟡 **Tabacchi** (3/5) — Cedesitabaccheria + Tabaccherievendita aggredibili (UX vecchia), anno 3-4
+- 🟠 **B&B** (3/5) — generalisti immobiliari forti
+- 🟠 **Stabilimenti balneari** (4/5) — Mondo Balneare presidio + Bolkestein incertezza, aspettare
+- 🟠 **Distributori carburante** (4/5) — mercato chiuso B2B
+- 🔴 **Farmacie** (5/5) — **NO**, 5 mediatori storici (Pharmascout, Pharmabroker, Farma5, FaroFarma, FarmaCaratto)
+
+### Player generalisti italiani da tenere d'occhio
+- Tier 1 (DA alto): **Casa.it** (sezione attività e licenze), **Subito.it**, Immobiliare.it, Idealista
+- Tier 2 (verticali cessione attività): **B2scout**, **Attivita24** (più evoluto: AI matchmaking + NDA digitale + valutazione), Commerciali.it, Annunci Industriali, VetrinaFacile, ConsultingItaliaGroup, sel.bz.it
+- Pericolo reale: nessuno fa SEO programmatica verticale né integra lead gen finanziaria specializzata. Tu vinci con long-tail iper-specifica + contenuti normativi + valutatore + dati strutturati di settore.
+
+### Lezione strategica chiave (modello da replicare)
+**Immobiliare.it 2024**: €108M fatturato, **+€27M utile** (25% margine).
+**Subito.it 2024**: €86M fatturato, **-€15M perdita**.
+Stessa scala, performance opposta. Differenza: Immobiliare.it monetizza con **lead gen mutui** (MutuiOnline), Subito.it è classifieds puro.
+**Roadmap monetizzazione Subingresso**: NON puntare al volume annunci, puntare alla **lead gen finanziaria verticale** (microcredito, broker OAM). A 5k utenti, 5-10% lead conversion × CPL €30 = €7.5-15k/anno revenue su €600/anno infra. Margine ~95%. Replicabile su edicole/autoscuole/compro oro = entrate moltiplicate, costi infra invariati.
+
+### Prossime sessioni - opzioni aggiunte
+- (h) **Pagine programmatiche per i ~8.000 comuni italiani** (subingresso.it/comune/{slug}) — singolo lavoro che porta più di tutto verso leadership SEO. Anche con 0 annunci attivi, riempire con dati settore/normativa/mercati/dati valutatore per attirare traffico organico.
+- (i) **Spalmare i 2 cron settimanali su giorni diversi** (gratis, allunga vita free Resend) — 5 minuti di lavoro.
