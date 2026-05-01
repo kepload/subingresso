@@ -448,3 +448,15 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 
 ### Importante: lookup città con accenti
 Il bug più sottile risolto: `slugToCity('salo')` ritorna `'Salo'` senza accento → query Supabase `comune=ilike.Salo` non matcha annunci con `comune='Salò'`. Soluzione: lookup PRIMA in `CAPOLUOGHI_BY_SLUG` (che ha il nome corretto con accento), fallback su `slugToCity()` solo per slug non riconosciuti. Tutte le città italiane con accenti (Forlì, Salò, L'Aquila, Cefalù, Cortina d'Ampezzo) sono in lista esplicita.
+
+### Chiusura sessione 1 maggio 2026 — checkpoint operativo
+- **Rich Results Test verificato dall'utente**: `/blog?post=bandi-posteggi-mercatali-lombardia` → ✅ 1 elemento `Articles` valido (NewsArticle riconosciuto). `/annunci/milano` → ✅ 3 elementi validi (BreadcrumbList + Carousels=ItemList + FAQ). AggregateOffer non viene contato come "rich result" ma è valido come schema.
+- **Indicizzazione manuale Search Console**: l'utente ha indicizzato 9 articoli "Bandi" il 1 mag (Lombardia → Toscana). Quota giornaliera Search Console = ~10-15 URL/giorno. Resto da indicizzare nei giorni successivi tracciato in `C:\Users\utente\Desktop\indicizzazione-search-console.txt` (file utility creato per l'utente, non parte del repo): 11 bandi rimanenti + 17 città con annunci + 10 capoluoghi placeholder + 15 capoluoghi medi opzionali.
+- **Decisione "annunci finti per attivare pagine SEO geo"**: scartata. Soluzione adottata: pagine placeholder oneste indicizzabili (vedi blocco sopra). L'utente ha confermato la scelta.
+- **Filoni futuri proposti** (in ordine di ROI per il prossimo lavoro):
+  1. **Domande dolorose specifiche** (12-15 articoli, 1.800-2.500 char) — "Cosa succede al posteggio se vado in pensione", "Pignoramento posteggio", "Furto al banco", "Posteggio ereditato e divisione fra fratelli", "Multa al banco", "Banchi vicini sleali". Risposte dirette, catturano AI Overview di Google. **Filone consigliato come prossimo**.
+  2. **Mercati storici per nome** (30-40 articoli) — Porta Palazzo, Senigallia Naviglio, Vucciria/Capo/Ballarò, Pignasecca, Sant'Ambrogio, Fera 'O Luni, ecc. Lavoro più lungo ma traffico stabile sul lungo periodo.
+  3. **Numeri & classifiche** Discover-friendly — "Quanto guadagna davvero un ambulante", "10 posteggi più cari d'Italia", "Settori più redditizi al mercato". 5-7 articoli.
+  4. **Storie e casi reali** — diari di vendita/acquisto. 3-5 articoli.
+  5. **Tool interattivi** — calcolatore presenze/spunte, calendario mercati per città, stima IRPEF/IVA ambulanti. Landing page, non blog post.
+- **`Annunci Demo`** ancora presenti nel DB (10 annunci finti Carla M./Marco V. su admin) — NON cancellati: il sito ne ha ancora bisogno per popolare l'UI mentre arrivano annunci veri. Da rivedere quando ci saranno 30+ annunci reali.
