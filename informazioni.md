@@ -149,3 +149,31 @@
 - (c) Banner "completa profilo" in dashboard al primo login per raccogliere nome+cognome (telefono solo nel form pubblicazione).
 - (d) Sistemare i redirect `.html` per Search Console.
 - (e) Generazione PDF server-side (edge function + Puppeteer/pdfshift) per report — oggi MVP usa `window.print()`.
+- (f) Reminder Day 3 / Day 7 per iscritti inattivi — richiede prima campo `intent` (vedi punto a) per essere mirati.
+- (g) Re-engagement Day 30 per utenti totalmente inattivi (no login, no annunci, no preferiti).
+
+## Sessione 1 Maggio 2026 (sera 2) - Welcome email Day 0
+
+### Obiettivo
+Primi iscritti non pubblicavano. Aggiunta welcome email transazionale subito dopo signup per riattivare l'attenzione con 2 CTA chiare (pubblica / cerca).
+
+### Edge Function `welcome-email` (nuova, n.7)
+- File: `supabase/functions/welcome-email/index.ts`. Inviata via Resend con `from: noreply@subingresso.it`.
+- Subject: `👋 Benvenuto su Subingresso.it`. Saluto personalizzato `Ciao {nome}` se presente in `user_metadata.nome`, altrimenti `Ciao,`.
+- Layout: header blu, hero, **2 CTA box affiancate** (verde "Pubblica annuncio" → `/vendi.html`, blu "Esplora annunci" → `/annunci.html`), sezione "Come funziona in 3 passi", footer con privacy/termini/disiscriviti.
+- Link unsubscribe: `unsubscribe.html?t={unsub_token}&type=all` (best effort, fallback `/contatti.html` se manca il token).
+- Body atteso: `{ user_id: UUID }`. Edge function recupera email + metadata via service_role.
+
+### Wiring in `register-bypass`
+- Aggiunta `triggerWelcomeEmail(userId)` **fire-and-forget** (no `await`): non blocca la response al client e ogni errore è solo `console.error`. Mantiene il principio "registrazione mai bloccata da email".
+- Chiamata SOLO sul percorso "utente nuovo creato". NON viene rimandata sul ramo "account riattivato" (utente esisteva non confermato): logica = welcome è one-shot, già inviata in passato.
+- Auth header service_role + `apikey`. URL: `${SUPABASE_URL}/functions/v1/welcome-email`.
+
+### Deploy
+- `npx.cmd supabase functions deploy welcome-email --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt`
+- `npx.cmd supabase functions deploy register-bypass --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt`
+
+### Mappa email aggiornata (7 edge functions, 13 tipi)
+- Transazionali: `send-auth-email` (5), `notify-seller` (3), `notify-alert` (1), `notify-message` (1), **`welcome-email` (1, NUOVO)**.
+- Cron settimanali: `weekly-seller-stats` (1), `weekly-buyer-digest` (1).
+- Cap consigliato: max 1 email/settimana per utente sommando tutte le sorgenti.

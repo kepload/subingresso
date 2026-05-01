@@ -65,6 +65,7 @@ Deno.serve(async (req) => {
         if (updateErr) return json({ error: updateErr.message }, 400);
         await upsertProfile(admin, existing.id, nome, cognome, telefono, eligible);
         await logPendingVerification(admin, existing.id, cleanEmail);
+        // Account riattivato: niente welcome (gia' inviata in precedenza).
         return json({ success: true });
       }
 
@@ -77,6 +78,7 @@ Deno.serve(async (req) => {
 
     await upsertProfile(admin, userData.user.id, nome, cognome, telefono, eligible);
     await logPendingVerification(admin, userData.user.id, cleanEmail);
+    triggerWelcomeEmail(userData.user.id);
 
     return json({ success: true });
   } catch (e) {
@@ -131,6 +133,26 @@ async function logPendingVerification(admin: ReturnType<typeof createClient>, us
     if (error) console.error('register-bypass pending email log error:', error);
   } catch (e) {
     console.error('register-bypass pending email log exception:', e);
+  }
+}
+
+// Invia welcome email senza bloccare la risposta al client.
+// Ogni errore e' loggato ma non risale: la registrazione non deve mai
+// fallire perche' l'invio email transazionale non e' andato a buon fine.
+function triggerWelcomeEmail(userId: string) {
+  try {
+    const url = `${SUPABASE_URL}/functions/v1/welcome-email`;
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+        'apikey': SUPABASE_SERVICE_ROLE_KEY,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user_id: userId }),
+    }).catch((e) => console.error('register-bypass welcome-email fetch error:', e));
+  } catch (e) {
+    console.error('register-bypass welcome-email trigger exception:', e);
   }
 }
 
