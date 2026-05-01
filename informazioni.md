@@ -79,3 +79,73 @@
 - Eliminati SQL demo/vecchi non piu' utili: `INSERT_ANNUNCI_DEMO.sql`, `INSERT_PROFILI_DEMO.sql`, `PATCH_FIX_ANNUNCI_DEMO_PROFILI.sql`.
 - Conservati SQL infrastrutturali/diagnostici (`SETUP_*`, `PATCH_*` non demo, `DIAGNOSE_PUBLISH_SLOW.sql`, `setup-database.sql`) perche' ancora utili.
 - Verifiche eseguite: `node --check` sui JS, grep pattern vecchi (`Annunci verificati`, `profiles!`, `type="number"`, `annua e mensile`) senza risultati.
+
+## Sessione 1 Maggio 2026 (sera) - Tracking valutatore + storico nel profilo + restyle
+
+### Strategia consolidata
+- Bolkestein: non e' un rischio reale (l'anzianita' viene mantenuta nel ricalcolo). Non serve scenario B per ora, restiamo verticali (no estensione ad altre licenze locali).
+- Direzione: smettere di pensare il sito come "bacheca", posizionarsi come "primo operatore digitale del subingresso italiano" (funnel end-to-end).
+- Monetizzazione roadmap: Tier 1 microcredito (PerMicro, Banca Etica), Tier 2 prestiti consumer (Cofidis/Findomestic/Compass/Younited), Tier 3 broker creditizi OAM (Auxilia, Credipass, BPIfutura) come ingresso piu' rapido. Modelli CPL EUR 15-50 o CPA 1-5%.
+- Lead capture: progressive profiling, mai chiedere telefono al primo contatto. Email+password al signup, nome/telefono solo quando serve (pubblicazione annuncio, alert SMS, richiesta finanziamento).
+- Dati: oggi raccogliamo abbastanza. Prossime aggiunte ad alto ROI = `intent` (vendi/compra/curioso) + `comune_posteggio` (autocomplete da COMUNI_IT). Tutto il resto (budget, telefono, P.IVA) si aggiunge solo quando arrivano i partner.
+
+### Tracking valutatore Ondata 1 (commit `a6db49b`)
+- ALTER `valutatore_logs`: +10 colonne (`referrer`, `utm_source/medium/campaign`, `landing_path`, `device_type`, `country`, `region`, `tempo_compilazione_sec`, `algoritmo_version`).
+- `/api/geo.js`: serverless Vercel che ritorna `{country, region}` dagli header `x-vercel-ip-country` (gratis).
+- `js/auth.js` cattura referrer esterno + UTM + landing_path al primo hit della sessione in `sessionStorage._acq_*`.
+- `valutatore.html` ha lo stesso fallback inline (utenti che atterrano direttamente sul valutatore).
+- Edge function `admin-valutatore-logs` (service_role + check `is_admin`) deployata con `--no-verify-jwt`.
+- Admin panel in `dashboard.html`: sezione "Valutazioni" con stats badges (30g/registrati/pubblicato) + ultimi 5 + modale "Mostra altre" con search.
+
+### Saved listings - preferiti (commit `4ad6a08`)
+- Tabella `saved_listings (user_id, annuncio_id, created_at)` con RLS owner-only (SELECT/INSERT/DELETE).
+- Cuoricino in `data.js buildCard()` (in alto a destra delle card).
+- Tasto "Salva nei Preferiti" in `annuncio.html` (desktop + mobile cuoricino).
+- Tab "Preferiti" in dashboard con badge contatore rosso.
+- Click anonimo -> apre modal registrazione + salva `_pending_save_listing` in sessionStorage. Dopo signup `processPendingSaveListing()` salva automaticamente.
+- `SAVED_IDS` Set globale in `data.js`. `loadSavedListingsCache()` chiamata da auth.js dopo login.
+- Nascosto sui propri annunci.
+
+### Report dettagliato + storico nel profilo (commit `e2c2dd3` + `d8d306e`)
+- Nuova policy RLS SELECT su `valutatore_logs` per owner (`auth.uid() = user_id`).
+- `report.html?id=UUID` (o `?session=TOKEN`): pagina report con stima, breakdown moltiplicatori, comparabili da DB (annunci attivi nel range +-50%), checklist documenti, bottone "Stampa / PDF" (window.print con @media print).
+- Tab "Valutazioni" in `dashboard.html` con lista delle proprie valutazioni (data, stima cessione+affitto, zona/settore/freq, fatturato, badge "Pubblicato" se `annuncio_id`). Bottone "Apri report" -> `report.html?id=UUID`.
+- `showTab()` legge hash URL: `dashboard.html#valutazioni` apre la tab.
+
+### Flusso post-signup dal valutatore
+- Click "Crea account" sul valutatore -> `_post_auth_intent='valutatore_save'` in sessionStorage.
+- `auth.js _checkPostAuthIntent()`: dopo signup salva `_highlight_session` e fa redirect a `dashboard.html#valutazioni` (NON piu' a `report.html` standalone).
+- `_linkValutatoreSession()` ora awaited per evitare race condition: il log deve avere user_id collegato prima del redirect.
+
+### Highlight valutazione appena fatta (commit `3997e0c`)
+- Click "Vai alle mie valutazioni" (loggato) -> salva `sessionStorage._highlight_session = _val_session` -> dashboard.
+- Card valutazione hanno `data-session-token`. Dopo `loadMyValutazioni()`, `_highlightFreshValutazione()` cerca la card e applica `.valutazione-highlight` per ~6s (border verde + box-shadow pulsante 4 cicli) + `scrollIntoView`.
+
+### Restyle pagina risultato valutatore
+- Card simmetriche verde (Cessione) + blu (Affitto annuo): label minuscola in alto sinistra, numero grande sotto, dettagli (range / mese+ROI) come stat block a destra dentro la stessa card.
+- "Nuova valutazione" sostituito da icona reload (no scritta).
+- Card "Salva la tua valutazione" compatta: layout orizzontale, icona + titolo + bottone inline.
+- Step 6 full-screen: nasconde `#seoContent`, `#siteFooter`, `.pre-result` (titolo+progress) via `body.is-result`.
+- Main full viewport SEMPRE (`min-height: calc(100vh - 68px)`): durante step intermedi il contenuto SEO scorre sotto la piega ma resta indicizzabile da Google.
+- Mobile (<=640px): `justify-content: flex-start` (no spazio vuoto sopra), card "Salva valutazione" ulteriormente compatta (icona ridotta, descrizione nascosta, padding stretto).
+
+### Bug storici risolti questa sessione
+- **CRITICO**: la regex Python che doveva aggiungere `snapSmall()` ha cancellato `snap()`. Risultato: `calculate()` lanciava ReferenceError silenzioso (try/catch difensivo lo nascondeva) e i risultati restavano "EUR --". **Lezione**: mai usare regex multi-line `[\s\S]*?` su pattern di funzioni multipli senza riverificare l'output. Edit puntuale o Read+Edit e' piu' sicuro.
+- File HTML editati da editor che iniettano caratteri Unicode invisibili: U+200A (hair space) nello spazio del `replace`, U+0300 (combining grave accent) negli accenti italiani, control char 0x01 (SOH) lasciati da regex Python. Causa replace falliti silenziosi. Pulizia con Python: `bytes(b for b in raw if b >= 0x20 or b in (0x09, 0x0A, 0x0D))`.
+- `nextStep()`: ora mostra step 6 PRIMA di chiamare `calculate()`. Se calculate() lanciava errore, lo step 5 si nascondeva ma lo step 6 non veniva attivato -> schermata vuota. Try/catch difensivo + ordine separato.
+
+### Cache versioni attuali
+- `data.js?v=7` (cuoricino + SAVED_IDS + toggleSaveListing)
+- `auth.js?v=8` (_acq_*, processPendingSaveListing, _checkPostAuthIntent, _highlight_session)
+- `annuncio-detail.js?v=5`
+- Bump cache su tutte le pagine principali quando si modifica uno di questi file.
+
+### Search Console (TODO non fatto)
+- Avviso del 27 apr "Pagina con reindirizzamento": causa = `valutatore.html` ha canonical `/valutatore.html` (URL che redirige a `/valutatore` per `cleanUrls: true`) + tutti gli href interni del sito sono `.html` (creano 308 redirect). Fix proposto ma non eseguito: cambio canonical valutatore + strip `.html` da href interni.
+
+### Prossime sessioni - opzioni in coda
+- (a) Aggiungere step `intent` (vendi/compra/curioso) + `comune_posteggio` al valutatore (alto ROI, ~1h).
+- (b) Pannello admin per export CSV lead (preparazione partner finanziari).
+- (c) Banner "completa profilo" in dashboard al primo login per raccogliere nome+cognome (telefono solo nel form pubblicazione).
+- (d) Sistemare i redirect `.html` per Search Console.
+- (e) Generazione PDF server-side (edge function + Puppeteer/pdfshift) per report — oggi MVP usa `window.print()`.
