@@ -474,7 +474,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/data.js?v=7"></script>
-<script src="js/auth.js?v=7"></script>
+<script src="js/auth.js?v=8"></script>
 
 <script>
     // ── Tracking acquisizione (Ondata 1) — fallback se l'utente atterra
@@ -713,7 +713,7 @@
             _supabase.auth.getUser().then(function(res) {
                 try {
                     if (!res || !res.data || !res.data.user) return;
-                    btn.innerHTML = '<i class="fas fa-file-pdf mr-2"></i> Vai al report dettagliato →';
+                    btn.innerHTML = '<i class="fas fa-folder-open mr-2"></i> Vai alle mie valutazioni →';
                     btn.disabled = false;
                     btn.classList.remove('bg-white', 'hover:bg-amber-300');
                     btn.classList.add('bg-amber-300', 'hover:bg-amber-400');
@@ -721,7 +721,7 @@
 
                     var desc = document.getElementById('valSaveDesc');
                     if (desc) {
-                        desc.textContent = 'La tua valutazione è già nel tuo account. Apri il report dettagliato con stima, fattori, comparabili e checklist.';
+                        desc.textContent = 'Valutazione salvata. Trovi tutto lo storico nel tuo profilo, con report e PDF.';
                     }
                 } catch (_) { /* mai bloccare il flusso */ }
             }).catch(function(){});
