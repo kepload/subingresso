@@ -245,7 +245,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Foto esistenti
     let extra = l.dettagli_extra;
     if (typeof extra === 'string') { try { extra = JSON.parse(extra); } catch(e) {} }
-    const existingImages = (l.img_urls) || (extra && extra.images) || [];
+    _currentExtra = (extra && typeof extra === 'object') ? extra : {};
+    const existingImages = (l.img_urls) || (_currentExtra.images) || [];
     existingImages.forEach(url => addPreview(url, true));
 
     document.getElementById('loading').classList.add('hidden');
@@ -258,6 +259,7 @@ const fileInput = document.getElementById('fileInput');
 const preview  = document.getElementById('previewContainer');
 let _newFiles = [];
 let _currentImageUrls = [];
+let _currentExtra = {};
 
 dropzone.addEventListener('click', () => fileInput.click());
 fileInput.addEventListener('change', e => handleFiles(e.target.files));
@@ -374,7 +376,10 @@ async function updateAnnuncio() {
             contatto: nome,
             tel: tel,
             stato: document.querySelector('input[name="stato"]:checked').value,
-            dettagli_extra: { images: finalImages },
+            dettagli_extra: {
+                ..._currentExtra,
+                images: finalImages
+            },
             img_urls: finalImages,
             status: 'pending'
         };

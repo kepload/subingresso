@@ -1,6 +1,12 @@
 # Ignora file di setup e database nel deploy
+*.md
+*.sql
 SETUP.md
 setup-database.sql
 .git
 .gitignore
+.claude
+.vercel
 node_modules
+scripts/.bin
+supabase/.temp

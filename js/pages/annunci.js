@@ -15,6 +15,8 @@ if (fRegione) {
 }
 
 if (params.get('regione') && fRegione) fRegione.value = params.get('regione');
+const fStatoParam = document.getElementById('fStato');
+if (params.get('stato') && fStatoParam) fStatoParam.value = params.get('stato');
 if (params.get('q')) {
     const sBar = document.getElementById('searchBar');
     if (sBar) sBar.value = params.get('q');
@@ -114,6 +116,14 @@ function _showSuggestions(input) {
 }
 
 // ── FILTER & RENDER ──
+function parseItalianNumber(value, fallback = 0) {
+    const raw = String(value || '').trim();
+    if (!raw) return fallback;
+    const normalized = raw.replace(/\./g, '').replace(',', '.').replace(/[^\d.]/g, '');
+    const parsed = parseFloat(normalized);
+    return Number.isFinite(parsed) ? parsed : fallback;
+}
+
 function applyFilters() {
     const fReg    = document.getElementById('fRegione');
     const fTipo   = document.getElementById('fTipo');
@@ -127,9 +137,9 @@ function applyFilters() {
     const regione   = fReg   ? fReg.value   : '';
     const tipo      = fTipo  ? fTipo.value  : '';
     const stato     = fStato ? fStato.value : '';
-    const prezzoMin = (fPMin && fPMin.value)     ? parseFloat(fPMin.value)   : 0;
-    const prezzoMax = (fPMax && fPMax.value)     ? parseFloat(fPMax.value)   : Infinity;
-    const supMin    = (fSupMin && fSupMin.value)  ? parseFloat(fSupMin.value) : 0;
+    const prezzoMin = (fPMin && fPMin.value)     ? parseItalianNumber(fPMin.value, 0)        : 0;
+    const prezzoMax = (fPMax && fPMax.value)     ? parseItalianNumber(fPMax.value, Infinity) : Infinity;
+    const supMin    = (fSupMin && fSupMin.value) ? parseItalianNumber(fSupMin.value, 0)      : 0;
     const qRaw      = fSBar ? fSBar.value.trim() : '';
     LAST_SEARCH_QUERY = qRaw;
     const q = normalizeText(qRaw);

@@ -1388,25 +1388,11 @@ async function loadPendingListings() {
     if (!_isAdmin) return;
 
     try {
-        // Tentativo 1: Con join profili
-        // Nota: se la relazione non viene trovata, assicurarsi che user_id in 'annunci' referenzi 'profiles(id)'
         let { data, error } = await _supabase
             .from('annunci')
-            .select('*, profiles(nome, cognome, telefono)')
+            .select('*')
             .eq('status', 'pending')
             .order('created_at', { ascending: true });
-
-        // Se il join fallisce (errore relazione), tenta con sintassi esplicita o fallback
-        if (error && (error.message.includes('relationship') || error.code === 'PGRST200')) {
-            console.warn("Relazione profili non trovata, tento fallback...");
-            const fallback = await _supabase
-                .from('annunci')
-                .select('*')
-                .eq('status', 'pending')
-                .order('created_at', { ascending: true });
-            data = fallback.data;
-            error = fallback.error;
-        }
 
         if (error) {
             console.error("Errore recupero annunci pending:", error);
@@ -1427,8 +1413,18 @@ async function loadPendingListings() {
         if (section) section.classList.remove('hidden');
         if (badge)   badge.textContent = data.length;
 
+        const userIds = [...new Set(data.map(l => l.user_id).filter(Boolean))];
+        const profilesMap = {};
+        if (userIds.length) {
+            const { data: profiles } = await _supabase
+                .from('profiles')
+                .select('id, nome, cognome, telefono')
+                .in('id', userIds);
+            (profiles || []).forEach(p => { profilesMap[p.id] = p; });
+        }
+
         list.innerHTML = data.map(l => {
-            const user = l.profiles || {}; // Gestione fallback se profiles è null
+            const user = profilesMap[l.user_id] || {};
             const cleanTel = user.telefono ? user.telefono.replace(/\D/g, '') : (l.tel ? l.tel.replace(/\D/g, '') : '');
             const safeId = escapeHTML(l.id || '');
             const safeTitle = escapeHTML(l.titolo || '');
@@ -1717,10 +1713,8 @@ async function loadMyConversations() {
     const { data, error } = await _supabase
         .from('conversazioni')
         .select(`
-            id, created_at,
-            annuncio:annunci(id, titolo, regione),
-            acquirente:profiles!conversazioni_acquirente_id_fkey(id, nome, cognome),
-            venditore:profiles!conversazioni_venditore_id_fkey(id, nome, cognome)
+            id, created_at, acquirente_id, venditore_id,
+            annuncio:annunci(id, titolo, regione)
         `)
         .or(`acquirente_id.eq.${_currentUser.id},venditore_id.eq.${_currentUser.id}`)
         .order('created_at', { ascending: false });
@@ -1735,9 +1729,20 @@ async function loadMyConversations() {
         return;
     }
 
+    const userIds = [...new Set(data.flatMap(c => [c.acquirente_id, c.venditore_id]).filter(Boolean))];
+    const profilesMap = {};
+    if (userIds.length) {
+        const { data: profiles } = await _supabase
+            .from('profiles')
+            .select('id, nome, cognome')
+            .in('id', userIds);
+        (profiles || []).forEach(p => { profilesMap[p.id] = p; });
+    }
+
     grid.innerHTML = data.map(c => {
-        const isAcquirente = c.acquirente?.id === _currentUser.id;
-        const other = isAcquirente ? c.venditore : c.acquirente;
+        const isAcquirente = c.acquirente_id === _currentUser.id;
+        const otherId = isAcquirente ? c.venditore_id : c.acquirente_id;
+        const other = profilesMap[otherId];
         const otherName = other ? `${other.nome || ''} ${other.cognome || ''}`.trim() || 'Utente' : 'Utente';
         const listing = c.annuncio;
         const safeConvId = escapeHTML(c.id || '');

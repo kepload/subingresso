@@ -33,8 +33,9 @@ function buildTitle(l) {
 }
 
 function buildDesc(l) {
+    const isAffitto = l.stato === 'Affitto' || l.stato === 'Affitto mensile';
     const prezzo = l.prezzo
-        ? `€${Number(l.prezzo).toLocaleString('it-IT')}${l.stato === 'Affitto' ? '/anno' : ''}`
+        ? `€${Number(l.prezzo).toLocaleString('it-IT')}${isAffitto ? '/anno' : ''}`
         : 'prezzo da trattare';
     const giorni = l.giorni ? ` Mercato: ${l.giorni}.` : '';
     const sup    = l.superficie ? ` Superficie: ${l.superficie} m².` : '';
@@ -63,7 +64,7 @@ module.exports = async function handler(req, res) {
     const notFound  = !listing;
     const canonical = id ? `${SITE}/annuncio?id=${encodeURIComponent(id)}` : `${SITE}/annunci`;
     const title     = listing ? buildTitle(listing) : 'Posteggio Mercatale | Subingresso.it';
-    const desc      = listing ? buildDesc(listing)  : 'Compra e vendi posteggi mercatali e licenze ambulanti su Subingresso.it. Annunci verificati, nessuna commissione.';
+    const desc      = listing ? buildDesc(listing)  : 'Compra e vendi posteggi mercatali e licenze ambulanti su Subingresso.it. Contatto diretto, nessuna commissione.';
     const img       = (listing && listing.img_urls && listing.img_urls[0]) ? listing.img_urls[0] : '';
 
     const jsonLd = listing ? {
@@ -132,8 +133,9 @@ module.exports = async function handler(req, res) {
               .filter(Boolean).join(', ')
         : '';
 
+    const isAffittoListing = listing && (listing.stato === 'Affitto' || listing.stato === 'Affitto mensile');
     const prezzoStr = listing && listing.prezzo
-        ? `€ ${Number(listing.prezzo).toLocaleString('it-IT')}${listing.stato === 'Affitto' ? '<span class="text-xl font-bold text-slate-400 ml-1">/anno</span>' : ''}`
+        ? `€ ${Number(listing.prezzo).toLocaleString('it-IT')}${isAffittoListing ? '<span class="text-xl font-bold text-slate-400 ml-1">/anno</span>' : ''}`
         : 'Trattativa riservata';
 
     const statoBg = listing && listing.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600';
@@ -213,7 +215,7 @@ module.exports = async function handler(req, res) {
                     <span id="badgeMerce" class="bg-slate-50 text-slate-500 text-[10px] font-black px-3 py-1.5 rounded-lg uppercase tracking-wider border border-slate-100">${esc(listing ? (listing.settore || '') : '')}</span>
                 </div>
                 <h1 id="titolo" class="text-3xl font-black tracking-tight leading-tight text-slate-900">${esc(listing ? listing.titolo : '')}</h1>
-                <p id="prezzoMobile" class="lg:hidden text-3xl font-black text-slate-900 mt-3">${listing && listing.prezzo ? `€ ${Number(listing.prezzo).toLocaleString('it-IT')}` : ''}</p>
+                <p id="prezzoMobile" class="lg:hidden text-3xl font-black text-slate-900 mt-3">${prezzoStr}</p>
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between mt-4 gap-3">
                     <div id="luogo" class="text-slate-500 font-bold text-sm flex items-center gap-2 flex-wrap">
                         <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-500 shrink-0">

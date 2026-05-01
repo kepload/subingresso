@@ -40,7 +40,7 @@ function cityToSlug(city) {
 function formatPrezzo(l) {
     if (!l.prezzo) return 'Prezzo trattabile';
     const n = Number(l.prezzo).toLocaleString('it-IT');
-    return l.stato === 'Affitto' ? `€${n}/anno` : `€${n}`;
+    return (l.stato === 'Affitto' || l.stato === 'Affitto mensile') ? `€${n}/anno` : `€${n}`;
 }
 
 function buildCard(l) {
@@ -202,8 +202,8 @@ module.exports = async function handler(req, res) {
     <!-- Filtri rapidi -->
     <div style="background:#fff;border:1px solid #f1f5f9;border-radius:16px;padding:16px 20px;margin-bottom:32px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
       <span style="font-size:13px;font-weight:700;color:#64748b;">Filtra:</span>
-      <a href="/annunci" style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:800;text-decoration:none;">✦ Solo vendita</a>
-      <a href="/annunci" style="background:#ecfdf5;color:#059669;border:1px solid #a7f3d0;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:800;text-decoration:none;">✦ Solo affitto</a>
+      <a href="/annunci?stato=Vendita" style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:800;text-decoration:none;">✦ Solo vendita</a>
+      <a href="/annunci?stato=Affitto%20mensile" style="background:#ecfdf5;color:#059669;border:1px solid #a7f3d0;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:800;text-decoration:none;">✦ Solo affitto</a>
       <a href="/annunci" style="margin-left:auto;font-size:13px;font-weight:700;color:#2563eb;text-decoration:none;">Tutti gli annunci Italia →</a>
     </div>
 
