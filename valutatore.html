@@ -105,8 +105,13 @@
             border-color: #2563eb;
             background-color: #eff6ff;
         }
-        /* Step finale: nascondi gli elementi pre-risultato per stare in una sola vista */
-        body.is-result .pre-result { display: none; }
+        /* Step finale: nasconde tutto ciò che non è risultato (SEO + footer + titolo + progress).
+           La card del risultato riempie l'altezza disponibile sotto l'header sticky (≈ 68px). */
+        body.is-result .pre-result,
+        body.is-result #seoContent,
+        body.is-result #siteFooter { display: none !important; }
+        body.is-result main { min-height: calc(100vh - 68px); display: flex; flex-direction: column; justify-content: center; padding-top: 1rem; padding-bottom: 1rem; }
+        body.is-result #calculatorForm { width: 100%; }
     </style>
 </head>
 <body class="bg-neutral-100 text-slate-900 min-h-screen flex flex-col">
@@ -356,7 +361,7 @@
 </main>
 
 <!-- ─── Contenuto SEO ──────────────────────────────────────────── -->
-<section class="bg-white border-t border-slate-100">
+<section id="seoContent" class="bg-white border-t border-slate-100">
     <div class="max-w-3xl mx-auto px-6 py-16">
 
         <!-- Metodologia -->
@@ -454,7 +459,7 @@
     </div>
 </section>
 
-<footer class="py-10 border-t border-slate-100">
+<footer id="siteFooter" class="py-10 border-t border-slate-100">
     <div class="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-xs text-slate-300 font-black uppercase tracking-[.2em]">Subingresso.it — Valuation Engine 2026</p>
         <nav class="flex gap-5 text-xs text-slate-400 font-semibold">
