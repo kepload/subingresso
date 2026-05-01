@@ -105,12 +105,15 @@
             border-color: #2563eb;
             background-color: #eff6ff;
         }
-        /* Step finale: nasconde tutto ciò che non è risultato (SEO + footer + titolo + progress).
-           La card del risultato riempie l'altezza disponibile sotto l'header sticky (≈ 68px). */
+        /* Il main del calcolatore occupa SEMPRE l'intero viewport (sotto header sticky 68px).
+           Risultato: durante gli step il contenuto SEO/footer scorre sotto la piega
+           e l'utente non lo vede mentre compila il form. Resta indicizzabile da Google. */
+        main { min-height: calc(100vh - 68px); display: flex; flex-direction: column; justify-content: center; }
+
+        /* Step finale: nasconde anche SEO+footer (no scroll possibile) e il titolo+progress. */
         body.is-result .pre-result,
         body.is-result #seoContent,
         body.is-result #siteFooter { display: none !important; }
-        body.is-result main { min-height: calc(100vh - 68px); display: flex; flex-direction: column; justify-content: center; padding-top: 1rem; padding-bottom: 1rem; }
         body.is-result #calculatorForm { width: 100%; }
     </style>
 </head>
