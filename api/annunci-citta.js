@@ -7,6 +7,8 @@ const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
 
+const MESI_IT = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+
 function esc(str) {
     if (!str && str !== 0) return '';
     return String(str)
@@ -20,12 +22,10 @@ function safeJson(obj) {
     return JSON.stringify(obj).replace(/<\//g, '<\\/');
 }
 
-// "reggio-emilia" → "Reggio Emilia"
 function slugToCity(slug) {
     return slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 
-// "Reggio Emilia" → "reggio-emilia"
 function cityToSlug(city) {
     return city.toLowerCase()
         .replace(/\s+/g, '-')
@@ -41,6 +41,28 @@ function formatPrezzo(l) {
     if (!l.prezzo) return 'Prezzo trattabile';
     const n = Number(l.prezzo).toLocaleString('it-IT');
     return (l.stato === 'Affitto' || l.stato === 'Affitto mensile') ? `€${n}/anno` : `€${n}`;
+}
+
+function formatPrezzoCompact(n) {
+    if (!n || isNaN(n)) return '';
+    const num = Number(n);
+    if (num >= 1000) return '€' + (num / 1000).toFixed(num >= 10000 ? 0 : 1).replace('.', ',') + 'k';
+    return '€' + num.toLocaleString('it-IT');
+}
+
+function relativeTime(iso) {
+    if (!iso) return '';
+    const then = new Date(iso).getTime();
+    if (isNaN(then)) return '';
+    const diffMs = Date.now() - then;
+    const minutes = Math.floor(diffMs / 60000);
+    const hours   = Math.floor(diffMs / 3600000);
+    const days    = Math.floor(diffMs / 86400000);
+    if (minutes < 60)  return minutes <= 1 ? 'pochi minuti fa' : minutes + ' minuti fa';
+    if (hours   < 24)  return hours === 1   ? '1 ora fa'        : hours + ' ore fa';
+    if (days    < 7)   return days === 1    ? '1 giorno fa'     : days  + ' giorni fa';
+    if (days    < 30)  return Math.floor(days / 7) + ' settimane fa';
+    return new Date(iso).toLocaleDateString('it-IT');
 }
 
 function buildCard(l) {
@@ -85,7 +107,7 @@ module.exports = async function handler(req, res) {
 
     try {
         const r = await fetch(
-            `${SUPABASE_URL}/rest/v1/annunci?status=eq.active&comune=ilike.${encodeURIComponent(cityName)}&select=id,titolo,descrizione,stato,tipo,settore,comune,provincia,prezzo,img_urls&order=featured.desc,created_at.desc&limit=50`,
+            `${SUPABASE_URL}/rest/v1/annunci?status=eq.active&comune=ilike.${encodeURIComponent(cityName)}&select=id,titolo,descrizione,stato,tipo,settore,comune,provincia,prezzo,img_urls,created_at&order=featured.desc,created_at.desc&limit=50`,
             {
                 headers: {
                     'apikey':        SUPABASE_ANON_KEY,
@@ -106,7 +128,6 @@ module.exports = async function handler(req, res) {
         }
     } catch (_) {}
 
-    // Se non ci sono annunci per questa città, non indicizzare la pagina
     if (listings.length === 0) {
         res.status(404).setHeader('Content-Type', 'text/html; charset=utf-8').send(`<!DOCTYPE html>
 <html lang="it"><head><meta charset="UTF-8"><title>Nessun annuncio a ${esc(cityName)} — Subingresso.it</title>
@@ -116,37 +137,111 @@ module.exports = async function handler(req, res) {
         return;
     }
 
-    const title       = `Posteggi Mercatali a ${cityName} — Subingresso.it`;
-    const description = `Trova ${totalCount} posteggi mercatali in vendita e affitto a ${cityName}. Licenze ambulanti, banchi mercato e concessioni su Subingresso.it. Contatto diretto, nessuna commissione.`;
+    // ─── Stats per freshness + price range (Mossa 5 + 6) ───────
+    const prezzi = listings.map(l => Number(l.prezzo)).filter(p => p > 0);
+    const minPrice = prezzi.length ? Math.min(...prezzi) : 0;
+    const maxPrice = prezzi.length ? Math.max(...prezzi) : 0;
+    const lastListingIso = listings[0] && listings[0].created_at ? listings[0].created_at : null;
+    const lastListingRel = lastListingIso ? relativeTime(lastListingIso) : '';
+    const today    = new Date();
+    const monthYr  = `${MESI_IT[today.getMonth()]} ${today.getFullYear()}`;
+    const todayIso = today.toISOString().split('T')[0];
 
-    const jsonLd = {
-        '@context': 'https://schema.org',
-        '@graph': [
-            {
-                '@type': 'ItemList',
-                'name':  title,
-                'description': description,
-                'url':   canonicalUrl,
-                'numberOfItems': totalCount,
-                'itemListElement': listings.slice(0, 10).map((l, i) => ({
-                    '@type':    'ListItem',
-                    'position': i + 1,
-                    'url':      `${SITE}/annuncio?id=${l.id}`,
-                    'name':     l.titolo,
-                }))
-            },
-            {
-                '@type': 'BreadcrumbList',
-                'itemListElement': [
-                    { '@type': 'ListItem', 'position': 1, 'name': 'Home',      'item': `${SITE}/` },
-                    { '@type': 'ListItem', 'position': 2, 'name': 'Annunci',   'item': `${SITE}/annunci` },
-                    { '@type': 'ListItem', 'position': 3, 'name': cityName,    'item': canonicalUrl }
-                ]
-            }
-        ]
-    };
+    // Conteggi per stato
+    const cntVendita = listings.filter(l => l.stato === 'Vendita').length;
+    const cntAffitto = listings.filter(l => l.stato && l.stato.indexOf('Affitto') === 0).length;
+
+    // ─── Title + meta ottimizzati CTR (Mossa 6) ────────────────
+    const priceFromTxt = minPrice > 0 ? ` da ${formatPrezzoCompact(minPrice)}` : '';
+    const title       = `Posteggi Mercatali ${cityName} ${monthYr} | ${totalCount} Annunci${priceFromTxt} · Subingresso.it`;
+    const description = prezzi.length > 1 && minPrice !== maxPrice
+        ? `${totalCount} posteggi mercatali in vendita e affitto a ${cityName}. Prezzi reali da ${formatPrezzoCompact(minPrice)} a ${formatPrezzoCompact(maxPrice)}. Contatto diretto venditore, zero commissioni. Aggiornato ${lastListingRel || 'oggi'}.`
+        : `${totalCount} posteggi mercatali a ${cityName}: licenze ambulanti, banchi e concessioni. Contatto diretto venditore, zero commissioni. Aggiornato ${lastListingRel || 'oggi'}.`;
+
+    // ─── Schema markup (Mossa 4) ───────────────────────────────
+    const graph = [
+        {
+            '@type': 'ItemList',
+            'name':  title,
+            'description': description,
+            'url':   canonicalUrl,
+            'numberOfItems': totalCount,
+            'itemListElement': listings.slice(0, 10).map((l, i) => ({
+                '@type':    'ListItem',
+                'position': i + 1,
+                'url':      `${SITE}/annuncio?id=${l.id}`,
+                'name':     l.titolo,
+            }))
+        },
+        {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                { '@type': 'ListItem', 'position': 1, 'name': 'Home',    'item': `${SITE}/` },
+                { '@type': 'ListItem', 'position': 2, 'name': 'Annunci', 'item': `${SITE}/annunci` },
+                { '@type': 'ListItem', 'position': 3, 'name': cityName,  'item': canonicalUrl }
+            ]
+        }
+    ];
+
+    if (prezzi.length > 0) {
+        graph.push({
+            '@type': 'AggregateOffer',
+            'name':  `Posteggi mercatali e licenze ambulanti a ${cityName}`,
+            'url':   canonicalUrl,
+            'offerCount':   totalCount,
+            'lowPrice':     minPrice,
+            'highPrice':    maxPrice,
+            'priceCurrency':'EUR',
+            'availability': 'https://schema.org/InStock'
+        });
+    }
+
+    // FAQPage con dati reali (no claim falsi)
+    const faq = [
+        {
+            q: `Quanti posteggi mercatali sono in vendita a ${cityName}?`,
+            a: `Su Subingresso.it sono attivi ${totalCount} annunci di posteggi mercatali e licenze ambulanti a ${cityName}${cntVendita > 0 ? `, di cui ${cntVendita} in vendita` : ''}${cntAffitto > 0 ? ` e ${cntAffitto} in affitto` : ''}. Gli annunci sono pubblicati direttamente dai titolari delle concessioni.`
+        },
+        {
+            q: `Quanto costa un posteggio mercatale a ${cityName}?`,
+            a: prezzi.length > 1 && minPrice !== maxPrice
+                ? `I prezzi attuali per i posteggi mercatali a ${cityName} su Subingresso.it vanno da ${formatPrezzoCompact(minPrice)} a ${formatPrezzoCompact(maxPrice)}. Il prezzo dipende da zona, settore merceologico, dimensioni del banco e giorni di mercato.`
+                : `Il prezzo di un posteggio mercatale a ${cityName} dipende da zona, settore merceologico, dimensioni del banco e giorni di mercato. Su Subingresso.it puoi consultare gli annunci attivi per avere riferimenti reali di mercato.`
+        },
+        {
+            q: `Come funziona il subingresso di un posteggio a ${cityName}?`,
+            a: `Il subingresso di una concessione di posteggio mercatale a ${cityName} richiede un atto notarile (cessione d'azienda o ramo d'azienda) e la successiva comunicazione al SUAP del Comune. La pratica si conclude generalmente in 30-60 giorni dalla firma.`
+        },
+        {
+            q: `Posso comprare solo la licenza ambulante senza il posteggio?`,
+            a: `Sì, è possibile acquistare una licenza ambulante itinerante (tipo B) senza posteggio fisso. Su Subingresso.it trovi sia concessioni di posteggio (tipo A) sia autorizzazioni itineranti, filtrabili per tipologia.`
+        },
+        {
+            q: `Subingresso.it applica commissioni sulla compravendita?`,
+            a: `No. Subingresso.it è un marketplace di annunci: il contatto tra venditore e acquirente è diretto, senza commissioni di intermediazione. La pubblicazione dell'annuncio è gratuita.`
+        }
+    ];
+    graph.push({
+        '@type': 'FAQPage',
+        'mainEntity': faq.map(f => ({
+            '@type': 'Question',
+            'name':  f.q,
+            'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+        }))
+    });
+
+    const jsonLd = { '@context': 'https://schema.org', '@graph': graph };
 
     const cardsHtml = listings.map(buildCard).join('\n');
+
+    const faqHtml = faq.map(f => `
+      <details style="background:#fff;border:1px solid #f1f5f9;border-radius:14px;padding:16px 20px;margin-bottom:10px;">
+        <summary style="font-size:15px;font-weight:800;color:#0f172a;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+          ${esc(f.q)}
+          <i class="fas fa-chevron-down" style="color:#94a3b8;font-size:12px;"></i>
+        </summary>
+        <p style="margin:12px 0 0;font-size:14px;color:#64748b;line-height:1.7;">${esc(f.a)}</p>
+      </details>`).join('');
 
     const html = `<!DOCTYPE html>
 <html lang="it">
@@ -156,10 +251,13 @@ module.exports = async function handler(req, res) {
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:title"       content="${esc(title)}">
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="${esc(canonicalUrl)}">
+  <meta property="og:updated_time" content="${esc(todayIso)}">
+  <meta property="article:modified_time" content="${esc(todayIso)}">
   <meta name="twitter:card"       content="summary_large_image">
   <link rel="canonical" href="${esc(canonicalUrl)}">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -172,6 +270,10 @@ module.exports = async function handler(req, res) {
     .card-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width: 640px)  { .card-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1024px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+    details[open] summary i.fa-chevron-down { transform: rotate(180deg); }
+    details summary i.fa-chevron-down { transition: transform .2s; }
+    .pulse-dot { animation: pulseDot 1.6s ease-in-out infinite; }
+    @keyframes pulseDot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
   </style>
 </head>
 <body>
@@ -190,13 +292,23 @@ module.exports = async function handler(req, res) {
     </nav>
 
     <!-- Hero -->
-    <div style="margin-bottom:32px;">
+    <div style="margin-bottom:16px;">
       <h1 style="margin:0 0 8px;font-size:clamp(24px,4vw,36px);font-weight:900;color:#0f172a;line-height:1.15;">
         Posteggi Mercatali a <span style="color:#2563eb;">${esc(cityName)}</span>
       </h1>
       <p style="margin:0;font-size:16px;color:#64748b;font-weight:500;">
         ${totalCount} ${totalCount === 1 ? 'annuncio disponibile' : 'annunci disponibili'} · banchi mercato, licenze ambulanti, concessioni
       </p>
+    </div>
+
+    <!-- Freshness banner (Mossa 5) -->
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;padding:10px 16px;margin-bottom:32px;font-size:13px;font-weight:700;color:#065f46;">
+      <span style="display:inline-flex;align-items:center;gap:8px;">
+        <span class="pulse-dot" style="display:inline-block;width:8px;height:8px;background:#10b981;border-radius:50%;"></span>
+        Aggiornato oggi · ${esc(monthYr)}
+      </span>
+      ${lastListingRel ? `<span style="color:#047857;">Ultimo annuncio pubblicato ${esc(lastListingRel)}</span>` : ''}
+      ${prezzi.length > 1 && minPrice !== maxPrice ? `<span style="color:#047857;margin-left:auto;">Prezzi da ${esc(formatPrezzoCompact(minPrice))} a ${esc(formatPrezzoCompact(maxPrice))}</span>` : ''}
     </div>
 
     <!-- Filtri rapidi -->
@@ -238,6 +350,14 @@ module.exports = async function handler(req, res) {
         Usa il <a href="/valutatore" style="color:#2563eb;font-weight:700;">valutatore gratuito</a> per stimare
         il valore del tuo posteggio a ${esc(cityName)} prima di mettere in vendita.
       </p>
+    </section>
+
+    <!-- FAQ (Mossa 4) -->
+    <section style="margin-top:32px;">
+      <h2 style="margin:0 0 16px;font-size:20px;font-weight:900;color:#0f172a;">
+        Domande frequenti — Posteggi a ${esc(cityName)}
+      </h2>
+      ${faqHtml}
     </section>
 
   </main>

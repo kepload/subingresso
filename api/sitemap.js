@@ -50,19 +50,22 @@ module.exports = async function handler(req, res) {
         const [lRes, pRes, cRes] = await Promise.all([
             fetch(`${SUPABASE_URL}/rest/v1/annunci?select=id,created_at&status=eq.active`, { headers }),
             fetch(`${SUPABASE_URL}/rest/v1/blog_posts?select=slug,published_at`,           { headers }),
-            fetch(`${SUPABASE_URL}/rest/v1/annunci?select=comune&status=eq.active&comune=not.is.null`, { headers }),
+            fetch(`${SUPABASE_URL}/rest/v1/annunci?select=comune,created_at&status=eq.active&comune=not.is.null`, { headers }),
         ]);
         if (lRes.ok) listings = await lRes.json();
         if (pRes.ok) posts    = await pRes.json();
         if (cRes.ok) {
             const raw = await cRes.json();
-            // Distinct comuni non vuoti
-            const seen = new Set();
+            // Per ogni città: salva l'annuncio più recente come lastmod (segnale di freschezza per Google)
+            const cityMap = new Map();
             for (const r of raw) {
-                const c = (r.comune || '').trim();
-                if (c) seen.add(c);
+                const c  = (r.comune || '').trim();
+                if (!c) continue;
+                const ts = r.created_at || '';
+                const cur = cityMap.get(c);
+                if (!cur || ts > cur) cityMap.set(c, ts);
             }
-            cities = Array.from(seen);
+            cities = Array.from(cityMap, ([name, lastmod]) => ({ name, lastmod }));
         }
     } catch (_) {
         // fallback: solo pagine statiche
@@ -91,12 +94,12 @@ module.exports = async function handler(req, res) {
                 '0.7'
             )
         ),
-        // Una pagina per ogni città con annunci attivi
+        // Una pagina per ogni città con annunci attivi (lastmod = annuncio più recente)
         ...cities.map(c =>
             urlTag(
-                `${SITE}/annunci/${cityToSlug(c)}`,
-                today,
-                'weekly',
+                `${SITE}/annunci/${cityToSlug(c.name)}`,
+                c.lastmod ? c.lastmod.split('T')[0] : today,
+                'daily',
                 '0.8'
             )
         ),
