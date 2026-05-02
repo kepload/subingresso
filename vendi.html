@@ -1225,13 +1225,25 @@ async function submitAnnuncio() {
                 .then(() => {}).catch(() => {});
         }
 
-        // Salva nome/tel per pre-fill ai prossimi annunci
+        // Salva nome/tel per pre-fill ai prossimi annunci (cache locale)
         if (form.contatto) localStorage.setItem('_vc_nome', form.contatto);
         if (form.tel)      localStorage.setItem('_vc_tel',  form.tel);
-        if (form.contatto || form.tel) {
+        // Aggiorna SOLO i campi profilo vuoti — preserva il profilo quando il
+        // venditore inserisce contatti diversi dai propri (es. admin che pubblica
+        // per conto di un utente, o un secondo numero ad-hoc per il singolo annuncio).
+        // I contatti dell'annuncio sono già salvati su annunci.contatto/annunci.tel.
+        if (form.contatto) {
             _supabase.from('profiles')
-                .update({ nome: form.contatto || undefined, telefono: form.tel || undefined })
+                .update({ nome: form.contatto })
                 .eq('id', user.id)
+                .or('nome.is.null,nome.eq.')
+                .then(() => {}).catch(() => {});
+        }
+        if (form.tel) {
+            _supabase.from('profiles')
+                .update({ telefono: form.tel })
+                .eq('id', user.id)
+                .or('telefono.is.null,telefono.eq.')
                 .then(() => {}).catch(() => {});
         }
 
