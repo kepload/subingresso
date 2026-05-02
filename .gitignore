@@ -6,3 +6,4 @@ tailwind.input.css
 tailwind.config.js
 scripts/.bin/
 .claude/settings.local.json
+data/_*.json
