@@ -485,3 +485,54 @@ Il bug più sottile risolto: `slugToCity('salo')` ritorna `'Salo'` senza accento
 ### Da NON ripetere
 - Non ricreare pagine landing programmatiche custom per i 7904 comuni: l'utente le considera "paginate speciali che non portano da nessuna parte". UX coerente con il resto del sito > SEO programmatico per comuni piccoli.
 - Se in futuro si vuole comunque migliorare il SEO long-tail dei piccoli comuni, valutare prima un approccio meno invasivo (es. testo SEO breve dentro la pagina annunci normale, niente landing dedicata).
+
+## 📰 Test pivot articoli "Bandi" — Lombardia (2 maggio 2026)
+
+**Cambio strategico**: l'utente ha notato che gli articoli `bandi-posteggi-mercatali-{regione}` sono **tutorial generici** sul "come funziona un bando", ma chi cerca "bandi posteggi mercatali abruzzo" vuole vedere **una lista di bandi reali** (anche scaduti). Mismatch di intent → bounce rate alto.
+
+**Test pilota su Lombardia** (1 articolo riscritto, gli altri 19 inalterati per ora):
+- Articolo `bandi-posteggi-mercatali-lombardia` riscritto da 3.268 → 5.322 caratteri.
+- Title: `Bandi posteggi mercatali in Lombardia: lista recente e dove cercare`.
+- Aggiunta sezione "Esempi di bandi pubblicati di recente" con **6 bandi reali** ricercati su Albi Pretorio comunali: Codogno (LO) venerdì + martedì agricoli, Lovere (BG) sabato, Trezzo sull'Adda (MI), Magenta (MI) Fiera San Biagio, Toscolano Maderno (BS) agricoli, Melzo (MI) miglioria.
+- **Onestà esplicita** nell'intro: "quasi tutti questi sono già scaduti — non sono offerte attive — ma il pattern si ripete ogni anno negli stessi mercati". Evita che chi atterra si arrabbi.
+- `published_at` bumpato a `now()` → forza Google a vedere `dateModified` aggiornato.
+
+**Decisione di scaling**: replicare il pattern alle altre 19 regioni **solo se** dopo 1-2 settimane Search Console mostra miglioramento di CTR/posizione/click sull'articolo Lombardia. Workflow di aggiornamento automatico bandi (scraping albi pretori) **non** prioritario adesso — si fa "pian piano" manualmente con bandi vecchi per riempire.
+
+### Pattern stile rewrite bandi (per replica futura)
+- Lunghezza: **2.500-5.500 char** (più dei 2.150-2.725 originali, perché si aggiunge la lista reale).
+- Stile: paragrafi 2-3 righe, frasi nette, numeri concreti (3×4 m, scadenze precise, costi 70-150 €), espressioni reali ambulante. Niente "esploriamo/in conclusione/approfondiamo".
+- Grassetti 25+, sulle frasi chiave (mai parole singole banali).
+- Struttura: intro breve + "Esempi di bandi pubblicati di recente" (5-7 voci con `<h3>` per Comune) + "Dove cercare i bandi attivi oggi" + "Cosa serve per fare domanda" + "Tempi e graduatoria" + "Se non vuoi aspettare un bando" → CTA `/annunci.html` + `/valutatore.html`.
+- Per ogni bando, includere quando possibile: **mercato/giorno**, **dimensione posteggio**, **scadenza**, **modalità invio** (PEC firmata, portale telematico, SPID/CNS), **link Comune** (se pertinente).
+
+## ⏳ TODO — Cose pendenti dalla sessione 2 maggio 2026
+
+Lista pratica delle cose lasciate aperte (per non dimenticare).
+
+### Da fare nei prossimi giorni (alta priorità, manuale)
+1. **Indicizzazione Search Console**: continuare a sottomettere ~10 URL/giorno (quota giornaliera). Lista da indicizzare già tracciata in `C:\Users\utente\Desktop\indicizzazione-search-console.txt`. Resta da indicizzare: 11 articoli "Bandi" rimanenti + alcune `/annunci/[citta]` con annunci + capoluoghi placeholder.
+2. **Spot check live deploy del rollback `/comune` → `/annunci`** (già pushato ma verifica visiva):
+   - `https://subingresso.it/annunci/milano` → deve mostrare la pagina speciale Milano (con annunci).
+   - `https://subingresso.it/annunci/abano-terme` → deve fare redirect a `/annunci?q=Abano%20Terme` con la search bar pre-compilata.
+   - `https://subingresso.it/comune/milano` → deve dare 404 (URL non più attivo).
+
+### Da monitorare (1-2 settimane)
+3. **Metriche articolo Lombardia riscritto** (`/blog?post=bandi-posteggi-mercatali-lombardia`): controllare su Search Console fra 7-14 giorni:
+   - Impressioni
+   - CTR
+   - Posizione media sulla query "bandi posteggi mercatali lombardia" e simili
+   - Click assoluti
+   - **Decisione GO/NO-GO**: se le metriche migliorano vs. periodo precedente, replicare il pattern alle altre 19 regioni. Se peggiorano o restano uguali, abbandonare il filone "lista bandi" e tornare al format tutorial.
+
+### Da fare quando il pilota è validato (medio termine)
+4. **Replica articoli bandi alle altre 19 regioni**: stessa struttura della Lombardia con 5-7 bandi reali per regione. Lavoro stimato: ~30-45 min per articolo (ricerca su albi pretori + scrittura) = 10-14 ore totali.
+5. **Aggiunta bandi vecchi alle liste già fatte**: l'utente ha detto "li aggiorneremo pian piano col tempo, anche con bandi vecchi". Tenere una cadenza mensile (10-15 minuti) per aggiungere 1-2 bandi storici a ciascuna regione fatta.
+
+### Lungo termine (futuro non prioritario)
+6. **Workflow automatico aggiornamento bandi**: scraping degli Albi Pretorio comunali per le top 50 città italiane → estrazione bandi attivi → push automatico nel blog. Investimento dev significativo (5-10 giorni). NON prioritario: ha senso solo se il pivot Lombardia funziona e si decide di scalare seriamente.
+7. **Annunci Demo da eliminare**: 10 annunci finti (Carla M., Marco V. ecc.) ancora nel DB. Da cancellare quando ci saranno 30+ annunci reali — ad oggi (2 mag 2026) il sito ne ha bisogno per popolare l'UI.
+
+### Stato deploy/SQL (riferimento rapido)
+- `PATCH_TOP_COMUNI_VIEWS_20260502.sql`: **deployato 2 volte** su Supabase. Versione finale traccia path `/annunci/<slug>` (non più `/comune/`). Funzione `admin_top_comuni_views(p_days)` attiva, pannello dashboard "Top comuni" si nasconde finché non ci sono dati.
+- Tutte le altre patch SQL del progetto: invariate.
