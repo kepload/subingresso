@@ -189,6 +189,17 @@
                 </p>
             </div>
 
+            <!-- Top 10 comuni per page_views (ultimi 30 giorni) -->
+            <div id="topComuniSection" class="hidden bg-white border border-slate-100 rounded-3xl p-6">
+                <h3 class="font-black text-slate-900 flex items-center gap-2 mb-4">
+                    <i class="fas fa-map-marker-alt text-blue-500"></i> Top comuni · ultimi 30 giorni
+                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">/comune/[slug]</span>
+                </h3>
+                <div id="topComuniList" class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <p class="text-xs text-slate-400 font-bold">Caricamento…</p>
+                </div>
+            </div>
+
             <!-- Pending Review List -->
             <div id="pendingReviewSection" class="hidden bg-amber-50 border border-amber-100 rounded-3xl p-6">
                 <h3 class="font-black text-amber-900 mb-4 flex items-center gap-2">
@@ -873,6 +884,41 @@ async function loadAdminStats() {
     document.getElementById('admStatAttivi').textContent  = totalAttivi  || 0;
     document.getElementById('admStatUtenti').textContent  = totalUtenti  || 0;
     document.getElementById('admStatVetrina').textContent = totalVetrina || 0;
+
+    loadTopComuni();
+}
+
+// Top 10 comuni per page_views (ultimi 30 giorni). RPC SECURITY DEFINER.
+// Si nasconde da sola se l'RPC non e' deployata o non ci sono dati.
+async function loadTopComuni() {
+    const section = document.getElementById('topComuniSection');
+    const list    = document.getElementById('topComuniList');
+    if (!section || !list) return;
+    try {
+        const { data, error } = await _supabase.rpc('admin_top_comuni_views', { p_days: 30 });
+        if (error || !Array.isArray(data) || data.length === 0) {
+            section.classList.add('hidden');
+            return;
+        }
+        const max = Math.max(...data.map(r => r.cnt || 0)) || 1;
+        list.innerHTML = data.map(r => {
+            const slug = String(r.slug || '');
+            const cnt  = Number(r.cnt || 0);
+            const pct  = Math.round((cnt / max) * 100);
+            const nome = slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            return `
+              <a href="/comune/${encodeURIComponent(slug)}" target="_blank" rel="noopener" class="flex items-center justify-between bg-slate-50 hover:bg-blue-50 border border-transparent hover:border-blue-200 rounded-xl px-4 py-2.5 transition group">
+                <div class="flex-1 min-w-0">
+                  <div class="text-sm font-bold text-slate-900 group-hover:text-blue-700 truncate">${nome}</div>
+                  <div class="mt-1 h-1 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-blue-500" style="width:${pct}%"></div></div>
+                </div>
+                <div class="ml-3 text-sm font-black text-slate-700 tabular-nums">${cnt}</div>
+              </a>`;
+        }).join('');
+        section.classList.remove('hidden');
+    } catch (_) {
+        section.classList.add('hidden');
+    }
 }
 
 // ── Growth Chart ─────────────────────────────────────────

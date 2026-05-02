@@ -424,6 +424,7 @@ module.exports = async function handler(req, res) {
 
   <script src="/js/config.js"></script>
   <script src="/js/ui-components.js?v=9"></script>
+  <script src="/js/page-view-tracker.js"></script>
 
 </body>
 </html>`;
