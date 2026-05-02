@@ -602,26 +602,27 @@ function _refreshLocalSaveButtons() {
     if (!_currentListing) return;
     const saved = (typeof SAVED_IDS !== 'undefined') && SAVED_IDS.has(_currentListing.id);
     const desktopBtn = document.getElementById('saveBtn');
-    const desktopLabel = document.getElementById('saveBtnLabel');
     const mobileBtn  = document.getElementById('saveBtnMobile');
 
     if (desktopBtn) {
         const icon = desktopBtn.querySelector('i');
         if (saved) {
-            if (icon) icon.className = 'fas fa-heart text-red-500';
-            if (desktopLabel) desktopLabel.textContent = 'Salvato nei Preferiti';
-            desktopBtn.classList.add('bg-red-50', 'border-red-100');
-            desktopBtn.classList.remove('border-slate-100');
+            if (icon) icon.className = 'fas fa-bookmark text-lg';
+            desktopBtn.classList.add('bg-blue-50', 'border-blue-200', 'text-blue-600');
+            desktopBtn.classList.remove('border-slate-200', 'text-slate-400');
+            desktopBtn.title = 'Salvato nei preferiti';
+            desktopBtn.setAttribute('aria-label', 'Salvato nei preferiti');
         } else {
-            if (icon) icon.className = 'far fa-heart text-slate-400';
-            if (desktopLabel) desktopLabel.textContent = 'Salva nei Preferiti';
-            desktopBtn.classList.remove('bg-red-50', 'border-red-100');
-            desktopBtn.classList.add('border-slate-100');
+            if (icon) icon.className = 'far fa-bookmark text-lg';
+            desktopBtn.classList.remove('bg-blue-50', 'border-blue-200', 'text-blue-600');
+            desktopBtn.classList.add('border-slate-200', 'text-slate-400');
+            desktopBtn.title = 'Salva nei preferiti';
+            desktopBtn.setAttribute('aria-label', 'Salva nei preferiti');
         }
     }
     if (mobileBtn) {
         const icon = mobileBtn.querySelector('i');
-        if (icon) icon.className = saved ? 'fas fa-heart text-red-500' : 'far fa-heart text-slate-400';
+        if (icon) icon.className = saved ? 'fas fa-bookmark text-blue-600' : 'far fa-bookmark text-slate-400';
     }
 }
 
