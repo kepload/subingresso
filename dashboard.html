@@ -264,6 +264,30 @@
 
         </div>
 
+        <!-- Onboarding widget — visibile solo se profilo incompleto -->
+        <div id="onboardingWidget" class="hidden bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-3xl p-6 mb-6 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                <div>
+                    <h3 class="font-black text-slate-900 flex items-center gap-2 text-base">
+                        <i class="fas fa-rocket text-blue-500"></i> Completa il tuo profilo
+                    </h3>
+                    <p class="text-xs text-slate-500 font-bold mt-1">
+                        Profili completi ricevono <span class="text-blue-600">3 volte più contatti</span>.
+                    </p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="text-right">
+                        <div class="text-2xl font-black text-blue-600 leading-none"><span id="onboardingDoneCount">0</span><span class="text-slate-300">/<span id="onboardingTotalCount">4</span></span></div>
+                        <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1">Step completati</div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-1.5 mb-5 overflow-hidden">
+                <div id="onboardingProgressBar" class="bg-blue-600 h-full rounded-full transition-all duration-500" style="width:0%"></div>
+            </div>
+            <div id="onboardingSteps" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        </div>
+
         <!-- Tabs -->
         <div class="border-b border-slate-200 flex gap-6 overflow-x-auto no-scrollbar">
             <button id="tabMieiAnnunci" onclick="showTab('annunci')"
@@ -826,6 +850,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     document.getElementById('userEmailDisplay').textContent = user.email;
 
+    loadOnboardingWidget(user, profile);
     loadMyListings();
     loadPendingListings();
 
@@ -1022,6 +1047,102 @@ async function loadAdminGrowthChart(mode = 'mese') {
             },
         },
     });
+}
+
+// ── Onboarding widget (utente) ─────────────────────────────
+// Mostra solo se almeno uno step manca. Si nasconde quando 4/4.
+async function loadOnboardingWidget(user, profile) {
+    const widget = document.getElementById('onboardingWidget');
+    if (!widget || !user) return;
+
+    let listingsCount = 0;
+    try {
+        const { count } = await _supabase
+            .from('annunci')
+            .select('id', { count: 'exact', head: true })
+            .eq('user_id', user.id)
+            .neq('status', 'deleted');
+        listingsCount = count || 0;
+    } catch (_) {}
+
+    const emailVerified = Boolean(user.email_confirmed_at);
+    const hasPhone      = !!(profile && profile.telefono && String(profile.telefono).trim());
+    const hasAvatar     = !!(profile && profile.avatar_url);
+    const hasListing    = listingsCount > 0;
+
+    const steps = [
+        {
+            done: emailVerified,
+            icon: 'fa-envelope',
+            title: 'Conferma la tua email',
+            desc:  emailVerified ? 'Email verificata' : 'Controlla la mail che ti abbiamo inviato',
+            cta:   null,
+        },
+        {
+            done: hasPhone,
+            icon: 'fa-phone',
+            title: 'Aggiungi un numero di telefono',
+            desc:  hasPhone ? `Telefono: ${maskPhonePartial(profile.telefono)}` : 'Gli acquirenti potranno chiamarti direttamente',
+            cta:   hasPhone ? null : { label: 'Aggiungi', href: '#', onclick: "goToProfilo()" },
+        },
+        {
+            done: hasAvatar,
+            icon: 'fa-camera',
+            title: 'Carica una foto profilo',
+            desc:  hasAvatar ? 'Foto caricata' : 'Aumenta la fiducia degli acquirenti',
+            cta:   hasAvatar ? null : { label: 'Carica', href: '#profilo', onclick: "showTab('profilo')" },
+        },
+        {
+            done: hasListing,
+            icon: 'fa-store',
+            title: 'Pubblica il primo annuncio',
+            desc:  hasListing ? `${listingsCount} annunci pubblicati` : 'Inserisci il tuo posteggio in 5 minuti',
+            cta:   hasListing ? null : { label: 'Pubblica', href: 'vendi.html' },
+        },
+    ];
+
+    const doneCount = steps.filter(s => s.done).length;
+
+    if (doneCount === steps.length) {
+        widget.classList.add('hidden');
+        return;
+    }
+    widget.classList.remove('hidden');
+
+    const doneEl  = document.getElementById('onboardingDoneCount');
+    const totalEl = document.getElementById('onboardingTotalCount');
+    const barEl   = document.getElementById('onboardingProgressBar');
+    if (doneEl)  doneEl.textContent  = String(doneCount);
+    if (totalEl) totalEl.textContent = String(steps.length);
+    if (barEl)   barEl.style.width   = `${Math.round((doneCount / steps.length) * 100)}%`;
+
+    const body = document.getElementById('onboardingSteps');
+    if (!body) return;
+    body.innerHTML = steps.map((s) => {
+        const iconBg     = s.done ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-100 text-slate-400';
+        const iconClass  = s.done ? 'fas fa-check' : `fas ${s.icon}`;
+        const titleColor = s.done ? 'text-slate-400 line-through' : 'text-slate-900';
+        const ctaHtml = s.cta
+            ? `<a href="${escapeHTML(s.cta.href)}" ${s.cta.onclick ? `onclick="event.preventDefault(); ${s.cta.onclick}; window.scrollTo({top:0,behavior:'smooth'})"` : ''} class="text-[11px] font-black text-blue-600 hover:text-blue-700 transition flex items-center gap-1 shrink-0">${escapeHTML(s.cta.label)} <i class="fas fa-arrow-right text-[9px]"></i></a>`
+            : (s.done ? `<span class="text-[11px] font-black text-emerald-600 shrink-0"><i class="fas fa-check"></i></span>` : '');
+        return `
+        <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-4 py-3">
+            <div class="w-9 h-9 rounded-xl ${iconBg} flex items-center justify-center shrink-0">
+                <i class="${iconClass} text-sm"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="text-sm font-black ${titleColor} leading-tight">${escapeHTML(s.title)}</div>
+                <div class="text-[11px] text-slate-400 font-bold truncate mt-0.5">${escapeHTML(s.desc)}</div>
+            </div>
+            ${ctaHtml}
+        </div>`;
+    }).join('');
+}
+
+function maskPhonePartial(p) {
+    const s = String(p || '').trim();
+    if (s.length <= 4) return s;
+    return s.slice(0, 4) + '••••' + (s.length > 8 ? s.slice(-2) : '');
 }
 
 // ── Export CSV utenti (admin) ──────────────────────────────
