@@ -232,3 +232,92 @@ Stessa scala, performance opposta. Differenza: Immobiliare.it monetizza con **le
 ### Prossime sessioni - opzioni aggiunte
 - (h) **Pagine programmatiche per i ~8.000 comuni italiani** (subingresso.it/comune/{slug}) — singolo lavoro che porta più di tutto verso leadership SEO. Anche con 0 annunci attivi, riempire con dati settore/normativa/mercati/dati valutatore per attirare traffico organico.
 - (i) **Spalmare i 2 cron settimanali su giorni diversi** (gratis, allunga vita free Resend) — 5 minuti di lavoro.
+
+## Sessione 2 Maggio 2026 (giorno) — UI/UX, perf, analytics, allarmi, reminders
+
+### Privacy policy riscritta
+- Vecchia privacy era generica: mancavano page_views, valutatore_logs, saved_listings, Resend/Supabase/Vercel come responsabili, trasferimenti extra-UE, comunicazioni informative weekly, opt-in marketing.
+- Nuova versione GDPR-compliant in `privacy.html` con: titolare (placeholder), categorie dati per schema reale, base giuridica per finalità, lista responsabili, sezione cookie/localStorage, tempi conservazione, 6 diritti GDPR + reclamo Garante.
+- **DA COMPILARE prima del go-live legale**: 3 placeholder `[NOME TITOLARE]`, `[INDIRIZZO + P.IVA]`, `[EMAIL DI CONTATTO]`.
+
+### Tailwind CDN → CSS precompilato (mobile speedup)
+- Sostituito `<script src="cdn.tailwindcss.com">` con `<link rel="stylesheet" href="css/tailwind.css?v=2">` su tutte le 18 pagine HTML.
+- `tailwind.config.js` aggiornato con safelist per classi toggle-ate via JS (animate-pulse, hidden, flex, grid…). Output ~50KB minified.
+- Build: `npx tailwindcss -i tailwind.input.css -o css/tailwind.css --minify`
+- Backup branch: `backup/pre-tailwind-cutover` (commit 58704d6) su GitHub per rollback istantaneo.
+- Beneficio: -300KB JS runtime + niente JIT scan DOM al boot. Mobile first paint visibilmente più rapido.
+
+### Page views tracking (analytics interno)
+- Tabella `public.page_views` (path, visitor_id, session_id, referrer, created_at). RLS: anon insert, select admin-only.
+- RPC `admin_page_views_stats()` torna total/today/monthly/yearly/daily-30 (security definer).
+- Tracker JS `js/page-view-tracker.js` caricato su tutte le 17 pagine pubbliche, 1 view per (visitor, path, session) via sessionStorage dedup.
+- Dashboard admin: linea violet "Visite" sul grafico esistente + badge "Visite oggi" + "Totali" accanto al titolo.
+
+### Funnel admin (insight su drop-off)
+- RPC `admin_funnel_stats()` torna 5 step (signups, primo annuncio, telefono profilo, contatto ricevuto, messaggio inviato), all-time + last 30d.
+- Dashboard: pannello "Funnel utenti" con barre colorate, % vs iscritti, drop-off vs step precedente. Toggle Tutti / Ultimi 30g.
+- Numeri 02/05: 22 → 17 → 12 → 3 → 2. Drop-off principale tra "Primo annuncio" e "Contatto ricevuto" (-75%).
+
+### Export CSV utenti (admin)
+- Edge function `admin-export-users` (--no-verify-jwt ma check is_admin via RPC). Bottone in dashboard "Ultimi iscritti".
+- CSV UTF-8 + BOM (apre in Excel) con: id, email, nome/cognome/telefono, created_at, last_sign_in, email_confirmed, opt-in marketing, annunci attivi/totali, messaggi inviati, contatti ricevuti.
+- Abilita lead-gen finanziaria verticale (filtro `email_stats_optin=true AND annunci_attivi>=1` → lista pulita per partner OAM/microcredito).
+
+### Allarmi anomalie (admin)
+- Edge function `admin-anomaly-check` schedulata pg_cron `0 9 * * *`. Tabella `admin_alerts_log` per rate-limit 12h.
+- Check: annunci 24h=0 (crit), iscritti 7d=0 (crit), page views 24h<5 (warn), pending listings >3g (warn), spike signups 1h>20 (crit, anti-bot).
+- Email styled via Resend a tutti gli admin solo se >=1 issue. In giornate "tutto ok" niente email.
+
+### Onboarding widget (utente)
+- In `dashboard.html` sopra le tabs: card gradient blue-50 con 4 step + barra progresso. Si nasconde a 4/4.
+- Step: email confermata, telefono profilo, avatar, primo annuncio. CTA inline (goToProfilo per telefono+foto, vendi.html per annuncio).
+- Attacca direttamente i drop-off del funnel (12/22 hanno telefono, 17/22 hanno annuncio).
+
+### Reminder Day 3 / Day 7
+- Edge function `engagement-reminders` schedulata `0 10 * * *`. Tabella `email_reminder_log` con `unique(user_id, kind)` per dedup garantito.
+- Skip automatici: ha già pubblicato, ha email_digest=false, ha già ricevuto stesso reminder.
+- Day 3: tono soft "pubblica in 5 min" → vendi.html. Day 7: persuasivo + bonus vetrina → annunci.html. Link unsubscribe in fondo.
+
+### Edge functions deployate questa sessione (4 nuove, totale 11)
+- `admin-export-users` (CSV download)
+- `admin-anomaly-check` (alert giornaliero)
+- `engagement-reminders` (Day 3/7)
+- (più tabelle nuove: `page_views`, `admin_alerts_log`, `email_reminder_log`)
+
+### Cron pg_cron attivi (4 totali)
+- `unfeature-expired-daily` 03:00 — cleanup vetrine scadute
+- `increment-featured-views` ogni 6h
+- `weekly-buyer-digest` Lun 09:00 (TODO i: spalmare su giorno diverso)
+- `weekly-seller-stats` Lun 09:00 (TODO i: spalmare)
+- `admin-anomaly-check` 09:00 daily (NEW)
+- `engagement-reminders` 10:00 daily (NEW)
+
+### Bug fix questa sessione
+- Save listing button spostato da contact card a icona bookmark accanto titolo annuncio. Posizione: `position:absolute top-0 right-0` dentro wrapper `relative pr-12` (flex+min-w-0 dava wrap per-character su mobile Safari).
+- Cover annuncio ridotto -20% verticale (h-44→h-36 mobile, md:h-80→md:h-64 desktop).
+- Mobile CTA "Invia Messaggio" → "Messaggio" (era 14 chars, wrappava su iPhone SE).
+- Card annunci: border-slate-100→200, +shadow-sm shadow-slate-300/40. Premium glow sottile.
+- Skeleton home (`#previewGrid`): 6 card animate-pulse via IIFE inline (annunci.html aveva già skeleton).
+- **Bug critico fixato**: `vendi.html` riga 1233 sovrascriveva profilo utente con form.contatto/form.tel a ogni pubblicazione. Fix: `or=(nome.is.null,nome.eq.)` filtro PostgREST → update solo se campo vuoto. Onboarding ok, admin che pubblica per altri NON sovrascrive più il proprio profilo.
+- **Censura telefoni parziale** in descrizione annuncio per non-loggati: regex IT (mobile/fisso/+39/0039), 9-14 cifre, lookbehind anti-falsi-positivi (coordinate, IBAN). Output: `338 12●●●●●` come link blu → `openAuthModal('register')`. Skip P.IVA 11 cifre senza separatori.
+- Title block annuncio: bug overflow mobile causato da inserimento `#titleBadges` come 3° figlio del flex titolo+bookmark. Fix: id `#titleRow` come anchor + insertBefore prima del wrapper.
+
+### Cache versioni attuali (FINE SESSIONE 2 MAGGIO)
+- `data.js?v=8` (card outline + min-w-0 + statoBg)
+- `auth.js?v=8` (invariato dalla sessione precedente)
+- `annuncio-detail.js?v=9` (censorPhonesHTML + bookmark absolute + titleRow anchor)
+- `css/tailwind.css?v=2` (precompilato 50KB, no più CDN runtime)
+- `page-view-tracker.js?v=1`
+
+### Prossima sessione (h: pagine programmatiche 8000 comuni)
+Lavoro grosso, dividere in 5 sotto-sessioni:
+- **A** Dati comuni (verifica/import COMUNI_IT, schema slug, indici).
+- **B** Route SSR base `api/comune.js` + `vercel.json` rewrite + 5 test manuali.
+- **C** Contenuto dinamico (annunci nel comune, cities vicine entro 50km, valutatore aggregati, JSON-LD Place).
+- **D** Interlinking + sitemap (`api/sitemap.js` con tutte le URL `/comune/*`, footer "comuni vicini", breadcrumb).
+- **E** Polish + monitoring (robots.txt, sitemap submit Search Console, mini-pannello admin "Top comuni per page_views").
+
+Avvertenze per la prossima sessione:
+- Non rompere il sito esistente — branch `feature/comuni` consigliato.
+- Se aggiungi classi Tailwind nuove, **rebuilda CSS** (`npx tailwindcss ...`) e bumpa `?v=`.
+- Backup di emergenza: `git reset --hard backup/pre-tailwind-cutover`.
