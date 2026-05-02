@@ -43,49 +43,103 @@
         
         <div class="prose prose-slate max-w-none space-y-6 text-slate-600 leading-relaxed">
             <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">1. Informazioni generali</h2>
-                <p>Benvenuto su Subingresso.it. La tua privacy è fondamentale per noi. Questa informativa spiega come raccogliamo, utilizziamo e proteggiamo i tuoi dati personali quando utilizzi la nostra piattaforma per la compravendita di posteggi e licenze ambulanti.</p>
+                <h2 class="text-xl font-bold text-slate-900 mb-3">1. Titolare del trattamento</h2>
+                <p>Il Titolare del trattamento dei dati personali è <strong>[NOME TITOLARE / RAGIONE SOCIALE]</strong>, con sede in <strong>[INDIRIZZO]</strong>, P.IVA <strong>[NUMERO P.IVA]</strong>, contattabile all'indirizzo email <strong>[EMAIL DI CONTATTO]</strong>.</p>
+                <p>La presente informativa è resa ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR) e descrive le modalità con cui Subingresso.it raccoglie e tratta i dati personali degli utenti.</p>
             </section>
 
             <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">2. Dati raccolti</h2>
-                <p>Raccogliamo le seguenti categorie di dati:</p>
+                <h2 class="text-xl font-bold text-slate-900 mb-3">2. Categorie di dati raccolti</h2>
+                <p>Trattiamo le seguenti categorie di dati personali:</p>
                 <ul class="list-disc pl-5 space-y-2">
-                    <li><strong>Dati di registrazione:</strong> Nome, cognome, indirizzo email e numero di telefono forniti durante la creazione dell'account.</li>
-                    <li><strong>Dati dell'annuncio:</strong> Informazioni relative al posteggio, foto, prezzo e posizione geografica.</li>
-                    <li><strong>Dati di navigazione:</strong> Indirizzo IP, tipo di browser e dati sull'utilizzo del sito tramite cookie tecnici.</li>
-                    <li><strong>Comunicazioni:</strong> Messaggi scambiati tra utenti tramite la nostra chat interna.</li>
+                    <li><strong>Dati di registrazione:</strong> nome, cognome, indirizzo email, password (in forma cifrata), numero di telefono e — se forniti — foto del profilo.</li>
+                    <li><strong>Dati degli annunci:</strong> titolo, descrizione, foto, prezzo, regione, comune, posteggio o licenza, settore merceologico, contatti riportati nell'annuncio. Il contenuto degli annunci è pubblico.</li>
+                    <li><strong>Comunicazioni interne:</strong> messaggi scambiati tra utenti nella chat di piattaforma.</li>
+                    <li><strong>Dati di navigazione e analytics interni:</strong> URL della pagina, referrer, identificativo anonimo del visitatore (UUID generato dal browser e conservato in localStorage), identificativo di sessione, data e ora di accesso. Non raccogliamo l'indirizzo IP completo dell'utente.</li>
+                    <li><strong>Geolocalizzazione approssimativa:</strong> Paese e regione di provenienza, derivati dall'IP a livello di edge dal nostro hosting provider (Vercel) e mai memorizzati come IP. Servono per fornire risultati pertinenti e statistiche aggregate.</li>
+                    <li><strong>Dati dello strumento di valutazione (valutatore):</strong> se utilizzi il valutatore di posteggi, registriamo le risposte fornite (settore, fatturato dichiarato, frequenza, città, eventuale contesto di acquisizione UTM/referrer e dispositivo) per calcolare la stima e — se richiedi di salvarla — collegarla al tuo account.</li>
+                    <li><strong>Preferiti e attività sugli annunci:</strong> elenco degli annunci che hai salvato e annunci da te pubblicati.</li>
+                    <li><strong>Dati di acquisizione (UTM):</strong> sorgente, campagna e mezzo da cui sei arrivato, conservati nella sessione del browser.</li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">3. Finalità del trattamento</h2>
-                <p>I tuoi dati sono trattati esclusivamente per:</p>
+                <h2 class="text-xl font-bold text-slate-900 mb-3">3. Finalità del trattamento e base giuridica</h2>
                 <ul class="list-disc pl-5 space-y-2">
-                    <li>Fornire i servizi di pubblicazione e ricerca annunci.</li>
-                    <li>Permettere il contatto diretto tra acquirente e venditore (tramite chat, WhatsApp o telefono).</li>
-                    <li>Inviare alert di prossimità per nuovi annunci rilevanti.</li>
-                    <li>Garantire la sicurezza della piattaforma e prevenire frodi o spam.</li>
+                    <li><strong>Erogazione del servizio</strong> (creazione account, pubblicazione e gestione annunci, chat, salvataggio preferiti, valutatore) — base giuridica: <em>esecuzione del contratto</em> (art. 6.1.b GDPR).</li>
+                    <li><strong>Comunicazioni transazionali</strong> (conferma registrazione, notifica nuovi messaggi, alert su tuoi annunci, recupero password) — base giuridica: <em>esecuzione del contratto</em>.</li>
+                    <li><strong>Comunicazioni informative periodiche</strong> (riepilogo settimanale delle statistiche dei tuoi annunci, suggerimenti di nuovi annunci coerenti con le tue ricerche) — base giuridica: <em>legittimo interesse</em> (art. 6.1.f). Puoi disattivarle in qualsiasi momento dal tuo profilo o cliccando "disiscriviti" in qualunque email.</li>
+                    <li><strong>Statistiche aggregate e miglioramento del servizio</strong> (analytics interno sulle pagine viste, su quali ricerche convertono, su quali annunci ricevono più visualizzazioni) — base giuridica: <em>legittimo interesse</em>. I dati sono pseudonimizzati: usiamo identificativi casuali, non l'identità dell'utente.</li>
+                    <li><strong>Sicurezza, prevenzione frodi e abusi</strong> — base giuridica: <em>legittimo interesse</em>.</li>
+                    <li><strong>Adempimenti di legge</strong> (richieste dell'autorità giudiziaria, conservazione di log per tempi previsti) — base giuridica: <em>obbligo legale</em> (art. 6.1.c).</li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">4. Condivisione dei dati</h2>
-                <p>Subingresso.it non vende i tuoi dati a terzi. I tuoi dati di contatto (nome e telefono) vengono mostrati agli altri utenti registrati solo quando decidono di contattarti per un tuo annuncio, al fine di facilitare la trattativa.</p>
+                <h2 class="text-xl font-bold text-slate-900 mb-3">4. Destinatari dei dati e fornitori (responsabili del trattamento)</h2>
+                <p>Per fornire il servizio ci avvaliamo di fornitori che trattano i dati per nostro conto, vincolati da contratti conformi all'art. 28 GDPR:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Supabase Inc.</strong> — database, autenticazione, archiviazione foto e funzioni server-side. I dati sono ospitati nell'Unione Europea quando possibile.</li>
+                    <li><strong>Vercel Inc.</strong> — hosting del sito e CDN edge. Geolocalizzazione approssimativa derivata dall'IP a livello di rete.</li>
+                    <li><strong>Resend Inc.</strong> — invio delle email transazionali e informative (welcome, notifiche messaggi, alert annunci, riepiloghi periodici). Sede negli Stati Uniti.</li>
+                    <li><strong>Cloudflare Inc.</strong> — CDN per font e librerie statiche.</li>
+                </ul>
+                <p>I dati di contatto pubblicati nei tuoi annunci (nome visibile e numero di telefono che hai scelto di esporre nell'annuncio) sono visibili agli altri utenti registrati che vogliono contattarti per la trattativa. Il numero di telefono nella descrizione viene parzialmente oscurato per gli utenti non autenticati.</p>
+                <p><strong>Trasferimento extra-UE:</strong> alcuni fornitori (Resend, Cloudflare, eventuali server Supabase) possono trattare dati negli Stati Uniti. I trasferimenti avvengono in base alle Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea o ad altre garanzie adeguate ex artt. 44-49 GDPR.</p>
+                <p>Subingresso.it <strong>non vende</strong> i tuoi dati personali a terzi.</p>
             </section>
 
             <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">5. Conservazione dei dati</h2>
-                <p>I dati vengono conservati per il tempo necessario a fornire i servizi richiesti o fino a quando non ne richiederai la cancellazione tramite le impostazioni del tuo profilo o contattando il supporto.</p>
+                <h2 class="text-xl font-bold text-slate-900 mb-3">5. Cookie e tecnologie simili</h2>
+                <p>Il sito utilizza esclusivamente <strong>cookie tecnici e localStorage di prima parte</strong>, necessari al funzionamento. Non usiamo cookie di profilazione di terze parti né strumenti pubblicitari esterni. In particolare:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Sessione di autenticazione</strong> (Supabase): mantiene attivo l'accesso al tuo account.</li>
+                    <li><strong>Identificativo anonimo del visitatore</strong> (<code>_visitor_id</code>): UUID casuale per misurare le pagine viste senza identificarti personalmente. Persistente nel browser.</li>
+                    <li><strong>Identificativo di sessione</strong> (<code>_session_id</code>): valido per la sessione corrente del browser.</li>
+                    <li><strong>Dati di acquisizione</strong> (<code>_acq_*</code>): campagna/sorgente di provenienza, validi per la sessione.</li>
+                    <li><strong>Cache profilo e bozze</strong> (<code>_profile_*</code>, <code>_vc_*</code>, <code>vendi_*</code>): velocizzano il riempimento dei moduli, conservati nel tuo browser.</li>
+                </ul>
+                <p>Puoi cancellare in qualunque momento i dati locali svuotando lo storage del browser per il sito.</p>
             </section>
 
             <section>
-                <h2 class="text-xl font-bold text-slate-900 mb-3">6. I tuoi diritti</h2>
-                <p>Ai sensi del GDPR (Regolamento UE 2016/679), hai il diritto di accedere, rettificare o cancellare i tuoi dati, nonché di opporsi al loro trattamento. Per esercitare questi diritti, puoi scriverci all'indirizzo email di supporto.</p>
+                <h2 class="text-xl font-bold text-slate-900 mb-3">6. Conservazione dei dati</h2>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Dati dell'account: per tutta la durata del rapporto, eliminati su tua richiesta dalla funzione di cancellazione account o entro <strong>12 mesi</strong> di inattività completa.</li>
+                    <li>Annunci attivi: pubblici fino al ritiro o alla scadenza; gli annunci ritirati restano in archivio per 12 mesi a fini di assistenza e antifrode.</li>
+                    <li>Log di navigazione interni (<code>page_views</code>): conservati in forma pseudonimizzata per <strong>13 mesi</strong>, poi cancellati o aggregati.</li>
+                    <li>Log dello strumento di valutazione: 24 mesi se non collegati a un account; per la durata dell'account se collegati.</li>
+                    <li>Email inviate (registro tecnico via Resend): 12 mesi.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-slate-900 mb-3">7. I tuoi diritti</h2>
+                <p>In ogni momento puoi esercitare, ai sensi degli artt. 15-22 GDPR, i seguenti diritti:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Accesso</strong> ai tuoi dati personali e ottenerne copia.</li>
+                    <li><strong>Rettifica</strong> dei dati inesatti.</li>
+                    <li><strong>Cancellazione</strong> ("diritto all'oblio") dei dati che non vogliamo più trattare.</li>
+                    <li><strong>Limitazione</strong> del trattamento in determinati casi.</li>
+                    <li><strong>Portabilità</strong>: ricevere i tuoi dati in formato leggibile da macchina.</li>
+                    <li><strong>Opposizione</strong> al trattamento basato su legittimo interesse, incluse le comunicazioni informative periodiche.</li>
+                    <li><strong>Revoca del consenso</strong> in qualunque momento per i trattamenti che lo richiedono.</li>
+                </ul>
+                <p>Per esercitare i tuoi diritti scrivi a <strong>[EMAIL DI CONTATTO]</strong>. Ti risponderemo entro 30 giorni. Hai inoltre il diritto di proporre <strong>reclamo al Garante per la Protezione dei Dati Personali</strong> (www.garanteprivacy.it) se ritieni che il trattamento violi la normativa.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-slate-900 mb-3">8. Sicurezza</h2>
+                <p>Adottiamo misure tecniche e organizzative adeguate (cifratura in transito tramite HTTPS, password salvate solo in forma cifrata, accesso ai dati tramite ruoli e Row Level Security a livello di database, registro degli accessi amministrativi) per proteggere i dati da accessi non autorizzati, perdita o alterazione.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-slate-900 mb-3">9. Modifiche alla presente informativa</h2>
+                <p>Possiamo aggiornare questa informativa per riflettere modifiche del servizio o della normativa. La versione vigente è sempre pubblicata su questa pagina con la data di ultimo aggiornamento. Per modifiche sostanziali ti informeremo via email.</p>
             </section>
 
             <section class="pt-8 border-t border-slate-100">
-                <p class="text-sm italic">Ultimo aggiornamento: Aprile 2026</p>
+                <p class="text-sm italic">Ultimo aggiornamento: 2 maggio 2026</p>
             </section>
         </div>
     </div>
