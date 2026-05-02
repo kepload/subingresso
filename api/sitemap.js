@@ -9,6 +9,7 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
 
 const { CAPOLUOGHI } = require('./_capoluoghi.js');
+const COMUNI         = require('../data/comuni.json'); // 7904 comuni ISTAT per /comune/[slug]
 
 // "Reggio Emilia" → "reggio-emilia"
 function cityToSlug(city) {
@@ -113,6 +114,19 @@ module.exports = async function handler(req, res) {
     for (const cap of CAPOLUOGHI) {
         if (slugsAlreadyAdded.has(cap.slug)) continue;
         parts.push(urlTag(`${SITE}/annunci/${cap.slug}`, today, 'monthly', '0.5'));
+    }
+
+    // ─── Pagine /comune/[slug] (info-first, 7904 comuni ISTAT) ──────
+    // Priority graduata su popolazione: i centri grandi sono più rilevanti.
+    // Changefreq monthly: contenuto stabile (info su iter subingresso),
+    // distinto dalle /annunci/[citta] daily che hanno listing live.
+    for (const c of COMUNI) {
+        const pop = c.popolazione || 0;
+        const priority = pop >= 100000 ? '0.7'
+                       : pop >=  30000 ? '0.6'
+                       : pop >=  10000 ? '0.5'
+                                       : '0.4';
+        parts.push(urlTag(`${SITE}/comune/${c.slug}`, today, 'monthly', priority));
     }
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${parts.join('\n')}\n</urlset>`;
