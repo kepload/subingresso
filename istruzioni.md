@@ -461,44 +461,27 @@ Il bug più sottile risolto: `slugToCity('salo')` ritorna `'Salo'` senza accento
   5. **Tool interattivi** — calcolatore presenze/spunte, calendario mercati per città, stima IRPEF/IVA ambulanti. Landing page, non blog post.
 - **`Annunci Demo`** ancora presenti nel DB (10 annunci finti Carla M./Marco V. su admin) — NON cancellati: il sito ne ha ancora bisogno per popolare l'UI mentre arrivano annunci veri. Da rivedere quando ci saranno 30+ annunci reali.
 
-## 🏘️ Pagine programmatiche /comune/[slug] (2 maggio 2026)
+## 🏘️ Pagine /annunci/[citta] estese a 7904 comuni (2 maggio 2026)
 
-Coverage: **7904 comuni italiani ISTAT** vs i 141 capoluoghi di `/annunci/[citta]`. Le due route convivono con ruoli distinti:
-- `/annunci/[citta]` = **listing-first** (target query "posteggi mercatali Milano"); canonical `/annunci/{slug}`.
-- `/comune/[slug]` = **info-first** (target query "subingresso licenza Milano"); canonical `/comune/{slug}`.
+**Decisione di rollback parziale**: le pagine `/comune/[slug]` info-first costruite il 2 mag sono state rimosse. L'utente preferisce un'unica route `/annunci/[citta]` con UX coerente al resto del sito invece di una pagina-landing custom.
 
-Nessuna canonicalizzazione cross — sono pagine distinte con scopo SEO diverso, niente cannibalizzazione.
+**Nuovo comportamento di `/annunci/[citta]`**:
+- **Capoluoghi (137)**: pagina speciale 200 OK con FAQ, AggregateOffer, schema. Comportamento invariato.
+- **Slug con annunci attivi**: pagina speciale listing-first 200 OK. Comportamento invariato.
+- **Comune ISTAT valido (in `data/comuni.json`) ma senza annunci e non capoluogo**: **redirect 302 a `/annunci?q=<NomeComune>`** — l'utente atterra sulla pagina annunci classica con la search bar pre-compilata. UX naturale, niente landing custom.
+- **Slug invalido (typo, non comune reale)**: 404 + noindex.
 
-### Dataset
-- **`data/comuni.json`** (1.4 MB, 7904 record): slug, nome, regione, provincia, sigla, popolazione (100%), lat/lng (99.4%), codiceIstat. Bundlato statico — Vercel `@vercel/node` lo include via require tracing, **zero query DB per ogni SSR**.
-- Build via `scripts/build-comuni.js`: merge ISTAT (matteocontrini/comuni-json) + lat/lng (MatteoHenryChinaski) per `codiceIstat`. Slug consistenti con `_capoluoghi.js` (Forlì→`forli`, L'Aquila→`l-aquila`, Salò→`salo`). Dedup automatico su 14 collisioni con suffisso sigla (es. `castello-bo`).
-- I raw `data/_*.json` sono in `.gitignore`. Per rebuild: `node scripts/build-comuni.js`.
+### Dataset (mantenuto)
+- **`data/comuni.json`** (1.4 MB, 7904 record): slug, nome, regione, provincia, sigla, popolazione, lat/lng, codiceIstat. Usato da `api/annunci-citta.js` per validare slug e fare il redirect verso `/annunci?q=<nome>`. Bundlato statico, zero query DB.
+- **`scripts/build-comuni.js`**: merge ISTAT (matteocontrini) + lat/lng (MatteoHenryChinaski). Slug consistenti con `_capoluoghi.js`. 14 dedup automatici con suffisso sigla.
+- **`PATCH_TOP_COMUNI_VIEWS_20260502.sql`** + funzione admin `loadTopComuni` in dashboard: già deployati. Funzione RPC `admin_top_comuni_views` esiste su Supabase (eseguita 2 mag). Mostra top 10 path `/annunci/<slug>` per page_views ultimi 30 giorni — pattern path coerente con la nuova architettura, solo si aggiornerà quando ci saranno page_views.
 
-### Route SSR
-- **`api/comune.js`**: legge slug, lookup `COMUNI_BY_SLUG`, fetch annunci attivi (max 6) via Supabase `comune=in.(...)`. Fallback automatico: se 0 annunci nel comune, query annunci nei vicini entro 50km (Haversine in-memory). Sezione "Subingresso nelle città vicine" con 8 link a `/comune/{slug}` ordinati per distanza — interlinking interno automatico per authority transfer.
-- Slug non in dataset → 404 + noindex. Slug invalido (regex `[a-z0-9-]+`) → 302 a `/annunci`.
-- Cache `s-maxage=3600 stale-while-revalidate=86400`. Performance: 121-192ms steady, 701ms cold.
-- Schema.org: **Place** (con coordinate) + **BreadcrumbList** (Home → Annunci → Regione → Comune) + **FAQPage** (5 Q&A subingresso-specific).
-- Title pattern: `Subingresso e licenze ambulanti a {Comune} | Guida {Anno} · Subingresso.it`.
+### File rimossi (rollback)
+- `api/comune.js` — cancellato.
+- Rewrite `/comune/:slug` in `vercel.json` — rimosso.
+- 7904 URL `/comune/[slug]` in sitemap — rimossi. Sitemap torna a ~236 URL totali (statiche + annunci + blog + città).
+- 10 link `/comune/X` in homepage — sostituiti con `/annunci/X`.
 
-### Sitemap
-- `api/sitemap.js` aggiunge **7904 URL `/comune/[slug]`** con priority graduata su popolazione: 0.7 (>=100k, 46), 0.6 (>=30k, 260), 0.5 (>=10k, 911), 0.4 (resto). Changefreq `monthly` (info-page stabile), distinto da `/annunci/[citta]` `daily`.
-- Sitemap totale ora **8140 URL, 1.4 MB** — sotto i limiti Google (50k URL / 50 MB).
-
-### Interlinking
-- **Home (`index.html`)**: nuova sezione "Subingresso nelle principali città italiane" con 10 link diretti a `/comune/{roma,milano,napoli,torino,palermo,genova,bologna,firenze,bari,catania}` — link juice dalla home alle pagine top.
-- **Pagine `/comune/[slug]`**: footer con 8 comuni vicini → cascade verso comuni minori.
-
-### Admin
-- **Pannello "Top comuni · ultimi 30 giorni"** in dashboard.html: chiama RPC `admin_top_comuni_views(p_days)` (SECURITY DEFINER, admin-only). Mostra top 10 con barra progressiva. **SQL da eseguire in Supabase**: `PATCH_TOP_COMUNI_VIEWS_20260502.sql`.
-- Tracker page-views: `js/page-view-tracker.js` aggiunto allo SSR `/comune/[slug]` (era già su index/annunci/blog/valutatore).
-
-### Decisioni di design
-- **Niente fatturato medio per comune**: la tabella `valutatore_logs` non ha colonna `comune` (solo `region` geoip ambiguo). Ho preferito non mostrare un dato approssimativo.
-- **Bundle JSON statico vs tabella Supabase**: scelta JSON statico per evitare query DB ad ogni SSR (cold-start + RLS overhead). Per i comuni ISTAT (dato che cambia di rado) è la scelta giusta.
-- **Slug deduplication**: 14 nomi comuni duplicati (es. due "Castello") risolti con suffisso sigla provincia. Mantiene unicità senza compromettere SEO.
-
-### Da fare manualmente (utente)
-- Eseguire `PATCH_TOP_COMUNI_VIEWS_20260502.sql` nel SQL Editor Supabase.
-- Submit nuovamente la sitemap a Google Search Console (auto-discover ricicla, ma trigger manuale accelera).
-- Indicizzazione manuale: usare la quota GSC su 5-10 URL `/comune/{capoluogo}` di test per ramp-up iniziale.
+### Da NON ripetere
+- Non ricreare pagine landing programmatiche custom per i 7904 comuni: l'utente le considera "paginate speciali che non portano da nessuna parte". UX coerente con il resto del sito > SEO programmatico per comuni piccoli.
+- Se in futuro si vuole comunque migliorare il SEO long-tail dei piccoli comuni, valutare prima un approccio meno invasivo (es. testo SEO breve dentro la pagina annunci normale, niente landing dedicata).

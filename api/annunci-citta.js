@@ -11,6 +11,13 @@ const SITE              = 'https://subingresso.it';
 
 const { CAPOLUOGHI_BY_SLUG } = require('./_capoluoghi.js');
 
+// Dataset 7904 comuni ISTAT — usato solo per riconoscere slug validi.
+// Slug nel dataset (ma non capoluogo, senza annunci) → redirect alla
+// pagina /annunci?q=<nome> (UX coerente con il resto del sito), invece di 404.
+const COMUNI_ALL = require('../data/comuni.json');
+const COMUNI_BY_SLUG_ALL = Object.create(null);
+for (const c of COMUNI_ALL) COMUNI_BY_SLUG_ALL[c.slug] = c;
+
 const MESI_IT = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
 
 function esc(str) {
@@ -311,12 +318,22 @@ module.exports = async function handler(req, res) {
     } catch (_) {}
 
     // Branch placeholder: città capoluogo senza annunci → 200 OK indicizzabile.
-    // Slug non riconosciuti (non capoluogo + zero annunci) → 404 + noindex come prima.
+    // Comune ISTAT valido (non capoluogo, senza annunci) → redirect alla pagina
+    // annunci classica con search pre-filtrata: UX coerente, niente landing custom.
+    // Slug non riconosciuti (non capoluogo, non comune, no annunci) → 404 + noindex.
     if (listings.length === 0) {
         if (capInfo) {
             res.setHeader('Content-Type', 'text/html; charset=utf-8');
             res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
             res.status(200).send(renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl));
+            return;
+        }
+        const istatComune = COMUNI_BY_SLUG_ALL[citySlug];
+        if (istatComune) {
+            // Usa il nome ufficiale (con accenti) per la query string
+            res.status(302)
+               .setHeader('Location', `/annunci?q=${encodeURIComponent(istatComune.nome)}`)
+               .end();
             return;
         }
         res.status(404).setHeader('Content-Type', 'text/html; charset=utf-8').send(`<!DOCTYPE html>

@@ -12,8 +12,7 @@
   "rewrites": [
     { "source": "/sitemap.xml",        "destination": "/api/sitemap" },
     { "source": "/annuncio",           "destination": "/api/annuncio" },
-    { "source": "/annunci/:citta",     "destination": "/api/annunci-citta?citta=:citta" },
-    { "source": "/comune/:slug",       "destination": "/api/comune?slug=:slug" }
+    { "source": "/annunci/:citta",     "destination": "/api/annunci-citta?citta=:citta" }
   ],
   "headers": [
     {
