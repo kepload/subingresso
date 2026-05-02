@@ -169,6 +169,26 @@
                 </div>
             </div>
 
+            <!-- Funnel utenti -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-filter text-blue-500"></i> Funnel utenti
+                        <span id="funnelSubtitle" class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(tutti)</span>
+                    </h3>
+                    <div class="flex gap-1.5">
+                        <button id="funnelBtnAll" onclick="setFunnelPeriod('all')" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-blue-600 text-white">Tutti</button>
+                        <button id="funnelBtn30d" onclick="setFunnelPeriod('30d')" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">Ultimi 30g</button>
+                    </div>
+                </div>
+                <div id="funnelBody" class="space-y-4">
+                    <p class="text-xs text-slate-400 font-bold">Caricamento…</p>
+                </div>
+                <p class="mt-5 text-[10px] text-slate-400 leading-relaxed">
+                    <span class="font-black text-slate-500">%</span> = rispetto agli iscritti totali. <span class="font-black text-red-500">−%</span> = drop-off rispetto allo step precedente.
+                </p>
+            </div>
+
             <!-- Pending Review List -->
             <div id="pendingReviewSection" class="hidden bg-amber-50 border border-amber-100 rounded-3xl p-6">
                 <h3 class="font-black text-amber-900 mb-4 flex items-center gap-2">
@@ -770,6 +790,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('adminPanel').classList.remove('hidden');
         loadAdminStats();
         loadAdminGrowthChart();
+        loadAdminFunnelStats();
         loadAdminRecentUsers();
         loadAdminBlog();
         loadAllListings();
@@ -994,6 +1015,78 @@ async function loadAdminGrowthChart(mode = 'mese') {
             },
         },
     });
+}
+
+// ── Funnel utenti (admin) ──────────────────────────────────
+let _funnelData = null;
+let _funnelPeriod = 'all';
+
+async function loadAdminFunnelStats() {
+    try {
+        const { data, error } = await _supabase.rpc('admin_funnel_stats');
+        if (error || !data || data.error) {
+            const body = document.getElementById('funnelBody');
+            if (body) body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Funnel non disponibile.</p>';
+            return;
+        }
+        _funnelData = data;
+        _renderFunnel();
+    } catch (e) {
+        console.warn('funnel stats failed:', e);
+    }
+}
+
+function _renderFunnel() {
+    if (!_funnelData) return;
+    const slice = (_funnelPeriod === '30d') ? _funnelData.last_30_days : _funnelData.all_time;
+    const steps = [
+        { key: 'signups',                label: 'Iscritti',           icon: 'fa-user-plus',    color: 'bg-blue-500' },
+        { key: 'first_listing',          label: 'Primo annuncio',     icon: 'fa-store',        color: 'bg-blue-400' },
+        { key: 'profile_complete',       label: 'Telefono nel profilo', icon: 'fa-id-card',    color: 'bg-emerald-500' },
+        { key: 'first_contact_received', label: 'Contatto ricevuto',  icon: 'fa-comment-dots', color: 'bg-amber-500' },
+        { key: 'first_message_sent',     label: 'Messaggio inviato',  icon: 'fa-paper-plane',  color: 'bg-violet-500' },
+    ];
+    const baseline = Math.max(slice.signups || 0, 1);
+    const body = document.getElementById('funnelBody');
+    if (!body) return;
+    body.innerHTML = steps.map((s, idx) => {
+        const value = Number(slice[s.key]) || 0;
+        const pctOfTop = baseline > 0 ? Math.round((value / baseline) * 100) : 0;
+        const prevValue = idx > 0 ? (Number(slice[steps[idx - 1].key]) || 0) : value;
+        const dropoff = (idx > 0 && prevValue > 0)
+            ? Math.round((1 - value / prevValue) * 100)
+            : 0;
+        return `
+        <div>
+            <div class="flex items-center justify-between gap-3 mb-1.5">
+                <div class="flex items-center gap-2 text-sm font-bold text-slate-700 min-w-0">
+                    <i class="fas ${s.icon} text-slate-400 w-4 text-center shrink-0"></i>
+                    <span class="truncate">${s.label}</span>
+                </div>
+                <div class="flex items-center gap-3 text-xs font-black shrink-0">
+                    <span class="text-slate-900">${value.toLocaleString('it-IT')}</span>
+                    <span class="text-slate-400 w-10 text-right">${pctOfTop}%</span>
+                    ${(idx > 0 && dropoff > 0)
+                        ? `<span class="text-red-500 w-12 text-right text-[10px]" title="Drop-off vs step precedente">−${dropoff}%</span>`
+                        : '<span class="w-12"></span>'}
+                </div>
+            </div>
+            <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full ${s.color} rounded-full transition-all duration-500" style="width:${pctOfTop}%"></div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function setFunnelPeriod(p) {
+    _funnelPeriod = p;
+    const allBtn = document.getElementById('funnelBtnAll');
+    const d30Btn = document.getElementById('funnelBtn30d');
+    if (allBtn) allBtn.className = `text-[11px] font-black px-3 py-1.5 rounded-lg transition ${p === 'all' ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`;
+    if (d30Btn) d30Btn.className = `text-[11px] font-black px-3 py-1.5 rounded-lg transition ${p === '30d' ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`;
+    const sub = document.getElementById('funnelSubtitle');
+    if (sub) sub.textContent = (p === '30d') ? '(ultimi 30 giorni)' : '(tutti)';
+    _renderFunnel();
 }
 
 function setChartPeriod(mode) {
