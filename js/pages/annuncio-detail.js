@@ -410,10 +410,11 @@ async function initPage() {
             if (saveBtn) saveBtn.classList.add('hidden');
             if (saveBtnMobile) saveBtnMobile.classList.add('hidden');
         } else if (!user) {
-            // Utente non loggato: maschera numeri di telefono nella descrizione
+            // Utente non loggato: censura parziale numeri telefono in descrizione
+            // (prime cifre visibili, ultime ●●●, link blu → popup registrazione)
             const descrEl = document.getElementById('descrizione');
             if (descrEl) {
-                descrEl.textContent = maskPhones(descrEl.textContent);
+                descrEl.innerHTML = censorPhonesHTML(descrEl.textContent);
             }
             // Aggiorna label pulsanti con lucchetto
             const chatBtn = document.getElementById('chatBtn');
@@ -546,9 +547,42 @@ function openWhatsApp() {
     });
 }
 
-// Maschera numeri di telefono italiani (mobile 3xx e fissi 0x). Separatori: spazio, trattino, punto.
-function maskPhones(text) {
-    return text.replace(/(\+?39[\s\-\.]?)?\b(3\d{2}|0\d{1,3})([\s\-\.]?\d{3,4}){1,3}\b/g, '●●● ●●●●●●●');
+// Censura parziale numeri di telefono italiani.
+// Mostra le prime cifre, sostituisce le ultime con ● e wrappa tutto in un link blu
+// che apre il popup di registrazione (incentiva il signup).
+// Riconosce mobile (3xx), fisso (0x) e prefissi internazionali (+39, 0039).
+// Validazione lunghezza: 9-13 cifre totali → esclude prezzi (50000), anni (2024), mq (30), ecc.
+function censorPhonesHTML(text) {
+    // Lookbehind/ahead per evitare di matchare in mezzo a un altro numero
+    // (es. coordinate 41.9027, codici alfanumerici). Fallback senza lookbehind
+    // per browser legacy che non lo supportano (iOS Safari <16.4).
+    let re;
+    try {
+        re = new RegExp(
+            "(?<![\\d.,])(?:(?:\\+|00)\\s?39[\\s./\\-]?)?(?:3\\d{2}|0\\d{1,3})[\\s./\\-]?\\d{2,4}[\\s./\\-]?\\d{2,4}(?:[\\s./\\-]?\\d{2,4})?(?!\\d)",
+            "g"
+        );
+    } catch (_) {
+        re = /(?:(?:\+|00)\s?39[\s./\-]?)?(?:3\d{2}|0\d{1,3})[\s./\-]?\d{2,4}[\s./\-]?\d{2,4}(?:[\s./\-]?\d{2,4})?/g;
+    }
+    const escapeMap = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+    const safe = String(text).replace(/[&<>"']/g, c => escapeMap[c]);
+    return safe.replace(re, (match) => {
+        const digits = match.replace(/\D/g, '');
+        if (digits.length < 9 || digits.length > 14) return match;
+        // 11 cifre tutte attaccate = probabile P.IVA o IBAN, non telefono
+        if (digits.length === 11 && !/[\s./\-]/.test(match)) return match;
+        const keep = Math.max(3, Math.min(5, digits.length - 5));
+        let seen = 0, out = '';
+        for (const ch of match) {
+            if (/\d/.test(ch)) {
+                out += (seen++ < keep) ? ch : '●';
+            } else {
+                out += ch;
+            }
+        }
+        return `<a href="#" onclick="event.preventDefault(); if(typeof openAuthModal==='function') openAuthModal('register');" class="text-blue-600 font-black hover:underline cursor-pointer" title="Registrati per vedere il numero completo">${out}</a>`;
+    });
 }
 
 // Ripristina pulsanti e descrizione dopo il login
