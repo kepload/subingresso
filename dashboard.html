@@ -200,9 +200,16 @@
 
             <!-- Recent Users -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
-                <h3 class="font-black text-slate-900 mb-4 flex items-center gap-2">
-                    <i class="fas fa-users"></i> Ultimi iscritti
-                </h3>
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-users"></i> Ultimi iscritti
+                    </h3>
+                    <button id="exportUsersBtn" onclick="exportUsersCSV()"
+                            class="inline-flex items-center gap-2 bg-slate-900 text-white px-3 py-2 rounded-lg text-[11px] font-black uppercase tracking-widest hover:bg-slate-800 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-file-csv"></i>
+                        <span id="exportUsersBtnLabel">Export CSV</span>
+                    </button>
+                </div>
                 <div id="adminRecentUsersList" class="space-y-2">
                     <div class="text-center py-6 text-slate-300">
                         <i class="fas fa-spinner fa-spin"></i>
@@ -1015,6 +1022,47 @@ async function loadAdminGrowthChart(mode = 'mese') {
             },
         },
     });
+}
+
+// ── Export CSV utenti (admin) ──────────────────────────────
+async function exportUsersCSV() {
+    const btn = document.getElementById('exportUsersBtn');
+    const lbl = document.getElementById('exportUsersBtnLabel');
+    if (btn) btn.disabled = true;
+    if (lbl) lbl.textContent = 'Preparo…';
+    try {
+        const { data: sess } = await _supabase.auth.getSession();
+        const token = sess?.session?.access_token;
+        if (!token) throw new Error('Sessione non disponibile');
+
+        const res = await fetch(`${SUPABASE_URL}/functions/v1/admin-export-users`, {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${token}`, 'apikey': SUPABASE_ANON_KEY },
+        });
+        if (!res.ok) {
+            let msg = `HTTP ${res.status}`;
+            try { msg = (await res.json())?.error || msg; } catch (_) {}
+            throw new Error(msg);
+        }
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const today = new Date().toISOString().slice(0, 10);
+        a.download = `subingresso-utenti-${today}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+        if (typeof showToast === 'function') showToast('CSV scaricato', 'success');
+    } catch (e) {
+        console.error('exportUsersCSV failed:', e);
+        if (typeof showToast === 'function') showToast('Export fallito: ' + e.message, 'error');
+        else alert('Export fallito: ' + e.message);
+    } finally {
+        if (btn) btn.disabled = false;
+        if (lbl) lbl.textContent = 'Export CSV';
+    }
 }
 
 // ── Funnel utenti (admin) ──────────────────────────────────
