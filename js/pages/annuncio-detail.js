@@ -381,7 +381,8 @@ async function initPage() {
                 badgeContainer = document.createElement('div');
                 badgeContainer.id = 'titleBadges';
                 badgeContainer.className = 'flex flex-wrap items-center gap-2 mb-3';
-                titoloEl.parentNode.insertBefore(badgeContainer, titoloEl);
+                const anchor = document.getElementById('titleRow') || titoloEl;
+                anchor.parentNode.insertBefore(badgeContainer, anchor);
             }
             if (badgeContainer && !document.getElementById('ownerBadge')) {
                 const badge = document.createElement('div');
