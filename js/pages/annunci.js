@@ -124,6 +124,24 @@ function parseItalianNumber(value, fallback = 0) {
     return Number.isFinite(parsed) ? parsed : fallback;
 }
 
+// ── Filtro giorni mercato ────────────────────────────────────
+// Normalizza nome giorno (case-insensitive, con/senza accento) per matching.
+function _normalizeDayName(s) {
+    return String(s || '').trim().toLowerCase()
+        .replace(/lunedi(?!ì)/g,    'lunedì')
+        .replace(/martedi(?!ì)/g,   'martedì')
+        .replace(/mercoledi(?!ì)/g, 'mercoledì')
+        .replace(/giovedi(?!ì)/g,   'giovedì')
+        .replace(/venerdi(?!ì)/g,   'venerdì');
+}
+// Legge i chip selezionati nella sidebar desktop (fonte di verità).
+// Se siamo in modalità mobile (sheet aperto), il mobile ha già copiato in desktop al apply.
+function _getSelectedDays() {
+    const el = document.getElementById('dayChipsDesktop');
+    if (!el) return [];
+    return Array.from(el.querySelectorAll('.day-chip.selected')).map(b => b.dataset.day);
+}
+
 function applyFilters() {
     const fReg    = document.getElementById('fRegione');
     const fTipo   = document.getElementById('fTipo');
@@ -140,6 +158,10 @@ function applyFilters() {
     const prezzoMin = (fPMin && fPMin.value)     ? parseItalianNumber(fPMin.value, 0)        : 0;
     const prezzoMax = (fPMax && fPMax.value)     ? parseItalianNumber(fPMax.value, Infinity) : Infinity;
     const supMin    = (fSupMin && fSupMin.value) ? parseItalianNumber(fSupMin.value, 0)      : 0;
+    const selectedDays = _getSelectedDays();
+    const wantedDaysSet = selectedDays.length
+        ? new Set(selectedDays.map(_normalizeDayName))
+        : null;
     const qRaw      = fSBar ? fSBar.value.trim() : '';
     LAST_SEARCH_QUERY = qRaw;
     const q = normalizeText(qRaw);
@@ -178,6 +200,10 @@ function applyFilters() {
                 if (prezzoMin > 0 && l.prezzo < prezzoMin) return false;
                 if (l.prezzo > prezzoMax)                  return false;
                 if (l.superficie < supMin)                 return false;
+                if (wantedDaysSet) {
+                    const annDays = (l.giorni || '').split(',').map(_normalizeDayName).filter(Boolean);
+                    if (!annDays.some(d => wantedDaysSet.has(d))) return false;
+                }
                 return true;
             });
 
@@ -195,6 +221,10 @@ function applyFilters() {
             if (prezzoMin > 0 && l.prezzo < prezzoMin) return false;
             if (l.prezzo > prezzoMax)                  return false;
             if (l.superficie < supMin)                 return false;
+            if (wantedDaysSet) {
+                const annDays = (l.giorni || '').split(',').map(_normalizeDayName).filter(Boolean);
+                if (!annDays.some(d => wantedDaysSet.has(d))) return false;
+            }
 
             if (q) {
                 const desc = typeof l.dettagli_extra === 'object' ? (l.dettagli_extra?.descrizione || '') : '';
@@ -281,7 +311,7 @@ function applyFilters() {
         else                   sub.textContent = 'Tutti i posteggi disponibili';
     }
 
-    renderChips(regione, tipo, stato, q, prezzoMin, prezzoMax, supMin);
+    renderChips(regione, tipo, stato, q, prezzoMin, prezzoMax, supMin, selectedDays);
     _injectItemListLd(results, regione, tipo, q);
 }
 
@@ -370,7 +400,7 @@ function _injectItemListLd(items, regione, tipo, q) {
 }
 
 // ── CHIPS ──
-function renderChips(regione, tipo, stato, q, prezzoMin, prezzoMax, supMin) {
+function renderChips(regione, tipo, stato, q, prezzoMin, prezzoMax, supMin, selectedDays) {
     const container = document.getElementById('activeChips');
     if (!container) return;
     container.innerHTML = '';
@@ -381,6 +411,10 @@ function renderChips(regione, tipo, stato, q, prezzoMin, prezzoMax, supMin) {
     if (prezzoMin > 0)    container.innerHTML += chip(`min €${prezzoMin.toLocaleString('it')}`, () => { const el = document.getElementById('fPrezzoMin'); if (el) el.value = ''; applyFilters(); });
     if (prezzoMax < Infinity) container.innerHTML += chip(`max €${prezzoMax.toLocaleString('it')}`, () => { const el = document.getElementById('fPrezzoMax'); if (el) el.value = ''; applyFilters(); });
     if (supMin > 0)       container.innerHTML += chip(`≥${supMin}m²`, () => { const el = document.getElementById('fSup'); if (el) el.value = ''; applyFilters(); });
+    if (Array.isArray(selectedDays) && selectedDays.length) {
+        const short = selectedDays.map(d => d.slice(0, 3)).join('+');
+        container.innerHTML += chip(`Giorni: ${short}`, () => { _clearAllDayChips(); applyFilters(); });
+    }
 }
 
 function chip(label, fn) {
@@ -389,10 +423,36 @@ function chip(label, fn) {
     return `<span class="chip" id="${id}">${escapeHTML(label)} <i class="fas fa-times text-blue-400"></i></span>`;
 }
 
+function _clearAllDayChips() {
+    ['dayChipsDesktop', 'dayChipsMobile'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.querySelectorAll('.day-chip.selected').forEach(b => b.classList.remove('selected'));
+    });
+}
+
+function toggleDayChip(btn) {
+    if (!btn) return;
+    btn.classList.toggle('selected');
+    // Sincronizza l'altro container (desktop ↔ mobile) se il chip omologo esiste
+    const day = btn.dataset.day;
+    const isMobile = btn.parentElement && btn.parentElement.id === 'dayChipsMobile';
+    const otherId  = isMobile ? 'dayChipsDesktop' : 'dayChipsMobile';
+    const other = document.getElementById(otherId);
+    if (other && day) {
+        const twin = other.querySelector('.day-chip[data-day="' + day + '"]');
+        if (twin) twin.classList.toggle('selected', btn.classList.contains('selected'));
+    }
+    // Auto-apply solo se siamo in modalità desktop (mobile applica al "Mostra risultati")
+    if (!isMobile) applyFilters();
+}
+window.toggleDayChip = toggleDayChip;
+
 function clearFilters() {
     ['fRegione', 'fTipo', 'fStato', 'fPrezzoMin', 'fPrezzoMax', 'fSup', 'searchBar'].forEach(id => {
         const el = document.getElementById(id); if (el) el.value = '';
     });
+    _clearAllDayChips();
     applyFilters();
 }
 
@@ -585,6 +645,16 @@ function openMobileFilters() {
     [['fRegione','m_fRegione'],['fTipo','m_fTipo'],['fStato','m_fStato'],['fPrezzoMin','m_fPrezzoMin'],['fPrezzoMax','m_fPrezzoMax'],['fSup','m_fSup']]
         .forEach(([src, dst]) => { const s = document.getElementById(src), d = document.getElementById(dst); if (s && d) d.value = s.value; });
 
+    // Sync chip giorni desktop → mobile
+    const dDesk = document.getElementById('dayChipsDesktop');
+    const dMob  = document.getElementById('dayChipsMobile');
+    if (dDesk && dMob) {
+        dMob.querySelectorAll('.day-chip').forEach(mb => {
+            const twin = dDesk.querySelector('.day-chip[data-day="' + mb.dataset.day + '"]');
+            mb.classList.toggle('selected', !!(twin && twin.classList.contains('selected')));
+        });
+    }
+
     overlay?.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => sheet.classList.add('open'));
@@ -600,6 +670,17 @@ function closeMobileFilters() {
 function applyMobileFilters() {
     [['m_fRegione','fRegione'],['m_fTipo','fTipo'],['m_fStato','fStato'],['m_fPrezzoMin','fPrezzoMin'],['m_fPrezzoMax','fPrezzoMax'],['m_fSup','fSup']]
         .forEach(([src, dst]) => { const s = document.getElementById(src), d = document.getElementById(dst); if (s && d) d.value = s.value; });
+
+    // Sync chip giorni mobile → desktop (desktop è la fonte di verità per applyFilters)
+    const dDesk = document.getElementById('dayChipsDesktop');
+    const dMob  = document.getElementById('dayChipsMobile');
+    if (dDesk && dMob) {
+        dDesk.querySelectorAll('.day-chip').forEach(db => {
+            const twin = dMob.querySelector('.day-chip[data-day="' + db.dataset.day + '"]');
+            db.classList.toggle('selected', !!(twin && twin.classList.contains('selected')));
+        });
+    }
+
     closeMobileFilters();
     applyFilters();
 }
@@ -608,6 +689,8 @@ function resetMobileFilters() {
     ['m_fRegione', 'm_fTipo', 'm_fStato', 'm_fPrezzoMin', 'm_fPrezzoMax', 'm_fSup'].forEach(id => {
         const el = document.getElementById(id); if (el) el.value = '';
     });
+    const dMob = document.getElementById('dayChipsMobile');
+    if (dMob) dMob.querySelectorAll('.day-chip.selected').forEach(b => b.classList.remove('selected'));
 }
 
 // ── EXPORTS ──────────────────────────────────────────────────
