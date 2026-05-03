@@ -6,40 +6,36 @@
 let _currentListing = null;
 let _contactFetched = false; // true dopo che initPage ha fetchato tel per utente loggato
 
-// Helper to fetch contact info robustly
+// Helper to fetch contact info via RPC `get_listing_contact`.
+// Anti-scraping: la RPC è SECURITY DEFINER e applica rate limit silenzioso
+// (50 contatti unique/ora) + log su contact_reveals. Owner e admin sono in
+// bypass — vedono sempre tutto senza consumo quota.
 async function fetchContactInfo(listing) {
     if (!listing) return;
-    let finalTel = null;
+    let finalTel   = null;
     let finalEmail = null;
 
     try {
         if (listing.id) {
-            const { data: contactData } = await _supabase
-                .from('annunci').select('tel, email').eq('id', listing.id).maybeSingle();
-            if (contactData) {
-                finalTel = contactData.tel;
-                finalEmail = contactData.email;
+            const { data, error } = await _supabase.rpc('get_listing_contact', { p_annuncio_id: listing.id });
+            if (error) {
+                if (error.code === '42501') {
+                    console.warn('Contatto non disponibile:', error.message);
+                } else {
+                    console.error('Errore RPC contatto:', error.message);
+                }
+            } else if (Array.isArray(data) && data.length > 0) {
+                const row = data[0];
+                finalTel   = row.tel || row.seller_telefono || null;
+                finalEmail = row.email || null;
             }
         }
     } catch (e) {
         console.error("Errore fetch contatto annuncio:", e);
     }
 
-    // Fallback: se tel è vuoto o non ha numeri, prendilo dal profilo venditore
-    const cleanTel = finalTel ? String(finalTel).replace(/\D/g, '') : '';
-    if (!cleanTel && listing.user_id) {
-        try {
-            const { data: seller } = await _supabase.from('profiles').select('telefono').eq('id', listing.user_id).maybeSingle();
-            if (seller && seller.telefono) {
-                finalTel = seller.telefono;
-            }
-        } catch (e) {
-            console.error("Errore fetch contatto venditore:", e);
-        }
-    }
-
-    listing.tel = finalTel;
-    listing.email = finalEmail;
+    listing.tel        = finalTel;
+    listing.email      = finalEmail;
     listing.telFetched = true;
 
     const telEl = document.getElementById('cTel');

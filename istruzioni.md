@@ -573,6 +573,24 @@ Lista pratica delle cose lasciate aperte (per non dimenticare).
 
 ### Bug RLS che ChatGPT ha segnalato — RISOLTI 3 mag 2026 (P0+P1)
 
+### Anti-scraping authenticated — soft fix (3 mag 2026, sera)
+- **Problema**: con `anon` chiuso (P0), un utente loggato poteva ancora scaricare in 1 chiamata tutti i `tel`/`email` annunci attivi (`?select=tel,email`). Creare un account costa 30s → bypass triviale.
+- **Fix soft (zero attrito UX normale, blocca scrape massivo)**:
+  - REVOKE SELECT su `annunci.tel`/`annunci.email` da `authenticated`. Tutte le altre colonne restano accessibili.
+  - Nuova RPC `get_listing_contact(p_annuncio_id uuid)` SECURITY DEFINER returns `(tel, email, seller_telefono)`. Owner-bypass + admin-bypass + rate limit silenzioso 50 reveal UNIQUE/ora (ON CONFLICT DO NOTHING su `(revealer_id, annuncio_id)` → riaprire stesso annuncio non consuma quota). Errore 42501 con messaggio italiano se quota piena.
+  - Nuova tabella `contact_reveals (id, revealer_id, annuncio_id, seller_id, created_at)` con RLS owner-or-seller-or-admin. Audit log + base per analytics futuri ("il tuo annuncio è stato visto da X persone").
+  - File: `PATCH_CONTACT_REVEAL_20260503.sql`. **Deployato**.
+- **Refactor client mirato (3 punti)**:
+  - `js/pages/annuncio-detail.js` `fetchContactInfo`: `from('annunci').select('tel, email')` + fallback `from('profiles').select('telefono')` → un'unica chiamata `_supabase.rpc('get_listing_contact', { p_annuncio_id: id })` che ritorna entrambi.
+  - `modifica-annuncio.html`: `select('*')` rimosso (rompeva con revoke colonna). Sostituito con select esplicito di tutte le colonne safe + chiamata `get_listing_contact()` per riempire `fTel` (owner-bypass: nessuna quota consumata).
+  - `dashboard.html` `loadAdminStats`: cambiato `select('*', { count: 'exact', head: true })` → `select('id', ...)` su 4 query count (necessario perché `*` espande a tutte le colonne, comprese quelle revoke).
+- **Note**:
+  - `profiles.telefono` resta accessibile a `authenticated` per non rompere mille altre query (vendi.html prefill, dashboard own profile, ecc). Vector secondario: si può scrappare i telefoni profili ma senza il context "annuncio = X". Da chiudere in fase 2 se serve.
+  - Per il proprietario di un annuncio (es. modifica) → owner-bypass nella RPC, nessun limite né log.
+  - Per l'admin → admin-bypass, nessun limite né log.
+  - Buyer normale: 1 contatto/secondo umanamente impossibile, 50 unique/ora copre anche il "shopper aggressivo".
+  - Scraper: dopo 50 unique annunci → bloccato per 1 ora. Combinato con il pannello security che lista i pattern email sospetti, abuse facilmente identificabile.
+
 **P0 — RLS PII leak (CONFERMATO live + RISOLTO):**
 - Test live: anon poteva scaricare 16 telefoni e 1 email da `/rest/v1/annunci?select=tel,email&status=eq.active`, e 15 telefoni da `/rest/v1/profiles?select=telefono`. Confermato leak attivo.
 - Fix: `PATCH_RLS_PII_LEAK_20260503.sql` — `REVOKE SELECT ON public.annunci FROM anon` + `GRANT SELECT (cols safe escluse tel/email)`. Stesso pattern su `profiles` (esclude telefono, is_admin, email_digest, email_stats, unsub_token, vetrina_welcome_days).

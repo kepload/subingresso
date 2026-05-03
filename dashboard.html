@@ -953,10 +953,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // ── Admin Logic ──────────────────────────────────────────
 async function loadAdminStats() {
-    const { count: totalAnnunci }  = await _supabase.from('annunci').select('*', { count: 'exact', head: true });
-    const { count: totalAttivi }   = await _supabase.from('annunci').select('*', { count: 'exact', head: true }).eq('status', 'active');
-    const { count: totalUtenti }   = await _supabase.from('profiles').select('*', { count: 'exact', head: true });
-    const { count: totalVetrina }  = await _supabase.from('annunci').select('*', { count: 'exact', head: true })
+    // NB: select('id') invece di select('*') — il revoke colonna su tel/email
+    // farebbe fallire l'espansione di * a livello PostgREST.
+    const { count: totalAnnunci }  = await _supabase.from('annunci').select('id', { count: 'exact', head: true });
+    const { count: totalAttivi }   = await _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active');
+    const { count: totalUtenti }   = await _supabase.from('profiles').select('id', { count: 'exact', head: true });
+    const { count: totalVetrina }  = await _supabase.from('annunci').select('id', { count: 'exact', head: true })
         .eq('featured', true).gt('featured_until', new Date().toISOString());
 
     document.getElementById('admStatAnnunci').textContent = totalAnnunci || 0;

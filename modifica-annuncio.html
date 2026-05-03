@@ -222,14 +222,29 @@ document.addEventListener('DOMContentLoaded', async () => {
         fReg.appendChild(opt);
     });
 
-    // Load data
-    const { data: l, error } = await _supabase.from('annunci').select('*').eq('id', listingId).single();
+    // Load data — niente select('*') perché authenticated non ha grant su tel/email.
+    // Fetch esplicito di tutte le colonne safe + RPC get_listing_contact per tel/email
+    // (RPC ha owner-bypass: nessun rate limit né log per il proprietario).
+    const { data: l, error } = await _supabase
+        .from('annunci')
+        .select('id,user_id,titolo,descrizione,stato,categoria,tipo,settore,dettagli_extra,regione,provincia,comune,superficie,giorni,prezzo,contatto,data,status,created_at,img_urls,expires_at,visualizzazioni,featured,featured_until,featured_tier,featured_since,tel_clicks,video_url')
+        .eq('id', listingId)
+        .single();
 
     if (error || !l || (l.user_id !== user.id && !_isAdmin)) {
         showToast('Annuncio non trovato o non autorizzato.', 'error');
         location.href = 'dashboard.html';
         return;
     }
+
+    // Fetch tel/email separato via RPC (owner bypass, nessun consumo quota)
+    try {
+        const { data: contactRows } = await _supabase.rpc('get_listing_contact', { p_annuncio_id: listingId });
+        if (Array.isArray(contactRows) && contactRows.length > 0) {
+            l.tel   = contactRows[0].tel   || null;
+            l.email = contactRows[0].email || null;
+        }
+    } catch (_) { /* prefill vuoto se fallisce */ }
 
     // Fill form
     document.getElementById('fTitolo').value = l.titolo;
