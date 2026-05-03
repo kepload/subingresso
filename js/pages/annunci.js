@@ -472,10 +472,11 @@ async function loadListings() {
 
         let { data, error } = await query;
         if (error && /column|schema|PGRST204/i.test(`${error.message || ''} ${error.code || ''}`)) {
-            console.warn('Optimized listing select failed, retrying with select(*)', error);
+            console.warn('Optimized listing select failed, retrying with safe select', error);
+            // NB: niente select('*') — anon non ha grant su tel/email (privacy).
             let fallbackQuery = _supabase
                 .from('annunci')
-                .select('*')
+                .select('id,user_id,titolo,descrizione,stato,categoria,tipo,settore,dettagli_extra,regione,provincia,comune,superficie,giorni,prezzo,contatto,data,status,created_at,img_urls,expires_at,visualizzazioni,featured,featured_until,featured_tier,featured_since,tel_clicks,video_url')
                 .order('created_at', { ascending: false });
             fallbackQuery = user
                 ? fallbackQuery.neq('status', 'deleted').or(`status.eq.active,user_id.eq.${user.id}`)

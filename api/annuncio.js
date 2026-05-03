@@ -159,7 +159,7 @@ module.exports = async function handler(req, res) {
     <link rel="canonical" id="_canonical" href="${esc(canonical)}">
     ${jsonLd ? `<script type="application/ld+json" id="_jsonLd">${safeJson(jsonLd)}</script>` : ''}
     ${ssrListing ? `<script>window.__SSR_LISTING__=${safeJson(ssrListing)};</script>` : ''}
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/tailwind.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');

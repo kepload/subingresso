@@ -318,7 +318,25 @@ create table if not exists public.weekly_digest_log (
 );
 alter table public.weekly_digest_log enable row level security;
 
--- ── 12. RELOAD SCHEMA CACHE ──────────────────────────────────
+-- ── 12. PATCH RLS PII LEAK (3 mag 2026) ────────────────────
+-- Chiude la fuga di tel/email/telefono verso utenti anonimi.
+-- RLS è row-level non column-level → serve grant colonna sul ruolo anon.
+-- authenticated mantiene l'accesso pieno (refactor ownership in sessione 2).
+
+revoke select on public.annunci from anon;
+grant select (
+  id, user_id, titolo, descrizione, stato, categoria, tipo, settore,
+  dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo,
+  contatto, data, status, created_at, img_urls, expires_at, visualizzazioni,
+  featured, featured_until, featured_tier, featured_since, tel_clicks, video_url
+) on public.annunci to anon;
+
+revoke select on public.profiles from anon;
+grant select (
+  id, nome, cognome, avatar_url, created_at
+) on public.profiles to anon;
+
+-- ── 13. RELOAD SCHEMA CACHE ──────────────────────────────────
 -- Forza PostgREST a ricaricare lo schema (risolve errori "column not found")
 NOTIFY pgrst, 'reload schema';
 

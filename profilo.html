@@ -110,10 +110,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    // Fetch active listings
+    // Fetch active listings (no tel/email — non serve nel profilo pubblico)
     const { data: listings } = await _supabase
         .from('annunci')
-        .select('*')
+        .select('id,user_id,titolo,descrizione,stato,categoria,tipo,settore,dettagli_extra,regione,provincia,comune,superficie,giorni,prezzo,contatto,data,status,created_at,img_urls,expires_at,visualizzazioni,featured,featured_until,featured_tier,featured_since,tel_clicks,video_url')
         .eq('user_id', userId)
         .eq('status', 'active')
         .order('created_at', { ascending: false });

@@ -542,9 +542,10 @@ buildPriceTable();
 // ══════════════ PREVIEW LISTINGS (Real Data) ══════════════
 async function loadRecentListings() {
     try {
+        // NB: niente tel/email (privacy). Sono accessibili solo a authenticated.
         const { data, error } = await _supabase
             .from('annunci')
-            .select('*')
+            .select('id,user_id,titolo,descrizione,stato,categoria,tipo,settore,dettagli_extra,regione,provincia,comune,superficie,giorni,prezzo,contatto,data,status,created_at,img_urls,expires_at,visualizzazioni,featured,featured_until,featured_tier,featured_since,tel_clicks,video_url')
             .eq('status', 'active')
             .or(`expires_at.gt.${new Date().toISOString()},expires_at.is.null`)
             .order('created_at', { ascending: false })

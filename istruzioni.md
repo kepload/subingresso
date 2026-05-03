@@ -571,10 +571,35 @@ Lista pratica delle cose lasciate aperte (per non dimenticare).
 - Trovati 2 account in DB con pattern scanner: `hunter_1777824966@temp.com` e `rlstest_1777824970_a@pwned.invalid`. Creati alle 16:16 UTC, 4 secondi di distanza, via standard `auth/signup` (non bypass), mai confermati, mai loggati. Probabile sessione ChatGPT Codex dell'utente in modalità "in sola lettura" che ha invece eseguito anche signup di test (per probare la RLS leak ipotizzata).
 - **`auth.audit_log_entries` è vuota** (0 righe totali) — su questo progetto Supabase l'audit log non è popolato. Per IP/UA reali serve il Logs Explorer del Dashboard Supabase, non il DB.
 
-### Bug RLS che ChatGPT ha segnalato (NON ancora fixato)
-- `setup-database.sql:146` ha `select using (status='active' ...)` su `annunci` senza limitare colonne → un anonimo può fare `GET /rest/v1/annunci?select=tel,email`. Stesso problema su `profiles.telefono` (policy `using(true)`).
-- **`SETUP_DEF_SUBINGRESSO.sql` non esiste nel repo** anche se è citato 7+ volte. Repo non riproduce lo schema vivo. Da fixare: o committare il file, o rifare `setup-database.sql` con tutto.
-- Altri bug minori segnalati da ChatGPT: `/js/config.js` 404 in `api/annunci-citta.js`, Tailwind CDN ancora usato in `api/annunci-citta.js` e `api/annuncio.js` (le SSR), `moderation.js` morto (definito ma non incluso), policy update senza `with check`. Tutti aperti.
+### Bug RLS che ChatGPT ha segnalato — RISOLTI 3 mag 2026 (P0+P1)
+
+**P0 — RLS PII leak (CONFERMATO live + RISOLTO):**
+- Test live: anon poteva scaricare 16 telefoni e 1 email da `/rest/v1/annunci?select=tel,email&status=eq.active`, e 15 telefoni da `/rest/v1/profiles?select=telefono`. Confermato leak attivo.
+- Fix: `PATCH_RLS_PII_LEAK_20260503.sql` — `REVOKE SELECT ON public.annunci FROM anon` + `GRANT SELECT (cols safe escluse tel/email)`. Stesso pattern su `profiles` (esclude telefono, is_admin, email_digest, email_stats, unsub_token, vetrina_welcome_days).
+- `authenticated` non toccato → utenti loggati continuano a leggere tutto. **TODO sessione 2**: anche authenticated non dovrebbe vedere tel/email/telefono di ALTRI utenti, serve refactor con vista pubblica + ownership check.
+- Effetto collaterale gestito: `select('*')` da anon ora dà 42501 → fixati 3 punti del client (`index.html` loadRecentListings, `profilo.html` lista venditore, `js/pages/annunci.js` fallback) sostituendo `select('*')` con select esplicito di tutte le colonne tranne tel/email.
+- Le SSR (`api/annuncio.js`, `api/annunci-citta.js`, `api/sitemap.js`) usavano già select esplicito con campi safe → non hanno richiesto modifiche per il leak.
+
+**P0 — Allineamento repo a prod:**
+- `SETUP_DEF_SUBINGRESSO.sql` ESISTE nel repo (errore precedente: glob `SETUP*` aveva fallito sulla mia ricerca, l'avevo dato per inesistente). Aggiunta sezione 12 con la patch RLS PII al file. **TODO sessione futura**: dump completo schema (`supabase db dump --linked --schema public`) per allineare TUTTO (manca: featured*, expires_at, visualizzazioni, page_views, valutatore_logs, saved_listings, alerts, ecc.).
+
+**P1 — `/js/config.js` 404:**
+- Rimosso `<script src="/js/config.js"></script>` da entrambe le pagine SSR di `api/annunci-citta.js` (capoluogo + placeholder). Il file non esisteva e dava 404 in console.
+
+**P1 — Tailwind CDN nelle SSR:**
+- Sostituito `<script src="https://cdn.tailwindcss.com"></script>` con `<link rel="stylesheet" href="/css/tailwind.css?v=2">` in:
+  - `api/annunci-citta.js` (2 occorrenze: capoluogo + placeholder)
+  - `api/annuncio.js` (1 occorrenza)
+- `tailwind.config.js` content esteso da `["./*.html", "./js/**/*.js"]` a `["./*.html", "./js/**/*.js", "./api/**/*.js"]` per scansionare le classi usate nei template SSR.
+- CSS ricompilato con `npx tailwindcss -i tailwind.input.css -o css/tailwind.css --minify` (788ms).
+
+### Bug minori ChatGPT — ANCORA APERTI (non urgenti)
+- **`moderation.js` morto**: `moderaAnnuncio` definito ma non incluso in nessun HTML. Mitigato dal trigger DB `enforce_annunci_status` che forza `pending` per non-admin. Da decidere: rimuovere il file o includerlo davvero.
+- **Link interni `annuncio.html?id=` vs `/annuncio?id=`**: bypassano SSR per click interni. Impatto SEO minimo (Googlebot atterra su URL pulito).
+- **Admin hardcoded in `setup-database.sql`** (file vecchio): in prod usate già `is_admin`, è solo igiene del repo.
+- **UPDATE policy senza `WITH CHECK`**: Postgres riusa USING come default, è solo pulizia.
+- **Bug foto `modifica-annuncio.html` (img[src^="http"])**: fragile ma in pratica funziona.
+- **CSP assente**: vero ma 1 settimana di lavoro per non rompere nulla → da pianificare.
 
 
 ---
