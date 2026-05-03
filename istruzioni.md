@@ -573,6 +573,30 @@ Lista pratica delle cose lasciate aperte (per non dimenticare).
 
 ### Bug RLS che ChatGPT ha segnalato — RISOLTI 3 mag 2026 (P0+P1)
 
+### Filtro "Giorni del mercato" multi-select (4 mag 2026)
+- Widget chip toggle (Lun/Mar/Mer/Gio/Ven/Sab/Dom) in `annunci.html`: sidebar desktop (`#dayChipsDesktop`) + bottom-sheet mobile (`#dayChipsMobile`). CSS `.day-chip` / `.day-chip.selected` aggiunte allo `<style>` della pagina.
+- Logica `js/pages/annunci.js`:
+  - `_normalizeDayName()` case-insensitive + accenti (gestisce `Lunedi` e `Lunedì`)
+  - `_getSelectedDays()` legge la sidebar desktop come fonte di verità
+  - `toggleDayChip(btn)` window-exposed per onclick HTML; sincronizza l'omologo desktop ↔ mobile, auto-applyFilters solo se siamo in modalità desktop
+  - Filtro: intersezione non-vuota tra `l.giorni.split(',')` (con normalize) e selectedDays. Aggiunto in entrambi i rami (proximity + classico).
+  - `renderChips`/`clearFilters`/`openMobileFilters`/`applyMobileFilters`/`resetMobileFilters` aggiornati per gestire i chip
+- Backfill DB: `PATCH_GIORNI_ACCENT_BACKFILL_20260504.sql` uniforma accenti (`Lunedi` → `Lunedì`, ecc.) via regexp_replace. Idempotente.
+- Cache bump: `annunci.js?v=2` → `?v=3` (solo in `annunci.html`).
+- **Non implementato per le SSR `/annunci/[citta]`** (pagine speciali capoluogo). Da fare se serve link tipo `/annunci/milano?giorni=Mar`.
+
+### Pannello "Annunci per regione" admin (3 mag 2026)
+- Sotto Funnel utenti, sopra Top comuni in `dashboard.html`: lista regioni con count annunci attivi, barra orizzontale verde proporzionale al max.
+- RPC `admin_listings_per_regione()` SECURITY DEFINER, granted solo ad authenticated, verifica is_admin (raise Forbidden). Coalesce `'Senza regione'` per annunci con regione null/vuota.
+- Hide-when-empty: il pannello si nasconde se la RPC fallisce o ritorna 0 righe.
+- File: `PATCH_ADMIN_LISTINGS_REGIONE_20260503.sql`. Deployato.
+
+### Backfill telefoni esistenti (3 mag 2026)
+- `PATCH_PHONE_NORMALIZE_BACKFILL_20260503.sql`: funzione PL/pgSQL `_normalize_phone_canonical(raw)` (stessa logica del JS `normalizePhone`) + UPDATE su `annunci.tel` e `profiles.telefono`. Idempotente.
+- Effetto: `+393452749815` → `345 2749815`, `3452749815` → `345 2749815`, `345 2749815` → no-op.
+- Risultato misurato: annunci 11→10 distinti, profiles 14→12 distinti (dedup naturale).
+- Il bottone Chiama già funzionava per qualsiasi formato grazie a `phoneToTelLink` al click; questo è solo per consistenza UI/dedup.
+
 ### Telefono — fix bottone Chiama + validazione form (3 mag 2026, notte)
 - **Bug**: il bottone "Chiama" su `annuncio.html` componeva `tel:393452749815` (strip naive di tutto-tranne-cifre con `replace(/\D/g, '')`). I dialer mobile salvavano in rubrica `393452749815` senza prefisso `+`. WhatsApp era ok (wa.me accetta entrambi formati).
 - **Fix bottone**: nuova helper `phoneToTelLink(raw)` in `js/data.js` ritorna E.164 strict (`+39XXXXXXXXXX`). Riconosce: già-E.164, `0039`, `39` (12-13 cifre), cellulare `3xx` (9-10 cifre), fisso `0xx` (9-11 cifre). `executeCall` in `annuncio-detail.js` ora usa `phoneToTelLink(tel)` → `tel:+39...`. WhatsApp non toccato (richiesta utente).
