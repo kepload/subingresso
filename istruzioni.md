@@ -573,6 +573,17 @@ Lista pratica delle cose lasciate aperte (per non dimenticare).
 
 ### Bug RLS che ChatGPT ha segnalato — RISOLTI 3 mag 2026 (P0+P1)
 
+### Telefono — fix bottone Chiama + validazione form (3 mag 2026, notte)
+- **Bug**: il bottone "Chiama" su `annuncio.html` componeva `tel:393452749815` (strip naive di tutto-tranne-cifre con `replace(/\D/g, '')`). I dialer mobile salvavano in rubrica `393452749815` senza prefisso `+`. WhatsApp era ok (wa.me accetta entrambi formati).
+- **Fix bottone**: nuova helper `phoneToTelLink(raw)` in `js/data.js` ritorna E.164 strict (`+39XXXXXXXXXX`). Riconosce: già-E.164, `0039`, `39` (12-13 cifre), cellulare `3xx` (9-10 cifre), fisso `0xx` (9-11 cifre). `executeCall` in `annuncio-detail.js` ora usa `phoneToTelLink(tel)` → `tel:+39...`. WhatsApp non toccato (richiesta utente).
+- **Validazione form coerente in 4 punti**: nuova helper `isValidItalianPhone(raw)` (strict /^\+39\d{9,11}$/ dopo normalize) + `setupPhoneInput(inputEl, opts)` UX widget che inietta hint live sotto l'input (grigio vuoto / verde valido con preview del salvataggio / rosso invalido con esempi). Normalizza al blur via `normalizePhone()` esistente. Agganciata in:
+  - `js/auth.js` `regTelefono` (registrazione) — blocca submit se compilato e non valido
+  - `vendi.html` `fTel` (pubblicazione annuncio) — blocca submit, sostituisce `isValidPhone` permissivo
+  - `modifica-annuncio.html` `fTel` (modifica annuncio) — aggiunta validazione `updateAnnuncio`
+  - `dashboard.html` `pTelefono` (modal profilo) — blocca submit `saveProfile`
+- **Cache bumps**: `data.js?v=9`, `auth.js?v=9`, `annuncio-detail.js?v=10`. Updated in batch su tutti gli HTML via sed.
+- **Note**: `normalizePhone` (esistente) ritorna formato display locale `347 1234567` per UI/storage canonico. `phoneToTelLink` ritorna E.164 per dialer. Le 2 funzioni sono complementari, non sovrapposte.
+
 ### Anti-scraping authenticated — soft fix (3 mag 2026, sera)
 - **Problema**: con `anon` chiuso (P0), un utente loggato poteva ancora scaricare in 1 chiamata tutti i `tel`/`email` annunci attivi (`?select=tel,email`). Creare un account costa 30s → bypass triviale.
 - **Fix soft (zero attrito UX normale, blocca scrape massivo)**:

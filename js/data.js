@@ -640,3 +640,71 @@ function isValidPhone(tel) {
     const digits = tel.replace(/\D/g, '');
     return digits.length >= 6 && digits.length <= 13;
 }
+
+// Converte qualsiasi formato (con o senza +39, spazi, trattini) in formato E.164
+// "+39XXXXXXXXXX" da usare in href="tel:..." per non confondere il dialer
+// (altrimenti "393452749815" viene salvato in rubrica così come scritto).
+function phoneToTelLink(raw) {
+    if (!raw) return '';
+    let s = String(raw).replace(/[^\d+]/g, '');
+    if (s.indexOf('+') > 0) s = s.replace(/\+/g, '');     // + solo all'inizio
+    if (s.startsWith('+')) return s;                       // già E.164
+    if (s.startsWith('0039')) return '+39' + s.slice(4);
+    if (s.startsWith('39') && s.length >= 11 && s.length <= 13) return '+' + s;
+    if (/^3\d{8,9}$/.test(s)) return '+39' + s;            // mobile IT (3xx xxxxxxx, 9-10 cifre)
+    if (/^0\d{8,10}$/.test(s)) return '+39' + s;           // fisso IT (0xx xxx xxxx)
+    if (s.length >= 9 && s.length <= 11) return '+39' + s; // ambiguo, prepend IT
+    return '+' + s;                                        // fallback estero
+}
+
+// Validazione strict per numeri italiani: dopo normalizzazione deve essere
+// +39 + 9-11 cifre (copre cellulari e fissi).
+function isValidItalianPhone(raw) {
+    const link = phoneToTelLink(raw);
+    if (!link) return false;
+    return /^\+39\d{9,11}$/.test(link);
+}
+
+// UX helper: collega un input "tel" con normalizzazione automatica al blur
+// + hint live colorato (grigio vuoto, verde valido, rosso invalido).
+// Usalo subito dopo che l'input è in DOM:
+//   setupPhoneInput(document.getElementById('fTel'));
+function setupPhoneInput(inputEl, opts) {
+    if (!inputEl) return;
+    opts = opts || {};
+    const hintId = opts.hintId || (inputEl.id + 'Hint');
+    let hintEl = document.getElementById(hintId);
+    if (!hintEl) {
+        hintEl = document.createElement('div');
+        hintEl.id = hintId;
+        hintEl.className = 'text-[11px] font-bold mt-1';
+        inputEl.parentNode.insertBefore(hintEl, inputEl.nextSibling);
+    }
+    const update = () => {
+        const v = inputEl.value;
+        inputEl.classList.remove('border-red-300', 'border-emerald-300', 'ring-red-100', 'ring-emerald-100');
+        if (!v.trim()) {
+            hintEl.className = 'text-[11px] text-slate-400 font-bold mt-1';
+            hintEl.textContent = opts.placeholderHint || 'Es. 347 1234567 · 0612345678 · +39 347 1234567';
+            return;
+        }
+        if (isValidItalianPhone(v)) {
+            hintEl.className = 'text-[11px] text-emerald-600 font-bold mt-1';
+            hintEl.innerHTML = '<i class="fas fa-check-circle mr-1"></i>Numero valido — verrà salvato come ' + escapeHTML(normalizePhone(v));
+            inputEl.classList.add('border-emerald-300');
+        } else {
+            hintEl.className = 'text-[11px] text-red-500 font-bold mt-1';
+            hintEl.innerHTML = '<i class="fas fa-exclamation-circle mr-1"></i>Numero non valido. Scrivi cellulare (347 1234567) o fisso (0612345678).';
+            inputEl.classList.add('border-red-300');
+        }
+    };
+    inputEl.addEventListener('input', update);
+    inputEl.addEventListener('blur', () => {
+        const v = inputEl.value;
+        if (v.trim() && isValidItalianPhone(v)) {
+            inputEl.value = normalizePhone(v);
+        }
+        update();
+    });
+    update();
+}

@@ -159,6 +159,10 @@ function initAuthModal() {
     if (!document.body) return;
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     document.getElementById('authOverlay').addEventListener('click', closeAuthModal);
+    // Validazione live telefono nel form di registrazione
+    if (typeof setupPhoneInput === 'function') {
+        setupPhoneInput(document.getElementById('regTelefono'));
+    }
 }
 
 // ── Tab switching ─────────────────────────────────────────
@@ -528,8 +532,16 @@ window.handleRegister = async function (e) {
     const nome     = document.getElementById('regNome').value.trim();
     const cognome  = document.getElementById('regCognome').value.trim();
     const email    = document.getElementById('regEmail').value.trim();
-    const telefono = document.getElementById('regTelefono').value.trim();
+    const telRaw   = document.getElementById('regTelefono').value.trim();
     const password = document.getElementById('regPassword').value;
+
+    // Telefono opzionale, ma se compilato deve essere valido
+    if (telRaw && !isValidItalianPhone(telRaw)) {
+        _showAuthError('Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567');
+        _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
+        return;
+    }
+    const telefono = telRaw ? normalizePhone(telRaw) : '';
 
     try {
         const _lottEligible = sessionStorage.getItem('_reg_src') === 'popup';

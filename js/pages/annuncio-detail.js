@@ -434,10 +434,13 @@ function executeCall(listing) {
     }
     let tel = listing.tel;
     if (!tel || String(tel).includes('*')) { showToast('Numero di telefono non disponibile.', 'error'); return; }
-    const clean = String(tel).replace(/\D/g, '');
-    if (!clean) { showToast('Nessun numero di telefono valido associato a questo annuncio.', 'error'); return; }
+    // Usa formato E.164 ("+39XXXXXXXXXX") per il dialer:
+    // strip naive di tutto-tranne-cifre dava "393452749815" che il telefono
+    // salvava in rubrica così com'era invece di formattare correttamente.
+    const link = (typeof phoneToTelLink === 'function') ? phoneToTelLink(tel) : String(tel).replace(/\D/g, '');
+    if (!link) { showToast('Nessun numero di telefono valido associato a questo annuncio.', 'error'); return; }
     if (typeof listing.id !== 'number') (async () => { try { await _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }); } catch(_){} })();
-    window.location.href = `tel:${clean}`;
+    window.location.href = `tel:${link}`;
 }
 
 function makeCall() {

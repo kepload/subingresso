@@ -609,7 +609,10 @@
                 </div>
                 <div>
                     <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Telefono</label>
-                    <input id="pTelefono" type="tel" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+                    <input id="pTelefono" type="tel" inputmode="tel" autocomplete="tel"
+                           placeholder="es. 347 1234567 (anche con +39)"
+                           class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
+                    <!-- Hint live + validazione iniettati da setupPhoneInput() in data.js -->
                 </div>
 
                 <!-- Preferenze email -->
@@ -864,8 +867,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=3"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=8"></script>
-<script src="js/auth.js?v=8"></script>
+<script src="js/data.js?v=9"></script>
+<script src="js/auth.js?v=9"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <script>
 
@@ -1792,9 +1795,15 @@ async function uploadAvatar() {
 }
 
 // ── Modal Profilo ─────────────────────────────────────────
+let _profilePhoneBound = false;
 function goToProfilo() {
     document.getElementById('profiloModal').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    // Una sola volta per sessione: aggancia validazione live al telefono
+    if (!_profilePhoneBound && typeof setupPhoneInput === 'function') {
+        setupPhoneInput(document.getElementById('pTelefono'));
+        _profilePhoneBound = true;
+    }
 }
 function closeProfiloModal() {
     document.getElementById('profiloModal').classList.add('hidden');
@@ -2783,12 +2792,19 @@ async function deleteAlert(id) {
 async function saveProfile(e) {
     e.preventDefault();
     const btn = document.querySelector('#profileForm button[type="submit"]');
+    // Validazione telefono (se compilato): rifiuta numeri non riconoscibili
+    const _telRaw = document.getElementById('pTelefono').value.trim();
+    if (_telRaw && !isValidItalianPhone(_telRaw)) {
+        showToast('Telefono non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567', 'warning');
+        return;
+    }
+    const _tel = _telRaw ? normalizePhone(_telRaw) : '';
     if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Salvataggio…'; }
     const { error } = await _supabase.from('profiles').upsert({
         id: _currentUser.id,
         nome:     document.getElementById('pNome').value.trim(),
         cognome:  document.getElementById('pCognome').value.trim(),
-        telefono: document.getElementById('pTelefono').value.trim(),
+        telefono: _tel,
         email_digest: document.getElementById('pEmailDigest').checked,
         email_stats:  document.getElementById('pEmailStats').checked
     });

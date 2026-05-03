@@ -336,9 +336,10 @@
                             </div>
                             <div>
                                 <label class="field-label">Telefono (WhatsApp) *</label>
-                                <input id="fTel" type="tel" placeholder="es. 347 1234567 (anche con +39)" class="field-input bg-blue-50/50"
-                                    oninput="this.value = normalizePhone(this.value)"
-                                    onblur="this.value = normalizePhone(this.value)">
+                                <input id="fTel" type="tel" inputmode="tel" autocomplete="tel"
+                                       placeholder="es. 347 1234567 (anche con +39)"
+                                       class="field-input bg-blue-50/50">
+                                <!-- Hint live + validazione iniettati da setupPhoneInput() in data.js -->
                             </div>
                         </div>
 
@@ -376,9 +377,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=8"></script>
+<script src="js/data.js?v=9"></script>
 <script src="js/ui-components.js?v=2"></script>
-<script src="js/auth.js?v=8"></script>
+<script src="js/auth.js?v=9"></script>
 <script>
 
 // ── Step Management ───────────────────────────────────────
@@ -537,11 +538,12 @@ function _validateStep(n) {
             return _err('La descrizione deve essere di almeno 10 caratteri.');
         if (!document.getElementById('fNome').value.trim())
             return _err('Inserisci il nome di contatto.');
-        const _tel = normalizePhone(document.getElementById('fTel').value);
-        document.getElementById('fTel').value = _tel;
-        if (!_tel) return _err('Inserisci un numero di telefono (WhatsApp).');
-        if (!isValidPhone(_tel))
+        const _telRaw = document.getElementById('fTel').value;
+        if (!_telRaw.trim()) return _err('Inserisci un numero di telefono (WhatsApp).');
+        if (!isValidItalianPhone(_telRaw))
             return _err('Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567');
+        const _tel = normalizePhone(_telRaw);
+        document.getElementById('fTel').value = _tel;
     }
     return true;
 }
@@ -773,6 +775,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (submitBtn && !submitBtn.dataset.bound) {
         submitBtn.dataset.bound = '1';
         submitBtn.addEventListener('click', submitAnnuncio);
+    }
+
+    // Validazione live telefono (hint + check verde/rosso, normalize on blur)
+    if (typeof setupPhoneInput === 'function') {
+        setupPhoneInput(document.getElementById('fTel'));
     }
 
     // Popola regioni

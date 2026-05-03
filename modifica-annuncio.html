@@ -163,7 +163,10 @@
                         </div>
                         <div>
                             <label class="field-label">Telefono (WhatsApp) *</label>
-                            <input id="fTel" type="tel" placeholder="es. 333 1234567" class="field-input bg-blue-50/50">
+                            <input id="fTel" type="tel" inputmode="tel" autocomplete="tel"
+                                   placeholder="es. 347 1234567 (anche con +39)"
+                                   class="field-input bg-blue-50/50">
+                            <!-- Hint live + validazione iniettati da setupPhoneInput() in data.js -->
                         </div>
                     </div>
                 </div>
@@ -198,7 +201,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=8"></script>
+<script src="js/data.js?v=9"></script>
 <script src="js/auth.js"></script>
 <script>
 const params = new URLSearchParams(location.search);
@@ -255,6 +258,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('fDescrizione').value = l.descrizione;
     if (l.contatto) document.getElementById('fNome').value = l.contatto;
     if (l.tel) document.getElementById('fTel').value = l.tel;
+
+    // Validazione live telefono
+    if (typeof setupPhoneInput === 'function') {
+        setupPhoneInput(document.getElementById('fTel'));
+    }
 
     if (l.stato === 'Vendita') document.getElementById('radioVendita').checked = true;    else document.getElementById('radioAffitto').checked = true;
 
@@ -347,6 +355,12 @@ async function updateAnnuncio() {
         showToast('Compila i campi contatto: Nome e Telefono.', 'warning');
         return;
     }
+    if (!isValidItalianPhone(tel)) {
+        showToast('Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567', 'warning');
+        return;
+    }
+    // Salva il numero in formato canonico
+    document.getElementById('fTel').value = normalizePhone(tel);
     if (isNaN(prezzo) || prezzo < 100) {
         showToast('Il prezzo minimo è 100 €.', 'warning');
         return;
