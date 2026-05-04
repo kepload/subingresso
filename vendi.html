@@ -330,16 +330,25 @@
                             <textarea id="fDescrizione" placeholder="Descrivi la posizione, la clientela, il canone comunale..." class="field-input mt-1"></textarea>
                             </div>
 
+                        <!-- Banner: telefono mancante dal profilo (solo se vero) -->
+                        <div id="missingPhoneBanner" class="hidden bg-amber-50 border-2 border-amber-300 rounded-2xl px-4 py-3 flex items-start gap-3">
+                            <i class="fas fa-exclamation-triangle text-amber-500 mt-0.5"></i>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-black text-amber-900 leading-tight">Numero di telefono mancante</p>
+                                <p class="text-xs text-amber-700 font-semibold mt-0.5">Inserisci il tuo numero qui sotto. Lo useremo per gli acquirenti e lo salveremo nel tuo profilo per i prossimi annunci.</p>
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="field-label">Nome Contatto *</label>
-                                <input id="fNome" type="text" placeholder="Il tuo nome" class="field-input bg-blue-50/50">
+                                <input id="fNome" type="text" placeholder="Il tuo nome" class="field-input bg-blue-50/50" required>
                             </div>
                             <div>
-                                <label class="field-label">Telefono (WhatsApp) *</label>
+                                <label class="field-label">Telefono (WhatsApp) <span class="text-red-500">*</span></label>
                                 <input id="fTel" type="tel" inputmode="tel" autocomplete="tel"
                                        placeholder="es. 347 1234567 (anche con +39)"
-                                       class="field-input bg-blue-50/50">
+                                       class="field-input bg-blue-50/50" required>
                                 <!-- Hint live + validazione iniettati da setupPhoneInput() in data.js -->
                             </div>
                         </div>
@@ -408,11 +417,13 @@ function goToStep(n) {
         _suggestTitle();
         // force=true: se al primo arrivo i campi non sono stati riempiti
         // (race condition con getSession), riprova ad ogni accesso a step 5
-        prefillContactFromSession(/* force */ false);
+        prefillContactFromSession(/* force */ false).then(() => _checkMissingPhoneBanner());
         // Re-applica anche dalla cache localStorage subito (sync, no network), scope per user_id
         let _uid = null;
         try { _uid = _getStoredSupabaseSession()?.user?.id || null; } catch (_) {}
         _prefillFromCache(_uid);
+        // Mostra banner "telefono mancante" se il campo e' vuoto, e fa focus automatico
+        _checkMissingPhoneBanner();
     }
     if (_step > 1) _saveDraft();
 }
@@ -542,12 +553,20 @@ function _validateStep(n) {
             return _err('Inserisci un titolo per il tuo annuncio.');
         if (document.getElementById('fDescrizione').value.trim().length < 10)
             return _err('La descrizione deve essere di almeno 10 caratteri.');
-        if (!document.getElementById('fNome').value.trim())
+        if (!document.getElementById('fNome').value.trim()) {
+            setTimeout(() => { try { document.getElementById('fNome').focus(); } catch (_) {} }, 400);
             return _err('Inserisci il nome di contatto.');
+        }
         const _telRaw = document.getElementById('fTel').value;
-        if (!_telRaw.trim()) return _err('Inserisci un numero di telefono (WhatsApp).');
-        if (!isValidItalianPhone(_telRaw))
+        if (!_telRaw.trim()) {
+            _checkMissingPhoneBanner();
+            setTimeout(() => { try { document.getElementById('fTel').focus(); } catch (_) {} }, 400);
+            return _err('Il numero di telefono è obbligatorio. Inseriscilo per pubblicare l\'annuncio.');
+        }
+        if (!isValidItalianPhone(_telRaw)) {
+            setTimeout(() => { try { document.getElementById('fTel').focus(); } catch (_) {} }, 400);
             return _err('Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567');
+        }
         const _tel = normalizePhone(_telRaw);
         document.getElementById('fTel').value = _tel;
     }
@@ -683,6 +702,29 @@ function useTemplate() {
 
 
 // ── Init ──────────────────────────────────────────────────
+// Mostra/nasconde il banner "telefono mancante" e fa focus sul campo se vuoto.
+function _checkMissingPhoneBanner() {
+    const banner = document.getElementById('missingPhoneBanner');
+    const telEl  = document.getElementById('fTel');
+    if (!banner || !telEl) return;
+    const isEmpty = !telEl.value.trim();
+    banner.classList.toggle('hidden', !isEmpty);
+    if (isEmpty) {
+        // Bordo rosso piu' marcato per attirare l'attenzione
+        telEl.style.borderColor = '#fbbf24';
+        telEl.style.borderWidth = '2px';
+        // Focus automatico ma solo se siamo gia' arrivati allo step 5 (no rubbing focus al banner stesso)
+        setTimeout(() => {
+            if (_step === 5 && !telEl.value.trim()) {
+                try { telEl.focus({ preventScroll: false }); } catch (_) { telEl.focus(); }
+            }
+        }, 250);
+    } else {
+        telEl.style.borderColor = '';
+        telEl.style.borderWidth = '';
+    }
+}
+
 // Helper: chiavi cache scope-ate per user_id (evita leak cross-user su device condivisi)
 function _userKey(base, userId) {
     if (!userId) return null;
@@ -823,6 +865,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Validazione live telefono (hint + check verde/rosso, normalize on blur)
     if (typeof setupPhoneInput === 'function') {
         setupPhoneInput(document.getElementById('fTel'));
+    }
+    // Banner "telefono mancante" si nasconde appena l'utente digita qualcosa
+    const _telForBanner = document.getElementById('fTel');
+    if (_telForBanner) {
+        _telForBanner.addEventListener('input', _checkMissingPhoneBanner);
+        _telForBanner.addEventListener('blur',  _checkMissingPhoneBanner);
     }
 
     // Popola regioni
