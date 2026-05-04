@@ -200,6 +200,8 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **Sempre `RAISE WARNING`** invece di `NULL` nell'exception handler.
 - **Tabella `notify_alert_log(user_id, annuncio_id, sent_at)`** PK composita: dedup hard. Rollback su fail Resend.
 - **Verify JWT DISATTIVATO** sulle 3 notify (cron + unsubscribe accedono senza utente loggato).
+- **Auth check Bearer SERVICE_ROLE** dentro tutte le 8 Edge Functions interne (notify-message/seller/alert, welcome-email, engagement-reminders, weekly-*, admin-anomaly-check). admin-anomaly-check accetta anche JWT di admin loggato (bottone dashboard). Cron pg_cron aggiornati con vera service_role JWT (PATCH_CRON_AUTH_20260504.sql).
+- **Escape HTML** (`escapeHTML()` server-side) su tutti i campi user-controlled iniettati nelle email: senderName, titolo, motivazione, comune, tipo, settore. Subject usa il valore raw (no entità HTML letterali).
 
 ### Tabelle email
 - `weekly_digest_log(user_id, week_start)` PK anti-doppio.

@@ -18,6 +18,15 @@ const SITE_URL                   = 'https://subingresso.it';
 const RADIUS_KM                  = 200;
 const MAX_AGE_HOURS              = 24;
 
+function escapeHTML(s: unknown): string {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // Coordinate città italiane (specchio di data.js)
 const PROVINCE_COORDS: Record<string, [number, number]> = {
   "Roma": [41.89, 12.49], "Milano": [45.46, 9.19], "Napoli": [40.85, 14.26], "Torino": [45.07, 7.68],
@@ -62,6 +71,11 @@ function getCityCoords(cityName: string): [number, number] | null {
 
 Deno.serve(async (req) => {
   try {
+    const auth = req.headers.get('authorization') || '';
+    if (auth !== `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`) {
+      return new Response('Unauthorized', { status: 401 });
+    }
+
     const payload = await req.json();
 
     if (payload.table !== 'annunci') {
@@ -155,10 +169,11 @@ Deno.serve(async (req) => {
       : 'Trattativa privata';
 
     const annuncioUrl = `${SITE_URL}/annuncio.html?id=${annuncio.id}`;
-    const titoloSafe  = (annuncio.titolo || 'Nuovo annuncio').replace(/[<>]/g, '');
-    const luogoStr    = annuncio.comune || annuncio.regione || 'Italia';
-    const tipoSafe    = (annuncio.tipo   || '').replace(/[<>]/g, '');
-    const merceSafe   = (annuncio.merce  || '').replace(/[<>]/g, '');
+    const titoloRaw   = annuncio.titolo || 'Nuovo annuncio';
+    const titoloSafe  = escapeHTML(titoloRaw);
+    const luogoStr    = escapeHTML(annuncio.comune || annuncio.regione || 'Italia');
+    const tipoSafe    = escapeHTML(annuncio.tipo   || '');
+    const merceSafe   = escapeHTML(annuncio.merce  || '');
     const dettagliRows = [
       tipoSafe  ? `<tr><td style="color:#64748b;font-size:13px;padding:4px 0;">Tipo</td><td style="color:#0f172a;font-size:14px;font-weight:600;text-align:right;">${tipoSafe}</td></tr>` : '',
       merceSafe ? `<tr><td style="color:#64748b;font-size:13px;padding:4px 0;">Settore</td><td style="color:#0f172a;font-size:14px;font-weight:600;text-align:right;">${merceSafe}</td></tr>` : '',
@@ -214,7 +229,7 @@ Deno.serve(async (req) => {
           body: JSON.stringify({
             from: FROM_EMAIL,
             to:   email,
-            subject: `🔔 Nuova piazza disponibile vicino a te — ${titoloSafe}`,
+            subject: `🔔 Nuova piazza disponibile vicino a te — ${titoloRaw}`,
             html: `
               <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:520px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #f1f5f9;">
                 <div style="background:#2563eb;padding:28px 32px;">

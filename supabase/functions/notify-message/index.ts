@@ -11,8 +11,22 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const FROM_EMAIL              = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL                = 'https://subingresso.it';
 
+function escapeHTML(s: unknown): string {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 Deno.serve(async (req) => {
   try {
+    const auth = req.headers.get('authorization') || '';
+    if (auth !== `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`) {
+      return new Response('Unauthorized', { status: 401 });
+    }
+
     const payload = await req.json();
 
     // Accetta solo INSERT su messaggi
@@ -59,6 +73,10 @@ Deno.serve(async (req) => {
     const annuncioTitolo = (conv.annuncio as any)?.titolo || 'un annuncio';
     const testoPreview   = msg.testo.length > 200 ? msg.testo.slice(0, 200) + '…' : msg.testo;
 
+    const senderNameSafe   = escapeHTML(senderName);
+    const annuncioTitoloSafe = escapeHTML(annuncioTitolo);
+    const testoPreviewSafe = escapeHTML(testoPreview);
+
     // 4. Invia email via Resend
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -78,10 +96,10 @@ Deno.serve(async (req) => {
             <div style="padding:32px;">
               <h2 style="margin:0 0 8px;font-size:20px;font-weight:900;color:#0f172a;">Hai un nuovo messaggio</h2>
               <p style="margin:0 0 20px;color:#64748b;font-size:14px;">
-                <strong style="color:#0f172a;">${senderName}</strong> ti ha scritto riguardo a <em>${annuncioTitolo}</em>:
+                <strong style="color:#0f172a;">${senderNameSafe}</strong> ti ha scritto riguardo a <em>${annuncioTitoloSafe}</em>:
               </p>
               <div style="background:#f8fafc;border-left:4px solid #2563eb;border-radius:8px;padding:16px 20px;margin-bottom:28px;">
-                <p style="margin:0;color:#334155;font-size:15px;line-height:1.6;">${testoPreview}</p>
+                <p style="margin:0;color:#334155;font-size:15px;line-height:1.6;">${testoPreviewSafe}</p>
               </div>
               <a href="${SITE_URL}/messaggi.html"
                  style="display:inline-block;background:#2563eb;color:#fff;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;">

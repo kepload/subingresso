@@ -12,8 +12,22 @@ const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const FROM_EMAIL                = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL                  = 'https://subingresso.it';
 
+function escapeHTML(s: unknown): string {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 Deno.serve(async (req) => {
   try {
+    const auth = req.headers.get('authorization') || '';
+    if (auth !== `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`) {
+      return new Response('Unauthorized', { status: 401 });
+    }
+
     const payload = await req.json();
 
     if (payload.table !== 'annunci') return new Response('Ignored', { status: 200 });
@@ -61,7 +75,8 @@ Deno.serve(async (req) => {
     const { data: { user } } = await supabase.auth.admin.getUserById(record.user_id);
     if (!user?.email) return new Response('No seller email', { status: 200 });
 
-    const titoloSafe  = (record.titolo || 'Il tuo annuncio').replace(/[<>]/g, '');
+    const titoloRaw   = record.titolo || 'Il tuo annuncio';
+    const titoloSafe  = escapeHTML(titoloRaw);
     const annuncioUrl = `${SITE_URL}/annuncio.html?id=${record.id}`;
     const dashboardUrl = `${SITE_URL}/dashboard.html`;
 
@@ -69,7 +84,7 @@ Deno.serve(async (req) => {
     let bodyHtml: string;
 
     if (tipo === 'ricevuto') {
-      subject = `✅ Annuncio ricevuto — ${titoloSafe}`;
+      subject = `✅ Annuncio ricevuto — ${titoloRaw}`;
       bodyHtml = `
         <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:520px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #f1f5f9;">
           <div style="background:#2563eb;padding:28px 32px;">
@@ -99,7 +114,7 @@ Deno.serve(async (req) => {
         ? extra.rejection_reason
         : (extra?.rejection_reason || 'Il contenuto non rispettava le linee guida della piattaforma.');
 
-      subject = `❌ Annuncio non approvato — ${titoloSafe}`;
+      subject = `❌ Annuncio non approvato — ${titoloRaw}`;
       bodyHtml = `
         <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:520px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #f1f5f9;">
           <div style="background:#dc2626;padding:28px 32px;">
@@ -113,7 +128,7 @@ Deno.serve(async (req) => {
             </p>
             <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:16px 20px;margin:0 0 24px;">
               <p style="margin:0 0 6px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#dc2626;">Motivo</p>
-              <p style="margin:0;font-size:14px;font-weight:600;color:#7f1d1d;line-height:1.5;">${motivazione}</p>
+              <p style="margin:0;font-size:14px;font-weight:600;color:#7f1d1d;line-height:1.5;">${escapeHTML(motivazione)}</p>
             </div>
             <p style="color:#64748b;font-size:14px;line-height:1.6;margin:0 0 24px;">
               Puoi correggere il tuo annuncio direttamente dalla dashboard tenendo conto delle indicazioni sopra. Una volta corretto, verrà rimesso in coda per la revisione.
@@ -135,7 +150,7 @@ Deno.serve(async (req) => {
           </div>
         </div>`;
     } else {
-      subject = `🎉 Il tuo annuncio è online — ${titoloSafe}`;
+      subject = `🎉 Il tuo annuncio è online — ${titoloRaw}`;
       bodyHtml = `
         <div style="font-family:'Helvetica Neue',Arial,sans-serif;max-width:520px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #f1f5f9;">
           <div style="background:#2563eb;padding:28px 32px;">

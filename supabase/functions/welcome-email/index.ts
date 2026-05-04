@@ -22,6 +22,11 @@ Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
 
   try {
+    const auth = req.headers.get('authorization') || '';
+    if (auth !== `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`) {
+      return json({ error: 'Unauthorized' }, 401);
+    }
+
     const body = await req.json().catch(() => null);
     if (!body) return json({ error: 'Body mancante' }, 400);
 

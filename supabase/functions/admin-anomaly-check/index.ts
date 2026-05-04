@@ -30,6 +30,23 @@ Deno.serve(async (req) => {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
+  // Auth: SERVICE_ROLE (cron) o JWT di un admin loggato (bottone dashboard).
+  const authHeader = req.headers.get('authorization') || '';
+  const token = authHeader.replace(/^Bearer\s+/i, '').trim();
+  if (!token) {
+    return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { ...CORS, 'Content-Type': 'application/json' } });
+  }
+  if (token !== SUPABASE_SERVICE_ROLE_KEY) {
+    const { data: { user }, error: uErr } = await supabase.auth.getUser(token);
+    if (uErr || !user) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { ...CORS, 'Content-Type': 'application/json' } });
+    }
+    const { data: prof } = await supabase.from('profiles').select('is_admin').eq('id', user.id).single();
+    if (!prof?.is_admin) {
+      return new Response(JSON.stringify({ error: 'Forbidden' }), { status: 403, headers: { ...CORS, 'Content-Type': 'application/json' } });
+    }
+  }
+
   try {
     // ── Rate-limit: salta se ultimo check inviato < 12h fa ─────
     const { data: lastLog } = await supabase

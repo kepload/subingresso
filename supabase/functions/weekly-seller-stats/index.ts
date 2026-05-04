@@ -24,8 +24,12 @@ function getWeekStart(): string {
   return d.toISOString().slice(0, 10);
 }
 
-Deno.serve(async (_req) => {
+Deno.serve(async (req) => {
   try {
+    const auth = req.headers.get('authorization') || '';
+    if (auth !== `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { 'Content-Type': 'application/json' } });
+    }
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
     const weekStart = getWeekStart();
 
