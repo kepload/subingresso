@@ -1256,7 +1256,7 @@ async function loadOnboardingWidget(user, profile) {
             icon: 'fa-camera',
             title: 'Carica una foto profilo',
             desc:  hasAvatar ? 'Foto caricata' : 'Aumenta la fiducia degli acquirenti',
-            cta:   hasAvatar ? null : { label: 'Carica', href: '#profilo', onclick: "showTab('profilo')" },
+            cta:   hasAvatar ? null : { label: 'Carica', href: '#avatar', onclick: "document.getElementById('avatarInput').click()" },
         },
         {
             done: hasListing,
@@ -1788,6 +1788,11 @@ async function uploadAvatar() {
         document.getElementById('avatarContainer').innerHTML = img;
         document.getElementById('welcomeAvatar').innerHTML   = img;
         updateAuthNav();
+        loadOnboardingWidget(_currentUser, {
+            telefono: document.getElementById('pTelefono')?.value || '',
+            avatar_url: publicUrl,
+        });
+        if (typeof showToast === 'function') showToast('Foto profilo aggiornata', 'success');
     } catch (err) {
         console.error("uploadAvatar error:", err);
         showToast('Errore caricamento immagine: ' + (err.message || 'errore sconosciuto'), 'error');
