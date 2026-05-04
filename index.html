@@ -163,7 +163,7 @@
                 Vedi tutti <i class="fas fa-arrow-right text-xs"></i>
             </a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="previewGrid"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5" id="previewGrid"></div>
         <script>
         (function(){
             var g = document.getElementById('previewGrid');
@@ -180,7 +180,7 @@
                      +     '</div>'
                      + '</div>';
             var html = '';
-            for (var i = 0; i < 6; i++) html += skel;
+            for (var i = 0; i < 8; i++) html += skel;
             g.innerHTML = html;
         })();
         </script>
