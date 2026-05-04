@@ -338,7 +338,7 @@ module.exports = async function handler(req, res) {
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/supabase-config.js?v=3"></script>
-<script src="/js/data.js?v=13"></script>
+<script src="/js/data.js?v=14"></script>
 <script src="/js/ui-components.js?v=11"></script>
 <script src="/js/auth.js?v=12"></script>
 <script src="/js/pages/annuncio-detail.js?v=13"></script>

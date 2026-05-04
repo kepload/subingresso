@@ -392,7 +392,7 @@ function buildCard(l, isSmall = false, distance = null) {
                     onclick="event.preventDefault(); event.stopPropagation(); toggleSaveListing('${escapeHTML(l.id)}', this)"
                     title="${SAVED_IDS.has(l.id) ? 'Rimuovi dai preferiti' : 'Salva nei preferiti'}"
                     class="absolute top-2.5 right-2.5 w-8 h-8 bg-white/95 hover:bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 active:scale-95 transition">
-                <i class="${SAVED_IDS.has(l.id) ? 'fas fa-heart text-red-500' : 'far fa-heart text-slate-400'}"></i>
+                <i class="${SAVED_IDS.has(l.id) ? 'fas fa-bookmark text-blue-600' : 'far fa-bookmark text-slate-400'}"></i>
             </button>
         </a>
 
@@ -527,7 +527,7 @@ function _refreshSaveButtons(annuncioId) {
         el.setAttribute('data-saved', saved ? '1' : '0');
         el.setAttribute('title', saved ? 'Rimuovi dai preferiti' : 'Salva nei preferiti');
         if (icon) {
-            icon.className = saved ? 'fas fa-heart text-red-500' : 'far fa-heart text-slate-400';
+            icon.className = saved ? 'fas fa-bookmark text-blue-600' : 'far fa-bookmark text-slate-400';
         }
     });
 }
