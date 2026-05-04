@@ -520,7 +520,7 @@ async function loadListings() {
 
         let query = _supabase
             .from('annunci')
-            .select('id, user_id, titolo, stato, status, tipo, settore, regione, comune, superficie, prezzo, contatto, dettagli_extra, img_urls, created_at, featured, featured_until, visualizzazioni')
+            .select('id, user_id, titolo, stato, status, tipo, settore, regione, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, created_at, featured, featured_until, visualizzazioni')
             .order('created_at', { ascending: false });
 
         if (user) {

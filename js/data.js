@@ -287,13 +287,14 @@ async function prepareImageForUpload(file, maxSide = 1600, quality = 0.82) {
 
 // Badge giorno della settimana per mercati settimanali.
 // Palette dal più freddo (lunedì) al più caldo (domenica). Vuoto per fiere.
-function _dayBadge(rawGiorni, tipo) {
+// size: 'sm' (card, default) | 'md' (page detail).
+function _dayBadge(rawGiorni, tipo, size = 'sm') {
     if (!rawGiorni) return '';
     if (tipo && /fiera/i.test(tipo)) return '';
     const days = String(rawGiorni).split(',').map(s => s.trim()).filter(Boolean);
     if (!days.length) return '';
     const norm = days[0].toLowerCase()
-        .replace(/[ìí]/g,'i').replace(/[óò]/g,'o').replace(/[èé]/g,'e').replace(/[àá]/g,'a').replace(/[ùú]/g,'u');
+        .normalize('NFD').replace(/[̀-ͯ]/g, '');
     const palette = {
         lunedi:    { bg: '#e0f2fe', fg: '#0369a1' },
         martedi:   { bg: '#cffafe', fg: '#0e7490' },
@@ -307,7 +308,10 @@ function _dayBadge(rawGiorni, tipo) {
     if (!c) return '';
     const label = days[0].charAt(0).toUpperCase() + days[0].slice(1).toLowerCase();
     const more  = days.length > 1 ? ` +${days.length - 1}` : '';
-    return `<span class="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-lg" style="background:${c.bg};color:${c.fg}">${escapeHTML(label)}${escapeHTML(more)}</span>`;
+    const sizing = size === 'md'
+        ? 'text-[10px] px-3 py-1.5'
+        : 'text-[10px] px-2 py-0.5';
+    return `<span class="${sizing} font-black uppercase tracking-wider rounded-lg" style="background:${c.bg};color:${c.fg}">${escapeHTML(label)}${escapeHTML(more)}</span>`;
 }
 
 function isListingFeatured(l) {

@@ -176,7 +176,10 @@ async function initPage() {
     const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val || '—'; };
     
     setTxt('badgeTipo', listing.tipo);
-    setTxt('badgeMerce', listing.merce);
+    const giornoSlot = document.getElementById('badgeGiornoSlot');
+    if (giornoSlot && typeof _dayBadge === 'function') {
+        giornoSlot.innerHTML = _dayBadge(listing.giorni, listing.tipo, 'md');
+    }
     setTxt('titolo', listing.titolo);
     setTxt('descrizione', listing.descrizione);
 
