@@ -379,7 +379,7 @@
 <script src="js/page-view-tracker.js?v=1"></script>
 <script src="js/data.js?v=9"></script>
 <script src="js/ui-components.js?v=2"></script>
-<script src="js/auth.js?v=9"></script>
+<script src="js/auth.js?v=10"></script>
 <script>
 
 // ── Step Management ───────────────────────────────────────
@@ -408,8 +408,10 @@ function goToStep(n) {
         // force=true: se al primo arrivo i campi non sono stati riempiti
         // (race condition con getSession), riprova ad ogni accesso a step 5
         prefillContactFromSession(/* force */ false);
-        // Re-applica anche dalla cache localStorage subito (sync, no network)
-        _prefillFromCache();
+        // Re-applica anche dalla cache localStorage subito (sync, no network), scope per user_id
+        let _uid = null;
+        try { _uid = _getStoredSupabaseSession()?.user?.id || null; } catch (_) {}
+        _prefillFromCache(_uid);
     }
     if (_step > 1) _saveDraft();
 }
@@ -419,6 +421,10 @@ function _saveDraft() {
     const regione = document.getElementById('fRegione').value;
     const comune  = document.getElementById('fComune').value.trim();
     if (!regione && !comune) return; // niente da salvare
+    // SECURITY: NON salviamo nome/tel nel draft — sarebbero PII esposti se un altro
+    // utente apre il sito sullo stesso device. Il prefill nome/tel passa SEMPRE dal profilo.
+    let _userId = null;
+    try { _userId = _getStoredSupabaseSession()?.user?.id || null; } catch (_) {}
     const draft = {
         stato, regione, comune,
         tipo:       document.getElementById('fTipo').value,
@@ -430,9 +436,8 @@ function _saveDraft() {
         prezzo:      document.getElementById('fPrezzo').value,
         titolo:      document.getElementById('fTitolo').value.trim(),
         descrizione: document.getElementById('fDescrizione').value.trim(),
-        nome:        document.getElementById('fNome').value.trim(),
-        tel:         document.getElementById('fTel').value.trim(),
         step:        _step,
+        _userId,
     };
     localStorage.setItem(_DRAFT_KEY, JSON.stringify(draft));
 }
@@ -484,8 +489,8 @@ function _applyPendingDraft() {
     document.getElementById('fPrezzo').value     = d.prezzo     || '';
     document.getElementById('fTitolo').value     = d.titolo     || '';
     document.getElementById('fDescrizione').value = d.descrizione || '';
-    if (d.nome) document.getElementById('fNome').value = d.nome;
-    if (d.tel)  document.getElementById('fTel').value  = d.tel;
+    // SECURITY: nome/tel non vengono piu' applicati dal draft — il prefill viene
+    // sempre fatto da prefillContactFromSession() (profilo del user attualmente loggato).
     _clearDraft();
     goToStep(d.step && d.step > 1 ? d.step : 2);
 }
@@ -677,16 +682,36 @@ function useTemplate() {
 
 
 // ── Init ──────────────────────────────────────────────────
-// Riempie i campi nome/tel da localStorage (immediato, no network)
-function _prefillFromCache() {
+// Helper: chiavi cache scope-ate per user_id (evita leak cross-user su device condivisi)
+function _userKey(base, userId) {
+    if (!userId) return null;
+    return base + '_u_' + String(userId).slice(0, 8);
+}
+
+// Pulizia one-time delle chiavi LEGACY non scope-ate (presenti su device pre-fix).
+// Le chiavi scope-ate `_vc_nome_u_<id>` rimangono e contengono solo i dati del proprio user.
+function _clearLegacyContactCache() {
+    try {
+        ['_vc_nome','_vc_tel','_profile_nome','_profile_tel'].forEach(k => localStorage.removeItem(k));
+    } catch (_) {}
+}
+
+// Riempie i campi nome/tel da localStorage (immediato, no network).
+// userId e' obbligatorio: senza scope non si legge nulla per evitare leak cross-user.
+function _prefillFromCache(userId) {
+    if (!userId) return;
     const nomeEl = document.getElementById('fNome');
     const telEl  = document.getElementById('fTel');
+    const kVcNome = _userKey('_vc_nome', userId);
+    const kVcTel  = _userKey('_vc_tel',  userId);
+    const kPrNome = _userKey('_profile_nome', userId);
+    const kPrTel  = _userKey('_profile_tel',  userId);
     if (nomeEl && !nomeEl.value.trim()) {
-        const cached = localStorage.getItem('_vc_nome') || localStorage.getItem('_profile_nome') || '';
+        const cached = localStorage.getItem(kVcNome) || localStorage.getItem(kPrNome) || '';
         if (cached) nomeEl.value = cached;
     }
     if (telEl && !telEl.value.trim()) {
-        const cached = localStorage.getItem('_vc_tel') || localStorage.getItem('_profile_tel') || '';
+        const cached = localStorage.getItem(kVcTel) || localStorage.getItem(kPrTel) || '';
         if (cached) telEl.value = cached;
     }
 }
@@ -701,6 +726,18 @@ async function prefillContactFromSession(force = false) {
             console.warn('Prefill: nessuna sessione in localStorage');
             return null;
         }
+
+        // SECURITY: se i campi contengono dati di un user diverso (cache di altro
+        // account residua sul device), svuotali prima di rifare prefill.
+        const lastPrefilledFor = sessionStorage.getItem('_last_prefill_user');
+        if (lastPrefilledFor && lastPrefilledFor !== user.id) {
+            const nEl = document.getElementById('fNome');
+            const tEl = document.getElementById('fTel');
+            if (nEl) nEl.value = '';
+            if (tEl) tEl.value = '';
+            force = true;
+        }
+        sessionStorage.setItem('_last_prefill_user', user.id);
 
         const nomeEl = document.getElementById('fNome');
         const telEl  = document.getElementById('fTel');
@@ -750,19 +787,24 @@ async function prefillContactFromSession(force = false) {
         const fullName = profileName || metaName || meta.full_name || meta.name || '';
         const phone = profile?.telefono || meta.telefono || meta.tel || meta.phone || meta.phone_number || '';
 
-        // Fallback localStorage: dati usati nell'ultimo annuncio pubblicato
-        const cachedNome = localStorage.getItem('_vc_nome') || '';
-        const cachedTel  = localStorage.getItem('_vc_tel')  || '';
+        // Fallback localStorage: dati usati nell'ultimo annuncio pubblicato (SCOPE per user_id)
+        const cachedNome = localStorage.getItem(_userKey('_vc_nome', user.id)) || '';
+        const cachedTel  = localStorage.getItem(_userKey('_vc_tel',  user.id)) || '';
 
-        if (nomeEl && (force || !nomeEl.value.trim())) {
+        // SECURITY: se ho dati FRESCHI dal DB (fullName/phone reali), sovrascrivo SEMPRE
+        // anche se i campi erano gia' riempiti — protegge contro cache di altri user
+        // applicata da _prefillFromCache prima del fetch DB.
+        const haveFreshProfile = !!(fullName || phone);
+
+        if (nomeEl && (force || haveFreshProfile || !nomeEl.value.trim())) {
             nomeEl.value = fullName || cachedNome || user.email.split('@')[0];
         }
-        if (telEl && (force || !telEl.value.trim())) {
+        if (telEl && (force || haveFreshProfile || !telEl.value.trim())) {
             telEl.value = normalizePhone(phone || cachedTel);
         }
-        // Cache profilo per i prossimi caricamenti (no race condition al prossimo refresh)
-        if (fullName) localStorage.setItem('_profile_nome', fullName);
-        if (phone)    localStorage.setItem('_profile_tel', normalizePhone(phone));
+        // Cache profilo SCOPE-ATA per user_id (no leak cross-user su device condivisi)
+        if (fullName) localStorage.setItem(_userKey('_profile_nome', user.id), fullName);
+        if (phone)    localStorage.setItem(_userKey('_profile_tel',  user.id), normalizePhone(phone));
         return user;
     } catch (e) {
         console.warn('prefillContactFromSession failed:', e);
@@ -807,7 +849,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Prefill immediato dalla cache (sync, no network) — evita race con getSession
-    _prefillFromCache();
+    // SECURITY: prefill da cache solo dopo aver identificato il user attuale (scope per id).
+    let _initUserId = null;
+    try { _initUserId = _getStoredSupabaseSession()?.user?.id || null; } catch (_) {}
+    _prefillFromCache(_initUserId);
 
     // Auth + prefill da DB (async, sovrascrive solo se la cache era vuota)
     const user = await prefillContactFromSession();
@@ -815,11 +860,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('authBanner').classList.remove('hidden');
     }
 
+    // Pulizia one-time delle chiavi legacy (eseguita solo dopo che il prefill scope-ato e' partito)
+    _clearLegacyContactCache();
+
     // Controlla bozza salvata
     try {
         const saved = localStorage.getItem(_DRAFT_KEY);
         if (saved) {
-            _pendingDraft = JSON.parse(saved);
+            const parsed = JSON.parse(saved);
+            // SECURITY: se il draft appartiene a un altro user (anche se contiene
+            // solo dati strutturali del listing, NON nome/tel), scarta — non e'
+            // suo lavoro. Draft anonimi (`_userId == null`) restano disponibili.
+            const currentUid = (function(){ try { return _getStoredSupabaseSession()?.user?.id || null; } catch(_) { return null; } })();
+            if (parsed && parsed._userId && currentUid && parsed._userId !== currentUid) {
+                localStorage.removeItem(_DRAFT_KEY);
+            } else {
+                _pendingDraft = parsed;
+                if (_pendingDraft) {
             const banner = document.createElement('div');
             banner.id = 'draftBanner';
             banner.className = 'mb-6 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 flex flex-wrap items-center justify-between gap-3';
@@ -834,6 +891,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>`;
             const formWrapper = document.getElementById('formWrapper');
             if (formWrapper) formWrapper.insertBefore(banner, formWrapper.firstChild);
+                }
+            }
         }
     } catch (_) {}
 });
@@ -1232,9 +1291,12 @@ async function submitAnnuncio() {
                 .then(() => {}).catch(() => {});
         }
 
-        // Salva nome/tel per pre-fill ai prossimi annunci (cache locale)
-        if (form.contatto) localStorage.setItem('_vc_nome', form.contatto);
-        if (form.tel)      localStorage.setItem('_vc_tel',  form.tel);
+        // Salva nome/tel per pre-fill ai prossimi annunci (cache locale SCOPE per user_id)
+        const _ownerId = (inserted && inserted.user_id) || (function(){ try { return _getStoredSupabaseSession()?.user?.id || null; } catch(_) { return null; } })();
+        if (_ownerId) {
+            if (form.contatto) localStorage.setItem(_userKey('_vc_nome', _ownerId), form.contatto);
+            if (form.tel)      localStorage.setItem(_userKey('_vc_tel',  _ownerId), form.tel);
+        }
         // Aggiorna SOLO i campi profilo vuoti — preserva il profilo quando il
         // venditore inserisce contatti diversi dai propri (es. admin che pubblica
         // per conto di un utente, o un secondo numero ad-hoc per il singolo annuncio).

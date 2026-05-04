@@ -311,9 +311,10 @@ async function initPage() {
         const relatedGrid    = document.getElementById('relatedGrid');
         if (!relatedSection || !relatedGrid || !listing.regione) return;
         try {
+            // NB: select esplicito senza tel/email (REVOKE per authenticated dal 3 mag 2026).
             const { data: related } = await _supabase
                 .from('annunci')
-                .select('*')
+                .select('id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, featured, featured_until, featured_tier, featured_since, video_url')
                 .eq('status', 'active')
                 .eq('regione', listing.regione)
                 .neq('id', listing.id)

@@ -716,11 +716,32 @@ window.signOut = async function () {
     try {
         await _supabase.auth.signOut();
     } catch (e) { console.error("Sign out error:", e); }
-    
+
+    // SECURITY: pulizia di TUTTE le cache profilo per evitare leak cross-user su
+    // device condivisi. Include sia chiavi legacy (non scope-ate) sia chiavi
+    // scope-ate per user_id (`_vc_nome_u_<id>`, `_profile_nome_u_<id>`, ecc.).
+    try {
+        // Chiavi legacy globali (pre-fix)
+        ['_vc_nome','_vc_tel','_profile_nome','_profile_tel','subingresso_draft_v1']
+            .forEach(k => localStorage.removeItem(k));
+        // Tutte le chiavi scope-ate per user_id e tutta la cache di sessione vendi
+        const toRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const k = localStorage.key(i);
+            if (!k) continue;
+            if (k.startsWith('_vc_nome_u_') || k.startsWith('_vc_tel_u_') ||
+                k.startsWith('_profile_nome_u_') || k.startsWith('_profile_tel_u_')) {
+                toRemove.push(k);
+            }
+        }
+        toRemove.forEach(k => localStorage.removeItem(k));
+        sessionStorage.removeItem('_last_prefill_user');
+    } catch (e) { console.warn('signOut cache cleanup failed:', e); }
+
     // Pulizia estrema: svuota il contenuto protetto se presente e reindirizza alla home
     const dash = document.getElementById('dashContent');
-    if (dash) dash.innerHTML = ''; 
-    
+    if (dash) dash.innerHTML = '';
+
     // Reindirizzamento universale alla home per azzerare lo stato JS
     window.location.href = 'index.html';
 };
