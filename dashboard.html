@@ -213,6 +213,28 @@
                 </div>
             </div>
 
+            <!-- ══════════════ SEGNALAZIONI ══════════════ -->
+            <div id="reportsPanel" class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm scroll-mt-24">
+                <a id="reports" class="block -mt-24 pt-24"></a>
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-flag text-red-500"></i> Segnalazioni
+                        <span id="reportsCountBadge" class="hidden ml-1 text-[10px] font-black text-white bg-red-600 px-2 py-0.5 rounded-full"></span>
+                    </h3>
+                    <div class="flex gap-1.5">
+                        <button onclick="setReportsTab('open')"      id="reportsTabOpen"      class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-red-600 text-white">Aperte</button>
+                        <button onclick="setReportsTab('reviewed')"  id="reportsTabReviewed"  class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">Gestite</button>
+                        <button onclick="setReportsTab('dismissed')" id="reportsTabDismissed" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">Archiviate</button>
+                        <button onclick="loadAdminReports()"         class="text-[11px] font-black px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500 hover:bg-slate-200 transition" title="Aggiorna">
+                            <i class="fas fa-rotate"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="reportsList" class="space-y-3">
+                    <p class="text-center text-sm font-semibold text-slate-400 py-8">Caricamento…</p>
+                </div>
+            </div>
+
             <!-- Growth Chart -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
@@ -920,6 +942,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadAdminValutatoreLogs();
         loadAdminSecurityOverview();
         loadAdminListingsByRegione();
+        loadAdminReports();
     }
     document.getElementById('welcomeTitle').textContent = `Ciao, ${nome}!`;
     document.getElementById('userEmail').textContent = user.email;
@@ -2473,6 +2496,129 @@ function renderSecurityOverview(d) {
     if (allClear) {
         allClear.classList.toggle('hidden', suspects.length > 0 || alerts.length > 0);
     }
+}
+
+// ── Segnalazioni ─────────────────────────────────────────
+let _reportsTab = 'open';
+
+const REPORT_REASON_LABEL = {
+    scam:       'Truffa o frode',
+    harassment: 'Molestie o insulti',
+    spam:       'Spam o pubblicità',
+    other:      'Altro',
+};
+
+function setReportsTab(tab) {
+    _reportsTab = tab;
+    ['Open', 'Reviewed', 'Dismissed'].forEach(name => {
+        const btn = document.getElementById('reportsTab' + name);
+        if (!btn) return;
+        const active = name.toLowerCase() === tab;
+        btn.classList.toggle('bg-red-600',     active);
+        btn.classList.toggle('text-white',     active);
+        btn.classList.toggle('bg-slate-100',   !active);
+        btn.classList.toggle('text-slate-500', !active);
+        btn.classList.toggle('hover:bg-slate-200', !active);
+    });
+    loadAdminReports();
+}
+
+async function loadAdminReports() {
+    if (!_isAdmin) return;
+    const list = document.getElementById('reportsList');
+    if (!list) return;
+
+    const { data, error } = await _supabase.rpc('admin_list_reports', { p_status: _reportsTab });
+    if (error) {
+        list.innerHTML = `<p class="text-center text-sm font-semibold text-red-500 py-6">Errore: ${escapeHtmlReport(error.message)}</p>`;
+        return;
+    }
+
+    const rows = data || [];
+
+    // Badge "aperte" sempre dal conteggio open
+    if (_reportsTab === 'open') {
+        const badge = document.getElementById('reportsCountBadge');
+        if (badge) {
+            if (rows.length > 0) { badge.textContent = rows.length; badge.classList.remove('hidden'); }
+            else                 { badge.classList.add('hidden'); }
+        }
+    } else {
+        const { data: openCount } = await _supabase.rpc('admin_list_reports', { p_status: 'open' });
+        const badge = document.getElementById('reportsCountBadge');
+        if (badge) {
+            const n = (openCount || []).length;
+            if (n > 0) { badge.textContent = n; badge.classList.remove('hidden'); }
+            else       { badge.classList.add('hidden'); }
+        }
+    }
+
+    if (rows.length === 0) {
+        const empty = _reportsTab === 'open'
+            ? '<i class="fas fa-check-circle text-emerald-400 text-3xl mb-2 block"></i><p class="text-sm font-black text-slate-700">Nessuna segnalazione aperta</p>'
+            : '<p class="text-sm font-semibold text-slate-400">Nessuna segnalazione in questa vista.</p>';
+        list.innerHTML = `<div class="text-center py-8">${empty}</div>`;
+        return;
+    }
+
+    list.innerHTML = rows.map(r => {
+        const reasonLbl = REPORT_REASON_LABEL[r.reason] || r.reason;
+        const when = new Date(r.created_at).toLocaleString('it-IT', { day:'2-digit', month:'2-digit', year:'2-digit', hour:'2-digit', minute:'2-digit' });
+        const reporterFull = (r.reporter_name || '').trim() || 'Utente';
+        const reporterEmail = r.reporter_email || '';
+        const target = r.is_support ? 'Chat di Supporto' : (r.annuncio_titolo || 'Annuncio');
+
+        const btnsHTML = r.status === 'open'
+            ? `<button onclick="markReport('${r.id}','reviewed')" class="text-[11px] font-black px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition">Marca gestita</button>
+               <button onclick="markReport('${r.id}','dismissed')" class="text-[11px] font-black px-3 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 transition">Archivia</button>`
+            : `<button onclick="markReport('${r.id}','open')" class="text-[11px] font-black px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 transition">Riapri</button>`;
+
+        return `
+        <div class="border border-slate-200 rounded-2xl p-4 hover:border-slate-300 transition">
+            <div class="flex items-start gap-3 mb-2">
+                <div class="w-10 h-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-flag text-sm"></i>
+                </div>
+                <div class="flex-grow min-w-0">
+                    <div class="flex flex-wrap items-center gap-2 mb-0.5">
+                        <p class="font-black text-sm text-slate-900">${escapeHtmlReport(reasonLbl)}</p>
+                        ${r.is_support ? '<span class="text-[9px] font-black uppercase tracking-wider bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded">Supporto</span>' : ''}
+                        ${r.status === 'reviewed'  ? '<span class="text-[9px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded">Gestita</span>' : ''}
+                        ${r.status === 'dismissed' ? '<span class="text-[9px] font-black uppercase tracking-wider bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">Archiviata</span>' : ''}
+                    </div>
+                    <p class="text-xs text-slate-500 font-semibold">
+                        Da <strong class="text-slate-700">${escapeHtmlReport(reporterFull)}</strong>
+                        ${reporterEmail ? `<span class="text-slate-400">&lt;${escapeHtmlReport(reporterEmail)}&gt;</span>` : ''}
+                        · su <em>${escapeHtmlReport(target)}</em> · ${when}
+                    </p>
+                </div>
+            </div>
+            ${r.details ? `<div class="bg-red-50 border-l-4 border-red-300 rounded-lg px-3 py-2 my-2 text-[13px] text-red-900 leading-relaxed whitespace-pre-wrap">${escapeHtmlReport(r.details)}</div>` : ''}
+            <div class="flex flex-wrap gap-2 mt-3">
+                <a href="messaggi.html?conv=${r.conversazione_id}" target="_blank"
+                   class="text-[11px] font-black px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition flex items-center gap-1.5">
+                    <i class="fas fa-comment-alt text-[10px]"></i> Apri chat
+                </a>
+                ${btnsHTML}
+            </div>
+        </div>`;
+    }).join('');
+}
+
+async function markReport(reportId, newStatus) {
+    if (!_isAdmin) return;
+    const { data, error } = await _supabase.rpc('admin_update_report_status', {
+        p_report_id: reportId,
+        p_status:    newStatus,
+        p_notes:     null,
+    });
+    if (error) { showToast('Errore: ' + error.message, 'error'); return; }
+    showToast(newStatus === 'open' ? 'Segnalazione riaperta.' : (newStatus === 'reviewed' ? 'Segnalazione marcata come gestita.' : 'Segnalazione archiviata.'), 'success');
+    loadAdminReports();
+}
+
+function escapeHtmlReport(s) {
+    return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 async function runAnomalyCheckNow(btn) {

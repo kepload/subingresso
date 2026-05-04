@@ -99,6 +99,18 @@
                         </div>
                         <i class="fas fa-chevron-right text-xs text-slate-300 group-hover:text-slate-500 transition flex-shrink-0"></i>
                     </a>
+                    <div class="relative flex-shrink-0">
+                        <button id="chatKebabBtn" onclick="toggleChatMenu(event)"
+                                class="hidden w-9 h-9 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition flex items-center justify-center"
+                                aria-label="Opzioni">
+                            <i class="fas fa-ellipsis-vertical text-sm"></i>
+                        </button>
+                        <div id="chatMenu" class="hidden absolute right-0 top-full mt-1 w-56 bg-white border border-slate-100 rounded-xl shadow-lg z-30 overflow-hidden">
+                            <button onclick="openReportModal()" class="w-full text-left px-4 py-3 text-sm font-semibold text-red-600 hover:bg-red-50 transition flex items-center gap-2.5">
+                                <i class="fas fa-flag text-xs"></i> Segnala conversazione
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div id="typingIndicator" class="hidden px-4 pb-2 -mt-1 text-[11px] text-slate-400 font-semibold flex items-center gap-2">
                     <span class="typing-dots"><span></span><span></span><span></span></span>
@@ -127,6 +139,57 @@
         </div>
     </div>
 </main>
+
+<!-- ══════════════ REPORT MODAL ══════════════ -->
+<div id="reportModal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-white w-full sm:max-w-md rounded-t-2xl sm:rounded-2xl shadow-xl overflow-hidden">
+        <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
+            <div>
+                <h3 class="text-lg font-black text-slate-900">Segnala conversazione</h3>
+                <p class="text-xs text-slate-500 font-semibold mt-0.5">La tua segnalazione è anonima per l'altra parte.</p>
+            </div>
+            <button onclick="closeReportModal()" class="w-8 h-8 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-xmark"></i>
+            </button>
+        </div>
+        <form id="reportForm" onsubmit="submitReport(event)" class="px-6 py-5 space-y-4">
+            <div class="space-y-2">
+                <p class="text-xs font-black text-slate-500 uppercase tracking-wider">Motivo</p>
+                <label class="flex items-center gap-3 px-3.5 py-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-red-300 has-[:checked]:bg-red-50">
+                    <input type="radio" name="reason" value="scam" required class="accent-red-600">
+                    <span class="text-sm font-bold text-slate-800">Truffa o tentativo di frode</span>
+                </label>
+                <label class="flex items-center gap-3 px-3.5 py-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-red-300 has-[:checked]:bg-red-50">
+                    <input type="radio" name="reason" value="harassment" class="accent-red-600">
+                    <span class="text-sm font-bold text-slate-800">Molestie o insulti</span>
+                </label>
+                <label class="flex items-center gap-3 px-3.5 py-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-red-300 has-[:checked]:bg-red-50">
+                    <input type="radio" name="reason" value="spam" class="accent-red-600">
+                    <span class="text-sm font-bold text-slate-800">Spam o pubblicità</span>
+                </label>
+                <label class="flex items-center gap-3 px-3.5 py-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition has-[:checked]:border-red-300 has-[:checked]:bg-red-50">
+                    <input type="radio" name="reason" value="other" class="accent-red-600">
+                    <span class="text-sm font-bold text-slate-800">Altro</span>
+                </label>
+            </div>
+            <div>
+                <p class="text-xs font-black text-slate-500 uppercase tracking-wider mb-2">Dettagli <span class="text-slate-400 font-semibold normal-case tracking-normal">(facoltativi, max 500)</span></p>
+                <textarea name="details" maxlength="500" rows="3" placeholder="Aggiungi contesto se può aiutarci a valutare…"
+                          class="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-medium outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition resize-none"></textarea>
+            </div>
+            <div class="flex gap-3 pt-2">
+                <button type="button" onclick="closeReportModal()"
+                        class="flex-1 py-3 rounded-xl text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">
+                    Annulla
+                </button>
+                <button id="reportSubmitBtn" type="submit"
+                        class="flex-1 py-3 rounded-xl text-sm font-bold text-white bg-red-600 hover:bg-red-700 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                    Invia segnalazione
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
@@ -462,6 +525,7 @@ function backToConversations() {
     _draftAnnuncio = null;
     _draftSupport  = false;
     _hideTyping();
+    _refreshKebab();
 }
 
 // ── Draft: chat aperta con annuncio ma conv non ancora creata ──
@@ -500,6 +564,7 @@ function _openSupportDraft() {
         <p class="text-slate-500 leading-relaxed">${escapeHtml(SUPPORT_INTRO)}</p>
     </div>`;
 
+    _refreshKebab();
     document.getElementById('msgInput')?.focus();
 }
 
@@ -563,6 +628,7 @@ async function openDraftFor(annuncioId) {
         Scrivi il primo messaggio per iniziare la conversazione.
     </div>`;
 
+    _refreshKebab();
     document.getElementById('msgInput')?.focus();
 }
 
@@ -645,6 +711,7 @@ async function openConversation(convId) {
     document.getElementById('chatHeaderMeta').textContent = _chatMeta;
     document.getElementById('chatHeaderThumb').innerHTML = _chatThumbHTML;
     document.getElementById('chatHeaderLink').href = _chatHref;
+    _refreshKebab();
 
     await loadMessages(convId);
     setupRealtime(convId);
@@ -772,6 +839,7 @@ async function sendMessage(e) {
         _draftSupport = false;
         document.querySelector('#messagesContainer [data-placeholder]')?.remove();
         setupRealtime(convId);
+        _refreshKebab();
     }
 
     // Se siamo in draft mode (annuncio), crea la conv adesso (al primo messaggio)
@@ -816,6 +884,7 @@ async function sendMessage(e) {
         _draftAnnuncio = null;
         document.querySelector('#messagesContainer [data-placeholder]')?.remove();
         setupRealtime(convId);
+        _refreshKebab();
     }
 
     const { data: saved, error } = await _supabase
@@ -902,6 +971,105 @@ function setupRealtime(convId) {
                 }
             }
         });
+}
+
+// ── Kebab menu + modal segnalazione ──────────────────────
+function _refreshKebab() {
+    // Mostra kebab solo per conv reale (no draft) e non per chat supporto.
+    const btn = document.getElementById('chatKebabBtn');
+    if (!btn) return;
+    const isRealConv = _activeConvId
+        && _activeConvId !== SUPPORT_DRAFT_ID
+        && !_draftAnnuncio
+        && !_draftSupport;
+    const conv = _conversations.find(c => c.id === _activeConvId);
+    const isSupport = conv?.is_support === true;
+    if (isRealConv && !isSupport) btn.classList.remove('hidden');
+    else                          btn.classList.add('hidden');
+    document.getElementById('chatMenu')?.classList.add('hidden');
+}
+function toggleChatMenu(e) {
+    e?.stopPropagation();
+    document.getElementById('chatMenu')?.classList.toggle('hidden');
+}
+document.addEventListener('click', (e) => {
+    const menu = document.getElementById('chatMenu');
+    if (!menu || menu.classList.contains('hidden')) return;
+    const btn = document.getElementById('chatKebabBtn');
+    if (e.target === btn || btn?.contains(e.target) || menu.contains(e.target)) return;
+    menu.classList.add('hidden');
+});
+
+function openReportModal() {
+    if (!_activeConvId || _activeConvId === SUPPORT_DRAFT_ID) return;
+    document.getElementById('chatMenu')?.classList.add('hidden');
+    document.getElementById('reportForm').reset();
+    document.getElementById('reportModal').classList.remove('hidden');
+}
+function closeReportModal() {
+    document.getElementById('reportModal').classList.add('hidden');
+}
+
+async function submitReport(e) {
+    e.preventDefault();
+    if (!_activeConvId || _activeConvId === SUPPORT_DRAFT_ID) return;
+
+    const form = e.target;
+    const fd = new FormData(form);
+    const reason  = fd.get('reason');
+    const details = (fd.get('details') || '').toString().trim();
+    if (!reason) return;
+
+    const btn = document.getElementById('reportSubmitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Invio…';
+
+    const { data: report, error } = await _supabase
+        .from('conversation_reports')
+        .insert({
+            conversazione_id: _activeConvId,
+            reporter_id:      _currentUser.id,
+            reason,
+            details: details || null,
+        })
+        .select('id')
+        .single();
+
+    if (error) {
+        btn.disabled = false;
+        btn.textContent = 'Invia segnalazione';
+        // 23505 = unique violation: ne ha già una aperta
+        if (error.code === '23505') {
+            showToast('Hai già una segnalazione aperta su questa chat.', 'warning');
+            closeReportModal();
+            return;
+        }
+        console.error('submitReport error:', error.message);
+        showToast('Errore nell\'invio. Riprova.', 'error');
+        return;
+    }
+
+    // Notify admin via Edge function (fire-and-forget; il record è già salvato)
+    try {
+        const { data: { session } } = await _supabase.auth.getSession();
+        const jwt = session?.access_token;
+        if (jwt) {
+            fetch(`${SUPABASE_URL}/functions/v1/notify-report`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type':  'application/json',
+                    'apikey':        SUPABASE_ANON_KEY,
+                    'Authorization': `Bearer ${jwt}`,
+                },
+                body: JSON.stringify({ report_id: report.id }),
+            }).catch(err => console.warn('notify-report fetch failed:', err));
+        }
+    } catch (_) { /* email è bonus, il report è salvato */ }
+
+    btn.disabled = false;
+    btn.textContent = 'Invia segnalazione';
+    closeReportModal();
+    showToast('Grazie. Abbiamo ricevuto la segnalazione e la valuteremo al più presto.', 'success');
 }
 
 function _showTyping() { document.getElementById('typingIndicator')?.classList.remove('hidden'); }
