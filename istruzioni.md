@@ -420,7 +420,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 ## 🌐 Cache Versions Correnti
 
 - `data.js?v=9` (cuoricino + SAVED_IDS + toggleSaveListing).
-- `auth.js?v=10` (4 mag 2026 — clear cache scope-ate su signOut).
+- `auth.js?v=11` (4 mag 2026 — anti-bot: honeypot + time-on-form + blacklist temp-mail + pattern probe).
 - `annuncio-detail.js?v=10` (censorPhonesHTML + bookmark).
 - `css/tailwind.css?v=2` (precompilato).
 - `page-view-tracker.js?v=1`.

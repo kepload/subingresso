@@ -130,6 +130,10 @@ const modalHTML = `
         <input id="regTelefono" name="tel" type="tel" placeholder="347 1234567" autocomplete="tel"
           class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
       </div>
+      <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">
+        <label>Sito web (lascia vuoto)</label>
+        <input id="regWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
       <div>
         <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Password * (min. 6 caratteri)</label>
         <div class="relative">
@@ -179,6 +183,7 @@ window.switchAuthTab = function (tab) {
         `flex-1 py-5 text-sm font-black tracking-tight transition ${isLogin ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-400 hover:text-slate-700'}`;
     if (tabRegister) tabRegister.className =
         `flex-1 py-5 text-sm font-black tracking-tight transition ${isRegister ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-400 hover:text-slate-700'}`;
+    if (isRegister) window._regFormStartedAt = Date.now();
     _hideAuthFeedback();
 };
 
@@ -529,6 +534,17 @@ window.handleRegister = async function (e) {
     _hideAuthFeedback();
     _setBtnLoading('registerBtn', true, '<i class="fas fa-user-plus"></i> Crea account');
 
+    // Bot trap: honeypot riempito o submit < 2.5s = bot. Finto successo per non rivelare la trappola.
+    const honeypot = document.getElementById('regWebsite')?.value || '';
+    const formAge  = Date.now() - (window._regFormStartedAt || 0);
+    if (honeypot.trim() || formAge < 2500) {
+        await new Promise(r => setTimeout(r, 1200));
+        _showAuthSuccess('Benvenuto! Account creato con successo.');
+        _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
+        setTimeout(() => closeAuthModal(), 1500);
+        return;
+    }
+
     const nome     = document.getElementById('regNome').value.trim();
     const cognome  = document.getElementById('regCognome').value.trim();
     const email    = document.getElementById('regEmail').value.trim();
@@ -613,7 +629,7 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
                 'apikey': SUPABASE_ANON_KEY,
                 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
             },
-            body: JSON.stringify({ email: cleanEmail, password, nome, cognome, telefono, welcome_lottery_eligible: welcomeLotteryEligible }),
+            body: JSON.stringify({ email: cleanEmail, password, nome, cognome, telefono, welcome_lottery_eligible: welcomeLotteryEligible, website: '' }),
         });
         const result = await res.json().catch(() => ({}));
         if (!res.ok) {

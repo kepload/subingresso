@@ -23,7 +23,7 @@ Deno.serve(async (req) => {
     const body = await req.json().catch(() => null);
     if (!body) return json({ error: 'Body mancante' }, 400);
 
-    const { email, password, nome, cognome, telefono, welcome_lottery_eligible } = body;
+    const { email, password, nome, cognome, telefono, welcome_lottery_eligible, website } = body;
     const cleanEmail = String(email || '').trim().toLowerCase();
     const cleanPassword = String(password || '');
     if (!cleanEmail || !cleanPassword) return json({ error: 'Email e password obbligatorie' }, 400);
@@ -33,6 +33,32 @@ Deno.serve(async (req) => {
     }
     if (cleanPassword.length < 6) {
       return json({ error: 'Password troppo corta' }, 400);
+    }
+
+    // Bot trap server-side: honeypot pieno = bot. Finto 200 per non rivelare la trappola.
+    if (typeof website === 'string' && website.trim().length > 0) {
+      return json({ success: true });
+    }
+
+    // Blacklist domini temp-mail / disposable
+    const domain = cleanEmail.split('@')[1] || '';
+    const TEMP_MAIL_DOMAINS = new Set([
+      'mailinator.com', 'tempmail.com', 'temp-mail.org', 'temp-mail.io', '10minutemail.com',
+      'guerrillamail.com', 'guerrillamail.info', 'guerrillamail.biz', 'guerrillamail.de',
+      'sharklasers.com', 'yopmail.com', 'throwawaymail.com', 'getnada.com', 'maildrop.cc',
+      'mintemail.com', 'mohmal.com', 'fakeinbox.com', 'trashmail.com', 'dispostable.com',
+      'mailnesia.com', 'mytrashmail.com', 'mailcatch.com', 'spamgourmet.com', 'tempr.email',
+      'inboxbear.com', 'emailondeck.com', 'mail-temp.com', 'mailtemp.info', 'tempmailo.com',
+      'tempmailaddress.com', 'discard.email', 'mailpoof.com', 'snapmail.cc', 'tmpmail.org',
+      'tmpmail.net', 'temp-inbox.com', 'tempmail.plus', 'cs.email', 'burnermail.io',
+    ]);
+    if (TEMP_MAIL_DOMAINS.has(domain)) {
+      return json({ error: 'Email non valida' }, 400);
+    }
+
+    // Pattern probe scanner: nome_unixtimestamp@, .invalid$, .test$, .local$, .example$
+    if (/^[a-z]+_\d{9,}@/i.test(cleanEmail) || /\.(invalid|test|local|example)$/i.test(domain)) {
+      return json({ error: 'Email non valida' }, 400);
     }
 
     const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
