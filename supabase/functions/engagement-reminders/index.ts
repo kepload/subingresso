@@ -29,7 +29,7 @@ Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
 
   const auth = req.headers.get('authorization') || '';
-  if (auth !== `Bearer ${SB_SECRET_KEY}` && auth !== `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`) {
+  if (auth !== `Bearer ${SB_SECRET_KEY}`) {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { ...CORS, 'Content-Type': 'application/json' } });
   }
 

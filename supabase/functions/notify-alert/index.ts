@@ -73,7 +73,7 @@ function getCityCoords(cityName: string): [number, number] | null {
 Deno.serve(async (req) => {
   try {
     const auth = req.headers.get('authorization') || '';
-    if (auth !== `Bearer ${SB_SECRET_KEY}` && auth !== `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`) {
+    if (auth !== `Bearer ${SB_SECRET_KEY}`) {
       return new Response('Unauthorized', { status: 401 });
     }
 

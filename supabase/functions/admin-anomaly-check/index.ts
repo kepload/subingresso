@@ -37,7 +37,7 @@ Deno.serve(async (req) => {
   if (!token) {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { ...CORS, 'Content-Type': 'application/json' } });
   }
-  if (token !== SB_SECRET_KEY && token !== SUPABASE_SERVICE_ROLE_KEY) {
+  if (token !== SB_SECRET_KEY) {
     const { data: { user }, error: uErr } = await supabase.auth.getUser(token);
     if (uErr || !user) {
       return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { ...CORS, 'Content-Type': 'application/json' } });
