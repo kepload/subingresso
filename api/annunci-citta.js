@@ -269,7 +269,7 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
 
   <div id="footer-placeholder"></div>
 
-  <script src="/js/ui-components.js?v=9"></script>
+  <script src="/js/ui-components.js?v=10"></script>
 
 </body>
 </html>`;
@@ -570,7 +570,7 @@ module.exports = async function handler(req, res) {
 
   <div id="footer-placeholder"></div>
 
-  <script src="/js/ui-components.js?v=9"></script>
+  <script src="/js/ui-components.js?v=10"></script>
 
 </body>
 </html>`;

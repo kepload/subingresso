@@ -131,7 +131,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/ui-components.js?v=2"></script>
+<script src="js/ui-components.js?v=10"></script>
 <script src="js/auth.js?v=11"></script>
 <script>
 
@@ -160,13 +160,13 @@ const _annunciCache  = {};   // id → { titolo, img_urls, prezzo, comune, tipo 
 function _isSupport(c) { return !!(c && (c.is_support || c.id === SUPPORT_DRAFT_ID)); }
 function _supportAvatarHTML(size = 40) {
     const dim = size === 40 ? 'w-10 h-10' : 'w-11 h-11';
-    return `<div class="${dim} rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-blue-500 to-blue-700 text-white">
-        <i class="fas fa-life-ring text-sm"></i>
+    return `<div class="${dim} rounded-full flex items-center justify-center flex-shrink-0 bg-blue-600 text-white shadow-sm shadow-blue-100">
+        <i class="fas fa-exchange-alt text-sm"></i>
     </div>`;
 }
 function _supportThumbHTML() {
-    return `<div class="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 text-white flex items-center justify-center">
-        <i class="fas fa-life-ring text-base"></i>
+    return `<div class="w-full h-full bg-blue-600 text-white flex items-center justify-center">
+        <i class="fas fa-exchange-alt text-base"></i>
     </div>`;
 }
 
@@ -240,10 +240,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         const params = new URLSearchParams(location.search);
         const convParam = params.get('conv');
         const annuncioParam = params.get('annuncio');
+        const supportParam = params.get('support');
         if (convParam) {
             openConversation(convParam);
         } else if (annuncioParam) {
             openDraftFor(annuncioParam);
+        } else if (supportParam && !_isAdmin) {
+            const supportConv = _conversations.find(
+                c => c.is_support && c.acquirente_id === _currentUser.id && c.id !== SUPPORT_DRAFT_ID
+            );
+            openConversation(supportConv?.id || SUPPORT_DRAFT_ID);
         }
     } catch (err) {
         document.getElementById('loadingState').innerHTML = `
@@ -299,17 +305,13 @@ async function loadConversations() {
         venditore:   pm[c.venditore_id]  || null,
         lastMessage: lastMsgMap[c.id]    || null,
     })).filter(c => c.lastMessage || c.is_support)  // conv supporto sempre, altre solo se hanno msg
-      .sort((a, b) => {
-        const ta = a.lastMessage ? new Date(a.lastMessage.created_at) : new Date(a.created_at);
-        const tb = b.lastMessage ? new Date(b.lastMessage.created_at) : new Date(b.created_at);
-        return tb - ta;
-    });
+      .sort((a, b) => _convCompare(a, b));
 
-    // Inietta pseudo-conv supporto se l'utente non è admin e non ne ha una reale
+    // Inietta pseudo-conv supporto in fondo se l'utente non è admin e non ne ha una reale
     if (!_isAdmin && _adminUserId) {
         const hasSupportConv = _conversations.some(c => c.is_support && c.acquirente_id === _currentUser.id);
         if (!hasSupportConv) {
-            _conversations.unshift({
+            _conversations.push({
                 id: SUPPORT_DRAFT_ID,
                 is_support: true,
                 acquirente_id: _currentUser.id,
@@ -324,6 +326,17 @@ async function loadConversations() {
     }
 
     renderConvList();
+}
+
+// Ordina conv per data del last message DESC; lato non-admin, supporto sempre in fondo.
+function _convCompare(a, b) {
+    if (!_isAdmin) {
+        if (_isSupport(a) && !_isSupport(b)) return 1;
+        if (!_isSupport(a) && _isSupport(b)) return -1;
+    }
+    const ta = a.lastMessage ? new Date(a.lastMessage.created_at) : new Date(a.created_at);
+    const tb = b.lastMessage ? new Date(b.lastMessage.created_at) : new Date(b.created_at);
+    return tb - ta;
 }
 
 function renderConvList() {
@@ -408,11 +421,7 @@ function updateConvLastMessage(convId, msg) {
     const conv = _conversations.find(c => c.id === convId);
     if (conv) {
         conv.lastMessage = msg;
-        _conversations.sort((a, b) => {
-            const ta = a.lastMessage ? new Date(a.lastMessage.created_at) : new Date(0);
-            const tb = b.lastMessage ? new Date(b.lastMessage.created_at) : new Date(0);
-            return tb - ta;
-        });
+        _conversations.sort((a, b) => _convCompare(a, b));
         renderConvList();
     }
 }
@@ -747,15 +756,17 @@ async function sendMessage(e) {
             convRow = created;
         }
 
-        // Promuovi in lista (sostituisci pseudo-conv draft)
+        // Promuovi in lista (sostituisci pseudo-conv draft).
+        // Per non-admin la conv supporto sta sempre in fondo: push + _convCompare.
         _conversations = _conversations.filter(c => c.id !== SUPPORT_DRAFT_ID);
-        _conversations.unshift({
+        _conversations.push({
             ...convRow,
             annuncio: null,
             acquirente: _profilesCache[_currentUser.id] || null,
             venditore:  _profilesCache[_adminUserId] || null,
             lastMessage: null,
         });
+        _conversations.sort((a, b) => _convCompare(a, b));
 
         _activeConvId = convId;
         _draftSupport = false;
