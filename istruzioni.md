@@ -35,6 +35,22 @@ Manuale operativo per le sessioni AI. Contiene solo informazioni "evergreen": re
 - **`SB_PUBLISHABLE_KEY`** env var nelle Edge Functions = `sb_publishable_*`. Usata da `send-auth-email` per costruire link verify (param `apikey`).
 - **MAI committare chiavi**: nemmeno PATCH SQL temporanei. Applicare via psql `-v` o file in `/tmp` non versionato.
 
+## 🚨 Anti-Leak Segreti (post-incidente 4 mag 2026)
+
+**Cosa successe**: ho recuperato la `service_role` JWT con `db query`, l'ho iniettata hardcoded in `PATCH_CRON_AUTH_20260504.sql`, ho committato + pushato. GitHub secret scanning l'ha rilevata in <5 min. Sito pubblico → repo pubblico → bot scraper.
+
+**Difese ora attive**:
+1. **`.gitleaks.toml`** + **`.git/hooks/pre-commit`**: gitleaks scansiona ogni commit, blocca se trova `sb_secret_*` o JWT service_role. Binario `scripts/.bin/gitleaks.exe` (gitignored). Custom rules per pattern Supabase nuovi. Allowlist per FAKE/EXAMPLE/`<REVOKED-...>`.
+2. **GitHub Push Protection** (Repo Settings → Code security): blocca push lato server.
+3. **Regole CLAUDE.md** anti-leak.
+
+**Regole operative**:
+- **MAI** hardcodare segreti in `.sql`, `.md`, `.ts`, `.js`, `.json`, ecc.
+- **PATCH SQL con chiave** → file template con `:'service_jwt'` + `psql -v service_jwt="$KEY"`. OPPURE file in `/tmp/` (fuori repo), apply, delete.
+- **MAI** fare `db query` per ottenere una chiave e poi `Write/Edit` quel valore in un file dentro il repo.
+- Bypass `git commit --no-verify` SOLO se 100% sicuro che il diff è pulito.
+- Se chiave esposta: 1) rotala su Supabase Dashboard, 2) sanitizza HEAD, 3) `git filter-branch` + force-push, 4) elimina backup branch remoto.
+
 ## 🚀 Workflow Pubblicazione (REGOLA D'ORO)
 
 Dopo **OGNI** modifica ai file: `git add . && git commit -m "..." && git push`. Sempre. Senza aspettare richiesta utente.
@@ -108,6 +124,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - Google Search Console verificato (file `googlead37f27accd4fd2b.html` in root).
 - JSON-LD `Product+BreadcrumbList` in `annuncio-detail.js`. JSON-LD `ItemList` in `annunci.js`. JSON-LD `NewsArticle` in `blog.html` (era `BlogPosting`, cambiato per Discover).
 - Pagine geo `/annunci/[citta]` SSR in `api/annunci-citta.js` con FAQPage + AggregateOffer + ItemList + BreadcrumbList. Capoluoghi (137) hanno pagina speciale anche senza annunci. Comune ISTAT non capoluogo senza annunci → 302 a `/annunci?q=<nome>`. Slug invalido → 404 + noindex.
+- **`api/annuncio.js` SSR**: serve la pagina annuncio per SEO/Google. **CRITICO**: bumpare le `?v=` in `api/annuncio.js` quando bumpi quelle in `annuncio.html`. Erano disallineate (v=6/v=4/v=5 vs v=9/v=11/v=10) — risolto 4 mag 2026.
 - `data/comuni.json` (1.4 MB, 7904 record): bundle statico, validazione slug + redirect.
 
 ## 🃏 Card Annunci (`buildCard` in `data.js`)
@@ -228,6 +245,19 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **Send Email Hook**: configurato in Auth → Hooks → Send Email → `send-auth-email` via Resend.
 - **Tabella `pending_email_verifications`** salva utenti bypass per verifica notturna.
 - **Admin "Confermata"**: usare `email_verified=false` se riga in `pending_email_verifications`, NON solo `auth.users.email_confirmed_at`.
+
+## 🤖 Anti-Bot Registrazione (4 mag 2026)
+
+Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
+
+- **Honeypot field** `regWebsite` nel modal register di `auth.js` — `<input name="website">` nascosto via CSS `position:absolute;left:-9999px;opacity:0;tabindex=-1`. Bot lo riempiono → respinti silenziosamente con finto successo (per non rivelare la trappola).
+- **Time-on-form**: `window._regFormStartedAt` settato in `switchAuthTab('register')`. Submit < 2.5s = bot → finto successo.
+- **Server-side defense in depth** in `register-bypass/index.ts`:
+  - Honeypot check sul body `website` field
+  - Blacklist 35+ domini temp-mail (mailinator, tempmail, guerrillamail, ecc.)
+  - Pattern probe: `/^[a-z]+_\d{9,}@/i` (es. `asd_1730000000@`) e domini `.invalid|.test|.local|.example`
+- **Niente CAPTCHA** voluto: zero attrito UX. L'utente ha esplicitamente preferito difese invisibili (sito non è bersaglio specifico).
+- Se in futuro serve aggiungere Turnstile/hCaptcha: punto giusto è `auth.js handleRegister` prima di chiamare `_registerBypass`.
 
 ## 🛡️ Pannello Sicurezza Admin
 
@@ -406,6 +436,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - `SETUP_DEF_SUBINGRESSO.sql` (master setup, sezione 12 con RLS PII).
 - `SETUP_VETRINA.sql`, `SETUP_STRIPE.md`, `SETUP_VALUTATORE_LOGS.sql`, `SETUP_WELCOME_VETRINA.sql`, `SETUP_WEEKLY_EMAILS.md`, `SETUP_EMAIL_BYPASS.sql`.
 - `PATCH_*` per modifiche idempotenti riapplicabili.
+- `PATCH_CRON_AUTH_20260504.sql` è **template** (richiede `psql -v service_jwt=...`). NON committare mai con chiave hardcoded.
 - `DIAGNOSE_PUBLISH_SLOW.sql` per ispezionare trigger/coda pg_net.
 
 ### Trigger annunci attivi
