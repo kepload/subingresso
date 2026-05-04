@@ -114,9 +114,22 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 ## 💬 Chat / Conversazioni (`messaggi.html`)
 
 - Lista mostra **titolo posteggio** (primario) + **nome venditore** (secondario blu).
-- Header chat: titolo posteggio in `#chatOtherName`, "{nome venditore} · Vedi annuncio →" in `#chatListingLink`.
 - Mobile: due pannelli (`convPanel` + `chatPanel`), si alterna visibilità. `backToConversations()` torna alla lista. NON fondere i div.
 - **Join profiles in `conversazioni` rompe PostgREST** (stesso bug di annunci). 3 fetch separati: (1) conv+annuncio, (2) profiles `.in('id', userIds)`, (3) lastMessage per conv. Merge manuale.
+- **Header chat**: thumb annuncio cliccabile (cover img_urls[0]) + titolo + "Venditore · Prezzo" + chevron, va a `/annuncio?id=`. Lato admin chat supporto: thumb life-ring + nome utente.
+- **Avatar reali in lista**: foto profilo dell'interlocutore (controparte). Fallback iniziale su sfondo blue-600. `<img loading="lazy" decoding="async">` no resize server (free plan).
+- **Doppia spunta mie bolle**: `fa-check` grigio = inviato, `fa-check-double` blu (`text-blue-500`) = letto. Realtime UPDATE listener su `messaggi.letto` aggiorna in tempo reale quando l'altro apre la chat.
+- **"Sta scrivendo…"**: broadcast Supabase su `_realtimeChannel` (`channel.send({type:'broadcast', event:'typing', payload:{u}})`) con throttle 1.5s emit, auto-hide 2.5s ricezione, hide all'arrivo INSERT. Zero scritture DB.
+- **Lazy conv create**: niente più creazione conv al click "Contatta". `startChat()` in `annuncio-detail.js` se non esiste conv passa `?annuncio=<id>` (deep-link draft). `messaggi.html` apre in `_draftAnnuncio` mode (header + thumb annuncio + empty state, senza riga DB). `sendMessage` crea conv on-the-fly al primo INSERT. `loadConversations` filtra `c.lastMessage || c.is_support` come safety net per conv vuote già esistenti.
+- **Chat di Supporto** (PATCH_SUPPORT_CHAT_20260504.sql): `conversazioni.is_support bool` + `annuncio_id` ora nullable + unique partial index `(acquirente_id) WHERE is_support`. RPC `support_admin_id()` SECURITY DEFINER. Lato non-admin: pseudo-conv `SUPPORT_DRAFT_ID='__support_draft__'` sempre **in fondo** (non in cima — l'utente vuole low-key) anche senza messaggi. Avatar/thumb = logo Subingresso (`fa-exchange-alt` su bg-blue-600). Empty state copy: "Ciao! Raccontaci come possiamo aiutarti…". Deep link `/messaggi?support=1` apre direttamente. Footer ha voce "Supporto". Lato admin: titolo conv = nome utente + badge "Supporto".
+
+## 🚩 Segnalazioni Conversazioni (DSA compliance)
+
+- Schema (`PATCH_REPORTS_20260504.sql`): tabella `conversation_reports(id, conversazione_id, reporter_id, reason CHECK scam/harassment/spam/other, details, status open/reviewed/dismissed, reviewed_at, reviewed_by, admin_notes)`. RLS: INSERT solo partecipanti conv. SELECT/UPDATE solo `is_admin`. Unique partial idx `(reporter_id, conversazione_id) WHERE status='open'` = anti-flood (1 sola open per coppia).
+- 2 RPC SECURITY DEFINER: `admin_list_reports(p_status)` joina reporter+annuncio+is_support. `admin_update_report_status(report_id, status, notes)` valida is_admin + 3 status ammessi.
+- Frontend `messaggi.html`: kebab `⋮` nell'header chat (fuori da `chatHeaderLink` per evitare bubble click), nascosto su draft/supporto/no-conv. Modal con 4 radio motivo + textarea details (max 500). Submit: INSERT + fetch fire-and-forget Edge `notify-report` con JWT user. 23505 → "Hai già una segnalazione aperta su questa chat".
+- Edge function `notify-report` (`--no-verify-jwt`): valida `auth.getUser(jwt)` + `report.reporter_id === user.id`. Email a tutti gli admin con motivo + dettagli + ultimi 3 messaggi + link a `dashboard.html#reports` e `/messaggi?conv=`.
+- Pannello dashboard.html dentro `adminPanel`: anchor `#reports`, tab Aperte/Gestite/Archiviate, badge rosso conteggio open. Bottoni Apri chat / Marca gestita / Archivia / Riapri.
 
 ## 🔍 SEO & Google
 
@@ -126,15 +139,25 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - Pagine geo `/annunci/[citta]` SSR in `api/annunci-citta.js` con FAQPage + AggregateOffer + ItemList + BreadcrumbList. Capoluoghi (137) hanno pagina speciale anche senza annunci. Comune ISTAT non capoluogo senza annunci → 302 a `/annunci?q=<nome>`. Slug invalido → 404 + noindex.
 - **`api/annuncio.js` SSR**: serve la pagina annuncio per SEO/Google. **CRITICO**: bumpare le `?v=` in `api/annuncio.js` quando bumpi quelle in `annuncio.html`. Erano disallineate (v=6/v=4/v=5 vs v=9/v=11/v=10) — risolto 4 mag 2026.
 - `data/comuni.json` (1.4 MB, 7904 record): bundle statico, validazione slug + redirect.
+- **Link interni senza `.html`** (5 mag 2026): tutti gli `href` interni puntano a `/annunci`, `/vendi`, `/annuncio?id=…` ecc. cleanUrls in vercel.json gestisce il fallback. NON rimettere `.html` o si genera chain redirect 308. `redirectTo` Supabase password reset usa `/reset-password` (no `.html`).
+- **canonical valutatore** = `/valutatore` (senza `.html`), allineato a sitemap. Stesso per og:url, JSON-LD `url`.
+- **og:image** home + annunci: `https://images.pexels.com/photos/1187299/...?w=1200&h=630&fit=crop` (foto mercato Pexels). Stessa CDN già usata dal blog.
+- **Meta SEO completi** (description, canonical, og:type/site_name/locale/url/title/desc, twitter:card) anche su contatti/privacy/termini/annunci.
+- **`messaggi.html` ha `<meta robots noindex,nofollow>`** in aggiunta al Disallow di robots.txt.
+- **Sitemap online**: 247 URL, refresh 1h, status 200.
 
 ## 🃏 Card Annunci (`buildCard` in `data.js`)
 
 - La card è un `<div class="group ...">` NON un `<a>` — link separati: cover/titolo/freccia → `annuncioUrl`, venditore → `profiloUrl`. NON tornare a wrapper `<a>` unico.
-- Link venditore: `<a>` reale a `profilo.html?id=USER_ID` con `onclick="event.stopPropagation()"`.
+- Link venditore: `<a>` reale a `/profilo?id=USER_ID` (no `.html`) con `onclick="event.stopPropagation()"`.
 - **Bordo laterale**: `border-l-[3px] border-l-emerald-400` Vendita, `border-l-blue-400` Affitto. Featured: niente striscia, ring dorato.
 - **Sfondo card**: `bg-emerald-50/70` Vendita, `bg-blue-50/70` Affitto. Featured: `bg-gradient-to-b from-amber-50/50 to-white`.
 - **`settore` NON è colonna diretta** di `annunci` — è in `dettagli_extra` o non esiste.
-- Cuoricino preferiti in alto a destra. `SAVED_IDS` Set globale.
+- **Salva preferiti**: icona `fa-bookmark` (NON cuore — il cuore è stato sostituito per coerenza con la pagina annuncio interna). Saved=`fas fa-bookmark text-blue-600`, non-saved=`far fa-bookmark text-slate-400`. `SAVED_IDS` Set globale, `_refreshSaveButtons(id)` aggiorna tutti i bottoni della stessa annuncio in DOM.
+- **Badge giorno mercato** (`_dayBadge(giorni, tipo, size)` in data.js): un badge per ogni giorno con palette dal freddo (Lun sky/cyan) al caldo (Dom red/orange). Multi-giorno = multi-badge separati (NIENTE "+N counter"). Per fiere: vuoto. Stile inline con hex (Tailwind precompilato non include classi dinamiche). Param `size`: 'sm' card, 'md' pagina detail. Helper replicato anche server-side in `api/annuncio.js` come `dayBadgeHTML()`.
+- **Niente più merce** sulla card (era `• Oggettistica`, sostituita dal badge giorno; era già duplicata col titolo).
+- **Container parent badge**: `flex flex-wrap items-center gap-1.5` per gestire wrap quando i giorni sono molti.
+- **Home `/`**: griglia `grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5`, allineata a `/annunci` (era 3 col allargate, modificato per coerenza).
 
 ## 📐 Dimensioni Immagini
 
@@ -156,6 +179,8 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **`_supabase.rpc().catch()` NON ESISTE** v2 — usare async/await.
 - **Regex Python multi-line `[\s\S]*?`** per riscrivere codice è pericolosa: ha già cancellato funzioni intere. Edit puntuale > regex.
 - **Caratteri Unicode invisibili** (U+200A, U+0300, 0x01) iniettati da editor rompono replace silenziosamente.
+- **Select Supabase incompleta = filtro silente broken**: 5 mag 2026, `loadListings()` in `js/pages/annunci.js` non includeva `giorni` nella select primary, solo nel fallback. Risultato: `l.giorni` undefined → filtro chip giorni sempre 0 risultati. Verificare SEMPRE che la select includa tutte le colonne usate da filtri/UI.
+- **Confronti accent-insensitive**: il regex `/lunedi(?!ì)/g` non catturava forme unicode equivalenti (`ì` precomposto U+00EC vs `i+̀` combining grave). Soluzione robusta: `s.normalize('NFD').replace(/[̀-ͯ]/g, '')` rimuove tutti i diacritici. Pattern usato in `_normalizeDayName` (annunci.js) e `_dayBadge` (data.js).
 
 ## 🤖 Blog Generator (`js/blog-generator.js`)
 
@@ -282,7 +307,8 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 - **Sidebar mobile** `hidden lg:block`. Bottone "Filtri" apre bottom-sheet `#mobileFiltersSheet`.
 - Input `m_*` (`m_fRegione`, `m_fTipo`, `m_fStato`, `m_fPrezzoMax`, `m_fSup`). `applyMobileFilters()` copia `m_` → sidebar.
-- **Filtro giorni** (multi-select chip): `#dayChipsDesktop` + `#dayChipsMobile` in `annunci.html`. CSS `.day-chip` / `.day-chip.selected`. Logica in `js/pages/annunci.js`: `_normalizeDayName()` accent-insensitive, `_getSelectedDays()`, `toggleDayChip(btn)`. Filtro: intersezione `l.giorni.split(',')` con selected. Backfill DB: `PATCH_GIORNI_ACCENT_BACKFILL_20260504.sql` uniforma accenti.
+- **Filtro giorni** (multi-select chip): `#dayChipsDesktop` + `#dayChipsMobile` in `annunci.html`. CSS `.day-chip` / `.day-chip.selected`. Logica in `js/pages/annunci.js`: `_normalizeDayName()` (NFD + strip diacritici), `_getSelectedDays()`, `toggleDayChip(btn)`. Filtro: intersezione `l.giorni.split(',')` con selected. **CRITICO**: la select primary di `loadListings()` DEVE includere `giorni` — se omesso il filtro è sempre 0 (bug 5 mag 2026).
+- **Pannello desktop filtri** (5 mag 2026): una sola riga `grid-cols-2 md:grid-cols-3 lg:grid-cols-6`, chip giorni full-width sotto un divider, bottoni Azzera/Applica a destra. Sheet mobile resta verticale come prima.
 - **Ricerca**: searchBar lancia `applyFilters()` solo su click "Cerca" o Invio (non più live). Filtri sidebar restano live `onchange`.
 - **Ricerca per luogo**: se `getCityCoords` riconosce il testo → mostra annunci entro 200km ordinati per distanza.
 - **`PROVINCE_COORDS` in `data.js`**: aggiungere comuni se ricerca vicinanza non li trova.
@@ -454,12 +480,14 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 ## 🌐 Cache Versions Correnti
 
-- `data.js?v=9` (cuoricino + SAVED_IDS + toggleSaveListing).
-- `auth.js?v=11` (4 mag 2026 — anti-bot: honeypot + time-on-form + blacklist temp-mail + pattern probe).
-- `annuncio-detail.js?v=10` (censorPhonesHTML + bookmark).
+- `data.js?v=14` (5 mag 2026 — _dayBadge multi-giorno freddo→caldo + bookmark al posto del cuore + niente più merce nella card).
+- `auth.js?v=12` (5 mag 2026 — link interni senza .html, redirectTo Supabase senza .html).
+- `annuncio-detail.js?v=13` (5 mag 2026 — bookmark + day badge md su pagina dettaglio + link interni senza .html).
+- `ui-components.js?v=11` (5 mag 2026 — voce "Supporto" nel footer).
+- `annunci.js?v=5` (5 mag 2026 — `_normalizeDayName` NFD + select include `giorni` + layout pannello compatto).
 - `css/tailwind.css?v=2` (precompilato).
 - `page-view-tracker.js?v=1`.
-- **Bumpare `?v=` quando modifichi un file caricato con cache busting.**
+- **Bumpare `?v=` quando modifichi un file caricato con cache busting.** Le HTML invece NON hanno cache buster — il browser può servirle stale fino a Ctrl+Shift+R.
 
 ## 📰 Articoli "Bandi" — Pattern Replica
 
@@ -486,12 +514,14 @@ Pivot da "tutorial generico bandi" a "lista bandi reali" (test pilota Lombardia)
 3. **Annunci Demo**: 10 annunci finti (Carla M., Marco V.) admin. Da cancellare quando ci saranno 30+ annunci reali.
 4. **Privacy policy**: 3 placeholder `[NOME TITOLARE]`, `[INDIRIZZO + P.IVA]`, `[EMAIL CONTATTO]` da compilare prima del go-live legale.
 5. **Spalmare 2 cron settimanali su giorni diversi** (5 min, allunga vita free Resend).
-6. **Search Console "Pagina con reindirizzamento"**: canonical valutatore + strip `.html` da href interni.
-7. **CSP**: 1 settimana di lavoro, da pianificare.
+6. **CSP**: 1 settimana di lavoro, da pianificare.
+7. **Cleanup conv vuote già esistenti**: `DELETE FROM conversazioni c WHERE NOT EXISTS (SELECT 1 FROM messaggi m WHERE m.conversazione_id = c.id);` — opzionale, il filtro client-side già le nasconde.
+
+### TODO chiusi (5 mag 2026)
+- ~~Search Console "Pagina con reindirizzamento": canonical valutatore + strip .html~~ ✅ canonical e link interni allineati.
 
 ### Bug minori segnalati ma non urgenti
 - `moderation.js` non incluso in HTML (mitigato da trigger DB).
-- Link interni `annuncio.html?id=` vs `/annuncio?id=` bypassano SSR (impatto SEO minimo).
 - Admin hardcoded in `setup-database.sql` vecchio (in prod usate già `is_admin`).
 - UPDATE policy senza `WITH CHECK` (Postgres riusa USING).
 - Bug foto `modifica-annuncio.html` (`img[src^="http"]` fragile).
