@@ -287,14 +287,13 @@ async function prepareImageForUpload(file, maxSide = 1600, quality = 0.82) {
 
 // Badge giorno della settimana per mercati settimanali.
 // Palette dal più freddo (lunedì) al più caldo (domenica). Vuoto per fiere.
+// Ritorna un badge per ogni giorno (più giorni → più badge affiancati).
 // size: 'sm' (card, default) | 'md' (page detail).
 function _dayBadge(rawGiorni, tipo, size = 'sm') {
     if (!rawGiorni) return '';
     if (tipo && /fiera/i.test(tipo)) return '';
     const days = String(rawGiorni).split(',').map(s => s.trim()).filter(Boolean);
     if (!days.length) return '';
-    const norm = days[0].toLowerCase()
-        .normalize('NFD').replace(/[̀-ͯ]/g, '');
     const palette = {
         lunedi:    { bg: '#e0f2fe', fg: '#0369a1' },
         martedi:   { bg: '#cffafe', fg: '#0e7490' },
@@ -304,14 +303,16 @@ function _dayBadge(rawGiorni, tipo, size = 'sm') {
         sabato:    { bg: '#ffedd5', fg: '#c2410c' },
         domenica:  { bg: '#fee2e2', fg: '#b91c1c' },
     };
-    const c = palette[norm];
-    if (!c) return '';
-    const label = days[0].charAt(0).toUpperCase() + days[0].slice(1).toLowerCase();
-    const more  = days.length > 1 ? ` +${days.length - 1}` : '';
     const sizing = size === 'md'
         ? 'text-[10px] px-3 py-1.5'
         : 'text-[10px] px-2 py-0.5';
-    return `<span class="${sizing} font-black uppercase tracking-wider rounded-lg" style="background:${c.bg};color:${c.fg}">${escapeHTML(label)}${escapeHTML(more)}</span>`;
+    return days.map(day => {
+        const norm = day.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+        const c = palette[norm];
+        if (!c) return '';
+        const label = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase();
+        return `<span class="${sizing} font-black uppercase tracking-wider rounded-lg" style="background:${c.bg};color:${c.fg}">${escapeHTML(label)}</span>`;
+    }).filter(Boolean).join('');
 }
 
 function isListingFeatured(l) {
@@ -397,7 +398,7 @@ function buildCard(l, isSmall = false, distance = null) {
 
         <!-- body -->
         <div class="p-3 sm:p-5 flex-grow flex flex-col">
-            <div class="flex items-center gap-1.5 mb-2">
+            <div class="flex flex-wrap items-center gap-1.5 mb-2">
                 <span class="text-[10px] font-black text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-lg">${escapeHTML(l.tipo)}</span>
                 ${_dayBadge(l.giorni, l.tipo)}
             </div>

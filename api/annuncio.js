@@ -24,12 +24,12 @@ function safeJson(obj) {
 }
 
 // Badge giorno con palette freddo→caldo (mantenere allineato a _dayBadge in data.js)
+// Ritorna un badge per ogni giorno separato.
 function dayBadgeHTML(rawGiorni, tipo) {
     if (!rawGiorni) return '';
     if (tipo && /fiera/i.test(tipo)) return '';
     const days = String(rawGiorni).split(',').map(s => s.trim()).filter(Boolean);
     if (!days.length) return '';
-    const norm = days[0].toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
     const palette = {
         lunedi:    { bg: '#e0f2fe', fg: '#0369a1' },
         martedi:   { bg: '#cffafe', fg: '#0e7490' },
@@ -39,11 +39,13 @@ function dayBadgeHTML(rawGiorni, tipo) {
         sabato:    { bg: '#ffedd5', fg: '#c2410c' },
         domenica:  { bg: '#fee2e2', fg: '#b91c1c' },
     };
-    const c = palette[norm];
-    if (!c) return '';
-    const label = days[0].charAt(0).toUpperCase() + days[0].slice(1).toLowerCase();
-    const more  = days.length > 1 ? ` +${days.length - 1}` : '';
-    return `<span class="text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-lg" style="background:${c.bg};color:${c.fg}">${esc(label)}${esc(more)}</span>`;
+    return days.map(day => {
+        const norm = day.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+        const c = palette[norm];
+        if (!c) return '';
+        const label = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase();
+        return `<span class="text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-lg" style="background:${c.bg};color:${c.fg}">${esc(label)}</span>`;
+    }).filter(Boolean).join('');
 }
 
 function buildTitle(l) {
@@ -235,7 +237,7 @@ module.exports = async function handler(req, res) {
             <div class="bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
                 <div class="flex flex-wrap gap-2 mb-4">
                     <span id="badgeTipo"  class="bg-blue-50 text-blue-700 text-[10px] font-black px-3 py-1.5 rounded-lg uppercase tracking-wider">${esc(listing ? listing.tipo : '')}</span>
-                    <span id="badgeGiornoSlot">${listing ? dayBadgeHTML(listing.giorni, listing.tipo) : ''}</span>
+                    <span id="badgeGiornoSlot" class="inline-flex flex-wrap gap-2 items-center">${listing ? dayBadgeHTML(listing.giorni, listing.tipo) : ''}</span>
                 </div>
                 <h1 id="titolo" class="text-3xl font-black tracking-tight leading-tight text-slate-900">${esc(listing ? listing.titolo : '')}</h1>
                 <p id="prezzoMobile" class="lg:hidden text-3xl font-black text-slate-900 mt-3">${prezzoStr}</p>
@@ -336,7 +338,7 @@ module.exports = async function handler(req, res) {
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/supabase-config.js?v=3"></script>
-<script src="/js/data.js?v=12"></script>
+<script src="/js/data.js?v=13"></script>
 <script src="/js/ui-components.js?v=11"></script>
 <script src="/js/auth.js?v=12"></script>
 <script src="/js/pages/annuncio-detail.js?v=13"></script>
