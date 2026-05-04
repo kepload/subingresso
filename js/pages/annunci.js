@@ -125,14 +125,13 @@ function parseItalianNumber(value, fallback = 0) {
 }
 
 // ── Filtro giorni mercato ────────────────────────────────────
-// Normalizza nome giorno (case-insensitive, con/senza accento) per matching.
+// Normalizza nome giorno: trim, lowercase, NFD + strip diacritici.
+// Risultato senza accenti (es. 'Lunedì' → 'lunedi') così evita problemi di
+// confronto fra forme unicode equivalenti (precomposto vs combining grave).
 function _normalizeDayName(s) {
     return String(s || '').trim().toLowerCase()
-        .replace(/lunedi(?!ì)/g,    'lunedì')
-        .replace(/martedi(?!ì)/g,   'martedì')
-        .replace(/mercoledi(?!ì)/g, 'mercoledì')
-        .replace(/giovedi(?!ì)/g,   'giovedì')
-        .replace(/venerdi(?!ì)/g,   'venerdì');
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '');
 }
 // Legge i chip selezionati nella sidebar desktop (fonte di verità).
 // Se siamo in modalità mobile (sheet aperto), il mobile ha già copiato in desktop al apply.
