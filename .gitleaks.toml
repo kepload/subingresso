@@ -1,0 +1,35 @@
+# Configurazione Gitleaks per Subingresso.it
+# Estende le rules predefinite con pattern Supabase nuovi (sb_secret_*).
+# Vedi: https://github.com/gitleaks/gitleaks#configuration
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "supabase-secret-key"
+description = "Supabase Secret API Key (sb_secret_*) — accesso totale al DB, mai committare"
+regex = '''sb_secret_[A-Za-z0-9_-]{20,}'''
+keywords = ["sb_secret_"]
+
+[[rules]]
+id = "supabase-service-role-jwt"
+description = "Supabase Service Role JWT legacy (eyJ...service_role) — bypass RLS"
+regex = '''eyJ[A-Za-z0-9_-]+\.eyJ[A-Za-z0-9_-]*c2VydmljZV9yb2xl[A-Za-z0-9_-]*\.[A-Za-z0-9_-]+'''
+keywords = ["service_role", "eyJ"]
+
+[allowlist]
+description = "File legittimi che possono contenere pattern simili"
+paths = [
+  '''node_modules/.*''',
+  '''package-lock\.json''',
+  '''\.git/.*''',
+  # Documentazione/educational dove cito esempi finti
+  '''istruzioni\.md''',
+]
+# Permetti pattern di esempio chiaramente finti (FAKE/EXAMPLE/PLACEHOLDER)
+regexes = [
+  '''sb_secret_[A-Z_]*FAKE[A-Z_0-9]*''',
+  '''sb_secret_[A-Z_]*EXAMPLE[A-Z_0-9]*''',
+  '''sb_secret_[A-Z_]*PLACEHOLDER[A-Z_0-9]*''',
+  '''<REVOKED-\d{4}-\d{2}-\d{2}>''',
+]
