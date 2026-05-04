@@ -143,6 +143,7 @@ let _renderedMsgIds  = new Set();
 let _pollInterval    = null;
 let _typingTimeout   = null;
 let _lastTypingSent  = 0;
+let _draftAnnuncio   = null;  // { id, titolo, img_urls, prezzo, comune, tipo, venditore_id } — bozza pre-prima-msg
 
 const _profilesCache = {};   // id → { nome, cognome, avatar_url }
 const _annunciCache  = {};   // id → { titolo, img_urls, prezzo, comune, tipo }
@@ -206,7 +207,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const params = new URLSearchParams(location.search);
         const convParam = params.get('conv');
-        if (convParam) openConversation(convParam);
+        const annuncioParam = params.get('annuncio');
+        if (convParam) {
+            openConversation(convParam);
+        } else if (annuncioParam) {
+            openDraftFor(annuncioParam);
+        }
     } catch (err) {
         document.getElementById('loadingState').innerHTML = `
             <div class="text-center py-24">
@@ -260,9 +266,10 @@ async function loadConversations() {
         acquirente:  pm[c.acquirente_id] || null,
         venditore:   pm[c.venditore_id]  || null,
         lastMessage: lastMsgMap[c.id]    || null,
-    })).sort((a, b) => {
-        const ta = a.lastMessage ? new Date(a.lastMessage.created_at) : new Date(a.created_at);
-        const tb = b.lastMessage ? new Date(b.lastMessage.created_at) : new Date(b.created_at);
+    })).filter(c => c.lastMessage)  // nascondi conv senza messaggi
+      .sort((a, b) => {
+        const ta = new Date(a.lastMessage.created_at);
+        const tb = new Date(b.lastMessage.created_at);
         return tb - ta;
     });
 
@@ -356,7 +363,73 @@ function backToConversations() {
     document.getElementById('convPanel').classList.add('flex');
     document.getElementById('chatPanel').classList.add('hidden');
     document.getElementById('chatPanel').classList.remove('flex');
-    _activeConvId = null;
+    _activeConvId  = null;
+    _draftAnnuncio = null;
+    _hideTyping();
+}
+
+// ── Draft: chat aperta con annuncio ma conv non ancora creata ──
+async function openDraftFor(annuncioId) {
+    const { data: annuncio, error } = await _supabase
+        .from('annunci')
+        .select('id, titolo, img_urls, prezzo, comune, tipo, user_id, status')
+        .eq('id', annuncioId)
+        .maybeSingle();
+
+    if (error || !annuncio) {
+        showToast('Annuncio non trovato.', 'error');
+        return;
+    }
+    if (annuncio.user_id === _currentUser.id) {
+        location.href = 'dashboard.html';
+        return;
+    }
+    if (annuncio.status === 'deleted' || annuncio.status === 'pending') {
+        showToast('Questo annuncio non è disponibile per la chat.', 'warning');
+        return;
+    }
+
+    _annunciCache[annuncio.id] = annuncio;
+
+    // Profilo venditore
+    let venditore = _profilesCache[annuncio.user_id];
+    if (!venditore) {
+        const { data: p } = await _supabase
+            .from('profiles').select('id, nome, cognome, avatar_url')
+            .eq('id', annuncio.user_id).single();
+        if (p) { _profilesCache[p.id] = p; venditore = p; }
+    }
+
+    _activeConvId  = null;
+    _draftAnnuncio = { ...annuncio, venditore_id: annuncio.user_id };
+
+    // UI: chat panel aperto su mobile e desktop
+    document.getElementById('chatEmpty').classList.add('hidden');
+    document.getElementById('chatHeader').classList.remove('hidden');
+    document.getElementById('messagesContainer').classList.remove('hidden');
+    document.getElementById('chatInputArea').classList.remove('hidden');
+    if (window.innerWidth < 768) {
+        document.getElementById('convPanel').classList.add('hidden');
+        document.getElementById('convPanel').classList.remove('flex');
+        document.getElementById('chatPanel').classList.remove('hidden');
+        document.getElementById('chatPanel').classList.add('flex');
+    }
+
+    // Header
+    document.getElementById('chatOtherName').textContent = annuncio.titolo || 'Annuncio';
+    const meta = [_displayName(venditore), _fmtPrice(annuncio.prezzo, annuncio.tipo)].filter(Boolean).join(' · ');
+    document.getElementById('chatHeaderMeta').textContent = meta;
+    document.getElementById('chatHeaderThumb').innerHTML = _thumbHTML(annuncio);
+    document.getElementById('chatHeaderLink').href = `annuncio.html?id=${annuncio.id}`;
+
+    // Empty state nel container
+    const container = document.getElementById('messagesContainer');
+    container.innerHTML = `<div data-placeholder class="text-center text-slate-300 text-sm font-semibold py-12">
+        <i class="fas fa-paper-plane text-3xl mb-2 block text-slate-200"></i>
+        Scrivi il primo messaggio per iniziare la conversazione.
+    </div>`;
+
+    document.getElementById('msgInput')?.focus();
 }
 
 // ── Open a conversation ──────────────────────────────────
@@ -483,11 +556,56 @@ async function sendMessage(e) {
     e.preventDefault();
     const input = document.getElementById('msgInput');
     const testo = input.value.trim();
-    if (!testo || !_activeConvId) return;
+    if (!testo) return;
+    if (!_activeConvId && !_draftAnnuncio) return;
 
     const btn = e.target.querySelector('button[type=submit]');
     input.value = '';
     if (btn) btn.disabled = true;
+
+    // Se siamo in draft mode, crea la conv adesso (al primo messaggio)
+    if (!_activeConvId && _draftAnnuncio) {
+        // Race-protection: ricontrolla se nel frattempo esiste già
+        const { data: existing } = await _supabase
+            .from('conversazioni')
+            .select('id')
+            .eq('annuncio_id', _draftAnnuncio.id)
+            .eq('acquirente_id', _currentUser.id)
+            .maybeSingle();
+
+        let convId = existing?.id;
+        if (!convId) {
+            const { data: created, error: convErr } = await _supabase
+                .from('conversazioni')
+                .insert({
+                    annuncio_id:   _draftAnnuncio.id,
+                    acquirente_id: _currentUser.id,
+                    venditore_id:  _draftAnnuncio.venditore_id,
+                })
+                .select('id, created_at, acquirente_id, venditore_id')
+                .single();
+            if (convErr) {
+                if (btn) btn.disabled = false;
+                input.value = testo;
+                console.error('create conv error:', convErr.message);
+                showToast('Errore nella chat. Riprova.', 'error');
+                return;
+            }
+            convId = created.id;
+            _conversations.unshift({
+                ...created,
+                annuncio: _draftAnnuncio,
+                acquirente: _profilesCache[_currentUser.id] || null,
+                venditore:  _profilesCache[_draftAnnuncio.venditore_id] || null,
+                lastMessage: null,
+            });
+        }
+
+        _activeConvId  = convId;
+        _draftAnnuncio = null;
+        document.querySelector('#messagesContainer [data-placeholder]')?.remove();
+        setupRealtime(convId);
+    }
 
     const { data: saved, error } = await _supabase
         .from('messaggi')
@@ -509,6 +627,7 @@ async function sendMessage(e) {
         _renderedMsgIds.add(saved.id);
         appendMessage(saved);
         updateConvLastMessage(_activeConvId, { ...saved, letto: true });
+        renderConvList();  // mostra la conv appena nata nella lista
     }
 }
 

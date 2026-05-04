@@ -489,24 +489,10 @@ async function startChat() {
                 .eq('acquirente_id', user.id)
                 .maybeSingle();
 
-            let convId = existing?.id;
-
-            if (!convId) {
-                const { data: created, error } = await _supabase
-                    .from('conversazioni')
-                    .insert({
-                        annuncio_id:   listing.id,
-                        acquirente_id: user.id,
-                        venditore_id:  listing.user_id
-                    })
-                    .select('id')
-                    .single();
-
-                if (error) throw error;
-                convId = created.id;
-            }
-
-            location.href = `messaggi.html?conv=${convId}`;
+            // Niente creazione: la conv nasce al primo messaggio inviato.
+            location.href = existing?.id
+                ? `messaggi.html?conv=${existing.id}`
+                : `messaggi.html?annuncio=${listing.id}`;
         } catch (err) {
             console.error(err);
             showToast('Errore nella chat. Riprova.', 'error');
