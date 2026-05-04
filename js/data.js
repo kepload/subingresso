@@ -332,8 +332,8 @@ function buildCard(l, isSmall = false, distance = null) {
     const statoBorder = isAffitto ? 'border-l-[3px] border-l-blue-400' : 'border-l-[3px] border-l-emerald-400';
     const statoBg = isAffitto ? 'bg-blue-100/50' : 'bg-emerald-100/50';
     const featuredBorder = featured
-        ? 'shadow-[0_0_0_2px_rgb(251,191,36),0_18px_42px_-12px_rgba(245,158,11,0.45),0_8px_16px_-6px_rgba(245,158,11,0.25)]'
-        : `shadow-[0_6px_18px_-6px_rgba(15,23,42,0.12),0_2px_6px_-2px_rgba(15,23,42,0.06)] ${statoBorder}`;
+        ? 'shadow-[0_0_0_2px_rgb(251,191,36),0_14px_36px_rgba(245,158,11,0.28)]'
+        : `border border-slate-200 shadow-sm shadow-slate-300/40 ${statoBorder}`;
     const featuredBadge = featured
         ? `<span class="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-black px-2.5 py-1 rounded-lg uppercase tracking-widest shadow-md flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-white/90 animate-pulse flex-shrink-0"></span><i class="fas fa-crown text-[9px]"></i> In Evidenza</span>`
         : '';
@@ -373,7 +373,7 @@ function buildCard(l, isSmall = false, distance = null) {
     })();
 
     return `
-    <div data-listing-id="${escapeHTML(l.id)}" class="group ${featured ? 'bg-orange-100/50' : statoBg} rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-[0_18px_40px_-10px_rgba(15,23,42,0.18),0_6px_14px_-4px_rgba(15,23,42,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full relative will-change-transform">
+    <div data-listing-id="${escapeHTML(l.id)}" class="group ${featured ? 'bg-orange-100/50' : statoBg} rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full relative">
         <!-- cover -->
         <a href="${annuncioUrl}" class="block relative h-20 sm:h-28 bg-slate-100 overflow-hidden flex-shrink-0">
             <div class="absolute inset-0 flex items-center justify-center text-slate-300">
