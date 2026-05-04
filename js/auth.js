@@ -434,7 +434,7 @@ function _showLotteryResult(won) {
             <p class="text-sm font-bold text-amber-700">⭐ 30 giorni di Vetrina gratuita</p>
             <p class="text-xs text-amber-600 mt-1">Pubblica un annuncio e si attiva automaticamente.</p>
           </div>
-          <button onclick="closeWelcomeNewPopup(); window.location.href='vendi.html'"
+          <button onclick="closeWelcomeNewPopup(); window.location.href='/vendi'"
             class="w-full bg-amber-500 text-white py-4 rounded-xl font-black text-sm hover:bg-amber-600 transition active:scale-[.98]">
             Pubblica ora e attiva la vetrina →
           </button>`;
@@ -443,7 +443,7 @@ function _showLotteryResult(won) {
           <div class="text-5xl mb-3">😔</div>
           <h2 class="text-xl font-black text-slate-800 mb-2">Non hai vinto questa volta</h2>
           <p class="text-sm text-slate-500 mb-5">La fortuna non era dalla tua parte. Puoi comunque pubblicare il tuo annuncio gratuitamente!</p>
-          <button onclick="closeWelcomeNewPopup(); window.location.href='vendi.html'"
+          <button onclick="closeWelcomeNewPopup(); window.location.href='/vendi'"
             class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
             Pubblica annuncio →
           </button>
@@ -590,7 +590,7 @@ function _checkPostAuthIntent() {
             const session = localStorage.getItem('_val_session') || '';
             if (session) sessionStorage.setItem('_highlight_session', session);
         } catch (_) {}
-        location.href = 'dashboard.html#valutazioni';
+        location.href = '/dashboard#valutazioni';
         return true;
     }
     return false;
@@ -715,7 +715,7 @@ window.handleForgotPassword = async function (e) {
     const email = document.getElementById('forgotEmail').value.trim();
     try {
         const { error } = await _supabase.auth.resetPasswordForEmail(email, {
-            redirectTo: 'https://subingresso.it/reset-password.html'
+            redirectTo: 'https://subingresso.it/reset-password'
         });
         _setBtnLoading('forgotBtn', false, '<i class="fas fa-paper-plane"></i> Invia link');
         if (error) { _showAuthError('Errore. Controlla l\'email e riprova.'); return; }
@@ -759,7 +759,7 @@ window.signOut = async function () {
     if (dash) dash.innerHTML = '';
 
     // Reindirizzamento universale alla home per azzerare lo stato JS
-    window.location.href = 'index.html';
+    window.location.href = '/';
 };
 
 // ── Get current user ─────────────────────────────────────
@@ -819,12 +819,12 @@ window.updateAuthNav = async function () {
     const user = session.user;
     const msgIconId = 'navMsgIcon_' + Date.now();
     nav.innerHTML = `
-        <a href="messaggi.html" title="Messaggi"
+        <a href="/messaggi" title="Messaggi"
             class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 transition-all duration-200 flex items-center justify-center shrink-0">
             <i class="fas fa-comment-alt text-sm"></i>
             <span id="${msgIconId}"></span>
         </a>
-        <a href="dashboard.html" title="Area personale"
+        <a href="/dashboard" title="Area personale"
             class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-100 hover:bg-slate-200 transition-all duration-200 flex items-center justify-center shrink-0">
             <i class="fas fa-user text-sm text-slate-500"></i>
         </a>`;

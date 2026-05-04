@@ -53,7 +53,7 @@
     <!-- Banner Calcolatore -->
     <div class="mb-10 px-5 py-3 bg-gradient-to-r from-blue-600 to-violet-700 rounded-2xl flex items-center justify-between gap-4">
         <span class="text-white font-bold text-sm">Quanto vale il tuo posteggio?</span>
-        <a href="valutatore.html" class="shrink-0 bg-white text-blue-600 font-black px-4 py-2 rounded-xl text-xs hover:bg-blue-50 transition whitespace-nowrap">
+        <a href="/valutatore" class="shrink-0 bg-white text-blue-600 font-black px-4 py-2 rounded-xl text-xs hover:bg-blue-50 transition whitespace-nowrap">
             Calcola <i class="fas fa-arrow-right ml-1"></i>
         </a>
     </div>
@@ -69,9 +69,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=9"></script>
-<script src="js/ui-components.js?v=10"></script>
-<script src="js/auth.js?v=11"></script>
+<script src="js/data.js?v=10"></script>
+<script src="js/ui-components.js?v=11"></script>
+<script src="js/auth.js?v=12"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const slug = params.get('post');
@@ -95,7 +95,7 @@ async function loadBlog() {
             if (post) {
                 renderPost(post);
             } else {
-                container.innerHTML = `<div class="text-center">Post non trovato. <a href="blog.html" class="text-blue-600 underline">Torna all'indice</a></div>`;
+                container.innerHTML = `<div class="text-center">Post non trovato. <a href="/blog" class="text-blue-600 underline">Torna all'indice</a></div>`;
             }
         } else {
             renderList(posts);
@@ -199,12 +199,12 @@ function renderPost(post) {
             <h3 class="text-2xl font-black tracking-tight mb-4 text-slate-900 text-center">Passa all'azione oggi stesso</h3>
             <p class="text-slate-500 font-medium mb-8 max-w-md mx-auto italic text-sm text-center">Subingresso.it è il partner tecnico che ti accompagna nella compravendita del tuo posteggio.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="vendi.html" class="bg-blue-600 text-white font-black px-10 py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-center">Voglio Vendere</a>
-                <a href="annunci.html" class="bg-white text-slate-900 border border-slate-200 font-black px-10 py-5 rounded-2xl hover:bg-slate-50 transition shadow-sm text-center">Voglio Comprare</a>
+                <a href="/vendi" class="bg-blue-600 text-white font-black px-10 py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-center">Voglio Vendere</a>
+                <a href="/annunci" class="bg-white text-slate-900 border border-slate-200 font-black px-10 py-5 rounded-2xl hover:bg-slate-50 transition shadow-sm text-center">Voglio Comprare</a>
             </div>
         </div>
         <div class="mt-12 pt-10 border-t border-slate-100 text-left">
-            <a href="blog.html" class="text-sm font-bold text-slate-400 hover:text-blue-600 transition">← Torna all'indice degli articoli</a>
+            <a href="/blog" class="text-sm font-bold text-slate-400 hover:text-blue-600 transition">← Torna all'indice degli articoli</a>
         </div>
     `;
     // Nascondi la promo agli utenti già loggati
@@ -236,7 +236,7 @@ function renderList(posts) {
                          class="w-full aspect-[16/9] object-cover rounded-2xl mb-4 bg-slate-100">
                 ` : '';
                 return `
-                <a href="blog.html?post=${safeSlug}" class="block group border-b border-slate-50 pb-8 last:border-0 text-left">
+                <a href="/blog?post=${safeSlug}" class="block group border-b border-slate-50 pb-8 last:border-0 text-left">
                     ${thumbHtml}
                     <p class="text-xs font-bold text-slate-400 uppercase mb-2 text-left">${date}</p>
                     <h2 class="text-2xl font-black group-hover:text-blue-600 transition tracking-tight leading-tight text-left">${safeTitle}</h2>

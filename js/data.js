@@ -292,8 +292,8 @@ function isListingFeatured(l) {
 }
 
 function buildCard(l, isSmall = false, distance = null) {
-    const annuncioUrl = `annuncio.html?id=${escapeHTML(l.id)}`;
-    const profiloUrl  = l.user_id ? `profilo.html?id=${escapeHTML(l.user_id)}` : null;
+    const annuncioUrl = `/annuncio?id=${escapeHTML(l.id)}`;
+    const profiloUrl  = l.user_id ? `/profilo?id=${escapeHTML(l.user_id)}` : null;
     const distTag = (distance !== null && distance !== Infinity)
         ? `<span class="bg-blue-600 text-white text-[10px] font-black px-2 py-1 rounded-lg shadow-sm">a ${Math.round(distance)} km</span>`
         : '';

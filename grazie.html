@@ -23,7 +23,7 @@
 
 <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center">
-        <a href="index.html" class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-3">
             <div class="bg-blue-600 text-white w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
                 <i class="fas fa-exchange-alt text-lg"></i>
             </div>
@@ -60,7 +60,7 @@
                 <a id="viewAnnuncioBtn" href="#" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-700 transition inline-flex items-center justify-center gap-2 shadow-lg shadow-blue-100">
                     <i class="fas fa-eye"></i> Vedi il tuo annuncio
                 </a>
-                <a href="dashboard.html" class="bg-slate-100 text-slate-700 px-6 py-3 rounded-xl font-black text-sm hover:bg-slate-200 transition inline-flex items-center justify-center gap-2">
+                <a href="/dashboard" class="bg-slate-100 text-slate-700 px-6 py-3 rounded-xl font-black text-sm hover:bg-slate-200 transition inline-flex items-center justify-center gap-2">
                     <i class="fas fa-arrow-right"></i> Vai alla Dashboard
                 </a>
             </div>
@@ -81,7 +81,7 @@
                 L'attivazione della vetrina può richiedere qualche minuto.<br>
                 Riceverai una notifica non appena sarà attiva.
             </p>
-            <a href="dashboard.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-700 transition inline-flex items-center gap-2">
+            <a href="/dashboard" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-700 transition inline-flex items-center gap-2">
                 Vai alla Dashboard <i class="fas fa-arrow-right"></i>
             </a>
         </div>
@@ -95,7 +95,7 @@
             <p class="text-slate-500 font-medium mb-6" id="errorMsg">
                 Non siamo riusciti a trovare il pagamento. Se hai completato la transazione, contattaci.
             </p>
-            <a href="dashboard.html" class="bg-slate-900 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-slate-800 transition inline-flex items-center gap-2">
+            <a href="/dashboard" class="bg-slate-900 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-slate-800 transition inline-flex items-center gap-2">
                 Torna alla Dashboard
             </a>
         </div>
@@ -167,7 +167,7 @@
                 (untilStr ? `Vetrina ${tierLabel} · attiva fino al ${untilStr}` : `Vetrina ${tierLabel} attivata`);
 
             if (ann?.id) {
-                document.getElementById('viewAnnuncioBtn').href = `annuncio.html?id=${ann.id}`;
+                document.getElementById('viewAnnuncioBtn').href = `/annuncio?id=${ann.id}`;
             }
 
             showState('stateSuccess');

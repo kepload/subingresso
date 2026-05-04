@@ -352,7 +352,7 @@ async function initPage() {
                 nameEl.textContent  = sellerFullName || 'Utente';
                 sinceEl.textContent = `Iscritto dal ${new Date(seller.created_at).toLocaleDateString('it-IT', { month: 'long', year: 'numeric' })}`;
                 if (badgeEl) badgeEl.innerHTML = getProfileBadges(seller.created_at, sellerCount || 0);
-                if (linkEl)  linkEl.href = `profilo.html?id=${listing.user_id}`;
+                if (linkEl)  linkEl.href = `/profilo?id=${listing.user_id}`;
                 if (card)    card.classList.remove('hidden');
             }
         } catch (_) {}
@@ -393,7 +393,7 @@ async function initPage() {
             const chatBtn = document.getElementById('chatBtn');
             if (chatBtn) {
                 chatBtn.innerHTML = '<i class="fas fa-edit"></i> Modifica Annuncio';
-                chatBtn.onclick = () => { location.href = `modifica-annuncio.html?id=${listing.id}`; };
+                chatBtn.onclick = () => { location.href = `/modifica-annuncio?id=${listing.id}`; };
                 chatBtn.className = 'w-full bg-blue-600 text-white py-4 rounded-2xl font-black hover:bg-blue-700 transition flex items-center justify-center gap-3 shadow-xl shadow-blue-100';
             }
 
@@ -477,7 +477,7 @@ async function startChat() {
             return;
         }
         if (listing.user_id === user.id) {
-            location.href = 'dashboard.html';
+            location.href = '/dashboard';
             return;
         }
 
@@ -491,8 +491,8 @@ async function startChat() {
 
             // Niente creazione: la conv nasce al primo messaggio inviato.
             location.href = existing?.id
-                ? `messaggi.html?conv=${existing.id}`
-                : `messaggi.html?annuncio=${listing.id}`;
+                ? `/messaggi?conv=${existing.id}`
+                : `/messaggi?annuncio=${listing.id}`;
         } catch (err) {
             console.error(err);
             showToast('Errore nella chat. Riprova.', 'error');

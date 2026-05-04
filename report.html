@@ -33,7 +33,7 @@
 <!-- Header (no-print) -->
 <header class="no-print bg-white border-b border-slate-100 py-4 sticky top-0 z-40">
     <div class="max-w-4xl mx-auto px-6 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-2.5">
+        <a href="/" class="flex items-center gap-2.5">
             <div class="bg-blue-600 text-white w-9 h-9 rounded-xl flex items-center justify-center shadow-md shadow-blue-100">
                 <i class="fas fa-exchange-alt text-sm"></i>
             </div>
@@ -43,7 +43,7 @@
             <button onclick="window.print()" class="bg-slate-900 text-white px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-blue-600 transition flex items-center gap-2">
                 <i class="fas fa-print text-[10px]"></i> Stampa / PDF
             </button>
-            <a href="dashboard.html" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-slate-200 transition flex items-center gap-2">
+            <a href="/dashboard" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-slate-200 transition flex items-center gap-2">
                 <i class="fas fa-arrow-left text-[10px]"></i> Dashboard
             </a>
         </div>
@@ -62,10 +62,10 @@
     <h2 class="text-2xl font-black text-slate-900 mb-2">Report non disponibile</h2>
     <p id="errorMsg" class="text-slate-500 font-medium mb-6">Effettua il login per visualizzare il tuo report.</p>
     <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="valutatore.html" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-700 transition">
+        <a href="/valutatore" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-700 transition">
             <i class="fas fa-calculator mr-2"></i> Fai una nuova valutazione
         </a>
-        <a href="index.html" class="bg-slate-100 text-slate-700 px-6 py-3 rounded-xl font-black text-sm hover:bg-slate-200 transition">
+        <a href="/" class="bg-slate-100 text-slate-700 px-6 py-3 rounded-xl font-black text-sm hover:bg-slate-200 transition">
             Torna alla home
         </a>
     </div>
@@ -143,7 +143,7 @@
             <h2 class="text-lg font-black text-slate-900 flex items-center gap-2">
                 <i class="fas fa-store text-amber-500"></i> Annunci simili sulla piattaforma
             </h2>
-            <a href="annunci.html" class="text-xs font-black text-blue-600 hover:underline no-print">Vedi tutti →</a>
+            <a href="/annunci" class="text-xs font-black text-blue-600 hover:underline no-print">Vedi tutti →</a>
         </div>
         <div id="rCompList" class="space-y-2"></div>
         <p id="rCompEmpty" class="hidden text-sm text-slate-400 italic">Nessun annuncio simile attivo al momento. Sii il primo a pubblicare!</p>
@@ -172,7 +172,7 @@
         </h2>
         <p class="text-white/70 text-sm font-medium mb-5">Trasforma la stima in vendita reale.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 no-print">
-            <a href="vendi.html" class="flex items-center gap-3 bg-white text-slate-900 rounded-2xl p-4 hover:bg-amber-300 transition group">
+            <a href="/vendi" class="flex items-center gap-3 bg-white text-slate-900 rounded-2xl p-4 hover:bg-amber-300 transition group">
                 <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition flex-shrink-0">
                     <i class="fas fa-tag"></i>
                 </div>
@@ -181,7 +181,7 @@
                     <p class="text-xs font-medium text-slate-500 leading-tight">Visibile in tutta Italia</p>
                 </div>
             </a>
-            <a href="annunci.html" class="flex items-center gap-3 bg-white text-slate-900 rounded-2xl p-4 hover:bg-amber-300 transition group">
+            <a href="/annunci" class="flex items-center gap-3 bg-white text-slate-900 rounded-2xl p-4 hover:bg-amber-300 transition group">
                 <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition flex-shrink-0">
                     <i class="fas fa-search"></i>
                 </div>
@@ -206,8 +206,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=9"></script>
-<script src="js/auth.js?v=11"></script>
+<script src="js/data.js?v=10"></script>
+<script src="js/auth.js?v=12"></script>
 
 <script>
 (function() {
@@ -418,7 +418,7 @@
                 return;
             }
             list.innerHTML = data.map(l => `
-                <a href="annuncio.html?id=${escapeHTML(l.id)}" class="flex items-center justify-between gap-4 bg-slate-50 hover:bg-blue-50 rounded-2xl px-4 py-3 transition border border-transparent hover:border-blue-100">
+                <a href="/annuncio?id=${escapeHTML(l.id)}" class="flex items-center justify-between gap-4 bg-slate-50 hover:bg-blue-50 rounded-2xl px-4 py-3 transition border border-transparent hover:border-blue-100">
                     <div class="min-w-0 flex-1">
                         <p class="font-black text-sm text-slate-900 truncate">${escapeHTML(l.titolo || '—')}</p>
                         <p class="text-xs text-slate-400 font-bold mt-0.5">

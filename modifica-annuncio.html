@@ -61,14 +61,14 @@
 
 <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-3">
             <div class="bg-blue-600 text-white w-11 h-11 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
                 <i class="fas fa-exchange-alt text-lg"></i>
             </div>
             <span class="text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
         </a>
         <div class="flex items-center gap-3">
-            <a href="dashboard.html" class="text-sm font-bold text-slate-500 hover:text-slate-900 transition flex items-center gap-2">
+            <a href="/dashboard" class="text-sm font-bold text-slate-500 hover:text-slate-900 transition flex items-center gap-2">
                 <i class="fas fa-arrow-left text-xs"></i> Torna alla dashboard
             </a>
         </div>
@@ -201,17 +201,17 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=9"></script>
+<script src="js/data.js?v=10"></script>
 <script src="js/auth.js"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const listingId = params.get('id');
 
 document.addEventListener('DOMContentLoaded', async () => {
-    if (!listingId) { location.href = 'dashboard.html'; return; }
+    if (!listingId) { location.href = '/dashboard'; return; }
 
     const user = await getCurrentUser();
-    if (!user) { location.href = 'index.html'; return; }
+    if (!user) { location.href = '/'; return; }
 
     // Check if user is admin
     const { data: profile } = await _supabase.from('profiles').select('is_admin').eq('id', user.id).maybeSingle();
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (error || !l || (l.user_id !== user.id && !_isAdmin)) {
         showToast('Annuncio non trovato o non autorizzato.', 'error');
-        location.href = 'dashboard.html';
+        location.href = '/dashboard';
         return;
     }
 
@@ -427,7 +427,7 @@ async function updateAnnuncio() {
         if (error) throw error;
         
         showToast('Modifiche inviate per revisione. L\'annuncio tornerà online dopo l\'approvazione admin.', 'success');
-        setTimeout(() => { location.href = 'dashboard.html'; }, 1200);
+        setTimeout(() => { location.href = '/dashboard'; }, 1200);
 
     } catch (err) {
         showToast('Errore: ' + err.message, 'error');

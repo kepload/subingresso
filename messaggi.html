@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Messaggi — Subingresso.it</title>
+    <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="css/tailwind.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -194,8 +195,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/ui-components.js?v=10"></script>
-<script src="js/auth.js?v=11"></script>
+<script src="js/ui-components.js?v=11"></script>
+<script src="js/auth.js?v=12"></script>
 <script>
 
 let _currentUser     = null;
@@ -580,7 +581,7 @@ async function openDraftFor(annuncioId) {
         return;
     }
     if (annuncio.user_id === _currentUser.id) {
-        location.href = 'dashboard.html';
+        location.href = '/dashboard';
         return;
     }
     if (annuncio.status === 'deleted' || annuncio.status === 'pending') {
@@ -619,7 +620,7 @@ async function openDraftFor(annuncioId) {
     const meta = [_displayName(venditore), _fmtPrice(annuncio.prezzo, annuncio.tipo)].filter(Boolean).join(' · ');
     document.getElementById('chatHeaderMeta').textContent = meta;
     document.getElementById('chatHeaderThumb').innerHTML = _thumbHTML(annuncio);
-    document.getElementById('chatHeaderLink').href = `annuncio.html?id=${annuncio.id}`;
+    document.getElementById('chatHeaderLink').href = `/annuncio?id=${annuncio.id}`;
 
     // Empty state nel container
     const container = document.getElementById('messagesContainer');
@@ -685,14 +686,14 @@ async function openConversation(convId) {
         _chatTitolo    = _displayName(otherProfile);
         _chatMeta      = 'Richiesta di supporto';
         _chatThumbHTML = _supportThumbHTML();
-        _chatHref      = `profilo.html?id=${otherId}`;
+        _chatHref      = `/profilo?id=${otherId}`;
     } else {
         _chatTitolo = annuncio?.titolo || 'Annuncio';
         const _chatOther = _displayName(otherProfile);
         const _chatPrice = annuncio ? _fmtPrice(annuncio.prezzo, annuncio.tipo) : '';
         _chatMeta      = [_chatOther, _chatPrice].filter(Boolean).join(' · ');
         _chatThumbHTML = _thumbHTML(annuncio);
-        _chatHref      = annuncio?.id ? `annuncio.html?id=${annuncio.id}` : '#';
+        _chatHref      = annuncio?.id ? `/annuncio?id=${annuncio.id}` : '#';
     }
 
     document.getElementById('chatEmpty').classList.add('hidden');
