@@ -176,7 +176,7 @@ Dopo **OGNI** modifica ai file, esegui **SEMPRE E IMMEDIATAMENTE** il push per a
 - Layout: `flex justify-between` sotto `lg`, `grid grid-cols-3` da `lg` in su — centramento corretto della nav.
 - Ordine nav: **Calcolatore | Annunci | Blog**.
 - Bottoni header: messaggi e profilo sono `w-9/w-10 rounded-lg/xl bg-slate-100` — icona `fa-user` per profilo (non più lettera iniziale).
-- `dashboard.html` ha header hardcoded (non usa `ui-components.js`) — aggiornarlo manualmente se si modifica la nav.
+- `dashboard.html` ha header hardcoded (non usa `ui-components.js`) — markup allineato 1:1 a `UI.header` di `ui-components.js` il 4 mag 2026 (logo responsive 36→44px, bottone "+" sempre visibile come icona su mobile, padding/gap responsive). Se modifichi `ui-components.js` aggiornare a mano anche dashboard.html.
 
 ## 📬 Email Settimanali (Digest + Stats) — Aprile 2026
 - 3 nuove Edge Functions: `weekly-buyer-digest` (lunedì: top annunci in zona), `weekly-seller-stats` (lunedì: views/delta ai venditori), `email-unsubscribe` (1-click da link email).
@@ -654,6 +654,66 @@ Lista pratica delle cose lasciate aperte (per non dimenticare).
 - **Bug foto `modifica-annuncio.html` (img[src^="http"])**: fragile ma in pratica funziona.
 - **CSP assente**: vero ma 1 settimana di lavoro per non rompere nulla → da pianificare.
 
+## Sessione 4 Maggio 2026 (sera) — Security cross-user + UX onboarding/vendi
+
+### 🔒 SECURITY: leak cross-user nome/telefono (CRITICO, fixato)
+- **Bug**: cache `_vc_nome`, `_vc_tel`, `_profile_nome`, `_profile_tel` in `localStorage` erano chiavi globali senza scope per user_id. Su device condiviso (anche dopo logout normale, perché `signOut` non le puliva) il prossimo utente vedeva prefilled nome/tel del precedente in `vendi.html`. Se pubblicava, il telefono altrui veniva salvato pubblicamente come `annuncio.tel`. Confermato dal proprietario: con admin (`kycykuardit@gmail.com`) e test (`+test@gmail.com`) sullo stesso browser, il test vedeva i contatti dell'admin precompilati.
+- **Fix** (commit `7ad4e02`):
+  - Tutte le cache profilo ora SCOPE per user_id: `_vc_nome_u_<id8>` etc. Helper `_userKey(base, userId)` in `vendi.html`.
+  - `_prefillFromCache(userId)` richiede userId; senza scope non legge nulla.
+  - `prefillContactFromSession()` sovrascrive SEMPRE i campi se ha dati freschi dal DB (non solo se il campo è vuoto). Protegge dal caso "_prefillFromCache già riempì con cache di altro user".
+  - `sessionStorage._last_prefill_user`: rileva cambio user e svuota i campi prima del prefill.
+  - Draft del listing **NON contiene più nome/tel** + traccia `_userId`. Se draft è di altro user → scartato all'apertura.
+  - `signOut()` in `auth.js` ora pulisce: chiavi legacy globali, tutte le `_*_u_*` scope-ate, `subingresso_draft_v1`, `_last_prefill_user`. Cache version `auth.js?v=10`.
+  - Pulizia one-time delle chiavi legacy non scope-ate alla prima apertura post-fix di `vendi.html`.
+- **Annunci pubblicati con telefono sbagliato pre-fix**: l'utente deve pulire manualmente da SQL Editor o admin se ne sono finiti nel DB.
+
+### 🐛 Bug `select('*')` su `annunci` per authenticated (4 punti, fixato)
+- **Bug**: dal 3 mag (`PATCH_CONTACT_REVEAL_20260503.sql`) `tel`/`email` sono REVOKE per `authenticated`. Le query `select('*')` su `annunci` falliscono con 42501. Effetto più grave: in `loadPendingListings` l'errore veniva messo in `adminPendingList` ma il container `pendingReviewSection` restava `hidden` → l'admin non vedeva annunci pending nè errore.
+- **Fix** (commit `7ad4e02`): convertiti 4 punti a select esplicito senza tel/email:
+  - `dashboard.html` `loadPendingListings`, `loadMyListings`, `loadSavedListings`
+  - `js/pages/annuncio-detail.js` related listings
+  - In `loadPendingListings`: l'errore ora viene mostrato in section visibile (non hidden).
+- **Regola**: dal 3 mag in poi mai usare `select('*')` su `annunci` da client authenticated. Usare select esplicito con colonne safe (NO `tel`, `email`). Per leggere tel/email del proprio annuncio (es. modifica) usare RPC `get_listing_contact()`.
+
+### 🎨 Bug subdolo prezzo `vendi.html` (cifra sotto al simbolo €)
+- **Root cause** (debuggato in 4 iterazioni): in `vendi.html` lo `<style>` inline che definisce `.field-input { padding:.75rem 1rem; font-size:.9rem; font-weight:600 }` viene caricato DOPO `css/tailwind.css`. A parità di specificità (entrambe `0,1,0`) vince l'ultimo dichiarato → `.field-input` sovrascriveva via cascade `pl-12`/`pl-14`/`pl-20`/`text-3xl`/`font-black`. Padding-left effettivo era sempre 16px, indipendentemente dalla classe Tailwind.
+- **Fix definitivo** (commit `3972001`): tutti i valori critici (padding, font-size, font-weight, color, posizione) applicati via attributo `style=""` inline (specificità `1,0,0,0` batte qualsiasi classe).
+- **Lezione**: su tutte le pagine con `<style>` inline dopo `tailwind.css` (vendi, valutatore, dashboard, ecc.) le utility Tailwind che collidono con classi custom shorthand vengono sovrascritte. Soluzioni: `style=""` inline (più safe), oppure modificare la classe custom direttamente in `<style>`. NON usare `!important`.
+
+### 📞 Telefono obbligatorio + banner se manca dal profilo
+- Validazione `_validateStep(5)` esisteva già (riga 548) ma poco visibile. Ora:
+  - Banner giallo `#missingPhoneBanner` visibile sopra i campi contatti se prefill non trova `profiles.telefono` (es. utente appena registrato). Auto-nasconde appena l'utente digita (listener `input`/`blur`).
+  - Bordo giallo (2px) sul campo se vuoto, ripristinato al primo carattere.
+  - Focus automatico su `fTel` entrando allo step 5 se vuoto.
+  - Asterisco rosso esplicito sul label.
+  - Attributo HTML5 `required` su `fNome` e `fTel`.
+  - Messaggio errore più diretto + focus automatico sul campo problematico dopo errore.
+- Il telefono viene salvato in `profiles.telefono` alla prima pubblicazione (riga 1312), quindi dalla seconda volta in poi è precompilato.
+
+### 🖼️ Onboarding "Carica foto profilo" — apertura diretta file picker + overlay UX
+- Step "Carica una foto profilo" del widget onboarding (`dashboard.html`) ora apre **direttamente il file picker nativo** (`document.getElementById('avatarInput').click()`) invece di portare al modal profilo (UX più chiara per utenti meno tech).
+- Refresh widget + toast "Foto profilo aggiornata" dopo upload riuscito.
+- **Overlay fullscreen** (`#avatarUploadOverlay`) durante l'upload: backdrop blur scuro, card centrale con spinner animato (border-blue + animate-spin) sopra icona camera, titolo "Caricamento foto in corso", **4 messaggi rotanti** ogni 1.8s con fade ("Sto preparando…", "Caricamento sicuro…", "Quasi fatto…", "Salvataggio nel tuo profilo…"), banner giallo "Non chiudere la pagina".
+- Spinner anche sull'avatar visibile (`#welcomeAvatar`) come secondo feedback.
+- `beforeunload` listener durante l'upload (browser chiede conferma se prova a chiudere/navigare via).
+- Cleanup robusto in `finally`: nasconde overlay, ferma timer, rimuove listener, ripristina avatar originale se upload fallisce, resetta `avatarInput` (così se l'utente seleziona di nuovo lo stesso file riparte).
+
+### 🧭 Header dashboard.html allineato a ui-components.js
+- L'header hardcoded di `dashboard.html` aveva dimensioni fisse (logo 44px, bottone "+" `hidden lg:flex` → invisibile su mobile). Ora il markup è **identico 1:1** a `UI.header` di `ui-components.js`: logo responsive 36→44px, bottone "+" sempre visibile (icona su mobile, testo su desktop), padding/gap responsive. Path link puliti (`/`, `/valutatore`, ecc.) come il resto del sito.
+
+### 💡 Memorie tecniche aggiunte (per future sessioni)
+- `feedback_tailwind_precompilato.md`: Tailwind precompilato in `css/tailwind.css?v=N` accetta solo classi standard, mai arbitrary values come `pl-[4.5rem]`. Per valori custom: scegliere il più vicino della scala o rebuildare CSS (`npx tailwindcss ...`) e bumpare `?v=`.
+- `feedback_inline_style_vs_tailwind.md`: `<style>` inline dopo `<link tailwind>` sovrascrive le utility a parità di specificità → su pagine con classi custom (.field-input ecc.) usare `style=""` inline o modificare la classe.
+
+### Commit di sessione (in ordine cronologico)
+- `a40ce4d` Onboarding avatar diretto + tentativo fix prezzo (initial)
+- `5c50632` Bilanciamento estetico simbolo €
+- `1ccbaf6` Header dashboard allineato + tentativo fix prezzo (Tailwind standard)
+- `d5f6b68` Avatar upload overlay + messaggi rotanti + beforeunload guard
+- `7ad4e02` **SECURITY: leak cross-user fix + admin pending fix**
+- `3972001` **Fix definitivo prezzo (style inline, batte cascade)**
+- `3b5ac17` Telefono obbligatorio + banner se manca dal profilo
 
 ---
 
