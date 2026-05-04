@@ -1761,12 +1761,71 @@ async function generateArticleNow() {
 }
 
 // ── Upload Avatar ────────────────────────────────────────
+const _AVATAR_UPLOAD_MESSAGES = [
+    'Sto preparando la tua foto…',
+    'Caricamento sicuro in corso…',
+    'Quasi fatto, ancora pochi secondi…',
+    'Salvataggio nel tuo profilo…',
+];
+let _avatarUploadMsgTimer = null;
+let _avatarUploadOriginalAvatarHTML = null;
+
+function _beforeUnloadGuard(e) {
+    e.preventDefault();
+    e.returnValue = 'Caricamento foto profilo in corso. Vuoi davvero uscire?';
+    return e.returnValue;
+}
+
+function _showAvatarUploadOverlay() {
+    const overlay = document.getElementById('avatarUploadOverlay');
+    const msgEl = document.getElementById('avatarUploadMessage');
+    if (!overlay || !msgEl) return;
+
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    // Cicla messaggi ogni 1.8s con fade
+    let idx = 0;
+    msgEl.textContent = _AVATAR_UPLOAD_MESSAGES[0];
+    _avatarUploadMsgTimer = setInterval(() => {
+        idx = (idx + 1) % _AVATAR_UPLOAD_MESSAGES.length;
+        msgEl.style.opacity = '0';
+        setTimeout(() => {
+            msgEl.textContent = _AVATAR_UPLOAD_MESSAGES[idx];
+            msgEl.style.opacity = '1';
+        }, 250);
+    }, 1800);
+
+    // Spinner sull'avatar visibile in cima alla dashboard
+    const welcomeAvatar = document.getElementById('welcomeAvatar');
+    if (welcomeAvatar) {
+        _avatarUploadOriginalAvatarHTML = welcomeAvatar.innerHTML;
+        welcomeAvatar.innerHTML = '<i class="fas fa-spinner fa-spin text-blue-500 text-lg"></i>';
+    }
+
+    // Blocca chiusura pagina durante l'upload
+    window.addEventListener('beforeunload', _beforeUnloadGuard);
+}
+
+function _hideAvatarUploadOverlay() {
+    const overlay = document.getElementById('avatarUploadOverlay');
+    if (overlay) overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+    if (_avatarUploadMsgTimer) {
+        clearInterval(_avatarUploadMsgTimer);
+        _avatarUploadMsgTimer = null;
+    }
+    window.removeEventListener('beforeunload', _beforeUnloadGuard);
+}
+
 async function uploadAvatar() {
     const file = document.getElementById('avatarInput').files[0];
     if (!file) return;
 
     const fileExt = file.name.split('.').pop();
     const filePath = `${_currentUser.id}/${Math.random()}.${fileExt}`;
+
+    _showAvatarUploadOverlay();
 
     try {
         const { error: uploadError } = await _supabase.storage
@@ -1788,6 +1847,7 @@ async function uploadAvatar() {
         const img = `<img src="${publicUrl}" class="w-full h-full object-cover">`;
         document.getElementById('avatarContainer').innerHTML = img;
         document.getElementById('welcomeAvatar').innerHTML   = img;
+        _avatarUploadOriginalAvatarHTML = null;
         updateAuthNav();
         loadOnboardingWidget(_currentUser, {
             telefono: document.getElementById('pTelefono')?.value || '',
@@ -1796,7 +1856,18 @@ async function uploadAvatar() {
         if (typeof showToast === 'function') showToast('Foto profilo aggiornata', 'success');
     } catch (err) {
         console.error("uploadAvatar error:", err);
+        // Ripristina avatar originale se l'upload fallisce
+        const welcomeAvatar = document.getElementById('welcomeAvatar');
+        if (welcomeAvatar && _avatarUploadOriginalAvatarHTML !== null) {
+            welcomeAvatar.innerHTML = _avatarUploadOriginalAvatarHTML;
+            _avatarUploadOriginalAvatarHTML = null;
+        }
         showToast('Errore caricamento immagine: ' + (err.message || 'errore sconosciuto'), 'error');
+    } finally {
+        _hideAvatarUploadOverlay();
+        // Reset input cosi se l'utente seleziona di nuovo lo stesso file riparte
+        const input = document.getElementById('avatarInput');
+        if (input) input.value = '';
     }
 }
 
@@ -3122,5 +3193,25 @@ window.closeAllValutatoreModal = closeAllValutatoreModal;
 window.filterValutatore        = filterValutatore;
 
 </script>
+
+<!-- ══════════════ AVATAR UPLOAD OVERLAY ══════════════ -->
+<div id="avatarUploadOverlay" class="hidden fixed inset-0 flex items-center justify-center p-4" style="z-index:1000;background:rgba(15,23,42,0.75);backdrop-filter:blur(6px)">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-sm w-full p-8 text-center">
+        <div class="w-20 h-20 mx-auto mb-5 relative">
+            <div class="absolute inset-0 rounded-full border-4 border-blue-100"></div>
+            <div class="absolute inset-0 rounded-full border-4 border-blue-600 border-t-transparent animate-spin"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-blue-600">
+                <i class="fas fa-camera text-2xl"></i>
+            </div>
+        </div>
+        <h3 class="text-lg font-black text-slate-900 mb-1">Caricamento foto in corso</h3>
+        <p id="avatarUploadMessage" class="text-sm font-semibold text-slate-500 flex items-center justify-center transition-opacity duration-300" style="min-height:2.5rem">Sto preparando la tua foto…</p>
+        <div class="mt-5 inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 rounded-xl px-4 py-2 text-xs font-bold">
+            <i class="fas fa-exclamation-triangle text-amber-500"></i>
+            Non chiudere la pagina
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
