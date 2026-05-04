@@ -11,6 +11,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const RESEND_API_KEY            = Deno.env.get('RESEND_API_KEY')!;
 const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+const SB_SECRET_KEY             = Deno.env.get('SB_SECRET_KEY') ?? SUPABASE_SERVICE_ROLE_KEY;
 const FROM_EMAIL                = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL                  = 'https://subingresso.it';
 const RATE_LIMIT_HOURS          = 12;
@@ -26,17 +27,17 @@ type Issue = { severity: 'warn' | 'crit'; title: string; detail: string };
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
 
-  const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
+  const supabase = createClient(SUPABASE_URL, SB_SECRET_KEY, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  // Auth: SERVICE_ROLE (cron) o JWT di un admin loggato (bottone dashboard).
+  // Auth: SB_SECRET_KEY o legacy SERVICE_ROLE (cron) o JWT di un admin loggato (bottone dashboard).
   const authHeader = req.headers.get('authorization') || '';
   const token = authHeader.replace(/^Bearer\s+/i, '').trim();
   if (!token) {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { ...CORS, 'Content-Type': 'application/json' } });
   }
-  if (token !== SUPABASE_SERVICE_ROLE_KEY) {
+  if (token !== SB_SECRET_KEY && token !== SUPABASE_SERVICE_ROLE_KEY) {
     const { data: { user }, error: uErr } = await supabase.auth.getUser(token);
     if (uErr || !user) {
       return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { ...CORS, 'Content-Type': 'application/json' } });

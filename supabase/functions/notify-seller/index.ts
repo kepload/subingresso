@@ -9,6 +9,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const RESEND_API_KEY            = Deno.env.get('RESEND_API_KEY')!;
 const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+const SB_SECRET_KEY             = Deno.env.get('SB_SECRET_KEY') ?? SUPABASE_SERVICE_ROLE_KEY;
 const FROM_EMAIL                = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL                  = 'https://subingresso.it';
 
@@ -24,7 +25,7 @@ function escapeHTML(s: unknown): string {
 Deno.serve(async (req) => {
   try {
     const auth = req.headers.get('authorization') || '';
-    if (auth !== `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`) {
+    if (auth !== `Bearer ${SB_SECRET_KEY}` && auth !== `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`) {
       return new Response('Unauthorized', { status: 401 });
     }
 
@@ -69,7 +70,7 @@ Deno.serve(async (req) => {
 
     if (!tipo) return new Response('Ignored', { status: 200 });
 
-    const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+    const supabase = createClient(SUPABASE_URL, SB_SECRET_KEY);
 
     // Recupera email del venditore
     const { data: { user } } = await supabase.auth.admin.getUserById(record.user_id);

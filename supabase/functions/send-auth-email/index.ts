@@ -10,7 +10,7 @@
 
 const RESEND_API_KEY    = Deno.env.get('RESEND_API_KEY')!;
 const SUPABASE_URL      = Deno.env.get('SUPABASE_URL')!;
-const SUPABASE_ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY')!;
+const SUPABASE_ANON_KEY = Deno.env.get('SB_PUBLISHABLE_KEY') ?? Deno.env.get('SUPABASE_ANON_KEY')!;
 const FROM              = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL          = 'https://subingresso.it';
 

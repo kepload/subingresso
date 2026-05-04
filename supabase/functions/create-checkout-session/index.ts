@@ -9,6 +9,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const STRIPE_SECRET_KEY         = Deno.env.get('STRIPE_SECRET_KEY')!;
 const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+const SB_SECRET_KEY             = Deno.env.get('SB_SECRET_KEY') ?? SUPABASE_SERVICE_ROLE_KEY;
 const SITE_URL                  = 'https://subingresso.it';
 
 // Prezzi (centesimi) — fonte di verità server-side, non fidarsi del client
@@ -41,7 +42,7 @@ Deno.serve(async (req) => {
     const token = authHeader.replace('Bearer ', '');
 
     // Client con service_role per operazioni privilegiate
-    const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+    const admin = createClient(SUPABASE_URL, SB_SECRET_KEY);
 
     // Recupera utente dal token
     const { data: userRes, error: userErr } = await admin.auth.getUser(token);
