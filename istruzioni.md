@@ -216,7 +216,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **Cron `unfeature-expired-daily`:** `'0 3 * * *'` chiama `unfeature_expired()`.
 - **Secrets:** `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
 - **CRITICO fetch Edge Functions dal browser:** sempre `'apikey': SUPABASE_ANON_KEY` negli headers oltre ad `Authorization: Bearer <token>`. Senza apikey → 401.
-- **Privilegio Vetrina post lifetime:** vetrina 30gg estende post a max 200gg da `created_at`, vetrina 90gg max 300gg. Cap non superabile.
+- **Privilegio Vetrina post lifetime:** vetrina 10gg estende post a max 230gg da `created_at`, 30gg → 300gg, 90gg → 400gg. Cap non superabile.
 - **Admin Vetrina gratuita**: `adminGrantVetrina(30|90)` scrive `featured_tier='admin_free'`. `adminRevokeVetrina(id)` azzera.
 - **Card featured redesign**: glow box-shadow aureo, sfondo gradient amber-50/50→white, barra top 3px, badge crown + animate-pulse, footer "Annuncio in Vetrina ★★★★★".
 
@@ -440,8 +440,8 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 ## 📅 Scadenza Post
 
-- `expires_at` 100 giorni di default. SQL: `ALTER TABLE annunci ADD COLUMN IF NOT EXISTS expires_at timestamptz;`
-- Vetrina 30gg → cap 200gg. Vetrina 90gg → cap 300gg. Cap non superabile.
+- `expires_at` 200 giorni di default (5 mag 2026, ex 100). SQL: `ALTER TABLE annunci ADD COLUMN IF NOT EXISTS expires_at timestamptz;`
+- Vetrina cap allineati al nuovo default: 10gg→230gg, 30gg→300gg, 90gg→400gg. Cap non superabile. Stripe-webhook + dashboard.adminGrantVetrina entrambi aggiornati.
 - Logica in `adminGrantVetrina(days)` + `stripe-webhook` su `checkout.session.completed`.
 - **NON filtrare su `expires_at`** finché non popolato per tutti.
 

@@ -2855,9 +2855,11 @@ async function adminGrantVetrina(days) {
     const until = new Date(now);
     until.setDate(until.getDate() + days);
 
-    // Estendi scadenza post: 10gg vetrina → max 120gg, 30gg → max 200gg, 90gg → max 300gg
+    // Estendi scadenza post (allineato al nuovo default 200gg):
+    // 10gg vetrina → max 230gg, 30gg → max 300gg, 90gg → max 400gg.
+    // Vetrina = bonus oltre il default: +30 / +100 / +200.
     const { data: ann } = await _supabase.from('annunci').select('created_at, expires_at').eq('id', id).single();
-    const capDays = days >= 90 ? 300 : days >= 30 ? 200 : 120;
+    const capDays = days >= 90 ? 400 : days >= 30 ? 300 : 230;
     let newExpiry = null;
     if (ann?.created_at) {
         const cap = new Date(ann.created_at);

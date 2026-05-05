@@ -19,10 +19,12 @@ const TIER_DAYS: Record<string, number> = {
   '90d': 90,
 };
 
+// Cap di durata totale post-acquisto vetrina, allineati al nuovo default 200gg.
+// Vetrina = bonus oltre il default: +30gg / +100gg / +200gg.
 const TIER_EXPIRY_CAP_DAYS: Record<string, number> = {
-  '10d': 130,
-  '30d': 200,
-  '90d': 300,
+  '10d': 230,
+  '30d': 300,
+  '90d': 400,
 };
 
 Deno.serve(async (req) => {
