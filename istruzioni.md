@@ -130,6 +130,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - Frontend `messaggi.html`: kebab `⋮` nell'header chat (fuori da `chatHeaderLink` per evitare bubble click), nascosto su draft/supporto/no-conv. Modal con 4 radio motivo + textarea details (max 500). Submit: INSERT + fetch fire-and-forget Edge `notify-report` con JWT user. 23505 → "Hai già una segnalazione aperta su questa chat".
 - Edge function `notify-report` (`--no-verify-jwt`): valida `auth.getUser(jwt)` + `report.reporter_id === user.id`. Email a tutti gli admin con motivo + dettagli + ultimi 3 messaggi + link a `dashboard.html#reports` e `/messaggi?conv=`.
 - Pannello dashboard.html dentro `adminPanel`: anchor `#reports`, tab Aperte/Gestite/Archiviate, badge rosso conteggio open. Bottoni Apri chat / Marca gestita / Archivia / Riapri.
+- **Auto-hide pannello** (5 mag 2026): `#reportsPanel` parte con class `hidden`. `loadAdminReports()` lo rivela solo se Aperte > 0. Le storiche in Gestite/Archiviate non lo riportano visibile (sarebbe rumore inutile). 1 RPC in più per il count delle aperte, costo zero.
 
 ## 🔍 SEO & Google
 
@@ -142,7 +143,8 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - `data/comuni.json` (1.4 MB, 7904 record): bundle statico, validazione slug + redirect.
 - **Link interni senza `.html`** (5 mag 2026): tutti gli `href` interni puntano a `/annunci`, `/vendi`, `/annuncio?id=…` ecc. cleanUrls in vercel.json gestisce il fallback. NON rimettere `.html` o si genera chain redirect 308. `redirectTo` Supabase password reset usa `/reset-password` (no `.html`).
 - **canonical valutatore** = `/valutatore` (senza `.html`), allineato a sitemap. Stesso per og:url, JSON-LD `url`.
-- **og:image** home + annunci: `https://images.pexels.com/photos/1187299/...?w=1200&h=630&fit=crop` (foto mercato Pexels). Stessa CDN già usata dal blog.
+- **og:image home** (5 mag 2026): self-hosted in `/og/og-home.jpg` (1200×630, JPEG q90, ~95KB). Generata ad hoc: piazza italiana sfocata + bancarelle + scritta "Subingresso.it" centrata. Lavagnette VUOTE — la prima versione aveva "FRESCO LOCALE / PRODOTTI ITALIANI" ma framing produce-market è off-brand (sito vende licenze, non cibo). Tag espliciti `og:image:width/height` + `twitter:card=summary_large_image` + `?v=N` per forzare re-scrape social. **`/annunci` e `/blog` ancora con foto Pexels** (l'utente ha chiesto fix solo home).
+- **og:image annuncio** dinamico: prima foto dell'annuncio via `api/annuncio.js` SSR. NON tocca la home og:image.
 - **Meta SEO completi** (description, canonical, og:type/site_name/locale/url/title/desc, twitter:card) anche su contatti/privacy/termini/annunci.
 - **`messaggi.html` ha `<meta robots noindex,nofollow>`** in aggiunta al Disallow di robots.txt.
 - **Sitemap online**: 247 URL, refresh 1h, status 200.
@@ -182,6 +184,8 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **Caratteri Unicode invisibili** (U+200A, U+0300, 0x01) iniettati da editor rompono replace silenziosamente.
 - **Select Supabase incompleta = filtro silente broken**: 5 mag 2026, `loadListings()` in `js/pages/annunci.js` non includeva `giorni` nella select primary, solo nel fallback. Risultato: `l.giorni` undefined → filtro chip giorni sempre 0 risultati. Verificare SEMPRE che la select includa tutte le colonne usate da filtri/UI.
 - **Confronti accent-insensitive**: il regex `/lunedi(?!ì)/g` non catturava forme unicode equivalenti (`ì` precomposto U+00EC vs `i+̀` combining grave). Soluzione robusta: `s.normalize('NFD').replace(/[̀-ͯ]/g, '')` rimuove tutti i diacritici. Pattern usato in `_normalizeDayName` (annunci.js) e `_dayBadge` (data.js).
+- **`modifica-annuncio.html` forza `status='pending'` su ogni UPDATE** (linea 414): è design intenzionale per re-moderare ogni edit, ma genera N richieste di approvazione admin per lo stesso annuncio quando l'utente modifica più volte (typo→foto→prezzo = 3 approvazioni). Il trigger `enforce_annunci_status` permette il regression `active→pending` (blocca solo l'opposto). Per alleggerire admin overhead: opzione "trust whitelist" (dopo N annunci approvati, modifiche restano active) — non implementata, da valutare se l'overhead diventa pesante.
+- **`vendi.html` salva il telefono in `annunci.contatto`/`annunci.tel` ma NON aggiorna `profiles.telefono`** se vuoto. Causa il drop nel funnel admin "primo annuncio→telefono nel profilo": utenti che hanno annunci attivi senza telefono in profilo. Fix futuro: dopo INSERT annuncio fare upsert su `profiles.telefono` se vuoto. Non urgente.
 
 ## 🤖 Blog Generator (`js/blog-generator.js`)
 
@@ -517,9 +521,19 @@ Pivot da "tutorial generico bandi" a "lista bandi reali" (test pilota Lombardia)
 5. **Spalmare 2 cron settimanali su giorni diversi** (5 min, allunga vita free Resend).
 6. **CSP**: 1 settimana di lavoro, da pianificare.
 7. **Cleanup conv vuote già esistenti**: `DELETE FROM conversazioni c WHERE NOT EXISTS (SELECT 1 FROM messaggi m WHERE m.conversazione_id = c.id);` — opzionale, il filtro client-side già le nasconde.
+8. **Step 3 lifecycle annunci scaduti**: edge function + cron daily che manda 2 email al venditore. (a) "scade tra 7gg, riattivalo" con link diretto a renew, (b) il giorno della scadenza "è scaduto, contatti bloccati, riattivalo in 1 click". Tabella `expiry_notification_log(annuncio_id, kind, sent_at)` UNIQUE per dedup. ~150 righe TS Deno + setup SQL + cron `pg_cron`. **Non ancora fatto**, sessione 5 mag chiusa con Step 1+2 done.
+9. **Re-deploy `stripe-webhook` edge function**: contiene cap vetrina aggiornati (230/300/400 invece di 130/200/300) ma va deployata manualmente. Comando: `npx.cmd supabase functions deploy stripe-webhook --project-ref mhfbtltgwibwmsudsuvf`. Finché non deployata i nuovi acquisti vetrina applicano cap vecchi (poco grave: il cap nuovo è solo più generoso).
+10. **og:image `/annunci` e `/blog`**: ancora foto Pexels frutta/verdura. Sostituire con immagini on-brand quando disponibili (stessa convenzione self-hosted in `/og/`).
+11. **Trust whitelist modifiche annuncio**: valutare se attivare auto-approvazione modifiche dopo N annunci approvati per ridurre admin overhead delle re-revisioni.
 
 ### TODO chiusi (5 mag 2026)
 - ~~Search Console "Pagina con reindirizzamento": canonical valutatore + strip .html~~ ✅ canonical e link interni allineati.
+- ~~`/annunci/[capoluogo]` mostrava solo annunci nel comune esatto~~ ✅ ora 3-tier comune→provincia→200km.
+- ~~Pannello Segnalazioni admin sempre visibile anche con 0 segnalazioni~~ ✅ auto-hide se Aperte=0.
+- ~~Funnel admin con "Telefono nel profilo" confondente~~ ✅ ridotto a 4 step puliti.
+- ~~Default lifecycle annuncio 100gg troppo corto vs cicli reali (3-12 mesi)~~ ✅ 200gg + cap vetrina riallineati.
+- ~~Annunci scaduti spariscono o restano con contatti aperti~~ ✅ visibili con badge + contatti bloccati + bottone Riattiva.
+- ~~og:image home Pexels frutta off-brand~~ ✅ rimossa, sostituita con immagine custom self-hosted.
 
 ### Bug minori segnalati ma non urgenti
 - `moderation.js` non incluso in HTML (mitigato da trigger DB).
