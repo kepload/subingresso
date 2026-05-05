@@ -381,7 +381,7 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 - **Skeleton loader `annunci.html`**: 6 card placeholder pulse, sostituite dal primo `applyFilters()`.
 - **Tailwind precompilato** `css/tailwind.css?v=2` (~50KB minified). Build: `npx tailwindcss -i tailwind.input.css -o css/tailwind.css --minify`. NO più CDN.
 - **Page views tracking interno**: tabella `page_views`. Tracker `js/page-view-tracker.js` su 17 pagine pubbliche, dedup per (visitor, path, session).
-- **RPC `admin_page_views_stats()`** total/today/monthly/yearly/daily-30. RPC `admin_funnel_stats()` 5 step (signups, primo annuncio, telefono profilo, contatto, messaggio).
+- **RPC `admin_page_views_stats()`** total/today/monthly/yearly/daily-30. RPC `admin_funnel_stats()` ritorna 5 campi ma la dashboard ne renderizza 4 (signups, primo annuncio, annuncio contattato, conversazione attiva). `profile_complete` (telefono) ignorato — opzionale al signup, ridondante. `first_contact_received` = distinct `venditore_id` da `conversazioni`. `first_message_sent` = distinct `mittente_id` da `messaggi`.
 
 ## 🔔 Notifiche UI
 
