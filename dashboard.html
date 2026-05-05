@@ -214,7 +214,9 @@
             </div>
 
             <!-- ══════════════ SEGNALAZIONI ══════════════ -->
-            <div id="reportsPanel" class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm scroll-mt-24">
+            <!-- Hidden di default: loadAdminReports() lo rivela solo se almeno
+                 una segnalazione esiste (in qualsiasi stato). -->
+            <div id="reportsPanel" class="hidden bg-white border border-slate-100 rounded-3xl p-6 shadow-sm scroll-mt-24">
                 <a id="reports" class="block -mt-24 pt-24"></a>
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <h3 class="font-black text-slate-900 flex items-center gap-2">
@@ -2525,31 +2527,62 @@ function setReportsTab(tab) {
 
 async function loadAdminReports() {
     if (!_isAdmin) return;
-    const list = document.getElementById('reportsList');
+    const list  = document.getElementById('reportsList');
+    const panel = document.getElementById('reportsPanel');
     if (!list) return;
 
     const { data, error } = await _supabase.rpc('admin_list_reports', { p_status: _reportsTab });
     if (error) {
-        list.innerHTML = `<p class="text-center text-sm font-semibold text-red-500 py-6">Errore: ${escapeHtmlReport(error.message)}</p>`;
+        // Mostriamo l'errore solo se il pannello è già visibile, altrimenti
+        // non vale la pena rivelarlo per un fallimento RPC.
+        if (panel && !panel.classList.contains('hidden')) {
+            list.innerHTML = `<p class="text-center text-sm font-semibold text-red-500 py-6">Errore: ${escapeHtmlReport(error.message)}</p>`;
+        }
         return;
     }
 
     const rows = data || [];
 
-    // Badge "aperte" sempre dal conteggio open
-    if (_reportsTab === 'open') {
-        const badge = document.getElementById('reportsCountBadge');
-        if (badge) {
-            if (rows.length > 0) { badge.textContent = rows.length; badge.classList.remove('hidden'); }
-            else                 { badge.classList.add('hidden'); }
+    // Auto-hide pannello se NESSUNA segnalazione esiste in alcuno dei 3 stati.
+    // Se il tab corrente ha rows > 0, c'è almeno qualcosa → pannello visibile.
+    // Se il tab corrente è vuoto, controlliamo gli altri 2 stati.
+    if (rows.length === 0 && panel) {
+        const otherStatuses = ['open', 'reviewed', 'dismissed'].filter(s => s !== _reportsTab);
+        const others = await Promise.all(otherStatuses.map(s =>
+            _supabase.rpc('admin_list_reports', { p_status: s })
+        ));
+        const totalElsewhere = others.reduce((acc, r) => acc + ((r.data || []).length), 0);
+        if (totalElsewhere === 0) {
+            panel.classList.add('hidden');
+            return;
         }
-    } else {
-        const { data: openCount } = await _supabase.rpc('admin_list_reports', { p_status: 'open' });
+        panel.classList.remove('hidden');
+        // Aggiorna badge "aperte" col conteggio reale
+        const openCount = _reportsTab === 'open'
+            ? 0
+            : ((others[otherStatuses.indexOf('open')] || {}).data || []).length;
         const badge = document.getElementById('reportsCountBadge');
         if (badge) {
-            const n = (openCount || []).length;
-            if (n > 0) { badge.textContent = n; badge.classList.remove('hidden'); }
-            else       { badge.classList.add('hidden'); }
+            if (openCount > 0) { badge.textContent = openCount; badge.classList.remove('hidden'); }
+            else               { badge.classList.add('hidden'); }
+        }
+    } else if (panel) {
+        panel.classList.remove('hidden');
+        // Badge "aperte" sempre dal conteggio open (path normale: rows > 0)
+        if (_reportsTab === 'open') {
+            const badge = document.getElementById('reportsCountBadge');
+            if (badge) {
+                if (rows.length > 0) { badge.textContent = rows.length; badge.classList.remove('hidden'); }
+                else                 { badge.classList.add('hidden'); }
+            }
+        } else {
+            const { data: openCount } = await _supabase.rpc('admin_list_reports', { p_status: 'open' });
+            const badge = document.getElementById('reportsCountBadge');
+            if (badge) {
+                const n = (openCount || []).length;
+                if (n > 0) { badge.textContent = n; badge.classList.remove('hidden'); }
+                else       { badge.classList.add('hidden'); }
+            }
         }
     }
 
