@@ -16,7 +16,26 @@ const { CAPOLUOGHI_BY_SLUG } = require('./_capoluoghi.js');
 // pagina /annunci?q=<nome> (UX coerente con il resto del sito), invece di 404.
 const COMUNI_ALL = require('../data/comuni.json');
 const COMUNI_BY_SLUG_ALL = Object.create(null);
-for (const c of COMUNI_ALL) COMUNI_BY_SLUG_ALL[c.slug] = c;
+const COMUNI_BY_NAME_ALL = Object.create(null);
+function _normName(s) {
+    if (!s) return '';
+    return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+}
+for (const c of COMUNI_ALL) {
+    COMUNI_BY_SLUG_ALL[c.slug] = c;
+    const k = _normName(c.nome);
+    if (k && !COMUNI_BY_NAME_ALL[k]) COMUNI_BY_NAME_ALL[k] = c;
+}
+
+function haversineKm(lat1, lng1, lat2, lng2) {
+    if (lat1 == null || lng1 == null || lat2 == null || lng2 == null) return Infinity;
+    const R = 6371;
+    const toRad = d => d * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLng = toRad(lng2 - lng1);
+    const a = Math.sin(dLat/2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng/2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
 
 const MESI_IT = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
 
@@ -83,6 +102,16 @@ function buildCard(l) {
         : '<span style="background:#2563eb;color:#fff;font-size:11px;font-weight:800;padding:2px 10px;border-radius:20px;letter-spacing:.03em;">Affitto</span>';
     const desc  = (l.descrizione || '').replace(/\s+/g, ' ').trim().substring(0, 110);
     const tipo  = [l.tipo, l.settore].filter(Boolean).join(' · ');
+    // Location hint: comune + (provincia / km dalla città target).
+    let locHint = '';
+    if (l._scope === 'provincia' && l.comune) {
+        locHint = `<i class="fas fa-map-marker-alt" style="color:#94a3b8;margin-right:4px;"></i>${esc(l.comune)}`;
+    } else if (l._scope === 'radius' && l.comune) {
+        const km = (typeof l._distance === 'number' && isFinite(l._distance)) ? Math.round(l._distance) : null;
+        locHint = `<i class="fas fa-map-marker-alt" style="color:#94a3b8;margin-right:4px;"></i>${esc(l.comune)}${km != null ? ` · ${km} km` : ''}`;
+    } else if (l.comune) {
+        locHint = `<i class="fas fa-map-marker-alt" style="color:#94a3b8;margin-right:4px;"></i>${esc(l.comune)}`;
+    }
 
     return `
   <a href="/annuncio?id=${esc(l.id)}" style="display:block;background:#fff;border:1px solid #f1f5f9;border-radius:16px;overflow:hidden;text-decoration:none;box-shadow:0 1px 4px rgba(15,23,42,.06);transition:box-shadow .2s;">
@@ -91,11 +120,12 @@ function buildCard(l) {
         : `<div style="width:100%;height:160px;background:#f8fafc;display:flex;align-items:center;justify-content:center;"><i class="fas fa-store" style="color:#cbd5e1;font-size:2rem;"></i></div>`
     }
     <div style="padding:16px;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
         ${badge}
         ${tipo ? `<span style="font-size:11px;color:#94a3b8;font-weight:700;">${esc(tipo)}</span>` : ''}
       </div>
       <h2 style="margin:0 0 6px;font-size:15px;font-weight:800;color:#0f172a;line-height:1.3;">${esc(l.titolo)}</h2>
+      ${locHint ? `<p style="margin:0 0 6px;font-size:12px;color:#64748b;font-weight:600;">${locHint}</p>` : ''}
       ${desc ? `<p style="margin:0 0 10px;font-size:13px;color:#64748b;line-height:1.5;">${esc(desc)}${l.descrizione && l.descrizione.length > 110 ? '…' : ''}</p>` : ''}
       <p style="margin:0;font-size:18px;font-weight:900;color:#2563eb;">${esc(formatPrezzo(l))}</p>
     </div>
@@ -285,41 +315,115 @@ module.exports = async function handler(req, res) {
 
     // Lookup capoluogo: se lo slug è in lista usiamo il nome leggibile della costante
     // (gestisce correttamente "L'Aquila", "Cortina d'Ampezzo", "Forlì" ecc.).
-    const capInfo  = CAPOLUOGHI_BY_SLUG[citySlug];
-    const cityName = capInfo ? capInfo.name : slugToCity(citySlug);
-    const regione  = capInfo ? capInfo.regione : '';
+    const capInfo     = CAPOLUOGHI_BY_SLUG[citySlug];
+    const istatComune = COMUNI_BY_SLUG_ALL[citySlug];
+    const cityName    = capInfo ? capInfo.name : (istatComune ? istatComune.nome : slugToCity(citySlug));
+    const regione     = capInfo ? capInfo.regione : (istatComune ? istatComune.regione : '');
     const canonicalUrl = `${SITE}/annunci/${citySlug}`;
 
-    let listings   = [];
-    let totalCount = 0;
+    // Coordinate centrali per fallback radius. Preferiamo il record ISTAT (lat/lng affidabili).
+    const targetLat = istatComune ? istatComune.lat : null;
+    const targetLng = istatComune ? istatComune.lng : null;
 
+    // Provincia di riferimento. Per i capoluoghi prendiamo la provincia ISTAT del comune.
+    // Per le 5 città turistiche (Sirmione/Capri/...) la provincia è una grande città
+    // diversa: NON espandiamo a provincia (sarebbe fuori scope), solo radius.
+    const provinciaRaw   = istatComune ? istatComune.provincia : null;
+    const provinciaNorm  = _normName(provinciaRaw);
+    const cityNameNorm   = _normName(cityName);
+    // Heuristica: città capoluogo della propria provincia se il nome provincia
+    // inizia con il nome città (Brescia→"Brescia", Forlì→"Forlì-Cesena").
+    const cityIsCapoluogoDiProvincia = !!(capInfo && provinciaNorm && provinciaNorm.startsWith(cityNameNorm));
+
+    // ─── Fetch tutti gli annunci attivi ─────────────────────────
+    // Volumi attuali bassi (<50). Cache 1h già attiva. Più flessibile della
+    // query con filtro server-side perché ci serve anche il match per provincia
+    // (l'annuncio ha solo `comune`, non `provincia` → join lato JS via comuni.json).
+    let allActive = [];
     try {
         const r = await fetch(
-            `${SUPABASE_URL}/rest/v1/annunci?status=eq.active&comune=ilike.${encodeURIComponent(cityName)}&select=id,titolo,descrizione,stato,tipo,settore,comune,provincia,prezzo,img_urls,created_at&order=featured.desc,created_at.desc&limit=50`,
+            `${SUPABASE_URL}/rest/v1/annunci?status=eq.active&select=id,titolo,descrizione,stato,tipo,settore,comune,provincia,prezzo,img_urls,created_at,featured&order=featured.desc,created_at.desc&limit=500`,
             {
                 headers: {
                     'apikey':        SUPABASE_ANON_KEY,
                     'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-                    'Prefer':        'count=exact',
                 }
             }
         );
-        if (r.ok) {
-            listings = await r.json();
-            const cr = r.headers.get('content-range');
-            if (cr) {
-                const m = cr.match(/\/(\d+)$/);
-                if (m) totalCount = parseInt(m[1]);
-            } else {
-                totalCount = listings.length;
-            }
-        }
+        if (r.ok) allActive = await r.json();
     } catch (_) {}
 
-    // Branch placeholder: città capoluogo senza annunci → 200 OK indicizzabile.
-    // Comune ISTAT valido (non capoluogo, senza annunci) → redirect alla pagina
-    // annunci classica con search pre-filtrata: UX coerente, niente landing custom.
-    // Slug non riconosciuti (non capoluogo, non comune, no annunci) → 404 + noindex.
+    // Annota ogni annuncio con il record comune (provincia/lat/lng) e la distanza.
+    const annotated = allActive.map(l => {
+        const ci = l.comune ? COMUNI_BY_NAME_ALL[_normName(l.comune)] : null;
+        const distance = (ci && targetLat != null && targetLng != null)
+            ? haversineKm(targetLat, targetLng, ci.lat, ci.lng)
+            : Infinity;
+        return Object.assign({}, l, { _ci: ci, _distance: distance });
+    });
+
+    // Tier 1: comune esatto (es. comune = "Brescia").
+    const tier1 = annotated.filter(l => _normName(l.comune) === cityNameNorm);
+    const tier1Ids = new Set(tier1.map(l => l.id));
+
+    // Espansione (provincia + radius) SOLO per i 137 capoluoghi indicizzati.
+    // Per slug ISTAT non-capoluogo manteniamo il comportamento conservativo
+    // (solo match esatto, altrimenti redirect): evita di creare 7904 pagine
+    // SEO ricche di contenuto non locale.
+    const allowExpansion = !!capInfo;
+    const RADIUS_KM = 200;
+
+    // Tier 2: stessa provincia (solo se la città è capoluogo di provincia).
+    const tier2 = (allowExpansion && cityIsCapoluogoDiProvincia)
+        ? annotated.filter(l =>
+            !tier1Ids.has(l.id) &&
+            l._ci && _normName(l._ci.provincia) === provinciaNorm
+        )
+        : [];
+    const tier2Ids = new Set(tier2.map(l => l.id));
+
+    // Tier 3: entro 200 km dalla città (fallback se i primi due tier sono scarni).
+    const tier3 = allowExpansion
+        ? annotated
+            .filter(l =>
+                !tier1Ids.has(l.id) && !tier2Ids.has(l.id) &&
+                isFinite(l._distance) && l._distance <= RADIUS_KM
+            )
+            .sort((a, b) => a._distance - b._distance)
+        : [];
+
+    // Marca lo scope su ogni annuncio (per la card, mostra "comune" o "X km").
+    const tagScope = (arr, scope) => arr.map(l => Object.assign({}, l, { _scope: scope }));
+
+    // Strategia: tier1 + tier2 sempre. Aggiungiamo tier3 se i primi due
+    // sotto soglia (vogliamo una pagina ricca, non 1 sola card).
+    const MIN_DESIRED = 6;
+    const HARD_CAP    = 50;
+    const primaryList = [...tagScope(tier1, 'comune'), ...tagScope(tier2, 'provincia')];
+    let listings;
+    let scope; // 'comune' | 'provincia' | 'mixed' | 'radius' | 'empty'
+
+    if (primaryList.length >= MIN_DESIRED) {
+        listings = primaryList.slice(0, HARD_CAP);
+        scope = tier2.length > 0 ? 'provincia' : 'comune';
+    } else if (primaryList.length > 0) {
+        const padding = HARD_CAP - primaryList.length;
+        listings = [...primaryList, ...tagScope(tier3.slice(0, padding), 'radius')];
+        scope = 'mixed';
+    } else if (tier3.length > 0) {
+        listings = tagScope(tier3.slice(0, HARD_CAP), 'radius');
+        scope = 'radius';
+    } else {
+        listings = [];
+        scope = 'empty';
+    }
+
+    const totalCount = listings.length;
+
+    // ─── Branch zero risultati ───────────────────────────────────
+    // Capoluogo senza nulla nemmeno entro 200km → placeholder indicizzabile.
+    // Comune ISTAT non capoluogo senza nulla → redirect a /annunci?q=
+    // Slug ignoto → 404 noindex.
     if (listings.length === 0) {
         if (capInfo) {
             res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -327,9 +431,7 @@ module.exports = async function handler(req, res) {
             res.status(200).send(renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl));
             return;
         }
-        const istatComune = COMUNI_BY_SLUG_ALL[citySlug];
         if (istatComune) {
-            // Usa il nome ufficiale (con accenti) per la query string
             res.status(302)
                .setHeader('Location', `/annunci?q=${encodeURIComponent(istatComune.nome)}`)
                .end();
@@ -343,11 +445,35 @@ module.exports = async function handler(req, res) {
         return;
     }
 
+    // Etichette dello scope per H1, title, copy.
+    const scopeLabel = (() => {
+        switch (scope) {
+            case 'comune':    return `a ${cityName}`;
+            case 'provincia': return `a ${cityName} e provincia`;
+            case 'mixed':     return cityIsCapoluogoDiProvincia ? `a ${cityName}, provincia e dintorni` : `a ${cityName} e dintorni`;
+            case 'radius':    return `nei dintorni di ${cityName}`;
+            default:          return `a ${cityName}`;
+        }
+    })();
+    const scopeLabelShort = (() => {
+        switch (scope) {
+            case 'comune':    return cityName;
+            case 'provincia': return `${cityName} e provincia`;
+            case 'mixed':     return `${cityName} e zona`;
+            case 'radius':    return `Vicino a ${cityName}`;
+            default:          return cityName;
+        }
+    })();
+
     // ─── Stats per freshness + price range (Mossa 5 + 6) ───────
     const prezzi = listings.map(l => Number(l.prezzo)).filter(p => p > 0);
     const minPrice = prezzi.length ? Math.min(...prezzi) : 0;
     const maxPrice = prezzi.length ? Math.max(...prezzi) : 0;
-    const lastListingIso = listings[0] && listings[0].created_at ? listings[0].created_at : null;
+    const lastListingIso = listings.reduce((acc, l) => {
+        if (!l.created_at) return acc;
+        if (!acc || l.created_at > acc) return l.created_at;
+        return acc;
+    }, null);
     const lastListingRel = lastListingIso ? relativeTime(lastListingIso) : '';
     const today    = new Date();
     const monthYr  = `${MESI_IT[today.getMonth()]} ${today.getFullYear()}`;
@@ -358,11 +484,21 @@ module.exports = async function handler(req, res) {
     const cntAffitto = listings.filter(l => l.stato && l.stato.indexOf('Affitto') === 0).length;
 
     // ─── Title + meta ottimizzati CTR (Mossa 6) ────────────────
+    // Manteniamo il nome città front-loaded (è la query SEO), poi aggiungiamo
+    // l'estensione di scope solo se è davvero più larga del comune singolo.
     const priceFromTxt = minPrice > 0 ? ` da ${formatPrezzoCompact(minPrice)}` : '';
-    const title       = `Posteggi Mercatali ${cityName} ${monthYr} | ${totalCount} Annunci${priceFromTxt} · Subingresso.it`;
+    const titleSubject = (() => {
+        switch (scope) {
+            case 'provincia': return `${cityName} e Provincia`;
+            case 'mixed':     return cityIsCapoluogoDiProvincia ? `${cityName} e Provincia` : `${cityName} e Zona`;
+            case 'radius':    return `Vicino a ${cityName}`;
+            default:          return cityName;
+        }
+    })();
+    const title       = `Posteggi Mercatali ${titleSubject} ${monthYr} | ${totalCount} Annunci${priceFromTxt} · Subingresso.it`;
     const description = prezzi.length > 1 && minPrice !== maxPrice
-        ? `${totalCount} posteggi mercatali in vendita e affitto a ${cityName}. Prezzi reali da ${formatPrezzoCompact(minPrice)} a ${formatPrezzoCompact(maxPrice)}. Contatto diretto venditore, zero commissioni. Aggiornato ${lastListingRel || 'oggi'}.`
-        : `${totalCount} posteggi mercatali a ${cityName}: licenze ambulanti, banchi e concessioni. Contatto diretto venditore, zero commissioni. Aggiornato ${lastListingRel || 'oggi'}.`;
+        ? `${totalCount} posteggi mercatali in vendita e affitto ${scopeLabel}. Prezzi reali da ${formatPrezzoCompact(minPrice)} a ${formatPrezzoCompact(maxPrice)}. Contatto diretto venditore, zero commissioni. Aggiornato ${lastListingRel || 'oggi'}.`
+        : `${totalCount} posteggi mercatali ${scopeLabel}: licenze ambulanti, banchi e concessioni. Contatto diretto venditore, zero commissioni. Aggiornato ${lastListingRel || 'oggi'}.`;
 
     // ─── Schema markup (Mossa 4) ───────────────────────────────
     const graph = [
@@ -403,10 +539,12 @@ module.exports = async function handler(req, res) {
     }
 
     // FAQPage con dati reali (no claim falsi)
+    // La risposta sul conteggio rispetta lo scope mostrato (comune/provincia/dintorni)
+    // per non fingere annunci nel comune singolo se in realtà espandiamo.
     const faq = [
         {
             q: `Quanti posteggi mercatali sono in vendita a ${cityName}?`,
-            a: `Su Subingresso.it sono attivi ${totalCount} annunci di posteggi mercatali e licenze ambulanti a ${cityName}${cntVendita > 0 ? `, di cui ${cntVendita} in vendita` : ''}${cntAffitto > 0 ? ` e ${cntAffitto} in affitto` : ''}. Gli annunci sono pubblicati direttamente dai titolari delle concessioni.`
+            a: `Su Subingresso.it sono attivi ${totalCount} annunci di posteggi mercatali e licenze ambulanti ${scopeLabel}${cntVendita > 0 ? `, di cui ${cntVendita} in vendita` : ''}${cntAffitto > 0 ? ` e ${cntAffitto} in affitto` : ''}. Gli annunci sono pubblicati direttamente dai titolari delle concessioni.`
         },
         {
             q: `Quanto costa un posteggio mercatale a ${cityName}?`,
@@ -500,10 +638,16 @@ module.exports = async function handler(req, res) {
     <!-- Hero -->
     <div style="margin-bottom:16px;">
       <h1 style="margin:0 0 8px;font-size:clamp(24px,4vw,36px);font-weight:900;color:#0f172a;line-height:1.15;">
-        Posteggi Mercatali a <span style="color:#2563eb;">${esc(cityName)}</span>
+        ${scope === 'radius'
+            ? `Posteggi Mercatali <span style="color:#2563eb;">vicino a ${esc(cityName)}</span>`
+            : (scope === 'provincia' || (scope === 'mixed' && cityIsCapoluogoDiProvincia))
+                ? `Posteggi Mercatali a <span style="color:#2563eb;">${esc(cityName)} e provincia</span>`
+                : scope === 'mixed'
+                    ? `Posteggi Mercatali a <span style="color:#2563eb;">${esc(cityName)}</span> e dintorni`
+                    : `Posteggi Mercatali a <span style="color:#2563eb;">${esc(cityName)}</span>`}
       </h1>
       <p style="margin:0;font-size:16px;color:#64748b;font-weight:500;">
-        ${totalCount} ${totalCount === 1 ? 'annuncio disponibile' : 'annunci disponibili'} · banchi mercato, licenze ambulanti, concessioni
+        ${totalCount} ${totalCount === 1 ? 'annuncio disponibile' : 'annunci disponibili'}${scope === 'radius' ? ` entro ${RADIUS_KM} km` : (scope === 'mixed' ? ` (provincia e dintorni)` : '')} · banchi mercato, licenze ambulanti, concessioni
       </p>
     </div>
 
