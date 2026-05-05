@@ -172,6 +172,39 @@ async function initPage() {
 
     }
 
+    // Banner "Annuncio Scaduto" + degrado UX dei bottoni di contatto.
+    // Il rendering è non-distruttivo: se più tardi l'annuncio viene riattivato
+    // basta reload pagina, niente roba persistente da resettare.
+    const isExpired = _isListingExpiredLocal(listing);
+    if (isExpired) {
+        // Badge accanto al titolo
+        if (badgeContainer && !document.getElementById('expiredBanner')) {
+            const banner = document.createElement('div');
+            banner.id = 'expiredBanner';
+            banner.className = 'inline-flex items-center gap-2 bg-slate-700 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-sm';
+            banner.innerHTML = '<i class="fas fa-clock"></i> Annuncio Scaduto';
+            badgeContainer.appendChild(banner);
+        }
+        // Banner spiegazione sopra i bottoni di contatto
+        const priceCardBtns = document.getElementById('chatBtn');
+        if (priceCardBtns && !document.getElementById('expiredNotice')) {
+            const notice = document.createElement('div');
+            notice.id = 'expiredNotice';
+            notice.className = 'mb-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl p-4 text-xs font-bold leading-relaxed';
+            notice.innerHTML = '<div class="flex items-start gap-2"><i class="fas fa-clock text-amber-500 text-base mt-0.5"></i><div><p class="font-black mb-1">Annuncio scaduto</p><p class="font-semibold text-amber-800">Il venditore non riceve più contatti finché non lo riattiva. Se lo conosci, segnalaglielo direttamente.</p></div></div>';
+            priceCardBtns.parentNode.insertBefore(notice, priceCardBtns);
+        }
+        // Stile bottoni: più spenti, lucchetto. Click resta intercettato dal toast.
+        ['chatBtn', 'whatsappBtn', 'contactBtn'].forEach(id => {
+            const b = document.getElementById(id);
+            if (!b) return;
+            b.classList.add('opacity-50', 'cursor-not-allowed');
+        });
+        // Stessa cosa sui CTA mobile
+        const mobileCta = document.getElementById('mobileCta');
+        if (mobileCta) mobileCta.classList.add('opacity-60');
+    }
+
     // Campi base (Sicurezza: textContent)
     const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val || '—'; };
     
@@ -431,6 +464,17 @@ async function initPage() {
 
 // ── Azioni ──────────────────────────────────────────────
 
+// Annuncio scaduto: blocca tutte le azioni di contatto con un toast esplicito.
+// expires_at NULL = legacy/non popolato → consideralo NON scaduto.
+function _isListingExpiredLocal(listing) {
+    return !!(listing && listing.expires_at && new Date(listing.expires_at) < new Date());
+}
+function _blockIfExpired(listing) {
+    if (!_isListingExpiredLocal(listing)) return false;
+    showToast('Questo annuncio è scaduto. Il venditore deve riattivarlo per ricevere contatti.', 'warning');
+    return true;
+}
+
 function executeCall(listing) {
     if (!listing.telFetched) {
         showToast('Recupero numero in corso, riprova tra un istante…', 'info');
@@ -450,6 +494,7 @@ function executeCall(listing) {
 function makeCall() {
     const listing = _currentListing;
     if (!listing) return;
+    if (_blockIfExpired(listing)) return;
 
     if (_contactFetched) {
         executeCall(listing);
@@ -479,6 +524,7 @@ async function startChat() {
             showToast('Questo annuncio è in attesa di approvazione.', 'info');
             return;
         }
+        if (_blockIfExpired(listing)) return;
         if (listing.user_id === user.id) {
             location.href = '/dashboard';
             return;
@@ -522,6 +568,7 @@ function executeWhatsApp(listing) {
 function openWhatsApp() {
     const listing = _currentListing;
     if (!listing) return;
+    if (_blockIfExpired(listing)) return;
 
     if (_contactFetched) {
         executeWhatsApp(listing);

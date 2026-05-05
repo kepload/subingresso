@@ -76,7 +76,7 @@ module.exports = async function handler(req, res) {
     if (id) {
         try {
             const r = await fetch(
-                `${SUPABASE_URL}/rest/v1/annunci?id=eq.${encodeURIComponent(id)}&status=neq.deleted&select=id,titolo,descrizione,stato,tipo,settore,regione,provincia,comune,superficie,giorni,prezzo,img_urls,user_id,status,created_at,featured,featured_until`,
+                `${SUPABASE_URL}/rest/v1/annunci?id=eq.${encodeURIComponent(id)}&status=neq.deleted&select=id,titolo,descrizione,stato,tipo,settore,regione,provincia,comune,superficie,giorni,prezzo,img_urls,user_id,status,created_at,featured,featured_until,expires_at`,
                 { headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` } }
             );
             if (r.ok) {
@@ -149,6 +149,7 @@ module.exports = async function handler(req, res) {
         created_at:   listing.created_at,
         featured:     listing.featured,
         featured_until: listing.featured_until,
+        expires_at:   listing.expires_at,
         merce:        listing.settore || 'Altro',
         data:         listing.created_at ? listing.created_at.split('T')[0] : null
     } : null;
@@ -269,7 +270,17 @@ module.exports = async function handler(req, res) {
 
             <div class="bg-white rounded-3xl border border-slate-100 p-5 shadow-sm">
                 <p id="prezzo" class="text-4xl font-black text-slate-900 mb-4">${listing && listing.prezzo ? `€ ${Number(listing.prezzo).toLocaleString('it-IT')}` : 'Trattativa riservata'}</p>
-                <div class="space-y-2">
+                ${(listing && listing.expires_at && new Date(listing.expires_at) < new Date()) ? `
+                <div id="expiredNoticeSSR" class="mb-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl p-4 text-xs font-bold leading-relaxed">
+                    <div class="flex items-start gap-2">
+                        <i class="fas fa-clock text-amber-500 text-base mt-0.5"></i>
+                        <div>
+                            <p class="font-black mb-1">Annuncio scaduto</p>
+                            <p class="font-semibold text-amber-800">Il venditore non riceve più contatti finché non lo riattiva. Se lo conosci, segnalaglielo direttamente.</p>
+                        </div>
+                    </div>
+                </div>` : ''}
+                <div class="space-y-2 ${(listing && listing.expires_at && new Date(listing.expires_at) < new Date()) ? 'opacity-50' : ''}">
                     <button onclick="startChat()" id="chatBtn" class="w-full bg-blue-600 text-white py-3 rounded-2xl font-black hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-3 shadow-lg shadow-blue-100">
                         <i class="fas fa-comment-alt"></i> Invia Messaggio
                     </button>
@@ -338,10 +349,10 @@ module.exports = async function handler(req, res) {
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/supabase-config.js?v=3"></script>
-<script src="/js/data.js?v=14"></script>
+<script src="/js/data.js?v=15"></script>
 <script src="/js/ui-components.js?v=11"></script>
 <script src="/js/auth.js?v=12"></script>
-<script src="/js/pages/annuncio-detail.js?v=13"></script>
+<script src="/js/pages/annuncio-detail.js?v=14"></script>
 </body>
 </html>`);
 };

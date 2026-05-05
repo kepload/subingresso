@@ -892,7 +892,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=3"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=14"></script>
+<script src="js/data.js?v=15"></script>
 <script src="js/auth.js?v=12"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <script>
@@ -2186,11 +2186,19 @@ async function loadMyListings() {
     }
 
     grid.innerHTML = data.map(l => {
-        const statusColor = l.status === 'active'   ? 'bg-emerald-100 text-emerald-700' :
+        // Annuncio scaduto = active + expires_at passata.
+        const isExpired = l.status === 'active' && l.expires_at && new Date(l.expires_at) < new Date();
+
+        const statusColor = isExpired                ? 'bg-amber-100 text-amber-800' :
+                            l.status === 'active'    ? 'bg-emerald-100 text-emerald-700' :
                             l.status === 'pending'   ? 'bg-amber-100 text-amber-700' :
                             l.status === 'rejected'  ? 'bg-red-100 text-red-700' :
                             l.status === 'sold'      ? 'bg-slate-100 text-slate-500' : 'bg-slate-100 text-slate-400';
-        const statusLabel = l.status === 'active' ? 'Attivo' : l.status === 'pending' ? 'In Revisione' : l.status === 'rejected' ? 'Rifiutato' : l.status === 'sold' ? 'Venduto' : 'Eliminato';
+        const statusLabel = isExpired ? 'Scaduto' :
+                            l.status === 'active' ? 'Attivo' :
+                            l.status === 'pending' ? 'In Revisione' :
+                            l.status === 'rejected' ? 'Rifiutato' :
+                            l.status === 'sold' ? 'Venduto' : 'Eliminato';
 
         // Stato vetrina
         const isFeatured = l.featured === true && l.featured_until && new Date(l.featured_until) > new Date();
@@ -2198,10 +2206,12 @@ async function loadMyListings() {
             ? new Date(l.featured_until).toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })
             : '';
 
-        // Border speciale se in vetrina
-        const cardBorder = isFeatured
+        // Border speciale: scaduto > vetrina (priorità visiva alla call-to-action)
+        const cardBorder = isExpired
             ? 'border-2 border-amber-300 shadow-md shadow-amber-100'
-            : 'border border-slate-100';
+            : isFeatured
+                ? 'border-2 border-amber-300 shadow-md shadow-amber-100'
+                : 'border border-slate-100';
 
         return `
         <div class="bg-white rounded-2xl ${cardBorder} p-3 md:p-5 flex items-start gap-3 md:gap-4 hover:shadow-md transition">
@@ -2231,7 +2241,12 @@ async function loadMyListings() {
                 </div>` : ''}
                 <!-- Actions -->
                 <div class="flex flex-wrap gap-1.5 mt-2">
-                    ${l.status === 'active' ? `
+                    ${isExpired ? `
+                    <button onclick="renewListing('${l.id}')"
+                        class="text-[11px] font-black px-3 py-1.5 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transition text-white inline-flex items-center gap-1.5 shadow-sm">
+                        <i class="fas fa-rotate-right text-[10px]"></i> Riattiva
+                    </button>` : ''}
+                    ${l.status === 'active' && !isExpired ? `
                     <button onclick='openVetrinaModal(${JSON.stringify({ id: l.id, titolo: l.titolo, featured: isFeatured, featured_until: l.featured_until }).replace(/'/g, "&apos;")})'
                         class="text-[11px] font-black px-2.5 py-1.5 rounded-lg transition inline-flex items-center gap-1 ${isFeatured
                             ? 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
@@ -3103,6 +3118,24 @@ function showConfirm({ title, message, okLabel = 'Conferma', variant = 'danger' 
         okBtn.onclick     = () => cleanup(true);
         cancelBtn.onclick = () => cleanup(false);
     });
+}
+
+async function renewListing(id) {
+    const ok = await showConfirm({
+        title:    'Riattivare l\'annuncio?',
+        message:  'L\'annuncio tornerà attivo per altri 200 giorni e potrà ricevere contatti.',
+        okLabel:  'Riattiva',
+        variant:  'warning',
+    });
+    if (!ok) return;
+    const { data, error } = await _supabase.rpc('renew_listing', { p_id: id });
+    if (error || (data && data.error)) {
+        const msg = (data && data.error) ? data.error : (error && error.message) ? error.message : 'Errore sconosciuto';
+        showToast(`Errore: ${msg}`, 'error');
+        return;
+    }
+    showToast('Annuncio riattivato per 200 giorni', 'success');
+    loadMyListings();
 }
 
 async function markAsSold(id) {

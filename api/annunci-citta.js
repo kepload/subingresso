@@ -97,11 +97,15 @@ function relativeTime(iso) {
 
 function buildCard(l) {
     const img   = l.img_urls && l.img_urls.length > 0 ? l.img_urls[0] : null;
-    const badge = l.stato === 'Vendita'
-        ? '<span style="background:#10b981;color:#fff;font-size:11px;font-weight:800;padding:2px 10px;border-radius:20px;letter-spacing:.03em;">Vendita</span>'
-        : '<span style="background:#2563eb;color:#fff;font-size:11px;font-weight:800;padding:2px 10px;border-radius:20px;letter-spacing:.03em;">Affitto</span>';
+    const expired = !!(l.expires_at && new Date(l.expires_at) < new Date());
+    const badge = expired
+        ? '<span style="background:#334155;color:#fff;font-size:11px;font-weight:800;padding:2px 10px;border-radius:20px;letter-spacing:.03em;">Scaduto</span>'
+        : (l.stato === 'Vendita'
+            ? '<span style="background:#10b981;color:#fff;font-size:11px;font-weight:800;padding:2px 10px;border-radius:20px;letter-spacing:.03em;">Vendita</span>'
+            : '<span style="background:#2563eb;color:#fff;font-size:11px;font-weight:800;padding:2px 10px;border-radius:20px;letter-spacing:.03em;">Affitto</span>');
     const desc  = (l.descrizione || '').replace(/\s+/g, ' ').trim().substring(0, 110);
     const tipo  = [l.tipo, l.settore].filter(Boolean).join(' · ');
+    const cardOpacity = expired ? 'opacity:.7;' : '';
     // Location hint: comune + (provincia / km dalla città target).
     let locHint = '';
     if (l._scope === 'provincia' && l.comune) {
@@ -114,7 +118,7 @@ function buildCard(l) {
     }
 
     return `
-  <a href="/annuncio?id=${esc(l.id)}" style="display:block;background:#fff;border:1px solid #f1f5f9;border-radius:16px;overflow:hidden;text-decoration:none;box-shadow:0 1px 4px rgba(15,23,42,.06);transition:box-shadow .2s;">
+  <a href="/annuncio?id=${esc(l.id)}" style="display:block;background:#fff;border:1px solid #f1f5f9;border-radius:16px;overflow:hidden;text-decoration:none;box-shadow:0 1px 4px rgba(15,23,42,.06);transition:box-shadow .2s;${cardOpacity}">
     ${img
         ? `<img src="${esc(img)}" alt="${esc(l.titolo)}" style="width:100%;height:160px;object-fit:cover;" loading="lazy">`
         : `<div style="width:100%;height:160px;background:#f8fafc;display:flex;align-items:center;justify-content:center;"><i class="fas fa-store" style="color:#cbd5e1;font-size:2rem;"></i></div>`
@@ -342,7 +346,7 @@ module.exports = async function handler(req, res) {
     let allActive = [];
     try {
         const r = await fetch(
-            `${SUPABASE_URL}/rest/v1/annunci?status=eq.active&select=id,titolo,descrizione,stato,tipo,settore,comune,provincia,prezzo,img_urls,created_at,featured&order=featured.desc,created_at.desc&limit=500`,
+            `${SUPABASE_URL}/rest/v1/annunci?status=eq.active&select=id,titolo,descrizione,stato,tipo,settore,comune,provincia,prezzo,img_urls,created_at,featured,expires_at&order=featured.desc,created_at.desc&limit=500`,
             {
                 headers: {
                     'apikey':        SUPABASE_ANON_KEY,

@@ -443,7 +443,7 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 - `expires_at` 200 giorni di default (5 mag 2026, ex 100). SQL: `ALTER TABLE annunci ADD COLUMN IF NOT EXISTS expires_at timestamptz;`
 - Vetrina cap allineati al nuovo default: 10gg→230gg, 30gg→300gg, 90gg→400gg. Cap non superabile. Stripe-webhook + dashboard.adminGrantVetrina entrambi aggiornati.
 - Logica in `adminGrantVetrina(days)` + `stripe-webhook` su `checkout.session.completed`.
-- **NON filtrare su `expires_at`** finché non popolato per tutti.
+- **NON filtrare su `expires_at`** finché non popolato per tutti — gli scaduti restano visibili ma con badge "Scaduto", contatti bloccati via `_blockIfExpired()` (chat/whatsapp/chiama mostrano toast). RPC `renew_listing(p_id uuid)` SECURITY DEFINER, owner-only, bumpa `expires_at = now()+200gg`. Bottone "Riattiva" in dashboard.html appare per annunci `active` con `expires_at < now()`.
 
 ## ⚠️ Deploy & Troubleshooting Supabase
 
@@ -481,9 +481,9 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 ## 🌐 Cache Versions Correnti
 
-- `data.js?v=14` (5 mag 2026 — _dayBadge multi-giorno freddo→caldo + bookmark al posto del cuore + niente più merce nella card).
+- `data.js?v=15` (5 mag 2026 — `isListingExpired()` helper + badge "Scaduto" + opacità ridotta sulle card scadute).
 - `auth.js?v=12` (5 mag 2026 — link interni senza .html, redirectTo Supabase senza .html).
-- `annuncio-detail.js?v=13` (5 mag 2026 — bookmark + day badge md su pagina dettaglio + link interni senza .html).
+- `annuncio-detail.js?v=14` (5 mag 2026 — banner "Annuncio scaduto" + blocco contatti via `_blockIfExpired()` su startChat/makeCall/openWhatsApp).
 - `ui-components.js?v=11` (5 mag 2026 — voce "Supporto" nel footer).
 - `annunci.js?v=5` (5 mag 2026 — `_normalizeDayName` NFD + select include `giorni` + layout pannello compatto).
 - `css/tailwind.css?v=2` (precompilato).
