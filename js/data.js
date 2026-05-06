@@ -515,7 +515,7 @@ async function toggleSaveListing(annuncioId, btnEl) {
     if (!sess?.session?.user) {
         // Non loggato → memorizza intent + apre modal
         try { sessionStorage.setItem('_pending_save_listing', String(annuncioId)); } catch (_) {}
-        if (typeof window.openAuthModal === 'function') window.openAuthModal('register');
+        if (typeof window.openAuthModal === 'function') window.openAuthModal('register', undefined, 'salva_preferito');
         return;
     }
 

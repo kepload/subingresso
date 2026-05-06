@@ -69,9 +69,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=16"></script>
+<script src="js/data.js?v=17"></script>
 <script src="js/ui-components.js?v=11"></script>
-<script src="js/auth.js?v=15"></script>
+<script src="js/auth.js?v=16"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const slug = params.get('post');
@@ -117,7 +117,7 @@ function _insertBlogPromo(html) {
     }
     if (splitAt === -1) return html;
     const promo = `<div class="blog-promo not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-slate-600">
-        🎰 Nuovo su Subingresso? <a href="#" onclick="sessionStorage.setItem('_reg_src','popup'); openAuthModal('register'); return false;" class="font-bold text-amber-700 hover:underline">Registrati e prova a vincere 30 giorni di Vetrina gratis →</a>
+        🎰 Nuovo su Subingresso? <a href="#" onclick="sessionStorage.setItem('_reg_src','blog_promo'); openAuthModal('register', undefined, 'blog_promo'); return false;" class="font-bold text-amber-700 hover:underline">Registrati e prova a vincere 30 giorni di Vetrina gratis →</a>
     </div>`;
     return html.slice(0, splitAt) + promo + html.slice(splitAt);
 }

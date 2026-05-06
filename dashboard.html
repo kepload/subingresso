@@ -70,7 +70,7 @@
         </div>
         <h2 class="text-2xl font-black mb-2">Accedi per vedere la dashboard</h2>
         <p class="text-slate-400 font-medium mb-6">Registrati o accedi per gestire i tuoi annunci.</p>
-        <button onclick="openAuthModal('login')" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+        <button onclick="openAuthModal('login', undefined, 'nav_accedi')" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
             Accedi / Registrati
         </button>
     </div>
@@ -347,6 +347,31 @@
                 <button onclick="openAllListingsModal()" class="mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-xs font-black text-slate-500 hover:bg-slate-50 transition flex items-center justify-center gap-2">
                     <i class="fas fa-list"></i> <span id="allListingsBtn">Vedi tutti</span>
                 </button>
+            </div>
+
+            <!-- Funnel registrazione per sorgente (auth_modal_opens) -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-route text-blue-500"></i> Funnel registrazione per sorgente
+                        <span id="signupSourcesSubtitle" class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(30g)</span>
+                    </h3>
+                    <div class="flex gap-1.5">
+                        <button id="srcBtn30d" onclick="setSignupSourcesPeriod(30)" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-blue-600 text-white">30g</button>
+                        <button id="srcBtn90d" onclick="setSignupSourcesPeriod(90)" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">90g</button>
+                        <button id="srcBtn365d" onclick="setSignupSourcesPeriod(365)" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">1y</button>
+                    </div>
+                </div>
+                <div id="signupSourcesBody" class="space-y-2">
+                    <p class="text-xs text-slate-400 font-bold">Caricamento…</p>
+                </div>
+                <button id="signupSourcesToggle" onclick="toggleSignupSourcesAll()" class="hidden mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-xs font-black text-slate-500 hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-chevron-down text-[10px]"></i>
+                    <span id="signupSourcesToggleLabel">Mostra altre</span>
+                </button>
+                <p class="mt-4 text-[10px] text-slate-400 leading-relaxed">
+                    <span class="font-black text-slate-500">Aperture</span> = il modal aperto da quella sorgente · <span class="font-black text-emerald-600">Iscritti</span> = registrazioni completate · <span class="font-black text-blue-600">CR%</span> = conversion rate.
+                </p>
             </div>
 
             <!-- Valutatore Logs -->
@@ -891,8 +916,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=3"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=16"></script>
-<script src="js/auth.js?v=15"></script>
+<script src="js/data.js?v=17"></script>
+<script src="js/auth.js?v=16"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <script>
 
@@ -937,6 +962,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadAdminStats();
         loadAdminGrowthChart();
         loadAdminFunnelStats();
+        loadAdminSignupSources();
         loadAdminRecentUsers();
         loadAdminBlog();
         loadAllListings();
@@ -1538,6 +1564,109 @@ function setChartPeriod(mode) {
     const sub = document.getElementById('chartSubtitle');
     if (sub) sub.textContent = subtitles[mode] || '';
     loadAdminGrowthChart(mode);
+}
+
+// ── Funnel registrazione per sorgente (admin, auth_modal_opens) ──────────────
+let _amoState = { period: 30, rows: [], showAll: false };
+const _AMO_LABELS = {
+    popup_vetrina:     { label: 'Popup vetrina',          icon: 'fa-bullhorn',     bg: 'bg-amber-50',   fg: 'text-amber-500'   },
+    blog_promo:        { label: 'Banner blog',            icon: 'fa-blog',         bg: 'bg-amber-50',   fg: 'text-amber-500'   },
+    vendi_submit:      { label: 'Click "Pubblica"',       icon: 'fa-store',        bg: 'bg-emerald-50', fg: 'text-emerald-500' },
+    nav_accedi:        { label: 'Bottone Accedi (nav)',   icon: 'fa-sign-in-alt',  bg: 'bg-blue-50',    fg: 'text-blue-500'    },
+    salva_preferito:   { label: 'Salva preferito',        icon: 'fa-bookmark',     bg: 'bg-pink-50',    fg: 'text-pink-500'    },
+    valutatore_create: { label: 'Crea account valutatore',icon: 'fa-calculator',   bg: 'bg-emerald-50', fg: 'text-emerald-500' },
+    welcome_popup:     { label: 'Welcome popup',          icon: 'fa-hand-sparkles',bg: 'bg-blue-50',    fg: 'text-blue-500'    },
+    tel_reveal:        { label: 'Vedi telefono completo', icon: 'fa-phone',        bg: 'bg-slate-100',  fg: 'text-slate-500'   },
+    direct:            { label: 'Diretto / altro',        icon: 'fa-link',         bg: 'bg-slate-100',  fg: 'text-slate-500'   },
+};
+
+async function loadAdminSignupSources() {
+    const body = document.getElementById('signupSourcesBody');
+    const toggle = document.getElementById('signupSourcesToggle');
+    if (!body) return;
+    body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Caricamento…</p>';
+    if (toggle) toggle.classList.add('hidden');
+    try {
+        const { data, error } = await _supabase.rpc('admin_signup_funnel_by_source', { p_days: _amoState.period });
+        if (error || !data || data.error) {
+            body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Funnel sorgenti non disponibile.</p>';
+            return;
+        }
+        _amoState.rows = Array.isArray(data.rows) ? data.rows : [];
+        _amoState.showAll = false;
+        _renderSignupSources();
+    } catch (_) {
+        body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Errore caricamento.</p>';
+    }
+}
+
+function _renderSignupSources() {
+    const body = document.getElementById('signupSourcesBody');
+    const toggle = document.getElementById('signupSourcesToggle');
+    const toggleLabel = document.getElementById('signupSourcesToggleLabel');
+    if (!body) return;
+    if (!_amoState.rows.length) {
+        body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Nessun dato per il periodo selezionato. Le aperture verranno tracciate da ora in poi.</p>';
+        if (toggle) toggle.classList.add('hidden');
+        return;
+    }
+    const visible = _amoState.showAll ? _amoState.rows : _amoState.rows.slice(0, 5);
+    body.innerHTML = visible.map(r => {
+        const meta = _AMO_LABELS[r.source] || { label: r.source, icon: 'fa-question', bg: 'bg-slate-100', fg: 'text-slate-500' };
+        const opens = Number(r.opens || 0);
+        const signups = Number(r.signups || 0);
+        const cr = Number(r.conversion_pct || 0);
+        const crColor = cr >= 5 ? 'text-emerald-600 bg-emerald-50' : (cr >= 1 ? 'text-blue-600 bg-blue-50' : 'text-slate-500 bg-slate-100');
+        return `
+        <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl border border-slate-100 hover:bg-slate-50 transition">
+            <div class="flex items-center gap-3 min-w-0 flex-1">
+                <div class="w-9 h-9 rounded-lg ${meta.bg} ${meta.fg} flex items-center justify-center flex-shrink-0">
+                    <i class="fas ${meta.icon} text-sm"></i>
+                </div>
+                <div class="min-w-0">
+                    <div class="text-sm font-black text-slate-900 truncate">${escapeHTML(meta.label)}</div>
+                    <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">${escapeHTML(r.source)}</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-3 flex-shrink-0">
+                <div class="text-right">
+                    <div class="text-sm font-black text-slate-900 leading-tight">${opens.toLocaleString('it-IT')}</div>
+                    <div class="text-[9px] text-slate-400 font-bold uppercase tracking-widest leading-none">aperture</div>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm font-black text-emerald-600 leading-tight">${signups.toLocaleString('it-IT')}</div>
+                    <div class="text-[9px] text-emerald-400 font-bold uppercase tracking-widest leading-none">iscritti</div>
+                </div>
+                <span class="${crColor} text-[10px] font-black px-2 py-1 rounded-lg whitespace-nowrap">${cr.toFixed(1)}%</span>
+            </div>
+        </div>`;
+    }).join('');
+    if (_amoState.rows.length > 5) {
+        if (toggle) toggle.classList.remove('hidden');
+        if (toggleLabel) toggleLabel.textContent = _amoState.showAll
+            ? 'Mostra solo top 5'
+            : `Mostra altre ${_amoState.rows.length - 5}`;
+    } else {
+        if (toggle) toggle.classList.add('hidden');
+    }
+}
+
+function toggleSignupSourcesAll() {
+    _amoState.showAll = !_amoState.showAll;
+    _renderSignupSources();
+}
+
+function setSignupSourcesPeriod(days) {
+    _amoState.period = days;
+    [['srcBtn30d', 30], ['srcBtn90d', 90], ['srcBtn365d', 365]].forEach(([id, val]) => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        const active = val === days;
+        btn.className = `text-[11px] font-black px-3 py-1.5 rounded-lg transition ${active ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`;
+    });
+    const sub = document.getElementById('signupSourcesSubtitle');
+    if (sub) sub.textContent = days === 365 ? '(1y)' : `(${days}g)`;
+    loadAdminSignupSources();
 }
 
 let _allAdminUsers = [];

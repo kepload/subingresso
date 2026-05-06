@@ -91,8 +91,8 @@
             <i class="fas fa-info-circle text-blue-400 flex-shrink-0"></i>
             <p class="text-sm font-semibold text-blue-700">
                 Per pubblicare devi essere registrato.
-                <button onclick="openAuthModal('register')" class="underline font-black">Registrati gratis</button>
-                o <button onclick="openAuthModal('login')" class="underline font-black">accedi</button>.
+                <button onclick="openAuthModal('register', undefined, 'nav_accedi')" class="underline font-black">Registrati gratis</button>
+                o <button onclick="openAuthModal('login', undefined, 'nav_accedi')" class="underline font-black">accedi</button>.
             </p>
         </div>
 
@@ -404,9 +404,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=16"></script>
+<script src="js/data.js?v=17"></script>
 <script src="js/ui-components.js?v=11"></script>
-<script src="js/auth.js?v=15"></script>
+<script src="js/auth.js?v=16"></script>
 <script>
 
 // ── Step Management ───────────────────────────────────────
@@ -1273,7 +1273,7 @@ async function submitAnnuncio() {
             submitAnnuncio();
         };
         _resetBtn();
-        openAuthModal('register', 'Manca solo l\'ultimo passo: crea l\'account gratis. Il tuo annuncio sarà pubblicato subito dopo.');
+        openAuthModal('register', 'Manca solo l\'ultimo passo: crea l\'account gratis. Il tuo annuncio sarà pubblicato subito dopo.', 'vendi_submit');
         return;
     }
 

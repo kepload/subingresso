@@ -167,6 +167,35 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - Card anteprima: `h-20` mobile, `h-28` desktop.
 - Pagina annuncio: `h-36` mobile, `md:h-64` desktop (ridotto -20% rispetto al primo design).
 
+## 📊 Funnel Registrazione per Sorgente (6 mag 2026)
+
+Tracciamento full funnel per capire conversion rate per ogni sorgente che apre il modal registrazione (popup vetrina, banner blog, click "Pubblica annuncio", nav "Accedi", salva preferito, valutatore, tel reveal, direct).
+
+**Schema (`PATCH_AUTH_MODAL_OPENS_20260506.sql`):**
+- Tabella `auth_modal_opens(id, source CHECK enum 9 valori, opened_at, anon_session, time_bucket, signed_up_user_id FK profiles ON DELETE SET NULL)`
+- UNIQUE `(source, anon_session, time_bucket)` → dedup automatico per minuto: doppi click + aperture multiple non gonfiano i dati
+- RLS: INSERT a anon+authenticated, NO select/update/delete (solo via RPC SECURITY DEFINER)
+- RPC `amo_link_signup(text)`: chiamata in `_afterRegisterSuccess`, valorizza `signed_up_user_id` per la sessione anonima del nuovo utente. Safety 24h.
+- RPC `admin_signup_funnel_by_source(int days)`: ritorna `{period_days, total_opens, total_signups, rows[{source, opens, signups, conversion_pct}]}`. Check is_admin.
+- Cron `auth-modal-opens-cleanup` ogni notte alle 04:00: DELETE anonimi >90gg, signed-up >395gg.
+
+**Lato client:**
+- `_amo_session` UUID generato in `sessionStorage` alla prima apertura modal (no localStorage = scompare a tab close)
+- `_trackModalOpen(source)` async silent-fail in `auth.js` chiamata da `openAuthModal(tab, contextMsg, source)` con il terzo arg
+- `time_bucket` = "YYYYMMDDHHMM" UTC → finestra dedup 1 minuto
+- 9 sorgenti tipizzate: `popup_vetrina, blog_promo, vendi_submit, nav_accedi, salva_preferito, valutatore_create, welcome_popup, tel_reveal, direct`
+- 11 call site di `openAuthModal` aggiornati con la source corretta
+
+**Lotteria welcome_lottery_eligible** ora attivata da `_reg_src IN ('popup_vetrina', 'blog_promo')`. Retro-compat: accetta anche il vecchio `'popup'` se residuo in sessione.
+
+**Pannello admin** in `dashboard.html` SOPRA "Valutatore Logs": `loadAdminSignupSources()` carica via RPC, mostra top 5 sorgenti per opens (con icona, label, opens, signups, CR% colorato verde/blu/grigio in base a soglia). Bottone "Mostra altre N" toggle inline. Selettore periodo 30g/90g/1y. `_amoState` global state.
+
+**Compliance GDPR:**
+- Pseudonimo by-design (no IP, no UA, no fingerprint)
+- Privacy.html aggiornata: voce in sez. 5 (cookie/storage di prima parte) + sez. 6 (retention)
+- Base giuridica: legittimo interesse (art. 6.1.f GDPR)
+- **NO cookie banner necessario** — analytics aggregata di prima parte ricade in esenzione Garante 2021
+
 ## 👤 Display Nome Utente — Anti-duplicato (6 mag 2026)
 
 **Bug storico**: utenti che mettevano nome+cognome insieme nel campo "Nome" del form registrazione (es. nome="Gianfranco Dona", cognome="Dona") venivano displayati ovunque come "Gianfranco Dona Dona" perché tutti i 10 punti display facevano `[nome,cognome].filter(Boolean).join(' ').trim()` naive.
@@ -540,9 +569,10 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 ## 🌐 Cache Versions Correnti
 
-- `data.js?v=16` (6 mag 2026 — helper globale `formatFullName(nome, cognome)` con dedup PER PAROLA per evitare "Gianfranco Dona Dona").
-- `auth.js?v=15` (6 mag 2026 — `handleRegister` sanitizza `regNome`: se l'ultima parola di nome combacia col cognome la rimuove dal nome. Previene il bug per i futuri utenti).
-- `js/pages/annunci.js?v=6` e `js/pages/annuncio-detail.js?v=15` (6 mag 2026 — usano `formatFullName` per USER_NAMES e sellerFullName).
+- `data.js?v=17` (6 mag 2026 — `toggleSaveListing` passa source `salva_preferito` a `openAuthModal`).
+- `auth.js?v=16` (6 mag 2026 — `_trackModalOpen()` insert su `auth_modal_opens` + `openAuthModal(tab, contextMsg, source)` accetta terzo arg + `_afterRegisterSuccess` chiama RPC `amo_link_signup`. `_reg_src` passa da `'popup'` a `'popup_vetrina'`/`'blog_promo'` con retro-compat per check lotteria).
+- `js/pages/annunci.js?v=6` (6 mag 2026 — formatFullName per USER_NAMES).
+- `js/pages/annuncio-detail.js?v=16` (6 mag 2026 — formatFullName per sellerFullName + source `tel_reveal` su openAuthModal).
 - `annuncio-detail.js?v=14` (5 mag 2026 — banner "Annuncio scaduto" + blocco contatti via `_blockIfExpired()` su startChat/makeCall/openWhatsApp).
 - `ui-components.js?v=11` (5 mag 2026 — voce "Supporto" nel footer).
 - `annunci.js?v=5` (5 mag 2026 — `_normalizeDayName` NFD + select include `giorni` + layout pannello compatto).

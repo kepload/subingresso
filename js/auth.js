@@ -193,8 +193,39 @@ window.switchAuthTab = function (tab) {
     _hideAuthFeedback();
 };
 
+// ── Anon session + funnel tracking (auth_modal_opens) ────
+// Pseudonimo, niente IP/UA. Dedup per (source, anon_session, time_bucket=minuto).
+function _getAnonSession() {
+    try {
+        let s = sessionStorage.getItem('_amo_session');
+        if (!s) {
+            s = (window.crypto && crypto.randomUUID && crypto.randomUUID()) ||
+                (Math.random().toString(36).slice(2) + Date.now().toString(36));
+            sessionStorage.setItem('_amo_session', s);
+        }
+        return s;
+    } catch (_) { return ''; }
+}
+
+const _AMO_VALID_SOURCES = ['popup_vetrina','blog_promo','vendi_submit','nav_accedi','salva_preferito','valutatore_create','welcome_popup','tel_reveal','direct'];
+
+async function _trackModalOpen(source) {
+    try {
+        if (!_AMO_VALID_SOURCES.includes(source)) source = 'direct';
+        const anonSession = _getAnonSession();
+        if (!anonSession) return;
+        const d = new Date();
+        const tb = `${d.getUTCFullYear()}${String(d.getUTCMonth()+1).padStart(2,'0')}${String(d.getUTCDate()).padStart(2,'0')}${String(d.getUTCHours()).padStart(2,'0')}${String(d.getUTCMinutes()).padStart(2,'0')}`;
+        // Insert via PostgREST. UNIQUE violation = dedup OK (silenzioso).
+        // Errori RLS o rete: silent fail — il tracking NON deve mai bloccare l'UX.
+        await _supabase
+            .from('auth_modal_opens')
+            .insert({ source, anon_session: anonSession, time_bucket: tb });
+    } catch (_) { /* silent */ }
+}
+
 // ── Open / Close ─────────────────────────────────────────
-window.openAuthModal = function (tab, contextMsg) {
+window.openAuthModal = function (tab, contextMsg, source) {
     initAuthModal();
     switchAuthTab(tab || 'login');
     const overlay = document.getElementById('authOverlay');
@@ -212,6 +243,8 @@ window.openAuthModal = function (tab, contextMsg) {
             ctxMsg.textContent = '';
         }
     }
+    // Funnel tracking: registra l'apertura (silent fail). Source 'direct' se omessa.
+    _trackModalOpen(source || 'direct');
 };
 
 window.closeAuthModal = function () {
@@ -270,7 +303,7 @@ function _injectVisitorPopup() {
         <p class="text-sm text-slate-500 mb-5 leading-relaxed">
           Iscriviti gratis e prova a vincere <span class="font-bold text-amber-500">30 giorni di Vetrina</span> — il tuo annuncio in cima a tutti i risultati.
         </p>
-        <button onclick="closeVisitorPopup(); sessionStorage.setItem('_reg_src','popup'); openAuthModal('register')"
+        <button onclick="closeVisitorPopup(); sessionStorage.setItem('_reg_src','popup_vetrina'); openAuthModal('register', undefined, 'popup_vetrina')"
           class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
           Registrati e tenta la fortuna →
         </button>
@@ -614,7 +647,10 @@ window.handleRegister = async function (e) {
     const telefono = telRaw ? normalizePhone(telRaw) : '';
 
     try {
-        const _lottEligible = sessionStorage.getItem('_reg_src') === 'popup';
+        // Lotteria welcome: eleggibili solo le sorgenti popup/promo (storicamente).
+        // Retro-compat: accetta anche il vecchio valore 'popup' nel caso fosse residuo in sessione.
+        const _regSrc = sessionStorage.getItem('_reg_src');
+        const _lottEligible = _regSrc === 'popup_vetrina' || _regSrc === 'blog_promo' || _regSrc === 'popup';
         await _registerBypass(email, password, nome, cognome, telefono, _lottEligible);
     } catch (err) {
         _showAuthError('Errore durante la registrazione.');
@@ -654,6 +690,14 @@ async function _afterRegisterSuccess(nome, showWelcome = false) {
     _suppressVisitorPopup();
     // Aspetta il link valutatore prima di un eventuale redirect al report
     await _linkValutatoreSession();
+    // Linka l'anon_session corrente al signup (tracking funnel by source).
+    // Silent fail: il tracking non deve mai bloccare il flusso registrazione.
+    try {
+        const anonSession = sessionStorage.getItem('_amo_session');
+        if (anonSession) {
+            await _supabase.rpc('amo_link_signup', { p_anon_session: anonSession });
+        }
+    } catch (_) { /* silent */ }
     const user = await getCurrentUser();
     _profileCache = { id: user?.id, nome };
     _showAuthSuccess('Benvenuto! Account creato con successo.');
@@ -835,10 +879,10 @@ window.requireAuth = function (callback) {
                 const u = data?.user;
                 if (u) callback(u);
             });
-            openAuthModal('login');
+            openAuthModal('login', undefined, 'direct');
         }
     }).catch(() => {
-        openAuthModal('login');
+        openAuthModal('login', undefined, 'direct');
     });
 };
 
@@ -856,7 +900,7 @@ window.updateAuthNav = async function () {
 
     if (!session?.user) {
         nav.innerHTML = `
-            <button onclick="openAuthModal('login')"
+            <button onclick="openAuthModal('login', undefined, 'nav_accedi')"
                 class="text-sm font-bold text-blue-600 hover:text-blue-700 px-4 py-2 rounded-xl border border-blue-100 hover:bg-blue-50 transition-all duration-300">
                 Accedi
             </button>`;
@@ -891,7 +935,8 @@ window.updateAuthNav = async function () {
             } else {
                 const meta = user.user_metadata || {};
                 if (meta.nome) {
-                    const _lottEligible = sessionStorage.getItem('_reg_src') === 'popup';
+                    const _regSrc = sessionStorage.getItem('_reg_src');
+                    const _lottEligible = _regSrc === 'popup_vetrina' || _regSrc === 'blog_promo' || _regSrc === 'popup';
                     sessionStorage.removeItem('_reg_src');
                     _supabase.from('profiles')
                         .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '', welcome_lottery_eligible: _lottEligible })

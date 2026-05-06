@@ -617,7 +617,7 @@ function censorPhonesHTML(text) {
                 out += ch;
             }
         }
-        return `<a href="#" onclick="event.preventDefault(); if(typeof openAuthModal==='function') openAuthModal('register');" class="text-blue-600 font-black hover:underline cursor-pointer" title="Registrati per vedere il numero completo">${out}</a>`;
+        return `<a href="#" onclick="event.preventDefault(); if(typeof openAuthModal==='function') openAuthModal('register', undefined, 'tel_reveal');" class="text-blue-600 font-black hover:underline cursor-pointer" title="Registrati per vedere il numero completo">${out}</a>`;
     });
 }
 

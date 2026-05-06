@@ -489,8 +489,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
-<script src="js/data.js?v=16"></script>
-<script src="js/auth.js?v=15"></script>
+<script src="js/data.js?v=17"></script>
+<script src="js/auth.js?v=16"></script>
 
 <script>
     // ── Tracking acquisizione (Ondata 1) — fallback se l'utente atterra
@@ -763,7 +763,7 @@
             sessionStorage.setItem('_post_auth_intent', 'valutatore_save');
         } catch (_) {}
         if (typeof window.openAuthModal === 'function') {
-            window.openAuthModal('register');
+            window.openAuthModal('register', undefined, 'valutatore_create');
         } else {
             // Fallback: niente modal disponibile, manda a una pagina di registrazione
             location.href = '/#register';

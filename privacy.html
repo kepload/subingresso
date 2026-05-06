@@ -108,6 +108,7 @@
                     <li><strong>Identificativo di sessione</strong> (<code>_session_id</code>): valido per la sessione corrente del browser.</li>
                     <li><strong>Dati di acquisizione</strong> (<code>_acq_*</code>): campagna/sorgente di provenienza, validi per la sessione.</li>
                     <li><strong>Cache profilo e bozze</strong> (<code>_profile_*</code>, <code>_vc_*</code>, <code>vendi_*</code>): velocizzano il riempimento dei moduli, conservati nel tuo browser.</li>
+                    <li><strong>Identificativo di sessione anonimo per analitiche di registrazione</strong> (<code>_amo_session</code>): UUID casuale generato lato browser, valido solo per la sessione. Lo usiamo, insieme alla sorgente del click (es. "popup", "navigazione", "pubblicazione annuncio"), per misurare in forma <strong>aggregata</strong> l'efficacia delle nostre call-to-action di registrazione. Nessun dato identificativo (IP, User-Agent, fingerprint) viene salvato. Base giuridica: <strong>legittimo interesse</strong> (art. 6.1.f GDPR) al miglioramento del servizio.</li>
                 </ul>
                 <p>Puoi cancellare in qualunque momento i dati locali svuotando lo storage del browser per il sito.</p>
             </section>
@@ -118,6 +119,7 @@
                     <li>Dati dell'account: per tutta la durata del rapporto, eliminati su tua richiesta dalla funzione di cancellazione account o entro <strong>12 mesi</strong> di inattività completa.</li>
                     <li>Annunci attivi: pubblici fino al ritiro o alla scadenza; gli annunci ritirati restano in archivio per 12 mesi a fini di assistenza e antifrode.</li>
                     <li>Log di navigazione interni (<code>page_views</code>): conservati in forma pseudonimizzata per <strong>13 mesi</strong>, poi cancellati o aggregati.</li>
+                    <li>Analitiche aperture modulo registrazione (<code>auth_modal_opens</code>): <strong>90 giorni</strong> se anonime; se la sessione si è conclusa con un'iscrizione, fino a <strong>13 mesi</strong> in associazione all'account (per analisi di acquisizione).</li>
                     <li>Log dello strumento di valutazione: 24 mesi se non collegati a un account; per la durata dell'account se collegati.</li>
                     <li>Email inviate (registro tecnico via Resend): 12 mesi.</li>
                 </ul>
