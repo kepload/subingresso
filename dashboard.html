@@ -263,7 +263,7 @@
                     <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-blue-500"></span>Iscritti</span>
                     <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-emerald-500"></span>Annunci</span>
                     <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-amber-400"></span>Vetrine acquistate</span>
-                    <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-violet-500"></span>Visite</span>
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-violet-500"></span>Visite <span class="text-violet-500 font-black">→ scala dx</span></span>
                 </div>
             </div>
 
@@ -1168,8 +1168,9 @@ async function loadAdminGrowthChart(mode = 'mese') {
         }
     }
 
-    const ds = (label, color, data) => ({
+    const ds = (label, color, data, axis = 'y') => ({
         label, data,
+        yAxisID: axis,
         borderColor: color,
         backgroundColor: color + '18',
         borderWidth: 2.5,
@@ -1185,10 +1186,10 @@ async function loadAdminGrowthChart(mode = 'mese') {
     const chartData = {
         labels,
         datasets: [
-            ds('Iscritti',  '#3b82f6', pData),
-            ds('Annunci',   '#10b981', aData),
-            ds('Vetrine',   '#f59e0b', vData),
-            ds('Visite',    '#8b5cf6', viewsData),
+            ds('Iscritti',  '#3b82f6', pData,     'y'),
+            ds('Annunci',   '#10b981', aData,     'y'),
+            ds('Vetrine',   '#f59e0b', vData,     'y'),
+            ds('Visite',    '#8b5cf6', viewsData, 'y1'),
         ],
     };
 
@@ -1227,6 +1228,7 @@ async function loadAdminGrowthChart(mode = 'mese') {
                     ticks: { font: { family: 'Plus Jakarta Sans', weight: '700', size: 10 }, color: '#94a3b8' },
                 },
                 y: {
+                    position: 'left',
                     grid: { color: '#f1f5f9' },
                     border: { display: false },
                     beginAtZero: true,
@@ -1234,6 +1236,18 @@ async function loadAdminGrowthChart(mode = 'mese') {
                         font: { family: 'Plus Jakarta Sans', weight: '700', size: 10 },
                         color: '#94a3b8',
                         precision: 0,
+                    },
+                },
+                y1: {
+                    position: 'right',
+                    grid: { drawOnChartArea: false },
+                    border: { display: false },
+                    beginAtZero: true,
+                    ticks: {
+                        font: { family: 'Plus Jakarta Sans', weight: '700', size: 10 },
+                        color: '#8b5cf6',
+                        precision: 0,
+                        callback: (v) => v >= 1000 ? (v / 1000).toFixed(v % 1000 === 0 ? 0 : 1) + 'k' : v,
                     },
                 },
             },
