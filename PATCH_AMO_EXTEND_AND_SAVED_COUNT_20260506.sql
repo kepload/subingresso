@@ -16,6 +16,12 @@ ALTER TABLE public.auth_modal_opens
 -- ── 2) Colonna saved_count su annunci ──
 ALTER TABLE public.annunci ADD COLUMN IF NOT EXISTS saved_count int NOT NULL DEFAULT 0;
 
+-- GRANT SELECT esplicito: la tabella ha grants column-level (REVOKE su tel/email)
+-- quindi le nuove colonne NON ereditano automaticamente il SELECT. Senza questo
+-- GRANT, qualsiasi select che include saved_count torna 42501 (permission denied)
+-- → dashboard "I miei annunci" e pagina annuncio rotti per anon/authenticated.
+GRANT SELECT (saved_count) ON public.annunci TO anon, authenticated;
+
 -- Index su saved_listings.annuncio_id (per trigger lookup veloce)
 CREATE INDEX IF NOT EXISTS idx_saved_listings_annuncio ON public.saved_listings(annuncio_id);
 
