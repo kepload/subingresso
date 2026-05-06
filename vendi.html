@@ -320,7 +320,7 @@
                     <div class="space-y-6">
                         <div>
                             <label class="field-label">Titolo annuncio *</label>
-                            <input id="fTitolo" type="text" placeholder="es. Posteggio Settimanale Milano – Abbigliamento" class="field-input">
+                            <input id="fTitolo" type="text" placeholder="es. Posteggio Settimanale Milano – Abbigliamento" class="field-input" oninput="_renderPreview()">
                             <p class="text-[10px] text-slate-400 mt-1.5 font-semibold">Suggerito automaticamente, puoi modificarlo.</p>
                         </div>
 
@@ -347,7 +347,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="field-label">Nome Contatto *</label>
-                                <input id="fNome" type="text" placeholder="Il tuo nome" class="field-input bg-blue-50/50" required>
+                                <input id="fNome" type="text" placeholder="Il tuo nome" class="field-input bg-blue-50/50" required oninput="_renderPreview()">
                             </div>
                             <div>
                                 <label class="field-label">Telefono (WhatsApp) <span class="text-red-500">*</span></label>
@@ -371,6 +371,14 @@
                             </p>
                             <div id="previewContainer" class="grid grid-cols-5 gap-2 mt-3"></div>
                         </div>
+                    </div>
+
+                    <!-- Preview card -->
+                    <div id="previewSection" class="mt-10 mb-2">
+                        <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-2">
+                            <i class="fas fa-eye text-slate-300"></i> Anteprima — come apparirà
+                        </p>
+                        <div id="previewCard" style="pointer-events:none;user-select:none;max-width:300px;margin:0 auto"></div>
                     </div>
 
                     <button type="button" id="submitBtn"
@@ -422,15 +430,60 @@ function goToStep(n) {
         _suggestTitle();
         // force=true: se al primo arrivo i campi non sono stati riempiti
         // (race condition con getSession), riprova ad ogni accesso a step 5
-        prefillContactFromSession(/* force */ false).then(() => _checkMissingPhoneBanner());
+        prefillContactFromSession(/* force */ false).then(() => { _checkMissingPhoneBanner(); _renderPreview(); });
         // Re-applica anche dalla cache localStorage subito (sync, no network), scope per user_id
         let _uid = null;
         try { _uid = _getStoredSupabaseSession()?.user?.id || null; } catch (_) {}
         _prefillFromCache(_uid);
         // Mostra banner "telefono mancante" se il campo e' vuoto, e fa focus automatico
         _checkMissingPhoneBanner();
+        _renderPreview();
     }
     if (_step > 1) _saveDraft();
+}
+
+// ── Preview card (step 5) ─────────────────────────────────
+let _previewObjectURL = null;
+function _renderPreview() {
+    const container = document.getElementById('previewCard');
+    if (!container || typeof buildCard !== 'function') return;
+    // Cleanup precedente object URL per evitare memory leak
+    if (_previewObjectURL) { try { URL.revokeObjectURL(_previewObjectURL); } catch(_) {} _previewObjectURL = null; }
+    // Genera object URL per la prima foto (se presente)
+    let imgUrls = [];
+    if (Array.isArray(_files) && _files[0]) {
+        try {
+            _previewObjectURL = URL.createObjectURL(_files[0]);
+            imgUrls = [_previewObjectURL];
+        } catch(_) {}
+    }
+    const stato = document.querySelector('input[name="stato"]:checked')?.value || 'Vendita';
+    const titolo = document.getElementById('fTitolo').value.trim() || 'Il tuo annuncio';
+    const contatto = document.getElementById('fNome').value.trim() || '';
+    const prezzoRaw = document.getElementById('fPrezzo').value.replace(/\./g, '').replace(',', '.');
+    const prezzo = parseFloat(prezzoRaw) || 0;
+    const fakeListing = {
+        id: '__preview__',
+        user_id: null, // evita lookup USER_NAMES/USER_AVATARS, mostra iniziale di contatto
+        titolo,
+        tipo: document.getElementById('fTipo').value || 'Mercato settimanale',
+        giorni: document.getElementById('fGiorni').value || '',
+        comune: document.getElementById('fComune').value.trim() || '—',
+        regione: document.getElementById('fRegione').value || '',
+        contatto,
+        stato,
+        prezzo,
+        status: 'active',
+        created_at: new Date().toISOString(),
+        img_urls: imgUrls,
+        featured: false,
+        expires_at: null
+    };
+    try {
+        container.innerHTML = buildCard(fakeListing);
+    } catch (e) {
+        container.innerHTML = '<p class="text-xs text-slate-400 text-center">Anteprima non disponibile.</p>';
+    }
 }
 
 function _saveDraft() {
@@ -547,7 +600,7 @@ function _validateStep(n) {
     }
     if (n === 4) {
         const prezzo = parseFloat(document.getElementById('fPrezzo').value.replace(/\./g, '').replace(',', '.'));
-        if (isNaN(prezzo) || prezzo < 100)
+        if (isNaN(prezzo) || prezzo < 101)
             return _err('Prezzo troppo basso, controlla bene.');
         if (prezzo > 400000)
             return _err('Prezzo troppo alto, controlla bene.');
@@ -1005,6 +1058,7 @@ function _handleFiles(files) {
                 </button>`;
             _fileMap.set(div, f);
             preview.appendChild(div);
+            if (typeof _renderPreview === 'function') _renderPreview();
         };
         reader.readAsDataURL(f);
     }
@@ -1018,6 +1072,7 @@ function removeFile(btn) {
         if (idx !== -1) _files.splice(idx, 1);
     }
     div.remove();
+    if (typeof _renderPreview === 'function') _renderPreview();
 }
 
 // ── Lotteria vetrina welcome (0,1% → 30 giorni, entro 30gg iscrizione) ─────

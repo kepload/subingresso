@@ -185,7 +185,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **Immagini annunci**: salvate in `dettagli_extra.images` E in `img_urls`. Devono essere in entrambi.
 - **`tel`/`email` mai esposti a anon**: `annuncio-detail.js` `select(...)` senza tel/email. Fetch RPC `get_listing_contact()` solo dopo `auth.getUser()` confermato.
 - **Trigger `trg_enforce_annunci_status`**: forza `status='pending'` su INSERT non-admin, blocca promozione ad active via UPDATE.
-- **Validazioni `vendi.html`**: prezzo 100€-400.000€ (range realistico posteggi). Descrizione min 10 char. Anti-spam 1 min. **Limiti NON mostrati in UI** — l'utente che sbaglia legge solo "Prezzo troppo basso/alto, controlla bene" (volutamente vago, alza la friction sui prezzi civetta a 1€ o pump a 9999999€). Stesso check in `modifica-annuncio.html`.
+- **Validazioni `vendi.html`**: prezzo 101€-400.000€ (min portato a 101 il 6 mag 2026 per impedire il "100€ tondo civetta"). Descrizione min 10 char. Anti-spam 1 min. **Limiti NON mostrati in UI** — l'utente che sbaglia legge solo "Prezzo troppo basso/alto, controlla bene" (volutamente vago, alza la friction sui prezzi civetta). Stesso check in `modifica-annuncio.html`.
 - **NON join `profiles(...)` nelle select** di annunci/conversazioni — rompe PostgREST. Sempre fetch separato + merge.
 - **`_supabase.rpc().catch()` NON ESISTE** v2 — usare async/await.
 - **Regex Python multi-line `[\s\S]*?`** per riscrivere codice è pericolosa: ha già cancellato funzioni intere. Edit puntuale > regex.
@@ -342,7 +342,8 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 - 5 step. `fTipo`, `fMerce`, `fGiorni` sono `<input type="hidden">` aggiornati via JS (non select). `stato` radio hidden via `selectStato()`.
 - Step 1 auto-avanza al click. Step 5 auto-suggest titolo da comune+tipo+settore.
-- Prezzo: 100-400.000€ (range realistico posteggi mercatali), **input via `style=""` inline** (padding/font/color) per battere la cascade `.field-input`. Sotto l'input: box amber soft con nudge anti-prezzo-civetta ("scrivi il prezzo reale, un prezzo civetta vende in media 3 volte meno"). I limiti NON sono mostrati in UI — chi sbaglia vede solo "Prezzo troppo basso/alto, controlla bene".
+- Prezzo: 101-400.000€ (range realistico posteggi mercatali, min 101 per bloccare il "100€ tondo civetta"), **input via `style=""` inline** (padding/font/color) per battere la cascade `.field-input`. Sotto l'input: box amber soft con nudge anti-prezzo-civetta ("scrivi il prezzo reale, un prezzo civetta vende in media 3 volte meno"). I limiti NON sono mostrati in UI — chi sbaglia vede solo "Prezzo troppo basso/alto, controlla bene".
+- **Preview card live nello step 5** (6 mag 2026): `#previewCard` sopra il bottone Pubblica, max-w 300px centrata, `pointer-events:none`. Funzione `_renderPreview()` costruisce un fakeListing (id `__preview__`, user_id `null` → cade su iniziale di `contatto`, status `active`, no featured/expires) e chiama `buildCard()` da data.js. Trigger: ingresso step 5 (subito + dopo `prefillContactFromSession`), `oninput` su `fTitolo`+`fNome`, dopo `_handleFiles` push, dopo `removeFile`. Foto via `URL.createObjectURL(_files[0])` salvato in `_previewObjectURL` globale e revocato prima di crearne uno nuovo (anti memory-leak). `getOptimizedImageUrl` cade nel try/catch su URL `blob:` e ritorna l'object URL invariato → preview funziona.
 - Anti-spam: 1 minuto. Timestamp PRIMA dell'insert, rimosso su errore.
 - **Telefono OBBLIGATORIO** (commit `3b5ac17`): `required` HTML5, asterisco rosso, banner `#missingPhoneBanner` se prefill non trova telefono nel profilo, bordo giallo, focus automatico, messaggio errore esplicito.
 - **Cache name/tel scope per user_id** (vedi sezione SECURITY).

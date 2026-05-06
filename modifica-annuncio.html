@@ -373,7 +373,7 @@ async function updateAnnuncio() {
     }
     // Salva il numero in formato canonico
     document.getElementById('fTel').value = normalizePhone(tel);
-    if (isNaN(prezzo) || prezzo < 100) {
+    if (isNaN(prezzo) || prezzo < 101) {
         showToast('Prezzo troppo basso, controlla bene.', 'warning');
         return;
     }
