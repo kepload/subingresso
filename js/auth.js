@@ -588,11 +588,22 @@ window.handleRegister = async function (e) {
         return;
     }
 
-    const nome     = document.getElementById('regNome').value.trim();
-    const cognome  = document.getElementById('regCognome').value.trim();
+    let nome     = document.getElementById('regNome').value.trim();
+    let cognome  = document.getElementById('regCognome').value.trim();
     const email    = document.getElementById('regEmail').value.trim();
     const telRaw   = document.getElementById('regTelefono').value.trim();
     const password = document.getElementById('regPassword').value;
+
+    // Sanitize: se l'utente ha messo nome+cognome insieme nel campo nome
+    // (es. nome="Gianfranco Dona", cognome="Dona") rimuovi il cognome dal nome.
+    // Match per parola (case-insensitive) e solo se cognome compare in coda.
+    if (nome && cognome) {
+        const words = nome.split(/\s+/);
+        const last = words[words.length - 1] || '';
+        if (words.length > 1 && last.toLowerCase() === cognome.toLowerCase()) {
+            nome = words.slice(0, -1).join(' ').trim();
+        }
+    }
 
     // Telefono opzionale, ma se compilato deve essere valido
     if (telRaw && !isValidItalianPhone(telRaw)) {

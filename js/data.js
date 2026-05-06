@@ -315,6 +315,21 @@ function _dayBadge(rawGiorni, tipo, size = 'sm') {
     }).filter(Boolean).join('');
 }
 
+// Format full name evitando duplicazioni (es. nome="Gianfranco Dona" + cognome="Dona"
+// → "Gianfranco Dona", non "Gianfranco Dona Dona"). Match per parola intera (case-
+// insensitive) per evitare falsi positivi tipo "Maria Donatella" + "Dona".
+// Sicuro come drop-in di [nome,cognome].filter(Boolean).join(' ').trim():
+// per i nomi senza duplicato il comportamento è identico.
+function formatFullName(nome, cognome) {
+    const n = (nome || '').trim();
+    const c = (cognome || '').trim();
+    if (!n) return c;
+    if (!c) return n;
+    const nameWords = n.split(/\s+/).map(w => w.toLowerCase());
+    if (nameWords.includes(c.toLowerCase())) return n;
+    return `${n} ${c}`;
+}
+
 function isListingFeatured(l) {
     return l && l.featured === true
         && l.featured_until

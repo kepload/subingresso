@@ -557,7 +557,7 @@ async function loadListings() {
                     .from('profiles').select('id, avatar_url, nome, cognome').in('id', uniqueIds);
                 if (profiles) profiles.forEach(p => {
                     if (p.avatar_url) USER_AVATARS[p.id] = p.avatar_url;
-                    const fullName = [p.nome, p.cognome].filter(Boolean).join(' ').trim();
+                    const fullName = formatFullName(p.nome, p.cognome);
                     if (fullName) USER_NAMES[p.id] = fullName;
                 });
             }

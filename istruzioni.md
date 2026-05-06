@@ -167,6 +167,18 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - Card anteprima: `h-20` mobile, `h-28` desktop.
 - Pagina annuncio: `h-36` mobile, `md:h-64` desktop (ridotto -20% rispetto al primo design).
 
+## 👤 Display Nome Utente — Anti-duplicato (6 mag 2026)
+
+**Bug storico**: utenti che mettevano nome+cognome insieme nel campo "Nome" del form registrazione (es. nome="Gianfranco Dona", cognome="Dona") venivano displayati ovunque come "Gianfranco Dona Dona" perché tutti i 10 punti display facevano `[nome,cognome].filter(Boolean).join(' ').trim()` naive.
+
+**Fix:**
+1. **`formatFullName(nome, cognome)` globale in `data.js`** — dedup PER PAROLA case-insensitive. Match parola intera (NO substring) per evitare falsi positivi tipo "Maria Donatella" + "Dona". Drop-in 1:1 del pattern naive: per nomi puliti il comportamento è identico, dedup attiva solo se cognome è già una parola del nome.
+2. **`auth.js handleRegister` sanitize input**: se l'ultima parola di `regNome` (case-insensitive) combacia con `regCognome`, la rimuove dal nome PRIMA di salvare. Previene il bug per i futuri utenti.
+3. **10 display point migrati** a `formatFullName`: dashboard.html (5: nameEl, admin user list, filter search, USER_NAMES, conv chat), index.html (USER_NAMES home), messaggi.html (`_displayName`), profilo.html (header), annunci.js (USER_NAMES grid), annuncio-detail.js (sellerFullName).
+4. **Edge functions NON toccate** (notify-message, notify-report, register-bypass): basso rischio user-facing, le email sono per admin. Sanitization client-side è sufficiente per il caso d'uso web. Server-side sanitize in register-bypass è un nice-to-have futuro (deploy con `--no-verify-jwt`).
+
+**Riparazione utente esistente** (Gianfranco): `UPDATE public.profiles SET nome='Gianfranco' WHERE id=...; UPDATE auth.users SET raw_user_meta_data=jsonb_set(...,'{nome}','"Gianfranco"') WHERE id=...;` — applicato 6 mag 2026.
+
 ## 🚫 Visitor Popup — Quando NON mostrarlo (6 mag 2026)
 
 `_scheduleVisitorPopup` (auth.js) controlla 3 condizioni prima di mostrare il popup "Vendi il tuo posteggio? 🎰":
@@ -528,8 +540,9 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 ## 🌐 Cache Versions Correnti
 
-- `data.js?v=15` (5 mag 2026 — `isListingExpired()` helper + badge "Scaduto" + opacità ridotta sulle card scadute).
-- `auth.js?v=14` (6 mag 2026 — visitor popup mai schedulato in `/vendi`; se modal auth aperto al fire del timer ritenta tra 3s invece di mostrare; helper `_isOnVendiPage()` + `_isAuthModalOpen()`).
+- `data.js?v=16` (6 mag 2026 — helper globale `formatFullName(nome, cognome)` con dedup PER PAROLA per evitare "Gianfranco Dona Dona").
+- `auth.js?v=15` (6 mag 2026 — `handleRegister` sanitizza `regNome`: se l'ultima parola di nome combacia col cognome la rimuove dal nome. Previene il bug per i futuri utenti).
+- `js/pages/annunci.js?v=6` e `js/pages/annuncio-detail.js?v=15` (6 mag 2026 — usano `formatFullName` per USER_NAMES e sellerFullName).
 - `annuncio-detail.js?v=14` (5 mag 2026 — banner "Annuncio scaduto" + blocco contatti via `_blockIfExpired()` su startChat/makeCall/openWhatsApp).
 - `ui-components.js?v=11` (5 mag 2026 — voce "Supporto" nel footer).
 - `annunci.js?v=5` (5 mag 2026 — `_normalizeDayName` NFD + select include `giorni` + layout pannello compatto).

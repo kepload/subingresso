@@ -379,7 +379,7 @@ async function initPage() {
                 const badgeEl  = document.getElementById('sellerBadge');
                 const linkEl   = document.getElementById('sellerProfileLink');
 
-                const sellerFullName = [seller.nome, seller.cognome].filter(Boolean).join(' ').trim();
+                const sellerFullName = formatFullName(seller.nome, seller.cognome);
                 if (seller.avatar_url) {
                     avatarEl.innerHTML = `<img src="${escapeHTML(seller.avatar_url)}" class="w-full h-full object-cover">`;
                 } else {

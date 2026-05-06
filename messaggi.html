@@ -244,7 +244,7 @@ function _otherUserOf(c) {
 }
 function _displayName(p) {
     if (!p) return 'Utente';
-    return `${p.nome || ''} ${p.cognome || ''}`.trim() || 'Utente';
+    return formatFullName(p.nome, p.cognome) || 'Utente';
 }
 function _avatarHTML(profile, size = 40) {
     const initial = (profile?.nome || '?').charAt(0).toUpperCase();
