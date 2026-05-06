@@ -19,21 +19,31 @@ begin
         return json_build_object('error', 'forbidden');
     end if;
 
+    -- Solo session live (cs_live_*). Esclude cs_test_* (transazioni di test
+    -- in fase di sviluppo). Le vetrine regalate admin non passano da payments
+    -- (vanno su annunci.featured_tier='admin_free'), quindi non serve filtrare
+    -- esplicitamente per tier.
     select json_build_object(
         'lifetime_cents', coalesce((
-            select sum(amount_cents) from public.payments where status = 'succeeded'
+            select sum(amount_cents) from public.payments
+            where status = 'succeeded'
+              and stripe_session_id like 'cs_live_%'
         ), 0),
         'mtd_cents', coalesce((
             select sum(amount_cents) from public.payments
             where status = 'succeeded'
+              and stripe_session_id like 'cs_live_%'
               and created_at >= date_trunc('month', now())
         ), 0),
         'count_paid', (
-            select count(*) from public.payments where status = 'succeeded'
+            select count(*) from public.payments
+            where status = 'succeeded'
+              and stripe_session_id like 'cs_live_%'
         ),
         'count_paid_mtd', (
             select count(*) from public.payments
             where status = 'succeeded'
+              and stripe_session_id like 'cs_live_%'
               and created_at >= date_trunc('month', now())
         )
     ) into res;
