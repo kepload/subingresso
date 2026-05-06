@@ -150,7 +150,7 @@
             </div>
 
             <!-- Security & Anomalie Panel -->
-            <div id="securityPanel" class="bg-gradient-to-br from-slate-900 to-slate-800 text-white border border-slate-700 rounded-3xl px-6 pt-6 pb-6 shadow-lg">
+            <div id="securityPanel" class="bg-gradient-to-br from-slate-900 to-slate-800 text-white border border-slate-700 rounded-3xl px-6 pt-6 pb-6 shadow-lg transition-all">
                 <div id="securityPanelHeader" class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <h3 class="font-black flex items-center gap-2 text-base">
                         <i class="fas fa-shield-alt text-blue-400"></i> Sicurezza &amp; Anomalie
@@ -2565,9 +2565,13 @@ function renderSecurityOverview(d) {
     // In stato compatto: rimuovi mb-5 dall'header (sennò sembra disallineato in basso)
     // e stringi padding-bottom del panel per centrare verticalmente la riga.
     if (header) header.classList.toggle('mb-5', hasIssues);
+    // Padding simmetrico in stato compatto (pt-5 pb-5) per centrare verticalmente
+    // la riga header. In stato espanso pt-6 pb-6 standard.
     if (panel) {
+        panel.classList.toggle('pt-6', hasIssues);
         panel.classList.toggle('pb-6', hasIssues);
-        panel.classList.toggle('pb-4', !hasIssues);
+        panel.classList.toggle('pt-5', !hasIssues);
+        panel.classList.toggle('pb-5', !hasIssues);
     }
 }
 
