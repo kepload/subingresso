@@ -186,6 +186,8 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **Confronti accent-insensitive**: il regex `/lunedi(?!ì)/g` non catturava forme unicode equivalenti (`ì` precomposto U+00EC vs `i+̀` combining grave). Soluzione robusta: `s.normalize('NFD').replace(/[̀-ͯ]/g, '')` rimuove tutti i diacritici. Pattern usato in `_normalizeDayName` (annunci.js) e `_dayBadge` (data.js).
 - **`modifica-annuncio.html` forza `status='pending'` su ogni UPDATE** (linea 414): è design intenzionale per re-moderare ogni edit, ma genera N richieste di approvazione admin per lo stesso annuncio quando l'utente modifica più volte (typo→foto→prezzo = 3 approvazioni). Il trigger `enforce_annunci_status` permette il regression `active→pending` (blocca solo l'opposto). Per alleggerire admin overhead: opzione "trust whitelist" (dopo N annunci approvati, modifiche restano active) — non implementata, da valutare se l'overhead diventa pesante.
 - **`vendi.html` salva il telefono in `annunci.contatto`/`annunci.tel` ma NON aggiorna `profiles.telefono`** se vuoto. Causa il drop nel funnel admin "primo annuncio→telefono nel profilo": utenti che hanno annunci attivi senza telefono in profilo. Fix futuro: dopo INSERT annuncio fare upsert su `profiles.telefono` se vuoto. Non urgente.
+- **Bucket timezone mismatch** (6 mag 2026, growth chart admin): la RPC `admin_page_views_stats` ritorna `bucket = date_trunc('month', created_at)` in UTC. Il client costruiva il loop dei mesi con `new Date(y, m, 1)` (local time Roma) e poi calcolava la key con `getUTCMonth()` → in CEST/CET il 1 del mese local cade nel mese precedente UTC, quindi la key non matchava mai il bucket → linea Visite a 0. Regola: quando matchi bucket DB con loop client, usa local time **consistentemente** (`getFullYear`/`getMonth`, non `getUTC*`). Stesso vale per `dayKey` su `daily_30`.
+- **Stripe test mode in payments**: una transazione `cs_test_*` con `status='succeeded'` può finire in DB durante lo sviluppo e gonfiare le stats revenue. Sempre filtrare `stripe_session_id LIKE 'cs_live_%'` quando si calcolano metriche di guadagno.
 
 ## 🤖 Blog Generator (`js/blog-generator.js`)
 
@@ -223,6 +225,8 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): chi compra/riceve vetrina mantiene il default 200gg post. Vetrina = solo featured/posizione/visibilità. Stripe-webhook + adminGrantVetrina ripuliti, edge function re-deployata.
 - **Admin Vetrina gratuita**: `adminGrantVetrina(30|90)` scrive `featured_tier='admin_free'`. `adminRevokeVetrina(id)` azzera.
 - **Card featured redesign**: glow box-shadow aureo, sfondo gradient amber-50/50→white, barra top 3px, badge crown + animate-pulse, footer "Annuncio in Vetrina ★★★★★".
+- **Modal pricing layout** (6 mag 2026): totale grande (`€ 59,90`) + giornaliero leggibile sotto (`€ 0,67 / giorno` text-xs). Niente più "una tantum" sui bottoni — la rassicurazione anti-rinnovo è nel footer del modal accanto al lock Stripe (`pagamento unico, no abbonamento`). Sottotitoli a sinistra puliti dal duplicato del giornaliero. Benefit grid ridotta a 3 colonne: `+ Visualizzazioni / Vendi prima / In cima` (rimosso "Post più lungo" perché vetrina non estende più `expires_at`).
+- **Box admin "Guadagno Vetrine"** (sostituisce "In Vetrina"): RPC `admin_revenue_stats()` SECURITY DEFINER bypassa RLS owner-only di `payments`. Filtra `status='succeeded' AND stripe_session_id LIKE 'cs_live_%'` (esclude test mode + admin_free + welcome_lottery che non passano da payments). Box vira al verde quando `today_cents > 0` con pill `+ €X oggi` sotto. Layout: label, totale grande, pill verde animata se vendita oggi. Patch in `PATCH_ADMIN_REVENUE_20260506.sql` (idempotente).
 
 ## 🎰 Lotteria Welcome Vetrina
 
@@ -292,11 +296,12 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 ## 🛡️ Pannello Sicurezza Admin
 
 - **`pendingReviewSection` sopra "Crescita del sito"** in `dashboard.html`. Bordo amber-300, shadow-md. Hidden by default → visibile se `loadPendingListings()` trova data.length > 0. Errore mostrato anche se hidden.
-- **`securityPanel`** sempre visibile (gradient slate scuro):
+- **`securityPanel`** sempre visibile (gradient slate scuro). Comportamento collassabile (6 mag 2026):
+  - **0 anomalie**: solo header + bottone "Esegui check" + pill verde inline `✓ Tutto ok`. Padding simmetrico `pt-5 pb-5` per centrare la riga. Le 4 stat box (`securityStats`) e il blocco "Tutto sotto controllo" (`securityAllClear`) sono nascosti — rumore inutile quando va bene.
+  - **≥1 anomalia**: ricompaiono le 4 stat box (signup 1h/24h/7g/non confermati) + `securitySuspectSection` + `securityAlertsSection`. Padding torna `pt-6 pb-6`, header riacquista `mb-5`.
   - 4 badge stats: signup ultima ora (red ≥20), 24h, 7g, non confermati 24h (red ≥10).
   - `securitySuspectSection`: account che matchano pattern probe/scanner (`.invalid$`, `.test$`, `.local$`, `.example$`, domini temp-mail, `^word_unixtimestamp@`, keyword `rlstest|hunter_|owasp|sqlmap|injection|xsstest|burpcollab`). Bottone Elimina.
   - `securityAlertsSection`: ultime 5 entries di `admin_alerts_log` con `issues_count > 0`.
-  - `securityAllClear`: 0 sospetti + 0 anomalie.
   - Bottone "Esegui check" → POST a `admin-anomaly-check`.
 - **RPC `admin_security_overview()`** SECURITY DEFINER, check `is_admin = true`. Ritorna jsonb con signups + suspect + alerts.
 - **RPC `admin_listings_per_regione()`** lista regioni con count annunci attivi.
@@ -386,6 +391,16 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 - **Tailwind precompilato** `css/tailwind.css?v=2` (~50KB minified). Build: `npx tailwindcss -i tailwind.input.css -o css/tailwind.css --minify`. NO più CDN.
 - **Page views tracking interno**: tabella `page_views`. Tracker `js/page-view-tracker.js` su 17 pagine pubbliche, dedup per (visitor, path, session).
 - **RPC `admin_page_views_stats()`** total/today/monthly/yearly/daily-30. RPC `admin_funnel_stats()` ritorna 5 campi ma la dashboard ne renderizza 4 (signups, primo annuncio, annuncio contattato, conversazione attiva). `profile_complete` (telefono) ignorato — opzionale al signup, ridondante. `first_contact_received` = distinct `venditore_id` da `conversazioni`. `first_message_sent` = distinct `mittente_id` da `messaggi`.
+
+## 📈 Growth Chart Admin (`loadAdminGrowthChart`)
+
+- 4 serie line chart: Iscritti / Annunci / Vetrine / Visite. Tab: **30gg / Mese / Anno / Storico**.
+- **Doppio asse Y** (6 mag 2026): Visite su `y1` (asse destro, ticks viola, formattazione `k` per migliaia), iscritti/annunci/vetrine su `y` sinistro. Necessario perché le visite sono di ordini di grandezza superiori e schiacciavano le altre tre linee.
+- **Bucket key in local time**: `monthKey`/`yearKey`/`dayKey` usano `getFullYear/getMonth/getDate` (non `getUTC*`). Vedi nota timezone in "Bug Storici Generalizzabili".
+- **30gg** usa `daily_30` della RPC con bucket UTC truncato a giorno → mismatch di 1-2h alle estremità giornata in Roma è accettabile (visibile solo con pochissime views/giorno). Per fix preciso al 100% serve `date_trunc('day', x AT TIME ZONE 'Europe/Rome')` lato RPC.
+- **Storico**: parte dal primo `created_at` trovato fra profiles/annunci/vetrine, mese per mese fino ad oggi.
+- **Le serie rappresentano incrementi nel periodo**, non totali cumulativi (sottotitolo `(nuovi per mese)`). Nessuna modalità cumulativa.
+- Legenda HTML statica sotto al canvas (non Chart.js legend, disabilitata): include hint `→ scala dx` su Visite.
 
 ## 🔔 Notifiche UI
 
