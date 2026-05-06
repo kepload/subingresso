@@ -602,9 +602,9 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 Pivot da "tutorial generico bandi" a "lista bandi reali" + sezione regionale unica + CTA `/annunci?regione=X`. Motivo: search intent mismatch — query "posteggi mercato [regione]" è transactional, il tutorial era informational → bounce alto, zero conversioni.
 
-### Stato (6 mag 2026)
-- ✅ **15 fatte**: Lombardia (autonomo), Piemonte, Lazio, Veneto, Emilia-Romagna, Toscana, Campania, Puglia, Sicilia, Liguria, Marche, Trentino-A.A., Sardegna, Friuli-V.G., Valle d'Aosta.
-- ❌ **5 da fare** (priorità bassa, basso volume search): Umbria, Abruzzo, Molise, Basilicata, Calabria.
+### Stato (6 mag 2026 — 20/20 COMPLETO)
+- ✅ **20 fatte**: Lombardia (autonomo), Piemonte, Lazio, Veneto, Emilia-Romagna, Toscana, Campania, Puglia, Sicilia, Liguria, Marche, Trentino-A.A., Sardegna, Friuli-V.G., Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria.
+- Le ultime 5 (Umbria/Abruzzo/Molise/Basilicata/Calabria, basso volume search) chiuse il 6 mag 2026 sera.
 
 ### Template
 - Slug: `bandi-posteggi-mercatali-{regione}` (lowercase, hyphenated). Categoria DB: `Bandi`.
@@ -615,6 +615,11 @@ Pivot da "tutorial generico bandi" a "lista bandi reali" + sezione regionale uni
 - Per ogni bando: Comune, n. posteggi, scadenza esatta, durata concessione, settore, link/PEC. Date precise > vaghe.
 
 ### Sistemi regionali speciali scoperti (ognuno ha la sua "regola d'oro")
+- **Umbria**: regione di festival, i bandi più ricchi sono eventistici annuali (Eurochocolate Perugia, Umbria Jazz, Festival Spoleto, Quintana Foligno, Calendimaggio Assisi, Tartufo Norcia). Eurochocolate ha tariffe 2-6k€ per i 9gg. Norcia post-sisma 2016 ha bandi atipici di riassegnazione container del Quadrilatero del Tartufo.
+- **Abruzzo**: doppio binario costa/montagna. Bandi marzo-aprile per costa estiva (Pescara, Montesilvano, Vasto), settembre-ottobre per montagna invernale (Roccaraso, Pescasseroli). L'Aquila offre tariffe agevolate 3 anni nel centro storico riaperto post-sisma 2009. Costa dei Trabocchi (ciclovia 42km Vasto-Francavilla) bandi nuovi food/artigianato dal 2024.
+- **Molise**: la regione **più accessibile d'Italia**. Bandi ricevono 10-15 domande dove in Lombardia ne riceverebbero 80-100 → vincibili al primo tentativo. Trampolino per costruirsi decennale e poi espandersi. Costa cortissima (35 km), Tratturi UNESCO 2019 nicchia food artigianale a concorrenza zero.
+- **Basilicata**: tre economie distinte. Matera post-2019 (Capitale Cultura) con boom turistico permanente da 320k→700k visitatori e tariffe Sassi premium ma fatturati 3-4x. Costa tirrenica corta premium (Maratea), costa ionica più lunga e popolare (Metaponto-Policoro). Vulture (Aglianico DOC) sagre enologiche autunnali.
+- **Calabria**: 716 km di costa (più lunga del Sud dopo Sicilia). Tirreno premium nazionale/internazionale (Costa degli Dei: Pizzo-Tropea-Capo Vaticano), Ionio popolare familiare (Riviera dei Gelsomini). 4 sagre cardine: Peperoncino Festival Diamante (100k+ visitatori, settembre), Cipolla Tropea, Tartufo Pizzo, Bergamotto Reggio.
 - **Emilia-Romagna**: Comuni trasmettono elenco posteggi liberi a gennaio + luglio.
 - **Campania**: 30 luglio scadenza Comuni → Regione → BURC + decreto unico (es. Decreto Dirigenziale 66/2025).
 - **Puglia**: 30 aprile + 30 settembre Comuni → BURP entro 30gg → bandi semestrali maggio/ottobre. Sistema più organizzato d'Italia.
@@ -639,7 +644,7 @@ Pivot da "tutorial generico bandi" a "lista bandi reali" + sezione regionale uni
 - Sitemap dinamica fa fetch ogni 1h, niente da rigenerare.
 
 ### Output finora — char per articolo
-Valle d'Aosta 5478, Friuli-V.G. 5416, Lombardia 5322, Trentino-A.A. 5278, Sardegna 5165, Sicilia 4950, Liguria 4385, Lazio 4291, Puglia 4246, Campania 4110, Emilia-R. 4015, Veneto 3993, Toscana 3814, Marche 3730, Piemonte 3347.
+Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'Aosta 5478, Friuli-V.G. 5416, Lombardia 5322, Trentino-A.A. 5278, Sardegna 5165, Sicilia 4950, Liguria 4385, Lazio 4291, Puglia 4246, Campania 4110, Emilia-R. 4015, Veneto 3993, Toscana 3814, Marche 3730, Piemonte 3347.
 
 ## 🐌 Pubblicazione Annuncio — Lessons Learned
 
@@ -650,7 +655,7 @@ Valle d'Aosta 5478, Friuli-V.G. 5416, Lombardia 5322, Trentino-A.A. 5278, Sardeg
 ## ⏳ TODO Aperti
 
 1. **Indicizzazione Search Console**: continuare ~10 URL/giorno. Lista in `C:\Users\utente\Desktop\indicizzazione-search-console.txt` (utility, non parte del repo).
-2. **Replica articolo bandi alle 5 regioni rimaste**: Umbria, Abruzzo, Molise, Basilicata, Calabria. Trentino-A.A., Sardegna, Friuli-V.G. e Valle d'Aosta completati il 6 mag 2026. Le altre 5 a basso volume search, fare a richiesta.
+2. ~~**Replica articolo bandi alle 5 regioni rimaste**: Umbria, Abruzzo, Molise, Basilicata, Calabria.~~ ✅ Chiuso 6 mag 2026 sera. **20/20 regioni complete**.
 3. **Annunci Demo**: 10 annunci finti (Carla M., Marco V.) admin. Da cancellare quando ci saranno 30+ annunci reali.
 4. **Privacy policy**: 3 placeholder `[NOME TITOLARE]`, `[INDIRIZZO + P.IVA]`, `[EMAIL CONTATTO]` da compilare prima del go-live legale.
 5. **Spalmare 2 cron settimanali su giorni diversi** (5 min, allunga vita free Resend).
@@ -663,6 +668,11 @@ Valle d'Aosta 5478, Friuli-V.G. 5416, Lombardia 5322, Trentino-A.A. 5278, Sardeg
 ### TODO chiusi (6 mag 2026)
 - ~~10 articoli blog regioni con tutorial generico (Piemonte→Marche)~~ ✅ riscritti con bandi reali + sezione regionale unica + CTA `/annunci?regione=`. Lombardia era già fatta. Restano 9 regioni a basso volume (Friuli, Trentino, Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria, Sardegna).
 - ~~Vetrina estendeva `expires_at` (cap 230/300/400)~~ ✅ rimosso. Tutti i post valgono 200gg, vetrina = solo featured/posizione. Stripe-webhook re-deployato pulito.
+
+### TODO chiusi (6 mag 2026 — sessione sera)
+- ~~Bug grosso: admin e user di prova non vedevano i propri annunci attivi nella dashboard "I miei annunci"~~ ✅ causa: `saved_count` (colonna aggiunta dal patch del mattino) senza GRANT SELECT per anon/authenticated, postgres non lo propaga su tabelle column-restricted (REVOKE su tel/email). `select(...,saved_count,...)` tornava 42501 silenzioso → "Nessun annuncio". Fix: GRANT SELECT (saved_count) ON annunci, niente codice JS toccato. Aggiornato anche PATCH originale + bullet evergreen in istruzioni.
+- ~~Card "I miei annunci" dashboard non cliccabili → utente non poteva vedere come appare il proprio annuncio dal pubblico~~ ✅ thumbnail + titolo wrappati in `<a target="_blank">` verso `/annuncio?id=ID`, hover ring blu / text-blue-600. Bottoni azione invariati (fratelli dell'<a>, non figli, niente conflitti).
+- ~~Articoli bandi 5 regioni rimaste (Umbria, Abruzzo, Molise, Basilicata, Calabria)~~ ✅ tutte e 5 riscritte con nuovo template (bandi reali + sezione regionale unica + CTA `/annunci?regione=`). **20/20 regioni italiane ora coperte.** Lengths: Umbria 6403, Abruzzo 7371, Molise 7276, Basilicata 7898, Calabria 8866.
 
 ### TODO chiusi (6 mag 2026 — sessione pomeriggio)
 - ~~Prezzi civetta a 100€ tondo per attirare click~~ ✅ min 101 (blocca il "100 tondo"), max 400.000 (range realistico posteggi), messaggi vaghi senza rivelare i limiti, nudge box amber "prezzo civetta vende 3 volte meno".
