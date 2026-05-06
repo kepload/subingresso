@@ -173,7 +173,7 @@ module.exports = async function handler(req, res) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
     <title>${esc(title)}</title>
     <meta name="description"        id="metaDesc" content="${esc(desc)}">
     <meta property="og:title"       id="ogTitle"  content="${esc(title)}">
