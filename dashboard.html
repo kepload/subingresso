@@ -150,8 +150,8 @@
             </div>
 
             <!-- Security & Anomalie Panel -->
-            <div id="securityPanel" class="bg-gradient-to-br from-slate-900 to-slate-800 text-white border border-slate-700 rounded-3xl p-6 shadow-lg">
-                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+            <div id="securityPanel" class="bg-gradient-to-br from-slate-900 to-slate-800 text-white border border-slate-700 rounded-3xl px-6 pt-6 pb-6 shadow-lg">
+                <div id="securityPanelHeader" class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <h3 class="font-black flex items-center gap-2 text-base">
                         <i class="fas fa-shield-alt text-blue-400"></i> Sicurezza &amp; Anomalie
                         <span id="securityAlertBadge" class="hidden bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full"></span>
@@ -2557,9 +2557,18 @@ function renderSecurityOverview(d) {
     const stats     = document.getElementById('securityStats');
     const allClear  = document.getElementById('securityAllClear');
     const okBadge   = document.getElementById('securityOkBadge');
+    const panel     = document.getElementById('securityPanel');
+    const header    = document.getElementById('securityPanelHeader');
     if (stats)    stats.classList.toggle('hidden', !hasIssues);
     if (allClear) allClear.classList.add('hidden');
     if (okBadge)  okBadge.classList.toggle('hidden', hasIssues);
+    // In stato compatto: rimuovi mb-5 dall'header (sennò sembra disallineato in basso)
+    // e stringi padding-bottom del panel per centrare verticalmente la riga.
+    if (header) header.classList.toggle('mb-5', hasIssues);
+    if (panel) {
+        panel.classList.toggle('pb-6', hasIssues);
+        panel.classList.toggle('pb-4', !hasIssues);
+    }
 }
 
 // ── Segnalazioni ─────────────────────────────────────────
