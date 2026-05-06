@@ -281,19 +281,42 @@ function _injectVisitorPopup() {
     </div>`);
 }
 
+function _isOnVendiPage() {
+    try {
+        const p = (location.pathname || '').toLowerCase();
+        return p === '/vendi' || p === '/vendi.html' || p.endsWith('/vendi') || p.endsWith('/vendi.html');
+    } catch (_) { return false; }
+}
+
+function _isAuthModalOpen() {
+    const overlay = document.getElementById('authOverlay');
+    return !!(overlay && !overlay.classList.contains('hidden'));
+}
+
 function _scheduleVisitorPopup() {
     if (sessionStorage.getItem('_vp')) return;
-    setTimeout(async () => {
+    // Mai distrarre l'utente durante la pubblicazione di un annuncio
+    if (_isOnVendiPage()) return;
+    const fire = async function() {
         if (sessionStorage.getItem('_vp')) return;
+        if (_isOnVendiPage()) return;
         try {
             const { data } = await _supabase.auth.getSession();
             if (data?.session) return;
         } catch (_) {}
+        // Modal auth aperto = utente sta gia registrandosi/loggando: ritenta tra 3s.
+        // Se si logga, onAuthStateChange chiama _suppressVisitorPopup e _vp blocca.
+        // Se chiude senza loggarsi, al prossimo check il popup partira.
+        if (_isAuthModalOpen()) {
+            setTimeout(fire, 3000);
+            return;
+        }
         sessionStorage.setItem('_vp', '1');
         _injectVisitorPopup();
         const el = document.getElementById('visitorPopup');
         if (el) { el.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-    }, 8000);
+    };
+    setTimeout(fire, 8000);
 }
 
 function _suppressVisitorPopup() {

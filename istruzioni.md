@@ -167,6 +167,16 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - Card anteprima: `h-20` mobile, `h-28` desktop.
 - Pagina annuncio: `h-36` mobile, `md:h-64` desktop (ridotto -20% rispetto al primo design).
 
+## 🚫 Visitor Popup — Quando NON mostrarlo (6 mag 2026)
+
+`_scheduleVisitorPopup` (auth.js) controlla 3 condizioni prima di mostrare il popup "Vendi il tuo posteggio? 🎰":
+
+1. **Mai in `/vendi`** — early return in schedule + double-check in fire (helper `_isOnVendiPage()`). L'utente che sta pubblicando un annuncio NON viene distratto.
+2. **Mai mentre il modal auth è aperto** — se `_isAuthModalOpen()` al momento del fire, ri-schedula in 3s. Loop di check finché modal chiuso.
+3. **Auto-suppress se utente si logga durante l'attesa**: `onAuthStateChange` (auth.js:908) chiama `_suppressVisitorPopup` → setta `_vp=1` → loop esce.
+
+Il popup quindi: (a) si vede in homepage/annunci/blog dopo 8s se anonimo, (b) NON si vede se nel frattempo è stato aperto il modal auth → l'utente chiude senza loggarsi → popup compare alla prossima opportunità (3s loop), (c) NON si vede mai in `/vendi`.
+
 ## 🪤 Sunk-Cost Auth nel funnel vendi (6 mag 2026)
 
 L'utente non loggato compila tutti i 5 step SENZA vedere mai il banner "devi registrarti", e SCOPRE il modal solo al click "Pubblica annuncio gratis". Massimizza il sunk cost: chi ha già scritto titolo+descrizione+foto è incentivato a finire.
@@ -519,7 +529,7 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 ## 🌐 Cache Versions Correnti
 
 - `data.js?v=15` (5 mag 2026 — `isListingExpired()` helper + badge "Scaduto" + opacità ridotta sulle card scadute).
-- `auth.js?v=13` (6 mag 2026 — `openAuthModal(tab, contextMsg)` accetta secondo arg per banner contestuale `#authContextBanner` in cima al modal; cleanup in `closeAuthModal`).
+- `auth.js?v=14` (6 mag 2026 — visitor popup mai schedulato in `/vendi`; se modal auth aperto al fire del timer ritenta tra 3s invece di mostrare; helper `_isOnVendiPage()` + `_isAuthModalOpen()`).
 - `annuncio-detail.js?v=14` (5 mag 2026 — banner "Annuncio scaduto" + blocco contatti via `_blockIfExpired()` su startChat/makeCall/openWhatsApp).
 - `ui-components.js?v=11` (5 mag 2026 — voce "Supporto" nel footer).
 - `annunci.js?v=5` (5 mag 2026 — `_normalizeDayName` NFD + select include `giorni` + layout pannello compatto).
