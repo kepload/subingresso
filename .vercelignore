@@ -10,3 +10,8 @@ setup-database.sql
 node_modules
 scripts/.bin
 supabase/.temp
+
+# File statico orfano: con cleanUrls intercetta /annuncio e blocca
+# il rewrite /annuncio -> /api/annuncio. Il SSR è in api/annuncio.js
+# (template inline). NON ripristinare il deploy di questo file.
+annuncio.html
