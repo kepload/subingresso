@@ -37,7 +37,7 @@ Deno.serve(async (req) => {
     // Tutti gli annunci active raggruppati per user_id
     const { data: listings } = await supabase
       .from('annunci')
-      .select('id, titolo, user_id, visualizzazioni')
+      .select('id, titolo, user_id, visualizzazioni, saved_count')
       .eq('status', 'active');
 
     if (!listings || listings.length === 0) {
@@ -45,10 +45,11 @@ Deno.serve(async (req) => {
     }
 
     // Aggrega per venditore
-    const bySeller = new Map<string, { totalViews: number; count: number; titoli: string[] }>();
+    const bySeller = new Map<string, { totalViews: number; totalSaved: number; count: number; titoli: string[] }>();
     for (const l of listings) {
-      const entry = bySeller.get(l.user_id) || { totalViews: 0, count: 0, titoli: [] };
+      const entry = bySeller.get(l.user_id) || { totalViews: 0, totalSaved: 0, count: 0, titoli: [] };
       entry.totalViews += (l.visualizzazioni || 0);
+      entry.totalSaved += (l.saved_count || 0);
       entry.count += 1;
       if (entry.titoli.length < 3) entry.titoli.push(l.titolo);
       bySeller.set(l.user_id, entry);
@@ -137,14 +138,18 @@ Deno.serve(async (req) => {
               <p style="margin:0;color:${deltaColor};font-size:13px;font-weight:700;">${deltaLabel}</p>
             </div>
 
-            <div style="display:flex;gap:12px;margin-bottom:24px;">
-              <div style="flex:1;background:#f8fafc;border-radius:10px;padding:16px;text-align:center;">
+            <div style="display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;">
+              <div style="flex:1;min-width:120px;background:#f8fafc;border-radius:10px;padding:16px;text-align:center;">
                 <p style="margin:0 0 4px;color:#64748b;font-size:11px;font-weight:700;text-transform:uppercase;">Annunci attivi</p>
                 <p style="margin:0;color:#0f172a;font-size:22px;font-weight:900;">${stats.count}</p>
               </div>
-              <div style="flex:1;background:#f8fafc;border-radius:10px;padding:16px;text-align:center;">
+              <div style="flex:1;min-width:120px;background:#f8fafc;border-radius:10px;padding:16px;text-align:center;">
                 <p style="margin:0 0 4px;color:#64748b;font-size:11px;font-weight:700;text-transform:uppercase;">Views totali</p>
                 <p style="margin:0;color:#0f172a;font-size:22px;font-weight:900;">${stats.totalViews}</p>
+              </div>
+              <div style="flex:1;min-width:120px;background:#eff6ff;border-radius:10px;padding:16px;text-align:center;">
+                <p style="margin:0 0 4px;color:#2563eb;font-size:11px;font-weight:700;text-transform:uppercase;">Salvati</p>
+                <p style="margin:0;color:#1d4ed8;font-size:22px;font-weight:900;">${stats.totalSaved} 🔖</p>
               </div>
             </div>
 

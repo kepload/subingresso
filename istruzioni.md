@@ -167,6 +167,23 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - Card anteprima: `h-20` mobile, `h-28` desktop.
 - Pagina annuncio: `h-36` mobile, `md:h-64` desktop (ridotto -20% rispetto al primo design).
 
+## 🔖 Saved Count (preferiti) — visibile, autore privato (6 mag 2026)
+
+Il venditore può vedere **quanti** hanno salvato il proprio annuncio, ma NON CHI (privacy by-design).
+
+**Schema (`PATCH_AMO_EXTEND_AND_SAVED_COUNT_20260506.sql`):**
+- Colonna `annunci.saved_count int NOT NULL DEFAULT 0`
+- Backfill iniziale: `UPDATE annunci SET saved_count = (SELECT count FROM saved_listings WHERE annuncio_id = a.id)`
+- Index `idx_saved_listings_annuncio` su `(annuncio_id)` per trigger lookup
+- Trigger `trg_sync_saved_count` AFTER INSERT/DELETE su saved_listings → +1/-1 atomico su annunci.saved_count. Function SECURITY DEFINER per bypassare RLS owner-only di annunci
+
+**Privacy:** RLS di `saved_listings` resta owner-only (l'utente vede solo i propri preferiti). `saved_count` è AGGREGATO (un int, non rivela autori) → safe da esporre. Pattern simile a `visualizzazioni`.
+
+**Display:**
+- Pagina annuncio (`annuncio.html` + `annuncio-detail.js?v=17`): `#savedCount` accanto a `#viewCount` nel title block. Visibile a TUTTI (social proof) se `saved_count > 0`. Privacy preservata.
+- Dashboard "I miei annunci" (`loadMyListings`): icona bookmark blu nella riga stats, sempre visibile se `saved_count > 0`. Select aggiornato per includere `saved_count`.
+- Email weekly-seller-stats: aggiunta card "Salvati 🔖" accanto a "Annunci attivi" / "Views totali". `bySeller.totalSaved` aggregato. Edge function re-deployata 6 mag 2026.
+
 ## 📊 Funnel Registrazione per Sorgente (6 mag 2026)
 
 Tracciamento full funnel per capire conversion rate per ogni sorgente che apre il modal registrazione (popup vetrina, banner blog, click "Pubblica annuncio", nav "Accedi", salva preferito, valutatore, tel reveal, direct).
@@ -183,8 +200,8 @@ Tracciamento full funnel per capire conversion rate per ogni sorgente che apre i
 - `_amo_session` UUID generato in `sessionStorage` alla prima apertura modal (no localStorage = scompare a tab close)
 - `_trackModalOpen(source)` async silent-fail in `auth.js` chiamata da `openAuthModal(tab, contextMsg, source)` con il terzo arg
 - `time_bucket` = "YYYYMMDDHHMM" UTC → finestra dedup 1 minuto
-- 9 sorgenti tipizzate: `popup_vetrina, blog_promo, vendi_submit, nav_accedi, salva_preferito, valutatore_create, welcome_popup, tel_reveal, direct`
-- 11 call site di `openAuthModal` aggiornati con la source corretta
+- **12 sorgenti tipizzate** (post 6 mag 2026): `popup_vetrina, blog_promo, vendi_submit, nav_accedi, salva_preferito, valutatore_create, welcome_popup, tel_reveal, direct, chat_click, whatsapp_click, call_click`
+- 11 call site di `openAuthModal` aggiornati con la source corretta + 3 call site `requireAuth(callback, source)` in `annuncio-detail.js` (chat/whatsapp/call). `requireAuth` propaga la source a `openAuthModal`
 
 **Lotteria welcome_lottery_eligible** ora attivata da `_reg_src IN ('popup_vetrina', 'blog_promo')`. Retro-compat: accetta anche il vecchio `'popup'` se residuo in sessione.
 
@@ -570,9 +587,9 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 ## 🌐 Cache Versions Correnti
 
 - `data.js?v=17` (6 mag 2026 — `toggleSaveListing` passa source `salva_preferito` a `openAuthModal`).
-- `auth.js?v=16` (6 mag 2026 — `_trackModalOpen()` insert su `auth_modal_opens` + `openAuthModal(tab, contextMsg, source)` accetta terzo arg + `_afterRegisterSuccess` chiama RPC `amo_link_signup`. `_reg_src` passa da `'popup'` a `'popup_vetrina'`/`'blog_promo'` con retro-compat per check lotteria).
+- `auth.js?v=17` (6 mag 2026 — `requireAuth(callback, source)` accetta secondo arg per propagare la source ai 3 pulsanti contatto annuncio. Tutto il resto invariato).
 - `js/pages/annunci.js?v=6` (6 mag 2026 — formatFullName per USER_NAMES).
-- `js/pages/annuncio-detail.js?v=16` (6 mag 2026 — formatFullName per sellerFullName + source `tel_reveal` su openAuthModal).
+- `js/pages/annuncio-detail.js?v=17` (6 mag 2026 — `makeCall`/`startChat`/`openWhatsApp` passano `call_click`/`chat_click`/`whatsapp_click` a `requireAuth`. Display `#savedCount` se annuncio ha `saved_count > 0`. Select primary include `saved_count`).
 - `annuncio-detail.js?v=14` (5 mag 2026 — banner "Annuncio scaduto" + blocco contatti via `_blockIfExpired()` su startChat/makeCall/openWhatsApp).
 - `ui-components.js?v=11` (5 mag 2026 — voce "Supporto" nel footer).
 - `annunci.js?v=5` (5 mag 2026 — `_normalizeDayName` NFD + select include `giorni` + layout pannello compatto).

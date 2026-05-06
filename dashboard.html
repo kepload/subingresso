@@ -917,7 +917,7 @@
 <script src="js/supabase-config.js?v=3"></script>
 <script src="js/page-view-tracker.js?v=1"></script>
 <script src="js/data.js?v=17"></script>
-<script src="js/auth.js?v=16"></script>
+<script src="js/auth.js?v=17"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <script>
 
@@ -1577,6 +1577,9 @@ const _AMO_LABELS = {
     valutatore_create: { label: 'Crea account valutatore',icon: 'fa-calculator',   bg: 'bg-emerald-50', fg: 'text-emerald-500' },
     welcome_popup:     { label: 'Welcome popup',          icon: 'fa-hand-sparkles',bg: 'bg-blue-50',    fg: 'text-blue-500'    },
     tel_reveal:        { label: 'Vedi telefono completo', icon: 'fa-phone',        bg: 'bg-slate-100',  fg: 'text-slate-500'   },
+    chat_click:        { label: 'Click "Messaggia"',      icon: 'fa-comment-alt',  bg: 'bg-blue-50',    fg: 'text-blue-500'    },
+    whatsapp_click:    { label: 'Click "WhatsApp"',       icon: 'fa-comment-dots', bg: 'bg-emerald-50', fg: 'text-emerald-500' },
+    call_click:        { label: 'Click "Chiama"',         icon: 'fa-phone-alt',    bg: 'bg-emerald-50', fg: 'text-emerald-500' },
     direct:            { label: 'Diretto / altro',        icon: 'fa-link',         bg: 'bg-slate-100',  fg: 'text-slate-500'   },
 };
 
@@ -2372,7 +2375,7 @@ async function loadMyListings() {
     // NB: select esplicito senza tel/email (REVOKE per authenticated dal 3 mag 2026).
     const { data, error } = await _supabase
         .from('annunci')
-        .select('id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, featured, featured_until, featured_tier, featured_since, video_url')
+        .select('id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, saved_count, featured, featured_until, featured_tier, featured_since, video_url')
         .eq('user_id', _currentUser.id)
         .neq('status', 'deleted')
         .order('created_at', { ascending: false });
@@ -2437,7 +2440,7 @@ async function loadMyListings() {
                 <h3 class="font-black text-slate-900 text-sm md:text-base leading-snug truncate">${escapeHTML(l.titolo || '')}</h3>
                 <p class="text-[11px] text-slate-400 font-medium mt-0.5 truncate">
                     <i class="fas fa-map-marker-alt mr-1"></i>${escapeHTML(l.comune || '')}, ${escapeHTML(l.regione || '')} ·
-                    <i class="fas fa-euro-sign mx-0.5"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'}${l.visualizzazioni ? ` · <i class="fas fa-eye ml-0.5 mr-0.5"></i>${l.visualizzazioni}` : ''}${isFeatured ? ` · <i class="fas fa-phone-alt text-emerald-500 ml-0.5 mr-0.5"></i><span class="text-emerald-600 font-bold">${l.tel_clicks || 0} click</span>` : ''}
+                    <i class="fas fa-euro-sign mx-0.5"></i>${l.prezzo ? l.prezzo.toLocaleString('it-IT') : '—'}${l.visualizzazioni ? ` · <i class="fas fa-eye ml-0.5 mr-0.5"></i>${l.visualizzazioni}` : ''}${l.saved_count ? ` · <i class="fas fa-bookmark text-blue-400 ml-0.5 mr-0.5" title="Salvato nei preferiti"></i><span class="text-blue-500 font-bold">${l.saved_count}</span>` : ''}${isFeatured ? ` · <i class="fas fa-phone-alt text-emerald-500 ml-0.5 mr-0.5"></i><span class="text-emerald-600 font-bold">${l.tel_clicks || 0} click</span>` : ''}
                 </p>
                 ${l.status === 'rejected' && l.dettagli_extra?.rejection_reason ? `
                 <div class="mt-1.5 bg-red-50 border border-red-100 rounded-lg px-2.5 py-1.5">

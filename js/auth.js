@@ -869,7 +869,8 @@ window.getCurrentUser = async function () {
 };
 
 // ── Require auth — shows modal if not logged in ──────────
-window.requireAuth = function (callback) {
+window.requireAuth = function (callback, source) {
+    const _src = source || 'direct';
     _supabase.auth.getUser().then(({ data }) => {
         const user = data?.user;
         if (user) {
@@ -879,10 +880,10 @@ window.requireAuth = function (callback) {
                 const u = data?.user;
                 if (u) callback(u);
             });
-            openAuthModal('login', undefined, 'direct');
+            openAuthModal('login', undefined, _src);
         }
     }).catch(() => {
-        openAuthModal('login', undefined, 'direct');
+        openAuthModal('login', undefined, _src);
     });
 };
 

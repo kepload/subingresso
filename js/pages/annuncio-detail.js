@@ -57,7 +57,7 @@ async function loadListing() {
     try {
         const { data } = await _supabase
             .from('annunci')
-            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier')
+            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier, saved_count')
             .eq('id', idParam)
             .maybeSingle();
 
@@ -217,6 +217,18 @@ async function initPage() {
     setTxt('descrizione', listing.descrizione);
 
     setTxt('dataPub', formatDate(listing.data));
+
+    // Saved count: visibile a tutti (social proof). Privacy preservata: nessuno
+    // può sapere CHI ha salvato (RLS owner-only su saved_listings), solo IL NUMERO.
+    if (listing.saved_count != null && listing.saved_count > 0) {
+        const sc = document.getElementById('savedCount');
+        const scv = document.getElementById('savedCountVal');
+        if (sc && scv) {
+            scv.textContent = listing.saved_count;
+            sc.classList.remove('hidden');
+            sc.classList.add('flex');
+        }
+    }
 
     // Traccia visita diretta (+2) e mostra contatore — completamente asincrono e isolato
     (async () => {
@@ -506,7 +518,7 @@ function makeCall() {
             await fetchContactInfo(listing);
         }
         executeCall(listing);
-    });
+    }, 'call_click');
 }
 
 async function startChat() {
@@ -546,7 +558,7 @@ async function startChat() {
             console.error(err);
             showToast('Errore nella chat. Riprova.', 'error');
         }
-    });
+    }, 'chat_click');
 }
 
 function executeWhatsApp(listing) {
@@ -580,7 +592,7 @@ function openWhatsApp() {
             await fetchContactInfo(listing);
         }
         executeWhatsApp(listing);
-    });
+    }, 'whatsapp_click');
 }
 
 // Censura parziale numeri di telefono italiani.
