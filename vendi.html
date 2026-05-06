@@ -359,16 +359,16 @@
                         </div>
 
                         <div>
-                            <label class="field-label">Foto <span class="text-slate-400 font-medium normal-case">(opzionale, ma aumenta le risposte)</span></label>
+                            <label class="field-label">Foto <span class="text-slate-400 font-medium normal-case">(opzionale)</span></label>
                             <div id="dropzone" class="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center hover:border-blue-400 transition cursor-pointer bg-slate-50">
                                 <i class="fas fa-camera text-slate-300 text-3xl mb-2 block"></i>
                                 <p class="text-sm font-bold text-slate-600">Tocca per aggiungere foto</p>
-                                <p class="text-xs text-slate-400 mt-1">Carica fino a 5 foto (solo 1 mostrata per gli annunci gratuiti).</p>
-                                <div class="mt-3 inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 border border-blue-100 px-3 py-1.5 rounded-lg text-xs font-black shadow-sm">
-                                    <i class="fas fa-sync-alt"></i> Sblocca 5 foto e la Rotazione Dinamica con la Vetrina Premium
-                                </div>
-                                <input type="file" id="fileInput" multiple accept="image/*" class="hidden">
+                                <input type="file" id="fileInput" accept="image/*" class="hidden">
                             </div>
+                            <p class="text-xs text-slate-500 mt-2 font-medium flex items-center gap-1.5">
+                                <i class="fas fa-bolt text-amber-500 text-[11px]"></i>
+                                Un annuncio con foto vende fino a 3 volte di più.
+                            </p>
                             <div id="previewContainer" class="grid grid-cols-5 gap-2 mt-3"></div>
                         </div>
                     </div>
@@ -978,8 +978,8 @@ dropzone.addEventListener('drop', e => {
 });
 
 function _handleFiles(files) {
-    if (_files.length + files.length > 5) {
-        _err('Puoi caricare al massimo 5 foto.');
+    if (_files.length + files.length > 1) {
+        _err('Puoi caricare 1 sola foto.');
         return;
     }
     for (let f of files) {
