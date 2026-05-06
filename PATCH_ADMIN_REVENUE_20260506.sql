@@ -45,6 +45,18 @@ begin
             where status = 'succeeded'
               and stripe_session_id like 'cs_live_%'
               and created_at >= date_trunc('month', now())
+        ),
+        'today_cents', coalesce((
+            select sum(amount_cents) from public.payments
+            where status = 'succeeded'
+              and stripe_session_id like 'cs_live_%'
+              and created_at >= date_trunc('day', now())
+        ), 0),
+        'today_count', (
+            select count(*) from public.payments
+            where status = 'succeeded'
+              and stripe_session_id like 'cs_live_%'
+              and created_at >= date_trunc('day', now())
         )
     ) into res;
 
