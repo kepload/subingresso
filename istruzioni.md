@@ -602,8 +602,8 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 Pivot da "tutorial generico bandi" a "lista bandi reali" + sezione regionale unica + CTA `/annunci?regione=X`. Motivo: search intent mismatch — query "posteggi mercato [regione]" è transactional, il tutorial era informational → bounce alto, zero conversioni.
 
 ### Stato (6 mag 2026)
-- ✅ **12 fatte**: Lombardia (autonomo), Piemonte, Lazio, Veneto, Emilia-Romagna, Toscana, Campania, Puglia, Sicilia, Liguria, Marche, Trentino-A.A.
-- ❌ **8 da fare** (priorità bassa, basso volume search): Friuli-V.G., Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria, Sardegna.
+- ✅ **13 fatte**: Lombardia (autonomo), Piemonte, Lazio, Veneto, Emilia-Romagna, Toscana, Campania, Puglia, Sicilia, Liguria, Marche, Trentino-A.A., Sardegna.
+- ❌ **7 da fare** (priorità bassa, basso volume search): Friuli-V.G., Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria.
 
 ### Template
 - Slug: `bandi-posteggi-mercatali-{regione}` (lowercase, hyphenated). Categoria DB: `Bandi`.
@@ -625,6 +625,7 @@ Pivot da "tutorial generico bandi" a "lista bandi reali" + sezione regionale uni
 - **Palermo 906/2.135 vacanti**: situazione anomala (40% libero), Confimprese chiede tassa partecipazione 30€ vs 180€.
 - **Savona Bolkestein 2032**: rappresentanti Fiva al MIMIT aprile 2026, concessioni attuali fino al 2032.
 - **Trentino-Alto Adige**: due Province autonome (Trento L.P. 17/2010, Bolzano L.P. 7/2000) con regole proprie. Bolzano pubblica i bandi in italiano e tedesco, domande presentabili in entrambe le lingue. Mercatini di Natale = finestra annuale separata: bando giugno-luglio per casette stagionali novembre-gennaio (Bolzano, Merano, Bressanone, Trento, Rovereto, Brunico).
+- **Sardegna**: due binari paralleli — mercati cittadini storici (San Benedetto Cagliari, Lu Mercatu Sassari, Sa Mura Oristano) con bandi rari, e posteggi turistici stagionali sulla costa con bandi annuali ricorrenti (1 giu - 15 set). Apertura finestra marzo-aprile. LR 5/2006 sul commercio. Settori top stagionali: gelato, cocco, bibite, abbigliamento mare.
 
 ### Workflow tecnico
 - Articoli stanno SOLO in DB Supabase (`blog_posts`), non in file repo. NESSUN git push necessario.
@@ -635,7 +636,7 @@ Pivot da "tutorial generico bandi" a "lista bandi reali" + sezione regionale uni
 - Sitemap dinamica fa fetch ogni 1h, niente da rigenerare.
 
 ### Output finora — char per articolo
-Lombardia 5322, Trentino-A.A. 5278, Sicilia 4950, Liguria 4385, Lazio 4291, Puglia 4246, Campania 4110, Emilia-R. 4015, Veneto 3993, Toscana 3814, Marche 3730, Piemonte 3347.
+Lombardia 5322, Trentino-A.A. 5278, Sardegna 5165, Sicilia 4950, Liguria 4385, Lazio 4291, Puglia 4246, Campania 4110, Emilia-R. 4015, Veneto 3993, Toscana 3814, Marche 3730, Piemonte 3347.
 
 ## 🐌 Pubblicazione Annuncio — Lessons Learned
 
@@ -646,7 +647,7 @@ Lombardia 5322, Trentino-A.A. 5278, Sicilia 4950, Liguria 4385, Lazio 4291, Pugl
 ## ⏳ TODO Aperti
 
 1. **Indicizzazione Search Console**: continuare ~10 URL/giorno. Lista in `C:\Users\utente\Desktop\indicizzazione-search-console.txt` (utility, non parte del repo).
-2. **Replica articolo bandi alle 8 regioni rimaste**: Friuli-V.G., Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria, Sardegna. Trentino-A.A. completato il 6 mag 2026 (priorità alta perché 6 imp/1 click GSC sull'OLD generico in 24h). Le altre 8 a basso volume search, fare a richiesta.
+2. **Replica articolo bandi alle 7 regioni rimaste**: Friuli-V.G., Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria. Trentino-A.A. e Sardegna completati il 6 mag 2026. Trentino aveva alta priorità (6 imp/1 click GSC sull'OLD), Sardegna scelta per popolazione + costa turistica = volume search probabile più alto delle restanti. Le altre 7 a basso volume search, fare a richiesta.
 3. **Annunci Demo**: 10 annunci finti (Carla M., Marco V.) admin. Da cancellare quando ci saranno 30+ annunci reali.
 4. **Privacy policy**: 3 placeholder `[NOME TITOLARE]`, `[INDIRIZZO + P.IVA]`, `[EMAIL CONTATTO]` da compilare prima del go-live legale.
 5. **Spalmare 2 cron settimanali su giorni diversi** (5 min, allunga vita free Resend).
