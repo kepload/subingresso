@@ -181,18 +181,21 @@ function _bindBandoAlertForm(regione, postSlug) {
     });
 }
 
-// ── Box "Posteggi disponibili adesso in [Regione]" — fetch + render ──
+// ── Box "Posteggi disponibili adesso" — fetch + render ──
+// regione=null → versione generic (annunci recenti misti, niente fallback).
+// regione!=null → filtra per regione, fallback "Ancora pochi posteggi qui" se 0.
 async function _loadBandoListingsBox(regione, postSlug) {
     const target = document.getElementById('bandoListingsBox');
-    if (!target || !regione) return;
+    if (!target) return;
     try {
-        const { data, error } = await _supabase
+        let q = _supabase
             .from('annunci')
             .select(_SAFE_COLS_LISTING)
-            .eq('regione', regione)
             .eq('status', 'active')
             .order('created_at', { ascending: false })
             .limit(3);
+        if (regione) q = q.eq('regione', regione);
+        const { data, error } = await q;
 
         if (error) throw error;
 
@@ -212,28 +215,116 @@ async function _loadBandoListingsBox(regione, postSlug) {
         }
 
         if (!data || data.length === 0) {
-            // FALLBACK 2.5: regioni vuote → solo CTA avvisi (riusa il form già renderizzato sopra).
-            target.innerHTML = '<div class="not-prose mt-12 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100">'
-                + '<h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Ancora pochi posteggi in ' + escapeHTML(regione) + '</h3>'
-                + '<p class="text-sm text-slate-600 mb-2 leading-relaxed">Nessun annuncio attivo qui in questo momento. Lascia l\'email lassù: ti avvisiamo appena ne arriva uno (più i bandi pubblici nuovi).</p>'
-                + '<a href="#bandoAlertForm" onclick="document.getElementById(\'bandoAlertForm\') && document.getElementById(\'bandoAlertForm\').scrollIntoView({behavior:\'smooth\',block:\'center\'}); return false;" class="inline-block mt-2 text-sm font-black text-blue-600 hover:underline">↑ Attiva gli avvisi</a>'
-                + '</div>';
+            if (regione) {
+                // FALLBACK 2.5: regione conosciuta + 0 risultati → CTA avvisi.
+                target.innerHTML = '<div class="not-prose mt-12 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100">'
+                    + '<h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Ancora pochi posteggi in ' + escapeHTML(regione) + '</h3>'
+                    + '<p class="text-sm text-slate-600 mb-2 leading-relaxed">Nessun annuncio attivo qui in questo momento. Lascia l\'email lassù: ti avvisiamo appena ne arriva uno (più i bandi pubblici nuovi).</p>'
+                    + '<a href="#bandoAlertForm" onclick="document.getElementById(\'bandoAlertForm\') && document.getElementById(\'bandoAlertForm\').scrollIntoView({behavior:\'smooth\',block:\'center\'}); return false;" class="inline-block mt-2 text-sm font-black text-blue-600 hover:underline">↑ Attiva gli avvisi</a>'
+                    + '</div>';
+            } else {
+                // Articolo generico + 0 annunci attivi (caso raro su tutto il sito) → niente box.
+                target.innerHTML = '';
+            }
             return;
         }
 
         const cards = data.map(l => buildCard(l)).join('');
-        target.innerHTML = '<div class="not-prose mt-12" data-box-listings data-regione="' + escapeHTML(regione) + '">'
+        const heading  = regione ? 'Posteggi disponibili adesso in ' + escapeHTML(regione) : 'Posteggi disponibili adesso';
+        const seeAllUrl = regione ? '/annunci?regione=' + encodeURIComponent(regione) : '/annunci';
+        const lead     = regione
+            ? 'Mentre aspetti il prossimo bando, qui ci sono <strong>posteggi privati già attivi</strong> in ' + escapeHTML(regione) + ', con licenza in regola e clientela fidelizzata.'
+            : 'Posteggi privati di ambulanti che cedono la licenza, già attivi, con clientela fidelizzata.';
+
+        target.innerHTML = '<div class="not-prose mt-12" data-box-listings' + (regione ? ' data-regione="' + escapeHTML(regione) + '"' : '') + '>'
             + '<div class="flex items-baseline justify-between gap-4 mb-4">'
-            +   '<h3 class="text-xl md:text-2xl font-black text-slate-900">Posteggi disponibili adesso in ' + escapeHTML(regione) + '</h3>'
-            +   '<a href="/annunci?regione=' + encodeURIComponent(regione) + '" class="text-xs font-black text-blue-600 hover:underline whitespace-nowrap">Vedi tutti →</a>'
+            +   '<h3 class="text-xl md:text-2xl font-black text-slate-900">' + heading + '</h3>'
+            +   '<a href="' + seeAllUrl + '" class="text-xs font-black text-blue-600 hover:underline whitespace-nowrap">Vedi tutti →</a>'
             + '</div>'
-            + '<p class="text-sm text-slate-500 font-medium mb-6 leading-relaxed">Mentre aspetti il prossimo bando, qui ci sono <strong>posteggi privati già attivi</strong> in ' + escapeHTML(regione) + ', con licenza in regola e clientela fidelizzata.</p>'
+            + '<p class="text-sm text-slate-500 font-medium mb-6 leading-relaxed">' + lead + '</p>'
             + '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">' + cards + '</div>'
             + '</div>';
         if (typeof observeCardViews === 'function') observeCardViews();
     } catch (e) {
         // Errore silenzioso: il box semplicemente non appare
         target.innerHTML = '';
+    }
+}
+
+// ── 3.3 Link città inline (prima occorrenza, max 5/articolo) ──────
+const _CITY_LINKS = [
+    // Capoluoghi regione (incl. multi-parola)
+    "Reggio Calabria","La Spezia","L'Aquila",
+    'Roma','Milano','Napoli','Torino','Palermo','Genova','Bologna','Firenze','Bari','Venezia',
+    'Aosta','Perugia','Trieste','Trento','Bolzano','Cagliari','Catanzaro','Potenza','Campobasso','Ancona',
+    // Top per i bandi reali citati negli articoli
+    'Tropea','Pizzo','Diamante','Cosenza','Crotone','Vibo Valentia','Maratea','Matera','Termoli',
+    'Pescara','Sulmona','Roccaraso','Pescasseroli','Vasto','Foligno','Spoleto','Assisi','Norcia','Bevagna','Spello',
+    'Sanremo','Imperia','Savona','Sirmione','Salò','Brescia','Bergamo','Verona','Padova',
+    'Lecce','Taranto','Foggia','Catania','Messina','Siracusa','Trapani','Agrigento',
+    'Sassari','Olbia','Alghero','Lignano','Grado','Courmayeur','Cervinia','Merano','Bressanone'
+];
+
+function _injectInlineCityLinks(container, articleRegione) {
+    if (!container) return;
+    const SKIP_TAGS = new Set(['A','STRONG','EM','B','I','H1','H2','H3','H4','H5','H6','BUTTON','CODE','SCRIPT','STYLE']);
+    const linked = new Set();
+    const MAX_LINKS = 5;
+    let added = 0;
+
+    // Sort per lunghezza decrescente: matcha "Reggio Calabria" prima di "Reggio".
+    const cities = _CITY_LINKS.slice().sort((a, b) => b.length - a.length);
+
+    const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
+        acceptNode(n) {
+            for (let p = n.parentElement; p && p !== container; p = p.parentElement) {
+                if (SKIP_TAGS.has(p.tagName)) return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+        }
+    });
+
+    const nodes = [];
+    let n;
+    while ((n = walker.nextNode())) nodes.push(n);
+
+    for (const node of nodes) {
+        if (added >= MAX_LINKS) break;
+        const text = node.nodeValue || '';
+        if (text.length < 4) continue;
+
+        for (const city of cities) {
+            if (linked.has(city)) continue;
+            // Word boundary unicode-safe: solo se preceduta/seguita da non-lettera.
+            const escaped = city.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const re = new RegExp('(^|[^A-Za-z\\u00C0-\\u017F])(' + escaped + ')([^A-Za-z\\u00C0-\\u017F]|$)');
+            const m = text.match(re);
+            if (!m || m.index === undefined) continue;
+
+            const idxCity  = m.index + m[1].length;
+            const before   = text.slice(0, idxCity);
+            const cityText = m[2];
+            const after    = text.slice(idxCity + cityText.length);
+
+            const href = articleRegione
+                ? '/annunci?regione=' + encodeURIComponent(articleRegione) + '&q=' + encodeURIComponent(city)
+                : '/annunci?q=' + encodeURIComponent(city);
+
+            const a = document.createElement('a');
+            a.href = href;
+            a.className = 'text-blue-600 hover:underline font-bold';
+            a.textContent = cityText;
+
+            const parent = node.parentNode;
+            const next = node.nextSibling;
+            node.nodeValue = before;
+            parent.insertBefore(a, next);
+            if (after) parent.insertBefore(document.createTextNode(after), next);
+
+            linked.add(city);
+            added++;
+            break; // un city per text node, vai avanti
+        }
     }
 }
 
@@ -357,27 +448,15 @@ function renderPost(post) {
         if (banner) banner.classList.add('hidden');
     }
 
-    // 2.4 — Sui bandi sostituisco il blocco "voglio vendere / voglio comprare" col box live.
-    // Sui post non-bandi resta il blocco originale.
-    const finalCtaBlock = _IS_BANDI
-        ? `<div id="bandoListingsBox" class="mt-16"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`
-        : `<div class="mt-20 p-10 bg-slate-50 rounded-[40px] border border-slate-100 text-center">
-            <div class="bg-blue-600 text-white w-16 h-16 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-100 mx-auto mb-6 text-center">
-                <i class="fas fa-rocket text-2xl"></i>
-            </div>
-            <h3 class="text-2xl font-black tracking-tight mb-4 text-slate-900 text-center">Passa all'azione oggi stesso</h3>
-            <p class="text-slate-500 font-medium mb-8 max-w-md mx-auto italic text-sm text-center">Subingresso.it è il partner tecnico che ti accompagna nella compravendita del tuo posteggio.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="/vendi" class="bg-blue-600 text-white font-black px-10 py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-center">Voglio Vendere</a>
-                <a href="/annunci" class="bg-white text-slate-900 border border-slate-200 font-black px-10 py-5 rounded-2xl hover:bg-slate-50 transition shadow-sm text-center">Voglio Comprare</a>
-            </div>
-        </div>`;
+    // 2.4 / 3.1 — Box "Posteggi disponibili" sempre presente: regione filtrata sui bandi-*,
+    // versione generic sui blog non-bandi (annunci recenti misti). Placeholder durante fetch.
+    const finalCtaBlock = `<div id="bandoListingsBox" class="mt-16"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`;
 
     container.innerHTML = `
         ${heroHtml}
         <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
         <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>
-        <div class="prose font-medium text-left">${_insertBlogPromo(safeContent)}</div>
+        <div id="blogPostContent" class="prose font-medium text-left">${_insertBlogPromo(safeContent)}</div>
         ${finalCtaBlock}
         <div class="mt-12 pt-10 border-t border-slate-100 text-left">
             <a href="/blog" class="text-sm font-bold text-slate-400 hover:text-blue-600 transition">← Torna all'indice degli articoli</a>
@@ -388,12 +467,14 @@ function renderPost(post) {
         if (session) document.querySelectorAll('.blog-promo').forEach(el => el.remove());
     });
 
-    // 2.3 — Bind del form Avvisi se presente nel DOM.
-    if (_IS_BANDI) {
-        _bindBandoAlertForm(_BLOG_REGIONE, post.slug);
-        // 2.4 / 2.5 — Carica box live posteggi (con fallback regione vuota interno).
-        _loadBandoListingsBox(_BLOG_REGIONE, post.slug);
-    }
+    // 2.3 — Bind del form Avvisi se presente nel DOM (solo bandi).
+    if (_IS_BANDI) _bindBandoAlertForm(_BLOG_REGIONE, post.slug);
+
+    // 2.4 / 2.5 / 3.1 — Carica box live posteggi: filtro regione se bandi, generic altrimenti.
+    _loadBandoListingsBox(_BLOG_REGIONE, post.slug);
+
+    // 3.3 — Link città inline (prima occorrenza, max 5 per articolo).
+    _injectInlineCityLinks(document.getElementById('blogPostContent'), _BLOG_REGIONE);
 }
 
 function renderList(posts) {
