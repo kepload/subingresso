@@ -68,7 +68,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
-<script src="js/page-view-tracker.js?v=1"></script>
+<script src="js/page-view-tracker.js?v=2"></script>
+<script src="js/blog-tracker.js?v=1"></script>
 <script src="js/data.js?v=17"></script>
 <script src="js/ui-components.js?v=11"></script>
 <script src="js/auth.js?v=17"></script>
@@ -77,6 +78,20 @@ const params = new URLSearchParams(location.search);
 const slug = params.get('post');
 const container = document.getElementById('blogContainer');
 const loading = document.getElementById('loading');
+
+// Track click su CTA regionale (link /annunci?regione=X dentro l'articolo).
+// Listener delegato: passa il regione raw dal link, non dedurlo dallo slug.
+document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('/annunci?regione=') === 0 && window.trackBlogConversion) {
+        try {
+            var reg = decodeURIComponent(href.split('regione=')[1] || '').split('&')[0];
+            window.trackBlogConversion('cta_annunci_click', slug || null, reg || null);
+        } catch (_) {}
+    }
+});
 
 async function loadBlog() {
     try {

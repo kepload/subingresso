@@ -374,6 +374,31 @@
                 </p>
             </div>
 
+            <!-- Performance Blog (views + CTA click + CR%) -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-newspaper text-blue-500"></i> Performance blog
+                        <span id="blogStatsSubtitle" class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(30g)</span>
+                    </h3>
+                    <div class="flex gap-1.5">
+                        <button id="blogStatsBtn30"  onclick="setBlogStatsPeriod(30)"  class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-blue-600 text-white">30g</button>
+                        <button id="blogStatsBtn90"  onclick="setBlogStatsPeriod(90)"  class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">90g</button>
+                        <button id="blogStatsBtn365" onclick="setBlogStatsPeriod(365)" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">1y</button>
+                    </div>
+                </div>
+                <div id="blogStatsTotals" class="flex flex-wrap gap-1.5 text-[10px] font-black uppercase tracking-widest mb-3 hidden">
+                    <span class="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-lg">Views: <span id="blogStatsTotalViews">—</span></span>
+                    <span class="bg-blue-50 text-blue-600 px-2.5 py-1 rounded-lg">Click: <span id="blogStatsTotalConv">—</span></span>
+                </div>
+                <div id="blogStatsBody" class="space-y-2">
+                    <p class="text-xs text-slate-400 font-bold">Caricamento…</p>
+                </div>
+                <p class="mt-4 text-[10px] text-slate-400 leading-relaxed">
+                    <span class="font-black text-slate-500">Views</span> = pageview unici dell'articolo · <span class="font-black text-blue-600">CTA</span> = click sulla CTA <code>/annunci?regione=…</code> · <span class="font-black text-emerald-600">CR%</span> = click / view.
+                </p>
+            </div>
+
             <!-- Valutatore Logs -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
@@ -915,7 +940,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=3"></script>
-<script src="js/page-view-tracker.js?v=1"></script>
+<script src="js/page-view-tracker.js?v=2"></script>
 <script src="js/data.js?v=17"></script>
 <script src="js/auth.js?v=17"></script>
 <script src="js/blog-generator.js?v=3"></script>
@@ -963,6 +988,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadAdminGrowthChart();
         loadAdminFunnelStats();
         loadAdminSignupSources();
+        loadAdminBlogStats();
         loadAdminRecentUsers();
         loadAdminBlog();
         loadAllListings();
@@ -1670,6 +1696,76 @@ function setSignupSourcesPeriod(days) {
     const sub = document.getElementById('signupSourcesSubtitle');
     if (sub) sub.textContent = days === 365 ? '(1y)' : `(${days}g)`;
     loadAdminSignupSources();
+}
+
+// ── Performance Blog ──────────────────────────────────────
+let _blogStatsState = { period: 30 };
+
+async function loadAdminBlogStats() {
+    const body = document.getElementById('blogStatsBody');
+    const totals = document.getElementById('blogStatsTotals');
+    if (!body) return;
+    body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Caricamento…</p>';
+    if (totals) totals.classList.add('hidden');
+    try {
+        const { data, error } = await _supabase.rpc('admin_blog_stats', { p_days: _blogStatsState.period });
+        if (error || !data || data.error) {
+            body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Performance blog non disponibile.</p>';
+            return;
+        }
+        const rows = Array.isArray(data.rows) ? data.rows : [];
+        const tv = document.getElementById('blogStatsTotalViews');
+        const tc = document.getElementById('blogStatsTotalConv');
+        if (tv) tv.textContent = (data.total_views || 0).toLocaleString('it-IT');
+        if (tc) tc.textContent = (data.total_conversions || 0).toLocaleString('it-IT');
+        if (totals && rows.length) totals.classList.remove('hidden');
+
+        if (!rows.length) {
+            body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Nessuna view tracciata per il periodo. Le visite agli articoli verranno registrate da ora in poi (tracker bumpato a v=2).</p>';
+            return;
+        }
+        body.innerHTML = rows.map(r => {
+            const views   = Number(r.views || 0);
+            const cta     = Number(r.cta_clicks || 0);
+            const cr      = Number(r.cr_pct || 0);
+            const crColor = cr >= 5 ? 'text-emerald-600 bg-emerald-50' : (cr >= 1 ? 'text-blue-600 bg-blue-50' : 'text-slate-500 bg-slate-100');
+            const title   = r.title || r.slug;
+            const url     = `/blog?post=${encodeURIComponent(r.slug)}`;
+            return `
+            <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl border border-slate-100 hover:bg-slate-50 transition">
+                <div class="min-w-0 flex-1">
+                    <a href="${escapeHTML(url)}" target="_blank" rel="noopener" class="text-sm font-black text-slate-900 truncate block hover:text-blue-600 transition" title="Apri articolo">${escapeHTML(title)}</a>
+                    <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest truncate">${escapeHTML(r.slug || '')}</div>
+                </div>
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <div class="text-right">
+                        <div class="text-sm font-black text-slate-900 leading-tight">${views.toLocaleString('it-IT')}</div>
+                        <div class="text-[9px] text-slate-400 font-bold uppercase tracking-widest leading-none">views</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm font-black text-blue-600 leading-tight">${cta.toLocaleString('it-IT')}</div>
+                        <div class="text-[9px] text-blue-400 font-bold uppercase tracking-widest leading-none">cta</div>
+                    </div>
+                    <span class="${crColor} text-[10px] font-black px-2 py-1 rounded-lg whitespace-nowrap">${cr.toFixed(1)}%</span>
+                </div>
+            </div>`;
+        }).join('');
+    } catch (_) {
+        body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Errore caricamento.</p>';
+    }
+}
+
+function setBlogStatsPeriod(days) {
+    _blogStatsState.period = days;
+    [['blogStatsBtn30', 30], ['blogStatsBtn90', 90], ['blogStatsBtn365', 365]].forEach(([id, val]) => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        const active = val === days;
+        btn.className = `text-[11px] font-black px-3 py-1.5 rounded-lg transition ${active ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`;
+    });
+    const sub = document.getElementById('blogStatsSubtitle');
+    if (sub) sub.textContent = days === 365 ? '(1y)' : `(${days}g)`;
+    loadAdminBlogStats();
 }
 
 let _allAdminUsers = [];

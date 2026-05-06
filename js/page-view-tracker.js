@@ -9,6 +9,17 @@
         try {
             if (navigator && navigator.webdriver === true) return;
             var path = (location.pathname || '/').replace(/\/+$/, '') || '/';
+            // /blog usa ?post=<slug> per il routing → senza questa estensione
+            // tutti i post collasserebbero in /blog. Promuoviamo lo slug nel path.
+            if (path === '/blog' || path === '/blog.html') {
+                try {
+                    var slug = new URLSearchParams(location.search).get('post');
+                    if (slug) {
+                        slug = String(slug).replace(/[^a-z0-9-]/gi, '').slice(0, 80);
+                        if (slug) path = '/blog/' + slug;
+                    }
+                } catch (_) {}
+            }
             if (path.length > 200) path = path.slice(0, 200);
 
             var dedupKey = '_pv_' + path;
