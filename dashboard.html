@@ -1747,6 +1747,11 @@ async function loadAdminBlogStats() {
                         <div class="text-[9px] text-blue-400 font-bold uppercase tracking-widest leading-none">cta</div>
                     </div>
                     <span class="${crColor} text-[10px] font-black px-2 py-1 rounded-lg whitespace-nowrap">${cr.toFixed(1)}%</span>
+                    <button onclick="bumpPostFreshness('${escapeHTML(r.slug || '')}', this)"
+                            title="Aggiorna la data di pubblicazione (freshness signal per Google)"
+                            class="text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg w-7 h-7 flex items-center justify-center transition flex-shrink-0">
+                        <i class="fas fa-rotate-right text-xs"></i>
+                    </button>
                 </div>
             </div>`;
         }).join('');
@@ -1766,6 +1771,31 @@ function setBlogStatsPeriod(days) {
     const sub = document.getElementById('blogStatsSubtitle');
     if (sub) sub.textContent = days === 365 ? '(1y)' : `(${days}g)`;
     loadAdminBlogStats();
+}
+
+async function bumpPostFreshness(slug, btn) {
+    if (!slug) return;
+    const ok = await showConfirm({
+        title:    'Aggiornare la data?',
+        message:  `Bumpando "${slug}" la data di pubblicazione diventa "ora". Google sarà più incline a ri-crawlare l'articolo. Procedere?`,
+        okLabel:  'Sì, aggiorna',
+        variant:  'admin',
+    });
+    if (!ok) return;
+    if (btn) { btn.disabled = true; btn.classList.add('opacity-50'); btn.innerHTML = '<i class="fas fa-spinner fa-spin text-xs"></i>'; }
+    try {
+        const { data, error } = await _supabase.rpc('admin_bump_post_freshness', { p_slug: slug });
+        if (error || !data || !data.ok) {
+            showToast(`Errore: ${(data && data.error) || (error && error.message) || 'sconosciuto'}`, 'error');
+            if (btn) { btn.disabled = false; btn.classList.remove('opacity-50'); btn.innerHTML = '<i class="fas fa-rotate-right text-xs"></i>'; }
+            return;
+        }
+        showToast(`Data aggiornata: ${slug}`, 'success');
+        if (btn) { btn.disabled = false; btn.classList.remove('opacity-50'); btn.innerHTML = '<i class="fas fa-rotate-right text-xs"></i>'; }
+    } catch (e) {
+        showToast('Errore di connessione', 'error');
+        if (btn) { btn.disabled = false; btn.classList.remove('opacity-50'); btn.innerHTML = '<i class="fas fa-rotate-right text-xs"></i>'; }
+    }
 }
 
 let _allAdminUsers = [];

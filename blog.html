@@ -265,6 +265,103 @@ const _CITY_LINKS = [
     'Sassari','Olbia','Alghero','Lignano','Grado','Courmayeur','Cervinia','Merano','Bressanone'
 ];
 
+// ── 4.1 JSON-LD FAQPage (solo bandi-*, rich result Google) ─────
+function _injectFaqJsonLd(regione) {
+    if (!regione) {
+        const old = document.getElementById('_ldFaq');
+        if (old) old.remove();
+        return;
+    }
+    const faqs = [
+        {
+            q: 'Quando escono i bandi per posteggi mercatali in ' + regione + '?',
+            a: 'I calendari variano per Comune. In linea generale: bandi turistici stagionali tra marzo e aprile per la stagione giugno-settembre, bandi mercati ordinari pubblicati periodicamente quando si liberano posteggi, bandi eventistici legati a sagre e festival con tempistiche proprie. Conviene seguire l\'Albo Pretorio dei Comuni capoluogo e iscriversi alle associazioni di categoria.'
+        },
+        {
+            q: 'Dove trovo i bandi nuovi in ' + regione + '?',
+            a: 'Le fonti ufficiali sono: l\'Albo Pretorio online di ogni Comune, il Bollettino Ufficiale della Regione ' + regione + ' (BUR), il SUAP regionale per le pratiche di commercio. Le associazioni di categoria (Anva Confesercenti e Fiva Confcommercio) avvisano via mail i propri iscritti.'
+        },
+        {
+            q: 'Posso fare subingresso invece di partecipare al bando in ' + regione + '?',
+            a: 'Sì. Il subingresso è la cessione di una licenza ambulante esistente da un titolare a un nuovo operatore. È regolato dalla legge regionale e prevede tempi molto più rapidi del bando: parti in poche settimane, con clientela già fidelizzata. Su Subingresso.it trovi annunci di chi cede o affitta il proprio posteggio in ' + regione + '.'
+        },
+        {
+            q: 'Quanto dura la concessione di un posteggio?',
+            a: 'Per la direttiva Bolkestein recepita dall\'Italia la concessione decennale è la regola: dieci anni minimo. Alla scadenza si torna al bando pubblico, con un margine di priorità storica per il titolare uscente nei casi previsti dalla legge regionale.'
+        }
+    ];
+    const ld = {
+        '@context': 'https://schema.org',
+        '@type':    'FAQPage',
+        'mainEntity': faqs.map(f => ({
+            '@type': 'Question',
+            'name':  f.q,
+            'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+        }))
+    };
+    let el = document.getElementById('_ldFaq');
+    if (!el) {
+        el = document.createElement('script');
+        el.id = '_ldFaq';
+        el.type = 'application/ld+json';
+        document.head.appendChild(el);
+    }
+    el.textContent = JSON.stringify(ld);
+}
+
+// ── 4.2 Link a 3 regioni vicine in fondo agli articoli bandi-* ─────
+const _NEIGHBORS = {
+    'Lombardia': ['Piemonte','Emilia-Romagna','Veneto'],
+    'Piemonte': ['Lombardia','Liguria',"Valle d'Aosta"],
+    'Lazio': ['Toscana','Umbria','Campania'],
+    'Veneto': ['Lombardia','Trentino-Alto Adige','Emilia-Romagna'],
+    'Emilia-Romagna': ['Lombardia','Veneto','Toscana'],
+    'Toscana': ['Lazio','Emilia-Romagna','Liguria'],
+    'Campania': ['Lazio','Puglia','Basilicata'],
+    'Puglia': ['Campania','Basilicata','Molise'],
+    'Sicilia': ['Calabria','Sardegna','Campania'],
+    'Liguria': ['Piemonte','Toscana','Emilia-Romagna'],
+    'Marche': ['Emilia-Romagna','Umbria','Abruzzo'],
+    'Trentino-Alto Adige': ['Veneto','Lombardia','Friuli-Venezia Giulia'],
+    'Sardegna': ['Sicilia','Lazio','Toscana'],
+    'Friuli-Venezia Giulia': ['Veneto','Trentino-Alto Adige','Emilia-Romagna'],
+    "Valle d'Aosta": ['Piemonte','Lombardia','Liguria'],
+    'Umbria': ['Toscana','Marche','Lazio'],
+    'Abruzzo': ['Marche','Lazio','Molise'],
+    'Molise': ['Abruzzo','Puglia','Campania'],
+    'Basilicata': ['Puglia','Calabria','Campania'],
+    'Calabria': ['Basilicata','Sicilia','Puglia']
+};
+
+function _slugForRegione(regione) {
+    const entry = Object.entries(SLUG_TO_REGIONE).find(([, v]) => v === regione);
+    return entry ? BANDI_PREFIX + entry[0] : null;
+}
+
+function _renderRelatedBandi(regione, allPosts) {
+    const target = document.getElementById('relatedBandi');
+    if (!target || !regione) return;
+    const neighbors = _NEIGHBORS[regione] || [];
+    if (!neighbors.length) return;
+    const cards = neighbors.map(r => {
+        const slug = _slugForRegione(r);
+        if (!slug) return '';
+        const post = (allPosts || []).find(p => p.slug === slug);
+        if (!post) return '';
+        return '<a href="/blog?post=' + escapeHTML(slug) + '" class="block p-4 md:p-5 rounded-2xl border border-slate-100 bg-white hover:border-blue-200 hover:shadow-md transition group">'
+            + '<p class="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-2">Bandi · ' + escapeHTML(r) + '</p>'
+            + '<h4 class="text-sm font-black text-slate-900 leading-tight mb-1.5 group-hover:text-blue-600 transition line-clamp-2">' + escapeHTML(post.title) + '</h4>'
+            + '<p class="text-xs text-slate-500 font-medium leading-relaxed line-clamp-2">' + escapeHTML(post.excerpt || '') + '</p>'
+            + '</a>';
+    }).filter(Boolean).join('');
+    if (!cards) return;
+    target.innerHTML = '<div class="not-prose mt-12">'
+        + '<h3 class="text-xl md:text-2xl font-black text-slate-900 mb-2">Bandi in regioni vicine</h3>'
+        + '<p class="text-sm text-slate-500 font-medium mb-5">Se cerchi posteggi in più regioni, dai un\'occhiata anche qui:</p>'
+        + '<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">' + cards + '</div>'
+        + '</div>';
+}
+
 function _injectInlineCityLinks(container, articleRegione) {
     if (!container) return;
     const SKIP_TAGS = new Set(['A','STRONG','EM','B','I','H1','H2','H3','H4','H5','H6','BUTTON','CODE','SCRIPT','STYLE']);
@@ -328,6 +425,8 @@ function _injectInlineCityLinks(container, articleRegione) {
     }
 }
 
+let _allPosts = [];
+
 async function loadBlog() {
     try {
         const { data: posts, error } = await _supabase
@@ -336,6 +435,7 @@ async function loadBlog() {
             .order('published_at', { ascending: false });
 
         if (error) throw error;
+        _allPosts = posts || [];
 
         loading.classList.add('hidden');
         container.classList.remove('hidden');
@@ -458,6 +558,7 @@ function renderPost(post) {
         <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>
         <div id="blogPostContent" class="prose font-medium text-left">${_insertBlogPromo(safeContent)}</div>
         ${finalCtaBlock}
+        <div id="relatedBandi"></div>
         <div class="mt-12 pt-10 border-t border-slate-100 text-left">
             <a href="/blog" class="text-sm font-bold text-slate-400 hover:text-blue-600 transition">← Torna all'indice degli articoli</a>
         </div>
@@ -475,6 +576,12 @@ function renderPost(post) {
 
     // 3.3 — Link città inline (prima occorrenza, max 5 per articolo).
     _injectInlineCityLinks(document.getElementById('blogPostContent'), _BLOG_REGIONE);
+
+    // 4.1 — JSON-LD FAQPage solo sui bandi-* (rich result Google).
+    _injectFaqJsonLd(_BLOG_REGIONE);
+
+    // 4.2 — Box "Bandi in regioni vicine" con 3 card geograficamente vicine.
+    if (_IS_BANDI) _renderRelatedBandi(_BLOG_REGIONE, _allPosts);
 }
 
 function renderList(posts) {
