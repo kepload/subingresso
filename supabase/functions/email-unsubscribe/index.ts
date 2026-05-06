@@ -26,7 +26,7 @@ Deno.serve(async (req) => {
         status: 400, headers: { ...CORS, 'Content-Type': 'application/json' }
       });
     }
-    if (!['digest', 'stats', 'all'].includes(type)) {
+    if (!['digest', 'stats', 'all', 'bando_alert'].includes(type)) {
       return new Response(JSON.stringify({ ok: false, error: 'Type non valido' }), {
         status: 400, headers: { ...CORS, 'Content-Type': 'application/json' }
       });
@@ -34,6 +34,24 @@ Deno.serve(async (req) => {
 
     const supabase = createClient(SUPABASE_URL, SB_SECRET_KEY);
 
+    // bando_alert: token vive su bando_alerts, l'unsub e' un DELETE della singola riga.
+    if (type === 'bando_alert') {
+      const { data, error } = await supabase
+        .from('bando_alerts')
+        .delete()
+        .eq('unsub_token', token)
+        .select('id, regione');
+      if (error || !data || data.length === 0) {
+        return new Response(JSON.stringify({ ok: false, error: 'Token non valido' }), {
+          status: 404, headers: { ...CORS, 'Content-Type': 'application/json' }
+        });
+      }
+      return new Response(JSON.stringify({ ok: true, type, regione: data[0].regione }), {
+        status: 200, headers: { ...CORS, 'Content-Type': 'application/json' }
+      });
+    }
+
+    // digest/stats/all: token vive su profiles, flip flag email_*.
     const updates: Record<string, boolean> = {};
     if (type === 'digest' || type === 'all') updates.email_digest = false;
     if (type === 'stats'  || type === 'all') updates.email_stats  = false;

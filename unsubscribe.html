@@ -84,9 +84,12 @@
 
         if (data.ok) {
             success.classList.remove('hidden');
-            if (type === 'digest')      successMsg.textContent = 'Non riceverai più il riepilogo settimanale degli annunci.';
-            else if (type === 'stats')  successMsg.textContent = 'Non riceverai più le statistiche settimanali dei tuoi annunci.';
-            else                        successMsg.textContent = 'Sei stato disiscritto da tutte le email promozionali.';
+            if (type === 'digest')           successMsg.textContent = 'Non riceverai più il riepilogo settimanale degli annunci.';
+            else if (type === 'stats')       successMsg.textContent = 'Non riceverai più le statistiche settimanali dei tuoi annunci.';
+            else if (type === 'bando_alert') successMsg.textContent = data.regione
+                ? `Iscrizione agli avvisi per ${data.regione} cancellata. Non riceverai più email su bandi e annunci di quella regione.`
+                : 'Iscrizione agli avvisi cancellata.';
+            else                             successMsg.textContent = 'Sei stato disiscritto da tutte le email promozionali.';
         } else {
             errorEl.classList.remove('hidden');
             errorMsg.textContent = data.error || 'Impossibile completare la disiscrizione.';
