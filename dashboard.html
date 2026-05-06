@@ -135,8 +135,11 @@
                     <div id="admStatUtenti" class="text-2xl font-black text-slate-900">—</div>
                 </div>
                 <div class="bg-white p-5 rounded-2xl border border-amber-100 shadow-sm text-center md:text-left">
-                    <div class="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1">In Vetrina</div>
-                    <div id="admStatVetrina" class="text-2xl font-black text-amber-500">—</div>
+                    <div class="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1 flex items-center gap-1.5 justify-center md:justify-start">
+                        <span>Guadagno Vetrine</span>
+                        <span id="admStatRevenueMtd" class="hidden bg-amber-50 text-amber-600 normal-case tracking-normal text-[9px] font-black px-1.5 py-0.5 rounded">+€0 mese</span>
+                    </div>
+                    <div id="admStatRevenue" class="text-2xl font-black text-amber-500">—</div>
                 </div>
             </div>
 
@@ -991,13 +994,31 @@ async function loadAdminStats() {
     const { count: totalAnnunci }  = await _supabase.from('annunci').select('id', { count: 'exact', head: true });
     const { count: totalAttivi }   = await _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active');
     const { count: totalUtenti }   = await _supabase.from('profiles').select('id', { count: 'exact', head: true });
-    const { count: totalVetrina }  = await _supabase.from('annunci').select('id', { count: 'exact', head: true })
-        .eq('featured', true).gt('featured_until', new Date().toISOString());
 
     document.getElementById('admStatAnnunci').textContent = totalAnnunci || 0;
     document.getElementById('admStatAttivi').textContent  = totalAttivi  || 0;
     document.getElementById('admStatUtenti').textContent  = totalUtenti  || 0;
-    document.getElementById('admStatVetrina').textContent = totalVetrina || 0;
+
+    // Guadagno vetrine: lifetime (succeeded). Le vetrine regalate admin non passano
+    // da payments, quindi il totale e' gia' "vendite reali" senza filtro extra.
+    try {
+        const { data: rev } = await _supabase.rpc('admin_revenue_stats');
+        if (rev && !rev.error) {
+            const lifetime = (rev.lifetime_cents || 0) / 100;
+            const mtd      = (rev.mtd_cents || 0) / 100;
+            const fmt = (n) => '€ ' + n.toLocaleString('it-IT', { minimumFractionDigits: lifetime % 1 === 0 ? 0 : 2, maximumFractionDigits: 2 });
+            document.getElementById('admStatRevenue').textContent = fmt(lifetime);
+            const mtdEl = document.getElementById('admStatRevenueMtd');
+            if (mtdEl) {
+                mtdEl.textContent = `+€${mtd.toLocaleString('it-IT', { maximumFractionDigits: 0 })} mese`;
+                mtdEl.classList.toggle('hidden', mtd <= 0);
+            }
+        } else {
+            document.getElementById('admStatRevenue').textContent = '€ 0';
+        }
+    } catch (_) {
+        document.getElementById('admStatRevenue').textContent = '€ 0';
+    }
 
     loadTopComuni();
 }
