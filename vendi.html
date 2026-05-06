@@ -1230,8 +1230,8 @@ async function submitAnnuncio() {
     try {
         // Default ciclo vita annuncio: 200 giorni. Le trattative reali per
         // posteggi mercatali (atto notarile + SCIA + graduatorie) durano 3-12
-        // mesi: 100gg era troppo corto. Cambiando questo valore aggiornare
-        // anche i cap della vetrina in stripe-webhook e adminGrantVetrina.
+        // mesi: 100gg era troppo corto. La vetrina NON estende piu' questo
+        // valore (rimosso 6 mag 2026): chi rinnova lo fa via "Riattiva".
         const expiresAt = new Date();
         expiresAt.setDate(expiresAt.getDate() + 200);
 

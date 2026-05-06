@@ -511,7 +511,7 @@
 
         <!-- Benefici -->
         <div class="px-5 pt-4 pb-3 border-b border-slate-100">
-            <div class="grid grid-cols-4 gap-2 text-center">
+            <div class="grid grid-cols-3 gap-2 text-center">
                 <div class="flex flex-col items-center gap-1">
                     <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
                         <i class="fas fa-eye text-amber-500 text-xs"></i>
@@ -529,12 +529,6 @@
                         <i class="fas fa-arrow-up text-amber-500 text-xs"></i>
                     </div>
                     <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">In cima</p>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                    <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-calendar-plus text-amber-500 text-xs"></i>
-                    </div>
-                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Post più lungo</p>
                 </div>
             </div>
         </div>
@@ -2968,28 +2962,14 @@ async function adminGrantVetrina(days) {
     const until = new Date(now);
     until.setDate(until.getDate() + days);
 
-    // Estendi scadenza post (allineato al nuovo default 200gg):
-    // 10gg vetrina → max 230gg, 30gg → max 300gg, 90gg → max 400gg.
-    // Vetrina = bonus oltre il default: +30 / +100 / +200.
-    const { data: ann } = await _supabase.from('annunci').select('created_at, expires_at').eq('id', id).single();
-    const capDays = days >= 90 ? 400 : days >= 30 ? 300 : 230;
-    let newExpiry = null;
-    if (ann?.created_at) {
-        const cap = new Date(ann.created_at);
-        cap.setDate(cap.getDate() + capDays);
-        const cur = ann.expires_at ? new Date(ann.expires_at) : new Date(0);
-        newExpiry = (cur > cap ? cur : cap).toISOString();
-    }
-
-    const updateData = {
+    // La vetrina NON estende piu' expires_at del post (rimosso 6 mag 2026).
+    // Il default 200gg vale per tutti, vetrina = solo featured/posizione/visibilita'.
+    const { error } = await _supabase.from('annunci').update({
         featured:       true,
         featured_until: until.toISOString(),
         featured_since: now.toISOString(),
         featured_tier:  'admin_free',
-    };
-    if (newExpiry) updateData.expires_at = newExpiry;
-
-    const { error } = await _supabase.from('annunci').update(updateData).eq('id', id);
+    }).eq('id', id);
 
     if (error) {
         await showConfirm({

@@ -19,13 +19,8 @@ const TIER_DAYS: Record<string, number> = {
   '90d': 90,
 };
 
-// Cap di durata totale post-acquisto vetrina, allineati al nuovo default 200gg.
-// Vetrina = bonus oltre il default: +30gg / +100gg / +200gg.
-const TIER_EXPIRY_CAP_DAYS: Record<string, number> = {
-  '10d': 230,
-  '30d': 300,
-  '90d': 400,
-};
+// La vetrina non estende piu' expires_at del post (rimosso 6 mag 2026).
+// Il default 200gg vale per tutti, vetrina = solo featured/posizione/visibilita'.
 
 Deno.serve(async (req) => {
   if (req.method !== 'POST') {
@@ -88,7 +83,7 @@ Deno.serve(async (req) => {
         // Se l'annuncio è già featured e non scaduto, estendi a partire da featured_until
         const { data: currentAnn } = await admin
           .from('annunci')
-          .select('featured, featured_until, created_at, expires_at')
+          .select('featured, featured_until')
           .eq('id', annuncioId)
           .single();
 
@@ -98,15 +93,7 @@ Deno.serve(async (req) => {
 
         const until = new Date(startFrom.getTime() + days * 24 * 60 * 60 * 1000);
 
-        const createdAt = currentAnn?.created_at ? new Date(currentAnn.created_at) : now;
-        const expiryCapDays = TIER_EXPIRY_CAP_DAYS[tier] || 100;
-        const cappedExpiresAt = new Date(createdAt.getTime() + expiryCapDays * 24 * 60 * 60 * 1000);
-        const currentExpiresAt = currentAnn?.expires_at ? new Date(currentAnn.expires_at) : null;
-        const nextExpiresAt = currentExpiresAt && currentExpiresAt > cappedExpiresAt
-          ? currentExpiresAt
-          : cappedExpiresAt;
-
-        // 2. Attiva vetrina
+        // 2. Attiva vetrina (NON tocca expires_at: il default 200gg vale per tutti)
         const { error: updErr } = await admin
           .from('annunci')
           .update({
@@ -114,7 +101,6 @@ Deno.serve(async (req) => {
             featured_until: until.toISOString(),
             featured_tier:  tier,
             featured_since: (currentAnn?.featured ? undefined : now.toISOString()),
-            expires_at:      nextExpiresAt.toISOString(),
           })
           .eq('id', annuncioId)
           .eq('user_id', userId); // double-check proprietà

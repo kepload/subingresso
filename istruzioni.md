@@ -220,7 +220,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **Cron `unfeature-expired-daily`:** `'0 3 * * *'` chiama `unfeature_expired()`.
 - **Secrets:** `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
 - **CRITICO fetch Edge Functions dal browser:** sempre `'apikey': SUPABASE_ANON_KEY` negli headers oltre ad `Authorization: Bearer <token>`. Senza apikey → 401.
-- **Privilegio Vetrina post lifetime:** vetrina 10gg estende post a max 230gg da `created_at`, 30gg → 300gg, 90gg → 400gg. Cap non superabile.
+- **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): chi compra/riceve vetrina mantiene il default 200gg post. Vetrina = solo featured/posizione/visibilità. Stripe-webhook + adminGrantVetrina ripuliti, edge function re-deployata.
 - **Admin Vetrina gratuita**: `adminGrantVetrina(30|90)` scrive `featured_tier='admin_free'`. `adminRevokeVetrina(id)` azzera.
 - **Card featured redesign**: glow box-shadow aureo, sfondo gradient amber-50/50→white, barra top 3px, badge crown + animate-pulse, footer "Annuncio in Vetrina ★★★★★".
 
@@ -445,8 +445,7 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 ## 📅 Scadenza Post
 
 - `expires_at` 200 giorni di default (5 mag 2026, ex 100). SQL: `ALTER TABLE annunci ADD COLUMN IF NOT EXISTS expires_at timestamptz;`
-- Vetrina cap allineati al nuovo default: 10gg→230gg, 30gg→300gg, 90gg→400gg. Cap non superabile. Stripe-webhook + dashboard.adminGrantVetrina entrambi aggiornati.
-- Logica in `adminGrantVetrina(days)` + `stripe-webhook` su `checkout.session.completed`.
+- **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): tutti i post valgono 200gg, vetrina = solo featured. Niente più cap differenziati 230/300/400. `adminGrantVetrina(days)` + `stripe-webhook` toccano solo i campi `featured*`.
 - **NON filtrare su `expires_at`** finché non popolato per tutti — gli scaduti restano visibili ma con badge "Scaduto", contatti bloccati via `_blockIfExpired()` (chat/whatsapp/chiama mostrano toast). RPC `renew_listing(p_id uuid)` SECURITY DEFINER, owner-only, bumpa `expires_at = now()+200gg`. Bottone "Riattiva" in dashboard.html appare per annunci `active` con `expires_at < now()`.
 
 ## ⚠️ Deploy & Troubleshooting Supabase
@@ -496,15 +495,42 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 ## 📰 Articoli "Bandi" — Pattern Replica
 
-Pivot da "tutorial generico bandi" a "lista bandi reali" (test pilota Lombardia). Replicare alle altre 19 regioni se metriche Search Console migliorano.
+Pivot da "tutorial generico bandi" a "lista bandi reali" + sezione regionale unica + CTA `/annunci?regione=X`. Motivo: search intent mismatch — query "posteggi mercato [regione]" è transactional, il tutorial era informational → bounce alto, zero conversioni.
 
-- Slug: `bandi-posteggi-mercatali-{regione}`.
-- Categoria DB: `Bandi`.
-- Lunghezza: 2.500-5.500 char. Stile: paragrafi 2-3 righe, frasi nette, numeri concreti, espressioni reali.
-- Struttura: intro + "Esempi di bandi pubblicati di recente" (5-7 voci con `<h3>` per Comune) + "Dove cercare oggi" + "Cosa serve" + "Tempi e graduatoria" + "Se non vuoi aspettare" → CTA.
-- Per ogni bando: mercato/giorno, dimensione, scadenza, modalità invio, link Comune.
-- **Onestà esplicita** intro: "quasi tutti scaduti — pattern si ripete ogni anno". Evita bounce.
-- Bumpare `published_at` a `now()` per refresh `dateModified`.
+### Stato (6 mag 2026)
+- ✅ **11 fatte**: Lombardia (autonomo), Piemonte, Lazio, Veneto, Emilia-Romagna, Toscana, Campania, Puglia, Sicilia, Liguria, Marche.
+- ❌ **9 da fare** (priorità bassa, basso volume search): Friuli-V.G., Trentino-A.A., Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria, Sardegna.
+
+### Template
+- Slug: `bandi-posteggi-mercatali-{regione}` (lowercase, hyphenated). Categoria DB: `Bandi`.
+- Lunghezza target: 3.300-4.500 char (sforare a 5k OK se bandi ricchi, vedi Sicilia/Lombardia).
+- Format: HTML (DOMPurify-safe: `<p>`, `<strong>`, `<em>`, `<h2>`, `<ul><li>`, `<a href target="_blank" rel="noopener">`).
+- 7-15 grassetti, frasi 10-15 parole, NO trattini lunghi, NO "esploriamo/approfondiamo/in conclusione".
+- Struttura fissa: intro con problema → "Bandi attivi adesso" → "Bandi scaduti recentemente" (per "rosicare" — stile dell'utente) → **sezione regionale unica** (vedi sotto) → "Dove cercare i bandi nuovi" (3-4 link) → "Perché i bandi sono pochi" → "Subingresso: la via più veloce" → CTA `/annunci?regione=Nome` + `/vendi`.
+- Per ogni bando: Comune, n. posteggi, scadenza esatta, durata concessione, settore, link/PEC. Date precise > vaghe.
+
+### Sistemi regionali speciali scoperti (ognuno ha la sua "regola d'oro")
+- **Emilia-Romagna**: Comuni trasmettono elenco posteggi liberi a gennaio + luglio.
+- **Campania**: 30 luglio scadenza Comuni → Regione → BURC + decreto unico (es. Decreto Dirigenziale 66/2025).
+- **Puglia**: 30 aprile + 30 settembre Comuni → BURP entro 30gg → bandi semestrali maggio/ottobre. Sistema più organizzato d'Italia.
+- **Marche**: calendario regionale annuale via DDDAPIM ogni gennaio (BUR Marche).
+- **Sanremo**: scadenza unica 31 gennaio ogni anno.
+- **Imperia**: sistema "spunta" giornaliera per posteggi liberi.
+- **Veneto**: 90gg pubblicazione bando, 30gg domanda, 15gg revisioni.
+- **Roma 18.000 concessioni**: bandone Gualtieri approvato mag 2024, slittato al 2026 per ricorsi TAR + ANA-UGL.
+- **Palermo 906/2.135 vacanti**: situazione anomala (40% libero), Confimprese chiede tassa partecipazione 30€ vs 180€.
+- **Savona Bolkestein 2032**: rappresentanti Fiva al MIMIT aprile 2026, concessioni attuali fino al 2032.
+
+### Workflow tecnico
+- Articoli stanno SOLO in DB Supabase (`blog_posts`), non in file repo. NESSUN git push necessario.
+- UPDATE: file SQL temp in `/tmp/`, dollar-quote `$content$ ... $content$` per evitare escape, eseguito con `supabase db query --linked --file /tmp/X.sql`. Rimuovere file dopo.
+- **Bumpare `published_at = now()`**: freshness signal Google, ricrawl più probabile (la tabella non ha `updated_at`).
+- **Aggiornare anche `excerpt`**: è la meta description su Google, conta per CTR.
+- Filtro `?regione=Nome` su /annunci: valore deve matchare ESATTAMENTE quello in `js/data.js` (es. `Emilia-Romagna` col trattino, `Friuli-Venezia Giulia` col trattino e spazio, `Valle d'Aosta` con apostrofo, `Trentino-Alto Adige` col trattino).
+- Sitemap dinamica fa fetch ogni 1h, niente da rigenerare.
+
+### Output finora — char per articolo
+Lombardia 5322, Sicilia 4950, Liguria 4385, Lazio 4291, Puglia 4246, Campania 4110, Emilia-R. 4015, Veneto 3993, Toscana 3814, Marche 3730, Piemonte 3347.
 
 ## 🐌 Pubblicazione Annuncio — Lessons Learned
 
@@ -515,16 +541,19 @@ Pivot da "tutorial generico bandi" a "lista bandi reali" (test pilota Lombardia)
 ## ⏳ TODO Aperti
 
 1. **Indicizzazione Search Console**: continuare ~10 URL/giorno. Lista in `C:\Users\utente\Desktop\indicizzazione-search-console.txt` (utility, non parte del repo).
-2. **Metriche articolo Lombardia bandi**: monitorare 7-14 giorni → decisione GO/NO-GO replica alle altre 19 regioni.
+2. **Replica articolo bandi alle 9 regioni rimaste** (priorità bassa, basso volume search): Friuli-V.G., Trentino-A.A., Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria, Sardegna. Decisione: aspettare 2-4 settimane le metriche GSC sulle 11 fixate prima di completare. Se CTR sale ≥10% sulla query "posteggi mercato [regione]", procedere; se non si muove, ripensare strategia (forse serve `/annunci/[regione]` SSR).
 3. **Annunci Demo**: 10 annunci finti (Carla M., Marco V.) admin. Da cancellare quando ci saranno 30+ annunci reali.
 4. **Privacy policy**: 3 placeholder `[NOME TITOLARE]`, `[INDIRIZZO + P.IVA]`, `[EMAIL CONTATTO]` da compilare prima del go-live legale.
 5. **Spalmare 2 cron settimanali su giorni diversi** (5 min, allunga vita free Resend).
 6. **CSP**: 1 settimana di lavoro, da pianificare.
 7. **Cleanup conv vuote già esistenti**: `DELETE FROM conversazioni c WHERE NOT EXISTS (SELECT 1 FROM messaggi m WHERE m.conversazione_id = c.id);` — opzionale, il filtro client-side già le nasconde.
 8. **Step 3 lifecycle annunci scaduti**: edge function + cron daily che manda 2 email al venditore. (a) "scade tra 7gg, riattivalo" con link diretto a renew, (b) il giorno della scadenza "è scaduto, contatti bloccati, riattivalo in 1 click". Tabella `expiry_notification_log(annuncio_id, kind, sent_at)` UNIQUE per dedup. ~150 righe TS Deno + setup SQL + cron `pg_cron`. **Non ancora fatto**, sessione 5 mag chiusa con Step 1+2 done.
-9. **Re-deploy `stripe-webhook` edge function**: contiene cap vetrina aggiornati (230/300/400 invece di 130/200/300) ma va deployata manualmente. Comando: `npx.cmd supabase functions deploy stripe-webhook --project-ref mhfbtltgwibwmsudsuvf`. Finché non deployata i nuovi acquisti vetrina applicano cap vecchi (poco grave: il cap nuovo è solo più generoso).
-10. **og:image `/annunci` e `/blog`**: ancora foto Pexels frutta/verdura. Sostituire con immagini on-brand quando disponibili (stessa convenzione self-hosted in `/og/`).
-11. **Trust whitelist modifiche annuncio**: valutare se attivare auto-approvazione modifiche dopo N annunci approvati per ridurre admin overhead delle re-revisioni.
+9. **og:image `/annunci` e `/blog`**: ancora foto Pexels frutta/verdura. Sostituire con immagini on-brand quando disponibili (stessa convenzione self-hosted in `/og/`).
+10. **Trust whitelist modifiche annuncio**: valutare se attivare auto-approvazione modifiche dopo N annunci approvati per ridurre admin overhead delle re-revisioni.
+
+### TODO chiusi (6 mag 2026)
+- ~~10 articoli blog regioni con tutorial generico (Piemonte→Marche)~~ ✅ riscritti con bandi reali + sezione regionale unica + CTA `/annunci?regione=`. Lombardia era già fatta. Restano 9 regioni a basso volume (Friuli, Trentino, Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria, Sardegna).
+- ~~Vetrina estendeva `expires_at` (cap 230/300/400)~~ ✅ rimosso. Tutti i post valgono 200gg, vetrina = solo featured/posizione. Stripe-webhook re-deployato pulito.
 
 ### TODO chiusi (5 mag 2026)
 - ~~Search Console "Pagina con reindirizzamento": canonical valutatore + strip .html~~ ✅ canonical e link interni allineati.
