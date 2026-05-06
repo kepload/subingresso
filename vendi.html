@@ -385,6 +385,10 @@
                         class="w-full mt-8 bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100 active:scale-[.98]">
                         Pubblica annuncio gratis
                     </button>
+                    <p id="signupNote" class="hidden text-center text-xs text-slate-500 font-semibold mt-3">
+                        <i class="fas fa-bolt text-amber-500 text-[10px]"></i>
+                        Per i nuovi utenti è incluso un account gratis &mdash; bastano 30 secondi, nessuna email da confermare.
+                    </p>
                     <p class="text-center text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-4 pb-10">
                         L'annuncio verrà controllato prima della pubblicazione
                     </p>
@@ -402,7 +406,7 @@
 <script src="js/page-view-tracker.js?v=1"></script>
 <script src="js/data.js?v=15"></script>
 <script src="js/ui-components.js?v=11"></script>
-<script src="js/auth.js?v=12"></script>
+<script src="js/auth.js?v=13"></script>
 <script>
 
 // ── Step Management ───────────────────────────────────────
@@ -962,9 +966,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     _prefillFromCache(_initUserId);
 
     // Auth + prefill da DB (async, sovrascrive solo se la cache era vuota)
+    // NB: niente authBanner all'apertura — l'utente compila tutto e SCOPRE solo al
+    // click "Pubblica" che serve registrarsi (sunk cost massimo). Il modal di
+    // registrazione mostrerà un messaggio contestuale e il submit riparte da solo.
     const user = await prefillContactFromSession();
     if (!user) {
-        document.getElementById('authBanner').classList.remove('hidden');
+        const signupNote = document.getElementById('signupNote');
+        if (signupNote) signupNote.classList.remove('hidden');
     }
 
     // Pulizia one-time delle chiavi legacy (eseguita solo dopo che il prefill scope-ato e' partito)
@@ -1257,12 +1265,15 @@ async function submitAnnuncio() {
 
     if (!user) {
         window.__onLoginSuccess = async () => {
-            document.getElementById('authBanner').classList.add('hidden');
+            const banner = document.getElementById('authBanner');
+            if (banner) banner.classList.add('hidden');
+            const note = document.getElementById('signupNote');
+            if (note) note.classList.add('hidden');
             await prefillContactFromSession();
             submitAnnuncio();
         };
         _resetBtn();
-        openAuthModal('register');
+        openAuthModal('register', 'Manca solo l\'ultimo passo: crea l\'account gratis. Il tuo annuncio sarà pubblicato subito dopo.');
         return;
     }
 

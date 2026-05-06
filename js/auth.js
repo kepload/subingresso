@@ -45,6 +45,12 @@ const modalHTML = `
       </button>
     </div>
 
+    <!-- Context banner (settato da openAuthModal(tab, contextMsg) per spiegare perché si è aperto il modal) -->
+    <div id="authContextBanner" class="hidden mx-6 mt-5 bg-blue-50 border border-blue-100 rounded-xl px-4 py-3 flex items-start gap-2">
+      <i class="fas fa-info-circle text-blue-500 flex-shrink-0 mt-0.5"></i>
+      <span id="authContextMsg" class="text-sm text-blue-800 font-semibold leading-snug"></span>
+    </div>
+
     <!-- Error banner -->
     <div id="authError" class="hidden mx-6 mt-5 bg-red-50 border border-red-100 rounded-xl px-4 py-3 flex items-center gap-2">
       <i class="fas fa-exclamation-circle text-red-400 flex-shrink-0"></i>
@@ -188,12 +194,24 @@ window.switchAuthTab = function (tab) {
 };
 
 // ── Open / Close ─────────────────────────────────────────
-window.openAuthModal = function (tab) {
+window.openAuthModal = function (tab, contextMsg) {
     initAuthModal();
     switchAuthTab(tab || 'login');
     const overlay = document.getElementById('authOverlay');
     if (overlay) overlay.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    // Banner contestuale: spiega perché il modal si è aperto (es. "manca solo l'ultimo passo")
+    const ctxBanner = document.getElementById('authContextBanner');
+    const ctxMsg = document.getElementById('authContextMsg');
+    if (ctxBanner && ctxMsg) {
+        if (contextMsg) {
+            ctxMsg.textContent = contextMsg;
+            ctxBanner.classList.remove('hidden');
+        } else {
+            ctxBanner.classList.add('hidden');
+            ctxMsg.textContent = '';
+        }
+    }
 };
 
 window.closeAuthModal = function () {
@@ -202,6 +220,8 @@ window.closeAuthModal = function () {
     document.body.style.overflow = '';
     ['loginEmail','loginPassword','regNome','regCognome','regEmail','regTelefono','regPassword','forgotEmail']
         .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+    const ctxBanner = document.getElementById('authContextBanner');
+    if (ctxBanner) ctxBanner.classList.add('hidden');
     _hideAuthFeedback();
 };
 
