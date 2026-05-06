@@ -50,8 +50,8 @@
 <header></header>
 
 <main class="max-w-3xl mx-auto px-6 pt-8 pb-16">
-    <!-- Banner Calcolatore -->
-    <div class="mb-10 px-5 py-3 bg-gradient-to-r from-blue-600 to-violet-700 rounded-2xl flex items-center justify-between gap-4">
+    <!-- Banner Calcolatore (nascosto sugli articoli "bandi-*" dove l'intent è acquirente, non venditore) -->
+    <div id="bannerValutatore" class="mb-10 px-5 py-3 bg-gradient-to-r from-blue-600 to-violet-700 rounded-2xl flex items-center justify-between gap-4">
         <span class="text-white font-bold text-sm">Quanto vale il tuo posteggio?</span>
         <a href="/valutatore" class="shrink-0 bg-white text-blue-600 font-black px-4 py-2 rounded-xl text-xs hover:bg-blue-50 transition whitespace-nowrap">
             Calcola <i class="fas fa-arrow-right ml-1"></i>
@@ -79,19 +79,163 @@ const slug = params.get('post');
 const container = document.getElementById('blogContainer');
 const loading = document.getElementById('loading');
 
-// Track click su CTA regionale (link /annunci?regione=X dentro l'articolo).
-// Listener delegato: passa il regione raw dal link, non dedurlo dallo slug.
+// ── Mappa slug articoli "bandi-*" → regione esatta (deve matchare js/data.js per il filtro CTA) ──
+const SLUG_TO_REGIONE = {
+    'lombardia': 'Lombardia', 'piemonte': 'Piemonte', 'lazio': 'Lazio', 'veneto': 'Veneto',
+    'emilia-romagna': 'Emilia-Romagna', 'toscana': 'Toscana', 'campania': 'Campania', 'puglia': 'Puglia',
+    'sicilia': 'Sicilia', 'liguria': 'Liguria', 'marche': 'Marche', 'trentino-alto-adige': 'Trentino-Alto Adige',
+    'sardegna': 'Sardegna', 'friuli-venezia-giulia': 'Friuli-Venezia Giulia', 'valle-d-aosta': "Valle d'Aosta",
+    'umbria': 'Umbria', 'abruzzo': 'Abruzzo', 'molise': 'Molise', 'basilicata': 'Basilicata', 'calabria': 'Calabria'
+};
+const BANDI_PREFIX = 'bandi-posteggi-mercatali-';
+function _regioneFromSlug(s) {
+    if (!s || s.indexOf(BANDI_PREFIX) !== 0) return null;
+    return SLUG_TO_REGIONE[s.slice(BANDI_PREFIX.length)] || null;
+}
+const _BLOG_REGIONE = _regioneFromSlug(slug);
+const _IS_BANDI    = !!_BLOG_REGIONE;
+
+// Select annunci con SOLO le colonne safe (no tel/email per RLS) usate da buildCard.
+const _SAFE_COLS_LISTING = 'id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, saved_count, featured, featured_until, featured_tier, featured_since, video_url';
+
+// ── Listener click delegato: traccia CTA regionale + click sulle card del box live ──
 document.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('a') : null;
-    if (!a) return;
+    if (!a || !window.trackBlogConversion) return;
     var href = a.getAttribute('href') || '';
-    if (href.indexOf('/annunci?regione=') === 0 && window.trackBlogConversion) {
+    if (href.indexOf('/annunci?regione=') === 0) {
         try {
             var reg = decodeURIComponent(href.split('regione=')[1] || '').split('&')[0];
             window.trackBlogConversion('cta_annunci_click', slug || null, reg || null);
         } catch (_) {}
+    } else if (href.indexOf('/annuncio?id=') === 0 && a.closest('[data-box-listings]')) {
+        // Click su una card del box "Posteggi disponibili adesso"
+        window.trackBlogConversion('box_listing_click', slug || null, _BLOG_REGIONE || null);
     }
 });
+
+// ── Form Avvisi: HTML + bind handler ──
+function _bandoAlertFormHtml(regione) {
+    var reg = escapeHTML(regione);
+    return '<div class="bando-alert not-prose my-8 rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white p-5 md:p-6">'
+      + '<div class="flex items-start gap-3 mb-1">'
+      +   '<div class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-bell"></i></div>'
+      +   '<div class="min-w-0 flex-1">'
+      +     '<h3 class="font-black text-slate-900 text-base md:text-lg leading-tight">Avvisi per bandi e posteggi in ' + reg + '</h3>'
+      +     '<p class="text-xs text-slate-500 font-semibold mt-1 leading-relaxed">Ti scriviamo quando esce un nuovo bando pubblico <strong>e</strong> quando arriva un annuncio privato di posteggio in zona. Max 1 email a settimana, niente spam.</p>'
+      +   '</div>'
+      + '</div>'
+      + '<form id="bandoAlertForm" class="flex flex-col sm:flex-row gap-2 mt-4">'
+      +   '<input type="email" name="email" required placeholder="la tua email" class="flex-1 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">'
+      +   '<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">'
+      +   '<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-black text-sm px-6 py-3 rounded-xl transition whitespace-nowrap shadow-sm">Attiva avvisi <i class="fas fa-arrow-right ml-1 text-xs"></i></button>'
+      + '</form>'
+      + '<p id="bandoAlertMsg" class="hidden mt-3 text-xs font-bold"></p>'
+      + '<p class="mt-3 text-[10px] text-slate-400 leading-relaxed">Annulli l\'iscrizione in un click dal link in ogni email. <a href="/privacy" class="underline hover:text-slate-600">Privacy</a>.</p>'
+      + '</div>';
+}
+
+function _bindBandoAlertForm(regione, postSlug) {
+    const form = document.getElementById('bandoAlertForm');
+    if (!form || !regione) return;
+    const tsStart = Date.now();
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const email = String(fd.get('email') || '').trim();
+        const website = String(fd.get('website') || '');
+        const msg = document.getElementById('bandoAlertMsg');
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true; btn.classList.add('opacity-60', 'cursor-wait');
+        msg.classList.add('hidden');
+        try {
+            const res = await fetch(`${SUPABASE_URL}/functions/v1/subscribe-bando-alert`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY },
+                body: JSON.stringify({ email, regione, source: postSlug, ts_form_started: tsStart, website })
+            });
+            const data = await res.json().catch(() => ({}));
+            if (res.ok && data.success) {
+                msg.textContent = data.already_subscribed
+                    ? 'Sei già iscritto agli avvisi per ' + regione + '. Ti scriviamo non appena esce qualcosa.'
+                    : '✓ Iscrizione attivata. Ti scriviamo da ' + regione + ' (controlla l\'email).';
+                msg.className = 'mt-3 text-xs font-bold text-emerald-600';
+                msg.classList.remove('hidden');
+                form.querySelector('input[name="email"]').value = '';
+                if (window.trackBlogConversion && !data.already_subscribed) {
+                    window.trackBlogConversion('alert_signup', postSlug || null, regione);
+                }
+                btn.disabled = false; btn.classList.remove('opacity-60', 'cursor-wait');
+            } else {
+                msg.textContent = (data && data.error) ? data.error : 'Errore. Riprova tra un attimo.';
+                msg.className = 'mt-3 text-xs font-bold text-red-600';
+                msg.classList.remove('hidden');
+                btn.disabled = false; btn.classList.remove('opacity-60', 'cursor-wait');
+            }
+        } catch (err) {
+            msg.textContent = 'Errore di connessione. Riprova.';
+            msg.className = 'mt-3 text-xs font-bold text-red-600';
+            msg.classList.remove('hidden');
+            btn.disabled = false; btn.classList.remove('opacity-60', 'cursor-wait');
+        }
+    });
+}
+
+// ── Box "Posteggi disponibili adesso in [Regione]" — fetch + render ──
+async function _loadBandoListingsBox(regione, postSlug) {
+    const target = document.getElementById('bandoListingsBox');
+    if (!target || !regione) return;
+    try {
+        const { data, error } = await _supabase
+            .from('annunci')
+            .select(_SAFE_COLS_LISTING)
+            .eq('regione', regione)
+            .eq('status', 'active')
+            .order('created_at', { ascending: false })
+            .limit(3);
+
+        if (error) throw error;
+
+        // Popola cache nomi venditori per buildCard (USER_NAMES)
+        const userIds = Array.from(new Set((data || []).map(l => l.user_id).filter(Boolean)));
+        if (userIds.length && typeof USER_NAMES !== 'undefined') {
+            const { data: profs } = await _supabase
+                .from('profiles')
+                .select('id, nome, cognome, avatar_url')
+                .in('id', userIds);
+            (profs || []).forEach(p => {
+                USER_NAMES[p.id] = (typeof formatFullName === 'function')
+                    ? (formatFullName(p.nome, p.cognome) || 'Venditore')
+                    : ([p.nome, p.cognome].filter(Boolean).join(' ').trim() || 'Venditore');
+                if (p.avatar_url && typeof USER_AVATARS !== 'undefined') USER_AVATARS[p.id] = p.avatar_url;
+            });
+        }
+
+        if (!data || data.length === 0) {
+            // FALLBACK 2.5: regioni vuote → solo CTA avvisi (riusa il form già renderizzato sopra).
+            target.innerHTML = '<div class="not-prose mt-12 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100">'
+                + '<h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Ancora pochi posteggi in ' + escapeHTML(regione) + '</h3>'
+                + '<p class="text-sm text-slate-600 mb-2 leading-relaxed">Nessun annuncio attivo qui in questo momento. Lascia l\'email lassù: ti avvisiamo appena ne arriva uno (più i bandi pubblici nuovi).</p>'
+                + '<a href="#bandoAlertForm" onclick="document.getElementById(\'bandoAlertForm\') && document.getElementById(\'bandoAlertForm\').scrollIntoView({behavior:\'smooth\',block:\'center\'}); return false;" class="inline-block mt-2 text-sm font-black text-blue-600 hover:underline">↑ Attiva gli avvisi</a>'
+                + '</div>';
+            return;
+        }
+
+        const cards = data.map(l => buildCard(l)).join('');
+        target.innerHTML = '<div class="not-prose mt-12" data-box-listings data-regione="' + escapeHTML(regione) + '">'
+            + '<div class="flex items-baseline justify-between gap-4 mb-4">'
+            +   '<h3 class="text-xl md:text-2xl font-black text-slate-900">Posteggi disponibili adesso in ' + escapeHTML(regione) + '</h3>'
+            +   '<a href="/annunci?regione=' + encodeURIComponent(regione) + '" class="text-xs font-black text-blue-600 hover:underline whitespace-nowrap">Vedi tutti →</a>'
+            + '</div>'
+            + '<p class="text-sm text-slate-500 font-medium mb-6 leading-relaxed">Mentre aspetti il prossimo bando, qui ci sono <strong>posteggi privati già attivi</strong> in ' + escapeHTML(regione) + ', con licenza in regola e clientela fidelizzata.</p>'
+            + '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">' + cards + '</div>'
+            + '</div>';
+        if (typeof observeCardViews === 'function') observeCardViews();
+    } catch (e) {
+        // Errore silenzioso: il box semplicemente non appare
+        target.innerHTML = '';
+    }
+}
 
 async function loadBlog() {
     try {
@@ -131,9 +275,14 @@ function _insertBlogPromo(html) {
         if (++count === 3) { splitAt = idx; break; }
     }
     if (splitAt === -1) return html;
-    const promo = `<div class="blog-promo not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-slate-600">
-        🎰 Nuovo su Subingresso? <a href="#" onclick="sessionStorage.setItem('_reg_src','blog_promo'); openAuthModal('register', undefined, 'blog_promo'); return false;" class="font-bold text-amber-700 hover:underline">Registrati e prova a vincere 30 giorni di Vetrina gratis →</a>
-    </div>`;
+
+    // Sui post "bandi-*" il visitor è acquirente, non venditore: sostituisco la promo
+    // Vetrina (off-intent) con il form Avvisi (intent-aligned, lead magnet bundle).
+    const promo = _IS_BANDI
+        ? _bandoAlertFormHtml(_BLOG_REGIONE)
+        : `<div class="blog-promo not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-slate-600">
+            🎰 Nuovo su Subingresso? <a href="#" onclick="sessionStorage.setItem('_reg_src','blog_promo'); openAuthModal('register', undefined, 'blog_promo'); return false;" class="font-bold text-amber-700 hover:underline">Registrati e prova a vincere 30 giorni di Vetrina gratis →</a>
+        </div>`;
     return html.slice(0, splitAt) + promo + html.slice(splitAt);
 }
 
@@ -202,12 +351,17 @@ function renderPost(post) {
              class="w-full aspect-[16/9] object-cover rounded-3xl mb-8 bg-slate-100">
     ` : '';
 
-    container.innerHTML = `
-        ${heroHtml}
-        <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
-        <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>
-        <div class="prose font-medium text-left">${_insertBlogPromo(safeContent)}</div>
-        <div class="mt-20 p-10 bg-slate-50 rounded-[40px] border border-slate-100 text-center">
+    // 2.1 — Banner valutatore off-intent sui bandi: nasconderlo prima del render testo.
+    if (_IS_BANDI) {
+        const banner = document.getElementById('bannerValutatore');
+        if (banner) banner.classList.add('hidden');
+    }
+
+    // 2.4 — Sui bandi sostituisco il blocco "voglio vendere / voglio comprare" col box live.
+    // Sui post non-bandi resta il blocco originale.
+    const finalCtaBlock = _IS_BANDI
+        ? `<div id="bandoListingsBox" class="mt-16"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`
+        : `<div class="mt-20 p-10 bg-slate-50 rounded-[40px] border border-slate-100 text-center">
             <div class="bg-blue-600 text-white w-16 h-16 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-100 mx-auto mb-6 text-center">
                 <i class="fas fa-rocket text-2xl"></i>
             </div>
@@ -217,15 +371,29 @@ function renderPost(post) {
                 <a href="/vendi" class="bg-blue-600 text-white font-black px-10 py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 text-center">Voglio Vendere</a>
                 <a href="/annunci" class="bg-white text-slate-900 border border-slate-200 font-black px-10 py-5 rounded-2xl hover:bg-slate-50 transition shadow-sm text-center">Voglio Comprare</a>
             </div>
-        </div>
+        </div>`;
+
+    container.innerHTML = `
+        ${heroHtml}
+        <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
+        <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>
+        <div class="prose font-medium text-left">${_insertBlogPromo(safeContent)}</div>
+        ${finalCtaBlock}
         <div class="mt-12 pt-10 border-t border-slate-100 text-left">
             <a href="/blog" class="text-sm font-bold text-slate-400 hover:text-blue-600 transition">← Torna all'indice degli articoli</a>
         </div>
     `;
-    // Nascondi la promo agli utenti già loggati
+    // Nascondi la promo Vetrina agli utenti già loggati (NON il form Avvisi: vale anche per loggati).
     _supabase.auth.getSession().then(({ data: { session } }) => {
         if (session) document.querySelectorAll('.blog-promo').forEach(el => el.remove());
     });
+
+    // 2.3 — Bind del form Avvisi se presente nel DOM.
+    if (_IS_BANDI) {
+        _bindBandoAlertForm(_BLOG_REGIONE, post.slug);
+        // 2.4 / 2.5 — Carica box live posteggi (con fallback regione vuota interno).
+        _loadBandoListingsBox(_BLOG_REGIONE, post.slug);
+    }
 }
 
 function renderList(posts) {
