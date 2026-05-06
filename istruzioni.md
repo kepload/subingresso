@@ -177,7 +177,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **Immagini annunci**: salvate in `dettagli_extra.images` E in `img_urls`. Devono essere in entrambi.
 - **`tel`/`email` mai esposti a anon**: `annuncio-detail.js` `select(...)` senza tel/email. Fetch RPC `get_listing_contact()` solo dopo `auth.getUser()` confermato.
 - **Trigger `trg_enforce_annunci_status`**: forza `status='pending'` su INSERT non-admin, blocca promozione ad active via UPDATE.
-- **Validazioni `vendi.html`**: prezzo 100€-10.000.000€. Descrizione min 10 char. Anti-spam 1 min.
+- **Validazioni `vendi.html`**: prezzo 100€-400.000€ (range realistico posteggi). Descrizione min 10 char. Anti-spam 1 min. **Limiti NON mostrati in UI** — l'utente che sbaglia legge solo "Prezzo troppo basso/alto, controlla bene" (volutamente vago, alza la friction sui prezzi civetta a 1€ o pump a 9999999€). Stesso check in `modifica-annuncio.html`.
 - **NON join `profiles(...)` nelle select** di annunci/conversazioni — rompe PostgREST. Sempre fetch separato + merge.
 - **`_supabase.rpc().catch()` NON ESISTE** v2 — usare async/await.
 - **Regex Python multi-line `[\s\S]*?`** per riscrivere codice è pericolosa: ha già cancellato funzioni intere. Edit puntuale > regex.
@@ -334,7 +334,7 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 - 5 step. `fTipo`, `fMerce`, `fGiorni` sono `<input type="hidden">` aggiornati via JS (non select). `stato` radio hidden via `selectStato()`.
 - Step 1 auto-avanza al click. Step 5 auto-suggest titolo da comune+tipo+settore.
-- Prezzo: 100-10.000.000€, **input via `style=""` inline** (padding/font/color) per battere la cascade `.field-input`.
+- Prezzo: 100-400.000€ (range realistico posteggi mercatali), **input via `style=""` inline** (padding/font/color) per battere la cascade `.field-input`. Sotto l'input: box amber soft con nudge anti-prezzo-civetta ("scrivi il prezzo reale, un prezzo civetta vende in media 3 volte meno"). I limiti NON sono mostrati in UI — chi sbaglia vede solo "Prezzo troppo basso/alto, controlla bene".
 - Anti-spam: 1 minuto. Timestamp PRIMA dell'insert, rimosso su errore.
 - **Telefono OBBLIGATORIO** (commit `3b5ac17`): `required` HTML5, asterisco rosso, banner `#missingPhoneBanner` se prefill non trova telefono nel profilo, bordo giallo, focus automatico, messaggio errore esplicito.
 - **Cache name/tel scope per user_id** (vedi sezione SECURITY).

@@ -362,7 +362,11 @@ async function updateAnnuncio() {
     // Salva il numero in formato canonico
     document.getElementById('fTel').value = normalizePhone(tel);
     if (isNaN(prezzo) || prezzo < 100) {
-        showToast('Il prezzo minimo è 100 €.', 'warning');
+        showToast('Prezzo troppo basso, controlla bene.', 'warning');
+        return;
+    }
+    if (prezzo > 400000) {
+        showToast('Prezzo troppo alto, controlla bene.', 'warning');
         return;
     }
     if (descrizione.length < 10) {
