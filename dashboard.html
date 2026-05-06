@@ -135,12 +135,9 @@
                     <div id="admStatUtenti" class="text-2xl font-black text-slate-900">—</div>
                 </div>
                 <div id="admStatRevenueBox" class="bg-white p-5 rounded-2xl border border-amber-100 shadow-sm text-center md:text-left transition-colors">
-                    <div id="admStatRevenueLabel" class="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1 flex items-center gap-1.5 justify-center md:justify-start flex-wrap transition-colors">
-                        <span>Guadagno Vetrine</span>
-                        <span id="admStatRevenueToday" class="hidden bg-emerald-100 text-emerald-700 normal-case tracking-normal text-[9px] font-black px-1.5 py-0.5 rounded animate-pulse">🎉 +€0 oggi</span>
-                        <span id="admStatRevenueMtd" class="hidden bg-amber-50 text-amber-600 normal-case tracking-normal text-[9px] font-black px-1.5 py-0.5 rounded">+€0 mese</span>
-                    </div>
+                    <div id="admStatRevenueLabel" class="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1 transition-colors">Guadagno Vetrine</div>
                     <div id="admStatRevenue" class="text-2xl font-black text-amber-500 transition-colors">—</div>
+                    <div id="admStatRevenueToday" class="hidden mt-1.5 inline-block bg-emerald-100 text-emerald-700 text-[10px] font-black px-2 py-0.5 rounded animate-pulse">🎉 +€0 oggi</div>
                 </div>
             </div>
 
@@ -1008,10 +1005,8 @@ async function loadAdminStats() {
         const boxEl   = document.getElementById('admStatRevenueBox');
         const labelEl = document.getElementById('admStatRevenueLabel');
         const todayEl = document.getElementById('admStatRevenueToday');
-        const mtdEl   = document.getElementById('admStatRevenueMtd');
 
         const setHype = (hype) => {
-            // Verde quando vendita oggi, arancione altrimenti.
             if (boxEl) {
                 boxEl.classList.toggle('border-emerald-200', hype);
                 boxEl.classList.toggle('bg-emerald-50/40',   hype);
@@ -1029,18 +1024,12 @@ async function loadAdminStats() {
 
         if (rev && !rev.error) {
             const lifetime = (rev.lifetime_cents || 0) / 100;
-            const mtd      = (rev.mtd_cents || 0) / 100;
             const today    = (rev.today_cents || 0) / 100;
             const fmt = (n) => '€ ' + n.toLocaleString('it-IT', { minimumFractionDigits: n % 1 === 0 ? 0 : 2, maximumFractionDigits: 2 });
-            const fmtShort = (n) => '€' + n.toLocaleString('it-IT', { minimumFractionDigits: n % 1 === 0 ? 0 : 2, maximumFractionDigits: 2 });
 
             if (valueEl) valueEl.textContent = fmt(lifetime);
-            if (mtdEl) {
-                mtdEl.textContent = `+${fmtShort(mtd)} mese`;
-                mtdEl.classList.toggle('hidden', mtd <= 0);
-            }
             if (todayEl) {
-                todayEl.textContent = `🎉 +${fmtShort(today)} oggi`;
+                todayEl.textContent = `🎉 +${fmt(today).trim()} oggi`;
                 todayEl.classList.toggle('hidden', today <= 0);
             }
             setHype(today > 0);
