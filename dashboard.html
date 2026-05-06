@@ -137,7 +137,7 @@
                 <div id="admStatRevenueBox" class="bg-white p-5 rounded-2xl border border-amber-100 shadow-sm text-center md:text-left transition-colors">
                     <div id="admStatRevenueLabel" class="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1 transition-colors">Guadagno Vetrine</div>
                     <div id="admStatRevenue" class="text-2xl font-black text-amber-500 transition-colors">—</div>
-                    <div id="admStatRevenueToday" class="hidden mt-1.5 inline-block bg-emerald-100 text-emerald-700 text-[10px] font-black px-2 py-0.5 rounded animate-pulse">🎉 +€0 oggi</div>
+                    <div id="admStatRevenueToday" class="hidden mt-1.5 inline-block bg-emerald-100 text-emerald-700 text-[10px] font-black px-2 py-0.5 rounded animate-pulse">+ € 0 oggi</div>
                 </div>
             </div>
 
@@ -1029,7 +1029,7 @@ async function loadAdminStats() {
 
             if (valueEl) valueEl.textContent = fmt(lifetime);
             if (todayEl) {
-                todayEl.textContent = `🎉 +${fmt(today).trim()} oggi`;
+                todayEl.textContent = `+ ${fmt(today).trim()} oggi`;
                 todayEl.classList.toggle('hidden', today <= 0);
             }
             setHype(today > 0);
