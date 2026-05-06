@@ -251,6 +251,7 @@
                         </div>
                     </div>
                     <div class="flex gap-1.5">
+                        <button id="chartBtnGiorno"  onclick="setChartPeriod('giorno')"  class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">30gg</button>
                         <button id="chartBtnMese"    onclick="setChartPeriod('mese')"    class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-blue-600 text-white">Mese</button>
                         <button id="chartBtnAnno"    onclick="setChartPeriod('anno')"    class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">Anno</button>
                         <button id="chartBtnStorico" onclick="setChartPeriod('storico')" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">Storico</button>
@@ -1113,21 +1114,40 @@ async function loadAdminGrowthChart(mode = 'mese') {
         const x = new Date(d);
         return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0');
     };
+    const dayKey = (d) => {
+        const x = new Date(d);
+        return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0');
+    };
     const yearKey = (d) => String(new Date(d).getFullYear());
     const viewsMap = new Map();
     if (_rawGrowthData.views) {
         const arr = (mode === 'anno')
             ? (_rawGrowthData.views.yearly || [])
-            : (mode === 'storico'
-                ? (_rawGrowthData.views.all_monthly || [])
-                : (_rawGrowthData.views.monthly_12 || []));
+            : (mode === 'giorno'
+                ? (_rawGrowthData.views.daily_30 || [])
+                : (mode === 'storico'
+                    ? (_rawGrowthData.views.all_monthly || [])
+                    : (_rawGrowthData.views.monthly_12 || [])));
         arr.forEach(b => {
-            const k = (mode === 'anno') ? yearKey(b.bucket) : monthKey(b.bucket);
+            const k = (mode === 'anno') ? yearKey(b.bucket)
+                    : (mode === 'giorno') ? dayKey(b.bucket)
+                    : monthKey(b.bucket);
             viewsMap.set(k, b.count || 0);
         });
     }
 
-    if (mode === 'mese') {
+    if (mode === 'giorno') {
+        for (let i = 29; i >= 0; i--) {
+            const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i);
+            const s = d.toISOString();
+            const e = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1).toISOString();
+            labels.push(d.toLocaleDateString('it-IT', { day: '2-digit', month: 'short' }));
+            pData.push(countInRange(_rawGrowthData.profiles, s, e));
+            aData.push(countInRange(_rawGrowthData.annunci,  s, e));
+            vData.push(countInRange(_rawGrowthData.vetrine,  s, e));
+            viewsData.push(viewsMap.get(dayKey(d)) || 0);
+        }
+    } else if (mode === 'mese') {
         for (let i = 11; i >= 0; i--) {
             const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
             const s = d.toISOString();
@@ -1216,7 +1236,9 @@ async function loadAdminGrowthChart(mode = 'mese') {
                     bodyFont:  { family: 'Plus Jakarta Sans', weight: '600', size: 12 },
                     padding: 12, cornerRadius: 12, boxPadding: 4,
                     callbacks: {
-                        title: (items) => _chartMode === 'anno' ? `Anno ${items[0].label}` : `Mese: ${items[0].label}`,
+                        title: (items) => _chartMode === 'anno' ? `Anno ${items[0].label}`
+                                       : _chartMode === 'giorno' ? `${items[0].label}`
+                                       : `Mese: ${items[0].label}`,
                         label: (item) => ` ${item.dataset.label}: ${item.parsed.y}`,
                     },
                 },
@@ -1469,8 +1491,8 @@ function setFunnelPeriod(p) {
 }
 
 function setChartPeriod(mode) {
-    const subtitles = { mese: '(nuovi per mese)', anno: '(nuovi per anno)', storico: '(storico completo)' };
-    ['Mese', 'Anno', 'Storico'].forEach(m => {
+    const subtitles = { giorno: '(ultimi 30 giorni)', mese: '(nuovi per mese)', anno: '(nuovi per anno)', storico: '(storico completo)' };
+    ['Giorno', 'Mese', 'Anno', 'Storico'].forEach(m => {
         const btn = document.getElementById(`chartBtn${m}`);
         if (btn) btn.className = `text-[11px] font-black px-3 py-1.5 rounded-lg transition ${mode === m.toLowerCase() ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`;
     });
