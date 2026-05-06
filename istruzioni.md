@@ -659,6 +659,17 @@ Lombardia 5322, Sicilia 4950, Liguria 4385, Lazio 4291, Puglia 4246, Campania 41
 - ~~10 articoli blog regioni con tutorial generico (Piemonte→Marche)~~ ✅ riscritti con bandi reali + sezione regionale unica + CTA `/annunci?regione=`. Lombardia era già fatta. Restano 9 regioni a basso volume (Friuli, Trentino, Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria, Sardegna).
 - ~~Vetrina estendeva `expires_at` (cap 230/300/400)~~ ✅ rimosso. Tutti i post valgono 200gg, vetrina = solo featured/posizione. Stripe-webhook re-deployato pulito.
 
+### TODO chiusi (6 mag 2026 — sessione pomeriggio)
+- ~~Prezzi civetta a 100€ tondo per attirare click~~ ✅ min 101 (blocca il "100 tondo"), max 400.000 (range realistico posteggi), messaggi vaghi senza rivelare i limiti, nudge box amber "prezzo civetta vende 3 volte meno".
+- ~~Form Foto: caricava 5 foto a tutti + CTA upsell vetrina invasivo~~ ✅ free 1 foto / vetrina attiva 5, nudge "vende fino a 3 volte di più", CTA upsell vetrina rimosso.
+- ~~Step 5 senza preview: utente non vedeva come sarebbe apparsa la card~~ ✅ preview live via `buildCard()` con fakeListing, oninput su titolo/nome, object URL per foto.
+- ~~Auth banner "devi registrarti" all'apertura vendi spoilerava il sunk cost~~ ✅ banner rimosso all'apertura, sostituito da microcopy sotto bottone Pubblica + modal contestuale al click.
+- ~~Visitor popup vetrina si mostrava anche durante creazione annuncio~~ ✅ mai in `/vendi`, attesa loop 3s se modal auth aperto.
+- ~~"Gianfranco Dona Dona" e simili display naive `[nome,cognome].join`~~ ✅ helper globale `formatFullName()` PER PAROLA + sanitize input al register + 10 display point migrati + Gianfranco DB fixato.
+- ~~Sospetto popup vetrina non converte: serve dato per sorgente~~ ✅ tabella `auth_modal_opens` pseudonima + 12 sorgenti tipizzate + RPC admin + pannello dashboard "Funnel registrazione per sorgente" sopra Valutazioni + GDPR privacy aggiornata (no cookie banner necessario).
+- ~~Salvati nei preferiti: il venditore non vedeva quante persone avevano salvato il suo annuncio~~ ✅ colonna `annunci.saved_count` + trigger atomico, autori restano privati (RLS owner-only invariata), display in pagina annuncio + dashboard + email weekly.
+- ~~Funnel non distingueva click "Messaggia" / "WhatsApp" / "Chiama"~~ ✅ aggiunti chat_click/whatsapp_click/call_click, `requireAuth(callback, source)` propaga la source.
+
 ### TODO chiusi (5 mag 2026)
 - ~~Search Console "Pagina con reindirizzamento": canonical valutatore + strip .html~~ ✅ canonical e link interni allineati.
 - ~~`/annunci/[capoluogo]` mostrava solo annunci nel comune esatto~~ ✅ ora 3-tier comune→provincia→200km.
