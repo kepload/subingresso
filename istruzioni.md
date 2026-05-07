@@ -145,6 +145,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - **canonical valutatore** = `/valutatore` (senza `.html`), allineato a sitemap. Stesso per og:url, JSON-LD `url`.
 - **og:image home** (5 mag 2026): self-hosted in `/og/og-home.jpg` (1200×630, JPEG q90, ~95KB). Generata ad hoc: piazza italiana sfocata + bancarelle + scritta "Subingresso.it" centrata. Lavagnette VUOTE — la prima versione aveva "FRESCO LOCALE / PRODOTTI ITALIANI" ma framing produce-market è off-brand (sito vende licenze, non cibo). Tag espliciti `og:image:width/height` + `twitter:card=summary_large_image` + `?v=N` per forzare re-scrape social. **`/annunci` e `/blog` ancora con foto Pexels** (l'utente ha chiesto fix solo home).
 - **og:image annuncio** dinamico: prima foto dell'annuncio via `api/annuncio.js` SSR. NON tocca la home og:image.
+- **`api/blog.js` SSR (7 mag 2026)**: serve `/blog?post=<slug>` e `/blog` (lista) via rewrite incondizionato `/blog -> /api/blog`. Fetch del post da `blog_posts` Supabase, riusa `blog-template.html` come template via `fs.readFileSync(path.join(process.cwd(), 'blog-template.html'))` e fa string-replace dei meta tag head (`title`, `description`, `og:*`, `canonical`, `twitter:image`) + inietta `<script type="application/ld+json">` NewsArticle + `<meta robots max-image-preview:large>`. Slug invalido = 404 + noindex (no soft-404). Cache `s-maxage=180`. **Il template DEVE chiamarsi `blog-template.html`, NON `blog.html`**: testato 7 mag 2026 — con `blog.html` deployato come static, cleanUrls intercetta `/blog` PRIMA del rewrite e la function non viene mai invocata (stesso bug noto di `annuncio.html`). **NON mettere il template in `.vercelignore`** o la function fallisce con `FUNCTION_INVOCATION_FAILED` (`includeFiles` in functions config NON ribalta l'esclusione di .vercelignore — testato 7 mag 2026). **NON usare rewrite con `has` query** per `/blog`: il filesystem statico vince comunque sul rewrite condizionale. Lo stesso pattern di `api/annuncio.js` (rewrite incondizionato + nome file template diverso) funziona.
 - **Meta SEO completi** (description, canonical, og:type/site_name/locale/url/title/desc, twitter:card) anche su contatti/privacy/termini/annunci.
 - **`messaggi.html` ha `<meta robots noindex,nofollow>`** in aggiunta al Disallow di robots.txt.
 - **Sitemap online**: 247 URL, refresh 1h, status 200.
@@ -614,6 +615,7 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - `css/tailwind.css?v=2` (precompilato).
 - `page-view-tracker.js?v=1`.
 - **Bumpare `?v=` quando modifichi un file caricato con cache busting.** Le HTML invece NON hanno cache buster — il browser può servirle stale fino a Ctrl+Shift+R.
+- **`blog-template.html` (7 mag 2026)**: ex `blog.html`, rinominato per non confliggere col rewrite SSR `/blog -> /api/blog`. Contiene tutto il JS client del blog: modificarlo qui (NON in `api/blog.js` che è solo SSR head). I `?v=` interni di data.js/auth.js/ui-components.js restano allineati al resto del sito.
 
 ## 📰 Articoli "Bandi" — Pattern Replica
 
@@ -682,6 +684,9 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 9. **og:image `/annunci` e `/blog`**: ancora foto Pexels frutta/verdura. Sostituire con immagini on-brand quando disponibili (stessa convenzione self-hosted in `/og/`).
 10. **Trust whitelist modifiche annuncio**: valutare se attivare auto-approvazione modifiche dopo N annunci approvati per ridurre admin overhead delle re-revisioni.
 11. **Fase 5 piano blog conversion** — solo dopo 7-14gg di dati: aprire pannello "Performance blog" admin (dashboard.html sopra Valutatore) + RPC `admin_blog_stats(p_days)`. Identificare 3-5 regioni con CR% basso (<1%) e tante views (>50) → riscrivere copy di quegli articoli mirando a CTA più chiare + paragrafi sopra il fold più orientati al "subingresso veloce vs bando lento". Anche guardare iscrizioni a `bando_alerts` per regione (RPC futura: count by regione → indicatore di intent forte). Tracking dati: tabella `blog_conversions` con `kind ∈ {cta_annunci_click, alert_signup, box_listing_click}`.
+
+### TODO chiusi (7 mag 2026)
+- ~~Blog post NON SSR: tutti i `/blog?post=<slug>` servivano lo stesso HTML statico con title generico "Blog & Guide per Ambulanti"~~ ✅ creato `api/blog.js` SSR (rewrite incondizionato `/blog -> /api/blog`), template rinominato `blog.html -> blog-template.html` per evitare cleanUrls intercept. Ora i 20 articoli bandi rispondono con title/desc/canonical/og:*/JSON-LD NewsArticle specifici. Test 3-tier passato (Lombardia, Calabria, slug fake → 404+noindex, lista /blog → 200). Lessons learned aggiunte alla sezione SEO & Google.
 
 ### TODO chiusi (6 mag 2026)
 - ~~10 articoli blog regioni con tutorial generico (Piemonte→Marche)~~ ✅ riscritti con bandi reali + sezione regionale unica + CTA `/annunci?regione=`. Lombardia era già fatta. Restano 9 regioni a basso volume (Friuli, Trentino, Valle d'Aosta, Umbria, Abruzzo, Molise, Basilicata, Calabria, Sardegna).
