@@ -58,6 +58,7 @@ function slugToCity(slug) {
 
 function cityToSlug(city) {
     return city.toLowerCase()
+        .replace(/['’`]/g, '-')
         .replace(/\s+/g, '-')
         .replace(/[àá]/g, 'a')
         .replace(/[èéê]/g, 'e')
