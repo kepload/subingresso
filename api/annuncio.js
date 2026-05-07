@@ -240,7 +240,14 @@ module.exports = async function handler(req, res) {
                     <span id="badgeTipo"  class="bg-blue-50 text-blue-700 text-[10px] font-black px-3 py-1.5 rounded-lg uppercase tracking-wider">${esc(listing ? listing.tipo : '')}</span>
                     <span id="badgeGiornoSlot" class="inline-flex flex-wrap gap-2 items-center">${listing ? dayBadgeHTML(listing.giorni, listing.tipo) : ''}</span>
                 </div>
-                <h1 id="titolo" class="text-3xl font-black tracking-tight leading-tight text-slate-900">${esc(listing ? listing.titolo : '')}</h1>
+                <div id="titleRow" class="relative pr-12">
+                    <h1 id="titolo" class="text-3xl font-black tracking-tight leading-tight text-slate-900">${esc(listing ? listing.titolo : '')}</h1>
+                    <button id="saveBtn" type="button" onclick="_saveCurrentListing()"
+                            class="absolute top-0 right-0 w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 text-slate-400 hover:bg-slate-50 hover:text-blue-600 transition active:scale-95"
+                            title="Salva nei preferiti" aria-label="Salva nei preferiti">
+                        <i class="far fa-bookmark text-lg"></i>
+                    </button>
+                </div>
                 <p id="prezzoMobile" class="lg:hidden text-3xl font-black text-slate-900 mt-3">${prezzoStr}</p>
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between mt-4 gap-3">
                     <div id="luogo" class="text-slate-500 font-bold text-sm flex items-center gap-2 flex-wrap">
@@ -337,11 +344,14 @@ module.exports = async function handler(req, res) {
 </main>
 
 <div id="mobileCta" class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-100 px-4 gap-3" style="padding-top:.75rem;padding-bottom:calc(.75rem + env(safe-area-inset-bottom))">
-    <button onclick="startChat()" class="flex-1 bg-blue-600 text-white py-3 rounded-2xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-2 shadow-lg shadow-blue-100">
+    <button onclick="startChat()" class="flex-1 bg-blue-600 text-white py-3 rounded-2xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-2 shadow-lg shadow-blue-100 whitespace-nowrap">
         <i class="fas fa-comment-alt"></i> Invia Messaggio
     </button>
-    <button onclick="openWhatsApp()" class="flex-1 bg-emerald-500 text-white py-3 rounded-2xl font-black text-sm hover:bg-emerald-600 transition active:scale-[.98] flex items-center justify-center gap-2 shadow-lg shadow-emerald-100">
+    <button onclick="openWhatsApp()" class="flex-1 bg-emerald-500 text-white py-3 rounded-2xl font-black text-sm hover:bg-emerald-600 transition active:scale-[.98] flex items-center justify-center gap-2 shadow-lg shadow-emerald-100 whitespace-nowrap">
         <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+    </button>
+    <button id="saveBtnMobile" onclick="_saveCurrentListing()" class="w-12 border-2 border-slate-100 text-slate-700 py-3 rounded-2xl font-black text-sm hover:bg-slate-50 transition active:scale-[.98] flex items-center justify-center shrink-0" title="Salva nei preferiti" aria-label="Salva nei preferiti">
+        <i class="far fa-bookmark text-slate-400"></i>
     </button>
 </div>
 
