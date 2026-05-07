@@ -27,9 +27,12 @@ paths = [
   '''istruzioni\.md''',
 ]
 # Permetti pattern di esempio chiaramente finti (FAKE/EXAMPLE/PLACEHOLDER)
+# + sb_publishable_* (chiave pubblica per design, sostituisce la vecchia anon JWT,
+#   già hardcoded in supabase-config.js / api/annuncio.js / api/sitemap.js).
 regexes = [
   '''sb_secret_[A-Z_]*FAKE[A-Z_0-9]*''',
   '''sb_secret_[A-Z_]*EXAMPLE[A-Z_0-9]*''',
   '''sb_secret_[A-Z_]*PLACEHOLDER[A-Z_0-9]*''',
   '''<REVOKED-\d{4}-\d{2}-\d{2}>''',
+  '''sb_publishable_[A-Za-z0-9_-]+''',
 ]
