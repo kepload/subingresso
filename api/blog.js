@@ -33,10 +33,15 @@ function pexelsUrl(base, w, h) {
     return base + sep + 'auto=compress&cs=tinysrgb&w=' + w + (h ? '&h=' + h : '') + '&fit=crop';
 }
 
+// Il template e' `blog-template.html` (NON `blog.html`): se si chiamasse
+// blog.html, cleanUrls intercetterebbe /blog -> blog.html servendolo come
+// static PRIMA del rewrite verso /api/blog (testato 7 mag 2026).
+// blog-template.html e' deployato come static ma nessuno lo richiede
+// (no link, no sitemap), quindi non viene mai servito agli utenti.
 let _BLOG_HTML_CACHE = null;
 function getBlogTemplate() {
     if (_BLOG_HTML_CACHE) return _BLOG_HTML_CACHE;
-    _BLOG_HTML_CACHE = fs.readFileSync(path.join(process.cwd(), 'blog.html'), 'utf8');
+    _BLOG_HTML_CACHE = fs.readFileSync(path.join(process.cwd(), 'blog-template.html'), 'utf8');
     return _BLOG_HTML_CACHE;
 }
 
