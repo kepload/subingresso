@@ -16,10 +16,9 @@ supabase/.temp
 # (template inline). NON ripristinare il deploy di questo file.
 annuncio.html
 
-# blog.html resta in repo come template (single source of truth per
-# l'editing) ma NON viene deployato come file statico, altrimenti con
-# cleanUrls intercetta /blog?post= PRIMA del rewrite verso /api/blog
-# (testato 7 mag 2026: il rewrite con `has` query non scattava).
-# api/blog.js lo legge dal bundle via `includeFiles` in vercel.json e
-# fa string-replace sui meta tag head per ogni post.
-blog.html
+# NB: blog.html NON va in .vercelignore. api/blog.js lo legge a runtime
+# via fs.readFileSync (path.join(process.cwd(), 'blog.html')) per
+# riusarlo come template. Se escluso qui, la function fallisce con
+# FUNCTION_INVOCATION_FAILED (testato 7 mag 2026).
+# Il rewrite incondizionato `/blog -> /api/blog` ha precedenza sul
+# file statico, quindi il deploy come static non causa intercettazione.

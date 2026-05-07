@@ -15,11 +15,6 @@
     { "source": "/annunci/:citta",     "destination": "/api/annunci-citta?citta=:citta" },
     { "source": "/blog",               "destination": "/api/blog" }
   ],
-  "functions": {
-    "api/blog.js": {
-      "includeFiles": "blog.html"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
