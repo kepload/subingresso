@@ -121,7 +121,7 @@
         <!-- ── ADMIN PANEL (Exclusive) ── -->
         <div id="adminPanel" class="hidden space-y-6">
             <!-- Stats Cards -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center md:text-left">
                     <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Annunci Totali</div>
                     <div id="admStatAnnunci" class="text-2xl font-black text-slate-900">—</div>
@@ -138,6 +138,11 @@
                     <div id="admStatRevenueLabel" class="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1 transition-colors">Guadagno Vetrine</div>
                     <div id="admStatRevenue" class="text-2xl font-black text-amber-500 transition-colors">—</div>
                     <div id="admStatRevenueToday" class="hidden mt-1.5 inline-block bg-emerald-100 text-emerald-700 text-[10px] font-black px-2 py-0.5 rounded animate-pulse">+ € 0 oggi</div>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-5 rounded-2xl border border-indigo-100 shadow-sm text-center md:text-left" title="Stima conservativa: vendita = max(prezzo, 1.000€) per neutralizzare i prezzi civetta. Affitti = canone annuale × 8 (capitalizzazione).">
+                    <div class="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-1">Valore Annunci</div>
+                    <div id="admStatTotalValue" class="text-2xl font-black text-indigo-600">—</div>
+                    <div id="admStatTotalValueHint" class="text-[9px] text-slate-400 mt-1">vendita + affitti capitalizzati</div>
                 </div>
             </div>
 
@@ -1085,6 +1090,27 @@ async function loadAdminStats() {
         }
     } catch (_) {
         document.getElementById('admStatRevenue').textContent = '€ 0';
+    }
+
+    // Valore Annunci: stima conservativa del valore di mercato degli annunci attivi
+    try {
+        const { data: tv } = await _supabase.rpc('admin_total_listing_value');
+        const tvEl   = document.getElementById('admStatTotalValue');
+        const hintEl = document.getElementById('admStatTotalValueHint');
+        if (tv && !tv.error && tvEl) {
+            const total = Number(tv.total_eur || 0);
+            tvEl.textContent = '€ ' + total.toLocaleString('it-IT');
+            if (hintEl) {
+                const nv = Number(tv.n_vendita || 0);
+                const na = Number(tv.n_affitto || 0);
+                hintEl.textContent = `${nv} vendita + ${na} affitto ×8`;
+            }
+        } else if (tvEl) {
+            tvEl.textContent = '€ 0';
+        }
+    } catch (_) {
+        const el = document.getElementById('admStatTotalValue');
+        if (el) el.textContent = '€ 0';
     }
 
     loadTopComuni();
