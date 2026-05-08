@@ -121,28 +121,28 @@
         <!-- ── ADMIN PANEL (Exclusive) ── -->
         <div id="adminPanel" class="hidden space-y-6">
             <!-- Stats Cards -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center md:text-left">
-                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Annunci Totali</div>
-                    <div id="admStatAnnunci" class="text-2xl font-black text-slate-900">—</div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+                <div class="bg-white p-3 md:p-4 rounded-xl border border-slate-100 shadow-sm text-center md:text-left">
+                    <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Annunci Totali</div>
+                    <div id="admStatAnnunci" class="text-xl font-black text-slate-900">—</div>
                 </div>
-                <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center md:text-left">
-                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Annunci Attivi</div>
-                    <div id="admStatAttivi" class="text-2xl font-black text-emerald-600">—</div>
+                <div class="bg-white p-3 md:p-4 rounded-xl border border-slate-100 shadow-sm text-center md:text-left">
+                    <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Annunci Attivi</div>
+                    <div id="admStatAttivi" class="text-xl font-black text-emerald-600">—</div>
                 </div>
-                <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center md:text-left">
-                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Utenti Iscritti</div>
-                    <div id="admStatUtenti" class="text-2xl font-black text-slate-900">—</div>
+                <div class="bg-white p-3 md:p-4 rounded-xl border border-slate-100 shadow-sm text-center md:text-left">
+                    <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Utenti Iscritti</div>
+                    <div id="admStatUtenti" class="text-xl font-black text-slate-900">—</div>
                 </div>
-                <div id="admStatRevenueBox" class="bg-white p-5 rounded-2xl border border-amber-100 shadow-sm text-center md:text-left transition-colors">
-                    <div id="admStatRevenueLabel" class="text-[10px] font-black text-amber-400 uppercase tracking-widest mb-1 transition-colors">Guadagno Vetrine</div>
-                    <div id="admStatRevenue" class="text-2xl font-black text-amber-500 transition-colors">—</div>
-                    <div id="admStatRevenueToday" class="hidden mt-1.5 inline-block bg-emerald-100 text-emerald-700 text-[10px] font-black px-2 py-0.5 rounded animate-pulse">+ € 0 oggi</div>
+                <div id="admStatRevenueBox" class="bg-white p-3 md:p-4 rounded-xl border border-amber-100 shadow-sm text-center md:text-left transition-colors">
+                    <div id="admStatRevenueLabel" class="text-[9px] font-black text-amber-400 uppercase tracking-widest mb-1 transition-colors">Guadagno Vetrine</div>
+                    <div id="admStatRevenue" class="text-xl font-black text-amber-500 transition-colors">—</div>
+                    <div id="admStatRevenueToday" class="hidden mt-1 inline-block bg-emerald-100 text-emerald-700 text-[9px] font-black px-1.5 py-0.5 rounded animate-pulse">+ € 0 oggi</div>
                 </div>
-                <div class="bg-gradient-to-br from-indigo-50 to-white p-5 rounded-2xl border border-indigo-100 shadow-sm text-center md:text-left" title="Stima conservativa: vendita = max(prezzo, 1.000€) per neutralizzare i prezzi civetta. Affitti = canone annuale × 8 (capitalizzazione).">
-                    <div class="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-1">Valore Annunci</div>
-                    <div id="admStatTotalValue" class="text-2xl font-black text-indigo-600">—</div>
-                    <div id="admStatTotalValueHint" class="text-[9px] text-slate-400 mt-1">vendita + affitti capitalizzati</div>
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-3 md:p-4 rounded-xl border border-indigo-100 shadow-sm text-center md:text-left" title="Stima conservativa: vendita = max(prezzo, 1.000€) per neutralizzare i prezzi civetta. Affitti = canone annuale × 8 (capitalizzazione).">
+                    <div class="text-[9px] font-black text-indigo-400 uppercase tracking-widest mb-1">Valore Annunci</div>
+                    <div id="admStatTotalValue" class="text-xl font-black text-indigo-600">—</div>
+                    <div id="admStatTotalValueHint" class="text-[9px] text-slate-400 mt-1 truncate">vendita + affitti ×8</div>
                 </div>
             </div>
 
