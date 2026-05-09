@@ -160,11 +160,25 @@ module.exports = async function handler(req, res) {
                  `<link rel="canonical" id="canonicalBlog" href="${eListCan}">`);
 
     const introHtml = `
-    <section id="blogListIntro" class="max-w-4xl mx-auto mb-10 bg-white rounded-3xl p-7 border border-slate-100 shadow-sm">
-        <h1 class="text-2xl md:text-3xl font-black tracking-tight text-slate-900 mb-3">Guide e Bandi per Ambulanti — Il Blog di Subingresso</h1>
-        <p class="text-slate-600 leading-relaxed mb-3">Il blog di Subingresso raccoglie guide pratiche e bandi pubblici per chi vende, compra o gestisce un posteggio mercatale in Italia. Ogni articolo è pensato per chi lavora davvero al banco: ambulanti che cercano di capire la burocrazia del subingresso, venditori che vogliono valutare correttamente la propria licenza, acquirenti che cercano un posteggio in una regione specifica.</p>
-        <p class="text-slate-600 leading-relaxed mb-3">Trovi aggiornamenti su tutti i <strong>bandi posteggi mercatali</strong> emessi dai comuni italiani — Lombardia, Piemonte, Lazio, Veneto, Emilia-Romagna, Toscana, Sicilia, Calabria e tutte le altre regioni. Approfondiamo la differenza tra licenza tipo A e tipo B, la fiscalità sui guadagni del posteggio, la tassa di occupazione del suolo pubblico, il rinnovo della concessione, la successione in caso di eredità.</p>
-        <p class="text-slate-600 leading-relaxed">Sezione speciale per il <strong>Lago di Garda, la Costa degli Dei, il Salento</strong> e gli altri territori turistici dove il valore di un posteggio cambia con la stagionalità. Aggiornamenti regolari su Bolkestein, sentenze TAR e novità normative che impattano il commercio ambulante italiano.</p>
+    <section id="blogListIntro" class="max-w-4xl mx-auto mb-12 px-1">
+        <p class="text-xs font-black text-blue-600 uppercase tracking-widest mb-4">Il Blog di Subingresso</p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight mb-6">
+            Guide e bandi per chi vive di <span class="text-blue-600">mercati</span>.
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed font-medium mb-8 max-w-3xl">
+            Guide pratiche e bandi pubblici per chi vende, compra o gestisce un posteggio mercatale in Italia. Ogni articolo è pensato per chi lavora davvero al banco: ambulanti che cercano di capire la burocrazia del subingresso, venditori che vogliono valutare correttamente la propria licenza, acquirenti che cercano un posteggio in una regione specifica.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 mb-8">
+            <span class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-[11px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full"><i class="fas fa-bullhorn text-[10px]"></i>Bandi pubblici</span>
+            <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-[11px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full"><i class="fas fa-handshake text-[10px]"></i>Subingresso</span>
+            <span class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 text-[11px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full"><i class="fas fa-file-invoice text-[10px]"></i>Fiscalità</span>
+            <span class="inline-flex items-center gap-1.5 bg-violet-50 text-violet-700 text-[11px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full"><i class="fas fa-balance-scale text-[10px]"></i>Bolkestein</span>
+            <span class="inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 text-[11px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full"><i class="fas fa-map-marker-alt text-[10px]"></i>20 regioni</span>
+        </div>
+        <div class="border-t border-slate-100 pt-7 max-w-3xl">
+            <p class="text-slate-600 leading-relaxed mb-4">Aggiornamenti su tutti i <strong>bandi posteggi mercatali</strong> emessi dai comuni italiani — Lombardia, Piemonte, Lazio, Veneto, Emilia-Romagna, Toscana, Sicilia, Calabria e tutte le altre regioni. Approfondiamo la differenza tra licenza tipo A e tipo B, la fiscalità sui guadagni del posteggio, la tassa di occupazione del suolo pubblico, il rinnovo della concessione, la successione in caso di eredità.</p>
+            <p class="text-slate-600 leading-relaxed">Sezione speciale per il <strong>Lago di Garda, la Costa degli Dei, il Salento</strong> e gli altri territori turistici dove il valore di un posteggio cambia con la stagionalità. Aggiornamenti regolari su Bolkestein, sentenze TAR e novità normative che impattano il commercio ambulante italiano.</p>
+        </div>
     </section>`;
 
     // Inietta l'intro subito prima di #loading (sotto il banner valutatore)

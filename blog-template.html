@@ -83,9 +83,13 @@ const loading = document.getElementById('loading');
 
 // Lista /blog → main largo (max-w-7xl). Singolo post → resta stretto (max-w-3xl, leggibilità).
 // Sincrono prima del fetch così l'intro SSR-iniettata si allinea da subito col layout finale.
+// Banner "Quanto vale il tuo posteggio?" è intent-venditore: ha senso solo sui post (non-bandi),
+// non sull'indice del blog dove l'utente sta scoprendo i contenuti.
 if (!slug) {
     const _bm = document.getElementById('blogMain');
     if (_bm) { _bm.classList.remove('max-w-3xl'); _bm.classList.add('max-w-7xl'); }
+    const _bv = document.getElementById('bannerValutatore');
+    if (_bv) _bv.classList.add('hidden');
 }
 
 // ── Mappa slug articoli "bandi-*" → regione esatta (deve matchare js/data.js per il filtro CTA) ──
