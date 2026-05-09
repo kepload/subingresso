@@ -38,6 +38,8 @@
             transition: all 0.3s ease;
             text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.8rem;
         }
+        /* Tailwind precompilato manca line-clamp-3: definito qui per il bento blog list (side card title 3 righe). */
+        .line-clamp-3 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px -10px rgba(37,99,235,0.4);
@@ -49,9 +51,9 @@
 
 <header></header>
 
-<main class="max-w-3xl mx-auto px-6 pt-8 pb-16">
+<main id="blogMain" class="max-w-3xl mx-auto px-6 pt-8 pb-16">
     <!-- Banner Calcolatore (nascosto sugli articoli "bandi-*" dove l'intent è acquirente, non venditore) -->
-    <div id="bannerValutatore" class="mb-10 px-5 py-3 bg-gradient-to-r from-blue-600 to-violet-700 rounded-2xl flex items-center justify-between gap-4">
+    <div id="bannerValutatore" class="max-w-4xl mx-auto mb-10 px-5 py-3 bg-gradient-to-r from-blue-600 to-violet-700 rounded-2xl flex items-center justify-between gap-4">
         <span class="text-white font-bold text-sm">Quanto vale il tuo posteggio?</span>
         <a href="/valutatore" class="shrink-0 bg-white text-blue-600 font-black px-4 py-2 rounded-xl text-xs hover:bg-blue-50 transition whitespace-nowrap">
             Calcola <i class="fas fa-arrow-right ml-1"></i>
@@ -78,6 +80,13 @@ const params = new URLSearchParams(location.search);
 const slug = params.get('post');
 const container = document.getElementById('blogContainer');
 const loading = document.getElementById('loading');
+
+// Lista /blog → main largo (max-w-7xl). Singolo post → resta stretto (max-w-3xl, leggibilità).
+// Sincrono prima del fetch così l'intro SSR-iniettata si allinea da subito col layout finale.
+if (!slug) {
+    const _bm = document.getElementById('blogMain');
+    if (_bm) { _bm.classList.remove('max-w-3xl'); _bm.classList.add('max-w-7xl'); }
+}
 
 // ── Mappa slug articoli "bandi-*" → regione esatta (deve matchare js/data.js per il filtro CTA) ──
 const SLUG_TO_REGIONE = {
@@ -596,37 +605,111 @@ function renderPost(post) {
 
 function renderList(posts) {
     if (posts.length === 0) {
-        container.innerHTML = `<h1 class="text-3xl font-black tracking-tight mb-12 text-left">Archivio Tecnico & Guide</h1><p class="text-slate-400">Nessun articolo presente al momento.</p>`;
+        container.innerHTML = `<p class="text-slate-400 text-center py-12">Nessun articolo presente al momento.</p>`;
         return;
     }
+
+    const _date = (iso) => new Date(iso).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    const _badge = (category) => {
+        if (!category) return '';
+        const cat = String(category);
+        const isBandi = cat.toLowerCase() === 'bandi';
+        const cls = isBandi
+            ? 'bg-blue-600 text-white'
+            : 'bg-slate-900 text-white';
+        return `<span class="inline-block ${cls} text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md">${escapeHTML(cat)}</span>`;
+    };
+
+    const _heroCard = (p) => {
+        const safeSlug = encodeURIComponent(p.slug);
+        const safeTitle = escapeHTML(p.title);
+        const safeExcerpt = escapeHTML(p.excerpt || 'Guida tecnica completa con riferimenti normativi e consigli pratici.');
+        const cover = p.cover_image_url || '';
+        const thumbHtml = cover ? `
+            <img src="${escapeHTML(_pexelsUrl(cover, 1200, 675))}"
+                 srcset="${escapeHTML(_pexelsUrl(cover, 600, 338))} 600w, ${escapeHTML(_pexelsUrl(cover, 1200, 675))} 1200w, ${escapeHTML(_pexelsUrl(cover, 1600, 900))} 1600w"
+                 sizes="(max-width: 1024px) 100vw, 720px"
+                 alt="${safeTitle}"
+                 loading="eager" fetchpriority="high" decoding="async"
+                 class="w-full aspect-[16/9] object-cover bg-slate-100 group-hover:scale-105 transition-transform duration-500">
+        ` : '<div class="w-full aspect-[16/9] bg-slate-100"></div>';
+        return `
+        <a href="/blog?post=${safeSlug}" class="group block bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full">
+            <div class="relative overflow-hidden">
+                ${thumbHtml}
+                <div class="absolute top-4 left-4">${_badge(p.category)}</div>
+            </div>
+            <div class="p-6 md:p-8">
+                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3">${_date(p.published_at)}</p>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-tight mb-3">${safeTitle}</h2>
+                <p class="text-slate-500 text-sm md:text-base font-medium leading-relaxed line-clamp-3">${safeExcerpt}</p>
+                <p class="text-blue-600 text-xs font-black uppercase tracking-widest mt-5 inline-flex items-center gap-1.5">Leggi <i class="fas fa-arrow-right text-[10px]"></i></p>
+            </div>
+        </a>`;
+    };
+
+    const _sideCard = (p) => {
+        const safeSlug = encodeURIComponent(p.slug);
+        const safeTitle = escapeHTML(p.title);
+        const cover = p.cover_image_url || '';
+        const thumb = cover
+            ? `<img src="${escapeHTML(_pexelsUrl(cover, 240, 240))}"
+                    alt="${safeTitle}"
+                    loading="lazy" decoding="async"
+                    class="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 object-cover rounded-xl bg-slate-100">`
+            : '<div class="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 bg-slate-100 rounded-xl"></div>';
+        return `
+        <a href="/blog?post=${safeSlug}" class="group flex gap-3 sm:gap-4 bg-white rounded-2xl p-2.5 sm:p-3 border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
+            ${thumb}
+            <div class="min-w-0 flex-1 py-1 flex flex-col justify-center">
+                ${_badge(p.category)}
+                <h3 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-snug mt-2 line-clamp-3">${safeTitle}</h3>
+                <p class="text-[10px] font-bold text-slate-400 uppercase mt-1.5">${_date(p.published_at)}</p>
+            </div>
+        </a>`;
+    };
+
+    const _gridCard = (p) => {
+        const safeSlug = encodeURIComponent(p.slug);
+        const safeTitle = escapeHTML(p.title);
+        const safeExcerpt = escapeHTML(p.excerpt || 'Guida pratica con riferimenti normativi.');
+        const cover = p.cover_image_url || '';
+        const thumb = cover
+            ? `<img src="${escapeHTML(_pexelsUrl(cover, 600, 338))}"
+                    srcset="${escapeHTML(_pexelsUrl(cover, 400, 225))} 400w, ${escapeHTML(_pexelsUrl(cover, 600, 338))} 600w, ${escapeHTML(_pexelsUrl(cover, 900, 506))} 900w"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    alt="${safeTitle}"
+                    loading="lazy" decoding="async"
+                    class="w-full aspect-[16/9] object-cover bg-slate-100 group-hover:scale-105 transition-transform duration-500">`
+            : '<div class="w-full aspect-[16/9] bg-slate-100"></div>';
+        return `
+        <a href="/blog?post=${safeSlug}" class="group block bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all duration-300">
+            <div class="overflow-hidden">${thumb}</div>
+            <div class="p-5">
+                ${_badge(p.category)}
+                <h3 class="text-base lg:text-lg font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-snug mt-2.5 line-clamp-2">${safeTitle}</h3>
+                <p class="text-slate-500 text-xs font-medium leading-relaxed mt-2 line-clamp-2">${safeExcerpt}</p>
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-3">${_date(p.published_at)}</p>
+            </div>
+        </a>`;
+    };
+
+    const [hero, ...rest] = posts;
+    const sideStack = rest.slice(0, 4);
+    const gridRest  = rest.slice(4);
+
     container.innerHTML = `
-        <h1 class="text-3xl font-black tracking-tight mb-12 text-left">Archivio Tecnico & Guide</h1>
-        <div class="grid gap-12 text-left">
-            ${posts.map(p => {
-                const date = new Date(p.published_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
-                const safeSlug = encodeURIComponent(p.slug);
-                const safeTitle = escapeHTML(p.title);
-                const safeExcerpt = escapeHTML(p.excerpt || 'Guida tecnica completa con riferimenti normativi e consigli pratici.');
-                const cover = p.cover_image_url || '';
-                const thumbHtml = cover ? `
-                    <img src="${escapeHTML(_pexelsUrl(cover, 600, 338))}"
-                         srcset="${escapeHTML(_pexelsUrl(cover, 400, 225))} 400w, ${escapeHTML(_pexelsUrl(cover, 600, 338))} 600w, ${escapeHTML(_pexelsUrl(cover, 900, 506))} 900w"
-                         sizes="(max-width: 768px) 100vw, 720px"
-                         alt="${safeTitle}"
-                         loading="lazy" decoding="async"
-                         class="w-full aspect-[16/9] object-cover rounded-2xl mb-4 bg-slate-100">
-                ` : '';
-                return `
-                <a href="/blog?post=${safeSlug}" class="block group border-b border-slate-50 pb-8 last:border-0 text-left">
-                    ${thumbHtml}
-                    <p class="text-xs font-bold text-slate-400 uppercase mb-2 text-left">${date}</p>
-                    <h2 class="text-2xl font-black group-hover:text-blue-600 transition tracking-tight leading-tight text-left">${safeTitle}</h2>
-                    <p class="text-slate-500 text-sm mt-3 font-medium leading-relaxed text-left">${safeExcerpt}</p>
-                    <p class="text-blue-600 text-xs font-black uppercase tracking-widest mt-4 text-left">Leggi la guida completa →</p>
-                </a>
-                `;
-            }).join('')}
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
+            <div class="lg:col-span-2">${_heroCard(hero)}</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 lg:gap-3">
+                ${sideStack.map(_sideCard).join('')}
+            </div>
         </div>
+        ${gridRest.length ? `
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+            ${gridRest.map(_gridCard).join('')}
+        </div>` : ''}
     `;
 }
 

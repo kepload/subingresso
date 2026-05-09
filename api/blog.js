@@ -160,7 +160,7 @@ module.exports = async function handler(req, res) {
                  `<link rel="canonical" id="canonicalBlog" href="${eListCan}">`);
 
     const introHtml = `
-    <section id="blogListIntro" class="mb-10 bg-white rounded-3xl p-7 border border-slate-100 shadow-sm">
+    <section id="blogListIntro" class="max-w-4xl mx-auto mb-10 bg-white rounded-3xl p-7 border border-slate-100 shadow-sm">
         <h1 class="text-2xl md:text-3xl font-black tracking-tight text-slate-900 mb-3">Guide e Bandi per Ambulanti — Il Blog di Subingresso</h1>
         <p class="text-slate-600 leading-relaxed mb-3">Il blog di Subingresso raccoglie guide pratiche e bandi pubblici per chi vende, compra o gestisce un posteggio mercatale in Italia. Ogni articolo è pensato per chi lavora davvero al banco: ambulanti che cercano di capire la burocrazia del subingresso, venditori che vogliono valutare correttamente la propria licenza, acquirenti che cercano un posteggio in una regione specifica.</p>
         <p class="text-slate-600 leading-relaxed mb-3">Trovi aggiornamenti su tutti i <strong>bandi posteggi mercatali</strong> emessi dai comuni italiani — Lombardia, Piemonte, Lazio, Veneto, Emilia-Romagna, Toscana, Sicilia, Calabria e tutte le altre regioni. Approfondiamo la differenza tra licenza tipo A e tipo B, la fiscalità sui guadagni del posteggio, la tassa di occupazione del suolo pubblico, il rinnovo della concessione, la successione in caso di eredità.</p>
