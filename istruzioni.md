@@ -609,14 +609,14 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 ## 🌐 Cache Versions Correnti
 
 - `data.js?v=17` (6 mag 2026 — `toggleSaveListing` passa source `salva_preferito` a `openAuthModal`).
-- `auth.js?v=17` (6 mag 2026 — `requireAuth(callback, source)` accetta secondo arg per propagare la source ai 3 pulsanti contatto annuncio. Tutto il resto invariato).
+- `auth.js?v=18` (9 mag 2026 — fix `_AMO_VALID_SOURCES`: aggiunti `chat_click,whatsapp_click,call_click` (mancavano dal 6 mag, venivano filtrati a `'direct'` falsando il funnel)).
 - `js/pages/annunci.js?v=6` (6 mag 2026 — formatFullName per USER_NAMES).
 - `js/pages/annuncio-detail.js?v=17` (6 mag 2026 — `makeCall`/`startChat`/`openWhatsApp` passano `call_click`/`chat_click`/`whatsapp_click` a `requireAuth`. Display `#savedCount` se annuncio ha `saved_count > 0`. Select primary include `saved_count`).
 - `annuncio-detail.js?v=14` (5 mag 2026 — banner "Annuncio scaduto" + blocco contatti via `_blockIfExpired()` su startChat/makeCall/openWhatsApp).
 - `ui-components.js?v=11` (5 mag 2026 — voce "Supporto" nel footer).
 - `annunci.js?v=5` (5 mag 2026 — `_normalizeDayName` NFD + select include `giorni` + layout pannello compatto).
 - `css/tailwind.css?v=2` (precompilato).
-- `page-view-tracker.js?v=1`.
+- `page-view-tracker.js?v=3` (9 mag 2026 — slug sanitization: `match(/^[a-z0-9-]{1,120}/)` invece di `replace+slice(80)` per stoppare al primo char invalido. Era un bug che produceva slug malformati tipo `aprire-attivita-...avvihttpssubingressoitblo` quando la URL conteneva concatenazioni post-sanitize. Limit alzato 80→120 per slug bandi lunghi.).
 - **Bumpare `?v=` quando modifichi un file caricato con cache busting.** Le HTML invece NON hanno cache buster — il browser può servirle stale fino a Ctrl+Shift+R.
 - **`blog-template.html` (7 mag 2026)**: ex `blog.html`, rinominato per non confliggere col rewrite SSR `/blog -> /api/blog`. Contiene tutto il JS client del blog: modificarlo qui (NON in `api/blog.js` che è solo SSR head). I `?v=` interni di data.js/auth.js/ui-components.js restano allineati al resto del sito.
 

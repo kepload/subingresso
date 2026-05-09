@@ -15,7 +15,10 @@
                 try {
                     var slug = new URLSearchParams(location.search).get('post');
                     if (slug) {
-                        slug = String(slug).replace(/[^a-z0-9-]/gi, '').slice(0, 80);
+                        // Stop al primo carattere invalido invece di rimuoverlo (evita concatenazioni
+                        // malformate tipo "...avviato/https..." → "...avvihttpssubingressoitblo").
+                        var m = String(slug).toLowerCase().match(/^[a-z0-9-]{1,120}/);
+                        slug = m ? m[0] : '';
                         if (slug) path = '/blog/' + slug;
                     }
                 } catch (_) {}

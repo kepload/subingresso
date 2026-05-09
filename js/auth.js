@@ -207,7 +207,7 @@ function _getAnonSession() {
     } catch (_) { return ''; }
 }
 
-const _AMO_VALID_SOURCES = ['popup_vetrina','blog_promo','vendi_submit','nav_accedi','salva_preferito','valutatore_create','welcome_popup','tel_reveal','direct'];
+const _AMO_VALID_SOURCES = ['popup_vetrina','blog_promo','vendi_submit','nav_accedi','salva_preferito','valutatore_create','welcome_popup','tel_reveal','direct','chat_click','whatsapp_click','call_click'];
 
 async function _trackModalOpen(source) {
     try {
