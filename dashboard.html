@@ -399,6 +399,10 @@
                 <div id="blogStatsBody" class="space-y-2">
                     <p class="text-xs text-slate-400 font-bold">Caricamento…</p>
                 </div>
+                <button id="blogStatsToggle" onclick="toggleBlogStatsAll()" class="hidden mt-4 w-full py-2.5 rounded-xl border border-slate-200 text-xs font-black text-slate-500 hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-chevron-down text-[10px]"></i>
+                    <span id="blogStatsToggleLabel">Mostra altre</span>
+                </button>
                 <p class="mt-4 text-[10px] text-slate-400 leading-relaxed">
                     <span class="font-black text-slate-500">Views</span> = pageview unici dell'articolo · <span class="font-black text-blue-600">CTA</span> = click sulla CTA <code>/annunci?regione=…</code> · <span class="font-black text-emerald-600">CR%</span> = click / view.
                 </p>
@@ -1725,14 +1729,16 @@ function setSignupSourcesPeriod(days) {
 }
 
 // ── Performance Blog ──────────────────────────────────────
-let _blogStatsState = { period: 30 };
+let _blogStatsState = { period: 30, rows: [], showAll: false };
 
 async function loadAdminBlogStats() {
     const body = document.getElementById('blogStatsBody');
     const totals = document.getElementById('blogStatsTotals');
+    const toggle = document.getElementById('blogStatsToggle');
     if (!body) return;
     body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Caricamento…</p>';
     if (totals) totals.classList.add('hidden');
+    if (toggle) toggle.classList.add('hidden');
     try {
         const { data, error } = await _supabase.rpc('admin_blog_stats', { p_days: _blogStatsState.period });
         if (error || !data || data.error) {
@@ -1746,44 +1752,69 @@ async function loadAdminBlogStats() {
         if (tc) tc.textContent = (data.total_conversions || 0).toLocaleString('it-IT');
         if (totals && rows.length) totals.classList.remove('hidden');
 
-        if (!rows.length) {
-            body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Nessuna view tracciata per il periodo. Le visite agli articoli verranno registrate da ora in poi (tracker bumpato a v=2).</p>';
-            return;
-        }
-        body.innerHTML = rows.map(r => {
-            const views   = Number(r.views || 0);
-            const cta     = Number(r.cta_clicks || 0);
-            const cr      = Number(r.cr_pct || 0);
-            const crColor = cr >= 5 ? 'text-emerald-600 bg-emerald-50' : (cr >= 1 ? 'text-blue-600 bg-blue-50' : 'text-slate-500 bg-slate-100');
-            const title   = r.title || r.slug;
-            const url     = `/blog?post=${encodeURIComponent(r.slug)}`;
-            return `
-            <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl border border-slate-100 hover:bg-slate-50 transition">
-                <div class="min-w-0 flex-1">
-                    <a href="${escapeHTML(url)}" target="_blank" rel="noopener" class="text-sm font-black text-slate-900 truncate block hover:text-blue-600 transition" title="Apri articolo">${escapeHTML(title)}</a>
-                    <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest truncate">${escapeHTML(r.slug || '')}</div>
-                </div>
-                <div class="flex items-center gap-3 flex-shrink-0">
-                    <div class="text-right">
-                        <div class="text-sm font-black text-slate-900 leading-tight">${views.toLocaleString('it-IT')}</div>
-                        <div class="text-[9px] text-slate-400 font-bold uppercase tracking-widest leading-none">views</div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-sm font-black text-blue-600 leading-tight">${cta.toLocaleString('it-IT')}</div>
-                        <div class="text-[9px] text-blue-400 font-bold uppercase tracking-widest leading-none">cta</div>
-                    </div>
-                    <span class="${crColor} text-[10px] font-black px-2 py-1 rounded-lg whitespace-nowrap">${cr.toFixed(1)}%</span>
-                    <button onclick="bumpPostFreshness('${escapeHTML(r.slug || '')}', this)"
-                            title="Aggiorna la data di pubblicazione (freshness signal per Google)"
-                            class="text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg w-7 h-7 flex items-center justify-center transition flex-shrink-0">
-                        <i class="fas fa-rotate-right text-xs"></i>
-                    </button>
-                </div>
-            </div>`;
-        }).join('');
+        _blogStatsState.rows = rows;
+        _blogStatsState.showAll = false;
+        _renderBlogStats();
     } catch (_) {
         body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Errore caricamento.</p>';
     }
+}
+
+function _renderBlogStats() {
+    const body = document.getElementById('blogStatsBody');
+    const toggle = document.getElementById('blogStatsToggle');
+    const toggleLabel = document.getElementById('blogStatsToggleLabel');
+    if (!body) return;
+    if (!_blogStatsState.rows.length) {
+        body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Nessuna view tracciata per il periodo. Le visite agli articoli verranno registrate da ora in poi (tracker bumpato a v=2).</p>';
+        if (toggle) toggle.classList.add('hidden');
+        return;
+    }
+    const visible = _blogStatsState.showAll ? _blogStatsState.rows : _blogStatsState.rows.slice(0, 5);
+    body.innerHTML = visible.map(r => {
+        const views   = Number(r.views || 0);
+        const cta     = Number(r.cta_clicks || 0);
+        const cr      = Number(r.cr_pct || 0);
+        const crColor = cr >= 5 ? 'text-emerald-600 bg-emerald-50' : (cr >= 1 ? 'text-blue-600 bg-blue-50' : 'text-slate-500 bg-slate-100');
+        const title   = r.title || r.slug;
+        const url     = `/blog?post=${encodeURIComponent(r.slug)}`;
+        return `
+        <div class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl border border-slate-100 hover:bg-slate-50 transition">
+            <div class="min-w-0 flex-1">
+                <a href="${escapeHTML(url)}" target="_blank" rel="noopener" class="text-sm font-black text-slate-900 truncate block hover:text-blue-600 transition" title="Apri articolo">${escapeHTML(title)}</a>
+                <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest truncate">${escapeHTML(r.slug || '')}</div>
+            </div>
+            <div class="flex items-center gap-3 flex-shrink-0">
+                <div class="text-right">
+                    <div class="text-sm font-black text-slate-900 leading-tight">${views.toLocaleString('it-IT')}</div>
+                    <div class="text-[9px] text-slate-400 font-bold uppercase tracking-widest leading-none">views</div>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm font-black text-blue-600 leading-tight">${cta.toLocaleString('it-IT')}</div>
+                    <div class="text-[9px] text-blue-400 font-bold uppercase tracking-widest leading-none">cta</div>
+                </div>
+                <span class="${crColor} text-[10px] font-black px-2 py-1 rounded-lg whitespace-nowrap">${cr.toFixed(1)}%</span>
+                <button onclick="bumpPostFreshness('${escapeHTML(r.slug || '')}', this)"
+                        title="Aggiorna la data di pubblicazione (freshness signal per Google)"
+                        class="text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg w-7 h-7 flex items-center justify-center transition flex-shrink-0">
+                    <i class="fas fa-rotate-right text-xs"></i>
+                </button>
+            </div>
+        </div>`;
+    }).join('');
+    if (_blogStatsState.rows.length > 5) {
+        if (toggle) toggle.classList.remove('hidden');
+        if (toggleLabel) toggleLabel.textContent = _blogStatsState.showAll
+            ? 'Mostra solo top 5'
+            : `Mostra altre ${_blogStatsState.rows.length - 5}`;
+    } else {
+        if (toggle) toggle.classList.add('hidden');
+    }
+}
+
+function toggleBlogStatsAll() {
+    _blogStatsState.showAll = !_blogStatsState.showAll;
+    _renderBlogStats();
 }
 
 function setBlogStatsPeriod(days) {
