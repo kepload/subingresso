@@ -657,18 +657,20 @@ function renderList(posts) {
         const safeSlug = encodeURIComponent(p.slug);
         const safeTitle = escapeHTML(p.title);
         const cover = p.cover_image_url || '';
-        // w-28 e sm:h-28 sono compilati ma sm:w-28 e h-28 base no — uso w-24 h-24 ovunque
-        // per non rischiare layout collassato. Le immagini Pexels chiedo gia' 240x240 quindi resa nitida.
+        // Style inline come safety net: garantisce flex orizzontale + dimensioni img anche
+        // se classi Tailwind responsive non sono nel CSS compilato o sono cached vecchie.
         const thumb = cover
             ? `<img src="${escapeHTML(_pexelsUrl(cover, 240, 240))}"
                     alt="${safeTitle}"
+                    width="96" height="96"
                     loading="lazy" decoding="async"
-                    class="w-24 h-24 flex-shrink-0 object-cover rounded-xl bg-slate-100">`
-            : '<div class="w-24 h-24 flex-shrink-0 bg-slate-100 rounded-xl"></div>';
+                    style="width:96px;height:96px;flex-shrink:0;object-fit:cover"
+                    class="rounded-xl bg-slate-100">`
+            : '<div style="width:96px;height:96px;flex-shrink:0" class="bg-slate-100 rounded-xl"></div>';
         return `
-        <a href="/blog?post=${safeSlug}" class="group flex gap-3 bg-white rounded-2xl p-3 border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
+        <a href="/blog?post=${safeSlug}" style="display:flex;align-items:stretch;gap:12px" class="group bg-white rounded-2xl p-3 border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
             ${thumb}
-            <div class="min-w-0 flex-1 py-1 flex flex-col justify-center">
+            <div style="min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center" class="py-1">
                 ${_badge(p.category)}
                 <h3 class="text-sm font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-snug mt-2 line-clamp-3">${safeTitle}</h3>
                 <p class="text-[10px] font-bold text-slate-400 uppercase mt-1.5">${_date(p.published_at)}</p>

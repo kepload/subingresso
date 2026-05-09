@@ -120,7 +120,7 @@ module.exports = async function handler(req, res) {
 
         html = html.replace('</head>', `    ${robotsAndLd}</head>`);
 
-        res.setHeader('Cache-Control', 'public, s-maxage=180, stale-while-revalidate=600');
+        res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=180, stale-while-revalidate=600, must-revalidate');
         res.setHeader('Content-Type', 'text/html; charset=utf-8');
         res.status(200).send(html);
         return;
@@ -187,7 +187,7 @@ module.exports = async function handler(req, res) {
         `${introHtml}\n    <div id="loading"`
     );
 
-    res.setHeader('Cache-Control', 'public, s-maxage=180, stale-while-revalidate=600');
+    res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=180, stale-while-revalidate=600, must-revalidate');
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.status(200).send(html);
 };
