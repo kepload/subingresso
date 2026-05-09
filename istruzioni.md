@@ -218,6 +218,29 @@ Tracciamento full funnel per capire conversion rate per ogni sorgente che apre i
 - Base giuridica: legittimo interesse (art. 6.1.f GDPR)
 - **NO cookie banner necessario** — analytics aggregata di prima parte ricade in esenzione Garante 2021
 
+## 🪄 Hero Dashboard Venditore + Milestones (9 mag 2026)
+
+Ritenzione seller: appena entri in dashboard vedi una **hero card** del tuo annuncio top con stats live + chip "in zona", e una **stack di milestone banner** (achievement) per gli eventi non ancora visti. Pattern alla Subito/Immobiliare, fa percepire che l'annuncio "lavora per te".
+
+**Schema (`PATCH_SELLER_DASHBOARD_20260509.sql`):**
+- Tabella `listing_milestones(id, annuncio_id, user_id, kind CHECK 10 valori, triggered_at, seen_at)` UNIQUE(annuncio_id, kind) anti-duplicati. Index parziale `(user_id, triggered_at DESC) WHERE seen_at IS NULL` per query "non viste". RLS owner-SELECT, INSERT/UPDATE solo via SECURITY DEFINER.
+- Trigger `trg_check_listing_milestones` AFTER UPDATE su `annunci` (WHEN visualizzazioni o saved_count cambiano): scatta `first_view`, `views_10/50/100/500`, `first_save`, `saves_5/10`. Pattern soglia `NEW >= N AND COALESCE(OLD,0) < N` evita false-positive su repeat update. EXCEPTION → RAISE WARNING (non blocca update annuncio).
+- Trigger `trg_check_message_milestone` AFTER INSERT su `messaggi`: scatta `first_message` e `msgs_5` solo per messaggi DA acquirente verso venditore (mittente IS DISTINCT FROM venditore_id della conv). Count totale ricalcolato a ogni INSERT — accettabile per N basso.
+- 4 RPC SECURITY DEFINER: `dashboard_seller_summary()` ritorna jsonb con array `listings[]` (ogni annuncio attivo dell'utente con views_total, saved_total, saved_7d, msg_total, msg_7d, msg_unread, regional_alerts, regional_active_buyers). `unseen_milestones()` top 10 non viste join titolo+comune. `mark_milestone_seen(id)` / `mark_all_milestones_seen()` upsert seen_at.
+- **regional_active_buyers** = count distinct `conversazioni.acquirente_id` dove `annuncio.regione = al.regione AND created_at > now()-30d AND acquirente != al.user_id`. Privacy: aggregato, no IDs.
+- **regional_alerts** = count `bando_alerts.regione = al.regione` (acquirenti passivi iscritti agli avvisi).
+- Niente backfill: solo eventi post-deploy. Annunci con visualizzazioni già >=10 NON triggherano `views_10` retroattivamente — i trigger usano OLD vs NEW e OLD esiste solo dopo UPDATE.
+
+**Frontend (`dashboard.html`):**
+- Section `#milestonesBanner` + `#sellerHeroSection` iniettate sopra `#onboardingWidget`. Hero hidden by default → revealed se RPC ritorna almeno 1 listing.
+- `loadSellerHero()` carica + render. State `_sellerHeroState = {listings, idx}` con carousel (frecce + dot indicators) se più annunci. Passare l'oggetto listing a `openVetrinaModal()` via wrapper `openVetrinaFromHero(idx)` perché l'API esistente richiede oggetto, non ID.
+- 4 stat box (Views, Salvati, Messaggi, Da leggere) con delta `+N 7g` colorato. Da leggere usa `msg_unread` direct, evidenziato red se >0.
+- `regionalChip` (gradient blue→violet) sotto stat: "In Calabria: 3 iscritti agli avvisi · 8 compratori attivi (30g)". Mostrato solo se almeno una metric > 0.
+- `loadMilestones()` mostra max 3 banner verde gradient + bottone "+N altri · segna tutti come visti" se >3. `_MILESTONE_COPY` mappa kind → emoji + title + line. Singolo dismiss × o bulk dismiss.
+- **NON usare** `formatPrice` direttamente, usare typeof check `typeof formatPrice === 'function'` come fallback (data.js carica async dopo dashboard.html sometimes).
+
+**Effetto utente atteso**: dopo aver pubblicato, ogni volta che torna in dashboard vede subito (a) numeri vivi del proprio annuncio (b) banner verdi celebrativi se sono successe cose (c) "compratori attivi nella tua zona" che fa percepire domanda. Soddisfazione pubblicazione + nudge a tornare.
+
 ## 👤 Display Nome Utente — Anti-duplicato (6 mag 2026)
 
 **Bug storico**: utenti che mettevano nome+cognome insieme nel campo "Nome" del form registrazione (es. nome="Gianfranco Dona", cognome="Dona") venivano displayati ovunque come "Gianfranco Dona Dona" perché tutti i 10 punti display facevano `[nome,cognome].filter(Boolean).join(' ').trim()` naive.
@@ -601,6 +624,8 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - `notify_alert_trigger` (async, alert acquirenti).
 - `notify_seller_trigger` (async, "ricevuto/online/rifiutato").
 - `trg_enforce_annunci_status` (BEFORE, forza pending non-admin, blocca featured non-admin).
+- `trg_check_listing_milestones` (AFTER UPDATE, scatta milestone views/saved se OLD<N AND NEW>=N — vedi sezione "Hero Dashboard Venditore").
+- `trg_check_message_milestone` (AFTER INSERT su `messaggi`, scatta `first_message`/`msgs_5` per messaggi acquirente→venditore).
 
 ### Cron pg_cron attivi
 - `unfeature-expired-daily` 03:00 — cleanup vetrine scadute.
@@ -697,6 +722,7 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 15. **Articolo "Quanto costa un posteggio al mercato"** (9 mag 2026): query in radar SC con 4 impressioni cumulative ma 0 clic — atterriamo su titolo correlato ma non perfetto. Articolo dedicato con H1 identico alla query + CTA al valutatore = quick win SEO. Slug suggerito: `quanto-costa-un-posteggio-al-mercato`.
 16. **Serie "Mercati settimanali [città]" e "Mercati ambulanti [regione]"** (9 mag 2026): 2 nuovi filoni editoriali confermati da SC. Top 10 città (Modena/Brescia/Bergamo/Milano/Bologna/Torino/Verona/Padova/Firenze/Napoli) + 5 regioni rimaste (Lombardia/Veneto/Emilia/Toscana/Lazio). 16 articoli totali generabili dal blog generator esistente con prompt dedicato.
 17. **JSON-LD `author` Organization → Person + pagina `/autori/<slug>`** (9 mag 2026): segnale E-E-A-T più forte per Google Discover. Discover NON ha iscrizione, è automatico — Subingresso ha già requisiti tecnici (NewsArticle schema, mobile, HTTPS) ma serve volume traffico stabile (>5k impr/mese, oggi 263) + author authority. Eligibility realistica: 3-6 mesi.
+18. **Data audit — cosa salviamo, cosa dovremmo salvare** (9 mag 2026, richiesta esplicita utente): rivedere insieme quali dati persistiamo e quali sono "buchi" — in particolare: (a) **annunci eliminati** (oggi solo soft-delete `status='deleted'`, niente storico delle ragioni o del momento), (b) **annunci venduti/affittati** (oggi non tracciamo l'esito — chi ha venduto, a quanto, in quanto tempo), (c) potenzialmente: log delle modifiche annunci, ricerche utente, eventi conversione (passaggi acquirente↔venditore), abandono carrello vetrina. Outcome data per posteggi venduti = gold per stats "tempo medio di vendita" / "prezzo finale vs richiesto" stile Idealista. Discutere prima di shippare.
 
 ### TODO chiusi (9 mag 2026)
 - ~~Box admin "Valore Annunci" gasometro~~ ✅ 5° card stats grid (`grid-cols-2 md:grid-cols-5`), RPC `admin_total_listing_value()` SECURITY DEFINER, formula vendita = `SUM(GREATEST(prezzo, 1000))` + affitto = `SUM(prezzo*8)` capitalizzazione conservativa. Solo `status='active'`. Stile soft indigo. PATCH idempotente.

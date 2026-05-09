@@ -441,6 +441,12 @@
 
         </div>
 
+        <!-- Milestone banners — achievement persistenti (first_save, views_10, ecc.) -->
+        <div id="milestonesBanner" class="hidden mb-4 space-y-2"></div>
+
+        <!-- Seller hero — il tuo annuncio + stats live + compratori in zona -->
+        <div id="sellerHeroSection" class="hidden mb-6"></div>
+
         <!-- Onboarding widget — visibile solo se profilo incompleto -->
         <div id="onboardingWidget" class="hidden bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-3xl p-6 mb-6 shadow-sm">
             <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
@@ -1032,6 +1038,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadOnboardingWidget(user, profile);
     loadMyListings();
     loadPendingListings();
+    loadSellerHero();
+    loadMilestones();
 
     // Auto-tab da hash URL (es. dashboard.html#valutazioni dopo signup dal valutatore)
     const tabFromHash = (location.hash || '').replace('#', '');
@@ -2550,6 +2558,237 @@ async function loadMySaved() {
         badge.textContent = orderedListings.length;
         badge.classList.toggle('hidden', orderedListings.length === 0);
     }
+}
+
+// ── Seller Dashboard Hero (top annuncio + stats live + regional demand) ────
+let _sellerHeroState = { listings: [], idx: 0 };
+
+async function loadSellerHero() {
+    const section = document.getElementById('sellerHeroSection');
+    if (!section) return;
+    try {
+        const { data, error } = await _supabase.rpc('dashboard_seller_summary');
+        if (error || !data || data.error) { section.classList.add('hidden'); return; }
+        const listings = Array.isArray(data.listings) ? data.listings : [];
+        if (!listings.length) { section.classList.add('hidden'); return; }
+        _sellerHeroState.listings = listings;
+        _sellerHeroState.idx = 0;
+        section.classList.remove('hidden');
+        _renderSellerHero();
+    } catch (_) {
+        section.classList.add('hidden');
+    }
+}
+
+function _renderSellerHero() {
+    const section = document.getElementById('sellerHeroSection');
+    if (!section || !_sellerHeroState.listings.length) return;
+    const l = _sellerHeroState.listings[_sellerHeroState.idx];
+    const total = _sellerHeroState.listings.length;
+    const cover = (l.img_urls && l.img_urls[0]) || '';
+    const isFeatured = l.featured && l.featured_until && new Date(l.featured_until) > new Date();
+    const tipoBadge = l.tipo === 'vendita'
+        ? 'bg-emerald-50 text-emerald-700'
+        : 'bg-blue-50 text-blue-700';
+    const featuredBadge = isFeatured
+        ? `<span class="bg-gradient-to-r from-amber-400 to-orange-500 text-white text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-md inline-flex items-center gap-1"><i class="fas fa-crown text-[9px]"></i>Vetrina</span>`
+        : '';
+    const priceFmt = (typeof formatPrice === 'function')
+        ? formatPrice(l.prezzo, l.tipo)
+        : `€ ${Number(l.prezzo || 0).toLocaleString('it-IT')}`;
+
+    const _stat = (label, total, delta, color, icon, deltaSign) => {
+        const deltaTxt = delta > 0
+            ? `<span class="text-[10px] font-black ${color === 'blue' ? 'text-blue-600' : color === 'emerald' ? 'text-emerald-600' : 'text-violet-600'} mt-0.5">+${delta}<span class="text-slate-400 font-bold ml-1">7g</span></span>`
+            : '<span class="text-[10px] font-bold text-slate-300 mt-0.5">— 7g</span>';
+        return `
+        <div class="flex-1 min-w-0 bg-slate-50 rounded-2xl p-3 md:p-4 flex flex-col">
+            <div class="flex items-center gap-1.5 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                <i class="fas ${icon} text-slate-300"></i>${label}
+            </div>
+            <div class="text-2xl md:text-3xl font-black text-slate-900 leading-none mt-2">${Number(total || 0).toLocaleString('it-IT')}</div>
+            ${deltaTxt}
+        </div>`;
+    };
+
+    const unreadBadge = l.msg_unread > 0
+        ? `<span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-black rounded-full min-w-5 h-5 px-1.5 inline-flex items-center justify-center border-2 border-white">${l.msg_unread}</span>`
+        : '';
+
+    const regionalChip = (l.regional_alerts > 0 || l.regional_active_buyers > 0)
+        ? `<div class="mt-4 px-4 py-3 bg-gradient-to-r from-blue-50 to-violet-50 border border-blue-100 rounded-2xl flex flex-wrap items-center gap-2 text-xs">
+            <i class="fas fa-location-dot text-blue-600"></i>
+            <span class="font-bold text-slate-600">In ${escapeHTML(l.regione || 'zona')}:</span>
+            ${l.regional_alerts > 0 ? `<span class="font-black text-blue-700"><span class="text-base">${l.regional_alerts}</span> iscritti agli avvisi</span>` : ''}
+            ${(l.regional_alerts > 0 && l.regional_active_buyers > 0) ? '<span class="text-slate-300">·</span>' : ''}
+            ${l.regional_active_buyers > 0 ? `<span class="font-black text-violet-700"><span class="text-base">${l.regional_active_buyers}</span> compratori attivi <span class="text-slate-400 font-bold text-[10px]">(30g)</span></span>` : ''}
+           </div>`
+        : '';
+
+    const dots = total > 1
+        ? `<div class="flex justify-center gap-2 mt-4">
+            ${_sellerHeroState.listings.map((_, i) => `
+                <button onclick="setSellerHeroIdx(${i})" class="w-2 h-2 rounded-full transition ${i === _sellerHeroState.idx ? 'bg-blue-600 w-6' : 'bg-slate-300 hover:bg-slate-400'}"></button>
+            `).join('')}
+           </div>`
+        : '';
+
+    const navArrows = total > 1
+        ? `<div class="absolute top-4 right-4 flex gap-1.5">
+            <button onclick="prevSellerHero()" aria-label="Precedente" class="w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-md text-slate-600 hover:text-blue-600 transition"><i class="fas fa-chevron-left text-xs"></i></button>
+            <button onclick="nextSellerHero()" aria-label="Successivo" class="w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-md text-slate-600 hover:text-blue-600 transition"><i class="fas fa-chevron-right text-xs"></i></button>
+           </div>`
+        : '';
+
+    section.innerHTML = `
+    <div class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm relative">
+        <div class="p-5 md:p-6">
+            <div class="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">
+                <i class="fas fa-bolt text-amber-500"></i>
+                Il tuo annuncio${total > 1 ? ` <span class="text-slate-300">·</span> <span class="text-slate-500">${_sellerHeroState.idx + 1} di ${total}</span>` : ''}
+            </div>
+            ${navArrows}
+            <div class="flex flex-col md:flex-row gap-4 md:gap-5">
+                <a href="/annuncio?id=${encodeURIComponent(l.id)}" target="_blank" rel="noopener" class="block flex-shrink-0 w-full md:w-44 aspect-[16/10] md:aspect-square rounded-2xl overflow-hidden bg-slate-100 group">
+                    ${cover ? `<img src="${escapeHTML(getOptimizedImageUrl ? getOptimizedImageUrl(cover, 400, 400) : cover)}" alt="${escapeHTML(l.titolo || '')}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` : '<div class="w-full h-full flex items-center justify-center text-slate-300"><i class="fas fa-image text-3xl"></i></div>'}
+                </a>
+                <div class="flex-1 min-w-0">
+                    <div class="flex flex-wrap items-center gap-1.5 mb-2">
+                        <span class="${tipoBadge} text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-md">${escapeHTML(l.tipo || '')}</span>
+                        ${featuredBadge}
+                    </div>
+                    <a href="/annuncio?id=${encodeURIComponent(l.id)}" target="_blank" rel="noopener" class="block">
+                        <h2 class="text-lg md:text-xl font-black text-slate-900 hover:text-blue-600 transition tracking-tight leading-tight line-clamp-2">${escapeHTML(l.titolo || '')}</h2>
+                    </a>
+                    <p class="text-xs text-slate-500 font-bold mt-1"><i class="fas fa-location-dot text-slate-300 mr-1"></i>${escapeHTML(l.comune || '')}, ${escapeHTML(l.regione || '')}</p>
+                    <p class="text-base md:text-lg font-black text-slate-900 mt-2">${escapeHTML(priceFmt)}</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-2 md:gap-3 mt-5">
+                ${_stat('Views', l.views_total, 0, 'blue', 'fa-eye')}
+                ${_stat('Salvati', l.saved_total, l.saved_7d, 'emerald', 'fa-bookmark')}
+                ${_stat('Messaggi', l.msg_total, l.msg_7d, 'violet', 'fa-envelope')}
+                <div class="flex-1 min-w-0 bg-slate-50 rounded-2xl p-3 md:p-4 flex flex-col relative">
+                    <div class="flex items-center gap-1.5 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                        <i class="fas fa-bell text-slate-300"></i>Da leggere
+                    </div>
+                    <div class="text-2xl md:text-3xl font-black ${l.msg_unread > 0 ? 'text-red-600' : 'text-slate-300'} leading-none mt-2 relative inline-block">
+                        ${Number(l.msg_unread || 0).toLocaleString('it-IT')}
+                        ${unreadBadge}
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-300 mt-0.5">non letti</span>
+                </div>
+            </div>
+            ${regionalChip}
+            <div class="flex flex-wrap gap-2 mt-5">
+                <a href="/annuncio?id=${encodeURIComponent(l.id)}" target="_blank" rel="noopener" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-widest px-4 py-2.5 rounded-xl transition inline-flex items-center gap-2"><i class="fas fa-arrow-up-right-from-square text-[10px]"></i>Apri annuncio</a>
+                <a href="/modifica-annuncio?id=${encodeURIComponent(l.id)}" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-black uppercase tracking-widest px-4 py-2.5 rounded-xl transition inline-flex items-center gap-2"><i class="fas fa-pen text-[10px]"></i>Modifica</a>
+                ${!isFeatured ? `<button onclick="openVetrinaFromHero(${_sellerHeroState.idx})" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-black uppercase tracking-widest px-4 py-2.5 rounded-xl transition inline-flex items-center gap-2"><i class="fas fa-crown text-[10px]"></i>Metti in vetrina</button>` : ''}
+            </div>
+            ${dots}
+        </div>
+    </div>`;
+}
+
+function nextSellerHero() {
+    if (_sellerHeroState.listings.length <= 1) return;
+    _sellerHeroState.idx = (_sellerHeroState.idx + 1) % _sellerHeroState.listings.length;
+    _renderSellerHero();
+}
+
+function prevSellerHero() {
+    if (_sellerHeroState.listings.length <= 1) return;
+    _sellerHeroState.idx = (_sellerHeroState.idx - 1 + _sellerHeroState.listings.length) % _sellerHeroState.listings.length;
+    _renderSellerHero();
+}
+
+function setSellerHeroIdx(i) {
+    if (i < 0 || i >= _sellerHeroState.listings.length) return;
+    _sellerHeroState.idx = i;
+    _renderSellerHero();
+}
+
+function openVetrinaFromHero(idx) {
+    const l = _sellerHeroState.listings[idx];
+    if (l && typeof openVetrinaModal === 'function') openVetrinaModal(l);
+}
+
+// ── Milestones (achievement persistenti) ────────────────────────
+const _MILESTONE_COPY = {
+    'first_view':    { emoji: '👁',  title: 'Prima visita ricevuta',         line: 'Qualcuno ha aperto il tuo annuncio.' },
+    'views_10':      { emoji: '🔥',  title: '10 views raggiunte',            line: 'Sta iniziando a girare.' },
+    'views_50':      { emoji: '🚀',  title: '50 views raggiunte',            line: 'Il tuo annuncio sta funzionando.' },
+    'views_100':     { emoji: '💯',  title: '100 views raggiunte',           line: 'Un traguardo serio. Continua così.' },
+    'views_500':     { emoji: '🏆',  title: '500 views raggiunte',           line: 'Sei tra i posteggi più visti del sito.' },
+    'first_save':    { emoji: '⭐',  title: 'Primo salvato',                 line: 'Qualcuno sta valutando seriamente di contattarti.' },
+    'saves_5':       { emoji: '⭐',  title: '5 salvati',                     line: 'Sei nei preferiti di 5 acquirenti.' },
+    'saves_10':      { emoji: '🌟',  title: '10 salvati',                    line: 'Domanda forte sul tuo annuncio.' },
+    'first_message': { emoji: '💬',  title: 'Primo messaggio ricevuto',      line: 'C\'è un acquirente interessato. Apri la chat.' },
+    'msgs_5':        { emoji: '💬',  title: '5 messaggi ricevuti',           line: 'Trattative attive. Rispondi velocemente per chiudere.' },
+};
+
+let _milestonesCache = [];
+
+async function loadMilestones() {
+    const banner = document.getElementById('milestonesBanner');
+    if (!banner) return;
+    try {
+        const { data, error } = await _supabase.rpc('unseen_milestones');
+        if (error || !data || data.error) { banner.classList.add('hidden'); return; }
+        const rows = Array.isArray(data.rows) ? data.rows : [];
+        _milestonesCache = rows;
+        if (!rows.length) { banner.classList.add('hidden'); return; }
+        _renderMilestones();
+        banner.classList.remove('hidden');
+    } catch (_) {
+        banner.classList.add('hidden');
+    }
+}
+
+function _renderMilestones() {
+    const banner = document.getElementById('milestonesBanner');
+    if (!banner) return;
+    const visible = _milestonesCache.slice(0, 3);
+    const extra = _milestonesCache.length - visible.length;
+    banner.innerHTML = visible.map(m => {
+        const meta = _MILESTONE_COPY[m.kind] || { emoji: '🎉', title: m.kind, line: '' };
+        return `
+        <div class="bg-gradient-to-r from-emerald-50 via-white to-emerald-50 border border-emerald-200 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-sm">
+            <div class="text-2xl flex-shrink-0">${meta.emoji}</div>
+            <div class="min-w-0 flex-1">
+                <div class="text-sm font-black text-slate-900 leading-tight">${meta.title} <span class="text-emerald-600">su ${escapeHTML(m.titolo || '')}</span></div>
+                <div class="text-xs text-slate-500 font-medium leading-snug mt-0.5">${meta.line}</div>
+            </div>
+            <a href="/annuncio?id=${encodeURIComponent(m.annuncio_id)}" target="_blank" rel="noopener" class="text-[10px] font-black text-blue-600 hover:underline whitespace-nowrap uppercase tracking-widest hidden sm:inline-block">Vedi</a>
+            <button onclick="dismissMilestone(${m.id})" aria-label="Chiudi" class="text-slate-400 hover:text-slate-700 hover:bg-white rounded-lg w-7 h-7 flex items-center justify-center transition flex-shrink-0">
+                <i class="fas fa-xmark text-xs"></i>
+            </button>
+        </div>`;
+    }).join('') + (extra > 0
+        ? `<button onclick="dismissAllMilestones()" class="w-full py-2 rounded-xl border border-emerald-200 text-[11px] font-black text-emerald-700 hover:bg-emerald-50 transition inline-flex items-center justify-center gap-2">
+            <i class="fas fa-check-double text-[10px]"></i>+${extra} altri achievement · segna tutti come visti
+           </button>`
+        : '');
+}
+
+async function dismissMilestone(id) {
+    try {
+        await _supabase.rpc('mark_milestone_seen', { p_id: id });
+    } catch (_) {}
+    _milestonesCache = _milestonesCache.filter(m => m.id !== id);
+    if (!_milestonesCache.length) {
+        const banner = document.getElementById('milestonesBanner');
+        if (banner) banner.classList.add('hidden');
+    } else {
+        _renderMilestones();
+    }
+}
+
+async function dismissAllMilestones() {
+    try { await _supabase.rpc('mark_all_milestones_seen'); } catch (_) {}
+    _milestonesCache = [];
+    const banner = document.getElementById('milestonesBanner');
+    if (banner) banner.classList.add('hidden');
 }
 
 // ── My Listings ─────────────────────────────────────────
