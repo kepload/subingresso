@@ -6,7 +6,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon-v2.svg">
     <title>Dashboard — Subingresso.it</title>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="css/tailwind.css?v=3">
+    <link rel="stylesheet" href="css/tailwind.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <style>
@@ -2649,8 +2649,8 @@ function _renderSellerHero() {
             </div>
             ${navArrows}
             <div class="flex flex-col md:flex-row gap-4 md:gap-5">
-                <a href="/annuncio?id=${encodeURIComponent(l.id)}" target="_blank" rel="noopener" class="block flex-shrink-0 w-full md:w-44 aspect-[16/10] md:aspect-square rounded-2xl overflow-hidden bg-slate-100 group">
-                    ${cover ? `<img src="${escapeHTML(getOptimizedImageUrl ? getOptimizedImageUrl(cover, 400, 400) : cover)}" alt="${escapeHTML(l.titolo || '')}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` : '<div class="w-full h-full flex items-center justify-center text-slate-300"><i class="fas fa-image text-3xl"></i></div>'}
+                <a href="/annuncio?id=${encodeURIComponent(l.id)}" target="_blank" rel="noopener" style="aspect-ratio:1/1" class="block flex-shrink-0 w-full md:w-44 rounded-2xl overflow-hidden bg-slate-100 group">
+                    ${cover ? `<img src="${escapeHTML(cover)}" alt="${escapeHTML(l.titolo || '')}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` : '<div class="w-full h-full flex items-center justify-center text-slate-300"><i class="fas fa-image text-3xl"></i></div>'}
                 </a>
                 <div class="flex-1 min-w-0">
                     <div class="flex flex-wrap items-center gap-1.5 mb-2">

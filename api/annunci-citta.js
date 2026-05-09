@@ -219,7 +219,7 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
   <meta property="og:updated_time" content="${esc(todayIso)}">
   <meta name="twitter:card"       content="summary_large_image">
   <link rel="canonical" href="${esc(canonicalUrl)}">
-  <link rel="stylesheet" href="/css/tailwind.css?v=3">
+  <link rel="stylesheet" href="/css/tailwind.css?v=4">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script type="application/ld+json">${safeJson(jsonLd)}</script>
   <style>
@@ -609,7 +609,7 @@ module.exports = async function handler(req, res) {
   <meta property="article:modified_time" content="${esc(todayIso)}">
   <meta name="twitter:card"       content="summary_large_image">
   <link rel="canonical" href="${esc(canonicalUrl)}">
-  <link rel="stylesheet" href="/css/tailwind.css?v=3">
+  <link rel="stylesheet" href="/css/tailwind.css?v=4">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script type="application/ld+json">${safeJson(jsonLd)}</script>
   <style>
