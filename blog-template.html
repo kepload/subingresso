@@ -657,18 +657,20 @@ function renderList(posts) {
         const safeSlug = encodeURIComponent(p.slug);
         const safeTitle = escapeHTML(p.title);
         const cover = p.cover_image_url || '';
+        // w-28 e sm:h-28 sono compilati ma sm:w-28 e h-28 base no — uso w-24 h-24 ovunque
+        // per non rischiare layout collassato. Le immagini Pexels chiedo gia' 240x240 quindi resa nitida.
         const thumb = cover
             ? `<img src="${escapeHTML(_pexelsUrl(cover, 240, 240))}"
                     alt="${safeTitle}"
                     loading="lazy" decoding="async"
-                    class="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 object-cover rounded-xl bg-slate-100">`
-            : '<div class="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 bg-slate-100 rounded-xl"></div>';
+                    class="w-24 h-24 flex-shrink-0 object-cover rounded-xl bg-slate-100">`
+            : '<div class="w-24 h-24 flex-shrink-0 bg-slate-100 rounded-xl"></div>';
         return `
-        <a href="/blog?post=${safeSlug}" class="group flex gap-3 sm:gap-4 bg-white rounded-2xl p-2.5 sm:p-3 border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
+        <a href="/blog?post=${safeSlug}" class="group flex gap-3 bg-white rounded-2xl p-3 border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
             ${thumb}
             <div class="min-w-0 flex-1 py-1 flex flex-col justify-center">
                 ${_badge(p.category)}
-                <h3 class="text-xs sm:text-sm font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-snug mt-2 line-clamp-3">${safeTitle}</h3>
+                <h3 class="text-sm font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-snug mt-2 line-clamp-3">${safeTitle}</h3>
                 <p class="text-[10px] font-bold text-slate-400 uppercase mt-1.5">${_date(p.published_at)}</p>
             </div>
         </a>`;
