@@ -2593,8 +2593,10 @@ function _renderSellerHero() {
     const featuredBadge = isFeatured
         ? `<span class="bg-gradient-to-r from-amber-400 to-orange-500 text-white text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-md inline-flex items-center gap-1"><i class="fas fa-crown text-[9px]"></i>Vetrina</span>`
         : '';
+    // formatPrice accetta l'oggetto listing intero, non (prezzo, tipo). Se passato un
+    // numero, l.prezzo e' undefined dentro la function -> ritorna "Trattativa riservata".
     const priceFmt = (typeof formatPrice === 'function')
-        ? formatPrice(l.prezzo, l.tipo)
+        ? formatPrice(l)
         : `€ ${Number(l.prezzo || 0).toLocaleString('it-IT')}`;
 
     const _stat = (label, total, delta, color, icon, deltaSign) => {
