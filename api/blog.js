@@ -135,8 +135,45 @@ module.exports = async function handler(req, res) {
         return;
     }
 
-    // Nessun slug: serve il template senza modifiche (caso teorico — il rewrite
-    // condizionale non dovrebbe mandare qui richieste senza ?post=).
+    // Nessun slug: pagina lista /blog. Meta SEO custom + intro testuale unica
+    // per evitare il "thin content" (8 mag 2026: 42 pagine "Discovered, not indexed",
+    // /blog tra queste).
+    const listTitle = 'Blog Subingresso — Guide, Bandi e Compravendita Posteggi Mercatali';
+    const listDesc  = 'Guide pratiche e bandi posteggi mercatali in tutte le regioni italiane. Subingresso, licenze ambulanti, fisco, normative. Aggiornato 2026.';
+    const listCanonical = `${SITE}/blog`;
+    const eListTitle = esc(listTitle);
+    const eListDesc  = esc(listDesc);
+    const eListCan   = esc(listCanonical);
+
+    html = html
+        .replace(/<title>[\s\S]*?<\/title>/,
+                 `<title>${eListTitle}</title>`)
+        .replace(/<meta name="description" id="metaBlogDesc"[^>]*>/,
+                 `<meta name="description" id="metaBlogDesc" content="${eListDesc}">`)
+        .replace(/<meta property="og:title" id="ogBlogTitle"[^>]*>/,
+                 `<meta property="og:title" id="ogBlogTitle" content="${eListTitle}">`)
+        .replace(/<meta property="og:description" id="ogBlogDesc"[^>]*>/,
+                 `<meta property="og:description" id="ogBlogDesc" content="${eListDesc}">`)
+        .replace(/<meta property="og:url" id="ogBlogUrl"[^>]*>/,
+                 `<meta property="og:url" id="ogBlogUrl" content="${eListCan}">`)
+        .replace(/<link rel="canonical" id="canonicalBlog"[^>]*>/,
+                 `<link rel="canonical" id="canonicalBlog" href="${eListCan}">`);
+
+    const introHtml = `
+    <section id="blogListIntro" class="mb-10 bg-white rounded-3xl p-7 border border-slate-100 shadow-sm">
+        <h1 class="text-2xl md:text-3xl font-black tracking-tight text-slate-900 mb-3">Guide e Bandi per Ambulanti — Il Blog di Subingresso</h1>
+        <p class="text-slate-600 leading-relaxed mb-3">Il blog di Subingresso raccoglie guide pratiche e bandi pubblici per chi vende, compra o gestisce un posteggio mercatale in Italia. Ogni articolo è pensato per chi lavora davvero al banco: ambulanti che cercano di capire la burocrazia del subingresso, venditori che vogliono valutare correttamente la propria licenza, acquirenti che cercano un posteggio in una regione specifica.</p>
+        <p class="text-slate-600 leading-relaxed mb-3">Trovi aggiornamenti su tutti i <strong>bandi posteggi mercatali</strong> emessi dai comuni italiani — Lombardia, Piemonte, Lazio, Veneto, Emilia-Romagna, Toscana, Sicilia, Calabria e tutte le altre regioni. Approfondiamo la differenza tra licenza tipo A e tipo B, la fiscalità sui guadagni del posteggio, la tassa di occupazione del suolo pubblico, il rinnovo della concessione, la successione in caso di eredità.</p>
+        <p class="text-slate-600 leading-relaxed">Sezione speciale per il <strong>Lago di Garda, la Costa degli Dei, il Salento</strong> e gli altri territori turistici dove il valore di un posteggio cambia con la stagionalità. Aggiornamenti regolari su Bolkestein, sentenze TAR e novità normative che impattano il commercio ambulante italiano.</p>
+    </section>`;
+
+    // Inietta l'intro subito prima di #loading (sotto il banner valutatore)
+    html = html.replace(
+        /<div id="loading"/,
+        `${introHtml}\n    <div id="loading"`
+    );
+
+    res.setHeader('Cache-Control', 'public, s-maxage=180, stale-while-revalidate=600');
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.status(200).send(html);
 };

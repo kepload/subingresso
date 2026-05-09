@@ -86,6 +86,43 @@ module.exports = async function handler(req, res) {
         } catch (_) {}
     }
 
+    // Annunci correlati SSR (stessa regione, esclusione self) — internal linking per crawl + indicizzazione
+    let related = [];
+    if (listing && listing.regione) {
+        try {
+            const r2 = await fetch(
+                `${SUPABASE_URL}/rest/v1/annunci?regione=eq.${encodeURIComponent(listing.regione)}&id=neq.${encodeURIComponent(id)}&status=eq.active&select=id,titolo,comune,regione,prezzo,stato,img_urls&order=created_at.desc&limit=3`,
+                { headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` } }
+            );
+            if (r2.ok) {
+                const arr = await r2.json();
+                if (Array.isArray(arr)) related = arr;
+            }
+        } catch (_) {}
+    }
+
+    function relatedCardHTML(l) {
+        const img = (l.img_urls && l.img_urls[0]) ? l.img_urls[0] : '';
+        const isAffitto = l.stato === 'Affitto' || l.stato === 'Affitto mensile';
+        const prezzo = l.prezzo
+            ? `€ ${Number(l.prezzo).toLocaleString('it-IT')}${isAffitto ? '/anno' : ''}`
+            : 'Trattativa';
+        return `
+            <a href="/annuncio?id=${esc(l.id)}" class="block bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
+                <div class="bg-gradient-to-br from-slate-100 to-blue-50 h-32 flex items-center justify-center overflow-hidden">
+                    ${img ? `<img src="${esc(img)}" alt="${esc(l.titolo)}" class="w-full h-full object-cover" loading="lazy">` : '<i class="fas fa-store text-blue-200 text-3xl"></i>'}
+                </div>
+                <div class="p-4">
+                    <p class="text-[10px] font-black uppercase tracking-wider text-slate-400 mb-1">${esc(l.comune || l.regione)}</p>
+                    <h3 class="font-black text-sm text-slate-900 mb-2">${esc(l.titolo)}</h3>
+                    <p class="text-lg font-black text-slate-900">${prezzo}</p>
+                </div>
+            </a>`;
+    }
+    const relatedSSR = related.length > 0
+        ? related.map(relatedCardHTML).join('')
+        : '';
+
     const notFound  = !listing;
     const canonical = id ? `${SITE}/annuncio?id=${encodeURIComponent(id)}` : `${SITE}/annunci`;
     const title     = listing ? buildTitle(listing) : 'Posteggio Mercatale | Subingresso.it';
@@ -329,17 +366,17 @@ module.exports = async function handler(req, res) {
         </div>
     </div>
 
-    <div id="relatedSection" class="hidden mt-16 pt-16 border-t border-slate-200">
+    <div id="relatedSection" class="${related.length > 0 ? '' : 'hidden '}mt-16 pt-16 border-t border-slate-200">
         <div class="flex items-center justify-between mb-10">
             <div>
-                <h2 class="text-3xl font-black tracking-tight text-slate-900">Annunci simili</h2>
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Annunci simili${listing && listing.regione ? ` in ${esc(listing.regione)}` : ''}</h2>
                 <p class="text-slate-500 font-bold mt-1 text-sm uppercase tracking-wider">Nella stessa regione</p>
             </div>
-            <a href="/annunci" class="text-blue-600 font-black text-sm hover:underline flex items-center gap-2">
+            <a href="/annunci${listing && listing.regione ? `?regione=${encodeURIComponent(listing.regione)}` : ''}" class="text-blue-600 font-black text-sm hover:underline flex items-center gap-2">
                 Vedi tutti <i class="fas fa-arrow-right text-xs"></i>
             </a>
         </div>
-        <div id="relatedGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div id="relatedGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${relatedSSR}</div>
     </div>
 </main>
 
