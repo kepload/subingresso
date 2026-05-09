@@ -657,23 +657,23 @@ function renderList(posts) {
         const safeSlug = encodeURIComponent(p.slug);
         const safeTitle = escapeHTML(p.title);
         const cover = p.cover_image_url || '';
-        // Style inline come safety net: garantisce flex orizzontale + dimensioni img anche
-        // se classi Tailwind responsive non sono nel CSS compilato o sono cached vecchie.
+        // Layout grid 96px + 1fr inline: garantisce orizzontale a prescindere da Tailwind/cache.
+        // Specificita' style inline (1,0,0,0) batte qualsiasi class.
         const thumb = cover
             ? `<img src="${escapeHTML(_pexelsUrl(cover, 240, 240))}"
                     alt="${safeTitle}"
                     width="96" height="96"
                     loading="lazy" decoding="async"
-                    style="width:96px;height:96px;flex-shrink:0;object-fit:cover"
-                    class="rounded-xl bg-slate-100">`
-            : '<div style="width:96px;height:96px;flex-shrink:0" class="bg-slate-100 rounded-xl"></div>';
+                    style="width:96px;height:96px;object-fit:cover;border-radius:12px;background:#f1f5f9"
+                    class="bg-slate-100">`
+            : '<div style="width:96px;height:96px;border-radius:12px;background:#f1f5f9"></div>';
         return `
-        <a href="/blog?post=${safeSlug}" style="display:flex;align-items:stretch;gap:12px" class="group bg-white rounded-2xl p-3 border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
+        <a href="/blog?post=${safeSlug}" style="display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center" class="group bg-white rounded-2xl p-3 border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
             ${thumb}
-            <div style="min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center" class="py-1">
+            <div style="min-width:0">
                 ${_badge(p.category)}
-                <h3 class="text-sm font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-snug mt-2 line-clamp-3">${safeTitle}</h3>
-                <p class="text-[10px] font-bold text-slate-400 uppercase mt-1.5">${_date(p.published_at)}</p>
+                <h3 style="margin-top:8px" class="text-sm font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-snug line-clamp-3">${safeTitle}</h3>
+                <p style="margin-top:6px" class="text-[10px] font-bold text-slate-400 uppercase">${_date(p.published_at)}</p>
             </div>
         </a>`;
     };
