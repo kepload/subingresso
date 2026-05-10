@@ -3097,9 +3097,18 @@ function renderSecurityOverview(d) {
         }).join('');
     }
 
-    // Anomalie recenti (filtra quelle senza issue per non sporcare il pannello)
+    // Anomalie recenti: filtro per età (4 ore) + issues_count > 0.
+    // Auto-decay: gli alert vecchi spariscono dal pannello — l'email e' gia' partita,
+    // il pannello e' "live status", non storico. Lo storico resta su admin_alerts_log
+    // a livello DB. Se uno scatta e nelle 4h successive non si rinnova -> presunto risolto.
+    const _ALERT_TTL_MS = 4 * 60 * 60 * 1000;
+    const _alertCutoff  = Date.now() - _ALERT_TTL_MS;
     const alerts        = Array.isArray(d.recent_alerts)
-        ? d.recent_alerts.filter(a => Number(a.issues_count) > 0)
+        ? d.recent_alerts.filter(a => {
+            if (Number(a.issues_count) <= 0) return false;
+            const t = a.checked_at ? new Date(a.checked_at).getTime() : 0;
+            return t > _alertCutoff;
+        })
         : [];
     const alertsSection = document.getElementById('securityAlertsSection');
     const alertsList    = document.getElementById('securityAlertsList');
