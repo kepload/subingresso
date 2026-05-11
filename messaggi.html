@@ -330,16 +330,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // ── Load conversation list ───────────────────────────────
 async function loadConversations() {
+    console.log('[DBG-MSG] start, user=', _currentUser?.id, _currentUser?.email);
     const { data: convs, error } = await _supabase
         .from('conversazioni')
         .select('id, created_at, acquirente_id, venditore_id, is_support, annuncio:annunci(id, titolo, img_urls, prezzo, comune, tipo)')
         .or(`acquirente_id.eq.${_currentUser.id},venditore_id.eq.${_currentUser.id}`)
         .order('created_at', { ascending: false });
+    console.log('[DBG-MSG] convs.length=', convs?.length, 'error=', error);
 
     if (error) console.error('loadConversazioni error:', error.message);
 
     const list = convs || [];
-    if (!list.length) { _conversations = []; renderConvList(); return; }
+    if (!list.length) { console.log('[DBG-MSG] list vuota → render empty'); _conversations = []; renderConvList(); return; }
 
     // Profili separati (join profiles rompe PostgREST)
     const userIds = [...new Set(list.flatMap(c => [c.acquirente_id, c.venditore_id]))];
@@ -362,6 +364,7 @@ async function loadConversations() {
     (allMsgs || []).forEach(m => {
         if (!lastMsgMap[m.conversazione_id]) lastMsgMap[m.conversazione_id] = m;
     });
+    console.log('[DBG-MSG] allMsgs.length=', allMsgs?.length, 'lastMsgMap keys=', Object.keys(lastMsgMap).length);
 
     _conversations = list.map(c => ({
         ...c,
@@ -370,6 +373,7 @@ async function loadConversations() {
         lastMessage: lastMsgMap[c.id]    || null,
     })).filter(c => c.lastMessage || c.is_support)  // conv supporto sempre, altre solo se hanno msg
       .sort((a, b) => _convCompare(a, b));
+    console.log('[DBG-MSG] _conversations.length after filter=', _conversations.length, '_isAdmin=', _isAdmin, '_adminUserId=', _adminUserId);
 
     // Inietta pseudo-conv supporto in fondo se l'utente non è admin e non ne ha una reale
     if (!_isAdmin && _adminUserId) {
