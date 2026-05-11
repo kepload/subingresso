@@ -108,6 +108,10 @@ function _regioneFromSlug(s) {
 const _BLOG_REGIONE = _regioneFromSlug(slug);
 const _IS_BANDI    = !!_BLOG_REGIONE;
 
+// Hub Bolkestein: slug singolo, FAQ JSON-LD dedicate (rich result Google su query "ultime notizie").
+const _BOLKESTEIN_HUB_SLUG = 'bolkestein-ambulanti-ultime-notizie-2026';
+const _IS_BOLKESTEIN_HUB   = slug === _BOLKESTEIN_HUB_SLUG;
+
 // Select annunci con SOLO le colonne safe (no tel/email per RLS) usate da buildCard.
 const _SAFE_COLS_LISTING = 'id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, saved_count, featured, featured_until, featured_tier, featured_since, video_url';
 
@@ -311,6 +315,50 @@ function _injectFaqJsonLd(regione) {
             'name':  f.q,
             'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
         }))
+    };
+    let el = document.getElementById('_ldFaq');
+    if (!el) {
+        el = document.createElement('script');
+        el.id = '_ldFaq';
+        el.type = 'application/ld+json';
+        document.head.appendChild(el);
+    }
+    el.textContent = JSON.stringify(ld);
+}
+
+// ── 4.1b JSON-LD FAQPage hub Bolkestein (riusa lo stesso ID _ldFaq, mutex con la versione bandi) ─────
+function _injectBolkesteinFaqJsonLd() {
+    if (!_IS_BOLKESTEIN_HUB) return;
+    const faqs = [
+        {
+            q: 'Quando partono le gare Bolkestein per gli ambulanti in Italia?',
+            a: 'Non c\'è una data unica nazionale. A maggio 2026 le linee guida MIMIT sono ferme da mesi, le Regioni chiedono autonomia, l\'ANCI vuole criteri uniformi. Alcuni Comuni (Sanremo, parte del Veneto e delle Marche) hanno già recepito e avviato bandi, la maggioranza aspetta la cornice nazionale. Previsioni realistiche: 2-3 anni minimo per i grandi Comuni, 4-5 anni per i Comuni medio-piccoli.'
+        },
+        {
+            q: 'Posso ancora fare subingresso di una licenza ambulante nel 2026?',
+            a: 'Sì. La direttiva Bolkestein disciplina l\'assegnazione iniziale tramite gara pubblica, non la circolazione di una licenza già esistente tra privati. Finché la concessione è in essere e non è stata rimessa a gara dal Comune, può essere ceduta tramite subingresso davanti al SUAP. Il subentrante eredita la durata residua del titolo.'
+        },
+        {
+            q: 'Cosa succede alla mia licenza ambulante dopo il bando Bolkestein?',
+            a: 'Una volta che il Comune bandisce e aggiudica il posteggio, la nuova concessione nasce sotto regime Bolkestein. Niente più diritto di insistenza, durata decennale, gara aperta a tutti. Il titolare uscente può ripresentarsi al bando ma parte alla pari con gli altri candidati. La licenza, di fatto, smette di essere un asset trasferibile.'
+        },
+        {
+            q: 'Cos\'è la procedura di infrazione UE contro l\'Italia sugli ambulanti?',
+            a: 'A febbraio 2026 la Commissione Europea ha avviato la procedura di infrazione contro l\'Italia per il mancato adeguamento della disciplina delle concessioni ambulanti alla direttiva 2006/123/CE. Roma ha sessanta giorni per rispondere. Se la procedura prosegue fino alla Corte di Giustizia UE, l\'Italia rischia sanzioni economiche, motivo in più per accelerare il recepimento.'
+        },
+        {
+            q: 'È ancora valido il diritto di insistenza per gli ambulanti?',
+            a: 'No. Il diritto di insistenza (la priorità del titolare uscente nel bando successivo) è stato cancellato dalla giurisprudenza europea e da diverse sentenze del Consiglio di Stato e dei TAR regionali italiani. È uno schema vecchio non più applicabile nei nuovi bandi Bolkestein.'
+        }
+    ];
+    const ld = {
+        '@context': 'https://schema.org',
+        '@type':    'FAQPage',
+        'mainEntity': faqs.map(function(f){ return {
+            '@type': 'Question',
+            'name':  f.q,
+            'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+        };})
     };
     let el = document.getElementById('_ldFaq');
     if (!el) {
@@ -592,6 +640,9 @@ function renderPost(post) {
 
     // 4.1 — JSON-LD FAQPage solo sui bandi-* (rich result Google).
     _injectFaqJsonLd(_BLOG_REGIONE);
+
+    // 4.1b — JSON-LD FAQPage sull'hub Bolkestein (sovrascrive _ldFaq se attivo).
+    _injectBolkesteinFaqJsonLd();
 
     // 4.2 — Box "Bandi in regioni vicine" con 3 card geograficamente vicine.
     if (_IS_BANDI) _renderRelatedBandi(_BLOG_REGIONE, _allPosts);
