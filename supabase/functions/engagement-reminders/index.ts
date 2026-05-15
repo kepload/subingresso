@@ -140,7 +140,7 @@ async function sendReminder(args: { email: string; nome: string; kind: Kind; uns
   } else {
     subject = '👋 Ti aspettiamo su Subingresso.it';
     intro   = `${greeting}<br>è passata una settimana dalla tua iscrizione e non hai ancora pubblicato.`;
-    body    = `Capiamo che decidere richiede tempo. Nel frattempo, dai un'occhiata agli annunci attivi nella tua zona — può essere un'idea utile sia per vendere che per esplorare il mercato.<br><br>Pubblicare resta sempre <strong>gratuito</strong>, e il primo annuncio pubblicato attiva un bonus vetrina di 30 giorni.`;
+    body    = `Capiamo che decidere richiede tempo. Nel frattempo, dai un'occhiata agli annunci attivi nella tua zona — può essere un'idea utile sia per vendere che per esplorare il mercato.<br><br>Pubblicare resta sempre <strong>gratuito</strong>, senza commissioni sulla vendita, e il tuo annuncio resta online per 200 giorni.`;
     ctaLabel = 'Esplora annunci attivi';
     ctaHref  = annunciUrl;
   }
