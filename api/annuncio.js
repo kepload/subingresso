@@ -128,6 +128,9 @@ module.exports = async function handler(req, res) {
     const title     = listing ? buildTitle(listing) : 'Posteggio Mercatale | Subingresso.it';
     const desc      = listing ? buildDesc(listing)  : 'Compra e vendi posteggi mercatali e licenze ambulanti su Subingresso.it. Contatto diretto, nessuna commissione.';
     const img       = (listing && listing.img_urls && listing.img_urls[0]) ? listing.img_urls[0] : '';
+    // Immagine assoluta per JSON-LD/og:image: foto annuncio o fallback brand.
+    // Senza 'image' Google scarta la scheda Product ("Schede commercianti").
+    const ogImg     = img || `${SITE}/og/og-home.jpg?v=1`;
 
     const jsonLd = listing ? {
         '@context': 'https://schema.org',
@@ -137,7 +140,7 @@ module.exports = async function handler(req, res) {
                 'name': listing.titolo,
                 'description': desc,
                 'url': canonical,
-                ...(img ? { 'image': img } : {}),
+                'image': ogImg,
                 'offers': {
                     '@type': 'Offer',
                     'priceCurrency': 'EUR',
@@ -215,7 +218,7 @@ module.exports = async function handler(req, res) {
     <meta name="description"        id="metaDesc" content="${esc(desc)}">
     <meta property="og:title"       id="ogTitle"  content="${esc(title)}">
     <meta property="og:description" id="ogDesc"   content="${esc(desc)}">
-    <meta property="og:image"       id="ogImage"  content="${esc(img)}">
+    <meta property="og:image"       id="ogImage"  content="${esc(ogImg)}">
     <meta property="og:url"         id="ogUrl"    content="${esc(canonical)}">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="summary_large_image">
@@ -399,7 +402,7 @@ module.exports = async function handler(req, res) {
 <script src="/js/data.js?v=17"></script>
 <script src="/js/ui-components.js?v=11"></script>
 <script src="/js/auth.js?v=18"></script>
-<script src="/js/pages/annuncio-detail.js?v=17"></script>
+<script src="/js/pages/annuncio-detail.js?v=18"></script>
 </body>
 </html>`);
 };

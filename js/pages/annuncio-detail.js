@@ -304,7 +304,8 @@ async function initPage() {
                 "name": listing.titolo,
                 "description": _desc,
                 "url": window.location.href,
-                ...(showImgs[0] ? { "image": showImgs[0] } : {}),
+                // Senza 'image' Google scarta la scheda Product. Fallback brand se l'annuncio non ha foto.
+                "image": showImgs[0] || 'https://subingresso.it/og/og-home.jpg?v=1',
                 "offers": {
                     "@type": "Offer",
                     "priceCurrency": "EUR",
