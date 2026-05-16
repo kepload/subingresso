@@ -1622,7 +1622,12 @@ async function submitAnnuncio() {
         if (_pubChoice !== 'free' && inserted?.id && !vetranaGranted) {
             try {
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Apertura pagamento sicuro…';
-                const _tok = _currentSession?.access_token;
+                // Ri-deriva un token fresco: durante l'INSERT può essere
+                // scattato un refresh JWT e _currentSession resterebbe stale,
+                // facendo fallire il checkout (e perdere lo sconto -10%).
+                let _tok = null;
+                try { _tok = (await _getSessionForSubmit())?.access_token || null; } catch (_) {}
+                if (!_tok) _tok = _currentSession?.access_token || null;
                 if (!_tok) throw new Error('Sessione mancante');
                 const coRes = await _withTimeout(fetch(`${SUPABASE_URL}/functions/v1/create-checkout-session`, {
                     method: 'POST',
