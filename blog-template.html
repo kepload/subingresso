@@ -29,7 +29,10 @@
         .prose table { width: 100%; border-collapse: collapse; margin: 2rem 0; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
         .prose th { background: #f8fafc; text-align: left; padding: 12px; border: 1px solid #e2e8f0; font-size: 0.875rem; color: #1e293b; white-space: nowrap; }
         .prose td { padding: 12px; border: 1px solid #e2e8f0; font-size: 0.875rem; color: #475569; }
-        
+        /* Link nel corpo articolo: devono SEMBRARE link (Tailwind preflight li azzera). Solo .prose, non i box .not-prose. */
+        .prose a { color: #2563eb; font-weight: 700; text-decoration: underline; text-decoration-color: #93c5fd; text-underline-offset: 3px; text-decoration-thickness: 2px; transition: color .15s, text-decoration-color .15s; }
+        .prose a:hover { color: #1d4ed8; text-decoration-color: #1d4ed8; }
+
         .cta-button {
             display: inline-flex; align-items: center; gap: 12px;
             background: #2563eb; color: white; font-weight: 800;
