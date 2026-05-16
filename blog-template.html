@@ -201,6 +201,20 @@ function _bindBandoAlertForm(regione, postSlug) {
     });
 }
 
+// Annunci in Vetrina attiva davanti a tutti (chi paga ha priorità qui).
+// Featured mescolati per rotazione equa; il resto nell'ordine ricevuto.
+function _featuredFirst(list, n) {
+    const f = [], r = [];
+    (list || []).forEach(l => {
+        ((typeof isListingFeatured === 'function' && isListingFeatured(l)) ? f : r).push(l);
+    });
+    for (let i = f.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [f[i], f[j]] = [f[j], f[i]];
+    }
+    return f.concat(r).slice(0, n);
+}
+
 // ── Box "Posteggi disponibili adesso" — fetch + render ──
 // regione=null → versione generic (annunci recenti misti, niente fallback).
 // regione!=null → filtra per regione, fallback "Ancora pochi posteggi qui" se 0.
@@ -213,11 +227,16 @@ async function _loadBandoListingsBox(regione, postSlug) {
             .select(_SAFE_COLS_LISTING)
             .eq('status', 'active')
             .order('created_at', { ascending: false })
-            .limit(3);
+            .limit(24);
         if (regione) q = q.eq('regione', regione);
-        const { data, error } = await q;
+        const { data: pool, error } = await q;
 
         if (error) throw error;
+
+        // Chi è in Vetrina (e paga) ha priorità di visibilità anche qui, nel
+        // box "Posteggi disponibili adesso" dentro gli articoli del blog.
+        // Tra i featured si pesca a rotazione per equità.
+        const data = _featuredFirst(pool, 3);
 
         // Popola cache nomi venditori per buildCard (USER_NAMES)
         const userIds = Array.from(new Set((data || []).map(l => l.user_id).filter(Boolean)));

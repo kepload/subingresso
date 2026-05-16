@@ -6,6 +6,22 @@
 let _currentListing = null;
 let _contactFetched = false; // true dopo che initPage ha fetchato tel per utente loggato
 
+// Mette davanti gli annunci in Vetrina attiva (chi paga ha priorità di
+// visibilità nei box "consigliati"). I featured vengono mescolati per dare
+// rotazione equa quando sono più dei posti disponibili; gli altri restano
+// nell'ordine ricevuto (created_at desc). isListingFeatured arriva da data.js.
+function _featuredFirst(list, n) {
+    const f = [], r = [];
+    (list || []).forEach(l => {
+        ((typeof isListingFeatured === 'function' && isListingFeatured(l)) ? f : r).push(l);
+    });
+    for (let i = f.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [f[i], f[j]] = [f[j], f[i]];
+    }
+    return f.concat(r).slice(0, n);
+}
+
 // Helper to fetch contact info via RPC `get_listing_contact`.
 // Anti-scraping: la RPC è SECURITY DEFINER e applica rate limit silenzioso
 // (50 contatti unique/ora) + log su contact_reveals. Owner e admin sono in
@@ -361,14 +377,20 @@ async function initPage() {
         if (!relatedSection || !relatedGrid || !listing.regione) return;
         try {
             // NB: select esplicito senza tel/email (REVOKE per authenticated dal 3 mag 2026).
-            const { data: related } = await _supabase
+            // Fetchamo più candidati e poi mettiamo davanti gli annunci in
+            // Vetrina (chi paga ha priorità di visibilità qui). Tra i featured
+            // si pesca a caso a ogni visita per rotazione equa, così non sono
+            // sempre gli stessi 3 a comparire.
+            const { data: pool } = await _supabase
                 .from('annunci')
                 .select('id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, featured, featured_until, featured_tier, featured_since, video_url')
                 .eq('status', 'active')
                 .eq('regione', listing.regione)
                 .neq('id', listing.id)
-                .limit(3);
-            if (related && related.length > 0) {
+                .order('created_at', { ascending: false })
+                .limit(24);
+            const related = _featuredFirst(pool, 3);
+            if (related.length > 0) {
                 relatedSection.classList.remove('hidden');
                 relatedGrid.innerHTML = related.map(l => buildCard(l)).join('');
                 observeCardViews();

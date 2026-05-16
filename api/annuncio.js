@@ -86,17 +86,41 @@ module.exports = async function handler(req, res) {
         } catch (_) {}
     }
 
-    // Annunci correlati SSR (stessa regione, esclusione self) — internal linking per crawl + indicizzazione
+    // Annunci correlati SSR (stessa regione, esclusione self) — internal linking per crawl + indicizzazione.
+    // Chi è in Vetrina attiva (e paga) ha priorità: prima i featured, poi si
+    // riempie con i più recenti. Ordine deterministico (featured_since desc)
+    // perché questa pagina è cacheata a CDN — niente random per-request.
     let related = [];
     if (listing && listing.regione) {
+        const regEnc  = encodeURIComponent(listing.regione);
+        const idEnc   = encodeURIComponent(id);
+        const cols    = 'id,titolo,comune,regione,prezzo,stato,img_urls';
+        const base    = `${SUPABASE_URL}/rest/v1/annunci?regione=eq.${regEnc}&id=neq.${idEnc}&status=eq.active`;
+        const headers = { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` };
         try {
-            const r2 = await fetch(
-                `${SUPABASE_URL}/rest/v1/annunci?regione=eq.${encodeURIComponent(listing.regione)}&id=neq.${encodeURIComponent(id)}&status=eq.active&select=id,titolo,comune,regione,prezzo,stato,img_urls&order=created_at.desc&limit=3`,
-                { headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` } }
+            const nowIso = encodeURIComponent(new Date().toISOString());
+            const rF = await fetch(
+                `${base}&featured=eq.true&featured_until=gt.${nowIso}&select=${cols}&order=featured_since.desc&limit=3`,
+                { headers }
             );
-            if (r2.ok) {
-                const arr = await r2.json();
-                if (Array.isArray(arr)) related = arr;
+            if (rF.ok) {
+                const a = await rF.json();
+                if (Array.isArray(a)) related = a;
+            }
+            if (related.length < 3) {
+                const seen = new Set(related.map(x => x.id));
+                const rR = await fetch(
+                    `${base}&select=${cols}&order=created_at.desc&limit=8`,
+                    { headers }
+                );
+                if (rR.ok) {
+                    const a = await rR.json();
+                    if (Array.isArray(a)) {
+                        for (const x of a) {
+                            if (!seen.has(x.id)) { related.push(x); if (related.length >= 3) break; }
+                        }
+                    }
+                }
             }
         } catch (_) {}
     }
@@ -402,7 +426,7 @@ module.exports = async function handler(req, res) {
 <script src="/js/data.js?v=17"></script>
 <script src="/js/ui-components.js?v=11"></script>
 <script src="/js/auth.js?v=18"></script>
-<script src="/js/pages/annuncio-detail.js?v=18"></script>
+<script src="/js/pages/annuncio-detail.js?v=19"></script>
 </body>
 </html>`);
 };

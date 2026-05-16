@@ -19,6 +19,14 @@ const TIERS: Record<string, { amount: number; days: number; label: string }> = {
   '90d': { amount: 5990, days: 90, label: 'Vetrina 90 giorni' },
 };
 
+// Sconto -10% riservato esclusivamente al momento della pubblicazione
+// (step finale del wizard vendi.html). NON disponibile altrove: il gate
+// è server-side e non falsificabile dal client perché verifica lo stato
+// reale della riga annunci (creato adesso + mai stato in vetrina).
+const CREATION_SOURCE   = 'vendi_creation';
+const CREATION_DISCOUNT = 0.90;                 // -10%
+const CREATION_WINDOW_MS = 60 * 60 * 1000;      // annuncio creato < 60 min fa
+
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin':  '*',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -58,16 +66,18 @@ Deno.serve(async (req) => {
     }
     const annuncioId = String(body.annuncio_id || '').trim();
     const tier       = String(body.tier || '').trim();
+    const source     = String(body.source || '').trim();
+    const isCreationFlow = source === CREATION_SOURCE;
 
     if (!annuncioId) return json({ error: 'annuncio_id mancante' }, 400);
     if (!TIERS[tier]) return json({ error: 'tier non valido' }, 400);
 
     const tierCfg = TIERS[tier];
 
-    // 3. Verifica che l'annuncio appartenga all'utente e sia attivo
+    // 3. Verifica che l'annuncio appartenga all'utente
     const { data: annuncio, error: annErr } = await admin
       .from('annunci')
-      .select('id, user_id, status, titolo, featured, featured_until')
+      .select('id, user_id, status, titolo, featured, featured_until, featured_since, created_at')
       .eq('id', annuncioId)
       .single();
 
@@ -77,16 +87,47 @@ Deno.serve(async (req) => {
     if (annuncio.user_id !== user.id) {
       return json({ error: 'Non sei il proprietario di questo annuncio' }, 403);
     }
-    if (annuncio.status !== 'active') {
+    // Lo status valido è 'active'. In fase di pubblicazione (creation flow)
+    // l'annuncio è appena stato inserito ed è ancora 'pending' (trigger di
+    // moderazione enforce_annunci_status): lo accettiamo, la vetrina verrà
+    // applicata dal webhook e diventerà visibile appena l'annuncio è approvato.
+    if (annuncio.status === 'deleted') {
+      return json({ error: 'Annuncio non disponibile.' }, 400);
+    }
+    if (annuncio.status !== 'active' && !(isCreationFlow && annuncio.status === 'pending')) {
       return json({ error: 'Puoi attivare la vetrina solo su annunci già pubblicati (status active).' }, 400);
     }
+
+    // 3b. Sconto -10% SOLO al momento della pubblicazione, e solo se l'annuncio
+    //     è genuinamente appena creato e non è mai stato in vetrina. Questo
+    //     rende lo sconto non sfruttabile dalla dashboard o su annunci vecchi.
+    let amount = tierCfg.amount;
+    let discounted = false;
+    const createdMsAgo = annuncio.created_at
+      ? (Date.now() - new Date(annuncio.created_at).getTime())
+      : Number.MAX_SAFE_INTEGER;
+    if (isCreationFlow
+        && !annuncio.featured_since
+        && createdMsAgo >= 0
+        && createdMsAgo < CREATION_WINDOW_MS) {
+      amount     = Math.round(tierCfg.amount * CREATION_DISCOUNT);
+      discounted = true;
+    }
+    const productName = discounted
+      ? `${tierCfg.label} · sconto pubblicazione -10%`
+      : tierCfg.label;
 
     // 4. Crea sessione Stripe via API diretta (no SDK per alleggerire la function)
     const params = new URLSearchParams();
     params.set('mode', 'payment');
     params.set('payment_method_types[]', 'card');
     params.set('success_url', `${SITE_URL}/grazie.html?session_id={CHECKOUT_SESSION_ID}`);
-    params.set('cancel_url',  `${SITE_URL}/dashboard.html?vetrina=annullata`);
+    // In creation flow l'annuncio è già stato pubblicato: se l'utente annulla
+    // il pagamento lo mandiamo in dashboard a vedere il suo annuncio, non a
+    // una pagina "annullata" che farebbe pensare di aver perso l'annuncio.
+    params.set('cancel_url', isCreationFlow
+      ? `${SITE_URL}/dashboard.html?pubblicato=1&vetrina=annullata`
+      : `${SITE_URL}/dashboard.html?vetrina=annullata`);
     params.set('customer_email', user.email ?? '');
     params.set('locale', 'it');
     params.set('allow_promotion_codes', 'true');
@@ -94,8 +135,8 @@ Deno.serve(async (req) => {
     // Line item (price_data inline — evita la gestione manuale dei Price su Stripe Dashboard)
     params.set('line_items[0][quantity]', '1');
     params.set('line_items[0][price_data][currency]', 'eur');
-    params.set('line_items[0][price_data][unit_amount]', String(tierCfg.amount));
-    params.set('line_items[0][price_data][product_data][name]', tierCfg.label);
+    params.set('line_items[0][price_data][unit_amount]', String(amount));
+    params.set('line_items[0][price_data][product_data][name]', productName);
     params.set('line_items[0][price_data][product_data][description]',
       `Vetrina in evidenza su Subingresso.it per ${tierCfg.days} giorni · Annuncio: ${(annuncio.titolo || '').slice(0, 80)}`
     );
@@ -104,6 +145,8 @@ Deno.serve(async (req) => {
     params.set('metadata[user_id]',     user.id);
     params.set('metadata[annuncio_id]', annuncioId);
     params.set('metadata[tier]',        tier);
+    params.set('metadata[source]',      source || 'dashboard');
+    params.set('metadata[discount]',    discounted ? 'vendi_launch10' : '');
     params.set('payment_intent_data[metadata][user_id]',     user.id);
     params.set('payment_intent_data[metadata][annuncio_id]', annuncioId);
     params.set('payment_intent_data[metadata][tier]',        tier);
@@ -128,7 +171,7 @@ Deno.serve(async (req) => {
     await admin.from('payments').upsert({
       user_id:           user.id,
       annuncio_id:       annuncioId,
-      amount_cents:      tierCfg.amount,
+      amount_cents:      amount,
       currency:          'eur',
       tier,
       status:            'pending',
