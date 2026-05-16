@@ -63,6 +63,19 @@
             content: ''; position: absolute; inset: 3px; border-radius: 9999px; background: #2563eb;
         }
 
+        /* FAQ Vetrina — accordion nativo, zero JS */
+        .faq-item { border-top: 1px solid #f1f5f9; }
+        .faq-item summary {
+            list-style: none; cursor: pointer; padding: .75rem 0;
+            display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+            font-size: .8125rem; font-weight: 700; color: #475569;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary:hover { color: #1e293b; }
+        .faq-chev { flex: 0 0 auto; transition: transform .2s; color: #94a3b8; font-size: .75rem; }
+        .faq-item[open] summary .faq-chev { transform: rotate(180deg); }
+        .faq-item .faq-a { font-size: .8125rem; color: #64748b; line-height: 1.6; padding: 0 0 .85rem; }
+
         /* Tipo mercato buttons */
         .tipo-btn {
             border: 2px solid #e2e8f0; border-radius: 14px;
@@ -411,10 +424,10 @@
                     <button type="button" onclick="prevStep()" class="flex items-center gap-1.5 text-slate-400 hover:text-slate-700 text-sm font-bold mb-6 transition">
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
-                    <div class="text-center mb-7">
-                        <div class="text-4xl mb-2">🎉</div>
+                    <div class="text-center mb-6">
+                        <div class="text-3xl mb-2">🎉</div>
                         <h2 class="text-2xl font-black mb-1">Il tuo annuncio è pronto</h2>
-                        <p class="text-slate-500 font-medium text-sm">Scegli come pubblicarlo. Potrai attivare la Vetrina anche più avanti, ma <strong class="text-slate-700">lo sconto del 10% vale solo adesso</strong>.</p>
+                        <p class="text-slate-500 font-medium text-sm">Scegli come pubblicarlo.</p>
                     </div>
 
                     <div class="space-y-3">
@@ -427,20 +440,17 @@
                                     <span class="font-black text-slate-900">Pubblicazione gratuita</span>
                                     <span class="font-black text-slate-900">€ 0</span>
                                 </span>
-                                <span class="block text-xs text-slate-500 font-semibold mt-1">Il tuo annuncio resta online 200 giorni, visibile a tutti.</span>
+                                <span class="block text-xs text-slate-500 font-semibold mt-1">Online 200 giorni, visibile a tutti.</span>
                             </span>
                         </button>
 
-                        <div class="pt-2">
-                            <div class="flex items-center gap-2 mb-2 flex-wrap">
-                                <span class="text-[11px] font-black uppercase tracking-widest text-amber-600">In Vetrina — spingi il tuo annuncio</span>
-                                <span class="text-[10px] font-black bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">-10% SOLO ORA</span>
-                            </div>
-                            <ul class="text-[11px] text-slate-500 font-semibold space-y-1 mb-3 pl-1">
-                                <li><i class="fas fa-check text-emerald-500 mr-1.5"></i> In cima ai risultati di ricerca</li>
-                                <li><i class="fas fa-check text-emerald-500 mr-1.5"></i> Consigliato negli annunci correlati e negli articoli del blog</li>
-                                <li><i class="fas fa-check text-emerald-500 mr-1.5"></i> Badge corona + fino a 5 foto a rotazione</li>
-                            </ul>
+                        <!-- Unico segnale sconto: vale SOLO qui, alla pubblicazione -->
+                        <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 flex items-start gap-3">
+                            <i class="fas fa-bolt text-amber-500 mt-0.5"></i>
+                            <p class="text-xs text-amber-900 font-bold leading-relaxed">
+                                Solo ora, alla pubblicazione: <span class="font-black">Vetrina scontata del 10%</span>.
+                                <span class="block font-semibold text-amber-700 mt-0.5">Più avanti puoi attivarla dalla dashboard, ma a prezzo pieno.</span>
+                            </p>
                         </div>
 
                         <!-- 2. 10 giorni -->
@@ -455,7 +465,7 @@
                                         <span class="font-black text-slate-900">€ 17,91</span>
                                     </span>
                                 </span>
-                                <span class="block text-xs text-slate-500 font-semibold mt-1">€ 1,79 al giorno · prova la spinta</span>
+                                <span class="block text-xs text-slate-500 font-semibold mt-1">€ 1,79 / giorno</span>
                             </span>
                         </button>
 
@@ -465,30 +475,35 @@
                             <span class="pub-radio mt-0.5"></span>
                             <span class="flex-1 min-w-0">
                                 <span class="flex items-center justify-between gap-3">
-                                    <span class="font-black text-slate-900">Vetrina 30 giorni</span>
+                                    <span class="flex items-center gap-2">
+                                        <span class="font-black text-slate-900">Vetrina 30 giorni</span>
+                                        <span class="text-[10px] font-black bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Popolare</span>
+                                    </span>
                                     <span class="text-right whitespace-nowrap">
                                         <span class="text-xs text-slate-400 line-through mr-1">€ 39,90</span>
                                         <span class="font-black text-slate-900">€ 35,91</span>
                                     </span>
                                 </span>
-                                <span class="block text-xs text-slate-500 font-semibold mt-1">€ 1,20 al giorno · il più scelto</span>
+                                <span class="block text-xs text-slate-500 font-semibold mt-1">€ 1,20 / giorno</span>
                             </span>
                         </button>
 
-                        <!-- 4. 90 giorni — MIGLIOR VALORE -->
+                        <!-- 4. 90 giorni — miglior valore -->
                         <button type="button" id="pub90d" onclick="_selectPubChoice('90d')"
-                            class="pub-opt pub-opt-best w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4 relative">
-                            <span class="absolute -top-2 right-4 text-[10px] font-black bg-amber-400 text-amber-900 px-2 py-0.5 rounded-full shadow">MIGLIOR VALORE</span>
+                            class="pub-opt pub-opt-best w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
                             <span class="pub-radio mt-0.5"></span>
                             <span class="flex-1 min-w-0">
                                 <span class="flex items-center justify-between gap-3">
-                                    <span class="font-black text-slate-900">Vetrina 90 giorni</span>
+                                    <span class="flex items-center gap-2">
+                                        <span class="font-black text-slate-900">Vetrina 90 giorni</span>
+                                        <span class="text-[10px] font-black bg-amber-400 text-amber-900 px-2 py-0.5 rounded-full">Miglior valore</span>
+                                    </span>
                                     <span class="text-right whitespace-nowrap">
                                         <span class="text-xs text-slate-400 line-through mr-1">€ 59,90</span>
                                         <span class="font-black text-slate-900">€ 53,91</span>
                                     </span>
                                 </span>
-                                <span class="block text-xs text-slate-500 font-semibold mt-1">€ 0,60 al giorno · massima visibilità per 3 mesi</span>
+                                <span class="block text-xs text-slate-500 font-semibold mt-1">€ 0,60 / giorno</span>
                             </span>
                         </button>
                     </div>
@@ -498,16 +513,28 @@
                         Pubblica annuncio gratis
                     </button>
                     <p id="signupNote" class="hidden text-center text-xs text-slate-500 font-semibold mt-3">
-                        <i class="fas fa-bolt text-amber-500 text-[10px]"></i>
-                        Per i nuovi utenti è incluso un account gratis &mdash; bastano 30 secondi, nessuna email da confermare.
+                        Sei nuovo? L'account gratuito si crea in un attimo, nessuna email da confermare.
                     </p>
-                    <p id="pubPayNote" class="hidden text-center text-[11px] text-slate-500 font-semibold mt-3">
-                        <i class="fas fa-lock text-slate-400 text-[10px] mr-1"></i>
-                        Pagamento sicuro con Stripe &middot; una tantum, nessun abbonamento. L'annuncio viene pubblicato comunque.
+                    <p id="pubFootNote" class="text-center text-[11px] text-slate-400 font-semibold mt-3 pb-1">
+                        L'annuncio viene controllato prima della pubblicazione.
                     </p>
-                    <p class="text-center text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-4 pb-10">
-                        L'annuncio verrà controllato prima della pubblicazione
-                    </p>
+
+                    <!-- FAQ Vetrina — accordion, defaultchiuso, non invadente -->
+                    <div class="mt-8 pb-10">
+                        <p class="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-1">Domande sulla Vetrina</p>
+                        <details class="faq-item">
+                            <summary>Dove viene spinto un annuncio in Vetrina? <i class="fas fa-chevron-down faq-chev"></i></summary>
+                            <p class="faq-a">In cima ai risultati di ricerca, tra gli <strong>annunci consigliati</strong> nelle pagine annuncio e nei box <strong>"Posteggi disponibili"</strong> dentro gli articoli del blog. Ha il badge corona e mostra fino a 5 foto a rotazione.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Per quanto resta in evidenza? <i class="fas fa-chevron-down faq-chev"></i></summary>
+                            <p class="faq-a">Per i giorni del pacchetto scelto (10, 30 o 90). Allo scadere torna un annuncio normale, senza perdere le visualizzazioni o i contatti già ricevuti.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Posso attivarla anche dopo? <i class="fas fa-chevron-down faq-chev"></i></summary>
+                            <p class="faq-a">Sì, quando vuoi dalla tua dashboard. Lo sconto del 10%, però, vale solo adesso alla prima pubblicazione.</p>
+                        </details>
+                    </div>
                 </div>
 
             </form>
@@ -564,8 +591,12 @@ function _refreshPublishChoiceUI() {
         btn.textContent = _PUB_OPTIONS[_pubChoice].btnLabel;
         btn.dataset.origHtml = btn.innerHTML;
     }
-    const payNote = document.getElementById('pubPayNote');
-    if (payNote) payNote.classList.toggle('hidden', _pubChoice === 'free');
+    const foot = document.getElementById('pubFootNote');
+    if (foot) {
+        foot.textContent = (_pubChoice === 'free')
+            ? 'L\'annuncio viene controllato prima della pubblicazione.'
+            : 'Pagamento sicuro con Stripe · una tantum, nessun abbonamento. L\'annuncio viene controllato e pubblicato comunque.';
+    }
 }
 
 // Step 5 → Step 6: valida i campi contenuto prima di mostrare il paywall,
