@@ -719,6 +719,19 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 
 ## ⏳ TODO Aperti
 
+### 🎯 PROSSIMI PASSI — ripresa dopo fine sessione 16 mag 2026 (leggere per primo)
+Ordine consigliato per la prossima sessione:
+1. **SC indicizzazione**: quota resettata il 17 mag. Eseguire la coda in `C:\Users\utente\Desktop\indicizzazione-prioritari.txt` (5 articoli v2 + hub Bolkestein, già sbloccato). 10/giorno.
+2. **Articolo Lazio** (`mercati-ambulanti-lazio`, formato v2, slug da verificare libero): chiude il filone "mercati ambulanti [regione]" **5/5**. ~10 min. Angolo: Roma 18.000 concessioni + turismo capitale + litorale (Ostia/Anzio) + bando lento vs subingresso. CTA `/annunci?regione=Lazio` (no `.html`, tracciata).
+3. **`suap ortisei`** (vedi TODO 21): capire su che pagina atterra, è il CTR più alto dei dati SC e lo stiamo ignorando.
+4. **TODO 14** (fix tracking `cta_annunci_click` su `/annunci` puro): riguarda direttamente `quanto-costa-un-posteggio-al-mercato` ora online.
+5. Poi: serie "Mercati settimanali [città]" (TODO 16, formato v2 batch), 6 Tier 2 + 3 Tier 3 Bolkestein (TODO 19).
+- **Decisioni utente in sospeso** (non toccare senza via): Privacy policy placeholder pre go-live (TODO 4), Data audit (TODO 18, richiesto esplicitamente), A/B copy popup_vetrina+blog_promo 0-conv (TODO 13).
+- **Promemoria temporizzato**: maintenance mensile hub Bolkestein dovuta **~metà giugno 2026** (RPC `admin_bump_post_freshness` + ri-datare top + nuovo bullet cronologia) o decade dalle SERP "ultime notizie 2026".
+- **Stato filone regionale**: Lombardia/Veneto/Emilia-Romagna/Toscana fatti e tutti v2. Manca solo Lazio. Tutti gli articoli recenti convertiti al **formato v2 scansionabile** (vedi "Stile Editoriale Blog").
+
+21. **`suap ortisei` — filone da capire** (16 mag 2026): query SC con 2 clic / 4 impr = **CTR 50%, il più alto dei dati utente**, mai investigata. Probabile atterraggio su `bandi-posteggi-mercatali-trentino-alto-adige` (Ortisei = Val Gardena, BZ) o pagina geo. Verificare landing reale; se è tangenziale, valutare mini-articolo SUAP locale / sezione dedicata. Intent transazionale ad alta conversione potenziale.
+
 1. **Indicizzazione Search Console**: continuare ~10 URL/giorno. Lista in `C:\Users\utente\Desktop\indicizzazione-search-console.txt` (utility, non parte del repo).
 2. ~~**Replica articolo bandi alle 5 regioni rimaste**: Umbria, Abruzzo, Molise, Basilicata, Calabria.~~ ✅ Chiuso 6 mag 2026 sera. **20/20 regioni complete**.
 3. **Annunci Demo**: 10 annunci finti (Carla M., Marco V.) admin. Da cancellare quando ci saranno 30+ annunci reali.
