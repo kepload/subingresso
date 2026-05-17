@@ -436,81 +436,69 @@
                             class="pub-opt selected w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
                             <span class="pub-radio mt-0.5"></span>
                             <span class="flex-1 min-w-0">
-                                <span class="flex items-center justify-between gap-3">
-                                    <span class="font-black text-slate-900">Pubblicazione gratuita</span>
-                                    <span class="font-black text-slate-900">€ 0</span>
+                                <span class="block font-black text-slate-900 whitespace-nowrap">Pubblicazione gratuita</span>
+                                <span class="block text-sm mt-0.5">
+                                    <span class="font-black text-slate-900 mr-1">€ 0</span>
+                                    <span class="text-xs text-slate-500 font-semibold">· online 200 giorni, visibile a tutti</span>
                                 </span>
-                                <span class="block text-xs text-slate-500 font-semibold mt-1">Online 200 giorni, visibile a tutti.</span>
                             </span>
                         </button>
 
-                        <!-- Unico segnale sconto: vale SOLO qui, alla pubblicazione -->
-                        <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 flex items-start gap-3">
-                            <i class="fas fa-bolt text-amber-500 mt-0.5"></i>
-                            <p class="text-xs text-amber-900 font-bold leading-relaxed">
-                                Solo ora, alla pubblicazione: <span class="font-black">Vetrina scontata del 10%</span>.
-                                <span class="block font-semibold text-amber-700 mt-0.5">Più avanti puoi attivarla dalla dashboard, ma a prezzo pieno.</span>
-                            </p>
-                        </div>
-
                         <!-- 2. 10 giorni -->
                         <button type="button" id="pub10d" onclick="_selectPubChoice('10d')"
-                            class="pub-opt w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
+                            class="pub-opt relative w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
                             <span class="pub-radio mt-0.5"></span>
                             <span class="flex-1 min-w-0">
-                                <span class="flex items-center justify-between gap-3">
-                                    <span class="font-black text-slate-900">Vetrina 10 giorni</span>
-                                    <span class="text-right whitespace-nowrap">
-                                        <span class="text-xs text-slate-400 line-through mr-1">€ 19,90</span>
-                                        <span class="font-black text-slate-900">€ 17,91</span>
-                                    </span>
+                                <span class="block font-black text-slate-900 whitespace-nowrap">Vetrina 10 giorni</span>
+                                <span class="block text-sm mt-0.5">
+                                    <span class="font-black text-slate-900 mr-1">€ 17,91</span>
+                                    <span class="text-xs text-slate-400 line-through mr-1">€ 19,90</span>
+                                    <span class="text-xs text-slate-500 font-semibold">· € 1,79/g</span>
                                 </span>
-                                <span class="block text-xs text-slate-500 font-semibold mt-1">€ 1,79 / giorno</span>
                             </span>
+                            <span class="font-black text-white rounded-full" style="position:absolute;top:-8px;right:14px;background:#2563eb;font-size:10px;padding:2px 8px;box-shadow:0 1px 3px rgba(0,0,0,.18)">-10%</span>
                         </button>
 
                         <!-- 3. 30 giorni -->
                         <button type="button" id="pub30d" onclick="_selectPubChoice('30d')"
-                            class="pub-opt w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
+                            class="pub-opt relative w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
                             <span class="pub-radio mt-0.5"></span>
                             <span class="flex-1 min-w-0">
-                                <span class="flex items-center justify-between gap-3">
-                                    <span class="flex items-center gap-2">
-                                        <span class="font-black text-slate-900">Vetrina 30 giorni</span>
-                                        <span class="text-[10px] font-black bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Popolare</span>
-                                    </span>
-                                    <span class="text-right whitespace-nowrap">
-                                        <span class="text-xs text-slate-400 line-through mr-1">€ 39,90</span>
-                                        <span class="font-black text-slate-900">€ 35,91</span>
-                                    </span>
+                                <span class="flex items-center gap-2">
+                                    <span class="font-black text-slate-900 whitespace-nowrap">Vetrina 30 giorni</span>
+                                    <span class="text-[10px] font-black bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Popolare</span>
                                 </span>
-                                <span class="block text-xs text-slate-500 font-semibold mt-1">€ 1,20 / giorno</span>
+                                <span class="block text-sm mt-0.5">
+                                    <span class="font-black text-slate-900 mr-1">€ 35,91</span>
+                                    <span class="text-xs text-slate-400 line-through mr-1">€ 39,90</span>
+                                    <span class="text-xs text-slate-500 font-semibold">· € 1,20/g</span>
+                                </span>
                             </span>
+                            <span class="font-black text-white rounded-full" style="position:absolute;top:-8px;right:14px;background:#2563eb;font-size:10px;padding:2px 8px;box-shadow:0 1px 3px rgba(0,0,0,.18)">-10%</span>
                         </button>
 
                         <!-- 4. 90 giorni — miglior valore -->
                         <button type="button" id="pub90d" onclick="_selectPubChoice('90d')"
-                            class="pub-opt pub-opt-best w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
+                            class="pub-opt pub-opt-best relative w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
                             <span class="pub-radio mt-0.5"></span>
                             <span class="flex-1 min-w-0">
-                                <span class="flex items-center justify-between gap-3">
-                                    <span class="flex items-center gap-2">
-                                        <span class="font-black text-slate-900">Vetrina 90 giorni</span>
-                                        <span class="text-[10px] font-black bg-amber-400 text-amber-900 px-2 py-0.5 rounded-full">Miglior valore</span>
-                                    </span>
-                                    <span class="text-right whitespace-nowrap">
-                                        <span class="text-xs text-slate-400 line-through mr-1">€ 59,90</span>
-                                        <span class="font-black text-slate-900">€ 53,91</span>
-                                    </span>
+                                <span class="flex items-center gap-2">
+                                    <span class="font-black text-slate-900 whitespace-nowrap">Vetrina 90 giorni</span>
+                                    <span class="text-[10px] font-black bg-amber-400 text-amber-900 px-2 py-0.5 rounded-full">Miglior valore</span>
                                 </span>
-                                <span class="block text-xs text-slate-500 font-semibold mt-1">€ 0,60 / giorno</span>
+                                <span class="block text-sm mt-0.5">
+                                    <span class="font-black text-slate-900 mr-1">€ 53,91</span>
+                                    <span class="text-xs text-slate-400 line-through mr-1">€ 59,90</span>
+                                    <span class="text-xs text-slate-500 font-semibold">· € 0,60/g</span>
+                                </span>
                             </span>
+                            <span class="font-black text-white rounded-full" style="position:absolute;top:-8px;right:14px;background:#2563eb;font-size:10px;padding:2px 8px;box-shadow:0 1px 3px rgba(0,0,0,.18)">-10%</span>
                         </button>
                     </div>
 
                     <button type="button" id="submitBtn"
                         class="w-full mt-7 bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100 active:scale-[.98]">
-                        Pubblica annuncio gratis
+                        Pubblica gratis
                     </button>
                     <p id="signupNote" class="hidden text-center text-xs text-slate-500 font-semibold mt-3">
                         Sei nuovo? L'account gratuito si crea in un attimo, nessuna email da confermare.
@@ -566,10 +554,10 @@ let _pendingDraft = null;
 // prezzi sono solo display: la fonte di verità resta la edge function.
 let _pubChoice = 'free';
 const _PUB_OPTIONS = {
-    'free': { btnLabel: 'Pubblica annuncio gratis' },
-    '10d':  { btnLabel: 'Pubblica e attiva la Vetrina · € 17,91' },
-    '30d':  { btnLabel: 'Pubblica e attiva la Vetrina · € 35,91' },
-    '90d':  { btnLabel: 'Pubblica e attiva la Vetrina · € 53,91' },
+    'free': { btnLabel: 'Pubblica gratis' },
+    '10d':  { btnLabel: 'Attiva Vetrina · € 17,91' },
+    '30d':  { btnLabel: 'Attiva Vetrina · € 35,91' },
+    '90d':  { btnLabel: 'Attiva Vetrina · € 53,91' },
 };
 
 function _selectPubChoice(choice) {
