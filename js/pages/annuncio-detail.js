@@ -322,11 +322,30 @@ async function initPage() {
                 "url": window.location.href,
                 // Senza 'image' Google scarta la scheda Product. Fallback brand se l'annuncio non ha foto.
                 "image": showImgs[0] || 'https://subingresso.it/og/og-home.jpg?v=1',
+                "brand": { "@type": "Brand", "name": "Subingresso.it" },
                 "offers": {
                     "@type": "Offer",
                     "priceCurrency": "EUR",
                     "price": listing.prezzo || 0,
-                    "availability": "https://schema.org/InStock"
+                    "availability": "https://schema.org/InStock",
+                    "itemCondition": "https://schema.org/UsedCondition",
+                    // Subingresso = trasferimento d'attività: nessun reso possibile.
+                    "hasMerchantReturnPolicy": {
+                        "@type": "MerchantReturnPolicy",
+                        "applicableCountry": "IT",
+                        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                    },
+                    // Nessuna spedizione: il compratore non paga costi di consegna (0 €, IT).
+                    "shippingDetails": {
+                        "@type": "OfferShippingDetails",
+                        "shippingRate": { "@type": "MonetaryAmount", "value": 0, "currency": "EUR" },
+                        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IT" },
+                        "deliveryTime": {
+                            "@type": "ShippingDeliveryTime",
+                            "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+                            "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+                        }
+                    }
                 },
                 "additionalProperty": [
                     listing.tipo       && { "@type": "PropertyValue", "name": "Tipo",       "value": listing.tipo },
