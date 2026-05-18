@@ -277,7 +277,7 @@ async function _loadBandoListingsBox(regione, postSlug) {
         const seeAllUrl = regione ? '/annunci?regione=' + encodeURIComponent(regione) : '/annunci';
         const lead     = regione
             ? 'Mentre aspetti il prossimo bando, qui ci sono <strong>posteggi privati già attivi</strong> in ' + escapeHTML(regione) + ', con licenza in regola e clientela fidelizzata.'
-            : 'Posteggi privati di ambulanti che cedono la licenza, già attivi, con clientela fidelizzata.';
+            : '<strong>Posteggi privati già attivi</strong>, licenza in regola e clientela avviata: si cedono adesso, senza aspettare un bando.';
 
         target.innerHTML = '<div class="not-prose mt-12" data-box-listings' + (regione ? ' data-regione="' + escapeHTML(regione) + '"' : '') + '>'
             + '<div class="flex items-baseline justify-between gap-4 mb-4">'
@@ -543,8 +543,12 @@ async function loadBlog() {
     }
 }
 
+let _inlineBoxInjected = false;
+
 function _insertBlogPromo(html) {
-    // Inietta dopo il 3° paragrafo. Se l'articolo è troppo corto non inserisce nulla.
+    // Inietta dopo il 3° paragrafo (picco di tensione: la gente non legge fino in fondo).
+    // Se l'articolo è troppo corto (<3 <p>) non inserisce nulla → fallback box in coda.
+    _inlineBoxInjected = false;
     let count = 0, splitAt = -1, idx = 0;
     while (idx < html.length) {
         const found = html.indexOf('</p>', idx);
@@ -554,13 +558,17 @@ function _insertBlogPromo(html) {
     }
     if (splitAt === -1) return html;
 
-    // Sui post "bandi-*" il visitor è acquirente, non venditore: sostituisco la promo
-    // Vetrina (off-intent) con il form Avvisi (intent-aligned, lead magnet bundle).
-    const promo = _IS_BANDI
-        ? _bandoAlertFormHtml(_BLOG_REGIONE)
-        : `<div class="blog-promo not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-slate-600">
-            🎰 Nuovo su Subingresso? <a href="#" onclick="sessionStorage.setItem('_reg_src','blog_promo'); openAuthModal('register', undefined, 'blog_promo'); return false;" class="font-bold text-amber-700 hover:underline">Registrati e prova a vincere 30 giorni di Vetrina gratis →</a>
-        </div>`;
+    // Sui post "bandi-*" il visitor è acquirente: form Avvisi (lead magnet intent-aligned).
+    // Sugli altri (incl. hub Bolkestein) il vecchio banner "Vetrina gratis" era off-intent
+    // e a 0 conversioni (TODO 13): lo sostituiamo col box live dei posteggi, QUI al picco
+    // di tensione invece che in fondo all'articolo (dove quasi nessuno arrivava).
+    let promo;
+    if (_IS_BANDI) {
+        promo = _bandoAlertFormHtml(_BLOG_REGIONE);
+    } else {
+        promo = `<div id="bandoListingsBox" class="not-prose my-8"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`;
+        _inlineBoxInjected = true;
+    }
     return html.slice(0, splitAt) + promo + html.slice(splitAt);
 }
 
@@ -635,15 +643,20 @@ function renderPost(post) {
         if (banner) banner.classList.add('hidden');
     }
 
-    // 2.4 / 3.1 — Box "Posteggi disponibili" sempre presente: regione filtrata sui bandi-*,
-    // versione generic sui blog non-bandi (annunci recenti misti). Placeholder durante fetch.
-    const finalCtaBlock = `<div id="bandoListingsBox" class="mt-16"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`;
+    // 2.4 / 3.1 — Box "Posteggi disponibili": sui non-bandi _insertBlogPromo lo inietta
+    // INLINE al 3° paragrafo (picco di tensione) e setta _inlineBoxInjected → niente
+    // doppione in coda. Resta in fondo solo per i bandi (flusso loro: Avvisi a metà,
+    // box in coda) o se l'articolo è troppo corto per l'inline (fallback anti-sparizione).
+    const _bodyHtml = _insertBlogPromo(safeContent);
+    const finalCtaBlock = (_IS_BANDI || !_inlineBoxInjected)
+        ? `<div id="bandoListingsBox" class="mt-16"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`
+        : '';
 
     container.innerHTML = `
         ${heroHtml}
         <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
         <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>
-        <div id="blogPostContent" class="prose font-medium text-left">${_insertBlogPromo(safeContent)}</div>
+        <div id="blogPostContent" class="prose font-medium text-left">${_bodyHtml}</div>
         ${finalCtaBlock}
         <div id="relatedBandi"></div>
         <div class="mt-12 pt-10 border-t border-slate-100 text-left">
