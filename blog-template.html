@@ -128,6 +128,10 @@ document.addEventListener('click', function (e) {
             var reg = decodeURIComponent(href.split('regione=')[1] || '').split('&')[0];
             window.trackBlogConversion('cta_annunci_click', slug || null, reg || null);
         } catch (_) {}
+    } else if (href === '/annunci' || href.indexOf('/annunci?') === 0 || href.indexOf('/annunci#') === 0) {
+        // CTA verso /annunci SENZA filtro regione: hub Bolkestein e articoli non regionali.
+        // Prima non scattava (l'if sopra matchava solo ?regione=) → conversioni invisibili. TODO 14.
+        window.trackBlogConversion('cta_annunci_click', slug || null, null);
     } else if (href.indexOf('/annuncio?id=') === 0 && a.closest('[data-box-listings]')) {
         // Click su una card del box "Posteggi disponibili adesso"
         window.trackBlogConversion('box_listing_click', slug || null, _BLOG_REGIONE || null);
