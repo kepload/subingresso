@@ -722,18 +722,24 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 
 ## ⏳ TODO Aperti
 
-### 🎯 PROSSIMI PASSI — ripresa dopo fine sessione 16 mag 2026 (leggere per primo)
-Ordine consigliato per la prossima sessione:
-1. **SC indicizzazione**: quota resettata il 17 mag. Eseguire la coda in `C:\Users\utente\Desktop\indicizzazione-prioritari.txt` (5 articoli v2 + hub Bolkestein, già sbloccato). 10/giorno.
-2. **Articolo Lazio** (`mercati-ambulanti-lazio`, formato v2, slug da verificare libero): chiude il filone "mercati ambulanti [regione]" **5/5**. ~10 min. Angolo: Roma 18.000 concessioni + turismo capitale + litorale (Ostia/Anzio) + bando lento vs subingresso. CTA `/annunci?regione=Lazio` (no `.html`, tracciata).
-3. **`suap ortisei`** (vedi TODO 21): capire su che pagina atterra, è il CTR più alto dei dati SC e lo stiamo ignorando.
-4. **TODO 14** (fix tracking `cta_annunci_click` su `/annunci` puro): riguarda direttamente `quanto-costa-un-posteggio-al-mercato` ora online.
-5. Poi: serie "Mercati settimanali [città]" (TODO 16, formato v2 batch), 6 Tier 2 + 3 Tier 3 Bolkestein (TODO 19).
-- **Decisioni utente in sospeso** (non toccare senza via): Privacy policy placeholder pre go-live (TODO 4), Data audit (TODO 18, richiesto esplicitamente), A/B copy popup_vetrina+blog_promo 0-conv (TODO 13).
-- **Promemoria temporizzato**: maintenance mensile hub Bolkestein dovuta **~metà giugno 2026** (RPC `admin_bump_post_freshness` + ri-datare top + nuovo bullet cronologia) o decade dalle SERP "ultime notizie 2026".
-- **Stato filone regionale**: Lombardia/Veneto/Emilia-Romagna/Toscana fatti e tutti v2. Manca solo Lazio. Tutti gli articoli recenti convertiti al **formato v2 scansionabile** (vedi "Stile Editoriale Blog").
+### 🎯 PROSSIMI PASSI — ripresa dopo fine sessione 18 mag 2026 (leggere per primo)
 
-21. **`suap ortisei` — filone da capire** (16 mag 2026): query SC con 2 clic / 4 impr = **CTR 50%, il più alto dei dati utente**, mai investigata. Probabile atterraggio su `bandi-posteggi-mercatali-trentino-alto-adige` (Ortisei = Val Gardena, BZ) o pagina geo. Verificare landing reale; se è tangenziale, valutare mini-articolo SUAP locale / sezione dedicata. Intent transazionale ad alta conversione potenziale.
+**Chiuso il 18 mag 2026** (da SC: 151 clic / 0 conversioni → diagnosi funnel):
+- ✅ **TODO 14**: `blog-template.html` ora traccia `cta_annunci_click` anche su `/annunci` puro / `/annunci?q=` (regione=null). Commit `de9c27a`, pushato.
+- ✅ **Box posteggi al picco di tensione**: sui non-bandi il box "Posteggi disponibili adesso" è iniettato INLINE al 3° `</p>` (al posto del banner off-intent "Vetrina gratis", TODO 13 metà) invece che in fondo. Flag `_inlineBoxInjected`, `finalCtaBlock` condizionale, fallback box-in-coda se <3 `<p>`. Copy box regione=null reso intent-aligned. Commit `5e25af4`, pushato. **Bandi invariati.** `blog-template.html` NON ha cache-buster → Ctrl+Shift+R per vederlo.
+- ✅ **Cover 77/77** (erano 53 senza): bulk assign da pool Pexels già live/verificato sui bandi, mappate per categoria (no stessa foto 2× nella stessa categoria, escluso id 1187299 = fallback codice). Prerequisito Google News/Discover (TODO 17) sbloccato. Solo DB.
+- ✅ **`mercati-ambulanti-lazio`** pubblicato (v2, 3223 char, cover, CTA `/annunci?regione=Lazio`). **Filone "mercati ambulanti [regione]" CHIUSO 5/5.**
+- ✅ **TODO 21**: `suap ortisei` atterra su `bandi-posteggi-mercatali-trentino-alto-adige` (era tangenziale). Aggiunta sezione `<h2>Ortisei e la Val Gardena: il caso SUAP</h2>` prima di "Perché i bandi sono pochi" (5278→6432 char), excerpt aggiornato (Ortisei/Val Gardena/SUAP), `published_at` bumpato. No thin content.
+
+Ordine consigliato prossima sessione:
+1. **SC indicizzazione**: coda in `C:\Users\utente\Desktop\indicizzazione-prioritari.txt`, 10/giorno. Aggiungere `mercati-ambulanti-lazio` e ri-submittare `bandi-posteggi-mercatali-trentino-alto-adige` (aggiornato).
+2. **TODO 11 — Fase 5 piano blog conversion**: ora sbloccata (tracking funziona + 7-14gg dati + box riposizionato). Pannello "Performance blog" admin.
+3. Serie **"Mercati settimanali [città]"** (TODO 16, batch v2), **6 Tier 2 + 3 Tier 3 Bolkestein** (TODO 19).
+- **Decisioni utente in sospeso** (non toccare senza via): Privacy policy placeholder pre go-live (TODO 4), Data audit (TODO 18, richiesto esplicitamente), A/B copy **popup_vetrina** 0-conv (TODO 13, resta solo la metà popup_vetrina).
+- **Promemoria temporizzato**: maintenance mensile hub Bolkestein dovuta **~metà giugno 2026** (RPC `admin_bump_post_freshness` + ri-datare top + nuovo bullet cronologia) o decade dalle SERP "ultime notizie 2026".
+- **Stato filone regionale**: **5/5 chiuso** (Lombardia/Veneto/Emilia-Romagna/Toscana/Lazio, tutti v2).
+
+21. ~~**`suap ortisei` — filone da capire**~~ ✅ CHIUSO 18 mag 2026. Atterrava (tangenziale) su `bandi-posteggi-mercatali-trentino-alto-adige`. Risolto con sezione dedicata `<h2>Ortisei e la Val Gardena: il caso SUAP</h2>` nello stesso articolo (no nuovo thin article: 4 impr di volume) + excerpt rifatto + `published_at=now()`. Pattern generalizzabile: query geo-specifica ad alto CTR che atterra su pagina region-wide → aggiungere sezione locale all'articolo esistente, non crearne uno nuovo.
 
 1. **Indicizzazione Search Console**: continuare ~10 URL/giorno. Lista in `C:\Users\utente\Desktop\indicizzazione-search-console.txt` (utility, non parte del repo).
 2. ~~**Replica articolo bandi alle 5 regioni rimaste**: Umbria, Abruzzo, Molise, Basilicata, Calabria.~~ ✅ Chiuso 6 mag 2026 sera. **20/20 regioni complete**.
