@@ -1052,8 +1052,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function loadAdminStats() {
     // NB: select('id') invece di select('*') — il revoke colonna su tel/email
     // farebbe fallire l'espansione di * a livello PostgREST.
-    const { count: totalAnnunci }  = await _supabase.from('annunci').select('id', { count: 'exact', head: true });
-    const { count: totalAttivi }   = await _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active');
+    const { count: totalAnnunci }  = await _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('is_demo', false);
+    const { count: totalAttivi }   = await _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active').eq('is_demo', false);
     const { count: totalUtenti }   = await _supabase.from('profiles').select('id', { count: 'exact', head: true });
 
     document.getElementById('admStatAnnunci').textContent = totalAnnunci || 0;
@@ -1210,9 +1210,9 @@ async function loadAdminGrowthChart(mode = 'mese') {
     if (!_rawGrowthData) {
         const [prRes, anRes, pmRes, ftRes, viewsRes] = await Promise.all([
             _supabase.from('profiles').select('created_at'),
-            _supabase.from('annunci').select('created_at').neq('status', 'deleted'),
+            _supabase.from('annunci').select('created_at').neq('status', 'deleted').eq('is_demo', false),
             _supabase.from('payments').select('created_at'),
-            _supabase.from('annunci').select('featured_since').not('featured_since', 'is', null),
+            _supabase.from('annunci').select('featured_since').not('featured_since', 'is', null).eq('is_demo', false),
             _supabase.rpc('admin_page_views_stats').then(r => r.data || null).catch(() => null),
         ]);
         const usePayments = !pmRes.error && Array.isArray(pmRes.data) && pmRes.data.length > 0;
