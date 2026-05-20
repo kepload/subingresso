@@ -24,6 +24,14 @@ ALTER TABLE public.annunci
 CREATE INDEX IF NOT EXISTS idx_annunci_is_demo
   ON public.annunci (is_demo) WHERE is_demo = true;
 
+-- 1.1 GRANT SELECT esplicito sulla nuova colonna.
+-- ATTENZIONE: su annunci ci sono GRANT column-level (PATCH_CONTACT_REVEAL_20260503
+-- ha REVOKE su tel/email per authenticated). ADD COLUMN eredita i GRANT
+-- table-level (INSERT/UPDATE) ma NON il SELECT che e' column-level esplicito.
+-- Senza questo grant, .eq('is_demo', false) lato client fallisce con
+-- "permission denied for column is_demo" e la dashboard mostra 0.
+GRANT SELECT (is_demo) ON public.annunci TO authenticated, anon;
+
 -- 2. Marca demo: admin + utenti seed pattern a1b2c3d4-*
 UPDATE public.annunci
 SET is_demo = true
