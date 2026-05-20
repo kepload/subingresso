@@ -722,7 +722,11 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 
 ## ⏳ TODO Aperti
 
-### 🎯 PROSSIMI PASSI — ripresa dopo fine sessione 18 mag 2026 (leggere per primo)
+### 🎯 PROSSIMI PASSI — ripresa dopo fine sessione 20 mag 2026 (leggere per primo)
+
+**Chiuso il 20 mag 2026** (l'utente nota assenza dalle SERP transazionali "vendo licenza ambulante" → analisi competitor + Step 1 SEO):
+- ✅ **Step 1 SEO transazionale**: rifatti title/meta/og/twitter + H1 + intro SEO su `/annunci` e `/vendi`. Linguaggio query reale ("Vendere Licenza Ambulante o Posteggio Mercatale", "Licenze Ambulanti e Posteggi Mercatali in Vendita") al posto di "Inserisci Annuncio Gratis" / "Annunci". Aggiunta `<section>` SEO intro stile Idealista in `/annunci` sopra i risultati. `/vendi` ora ha un H1 (prima non esisteva nel body, Google vedeva solo `<title>`). Commit `1348a7a`, pushato. **Step 2 (landing regionali SSR) NON ancora fatto** — è la mossa successiva.
+- ✅ **Analisi competitor consolidata**: SERP delle query core dominata da **annunciambulanti.it** (6.444 annunci, 1.586 Lombardia, 20 landing regionali, freshness 15 mag). Mercaweb fragile (101 annunci, no filtri geo). Piano completo per superarli in `~/.claude/memory/project_compete_annunciambulanti.md` — riassunto: inventario beachhead Lombardia (50-100 reali) → Step 2 SSR landing regionali (`api/annunci.js`) → differenziazione di prodotto (servizio SUAP, prezzi medi pubblici, valutatore in evidenza). Cantiere 3-6 mesi, non chiudibile in una sessione.
 
 **Chiuso il 18 mag 2026** (da SC: 151 clic / 0 conversioni → diagnosi funnel):
 - ✅ **TODO 14**: `blog-template.html` ora traccia `cta_annunci_click` anche su `/annunci` puro / `/annunci?q=` (regione=null). Commit `de9c27a`, pushato.
@@ -732,9 +736,11 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 - ✅ **TODO 21**: `suap ortisei` atterra su `bandi-posteggi-mercatali-trentino-alto-adige` (era tangenziale). Aggiunta sezione `<h2>Ortisei e la Val Gardena: il caso SUAP</h2>` prima di "Perché i bandi sono pochi" (5278→6432 char), excerpt aggiornato (Ortisei/Val Gardena/SUAP), `published_at` bumpato. No thin content.
 
 Ordine consigliato prossima sessione:
-1. **SC indicizzazione**: coda in `C:\Users\utente\Desktop\indicizzazione-prioritari.txt`, 10/giorno. Aggiungere `mercati-ambulanti-lazio` e ri-submittare `bandi-posteggi-mercatali-trentino-alto-adige` (aggiornato).
-2. **TODO 11 — Fase 5 piano blog conversion**: ora sbloccata (tracking funziona + 7-14gg dati + box riposizionato). Pannello "Performance blog" admin.
-3. Serie **"Mercati settimanali [città]"** (TODO 16, batch v2), **6 Tier 2 + 3 Tier 3 Bolkestein** (TODO 19).
+1. **SC indicizzazione**: coda in `C:\Users\utente\Desktop\indicizzazione-prioritari.txt`, 10/giorno. Aggiungere `/annunci`, `/vendi` (Step 1 appena fatto, vanno ri-crawlati per intercettare le query transazionali), `mercati-ambulanti-lazio`, e ri-submittare `bandi-posteggi-mercatali-trentino-alto-adige` (aggiornato).
+2. **Inventario reale beachhead** (priorità n.1 del piano competitor): cancellare i 10 demo (TODO 3) appena ci sono ≥30 annunci reali, puntare a 50-100 in Lombardia. Strumento principale: attivare il lead magnet email sull'hub Bolkestein (audience venditori spaventati). Vedi `project_compete_annunciambulanti.md`.
+3. **Step 2 SEO — `api/annunci.js` per landing regionali SSR**: title/meta/H1 customizzati per `?regione=X`, sull'esempio di `api/blog.js`. Da NON fare prima di avere ≥5 annunci attivi per regione (Google nota le pagine zero-content). Vedi piano competitor.
+4. **TODO 11 — Fase 5 piano blog conversion**: ora sbloccata (tracking funziona + 7-14gg dati + box riposizionato). Pannello "Performance blog" admin.
+5. Serie **"Mercati settimanali [città]"** (TODO 16, batch v2), **6 Tier 2 + 3 Tier 3 Bolkestein** (TODO 19).
 - **Decisioni utente in sospeso** (non toccare senza via): Privacy policy placeholder pre go-live (TODO 4), Data audit (TODO 18, richiesto esplicitamente), A/B copy **popup_vetrina** 0-conv (TODO 13, resta solo la metà popup_vetrina).
 - **Promemoria temporizzato**: maintenance mensile hub Bolkestein dovuta **~metà giugno 2026** (RPC `admin_bump_post_freshness` + ri-datare top + nuovo bullet cronologia) o decade dalle SERP "ultime notizie 2026".
 - **Stato filone regionale**: **5/5 chiuso** (Lombardia/Veneto/Emilia-Romagna/Toscana/Lazio, tutti v2).
