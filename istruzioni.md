@@ -722,7 +722,15 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 
 ## ⏳ TODO Aperti
 
-### 🎯 PROSSIMI PASSI — ripresa dopo fine sessione 20 mag 2026 (leggere per primo)
+### 🎯 PROSSIMI PASSI — ripresa dopo fine sessione 22 mag 2026 (leggere per primo)
+
+**⚡ STILE: l'utente è un vibe coder. Rispondere CORTO e SEMPLICE, zero gergo, niente papiri. Vedi CLAUDE.md regola n.1 + memoria feedback_stile_risposte.**
+
+**Chiuso il 22 mag 2026:**
+- ✅ Riposizionata copy SEO di `/annunci` (H1 più corto "Posteggi e licenze ambulanti" + boilerplate spostato in fondo, era brutto in alto).
+- ✅ Flag `is_demo` su `annunci` (21) + `profiles` (10 utenti seed `a1b2c3d4-*`): i demo restano visibili al pubblico ma spariscono dai numeri admin (Annunci Totali 38, Attivi 30, Utenti 30). RPC `admin_total_listing_value`/`admin_listings_per_regione`/`admin_funnel_stats` + query dashboard filtrate. **Lezione**: su `annunci`/`profiles` ogni colonna nuova serve `GRANT SELECT (col)` esplicito (grant SELECT è column-level per tel/email REVOKE), altrimenti la dashboard mostra 0.
+- ✅ Cura cannibalizzazione `quanto costa un posteggio al mercato` (3 pagine competevano, 0 clic su 23 impr): titolo `quanto-costa` col prezzo ("da 2.000 a 100.000€"), link incrociati costa↔vale, excerpt differenziati, published_at bumpato. Misurare CTR tra ~1 sett.
+- 📈 SC 22 mag: Bolkestein vola (16 clic/84 impr/pos 4,1, raddoppiato in 4gg). Query transazionali Step 1 ancora 0 (normale, 2gg).
 
 **Chiuso il 20 mag 2026** (l'utente nota assenza dalle SERP transazionali "vendo licenza ambulante" → analisi competitor + Step 1 SEO):
 - ✅ **Step 1 SEO transazionale**: rifatti title/meta/og/twitter + H1 + intro SEO su `/annunci` e `/vendi`. Linguaggio query reale ("Vendere Licenza Ambulante o Posteggio Mercatale", "Licenze Ambulanti e Posteggi Mercatali in Vendita") al posto di "Inserisci Annuncio Gratis" / "Annunci". Aggiunta `<section>` SEO intro stile Idealista in `/annunci` sopra i risultati. `/vendi` ora ha un H1 (prima non esisteva nel body, Google vedeva solo `<title>`). Commit `1348a7a`, pushato. **Step 2 (landing regionali SSR) NON ancora fatto** — è la mossa successiva.
