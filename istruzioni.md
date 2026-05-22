@@ -745,7 +745,7 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 
 Ordine consigliato prossima sessione:
 1. **SC indicizzazione**: coda in `C:\Users\utente\Desktop\indicizzazione-prioritari.txt`, 10/giorno. Aggiungere `/annunci`, `/vendi` (Step 1 appena fatto, vanno ri-crawlati per intercettare le query transazionali), `mercati-ambulanti-lazio`, e ri-submittare `bandi-posteggi-mercatali-trentino-alto-adige` (aggiornato).
-2. **Inventario reale beachhead** (priorità n.1 del piano competitor): cancellare i 10 demo (TODO 3) appena ci sono ≥30 annunci reali, puntare a 50-100 in Lombardia. Strumento principale: attivare il lead magnet email sull'hub Bolkestein (audience venditori spaventati). Vedi `project_compete_annunciambulanti.md`.
+2. **Inventario reale beachhead** (priorità n.1 del piano competitor): demo già cancellati il 22 mag (TODO 3 ✅), ora 34 annunci veri. Puntare a 50-100 in Lombardia. Strumento principale: attivare il lead magnet email sull'hub Bolkestein (audience venditori spaventati). Vedi `project_compete_annunciambulanti.md`.
 3. **Step 2 SEO — `api/annunci.js` per landing regionali SSR**: title/meta/H1 customizzati per `?regione=X`, sull'esempio di `api/blog.js`. Da NON fare prima di avere ≥5 annunci attivi per regione (Google nota le pagine zero-content). Vedi piano competitor.
 4. **TODO 11 — Fase 5 piano blog conversion**: ora sbloccata (tracking funziona + 7-14gg dati + box riposizionato). Pannello "Performance blog" admin.
 5. Serie **"Mercati settimanali [città]"** (TODO 16, batch v2), **6 Tier 2 + 3 Tier 3 Bolkestein** (TODO 19).
@@ -757,7 +757,7 @@ Ordine consigliato prossima sessione:
 
 1. **Indicizzazione Search Console**: continuare ~10 URL/giorno. Lista in `C:\Users\utente\Desktop\indicizzazione-search-console.txt` (utility, non parte del repo).
 2. ~~**Replica articolo bandi alle 5 regioni rimaste**: Umbria, Abruzzo, Molise, Basilicata, Calabria.~~ ✅ Chiuso 6 mag 2026 sera. **20/20 regioni complete**.
-3. **Annunci Demo**: 10 annunci finti (Carla M., Marco V.) admin. Da cancellare quando ci saranno 30+ annunci reali.
+3. ~~**Annunci Demo**: 10 annunci finti~~ ✅ FATTO 22 mag 2026. Eliminati hard-delete **21 annunci demo** (`is_demo=true`: 11 sotto admin Ardit + 10 sotto seed) + **10 account finti** seed `a1b2c3d4-*` / `*.demo@subingresso.it` (sia `profiles` che `auth.users` — profiles NON ha FK verso auth.users). Restano 34 annunci veri attivi, 32 utenti veri, account admin intatto. Cancellazione via Management API in 1 transazione. Collateral accettato: sparite 5 chat di 2 utenti veri (Gimmy, alessio) sui demo. Vedi memoria `project_annunci_demo.md`.
 4. **Privacy policy**: 3 placeholder `[NOME TITOLARE]`, `[INDIRIZZO + P.IVA]`, `[EMAIL CONTATTO]` da compilare prima del go-live legale.
 5. **Spalmare 2 cron settimanali su giorni diversi** (5 min, allunga vita free Resend).
 6. **CSP**: 1 settimana di lavoro, da pianificare.
