@@ -298,14 +298,14 @@ function _injectVisitorPopup() {
         <button onclick="closeVisitorPopup()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-slate-300 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition">
           <i class="fas fa-times"></i>
         </button>
-        <div class="text-4xl mb-3">🎰</div>
+        <div class="text-4xl mb-3">🏪</div>
         <h2 class="text-xl font-black text-slate-800 mb-2">Vendi il tuo posteggio?</h2>
         <p class="text-sm text-slate-500 mb-5 leading-relaxed">
-          Iscriviti gratis e prova a vincere <span class="font-bold text-amber-500">30 giorni di Vetrina</span> — il tuo annuncio in cima a tutti i risultati.
+          Iscriviti <span class="font-bold text-blue-600">gratis</span> e pubblica il tuo annuncio in pochi minuti. Raggiungi chi cerca posteggi e licenze in tutta Italia.
         </p>
         <button onclick="closeVisitorPopup(); sessionStorage.setItem('_reg_src','popup_vetrina'); openAuthModal('register', undefined, 'popup_vetrina')"
           class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
-          Registrati e tenta la fortuna →
+          Registrati gratis →
         </button>
         <button onclick="closeVisitorPopup()" class="text-xs text-slate-400 hover:text-slate-600 transition">
           Esplora prima gli annunci
