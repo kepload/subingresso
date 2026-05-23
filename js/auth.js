@@ -377,12 +377,12 @@ function _injectWelcomePopup() {
         <h2 class="text-xl font-black text-slate-800 mb-1">Benvenuto su Subingresso.it!</h2>
         <p class="text-sm text-slate-500 mb-4">Il tuo account è attivo.</p>
         <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-5">
-          <p class="text-sm font-bold text-amber-700">🎰 Prova a vincere 30 giorni di Vetrina</p>
-          <p class="text-xs text-amber-600 mt-1">Clicca il bottone e scopri subito se hai vinto.</p>
+          <p class="text-sm font-bold text-amber-700">📣 Pubblica il tuo primo annuncio</p>
+          <p class="text-xs text-amber-600 mt-1">È gratis e bastano due minuti.</p>
         </div>
-        <button id="lotteryBtn" onclick="_tryLottery()"
+        <button onclick="closeWelcomeNewPopup(); window.location.href='/vendi'"
           class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
-          Tenta la fortuna →
+          Pubblica un annuncio →
         </button>
         <button onclick="closeWelcomeNewPopup()" class="text-xs text-slate-400 hover:text-slate-600 transition">
           Esplora prima gli annunci
@@ -396,136 +396,8 @@ window.closeWelcomeNewPopup = function () {
     if (el) { el.classList.add('hidden'); document.body.style.overflow = ''; }
 };
 
-async function _tryLottery() {
-    const btn = document.getElementById('lotteryBtn');
-    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>...'; }
-    let won = false;
-    try {
-        const { data: { session } } = await _supabase.auth.getSession();
-        if (session) {
-            const { data } = await _supabase.rpc('try_welcome_lottery', { p_user_id: session.user.id });
-            won = data === true;
-            if (won) localStorage.setItem('_welcome_vetrina_won_' + session.user.id, '1');
-        }
-    } catch (_) {}
-    _spinWheel(won);
-}
-window._tryLottery = _tryLottery;
 
-function _spinWheel(won) {
-    const inner = document.querySelector('#welcomeNewPopup > div');
-    if (!inner) return;
 
-    inner.innerHTML = `
-        <p id="wheelLabel" class="text-slate-600 font-semibold text-sm mb-4">La ruota sta girando...</p>
-        <div class="relative mx-auto" style="width:220px;height:220px">
-            <div style="position:absolute;top:1px;left:50%;transform:translateX(-50%);z-index:10;width:0;height:0;
-                border-left:9px solid transparent;border-right:9px solid transparent;border-top:18px solid #0f172a;
-                filter:drop-shadow(0 1px 3px rgba(0,0,0,0.35))"></div>
-            <canvas id="fortuneWheel" width="220" height="220" style="border-radius:50%;box-shadow:0 4px 24px rgba(0,0,0,0.12)"></canvas>
-        </div>
-        <div class="flex items-center justify-center gap-5 mt-4 text-xs text-slate-400">
-            <span class="flex items-center gap-1.5">
-                <span class="inline-block w-3 h-3 rounded-sm" style="background:#f59e0b"></span>Vetrina 30gg
-            </span>
-            <span class="flex items-center gap-1.5">
-                <span class="inline-block w-3 h-3 rounded-sm" style="background:#94a3b8"></span>Riprova
-            </span>
-        </div>`;
-
-    const canvas = document.getElementById('fortuneWheel');
-    const ctx = canvas.getContext('2d');
-    const CX = 110, CY = 110, R = 106;
-    const n = 4;
-    const arc = Math.PI * 2 / n;
-    const segs = [
-        '#f59e0b',  // dorato — vincente
-        '#cbd5e1',  // grigio chiaro
-        '#94a3b8',  // grigio medio
-        '#cbd5e1',  // grigio chiaro
-    ];
-
-    function drawWheel(rot) {
-        ctx.clearRect(0, 0, 220, 220);
-        for (let i = 0; i < n; i++) {
-            const s = rot + i * arc - Math.PI / 2;
-            ctx.beginPath();
-            ctx.moveTo(CX, CY);
-            ctx.arc(CX, CY, R, s, s + arc);
-            ctx.fillStyle = segs[i];
-            ctx.fill();
-            ctx.strokeStyle = '#fff';
-            ctx.lineWidth = 4;
-            ctx.stroke();
-        }
-        // Cerchio esterno
-        ctx.beginPath();
-        ctx.arc(CX, CY, R, 0, Math.PI * 2);
-        ctx.strokeStyle = '#fff';
-        ctx.lineWidth = 4;
-        ctx.stroke();
-        // Centro
-        ctx.beginPath();
-        ctx.arc(CX, CY, 13, 0, Math.PI * 2);
-        ctx.fillStyle = '#fff';
-        ctx.fill();
-        ctx.strokeStyle = '#e2e8f0';
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    }
-
-    // Target: pointer fisso in cima, spicchio 0 al centro = rotazione 7π/4 + giri interi
-    // Spicchi 1-3 (grigio) = 5π/4, 3π/4, π/4
-    const spins = (4 + Math.floor(Math.random() * 3)) * Math.PI * 2;
-    const jitter = (Math.random() - 0.5) * arc * 0.42;
-    const loseAngles = [5 * Math.PI / 4, 3 * Math.PI / 4, Math.PI / 4];
-    const target = won
-        ? spins + 7 * Math.PI / 4 + jitter
-        : spins + loseAngles[Math.floor(Math.random() * 3)] + jitter;
-
-    const dur = 4200;
-    const t0 = performance.now();
-    function easeOut(t) { return 1 - Math.pow(1 - t, 4); }
-
-    drawWheel(0);
-    requestAnimationFrame(function frame(now) {
-        const p = Math.min((now - t0) / dur, 1);
-        drawWheel(target * easeOut(p));
-        if (p < 1) {
-            requestAnimationFrame(frame);
-        } else {
-            setTimeout(() => _showLotteryResult(won), 800);
-        }
-    });
-}
-
-function _showLotteryResult(won) {
-    const inner = document.querySelector('#welcomeNewPopup > div');
-    if (!inner) return;
-    if (won) {
-        inner.innerHTML = `
-          <div class="text-5xl mb-3">🏆</div>
-          <h2 class="text-xl font-black text-amber-600 mb-2">HAI VINTO!</h2>
-          <div class="bg-amber-50 border border-amber-300 rounded-xl px-4 py-3 mb-5">
-            <p class="text-sm font-bold text-amber-700">⭐ 30 giorni di Vetrina gratuita</p>
-            <p class="text-xs text-amber-600 mt-1">Pubblica un annuncio e si attiva automaticamente.</p>
-          </div>
-          <button onclick="closeWelcomeNewPopup(); window.location.href='/vendi'"
-            class="w-full bg-amber-500 text-white py-4 rounded-xl font-black text-sm hover:bg-amber-600 transition active:scale-[.98]">
-            Pubblica ora e attiva la vetrina →
-          </button>`;
-    } else {
-        inner.innerHTML = `
-          <div class="text-5xl mb-3">😔</div>
-          <h2 class="text-xl font-black text-slate-800 mb-2">Non hai vinto questa volta</h2>
-          <p class="text-sm text-slate-500 mb-5">La fortuna non era dalla tua parte. Puoi comunque pubblicare il tuo annuncio gratuitamente!</p>
-          <button onclick="closeWelcomeNewPopup(); window.location.href='/vendi'"
-            class="w-full bg-blue-600 text-white py-4 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] mb-3">
-            Pubblica annuncio →
-          </button>
-          <button onclick="closeWelcomeNewPopup()" class="text-xs text-slate-400 hover:text-slate-600 transition">Chiudi</button>`;
-    }
-}
 
 function _showWelcomeNewPopup(userId) {
     if (localStorage.getItem('_welc_' + userId)) return;
@@ -647,11 +519,11 @@ window.handleRegister = async function (e) {
     const telefono = telRaw ? normalizePhone(telRaw) : '';
 
     try {
-        // Lotteria welcome: eleggibili solo le sorgenti popup/promo (storicamente).
+        // Popup di benvenuto: mostrato solo per le sorgenti popup/promo.
         // Retro-compat: accetta anche il vecchio valore 'popup' nel caso fosse residuo in sessione.
         const _regSrc = sessionStorage.getItem('_reg_src');
-        const _lottEligible = _regSrc === 'popup_vetrina' || _regSrc === 'blog_promo' || _regSrc === 'popup';
-        await _registerBypass(email, password, nome, cognome, telefono, _lottEligible);
+        const _showWelcome = _regSrc === 'popup_vetrina' || _regSrc === 'blog_promo' || _regSrc === 'popup';
+        await _registerBypass(email, password, nome, cognome, telefono, _showWelcome);
     } catch (err) {
         _showAuthError('Errore durante la registrazione.');
     } finally {
@@ -717,7 +589,7 @@ async function _afterRegisterSuccess(nome, showWelcome = false) {
     }, 1500);
 }
 
-async function _registerBypass(email, password, nome, cognome, telefono, welcomeLotteryEligible = false) {
+async function _registerBypass(email, password, nome, cognome, telefono, showWelcome = false) {
     try {
         const cleanEmail = email.trim().toLowerCase();
         const res = await fetch(`${SUPABASE_URL}/functions/v1/register-bypass`, {
@@ -727,7 +599,7 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
                 'apikey': SUPABASE_ANON_KEY,
                 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
             },
-            body: JSON.stringify({ email: cleanEmail, password, nome, cognome, telefono, welcome_lottery_eligible: welcomeLotteryEligible, website: '' }),
+            body: JSON.stringify({ email: cleanEmail, password, nome, cognome, telefono, website: '' }),
         });
         const result = await res.json().catch(() => ({}));
         if (!res.ok) {
@@ -735,11 +607,11 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
                 const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email: cleanEmail, password });
                 if (!siErr && si?.session) {
                     await _storePasswordCredential(cleanEmail, password, `${nome || ''} ${cognome || ''}`.trim() || cleanEmail);
-                    await _afterRegisterSuccess(nome, welcomeLotteryEligible);
+                    await _afterRegisterSuccess(nome, showWelcome);
                     return;
                 }
                 if (res.status >= 500) {
-                    const recovered = await _registerWithSupabaseAuth(cleanEmail, password, nome, cognome, telefono, welcomeLotteryEligible);
+                    const recovered = await _registerWithSupabaseAuth(cleanEmail, password, nome, cognome, telefono, showWelcome);
                     if (recovered) return;
                     _showAuthError('Registrazione temporaneamente non disponibile. Riprova tra poco o accedi se hai già creato l\'account.');
                     return;
@@ -756,13 +628,13 @@ async function _registerBypass(email, password, nome, cognome, telefono, welcome
             return;
         }
         await _storePasswordCredential(cleanEmail, password, `${nome || ''} ${cognome || ''}`.trim() || cleanEmail);
-        await _afterRegisterSuccess(nome, welcomeLotteryEligible);
+        await _afterRegisterSuccess(nome, showWelcome);
     } catch (_) {
         _showAuthError('Errore durante la registrazione. Riprova.');
     }
 }
 
-async function _registerWithSupabaseAuth(email, password, nome, cognome, telefono, welcomeLotteryEligible = false) {
+async function _registerWithSupabaseAuth(email, password, nome, cognome, telefono, showWelcome = false) {
     try {
         const { data, error } = await _supabase.auth.signUp({
             email,
@@ -779,11 +651,10 @@ async function _registerWithSupabaseAuth(email, password, nome, cognome, telefon
                 id: userId,
                 nome: nome || '',
                 cognome: cognome || '',
-                telefono: telefono || '',
-                welcome_lottery_eligible: welcomeLotteryEligible
+                telefono: telefono || ''
             });
             await _storePasswordCredential(email, password, `${nome || ''} ${cognome || ''}`.trim() || email);
-            await _afterRegisterSuccess(nome, welcomeLotteryEligible);
+            await _afterRegisterSuccess(nome, showWelcome);
             return true;
         }
 
@@ -792,7 +663,7 @@ async function _registerWithSupabaseAuth(email, password, nome, cognome, telefon
         const { data: si, error: siErr } = await _supabase.auth.signInWithPassword({ email, password });
         if (!siErr && si?.session) {
             await _storePasswordCredential(email, password, `${nome || ''} ${cognome || ''}`.trim() || email);
-            await _afterRegisterSuccess(nome, welcomeLotteryEligible);
+            await _afterRegisterSuccess(nome, showWelcome);
             return true;
         }
 
@@ -936,11 +807,9 @@ window.updateAuthNav = async function () {
             } else {
                 const meta = user.user_metadata || {};
                 if (meta.nome) {
-                    const _regSrc = sessionStorage.getItem('_reg_src');
-                    const _lottEligible = _regSrc === 'popup_vetrina' || _regSrc === 'blog_promo' || _regSrc === 'popup';
                     sessionStorage.removeItem('_reg_src');
                     _supabase.from('profiles')
-                        .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '', welcome_lottery_eligible: _lottEligible })
+                        .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '' })
                         .then(() => { _profileCache = { id: user.id, nome: meta.nome }; });
                     _showWelcomeNewPopup(user.id);
                 }

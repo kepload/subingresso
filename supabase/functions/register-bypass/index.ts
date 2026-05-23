@@ -24,7 +24,7 @@ Deno.serve(async (req) => {
     const body = await req.json().catch(() => null);
     if (!body) return json({ error: 'Body mancante' }, 400);
 
-    const { email, password, nome, cognome, telefono, welcome_lottery_eligible, website } = body;
+    const { email, password, nome, cognome, telefono, website } = body;
     const cleanEmail = String(email || '').trim().toLowerCase();
     const cleanPassword = String(password || '');
     if (!cleanEmail || !cleanPassword) return json({ error: 'Email e password obbligatorie' }, 400);
@@ -65,7 +65,6 @@ Deno.serve(async (req) => {
     const admin = createClient(SUPABASE_URL, SB_SECRET_KEY, {
       auth: { persistSession: false, autoRefreshToken: false },
     });
-    const eligible = welcome_lottery_eligible === true;
 
     const { data: userData, error: createErr } = await admin.auth.admin.createUser({
       email: cleanEmail,
@@ -90,7 +89,7 @@ Deno.serve(async (req) => {
           user_metadata: { nome: nome || '', cognome: cognome || '', telefono: telefono || '' },
         });
         if (updateErr) return json({ error: updateErr.message }, 400);
-        await upsertProfile(admin, existing.id, nome, cognome, telefono, eligible);
+        await upsertProfile(admin, existing.id, nome, cognome, telefono);
         await logPendingVerification(admin, existing.id, cleanEmail);
         // Account riattivato: niente welcome (gia' inviata in precedenza).
         return json({ success: true });
@@ -103,7 +102,7 @@ Deno.serve(async (req) => {
       return json({ error: 'Utente non creato' }, 500);
     }
 
-    await upsertProfile(admin, userData.user.id, nome, cognome, telefono, eligible);
+    await upsertProfile(admin, userData.user.id, nome, cognome, telefono);
     await logPendingVerification(admin, userData.user.id, cleanEmail);
     triggerWelcomeEmail(userData.user.id);
 
@@ -138,15 +137,13 @@ async function upsertProfile(
   nome: string,
   cognome: string,
   telefono: string,
-  welcomeLotteryEligible: boolean,
 ) {
   try {
     const { error } = await admin.from('profiles').upsert({
-      id:                       userId,
-      nome:                     nome     || '',
-      cognome:                  cognome  || '',
-      telefono:                 telefono || '',
-      welcome_lottery_eligible: welcomeLotteryEligible,
+      id:       userId,
+      nome:     nome     || '',
+      cognome:  cognome  || '',
+      telefono: telefono || '',
     });
     if (error) console.error('register-bypass profile upsert error:', error);
   } catch (e) {
