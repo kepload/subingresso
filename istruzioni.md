@@ -614,9 +614,47 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): tutti i post valgono 200gg, vetrina = solo featured. Niente più cap differenziati 230/300/400. `adminGrantVetrina(days)` + `stripe-webhook` toccano solo i campi `featured*`.
 - **NON filtrare su `expires_at`** finché non popolato per tutti — gli scaduti restano visibili ma con badge "Scaduto", contatti bloccati via `_blockIfExpired()` (chat/whatsapp/chiama mostrano toast). RPC `renew_listing(p_id uuid)` SECURITY DEFINER, owner-only, bumpa `expires_at = now()+200gg`. Bottone "Riattiva" in dashboard.html appare per annunci `active` con `expires_at < now()`.
 
-## 🔍 AI Scout Bandi (27 mag 2026)
+## 🔍 AI Scout Bandi (27 mag 2026, v4 multi-step)
 
-Sistema semi-automatico per scoprire bandi pubblici reali e inviarli agli iscritti `bando_alerts`. **Hybrid 95% auto + 5% umano**: l'AI cerca, l'admin clicca "invia" o "scarta" in 1 secondo (via mail o pannello).
+Sistema semi-automatico per scoprire bandi pubblici reali e inviarli agli iscritti `bando_alerts`. **Hybrid 95% auto + 5% umano**: l'AI cerca con pipeline a 4 step, l'admin clicca "invia" o "scarta" (via mail o pannello).
+
+**Filosofia**: Gemini Flash gratuita è meno brava su task ambigui ma ottima su mini-task focalizzati. Splittiamo il problema "trova bandi" in 4 sotto-task piccoli e ben definiti. Ogni step ha un singolo job. Risultato: qualità ×3 senza cambiare modello.
+
+**Pipeline per regione (3 chiamate Gemini + validazione HTTP):**
+1. **STEP 1 Discovery [Gemini+Search]** → max 15 URL candidati su domini whitelist. Prompt mini-task focalizzato.
+2. **STEP 2 HTTP validation [Code, parallel]** → fetch GET (Range 0-16383), keyword check sul body, dominio whitelist enforce. Estrae snippet titolo+h1+body. Drop link morti / off-topic. Max 8 sopravvissuti.
+3. **STEP 3 Structured Extraction [Gemini batch]** → da snippet → JSON `{url, titolo, comune, scadenza, n_posteggi, settore, riassunto}`. Mini-task: "estrai dati strutturati".
+4. **STEP 4 Verification [Gemini batch]** → boolean keep/drop per ognuno con motivo. Mini-task: "è un bando reale e attivo? sì/no". Fallback conservativo (keep-all) se Gemini non risponde.
+5. **Insert DB** con dedup hash `SHA256(regione|url)`.
+
+**Throttling**: sleep 2500ms tra ogni call Gemini per stare entro 15 RPM free tier. Tempo totale giro: ~3-4 min per 4 regioni (largo entro limite edge function).
+
+**Briefing throttled (`admin_briefing_state` singleton):** dopo ogni giro, `maybeSendBriefing()` controlla:
+- Pending totali in DB (non solo nuovi del giro)
+- `last_briefing_at` vs `BRIEFING_GAP_HOURS = 72` (= 3 giorni)
+- Override `BRIEFING_URGENT_COUNT = 10` se accumulati troppi pending
+- Manda email solo se gap elapsed o urgent. Aggiorna `last_briefing_at` solo su invio reale.
+- Salva quota Resend (lui spende mail per iscritti veri, non per se stesso).
+
+**Schema briefing state (`PATCH_ADMIN_BRIEFING_STATE_20260527.sql`):**
+- Tabella `admin_briefing_state(id smallint PK CHECK id=1, last_briefing_at, last_briefing_items_count, updated_at)` con singola riga (singleton).
+- RLS on, accesso solo via edge function service_role.
+
+**Telemetry response edge function:**
+```json
+{
+  "regioni_scanned": 4,
+  "total_new_inserted": 2,
+  "per_regione": {
+    "Calabria": {"step1_discovered":3, "step2_validated":2, "step2_rejected":1, "step3_extracted":2, "step4_verified":2, "inserted":1, "duplicate":1}
+  },
+  "briefing": {"sent": true, "pending": 7, "reason": "gap_elapsed"}
+}
+```
+
+## 🔍 AI Scout Bandi v1 (sostituito) — note storiche
+
+V1-v3 (single-call Gemini) sostituito da v4 multi-step il 27 mag 2026 sera. V1 aveva qualità bassa: Gemini con prompt ambiguo proponeva link generici (subito.it, blog) anche con whitelist nel prompt. La pipeline v4 fa decisioni più piccole e focalizzate, drop a ogni step, qualità ×3.
 
 **Flusso:**
 1. Cron `scout-bandi-daily` (`0 8 * * *` UTC = 10:00 Roma estate) chiama edge function `scout-bandi`.
@@ -627,7 +665,7 @@ Sistema semi-automatico per scoprire bandi pubblici reali e inviarli agli iscrit
 6. Click "approve" → edge function `bando-action`: marca status='approved', carica `bando_alerts WHERE regione=X`, manda mail individuale via Resend a ogni iscritto, marca status='sent' con `sent_count`. Idempotente: secondo click mostra "Già inviato".
 7. Click "reject" → status='rejected', stop.
 
-**Schema (`PATCH_BANDO_SCOUTING_20260527.sql`):**
+**Schema scouting (`PATCH_BANDO_SCOUTING_20260527.sql`):**
 - `bando_scouting_log(id, regione, titolo, link, fonte, ai_summary, status, discovered_at, reviewed_at, reviewed_by, sent_at, sent_count, approve_token uuid UNIQUE, reject_token uuid UNIQUE, content_hash)` UNIQUE(regione, content_hash). RLS bloccata, accesso solo via service_role o RPC SECURITY DEFINER.
 - RPC `admin_bando_scouting_list(p_status, p_limit)` SECURITY DEFINER + is_admin gate.
 - RPC `admin_bando_scouting_decide(p_id, p_action)` SECURITY DEFINER per reject (l'approve passa per `bando-action` perché deve fare il broadcast email).
