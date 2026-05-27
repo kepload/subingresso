@@ -21,8 +21,9 @@ const FROM_EMAIL                = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL                  = 'https://subingresso.it';
 const FUNCTIONS_URL             = `${SUPABASE_URL}/functions/v1`;
 
-// Modello scelto: Gemini 2.0 Flash (fast + cheap, free tier generoso).
-const GEMINI_MODEL = 'gemini-2.0-flash';
+// Modello scelto: Gemini 2.5 Flash (free tier attivo per chiavi nuove,
+// gemini-2.0-flash ha quota 0 sui progetti freschi creati nel 2026).
+const GEMINI_MODEL = 'gemini-2.5-flash';
 
 function escapeHTML(s: unknown): string {
   return String(s ?? '')
@@ -72,7 +73,9 @@ async function askGemini(regione: string): Promise<any[]> {
     tools: [{ google_search: {} }],
     generationConfig: {
       temperature: 0.3,
-      maxOutputTokens: 2048,
+      // 2.5-flash usa thoughts internamente (~700-1000 token).
+      // Margine alto per evitare MAX_TOKENS cutoff sui risultati.
+      maxOutputTokens: 8192,
     },
   };
   try {
@@ -87,15 +90,24 @@ async function askGemini(regione: string): Promise<any[]> {
     }
     const json = await res.json();
     const text = json?.candidates?.[0]?.content?.parts?.map((p: any) => p.text).filter(Boolean).join('') ?? '';
-    if (!text) return [];
-    // Estrai array JSON anche se Gemini mette testo intorno
-    const m = text.match(/\[[\s\S]*\]/);
-    if (!m) return [];
+    if (!text) {
+      const finishReason = json?.candidates?.[0]?.finishReason;
+      console.warn(`Gemini ${regione}: empty text. finishReason=${finishReason}`);
+      return [];
+    }
+    // Strip markdown fence ```json ... ``` se presente
+    const cleaned = text.replace(/```(?:json)?\s*/gi, '').replace(/```\s*$/g, '').trim();
+    // Estrai il primo array JSON (anche se Gemini mette commenti o ripete)
+    const m = cleaned.match(/\[[\s\S]*?\](?=\s*$|\s*\[)/) || cleaned.match(/\[[\s\S]*\]/);
+    if (!m) {
+      console.warn(`Gemini ${regione}: nessun JSON array trovato in: ${cleaned.slice(0, 200)}`);
+      return [];
+    }
     try {
       const arr = JSON.parse(m[0]);
       return Array.isArray(arr) ? arr : [];
-    } catch (_) {
-      console.warn(`Gemini ${regione}: JSON parse fallito`);
+    } catch (e) {
+      console.warn(`Gemini ${regione}: JSON parse fallito:`, m[0].slice(0, 200));
       return [];
     }
   } catch (e) {
