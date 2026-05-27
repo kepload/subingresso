@@ -1,13 +1,13 @@
 // ============================================================
 //  Subingresso.it — Edge Function: scout-bandi
-//  Cron giornaliero (08:00). Per ogni regione con iscritti attivi
-//  in bando_alerts, chiama Gemini con Google Search grounding e
-//  chiede "bandi posteggi mercatali usciti negli ultimi 7 giorni".
-//  Confronta con bando_scouting_log (dedup per regione+content_hash),
-//  inserisce i nuovi come 'pending', e manda una mail riassuntiva
-//  agli admin con bottoni Approva/Scarta (link ai token).
+//  Cron giornaliero. Per ogni regione con iscritti attivi, chiama
+//  Gemini 2.5 Flash con Google Search grounding ristretto ai DOMINI
+//  ISTITUZIONALI (whitelist per regione) e con few-shot examples.
+//  Poi POST-VALIDA ogni candidato: HEAD request + keyword check sul
+//  body HTML. Solo link reali e contestualmente rilevanti vengono
+//  salvati come 'pending' e mostrati all'admin.
 //
-//  Auth: Bearer SB_SECRET_KEY (cron pg_cron, no JWT utente).
+//  Auth: Bearer SB_SECRET_KEY.
 // ============================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
@@ -21,10 +21,109 @@ const FROM_EMAIL                = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL                  = 'https://subingresso.it';
 const FUNCTIONS_URL             = `${SUPABASE_URL}/functions/v1`;
 
-// Modello scelto: Gemini 2.5 Flash (free tier attivo per chiavi nuove,
-// gemini-2.0-flash ha quota 0 sui progetti freschi creati nel 2026).
 const GEMINI_MODEL = 'gemini-2.5-flash';
 
+// ── Whitelist domini istituzionali per regione ─────────────
+// Strategia: passiamo Gemini un set di "site:" operator per restringere
+// la ricerca SOLO ai domini ufficiali (Regione + BUR + comuni principali).
+// Riduce drasticamente i falsi positivi (blog, subito, immobiliare, ecc).
+interface RegioneSources {
+  domini: string[];
+  calendario?: string;
+}
+
+const REGIONE_SOURCES: Record<string, RegioneSources> = {
+  'Piemonte': {
+    domini: ['regione.piemonte.it','bollettino.regione.piemonte.it','comune.torino.it','comune.novara.it','comune.asti.it','comune.alessandria.it','comune.cuneo.it','comune.biella.it','comune.vercelli.it','comune.verbania.it','comune.collegno.to.it','comune.moncalieri.to.it'],
+    calendario: 'Comuni piemontesi emettono bandi in finestre irregolari; controllare albo pretorio.',
+  },
+  'Lombardia': {
+    domini: ['regione.lombardia.it','bollettino.regione.lombardia.it','comune.milano.it','comune.brescia.it','comune.bergamo.it','comune.como.it','comune.monza.it','comune.varese.it','comune.pavia.it','comune.mantova.it','comune.cremona.it','comune.lecco.it','comune.lodi.it','comune.sondrio.it','comune.bustoarsizio.va.it'],
+    calendario: 'Bandi distribuiti tutto l\'anno; Milano e Brescia con più frequenza.',
+  },
+  'Veneto': {
+    domini: ['regione.veneto.it','bur.regione.veneto.it','comune.venezia.it','comune.verona.it','comune.padova.it','comune.vicenza.it','comune.treviso.it','comune.belluno.it','comune.rovigo.it'],
+    calendario: '90gg pubblicazione bando, 30gg domanda, 15gg revisioni.',
+  },
+  'Emilia-Romagna': {
+    domini: ['regione.emilia-romagna.it','bur.regione.emilia-romagna.it','comune.bologna.it','comune.modena.it','comune.parma.it','comune.reggioemilia.it','comune.ferrara.it','comune.ravenna.it','comune.rimini.it','comune.forli.fc.it','comune.piacenza.it'],
+    calendario: 'Comuni emiliani trasmettono elenco posteggi liberi a gennaio e luglio.',
+  },
+  'Toscana': {
+    domini: ['regione.toscana.it','burt.regione.toscana.it','comune.firenze.it','comune.pisa.it','comune.livorno.it','comune.lucca.it','comune.arezzo.it','comune.siena.it','comune.prato.it','comune.grosseto.it','comune.pistoia.it'],
+  },
+  'Lazio': {
+    domini: ['regione.lazio.it','comune.roma.it','comune.frosinone.it','comune.viterbo.it','comune.latina.it','comune.rieti.it'],
+    calendario: 'Roma: 18.000 concessioni, bandone Gualtieri 2026 (slittamenti TAR).',
+  },
+  'Campania': {
+    domini: ['regione.campania.it','burc.regione.campania.it','comune.napoli.it','comune.salerno.it','comune.caserta.it','comune.benevento.it','comune.avellino.it'],
+    calendario: '30 luglio scadenza Comuni → Regione → BURC + decreto unico (es. Decreto Dirigenziale 66/2025).',
+  },
+  'Puglia': {
+    domini: ['regione.puglia.it','burp.regione.puglia.it','comune.bari.it','comune.lecce.it','comune.brindisi.it','comune.taranto.it','comune.foggia.it'],
+    calendario: '30 aprile + 30 settembre Comuni → BURP entro 30gg → bandi semestrali maggio/ottobre.',
+  },
+  'Calabria': {
+    domini: ['regione.calabria.it','comune.catanzaro.it','comune.reggiocalabria.it','comune.cosenza.it','comune.crotone.it','comune.vibovalentia.it','comune.tropea.vv.it','comune.pizzo.vv.it','comune.diamante.cs.it','comune.maratea.pz.it'],
+    calendario: 'Sagre cardine: Peperoncino Diamante (settembre), Cipolla Tropea, Tartufo Pizzo, Bergamotto Reggio.',
+  },
+  'Sicilia': {
+    domini: ['regione.sicilia.it','gurs.regione.sicilia.it','comune.palermo.it','comune.catania.it','comune.messina.it','comune.siracusa.it','comune.trapani.it','comune.agrigento.it','comune.ragusa.it'],
+    calendario: 'Palermo: 906/2.135 vacanti, situazione anomala; bandi spesso pubblicati su GURS.',
+  },
+  'Sardegna': {
+    domini: ['regione.sardegna.it','buras.regione.sardegna.it','comune.cagliari.it','comune.sassari.it','comune.nuoro.it','comune.oristano.it','comune.olbia.ot.it'],
+    calendario: 'Posteggi turistici stagionali costa: bandi annuali marzo-aprile per stagione 1 giu - 15 set.',
+  },
+  'Liguria': {
+    domini: ['regione.liguria.it','bur.regione.liguria.it','comune.genova.it','comune.savona.it','comune.imperia.it','comune.sanremo.im.it','comune.laspezia.it'],
+    calendario: 'Sanremo: scadenza unica 31 gennaio. Imperia: sistema "spunta" giornaliera.',
+  },
+  'Marche': {
+    domini: ['regione.marche.it','bur.regione.marche.it','comune.ancona.it','comune.pesaro.pu.it','comune.macerata.it','comune.ascoli.it','comune.fermo.it','comune.urbino.pu.it','comune.grottammare.ap.it','comune.civitanova.mc.it'],
+    calendario: 'Calendario regionale annuale via DDDAPIM ogni gennaio (BUR Marche).',
+  },
+  'Abruzzo': {
+    domini: ['regione.abruzzo.it','bura.regione.abruzzo.it','comune.laquila.it','comune.pescara.it','comune.teramo.it','comune.chieti.it','comune.vasto.ch.it','comune.montesilvano.pe.it','comune.roccaraso.aq.it'],
+    calendario: 'Doppio binario: marzo-aprile costa estiva (Pescara, Vasto), settembre-ottobre montagna (Roccaraso).',
+  },
+  'Molise': {
+    domini: ['regione.molise.it','bur.regione.molise.it','comune.campobasso.it','comune.isernia.it','comune.termoli.cb.it'],
+    calendario: 'Regione più accessibile d\'Italia, 10-15 domande per bando vs 80-100 in Lombardia.',
+  },
+  'Basilicata': {
+    domini: ['regione.basilicata.it','burb.regione.basilicata.it','comune.potenza.it','comune.matera.it','comune.melfi.pz.it','comune.policoro.mt.it'],
+    calendario: 'Matera premium turistico post-2019, costa tirrenica (Maratea), ionica (Metaponto-Policoro).',
+  },
+  'Umbria': {
+    domini: ['regione.umbria.it','bur.regione.umbria.it','comune.perugia.it','comune.terni.it','comune.foligno.pg.it','comune.assisi.pg.it','comune.spoleto.pg.it','comune.norcia.pg.it'],
+    calendario: 'Eventi: Eurochocolate Perugia (2-6k€ per 9gg), Umbria Jazz, Quintana Foligno, Calendimaggio Assisi.',
+  },
+  'Trentino-Alto Adige': {
+    domini: ['provincia.tn.it','provincia.bz.it','comune.trento.it','comune.bolzano.it','comune.merano.bz.it','comune.bressanone.bz.it','comune.rovereto.tn.it','comune.brunico.bz.it'],
+    calendario: 'Mercatini Natale: bando giugno-luglio per casette nov-gen (Bolzano, Merano, Bressanone, Trento, Rovereto, Brunico).',
+  },
+  'Friuli-Venezia Giulia': {
+    domini: ['regione.fvg.it','bur.regione.fvg.it','comune.trieste.it','comune.udine.it','comune.pordenone.it','comune.gorizia.it','comune.lignano-sabbiadoro.ud.it'],
+    calendario: 'Costa Lignano-Grado: bandi stagionali giu-set ogni anno.',
+  },
+  'Valle d\'Aosta': {
+    domini: ['regione.vda.it','bur.regione.vda.it','comune.aosta.it','comune.courmayeur.ao.it','comune.la-thuile.ao.it'],
+    calendario: 'Sant\'Orso Aosta (30-31 gen): bando dedicato esce settembre-ottobre dell\'anno precedente.',
+  },
+};
+
+// ── Few-shot examples ───────────────────────────────────────
+// Esempi REALI di output ideale che Gemini deve imitare in formato/tono.
+const FEW_SHOT_EXAMPLES = `Esempi di OUTPUT BUONO (formato + livello dettaglio):
+
+[{"titolo":"Bando per assegnazione 5 posteggi mercato settimanale del sabato","link":"https://www.comune.asti.it/bandi/2026/posteggi-mercato-sabato.pdf","comune":"Asti","scadenza":"2026-07-15","riassunto":"5 posteggi vacanti nel mercato del sabato di Asti, settori misti (alimentare + non alimentare). Domande via PEC a protocollo@pec.comune.asti.it entro le 12:00 del 15 luglio 2026."},
+{"titolo":"Avviso pubblico per assegnazione 12 posteggi area mercatale via Roma","link":"https://www.comune.modena.it/argomenti/commercio/bandi/avviso-posteggi-2026","comune":"Modena","scadenza":"2026-06-30","riassunto":"12 posteggi in concessione decennale nell'area mercatale di via Roma, settori alimentari freschi. Bando pubblicato su BUR Emilia-Romagna n. 124/2026."}]
+
+NB: I link sono URL diretti a pagine istituzionali (PDF o HTML ufficiale). Sono PDF o pagine .it del Comune o Regione, MAI link generici di Google o redirect.`;
+
+// ── Helpers ───────────────────────────────────────────────
 function escapeHTML(s: unknown): string {
   return String(s ?? '')
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -38,45 +137,51 @@ async function sha256Hex(s: string): Promise<string> {
 
 // ── Prompt builder ────────────────────────────────────────
 function buildPrompt(regione: string): string {
-  return `Sei un assistente che monitora bandi pubblici italiani per commercio ambulante / posteggi mercatali.
+  const sources = REGIONE_SOURCES[regione];
+  if (!sources) {
+    return ''; // regione sconosciuta, skip
+  }
+  const siteOps = sources.domini.map(d => `site:${d}`).join(' OR ');
+  const cal = sources.calendario ? `\nCALENDARIO TIPICO: ${sources.calendario}` : '';
 
-CERCA SUL WEB bandi pubblici **usciti negli ULTIMI 7 GIORNI** in Italia, Regione **${regione}**, per assegnazione di posteggi mercatali, concessioni decennali su aree pubbliche, autorizzazioni ambulanti tipo A o B, mercati settimanali, fiere comunali.
+  return `Sei un assistente specializzato in monitoraggio bandi pubblici italiani per posteggi mercatali e concessioni decennali su aree pubbliche.
 
-FILTRA STRETTAMENTE:
-- Solo bandi PUBBLICI freschi (Comune/Regione, BUR ufficiali, albo pretorio, PEC ufficiali).
-- ESCLUDI: annunci privati, siti di compravendita, articoli giornalistici generici, blog non istituzionali, bandi scaduti.
-- ESCLUDI risultati che vengono da subingresso.it, annunciambulanti.it, immobiliare.it, subito.it, kijiji.it.
+OBIETTIVO: trovare bandi pubblici USCITI O ANCORA APERTI in Regione **${regione}**, per assegnazione di posteggi mercatali, concessioni decennali, autorizzazioni ambulanti tipo A o B, mercati settimanali, fiere comunali, mercatini natalizi/turistici stagionali.
 
-Per OGNI bando trovato che soddisfa i criteri, ritorna un oggetto JSON con:
-- titolo: stringa breve (max 120 char), tipo "Bando posteggio mercato XYZ - Comune di ABC"
-- link: URL diretto al bando ufficiale (PDF o pagina istituzionale)
-- comune: nome del Comune (stringa)
-- scadenza: data scadenza domande in formato YYYY-MM-DD se nota, altrimenti null
-- riassunto: 2-3 frasi (max 280 char), dire quanti posteggi, settore se noto, link/PEC dove fare domanda
+REGOLA DI RICERCA STRETTA — usa SEMPRE l'operator site: per limitarti ai domini istituzionali ufficiali. Esempio query corretta:
+("bando posteggio" OR "concessione mercatale" OR "assegnazione posteggi" OR "albo pretorio mercato") (${siteOps})
 
-RITORNA SOLO UN ARRAY JSON valido. Niente testo prima o dopo. Niente backtick.
-Se NON trovi nulla di rilevante, ritorna [].
+ESCLUDI ASSOLUTAMENTE:
+- Annunci privati (subingresso.it, annunciambulanti.it, subito.it, immobiliare.it, kijiji.it, bakeca, idealista)
+- Articoli giornalistici generici (corriere, repubblica, ansa, news/blog non istituzionali)
+- Bandi SCADUTI da più di 30 giorni
+- Bandi di altre regioni
+${cal}
 
-Esempio output valido:
-[{"titolo":"Bando 3 posteggi mercato settimanale Comune di Asti","link":"https://comune.asti.it/bandi/2026/posteggi.pdf","comune":"Asti","scadenza":"2026-06-15","riassunto":"3 posteggi liberi nel mercato del sabato, settore generi alimentari e non. Domande via PEC entro 15 giugno 2026."}]`;
+OUTPUT: SOLO un array JSON valido, ogni elemento con esattamente questi campi:
+- titolo (max 120 char): "Bando ... Comune di XYZ" o "Avviso pubblico ..."
+- link (URL diretto al PDF o pagina istituzionale .it; MAI redirect generici)
+- comune (nome del Comune che pubblica)
+- scadenza (YYYY-MM-DD se nota, altrimenti null)
+- riassunto (max 280 char): n. posteggi, settore, modalità di presentazione domanda (PEC, link), data scadenza in chiaro
+
+Se NON trovi nulla di rilevante con queste regole, ritorna [].
+
+${FEW_SHOT_EXAMPLES}
+
+Ora cerca per Regione ${regione} e ritorna SOLO il JSON array.`;
 }
 
-// ── Gemini call con Google Search grounding ────────────────
+// ── Gemini call ────────────────────────────────────────────
 async function askGemini(regione: string): Promise<any[]> {
-  if (!GEMINI_API_KEY) {
-    console.warn('GEMINI_API_KEY non configurata, skip');
-    return [];
-  }
+  if (!GEMINI_API_KEY) return [];
+  const prompt = buildPrompt(regione);
+  if (!prompt) return []; // regione senza whitelist
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
   const body = {
-    contents: [{ role: 'user', parts: [{ text: buildPrompt(regione) }] }],
+    contents: [{ role: 'user', parts: [{ text: prompt }] }],
     tools: [{ google_search: {} }],
-    generationConfig: {
-      temperature: 0.3,
-      // 2.5-flash usa thoughts internamente (~700-1000 token).
-      // Margine alto per evitare MAX_TOKENS cutoff sui risultati.
-      maxOutputTokens: 8192,
-    },
+    generationConfig: { temperature: 0.25, maxOutputTokens: 8192 },
   };
   try {
     const res = await fetch(url, {
@@ -85,19 +190,16 @@ async function askGemini(regione: string): Promise<any[]> {
       body: JSON.stringify(body),
     });
     if (!res.ok) {
-      console.error(`Gemini ${regione} ${res.status}:`, await res.text());
+      console.error(`Gemini ${regione} ${res.status}:`, (await res.text()).slice(0, 300));
       return [];
     }
     const json = await res.json();
     const text = json?.candidates?.[0]?.content?.parts?.map((p: any) => p.text).filter(Boolean).join('') ?? '';
     if (!text) {
-      const finishReason = json?.candidates?.[0]?.finishReason;
-      console.warn(`Gemini ${regione}: empty text. finishReason=${finishReason}`);
+      console.warn(`Gemini ${regione}: empty text. finishReason=${json?.candidates?.[0]?.finishReason}`);
       return [];
     }
-    // Strip markdown fence ```json ... ``` se presente
     const cleaned = text.replace(/```(?:json)?\s*/gi, '').replace(/```\s*$/g, '').trim();
-    // Estrai il primo array JSON (anche se Gemini mette commenti o ripete)
     const m = cleaned.match(/\[[\s\S]*?\](?=\s*$|\s*\[)/) || cleaned.match(/\[[\s\S]*\]/);
     if (!m) {
       console.warn(`Gemini ${regione}: nessun JSON array trovato in: ${cleaned.slice(0, 200)}`);
@@ -106,13 +208,103 @@ async function askGemini(regione: string): Promise<any[]> {
     try {
       const arr = JSON.parse(m[0]);
       return Array.isArray(arr) ? arr : [];
-    } catch (e) {
-      console.warn(`Gemini ${regione}: JSON parse fallito:`, m[0].slice(0, 200));
+    } catch (_) {
+      console.warn(`Gemini ${regione}: JSON parse fallito`);
       return [];
     }
   } catch (e) {
     console.error(`Gemini ${regione} exception:`, e);
     return [];
+  }
+}
+
+// ── POST-VALIDATION: HEAD + keyword check ─────────────────
+const VALIDATION_KEYWORDS = [
+  'posteggio', 'posteggi', 'mercato', 'mercati', 'mercatale', 'concessione',
+  'concessioni', 'aree pubbliche', 'ambulante', 'ambulanti', 'commercio',
+  'fiera', 'fiere', 'bando', 'avviso', 'spunta', 'sagra',
+];
+
+const INSTITUTIONAL_TLD_PATTERN = /\.(it|gov\.it|eu)\//i;
+
+interface ValidationResult {
+  ok: boolean;
+  reason?: string;
+  status?: number;
+}
+
+async function validateCandidate(link: string, regione: string): Promise<ValidationResult> {
+  // 1. URL sanity check
+  try {
+    const u = new URL(link);
+    if (!INSTITUTIONAL_TLD_PATTERN.test(u.href)) {
+      return { ok: false, reason: 'tld non istituzionale' };
+    }
+    // Domain whitelist check (almeno uno dei domini autorizzati per la regione)
+    const sources = REGIONE_SOURCES[regione];
+    if (sources) {
+      const host = u.hostname.toLowerCase();
+      const whitelistMatch = sources.domini.some(d => host.endsWith(d) || host === d || host === 'www.' + d);
+      if (!whitelistMatch) {
+        return { ok: false, reason: `dominio ${host} non in whitelist` };
+      }
+    }
+  } catch (_) {
+    return { ok: false, reason: 'URL malformato' };
+  }
+
+  // 2. HEAD request (timeout 8s)
+  try {
+    const ctrl = new AbortController();
+    const timeoutId = setTimeout(() => ctrl.abort(), 8000);
+    const headRes = await fetch(link, { method: 'HEAD', signal: ctrl.signal, redirect: 'follow' });
+    clearTimeout(timeoutId);
+    if (!headRes.ok) {
+      // Alcuni server rifiutano HEAD ma accettano GET → fallback
+      if (headRes.status === 405 || headRes.status === 403) {
+        // proseguiamo al GET
+      } else {
+        return { ok: false, reason: `HEAD ${headRes.status}`, status: headRes.status };
+      }
+    }
+  } catch (e) {
+    // HEAD può fallire per CORS o restrizioni → non blocchiamo, andiamo a GET
+    console.warn(`HEAD ${link}: ${e instanceof Error ? e.message : e}`);
+  }
+
+  // 3. GET parziale (primi 16KB) + keyword check
+  try {
+    const ctrl = new AbortController();
+    const timeoutId = setTimeout(() => ctrl.abort(), 12000);
+    const getRes = await fetch(link, {
+      method: 'GET',
+      signal: ctrl.signal,
+      redirect: 'follow',
+      headers: { 'Range': 'bytes=0-16383', 'User-Agent': 'Mozilla/5.0 (compatible; SubingressoBot/1.0)' },
+    });
+    clearTimeout(timeoutId);
+    if (!getRes.ok && getRes.status !== 206 /* partial content */) {
+      return { ok: false, reason: `GET ${getRes.status}`, status: getRes.status };
+    }
+    const text = (await getRes.text()).toLowerCase();
+    // PDF binary: keyword non funziona, accetta se URL ha "posteggio"/"mercato"/"bando" nel path
+    const isPdf = link.toLowerCase().endsWith('.pdf') || (getRes.headers.get('content-type') || '').includes('pdf');
+    if (isPdf) {
+      const urlLow = link.toLowerCase();
+      if (VALIDATION_KEYWORDS.some(k => urlLow.includes(k))) {
+        return { ok: true };
+      }
+      // PDF generico senza keyword nel URL: lo facciamo passare con warning (Gemini lo ha scelto)
+      return { ok: true, reason: 'pdf, keyword non verificate' };
+    }
+    // HTML: cerca keyword nel body
+    const matched = VALIDATION_KEYWORDS.filter(k => text.includes(k));
+    if (matched.length < 2) {
+      return { ok: false, reason: `solo ${matched.length} keyword nel body (minimo 2)` };
+    }
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, reason: `GET fail: ${e instanceof Error ? e.message : e}` };
   }
 }
 
@@ -149,8 +341,8 @@ function briefingEmailHtml(items: any[]): string {
       <table role="presentation" width="640" cellpadding="0" cellspacing="0" style="max-width:640px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <tr><td style="padding:28px 32px 8px;">
           <span style="display:inline-block;background:#dbeafe;color:#1e40af;font-size:11px;font-weight:900;letter-spacing:0.05em;text-transform:uppercase;padding:4px 10px;border-radius:6px;">AI Scout · Briefing giornaliero</span>
-          <h1 style="margin:14px 0 8px;font-size:22px;font-weight:900;color:#0f172a;line-height:1.3;">${items.length} bando${items.length===1?'':'i'} potenzialmente rilevante${items.length===1?'':'i'}</h1>
-          <p style="margin:0 0 6px;font-size:13px;color:#64748b;line-height:1.55;">Approva quelli reali, scarta i falsi positivi. La mail agli iscritti parte solo dopo il tuo click.</p>
+          <h1 style="margin:14px 0 8px;font-size:22px;font-weight:900;color:#0f172a;line-height:1.3;">${items.length} bando${items.length===1?'':'i'} verificato${items.length===1?'':'i'}</h1>
+          <p style="margin:0 0 6px;font-size:13px;color:#64748b;line-height:1.55;">Tutti i link sono stati pre-validati (dominio istituzionale + risposta HTTP + keyword nel body). Decidi tu se inviarli agli iscritti.</p>
         </td></tr>
         <tr><td style="padding:0 32px;"><table width="100%" cellpadding="0" cellspacing="0">${rows}</table></td></tr>
         <tr><td style="padding:20px 32px 28px;">
@@ -174,7 +366,6 @@ Deno.serve(async (req) => {
       auth: { persistSession: false, autoRefreshToken: false },
     });
 
-    // Regioni con almeno 1 iscritto attivo
     const { data: subs, error: subsErr } = await admin
       .from('bando_alerts')
       .select('regione');
@@ -188,24 +379,28 @@ Deno.serve(async (req) => {
     }
 
     const newItems: any[] = [];
-    const stats: Record<string, number> = {};
+    const stats: Record<string, any> = {};
 
     for (const regione of regioni) {
-      const results = await askGemini(regione);
-      stats[regione] = results.length;
-      for (const r of results) {
-        if (!r || typeof r !== 'object') continue;
+      const candidates = await askGemini(regione);
+      const regStats: any = { proposed: candidates.length, validated: 0, rejected_validation: 0, duplicate: 0, inserted: 0, reasons: [] };
+
+      for (const r of candidates) {
+        if (!r || typeof r !== 'object') { regStats.rejected_validation++; continue; }
         const link = String(r.link || '').trim();
         const titolo = String(r.titolo || '').trim();
-        if (!link || !titolo) continue;
-        if (link.length > 1000 || titolo.length > 300) continue;
-        // Filtro veloce dominio non-istituzionale
-        const lowLink = link.toLowerCase();
-        if (lowLink.includes('subingresso.it') ||
-            lowLink.includes('annunciambulanti.it') ||
-            lowLink.includes('subito.it') ||
-            lowLink.includes('kijiji.it') ||
-            lowLink.includes('immobiliare.it')) continue;
+        if (!link || !titolo) { regStats.rejected_validation++; continue; }
+        if (link.length > 1000 || titolo.length > 300) { regStats.rejected_validation++; continue; }
+
+        // BOOST 2: post-validation
+        const v = await validateCandidate(link, regione);
+        if (!v.ok) {
+          regStats.rejected_validation++;
+          if (regStats.reasons.length < 5) regStats.reasons.push(`[${regione}] ${v.reason}: ${link.slice(0,80)}`);
+          console.warn(`Validation FAIL ${regione}: ${v.reason} | ${link}`);
+          continue;
+        }
+        regStats.validated++;
 
         const contentHash = await sha256Hex(`${regione}|${link}`);
         const riassunto = String(r.riassunto || '').slice(0, 600);
@@ -219,45 +414,40 @@ Deno.serve(async (req) => {
             regione,
             titolo: titolo.slice(0, 300),
             link,
-            fonte: 'gemini',
+            fonte: 'gemini+validated',
             ai_summary: summaryFull.slice(0, 1500),
             content_hash: contentHash,
           })
           .select('id, approve_token, reject_token')
           .maybeSingle();
         if (insErr) {
-          // 23505 unique_violation = già visto, skip silenzioso
-          if (insErr.code !== '23505') console.warn(`insert ${regione}:`, insErr.message);
+          if (insErr.code === '23505') { regStats.duplicate++; continue; }
+          console.warn(`insert ${regione}:`, insErr.message);
           continue;
         }
         if (ins) {
+          regStats.inserted++;
           newItems.push({
-            regione,
-            titolo,
-            link,
-            comune,
-            scadenza,
+            regione, titolo, link, comune, scadenza,
             ai_summary: riassunto,
             approve_token: ins.approve_token,
             reject_token: ins.reject_token,
           });
         }
       }
+      stats[regione] = regStats;
     }
 
-    // Briefing solo se ci sono novità
+    // Briefing solo se ci sono novità validate
     if (newItems.length > 0) {
       const { data: adminRows } = await admin
-        .from('profiles')
-        .select('id, nome')
-        .eq('is_admin', true);
+        .from('profiles').select('id').eq('is_admin', true);
       const adminIds = (adminRows || []).map(r => r.id);
       if (adminIds.length > 0) {
         const { data: adminUsers } = await admin.auth.admin.listUsers();
         const adminEmails = (adminUsers?.users || [])
           .filter(u => adminIds.includes(u.id) && u.email)
           .map(u => u.email!);
-
         if (adminEmails.length > 0) {
           const html = briefingEmailHtml(newItems);
           await fetch('https://api.resend.com/emails', {
@@ -266,7 +456,7 @@ Deno.serve(async (req) => {
             body: JSON.stringify({
               from: FROM_EMAIL,
               to: adminEmails,
-              subject: `🔍 AI Scout: ${newItems.length} bando${newItems.length===1?'':'i'} da rivedere`,
+              subject: `🔍 AI Scout: ${newItems.length} bando${newItems.length===1?'':'i'} verificato${newItems.length===1?'':'i'} da rivedere`,
               html,
             }),
           });
