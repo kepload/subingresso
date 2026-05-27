@@ -48,15 +48,18 @@ module.exports = async function handler(req, res) {
     let listings = [];
     let posts    = [];
     let cities   = [];
+    let bandi    = [];
 
     try {
-        const [lRes, pRes, cRes] = await Promise.all([
+        const [lRes, pRes, cRes, bRes] = await Promise.all([
             fetch(`${SUPABASE_URL}/rest/v1/annunci?select=id,created_at&status=eq.active`, { headers }),
             fetch(`${SUPABASE_URL}/rest/v1/blog_posts?select=slug,published_at`,           { headers }),
             fetch(`${SUPABASE_URL}/rest/v1/annunci?select=comune,created_at&status=eq.active&comune=not.is.null`, { headers }),
+            fetch(`${SUPABASE_URL}/rest/v1/rpc/list_published_bandi`, { method:'POST', headers: { ...headers, 'Content-Type':'application/json' }, body: '{}' }),
         ]);
         if (lRes.ok) listings = await lRes.json();
         if (pRes.ok) posts    = await pRes.json();
+        if (bRes.ok) { try { const d = await bRes.json(); if (Array.isArray(d)) bandi = d; } catch(_) {} }
         if (cRes.ok) {
             const raw = await cRes.json();
             // Per ogni città: salva l'annuncio più recente come lastmod (segnale di freschezza per Google)
@@ -104,6 +107,15 @@ module.exports = async function handler(req, res) {
                 c.lastmod ? c.lastmod.split('T')[0] : today,
                 'daily',
                 '0.8'
+            )
+        ),
+        // Landing page bandi approvati (SEO long-tail)
+        ...bandi.map(b =>
+            urlTag(
+                `${SITE}/bandi/${b.slug}`,
+                b.published_at ? b.published_at.split('T')[0] : today,
+                'weekly',
+                '0.6'
             )
         ),
     ];

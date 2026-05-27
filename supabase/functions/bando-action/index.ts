@@ -24,6 +24,35 @@ function escapeHTML(s: unknown): string {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+// Slug generator: "Bando posteggi Fiera Mariana 2026 — Comune di Crotone"
+// → "bando-posteggi-fiera-mariana-2026-crotone-calabria"
+function makeSlug(titolo: string, regione: string): string {
+  const base = `${titolo} ${regione}`
+    .toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '') // strip accenti
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 110);
+  return base || 'bando';
+}
+
+async function ensureUniqueSlug(admin: any, baseSlug: string, ownId: string): Promise<string> {
+  // Verifica unicità; in caso di collisione aggiungi suffisso -2, -3, ...
+  let slug = baseSlug;
+  for (let i = 0; i < 10; i++) {
+    const candidate = i === 0 ? slug : `${baseSlug}-${i+1}`;
+    const { data } = await admin
+      .from('bando_scouting_log')
+      .select('id')
+      .eq('published_slug', candidate)
+      .neq('id', ownId)
+      .maybeSingle();
+    if (!data) return candidate;
+  }
+  // Fallback estremo: aggiungi hash random
+  return `${baseSlug}-${Math.random().toString(36).slice(2, 8)}`;
+}
+
 function confirmPage(title: string, message: string, color: 'green'|'red'|'gray' = 'green'): string {
   const c = color === 'green' ? '#16a34a' : (color === 'red' ? '#dc2626' : '#64748b');
   const bg = color === 'green' ? '#dcfce7' : (color === 'red' ? '#fee2e2' : '#f1f5f9');
@@ -45,11 +74,12 @@ a{display:inline-block;background:#2563eb;color:#fff;text-decoration:none;font-w
 </div></body></html>`;
 }
 
-// Email per gli iscritti: avviso "Nuovo bando in [regione]"
-function bandoEmailHtml(item: any, unsubUrl: string): string {
+// Email per gli iscritti: link al landing page Subingresso, NON al PDF Comune.
+// L'utente atterra su /bandi/<slug> che ha riassunto + bando ufficiale + cross-sell
+// annunci privati della regione + valutatore + iscrizione avvisi.
+function bandoEmailHtml(item: any, unsubUrl: string, landingUrl: string): string {
   const titolo = escapeHTML(item.titolo);
   const reg = escapeHTML(item.regione);
-  const link = escapeHTML(item.link);
   const summary = escapeHTML(item.ai_summary || '');
   return `<!DOCTYPE html>
 <html lang="it"><head><meta charset="UTF-8"></head>
@@ -63,13 +93,13 @@ function bandoEmailHtml(item: any, unsubUrl: string): string {
           <p style="margin:0 0 16px;font-size:14px;color:#334155;line-height:1.6;white-space:pre-line;">${summary}</p>
         </td></tr>
         <tr><td style="padding:0 32px 24px;" align="center">
-          <a href="${link}" style="display:inline-block;background:#2563eb;color:#fff;text-decoration:none;font-weight:800;font-size:14px;padding:12px 28px;border-radius:10px;">
-            Apri bando ufficiale →
+          <a href="${escapeHTML(landingUrl)}" style="display:inline-block;background:#2563eb;color:#fff;text-decoration:none;font-weight:800;font-size:14px;padding:12px 28px;border-radius:10px;">
+            Vedi il bando →
           </a>
         </td></tr>
         <tr><td style="padding:0 32px 22px;">
           <p style="margin:0;font-size:12px;color:#64748b;line-height:1.55;">
-            Ricevi questa email perché ti sei iscritto agli avvisi per <strong>${reg}</strong>. Controlla sempre i dettagli sul sito ufficiale del Comune/Regione prima di presentare la domanda.
+            Sulla pagina troverai: <strong>il link al bando ufficiale</strong>, <strong>posteggi privati in ${reg} subito disponibili</strong> (per chi non vuole aspettare un bando), e il <strong>valutatore gratuito</strong> se stai cedendo un posteggio.
           </p>
         </td></tr>
         <tr><td style="padding:16px 32px 32px;border-top:1px solid #f1f5f9;">
@@ -138,10 +168,18 @@ Deno.serve(async (req) => {
         { status: 200, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
     }
 
-    // ── APPROVE: marca approved, manda broadcast, marca sent ──
+    // ── APPROVE: genera slug + marca approved + crea landing page + manda broadcast ──
+    const baseSlug = makeSlug(row.titolo, row.regione);
+    const finalSlug = await ensureUniqueSlug(admin, baseSlug, row.id);
+
     await admin.from('bando_scouting_log').update({
-      status: 'approved', reviewed_at: new Date().toISOString(),
+      status: 'approved',
+      reviewed_at: new Date().toISOString(),
+      published_slug: finalSlug,
+      published_at: new Date().toISOString(),
     }).eq('id', row.id);
+
+    const landingUrl = `${SITE_URL}/bandi/${finalSlug}`;
 
     // Carica iscritti della regione
     const { data: subs } = await admin
@@ -168,7 +206,7 @@ Deno.serve(async (req) => {
             from: FROM_EMAIL,
             to: sub.email,
             subject: `📢 Nuovo bando in ${row.regione}: ${row.titolo}`,
-            html: bandoEmailHtml(row, unsubUrl),
+            html: bandoEmailHtml(row, unsubUrl, landingUrl),
           }),
         });
         if (!res.ok) throw new Error(`Resend ${res.status}`);
