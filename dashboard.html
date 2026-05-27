@@ -379,6 +379,27 @@
                 </p>
             </div>
 
+            <!-- AI Scout Bandi: pending pubblicazioni da rivedere -->
+            <div id="bandoScouting" class="bg-white border border-amber-200 rounded-3xl p-6">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-search-dollar text-amber-500"></i> AI Scout Bandi
+                        <span class="text-[10px] font-black text-amber-600 uppercase tracking-widest">(da rivedere)</span>
+                    </h3>
+                    <div id="scoutBandiBadges" class="flex flex-wrap gap-1.5 text-[10px] font-black uppercase tracking-widest">
+                        <span class="bg-amber-50 text-amber-700 px-2.5 py-1 rounded-lg">Pending: <span id="scoutPending">—</span></span>
+                        <span class="bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-lg">Inviati: <span id="scoutSent">—</span></span>
+                        <span class="bg-slate-100 text-slate-500 px-2.5 py-1 rounded-lg">Destinatari tot: <span id="scoutDest">—</span></span>
+                    </div>
+                </div>
+                <div id="scoutBandiBody" class="space-y-3">
+                    <p class="text-xs text-slate-400 font-bold">Caricamento…</p>
+                </div>
+                <p class="mt-4 text-[10px] text-slate-400 leading-relaxed">
+                    Ogni mattina alle 8:00 l'AI cerca bandi nuovi sul web per le regioni con iscritti. Tu approvi quelli reali → mail parte agli iscritti. La gestione completa è anche via mail (link approva/scarta).
+                </p>
+            </div>
+
             <!-- Iscritti Avvisi Bandi (lead magnet email blog) -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
@@ -1026,6 +1047,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadAdminSignupSources();
         loadAdminBlogStats();
         loadAdminBandoAlerts();
+        loadAdminScoutBandi();
         loadAdminRecentUsers();
         loadAdminBlog();
         loadAllListings();
@@ -1858,6 +1880,103 @@ function setBlogStatsPeriod(days) {
     const sub = document.getElementById('blogStatsSubtitle');
     if (sub) sub.textContent = days === 365 ? '(1y)' : `(${days}g)`;
     loadAdminBlogStats();
+}
+
+// ── AI Scout Bandi (pending da rivedere) ──────────────────
+async function loadAdminScoutBandi() {
+    const body = document.getElementById('scoutBandiBody');
+    if (!body) return;
+    body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Caricamento…</p>';
+    try {
+        const { data, error } = await _supabase.rpc('admin_bando_scouting_list', { p_status: 'pending', p_limit: 50 });
+        if (error || !data) {
+            body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Dati non disponibili.</p>';
+            return;
+        }
+        const counts = data.counts || {};
+        const rows = Array.isArray(data.rows) ? data.rows : [];
+        const ep = document.getElementById('scoutPending');
+        const es = document.getElementById('scoutSent');
+        const ed = document.getElementById('scoutDest');
+        if (ep) ep.textContent = (counts.pending || 0).toLocaleString('it-IT');
+        if (es) es.textContent = (counts.approved || 0).toLocaleString('it-IT');
+        if (ed) ed.textContent = (counts.sent_total_recipients || 0).toLocaleString('it-IT');
+
+        if (rows.length === 0) {
+            body.innerHTML = `<div class="text-center py-6">
+                <i class="fas fa-check-circle text-emerald-300 text-3xl mb-2"></i>
+                <p class="text-xs text-slate-400 font-bold">Nessun bando pending. L'AI controlla ogni mattina; se trova qualcosa lo vedrai qui (e arriverà anche via mail).</p>
+            </div>`;
+            return;
+        }
+
+        body.innerHTML = rows.map(r => {
+            const titolo = escapeHTML(r.titolo);
+            const reg = escapeHTML(r.regione);
+            const link = escapeHTML(r.link || '');
+            const summary = escapeHTML((r.ai_summary || '').slice(0, 280));
+            const date = r.discovered_at ? new Date(r.discovered_at).toLocaleDateString('it-IT', { day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit' }) : '';
+            return `
+            <div class="border border-amber-100 rounded-xl p-4 bg-amber-50/30">
+                <div class="flex items-start justify-between gap-3 mb-2">
+                    <span class="bg-amber-100 text-amber-800 text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-widest">${reg}</span>
+                    <span class="text-[10px] text-slate-400 font-bold whitespace-nowrap">${date}</span>
+                </div>
+                <h4 class="text-sm font-black text-slate-900 leading-tight mb-2">${titolo}</h4>
+                <p class="text-xs text-slate-600 leading-relaxed mb-3 whitespace-pre-line">${summary}</p>
+                <div class="flex flex-wrap items-center gap-2">
+                    <a href="${link}" target="_blank" rel="noopener" class="text-[11px] font-black text-blue-600 hover:underline">→ Apri originale</a>
+                    <div class="flex-1"></div>
+                    <button onclick="decideScoutBando('${r.id}', 'approve', this)" class="bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-black px-3 py-1.5 rounded-lg transition">
+                        ✓ Invia agli iscritti
+                    </button>
+                    <button onclick="decideScoutBando('${r.id}', 'reject', this)" class="bg-white border border-slate-200 text-slate-500 hover:bg-slate-50 text-[11px] font-black px-3 py-1.5 rounded-lg transition">
+                        ✗ Scarta
+                    </button>
+                </div>
+            </div>`;
+        }).join('');
+    } catch (_) {
+        body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Errore caricamento.</p>';
+    }
+}
+
+async function decideScoutBando(id, action, btn) {
+    const label = action === 'approve' ? 'Inviare il bando a TUTTI gli iscritti della regione?' : 'Scartare il bando? Non sarà più inviato.';
+    const confirm = await (typeof showConfirm === 'function' ? showConfirm({
+        title: action === 'approve' ? 'Conferma invio' : 'Conferma scarto',
+        message: label,
+        okLabel: action === 'approve' ? 'Invia' : 'Scarta',
+        variant: action === 'approve' ? 'admin' : 'warning',
+    }) : Promise.resolve(window.confirm(label)));
+    if (!confirm) return;
+
+    btn.disabled = true; btn.textContent = '…';
+    try {
+        if (action === 'approve') {
+            // Approve: chiama l'edge function bando-action via approve_token
+            // Recupero il token dalla riga renderizzata (è in dataset)? No, è meglio chiamare l'RPC server-side che fa l'azione completa.
+            // Ma RPC fa solo decide, mentre bando-action gestisce anche il broadcast Resend. Soluzione: leggo il token via RPC e poi GET bando-action.
+            // Più pulito: passo per la decide RPC (cambia status a approved) + la edge function unica gestisce broadcast.
+            // Per consistency con il flusso email uso direttamente bando-action via fetch del approve_token.
+            const { data: rowData } = await _supabase.rpc('admin_bando_scouting_list', { p_status: 'pending', p_limit: 200 });
+            const item = (rowData?.rows || []).find(x => x.id === id);
+            if (!item) throw new Error('not_found');
+            const url = `${_supabase.supabaseUrl}/functions/v1/bando-action?t=${encodeURIComponent(item.approve_token)}&a=approve`;
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('http_' + res.status);
+            showToast('Bando approvato e mail in invio agli iscritti', 'success');
+        } else {
+            const { error } = await _supabase.rpc('admin_bando_scouting_decide', { p_id: id, p_action: 'reject' });
+            if (error) throw error;
+            showToast('Bando scartato', 'info');
+        }
+        loadAdminScoutBandi();
+    } catch (e) {
+        console.error(e);
+        showToast('Errore: ' + (e?.message || 'fallito'), 'error');
+        btn.disabled = false; btn.textContent = action === 'approve' ? '✓ Invia' : '✗ Scarta';
+    }
 }
 
 // ── Avvisi Bandi (email lead magnet blog) ─────────────────

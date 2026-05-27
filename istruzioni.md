@@ -614,6 +614,45 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): tutti i post valgono 200gg, vetrina = solo featured. Niente più cap differenziati 230/300/400. `adminGrantVetrina(days)` + `stripe-webhook` toccano solo i campi `featured*`.
 - **NON filtrare su `expires_at`** finché non popolato per tutti — gli scaduti restano visibili ma con badge "Scaduto", contatti bloccati via `_blockIfExpired()` (chat/whatsapp/chiama mostrano toast). RPC `renew_listing(p_id uuid)` SECURITY DEFINER, owner-only, bumpa `expires_at = now()+200gg`. Bottone "Riattiva" in dashboard.html appare per annunci `active` con `expires_at < now()`.
 
+## 🔍 AI Scout Bandi (27 mag 2026)
+
+Sistema semi-automatico per scoprire bandi pubblici reali e inviarli agli iscritti `bando_alerts`. **Hybrid 95% auto + 5% umano**: l'AI cerca, l'admin clicca "invia" o "scarta" in 1 secondo (via mail o pannello).
+
+**Flusso:**
+1. Cron `scout-bandi-daily` (`0 8 * * *` UTC = 10:00 Roma estate) chiama edge function `scout-bandi`.
+2. Per ogni regione con iscritti attivi in `bando_alerts`, chiama Gemini 2.0 Flash via `generativelanguage.googleapis.com` con `google_search` grounding e prompt strutturato. Modello target: `gemini-2.0-flash` (free tier ~1500 req/giorno).
+3. Filtra dominio non-istituzionale (esclude subingresso.it, subito, immobiliare, kijiji, annunciambulanti). Parsing JSON array dall'output Gemini.
+4. Dedup via `bando_scouting_log.content_hash` (SHA-256 di `regione|link`) + UNIQUE (regione, content_hash). Stesso bando già visto = skip silenzioso (23505).
+5. Se ci sono novità → 1 mail HTML riassuntiva a tutti gli admin con per ogni bando: titolo, comune, scadenza, riassunto, link originale, 2 bottoni "✓ Invia agli iscritti" (verde) e "✗ Scarta" (grigio). I bottoni puntano a `bando-action?t=<token>&a=approve|reject`.
+6. Click "approve" → edge function `bando-action`: marca status='approved', carica `bando_alerts WHERE regione=X`, manda mail individuale via Resend a ogni iscritto, marca status='sent' con `sent_count`. Idempotente: secondo click mostra "Già inviato".
+7. Click "reject" → status='rejected', stop.
+
+**Schema (`PATCH_BANDO_SCOUTING_20260527.sql`):**
+- `bando_scouting_log(id, regione, titolo, link, fonte, ai_summary, status, discovered_at, reviewed_at, reviewed_by, sent_at, sent_count, approve_token uuid UNIQUE, reject_token uuid UNIQUE, content_hash)` UNIQUE(regione, content_hash). RLS bloccata, accesso solo via service_role o RPC SECURITY DEFINER.
+- RPC `admin_bando_scouting_list(p_status, p_limit)` SECURITY DEFINER + is_admin gate.
+- RPC `admin_bando_scouting_decide(p_id, p_action)` SECURITY DEFINER per reject (l'approve passa per `bando-action` perché deve fare il broadcast email).
+
+**Edge functions:**
+- `scout-bandi` (`--no-verify-jwt`, auth via Bearer SB_SECRET_KEY): cron + Gemini + briefing admin.
+- `bando-action` (`--no-verify-jwt`, no auth, accesso via token unguessable nel link): gestisce click approve/reject. Pagina HTML di conferma con bottone "Apri dashboard".
+
+**Frontend:**
+- Pannello `#bandoScouting` in `dashboard.html` sopra "Avvisi Bandi". 3 badge (Pending, Inviati, Destinatari tot). Lista cards bandi pending con bottoni inline.
+- Click "Invia agli iscritti" da pannello → richiama l'edge `bando-action` con approve_token recuperato via RPC. Stesso meccanismo del bottone email.
+
+**Secrets richiesti:**
+- `GEMINI_API_KEY` — creare gratis su https://aistudio.google.com → Supabase Dashboard → Edge Functions → Manage Secrets → Add. Senza la chiave, scout-bandi gira ma non trova nulla (skip silenzioso, log warning).
+- `RESEND_API_KEY` — già presente.
+- `SB_SECRET_KEY` — già presente.
+
+**Cron PATCH (`PATCH_CRON_SCOUT_BANDI_20260527.sql`):** template con `:'service_jwt'`. Applicato via DO block PL/pgSQL che estrae la chiave da `pg_get_functiondef('notify_bando_subscribers_on_annunci')` e crea il `cron.schedule` con `format(...)` — la chiave non esce mai dal DB.
+
+**Tradeoff e limiti noti:**
+- Gemini può allucinare link inesistenti (raro ma succede): per quello c'è l'approvazione umana. Lo scout = scoperta, l'umano = filtro qualità.
+- Solo regioni con iscritti attivi vengono scansionate (4 al 27 mag: Piemonte/Campania/Marche/Calabria). Risparmio quota Gemini.
+- Free tier Gemini Flash: ~1500 req/giorno. A regime con 20 regioni iscritte = 20 req/giorno → margine abbondante.
+- Falsi positivi attesi: gestiti via reject button. Reject di un bando memorizza il content_hash → non ri-proposto.
+
 ## 🛡️ Backup Sessione & Handoff Agente (27 mag 2026)
 
 Passaggio Claude Code → Codex CLI per riduzione costi. Sistemi di sicurezza messi in piedi:
