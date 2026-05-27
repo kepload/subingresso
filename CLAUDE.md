@@ -1,8 +1,10 @@
 # Regole Claude — Subingresso.it
 
+- 🛡️ **BACKUP TAG OBBLIGATORIO (regola n.0)**: prima della prima modifica di OGNI nuova sessione, lancia `.\scripts\session-backup.ps1 -Reason "<descrizione-corta>"`. Crea un tag git su HEAD + push remoto. Ritorno garantito con `git reset --hard backup/session-YYYYMMDD-HHMMSS-...`.
 - ⚡ **STILE RISPOSTE (regola n.1)**: l'utente è un vibe coder, non un programmatore. Rispondi **corto e semplice**. Niente papiri, niente muri di testo, niente gergo tecnico (SSR, RPC, GRANT, cannibalizzazione...) senza spiegarlo in 2-3 parole. Dopo una modifica dì **cosa cambia per lui** in 1-2 frasi. Fai il lavoro, spiega poco. Vedi memoria [[feedback_stile_risposte]].
 - Quando l'utente dice che sta per chiudere la sessione (es. "chiudo", "a dopo", "fine sessione", "salva tutto"), aggiorna `istruzioni.md` con tutte le info utili emerse nella sessione (solo info non duplicate, super riassuntive).
 - Leggi sempre `istruzioni.md` prima di iniziare a lavorare su qualsiasi task.
+- `AGENTS.md` esiste e contiene le stesse regole in formato adatto a Codex CLI. Mantenere allineato quando si modifica una delle due fonti.
 
 ## 🚨 Regole anti-leak segreti (dopo incidente 4 mag 2026)
 

@@ -614,6 +614,17 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): tutti i post valgono 200gg, vetrina = solo featured. Niente più cap differenziati 230/300/400. `adminGrantVetrina(days)` + `stripe-webhook` toccano solo i campi `featured*`.
 - **NON filtrare su `expires_at`** finché non popolato per tutti — gli scaduti restano visibili ma con badge "Scaduto", contatti bloccati via `_blockIfExpired()` (chat/whatsapp/chiama mostrano toast). RPC `renew_listing(p_id uuid)` SECURITY DEFINER, owner-only, bumpa `expires_at = now()+200gg`. Bottone "Riattiva" in dashboard.html appare per annunci `active` con `expires_at < now()`.
 
+## 🛡️ Backup Sessione & Handoff Agente (27 mag 2026)
+
+Passaggio Claude Code → Codex CLI per riduzione costi. Sistemi di sicurezza messi in piedi:
+
+- **`AGENTS.md`** (nuovo): file letto da Codex (e qualsiasi agente AI) all'inizio di ogni sessione. Contiene tutte le regole operative + puntatore a questo file. **Tienilo allineato con `CLAUDE.md`** quando modifichi una delle due fonti.
+- **`scripts/session-backup.ps1`**: script PowerShell da lanciare PRIMA della prima modifica di ogni sessione. Crea un tag git `backup/session-YYYYMMDD-HHMMSS[-reason]` su HEAD e lo pusha su origin. Cleanup automatico dei tag locali oltre i 30 (i remoti restano per sempre).
+  - Uso: `.\scripts\session-backup.ps1 -Reason "codex-feature-X"`
+  - Ripristino: `git tag -l "backup/session-*"` per listare, poi `git reset --hard backup/session-…`.
+- **Snapshot full repo** in `C:\Users\utente\Documents\backup-subingresso\snapshot-2026-05-27-codex-handoff\` (106 MB, 135 file, escluso `node_modules`/`.vercel`/`.git`). Contiene `_SNAPSHOT_README.md` con stato del progetto, ultimi 10 commit, istruzioni di ripristino.
+- **Regola PowerShell evergreen**: non usare `2>&1` su exe nativi (git, npm) — wrappa stderr come `NativeCommandError` e setta `$?=$false` anche con exit 0. Per silenziare output: `| Out-Null` senza redirect stderr. Già documentato in `feedback_git_commit_quotes_powershell.md` per `git commit` ma vale per tutti i nativi.
+
 ## ⚠️ Deploy & Troubleshooting Supabase
 
 ### CLI
