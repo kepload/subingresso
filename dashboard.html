@@ -379,6 +379,27 @@
                 </p>
             </div>
 
+            <!-- Iscritti Avvisi Bandi (lead magnet email blog) -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-envelope-open-text text-amber-500"></i> Avvisi Bandi
+                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(email lead)</span>
+                    </h3>
+                    <div id="bandoAlertsBadges" class="flex flex-wrap gap-1.5 text-[10px] font-black uppercase tracking-widest">
+                        <span class="bg-amber-50 text-amber-700 px-2.5 py-1 rounded-lg">Totale: <span id="bandoAlertsTotal">—</span></span>
+                        <span class="bg-blue-50 text-blue-600 px-2.5 py-1 rounded-lg">7g: <span id="bandoAlerts7d">—</span></span>
+                        <span class="bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-lg">30g: <span id="bandoAlerts30d">—</span></span>
+                    </div>
+                </div>
+                <div id="bandoAlertsBody" class="space-y-3">
+                    <p class="text-xs text-slate-400 font-bold">Caricamento…</p>
+                </div>
+                <p class="mt-4 text-[10px] text-slate-400 leading-relaxed">
+                    Email lasciate nel form "Avvisi" dentro gli articoli del blog (bandi-posteggi-mercatali-*). Ricevono notifica quando esce un bando o un annuncio nuovo nella loro regione.
+                </p>
+            </div>
+
             <!-- Performance Blog (views + CTA click + CR%) -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
@@ -1004,6 +1025,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadAdminFunnelStats();
         loadAdminSignupSources();
         loadAdminBlogStats();
+        loadAdminBandoAlerts();
         loadAdminRecentUsers();
         loadAdminBlog();
         loadAllListings();
@@ -1836,6 +1858,57 @@ function setBlogStatsPeriod(days) {
     const sub = document.getElementById('blogStatsSubtitle');
     if (sub) sub.textContent = days === 365 ? '(1y)' : `(${days}g)`;
     loadAdminBlogStats();
+}
+
+// ── Avvisi Bandi (email lead magnet blog) ─────────────────
+async function loadAdminBandoAlerts() {
+    const body = document.getElementById('bandoAlertsBody');
+    if (!body) return;
+    body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Caricamento…</p>';
+    try {
+        const { data, error } = await _supabase.rpc('admin_bando_alerts_stats');
+        if (error || !data) {
+            body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Dati non disponibili.</p>';
+            return;
+        }
+        const elTotal = document.getElementById('bandoAlertsTotal');
+        const el7d = document.getElementById('bandoAlerts7d');
+        const el30d = document.getElementById('bandoAlerts30d');
+        if (elTotal) elTotal.textContent = (data.total || 0).toLocaleString('it-IT');
+        if (el7d) el7d.textContent = (data.last_7d || 0).toLocaleString('it-IT');
+        if (el30d) el30d.textContent = (data.last_30d || 0).toLocaleString('it-IT');
+
+        const total = data.total || 0;
+        if (total === 0) {
+            body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Ancora nessuna email iscritta. Quando qualcuno lascia la mail nel form "Avvisi Bandi" dentro un articolo del blog, comparirà qui.</p>';
+            return;
+        }
+
+        const byReg = Array.isArray(data.by_regione) ? data.by_regione : [];
+        const recent = Array.isArray(data.recent) ? data.recent : [];
+
+        const regChips = byReg.map(r => `<span class="bg-slate-50 border border-slate-200 text-slate-700 text-[11px] font-black px-2.5 py-1 rounded-lg">${escapeHTML(r.regione || '?')} <span class="text-amber-600">${r.iscritti}</span></span>`).join('');
+
+        const recentRows = recent.map(r => {
+            const dt = r.created_at ? new Date(r.created_at) : null;
+            const dtStr = dt ? dt.toLocaleDateString('it-IT', { day: '2-digit', month: 'short' }) + ' ' + dt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }) : '—';
+            return `
+            <div class="flex items-center justify-between gap-3 px-3 py-2 rounded-xl border border-slate-100 hover:bg-slate-50 transition">
+                <div class="min-w-0 flex-1">
+                    <div class="text-sm font-black text-slate-900 truncate" title="${escapeHTML(r.email || '')}">${escapeHTML(r.email || '—')}</div>
+                    <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">${escapeHTML(r.regione || '?')} · ${escapeHTML(r.source || 'unknown')}</div>
+                </div>
+                <div class="text-[10px] text-slate-400 font-bold whitespace-nowrap">${dtStr}</div>
+            </div>`;
+        }).join('');
+
+        body.innerHTML = `
+            ${regChips ? `<div class="flex flex-wrap gap-1.5 mb-2">${regChips}</div>` : ''}
+            <div class="space-y-1.5">${recentRows}</div>
+        `;
+    } catch (_) {
+        body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Errore caricamento.</p>';
+    }
 }
 
 async function bumpPostFreshness(slug, btn) {
