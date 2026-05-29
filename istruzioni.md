@@ -814,18 +814,26 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 > Questo file è il **manuale** del progetto (cosa fare + come funziona), NON un diario: il "cosa è stato fatto" sta nei commit git. Tenere solo ciò che serve alle prossime sessioni.
 > ⚡ STILE: l'utente è un vibe coder → risposte CORTE e SEMPLICI, zero gergo. Vedi CLAUDE.md regola n.1.
 
-**Dove siamo (23 mag 2026):**
-- **34 annunci reali** attivi (demo eliminati il 22 mag), 32 utenti veri. Collo di bottiglia n.1 = far crescere gli annunci (target 50-100 in Lombardia).
-- **SEO**: Step 1 transazionale fatto (title/H1/intro su /annunci e /vendi); Bolkestein in crescita; traffico ancora piccolo (~263 impr/mese). Competitor da battere: annunciambulanti.it (vedi `project_compete_annunciambulanti.md`).
+**Dove siamo (28 mag 2026):**
+- **34 annunci reali** attivi, 32 utenti veri. Collo di bottiglia n.1 invariato: crescita annunci (target 50-100 in Lombardia).
+- **AI Scout Bandi LIVE**: pipeline multi-step Gemini 2.5 Flash + briefing throttle 3gg + landing page `/bandi/<slug>` con cross-sell. 3 bandi pending reali (Grottammare, Catanzaro, Crotone). Iscritti `bando_alerts`: 4 (Piemonte, Campania, Marche, Calabria).
+- **Pannelli admin nuovi**: "Avvisi Bandi" (mostra iscritti email) + "AI Scout Bandi" (pending con approva/scarta 1-click).
+- **Handoff a Codex CLI preparato**: `AGENTS.md` (regole + playbook sez.12), `CLAUDE.md` aggiornato, `scripts/session-backup.ps1` (tag git pre-modifica), snapshot full in `Documents/backup-subingresso/snapshot-2026-05-27-codex-handoff/`.
+- **SEO**: Step 1 transazionale fatto; Bolkestein in crescita; traffico ~263 impr/mese. Competitor: annunciambulanti.it.
 - **Blog**: 20/20 regioni bandi + 5/5 "mercati ambulanti [regione]" + hub Bolkestein, tutti v2.
-- **Vetrina** a pagamento Stripe attiva. Nessuna lotteria (rimossa 23 mag); vetrina gratis solo via admin manuale.
+- **Vetrina** Stripe attiva. Niente lotteria. Vetrina gratis solo via admin.
+- **Funnel iscrizioni** (90gg, analisi 27 mag): 100% conv vendi_submit (5/5), 20% popup_vetrina (2/10), 11% nav_accedi (5/44). Click annunci (whatsapp/salva/tel): **0 signup su 6 aperture**. Il blog non risulta tracciabile a signup (page_views non ha user_id).
+- **API key Gemini esposta in chat 27 mag**: `AIzaSyBp1GeTPLpuDwIHt9myTKUUB8m60QWNECY` — rigenerare su AI Studio appena possibile + `npx supabase secrets set GEMINI_API_KEY=<nuova>`.
 
 Ordine consigliato prossima sessione:
-1. **SC indicizzazione**: coda in `C:\Users\utente\Desktop\indicizzazione-prioritari.txt`, 10/giorno. Aggiungere `/annunci`, `/vendi`, `mercati-ambulanti-lazio`, e ri-submittare `bandi-posteggi-mercatali-trentino-alto-adige`.
-2. **Inventario reale beachhead** (priorità n.1): far crescere gli annunci veri (ora 34) → 50-100 in Lombardia. Strumento principale: lead magnet email sull'hub Bolkestein. Vedi `project_compete_annunciambulanti.md`.
-3. **Step 2 SEO — `api/annunci.js` per landing regionali SSR**: title/meta/H1 per `?regione=X`, sull'esempio di `api/blog.js`. Solo dopo ≥5 annunci attivi per regione.
-4. **Fase 5 piano blog conversion**: sbloccata (tracking ok + box riposizionato). Pannello "Performance blog" admin, dopo 7-14gg di dati.
-5. **Nuovi articoli**: serie "Mercati settimanali [città]" + 6 Tier 2 + 3 Tier 3 Bolkestein.
+1. **Rigenerare GEMINI_API_KEY** + update secret (chiave attuale esposta in chat).
+2. **Approvare i 3 bandi pending** dalla dashboard se reali → testa flusso end-to-end mail + landing page.
+3. **Monitorare AI Scout 7-14 giorni**: vedere ratio bandi reali/falsi positivi → se rejection rate alto, ottimizzare prompt step 4 (verifica).
+4. **SC indicizzazione**: coda in `C:\Users\utente\Desktop\indicizzazione-prioritari.txt`, 10/giorno. Aggiungere `/annunci`, `/vendi`, `mercati-ambulanti-lazio`, ri-submit `bandi-posteggi-mercatali-trentino-alto-adige`, e quando arrivano landing `/bandi/<slug>` submit anche quelle.
+5. **Inventario reale beachhead** (priorità n.1): far crescere gli annunci (ora 34) → 50-100 in Lombardia. Lead magnet email sull'hub Bolkestein. Vedi `project_compete_annunciambulanti.md`.
+6. **Step 2 SEO — `api/annunci.js` per landing regionali SSR**: title/meta/H1 per `?regione=X`. Solo dopo ≥5 annunci attivi per regione.
+7. **Fase 5 piano blog conversion**: sbloccata (tracking ok). Pannello "Performance blog" admin, dopo 7-14gg di dati.
+8. **Nuovi articoli**: serie "Mercati settimanali [città]" + 6 Tier 2 + 3 Tier 3 Bolkestein.
 - **Decisioni utente in sospeso** (non toccare senza ok): Privacy policy placeholder pre go-live · Data audit (richiesto esplicitamente) · welcome_popup (costruire o rimuovere).
 - **Promemoria temporizzato**: maintenance mensile hub Bolkestein dovuta **~metà giugno 2026** (RPC `admin_bump_post_freshness` + ri-datare top + nuovo bullet cronologia) o decade dalle SERP "ultime notizie 2026".
 - **Stato filone regionale**: **5/5 chiuso** (Lombardia/Veneto/Emilia-Romagna/Toscana/Lazio, tutti v2).
@@ -855,6 +863,7 @@ Ordine consigliato prossima sessione:
 - **Vetrina**: a pagamento Stripe (tolto l'extend di `expires_at`), sconto -10% alla pubblicazione, box admin "valore annunci".
 - **Lifecycle**: annunci 200gg, scaduti con badge + contatti bloccati + bottone riattiva.
 - **Pulizie 22-23 mag**: demo eliminati (restano 34 annunci veri) + lotteria welcome rimossa ovunque.
+- **27 mag (sessione handoff Codex)**: pannello admin "Avvisi Bandi" + AI Scout Bandi v4 multi-step (Gemini 2.5 Flash, 4 step focalizzati: discovery → HTTP validation → extraction → verifica) + briefing throttled 3gg + landing page SSR `/bandi/<slug>` con cross-sell annunci regionali (le mail agli iscritti ora linkano nostre pagine, NON PDF Comuni) + `AGENTS.md` con playbook completo (sezione 12 = troubleshooting Gemini/Resend/landing) + `scripts/session-backup.ps1` (tag git automatici per ogni sessione) + snapshot full repo in Documents.
 - Le **lezioni evergreen** sui bug stanno nella sezione "Bug Storici Generalizzabili" (non qui).
 
 ### Bug minori segnalati ma non urgenti
