@@ -823,7 +823,7 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 - **Blog**: 20/20 regioni bandi + 5/5 "mercati ambulanti [regione]" + hub Bolkestein, tutti v2.
 - **Vetrina** Stripe attiva. Niente lotteria. Vetrina gratis solo via admin.
 - **Funnel iscrizioni** (90gg, analisi 27 mag): 100% conv vendi_submit (5/5), 20% popup_vetrina (2/10), 11% nav_accedi (5/44). Click annunci (whatsapp/salva/tel): **0 signup su 6 aperture**. Il blog non risulta tracciabile a signup (page_views non ha user_id).
-- **API key Gemini esposta in chat 27 mag**: `AIzaSyBp1GeTPLpuDwIHt9myTKUUB8m60QWNECY` — rigenerare su AI Studio appena possibile + `npx supabase secrets set GEMINI_API_KEY=<nuova>`.
+- **API key Gemini esposta in chat 27 mag**: `[REDATTA — vedi alert GitHub commit 450ecd06]` — rigenerare su AI Studio appena possibile + `npx supabase secrets set GEMINI_API_KEY=<nuova>`.
 
 Ordine consigliato prossima sessione:
 1. **Rigenerare GEMINI_API_KEY** + update secret (chiave attuale esposta in chat).
