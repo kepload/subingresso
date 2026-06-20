@@ -489,6 +489,37 @@
         <!-- Seller hero — il tuo annuncio + stats live + compratori in zona -->
         <div id="sellerHeroSection" class="hidden mb-6"></div>
 
+        <div id="sellerAnalyticsPanel" class="hidden mb-6">
+            <div class="bg-white border border-slate-100 rounded-2xl p-4 md:p-6 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+                    <div>
+                        <h3 class="font-black text-slate-900 text-lg flex items-center gap-2">
+                            <i class="fas fa-chart-line text-blue-500"></i> Performance posteggi
+                        </h3>
+                        <p class="text-xs text-slate-500 font-semibold mt-1">Visite, contatti e segnali utili per migliorare gli annunci.</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <select id="sellerAnalyticsListingSelect" onchange="renderSellerAnalytics()" class="border border-slate-200 rounded-xl px-3 py-2 text-xs font-black text-slate-600 outline-none focus:border-blue-400 bg-white max-w-full">
+                            <option value="all">Tutti gli annunci</option>
+                        </select>
+                        <button id="sellerStatsBtn7" onclick="setSellerAnalyticsDays(7)" class="text-[11px] font-black px-3 py-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 transition">7g</button>
+                        <button id="sellerStatsBtn30" onclick="setSellerAnalyticsDays(30)" class="text-[11px] font-black px-3 py-2 rounded-xl bg-blue-600 text-white transition">30g</button>
+                        <button id="sellerStatsBtn90" onclick="setSellerAnalyticsDays(90)" class="text-[11px] font-black px-3 py-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 transition">90g</button>
+                    </div>
+                </div>
+
+                <div id="sellerAnalyticsSummary" class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 mb-5">
+                    <div class="text-center py-8 text-slate-300 col-span-full"><i class="fas fa-spinner fa-spin text-xl"></i></div>
+                </div>
+
+                <div class="relative w-full" style="height:280px">
+                    <canvas id="sellerAnalyticsChart"></canvas>
+                </div>
+
+                <div id="sellerAnalyticsAdvice" class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-3"></div>
+            </div>
+        </div>
+
         <!-- Onboarding widget — visibile solo se profilo incompleto -->
         <div id="onboardingWidget" class="hidden bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-3xl p-6 mb-6 shadow-sm">
             <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
@@ -519,10 +550,6 @@
                 class="pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap">
                 I miei annunci
             </button>
-            <button id="tabStatistiche" onclick="showTab('statistiche')"
-                class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
-                <i class="fas fa-chart-line text-xs"></i> Statistiche
-            </button>
             <button id="tabPreferiti" onclick="showTab('preferiti')"
                 class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
                 <i class="fas fa-heart text-xs"></i> Preferiti
@@ -545,41 +572,6 @@
             <div id="myListingsGrid" class="space-y-4">
                 <div class="text-center py-12 text-slate-400">
                     <i class="fas fa-spinner fa-spin text-2xl"></i>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- TAB: Statistiche -->
-        <div id="sectionStatistiche" class="hidden">
-            <div id="sellerAnalyticsPanel" class="py-4">
-                <div class="bg-white border border-slate-100 rounded-2xl p-4 md:p-6 shadow-sm">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
-                        <div>
-                            <h3 class="font-black text-slate-900 text-lg flex items-center gap-2">
-                                <i class="fas fa-chart-line text-blue-500"></i> Performance posteggi
-                            </h3>
-                            <p class="text-xs text-slate-500 font-semibold mt-1">Visite, contatti e segnali utili per migliorare gli annunci.</p>
-                        </div>
-                        <div class="flex flex-wrap items-center gap-2">
-                            <select id="sellerAnalyticsListingSelect" onchange="renderSellerAnalytics()" class="border border-slate-200 rounded-xl px-3 py-2 text-xs font-black text-slate-600 outline-none focus:border-blue-400 bg-white max-w-full">
-                                <option value="all">Tutti gli annunci</option>
-                            </select>
-                            <button id="sellerStatsBtn7" onclick="setSellerAnalyticsDays(7)" class="text-[11px] font-black px-3 py-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 transition">7g</button>
-                            <button id="sellerStatsBtn30" onclick="setSellerAnalyticsDays(30)" class="text-[11px] font-black px-3 py-2 rounded-xl bg-blue-600 text-white transition">30g</button>
-                            <button id="sellerStatsBtn90" onclick="setSellerAnalyticsDays(90)" class="text-[11px] font-black px-3 py-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 transition">90g</button>
-                        </div>
-                    </div>
-
-                    <div id="sellerAnalyticsSummary" class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 mb-5">
-                        <div class="text-center py-8 text-slate-300 col-span-full"><i class="fas fa-spinner fa-spin text-xl"></i></div>
-                    </div>
-
-                    <div class="relative w-full" style="height:280px">
-                        <canvas id="sellerAnalyticsChart"></canvas>
-                    </div>
-
-                    <div id="sellerAnalyticsAdvice" class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-3"></div>
                 </div>
             </div>
         </div>
@@ -1123,11 +1115,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadPendingListings();
     loadSellerHero();
     loadMilestones();
+    loadSellerAnalytics();
 
     // Auto-tab da hash URL (es. dashboard.html#valutazioni dopo signup dal valutatore)
     const tabFromHash = (location.hash || '').replace('#', '');
     if (['preferiti', 'valutazioni', 'alert', 'statistiche', 'stats'].includes(tabFromHash)) {
-        if (tabFromHash === 'stats') showTab('statistiche');
+        if (tabFromHash === 'statistiche' || tabFromHash === 'stats') {
+            document.getElementById('sellerAnalyticsPanel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
         else showTab(tabFromHash);
     }
 });
@@ -2579,7 +2574,7 @@ let _alertsLoaded = false;
 let _sellerAnalyticsLoaded = false;
 
 function showTab(tab) {
-    const sectionMap = { annunci: 'sectionAnnunci', statistiche: 'sectionStatistiche', preferiti: 'sectionPreferiti', valutazioni: 'sectionValutazioni', alert: 'sectionAlert' };
+    const sectionMap = { annunci: 'sectionAnnunci', preferiti: 'sectionPreferiti', valutazioni: 'sectionValutazioni', alert: 'sectionAlert' };
     Object.entries(sectionMap).forEach(([t, id]) => {
         const section = document.getElementById(id);
         if (section) section.classList.toggle('hidden', t !== tab);
@@ -2588,15 +2583,10 @@ function showTab(tab) {
     const active   = 'pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap';
     const inactive = 'pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap';
     document.getElementById('tabMieiAnnunci').className = tab === 'annunci' ? active : inactive;
-    document.getElementById('tabStatistiche').className  = (tab === 'statistiche' ? active : inactive) + ' flex items-center gap-1.5';
     document.getElementById('tabPreferiti').className   = (tab === 'preferiti'   ? active : inactive) + ' flex items-center gap-1.5';
     document.getElementById('tabValutazioni').className = (tab === 'valutazioni' ? active : inactive) + ' flex items-center gap-1.5';
     document.getElementById('tabAlert').className       = (tab === 'alert'       ? active : inactive) + ' flex items-center gap-1.5';
 
-    if (tab === 'statistiche' && !_sellerAnalyticsLoaded) {
-        _sellerAnalyticsLoaded = true;
-        loadSellerAnalytics();
-    }
     if (tab === 'alert' && !_alertsLoaded) {
         _alertsLoaded = true;
         loadMyAlerts();
@@ -3047,10 +3037,13 @@ function _sellerPct(n) {
 async function loadSellerAnalytics(days) {
     const summary = document.getElementById('sellerAnalyticsSummary');
     const advice = document.getElementById('sellerAnalyticsAdvice');
+    const panel = document.getElementById('sellerAnalyticsPanel');
     if (!summary) return;
 
+    _sellerAnalyticsLoaded = true;
     const nextDays = days || _sellerAnalyticsState.days || 30;
     _sellerAnalyticsState.days = nextDays;
+    if (panel) panel.classList.remove('hidden');
     summary.innerHTML = '<div class="text-center py-8 text-slate-300 col-span-full"><i class="fas fa-spinner fa-spin text-xl"></i></div>';
     if (advice) advice.innerHTML = '';
 
