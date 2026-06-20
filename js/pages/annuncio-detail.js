@@ -529,6 +529,22 @@ function _blockIfExpired(listing) {
     return true;
 }
 
+async function trackListingContactEvent(listing, eventType) {
+    if (!listing || typeof listing.id === 'number') return;
+    try {
+        const { error } = await _supabase.rpc('track_listing_event', {
+            listing_id: listing.id,
+            event_type: eventType,
+            amount: 1
+        });
+        if (error) throw error;
+    } catch (_) {
+        if (eventType === 'call' || eventType === 'whatsapp') {
+            try { await _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }); } catch (_) {}
+        }
+    }
+}
+
 function executeCall(listing) {
     if (!listing.telFetched) {
         showToast('Recupero numero in corso, riprova tra un istante…', 'info');
@@ -541,7 +557,7 @@ function executeCall(listing) {
     // salvava in rubrica così com'era invece di formattare correttamente.
     const link = (typeof phoneToTelLink === 'function') ? phoneToTelLink(tel) : String(tel).replace(/\D/g, '');
     if (!link) { showToast('Nessun numero di telefono valido associato a questo annuncio.', 'error'); return; }
-    if (typeof listing.id !== 'number') (async () => { try { await _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }); } catch(_){} })();
+    (async () => { await trackListingContactEvent(listing, 'call'); })();
     window.location.href = `tel:${link}`;
 }
 
@@ -593,6 +609,7 @@ async function startChat() {
                 .maybeSingle();
 
             // Niente creazione: la conv nasce al primo messaggio inviato.
+            await trackListingContactEvent(listing, 'chat');
             location.href = existing?.id
                 ? `/messaggi?conv=${existing.id}`
                 : `/messaggi?annuncio=${listing.id}`;
@@ -615,7 +632,7 @@ function executeWhatsApp(listing) {
     const finalTel = clean.startsWith('3') && clean.length === 10 ? '39' + clean : clean;
     const luogo = [listing.comune, listing.provincia ? `(${listing.provincia})` : ''].filter(Boolean).join(' ');
     const text = encodeURIComponent(`Ciao! Ho visto il tuo annuncio su Subingresso.it: "${listing.titolo}"${luogo ? ` a ${luogo}` : ''}. È ancora disponibile? Grazie mille 🙏`);
-    if (typeof listing.id !== 'number') (async () => { try { await _supabase.rpc('increment_tel_clicks', { listing_id: listing.id }); } catch(_){} })();
+    (async () => { await trackListingContactEvent(listing, 'whatsapp'); })();
     window.location.href = `https://wa.me/${finalTel}?text=${text}`;
 }
 

@@ -519,6 +519,10 @@
                 class="pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap">
                 I miei annunci
             </button>
+            <button id="tabStatistiche" onclick="showTab('statistiche')"
+                class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
+                <i class="fas fa-chart-line text-xs"></i> Statistiche
+            </button>
             <button id="tabPreferiti" onclick="showTab('preferiti')"
                 class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
                 <i class="fas fa-heart text-xs"></i> Preferiti
@@ -541,6 +545,41 @@
             <div id="myListingsGrid" class="space-y-4">
                 <div class="text-center py-12 text-slate-400">
                     <i class="fas fa-spinner fa-spin text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- TAB: Statistiche -->
+        <div id="sectionStatistiche" class="hidden">
+            <div id="sellerAnalyticsPanel" class="py-4">
+                <div class="bg-white border border-slate-100 rounded-2xl p-4 md:p-6 shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+                        <div>
+                            <h3 class="font-black text-slate-900 text-lg flex items-center gap-2">
+                                <i class="fas fa-chart-line text-blue-500"></i> Performance posteggi
+                            </h3>
+                            <p class="text-xs text-slate-500 font-semibold mt-1">Visite, contatti e segnali utili per migliorare gli annunci.</p>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <select id="sellerAnalyticsListingSelect" onchange="renderSellerAnalytics()" class="border border-slate-200 rounded-xl px-3 py-2 text-xs font-black text-slate-600 outline-none focus:border-blue-400 bg-white max-w-full">
+                                <option value="all">Tutti gli annunci</option>
+                            </select>
+                            <button id="sellerStatsBtn7" onclick="setSellerAnalyticsDays(7)" class="text-[11px] font-black px-3 py-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 transition">7g</button>
+                            <button id="sellerStatsBtn30" onclick="setSellerAnalyticsDays(30)" class="text-[11px] font-black px-3 py-2 rounded-xl bg-blue-600 text-white transition">30g</button>
+                            <button id="sellerStatsBtn90" onclick="setSellerAnalyticsDays(90)" class="text-[11px] font-black px-3 py-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 transition">90g</button>
+                        </div>
+                    </div>
+
+                    <div id="sellerAnalyticsSummary" class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 mb-5">
+                        <div class="text-center py-8 text-slate-300 col-span-full"><i class="fas fa-spinner fa-spin text-xl"></i></div>
+                    </div>
+
+                    <div class="relative w-full" style="height:280px">
+                        <canvas id="sellerAnalyticsChart"></canvas>
+                    </div>
+
+                    <div id="sellerAnalyticsAdvice" class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-3"></div>
                 </div>
             </div>
         </div>
@@ -1087,8 +1126,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Auto-tab da hash URL (es. dashboard.html#valutazioni dopo signup dal valutatore)
     const tabFromHash = (location.hash || '').replace('#', '');
-    if (['preferiti', 'valutazioni', 'alert'].includes(tabFromHash)) {
-        showTab(tabFromHash);
+    if (['preferiti', 'valutazioni', 'alert', 'statistiche', 'stats'].includes(tabFromHash)) {
+        if (tabFromHash === 'stats') showTab('statistiche');
+        else showTab(tabFromHash);
     }
 });
 
@@ -2536,9 +2576,10 @@ async function confirmDeleteAccount() {
 
 // ── Tabs ─────────────────────────────────────────────────
 let _alertsLoaded = false;
+let _sellerAnalyticsLoaded = false;
 
 function showTab(tab) {
-    const sectionMap = { annunci: 'sectionAnnunci', preferiti: 'sectionPreferiti', valutazioni: 'sectionValutazioni', alert: 'sectionAlert' };
+    const sectionMap = { annunci: 'sectionAnnunci', statistiche: 'sectionStatistiche', preferiti: 'sectionPreferiti', valutazioni: 'sectionValutazioni', alert: 'sectionAlert' };
     Object.entries(sectionMap).forEach(([t, id]) => {
         const section = document.getElementById(id);
         if (section) section.classList.toggle('hidden', t !== tab);
@@ -2547,10 +2588,15 @@ function showTab(tab) {
     const active   = 'pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap';
     const inactive = 'pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap';
     document.getElementById('tabMieiAnnunci').className = tab === 'annunci' ? active : inactive;
+    document.getElementById('tabStatistiche').className  = (tab === 'statistiche' ? active : inactive) + ' flex items-center gap-1.5';
     document.getElementById('tabPreferiti').className   = (tab === 'preferiti'   ? active : inactive) + ' flex items-center gap-1.5';
     document.getElementById('tabValutazioni').className = (tab === 'valutazioni' ? active : inactive) + ' flex items-center gap-1.5';
     document.getElementById('tabAlert').className       = (tab === 'alert'       ? active : inactive) + ' flex items-center gap-1.5';
 
+    if (tab === 'statistiche' && !_sellerAnalyticsLoaded) {
+        _sellerAnalyticsLoaded = true;
+        loadSellerAnalytics();
+    }
     if (tab === 'alert' && !_alertsLoaded) {
         _alertsLoaded = true;
         loadMyAlerts();
@@ -2986,6 +3032,300 @@ async function dismissAllMilestones() {
 }
 
 // ── My Listings ─────────────────────────────────────────
+// Seller analytics
+let _sellerAnalyticsState = { days: 30, listings: [] };
+let _sellerAnalyticsChart = null;
+
+function _sellerNum(n) {
+    return Number(n || 0).toLocaleString('it-IT');
+}
+
+function _sellerPct(n) {
+    return `${(Number(n || 0) * 100).toLocaleString('it-IT', { maximumFractionDigits: 1 })}%`;
+}
+
+async function loadSellerAnalytics(days) {
+    const summary = document.getElementById('sellerAnalyticsSummary');
+    const advice = document.getElementById('sellerAnalyticsAdvice');
+    if (!summary) return;
+
+    const nextDays = days || _sellerAnalyticsState.days || 30;
+    _sellerAnalyticsState.days = nextDays;
+    summary.innerHTML = '<div class="text-center py-8 text-slate-300 col-span-full"><i class="fas fa-spinner fa-spin text-xl"></i></div>';
+    if (advice) advice.innerHTML = '';
+
+    try {
+        const { data, error } = await _supabase.rpc('dashboard_seller_analytics', { p_days: nextDays });
+        if (error) throw error;
+        if (!data || data.error) throw new Error(data?.error || 'Statistiche non disponibili');
+
+        _sellerAnalyticsState.listings = Array.isArray(data.listings) ? data.listings : [];
+        _sellerAnalyticsState.days = Number(data.days || nextDays);
+        _populateSellerAnalyticsSelect();
+        renderSellerAnalytics();
+    } catch (e) {
+        summary.innerHTML = `
+            <div class="col-span-full bg-amber-50 border border-amber-100 rounded-2xl p-4 text-sm font-bold text-amber-800">
+                <i class="fas fa-triangle-exclamation mr-2"></i>Statistiche in attivazione. Riprova piu' tardi.
+            </div>`;
+        if (advice) advice.innerHTML = '';
+        if (_sellerAnalyticsChart) {
+            _sellerAnalyticsChart.destroy();
+            _sellerAnalyticsChart = null;
+        }
+        console.warn('seller analytics failed:', e);
+    }
+}
+
+function _populateSellerAnalyticsSelect() {
+    const sel = document.getElementById('sellerAnalyticsListingSelect');
+    if (!sel) return;
+    const prev = sel.value || 'all';
+    const opts = ['<option value="all">Tutti gli annunci</option>'].concat(
+        (_sellerAnalyticsState.listings || []).map(l =>
+            `<option value="${escapeHTML(l.id)}">${escapeHTML(l.titolo || 'Annuncio')}</option>`
+        )
+    );
+    sel.innerHTML = opts.join('');
+    sel.value = [...sel.options].some(o => o.value === prev) ? prev : 'all';
+}
+
+function setSellerAnalyticsDays(days) {
+    _sellerAnalyticsState.days = days;
+    [7, 30, 90].forEach(d => {
+        const btn = document.getElementById(`sellerStatsBtn${d}`);
+        if (!btn) return;
+        btn.className = d === days
+            ? 'text-[11px] font-black px-3 py-2 rounded-xl bg-blue-600 text-white transition'
+            : 'text-[11px] font-black px-3 py-2 rounded-xl bg-slate-100 text-slate-500 hover:bg-slate-200 transition';
+    });
+    loadSellerAnalytics(days);
+}
+
+function _selectedSellerListings() {
+    const selected = document.getElementById('sellerAnalyticsListingSelect')?.value || 'all';
+    const listings = _sellerAnalyticsState.listings || [];
+    return selected === 'all' ? listings : listings.filter(l => String(l.id) === String(selected));
+}
+
+function _sellerDailyBuckets(days) {
+    const out = [];
+    const now = new Date();
+    now.setHours(12, 0, 0, 0);
+    for (let i = days - 1; i >= 0; i--) {
+        const d = new Date(now);
+        d.setDate(d.getDate() - i);
+        out.push({
+            key: d.toISOString().slice(0, 10),
+            label: d.toLocaleDateString('it-IT', { day: '2-digit', month: 'short' }),
+            views: 0,
+            contacts: 0,
+            saves: 0
+        });
+    }
+    return out;
+}
+
+function renderSellerAnalytics() {
+    const summary = document.getElementById('sellerAnalyticsSummary');
+    const advice = document.getElementById('sellerAnalyticsAdvice');
+    const canvas = document.getElementById('sellerAnalyticsChart');
+    if (!summary || !canvas) return;
+
+    const listings = _selectedSellerListings();
+    if (!listings.length) {
+        summary.innerHTML = `
+            <div class="col-span-full text-center py-10 bg-slate-50 rounded-2xl">
+                <i class="fas fa-store text-slate-200 text-4xl mb-3"></i>
+                <p class="text-sm font-black text-slate-500">Nessun annuncio da analizzare</p>
+                <a href="/vendi" class="inline-flex items-center gap-2 mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl text-xs font-black hover:bg-blue-700 transition">
+                    <i class="fas fa-plus"></i> Inserisci annuncio
+                </a>
+            </div>`;
+        if (advice) advice.innerHTML = '';
+        if (_sellerAnalyticsChart) {
+            _sellerAnalyticsChart.destroy();
+            _sellerAnalyticsChart = null;
+        }
+        return;
+    }
+
+    const buckets = _sellerDailyBuckets(_sellerAnalyticsState.days || 30);
+    const byDay = new Map(buckets.map(b => [b.key, b]));
+    listings.forEach(l => {
+        (l.daily || []).forEach(r => {
+            const key = String(r.day || '').slice(0, 10);
+            const b = byDay.get(key);
+            if (!b) return;
+            b.views += Number(r.views || 0);
+            b.contacts += Number(r.call_clicks || 0) + Number(r.whatsapp_clicks || 0) + Number(r.chat_clicks || 0);
+            b.saves += Number(r.saves || 0);
+        });
+    });
+
+    const viewsTotal = listings.reduce((sum, l) => sum + Number(l.views_total || 0), 0);
+    const savedTotal = listings.reduce((sum, l) => sum + Number(l.saved_total || 0), 0);
+    const contactTotal = listings.reduce((sum, l) => sum + Number(l.tel_clicks_total || 0) + Number(l.msg_total || 0), 0);
+    const conversion = viewsTotal > 0 ? contactTotal / viewsTotal : 0;
+    const periodViews = buckets.reduce((sum, b) => sum + b.views, 0);
+
+    summary.innerHTML = [
+        _sellerStatCard('Visite', _sellerNum(viewsTotal), `${_sellerNum(periodViews)} nel periodo`, 'fa-eye', 'blue'),
+        _sellerStatCard('Contatti', _sellerNum(contactTotal), 'telefono, WhatsApp e chat', 'fa-comments', 'emerald'),
+        _sellerStatCard('Salvati', _sellerNum(savedTotal), 'preferiti totali', 'fa-bookmark', 'amber'),
+        _sellerStatCard('Tasso contatto', _sellerPct(conversion), 'contatti / visite', 'fa-bullseye', 'violet')
+    ].join('');
+
+    _renderSellerAnalyticsChart(canvas, buckets);
+    if (advice) advice.innerHTML = _buildSellerAdvice(listings);
+}
+
+function _sellerStatCard(label, value, sub, icon, color) {
+    const palette = {
+        blue: 'bg-blue-50 text-blue-600',
+        emerald: 'bg-emerald-50 text-emerald-600',
+        amber: 'bg-amber-50 text-amber-600',
+        violet: 'bg-violet-50 text-violet-600'
+    }[color] || 'bg-slate-50 text-slate-600';
+    return `
+        <div class="bg-slate-50 rounded-2xl p-3 md:p-4 min-w-0">
+            <div class="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                <span class="w-7 h-7 rounded-xl ${palette} flex items-center justify-center"><i class="fas ${icon} text-xs"></i></span>${label}
+            </div>
+            <div class="text-2xl md:text-3xl font-black text-slate-900 leading-none mt-3 truncate">${value}</div>
+            <div class="text-[10px] font-bold text-slate-400 mt-1 truncate">${escapeHTML(sub)}</div>
+        </div>`;
+}
+
+function _renderSellerAnalyticsChart(canvas, buckets) {
+    if (typeof Chart === 'undefined') return;
+    const chartData = {
+        labels: buckets.map(b => b.label),
+        datasets: [
+            {
+                label: 'Visite',
+                data: buckets.map(b => b.views),
+                borderColor: '#2563eb',
+                backgroundColor: 'rgba(37, 99, 235, .08)',
+                borderWidth: 3,
+                tension: .35,
+                fill: true,
+                pointRadius: 0,
+                pointHoverRadius: 4
+            },
+            {
+                label: 'Contatti',
+                data: buckets.map(b => b.contacts),
+                borderColor: '#10b981',
+                backgroundColor: 'rgba(16, 185, 129, .08)',
+                borderWidth: 2,
+                tension: .35,
+                fill: false,
+                pointRadius: 0,
+                pointHoverRadius: 4
+            },
+            {
+                label: 'Salvati',
+                data: buckets.map(b => b.saves),
+                borderColor: '#f59e0b',
+                backgroundColor: 'rgba(245, 158, 11, .08)',
+                borderWidth: 2,
+                tension: .35,
+                fill: false,
+                pointRadius: 0,
+                pointHoverRadius: 4
+            }
+        ]
+    };
+
+    if (_sellerAnalyticsChart) {
+        _sellerAnalyticsChart.data = chartData;
+        _sellerAnalyticsChart.update('active');
+        return;
+    }
+
+    _sellerAnalyticsChart = new Chart(canvas.getContext('2d'), {
+        type: 'line',
+        data: chartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+                legend: {
+                    labels: { usePointStyle: true, boxWidth: 8, font: { size: 11, weight: '700' } }
+                },
+                tooltip: {
+                    backgroundColor: '#0f172a',
+                    padding: 12,
+                    titleFont: { weight: '800' },
+                    bodyFont: { weight: '700' }
+                }
+            },
+            scales: {
+                x: { grid: { display: false }, ticks: { maxTicksLimit: 8, font: { size: 10, weight: '700' } } },
+                y: { beginAtZero: true, ticks: { precision: 0, font: { size: 10, weight: '700' } }, grid: { color: '#f1f5f9' } }
+            }
+        }
+    });
+}
+
+function _buildSellerAdvice(listings) {
+    const tips = [];
+    const addTip = (icon, title, text, href, cta) => {
+        if (tips.length >= 4) return;
+        tips.push({ icon, title, text, href, cta });
+    };
+
+    const byNeed = [...listings].sort((a, b) => Number(b.views_total || 0) - Number(a.views_total || 0));
+    const noPhoto = byNeed.find(l => Number(l.photo_count || 0) === 0);
+    if (noPhoto) {
+        addTip('fa-image', 'Aggiungi una foto', `${noPhoto.titolo || 'Questo annuncio'} non ha foto: e' il primo punto da sistemare.`, `/modifica-annuncio?id=${encodeURIComponent(noPhoto.id)}`, 'Modifica');
+    }
+
+    const shortDesc = byNeed.find(l => Number(l.description_length || 0) > 0 && Number(l.description_length || 0) < 250);
+    if (shortDesc) {
+        addTip('fa-align-left', 'Descrizione troppo corta', `${shortDesc.titolo || 'Questo annuncio'} ha poche informazioni. Aggiungi metratura, giorni, posizione e punti forti.`, `/modifica-annuncio?id=${encodeURIComponent(shortDesc.id)}`, 'Migliora');
+    }
+
+    const noPrice = byNeed.find(l => !l.prezzo);
+    if (noPrice) {
+        addTip('fa-euro-sign', 'Prezzo poco chiaro', `${noPrice.titolo || 'Questo annuncio'} e' senza prezzo. Anche una fascia indicativa aiuta a ricevere contatti migliori.`, `/modifica-annuncio?id=${encodeURIComponent(noPrice.id)}`, 'Aggiungi');
+    }
+
+    const highViewsLowContacts = byNeed.find(l => {
+        const views = Number(l.views_total || 0);
+        const contacts = Number(l.tel_clicks_total || 0) + Number(l.msg_total || 0);
+        return views >= 20 && contacts / views < 0.02;
+    });
+    if (highViewsLowContacts) {
+        addTip('fa-bullseye', 'Tante visite, pochi contatti', `${highViewsLowContacts.titolo || 'Questo annuncio'} viene visto ma convince poco. Rivedi prezzo, foto e prime righe.`, `/modifica-annuncio?id=${encodeURIComponent(highViewsLowContacts.id)}`, 'Ottimizza');
+    }
+
+    const savedNoContacts = byNeed.find(l => Number(l.saved_total || 0) >= 2 && (Number(l.tel_clicks_total || 0) + Number(l.msg_total || 0)) === 0);
+    if (savedNoContacts) {
+        addTip('fa-bookmark', 'Interesse senza contatto', `${savedNoContacts.titolo || 'Questo annuncio'} viene salvato: aggiungi dettagli concreti per far partire la trattativa.`, `/modifica-annuncio?id=${encodeURIComponent(savedNoContacts.id)}`, 'Completa');
+    }
+
+    if (!tips.length) {
+        addTip('fa-check-circle', 'Annunci in ordine', 'Le basi ci sono. Continua ad aggiornare foto, prezzo e descrizione quando cambiano le condizioni.', '/dashboard', 'Ok');
+    }
+
+    return tips.map(t => `
+        <div class="border border-slate-100 rounded-2xl p-4 bg-white hover:bg-slate-50/60 transition">
+            <div class="flex items-start gap-3">
+                <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0"><i class="fas ${t.icon}"></i></div>
+                <div class="min-w-0 flex-1">
+                    <h4 class="text-sm font-black text-slate-900 leading-tight">${escapeHTML(t.title)}</h4>
+                    <p class="text-xs text-slate-500 font-semibold mt-1 leading-relaxed">${escapeHTML(t.text)}</p>
+                    <a href="${t.href}" class="inline-flex items-center gap-1.5 mt-3 text-[11px] font-black text-blue-600 hover:underline">
+                        ${escapeHTML(t.cta)} <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>`).join('');
+}
+
 async function loadMyListings() {
     const grid = document.getElementById('myListingsGrid');
     // NB: select esplicito senza tel/email (REVOKE per authenticated dal 3 mag 2026).
@@ -3975,6 +4315,7 @@ async function renewListing(id) {
     }
     showToast('Annuncio riattivato per 200 giorni', 'success');
     loadMyListings();
+    if (_sellerAnalyticsLoaded) loadSellerAnalytics();
 }
 
 async function markAsSold(id) {
@@ -3987,6 +4328,7 @@ async function markAsSold(id) {
     if (!ok) return;
     await _supabase.from('annunci').update({ status: 'sold' }).eq('id', id);
     loadMyListings();
+    if (_sellerAnalyticsLoaded) loadSellerAnalytics();
 }
 
 async function deleteListing(id) {
@@ -3999,6 +4341,7 @@ async function deleteListing(id) {
     if (!ok) return;
     await _supabase.from('annunci').update({ status: 'deleted' }).eq('id', id);
     loadMyListings();
+    if (_sellerAnalyticsLoaded) loadSellerAnalytics();
 }
 
 // ── Vetrina Modal ─────────────────────────────────────────
