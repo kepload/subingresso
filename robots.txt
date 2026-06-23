@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /dashboard
-Disallow: /modifica-annuncio
-Disallow: /messaggi
 
 Sitemap: https://subingresso.it/sitemap.xml
