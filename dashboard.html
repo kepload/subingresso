@@ -144,10 +144,28 @@
                     <div id="admStatTotalValue" class="text-xl font-black text-indigo-600">—</div>
                     <div id="admStatTotalValueHint" class="text-[9px] text-slate-400 mt-1 truncate">vendita + affitti ×8</div>
                 </div>
-                <div class="bg-gradient-to-br from-cyan-50 to-white p-3 md:p-4 rounded-xl border border-cyan-100 shadow-sm text-center md:text-left" title="Media prezzi richiesti sugli annunci attivi reali in vendita. Affitti esclusi.">
-                    <div class="text-[9px] font-black text-cyan-500 uppercase tracking-widest mb-1">Prezzi Medi</div>
-                    <div id="admStatAvgPosteggi" class="text-sm font-black text-cyan-700">Posteggi -</div>
-                    <div id="admStatAvgFiere" class="text-sm font-black text-cyan-700 mt-0.5">Fiere -</div>
+                <div class="bg-gradient-to-br from-cyan-50 to-white p-3 md:p-4 rounded-xl border border-cyan-100 shadow-sm text-center md:text-left" title="Prezzi richiesti sugli annunci attivi reali in vendita. Affitti esclusi. Il 5% serve solo come riferimento rapido per valutare una tutela proporzionata.">
+                    <div class="text-[9px] font-black text-cyan-500 uppercase tracking-widest mb-2">Prezzi Vendita</div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Media</div>
+                            <div id="admStatAvgPosteggi" class="text-xl font-black text-cyan-700">-</div>
+                        </div>
+                        <div>
+                            <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Mediana</div>
+                            <div id="admStatMedianPosteggi" class="text-xl font-black text-cyan-700">-</div>
+                        </div>
+                    </div>
+                    <div class="mt-2 grid grid-cols-2 gap-2">
+                        <div class="bg-white/70 border border-cyan-100 rounded-lg px-2 py-1">
+                            <div class="text-[8px] font-black text-slate-400 uppercase tracking-widest">Fiere media</div>
+                            <div id="admStatAvgFiere" class="text-[11px] font-black text-cyan-700">-</div>
+                        </div>
+                        <div class="bg-white/70 border border-cyan-100 rounded-lg px-2 py-1">
+                            <div class="text-[8px] font-black text-slate-400 uppercase tracking-widest">5% mediana</div>
+                            <div id="admStatTutela5" class="text-[11px] font-black text-cyan-700">-</div>
+                        </div>
+                    </div>
                     <div id="admStatAvgHint" class="text-[9px] text-slate-400 mt-1 truncate">vendite con prezzo</div>
                 </div>
             </div>
@@ -1216,10 +1234,12 @@ async function loadAdminStats() {
 
 async function loadAdminPriceAverages() {
     const postEl = document.getElementById('admStatAvgPosteggi');
+    const medianPostEl = document.getElementById('admStatMedianPosteggi');
     const fieraEl = document.getElementById('admStatAvgFiere');
+    const tutelaEl = document.getElementById('admStatTutela5');
     const hintEl = document.getElementById('admStatAvgHint');
     const fmt = (n) => n > 0
-        ? '\u20ac ' + Math.round(n).toLocaleString('it-IT')
+        ? String.fromCharCode(8364) + ' ' + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.')
         : '-';
     try {
         const { data, error } = await _supabase
@@ -1239,13 +1259,24 @@ async function loadAdminPriceAverages() {
         const avg = (arr) => arr.length
             ? arr.reduce((sum, l) => sum + Number(l.prezzo || 0), 0) / arr.length
             : 0;
+        const median = (arr) => {
+            if (!arr.length) return 0;
+            const prices = arr.map(l => Number(l.prezzo || 0)).sort((a, b) => a - b);
+            const mid = Math.floor(prices.length / 2);
+            return prices.length % 2 ? prices[mid] : (prices[mid - 1] + prices[mid]) / 2;
+        };
+        const postMedian = median(posteggi);
 
-        if (postEl) postEl.textContent = `Posteggi ${fmt(avg(posteggi))}`;
-        if (fieraEl) fieraEl.textContent = `Fiere ${fmt(avg(fiere))}`;
+        if (postEl) postEl.textContent = fmt(avg(posteggi));
+        if (medianPostEl) medianPostEl.textContent = fmt(postMedian);
+        if (fieraEl) fieraEl.textContent = fmt(avg(fiere));
+        if (tutelaEl) tutelaEl.textContent = fmt(postMedian * 0.05);
         if (hintEl) hintEl.textContent = `${posteggi.length} posteggi / ${fiere.length} fiere`;
     } catch (_) {
-        if (postEl) postEl.textContent = 'Posteggi -';
-        if (fieraEl) fieraEl.textContent = 'Fiere -';
+        if (postEl) postEl.textContent = '-';
+        if (medianPostEl) medianPostEl.textContent = '-';
+        if (fieraEl) fieraEl.textContent = '-';
+        if (tutelaEl) tutelaEl.textContent = '-';
         if (hintEl) hintEl.textContent = 'media non disponibile';
     }
 }
