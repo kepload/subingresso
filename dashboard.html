@@ -121,7 +121,7 @@
         <!-- ── ADMIN PANEL (Exclusive) ── -->
         <div id="adminPanel" class="hidden space-y-6">
             <!-- Stats Cards -->
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
                 <div class="bg-white p-3 md:p-4 rounded-xl border border-slate-100 shadow-sm text-center md:text-left">
                     <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Annunci Totali</div>
                     <div id="admStatAnnunci" class="text-xl font-black text-slate-900">—</div>
@@ -143,6 +143,12 @@
                     <div class="text-[9px] font-black text-indigo-400 uppercase tracking-widest mb-1">Valore Annunci</div>
                     <div id="admStatTotalValue" class="text-xl font-black text-indigo-600">—</div>
                     <div id="admStatTotalValueHint" class="text-[9px] text-slate-400 mt-1 truncate">vendita + affitti ×8</div>
+                </div>
+                <div class="bg-gradient-to-br from-cyan-50 to-white p-3 md:p-4 rounded-xl border border-cyan-100 shadow-sm text-center md:text-left" title="Media prezzi richiesti sugli annunci attivi reali in vendita. Affitti esclusi.">
+                    <div class="text-[9px] font-black text-cyan-500 uppercase tracking-widest mb-1">Prezzi Medi</div>
+                    <div id="admStatAvgPosteggi" class="text-sm font-black text-cyan-700">Posteggi -</div>
+                    <div id="admStatAvgFiere" class="text-sm font-black text-cyan-700 mt-0.5">Fiere -</div>
+                    <div id="admStatAvgHint" class="text-[9px] text-slate-400 mt-1 truncate">vendite con prezzo</div>
                 </div>
             </div>
 
@@ -1204,7 +1210,44 @@ async function loadAdminStats() {
         if (el) el.textContent = '€ 0';
     }
 
+    loadAdminPriceAverages();
     loadTopComuni();
+}
+
+async function loadAdminPriceAverages() {
+    const postEl = document.getElementById('admStatAvgPosteggi');
+    const fieraEl = document.getElementById('admStatAvgFiere');
+    const hintEl = document.getElementById('admStatAvgHint');
+    const fmt = (n) => n > 0
+        ? '\u20ac ' + Math.round(n).toLocaleString('it-IT')
+        : '-';
+    try {
+        const { data, error } = await _supabase
+            .from('annunci')
+            .select('prezzo,tipo,stato')
+            .eq('status', 'active')
+            .eq('is_demo', false)
+            .gt('prezzo', 0);
+        if (error) throw error;
+
+        const rows = (data || []).filter(l => {
+            const stato = String(l.stato || '').toLowerCase();
+            return stato.includes('vendita');
+        });
+        const posteggi = rows.filter(l => !String(l.tipo || '').toLowerCase().includes('fiera'));
+        const fiere = rows.filter(l => String(l.tipo || '').toLowerCase().includes('fiera'));
+        const avg = (arr) => arr.length
+            ? arr.reduce((sum, l) => sum + Number(l.prezzo || 0), 0) / arr.length
+            : 0;
+
+        if (postEl) postEl.textContent = `Posteggi ${fmt(avg(posteggi))}`;
+        if (fieraEl) fieraEl.textContent = `Fiere ${fmt(avg(fiere))}`;
+        if (hintEl) hintEl.textContent = `${posteggi.length} posteggi / ${fiere.length} fiere`;
+    } catch (_) {
+        if (postEl) postEl.textContent = 'Posteggi -';
+        if (fieraEl) fieraEl.textContent = 'Fiere -';
+        if (hintEl) hintEl.textContent = 'media non disponibile';
+    }
 }
 
 // Top 10 comuni per page_views (ultimi 30 giorni). RPC SECURITY DEFINER.
