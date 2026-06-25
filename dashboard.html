@@ -3428,15 +3428,45 @@ async function loadMyListings() {
                         class="text-[11px] font-black px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-lg hover:bg-amber-500 hover:border-amber-500 hover:text-white transition text-amber-700 inline-flex items-center gap-1.5">
                         <i class="fas fa-tag text-[10px]"></i> Venduto
                     </button>` : ''}
-                    <button onclick="deleteListing('${l.id}')"
-                        class="text-[11px] font-black px-3 py-1.5 bg-red-50 border border-red-200 rounded-lg hover:bg-red-600 hover:border-red-600 hover:text-white transition text-red-600 inline-flex items-center gap-1.5">
-                        <i class="fas fa-trash-alt text-[10px]"></i> Elimina
-                    </button>
+                    <div class="relative inline-flex">
+                        <button type="button" onclick="toggleListingOptions(event, '${l.id}')"
+                            class="w-8 h-8 border border-slate-200 rounded-lg hover:bg-slate-50 transition text-slate-500 inline-flex items-center justify-center"
+                            aria-label="Opzioni annuncio">
+                            <i class="fas fa-ellipsis-h text-[12px]"></i>
+                        </button>
+                        <div id="listingOptions-${l.id}" class="hidden absolute right-0 top-9 z-30 w-40 bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden">
+                            <button type="button" onclick="deleteListingFromMenu(event, '${l.id}')"
+                                class="w-full text-left text-[11px] font-black px-3 py-2.5 hover:bg-red-50 transition text-red-600 inline-flex items-center gap-2">
+                                <i class="fas fa-trash-alt text-[10px]"></i> Elimina
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>`;
     }).join('');
 }
+
+function closeListingOptionsMenus() {
+    document.querySelectorAll('[id^="listingOptions-"]').forEach(menu => menu.classList.add('hidden'));
+}
+
+function toggleListingOptions(event, id) {
+    event.stopPropagation();
+    const menu = document.getElementById(`listingOptions-${id}`);
+    if (!menu) return;
+    const wasHidden = menu.classList.contains('hidden');
+    closeListingOptionsMenus();
+    if (wasHidden) menu.classList.remove('hidden');
+}
+
+function deleteListingFromMenu(event, id) {
+    event.stopPropagation();
+    closeListingOptionsMenus();
+    deleteListing(id);
+}
+
+document.addEventListener('click', closeListingOptionsMenus);
 
 // ── Pending listings (admin view) ────────────────────────
 async function loadPendingListings() {
