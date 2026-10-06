@@ -125,14 +125,20 @@
                             <label class="field-label">Titolo *</label>
                             <input id="fTitolo" type="text" class="field-input">
                         </div>
+                        <div>
+                            <label class="field-label">Comune *</label>
+                            <input id="fComune" type="text" class="field-input" list="comuniList" autocomplete="off" placeholder="Inizia a scrivere il comune">
+                            <datalist id="comuniList"></datalist>
+                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold">Scrivi almeno 2 lettere e scegli il comune suggerito.</p>
+                        </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="field-label">Regione *</label>
-                                <select id="fRegione" class="field-input"></select>
+                                <label class="field-label">Provincia</label>
+                                <input id="fProvincia" type="text" class="field-input bg-slate-50" readonly tabindex="-1" placeholder="Automatica">
                             </div>
                             <div>
-                                <label class="field-label">Comune *</label>
-                                <input id="fComune" type="text" class="field-input">
+                                <label class="field-label">Regione</label>
+                                <select id="fRegione" class="field-input bg-slate-50" disabled></select>
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
@@ -202,10 +208,12 @@
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=3"></script>
 <script src="js/data.js?v=17"></script>
+<script src="js/comune-picker.js?v=1"></script>
 <script src="js/auth.js?v=20"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const listingId = params.get('id');
+let _comunePicker = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
     if (!listingId) { location.href = '/dashboard'; return; }
@@ -223,6 +231,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         const opt = document.createElement('option');
         opt.value = opt.textContent = r;
         fReg.appendChild(opt);
+    });
+    _comunePicker = createComunePicker({
+        comuneInput: document.getElementById('fComune'),
+        regioneSelect: fReg,
+        provinciaInput: document.getElementById('fProvincia'),
+        datalist: document.getElementById('comuniList'),
+        statusEl: document.getElementById('comuneStatus')
     });
 
     // Load data — niente select('*') perché authenticated non ha grant su tel/email.
@@ -251,8 +266,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Fill form
     document.getElementById('fTitolo').value = l.titolo;
-    document.getElementById('fRegione').value = l.regione;
-    document.getElementById('fComune').value = l.comune;
+    await _comunePicker.setValue(l.comune, l.regione);
     document.getElementById('fSuperficie').value = l.superficie;
     document.getElementById('fPrezzo').value = l.prezzo;
     document.getElementById('fDescrizione').value = l.descrizione;
@@ -351,16 +365,17 @@ async function updateAnnuncio() {
 
     // Validazione campi obbligatori
     const titolo = document.getElementById('fTitolo').value.trim();
-    const regione = document.getElementById('fRegione').value;
-    const comune = document.getElementById('fComune').value.trim();
+    const location = _comunePicker && _comunePicker.getValue();
+    const regione = location?.regione || '';
+    const comune = location?.comune || '';
     const prezzo = parseFloat(document.getElementById('fPrezzo').value.replace(/\./g, '').replace(',', '.'));
 
     const descrizione = document.getElementById('fDescrizione').value.trim();
     const nome = document.getElementById('fNome').value.trim();
     const tel = document.getElementById('fTel').value.trim();
 
-    if (!titolo || !regione || !comune) {
-        showToast('Compila tutti i campi obbligatori: Titolo, Regione e Comune.', 'warning');
+    if (!titolo || !location) {
+        showToast('Scegli un comune valido dall’elenco suggerito.', 'warning');
         return;
     }
     if (!nome || !tel) {
@@ -415,6 +430,7 @@ async function updateAnnuncio() {
         const updated = {
             titolo,
             regione,
+            provincia: location.provincia,
             comune,
             superficie: parseFloat(document.getElementById('fSuperficie').value.replace(',', '.')),
             prezzo,

@@ -210,19 +210,26 @@
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
                     <h2 class="text-2xl font-black mb-1">Dove si trova?</h2>
-                    <p class="text-slate-500 font-medium mb-8 text-sm">Regione, comune e tipo di mercato.</p>
+                    <p class="text-slate-500 font-medium mb-8 text-sm">Scegli il comune: regione e provincia le inseriamo noi.</p>
 
                     <div class="space-y-6">
                         <div>
-                            <label class="field-label">Regione *</label>
-                            <select id="fRegione" class="field-input">
-                                <option value="">Scegli la regione...</option>
-                            </select>
-                        </div>
-                        <div>
                             <label class="field-label">Comune *</label>
-                            <input id="fComune" type="text" placeholder="es. Milano" class="field-input" list="comuniList" autocomplete="off">
+                            <input id="fComune" type="text" placeholder="Inizia a scrivere, es. Lazise" class="field-input" list="comuniList" autocomplete="off">
                             <datalist id="comuniList"></datalist>
+                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold">Scrivi almeno 2 lettere e scegli il comune suggerito.</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="field-label">Provincia</label>
+                                <input id="fProvincia" type="text" class="field-input bg-slate-50" readonly tabindex="-1" placeholder="Automatica">
+                            </div>
+                            <div>
+                                <label class="field-label">Regione</label>
+                                <select id="fRegione" class="field-input bg-slate-50" disabled>
+                                    <option value="">Automatica</option>
+                                </select>
+                            </div>
                         </div>
                         <div>
                             <label class="field-label">Tipo di mercato *</label>
@@ -546,6 +553,7 @@
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/page-view-tracker.js?v=3"></script>
 <script src="js/data.js?v=17"></script>
+<script src="js/comune-picker.js?v=1"></script>
 <script src="js/ui-components.js?v=11"></script>
 <script src="js/auth.js?v=20"></script>
 <script>
@@ -556,6 +564,7 @@ const STEP_NAMES = ['', 'Tipo annuncio', 'Posizione', 'Il posteggio', 'Prezzo', 
 const _TOTAL_STEPS = 6;
 const _DRAFT_KEY = 'subingresso_draft_v1';
 let _pendingDraft = null;
+let _comunePicker = null;
 
 // ── Step 6: scelta pubblicazione ──────────────────────────
 // _pubChoice: 'free' | '10d' | '30d' | '90d'. Default 'free' (preselezionato).
@@ -722,8 +731,7 @@ function _applyPendingDraft() {
     const d = _pendingDraft;
     if (d.stato === 'Affitto mensile') document.getElementById('statoAffitto').checked = true;
     else document.getElementById('statoVendita').checked = true;
-    document.getElementById('fRegione').value    = d.regione || '';
-    document.getElementById('fComune').value     = d.comune  || '';
+    if (_comunePicker) _comunePicker.setValue(d.comune || '', d.regione || '');
     const draftTipo = d.tipo === 'Fiera' ? 'Fiera' : 'Mercato settimanale';
     document.getElementById('fTipo').value = draftTipo;
     const tipoIdx = ['Mercato settimanale', 'Fiera'].indexOf(draftTipo);
@@ -776,10 +784,10 @@ function prevStep() {
 function _validateStep(n) {
     clearStepError();
     if (n === 2) {
-        if (!document.getElementById('fRegione').value)
-            return _err('Seleziona la regione.');
         if (!document.getElementById('fComune').value.trim())
             return _err('Inserisci il comune.');
+        if (!_comunePicker || !_comunePicker.getValue())
+            return _err('Scegli il comune dall’elenco suggerito. Regione e provincia saranno inserite automaticamente.');
     }
     if (n === 3) {
         const isFiera = document.getElementById('fTipo').value === 'Fiera';
@@ -1137,20 +1145,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         sel.appendChild(opt);
     });
 
-    // Autocomplete comuni (filtra on input)
-    const comuneInput = document.getElementById('fComune');
-    const dl = document.getElementById('comuniList');
-    comuneInput.addEventListener('input', function () {
-        const val = this.value.toLowerCase();
-        dl.innerHTML = '';
-        if (val.length < 2 || typeof COMUNI_IT === 'undefined') return;
-        COMUNI_IT.filter(c => c.toLowerCase().startsWith(val))
-            .slice(0, 15)
-            .forEach(c => {
-                const opt = document.createElement('option');
-                opt.value = c;
-                dl.appendChild(opt);
-            });
+    _comunePicker = createComunePicker({
+        comuneInput: document.getElementById('fComune'),
+        regioneSelect: sel,
+        provinciaInput: document.getElementById('fProvincia'),
+        datalist: document.getElementById('comuniList'),
+        statusEl: document.getElementById('comuneStatus')
     });
 
     // Prefill immediato dalla cache (sync, no network) — evita race con getSession
@@ -1503,10 +1503,13 @@ async function submitAnnuncio() {
         const statoChecked = document.querySelector('input[name="stato"]:checked');
         if (!statoChecked) throw new Error('Nessun tipo di annuncio selezionato.');
 
+        const location = _comunePicker && _comunePicker.getValue();
+        if (!location) throw new Error('Comune non valido: torna allo step 2 e sceglilo dall’elenco.');
         const form = {
             titolo:      document.getElementById('fTitolo').value.trim(),
-            regione:     document.getElementById('fRegione').value,
-            comune:      document.getElementById('fComune').value.trim(),
+            regione:     location.regione,
+            provincia:   location.provincia,
+            comune:      location.comune,
             tipo:        document.getElementById('fTipo').value,
             settore:     document.getElementById('fMerce').value,
             superficie:  parseFloat(document.getElementById('fSuperficie').value),
