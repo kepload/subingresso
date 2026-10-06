@@ -5,6 +5,7 @@
 
 let _currentListing = null;
 let _contactFetched = false; // true dopo che initPage ha fetchato tel per utente loggato
+const _moderationPreview = new URLSearchParams(location.search).get('anteprima') === 'moderazione';
 
 // Mette davanti gli annunci in Vetrina attiva (chi paga ha priorità di
 // visibilità nei box "consigliati"). I featured vengono mescolati per dare
@@ -64,7 +65,7 @@ async function loadListing() {
     if (!idParam) return null;
 
     // Usa i dati pre-renderizzati dal server se disponibili (evita un secondo fetch)
-    if (window.__SSR_LISTING__ && window.__SSR_LISTING__.id) {
+    if (!_moderationPreview && window.__SSR_LISTING__ && window.__SSR_LISTING__.id) {
         return window.__SSR_LISTING__;
     }
 
@@ -73,7 +74,7 @@ async function loadListing() {
     try {
         const { data } = await _supabase
             .from('annunci')
-            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier, saved_count')
+            .select('id, titolo, descrizione, stato, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, user_id, status, created_at, featured, featured_until, featured_tier, saved_count, expires_at, video_url')
             .eq('id', idParam)
             .maybeSingle();
 
@@ -88,7 +89,7 @@ async function loadListing() {
         console.error("Errore caricamento annuncio:", e);
     }
 
-    if (!listing) {
+    if (!listing && !_moderationPreview) {
         const numId = parseInt(idParam);
         listing = LISTINGS.find(l => l.id === numId);
     }
@@ -97,6 +98,14 @@ async function loadListing() {
 }
 
 async function initPage() {
+    if (_moderationPreview) {
+        try {
+            if (!await ListingModeration.authorize()) return;
+        } catch (_) {
+            ListingModeration.showUnavailable('Impossibile caricare l’anteprima. Riprova dalla dashboard.');
+            return;
+        }
+    }
     const listing = await loadListing();
     _currentListing = listing;
 
@@ -104,6 +113,10 @@ async function initPage() {
     const detailEl   = document.getElementById('detailLayout');
 
     if (!listing) {
+        if (_moderationPreview) {
+            ListingModeration.showUnavailable('Annuncio non disponibile. Torna alla dashboard e riprova.');
+            return;
+        }
         if (notFoundEl) notFoundEl.classList.remove('hidden');
         if (detailEl) detailEl.classList.add('hidden');
         return;
@@ -142,7 +155,7 @@ async function initPage() {
 
     // Mostra barra contatti fissa su mobile
     const mobileCta = document.getElementById('mobileCta');
-    if (mobileCta) {
+    if (mobileCta && !_moderationPreview) {
         mobileCta.classList.add('visible');
         const mainContent = document.getElementById('mainContent');
         if (mainContent) mainContent.classList.add('has-cta');
@@ -248,6 +261,7 @@ async function initPage() {
 
     // Traccia visita diretta (+2) e mostra contatore — completamente asincrono e isolato
     (async () => {
+        if (_moderationPreview) return;
         try {
             await _supabase.rpc('increment_views', { listing_id: listing.id, amount: Math.random() < 0.5 ? 1 : 2 });
             const { data: vd } = await _supabase
@@ -287,7 +301,7 @@ async function initPage() {
     }
     
     const allImgs = (listing.img_urls && listing.img_urls.length > 0) ? listing.img_urls : (extra && extra.images ? extra.images : []);
-    const showImgs = isFeatured ? allImgs : (allImgs.length > 0 ? [allImgs[0]] : []);
+    const showImgs = (isFeatured || _moderationPreview) ? allImgs : (allImgs.length > 0 ? [allImgs[0]] : []);
     
     if (coverContainer && showImgs.length > 0) {
         let imgsHtml = '';
@@ -366,8 +380,10 @@ async function initPage() {
         ]
     };
     let _ldEl = document.getElementById('_jsonLd');
-    if (!_ldEl) { _ldEl = document.createElement('script'); _ldEl.id = '_jsonLd'; _ldEl.type = 'application/ld+json'; document.head.appendChild(_ldEl); }
-    _ldEl.textContent = JSON.stringify(_jsonLd);
+    if (!_moderationPreview) {
+        if (!_ldEl) { _ldEl = document.createElement('script'); _ldEl.id = '_jsonLd'; _ldEl.type = 'application/ld+json'; document.head.appendChild(_ldEl); }
+        _ldEl.textContent = JSON.stringify(_jsonLd);
+    }
 
     // Scheda tecnica (Sicurezza: escapeHTML)
     const techRows = [
@@ -377,6 +393,10 @@ async function initPage() {
         { icon:'fa-calendar-alt',   label:'Giorni',     val: listing.giorni },
         { icon:'fa-exchange-alt',   label:'Stato',      val: listing.stato },
     ];
+    if (_moderationPreview && extra && typeof extra === 'object') {
+        if (extra.nome_fiera) techRows.push({ icon: 'fa-store', label: 'Nome fiera', val: extra.nome_fiera });
+        if (extra.note_fiera) techRows.push({ icon: 'fa-info-circle', label: 'Note fiera', val: extra.note_fiera });
+    }
     const rowsGrid = document.getElementById('detailRows');
     if (rowsGrid) {
         rowsGrid.innerHTML = techRows.map(r => `
@@ -391,6 +411,7 @@ async function initPage() {
 
     // Annunci correlati — fetch da Supabase nella stessa regione
     (async () => {
+        if (_moderationPreview) return;
         const relatedSection = document.getElementById('relatedSection');
         const relatedGrid    = document.getElementById('relatedGrid');
         if (!relatedSection || !relatedGrid || !listing.regione) return;
@@ -514,6 +535,7 @@ async function initPage() {
     } catch (e) {
         console.error("Errore check proprietario:", e);
     }
+    if (_moderationPreview) ListingModeration.mount(listing);
 }
 
 // ── Azioni ──────────────────────────────────────────────

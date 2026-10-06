@@ -108,6 +108,14 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 
 ## 📊 Visualizzazioni Annunci
 
+### Anteprima moderazione admin (7 ottobre 2026)
+
+- Dashboard: titolo e pulsante `Anteprima completa` aprono `/annuncio?id=...&anteprima=moderazione`.
+- `api/annuncio.js` invia solo il template per l’anteprima, con `private, no-store` e `noindex, nofollow`. I contenuti vengono letti dal client solo dopo verifica sessione e `profiles.is_admin`, attraverso le RLS esistenti; nessuna chiave privilegiata nel frontend.
+- `js/listing-moderation.js` gestisce barra fissa Approva/Rifiuta, motivo del rifiuto, errori e logout. Update solo da `pending`, con controllo del record restituito; conserva i dettagli aggiornati. I trigger email esistenti restano invariati.
+- Il dettaglio mostra tutte le foto, eventuale video e note fiera, senza incrementare visualizzazioni né creare JSON-LD durante la revisione. Script dettaglio aggiornato a `v=20` nei due template.
+- Verifica: `python scripts/verify-listing-moderation.py` (Chromium e WebKit, dati simulati); `scripts/verify-listing-moderation.sql` controlla accessi e colonne usando fixture temporanee con le policy live, senza moderare annunci reali.
+
 ### Statistiche venditore (correzione 6 ottobre 2026)
 
 - Il pannello `Performance posteggi` chiamava `dashboard_seller_analytics`, ma `PATCH_LISTING_ANALYTICS_20260620.sql` non era mai stata applicata in produzione. RPC e `listing_stats_daily` mancavano: ogni account vedeva "Statistiche in attivazione".

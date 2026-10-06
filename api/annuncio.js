@@ -70,10 +70,13 @@ function buildDesc(l) {
 
 module.exports = async function handler(req, res) {
     const id = (req.query && req.query.id) ? String(req.query.id).trim() : '';
+    const moderationPreview = req.query?.anteprima === 'moderazione';
 
     let listing = null;
 
-    if (id) {
+    // L'anteprima serve solo il template vuoto. I dati privati vengono letti
+    // dal client autenticato, dopo il controllo admin, usando le RLS esistenti.
+    if (id && !moderationPreview) {
         try {
             const r = await fetch(
                 `${SUPABASE_URL}/rest/v1/annunci?id=eq.${encodeURIComponent(id)}&status=neq.deleted&select=id,titolo,descrizione,stato,tipo,settore,regione,provincia,comune,superficie,giorni,prezzo,img_urls,user_id,status,created_at,featured,featured_until,expires_at`,
@@ -250,11 +253,13 @@ module.exports = async function handler(req, res) {
     const statoBg = listing && listing.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600';
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.setHeader('Cache-Control', 'public, s-maxage=180, stale-while-revalidate=600');
+    res.setHeader('Cache-Control', moderationPreview ? 'private, no-store' : 'public, s-maxage=180, stale-while-revalidate=600');
+    if (moderationPreview) res.setHeader('X-Robots-Tag', 'noindex, nofollow');
     res.status(200).send(`<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
+    ${moderationPreview ? '<meta name="robots" content="noindex, nofollow">' : ''}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
     <title>${esc(title)}</title>
@@ -300,7 +305,7 @@ module.exports = async function handler(req, res) {
 
     <div id="notFound" class="${notFound ? '' : 'hidden'} text-center py-24">
         <i class="fas fa-store text-slate-200 text-6xl mb-4"></i>
-        <p class="text-slate-400 font-bold text-xl">Annuncio non trovato</p>
+        <p class="text-slate-400 font-bold text-xl">${moderationPreview ? 'Caricamento anteprima riservata…' : 'Annuncio non trovato'}</p>
         <a href="/annunci" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition">
             Torna agli annunci
         </a>
@@ -445,7 +450,8 @@ module.exports = async function handler(req, res) {
 <script src="/js/data.js?v=17"></script>
 <script src="/js/ui-components.js?v=11"></script>
 <script src="/js/auth.js?v=18"></script>
-<script src="/js/pages/annuncio-detail.js?v=19"></script>
+<script src="/js/listing-moderation.js?v=1"></script>
+<script src="/js/pages/annuncio-detail.js?v=20"></script>
 </body>
 </html>`);
 };
