@@ -108,6 +108,14 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 
 ## 📊 Visualizzazioni Annunci
 
+### Statistiche venditore (correzione 6 ottobre 2026)
+
+- Il pannello `Performance posteggi` chiamava `dashboard_seller_analytics`, ma `PATCH_LISTING_ANALYTICS_20260620.sql` non era mai stata applicata in produzione. RPC e `listing_stats_daily` mancavano: ogni account vedeva "Statistiche in attivazione".
+- Patch applicata al DB il 6 ottobre 2026, in transazione. Il deploy Vercel non esegue SQL: le nuove patch database vanno applicate e verificate separatamente.
+- RPC privata per `authenticated`, filtrata su `auth.uid()`, senza limite di 50 annunci. Totali precedenti conservati; dati giornalieri disponibili solo dall'attivazione. Gli incrementi casuali del vecchio cron Vetrina non alimentano il grafico.
+- Controlli: `scripts/verify-seller-analytics.sql` prova tutti i profili con ruolo autenticato, periodi 7/30/90, isolamento, viste/contatti/preferiti e annulla gli eventi di prova con `ROLLBACK`. `node scripts/verify-seller-analytics.js` verifica il pannello e la sintassi degli script inline.
+- Se il caricamento fallisce, il pannello offre `Riprova` e nasconde il grafico vuoto. Risposte di richieste precedenti non sovrascrivono il periodo scelto.
+
 - Colonna `visualizzazioni integer DEFAULT 0` in `annunci`. Funzione DB: `increment_views(listing_id uuid, amount integer)` SECURITY DEFINER con GRANT a anon/authenticated.
 - Anteprima card: +1 via `observeCardViews()` in `data.js` — scroll listener con `getBoundingClientRect`. Chiamarla dopo ogni render `buildCard()`.
 - **`_supabase.rpc().catch()` NON ESISTE** in Supabase JS v2 — usare `async/await`.

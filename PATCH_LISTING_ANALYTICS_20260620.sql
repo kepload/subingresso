@@ -8,6 +8,10 @@
 --  - Compatibile con le funzioni esistenti increment_views/increment_tel_clicks.
 -- ============================================================================
 
+-- Applicare al database: il deploy Vercel non esegue i file SQL.
+-- Un errore annulla l'intera installazione, evitando funzioni installate a meta'.
+BEGIN;
+
 CREATE TABLE IF NOT EXISTS public.listing_stats_daily (
     annuncio_id     uuid NOT NULL REFERENCES public.annunci(id) ON DELETE CASCADE,
     user_id         uuid NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
@@ -161,28 +165,8 @@ $$;
 
 GRANT EXECUTE ON FUNCTION public.increment_tel_clicks(uuid) TO anon, authenticated;
 
--- Se il cron vetrina esiste, da ora alimenta anche gli aggregati giornalieri.
-CREATE OR REPLACE FUNCTION public.increment_featured_views()
-RETURNS void
-LANGUAGE plpgsql
-SECURITY DEFINER
-SET search_path = public
-AS $$
-DECLARE
-    r record;
-    v_amount integer;
-BEGIN
-    FOR r IN
-        SELECT id
-        FROM public.annunci
-        WHERE featured = true
-          AND featured_until > now()
-          AND status = 'active'
-    LOOP
-        v_amount := (floor(random() * 6) + 3)::int;
-        PERFORM public.increment_views(r.id, v_amount);
-    END LOOP;
-END $$;
+-- Il grafico registra gli eventi dei client. Non aggiungere al giornaliero
+-- gli incrementi casuali del vecchio cron Vetrina.
 
 -- Estende il trigger esistente dei preferiti senza perdere saved_count.
 CREATE OR REPLACE FUNCTION public._sync_saved_count()
@@ -255,7 +239,6 @@ BEGIN
         WHERE a.user_id = v_user_id
           AND COALESCE(a.status, '') <> 'deleted'
         ORDER BY a.visualizzazioni DESC NULLS LAST, a.created_at DESC
-        LIMIT 50
     )
     SELECT COALESCE(jsonb_agg(jsonb_build_object(
         'id', ml.id,
@@ -313,6 +296,9 @@ BEGIN
     );
 END $$;
 
+REVOKE ALL ON FUNCTION public.dashboard_seller_analytics(integer) FROM PUBLIC, anon;
 GRANT EXECUTE ON FUNCTION public.dashboard_seller_analytics(integer) TO authenticated;
 
 NOTIFY pgrst, 'reload schema';
+
+COMMIT;
