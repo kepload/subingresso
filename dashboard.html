@@ -139,34 +139,40 @@
                     <div id="admStatRevenue" class="text-xl font-black text-amber-500 transition-colors">—</div>
                     <div id="admStatRevenueToday" class="hidden mt-1 inline-block bg-emerald-100 text-emerald-700 text-[9px] font-black px-1.5 py-0.5 rounded animate-pulse">+ € 0 oggi</div>
                 </div>
-                <div class="bg-gradient-to-br from-indigo-50 to-white p-3 md:p-4 rounded-xl border border-indigo-100 shadow-sm text-center md:text-left" title="Stima conservativa: vendita = max(prezzo, 1.000€) per neutralizzare i prezzi civetta. Affitti = canone annuale × 8 (capitalizzazione).">
-                    <div class="text-[9px] font-black text-indigo-400 uppercase tracking-widest mb-1">Valore Annunci</div>
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-3 md:p-4 rounded-xl border border-indigo-100 shadow-sm text-center md:text-left" title="Somma dei prezzi richiesti negli annunci attivi: prezzi di vendita più un anno dei canoni di affitto.">
+                    <div class="text-[9px] font-black text-indigo-400 uppercase tracking-widest mb-1">Valore totale richiesto</div>
                     <div id="admStatTotalValue" class="text-xl font-black text-indigo-600">—</div>
-                    <div id="admStatTotalValueHint" class="text-[9px] text-slate-400 mt-1 truncate">vendita + affitti ×8</div>
+                    <div id="admStatTotalValueHint" class="text-[9px] font-bold text-slate-500 mt-1">Vendite + 1 anno di affitti</div>
+                    <div class="mt-2 grid grid-cols-2 gap-2 text-left">
+                        <div class="bg-white/80 border border-indigo-100 rounded-lg px-2 py-1.5">
+                            <div class="text-[8px] font-black text-slate-400 uppercase tracking-widest">Vendita</div>
+                            <div id="admStatSaleValue" class="text-[11px] font-black text-indigo-700">—</div>
+                        </div>
+                        <div class="bg-white/80 border border-indigo-100 rounded-lg px-2 py-1.5">
+                            <div class="text-[8px] font-black text-slate-400 uppercase tracking-widest">Affitto / anno</div>
+                            <div id="admStatRentValue" class="text-[11px] font-black text-indigo-700">—</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-br from-cyan-50 to-white p-3 md:p-4 rounded-xl border border-cyan-100 shadow-sm text-center md:text-left" title="Prezzi richiesti sugli annunci attivi reali in vendita. Affitti esclusi. Il 5% serve solo come riferimento rapido per valutare una tutela proporzionata.">
-                    <div class="text-[9px] font-black text-cyan-500 uppercase tracking-widest mb-2">Prezzi Vendita</div>
+                <div class="bg-gradient-to-br from-cyan-50 to-white p-3 md:p-4 rounded-xl border border-cyan-100 shadow-sm text-center md:text-left" title="Prezzi richiesti negli annunci attivi in vendita. Gli affitti non sono inclusi.">
+                    <div class="text-[9px] font-black text-cyan-500 uppercase tracking-widest mb-2">Prezzi medi di vendita</div>
                     <div class="grid grid-cols-2 gap-3">
                         <div>
-                            <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Media</div>
+                            <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Media posteggi</div>
                             <div id="admStatAvgPosteggi" class="text-xl font-black text-cyan-700">-</div>
                         </div>
                         <div>
-                            <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Mediana</div>
+                            <div class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Prezzo tipico</div>
                             <div id="admStatMedianPosteggi" class="text-xl font-black text-cyan-700">-</div>
                         </div>
                     </div>
-                    <div class="mt-2 grid grid-cols-2 gap-2">
+                    <div class="mt-2">
                         <div class="bg-white/70 border border-cyan-100 rounded-lg px-2 py-1">
-                            <div class="text-[8px] font-black text-slate-400 uppercase tracking-widest">Fiere media</div>
+                            <div class="text-[8px] font-black text-slate-400 uppercase tracking-widest">Media fiere</div>
                             <div id="admStatAvgFiere" class="text-[11px] font-black text-cyan-700">-</div>
                         </div>
-                        <div class="bg-white/70 border border-cyan-100 rounded-lg px-2 py-1">
-                            <div class="text-[8px] font-black text-slate-400 uppercase tracking-widest">5% mediana</div>
-                            <div id="admStatTutela5" class="text-[11px] font-black text-cyan-700">-</div>
-                        </div>
                     </div>
-                    <div id="admStatAvgHint" class="text-[9px] text-slate-400 mt-1 truncate">vendite con prezzo</div>
+                    <div id="admStatAvgHint" class="text-[9px] font-bold text-slate-500 mt-1">Solo annunci attivi con prezzo</div>
                 </div>
             </div>
 
@@ -1207,18 +1213,25 @@ async function loadAdminStats() {
         document.getElementById('admStatRevenue').textContent = '€ 0';
     }
 
-    // Valore Annunci: stima conservativa del valore di mercato degli annunci attivi
+    // Valore annunci: somma esatta dei prezzi attivi. Il prezzo degli affitti e' gia' annuale.
     try {
         const { data: tv } = await _supabase.rpc('admin_total_listing_value');
         const tvEl   = document.getElementById('admStatTotalValue');
         const hintEl = document.getElementById('admStatTotalValueHint');
+        const saleEl = document.getElementById('admStatSaleValue');
+        const rentEl = document.getElementById('admStatRentValue');
         if (tv && !tv.error && tvEl) {
             const total = Number(tv.total_eur || 0);
-            tvEl.textContent = '€ ' + total.toLocaleString('it-IT');
+            const sales = Number(tv.vendita_eur || 0);
+            const rents = Number(tv.affitto_eur || 0);
+            const fmtValue = (n) => '€ ' + n.toLocaleString('it-IT');
+            tvEl.textContent = fmtValue(total);
+            if (saleEl) saleEl.textContent = fmtValue(sales);
+            if (rentEl) rentEl.textContent = fmtValue(rents);
             if (hintEl) {
                 const nv = Number(tv.n_vendita || 0);
                 const na = Number(tv.n_affitto || 0);
-                hintEl.textContent = `${nv} vendita + ${na} affitto ×8`;
+                hintEl.textContent = `${nv} in vendita + ${na} in affitto (1 anno)`;
             }
         } else if (tvEl) {
             tvEl.textContent = '€ 0';
@@ -1236,7 +1249,6 @@ async function loadAdminPriceAverages() {
     const postEl = document.getElementById('admStatAvgPosteggi');
     const medianPostEl = document.getElementById('admStatMedianPosteggi');
     const fieraEl = document.getElementById('admStatAvgFiere');
-    const tutelaEl = document.getElementById('admStatTutela5');
     const hintEl = document.getElementById('admStatAvgHint');
     const fmt = (n) => n > 0
         ? String.fromCharCode(8364) + ' ' + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.')
@@ -1270,13 +1282,11 @@ async function loadAdminPriceAverages() {
         if (postEl) postEl.textContent = fmt(avg(posteggi));
         if (medianPostEl) medianPostEl.textContent = fmt(postMedian);
         if (fieraEl) fieraEl.textContent = fmt(avg(fiere));
-        if (tutelaEl) tutelaEl.textContent = fmt(postMedian * 0.05);
-        if (hintEl) hintEl.textContent = `${posteggi.length} posteggi / ${fiere.length} fiere`;
+        if (hintEl) hintEl.textContent = `${posteggi.length} posteggi e ${fiere.length} fiere con prezzo`;
     } catch (_) {
         if (postEl) postEl.textContent = '-';
         if (medianPostEl) medianPostEl.textContent = '-';
         if (fieraEl) fieraEl.textContent = '-';
-        if (tutelaEl) tutelaEl.textContent = '-';
         if (hintEl) hintEl.textContent = 'media non disponibile';
     }
 }
