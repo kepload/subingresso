@@ -4,9 +4,45 @@
 
     let comuniPromise = null;
 
+    // Nomi ancora usati localmente dopo fusioni o cambi di denominazione.
+    // Il valore è sempre il comune ufficiale ISTAT attuale da salvare.
+    const COMUNE_ALIASES = {
+        'alano di piave': 'Setteville',
+        'albaredo arnaboldi': 'Campospinoso Albaredo',
+        'bardello': 'Bardello con Malgesso e Bregano',
+        'bregano': 'Bardello con Malgesso e Bregano',
+        'campospinoso': 'Campospinoso Albaredo',
+        'carceri': "Santa Caterina d'Este",
+        'casorzo': 'Casorzo Monferrato',
+        'castegnero': 'Castegnero Nanto',
+        'gambugliano': 'Sovizzo',
+        'grana': 'Grana Monferrato',
+        'ionadi': 'Jonadi',
+        'lirio': 'Montalto Pavese',
+        'malgesso': 'Bardello con Malgesso e Bregano',
+        'montagna': 'Montagna sulla strada del vino',
+        'monteciccardo': 'Pesaro',
+        'montemagno': 'Montemagno Monferrato',
+        'moransengo': 'Moransengo-Tonengo',
+        'murisengo': 'Murisengo Monferrato',
+        'nanto': 'Castegnero Nanto',
+        'pont canavese': 'Pont Canavese',
+        'popoli': 'Popoli Terme',
+        'quero vas': 'Setteville',
+        'ronago': 'Uggiate con Ronago',
+        'salorno': 'Salorno sulla strada del vino',
+        'tonengo': 'Moransengo-Tonengo',
+        'tripi': 'Tripi - Abakainon',
+        'uggiate trevano': 'Uggiate con Ronago',
+        'vighizzolo d este': "Santa Caterina d'Este"
+    };
+
     function normalize(value) {
         return String(value || '').trim().toLocaleLowerCase('it-IT').normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '').replace(/[’`]/g, "'").replace(/\s+/g, ' ');
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-z0-9]+/g, ' ')
+            .trim()
+            .replace(/\s+/g, ' ');
     }
 
     function canonicalRegion(regione) {
@@ -17,7 +53,7 @@
 
     function loadComuni() {
         if (!comuniPromise) {
-            comuniPromise = fetch('/data/comuni.json', { cache: 'force-cache' })
+            comuniPromise = fetch('/data/comuni-picker.json?v=20260221', { cache: 'force-cache' })
                 .then(response => {
                     if (!response.ok) throw new Error('Elenco comuni non disponibile');
                     return response.json();
@@ -55,11 +91,12 @@
         function resolve(rawValue, preferredRegion) {
             const siglaMatch = String(rawValue || '').match(/\(([A-Z]{2})\)\s*$/i);
             const cleanValue = String(rawValue || '').replace(/\s*\([A-Z]{2}\)\s*$/i, '');
-            const key = normalize(cleanValue);
+            const enteredKey = normalize(cleanValue);
+            const key = normalize(COMUNE_ALIASES[enteredKey] || cleanValue);
             let matches = comuni.filter(row => row._key === key);
             if (siglaMatch) matches = matches.filter(row => row.sigla.toLowerCase() === siglaMatch[1].toLowerCase());
             if (matches.length > 1 && preferredRegion) {
-                const regionMatch = matches.find(row => canonicalRegion(row.regione) === preferredRegion);
+                const regionMatch = matches.find(row => canonicalRegion(row.regione) === canonicalRegion(preferredRegion));
                 if (regionMatch) return regionMatch;
             }
             return matches.length === 1 ? matches[0] : null;
@@ -69,8 +106,11 @@
             const key = normalize(rawValue);
             datalist.innerHTML = '';
             if (key.length < 2) return;
+            const words = key.split(' ').filter(Boolean);
             const starts = comuni.filter(row => row._key.startsWith(key));
-            const contains = starts.length >= 20 ? [] : comuni.filter(row => !row._key.startsWith(key) && row._key.includes(key));
+            const contains = starts.length >= 20 ? [] : comuni.filter(row =>
+                !row._key.startsWith(key) && words.every(word => row._key.includes(word))
+            );
             [...starts, ...contains].slice(0, 20).forEach(row => {
                 const option = document.createElement('option');
                 option.value = `${row.nome} (${row.sigla})`;
@@ -92,7 +132,16 @@
             if (found) apply(found);
         });
 
-        const ready = loadComuni().then(rows => { comuni = rows; });
+        const ready = loadComuni().then(rows => {
+            comuni = rows;
+            const found = resolve(comuneInput.value, regioneSelect.value);
+            if (found) apply(found);
+            else fillSuggestions(comuneInput.value);
+        }).catch(error => {
+            statusEl.textContent = 'Impossibile caricare i comuni. Ricarica la pagina e riprova.';
+            statusEl.className = 'text-xs text-red-600 mt-2 font-bold';
+            throw error;
+        });
         return {
             ready,
             setValue(comune, regione) {
