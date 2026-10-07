@@ -16,6 +16,95 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+        .dashboard-main { padding: 24px 16px; }
+        .dashboard-user { min-width: 0; }
+        .dashboard-user h1 { font-size: 1.5rem; overflow-wrap: anywhere; }
+        .dashboard-user #userEmail { overflow-wrap: anywhere; }
+        .dashboard-tabs {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 6px;
+            padding: 6px;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            background: #eef2f7;
+        }
+        .dashboard-tab {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            min-width: 0;
+            min-height: 60px;
+            padding: 10px;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            color: #475569;
+            text-align: left;
+            transition: background-color .15s, border-color .15s, box-shadow .15s;
+        }
+        .dashboard-tab:hover { background: #f8fafc; color: #0f172a; }
+        .dashboard-tab[aria-selected="true"] {
+            background: #fff;
+            border-color: #bfdbfe;
+            color: #1d4ed8;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, .06);
+        }
+        .dashboard-tab:focus-visible, .dashboard-panel:focus-visible {
+            outline: 3px solid #2563eb;
+            outline-offset: 3px;
+        }
+        .dashboard-tab-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 28px;
+            height: 28px;
+            border-radius: 9px;
+            background: #e2e8f0;
+            color: #64748b;
+            font-size: 12px;
+        }
+        .dashboard-tab[aria-selected="true"] .dashboard-tab-icon { background: #dbeafe; color: #2563eb; }
+        .dashboard-tab-copy { min-width: 0; }
+        .dashboard-tab-title { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; font-size: 12px; font-weight: 800; line-height: 1.4; }
+        .dashboard-tab-description { display: none; }
+        .dashboard-tab-count { min-width: 19px; padding: 2px 5px; border-radius: 6px; background: #e2e8f0; color: #475569; font-size: 10px; font-weight: 800; line-height: 1.3; }
+        .dashboard-tab[aria-selected="true"] .dashboard-tab-count { background: #dbeafe; color: #1d4ed8; }
+        .dashboard-panel { margin-top: 20px; min-width: 0; }
+        .dashboard-panel-header { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+        .dashboard-panel-title { font-size: 18px; font-weight: 800; letter-spacing: -.025em; }
+        .dashboard-panel-description { margin-top: 3px; color: #64748b; font-size: 13px; line-height: 1.6; }
+        .dashboard-panel-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            align-self: flex-start;
+            flex-shrink: 0;
+            min-height: 44px;
+            padding: 10px 14px;
+            border: 1px solid #dbeafe;
+            border-radius: 12px;
+            background: #eff6ff;
+            color: #1d4ed8;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .dashboard-panel-action:hover { background: #dbeafe; }
+        @media (min-width: 640px) {
+            .dashboard-main { padding: 36px 24px; }
+            .dashboard-user h1 { font-size: 1.875rem; }
+            .dashboard-panel-header { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; }
+            .dashboard-panel-action { align-self: auto; }
+        }
+        @media (min-width: 768px) {
+            .dashboard-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .dashboard-tab { min-height: 76px; padding: 12px; gap: 10px; }
+            .dashboard-tab-icon { flex-basis: 34px; height: 34px; font-size: 14px; }
+            .dashboard-tab-title { font-size: 13px; }
+            .dashboard-tab-description { display: block; margin-top: 3px; color: #64748b; font-size: 11px; line-height: 1.5; }
+        }
+
         /* Highlight temporaneo della valutazione appena salvata (post calcolatore) */
         @keyframes valutazione-pulse {
             0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); border-color: #10b981; }
@@ -55,7 +144,7 @@
 </header>
 
 <!-- ══════════════ MAIN ══════════════ -->
-<main class="flex-grow max-w-5xl mx-auto px-6 py-10 w-full">
+<main class="dashboard-main flex-grow max-w-5xl mx-auto w-full">
 
     <!-- Loading state -->
     <div id="loadingState" class="text-center py-24">
@@ -97,7 +186,7 @@
                         <i class="fas fa-user"></i>
                     </div>
                 </button>
-                <div>
+                <div class="dashboard-user">
                     <h1 id="welcomeTitle" class="text-3xl font-black tracking-tight">Ciao!</h1>
                     <p class="text-slate-400 font-medium mt-0.5 text-sm" id="userEmail"></p>
                     <button onclick="goToProfilo()" class="text-xs text-blue-500 font-bold hover:underline mt-1 flex items-center gap-1">
@@ -576,31 +665,52 @@
             <div id="onboardingSteps" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
         </div>
 
-        <!-- Tabs -->
-        <div class="border-b border-slate-200 flex gap-6 overflow-x-auto no-scrollbar">
-            <button id="tabMieiAnnunci" onclick="showTab('annunci')"
-                class="pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap">
-                I miei annunci
+        <!-- Schede dell'area personale: tutte visibili anche su mobile -->
+        <div class="dashboard-workspace">
+        <div id="dashboardTabs" class="dashboard-tabs" role="tablist" aria-label="Area personale">
+            <button id="tabMieiAnnunci" type="button" class="dashboard-tab" data-tab="annunci" onclick="showTab('annunci')"
+                role="tab" aria-selected="true" aria-controls="sectionAnnunci" tabindex="0">
+                <span class="dashboard-tab-icon" aria-hidden="true"><i class="fas fa-store"></i></span>
+                <span class="dashboard-tab-copy">
+                    <span class="dashboard-tab-title">I miei annunci</span>
+                    <span class="dashboard-tab-description">Gestisci le inserzioni</span>
+                </span>
             </button>
-            <button id="tabPreferiti" onclick="showTab('preferiti')"
-                class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
-                <i class="fas fa-heart text-xs"></i> Preferiti
-                <span id="savedBadge" class="hidden bg-red-500 text-white text-[10px] font-black rounded-full px-1.5 py-0.5 leading-none"></span>
+            <button id="tabPreferiti" type="button" class="dashboard-tab" data-tab="preferiti" onclick="showTab('preferiti')"
+                role="tab" aria-selected="false" aria-controls="sectionPreferiti" tabindex="-1">
+                <span class="dashboard-tab-icon" aria-hidden="true"><i class="fas fa-heart"></i></span>
+                <span class="dashboard-tab-copy">
+                    <span class="dashboard-tab-title">Preferiti <span id="savedBadge" class="dashboard-tab-count hidden"></span></span>
+                    <span class="dashboard-tab-description">Annunci salvati</span>
+                </span>
             </button>
-            <button id="tabValutazioni" onclick="showTab('valutazioni')"
-                class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
-                <i class="fas fa-calculator text-xs"></i> Valutazioni
-                <span id="valutazioniBadge" class="hidden bg-emerald-500 text-white text-[10px] font-black rounded-full px-1.5 py-0.5 leading-none"></span>
+            <button id="tabValutazioni" type="button" class="dashboard-tab" data-tab="valutazioni" onclick="showTab('valutazioni')"
+                role="tab" aria-selected="false" aria-controls="sectionValutazioni" tabindex="-1">
+                <span class="dashboard-tab-icon" aria-hidden="true"><i class="fas fa-calculator"></i></span>
+                <span class="dashboard-tab-copy">
+                    <span class="dashboard-tab-title">Valutazioni <span id="valutazioniBadge" class="dashboard-tab-count hidden"></span></span>
+                    <span class="dashboard-tab-description">Stime e report</span>
+                </span>
             </button>
-            <button id="tabAlert" onclick="showTab('alert')"
-                class="pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap flex items-center gap-1.5">
-                <i class="fas fa-bell text-xs"></i> Alert
-                <span id="alertBadge" class="hidden bg-blue-600 text-white text-[10px] font-black rounded-full px-1.5 py-0.5 leading-none"></span>
+            <button id="tabAlert" type="button" class="dashboard-tab" data-tab="alert" onclick="showTab('alert')"
+                role="tab" aria-selected="false" aria-controls="sectionAlert" tabindex="-1">
+                <span class="dashboard-tab-icon" aria-hidden="true"><i class="fas fa-bell"></i></span>
+                <span class="dashboard-tab-copy">
+                    <span class="dashboard-tab-title">Alert <span id="alertBadge" class="dashboard-tab-count hidden"></span></span>
+                    <span class="dashboard-tab-description">Avvisi sui nuovi annunci</span>
+                </span>
             </button>
         </div>
 
         <!-- ── TAB: I miei annunci ── -->
-        <div id="sectionAnnunci">
+        <div id="sectionAnnunci" class="dashboard-panel" role="tabpanel" aria-labelledby="tabMieiAnnunci" tabindex="0">
+            <div class="dashboard-panel-header">
+                <div>
+                    <h2 class="dashboard-panel-title">I miei annunci</h2>
+                    <p class="dashboard-panel-description">Aggiorna le tue inserzioni e controlla il loro stato.</p>
+                </div>
+                <a href="/vendi" class="dashboard-panel-action"><i class="fas fa-plus" aria-hidden="true"></i> Nuovo annuncio</a>
+            </div>
             <div id="myListingsGrid" class="space-y-4">
                 <div class="text-center py-12 text-slate-400">
                     <i class="fas fa-spinner fa-spin text-2xl"></i>
@@ -610,11 +720,14 @@
 
 
         <!-- ── TAB: Preferiti ── -->
-        <div id="sectionPreferiti" class="hidden">
-            <div class="flex items-center justify-between py-4">
-                <p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Annunci che hai salvato per dopo</p>
-                <a href="/annunci" class="inline-flex items-center gap-2 text-xs font-black text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-xl transition">
-                    <i class="fas fa-search"></i> Cerca annunci
+        <div id="sectionPreferiti" class="dashboard-panel hidden" role="tabpanel" aria-labelledby="tabPreferiti" tabindex="0">
+            <div class="dashboard-panel-header">
+                <div>
+                    <h2 class="dashboard-panel-title">Preferiti</h2>
+                    <p class="dashboard-panel-description">Ritrova gli annunci che hai salvato per dopo.</p>
+                </div>
+                <a href="/annunci" class="dashboard-panel-action">
+                    <i class="fas fa-search" aria-hidden="true"></i> Cerca annunci
                 </a>
             </div>
             <div id="mySavedGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -626,11 +739,14 @@
 
 
         <!-- ── TAB: Valutazioni ── -->
-        <div id="sectionValutazioni" class="hidden">
-            <div class="flex items-center justify-between py-4">
-                <p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Le valutazioni che hai salvato</p>
-                <a href="/valutatore" class="inline-flex items-center gap-2 text-xs font-black text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-xl transition">
-                    <i class="fas fa-plus"></i> Nuova valutazione
+        <div id="sectionValutazioni" class="dashboard-panel hidden" role="tabpanel" aria-labelledby="tabValutazioni" tabindex="0">
+            <div class="dashboard-panel-header">
+                <div>
+                    <h2 class="dashboard-panel-title">Valutazioni</h2>
+                    <p class="dashboard-panel-description">Consulta le stime salvate e apri i tuoi report.</p>
+                </div>
+                <a href="/valutatore" class="dashboard-panel-action">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Nuova valutazione
                 </a>
             </div>
             <div id="myValutazioniGrid" class="space-y-3">
@@ -642,11 +758,14 @@
 
 
         <!-- ── TAB: Alert ── -->
-        <div id="sectionAlert" class="hidden">
-            <div class="flex items-center justify-between py-4">
-                <p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Ricevi email quando esce un nuovo annuncio nella zona che cerchi</p>
-                <a href="/annunci" class="inline-flex items-center gap-2 text-xs font-black text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-xl transition">
-                    <i class="fas fa-plus"></i> Nuovo alert
+        <div id="sectionAlert" class="dashboard-panel hidden" role="tabpanel" aria-labelledby="tabAlert" tabindex="0">
+            <div class="dashboard-panel-header">
+                <div>
+                    <h2 class="dashboard-panel-title">Alert</h2>
+                    <p class="dashboard-panel-description">Ricevi un'email quando esce un nuovo annuncio nella zona che cerchi.</p>
+                </div>
+                <a href="/annunci" class="dashboard-panel-action">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Nuovo alert
                 </a>
             </div>
             <div id="myAlertsGrid" class="space-y-3">
@@ -656,6 +775,7 @@
             </div>
         </div>
 
+        </div><!-- /dashboard-workspace -->
 
     </div>
 </main>
@@ -2661,17 +2781,17 @@ let _sellerAnalyticsLoaded = false;
 
 function showTab(tab) {
     const sectionMap = { annunci: 'sectionAnnunci', preferiti: 'sectionPreferiti', valutazioni: 'sectionValutazioni', alert: 'sectionAlert' };
+    if (!Object.prototype.hasOwnProperty.call(sectionMap, tab)) return;
     Object.entries(sectionMap).forEach(([t, id]) => {
         const section = document.getElementById(id);
         if (section) section.classList.toggle('hidden', t !== tab);
     });
 
-    const active   = 'pb-3 text-sm font-black border-b-2 border-blue-600 text-blue-600 transition whitespace-nowrap';
-    const inactive = 'pb-3 text-sm font-black border-b-2 border-transparent text-slate-400 hover:text-slate-700 transition whitespace-nowrap';
-    document.getElementById('tabMieiAnnunci').className = tab === 'annunci' ? active : inactive;
-    document.getElementById('tabPreferiti').className   = (tab === 'preferiti'   ? active : inactive) + ' flex items-center gap-1.5';
-    document.getElementById('tabValutazioni').className = (tab === 'valutazioni' ? active : inactive) + ' flex items-center gap-1.5';
-    document.getElementById('tabAlert').className       = (tab === 'alert'       ? active : inactive) + ' flex items-center gap-1.5';
+    document.querySelectorAll('#dashboardTabs [role="tab"]').forEach(button => {
+        const selected = button.dataset.tab === tab;
+        button.setAttribute('aria-selected', String(selected));
+        button.tabIndex = selected ? 0 : -1;
+    });
 
     if (tab === 'alert' && !_alertsLoaded) {
         _alertsLoaded = true;
@@ -2686,6 +2806,24 @@ function showTab(tab) {
         loadMyValutazioni();
     }
 }
+
+document.getElementById('dashboardTabs')?.addEventListener('keydown', event => {
+    const tabs = Array.from(document.querySelectorAll('#dashboardTabs [role="tab"]'));
+    const current = tabs.indexOf(event.target.closest('[role="tab"]'));
+    if (current < 0) return;
+    const columns = window.matchMedia('(min-width: 768px)').matches ? 4 : 2;
+    let next;
+    if (event.key === 'ArrowRight') next = (current + 1) % tabs.length;
+    else if (event.key === 'ArrowLeft') next = (current + tabs.length - 1) % tabs.length;
+    else if (columns === 2 && event.key === 'ArrowDown') next = (current + columns) % tabs.length;
+    else if (columns === 2 && event.key === 'ArrowUp') next = (current + tabs.length - columns) % tabs.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = tabs.length - 1;
+    else return;
+    event.preventDefault();
+    showTab(tabs[next].dataset.tab);
+    tabs[next].focus();
+});
 
 // ── Le mie valutazioni ─────────────────────────────────
 let _valutazioniLoaded = false;
