@@ -136,6 +136,30 @@ const server = http.createServer((req, res) => {
         await page.locator('#fTel').fill('3477654321');
     }
     try {
+        const locationPage = await newPage(null, true);
+        await locationPage.locator('.tipo-card').first().click();
+        await locationPage.locator('#fComune').fill('Moniga');
+        await locationPage.getByRole('option', {name:/Moniga del Garda/}).waitFor({state:'visible'});
+        if (process.env.FORM_SCREENSHOT_DIR) {
+            fs.mkdirSync(process.env.FORM_SCREENSHOT_DIR, {recursive:true});
+            await locationPage.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR, 'comuni-vendita-mobile.png'),fullPage:true});
+        }
+        await next(locationPage, 2);
+        assert.equal(await locationPage.locator('#fComune').inputValue(), 'Moniga del Garda');
+        assert.equal(await locationPage.locator('#fProvincia').inputValue(), 'Brescia');
+        assert.equal(await locationPage.locator('#fRegione').inputValue(), 'Lombardia');
+        await locationPage.locator('#step3').getByRole('button', {name:'Indietro'}).click();
+        await locationPage.locator('#fComune').fill('Castro');
+        await locationPage.locator('#step2').getByRole('button', {name:/^Avanti/}).click();
+        await active(locationPage, 2);
+        assert.equal(await locationPage.locator('#fProvincia').inputValue(), '');
+        await locationPage.getByRole('option', {name:/^Castro \(LE\)/}).click();
+        await next(locationPage, 2);
+        assert.equal(await locationPage.locator('#fProvincia').inputValue(), 'Lecce');
+        assert.equal(await locationPage.evaluate(key => JSON.parse(localStorage.getItem(key)).regione, draftKey('guest')), 'Puglia');
+        await locationPage.context().close();
+        console.log('OK: Moniga abbreviato con Avanti, lista visibile, omonimi e bozza aggiornata dopo la scelta.');
+
         const page = await newPage(ownerA, true);
         await fillWizard(page);
         const title = await page.locator('#fTitolo').inputValue();
@@ -310,7 +334,19 @@ const server = http.createServer((req, res) => {
         await edit.locator('#previewContainer button').nth(2).click();
         assert.equal(await edit.evaluate(()=>_newFiles.length),3);
         assert.equal(await edit.evaluate(()=>_newFiles[1].name),'foto-2.png');
+        await edit.locator('#fComune').fill('Moniga');
+        await edit.getByRole('option', {name:/Moniga del Garda/}).click();
+        assert.equal(await edit.locator('#fProvincia').inputValue(), 'Brescia');
+        await edit.context().route('**/data/comuni-picker.json*', route => route.fulfill({status:503,body:'unavailable'}));
+        await edit.reload();
+        await edit.locator('#editContainer').waitFor({state:'visible'});
+        await edit.getByRole('button', {name:'Riprova a caricare i comuni'}).waitFor({state:'visible'});
+        assert.equal(await edit.locator('#fComune').inputValue(), 'Brescia');
+        await edit.context().unroute('**/data/comuni-picker.json*');
+        await edit.getByRole('button', {name:'Riprova a caricare i comuni'}).click();
+        await edit.waitForFunction(() => !!_comunePicker.getValue());
         console.log('OK: aggiunta e rimozione di più foto anche su annunci gratuiti esistenti.');
+        console.log('OK: comune abbreviato e recupero del selettore offline anche in modifica annuncio.');
 
         assert.deepEqual(errors,[],'uncaught browser errors');
         console.log(`OK: ${variants} varianti di titolo, numeri italiani e sintassi dei due form.`);

@@ -51,21 +51,84 @@
         return regione;
     }
 
+    async function fetchComuni(cache) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 8000);
+        try {
+            const response = await fetch('/data/comuni-picker.json?v=20260221', { cache, signal: controller.signal });
+            if (!response.ok) throw new Error('Elenco comuni non disponibile');
+            const rows = await response.json();
+            if (!Array.isArray(rows) || !rows.length || rows.some(row => !row.nome || !row.codiceIstat || !row.regione || !row.sigla || !row.provincia)) {
+                throw new Error('Elenco comuni incompleto');
+            }
+            return rows.map(row => ({
+                ...row, _key: normalize(row.nome),
+                _keys: [normalize(row.nome), ...Object.keys(COMUNE_ALIASES).filter(alias => COMUNE_ALIASES[alias] === row.nome)]
+            }));
+        } finally {
+            clearTimeout(timeout);
+        }
+    }
+
     function loadComuni() {
         if (!comuniPromise) {
-            comuniPromise = fetch('/data/comuni-picker.json?v=20260221', { cache: 'force-cache' })
-                .then(response => {
-                    if (!response.ok) throw new Error('Elenco comuni non disponibile');
-                    return response.json();
-                })
-                .then(rows => rows.map(row => ({ ...row, _key: normalize(row.nome) })));
+            comuniPromise = fetchComuni('force-cache').catch(() => fetchComuni('reload')).catch(error => {
+                comuniPromise = null; // Un errore di rete non deve bloccare tutti i tentativi successivi.
+                throw error;
+            });
         }
         return comuniPromise;
     }
 
-    function createComunePicker({ comuneInput, regioneSelect, provinciaInput, datalist, statusEl }) {
+    // Piccoli refusi compaiono nei suggerimenti, ma richiedono sempre una scelta esplicita.
+    function oneEditApart(a, b) {
+        if (Math.abs(a.length - b.length) > 1) return false;
+        let i = 0;
+        while (i < a.length && a[i] === b[i]) i++;
+        if (a.length === b.length) {
+            return a.slice(i + 1) === b.slice(i + 1) ||
+                (a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2));
+        }
+        return a.length > b.length ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);
+    }
+
+    function createComunePicker({ comuneInput, regioneSelect, provinciaInput, suggestionsEl, statusEl }) {
         let comuni = [];
         let selected = null;
+        let suggestions = [];
+        let activeIndex = -1;
+        let loading = false;
+        let loadFailed = false;
+        let restoredRegion = null;
+        let ready;
+        let revision = 0;
+        let blurTimer;
+        const retryButton = document.createElement('button');
+        retryButton.type = 'button';
+        retryButton.className = 'comune-retry';
+        retryButton.textContent = 'Riprova a caricare i comuni';
+        retryButton.hidden = true;
+        statusEl.after(retryButton);
+        statusEl.setAttribute('role', 'status');
+        comuneInput.setAttribute('role', 'combobox');
+        comuneInput.setAttribute('aria-autocomplete', 'list');
+        comuneInput.setAttribute('aria-controls', suggestionsEl.id);
+        comuneInput.setAttribute('aria-describedby', statusEl.id);
+        comuneInput.setAttribute('aria-expanded', 'false');
+        suggestionsEl.setAttribute('role', 'listbox');
+        suggestionsEl.setAttribute('aria-label', 'Comuni suggeriti');
+
+        function status(message, tone = 'slate') {
+            statusEl.textContent = message;
+            statusEl.className = `text-xs text-${tone === 'emerald' ? 'emerald-700' : tone === 'red' ? 'red-600' : 'slate-500'} mt-2 font-semibold`;
+        }
+
+        function closeSuggestions() {
+            suggestionsEl.hidden = true;
+            activeIndex = -1;
+            comuneInput.setAttribute('aria-expanded', 'false');
+            comuneInput.removeAttribute('aria-activedescendant');
+        }
 
         function clearSelection(keepText = true) {
             selected = null;
@@ -73,19 +136,19 @@
             if (!keepText) comuneInput.value = '';
             provinciaInput.value = '';
             regioneSelect.value = '';
-            statusEl.textContent = 'Scrivi almeno 2 lettere e scegli il comune suggerito.';
-            statusEl.className = 'text-xs text-slate-500 mt-2 font-semibold';
         }
 
-        function apply(record) {
+        function apply(record, notify = true) {
             selected = record;
+            restoredRegion = null;
             comuneInput.value = record.nome;
             comuneInput.dataset.comuneKey = record.codiceIstat;
             regioneSelect.value = canonicalRegion(record.regione);
             provinciaInput.value = record.provincia;
-            statusEl.textContent = `${record.provincia} (${record.sigla}) · ${canonicalRegion(record.regione)}`;
-            statusEl.className = 'text-xs text-emerald-700 mt-2 font-bold';
-            datalist.innerHTML = '';
+            comuneInput.removeAttribute('aria-invalid');
+            status(`Comune selezionato: ${record.nome} · ${record.provincia} (${record.sigla}) · ${canonicalRegion(record.regione)}`, 'emerald');
+            closeSuggestions();
+            if (notify) comuneInput.dispatchEvent(new Event('change', { bubbles: true }));
         }
 
         function resolve(rawValue, preferredRegion) {
@@ -95,65 +158,160 @@
             const key = normalize(COMUNE_ALIASES[enteredKey] || cleanValue);
             let matches = comuni.filter(row => row._key === key);
             if (siglaMatch) matches = matches.filter(row => row.sigla.toLowerCase() === siglaMatch[1].toLowerCase());
+            if (!matches.length && key.length >= 3) {
+                matches = comuni.filter(row => row._keys.some(name => name.startsWith(key)));
+                if (siglaMatch) matches = matches.filter(row => row.sigla.toLowerCase() === siglaMatch[1].toLowerCase());
+            }
             if (matches.length > 1 && preferredRegion) {
-                const regionMatch = matches.find(row => canonicalRegion(row.regione) === canonicalRegion(preferredRegion));
-                if (regionMatch) return regionMatch;
+                const regional = matches.filter(row => canonicalRegion(row.regione) === canonicalRegion(preferredRegion));
+                if (regional.length === 1) return regional[0];
             }
             return matches.length === 1 ? matches[0] : null;
         }
 
         function fillSuggestions(rawValue) {
-            const key = normalize(rawValue);
-            datalist.innerHTML = '';
-            if (key.length < 2) return;
+            closeSuggestions();
+            suggestionsEl.replaceChildren();
+            suggestions = [];
+            if (loading) { status('Caricamento dei comuni… Puoi già scrivere il nome.'); return; }
+            if (loadFailed) { status('I comuni non si sono caricati. Premi Riprova: quello che hai scritto resta qui.', 'red'); return; }
+            const key = normalize(String(rawValue || '').replace(/\s*\([A-Z]{2}\)\s*$/i, ''));
+            const siglaMatch = String(rawValue || '').match(/\(([A-Z]{2})\)\s*$/i);
+            if (key.length < 2) { status('Scrivi almeno 2 lettere: i comuni compaiono qui sotto.'); return; }
             const words = key.split(' ').filter(Boolean);
-            const starts = comuni.filter(row => row._key.startsWith(key));
-            const contains = starts.length >= 20 ? [] : comuni.filter(row =>
-                !row._key.startsWith(key) && words.every(word => row._key.includes(word))
+            const exact = comuni.filter(row => row._keys.includes(key));
+            const starts = comuni.filter(row => !exact.includes(row) && row._keys.some(name => name.startsWith(key)));
+            const contains = exact.length + starts.length >= 20 ? [] : comuni.filter(row =>
+                !exact.includes(row) && !starts.includes(row) && row._keys.some(name => words.every(word => name.includes(word)))
             );
-            [...starts, ...contains].slice(0, 20).forEach(row => {
-                const option = document.createElement('option');
-                option.value = `${row.nome} (${row.sigla})`;
-                option.label = `${row.provincia} · ${canonicalRegion(row.regione)}`;
-                datalist.appendChild(option);
+            let matches = [...exact, ...starts, ...contains];
+            let fuzzy = false;
+            if (!matches.length && key.length >= 4) {
+                matches = comuni.filter(row => row._keys.some(name =>
+                    [name, name.slice(0, key.length - 1).trim(), name.slice(0, key.length).trim(), name.slice(0, key.length + 1).trim()]
+                        .some(candidate => oneEditApart(key, candidate))
+                ));
+                fuzzy = matches.length > 0;
+            }
+            if (siglaMatch) matches = matches.filter(row => row.sigla.toLowerCase() === siglaMatch[1].toLowerCase());
+            suggestions = matches.slice(0, 20);
+            suggestions.forEach((row, index) => {
+                const option = document.createElement('div');
+                option.id = `${suggestionsEl.id}-option-${index}`;
+                option.className = 'comune-option';
+                option.setAttribute('role', 'option');
+                option.setAttribute('aria-selected', 'false');
+                const name = document.createElement('span');
+                name.className = 'comune-option-name';
+                name.textContent = `${row.nome} (${row.sigla})`;
+                const detail = document.createElement('span');
+                detail.className = 'comune-option-detail';
+                detail.textContent = `${row.provincia} · ${canonicalRegion(row.regione)}`;
+                option.append(name, detail);
+                // Mantiene il focus: blur non deve scegliere un altro comune prima del tocco.
+                option.addEventListener('pointerdown', event => event.preventDefault());
+                option.addEventListener('click', () => { clearTimeout(blurTimer); apply(row); });
+                suggestionsEl.appendChild(option);
             });
+            if (!suggestions.length) {
+                status('Nessun comune trovato. Controlla il nome o scrivi solo la prima parte.', 'red');
+                return;
+            }
+            status(fuzzy ? 'Forse cercavi uno di questi comuni? Tocca quello corretto.' :
+                matches.length > 20 ? 'Tocca il comune oppure scrivi altre lettere per restringere la lista.' :
+                resolve(rawValue) ? 'Tocca il comune suggerito oppure prosegui: lo completiamo noi.' :
+                'Tocca il comune corretto nella lista qui sotto.');
+            if (document.activeElement === comuneInput) {
+                suggestionsEl.hidden = false;
+                comuneInput.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        function commit() {
+            if (selected && comuneInput.value === selected.nome && comuneInput.dataset.comuneKey === selected.codiceIstat) return selected;
+            const found = resolve(comuneInput.value, restoredRegion);
+            if (found) apply(found);
+            else clearSelection();
+            return found;
         }
 
         comuneInput.addEventListener('input', () => {
-            const found = resolve(comuneInput.value, regioneSelect.value);
-            if (found) apply(found);
-            else {
-                clearSelection();
-                fillSuggestions(comuneInput.value);
-            }
+            revision++;
+            restoredRegion = null;
+            clearSelection();
+            fillSuggestions(comuneInput.value);
+        });
+        comuneInput.addEventListener('focus', () => {
+            clearTimeout(blurTimer);
+            fillSuggestions(comuneInput.value);
         });
         comuneInput.addEventListener('blur', () => {
-            const found = resolve(comuneInput.value, regioneSelect.value);
-            if (found) apply(found);
+            blurTimer = setTimeout(() => { commit(); closeSuggestions(); }, 120);
+        });
+        comuneInput.addEventListener('change', commit);
+        comuneInput.addEventListener('keydown', event => {
+            if (event.isComposing) return;
+            if (event.key === 'Escape') { closeSuggestions(); event.preventDefault(); return; }
+            if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                event.preventDefault();
+                if (suggestionsEl.hidden) fillSuggestions(comuneInput.value);
+                if (!suggestions.length) return;
+                const direction = event.key === 'ArrowDown' ? 1 : -1;
+                activeIndex = activeIndex < 0 ? (direction > 0 ? 0 : suggestions.length - 1) :
+                    (activeIndex + direction + suggestions.length) % suggestions.length;
+                Array.from(suggestionsEl.children).forEach((option, index) => option.setAttribute('aria-selected', String(index === activeIndex)));
+                const option = suggestionsEl.children[activeIndex];
+                comuneInput.setAttribute('aria-activedescendant', option.id);
+                option.scrollIntoView({ block: 'nearest' });
+            } else if (event.key === 'Enter') {
+                event.preventDefault(); // Mai inviare il form mentre si sta scegliendo il comune.
+                if (!suggestionsEl.hidden && activeIndex >= 0) apply(suggestions[activeIndex]);
+                else if (!commit()) fillSuggestions(comuneInput.value);
+            }
         });
 
-        const ready = loadComuni().then(rows => {
-            comuni = rows;
-            const found = resolve(comuneInput.value, regioneSelect.value);
-            if (found) apply(found);
-            else fillSuggestions(comuneInput.value);
-        }).catch(error => {
-            statusEl.textContent = 'Impossibile caricare i comuni. Ricarica la pagina e riprova.';
-            statusEl.className = 'text-xs text-red-600 mt-2 font-bold';
-            throw error;
-        });
+        function startLoading() {
+            loading = true;
+            loadFailed = false;
+            retryButton.hidden = true;
+            comuneInput.setAttribute('aria-busy', 'true');
+            fillSuggestions(comuneInput.value);
+            ready = loadComuni().then(rows => {
+                comuni = rows;
+                loading = false;
+                comuneInput.removeAttribute('aria-busy');
+                if (document.activeElement !== comuneInput && commit()) return;
+                fillSuggestions(comuneInput.value);
+            }).catch(error => {
+                loading = false;
+                loadFailed = true;
+                comuneInput.removeAttribute('aria-busy');
+                retryButton.hidden = false;
+                fillSuggestions(comuneInput.value);
+                throw error;
+            });
+            ready.catch(() => {}); // Il messaggio e Riprova gestiscono anche il caricamento iniziale.
+            return ready;
+        }
+        retryButton.addEventListener('click', () => { comuneInput.focus(); startLoading(); });
+        startLoading();
         return {
-            ready,
+            get ready() { return ready; },
             setValue(comune, regione) {
+                const currentRevision = ++revision;
+                clearSelection();
+                closeSuggestions();
+                comuneInput.value = comune || '';
+                restoredRegion = regione || null;
                 return ready.then(() => {
-                    comuneInput.value = comune || '';
+                    if (currentRevision !== revision) return;
                     const found = resolve(comune, regione);
-                    if (found) apply(found);
-                    else clearSelection();
+                    if (found) apply(found, false);
+                    else { clearSelection(); fillSuggestions(comuneInput.value); }
                 });
             },
             getValue() {
-                if (!selected || comuneInput.dataset.comuneKey !== selected.codiceIstat) return null;
+                if (!commit()) { fillSuggestions(comuneInput.value); return null; }
                 return { comune: selected.nome, provincia: selected.provincia, regione: canonicalRegion(selected.regione) };
             }
         };

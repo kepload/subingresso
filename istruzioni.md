@@ -55,6 +55,14 @@ Manuale operativo per le sessioni AI. Contiene solo informazioni "evergreen": re
 
 Dopo **OGNI** modifica ai file: `git add . && git commit -m "..." && git push`. Sempre. Senza aspettare richiesta utente.
 
+## 📍 Inserimento comuni nei form (7 ottobre 2026)
+
+- `js/comune-picker.js?v=3` e `css/comune-picker.css?v=1` condivisi da vendita e modifica: lista visibile con nome, sigla, provincia e regione, selezione tramite tocco/mouse/frecce/Invio. Non usa il `datalist` nativo del browser.
+- Non completa il testo mentre si digita. Nome completo, alias e prefisso univoco di almeno 3 caratteri (es. Moniga → Moniga del Garda) vengono confermati uscendo dal campo o con Avanti. Omonimi richiedono una scelta; accenti/apostrofi/spazi vengono normalizzati. Piccoli refusi propongono suggerimenti da scegliere esplicitamente.
+- Una scelta aggiorna provincia/regione e genera `change` per salvare la bozza corretta. Ripristino annunci/bozze conserva la regione degli omonimi; una nuova digitazione elimina quel riferimento. Gli aggiornamenti asincroni non sovrascrivono ciò che si sta scrivendo.
+- Fetch con timeout, secondo tentativo automatico e pulsante Riprova senza perdere il testo. Un errore non resta memorizzato nella Promise condivisa. In modifica il form si apre anche se i comuni sono offline.
+- Verifiche: `scripts/test-comune-picker.cjs` (Chromium/WebKit, desktop/tocco mobile, accenti, alias, omonimi, tastiera, refusi, rete lenta e retry) e `scripts/test-vendi.cjs` (Avanti con Moniga, omonimi, bozza e recupero in modifica, oltre al wizard completo). Supportano `PLAYWRIGHT_MODULE` per riusare un'installazione locale.
+
 ## 🔒 SECURITY: Cache profilo SCOPE per user_id (4 mag 2026)
 
 **Bug storico fixato**: cache `_vc_nome`, `_vc_tel`, `_profile_nome`, `_profile_tel` erano chiavi globali in localStorage. Su device condiviso il prossimo utente vedeva prefilled nome/tel del precedente in `vendi.html` → poteva pubblicare annuncio con telefono altrui.

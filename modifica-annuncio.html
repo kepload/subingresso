@@ -7,6 +7,7 @@
     <title>Modifica Annuncio — Subingresso.it</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="css/tailwind.css?v=4">
+    <link rel="stylesheet" href="css/comune-picker.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
@@ -126,10 +127,12 @@
                             <input id="fTitolo" type="text" class="field-input">
                         </div>
                         <div>
-                            <label class="field-label">Comune *</label>
-                            <input id="fComune" type="text" class="field-input" list="comuniList" autocomplete="off" placeholder="Inizia a scrivere il comune">
-                            <datalist id="comuniList"></datalist>
-                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold">Scrivi almeno 2 lettere e scegli il comune suggerito.</p>
+                            <label for="fComune" class="field-label">Comune *</label>
+                            <div class="comune-picker">
+                                <input id="fComune" type="text" class="field-input" autocomplete="off" spellcheck="false" autocorrect="off" placeholder="Scrivi il comune, es. Moniga">
+                                <div id="comuniList" class="comune-suggestions" hidden></div>
+                            </div>
+                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold">Scrivi almeno 2 lettere: i comuni compaiono qui sotto.</p>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
@@ -208,7 +211,7 @@
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=3"></script>
 <script src="js/data.js?v=17"></script>
-<script src="js/comune-picker.js?v=2"></script>
+<script src="js/comune-picker.js?v=3"></script>
 <script src="js/auth.js?v=20"></script>
 <script>
 const params = new URLSearchParams(location.search);
@@ -236,7 +239,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         comuneInput: document.getElementById('fComune'),
         regioneSelect: fReg,
         provinciaInput: document.getElementById('fProvincia'),
-        datalist: document.getElementById('comuniList'),
+        suggestionsEl: document.getElementById('comuniList'),
         statusEl: document.getElementById('comuneStatus')
     });
 
@@ -266,7 +269,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Fill form
     document.getElementById('fTitolo').value = l.titolo;
-    await _comunePicker.setValue(l.comune, l.regione);
+    // Mostra subito il form anche se l'elenco comuni è lento o richiede Riprova.
+    _comunePicker.setValue(l.comune, l.regione).catch(() => {});
     document.getElementById('fSuperficie').value = l.superficie;
     document.getElementById('fPrezzo').value = l.prezzo;
     document.getElementById('fDescrizione').value = l.descrizione;
