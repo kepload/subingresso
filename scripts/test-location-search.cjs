@@ -23,10 +23,16 @@ const mockListings = [
     { id: 'castro-le', comune: 'Castro', regione: 'Puglia', titolo: 'Posteggio Castro LE' },
     { id: 'rivoltella-bs', comune: 'Rivoltella (Desenzano del Garda)', regione: 'Lombardia', titolo: 'Mercato Rivoltella BS' },
     { id: 'rivoltella-pv', comune: 'Rivoltella (Rosasco)', regione: 'Lombardia', titolo: 'Mercato Rivoltella PV' },
-    { id: 'monterusciello', comune: 'Monterusciello', regione: 'Campania', titolo: 'Mercato Monterusciello' }
-];
-const backend = `window._supabase={from(table){const q={select(){return q},eq(){return q},neq(){return q},or(){return q},not(){return q},order(){return q},limit(){return q},in(){return q},then(resolve){return Promise.resolve({data:table==='annunci'?${JSON.stringify(mockListings)}:[],error:null}).then(resolve)}};return q}};`;
-const auth = `window.getCurrentUser=async()=>null; buildCard=l=>'<article data-id="'+l.id+'">'+escapeHTML(l.titolo)+'</article>'; window.observeCardViews=()=>{};`;
+    { id: 'monterusciello', comune: 'Monterusciello', regione: 'Campania', titolo: 'Mercato Monterusciello' },
+    { id: 'legacy-renewed', comune: 'Rivoltella', regione: 'Lombardia', provincia: null, titolo: 'Posteggio Settimanale Rivoltella – Abbigliamento', created_at: '2026-04-21T10:29:21Z', expires_at: '2027-04-24T21:57:35Z' },
+    { id: 'legacy-bs', comune: 'Rivoltella', regione: 'Lombardia', provincia: 'Brescia', titolo: 'Vecchio posteggio BS' },
+    { id: 'legacy-pv', comune: 'Rivoltella', regione: 'Lombardia', provincia: 'Pavia', titolo: 'Vecchio posteggio PV' },
+    { id: 'legacy-wrong-region', comune: 'Rivoltella', regione: 'Veneto', titolo: 'Omonimo altra regione' },
+    { id: 'legacy-sold', comune: 'Rivoltella', regione: 'Lombardia', titolo: 'Venduto', status: 'sold' },
+    { id: 'legacy-pending', comune: 'Rivoltella', regione: 'Lombardia', titolo: 'In revisione', status: 'pending' }
+].map(row => ({ user_id: 'other-seller', status: 'active', ...row }));
+const backend = `window._supabase={from(table){const q={columns:'',select(columns){q.columns=columns;return q},eq(){return q},neq(){return q},or(){return q},not(){return q},order(){return q},limit(){return q},in(){return q},then(resolve){const data=table==='annunci'?${JSON.stringify(mockListings)}.filter(row=>row.status==='active'||row.user_id===window.TEST_SEARCH_USER?.id).map(row=>Object.fromEntries(q.columns.split(',').map(key=>key.trim()).filter(key=>key in row).map(key=>[key,row[key]]))):[];return Promise.resolve({data,error:null}).then(resolve)}};return q}};`;
+const auth = `window.getCurrentUser=async()=>window.TEST_SEARCH_USER||null; buildCard=(l,small,distance)=>'<article data-id="'+l.id+'" data-distance="'+distance+'">'+escapeHTML(l.titolo)+'</article>'; window.observeCardViews=()=>{};`;
 const server = http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');
     let filename = decodeURIComponent(url.pathname).slice(1) || 'index.html';
@@ -89,6 +95,8 @@ async function check(engine, name, mobile, base) {
         await input.press('Enter');
         await page.locator('#subtitle').filter({ hasText:'vicino a Moniga del Garda' }).waitFor();
         await page.locator('[data-id="near-moniga"]').waitFor();
+        await page.waitForFunction(() => !document.querySelector('[data-id="legacy-renewed"]'));
+        assert.equal(await page.locator('[data-id="legacy-renewed"]').count(), 0, 'un nome ambiguo non viene attribuito a un altro luogo');
         await input.fill('frutta');
         await page.getByRole('option', { name:'frutta', exact:true }).waitFor({ state:'visible' });
         await input.press('Escape');
@@ -104,7 +112,26 @@ async function check(engine, name, mobile, base) {
         await page.selectOption('#radiusKm', '50');
         await page.evaluate(() => applyFilters());
         await page.locator('[data-id="rivoltella-bs"]').waitFor();
+        await page.locator('[data-id="legacy-renewed"]').waitFor();
+        await page.locator('[data-id="legacy-bs"]').waitFor();
+        assert.equal(await page.locator('[data-id="legacy-renewed"]').getAttribute('data-distance'), 'null', 'nessuna distanza inventata per il nome ambiguo');
+        assert.equal(await page.evaluate(() => LISTINGS.find(row => row.id === 'legacy-bs').provincia), 'Brescia', 'la query carica la provincia');
+        assert.equal(await page.locator('[data-id="legacy-pv"]').count(), 0);
+        assert.equal(await page.locator('[data-id="legacy-wrong-region"]').count(), 0);
+        assert.equal(await page.locator('[data-id="legacy-sold"]').count(), 0);
+        assert.equal(await page.locator('[data-id="legacy-pending"]').count(), 0);
         assert.equal(await page.locator('[data-id="rivoltella-pv"]').count(), 0);
+        await page.locator('#subtitle').filter({ hasText: 'e dintorni' }).waitFor();
+        // Lo stesso vecchio annuncio deve restare trovabile da un altro account.
+        await page.evaluate(async () => { window.TEST_SEARCH_USER = { id: 'different-buyer' }; await loadListings(); });
+        await page.locator('[data-id="legacy-renewed"]').waitFor();
+        assert.equal(await page.locator('[data-id="legacy-sold"]').count(), 0);
+        assert.equal(await page.locator('[data-id="legacy-pending"]').count(), 0);
+        await page.locator('#searchBar').fill('Rivoltella');
+        await choose(page.getByRole('option').filter({ hasText: 'Rivoltella (Rosasco)' }));
+        await page.locator('[data-id="legacy-pv"]').waitFor();
+        assert.equal(await page.locator('[data-id="legacy-bs"]').count(), 0);
+        await page.locator('[data-id="legacy-renewed"]').waitFor();
         await page.locator('#searchBar').fill('Monterusciello');
         await choose(page.getByRole('option').filter({hasText:'Monterusciello (Pozzuoli)'}));
         await page.locator('[data-id="monterusciello"]').waitFor();
@@ -152,6 +179,15 @@ async function check(engine, name, mobile, base) {
     const rivoltella = search.resolve('Rivoltella (Desenzano del Garda)', 'geonames:3169227');
     assert.equal(rivoltella.comune, 'Desenzano del Garda');
     assert.deepEqual(Array.from(search.coordinates(rivoltella)), [45.45, 10.55]);
+    assert.equal(search.listingCoordinates('Rivoltella', 'Lombardia'), null, 'non indovina quale omonimo sia');
+    assert.deepEqual(Array.from(search.listingCoordinates('Rivoltella', 'Lombardia', 'Brescia')), [45.45, 10.55]);
+    assert.deepEqual(Array.from(search.listingCoordinates('Rivoltella', 'Lombardia', 'bs')), [45.45, 10.55]);
+    assert.deepEqual(Array.from(search.listingCoordinates('Rivoltella (BS)', 'Lombardia')), [45.45, 10.55]);
+    assert.equal(search.listingMatchesLocation('Rivoltella', 'Lombardia', null, rivoltella), true);
+    assert.equal(search.listingMatchesLocation('Rivoltella', 'Veneto', null, rivoltella), false);
+    assert.equal(search.listingMatchesLocation('Rivoltella', 'Lombardia', 'Pavia', rivoltella), false);
+    assert.equal(search.listingMatchesLocation('Rivoltella (PV)', 'Lombardia', null, rivoltella), false);
+    assert.equal(search.listingCoordinates('Moniga', 'Lombardia', 'Pavia'), null, 'un nome abbreviato rispetta la provincia');
     assert.equal(search.resolve('Monterusciello').comune, 'Pozzuoli');
     assert.deepEqual(Array.from(search.listingCoordinates('Monterusciello', 'Campania')), [40.86874, 14.08276]);
     assert.equal(search.resolve('Moniga').nome, 'Moniga del Garda');

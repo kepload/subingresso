@@ -134,11 +134,15 @@ async function applyFilters() {
                 const cityCoords = LocationSearch.listingCoordinates(l.comune, l.regione, l.provincia);
                 const distance = cityCoords
                     ? getDistanceKM(searchCoords[0], searchCoords[1], cityCoords[0], cityCoords[1])
-                    : Infinity;
+                    : null;
                 return { ...l, _distance: distance };
             })
             .filter(l => {
-                if (l._distance > radius)                  return false;
+                // I vecchi annunci possono avere una frazione omonima senza provincia.
+                // Mantieni il nome esatto cercato, senza inventare coordinate o distanza.
+                if (l._distance === null) {
+                    if (!LocationSearch.listingMatchesLocation(l.comune, l.regione, l.provincia, searchRecord)) return false;
+                } else if (l._distance > radius)           return false;
                 if (regione && l.regione !== regione)      return false;
                 if (tipo    && l.tipo    !== tipo)         return false;
                 if (stato   && l.stato   !== stato)        return false;
@@ -156,7 +160,7 @@ async function applyFilters() {
             const fa = isListingFeatured(a) ? 1 : 0;
             const fb = isListingFeatured(b) ? 1 : 0;
             if (fa !== fb) return fb - fa;
-            return a._distance - b._distance;
+            return (a._distance ?? Infinity) - (b._distance ?? Infinity);
         });
     } else {
         results = LISTINGS.filter(l => {
@@ -172,8 +176,7 @@ async function applyFilters() {
             }
 
             if (searchRecord) {
-                const sameName = searchRecord._keys.includes(ComuniItaliani.normalize(l.comune));
-                if (!sameName || ComuniItaliani.canonicalRegion(l.regione) !== ComuniItaliani.canonicalRegion(searchRecord.regione)) return false;
+                if (!LocationSearch.listingMatchesLocation(l.comune, l.regione, l.provincia, searchRecord)) return false;
             } else if (q) {
                 const desc = typeof l.dettagli_extra === 'object' ? (l.dettagli_extra?.descrizione || '') : '';
                 const searchField = normalizeText(`${l.titolo} ${l.comune} ${l.regione} ${l.settore || ''} ${l.merce || ''} ${desc}`);
@@ -241,12 +244,13 @@ async function applyFilters() {
         else badge.classList.add('hidden');
     }
 
+    const hasUnlocatedResults = isProximitySearch && results.some(l => l._distance === null);
     if (count) {
         count.style.transition = 'opacity 0.15s ease';
         count.style.opacity = '0';
         setTimeout(() => {
             if (request !== filterRevision) return;
-            count.textContent = isProximitySearch
+            count.textContent = isProximitySearch && !hasUnlocatedResults
                 ? `${results.length} annunci entro ${radius} km da ${searchCity || qRaw}`
                 : `${results.length} annunci trovati`;
             count.style.opacity = '1';
@@ -255,7 +259,8 @@ async function applyFilters() {
 
     const sub = document.getElementById('subtitle');
     if (sub) {
-        if (isProximitySearch) sub.textContent = `Posteggi vicino a ${searchCity || qRaw} (ordinati per distanza)`;
+        if (hasUnlocatedResults) sub.textContent = `Posteggi a ${searchCity || qRaw} e dintorni`;
+        else if (isProximitySearch) sub.textContent = `Posteggi vicino a ${searchCity || qRaw} (ordinati per distanza)`;
         else if (regione)      sub.textContent = `Posteggi disponibili in ${regione}`;
         else if (q)            sub.textContent = `Risultati per "${qRaw}"`;
         else                   sub.textContent = 'Tutti i posteggi disponibili';
@@ -430,7 +435,7 @@ async function loadListings() {
 
         let query = _supabase
             .from('annunci')
-            .select('id, user_id, titolo, stato, status, tipo, settore, regione, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, created_at, featured, featured_until, visualizzazioni')
+            .select('id, user_id, titolo, stato, status, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, created_at, featured, featured_until, visualizzazioni')
             .order('created_at', { ascending: false });
 
         if (user) {

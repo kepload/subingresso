@@ -153,18 +153,29 @@
         return candidates.length ? [candidates[0].lat, candidates[0].lng] : null;
     }
 
+    function listingMatchesLocation(name, region, province, record) {
+        if (!record) return false;
+        const { key, sigla } = parse(name);
+        return record._keys.includes(key) && (!region || canonicalRegion(record.regione) === canonicalRegion(region)) &&
+            (!sigla || record.sigla === sigla) &&
+            (!province || normalize(record.provincia) === normalize(province) || normalize(record.sigla) === normalize(province));
+    }
+
     function listingCoordinates(name, region, province) {
-        const key = parse(name).key;
-        let current = (exactNames.get(key) || []).filter(row => (!region || canonicalRegion(row.regione) === canonicalRegion(region)) &&
-            (!province || normalize(row.provincia) === normalize(province) || row.sigla === province));
+        const { key, sigla } = parse(name);
+        let current = (exactNames.get(key) || []).filter(row => listingMatchesLocation(name, region, province, row));
         const official = current.filter(row => !row.nomeLocalita);
         if (official.length) current = official;
         if (current.length === 1) return coordinates(current[0]);
         if (!current.length) {
             const abbreviated = resolve(name);
-            if (abbreviated && (!region || canonicalRegion(abbreviated.regione) === canonicalRegion(region))) return coordinates(abbreviated);
+            if (abbreviated && (!region || canonicalRegion(abbreviated.regione) === canonicalRegion(region)) &&
+                (!sigla || abbreviated.sigla === sigla) &&
+                (!province || normalize(abbreviated.provincia) === normalize(province) || normalize(abbreviated.sigla) === normalize(province))) return coordinates(abbreviated);
         }
-        const older = geo.filter(row => row._key === key && (!region || canonicalRegion(row.regione) === canonicalRegion(region)));
+        const older = geo.filter(row => row._key === key && (!region || canonicalRegion(row.regione) === canonicalRegion(region)) &&
+            (!sigla || row.sigla === sigla) &&
+            (!province || normalize(row.provincia) === normalize(province) || normalize(row.sigla) === normalize(province)));
         if (older.length === 1) return [older[0].lat, older[0].lng];
         return null;
     }
@@ -351,5 +362,5 @@
         };
     }
 
-    window.LocationSearch = { create, load, loadGeo, match, resolve, coordinates, listingCoordinates };
+    window.LocationSearch = { create, load, loadGeo, match, resolve, coordinates, listingCoordinates, listingMatchesLocation };
 })();

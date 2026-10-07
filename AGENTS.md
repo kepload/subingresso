@@ -138,8 +138,8 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 - `data.js?v=18`
 - `auth.js?v=21`
 - `ui-components.js?v=11`
-- `js/pages/annunci.js?v=8`
-- `comune-picker.js?v=5`, `location-search.js?v=2`: comuni e 55.288 località da `data/localita.json`; dettaglio/fonti in `data/LOCALITA.md`.
+- `js/pages/annunci.js?v=9`
+- `comune-picker.js?v=5`, `location-search.js?v=3`: comuni e 55.288 località da `data/localita.json`; dettaglio/fonti in `data/LOCALITA.md`.
 - `js/pages/annuncio-detail.js?v=21` (anche in `annuncio.html` + `api/annuncio.js`)
 - `css/tailwind.css?v=4`
 - `page-view-tracker.js?v=4`
