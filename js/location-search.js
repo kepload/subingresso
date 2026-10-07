@@ -153,6 +153,44 @@
         return contextual.length === 1 ? contextual[0].row : null;
     }
 
+    // Il luogo digitato avvia la ricerca nei dintorni. Gli omonimi usano il
+    // contesto degli annunci pubblici; la scelta resta visibile e modificabile.
+    // Questo resolver sceglie il centro della ricerca, mai le coordinate di un annuncio.
+    function resolveSearch(value, listings = null) {
+        const matches = match(value, rows.length);
+        if (!matches.length) return null;
+        const { key, packed, sigla } = parse(value);
+        let candidates = matches.filter(item => item.rank === 0).map(item => item.row);
+        // "Agrate" può essere sia una località sia l'abbreviazione di più
+        // comuni: non fissare la località prima di leggere regione/provincia.
+        if (candidates.length && candidates.every(row => row.nomeLocalita) && key.length >= 3 &&
+            candidates.some(row => placeKey(row.comune).startsWith(placeKey(key) + ' '))) {
+            candidates.push(...rows.filter(row => !row.nomeLocalita && (!sigla || row.sigla === sigla) && row._keys.some(alias => alias.startsWith(key + ' '))));
+        }
+        if (!candidates.length) {
+            const municipality = resolve(value);
+            if (municipality) return municipality;
+            candidates = matches.filter(item => item.row._keys.some(alias => placeKey(alias) === placeKey(key))).map(item => item.row);
+            if (!candidates.length && matches[0].fuzzy) {
+                const limit = packed.length >= 7 ? 2 : 1;
+                const whole = matches.map(item => ({ row: item.row,
+                    distance: Math.min(...item.row._compact.map(name => edits(packed, name, limit))) }));
+                const best = Math.min(...whole.map(item => item.distance));
+                if (best <= limit) candidates = whole.filter(item => item.distance === best).map(item => item.row);
+            }
+        }
+        const official = candidates.filter(row => !row.nomeLocalita);
+        if (official.length) candidates = official;
+        if (candidates.length === 1) return candidates[0];
+        // La home conserva il testo degli omonimi: l'elenco li risolve dopo
+        // aver caricato gli annunci, oppure conserva il suggerimento scelto.
+        if (!candidates.length || listings === null) return null;
+        const support = row => listings.reduce((total, listing) => total +
+            Number(listingMatchesLocation(listing.comune, listing.regione, listing.provincia, row)), 0);
+        return candidates.map(row => ({ row, support: support(row) }))
+            .sort((a, b) => b.support - a.support || a.row.nome.localeCompare(b.row.nome, 'it') || a.row.sigla.localeCompare(b.row.sigla))[0].row;
+    }
+
     function coordinates(record) {
         if (!record) return null;
         if (record.nomeLocalita && Number.isFinite(record.lat) && Number.isFinite(record.lng)) return [record.lat, record.lng];
@@ -189,8 +227,11 @@
         const cacheKey = JSON.stringify([name, region, province]);
         if (listingRecordsCache.has(cacheKey)) return listingRecordsCache.get(cacheKey);
         const { key, packed, sigla } = parse(name);
-        let candidates = [...new Set([...(exactNames.get(key) || []), ...(exactNames.get(packed) || []), ...(coreNames.get(placeKey(key)) || [])])]
-            .filter(row => sameContext(row, region, province, sigla));
+        const named = [...new Set([...(exactNames.get(key) || []), ...(exactNames.get(packed) || []), ...(coreNames.get(placeKey(key)) || [])])];
+        let candidates = named.filter(row => sameContext(row, region, province, sigla));
+        // Un comune ufficiale univoco conserva la propria posizione anche se
+        // il vecchio annuncio ha una regione errata. Nessun omonimo viene indovinato.
+        if (!candidates.length && !province && !sigla && named.length === 1 && !named[0].nomeLocalita) candidates = named;
         const official = candidates.filter(row => !row.nomeLocalita);
         if (official.length) candidates = official;
         if (!candidates.length) {
@@ -222,8 +263,9 @@
         return null;
     }
 
-    function create({ input, box, onSubmit, regions = [], keywords = [], history = () => [], removeHistory, initialCode = '' }) {
+    function create({ input, box, onSubmit, regions = [], keywords = [], history = () => [], removeHistory, initialCode = '', searchListings }) {
         let selected = null;
+        let selectedValue = '';
         let options = [];
         let active = -1;
         let loading = true;
@@ -333,6 +375,7 @@
             clearTimeout(blurTimer);
             selected = option.row || null;
             input.value = option.label;
+            selectedValue = input.value;
             close();
             onSubmit();
         }
@@ -343,6 +386,7 @@
             currentReady = load().then(() => {
                 loading = false;
                 selected = initialCode ? resolve(input.value, initialCode) : null;
+                selectedValue = input.value;
                 initialCode = '';
                 input.removeAttribute('aria-busy');
                 if (document.activeElement === input) show();
@@ -354,7 +398,7 @@
             });
             show();
         }
-        input.addEventListener('input', () => { revision++; selected = null; initialCode = ''; show(); });
+        input.addEventListener('input', () => { revision++; selected = null; selectedValue = ''; initialCode = ''; show(); });
         input.addEventListener('focus', () => { clearTimeout(blurTimer); show(); });
         input.addEventListener('blur', () => { blurTimer = setTimeout(close, 180); });
         input.addEventListener('keydown', event => {
@@ -380,7 +424,7 @@
         start();
         return {
             get ready() { return currentReady; },
-            get selected() { return selected && input.value === selected.nome ? selected : null; },
+            get selected() { return selected && input.value === selectedValue ? selected : null; },
             close,
             async prepare() {
                 const version = revision;
@@ -388,13 +432,14 @@
                 if (!value.trim()) { selected = null; close(); return true; }
                 await currentReady;
                 if (version !== revision || value !== input.value) return false;
-                selected = this.selected;
-                if (selected) input.value = selected.nome;
+                const textOnly = [...regions, ...keywords].some(label => normalize(label) === normalize(value));
+                selected = this.selected || (!textOnly && !failed ? resolveSearch(value, searchListings ? searchListings() : null) : null);
+                selectedValue = value;
                 close();
                 return true;
             }
         };
     }
 
-    window.LocationSearch = { create, load, loadGeo, match, resolve, coordinates, listingCoordinates, listingMatchesLocation, listingCoordinateCandidates, listingContext, get dataVersion() { return dataVersion; } };
+    window.LocationSearch = { create, load, loadGeo, match, resolve, resolveSearch, coordinates, listingCoordinates, listingMatchesLocation, listingCoordinateCandidates, listingContext, get dataVersion() { return dataVersion; } };
 })();

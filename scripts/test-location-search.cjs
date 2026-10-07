@@ -19,6 +19,10 @@ for (const file of ['index.html', 'annunci.html']) {
 }
 const mockListings = [
     { id: 'near-moniga', comune: 'Moniga del Garda', regione: 'Lombardia', titolo: 'Posteggio Moniga' },
+    { id: 'far-featured', comune: 'Bergamo', regione: 'Lombardia', titolo: 'Posteggio in vetrina', featured: true, featured_until: '2099-01-01T00:00:00Z' },
+    { id: 'outside-100', comune: 'Milano', regione: 'Lombardia', titolo: 'Posteggio oltre il raggio' },
+    { id: 'boundary-in', comune: 'Punto di test entro il raggio', titolo: 'Limite interno' },
+    { id: 'boundary-out', comune: 'Punto di test oltre il raggio', titolo: 'Limite esterno' },
     { id: 'castro-bg', comune: 'Castro', regione: 'Lombardia', titolo: 'Posteggio Castro BG' },
     { id: 'castro-le', comune: 'Castro', regione: 'Puglia', titolo: 'Posteggio Castro LE' },
     { id: 'rivoltella-bs', comune: 'Rivoltella (Desenzano del Garda)', regione: 'Lombardia', titolo: 'Mercato Rivoltella BS' },
@@ -76,9 +80,10 @@ async function check(engine, name, mobile, base) {
             await input.fill('Castro');
             await input.press('Enter');
             if (id === 'searchInput') await page.waitForURL('**/annunci?q=Castro');
-            await page.locator('#subtitle').filter({ hasText:'Risultati per "Castro"' }).waitFor();
-            await page.locator('[data-id="castro-le"]').waitFor();
+            await page.locator('#subtitle').filter({ hasText:'vicino a Castro (BG)' }).waitFor();
             await page.locator('[data-id="castro-bg"]').waitFor();
+            await page.waitForFunction(() => !document.querySelector('[data-id="castro-le"]'));
+            assert.equal(await page.locator('[data-id="castro-le"]').count(), 0);
             const resultInput = page.locator('#searchBar');
             await resultInput.fill('Castro');
             await resultInput.focus();
@@ -123,7 +128,7 @@ async function check(engine, name, mobile, base) {
         assert.equal(await page.locator('[data-id="legacy-sold"]').count(), 0);
         assert.equal(await page.locator('[data-id="legacy-pending"]').count(), 0);
         assert.equal(await page.locator('[data-id="rivoltella-pv"]').count(), 0);
-        await page.locator('#subtitle').filter({ hasText: 'e dintorni' }).waitFor();
+        await page.locator('#subtitle').filter({ hasText: 'raggio 50 km' }).waitFor();
         // Lo stesso vecchio annuncio deve restare trovabile da un altro account.
         await page.evaluate(async () => { window.TEST_SEARCH_USER = { id: 'different-buyer' }; await loadListings(); });
         await page.locator('[data-id="legacy-renewed"]').waitFor();
@@ -144,9 +149,45 @@ async function check(engine, name, mobile, base) {
             await page.locator('#searchInput').press('Enter');
             await page.waitForURL('**/annunci?*');
             await page.locator('[data-id="legacy-renewed"]').waitFor();
-            assert.equal(new URL(page.url()).searchParams.get('q'), query, 'Invio conserva il testo senza imporre una località');
+            assert.equal(new URL(page.url()).searchParams.get('q'), query, 'Invio conserva il testo digitato');
             assert.equal(new URL(page.url()).searchParams.has('comune'), false);
+            if (!query.includes(' ')) {
+                await page.locator('#subtitle').filter({ hasText: 'Rivoltella (Desenzano del Garda) (BS) · raggio 100 km' }).waitFor();
+                await page.waitForFunction(() => document.getElementById('resultsGrid').style.opacity !== '0');
+                await page.locator('[data-id="near-moniga"]').waitFor();
+                await page.locator('[data-id="far-featured"]').waitFor();
+                assert.equal(await page.locator('#radiusKm').inputValue(), '100');
+                assert.equal(await page.locator('[data-id="outside-100"]').count(), 0);
+                assert.equal(await page.locator('#sortBy option:checked').textContent(), 'Più vicini');
+                const ordered = await page.locator('[data-id]').evaluateAll(elements => elements.map(el => ({ id: el.dataset.id, distance: el.dataset.distance === 'null' ? null : Number(el.dataset.distance) })));
+                const distances = ordered.filter(row => row.distance !== null).map(row => row.distance);
+                assert(distances.every(distance => distance <= 100));
+                assert.deepEqual(distances, distances.slice().sort((a, b) => a - b), 'distanza prima della vetrina');
+                assert(ordered.findIndex(row => row.id === 'legacy-renewed') < ordered.findIndex(row => row.id === 'near-moniga'));
+                assert(ordered.findIndex(row => row.id === 'near-moniga') < ordered.findIndex(row => row.id === 'far-featured'));
+            }
         }
+
+        await page.goto(base + '/');
+        await page.locator('#searchInput').fill('fiori');
+        await page.locator('#searchInput').press('Enter');
+        await page.waitForURL('**/annunci?*');
+        await page.locator('#subtitle').filter({ hasText: 'Risultati per "fiori"' }).waitFor();
+        assert.equal(new URL(page.url()).searchParams.has('comune'), false, 'un settore resta una ricerca testuale');
+        await page.locator('#searchBar').fill('Rivoltella');
+
+        // Controllo del confine: 99,9 km incluso, 100,1 km escluso.
+        await page.locator('#searchBar').fill('Rivoltella');
+        await page.evaluate(async () => {
+            const original = LocationSearch.listingCoordinateCandidates;
+            LocationSearch.listingCoordinateCandidates = (name, ...context) => {
+                const km = name === 'Punto di test entro il raggio' ? 99.9 : name === 'Punto di test oltre il raggio' ? 100.1 : null;
+                return km === null ? original(name, ...context) : [[45.45 + km / 6371 * 180 / Math.PI, 10.55]];
+            };
+            await applyFilters();
+        });
+        await page.locator('[data-id="boundary-in"]').waitFor();
+        assert.equal(await page.locator('[data-id="boundary-out"]').count(), 0);
 
         // Risposta lenta: mostra i suggerimenti appena arrivano, senza perdere quanto scritto.
         let release;
@@ -205,7 +246,15 @@ async function check(engine, name, mobile, base) {
     assert.equal(search.resolve('Moniga').nome, 'Moniga del Garda');
     assert.equal(search.resolve('Castro'), null);
     assert.equal(search.resolve('frutta'), null);
-    assert.equal(search.resolve('brecsia'), null, 'i refusi richiedono una scelta');
+    assert.equal(search.resolve('brecsia'), null, 'il resolver per i dati salvati rimane prudente');
+    for (const query of ['Rivoltella', 'Rivoltela', 'Rivolttella', 'Rivotlella']) assert.equal(search.resolveSearch(query, mockListings).id, 'geonames:3169227', 'centro geografico anche con refusi');
+    assert.equal(search.resolveSearch('brecsia').nome, 'Brescia');
+    assert.equal(search.resolveSearch('frutta', mockListings), null);
+    assert.equal(search.resolveSearch('abbigliament rivoltela', mockListings), null);
+    assert.equal(search.resolveSearch('Vada', [{ comune: 'Vada', regione: 'Toscana' }]).regione, 'Toscana');
+    assert.equal(search.resolveSearch('Agrate'), null, 'abbreviazione ambigua conservata dalla home');
+    assert.equal(search.resolveSearch('Agrate', [{ comune: 'Agrate', regione: 'Lombardia' }]).nome, 'Agrate Brianza');
+    assert(search.listingCoordinates('Lazise', 'Lombardia'), 'comune univoco riconosciuto anche con una vecchia regione errata');
     assert(search.coordinates(search.resolve('Moniga')));
     assert(search.coordinates(search.resolve('Quero Vas')));
     assert(search.listingCoordinates('Moniga', 'Lombardia'));

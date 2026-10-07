@@ -116,7 +116,7 @@ async function applyFilters() {
     _hideSuggestions();
 
     const radiusEl = document.getElementById('radiusKm');
-    const radius   = radiusEl ? (parseInt(radiusEl.value) || 200) : 200;
+    const radius   = radiusEl ? (parseInt(radiusEl.value) || 100) : 100;
 
     let isProximitySearch = false;
     let searchCity = '';
@@ -161,15 +161,16 @@ async function applyFilters() {
             });
 
         results.sort((a, b) => {
-            const fa = isListingFeatured(a) ? 1 : 0;
-            const fb = isListingFeatured(b) ? 1 : 0;
-            if (fa !== fb) return fb - fa;
             const sortVal = fSort ? fSort.value : '';
             if (sortVal === 'prezzoAsc') return (a.prezzo || 0) - (b.prezzo || 0);
             if (sortVal === 'prezzoDesc') return (b.prezzo || 0) - (a.prezzo || 0);
             if (sortVal === 'superficie') return (b.superficie || 0) - (a.superficie || 0);
             if (sortVal === 'data') return new Date(b.created_at || 0) - new Date(a.created_at || 0);
-            return (a._distance ?? Infinity) - (b._distance ?? Infinity);
+            // I nomi storici non localizzabili, ma corrispondenti al luogo
+            // cercato, stanno nel gruppo iniziale senza mostrare km inventati.
+            const distance = (a._distance ?? 0) - (b._distance ?? 0);
+            if (distance) return distance;
+            return Number(isListingFeatured(b)) - Number(isListingFeatured(a));
         });
     } else {
         results = LISTINGS.filter(l => {
@@ -201,6 +202,8 @@ async function applyFilters() {
 
     const radiusRow = document.getElementById('radiusRow');
     if (radiusRow) radiusRow.classList.toggle('visible', isProximitySearch);
+    const defaultSort = fSort?.querySelector('option[value="pertinenza"]');
+    if (defaultSort) defaultSort.textContent = isProximitySearch ? 'Più vicini' : 'Più pertinenti';
 
     const grid  = document.getElementById('resultsGrid');
     const empty = document.getElementById('emptyState');
@@ -258,8 +261,7 @@ async function applyFilters() {
 
     const sub = document.getElementById('subtitle');
     if (sub) {
-        if (hasUnlocatedResults) sub.textContent = `Posteggi a ${searchCity || qRaw} e dintorni`;
-        else if (isProximitySearch) sub.textContent = `Posteggi vicino a ${searchCity || qRaw} (ordinati per distanza)`;
+        if (isProximitySearch) sub.textContent = `Posteggi vicino a ${searchCity || qRaw} (${searchRecord.sigla}) · raggio ${radius} km`;
         else if (regione)      sub.textContent = `Posteggi disponibili in ${regione}`;
         else if (q)            sub.textContent = `Risultati per "${qRaw}"`;
         else                   sub.textContent = 'Tutti i posteggi disponibili';
@@ -413,6 +415,7 @@ const locationSearch = LocationSearch.create({
     history: getSearchHistory,
     removeHistory: removeFromHistory,
     initialCode: params.get('comune') || '',
+    searchListings: () => LISTINGS.filter(listing => listing.status === 'active'),
     onSubmit: applyFilters
 });
 const locationGeoReady = LocationSearch.loadGeo().catch(() => {});
