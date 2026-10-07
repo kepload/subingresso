@@ -18,6 +18,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        #rPrezzoAvg { overflow-wrap:anywhere; }
+        @media (max-width:640px) {
+            header .max-w-4xl { flex-wrap:wrap; gap:12px; }
+            #rPrezzoAvg { font-size:38px; }
+        }
 
         @media print {
             .no-print { display: none !important; }
@@ -106,14 +111,14 @@
         <div class="bg-blue-50 rounded-2xl p-5 border border-blue-100">
             <div class="flex items-center justify-between gap-4 flex-wrap">
                 <div>
-                    <p class="text-[10px] font-black uppercase tracking-[.2em] text-blue-600 mb-1">Se lo affitti</p>
+                    <p class="text-[10px] font-black uppercase tracking-[.2em] text-blue-600 mb-1">Canone annuo ipotetico</p>
                     <p class="text-3xl font-black text-blue-700 leading-none">
                         € <span id="rAffittoAnnuo">—</span><span class="text-lg font-bold text-blue-400">/anno</span>
                     </p>
-                    <p class="text-xs font-semibold text-blue-500 mt-1">€ <span id="rAffittoMese">—</span> al mese</p>
+                    <p class="text-xs font-semibold text-blue-500 mt-1">Equivalente a € <span id="rAffittoMese">—</span> al mese su 12 mesi</p>
                 </div>
                 <div class="text-right">
-                    <p class="text-[10px] font-black uppercase tracking-[.2em] text-blue-600 mb-1">Rendimento</p>
+                    <p class="text-[10px] font-black uppercase tracking-[.2em] text-blue-600 mb-1">Rapporto lordo canone/valore</p>
                     <p class="text-2xl font-black text-blue-700"><span id="rRoi">—</span>%</p>
                 </div>
             </div>
@@ -133,7 +138,8 @@
         <h2 class="text-lg font-black text-slate-900 mb-3 flex items-center gap-2">
             <i class="fas fa-chart-pie text-emerald-500"></i> Come si compone il tuo valore
         </h2>
-        <p class="text-sm text-slate-500 font-medium mb-5 leading-relaxed">Partiamo dal tuo fatturato annuo e applichiamo i moltiplicatori standard del mercato ambulante italiano.</p>
+        <p id="rMethod" class="text-sm text-slate-500 font-medium mb-5 leading-relaxed">Valutazione indicativa dei dati dichiarati.</p>
+        <div id="rNotes" class="text-sm text-slate-500 mb-4"></div>
         <div id="rBreakdown" class="space-y-2.5"></div>
     </section>
 
@@ -141,10 +147,11 @@
     <section id="rCompSection" class="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 shadow-sm">
         <div class="flex items-center justify-between gap-3 mb-5 flex-wrap">
             <h2 class="text-lg font-black text-slate-900 flex items-center gap-2">
-                <i class="fas fa-store text-amber-500"></i> Annunci simili sulla piattaforma
+                <i class="fas fa-store text-amber-500"></i> Prezzi richiesti negli annunci
             </h2>
             <a href="/annunci" class="text-xs font-black text-blue-600 hover:underline no-print">Vedi tutti →</a>
         </div>
+        <p class="text-xs text-slate-500 mb-3">Annunci di vendita nello stesso settore. Non sono compravendite concluse e non certificano la stima.</p>
         <div id="rCompList" class="space-y-2"></div>
         <p id="rCompEmpty" class="hidden text-sm text-slate-400 italic">Nessun annuncio simile attivo al momento. Sii il primo a pubblicare!</p>
     </section>
@@ -196,7 +203,7 @@
     <!-- Disclaimer -->
     <section class="border-t border-slate-200 pt-6">
         <p class="text-xs text-slate-400 leading-relaxed">
-            <strong class="text-slate-600">Nota sulla valutazione.</strong> Il valore mostrato è una <strong>stima orientativa</strong> calcolata sui parametri medi del mercato ambulante italiano. Ogni posteggio ha caratteristiche uniche — concorrenza locale, flusso clienti, regolamenti comunali — che il calcolatore non può cogliere singolarmente. Usa il risultato come punto di partenza per la trattativa, non come perizia ufficiale.
+            <strong class="text-slate-600">Nota sulla valutazione.</strong> È una stima indicativa basata sui dati dichiarati e su ipotesi di modello, ancora da calibrare su compravendite concluse. Merce, furgone e attrezzature esclusi. Verifica incassi, spese, titolo e scadenza della concessione. Prezzo e canone dipendono dalla trattativa e dalla domanda locale.
             Report generato il <span id="rGenDate">—</span> · Subingresso.it · Algoritmo v<span id="rAlgVer">—</span>
         </p>
     </section>
@@ -208,6 +215,7 @@
 <script src="js/page-view-tracker.js?v=3"></script>
 <script src="js/data.js?v=17"></script>
 <script src="js/auth.js?v=20"></script>
+<script src="js/valuation.js?v=1"></script>
 
 <script>
 (function() {
@@ -228,8 +236,8 @@
     }
 
     function fmt(n) {
-        if (n == null || isNaN(n)) return '—';
-        return Math.round(n).toLocaleString('it-IT');
+        if (n == null || !Number.isFinite(Number(n))) return '—';
+        return Math.round(n).toLocaleString('it-IT', { useGrouping: true });
     }
 
     function _waitForSupabase(maxMs = 4000) {
@@ -297,8 +305,21 @@
         // Affitto
         document.getElementById('rAffittoAnnuo').textContent = fmt(log.affitto_annuo);
         document.getElementById('rAffittoMese').textContent  = fmt(log.affitto_mensile);
-        const roi = (log.prezzo_avg && log.affitto_annuo) ? (log.affitto_annuo / log.prezzo_avg * 100) : 0;
+        const roi = Number(log.prezzo_avg) > 0 && Number.isFinite(Number(log.affitto_annuo)) ? (log.affitto_annuo / log.prezzo_avg * 100) : 0;
         document.getElementById('rRoi').textContent = roi.toFixed(1);
+
+        const isV2 = log.algoritmo_version === '2.0';
+        let calculation = null;
+        if (isV2 && log.dettagli_calcolo?.input) {
+            try { calculation = PosteggioValuation.estimate(log.dettagli_calcolo.input); } catch (_) {}
+        }
+        document.getElementById('rMethod').textContent = isV2
+            ? 'Ipotesi prudenziali: 50% degli incassi annui, oppure 2,5 volte il margine dichiarato (massimo 90% degli incassi), corretti per le caratteristiche del banco. Il margine è prima delle tasse personali e del compenso per il tuo lavoro. Le percentuali si moltiplicano; la concessione breve può limitare il risultato.'
+            : 'Report storico: usa il precedente modello v1, che comprendeva un aumento commerciale del 18% e premi elevati. Rifai il calcolo per usare il modello aggiornato.';
+        const notes = document.getElementById('rNotes');
+        notes.replaceChildren();
+        if (calculation) calculation.notes.forEach(note => { const p = document.createElement('p'); p.textContent = note; notes.appendChild(p); });
+        if (isV2 && !calculation) notes.textContent = 'Dettagli del modello non disponibili: rifai il calcolo per una nuova stima.';
 
         // Dati inseriti
         const labels = {
@@ -315,6 +336,7 @@
             })[v] || v },
             stagionalita: { l: 'Stagionalità', f: v => v === 'annuale' ? 'Annuale' : v === 'stagionale' ? 'Stagionale' : v },
             zona:         { l: 'Tipo di piazza', f: v => ({
+                mare_lago: 'Mare o lago', turistica: 'Altra zona turistica', interna: 'Città, paese o quartiere',
                 storica_turistica: 'Storica / Turistica',
                 capoluogo:         'Capoluogo / Centro',
                 rionale:           'Piccolo Comune / Rionale',
@@ -323,10 +345,24 @@
             posizione:    { l: 'Posizione del banco', f: v => v === 'angolare' ? 'Angolare / Testata' : v === 'linea' ? 'In linea' : v },
             anzianita:    { l: 'Anzianità licenza', f: v => v === 'storica' ? 'Storica (>10 anni)' : v === 'recente' ? 'Recente (<10 anni)' : v },
         };
+        const values = { ...log };
+        if (isV2) {
+            delete labels.durata_fiera; delete labels.stagionalita; delete labels.anzianita;
+            labels.fatturato.l = 'Incassi annui di questo posteggio';
+            if (calculation) {
+                Object.assign(values, calculation.input);
+                ['zona', 'clientela', 'passaggio', 'posizione', 'sole', 'concessione'].forEach(k => {
+                    labels[k] = { l: ({ zona:'Zona', clientela:'Clienti', passaggio:'Passaggio', posizione:'Lati di vendita', sole:'Esposizione al sole', concessione:'Concessione' })[k], f: v => PosteggioValuation.labels[k][v] || v };
+                });
+                labels.giornate = { l: 'Giornate effettive all’anno', f: v => String(v) };
+                labels.utileGiorno = { l: 'Resta dopo le spese / giorno', f: v => '€ ' + fmt(v) };
+                labels.mesiResidui = { l: 'Mesi residui dichiarati', f: v => String(v) };
+            }
+        }
         const dl = document.getElementById('rDati');
         dl.innerHTML = '';
         Object.keys(labels).forEach(k => {
-            const v = log[k];
+            const v = values[k];
             if (v == null || v === '') return;
             const cfg = labels[k];
             const item = document.createElement('div');
@@ -339,7 +375,7 @@
 
         // Breakdown — spiegazione moltiplicatori
         const breakdownContainer = document.getElementById('rBreakdown');
-        const factors = computeFactorImpact(log);
+        const factors = isV2 ? (calculation?.impacts || []) : computeFactorImpact(log);
         breakdownContainer.innerHTML = factors.map(f => {
             const isPos = f.delta > 0;
             const isNeg = f.delta < 0;
@@ -350,7 +386,7 @@
             <div class="flex items-center justify-between gap-4 bg-slate-50 rounded-xl px-4 py-2.5">
                 <div class="flex items-center gap-3 min-w-0 flex-1">
                     <i class="fas ${arrow} ${color} text-xs flex-shrink-0"></i>
-                    <span class="text-sm font-bold text-slate-700 truncate">${escapeHTML(f.label)}</span>
+                    <span class="text-sm font-bold text-slate-700">${escapeHTML(f.label)}</span>
                 </div>
                 <span class="text-sm font-black ${color} flex-shrink-0">${sign}${f.delta}%</span>
             </div>`;
@@ -400,12 +436,19 @@
         list.innerHTML = '<div class="text-center py-4 text-slate-300"><i class="fas fa-spinner fa-spin"></i></div>';
         try {
             // Cerca annunci attivi nello stesso range di prezzo
-            const minP = (log.prezzo_avg || 10000) * 0.5;
-            const maxP = (log.prezzo_avg || 10000) * 1.5;
+            if (!Number.isFinite(Number(log.prezzo_avg)) || Number(log.prezzo_avg) <= 0) throw new Error('Nessuna fascia confrontabile');
+            const minP = log.prezzo_avg * 0.5;
+            const maxP = log.prezzo_avg * 1.5;
             const { data, error } = await _supabase
                 .from('annunci')
-                .select('id, titolo, comune, regione, prezzo, stato, dettagli_extra, img_urls')
+                .select('id, titolo, comune, regione, prezzo, stato, settore, expires_at')
                 .eq('status', 'active')
+                .eq('stato', 'Vendita')
+                .eq('tipo', log.frequenza === 'fiera' ? 'Fiera' : log.frequenza === 'giornaliero' ? 'Mercato giornaliero' : 'Mercato settimanale')
+                .in('settore', log.settore === 'alimentare'
+                    ? ['Alimentari', 'Ortofrutta', 'Somministrazione', 'Produttori', 'Frutta e verdura', 'Pesce', 'Carne', 'Formaggi e salumi', 'Pane e prodotti da forno', 'Gastronomia / cibi pronti', 'Dolci e pasticceria', 'Biologico e km0', 'Altro alimentare']
+                    : ['Abbigliamento', 'Calzature', 'Fiori e Piante', 'Casalinghi', 'Altro', 'Abbigliamento e accessori', 'Biancheria e tessuti', 'Fiori e piante', 'Libri e giocattoli', 'Gioielli e bigiotteria', 'Elettronica', 'Antiquariato', 'Altro non alimentare'])
+                .or('expires_at.is.null,expires_at.gte.' + new Date().toISOString())
                 .gte('prezzo', Math.round(minP))
                 .lte('prezzo', Math.round(maxP))
                 .order('created_at', { ascending: false })

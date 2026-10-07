@@ -2694,7 +2694,7 @@ function _vFmt(n) {
     if (n == null || isNaN(n)) return '—';
     return Math.round(n).toLocaleString('it-IT').replace(/\./g, ' ');
 }
-function _vFmtZona(z)    { return ({ storica_turistica:'Piazza storica', capoluogo:'Capoluogo', rionale:'Piccolo Comune' })[z] || (z || '—'); }
+function _vFmtZona(z)    { return ({ mare_lago:'Mare o lago', turistica:'Zona turistica', interna:'Città / paese / quartiere', storica_turistica:'Piazza storica', capoluogo:'Capoluogo', rionale:'Piccolo Comune' })[z] || (z || '—'); }
 function _vFmtSettore(s) { return s === 'alimentare' ? 'Alimentare' : s === 'non_alimentare' ? 'Non alimentare' : (s || '—'); }
 function _vFmtFreq(f)    { return ({ settimanale:'Settimanale', giornaliero:'Giornaliero', fiera:'Fiera' })[f] || (f || '—'); }
 
@@ -4552,7 +4552,7 @@ window.startCheckout     = startCheckout;
 let _allValutatoreLogs = [];
 
 function _fmtEur(v)        { return v == null ? '—' : '€ ' + Number(v).toLocaleString('it-IT'); }
-function _fmtZona(z)       { return ({ storica_turistica:'Storica', capoluogo:'Capoluogo', rionale:'Rionale' })[z] || (z || '—'); }
+function _fmtZona(z)       { return ({ mare_lago:'Mare o lago', turistica:'Turistica', interna:'Città / paese', storica_turistica:'Storica', capoluogo:'Capoluogo', rionale:'Rionale' })[z] || (z || '—'); }
 function _fmtSettore(s)    { return s === 'alimentare' ? 'Alimentare' : s === 'non_alimentare' ? 'Non alim.' : (s || '—'); }
 function _fmtFreq(f)       { return ({ settimanale:'Settimanale', giornaliero:'Giornaliero', fiera:'Fiera' })[f] || (f || '—'); }
 function _fmtRelDate(iso) {

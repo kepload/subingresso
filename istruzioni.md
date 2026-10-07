@@ -587,27 +587,23 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - `loadRecentListings()` `.limit(12)`, `created_at DESC`, fallback `LISTINGS.slice(0,12)`.
 - Banner mobile sopra "Vendi in 3 passi": link verde a `valutatore.html`.
 
-## 🧮 Valutatore (`valutatore.html`)
+## 🧮 Valutatore v2 (7 ottobre 2026)
 
-- 6 step. **Bug critico**: NON usare `history` come var (conflitto `window.history`). Usare `stepHistory`.
-- **Formula** (calibrata 1 mag 2026):
-  ```js
-  base = factors.fatturato * 1.18;
-  moltFreq = (frequenza === 'fiera') ? durataFiera : frequenza;
-  totale = base * moltFreq * zona * settore * posizione * anni * stagionalita;
-  rentRaw = totale * 0.25;
-  rentCap = fatturato * 0.58 * stagionalita;
-  rentAvg = Math.min(rentRaw, rentCap);
-  ```
-  Mult: giornaliero=1.5/settimanale=1.0/fiera=durataFiera (1g=0.3, weekend=0.5, sett+=0.7); zona storica=2.0/capoluogo=1.25/rionale=0.65; alimentare=1.3, non-alim=1.0; angolare=1.25/linea=1.0; storica=1.25/recente=1.0; stagionale=0.7/annuale=1.0.
-- **`base * 1.18`** è scelta business (sopravvalutazione +18% per spingere a pubblicare). NON oltre +20%.
-- **Quando si toccano moltiplicatori** aggiornare `_FREQ_LABELS` / `_ZONA_LABELS` / `_SETT_LABELS` / `_POS_LABELS` / `_ANNI_LABELS` / `_STAG_LABELS` / `_FIERA_LABELS` (chiavi devono matchare il nuovo valore — `String(1.0)='1'`). Senza match `_label()` ritorna null → log Supabase skippato.
-- **Step 3 zona terza opzione**: label utente "**Piccolo Comune / Quartiere**" (rinominata, prima "Mercato Rionale"). Tag interno `_ZONA_LABELS['0.65']` resta `'rionale'` per log storici.
-- **Tabella `valutatore_logs`** + RPC `link_valutatore_to_user`/`link_valutatore_to_annuncio`. RLS owner-SELECT.
-- **`/api/geo.js`**: serverless Vercel, `{country, region}` da headers `x-vercel-ip-country`.
-- **Tracking ondata 1**: `valutatore_logs` ha `referrer`, `utm_*`, `landing_path`, `device_type`, `country`, `region`, `tempo_compilazione_sec`, `algoritmo_version`.
-- **Step 6**: cessione (verde) sopra, affitto annuo (blu) sotto. Numero con spazio sottile separatore migliaia (`toLocaleString('it-IT').replace(/\./g,' ')`).
-- **`#disclaimer`** in fondo (`scroll-mt-20`): "stima orientativa, ogni mercato unico, prezzi variano, non è perizia".
+- `valutatore.html` raccoglie 8 schermate; `js/pages/valutatore.js?v=1` gestisce il flusso; `js/valuation.js?v=1` è il modello condiviso con `report.html` e i test. JS vanilla, CSS locale: nessun rebuild Tailwind necessario.
+- **Priorità richiesta dall’utente: stime oneste. Rimosso il premio commerciale +18%** e i moltiplicatori eccessivi del v1. Non ripristinare gonfiature per incentivare gli annunci.
+- Incassi del **singolo posteggio**, per giornata o per anno, e giornate effettive (1–366; max 53 per settimanale). Si conta anche la bassa stagione; nessun altro moltiplicatore per frequenza o stagionalità. Settore e anzianità non danno premi automatici.
+- Domande: zona (mare/lago, altra turistica, interna), chi compra (residenti/mista/turisti/non so), passaggio (principale/regolare/laterale/non so), uno/due lati di vendita, sole (riparato/frontale/variabile/non so), concessione (3+ anni verificati, breve con mesi 1–35, ignota, temporanea).
+- **Ipotesi del modello, non statistiche di compravendite**: base = 50% incasso annuo, oppure min(2,5 × margine annuo dichiarato, 90% incasso annuo). Margine dopo merce/trasporto/canone/personale/altre spese, prima tasse personali e compenso del titolare. Opzionale; 0 non equivale a dato mancante.
+- Correzioni: clientela mista in zona turistica +5%; passaggio principale +10%, laterale −15%; due lati +5%; scadenza ignota −15%. Turismo da solo neutro. Sole davanti che copre la merce **−10%**, parte della giornata −5%; applicato dopo il limite di durata, quindi resta coerente anche nelle concessioni brevi.
+- Concessione breve: cap = margine annuo × (1 − 1,15^(−mesi/12)) / 0,15. Senza margine si ipotizza il 20% degli incassi. Nessun valore terminale/rinnovo automatico. Assegnazione temporanea: niente prezzo né log, verifica prima al SUAP.
+- Fascia ±25% con margine dichiarato, ±35% senza, +5 punti per ogni risposta ignota (clientela/passaggio/sole), +5 per turismo prevalente, +10 per scadenza ignota; max ±55%. Il limite di durata vincola anche l’estremo superiore.
+- Canone annuo = min(18% valore, 30% margine annuo). Mensile = equivalente su 12 mesi, anche se stagionale; rapporto canone/valore lordo, nessuna promessa di rendimento. Importi interi identici su schermo, log e report.
+- **Non esiste una banca dati di vendite concluse per calibrare i coefficienti.** I test verificano aritmetica, coerenza e sicurezza, non accuratezza commerciale. Per calibrare occorrono prezzi realmente pagati + incassi/spese/giornate dello stesso posteggio. Merce, attrezzature e furgone esclusi. Fonti amministrative/principi linkate nella metodologia non certificano i coefficienti.
+- `PATCH_VALUTATORE_V2.sql`: aggiunge `dettagli_calcolo` JSONB e `request_id`; RPC `save_valutazione_v2` valida input e **ricalcola nel DB**. Il client non può scegliere proprietario, annuncio o risultati. INSERT/UPDATE/DELETE/TRUNCATE diretti revocati ad anon/authenticated; SELECT solo owner via RLS. Token casuali 256 bit nuovi per compilazione, claim solo v2 entro 24h, verificata proprietà dell’annuncio nella RPC di collegamento.
+- Salvataggio idempotente per request_id, limite 30/ora per sessione o utente autenticato con lock transazionale. **Il limite anonimo per sessione non sostituisce un CAPTCHA/WAF contro bot che creano token nuovi**. Nessuna garanzia assoluta di assenza di vulnerabilità.
+- Il report non viene dichiarato salvato se la RPC fallisce; pulsante retry. I report v1 rimangono leggibili, evidenziano il vecchio modello; i v2 mostrano le nuove risposte. Gli annunci di confronto sono vendite attive, non scadute, stesso tipo/settore: prezzi richiesti, non transazioni né prova della stima.
+- Test: `node scripts/test-valutatore.cjs` (10.368 scenari + input errati e invarianti). `node scripts/test-valutatore-db.cjs` genera `%TEMP%/subingresso-valutatore-db-test.sql` da eseguire con CLI Supabase: transazione **ROLLBACK**, confronto 36 casi JS/SQL, input ostili, idempotenza, permessi, owner e RLS. Richiede due identità già esistenti; nessuna creazione o eliminazione utenti, nessun dato test persistente.
+- Browser verificato con Playwright: 320px, 390px e desktop, sole, mesi residui, assegnazione temporanea, input errati, doppio tocco, storage bloccato, errore/retry salvataggio, report v2 e v1. Script/screenshot temporanei sotto `%TEMP%/subingresso-valutatore-tests`.
 
 ## 📐 Saved Listings (Preferiti)
 
