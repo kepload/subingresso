@@ -62,10 +62,10 @@ Dopo **OGNI** modifica ai file: `git add . && git commit -m "..." && git push`. 
 **Regole correnti:**
 - Tutte le cache profilo SCOPE per user_id: helper `_userKey(base, userId)` in `vendi.html` → `_vc_nome_u_<id8>`, ecc.
 - `_prefillFromCache(userId)` richiede userId; senza scope NON legge nulla.
-- `prefillContactFromSession()` SOVRASCRIVE sempre i campi se ha dati freschi DB (anche se cache già riempita).
+- `prefillContactFromSession()` aggiorna i contatti precompilati con il profilo corrente; preserva i campi modificati dall'utente o ripresi dalla bozza del suo account (`dataset.userEdited`). Il cambio account svuota i dati in memoria prima di riprendere la nuova bozza.
 - `sessionStorage._last_prefill_user`: rileva cambio user e svuota i campi prima del prefill.
-- Draft listing **NON contiene più nome/tel** + traccia `_userId`. Draft di altro user → scartato.
-- `signOut()` in `auth.js` pulisce: chiavi legacy globali, tutte le `_*_u_*` scope-ate, `subingresso_draft_v1`, `_last_prefill_user`.
+- Bozze v2 in `subingresso_draft_v2_<user_id completo>` (oppure `guest`): si legge solo quella del proprietario corrente. Nome/tel solo nelle bozze degli account autenticati, mai nella bozza ospite. Gli altri account conservano la propria bozza senza mostrarla al nuovo utente.
+- `signOut()` in `auth.js` pulisce: chiavi legacy globali, tutte le `_*_u_*` scope-ate, `subingresso_draft_v1`, `_last_prefill_user`. Conserva le bozze v2, riprese solo dopo l'accesso allo stesso account.
 - **NON aggiungere mai** chiavi localStorage globali per dati utente. Sempre scope per user_id.
 
 ## 🚫 SECURITY: `select('*')` su `annunci` da authenticated è VIETATO
@@ -479,11 +479,15 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 - Assegnare admin: `UPDATE profiles SET is_admin = true WHERE id = (SELECT id FROM auth.users WHERE email = '...');`
 - In `dashboard.html`: `_isAdmin` set dopo fetch profilo.
 
-## 🧙 Form `vendi.html` — Wizard 5 Step
+## 🧙 Form `vendi.html` — Wizard 6 Step (aggiornato 7 ottobre 2026)
 
-- 5 step. `fTipo`, `fMerce`, `fGiorni` sono `<input type="hidden">` aggiornati via JS (non select). `stato` radio hidden via `selectStato()`.
-- Step 1 auto-avanza al click. Step 5 auto-suggest titolo da comune+tipo+settore.
-- Prezzo: 101-400.000€ (range realistico posteggi mercatali, min 101 per bloccare il "100€ tondo civetta"), **input via `style=""` inline** (padding/font/color) per battere la cascade `.field-input`. Sotto l'input: box amber soft con nudge anti-prezzo-civetta ("scrivi il prezzo reale, un prezzo civetta vende in media 3 volte meno"). I limiti NON sono mostrati in UI — chi sbaglia vede solo "Prezzo troppo basso/alto, controlla bene".
+- 6 step: vendita/affitto, posizione, dettagli, prezzo, foto/contenuto/contatti, riepilogo e pubblicazione gratis/Vetrina. `fTipo`, `fMerce`, `fGiorni` sono hidden aggiornati via JS. `stato` radio hidden via `selectStato()`.
+- Step 1 auto-avanza al click. `js/pages/vendi-support.js` genera centinaia di varianti di titolo da dati reali (vendita/affitto, mercato/fiera, comune, nome fiera, giorni, settore, superficie), senza qualità inventate. Selezione casuale con memoria degli ultimi 20 suggerimenti nella sessione. Titolo stabile tornando indietro; aggiorna un titolo automatico quando cambiano i dettagli, preserva quello scritto dall'utente. Pulsante per cambiare suggerimento; conferma prima di sostituire un titolo manuale.
+- Prezzo: 101-400.000€, **input via `style=""` inline**. `VendiSupport.parseNumber()` legge importi italiani e decimali senza troncamenti o perdita dei centesimi; rifiuta testo, esponenti e valori non finiti. Superficie decimale con esempio larghezza × profondità. Errori sul campo interessato e controllo di tutti i passi prima dell'INSERT.
+- Foto: fino a **5 per tutti, anche gratis**, anche in `modifica-annuncio.html`. Selezione multipla, copertina modificabile, rimozione visibile da telefono, suggerimenti banco/spazio/mercato (o fiera). Invito a caricarne almeno 3, con possibilità esplicita di continuare senza foto. Accetta JPG/PNG/WebP/AVIF fino a 20 MB; riduce prima dell'upload, massimo finale 5 MB.
+- Bozze: salvataggio dei dati a ogni input/cambio/azione, già dal primo passo; recupero automatico del passo e dei dati all'apertura. Foto/File in IndexedDB `subingresso_listing_drafts`, store `photos`, stessa chiave del proprietario; scritture serializzate. Stato visibile, avviso all'uscita solo se il salvataggio è fallito/in corso. Migrazione della vecchia v1 solo al proprietario; passaggio ospite→account conserva il lavoro. Ricominciare richiede conferma; pubblicazione riuscita elimina solo la bozza corrente. Recupero nello stesso browser e dispositivo, non sincronizzato via server.
+- Fiere: nome facoltativo e unico input libero per periodo/durata (es. ogni ottobre, 5 giorni). Descrizione assistita solo da fatti inseriti: usa `fNoteFiera`, mai i giorni del mercato. Non dichiara permessi regolari, buona posizione o clientela fissa. In INSERT `giorni` per fiere viene dal periodo/nome, senza giorni settimanali residui; dettagli extra fiera solo per il tipo Fiera.
+- Step 6: riepilogo con pulsanti Modifica prima della scelta di pubblicazione. La pubblicazione gratuita resta preselezionata.
 - **Preview card live nello step 5** (6 mag 2026): `#previewCard` sopra il bottone Pubblica, max-w 300px centrata, `pointer-events:none`. Funzione `_renderPreview()` costruisce un fakeListing (id `__preview__`, user_id `null` → cade su iniziale di `contatto`, status `active`, no featured/expires) e chiama `buildCard()` da data.js. Trigger: ingresso step 5 (subito + dopo `prefillContactFromSession`), `oninput` su `fTitolo`+`fNome`, dopo `_handleFiles` push, dopo `removeFile`. Foto via `URL.createObjectURL(_files[0])` salvato in `_previewObjectURL` globale e revocato prima di crearne uno nuovo (anti memory-leak). `getOptimizedImageUrl` cade nel try/catch su URL `blob:` e ritorna l'object URL invariato → preview funziona.
 - Anti-spam: 1 minuto. Timestamp PRIMA dell'insert, rimosso su errore.
 - **Telefono OBBLIGATORIO** (commit `3b5ac17`): `required` HTML5, asterisco rosso, banner `#missingPhoneBanner` se prefill non trova telefono nel profilo, bordo giallo, focus automatico, messaggio errore esplicito.
@@ -493,12 +497,13 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 - **Login timeout 12s** in `auth.js` `handleLogin` (Promise.race).
 - **Errore submit dettagliato**: `Errore [code]: <message Supabase reale>` (max 160 char).
 - **Direct fetch INSERT** (`_directInsertAnnuncio`): bypass supabase-js che hangava 45s.
-- **Upload foto via fetch diretto** Storage con timeout 25s, progress "1/N".
+- **Upload foto via fetch diretto** Storage con timeout 25s, progress "1/N". Se una foto fallisce, niente INSERT parziale: annuncio ancora in bozza. Retry riutilizza le foto già caricate nella stessa pagina (WeakMap per File e proprietario).
 - **Cache localStorage `_profile_nome_u_<id>`/`_profile_tel_u_<id>`** (scope) per prefill istantaneo.
 - **Smart name**: evita duplicazione "Ardit Kycyku Kycyku" (cognome già in nome).
 - **Bug noti vendi.html**:
   - Anti-spam NaN: `parseInt(localStorage.getItem(lastPostKey)) || 0` (string coercion bug).
-  - Rimozione foto: `WeakMap` `_fileMap` mappa div→File. `removeFile()` usa `_files.indexOf(div._fileRef)` non l'indice DOM.
+  - Rimozione foto: `WeakMap` `_fileMap` mappa div→File. Anche la modifica annuncio usa ora WeakMap per evitare errori con l'ordine asincrono dei FileReader.
+- **Verifica form**: `scripts/test-vendi.cjs` controlla sintassi e flussi browser con backend simulato, senza creare annunci reali. Richiede Playwright; `PLAYWRIGHT_MODULE` e `PLAYWRIGHT_CHROMIUM_EXECUTABLE` permettono di riusare un'installazione locale. Copre mercato/fiera, mobile, titoli, bozze/foto/contatti, isolamento account, migrazione v1, errori memoria/upload e retry, pubblicazione/reset e più foto in modifica.
 
 ## 💶 Prezzi Affitto — Annuali
 
@@ -871,7 +876,7 @@ Ordine consigliato prossima sessione:
 - **SEO tech**: blog e annunci in SSR (`api/blog.js`, `api/annuncio.js`), Step 1 title/H1 transazionali su /annunci e /vendi, correlati + ordinamento featured-first, sitemap dinamica.
 - **Contenuti blog**: 20/20 regioni bandi + 5/5 "mercati ambulanti [regione]" + hub Bolkestein (+1 Tier 2) + guide costo/valore — tutti formato v2 scansionabile.
 - **Funnel/tracking**: `auth_modal_opens` (12 sorgenti) + pannello funnel admin, `blog_conversions`, `saved_count`, click chat/whatsapp/call tracciati.
-- **Vendi/UX**: wizard 5 step con preview card, prezzi civetta limitati, sunk-cost auth, foto 1-gratis/5-vetrina, nudge foto nel box.
+- **Vendi/UX**: wizard 6 step con preview e riepilogo, 5 foto anche gratis, invito a 3 foto, titoli casuali, bozze locali con foto e recupero automatico.
 - **Vetrina**: a pagamento Stripe (tolto l'extend di `expires_at`), sconto -10% alla pubblicazione, box admin "valore annunci".
 - **Lifecycle**: annunci 200gg, scaduti con badge + contatti bloccati + bottone riattiva.
 - **Pulizie 22-23 mag**: demo eliminati (restano 34 annunci veri) + lotteria welcome rimossa ovunque.
@@ -882,7 +887,7 @@ Ordine consigliato prossima sessione:
 - `moderation.js` non incluso in HTML (mitigato da trigger DB).
 - Admin hardcoded in `setup-database.sql` vecchio (in prod usate già `is_admin`).
 - UPDATE policy senza `WITH CHECK` (Postgres riusa USING).
-- Bug foto `modifica-annuncio.html` (`img[src^="http"]` fragile).
+- Rimozione foto in `modifica-annuncio.html` corretta il 7 ottobre 2026 con WeakMap File→preview.
 
 ## 🚨 SECURITY Open Vectors
 

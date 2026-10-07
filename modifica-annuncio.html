@@ -190,7 +190,7 @@
                     </div>
                     <p id="photoHint" class="text-xs text-slate-500 mt-2 font-medium flex items-center gap-1.5">
                         <i class="fas fa-bolt text-amber-500 text-[11px]"></i>
-                        Un annuncio con foto vende fino a 3 volte di più.
+                        Aggiungi fino a 5 foto, anche gratis: banco, spazio del posteggio e mercato intorno.
                     </p>
                     <div id="previewContainer" class="grid grid-cols-5 gap-2 mt-4"></div>
                 </div>
@@ -280,9 +280,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (l.stato === 'Vendita') document.getElementById('radioVendita').checked = true;    else document.getElementById('radioAffitto').checked = true;
 
-    // Limite foto: 5 se annuncio in vetrina attiva, 1 altrimenti
+    // Tutti gli annunci possono mostrare fino a 5 foto.
     const _isFeatured = typeof isListingFeatured === 'function' ? isListingFeatured(l) : !!(l.featured && l.featured_until && new Date(l.featured_until) > new Date());
-    _maxPhotos = _isFeatured ? 5 : 1;
     if (_isFeatured) {
         const hint = document.getElementById('photoHint');
         if (hint) hint.innerHTML = '<i class="fas fa-crown text-amber-500 text-[11px]"></i> Vetrina attiva: puoi caricare fino a 5 foto, mostrate a rotazione.';
@@ -306,15 +305,16 @@ const preview  = document.getElementById('previewContainer');
 let _newFiles = [];
 let _currentImageUrls = [];
 let _currentExtra = {};
-let _maxPhotos = 1; // default: free 1 foto, alzato a 5 se annuncio in vetrina attiva
+const _maxPhotos = 5;
+const _photoFiles = new WeakMap();
 
 dropzone.addEventListener('click', () => fileInput.click());
-fileInput.addEventListener('change', e => handleFiles(e.target.files));
+fileInput.addEventListener('change', e => { handleFiles(e.target.files); fileInput.value = ''; });
 
 function handleFiles(files) {
     for (let f of files) {
         if (_newFiles.length + _currentImageUrls.length >= _maxPhotos) {
-            showToast(_maxPhotos === 1 ? 'Puoi caricare 1 sola foto.' : `Massimo ${_maxPhotos} foto consentite.`, 'warning');
+            showToast(`Puoi aggiungere fino a ${_maxPhotos} foto.`, 'warning');
             break;
         }
         const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
@@ -322,40 +322,39 @@ function handleFiles(files) {
             showToast('Carica solo immagini JPG, PNG, WebP o AVIF.', 'warning');
             continue;
         }
-        if (f.size > 5 * 1024 * 1024) {
-            showToast('Ogni foto deve pesare al massimo 5 MB.', 'warning');
+        if (f.size > 20 * 1024 * 1024) {
+            showToast('Ogni foto deve pesare al massimo 20 MB.', 'warning');
             continue;
         }
         _newFiles.push(f);
         const reader = new FileReader();
-        reader.onload = e => addPreview(e.target.result, false);
+        reader.onload = e => { if (_newFiles.includes(f)) addPreview(e.target.result, false, f); };
         reader.readAsDataURL(f);
     }
 }
 
-function addPreview(src, isExisting) {
+function addPreview(src, isExisting, file = null) {
     if (isExisting) _currentImageUrls.push(src);
     const div = document.createElement('div');
     div.className = 'aspect-square bg-slate-100 rounded-lg overflow-hidden relative group';
     div.innerHTML = `
         <img src="${escapeHTML(src)}" class="w-full h-full object-cover">
-        <button type="button" class="absolute top-1 right-1 bg-red-500 text-white w-5 h-5 rounded-full text-[10px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition" onclick="removePreview(this, ${isExisting})">
+        <button type="button" aria-label="Rimuovi foto" style="width:32px;height:32px" class="absolute top-1 right-1 bg-red-500 text-white rounded-full text-[10px] flex items-center justify-center transition" onclick="removePreview(this, ${isExisting})">
             <i class="fas fa-times"></i>
         </button>`;
     preview.appendChild(div);
+    if (file) _photoFiles.set(div, file);
 }
 
 function removePreview(btn, isExisting) {
     const div = btn.parentElement;
-    const idx = Array.from(preview.children).indexOf(div);
     if (isExisting) {
         // Rimuovi dalle URL correnti (bisogna trovare l'indice corretto tra le URL esistenti)
         const url = div.querySelector('img').src;
         _currentImageUrls = _currentImageUrls.filter(u => u !== url);
     } else {
-        // Rimuovi dai nuovi file (l'indice è relativo ai soli nuovi file inseriti dopo quelli esistenti)
-        const existingCount = preview.querySelectorAll('img[src^="http"]').length;
-        _newFiles.splice(idx - existingCount, 1);
+        const idx = _newFiles.indexOf(_photoFiles.get(div));
+        if (idx !== -1) _newFiles.splice(idx, 1);
     }
     div.remove();
 }
@@ -413,12 +412,14 @@ async function updateAnnuncio() {
             const uploadFile = typeof prepareImageForUpload === 'function'
                 ? await prepareImageForUpload(file)
                 : file;
+            if (uploadFile.size > 5 * 1024 * 1024) throw new Error('La foto resta troppo grande dopo la riduzione. Scegli una versione più leggera.');
             const fileExt = uploadFile.name.split('.').pop();
             const fileName = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
             const { error: upErr } = await _supabase.storage.from('listings').upload(fileName, uploadFile, {
                 contentType: uploadFile.type || 'image/webp',
                 cacheControl: '31536000'
             });
+            if (upErr) throw new Error('Una foto non si è caricata. Riprova: le modifiche sono ancora qui.');
             if (!upErr) {
                 const { data: { publicUrl } } = _supabase.storage.from('listings').getPublicUrl(fileName);
                 newUrls.push(publicUrl);
@@ -459,7 +460,7 @@ async function updateAnnuncio() {
         if (error) throw error;
         
         showToast('Modifiche inviate per revisione. L\'annuncio tornerà online dopo l\'approvazione admin.', 'success');
-        setTimeout(() => { location.href = '/dashboard'; }, 1200);
+        setTimeout(() => { window.location.href = '/dashboard'; }, 1200);
 
     } catch (err) {
         showToast('Errore: ' + err.message, 'error');

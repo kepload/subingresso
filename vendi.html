@@ -106,6 +106,21 @@
         /* Step error */
         .step-error { display: none; }
         .step-error.show { display: flex; }
+        .draft-status { font-size: .75rem; color: #64748b; line-height: 1.5; margin: 10px 0 20px; }
+        .draft-status.warning { color: #b45309; }
+        .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+        .photo-tile { position: relative; aspect-ratio: 1; border-radius: 14px; overflow: hidden; background: #f1f5f9; }
+        .photo-tile img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-remove { position: absolute; top: 5px; right: 5px; width: 32px; height: 32px; border-radius: 50%; background: #fff; color: #dc2626; border: 1px solid #e2e8f0; }
+        .photo-cover { position: absolute; bottom: 5px; left: 5px; right: 5px; padding: 5px 2px; border-radius: 8px; font-size: 10px; font-weight: 800; background: #fff; color: #2563eb; }
+        .photo-empty { aspect-ratio: 1; border: 1.5px dashed #cbd5e1; border-radius: 14px; font-size: 11px; font-weight: 700; color: #64748b; background: #f8fafc; padding: 10px; }
+        .form-hint { font-size: .75rem; line-height: 1.6; color: #64748b; margin-top: 6px; }
+        .form-link { font-size: .75rem; font-weight: 800; color: #2563eb; padding: 6px 0; }
+        .review-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-size: .8125rem; }
+        .review-row:last-child { border-bottom: 0; }
+        .review-row strong { display: block; margin-bottom: 3px; color: #64748b; font-size: .7rem; }
+        .field-input[aria-invalid="true"] { border-color: #ef4444; }
+        @media (prefers-reduced-motion: reduce) { .step-panel.active { animation: none; } }
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900">
@@ -164,6 +179,12 @@
                 <div class="w-full bg-slate-200 rounded-full h-1.5">
                     <div id="progressBar" class="bg-blue-600 h-1.5 rounded-full transition-all duration-500" style="width:16.6667%"></div>
                 </div>
+                <p id="draftStatus" class="draft-status" role="status">La bozza si salva su questo dispositivo mentre compili.</p>
+            </div>
+
+            <div id="draftBanner" class="hidden mb-6 bg-blue-50 border border-blue-100 rounded-2xl px-4 py-3">
+                <p id="draftResumeText" class="text-sm font-bold text-blue-700"></p>
+                <button type="button" onclick="_startFreshDraft()" class="form-link">Ricomincia con un nuovo annuncio</button>
             </div>
 
             <form id="annuncioForm" novalidate>
@@ -177,7 +198,7 @@
                 <input type="radio" name="stato" value="Affitto mensile" id="statoAffitto" class="hidden">
 
                 <!-- Errore step (condiviso) -->
-                <div id="stepError" class="step-error mb-5 bg-red-50 border border-red-100 rounded-xl px-4 py-3 items-center gap-2">
+                <div id="stepError" role="alert" class="step-error mb-5 bg-red-50 border border-red-100 rounded-xl px-4 py-3 items-center gap-2">
                     <i class="fas fa-exclamation-circle text-red-400 flex-shrink-0 text-sm"></i>
                     <span id="stepErrorMsg" class="text-sm text-red-600 font-semibold"></span>
                 </div>
@@ -185,7 +206,7 @@
                 <!-- ══════ STEP 1: Tipo ══════ -->
                 <div id="step1" class="step-panel active">
                     <h2 class="text-2xl font-black mb-1">Cosa vuoi fare?</h2>
-                    <p class="text-slate-500 font-medium mb-8 text-sm">Scegli il tipo di annuncio.</p>
+                    <p class="text-slate-500 font-medium mb-8 text-sm">Scegli vendita o affitto. Puoi cambiare idea nei prossimi passi.</p>
                     <div class="grid grid-cols-2 gap-4">
                         <button type="button" class="tipo-card" onclick="selectStato('Vendita')">
                             <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -232,7 +253,7 @@
                             </div>
                         </div>
                         <div>
-                            <label class="field-label">Tipo di mercato *</label>
+                            <label class="field-label">Il posteggio è in un mercato o in una fiera? *</label>
                             <div class="grid grid-cols-2 gap-3 mt-1">
                                 <button type="button" class="tipo-btn on" id="tipoBtn0" onclick="selectTipo('Mercato settimanale', 0)">
                                     <i class="fas fa-calendar-week text-blue-500 text-xl mb-2 block"></i>
@@ -243,6 +264,7 @@
                                     <div class="text-xs font-black">Fiera</div>
                                 </button>
                             </div>
+                            <p class="form-hint">Mercato: appuntamento ogni settimana. Fiera: evento in un periodo dell'anno.</p>
                         </div>
                     </div>
 
@@ -278,14 +300,15 @@
                         <!-- Campi specifici fiera -->
                         <div id="step3Fiera" class="hidden space-y-6">
                             <div>
-                                <label class="field-label">Nome della fiera <span class="text-slate-400 font-medium normal-case text-xs">(opzionale)</span></label>
+                                <label class="field-label" for="fNomeFieraInput">Come si chiama la fiera? <span class="text-slate-400 font-medium normal-case text-xs">(se lo sai)</span></label>
                                 <input id="fNomeFieraInput" type="text" placeholder="es. Fiera di Sant'Ambrogio" class="field-input"
                                     oninput="document.getElementById('fNomeFiera').value=this.value.trim()">
                             </div>
                             <div>
-                                <label class="field-label">Data e durata della fiera <span class="text-slate-400 font-medium normal-case text-xs">(opzionale)</span></label>
-                                <textarea id="fNoteFiera" rows="3" class="field-input" style="resize:vertical;min-height:80px;"
-                                    placeholder="es. Ogni ottobre, durata 5 giorni. Oppure: dal 12 al 16 settembre."></textarea>
+                                <label class="field-label" for="fNoteFiera">Quando si svolge? <span class="text-slate-400 font-medium normal-case text-xs">(anche indicativamente)</span></label>
+                                <input id="fNoteFiera" type="text" class="field-input" maxlength="200"
+                                    placeholder="es. Ogni ottobre, 5 giorni">
+                                <p class="form-hint">Bastano il mese e la durata. Non serve conoscere le date esatte.</p>
                             </div>
                         </div>
 
@@ -305,8 +328,9 @@
                         </div>
 
                         <div>
-                            <label class="field-label">Superficie (m²) *</label>
-                            <input id="fSuperficie" type="text" inputmode="numeric" placeholder="es. 12" class="field-input" style="max-width:160px">
+                            <label class="field-label" for="fSuperficie">Quanto è grande il posteggio? (m²) *</label>
+                            <input id="fSuperficie" type="text" inputmode="decimal" placeholder="es. 24" class="field-input" style="max-width:160px">
+                            <p class="form-hint">Larghezza × profondità: 6 metri × 4 metri = 24 m².</p>
                         </div>
                     </div>
 
@@ -346,7 +370,7 @@
                     <div class="mt-4 bg-amber-50/70 border border-amber-200/70 rounded-xl px-4 py-3 flex gap-3">
                         <i class="fas fa-lightbulb text-amber-500 text-sm mt-0.5 shrink-0"></i>
                         <p class="text-xs text-slate-700 leading-relaxed">
-                            <strong>Scrivi il prezzo reale.</strong> Un prezzo civetta vende in media 3 volte meno: attira curiosi che ti scrivono e spariscono, mentre i compratori veri scorrono via.
+                            <strong>Scrivi il prezzo che chiedi davvero.</strong> Se è trattabile, puoi specificarlo nella descrizione: chi ti contatta sa già cosa aspettarsi.
                         </p>
                     </div>
 
@@ -364,10 +388,25 @@
                     <p class="text-slate-500 font-medium mb-8 text-sm">Titolo, descrizione e foto del tuo posteggio.</p>
 
                     <div class="space-y-6">
+                        <div id="photoSection">
+                            <label class="field-label">Mostra il posteggio con le foto</label>
+                            <p id="photoAdvice" class="form-hint" style="margin-bottom:12px">Punta a <strong>3 foto</strong>: il banco, lo spazio del posteggio e il mercato intorno. Puoi aggiungerne <strong>fino a 5, anche gratis</strong>.</p>
+                            <button type="button" id="dropzone" class="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center hover:border-blue-400 transition cursor-pointer bg-slate-50 w-full">
+                                <i class="fas fa-camera text-blue-500 text-3xl mb-2 block"></i>
+                                <span id="photoButtonText" class="text-sm font-bold text-slate-600">Scegli le foto dal telefono</span>
+                            </button>
+                            <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/avif" multiple class="hidden">
+                            <p class="form-hint">Puoi selezionarle insieme o aggiungerle una alla volta. JPG, PNG, WebP o AVIF, fino a 20 MB ciascuna.</p>
+                            <div id="previewContainer" class="photo-grid"></div>
+                            <p id="photoProgress" class="form-hint" role="status"></p>
+                        </div>
                         <div>
-                            <label class="field-label">Titolo annuncio *</label>
-                            <input id="fTitolo" type="text" placeholder="es. Posteggio Settimanale Milano – Abbigliamento" class="field-input" oninput="_renderPreview()">
-                            <p class="text-[10px] text-slate-400 mt-1.5 font-semibold">Suggerito automaticamente, puoi modificarlo.</p>
+                            <label class="field-label" for="fTitolo">Titolo annuncio *</label>
+                            <input id="fTitolo" type="text" maxlength="110" placeholder="Ti suggeriamo un titolo con i dati inseriti" class="field-input" oninput="_renderPreview()">
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="form-hint">Lo scriviamo noi. Puoi modificarlo.</p>
+                                <button type="button" onclick="_suggestTitle(true)" class="form-link">Prova un altro titolo</button>
+                            </div>
                         </div>
 
                         <div>
@@ -375,10 +414,11 @@
                                 <label class="field-label" style="margin-bottom:0">Descrizione *</label>
                                 <button type="button" onclick="useTemplate()"
                                     class="text-xs text-blue-600 font-bold hover:underline flex items-center gap-1">
-                                    <i class="fas fa-magic text-[10px]"></i> Usa template
+                                    <i class="fas fa-magic text-[10px]"></i> Aiutami a scriverla
                                 </button>
                             </div>
-                            <textarea id="fDescrizione" placeholder="Descrivi la posizione, la clientela, il canone comunale..." class="field-input mt-1"></textarea>
+                            <textarea id="fDescrizione" placeholder="Dove si trova esattamente? Cosa è incluso nel prezzo? Quanto costa il canone comunale?" class="field-input mt-1" maxlength="5000"></textarea>
+                            <p class="form-hint">Aggiungi ciò che sai: via o piazza, costi comunali e cosa cedi insieme al posteggio. Bastano poche frasi concrete.</p>
                             </div>
 
                         <!-- Banner: telefono mancante dal profilo (solo se vero) -->
@@ -403,20 +443,8 @@
                                 <!-- Hint live + validazione iniettati da setupPhoneInput() in data.js -->
                             </div>
                         </div>
+                        <p id="guestDraftContactHint" class="hidden form-hint"><button type="button" onclick="openAuthModal('login', undefined, 'vendi_draft')" class="form-link">Accedi</button> per salvare anche nome e telefono nella bozza.</p>
 
-                        <div>
-                            <label class="field-label">Foto <span class="text-slate-400 font-medium normal-case">(consigliata)</span></label>
-                            <div id="dropzone" class="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center hover:border-blue-400 transition cursor-pointer bg-slate-50">
-                                <i class="fas fa-camera text-slate-300 text-3xl mb-2 block"></i>
-                                <p class="text-sm font-bold text-slate-600">Tocca per aggiungere foto</p>
-                                <span class="inline-flex items-center gap-2 mt-3 bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">
-                                    <i class="fas fa-bolt text-amber-500"></i>
-                                    Con foto vendi fino a 3 volte di più
-                                </span>
-                                <input type="file" id="fileInput" accept="image/*" class="hidden">
-                            </div>
-                            <div id="previewContainer" class="grid grid-cols-5 gap-2 mt-3"></div>
-                        </div>
                     </div>
 
                     <!-- Preview card -->
@@ -427,6 +455,13 @@
                         <div id="previewCard" style="pointer-events:none;user-select:none;max-width:300px;margin:0 auto"></div>
                     </div>
 
+                    <div id="photoReminder" class="hidden mt-6 bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3" role="status">
+                        <p id="photoReminderText" class="text-sm font-bold text-amber-800"></p>
+                        <div class="flex flex-wrap gap-3 mt-3">
+                            <button type="button" onclick="fileInput.click()" class="form-link">Aggiungi foto</button>
+                            <button type="button" id="photoReminderContinue" onclick="_goToPublishStep(true)" class="text-xs font-bold text-slate-500">Continua con le foto attuali</button>
+                        </div>
+                    </div>
                     <button type="button" id="toStep6Btn" onclick="_goToPublishStep()"
                         class="w-full mt-8 bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100 active:scale-[.98]">
                         Avanti <i class="fas fa-arrow-right text-sm ml-1"></i>
@@ -446,6 +481,8 @@
                         <h2 class="text-2xl font-black mb-1">Il tuo annuncio è pronto</h2>
                         <p class="text-slate-500 font-medium text-sm">Scegli come pubblicarlo.</p>
                     </div>
+
+                    <div id="publishReview" class="bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 mb-6" aria-label="Riepilogo del tuo annuncio"></div>
 
                     <div class="space-y-3">
                         <!-- 1. GRATIS (preselezionato) -->
@@ -556,14 +593,24 @@
 <script src="js/comune-picker.js?v=2"></script>
 <script src="js/ui-components.js?v=11"></script>
 <script src="js/auth.js?v=20"></script>
+<script src="js/pages/vendi-support.js?v=1"></script>
 <script>
 
 // ── Step Management ───────────────────────────────────────
 let _step = 1;
 const STEP_NAMES = ['', 'Tipo annuncio', 'Posizione', 'Il posteggio', 'Prezzo', 'Descrizione e foto', 'Pubblica'];
 const _TOTAL_STEPS = 6;
-const _DRAFT_KEY = 'subingresso_draft_v1';
-let _pendingDraft = null;
+const _DRAFT_PREFIX = 'subingresso_draft_v2_';
+let _draftOwner = null;
+let _draftReady = false;
+let _draftStarted = false;
+let _draftCompleted = false;
+let _draftWriteFailed = false;
+let _photosUnsaved = false;
+let _photoWriteFailed = false;
+let _photoSaveVersion = 0;
+let _autoTitle = '';
+let _autoTitleSignature = '';
 let _comunePicker = null;
 
 // ── Step 6: scelta pubblicazione ──────────────────────────
@@ -590,6 +637,7 @@ function _selectPubChoice(choice) {
     const sel = document.getElementById(map[choice]);
     if (sel) sel.classList.add('selected');
     _refreshPublishChoiceUI();
+    _saveDraft();
 }
 
 function _refreshPublishChoiceUI() {
@@ -608,14 +656,25 @@ function _refreshPublishChoiceUI() {
 
 // Step 5 → Step 6: valida i campi contenuto prima di mostrare il paywall,
 // così l'utente non arriva alla scelta e poi viene rimbalzato indietro.
-function _goToPublishStep() {
+function _goToPublishStep(skipPhotoReminder = false) {
     if (!_validateStep(5)) return;
+    if (_files.length < 3 && !skipPhotoReminder) {
+        const reminder = document.getElementById('photoReminder');
+        document.getElementById('photoReminderText').textContent = _files.length === 0
+            ? 'Una foto aiuta a capire cosa vendi. Ne hai una del banco o del posteggio?'
+            : `Hai aggiunto ${_files.length} foto. Con 3 foto puoi mostrare anche lo spazio e il mercato intorno.`;
+        document.getElementById('photoReminderContinue').textContent = _files.length ? 'Continua con le foto attuali' : 'Continua senza foto';
+        reminder.classList.remove('hidden');
+        reminder.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+    }
     goToStep(6);
 }
 window._selectPubChoice = _selectPubChoice;
 window._goToPublishStep = _goToPublishStep;
 
 function goToStep(n) {
+    n = Math.max(1, Math.min(_TOTAL_STEPS, Math.floor(Number(n)) || 1));
     document.getElementById('step' + _step).classList.remove('active');
     _step = n;
     document.getElementById('step' + _step).classList.add('active');
@@ -632,6 +691,7 @@ function goToStep(n) {
     if (_step === 4) _updatePrezzoLabel();
     if (_step === 5) {
         _suggestTitle();
+        _renderPhotos();
         // force=true: se al primo arrivo i campi non sono stati riempiti
         // (race condition con getSession), riprova ad ogni accesso a step 5
         prefillContactFromSession(/* force */ false).then(() => { _checkMissingPhoneBanner(); _renderPreview(); });
@@ -645,8 +705,9 @@ function goToStep(n) {
     }
     if (_step === 6) {
         _selectPubChoice(_pubChoice);
+        _renderPublishReview();
     }
-    if (_step > 1) _saveDraft();
+    _saveDraft();
 }
 
 // ── Preview card (step 5) ─────────────────────────────────
@@ -667,8 +728,7 @@ function _renderPreview() {
     const stato = document.querySelector('input[name="stato"]:checked')?.value || 'Vendita';
     const titolo = document.getElementById('fTitolo').value.trim() || 'Il tuo annuncio';
     const contatto = document.getElementById('fNome').value.trim() || '';
-    const prezzoRaw = document.getElementById('fPrezzo').value.replace(/\./g, '').replace(',', '.');
-    const prezzo = parseFloat(prezzoRaw) || 0;
+    const prezzo = VendiSupport.parseNumber(document.getElementById('fPrezzo').value, true) || 0;
     const fakeListing = {
         id: '__preview__',
         user_id: null, // evita lookup USER_NAMES/USER_AVATARS, mostra iniziale di contatto
@@ -693,20 +753,35 @@ function _renderPreview() {
     }
 }
 
+function _currentDraftOwner() {
+    return _getStoredSupabaseSession()?.user?.id || 'guest';
+}
+
+function _draftKey() { return _DRAFT_PREFIX + _draftOwner; }
+
+function _draftStatus(message, warning = false) {
+    const el = document.getElementById('draftStatus');
+    el.textContent = message;
+    el.classList.toggle('warning', warning);
+}
+
+function _updateDraftStatus() {
+    if (_draftWriteFailed) _draftStatus('La bozza non si è salvata. Tieni aperta questa pagina e riprova.', true);
+    else if (_photoWriteFailed) _draftStatus('Dati salvati, ma le foto non si sono salvate nella bozza. Tieni aperta questa pagina oppure aggiungile di nuovo al ritorno.', true);
+    else if (_photosUnsaved) _draftStatus('Dati salvati. Salvataggio delle foto in corso…');
+    else _draftStatus('Bozza salvata su questo dispositivo. Puoi uscire e riprendere da qui.');
+}
+
 function _saveDraft() {
+    if (!_draftReady || !_draftStarted || _draftCompleted || _draftOwner !== _currentDraftOwner()) return;
     const stato = document.querySelector('input[name="stato"]:checked')?.value || 'Vendita';
     const regione = document.getElementById('fRegione').value;
     const comune  = document.getElementById('fComune').value.trim();
-    if (!regione && !comune) return; // niente da salvare
-    // SECURITY: NON salviamo nome/tel nel draft — sarebbero PII esposti se un altro
-    // utente apre il sito sullo stesso device. Il prefill nome/tel passa SEMPRE dal profilo.
-    let _userId = null;
-    try { _userId = _getStoredSupabaseSession()?.user?.id || null; } catch (_) {}
     const draft = {
         stato, regione, comune,
         tipo:       document.getElementById('fTipo').value,
         giorni:     document.getElementById('fGiorni').value,
-        nomeFiera:  document.getElementById('fNomeFiera').value,
+        nomeFiera:  document.getElementById('fNomeFieraInput').value.trim(),
         noteFiera:  document.getElementById('fNoteFiera')?.value || '',
         merce:      document.getElementById('fMerce').value,
         superficie:  document.getElementById('fSuperficie').value,
@@ -714,24 +789,60 @@ function _saveDraft() {
         titolo:      document.getElementById('fTitolo').value.trim(),
         descrizione: document.getElementById('fDescrizione').value.trim(),
         step:        _step,
-        _userId,
+        _userId: _draftOwner === 'guest' ? null : _draftOwner,
+        savedAt: Date.now(),
+        photoCount: _files.length,
+        autoTitle: _autoTitle,
+        autoTitleSignature: _autoTitleSignature,
+        // Contatti solo nella bozza dell'account autenticato, mai in quella anonima.
+        ...(_draftOwner !== 'guest' ? { nome: document.getElementById('fNome').value, tel: document.getElementById('fTel').value } : {})
     };
-    localStorage.setItem(_DRAFT_KEY, JSON.stringify(draft));
+    try {
+        localStorage.setItem(_draftKey(), JSON.stringify(draft));
+        _draftWriteFailed = false;
+    } catch (_) { _draftWriteFailed = true; }
+    _updateDraftStatus();
 }
 
 function _clearDraft() {
-    localStorage.removeItem(_DRAFT_KEY);
-    const banner = document.getElementById('draftBanner');
-    if (banner) banner.remove();
-    _pendingDraft = null;
+    _draftCompleted = true;
+    _photoSaveVersion++;
+    _photosUnsaved = false;
+    _photoWriteFailed = false;
+    try { localStorage.removeItem(_draftKey()); } catch (_) {}
+    VendiSupport.deletePhotos(_draftKey()).catch(() => {});
+    document.getElementById('draftBanner').classList.add('hidden');
 }
 
-function _applyPendingDraft() {
-    if (!_pendingDraft) return;
-    const d = _pendingDraft;
+function _persistDraftPhotos() {
+    if (!_draftReady || _draftCompleted || _draftOwner !== _currentDraftOwner()) return;
+    const version = ++_photoSaveVersion;
+    const key = _draftKey();
+    _photosUnsaved = true;
+    _photoWriteFailed = false;
+    _saveDraft();
+    return VendiSupport.savePhotos(key, _files.slice()).then(() => {
+        if (version !== _photoSaveVersion) return;
+        _photosUnsaved = false;
+        _updateDraftStatus();
+        return true;
+    }).catch(() => {
+        if (version !== _photoSaveVersion) return;
+        _photosUnsaved = true;
+        _photoWriteFailed = true;
+        _updateDraftStatus();
+        return false;
+    });
+}
+
+async function _applyPendingDraft(d) {
+    _draftReady = false;
     if (d.stato === 'Affitto mensile') document.getElementById('statoAffitto').checked = true;
     else document.getElementById('statoVendita').checked = true;
-    if (_comunePicker) _comunePicker.setValue(d.comune || '', d.regione || '');
+    // Riprende gli altri dati anche se l'elenco comuni è temporaneamente offline.
+    document.getElementById('fComune').value = d.comune || '';
+    document.getElementById('fRegione').value = d.regione || '';
+    if (_comunePicker) await _comunePicker.setValue(d.comune || '', d.regione || '').catch(() => {});
     const draftTipo = d.tipo === 'Fiera' ? 'Fiera' : 'Mercato settimanale';
     document.getElementById('fTipo').value = draftTipo;
     const tipoIdx = ['Mercato settimanale', 'Fiera'].indexOf(draftTipo);
@@ -739,12 +850,10 @@ function _applyPendingDraft() {
         const b = document.getElementById('tipoBtn' + i);
         if (b) b.classList.toggle('on', i === tipoIdx);
     }
-    if (d.giorni) {
+    if (d.giorni && draftTipo !== 'Fiera') {
         document.getElementById('fGiorni').value = d.giorni;
         const gg = d.giorni.split(', ');
         document.querySelectorAll('.day-pill').forEach(p => { if (gg.includes(p.dataset.day)) p.classList.add('on'); });
-        const periodoEl = document.getElementById('fPeriodo');
-        if (periodoEl) periodoEl.value = d.giorni;
     }
     if (d.nomeFiera) {
         document.getElementById('fNomeFiera').value = d.nomeFiera;
@@ -765,10 +874,86 @@ function _applyPendingDraft() {
     document.getElementById('fPrezzo').value     = d.prezzo     || '';
     document.getElementById('fTitolo').value     = d.titolo     || '';
     document.getElementById('fDescrizione').value = d.descrizione || '';
-    // SECURITY: nome/tel non vengono piu' applicati dal draft — il prefill viene
-    // sempre fatto da prefillContactFromSession() (profilo del user attualmente loggato).
+    _autoTitle = d.autoTitle || '';
+    _autoTitleSignature = d.autoTitleSignature || '';
+    if (_draftOwner !== 'guest') {
+        for (const [id, value] of [['fNome', d.nome], ['fTel', d.tel]]) {
+            if (!value) continue;
+            document.getElementById(id).value = value;
+            document.getElementById(id).dataset.userEdited = '1';
+        }
+    }
+    if (d.photoCount) {
+        try {
+            const photos = await VendiSupport.loadPhotos(_draftKey());
+            _files = photos.slice(0, 5).map(photo => new File([photo.blob], photo.name, { type: photo.type, lastModified: photo.lastModified }));
+        } catch (_) { _files = []; }
+    }
+    _draftStarted = true;
+    _draftReady = true;
+    _renderPhotos();
+    goToStep(d.step || 2);
+    const banner = document.getElementById('draftBanner');
+    document.getElementById('draftResumeText').textContent = 'Abbiamo ripreso la tua bozza, dal passo ' + _step + '. I dati' + (_files.length ? ' e le foto sono qui.' : ' sono qui.');
+    banner.classList.remove('hidden');
+    if (d.photoCount > _files.length) _draftStatus('Bozza ripresa. Alcune foto non erano salvate: aggiungile di nuovo prima di pubblicare.', true);
+}
+
+async function _initDrafts() {
+    _draftOwner = _currentDraftOwner();
+    document.getElementById('guestDraftContactHint').classList.toggle('hidden', _draftOwner !== 'guest');
+    const form = document.getElementById('annuncioForm');
+    form.inert = true;
+    try {
+        let draft = JSON.parse(localStorage.getItem(_draftKey()) || 'null');
+        if (!draft) {
+            const legacy = JSON.parse(localStorage.getItem('subingresso_draft_v1') || 'null');
+            if (legacy && (legacy._userId || 'guest') === _draftOwner) {
+                draft = legacy;
+            }
+        }
+        if (draft && typeof draft === 'object' && (draft._userId || 'guest') === _draftOwner) {
+            await _applyPendingDraft(draft);
+            if (localStorage.getItem(_draftKey())) {
+                const legacy = JSON.parse(localStorage.getItem('subingresso_draft_v1') || 'null');
+                if (legacy && (legacy._userId || 'guest') === _draftOwner) localStorage.removeItem('subingresso_draft_v1');
+            }
+        }
+    } catch (_) {
+        _draftStatus('La bozza non è disponibile. Puoi compilare un nuovo annuncio.', true);
+    } finally {
+        _draftReady = true;
+        form.inert = false;
+        _renderPhotos();
+    }
+}
+
+function _startFreshDraft() {
+    if (!confirm('Vuoi ricominciare? I dati e le foto di questa bozza verranno rimossi da questo dispositivo.')) return;
     _clearDraft();
-    goToStep(d.step && d.step > 1 ? d.step : 2);
+    resetForm();
+}
+
+async function _syncDraftOwner() {
+    const owner = _currentDraftOwner();
+    if (!_draftReady || owner === _draftOwner) return;
+    const oldKey = _draftKey();
+    if (_draftOwner === 'guest' && owner !== 'guest' && _draftStarted) {
+        _draftOwner = owner;
+        document.getElementById('guestDraftContactHint').classList.add('hidden');
+        _saveDraft();
+        const savedPhotos = await _persistDraftPhotos();
+        if (savedPhotos && !_draftWriteFailed) {
+            try { localStorage.removeItem(oldKey); } catch (_) {}
+            VendiSupport.deletePhotos(oldKey).catch(() => {});
+        }
+        return;
+    }
+    resetForm();
+    _draftReady = false;
+    _photoSaveVersion++;
+    _photosUnsaved = false;
+    await _initDrafts();
 }
 
 function nextStep() {
@@ -785,9 +970,9 @@ function _validateStep(n) {
     clearStepError();
     if (n === 2) {
         if (!document.getElementById('fComune').value.trim())
-            return _err('Inserisci il comune.');
+            return _fieldError('fComune', 'Inserisci il comune.');
         if (!_comunePicker || !_comunePicker.getValue())
-            return _err('Scegli il comune dall’elenco suggerito. Regione e provincia saranno inserite automaticamente.');
+            return _fieldError('fComune', 'Scegli il comune dall’elenco suggerito. Regione e provincia saranno inserite automaticamente.');
     }
     if (n === 3) {
         const isFiera = document.getElementById('fTipo').value === 'Fiera';
@@ -799,24 +984,26 @@ function _validateStep(n) {
         }
         if (!document.getElementById('fMerce').value)
             return _err('Seleziona il settore merceologico.');
-        const sup = parseFloat(document.getElementById('fSuperficie').value.replace(',', '.'));
-        if (isNaN(sup) || sup <= 0)
-            return _err('Inserisci la superficie in m².');
-        document.getElementById('fSuperficie').value = sup;
+        const sup = VendiSupport.parseNumber(document.getElementById('fSuperficie').value);
+        if (!Number.isFinite(sup) || sup <= 0)
+            return _fieldError('fSuperficie', 'Scrivi la superficie in m², ad esempio 24 oppure 12,5.');
+        document.getElementById('fSuperficie').value = String(sup).replace('.', ',');
     }
     if (n === 4) {
-        const prezzo = parseFloat(document.getElementById('fPrezzo').value.replace(/\./g, '').replace(',', '.'));
-        if (isNaN(prezzo) || prezzo < 101)
-            return _err('Prezzo troppo basso, controlla bene.');
+        const prezzo = VendiSupport.parseNumber(document.getElementById('fPrezzo').value, true);
+        if (!Number.isFinite(prezzo))
+            return _fieldError('fPrezzo', 'Scrivi solo l’importo in euro, ad esempio 15000 oppure 15.000.');
+        if (prezzo < 101)
+            return _fieldError('fPrezzo', 'Inserisci il prezzo reale: deve essere almeno 101 €.');
         if (prezzo > 400000)
-            return _err('Prezzo troppo alto, controlla bene.');
-        document.getElementById('fPrezzo').value = prezzo;
+            return _fieldError('fPrezzo', 'Controlla l’importo: il prezzo massimo è 400.000 €.');
+        document.getElementById('fPrezzo').value = String(prezzo).replace('.', ',');
     }
     if (n === 5) {
         if (!document.getElementById('fTitolo').value.trim())
-            return _err('Inserisci un titolo per il tuo annuncio.');
-        if (document.getElementById('fDescrizione').value.trim().length < 10)
-            return _err('La descrizione deve essere di almeno 10 caratteri.');
+            return _fieldError('fTitolo', 'Inserisci un titolo per il tuo annuncio.');
+        if (document.getElementById('fDescrizione').value.trim().length < 40)
+            return _fieldError('fDescrizione', 'Aggiungi almeno una frase sul posteggio: cosa cedi e dove si trova (almeno 40 caratteri).');
         if (!document.getElementById('fNome').value.trim()) {
             setTimeout(() => { try { document.getElementById('fNome').focus(); } catch (_) {} }, 400);
             return _err('Inserisci il nome di contatto.');
@@ -845,12 +1032,22 @@ function _err(msg) {
     return false;
 }
 
+function _fieldError(id, message) {
+    _err(message);
+    const field = document.getElementById(id);
+    field.setAttribute('aria-invalid', 'true');
+    field.focus({ preventScroll: true });
+    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+}
+
 function clearStepError() {
     document.getElementById('stepError').classList.remove('show');
 }
 
 // ── Step 1: Tipo annuncio (auto-advance) ──────────────────
 function selectStato(val) {
+    _draftStarted = true;
     document.getElementById(val === 'Vendita' ? 'statoVendita' : 'statoAffitto').checked = true;
     goToStep(2);
 }
@@ -871,6 +1068,7 @@ function selectTipo(val, idx) {
     document.getElementById('fTipo').value = val;
     for (let i = 0; i < 2; i++)
         document.getElementById('tipoBtn' + i).classList.toggle('on', i === idx);
+    _saveDraft();
 }
 
 // ── Step 3: Giorni ────────────────────────────────────────
@@ -878,6 +1076,7 @@ function toggleDay(btn) {
     btn.classList.toggle('on');
     const days = Array.from(document.querySelectorAll('.day-pill.on')).map(b => b.dataset.day);
     document.getElementById('fGiorni').value = days.join(', ');
+    _saveDraft();
 }
 
 // ── Step 3: Settore a due livelli ────────────────────────
@@ -896,12 +1095,14 @@ function selectMacro(tipo) {
     ).join('');
     pills.classList.remove('hidden');
     pills.style.display = 'flex';
+    _saveDraft();
 }
 
 function selectSettore(btn) {
     document.querySelectorAll('.settore-pill').forEach(p => p.classList.remove('on'));
     btn.classList.add('on');
     document.getElementById('fMerce').value = btn.textContent;
+    _saveDraft();
 }
 
 function _getMacroFromMerce(merce) {
@@ -921,47 +1122,74 @@ function _updatePrezzoLabel() {
 }
 
 // ── Step 5: Auto-suggest title ────────────────────────────
-function _suggestTitle() {
+function _titleData() {
+    return {
+        comune: document.getElementById('fComune').value.trim(),
+        tipo: document.getElementById('fTipo').value,
+        merce: document.getElementById('fMerce').value,
+        nomeFiera: document.getElementById('fNomeFiera').value.trim(),
+        giorni: document.getElementById('fGiorni').value,
+        superficie: document.getElementById('fSuperficie').value,
+        stato: document.querySelector('input[name="stato"]:checked')?.value || 'Vendita'
+    };
+}
+
+function _suggestTitle(force = false) {
     const el = document.getElementById('fTitolo');
-    if (el.value.trim()) return;
-    const comune     = document.getElementById('fComune').value.trim();
-    const tipo       = document.getElementById('fTipo').value;
-    const merce      = document.getElementById('fMerce').value;
-    const nomeFiera  = document.getElementById('fNomeFiera').value.trim();
-    if (tipo === 'Fiera') {
-        const nome = nomeFiera || 'Fiera';
-        if (comune && merce) el.value = `Posteggio ${nome} a ${comune} – ${merce}`;
-    } else {
-        const short = { 'Mercato settimanale': 'Settimanale' }[tipo] || tipo;
-        if (comune && merce) el.value = `Posteggio ${short} ${comune} – ${merce}`;
-    }
+    const data = _titleData();
+    const signature = JSON.stringify(data);
+    if (!force && el.value.trim() && (el.value !== _autoTitle || signature === _autoTitleSignature)) return;
+    if (force && el.value.trim() && el.value !== _autoTitle && !confirm('Vuoi sostituire il titolo che hai scritto con un nuovo suggerimento?')) return;
+    el.value = VendiSupport.chooseTitle(data, el.value);
+    _autoTitle = el.value;
+    _autoTitleSignature = signature;
+    _saveDraft();
+    _renderPreview();
 }
 
 // ── Step 5: Template descrizione ─────────────────────────
 function useTemplate() {
+    const el = document.getElementById('fDescrizione');
+    if (el.value.trim() && !confirm('Vuoi sostituire la descrizione con una base ricavata dai dati inseriti?')) return;
     const comune    = document.getElementById('fComune').value.trim()  || '[comune]';
     const tipo      = document.getElementById('fTipo').value           || 'mercato';
     const merce     = document.getElementById('fMerce').value          || '[settore]';
-    const giorni    = document.getElementById('fGiorni').value         || '[giorni]';
+    const giorni    = document.getElementById('fGiorni').value;
     const sup       = document.getElementById('fSuperficie').value     || '[m²]';
     const nomeFiera = document.getElementById('fNomeFiera').value.trim();
     const isAffitto  = document.getElementById('statoAffitto').checked;
     const azione     = isAffitto ? 'Affitto' : 'Vendita';
-    const prezzoNote = isAffitto ? 'Canone annuale concordabile. ' : '';
+    const prezzo = VendiSupport.parseNumber(document.getElementById('fPrezzo').value, true);
+    const prezzoNote = Number.isFinite(prezzo) ? `Prezzo richiesto: ${prezzo.toLocaleString('it-IT')} €${isAffitto ? ' all’anno' : ''}. ` : '';
     if (tipo === 'Fiera') {
         const nomeParte = nomeFiera ? ` (${nomeFiera})` : '';
         document.getElementById('fDescrizione').value =
             `${azione} posteggio alla fiera di ${comune}${nomeParte}, settore ${merce}. ` +
-            `Superficie ${sup} m². La fiera si svolge in ${giorni}. ` +
-            `${prezzoNote}Concessione in regola con tutti i permessi. ` +
-            `Ottima posizione. Per informazioni contattatemi.`;
+            `Superficie del posteggio: ${sup} m². ` +
+            ((document.getElementById('fNoteFiera').value.trim()) ? `Periodo della fiera: ${document.getElementById('fNoteFiera').value.trim()}. ` : '') +
+            `${prezzoNote}Per informazioni sul posteggio, contattatemi.`;
     } else {
         document.getElementById('fDescrizione').value =
             `${azione} posteggio al ${tipo.toLowerCase()} di ${comune}, settore ${merce}. ` +
             `Superficie ${sup} m², giorni di mercato: ${giorni}. ` +
-            `${prezzoNote}Canone comunale regolare e in regola con tutti i permessi. ` +
-            `Ottima posizione con clientela fissa. Per informazioni contattatemi.`;
+            `${prezzoNote}Per informazioni sul posteggio, contattatemi.`;
     }
+    _saveDraft();
+    el.focus();
+}
+
+function _renderPublishReview() {
+    const data = _titleData();
+    const isFair = data.tipo === 'Fiera';
+    const prezzo = VendiSupport.parseNumber(document.getElementById('fPrezzo').value, true);
+    const rows = [
+        ['Dove', `${data.comune} · ${data.tipo}`, 2],
+        [isFair ? 'Fiera e posteggio' : 'Il posteggio', [isFair ? data.nomeFiera : data.giorni, isFair ? document.getElementById('fNoteFiera').value : '', data.merce, data.superficie + ' m²'].filter(Boolean).join(' · '), 3],
+        ['Prezzo', `${prezzo.toLocaleString('it-IT')} €${data.stato === 'Affitto mensile' ? ' all’anno' : ' · vendita'}`, 4],
+        ['Titolo e foto', `${document.getElementById('fTitolo').value} · ${_files.length} foto`, 5],
+        ['Contatto', `${document.getElementById('fNome').value} · ${document.getElementById('fTel').value}`, 5]
+    ];
+    document.getElementById('publishReview').innerHTML = rows.map(([label, value, step]) => `<div class="review-row"><div><strong>${escapeHTML(label)}</strong>${escapeHTML(value)}</div><button type="button" onclick="goToStep(${step})" class="form-link">Modifica</button></div>`).join('');
 }
 
 
@@ -1013,11 +1241,11 @@ function _prefillFromCache(userId) {
     const kVcTel  = _userKey('_vc_tel',  userId);
     const kPrNome = _userKey('_profile_nome', userId);
     const kPrTel  = _userKey('_profile_tel',  userId);
-    if (nomeEl && !nomeEl.value.trim()) {
+    if (nomeEl && !nomeEl.value.trim() && !nomeEl.dataset.userEdited) {
         const cached = localStorage.getItem(kVcNome) || localStorage.getItem(kPrNome) || '';
         if (cached) nomeEl.value = cached;
     }
-    if (telEl && !telEl.value.trim()) {
+    if (telEl && !telEl.value.trim() && !telEl.dataset.userEdited) {
         const cached = localStorage.getItem(kVcTel) || localStorage.getItem(kPrTel) || '';
         if (cached) telEl.value = cached;
     }
@@ -1037,7 +1265,7 @@ async function prefillContactFromSession(force = false) {
         // SECURITY: se i campi contengono dati di un user diverso (cache di altro
         // account residua sul device), svuotali prima di rifare prefill.
         const lastPrefilledFor = sessionStorage.getItem('_last_prefill_user');
-        if (lastPrefilledFor && lastPrefilledFor !== user.id) {
+        if (lastPrefilledFor && lastPrefilledFor !== user.id && _draftOwner !== user.id) {
             const nEl = document.getElementById('fNome');
             const tEl = document.getElementById('fTel');
             if (nEl) nEl.value = '';
@@ -1103,10 +1331,10 @@ async function prefillContactFromSession(force = false) {
         // applicata da _prefillFromCache prima del fetch DB.
         const haveFreshProfile = !!(fullName || phone);
 
-        if (nomeEl && (force || haveFreshProfile || !nomeEl.value.trim())) {
+        if (nomeEl && !nomeEl.dataset.userEdited && (force || haveFreshProfile || !nomeEl.value.trim())) {
             nomeEl.value = fullName || cachedNome || user.email.split('@')[0];
         }
-        if (telEl && (force || haveFreshProfile || !telEl.value.trim())) {
+        if (telEl && !telEl.dataset.userEdited && (force || haveFreshProfile || !telEl.value.trim())) {
             telEl.value = normalizePhone(phone || cachedTel);
         }
         // Cache profilo SCOPE-ATA per user_id (no leak cross-user su device condivisi)
@@ -1153,6 +1381,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         statusEl: document.getElementById('comuneStatus')
     });
 
+    await _initDrafts();
+    const formEl = document.getElementById('annuncioForm');
+    formEl.addEventListener('input', event => {
+        _draftStarted = true;
+        event.target.removeAttribute('aria-invalid');
+        if (event.target.id === 'fNome' || event.target.id === 'fTel') event.target.dataset.userEdited = '1';
+        _saveDraft();
+    });
+    formEl.addEventListener('change', () => { _draftStarted = true; _saveDraft(); });
+    formEl.addEventListener('submit', event => {
+        event.preventDefault();
+        if (_step === 6) submitAnnuncio();
+        else if (_step === 5) _goToPublishStep();
+        else nextStep();
+    });
+
     // Prefill immediato dalla cache (sync, no network) — evita race con getSession
     // SECURITY: prefill da cache solo dopo aver identificato il user attuale (scope per id).
     let _initUserId = null;
@@ -1172,45 +1416,31 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Pulizia one-time delle chiavi legacy (eseguita solo dopo che il prefill scope-ato e' partito)
     _clearLegacyContactCache();
 
-    // Controlla bozza salvata
-    try {
-        const saved = localStorage.getItem(_DRAFT_KEY);
-        if (saved) {
-            const parsed = JSON.parse(saved);
-            // SECURITY: se il draft appartiene a un altro user (anche se contiene
-            // solo dati strutturali del listing, NON nome/tel), scarta — non e'
-            // suo lavoro. Draft anonimi (`_userId == null`) restano disponibili.
-            const currentUid = (function(){ try { return _getStoredSupabaseSession()?.user?.id || null; } catch(_) { return null; } })();
-            if (parsed && parsed._userId && currentUid && parsed._userId !== currentUid) {
-                localStorage.removeItem(_DRAFT_KEY);
-            } else {
-                _pendingDraft = parsed;
-                if (_pendingDraft) {
-            const banner = document.createElement('div');
-            banner.id = 'draftBanner';
-            banner.className = 'mb-6 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 flex flex-wrap items-center justify-between gap-3';
-            banner.innerHTML = `
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-history text-amber-500"></i>
-                    <span class="text-sm font-bold text-amber-800">Hai una bozza salvata. Vuoi continuare da dove eri rimasto?</span>
-                </div>
-                <div class="flex gap-2">
-                    <button type="button" onclick="_applyPendingDraft()" class="text-xs font-black bg-amber-500 text-white px-4 py-2 rounded-xl hover:bg-amber-600 transition">Ripristina</button>
-                    <button type="button" onclick="_clearDraft()" class="text-xs font-black text-amber-600 hover:text-amber-800 transition px-2">Scarta</button>
-                </div>`;
-            const formWrapper = document.getElementById('formWrapper');
-            if (formWrapper) formWrapper.insertBefore(banner, formWrapper.firstChild);
-                }
-            }
-        }
-    } catch (_) {}
+});
+
+window.addEventListener('pagehide', _saveDraft);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') _saveDraft(); });
+window.addEventListener('beforeunload', event => {
+    _saveDraft();
+    if (_draftStarted && !_draftCompleted && (_draftWriteFailed || _photosUnsaved)) {
+        event.preventDefault();
+        event.returnValue = '';
+    }
+});
+window.addEventListener('storage', event => {
+    if (!event.key || (event.key.startsWith('sb-') && event.key.endsWith('-auth-token'))) _syncDraftOwner();
 });
 
 try {
-    _supabase.auth.onAuthStateChange(async event => {
-        if (event === 'SIGNED_IN') {
-            document.getElementById('authBanner').classList.add('hidden');
-            await prefillContactFromSession();
+    _supabase.auth.onAuthStateChange((event) => {
+        if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
+            // Esce dal callback auth prima delle operazioni asincrone.
+            setTimeout(async () => {
+                await _syncDraftOwner();
+                if (event !== 'SIGNED_IN') return;
+                document.getElementById('authBanner').classList.add('hidden');
+                await prefillContactFromSession();
+            }, 0);
         }
     });
 } catch (e) {}
@@ -1223,7 +1453,7 @@ let _files = [];
 const _fileMap = new WeakMap();
 
 dropzone.addEventListener('click', () => fileInput.click());
-fileInput.addEventListener('change', e => _handleFiles(e.target.files));
+fileInput.addEventListener('change', e => { _handleFiles(e.target.files); fileInput.value = ''; });
 dropzone.addEventListener('dragover',  e => { e.preventDefault(); dropzone.classList.add('border-blue-400'); });
 dropzone.addEventListener('dragleave', () => dropzone.classList.remove('border-blue-400'));
 dropzone.addEventListener('drop', e => {
@@ -1233,37 +1463,65 @@ dropzone.addEventListener('drop', e => {
 });
 
 function _handleFiles(files) {
-    if (_files.length + files.length > 1) {
-        _err('Puoi caricare 1 sola foto.');
-        return;
-    }
+    clearStepError();
+    let added = false;
     for (let f of files) {
+        if (_files.length >= 5) { _err('Puoi aggiungere fino a 5 foto. Rimuovine una per cambiarla.'); break; }
         const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
         if (!allowedTypes.includes(f.type)) {
             _err('Carica solo immagini JPG, PNG, WebP o AVIF.');
             continue;
         }
-        if (f.size > 5 * 1024 * 1024) {
-            _err('Ogni foto deve pesare al massimo 5 MB.');
+        if (f.size > 20 * 1024 * 1024) {
+            _err('Questa foto supera 20 MB. Scegli una versione più leggera.');
             continue;
         }
+        if (_files.some(file => file.name === f.name && file.size === f.size && file.lastModified === f.lastModified)) continue;
         _files.push(f);
-        const reader = new FileReader();
-        reader.onload = ev => {
-            const div = document.createElement('div');
-            div.className = 'aspect-square bg-slate-100 rounded-lg overflow-hidden relative group';
-            div.innerHTML = `
-                <img src="${ev.target.result}" class="w-full h-full object-cover">
-                <button type="button" onclick="removeFile(this)"
-                    class="absolute top-1 right-1 bg-red-500 text-white w-5 h-5 rounded-full text-[10px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                    <i class="fas fa-times"></i>
-                </button>`;
-            _fileMap.set(div, f);
-            preview.appendChild(div);
-            if (typeof _renderPreview === 'function') _renderPreview();
-        };
-        reader.readAsDataURL(f);
+        added = true;
     }
+    if (!added) return;
+    _draftStarted = true;
+    _renderPhotos();
+    _persistDraftPhotos();
+    document.getElementById('photoReminder').classList.add('hidden');
+}
+
+let _photoURLs = [];
+function _renderPhotos() {
+    _photoURLs.forEach(url => URL.revokeObjectURL(url));
+    _photoURLs = [];
+    preview.innerHTML = '';
+    _files.forEach((file, index) => {
+        const url = URL.createObjectURL(file);
+        _photoURLs.push(url);
+        const div = document.createElement('div');
+        div.className = 'photo-tile';
+        div.innerHTML = `<img src="${escapeHTML(url)}" alt="Foto ${index + 1} del posteggio"><button type="button" class="photo-remove" aria-label="Rimuovi foto ${index + 1}" onclick="removeFile(this)"><i class="fas fa-times"></i></button><button type="button" class="photo-cover" onclick="_setCover(${index})">${index === 0 ? 'Copertina' : 'Usa come copertina'}</button>`;
+        _fileMap.set(div, file);
+        preview.appendChild(div);
+    });
+    const fair = document.getElementById('fTipo').value === 'Fiera';
+    document.getElementById('photoAdvice').innerHTML = `Punta a <strong>3 foto</strong>: il banco, lo spazio del posteggio e ${fair ? 'la fiera' : 'il mercato'} intorno. Puoi aggiungerne <strong>fino a 5, anche gratis</strong>.`;
+    const prompts = ['Il banco', 'Lo spazio', fair ? 'La fiera intorno' : 'Il mercato intorno'];
+    for (let i = _files.length; i < 3; i++) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'photo-empty';
+        button.textContent = '+ ' + prompts[i];
+        button.addEventListener('click', () => fileInput.click());
+        preview.appendChild(button);
+    }
+    document.getElementById('photoButtonText').textContent = _files.length ? 'Aggiungi altre foto' : 'Scegli le foto dal telefono';
+    document.getElementById('photoProgress').textContent = `${_files.length} foto su 5${_files.length >= 3 ? ' · Hai mostrato il posteggio da più punti di vista.' : ' · Consigliamo almeno 3 foto.'}`;
+    _renderPreview();
+}
+
+function _setCover(index) {
+    if (index === 0) return;
+    _files.unshift(_files.splice(index, 1)[0]);
+    _renderPhotos();
+    _persistDraftPhotos();
 }
 
 function removeFile(btn) {
@@ -1273,8 +1531,8 @@ function removeFile(btn) {
         const idx = _files.indexOf(file);
         if (idx !== -1) _files.splice(idx, 1);
     }
-    div.remove();
-    if (typeof _renderPreview === 'function') _renderPreview();
+    _renderPhotos();
+    _persistDraftPhotos();
 }
 
 // ── Lotteria vetrina welcome (0,1% → 30 giorni, entro 30gg iscrizione) ─────
@@ -1313,6 +1571,7 @@ async function _prepareListingImage(file) {
     const prepared = typeof prepareImageForUpload === 'function'
         ? await _withTimeout(prepareImageForUpload(file), 7000, 'Preparazione foto scaduta')
         : file;
+    if (prepared.size > 5 * 1024 * 1024) throw new Error('La foto resta troppo grande dopo la riduzione. Scegli una versione più leggera.');
     const ext  = (prepared.name || file.name || 'foto.webp').split('.').pop();
     const path = `${Date.now()}-${Math.random().toString(36).substring(7)}.${ext}`;
     return { file: prepared, path };
@@ -1435,16 +1694,19 @@ async function _getSessionForSubmit() {
     return refreshed || session;
 }
 
+const _uploadedPhotos = new WeakMap();
 async function submitAnnuncio() {
     const btn = document.getElementById('submitBtn');
     if (btn.disabled) return;
     const orig = btn.dataset.origHtml || btn.innerHTML;
     btn.dataset.origHtml = orig;
 
-    const _resetBtn = () => { btn.disabled = false; btn.innerHTML = orig; };
+    const _resetBtn = () => { btn.disabled = false; btn.innerHTML = orig; document.getElementById('annuncioForm').inert = false; };
+    btn.disabled = true;
+    _saveDraft();
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Verifica in corso...';
 
-    // Controlla auth prima di disabilitare il bottone
+    // Il bottone è già bloccato per impedire invii doppi durante la verifica auth.
     let user = null;
     let _currentSession = null;
     try {
@@ -1464,6 +1726,7 @@ async function submitAnnuncio() {
             const note = document.getElementById('signupNote');
             if (note) note.classList.add('hidden');
             await prefillContactFromSession();
+            await _syncDraftOwner();
             submitAnnuncio();
         };
         _resetBtn();
@@ -1471,26 +1734,35 @@ async function submitAnnuncio() {
         return;
     }
 
-    // Valida prima di bloccare il bottone
+    // Valida ogni passo prima di bloccare l'intero form per l'upload.
     await _withTimeout(prefillContactFromSession(), 1800, 'Profilo non disponibile').catch(() => null);
-    if (!_validateStep(5)) {
+    await _syncDraftOwner();
+    for (let step = 2; step <= 5; step++) {
+        if (_validateStep(step)) continue;
+        const message = document.getElementById('stepErrorMsg').textContent;
+        const invalid = document.querySelector('[aria-invalid="true"]');
+        goToStep(step);
         _resetBtn();
+        if (invalid && invalid.closest('#step' + step)) _fieldError(invalid.id, message);
+        else _err(message);
         return;
     }
 
-    btn.disabled = true;
+    _saveDraft();
+    document.getElementById('annuncioForm').inert = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
 
     // Anti-spam
     const lastPostKey = 'last_post_time_' + user.id;
-    const lastPost = parseInt(localStorage.getItem(lastPostKey)) || 0;
+    let lastPost = 0;
+    try { lastPost = parseInt(localStorage.getItem(lastPostKey)) || 0; } catch (_) {}
     const now = Date.now();
     if (lastPost && (now - lastPost) < 60 * 1000) {
         _resetBtn();
         _err('Puoi pubblicare un annuncio ogni minuto. Riprova tra poco.');
         return;
     }
-    localStorage.setItem(lastPostKey, now);
+    try { localStorage.setItem(lastPostKey, now); } catch (_) {}
 
     try {
         // Default ciclo vita annuncio: 200 giorni. Le trattative reali per
@@ -1512,10 +1784,10 @@ async function submitAnnuncio() {
             comune:      location.comune,
             tipo:        document.getElementById('fTipo').value,
             settore:     document.getElementById('fMerce').value,
-            superficie:  parseFloat(document.getElementById('fSuperficie').value),
-            giorni:      document.getElementById('fGiorni').value.trim(),
+            superficie:  VendiSupport.parseNumber(document.getElementById('fSuperficie').value),
+            giorni:      document.getElementById('fTipo').value === 'Fiera' ? '' : document.getElementById('fGiorni').value.trim(),
             descrizione: document.getElementById('fDescrizione').value.trim(),
-            prezzo:      parseFloat(document.getElementById('fPrezzo').value),
+            prezzo:      VendiSupport.parseNumber(document.getElementById('fPrezzo').value, true),
             stato:       statoChecked.value,
             user_id:     user.id,
             status:      checkContent(document.getElementById('fTitolo').value.trim(), document.getElementById('fDescrizione').value.trim()),
@@ -1528,6 +1800,8 @@ async function submitAnnuncio() {
         const accessTokenForUpload = _currentSession?.access_token || SUPABASE_ANON_KEY;
         for (let i = 0; i < _files.length; i++) {
             const file = _files[i];
+            const cached = _uploadedPhotos.get(file);
+            if (cached?.owner === user.id) { imageUrls.push(cached.url); continue; }
             try {
                 btn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Caricamento foto ${i+1}/${_files.length}...`;
                 const prepared = await _prepareListingImage(file);
@@ -1535,7 +1809,8 @@ async function submitAnnuncio() {
                 // Upload diretto (bypassa il client supabase-js per evitare lock interni)
                 const upCtrl = new AbortController();
                 const upTimer = setTimeout(() => upCtrl.abort(), 25000);
-                const upRes = await fetch(
+                let upRes;
+                try { upRes = await fetch(
                     `${SUPABASE_URL}/storage/v1/object/listings/${storagePath}`,
                     {
                         method: 'POST',
@@ -1549,19 +1824,22 @@ async function submitAnnuncio() {
                         body: prepared.file,
                         signal: upCtrl.signal
                     }
-                );
-                clearTimeout(upTimer);
+                ); } finally { clearTimeout(upTimer); }
                 if (!upRes.ok) {
                     console.warn(`Foto ${i+1} upload HTTP ${upRes.status}`);
                     failedUploads++;
                     continue;
                 }
                 const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/listings/${storagePath}`;
+                _uploadedPhotos.set(file, { owner: user.id, url: publicUrl });
                 imageUrls.push(publicUrl);
             } catch (imgErr) {
                 console.warn('Foto saltata durante la pubblicazione:', imgErr);
                 failedUploads++;
             }
+        }
+        if (failedUploads) {
+            throw { code: 'PHOTO_UPLOAD', message: `${failedUploads} foto non si sono caricate. Il tuo annuncio è ancora in bozza: riprova senza riselezionare le foto, oppure rimuovi quelle che danno problemi.` };
         }
         btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
 
@@ -1573,8 +1851,8 @@ async function submitAnnuncio() {
         form.dettagli_extra = {
             images: imageUrls,
             settore: form.settore,
-            ...(nomeFiera ? { nome_fiera: nomeFiera } : {}),
-            ...(noteFiera ? { note_fiera: noteFiera } : {}),
+            ...(form.tipo === 'Fiera' && nomeFiera ? { nome_fiera: nomeFiera } : {}),
+            ...(form.tipo === 'Fiera' && noteFiera ? { note_fiera: noteFiera } : {}),
         };
         form.img_urls = imageUrls;
 
@@ -1606,6 +1884,9 @@ async function submitAnnuncio() {
 
         if (error) throw error;
 
+        // Da qui l'annuncio esiste: nessun errore di cache deve farlo pubblicare due volte.
+        _clearDraft();
+
         // Collega eventuale valutazione precedente a questo annuncio (fire-and-forget)
         if (inserted?.id) {
             _supabase.rpc('link_valutatore_to_annuncio', { p_annuncio_id: inserted.id })
@@ -1615,8 +1896,10 @@ async function submitAnnuncio() {
         // Salva nome/tel per pre-fill ai prossimi annunci (cache locale SCOPE per user_id)
         const _ownerId = (inserted && inserted.user_id) || (function(){ try { return _getStoredSupabaseSession()?.user?.id || null; } catch(_) { return null; } })();
         if (_ownerId) {
+            try {
             if (form.contatto) localStorage.setItem(_userKey('_vc_nome', _ownerId), form.contatto);
             if (form.tel)      localStorage.setItem(_userKey('_vc_tel',  _ownerId), form.tel);
+            } catch (_) {}
         }
         // Aggiorna SOLO i campi profilo vuoti — preserva il profilo quando il
         // venditore inserisce contatti diversi dai propri (es. admin che pubblica
@@ -1642,7 +1925,6 @@ async function submitAnnuncio() {
             5000,
             'Vetrina welcome scaduta'
         ).catch(() => false);
-        _clearDraft();
 
         // ── Scelta Vetrina al momento della pubblicazione ──────────
         // L'annuncio è già stato inserito (resta 'pending' per la moderazione):
@@ -1696,19 +1978,16 @@ async function submitAnnuncio() {
             vetrinaBanner.innerHTML = '<div class="text-3xl mb-1">🏆</div><p class="text-amber-900 font-black text-base">HAI VINTO!</p><p class="text-amber-800 font-bold text-sm mt-1">Il tuo annuncio è in Vetrina gratis per 30 giorni!</p><p class="text-amber-700 text-xs mt-1">Apparirà in cima a tutti i risultati.</p>';
             successEl.appendChild(vetrinaBanner);
         }
-        if (failedUploads > 0) {
-            const warn = document.createElement('div');
-            warn.className = 'mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 font-semibold';
-            warn.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i>${failedUploads} foto non caricate per un errore di rete. Aggiungile dalla dashboard.`;
-            successEl.appendChild(warn);
-        }
 
     } catch (err) {
         console.error('Pubblicazione fallita:', err);
-        localStorage.removeItem(lastPostKey);
+        try { localStorage.removeItem(lastPostKey); } catch (_) {}
         const code = err?.code ? ` [${err.code}]` : '';
         const detail = (err?.message || err?.error_description || err?.hint || '').toString().slice(0, 160);
-        if (detail) {
+        if (err?.code === 'PHOTO_UPLOAD') {
+            goToStep(5);
+            _err(err.message);
+        } else if (detail) {
             _err(`Errore${code}: ${detail}`);
         } else {
             _err('Errore durante la pubblicazione. Riprova tra poco.');
@@ -1728,6 +2007,15 @@ function checkContent(titolo, descrizione) {
 }
 
 function resetForm() {
+    _draftReady = false;
+    _draftStarted = false;
+    _draftCompleted = false;
+    _draftWriteFailed = false;
+    _photosUnsaved = false;
+    _photoWriteFailed = false;
+    _photoSaveVersion++;
+    _autoTitle = '';
+    _autoTitleSignature = '';
     _files = [];
     document.getElementById('annuncioForm').reset();
     document.getElementById('previewContainer').innerHTML = '';
@@ -1757,6 +2045,17 @@ function resetForm() {
     selectTipo('Mercato settimanale', 0);
 
     // Reset UI
+    ['fNome', 'fTel'].forEach(id => { delete document.getElementById(id).dataset.userEdited; });
+    if (_comunePicker) _comunePicker.setValue('', '').catch(() => {});
+    document.querySelectorAll('.tipo-card').forEach(card => card.classList.remove('selected'));
+    document.getElementById('annuncioForm').inert = false;
+    document.getElementById('submitBtn').disabled = false;
+    _refreshPublishChoiceUI();
+    document.getElementById('photoReminder').classList.add('hidden');
+    document.getElementById('draftBanner').classList.add('hidden');
+    _draftStatus('La bozza si salva su questo dispositivo mentre compili.');
+    _draftReady = true;
+    _renderPhotos();
     clearStepError();
     document.getElementById('formWrapper').classList.remove('hidden');
     document.getElementById('successMsg').classList.add('hidden');
