@@ -11,6 +11,13 @@
     // viene recuperata da un dispositivo condiviso.
     try { localStorage.removeItem('_val_session'); } catch (_) {}
     function fmt(n) { return Number.isFinite(n) ? Math.round(n).toLocaleString('it-IT', { useGrouping: true }) : '—'; }
+    function updateIncomeExample() {
+        const daily = data.baseIncasso === 'giorno';
+        const example = daily ? 150 + Math.floor(Math.random() * 601) : 2000 + Math.floor(Math.random() * 681) * 100;
+        document.getElementById('fatturato').placeholder = 'Es. ' + fmt(example);
+        document.getElementById('incassoPrefix').textContent = daily ? 'Incasso medio ' : 'Incasso totale ';
+        document.getElementById('incassoPeriod').textContent = daily ? 'in una giornata' : 'in un anno';
+    }
     function error(message) {
         const el = document.getElementById('valError');
         el.textContent = message || ''; el.hidden = !message;
@@ -68,7 +75,7 @@
         });
         error('');
         if (key === 'baseIncasso') {
-            document.getElementById('incassoLabel').textContent = data.baseIncasso === 'giorno' ? 'Incasso medio in una giornata' : 'Incasso totale in un anno';
+            updateIncomeExample();
             return;
         }
         if (key === 'concessione') document.getElementById('anniResiduiWrap').hidden = data.concessione !== 'breve';
@@ -159,5 +166,6 @@
         }
     });
     window._valUpdateSaveCard = () => updateSaveCard().catch(() => {});
+    updateIncomeExample();
     showStep();
 })();

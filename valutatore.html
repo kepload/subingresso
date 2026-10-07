@@ -148,6 +148,7 @@
         .option-card:focus-visible,.val-next:focus-visible,.val-edit:focus-visible { outline:3px solid #2563eb; outline-offset:3px; }
         .question-help { color:#64748b; font-size:13px; line-height:1.6; margin:8px 0 16px; }
         .val-label,#calculatorForm label { display:block; font-size:14px; font-weight:800; margin:12px 0 6px; }
+        #incassoPeriod { color:#2563eb; font-weight:800; }
         .val-tabs { display:flex; gap:8px; }
         .val-tabs .option-card { flex:1; padding:10px; font-size:13px; }
         .val-tabs .option-card > span:first-child { display:none; }
@@ -243,7 +244,7 @@
 </span>
 </button>
 </div>
-    <label for="fatturato" id="incassoLabel">Incasso medio in una giornata</label>
+    <label for="fatturato" id="incassoLabel"><span id="incassoPrefix">Incasso medio </span><strong id="incassoPeriod">in una giornata</strong></label>
     <div class="val-money">
 <span aria-hidden="true">€</span>
 <input type="text" inputmode="decimal" id="fatturato" placeholder="Es. 500" maxlength="20" autocomplete="off" aria-describedby="incassoHelp">
@@ -679,7 +680,7 @@
 </script>
 <script src="js/valuation.js?v=1">
 </script>
-<script src="js/pages/valutatore.js?v=1">
+<script src="js/pages/valutatore.js?v=2">
 </script>
 <script src="js/auth.js?v=20">
 </script>
