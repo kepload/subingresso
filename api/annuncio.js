@@ -8,6 +8,7 @@
 const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
+const { getOptimizedImageUrl, isWebImageUrl } = require('../js/image-urls.js');
 
 function esc(str) {
     if (!str && str !== 0) return '';
@@ -137,7 +138,7 @@ module.exports = async function handler(req, res) {
         return `
             <a href="/annuncio?id=${esc(l.id)}" class="block bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition overflow-hidden">
                 <div class="bg-gradient-to-br from-slate-100 to-blue-50 h-32 flex items-center justify-center overflow-hidden">
-                    ${img ? `<img src="${esc(img)}" alt="${esc(l.titolo)}" class="w-full h-full object-cover" loading="lazy">` : '<i class="fas fa-store text-blue-200 text-3xl"></i>'}
+                    ${img ? `<img src="${esc(getOptimizedImageUrl(img, 480))}" alt="${esc(l.titolo)}" class="w-full h-full object-cover" loading="lazy" decoding="async">` : '<i class="fas fa-store text-blue-200 text-3xl"></i>'}
                 </div>
                 <div class="p-4">
                     <p class="text-[10px] font-black uppercase tracking-wider text-slate-400 mb-1">${esc(l.comune || l.regione)}</p>
@@ -154,7 +155,8 @@ module.exports = async function handler(req, res) {
     const canonical = id ? `${SITE}/annuncio?id=${encodeURIComponent(id)}` : `${SITE}/annunci`;
     const title     = listing ? buildTitle(listing) : 'Posteggio Mercatale | Subingresso.it';
     const desc      = listing ? buildDesc(listing)  : 'Compra e vendi posteggi mercatali e licenze ambulanti su Subingresso.it. Contatto diretto, nessuna commissione.';
-    const img       = (listing && listing.img_urls && listing.img_urls[0]) ? listing.img_urls[0] : '';
+    const firstImg  = (listing && listing.img_urls && listing.img_urls[0]) ? listing.img_urls[0] : '';
+    const img       = isWebImageUrl(firstImg) ? firstImg : '';
     // Immagine assoluta per JSON-LD/og:image: foto annuncio o fallback brand.
     // Senza 'image' Google scarta la scheda Product ("Schede commercianti").
     const ogImg     = img || `${SITE}/og/og-home.jpg?v=1`;
@@ -317,7 +319,7 @@ module.exports = async function handler(req, res) {
 
             <div id="coverDiv" class="bg-gradient-to-br from-slate-100 to-blue-50 rounded-3xl h-44 md:h-80 flex items-center justify-center relative overflow-hidden shadow-sm">
                 ${img
-                    ? `<img src="${esc(img)}" alt="${esc(listing ? listing.titolo : '')}" class="w-full h-full object-cover">`
+                    ? `<a href="${esc(img)}" target="_blank" rel="noopener" aria-label="Apri foto nelle dimensioni originali" style="width:100%;height:100%;display:block;cursor:zoom-in"><img src="${esc(getOptimizedImageUrl(img, 1280))}" alt="${esc(listing ? listing.titolo : '')}" fetchpriority="high" decoding="async" class="w-full h-full object-cover"></a>`
                     : '<i class="fas fa-store text-blue-200 text-5xl md:text-8xl"></i>'
                 }
                 <span id="statoBadge" class="absolute top-6 right-6 text-white text-xs font-black px-4 py-2 rounded-xl shadow-lg uppercase tracking-widest ${statoBg}">${esc(listing ? listing.stato : '')}</span>
@@ -448,11 +450,12 @@ module.exports = async function handler(req, res) {
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/supabase-config.js?v=3"></script>
 <script src="/js/page-view-tracker.js?v=4"></script>
-<script src="/js/data.js?v=17"></script>
+<script src="/js/image-urls.js?v=1"></script>
+<script src="/js/data.js?v=18"></script>
 <script src="/js/ui-components.js?v=11"></script>
 <script src="/js/auth.js?v=21"></script>
 <script src="/js/listing-moderation.js?v=1"></script>
-<script src="/js/pages/annuncio-detail.js?v=20"></script>
+<script src="/js/pages/annuncio-detail.js?v=21"></script>
 </body>
 </html>`);
 };

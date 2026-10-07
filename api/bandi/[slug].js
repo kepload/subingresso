@@ -14,6 +14,7 @@
 const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
+const { getOptimizedImageUrl } = require('../../js/image-urls.js');
 
 function esc(s) {
     if (s === null || s === undefined) return '';
@@ -50,7 +51,7 @@ function cardHTML(l) {
     const accent = isVen ? 'border-l-emerald-400 bg-emerald-50/60' : 'border-l-blue-400 bg-blue-50/60';
     const badgeBg = isVen ? '#10b981' : '#3b82f6';
     const img = cover
-        ? `<img src="${esc(cover)}" alt="${titolo}" loading="lazy" decoding="async" style="width:100%;height:140px;object-fit:cover;display:block;">`
+        ? `<img src="${esc(getOptimizedImageUrl(cover, 480))}" alt="${titolo}" loading="lazy" decoding="async" style="width:100%;height:140px;object-fit:cover;display:block;">`
         : `<div style="width:100%;height:140px;background:#e2e8f0;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:11px;">Nessuna foto</div>`;
     return `<a href="${esc(url)}" class="block rounded-2xl border border-l-[3px] ${accent} overflow-hidden hover:shadow-lg transition group">
         ${img}
@@ -277,7 +278,8 @@ window._formStartedAt = Date.now();
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/supabase-config.js?v=2"></script>
 <script src="/js/page-view-tracker.js?v=4"></script>
-<script src="/js/data.js?v=17"></script>
+<script src="/js/image-urls.js?v=1"></script>
+<script src="/js/data.js?v=18"></script>
 <script src="/js/ui-components.js?v=11"></script>
 <script src="/js/auth.js?v=21"></script>
 <script>

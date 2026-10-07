@@ -8,6 +8,7 @@
 const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
+const { getOptimizedImageUrl } = require('../js/image-urls.js');
 
 const { CAPOLUOGHI_BY_SLUG } = require('./_capoluoghi.js');
 
@@ -121,7 +122,7 @@ function buildCard(l) {
     return `
   <a href="/annuncio?id=${esc(l.id)}" style="display:block;background:#fff;border:1px solid #f1f5f9;border-radius:16px;overflow:hidden;text-decoration:none;box-shadow:0 1px 4px rgba(15,23,42,.06);transition:box-shadow .2s;${cardOpacity}">
     ${img
-        ? `<img src="${esc(img)}" alt="${esc(l.titolo)}" style="width:100%;height:160px;object-fit:cover;" loading="lazy">`
+        ? `<img src="${esc(getOptimizedImageUrl(img, 480))}" alt="${esc(l.titolo)}" style="width:100%;height:160px;object-fit:cover;" loading="lazy" decoding="async">`
         : `<div style="width:100%;height:160px;background:#f8fafc;display:flex;align-items:center;justify-content:center;"><i class="fas fa-store" style="color:#cbd5e1;font-size:2rem;"></i></div>`
     }
     <div style="padding:16px;">

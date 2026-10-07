@@ -210,7 +210,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
-<script src="js/data.js?v=17"></script>
+<script src="js/image-urls.js?v=1"></script>
+<script src="js/data.js?v=18"></script>
 <script src="js/comune-picker.js?v=5"></script>
 <script src="js/auth.js?v=21"></script>
 <script>
@@ -341,8 +342,9 @@ function addPreview(src, isExisting, file = null) {
     if (isExisting) _currentImageUrls.push(src);
     const div = document.createElement('div');
     div.className = 'aspect-square bg-slate-100 rounded-lg overflow-hidden relative group';
+    if (isExisting) div.dataset.originalSrc = src;
     div.innerHTML = `
-        <img src="${escapeHTML(src)}" class="w-full h-full object-cover">
+        <img src="${escapeHTML(isExisting ? getOptimizedImageUrl(src, 192) : src)}" class="w-full h-full object-cover">
         <button type="button" aria-label="Rimuovi foto" style="width:32px;height:32px" class="absolute top-1 right-1 bg-red-500 text-white rounded-full text-[10px] flex items-center justify-center transition" onclick="removePreview(this, ${isExisting})">
             <i class="fas fa-times"></i>
         </button>`;
@@ -354,7 +356,7 @@ function removePreview(btn, isExisting) {
     const div = btn.parentElement;
     if (isExisting) {
         // Rimuovi dalle URL correnti (bisogna trovare l'indice corretto tra le URL esistenti)
-        const url = div.querySelector('img').src;
+        const url = div.dataset.originalSrc;
         _currentImageUrls = _currentImageUrls.filter(u => u !== url);
     } else {
         const idx = _newFiles.indexOf(_photoFiles.get(div));
@@ -413,10 +415,8 @@ async function updateAnnuncio() {
         // 1. Upload nuove foto
         const newUrls = [];
         for (let file of _newFiles) {
-            const uploadFile = typeof prepareImageForUpload === 'function'
-                ? await prepareImageForUpload(file)
-                : file;
-            if (uploadFile.size > 5 * 1024 * 1024) throw new Error('La foto resta troppo grande dopo la riduzione. Scegli una versione più leggera.');
+            const uploadFile = file;
+            if (uploadFile.size > 20 * 1024 * 1024) throw new Error('Ogni foto deve pesare al massimo 20 MB.');
             const fileExt = uploadFile.name.split('.').pop();
             const fileName = `${user.id}/${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
             const { error: upErr } = await _supabase.storage.from('listings').upload(fileName, uploadFile, {

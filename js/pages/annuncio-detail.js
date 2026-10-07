@@ -6,6 +6,71 @@
 let _currentListing = null;
 let _contactFetched = false; // true dopo che initPage ha fetchato tel per utente loggato
 const _moderationPreview = new URLSearchParams(location.search).get('anteprima') === 'moderazione';
+let _listingPhotos = [];
+let _listingPhotoIndex = 0;
+
+function listingPhotoLink(url, title, index, gallery) {
+    return `<a href="${escapeHTML(url)}" target="_blank" rel="noopener" onclick="openListingPhoto(event, ${index})" aria-label="Apri foto ${index + 1} nelle dimensioni originali" style="cursor:zoom-in" class="block w-full h-full ${gallery ? 'flex-shrink-0 snap-center min-w-full' : ''}"><img src="${escapeHTML(getOptimizedImageUrl(url, 1280))}" alt="${escapeHTML(title)}" decoding="async" ${index > 0 ? 'loading="lazy"' : 'fetchpriority="high"'} class="w-full h-full object-cover"></a>`;
+}
+
+function openListingPhoto(event, index) {
+    if (!_listingPhotos[index]) return;
+    event.preventDefault();
+    let dialog = document.getElementById('listingPhotoDialog');
+    if (!dialog) {
+        dialog = document.createElement('dialog');
+        dialog.id = 'listingPhotoDialog';
+        dialog.setAttribute('aria-label', 'Foto originale dell’annuncio');
+        dialog.style.cssText = 'width:94vw;max-width:1400px;height:90vh;height:90dvh;padding:16px;border:0;border-radius:16px;background:#0f172a;color:white;';
+        dialog.innerHTML = `<div style="display:flex;flex-direction:column;height:100%;gap:12px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                <span id="listingPhotoStatus" role="status">Caricamento foto originale…</span>
+                <button type="button" aria-label="Chiudi foto" style="padding:12px;min-width:44px;min-height:44px">✕</button>
+            </div>
+            <img id="listingPhotoOriginal" alt="" style="display:block;object-fit:contain;width:100%;min-height:0;flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+                <button type="button" id="listingPhotoPrevious" aria-label="Foto precedente" style="padding:12px;min-height:44px">← Precedente</button>
+                <span id="listingPhotoCounter"></span>
+                <button type="button" id="listingPhotoNext" aria-label="Foto successiva" style="padding:12px;min-height:44px">Successiva →</button>
+            </div>
+        </div>`;
+        document.body.appendChild(dialog);
+        dialog.querySelector('[aria-label="Chiudi foto"]').addEventListener('click', () => dialog.close());
+        document.getElementById('listingPhotoPrevious').addEventListener('click', () => showListingPhoto(_listingPhotoIndex - 1));
+        document.getElementById('listingPhotoNext').addEventListener('click', () => showListingPhoto(_listingPhotoIndex + 1));
+        dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+        dialog.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                e.preventDefault();
+                showListingPhoto(_listingPhotoIndex + (e.key === 'ArrowLeft' ? -1 : 1));
+            }
+        });
+        dialog.addEventListener('close', () => {
+            document.getElementById('listingPhotoOriginal').removeAttribute('src');
+            document.body.style.overflow = dialog.dataset.previousOverflow || '';
+        });
+        const original = document.getElementById('listingPhotoOriginal');
+        original.onload = () => { document.getElementById('listingPhotoStatus').textContent = 'Foto originale'; };
+        original.onerror = () => { document.getElementById('listingPhotoStatus').textContent = 'La foto non si è caricata. Chiudi e riprova.'; };
+    }
+    if (!dialog.open) {
+        dialog.dataset.previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        dialog.showModal();
+    }
+    showListingPhoto(index);
+}
+
+function showListingPhoto(index) {
+    _listingPhotoIndex = (index + _listingPhotos.length) % _listingPhotos.length;
+    const image = document.getElementById('listingPhotoOriginal');
+    document.getElementById('listingPhotoStatus').textContent = 'Caricamento foto originale…';
+    image.alt = (_currentListing?.titolo || 'Foto annuncio') + ' · foto ' + (_listingPhotoIndex + 1);
+    // Only this explicit interaction requests the original file.
+    image.src = _listingPhotos[_listingPhotoIndex];
+    document.getElementById('listingPhotoCounter').textContent = `${_listingPhotoIndex + 1} / ${_listingPhotos.length}`;
+    for (const id of ['listingPhotoPrevious', 'listingPhotoNext']) document.getElementById(id).hidden = _listingPhotos.length < 2;
+}
 
 // Mette davanti gli annunci in Vetrina attiva (chi paga ha priorità di
 // visibilità nei box "consigliati"). I featured vengono mescolati per dare
@@ -301,19 +366,22 @@ async function initPage() {
     }
     
     const allImgs = (listing.img_urls && listing.img_urls.length > 0) ? listing.img_urls : (extra && extra.images ? extra.images : []);
-    const showImgs = (isFeatured || _moderationPreview) ? allImgs : (allImgs.length > 0 ? [allImgs[0]] : []);
+    const showImgs = allImgs.filter(url => {
+        try { return ['https:', 'http:'].includes(new URL(url).protocol); } catch (_) { return false; }
+    });
+    _listingPhotos = showImgs;
     
     if (coverContainer && showImgs.length > 0) {
         let imgsHtml = '';
         if (showImgs.length === 1) {
-            imgsHtml = `<img src="${escapeHTML(showImgs[0])}" alt="${escapeHTML(listing.titolo)}" class="w-full h-full object-cover">`;
+            imgsHtml = listingPhotoLink(showImgs[0], listing.titolo, 0, false) + '<span class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/40 text-white text-[10px] font-black px-3 py-1.5 rounded-full pointer-events-none">Tocca per ingrandire</span>';
         } else {
             imgsHtml = `
                 <div class="flex overflow-x-auto snap-x snap-mandatory h-full w-full no-scrollbar">
-                    ${showImgs.map(img => `<img src="${escapeHTML(img)}" alt="${escapeHTML(listing.titolo)}" class="w-full h-full object-cover flex-shrink-0 snap-center min-w-full">`).join('')}
+                    ${showImgs.map((img, index) => listingPhotoLink(img, listing.titolo, index, true)).join('')}
                 </div>
                 <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-sm text-white text-[10px] font-black px-3 py-1.5 rounded-full z-10 pointer-events-none flex items-center gap-1.5 shadow-md">
-                    <i class="fas fa-arrows-alt-h"></i> Scorri le ${showImgs.length} foto
+                    <i class="fas fa-arrows-alt-h"></i> Scorri le ${showImgs.length} foto · Tocca per ingrandire
                 </div>
             `;
         }
@@ -456,7 +524,7 @@ async function initPage() {
 
                 const sellerFullName = formatFullName(seller.nome, seller.cognome);
                 if (seller.avatar_url) {
-                    avatarEl.innerHTML = `<img src="${escapeHTML(seller.avatar_url)}" class="w-full h-full object-cover">`;
+                    avatarEl.innerHTML = `<img src="${escapeHTML(getOptimizedImageUrl(seller.avatar_url, 96))}" decoding="async" class="w-full h-full object-cover">`;
                 } else {
                     avatarEl.textContent = (sellerFullName || 'U').charAt(0).toUpperCase();
                 }

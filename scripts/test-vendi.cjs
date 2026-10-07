@@ -266,6 +266,14 @@ const server = http.createServer((req, res) => {
         await active(page,1);
         assert.equal(await page.locator('#fComune').inputValue(),'');
         assert.equal(await page.evaluate(() => _files.length),0);
+        assert(await page.evaluate(async()=>{
+            const bytes=new Uint8Array(6*1024*1024);
+            bytes[0]=123;bytes[bytes.length-1]=231;
+            const file=new File([bytes],'originale.png',{type:'image/png'});
+            const prepared=await _prepareListingImage(file);
+            const saved=new Uint8Array(await prepared.file.arrayBuffer());
+            return prepared.file===file && saved.length===bytes.length && saved[0]===123 && saved[saved.length-1]===231;
+        }),'upload preparation preserves the exact original, including files above the old 5 MB limit');
         console.log('OK: mobile, 5 foto, copertina, bozze con contatti e foto, titoli stabili, upload fallito e retry, pubblicazione e reset.');
 
         const fair = await newPage(ownerB);
@@ -400,6 +408,8 @@ const server = http.createServer((req, res) => {
         await edit.context().unroute('**/data/comuni-picker.json*');
         await edit.getByRole('button', {name:'Riprova a caricare i comuni'}).click();
         await edit.waitForFunction(() => !!_comunePicker.getValue());
+        await edit.locator('#previewContainer button').first().click();
+        assert.equal(await edit.evaluate(()=>_currentImageUrls.length),0,'removing an existing preview removes its original URL');
         console.log('OK: aggiunta e rimozione di più foto anche su annunci gratuiti esistenti.');
         console.log('OK: comune abbreviato e recupero del selettore offline anche in modifica annuncio.');
 
