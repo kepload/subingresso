@@ -20,6 +20,7 @@
     <meta name="twitter:description" content="Licenze ambulanti e posteggi mercatali in vendita o affitto in tutta Italia. Annunci diretti tra privati, contatti senza intermediari.">
     <meta name="twitter:image"       content="https://images.pexels.com/photos/1187299/pexels-photo-1187299.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop">
     <link rel="stylesheet" href="css/tailwind.css?v=4">
+    <link rel="stylesheet" href="css/location-search.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
@@ -80,13 +81,6 @@
         .search-active { animation: searchPulse 0.5s ease; border-color: #3b82f6 !important; }
 
         /* Autocomplete suggestions */
-        #searchSuggestions { position:absolute; left:-1px; right:-1px; top:calc(100% + 6px); background:#fff; border:1px solid #e2e8f0; border-radius:16px; box-shadow:0 8px 32px rgba(15,23,42,.13); z-index:200; overflow:hidden; max-height:256px; overflow-y:auto; }
-        #searchSuggestions li { padding:.55rem 1rem; font-size:.8rem; font-weight:600; cursor:pointer; display:flex; align-items:center; gap:.5rem; color:#0f172a; border-bottom:1px solid #f8fafc; transition:background .1s; list-style:none; }
-        #searchSuggestions li:last-child { border-bottom:none; }
-        #searchSuggestions li:hover, #searchSuggestions li.sug-active { background:#eff6ff; color:#2563eb; }
-        #searchSuggestions .sug-section { padding:.3rem 1rem .2rem; font-size:.65rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#94a3b8; background:#f8fafc; cursor:default; pointer-events:none; }
-        #searchSuggestions .sug-del { margin-left:auto; flex-shrink:0; color:#cbd5e1; background:none; border:none; cursor:pointer; padding:2px 6px; border-radius:4px; transition:color .15s; }
-        #searchSuggestions .sug-del:hover { color:#ef4444; }
         /* Radius row */
         #radiusRow { display:none; align-items:center; gap:.5rem; }
         #radiusRow.visible { display:flex; }
@@ -121,7 +115,7 @@
                             class="flex-shrink-0 bg-blue-600 text-white text-xs font-black px-3 py-1.5 rounded-xl hover:bg-blue-700 transition active:scale-95">
                         Cerca
                     </button>
-                    <ul id="searchSuggestions" class="hidden"></ul>
+                    <div id="searchSuggestions" hidden></div>
                 </div>
                 <div id="activeChips" class="flex flex-wrap gap-2"></div>
             </div>
@@ -364,8 +358,10 @@
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=3"></script>
 <script src="js/data.js?v=17"></script>
+<script src="js/comune-picker.js?v=4"></script>
+<script src="js/location-search.js?v=1"></script>
 <script src="js/ui-components.js?v=11"></script>
 <script src="js/auth.js?v=20"></script>
-<script src="js/pages/annunci.js?v=6"></script>
+<script src="js/pages/annunci.js?v=7"></script>
 </body>
 </html>

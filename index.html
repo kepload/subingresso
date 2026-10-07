@@ -55,6 +55,7 @@
     </script>
 
     <link rel="stylesheet" href="css/tailwind.css?v=4">
+    <link rel="stylesheet" href="css/location-search.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap');
@@ -68,27 +69,6 @@
         html { scroll-behavior: smooth; }
 
         /* ── autocomplete ── */
-        #autocompleteBox {
-            position: absolute; top: calc(100% + 8px); left: 0; right: 0;
-            background: white; border: 1px solid #e2e8f0; border-radius: 16px;
-            box-shadow: 0 20px 50px -10px rgba(15,23,42,.15);
-            z-index: 100; overflow: hidden; display: none;
-        }
-        .ac-item {
-            display: flex; align-items: center; gap: 12px;
-            padding: 11px 18px; cursor: pointer;
-            font-size: .875rem; font-weight: 600; color: #334155;
-            transition: background .12s;
-        }
-        .ac-item:hover, .ac-item.selected { background: #eff6ff; color: #1d4ed8; }
-        .ac-item i { color: #94a3b8; font-size: .8rem; width: 16px; }
-        .ac-highlight { color: #2563eb; font-weight: 800; }
-        .ac-section {
-            font-size: .65rem; font-weight: 900; text-transform: uppercase;
-            letter-spacing: .1em; color: #cbd5e1; padding: 10px 18px 4px;
-        }
-
-        /* ── stats animation ── */
         @keyframes stat-pulse {
             0% { transform: scale(1); color: #0f172a; }
             50% { transform: scale(1.1); color: #2563eb; }
@@ -122,7 +102,7 @@
                 <div class="flex-grow flex items-center px-5 gap-3">
                     <i class="fas fa-search text-blue-500 text-sm"></i>
                     <input id="searchInput" type="text" autocomplete="off"
-                           placeholder="Cerca per città o regione…"
+                           placeholder="Cerca per comune, città o regione…"
                            class="w-full py-3.5 text-slate-800 outline-none font-semibold text-sm placeholder:text-slate-300 placeholder:font-normal bg-transparent">
                 </div>
                 <button onclick="doSearch()"
@@ -346,138 +326,32 @@
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/page-view-tracker.js?v=3"></script>
 <script src="js/data.js?v=17"></script>
+<script src="js/comune-picker.js?v=4"></script>
+<script src="js/location-search.js?v=1"></script>
 <script src="js/ui-components.js?v=11"></script>
 <script src="js/auth.js?v=20"></script>
 <script>
 // ══════════════ AUTOCOMPLETE ══════════════
-const input  = document.getElementById('searchInput');
-const box    = document.getElementById('autocompleteBox');
-let acIndex  = -1;
-let acItems  = [];
-
-function highlight(text, q) {
-    if (!q) return escapeHTML(text);
-    const i = text.toLowerCase().indexOf(q.toLowerCase());
-    if (i === -1) return escapeHTML(text);
-    return escapeHTML(text.slice(0, i))
-         + `<span class="ac-highlight">${escapeHTML(text.slice(i, i + q.length))}</span>`
-         + escapeHTML(text.slice(i + q.length));
-}
-
-function buildAcList(q) {
-    if (!q || q.length < 2) { closeAc(); return; }
-
-    // ── Fuzzy match con score ──
-    const scored = (arr, key) => arr
-        .map(item => ({ item, score: fuzzyScore(typeof item === 'string' ? item : item[key], q) }))
-        .filter(x => x.score > 0)
-        .sort((a, b) => b.score - a.score);
-
-    const regMatches = scored(REGIONI, null).slice(0, 3).map(x => x.item);
-    const comMatches = scored(COMUNI_IT, null).slice(0, 6).map(x => x.item);
-    const annMatches = LISTINGS
-        .map(l => ({ item: l, score: Math.max(fuzzyScore(l.comune, q), fuzzyScore(l.titolo, q)) }))
-        .filter(x => x.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 3)
-        .map(x => x.item);
-
-    const total = regMatches.length + comMatches.length + annMatches.length;
-    if (total === 0) { closeAc(); return; }
-
-    let html = '';
-    acItems  = [];
-
-    if (regMatches.length) {
-        html += `<div class="ac-section">Regioni</div>`;
-        regMatches.forEach(r => {
-            acItems.push({ label: r });
-            html += `<div class="ac-item" data-idx="${acItems.length - 1}">
-                        <i class="fas fa-map"></i>
-                        <span>${highlight(r, q)}</span>
-                     </div>`;
-        });
-    }
-    if (comMatches.length) {
-        html += `<div class="ac-section">Città e mercati</div>`;
-        comMatches.forEach(c => {
-            acItems.push({ label: c });
-            html += `<div class="ac-item" data-idx="${acItems.length - 1}">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>${highlight(c, q)}</span>
-                     </div>`;
-        });
-    }
-    if (annMatches.length) {
-        html += `<div class="ac-section">Annunci</div>`;
-        annMatches.forEach(l => {
-            acItems.push({ label: l.comune });
-            html += `<div class="ac-item" data-idx="${acItems.length - 1}" style="flex-direction:column;align-items:flex-start;gap:2px;">
-                        <div style="display:flex;align-items:center;gap:10px;">
-                            <i class="fas fa-store" style="flex-shrink:0"></i>
-                            <span>${highlight(l.comune, q)}</span>
-                        </div>
-                        <div style="font-size:.72rem;color:#94a3b8;padding-left:26px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:340px">${escapeHTML(l.titolo)}</div>
-                     </div>`;
-        });
-    }
-
-    box.innerHTML = html;
-    box.style.display = 'block';
-    acIndex = -1;
-
-    box.querySelectorAll('.ac-item').forEach(el => {
-        el.addEventListener('mousedown', e => {
-            e.preventDefault();
-            selectItem(parseInt(el.dataset.idx));
-        });
-    });
-}
-
-function selectItem(idx) {
-    const item = acItems[idx];
-    if (!item) return;
-    input.value = item.label;
-    closeAc();
-    doSearch();
-}
-
-function closeAc() {
-    box.style.display = 'none';
-    acIndex = -1;
-}
-
-function moveAc(dir) {
-    const items = box.querySelectorAll('.ac-item');
-    if (!items.length) return;
-    items.forEach(el => el.classList.remove('selected'));
-    acIndex = (acIndex + dir + items.length) % items.length;
-    items[acIndex].classList.add('selected');
-    input.value = acItems[acIndex].label;
-}
-
-input.addEventListener('input', () => buildAcList(input.value.trim()));
-input.addEventListener('keydown', e => {
-    if (e.key === 'ArrowDown')  { e.preventDefault(); moveAc(1); }
-    else if (e.key === 'ArrowUp')   { e.preventDefault(); moveAc(-1); }
-    else if (e.key === 'Enter')  { closeAc(); doSearch(); }
-    else if (e.key === 'Escape') closeAc();
-});
-document.addEventListener('click', e => {
-    if (!document.getElementById('searchWrapper').contains(e.target)) closeAc();
+const input = document.getElementById('searchInput');
+const locationSearch = LocationSearch.create({
+    input,
+    box: document.getElementById('autocompleteBox'),
+    regions: REGIONI,
+    onSubmit: doSearch
 });
 
-// ══════════════ SEARCH ══════════════
-function doSearch() {
+async function doSearch() {
+    if (!await locationSearch.prepare()) return;
     const q = input.value.trim();
-    window.location.href = q
-        ? `/annunci?q=${encodeURIComponent(q)}`
-        : '/annunci';
+    const query = new URLSearchParams();
+    if (q) query.set('q', q);
+    if (locationSearch.selected) query.set('comune', locationSearch.selected.codiceIstat);
+    window.location.href = '/annunci' + (query.size ? '?' + query.toString() : '');
 }
 
-// ══════════════ BORSINO — tabella €/m² (Dati reali) ══════════════
 async function buildPriceTable() {
     const container = document.getElementById('priceTable');
+    if (!container) return;
     container.innerHTML = '<div class="px-6 py-8 text-center text-slate-400 text-sm font-medium">Caricamento prezzi…</div>';
 
     let source;

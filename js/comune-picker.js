@@ -318,4 +318,6 @@
     }
 
     window.createComunePicker = createComunePicker;
+    // Home e ricerca annunci usano gli stessi dati, alias e tentativi di caricamento dei form.
+    window.ComuniItaliani = { load: loadComuni, normalize, canonicalRegion };
 })();

@@ -1,0 +1,17 @@
+.location-suggestions {
+    position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 200;
+    max-height: min(360px, 45vh); overflow-y: auto; overscroll-behavior: contain;
+    background: #fff; border: 1px solid #cbd5e1; border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, .16); text-align: left;
+    -webkit-overflow-scrolling: touch;
+}
+.location-suggestions[hidden] { display: none; }
+.location-option { position: relative; padding: 12px 18px; min-height: 52px; cursor: pointer; border-bottom: 1px solid #f1f5f9; }
+.location-option:last-child { border-bottom: 0; }
+.location-option:hover, .location-option[aria-selected="true"] { background: #eff6ff; }
+.location-name { display: block; color: #0f172a; font-size: 14px; font-weight: 800; }
+.location-detail { display: block; margin-top: 3px; color: #475569; font-size: 12px; font-weight: 500; }
+.location-note { padding: 9px 18px; color: #64748b; background: #f8fafc; font-size: 12px; font-weight: 600; }
+.location-retry { margin: 12px 18px; padding: 8px 16px; border-radius: 10px; background: #eff6ff; color: #1d4ed8; font-weight: 700; }
+.location-delete { position: absolute; right: 12px; top: 7px; padding: 7px 12px; color: #64748b; font-size: 20px; }
+@media (max-width: 640px) { #searchInput, #searchBar { font-size: 16px; } }

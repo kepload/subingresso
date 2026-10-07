@@ -57,11 +57,19 @@ Dopo **OGNI** modifica ai file: `git add . && git commit -m "..." && git push`. 
 
 ## 📍 Inserimento comuni nei form (7 ottobre 2026)
 
-- `js/comune-picker.js?v=3` e `css/comune-picker.css?v=1` condivisi da vendita e modifica: lista visibile con nome, sigla, provincia e regione, selezione tramite tocco/mouse/frecce/Invio. Non usa il `datalist` nativo del browser.
+- `js/comune-picker.js?v=4` e `css/comune-picker.css?v=1` condivisi da vendita e modifica: lista visibile con nome, sigla, provincia e regione, selezione tramite tocco/mouse/frecce/Invio. Non usa il `datalist` nativo del browser.
 - Non completa il testo mentre si digita. Nome completo, alias e prefisso univoco di almeno 3 caratteri (es. Moniga → Moniga del Garda) vengono confermati uscendo dal campo o con Avanti. Omonimi richiedono una scelta; accenti/apostrofi/spazi vengono normalizzati. Piccoli refusi propongono suggerimenti da scegliere esplicitamente.
 - Una scelta aggiorna provincia/regione e genera `change` per salvare la bozza corretta. Ripristino annunci/bozze conserva la regione degli omonimi; una nuova digitazione elimina quel riferimento. Gli aggiornamenti asincroni non sovrascrivono ciò che si sta scrivendo.
 - Fetch con timeout, secondo tentativo automatico e pulsante Riprova senza perdere il testo. Un errore non resta memorizzato nella Promise condivisa. In modifica il form si apre anche se i comuni sono offline.
 - Verifiche: `scripts/test-comune-picker.cjs` (Chromium/WebKit, desktop/tocco mobile, accenti, alias, omonimi, tastiera, refusi, rete lenta e retry) e `scripts/test-vendi.cjs` (Avanti con Moniga, omonimi, bozza e recupero in modifica, oltre al wizard completo). Supportano `PLAYWRIGHT_MODULE` per riusare un'installazione locale.
+
+
+## Ricerca dei luoghi (7 ottobre 2026)
+
+- Home e pagina annunci condividono `js/location-search.js?v=1` e `css/location-search.css?v=1`, caricando tutti i 7.894 comuni da `data/comuni-picker.json` attraverso il loader di `comune-picker.js`. Nessuna dipendenza dagli annunci presenti o dalle vecchie liste ridotte.
+- Suggerimenti da 2 lettere, nome/provincia/regione, accenti e apostrofi normalizzati, nomi abbreviati, alias dopo fusioni e refusi fino a 2 errori per nomi lunghi. Omonimi e refusi richiedono una scelta; frecce non riscrivono il testo. Timeout, retry e testo preservato.
+- La home passa anche il codice ISTAT in `?comune=` per conservare la scelta degli omonimi. Coordinate da `data/comuni.json`, abbinate per codice/nome/alias e regione; se mancanti resta la ricerca sul comune esatto. Gli annunci storici con nomi abbreviati univoci vengono riconosciuti. Mai attribuire un comune sconosciuto a una grande città tramite fuzzy matching. Anche gli alert usano il comune scelto.
+- `js/pages/annunci.js?v=7`. Verifiche in `scripts/test-location-search.cjs`: presenza nei suggerimenti di ogni comune, pagine reali Chromium/WebKit desktop/mobile, omonimi e raggio geografico, tastiera, alias/refusi, rete lenta e retry. Verificato anche il selettore dei form con `scripts/test-comune-picker.cjs`.
 
 ## 🔒 SECURITY: Cache profilo SCOPE per user_id (4 mag 2026)
 

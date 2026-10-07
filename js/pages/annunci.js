@@ -23,6 +23,7 @@ if (params.get('q')) {
 }
 
 let LAST_SEARCH_QUERY = '';
+let filterRevision = 0;
 
 // ── CONSTANTS ──
 const SECTOR_KEYWORDS = [
@@ -55,67 +56,8 @@ function removeFromHistory(q) {
 }
 
 // ── AUTOCOMPLETE ──
-let _sugActiveIdx = -1;
+function _hideSuggestions() { locationSearch.close(); }
 
-function _hideSuggestions() {
-    const ul = document.getElementById('searchSuggestions');
-    if (ul) { ul.classList.add('hidden'); ul.innerHTML = ''; }
-    _sugActiveIdx = -1;
-}
-
-function _showSuggestions(input) {
-    const ul = document.getElementById('searchSuggestions');
-    if (!ul) return;
-    const q = input.value.trim();
-    const qNorm = normalizeText(q);
-    let html = '';
-
-    if (!q) {
-        const history = getSearchHistory();
-        if (!history.length) { _hideSuggestions(); return; }
-        html += `<li class="sug-section">Ricerche recenti</li>`;
-        history.forEach(h => {
-            const safe = h.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-            html += `<li data-val="${escapeHTML(h)}"><i class="fas fa-clock-rotate-left text-slate-300 text-[11px] w-4 flex-shrink-0"></i><span class="flex-1 truncate">${escapeHTML(h)}</span><button class="sug-del" onclick="_removeHistory(event,'${escapeHTML(safe)}')"><i class="fas fa-times text-[10px]"></i></button></li>`;
-        });
-    } else {
-        const cities = Object.keys(PROVINCE_COORDS)
-            .filter(c => {
-                const cn = normalizeText(c);
-                return cn.startsWith(qNorm) || (qNorm.length >= 3 && cn.includes(qNorm));
-            })
-            .sort((a, b) => {
-                const aN = normalizeText(a), bN = normalizeText(b);
-                return (aN.startsWith(qNorm) ? 0 : 1) - (bN.startsWith(qNorm) ? 0 : 1) || a.localeCompare(b, 'it');
-            })
-            .slice(0, 6);
-
-        const sectors = SECTOR_KEYWORDS
-            .filter(s => s.startsWith(qNorm) || (qNorm.length >= 3 && s.includes(qNorm)))
-            .slice(0, 3);
-
-        if (!cities.length && !sectors.length) { _hideSuggestions(); return; }
-
-        if (cities.length) {
-            html += `<li class="sug-section">Comuni / Città</li>`;
-            cities.forEach(c => {
-                html += `<li data-val="${escapeHTML(c)}"><i class="fas fa-map-marker-alt text-blue-300 text-[11px] w-4 flex-shrink-0"></i>${escapeHTML(c)}</li>`;
-            });
-        }
-        if (sectors.length) {
-            html += `<li class="sug-section">Settore merceologico</li>`;
-            sectors.forEach(s => {
-                html += `<li data-val="${escapeHTML(s)}"><i class="fas fa-tag text-slate-300 text-[11px] w-4 flex-shrink-0"></i>${escapeHTML(s)}</li>`;
-            });
-        }
-    }
-
-    _sugActiveIdx = -1;
-    ul.innerHTML = html;
-    ul.classList.remove('hidden');
-}
-
-// ── FILTER & RENDER ──
 function parseItalianNumber(value, fallback = 0) {
     const raw = String(value || '').trim();
     if (!raw) return fallback;
@@ -141,7 +83,12 @@ function _getSelectedDays() {
     return Array.from(el.querySelectorAll('.day-chip.selected')).map(b => b.dataset.day);
 }
 
-function applyFilters() {
+async function applyFilters() {
+    const request = ++filterRevision;
+    if (!await locationSearch.prepare()) return;
+    const submittedQuery = sBar.value;
+    if (submittedQuery.trim()) await locationGeoReady;
+    if (request !== filterRevision || submittedQuery !== sBar.value) return;
     const fReg    = document.getElementById('fRegione');
     const fTipo   = document.getElementById('fTipo');
     const fStato  = document.getElementById('fStato');
@@ -175,17 +122,16 @@ function applyFilters() {
     let searchCity = '';
     let results = [];
 
-    const searchCoords = q && q.length > 1 ? getCityCoords(qRaw) : null;
+    const searchRecord = locationSearch.selected;
+    const searchCoords = searchRecord ? LocationSearch.coordinates(searchRecord) : null;
 
     if (searchCoords) {
         isProximitySearch = true;
-        for (let key in PROVINCE_COORDS) {
-            if (PROVINCE_COORDS[key] === searchCoords) { searchCity = key; break; }
-        }
+        searchCity = searchRecord.nome;
 
         results = LISTINGS
             .map(l => {
-                const cityCoords = getCityCoords(l.comune) || getCityCoords(l.regione);
+                const cityCoords = LocationSearch.listingCoordinates(l.comune, l.regione, l.provincia);
                 const distance = cityCoords
                     ? getDistanceKM(searchCoords[0], searchCoords[1], cityCoords[0], cityCoords[1])
                     : Infinity;
@@ -225,7 +171,10 @@ function applyFilters() {
                 if (!annDays.some(d => wantedDaysSet.has(d))) return false;
             }
 
-            if (q) {
+            if (searchRecord) {
+                const sameName = searchRecord._keys.includes(ComuniItaliani.normalize(l.comune));
+                if (!sameName || ComuniItaliani.canonicalRegion(l.regione) !== ComuniItaliani.canonicalRegion(searchRecord.regione)) return false;
+            } else if (q) {
                 const desc = typeof l.dettagli_extra === 'object' ? (l.dettagli_extra?.descrizione || '') : '';
                 const searchField = normalizeText(`${l.titolo} ${l.comune} ${l.regione} ${l.settore || ''} ${l.merce || ''} ${desc}`);
                 if (!searchField.includes(q)) {
@@ -256,6 +205,7 @@ function applyFilters() {
     const count = document.getElementById('resultCount');
 
     const doRender = () => {
+        if (request !== filterRevision) return;
         if (results.length === 0) {
             if (grid) grid.innerHTML = '';
             if (empty) {
@@ -295,6 +245,7 @@ function applyFilters() {
         count.style.transition = 'opacity 0.15s ease';
         count.style.opacity = '0';
         setTimeout(() => {
+            if (request !== filterRevision) return;
             count.textContent = isProximitySearch
                 ? `${results.length} annunci entro ${radius} km da ${searchCity || qRaw}`
                 : `${results.length} annunci trovati`;
@@ -360,7 +311,7 @@ function _getNearestCitiesWithListings(coords, maxCount) {
     const seen = new Set();
     const cities = [];
     LISTINGS.forEach(l => {
-        const cc = getCityCoords(l.comune) || getCityCoords(l.regione);
+        const cc = LocationSearch.listingCoordinates(l.comune, l.regione, l.provincia);
         if (!cc) return;
         const d = getDistanceKM(coords[0], coords[1], cc[0], cc[1]);
         const name = l.comune || l.regione;
@@ -373,13 +324,6 @@ window._searchCity = function(city) {
     const sBar = document.getElementById('searchBar');
     if (sBar) sBar.value = city;
     applyFilters();
-};
-
-window._removeHistory = function(e, q) {
-    e.stopPropagation();
-    removeFromHistory(q);
-    const sBar = document.getElementById('searchBar');
-    if (sBar) _showSuggestions(sBar);
 };
 
 // ── JSON-LD ItemList ──
@@ -457,51 +401,17 @@ function clearFilters() {
 
 // ── Search bar interactions ──
 const sBar = document.getElementById('searchBar');
-if (sBar) {
-    sBar.addEventListener('input', () => {
-        sBar.parentElement.classList.remove('search-active');
-        void sBar.parentElement.offsetWidth;
-        sBar.parentElement.classList.add('search-active');
-        _showSuggestions(sBar);
-    });
-    sBar.addEventListener('focus', () => _showSuggestions(sBar));
-    sBar.addEventListener('blur',  () => setTimeout(_hideSuggestions, 200));
-    sBar.addEventListener('keydown', (e) => {
-        const ul = document.getElementById('searchSuggestions');
-        const items = ul ? [...ul.querySelectorAll('li[data-val]')] : [];
-        if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            _sugActiveIdx = Math.min(_sugActiveIdx + 1, items.length - 1);
-            items.forEach((li, i) => li.classList.toggle('sug-active', i === _sugActiveIdx));
-        } else if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            _sugActiveIdx = Math.max(_sugActiveIdx - 1, -1);
-            items.forEach((li, i) => li.classList.toggle('sug-active', i === _sugActiveIdx));
-        } else if (e.key === 'Enter') {
-            if (_sugActiveIdx >= 0 && items[_sugActiveIdx]) {
-                sBar.value = items[_sugActiveIdx].dataset.val;
-                _hideSuggestions();
-            }
-            applyFilters();
-        } else if (e.key === 'Escape') {
-            _hideSuggestions();
-            sBar.blur();
-        }
-    });
-}
-
-const _sugUl = document.getElementById('searchSuggestions');
-if (_sugUl) {
-    _sugUl.addEventListener('mousedown', (e) => {
-        const li = e.target.closest('li[data-val]');
-        if (li && !e.target.closest('.sug-del')) {
-            e.preventDefault();
-            if (sBar) sBar.value = li.dataset.val;
-            _hideSuggestions();
-            applyFilters();
-        }
-    });
-}
+const locationSearch = LocationSearch.create({
+    input: sBar,
+    box: document.getElementById('searchSuggestions'),
+    regions: REGIONI,
+    keywords: SECTOR_KEYWORDS,
+    history: getSearchHistory,
+    removeHistory: removeFromHistory,
+    initialCode: params.get('comune') || '',
+    onSubmit: applyFilters
+});
+const locationGeoReady = LocationSearch.loadGeo().catch(() => {});
 
 // Rotating placeholder
 let _phIdx = 0;
@@ -609,7 +519,11 @@ async function submitAlert() {
 
         if (errEl) errEl.classList.add('hidden');
 
-        const coords = comune ? getCityCoords(comune) : null;
+        await locationSearch.ready;
+        await locationGeoReady;
+        const place = comune === sBar.value.trim() ? locationSearch.selected || LocationSearch.resolve(comune) : LocationSearch.resolve(comune);
+        const regionName = REGIONI.find(name => normalizeText(name) === normalizeText(comune));
+        const coords = place ? LocationSearch.coordinates(place) : regionName ? PROVINCE_COORDS[regionName] || null : null;
         if (comune && !coords) {
             if (errEl) errEl.classList.remove('hidden');
             return;
