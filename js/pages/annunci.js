@@ -87,7 +87,7 @@ async function applyFilters() {
     const request = ++filterRevision;
     if (!await locationSearch.prepare()) return;
     const submittedQuery = sBar.value;
-    if (submittedQuery.trim()) await locationGeoReady;
+    if (locationSearch.selected) await locationGeoReady;
     if (request !== filterRevision || submittedQuery !== sBar.value) return;
     const fReg    = document.getElementById('fRegione');
     const fTipo   = document.getElementById('fTipo');
@@ -124,6 +124,20 @@ async function applyFilters() {
 
     const searchRecord = locationSearch.selected;
     const searchCoords = searchRecord ? LocationSearch.coordinates(searchRecord) : null;
+    const matchesFilters = l => {
+        if (regione && ComuniItaliani.normalize(ComuniItaliani.canonicalRegion(l.regione)) !== ComuniItaliani.normalize(ComuniItaliani.canonicalRegion(regione))) return false;
+        if (tipo && ComuniItaliani.normalize(l.tipo) !== ComuniItaliani.normalize(tipo)) return false;
+        if (stato && ComuniItaliani.normalize(l.stato) !== ComuniItaliani.normalize(stato)) return false;
+        const price = l.prezzo == null || l.prezzo === '' ? NaN : Number(l.prezzo);
+        if ((prezzoMin > 0 || prezzoMax < Infinity) && (!Number.isFinite(price) || price < prezzoMin || price > prezzoMax)) return false;
+        const area = l.superficie == null || l.superficie === '' ? NaN : Number(l.superficie);
+        if (supMin > 0 && (!Number.isFinite(area) || area < supMin)) return false;
+        if (wantedDaysSet) {
+            const annDays = String(l.giorni || '').split(',').map(_normalizeDayName).filter(Boolean);
+            if (!annDays.some(d => wantedDaysSet.has(d))) return false;
+        }
+        return true;
+    };
 
     if (searchCoords) {
         isProximitySearch = true;
@@ -131,9 +145,9 @@ async function applyFilters() {
 
         results = LISTINGS
             .map(l => {
-                const cityCoords = LocationSearch.listingCoordinates(l.comune, l.regione, l.provincia);
-                const distance = cityCoords
-                    ? getDistanceKM(searchCoords[0], searchCoords[1], cityCoords[0], cityCoords[1])
+                const places = LocationSearch.listingCoordinateCandidates(l.comune, l.regione, l.provincia);
+                const distance = places.length
+                    ? Math.min(...places.map(coords => getDistanceKM(searchCoords[0], searchCoords[1], coords[0], coords[1])))
                     : null;
                 return { ...l, _distance: distance };
             })
@@ -143,47 +157,28 @@ async function applyFilters() {
                 if (l._distance === null) {
                     if (!LocationSearch.listingMatchesLocation(l.comune, l.regione, l.provincia, searchRecord)) return false;
                 } else if (l._distance > radius)           return false;
-                if (regione && l.regione !== regione)      return false;
-                if (tipo    && l.tipo    !== tipo)         return false;
-                if (stato   && l.stato   !== stato)        return false;
-                if (prezzoMin > 0 && l.prezzo < prezzoMin) return false;
-                if (l.prezzo > prezzoMax)                  return false;
-                if (l.superficie < supMin)                 return false;
-                if (wantedDaysSet) {
-                    const annDays = (l.giorni || '').split(',').map(_normalizeDayName).filter(Boolean);
-                    if (!annDays.some(d => wantedDaysSet.has(d))) return false;
-                }
-                return true;
+                return matchesFilters(l);
             });
 
         results.sort((a, b) => {
             const fa = isListingFeatured(a) ? 1 : 0;
             const fb = isListingFeatured(b) ? 1 : 0;
             if (fa !== fb) return fb - fa;
+            const sortVal = fSort ? fSort.value : '';
+            if (sortVal === 'prezzoAsc') return (a.prezzo || 0) - (b.prezzo || 0);
+            if (sortVal === 'prezzoDesc') return (b.prezzo || 0) - (a.prezzo || 0);
+            if (sortVal === 'superficie') return (b.superficie || 0) - (a.superficie || 0);
+            if (sortVal === 'data') return new Date(b.created_at || 0) - new Date(a.created_at || 0);
             return (a._distance ?? Infinity) - (b._distance ?? Infinity);
         });
     } else {
         results = LISTINGS.filter(l => {
-            if (regione && l.regione !== regione)      return false;
-            if (tipo    && l.tipo    !== tipo)         return false;
-            if (stato   && l.stato   !== stato)        return false;
-            if (prezzoMin > 0 && l.prezzo < prezzoMin) return false;
-            if (l.prezzo > prezzoMax)                  return false;
-            if (l.superficie < supMin)                 return false;
-            if (wantedDaysSet) {
-                const annDays = (l.giorni || '').split(',').map(_normalizeDayName).filter(Boolean);
-                if (!annDays.some(d => wantedDaysSet.has(d))) return false;
-            }
+            if (!matchesFilters(l)) return false;
 
             if (searchRecord) {
                 if (!LocationSearch.listingMatchesLocation(l.comune, l.regione, l.provincia, searchRecord)) return false;
             } else if (q) {
-                const desc = typeof l.dettagli_extra === 'object' ? (l.dettagli_extra?.descrizione || '') : '';
-                const searchField = normalizeText(`${l.titolo} ${l.comune} ${l.regione} ${l.settore || ''} ${l.merce || ''} ${desc}`);
-                if (!searchField.includes(q)) {
-                    const hasFuzzyMatch = searchField.split(' ').some(w => fuzzyScore(w, q) > 70);
-                    if (!hasFuzzyMatch) return false;
-                }
+                if (!ListingSearch.score(l, qRaw)) return false;
             }
             return true;
         });
@@ -194,6 +189,10 @@ async function applyFilters() {
         else if (sortVal === 'superficie') results.sort((a, b) => (b.superficie || 0) - (a.superficie || 0));
 
         results.sort((a, b) => {
+            if (q && sortVal === 'pertinenza' && !searchRecord) {
+                const relevance = ListingSearch.score(b, qRaw) - ListingSearch.score(a, qRaw);
+                if (relevance) return relevance;
+            }
             const fa = isListingFeatured(a) ? 1 : 0;
             const fb = isListingFeatured(b) ? 1 : 0;
             return fb - fa;
@@ -435,7 +434,7 @@ async function loadListings() {
 
         let query = _supabase
             .from('annunci')
-            .select('id, user_id, titolo, stato, status, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, created_at, featured, featured_until, visualizzazioni')
+            .select('id, user_id, titolo, descrizione, categoria, stato, status, tipo, settore, regione, provincia, comune, superficie, giorni, prezzo, contatto, dettagli_extra, img_urls, created_at, expires_at, featured, featured_until, visualizzazioni')
             .order('created_at', { ascending: false });
 
         if (user) {
@@ -458,7 +457,8 @@ async function loadListings() {
             ({ data, error } = await fallbackQuery);
         }
 
-        if (!error && data && data.length > 0) {
+        if (error) throw error;
+        if (data) {
             LISTINGS.length = 0;
             data.forEach(l => LISTINGS.push({
                 ...l,

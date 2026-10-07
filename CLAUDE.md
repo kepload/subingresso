@@ -6,7 +6,7 @@
 - Leggi sempre `istruzioni.md` prima di iniziare a lavorare su qualsiasi task.
 - `AGENTS.md` esiste e contiene le stesse regole in formato adatto a Codex CLI. Mantenere allineato quando si modifica una delle due fonti.
 - Provenienze (7 ottobre 2026): dashboard admin, `PATCH_ACQUISITION_20261007.sql`; cache `auth.js?v=21`, `page-view-tracker.js?v=4`, `js/pages/valutatore.js?v=3`. Dettagli e verifiche in `istruzioni.md`.
-- Località (7 ottobre 2026): comuni e 55.288 frazioni/quartieri/centri minori in ricerca e form; `comune-picker.js?v=5`, `location-search.js?v=3`, `js/pages/annunci.js?v=9`. Fonti in `data/LOCALITA.md`, dettagli in `istruzioni.md`.
+- Località (7 ottobre 2026): comuni e 55.288 frazioni/quartieri/centri minori in ricerca e form; `comune-picker.js?v=5`, `location-search.js?v=4`, `listing-search.js?v=1`, `js/pages/annunci.js?v=10`. Invio/Cerca eseguono sempre la ricerca testuale; i suggerimenti scelti avviano la ricerca geografica. Fonti in `data/LOCALITA.md`, dettagli in `istruzioni.md`.
 - Immagini (7 ottobre 2026): `api/image.js` crea anteprime WebP/cache senza modificare gli originali; `image-urls.js?v=1` prima di `data.js?v=18`, `annuncio-detail.js?v=21`. Originali caricati solo al clic sul dettaglio. Upload foto conserva il file esatto fino a 20 MB. Dettagli e test in `istruzioni.md`.
 
 ## 🚨 Regole anti-leak segreti (dopo incidente 4 mag 2026)

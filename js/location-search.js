@@ -5,10 +5,14 @@
     const compact = value => normalize(value).replace(/\b(?:s|san|sant|santo|santa)\b/g, 'san').replace(/ /g, '');
     let rows = [];
     let exactNames = new Map();
+    let coreNames = new Map();
+    const placeKey = value => normalize(value).replace(/\b(?:a|di|del|della|delle|dei|degli|da|de|d|l)\b/g, '').replace(/\s+/g, ' ').trim();
+    const listingRecordsCache = new Map();
     let rowsById = new Map();
     let provinceCodes = new Set();
     let geo = [];
     let readyPromise;
+    let dataVersion = 0;
 
     function load() {
         if (!readyPromise) {
@@ -16,12 +20,18 @@
                 rows = data.map(row => ({ ...row, _compact: row._keys.map(compact),
                     _context: normalize(`${row.nome} ${row.provincia} ${row.sigla} ${row.regione}`) }));
                 exactNames = new Map();
+                coreNames = new Map();
+                listingRecordsCache.clear();
                 rowsById = new Map(rows.map(row => [row.id, row]));
                 provinceCodes = new Set(rows.map(row => row.sigla));
                 for (const row of rows) for (const key of new Set([...row._keys, ...row._compact])) {
                     if (!exactNames.has(key)) exactNames.set(key, []);
                     exactNames.get(key).push(row);
+                    const core = placeKey(key);
+                    if (!coreNames.has(core)) coreNames.set(core, new Set());
+                    coreNames.get(core).add(row);
                 }
+                dataVersion++;
                 return rows;
             }).catch(error => { readyPromise = null; throw error; });
         }
@@ -153,29 +163,61 @@
         return candidates.length ? [candidates[0].lat, candidates[0].lng] : null;
     }
 
+    function listingParts(name) {
+        const value = String(name || '').trim();
+        if (exactNames.has(parse(value).key)) return [value];
+        return value.split(/[,;/|]|\s*-\s*/).map(part => part.trim()).filter(Boolean);
+    }
+
+    function sameContext(record, region, province, sigla) {
+        return (!region || normalize(canonicalRegion(record.regione)) === normalize(canonicalRegion(region))) && (!sigla || record.sigla === sigla) &&
+            (!province || normalize(record.provincia) === normalize(province) || normalize(record.sigla) === normalize(province));
+    }
+
     function listingMatchesLocation(name, region, province, record) {
         if (!record) return false;
-        const { key, sigla } = parse(name);
-        return record._keys.includes(key) && (!region || canonicalRegion(record.regione) === canonicalRegion(region)) &&
-            (!sigla || record.sigla === sigla) &&
-            (!province || normalize(record.provincia) === normalize(province) || normalize(record.sigla) === normalize(province));
+        return listingParts(name).some(part => {
+            const { key, sigla } = parse(part);
+            return sameContext(record, region, province, sigla) && record._keys.some(alias =>
+                alias === key || placeKey(alias) === placeKey(key) ||
+                (key.length >= 4 && placeKey(alias).startsWith(placeKey(key) + ' ')) ||
+                window.ListingSearch?.matchesName(key, alias));
+        });
+    }
+
+    function listingRecords(name, region, province) {
+        const cacheKey = JSON.stringify([name, region, province]);
+        if (listingRecordsCache.has(cacheKey)) return listingRecordsCache.get(cacheKey);
+        const { key, packed, sigla } = parse(name);
+        let candidates = [...new Set([...(exactNames.get(key) || []), ...(exactNames.get(packed) || []), ...(coreNames.get(placeKey(key)) || [])])]
+            .filter(row => sameContext(row, region, province, sigla));
+        const official = candidates.filter(row => !row.nomeLocalita);
+        if (official.length) candidates = official;
+        if (!candidates.length) {
+            // Solo abbreviazioni di comuni, senza ricerca fuzzy nell'intera anagrafica.
+            // Nomi non riconosciuti restano cercabili come testo, senza coordinate inventate.
+            candidates = key.length >= 3 ? rows.filter(row => !row.nomeLocalita && sameContext(row, region, province, sigla) &&
+                row._keys.some(alias => alias.startsWith(key + ' ') || compact(alias).startsWith(packed))) : [];
+        }
+        const result = candidates.length === 1 ? candidates : [];
+        listingRecordsCache.set(cacheKey, result);
+        return result;
+    }
+
+    function listingContext(name, region, province) {
+        return listingParts(name).flatMap(part => listingRecords(part, region, province))
+            .flatMap(row => [row.nome, row.comune, row.provincia, row.sigla, ...row._keys]).filter(Boolean);
+    }
+
+    function listingCoordinateCandidates(name, region, province) {
+        return listingParts(name).map(part => listingCoordinates(part, region, province)).filter(Boolean);
     }
 
     function listingCoordinates(name, region, province) {
         const { key, sigla } = parse(name);
-        let current = (exactNames.get(key) || []).filter(row => listingMatchesLocation(name, region, province, row));
-        const official = current.filter(row => !row.nomeLocalita);
-        if (official.length) current = official;
+        const current = listingRecords(name, region, province);
         if (current.length === 1) return coordinates(current[0]);
-        if (!current.length) {
-            const abbreviated = resolve(name);
-            if (abbreviated && (!region || canonicalRegion(abbreviated.regione) === canonicalRegion(region)) &&
-                (!sigla || abbreviated.sigla === sigla) &&
-                (!province || normalize(abbreviated.provincia) === normalize(province) || normalize(abbreviated.sigla) === normalize(province))) return coordinates(abbreviated);
-        }
-        const older = geo.filter(row => row._key === key && (!region || canonicalRegion(row.regione) === canonicalRegion(region)) &&
-            (!sigla || row.sigla === sigla) &&
-            (!province || normalize(row.provincia) === normalize(province) || normalize(row.sigla) === normalize(province)));
+        const older = geo.filter(row => row._key === key && sameContext(row, region, province, sigla));
         if (older.length === 1) return [older[0].lat, older[0].lng];
         return null;
     }
@@ -300,7 +342,7 @@
             input.setAttribute('aria-busy', 'true');
             currentReady = load().then(() => {
                 loading = false;
-                selected = resolve(input.value, initialCode);
+                selected = initialCode ? resolve(input.value, initialCode) : null;
                 initialCode = '';
                 input.removeAttribute('aria-busy');
                 if (document.activeElement === input) show();
@@ -346,21 +388,13 @@
                 if (!value.trim()) { selected = null; close(); return true; }
                 await currentReady;
                 if (version !== revision || value !== input.value) return false;
-                const isKeyword = keywords.some(word => normalize(word) === normalize(input.value));
-                selected = this.selected || (isKeyword ? null : resolve(input.value));
+                selected = this.selected;
                 if (selected) input.value = selected.nome;
-                else {
-                    const matches = match(input.value);
-                    if (!isKeyword && matches.length && (matches[0].fuzzy || matches.filter(item => item.rank <= 1).length > 1 ||
-                        (matches[0].rank === 1 && matches[0].row.nomeLocalita))) {
-                        input.focus(); show(); return false;
-                    }
-                }
                 close();
                 return true;
             }
         };
     }
 
-    window.LocationSearch = { create, load, loadGeo, match, resolve, coordinates, listingCoordinates, listingMatchesLocation };
+    window.LocationSearch = { create, load, loadGeo, match, resolve, coordinates, listingCoordinates, listingMatchesLocation, listingCoordinateCandidates, listingContext, get dataVersion() { return dataVersion; } };
 })();

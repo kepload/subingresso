@@ -11,7 +11,7 @@ const localita = require('../data/localita.json').localita;
 const sandbox = { window: {}, AbortController, setTimeout, clearTimeout,
     fetch: async url => ({ ok: true, json: async () => JSON.parse(fs.readFileSync(path.join(root, url.split('?')[0]), 'utf8')) }) };
 vm.createContext(sandbox);
-for (const file of ['js/comune-picker.js', 'js/location-search.js']) vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), sandbox);
+for (const file of ['js/comune-picker.js', 'js/location-search.js', 'js/listing-search.js']) vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), sandbox);
 for (const file of ['index.html', 'annunci.html']) {
     for (const [tag, source] of fs.readFileSync(path.join(root, file), 'utf8').matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) {
         if (!tag.includes('application/ld+json')) new vm.Script(source, { filename: file });
@@ -75,13 +75,15 @@ async function check(engine, name, mobile, base) {
             }
             await input.fill('Castro');
             await input.press('Enter');
-            assert.equal(await page.locator('[role="listbox"]').isVisible(), true, 'chiede la provincia per gli omonimi');
+            if (id === 'searchInput') await page.waitForURL('**/annunci?q=Castro');
+            await page.locator('#subtitle').filter({ hasText:'Risultati per "Castro"' }).waitFor();
+            await page.locator('[data-id="castro-le"]').waitFor();
+            await page.locator('[data-id="castro-bg"]').waitFor();
+            const resultInput = page.locator('#searchBar');
+            await resultInput.fill('Castro');
+            await resultInput.focus();
             await choose(page.getByRole('option').filter({ hasText:'Castro (LE)' }));
-            if (id === 'searchInput') {
-                await page.waitForURL('**/annunci?*');
-                assert.equal(new URL(page.url()).searchParams.get('comune'), comuni.find(row => row.nome === 'Castro' && row.sigla === 'LE').codiceIstat);
-                await page.waitForFunction(() => document.getElementById('subtitle').textContent.includes('vicino a Castro'));
-            }
+            await page.waitForFunction(() => document.getElementById('subtitle').textContent.includes('vicino a Castro'));
             await page.locator('#resultCount').filter({ hasText:'1 annunci' }).waitFor();
             await page.locator('[data-id="castro-le"]').waitFor();
             assert.equal(await page.locator('[data-id="castro-bg"]').count(), 0, 'il comune omonimo distante non entra nei risultati');
@@ -135,6 +137,16 @@ async function check(engine, name, mobile, base) {
         await page.locator('#searchBar').fill('Monterusciello');
         await choose(page.getByRole('option').filter({hasText:'Monterusciello (Pozzuoli)'}));
         await page.locator('[data-id="monterusciello"]').waitFor();
+
+        for (const query of ['Rivoltella', 'Rivoltela', 'Rivolttella', 'Rivotlella', 'abbigliament rivoltela']) {
+            await page.goto(base + '/');
+            await page.locator('#searchInput').fill(query);
+            await page.locator('#searchInput').press('Enter');
+            await page.waitForURL('**/annunci?*');
+            await page.locator('[data-id="legacy-renewed"]').waitFor();
+            assert.equal(new URL(page.url()).searchParams.get('q'), query, 'Invio conserva il testo senza imporre una località');
+            assert.equal(new URL(page.url()).searchParams.has('comune'), false);
+        }
 
         // Risposta lenta: mostra i suggerimenti appena arrivano, senza perdere quanto scritto.
         let release;
