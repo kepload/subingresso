@@ -1,6 +1,6 @@
 # Privacy Policy di Subingresso.it — testo preparato il 7 ottobre 2026
 
-**Stato: bozza da completare, non pubblicata su `/privacy`.** Mancano l'identità e l'indirizzo del titolare e la conferma dell'email di contatto. I punti operativi da allineare prima della pubblicazione sono descritti in `PRIVACY_DATA_AUDIT_20261007.md`: consenso per le analisi descritte, comunicazioni promozionali e gestione delle scadenze. Questa bozza non introduce nuovi consensi né autorizza retroattivamente i trattamenti già effettuati.
+**Stato: bozza di riferimento da completare.** Su successiva richiesta dell'utente è stata pubblicata in `privacy.html` una versione adattata con denominazione Subingresso.it e `info@subingresso.it`, senza i dati identificativi del gestore. Questo documento conserva il testo previsto per la versione completa, comprese funzioni di consenso ancora da implementare; non coincide integralmente con la pagina pubblicata. I punti aperti sono descritti in `PRIVACY_DATA_AUDIT_20261007.md`: identità del titolare, consenso per le analisi descritte, comunicazioni promozionali e gestione delle scadenze. La pubblicazione del testo non introduce nuovi consensi né autorizza retroattivamente i trattamenti già effettuati.
 
 Il testo seguente è destinato agli utenti del sito. I periodi proposti sono limiti organizzativi scelti in relazione alle finalità, non durate generalmente imposte dal GDPR. L'archivio statistico anonimo descritto è una modalità di conservazione da realizzare, non un sistema già attivo.
 

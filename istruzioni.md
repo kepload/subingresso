@@ -253,7 +253,7 @@ Tracciamento full funnel per capire conversion rate per ogni sorgente che apre i
 - Pseudonimo by-design (no IP, no UA, no fingerprint)
 - Privacy.html aggiornata: voce in sez. 5 (cookie/storage di prima parte) + sez. 6 (retention)
 - Base giuridica: legittimo interesse (art. 6.1.f GDPR)
-- **NO cookie banner necessario** — analytics aggregata di prima parte ricade in esenzione Garante 2021
+- **Nota privacy aggiornata 7 ottobre 2026:** l'esenzione dal consenso non è automatica per analytics di prima parte; verificare identificativi persistenti, collegamento ad account e condizioni Garante. Vedi `PRIVACY_DATA_AUDIT_20261007.md`.
 
 ## 🪄 Hero Dashboard Venditore + Milestones (9 mag 2026)
 
@@ -869,7 +869,7 @@ Ordine consigliato prossima sessione:
 6. **Step 2 SEO — `api/annunci.js` per landing regionali SSR**: title/meta/H1 per `?regione=X`. Solo dopo ≥5 annunci attivi per regione.
 7. **Fase 5 piano blog conversion**: sbloccata (tracking ok). Pannello "Performance blog" admin, dopo 7-14gg di dati.
 8. **Nuovi articoli**: serie "Mercati settimanali [città]" + 6 Tier 2 + 3 Tier 3 Bolkestein.
-- **Decisioni utente in sospeso** (non toccare senza ok): Privacy policy placeholder pre go-live · Data audit (richiesto esplicitamente) · welcome_popup (costruire o rimuovere).
+- **Decisioni utente in sospeso** (non toccare senza ok): Data audit (richiesto esplicitamente) · welcome_popup (costruire o rimuovere). Privacy: il 7 ottobre 2026 l'utente ha chiesto la pubblicazione usando solo Subingresso.it; identità legale e conformità rimangono da completare.
 - **Promemoria temporizzato**: maintenance mensile hub Bolkestein dovuta **~metà giugno 2026** (RPC `admin_bump_post_freshness` + ri-datare top + nuovo bullet cronologia) o decade dalle SERP "ultime notizie 2026".
 - **Stato filone regionale**: **5/5 chiuso** (Lombardia/Veneto/Emilia-Romagna/Toscana/Lazio, tutti v2).
 
@@ -879,7 +879,7 @@ Ordine consigliato prossima sessione:
 - **Fase 5 blog conversion**: pannello "Performance blog" admin + RPC `admin_blog_stats(p_days)`, dopo 7-14gg di dati → migliorare copy/CTA degli articoli con CR% basso e tante views. Tracking in `blog_conversions`.
 - **Serie "Mercati settimanali [città]"** (Modena/Brescia/Bergamo/Milano/Bologna/Torino/Verona/Padova/Firenze/Napoli).
 - **Bolkestein — 6 Tier 2 + 3 Tier 3 rimasti**: Tier 2 `roma-18000-concessioni-ambulanti-2026`, `proroga-2032-concessioni-ambulanti-legge-77-2020`, `procedura-infrazione-ue-italia-ambulanti-bolkestein`, `associazioni-ambulanti-bolkestein-confronto`, `sentenze-tar-consiglio-stato-bolkestein-ambulanti`, `linee-guida-mimit-regioni-anci-bandi-ambulanti-2026`; Tier 3 `concessione-ambulante-scadenza-2026-guida-pratica`, `diritto-insistenza-bolkestein-ambulanti-2026`, `diventare-ambulante-2026-bolkestein-accesso`. + re-submit a SC i 4 articoli Bolkestein + internal linking (footer/home/blog) al hub.
-- **Privacy policy (ricognizione 7 ottobre 2026, ancora aperta)**: testo in `PRIVACY_POLICY_BOZZA_20261007.md`, controlli e allineamenti in `PRIVACY_DATA_AUDIT_20261007.md`. Mancano dati del titolare; prima di pubblicare allineare consenso analytics, email promozionali e gestione scadenze. `privacy.html` ancora invariata. Per sviluppo del sito: dati pertinenti entro limiti definiti, storico lungo solo con anonimizzazione effettiva. Audit live in sola lettura: `scripts/privacy-audit.sql`; nessuna cancellazione applicata.
+- **Privacy policy (pubblicazione 7 ottobre 2026, conformità ancora aperta)**: `privacy.html` pubblicata su richiesta esplicita usando solo Subingresso.it e `info@subingresso.it`, senza nome/indirizzo/P.IVA. Identificazione legale del titolare ancora incompleta ai fini GDPR. Testo adattato al funzionamento attuale: nessun pannello consenso inesistente o TTL visitor ID inventato. Restano da allineare consenso analytics, email promozionali e gestione scadenze: `PRIVACY_DATA_AUDIT_20261007.md`. Bozza completa futura in `PRIVACY_POLICY_BOZZA_20261007.md`. Per sviluppo del sito: dati pertinenti entro limiti definiti, storico lungo solo con anonimizzazione effettiva. Nessuna cancellazione applicata.
 - **Step 3 lifecycle annunci scaduti**: edge function + cron daily, 2 email (7gg prima + giorno scadenza), tabella `expiry_notification_log` UNIQUE per dedup. Mai fatto.
 - **welcome_popup**: dichiarato nell'enum `_AMO_VALID_SOURCES` ma morto → costruirlo (CTA completa profilo/avatar) o rimuoverlo.
 - **Data audit** (richiesto dall'utente): cosa salviamo vs buchi — annunci eliminati (solo soft-delete), esito venduti/affittati non tracciato, log modifiche, eventi conversione. Outcome data = gold per stats stile Idealista. Discutere prima.
