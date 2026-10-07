@@ -5,6 +5,7 @@
 - Quando l'utente dice che sta per chiudere la sessione (es. "chiudo", "a dopo", "fine sessione", "salva tutto"), aggiorna `istruzioni.md` con tutte le info utili emerse nella sessione (solo info non duplicate, super riassuntive).
 - Leggi sempre `istruzioni.md` prima di iniziare a lavorare su qualsiasi task.
 - `AGENTS.md` esiste e contiene le stesse regole in formato adatto a Codex CLI. Mantenere allineato quando si modifica una delle due fonti.
+- Provenienze (7 ottobre 2026): dashboard admin, `PATCH_ACQUISITION_20261007.sql`; cache `auth.js?v=21`, `page-view-tracker.js?v=4`, `js/pages/valutatore.js?v=3`. Dettagli e verifiche in `istruzioni.md`.
 
 ## 🚨 Regole anti-leak segreti (dopo incidente 4 mag 2026)
 

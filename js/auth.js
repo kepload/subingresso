@@ -5,23 +5,7 @@
 
 (function () {
 
-// ── Tracking acquisizione (Ondata 1) ────────────────────────
-// Al primo hit della sessione cattura referrer esterno, UTM e landing path.
-// Persiste in sessionStorage per essere letto dal valutatore al completamento.
-try {
-    if (!sessionStorage.getItem('_acq_captured')) {
-        const params = new URLSearchParams(location.search);
-        const ref    = document.referrer || '';
-        const refIsExternal = ref && !ref.includes('subingresso.it');
-
-        sessionStorage.setItem('_acq_captured',     '1');
-        sessionStorage.setItem('_acq_landing_path',  location.pathname + (location.search || ''));
-        sessionStorage.setItem('_acq_referrer',      refIsExternal ? ref : '');
-        sessionStorage.setItem('_acq_utm_source',    params.get('utm_source')   || '');
-        sessionStorage.setItem('_acq_utm_medium',    params.get('utm_medium')   || '');
-        sessionStorage.setItem('_acq_utm_campaign',  params.get('utm_campaign') || '');
-    }
-} catch (_) { /* private mode: ignora */ }
+// Il tracker condiviso cattura la provenienza prima degli script auth.
 
 let _profileCache = null; // { id, nome } — evita query ripetute sulla navbar
 
@@ -216,11 +200,15 @@ async function _trackModalOpen(source) {
         if (!anonSession) return;
         const d = new Date();
         const tb = `${d.getUTCFullYear()}${String(d.getUTCMonth()+1).padStart(2,'0')}${String(d.getUTCDate()).padStart(2,'0')}${String(d.getUTCHours()).padStart(2,'0')}${String(d.getUTCMinutes()).padStart(2,'0')}`;
+        const acquisition = window.getAcquisitionContext ? window.getAcquisitionContext() : {};
         // Insert via PostgREST. UNIQUE violation = dedup OK (silenzioso).
         // Errori RLS o rete: silent fail — il tracking NON deve mai bloccare l'UX.
         await _supabase
             .from('auth_modal_opens')
-            .insert({ source, anon_session: anonSession, time_bucket: tb });
+            .insert({ source, anon_session: anonSession, time_bucket: tb,
+                landing_path: acquisition.landing_path || null,
+                utm_source: acquisition.utm_source || null,
+                utm_campaign: acquisition.utm_campaign || null });
     } catch (_) { /* silent */ }
 }
 

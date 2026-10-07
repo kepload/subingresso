@@ -135,12 +135,13 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 ## 9) Cache buster correnti (aggiornare a ogni modifica)
 
 - `data.js?v=17`
-- `auth.js?v=18`
+- `auth.js?v=21`
 - `ui-components.js?v=11`
 - `js/pages/annunci.js?v=6`
 - `js/pages/annuncio-detail.js?v=19` (anche in `annuncio.html` + `api/annuncio.js`)
 - `css/tailwind.css?v=4`
-- `page-view-tracker.js?v=3`
+- `page-view-tracker.js?v=4`
+- `js/pages/valutatore.js?v=3`
 
 ---
 

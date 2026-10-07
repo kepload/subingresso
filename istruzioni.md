@@ -226,6 +226,16 @@ Il venditore può vedere **quanti** hanno salvato il proprio annuncio, ma NON CH
 - Dashboard "I miei annunci" (`loadMyListings`): icona bookmark blu nella riga stats, sempre visibile se `saved_count > 0`. Select aggiornato per includere `saved_count`.
 - Email weekly-seller-stats: aggiunta card "Salvati 🔖" accanto a "Annunci attivi" / "Views totali". `bySeller.totalSaved` aggregato. Edge function re-deployata 6 mag 2026.
 
+## Provenienza degli utenti (7 ottobre 2026)
+
+- Pannello admin **Da dove arrivano gli utenti**, periodi 30/90/365 giorni: Blog, Bandi (anche gli articoli regionali), Valutatore, Homepage, Fiere (articoli con slug/categoria dedicati e link `utm_source=fiere`), Altro. Ingressi = prima pagina rilevata nell'intero storico per `(visitor_id, session_id)`, poi filtro del periodo; visitatori distinti globali non ricavati dalla somma delle righe.
+- Patch `PATCH_ACQUISITION_20261007.sql`: UTM source/campaign su `page_views`, landing pulita e UTM su `auth_modal_opens`; RPC `admin_acquisition_stats` riservata agli admin. Una sola attribuzione per nuovo account, dalla prima apertura con landing nei 24h prima del signup. Account admin/demo esclusi dalle iscrizioni. Vecchie iscrizioni senza landing restano **non attribuite**; non dedurle dal bottone cliccato.
+- `page-view-tracker.js` espone `getAcquisitionContext()` e conserva `_acq_*` già esistenti: path senza query personali (solo slug blog), referrer ridotto all'origine HTTP(S), UTM limitati a codici `[a-z0-9_-]{1,80}`. `auth.js` riusa il contesto. Il valutatore salva la landing originale, anche se la prima pagina era un articolo.
+- Aggiunto il tracker alle landing SSR bandi, annunci e città: lo storico precedente di queste pagine è incompleto. La sessione resta quella esistente in sessionStorage; non introdotta una scadenza di 30 minuti. Traffico storico include anche il gestore e visite automatizzate non riconosciute.
+- Nel pannello: canali esterni e generatore di link per fiere/QR. Il vecchio funnel si chiama **Dove viene aperta la registrazione** per distinguerlo dall'acquisizione. I suoi conteggi storici per apertura non sono iscritti unici globali.
+- Cache allineate: `auth.js?v=21`, `page-view-tracker.js?v=4`, `js/pages/valutatore.js?v=3`, incluse pagine SSR. `vendi.html` aggiornato solo nei riferimenti cache.
+- Verifica: `node scripts/verify-acquisition.cjs`, `scripts/verify-acquisition.sql` (ROLLBACK), prova browser desktop/mobile. Il lavoro non implementa il consenso né risolve gli altri punti aperti dell'audit privacy.
+
 ## 📊 Funnel Registrazione per Sorgente (6 mag 2026)
 
 Tracciamento full funnel per capire conversion rate per ogni sorgente che apre il modal registrazione (popup vetrina, banner blog, click "Pubblica annuncio", nav "Accedi", salva preferito, valutatore, tel reveal, direct).

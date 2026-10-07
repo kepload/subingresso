@@ -304,6 +304,8 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
 
   <div id="footer-placeholder"></div>
 
+  <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
+  <script src="/js/page-view-tracker.js?v=4"></script>
   <script src="/js/ui-components.js?v=11"></script>
 
 </body>
@@ -719,6 +721,8 @@ module.exports = async function handler(req, res) {
 
   <div id="footer-placeholder"></div>
 
+  <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
+  <script src="/js/page-view-tracker.js?v=4"></script>
   <script src="/js/ui-components.js?v=11"></script>
 
 </body>

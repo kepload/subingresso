@@ -115,7 +115,7 @@
     function context() {
         const read = k => { try { return (sessionStorage.getItem(k) || '').slice(0, 300); } catch (_) { return ''; } };
         return { referrer: read('_acq_referrer'), utm_source: read('_acq_utm_source'), utm_medium: read('_acq_utm_medium'), utm_campaign: read('_acq_utm_campaign'),
-            landing_path: location.pathname, device_type: /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop', tempo_compilazione_sec: Math.min(86400, Math.round((Date.now() - started) / 1000)) };
+            landing_path: read('_acq_landing_path') || location.pathname, device_type: /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop', tempo_compilazione_sec: Math.min(86400, Math.round((Date.now() - started) / 1000)) };
     }
     async function saveResult() {
         busy = true;

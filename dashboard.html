@@ -473,11 +473,39 @@
                 </button>
             </div>
 
+            <!-- Provenienza: pagina di ingresso e nuove iscrizioni -->
+            <div id="acquisitionPanel" class="bg-white border border-slate-100 rounded-3xl p-6">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <h3 class="font-black text-slate-900 flex items-center gap-2">
+                        <i class="fas fa-route text-blue-500"></i> Da dove arrivano gli utenti
+                    </h3>
+                    <div class="flex gap-1.5" aria-label="Periodo provenienze">
+                        <button id="acqBtn30" onclick="setAcquisitionPeriod(30)" class="text-xs font-black px-3 py-1.5 rounded-lg bg-blue-600 text-white" aria-pressed="true">30g</button>
+                        <button id="acqBtn90" onclick="setAcquisitionPeriod(90)" class="text-xs font-black px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500" aria-pressed="false">90g</button>
+                        <button id="acqBtn365" onclick="setAcquisitionPeriod(365)" class="text-xs font-black px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500" aria-pressed="false">1 anno</button>
+                    </div>
+                </div>
+                <p id="acquisitionSummary" class="text-sm font-bold text-slate-600 mb-4"></p>
+                <div id="acquisitionBody" aria-live="polite"><p class="text-xs text-slate-400 font-bold">Caricamento…</p></div>
+                <p id="acquisitionCoverage" class="text-xs text-slate-500 mt-4 leading-relaxed"></p>
+                <p class="text-xs text-slate-400 mt-3 leading-relaxed">Gli ingressi contano la prima pagina rilevata in ogni sessione. I visitatori sono browser distinti e possono comparire in più provenienze. Bandi e fiere sono separati dagli altri articoli del blog. Altro comprende annunci e pagine di servizio.</p>
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">Le visite alle landing dei bandi, ai dettagli degli annunci e alle pagine città vengono rilevate dal 7 ottobre 2026; lo storico di queste pagine è incompleto.</p>
+                <div id="acquisitionChannels" class="mt-5"></div>
+                <details class="mt-5 border-t border-slate-100 pt-4">
+                    <summary class="text-xs font-black text-blue-600 cursor-pointer">Crea un link per una fiera</summary>
+                    <label for="acquisitionFairName" class="block text-xs font-bold text-slate-500 mt-4 mb-2">Nome della fiera (es. san-faustino-brescia-2027)</label>
+                    <input id="acquisitionFairName" type="text" maxlength="80" oninput="updateAcquisitionFairLink()" class="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm" placeholder="san-faustino-brescia-2027">
+                    <label for="acquisitionFairLink" class="block text-xs font-bold text-slate-500 mt-3 mb-2">Link da usare per il QR o i messaggi della fiera</label>
+                    <input id="acquisitionFairLink" type="text" readonly class="w-full border border-slate-200 rounded-xl px-3 py-2 text-xs" value="https://subingresso.it/?utm_source=fiere&amp;utm_medium=qr">
+                    <button id="acquisitionCopyBtn" onclick="copyAcquisitionFairLink()" class="mt-3 px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-black">Copia link</button>
+                </details>
+            </div>
+
             <!-- Funnel registrazione per sorgente (auth_modal_opens) -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <h3 class="font-black text-slate-900 flex items-center gap-2">
-                        <i class="fas fa-route text-blue-500"></i> Funnel registrazione per sorgente
+                        <i class="fas fa-route text-blue-500"></i> Dove viene aperta la registrazione
                         <span id="signupSourcesSubtitle" class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(30g)</span>
                     </h3>
                     <div class="flex gap-1.5">
@@ -1180,9 +1208,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=3"></script>
-<script src="js/page-view-tracker.js?v=3"></script>
+<script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/data.js?v=17"></script>
-<script src="js/auth.js?v=20"></script>
+<script src="js/auth.js?v=21"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <script>
 
@@ -1228,6 +1256,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadAdminGrowthChart();
         loadAdminFunnelStats();
         loadAdminSignupSources();
+        loadAdminAcquisition();
         loadAdminBlogStats();
         loadAdminBandoAlerts();
         loadAdminScoutBandi();
@@ -1913,6 +1942,76 @@ function setChartPeriod(mode) {
     const sub = document.getElementById('chartSubtitle');
     if (sub) sub.textContent = subtitles[mode] || '';
     loadAdminGrowthChart(mode);
+}
+
+// ── Provenienze admin: ingressi e iscrizioni, senza dati individuali ────────
+let _acquisitionPeriod = 30;
+let _acquisitionRequest = 0;
+const _ACQUISITION_LABELS = {
+    blog: { label: 'Blog', icon: 'fa-blog', color: '#2563eb' },
+    bandi: { label: 'Bandi', icon: 'fa-file-alt', color: '#d97706' },
+    valutatore: { label: 'Valutatore', icon: 'fa-calculator', color: '#059669' },
+    homepage: { label: 'Homepage', icon: 'fa-home', color: '#7c3aed' },
+    fiere: { label: 'Fiere', icon: 'fa-calendar-alt', color: '#db2777' },
+    altro: { label: 'Altro', icon: 'fa-link', color: '#64748b' }
+};
+async function loadAdminAcquisition() {
+    const body = document.getElementById('acquisitionBody');
+    if (!body) return;
+    const request = ++_acquisitionRequest;
+    body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Caricamento…</p>';
+    ['acquisitionSummary', 'acquisitionCoverage', 'acquisitionChannels'].forEach(id => { document.getElementById(id).textContent = ''; });
+    try {
+        const { data, error } = await _supabase.rpc('admin_acquisition_stats', { p_days: _acquisitionPeriod });
+        if (request !== _acquisitionRequest) return;
+        if (error || !data || data.error) throw new Error('Provenienze non disponibili');
+        renderAdminAcquisition(data);
+    } catch (_) {
+        if (request === _acquisitionRequest) body.innerHTML = '<p class="text-xs text-slate-500 font-bold">Provenienze non disponibili. <button onclick="loadAdminAcquisition()" class="text-blue-600 underline">Riprova</button></p>';
+    }
+}
+function renderAdminAcquisition(data) {
+    const num = value => Math.max(0, Number(value) || 0).toLocaleString('it-IT');
+    document.getElementById('acquisitionSummary').textContent = `${num(data.total_sessions)} ingressi · ${num(data.total_visitors)} visitatori · ${num(data.total_signups)} nuovi iscritti`;
+    const rows = Array.isArray(data.rows) ? data.rows : [];
+    document.getElementById('acquisitionBody').innerHTML = '<div class="text-xs font-bold text-slate-400 mb-3" style="display:grid;grid-template-columns:minmax(0,1fr) 60px 60px;gap:8px"><span>Provenienza</span><span class="text-right">Ingressi</span><span class="text-right">Iscritti</span></div>' + rows.map(row => {
+        const meta = _ACQUISITION_LABELS[row.source] || _ACQUISITION_LABELS.altro;
+        const pct = Math.min(100, Math.max(0, Number(row.share_pct) || 0));
+        return `<div class="py-3 border-t border-slate-100" style="display:grid;grid-template-columns:minmax(0,1fr) 60px 60px;gap:8px;align-items:center">
+            <div class="min-w-0"><div class="text-sm font-black text-slate-900"><i class="fas ${meta.icon} mr-2" style="color:${meta.color}" aria-hidden="true"></i>${meta.label}</div>
+            <div class="text-xs text-slate-400 mt-1">${num(row.visitors)} visitatori · ${pct.toLocaleString('it-IT')}%</div>
+            <div class="h-1 bg-slate-100 rounded-full mt-2 overflow-hidden"><div class="h-full rounded-full" style="width:${pct}%;background:${meta.color}"></div></div></div>
+            <span class="text-sm font-black text-slate-900 text-right">${num(row.sessions)}</span><span class="text-sm font-black text-emerald-600 text-right">${num(row.signups)}</span></div>`;
+    }).join('');
+    const since = data.attribution_since ? new Date(data.attribution_since).toLocaleDateString('it-IT') : '7/10/2026';
+    document.getElementById('acquisitionCoverage').textContent = `Iscrizioni attribuite: ${num(data.attributed_signups)} su ${num(data.total_signups)}. Senza provenienza ricostruibile: ${num(data.unattributed_signups)}. La provenienza delle nuove iscrizioni viene salvata dal ${since}; le vecchie iscrizioni non vengono assegnate per ipotesi.`;
+    const channels = Array.isArray(data.channels) ? data.channels : [];
+    document.getElementById('acquisitionChannels').innerHTML = '<h4 class="text-xs font-black text-slate-700 mb-2">Canali di arrivo</h4><p class="text-xs text-slate-400 mb-3">Campagna del link oppure sito di provenienza. Diretto / sconosciuto comprende i casi senza un riferimento disponibile.</p>' + channels.map(channel => `<div class="flex items-center justify-between gap-3 py-1 text-xs"><span class="text-slate-500 truncate">${escapeHTML(channel.channel === 'diretto_sconosciuto' ? 'Diretto / sconosciuto' : channel.channel)}</span><span class="font-black text-slate-700">${num(channel.sessions)}</span></div>`).join('');
+}
+function setAcquisitionPeriod(days) {
+    if (![30, 90, 365].includes(days)) return;
+    _acquisitionPeriod = days;
+    [30, 90, 365].forEach(period => {
+        const button = document.getElementById('acqBtn' + period);
+        button.className = `text-xs font-black px-3 py-1.5 rounded-lg ${period === days ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500'}`;
+        button.setAttribute('aria-pressed', String(period === days));
+    });
+    loadAdminAcquisition();
+}
+function updateAcquisitionFairLink() {
+    const name = document.getElementById('acquisitionFairName').value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+    document.getElementById('acquisitionFairLink').value = 'https://subingresso.it/?utm_source=fiere&utm_medium=qr' + (name ? '&utm_campaign=' + encodeURIComponent(name) : '');
+    document.getElementById('acquisitionCopyBtn').textContent = 'Copia link';
+}
+async function copyAcquisitionFairLink() {
+    const input = document.getElementById('acquisitionFairLink');
+    try {
+        await navigator.clipboard.writeText(input.value);
+        document.getElementById('acquisitionCopyBtn').textContent = 'Link copiato';
+    } catch (_) {
+        input.select();
+        document.getElementById('acquisitionCopyBtn').textContent = 'Selezionato: copia il link';
+    }
 }
 
 // ── Funnel registrazione per sorgente (admin, auth_modal_opens) ──────────────
