@@ -49,12 +49,43 @@
         .tipo-card:active { transform: scale(.97); }
 
         /* Step 6 — opzioni di pubblicazione */
-        .pub-opt { border-color: #e2e8f0; background: #fff; cursor: pointer; touch-action: manipulation; }
+        .pub-opt { width: 100%; text-align: left; border: 2px solid #e2e8f0; border-radius: 16px; background: #fff; cursor: pointer; touch-action: manipulation; transition: border-color .15s, background .15s, box-shadow .15s; }
         .pub-opt:hover { border-color: #cbd5e1; }
         .pub-opt:active { transform: scale(.99); }
         .pub-opt.selected { border-color: #2563eb; background: #eff6ff; box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
-        .pub-opt-best { border-color: #fcd34d; background: #fffbeb; }
-        .pub-opt-best.selected { border-color: #2563eb; background: #eff6ff; }
+        .pub-opt:focus-visible, .faq-item summary:focus-visible { outline: 3px solid #2563eb; outline-offset: 4px; }
+        .pub-free { display: flex; align-items: center; gap: 12px; padding: 16px; margin-bottom: 22px; }
+        .pub-free-copy { flex: 1; min-width: 0; }
+        .pub-free-title { display: block; font-size: .875rem; font-weight: 800; color: #334155; }
+        .pub-free-note { display: block; margin-top: 4px; font-size: .75rem; line-height: 1.5; color: #64748b; }
+        .pub-free-price { flex-shrink: 0; font-size: 1.15rem; font-weight: 800; color: #334155; }
+        .pub-premium { border: 1px solid #dfc68e; border-radius: 22px; background: #fffdf8; box-shadow: 0 8px 28px rgba(15,23,42,.06); overflow: hidden; }
+        .pub-premium-head { display: flex; align-items: center; gap: 12px; padding: 22px 20px; background: linear-gradient(120deg,#152943,#253b57); color: #fff; }
+        .pub-premium-icon { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex-shrink: 0; border: 1px solid rgba(232,197,128,.4); border-radius: 14px; color: #efd49e; background: rgba(232,197,128,.08); font-size: 1.1rem; }
+        .pub-premium-icon svg { width: 24px; height: 24px; }
+        .pub-premium-head h2 { font-size: 1.2rem; font-weight: 800; letter-spacing: -.02em; }
+        .pub-premium-head p { margin-top: 4px; color: #d6e0ec; font-size: .8125rem; line-height: 1.5; }
+        .pub-premium-body { padding: 20px; }
+        .pub-benefits { display: grid; gap: 10px; margin-bottom: 16px; }
+        .pub-benefits li { display: flex; align-items: center; gap: 10px; color: #334155; font-size: .8125rem; font-weight: 700; line-height: 1.5; }
+        .pub-benefits svg { width: 20px; height: 20px; flex-shrink: 0; color: #a47422; }
+        .pub-plan-intro { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin: 20px 0 12px; color: #475569; font-size: .8125rem; font-weight: 700; }
+        .pub-discount { border-radius: 999px; padding: 4px 9px; color: #805817; background: #f7edd6; font-size: .6875rem; font-weight: 800; }
+        .pub-plans { display: grid; gap: 10px; }
+        .pub-plan { display: flex; align-items: center; gap: 12px; padding: 14px; border-color: #e8dfcc; }
+        .pub-plan:hover { border-color: #c6a15a; }
+        .pub-plan.selected { border-color: #b88b38; background: #fff7e5; box-shadow: 0 0 0 2px rgba(184,139,56,.12); }
+        .pub-plan-copy { flex: 1; min-width: 0; }
+        .pub-plan-title { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; color: #152943; font-size: .9375rem; font-weight: 800; }
+        .pub-plan-tag { padding: 3px 7px; border-radius: 6px; background: #f1f5f9; color: #475569; font-size: .625rem; font-weight: 800; }
+        .pub-plan-tag-best { background: #f7edd6; color: #805817; }
+        .pub-plan-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-top: 5px; font-size: 1.2rem; font-weight: 800; color: #152943; }
+        .pub-plan-price del { color: #64748b; font-size: .75rem; font-weight: 500; }
+        .pub-plan-daily { display: block; margin-top: 3px; color: #64748b; font-size: .6875rem; font-weight: 600; }
+        .pub-payment-note { margin-top: 14px; text-align: center; color: #64748b; font-size: .6875rem; line-height: 1.6; }
+        .pub-payment-note svg { display: inline-block; width: 12px; height: 12px; vertical-align: -1px; margin-right: 3px; }
+        #submitBtn.pub-submit-premium { background: #152943; box-shadow: 0 8px 20px rgba(21,41,67,.16); }
+        #submitBtn.pub-submit-premium:hover { background: #253b57; }
         .pub-radio {
             flex: 0 0 auto; width: 20px; height: 20px; border-radius: 9999px;
             border: 2px solid #cbd5e1; background: #fff; transition: all .15s; position: relative;
@@ -63,19 +94,33 @@
         .pub-opt.selected .pub-radio::after {
             content: ''; position: absolute; inset: 3px; border-radius: 9999px; background: #2563eb;
         }
+        .pub-plan.selected .pub-radio { border-color: #b88b38; }
+        .pub-plan.selected .pub-radio::after { background: #b88b38; }
 
         /* FAQ Vetrina — accordion nativo, zero JS */
-        .faq-item { border-top: 1px solid #f1f5f9; }
+        .faq-item { border: 1px solid #dbeafe; border-radius: 12px; background: #eff6ff; }
+        .faq-item + .faq-item { margin-top: 8px; }
         .faq-item summary {
-            list-style: none; cursor: pointer; padding: .75rem 0;
+            list-style: none; cursor: pointer; padding: 14px;
             display: flex; align-items: center; justify-content: space-between; gap: .75rem;
-            font-size: .8125rem; font-weight: 700; color: #475569;
+            font-size: .8125rem; font-weight: 700; color: #1d4ed8; line-height: 1.5;
         }
         .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary:hover { color: #1e293b; }
-        .faq-chev { flex: 0 0 auto; transition: transform .2s; color: #94a3b8; font-size: .75rem; }
+        .faq-item summary:hover { color: #1e40af; }
+        .faq-chev { width: 14px; height: 14px; flex: 0 0 auto; transition: transform .2s; color: #2563eb; }
         .faq-item[open] summary .faq-chev { transform: rotate(180deg); }
-        .faq-item .faq-a { font-size: .8125rem; color: #64748b; line-height: 1.6; padding: 0 0 .85rem; }
+        .faq-item .faq-a { font-size: .8125rem; color: #475569; line-height: 1.7; padding: 0 14px 16px; }
+        .pub-process { display: grid; gap: 16px; margin: 2px 0 14px; list-style: none; }
+        .pub-process li { display: flex; align-items: flex-start; gap: 10px; }
+        .pub-process-number { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #dbeafe; color: #1d4ed8; font-size: .75rem; font-weight: 800; }
+        .pub-process li > div > strong { display: block; color: #152943; margin-bottom: 3px; }
+        @media (max-width: 360px) {
+            .pub-free { padding: 12px; gap: 10px; }
+            .pub-premium-head { padding: 18px 14px; gap: 10px; }
+            .pub-premium-head h2 { font-size: 1.1rem; }
+            .pub-premium-body { padding: 14px; }
+            .pub-plan { padding: 12px; gap: 10px; }
+        }
 
         /* Tipo mercato buttons */
         .tipo-btn {
@@ -477,70 +522,84 @@
 
                     <div id="publishReview" class="bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 mb-6" aria-label="Riepilogo del tuo annuncio"></div>
 
-                    <div class="space-y-3">
-                        <!-- 1. GRATIS (preselezionato) -->
-                        <button type="button" id="pubFree" onclick="_selectPubChoice('free')"
-                            class="pub-opt selected w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
-                            <span class="pub-radio mt-0.5"></span>
-                            <span class="flex-1 min-w-0">
-                                <span class="block font-black text-slate-900 whitespace-nowrap">Pubblicazione gratuita</span>
-                                <span class="block text-sm mt-0.5">
-                                    <span class="font-black text-slate-900 mr-1">€ 0</span>
-                                    <span class="text-xs text-slate-500 font-semibold">· online 200 giorni, visibile a tutti</span>
-                                </span>
+                    <div role="group" aria-label="Scegli la pubblicazione gratuita o un pacchetto Vetrina">
+                        <button type="button" id="pubFree" onclick="_selectPubChoice('free')" aria-pressed="true"
+                            class="pub-opt pub-free selected">
+                            <span class="pub-radio" aria-hidden="true"></span>
+                            <span class="pub-free-copy">
+                                <span class="pub-free-title">Pubblicazione gratuita</span>
+                                <span class="pub-free-note">Online per 200 giorni, visibile a tutti.</span>
                             </span>
+                            <span class="pub-free-price">€ 0</span>
                         </button>
 
-                        <!-- 2. 10 giorni -->
-                        <button type="button" id="pub10d" onclick="_selectPubChoice('10d')"
-                            class="pub-opt relative w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
-                            <span class="pub-radio mt-0.5"></span>
-                            <span class="flex-1 min-w-0">
-                                <span class="block font-black text-slate-900 whitespace-nowrap">Vetrina 10 giorni</span>
-                                <span class="block text-sm mt-0.5">
-                                    <span class="font-black text-slate-900 mr-1">€ 17,91</span>
-                                    <span class="text-xs text-slate-400 line-through mr-1">€ 19,90</span>
-                                    <span class="text-xs text-slate-500 font-semibold">· € 1,79/g</span>
-                                </span>
-                            </span>
-                            <span class="font-black text-white rounded-full" style="position:absolute;top:-8px;right:14px;background:#2563eb;font-size:10px;padding:2px 8px;box-shadow:0 1px 3px rgba(0,0,0,.18)">-10%</span>
-                        </button>
+                        <section class="pub-premium" aria-labelledby="pubPremiumTitle">
+                            <div class="pub-premium-head">
+                                <span class="pub-premium-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l5 4 5-7 5 7 5-4-2 13H4L2 6Z"/><path d="M5 22h14"/></svg></span>
+                                <div>
+                                    <h2 id="pubPremiumTitle">Vetrina Premium</h2>
+                                    <p>Più visibilità per il tuo posteggio.</p>
+                                </div>
+                            </div>
+                            <div class="pub-premium-body">
+                                <ul class="pub-benefits">
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg> In alto nei risultati di ricerca</li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h4m3 0h3M7 16h4m3 0h3"/></svg> Negli spazi promozionali del blog</li>
+                                </ul>
 
-                        <!-- 3. 30 giorni -->
-                        <button type="button" id="pub30d" onclick="_selectPubChoice('30d')"
-                            class="pub-opt relative w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
-                            <span class="pub-radio mt-0.5"></span>
-                            <span class="flex-1 min-w-0">
-                                <span class="flex items-center gap-2">
-                                    <span class="font-black text-slate-900 whitespace-nowrap">Vetrina 30 giorni</span>
-                                    <span class="text-[10px] font-black bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Popolare</span>
-                                </span>
-                                <span class="block text-sm mt-0.5">
-                                    <span class="font-black text-slate-900 mr-1">€ 35,91</span>
-                                    <span class="text-xs text-slate-400 line-through mr-1">€ 39,90</span>
-                                    <span class="text-xs text-slate-500 font-semibold">· € 1,20/g</span>
-                                </span>
-                            </span>
-                            <span class="font-black text-white rounded-full" style="position:absolute;top:-8px;right:14px;background:#2563eb;font-size:10px;padding:2px 8px;box-shadow:0 1px 3px rgba(0,0,0,.18)">-10%</span>
-                        </button>
+                                <details id="pubPromotionDetails" class="faq-item">
+                                    <summary>Come promuoviamo il tuo annuncio? <svg class="faq-chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></summary>
+                                    <div class="faq-a">
+                                        <ol class="pub-process">
+                                            <li>
+                                                <span class="pub-process-number" aria-hidden="true">1</span>
+                                                <div><strong>In alto nei risultati di ricerca</strong><p>Il tuo annuncio appare prima degli annunci gratuiti nei risultati di ricerca e tra gli annunci consigliati. Una corona lo rende subito riconoscibile.</p></div>
+                                            </li>
+                                            <li>
+                                                <span class="pub-process-number" aria-hidden="true">2</span>
+                                                <div><strong>Negli spazi promozionali del blog</strong><p>Il tuo annuncio compare anche nei nostri articoli, a rotazione con gli altri annunci in Vetrina. Il blog ha raccolto <strong>centinaia di migliaia di visualizzazioni</strong> da lettori interessati ai mercati e alle licenze ambulanti.</p></div>
+                                            </li>
+                                        </ol>
+                                        <p>La promozione si attiva con il pagamento ed è visibile quando l'annuncio viene approvato.</p>
+                                    </div>
+                                </details>
 
-                        <!-- 4. 90 giorni — miglior valore -->
-                        <button type="button" id="pub90d" onclick="_selectPubChoice('90d')"
-                            class="pub-opt pub-opt-best relative w-full text-left rounded-2xl border-2 px-5 py-4 transition flex items-start gap-4">
-                            <span class="pub-radio mt-0.5"></span>
-                            <span class="flex-1 min-w-0">
-                                <span class="flex items-center gap-2">
-                                    <span class="font-black text-slate-900 whitespace-nowrap">Vetrina 90 giorni</span>
-                                    <span class="text-[10px] font-black bg-amber-400 text-amber-900 px-2 py-0.5 rounded-full">Miglior valore</span>
-                                </span>
-                                <span class="block text-sm mt-0.5">
-                                    <span class="font-black text-slate-900 mr-1">€ 53,91</span>
-                                    <span class="text-xs text-slate-400 line-through mr-1">€ 59,90</span>
-                                    <span class="text-xs text-slate-500 font-semibold">· € 0,60/g</span>
-                                </span>
-                            </span>
-                            <span class="font-black text-white rounded-full" style="position:absolute;top:-8px;right:14px;background:#2563eb;font-size:10px;padding:2px 8px;box-shadow:0 1px 3px rgba(0,0,0,.18)">-10%</span>
-                        </button>
+                                <div class="pub-plan-intro">
+                                    <span>Scegli la durata</span>
+                                    <span class="pub-discount">-10% alla pubblicazione</span>
+                                </div>
+                                <div class="pub-plans">
+                                    <button type="button" id="pub10d" onclick="_selectPubChoice('10d')" aria-pressed="false"
+                                        class="pub-opt pub-plan">
+                                        <span class="pub-radio" aria-hidden="true"></span>
+                                        <span class="pub-plan-copy">
+                                            <span class="pub-plan-title">10 giorni</span>
+                                            <span class="pub-plan-price">€ 17,91 <del>€ 19,90</del></span>
+                                            <span class="pub-plan-daily">€ 1,79 al giorno</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" id="pub30d" onclick="_selectPubChoice('30d')" aria-pressed="false"
+                                        class="pub-opt pub-plan">
+                                        <span class="pub-radio" aria-hidden="true"></span>
+                                        <span class="pub-plan-copy">
+                                            <span class="pub-plan-title">30 giorni <span class="pub-plan-tag">Consigliato</span></span>
+                                            <span class="pub-plan-price">€ 35,91 <del>€ 39,90</del></span>
+                                            <span class="pub-plan-daily">€ 1,20 al giorno</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" id="pub90d" onclick="_selectPubChoice('90d')" aria-pressed="false"
+                                        class="pub-opt pub-plan">
+                                        <span class="pub-radio" aria-hidden="true"></span>
+                                        <span class="pub-plan-copy">
+                                            <span class="pub-plan-title">90 giorni <span class="pub-plan-tag pub-plan-tag-best">Più conveniente</span></span>
+                                            <span class="pub-plan-price">€ 53,91 <del>€ 59,90</del></span>
+                                            <span class="pub-plan-daily">€ 0,60 al giorno</span>
+                                        </span>
+                                    </button>
+                                </div>
+                                <p class="pub-payment-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></svg> Pagamento unico. Nessun abbonamento.</p>
+                            </div>
+                        </section>
                     </div>
 
                     <button type="button" id="submitBtn"
@@ -554,20 +613,16 @@
                         L'annuncio viene controllato prima della pubblicazione.
                     </p>
 
-                    <!-- FAQ Vetrina — accordion, defaultchiuso, non invadente -->
+                    <!-- Altre domande sulla Vetrina -->
                     <div class="mt-8 pb-10">
-                        <p class="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-1">Domande sulla Vetrina</p>
+                        <p class="text-xs font-bold text-slate-500 mb-3">Altre domande sulla Vetrina</p>
                         <details class="faq-item">
-                            <summary>Dove viene spinto un annuncio in Vetrina? <i class="fas fa-chevron-down faq-chev"></i></summary>
-                            <p class="faq-a">In cima ai risultati di ricerca, tra gli <strong>annunci consigliati</strong> nelle pagine annuncio e nei box <strong>"Posteggi disponibili"</strong> dentro gli articoli del blog. Ha il badge corona e mostra fino a 5 foto a rotazione.</p>
+                            <summary>Quanto dura la promozione? <svg class="faq-chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></summary>
+                            <p class="faq-a">Il periodo scelto (10, 30 o 90 giorni) inizia dal pagamento. Al termine la promozione si ferma, senza costi automatici. Il tuo annuncio resta online fino alla sua normale scadenza.</p>
                         </details>
                         <details class="faq-item">
-                            <summary>Per quanto resta in evidenza? <i class="fas fa-chevron-down faq-chev"></i></summary>
-                            <p class="faq-a">Per i giorni del pacchetto scelto (10, 30 o 90). Allo scadere torna un annuncio normale, senza perdere le visualizzazioni o i contatti già ricevuti.</p>
-                        </details>
-                        <details class="faq-item">
-                            <summary>Posso attivarla anche dopo? <i class="fas fa-chevron-down faq-chev"></i></summary>
-                            <p class="faq-a">Sì, quando vuoi dalla tua dashboard. Lo sconto del 10%, però, vale solo adesso alla prima pubblicazione.</p>
+                            <summary>Posso attivarla anche dopo? <svg class="faq-chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></summary>
+                            <p class="faq-a">Sì, dalla tua area personale. Lo sconto del 10% è disponibile solo durante la prima pubblicazione.</p>
                         </details>
                     </div>
                 </div>
@@ -625,16 +680,23 @@ function _selectPubChoice(choice) {
     const map = { 'free': 'pubFree', '10d': 'pub10d', '30d': 'pub30d', '90d': 'pub90d' };
     Object.values(map).forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.classList.remove('selected');
+        if (el) {
+            el.classList.remove('selected');
+            el.setAttribute('aria-pressed', 'false');
+        }
     });
     const sel = document.getElementById(map[choice]);
-    if (sel) sel.classList.add('selected');
+    if (sel) {
+        sel.classList.add('selected');
+        sel.setAttribute('aria-pressed', 'true');
+    }
     _refreshPublishChoiceUI();
     _saveDraft();
 }
 
 function _refreshPublishChoiceUI() {
     const btn = document.getElementById('submitBtn');
+    if (btn) btn.classList.toggle('pub-submit-premium', _pubChoice !== 'free');
     if (btn && !btn.disabled) {
         btn.textContent = _PUB_OPTIONS[_pubChoice].btnLabel;
         btn.dataset.origHtml = btn.innerHTML;
@@ -643,7 +705,7 @@ function _refreshPublishChoiceUI() {
     if (foot) {
         foot.textContent = (_pubChoice === 'free')
             ? 'L\'annuncio viene controllato prima della pubblicazione.'
-            : 'Pagamento sicuro con Stripe · una tantum, nessun abbonamento. L\'annuncio viene controllato e pubblicato comunque.';
+            : 'Pagamento sicuro con Stripe. L\'annuncio viene controllato prima della pubblicazione.';
     }
 }
 
