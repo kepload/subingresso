@@ -426,6 +426,11 @@ module.exports = async function handler(req, res) {
         scope = 'empty';
     }
 
+    // Anche sulle pagine citta gli scaduti seguono tutti gli annunci validi.
+    const now = new Date();
+    const isExpired = l => !!(l.expires_at && new Date(l.expires_at) < now);
+    listings.sort((a, b) => Number(isExpired(a)) - Number(isExpired(b)));
+
     const totalCount = listings.length;
 
     // ─── Branch zero risultati ───────────────────────────────────

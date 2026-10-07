@@ -200,6 +200,10 @@ async function applyFilters() {
         });
     }
 
+    // Gli scaduti restano visibili in fondo, preservando l'ordine scelto
+    // all'interno dei gruppi, anche per distanza, pertinenza e Vetrina.
+    results.sort((a, b) => Number(isListingExpired(a)) - Number(isListingExpired(b)));
+
     const radiusRow = document.getElementById('radiusRow');
     if (radiusRow) radiusRow.classList.toggle('visible', isProximitySearch);
     const defaultSort = fSort?.querySelector('option[value="pertinenza"]');
