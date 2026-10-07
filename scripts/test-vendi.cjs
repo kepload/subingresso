@@ -162,6 +162,45 @@ const server = http.createServer((req, res) => {
 
         const page = await newPage(ownerA, true);
         await fillWizard(page);
+        assert(await page.locator('#dropzone').isVisible());
+        assert(await page.locator('#additionalPhotos').isHidden());
+        assert(await page.locator('#draftStatus').isHidden());
+        assert.equal(await page.locator('h1:visible').count(), 1);
+        assert(!(await page.locator('main').innerText()).includes('Vendi la tua licenza ambulante'));
+        assert.equal(await page.locator('#photoAdvice').evaluate(el => getComputedStyle(el).color), 'rgb(220, 38, 38)');
+        if (process.env.FORM_SCREENSHOT_DIR) {
+            fs.mkdirSync(process.env.FORM_SCREENSHOT_DIR,{recursive:true});
+            await page.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR,'foto-facoltativa-mobile.png'),fullPage:true});
+        }
+        const firstPicker = page.waitForEvent('filechooser');
+        await page.locator('#dropzone').click();
+        await (await firstPicker).setFiles(photos(1));
+        await page.waitForFunction(() => _files.length === 1 && !_photosUnsaved);
+        assert(await page.locator('#dropzone').isHidden());
+        assert(await page.locator('#coverPreview img').isVisible());
+        assert(await page.locator('#additionalPhotos').isVisible());
+        assert.equal(await page.locator('#previewContainer .photo-empty').count(), 3);
+        for (const text of await page.locator('#previewContainer .photo-empty').allTextContents()) assert.match(text, /Facoltativa/);
+        if (process.env.FORM_SCREENSHOT_DIR) await page.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR,'foto-aggiuntive-mobile.png'),fullPage:true});
+        await page.locator('#toStep6Btn').click();
+        await active(page,6);
+        await page.locator('#step6').getByRole('button',{name:'Indietro'}).click();
+        await active(page,5);
+        await page.reload();
+        await page.waitForFunction(() => _draftReady && _files.length === 1);
+        assert(await page.locator('#additionalPhotos').isVisible());
+        assert(await page.locator('#draftStatus').isHidden());
+        assert.equal((await page.locator('#draftBanner').innerText()).trim(), 'Ricomincia');
+        const extraPicker = page.waitForEvent('filechooser');
+        await page.locator('#previewContainer .photo-empty').first().click();
+        await (await extraPicker).setFiles([photos(2)[1]]);
+        await page.waitForFunction(() => _files.length === 2 && !_photosUnsaved);
+        await page.locator('#previewContainer .photo-remove').click();
+        await page.locator('#coverPreview .photo-remove').click();
+        await page.waitForFunction(() => _files.length === 0 && !_photosUnsaved);
+        assert(await page.locator('#dropzone').isVisible());
+        assert(await page.locator('#additionalPhotos').isHidden());
+        console.log('OK: un solo slot iniziale, avviso rosso, tre slot facoltativi dopo la prima foto, recupero silenzioso e Avanti diretto con una foto.');
         const title = await page.locator('#fTitolo').inputValue();
         await page.getByRole('button',{name:'Prova un altro titolo'}).click();
         const changed = await page.locator('#fTitolo').inputValue();
@@ -226,15 +265,13 @@ const server = http.createServer((req, res) => {
         assert.match(fairDescription,/Ogni febbraio, un giorno/);
         assert(!/\[giorni\]|Sabato|undefined/.test(fairDescription));
         await fair.locator('#toStep6Btn').click();
-        assert(await fair.locator('#photoReminder').isVisible());
-        assert.equal(await fair.evaluate(()=>_step),5);
-        await fair.getByRole('button',{name:'Continua senza foto'}).click();
         await active(fair,6);
         await fair.evaluate(()=>{document.getElementById('fGiorni').value='Sabato';});
         await fair.locator('#submitBtn').click();
         await fair.locator('#successMsg').waitFor({state:'visible'});
         assert.equal(inserts[1].giorni,'Ogni febbraio, un giorno');
         assert.equal(inserts[1].dettagli_extra.nome_fiera,'Fiera di San Faustino');
+        assert.equal(inserts[1].img_urls.length,0);
         console.log('OK: fiera senza giorni settimanali, periodo libero, descrizione corretta e foto facoltative.');
 
         const guest = await newPage();
@@ -310,6 +347,7 @@ const server = http.createServer((req, res) => {
         await photoStorage.waitForFunction(()=>_photoWriteFailed);
         await photoStorage.locator('#fDescrizione').fill('Una descrizione aggiornata dopo il problema con la memoria delle foto.');
         assert.match(await photoStorage.locator('#draftStatus').textContent(),/foto non si sono salvate/);
+        assert(await photoStorage.locator('#draftStatus').isVisible());
         assert(await photoStorage.evaluate(()=>{const event=new Event('beforeunload',{cancelable:true});window.dispatchEvent(event);return event.defaultPrevented;}));
         console.log('OK: errore dell’archivio foto resta visibile e protegge l’uscita dalla pagina.');
 
@@ -320,6 +358,7 @@ const server = http.createServer((req, res) => {
         });
         await brokenStorage.locator('.tipo-card').first().click();
         assert.match(await brokenStorage.locator('#draftStatus').textContent(),/non si è salvata/);
+        assert(await brokenStorage.locator('#draftStatus').isVisible());
         assert(await brokenStorage.evaluate(()=>{const event=new Event('beforeunload',{cancelable:true});window.dispatchEvent(event);return event.defaultPrevented;}));
         console.log('OK: memoria bloccata segnalata e protezione uscita attiva.');
 

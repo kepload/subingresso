@@ -111,10 +111,13 @@
         .draft-status.warning { color: #b45309; }
         .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
         .photo-tile { position: relative; aspect-ratio: 1; border-radius: 14px; overflow: hidden; background: #f1f5f9; }
+        .photo-primary { aspect-ratio: 16 / 10; }
         .photo-tile img { width: 100%; height: 100%; object-fit: cover; }
         .photo-remove { position: absolute; top: 5px; right: 5px; width: 32px; height: 32px; border-radius: 50%; background: #fff; color: #dc2626; border: 1px solid #e2e8f0; }
         .photo-cover { position: absolute; bottom: 5px; left: 5px; right: 5px; padding: 5px 2px; border-radius: 8px; font-size: 10px; font-weight: 800; background: #fff; color: #2563eb; }
         .photo-empty { aspect-ratio: 1; border: 1.5px dashed #cbd5e1; border-radius: 14px; font-size: 11px; font-weight: 700; color: #64748b; background: #f8fafc; padding: 10px; }
+        .photo-empty small { display: block; margin-top: 6px; font-size: 10px; font-weight: 500; }
+        .form-hint.photo-advice { color: #dc2626; font-weight: 700; margin-bottom: 12px; }
         .form-hint { font-size: .75rem; line-height: 1.6; color: #64748b; margin-top: 6px; }
         .form-link { font-size: .75rem; font-weight: 800; color: #2563eb; padding: 6px 0; }
         .review-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-size: .8125rem; }
@@ -131,16 +134,6 @@
 <main class="flex-grow py-10">
     <div class="max-w-lg mx-auto px-4">
 
-        <!-- SEO header (sempre visibile, sopra auth banner / success / form) -->
-        <header class="mb-6 text-center">
-            <h1 class="text-2xl md:text-3xl font-black tracking-tight text-slate-900 leading-tight">
-                Vendi la tua licenza ambulante o il tuo posteggio mercatale
-            </h1>
-            <p class="text-slate-500 font-medium mt-2 text-sm">
-                Pubblicazione gratis. Contatti diretti tra privati. Nessuna commissione, nessun intermediario.
-            </p>
-        </header>
-
         <!-- Auth banner -->
         <div id="authBanner" class="hidden mb-6 bg-blue-50 border border-blue-100 rounded-2xl p-4 flex items-center gap-3">
             <i class="fas fa-info-circle text-blue-400 flex-shrink-0"></i>
@@ -156,7 +149,7 @@
             <div class="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i class="fas fa-check text-emerald-600 text-xl"></i>
             </div>
-            <h2 class="text-xl font-black text-emerald-800 mb-2">Annuncio inviato!</h2>
+            <h1 class="text-xl font-black text-emerald-800 mb-2">Annuncio inviato!</h1>
             <p class="text-emerald-700 font-medium text-sm mb-5">Sarà pubblicato dopo la verifica (entro 24 ore).</p>
             <div class="flex gap-3 justify-center">
                 <a href="/annunci" class="bg-emerald-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-700 transition">
@@ -180,12 +173,11 @@
                 <div class="w-full bg-slate-200 rounded-full h-1.5">
                     <div id="progressBar" class="bg-blue-600 h-1.5 rounded-full transition-all duration-500" style="width:16.6667%"></div>
                 </div>
-                <p id="draftStatus" class="draft-status" role="status">La bozza si salva su questo dispositivo mentre compili.</p>
+                <p id="draftStatus" class="draft-status" role="status" hidden></p>
             </div>
 
-            <div id="draftBanner" class="hidden mb-6 bg-blue-50 border border-blue-100 rounded-2xl px-4 py-3">
-                <p id="draftResumeText" class="text-sm font-bold text-blue-700"></p>
-                <button type="button" onclick="_startFreshDraft()" class="form-link">Ricomincia con un nuovo annuncio</button>
+            <div id="draftBanner" class="hidden mb-4" style="text-align:right">
+                <button type="button" onclick="_startFreshDraft()" class="form-link">Ricomincia</button>
             </div>
 
             <form id="annuncioForm" novalidate>
@@ -206,7 +198,7 @@
 
                 <!-- ══════ STEP 1: Tipo ══════ -->
                 <div id="step1" class="step-panel active">
-                    <h2 class="text-2xl font-black mb-1">Cosa vuoi fare?</h2>
+                    <h1 class="text-2xl font-black mb-1">Cosa vuoi fare?</h1>
                     <p class="text-slate-500 font-medium mb-8 text-sm">Scegli vendita o affitto. Puoi cambiare idea nei prossimi passi.</p>
                     <div class="grid grid-cols-2 gap-4">
                         <button type="button" class="tipo-card" onclick="selectStato('Vendita')">
@@ -231,7 +223,7 @@
                     <button type="button" onclick="prevStep()" class="flex items-center gap-1.5 text-slate-400 hover:text-slate-700 text-sm font-bold mb-6 transition">
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
-                    <h2 class="text-2xl font-black mb-1">Dove si trova?</h2>
+                    <h1 class="text-2xl font-black mb-1">Dove si trova?</h1>
                     <p class="text-slate-500 font-medium mb-8 text-sm">Scegli il comune: regione e provincia le inseriamo noi.</p>
 
                     <div class="space-y-6">
@@ -281,7 +273,7 @@
                     <button type="button" onclick="prevStep()" class="flex items-center gap-1.5 text-slate-400 hover:text-slate-700 text-sm font-bold mb-6 transition">
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
-                    <h2 class="text-2xl font-black mb-1" id="step3Title">Com'è il posteggio?</h2>
+                    <h1 class="text-2xl font-black mb-1" id="step3Title">Com'è il posteggio?</h1>
                     <p class="text-slate-500 font-medium mb-8 text-sm" id="step3Sub">Giorni, settore e dimensioni.</p>
 
                     <div class="space-y-8">
@@ -347,7 +339,7 @@
                     <button type="button" onclick="prevStep()" class="flex items-center gap-1.5 text-slate-400 hover:text-slate-700 text-sm font-bold mb-6 transition">
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
-                    <h2 class="text-2xl font-black mb-1">Quanto chiedi?</h2>
+                    <h1 class="text-2xl font-black mb-1">Quanto chiedi?</h1>
                     <p id="prezzoSub" class="text-slate-500 font-medium mb-6 text-sm">Prezzo totale di vendita.</p>
 
                     <!-- Badge ANNO (solo affitto) -->
@@ -387,21 +379,26 @@
                     <button type="button" onclick="prevStep()" class="flex items-center gap-1.5 text-slate-400 hover:text-slate-700 text-sm font-bold mb-6 transition">
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
-                    <h2 class="text-2xl font-black mb-1">Ultimi dettagli</h2>
+                    <h1 class="text-2xl font-black mb-1">Ultimi dettagli</h1>
                     <p class="text-slate-500 font-medium mb-8 text-sm">Titolo, descrizione e foto del tuo posteggio.</p>
 
                     <div class="space-y-6">
                         <div id="photoSection">
-                            <label class="field-label">Mostra il posteggio con le foto</label>
-                            <p id="photoAdvice" class="form-hint" style="margin-bottom:12px">Punta a <strong>3 foto</strong>: il banco, lo spazio del posteggio e il mercato intorno. Puoi aggiungerne <strong>fino a 5, anche gratis</strong>.</p>
-                            <button type="button" id="dropzone" class="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center hover:border-blue-400 transition cursor-pointer bg-slate-50 w-full">
+                            <label class="field-label">Foto · facoltativa</label>
+                            <p id="photoAdvice" class="form-hint photo-advice">Una foto aiuta molto ad attirare visite al tuo annuncio.</p>
+                            <button type="button" id="dropzone" class="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center hover:border-blue-400 transition cursor-pointer bg-slate-50 w-full" aria-describedby="photoAdvice">
                                 <i class="fas fa-camera text-blue-500 text-3xl mb-2 block"></i>
-                                <span id="photoButtonText" class="text-sm font-bold text-slate-600">Scegli le foto dal telefono</span>
+                                <span class="text-sm font-bold text-slate-600">Aggiungi una foto</span>
                             </button>
                             <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/avif" multiple class="hidden">
-                            <p class="form-hint">Puoi selezionarle insieme o aggiungerle una alla volta. JPG, PNG, WebP o AVIF, fino a 20 MB ciascuna.</p>
-                            <div id="previewContainer" class="photo-grid"></div>
-                            <p id="photoProgress" class="form-hint" role="status"></p>
+                            <div id="coverPreview" hidden></div>
+                            <p class="form-hint">JPG, PNG, WebP o AVIF · max 20 MB.</p>
+                            <div id="additionalPhotos" style="margin-top:16px" hidden>
+                                <p class="field-label">Altre foto · facoltative</p>
+                                <div id="previewContainer" class="photo-grid"></div>
+                                <button type="button" id="addPhotoButton" onclick="fileInput.click()" class="form-link" hidden>Aggiungi un'altra foto</button>
+                                <p id="photoProgress" class="form-hint" role="status"></p>
+                            </div>
                         </div>
                         <div>
                             <label class="field-label" for="fTitolo">Titolo annuncio *</label>
@@ -458,13 +455,6 @@
                         <div id="previewCard" style="pointer-events:none;user-select:none;max-width:300px;margin:0 auto"></div>
                     </div>
 
-                    <div id="photoReminder" class="hidden mt-6 bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3" role="status">
-                        <p id="photoReminderText" class="text-sm font-bold text-amber-800"></p>
-                        <div class="flex flex-wrap gap-3 mt-3">
-                            <button type="button" onclick="fileInput.click()" class="form-link">Aggiungi foto</button>
-                            <button type="button" id="photoReminderContinue" onclick="_goToPublishStep(true)" class="text-xs font-bold text-slate-500">Continua con le foto attuali</button>
-                        </div>
-                    </div>
                     <button type="button" id="toStep6Btn" onclick="_goToPublishStep()"
                         class="w-full mt-8 bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-100 active:scale-[.98]">
                         Avanti <i class="fas fa-arrow-right text-sm ml-1"></i>
@@ -481,7 +471,7 @@
                     </button>
                     <div class="text-center mb-6">
                         <div class="text-3xl mb-2">🎉</div>
-                        <h2 class="text-2xl font-black mb-1">Il tuo annuncio è pronto</h2>
+                        <h1 class="text-2xl font-black mb-1">Il tuo annuncio è pronto</h1>
                         <p class="text-slate-500 font-medium text-sm">Scegli come pubblicarlo.</p>
                     </div>
 
@@ -659,18 +649,8 @@ function _refreshPublishChoiceUI() {
 
 // Step 5 → Step 6: valida i campi contenuto prima di mostrare il paywall,
 // così l'utente non arriva alla scelta e poi viene rimbalzato indietro.
-function _goToPublishStep(skipPhotoReminder = false) {
+function _goToPublishStep() {
     if (!_validateStep(5)) return;
-    if (_files.length < 3 && !skipPhotoReminder) {
-        const reminder = document.getElementById('photoReminder');
-        document.getElementById('photoReminderText').textContent = _files.length === 0
-            ? 'Una foto aiuta a capire cosa vendi. Ne hai una del banco o del posteggio?'
-            : `Hai aggiunto ${_files.length} foto. Con 3 foto puoi mostrare anche lo spazio e il mercato intorno.`;
-        document.getElementById('photoReminderContinue').textContent = _files.length ? 'Continua con le foto attuali' : 'Continua senza foto';
-        reminder.classList.remove('hidden');
-        reminder.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-    }
     goToStep(6);
 }
 window._selectPubChoice = _selectPubChoice;
@@ -764,15 +744,15 @@ function _draftKey() { return _DRAFT_PREFIX + _draftOwner; }
 
 function _draftStatus(message, warning = false) {
     const el = document.getElementById('draftStatus');
-    el.textContent = message;
+    el.textContent = warning ? message : '';
+    el.hidden = !warning || !message;
     el.classList.toggle('warning', warning);
 }
 
 function _updateDraftStatus() {
     if (_draftWriteFailed) _draftStatus('La bozza non si è salvata. Tieni aperta questa pagina e riprova.', true);
     else if (_photoWriteFailed) _draftStatus('Dati salvati, ma le foto non si sono salvate nella bozza. Tieni aperta questa pagina oppure aggiungile di nuovo al ritorno.', true);
-    else if (_photosUnsaved) _draftStatus('Dati salvati. Salvataggio delle foto in corso…');
-    else _draftStatus('Bozza salvata su questo dispositivo. Puoi uscire e riprendere da qui.');
+    else _draftStatus('');
 }
 
 function _saveDraft() {
@@ -897,7 +877,6 @@ async function _applyPendingDraft(d) {
     _renderPhotos();
     goToStep(d.step || 2);
     const banner = document.getElementById('draftBanner');
-    document.getElementById('draftResumeText').textContent = 'Abbiamo ripreso la tua bozza, dal passo ' + _step + '. I dati' + (_files.length ? ' e le foto sono qui.' : ' sono qui.');
     banner.classList.remove('hidden');
     if (d.photoCount > _files.length) _draftStatus('Bozza ripresa. Alcune foto non erano salvate: aggiungile di nuovo prima di pubblicare.', true);
 }
@@ -1487,7 +1466,6 @@ function _handleFiles(files) {
     _draftStarted = true;
     _renderPhotos();
     _persistDraftPhotos();
-    document.getElementById('photoReminder').classList.add('hidden');
 }
 
 let _photoURLs = [];
@@ -1495,28 +1473,32 @@ function _renderPhotos() {
     _photoURLs.forEach(url => URL.revokeObjectURL(url));
     _photoURLs = [];
     preview.innerHTML = '';
+    const cover = document.getElementById('coverPreview');
+    cover.innerHTML = '';
+    cover.hidden = !_files.length;
+    dropzone.hidden = !!_files.length;
+    document.getElementById('additionalPhotos').hidden = !_files.length;
     _files.forEach((file, index) => {
         const url = URL.createObjectURL(file);
         _photoURLs.push(url);
         const div = document.createElement('div');
-        div.className = 'photo-tile';
+        div.className = index === 0 ? 'photo-tile photo-primary' : 'photo-tile';
         div.innerHTML = `<img src="${escapeHTML(url)}" alt="Foto ${index + 1} del posteggio"><button type="button" class="photo-remove" aria-label="Rimuovi foto ${index + 1}" onclick="removeFile(this)"><i class="fas fa-times"></i></button><button type="button" class="photo-cover" onclick="_setCover(${index})">${index === 0 ? 'Copertina' : 'Usa come copertina'}</button>`;
         _fileMap.set(div, file);
-        preview.appendChild(div);
+        (index === 0 ? cover : preview).appendChild(div);
     });
     const fair = document.getElementById('fTipo').value === 'Fiera';
-    document.getElementById('photoAdvice').innerHTML = `Punta a <strong>3 foto</strong>: il banco, lo spazio del posteggio e ${fair ? 'la fiera' : 'il mercato'} intorno. Puoi aggiungerne <strong>fino a 5, anche gratis</strong>.`;
-    const prompts = ['Il banco', 'Lo spazio', fair ? 'La fiera intorno' : 'Il mercato intorno'];
-    for (let i = _files.length; i < 3; i++) {
+    const prompts = ['Il banco da vicino', 'Lo spazio', fair ? 'La fiera intorno' : 'Il mercato intorno'];
+    for (let i = Math.max(0, _files.length - 1); _files.length && i < 3; i++) {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'photo-empty';
-        button.textContent = '+ ' + prompts[i];
+        button.innerHTML = '+ ' + prompts[i] + '<small>Facoltativa</small>';
         button.addEventListener('click', () => fileInput.click());
         preview.appendChild(button);
     }
-    document.getElementById('photoButtonText').textContent = _files.length ? 'Aggiungi altre foto' : 'Scegli le foto dal telefono';
-    document.getElementById('photoProgress').textContent = `${_files.length} foto su 5${_files.length >= 3 ? ' · Hai mostrato il posteggio da più punti di vista.' : ' · Consigliamo almeno 3 foto.'}`;
+    document.getElementById('addPhotoButton').hidden = _files.length < 4 || _files.length >= 5;
+    document.getElementById('photoProgress').textContent = `${_files.length} di 5 foto · anche gratis`;
     _renderPreview();
 }
 
@@ -2054,9 +2036,8 @@ function resetForm() {
     document.getElementById('annuncioForm').inert = false;
     document.getElementById('submitBtn').disabled = false;
     _refreshPublishChoiceUI();
-    document.getElementById('photoReminder').classList.add('hidden');
     document.getElementById('draftBanner').classList.add('hidden');
-    _draftStatus('La bozza si salva su questo dispositivo mentre compili.');
+    _draftStatus('');
     _draftReady = true;
     _renderPhotos();
     clearStepError();
