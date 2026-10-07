@@ -269,16 +269,16 @@
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
                     <h1 class="text-2xl font-black mb-1">Dove si trova?</h1>
-                    <p class="text-slate-500 font-medium mb-8 text-sm">Scegli il comune: regione e provincia le inseriamo noi.</p>
+                    <p class="text-slate-500 font-medium mb-8 text-sm">Scegli il comune o la frazione: regione e provincia le inseriamo noi.</p>
 
                     <div class="space-y-6">
                         <div>
-                            <label for="fComune" class="field-label">Comune *</label>
+                            <label for="fComune" class="field-label">Comune o frazione *</label>
                             <div class="comune-picker">
-                                <input id="fComune" type="text" placeholder="Scrivi il comune, es. Moniga" class="field-input" autocomplete="off" spellcheck="false" autocorrect="off">
+                                <input id="fComune" type="text" placeholder="Es. Moniga, Rivoltella, Monterusciello" class="field-input" autocomplete="off" spellcheck="false" autocorrect="off">
                                 <div id="comuniList" class="comune-suggestions" hidden></div>
                             </div>
-                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold">Scrivi almeno 2 lettere: i comuni compaiono qui sotto.</p>
+                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold">Scrivi almeno 2 lettere: comuni e frazioni compaiono qui sotto.</p>
                         </div>
                         <div class="grid grid-cols-2 gap-3">
                             <div>
@@ -638,7 +638,7 @@
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/data.js?v=17"></script>
-<script src="js/comune-picker.js?v=4"></script>
+<script src="js/comune-picker.js?v=5"></script>
 <script src="js/ui-components.js?v=11"></script>
 <script src="js/auth.js?v=21"></script>
 <script src="js/pages/vendi-support.js?v=1"></script>
@@ -1014,9 +1014,9 @@ function _validateStep(n) {
     clearStepError();
     if (n === 2) {
         if (!document.getElementById('fComune').value.trim())
-            return _fieldError('fComune', 'Inserisci il comune.');
+            return _fieldError('fComune', 'Inserisci il comune o la frazione.');
         if (!_comunePicker || !_comunePicker.getValue())
-            return _fieldError('fComune', 'Scegli il comune dall’elenco suggerito. Regione e provincia saranno inserite automaticamente.');
+            return _fieldError('fComune', 'Scegli il comune o la frazione dall’elenco suggerito. Regione e provincia saranno inserite automaticamente.');
     }
     if (n === 3) {
         const isFiera = document.getElementById('fTipo').value === 'Fiera';

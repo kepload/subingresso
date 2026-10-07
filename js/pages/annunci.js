@@ -34,7 +34,7 @@ const SECTOR_KEYWORDS = [
 ];
 const SEARCH_HISTORY_KEY = '_sub_searches';
 const PLACEHOLDER_TEXTS = [
-    'Cerca comune, città…',
+    'Cerca comune, frazione…',
     'Es. Milano, Roma, Napoli…',
     'Es. frutta, abbigliamento…',
     'Es. mercato settimanale…',

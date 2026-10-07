@@ -127,12 +127,12 @@
                             <input id="fTitolo" type="text" class="field-input">
                         </div>
                         <div>
-                            <label for="fComune" class="field-label">Comune *</label>
+                            <label for="fComune" class="field-label">Comune o frazione *</label>
                             <div class="comune-picker">
-                                <input id="fComune" type="text" class="field-input" autocomplete="off" spellcheck="false" autocorrect="off" placeholder="Scrivi il comune, es. Moniga">
+                                <input id="fComune" type="text" class="field-input" autocomplete="off" spellcheck="false" autocorrect="off" placeholder="Es. Moniga, Rivoltella, Monterusciello">
                                 <div id="comuniList" class="comune-suggestions" hidden></div>
                             </div>
-                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold">Scrivi almeno 2 lettere: i comuni compaiono qui sotto.</p>
+                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold">Scrivi almeno 2 lettere: comuni e frazioni compaiono qui sotto.</p>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
@@ -211,7 +211,7 @@
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/data.js?v=17"></script>
-<script src="js/comune-picker.js?v=4"></script>
+<script src="js/comune-picker.js?v=5"></script>
 <script src="js/auth.js?v=21"></script>
 <script>
 const params = new URLSearchParams(location.search);
@@ -378,7 +378,7 @@ async function updateAnnuncio() {
     const tel = document.getElementById('fTel').value.trim();
 
     if (!titolo || !location) {
-        showToast('Scegli un comune valido dall’elenco suggerito.', 'warning');
+        showToast('Scegli un comune o una frazione dall’elenco suggerito.', 'warning');
         return;
     }
     if (!nome || !tel) {

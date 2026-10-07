@@ -139,7 +139,7 @@ const server = http.createServer((req, res) => {
         const locationPage = await newPage(null, true);
         await locationPage.locator('.tipo-card').first().click();
         await locationPage.locator('#fComune').fill('Moniga');
-        await locationPage.getByRole('option', {name:/Moniga del Garda/}).waitFor({state:'visible'});
+        await locationPage.getByRole('option', {name:/^Moniga del Garda/}).waitFor({state:'visible'});
         if (process.env.FORM_SCREENSHOT_DIR) {
             fs.mkdirSync(process.env.FORM_SCREENSHOT_DIR, {recursive:true});
             await locationPage.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR, 'comuni-vendita-mobile.png'),fullPage:true});
@@ -157,6 +157,15 @@ const server = http.createServer((req, res) => {
         await next(locationPage, 2);
         assert.equal(await locationPage.locator('#fProvincia').inputValue(), 'Lecce');
         assert.equal(await locationPage.evaluate(key => JSON.parse(localStorage.getItem(key)).regione, draftKey('guest')), 'Puglia');
+        await locationPage.locator('#step3').getByRole('button', {name:'Indietro'}).click();
+        await locationPage.locator('#fComune').fill('Rivoltella');
+        await locationPage.getByRole('option').filter({hasText:'Rivoltella (Desenzano del Garda)'}).click();
+        await next(locationPage, 2);
+        await locationPage.reload();
+        await active(locationPage, 3);
+        assert.equal(await locationPage.locator('#fComune').inputValue(), 'Rivoltella (Desenzano del Garda)');
+        assert.equal(await locationPage.locator('#fProvincia').inputValue(), 'Brescia');
+        assert.equal(await locationPage.evaluate(key => JSON.parse(localStorage.getItem(key)).comune, draftKey('guest')), 'Rivoltella (Desenzano del Garda)');
         await locationPage.context().close();
         console.log('OK: Moniga abbreviato con Avanti, lista visibile, omonimi e bozza aggiornata dopo la scelta.');
 
@@ -261,6 +270,7 @@ const server = http.createServer((req, res) => {
 
         const fair = await newPage(ownerB);
         await fillWizard(fair,true);
+        await fair.evaluate(() => _comunePicker.setValue('Monterusciello (Pozzuoli)', 'Campania'));
         const fairDescription = await fair.locator('#fDescrizione').inputValue();
         assert.match(fairDescription,/Ogni febbraio, un giorno/);
         assert(!/\[giorni\]|Sabato|undefined/.test(fairDescription));
@@ -272,6 +282,9 @@ const server = http.createServer((req, res) => {
         assert.equal(inserts[1].giorni,'Ogni febbraio, un giorno');
         assert.equal(inserts[1].dettagli_extra.nome_fiera,'Fiera di San Faustino');
         assert.equal(inserts[1].img_urls.length,0);
+        assert.equal(inserts[1].comune,'Monterusciello (Pozzuoli)');
+        assert.equal(inserts[1].provincia,'Napoli');
+        assert.equal(inserts[1].regione,'Campania');
         console.log('OK: fiera senza giorni settimanali, periodo libero, descrizione corretta e foto facoltative.');
 
         const guest = await newPage();
@@ -364,23 +377,26 @@ const server = http.createServer((req, res) => {
 
         const edit = await newPage(ownerA);
         // Existing listing supplied before the inline edit initialization.
-        await edit.context().route('**/js/supabase-config.js*', route=>route.fulfill({contentType:'text/javascript',body:fs.readFileSync(path.join(root,'js/supabase-config.js'),'utf8')+`\nwindow.__testListing=${JSON.stringify({id:'test-id',user_id:ownerA,titolo:'Titolo',comune:'Brescia',regione:'Lombardia',superficie:24,prezzo:15000,descrizione:'Descrizione del posteggio',stato:'Vendita',contatto:'Test',img_urls:['https://example.invalid/old.png'],dettagli_extra:{}})};`}));
+        await edit.context().route('**/js/supabase-config.js*', route=>route.fulfill({contentType:'text/javascript',body:fs.readFileSync(path.join(root,'js/supabase-config.js'),'utf8')+`\nwindow.__testListing=${JSON.stringify({id:'test-id',user_id:ownerA,titolo:'Titolo',comune:'Rivoltella (Desenzano del Garda)',regione:'Lombardia',superficie:24,prezzo:15000,descrizione:'Descrizione del posteggio',stato:'Vendita',contatto:'Test',img_urls:['https://example.invalid/old.png'],dettagli_extra:{}})};`}));
         await edit.goto(base+'/modifica-annuncio?id=test-id');
         try { await edit.locator('#editContainer').waitFor({state:'visible'}); }
         catch (error) { console.error('Edit page diagnostics:',errors,await edit.url()); throw error; }
+        await edit.waitForFunction(() => !!_comunePicker.getValue());
+        assert.equal(await edit.locator('#fComune').inputValue(), 'Rivoltella (Desenzano del Garda)');
+        assert.equal(await edit.locator('#fProvincia').inputValue(), 'Brescia');
         await edit.locator('#fileInput').setInputFiles(photos(4));
         await edit.waitForFunction(()=>_newFiles.length===4 && document.querySelectorAll('#previewContainer img').length===5);
         await edit.locator('#previewContainer button').nth(2).click();
         assert.equal(await edit.evaluate(()=>_newFiles.length),3);
         assert.equal(await edit.evaluate(()=>_newFiles[1].name),'foto-2.png');
         await edit.locator('#fComune').fill('Moniga');
-        await edit.getByRole('option', {name:/Moniga del Garda/}).click();
+        await edit.getByRole('option', {name:/^Moniga del Garda/}).click();
         assert.equal(await edit.locator('#fProvincia').inputValue(), 'Brescia');
         await edit.context().route('**/data/comuni-picker.json*', route => route.fulfill({status:503,body:'unavailable'}));
         await edit.reload();
         await edit.locator('#editContainer').waitFor({state:'visible'});
         await edit.getByRole('button', {name:'Riprova a caricare i comuni'}).waitFor({state:'visible'});
-        assert.equal(await edit.locator('#fComune').inputValue(), 'Brescia');
+        assert.equal(await edit.locator('#fComune').inputValue(), 'Rivoltella (Desenzano del Garda)');
         await edit.context().unroute('**/data/comuni-picker.json*');
         await edit.getByRole('button', {name:'Riprova a caricare i comuni'}).click();
         await edit.waitForFunction(() => !!_comunePicker.getValue());

@@ -11,7 +11,7 @@ const rows = require('../data/comuni-picker.json');
 const canonicalRegion = region => region.replace('/Südtirol', '').replace("/Vallée d'Aoste", '');
 const regions = [...new Set(rows.map(row => canonicalRegion(row.regione)))];
 const fixture = `<!doctype html><html lang="it"><meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/css/comune-picker.css"><style>body{font:16px Arial;padding:24px}.comune-picker{max-width:450px}input{box-sizing:border-box;width:100%;padding:14px}</style>
+<link rel="stylesheet" href="/css/comune-picker.css"><style>body{font:16px Arial;padding:24px}.comune-picker{max-width:450px}input{box-sizing:border-box;width:100%;padding:14px}#next{display:block;margin-top:300px}</style>
 <label for="comune">Comune</label><div class="comune-picker"><input id="comune" autocomplete="off"><div id="suggestions" class="comune-suggestions" hidden></div></div>
 <p id="status"></p><input id="provincia" readonly><select id="regione" disabled><option value=""></option></select><button id="next">Avanti</button>
 <script src="/js/comune-picker.js"></script><script>
@@ -87,9 +87,18 @@ async function check(engine, name, mobile, base) {
         ]) { await input.fill(raw); await expectValue(comune, provincia, regione); }
         await page.evaluate(() => picker.setValue('Castro', 'Puglia'));
         await expectValue('Castro', 'Lecce', 'Puglia');
+        await input.fill('Rivoltella');
+        assert.equal(await value(), null, 'le frazioni omonime richiedono una scelta');
+        await choose(page.getByRole('option').filter({hasText:'Rivoltella (Desenzano del Garda)'}));
+        await expectValue('Rivoltella (Desenzano del Garda)', 'Brescia', 'Lombardia');
+        await page.evaluate(() => picker.setValue('Rivoltella (Desenzano del Garda)', 'Lombardia'));
+        await expectValue('Rivoltella (Desenzano del Garda)', 'Brescia', 'Lombardia');
+        await input.fill('Monterusciello');
+        await choose(page.getByRole('option').filter({hasText:'Monterusciello (Pozzuoli)'}));
+        await expectValue('Monterusciello (Pozzuoli)', 'Napoli', 'Campania');
         await input.fill('Monigaa');
         assert.equal(await value(), null, 'i refusi non vengono corretti in silenzio');
-        await choose(page.getByRole('option', {name:/Moniga del Garda/}));
+        await choose(page.getByRole('option', {name:/^Moniga del Garda/}));
         await expectValue('Moniga del Garda', 'Brescia', 'Lombardia');
         await input.fill('zzzzzzzz');
         assert.equal(await value(), null);
@@ -116,8 +125,8 @@ async function check(engine, name, mobile, base) {
         assert.match(await page.locator('#status').innerText(), /Caricamento/);
         release();
         await page.evaluate(() => picker.ready);
-        await page.getByRole('option', {name:/Moniga del Garda/}).waitFor({state:'visible'});
-        await choose(page.getByRole('option', {name:/Moniga del Garda/}));
+        await page.getByRole('option', {name:/^Moniga del Garda/}).waitFor({state:'visible'});
+        await choose(page.getByRole('option', {name:/^Moniga del Garda/}));
         await expectValue('Moniga del Garda', 'Brescia', 'Lombardia');
         await page.unroute('**/data/comuni-picker.json*');
 
@@ -132,10 +141,24 @@ async function check(engine, name, mobile, base) {
         await input.fill('Moniga');
         await choose(page.getByRole('button', {name:'Riprova a caricare i comuni'}));
         await page.evaluate(() => picker.ready);
-        await choose(page.getByRole('option', {name:/Moniga del Garda/}));
+        await choose(page.getByRole('option', {name:/^Moniga del Garda/}));
         await expectValue('Moniga del Garda', 'Brescia', 'Lombardia');
         assert.equal(attempts, 3);
         await page.unroute('**/data/comuni-picker.json*');
+        let localitaAttempts = 0;
+        await page.route('**/data/localita.json*', route => {
+            localitaAttempts++;
+            return localitaAttempts <= 2 ? route.fulfill({status:503,body:'offline'}) : route.continue();
+        });
+        await page.goto(base + '/picker');
+        await input.fill('Monterusciello');
+        await page.getByRole('button', {name:'Riprova a caricare i comuni'}).waitFor({state:'visible'});
+        assert.equal(localitaAttempts, 2);
+        await choose(page.getByRole('button', {name:'Riprova a caricare i comuni'}));
+        await page.evaluate(() => picker.ready);
+        await choose(page.getByRole('option').filter({hasText:'Monterusciello (Pozzuoli)'}));
+        await expectValue('Monterusciello (Pozzuoli)', 'Napoli', 'Campania');
+        await page.unroute('**/data/localita.json*');
         await page.route('**/data/comuni-picker.json*', route => route.fulfill({status:503,body:'unavailable'}));
         await page.goto(base + '/picker');
         await page.evaluate(() => picker.setValue('Castro', 'Puglia').catch(() => {}));

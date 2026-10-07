@@ -51,23 +51,50 @@
         return regione;
     }
 
-    async function fetchComuni(cache) {
+    async function fetchDataset(url, cache) {
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 8000);
         try {
-            const response = await fetch('/data/comuni-picker.json?v=20260221', { cache, signal: controller.signal });
-            if (!response.ok) throw new Error('Elenco comuni non disponibile');
-            const rows = await response.json();
-            if (!Array.isArray(rows) || !rows.length || rows.some(row => !row.nome || !row.codiceIstat || !row.regione || !row.sigla || !row.provincia)) {
-                throw new Error('Elenco comuni incompleto');
-            }
-            return rows.map(row => ({
-                ...row, _key: normalize(row.nome),
-                _keys: [normalize(row.nome), ...Object.keys(COMUNE_ALIASES).filter(alias => COMUNE_ALIASES[alias] === row.nome)]
-            }));
+            const response = await fetch(url, { cache, signal: controller.signal });
+            if (!response.ok) throw new Error('Elenco località non disponibile');
+            return await response.json();
         } finally {
             clearTimeout(timeout);
         }
+    }
+
+    async function fetchComuni(cache) {
+        const [rows, localita] = await Promise.all([
+            fetchDataset('/data/comuni-picker.json?v=20260221', cache),
+            fetchDataset('/data/localita.json?v=20261007', cache)
+        ]);
+        if (!Array.isArray(rows) || !rows.length || rows.some(row => !row.nome || !row.codiceIstat || !row.regione || !row.sigla || !row.provincia)) {
+            throw new Error('Elenco comuni incompleto');
+        }
+        if (localita.schemaVersion !== 1 || !Array.isArray(localita.localita) || !localita.localita.length) {
+            throw new Error('Elenco frazioni incompleto');
+        }
+        const comuni = rows.map(row => ({
+            ...row, id: row.codiceIstat, _key: normalize(row.nome),
+            _keys: [normalize(row.nome), ...Object.keys(COMUNE_ALIASES).filter(alias => COMUNE_ALIASES[alias] === row.nome)]
+        }));
+        const byCode = new Map(comuni.map(row => [row.codiceIstat, row]));
+        const places = localita.localita.map(entry => {
+            const [geonameId, nomeLocalita, codiceIstat, lat, lng, aliases = []] = entry;
+            const parent = byCode.get(codiceIstat);
+            if (!parent || !geonameId || typeof nomeLocalita !== 'string' || !nomeLocalita.trim() || !Number.isFinite(lat) || !Number.isFinite(lng) || !Array.isArray(aliases)) {
+                throw new Error('Località senza comune o coordinate');
+            }
+            const nome = `${nomeLocalita} (${parent.nome})`;
+            const names = [nomeLocalita, ...aliases];
+            return {
+                nome, nomeLocalita, comune: parent.nome, codiceIstat, lat, lng,
+                id: `geonames:${geonameId}`, provincia: parent.provincia, sigla: parent.sigla, regione: parent.regione,
+                _key: normalize(nome),
+                _keys: [...new Set([normalize(nome), ...names.flatMap(name => [normalize(name), normalize(`${name} ${parent.nome}`)])])]
+            };
+        });
+        return [...comuni, ...places];
     }
 
     function loadComuni() {
@@ -116,7 +143,7 @@
         comuneInput.setAttribute('aria-describedby', statusEl.id);
         comuneInput.setAttribute('aria-expanded', 'false');
         suggestionsEl.setAttribute('role', 'listbox');
-        suggestionsEl.setAttribute('aria-label', 'Comuni suggeriti');
+        suggestionsEl.setAttribute('aria-label', 'Comuni e frazioni suggeriti');
 
         function status(message, tone = 'slate') {
             statusEl.textContent = message;
@@ -142,11 +169,11 @@
             selected = record;
             restoredRegion = null;
             comuneInput.value = record.nome;
-            comuneInput.dataset.comuneKey = record.codiceIstat;
+            comuneInput.dataset.comuneKey = record.id;
             regioneSelect.value = canonicalRegion(record.regione);
             provinciaInput.value = record.provincia;
             comuneInput.removeAttribute('aria-invalid');
-            status(`Comune selezionato: ${record.nome} · ${record.provincia} (${record.sigla}) · ${canonicalRegion(record.regione)}`, 'emerald');
+            status(`${record.nomeLocalita ? 'Località' : 'Comune'} selezionato: ${record.nome} · ${record.provincia} (${record.sigla}) · ${canonicalRegion(record.regione)}`, 'emerald');
             closeSuggestions();
             if (notify) comuneInput.dispatchEvent(new Event('change', { bubbles: true }));
         }
@@ -156,11 +183,15 @@
             const cleanValue = String(rawValue || '').replace(/\s*\([A-Z]{2}\)\s*$/i, '');
             const enteredKey = normalize(cleanValue);
             const key = normalize(COMUNE_ALIASES[enteredKey] || cleanValue);
-            let matches = comuni.filter(row => row._key === key);
+            let matches = comuni.filter(row => row._keys.includes(key));
             if (siglaMatch) matches = matches.filter(row => row.sigla.toLowerCase() === siglaMatch[1].toLowerCase());
+            const official = matches.filter(row => !row.nomeLocalita);
+            if (official.length) matches = official;
             if (!matches.length && key.length >= 3) {
                 matches = comuni.filter(row => row._keys.some(name => name.startsWith(key)));
                 if (siglaMatch) matches = matches.filter(row => row.sigla.toLowerCase() === siglaMatch[1].toLowerCase());
+                const municipalities = matches.filter(row => !row.nomeLocalita);
+                if (municipalities.length) matches = municipalities;
             }
             if (matches.length > 1 && preferredRegion) {
                 const regional = matches.filter(row => canonicalRegion(row.regione) === canonicalRegion(preferredRegion));
@@ -173,21 +204,24 @@
             closeSuggestions();
             suggestionsEl.replaceChildren();
             suggestions = [];
-            if (loading) { status('Caricamento dei comuni… Puoi già scrivere il nome.'); return; }
-            if (loadFailed) { status('I comuni non si sono caricati. Premi Riprova: quello che hai scritto resta qui.', 'red'); return; }
+            if (loading) { status('Caricamento di comuni e frazioni… Puoi già scrivere il nome.'); return; }
+            if (loadFailed) { status('Comuni e frazioni non si sono caricati. Premi Riprova: quello che hai scritto resta qui.', 'red'); return; }
             const key = normalize(String(rawValue || '').replace(/\s*\([A-Z]{2}\)\s*$/i, ''));
             const siglaMatch = String(rawValue || '').match(/\(([A-Z]{2})\)\s*$/i);
-            if (key.length < 2) { status('Scrivi almeno 2 lettere: i comuni compaiono qui sotto.'); return; }
+            if (key.length < 2) { status('Scrivi almeno 2 lettere: comuni e frazioni compaiono qui sotto.'); return; }
             const words = key.split(' ').filter(Boolean);
-            const exact = comuni.filter(row => row._keys.includes(key));
-            const starts = comuni.filter(row => !exact.includes(row) && row._keys.some(name => name.startsWith(key)));
-            const contains = exact.length + starts.length >= 20 ? [] : comuni.filter(row =>
-                !exact.includes(row) && !starts.includes(row) && row._keys.some(name => words.every(word => name.includes(word)))
+            const candidates = siglaMatch ? comuni.filter(row => row.sigla.toLowerCase() === siglaMatch[1].toLowerCase()) : comuni;
+            const exact = candidates.filter(row => row._keys.includes(key));
+            const exactSet = new Set(exact);
+            const starts = candidates.filter(row => !exactSet.has(row) && row._keys.some(name => name.startsWith(key)));
+            const startsSet = new Set(starts);
+            const contains = exact.length + starts.length >= 20 ? [] : candidates.filter(row =>
+                !exactSet.has(row) && !startsSet.has(row) && row._keys.some(name => words.every(word => name.includes(word)))
             );
             let matches = [...exact, ...starts, ...contains];
             let fuzzy = false;
             if (!matches.length && key.length >= 4) {
-                matches = comuni.filter(row => row._keys.some(name =>
+                matches = candidates.filter(row => row._keys.some(name =>
                     [name, name.slice(0, key.length - 1).trim(), name.slice(0, key.length).trim(), name.slice(0, key.length + 1).trim()]
                         .some(candidate => oneEditApart(key, candidate))
                 ));
@@ -206,7 +240,7 @@
                 name.textContent = `${row.nome} (${row.sigla})`;
                 const detail = document.createElement('span');
                 detail.className = 'comune-option-detail';
-                detail.textContent = `${row.provincia} · ${canonicalRegion(row.regione)}`;
+                detail.textContent = `${row.nomeLocalita ? 'Località · ' : ''}${row.provincia} · ${canonicalRegion(row.regione)}`;
                 option.append(name, detail);
                 // Mantiene il focus: blur non deve scegliere un altro comune prima del tocco.
                 option.addEventListener('pointerdown', event => event.preventDefault());
@@ -214,13 +248,13 @@
                 suggestionsEl.appendChild(option);
             });
             if (!suggestions.length) {
-                status('Nessun comune trovato. Controlla il nome o scrivi solo la prima parte.', 'red');
+                status('Nessun comune o frazione trovato. Controlla il nome o scrivi solo la prima parte.', 'red');
                 return;
             }
-            status(fuzzy ? 'Forse cercavi uno di questi comuni? Tocca quello corretto.' :
-                matches.length > 20 ? 'Tocca il comune oppure scrivi altre lettere per restringere la lista.' :
-                resolve(rawValue) ? 'Tocca il comune suggerito oppure prosegui: lo completiamo noi.' :
-                'Tocca il comune corretto nella lista qui sotto.');
+            status(fuzzy ? 'Forse cercavi uno di questi luoghi? Tocca quello corretto.' :
+                matches.length > 20 ? 'Tocca il luogo oppure scrivi altre lettere per restringere la lista.' :
+                resolve(rawValue) ? 'Tocca il luogo suggerito oppure prosegui: lo completiamo noi.' :
+                'Tocca il comune o la frazione corretta nella lista qui sotto.');
             if (document.activeElement === comuneInput) {
                 suggestionsEl.hidden = false;
                 comuneInput.setAttribute('aria-expanded', 'true');
@@ -228,7 +262,7 @@
         }
 
         function commit() {
-            if (selected && comuneInput.value === selected.nome && comuneInput.dataset.comuneKey === selected.codiceIstat) return selected;
+            if (selected && comuneInput.value === selected.nome && comuneInput.dataset.comuneKey === selected.id) return selected;
             const found = resolve(comuneInput.value, restoredRegion);
             if (found) apply(found);
             else clearSelection();

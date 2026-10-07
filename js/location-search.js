@@ -4,6 +4,9 @@
     const { normalize, canonicalRegion } = window.ComuniItaliani;
     const compact = value => normalize(value).replace(/\b(?:s|san|sant|santo|santa)\b/g, 'san').replace(/ /g, '');
     let rows = [];
+    let exactNames = new Map();
+    let rowsById = new Map();
+    let provinceCodes = new Set();
     let geo = [];
     let readyPromise;
 
@@ -12,6 +15,13 @@
             readyPromise = window.ComuniItaliani.load().then(data => {
                 rows = data.map(row => ({ ...row, _compact: row._keys.map(compact),
                     _context: normalize(`${row.nome} ${row.provincia} ${row.sigla} ${row.regione}`) }));
+                exactNames = new Map();
+                rowsById = new Map(rows.map(row => [row.id, row]));
+                provinceCodes = new Set(rows.map(row => row.sigla));
+                for (const row of rows) for (const key of new Set([...row._keys, ...row._compact])) {
+                    if (!exactNames.has(key)) exactNames.set(key, []);
+                    exactNames.get(key).push(row);
+                }
                 return rows;
             }).catch(error => { readyPromise = null; throw error; });
         }
@@ -44,8 +54,16 @@
 
     function parse(value) {
         const raw = String(value || '').trim();
-        const province = raw.match(/\(([a-z]{2})\)\s*$/i);
-        const key = normalize(raw.replace(/\s*\([a-z]{2}\)\s*$/i, '').replace(/^comune\s+di\s+/i, ''));
+        let province = raw.match(/\(([a-z]{2})\)\s*$/i);
+        let name = raw.replace(/\s*\([a-z]{2}\)\s*$/i, '');
+        if (!province && !exactNames.has(normalize(raw))) {
+            const suffix = raw.match(/\s+([a-z]{2})\s*$/i);
+            if (suffix && provinceCodes.has(suffix[1].toUpperCase())) {
+                province = suffix;
+                name = raw.slice(0, suffix.index);
+            }
+        }
+        const key = normalize(name.replace(/^comune\s+di\s+/i, ''));
         return { key, packed: compact(key), sigla: province ? province[1].toUpperCase() : '' };
     }
 
@@ -72,6 +90,11 @@
     function match(value, limit = 20) {
         const { key, packed, sigla } = parse(value);
         if (key.length < 2) return [];
+        const exact = [...new Set([...(exactNames.get(key) || []), ...(exactNames.get(packed) || [])])]
+            .filter(row => !sigla || row.sigla === sigla);
+        if (exact.length) return exact.sort((a, b) => Number(!!a.nomeLocalita) - Number(!!b.nomeLocalita) ||
+            a.nome.localeCompare(b.nome, 'it') || a.sigla.localeCompare(b.sigla)).slice(0, limit)
+            .map(row => ({ row, rank: 0, fuzzy: false }));
         const words = key.split(' ');
         const candidates = sigla ? rows.filter(row => row.sigla === sigla) : rows;
         let found = [];
@@ -96,26 +119,33 @@
                 if (best <= maxEdits) found.push({ row, rank: 4 + best, fuzzy: true });
             }
         }
-        found.sort((a, b) => a.rank - b.rank || a.row.nome.localeCompare(b.row.nome, 'it') || a.row.sigla.localeCompare(b.row.sigla));
+        found.sort((a, b) => a.rank - b.rank || Number(!!a.row.nomeLocalita) - Number(!!b.row.nomeLocalita) ||
+            a.row.nome.localeCompare(b.row.nome, 'it') || a.row.sigla.localeCompare(b.row.sigla));
         return found.slice(0, limit);
     }
 
     function resolve(value, code) {
         if (code) {
-            const chosen = rows.find(row => row.codiceIstat === code);
+            const chosen = rowsById.get(code);
             if (chosen && (parse(value).key === chosen._key || match(value, 1)[0]?.row === chosen)) return chosen;
         }
         const matches = match(value, rows.length);
         const exact = matches.filter(item => item.rank === 0);
+        const official = exact.filter(item => !item.row.nomeLocalita);
+        if (official.length) return official.length === 1 ? official[0].row : null;
         if (exact.length) return exact.length === 1 ? exact[0].row : null;
         const prefixes = matches.filter(item => item.rank === 1);
-        if (prefixes.length) return prefixes.length === 1 ? prefixes[0].row : null;
+        const municipalities = prefixes.filter(item => !item.row.nomeLocalita);
+        if (municipalities.length) return municipalities.length === 1 ? municipalities[0].row : null;
+        // I prefissi delle località richiedono una scelta: "frutta" resta una ricerca per settore.
+        if (prefixes.length) return null;
         const contextual = matches.filter(item => item.rank === 3);
         return contextual.length === 1 ? contextual[0].row : null;
     }
 
     function coordinates(record) {
         if (!record) return null;
+        if (record.nomeLocalita && Number.isFinite(record.lat) && Number.isFinite(record.lng)) return [record.lat, record.lng];
         let candidates = geo.filter(row => row.codiceIstat === record.codiceIstat);
         if (!candidates.length) candidates = geo.filter(row => row._key === record._key && canonicalRegion(row.regione) === canonicalRegion(record.regione));
         if (!candidates.length) candidates = geo.filter(row => record._keys.includes(row._key) && canonicalRegion(row.regione) === canonicalRegion(record.regione));
@@ -125,8 +155,10 @@
 
     function listingCoordinates(name, region, province) {
         const key = parse(name).key;
-        const current = rows.filter(row => row._keys.includes(key) && (!region || canonicalRegion(row.regione) === canonicalRegion(region)) &&
+        let current = (exactNames.get(key) || []).filter(row => (!region || canonicalRegion(row.regione) === canonicalRegion(region)) &&
             (!province || normalize(row.provincia) === normalize(province) || row.sigla === province));
+        const official = current.filter(row => !row.nomeLocalita);
+        if (official.length) current = official;
         if (current.length === 1) return coordinates(current[0]);
         if (!current.length) {
             const abbreviated = resolve(name);
@@ -214,9 +246,9 @@
                 recent.forEach(label => add(label, '', { label, history: true }));
             } else {
                 if (key.length < 2) return;
-                if (loading) note('Caricamento dei comuni… Puoi continuare a scrivere.');
+                if (loading) note('Caricamento di comuni e frazioni… Puoi continuare a scrivere.');
                 else if (failed) {
-                    note('Non siamo riusciti a caricare i comuni. Il testo resta qui.');
+                    note('Non siamo riusciti a caricare comuni e frazioni. Il testo resta qui.');
                     const retry = document.createElement('button');
                     retry.type = 'button';
                     retry.className = 'location-retry';
@@ -226,8 +258,8 @@
                 } else {
                     const matches = match(value);
                     if (matches.length) {
-                        note(matches[0].fuzzy ? 'Forse cercavi uno di questi comuni?' : 'Comuni · scegli il luogo');
-                        matches.forEach(({ row }) => add(`${row.nome} (${row.sigla})`, `${row.provincia} · ${canonicalRegion(row.regione)}`, { label: row.nome, row }));
+                        note(matches[0].fuzzy ? 'Forse cercavi uno di questi luoghi?' : 'Comuni e frazioni · scegli il luogo');
+                        matches.forEach(({ row }) => add(`${row.nome} (${row.sigla})`, `${row.nomeLocalita ? 'Località · ' : ''}${row.provincia} · ${canonicalRegion(row.regione)}`, { label: row.nome, row }));
                         if (matches.length === 20) note('Scrivi altre lettere o la provincia per restringere la lista.');
                     }
                 }
@@ -235,7 +267,7 @@
                 if (other.length) { note('Regioni'); other.forEach(label => add(label, '', { label })); }
                 const sectors = keywords.filter(name => normalize(name).includes(key)).slice(0, 3);
                 if (sectors.length) { note('Settori'); sectors.forEach(label => add(label, '', { label })); }
-                if (!options.length && !loading && !failed) note('Nessun comune trovato. Prova con la prima parte del nome.');
+                if (!options.length && !loading && !failed) note('Nessun comune o frazione trovato. Prova con la prima parte del nome.');
             }
             if (document.activeElement === input) {
                 box.hidden = false;
@@ -303,11 +335,13 @@
                 if (!value.trim()) { selected = null; close(); return true; }
                 await currentReady;
                 if (version !== revision || value !== input.value) return false;
-                selected = this.selected || resolve(input.value);
+                const isKeyword = keywords.some(word => normalize(word) === normalize(input.value));
+                selected = this.selected || (isKeyword ? null : resolve(input.value));
                 if (selected) input.value = selected.nome;
                 else {
                     const matches = match(input.value);
-                    if (matches.length && (matches[0].fuzzy || matches.filter(item => item.rank <= 1).length > 1)) {
+                    if (!isKeyword && matches.length && (matches[0].fuzzy || matches.filter(item => item.rank <= 1).length > 1 ||
+                        (matches[0].rank === 1 && matches[0].row.nomeLocalita))) {
                         input.focus(); show(); return false;
                     }
                 }

@@ -102,7 +102,7 @@
                 <div class="flex-grow flex items-center px-5 gap-3">
                     <i class="fas fa-search text-blue-500 text-sm"></i>
                     <input id="searchInput" type="text" autocomplete="off"
-                           placeholder="Cerca per comune, città o regione…"
+                           placeholder="Cerca comune, frazione o regione…"
                            class="w-full py-3.5 text-slate-800 outline-none font-semibold text-sm placeholder:text-slate-300 placeholder:font-normal bg-transparent">
                 </div>
                 <button onclick="doSearch()"
@@ -326,8 +326,8 @@
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/data.js?v=17"></script>
-<script src="js/comune-picker.js?v=4"></script>
-<script src="js/location-search.js?v=1"></script>
+<script src="js/comune-picker.js?v=5"></script>
+<script src="js/location-search.js?v=2"></script>
 <script src="js/ui-components.js?v=11"></script>
 <script src="js/auth.js?v=21"></script>
 <script>
@@ -345,7 +345,7 @@ async function doSearch() {
     const q = input.value.trim();
     const query = new URLSearchParams();
     if (q) query.set('q', q);
-    if (locationSearch.selected) query.set('comune', locationSearch.selected.codiceIstat);
+    if (locationSearch.selected) query.set('comune', locationSearch.selected.id);
     window.location.href = '/annunci' + (query.size ? '?' + query.toString() : '');
 }
 
