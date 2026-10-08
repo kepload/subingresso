@@ -35,6 +35,8 @@ Snapshot full del repo (escluso `node_modules`) anche in:
 
 L'utente è un **vibe coder**, non un programmatore. Risposte **corte, semplici, italiane, zero gergo**. Niente papiri tecnici, niente muri di testo. Dopo una modifica spiega in 1-2 frasi **cosa cambia per lui**. Fai il lavoro, spiega poco.
 
+Dashboard admin: pochi numeri e grafici utili. Spiegazioni e dettagli nei pannelli apribili, senza muri di testo (preferenza utente, 8 ottobre 2026).
+
 - ❌ "Ho ridefinito la RPC `admin_x()` con `SECURITY DEFINER` e propagato i grants…"
 - ✅ "Aggiunto pannello Avvisi. Apri dashboard, lo vedi sopra Performance blog."
 

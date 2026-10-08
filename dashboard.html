@@ -212,17 +212,23 @@
         <!-- ── ADMIN PANEL (Exclusive) ── -->
         <div id="adminPanel" class="hidden space-y-6">
             <section class="acr" id="adminControlRoom" aria-label="Controllo amministrazione">
-                <div class="acr-head"><div><h3>Il sito sotto controllo</h3><p>Dati da verificare, richieste aperte, scadenze e incassi. Aggiornamento automatico ogni minuto mentre questa pagina è visibile.</p></div><button type="button" id="acrRefresh" class="acr-refresh">Aggiorna</button></div>
+                <div class="acr-head"><div><h3>Il sito sotto controllo</h3><p id="acrState" class="acr-state" role="status">Caricamento…</p></div><button type="button" id="acrRefresh" class="acr-refresh">Aggiorna</button></div>
                 <div class="acr-body">
-                    <p id="acrState" class="acr-state" role="status">Caricamento dei controlli…</p>
-                    <div id="acrMetrics" class="acr-grid"></div><nav id="acrTasks" class="acr-tasks" aria-label="Attività amministratore"></nav>
-                    <h4>Dati da verificare</h4><p class="acr-note">I controlli verificano formato e coerenza. Prezzi, superfici, incassi e recapiti restano dichiarazioni dell’utente: la loro veridicità richiede una verifica diretta. Il telefono mancante nel profilo è facoltativo.</p>
-                    <details id="acrQualityDetails"><summary id="acrQualitySummary" class="acr-note" style="font-weight:800;cursor:pointer">Apri elenco dei dati da verificare</summary>
+                    <div id="acrMetrics" class="acr-grid"></div>
+                    <div class="acr-charts">
+                        <div class="acr-chart"><h4>Controlli annunci <span>Formato e coerenza</span></h4><div id="acrQualityChart" class="acr-quality-chart"></div></div>
+                        <div class="acr-chart"><h4>Attività <span>Ultimi 30 giorni</span></h4><div id="acrActivityChart" class="acr-bars"></div></div>
+                    </div>
+                    <nav id="acrTasks" class="acr-tasks" aria-label="Attività amministratore"></nav>
+                    <details id="acrQualityDetails" class="acr-details"><summary id="acrQualitySummary">Dati da verificare</summary>
+                    <p class="acr-note">Controlli di formato e coerenza, non verifica delle dichiarazioni. Telefono profilo facoltativo. I dati storici restano conservati.</p>
                     <div class="acr-toolbar"><label for="acrFilter">Mostra</label><select id="acrFilter"><option value="all">Tutti i dati</option><option value="annuncio">Annunci</option><option value="profilo">Profili</option><option value="alert">Avvisi geografici</option></select><button type="button" id="acrExport">Esporta elenco CSV</button></div>
                     <div id="acrIssues" class="acr-list"></div><div class="acr-page"><button type="button" id="acrPrevious" disabled>Precedenti</button><span id="acrPageInfo"></span><button type="button" id="acrNext" disabled>Successivi</button></div>
                     </details>
-                    <h4>Automazioni</h4><div id="acrJobs" class="acr-jobs"></div><p class="acr-note">L’esecuzione del programma pianificato conferma la chiamata al servizio. L’esito di ricerca bandi e consegna email va controllato nei pannelli dedicati.</p>
+                    <details id="acrAutomationDetails" class="acr-details"><summary>Automazioni <span id="acrJobsSummary" class="acr-job-summary"></span></summary>
+                    <div id="acrJobs" class="acr-jobs"></div><p class="acr-note">Stato delle chiamate pianificate. Bandi trovati e consegna email nei rispettivi pannelli.</p>
                     <p id="acrCoverage" class="acr-note"></p>
+                    </details>
                 </div>
             </section>
             <!-- Stats Cards -->
@@ -1277,8 +1283,8 @@
 <script src="js/vetrina-account.js?v=1"></script>
 <script src="js/auth.js?v=22"></script>
 <script src="js/blog-generator.js?v=3"></script>
-<link rel="stylesheet" href="css/admin-control-room.css?v=1">
-<script src="js/admin-control-room.js?v=1"></script>
+<link rel="stylesheet" href="css/admin-control-room.css?v=2">
+<script src="js/admin-control-room.js?v=2"></script>
 <dialog id="acrUserDialog" class="acr-dialog" aria-labelledby="acrUserTitle"><button type="button" id="acrUserClose" aria-label="Chiudi dettagli utente">Chiudi</button><h3 id="acrUserTitle">Dettagli utente</h3><div id="acrUserContent"></div></dialog>
 <script>
 

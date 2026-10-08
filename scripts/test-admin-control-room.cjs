@@ -29,7 +29,12 @@ const server=http.createServer((req,res)=>{
   const browser=await engine.launch({headless:true});
   try{for(const width of [1440,390,320]){
    const page=await browser.newPage({viewport:{width,height:950}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.route('https://**/*',route=>route.abort());
-   await page.goto(base+'/dashboard');await page.locator('.acr-card').first().waitFor();assert.equal(await page.locator('.acr-card').count(),8);
+   await page.goto(base+'/dashboard');await page.locator('.acr-card').first().waitFor();assert.equal(await page.locator('.acr-card').count(),4);
+   assert.equal(await page.locator('.acr-ring').getAttribute('aria-label'),'93 annunci da controllare, 7 senza anomalie di formato su 100');
+   assert.deepEqual(await page.locator('.acr-bar-track>div').evaluateAll(bars=>bars.map(bar=>bar.style.width)),['75%','50%','100%']);
+   assert.equal(await page.locator('#acrJobsSummary').textContent(),'1 da verificare');
+   assert.equal(await page.locator('#acrQualityDetails').evaluate(el=>el.open),false);
+   assert.equal(await page.locator('#acrAutomationDetails').evaluate(el=>el.open),false);
    assert.equal(await page.locator('#acrIssues img').count(),0);assert.equal(await page.evaluate(()=>window.INJECTED),undefined);
    const overflow=await page.locator('#adminControlRoom').evaluate(el=>el.scrollWidth>el.clientWidth+1);assert(!overflow,`${width}: overflow pannello`);
    await page.locator('#acrQualitySummary').click();
@@ -40,9 +45,19 @@ const server=http.createServer((req,res)=>{
    await page.evaluate(()=>{window.FAIL=false;window.DELAY=true;AdminControlRoom.refresh();AdminControlRoom.refresh();});
    await page.waitForFunction(()=>window.PENDING.length===2);await page.evaluate(()=>{window.PENDING[1]({data:window.PAYLOAD});});await page.waitForFunction(()=>!document.getElementById('acrRefresh').disabled);
    await page.evaluate(()=>{window.PENDING[0]({data:{...window.PAYLOAD,summary:{...window.PAYLOAD.summary,listings_with_issues:999}}});});
-   assert(!(await page.locator('#acrMetrics').textContent()).includes('999'));
+   assert((await page.locator('.acr-ring').getAttribute('aria-label')).startsWith('93 '));
    if(process.env.ADMIN_SCREENSHOTS&&name==='chromium'){await page.evaluate(()=>document.getElementById('acrQualityDetails').open=false);fs.mkdirSync(process.env.ADMIN_SCREENSHOTS,{recursive:true});await page.locator('#adminControlRoom').screenshot({path:path.join(process.env.ADMIN_SCREENSHOTS,`admin-${width}.png`)});}
-   await page.evaluate(()=>window.AUTH_CHANGE('SIGNED_IN',{user:{id:'other-user'}}));assert.equal(await page.locator('.acr-card').count(),0);assert(await page.locator('#adminPanel').evaluate(el=>el.classList.contains('hidden')));assert.deepEqual(errors,[]);
+   await page.evaluate(()=>{window.DELAY=false;window.PAYLOAD={...window.PAYLOAD,summary:{...window.PAYLOAD.summary,listings_checked:0,listings_with_issues:0,new_users_30d:0,new_listings_30d:0,valuations_30d:0},automations:[{jobname:'scout-bandi-daily',active:true,last_status:'succeeded',last_started_at:null}]};AdminControlRoom.refresh();});
+   await page.waitForFunction(()=>document.getElementById('acrQualityChart').textContent==='Nessun annuncio da controllare');
+   assert.deepEqual(await page.locator('.acr-bar-track>div').evaluateAll(bars=>bars.map(bar=>bar.style.width)),['0%','0%','0%']);
+   assert.equal(await page.locator('#acrJobsSummary').getAttribute('data-tone'),'warning');
+   await page.locator('#acrAutomationDetails>summary').click();assert.equal(await page.locator('.acr-job>span').textContent(),'Da verificare');
+   assert(!(await page.locator('#adminControlRoom').evaluate(el=>el.scrollWidth>el.clientWidth+1)),`${width}: overflow automazioni`);
+   await page.evaluate(()=>{window.PAYLOAD={...window.PAYLOAD,summary:{...window.PAYLOAD.summary,listings_with_issues:5,new_users_30d:null},automations:[]};AdminControlRoom.refresh();});
+   await page.waitForFunction(()=>document.getElementById('acrQualityChart').textContent==='Dati non disponibili');
+   assert.equal(await page.locator('#acrJobsSummary').textContent(),'Dati non disponibili');
+   assert(!(await page.locator('#adminControlRoom').textContent()).includes('NaN'));
+   await page.evaluate(()=>window.AUTH_CHANGE('SIGNED_IN',{user:{id:'other-user'}}));assert.equal(await page.locator('.acr-card').count(),0);assert.equal(await page.locator('#acrQualityChart').textContent(),'');assert.equal(await page.locator('#acrActivityChart').textContent(),'');assert(await page.locator('#adminPanel').evaluate(el=>el.classList.contains('hidden')));assert.deepEqual(errors,[]);
    console.log(`OK: ${name} ${width}px, riepilogo, XSS, dettagli, paginazione, CSV completo, errori, concorrenza e cambio account`);await page.close();
   }}finally{await browser.close();}
  }}finally{server.close();}

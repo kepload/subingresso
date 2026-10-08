@@ -11,40 +11,62 @@
     const validId=value=>/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value||'');
     function card(value,title,note,tone='') {return `<div class="acr-card" data-tone="${tone}"><strong>${safe(value)}</strong><span>${safe(title)}</span><small>${safe(note)}</small></div>`;}
     function state(message,error=false){el('acrState').textContent=message;el('acrState').dataset.state=error?'error':'ready';}
+    function renderCharts(s){
+        const total=s.listings_checked,issues=s.listings_with_issues;
+        if(!Number.isFinite(total)||!Number.isFinite(issues)||total<0||issues<0||issues>total){
+            el('acrQualityChart').textContent='Dati non disponibili';
+        }else if(!total){
+            el('acrQualityChart').textContent='Nessun annuncio da controllare';
+        }else{
+            const clean=total-issues,portion=issues/total*100;
+            el('acrQualityChart').innerHTML=`<div class="acr-ring" role="img" aria-label="${safe(count(issues))} annunci da controllare, ${safe(count(clean))} senza anomalie di formato su ${safe(count(total))}">
+                <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="48" fill="none" stroke="#d6eee6" stroke-width="13"/><circle cx="60" cy="60" r="48" fill="none" stroke="#e8aa42" stroke-width="13" pathLength="100" stroke-dasharray="${portion} 100" transform="rotate(-90 60 60)"/></svg>
+                <div class="acr-ring-value" aria-hidden="true"><strong>${safe(count(issues))}</strong><span>da controllare</span></div></div>
+                <div class="acr-legend"><div><span><i class="acr-dot acr-dot-warning"></i>Da controllare</span><b>${safe(count(issues))}</b></div><div><span><i class="acr-dot"></i>Senza anomalie</span><b>${safe(count(clean))}</b></div><small>${safe(count(total))} annunci analizzati</small></div>`;
+        }
+        const activity=[['Utenti',s.new_users_30d,'#378775'],['Annunci',s.new_listings_30d,'#4388b0'],['Valutazioni',s.valuations_30d,'#9d80be']];
+        const max=Math.max(1,...activity.map(([,value])=>Number.isFinite(value)&&value>=0?value:0));
+        el('acrActivityChart').innerHTML=activity.map(([label,value,color])=>{
+            const width=Number.isFinite(value)&&value>=0?value/max*100:0;
+            return `<div class="acr-bar-row"><div><span>${label}</span><b>${safe(count(value))}</b></div><div class="acr-bar-track" aria-hidden="true"><div style="width:${width}%;background:${color}"></div></div></div>`;
+        }).join('');
+    }
     function render(data){
         if(!data?.summary||!Array.isArray(data.issues)||!Array.isArray(data.automations))throw Error('Risposta incompleta');
         const s=data.summary;
         el('acrMetrics').innerHTML=[
-            card(count(s.listings_with_issues),'Annunci da controllare',`${count(s.listings_checked)} annunci attivi o in revisione`,s.listings_with_issues?'warning':''),
-            card(count(s.profiles_with_issues),'Profili da controllare',`${count(s.optional_phone_missing)} senza telefono facoltativo`,s.profiles_with_issues?'warning':''),
-            card(count(s.pending_listings),'Annunci da approvare',`${count(s.pending_bandi)} bandi in attesa`,s.pending_listings?'warning':''),
-            card(count(s.open_reports),'Segnalazioni aperte',`${count(s.support_unread)} messaggi supporto non letti`,s.open_reports?'warning':''),
-            card(count(s.expiring_listings),'In scadenza entro 14 giorni',`${count(s.expired_listings)} annunci già scaduti`),
-            card(euro(s.gross_cents-s.refunded_cents),'Incassi meno rimborsi',`Incassati ${euro(s.gross_cents)} · rimborsi ${euro(s.refunded_cents)}. Commissioni escluse.`),
-            card(count(s.paid_waiting),'Vetrine pagate in attesa',`${count(s.paid_activation_problem)} attivazioni da verificare`,s.paid_activation_problem?'warning':''),
-            card(count(s.new_users_30d),'Nuovi utenti · 30 giorni',`${count(s.new_listings_30d)} annunci · ${count(s.valuations_30d)} valutazioni`)
+            card(count(s.pending_listings),'Da approvare','Annunci',s.pending_listings?'warning':''),
+            card(count(s.expiring_listings),'Scadenze · 14 giorni',`${count(s.expired_listings)} già scaduti`),
+            card(euro(s.gross_cents-s.refunded_cents),'Incassi − rimborsi','Commissioni escluse'),
+            card(count(s.paid_waiting),'Vetrine in attesa',`${count(s.paid_activation_problem)} da verificare`,s.paid_activation_problem?'warning':'')
         ].join('');
-        el('acrTasks').innerHTML=[['#pendingReviewSection','Moderazione annunci',s.pending_listings],['#reports','Segnalazioni',s.open_reports],['/messaggi','Supporto',s.support_unread],['#acrIssues','Qualità dati',data.issues_total],['#bandoScouting','Bandi da decidere',s.pending_bandi],['#acquisitionPanel','Provenienza utenti',null]].map(([href,label,n])=>`<a href="${href}">${label}${n===null?'':` · ${count(n)}`}</a>`).join('');
+        renderCharts(s);
+        el('acrTasks').innerHTML=[['#pendingReviewSection','Moderazione',s.pending_listings],['#reports','Segnalazioni',s.open_reports],['/messaggi','Supporto',s.support_unread],['#bandoScouting','Bandi',s.pending_bandi],['#acquisitionPanel','Provenienza utenti',null]].map(([href,label,n])=>`<a href="${href}"${n>0?' data-pending="true"':''}>${label}${n===null?'':` <b>${count(n)}</b>`}</a>`).join('');
         el('acrIssues').innerHTML=data.issues.length?data.issues.map(row=>{
             const action=!validId(row.id)?'':row.kind==='annuncio'?`<a href="/modifica-annuncio?id=${row.id}">Controlla</a>`:row.kind==='profilo'?`<button type="button" data-user-id="${row.id}">Dettagli</button>`:'';
             return `<div class="acr-row" data-severity="${row.severity==='info'?'info':'warning'}"><div><div class="acr-row-title">${safe(row.label||'Dato da controllare')}</div><div class="acr-row-meta">${safe(row.kind)} · ${safe(row.context)}${row.status?' · '+safe(row.status):''}</div><div class="acr-tags">${(Array.isArray(row.issues)?row.issues:[]).map(issue=>`<span>${safe(labels[issue]||issue)}</span>`).join('')}</div></div>${action}</div>`;
         }).join(''):'<p class="acr-note">Nessuna anomalia rilevata nei controlli automatici di questo gruppo.</p>';
         el('acrPageInfo').textContent=data.issues_total?`${offset+1}–${Math.min(offset+25,data.issues_total)} di ${count(data.issues_total)} record`:'0 record';
-        el('acrQualitySummary').textContent=`Apri elenco · ${count(data.issues_total)} record da verificare`;
+        el('acrQualitySummary').textContent=`Dati da verificare · ${count(data.issues_total)}`;
         el('acrPrevious').disabled=offset===0;el('acrNext').disabled=offset+25>=data.issues_total;
+        let successful=0;
         el('acrJobs').innerHTML=data.automations.map(job=>{
-            const stale=job.last_started_at&&Date.now()-Date.parse(job.last_started_at)>(job.jobname.startsWith('weekly-')?8:2)*86400000;
-            const error=!job.active||job.last_status==='failed'||stale;
-            const status=!job.active?'Disattivata':!job.last_started_at?'Esecuzione non disponibile':job.last_status==='succeeded'?'Chiamata pianificata eseguita':job.last_status==='failed'?'Esecuzione fallita':'Esecuzione da verificare';
-            return `<div class="acr-job" data-error="${!!error}"><b>${safe(jobNames[job.jobname]||job.jobname)}</b><br>${status}${stale?' · dato non recente':''}<br>Ultima esecuzione: ${safe(date(job.last_started_at))}</div>`;
+            const started=Date.parse(job.last_started_at),stale=Number.isFinite(started)&&Date.now()-started>(job.jobname.startsWith('weekly-')?8:2)*86400000;
+            const ok=job.active&&job.last_status==='succeeded'&&Number.isFinite(started)&&!stale;
+            if(ok)successful++;
+            const status=!job.active?'Disattivata':!Number.isFinite(started)?'Da verificare':stale?'Non recente':job.last_status==='succeeded'?'Eseguita':job.last_status==='failed'?'Fallita':'Da verificare';
+            return `<div class="acr-job" data-error="${!ok}"><div><b>${safe(jobNames[job.jobname]||job.jobname)}</b><time>${safe(date(job.last_started_at))}</time></div><span>${status}</span></div>`;
         }).join('');
-        el('acrCoverage').textContent=`${count(s.locations_loaded)} località nell’anagrafica. ${count(s.bando_subscribers)} iscrizioni agli avvisi bandi. Ultimo bando trovato: ${date(s.last_candidate)}. Ultimo controllo anomalie: ${date(s.last_anomaly_check)}. ${count(s.old_valuation_model)} valutazioni storiche con modello precedente. Le email confermate automaticamente dalla registrazione immediata non provano che l’indirizzo appartenga all’utente.`;
-        state(`Aggiornato il ${date(data.checked_at)}. I record storici da controllare restano conservati; nessuna correzione automatica dei dati dichiarati.`);
+        const jobTotal=data.automations.length;
+        el('acrJobsSummary').textContent=!jobTotal?'Dati non disponibili':successful===jobTotal?`${successful}/${jobTotal} eseguite`:`${jobTotal-successful} da verificare`;
+        el('acrJobsSummary').dataset.tone=jobTotal&&successful===jobTotal?'ok':'warning';
+        el('acrCoverage').textContent=`${count(s.locations_loaded)} località · ${count(s.bando_subscribers)} iscritti bandi · ${count(s.old_valuation_model)} valutazioni con vecchio modello. Ultimo bando: ${date(s.last_candidate)}. Ultimo controllo: ${date(s.last_anomaly_check)}.`;
+        state(`Aggiornato ${date(data.checked_at)} · ogni minuto`);
     }
     async function refresh(){
         if(!owner)return;
         const requestedOwner=owner,request=++revision;
-        el('acrRefresh').disabled=true;state('Controllo dati e automazioni in corso…');
+        el('acrRefresh').disabled=true;state('Aggiornamento…');
         try{
             const {data,error}=await _supabase.rpc('admin_control_room',{p_offset:offset,p_kind:kind});
             if(request!==revision||owner!==requestedOwner)return;
@@ -86,7 +108,7 @@
         }catch(_){state('Esportazione non riuscita. Riprova: nessun file parziale è stato scaricato.',true);}
         finally{exporting=false;el('acrExport').disabled=false;}
     }
-    function stop(){owner=null;revision++;detailRevision++;clearInterval(timer);timer=null;snapshot=null;['acrMetrics','acrTasks','acrIssues','acrJobs','acrCoverage','acrUserContent'].forEach(id=>{if(el(id))el(id).textContent='';});if(el('acrUserDialog')?.open)el('acrUserDialog').close();}
+    function stop(){owner=null;revision++;detailRevision++;clearInterval(timer);timer=null;snapshot=null;['acrMetrics','acrQualityChart','acrActivityChart','acrTasks','acrIssues','acrJobs','acrJobsSummary','acrCoverage','acrState','acrQualitySummary','acrPageInfo','acrUserContent'].forEach(id=>{if(el(id))el(id).textContent='';});['acrQualityDetails','acrAutomationDetails'].forEach(id=>{if(el(id))el(id).open=false;});if(el('acrUserDialog')?.open)el('acrUserDialog').close();}
     window.AdminControlRoom={start(id){stop();owner=id;offset=0;kind='all';refresh();timer=setInterval(()=>{if(document.visibilityState==='visible'&&!el('acrRefresh').disabled)refresh();},60000);},refresh,stop};
     document.addEventListener('DOMContentLoaded',()=>{
         el('acrRefresh')?.addEventListener('click',refresh);
