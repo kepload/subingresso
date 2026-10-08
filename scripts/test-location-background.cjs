@@ -40,11 +40,22 @@ async function check(engine, name, base) {
                 return previous[b.length];
             }
             let seed = 42;
-            const random = n => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed % n; };
+            const random = n => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return (seed >>> 8) % n; };
             const word = length => Array.from({ length }, () => 'abcd'[random(4)]).join('');
             for (let n = 0; n < 100; n++) {
                 const packed = word(4 + random(12)), limit = packed.length >= 7 ? 2 : 1;
-                const names = Array.from({ length: 500 }, () => word(1 + random(22)));
+                const names = Array.from({ length: 500 }, (_, index) => {
+                    if (index < 250) return word(1 + random(22));
+                    let name = packed;
+                    for (let edit = 0, count = random(4); edit < count; edit++) {
+                        const at = random(name.length), operation = random(4);
+                        if (operation === 0) name = name.slice(0, at) + name.slice(at + 1);
+                        else if (operation === 1) name = name.slice(0, at) + word(1) + name.slice(at);
+                        else if (operation === 2) name = name.slice(0, at) + word(1) + name.slice(at + 1);
+                        else if (at + 1 < name.length) name = name.slice(0, at) + name[at + 1] + name[at] + name.slice(at + 2);
+                    }
+                    return name + (random(2) ? word(random(10)) : '');
+                });
                 const actual = [...LocationSearch.fuzzyTerms(names, packed)].filter(Boolean);
                 const expected = [];
                 names.forEach((name, index) => {

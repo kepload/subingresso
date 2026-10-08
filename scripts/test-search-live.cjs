@@ -29,7 +29,7 @@ const target = '035383af-dbc8-4805-9570-b94008d8f8cd';
                     const actual=[...document.querySelectorAll('[data-listing-id]')].map(el=> {
                         const row=LISTINGS.find(row=>row.id===el.dataset.listingId);
                         const coords=LocationSearch.listingCoordinateCandidates(row.comune,row.regione,row.provincia);
-                        return {id:row.id,comune:row.comune,distance:coords.length?Math.min(...coords.map(c=>getDistanceKM(...origin,...c))):null};
+                        return {id:row.id,comune:row.comune,expired:isListingExpired(row),distance:coords.length?Math.min(...coords.map(c=>getDistanceKM(...origin,...c))):null};
                     });
                     const expected=LISTINGS.filter(row=> {
                         const coords=LocationSearch.listingCoordinateCandidates(row.comune,row.regione,row.provincia);
@@ -38,11 +38,14 @@ const target = '035383af-dbc8-4805-9570-b94008d8f8cd';
                     return {actual,expected};
                 });
                 assert.deepEqual(result.actual.map(row=>row.id).sort(),result.expected.sort(),'tutti gli annunci entro 100 km');
-                const distances=result.actual.filter(row=>row.distance!==null).map(row=>row.distance);
-                assert.deepEqual(distances,distances.slice().sort((a,b)=>a-b),'dal più vicino al più lontano');
+                assert(result.actual.every((row,index)=>!row.expired||result.actual.slice(index).every(other=>other.expired)), 'scaduti visibili in fondo');
+                for (const expired of [false,true]) {
+                    const distances=result.actual.filter(row=>row.expired===expired&&row.distance!==null).map(row=>row.distance);
+                    assert.deepEqual(distances,distances.slice().sort((a,b)=>a-b),'dal più vicino al più lontano in ciascun gruppo');
+                }
                 assert(result.actual.some(row=>row.comune==='Moniga del Garda'),'include anche i comuni vicini');
                 assert(result.actual.findIndex(row=>row.id===target)<result.actual.findIndex(row=>row.distance>1),'il vecchio annuncio locale precede i dintorni');
-                console.log('LIVE RADIUS: '+result.actual.length+' annunci, 100 km, distanze in ordine crescente.');
+                console.log('LIVE RADIUS: '+result.actual.length+' annunci, 100 km, distanze crescenti per gruppo e scaduti in fondo.');
                 return result.actual;
             };
             let proximity;
