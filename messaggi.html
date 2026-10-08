@@ -196,9 +196,9 @@
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=19"></script>
+<script src="js/data.js?v=20"></script>
 <script src="js/ui-components.js?v=12"></script>
-<script src="js/auth.js?v=21"></script>
+<script src="js/auth.js?v=22"></script>
 <script>
 
 let _currentUser     = null;
@@ -785,6 +785,9 @@ async function sendMessage(e) {
     const input = document.getElementById('msgInput');
     const testo = input.value.trim();
     if (!testo) return;
+    const sendBtn=e.target.querySelector('button[type=submit]');
+    if(sendBtn?.disabled)return;
+    if(!isValidFormText(testo,1,5000,true)){showToast('Scrivi un messaggio da 1 a 5.000 caratteri.','warning');return;}
     const inDraft = _draftAnnuncio || _draftSupport;
     if (!_activeConvId && !inDraft) return;
     if (_draftSupport && !_adminUserId) return;
@@ -1022,8 +1025,10 @@ async function submitReport(e) {
     const reason  = fd.get('reason');
     const details = (fd.get('details') || '').toString().trim();
     if (!reason) return;
+    if(!['scam','harassment','spam','other'].includes(reason)||!isValidFormText(details,0,2000,true)){showToast('Controlla il motivo e i dettagli (massimo 2.000 caratteri).','warning');return;}
 
     const btn = document.getElementById('reportSubmitBtn');
+    if(btn.disabled)return;
     btn.disabled = true;
     btn.textContent = 'Invio…';
 

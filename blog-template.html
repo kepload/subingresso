@@ -74,11 +74,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
-<script src="js/blog-tracker.js?v=1"></script>
+<script src="js/blog-tracker.js?v=2"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=19"></script>
+<script src="js/data.js?v=20"></script>
 <script src="js/ui-components.js?v=12"></script>
-<script src="js/auth.js?v=21"></script>
+<script src="js/auth.js?v=22"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const slug = params.get('post');
@@ -177,7 +177,9 @@ function _bindBandoAlertForm(regione, postSlug) {
             const res = await fetch(`${SUPABASE_URL}/functions/v1/subscribe-bando-alert`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY },
-                body: JSON.stringify({ email, regione, source: postSlug, ts_form_started: tsStart, website })
+                body: JSON.stringify({ email, regione, source: postSlug, ts_form_started: tsStart, website,
+                    visitor_id: (()=>{try{return localStorage.getItem('_visitor_id');}catch(_){return null;}})(),
+                    session_id: (()=>{try{return sessionStorage.getItem('_session_id');}catch(_){return null;}})() })
             });
             const data = await res.json().catch(() => ({}));
             if (res.ok && data.success) {
@@ -187,9 +189,6 @@ function _bindBandoAlertForm(regione, postSlug) {
                 msg.className = 'mt-3 text-xs font-bold text-emerald-600';
                 msg.classList.remove('hidden');
                 form.querySelector('input[name="email"]').value = '';
-                if (window.trackBlogConversion && !data.already_subscribed) {
-                    window.trackBlogConversion('alert_signup', postSlug || null, regione);
-                }
                 btn.disabled = false; btn.classList.remove('opacity-60', 'cursor-wait');
             } else {
                 msg.textContent = (data && data.error) ? data.error : 'Errore. Riprova tra un attimo.';

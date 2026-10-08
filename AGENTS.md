@@ -6,6 +6,10 @@
 
 ---
 
+## Qualità dati (8 ottobre 2026)
+
+Controlli form + DB e riepilogo admin: `DATA_QUALITY_AUDIT_20261008.md`, `PATCH_DATA_QUALITY_20261008.sql`. Anagrafica in schema privato `data_quality`, seed `scripts/seed-data-locations.cjs`. Non rimuovere i trigger e non correggere dati storici per ipotesi. Telefoni: `get_my_profile` per il proprietario, `admin_user_details` per admin; colonne esplicite nelle letture pubbliche profiles. Edit annunci torna pending. Test qualità `scripts/test-data-quality.*`, browser `test-admin-control-room.cjs`. Cache: data 20, auth 22, annunci 13, vendi-support 2, valuation 2, blog-tracker 2. Auth richiede data.js anche nelle pagine di servizio.
+
 ## 0) Cosa fare PRIMA di toccare qualsiasi file
 
 **OBBLIGATORIO ad ogni nuova sessione, prima della prima modifica:**
@@ -135,10 +139,10 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 ## 9) Cache buster correnti (aggiornare a ogni modifica)
 
 - `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
-- `data.js?v=19`
-- `auth.js?v=21`
+- `data.js?v=20`
+- `auth.js?v=22`
 - `ui-components.js?v=12`
-- `js/pages/annunci.js?v=11`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
+- `js/pages/annunci.js?v=13`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
 - `comune-picker.js?v=5`, `location-search.js?v=6`, `location-search-worker.js?v=1`: comuni e 55.288 località da `data/localita.json`; refusi in background, fallback a blocchi. Il worker importa la stessa versione di `location-search.js`: aggiornare entrambi i riferimenti e il cache buster del worker quando cambia il motore. Dettaglio/fonti in `data/LOCALITA.md`.
 - `js/pages/annuncio-detail.js?v=22` (anche in `annuncio.html` + `api/annuncio.js`)
 - `css/tailwind.css?v=4`

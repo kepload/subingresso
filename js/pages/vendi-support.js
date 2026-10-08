@@ -108,7 +108,7 @@
     }
 
     function parseNumber(raw, money = false) {
-        let value = String(raw || '').trim().replace(/\s/g, '');
+        let value = String(raw ?? '').trim();
         if (money && /^\d{1,3}(\.\d{3})+(,\d{1,2})?$/.test(value)) value = value.replace(/\./g, '');
         if (!/^\d+(?:[.,]\d{1,2})?$/.test(value)) return NaN;
         return Number(value.replace(',', '.'));

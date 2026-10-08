@@ -52,8 +52,8 @@ window.__client = {
  },
  rpc: () => Promise.resolve({data:[{tel:'3471234567'}],error:null}),
  from: () => {
-  const query = { select(){return this;},eq(){return this;},or(){return this;},update(){return this;},
-   single: async () => ({data:window.__testListing,error:null}),
+  const query = { select(){return this;},eq(){return this;},or(){return this;},update(value){window.__savedUpdate=value;return this;},
+   single: async () => ({data:window.__savedUpdate?{id:'test-id'}:window.__testListing,error:null}),
    maybeSingle: async () => ({data:{is_admin:false},error:null}),
    then: (resolve, reject) => Promise.resolve({data:[],error:null}).then(resolve,reject)
   }; return query;
@@ -103,7 +103,8 @@ const server = http.createServer((req, res) => {
                 inserts.push(request.postDataJSON());
                 return route.fulfill({contentType:'application/json',body:JSON.stringify({id:'test-listing-id'})});
             }
-            return route.fulfill({contentType:'application/json',body:'[{"nome":"Profilo","cognome":"Test","telefono":"3471234567"}]'});
+            const own=url.includes('/rpc/get_my_profile');
+            return route.fulfill({contentType:'application/json',body:own?'{"nome":"Profilo","cognome":"Test","telefono":"3471234567"}':'[{"nome":"Profilo","cognome":"Test","telefono":"3471234567"}]'});
         });
         if (owner) await context.addInitScript(({ authKey, stored }) => {
             if (!sessionStorage.getItem('fixtureAuth')) { localStorage.setItem(authKey, JSON.stringify(stored)); sessionStorage.setItem('fixtureAuth','1'); }
@@ -410,6 +411,16 @@ const server = http.createServer((req, res) => {
         await edit.waitForFunction(() => !!_comunePicker.getValue());
         await edit.locator('#previewContainer button').first().click();
         assert.equal(await edit.evaluate(()=>_currentImageUrls.length),0,'removing an existing preview removes its original URL');
+        await edit.locator('#fTitolo').fill('Posteggio in vendita a Rivoltella');
+        await edit.locator('#fDescrizione').fill('Posteggio di mercato con tutte le informazioni necessarie per valutarlo.');
+        await edit.locator('#fSuperficie').fill('12,5');
+        await edit.locator('#fPrezzo').fill('15000.50');
+        await edit.locator('#fTel').fill('+39 347 1234567');
+        await edit.getByRole('button',{name:'Salva Modifiche'}).click();
+        await edit.waitForFunction(()=>!!window.__savedUpdate);
+        const update=await edit.evaluate(()=>window.__savedUpdate);
+        assert.equal(update.prezzo,15000.5);assert.equal(update.superficie,12.5);assert.equal(update.tel,'347 1234567');assert.equal(update.provincia,'Brescia');assert.equal(update.status,'pending');
+        console.log('OK: modifica salva 15000.50 senza moltiplicare il prezzo, conserva decimali e normalizza il telefono.');
         console.log('OK: aggiunta e rimozione di più foto anche su annunci gratuiti esistenti.');
         console.log('OK: comune abbreviato e recupero del selettore offline anche in modifica annuncio.');
 

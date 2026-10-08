@@ -1,7 +1,7 @@
 // ============================================================
 //  Subingresso.it — Edge Function: notifica email nuovo annuncio
 //  Trigger: Database Webhook su INSERT/UPDATE nella tabella `annunci`
-//  Invia email agli utenti il cui alert è entro 200km dall'annuncio.
+//  Rispetta località, raggio, regione e tipo salvati nell'avviso.
 //  Controlli anti-spam:
 //   1. Solo INSERT active OPPURE UPDATE pending→active (strict)
 //   2. Annuncio deve essere fresco (created_at > ora - 24h)
@@ -16,7 +16,6 @@ const SUPABASE_SERVICE_ROLE_KEY  = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const SB_SECRET_KEY              = Deno.env.get('SB_SECRET_KEY') ?? SUPABASE_SERVICE_ROLE_KEY;
 const FROM_EMAIL                 = 'Subingresso.it <noreply@subingresso.it>';
 const SITE_URL                   = 'https://subingresso.it';
-const RADIUS_KM                  = 200;
 const MAX_AGE_HOURS              = 24;
 
 function escapeHTML(s: unknown): string {
@@ -26,48 +25,6 @@ function escapeHTML(s: unknown): string {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
-}
-
-// Coordinate città italiane (specchio di data.js)
-const PROVINCE_COORDS: Record<string, [number, number]> = {
-  "Roma": [41.89, 12.49], "Milano": [45.46, 9.19], "Napoli": [40.85, 14.26], "Torino": [45.07, 7.68],
-  "Palermo": [38.11, 13.36], "Genova": [44.40, 8.94], "Bologna": [44.49, 11.34], "Firenze": [43.76, 11.25],
-  "Bari": [41.11, 16.87], "Catania": [37.50, 15.08], "Venezia": [45.44, 12.31], "Verona": [45.43, 10.99],
-  "Brescia": [45.54, 10.21], "Bergamo": [45.69, 9.67], "Salò": [45.60, 10.52], "Desenzano": [45.47, 10.53],
-  "Toscolano": [45.68, 10.60], "Toscolano Maderno": [45.68, 10.60], "Maderno": [45.68, 10.60],
-  "Gardone": [45.62, 10.55], "Gargnano": [45.70, 10.65], "Limone": [45.81, 10.79],
-  "Aosta": [45.73, 7.31],
-  // Regioni come fallback
-  "Lombardia": [45.46, 9.19], "Lazio": [41.89, 12.49], "Campania": [40.85, 14.26],
-  "Piemonte": [45.07, 7.68], "Sicilia": [38.11, 13.36], "Liguria": [44.40, 8.94],
-  "Emilia-Romagna": [44.49, 11.34], "Toscana": [43.76, 11.25], "Puglia": [41.11, 16.87],
-  "Veneto": [45.44, 12.31], "Calabria": [38.90, 16.60], "Sardegna": [40.12, 9.01],
-  "Abruzzo": [42.35, 13.39], "Marche": [43.61, 13.50], "Friuli-Venezia Giulia": [46.06, 13.23],
-  "Trentino-Alto Adige": [46.07, 11.12], "Umbria": [43.10, 12.38], "Basilicata": [40.64, 15.80],
-  "Molise": [41.56, 14.66], "Valle d'Aosta": [45.73, 7.31]
-};
-
-function getDistanceKM(lat1: number, lon1: number, lat2: number, lon2: number): number {
-  const R = 6371;
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLon = (lon2 - lon1) * Math.PI / 180;
-  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2);
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-}
-
-function getCityCoords(cityName: string): [number, number] | null {
-  if (!cityName) return null;
-  const city = cityName.trim();
-  if (PROVINCE_COORDS[city]) return PROVINCE_COORDS[city];
-  const lower = city.toLowerCase();
-  for (const key of Object.keys(PROVINCE_COORDS)) {
-    if (key.toLowerCase().includes(lower) || lower.includes(key.toLowerCase())) {
-      return PROVINCE_COORDS[key];
-    }
-  }
-  return null;
 }
 
 Deno.serve(async (req) => {
@@ -137,15 +94,11 @@ Deno.serve(async (req) => {
       }
     }
 
-    const annuncioCoords = getCityCoords(annuncio.comune) || getCityCoords(annuncio.regione);
-
     const supabase = createClient(SUPABASE_URL, SB_SECRET_KEY);
 
     // Tutti gli alert tranne quello del venditore stesso
-    const { data: alerts } = await supabase
-      .from('alerts')
-      .select('user_id, comune, lat, lng')
-      .neq('user_id', annuncio.user_id);
+    const { data: alerts, error: matchError } = await supabase.rpc('matching_listing_alerts', {p_listing_id:annuncio.id});
+    if (matchError) throw new Error('Matching geografico non disponibile');
 
     if (!alerts || alerts.length === 0) {
       return new Response('No alerts', { status: 200 });
@@ -155,10 +108,7 @@ Deno.serve(async (req) => {
 
     for (const a of alerts) {
       if (matchingAlerts.has(a.user_id)) continue;
-      if (!a.lat || !a.lng) { matchingAlerts.set(a.user_id, a); continue; }
-      if (!annuncioCoords) { matchingAlerts.set(a.user_id, a); continue; }
-      const dist = getDistanceKM(a.lat, a.lng, annuncioCoords[0], annuncioCoords[1]);
-      if (dist <= RADIUS_KM) matchingAlerts.set(a.user_id, a);
+      matchingAlerts.set(a.user_id, a);
     }
 
     if (matchingAlerts.size === 0) {
@@ -169,7 +119,7 @@ Deno.serve(async (req) => {
       ? new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(annuncio.prezzo)
       : 'Trattativa privata';
 
-    const annuncioUrl = `${SITE_URL}/annuncio.html?id=${annuncio.id}`;
+    const annuncioUrl = `${SITE_URL}/annuncio?id=${annuncio.id}`;
     const titoloRaw   = annuncio.titolo || 'Nuovo annuncio';
     const titoloSafe  = escapeHTML(titoloRaw);
     const luogoStr    = escapeHTML(annuncio.comune || annuncio.regione || 'Italia');

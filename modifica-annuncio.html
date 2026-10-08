@@ -211,9 +211,9 @@
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=19"></script>
+<script src="js/data.js?v=20"></script>
 <script src="js/comune-picker.js?v=5"></script>
-<script src="js/auth.js?v=21"></script>
+<script src="js/auth.js?v=22"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const listingId = params.get('id');
@@ -373,17 +373,24 @@ async function updateAnnuncio() {
     const location = _comunePicker && _comunePicker.getValue();
     const regione = location?.regione || '';
     const comune = location?.comune || '';
-    const prezzo = parseFloat(document.getElementById('fPrezzo').value.replace(/\./g, '').replace(',', '.'));
+    const prezzo = parseFormNumber(document.getElementById('fPrezzo').value, true);
+    const superficie = parseFormNumber(document.getElementById('fSuperficie').value);
 
     const descrizione = document.getElementById('fDescrizione').value.trim();
     const nome = document.getElementById('fNome').value.trim();
     const tel = document.getElementById('fTel').value.trim();
 
-    if (!titolo || !location) {
+    if (!location) {
         showToast('Scegli un comune o una frazione dall’elenco suggerito.', 'warning');
         return;
     }
-    if (!nome || !tel) {
+    if (!isValidFormText(titolo, 3, 110)) {
+        showToast('Scrivi un titolo da 3 a 110 caratteri.', 'warning'); return;
+    }
+    if (!Number.isFinite(superficie) || superficie <= 0 || superficie > 10000) {
+        showToast('Superficie non valida: scrivi un valore maggiore di zero e fino a 10.000 m².', 'warning'); return;
+    }
+    if (!isValidFormText(nome, 1, 100) || !tel) {
         showToast('Compila i campi contatto: Nome e Telefono.', 'warning');
         return;
     }
@@ -393,7 +400,7 @@ async function updateAnnuncio() {
     }
     // Salva il numero in formato canonico
     document.getElementById('fTel').value = normalizePhone(tel);
-    if (isNaN(prezzo) || prezzo < 101) {
+    if (!Number.isFinite(prezzo) || prezzo < 101) {
         showToast('Prezzo troppo basso, controlla bene.', 'warning');
         return;
     }
@@ -401,8 +408,8 @@ async function updateAnnuncio() {
         showToast('Prezzo troppo alto, controlla bene.', 'warning');
         return;
     }
-    if (descrizione.length < 10) {
-        showToast(`La descrizione è troppo breve (${descrizione.length} caratteri). Scrivi almeno 10 caratteri.`, 'warning');
+    if (!isValidFormText(descrizione, 40, 10000, true)) {
+        showToast('Scrivi una descrizione da 40 a 10.000 caratteri.', 'warning');
         return;
     }
     if (btn.disabled) return;
@@ -411,6 +418,7 @@ async function updateAnnuncio() {
 
     try {
         const user = await getCurrentUser();
+        if (!user) throw new Error('Accedi nuovamente per salvare le modifiche.');
 
         // 1. Upload nuove foto
         const newUrls = [];
@@ -437,11 +445,11 @@ async function updateAnnuncio() {
             regione,
             provincia: location.provincia,
             comune,
-            superficie: parseFloat(document.getElementById('fSuperficie').value.replace(',', '.')),
+            superficie,
             prezzo,
             descrizione,
             contatto: nome,
-            tel: tel,
+            tel: normalizePhone(tel),
             stato: document.querySelector('input[name="stato"]:checked').value,
             dettagli_extra: {
                 ..._currentExtra,
@@ -451,17 +459,9 @@ async function updateAnnuncio() {
             status: 'pending'
         };
 
-        let { error } = await _supabase.from('annunci').update(updated).eq('id', listingId);
-
-        if (error && error.message.includes('img_urls')) {
-            console.warn("Colonna img_urls mancante, riprovo senza...");
-            const fallback = { ...updated };
-            delete fallback.img_urls;
-            const retry = await _supabase.from('annunci').update(fallback).eq('id', listingId);
-            error = retry.error;
-        }
-
+        const { data: saved, error } = await _supabase.from('annunci').update(updated).eq('id', listingId).select('id').single();
         if (error) throw error;
+        if (!saved) throw new Error('Modifiche non salvate. Controlla l’accesso e riprova.');
         
         showToast('Modifiche inviate per revisione. L\'annuncio tornerà online dopo l\'approvazione admin.', 'success');
         setTimeout(() => { window.location.href = '/dashboard'; }, 1200);

@@ -15,9 +15,10 @@
 
     window.trackBlogConversion = function (kind, slug, regione) {
         try {
-            if (!kind) return;
+            if (!['cta_annunci_click','box_listing_click'].includes(kind) || !/^[a-z0-9-]{1,120}$/.test(slug || '')) return;
             if (navigator && navigator.webdriver === true) return;
             var ids = _ids();
+            if (!ids.v || !ids.s) return;
             var body = JSON.stringify({
                 kind:       String(kind).slice(0, 40),
                 post_slug:  slug    ? String(slug).slice(0, 120)    : null,

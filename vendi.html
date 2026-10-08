@@ -641,11 +641,11 @@
 <script src="js/supabase-config.js?v=2"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=19"></script>
+<script src="js/data.js?v=20"></script>
 <script src="js/comune-picker.js?v=5"></script>
 <script src="js/ui-components.js?v=12"></script>
-<script src="js/auth.js?v=21"></script>
-<script src="js/pages/vendi-support.js?v=1"></script>
+<script src="js/auth.js?v=22"></script>
+<script src="js/pages/vendi-support.js?v=2"></script>
 <script>
 
 // ── Step Management ───────────────────────────────────────
@@ -1017,6 +1017,8 @@ function prevStep() {
 function _validateStep(n) {
     clearStepError();
     if (n === 2) {
+        if (!['Mercato settimanale', 'Fiera'].includes(document.getElementById('fTipo').value))
+            return _err('Scegli il tipo di posteggio.');
         if (!document.getElementById('fComune').value.trim())
             return _fieldError('fComune', 'Inserisci il comune o la frazione.');
         if (!_comunePicker || !_comunePicker.getValue())
@@ -1033,8 +1035,10 @@ function _validateStep(n) {
         if (!document.getElementById('fMerce').value)
             return _err('Seleziona il settore merceologico.');
         const sup = VendiSupport.parseNumber(document.getElementById('fSuperficie').value);
-        if (!Number.isFinite(sup) || sup <= 0)
-            return _fieldError('fSuperficie', 'Scrivi la superficie in m², ad esempio 24 oppure 12,5.');
+        if (!Number.isFinite(sup) || sup <= 0 || sup > 10000)
+            return _fieldError('fSuperficie', 'Scrivi la superficie in m², maggiore di zero e fino a 10.000, ad esempio 24 oppure 12,5.');
+        if (isFiera && (!isValidFormText(document.getElementById('fNomeFiera').value, 0, 150) || !isValidFormText(document.getElementById('fNoteFiera').value, 0, 500, true)))
+            return _err('Controlla nome e periodo della fiera: massimo 150 e 500 caratteri.');
         document.getElementById('fSuperficie').value = String(sup).replace('.', ',');
     }
     if (n === 4) {
@@ -1048,13 +1052,13 @@ function _validateStep(n) {
         document.getElementById('fPrezzo').value = String(prezzo).replace('.', ',');
     }
     if (n === 5) {
-        if (!document.getElementById('fTitolo').value.trim())
-            return _fieldError('fTitolo', 'Inserisci un titolo per il tuo annuncio.');
-        if (document.getElementById('fDescrizione').value.trim().length < 40)
-            return _fieldError('fDescrizione', 'Aggiungi almeno una frase sul posteggio: cosa cedi e dove si trova (almeno 40 caratteri).');
-        if (!document.getElementById('fNome').value.trim()) {
+        if (!isValidFormText(document.getElementById('fTitolo').value, 3, 110))
+            return _fieldError('fTitolo', 'Scrivi un titolo da 3 a 110 caratteri.');
+        if (!isValidFormText(document.getElementById('fDescrizione').value, 40, 10000, true))
+            return _fieldError('fDescrizione', 'Descrivi cosa cedi e dove si trova, da 40 a 10.000 caratteri.');
+        if (!isValidFormText(document.getElementById('fNome').value, 1, 100)) {
             setTimeout(() => { try { document.getElementById('fNome').focus(); } catch (_) {} }, 400);
-            return _err('Inserisci il nome di contatto.');
+            return _err('Inserisci il nome di contatto, massimo 100 caratteri.');
         }
         const _telRaw = document.getElementById('fTel').value;
         if (!_telRaw.trim()) {
@@ -1268,7 +1272,7 @@ function _checkMissingPhoneBanner() {
 // Helper: chiavi cache scope-ate per user_id (evita leak cross-user su device condivisi)
 function _userKey(base, userId) {
     if (!userId) return null;
-    return base + '_u_' + String(userId).slice(0, 8);
+    return base + '_u_' + String(userId);
 }
 
 // Pulizia one-time delle chiavi LEGACY non scope-ate (presenti su device pre-fix).
@@ -1332,12 +1336,13 @@ async function prefillContactFromSession(force = false) {
             const ctrl = new AbortController();
             const t = setTimeout(() => ctrl.abort(), 5000);
             const res = await fetch(
-                `${SUPABASE_URL}/rest/v1/profiles?id=eq.${encodeURIComponent(user.id)}&select=nome,cognome,telefono`,
+                `${SUPABASE_URL}/rest/v1/rpc/get_my_profile`,
                 {
+                    method:'POST',body:'{}',
                     headers: {
                         'apikey': SUPABASE_ANON_KEY,
                         'Authorization': `Bearer ${accessToken}`,
-                        'Accept': 'application/json'
+                        'Accept': 'application/json','Content-Type':'application/json'
                     },
                     signal: ctrl.signal
                 }
@@ -1345,8 +1350,7 @@ async function prefillContactFromSession(force = false) {
             clearTimeout(t);
             if (res.ok) {
                 const arr = await res.json();
-                profile = Array.isArray(arr) && arr.length > 0 ? arr[0] : null;
-                console.log('Prefill: profile fetched', profile);
+                profile = arr && typeof arr==='object' && !Array.isArray(arr) ? arr : null;
             } else {
                 console.warn('Prefill: profile fetch HTTP', res.status, await res.text().catch(()=>''));
             }

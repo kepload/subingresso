@@ -2,6 +2,10 @@
 
 Manuale operativo per le sessioni AI. Contiene solo informazioni "evergreen": regole, pattern, stato sistema, bug ricorrenti.
 
+## Qualità dati e profilo admin — 8 ottobre 2026
+
+Audit completo in `DATA_QUALITY_AUDIT_20261008.md`. Applicata `PATCH_DATA_QUALITY_20261008.sql`: nuovi input controllati nei form e sul DB, ruoli/contatori/date protetti, recapiti profili privati, deduplica eventi, avvisi rispettano raggio/regione/tipo. Seed anagrafica `scripts/seed-data-locations.cjs`, 63.182 nomi in schema privato `data_quality`; non ipotizzare coordinate ambigue. Nuovo riepilogo admin con otto indicatori, problemi storici filtrabili, dettagli utenti, CSV completo, cron/errori/data aggiornamento. Directory utenti paginata senza limite 1.000, conteggi valutazioni completi e campione esplicito. Dati dichiarati/modello disponibili nei log valutatore. Email confermata tecnicamente non dimostra possesso; nessuno stato fittizio da tabella pending inesistente. Telefoni propri via `get_my_profile`, admin via `admin_user_details`; niente SELECT * profiles. Modifica prezzo conserva decimali, bozza usa UUID intero. Auth richiede data.js su tutte le pagine. Cache correnti: data 20, auth 22, annunci 13, vendi-support 2, valuation 2, blog-tracker 2. Test in `scripts/test-data-quality.*`, `test-admin-control-room.cjs` e regressioni vendi/ricerca/acquisizione/vetrina/valutatore. Storico conservato: 93 annunci con località/provincia da verificare, 15 descrizioni brevi, 3 prezzi fuori soglia; anomalie sovrapposte, non sommare. Nessun account/annuncio eliminato.
+
 ## 🎯 Business Focus
 
 - **Core attuale:** Subingresso e compravendita di **posteggi mercatali** (mercati pubblici su suolo pubblico, licenze ambulanti tipo A e B).

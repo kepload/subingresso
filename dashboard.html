@@ -211,6 +211,20 @@
 
         <!-- ── ADMIN PANEL (Exclusive) ── -->
         <div id="adminPanel" class="hidden space-y-6">
+            <section class="acr" id="adminControlRoom" aria-label="Controllo amministrazione">
+                <div class="acr-head"><div><h3>Il sito sotto controllo</h3><p>Dati da verificare, richieste aperte, scadenze e incassi. Aggiornamento automatico ogni minuto mentre questa pagina è visibile.</p></div><button type="button" id="acrRefresh" class="acr-refresh">Aggiorna</button></div>
+                <div class="acr-body">
+                    <p id="acrState" class="acr-state" role="status">Caricamento dei controlli…</p>
+                    <div id="acrMetrics" class="acr-grid"></div><nav id="acrTasks" class="acr-tasks" aria-label="Attività amministratore"></nav>
+                    <h4>Dati da verificare</h4><p class="acr-note">I controlli verificano formato e coerenza. Prezzi, superfici, incassi e recapiti restano dichiarazioni dell’utente: la loro veridicità richiede una verifica diretta. Il telefono mancante nel profilo è facoltativo.</p>
+                    <details id="acrQualityDetails"><summary id="acrQualitySummary" class="acr-note" style="font-weight:800;cursor:pointer">Apri elenco dei dati da verificare</summary>
+                    <div class="acr-toolbar"><label for="acrFilter">Mostra</label><select id="acrFilter"><option value="all">Tutti i dati</option><option value="annuncio">Annunci</option><option value="profilo">Profili</option><option value="alert">Avvisi geografici</option></select><button type="button" id="acrExport">Esporta elenco CSV</button></div>
+                    <div id="acrIssues" class="acr-list"></div><div class="acr-page"><button type="button" id="acrPrevious" disabled>Precedenti</button><span id="acrPageInfo"></span><button type="button" id="acrNext" disabled>Successivi</button></div>
+                    </details>
+                    <h4>Automazioni</h4><div id="acrJobs" class="acr-jobs"></div><p class="acr-note">L’esecuzione del programma pianificato conferma la chiamata al servizio. L’esito di ricerca bandi e consegna email va controllato nei pannelli dedicati.</p>
+                    <p id="acrCoverage" class="acr-note"></p>
+                </div>
+            </section>
             <!-- Stats Cards -->
             <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
                 <div class="bg-white p-3 md:p-4 rounded-xl border border-slate-100 shadow-sm text-center md:text-left">
@@ -1258,14 +1272,19 @@
 <script src="js/supabase-config.js?v=3"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=19"></script>
+<script src="js/data.js?v=20"></script>
+<script src="js/valuation.js?v=2"></script>
 <script src="js/vetrina-account.js?v=1"></script>
-<script src="js/auth.js?v=21"></script>
+<script src="js/auth.js?v=22"></script>
 <script src="js/blog-generator.js?v=3"></script>
+<link rel="stylesheet" href="css/admin-control-room.css?v=1">
+<script src="js/admin-control-room.js?v=1"></script>
+<dialog id="acrUserDialog" class="acr-dialog" aria-labelledby="acrUserTitle"><button type="button" id="acrUserClose" aria-label="Chiudi dettagli utente">Chiudi</button><h3 id="acrUserTitle">Dettagli utente</h3><div id="acrUserContent"></div></dialog>
 <script>
 
 let _currentUser = null;
 let _isAdmin = false;
+let _profileReady = false;
 
 // ── Toast "vetrina annullata" da querystring ─────────────
 (() => {
@@ -1293,7 +1312,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('dashContent').classList.remove('hidden');
 
     // Fetch profile first — necessario per il check admin
-    const { data: profile } = await _supabase.from('profiles').select('*').eq('id', user.id).single();
+    const { data: profile } = await _supabase.from('profiles').select('id,nome,cognome,avatar_url,is_admin,email_digest,email_stats').eq('id', user.id).single();
+    try {const own=await _supabase.rpc('get_my_profile');if(own.error||!profile||!own.data)throw Error('Profilo non disponibile');profile.telefono=own.data.telefono||'';_profileReady=true;} catch(_) {showToast('I dati del profilo non sono stati caricati completamente. Ricarica la pagina prima di modificarli.','warning');}
     const nome = profile?.nome || 'Utente';
 
     // Admin check via DB (non più email hardcodata)
@@ -1302,6 +1322,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('adminBadge').classList.remove('hidden');
         document.getElementById('adminLogout').classList.remove('hidden');
         document.getElementById('adminPanel').classList.remove('hidden');
+        AdminControlRoom.start(user.id);
         loadAdminStats();
         loadAdminGrowthChart();
         loadAdminFunnelStats();
@@ -1363,13 +1384,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function loadAdminStats() {
     // NB: select('id') invece di select('*') — il revoke colonna su tel/email
     // farebbe fallire l'espansione di * a livello PostgREST.
-    const { count: totalAnnunci }  = await _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('is_demo', false);
-    const { count: totalAttivi }   = await _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active').eq('is_demo', false);
-    const { count: totalUtenti }   = await _supabase.from('profiles').select('id', { count: 'exact', head: true }).eq('is_demo', false);
-
-    document.getElementById('admStatAnnunci').textContent = totalAnnunci || 0;
-    document.getElementById('admStatAttivi').textContent  = totalAttivi  || 0;
-    document.getElementById('admStatUtenti').textContent  = totalUtenti  || 0;
+    const counts = await Promise.all([
+        _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('is_demo', false),
+        _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active').eq('is_demo', false).or('expires_at.is.null,expires_at.gt.'+new Date().toISOString()),
+        _supabase.from('profiles').select('id', { count: 'exact', head: true }).eq('is_demo', false)
+    ]);
+    ['admStatAnnunci','admStatAttivi','admStatUtenti'].forEach((id,i)=>{
+        document.getElementById(id).textContent=counts[i].error||counts[i].count==null?'—':counts[i].count;
+    });
 
     // Guadagno vetrine: lifetime (succeeded, solo cs_live). Vetrine regalate admin
     // non passano da payments. Il box vira al verde quando c'e' una vendita oggi.
@@ -1408,11 +1430,11 @@ async function loadAdminStats() {
             }
             setHype(today > 0);
         } else {
-            if (valueEl) valueEl.textContent = '€ 0';
+            if (valueEl) valueEl.textContent = 'Non disponibile';
             setHype(false);
         }
     } catch (_) {
-        document.getElementById('admStatRevenue').textContent = '€ 0';
+        document.getElementById('admStatRevenue').textContent = 'Non disponibile';
     }
 
     // Valore annunci: somma esatta dei prezzi attivi. Il prezzo degli affitti e' gia' annuale.
@@ -1436,11 +1458,11 @@ async function loadAdminStats() {
                 hintEl.textContent = `${nv} in vendita + ${na} in affitto (1 anno)`;
             }
         } else if (tvEl) {
-            tvEl.textContent = '€ 0';
+            tvEl.textContent = 'Non disponibile';
         }
     } catch (_) {
         const el = document.getElementById('admStatTotalValue');
-        if (el) el.textContent = '€ 0';
+        if (el) el.textContent = 'Non disponibile';
     }
 
     loadAdminPriceAverages();
@@ -2481,7 +2503,7 @@ function _buildUserRow(u) {
         ? new Date(u.created_at).toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' })
         : '—';
     const emailVerified = typeof u.email_verified === 'boolean' ? u.email_verified : Boolean(u.confirmed_at);
-    const statusLabel = emailVerified ? 'Confermata' : 'Non confermata';
+    const statusLabel = emailVerified ? 'Conferma tecnica' : 'Non confermata';
     const statusClass = emailVerified ? 'text-emerald-600 bg-emerald-50' : 'text-amber-600 bg-amber-50';
     const activeAnn  = u.annunci_active ?? 0;
     const totalAnn   = u.annunci_total  ?? 0;
@@ -2497,6 +2519,7 @@ function _buildUserRow(u) {
                     <i class="fas fa-list mr-1"></i>${totalAnn}
                 </span>
                 <span class="text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-lg ${statusClass}">${statusLabel}</span>
+                <button type="button" data-admin-user-details="${idAttr}" class="text-xs font-black text-blue-600">Dettagli</button>
                 <button onclick="deleteAdminUser('${idAttr}', '${emailAttr}', this)" class="text-red-500 hover:text-white hover:bg-red-600 border border-red-100 bg-white px-2.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition">
                     Elimina
                 </button>
@@ -3972,14 +3995,15 @@ async function loadPendingListings() {
         if (userIds.length) {
             const { data: profiles } = await _supabase
                 .from('profiles')
-                .select('id, nome, cognome, telefono')
+                .select('id, nome, cognome')
                 .in('id', userIds);
             (profiles || []).forEach(p => { profilesMap[p.id] = p; });
         }
+        await Promise.all(data.map(async l=>{try {const result=await _supabase.rpc('get_listing_contact',{p_annuncio_id:l.id});if(!result.error&&result.data?.[0])l.tel=result.data[0].tel;}catch(_){} }));
 
         list.innerHTML = data.map(l => {
             const user = profilesMap[l.user_id] || {};
-            const cleanTel = user.telefono ? user.telefono.replace(/\D/g, '') : (l.tel ? l.tel.replace(/\D/g, '') : '');
+            const cleanTel = l.tel ? l.tel.replace(/\D/g, '') : '';
             const safeId = escapeHTML(l.id || '');
             const safeTitle = escapeHTML(l.titolo || '');
             const safeAuthor = escapeHTML(user.nome || l.contatto || 'Anonimo');
@@ -4682,7 +4706,8 @@ async function loadMyAlerts() {
     }
 
     grid.innerHTML = data.map(a => {
-        const label = a.comune ? escapeHTML(a.comune) : 'Tutti gli annunci';
+        const label = a.comune ? escapeHTML(a.comune) : a.regione ? escapeHTML(a.regione) : 'Tutta Italia';
+        const scope = a.comune ? `Entro ${Number(a.raggio_km||100)} km dalla località` : a.regione ? 'Annunci della regione' : 'Annunci di tutta Italia';
         const date  = new Date(a.created_at).toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' });
         return `
         <div class="bg-white rounded-2xl border border-slate-100 p-5 flex items-center gap-4">
@@ -4691,6 +4716,7 @@ async function loadMyAlerts() {
             </div>
             <div class="flex-grow min-w-0">
                 <p class="font-black text-slate-900 text-sm">${label}</p>
+                <p class="text-xs text-slate-500">${scope}</p>
                 <p class="text-xs text-slate-400 font-semibold mt-0.5">Attivo dal ${date}</p>
             </div>
             <button onclick="deleteAlert('${a.id}')"
@@ -4720,7 +4746,12 @@ async function deleteAlert(id) {
 // ── Save Profile ─────────────────────────────────────────
 async function saveProfile(e) {
     e.preventDefault();
+    if(!_profileReady){showToast('Ricarica la pagina: prima di salvare servono i dati attuali del profilo.','warning');return;}
     const btn = document.querySelector('#profileForm button[type="submit"]');
+    if(btn?.disabled)return;
+    if(!isValidFormText(document.getElementById('pNome').value,1,100)||!isValidFormText(document.getElementById('pCognome').value,0,100)){
+        showToast('Controlla nome e cognome: massimo 100 caratteri per campo.','warning');return;
+    }
     // Validazione telefono (se compilato): rifiuta numeri non riconoscibili
     const _telRaw = document.getElementById('pTelefono').value.trim();
     if (_telRaw && !isValidItalianPhone(_telRaw)) {
@@ -4729,22 +4760,25 @@ async function saveProfile(e) {
     }
     const _tel = _telRaw ? normalizePhone(_telRaw) : '';
     if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Salvataggio…'; }
-    const { error } = await _supabase.from('profiles').upsert({
+    try {
+    const { data: savedProfile, error } = await _supabase.from('profiles').upsert({
         id: _currentUser.id,
         nome:     document.getElementById('pNome').value.trim(),
         cognome:  document.getElementById('pCognome').value.trim(),
         telefono: _tel,
         email_digest: document.getElementById('pEmailDigest').checked,
         email_stats:  document.getElementById('pEmailStats').checked
-    });
+    }).select('id').single();
     if (btn) { btn.disabled = false; btn.textContent = 'Salva modifiche'; }
-    if (!error) {
+    if (!error && savedProfile) {
         updateAuthNav();
         showToast('Profilo aggiornato!', 'success');
         setTimeout(() => closeProfiloModal(), 800);
     } else {
         showToast('Errore nel salvataggio. Riprova.', 'error');
     }
+    } catch (_) { showToast('Errore di connessione. Riprova.','error'); }
+    finally { if(btn){btn.disabled=false;btn.textContent='Salva modifiche';} }
 }
 
 // ── Custom Confirm Dialog ─────────────────────────────────
@@ -4958,6 +4992,9 @@ function _renderValutatoreRow(l) {
     const geo      = [l.country, l.region].filter(Boolean).join(' / ') || '—';
     const utm      = l.utm_source ? escapeHTML(l.utm_source) : null;
     const tempo    = l.tempo_compilazione_sec != null ? `${l.tempo_compilazione_sec}s` : '—';
+    const declared=l.dettagli_calcolo?.input;
+    const inputRows=declared&&typeof declared==='object'?[['Incasso dichiarato',`${_fmtEur(declared.incasso)} ${declared.baseIncasso==='giorno'?'a giornata':'all’anno'}`],['Giornate effettive all’anno',declared.giornate],['Utile dopo le spese / giornata',declared.utileGiorno==null?'Non indicato':_fmtEur(declared.utileGiorno)],...['clientela','passaggio','posizione','sole','concessione'].map(key=>[({clientela:'Clientela',passaggio:'Passaggio',posizione:'Posizione',sole:'Esposizione al sole',concessione:'Concessione'})[key],PosteggioValuation.labels[key]?.[declared[key]]||declared[key]||'Non indicato']),['Mesi residui',declared.mesiResidui??'Non applicabile']]:null;
+    const declaredHtml=`<details class="mt-3 text-xs text-slate-600"><summary class="font-bold cursor-pointer">Dati dichiarati · modello ${escapeHTML(l.algoritmo_version||'storico')}</summary><div class="mt-2">${inputRows?inputRows.map(([key,value])=>`<p class="mb-1"><b>${escapeHTML(key)}:</b> ${escapeHTML(String(value??'Non indicato'))}</p>`).join(''):'Dettagli non disponibili per questo report storico.'}<p class="mt-2 text-slate-400">Dati forniti dall’utente; stima indicativa, distinta dal prezzo richiesto o da una vendita conclusa.</p></div></details>`;
 
     // Status badges (registrato + pubblicato)
     const badges = [];
@@ -4995,6 +5032,7 @@ function _renderValutatoreRow(l) {
             <span><i class="fas fa-globe mr-1 text-slate-300"></i>${escapeHTML(geo)}</span>
             <span><i class="fas fa-stopwatch mr-1 text-slate-300"></i>${tempo}</span>
         </div>
+        ${declaredHtml}
     </div>`;
 }
 
@@ -5037,7 +5075,7 @@ async function loadAdminValutatoreLogs() {
         list.innerHTML = _allValutatoreLogs.slice(0, 5).map(_renderValutatoreRow).join('');
 
         const btn = document.getElementById('allValutatoreBtn');
-        if (btn) btn.textContent = `Mostra altre (${_allValutatoreLogs.length})`;
+        if (btn) btn.textContent = payload.truncated ? `Ultime ${_allValutatoreLogs.length} di ${stats.totale_all} valutazioni` : `Mostra altre (${_allValutatoreLogs.length})`;
 
     } catch (e) {
         list.innerHTML = `<p class="text-xs text-red-500 font-bold">Errore: ${escapeHTML(e.message)}</p>`;

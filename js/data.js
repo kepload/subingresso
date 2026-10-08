@@ -648,55 +648,61 @@ function showToast(message, type = 'info') {
 // ── Phone normalizer ─────────────────────────────────────
 // Gestisce: +39, 0039, spazi, trattini, punti, parentesi, slash.
 // Restituisce il numero pulito pronto per salvare e mostrare.
-function normalizePhone(raw) {
-    if (!raw) return '';
-    let n = raw.trim();
-    // Rimuovi caratteri non utili mantenendo + iniziale
-    n = n.replace(/[\s\-\.\(\)\/]/g, '');
-    // Rimuovi prefisso internazionale italiano
-    // +3906... (fisso Roma) → 06...
-    if (n.startsWith('+390')) n = '0' + n.slice(4);
-    // +393... (mobile) → 3...
-    else if (n.startsWith('+39')) n = n.slice(3);
-    // 00390... → 0...
-    else if (n.startsWith('00390')) n = '0' + n.slice(5);
-    // 0039... → strip prefix
+function italianPhoneDigits(raw) {
+    if (typeof raw !== 'string' || raw.length > 40 || !/^[+\d\s().\/-]+$/.test(raw)) return '';
+    let n = raw.trim().replace(/[\s().\/-]/g, '');
+    if (n.startsWith('+39')) n = n.slice(3);
     else if (n.startsWith('0039')) n = n.slice(4);
-    // 39XXXXXXXXXX (12 cifre, 39 iniziale) → togli il 39
-    else if (/^39\d{10}$/.test(n)) n = n.slice(2);
-    // Formatta numero mobile (3XX XXXXXXX) con spazio per leggibilità
-    if (/^3\d{9}$/.test(n)) n = n.slice(0, 3) + ' ' + n.slice(3);
+    else if (/^393\d{8,9}$/.test(n) || /^390\d{5,10}$/.test(n)) n = n.slice(2);
+    if (!/^(?:3\d{8,9}|0\d{5,10})$/.test(n) || /^(\d)\1+$/.test(n)) return '';
     return n;
+}
+
+function normalizePhone(raw) {
+    const n = italianPhoneDigits(raw);
+    return /^3\d{9}$/.test(n) ? n.slice(0, 3) + ' ' + n.slice(3) : n;
 }
 
 // Controlla che il telefono abbia almeno 6 cifre e max 13 (fissi + mobili IT)
 function isValidPhone(tel) {
-    const digits = tel.replace(/\D/g, '');
-    return digits.length >= 6 && digits.length <= 13;
+    return isValidItalianPhone(tel);
 }
 
 // Converte qualsiasi formato (con o senza +39, spazi, trattini) in formato E.164
 // "+39XXXXXXXXXX" da usare in href="tel:..." per non confondere il dialer
 // (altrimenti "393452749815" viene salvato in rubrica così come scritto).
 function phoneToTelLink(raw) {
-    if (!raw) return '';
-    let s = String(raw).replace(/[^\d+]/g, '');
-    if (s.indexOf('+') > 0) s = s.replace(/\+/g, '');     // + solo all'inizio
-    if (s.startsWith('+')) return s;                       // già E.164
-    if (s.startsWith('0039')) return '+39' + s.slice(4);
-    if (s.startsWith('39') && s.length >= 11 && s.length <= 13) return '+' + s;
-    if (/^3\d{8,9}$/.test(s)) return '+39' + s;            // mobile IT (3xx xxxxxxx, 9-10 cifre)
-    if (/^0\d{8,10}$/.test(s)) return '+39' + s;           // fisso IT (0xx xxx xxxx)
-    if (s.length >= 9 && s.length <= 11) return '+39' + s; // ambiguo, prepend IT
-    return '+' + s;                                        // fallback estero
+    const n = italianPhoneDigits(raw);
+    return n ? '+39' + n : '';
 }
 
 // Validazione strict per numeri italiani: dopo normalizzazione deve essere
 // +39 + 9-11 cifre (copre cellulari e fissi).
 function isValidItalianPhone(raw) {
-    const link = phoneToTelLink(raw);
-    if (!link) return false;
-    return /^\+39\d{9,11}$/.test(link);
+    return !!italianPhoneDigits(raw);
+}
+
+// Nessun parseFloat: rifiuta testo, esponenti e separatori ambigui.
+function parseFormNumber(raw, money = false) {
+    let value = String(raw ?? '').trim();
+    if (money && /^\d{1,3}(\.\d{3})+(,\d{1,2})?$/.test(value)) value = value.replace(/\./g, '');
+    if (!/^\d+(?:[.,]\d{1,2})?$/.test(value)) return NaN;
+    const number = Number(value.replace(',', '.'));
+    return Number.isFinite(number) ? number : NaN;
+}
+
+function isValidFormText(raw, min, max, multiline = false) {
+    if (typeof raw !== 'string') return false;
+    const text = raw.trim();
+    const controls = multiline ? /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/ : /[\u0000-\u001f\u007f]/;
+    return text.length >= min && text.length <= max && !controls.test(text);
+}
+
+function isValidFormEmail(raw) {
+    if (typeof raw !== 'string' || raw.length > 200) return false;
+    const email = raw.trim();
+    return /^[A-Za-z0-9!#$%&'*+\-/=?^_`{|}~.]+@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)+$/.test(email)
+        && email.split('@')[0].length <= 64 && !email.startsWith('.') && !email.includes('..') && !email.includes('.@');
 }
 
 // UX helper: collega un input "tel" con normalizzazione automatica al blur

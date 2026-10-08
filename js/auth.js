@@ -472,8 +472,7 @@ window.handleRegister = async function (e) {
 
     // Bot trap: honeypot riempito o submit < 2.5s = bot. Finto successo per non rivelare la trappola.
     const honeypot = document.getElementById('regWebsite')?.value || '';
-    const formAge  = Date.now() - (window._regFormStartedAt || 0);
-    if (honeypot.trim() || formAge < 2500) {
+    if (honeypot.trim()) {
         await new Promise(r => setTimeout(r, 1200));
         _showAuthSuccess('Benvenuto! Account creato con successo.');
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
@@ -486,6 +485,11 @@ window.handleRegister = async function (e) {
     const email    = document.getElementById('regEmail').value.trim();
     const telRaw   = document.getElementById('regTelefono').value.trim();
     const password = document.getElementById('regPassword').value;
+    if (!isValidFormText(nome,1,100) || !isValidFormText(cognome,0,100) || !isValidFormEmail(email) || password.length<6 || password.length>128) {
+        _showAuthError('Controlla nome (massimo 100 caratteri), email e password (da 6 a 128 caratteri).');
+        _setBtnLoading('registerBtn',false,'<i class="fas fa-user-plus"></i> Crea account');
+        return;
+    }
 
     // Sanitize: se l'utente ha messo nome+cognome insieme nel campo nome
     // (es. nome="Gianfranco Dona", cognome="Dona") rimuovi il cognome dal nome.
@@ -789,7 +793,8 @@ window.updateAuthNav = async function () {
 
     // Cache profilo in background (per usi successivi, non blocca la nav)
     if (!(_profileCache && _profileCache.id === user.id)) {
-        _supabase.from('profiles').select('nome').eq('id', user.id).single().then(({ data: profile }) => {
+        _supabase.from('profiles').select('nome').eq('id', user.id).single().then(({ data: profile, error }) => {
+            if (error) return;
             if (profile?.nome) {
                 _profileCache = { id: user.id, nome: profile.nome };
             } else {
@@ -797,8 +802,8 @@ window.updateAuthNav = async function () {
                 if (meta.nome) {
                     sessionStorage.removeItem('_reg_src');
                     _supabase.from('profiles')
-                        .upsert({ id: user.id, nome: meta.nome || '', cognome: meta.cognome || '', telefono: meta.telefono || '' })
-                        .then(() => { _profileCache = { id: user.id, nome: meta.nome }; });
+                        .update({ nome: meta.nome }).eq('id', user.id).or('nome.is.null,nome.eq.')
+                        .then(({error: saveError}) => { if (!saveError) _profileCache = { id: user.id, nome: meta.nome }; });
                     _showWelcomeNewPopup(user.id);
                 }
             }

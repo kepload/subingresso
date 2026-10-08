@@ -5,6 +5,7 @@
 // ============================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { email as validEmail, text, phone } from '../_shared/input.ts';
 
 const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -22,17 +23,21 @@ Deno.serve(async (req) => {
 
   try {
     const body = await req.json().catch(() => null);
-    if (!body) return json({ error: 'Body mancante' }, 400);
+    if (!body || Array.isArray(body) || typeof body !== 'object') return json({ error: 'Body mancante' }, 400);
 
     const { email, password, nome, cognome, telefono, website } = body;
-    const cleanEmail = String(email || '').trim().toLowerCase();
-    const cleanPassword = String(password || '');
-    if (!cleanEmail || !cleanPassword) return json({ error: 'Email e password obbligatorie' }, 400);
+    const cleanEmail = validEmail(email);
+    const cleanPassword = typeof password === 'string' ? password : '';
+    const cleanName = text(nome, 1, 100);
+    const cleanSurname = text(cognome ?? '', 0, 100);
+    const cleanPhone = telefono === '' || telefono == null ? '' : phone(telefono);
+    if (!cleanEmail) return json({ error: 'Email non valida' }, 400);
+    if (!cleanName || cleanSurname === null || cleanPhone === null) return json({ error: 'Controlla nome, cognome e telefono' }, 400);
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
       return json({ error: 'Email non valida' }, 400);
     }
-    if (cleanPassword.length < 6) {
+    if (cleanPassword.length < 6 || cleanPassword.length > 128) {
       return json({ error: 'Password troppo corta' }, 400);
     }
 
@@ -70,7 +75,7 @@ Deno.serve(async (req) => {
       email: cleanEmail,
       password: cleanPassword,
       email_confirm: true,
-      user_metadata: { nome: nome || '', cognome: cognome || '', telefono: telefono || '' },
+      user_metadata: { nome: cleanName, cognome: cleanSurname, telefono: cleanPhone, email_verification_mode: 'bypass' },
     });
 
     if (createErr) {
@@ -81,20 +86,7 @@ Deno.serve(async (req) => {
 
       if (!duplicate) return json({ error: createErr.message }, 400);
 
-      const existing = await findUserByEmail(admin, cleanEmail);
-      if (existing && !existing.email_confirmed_at) {
-        const { error: updateErr } = await admin.auth.admin.updateUserById(existing.id, {
-          password: cleanPassword,
-          email_confirm: true,
-          user_metadata: { nome: nome || '', cognome: cognome || '', telefono: telefono || '' },
-        });
-        if (updateErr) return json({ error: updateErr.message }, 400);
-        await upsertProfile(admin, existing.id, nome, cognome, telefono);
-        await logPendingVerification(admin, existing.id, cleanEmail);
-        // Account riattivato: niente welcome (gia' inviata in precedenza).
-        return json({ success: true });
-      }
-
+      // Non cambiare la password di un account esistente senza prova di possesso.
       return json({ error: 'Email gia registrata. Prova ad accedere.' }, 409);
     }
 
@@ -102,8 +94,7 @@ Deno.serve(async (req) => {
       return json({ error: 'Utente non creato' }, 500);
     }
 
-    await upsertProfile(admin, userData.user.id, nome, cognome, telefono);
-    await logPendingVerification(admin, userData.user.id, cleanEmail);
+    await upsertProfile(admin, userData.user.id, cleanName, cleanSurname, cleanPhone);
     triggerWelcomeEmail(userData.user.id);
 
     return json({ success: true });
@@ -112,24 +103,6 @@ Deno.serve(async (req) => {
     return json({ error: 'Errore interno' }, 500);
   }
 });
-
-async function findUserByEmail(admin: ReturnType<typeof createClient>, email: string) {
-  const target = email.trim().toLowerCase();
-
-  for (let page = 1; page <= 10; page++) {
-    const { data, error } = await admin.auth.admin.listUsers({ page, perPage: 1000 });
-    if (error) {
-      console.error('register-bypass list users error:', error);
-      return null;
-    }
-
-    const found = data?.users?.find((u) => String(u.email || '').toLowerCase() === target);
-    if (found) return found;
-    if (!data?.users || data.users.length < 1000) return null;
-  }
-
-  return null;
-}
 
 async function upsertProfile(
   admin: ReturnType<typeof createClient>,
@@ -145,18 +118,10 @@ async function upsertProfile(
       cognome:  cognome  || '',
       telefono: telefono || '',
     });
-    if (error) console.error('register-bypass profile upsert error:', error);
+    if (error) throw new Error('Profilo non salvato');
   } catch (e) {
     console.error('register-bypass profile upsert exception:', e);
-  }
-}
-
-async function logPendingVerification(admin: ReturnType<typeof createClient>, userId: string, email: string) {
-  try {
-    const { error } = await admin.from('pending_email_verifications').insert({ user_id: userId, email });
-    if (error) console.error('register-bypass pending email log error:', error);
-  } catch (e) {
-    console.error('register-bypass pending email log exception:', e);
+    throw e;
   }
 }
 

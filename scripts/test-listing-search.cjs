@@ -22,8 +22,8 @@ const sandbox = { window: {}, AbortController, setTimeout, clearTimeout, fetch: 
 vm.createContext(sandbox);
 for (const file of ['js/comune-picker.js', 'js/location-search.js', 'js/listing-search.js']) vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), sandbox);
 
-const backend = `window._supabase={from(table){let columns='',filters=[];const q={select(value){columns=value;return q},eq(key,value){filters.push(row=>row[key]===value);return q},neq(key,value){filters.push(row=>row[key]!==value);return q},or(){filters.push(row=>row.status==='active'||row.user_id===window.TEST_SEARCH_USER?.id);return q},not(){return q},gt(){return q},order(){return q},limit(){return q},in(){return q},then(resolve){const source=window.TEST_EMPTY?[]:${JSON.stringify(listings)};const data=table==='annunci'?source.filter(row=>filters.every(filter=>filter(row))).map(row=>Object.fromEntries(columns.split(',').map(key=>key.trim()).filter(key=>key in row).map(key=>[key,row[key]]))):[];return Promise.resolve({data,error:window.TEST_ERROR?{message:'Connection unavailable',code:'NETWORK'}:null}).then(resolve)}};return q}};`;
-const auth = `window.getCurrentUser=async()=>window.TEST_SEARCH_USER||null;window.updateAuthNav=()=>{};buildCard=(l,small,distance)=>'<article data-id="'+l.id+'" data-distance="'+distance+'">'+escapeHTML(l.titolo)+'</article>';window.observeCardViews=()=>{};`;
+const backend = `window.TEST_ALERTS=[];window._supabase={from(table){let columns='',filters=[];const q={insert:async record=>{window.TEST_ALERTS.push(record);await new Promise(r=>setTimeout(r,100));return {error:window.TEST_ALERT_ERROR?{message:'offline'}:null}},select(value){columns=value;return q},eq(key,value){filters.push(row=>row[key]===value);return q},neq(key,value){filters.push(row=>row[key]!==value);return q},or(){filters.push(row=>row.status==='active'||row.user_id===window.TEST_SEARCH_USER?.id);return q},not(){return q},gt(){return q},order(){return q},limit(){return q},in(){return q},then(resolve){const source=window.TEST_EMPTY?[]:${JSON.stringify(listings)};const data=table==='annunci'?source.filter(row=>filters.every(filter=>filter(row))).map(row=>Object.fromEntries(columns.split(',').map(key=>key.trim()).filter(key=>key in row).map(key=>[key,row[key]]))):[];return Promise.resolve({data,error:window.TEST_ERROR?{message:'Connection unavailable',code:'NETWORK'}:null}).then(resolve)}};return q}};`;
+const auth = `window.getCurrentUser=async()=>window.TEST_SEARCH_USER||null;window.requireAuth=fn=>fn(window.TEST_SEARCH_USER);window.updateAuthNav=()=>{};buildCard=(l,small,distance)=>'<article data-id="'+l.id+'" data-distance="'+distance+'">'+escapeHTML(l.titolo)+'</article>';window.observeCardViews=()=>{};`;
 const server = http.createServer((req,res) => {
     let file = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).slice(1) || 'index.html';
     if (!path.extname(file)) file += '.html';
@@ -157,6 +157,26 @@ async function checkBrowser(engine, name, mobile, base) {
         await page.getByText('Impossibile caricare gli annunci').waitFor();
         await page.evaluate(async () => { window.TEST_ERROR=false;await loadListings(); });
         await page.locator('[data-id="rivoltella"]').waitFor();
+        // Il form avvisi conserva la scelta geografica e non salva refusi come coordinate vere.
+        await page.evaluate(()=>openAlertModal());
+        await page.locator('#aComune').fill('Localita inventata xx');
+        await page.locator('#alertSubmitBtn').click();
+        await page.locator('#aCoordError').waitFor({state:'visible'});
+        assert.equal(await page.evaluate(()=>window.TEST_ALERTS.length),0);
+        await page.locator('#aComune').fill('Brescia');
+        await page.locator('#alertLocationSuggestions [role="option"]').filter({hasText:'Brescia (BS)'}).first().click();
+        await page.selectOption('#aRadius','25');
+        await page.evaluate(()=>{submitAlert();submitAlert();});
+        await page.locator('#alertModal').waitFor({state:'hidden'});
+        const record=await page.evaluate(()=>window.TEST_ALERTS[0]);
+        assert.equal(record.comune,'Brescia');assert.equal(record.regione,'Lombardia');assert.equal(record.raggio_km,25);assert(record.lat>45&&record.lat<46);assert.equal(await page.evaluate(()=>window.TEST_ALERTS.length),1);
+        await page.evaluate(()=>openAlertModal());await page.locator('#aComune').fill('Lombardia');await page.locator('#aComune').press('Enter');await page.locator('#alertSubmitBtn').click();
+        await page.locator('#alertModal').waitFor({state:'hidden'});
+        const region=await page.evaluate(()=>window.TEST_ALERTS[1]);assert.equal(region.comune,null);assert.equal(region.regione,'Lombardia');assert.equal(region.lat,undefined);
+        await page.evaluate(()=>{window.TEST_ALERT_ERROR=true;openAlertModal();});await page.locator('#aComune').fill('');await page.locator('#alertSubmitBtn').click();await page.waitForFunction(()=>!document.getElementById('alertSubmitBtn').disabled);
+        assert(await page.locator('#alertModal').isVisible());
+        await page.evaluate(()=>window.TEST_ALERT_ERROR=false);await page.locator('#alertSubmitBtn').click();await page.locator('#alertModal').waitFor({state:'hidden'});
+        const all=await page.evaluate(()=>window.TEST_ALERTS.at(-1));assert.equal(all.comune,null);assert.equal(all.regione,null);assert.equal(all.lat,undefined);
         assert.deepEqual(errors,[]);
         console.log('OK '+name+' '+(mobile?'mobile':'desktop')+': Invio/Cerca, refusi, frasi, descrizioni, multi-città, account, filtri, ordine, errore e retry.');
     } finally { await browser.close(); }

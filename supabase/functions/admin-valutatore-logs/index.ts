@@ -47,7 +47,7 @@ Deno.serve(async (req) => {
     // Limit configurabile via querystring (default 500, max 2000)
     const url = new URL(req.url);
     const limitRaw = parseInt(url.searchParams.get('limit') || '500', 10);
-    const limit = Math.min(Math.max(limitRaw, 1), 2000);
+    const limit = Number.isFinite(limitRaw) ? Math.min(Math.max(limitRaw, 1), 2000) : 500;
 
     const { data: logs, error: logsErr } = await admin
       .from('valutatore_logs')
@@ -57,7 +57,7 @@ Deno.serve(async (req) => {
         prezzo_min, prezzo_avg, prezzo_max, affitto_annuo, affitto_mensile,
         referrer, utm_source, utm_medium, utm_campaign, landing_path,
         device_type, country, region, tempo_compilazione_sec, algoritmo_version,
-        user_linked_at, annuncio_linked_at
+        user_linked_at, annuncio_linked_at, dettagli_calcolo
       `)
       .order('created_at', { ascending: false })
       .limit(limit);
@@ -88,15 +88,21 @@ Deno.serve(async (req) => {
 
     // Funnel aggregato (last 30 days)
     const since30 = new Date(Date.now() - 30 * 24 * 3600 * 1000).toISOString();
-    const recent = (logs || []).filter((l: any) => l.created_at >= since30);
+    const [allCount, recentCount, linkedCount, listingCount] = await Promise.all([
+      admin.from('valutatore_logs').select('id',{count:'exact',head:true}),
+      admin.from('valutatore_logs').select('id',{count:'exact',head:true}).gte('created_at',since30),
+      admin.from('valutatore_logs').select('id',{count:'exact',head:true}).gte('created_at',since30).not('user_id','is',null),
+      admin.from('valutatore_logs').select('id',{count:'exact',head:true}).gte('created_at',since30).not('annuncio_id','is',null)
+    ]);
+    if ([allCount,recentCount,linkedCount,listingCount].some(r=>r.error)) return json({error:'Conteggi valutazioni non disponibili'},500);
     const stats = {
-      totale_30d:        recent.length,
-      registrati_30d:    recent.filter((l: any) => l.user_id).length,
-      pubblicato_30d:    recent.filter((l: any) => l.annuncio_id).length,
-      totale_all:        (logs || []).length,
+      totale_30d:        recentCount.count,
+      registrati_30d:    linkedCount.count,
+      pubblicato_30d:    listingCount.count,
+      totale_all:        allCount.count,
     };
 
-    return json({ logs: enriched, stats });
+    return json({ logs: enriched, stats, returned:enriched.length, truncated:(allCount.count??0)>enriched.length });
 
   } catch (e) {
     console.error('admin-valutatore-logs error:', e);
@@ -107,6 +113,6 @@ Deno.serve(async (req) => {
 function json(payload: unknown, status = 200) {
   return new Response(JSON.stringify(payload), {
     status,
-    headers: { ...CORS, 'Content-Type': 'application/json' },
+    headers: { ...CORS, 'Content-Type': 'application/json', 'Cache-Control':'no-store' },
   });
 }

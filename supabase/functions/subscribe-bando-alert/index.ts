@@ -9,6 +9,7 @@
 // ============================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { email as validEmail } from '../_shared/input.ts';
 
 const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -105,7 +106,7 @@ Deno.serve(async (req) => {
 
   try {
     const body = await req.json().catch(() => null);
-    if (!body) return json({ error: 'Body mancante' }, 400);
+    if (!body || typeof body !== 'object' || Array.isArray(body)) return json({ error: 'Body mancante' }, 400);
 
     const { email, regione, source, website, ts_form_started } = body as Record<string, unknown>;
 
@@ -114,16 +115,16 @@ Deno.serve(async (req) => {
       return json({ success: true, already_subscribed: false });
     }
 
-    // ── Time-on-form: < 2.5s = bot. Finto 200. ──
+    // Invio troppo rapido: errore esplicito e possibilità di riprovare.
     if (typeof ts_form_started === 'number' && Number.isFinite(ts_form_started)) {
       const dt = Date.now() - ts_form_started;
       if (dt >= 0 && dt < 2500) {
-        return json({ success: true, already_subscribed: false });
+        return json({ error: 'Attendi un momento e riprova a inviare il modulo.' }, 429);
       }
     }
 
-    const cleanEmail   = String(email   || '').trim().toLowerCase();
-    const cleanRegione = String(regione || '').trim();
+    const cleanEmail   = validEmail(email);
+    const cleanRegione = typeof regione === 'string' ? regione.trim() : '';
 
     if (!cleanEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail) || cleanEmail.length > 200) {
       return json({ error: 'Email non valida' }, 400);
@@ -138,19 +139,20 @@ Deno.serve(async (req) => {
       return json({ error: 'Regione non valida' }, 400);
     }
 
-    const cleanSource = typeof source === 'string' ? source.slice(0, 120) : null;
+    const cleanSource = typeof source === 'string' && /^[a-z0-9/_-]{1,120}$/.test(source) ? source : null;
 
     const admin = createClient(SUPABASE_URL, SB_SECRET_KEY, {
       auth: { persistSession: false, autoRefreshToken: false },
     });
 
     // Idempotenza: se gia' iscritto a (email, regione) niente errore, niente doppia welcome.
-    const { data: existing } = await admin
+    const { data: existing, error: existingError } = await admin
       .from('bando_alerts')
       .select('id, unsub_token')
       .eq('email', cleanEmail)
       .eq('regione', cleanRegione)
       .maybeSingle();
+    if (existingError) return json({ error: 'Errore verifica iscrizione. Riprova.' }, 500);
 
     let alertId: string;
     let unsubToken: string;
@@ -167,11 +169,19 @@ Deno.serve(async (req) => {
         .select('id, unsub_token')
         .single();
       if (insErr || !ins) {
+        if (insErr?.code === '23505') return json({ success: true, already_subscribed: true });
         console.error('insert bando_alerts failed:', insErr);
         return json({ error: 'Errore iscrizione' }, 500);
       }
       alertId = ins.id as string;
       unsubToken = ins.unsub_token as string;
+      // Conversione solo dopo INSERT riuscito; il browser non può inventare iscrizioni.
+      const visitorId = typeof body.visitor_id === 'string' && /^[a-zA-Z0-9_-]{8,80}$/.test(body.visitor_id) ? body.visitor_id : null;
+      const sessionId = typeof body.session_id === 'string' && /^[a-zA-Z0-9_-]{8,80}$/.test(body.session_id) ? body.session_id : null;
+      if (visitorId && sessionId && cleanSource && /^[a-z0-9-]{1,120}$/.test(cleanSource)) {
+        const { error: conversionError } = await admin.from('blog_conversions').insert({kind:'alert_signup',post_slug:cleanSource,regione:cleanRegione,visitor_id:visitorId,session_id:sessionId});
+        if (conversionError) console.warn('Iscrizione salvata; conversione non registrata:', conversionError.code);
+      }
     }
 
     // Email welcome solo per nuove iscrizioni (no double-send se reiscrive).

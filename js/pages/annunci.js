@@ -507,12 +507,22 @@ async function loadListings() {
 document.addEventListener('DOMContentLoaded', loadListings);
 
 // ── ALERT MODAL ──────────────────────────────────────────────
+let alertLocationSearch = null;
+let alertPrefilledPlace = null;
+let alertSaving = false;
 function openAlertModal() {
     requireAuth(function() {
         const modal = document.getElementById('alertModal');
         if (modal) modal.classList.remove('hidden');
         const input = document.getElementById('aComune');
         if (input) input.value = LAST_SEARCH_QUERY || '';
+        alertPrefilledPlace=null;
+        if (!alertLocationSearch) {
+            alertLocationSearch = LocationSearch.create({ input, box:document.getElementById('alertLocationSuggestions'),regions:REGIONI,onSubmit:()=>alertLocationSearch?.close() });
+            input.addEventListener('input',()=>{alertPrefilledPlace=null;});
+        }
+        const selected = locationSearch.selected;
+        if (selected && input.value === sBar.value.trim()) {input.value=selected.nome;alertPrefilledPlace={value:input.value,place:selected};}
         const err = document.getElementById('aCoordError');
         if (err) err.classList.add('hidden');
     });
@@ -524,7 +534,12 @@ function closeAlertModal() {
 }
 
 async function submitAlert() {
+    if (alertSaving) return;
+    alertSaving = true;
     requireAuth(async function(user) {
+        const btn=document.getElementById('alertSubmitBtn');
+        if(btn)btn.disabled=true;
+        try {
         const input  = document.getElementById('aComune');
         const errEl  = document.getElementById('aCoordError');
         const comune = input ? input.value.trim() : '';
@@ -533,27 +548,34 @@ async function submitAlert() {
 
         await locationSearch.ready;
         await locationGeoReady;
-        const place = comune === sBar.value.trim() ? locationSearch.selected || LocationSearch.resolve(comune) : LocationSearch.resolve(comune);
         const regionName = REGIONI.find(name => normalizeText(name) === normalizeText(comune));
-        const coords = place ? LocationSearch.coordinates(place) : regionName ? PROVINCE_COORDS[regionName] || null : null;
-        if (comune && !coords) {
+        const place = regionName ? null : alertLocationSearch?.selected || (alertPrefilledPlace?.value===comune?alertPrefilledPlace.place:null) || LocationSearch.resolve(comune);
+        const coords = place ? LocationSearch.coordinates(place) : null;
+        if (comune && !regionName && (!place || !coords)) {
             if (errEl) errEl.classList.remove('hidden');
             return;
         }
 
-        const record = { user_id: user.id, comune: comune || null };
+        const radius=Number(document.getElementById('aRadius')?.value||100);
+        if(![25,50,100,200,400].includes(radius))throw Error('Raggio non valido');
+        const canonical=place?.nome||null;
+        const record = { user_id: user.id, comune: canonical, regione:regionName||place?.regione||null,raggio_km:radius };
         if (coords) { record.lat = coords[0]; record.lng = coords[1]; }
 
         const { error } = await _supabase.from('alerts').insert(record);
 
         if (!error) {
             closeAlertModal();
-            showToast('Alert attivato! Riceverai una email quando esce un annuncio' + (comune ? ' vicino a ' + comune : '') + '.', 'success');
+            showToast('Alert attivato! '+(canonical?'Annunci entro '+radius+' km da '+canonical:regionName?'Annunci in '+regionName:'Annunci in tutta Italia')+'.', 'success');
         } else {
             console.error('Alert error:', error);
             showToast("Errore durante il salvataggio dell'alert. Riprova.", 'error');
         }
+        } catch (_) { showToast('Impossibile salvare l’avviso. Controlla la località e riprova.','error'); }
+        finally { alertSaving=false;if(btn)btn.disabled=false; }
     });
+    // L'apertura del modulo richiede già l'accesso; se la sessione è terminata consentire il retry dopo login.
+    setTimeout(()=>{if(!document.getElementById('alertSubmitBtn')?.disabled)alertSaving=false;},1000);
 }
 
 // ── MOBILE FILTERS ───────────────────────────────────────────

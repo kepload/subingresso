@@ -1,7 +1,9 @@
 // ============================================================
 //  Subingresso.it — Edge Function: export CSV utenti (admin)
-//  Scarica un CSV con dati utili per partner/lead-gen.
+//  Scarica il CSV completo per il controllo interno dell'amministratore.
 // ============================================================
+
+import { userDirectory } from '../_shared/user-directory.ts';
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
@@ -42,62 +44,7 @@ Deno.serve(async (req) => {
       return jsonErr('Forbidden', 403);
     }
 
-    // ── Fetch dati utenti ─────────────────────────────────
-    const { data: authRows, error: rpcErr } = await admin
-      .rpc('admin_get_recent_users', { p_limit: 5000 });
-    if (rpcErr) return jsonErr(rpcErr.message, 500);
-
-    const rows = (authRows as Array<Record<string, unknown>>) || [];
-    const ids = rows.map(u => u.id as string).filter(Boolean);
-
-    // Profili + annunci + messaggi + conversazioni in parallelo
-    const [profilesRes, annunciRes, messaggiRes, conversazioniRes] = await Promise.all([
-      ids.length
-        ? admin.from('profiles')
-            .select('id, nome, cognome, telefono, email_digest, email_stats')
-            .in('id', ids)
-        : Promise.resolve({ data: [] as Array<Record<string, unknown>> }),
-      ids.length
-        ? admin.from('annunci')
-            .select('user_id, status')
-            .in('user_id', ids)
-        : Promise.resolve({ data: [] as Array<Record<string, unknown>> }),
-      ids.length
-        ? admin.from('messaggi')
-            .select('mittente_id')
-            .in('mittente_id', ids)
-        : Promise.resolve({ data: [] as Array<Record<string, unknown>> }),
-      ids.length
-        ? admin.from('conversazioni')
-            .select('venditore_id')
-            .in('venditore_id', ids)
-        : Promise.resolve({ data: [] as Array<Record<string, unknown>> }),
-    ]);
-
-    const profileMap = new Map(
-      ((profilesRes.data || []) as Array<Record<string, unknown>>).map(p => [String(p.id), p])
-    );
-
-    const annunciMap = new Map<string, { total: number; active: number }>();
-    for (const a of (annunciRes.data || []) as Array<Record<string, unknown>>) {
-      const key = String(a.user_id);
-      const entry = annunciMap.get(key) || { total: 0, active: 0 };
-      entry.total++;
-      if (a.status === 'active') entry.active++;
-      annunciMap.set(key, entry);
-    }
-
-    const messaggiMap = new Map<string, number>();
-    for (const m of (messaggiRes.data || []) as Array<Record<string, unknown>>) {
-      const key = String(m.mittente_id);
-      messaggiMap.set(key, (messaggiMap.get(key) || 0) + 1);
-    }
-
-    const conversazioniMap = new Map<string, number>();
-    for (const c of (conversazioniRes.data || []) as Array<Record<string, unknown>>) {
-      const key = String(c.venditore_id);
-      conversazioniMap.set(key, (conversazioniMap.get(key) || 0) + 1);
-    }
+    const rows = await userDirectory(admin);
 
     // ── Costruisci CSV ────────────────────────────────────
     const headers = [
@@ -108,9 +55,10 @@ Deno.serve(async (req) => {
       'telefono',
       'created_at',
       'last_sign_in_at',
-      'email_confirmed',
-      'email_digest_optin',
-      'email_stats_optin',
+      'email_confirmed_in_supabase',
+      'email_confirmation_mode',
+      'email_digest_enabled',
+      'email_stats_enabled',
       'annunci_attivi',
       'annunci_totali',
       'messaggi_inviati',
@@ -126,25 +74,22 @@ Deno.serve(async (req) => {
       )
       .forEach((u) => {
         const id = String(u.id);
-        const p = (profileMap.get(id) as Record<string, unknown>) || {};
-        const counts = annunciMap.get(id) || { total: 0, active: 0 };
-        const sent = messaggiMap.get(id) || 0;
-        const received = conversazioniMap.get(id) || 0;
         const row = [
           csv(id),
           csv(u.email),
-          csv(p.nome),
-          csv(p.cognome),
-          csv(p.telefono),
+          csv(u.nome),
+          csv(u.cognome),
+          csv(u.telefono),
           csv(u.created_at),
           csv(u.last_sign_in_at),
           csv(u.confirmed_at ? 'true' : 'false'),
-          csv(p.email_digest === false ? 'false' : 'true'),
-          csv(p.email_stats === false ? 'false' : 'true'),
-          csv(counts.active),
-          csv(counts.total),
-          csv(sent),
-          csv(received),
+          csv(u.verification_mode || 'non_registrato'),
+          csv(u.email_digest == null ? '' : String(u.email_digest)),
+          csv(u.email_stats == null ? '' : String(u.email_stats)),
+          csv(u.annunci_active),
+          csv(u.annunci_total),
+          csv(u.messaggi_inviati),
+          csv(u.contatti_ricevuti),
         ];
         lines.push(row.join(','));
       });
@@ -169,7 +114,8 @@ Deno.serve(async (req) => {
 
 function csv(v: unknown): string {
   if (v === null || v === undefined) return '';
-  const s = String(v);
+  const raw = String(v);
+  const s = /^[\s]*[=+@-]/.test(raw) ? "'" + raw : raw;
   if (s.includes('"') || s.includes(',') || s.includes('\n') || s.includes('\r')) {
     return '"' + s.replace(/"/g, '""') + '"';
   }

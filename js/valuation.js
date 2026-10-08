@@ -29,7 +29,8 @@
     function parseMoney(raw) {
         if (typeof raw === 'number') return Number.isFinite(raw) && raw >= 0 && Math.abs(raw * 100 - Math.round(raw * 100)) < 1e-6 ? raw : NaN;
         if (typeof raw !== 'string') return NaN;
-        let s = raw.trim().replace(/^€\s*/, '').replace(/[\u00a0\u202f ]/g, '');
+        let s = raw.trim().replace(/^€\s*/, '');
+        if (/^\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?:,\d{1,2})?$/.test(s)) s=s.replace(/[\u00a0\u202f ]/g,'');
         if (/^\d{1,3}(\.\d{3})+(,\d{1,2})?$/.test(s)) s = s.replace(/\./g, '').replace(',', '.');
         else if (/^\d+(,\d{1,2})?$/.test(s)) s = s.replace(',', '.');
         else if (!/^\d+\.\d{1,2}$/.test(s)) return NaN;
