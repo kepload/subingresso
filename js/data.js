@@ -560,6 +560,7 @@ window.processPendingSaveListing = processPendingSaveListing;
 
 // ── Tracking visualizzazioni anteprima card (shared tra tutte le pagine) ──
 const _viewedPreviews = new Set();
+let _cardViewObserver = null;
 function observeCardViews() {
     const cards = document.querySelectorAll('[data-listing-id]');
     if (!cards.length) return;
@@ -568,13 +569,29 @@ function observeCardViews() {
         const id = card.dataset.listingId;
         if (!id || _viewedPreviews.has(id)) return;
         const r = card.getBoundingClientRect();
-        if (r.bottom > 0 && r.top < window.innerHeight) {
+        const visibleHeight = Math.max(0, Math.min(r.bottom, window.innerHeight) - Math.max(r.top, 0));
+        if (r.height > 0 && visibleHeight >= r.height / 2 && r.right > 0 && r.left < window.innerWidth) {
             _viewedPreviews.add(id);
             (async () => {
-                const { error } = await _supabase.rpc('increment_views', { listing_id: id, amount: 1 });
+                const { error } = await _supabase.rpc('track_listing_view', { listing_id: id, view_type: 'impression' });
                 if (error) console.warn('[views +1]', error);
             })();
         }
+    }
+
+    if ('IntersectionObserver' in window) {
+        if (!_cardViewObserver) _cardViewObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                    _trackCard(entry.target);
+                    if (_viewedPreviews.has(entry.target.dataset.listingId)) _cardViewObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        cards.forEach(card => {
+            if (!_viewedPreviews.has(card.dataset.listingId)) _cardViewObserver.observe(card);
+        });
+        return;
     }
 
     requestAnimationFrame(() => cards.forEach(_trackCard));

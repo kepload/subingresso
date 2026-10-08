@@ -50,8 +50,8 @@
                 <i class="fas fa-check text-emerald-500 text-3xl"></i>
             </div>
             <p class="text-[11px] font-black text-emerald-600 uppercase tracking-widest mb-2">Pagamento completato</p>
-            <h1 class="text-2xl md:text-3xl font-black tracking-tight mb-3">Il tuo annuncio è in vetrina!</h1>
-            <p class="text-slate-500 font-medium mb-2">
+            <h1 id="successTitle" class="text-2xl md:text-3xl font-black tracking-tight mb-3">Il tuo annuncio è in vetrina!</h1>
+            <p id="successDescription" class="text-slate-500 font-medium mb-2">
                 Da ora il tuo annuncio apparirà in cima ai risultati di ricerca con un badge distintivo.
             </p>
             <p id="successDetails" class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-8"></p>
@@ -154,17 +154,24 @@
             // Attivato! Recupera dettagli annuncio
             const { data: ann } = await _supabase
                 .from('annunci')
-                .select('id, titolo, featured_until')
+                .select('id, titolo, status, featured_until')
                 .eq('id', payment.annuncio_id)
                 .maybeSingle();
 
-            const tierLabel = payment.tier === '90d' ? '90 giorni' : '30 giorni';
+            const tierLabel = { '10d': '10 giorni', '30d': '30 giorni', '90d': '90 giorni' }[payment.tier] || '';
+            const waitingApproval = !payment.activated_at;
             const untilStr  = ann?.featured_until
                 ? new Date(ann.featured_until).toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' })
                 : null;
 
             document.getElementById('successDetails').textContent =
-                (untilStr ? `Vetrina ${tierLabel} · attiva fino al ${untilStr}` : `Vetrina ${tierLabel} attivata`);
+                (waitingApproval ? `Vetrina ${tierLabel} · tutti i giorni acquistati sono conservati`
+                    : untilStr ? `Vetrina ${tierLabel} · attiva fino al ${untilStr}` : `Vetrina ${tierLabel} attivata`);
+            if (waitingApproval) {
+                document.getElementById('successTitle').textContent = 'La tua Vetrina è acquistata!';
+                document.getElementById('successDescription').textContent = 'La promozione partirà quando il tuo annuncio sarà approvato. Durante l’attesa non perdi giorni.';
+                document.getElementById('viewAnnuncioBtn').classList.add('hidden');
+            }
 
             if (ann?.id) {
                 document.getElementById('viewAnnuncioBtn').href = `/annuncio?id=${ann.id}`;

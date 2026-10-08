@@ -14,9 +14,9 @@ const SITE_URL                  = 'https://subingresso.it';
 
 // Prezzi (centesimi) — fonte di verità server-side, non fidarsi del client
 const TIERS: Record<string, { amount: number; days: number; label: string }> = {
-  '10d': { amount: 1990, days: 10, label: 'Vetrina 10 giorni' },
-  '30d': { amount: 3990, days: 30, label: 'Vetrina 30 giorni' },
-  '90d': { amount: 5990, days: 90, label: 'Vetrina 90 giorni' },
+  '10d': { amount: 2490, days: 10, label: 'Vetrina 10 giorni' },
+  '30d': { amount: 4990, days: 30, label: 'Vetrina 30 giorni' },
+  '90d': { amount: 9990, days: 90, label: 'Vetrina 90 giorni' },
 };
 
 // Sconto -10% riservato esclusivamente al momento della pubblicazione
@@ -77,7 +77,7 @@ Deno.serve(async (req) => {
     // 3. Verifica che l'annuncio appartenga all'utente
     const { data: annuncio, error: annErr } = await admin
       .from('annunci')
-      .select('id, user_id, status, titolo, featured, featured_until, featured_since, created_at')
+      .select('id, user_id, status, titolo, featured, featured_until, featured_since, created_at, expires_at')
       .eq('id', annuncioId)
       .single();
 
@@ -96,6 +96,9 @@ Deno.serve(async (req) => {
     }
     if (annuncio.status !== 'active' && !(isCreationFlow && annuncio.status === 'pending')) {
       return json({ error: 'Puoi attivare la vetrina solo su annunci già pubblicati (status active).' }, 400);
+    }
+    if (annuncio.expires_at && new Date(annuncio.expires_at).getTime() <= Date.now()) {
+      return json({ error: 'Riattiva il tuo annuncio prima di acquistare la Vetrina.' }, 400);
     }
 
     // 3b. Sconto -10% SOLO al momento della pubblicazione, e solo se l'annuncio
@@ -116,6 +119,12 @@ Deno.serve(async (req) => {
     const productName = discounted
       ? `${tierCfg.label} · sconto pubblicazione -10%`
       : tierCfg.label;
+
+    // Chi ha una pagina aperta con il vecchio listino deve aggiornare prima di pagare.
+    // Il client conferma solo l'importo mostrato; il prezzo resta deciso dal server.
+    if (!Number.isInteger(body.expected_amount_cents) || body.expected_amount_cents !== amount) {
+      return json({ error: 'Il listino è stato aggiornato. Ricarica la pagina per vedere il prezzo attuale prima di pagare.' }, 409);
+    }
 
     // 4. Crea sessione Stripe via API diretta (no SDK per alleggerire la function)
     const params = new URLSearchParams();
@@ -177,7 +186,7 @@ Deno.serve(async (req) => {
       status:            'pending',
       stripe_session_id: stripeData.id,
       customer_email:    user.email ?? null,
-    }, { onConflict: 'stripe_session_id' });
+    }, { onConflict: 'stripe_session_id', ignoreDuplicates: true });
 
     return json({ url: stripeData.url, session_id: stripeData.id });
 

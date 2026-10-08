@@ -324,11 +324,11 @@ async function initPage() {
         }
     }
 
-    // Traccia visita diretta (+2) e mostra contatore — completamente asincrono e isolato
+    // Una visita al dettaglio = un evento, distinto dall'apparizione della card.
     (async () => {
         if (_moderationPreview) return;
         try {
-            await _supabase.rpc('increment_views', { listing_id: listing.id, amount: Math.random() < 0.5 ? 1 : 2 });
+            await _supabase.rpc('track_listing_view', { listing_id: listing.id, view_type: 'detail' });
             const { data: vd } = await _supabase
                 .from('annunci').select('visualizzazioni').eq('id', listing.id).maybeSingle();
             const vcEl = document.getElementById('viewCount');

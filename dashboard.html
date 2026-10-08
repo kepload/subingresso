@@ -666,6 +666,8 @@
 
                 <p id="sellerAnalyticsHistoryNote" class="hidden text-xs text-slate-500 font-semibold mt-3">Il grafico mostra gli eventi registrati dal 6 ottobre 2026. I riepiloghi includono anche i totali precedenti.</p>
 
+                <div id="sellerVetrinaResults" class="mt-5" aria-live="polite"></div>
+
                 <div id="sellerAnalyticsAdvice" class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-3"></div>
             </div>
         </div>
@@ -811,7 +813,7 @@
 
 <!-- ══════════════ MODAL VETRINA ══════════════ -->
 <div id="vetrinaModal" class="hidden fixed inset-0 z-[999] flex items-end sm:items-center justify-center sm:p-4" style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)" onclick="closeVetrinaModal()">
-    <div class="bg-white rounded-t-3xl sm:rounded-3xl w-full max-w-md shadow-2xl" onclick="event.stopPropagation()">
+    <div class="bg-white rounded-t-3xl sm:rounded-3xl w-full max-w-md shadow-2xl" style="max-height:90vh;max-height:90dvh;overflow-y:auto" onclick="event.stopPropagation()">
 
         <!-- Header -->
         <div class="bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 px-5 pt-5 pb-4 relative overflow-hidden rounded-t-3xl sm:rounded-t-3xl">
@@ -835,21 +837,26 @@
                     <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
                         <i class="fas fa-eye text-amber-500 text-xs"></i>
                     </div>
-                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">+ Visualizzazioni</p>
+                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Prima dei gratuiti</p>
                 </div>
                 <div class="flex flex-col items-center gap-1">
                     <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-bolt text-amber-500 text-xs"></i>
+                        <i class="fas fa-newspaper text-amber-500 text-xs"></i>
                     </div>
-                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Vendi prima</p>
+                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Spazi nel blog</p>
                 </div>
                 <div class="flex flex-col items-center gap-1">
                     <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
                         <i class="fas fa-arrow-up text-amber-500 text-xs"></i>
                     </div>
-                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">In cima</p>
+                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Tra i consigliati</p>
                 </div>
             </div>
+            <p class="text-xs text-slate-500 mt-3 leading-relaxed">Priorità nelle ricerche pertinenti e negli annunci consigliati. Presenza negli spazi del blog, a rotazione con le altre Vetrine.</p>
+            <details class="mt-3 text-xs">
+                <summary class="font-bold text-blue-600 cursor-pointer">Vedi come apparirà il tuo annuncio</summary>
+                <div id="vetrinaPreview" class="mt-3" style="pointer-events:none" aria-label="Anteprima del tuo annuncio in Vetrina"></div>
+            </details>
         </div>
 
         <!-- Tier options -->
@@ -860,25 +867,25 @@
                 <div class="flex items-center justify-between gap-3">
                     <div>
                         <h3 class="font-black text-slate-700 text-sm leading-tight">Vetrina 10 giorni</h3>
-                        <p class="text-[10px] text-slate-400 font-semibold mt-0.5">Prova rapida</p>
+                        <p class="text-[10px] text-slate-400 font-semibold mt-0.5">Promozione breve</p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                        <p class="text-xl font-black text-slate-700 leading-none">€ 19,90</p>
-                        <p class="text-xs font-bold text-slate-500 mt-1">€ 1,99 / giorno</p>
+                        <p class="text-xl font-black text-slate-700 leading-none">€ 24,90</p>
+                        <p class="text-xs font-bold text-slate-500 mt-1">€ 2,49 / giorno</p>
                     </div>
                 </div>
             </button>
 
             <!-- 30 giorni -->
-            <button id="tier30d" onclick="startCheckout('30d')" class="w-full text-left bg-white border-2 border-slate-100 hover:border-slate-200 rounded-2xl px-4 py-3 transition">
+            <button id="tier30d" onclick="startCheckout('30d')" class="w-full text-left bg-blue-50 border-2 border-blue-200 hover:border-blue-400 rounded-2xl px-4 py-3 transition">
                 <div class="flex items-center justify-between gap-3">
                     <div>
                         <h3 class="font-black text-slate-700 text-sm leading-tight">Vetrina 30 giorni</h3>
-                        <p class="text-[10px] text-slate-400 font-semibold mt-0.5">Più visibilità</p>
+                        <p class="text-[10px] text-blue-600 font-semibold mt-0.5">Consigliato · Un mese di visibilità</p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                        <p class="text-xl font-black text-slate-700 leading-none">€ 39,90</p>
-                        <p class="text-xs font-bold text-slate-500 mt-1">€ 1,33 / giorno</p>
+                        <p class="text-xl font-black text-slate-700 leading-none">€ 49,90</p>
+                        <p class="text-xs font-bold text-slate-500 mt-1">€ 1,66 / giorno</p>
                     </div>
                 </div>
             </button>
@@ -889,11 +896,11 @@
                 <div class="flex items-center justify-between gap-3">
                     <div>
                         <h3 class="font-black text-slate-900 text-base leading-tight">Vetrina 90 giorni</h3>
-                        <p class="text-[10px] text-amber-700 font-bold mt-0.5">3 mesi al prezzo più conveniente</p>
+                        <p class="text-[10px] text-amber-700 font-bold mt-0.5">Tre mesi per la tua trattativa</p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                        <p class="text-xl font-black text-slate-900 leading-none">€ 59,90</p>
-                        <p class="text-xs font-bold text-amber-700 mt-1">€ 0,67 / giorno</p>
+                        <p class="text-xl font-black text-slate-900 leading-none">€ 99,90</p>
+                        <p class="text-xs font-bold text-amber-700 mt-1">€ 1,11 / giorno</p>
                     </div>
                 </div>
             </button>
@@ -901,6 +908,7 @@
         </div>
 
         <!-- Footer -->
+        <p class="px-5 pb-3 text-xs text-slate-500 leading-relaxed">Annuncio già online: la durata parte dal pagamento. Nuovo annuncio: dall'approvazione. Se estendi una Vetrina attiva, aggiungiamo i giorni alla scadenza attuale.</p>
         <div class="px-5 pb-5 flex items-center justify-between gap-3">
             <button onclick="closeVetrinaModal()" class="text-xs font-black text-slate-400 hover:text-slate-600 uppercase tracking-widest transition flex-shrink-0">
                 Annulla
@@ -1211,7 +1219,7 @@
 <script src="js/supabase-config.js?v=3"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=18"></script>
+<script src="js/data.js?v=19"></script>
 <script src="js/auth.js?v=21"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <script>
@@ -3356,6 +3364,7 @@ async function dismissAllMilestones() {
 let _sellerAnalyticsState = { days: 30, listings: [] };
 let _sellerAnalyticsChart = null;
 let _sellerAnalyticsRequest = 0;
+let _sellerVetrinaStats = { listings: [], error: false };
 
 function _sellerNum(n) {
     return Number(n || 0).toLocaleString('it-IT');
@@ -3382,6 +3391,9 @@ async function loadSellerAnalytics(days) {
     if (advice) advice.innerHTML = '';
     if (chartWrap) chartWrap.classList.add('hidden');
     if (historyNote) historyNote.classList.add('hidden');
+    const vetrinaResults = document.getElementById('sellerVetrinaResults');
+    if (vetrinaResults) vetrinaResults.innerHTML = '';
+    _sellerVetrinaStats = { listings: [], error: false };
 
     try {
         const { data, error } = await _supabase.rpc('dashboard_seller_analytics', { p_days: nextDays });
@@ -3391,6 +3403,15 @@ async function loadSellerAnalytics(days) {
 
         _sellerAnalyticsState.listings = Array.isArray(data.listings) ? data.listings : [];
         _sellerAnalyticsState.days = Number(data.days || nextDays);
+        try {
+            const vetrina = await _supabase.rpc('dashboard_vetrina_stats', { p_days: nextDays });
+            if (request !== _sellerAnalyticsRequest) return;
+            if (vetrina.error || !vetrina.data || vetrina.data.error) throw new Error('Vetrina stats unavailable');
+            _sellerVetrinaStats = { listings: vetrina.data.listings || [], error: false };
+        } catch (_) {
+            if (request !== _sellerAnalyticsRequest) return;
+            _sellerVetrinaStats = { listings: [], error: true };
+        }
         _populateSellerAnalyticsSelect();
         renderSellerAnalytics();
     } catch (e) {
@@ -3402,6 +3423,7 @@ async function loadSellerAnalytics(days) {
                 <button type="button" onclick="loadSellerAnalytics()" class="ml-2 underline">Riprova</button>
             </div>`;
         if (advice) advice.innerHTML = '';
+        if (vetrinaResults) vetrinaResults.innerHTML = '';
         if (_sellerAnalyticsChart) {
             _sellerAnalyticsChart.destroy();
             _sellerAnalyticsChart = null;
@@ -3480,6 +3502,7 @@ function renderSellerAnalytics() {
                 </a>
             </div>`;
         if (advice) advice.innerHTML = '';
+        _renderSellerVetrinaResults([]);
         if (_sellerAnalyticsChart) {
             _sellerAnalyticsChart.destroy();
             _sellerAnalyticsChart = null;
@@ -3517,6 +3540,59 @@ function renderSellerAnalytics() {
     if (historyNote) historyNote.classList.remove('hidden');
     _renderSellerAnalyticsChart(canvas, buckets);
     if (advice) advice.innerHTML = _buildSellerAdvice(listings);
+    _renderSellerVetrinaResults(listings);
+}
+
+function openVetrinaFromAnalytics(id) {
+    const listing = _sellerAnalyticsState.listings.find(l => l.id === id);
+    if (listing) openVetrinaModal(listing);
+}
+
+function _renderSellerVetrinaResults(listings) {
+    const el = document.getElementById('sellerVetrinaResults');
+    if (!el) return;
+    el.innerHTML = '';
+    if (!listings.length) return;
+    if (_sellerVetrinaStats.error) {
+        el.innerHTML = '<p class="text-xs text-slate-500">Risultati Vetrina non disponibili. <button type="button" onclick="loadSellerAnalytics()" class="text-blue-600 font-bold underline">Riprova</button></p>';
+        return;
+    }
+    const ids = new Set(listings.map(l => l.id));
+    const rows = _sellerVetrinaStats.listings.filter(l => ids.has(l.id));
+    const sum = key => rows.reduce((n, l) => n + Number(l[key] || 0), 0);
+    const impressions = sum('impressions');
+    const visits = sum('detail_views');
+    const actions = sum('contact_actions');
+    const waitingDays = sum('waiting_days');
+    const active = listings.some(l => l.status === 'active' && isListingFeatured(l) && !isListingExpired(l));
+    if (active || impressions || visits || actions || waitingDays) {
+        el.innerHTML = `
+            <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4">
+                <h4 class="text-sm font-black text-slate-900"><i class="fas fa-crown text-amber-500 mr-1"></i> Risultati durante la Vetrina</h4>
+                <p class="text-xs text-slate-500 mt-1">Nel periodo selezionato, solo mentre la promozione era attiva.</p>
+                ${waitingDays ? `<p class="text-xs font-bold text-amber-800 mt-3">${waitingDays} giorni acquistati in attesa di approvazione. La durata inizierà quando l'annuncio sarà online.</p>` : ''}
+                <div class="grid grid-cols-3 gap-2 mt-3">
+                    ${[['Apparizioni', impressions], ['Visite', visits], ['Azioni', actions]].map(([label, count]) => `
+                        <div class="bg-white rounded-xl p-3 text-center min-w-0">
+                            <p class="text-[10px] font-bold text-slate-500">${label}</p>
+                            <p class="text-2xl font-black text-slate-900 mt-1">${_sellerNum(count)}</p>
+                        </div>`).join('')}
+                </div>
+                <p class="text-xs text-slate-500 mt-3">Apparizioni della card, aperture dell'annuncio e azioni su telefono, WhatsApp e chat.</p>
+                <p class="text-xs text-slate-500 mt-3 leading-relaxed">Rilevazione dall'8 ottobre 2026. I conteggi possono includere più azioni della stessa persona; le tue visite sono escluse.</p>
+            </div>`;
+    }
+    const candidate = listings.find(l => l.status === 'active' && !isListingExpired(l) && !isListingFeatured(l)
+        && new Date(l.created_at).getTime() <= Date.now() - 7 * 86400000
+        && !rows.some(r => r.id === l.id && Number(r.waiting_days) > 0));
+    if (candidate) {
+        el.innerHTML += `
+            <div class="border border-slate-100 rounded-2xl p-4 mt-3">
+                <h4 class="text-sm font-black text-slate-900">Vuoi dare più visibilità a questo posteggio?</h4>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">${escapeHTML(candidate.titolo || 'Il tuo annuncio')} è online da almeno una settimana. Con la Vetrina ha priorità nella ricerca e negli spazi del blog.</p>
+                <button type="button" data-vetrina-listing="${escapeHTML(candidate.id)}" onclick="openVetrinaFromAnalytics(this.dataset.vetrinaListing)" class="mt-3 bg-amber-50 text-amber-700 border border-amber-200 px-4 py-2 rounded-xl text-xs font-black">Scopri la Vetrina · da € 24,90</button>
+            </div>`;
+    }
 }
 
 function _sellerStatCard(label, value, sub, icon, color) {
@@ -4718,8 +4794,9 @@ async function deleteListing(id) {
 
 // ── Vetrina Modal ─────────────────────────────────────────
 let _vetrinaTarget = null;
+let _vetrinaPreviewRequest = 0;
 
-function openVetrinaModal(listing) {
+async function openVetrinaModal(listing) {
     _vetrinaTarget = listing;
     const titleEl = document.getElementById('vetrinaListingTitle');
     if (titleEl) titleEl.textContent = listing.titolo || 'Il tuo annuncio';
@@ -4733,12 +4810,30 @@ function openVetrinaModal(listing) {
 
     document.getElementById('vetrinaModal').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    const request = ++_vetrinaPreviewRequest;
+    const preview = document.getElementById('vetrinaPreview');
+    preview.textContent = 'Caricamento anteprima…';
+    preview.closest('details').open = false;
+    try {
+        const { data, error } = await _supabase.from('annunci')
+            .select('id, titolo, stato, tipo, comune, regione, prezzo, superficie, img_urls, expires_at, user_id')
+            .eq('id', listing.id).maybeSingle();
+        if (request !== _vetrinaPreviewRequest) return;
+        if (error || !data) throw new Error('Preview unavailable');
+        preview.innerHTML = buildCard({ ...data, status: 'active', featured: true,
+            featured_until: new Date(Date.now() + 86400000).toISOString() });
+        preview.firstElementChild.classList.remove('h-full');
+        preview.querySelectorAll('a, button').forEach(el => el.setAttribute('tabindex', '-1'));
+    } catch (_) {
+        if (request === _vetrinaPreviewRequest) preview.textContent = 'Anteprima non disponibile. Il tuo annuncio avrà il bordo dorato e il simbolo della corona.';
+    }
 }
 
 function closeVetrinaModal() {
     document.getElementById('vetrinaModal').classList.add('hidden');
     document.body.style.overflow = '';
     _vetrinaTarget = null;
+    _vetrinaPreviewRequest++;
 }
 
 async function startCheckout(tier) {
@@ -4770,6 +4865,7 @@ async function startCheckout(tier) {
             body: JSON.stringify({
                 annuncio_id: _vetrinaTarget.id,
                 tier,
+                expected_amount_cents: { '10d': 2490, '30d': 4990, '90d': 9990 }[tier],
             }),
         });
 

@@ -77,54 +77,23 @@ Deno.serve(async (req) => {
           return new Response('Missing metadata', { status: 200 }); // 200 per non far riprovare Stripe
         }
 
-        const days  = TIER_DAYS[tier];
-        const now   = new Date();
-
-        // Se l'annuncio è già featured e non scaduto, estendi a partire da featured_until
-        const { data: currentAnn } = await admin
-          .from('annunci')
-          .select('featured, featured_until')
-          .eq('id', annuncioId)
-          .single();
-
-        const startFrom = (currentAnn?.featured && currentAnn.featured_until && new Date(currentAnn.featured_until) > now)
-          ? new Date(currentAnn.featured_until)
-          : now;
-
-        const until = new Date(startFrom.getTime() + days * 24 * 60 * 60 * 1000);
-
-        // 2. Attiva vetrina (NON tocca expires_at: il default 200gg vale per tutti)
-        const { error: updErr } = await admin
-          .from('annunci')
-          .update({
-            featured:       true,
-            featured_until: until.toISOString(),
-            featured_tier:  tier,
-            featured_since: (currentAnn?.featured ? undefined : now.toISOString()),
-          })
-          .eq('id', annuncioId)
-          .eq('user_id', userId); // double-check proprietà
-
-        if (updErr) {
-          console.error('UPDATE annunci error:', updErr);
+        // Pagamento e giorni sono registrati nella stessa transazione.
+        // Su pending attende l'approvazione; i replay Stripe non aggiungono giorni.
+        const { data: activation, error: activationErr } = await admin.rpc('apply_vetrina_payment', {
+          p_session_id: session.id,
+          p_annuncio_id: annuncioId,
+          p_user_id: userId,
+          p_tier: tier,
+          p_amount_cents: session.amount_total,
+          p_currency: session.currency,
+          p_payment_intent: session.payment_intent,
+          p_customer_email: session.customer_details?.email || session.customer_email || null,
+        });
+        if (activationErr) {
+          console.error('Vetrina activation error:', activationErr);
           return new Response('DB error', { status: 500 });
         }
-
-        // 3. Aggiorna pagamento → succeeded (idempotente via upsert su session_id)
-        await admin.from('payments').upsert({
-          user_id:                userId,
-          annuncio_id:            annuncioId,
-          amount_cents:           session.amount_total,
-          currency:               session.currency || 'eur',
-          tier,
-          status:                 'succeeded',
-          stripe_session_id:      session.id,
-          stripe_payment_intent:  session.payment_intent,
-          customer_email:         session.customer_details?.email || session.customer_email || null,
-          activated_at:           now.toISOString(),
-        }, { onConflict: 'stripe_session_id' });
-
-        console.log(`✅ Vetrina ${tier} attivata per annuncio ${annuncioId} fino al ${until.toISOString()}`);
+        console.log('Vetrina payment processed:', session.id, activation);
         return new Response('OK', { status: 200 });
       }
 
@@ -133,7 +102,8 @@ Deno.serve(async (req) => {
         const session = event.data.object;
         await admin.from('payments')
           .update({ status: 'failed' })
-          .eq('stripe_session_id', session.id);
+          .eq('stripe_session_id', session.id)
+          .eq('status', 'pending');
         return new Response('OK', { status: 200 });
       }
 

@@ -28,9 +28,15 @@ const context = vm.createContext({
     document: { getElementById: node }, console: { warn() {} },
     escapeHTML: s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]),
     _supabase: { rpc: (name, args) => {
+        if (name === 'dashboard_vetrina_stats') return Promise.resolve({ data: { listings: [
+            { id: 'first', impressions: 12, detail_views: 5, contact_actions: 2, waiting_days: 0 },
+            { id: 'other', impressions: 999, detail_views: 999, contact_actions: 999, waiting_days: 0 }
+        ] } });
         assert.equal(name, 'dashboard_seller_analytics');
         return new Promise(resolve => pending.push({ days: args.p_days, resolve }));
     } },
+    isListingFeatured: l => !!l.featured && new Date(l.featured_until) > new Date(),
+    isListingExpired: l => !!l.expires_at && new Date(l.expires_at) <= new Date(),
     Chart: class {
         constructor(canvas, config) { this.data = config.data; }
         update() {} destroy() {}
@@ -54,6 +60,9 @@ async function main() {
     assert.equal(node('sellerAnalyticsChartWrap').classList.contains('hidden'), false);
     assert.equal(evaluate('_sellerAnalyticsChart.data.labels.length'), 30);
     assert.equal(evaluate('_sellerAnalyticsChart.data.datasets[1].data.reduce((a, b) => a + b, 0)'), 3);
+    assert.match(node('sellerVetrinaResults').innerHTML, /Risultati durante la Vetrina/);
+    assert.match(node('sellerVetrinaResults').innerHTML, /Apparizioni/);
+    assert.doesNotMatch(node('sellerVetrinaResults').innerHTML, /999/);
 
     // La risposta precedente non deve sovrascrivere il periodo appena scelto.
     const older = evaluate('loadSellerAnalytics(7)');
@@ -71,6 +80,7 @@ async function main() {
     evaluate('renderSellerAnalytics()');
     assert.match(node('sellerAnalyticsSummary').innerHTML, /Nessun annuncio/);
     assert.equal(node('sellerAnalyticsChartWrap').classList.contains('hidden'), true);
+    assert.equal(node('sellerVetrinaResults').innerHTML, '');
     node('sellerAnalyticsListingSelect').value = 'all';
 
     const failed = evaluate('loadSellerAnalytics()');
@@ -84,6 +94,12 @@ async function main() {
     await retry;
     assert.match(node('sellerAnalyticsSummary').innerHTML, /Tasso contatto/);
     assert.equal(node('sellerAnalyticsHistoryNote').classList.contains('hidden'), false);
+
+    evaluate("_sellerVetrinaStats = {listings:[{id:'first',waiting_days:30}],error:false}; renderSellerAnalytics()");
+    assert.match(node('sellerVetrinaResults').innerHTML, /30 giorni acquistati in attesa/);
+    evaluate("_sellerVetrinaStats = {listings:[],error:true}; renderSellerAnalytics()");
+    assert.match(node('sellerVetrinaResults').innerHTML, /Riprova/);
+    assert.doesNotMatch(node('sellerVetrinaResults').innerHTML, /card mostrate/);
     console.log(`OK: ${scripts} script validi; riepiloghi, grafico, privacy DOM, periodi, risposte fuori ordine, stato vuoto e riprova.`);
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });
