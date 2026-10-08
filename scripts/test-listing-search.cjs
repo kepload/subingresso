@@ -140,8 +140,16 @@ async function checkBrowser(engine, name, mobile, base) {
             await page.evaluate(() => clearFilters());
         }
         await page.selectOption('#sortBy','prezzoAsc');
-        const ordered = await page.evaluate(async () => { await applyFilters();await new Promise(resolve=>setTimeout(resolve,180));return [...document.querySelectorAll('[data-id]')].map(el=>LISTINGS.find(row=>row.id===el.dataset.id).prezzo).filter(value=>value!=null); });
-        assert.deepEqual(ordered,ordered.slice().sort((a,b)=>a-b));
+        const ordered = await page.evaluate(async () => {
+            await applyFilters();await new Promise(resolve=>setTimeout(resolve,180));
+            return [...document.querySelectorAll('[data-id]')].map(el=>LISTINGS.find(row=>row.id===el.dataset.id))
+                .map(row=>({price:row.prezzo,expired:isListingExpired(row)}));
+        });
+        assert(ordered.every((row,index)=>!row.expired||ordered.slice(index).every(other=>other.expired)), 'gli scaduti restano in fondo');
+        for (const expired of [false,true]) {
+            const prices=ordered.filter(row=>row.expired===expired&&row.price!=null).map(row=>row.price);
+            assert.deepEqual(prices,prices.slice().sort((a,b)=>a-b));
+        }
         await page.evaluate(async () => { window.TEST_EMPTY=true;await loadListings(); });
         await page.locator('#emptyState').waitFor({state:'visible'});
         assert.equal(await page.evaluate(()=>LISTINGS.length),0,'una risposta vuota cancella i risultati precedenti');

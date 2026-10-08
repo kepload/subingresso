@@ -139,7 +139,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 - `auth.js?v=21`
 - `ui-components.js?v=11`
 - `js/pages/annunci.js?v=11`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
-- `comune-picker.js?v=5`, `location-search.js?v=5`: comuni e 55.288 località da `data/localita.json`; dettaglio/fonti in `data/LOCALITA.md`.
+- `comune-picker.js?v=5`, `location-search.js?v=6`, `location-search-worker.js?v=1`: comuni e 55.288 località da `data/localita.json`; refusi in background, fallback a blocchi. Il worker importa la stessa versione di `location-search.js`: aggiornare entrambi i riferimenti e il cache buster del worker quando cambia il motore. Dettaglio/fonti in `data/LOCALITA.md`.
 - `js/pages/annuncio-detail.js?v=21` (anche in `annuncio.html` + `api/annuncio.js`)
 - `css/tailwind.css?v=4`
 - `page-view-tracker.js?v=4`

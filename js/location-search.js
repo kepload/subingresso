@@ -2,7 +2,8 @@
 (function () {
     'use strict';
     const { normalize, canonicalRegion } = window.ComuniItaliani;
-    const compact = value => normalize(value).replace(/\b(?:s|san|sant|santo|santa)\b/g, 'san').replace(/ /g, '');
+    const compactKey = key => key.replace(/\b(?:s|san|sant|santo|santa)\b/g, 'san').replace(/ /g, '');
+    const compact = value => compactKey(normalize(value));
     let rows = [];
     let exactNames = new Map();
     let coreNames = new Map();
@@ -13,17 +14,41 @@
     let geo = [];
     let readyPromise;
     let dataVersion = 0;
+    const matchesCache = new Map();
+    const nonFuzzyMisses = new Set();
+    let terms = [];
+    let termRows = [];
+    let rowsByProvince = new Map();
+    let fuzzyWorker;
+    let workerFailed = false;
+    let requestId = 0;
+    const workerRequests = new Map();
+    const workerUrl = '/js/location-search-worker.js?v=1';
 
     function load() {
         if (!readyPromise) {
             readyPromise = window.ComuniItaliani.load().then(data => {
-                rows = data.map(row => ({ ...row, _compact: row._keys.map(compact),
+                rows = data.map(row => ({ ...row, _compact: [...new Set(row._keys.map(compactKey))],
                     _context: normalize(`${row.nome} ${row.provincia} ${row.sigla} ${row.regione}`) }));
                 exactNames = new Map();
                 coreNames = new Map();
                 listingRecordsCache.clear();
                 rowsById = new Map(rows.map(row => [row.id, row]));
                 provinceCodes = new Set(rows.map(row => row.sigla));
+                matchesCache.clear();
+                nonFuzzyMisses.clear();
+                const names = new Map();
+                rowsByProvince = new Map();
+                for (const row of rows) {
+                    if (!rowsByProvince.has(row.sigla)) rowsByProvince.set(row.sigla, []);
+                    rowsByProvince.get(row.sigla).push(row);
+                    for (const name of new Set(row._compact)) {
+                        if (!names.has(name)) names.set(name, []);
+                        names.get(name).push(row);
+                    }
+                }
+                terms = [...names.keys()];
+                termRows = [...names.values()];
                 for (const row of rows) for (const key of new Set([...row._keys, ...row._compact])) {
                     if (!exactNames.has(key)) exactNames.set(key, []);
                     exactNames.get(key).push(row);
@@ -78,37 +103,82 @@
     }
 
     // Distanza con scambi di lettere adiacenti, limitata a due errori per nomi lunghi.
-    function edits(a, b, limit) {
+    function edits(a, b, limit, prefix = false) {
         if (Math.abs(a.length - b.length) > limit) return limit + 1;
-        let previous = Array.from({ length: b.length + 1 }, (_, i) => i);
-        let beforePrevious;
+        if (a === b) return 0;
+        let previous = Array.from({ length: b.length + 1 }, (_, i) => Math.min(i, limit + 1));
+        let beforePrevious = new Array(b.length + 1).fill(limit + 1);
+        let current = new Array(b.length + 1);
         for (let i = 1; i <= a.length; i++) {
-            const current = [i];
-            for (let j = 1; j <= b.length; j++) {
+            current.fill(limit + 1);
+            current[0] = i;
+            let minimum = i;
+            for (let j = Math.max(1, i - limit); j <= Math.min(b.length, i + limit); j++) {
                 current[j] = Math.min(previous[j] + 1, current[j - 1] + 1, previous[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
                 if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
                     current[j] = Math.min(current[j], beforePrevious[j - 2] + 1);
                 }
+                minimum = Math.min(minimum, current[j]);
             }
-            if (Math.min(...current) > limit) return limit + 1;
+            if (minimum > limit) return limit + 1;
+            const reusable = beforePrevious;
             beforePrevious = previous;
             previous = current;
+            current = reusable;
         }
-        return previous[b.length];
+        return prefix ? Math.min(...previous.slice(Math.max(0, a.length - limit))) : previous[b.length];
     }
 
-    function match(value, limit = 20) {
+    // Ogni nome/alias viene confrontato una sola volta, anche per gli omonimi.
+    // Lo stesso generatore gira nel worker e nel fallback a piccoli blocchi.
+    function* fuzzyTerms(names, packed) {
+        const maxEdits = packed.length >= 7 ? 2 : 1;
+        const prefixDistances = new Map();
+        for (let index = 0; index < names.length; index++) {
+            const name = names[index];
+            const prefix = name.slice(0, packed.length + maxEdits);
+            if (!prefixDistances.has(prefix)) {
+                if (prefixDistances.size >= 100000) prefixDistances.clear();
+                // Una matrice sola conserva il minimo su tutte le lunghezze di prefisso.
+                prefixDistances.set(prefix, edits(packed, prefix, maxEdits, true));
+            }
+            const best = prefixDistances.get(prefix);
+            yield best <= maxEdits ? [index, best] : null;
+        }
+    }
+
+    function rankedFuzzy(found, sigla) {
+        const best = new Map();
+        for (const [index, distance] of found) for (const row of termRows[index]) {
+            if ((!sigla || row.sigla === sigla) && (!best.has(row) || distance < best.get(row))) best.set(row, distance);
+        }
+        return [...best].map(([row, distance]) => ({ row, rank: 4 + distance, fuzzy: true }));
+    }
+
+    function remember(key, found) {
+        matchesCache.delete(key);
+        matchesCache.set(key, found);
+        if (matchesCache.size > 80) matchesCache.delete(matchesCache.keys().next().value);
+        return found;
+    }
+
+    const sortMatches = found => found.sort((a, b) => a.rank - b.rank || Number(!!a.row.nomeLocalita) - Number(!!b.row.nomeLocalita) ||
+        a.row.nome.localeCompare(b.row.nome, 'it') || a.row.sigla.localeCompare(b.row.sigla));
+
+    function match(value, limit = 20, allowFuzzy = true) {
         const { key, packed, sigla } = parse(value);
         if (key.length < 2) return [];
+        const cacheKey = JSON.stringify([key, packed, sigla]);
+        if (matchesCache.has(cacheKey)) return matchesCache.get(cacheKey).slice(0, limit);
         const exact = [...new Set([...(exactNames.get(key) || []), ...(exactNames.get(packed) || [])])]
             .filter(row => !sigla || row.sigla === sigla);
         if (exact.length) return exact.sort((a, b) => Number(!!a.nomeLocalita) - Number(!!b.nomeLocalita) ||
             a.nome.localeCompare(b.nome, 'it') || a.sigla.localeCompare(b.sigla)).slice(0, limit)
             .map(row => ({ row, rank: 0, fuzzy: false }));
         const words = key.split(' ');
-        const candidates = sigla ? rows.filter(row => row.sigla === sigla) : rows;
+        const candidates = sigla ? rowsByProvince.get(sigla) || [] : rows;
         let found = [];
-        for (const row of candidates) {
+        for (const row of nonFuzzyMisses.has(cacheKey) ? [] : candidates) {
             let rank = Infinity;
             if (row._keys.includes(key) || row._compact.includes(packed)) rank = 0;
             else if (row._keys.some(name => name.startsWith(key)) || row._compact.some(name => name.startsWith(packed))) rank = 1;
@@ -118,20 +188,78 @@
             if (rank < Infinity) found.push({ row, rank, fuzzy: false });
         }
         if (!found.length && packed.length >= 4) {
-            const maxEdits = packed.length >= 7 ? 2 : 1;
-            for (const row of candidates) {
-                let best = maxEdits + 1;
-                for (const name of row._compact) {
-                    for (let length = packed.length - maxEdits; length <= packed.length + maxEdits; length++) {
-                        best = Math.min(best, edits(packed, name.slice(0, length), maxEdits));
-                    }
-                }
-                if (best <= maxEdits) found.push({ row, rank: 4 + best, fuzzy: true });
+            nonFuzzyMisses.add(cacheKey);
+            if (nonFuzzyMisses.size > 80) nonFuzzyMisses.delete(nonFuzzyMisses.values().next().value);
+            if (!allowFuzzy) return [];
+            found = rankedFuzzy([...fuzzyTerms(terms, packed)].filter(Boolean), sigla);
+        }
+        return remember(cacheKey, sortMatches(found)).slice(0, limit);
+    }
+
+    function stopWorker() {
+        workerFailed = true;
+        fuzzyWorker?.terminate();
+        fuzzyWorker = null;
+        for (const request of workerRequests.values()) request.reject(new Error('Ricerca in background non disponibile'));
+        workerRequests.clear();
+    }
+
+    function runWorker(packed, signal) {
+        if (workerFailed || typeof Worker === 'undefined') return Promise.reject(new Error('Worker non disponibile'));
+        try {
+            if (!fuzzyWorker) {
+                fuzzyWorker = new Worker(workerUrl);
+                fuzzyWorker.onerror = stopWorker;
+                fuzzyWorker.onmessageerror = stopWorker;
+                fuzzyWorker.onmessage = ({ data }) => {
+                    const request = workerRequests.get(data.id);
+                    if (request) { workerRequests.delete(data.id); request.resolve(data.found); }
+                };
+                fuzzyWorker.postMessage({ names: terms });
+            }
+        } catch { stopWorker(); return Promise.reject(new Error('Worker non disponibile')); }
+        return new Promise((resolve, reject) => {
+            const id = ++requestId;
+            const abort = () => {
+                workerRequests.delete(id);
+                fuzzyWorker?.postMessage({ cancel: id });
+                finish(reject, new DOMException('Ricerca superata', 'AbortError'));
+            };
+            const timeout = setTimeout(stopWorker, 15000);
+            const finish = (callback, value) => { clearTimeout(timeout); signal?.removeEventListener('abort', abort); callback(value); };
+            workerRequests.set(id, { resolve: value => finish(resolve, value), reject: error => finish(reject, error) });
+            signal?.addEventListener('abort', abort, { once: true });
+            if (signal?.aborted) { abort(); return; }
+            try { fuzzyWorker.postMessage({ id, packed }); } catch { stopWorker(); }
+        });
+    }
+
+    async function matchAsync(value, limit = 20, signal) {
+        await load();
+        if (signal?.aborted) throw new DOMException('Ricerca superata', 'AbortError');
+        const { key, packed, sigla } = parse(value);
+        const cacheKey = JSON.stringify([key, packed, sigla]);
+        const immediate = match(value, limit, false);
+        if (immediate.length || key.length < 2 || packed.length < 4 || matchesCache.has(cacheKey)) return immediate;
+        let found;
+        try { found = await runWorker(packed, signal); }
+        catch (error) {
+            if (signal?.aborted) throw error;
+            found = [];
+            const iterator = fuzzyTerms(terms, packed);
+            let done = false;
+            while (!done) {
+                await new Promise(resolve => setTimeout(resolve, 0));
+                if (signal?.aborted) throw new DOMException('Ricerca superata', 'AbortError');
+                const until = Date.now() + 5;
+                do {
+                    const next = iterator.next();
+                    done = next.done;
+                    if (next.value) found.push(next.value);
+                } while (!done && Date.now() < until);
             }
         }
-        found.sort((a, b) => a.rank - b.rank || Number(!!a.row.nomeLocalita) - Number(!!b.row.nomeLocalita) ||
-            a.row.nome.localeCompare(b.row.nome, 'it') || a.row.sigla.localeCompare(b.row.sigla));
-        return found.slice(0, limit);
+        return remember(cacheKey, sortMatches(rankedFuzzy(found, sigla))).slice(0, limit);
     }
 
     function resolve(value, code) {
@@ -273,6 +401,9 @@
         let revision = 0;
         let currentReady;
         let blurTimer;
+        let suggestionTimer;
+        let suggestionController;
+        let suggestionVersion = 0;
         box.className = 'location-suggestions';
         box.hidden = true;
         box.setAttribute('role', 'listbox');
@@ -285,6 +416,10 @@
         input.setAttribute('autocorrect', 'off');
 
         function close() {
+            suggestionVersion++;
+            clearTimeout(suggestionTimer);
+            suggestionController?.abort();
+            suggestionController = null;
             box.hidden = true;
             active = -1;
             input.setAttribute('aria-expanded', 'false');
@@ -328,8 +463,9 @@
             }
             box.appendChild(el);
         }
-        function show() {
+        function show(backgroundMatches = null) {
             close();
+            const version = suggestionVersion;
             box.replaceChildren();
             options = [];
             const value = input.value.trim();
@@ -351,18 +487,28 @@
                     retry.addEventListener('click', () => { input.focus(); start(); });
                     box.appendChild(retry);
                 } else {
-                    const matches = match(value);
+                    const matches = backgroundMatches || match(value, 20, false);
                     if (matches.length) {
                         note(matches[0].fuzzy ? 'Forse cercavi uno di questi luoghi?' : 'Comuni e frazioni · scegli il luogo');
                         matches.forEach(({ row }) => add(`${row.nome} (${row.sigla})`, `${row.nomeLocalita ? 'Località · ' : ''}${row.provincia} · ${canonicalRegion(row.regione)}`, { label: row.nome, row }));
                         if (matches.length === 20) note('Scrivi altre lettere o la provincia per restringere la lista.');
+                    }
+                    if (!matches.length && backgroundMatches === null && parse(value).packed.length >= 4) {
+                        note('Ricerca dei luoghi in corso…');
+                        suggestionController = new AbortController();
+                        const signal = suggestionController.signal;
+                        suggestionTimer = setTimeout(() => {
+                            matchAsync(value, 20, signal).then(found => {
+                                if (version === suggestionVersion && input.value.trim() === value && document.activeElement === input) show(found);
+                            }).catch(() => {});
+                        }, 80);
                     }
                 }
                 const other = regions.filter(name => normalize(name).includes(key)).slice(0, 3);
                 if (other.length) { note('Regioni'); other.forEach(label => add(label, '', { label })); }
                 const sectors = keywords.filter(name => normalize(name).includes(key)).slice(0, 3);
                 if (sectors.length) { note('Settori'); sectors.forEach(label => add(label, '', { label })); }
-                if (!options.length && !loading && !failed) note('Nessun comune o frazione trovato. Prova con la prima parte del nome.');
+                if (!options.length && !loading && !failed && !suggestionController) note('Nessun comune o frazione trovato. Prova con la prima parte del nome.');
             }
             if (document.activeElement === input) {
                 box.hidden = false;
@@ -383,9 +529,15 @@
             loading = true;
             failed = false;
             input.setAttribute('aria-busy', 'true');
-            currentReady = load().then(() => {
+            currentReady = load().then(async () => {
+                const version = revision;
+                const value = input.value;
+                const code = initialCode;
+                // Anche un link arrivato dalla home con q errata e codice scelto
+                // verifica il luogo in background, senza bloccare il caricamento.
+                if (code) await matchAsync(value, rows.length);
                 loading = false;
-                selected = initialCode ? resolve(input.value, initialCode) : null;
+                selected = code && version === revision && value === input.value ? resolve(value, code) : null;
                 selectedValue = input.value;
                 initialCode = '';
                 input.removeAttribute('aria-busy');
@@ -433,6 +585,9 @@
                 await currentReady;
                 if (version !== revision || value !== input.value) return false;
                 const textOnly = [...regions, ...keywords].some(label => normalize(label) === normalize(value));
+                close();
+                if (!this.selected && !textOnly && !failed) await matchAsync(value, rows.length);
+                if (version !== revision || value !== input.value) return false;
                 selected = this.selected || (!textOnly && !failed ? resolveSearch(value, searchListings ? searchListings() : null) : null);
                 selectedValue = value;
                 close();
@@ -441,5 +596,5 @@
         };
     }
 
-    window.LocationSearch = { create, load, loadGeo, match, resolve, resolveSearch, coordinates, listingCoordinates, listingMatchesLocation, listingCoordinateCandidates, listingContext, get dataVersion() { return dataVersion; } };
+    window.LocationSearch = { create, load, loadGeo, match, matchAsync, fuzzyTerms, resolve, resolveSearch, coordinates, listingCoordinates, listingMatchesLocation, listingCoordinateCandidates, listingContext, get dataVersion() { return dataVersion; } };
 })();
