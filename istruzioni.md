@@ -420,7 +420,7 @@ L'utente non loggato compila tutti i 5 step SENZA vedere mai il banner "devi reg
 - **Cron `unfeature-expired-daily`:** `'0 3 * * *'` chiama `unfeature_expired()`.
 - **Secrets:** `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
 - **CRITICO fetch Edge Functions dal browser:** sempre `'apikey': SUPABASE_ANON_KEY` negli headers oltre ad `Authorization: Bearer <token>`. Senza apikey → 401.
-- **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): chi compra/riceve vetrina mantiene il default 200gg post. Vetrina = solo featured/posizione/visibilità. Stripe-webhook + adminGrantVetrina ripuliti, edge function re-deployata.
+- **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): chi compra/riceve vetrina mantiene il default 270gg post. Vetrina = solo featured/posizione/visibilità. Stripe-webhook + adminGrantVetrina ripuliti, edge function re-deployata.
 - **Admin Vetrina gratuita**: `adminGrantVetrina(30|90)` scrive `featured_tier='admin_free'`. `adminRevokeVetrina(id)` azzera.
 - **Card featured redesign**: glow box-shadow aureo, sfondo gradient amber-50/50→white, barra top 3px, badge crown + animate-pulse, footer "Annuncio in Vetrina ★★★★★".
 - **Modal pricing layout** (6 mag 2026): totale grande (`€ 59,90`) + giornaliero leggibile sotto (`€ 0,67 / giorno` text-xs). Niente più "una tantum" sui bottoni — la rassicurazione anti-rinnovo è nel footer del modal accanto al lock Stripe (`pagamento unico, no abbonamento`). Sottotitoli a sinistra puliti dal duplicato del giornaliero. Benefit grid ridotta a 3 colonne: `+ Visualizzazioni / Vendi prima / In cima` (rimosso "Post più lungo" perché vetrina non estende più `expires_at`).
@@ -680,9 +680,11 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 
 ## 📅 Scadenza Post
 
-- `expires_at` 200 giorni di default (5 mag 2026, ex 100). SQL: `ALTER TABLE annunci ADD COLUMN IF NOT EXISTS expires_at timestamptz;`
-- **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): tutti i post valgono 200gg, vetrina = solo featured. Niente più cap differenziati 230/300/400. `adminGrantVetrina(days)` + `stripe-webhook` toccano solo i campi `featured*`.
-- **NON filtrare su `expires_at`** finché non popolato per tutti — gli scaduti restano visibili ma con badge "Scaduto", contatti bloccati via `_blockIfExpired()` (chat/whatsapp/chiama mostrano toast). RPC `renew_listing(p_id uuid)` SECURITY DEFINER, owner-only, bumpa `expires_at = now()+200gg`. Bottone "Riattiva" in dashboard.html appare per annunci `active` con `expires_at < now()`.
+Durata 270 giorni: `PATCH_LISTING_LIFETIME_270_20261008.sql`, creazione/riattivazione/test/email allineati. Storico active/pending prorogato una volta (+70 giorni, almeno created_at +270); backup privato `data_quality.listing_expiry_270_backup`. Conteggio admin attivi esclude scaduti.
+
+- `expires_at` 270 giorni di default (8 ottobre 2026, ex 200). SQL: `ALTER TABLE annunci ADD COLUMN IF NOT EXISTS expires_at timestamptz;`
+- **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): tutti i post valgono 270gg, vetrina = solo featured. Niente più cap differenziati 230/300/400. `adminGrantVetrina(days)` + `stripe-webhook` toccano solo i campi `featured*`.
+- **NON filtrare su `expires_at`** finché non popolato per tutti — gli scaduti restano visibili ma con badge "Scaduto", contatti bloccati via `_blockIfExpired()` (chat/whatsapp/chiama mostrano toast). RPC `renew_listing(p_id uuid)` SECURITY DEFINER, owner-only, bumpa `expires_at = now()+270gg`. Bottone "Riattiva" in dashboard.html appare per annunci `active` con `expires_at < now()`.
 
 ## 🔍 AI Scout Bandi (27 mag 2026, v4 multi-step)
 
@@ -931,7 +933,7 @@ Ordine consigliato prossima sessione:
 - **Funnel/tracking**: `auth_modal_opens` (12 sorgenti) + pannello funnel admin, `blog_conversions`, `saved_count`, click chat/whatsapp/call tracciati.
 - **Vendi/UX**: wizard 6 step con preview e riepilogo, foto facoltative con un solo slot iniziale e altre foto mostrate dopo il primo caricamento, 5 foto anche gratis, titoli casuali, bozze locali con foto e recupero silenzioso.
 - **Vetrina**: a pagamento Stripe (tolto l'extend di `expires_at`), sconto -10% alla pubblicazione, box admin "valore annunci".
-- **Lifecycle**: annunci 200gg, scaduti con badge + contatti bloccati + bottone riattiva.
+- **Lifecycle**: annunci 270gg, scaduti con badge + contatti bloccati + bottone riattiva.
 - **Pulizie 22-23 mag**: demo eliminati (restano 34 annunci veri) + lotteria welcome rimossa ovunque.
 - **27 mag (sessione handoff Codex)**: pannello admin "Avvisi Bandi" + AI Scout Bandi v4 multi-step (Gemini 2.5 Flash, 4 step focalizzati: discovery → HTTP validation → extraction → verifica) + briefing throttled 3gg + landing page SSR `/bandi/<slug>` con cross-sell annunci regionali (le mail agli iscritti ora linkano nostre pagine, NON PDF Comuni) + `AGENTS.md` con playbook completo (sezione 12 = troubleshooting Gemini/Resend/landing) + `scripts/session-backup.ps1` (tag git automatici per ogni sessione) + snapshot full repo in Documents.
 - Le **lezioni evergreen** sui bug stanno nella sezione "Bug Storici Generalizzabili" (non qui).

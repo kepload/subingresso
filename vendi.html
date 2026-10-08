@@ -528,7 +528,7 @@
                             <span class="pub-radio" aria-hidden="true"></span>
                             <span class="pub-free-copy">
                                 <span class="pub-free-title">Pubblicazione gratuita</span>
-                                <span class="pub-free-note">Online per 200 giorni, visibile a tutti.</span>
+                                <span class="pub-free-note">Online per 270 giorni, visibile a tutti.</span>
                             </span>
                             <span class="pub-free-price">€ 0</span>
                         </button>
@@ -1817,12 +1817,10 @@ async function submitAnnuncio() {
     try { localStorage.setItem(lastPostKey, now); } catch (_) {}
 
     try {
-        // Default ciclo vita annuncio: 200 giorni. Le trattative reali per
-        // posteggi mercatali (atto notarile + SCIA + graduatorie) durano 3-12
-        // mesi: 100gg era troppo corto. La vetrina NON estende piu' questo
-        // valore (rimosso 6 mag 2026): chi rinnova lo fa via "Riattiva".
+        // Durata annuncio: 270 giorni, confermata dal database.
+        // La vetrina non estende la scadenza; rinnovo via "Riattiva".
         const expiresAt = new Date();
-        expiresAt.setDate(expiresAt.getDate() + 200);
+        expiresAt.setTime(expiresAt.getTime() + 270 * 86400000);
 
         const statoChecked = document.querySelector('input[name="stato"]:checked');
         if (!statoChecked) throw new Error('Nessun tipo di annuncio selezionato.');

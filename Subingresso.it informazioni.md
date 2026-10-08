@@ -149,7 +149,7 @@ Il repository contiene file `SETUP_*` e `PATCH_*`, ma non è garantito che rappr
 
 Il wizard `vendi.html` raccoglie dati, foto e contatti. Gli annunci non admin vengono forzati a `pending` dal database. Trigger asincroni notificano venditore e utenti con alert. Non modificare il wizard o i trigger `annunci` senza leggere la sezione dedicata di `istruzioni.md`.
 
-Gli annunci durano in genere 200 giorni. Gli scaduti possono restare visibili, ma i contatti vengono bloccati; il proprietario può riattivarli tramite RPC.
+Gli annunci durano 270 giorni dalla pubblicazione o dal rinnovo (8 ottobre 2026). Gli scaduti possono restare visibili, ma i contatti vengono bloccati; il proprietario può riattivarli tramite RPC.
 
 ### Contatti e chat
 

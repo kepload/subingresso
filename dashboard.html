@@ -1392,7 +1392,7 @@ async function loadAdminStats() {
     // farebbe fallire l'espansione di * a livello PostgREST.
     const counts = await Promise.all([
         _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('is_demo', false),
-        _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active').eq('is_demo', false),
+        _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active').eq('is_demo', false).or('expires_at.is.null,expires_at.gt.'+new Date().toISOString()),
         _supabase.from('profiles').select('id', { count: 'exact', head: true }).eq('is_demo', false)
     ]);
     ['admStatAnnunci','admStatAttivi','admStatUtenti'].forEach((id,i)=>{
@@ -4584,7 +4584,7 @@ async function adminGrantVetrina(days) {
     until.setDate(until.getDate() + days);
 
     // La vetrina NON estende piu' expires_at del post (rimosso 6 mag 2026).
-    // Il default 200gg vale per tutti, vetrina = solo featured/posizione/visibilita'.
+    // Il default 270gg vale per tutti, vetrina = solo featured/posizione/visibilita'.
     const { error } = await _supabase.from('annunci').update({
         featured:       true,
         featured_until: until.toISOString(),
@@ -4832,7 +4832,7 @@ function showConfirm({ title, message, okLabel = 'Conferma', variant = 'danger' 
 async function renewListing(id) {
     const ok = await showConfirm({
         title:    'Riattivare l\'annuncio?',
-        message:  'L\'annuncio tornerà attivo per altri 200 giorni e potrà ricevere contatti.',
+        message:  'L\'annuncio tornerà attivo per altri 270 giorni e potrà ricevere contatti.',
         okLabel:  'Riattiva',
         variant:  'warning',
     });
@@ -4843,7 +4843,7 @@ async function renewListing(id) {
         showToast(`Errore: ${msg}`, 'error');
         return;
     }
-    showToast('Annuncio riattivato per 200 giorni', 'success');
+    showToast('Annuncio riattivato per 270 giorni', 'success');
     loadMyListings();
     if (_sellerAnalyticsLoaded) loadSellerAnalytics();
 }

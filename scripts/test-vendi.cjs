@@ -260,6 +260,7 @@ const server = http.createServer((req, res) => {
         assert.equal(inserts.length,1);
         assert.equal(inserts[0].prezzo,15000.5);
         assert.equal(inserts[0].superficie,24.5);
+        assert(Math.abs(Date.parse(inserts[0].expires_at)-Date.now()-270*86400000)<60000,'pubblicazione con durata di 270 giorni');
         assert.equal(inserts[0].img_urls.length,5);
         assert.equal(await page.evaluate(key=>localStorage.getItem(key),draftKey(ownerA)),null);
         assert.equal(await page.evaluate(async key=>(await VendiSupport.loadPhotos(key)).length,draftKey(ownerA)),0);

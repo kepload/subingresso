@@ -34,6 +34,7 @@ DO $$ DECLARE uid uuid:=current_setting('dq.owner')::uuid; v_id uuid:=current_se
  VALUES(v_id,uid,'Prova controlli qualità dati','Posteggio di prova per verificare i controlli automatici senza pubblicazione definitiva.',
   'Affitto mensile','Mercato settimanale','Abbigliamento e accessori','Brescia','Brescia','Lombardia',12.5,'Sabato',15000.50,'Test qualità','0039 347 1234567','active','{}','{"images":[]}',now()-interval '50 years');
  IF NOT EXISTS(SELECT 1 FROM public.annunci a WHERE a.id=v_id AND a.status='pending' AND a.created_at>now()-interval '1 minute' AND a.prezzo=15000.50 AND a.superficie=12.5) THEN RAISE EXCEPTION 'Dati validi persi o stato falso'; END IF;
+ IF NOT EXISTS(SELECT 1 FROM public.annunci WHERE id=v_id AND expires_at=now()+interval '270 days') THEN RAISE EXCEPTION 'Durata pubblicazione diversa da 270 giorni'; END IF;
  PERFORM pg_temp.must_fail(format('UPDATE public.annunci SET prezzo=100 WHERE id=%L',v_id),'23514');
  PERFORM pg_temp.must_fail(format('UPDATE public.annunci SET prezzo=%L WHERE id=%L','NaN',v_id),'23514');
  PERFORM pg_temp.must_fail(format('UPDATE public.annunci SET superficie=0 WHERE id=%L',v_id),'23514');
@@ -84,9 +85,19 @@ DO $$ DECLARE buyer uuid; aid uuid:=gen_random_uuid(); bid uuid:=gen_random_uuid
  IF EXISTS(SELECT 1 FROM public.matching_listing_alerts(lid) WHERE user_id=current_setting('dq.owner')::uuid) THEN RAISE EXCEPTION 'Avviso al proprietario'; END IF;
 END $$;
 SET LOCAL ROLE authenticated;
-DO $$ DECLARE uid uuid:=current_setting('dq.owner')::uuid; BEGIN
+DO $$ DECLARE uid uuid:=current_setting('dq.owner')::uuid; result json; other_id uuid; BEGIN
+ result:=public.renew_listing(current_setting('dq.listing')::uuid);
+ IF (result->>'ok')::boolean IS DISTINCT FROM true OR (result->>'expires_at')::timestamptz<>now()+interval '270 days' THEN RAISE EXCEPTION 'Durata rinnovo diversa da 270 giorni'; END IF;
+ SELECT id INTO other_id FROM public.profiles WHERE id<>uid AND NOT coalesce(is_admin,false) LIMIT 1;
+ IF other_id IS NULL THEN RAISE EXCEPTION 'Identità non proprietario mancante'; END IF;
+ PERFORM set_config('request.jwt.claim.sub',other_id::text,true);
+ PERFORM set_config('request.jwt.claims',jsonb_build_object('sub',other_id,'role','authenticated','email','qa@example.invalid')::text,true);
+ IF public.renew_listing(current_setting('dq.listing')::uuid)->>'error' IS DISTINCT FROM 'forbidden' THEN RAISE EXCEPTION 'Rinnovo non proprietario consentito'; END IF;
+ PERFORM set_config('request.jwt.claim.sub',uid::text,true);
+ PERFORM set_config('request.jwt.claims',jsonb_build_object('sub',uid,'role','authenticated','email','qa@example.invalid')::text,true);
  UPDATE public.annunci SET titolo='Prova modifica e revisione obbligatoria' WHERE id=current_setting('dq.listing')::uuid;
  IF NOT EXISTS(SELECT 1 FROM public.annunci WHERE id=current_setting('dq.listing')::uuid AND status='pending') THEN RAISE EXCEPTION 'Modifica senza moderazione'; END IF;
+ IF public.renew_listing(current_setting('dq.listing')::uuid)->>'error' IS DISTINCT FROM 'invalid_status' THEN RAISE EXCEPTION 'Rinnovo pending consentito'; END IF;
  INSERT INTO public.conversazioni(id,acquirente_id,venditore_id,is_support) VALUES(current_setting('dq.conversation')::uuid,uid,current_setting('dq.admin')::uuid,true);
  INSERT INTO public.messaggi(conversazione_id,mittente_id,testo) VALUES(current_setting('dq.conversation')::uuid,uid,'Messaggio di prova');
  PERFORM pg_temp.must_fail(format('INSERT INTO public.messaggi(conversazione_id,mittente_id,testo) VALUES(%L,%L,%L)',current_setting('dq.conversation'),uid,'   '));
