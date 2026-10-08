@@ -1,0 +1,35 @@
+.dashboard-tabs { grid-template-columns:repeat(2,minmax(0,1fr)); }.dashboard-tab:last-child { grid-column:1 / -1; }
+.v-account-summary { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:0 0 20px; }
+.v-account-summary > div { background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:18px; }
+.v-account-summary span { font-size:11px; color:#64748b; font-weight:700; display:block; }
+.v-account-summary strong { display:block; margin-top:6px; font-size:26px; letter-spacing:-.04em; color:#0f172a; }
+.v-account-premium { background:linear-gradient(120deg,#172554,#1e3a8a); border-radius:20px; padding:24px; color:white; display:flex; flex-wrap:wrap; gap:18px; align-items:center; }
+.v-account-premium > div:first-child { flex:1 1 300px; }.v-account-eyebrow { font-size:10px; text-transform:uppercase; letter-spacing:.12em; font-weight:800; color:#fde68a; }
+.v-account-premium h3 { font-size:23px; font-weight:800; margin:6px 0; }.v-account-premium p { font-size:13px; line-height:1.7; color:#dbeafe; max-width:600px; }
+.v-account-primary,.v-account-secondary { border-radius:12px; padding:12px 16px; min-height:44px; font-size:12px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; gap:8px; }
+.v-account-primary { background:#fbbf24; color:#172554; }.v-account-secondary { border:1px solid #cbd5e1; color:#334155; background:#fff; }
+.v-account-primary:hover { background:#fde68a; }.v-account-secondary:hover { background:#f8fafc; }
+.v-account-benefits { display:flex; flex-wrap:wrap; gap:12px 22px; width:100%; font-size:12px; font-weight:700; }.v-account-benefits i { color:#fcd34d; margin-right:5px; }
+.v-account-premium .v-account-footnote { width:100%; font-size:11px; margin-top:-5px; }
+.v-account-toolbar { display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; margin:28px 0 16px; }
+.v-account-toolbar h3 { font-size:17px; font-weight:800; color:#0f172a; }.v-account-toolbar p,.v-account-toolbar label,.v-account-filter { font-size:12px; color:#64748b; line-height:1.6; }
+.v-account-toolbar select,.v-account-filter select { border:1px solid #cbd5e1; border-radius:10px; background:white; padding:10px; color:#334155; margin-left:6px; min-height:44px; font-size:12px; max-width:100%; }
+.v-account-filter { display:block; margin-bottom:14px; }
+.v-account-campaign,.v-account-order { background:#fff; border:1px solid #e2e8f0; border-radius:18px; padding:20px; margin:12px 0; min-width:0; }
+.v-account-campaign-header,.v-account-order-header { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:flex-start; }
+.v-account-campaign h4,.v-account-order h4 { font-size:14px; font-weight:800; color:#0f172a; overflow-wrap:anywhere; }.v-account-campaign p,.v-account-order p { font-size:12px; color:#64748b; margin-top:6px; line-height:1.6; overflow-wrap:anywhere; }
+.v-account-pill { display:inline-block; border-radius:30px; padding:5px 10px; font-size:10px; font-weight:800; background:#f1f5f9; color:#475569; white-space:nowrap; }
+.v-account-pill.active,.v-account-pill.succeeded { background:#dcfce7; color:#166534; }.v-account-pill.pending,.v-account-pill.waiting { background:#fef3c7; color:#92400e; }.v-account-pill.failed { background:#fee2e2; color:#991b1b; }
+.v-account-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:18px; }.v-account-metrics > div { background:#f8fafc; border-radius:12px; padding:14px 10px; text-align:center; }
+.v-account-metrics span { display:block; font-size:10px; color:#64748b; }.v-account-metrics strong { font-size:24px; color:#0f172a; display:block; }
+.v-account-chart { height:170px; margin-top:20px; }.v-account-chart canvas { max-width:100%; }
+.v-account-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:16px; }.v-account-actions button,.v-account-actions a,.v-account-support { font-size:12px; font-weight:700; color:#1d4ed8; padding:10px 0; min-height:44px; }
+.v-account-actions > * + * { margin-left:8px; }.v-account-actions a:hover,.v-account-actions button:hover { text-decoration:underline; }
+.v-account-order dl { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:16px; }.v-account-order dt { font-size:10px; color:#64748b; }.v-account-order dd { font-size:12px; font-weight:700; color:#334155; overflow-wrap:anywhere; }
+.v-account-order summary { cursor:pointer; font-size:12px; color:#475569; font-weight:700; padding:12px 0; }.v-account-order ol { font-size:11px; color:#64748b; line-height:1.8; }
+.v-account-note { font-size:11px; color:#64748b; line-height:1.8; margin:14px 0; }.v-account-empty { background:#fff; border:1px dashed #cbd5e1; padding:28px 20px; text-align:center; border-radius:16px; color:#64748b; font-size:13px; line-height:1.7; }
+.v-account-pages { display:flex; justify-content:center; align-items:center; gap:16px; margin:20px 0; font-size:12px; color:#64748b; }.v-account-error { padding:18px; background:#fff1f2; color:#9f1239; border-radius:14px; font-size:13px; }.v-account-error button { text-decoration:underline; font-weight:800; margin-left:6px; }
+.v-profile-account { border-top:1px solid #e2e8f0; padding-top:20px; }.v-profile-account h3 { font-size:13px; font-weight:800; color:#0f172a; }.v-profile-account dl { margin:12px 0; font-size:12px; }.v-profile-account dl > div { display:flex; gap:12px; justify-content:space-between; padding:5px 0; }.v-profile-account dt,.v-profile-account p { color:#64748b; font-size:12px; line-height:1.7; }.v-profile-account dd { font-weight:700; text-align:right; }
+.v-profile-account button,.v-profile-account a { display:block; font-size:12px; font-weight:700; color:#1d4ed8; padding:12px 0; text-align:left; }.v-account-order-id { font-family:monospace; overflow-wrap:anywhere; }.v-account-secondary:disabled,.v-profile-account button:disabled { opacity:.5; cursor:wait; }
+@media(min-width:768px) { .dashboard-tabs { grid-template-columns:repeat(5,minmax(0,1fr)); }.dashboard-tab:last-child { grid-column:auto; }.v-account-summary { grid-template-columns:repeat(4,minmax(0,1fr)); }.v-account-order dl { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+@media(max-width:380px) { .v-account-premium,.v-account-order,.v-account-campaign { padding:16px; }.v-account-metrics { gap:6px; }.v-account-toolbar select { margin-left:0; }.v-account-primary { width:100%; } }

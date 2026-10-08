@@ -58,7 +58,8 @@ Deno.serve(async (req) => {
 
   try {
     switch (event.type) {
-      case 'checkout.session.completed': {
+      case 'checkout.session.completed':
+      case 'checkout.session.async_payment_succeeded': {
         const session = event.data.object;
 
         // Pagamento non completato (es. pending bonifico)
@@ -100,10 +101,21 @@ Deno.serve(async (req) => {
       case 'checkout.session.expired':
       case 'checkout.session.async_payment_failed': {
         const session = event.data.object;
-        await admin.from('payments')
+        const { error } = await admin.from('payments')
           .update({ status: 'failed' })
           .eq('stripe_session_id', session.id)
           .eq('status', 'pending');
+        if (error) return new Response('DB error', { status: 500 });
+        return new Response('OK', { status: 200 });
+      }
+
+      case 'charge.refunded': {
+        const charge = event.data.object;
+        if (!charge.payment_intent) return new Response('Ignored', { status: 200 });
+        const { error } = await admin.rpc('record_vetrina_refund', {
+          p_intent: charge.payment_intent, p_refunded_cents: charge.amount_refunded,
+        });
+        if (error) return new Response('DB error', { status: 500 });
         return new Response('OK', { status: 200 });
       }
 

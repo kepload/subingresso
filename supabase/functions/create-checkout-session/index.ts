@@ -177,7 +177,7 @@ Deno.serve(async (req) => {
     }
 
     // 5. Log pending payment (idempotente: upsert su stripe_session_id)
-    await admin.from('payments').upsert({
+    const { error: orderError } = await admin.from('payments').upsert({
       user_id:           user.id,
       annuncio_id:       annuncioId,
       amount_cents:      amount,
@@ -187,6 +187,15 @@ Deno.serve(async (req) => {
       stripe_session_id: stripeData.id,
       customer_email:    user.email ?? null,
     }, { onConflict: 'stripe_session_id', ignoreDuplicates: true });
+
+    // Nessun redirect verso un pagamento che non abbiamo registrato.
+    if (orderError) {
+      console.error('Order registration failed:', orderError);
+      await fetch(`https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(stripeData.id)}/expire`, {
+        method: 'POST', headers: { Authorization: `Bearer ${STRIPE_SECRET_KEY}` },
+      });
+      return json({ error: 'Non siamo riusciti a registrare l’ordine. Riprova tra poco.' }, 503);
+    }
 
     return json({ url: stripeData.url, session_id: stripeData.id });
 

@@ -32,16 +32,18 @@ async function main() {
         expires_at: new Date(Date.now() + 200 * 86400000).toISOString(), featured_since: null };
     let charge;
     let logged;
+    let orderError = false, expired = false;
     const client = {
         auth: {getUser: async token => ({data: token === 'valid' ? {user:{id:owner,email:'test@example.invalid'}} : null, error:null})},
         from: table => {
             const query = { select() {return this;}, eq() {return this;}, single: async () => ({data:listing}),
-                upsert: async (row, options) => {logged = {row, options}; return {error:null};} };
+                upsert: async (row, options) => {logged = {row, options}; return {error:orderError ? {message:'offline'} : null};} };
             assert(['annunci','payments'].includes(table));
             return query;
         }
     };
     const checkout = load('create-checkout-session', client, async (url, options) => {
+        if (url.endsWith('/expire')) { expired = true; return Response.json({}); }
         assert.equal(url, 'https://api.stripe.com/v1/checkout/sessions');
         charge = new URLSearchParams(options.body);
         return Response.json({id:'cs_test_checkout',url:'https://checkout.stripe.com/test'});
@@ -76,6 +78,11 @@ async function main() {
     assert.equal((await checkout(request({annuncio_id:id,tier:'30d'}))).status,400);
     assert.equal((await checkout(request({annuncio_id:id,tier:'999d'}))).status,400);
 
+    listing.status = 'active'; listing.expires_at = new Date(Date.now()+86400000).toISOString();
+    orderError = true;
+    assert.equal((await checkout(request({annuncio_id:id,tier:'30d',expected_amount_cents:4990}))).status,503);
+    assert.equal(expired,true,'Unregistered checkout must be expired');
+
     let calls = [];
     let dbError = false;
     const hook = load('stripe-webhook', {
@@ -84,7 +91,7 @@ async function main() {
     });
     async function event(type, paid=true, valid=true) {
         const body = JSON.stringify({id:'evt_test',type,data:{object:{id:'cs_test_signed',payment_status:paid?'paid':'unpaid',
-            amount_total:2241,currency:'eur',payment_intent:'pi_test',
+            amount_total:2241,amount_refunded:1000,currency:'eur',payment_intent:'pi_test',
             metadata:{annuncio_id:id,user_id:owner,tier:'10d'}}}});
         const t = Math.floor(Date.now()/1000);
         const key = await webcrypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
@@ -98,6 +105,10 @@ async function main() {
     assert.equal((await event('checkout.session.completed',false)).status,200);
     assert.equal(calls.length,1);
     assert.equal((await event('checkout.session.completed',true,false)).status,400);
+    assert.equal((await event('checkout.session.async_payment_succeeded')).status,200);
+    assert.equal((await event('charge.refunded')).status,200);
+    assert.equal(calls.at(-1).name,'record_vetrina_refund');
+    assert.equal(calls.at(-1).args.p_refunded_cents,1000);
     dbError = true;
     assert.equal((await event('checkout.session.completed')).status,500);
     console.log('OK: script HTML, sei prezzi/sconti, gate sconto, proprietario, scadenza, firma Stripe, pagamento incompleto e retry DB.');
