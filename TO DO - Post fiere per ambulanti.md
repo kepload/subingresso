@@ -1,6 +1,15 @@
 # TO DO — SUBINGRESSO.IT
 
-IMPATTO: 🔴 alto · 🟠 medio · 🟢 minore
+## Come funziona questa lista e come scegliere le priorità
+
+Il nostro obiettivo è muoverci velocemente e far avanzare subingresso.it il più possibile nel tempo a disposizione. Le priorità dipendono soprattutto dai benefici attesi in questo lasso di tempo: alcune attività, fatte adesso, possono portarci molto più avanti rispetto ad altre.
+
+- 🔴 **Priorità alta**: attività che prevediamo ci facciano avanzare di più rispetto alle altre nel periodo attuale. Affrontarle per prime.
+- 🟠 **Priorità media**: attività utili, con benefici attesi meno immediati o inferiori rispetto a quelle rosse. Affrontarle dopo le priorità alte.
+- 🟢 **Priorità bassa**: attività con un beneficio atteso minore nel periodo attuale, che possono essere rimandate per concentrare tempo ed energie su ciò che ci fa avanzare più velocemente.
+
+**Contesto per le future sessioni:** i colori esprimono una priorità operativa legata all'obiettivo di muoverci veloce. Nel decidere cosa fare, valutare quanto ci fa avanzare ogni attività, quanto presto produce benefici e il tempo necessario per completarla. Il fatto che un'attività sia utile in generale non basta a renderla prioritaria adesso: conta soprattutto il beneficio che può portarci nel tempo disponibile rispetto alle alternative. Rivalutare le priorità se cambiano tempi, opportunità o benefici attesi, mantenendo questo criterio.
+
 Spunta una voce quando sono completati tutti gli interventi indicati.
 
 ## 🛡️ Privacy e sicurezza
