@@ -26,6 +26,7 @@ function cityToSlug(city) {
 const STATIC_PAGES = [
     { loc: '/',           changefreq: 'daily',   priority: '1.0' },
     { loc: '/annunci',    changefreq: 'daily',   priority: '0.9' },
+    { loc: '/fiere',      changefreq: 'monthly', priority: '0.7' },
     { loc: '/vendi',      changefreq: 'monthly', priority: '0.8' },
     { loc: '/valutatore', changefreq: 'weekly',  priority: '0.9' },
     { loc: '/blog',       changefreq: 'weekly',  priority: '0.7' },

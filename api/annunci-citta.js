@@ -307,7 +307,7 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
 
   <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
   <script src="/js/page-view-tracker.js?v=4"></script>
-  <script src="/js/ui-components.js?v=11"></script>
+  <script src="/js/ui-components.js?v=12"></script>
 
 </body>
 </html>`;
@@ -729,7 +729,7 @@ module.exports = async function handler(req, res) {
 
   <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
   <script src="/js/page-view-tracker.js?v=4"></script>
-  <script src="/js/ui-components.js?v=11"></script>
+  <script src="/js/ui-components.js?v=12"></script>
 
 </body>
 </html>`;

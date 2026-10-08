@@ -452,7 +452,7 @@ module.exports = async function handler(req, res) {
 <script src="/js/page-view-tracker.js?v=4"></script>
 <script src="/js/image-urls.js?v=1"></script>
 <script src="/js/data.js?v=18"></script>
-<script src="/js/ui-components.js?v=11"></script>
+<script src="/js/ui-components.js?v=12"></script>
 <script src="/js/auth.js?v=21"></script>
 <script src="/js/listing-moderation.js?v=1"></script>
 <script src="/js/pages/annuncio-detail.js?v=21"></script>

@@ -1003,3 +1003,8 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 - **"quanto costa un posteggio al mercato"** — query informazionale top-volume, 0 clic su 4 impressioni → atterra su `quanto-vale-un-posteggio-mercatale` (titolo correlato ma non perfetto). Articolo dedicato `quanto-costa-un-posteggio-al-mercato` con H1 IDENTICO + CTA al valutatore = quick win.
 - **"mercati settimanali [città]"** — Modena impressioni raddoppiate (2→4) ma nessuna pagina dedicata. Pattern replicabile su top 10 città mercatali (Modena, Brescia, Bergamo, Milano, Bologna, Torino, Verona, Padova, Firenze, Napoli).
 - **"mercati ambulanti [regione]"** — Piemonte CTR 40% confermato. Replicare per Lombardia, Veneto, Emilia-Romagna, Toscana, Lazio. Intent diverso dai bandi-* (informational vs concorso pubblico).
+
+
+### Calendario fiere (8 ottobre 2026)
+
+Nuova pagina /fiere: 200 eventi (10 per regione), mesi/intervalli anche tra due anni, mappa SVG con gruppi di eventi, ricerca e filtri. Periodi abituali indicativi, fonti in ogni scheda. Catalogo modificabile in data/fiere-fonti.json, rigenerazione con python scripts/build-fiere.py; documentazione/licenza in data/FIERE.md, test in scripts/test-fiere.cjs. Navigazione condivisa ui-components.js?v=12. Evoluzione prevista: singole edizioni con date confermate e informazioni per partecipare.

@@ -1,0 +1,2211 @@
+[
+  {
+    "region": "Piemonte",
+    "name": "Fiera internazionale del Tartufo Bianco d'Alba",
+    "city": "Alba",
+    "months": "10,11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.alba.cn.it/it/news/2046036",
+      "label": "comune.alba.cn.it"
+    }
+  },
+  {
+    "region": "Piemonte",
+    "name": "Fiera del Bue Grasso",
+    "city": "Carrù",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.fieradelbuegrassodicarru.it/",
+      "label": "fieradelbuegrassodicarru.it"
+    }
+  },
+  {
+    "region": "Piemonte",
+    "name": "Fiera nazionale del Peperone",
+    "city": "Carmagnola",
+    "months": "8,9",
+    "category": "sagra",
+    "source": {
+      "url": "https://fieradelpeperone.it/",
+      "label": "fieradelpeperone.it"
+    }
+  },
+  {
+    "region": "Piemonte",
+    "name": "Fiera Fredda",
+    "city": "Borgo San Dalmazzo",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://fierafredda.it/",
+      "label": "fierafredda.it"
+    }
+  },
+  {
+    "region": "Piemonte",
+    "name": "Fiera nazionale del Cappone",
+    "city": "Morozzo",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.morozzo.cn.it/novita/news/1368/Fiera-Nazionale-del-Cappone-di-Morozzo-13-14-dicembre-2026",
+      "label": "comune.morozzo.cn.it"
+    }
+  },
+  {
+    "region": "Piemonte",
+    "name": "Fiera nazionale di San Martino",
+    "city": "Chieri",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.fierasanmartinochieri.it/",
+      "label": "fierasanmartinochieri.it"
+    }
+  },
+  {
+    "region": "Piemonte",
+    "name": "Mostra nazionale di San Giuseppe",
+    "city": "Casale Monferrato",
+    "months": "3",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.mostrasangiuseppe.it/",
+      "label": "mostrasangiuseppe.it"
+    }
+  },
+  {
+    "region": "Piemonte",
+    "name": "Tuttomele",
+    "city": "Cavour",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.cavour.info/tuttomele",
+      "label": "cavour.info"
+    }
+  },
+  {
+    "region": "Piemonte",
+    "name": "Terra Madre Salone del Gusto",
+    "city": "Torino",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.torino.it/vivere-comune/eventi/terra-madre-salone-gusto",
+      "label": "comune.torino.it"
+    },
+    "frequencyNote": "Manifestazione biennale: verificare gli anni e il programma delle edizioni."
+  },
+  {
+    "region": "Piemonte",
+    "name": "Cheese",
+    "city": "Bra",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://cheese.slowfood.it/accesso-orari/",
+      "label": "cheese.slowfood.it"
+    },
+    "frequencyNote": "Manifestazione biennale: verificare gli anni e il programma delle edizioni."
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Fiera di Sant'Orso",
+    "city": "Aosta",
+    "months": "1",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.fieradisantorso.it/",
+      "label": "fieradisantorso.it"
+    }
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Fiera di Sant'Orso di Donnas",
+    "city": "Donnas",
+    "months": "1",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.fierasantorsodonnas.it/",
+      "label": "fierasantorsodonnas.it"
+    }
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Foire d'été",
+    "city": "Aosta",
+    "months": "8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.lovevda.it/fr/base-de-donnees/2/artisanat-foires-marches/aoste/foire-d-ete/35338",
+      "label": "lovevda.it"
+    }
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Fiera dell'artigianato di Antey",
+    "city": "Antey-Saint-André",
+    "months": "8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.comune.antey-st-andre.ao.it/it-it/appuntamenti/fiera-dell-artigianato-valdostano-di-tradizione-64929-1-38738ea5d6cd931e7b9f36643eef1b2c",
+      "label": "comune.antey-st-andre.ao.it"
+    }
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Foire de la Pâquerette",
+    "city": "Courmayeur",
+    "months": "3,4",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.courmayeurmontblanc.it/fr/event/28eme-foire-de-la-paquerette-2026/",
+      "label": "courmayeurmontblanc.it"
+    },
+    "frequencyNote": "Si svolge nel periodo pasquale: il mese cambia con il calendario."
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Foire des Glaciers",
+    "city": "Pré-Saint-Didier",
+    "months": "12",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.regione.vda.it/amministrazione/leggi/bollettino_ufficiale_new/archive/2014/50-2014.pdf",
+      "label": "regione.vda.it"
+    },
+    "frequencyNote": "La fonte è un calendario storico. Verificare che sia prevista una nuova edizione."
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Mele Vallée",
+    "city": "Antey-Saint-André",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.antey-st-andre.ao.it/it-it/home",
+      "label": "comune.antey-st-andre.ao.it"
+    }
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Marché Vert Noël",
+    "city": "Aosta",
+    "months": "11,12,1",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.mercatinodinataleaosta.it/",
+      "label": "mercatinodinataleaosta.it"
+    }
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Creativa",
+    "city": "Pré-Saint-Didier",
+    "months": "8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://balteus.lovevda.it/it/banca-dati/2/artigianato-fiere-mercatini/pre-saint-didier/creativa-fiera-della-creativita-valdostana-femminile/28797",
+      "label": "balteus.lovevda.it"
+    }
+  },
+  {
+    "region": "Valle d'Aosta",
+    "name": "Martciä di Barradzüe",
+    "city": "Morgex",
+    "months": "8",
+    "category": "mercatino",
+    "source": {
+      "url": "https://balteus.lovevda.it/en/database/2/craft-fairs-markets/morgex/martcia-di-barradzue-antique-show/35397",
+      "label": "balteus.lovevda.it"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Fiera dei Santi Faustino e Giovita",
+    "city": "Brescia",
+    "months": "2",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.visitbrescia.it/eventi/fiera-santi-faustino-e-giovita-brescia/",
+      "label": "visitbrescia.it"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Oh Bej! Oh Bej!",
+    "city": "Milano",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.yesmilano.it/eventi/tutti-gli-eventi/vivi-festa-sant-ambrogio",
+      "label": "yesmilano.it"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Antica Fiera di San Martino",
+    "city": "Inveruno",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.inveruno.mi.it/vivere-il-comune/eventi/antica-fiera-di-san-martino/",
+      "label": "comune.inveruno.mi.it"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Fiera di Santa Caterina",
+    "city": "Gorgonzola",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.gorgonzola.mi.it/servizio/fiera-di-santa-caterina/",
+      "label": "comune.gorgonzola.mi.it"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Fiera di Sant'Andrea",
+    "city": "Oggiono",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.oggiono.lc.it/",
+      "label": "comune.oggiono.lc.it"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Fiera di Santa Apollonia",
+    "city": "Rivolta d'Adda",
+    "months": "2",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.rivoltadadda.cr.it/it/events/663828",
+      "label": "comune.rivoltadadda.cr.it"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Fiera del Crocifisso",
+    "city": "Cantù",
+    "months": "3,4",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.cantu.co.it/vivere_il_comune/eventi/evento_847.html",
+      "label": "comune.cantu.co.it"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Festa del Torrone",
+    "city": "Cremona",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.festadeltorrone.com/",
+      "label": "festadeltorrone.com"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Mostra mercato di Bienno",
+    "city": "Bienno",
+    "months": "8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.mostramercatobienno.com/",
+      "label": "mostramercatobienno.com"
+    }
+  },
+  {
+    "region": "Lombardia",
+    "name": "Artigiano in Fiera",
+    "city": "Rho",
+    "months": "12",
+    "category": "espositiva",
+    "source": {
+      "url": "https://pass.artigianoinfiera.it/pdf/AF26%20Regolamento%20Generale_IT_versione%201.pdf",
+      "label": "pass.artigianoinfiera.it"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Fiera di San Giuseppe",
+    "city": "Trento",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.trento.it/Servizi/Concessione-di-occupazione-temporanea-di-suolo-pubblico-nei-mercati-saltuari-spuntisti",
+      "label": "comune.trento.it"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Fiera di Santa Lucia",
+    "city": "Trento",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://natale.visittrento.it/eventi/fiera-di-santa-lucia",
+      "label": "natale.visittrento.it"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Fiera di San Michele di Ledro",
+    "city": "Ledro",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.ledro.tn.it/Novita/Avvisi/Fiera-di-San-Michele-2026-avviso-di-manifestazione-di-interesse-per-posteggi-di-vendita-temporanea",
+      "label": "comune.ledro.tn.it"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Fiera di San Michele di Fucine",
+    "city": "Ossana",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.visitvaldisole.it/it/eventi/fiera-di-san-michele",
+      "label": "visitvaldisole.it"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Fiera di Sant'Andrea",
+    "city": "Riva del Garda",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.cultura.trentino.it/Appuntamenti/Fiera-di-S.-Andrea6",
+      "label": "cultura.trentino.it"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Mercatino di Natale di Bolzano",
+    "city": "Bolzano",
+    "months": "11,12,1",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.mercatinodinatalebz.it/",
+      "label": "mercatinodinatalebz.it"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Mercatino di Natale di Merano",
+    "city": "Merano",
+    "months": "11,12,1",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.merano-suedtirol.it/it/merano/informazioni-servizi/eventi/mercatini-di-natale-merano.html?opennav=true",
+      "label": "merano-suedtirol.it"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Mercatino di Natale di Bressanone",
+    "city": "Bressanone",
+    "months": "11,12,1",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.brixen.org/weihnachten/natale/programma",
+      "label": "brixen.org"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Tempo Libero",
+    "city": "Bolzano",
+    "months": "4",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.fierabolzano.it/it/tempo-libero/",
+      "label": "fierabolzano.it"
+    }
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "name": "Klimahouse",
+    "city": "Bolzano",
+    "months": "1",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.fierabolzano.it/it/klimahouse/",
+      "label": "fierabolzano.it"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Antica Fiera di San Valentino",
+    "city": "Bussolengo",
+    "months": "2",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.bussolengo.vr.it/it/news/315-fiera-di-san-valentino-ordinanze-per-lo-svolgimento-della-manifestazione",
+      "label": "comune.bussolengo.vr.it"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Antica Fiera di San Martino",
+    "city": "Piazzola sul Brenta",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.foradeora.com/eventi/",
+      "label": "foradeora.com"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Antica Fiera di Godega",
+    "city": "Godega di Sant'Urbano",
+    "months": "2,3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.godegafiere.it/",
+      "label": "godegafiere.it"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Fiera di Sant'Andrea",
+    "city": "Portogruaro",
+    "months": "11,12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.portogruaro.ve.it/it/news/120168/fiera-di-sant-andrea-2025-apertura-domande-di-partecipazione",
+      "label": "comune.portogruaro.ve.it"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Antica Fiera del Soco",
+    "city": "Grisignano di Zocco",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.fieradelsoco.it/",
+      "label": "fieradelsoco.it"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Fiera di San Luca",
+    "city": "Treviso",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.trevisoeventi.com/treviso-fiere-di-san-luca.html",
+      "label": "trevisoeventi.com"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Fiera del Rosario",
+    "city": "San Donà di Piave",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.sagre.org/events/fiera-del-rosario-san-dona-di-piave-2026",
+      "label": "sagre.org"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Fiera del Riso",
+    "city": "Isola della Scala",
+    "months": "9,10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.fieradelriso.it/",
+      "label": "fieradelriso.it"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Fiera dei Santi",
+    "city": "Monselice",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.monselice.padova.it/vivere-il-comune/eventi/fiera-dei-santi/",
+      "label": "comune.monselice.padova.it"
+    }
+  },
+  {
+    "region": "Veneto",
+    "name": "Vinitaly",
+    "city": "Verona",
+    "months": "4",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.vinitaly.com/en/",
+      "label": "vinitaly.com"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Fiera di San Nicolò",
+    "city": "Trieste",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.trieste.it/media/files/032006/attachment/All_3_Disposizioni_Operatori.pdf",
+      "label": "comune.trieste.it"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Fiera di San Simone",
+    "city": "Codroipo",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.turismofvg.it/eventi/fiera-san-simone-2026?LangSetCMS=it",
+      "label": "turismofvg.it"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Fiera di San Martino",
+    "city": "Latisana",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.turismofvg.it/eventi/fiera-di-san-martino-504039",
+      "label": "turismofvg.it"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Fiera di San Martino",
+    "city": "Cervignano del Friuli",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.cervignanodelfriuli.net/uploaded_files/attachments/201411191416389478/6940regolamentofiera.pdf",
+      "label": "cervignanodelfriuli.net"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Fiera di Santa Caterina",
+    "city": "Udine",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.udine.it/content/download/2424/43368/file/regolamento_AP_approvato_da_DC51_2023_-con_numero_determina.pdf",
+      "label": "comune.udine.it"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Fiera di San Nicolò",
+    "city": "Monfalcone",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.monfalcone.go.it/media/files/031012/attachment/Piano_della_Sicurezza.pdf",
+      "label": "comune.monfalcone.go.it"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Pordenonelegge",
+    "city": "Pordenone",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.pordenonelegge.it/",
+      "label": "pordenonelegge.it"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Friuli DOC",
+    "city": "Udine",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.friuli-doc.it/",
+      "label": "friuli-doc.it"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Gusti di Frontiera",
+    "city": "Gorizia",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://gustidifrontiera.it/",
+      "label": "gustidifrontiera.it"
+    }
+  },
+  {
+    "region": "Friuli-Venezia Giulia",
+    "name": "Ortogiardino",
+    "city": "Pordenone",
+    "months": "3",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.ortogiardinopordenone.it/visitare/",
+      "label": "ortogiardinopordenone.it"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Fiera di Sant'Agata",
+    "city": "Genova",
+    "months": "2",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.genova.it/vivere-il-comune/eventi/eventi-sociali/fiera-di-santagata",
+      "label": "comune.genova.it"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Fiera di San Giuseppe",
+    "city": "La Spezia",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.laspezia.it/novita/comunicati/fiera-di-san-giuseppe-2026",
+      "label": "comune.laspezia.it"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Fiera di Sant'Antonio",
+    "city": "Chiavari",
+    "months": "1",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.chiavari.ge.it/it/news/approvazione-graduatorie-fiera-di-s-antonio-e-agricola-edizione-2026",
+      "label": "comune.chiavari.ge.it"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Ineja - Festa di San Giovanni",
+    "city": "Imperia",
+    "months": "6",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.imperia.it/en/news/ineja-2026?type=2",
+      "label": "comune.imperia.it"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Fiera di San Matteo",
+    "city": "Laigueglia",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.laigueglia.sv.it/vivere-il-comune/eventi/44-fiera-di-san-matteo/",
+      "label": "comune.laigueglia.sv.it"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Fiera di Santa Lucia",
+    "city": "Savona",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.visitsavona.com/it/savona/storia-e-tradizioni/tradizioni/fiera-di-santa-lucia",
+      "label": "visitsavona.com"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Fiera di San Sebastiano",
+    "city": "Rapallo",
+    "months": "1",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://trasparenza.comune.rapallo.ge.it/page/103/details/121457/fiera-di-san-sebastiano-edizione-2026-collocazione-attivita-commerciali-e-procedure-di-svolgimento.html",
+      "label": "trasparenza.comune.rapallo.ge.it"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Fiera di San Pietro e Paolo",
+    "city": "Genova",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.genova.it/novita/avvisi/fiera-di-s-pietro-foce-2026-avviso-agli-operatori-commerciali-e-graduatoria-spuntisti",
+      "label": "comune.genova.it"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Expo Valle Arroscia",
+    "city": "Pieve di Teco",
+    "months": "9",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.comune.pievediteco.im.it/wp/2026/09/01/expo-valle-arroscia-13a-edizione-pieve-di-teco-4-5-6-settembre-2026/",
+      "label": "comune.pievediteco.im.it"
+    }
+  },
+  {
+    "region": "Liguria",
+    "name": "Salone Nautico Internazionale",
+    "city": "Genova",
+    "months": "9,10",
+    "category": "espositiva",
+    "source": {
+      "url": "https://portoantico.it/eventi/66-salone-nautico/",
+      "label": "portoantico.it"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Fiera di San Martino",
+    "city": "Santarcangelo di Romagna",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.santarcangelo.rn.it/it/news/6481613",
+      "label": "comune.santarcangelo.rn.it"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Fiera di San Michele",
+    "city": "Santarcangelo di Romagna",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.santarcangelofiere.it/fiera-di-san-michele",
+      "label": "santarcangelofiere.it"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Fiera di San Lazzaro",
+    "city": "San Lazzaro di Savena",
+    "months": "7,8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://appenninobolognese.cittametropolitana.bo.it/it/eventi/fiere/fiera-di-san-lazzaro-",
+      "label": "appenninobolognese.cittametropolitana.bo.it"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Fiera di San Giovanni",
+    "city": "Spilamberto",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.fierasangiovanni.it/",
+      "label": "fierasangiovanni.it"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Antica Fiera di San Gregorio",
+    "city": "Morciano di Romagna",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.morcianodiromagna.rn.it/vivere-il-comune/eventi/antica-fiera-di-san-gregorio/",
+      "label": "comune.morcianodiromagna.rn.it"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Fiera di San Luca",
+    "city": "Correggio",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.correggio.re.it/novita/notizie/fiera-di-san-luca-2025/",
+      "label": "comune.correggio.re.it"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Fiera di San Giovanni",
+    "city": "Cesena",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.cesenafiera.com/eventi/cesena-in-festa-san-giovanni",
+      "label": "cesenafiera.com"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Antica Fiera di San Rocco",
+    "city": "Faenza",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.prolocofaenza.it/evento/fiera-di-san-rocco-2/",
+      "label": "prolocofaenza.it"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Fiera nazionale del Tartufo Bianco",
+    "city": "Sant'Agata Feltria",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=099026&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+      "label": "wwwservizi.regione.emilia-romagna.it"
+    }
+  },
+  {
+    "region": "Emilia-Romagna",
+    "name": "Fiera del Formaggio di Fossa",
+    "city": "Sogliano al Rubicone",
+    "months": "11",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.sogliano.fc.it/servizi/Menu/dinamica.aspx?ID=21241&TipoElemento=categoria&idArea=20666&idCat=21241&idSezione=20653",
+      "label": "comune.sogliano.fc.it"
+    }
+  },
+  {
+    "region": "Toscana",
+    "name": "Fiera di Sant'Ermete",
+    "city": "Forte dei Marmi",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.visitforte.com/eventi/santermete-la-fiera-e-lo-spettacolo-pirotecnico",
+      "label": "visitforte.com"
+    }
+  },
+  {
+    "region": "Toscana",
+    "name": "Fiera di San Luca",
+    "city": "Impruneta",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.impruneta.fi.it/it/page/fiera-di-san-luca",
+      "label": "comune.impruneta.fi.it"
+    }
+  },
+  {
+    "region": "Toscana",
+    "name": "Scandicci Fiera",
+    "city": "Scandicci",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.scandiccifiera.it/",
+      "label": "scandiccifiera.it"
+    }
+  },
+  {
+    "region": "Toscana",
+    "name": "Fiera Antiquaria",
+    "city": "Arezzo",
+    "months": "1,2,3,4,5,6,7,8,9,10,11,12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.arezzo.it/tutti-gli-argomenti/fiera-antiquaria",
+      "label": "comune.arezzo.it"
+    },
+    "frequencyNote": "Appuntamento mensile: primo fine settimana del mese; verificare il programma."
+  },
+  {
+    "region": "Toscana",
+    "name": "Mostra internazionale dell'artigianato MIDA",
+    "city": "Firenze",
+    "months": "4,5",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.mostrartigianato.it/it",
+      "label": "mostrartigianato.it"
+    }
+  },
+  {
+    "region": "Toscana",
+    "name": "Mostra mercato nazionale del Tartufo Bianco",
+    "city": "San Miniato",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.terredipisa.it/events/mostra-mercato-nazionale-del-tartufo-bianco-san-miniato/",
+      "label": "terredipisa.it"
+    }
+  },
+  {
+    "region": "Toscana",
+    "name": "Fiera del Primo Maggio",
+    "city": "Montepulciano",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.montepulciano.si.it/novita/a-montepulciano-si-rinnova-lappuntamento-con-la-storica-fiera-del-1-maggio/",
+      "label": "comune.montepulciano.si.it"
+    }
+  },
+  {
+    "region": "Toscana",
+    "name": "Fiera del Madonnino",
+    "city": "Grosseto",
+    "months": "4",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.fieradelmadonnino.it/",
+      "label": "fieradelmadonnino.it"
+    }
+  },
+  {
+    "region": "Toscana",
+    "name": "Murabilia",
+    "city": "Lucca",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://murabilia.com/",
+      "label": "murabilia.com"
+    }
+  },
+  {
+    "region": "Toscana",
+    "name": "Fiera di San Casciano",
+    "city": "Cascina",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.cascina.pi.it/index.php/it/news/119324/fiera-di-san-casciano-modifiche-temporanee-alla-viabilita-e-alla-sosta",
+      "label": "comune.cascina.pi.it"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Fiera dei Morti",
+    "city": "Perugia",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://turismo.comune.perugia.it/poi/fiera-dei-morti-eng",
+      "label": "turismo.comune.perugia.it"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Fiera di San Feliciano",
+    "city": "Foligno",
+    "months": "1",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.foligno.pg.it/servizio/fiere-nel-comune-di-foligno/",
+      "label": "comune.foligno.pg.it"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Fiera di San Francesco",
+    "city": "Assisi",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.visit-assisi.it/eventi/en/event/st-francis-2026-st-francis-fair/",
+      "label": "visit-assisi.it"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Mostra mercato dello Zafferano",
+    "city": "Cascia",
+    "months": "10,11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.zafferanodicascia.com/",
+      "label": "zafferanodicascia.com"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Nero Norcia",
+    "city": "Norcia",
+    "months": "2,3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.nero-norcia.it/",
+      "label": "nero-norcia.it"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Eurochocolate",
+    "city": "Perugia",
+    "months": "10,11",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.eurochocolate.com/perugia2026/",
+      "label": "eurochocolate.com"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Expo Casa",
+    "city": "Bastia Umbra",
+    "months": "2,3",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.expo-casa.com/date-orari/",
+      "label": "expo-casa.com"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Agriumbria",
+    "city": "Bastia Umbra",
+    "months": "3,4",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.agriumbria.eu/",
+      "label": "agriumbria.eu"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Mostra mercato del Tartufo di Valtopina",
+    "city": "Valtopina",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.valtopina.pg.it/notizie/3646400/44-mostra-mercato-tartufo-valtopina-aperte",
+      "label": "comune.valtopina.pg.it"
+    }
+  },
+  {
+    "region": "Umbria",
+    "name": "Mostra mercato nazionale del Tartufo Bianco",
+    "city": "Città di Castello",
+    "months": "10,11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.cittadicastelloturismo.it/il-tartufo-bianco/il-tartufo-bianco-programma/",
+      "label": "cittadicastelloturismo.it"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Fiera di San Ciriaco",
+    "city": "Ancona",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.ancona.it/it/eventi/712028",
+      "label": "comune.ancona.it"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Fiera di San Nicola",
+    "city": "Pesaro",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.pesaro.pu.it/novita-in-comune/dettaglio/news/fiera-di-san-nicola-2026/?cHash=272cb1eae3ad75f81459e91eca1ae7f6&tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News",
+      "label": "comune.pesaro.pu.it"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Fiera di San Settimio",
+    "city": "Jesi",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.jesi.an.it/w/fiere-di-san-settimio-2026",
+      "label": "comune.jesi.an.it"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Fiera di Sant'Agostino",
+    "city": "Senigallia",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.feelsenigallia.it/eventi/fiera-sant-agostino/",
+      "label": "feelsenigallia.it"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Fiera di San Bartolomeo",
+    "city": "Fano",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://visitfano.info/fiera-di-san-bartolomeo-2026/",
+      "label": "visitfano.info"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Fiera di Santa Lucia",
+    "city": "San Benedetto del Tronto",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://turismo.comunesbt.it/evento/fiera-di-santa-lucia/",
+      "label": "turismo.comunesbt.it"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Fiera di Sant'Emidio",
+    "city": "Ascoli Piceno",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.regione.marche.it/portals/0/Commercio/mercati%20e%20fiere/Calendario%20FIERE%202025%20%281%29.pdf",
+      "label": "regione.marche.it"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Fiera di San Martino",
+    "city": "Grottammare",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.grottammare.ap.it/argomento/san-martino/",
+      "label": "comune.grottammare.ap.it"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Fiera nazionale del Tartufo Bianco",
+    "city": "Acqualagna",
+    "months": "10,11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.acqualagna.ps.it/sito_tematico/mostra-tartufo/",
+      "label": "comune.acqualagna.ps.it"
+    }
+  },
+  {
+    "region": "Marche",
+    "name": "Mostra nazionale del Tartufo Bianco",
+    "city": "Sant'Angelo in Vado",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.mostratartufo.it/wp-content/uploads/2025/10/MostraTartufoSantAngeloinVado_2025.pdf",
+      "label": "mostratartufo.it"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Fiera dell'Annunziata",
+    "city": "Viterbo",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.viterbo.it/novita/mercoledi-25-marzo-torna-la-fiera-dellannunziata/",
+      "label": "comune.viterbo.it"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Fiera di Santa Rosa",
+    "city": "Viterbo",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.viterbo.it/vivi-viterbo-2026/",
+      "label": "comune.viterbo.it"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Secolare Fiera di San Michele",
+    "city": "Sermoneta",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.sermoneta.latina.it/vivere-il-comune/eventi/secolare-fiera-di-san-michele-2026-programma/",
+      "label": "comune.sermoneta.latina.it"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Fiera di Farfa",
+    "city": "Fara in Sabina",
+    "months": "4",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.visitlazio.com/eventi-lazio/farfa-in-festa-torna-la-storica-fiera/",
+      "label": "visitlazio.com"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Antica Fiera Farnesiana",
+    "city": "Valentano",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.valentano.vt.it/eventi/3575838/fiera-cedro-antica-farnesiana",
+      "label": "comune.valentano.vt.it"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Fiera di Santa Anatolia",
+    "city": "Gerano",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.visitlazio.com/eventi-lazio/gerano-festa-e-fiera-di-santa-anatolia/",
+      "label": "visitlazio.com"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Fiera della Madonna della Neve",
+    "city": "Frosinone",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.frosinone.it/pagina191_le-tradizioni-del-capoluogo.html",
+      "label": "comune.frosinone.it"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Tuscania in Fiera",
+    "city": "Tuscania",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.tuscaniaturismo.it/tuscania-in-fiera/",
+      "label": "tuscaniaturismo.it"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Sagra dell'Uva",
+    "city": "Marino",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.sagradelluvamarino.it/",
+      "label": "sagradelluvamarino.it"
+    }
+  },
+  {
+    "region": "Lazio",
+    "name": "Sagra della Porchetta",
+    "city": "Ariccia",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.visitlazio.com/eventi-lazio/73-sagra-della-porchetta-di-ariccia/",
+      "label": "visitlazio.com"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Fiera dell'Epifania",
+    "city": "L'Aquila",
+    "months": "1",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.laquila.it/archivio3_notizie_0_11215.html",
+      "label": "comune.laquila.it"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Fiera di Giugno",
+    "city": "Bussi sul Tirino",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.tuabruzzo.it/comunicazioni/soppressione-fermate-nel-comune-di-bussi-sul-tirino-per-fiera-di-giugno/25-1423.html",
+      "label": "tuabruzzo.it"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Festa di Sant'Andrea",
+    "city": "Pescara",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.ansa.it/abruzzo/notizie/2026/07/22/a-pescara-tornano-i-fuochi-artificiali-per-la-festa-di-santandrea_6ee4ea0c-9df9-4efc-b8c8-d0acfcb12d40.html",
+      "label": "ansa.it"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Mostra dell'artigianato artistico abruzzese",
+    "city": "Guardiagrele",
+    "months": "8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.artigianatoabruzzese.it/",
+      "label": "artigianatoabruzzese.it"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Fiera dell'Agricoltura",
+    "city": "Lanciano",
+    "months": "4",
+    "category": "espositiva",
+    "source": {
+      "url": "https://agricoltura.lancianofiera.it/edizione-2026/index.html",
+      "label": "agricoltura.lancianofiera.it"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Fiera di San Vitale",
+    "city": "San Salvo",
+    "months": "4",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.sansalvo.ch.it/argomenti/argomento-dettaglio/3271906",
+      "label": "comune.sansalvo.ch.it"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Mostra del Fiore Florviva",
+    "city": "Pescara",
+    "months": "4,5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.mostradelfioreflorviva.it/",
+      "label": "mostradelfioreflorviva.it"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Fiera di San Berardo",
+    "city": "Teramo",
+    "months": "12",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.teramo.it/it/news/selezione-pubblica-per-l-affidamento-a-titolo-non-oneroso-della-gestione-dei-servizi-connessi-all-organizzazione-delle-fiere-istituzionali-del-comune-di-teramo-nel-periodo-gennaio-2026-dicembre-2030",
+      "label": "comune.teramo.it"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Fiera di Sant'Egidio",
+    "city": "Lanciano",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.lanciano.ch.it/Vivere-il-comune/Eventi/Fiera-di-Sant-Egidio-2026",
+      "label": "comune.lanciano.ch.it"
+    }
+  },
+  {
+    "region": "Abruzzo",
+    "name": "Fiera della Pastorizia di Piano Roseto",
+    "city": "Crognaleto",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.cameragransasso.camcom.it/it/notizie/fierapianoroseto/",
+      "label": "cameragransasso.camcom.it"
+    }
+  },
+  {
+    "region": "Molise",
+    "name": "Fiera d'Ottobre",
+    "city": "Larino",
+    "months": "10",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.fieradottobrelarino.it/",
+      "label": "fieradottobrelarino.it"
+    }
+  },
+  {
+    "region": "Molise",
+    "name": "Fiera delle Cipolle",
+    "city": "Isernia",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.isernia.it/la-fiera-delle-cipolle/",
+      "label": "comune.isernia.it"
+    }
+  },
+  {
+    "region": "Molise",
+    "name": "Fiera dei Santi Cosma e Damiano",
+    "city": "Isernia",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://discoverisernia.com/eventi/isernia-festa-dei-santi-cosma-e-damiano/",
+      "label": "discoverisernia.com"
+    }
+  },
+  {
+    "region": "Molise",
+    "name": "Fiera di San Nicandro",
+    "city": "Venafro",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://old.comune.venafro.is.it/index.php/turismo-mainmenu-196/481-feste-e-tradizioni.html",
+      "label": "old.comune.venafro.is.it"
+    }
+  },
+  {
+    "region": "Molise",
+    "name": "Fiera di San Bartolomeo",
+    "city": "Bojano",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeAttachment.php/L/IT/D/D.bd9467bb03556e304db2/P/BLOB%3AID%3D2953/E/pdf?mode=download",
+      "label": "regione.molise.it"
+    },
+    "frequencyNote": "Periodo ricavato da un calendario regionale storico; verificare l'edizione in corso."
+  },
+  {
+    "region": "Molise",
+    "name": "Casearia",
+    "city": "Agnone",
+    "months": "8,9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.fieracasearia.it/casearia-2026/",
+      "label": "fieracasearia.it"
+    }
+  },
+  {
+    "region": "Molise",
+    "name": "Mostra mercato del coltello artigianale",
+    "city": "Frosolone",
+    "months": "8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://comune.frosolone.is.it/lartigianato/",
+      "label": "comune.frosolone.is.it"
+    }
+  },
+  {
+    "region": "Molise",
+    "name": "Festa di San Basso",
+    "city": "Termoli",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.diocesitermolilarino.it/festa-di-san-basso-patrono-della-citta-di-termoli-e-della-diocesi-il-programma-2026/",
+      "label": "diocesitermolilarino.it"
+    }
+  },
+  {
+    "region": "Molise",
+    "name": "Fiera del Corpus Domini",
+    "city": "Campobasso",
+    "months": "5,6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://egov.comune.campobasso.it/campobasso2/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5mpjMkTqaz0-A",
+      "label": "egov.comune.campobasso.it"
+    }
+  },
+  {
+    "region": "Molise",
+    "name": "Fiera di San Bernardino",
+    "city": "Civitanova del Sannio",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.regione.molise.it/flex/cm/pages/ServeAttachment.php/L/IT/D/D.bd9467bb03556e304db2/P/BLOB%3AID%3D2953/E/pdf?mode=download",
+      "label": "regione.molise.it"
+    },
+    "frequencyNote": "Periodo ricavato da un calendario regionale storico; verificare l'edizione in corso."
+  },
+  {
+    "region": "Campania",
+    "name": "Fiera del Crocifisso Ritrovato",
+    "city": "Salerno",
+    "months": "4,5",
+    "category": "artigianato",
+    "source": {
+      "url": "https://cultura.comune.salerno.it/eventi/fiera-del-crocifisso-ritrovato-2026-xxxiv-edizione/",
+      "label": "cultura.comune.salerno.it"
+    }
+  },
+  {
+    "region": "Campania",
+    "name": "Fiera di San Giuseppe",
+    "city": "Benevento",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.benevento.it/novita/varato-il-dispositivo-del-traffico-per-la-fiera-di-san-giuseppe-2026/",
+      "label": "comune.benevento.it"
+    }
+  },
+  {
+    "region": "Campania",
+    "name": "Fiera Agricola",
+    "city": "San Marco Evangelista",
+    "months": "3",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.fieraagricola.org/",
+      "label": "fieraagricola.org"
+    }
+  },
+  {
+    "region": "Campania",
+    "name": "Fiera Vesuviana",
+    "city": "San Gennaro Vesuviano",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://agricoltura.regione.campania.it/fiere/fiera-vesuviana-2025.html",
+      "label": "agricoltura.regione.campania.it"
+    }
+  },
+  {
+    "region": "Campania",
+    "name": "Fiera Campionaria di Venticano",
+    "city": "Venticano",
+    "months": "4",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.prolocoventicano.com/fiera-campionaria-venticano/",
+      "label": "prolocoventicano.com"
+    }
+  },
+  {
+    "region": "Campania",
+    "name": "Fiera Interregionale di Calitri",
+    "city": "Calitri",
+    "months": "8,9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.calitri.av.it/page/manifestazioni-e-fiere",
+      "label": "comune.calitri.av.it"
+    }
+  },
+  {
+    "region": "Campania",
+    "name": "TuttoPizza",
+    "city": "Napoli",
+    "months": "5",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.regione.campania.it/regione-informa/notizie/avviso-agli-operatori-settore-vitivinicolo-partecipazione-tuttopizza-2026",
+      "label": "regione.campania.it"
+    }
+  },
+  {
+    "region": "Campania",
+    "name": "COMICON",
+    "city": "Napoli",
+    "months": "4,5",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comicon.it/",
+      "label": "comicon.it"
+    }
+  },
+  {
+    "region": "Campania",
+    "name": "Mercatino di Natale di Limatola",
+    "city": "Limatola",
+    "months": "11,12",
+    "category": "mercatino",
+    "source": {
+      "url": "https://cadeauxalcastello.it/",
+      "label": "cadeauxalcastello.it"
+    }
+  },
+  {
+    "region": "Campania",
+    "name": "Festa della Castagna di Montella IGP",
+    "city": "Montella",
+    "months": "10,11",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.montella.av.it/vivere_il_comune/eventi/evento_1.html",
+      "label": "comune.montella.av.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera del Levante",
+    "city": "Bari",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://fieradellevante.it/",
+      "label": "fieradellevante.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera di San Giorgio",
+    "city": "Gravina in Puglia",
+    "months": "4",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://fierasangiorgiogravina.it/",
+      "label": "fierasangiorgiogravina.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera di San Leone",
+    "city": "Bitonto",
+    "months": "3,4",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.bitonto.ba.it/it/news/anticipata-a-domenica-29-marzo-ledizione-2026-dellantichissima-fiera-di-san-leone",
+      "label": "comune.bitonto.ba.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera di San Cosimo",
+    "city": "Oria",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.oria.br.it/novita/bando-posteggi-feste-fiere-e-sagre-anno-2025/",
+      "label": "comune.oria.br.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera di Santa Lucia",
+    "city": "Lecce",
+    "months": "12",
+    "category": "artigianato",
+    "source": {
+      "url": "https://visit.puglia.it/it/mercatini-di-natale-in-puglia/mercatini-di-natale-lecce",
+      "label": "visit.puglia.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera di Sant'Oronzo",
+    "city": "Lecce",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.lecce.it/news/dettaglio/2026/08/11/avviso-pubblico-per-la-partecipazione-alla-manifestazione-denominata-fiera-di-s.-oronzo-2026",
+      "label": "comune.lecce.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera di San Martino",
+    "city": "Martina Franca",
+    "months": "11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Martina-festeggia-i-suoi-Patroni-San-Martino-e-Santa-Comasia",
+      "label": "comune.martinafranca.ta.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera Pessima",
+    "city": "Manduria",
+    "months": "3",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.pessima.it/",
+      "label": "pessima.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera di Galatina e del Salento",
+    "city": "Galatina",
+    "months": "6",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.fieragalatina.it/",
+      "label": "fieragalatina.it"
+    }
+  },
+  {
+    "region": "Puglia",
+    "name": "Fiera di San Marco",
+    "city": "San Marco in Lamis",
+    "months": "4",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://halleyweb.com/sanmarcoinlamis/zf/index.php/atti-amministrativi/determine/dettaglio/table-determine-public-page/5/atto/G1XpVMkTUTT0-A",
+      "label": "halleyweb.com"
+    }
+  },
+  {
+    "region": "Basilicata",
+    "name": "Sagra della Varola",
+    "city": "Melfi",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.melfi.pz.it/page/ecefdc1c-d71c-4d49-b77a-9fe2c50a6083avviso-per-sta",
+      "label": "comune.melfi.pz.it"
+    }
+  },
+  {
+    "region": "Basilicata",
+    "name": "Sagra del Pecorino",
+    "city": "Filiano",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.filiano.pz.it/filiano/po/mostra_news.php?area=H&id=1620",
+      "label": "comune.filiano.pz.it"
+    }
+  },
+  {
+    "region": "Basilicata",
+    "name": "Sagra del Peperone",
+    "city": "Senise",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://assasenise.com/2026/08/05/comunicato-stampa-oro-rosso-e-centro-storico-a-senise-la-24esima-edizione-de-u-strittul-ru-zafaran/",
+      "label": "assasenise.com"
+    }
+  },
+  {
+    "region": "Basilicata",
+    "name": "Notte Bianca dell'Aglianico del Vulture",
+    "city": "Rionero in Vulture",
+    "months": "7",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.rioneroinvulture.pz.it/schedaEventoDetail/la-notte-bianca-dell-aglianico-del-vulture-25-lugl",
+      "label": "comune.rioneroinvulture.pz.it"
+    }
+  },
+  {
+    "region": "Basilicata",
+    "name": "Sagra della Castagna",
+    "city": "Tramutola",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://sagr.it/basilicata/pollino/eventi/sagra-della-castagna-munnaredda",
+      "label": "sagr.it"
+    }
+  },
+  {
+    "region": "Basilicata",
+    "name": "Parco Urbano delle Cantine",
+    "city": "Rapolla",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://parcourbanocantinerapolla.it/info-utili",
+      "label": "parcourbanocantinerapolla.it"
+    }
+  },
+  {
+    "region": "Basilicata",
+    "name": "Sagra del Fagiolo",
+    "city": "Sarconi",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.sagradelfagioloigpsarconi.it/",
+      "label": "sagradelfagioloigpsarconi.it"
+    }
+  },
+  {
+    "region": "Basilicata",
+    "name": "Sagra della Strazzata di Lagopesole",
+    "city": "Avigliano",
+    "months": "9,10,11",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.basilicataturistica.it/eventi-in-basilicata/a-castel-lagopesole-la-strazzata-sotto-lo-sguardo-di-federico-ii/",
+      "label": "basilicataturistica.it"
+    },
+    "frequencyNote": "Evento a Lagopesole, frazione di Avigliano. Il periodo varia tra le edizioni: verificare le date aggiornate."
+  },
+  {
+    "region": "Basilicata",
+    "name": "Sagra del Baccalà",
+    "city": "Avigliano",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.avigliano.pz.it/page/sagra-del-baccal-2026-il-comune-apre-alle-proposte",
+      "label": "comune.avigliano.pz.it"
+    }
+  },
+  {
+    "region": "Basilicata",
+    "name": "Sagra della Salsiccia",
+    "city": "Cancellara",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://sagr.it/basilicata/pollino/eventi/festival-della-salsiccia-a-catena",
+      "label": "sagr.it"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Fiera di San Giuseppe",
+    "city": "Cosenza",
+    "months": "3",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.confartigianatocosenza.it/2026/02/20/comune-di-cosenza-fiera-di-san-giuseppe-2026-approvazione-e-pubblicazione-bando/",
+      "label": "confartigianatocosenza.it"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Fiera Mariana",
+    "city": "Crotone",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.crotone.it/novita/fiera-mariana-2026/",
+      "label": "comune.crotone.it"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Peperoncino Festival",
+    "city": "Diamante",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.peperoncinofestival.org/",
+      "label": "peperoncinofestival.org"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Fiera di Ferragosto",
+    "city": "Serra San Bruno",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.serrasanbruno.vv.it/novita/fiera-di-ferragosto-2/",
+      "label": "comune.serrasanbruno.vv.it"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Fiera di San Francesco",
+    "city": "Paola",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.paola.cs.it/it/news/festa-patronale-in-onore-di-san-francesco-di-paola-pubblicazione-graduatoria-definitiva",
+      "label": "comune.paola.cs.it"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Festa di San Rocco",
+    "city": "Gioiosa Ionica",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://comitatosanroccogioiosaionica.com/",
+      "label": "comitatosanroccogioiosaionica.com"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Fiera della Madonna della Montagna",
+    "city": "San Luca",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.sanluca.rc.it/servizio/assegnazione-temporanea-di-posteggio-in-occasione-della-fiera-in-onore-della-madonna-della-montagna-a-san-luca/",
+      "label": "comune.sanluca.rc.it"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Sagra del Fungo di Camigliatello",
+    "city": "Spezzano della Sila",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.spezzanodellasila.cs.it/it/eventi/sagra-del-fungo-autunno-in-sila",
+      "label": "comune.spezzanodellasila.cs.it"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Fiera di Sant'Antonio",
+    "city": "Lamezia Terme",
+    "months": "6",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.lamezia-terme.cz.it/it/page/fiere-lametine",
+      "label": "comune.lamezia-terme.cz.it"
+    }
+  },
+  {
+    "region": "Calabria",
+    "name": "Fiera di Ognissanti",
+    "city": "Amantea",
+    "months": "10,11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.amanteaninelmondo.it/tradizioni/fiera/la-fiera-di-amantea.html",
+      "label": "amanteaninelmondo.it"
+    }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera storica di Sant'Agata di Militello",
+    "city": "Sant'Agata di Militello",
+    "months": "4,11",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.santagatadimilitello.me.it/vivere-il-comune/territorio/eventi-e-festivita/",
+      "label": "comune.santagatadimilitello.me.it"
+    }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera dello Jonio",
+    "city": "Acireale",
+    "months": "9",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.comune.acireale.ct.it/it/eventi/725419",
+      "label": "comune.acireale.ct.it"
+    }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera di San Calogero",
+    "city": "Agrigento",
+    "months": "7",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.agrigento.it/novita/fiera-di-san-calogero/",
+      "label": "comune.agrigento.it"
+    }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera di San Bartolomeo",
+    "city": "Giarratana",
+    "months": "8",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_5.html",
+      "label": "comune.giarratana.rg.it"
+    }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera Agroalimentare Mediterranea",
+    "city": "Ragusa",
+    "months": "9",
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.ragusawelcome.com/it/scopri-ragusa/eventi/2026/settembre-2026/fiera-agroalimentare-mediterranea-fam-51-ed",
+      "label": "ragusawelcome.com"
+    }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Ottobrata Zafferanese",
+    "city": "Zafferana Etnea",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.ottobratazafferanese.it/",
+      "label": "ottobratazafferanese.it"
+    }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Expo del Pistacchio",
+    "city": "Bronte",
+    "months": "9,10",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.bronte.ct.it/novita/xxxv-sagra-del-pistacchio-di-bronte-ufficiali-le-date-delledizione-2026/",
+      "label": "comune.bronte.ct.it"
+    }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Cous Cous Fest",
+    "city": "San Vito Lo Capo",
+    "months": "9",
+    "category": "sagra",
+    "source": {
+      "url": "https://couscousfest.it/",
+      "label": "couscousfest.it"
+    }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Chocomodica",
+    "city": "Modica",
+    "months": "10,11,12",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.chocomodicaofficial.it/",
+      "label": "chocomodicaofficial.it"
+    },
+    "frequencyNote": "Il periodo varia tra le edizioni: verificare programma e aggiornamenti dell'organizzatore."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera Mediterranea del Cavallo",
+    "city": "Militello in Val di Catania",
+    "months": "5",
+    "category": "espositiva",
+    "source": {
+      "url": "https://cavallisicilia.it/30/news/115-fiera-mediterranea-del-cavallo-2026",
+      "label": "cavallisicilia.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Fiera dell'Artigianato artistico della Sardegna",
+    "city": "Mogoro",
+    "months": "7,8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.fierartigianatosardegna.it/",
+      "label": "fierartigianatosardegna.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Fiera di San Simplicio",
+    "city": "Olbia",
+    "months": "5",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.olbia.ot.it/it/news/fiera-san-simplicio-2026",
+      "label": "comune.olbia.ot.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Fiera di San Gemiliano",
+    "city": "Sestu",
+    "months": "9",
+    "category": "tradizionale",
+    "source": {
+      "url": "https://comune.sestu.ca.it/novita/bando-pubblico-assegnazione-posteggi-in-localita-san-gemiliano-2026/",
+      "label": "comune.sestu.ca.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Redentore",
+    "city": "Nuoro",
+    "months": "8",
+    "category": "sagra",
+    "source": {
+      "url": "https://musei.sardegna.beniculturali.it/notizie/126a-festa-del-redentore-nuoro-22-29-agosto-2026/",
+      "label": "musei.sardegna.beniculturali.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra di Sant'Efisio",
+    "city": "Cagliari",
+    "months": "5",
+    "category": "sagra",
+    "source": {
+      "url": "https://cagliariturismo.comune.cagliari.it/index.php/it/events/370a-festa-di-santefisio",
+      "label": "cagliariturismo.comune.cagliari.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Carciofo",
+    "city": "Uri",
+    "months": "3",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.uri.ss.it/luoghi/3413056/attivita-prevalenti",
+      "label": "comune.uri.ss.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra degli Agrumi",
+    "city": "Muravera",
+    "months": "4",
+    "category": "sagra",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/eventi/sagra-degli-agrumi",
+      "label": "sardegnaturismo.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Castagna e della Nocciola",
+    "city": "Aritzo",
+    "months": "10",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.aritzo.nu.it/notizie/3648265/realizzazione-54-sagra-castagne-nocciole-anno-2026",
+      "label": "comune.aritzo.nu.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Tessingiu - Mostra dell'artigianato sardo",
+    "city": "Samugheo",
+    "months": "7,8",
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.tessingiu.it/",
+      "label": "tessingiu.it"
+    }
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Torrone",
+    "city": "Tonara",
+    "months": "3,4",
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.tonara.nu.it/it/eventi/tonara-06-aprile-45-sagra-del-torrone-edizione-2026",
+      "label": "comune.tonara.nu.it"
+    }
+  }
+]

@@ -12,9 +12,10 @@ const UI = {
             </div>
             <span class="text-lg sm:text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
         </a>
-        <nav class="hidden lg:flex justify-center gap-12 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
+        <nav class="hidden lg:flex justify-center gap-6 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
             <a href="/valutatore" class="nav-link-valutatore hover:text-slate-900 transition">Calcolatore</a>
             <a href="/annunci"   class="nav-link-annunci hover:text-slate-900 transition">Annunci</a>
+            <a href="/fiere"     class="nav-link-fiere hover:text-slate-900 transition">Fiere</a>
             <a href="/blog"      class="nav-link-blog hover:text-slate-900 transition">Blog</a>
         </nav>
         <div class="flex items-center justify-end gap-2 sm:gap-3">
@@ -45,6 +46,7 @@ const UI = {
                 <ul class="space-y-2.5 text-slate-400 font-medium text-sm">
                     <li><a href="/"           class="hover:text-white transition">Home</a></li>
                     <li><a href="/annunci"    class="hover:text-white transition">Annunci</a></li>
+                    <li><a href="/fiere"      class="hover:text-white transition">Calendario fiere</a></li>
                     <li><a href="/valutatore" class="hover:text-white transition">Calcolatore</a></li>
                     <li><a href="/blog"       class="hover:text-white transition">Blog</a></li>
                     <li><a href="/vendi"      class="hover:text-white transition">Inserisci annuncio</a></li>
@@ -86,6 +88,10 @@ function initUI() {
             headerEl.querySelector('.nav-link-blog')?.classList.add('text-blue-600');
         } else if (page.includes('/valutatore')) {
             headerEl.querySelector('.nav-link-valutatore')?.classList.add('text-blue-600');
+        } else if (page.includes('/fiere')) {
+            const link = headerEl.querySelector('.nav-link-fiere');
+            link?.classList.add('text-blue-600');
+            link?.setAttribute('aria-current', 'page');
         }
     }
 
