@@ -1392,7 +1392,7 @@ async function loadAdminStats() {
     // farebbe fallire l'espansione di * a livello PostgREST.
     const counts = await Promise.all([
         _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('is_demo', false),
-        _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active').eq('is_demo', false).or('expires_at.is.null,expires_at.gt.'+new Date().toISOString()),
+        _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active').eq('is_demo', false),
         _supabase.from('profiles').select('id', { count: 'exact', head: true }).eq('is_demo', false)
     ]);
     ['admStatAnnunci','admStatAttivi','admStatUtenti'].forEach((id,i)=>{
