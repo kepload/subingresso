@@ -1,48 +1,44 @@
-TO DO — SUBINGRESSO.IT
+# TO DO — SUBINGRESSO.IT
 
-IMPATTO: 🔴 alto   🟠 medio   🟢 minore
+IMPATTO: 🔴 alto · 🟠 medio · 🟢 minore
+Spunta una voce quando sono completati tutti gli interventi indicati.
 
+## 🛡️ Privacy e sicurezza
 
-🐞 BUG DA SISTEMARE
+- [ ] 🔴 Sistemare la privacy policy e il GDPR — chiarire la gestione dei dati personali.
+- [ ] 🔴 Rendere sicure le eliminazioni di annunci e account — riepilogo, conferma e verifica email; per l'account, gestire anche i dati associati.
 
-🔴 Sistemare il calcolatore — risultati affidabili, verificati con casi reali
-🔴 Sistemare le foto degli annunci — devono funzionare bene anche durante la modifica
-🟠 Sistemare le statistiche — dati, grafico, filtri ed email settimanali
+## 🎪 Fiere: ricerca e calendario
 
+- [ ] 🔴 Migliorare la ricerca delle fiere e il calendario — unificare gli interventi per chi cerca eventi e posteggi.
+- [ ] 🟢 Creare la sezione «Fiere per ambulanti» — filtri per regione, mese e domande aperte.
 
-✨ MIGLIORAMENTI
+## ⚡ Velocità e visibilità su Google
 
-🔴 Rendere più chiare le stime — mostrare affidabilità e casi confrontabili
-🟠 Migliorare scadenze e rinnovi — avvisi prima della scadenza e rinnovo rapido
-🟠 Migliorare gli alert — filtri per zona, settore, giorno e prezzo
-🟠 Registrare vendite e affitti conclusi — data, tempi e prezzo facoltativo
-🟢 Salvare il telefono nel profilo — usare quello inserito nel primo annuncio
+- [ ] 🔴 Velocizzare il blog — rendere subito disponibile l'articolo in HTML e caricare solo le anteprime nell'elenco.
+- [ ] 🟠 Alleggerire il sito e rendere più fluida la navigazione — cache dei file versionati, coordinate e librerie della dashboard caricate quando servono, icone leggere; ridurre gli spostamenti della pagina e ottimizzare paginazione e query degli annunci.
+- [ ] 🟠 Sistemare indirizzi e indicizzazione — allineare sitemap e pagine definitive, correggere i 404 e migliorare blog e pagine locali verificando indicizzazione e risultati in Search Console.
+- [ ] 🟠 Creare pagine regionali — quando ci sono abbastanza annunci attivi.
 
+## 👤 Annunci, profilo e avvisi
 
-🛡️ PRIVACY E SICUREZZA
+- [ ] 🟠 Migliorare scadenze e rinnovi — avvisi prima della scadenza e rinnovo rapido.
+- [ ] 🟠 Migliorare gli alert — filtri per zona, settore, giorno e prezzo.
+- [ ] 🟠 Registrare vendite e affitti conclusi — data, tempi e prezzo facoltativo.
+- [ ] 🟢 Salvare il telefono nel profilo — riutilizzare quello inserito nel primo annuncio.
 
-🔴 Completare la Privacy Policy
-🔴 Rendere sicura l'eliminazione degli annunci — riepilogo, conferma ed email di verifica
-🔴 Rendere sicura l'eliminazione dell'account — conferma, verifica email e gestione dei dati
+## 📊 Statistiche e provenienza degli utenti
 
+- [ ] 🟠 Correggere le statistiche — dati, grafico, filtri ed email settimanali.
+- [ ] 🟠 Capire da dove arrivano gli utenti — distinguere blog, bandi, valutatore, homepage e fiere.
 
-📈 CRESCITA E NUOVE FUNZIONI
+## ✍️ Blog: un articolo per ogni fiera lombarda importante
 
-🟠 Capire da dove arrivano gli utenti — blog, bandi, valutatore, homepage e fiere
-🟠 Creare pagine regionali — quando ci sono abbastanza annunci attivi
-🟢 Creare la sezione Fiere per ambulanti — filtri per regione, mese e domande aperte
+Preparare un articolo per ciascun evento, pensato per gli ambulanti: data e luogo, numero e tipo di posteggi, settori ammessi, costi, requisiti, scadenza, domanda, spunta, contatti SUAP e fonti ufficiali. Verificare sempre le informazioni prima della pubblicazione.
 
+Le caselle qui sotto indicano gli articoli completati e pubblicati. Procedere prima con le fiere ambulanti, poi con le sagre e i grandi eventi; valutare a parte le fiere espositive.
 
-✍️ POST PER IL BLOG
-
-🟢 Prossimo post:
-
-
-🎯 OBIETTIVO NUOVO — UN ARTICOLO PER OGNI FIERA LOMBARDA IMPORTANTE
-
-Creare un articolo completo per ogni evento, scritto per gli ambulanti: data e luogo, numero e tipo di posteggi, settori ammessi, costi, requisiti, scadenza, domanda, spunta, contatti SUAP e fonti ufficiali. Verificare sempre le informazioni prima della pubblicazione.
-
-Priorità massima — fiere ambulanti
+### Priorità massima — fiere ambulanti
 
 - [ ] Fiera dei SS. Faustino e Giovita — Brescia
 - [ ] Oh Bej! Oh Bej! — Milano
@@ -83,7 +79,7 @@ Priorità massima — fiere ambulanti
 - [ ] Fiera di Santa Maria della Vittoria — Brescia
 - [ ] Fiera di Natale e Villaggio di Babbo Natale — Assago
 
-Priorità alta — sagre e grandi eventi con opportunità commerciali
+### Priorità alta — sagre e grandi eventi con opportunità commerciali
 
 - [ ] Festa del Torrone — Cremona
 - [ ] Fiera Nazionale del Tartufo Bianco — Borgofranco sul Po, Borgocarbonara
@@ -96,7 +92,7 @@ Priorità alta — sagre e grandi eventi con opportunità commerciali
 - [ ] Sagra di Buscoldo — Curtatone
 - [ ] Festa del Salame — Cremona
 
-Priorità separata — grandi fiere espositive, non normali fiere ambulanti
+### Da valutare separatamente — grandi fiere espositive
 
 - [ ] Artigiano in Fiera — Rho
 - [ ] BIT, Borsa Internazionale del Turismo — Rho
