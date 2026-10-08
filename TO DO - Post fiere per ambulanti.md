@@ -12,6 +12,8 @@ Il nostro obiettivo è muoverci velocemente e far avanzare subingresso.it il pi�
 
 Spunta una voce quando sono completati tutti gli interventi indicati.
 
+**Valutazione delle priorità — 8 ottobre 2026:** privilegiare acquisizione di utenti pertinenti, contatti e conservazione degli annunci attivi. Queste priorità sono stime basate sul progetto e sul lavoro previsto, da verificare con i risultati; non presumono dati aggiornati su traffico o conversioni. Privacy e sicurezza restano alte per proteggere utenti e fiducia. Per muoverci veloce, completare prima la versione essenziale di ogni intervento: evitare che una voce diventi un rifacimento generale.
+
 ## 🛡️ Privacy e sicurezza
 
 - [ ] 🔴 Sistemare la privacy policy e il GDPR — chiarire la gestione dei dati personali.
@@ -19,27 +21,27 @@ Spunta una voce quando sono completati tutti gli interventi indicati.
 
 ## 🎪 Fiere: ricerca e calendario
 
-- [ ] 🔴 Migliorare la ricerca delle fiere e il calendario — unificare gli interventi per chi cerca eventi e posteggi.
+- [ ] 🟠 Migliorare la ricerca delle fiere e il calendario — unificare gli interventi per chi cerca eventi e posteggi; il calendario esiste già, concentrarsi su date confermate e informazioni per partecipare prima di ampliare i filtri.
 - [ ] 🟢 Creare la sezione «Fiere per ambulanti» — filtri per regione, mese e domande aperte.
 
 ## ⚡ Velocità e visibilità su Google
 
 - [ ] 🔴 Velocizzare il blog — rendere subito disponibile l'articolo in HTML e caricare solo le anteprime nell'elenco.
 - [ ] 🟠 Alleggerire il sito e rendere più fluida la navigazione — cache dei file versionati, coordinate e librerie della dashboard caricate quando servono, icone leggere; ridurre gli spostamenti della pagina e ottimizzare paginazione e query degli annunci.
-- [ ] 🟠 Sistemare indirizzi e indicizzazione — allineare sitemap e pagine definitive, correggere i 404 e migliorare blog e pagine locali verificando indicizzazione e risultati in Search Console.
-- [ ] 🟠 Creare pagine regionali — quando ci sono abbastanza annunci attivi.
+- [ ] 🔴 Sistemare indirizzi e indicizzazione — allineare sitemap e pagine definitive, correggere i 404 e migliorare blog e pagine locali verificando indicizzazione e risultati in Search Console. Prima i problemi che impediscono di trovare o aprire le pagine utili.
+- [ ] 🟢 Creare pagine regionali — quando ci sono abbastanza annunci attivi; anticiparle solo nelle regioni con offerta concreta e domanda osservata.
 
 ## 👤 Annunci, profilo e avvisi
 
-- [ ] 🟠 Migliorare scadenze e rinnovi — avvisi prima della scadenza e rinnovo rapido.
+- [ ] 🔴 Migliorare scadenze e rinnovi — avvisi prima della scadenza e rinnovo rapido, per conservare l'offerta reale senza dover acquisire nuovamente gli stessi inserzionisti.
 - [ ] 🟠 Migliorare gli alert — filtri per zona, settore, giorno e prezzo.
-- [ ] 🟠 Registrare vendite e affitti conclusi — data, tempi e prezzo facoltativo.
-- [ ] 🟢 Salvare il telefono nel profilo — riutilizzare quello inserito nel primo annuncio.
+- [ ] 🟢 Registrare vendite e affitti conclusi — data, tempi e prezzo facoltativo; utile per analisi future, con beneficio immediato meno diretto rispetto ad acquisizione e rinnovi.
+- [ ] 🟠 Salvare il telefono nel profilo — riutilizzare quello inserito nel primo annuncio; intervento circoscritto per facilitare le pubblicazioni successive, riusando la gestione dei contatti già esistente.
 
 ## 📊 Statistiche e provenienza degli utenti
 
 - [ ] 🟠 Correggere le statistiche — dati, grafico, filtri ed email settimanali.
-- [ ] 🟠 Capire da dove arrivano gli utenti — distinguere blog, bandi, valutatore, homepage e fiere.
+- [ ] 🔴 Capire da dove arrivano gli utenti — distinguere blog, bandi, valutatore, homepage e fiere; prima una misura essenziale di quali percorsi portano iscrizioni, annunci e contatti, per scegliere dove investire il tempo. Riutilizzare il tracciamento esistente e allinearlo alle scelte privacy.
 
 ## ✍️ Blog: un articolo per ogni fiera lombarda importante
 
@@ -47,7 +49,9 @@ Preparare un articolo per ciascun evento, pensato per gli ambulanti: data e luog
 
 Le caselle qui sotto indicano gli articoli completati e pubblicati. Procedere prima con le fiere ambulanti, poi con le sagre e i grandi eventi; valutare a parte le fiere espositive.
 
-### Priorità massima — fiere ambulanti
+**Priorità degli articoli:** 🔴 un primo piccolo gruppo di fiere con opportunità concrete per ambulanti, informazioni ufficiali disponibili e domande ancora aperte o in prossima apertura; 🟠 gli altri articoli sulle fiere ambulanti; 🟢 sagre ed eventi espositivi finché non emerge un'opportunità pertinente. Verificare le scadenze prima di scegliere: l'ordine qui sotto è un catalogo, non una graduatoria di urgenza. Pubblicare pochi articoli utili con collegamenti agli annunci pertinenti e agli avvisi, misurare i risultati e poi scegliere il gruppo successivo.
+
+### 🟠 Fiere ambulanti — selezionare il primo gruppo ad alta priorità
 
 - [ ] Fiera dei SS. Faustino e Giovita — Brescia
 - [ ] Oh Bej! Oh Bej! — Milano
@@ -88,7 +92,7 @@ Le caselle qui sotto indicano gli articoli completati e pubblicati. Procedere pr
 - [ ] Fiera di Santa Maria della Vittoria — Brescia
 - [ ] Fiera di Natale e Villaggio di Babbo Natale — Assago
 
-### Priorità alta — sagre e grandi eventi con opportunità commerciali
+### 🟢 Sagre e grandi eventi — anticipare solo opportunità concrete per ambulanti
 
 - [ ] Festa del Torrone — Cremona
 - [ ] Fiera Nazionale del Tartufo Bianco — Borgofranco sul Po, Borgocarbonara
@@ -101,7 +105,7 @@ Le caselle qui sotto indicano gli articoli completati e pubblicati. Procedere pr
 - [ ] Sagra di Buscoldo — Curtatone
 - [ ] Festa del Salame — Cremona
 
-### Da valutare separatamente — grandi fiere espositive
+### 🟢 Da valutare separatamente — grandi fiere espositive
 
 - [ ] Artigiano in Fiera — Rho
 - [ ] BIT, Borsa Internazionale del Turismo — Rho
