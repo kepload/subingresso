@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
     <link rel="stylesheet" href="/css/tailwind.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/fiere.css?v=6">
+    <link rel="stylesheet" href="/css/fiere.css?v=7">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -53,7 +53,7 @@
         <section class="fiere-map-panel" aria-labelledby="map-title">
             <div class="fiere-panel-heading"><h2 id="map-title">Mappa</h2><p id="map-caption">Tocca un puntino</p></div>
             <div class="fiere-map-stage">
-                <svg id="italy-map" viewBox="0 0 660 730" aria-label="Mappa interattiva delle fiere in Italia" role="group"><g id="map-regions"></g><g id="map-markers"></g></svg>
+                <svg id="italy-map" viewBox="0 0 660 730" preserveAspectRatio="xMidYMid meet" aria-label="Mappa interattiva delle fiere in Italia" role="group"><g id="map-regions"></g><g id="map-markers"></g></svg>
                 <div class="fiere-map-controls" role="group" aria-label="Controlli mappa"><button id="map-zoom-in" type="button" aria-label="Ingrandisci la mappa">+</button><button id="map-zoom-out" type="button" aria-label="Riduci la mappa">−</button><button id="map-home" type="button" aria-label="Mostra tutta Italia">↺</button></div>
                 <div id="map-error" class="fiere-map-message" hidden><p>La mappa non è disponibile. Puoi usare l’elenco delle fiere.</p><button id="retry-map" type="button" class="fiere-button">Ricarica mappa</button></div>
                 <div id="map-popup" class="fiere-map-popup" hidden><div class="fiere-popup-heading"><strong id="popup-title"></strong><button id="close-popup" type="button" aria-label="Chiudi le fiere sulla mappa">×</button></div><div id="popup-events"></div></div>
