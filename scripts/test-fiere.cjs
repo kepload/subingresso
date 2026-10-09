@@ -5,26 +5,60 @@ const path = require('node:path');
 const http = require('node:http');
 const os = require('node:os');
 const root = path.resolve(__dirname, '..');
-const { events } = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere.json'), 'utf8'));
+const catalog = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere.json'), 'utf8'));
+const { events } = catalog;
 const boundaries = JSON.parse(fs.readFileSync(path.join(root, 'data/italia-regioni.json'), 'utf8'));
 require('../js/pages/fiere.js');
 const api = globalThis.FiereCalendar;
 const regions = [...new Set(events.map(e => e.region))];
-assert.equal(events.length, 200);
-assert.equal(new Set(events.map(e => e.id)).size, 200);
+assert(events.length > 200);
+assert.equal(new Set(events.map(e => e.id)).size, events.length);
 assert.equal(regions.length, 20);
 assert.deepEqual([...boundaries.features.map(f => f.properties.name)].sort(), regions.slice().sort());
-for (const region of regions) assert.equal(events.filter(e => e.region === region).length, 10);
+for (const region of regions) assert(events.filter(e => e.region === region).length >= 10);
+assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
+assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start)).length);
 for (const event of events) {
     assert(event.source.url.startsWith('https://') && event.source.label);
     assert(event.months.every(m => Number.isInteger(m) && m >= 1 && m <= 12));
     assert.equal(new Set(event.months).size, event.months.length);
+    assert(['public','selected','exhibitors','check'].includes(event.participation.type));
+    assert(event.participation.note);
+    if (event.participation.url) assert(event.participation.url.startsWith('https://'));
+    if (event.calendarSource) assert(event.calendarSource.url.startsWith('https://'));
+    if (event.stallCount) assert(Number.isInteger(event.stallCount) && event.stallCount > 0);
+    const signatures = new Set();
+    for (const edition of event.editions) {
+        assert(['calendar','confirmed'].includes(edition.dateType));
+        assert(edition.sourceUrl.startsWith('https://'));
+        if (edition.start) {
+            assert(/^\d{4}-\d{2}-\d{2}$/.test(edition.start) && edition.start <= edition.end);
+            assert.equal(Number(edition.start.slice(0,4)),edition.year);
+            assert.equal(new Date(edition.start).toISOString().slice(0,10),edition.start);
+            assert.equal(new Date(edition.end).toISOString().slice(0,10),edition.end);
+        } else assert(edition.label);
+        const signature = JSON.stringify([edition.year,edition.start,edition.end,edition.label]);
+        assert(!signatures.has(signature)); signatures.add(signature);
+    }
     const [x,y] = api.project(event.lng,event.lat);
     assert(x >= 0 && x <= 660 && y >= 0 && y <= 730, event.city + ' outside map');
 }
 assert.deepEqual(api.intervalMonths(11, 2), [11,12,1,2]);
 assert.deepEqual(api.intervalMonths(4, 4), [4]);
 assert.deepEqual(api.intervalMonths(0, 3), []);
+const ottobrata = events.find(e => e.name === 'Ottobrata Zafferanese');
+assert.deepEqual(ottobrata.editions.map(e => e.start),['2026-10-04','2026-10-11','2026-10-18','2026-10-25']);
+assert(ottobrata.editions.every(e => e.start === e.end));
+assert.equal(api.selectEdition(ottobrata,'2026-10-09').start,'2026-10-11');
+assert.equal(api.selectEdition(ottobrata,'2026-10-18').start,'2026-10-18');
+assert.equal(api.editionStatus(ottobrata.editions[0],'2026-10-09'),'Edizione conclusa');
+assert.equal(api.selectEdition({editions:[]},'2026-10-09'),null);
+const perugia = events.find(e => e.name === 'Fiera dei Morti');
+assert(api.deadlineStatus(perugia.participation,'2026-10-09').startsWith('Termine scaduto:'));
+const cantu = events.find(e => e.name === 'Fiera del Crocifisso');
+assert.deepEqual(cantu.months,[10]);
+assert.equal(cantu.editions.find(e => e.year === 2026).start,'2026-10-18');
+assert(api.filterEvents(events,{region:'',category:'',months:[],query:'antiquariato'}).some(e => /antiquariato/i.test(e.sectors || '')));
 const server = http.createServer((req,res) => {
     let file = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).slice(1) || 'index.html';
     if (!path.extname(file)) file += '.html';
@@ -55,7 +89,8 @@ async function run(engine,name,viewport,base) {
             assert.equal(list.length, Math.min(12,expected.length));
         }
         await page.goto(base + '/fiere');
-        await count(200);
+        await count(events.length);
+        assert.equal(await page.locator('#catalog-count').textContent(),String(events.length));
         await page.waitForFunction(() => document.querySelector('#map-regions').children.length === 20);
         assert.equal(await page.locator('.nav-link-fiere').getAttribute('aria-current'), 'page');
         assert.equal(await page.locator('#month-bar button').count(),12);
@@ -85,13 +120,30 @@ async function run(engine,name,viewport,base) {
         await page.locator('.fiere-card-button').first().click();
         assert.equal(await page.locator('#fair-dialog').evaluate(d => d.open),true);
         assert.equal(await page.locator('#detail-source').getAttribute('href'),events.find(e => e.city === 'Carrù').source.url);
+        assert((await page.locator('#detail-editions').textContent()).includes('17 dic 2026'));
+        assert((await page.locator('#detail-participation-note').textContent()).length > 20);
         await page.keyboard.press('Escape');
         assert.equal(await page.locator('#fair-dialog').evaluate(d => d.open),false);
+        await page.locator('#fair-search').fill('Fiera dei Morti');
+        await matches(api.filterEvents(events,{region:'',category:'',months:[],query:'Fiera dei Morti'}));
+        await page.locator('.fiere-card[data-event-id="' + perugia.id + '"] .fiere-card-button').click();
+        assert.equal(await page.locator('#detail-participation-link').getAttribute('href'),perugia.participation.url);
+        assert((await page.locator('#detail-deadline').textContent()).includes('1 lug 2026'));
+        assert((await page.locator('#detail-contacts').textContent()).includes('suape@pec.comune.perugia.it'));
+        assert.equal(await page.locator('#detail-editions a').getAttribute('href'),perugia.editions[0].sourceUrl);
+        assert.equal(await page.locator('#fair-dialog').evaluate(d => d.scrollWidth > d.clientWidth),false,'Detail overflow');
+        await page.locator('#fair-dialog').screenshot({path:path.join(os.tmpdir(),'subingresso-fiere-detail-'+name+'-'+viewport.width+'.png')});
+        await page.keyboard.press('Escape');
+        await page.locator('#fair-search').fill('Ottobrata Zafferanese');
+        await matches([ottobrata]);
+        await page.locator('.fiere-card-button').click();
+        assert.equal(await page.locator('#detail-editions > div').count(),4);
+        await page.keyboard.press('Escape');
         await page.locator('#fair-search').fill('zzzz-no-result');
         await matches([]);
         assert(await page.locator('#empty-results').isVisible());
         await page.locator('#empty-reset').click();
-        await count(200);
+        await count(events.length);
         const veneto = page.locator('#map-regions [data-region="Veneto"]');
         await veneto.focus(); await page.keyboard.press('Enter');
         await matches(events.filter(e => e.region === 'Veneto'));
@@ -102,7 +154,7 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('#fair-dialog').evaluate(d => d.open),true);
         await page.locator('#close-detail').click();
         await page.locator('#reset-filters').click();
-        await count(200);
+        await count(events.length);
         const before = await page.locator('#italy-map').getAttribute('viewBox');
         await page.locator('#map-zoom-in').click();
         assert.notEqual(await page.locator('#italy-map').getAttribute('viewBox'),before);
@@ -120,12 +172,12 @@ async function run(engine,name,viewport,base) {
         await page.locator('#catalog-error').waitFor({state:'visible'});
         failCatalog = false;
         await page.locator('#retry-catalog').click();
-        await count(200);
+        await count(events.length);
         let failMap = true;
         await context.route('**/data/italia-regioni.json?*', route => failMap ? route.fulfill({status:503,body:'unavailable'}) : route.continue());
         await page.reload();
         await page.locator('#map-error').waitFor({state:'visible'});
-        await count(200);
+        await count(events.length);
         failMap = false;
         await page.locator('#retry-map').click();
         await page.waitForFunction(() => document.querySelector('#map-regions').children.length === 20);
@@ -143,6 +195,6 @@ async function run(engine,name,viewport,base) {
         await run(playwright.chromium,'chromium',{width:390,height:844},base);
         await run(playwright.webkit,'webkit',{width:390,height:844},base);
         await run(playwright.chromium,'chromium',{width:320,height:800},base);
-        console.log('Catalogue: 200 unique events, 20 regions, 10 per region, valid sources and coordinates.');
+        console.log('Catalogue: ' + events.length + ' unique events, 20 regions; editions, participation, sources and coordinates validated.');
     } finally { await new Promise(resolve => server.close(resolve)); }
 })().catch(error => {console.error(error);process.exitCode=1;server.close();});

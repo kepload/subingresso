@@ -18,7 +18,25 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.fieradelbuegrassodicarru.it/",
-      "label": "fieradelbuegrassodicarru.it"
+      "label": "fieradelbuegrassodicarru.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-17",
+        "end": "2026-12-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.fieradelbuegrassodicarru.it/"
+      }
+    ],
+    "summary": "Rassegna zootecnica dedicata alla razza bovina Piemontese, con eventi gastronomici e iniziative nel paese.",
+    "contacts": {
+      "email": "info@turismoincarru.it"
+    },
+    "participation": {
+      "type": "selected",
+      "note": "Le iscrizioni dei capi bovini e gli eventuali spazi commerciali sono procedure distinte. Chiedi all’organizzazione le condizioni per partecipare come venditore."
     }
   },
   {
@@ -29,7 +47,29 @@
     "category": "sagra",
     "source": {
       "url": "https://fieradelpeperone.it/",
-      "label": "fieradelpeperone.it"
+      "label": "fieradelpeperone.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-28",
+        "end": "2026-09-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://fieradelpeperone.it/"
+      }
+    ],
+    "summary": "Manifestazione dedicata al peperone e alle produzioni agroalimentari, con aree per artigianato, casa e street food.",
+    "venue": "Centro cittadino e Foro Boario",
+    "organizer": "Comune di Carmagnola",
+    "sectors": "Agroalimentare, artigianato, prodotti per la casa e servizi nelle aree dedicate",
+    "contacts": {
+      "email": "cultura@comune.carmagnola.to.it",
+      "phone": "011 9724222"
+    },
+    "participation": {
+      "type": "selected",
+      "note": "Chiedi all’Ufficio Manifestazioni la selezione prevista per la tua area: i settori e le condizioni cambiano tra gli spazi della fiera."
     }
   },
   {
@@ -73,7 +113,28 @@
     "category": "espositiva",
     "source": {
       "url": "https://www.mostrasangiuseppe.it/",
-      "label": "mostrasangiuseppe.it"
+      "label": "mostrasangiuseppe.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-13",
+        "end": "2026-03-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mostrasangiuseppe.it/"
+      }
+    ],
+    "venue": "Polo Fieristico Riccardo Coppo, via Martiri di Nassiria 8",
+    "organizer": "D&N Eventi",
+    "sectors": "Commercio, artigianato, casa, abbigliamento, cosmetici, enogastronomia e street food",
+    "contacts": {
+      "email": "info@mostrasangiuseppe.it",
+      "phone": "335 7404114"
+    },
+    "participation": {
+      "type": "exhibitors",
+      "note": "Iscrizione attraverso l’area espositori dell’organizzatore. Richiedi il preventivo dello stand e le condizioni del settore di interesse."
     }
   },
   {
@@ -84,7 +145,23 @@
     "category": "sagra",
     "source": {
       "url": "https://www.cavour.info/tuttomele",
-      "label": "cavour.info"
+      "label": "cavour.info",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.cavour.info/tuttomele"
+      }
+    ],
+    "summary": "Mostra mercato dedicata alla mela, alla frutticoltura, alla gastronomia e all’artigianato.",
+    "organizer": "Associazione turistica ProCavour",
+    "participation": {
+      "type": "selected",
+      "note": "Per spazi e condizioni dell’Expo contatta ProCavour. La manifestazione comprende più aree commerciali: verifica quella adatta alla tua attività."
     }
   },
   {
@@ -118,9 +195,25 @@
     "months": "1",
     "category": "artigianato",
     "source": {
-      "url": "https://www.fieradisantorso.it/",
-      "label": "fieradisantorso.it"
-    }
+      "url": "https://www.lasaintours.it/santorso-2026/",
+      "label": "La Saint Ours · sito della manifestazione",
+      "checkedAt": "2026-10-09"
+    },
+    "venue": "Vie del centro di Aosta",
+    "summary": "Fiera dedicata all’artigianato valdostano di tradizione: legno, pietra, ferro e altre lavorazioni locali.",
+    "participation": {
+      "type": "selected",
+      "note": "Manifestazione dedicata agli artigiani e alle produzioni ammesse dall’organizzazione. Verifica il regolamento regionale e le iscrizioni: non equivale a una fiera generalista per qualsiasi banco."
+    },
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-01-30",
+        "end": "2027-01-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.lasaintours.it/santorso-2026/"
+      }
+    ]
   },
   {
     "region": "Valle d'Aosta",
@@ -130,7 +223,23 @@
     "category": "artigianato",
     "source": {
       "url": "https://www.fierasantorsodonnas.it/",
-      "label": "fierasantorsodonnas.it"
+      "label": "fierasantorsodonnas.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-01-16",
+        "end": "2026-01-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.fierasantorsodonnas.it/"
+      }
+    ],
+    "venue": "Borgo di Donnas",
+    "summary": "Esposizione e vendita dell’artigianato valdostano di tradizione. La fiera principale si tiene normalmente la terza domenica di gennaio.",
+    "participation": {
+      "type": "selected",
+      "note": "Chiedi al Comitato della Foire le condizioni riservate agli artigiani. Il programma comprende iniziative precedenti alla giornata principale."
     }
   },
   {
@@ -175,9 +284,10 @@
     "category": "artigianato",
     "source": {
       "url": "https://www.regione.vda.it/amministrazione/leggi/bollettino_ufficiale_new/archive/2014/50-2014.pdf",
-      "label": "regione.vda.it"
+      "label": "regione.vda.it",
+      "checkedAt": "2026-10-09"
     },
-    "frequencyNote": "La fonte è un calendario storico. Verificare che sia prevista una nuova edizione."
+    "frequencyNote": "La fonte disponibile è un bollettino regionale del 2014. Non conferma lo svolgimento dell’edizione 2026; periodo da verificare prima di organizzare la partecipazione."
   },
   {
     "region": "Valle d'Aosta",
@@ -186,9 +296,29 @@
     "months": "10",
     "category": "sagra",
     "source": {
-      "url": "https://comune.antey-st-andre.ao.it/it-it/home",
-      "label": "comune.antey-st-andre.ao.it"
-    }
+      "url": "https://balteus.lovevda.it/it/banca-dati/2/eventi-enogastronomici/antey-saint-andre/mele-vallee-mostra-mercato-sulle-mele/8612",
+      "label": "Turismo Valle d’Aosta",
+      "checkedAt": "2026-10-09"
+    },
+    "venue": "Centro storico e piazza Cavalieri di Vittorio Veneto",
+    "sectors": "Mele e derivati, prodotti locali e artigianato nelle aree dedicate",
+    "contacts": {
+      "email": "info@comune.antey-st-andre.ao.it",
+      "phone": "0166 548209"
+    },
+    "participation": {
+      "type": "selected",
+      "note": "La rassegna ospita produttori di mele e un mercatino di prodotti locali e artigianato. Contatta il Comune per l’ammissione nella categoria corretta."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://balteus.lovevda.it/it/banca-dati/2/eventi-enogastronomici/antey-saint-andre/mele-vallee-mostra-mercato-sulle-mele/8612"
+      }
+    ]
   },
   {
     "region": "Valle d'Aosta",
@@ -198,8 +328,24 @@
     "category": "mercatino",
     "source": {
       "url": "https://www.mercatinodinataleaosta.it/",
-      "label": "mercatinodinataleaosta.it"
-    }
+      "label": "mercatinodinataleaosta.it",
+      "checkedAt": "2026-10-09"
+    },
+    "venue": "Piazza Chanoux",
+    "summary": "Mercatino natalizio con chalet per artigianato e prodotti del territorio.",
+    "participation": {
+      "type": "selected",
+      "note": "La partecipazione agli chalet dipende dalla selezione dell’organizzatore. Richiedi avviso, categorie ammesse e condizioni economiche."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-21",
+        "end": "2027-01-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mercatinodinataleaosta.it/"
+      }
+    ]
   },
   {
     "region": "Valle d'Aosta",
@@ -230,9 +376,34 @@
     "months": "2",
     "category": "tradizionale",
     "source": {
-      "url": "https://www.visitbrescia.it/eventi/fiera-santi-faustino-e-giovita-brescia/",
-      "label": "visitbrescia.it"
-    }
+      "url": "https://www.comune.brescia.it/it/servizi/partecipazione-alla-fiera-dei-ss-faustino-e-giovita",
+      "label": "Comune di Brescia · partecipazione",
+      "checkedAt": "2026-10-09"
+    },
+    "summary": "Fiera patronale nelle vie del centro, con vendita di merci alimentari e non alimentari.",
+    "venue": "Centro storico",
+    "stallCount": 602,
+    "stallCountNote": "Organico del servizio comunale: 5 posteggi riservati ai produttori agricoli.",
+    "sectors": "Alimentare e non alimentare",
+    "contacts": {
+      "email": "suap@comune.brescia.it"
+    },
+    "participation": {
+      "type": "public",
+      "note": "Il servizio comunale richiede la domanda annuale entro il 17 dicembre tramite Impresa in un giorno. Occorre un’autorizzazione al commercio su aree pubbliche; l’assegnazione segue la graduatoria.",
+      "url": "https://www.comune.brescia.it/it/servizi/partecipazione-alla-fiera-dei-ss-faustino-e-giovita",
+      "deadlineLabel": "Domanda annuale entro il 17 dicembre",
+      "costs": "Marca da bollo per la domanda: 16 €. Canone Unico Patrimoniale secondo il posteggio assegnato."
+    },
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-02-15",
+        "end": "2027-02-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.visitbrescia.it/eventi/fiera-santi-faustino-e-giovita-brescia/"
+      }
+    ]
   },
   {
     "region": "Lombardia",
@@ -241,8 +412,14 @@
     "months": "12",
     "category": "tradizionale",
     "source": {
-      "url": "https://www.yesmilano.it/eventi/tutti-gli-eventi/vivi-festa-sant-ambrogio",
-      "label": "yesmilano.it"
+      "url": "https://fareimpresa.comune.milano.it/web/fare-impresa/commercio-aree-pubbliche/fiere/graduatorie-organici-fiere",
+      "label": "Comune di Milano · graduatorie e organici fiere",
+      "checkedAt": "2026-10-09"
+    },
+    "venue": "Area del Castello Sforzesco",
+    "participation": {
+      "type": "public",
+      "note": "Consulta l’organico e le graduatorie del Comune di Milano. Non è stata riportata una data precisa dell’edizione 2026 senza un avviso specifico."
     }
   },
   {
@@ -252,9 +429,28 @@
     "months": "11",
     "category": "tradizionale",
     "source": {
-      "url": "https://www.comune.inveruno.mi.it/vivere-il-comune/eventi/antica-fiera-di-san-martino/",
-      "label": "comune.inveruno.mi.it"
-    }
+      "url": "https://www.comune.inveruno.mi.it/servizio/sviluppo-attivita-produttive-e-commerciali-fiere-e-mercati/",
+      "label": "Comune di Inveruno · fiere e mercati",
+      "checkedAt": "2026-10-09"
+    },
+    "summary": "Antica fiera con aree espositive, vendita all’aperto, hobbisti e Mercato in Fiera.",
+    "organizer": "Comune di Inveruno",
+    "participation": {
+      "type": "public",
+      "note": "Le procedure sono diverse per venditori all’aperto, hobbisti e Mercato in Fiera. Il Comune pubblica moduli separati e prevede la domanda tramite Impresa in un giorno. Per le fiere ambulanti indica un termine di 30 giorni prima della manifestazione.",
+      "url": "https://www.comune.inveruno.mi.it/servizio/sviluppo-attivita-produttive-e-commerciali-fiere-e-mercati/",
+      "deadlineLabel": "Termine generale: 30 giorni prima; controllare la procedura scelta."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-13",
+        "end": "2026-11-16",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.inveruno.mi.it/servizio/sviluppo-attivita-produttive-e-commerciali-fiere-e-mercati/"
+      }
+    ],
+    "hours": ""
   },
   {
     "region": "Lombardia",
@@ -264,7 +460,18 @@
     "category": "tradizionale",
     "source": {
       "url": "https://comune.gorgonzola.mi.it/servizio/fiera-di-santa-caterina/",
-      "label": "comune.gorgonzola.mi.it"
+      "label": "comune.gorgonzola.mi.it",
+      "checkedAt": "2026-10-09"
+    },
+    "contacts": {
+      "email": "protocollo@comune.gorgonzola.mi.it",
+      "pec": "comune.gorgonzola@cert.legalmail.it"
+    },
+    "participation": {
+      "type": "public",
+      "note": "Il servizio comunale richiede modulo firmato digitalmente e invio via PEC. La concessione copre le due giornate; il bando definisce requisiti e termine, previsto fino a 60 giorni prima dell’inizio.",
+      "url": "https://comune.gorgonzola.mi.it/servizio/fiera-di-santa-caterina/",
+      "deadlineLabel": "Secondo il bando, fino a 60 giorni prima della fiera."
     }
   },
   {
@@ -293,12 +500,32 @@
     "region": "Lombardia",
     "name": "Fiera del Crocifisso",
     "city": "Cantù",
-    "months": "3,4",
+    "months": "10",
     "category": "tradizionale",
     "source": {
-      "url": "https://www.comune.cantu.co.it/vivere_il_comune/eventi/evento_847.html",
-      "label": "comune.cantu.co.it"
-    }
+      "url": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html",
+      "label": "Comune di Cantù · fiere e ricorrenze",
+      "checkedAt": "2026-10-09"
+    },
+    "frequencyNote": "Terza domenica di ottobre; corretto il precedente riferimento alla primavera.",
+    "contacts": {
+      "email": "commercio@comune.cantu.co.it",
+      "phone": "031 717558"
+    },
+    "participation": {
+      "type": "public",
+      "note": "Il Comune assegna annualmente i posteggi con bando. Domanda esclusivamente tramite Impresa in un giorno, con identità digitale, PEC e quietanze dei diritti richiesti.",
+      "url": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-18",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html"
+      }
+    ]
   },
   {
     "region": "Lombardia",
@@ -308,7 +535,23 @@
     "category": "sagra",
     "source": {
       "url": "https://www.festadeltorrone.com/",
-      "label": "festadeltorrone.com"
+      "label": "festadeltorrone.com",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.festadeltorrone.com/"
+      }
+    ],
+    "venue": "Centro storico di Cremona",
+    "summary": "Rassegna dedicata al torrone e ai dolci, con espositori e iniziative nel centro storico.",
+    "participation": {
+      "type": "selected",
+      "note": "Richiedi all’organizzatore la selezione degli espositori e i settori ammessi. La presenza di stand non garantisce accesso per ogni merceologia."
     }
   },
   {
@@ -330,7 +573,26 @@
     "category": "espositiva",
     "source": {
       "url": "https://pass.artigianoinfiera.it/pdf/AF26%20Regolamento%20Generale_IT_versione%201.pdf",
-      "label": "pass.artigianoinfiera.it"
+      "label": "pass.artigianoinfiera.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-05",
+        "end": "2026-12-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://pass.artigianoinfiera.it/pdf/AF26%20Regolamento%20Generale_IT_versione%201.pdf"
+      }
+    ],
+    "venue": "Fieramilano Rho-Pero",
+    "organizer": "Ge.Fi. S.p.A.",
+    "sectors": "Artigianato e produzioni ammesse dal regolamento",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Ammissione mediante domanda all’organizzatore e stand secondo il regolamento. Il primo termine è il 15 settembre 2026; il documento disciplina anche le domande tardive. Chiedi un preventivo completo per stand, quota di iscrizione e servizi.",
+      "url": "https://pass.artigianoinfiera.it/pdf/AF26%20Regolamento%20Generale_IT_versione%201.pdf",
+      "costs": "Tariffe per m², quota di iscrizione e servizi aggiuntivi nel regolamento ufficiale. Importo finale da confermare con Ge.Fi."
     }
   },
   {
@@ -341,7 +603,15 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.comune.trento.it/Servizi/Concessione-di-occupazione-temporanea-di-suolo-pubblico-nei-mercati-saltuari-spuntisti",
-      "label": "comune.trento.it"
+      "label": "comune.trento.it",
+      "checkedAt": "2026-10-09"
+    },
+    "participation": {
+      "type": "public",
+      "note": "Per la spunta servono la domanda di concessione e la SCIA previste dal servizio comunale, inviate via PEC. La graduatoria consente l’assegnazione dei posteggi rimasti liberi la mattina della fiera.",
+      "url": "https://www.comune.trento.it/Servizi/Concessione-di-occupazione-temporanea-di-suolo-pubblico-nei-mercati-saltuari-spuntisti",
+      "deadlineLabel": "Per San Giuseppe: dal 15 dicembre al 31 gennaio.",
+      "costs": "Il servizio indica due bolli da 16 €, diritti di 27 € e canone di 2,18 €/m² al giorno; alcuni importi sono dovuti solo in caso di assegnazione. Verifica le tariffe dell’edizione."
     }
   },
   {
@@ -352,7 +622,27 @@
     "category": "tradizionale",
     "source": {
       "url": "https://natale.visittrento.it/eventi/fiera-di-santa-lucia",
-      "label": "natale.visittrento.it"
+      "label": "natale.visittrento.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-12",
+        "end": "2026-12-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://natale.visittrento.it/eventi/fiera-di-santa-lucia"
+      }
+    ],
+    "venue": "Centro di Trento, in particolare via Mazzini e via Oss Mazzurana",
+    "hours": "07:00–19:00",
+    "summary": "Fiera natalizia nelle vie del centro con circa 350 bancarelle e spazi associativi.",
+    "participation": {
+      "type": "public",
+      "note": "Per gli spuntisti il Comune prevede domanda di concessione e SCIA via PEC, con inserimento in graduatoria prima della fiera.",
+      "url": "https://www.comune.trento.it/Servizi/Concessione-di-occupazione-temporanea-di-suolo-pubblico-nei-mercati-saltuari-spuntisti",
+      "deadlineLabel": "Per Santa Lucia: dal 15 settembre al 31 ottobre.",
+      "costs": "Bolli, diritti e canone mercatale secondo il servizio comunale; gli importi vanno verificati per l’edizione."
     }
   },
   {
@@ -363,7 +653,28 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.comune.ledro.tn.it/Novita/Avvisi/Fiera-di-San-Michele-2026-avviso-di-manifestazione-di-interesse-per-posteggi-di-vendita-temporanea",
-      "label": "comune.ledro.tn.it"
+      "label": "comune.ledro.tn.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ledro.tn.it/Novita/Avvisi/Fiera-di-San-Michele-2026-avviso-di-manifestazione-di-interesse-per-posteggi-di-vendita-temporanea"
+      }
+    ],
+    "venue": "Campo sportivo di Pieve di Ledro, viale Foletto",
+    "stallCount": 5,
+    "stallCountNote": "Posteggi temporanei del bando 2026, ormai concluso.",
+    "sectors": "Articoli agro-zootecnici e prodotti locali",
+    "participation": {
+      "type": "public",
+      "note": "L’avviso 2026 offriva 5 posteggi per vendita temporanea. La domanda doveva essere presentata entro le 12:00 del 17 settembre 2026.",
+      "url": "https://www.comune.ledro.tn.it/Novita/Avvisi/Fiera-di-San-Michele-2026-avviso-di-manifestazione-di-interesse-per-posteggi-di-vendita-temporanea",
+      "deadline": "2026-09-17",
+      "deadlineYear": 2026
     }
   },
   {
@@ -463,7 +774,8 @@
     "source": {
       "url": "https://www.foradeora.com/eventi/",
       "label": "foradeora.com"
-    }
+    },
+    "hours": ""
   },
   {
     "region": "Veneto",
@@ -473,8 +785,18 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.godegafiere.it/",
-      "label": "godegafiere.it"
-    }
+      "label": "godegafiere.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-02-28",
+        "end": "2026-03-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.godegafiere.it/"
+      }
+    ]
   },
   {
     "region": "Veneto",
@@ -484,7 +806,13 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.comune.portogruaro.ve.it/it/news/120168/fiera-di-sant-andrea-2025-apertura-domande-di-partecipazione",
-      "label": "comune.portogruaro.ve.it"
+      "label": "comune.portogruaro.ve.it",
+      "checkedAt": "2026-10-09"
+    },
+    "frequencyNote": "La fonte collegata descrive l’edizione 2025 (29–30 novembre e 7 dicembre). Date e partecipazione 2026 ancora da verificare.",
+    "contacts": {
+      "email": "fierasantandrea@comune.portogruaro.ve.it",
+      "phone": "0421 284994"
     }
   },
   {
@@ -557,12 +885,27 @@
     "region": "Friuli-Venezia Giulia",
     "name": "Fiera di San Nicolò",
     "city": "Trieste",
-    "months": "12",
+    "months": "11,12",
     "category": "tradizionale",
     "source": {
-      "url": "https://www.comune.trieste.it/media/files/032006/attachment/All_3_Disposizioni_Operatori.pdf",
-      "label": "comune.trieste.it"
-    }
+      "url": "https://www.comune.trieste.it/it/categories/content/commercio-1915",
+      "label": "Comune di Trieste · avvisi commercio",
+      "checkedAt": "2026-10-09"
+    },
+    "venue": "Viale XX Settembre",
+    "participation": {
+      "type": "public",
+      "note": "Il Comune pubblica l’avviso per gli operatori commerciali e le modalità di manifestazione di interesse. Consulta gli allegati dell’edizione e gli eventuali posteggi residui."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-28",
+        "end": "2026-12-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.trieste.it/it/categories/content/commercio-1915"
+      }
+    ]
   },
   {
     "region": "Friuli-Venezia Giulia",
@@ -572,7 +915,23 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.turismofvg.it/eventi/fiera-san-simone-2026?LangSetCMS=it",
-      "label": "turismofvg.it"
+      "label": "turismofvg.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.turismofvg.it/eventi/fiera-san-simone-2026?LangSetCMS=it"
+      }
+    ],
+    "organizer": "Comune di Codroipo",
+    "summary": "Fiera con mercati, chioschi delle associazioni, prodotti gastronomici, spettacoli e luna park.",
+    "participation": {
+      "type": "check",
+      "note": "Il programma comprende attività commerciali e chioschi associativi. Chiedi al Comune la procedura specifica per un banco commerciale e le giornate ammesse."
     }
   },
   {
@@ -671,7 +1030,25 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.comune.genova.it/vivere-il-comune/eventi/eventi-sociali/fiera-di-santagata",
-      "label": "comune.genova.it"
+      "label": "comune.genova.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-02-01",
+        "end": "2026-02-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.genova.it/vivere-il-comune/eventi/eventi-sociali/fiera-di-santagata"
+      }
+    ],
+    "venue": "Quartiere San Fruttuoso: corso Sardegna, piazza Terralba e vie limitrofe",
+    "hours": "08:00–20:00",
+    "summary": "Fiera tradizionale con circa 550 banchi, generi alimentari, casa, abbigliamento e giardinaggio.",
+    "sectors": "Alimentare e non alimentare",
+    "participation": {
+      "type": "public",
+      "note": "Verifica presso il Comune di Genova gli avvisi, la graduatoria e le condizioni per operatori su aree pubbliche. Le date 2026 riportate riguardano l’edizione conclusa."
     }
   },
   {
@@ -682,7 +1059,27 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.comune.laspezia.it/novita/comunicati/fiera-di-san-giuseppe-2026",
-      "label": "comune.laspezia.it"
+      "label": "comune.laspezia.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-18",
+        "end": "2026-03-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.laspezia.it/novita/comunicati/fiera-di-san-giuseppe-2026"
+      }
+    ],
+    "venue": "Viale Mazzini, Passeggiata Morin, via Chiodo e vie del centro",
+    "hours": "08:00–20:00",
+    "stallCount": 576,
+    "stallCountNote": "Banchi commerciali indicati nel programma 2026; ulteriori 30 spazi erano riservati alle Onlus.",
+    "sectors": "Alimentare e non alimentare",
+    "summary": "Fiera patronale con un percorso commerciale nel centro e sul lungomare.",
+    "participation": {
+      "type": "public",
+      "note": "Consulta gli avvisi del Comune della Spezia per la graduatoria e le procedure di partecipazione. La scheda descrive l’edizione 2026 già terminata."
     }
   },
   {
@@ -780,9 +1177,26 @@
     "months": "11",
     "category": "tradizionale",
     "source": {
-      "url": "https://comune.santarcangelo.rn.it/it/news/6481613",
-      "label": "comune.santarcangelo.rn.it"
-    }
+      "url": "https://www.comune.santarcangelo.rn.it/it/news/affidata-a-blu-nautilus-la-gestione-delle-fiere-di-san-michele-e-san-martino-per-le-edizioni-2026-2027",
+      "label": "Comune di Santarcangelo di Romagna",
+      "checkedAt": "2026-10-09"
+    },
+    "organizer": "Blu Nautilus",
+    "summary": "Fiera autunnale con mercato ambulante, specialità regionali, artigianato, vintage e settori dedicati.",
+    "participation": {
+      "type": "selected",
+      "note": "La gestione 2026–2027 è affidata a Blu Nautilus. Richiedi all’organizzatore la domanda per la categoria corretta: il progetto distingue commercio generico e aree specializzate.",
+      "url": "https://www.comune.santarcangelo.rn.it/it/news/affidata-a-blu-nautilus-la-gestione-delle-fiere-di-san-michele-e-san-martino-per-le-edizioni-2026-2027"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitsantarcangelo.it/"
+      }
+    ]
   },
   {
     "region": "Emilia-Romagna",
@@ -792,7 +1206,14 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.santarcangelofiere.it/fiera-di-san-michele",
-      "label": "santarcangelofiere.it"
+      "label": "santarcangelofiere.it",
+      "checkedAt": "2026-10-09"
+    },
+    "organizer": "Blu Nautilus",
+    "participation": {
+      "type": "selected",
+      "note": "La gestione 2026–2027 è affidata a Blu Nautilus. Contatta l’organizzatore per categorie ammesse, domanda e tariffa del banco.",
+      "url": "https://www.comune.santarcangelo.rn.it/it/news/affidata-a-blu-nautilus-la-gestione-delle-fiere-di-san-michele-e-san-martino-per-le-edizioni-2026-2027"
     }
   },
   {
@@ -901,9 +1322,26 @@
     "months": "10",
     "category": "tradizionale",
     "source": {
-      "url": "https://comune.impruneta.fi.it/it/page/fiera-di-san-luca",
-      "label": "comune.impruneta.fi.it"
-    }
+      "url": "https://www.comune.impruneta.fi.it/it/news/113774/fiera-di-san-luca-2026-il-programma-completo",
+      "label": "Comune di Impruneta · programma 2026",
+      "checkedAt": "2026-10-09"
+    },
+    "organizer": "Associazione Fiera di San Luca",
+    "venue": "Centro di Impruneta",
+    "summary": "Nove giorni di mercati, mostre, spettacoli e street food. Il calendario delle attività commerciali va verificato nel programma.",
+    "participation": {
+      "type": "selected",
+      "note": "Chiedi all’Associazione Fiera di San Luca le giornate di mercato e le condizioni per l’area commerciale. Le date generali includono anche eventi senza vendita."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.impruneta.fi.it/it/news/113774/fiera-di-san-luca-2026-il-programma-completo"
+      }
+    ]
   },
   {
     "region": "Toscana",
@@ -1001,9 +1439,30 @@
     "months": "11",
     "category": "tradizionale",
     "source": {
-      "url": "https://turismo.comune.perugia.it/poi/fiera-dei-morti-eng",
-      "label": "turismo.comune.perugia.it"
-    }
+      "url": "https://www.comune.perugia.it/novita/avviso-pubblico-per-lassegnazione-temporanea-dei-posteggi-liberi-in-occasione-della-fiera-dei-morti-del-1-5-novembre-2026/",
+      "label": "Comune di Perugia · avviso e graduatorie 2026",
+      "checkedAt": "2026-10-09"
+    },
+    "venue": "Perugia · aree della Fiera dei Morti",
+    "contacts": {
+      "pec": "suape@pec.comune.perugia.it"
+    },
+    "participation": {
+      "type": "public",
+      "note": "La procedura 2026 per posteggi temporanei e graduatoria di spunta richiedeva domanda via PEC entro il 1° luglio. Sono pubblicate le graduatorie definitive per commercianti, produttori agricoli e artigiani; verifica con il SUAPE le condizioni di accesso.",
+      "url": "https://www.comune.perugia.it/novita/avviso-pubblico-per-lassegnazione-temporanea-dei-posteggi-liberi-in-occasione-della-fiera-dei-morti-del-1-5-novembre-2026/",
+      "deadline": "2026-07-01",
+      "deadlineYear": 2026
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-01",
+        "end": "2026-11-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.perugia.it/novita/avviso-pubblico-per-lassegnazione-temporanea-dei-posteggi-liberi-in-occasione-della-fiera-dei-morti-del-1-5-novembre-2026/"
+      }
+    ]
   },
   {
     "region": "Umbria",
@@ -1053,12 +1512,22 @@
     "region": "Umbria",
     "name": "Eurochocolate",
     "city": "Perugia",
-    "months": "10,11",
+    "months": "11",
     "category": "sagra",
     "source": {
       "url": "https://www.eurochocolate.com/perugia2026/",
-      "label": "eurochocolate.com"
-    }
+      "label": "eurochocolate.com",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-13",
+        "end": "2026-11-22",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.regione.umbria.it/documents/18/26177470/Anno%2B2026%2B-%2BCalendario%2Bfiere%2Bnazionali%2Be%2Binternazionali%2Baggiornato%2Bal%2B30-04-2026/8171fa6a-0e93-41df-be77-5cabcb85a41d"
+      }
+    ]
   },
   {
     "region": "Umbria",
@@ -1442,7 +1911,22 @@
     "category": "tradizionale",
     "source": {
       "url": "https://www.fieradottobrelarino.it/",
-      "label": "fieradottobrelarino.it"
+      "label": "fieradottobrelarino.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.fieradottobrelarino.it/"
+      }
+    ],
+    "organizer": "Organizzazione Fiera d’Ottobre di Larino",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Il sito della manifestazione propone la candidatura come espositore. Richiedi spazio, categoria ammessa e condizioni direttamente all’organizzatore."
     }
   },
   {
@@ -1774,7 +2258,25 @@
     "category": "sagra",
     "source": {
       "url": "https://comune.melfi.pz.it/page/ecefdc1c-d71c-4d49-b77a-9fe2c50a6083avviso-per-sta",
-      "label": "comune.melfi.pz.it"
+      "label": "comune.melfi.pz.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-16",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.melfi.pz.it/page/ecefdc1c-d71c-4d49-b77a-9fe2c50a6083avviso-per-sta"
+      }
+    ],
+    "organizer": "Comune di Melfi",
+    "participation": {
+      "type": "public",
+      "note": "L’avviso per stand dell’Ottobre Melfitano 2026 comprendeva vendita e somministrazione di alimenti e bevande. Le istanze al SUAP scadevano il 29 settembre 2026 alle 23:59.",
+      "url": "https://comune.melfi.pz.it/page/ecefdc1c-d71c-4d49-b77a-9fe2c50a6083avviso-per-sta",
+      "deadline": "2026-09-29",
+      "deadlineYear": 2026
     }
   },
   {
@@ -2050,18 +2552,77 @@
     "category": "sagra",
     "source": {
       "url": "https://www.ottobratazafferanese.it/",
-      "label": "ottobratazafferanese.it"
+      "label": "ottobratazafferanese.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-04",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ottobratazafferanese.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-11",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ottobratazafferanese.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-18",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ottobratazafferanese.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-25",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ottobratazafferanese.it/"
+      }
+    ],
+    "venue": "Zafferana Etnea",
+    "summary": "Appuntamenti domenicali dedicati alle produzioni del territorio, alla gastronomia e all’artigianato.",
+    "participation": {
+      "type": "selected",
+      "note": "Verifica con l’organizzazione le categorie degli stand e l’ammissione per le singole domeniche. La fiera non si svolge ogni giorno tra la prima e l’ultima data."
     }
   },
   {
     "region": "Sicilia",
-    "name": "Expo del Pistacchio",
+    "name": "Sagra del Pistacchio di Bronte",
     "city": "Bronte",
     "months": "9,10",
     "category": "sagra",
     "source": {
       "url": "https://www.comune.bronte.ct.it/novita/xxxv-sagra-del-pistacchio-di-bronte-ufficiali-le-date-delledizione-2026/",
-      "label": "comune.bronte.ct.it"
+      "label": "comune.bronte.ct.it",
+      "checkedAt": "2026-10-09"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-25",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.bronte.ct.it/novita/xxxv-sagra-del-pistacchio-di-bronte-ufficiali-le-date-delledizione-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-02",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.bronte.ct.it/novita/xxxv-sagra-del-pistacchio-di-bronte-ufficiali-le-date-delledizione-2026/"
+      }
+    ],
+    "summary": "Rassegna del pistacchio di Bronte organizzata in due fine settimana distinti. Non è un evento continuativo tra settembre e ottobre.",
+    "participation": {
+      "type": "selected",
+      "note": "Consulta gli avvisi del Comune e le regole per stand ed espositori dell’edizione. Le date riportate riguardano i due weekend del 2026."
     }
   },
   {

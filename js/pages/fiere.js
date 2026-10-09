@@ -14,7 +14,7 @@
         const words = normalize(state.query).split(' ').filter(Boolean);
         return events.filter(event => (!state.region || event.region === state.region) && (!state.category || event.category === state.category)
             && (ignoreMonths || !state.months.length || event.months.some(month => state.months.includes(month)))
-            && words.every(word => normalize([event.name, event.city, event.region, event.province].join(' ')).includes(word)));
+            && words.every(word => normalize([event.name, event.city, event.region, event.province, event.venue, event.sectors].join(' ')).includes(word)));
     }
     // Projection shared by the boundaries and municipality coordinates.
     function project(lng, lat) {
@@ -35,7 +35,38 @@
         }
         return groups;
     }
-    const api = { MONTHS, CATEGORIES, intervalMonths, filterEvents, project, clusterEvents };
+    function todayInRome() {
+        const parts = new Intl.DateTimeFormat('en', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date());
+        const part = type => parts.find(item => item.type === type).value;
+        return part('year') + '-' + part('month') + '-' + part('day');
+    }
+    function dateLabel(value) {
+        return new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(value + 'T12:00:00'));
+    }
+    function editionLabel(edition) {
+        if (!edition.start) return edition.label + ' · calendario ' + edition.year;
+        return edition.start === edition.end ? dateLabel(edition.start) : dateLabel(edition.start) + ' – ' + dateLabel(edition.end);
+    }
+    function selectEdition(event, today = todayInRome()) {
+        const editions = event.editions || [];
+        const next = editions.filter(e => e.start && e.end >= today).sort((a, b) => a.start.localeCompare(b.start));
+        if (next.length) return next[0];
+        const undated = editions.filter(e => !e.start && e.year >= Number(today.slice(0, 4))).sort((a, b) => a.year - b.year);
+        if (undated.length) return undated[0];
+        return editions.slice().sort((a, b) => b.year - a.year || (b.start || '').localeCompare(a.start || ''))[0] || null;
+    }
+    function editionStatus(edition, today = todayInRome()) {
+        if (!edition.start) return 'Calendario ' + edition.year + ' · data esatta da verificare';
+        if (edition.end < today) return 'Edizione conclusa';
+        const source = edition.dateType === 'calendar' ? 'Da calendario' : 'Date pubblicate';
+        return source + (edition.start <= today ? ' · periodo in corso' : '');
+    }
+    function deadlineStatus(participation, today = todayInRome()) {
+        if (!participation.deadline) return participation.deadlineLabel || '';
+        return (participation.deadline < today ? 'Termine scaduto: ' : 'Scadenza pubblicata: ') + dateLabel(participation.deadline)
+            + (participation.deadlineLabel ? ' · ' + participation.deadlineLabel : '');
+    }
+    const api = { MONTHS, CATEGORIES, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
@@ -67,6 +98,20 @@
         return !state.months.length || state.months.length === 12 ? 'Tutto l’anno' : state.months.map(month => MONTHS[month - 1]).join(', ');
     }
     function sortEvents(events) {
+        if (!state.months.length || state.months.length === 12) {
+            const today = todayInRome();
+            const rank = event => {
+                const edition = selectEdition(event, today);
+                if (!edition) return [2, ''];
+                if (edition.start && edition.end >= today) return [0, edition.start];
+                if (!edition.start && edition.year >= Number(today.slice(0, 4))) return [1, ''];
+                return [3, ''];
+            };
+            return events.slice().sort((a, b) => {
+                const ra = rank(a), rb = rank(b);
+                return ra[0] - rb[0] || ra[1].localeCompare(rb[1]) || a.name.localeCompare(b.name, 'it') || a.city.localeCompare(b.city, 'it');
+            });
+        }
         const orderedMonths = state.months.length ? state.months : intervalMonths(1, 12);
         const first = event => Math.min(...event.months.map(month => orderedMonths.indexOf(month)).filter(index => index >= 0));
         return events.slice().sort((a, b) => first(a) - first(b) || a.name.localeCompare(b.name, 'it') || a.city.localeCompare(b.city, 'it'));
@@ -107,7 +152,8 @@
             const card = node('article', 'fiere-card');
             card.dataset.eventId = event.id;
             const head = node('div', 'fiere-card-head');
-            head.append(node('h3', '', event.name), node('span', 'fiere-card-indicative', 'Periodo indicativo'));
+            const edition = selectEdition(event);
+            head.append(node('h3', '', event.name), node('span', 'fiere-card-indicative', edition ? editionStatus(edition) : 'Periodo indicativo'));
             const category = node('span', 'fiere-tag', CATEGORIES[event.category]);
             category.dataset.category = event.category;
             const button = node('button', 'fiere-card-button', 'Apri scheda ↗');
@@ -116,7 +162,7 @@
             button.addEventListener('click', () => openDetail(event));
             const foot = node('div', 'fiere-card-foot');
             foot.append(category, button);
-            card.append(head, node('p', '', event.city + ' · ' + event.region), node('p', 'fiere-card-period', periodLabel(event)), foot);
+            card.append(head, node('p', '', event.city + ' · ' + event.region), node('p', 'fiere-card-period', edition ? editionLabel(edition) : periodLabel(event)), foot);
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
@@ -204,8 +250,48 @@
         $('detail-months').textContent = periodLabel(event);
         $('detail-frequency').textContent = event.frequencyNote || '';
         $('detail-frequency').hidden = !event.frequencyNote;
+        $('detail-description').textContent = event.summary || '';
+        $('detail-description').hidden = !event.summary;
+        const editions = document.createDocumentFragment();
+        for (const edition of event.editions || []) {
+            const item = node('div', 'fiere-edition');
+            item.append(node('strong', '', editionLabel(edition)), node('p', '', editionStatus(edition)));
+            const source = node('a', '', 'Fonte delle date ↗');
+            source.href = edition.sourceUrl; source.target = '_blank'; source.rel = 'noopener noreferrer';
+            item.append(source); editions.append(item);
+        }
+        $('detail-editions').replaceChildren(editions);
+        $('detail-editions-empty').hidden = Boolean(event.editions?.length);
+        const facts = document.createDocumentFragment();
+        for (const [label, value] of [['Luogo', event.venue], ['Organizzatore', event.organizer], ['Orari indicati dalla fonte', event.hours], ['Settori', event.sectors], ['Posteggi dichiarati', event.stallCount ? event.stallCount + ' · ' + (event.stallCountNote || 'organico della manifestazione, non posti liberi') : '']]) {
+            if (!value) continue;
+            facts.append(node('dt', '', label), node('dd', '', value));
+        }
+        $('detail-facts').replaceChildren(facts);
+        const participation = event.participation;
+        const labels = { public: 'Fiera su area pubblica', selected: 'Ammissione tramite organizzatore', exhibitors: 'Partecipazione come espositore', check: 'Condizioni da verificare' };
+        $('detail-participation-label').textContent = labels[participation.type];
+        $('detail-participation-note').textContent = participation.note;
+        $('detail-deadline').textContent = deadlineStatus(participation);
+        $('detail-deadline').hidden = !$('detail-deadline').textContent;
+        $('detail-costs').textContent = participation.costs || '';
+        $('detail-costs').hidden = !participation.costs;
+        $('detail-participation-link').hidden = !participation.url;
+        if (participation.url) $('detail-participation-link').href = participation.url;
+        const contacts = document.createDocumentFragment();
+        for (const [type, value] of Object.entries(event.contacts || {})) {
+            if (!['phone', 'email', 'pec'].includes(type) || !value) continue;
+            const contact = node('p', '');
+            contact.append(node('span', '', ({ phone: 'Telefono', email: 'Email', pec: 'PEC' })[type] + ': '));
+            const link = node('a', '', value);
+            link.href = type === 'phone' ? 'tel:' + value.replace(/[^\d+]/g, '') : 'mailto:' + value;
+            contact.append(link); contacts.append(contact);
+        }
+        $('detail-contacts').replaceChildren(contacts);
         $('detail-source').href = event.source.url;
-        $('detail-source-label').textContent = event.source.label;
+        $('detail-source-label').textContent = event.source.label + (event.source.checkedAt ? ' · consultata il ' + dateLabel(event.source.checkedAt) : ' · date dell’edizione da verificare');
+        $('detail-calendar-source').hidden = !event.calendarSource || event.calendarSource.url === event.source.url;
+        if (event.calendarSource) { $('detail-calendar-source').href = event.calendarSource.url; $('detail-calendar-source').textContent = event.calendarSource.label + ' ↗'; }
         $('detail-annunci').href = '/annunci?regione=' + encodeURIComponent(event.region);
         $('fair-dialog').showModal();
     }
@@ -240,13 +326,16 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=1');
+            const data = await fetchJSON('/data/fiere.json?v=2');
             if (!Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.name === 'string' && Array.isArray(event.months) && event.months.length
                 && event.months.every(month => Number.isInteger(month) && month >= 1 && month <= 12)
                 && Number.isFinite(event.lat) && Number.isFinite(event.lng) && Object.hasOwn(CATEGORIES, event.category)
-                && typeof event.source?.url === 'string' && /^https:\/\//.test(event.source.url))) throw new Error('Invalid catalog');
+                && typeof event.source?.url === 'string' && /^https:\/\//.test(event.source.url)
+                && event.participation && Array.isArray(event.editions))) throw new Error('Invalid catalog');
             state.events = data.events;
+            $('catalog-count').textContent = String(state.events.length);
+            $('catalog-info').textContent = data.eventsWithEditionData + ' schede con edizioni da fonti ufficiali · aggiornato il ' + dateLabel(data.catalogUpdatedAt);
             const previous = state.region;
             $('region-filter').replaceChildren(node('option', '', 'Tutta Italia'));
             $('region-filter').firstChild.value = '';
