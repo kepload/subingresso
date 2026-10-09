@@ -145,7 +145,6 @@
             const month = Number(button.dataset.month);
             button.setAttribute('aria-pressed', String(state.months.includes(month)));
             const count = pool.filter(event => event.months.includes(month)).length;
-            button.querySelector('small').textContent = count + ' eventi';
             button.setAttribute('aria-label', MONTHS[month - 1] + ', ' + count + ' eventi');
         }
     }
@@ -173,7 +172,6 @@
         $('empty-results').hidden = events.length > 0 || !state.ready;
         $('load-more').hidden = state.visible >= events.length;
         $('list-count').textContent = String(events.length);
-        $('list-caption').textContent = events.length > state.visible ? 'Prime ' + state.visible + ' fiere di ' + events.length + '.' : 'La stessa selezione della mappa.';
     }
     function polygons(feature) { return feature.geometry.type === 'Polygon' ? [feature.geometry.coordinates] : feature.geometry.coordinates; }
     function drawRegions() {
@@ -224,7 +222,7 @@
             fragment.append(marker);
         }
         $('map-markers').replaceChildren(fragment);
-        $('map-caption').textContent = events.length + ' eventi · ' + groups.length + ' puntini. Tocca per scoprire le fiere.';
+        $('map-caption').textContent = 'Tocca un puntino';
         $('map-zoom-in').disabled = state.view[2] <= 90;
         $('map-zoom-out').disabled = state.view[2] >= HOME[2];
     }
@@ -302,6 +300,10 @@
         const events = sortEvents(filterEvents(state.events, state));
         renderMonths(); renderList(events); renderMap(events);
         $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel();
+        const extraCount = Number(Boolean(state.category)) + Number(Boolean(state.query));
+        $('extra-filter-count').textContent = String(extraCount);
+        $('extra-filter-count').hidden = !extraCount;
+        $('extra-filters').querySelector('summary').setAttribute('aria-label', 'Altri filtri' + (extraCount ? ', ' + extraCount + ' attivi' : ''));
         syncURL();
     }
     function changed(refit) {
@@ -372,7 +374,7 @@
     function init() {
         for (let i = 0; i < 12; i++) {
             const button = node('button', 'fiere-month'); button.type = 'button'; button.dataset.month = String(i + 1);
-            button.setAttribute('aria-pressed', 'false'); button.append(node('strong', '', MONTHS[i].slice(0, 3)), node('small', '', '…'));
+            button.setAttribute('aria-pressed', 'false'); button.append(node('strong', '', MONTHS[i]));
             button.addEventListener('click', () => {
                 const month = i + 1;
                 if (state.months.length === 12) state.months = [];

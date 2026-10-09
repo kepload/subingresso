@@ -17,41 +17,43 @@
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
     <link rel="stylesheet" href="/css/tailwind.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/fiere.css?v=2">
+    <link rel="stylesheet" href="/css/fiere.css?v=3">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
 <header></header>
 <main class="fiere-main" id="calendario">
     <section class="fiere-intro" aria-labelledby="page-title">
-        <div>
-            <p class="fiere-eyebrow"><span aria-hidden="true">✦</span> IL CALENDARIO PER CHI LAVORA NEI MERCATI</p>
-            <h1 id="page-title">Le fiere d’Italia,<br><span>nel tuo periodo.</span></h1>
-            <p class="fiere-lead">Scegli i mesi, esplora la mappa e trova la tua prossima fiera.<br> Date pubblicate, contatti e informazioni per partecipare.</p>
-        </div>
-        <div class="fiere-intro-stat"><strong id="catalog-count">…</strong><span>fiere e mercatini</span><p>20 regioni · tutta Italia</p></div>
+        <h1 id="page-title">Fiere e <span>mercatini</span></h1>
     </section>
-    <p id="catalog-info" class="fiere-catalog-info">Calendari regionali e fonti dei Comuni e degli organizzatori.</p>
 
+    <div class="fiere-explorer">
+    <div class="fiere-search-panel">
     <section class="fiere-filters" aria-label="Filtra le fiere">
         <div class="fiere-period-heading">
-            <div><h2>Quando ti interessa?</h2><p>Seleziona uno o più mesi, oppure un intervallo.</p></div>
+            <h2><i class="fa-regular fa-calendar" aria-hidden="true"></i> Quando</h2>
             <button type="button" id="all-months" class="fiere-button" aria-pressed="true">Tutto l’anno</button>
         </div>
         <div id="month-bar" class="fiere-months" role="group" aria-label="Mesi dell’anno"></div>
-        <div class="fiere-filter-row">
-            <div class="fiere-interval"><label for="month-from">Da<select id="month-from" aria-label="Mese iniziale"><option value="">—</option></select></label><span aria-hidden="true">→</span><label for="month-to">A<select id="month-to" aria-label="Mese finale"><option value="">—</option></select></label></div>
-            <label class="fiere-region-label" for="region-filter">Regione<select id="region-filter"><option value="">Tutta Italia</option></select></label>
-            <label for="type-filter">Tipo di evento<select id="type-filter"><option value="">Tutti gli eventi</option><option value="tradizionale">Fiere tradizionali</option><option value="artigianato">Artigianato e mostre mercato</option><option value="sagra">Sagre e feste</option><option value="espositiva">Fiere espositive</option><option value="mercatino">Mercatini</option></select></label>
-            <label class="fiere-search-label" for="fair-search">Cerca una fiera o un comune<input id="fair-search" type="search" placeholder="Es. San Martino, Brescia…" autocomplete="off" maxlength="100"></label>
+        <div class="fiere-place">
+            <label for="region-filter"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dove</label>
+            <select id="region-filter" aria-label="Regione"><option value="">Tutta Italia</option></select>
         </div>
+        <details id="extra-filters" class="fiere-extra-filters">
+            <summary><span><i class="fa-solid fa-sliders" aria-hidden="true"></i> Altri filtri <span id="extra-filter-count" class="fiere-filter-count" hidden></span></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
+            <div class="fiere-filter-row">
+                <label for="type-filter">Tipo di evento<select id="type-filter"><option value="">Tutti gli eventi</option><option value="tradizionale">Fiere tradizionali</option><option value="artigianato">Artigianato e mostre mercato</option><option value="sagra">Sagre e feste</option><option value="espositiva">Fiere espositive</option><option value="mercatino">Mercatini</option></select></label>
+                <label for="fair-search">Nome o comune<input id="fair-search" type="search" placeholder="Es. San Martino, Brescia" autocomplete="off" maxlength="100"></label>
+                <div class="fiere-interval"><label for="month-from">Dal mese<select id="month-from" aria-label="Mese iniziale"><option value="">—</option></select></label><label for="month-to">Al mese<select id="month-to" aria-label="Mese finale"><option value="">—</option></select></label></div>
+            </div>
+        </details>
     </section>
 
     <div class="fiere-results-heading"><p id="results-summary" role="status" aria-live="polite">Caricamento del calendario…</p><button id="reset-filters" type="button" class="fiere-reset">Azzera filtri</button></div>
     <div id="catalog-error" class="fiere-error" hidden><p>Il calendario non è stato caricato. Controlla la connessione e riprova.</p><button id="retry-catalog" class="fiere-button" type="button">Riprova</button></div>
-    <div class="fiere-explorer">
+    </div>
         <section class="fiere-map-panel" aria-labelledby="map-title">
-            <div class="fiere-panel-heading"><div><h2 id="map-title">Esplora la mappa</h2><p id="map-caption">Tocca un puntino per scoprire le fiere.</p></div><span class="fiere-live-dot" aria-hidden="true"></span></div>
+            <div class="fiere-panel-heading"><h2 id="map-title">Mappa</h2><p id="map-caption">Tocca un puntino</p></div>
             <div class="fiere-map-stage">
                 <svg id="italy-map" viewBox="0 0 660 730" aria-label="Mappa interattiva delle fiere in Italia" role="group"><g id="map-regions"></g><g id="map-markers"></g></svg>
                 <div class="fiere-map-controls" role="group" aria-label="Controlli mappa"><button id="map-zoom-in" type="button" aria-label="Ingrandisci la mappa">+</button><button id="map-zoom-out" type="button" aria-label="Riduci la mappa">−</button><button id="map-home" type="button" aria-label="Mostra tutta Italia">↺</button></div>
@@ -59,12 +61,12 @@
                 <div id="map-popup" class="fiere-map-popup" hidden><div class="fiere-popup-heading"><strong id="popup-title"></strong><button id="close-popup" type="button" aria-label="Chiudi le fiere sulla mappa">×</button></div><div id="popup-events"></div></div>
                 <span class="fiere-map-sea" aria-hidden="true">MAR MEDITERRANEO</span>
             </div>
-            <div class="fiere-legend" aria-label="Legenda dei puntini"><span><i class="pin-tradizionale"></i>Fiere</span><span><i class="pin-artigianato"></i>Artigianato</span><span><i class="pin-sagra"></i>Sagre</span><span><i class="pin-espositiva"></i>Espositive</span><span><i class="pin-mercatino"></i>Mercatini</span><span><i class="pin-cluster"></i>Più eventi</span></div>
-            <p class="fiere-map-credit">Confini: <a href="https://github.com/guglielmo/geojson-italy" target="_blank" rel="noopener noreferrer">ISTAT / geojson-italy</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>, semplificati. Puntini sul comune, non sull’ingresso della fiera.</p>
+            <details class="fiere-map-info"><summary>Legenda e fonti</summary><div class="fiere-legend" aria-label="Legenda dei puntini"><span><i class="pin-tradizionale"></i>Fiere</span><span><i class="pin-artigianato"></i>Artigianato</span><span><i class="pin-sagra"></i>Sagre</span><span><i class="pin-espositiva"></i>Espositive</span><span><i class="pin-mercatino"></i>Mercatini</span><span><i class="pin-cluster"></i>Più eventi</span></div>
+            <p class="fiere-map-credit">Puntini sul comune, non sull’ingresso della fiera. Confini: <a href="https://github.com/guglielmo/geojson-italy" target="_blank" rel="noopener noreferrer">ISTAT / geojson-italy</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>, semplificati.</p></details>
         </section>
-        <section class="fiere-list-panel" aria-labelledby="list-title"><div class="fiere-panel-heading"><div><h2 id="list-title">Fiere da scoprire</h2><p id="list-caption">La stessa selezione della mappa.</p></div><span id="list-count" class="fiere-count">…</span></div><div id="fair-list" class="fiere-list" aria-busy="true"></div><div id="empty-results" class="fiere-empty" hidden><span aria-hidden="true">⌕</span><h3>Nessuna fiera in questa selezione</h3><p>Prova un altro periodo o amplia i filtri.</p><button id="empty-reset" type="button" class="fiere-button">Mostra tutti gli eventi</button></div><button id="load-more" type="button" class="fiere-more" hidden>Mostra altre fiere</button></section>
+        <section class="fiere-list-panel" aria-labelledby="list-title"><div class="fiere-panel-heading"><h2 id="list-title">Fiere</h2><span id="list-count" class="fiere-count">…</span></div><div id="fair-list" class="fiere-list" aria-busy="true"></div><div id="empty-results" class="fiere-empty" hidden><span aria-hidden="true">⌕</span><h3>Nessuna fiera trovata</h3><p>Prova un altro mese o un’altra regione.</p><button id="empty-reset" type="button" class="fiere-button">Azzera filtri</button></div><button id="load-more" type="button" class="fiere-more" hidden>Mostra altre fiere</button></section>
     </div>
-    <aside class="fiere-note"><span aria-hidden="true">ⓘ</span><div><h2>Come leggere il calendario</h2><p>La copertura è più ampia in Lombardia, Piemonte e Marche grazie ai calendari regionali 2026. Nelle altre regioni trovi una selezione di eventi con approfondimenti da Comuni e organizzatori. Le schede distinguono date pubblicate, date da calendario e periodi indicativi; le edizioni concluse restano consultabili. I mesi servono a cercare la ricorrenza, anche quando la prossima edizione non è ancora pubblicata. Per eventi con più appuntamenti, controlla il programma dei singoli giorni. I posteggi dichiarati indicano l’organico, non la disponibilità: consulta sempre la procedura di partecipazione.</p><a href="mailto:info@subingresso.it?subject=Calendario%20fiere%20-%20segnalazione">Segnala una fiera o una correzione ↗</a></div></aside>
+    <details class="fiere-note"><summary>Informazioni sul calendario</summary><p><strong id="catalog-count">…</strong> fiere e mercatini in 20 regioni. <span id="catalog-info">Fonti dei Comuni e degli organizzatori.</span></p><p>La copertura è più ampia in Lombardia, Piemonte e Marche. I mesi indicano la ricorrenza: sono consultabili anche edizioni concluse o senza una prossima data pubblicata. Controlla le date e il programma nella scheda. I posteggi dichiarati non indicano posti disponibili: consulta la procedura di partecipazione.</p><a href="mailto:info@subingresso.it?subject=Calendario%20fiere%20-%20segnalazione">Segnala una fiera o una correzione ↗</a></details>
     <noscript><p>Per usare i filtri e la mappa abilita JavaScript nel browser. Puoi consultare anche il <a href="https://www.aefi.it/it/calendario/">calendario AEFI</a>.</p></noscript>
 </main>
 <dialog id="fair-dialog" class="fiere-dialog" aria-labelledby="detail-title">
@@ -83,6 +85,6 @@
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/data.js?v=20"></script>
 <script src="/js/auth.js?v=22"></script>
-<script src="/js/pages/fiere.js?v=3"></script>
+<script src="/js/pages/fiere.js?v=4"></script>
 </body>
 </html>

@@ -98,6 +98,23 @@ async function run(engine,name,viewport,base) {
         await page.waitForFunction(() => document.querySelector('#map-regions').children.length === 20);
         assert.equal(await page.locator('.nav-link-fiere').getAttribute('aria-current'), 'page');
         assert.equal(await page.locator('#month-bar button').count(),12);
+        assert.equal(await page.locator('#extra-filters').getAttribute('open'),null);
+        assert.equal(await page.locator('#type-filter').isVisible(),false);
+        assert.equal(await page.locator('#fair-search').isVisible(),false);
+        assert.equal(await page.locator('#month-from').isVisible(),false);
+        assert.equal(await page.locator('#region-filter').isVisible(),true);
+        assert.equal(await page.locator('#month-bar button').first().textContent(),'Gennaio');
+        const filtersBox = await page.locator('.fiere-filters').boundingBox();
+        const mapBox = await page.locator('.fiere-map-panel').boundingBox();
+        const listBox = await page.locator('.fiere-list-panel').boundingBox();
+        assert(mapBox.y < viewport.height,'Map starts in the first screen');
+        if (viewport.width > 720) {
+            assert(Math.abs(mapBox.y - filtersBox.y) < 2,'Map beside the primary filters');
+            assert(mapBox.x > filtersBox.x + filtersBox.width,'Map to the right');
+        } else {
+            assert(mapBox.y > filtersBox.y + filtersBox.height,'Map follows the primary filters');
+            assert(mapBox.y + mapBox.height < listBox.y,'Map before the results list');
+        }
         await matches(events);
         await page.locator('#load-more').click();
         assert.equal(await page.locator('.fiere-card').count(),24);
@@ -110,15 +127,26 @@ async function run(engine,name,viewport,base) {
         await matches(events.filter(e => e.months.includes(11)));
         await page.locator('[data-month="12"]').click();
         await matches(events.filter(e => e.months.some(m => [11,12].includes(m))));
+        await page.locator('#extra-filters > summary').click();
+        assert(await page.locator('#type-filter').isVisible());
         await page.selectOption('#month-from','11');
         await page.selectOption('#month-to','2');
         await matches(events.filter(e => e.months.some(m => [11,12,1,2].includes(m))));
         assert.equal(new URL(page.url()).searchParams.get('mesi'),'11,12,1,2');
         await page.reload();
         await matches(events.filter(e => e.months.some(m => [11,12,1,2].includes(m))));
+        await page.locator('#extra-filters > summary').click();
         await page.selectOption('#type-filter','tradizionale');
         await matches(events.filter(e => e.category === 'tradizionale' && e.months.some(m => [11,12,1,2].includes(m))));
+        assert.equal(await page.locator('#extra-filter-count').textContent(),'1');
+        await page.locator('#extra-filters > summary').click();
+        assert(await page.locator('#extra-filter-count').isVisible());
+        await page.reload();
+        await matches(events.filter(e => e.category === 'tradizionale' && e.months.some(m => [11,12,1,2].includes(m))));
+        assert(await page.locator('#extra-filter-count').isVisible());
         await page.locator('#reset-filters').click();
+        assert.equal(await page.locator('#extra-filter-count').isVisible(),false);
+        await page.locator('#extra-filters > summary').click();
         await page.locator('#fair-search').fill('CARRU');
         await matches(events.filter(e => e.city === 'Carrù'));
         await page.locator('.fiere-card-button').first().click();
@@ -165,6 +193,7 @@ async function run(engine,name,viewport,base) {
         await page.locator('#map-home').click();
         assert.equal(await page.locator('#italy-map').getAttribute('viewBox'),before);
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth),false,'Horizontal overflow');
+        await page.locator('#extra-filters > summary').click();
         await page.evaluate(() => window.scrollTo(0,0));
         await page.screenshot({path:path.join(os.tmpdir(),'subingresso-fiere-'+name+'-'+viewport.width+'.png'),fullPage:false});
         await page.locator('.fiere-map-panel').screenshot({path:path.join(os.tmpdir(),'subingresso-fiere-map-'+name+'-'+viewport.width+'.png')});
@@ -196,6 +225,7 @@ async function run(engine,name,viewport,base) {
     const base = 'http://127.0.0.1:' + server.address().port;
     try {
         await run(playwright.chromium,'chromium',{width:1440,height:1100},base);
+        await run(playwright.chromium,'chromium',{width:820,height:1000},base);
         await run(playwright.chromium,'chromium',{width:390,height:844},base);
         await run(playwright.webkit,'webkit',{width:390,height:844},base);
         await run(playwright.chromium,'chromium',{width:320,height:800},base);
