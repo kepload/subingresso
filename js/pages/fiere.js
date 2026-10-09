@@ -342,7 +342,7 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=3');
+            const data = await fetchJSON('/data/fiere.json?v=4');
             if (!Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.name === 'string' && Array.isArray(event.months) && event.months.length
                 && event.months.every(month => Number.isInteger(month) && month >= 1 && month <= 12)

@@ -63,6 +63,26 @@ const cantu = events.find(e => e.name === 'Fiera del Crocifisso');
 assert.deepEqual(cantu.months,[10]);
 assert.equal(cantu.editions.find(e => e.year === 2026).start,'2026-10-18');
 assert(api.filterEvents(events,{region:'',category:'',months:[],query:'antiquariato'}).some(e => /antiquariato/i.test(e.sectors || '')));
+// New official imports: preserve source restrictions and prevent duplicate fairs.
+for (const region of ['Liguria','Veneto','Emilia-Romagna']) {
+    assert(events.filter(e => e.region === region && e.editions.length).length > 100, region + ' official coverage');
+}
+const genovaAgata = events.filter(e => e.city === 'Genova' && e.name === "Fiera di Sant'Agata");
+assert.equal(genovaAgata.length,1);
+assert(genovaAgata[0].calendarSource.url.includes('regione.liguria.it'));
+assert(!events.some(e => e.city === 'Genova' && e.name === 'S. AGATA'));
+const argenta = events.find(e => e.city === 'Argenta' && e.name === 'Fiera natalizia di Argenta');
+assert.deepEqual(argenta.months,[12]);
+assert(argenta.editions.every(e => !e.start && e.label.includes('domeniche')));
+assert(!events.some(e => e.city === "Castello d'Argile" && e.name === 'FIERA DI LUGLIO'));
+const bondeno = events.find(e => e.city === 'Bondeno' && e.name === 'FIERA DI OTTOBRE');
+assert.equal(bondeno.stallCount,21);
+assert.equal(bondeno.hours,undefined); // The source contains the invalid time 23:90.
+assert(bondeno.editions.some(e => e.start === '2026-10-09'));
+const dolciumi = events.find(e => e.city === 'Riolo Terme' && e.name === 'SAGRA DELLA ZUCCA E UVA BACCARONA - ASSOCIANDO');
+assert(dolciumi.sectors.includes('divieto di somministrazione'));
+const borgata = events.find(e => e.city === 'Lugo' && e.name === "FIERA D' AUTUNNO");
+assert(borgata.editions.every(e => e.start === '2026-10-25'));
 const server = http.createServer((req,res) => {
     let file = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).slice(1) || 'index.html';
     if (!path.extname(file)) file += '.html';
@@ -172,8 +192,9 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('#extra-filter-count').isVisible(),false);
         await page.locator('#extra-filters > summary').click();
         await page.locator('#fair-search').fill('CARRU');
-        await matches(events.filter(e => e.city === 'Carrù'));
-        await page.locator('.fiere-card-button').first().click();
+        await matches(api.filterEvents(events,{region:'',category:'',months:[],query:'CARRU'}));
+        const carru = events.find(e => e.city === 'Carrù');
+        await page.locator('.fiere-card[data-event-id="' + carru.id + '"] .fiere-card-button').click();
         assert.equal(await page.locator('#fair-dialog').evaluate(d => d.open),true);
         assert.equal(await page.locator('#detail-source').getAttribute('href'),events.find(e => e.city === 'Carrù').source.url);
         assert((await page.locator('#detail-editions').textContent()).includes('17 dic 2026'));

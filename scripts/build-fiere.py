@@ -30,6 +30,15 @@ EVENT_ALIASES = {
     ("Senigallia", "Fiera sant'agostino"): "Fiera di Sant'Agostino",
     ("Fano", "Fiera san bartolomeo"): "Fiera di San Bartolomeo",
     ("Ascoli Piceno", "Fiera sant'emidio"): "Fiera di Sant'Emidio",
+    ("Genova", "S. AGATA"): "Fiera di Sant'Agata",
+    ("Genova", "S. PIETRO FOCE"): "Fiera di San Pietro e Paolo",
+    ("Genova", "66° Salone Nautico Internazionale"): "Salone Nautico Internazionale",
+    ("La Spezia", "Fiera di S. Giuseppe"): "Fiera di San Giuseppe",
+    ("Savona", "Fiera di Sanata Lucia"): "Fiera di Santa Lucia",
+    ("Savona", "Artigianato on the road"): "Artigianando on the road",
+    ("Cogoleto", "mercatino artigianato e antiquariato - Mercatino agroalientare"): "Mercatino artigianato e antiquariato - Mercatino agroalimentare",
+    ("Portogruaro", "FIERA DI SANT'ANDREA ANTICA SAGRA DELLE OCHE E DEGLI STIVALI"): "Fiera di Sant'Andrea",
+    ("Sant'Agata Feltria", "FIERA NAZIONALE DEL TARTUFO BIANCO PREGIATO E DEI PRODOTTI AGRO-SILVO-PASTORALI"): "Fiera nazionale del Tartufo Bianco",
 }
 
 

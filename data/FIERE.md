@@ -2,12 +2,14 @@
 
 Pagina pubblica `/fiere`, senza database né servizi cartografici a pagamento.
 
-Aggiornamento del 9 ottobre 2026: 836 manifestazioni in 20 regioni, 671 con dati
-di edizione e 588 con almeno una data esatta pubblicata. La selezione originaria
+Aggiornamento del 9 ottobre 2026: 1.728 manifestazioni in 20 regioni, 1.574 con dati
+di edizione e 1.331 con almeno una data esatta pubblicata. La selezione originaria
 di 200 eventi è integrata da calendari regionali ufficiali e approfondimenti
 presso Comuni e organizzatori. Non è un censimento nazionale completo, né una
-classifica per affluenza. La copertura è più ampia in Piemonte (258), Marche
-(217) e Lombardia (191); le altre regioni mantengono dieci eventi ciascuna.
+classifica per affluenza. Aggiunte 892 manifestazioni rispetto alle precedenti 836,
+conservando tutte le schede già presenti. La copertura è più ampia in Liguria (632),
+Piemonte (258), Marche (217), Lombardia (191), Veneto (170) ed Emilia-Romagna (120);
+le altre regioni mantengono dieci eventi ciascuna.
 
 Le date `confirmed` provengono da programmi o avvisi locali pubblicati; le date
 `calendar` da calendari regionali. Questo distingue le fonti, senza garantire
@@ -41,8 +43,34 @@ avviso scaduto non viene presentato come domanda aperta.
   aggiornamento di giugno: 218 righe importate. Le righe PDF con colonne o
   continuazioni ambigue sono escluse, non ricostruite per ipotesi. Collegamento
   alla pagina del PDF in ogni scheda.
+- [Liguria — Fiere su area pubblica 2026](https://www.regione.liguria.it/component/publiccompetitions/document/54277:fiere-liguria.html),
+  XLS aggiornato a settembre: 1.083 righe, 736 importate dopo la risoluzione dei
+  comuni. Selezionate fiere, mercatini e manifestazioni con settori commerciali;
+  escluse le sole feste gastronomiche/spettacoli senza queste indicazioni. Luogo,
+  organizzatore e caselle email degli uffici/associazioni dove pubblicati. I periodi
+  superiori a sette giorni sono conservativamente indicati come periodi complessivi,
+  con giornate di vendita da verificare. Dieci righe con comuni non risolti escluse;
+  altre quattro di Montalto Carpasio senza coordinate nell'anagrafica del sito escluse.
+- [Veneto — Sagre e fiere con somministrazione 2026](https://www.regione.veneto.it/web/attivita-produttive/somministrazione-alimenti-e-bevande-nelle-sagre-e-nelle-fiere),
+  XLSX aggiornato l'8 ottobre: 1.589 righe di manifestazioni, 163 importate.
+  Richiesta menzione esplicita di mercati, bancarelle, ambulanti o espositori;
+  non basta la ristorazione temporanea. Setteville non compare nell'anagrafica
+  geografica del sito: quattro righe escluse, senza usare coordinate ipotizzate.
+  Escluse anche due righe di Lusiana Conco prive di coordinate nell'anagrafica.
+  Date alternative, ricorrenze e sequenze come «5-8/12» restano etichette: il
+  trattino da solo non prova un intervallo continuo. I settori sono categorie
+  fattuali estratte dal programma, non una copia del testo promozionale.
+- [Emilia-Romagna — Fiere su aree pubbliche](https://wwwservizi.regione.emilia-romagna.it/sagre/default.asp),
+  116 schede restituite dalla ricerca il 9 ottobre, 115 importate. La ricerca
+  attuale privilegia gli appuntamenti successivi alla consultazione; non è un
+  import completo dell'intero anno. Date giornaliere dalla scheda di dettaglio,
+  luoghi, settori (incluse restrizioni) e organico dei posteggi. Esclusa la Fiera
+  di luglio di Castello d'Argile, con data di ottobre e nota che indica luglio.
+  Per Argenta importate le sole indicazioni sulle domeniche di dicembre: il
+  periodo natalizio complessivo non viene trasformato in giorni di vendita.
+  Orari malformati presenti nella fonte, come «23:90», non pubblicati.
 
-`fiere-importate.json` conserva data del download, SHA-256 delle tre fonti,
+`fiere-importate.json` conserva data del download, SHA-256 delle sei fonti/snapshot,
 conteggi, righe PDF escluse e comuni non risolti. Questi conteggi sono righe
 di fonte, non manifestazioni uniche: il build raggruppa le ricorrenze e integra
 le schede editoriali della stessa fiera. I documenti originali non sono inclusi
@@ -69,6 +97,24 @@ python scripts/import-fiere.py --lombardia file.json --piemonte file.html --marc
 python scripts/build-fiere.py
 node scripts/test-fiere.cjs
 ```
+
+L'importatore originario ricrea lo snapshot dei primi tre calendari. Per includere
+anche quelli aggiunti in questa ricerca, eseguire successivamente (dipendenze
+di ricerca aggiuntive `xlrd`, `openpyxl`):
+
+```text
+python scripts/import-fiere-extra.py --liguria file.xls --veneto file.xlsx --emilia-romagna dettagli.json --checked-at 2026-10-09
+python scripts/build-fiere.py
+```
+
+`dettagli.json` è una lista di oggetti `{ "url": "https://.../note.asp?...",
+"html": "HTML originale decodificato Windows-1252" }`, scaricati dalla ricerca
+regionale. Non include il footer o i contatti regionali nelle schede pubbliche.
+L'importatore aggiuntivo aggiorna soltanto le regioni fornite e conserva le altre.
+I file originali restano fuori dal repository. Il download non è automatizzato
+da questi script; cambiare `--checked-at` solo dopo una nuova consultazione.
+Abbreviazioni e varianti accertate della stessa fiera sono raggruppate tramite
+`EVENT_ALIASES` nel build; manifestazioni diverse non vengono unite per somiglianza.
 
 L'importatore non accede alla rete; il build non richiede dipendenze esterne.
 Aggiornare la data di consultazione solo dopo una nuova ricerca. Le modifiche
