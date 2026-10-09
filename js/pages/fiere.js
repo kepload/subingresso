@@ -122,7 +122,7 @@
     function syncURL() {
         const url = new URL(location.href);
         for (const key of ['mesi', 'regione', 'tipo', 'q']) url.searchParams.delete(key);
-        if (state.months.length && state.months.length !== 12) url.searchParams.set('mesi', state.months.join(','));
+        if (state.months.length) url.searchParams.set('mesi', state.months.join(','));
         if (state.region) url.searchParams.set('regione', state.region);
         if (state.category) url.searchParams.set('tipo', state.category);
         if (state.query) url.searchParams.set('q', state.query);
@@ -140,7 +140,8 @@
     }
     function renderMonths() {
         const pool = filterEvents(state.events, state, true);
-        $('all-months').setAttribute('aria-pressed', String(!state.months.length || state.months.length === 12));
+        $('all-months').setAttribute('aria-pressed', String(state.months.length === 12));
+        $('all-months').setAttribute('aria-label', state.months.length === 12 ? 'Deseleziona tutti i mesi' : 'Seleziona tutti i mesi');
         for (const button of $('month-bar').children) {
             const month = Number(button.dataset.month);
             button.setAttribute('aria-pressed', String(state.months.includes(month)));
@@ -377,7 +378,6 @@
             button.setAttribute('aria-pressed', 'false'); button.append(node('strong', '', MONTHS[i]));
             button.addEventListener('click', () => {
                 const month = i + 1;
-                if (state.months.length === 12) state.months = [];
                 state.months = state.months.includes(month) ? state.months.filter(item => item !== month) : [...state.months, month].sort((a, b) => a - b);
                 $('month-from').value = ''; $('month-to').value = ''; changed(false);
             });
@@ -389,7 +389,7 @@
             if (!from || !to) return;
             state.months = intervalMonths(from, to); changed(false);
         });
-        $('all-months').addEventListener('click', () => { state.months = []; $('month-from').value = ''; $('month-to').value = ''; changed(false); });
+        $('all-months').addEventListener('click', () => { state.months = state.months.length === 12 ? [] : intervalMonths(1, 12); $('month-from').value = ''; $('month-to').value = ''; changed(false); });
         $('region-filter').addEventListener('change', () => { state.region = $('region-filter').value; changed(true); });
         $('type-filter').addEventListener('change', () => { state.category = $('type-filter').value; changed(false); });
         $('fair-search').addEventListener('input', () => {

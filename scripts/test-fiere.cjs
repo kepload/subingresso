@@ -107,6 +107,8 @@ async function run(engine,name,viewport,base) {
         const filtersBox = await page.locator('.fiere-filters').boundingBox();
         const mapBox = await page.locator('.fiere-map-panel').boundingBox();
         const listBox = await page.locator('.fiere-list-panel').boundingBox();
+        const headerBox = await page.locator('header').boundingBox();
+        assert(Math.abs(filtersBox.y - (headerBox.y + headerBox.height) - 16) < 2,'Filters directly below the header');
         assert(mapBox.y < viewport.height,'Map starts in the first screen');
         if (viewport.width > 720) {
             assert(Math.abs(mapBox.y - filtersBox.y) < 2,'Map beside the primary filters');
@@ -123,6 +125,25 @@ async function run(engine,name,viewport,base) {
             await matches(events.filter(e => e.region === region));
         }
         await page.locator('#reset-filters').click();
+        assert.equal(await page.locator('#all-months').getAttribute('aria-pressed'),'false');
+        await page.locator('#all-months').click();
+        assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
+        assert.equal(await page.locator('#all-months').getAttribute('aria-pressed'),'true');
+        await matches(events);
+        await page.reload();
+        await matches(events);
+        assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
+        await page.locator('[data-month="11"]').click();
+        assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),11);
+        assert.equal(await page.locator('#all-months').getAttribute('aria-pressed'),'false');
+        await matches(events.filter(e => e.months.some(m => m !== 11)));
+        await page.locator('#all-months').click();
+        assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
+        await page.locator('#all-months').click();
+        assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),0);
+        assert.equal(await page.locator('#all-months').getAttribute('aria-pressed'),'false');
+        assert.equal(new URL(page.url()).searchParams.get('mesi'),null);
+        await matches(events);
         await page.locator('[data-month="11"]').click();
         await matches(events.filter(e => e.months.includes(11)));
         await page.locator('[data-month="12"]').click();
