@@ -1032,7 +1032,23 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
-Filtro Dove e mappa passano alle province: tutte le 110 unità territoriali, incluso elenco vuoto dove non ci sono fiere. Asset `data/italia-province.json` da geojson-italy 2026.2 (ISTAT), confini semplificati e assegnazioni ufficiali dei comuni sardi: calendario Olbia in Gallura Nord-Est Sardegna, Muravera in Cagliari; anagrafica condivisa invariata. Build offline ripetibile, fonti/licenza in data/FIERE.md. URL `provincia`, vecchi parametri regione ignorati/rimossi. Schede e dettaglio mostrano comune/provincia; passaggio sulle schede evidenzia provincia in Tutta Italia o puntino con filtro attivo. Test su tutte le province, comprese quelle vuote, filtri combinati, URL, reset, tastiera, gesti e retry. Cache fiere.js 11, fiere.css 10, fiere.json 5, italia-province.json 1.
+Ricerca provinciale approfondita di Brescia completata e pubblicata: 203 manifestazioni
+in 86 comuni (prima 50 schede; +153 nette dopo quattro duplicati consolidati). Esaminate
+1.031 righe regionali 2026 e fonti comunali/turistiche/organizzatori. Fonte curata autonoma
+`data/fiere-brescia.json`, applicata dal build dopo gli snapshot: sostituisce solo Brescia,
+preserva le altre province e gli identificativi regionali già presenti. Catalogo nazionale
+ora 1.881 manifestazioni, 1.722 con edizioni e 1.467 con date esatte. La to do list segna
+Brescia completata e contiene tutte le altre 109 province da ricercare, raggruppate per regione.
+Completamento documentale al 9 ottobre: aggiornamenti successivi ancora necessari.
+Correzioni chiave: Crocifissa Brescia 13 dicembre/spunta 14 ottobre; Natale Ponte di Legno
+domanda 11 ottobre, sei intervalli/29 giorni obbligatori e tariffe esterni/locali; Casoncello
+solo espositori 25–27 settembre, esclusi casoncelli/pasta fresca; Quarantì mercatino gratuito
+29–30 agosto senza somministrazione. Ambiguità Ghedi/Coccaglio senza date inventate;
+edizioni 2025 restano storico. Fonti, limiti e riproduzione in `data/FIERE.md`.
+Test catalogo/browser includono le regressioni provinciali. Cache fiere.js v=12 e
+fiere.json v=6; CSS v=10 e confini v=1 invariati.
+
+Filtro Dove e mappa passano alle province: tutte le 110 unità territoriali, incluso elenco vuoto dove non ci sono fiere. Asset `data/italia-province.json` da geojson-italy 2026.2 (ISTAT), confini semplificati e assegnazioni ufficiali dei comuni sardi: calendario Olbia in Gallura Nord-Est Sardegna, Muravera in Cagliari; anagrafica condivisa invariata. Build offline ripetibile, fonti/licenza in data/FIERE.md. URL `provincia`, vecchi parametri regione ignorati/rimossi. Schede e dettaglio mostrano comune/provincia; passaggio sulle schede evidenzia provincia in Tutta Italia o puntino con filtro attivo. Test su tutte le province, comprese quelle vuote, filtri combinati, URL, reset, tastiera, gesti e retry. Cache fiere.js 12, fiere.css 10, fiere.json 6, italia-province.json 1.
 
 Passando il mouse su una scheda dell’elenco, o portando il focus sul suo pulsante: in Tutta Italia la regione si evidenzia in azzurro; con filtro regionale si illumina il puntino (o gruppo contenente la fiera) con un anello blu e il nome del comune sopra la mappa. Anteprima temporanea separata dal filtro, senza cambiare zoom o URL; rimossa all’uscita o al rinnovo dell’elenco, riapplicata al ridisegno dei gruppi. Test browser su tutte le regioni, passaggio tra schede, tastiera, zoom e ripristino della selezione. Cache fiere.js v=10, fiere.css v=9.
 

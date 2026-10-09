@@ -45,6 +45,191 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 - [ ] 🟠 Migliorare la ricerca delle fiere e il calendario — unificare gli interventi per chi cerca eventi e posteggi; il calendario esiste già, concentrarsi su date confermate e informazioni per partecipare prima di ampliare i filtri.
 - [ ] 🟢 Creare la sezione «Fiere per ambulanti» — filtri per regione, mese e domande aperte.
 
+### Ricerca approfondita per provincia — aggiornamento 9 ottobre 2026
+
+- [x] **Brescia — ricerca approfondita completata**: 203 manifestazioni in 86 comuni
+  pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Brescia). Esaminate 1.031
+  righe regionali e fonti di Comuni, Pro Loco, portali turistici e organizzatori;
+  integrate date, contatti, settori, procedure, costi e scadenze quando pubblicati.
+  Fonti e limiti documentati in `data/FIERE.md`; dati curati in `data/fiere-brescia.json`.
+- [ ] **Brescia — aggiornamenti periodici**: ricontrollare bandi, rinvii e prossime
+  edizioni; completare le date ancora ambigue o disponibili soltanto per il 2025.
+
+**Ricerca approfondita ancora da fare: 109 province e unità territoriali equivalenti.**
+Gli eventi già presenti e gli import regionali costituiscono una base; le caselle
+seguenti indicano il lavoro provinciale da completare nelle prossime sessioni.
+Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegna 2026.
+
+#### Abruzzo
+
+- [ ] Chieti
+- [ ] L'Aquila
+- [ ] Pescara
+- [ ] Teramo
+
+#### Basilicata
+
+- [ ] Matera
+- [ ] Potenza
+
+#### Calabria
+
+- [ ] Catanzaro
+- [ ] Cosenza
+- [ ] Crotone
+- [ ] Reggio Calabria
+- [ ] Vibo Valentia
+
+#### Campania
+
+- [ ] Avellino
+- [ ] Benevento
+- [ ] Caserta
+- [ ] Napoli
+- [ ] Salerno
+
+#### Emilia-Romagna
+
+- [ ] Bologna
+- [ ] Ferrara
+- [ ] Forlì-Cesena
+- [ ] Modena
+- [ ] Parma
+- [ ] Piacenza
+- [ ] Ravenna
+- [ ] Reggio nell'Emilia
+- [ ] Rimini
+
+#### Friuli-Venezia Giulia
+
+- [ ] Gorizia
+- [ ] Pordenone
+- [ ] Trieste
+- [ ] Udine
+
+#### Lazio
+
+- [ ] Frosinone
+- [ ] Latina
+- [ ] Rieti
+- [ ] Roma
+- [ ] Viterbo
+
+#### Liguria
+
+- [ ] Genova
+- [ ] Imperia
+- [ ] La Spezia
+- [ ] Savona
+
+#### Lombardia
+
+- [ ] Bergamo
+- [ ] Como
+- [ ] Cremona
+- [ ] Lecco
+- [ ] Lodi
+- [ ] Mantova
+- [ ] Milano
+- [ ] Monza e della Brianza
+- [ ] Pavia
+- [ ] Sondrio
+- [ ] Varese
+
+#### Marche
+
+- [ ] Ancona
+- [ ] Ascoli Piceno
+- [ ] Fermo
+- [ ] Macerata
+- [ ] Pesaro e Urbino
+
+#### Molise
+
+- [ ] Campobasso
+- [ ] Isernia
+
+#### Piemonte
+
+- [ ] Alessandria
+- [ ] Asti
+- [ ] Biella
+- [ ] Cuneo
+- [ ] Novara
+- [ ] Torino
+- [ ] Verbano-Cusio-Ossola
+- [ ] Vercelli
+
+#### Puglia
+
+- [ ] Bari
+- [ ] Barletta-Andria-Trani
+- [ ] Brindisi
+- [ ] Foggia
+- [ ] Lecce
+- [ ] Taranto
+
+#### Sardegna
+
+- [ ] Cagliari
+- [ ] Gallura Nord-Est Sardegna
+- [ ] Medio Campidano
+- [ ] Nuoro
+- [ ] Ogliastra
+- [ ] Oristano
+- [ ] Sassari
+- [ ] Sulcis Iglesiente
+
+#### Sicilia
+
+- [ ] Agrigento
+- [ ] Caltanissetta
+- [ ] Catania
+- [ ] Enna
+- [ ] Messina
+- [ ] Palermo
+- [ ] Ragusa
+- [ ] Siracusa
+- [ ] Trapani
+
+#### Toscana
+
+- [ ] Arezzo
+- [ ] Firenze
+- [ ] Grosseto
+- [ ] Livorno
+- [ ] Lucca
+- [ ] Massa-Carrara
+- [ ] Pisa
+- [ ] Pistoia
+- [ ] Prato
+- [ ] Siena
+
+#### Trentino-Alto Adige
+
+- [ ] Bolzano/Bozen
+- [ ] Trento
+
+#### Umbria
+
+- [ ] Perugia
+- [ ] Terni
+
+#### Valle d'Aosta
+
+- [ ] Valle d'Aosta/Vallée d'Aoste
+
+#### Veneto
+
+- [ ] Belluno
+- [ ] Padova
+- [ ] Rovigo
+- [ ] Treviso
+- [ ] Venezia
+- [ ] Verona
+- [ ] Vicenza
+
+
 ## ⚡ Velocità e visibilità su Google
 
 - [ ] 🔴 Velocizzare il blog — rendere subito disponibile l'articolo in HTML e caricare solo le anteprime nell'elenco.

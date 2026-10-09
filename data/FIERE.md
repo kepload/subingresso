@@ -2,14 +2,13 @@
 
 Pagina pubblica `/fiere`, senza database né servizi cartografici a pagamento.
 
-Aggiornamento del 9 ottobre 2026: 1.728 manifestazioni in 20 regioni, 1.574 con dati
-di edizione e 1.331 con almeno una data esatta pubblicata. La selezione originaria
+Aggiornamento del 9 ottobre 2026: 1.881 manifestazioni in 20 regioni, 1.722 con dati
+di edizione e 1.467 con almeno una data esatta pubblicata. La selezione originaria
 di 200 eventi è integrata da calendari regionali ufficiali e approfondimenti
-presso Comuni e organizzatori. Non è un censimento nazionale completo, né una
-classifica per affluenza. Aggiunte 892 manifestazioni rispetto alle precedenti 836,
-conservando tutte le schede già presenti. La copertura è più ampia in Liguria (632),
-Piemonte (258), Marche (217), Lombardia (191), Veneto (170) ed Emilia-Romagna (120);
-le altre regioni mantengono dieci eventi ciascuna.
+presso Comuni e organizzatori. La ricerca provinciale approfondita di Brescia
+comprende 203 manifestazioni in 86 comuni, rispetto alle precedenti 50 schede.
+La copertura nazionale resta parziale: gli import regionali non equivalgono
+a una ricerca approfondita completata per ogni provincia.
 
 Le date `confirmed` provengono da programmi o avvisi locali pubblicati; le date
 `calendar` da calendari regionali. Questo distingue le fonti, senza garantire
@@ -77,10 +76,61 @@ le schede editoriali della stessa fiera. I documenti originali non sono inclusi
 nel repository. Le informazioni importate sono dati fattuali, non copie dei
 testi delle pagine. Le fonti delle singole date restano consultabili nel popup.
 
+## Ricerca approfondita — provincia di Brescia
+
+Ricerca documentale completata il 9 ottobre 2026: 203 manifestazioni in 86 comuni.
+Esaminate tutte le 1.031 righe 2026 della provincia nel dataset lombardo (118 Fiera,
+913 Sagra, 85 comuni), i tre calendari fieristici regionali aggiornati al 4 settembre,
+oltre a programmi, avvisi e regolamenti di Comuni, Pro Loco e organizzatori.
+Incrociati Visit Brescia, Visit Lake Iseo, Visit Valle Trompia, Turismo Valle Camonica,
+Pontedilegno-Tonale e i calendari dei poli Brixia Forum e Centro Fiera Montichiari.
+Le schede conservano fonti consultabili, data della verifica e fonti delle singole edizioni.
+
+`fiere-brescia.json` è la fonte provinciale curata, con metadati della ricerca e
+SHA-256 dello snapshot regionale. Il build la applica dopo gli import nazionali:
+sostituisce le precedenti schede di Brescia senza modificare le altre province
+o gli snapshot originali. Conservati gli identificativi regionali già presenti;
+raggruppate le ripetizioni di San Paolo a Esine, miele e libro usato a Vezza d’Oglio.
+Il saldo è +153 schede provinciali, dopo il consolidamento di quattro duplicati.
+
+Correzioni e limiti da mantenere negli aggiornamenti:
+
+- La [fiera di Santa Maria Crocifissa di Rosa](https://comune.brescia.it/s3/906/allegati/docpubbl/fiere-e-merc/aggiornamento-procedura-comunicazione-partecipazione-spunta/calendario-fiere-2026.pdf)
+  è il 13 dicembre, con termine spunta 14 ottobre: prevale il PDF comunale sulla
+  data regionale errata di gennaio. Le tariffe e gli organici delle nove fiere
+  cittadine si riferiscono al 2026, senza estenderli alle edizioni 2027.
+- I [mercatini di Natale di Ponte di Legno](https://www.prolocopontedilegno.it/mercatini-di-natale-2026/)
+  hanno termine domanda 11 ottobre, 30 casette e 29 giornate obbligatorie in sei
+  intervalli distinti. Pubblicati costi differenziati tra operatori esterni e locali.
+- Il [Casoncello di Barbariga](https://fieradelcasoncello.it/wp-content/themes/casoncello/files/Richiesta%20espositori%202026.pdf)
+  ammette espositori il 25–27 settembre, pur iniziando la festa il 24; vieta agli
+  espositori la vendita di casoncelli/pasta fresca. Il modulo conserva un termine
+  di conferma del 2025: non trasformarlo in una scadenza 2026.
+- Il [mercatino del Quarantì](https://www.sagradelquaranti.it/area-espositori/)
+  occupa il 29–30 agosto, è gratuito secondo il modulo 2026 e vieta la somministrazione.
+- Pontagna: fiera del bestiame il 9 settembre, distinta dalla sagra 6–9 settembre.
+  Vezza San Michele: bancarelle 12–13 settembre. Montichiari Fiera del Garda 2027:
+  due fine settimana 5–7 e 12–14 febbraio, senza giorni intermedi inventati.
+- Ghedi Mestieri e Sapori ha date discordanti; Coccaglio ha un programma indicato
+  come ipotetico e un riferimento al 2025. Restano etichette da verificare, senza date esatte.
+- Alcuni portali pubblicano ancora soltanto edizioni 2025: mantenute come storico,
+  con richiesta di verifica. Ricorrenze testuali e stagioni restano tali, senza
+  dedurre giornate giornaliere o inventare la prossima edizione.
+- Escluse feste con soli pasti, concerti, sport o raduni senza evidenza commerciale;
+  escluso «Un tuffo nel passato» a Paratico, riservato agli hobbisti nel documento
+  dell’organizzatore. Un evento con bancarelle non prova l’ammissione di ogni ambulante.
+
+La spunta, i bandi pubblici, la selezione privata e le procedure da verificare sono
+distinti nella partecipazione. I costi di ingresso visitatori non diventano tariffe
+degli espositori. Il completamento documentale non esclude nuove manifestazioni,
+rinvii, annullamenti o bandi successivi: aggiornare periodicamente fonti e termini.
+La to do list registra Brescia completata e le altre 109 unità territoriali da approfondire.
+
 ## Modificare gli eventi
 
 - `fiere-fonti.json`: schede editoriali, con fonte HTTPS per ogni evento.
 - `fiere-importate.json`: snapshot normalizzato dei calendari regionali.
+- `fiere-brescia.json`: ricerca provinciale verificata; prevale sugli import di Brescia.
 - `fiere.json`: asset pubblico generato; non modificarlo direttamente.
 - `comuni.json`: coordinate dei comuni, già usate dal sito. Il puntino indica il
   centro del comune e non il luogo preciso dell'evento o l'ingresso.
@@ -156,4 +206,4 @@ puntino della manifestazione. I link condivisi usano `provincia=Nome`; i vecchi
 parametri `regione` e le province sconosciute vengono eliminati senza interferire
 con mesi, tipo e ricerca. L'elenco delle province è nel catalogo per mantenere
 utilizzabile il filtro anche quando il caricamento della mappa fallisce.
-Cache: fiere.js v=11, fiere.css v=10, fiere.json v=5, italia-province.json v=1.
+Cache: fiere.js v=12, fiere.css v=10, fiere.json v=6, italia-province.json v=1.

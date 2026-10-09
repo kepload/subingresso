@@ -88,6 +88,17 @@ def build_catalog():
     combined.extend(groups.values())
     comuni = json.loads((ROOT / "data/comuni.json").read_text(encoding="utf-8"))
     locations = {(key(c["nome"]), REGION_ALIASES.get(c["regione"], c["regione"])): c for c in comuni}
+    # This audited provincial file replaces its older regional/editorial entries.
+    # Keep the national source snapshots intact and preserve every other province.
+    researched = json.loads((ROOT / "data/fiere-brescia.json").read_text(encoding="utf-8"))
+    assert researched["province"] == "Brescia" and researched["checkedAt"] <= CATALOG_DATE
+    for row in researched["events"]:
+        location = locations.get((key(row["city"]), row["region"]))
+        assert location and location["provincia"] == researched["province"]
+    combined = [row for row in combined if not (
+        row["region"] == "Lombardia" and
+        locations.get((key(row["city"]), row["region"]), {}).get("provincia") == researched["province"])]
+    combined.extend(researched["events"])
     events = []
     for row in combined:
         city = locations.get((key(row["city"]), row["region"]))

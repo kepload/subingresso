@@ -92,6 +92,45 @@ const dolciumi = events.find(e => e.city === 'Riolo Terme' && e.name === 'SAGRA 
 assert(dolciumi.sectors.includes('divieto di somministrazione'));
 const borgata = events.find(e => e.city === 'Lugo' && e.name === "FIERA D' AUTUNNO");
 assert(borgata.editions.every(e => e.start === '2026-10-25'));
+// Audited Brescia coverage overrides contradictory regional dates and groups repeats.
+const bresciaResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-brescia.json'), 'utf8'));
+const brescia = events.filter(e => e.province === 'Brescia');
+assert.equal(bresciaResearch.province, 'Brescia');
+assert.equal(bresciaResearch.checkedAt, '2026-10-09');
+assert.equal(brescia.length, bresciaResearch.events.length);
+assert(brescia.length >= 200);
+assert(brescia.every(e => e.region === 'Lombardia' && e.source.checkedAt === bresciaResearch.checkedAt));
+const crocifissa = brescia.find(e => e.name.includes('Crocifissa'));
+assert.deepEqual(crocifissa.months, [12]);
+assert.equal(crocifissa.editions[0].start, '2026-12-13');
+assert.equal(crocifissa.participation.deadline, '2026-10-14');
+for (const [city, name, count] of [['Esine', 'Fiera di San Paolo', 2], ["Vezza d'Oglio", 'Fiera del miele', 3], ["Vezza d'Oglio", 'Mercatino del libro usato', 2]]) {
+    const matches = brescia.filter(e => e.city === city && e.name === name);
+    assert.equal(matches.length, 1);
+    assert.equal(matches[0].editions.length, count);
+}
+const ponteNatale = brescia.find(e => e.city === 'Ponte di Legno' && e.name.startsWith('Mercatini di Natale'));
+assert.equal(ponteNatale.participation.deadline, '2026-10-11');
+assert.equal(ponteNatale.editions.length, 6);
+assert.equal(ponteNatale.editions.reduce((days, e) => days + (Date.parse(e.end) - Date.parse(e.start)) / 86400000 + 1, 0), 29);
+assert(ponteNatale.participation.costs.includes('2.500') && ponteNatale.participation.note.includes('29'));
+const casoncello = brescia.find(e => e.name.startsWith('Fiera del Casoncello'));
+assert.equal(casoncello.editions[0].start, '2026-09-25');
+assert(casoncello.participation.note.includes('Vietata la vendita di casoncelli e pasta fresca'));
+const quaranti = brescia.find(e => e.name.startsWith('Sagra del Quarantì'));
+assert.equal(quaranti.editions[0].start, '2026-08-29');
+assert(quaranti.participation.note.includes('vietata la somministrazione'));
+assert(quaranti.participation.costs.includes('gratuito'));
+const capodanno = brescia.find(e => e.city === 'Borno' && e.name.startsWith('Capodanno'));
+assert(capodanno.editions[0].periodOnly);
+assert.deepEqual(capodanno.months, [1,12]);
+const garda = brescia.find(e => e.name === 'Fiera del Garda');
+assert.deepEqual(garda.editions.map(e => [e.start,e.end]), [['2027-02-05','2027-02-07'],['2027-02-12','2027-02-14']]);
+const pontagna = brescia.find(e => e.name.includes('Pontagna'));
+assert.equal(pontagna.editions[0].start, '2026-09-09');
+assert.equal(pontagna.editions[0].end, '2026-09-09');
+assert(brescia.find(e => e.city === 'Ghedi' && /Mestieri/i.test(e.name)).editions.every(e => !e.start));
+assert(brescia.find(e => e.city === 'Coccaglio' && /Patronale/i.test(e.name)).editions.every(e => !e.start));
 const server = http.createServer((req,res) => {
     let file = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).slice(1) || 'index.html';
     if (!path.extname(file)) file += '.html';
