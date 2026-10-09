@@ -45,6 +45,7 @@
     }
     function editionLabel(edition) {
         if (!edition.start) return edition.label + ' · calendario ' + edition.year;
+        if (edition.periodOnly) return 'Periodo: ' + dateLabel(edition.start) + ' – ' + dateLabel(edition.end) + ' · giorni da verificare';
         return edition.start === edition.end ? dateLabel(edition.start) : dateLabel(edition.start) + ' – ' + dateLabel(edition.end);
     }
     function selectEdition(event, today = todayInRome()) {
@@ -56,6 +57,7 @@
         return editions.slice().sort((a, b) => b.year - a.year || (b.start || '').localeCompare(a.start || ''))[0] || null;
     }
     function editionStatus(edition, today = todayInRome()) {
+        if (edition.periodOnly) return 'Appuntamenti periodici · calendario ' + edition.year + (edition.end < today ? ' · periodo concluso' : '');
         if (!edition.start) return 'Calendario ' + edition.year + ' · data esatta da verificare';
         if (edition.end < today) return 'Edizione conclusa';
         const source = edition.dateType === 'calendar' ? 'Da calendario' : 'Date pubblicate';
@@ -103,6 +105,7 @@
             const rank = event => {
                 const edition = selectEdition(event, today);
                 if (!edition) return [2, ''];
+                if (edition.periodOnly && edition.end >= today) return [1, ''];
                 if (edition.start && edition.end >= today) return [0, edition.start];
                 if (!edition.start && edition.year >= Number(today.slice(0, 4))) return [1, ''];
                 return [3, ''];
@@ -326,7 +329,7 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=2');
+            const data = await fetchJSON('/data/fiere.json?v=3');
             if (!Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.name === 'string' && Array.isArray(event.months) && event.months.length
                 && event.months.every(month => Number.isInteger(month) && month >= 1 && month <= 12)

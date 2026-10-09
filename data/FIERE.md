@@ -3,7 +3,7 @@
 Pagina pubblica `/fiere`, senza database né servizi cartografici a pagamento.
 
 Aggiornamento del 9 ottobre 2026: 836 manifestazioni in 20 regioni, 671 con dati
-di edizione e 589 con almeno una data esatta pubblicata. La selezione originaria
+di edizione e 588 con almeno una data esatta pubblicata. La selezione originaria
 di 200 eventi è integrata da calendari regionali ufficiali e approfondimenti
 presso Comuni e organizzatori. Non è un censimento nazionale completo, né una
 classifica per affluenza. La copertura è più ampia in Piemonte (258), Marche
@@ -13,6 +13,8 @@ Le date `confirmed` provengono da programmi o avvisi locali pubblicati; le date
 `calendar` da calendari regionali. Questo distingue le fonti, senza garantire
 che l'evento non subisca variazioni. Le ricorrenze testuali restano testuali:
 non si trasformano regole come «ultima domenica di giugno» in date inventate.
+Gli intervalli complessivi dei mercatini periodici sono marcati `periodOnly`:
+non indicano attività quotidiana e non vengono conteggiati come date esatte.
 Gli appuntamenti distinti sono edizioni separate della stessa manifestazione,
 non un periodo continuo. Le date passate e i termini scaduti sono segnalati
 dinamicamente secondo il giorno corrente in Italia. Le date non vengono

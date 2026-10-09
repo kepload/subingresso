@@ -7888,12 +7888,14 @@
           "start": "2026-01-11",
           "end": "2026-12-13",
           "dateType": "calendar",
-          "sourceUrl": "https://www.procedimenti.servizirl.it/sagre/public/programma/23957"
+          "sourceUrl": "https://www.procedimenti.servizirl.it/sagre/public/programma/23957",
+          "periodOnly": true
         }
       ],
       "sourceRecordIds": [
         "23957"
-      ]
+      ],
+      "frequencyNote": "Appuntamenti periodici: la fonte riporta il periodo complessivo, non tutte le singole giornate. Consulta il programma."
     },
     {
       "region": "Lombardia",

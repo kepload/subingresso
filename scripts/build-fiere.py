@@ -112,7 +112,7 @@ def build_catalog():
     write_json(ROOT / "data/fiere.json", {"catalogUpdatedAt": CATALOG_DATE, "periodType": "editions-and-usual-months",
                "coordinateType": "municipality-centre", "regionalImportYear": imported["year"],
                "eventsWithEditionData": sum(bool(e["editions"]) for e in events),
-               "eventsWithPublishedDates": sum(any(e.get("start") for e in event["editions"]) for event in events), "events": events})
+               "eventsWithPublishedDates": sum(any(e.get("start") and not e.get("periodOnly") for e in event["editions"]) for event in events), "events": events})
     print(f"Catalog: {len(events)} unique events, {len(counts)} regions; {sum(bool(e['editions']) for e in events)} with edition data")
 
 

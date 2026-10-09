@@ -91,12 +91,17 @@ def load_lombardia(path):
         label = re.sub(r"\s+(?:ANNO\s+)?2026$", "", label, flags=re.I)
         source = {"url": r.get("url_programma", {}).get("url", LOMBARDIA), "label": "Regione Lombardia · calendario 2026", "checkedAt": CHECKED}
         editions = [{"year": 2026, "start": start, "end": end, "dateType": "calendar", "sourceUrl": source["url"]}]
+        periodic = start != end and bool(re.search(r"periodic|(?:ogni|tutti\s+i|tutte\s+le)\s+(?:luned|marted|mercoled|gioved|venerd|sabat|domenic|settiman|mese)", r.get("descriz", ""), re.I))
+        if periodic:
+            editions[0]["periodOnly"] = True
         events.append({"region": "Lombardia", "city": r["comune"], "name": clean(label).capitalize(),
                        "category": category(label), "months": list(range(int(start[5:7]), int(end[5:7]) + 1)),
                        "venue": clean(" ".join(r.get(k, "") for k in ["toponimo", "indirizzo", "civico"])),
                        "organizer": r.get("nome_org", ""), "hours": clean(r.get("ora_in", "") + " – " + r.get("ora_fine", "")),
                        "participation": {"type": "check", "note": "La presenza nel calendario non garantisce posteggi disponibili. Chiedi all’organizzatore il bando o le condizioni per il tuo settore."},
                        "source": source, "editions": editions, "sourceRecordIds": [r["id"]]})
+        if periodic:
+            events[-1]["frequencyNote"] = "Appuntamenti periodici: la fonte riporta il periodo complessivo, non tutte le singole giornate. Consulta il programma."
     return events, {"inputRows": len(rows), "selectedRows": len(events), "url": LOMBARDIA, "license": "CC0 1.0"}
 
 
