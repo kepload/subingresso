@@ -47,7 +47,7 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 
 ### Ricerca approfondita per provincia — aggiornamento 9 ottobre 2026
 
-- [x] **Brescia — ricerca approfondita completata**: 203 manifestazioni in 86 comuni
+- [x] **Brescia — ricerca approfondita completata**: 206 manifestazioni in 86 comuni
   pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Brescia). Esaminate 1.031
   righe regionali e fonti di Comuni, Pro Loco, portali turistici e organizzatori;
   integrate date, contatti, settori, procedure, costi e scadenze quando pubblicati.

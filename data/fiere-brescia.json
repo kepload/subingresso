@@ -4154,6 +4154,70 @@
     {
       "region": "Lombardia",
       "city": "Marone",
+      "name": "Hop Hop Street Food",
+      "category": "sagra",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.cheventi.it/eventi/2026-hop-hop-street-food-marone-weekend-da-segnare-bs/",
+        "label": "cheventi.it",
+        "checkedAt": "2026-10-09"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-21",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cheventi.it/eventi/2026-hop-hop-street-food-marone-weekend-da-segnare-bs/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Programma ripreso dai canali dell’organizzatore. Contattare Hop Hop Street Food per selezione dei venditori, disponibilità, attrezzature e costo; non è un mercato generalista. Non sono pubblicati un bando o una quota espositori."
+      },
+      "venue": "Lungolago Marconi",
+      "sectors": "Street food internazionale, food truck e birra",
+      "organizer": "Hop Hop Street Food",
+      "summary": "Mostra mercato o manifestazione con vendita di street food internazionale, food truck e birra.",
+      "hours": "10:30–24:00, secondo il programma diffuso dall’organizzatore"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Marone",
+      "name": "Marone Lake Street Food",
+      "category": "sagra",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.cheventi.it/eventi/marone-lake-street-food-14151617-maggio-2026-lungolago-guglielmo-marconi-marone-bs/",
+        "label": "cheventi.it",
+        "checkedAt": "2026-10-09"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-14",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cheventi.it/eventi/marone-lake-street-food-14151617-maggio-2026-lungolago-guglielmo-marconi-marone-bs/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Selezione di food truck tramite Dolomiti Eventi. Il programma è ripreso da un portale eventi: confermare direttamente candidature, requisiti, contratto e costi. Non confondere la gratuità per il pubblico con la quota dello stand."
+      },
+      "venue": "Lungolago Guglielmo Marconi",
+      "sectors": "Food truck, street food nazionale e internazionale, dolci e bevande",
+      "organizer": "Dolomiti Eventi",
+      "summary": "Mostra mercato o manifestazione con vendita di food truck, street food nazionale e internazionale, dolci e bevande.",
+      "hours": "Giovedì 17:00–24:00; venerdì–domenica 11:00–24:00, secondo il programma pubblicato"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Marone",
       "name": "Marone Summer Street Food",
       "category": "sagra",
       "months": [
@@ -7151,6 +7215,68 @@
       },
       "summary": "Mostra mercato o manifestazione con vendita di tartufo, agroalimentare, artigianato e produzioni locali.",
       "frequencyNote": "Due fine settimana distinti; non è un intervallo di apertura quotidiana."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Tignale",
+      "name": "Tignale Autentica – sere d’estate",
+      "category": "mercatino",
+      "months": [
+        5,
+        6,
+        7,
+        9
+      ],
+      "source": {
+        "url": "https://www.panesalamina.com/tignale-autentica-2026.html",
+        "label": "panesalamina.com",
+        "checkedAt": "2026-10-09"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-28",
+          "end": "2026-05-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.panesalamina.com/tignale-autentica-sere-destate-2026.html"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-18",
+          "end": "2026-06-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://lakeofwonders.com/events/386-tignale-tignale-autentica"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-16",
+          "end": "2026-07-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://lakeofwonders.com/events/386-tignale-tignale-autentica"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-10",
+          "end": "2026-09-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://lakeofwonders.com/events/386-tignale-tignale-autentica"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Segnalazione fornita dall’Azienda Speciale al portale locale: prevede espositori di prodotti locali e ristoratori di Tignale. Chiedere all’Ufficio del Turismo criteri di ammissione, candidatura e costo; i ticket per le degustazioni non sono una quota espositori. Annullamento in caso di maltempo.",
+        "url": "https://www.tignale.org/lagodigarda/tignale-autentica-e-strEat-food.html"
+      },
+      "venue": "Gardola – via Roma",
+      "sectors": "Espositori di prodotti locali; ristoratori del territorio",
+      "organizer": "Azienda Speciale Tignale Servizi Manlio Bonincontri",
+      "contacts": {
+        "email": "info@tignale.org",
+        "phone": "0365 73354"
+      },
+      "summary": "Mostra mercato o manifestazione con vendita di espositori di prodotti locali; ristoratori del territorio.",
+      "hours": "Dalle 19:00",
+      "frequencyNote": "Quattro serate pubblicate distintamente. Il periodo 18 giugno–10 settembre non implica aperture quotidiane o ogni giovedì. Verificare le date con l’ufficio organizzatore."
     },
     {
       "region": "Lombardia",

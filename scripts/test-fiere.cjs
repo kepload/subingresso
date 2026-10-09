@@ -131,6 +131,10 @@ assert.equal(pontagna.editions[0].start, '2026-09-09');
 assert.equal(pontagna.editions[0].end, '2026-09-09');
 assert(brescia.find(e => e.city === 'Ghedi' && /Mestieri/i.test(e.name)).editions.every(e => !e.start));
 assert(brescia.find(e => e.city === 'Coccaglio' && /Patronale/i.test(e.name)).editions.every(e => !e.start));
+const tignaleAutentica = brescia.find(e => e.name.startsWith('Tignale Autentica'));
+assert.deepEqual(tignaleAutentica.editions.map(e => e.start), ['2026-05-28','2026-06-18','2026-07-16','2026-09-10']);
+assert(tignaleAutentica.editions.every(e => e.start === e.end));
+assert.equal(brescia.filter(e => e.city === 'Marone' && /Street Food/i.test(e.name)).length, 3);
 const server = http.createServer((req,res) => {
     let file = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).slice(1) || 'index.html';
     if (!path.extname(file)) file += '.html';

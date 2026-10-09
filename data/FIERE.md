@@ -2,11 +2,11 @@
 
 Pagina pubblica `/fiere`, senza database né servizi cartografici a pagamento.
 
-Aggiornamento del 9 ottobre 2026: 1.881 manifestazioni in 20 regioni, 1.722 con dati
-di edizione e 1.467 con almeno una data esatta pubblicata. La selezione originaria
+Aggiornamento del 9 ottobre 2026: 1.884 manifestazioni in 20 regioni, 1.725 con dati
+di edizione e 1.470 con almeno una data esatta pubblicata. La selezione originaria
 di 200 eventi è integrata da calendari regionali ufficiali e approfondimenti
 presso Comuni e organizzatori. La ricerca provinciale approfondita di Brescia
-comprende 203 manifestazioni in 86 comuni, rispetto alle precedenti 50 schede.
+comprende 206 manifestazioni in 86 comuni, rispetto alle precedenti 50 schede.
 La copertura nazionale resta parziale: gli import regionali non equivalgono
 a una ricerca approfondita completata per ogni provincia.
 
@@ -78,20 +78,24 @@ testi delle pagine. Le fonti delle singole date restano consultabili nel popup.
 
 ## Ricerca approfondita — provincia di Brescia
 
-Ricerca documentale completata il 9 ottobre 2026: 203 manifestazioni in 86 comuni.
+Ricerca documentale completata il 9 ottobre 2026: 206 manifestazioni in 86 comuni.
 Esaminate tutte le 1.031 righe 2026 della provincia nel dataset lombardo (118 Fiera,
 913 Sagra, 85 comuni), i tre calendari fieristici regionali aggiornati al 4 settembre,
 oltre a programmi, avvisi e regolamenti di Comuni, Pro Loco e organizzatori.
 Incrociati Visit Brescia, Visit Lake Iseo, Visit Valle Trompia, Turismo Valle Camonica,
 Pontedilegno-Tonale e i calendari dei poli Brixia Forum e Centro Fiera Montichiari.
 Le schede conservano fonti consultabili, data della verifica e fonti delle singole edizioni.
+Incluse anche segnalazioni locali fornite o riprese dagli organizzatori: i tre festival
+street food di Marone restano distinti, e Tignale Autentica conserva le quattro serate
+esplicitamente pubblicate, senza trasformare il periodo estivo in aperture quotidiane.
+Le fonti secondarie sono riconoscibili dal collegamento e richiedono conferma diretta.
 
 `fiere-brescia.json` è la fonte provinciale curata, con metadati della ricerca e
 SHA-256 dello snapshot regionale. Il build la applica dopo gli import nazionali:
 sostituisce le precedenti schede di Brescia senza modificare le altre province
 o gli snapshot originali. Conservati gli identificativi regionali già presenti;
 raggruppate le ripetizioni di San Paolo a Esine, miele e libro usato a Vezza d’Oglio.
-Il saldo è +153 schede provinciali, dopo il consolidamento di quattro duplicati.
+Il saldo è +156 schede provinciali, dopo il consolidamento di quattro duplicati.
 
 Correzioni e limiti da mantenere negli aggiornamenti:
 
@@ -210,4 +214,4 @@ puntino della manifestazione. I link condivisi usano `provincia=Nome`; i vecchi
 parametri `regione` e le province sconosciute vengono eliminati senza interferire
 con mesi, tipo e ricerca. L'elenco delle province è nel catalogo per mantenere
 utilizzabile il filtro anche quando il caricamento della mappa fallisce.
-Cache: fiere.js v=13, fiere.css v=10, fiere.json v=7, italia-province.json v=1.
+Cache: fiere.js v=14, fiere.css v=10, fiere.json v=8, italia-province.json v=1.
