@@ -1,7 +1,7 @@
 // Suggerimenti geografici completi, condivisi dalla home e dalla pagina annunci.
 (function () {
     'use strict';
-    const { normalize, canonicalRegion } = window.ComuniItaliani;
+    const { normalize, canonicalRegion, forEachChunked } = window.ComuniItaliani;
     const compactKey = key => key.replace(/\b(?:s|san|sant|santo|santa)\b/g, 'san').replace(/ /g, '');
     const compact = value => compactKey(normalize(value));
     let rows = [];
@@ -23,39 +23,44 @@
     let workerFailed = false;
     let requestId = 0;
     const workerRequests = new Map();
-    const workerUrl = '/js/location-search-worker.js?v=1';
+    const workerUrl = '/js/location-search-worker.js?v=2';
 
     function load() {
         if (!readyPromise) {
-            readyPromise = window.ComuniItaliani.load().then(data => {
-                rows = data.map(row => ({ ...row, _compact: [...new Set(row._keys.map(compactKey))],
+            readyPromise = window.ComuniItaliani.load().then(async data => {
+                rows = [];
+                await forEachChunked(data, row => rows.push({ ...row, _compact: [...new Set(row._keys.map(compactKey))],
                     _context: normalize(`${row.nome} ${row.provincia} ${row.sigla} ${row.regione}`) }));
                 exactNames = new Map();
                 coreNames = new Map();
                 listingRecordsCache.clear();
-                rowsById = new Map(rows.map(row => [row.id, row]));
-                provinceCodes = new Set(rows.map(row => row.sigla));
+                rowsById = new Map();
+                provinceCodes = new Set();
                 matchesCache.clear();
                 nonFuzzyMisses.clear();
                 const names = new Map();
                 rowsByProvince = new Map();
-                for (const row of rows) {
+                await forEachChunked(rows, row => {
+                    rowsById.set(row.id, row);
+                    provinceCodes.add(row.sigla);
                     if (!rowsByProvince.has(row.sigla)) rowsByProvince.set(row.sigla, []);
                     rowsByProvince.get(row.sigla).push(row);
                     for (const name of new Set(row._compact)) {
                         if (!names.has(name)) names.set(name, []);
                         names.get(name).push(row);
                     }
-                }
+                });
                 terms = [...names.keys()];
                 termRows = [...names.values()];
-                for (const row of rows) for (const key of new Set([...row._keys, ...row._compact])) {
-                    if (!exactNames.has(key)) exactNames.set(key, []);
-                    exactNames.get(key).push(row);
-                    const core = placeKey(key);
-                    if (!coreNames.has(core)) coreNames.set(core, new Set());
-                    coreNames.get(core).add(row);
-                }
+                await forEachChunked(rows, row => {
+                    for (const key of new Set([...row._keys, ...row._compact])) {
+                        if (!exactNames.has(key)) exactNames.set(key, []);
+                        exactNames.get(key).push(row);
+                        const core = placeKey(key);
+                        if (!coreNames.has(core)) coreNames.set(core, new Set());
+                        coreNames.get(core).add(row);
+                    }
+                });
                 dataVersion++;
                 return rows;
             }).catch(error => { readyPromise = null; throw error; });

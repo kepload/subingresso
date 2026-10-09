@@ -63,6 +63,18 @@
         }
     }
 
+    // Lascia al browser il tempo di gestire clic e digitazione durante gli indici.
+    async function forEachChunked(items, visit) {
+        let until = Date.now() + 8;
+        for (const item of items) {
+            visit(item);
+            if (Date.now() >= until) {
+                await new Promise(resolve => setTimeout(resolve, 0));
+                until = Date.now() + 8;
+            }
+        }
+    }
+
     async function fetchComuni(cache) {
         const [rows, localita] = await Promise.all([
             fetchDataset('/data/comuni-picker.json?v=20260221', cache),
@@ -74,12 +86,14 @@
         if (localita.schemaVersion !== 1 || !Array.isArray(localita.localita) || !localita.localita.length) {
             throw new Error('Elenco frazioni incompleto');
         }
-        const comuni = rows.map(row => ({
+        const comuni = [];
+        await forEachChunked(rows, row => comuni.push({
             ...row, id: row.codiceIstat, _key: normalize(row.nome),
             _keys: [normalize(row.nome), ...Object.keys(COMUNE_ALIASES).filter(alias => COMUNE_ALIASES[alias] === row.nome)]
         }));
         const byCode = new Map(comuni.map(row => [row.codiceIstat, row]));
-        const places = localita.localita.map(entry => {
+        const places = [];
+        await forEachChunked(localita.localita, entry => {
             const [geonameId, nomeLocalita, codiceIstat, lat, lng, aliases = []] = entry;
             const parent = byCode.get(codiceIstat);
             if (!parent || !geonameId || typeof nomeLocalita !== 'string' || !nomeLocalita.trim() || !Number.isFinite(lat) || !Number.isFinite(lng) || !Array.isArray(aliases)) {
@@ -87,12 +101,12 @@
             }
             const nome = `${nomeLocalita} (${parent.nome})`;
             const names = [nomeLocalita, ...aliases];
-            return {
+            places.push({
                 nome, nomeLocalita, comune: parent.nome, codiceIstat, lat, lng,
                 id: `geonames:${geonameId}`, provincia: parent.provincia, sigla: parent.sigla, regione: parent.regione,
                 _key: normalize(nome),
                 _keys: [...new Set([normalize(nome), ...names.flatMap(name => [normalize(name), normalize(`${name} ${parent.nome}`)])])]
-            };
+            });
         });
         return [...comuni, ...places];
     }
@@ -353,5 +367,5 @@
 
     window.createComunePicker = createComunePicker;
     // Home e ricerca annunci usano gli stessi dati, alias e tentativi di caricamento dei form.
-    window.ComuniItaliani = { load: loadComuni, normalize, canonicalRegion };
+    window.ComuniItaliani = { load: loadComuni, normalize, canonicalRegion, forEachChunked };
 })();

@@ -6,7 +6,7 @@ const http = require('node:http');
 const { chromium, webkit } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const root = path.resolve(__dirname, '..');
 const fixture = `<!doctype html><input id="query"><div id="box"></div>
-<script src="/js/comune-picker.js?v=5"></script><script src="/js/location-search.js?v=6"></script>
+<script src="/js/comune-picker.js?v=6"></script><script src="/js/location-search.js?v=7"></script>
 <script>window.submissions=[];query.value=new URLSearchParams(location.search).get('q')||'';window.picker=LocationSearch.create({input:document.querySelector('#query'),box:document.querySelector('#box'),initialCode:new URLSearchParams(location.search).get('comune')||'',onSubmit:async()=>{if(await picker.prepare())submissions.push({value:query.value,id:picker.selected?.id})}});</script>`;
 const server = http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');
@@ -21,8 +21,20 @@ async function check(engine, name, base) {
     const browser = await engine.launch({ headless: true });
     try {
         const page = await browser.newPage();
+        await page.addInitScript(() => {
+            window.initialLoadTicks = [];
+            window.initialLoadTimer = setInterval(() => initialLoadTicks.push(performance.now()), 16);
+        });
         await page.goto(base);
         await page.evaluate(() => picker.ready);
+        const initialLoad = await page.evaluate(() => {
+            clearInterval(initialLoadTimer);
+            const ticks = [...initialLoadTicks, performance.now()];
+            return { ticks: ticks.length, maxGap: Math.max(0, ...ticks.slice(1).map((time, index) => time - ticks[index])) };
+        });
+        assert(initialLoad.ticks > 10, 'il browser resta attivo durante la preparazione iniziale delle località');
+        assert(initialLoad.maxGap < 250, 'nessuna pausa di un secondo durante la preparazione iniziale');
+        console.log(`${name}: caricamento iniziale, timer attivo ${initialLoad.ticks} volte, pausa massima ${Math.round(initialLoad.maxGap)} ms`);
         await page.evaluate(() => {
             // Oracolo originale, indipendente dall'ottimizzazione della matrice.
             function distance(a, b, limit) {

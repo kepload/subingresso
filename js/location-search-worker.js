@@ -1,7 +1,7 @@
 // Solo nomi normalizzati: nessun annuncio, contatto o dato utente nel worker.
 'use strict';
 self.window = self;
-importScripts('/js/comune-picker.js?v=5', '/js/location-search.js?v=6');
+importScripts('/js/comune-picker.js?v=6', '/js/location-search.js?v=7');
 let names = [];
 const jobs = new Map();
 self.onmessage = ({ data }) => {

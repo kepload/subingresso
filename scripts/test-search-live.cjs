@@ -18,7 +18,7 @@ const target = '035383af-dbc8-4805-9570-b94008d8f8cd';
             page.on('pageerror',error=>errors.push(error.message));
             await page.goto(base,{waitUntil:'domcontentloaded',timeout:45000});
             await page.evaluate(()=>locationSearch.ready);
-            assert.equal(await page.locator('script[src="js/location-search.js?v=6"]').count(),1,'correzione pubblicata');
+            assert.equal(await page.locator('script[src="js/location-search.js?v=7"]').count(),1,'correzione pubblicata');
             const checkNearby = async () => {
                 await page.locator('#subtitle').filter({hasText:'Rivoltella (Desenzano del Garda) (BS) · raggio 100 km'}).waitFor();
                 await page.waitForFunction(() => document.querySelector('#resultsGrid').style.opacity !== '0');
