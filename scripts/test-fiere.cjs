@@ -150,6 +150,7 @@ async function run(engine,name,viewport,base) {
         await page.waitForFunction(() => getComputedStyle(document.querySelector('.fiere-region.is-preview')).fill === 'rgb(147, 197, 253)');
         assert.equal(await page.locator('#map-caption').textContent(),previewRegion);
         assert.equal(await page.locator('#region-filter').inputValue(),'');
+        assert.equal(await page.locator('.fiere-marker.is-preview').count(),0);
         assert.equal(page.url(),initialURL);
         assert.equal(await page.locator('#italy-map').getAttribute('viewBox'),initialView);
         assert.equal(await page.locator('#map-markers').innerHTML(),initialMarkers,'Hover reuses markers');
@@ -170,11 +171,33 @@ async function run(engine,name,viewport,base) {
         for (const region of regions) {
             await page.selectOption('#region-filter',region);
             await matches(events.filter(e => e.region === region));
-            await page.locator('.fiere-card').first().hover();
-            assert.equal(await page.locator('.fiere-region.is-preview').getAttribute('data-region'),region);
-            await page.mouse.move(0,0);
+            assert.equal(await page.locator('.fiere-marker.is-preview').count(),0);
+            const regionalCard = page.locator('.fiere-card').first();
+            const eventId = await regionalCard.getAttribute('data-event-id');
+            const regionalEvent = events.find(e => e.id === eventId);
+            const regionalURL = page.url();
+            const regionalView = await page.locator('#italy-map').getAttribute('viewBox');
+            await regionalCard.hover();
+            const highlightedMarker = page.locator('.fiere-marker.is-preview');
+            assert.equal(await highlightedMarker.count(),1);
+            assert((await highlightedMarker.getAttribute('data-events')).split(',').includes(eventId));
+            assert.equal(await highlightedMarker.locator('.preview-ring').evaluate(r => getComputedStyle(r).opacity),'1');
+            assert.equal(await highlightedMarker.locator('.pin').evaluate(p => getComputedStyle(p).fill),'rgb(37, 99, 235)');
+            assert.equal(await page.locator('#map-caption').textContent(),regionalEvent.city);
             assert.equal(await page.locator('.fiere-region.is-preview').count(),0);
+            assert.equal(await page.locator('#region-filter').inputValue(),region);
+            assert.equal(page.url(),regionalURL);
+            assert.equal(await page.locator('#italy-map').getAttribute('viewBox'),regionalView);
+            await page.mouse.move(0,0);
+            assert.equal(await highlightedMarker.count(),0);
             assert.equal(await page.locator('.fiere-region.is-selected').getAttribute('data-region'),region);
+            await regionalCard.locator('button').focus();
+            assert.equal(await highlightedMarker.count(),1);
+            await page.locator('#map-zoom-in').evaluate(b => b.click());
+            assert.equal(await highlightedMarker.count(),1,'Zoom preserves the preview on the new marker group');
+            assert((await highlightedMarker.getAttribute('data-events')).split(',').includes(eventId));
+            await page.locator('#region-filter').focus();
+            assert.equal(await highlightedMarker.count(),0);
         }
         await page.locator('#reset-filters').click();
         assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'false');

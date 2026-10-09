@@ -44,6 +44,7 @@ button,summary{cursor:pointer}button:disabled{cursor:wait;opacity:.5}[hidden]{di
 .fiere-marker{cursor:pointer}.fiere-marker .pin{stroke:#fff;stroke-width:2}
 .fiere-marker text{fill:white;font-family:inherit;font-size:10px;font-weight:800;pointer-events:none;dominant-baseline:central;text-anchor:middle}
 .fiere-marker:hover .pin,.fiere-marker:focus-visible .pin{stroke:#0f172a}.fiere-marker .selection-ring{fill:none;stroke:#0f172a;stroke-width:2}
+.fiere-marker .preview-ring{fill:none;stroke:#2563eb;stroke-width:3;vector-effect:non-scaling-stroke;opacity:0;pointer-events:none}.fiere-marker.is-preview .preview-ring{opacity:1}.fiere-marker.is-preview .pin{fill:#2563eb;stroke:#1e3a8a;stroke-width:3;vector-effect:non-scaling-stroke}
 .pin-tradizionale{fill:#2563eb;background:#2563eb}.pin-artigianato{fill:#d97706;background:#d97706}.pin-sagra{fill:#059669;background:#059669}.pin-espositiva{fill:#7c3aed;background:#7c3aed}.pin-mercatino{fill:#db2777;background:#db2777}.pin-cluster{fill:#334155;background:#334155}
 .fiere-map-controls{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;border:1px solid #d5e0ec;background:white;border-radius:10px;box-shadow:0 3px 10px #0f172a09;overflow:hidden}
 .fiere-map-controls button{width:44px;height:44px;font-size:21px;color:#334155;background:white;border:0;border-bottom:1px solid #edf2f7}.fiere-map-controls button:last-child{border:0}.fiere-map-controls button:hover{background:#eff6ff}

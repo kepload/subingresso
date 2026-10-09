@@ -156,11 +156,12 @@
             const card = node('article', 'fiere-card');
             card.dataset.eventId = event.id;
             card.dataset.region = event.region;
-            card.addEventListener('mouseenter', () => { hoveredCard = card; updateRegionHighlight(); });
-            card.addEventListener('mouseleave', () => { hoveredCard = null; updateRegionHighlight(); });
-            card.addEventListener('focusin', () => { focusedCard = card; updateRegionHighlight(); });
+            card.dataset.city = event.city;
+            card.addEventListener('mouseenter', () => { hoveredCard = card; updateMapHighlight(); });
+            card.addEventListener('mouseleave', () => { hoveredCard = null; updateMapHighlight(); });
+            card.addEventListener('focusin', () => { focusedCard = card; updateMapHighlight(); });
             card.addEventListener('focusout', e => {
-                if (!card.contains(e.relatedTarget)) { focusedCard = null; updateRegionHighlight(); }
+                if (!card.contains(e.relatedTarget)) { focusedCard = null; updateMapHighlight(); }
             });
             const head = node('div', 'fiere-card-head');
             const edition = selectEdition(event);
@@ -178,7 +179,7 @@
         }
         $('fair-list').replaceChildren(fragment);
         hoveredCard = null; focusedCard = null;
-        updateRegionHighlight();
+        updateMapHighlight();
         $('fair-list').setAttribute('aria-busy', 'false');
         $('empty-results').hidden = events.length > 0 || !state.ready;
         $('load-more').hidden = state.visible >= events.length;
@@ -220,18 +221,22 @@
         clearTimeout(mapMarkerTimer);
         mapMarkerTimer = setTimeout(() => renderMap(filterEvents(state.events, state)), 120);
     }
-    function updateRegionHighlight() {
-        const previewRegion = (hoveredCard || focusedCard)?.dataset.region || '';
+    function updateMapHighlight() {
+        const card = hoveredCard || focusedCard;
+        const previewRegion = !state.region ? card?.dataset.region || '' : '';
+        const previewEvent = state.region ? card?.dataset.eventId || '' : '';
         for (const path of $('map-regions').children) {
             path.classList.toggle('is-selected', path.dataset.region === state.region);
             path.classList.toggle('is-preview', path.dataset.region === previewRegion);
         }
-        $('map-caption').textContent = previewRegion || 'Trascina e ingrandisci';
+        for (const marker of $('map-markers').children) {
+            marker.classList.toggle('is-preview', Boolean(previewEvent) && marker.dataset.events.split(',').includes(previewEvent));
+        }
+        $('map-caption').textContent = previewRegion || (previewEvent ? card.dataset.city : 'Trascina e ingrandisci');
     }
     function renderMap(events) {
         clearTimeout(mapMarkerTimer);
         updateMapView();
-        updateRegionHighlight();
         // Convert screen pixels to the SVG coordinate system to keep markers tappable on zoom.
         const scale = Math.max(state.view[2] / Math.max($('italy-map').clientWidth, 1), state.view[3] / Math.max($('italy-map').clientHeight, 1));
         const groups = clusterEvents(events, 28 * scale);
@@ -242,6 +247,7 @@
             const marker = svgNode('g', { class: 'fiere-marker', transform: 'translate(' + group.x + ',' + group.y + ')', role: 'button', tabindex: '0', 'aria-label': label, 'data-events': group.events.map(event => event.id).join(',') });
             marker.append(svgNode('circle', { r: 20 * scale, fill: 'transparent' }));
             marker.append(svgNode('circle', { r: (group.events.length > 1 ? 11 : 7) * scale, class: 'pin pin-' + (group.events.length > 1 ? 'cluster' : group.events[0].category) }));
+            marker.append(svgNode('circle', { r: (group.events.length > 1 ? 16 : 12) * scale, class: 'preview-ring' }));
             if (group.events.length > 1) {
                 const text = svgNode('text', { 'font-size': 10 * scale, style: 'font-size:' + 10 * scale + 'px' });
                 text.textContent = String(group.events.length); marker.append(text);
@@ -252,6 +258,7 @@
             fragment.append(marker);
         }
         $('map-markers').replaceChildren(fragment);
+        updateMapHighlight();
     }
     function openPopup(group) {
         const cities = [...new Set(group.events.map(event => event.city))];
