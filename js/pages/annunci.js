@@ -33,6 +33,29 @@ const SECTOR_KEYWORDS = [
     'elettronica', 'tessuti', 'scarpe', 'cappelli', 'spezie', 'casalinghi'
 ];
 const SEARCH_HISTORY_KEY = '_sub_searches';
+// Solo località validate; nessun testo digitato liberamente o identificativo account.
+async function trackLocationSearch(place) {
+    if (!place || navigator.webdriver === true) return;
+    let key;
+    try {
+        key = '_search_event_' + JSON.stringify([place.nome, place.regione, place.provincia]);
+        if (sessionStorage.getItem(key)) return;
+        let session = sessionStorage.getItem('_location_search_session');
+        if (!session) {
+            session = crypto.randomUUID();
+            sessionStorage.setItem('_location_search_session', session);
+        }
+        sessionStorage.setItem(key, 'pending');
+        const { error } = await _supabase.rpc('track_location_search', {
+            p_session: session, p_name: place.nome,
+            p_regione: place.regione, p_provincia: place.provincia
+        });
+        if (error) sessionStorage.removeItem(key);
+        else sessionStorage.setItem(key, '1');
+    } catch (_) {
+        try { if (key) sessionStorage.removeItem(key); } catch (_) {}
+    }
+}
 const PLACEHOLDER_TEXTS = [
     'Cerca comune, frazione…',
     'Es. Milano, Roma, Napoli…',
@@ -123,6 +146,7 @@ async function applyFilters() {
     let results = [];
 
     const searchRecord = locationSearch.selected;
+    trackLocationSearch(searchRecord);
     const searchCoords = searchRecord ? LocationSearch.coordinates(searchRecord) : null;
     const matchesFilters = l => {
         if (regione && ComuniItaliani.normalize(ComuniItaliani.canonicalRegion(l.regione)) !== ComuniItaliani.normalize(ComuniItaliani.canonicalRegion(regione))) return false;

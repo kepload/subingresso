@@ -462,6 +462,12 @@
                 </div>
             </div>
 
+            <div id="topSearchesSection" class="bg-white border border-slate-100 rounded-3xl p-6">
+                <h3 class="font-black text-slate-900 flex items-center gap-2 mb-4"><i class="fas fa-search text-blue-500"></i> Località più cercate · ultimi 30 giorni</h3>
+                <div id="topSearchesList" class="grid grid-cols-1 md:grid-cols-2 gap-2"><p class="text-xs text-slate-400 font-bold">Caricamento…</p></div>
+                <details class="mt-3 text-xs text-slate-500"><summary class="cursor-pointer">Cosa viene contato?</summary><p class="mt-2">Ricerche di comuni e località nella pagina Annunci, anche senza risultati. Ogni località conta una volta per sessione. Raccolta dal 9 ottobre 2026; escluse parole libere e ricerche per sola regione.</p></details>
+            </div>
+
             <!-- Recent Users -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
@@ -1473,6 +1479,7 @@ async function loadAdminStats() {
 
     loadAdminPriceAverages();
     loadTopComuni();
+    loadTopSearches();
 }
 
 async function loadAdminPriceAverages() {
@@ -1523,6 +1530,27 @@ async function loadAdminPriceAverages() {
 
 // Top 10 comuni per page_views (ultimi 30 giorni). RPC SECURITY DEFINER.
 // Si nasconde da sola se l'RPC non e' deployata o non ci sono dati.
+async function loadTopSearches() {
+    const list = document.getElementById('topSearchesList');
+    if (!list) return;
+    try {
+        const { data, error } = await _supabase.rpc('admin_top_location_searches', { p_days: 30 });
+        if (error || !Array.isArray(data)) throw new Error('unavailable');
+        if (!data.length) {
+            list.innerHTML = '<p class="text-xs text-slate-400 font-bold">Nessuna ricerca registrata: il grafico si popolerà con le prossime ricerche.</p>';
+            return;
+        }
+        const max = Math.max(...data.map(r => Number(r.cnt) || 0), 1);
+        list.innerHTML = data.map(r => {
+            const count = Math.max(0, Number(r.cnt) || 0);
+            const pct = Math.min(100, Math.round(count / max * 100));
+            return `<div class="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-2.5"><div class="flex-1 min-w-0"><div class="text-sm font-bold text-slate-900 truncate">${escapeHTML(r.name)} <span class="text-xs text-slate-400">${escapeHTML(r.provincia)}</span></div><div class="mt-1 h-1 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-blue-500" style="width:${pct}%"></div></div></div><div class="ml-3 text-sm font-black text-slate-700 tabular-nums">${count}</div></div>`;
+        }).join('');
+    } catch (_) {
+        list.innerHTML = '<p class="text-xs text-slate-400 font-bold">Statistiche ricerche temporaneamente non disponibili.</p>';
+    }
+}
+
 async function loadTopComuni() {
     const section = document.getElementById('topComuniSection');
     const list    = document.getElementById('topComuniList');
