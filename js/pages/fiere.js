@@ -141,6 +141,8 @@
     function renderMonths() {
         const pool = filterEvents(state.events, state, true);
         $('all-months').setAttribute('aria-pressed', String(state.months.length === 12));
+        $('all-months').setAttribute('aria-checked', String(state.months.length === 12));
+        $('all-months-status').textContent = state.months.length === 12 ? 'ON' : 'OFF';
         $('all-months').setAttribute('aria-label', state.months.length === 12 ? 'Deseleziona tutti i mesi' : 'Seleziona tutti i mesi');
         for (const button of $('month-bar').children) {
             const month = Number(button.dataset.month);
@@ -223,8 +225,8 @@
             fragment.append(marker);
         }
         $('map-markers').replaceChildren(fragment);
-        $('map-caption').textContent = 'Tocca un puntino';
-        $('map-zoom-in').disabled = state.view[2] <= 90;
+        $('map-caption').textContent = 'Trascina e ingrandisci';
+        $('map-zoom-in').disabled = state.view[2] <= 12;
         $('map-zoom-out').disabled = state.view[2] >= HOME[2];
     }
     function openPopup(group) {
@@ -366,13 +368,69 @@
         } catch (error) { $('map-error').hidden = false; }
         finally { $('retry-map').disabled = false; }
     }
-    function zoom(factor) {
-        const width = Math.max(90, Math.min(HOME[2], state.view[2] * factor));
+    function zoom(factor, anchor = [state.view[0] + state.view[2] / 2, state.view[1] + state.view[3] / 2]) {
+        const width = Math.max(12, Math.min(HOME[2], state.view[2] * factor));
         const height = width * HOME[3] / HOME[2];
-        state.view = [state.view[0] + (state.view[2] - width) / 2, state.view[1] + (state.view[3] - height) / 2, width, height];
+        const ratio = width / state.view[2];
+        state.view = [anchor[0] - (anchor[0] - state.view[0]) * ratio, anchor[1] - (anchor[1] - state.view[1]) * ratio, width, height];
         $('map-popup').hidden = true; renderMap(filterEvents(state.events, state));
     }
+    function initMapGestures() {
+        const map = $('italy-map'), pointers = new Map();
+        let moved = false, frame;
+        const point = (x, y) => {
+            const p = map.createSVGPoint(); p.x = x; p.y = y;
+            const result = p.matrixTransform(map.getScreenCTM().inverse());
+            return [result.x, result.y];
+        };
+        const redraw = () => {
+            map.setAttribute('viewBox', state.view.join(' '));
+            $('map-popup').hidden = true;
+            if (!frame) frame = requestAnimationFrame(() => { frame = null; renderMap(filterEvents(state.events, state)); });
+        };
+        map.addEventListener('wheel', event => {
+            event.preventDefault();
+            const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? map.clientHeight : 1);
+            zoom(Math.exp(Math.max(-1, Math.min(1, delta * .002))), point(event.clientX, event.clientY));
+        }, { passive: false });
+        map.addEventListener('pointerdown', event => {
+            if (event.button !== 0) return;
+            if (!pointers.size) moved = false;
+            pointers.set(event.pointerId, { x: event.clientX, y: event.clientY, startX: event.clientX, startY: event.clientY });
+        });
+        window.addEventListener('pointermove', event => {
+            const previous = pointers.get(event.pointerId);
+            if (!previous) return;
+            if (!moved && pointers.size === 1 && Math.hypot(event.clientX - previous.startX, event.clientY - previous.startY) < 5) return;
+            moved = true; map.classList.add('is-dragging');
+            if (event.isTrusted && !map.hasPointerCapture(event.pointerId)) map.setPointerCapture(event.pointerId);
+            const old = [...pointers.values()];
+            pointers.set(event.pointerId, { ...previous, x: event.clientX, y: event.clientY });
+            const current = [...pointers.values()];
+            const center = items => items.length > 1 ? [(items[0].x + items[1].x) / 2, (items[0].y + items[1].y) / 2] : [items[0].x, items[0].y];
+            const from = point(...center(old)), to = point(...center(current));
+            state.view[0] += from[0] - to[0]; state.view[1] += from[1] - to[1];
+            if (current.length === 2) {
+                const distance = items => Math.hypot(items[0].x - items[1].x, items[0].y - items[1].y);
+                const ratio = distance(old) / Math.max(1, distance(current));
+                const width = Math.max(12, Math.min(HOME[2], state.view[2] * ratio));
+                const scale = width / state.view[2];
+                state.view = [from[0] - (from[0] - state.view[0]) * scale, from[1] - (from[1] - state.view[1]) * scale, width, width * HOME[3] / HOME[2]];
+            }
+            redraw();
+        });
+        const release = event => {
+            pointers.delete(event.pointerId);
+            if (map.hasPointerCapture(event.pointerId)) map.releasePointerCapture(event.pointerId);
+            if (!pointers.size) map.classList.remove('is-dragging');
+        };
+        window.addEventListener('pointerup', release);
+        window.addEventListener('pointercancel', release);
+        map.addEventListener('click', event => { if (moved) { event.preventDefault(); event.stopImmediatePropagation(); } }, true);
+        map.addEventListener('dblclick', event => { event.preventDefault(); zoom(.5, point(event.clientX, event.clientY)); });
+    }
     function init() {
+        initMapGestures();
         for (let i = 0; i < 12; i++) {
             const button = node('button', 'fiere-month'); button.type = 'button'; button.dataset.month = String(i + 1);
             button.setAttribute('aria-pressed', 'false'); button.append(node('strong', '', MONTHS[i]));

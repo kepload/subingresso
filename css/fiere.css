@@ -15,6 +15,7 @@ button,summary{cursor:pointer}button:disabled{cursor:wait;opacity:.5}[hidden]{di
 .fiere-period-heading i,.fiere-place i{color:#2563eb;font-size:16px;width:18px;text-align:center}
 .fiere-button{border:1px solid #dbe3ee;border-radius:9px;background:white;min-height:44px;padding:9px 12px;font-size:12px;font-weight:700}
 .fiere-button[aria-pressed=true]{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
+.fiere-toggle{display:flex;align-items:center;gap:8px}.fiere-toggle-track{width:34px;height:20px;border-radius:20px;background:#94a3b8;padding:3px;flex-shrink:0;transition:background .15s}.fiere-toggle-track span{display:block;width:14px;height:14px;border-radius:50%;background:white;transition:transform .15s}.fiere-toggle[aria-checked=true] .fiere-toggle-track{background:#2563eb}.fiere-toggle[aria-checked=true] .fiere-toggle-track span{transform:translateX(14px)}#all-months-status{font-size:10px;min-width:22px}
 .fiere-months{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .fiere-month{border:1px solid #e2e8f0;background:#f8fafc;border-radius:9px;min-height:44px;padding:10px 3px;color:#334155;transition:background .15s,border-color .15s}
 .fiere-month:hover{border-color:#93c5fd}.fiere-month[aria-pressed=true]{background:#2563eb;color:white;border-color:#2563eb}
@@ -37,7 +38,7 @@ button,summary{cursor:pointer}button:disabled{cursor:wait;opacity:.5}[hidden]{di
 .fiere-panel-heading h2{font-size:14px;font-weight:800}.fiere-panel-heading p{font-size:12px;color:#64748b}
 .fiere-count{font-size:12px;font-weight:800;color:#2563eb;background:#eff6ff;padding:5px 10px;border-radius:7px}
 .fiere-map-stage{position:relative;background:radial-gradient(ellipse at 55% 35%,#f4f9ff,#eaf2fa);height:clamp(430px,65vh,600px);overflow:hidden}
-.fiere-map-stage svg{display:block;width:100%;height:100%;touch-action:pan-y;user-select:none}
+.fiere-map-stage svg{display:block;width:100%;height:100%;touch-action:none;user-select:none;cursor:grab}.fiere-map-stage svg.is-dragging,.fiere-map-stage svg.is-dragging *{cursor:grabbing}
 .fiere-region{fill:#fff;stroke:#cbd8e5;stroke-width:1;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill .15s}.fiere-region:hover,.fiere-region:focus-visible{fill:#dbeafe}.fiere-region.is-selected{fill:#dbeafe;stroke:#60a5fa}
 .fiere-marker{cursor:pointer}.fiere-marker .pin{stroke:#fff;stroke-width:2;filter:drop-shadow(0 1px 2px #1e3a5f40)}
 .fiere-marker text{fill:white;font-family:inherit;font-size:10px;font-weight:800;pointer-events:none;dominant-baseline:central;text-anchor:middle}
