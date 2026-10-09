@@ -138,11 +138,43 @@ async function run(engine,name,viewport,base) {
             assert(mapBox.y + mapBox.height < listBox.y,'Map before the results list');
         }
         await matches(events);
+        const firstCard = page.locator('.fiere-card').first();
+        const previewRegion = await firstCard.getAttribute('data-region');
+        const previewPath = page.locator('#map-regions [data-region="' + previewRegion + '"]');
+        const initialView = await page.locator('#italy-map').getAttribute('viewBox');
+        const initialURL = page.url();
+        const initialMarkers = await page.locator('#map-markers').innerHTML();
+        await firstCard.hover();
+        assert.equal(await page.locator('.fiere-region.is-preview').count(),1);
+        assert(await previewPath.evaluate(p => p.classList.contains('is-preview')));
+        await page.waitForFunction(() => getComputedStyle(document.querySelector('.fiere-region.is-preview')).fill === 'rgb(147, 197, 253)');
+        assert.equal(await page.locator('#map-caption').textContent(),previewRegion);
+        assert.equal(await page.locator('#region-filter').inputValue(),'');
+        assert.equal(page.url(),initialURL);
+        assert.equal(await page.locator('#italy-map').getAttribute('viewBox'),initialView);
+        assert.equal(await page.locator('#map-markers').innerHTML(),initialMarkers,'Hover reuses markers');
+        const otherCard = page.locator('.fiere-card').filter({has:page.locator('button')});
+        const otherIndex = await otherCard.evaluateAll((cards, region) => cards.findIndex(c => c.dataset.region !== region),previewRegion);
+        assert(otherIndex >= 0);
+        await otherCard.nth(otherIndex).hover();
+        assert.equal(await page.locator('.fiere-region.is-preview').getAttribute('data-region'),await otherCard.nth(otherIndex).getAttribute('data-region'));
+        await page.mouse.move(0,0);
+        assert.equal(await page.locator('.fiere-region.is-preview').count(),0);
+        await firstCard.locator('button').focus();
+        assert.equal(await page.locator('.fiere-region.is-preview').getAttribute('data-region'),previewRegion);
+        await page.locator('#region-filter').focus();
+        assert.equal(await page.locator('.fiere-region.is-preview').count(),0);
+        assert.equal(await page.locator('#map-caption').textContent(),'Trascina e ingrandisci');
         await page.locator('#load-more').click();
         assert.equal(await page.locator('.fiere-card').count(),24);
         for (const region of regions) {
             await page.selectOption('#region-filter',region);
             await matches(events.filter(e => e.region === region));
+            await page.locator('.fiere-card').first().hover();
+            assert.equal(await page.locator('.fiere-region.is-preview').getAttribute('data-region'),region);
+            await page.mouse.move(0,0);
+            assert.equal(await page.locator('.fiere-region.is-preview').count(),0);
+            assert.equal(await page.locator('.fiere-region.is-selected').getAttribute('data-region'),region);
         }
         await page.locator('#reset-filters').click();
         assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'false');

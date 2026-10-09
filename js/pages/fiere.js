@@ -76,7 +76,7 @@
 
     const $ = id => document.getElementById(id);
     const state = { events: [], regions: null, region: '', category: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
-    let searchTimer, mapMarkerTimer;
+    let searchTimer, mapMarkerTimer, hoveredCard, focusedCard;
     function node(tag, className, text) {
         const element = document.createElement(tag);
         if (className) element.className = className;
@@ -155,6 +155,13 @@
         for (const event of events.slice(0, state.visible)) {
             const card = node('article', 'fiere-card');
             card.dataset.eventId = event.id;
+            card.dataset.region = event.region;
+            card.addEventListener('mouseenter', () => { hoveredCard = card; updateRegionHighlight(); });
+            card.addEventListener('mouseleave', () => { hoveredCard = null; updateRegionHighlight(); });
+            card.addEventListener('focusin', () => { focusedCard = card; updateRegionHighlight(); });
+            card.addEventListener('focusout', e => {
+                if (!card.contains(e.relatedTarget)) { focusedCard = null; updateRegionHighlight(); }
+            });
             const head = node('div', 'fiere-card-head');
             const edition = selectEdition(event);
             head.append(node('h3', '', event.name), node('span', 'fiere-card-indicative', edition ? editionStatus(edition) : 'Periodo indicativo'));
@@ -170,6 +177,8 @@
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
+        hoveredCard = null; focusedCard = null;
+        updateRegionHighlight();
         $('fair-list').setAttribute('aria-busy', 'false');
         $('empty-results').hidden = events.length > 0 || !state.ready;
         $('load-more').hidden = state.visible >= events.length;
@@ -211,10 +220,18 @@
         clearTimeout(mapMarkerTimer);
         mapMarkerTimer = setTimeout(() => renderMap(filterEvents(state.events, state)), 120);
     }
+    function updateRegionHighlight() {
+        const previewRegion = (hoveredCard || focusedCard)?.dataset.region || '';
+        for (const path of $('map-regions').children) {
+            path.classList.toggle('is-selected', path.dataset.region === state.region);
+            path.classList.toggle('is-preview', path.dataset.region === previewRegion);
+        }
+        $('map-caption').textContent = previewRegion || 'Trascina e ingrandisci';
+    }
     function renderMap(events) {
         clearTimeout(mapMarkerTimer);
         updateMapView();
-        for (const path of $('map-regions').children) path.classList.toggle('is-selected', path.dataset.region === state.region);
+        updateRegionHighlight();
         // Convert screen pixels to the SVG coordinate system to keep markers tappable on zoom.
         const scale = Math.max(state.view[2] / Math.max($('italy-map').clientWidth, 1), state.view[3] / Math.max($('italy-map').clientHeight, 1));
         const groups = clusterEvents(events, 28 * scale);
@@ -235,7 +252,6 @@
             fragment.append(marker);
         }
         $('map-markers').replaceChildren(fragment);
-        $('map-caption').textContent = 'Trascina e ingrandisci';
     }
     function openPopup(group) {
         const cities = [...new Set(group.events.map(event => event.city))];
