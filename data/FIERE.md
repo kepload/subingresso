@@ -116,6 +116,10 @@ Correzioni e limiti da mantenere negli aggiornamenti:
 - Alcuni portali pubblicano ancora soltanto edizioni 2025: mantenute come storico,
   con richiesta di verifica. Ricorrenze testuali e stagioni restano tali, senza
   dedurre giornate giornaliere o inventare la prossima edizione.
+- Pisogne Fungo e Castagna: programma comunale 25–27 settembre 2026; la sezione
+  appuntamenti conserva vecchie date 2025. Bienno Natale nel Borgo: programma
+  turistico comunale 5–8 dicembre 2026, con orari distinti per giornata. Queste
+  fonti aggiornate prevalgono sulle schede turistiche rimaste all’edizione 2025.
 - Escluse feste con soli pasti, concerti, sport o raduni senza evidenza commerciale;
   escluso «Un tuffo nel passato» a Paratico, riservato agli hobbisti nel documento
   dell’organizzatore. Un evento con bancarelle non prova l’ammissione di ogni ambulante.
@@ -206,4 +210,4 @@ puntino della manifestazione. I link condivisi usano `provincia=Nome`; i vecchi
 parametri `regione` e le province sconosciute vengono eliminati senza interferire
 con mesi, tipo e ricerca. L'elenco delle province è nel catalogo per mantenere
 utilizzabile il filtro anche quando il caricamento della mappa fallisce.
-Cache: fiere.js v=12, fiere.css v=10, fiere.json v=6, italia-province.json v=1.
+Cache: fiere.js v=13, fiere.css v=10, fiere.json v=7, italia-province.json v=1.

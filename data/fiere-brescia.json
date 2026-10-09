@@ -266,8 +266,8 @@
         12
       ],
       "source": {
-        "url": "https://www.visitbrescia.it/eventi/natale-nel-borgo-bienno/",
-        "label": "visitbrescia.it",
+        "url": "https://www.bienno.info/it/eventi/natale-nel-borgo",
+        "label": "Comune di Bienno – portale turistico ufficiale",
         "checkedAt": "2026-10-09"
       },
       "editions": [
@@ -277,6 +277,13 @@
           "end": "2025-12-08",
           "dateType": "confirmed",
           "sourceUrl": "https://www.visitbrescia.it/eventi/natale-nel-borgo-bienno/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-05",
+          "end": "2026-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.bienno.info/it/eventi/natale-nel-borgo"
         }
       ],
       "participation": {
@@ -290,7 +297,8 @@
         "phone": "345 0484986"
       },
       "summary": "Mostra mercato o manifestazione con vendita di artigianato e prodotti natalizi.",
-      "frequencyNote": "La fonte consultata pubblica ancora l’edizione 2025. Le date 2026/2027 e l’eventuale ripetizione non sono confermate; chiedere all’organizzatore."
+      "frequencyNote": "Programma ufficiale del Comune per dicembre 2026. Edizione 2025 conservata come storico; candidatura degli espositori da richiedere a Bienno Turismo.",
+      "hours": "5 dicembre 14:00–22:00; 6–7 dicembre 10:00–22:00; 8 dicembre 10:00–18:00"
     },
     {
       "region": "Lombardia",
@@ -5581,8 +5589,8 @@
         9
       ],
       "source": {
-        "url": "https://www.visitbrescia.it/eventi/festa-fungo-castagna-pisogne/",
-        "label": "visitbrescia.it",
+        "url": "https://www.comune.pisogne.bs.it/vivere_il_comune/eventi/evento_4.html",
+        "label": "Comune di Pisogne – programma 2026",
         "checkedAt": "2026-10-09"
       },
       "editions": [
@@ -5592,20 +5600,29 @@
           "end": "2025-09-28",
           "dateType": "confirmed",
           "sourceUrl": "https://www.visitbrescia.it/eventi/festa-fungo-castagna-pisogne/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-25",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.pisogne.bs.it/vivere_il_comune/eventi/evento_4.html"
         }
       ],
       "participation": {
         "type": "selected",
-        "note": "Ammissione tramite l’organizzatore per gli espositori del settore indicato. Chiedi requisiti, selezione, disponibilità, giornate effettive di vendita e preventivo; la presenza di bancarelle non equivale a un bando aperto."
+        "note": "Il Comune menziona espressamente venditori ambulanti ed espositori. Richiedere alla Pro Loco assegnazione dello spazio, categorie ammesse, requisiti e costi; la gratuità dell’ingresso visitatori non è una tariffa per gli espositori."
       },
       "venue": "Centro storico",
-      "sectors": "Prodotti tipici, mercato agricolo e hobbisti",
+      "sectors": "Prodotti tipici, venditori ambulanti, artigianato e produttori km 0",
       "contacts": {
         "email": "prolocopisogne@gmail.com",
-        "phone": "0364 793503"
+        "phone": "375 5592496"
       },
       "summary": "Mostra mercato o manifestazione con vendita di prodotti tipici, mercato agricolo e hobbisti.",
-      "frequencyNote": "La fonte consultata pubblica ancora l’edizione 2025. Le date 2026/2027 e l’eventuale ripetizione non sono confermate; chiedere all’organizzatore."
+      "frequencyNote": "Il programma comunale aggiornato al 21 settembre pubblica 25–27 settembre 2026; la sezione appuntamenti conserva date 2025, mantenute soltanto come storico.",
+      "organizer": "Pro Loco Pisogne",
+      "hours": "Venerdì espositori dalle 19:00; sabato e domenica dalle 10:00, secondo il programma 2026"
     },
     {
       "region": "Lombardia",
