@@ -3,6 +3,7 @@
 python scripts/build-fiere.py
 python scripts/build-fiere.py --boundaries path/to/limits_IT_regions.geojson
 The second command additionally simplifies the CC BY 4.0 regional boundaries.
+python scripts/build-fiere.py --province-boundaries provinces.geojson --sardinia-municipalities sardinia.geojson
 """
 import argparse
 from collections import Counter
@@ -52,6 +53,8 @@ def write_json(path, data):
 
 
 def build_catalog():
+    province_map = json.loads((ROOT / "data/italia-province.json").read_text(encoding="utf-8"))
+    sardinia_provinces = {key(name): province for name, province in province_map["sardiniaMunicipalities"].items()}
     rows = json.loads((ROOT / "data/fiere-fonti.json").read_text(encoding="utf-8"))
     imported = json.loads((ROOT / "data/fiere-importate.json").read_text(encoding="utf-8"))
     groups = {}
@@ -93,8 +96,9 @@ def build_catalog():
         months = [int(n) for n in row["months"].split(",")] if isinstance(row["months"], str) else row["months"]
         assert months and len(months) == len(set(months)) and all(1 <= n <= 12 for n in months)
         assert row["category"] in CATEGORIES and row["source"]["url"].startswith("https://")
+        province = sardinia_provinces[key(row["city"])] if row["region"] == "Sardegna" else city["provincia"]
         event = dict(row, id=key(row["region"] + "-" + row["city"] + "-" + row["name"]), months=months,
-                     province=city["provincia"], lat=city["lat"], lng=city["lng"])
+                     province=province, lat=city["lat"], lng=city["lng"])
         editions = []
         signatures = set()
         for edition in event.get("editions", []):
@@ -118,7 +122,10 @@ def build_catalog():
     counts = Counter(e["region"] for e in events)
     assert len(events) == len({e["id"] for e in events}) and len(events) >= 200
     assert len(counts) == 20
+    provinces = sorted((f["properties"]["name"] for f in province_map["features"]))
+    assert all(e["province"] in provinces for e in events)
     write_json(ROOT / "data/fiere.json", {"catalogUpdatedAt": CATALOG_DATE, "periodType": "editions-and-usual-months",
+               "provinces": provinces,
                "coordinateType": "municipality-centre", "regionalImportYear": imported["year"],
                "eventsWithEditionData": sum(bool(e["editions"]) for e in events),
                "eventsWithPublishedDates": sum(any(e.get("start") and not e.get("periodOnly") for e in event["editions"]) for event in events), "events": events})
@@ -169,10 +176,39 @@ def build_boundaries(path):
     print("Map: 20 simplified regional boundaries")
 
 
+def build_province_boundaries(path, sardinia_path):
+    source = json.loads(path.read_text(encoding="utf-8"))
+    sardinia = json.loads(sardinia_path.read_text(encoding="utf-8"))
+    features = []
+    for feature in source["features"]:
+        geometry = feature["geometry"]
+        if geometry["type"] == "Polygon":
+            coords = [simplify_ring(ring) for ring in geometry["coordinates"]]
+        else:
+            assert geometry["type"] == "MultiPolygon"
+            coords = [[simplify_ring(ring) for ring in polygon] for polygon in geometry["coordinates"]]
+        properties = feature["properties"]
+        features.append({"type": "Feature", "properties": {"name": properties["prov_name"], "abbr": properties["prov_acr"]},
+                         "geometry": {"type": geometry["type"], "coordinates": coords}})
+    municipalities = {f["properties"]["name"]: f["properties"]["prov_name"] for f in sardinia["features"]}
+    assert len(features) == len({f["properties"]["name"] for f in features}) == 110
+    assert len(municipalities) == 377
+    write_json(ROOT / "data/italia-province.json", {"type": "FeatureCollection", "features": features,
+               "sourceVersion": "geojson-italy/2026.2", "sourceCheckedAt": "2026-10-09",
+               "sardiniaMunicipalities": municipalities})
+    print("Map: 110 simplified provincial boundaries; 377 official Sardinian municipality assignments")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--boundaries", type=Path)
+    parser.add_argument("--province-boundaries", type=Path)
+    parser.add_argument("--sardinia-municipalities", type=Path)
     options = parser.parse_args()
+    if options.province_boundaries:
+        if not options.sardinia_municipalities:
+            parser.error("--province-boundaries requires --sardinia-municipalities")
+        build_province_boundaries(options.province_boundaries, options.sardinia_municipalities)
     build_catalog()
     if options.boundaries:
         build_boundaries(options.boundaries)

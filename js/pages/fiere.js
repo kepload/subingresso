@@ -12,7 +12,7 @@
     }
     function filterEvents(events, state, ignoreMonths) {
         const words = normalize(state.query).split(' ').filter(Boolean);
-        return events.filter(event => (!state.region || event.region === state.region) && (!state.category || event.category === state.category)
+        return events.filter(event => (!state.province || event.province === state.province) && (!state.category || event.category === state.category)
             && (ignoreMonths || !state.months.length || event.months.some(month => state.months.includes(month)))
             && words.every(word => normalize([event.name, event.city, event.region, event.province, event.venue, event.sectors].join(' ')).includes(word)));
     }
@@ -75,7 +75,7 @@
     if (typeof document === 'undefined') return;
 
     const $ = id => document.getElementById(id);
-    const state = { events: [], regions: null, region: '', category: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
+    const state = { events: [], provinces: null, province: '', category: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
     let searchTimer, mapMarkerTimer, hoveredCard, focusedCard;
     function node(tag, className, text) {
         const element = document.createElement(tag);
@@ -123,9 +123,9 @@
     }
     function syncURL() {
         const url = new URL(location.href);
-        for (const key of ['mesi', 'regione', 'tipo', 'q']) url.searchParams.delete(key);
+        for (const key of ['mesi', 'regione', 'provincia', 'tipo', 'q']) url.searchParams.delete(key);
         if (state.months.length) url.searchParams.set('mesi', state.months.join(','));
-        if (state.region) url.searchParams.set('regione', state.region);
+        if (state.province) url.searchParams.set('provincia', state.province);
         if (state.category) url.searchParams.set('tipo', state.category);
         if (state.query) url.searchParams.set('q', state.query);
         history.replaceState(null, '', url.pathname + url.search + url.hash);
@@ -133,10 +133,10 @@
     function readURL() {
         const params = new URLSearchParams(location.search);
         state.months = [...new Set((params.get('mesi') || '').split(',').map(Number).filter(n => Number.isInteger(n) && n >= 1 && n <= 12))];
-        state.region = [...$('region-filter').options].some(option => option.value === params.get('regione')) ? params.get('regione') || '' : '';
+        state.province = [...$('province-filter').options].some(option => option.value === params.get('provincia')) ? params.get('provincia') || '' : '';
         state.category = Object.hasOwn(CATEGORIES, params.get('tipo')) ? params.get('tipo') : '';
         state.query = (params.get('q') || '').slice(0, 100);
-        $('region-filter').value = state.region;
+        $('province-filter').value = state.province;
         $('type-filter').value = state.category;
         $('fair-search').value = state.query;
     }
@@ -155,7 +155,7 @@
         for (const event of events.slice(0, state.visible)) {
             const card = node('article', 'fiere-card');
             card.dataset.eventId = event.id;
-            card.dataset.region = event.region;
+            card.dataset.province = event.province;
             card.dataset.city = event.city;
             card.addEventListener('mouseenter', () => { hoveredCard = card; updateMapHighlight(); });
             card.addEventListener('mouseleave', () => { hoveredCard = null; updateMapHighlight(); });
@@ -174,7 +174,7 @@
             button.addEventListener('click', () => openDetail(event));
             const foot = node('div', 'fiere-card-foot');
             foot.append(category, button);
-            card.append(head, node('p', '', event.city + ' · ' + event.region), node('p', 'fiere-card-period', edition ? editionLabel(edition) : periodLabel(event)), foot);
+            card.append(head, node('p', '', event.city + ' · ' + event.province), node('p', 'fiere-card-period', edition ? editionLabel(edition) : periodLabel(event)), foot);
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
@@ -186,23 +186,23 @@
         $('list-count').textContent = String(events.length);
     }
     function polygons(feature) { return feature.geometry.type === 'Polygon' ? [feature.geometry.coordinates] : feature.geometry.coordinates; }
-    function drawRegions() {
+    function drawProvinces() {
         const fragment = document.createDocumentFragment();
-        for (const feature of state.regions.features) {
-            const region = feature.properties.name;
+        for (const feature of state.provinces.features) {
+            const province = feature.properties.name;
             const d = polygons(feature).map(polygon => polygon.map(ring => ring.map((point, i) => {
                 const projected = project(point[0], point[1]);
                 return (i === 0 ? 'M' : 'L') + projected.map(n => n.toFixed(2)).join(',');
             }).join(' ') + ' Z').join(' ')).join(' ');
-            const path = svgNode('path', { d, class: 'fiere-region', 'data-region': region, role: 'button', tabindex: '0', 'aria-label': 'Mostra le fiere in ' + region, 'fill-rule': 'evenodd' });
-            const title = svgNode('title'); title.textContent = region; path.append(title);
-            activate(path, () => { state.region = region; $('region-filter').value = region; changed(true); });
+            const path = svgNode('path', { d, class: 'fiere-province', 'data-province': province, role: 'button', tabindex: '0', 'aria-label': 'Mostra le fiere nella provincia di ' + province, 'fill-rule': 'evenodd' });
+            const title = svgNode('title'); title.textContent = province; path.append(title);
+            activate(path, () => { if (!state.ready) return; state.province = province; $('province-filter').value = province; changed(true); });
             fragment.append(path);
         }
-        $('map-regions').replaceChildren(fragment);
+        $('map-provinces').replaceChildren(fragment);
     }
-    function fitRegion() {
-        const feature = state.regions?.features.find(item => item.properties.name === state.region);
+    function fitProvince() {
+        const feature = state.provinces?.features.find(item => item.properties.name === state.province);
         if (!feature) { state.view = HOME.slice(); return; }
         const points = polygons(feature).flat(2).map(point => project(...point));
         const minX = Math.min(...points.map(p => p[0])), maxX = Math.max(...points.map(p => p[0]));
@@ -223,16 +223,16 @@
     }
     function updateMapHighlight() {
         const card = hoveredCard || focusedCard;
-        const previewRegion = !state.region ? card?.dataset.region || '' : '';
-        const previewEvent = state.region ? card?.dataset.eventId || '' : '';
-        for (const path of $('map-regions').children) {
-            path.classList.toggle('is-selected', path.dataset.region === state.region);
-            path.classList.toggle('is-preview', path.dataset.region === previewRegion);
+        const previewProvince = !state.province ? card?.dataset.province || '' : '';
+        const previewEvent = state.province ? card?.dataset.eventId || '' : '';
+        for (const path of $('map-provinces').children) {
+            path.classList.toggle('is-selected', path.dataset.province === state.province);
+            path.classList.toggle('is-preview', path.dataset.province === previewProvince);
         }
         for (const marker of $('map-markers').children) {
             marker.classList.toggle('is-preview', Boolean(previewEvent) && marker.dataset.events.split(',').includes(previewEvent));
         }
-        $('map-caption').textContent = previewRegion || (previewEvent ? card.dataset.city : 'Trascina e ingrandisci');
+        $('map-caption').textContent = previewProvince || (previewEvent ? card.dataset.city : 'Trascina e ingrandisci');
     }
     function renderMap(events) {
         clearTimeout(mapMarkerTimer);
@@ -281,7 +281,7 @@
         $('detail-category').textContent = CATEGORIES[event.category];
         $('detail-category').dataset.category = event.category;
         $('detail-title').textContent = event.name;
-        $('detail-location').textContent = event.city + ' · ' + event.region;
+        $('detail-location').textContent = event.city + ' · ' + event.province;
         $('detail-months').textContent = periodLabel(event);
         $('detail-frequency').textContent = event.frequencyNote || '';
         $('detail-frequency').hidden = !event.frequencyNote;
@@ -333,7 +333,7 @@
     function render() {
         const events = sortEvents(filterEvents(state.events, state));
         renderMonths(); renderList(events); renderMap(events);
-        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel();
+        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || 'Tutta Italia') + ' · ' + selectedMonthsLabel();
         const extraCount = Number(Boolean(state.category)) + Number(Boolean(state.query));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
@@ -342,13 +342,13 @@
     }
     function changed(refit) {
         state.visible = 12; state.selected = ''; $('map-popup').hidden = true;
-        if (refit) fitRegion();
+        if (refit) fitProvince();
         if (state.ready) render();
     }
     function reset() {
         clearTimeout(searchTimer);
-        Object.assign(state, { region: '', category: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
-        for (const id of ['region-filter', 'type-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
+        Object.assign(state, { province: '', category: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
+        for (const id of ['province-filter', 'type-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
         changed(false);
     }
     async function fetchJSON(url) {
@@ -365,8 +365,10 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=4');
-            if (!Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
+            const data = await fetchJSON('/data/fiere.json?v=5');
+            if (!Array.isArray(data.provinces) || !data.provinces.length || new Set(data.provinces).size !== data.provinces.length
+                || !data.provinces.every(province => typeof province === 'string' && province) || !Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
+                && typeof event.province === 'string' && data.provinces.includes(event.province)
                 && typeof event.name === 'string' && Array.isArray(event.months) && event.months.length
                 && event.months.every(month => Number.isInteger(month) && month >= 1 && month <= 12)
                 && Number.isFinite(event.lat) && Number.isFinite(event.lng) && Object.hasOwn(CATEGORIES, event.category)
@@ -375,14 +377,14 @@
             state.events = data.events;
             $('catalog-count').textContent = String(state.events.length);
             $('catalog-info').textContent = data.eventsWithEditionData + ' schede con edizioni da fonti ufficiali · aggiornato il ' + dateLabel(data.catalogUpdatedAt);
-            const previous = state.region;
-            $('region-filter').replaceChildren(node('option', '', 'Tutta Italia'));
-            $('region-filter').firstChild.value = '';
-            for (const region of [...new Set(state.events.map(event => event.region))].sort((a, b) => a.localeCompare(b, 'it'))) {
-                const option = node('option', '', region); option.value = region; $('region-filter').append(option);
+            const previous = state.province;
+            $('province-filter').replaceChildren(node('option', '', 'Tutta Italia'));
+            $('province-filter').firstChild.value = '';
+            for (const province of data.provinces.slice().sort((a, b) => a.localeCompare(b, 'it'))) {
+                const option = node('option', '', province); option.value = province; $('province-filter').append(option);
             }
-            if (!state.ready) readURL(); else { state.region = previous; $('region-filter').value = previous; }
-            state.ready = true; fitRegion(); render();
+            if (!state.ready) readURL(); else { state.province = previous; $('province-filter').value = previous; }
+            state.ready = true; $('province-filter').disabled = false; fitProvince(); render();
         } catch (error) {
             $('catalog-error').hidden = false;
             $('fair-list').setAttribute('aria-busy', 'false');
@@ -392,9 +394,12 @@
     async function loadMap() {
         $('retry-map').disabled = true; $('map-error').hidden = true;
         try {
-            const data = await fetchJSON('/data/italia-regioni.json?v=1');
-            if (!Array.isArray(data.features) || data.features.length !== 20) throw new Error('Invalid boundaries');
-            state.regions = data; drawRegions(); fitRegion();
+            const data = await fetchJSON('/data/italia-province.json?v=1');
+            if (!Array.isArray(data.features) || !data.features.length
+                || new Set(data.features.map(feature => feature.properties?.name)).size !== data.features.length
+                || !data.features.every(feature => typeof feature.properties?.name === 'string'
+                    && ['Polygon', 'MultiPolygon'].includes(feature.geometry?.type) && Array.isArray(feature.geometry.coordinates))) throw new Error('Invalid boundaries');
+            state.provinces = data; drawProvinces(); fitProvince();
             renderMap(filterEvents(state.events, state));
         } catch (error) { $('map-error').hidden = false; }
         finally { $('retry-map').disabled = false; }
@@ -478,7 +483,7 @@
             state.months = intervalMonths(from, to); changed(false);
         });
         $('all-months').addEventListener('click', () => { state.months = state.months.length === 12 ? [] : intervalMonths(1, 12); $('month-from').value = ''; $('month-to').value = ''; changed(false); });
-        $('region-filter').addEventListener('change', () => { state.region = $('region-filter').value; changed(true); });
+        $('province-filter').addEventListener('change', () => { state.province = $('province-filter').value; changed(true); });
         $('type-filter').addEventListener('change', () => { state.category = $('type-filter').value; changed(false); });
         $('fair-search').addEventListener('input', () => {
             state.query = $('fair-search').value;
