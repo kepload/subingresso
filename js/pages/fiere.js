@@ -21,11 +21,13 @@
         const mercator = value => Math.log(Math.tan(Math.PI / 4 + value * Math.PI / 360));
         return [50 + (lng - 6.5) * 46, 25 + (mercator(47.2) - mercator(lat)) * 2500];
     }
+    const projectedEvents = new WeakMap();
     function clusterEvents(events, threshold) {
         const groups = [];
         for (const event of events) {
-            const point = project(event.lng, event.lat);
-            const group = groups.find(item => Math.hypot(item.x - point[0], item.y - point[1]) <= threshold);
+            let point = projectedEvents.get(event);
+            if (!point) { point = project(event.lng, event.lat); projectedEvents.set(event, point); }
+            const group = groups.find(item => (item.x - point[0]) ** 2 + (item.y - point[1]) ** 2 <= threshold ** 2);
             if (group) {
                 const count = group.events.length;
                 group.x = (group.x * count + point[0]) / (count + 1);
@@ -74,7 +76,7 @@
 
     const $ = id => document.getElementById(id);
     const state = { events: [], regions: null, region: '', category: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
-    let searchTimer;
+    let searchTimer, mapMarkerTimer;
     function node(tag, className, text) {
         const element = document.createElement(tag);
         if (className) element.className = className;
@@ -140,10 +142,7 @@
     }
     function renderMonths() {
         const pool = filterEvents(state.events, state, true);
-        $('all-months').setAttribute('aria-pressed', String(state.months.length === 12));
         $('all-months').setAttribute('aria-checked', String(state.months.length === 12));
-        $('all-months-status').textContent = state.months.length === 12 ? 'ON' : 'OFF';
-        $('all-months').setAttribute('aria-label', state.months.length === 12 ? 'Deseleziona tutti i mesi' : 'Seleziona tutti i mesi');
         for (const button of $('month-bar').children) {
             const month = Number(button.dataset.month);
             button.setAttribute('aria-pressed', String(state.months.includes(month)));
@@ -202,12 +201,23 @@
         const height = width * HOME[3] / HOME[2];
         state.view = [(minX + maxX - width) / 2, (minY + maxY - height) / 2, width, height];
     }
-    function renderMap(events) {
+    function updateMapView() {
         $('italy-map').setAttribute('viewBox', state.view.join(' '));
+        $('map-zoom-in').disabled = state.view[2] <= 12;
+        $('map-zoom-out').disabled = state.view[2] >= HOME[2];
+    }
+    // Keep existing SVG markers during gestures; regroup once zoom input settles.
+    function scheduleMapMarkers() {
+        clearTimeout(mapMarkerTimer);
+        mapMarkerTimer = setTimeout(() => renderMap(filterEvents(state.events, state)), 120);
+    }
+    function renderMap(events) {
+        clearTimeout(mapMarkerTimer);
+        updateMapView();
         for (const path of $('map-regions').children) path.classList.toggle('is-selected', path.dataset.region === state.region);
         // Convert screen pixels to the SVG coordinate system to keep markers tappable on zoom.
         const scale = Math.max(state.view[2] / Math.max($('italy-map').clientWidth, 1), state.view[3] / Math.max($('italy-map').clientHeight, 1));
-        const groups = clusterEvents(events, 20 * scale);
+        const groups = clusterEvents(events, 28 * scale);
         const fragment = document.createDocumentFragment();
         for (const group of groups) {
             const cities = [...new Set(group.events.map(event => event.city))];
@@ -226,8 +236,6 @@
         }
         $('map-markers').replaceChildren(fragment);
         $('map-caption').textContent = 'Trascina e ingrandisci';
-        $('map-zoom-in').disabled = state.view[2] <= 12;
-        $('map-zoom-out').disabled = state.view[2] >= HOME[2];
     }
     function openPopup(group) {
         const cities = [...new Set(group.events.map(event => event.city))];
@@ -368,30 +376,27 @@
         } catch (error) { $('map-error').hidden = false; }
         finally { $('retry-map').disabled = false; }
     }
-    function zoom(factor, anchor = [state.view[0] + state.view[2] / 2, state.view[1] + state.view[3] / 2]) {
+    function zoom(factor, anchor = [state.view[0] + state.view[2] / 2, state.view[1] + state.view[3] / 2], deferMarkers = false) {
         const width = Math.max(12, Math.min(HOME[2], state.view[2] * factor));
         const height = width * HOME[3] / HOME[2];
         const ratio = width / state.view[2];
         state.view = [anchor[0] - (anchor[0] - state.view[0]) * ratio, anchor[1] - (anchor[1] - state.view[1]) * ratio, width, height];
-        $('map-popup').hidden = true; renderMap(filterEvents(state.events, state));
+        $('map-popup').hidden = true;
+        if (deferMarkers) { updateMapView(); scheduleMapMarkers(); }
+        else renderMap(filterEvents(state.events, state));
     }
     function initMapGestures() {
         const map = $('italy-map'), pointers = new Map();
-        let moved = false, frame;
+        let moved = false;
         const point = (x, y) => {
             const p = map.createSVGPoint(); p.x = x; p.y = y;
             const result = p.matrixTransform(map.getScreenCTM().inverse());
             return [result.x, result.y];
         };
-        const redraw = () => {
-            map.setAttribute('viewBox', state.view.join(' '));
-            $('map-popup').hidden = true;
-            if (!frame) frame = requestAnimationFrame(() => { frame = null; renderMap(filterEvents(state.events, state)); });
-        };
         map.addEventListener('wheel', event => {
             event.preventDefault();
             const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? map.clientHeight : 1);
-            zoom(Math.exp(Math.max(-1, Math.min(1, delta * .002))), point(event.clientX, event.clientY));
+            zoom(Math.exp(Math.max(-1, Math.min(1, delta * .002))), point(event.clientX, event.clientY), true);
         }, { passive: false });
         map.addEventListener('pointerdown', event => {
             if (event.button !== 0) return;
@@ -417,7 +422,9 @@
                 const scale = width / state.view[2];
                 state.view = [from[0] - (from[0] - state.view[0]) * scale, from[1] - (from[1] - state.view[1]) * scale, width, width * HOME[3] / HOME[2]];
             }
-            redraw();
+            updateMapView();
+            $('map-popup').hidden = true;
+            if (current.length === 2) scheduleMapMarkers();
         });
         const release = event => {
             pointers.delete(event.pointerId);

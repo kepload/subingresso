@@ -125,25 +125,26 @@ async function run(engine,name,viewport,base) {
             await matches(events.filter(e => e.region === region));
         }
         await page.locator('#reset-filters').click();
-        assert.equal(await page.locator('#all-months').getAttribute('aria-pressed'),'false');
+        assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'false');
+        assert.equal(await page.locator('#all-months').textContent(),'Tutto l’anno');
+        assert.equal(await page.locator('#all-months').getAttribute('role'),'switch');
         await page.locator('#all-months').click();
         assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
-        assert.equal(await page.locator('#all-months').getAttribute('aria-pressed'),'true');
         assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'true');
-        assert.equal(await page.locator('#all-months-status').textContent(),'ON');
+        assert.equal(await page.locator('#all-months').textContent(),'Tutto l’anno');
         await matches(events);
         await page.reload();
         await matches(events);
         assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
         await page.locator('[data-month="11"]').click();
         assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),11);
-        assert.equal(await page.locator('#all-months').getAttribute('aria-pressed'),'false');
+        assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'false');
         await matches(events.filter(e => e.months.some(m => m !== 11)));
         await page.locator('#all-months').click();
         assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
         await page.locator('#all-months').click();
         assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),0);
-        assert.equal(await page.locator('#all-months').getAttribute('aria-pressed'),'false');
+        assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'false');
         assert.equal(new URL(page.url()).searchParams.get('mesi'),null);
         await matches(events);
         await page.locator('[data-month="11"]').click();
@@ -178,7 +179,7 @@ async function run(engine,name,viewport,base) {
         assert((await page.locator('#detail-editions').textContent()).includes('17 dic 2026'));
         assert((await page.locator('#detail-participation-note').textContent()).length > 20);
         await page.keyboard.press('Escape');
-        assert.equal(await page.locator('#fair-dialog').evaluate(d => d.open),false);
+        await page.waitForFunction(() => !document.querySelector('#fair-dialog').open);
         await page.locator('#fair-search').fill('Fiera dei Morti');
         await matches(api.filterEvents(events,{region:'',category:'',months:[],query:'Fiera dei Morti'}));
         await page.locator('.fiere-card[data-event-id="' + perugia.id + '"] .fiere-card-button').click();
@@ -189,11 +190,13 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('#fair-dialog').evaluate(d => d.scrollWidth > d.clientWidth),false,'Detail overflow');
         await page.locator('#fair-dialog').screenshot({path:path.join(os.tmpdir(),'subingresso-fiere-detail-'+name+'-'+viewport.width+'.png')});
         await page.keyboard.press('Escape');
+        await page.waitForFunction(() => !document.querySelector('#fair-dialog').open);
         await page.locator('#fair-search').fill('Ottobrata Zafferanese');
         await matches([ottobrata]);
         await page.locator('.fiere-card-button').click();
         assert.equal(await page.locator('#detail-editions > div').count(),4);
         await page.keyboard.press('Escape');
+        await page.waitForFunction(() => !document.querySelector('#fair-dialog').open);
         await page.locator('#fair-search').fill('zzzz-no-result');
         await matches([]);
         assert(await page.locator('#empty-results').isVisible());
@@ -222,7 +225,14 @@ async function run(engine,name,viewport,base) {
         await page.mouse.wheel(0,-450);
         await page.waitForFunction(home => Number(document.querySelector('#italy-map').getAttribute('viewBox').split(' ')[2]) < Number(home.split(' ')[2]),before);
         const zoomed = await page.locator('#italy-map').getAttribute('viewBox');
-        assert(await page.locator('#map-markers > g').count() > api.clusterEvents(events,20*Math.max(660/mapArea.width,730/mapArea.height)).length,'Zoom separates marker groups');
+        await page.waitForFunction(initial => document.querySelector('#map-markers').children.length > initial,
+            api.clusterEvents(events,28*Math.max(660/mapArea.width,730/mapArea.height)).length);
+        const markersBeforeDrag = await page.locator('#map-markers > g').count();
+        await page.evaluate(() => {
+            window.markerChanges = 0;
+            window.markerObserver = new MutationObserver(changes => { window.markerChanges += changes.length; });
+            window.markerObserver.observe(document.querySelector('#map-markers'),{childList:true});
+        });
         await page.mouse.down();
         await page.mouse.move(mx+55,my+35,{steps:5});
         await page.mouse.up();
@@ -231,6 +241,9 @@ async function run(engine,name,viewport,base) {
         assert.equal(dragged.split(' ')[2],zoomed.split(' ')[2],'Drag preserves zoom');
         assert.equal(await page.locator('#region-filter').inputValue(),'','Drag must not select a region');
         assert.equal(await page.locator('#map-popup').isVisible(),false,'Drag must not open a marker');
+        assert.equal(await page.locator('#map-markers > g').count(),markersBeforeDrag);
+        assert.equal(await page.evaluate(() => window.markerChanges),0,'Drag reuses the markers');
+        await page.evaluate(() => { window.markerObserver.disconnect(); });
         await page.locator('#italy-map').evaluate((map, pos) => {
             const send = (type,id,x) => map.dispatchEvent(new PointerEvent(type,{bubbles:true,pointerId:id,pointerType:'touch',button:0,clientX:x,clientY:pos.y}));
             send('pointerdown',21,pos.x-30); send('pointerdown',22,pos.x+30);

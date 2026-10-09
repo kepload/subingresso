@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
     <link rel="stylesheet" href="/css/tailwind.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/fiere.css?v=5">
+    <link rel="stylesheet" href="/css/fiere.css?v=6">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -30,7 +30,7 @@
     <section class="fiere-filters" aria-label="Filtra le fiere">
         <div class="fiere-period-heading">
             <h2><i class="fa-regular fa-calendar" aria-hidden="true"></i> Quando</h2>
-            <button type="button" id="all-months" class="fiere-button fiere-toggle" role="switch" aria-checked="false" aria-pressed="false" aria-controls="month-bar"><span>Tutto l’anno</span><span class="fiere-toggle-track" aria-hidden="true"><span></span></span><span id="all-months-status" aria-hidden="true">OFF</span></button>
+            <button type="button" id="all-months" class="fiere-toggle" role="switch" aria-label="Tutto l’anno" aria-checked="false" aria-controls="month-bar"><span>Tutto l’anno</span><span class="fiere-toggle-track" aria-hidden="true"><span></span></span></button>
         </div>
         <div id="month-bar" class="fiere-months" role="group" aria-label="Mesi dell’anno"></div>
         <div class="fiere-place">
@@ -83,6 +83,6 @@
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/data.js?v=20"></script>
 <script src="/js/auth.js?v=22"></script>
-<script src="/js/pages/fiere.js?v=6"></script>
+<script src="/js/pages/fiere.js?v=7"></script>
 </body>
 </html>
