@@ -8,6 +8,8 @@ Audit completo in `DATA_QUALITY_AUDIT_20261008.md`. Applicata `PATCH_DATA_QUALIT
 
 ## Ricerche geografiche admin — 9 ottobre 2026
 
+Entrambi i grafici geografici hanno selettore indipendente 7/30/365/sempre (p_days=0). Patch PATCH_GEO_HISTORY_20261009.sql: archivio permanente geo_stats_daily, soli conteggi per giorno UTC/località, senza sessioni o account; backfill dei dati presenti e trigger AFTER INSERT su page_views e location_search_events. I contatori sopravvivono alla rimozione dei log originali. Non eliminare/troncare questo archivio nei processi di pulizia. Migrazione riapplicabile senza duplicazione. Visite includono path /annunci/slug e storico /comune/slug. Nessuna pulizia dei dati originali introdotta. Verifica live: tutti i conteggi geografici preesistenti recuperati (15 visite al momento della migrazione). Test scripts/test-geo-history.sql transazionale e scripts/test-search-stats.cjs: periodi, permessi, deduplica, persistenza archivio, cambio rapido selettore. Sempre significa tutto lo storico raccolto, non ricostruzione di eventi mai tracciati.
+
 Pannello aggiuntivo Località più cercate, ultimi 30 giorni, sotto Top comuni. Raccolta da questa data in location_search_events tramite track_location_search: solo località validate dall'anagrafica privata, nessun testo libero o dato account, una località per sessione; escluse sole regioni e browser automatizzati. Include ricerche senza risultati. Lettura admin_top_location_searches riservata admin. Patch PATCH_SEARCH_STATS_20261009.sql applicata; test scripts/test-search-stats.cjs e verifica live transazionale di permessi/validazione/deduplica. Annunci JS v14. Non ricostruire lo storico dalle visite.
 
 ## 🎯 Business Focus

@@ -30,14 +30,28 @@ const read = file => fs.readFileSync(path.join(root, file), 'utf8');
     await context.trackLocationSearch({...milano,nome:'Brescia'}); assert.equal(calls,3,'Si ritenta dopo errore');
     const list = {innerHTML:''};
     const dashboard = read('dashboard.html');
-    const ui = {document:{getElementById:()=>list},escapeHTML:s=>String(s).replaceAll('<','&lt;'),
+    let period = '30', queriedDays;
+    const ui = {document:{getElementById:id=>id.endsWith('Period')?{value:period}:list},escapeHTML:s=>String(s).replaceAll('<','&lt;'),
         _supabase:{rpc:async()=>({data:[]})}};
     vm.createContext(ui);
-    vm.runInContext(dashboard.slice(dashboard.indexOf('async function loadTopSearches'),dashboard.indexOf('async function loadTopComuni')),ui);
+    vm.runInContext(dashboard.slice(dashboard.indexOf('let topSearchesRequest'),dashboard.indexOf('// Annunci attivi per regione')),ui);
     await ui.loadTopSearches(); assert.match(list.innerHTML,/Nessuna ricerca registrata/);
     ui._supabase.rpc = async()=>({data:[{name:'<img>',provincia:'Milano',cnt:3}]});
     await ui.loadTopSearches(); assert.ok(!list.innerHTML.includes('<img>')); assert.match(list.innerHTML,/width:100%/);
     ui._supabase.rpc = async()=>({error:'offline'});
     await ui.loadTopSearches(); assert.match(list.innerHTML,/temporaneamente non disponibili/);
+    for (const load of [ui.loadTopSearches,ui.loadTopComuni]) {
+        for (const value of ['7','30','365','0']) {
+            period=value;
+            ui._supabase.rpc=async(_name,args)=>{queriedDays=args.p_days;return{data:[]};};
+            await load(); assert.equal(queriedDays,Number(value)); assert.match(list.innerHTML,/periodo selezionato/);
+        }
+        let finish;
+        ui._supabase.rpc=()=>new Promise(resolve=>{finish=resolve;});
+        const older=load();
+        ui._supabase.rpc=async()=>({data:[]}); await load();
+        finish({error:'old failure'}); await older;
+        assert.match(list.innerHTML,/periodo selezionato/,'Risposta vecchia ignorata');
+    }
     console.log('OK: deduplica, esclusione bot/testo libero, retry, grafico vuoto, barre, escape e errori.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

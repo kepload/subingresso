@@ -452,20 +452,22 @@
             </div>
 
             <!-- Top 10 comuni per page_views (ultimi 30 giorni) -->
-            <div id="topComuniSection" class="hidden bg-white border border-slate-100 rounded-3xl p-6">
+            <div id="topComuniSection" class="bg-white border border-slate-100 rounded-3xl p-6">
                 <h3 class="font-black text-slate-900 flex items-center gap-2 mb-4">
-                    <i class="fas fa-map-marker-alt text-blue-500"></i> Top comuni · ultimi 30 giorni
-                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">/comune/[slug]</span>
+                    <i class="fas fa-map-marker-alt text-blue-500"></i> Comuni più visitati
                 </h3>
+                <select id="topComuniPeriod" onchange="loadTopComuni()" aria-label="Periodo comuni più visitati" class="mb-4 border border-slate-200 rounded-lg px-3 py-2 text-xs font-bold"><option value="7">Ultima settimana</option><option value="30" selected>Ultimi 30 giorni</option><option value="365">Ultimo anno</option><option value="0">Sempre</option></select>
                 <div id="topComuniList" class="grid grid-cols-1 md:grid-cols-2 gap-2">
                     <p class="text-xs text-slate-400 font-bold">Caricamento…</p>
                 </div>
+                <details class="mt-3 text-xs text-slate-500"><summary class="cursor-pointer">Cosa viene contato?</summary><p class="mt-2">Visite registrate alle pagine dei comuni. I periodi includono oggi e usano giorni UTC. Sempre comprende tutto lo storico disponibile. I conteggi giornalieri vengono conservati senza identificativi dei visitatori.</p></details>
             </div>
 
             <div id="topSearchesSection" class="bg-white border border-slate-100 rounded-3xl p-6">
-                <h3 class="font-black text-slate-900 flex items-center gap-2 mb-4"><i class="fas fa-search text-blue-500"></i> Località più cercate · ultimi 30 giorni</h3>
+                <h3 class="font-black text-slate-900 flex items-center gap-2 mb-4"><i class="fas fa-search text-blue-500"></i> Località più cercate</h3>
+                <select id="topSearchesPeriod" onchange="loadTopSearches()" aria-label="Periodo località più cercate" class="mb-4 border border-slate-200 rounded-lg px-3 py-2 text-xs font-bold"><option value="7">Ultima settimana</option><option value="30" selected>Ultimi 30 giorni</option><option value="365">Ultimo anno</option><option value="0">Sempre</option></select>
                 <div id="topSearchesList" class="grid grid-cols-1 md:grid-cols-2 gap-2"><p class="text-xs text-slate-400 font-bold">Caricamento…</p></div>
-                <details class="mt-3 text-xs text-slate-500"><summary class="cursor-pointer">Cosa viene contato?</summary><p class="mt-2">Ricerche di comuni e località nella pagina Annunci, anche senza risultati. Ogni località conta una volta per sessione. Raccolta dal 9 ottobre 2026; escluse parole libere e ricerche per sola regione.</p></details>
+                <details class="mt-3 text-xs text-slate-500"><summary class="cursor-pointer">Cosa viene contato?</summary><p class="mt-2">Ricerche di comuni e località nella pagina Annunci, anche senza risultati. Ogni località conta una volta per sessione. Raccolta dal 9 ottobre 2026; escluse parole libere e ricerche per sola regione. I periodi includono oggi e usano giorni UTC. Sempre comprende tutto lo storico disponibile. I conteggi giornalieri vengono conservati senza identificativi dei visitatori.</p></details>
             </div>
 
             <!-- Recent Users -->
@@ -1530,14 +1532,23 @@ async function loadAdminPriceAverages() {
 
 // Top 10 comuni per page_views (ultimi 30 giorni). RPC SECURITY DEFINER.
 // Si nasconde da sola se l'RPC non e' deployata o non ci sono dati.
+let topSearchesRequest = 0;
+let topComuniRequest = 0;
+function geoStatsPeriod(id) {
+    const days = Number(document.getElementById(id)?.value ?? 30);
+    return [0, 7, 30, 365].includes(days) ? days : 30;
+}
 async function loadTopSearches() {
+    const request = ++topSearchesRequest;
     const list = document.getElementById('topSearchesList');
     if (!list) return;
     try {
-        const { data, error } = await _supabase.rpc('admin_top_location_searches', { p_days: 30 });
+        list.innerHTML = '<p class="text-xs text-slate-400 font-bold">Caricamento…</p>';
+        const { data, error } = await _supabase.rpc('admin_top_location_searches', { p_days: geoStatsPeriod('topSearchesPeriod') });
+        if (request !== topSearchesRequest) return;
         if (error || !Array.isArray(data)) throw new Error('unavailable');
         if (!data.length) {
-            list.innerHTML = '<p class="text-xs text-slate-400 font-bold">Nessuna ricerca registrata: il grafico si popolerà con le prossime ricerche.</p>';
+            list.innerHTML = '<p class="text-xs text-slate-400 font-bold">Nessuna ricerca registrata nel periodo selezionato.</p>';
             return;
         }
         const max = Math.max(...data.map(r => Number(r.cnt) || 0), 1);
@@ -1547,18 +1558,23 @@ async function loadTopSearches() {
             return `<div class="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-2.5"><div class="flex-1 min-w-0"><div class="text-sm font-bold text-slate-900 truncate">${escapeHTML(r.name)} <span class="text-xs text-slate-400">${escapeHTML(r.provincia)}</span></div><div class="mt-1 h-1 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-blue-500" style="width:${pct}%"></div></div></div><div class="ml-3 text-sm font-black text-slate-700 tabular-nums">${count}</div></div>`;
         }).join('');
     } catch (_) {
+        if (request !== topSearchesRequest) return;
         list.innerHTML = '<p class="text-xs text-slate-400 font-bold">Statistiche ricerche temporaneamente non disponibili.</p>';
     }
 }
 
 async function loadTopComuni() {
+    const request = ++topComuniRequest;
     const section = document.getElementById('topComuniSection');
     const list    = document.getElementById('topComuniList');
     if (!section || !list) return;
     try {
-        const { data, error } = await _supabase.rpc('admin_top_comuni_views', { p_days: 30 });
-        if (error || !Array.isArray(data) || data.length === 0) {
-            section.classList.add('hidden');
+        list.innerHTML = '<p class="text-xs text-slate-400 font-bold">Caricamento…</p>';
+        const { data, error } = await _supabase.rpc('admin_top_comuni_views', { p_days: geoStatsPeriod('topComuniPeriod') });
+        if (request !== topComuniRequest) return;
+        if (error || !Array.isArray(data)) throw new Error('unavailable');
+        if (data.length === 0) {
+            list.innerHTML = '<p class="text-xs text-slate-400 font-bold">Nessuna visita registrata nel periodo selezionato.</p>';
             return;
         }
         const max = Math.max(...data.map(r => r.cnt || 0)) || 1;
@@ -1578,7 +1594,8 @@ async function loadTopComuni() {
         }).join('');
         section.classList.remove('hidden');
     } catch (_) {
-        section.classList.add('hidden');
+        if (request !== topComuniRequest) return;
+        list.innerHTML = '<p class="text-xs text-slate-400 font-bold">Statistiche visite temporaneamente non disponibili.</p>';
     }
 }
 
