@@ -38,7 +38,8 @@
     };
 
     function normalize(value) {
-        return String(value || '').trim().toLocaleLowerCase('it-IT').normalize('NFD')
+        // Il minuscolo italiano coincide con quello Unicode standard.
+        return String(value || '').trim().toLowerCase().normalize('NFD')
             .replace(/[\u0300-\u036f]/g, '')
             .replace(/[^a-z0-9]+/g, ' ')
             .trim()
@@ -66,9 +67,11 @@
     // Lascia al browser il tempo di gestire clic e digitazione durante gli indici.
     async function forEachChunked(items, visit) {
         let until = Date.now() + 8;
+        let count = 0;
         for (const item of items) {
             visit(item);
-            if (Date.now() >= until) {
+            // Evita una lettura dell'orologio per ciascuno dei 63.182 luoghi.
+            if (++count % 16 === 0 && Date.now() >= until) {
                 await new Promise(resolve => setTimeout(resolve, 0));
                 until = Date.now() + 8;
             }
