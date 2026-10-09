@@ -223,6 +223,9 @@
     }
     function updateMapHighlight() {
         const card = hoveredCard || focusedCard;
+        for (const item of $('fair-list').children) {
+            item.classList.toggle('is-preview', item === card);
+        }
         const previewProvince = !state.province ? card?.dataset.province || '' : '';
         const previewEvent = state.province ? card?.dataset.eventId || '' : '';
         for (const path of $('map-provinces').children) {
