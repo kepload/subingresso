@@ -1032,6 +1032,20 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+Lodi (10 ottobre 2026): ricerca nei 60 comuni, 43 manifestazioni in 26 comuni;
+35 con date 2026 e 8 con storico 2025 da riconfermare. Fonte `data/fiere-lodi.json`
+con hash delle 3 righe regionali, audit per comune, esclusioni e dubbi. Build applica
+Brescia e Lodi senza cambiare le altre schede. Totali 1.927 eventi, 1.768 con edizioni,
+1.513 con date; 108 province ancora da approfondire. Mercato San Bernardino 10 maggio,
+Brembio 15 marzo, Cavenago 22 marzo; Codogno vintage luglio/agosto sospesi. Casaletto
+usa modulo/PDF 11/18/25 ottobre; Secugnago usa modulo 2026 (8 dicembre, domanda
+20 novembre, gratuito) rispetto all’avviso rimasto al 2025. Spunta Codogno 23 settembre
+distinta dalla concessione bar 16 ottobre. Fonte rimossa o sola sagra non prova posteggi
+liberi: verifiche residue nell’audit. Cache fiere.js 16, fiere.json 9; test provinciali
+e browser in scripts/test-fiere.cjs. Cavacurta usa coordinate della località con
+coordinateSource (Castelgerundo privo di coordinate in comuni.json); build le valida.
+Dettagli e limiti in data/FIERE.md.
+
 Ricerca provinciale approfondita di Brescia completata e pubblicata: 206 manifestazioni
 in 86 comuni (prima 50 schede; +156 nette dopo quattro duplicati consolidati). Esaminate
 1.031 righe regionali 2026 e fonti comunali/turistiche/organizzatori. Fonte curata autonoma

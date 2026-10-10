@@ -19,7 +19,7 @@ REGION_ALIASES = {
     "Valle d'Aosta/Vallée d'Aoste": "Valle d'Aosta",
 }
 CATEGORIES = {"tradizionale", "artigianato", "sagra", "espositiva", "mercatino"}
-CATALOG_DATE = "2026-10-09"
+CATALOG_DATE = "2026-10-10"
 
 # Source abbreviations refer to the same recurring event, not additional fairs.
 EVENT_ALIASES = {
@@ -90,15 +90,15 @@ def build_catalog():
     locations = {(key(c["nome"]), REGION_ALIASES.get(c["regione"], c["regione"])): c for c in comuni}
     # This audited provincial file replaces its older regional/editorial entries.
     # Keep the national source snapshots intact and preserve every other province.
-    researched = json.loads((ROOT / "data/fiere-brescia.json").read_text(encoding="utf-8"))
-    assert researched["province"] == "Brescia" and researched["checkedAt"] <= CATALOG_DATE
-    for row in researched["events"]:
-        location = locations.get((key(row["city"]), row["region"]))
-        assert location and location["provincia"] == researched["province"]
-    combined = [row for row in combined if not (
-        row["region"] == "Lombardia" and
-        locations.get((key(row["city"]), row["region"]), {}).get("provincia") == researched["province"])]
-    combined.extend(researched["events"])
+    for province, filename in (("Brescia", "fiere-brescia.json"), ("Lodi", "fiere-lodi.json")):
+        researched = json.loads((ROOT / "data" / filename).read_text(encoding="utf-8"))
+        assert researched["province"] == province and researched["checkedAt"] <= CATALOG_DATE
+        for row in researched["events"]:
+            location = locations.get((key(row["city"]), row["region"]))
+            assert location and location["provincia"] == province
+        combined = [row for row in combined if
+            locations.get((key(row["city"]), row["region"]), {}).get("provincia") != province]
+        combined.extend(researched["events"])
     events = []
     for row in combined:
         city = locations.get((key(row["city"]), row["region"]))
@@ -108,8 +108,13 @@ def build_catalog():
         assert months and len(months) == len(set(months)) and all(1 <= n <= 12 for n in months)
         assert row["category"] in CATEGORIES and row["source"]["url"].startswith("https://")
         province = sardinia_provinces[key(row["city"])] if row["region"] == "Sardegna" else city["provincia"]
+        # A documented venue can supply coordinates missing from the municipality dataset.
+        lat, lng = row.get("lat", city["lat"]), row.get("lng", city["lng"])
+        assert isinstance(lat, (int, float)) and isinstance(lng, (int, float)), row["city"] + " has no coordinates"
+        if "lat" in row or "lng" in row:
+            assert row.get("coordinateSource", {}).get("url", "").startswith("https://")
         event = dict(row, id=key(row["region"] + "-" + row["city"] + "-" + row["name"]), months=months,
-                     province=province, lat=city["lat"], lng=city["lng"])
+                     province=province, lat=lat, lng=lng)
         editions = []
         signatures = set()
         for edition in event.get("editions", []):

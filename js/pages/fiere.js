@@ -368,7 +368,7 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=8');
+            const data = await fetchJSON('/data/fiere.json?v=9');
             if (!Array.isArray(data.provinces) || !data.provinces.length || new Set(data.provinces).size !== data.provinces.length
                 || !data.provinces.every(province => typeof province === 'string' && province) || !Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.province === 'string' && data.provinces.includes(event.province)
@@ -379,7 +379,7 @@
                 && event.participation && Array.isArray(event.editions))) throw new Error('Invalid catalog');
             state.events = data.events;
             $('catalog-count').textContent = String(state.events.length);
-            $('catalog-info').textContent = data.eventsWithEditionData + ' schede con edizioni da fonti ufficiali · aggiornato il ' + dateLabel(data.catalogUpdatedAt);
+            $('catalog-info').textContent = data.eventsWithEditionData + ' schede con edizioni documentate · aggiornato il ' + dateLabel(data.catalogUpdatedAt);
             const previous = state.province;
             $('province-filter').replaceChildren(node('option', '', 'Tutta Italia'));
             $('province-filter').firstChild.value = '';

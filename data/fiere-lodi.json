@@ -1,0 +1,2253 @@
+{
+  "province": "Lodi",
+  "checkedAt": "2026-10-10",
+  "research": {
+    "regionalRowsReviewed": 3,
+    "regionalMunicipalities": 2,
+    "regionalSnapshotSha256": "47285ec2f7319513adb2882bb5d5c9e058d7ceb607193a13ce42ba797f2b03a0",
+    "regionalSource": "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey",
+    "regionalLocalFairsDataset": "https://www.dati.lombardia.it/resource/tchp-wt8f.json",
+    "regionalLocalFairRowsReviewed": 0,
+    "regionalExhibitionCalendar": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati/dec-n-2656-all-c-fiere-regionali-2026-2-aggiornamento.pdf",
+    "previousCatalogEvents": 0,
+    "municipalitiesReviewed": 60,
+    "method": "Ricerca individuale dei 60 comuni; registro regionale sagre/fiere 2026 filtrato LO, calendario fieristico regionale, Provincia e Visit Lodi, Comuni, Pro Loco, organizzatori, espositori e stampa locale. Date non dedotte da ricorrenze; storico 2025 senza proiezioni al 2026. Esclusi negozi permanenti, beneficenza e soli pasti/concerti senza offerta commerciale esterna.",
+    "scopeLimit": "Ricerca documentale nelle fonti accessibili al 10 ottobre 2026; possono esistere eventi non annunciati o non reperiti. Non garantisce disponibilità di posteggi.",
+    "excludedExamples": [
+      {
+        "recordId": "25283",
+        "url": "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey",
+        "reason": "Processione della Passione di Cristo: nessuna offerta commerciale esterna documentata."
+      },
+      {
+        "url": "https://comune.sordio.lo.it/wp-content/uploads/2026/08/Sagra-Patronale-2026.pdf",
+        "reason": "Ballo e cucina della Pro Loco: nessuna vendita esterna o posteggio commerciale documentato."
+      },
+      {
+        "url": "https://tavazzano-con-villavesco-api.municipiumapp.it/s3/7168/allegati/manifesto_sagra_2026-rev4.pdf",
+        "reason": "Sagre di Tavazzano, Villavesco e Modignano: programma religioso, ristoro interno e beneficenza; nessun mercato commerciale documentato."
+      },
+      {
+        "url": "https://comune.casalpusterlengo.lo.it/it/eventi/san-bartolomeo",
+        "reason": "Programma 2026: festa, musica, sport e ristoro; nessun mercato esterno individuato. Sbaracco dei negozi e Festa del Gorgonzola non duplicati come fiere."
+      },
+      {
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/marudo/fine-settimana-di-eventi-per-la-sagra_1410/",
+        "reason": "Mercatino delle torte e ristoro in oratorio: non provano posteggi per operatori commerciali."
+      },
+      {
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/valera-fratta/weekend-di-eventi-per-la-sagra_1413/",
+        "reason": "Solo mercatino delle torte parrocchiale: non prova vendita di operatori esterni."
+      }
+    ],
+    "unresolvedLeads": [
+      {
+        "city": "Turano Lodigiano",
+        "url": "https://lombardia.piazzainfesta.it/turano-lodigiano/bancarelle-in-via-garibaldi-84087",
+        "reason": "Scheda generata con IA da ordinanza: originale non reperito; verificare l’atto prima di pubblicare date confermate."
+      },
+      {
+        "city": "Massalengo",
+        "url": "https://comune.massalengo.lo.it/eventi/3655098/sagra-2026",
+        "reason": "Sagra 3–4 ottobre confermata; ordinanza e pagina non documentano vendita esterna. Verificare con Comune/Pro Loco."
+      },
+      {
+        "city": "Livraga",
+        "url": "https://comune.livraga.lo.it/c098030/zf/index.php/atti-amministrativi/ordinanze",
+        "reason": "Sagra San Gennaro e raduno 2026 confermati; offerta commerciale esterna non reperita."
+      },
+      {
+        "city": "Tavazzano con Villavesco",
+        "url": "https://eventi-italiani.it/eventi/feste-e-sagre/festa-di-primavera-a-tavazzano-con-villavesco/",
+        "reason": "Mercatino hobbisti con giorno/anno discordanti nella fonte secondaria: cercare locandina originale prima di confermare il 2026."
+      },
+      {
+        "city": "Castiraga Vidardo",
+        "url": "https://comune.castiragavidardo.lo.it/it/news/sagra-di-san-michele-come-partecipare-da-hobbista",
+        "reason": "Avviso 2025 per hobbisti: non conferma banco professionale né programma 2026."
+      },
+      {
+        "city": "Mairago",
+        "url": "https://www.leduecampane.it/2025/11/27/mercatino-dei-sapori-2/",
+        "reason": "Annuncio parrocchiale 2025; ammissione commerciale esterna non verificata."
+      }
+    ],
+    "municipalityCoverage": [
+      {
+        "city": "Abbadia Cerreto",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Bertonico",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Boffalora d'Adda",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/boffalora-dadda/la-sagra-di-boffalora-dadda_1261/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Borghetto Lodigiano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 2,
+        "sources": [
+          "https://www.fieraborghetto.it/",
+          "https://www.zafferanobanino.it/eventi-fiere/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Borgo San Giovanni",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Brembio",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 2,
+        "sources": [
+          "https://www.brembiounitaesolidale.it/il-lungo-weekend-della-sagra-fra-tradizione-e-tante-novita/",
+          "https://www.comune.brembio.lo.it/eventi/fiera-di-san-giuseppe-2026/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Casaletto Lodigiano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 3,
+        "sources": [
+          "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Casalmaiocco",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Casalpusterlengo",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.lodinews.it/cronaca/casalpusterlengo-torna-il-mercatino-dell-usato"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Caselle Landi",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.comune.casellelandi.lo.it/it-it/download/scheda-di-adesione-479561-4-1468-8f1d8db382c63023ab7b91db9b4b878b"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Caselle Lurani",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Castelgerundo",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.jessyjama.it/voi"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Castelnuovo Bocca d'Adda",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Castiglione d'Adda",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 2,
+        "sources": [
+          "https://comune.castiglionedadda.lo.it/vivere-il-comune/eventi/64-fiera-di-san-bernardino/",
+          "https://comune.castiglionedadda.lo.it/vivere-il-comune/eventi/notte-di-stelle-2026/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Castiraga Vidardo",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://comune.castiragavidardo.lo.it/it/news/sagra-di-san-michele-come-partecipare-da-hobbista",
+          "https://www.comune.castiragavidardo.lo.it/index.php/it/news/il-viale-del-vintage"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Cavenago d'Adda",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/cavenago-dadda/fiera-della-madonna-della-costa_397/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Cervignano d'Adda",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Codogno",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 5,
+        "sources": [
+          "https://comune.codogno.lo.it/edizioni-fiera-autunnale/fiera-edizione-2026/",
+          "https://comune.codogno.lo.it/vivere-il-comune/eventi/aria-di-festa-2025/",
+          "https://comune.codogno.lo.it/vivere-il-comune/eventi/estate-in-citta-26/",
+          "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/",
+          "https://comune.codogno.lo.it/vivere-il-comune/eventi/risveglio-di-primavera-8-edizione/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Comazzo",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Cornegliano Laudense",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 2,
+        "sources": [
+          "https://mycity.s3.sbg.io.cloud.ovh.net/5170549/Modulo-adesione-festa-della-zucca.pdf"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Corno Giovine",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Cornovecchio",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Corte Palasio",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Crespiatica",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Fombio",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Galgagnano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Graffignana",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://graffignana-api.municipiumapp.it/s3/3215/allegati/eventi/2026/sagra-della-vittorina-2026-programma.pdf"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Guardamiglio",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://sposiexpo.it/lodi-sposi-expo-2026/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Livraga",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [
+          "https://comune.livraga.lo.it/c098030/zf/index.php/atti-amministrativi/ordinanze"
+        ],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Lodi",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 7,
+        "sources": [
+          "https://culturainrete.fondazionelodi.org/assemblies/areapubblica/f/16/meetings/105",
+          "https://leformedelgusto.it/iscrizioni-14-edizione/",
+          "https://www.altamareagroup.it/lodi-wedding-ideas",
+          "https://www.bcclodi.it/media/f4cfy3sr/20260117-il-cittadino-eventi-per-festivit%C3%A0-di-san-bassiano-conferenza-stampa-bcc-lodi-main-sponsor-dellevento.pdf",
+          "https://www.confcommerciolodi.it/it/associazioni/territoriali/lodi/news/A-Lodi-dal-28-al-30-marzo-in-piazza-della-Vittoria-il-mercato-Regioni-dEuropa/",
+          "https://www.confcommerciolodi.it/it/associazioni/territoriali/lodi/news/Lodi-dal-5-al-14-dicembre-la-Sagra-di-Santa-Lucia-00001/",
+          "https://www.ufficiodipiano.lodi.it/eventi.php"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Lodi Vecchio",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 2,
+        "sources": [
+          "https://www.comune.lodivecchio.lo.it/area_letturaEvento/168565/pagsistema.html",
+          "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/lodi-vecchio/mercatino-lantico-baule_1303/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Maccastorna",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Mairago",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [
+          "https://www.leduecampane.it/2025/11/27/mercatino-dei-sapori-2/"
+        ],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Maleo",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://artevinomaleo.it/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Marudo",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Massalengo",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [
+          "https://comune.massalengo.lo.it/eventi/3655098/sagra-2026"
+        ],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Meleti",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Merlino",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Montanaso Lombardo",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Mulazzano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://comune.mulazzano.lo.it/it/news/sagra-di-mulazzano-manifestazioni-di-interesse-da-parte-di-operatori-economici-e-commerciali"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Orio Litta",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://cloud-ita.municipiumapp.it/s3/20287/allegati/pubblicazioni/opuscolo-lodigiano-autunno-2025bassa.pdf"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Ospedaletto Lodigiano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Ossago Lodigiano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/ossago-lodigiano/ossago-in-festa_1347/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Pieve Fissiraga",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Salerano sul Lambro",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "San Fiorano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "San Martino in Strada",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "San Rocco al Porto",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Sant'Angelo Lodigiano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Santo Stefano Lodigiano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Secugnago",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSd2N30GIdD_zE8kbBXI8GGyNa3Io0eQslWwvEOxIFSel-U4vg/viewform"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Senna Lodigiana",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.comune.sennalodigiana.lo.it/it/events/fiera-primaverile"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Somaglia",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Sordio",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.zafferanobanino.it/eventi-fiere/"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Tavazzano con Villavesco",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [
+          "https://eventi-italiani.it/eventi/feste-e-sagre/festa-di-primavera-a-tavazzano-con-villavesco/"
+        ],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Terranova dei Passerini",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Turano Lodigiano",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [
+          "https://lombardia.piazzainfesta.it/turano-lodigiano/bancarelle-in-via-garibaldi-84087"
+        ],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Valera Fratta",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Villanova del Sillaro",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.comune.villanova.lo.it/vivere_il_comune/eventi/evento_27.html"
+        ],
+        "result": "Manifestazioni documentate inserite; dubbi nelle note."
+      },
+      {
+        "city": "Zelo Buon Persico",
+        "checkedAt": "2026-10-10",
+        "method": "Ricerca individuale per nome con fiera, mercatino, bancarelle e 2026; fonti locali e frazioni approfondite per i riscontri positivi.",
+        "eventsFound": 0,
+        "sources": [],
+        "result": "Nessuna manifestazione commerciale verificabile individuata nelle fonti consultate; non prova assenza di eventi."
+      }
+    ]
+  },
+  "events": [
+    {
+      "region": "Lombardia",
+      "city": "Boffalora d'Adda",
+      "name": "Sagra di Boffa — bancarelle",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/boffalora-dadda/la-sagra-di-boffalora-dadda_1261/",
+        "label": "ilcittadino.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/boffalora-dadda/la-sagra-di-boffalora-dadda_1261/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/boffalora-dadda/la-sagra-di-boffalora-dadda_1261/",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare."
+      },
+      "venue": "Via Umberto I",
+      "hours": "Bancarelle al mattino; orario completo da verificare",
+      "organizer": "Comune, Parrocchia, Pro Loco e associazioni",
+      "frequencyNote": "Festa 11–13 settembre; bancarelle nella domenica secondo l’agenda locale.",
+      "summary": "Bancarelle della festa patronale; fonte giornalistica locale."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Borghetto Lodigiano",
+      "name": "Fiera regionale plurisettoriale",
+      "category": "espositiva",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.fieraborghetto.it/",
+        "label": "fieraborghetto.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.fieraborghetto.it/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.fieraborghetto.it/",
+        "note": "Contatta Fiere In per ammissione, scelta tra padiglione e area esterna e preventivo 2026. Le tariffe delle precedenti edizioni non confermano il prezzo corrente."
+      },
+      "venue": "Quartiere fieristico di Borghetto Lodigiano",
+      "organizer": "Comune; organizzazione Fiere In",
+      "hours": "1 maggio 09:00–22:00; 2 maggio 10:00–23:00; 3 maggio 09:30–20:00",
+      "sectors": "Agroalimentare, artigianato, commercio, veicoli e servizi",
+      "contacts": {
+        "email": "info@fierein.it",
+        "phone": "02 93909595"
+      },
+      "calendarSource": {
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati/dec-n-2656-all-c-fiere-regionali-2026-2-aggiornamento.pdf",
+        "label": "Regione Lombardia — calendario fieristico 2026",
+        "checkedAt": "2026-10-10"
+      }
+    },
+    {
+      "region": "Lombardia",
+      "city": "Borghetto Lodigiano",
+      "name": "Villaggio di Natale",
+      "category": "mercatino",
+      "months": [
+        12
+      ],
+      "source": {
+        "url": "https://www.zafferanobanino.it/eventi-fiere/",
+        "label": "zafferanobanino.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-07",
+          "end": "2025-12-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.zafferanobanino.it/eventi-fiere/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.zafferanobanino.it/eventi-fiere/",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare. Ultima edizione documentata: 2025; prossima edizione da riconfermare."
+      },
+      "summary": "Presenza documentata di un produttore locale; calendario 2026 da verificare.",
+      "sectors": "Prodotti locali e articoli natalizi"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Brembio",
+      "name": "Brembio in Sagra — mercatino del fatto a mano",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.brembiounitaesolidale.it/il-lungo-weekend-della-sagra-fra-tradizione-e-tante-novita/",
+        "label": "brembiounitaesolidale.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-09-14",
+          "end": "2025-09-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.brembiounitaesolidale.it/il-lungo-weekend-della-sagra-fra-tradizione-e-tante-novita/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.brembiounitaesolidale.it/il-lungo-weekend-della-sagra-fra-tradizione-e-tante-novita/",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare. Ultima edizione documentata: 2025; prossima edizione da riconfermare."
+      },
+      "venue": "Piazza Matteotti e Palazzo Andreani",
+      "hours": "09:30–18:30 nel 2025",
+      "sectors": "Fatto a mano",
+      "summary": "Mercatino nella cronaca del 2025 ripresa dal gruppo consiliare locale."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Brembio",
+      "name": "Fiera di San Giuseppe — mercato del fatto a mano",
+      "category": "tradizionale",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.comune.brembio.lo.it/eventi/fiera-di-san-giuseppe-2026/",
+        "label": "comune.brembio.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.brembio.lo.it/eventi/fiera-di-san-giuseppe-2026/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.brembio.lo.it/eventi/fiera-di-san-giuseppe-2026/",
+        "note": "Mercatino per hobbisti, artigiani e produttori locali. Chiedi a Comune e Comitato Fiera e Sagra domanda e ammissione della tua attività; non equivale all’accesso libero di ogni ambulante."
+      },
+      "venue": "Piazza Matteotti",
+      "organizer": "Comune; Comitato Fiera e Sagra; GSDO Brembio",
+      "hours": "Apertura mercatino alle 10:00; chiusura da verificare",
+      "contacts": {
+        "phone": "0377 98901"
+      },
+      "sectors": "Fatto a mano, artigianato e prodotti locali",
+      "frequencyNote": "Fiera 13–15 marzo; il mercato è pubblicato solo per domenica 15 marzo."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Casaletto Lodigiano",
+      "name": "Sagra autunnale di Casaletto",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf",
+        "label": "storage.googleapis.com",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf",
+        "note": "Domanda di occupazione suolo all’URP o via email alla Polizia Locale, indicando dimensioni e allegando autorizzazioni commerciali/artigianali. Termine trascorso: chiedi eventuali disponibilità residue.",
+        "deadline": "2026-09-15"
+      },
+      "venue": "Casaletto — Piazza della Chiesa",
+      "hours": "Programma con bancarelle dal pomeriggio; modulo di occupazione 09:00–20:00",
+      "contacts": {
+        "email": "polizialocale@comune.casalettolodigiano.lo.it"
+      },
+      "sectors": "Vendita/esposizione, artigianato, creativi e hobbisti",
+      "frequencyNote": "Date del modulo e del PDF 2026; il testo HTML conserva vecchie date discordanti.",
+      "programUrl": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/PARTIAMO%20DA%20MAIRANO%20%28297%20x%20210%20mm%29%20%281%29.pdf"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Casaletto Lodigiano",
+      "name": "Sagra autunnale di Gugnano",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf",
+        "label": "storage.googleapis.com",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf",
+        "note": "Domanda di occupazione suolo all’URP o via email alla Polizia Locale, indicando dimensioni e allegando autorizzazioni commerciali/artigianali. Termine trascorso: chiedi eventuali disponibilità residue.",
+        "deadline": "2026-09-15"
+      },
+      "venue": "Gugnano — Via Lodi e sagrato",
+      "hours": "Bancarelle 09:00–19:00 nel programma",
+      "contacts": {
+        "email": "polizialocale@comune.casalettolodigiano.lo.it"
+      },
+      "sectors": "Vendita/esposizione, artigianato, creativi e hobbisti",
+      "frequencyNote": "Date del modulo e del PDF 2026; il testo HTML conserva vecchie date discordanti.",
+      "programUrl": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/PARTIAMO%20DA%20MAIRANO%20%28297%20x%20210%20mm%29%20%281%29.pdf"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Casaletto Lodigiano",
+      "name": "Sagra autunnale di Mairano",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf",
+        "label": "storage.googleapis.com",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/Modulo%20Sagre%20autunnali%202026.pdf",
+        "note": "Domanda di occupazione suolo all’URP o via email alla Polizia Locale, indicando dimensioni e allegando autorizzazioni commerciali/artigianali. Termine trascorso: chiedi eventuali disponibilità residue.",
+        "deadline": "2026-09-15"
+      },
+      "venue": "Mairano — Piazza dei Caduti",
+      "hours": "Bancarelle 09:00–19:00 nel programma",
+      "contacts": {
+        "email": "polizialocale@comune.casalettolodigiano.lo.it"
+      },
+      "sectors": "Vendita/esposizione, artigianato, creativi e hobbisti",
+      "frequencyNote": "Date del modulo e del PDF 2026; il testo HTML conserva vecchie date discordanti.",
+      "programUrl": "https://storage.googleapis.com/stp-casalettolodigiano-public-prod/allegatinews/PARTIAMO%20DA%20MAIRANO%20%28297%20x%20210%20mm%29%20%281%29.pdf"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Casalmaiocco",
+      "name": "Festa di San Martino e del Ringraziamento",
+      "category": "sagra",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey",
+        "label": "dati.lombardia.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-08",
+          "end": "2026-11-08",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey",
+        "note": "La Regione segnala somministrazione, ma non sono stati trovati posteggi esterni o bando. Chiedi alla Pro Loco se sono ammessi operatori esterni e per quali settori; disponibilità di un banco non confermata."
+      },
+      "venue": "Piazza San Valentino, 1",
+      "organizer": "Pro Loco Casalmaiocco",
+      "hours": "07:00–20:00 nel calendario regionale; orari degli eventuali stand da verificare",
+      "sourceRecordIds": [
+        "27003"
+      ],
+      "summary": "Sagra censita dalla Regione; possibilità di vendita esterna da verificare."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Casalpusterlengo",
+      "name": "Mercatino dell’usato e dell’antiquariato",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.lodinews.it/cronaca/casalpusterlengo-torna-il-mercatino-dell-usato",
+        "label": "lodinews.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-02",
+          "end": "2026-05-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.lodinews.it/cronaca/casalpusterlengo-torna-il-mercatino-dell-usato"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.lodinews.it/cronaca/casalpusterlengo-torna-il-mercatino-dell-usato",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare."
+      },
+      "venue": "Piazza del Popolo",
+      "organizer": "Pro Loco Casalpusterlengo",
+      "sectors": "Usato, antiquariato e collezionismo",
+      "frequencyNote": "Ripresa dal 2 maggio dopo la sospensione di aprile; altre date da chiedere alla Pro Loco. Distinto dal mercato settimanale ordinario.",
+      "summary": "Mercatino periodico riattivato con patrocinio comunale; fonte giornalistica."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Caselle Landi",
+      "name": "Fiera autunnale di Merci, Uve, Bestiame, Commercio e Artigianato",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.casellelandi.lo.it/it-it/download/scheda-di-adesione-479561-4-1468-8f1d8db382c63023ab7b91db9b4b878b",
+        "label": "comune.casellelandi.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.casellelandi.lo.it/it-it/download/scheda-di-adesione-479561-4-1468-8f1d8db382c63023ab7b91db9b4b878b"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://www.comune.casellelandi.lo.it/it-it/download/scheda-di-adesione-479561-4-1468-8f1d8db382c63023ab7b91db9b4b878b",
+        "note": "Scheda alla segreteria Fiera via email o posta: settore, dimensioni, energia, mezzi/bestiame. Arrivo entro le 08:00; mezzi pesanti allestibili il 12 previo accordo. L’invito conserva una scadenza con giorno della settimana incoerente: chiedere conferma del termine.",
+        "costs": "Il modulo 2026 esclude versamenti per occupazione suolo pubblico; eventuali servizi aggiuntivi da verificare."
+      },
+      "venue": "Piazza Marchese Landi e quartiere fieristico",
+      "organizer": "Comune di Caselle Landi",
+      "sectors": "Alimentari, abbigliamento, artigianato, hobbisti, autoveicoli, macchine agricole, sementi, mangimi e bestiame",
+      "contacts": {
+        "email": "fiera@comune.casellelandi.lo.it",
+        "phone": "0377 69901"
+      },
+      "frequencyNote": "161ª edizione; le 08:00 sono il termine di arrivo espositori."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Castelgerundo",
+      "name": "Fiera dei Filsòn di Cavacurta",
+      "lat": 45.18977,
+      "lng": 9.74186,
+      "coordinateSource": {
+        "url": "https://mapcarta.com/18704354",
+        "label": "Località Cavacurta — OpenStreetMap/Mapcarta",
+        "checkedAt": "2026-10-10"
+      },
+      "category": "tradizionale",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://www.jessyjama.it/voi",
+        "label": "jessyjama.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-12",
+          "end": "2026-04-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.jessyjama.it/voi"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.jessyjama.it/voi",
+        "note": "Un’espositrice documenta la fiera del 12 aprile 2026. Programma commerciale e procedura 2026 non reperiti: chiedi a Pro Loco/Comune settori ammessi, domanda e costi."
+      },
+      "venue": "Cavacurta",
+      "summary": "Fiera primaverile: data 2026 documentata da una partecipante, condizioni commerciali da verificare.",
+      "sectors": "Categorie della prossima edizione da verificare"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Castiglione d'Adda",
+      "name": "Fiera di San Bernardino",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://comune.castiglionedadda.lo.it/vivere-il-comune/eventi/64-fiera-di-san-bernardino/",
+        "label": "comune.castiglionedadda.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-10",
+          "end": "2026-05-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.castiglionedadda.lo.it/vivere-il-comune/eventi/64-fiera-di-san-bernardino/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.castiglionedadda.lo.it/novita/64-edizione-festa-di-san-bernardino-7-8-9-10-maggio-2026/",
+        "note": "Iscrizioni di ambulanti, espositori, associazioni e creativi affidate a Quei de San Bernardin: chiedi all’associazione disponibilità e condizioni."
+      },
+      "contacts": {
+        "email": "queidesanbernardin@tiscali.it",
+        "phone": "392 4172227"
+      },
+      "organizer": "Associazione Quei de San Bernardin",
+      "hours": "Mercato per tutta la giornata del 10 maggio",
+      "venue": "Area della fiera di San Bernardino",
+      "sectors": "Ambulanti, espositori e creativi; categorie da concordare",
+      "frequencyNote": "64ª festa 7–10 maggio; il mercato commerciale è domenica 10 maggio."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Castiglione d'Adda",
+      "name": "Notte di Stelle — ambulanti e creativi",
+      "category": "mercatino",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://comune.castiglionedadda.lo.it/vivere-il-comune/eventi/notte-di-stelle-2026/",
+        "label": "comune.castiglionedadda.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.castiglionedadda.lo.it/vivere-il-comune/eventi/notte-di-stelle-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://comune.castiglionedadda.lo.it/vivere-il-comune/eventi/notte-di-stelle-2026/",
+        "note": "Per domanda, orario del banco e costi contatta l’Ufficio Commercio. La festa termina alle 03:00 del 26 luglio: questo non conferma che ogni banco resti aperto fino a quell’ora."
+      },
+      "venue": "Via Roma, Via Garibaldi e Via della Vittoria",
+      "organizer": "Comune, Confartigianato e Associazione Commercianti del Basso Lodigiano",
+      "contacts": {
+        "email": "commercio@comune.castiglionedadda.lo.it",
+        "phone": "0377 900403"
+      },
+      "sectors": "Commercio ambulante e creazioni artigianali",
+      "frequencyNote": "Festa dalle 19:00 del 25 luglio alle 03:00 del 26; giornata del mercato 25 luglio."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Castiraga Vidardo",
+      "name": "Il Viale del Vintage",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.castiragavidardo.lo.it/index.php/it/news/il-viale-del-vintage",
+        "label": "comune.castiragavidardo.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiragavidardo.lo.it/index.php/it/news/il-viale-del-vintage"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.castiragavidardo.lo.it/index.php/it/news/il-viale-del-vintage",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare."
+      },
+      "venue": "Viale Roma",
+      "hours": "08:30–13:00 secondo l’avviso comunale",
+      "sectors": "Vintage, usato e collezionismo",
+      "summary": "Mercatino del Settembre Vidardese 2026; ammissione da chiedere al Comune."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Cavenago d'Adda",
+      "name": "Fiera della Madonna della Costa",
+      "category": "tradizionale",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/cavenago-dadda/fiera-della-madonna-della-costa_397/",
+        "label": "ilcittadino.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-22",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/cavenago-dadda/fiera-della-madonna-della-costa_397/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/cavenago-dadda/fiera-della-madonna-della-costa_397/",
+        "note": "Espositori selezionati dalla Pro Loco: artigianato, florovivaismo e attività locali, con area gastronomica. Chiedi selezione e costi; la ricorrenza religiosa del 25 marzo non è la data del mercato 2026."
+      },
+      "venue": "Santuario della Madonna della Costa",
+      "organizer": "Pro Loco Cavenago d’Adda",
+      "hours": "08:00–18:00",
+      "sectors": "Artigianato, florovivaismo, prodotti locali e gastronomia"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Codogno",
+      "name": "Aria di Festa — mercatino del fatto a mano",
+      "category": "artigianato",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://comune.codogno.lo.it/vivere-il-comune/eventi/aria-di-festa-2025/",
+        "label": "comune.codogno.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-23",
+          "end": "2025-11-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/aria-di-festa-2025/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.codogno.lo.it/vivere-il-comune/eventi/aria-di-festa-2025/",
+        "note": "Mercatino collegato alla fiera autunnale ma in una giornata distinta. Chiedi ammissione degli artigiani professionali e procedura della prossima edizione. Ultima edizione documentata: 2025; prossima edizione da riconfermare."
+      },
+      "venue": "Via Vittorio Emanuele II",
+      "hours": "09:00–18:00 nel 2025",
+      "sectors": "Fatto a mano",
+      "contacts": {
+        "phone": "0377 314243"
+      }
+    },
+    {
+      "region": "Lombardia",
+      "city": "Codogno",
+      "name": "Eatinero — European Street Food Awards Italy",
+      "category": "sagra",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://comune.codogno.lo.it/vivere-il-comune/eventi/estate-in-citta-26/",
+        "label": "comune.codogno.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-08",
+          "end": "2026-05-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/estate-in-citta-26/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.codogno.lo.it/vivere-il-comune/eventi/estate-in-citta-26/",
+        "note": "Food truck e competizione: partecipazione tramite selezione Eatinero. Chiedi requisiti e preventivo per la prossima edizione; non è la spunta del mercato ordinario."
+      },
+      "venue": "Piazza Fratelli Cairoli",
+      "organizer": "Eatinero",
+      "sectors": "Food truck e cibo di strada"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Codogno",
+      "name": "Fiera autunnale di Codogno",
+      "category": "espositiva",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://comune.codogno.lo.it/edizioni-fiera-autunnale/fiera-edizione-2026/",
+        "label": "comune.codogno.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-17",
+          "end": "2026-11-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/edizioni-fiera-autunnale/fiera-edizione-2026/"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://comune.codogno.lo.it/edizioni-fiera-autunnale/fiera-edizione-2026/",
+        "note": "Spunta del mercato fiera: domanda via ImpresaInUnGiorno entro il 23 settembre, graduatoria prevista il 3 novembre. Chiedi al Commercio eventuali possibilità residue. Stand espositivi e gestione bar/ristorazione seguono procedure distinte: il termine 16 ottobre alle 12:00 riguarda solo la concessione bar/ristorazione.",
+        "deadline": "2026-09-23",
+        "deadlineLabel": "Domande di spunta del mercato fiera"
+      },
+      "venue": "Quartiere fieristico e mercato fiera",
+      "organizer": "Comune di Codogno",
+      "contacts": {
+        "email": "fiera@comune.codogno.lo.it",
+        "phone": "0377 314239 / 0377 314251"
+      },
+      "sectors": "Agricoltura, agroalimentare e mercato ambulante; stand selezionati",
+      "frequencyNote": "235ª edizione; stand tramite segreteria Fiera.",
+      "calendarSource": {
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati/dec-n-2656-all-c-fiere-regionali-2026-2-aggiornamento.pdf",
+        "label": "Regione Lombardia — calendario fieristico 2026",
+        "checkedAt": "2026-10-10"
+      }
+    },
+    {
+      "region": "Lombardia",
+      "city": "Codogno",
+      "name": "Mostra mercato del piccolo antiquariato e del vintage",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        12
+      ],
+      "source": {
+        "url": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/",
+        "label": "comune.codogno.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-17",
+          "end": "2026-01-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-21",
+          "end": "2026-02-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-21",
+          "end": "2026-03-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-18",
+          "end": "2026-04-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-16",
+          "end": "2026-05-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-20",
+          "end": "2026-06-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-19",
+          "end": "2026-12-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.codogno.lo.it/vivere-il-comune/eventi/mostra-mercato-2026/",
+        "note": "Contatta il referente per iscrizione e merceologie. Le date di luglio e agosto sono cancellate dal Comune: non prenotare un banco per quegli appuntamenti."
+      },
+      "venue": "Piazza Fratelli Cairoli",
+      "hours": "09:00–18:00",
+      "contacts": {
+        "email": "serviziomail@pgraphic.it",
+        "phone": "345 1078545"
+      },
+      "sectors": "Piccolo antiquariato e vintage",
+      "frequencyNote": "Terzo sabato nelle date pubblicate; 18 luglio e 15 agosto sospesi per manutenzione. Nessun appuntamento di novembre pubblicato."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Codogno",
+      "name": "Risveglio di primavera — fatto a mano e fiori",
+      "category": "artigianato",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://comune.codogno.lo.it/vivere-il-comune/eventi/risveglio-di-primavera-8-edizione/",
+        "label": "comune.codogno.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-09",
+          "end": "2026-05-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.codogno.lo.it/vivere-il-comune/eventi/risveglio-di-primavera-8-edizione/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.codogno.lo.it/vivere-il-comune/eventi/risveglio-di-primavera-8-edizione/",
+        "note": "Chiedi agli organizzatori le categorie professionali ammesse e il modulo. La scheda non conferma posteggi per commercio generico."
+      },
+      "venue": "Piazza XX Settembre",
+      "hours": "09:00–19:00",
+      "sectors": "Fatto a mano e fiori",
+      "contacts": {
+        "phone": "0377 314243"
+      }
+    },
+    {
+      "region": "Lombardia",
+      "city": "Cornegliano Laudense",
+      "name": "Festa della Zucca",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5170549/Modulo-adesione-festa-della-zucca.pdf",
+        "label": "mycity.s3.sbg.io.cloud.ovh.net",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5170549/Modulo-adesione-festa-della-zucca.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://comune.cornegliano-laudense.lo.it/notizie/3607564/sagra-ss-simone-giuda-callisto-festa-zucca-2026",
+        "note": "Modulo al protocollo o via email. Numero chiuso e valutazione del Comune, priorità ai gazebo; venditori con licenza allegata. PagoPA dopo accettazione. Termine trascorso: chiedi disponibilità residue.",
+        "deadline": "2026-10-09",
+        "costs": "Per giornata: hobbisti 3×3 e produttori agricoli €15; commercianti 3×3 €25, fino a 4,5 m €30, oltre 4,5 e fino a 6 m €50."
+      },
+      "venue": "Cornegliano Laudense",
+      "hours": "08:30–18:30",
+      "contacts": {
+        "email": "affarigenerali@comune.cornegliano-laudense.lo.it",
+        "phone": "0371 69079 int. 6"
+      },
+      "sectors": "Venditori, alimenti/bevande, abbigliamento, hobbisti e produttori agricoli",
+      "frequencyNote": "Arrivo: 18 ottobre entro le 08:00 al Bar Regorda; 25 ottobre entro le 06:30 al Municipio. Il disallestimento alle 19:00 va chiarito per la giornata con termine alle 18:30."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Cornegliano Laudense",
+      "name": "Sagra dei Santi Simone, Giuda e Callisto",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5170549/Modulo-adesione-festa-della-zucca.pdf",
+        "label": "mycity.s3.sbg.io.cloud.ovh.net",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5170549/Modulo-adesione-festa-della-zucca.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://comune.cornegliano-laudense.lo.it/notizie/3607564/sagra-ss-simone-giuda-callisto-festa-zucca-2026",
+        "note": "Modulo al protocollo o via email. Numero chiuso e valutazione del Comune, priorità ai gazebo; venditori con licenza allegata. PagoPA dopo accettazione. Termine trascorso: chiedi disponibilità residue.",
+        "deadline": "2026-10-09",
+        "costs": "Per giornata: hobbisti 3×3 e produttori agricoli €15; commercianti 3×3 €25, fino a 4,5 m €30, oltre 4,5 e fino a 6 m €50."
+      },
+      "venue": "Frazione Muzza",
+      "hours": "07:30–19:00",
+      "contacts": {
+        "email": "affarigenerali@comune.cornegliano-laudense.lo.it",
+        "phone": "0371 69079 int. 6"
+      },
+      "sectors": "Venditori, alimenti/bevande, abbigliamento, hobbisti e produttori agricoli",
+      "frequencyNote": "Arrivo: 18 ottobre entro le 08:00 al Bar Regorda; 25 ottobre entro le 06:30 al Municipio. Il disallestimento alle 19:00 va chiarito per la giornata con termine alle 18:30."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Graffignana",
+      "name": "Fiera della Vittorina — esposizione multisettoriale",
+      "category": "tradizionale",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://graffignana-api.municipiumapp.it/s3/3215/allegati/eventi/2026/sagra-della-vittorina-2026-programma.pdf",
+        "label": "graffignana-api.municipiumapp.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://graffignana-api.municipiumapp.it/s3/3215/allegati/eventi/2026/sagra-della-vittorina-2026-programma.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://graffignana-api.municipiumapp.it/s3/3215/allegati/eventi/2026/sagra-della-vittorina-2026-programma.pdf",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare."
+      },
+      "venue": "Piazza Mazzini e centro",
+      "organizer": "Comune e Pro Loco",
+      "sectors": "Esposizione multisettoriale e agroalimentare",
+      "contacts": {
+        "phone": "0371 88828"
+      },
+      "hours": "Inaugurazione alle 11:15; apertura e chiusura banchi da verificare",
+      "frequencyNote": "Sagra 10–12 ottobre; esposizione l’11 ottobre."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Guardamiglio",
+      "name": "Lodi Sposi Expo",
+      "category": "espositiva",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://sposiexpo.it/lodi-sposi-expo-2026/",
+        "label": "sposiexpo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://sposiexpo.it/lodi-sposi-expo-2026/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://sposiexpo.it/diventa-espositore/",
+        "note": "Richiesta “Diventa espositore”: aziende selezionate per categoria, contratto e preventivo dello stand. Il pass gratuito della pagina riguarda i visitatori."
+      },
+      "venue": "Cascina Ca’ Nova, Guardamiglio",
+      "hours": "10:00–19:00",
+      "organizer": "Sposi Expo Italia",
+      "sectors": "Fornitori per matrimoni, gioielli, abiti, fiori, catering e servizi"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Lodi",
+      "name": "Fiera di San Bassiano",
+      "category": "tradizionale",
+      "months": [
+        1
+      ],
+      "source": {
+        "url": "https://www.bcclodi.it/media/f4cfy3sr/20260117-il-cittadino-eventi-per-festivit%C3%A0-di-san-bassiano-conferenza-stampa-bcc-lodi-main-sponsor-dellevento.pdf",
+        "label": "bcclodi.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-19",
+          "end": "2026-01-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.bcclodi.it/media/f4cfy3sr/20260117-il-cittadino-eventi-per-festivit%C3%A0-di-san-bassiano-conferenza-stampa-bcc-lodi-main-sponsor-dellevento.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.bcclodi.it/media/f4cfy3sr/20260117-il-cittadino-eventi-per-festivit%C3%A0-di-san-bassiano-conferenza-stampa-bcc-lodi-main-sponsor-dellevento.pdf",
+        "note": "Chiedi al SUAP/Commercio domanda, graduatoria, eventuale spunta e tariffe della prossima edizione. Il 19 gennaio 2026 è documentato; domande e scadenze 2027 non confermate in questa ricerca."
+      },
+      "venue": "Piazza della Vittoria e Piazza Castello",
+      "organizer": "Comune di Lodi",
+      "sectors": "Commercio ambulante",
+      "summary": "Fiera patronale con bancarelle; programma nella rassegna stampa del sostenitore dell’evento."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Lodi",
+      "name": "FƏST — mercatino delle autoproduzioni",
+      "category": "artigianato",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.ufficiodipiano.lodi.it/eventi.php",
+        "label": "ufficiodipiano.lodi.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ufficiodipiano.lodi.it/eventi.php"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.ufficiodipiano.lodi.it/eventi.php",
+        "note": "Area stand delle autoproduzioni: chiedi se sono ammessi artigiani professionali e a quali condizioni. Non sono pubblicati posti per rivendita generica."
+      },
+      "venue": "Parco Caselle",
+      "sectors": "Autoproduzioni e creatività"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Lodi",
+      "name": "Le Forme del Gusto — mostra mercato agroalimentare",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://leformedelgusto.it/iscrizioni-14-edizione/",
+        "label": "leformedelgusto.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-25",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://leformedelgusto.it/iscrizioni-14-edizione/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://leformedelgusto.it/iscrizioni-14-edizione/",
+        "note": "Adesioni via email agli organizzatori: chiedi selezione, allestimento e preventivo. Nessuna scadenza univoca o tariffa dello stand pubblicata nell’avviso 2026."
+      },
+      "venue": "Piazza della Vittoria",
+      "hours": "09:00–19:00 nell’avviso adesioni",
+      "contacts": {
+        "email": "info@leformedelgusto.it"
+      },
+      "sectors": "Imprese alimentari e prodotti tipici",
+      "frequencyNote": "14ª edizione."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Lodi",
+      "name": "Lodi Weddings Ideas",
+      "category": "espositiva",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.altamareagroup.it/lodi-wedding-ideas",
+        "label": "altamareagroup.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.altamareagroup.it/lodi-wedding-ideas"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.altamareagroup.it/lodi-wedding-ideas",
+        "note": "Fornitori selezionati: contatta Altamarea Group per candidatura, categorie e preventivo. Banco ambulante generico non confermato."
+      },
+      "venue": "Piazza della Vittoria",
+      "organizer": "Altamarea Group",
+      "contacts": {
+        "email": "info@altamareagroup.it",
+        "phone": "0371 429483 / 328 2223243"
+      },
+      "sectors": "Fornitori del settore matrimoni"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Lodi",
+      "name": "Mercatino dell’antiquariato",
+      "category": "mercatino",
+      "months": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://culturainrete.fondazionelodi.org/assemblies/areapubblica/f/16/meetings/105",
+        "label": "culturainrete.fondazionelodi.org",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-01",
+          "end": "2026-03-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://culturainrete.fondazionelodi.org/assemblies/areapubblica/f/16/meetings/105"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.prolocolodi.it/contatti.html",
+        "note": "Contatta la Pro Loco per iscrizione, categorie, dimensioni e costi. Il 1 marzo è pubblicato; chiedi conferma dei successivi appuntamenti."
+      },
+      "venue": "Piazza Castello",
+      "hours": "09:00–18:00",
+      "organizer": "Pro Loco Lodi APS",
+      "contacts": {
+        "email": "info@prolocolodi.it",
+        "phone": "0371 422597"
+      },
+      "sectors": "Antiquariato e collezionismo",
+      "frequencyNote": "Prima domenica: verificare pause e singole date con la Pro Loco; gli appuntamenti non sono calcolati automaticamente."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Lodi",
+      "name": "Regioni d’Europa — mercato europeo",
+      "category": "mercatino",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.confcommerciolodi.it/it/associazioni/territoriali/lodi/news/A-Lodi-dal-28-al-30-marzo-in-piazza-della-Vittoria-il-mercato-Regioni-dEuropa/",
+        "label": "confcommerciolodi.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-03-28",
+          "end": "2025-03-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.confcommerciolodi.it/it/associazioni/territoriali/lodi/news/A-Lodi-dal-28-al-30-marzo-in-piazza-della-Vittoria-il-mercato-Regioni-dEuropa/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.confcommerciolodi.it/it/associazioni/territoriali/lodi/news/A-Lodi-dal-28-al-30-marzo-in-piazza-della-Vittoria-il-mercato-Regioni-dEuropa/",
+        "note": "Mercato itinerante con operatori selezionati: chiedi al circuito ammissione, costi e calendario. Non è la spunta del mercato ordinario. Ultima edizione documentata: 2025; prossima edizione da riconfermare."
+      },
+      "venue": "Piazza della Vittoria",
+      "sectors": "Gastronomia e prodotti europei"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Lodi",
+      "name": "Sagra di Santa Lucia — mercatino di Natale",
+      "category": "mercatino",
+      "months": [
+        12
+      ],
+      "source": {
+        "url": "https://www.confcommerciolodi.it/it/associazioni/territoriali/lodi/news/Lodi-dal-5-al-14-dicembre-la-Sagra-di-Santa-Lucia-00001/",
+        "label": "confcommerciolodi.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-05",
+          "end": "2025-12-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.confcommerciolodi.it/it/associazioni/territoriali/lodi/news/Lodi-dal-5-al-14-dicembre-la-Sagra-di-Santa-Lucia-00001/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.confcommerciolodi.it/it/associazioni/territoriali/lodi/news/Lodi-dal-5-al-14-dicembre-la-Sagra-di-Santa-Lucia-00001/",
+        "note": "Casette tramite Promo.Ter/Apeca: chiedi candidatura e preventivo per la nuova edizione. I 30 stand sono la consistenza 2025, non posti liberi. Ultima edizione documentata: 2025; prossima edizione da riconfermare."
+      },
+      "venue": "Piazza della Vittoria",
+      "organizer": "Promo.Ter Unione con Apeca",
+      "sectors": "Prodotti tipici e articoli natalizi",
+      "stallCount": 30
+    },
+    {
+      "region": "Lombardia",
+      "city": "Lodi Vecchio",
+      "name": "Mercatino dell’Antico Baule",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/lodi-vecchio/mercatino-lantico-baule_1303/",
+        "label": "ilcittadino.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/lodi-vecchio/mercatino-lantico-baule_1303/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/lodi-vecchio/mercatino-lantico-baule_1303/",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare."
+      },
+      "venue": "Piazza Vittorio Emanuele II",
+      "sectors": "Antiquariato, usato, collezionismo e hobbistica",
+      "frequencyNote": "Terza domenica secondo il calendario del mercatino; verificare pause e singole date. Nessuna data dedotta automaticamente.",
+      "summary": "Mercatino periodico nell’agenda locale."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Lodi Vecchio",
+      "name": "Sagra del Ringraziamento — mercato a km zero",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.comune.lodivecchio.lo.it/area_letturaEvento/168565/pagsistema.html",
+        "label": "comune.lodivecchio.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-10-26",
+          "end": "2025-10-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.lodivecchio.lo.it/area_letturaEvento/168565/pagsistema.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.lodivecchio.lo.it/area_letturaEvento/168565/pagsistema.html",
+        "note": "Il programma 2025 conferma mercato a km zero e mercanti medievali. Nel 2026 c’è una determina di sponsorizzazione, ma non è stato reperito un programma commerciale completo: chiedi date e requisiti al Comune. Ultima edizione documentata: 2025; prossima edizione da riconfermare."
+      },
+      "venue": "Piazza Vittorio Emanuele II, centro e Parco Pertini",
+      "sectors": "Mercato a km zero e mercanti medievali",
+      "hours": "Dalle 09:30 fino a sera nel 2025"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Maleo",
+      "name": "ArteVino",
+      "category": "sagra",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://artevinomaleo.it/",
+        "label": "artevinomaleo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-19",
+          "end": "2026-06-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://artevinomaleo.it/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-20",
+          "end": "2026-06-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://artevinomaleo.it/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-21",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://artevinomaleo.it/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-26",
+          "end": "2026-06-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://artevinomaleo.it/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-27",
+          "end": "2026-06-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://artevinomaleo.it/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-28",
+          "end": "2026-06-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://artevinomaleo.it/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://artevinomaleo.it/",
+        "note": "Stand di vino, bevande e ristorazione selezionata: chiedi se l’organizzazione accetta nuovi operatori e quali servizi/costi richiede. Posteggi per commercio generico non documentati."
+      },
+      "venue": "Villa Trecchi, Via D. Manfredi 26",
+      "sectors": "Vino, bevande e proposte agroalimentari selezionate",
+      "frequencyNote": "Due fine settimana: nessuna apertura inserita tra il 22 e il 25 giugno."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Mulazzano",
+      "name": "Sagra di Mulazzano — mercato",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://comune.mulazzano.lo.it/it/news/sagra-di-mulazzano-manifestazioni-di-interesse-da-parte-di-operatori-economici-e-commerciali",
+        "label": "comune.mulazzano.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.mulazzano.lo.it/it/news/sagra-di-mulazzano-manifestazioni-di-interesse-da-parte-di-operatori-economici-e-commerciali"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://comune.mulazzano.lo.it/it/news/sagra-di-mulazzano-manifestazioni-di-interesse-da-parte-di-operatori-economici-e-commerciali",
+        "note": "Quattro spazi 8×5 m in Via Pandina, ordine di protocollo. Manifestazione di interesse via PEC o protocollo entro il 7 ottobre, DURC regolare e autorizzazioni richieste. Termine trascorso: chiedi disponibilità residue.",
+        "deadline": "2026-10-07",
+        "costs": "Per i quattro spazi: esenzione dal Canone Unico Patrimoniale; altri eventuali oneri da verificare."
+      },
+      "venue": "Piazza del Comune e Via Pandina",
+      "hours": "Mercato dalle 09:00 secondo il programma",
+      "sectors": "Operatori economici/commerciali, ambulanti, artigianato e hobbisti",
+      "contacts": {
+        "email": "mulazzanocomune@postemailcertificata.it",
+        "phone": "02 98889001"
+      }
+    },
+    {
+      "region": "Lombardia",
+      "city": "Orio Litta",
+      "name": "Aspettando il Natale",
+      "category": "mercatino",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://cloud-ita.municipiumapp.it/s3/20287/allegati/pubblicazioni/opuscolo-lodigiano-autunno-2025bassa.pdf",
+        "label": "cloud-ita.municipiumapp.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-30",
+          "end": "2025-11-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://cloud-ita.municipiumapp.it/s3/20287/allegati/pubblicazioni/opuscolo-lodigiano-autunno-2025bassa.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://cloud-ita.municipiumapp.it/s3/20287/allegati/pubblicazioni/opuscolo-lodigiano-autunno-2025bassa.pdf",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare. Ultima edizione documentata: 2025; prossima edizione da riconfermare."
+      },
+      "venue": "Piazza Aldo Moro",
+      "organizer": "Pro Loco Oriese APS",
+      "contacts": {
+        "email": "prolocooriese@gmail.com",
+        "phone": "333 4732923"
+      },
+      "sectors": "Mercatino natalizio e prodotti locali",
+      "frequencyNote": "Prima domenica di Avvento nell’edizione documentata; data 2026 non calcolata."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Ossago Lodigiano",
+      "name": "Ossago in festa — bancarelle della sagra",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/ossago-lodigiano/ossago-in-festa_1347/",
+        "label": "ilcittadino.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-27",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/ossago-lodigiano/ossago-in-festa_1347/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.ilcittadino.it/eventi/agenda-degli-appuntamenti/dettaglio/incontri/ossago-lodigiano/ossago-in-festa_1347/",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare."
+      },
+      "venue": "Strade del centro",
+      "hours": "Bancarelle dalle 15:00; chiusura da verificare",
+      "sectors": "Bancarelle; categorie da verificare",
+      "summary": "Bancarelle pomeridiane della sagra; fonte giornalistica locale."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Sant'Angelo Lodigiano",
+      "name": "Fiera di Maggio",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey",
+        "label": "dati.lombardia.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-10",
+          "end": "2026-05-10",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare."
+      },
+      "sourceRecordIds": [
+        "25307"
+      ],
+      "organizer": "Pro Loco Sant’Angelo Lodigiano",
+      "venue": "Vie e piazze del centro",
+      "sectors": "Esposizioni di veicoli e attività commerciali; categorie del banco da verificare",
+      "frequencyNote": "61ª festa 8–10 maggio; la Regione censisce la fiera domenica 10 maggio.",
+      "hours": "06:00–22:00 nel calendario regionale; orario espositori da verificare"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Secugnago",
+      "name": "Mercatino per l’accensione dell’Albero di Natale",
+      "category": "mercatino",
+      "months": [
+        12
+      ],
+      "source": {
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSd2N30GIdD_zE8kbBXI8GGyNa3Io0eQslWwvEOxIFSel-U4vg/viewform",
+        "label": "docs.google.com",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-08",
+          "end": "2026-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://docs.google.com/forms/d/e/1FAIpQLSd2N30GIdD_zE8kbBXI8GGyNa3Io0eQslWwvEOxIFSel-U4vg/viewform"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://forms.gle/BELAXgzZV1eBNTpJ9",
+        "note": "Compila il modulo: selezione per spazi e varietà dei prodotti, risposta entro il 25 novembre. Il modulo conferma 8 dicembre 2026 e termine 20 novembre; prevale sull’avviso con scadenza rimasta al 2025.",
+        "deadline": "2026-11-20",
+        "deadlineLabel": "Iscrizioni tramite il modulo ufficiale 2026",
+        "costs": "Nessuna quota di partecipazione secondo il modulo 2026."
+      },
+      "venue": "Piazza Matteotti",
+      "organizer": "Comune di Secugnago",
+      "hours": "14:00–19:00; arrivo stand entro le 13:00",
+      "sectors": "Hobbisti, creativi, artigiani, produttori locali, rivenditori enogastronomici e food truck",
+      "contacts": {
+        "email": "comune.secugnago@gmail.com",
+        "phone": "0377 807005"
+      }
+    },
+    {
+      "region": "Lombardia",
+      "city": "Senna Lodigiana",
+      "name": "Fiera primaverile di Santa Maria in Galilea",
+      "category": "tradizionale",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://www.comune.sennalodigiana.lo.it/it/events/fiera-primaverile",
+        "label": "comune.sennalodigiana.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.sennalodigiana.lo.it/it/events/fiera-primaverile"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.sennalodigiana.lo.it/it/events/fiera-primaverile",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare."
+      },
+      "venue": "Centro, davanti al Palazzo Comunale",
+      "organizer": "Comune e Pro Loco di Senna Lodigiana",
+      "sectors": "Espositori e bancarelle di vari generi",
+      "frequencyNote": "Inaugurazione dopo messa delle 10:00 e corteo; orari commerciali completi da verificare.",
+      "summary": "Oltre 40 espositori nel programma; il dato non indica posti disponibili."
+    },
+    {
+      "region": "Lombardia",
+      "city": "Sordio",
+      "name": "Mercatino di Natale",
+      "category": "mercatino",
+      "months": [
+        12
+      ],
+      "source": {
+        "url": "https://www.zafferanobanino.it/eventi-fiere/",
+        "label": "zafferanobanino.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-14",
+          "end": "2025-12-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.zafferanobanino.it/eventi-fiere/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.zafferanobanino.it/eventi-fiere/",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare. Ultima edizione documentata: 2025; prossima edizione da riconfermare."
+      },
+      "summary": "Presenza documentata di un produttore locale; calendario 2026 da verificare.",
+      "sectors": "Prodotti locali e articoli natalizi"
+    },
+    {
+      "region": "Lombardia",
+      "city": "Villanova del Sillaro",
+      "name": "Sagra di San Leone",
+      "category": "sagra",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://www.comune.villanova.lo.it/vivere_il_comune/eventi/evento_27.html",
+        "label": "comune.villanova.lo.it",
+        "checkedAt": "2026-10-10"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-12",
+          "end": "2026-04-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.villanova.lo.it/vivere_il_comune/eventi/evento_27.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.villanova.lo.it/vivere_il_comune/eventi/evento_27.html",
+        "note": "La fonte conferma l’evento, ma non pubblica una procedura per gli espositori. Chiedi all’organizzatore settori ammessi, domanda, disponibilità e costi prima di partecipare."
+      },
+      "venue": "Bargano — Piazza Pio XII",
+      "organizer": "Comune e Parrocchia di San Leone II",
+      "hours": "09:00–18:00",
+      "sectors": "Bancarelle di prodotti e oggetti artigianali",
+      "summary": "Sagra con bancarelle nel programma comunale; requisiti e costo del banco non pubblicati."
+    }
+  ]
+}

@@ -45,7 +45,7 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 - [ ] 🟠 Migliorare la ricerca delle fiere e il calendario — unificare gli interventi per chi cerca eventi e posteggi; il calendario esiste già, concentrarsi su date confermate e informazioni per partecipare prima di ampliare i filtri.
 - [ ] 🟢 Creare la sezione «Fiere per ambulanti» — filtri per regione, mese e domande aperte.
 
-### Ricerca approfondita per provincia — aggiornamento 9 ottobre 2026
+### Ricerca approfondita per provincia — aggiornamento 10 ottobre 2026
 
 - [x] **Brescia — ricerca approfondita completata**: 206 manifestazioni in 86 comuni
   pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Brescia). Esaminate 1.031
@@ -55,7 +55,15 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 - [ ] **Brescia — aggiornamenti periodici**: ricontrollare bandi, rinvii e prossime
   edizioni; completare le date ancora ambigue o disponibili soltanto per il 2025.
 
-**Ricerca approfondita ancora da fare: 109 province e unità territoriali equivalenti.**
+- [x] **Lodi — ricerca approfondita completata**: ricerca nei 60 comuni, 43
+  manifestazioni in 26 comuni pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Lodi).
+  35 schede con edizione 2026 e 8 con storico 2025 da riconfermare; fonti,
+  contatti, settori, procedure, costi e 8 scadenze dove documentati.
+  Audit di comuni, esclusioni e dubbi in `data/fiere-lodi.json` e `data/FIERE.md`.
+- [ ] **Lodi — aggiornamenti periodici**: nuove edizioni, bandi e disponibilità;
+  verificare fonti rimosse e segnalazioni commerciali ancora non confermate.
+
+**Ricerca approfondita ancora da fare: 108 province e unità territoriali equivalenti.**
 Gli eventi già presenti e gli import regionali costituiscono una base; le caselle
 seguenti indicano il lavoro provinciale da completare nelle prossime sessioni.
 Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegna 2026.
@@ -128,7 +136,7 @@ Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegn
 - [ ] Como
 - [ ] Cremona
 - [ ] Lecco
-- [ ] Lodi
+- [x] Lodi — completata il 10 ottobre 2026; aggiornamenti periodici separati
 - [ ] Mantova
 - [ ] Milano
 - [ ] Monza e della Brianza
