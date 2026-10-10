@@ -20,6 +20,27 @@ REGION_ALIASES = {
 }
 CATEGORIES = {"tradizionale", "artigianato", "sagra", "espositiva", "mercatino"}
 CATALOG_DATE = "2026-10-10"
+MERCHANDISE_SECTORS = ("alimentare", "non-alimentare", "antiquariato", "artigianato")
+
+
+def merchandise_sectors(row):
+    """Group documented goods, without assuming that a generic fair sells food."""
+    text = key(row.get("sectors", "")).replace("-", " ")
+    # A missing/generic sector can still have an explicit theme in the event title.
+    if text in {"", "misto", "merci varie", "generi vari"}:
+        text = key(row["name"]).replace("-", " ")
+    # Remove negative clauses before matching; a ban on serving food does not
+    # exclude the sale of packaged food and must not remove that sector.
+    text = re.sub(r"\b(?:esclus[oaie]|vietat[oaie]|non ammess[oaie]) (?:il settore |settore |prodotti )?(?:alimentar\w*|antiquariat\w*|artigianat\w*)\b", "", text)
+    non_food = bool(re.search(r"\bnon alim(?:ent\w*)?\b", text))
+    food_text = re.sub(r"\bnon alim(?:ent\w*)?\b", "", text)
+    food = bool(re.search(r"\b(?:aliment\w*|agroaliment\w*|enogastronom\w*|gastronom\w*|dolc\w*|pasticceria|formaggi\w*|salumi|bevande|street food|food(?: truck)?|prodotti (?:agricoli|tipici)|miele|vino|vini|olio)\b", food_text))
+    antiques = bool(re.search(r"\b(?:antiquari\w*|modernariat\w*|vintage|brocant\w*|collezion\w*|oggetti da collezione|oggetti d epoca)\b", text))
+    crafts_text = re.sub(r"\b(?:vino|vini|birra|birre|pane|gelato|dolci|prodotti alimentari) artigianal\w*\b", "", text)
+    crafts = bool(re.search(r"\b(?:artigian\w*|artgianato|artiogianato|hobbist\w*|hobbyst\w*|creativ\w*|creazioni|fatto a mano|opere (?:del proprio|dell) ingegno)\b", crafts_text))
+    non_food = non_food or antiques or crafts or bool(re.search(r"\b(?:abbigliamento|calzature|pelletteria|bigiotteria|oggettistica|casalinghi|arredamento|arredi|mobili|libr[oi]|editoria|fumetti|giocattoli|elettronic\w*|flor\w*|fiori|piante|ceramich\w*|articoli (?:da regalo|sportivi|religiosi)|accessori|macchin\w*|attrezzature|ricambi|design|arte|usato|usati|cose usate)\b", text))
+    flags = (food, non_food, antiques, crafts)
+    return [sector for sector, included in zip(MERCHANDISE_SECTORS, flags) if included]
 
 # Source abbreviations refer to the same recurring event, not additional fairs.
 EVENT_ALIASES = {
@@ -115,6 +136,7 @@ def build_catalog():
             assert row.get("coordinateSource", {}).get("url", "").startswith("https://")
         event = dict(row, id=key(row["region"] + "-" + row["city"] + "-" + row["name"]), months=months,
                      province=province, lat=lat, lng=lng)
+        event["merchandiseSectors"] = merchandise_sectors(event)
         editions = []
         signatures = set()
         for edition in event.get("editions", []):

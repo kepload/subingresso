@@ -2,6 +2,7 @@
     'use strict';
     const MONTHS = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
     const CATEGORIES = { tradizionale: 'Fiera tradizionale', artigianato: 'Artigianato e mostre mercato', sagra: 'Sagra o festa', espositiva: 'Fiera espositiva', mercatino: 'Mercatino' };
+    const SECTORS = { alimentare: 'Alimentare', 'non-alimentare': 'Non alimentare', antiquariato: 'Antiquariato e vintage', artigianato: 'Artigianato' };
     const HOME = [0, 0, 660, 730];
     const normalize = text => String(text || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
     function intervalMonths(from, to) {
@@ -13,6 +14,7 @@
     function filterEvents(events, state, ignoreMonths) {
         const words = normalize(state.query).split(' ').filter(Boolean);
         return events.filter(event => (!state.province || event.province === state.province) && (!state.category || event.category === state.category)
+            && (!state.sector || event.merchandiseSectors.includes(state.sector))
             && (ignoreMonths || !state.months.length || event.months.some(month => state.months.includes(month)))
             && words.every(word => normalize([event.name, event.city, event.region, event.province, event.venue, event.sectors].join(' ')).includes(word)));
     }
@@ -70,12 +72,12 @@
         return (participation.deadline < today ? 'Termine scaduto: ' : 'Scadenza pubblicata: ') + dateLabel(participation.deadline)
             + (participation.deadlineLabel ? ' · ' + participation.deadlineLabel : '');
     }
-    const api = { MONTHS, CATEGORIES, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus };
+    const api = { MONTHS, CATEGORIES, SECTORS, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
     const $ = id => document.getElementById(id);
-    const state = { events: [], provinces: null, province: '', category: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
+    const state = { events: [], provinces: null, province: '', category: '', sector: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
     let searchTimer, mapMarkerTimer, hoveredCard, focusedCard;
     function node(tag, className, text) {
         const element = document.createElement(tag);
@@ -123,10 +125,11 @@
     }
     function syncURL() {
         const url = new URL(location.href);
-        for (const key of ['mesi', 'regione', 'provincia', 'tipo', 'q']) url.searchParams.delete(key);
+        for (const key of ['mesi', 'regione', 'provincia', 'tipo', 'settore', 'q']) url.searchParams.delete(key);
         if (state.months.length) url.searchParams.set('mesi', state.months.join(','));
         if (state.province) url.searchParams.set('provincia', state.province);
         if (state.category) url.searchParams.set('tipo', state.category);
+        if (state.sector) url.searchParams.set('settore', state.sector);
         if (state.query) url.searchParams.set('q', state.query);
         history.replaceState(null, '', url.pathname + url.search + url.hash);
     }
@@ -135,9 +138,11 @@
         state.months = [...new Set((params.get('mesi') || '').split(',').map(Number).filter(n => Number.isInteger(n) && n >= 1 && n <= 12))];
         state.province = [...$('province-filter').options].some(option => option.value === params.get('provincia')) ? params.get('provincia') || '' : '';
         state.category = Object.hasOwn(CATEGORIES, params.get('tipo')) ? params.get('tipo') : '';
+        state.sector = Object.hasOwn(SECTORS, params.get('settore')) ? params.get('settore') : '';
         state.query = (params.get('q') || '').slice(0, 100);
         $('province-filter').value = state.province;
         $('type-filter').value = state.category;
+        $('sector-filter').value = state.sector;
         $('fair-search').value = state.query;
     }
     function renderMonths() {
@@ -301,7 +306,7 @@
         $('detail-editions').replaceChildren(editions);
         $('detail-editions-empty').hidden = Boolean(event.editions?.length);
         const facts = document.createDocumentFragment();
-        for (const [label, value] of [['Luogo', event.venue], ['Organizzatore', event.organizer], ['Orari indicati dalla fonte', event.hours], ['Settori', event.sectors], ['Posteggi dichiarati', event.stallCount ? event.stallCount + ' · ' + (event.stallCountNote || 'organico della manifestazione, non posti liberi') : '']]) {
+        for (const [label, value] of [['Luogo', event.venue], ['Organizzatore', event.organizer], ['Orari indicati dalla fonte', event.hours], ['Categorie', event.merchandiseSectors.map(sector => SECTORS[sector]).join(' · ') || 'Settori da verificare'], ['Settori nella fonte', event.sectors], ['Posteggi dichiarati', event.stallCount ? event.stallCount + ' · ' + (event.stallCountNote || 'organico della manifestazione, non posti liberi') : '']]) {
             if (!value) continue;
             facts.append(node('dt', '', label), node('dd', '', value));
         }
@@ -336,7 +341,7 @@
     function render() {
         const events = sortEvents(filterEvents(state.events, state));
         renderMonths(); renderList(events); renderMap(events);
-        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || 'Tutta Italia') + ' · ' + selectedMonthsLabel();
+        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '');
         const extraCount = Number(Boolean(state.category)) + Number(Boolean(state.query));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
@@ -350,8 +355,8 @@
     }
     function reset() {
         clearTimeout(searchTimer);
-        Object.assign(state, { province: '', category: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
-        for (const id of ['province-filter', 'type-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
+        Object.assign(state, { province: '', category: '', sector: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
+        for (const id of ['province-filter', 'type-filter', 'sector-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
         changed(false);
     }
     async function fetchJSON(url) {
@@ -368,13 +373,14 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=9');
+            const data = await fetchJSON('/data/fiere.json?v=10');
             if (!Array.isArray(data.provinces) || !data.provinces.length || new Set(data.provinces).size !== data.provinces.length
                 || !data.provinces.every(province => typeof province === 'string' && province) || !Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.province === 'string' && data.provinces.includes(event.province)
                 && typeof event.name === 'string' && Array.isArray(event.months) && event.months.length
                 && event.months.every(month => Number.isInteger(month) && month >= 1 && month <= 12)
                 && Number.isFinite(event.lat) && Number.isFinite(event.lng) && Object.hasOwn(CATEGORIES, event.category)
+                && Array.isArray(event.merchandiseSectors) && event.merchandiseSectors.every(sector => Object.hasOwn(SECTORS, sector))
                 && typeof event.source?.url === 'string' && /^https:\/\//.test(event.source.url)
                 && event.participation && Array.isArray(event.editions))) throw new Error('Invalid catalog');
             state.events = data.events;
@@ -387,7 +393,7 @@
                 const option = node('option', '', province); option.value = province; $('province-filter').append(option);
             }
             if (!state.ready) readURL(); else { state.province = previous; $('province-filter').value = previous; }
-            state.ready = true; $('province-filter').disabled = false; fitProvince(); render();
+            state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; fitProvince(); render();
         } catch (error) {
             $('catalog-error').hidden = false;
             $('fair-list').setAttribute('aria-busy', 'false');
@@ -488,6 +494,7 @@
         $('all-months').addEventListener('click', () => { state.months = state.months.length === 12 ? [] : intervalMonths(1, 12); $('month-from').value = ''; $('month-to').value = ''; changed(false); });
         $('province-filter').addEventListener('change', () => { state.province = $('province-filter').value; changed(true); });
         $('type-filter').addEventListener('change', () => { state.category = $('type-filter').value; changed(false); });
+        $('sector-filter').addEventListener('change', () => { state.sector = $('sector-filter').value; changed(false); });
         $('fair-search').addEventListener('input', () => {
             state.query = $('fair-search').value;
             clearTimeout(searchTimer); searchTimer = setTimeout(() => changed(false), 100);

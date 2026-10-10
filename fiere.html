@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario fiere in Italia: mappa e mesi — Subingresso.it</title>
-    <meta name="description" content="Fiere e mercatini in Italia: calendari ufficiali, date delle edizioni, contatti e informazioni per partecipare. Cerca per mese, provincia e tipologia sulla mappa.">
+    <meta name="description" content="Fiere e mercatini in Italia: date, contatti e informazioni per partecipare. Filtra per mese, provincia e settore: alimentare, non alimentare, antiquariato e artigianato.">
     <link rel="canonical" href="https://subingresso.it/fiere">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Subingresso.it">
@@ -37,6 +37,11 @@
             <label for="province-filter"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dove</label>
             <select id="province-filter" aria-label="Provincia" disabled><option value="">Tutta Italia</option></select>
         </div>
+        <div class="fiere-place">
+            <label for="sector-filter"><i class="fa-solid fa-store" aria-hidden="true"></i> Cosa vendi</label>
+            <select id="sector-filter" aria-describedby="sector-help" disabled><option value="">Tutti i settori</option><option value="alimentare">Alimentare</option><option value="non-alimentare">Non alimentare</option><option value="antiquariato">Antiquariato e vintage</option><option value="artigianato">Artigianato</option></select>
+            <p id="sector-help" style="font-size:11px;color:#64748b;line-height:1.6;margin-top:6px">Settori indicati nelle fonti. Le fiere miste compaiono in più categorie.</p>
+        </div>
         <details id="extra-filters" class="fiere-extra-filters">
             <summary><span><i class="fa-solid fa-sliders" aria-hidden="true"></i> Altri filtri <span id="extra-filter-count" class="fiere-filter-count" hidden></span></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
             <div class="fiere-filter-row">
@@ -62,7 +67,7 @@
             <details class="fiere-map-info"><summary>Legenda e fonti</summary><div class="fiere-legend" aria-label="Legenda dei puntini"><span><i class="pin-tradizionale"></i>Fiere</span><span><i class="pin-artigianato"></i>Artigianato</span><span><i class="pin-sagra"></i>Sagre</span><span><i class="pin-espositiva"></i>Espositive</span><span><i class="pin-mercatino"></i>Mercatini</span><span><i class="pin-cluster"></i>Più eventi</span></div>
             <p class="fiere-map-credit">Puntini sul comune, non sull’ingresso della fiera. Confini: <a href="https://github.com/guglielmo/geojson-italy" target="_blank" rel="noopener noreferrer">ISTAT / geojson-italy</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>, semplificati.</p></details>
         </section>
-        <section class="fiere-list-panel" aria-labelledby="list-title"><div class="fiere-panel-heading"><h2 id="list-title">Fiere</h2><span id="list-count" class="fiere-count">…</span></div><div id="fair-list" class="fiere-list" aria-busy="true"></div><div id="empty-results" class="fiere-empty" hidden><span aria-hidden="true">⌕</span><h3>Nessuna fiera trovata</h3><p>Prova un altro mese o un’altra provincia.</p><button id="empty-reset" type="button" class="fiere-button">Azzera filtri</button></div><button id="load-more" type="button" class="fiere-more" hidden>Mostra altre fiere</button></section>
+        <section class="fiere-list-panel" aria-labelledby="list-title"><div class="fiere-panel-heading"><h2 id="list-title">Fiere</h2><span id="list-count" class="fiere-count">…</span></div><div id="fair-list" class="fiere-list" aria-busy="true"></div><div id="empty-results" class="fiere-empty" hidden><span aria-hidden="true">⌕</span><h3>Nessuna fiera trovata</h3><p>Prova un altro settore, mese o provincia.</p><button id="empty-reset" type="button" class="fiere-button">Azzera filtri</button></div><button id="load-more" type="button" class="fiere-more" hidden>Mostra altre fiere</button></section>
     </div>
     <details class="fiere-note"><summary>Informazioni sul calendario</summary><p><strong id="catalog-count">…</strong> fiere e mercatini in 20 regioni. <span id="catalog-info">Fonti dei Comuni e degli organizzatori.</span></p><p>La copertura è più ampia in Liguria, Piemonte, Marche, Lombardia, Veneto ed Emilia-Romagna. I mesi indicano la ricorrenza: sono consultabili anche edizioni concluse o senza una prossima data pubblicata. Controlla le date e il programma nella scheda. I posteggi dichiarati non indicano posti disponibili: consulta la procedura di partecipazione.</p><a href="mailto:info@subingresso.it?subject=Calendario%20fiere%20-%20segnalazione">Segnala una fiera o una correzione ↗</a></details>
     <noscript><p>Per usare i filtri e la mappa abilita JavaScript nel browser. Puoi consultare anche il <a href="https://www.aefi.it/it/calendario/">calendario AEFI</a>.</p></noscript>
@@ -83,6 +88,6 @@
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/data.js?v=20"></script>
 <script src="/js/auth.js?v=22"></script>
-<script src="/js/pages/fiere.js?v=16"></script>
+<script src="/js/pages/fiere.js?v=17"></script>
 </body>
 </html>

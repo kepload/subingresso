@@ -29,6 +29,26 @@ Le procedure specifiche, i costi e le scadenze hanno una fonte dedicata; negli
 altri casi la scheda chiede di contattare l'organizzatore/SUAP. Un link a un
 avviso scaduto non viene presentato come domanda aperta.
 
+## Filtri per settore merceologico — 10 ottobre 2026
+
+Quattro macro categorie: alimentare, non alimentare, antiquariato e vintage,
+artigianato (incluse creazioni e hobbistica). `merchandiseSectors` è un elenco:
+una fiera mista compare in tutti i settori documentati; antiquariato e
+artigianato rientrano anche nel non alimentare. La classificazione è ripetibile
+nel build, partendo dai settori della fonte; quando mancano o sono generici,
+si usano soltanto temi espliciti nel nome della manifestazione. Nessuna
+deduzione dal tipo sagra/fiera/mercatino. “Misto” e “merci varie” da soli non
+provano la presenza di alimentari. Le schede senza indicazioni sufficienti
+restano in “Tutti i settori”, senza attribuzioni ipotetiche. I divieti di
+somministrazione non escludono la vendita alimentare; rimangono visibili
+i vincoli originali nella scheda e le regole di ammissione dell’organizzatore.
+
+Filtro principale “Cosa vendi” su elenco, mappa e conteggi dei mesi; URL
+`settore=alimentare|non-alimentare|antiquariato|artigianato`, combinabile con
+provincia, mesi, tipo evento e ricerca. Test della classificazione:
+`python scripts/test-fiere-sectors.py`; regressioni browser e catalogo:
+`node scripts/test-fiere.cjs`. Cache fiere.js 17, fiere.json 10.
+
 ## Calendari importati
 
 - [Lombardia — Sagre e fiere su area pubblica](https://www.dati.lombardia.it/Commercio/Sagre-e-fiere-su-area-pubblica/hs8z-dcey),

@@ -1032,6 +1032,16 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+10 ottobre: filtro principale “Cosa vendi” con quattro macro categorie
+(alimentare, non alimentare, antiquariato e vintage, artigianato/hobbistica).
+Campo `merchandiseSectors` generato da build-fiere.py usando settori della fonte
+o temi espliciti nel nome quando i settori mancano/sono generici. Fiere miste
+multi categoria; antiquariato/artigianato inclusi anche nel non alimentare;
+indicazioni insufficienti solo in Tutti i settori. Non dedurre alimentari da
+“non alimentare”, “misto”, “merci varie” o dal tipo sagra. URL `settore`, elenco,
+mappa, mesi, reset e dettaglio allineati; test test-fiere-sectors.py/test-fiere.cjs.
+Cache fiere.js 17, fiere.json 10; dettagli in data/FIERE.md.
+
 Lodi (10 ottobre 2026): ricerca nei 60 comuni, 43 manifestazioni in 26 comuni;
 35 con date 2026 e 8 con storico 2025 da riconfermare. Fonte `data/fiere-lodi.json`
 con hash delle 3 righe regionali, audit per comune, esclusioni e dubbi. Build applica

@@ -22,6 +22,10 @@ for (const region of regions) assert(events.filter(e => e.region === region).len
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
 for (const event of events) {
+    assert(Array.isArray(event.merchandiseSectors));
+    assert.equal(new Set(event.merchandiseSectors).size,event.merchandiseSectors.length);
+    assert(event.merchandiseSectors.every(sector => Object.hasOwn(api.SECTORS,sector)));
+    if (event.merchandiseSectors.some(sector => ['antiquariato','artigianato'].includes(sector))) assert(event.merchandiseSectors.includes('non-alimentare'));
     assert(provinces.includes(event.province));
     if (event.region === 'Sardegna') assert.equal(event.province,boundaries.sardiniaMunicipalities[event.city]);
     assert(event.source.url.startsWith('https://') && event.source.label);
@@ -68,6 +72,21 @@ const cantu = events.find(e => e.name === 'Fiera del Crocifisso');
 assert.deepEqual(cantu.months,[10]);
 assert.equal(cantu.editions.find(e => e.year === 2026).start,'2026-10-18');
 assert(api.filterEvents(events,{province:'',category:'',months:[],query:'antiquariato'}).some(e => /antiquariato/i.test(e.sectors || '')));
+const bySector = sector => events.filter(e => e.merchandiseSectors.includes(sector));
+for (const sector of Object.keys(api.SECTORS)) {
+    assert(bySector(sector).length > 0);
+    assert.deepEqual(api.filterEvents(events,{province:'',category:'',sector,months:[],query:''}),bySector(sector));
+}
+const antiqueFair = events.find(e => e.name === 'Fiera Antiquaria');
+assert(antiqueFair.merchandiseSectors.includes('antiquariato'));
+assert(!antiqueFair.merchandiseSectors.includes('alimentare'));
+assert(!bySector('alimentare').some(e => ['Non Alimentare','Non Alim.','Non alimentare','prodotti non alimentari'].includes(e.sectors)));
+const unknownSectors = events.filter(e => !e.merchandiseSectors.length);
+assert(unknownSectors.length > 0);
+assert(unknownSectors.every(e => !Object.keys(api.SECTORS).some(sector => api.filterEvents([e],{province:'',category:'',sector,months:[],query:''}).length)));
+const mixedFair = events.find(e => e.sectors === 'Alimentare, non Alimentare');
+assert(mixedFair.merchandiseSectors.includes('alimentare') && mixedFair.merchandiseSectors.includes('non-alimentare'));
+assert(!events.find(e => e.name === 'Mercatino del libro usato').merchandiseSectors.includes('antiquariato'));
 for (const province of provinces) {
     const state = {province,category:'tradizionale',months:[10,11],query:''};
     assert.deepEqual(api.filterEvents(events,state), events.filter(e => e.province === province && e.category === 'tradizionale' && e.months.some(m => [10,11].includes(m))));
@@ -202,6 +221,8 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('#fair-search').isVisible(),false);
         assert.equal(await page.locator('#month-from').isVisible(),false);
         assert.equal(await page.locator('#province-filter').isVisible(),true);
+        assert.equal(await page.locator('#sector-filter').isVisible(),true);
+        assert.equal(await page.locator('#sector-filter option').count(),5);
         assert.equal(await page.locator('#province-filter option').count(),111);
         assert.equal(await page.locator('#region-filter').count(),0);
         assert.equal(await page.locator('#month-bar button').first().textContent(),'Gennaio');
@@ -219,6 +240,38 @@ async function run(engine,name,viewport,base) {
             assert(mapBox.y + mapBox.height < listBox.y,'Map before the results list');
         }
         await matches(events);
+        for (const sector of Object.keys(api.SECTORS)) {
+            await page.selectOption('#sector-filter',sector);
+            await matches(bySector(sector));
+            assert.equal(new URL(page.url()).searchParams.get('settore'),sector);
+            assert((await page.locator('#results-summary').textContent()).includes(api.SECTORS[sector]));
+            await page.reload();
+            await matches(bySector(sector));
+            assert.equal(await page.locator('#sector-filter').inputValue(),sector);
+        }
+        await page.selectOption('#province-filter','Lodi');
+        await page.selectOption('#sector-filter','antiquariato');
+        await page.locator('[data-month="10"]').click();
+        const antiqueLodi = events.filter(e => e.province === 'Lodi' && e.months.includes(10) && e.merchandiseSectors.includes('antiquariato'));
+        await matches(antiqueLodi);
+        assert(antiqueLodi.length > 0);
+        await page.locator('#extra-filters > summary').click();
+        await page.selectOption('#type-filter','mercatino');
+        await page.locator('#fair-search').fill('Codogno');
+        await matches(antiqueLodi.filter(e => e.category === 'mercatino' && e.city === 'Codogno'));
+        await page.reload();
+        await matches(antiqueLodi.filter(e => e.category === 'mercatino' && e.city === 'Codogno'));
+        await page.locator('.fiere-card-button').first().click();
+        assert((await page.locator('#detail-facts').textContent()).includes('Antiquariato e vintage'));
+        await page.keyboard.press('Escape');
+        await page.locator('#reset-filters').click();
+        await matches(events);
+        assert.equal(await page.locator('#sector-filter').inputValue(),'');
+        assert.equal(new URL(page.url()).searchParams.get('settore'),null);
+        await page.goto(base + '/fiere?settore=inesistente');
+        await matches(events);
+        assert.equal(await page.locator('#sector-filter').inputValue(),'');
+        assert.equal(new URL(page.url()).searchParams.get('settore'),null);
         const firstCard = page.locator('.fiere-card').first();
         const previewProvince = await firstCard.getAttribute('data-province');
         const previewPath = page.locator('#map-provinces [data-province="' + previewProvince + '"]');
