@@ -1040,7 +1040,21 @@ multi categoria; antiquariato/artigianato inclusi anche nel non alimentare;
 indicazioni insufficienti solo in Tutti i settori. Non dedurre alimentari da
 “non alimentare”, “misto”, “merci varie” o dal tipo sagra. URL `settore`, elenco,
 mappa, mesi, reset e dettaglio allineati; test test-fiere-sectors.py/test-fiere.cjs.
-Cache fiere.js 18, fiere.json 11; dettagli in data/FIERE.md.
+Cache fiere.js 19, fiere.json 12; dettagli in data/FIERE.md.
+
+Ricerca Monza e della Brianza (10 ottobre 2026): `data/fiere-monza-brianza.json`,
+55 comuni cercati, 86 manifestazioni in 29 comuni (+72), 199 righe regionali e
+199 programmi scaricati, 176 con testo estraibile; audit di righe, comuni,
+hash, nove allegati letti visivamente, esclusioni e dubbi. 82 schede con giorni
+precisi, un periodo natalizio, tre edizioni testuali; 26 con contatti, sei
+scadenze. Lissone Natale: tre domeniche separate; Epifania 5 gennaio 2027,
+35 concessioni, domande entro 6 novembre 2026 via SUAP. Brocante Monza:
+15 giornate, senza agosto. Biassono e Pro Loco in Fiore restano testuali per
+giorni non confermati/discordanti; sagre senza prova di commercio esterno
+escluse. Build sostituisce solo MB: 1.952 schede esterne identiche, 14 id
+precedenti conservati. Totale 2.038 eventi, 1.879 con edizioni, 1.615 con date.
+TODO: quarta provincia ricercata, 106 ancora da approfondire. Cache fiere.js
+19, fiere.json 12; regressioni provinciali in scripts/test-fiere.cjs.
 
 Lecco (10 ottobre 2026): ricerca negli 84 comuni, 46 manifestazioni in 23 comuni;
 40 schede con date precise, 3 periodi ricorrenti e 3 date testuali. Fonte curata

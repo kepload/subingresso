@@ -75,7 +75,20 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
   chiarire Street Food/Cioccolato Merate, giorno di Premana, Fiera dei Patroni Bellano,
   ammissioni professionali e programmi scansione non ancora verificati.
 
-**Ricerca approfondita ancora da fare: 107 province e unità territoriali equivalenti.**
+- [x] **Monza e della Brianza — ricerca approfondita completata**: ricerca nei
+  55 comuni, 86 manifestazioni in 29 comuni pubblicate in
+  [/fiere](https://subingresso.it/fiere?provincia=Monza%20e%20della%20Brianza).
+  82 schede con giornate precise, un periodo e tre edizioni testuali; 199 righe
+  regionali e 199 programmi scaricati, 176 con testo estraibile. Contatti per
+  26 manifestazioni e sei scadenze documentate. Corrette le domeniche natalizie
+  di Lissone e le 15 giornate del brocante di Monza. Epifania Lissone 2027:
+  domanda entro il 6 novembre 2026 per 35 concessioni. Audit e limiti in
+  `data/fiere-monza-brianza.json` e `data/FIERE.md`.
+- [ ] **Monza e della Brianza — aggiornamenti periodici**: bandi, disponibilità,
+  rinvii e nuove edizioni; chiarire Biassono San Martino, Pro Loco in Fiore
+  Lissone, Oreno, mercatini natalizi e programmi scansione non ancora verificati.
+
+**Ricerca approfondita ancora da fare: 106 province e unità territoriali equivalenti.**
 Gli eventi già presenti e gli import regionali costituiscono una base; le caselle
 seguenti indicano il lavoro provinciale da completare nelle prossime sessioni.
 Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegna 2026.
@@ -151,7 +164,7 @@ Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegn
 - [x] Lodi — completata il 10 ottobre 2026; aggiornamenti periodici separati
 - [ ] Mantova
 - [ ] Milano
-- [ ] Monza e della Brianza
+- [x] Monza e della Brianza — ricerca completata; aggiornamenti periodici sopra
 - [ ] Pavia
 - [ ] Sondrio
 - [ ] Varese
