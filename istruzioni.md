@@ -1040,7 +1040,21 @@ multi categoria; antiquariato/artigianato inclusi anche nel non alimentare;
 indicazioni insufficienti solo in Tutti i settori. Non dedurre alimentari da
 “non alimentare”, “misto”, “merci varie” o dal tipo sagra. URL `settore`, elenco,
 mappa, mesi, reset e dettaglio allineati; test test-fiere-sectors.py/test-fiere.cjs.
-Cache fiere.js 17, fiere.json 10; dettagli in data/FIERE.md.
+Cache fiere.js 18, fiere.json 11; dettagli in data/FIERE.md.
+
+Lecco (10 ottobre 2026): ricerca negli 84 comuni, 46 manifestazioni in 23 comuni;
+40 schede con date precise, 3 periodi ricorrenti e 3 date testuali. Fonte curata
+`data/fiere-lecco.json`: audit delle 160 righe regionali, 160 programmi scaricati,
+122 con testo; controllo visivo di tre programmi Galbiate, scansioni residue da
+verificare. Build sostituisce solo Lecco e conserva le altre 1.920 schede identiche.
+Totali attuali 1.966 eventi, 1.807 con edizioni, 1.546 con date; 107 province da
+approfondire. Viganò 52 posteggi: domanda 7 dicembre 2026, fiera 7 febbraio 2027;
+nessuna proiezione 2028/2029. Sant'Andrea Oggiono commercio 25–26 ottobre, San Gaetano
+Casatenovo ambulanti solo 2 agosto e distinta fiera zootecnica 30 luglio–3 agosto.
+Merate Street Food/Cioccolato e Premana: date testuali perché discordanti/non
+verificate. Galbiate Natale hobbisti rimossa, Valmadrera solo privati esclusa,
+Burolla 2026 annullata. TO DO spuntata con voce separata per verifiche periodiche.
+Cache fiere.js 18, fiere.json 11; test provinciali e browser in test-fiere.cjs.
 
 Lodi (10 ottobre 2026): ricerca nei 60 comuni, 43 manifestazioni in 26 comuni;
 35 con date 2026 e 8 con storico 2025 da riconfermare. Fonte `data/fiere-lodi.json`

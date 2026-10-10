@@ -181,6 +181,51 @@ assert.deepEqual(lodiEvent('Maleo', /ArteVino/).editions.map(e => e.start),['202
 assert(lodiEvent('Lodi', /Santa Lucia/).editions.every(e => e.year === 2025));
 assert(lodiEvent('Lodi Vecchio', /Ringraziamento/).editions.every(e => e.year === 2025));
 assert(!lodi.some(e => /Passione di Cristo/.test(e.name)));
+// Lecco: conflicting calendars must not become confirmed days or open applications.
+const leccoResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-lecco.json'), 'utf8'));
+const lecco = events.filter(e => e.province === 'Lecco');
+assert.equal(lecco.length, 46);
+assert.equal(lecco.length, leccoResearch.events.length);
+assert.equal(new Set(leccoResearch.research.municipalityCoverage.map(c => c.city)).size, 84);
+assert.equal(leccoResearch.research.municipalityCoverage.reduce((sum,c) => sum + c.eventsFound,0), lecco.length);
+assert.equal(leccoResearch.research.regionalRecordAudit.length,160);
+assert.equal(new Set(leccoResearch.research.regionalRecordAudit.map(r => r.recordId)).size,160);
+const leccoEvent = (city, pattern) => lecco.find(e => e.city === city && pattern.test(e.name));
+const vigano = leccoEvent('Viganò', /apollonia/i);
+assert.equal(vigano.stallCount,52);
+assert.equal(vigano.participation.deadline,'2026-12-07');
+assert.equal(api.selectEdition(vigano,'2026-10-10').start,'2027-02-07');
+assert(!vigano.editions.some(e => e.year > 2027));
+assert(api.deadlineStatus(vigano.participation,'2026-10-10').startsWith('Scadenza pubblicata:'));
+const merateAmbrogio = leccoEvent('Merate', /ambrogio/i);
+assert.equal(merateAmbrogio.participation.deadline,'2026-10-08');
+assert(api.deadlineStatus(merateAmbrogio.participation,'2026-10-10').startsWith('Termine scaduto:'));
+assert.deepEqual(leccoEvent('Oggiono', /Sant'Andrea/).editions.map(e => [e.start,e.end]),[['2026-10-25','2026-10-26']]);
+assert(!lecco.some(e => e.city === 'Oggiono' && /Feron/.test(e.name)));
+assert.deepEqual(leccoEvent('Casatenovo', /Festa del Salame/).editions.map(e => [e.start,e.end]),[['2026-04-25','2026-04-26'],['2026-05-01','2026-05-03'],['2026-05-08','2026-05-10']]);
+assert.deepEqual(leccoEvent('Airuno', /Aizurro/).editions.map(e => e.start),['2026-06-07','2026-06-14']);
+assert.equal(leccoEvent('Casatenovo', /Fiera mercato/).editions[0].start,'2026-08-02');
+assert.equal(leccoEvent('Casatenovo', /Fiera mercato/).editions[0].end,'2026-08-02');
+assert.equal(leccoEvent('Casatenovo', /Fiera zootecnica/).editions[0].end,'2026-08-03');
+assert.equal(leccoEvent('Valgreghentino', /San Giuseppe/).editions[0].start,'2026-03-15');
+assert.equal(leccoEvent('Valgreghentino', /San Giuseppe/).editions[0].end,'2026-03-15');
+for (const pattern of [/Street food di ottobre/,/cioccolato/]) {
+    assert(leccoEvent('Merate',pattern).editions.every(e => !e.start && e.label.includes('Ottobre')));
+}
+assert(leccoEvent('Premana', /San Matteo/).editions.every(e => !e.start));
+for (const [city,pattern] of [['Colico',/Mercatini serali/],['Colico',/hobby/],['Dervio',/Market and Food/]]) {
+    const event=leccoEvent(city,pattern);
+    assert(event.editions.every(e => e.periodOnly));
+    assert(api.editionLabel(event.editions[0]).includes('giorni da verificare'));
+}
+const colicoNatale=leccoEvent('Colico',/Natale/);
+assert.equal(colicoNatale.editions.length,21);
+assert(colicoNatale.editions.every(e => e.start === e.end && e.start <= '2026-01-11'));
+assert(!lecco.some(e => e.city === 'Galbiate' && /Natale/.test(e.name)));
+assert(!lecco.some(e => e.city === 'Valmadrera' || /Burolla/.test(e.name)));
+assert(!leccoEvent('Abbadia Lariana', /apollonia/).merchandiseSectors.includes('alimentare'));
+assert.equal(leccoEvent('Lecco', /Campagna Amica/).editions.length,6);
+assert.equal(leccoEvent('Lecco', /Mercatini di Natale/).participation.deadline,undefined);
 const server = http.createServer((req,res) => {
     let file = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).slice(1) || 'index.html';
     if (!path.extname(file)) file += '.html';

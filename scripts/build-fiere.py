@@ -111,7 +111,7 @@ def build_catalog():
     locations = {(key(c["nome"]), REGION_ALIASES.get(c["regione"], c["regione"])): c for c in comuni}
     # This audited provincial file replaces its older regional/editorial entries.
     # Keep the national source snapshots intact and preserve every other province.
-    for province, filename in (("Brescia", "fiere-brescia.json"), ("Lodi", "fiere-lodi.json")):
+    for province, filename in (("Brescia", "fiere-brescia.json"), ("Lodi", "fiere-lodi.json"), ("Lecco", "fiere-lecco.json")):
         researched = json.loads((ROOT / "data" / filename).read_text(encoding="utf-8"))
         assert researched["province"] == province and researched["checkedAt"] <= CATALOG_DATE
         for row in researched["events"]:

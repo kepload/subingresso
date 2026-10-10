@@ -63,7 +63,19 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 - [ ] **Lodi — aggiornamenti periodici**: nuove edizioni, bandi e disponibilità;
   verificare fonti rimosse e segnalazioni commerciali ancora non confermate.
 
-**Ricerca approfondita ancora da fare: 108 province e unità territoriali equivalenti.**
+- [x] **Lecco — ricerca approfondita completata**: ricerca negli 84 comuni, 46
+  manifestazioni in 23 comuni pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Lecco).
+  40 schede con giornate precise, 3 periodi ricorrenti e 3 date testuali da verificare;
+  contatti, settori, procedure e 4 scadenze quando documentati. Consultate le 160
+  righe regionali e scaricati tutti i programmi: 122 con testo estraibile; scansioni
+  non verificate e altre segnalazioni conservate nell'audit, senza inventare date.
+  Bando Viganò 2027–2029: termine 7 dicembre 2026, fiera 7 febbraio 2027.
+  Fonti, esclusioni e limiti in `data/fiere-lecco.json` e `data/FIERE.md`.
+- [ ] **Lecco — aggiornamenti periodici**: bandi, nuove edizioni, rinvii e disponibilità;
+  chiarire Street Food/Cioccolato Merate, giorno di Premana, Fiera dei Patroni Bellano,
+  ammissioni professionali e programmi scansione non ancora verificati.
+
+**Ricerca approfondita ancora da fare: 107 province e unità territoriali equivalenti.**
 Gli eventi già presenti e gli import regionali costituiscono una base; le caselle
 seguenti indicano il lavoro provinciale da completare nelle prossime sessioni.
 Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegna 2026.
@@ -135,7 +147,7 @@ Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegn
 - [ ] Bergamo
 - [ ] Como
 - [ ] Cremona
-- [ ] Lecco
+- [x] Lecco — ricerca completata; aggiornamenti periodici sopra
 - [x] Lodi — completata il 10 ottobre 2026; aggiornamenti periodici separati
 - [ ] Mantova
 - [ ] Milano
