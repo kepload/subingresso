@@ -1,0 +1,1756 @@
+{
+  "province": "Prato",
+  "checkedAt": "2026-10-11",
+  "research": {
+    "municipalitiesReviewed": 7,
+    "previousCatalogEvents": 0,
+    "selection": "Provincia ancora da approfondire; controllati tutti i sette comuni.",
+    "method": "Comuni, SUAP, cartellone e comunicati Prato, Pro Loco, bando Carmignano, organizzatori e stampa locale; fonti secondarie marcate come calendario da riconfermare.",
+    "scopeLimit": "Ricerca documentale nelle fonti accessibili, non censimento esaustivo né garanzia di posteggi disponibili. PDF annuali Prato non recuperati; nessuna data 2027 dedotta. Ricorrenze non convertite in date salvo calendario annuale esplicito Poggio 2026.",
+    "municipalityCoverage": [
+      {
+        "city": "Prato",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere, mercatini e frazioni 2026",
+          "bandi, espositori e scadenze",
+          "sagre con commercio esterno e Natale"
+        ],
+        "eventsFound": 23,
+        "sources": [
+          "https://prato.confesercenti.it/2026/03/25/festa-regionale-degli-ambulanti-2026/",
+          "https://prato.confesercenti.it/2026/09/07/mercato-europeo-dal-10-al-13-settembre-2026-a-prato/",
+          "https://tempolibero.comune.prato.it/event/7549f260-f518-11f0-921b-07001592f1c6/appointment/f2ac1540-b826-11f1-ae74-db8072bcef6f",
+          "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000498",
+          "https://tempolibero.comune.prato.it/event/38e82d80-f519-11f0-bae5-e381e6ec5537/appointment/03f03340-b825-11f1-9cdd-691bb267ac14",
+          "https://ordinanzeviabilita2.comune.prato.it/ordinanzeviabilitabinj/servlet/OrdinanzeviabilitaServlet?anno=2026&numero=2181&tpope=PREVIEW",
+          "https://tempolibero.comune.prato.it/event/93ffae30-10b9-11f1-8e8a-0d5e43366c36/appointment/aab3c840-b723-11f1-a57b-9d0a1fa99b24",
+          "https://tempolibero.comune.prato.it/event/ae70d460-bb1a-11f1-93b7-83ab0570d65d/appointment/bd5960f0-bb1a-11f1-b322-d722e732e548",
+          "https://tempolibero.comune.prato.it/event/6aa15cf0-b828-11f1-9a4c-d730947b0e56/appointment/7e715a20-b828-11f1-b499-4f0cba34d2b3",
+          "https://tempolibero2.comune.prato.it/event/3c79c9c0-b829-11f1-9c47-05a3df487a60/appointment/4edee660-b829-11f1-b327-e556e2a7d04d",
+          "https://tempolibero2.comune.prato.it/event/d69dc950-bb1c-11f1-80a7-3968a630133b",
+          "https://tempolibero.comune.prato.it/event/a502c400-b823-11f1-9813-c3c3adbc5250",
+          "https://tempolibero.comune.prato.it/event/9e0426e0-b827-11f1-bd6d-dbc62e3394ec",
+          "https://tempolibero.comune.prato.it/event/dceeea00-b829-11f1-968b-8301ef9a1217",
+          "https://gestionaletempolibero.comune.prato.it/event/266827b0-b826-11f1-98a4-278c12fe9890/appointment/43eb1610-b826-11f1-a15d-0fdd184ae4ca",
+          "https://tempolibero.comune.prato.it/event/8b95e100-b826-11f1-88f4-8724b687ca47/appointment/a5866600-b826-11f1-89fb-673c6e2bd056",
+          "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000525",
+          "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072",
+          "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000171",
+          "https://tempolibero.comune.prato.it/category/a29c10f0-f2b0-11ea-9fa4-a168488a36af"
+        ],
+        "result": "Manifestazioni documentate incluse; esclusioni e dubbi conservati, accesso professionale da verificare dove non pubblicato."
+      },
+      {
+        "city": "Carmignano",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere, mercatini e frazioni 2026",
+          "bandi, espositori e scadenze",
+          "sagre con commercio esterno e Natale"
+        ],
+        "eventsFound": 3,
+        "sources": [
+          "https://prato.confesercenti.it/wp-content/uploads/sites/6/2026/09/AVVISO-PUBBLICO-FIERA-DI-CARMIGNANO.pdf",
+          "https://comune.carmignano.po.it/pagina168855_mercatini-periodici.html"
+        ],
+        "result": "Manifestazioni documentate incluse; esclusioni e dubbi conservati, accesso professionale da verificare dove non pubblicato."
+      },
+      {
+        "city": "Montemurlo",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere, mercatini e frazioni 2026",
+          "bandi, espositori e scadenze",
+          "sagre con commercio esterno e Natale"
+        ],
+        "eventsFound": 4,
+        "sources": [
+          "https://www.comune.montemurlo.po.it/pagina137706_novecento-mostra-mercato-dellantiquariato-di-montemurlo.html",
+          "https://www.unplitoscana.it/event/montemurlo-craft-e-park-a-montemurlo-po/",
+          "https://www.prolocomontemurloaps.it/eventi/"
+        ],
+        "result": "Manifestazioni documentate incluse; esclusioni e dubbi conservati, accesso professionale da verificare dove non pubblicato."
+      },
+      {
+        "city": "Poggio a Caiano",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere, mercatini e frazioni 2026",
+          "bandi, espositori e scadenze",
+          "sagre con commercio esterno e Natale"
+        ],
+        "eventsFound": 2,
+        "sources": [
+          "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano",
+          "https://trasparenza.comune.poggio-a-caiano.po.it/page/126/atti-di-concessione.html"
+        ],
+        "result": "Manifestazioni documentate incluse; esclusioni e dubbi conservati, accesso professionale da verificare dove non pubblicato."
+      },
+      {
+        "city": "Vernio",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere, mercatini e frazioni 2026",
+          "bandi, espositori e scadenze",
+          "sagre con commercio esterno e Natale"
+        ],
+        "eventsFound": 4,
+        "sources": [
+          "https://www.comune.vernio.po.it/novita/eventi/antica-fiera-di-san-giuseppe",
+          "https://www.comune.vernio.po.it/novita/notizie/vernio-comics-2026-torna-la-fiera-in-val-di-bisenzio-dedicata-a-fumetti-e-cosplay",
+          "https://www.comune.vernio.po.it/novita/notizie/quando-la-terra-si-fa-racconto-il-programma-autunnale-con-dolce-vernio-e-i-prodotti-del-territorio-protagonisti",
+          "https://hobbistando.it/evento/mercatino-di-natale-poggiole-2026-12-05/"
+        ],
+        "result": "Manifestazioni documentate incluse; esclusioni e dubbi conservati, accesso professionale da verificare dove non pubblicato."
+      },
+      {
+        "city": "Vaiano",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere, mercatini e frazioni 2026",
+          "bandi, espositori e scadenze",
+          "sagre con commercio esterno e Natale"
+        ],
+        "eventsFound": 1,
+        "sources": [
+          "https://corrierepratese.it/vaiano/cultura-ed-eventi/alla-briglia-torna-il-beer-festival-tra-musica-dal-vivo-gastronomia-e-divertimento/"
+        ],
+        "result": "Manifestazioni documentate incluse; esclusioni e dubbi conservati, accesso professionale da verificare dove non pubblicato."
+      },
+      {
+        "city": "Cantagallo",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere, mercatini e frazioni 2026",
+          "bandi, espositori e scadenze",
+          "sagre con commercio esterno e Natale"
+        ],
+        "eventsFound": 1,
+        "sources": [
+          "https://www.reportpistoia.com/rievocazione-della-festa-di-santanna-a-cascina-di-spedaletto/"
+        ],
+        "result": "Manifestazioni documentate incluse; esclusioni e dubbi conservati, accesso professionale da verificare dove non pubblicato."
+      }
+    ],
+    "exclusions": [
+      {
+        "city": "Prato",
+        "name": "Mercati ordinari, Rionalissima e straordinari Galilei",
+        "reason": "Mercati ordinari esclusi; straordinari riservati ai titolari. Calendari PDF annuali non recuperati: ricerca su comunicati, cartellone e ordinanze.",
+        "sources": [
+          "https://www.comune.prato.it/it/per-i-cittadini/tempo-libero/partecipare-mercatini-fierucole/pagina4191.html"
+        ]
+      },
+      {
+        "city": "Prato",
+        "name": "Collezionismo Galcetello",
+        "reason": "Titolo del 10 ottobre recuperato, dettagli commerciali non verificati.",
+        "sources": [
+          "https://tempolibero.comune.prato.it/category/a29c10f0-f2b0-11ea-9fa4-a168488a36af"
+        ]
+      },
+      {
+        "city": "Carmignano",
+        "name": "Fiera di Comeana, Festa Etrusca, Ciliegie e Benvenuto Fico Secco",
+        "reason": "Programmi commerciali 2026 e accesso esterno non verificati; archivio e schede storiche non sufficienti.",
+        "sources": [
+          "https://prolococarmignano.it/eventi/"
+        ]
+      },
+      {
+        "city": "Montemurlo",
+        "name": "Festa dell’Olio",
+        "reason": "15 novembre 2026 annunciato, dettagli delle bancarelle ancora riferiti al 2025.",
+        "sources": [
+          "https://www.festadelloliomontemurlo.it/"
+        ]
+      },
+      {
+        "city": "Montemurlo",
+        "name": "Arte Lavoro Sport, A spasso per Oste e Mulino",
+        "reason": "Spettacoli o promozione negozi; mercato esterno non documentato o programma provvisorio.",
+        "sources": [
+          "https://www.prolocomontemurloaps.it/eventi/"
+        ]
+      },
+      {
+        "city": "Poggio a Caiano",
+        "name": "Assedio alla Villa e Natale",
+        "reason": "Date Assedio 18–20 settembre 2026, ma mercato descritto nel programma 2025; Natale senza programma datato verificato.",
+        "sources": [
+          "https://www.prolocopoggioacaiano.it/manifestazioni_poggesi/assedio_alla_villa.html"
+        ]
+      },
+      {
+        "city": "Vaiano",
+        "name": "Natalogie, Vaiano a Tavola e sagre gastronomiche",
+        "reason": "Beneficenza o ristoro associativo senza ammissione commerciale esterna documentata.",
+        "sources": [
+          "https://www.comune.vaiano.po.it/novita/notizie/vaiano-a-tavola-torna-la-festa-che-unisce-buon-cibo-e-solidarieta"
+        ]
+      },
+      {
+        "city": "Cantagallo",
+        "name": "Carmignanello in Festa, Migliana Ritrovata e Fiera dei Roti",
+        "reason": "Mercatini citati senza precise giornate commerciali 2026; Roti con programma solo storico.",
+        "sources": [
+          "https://www.sagretoscane.com/feste/po/cantagallo/carmignanello-in-festa.html"
+        ]
+      },
+      {
+        "city": "Vernio",
+        "name": "Cavarzano Eventi e sagre di Montepiano",
+        "reason": "Periodi di festa e ristoro non trasformati in giornate di mercato.",
+        "sources": [
+          "https://www.comune.vernio.po.it/"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Festa regionale degli ambulanti",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://prato.confesercenti.it/2026/03/25/festa-regionale-degli-ambulanti-2026/",
+        "label": "prato.confesercenti.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Da piazza San Marco al Castello dell’Imperatore",
+      "sectors": "Alimentare, abbigliamento, calzature, casalinghi e artigianato",
+      "organizer": "ANVA Confesercenti Prato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-17",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://prato.confesercenti.it/2026/03/25/festa-regionale-degli-ambulanti-2026/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-24",
+          "end": "2026-05-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://prato.confesercenti.it/2026/03/25/festa-regionale-degli-ambulanti-2026/"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://prato.confesercenti.it/2026/03/25/festa-regionale-degli-ambulanti-2026/",
+        "note": "Domanda online con SPID/CNS/CIE dal 25 marzo ore 13 all’8 aprile ore 13. Impresa attiva, titolo ambulante, regolarità contributiva, requisiti di settore e firma digitale. Bollo €16 e quota €105 comprensiva delle spese indicate. Circa 100 posteggi per domenica, non disponibilità attuale.",
+        "deadline": "2026-04-08",
+        "deadlineLabel": "Edizioni maggio 2026: termine ore 13 dell’8 aprile."
+      },
+      "contacts": {
+        "phone": "0574 40291",
+        "email": "direzione@confesercenti.prato.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Mercato Europeo",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://prato.confesercenti.it/2026/09/07/mercato-europeo-dal-10-al-13-settembre-2026-a-prato/",
+        "label": "prato.confesercenti.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Mercatale e giardini",
+      "sectors": "Prodotti tipici, enogastronomia, street food e birre artigianali",
+      "organizer": "Confesercenti Prato e ANVA",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-10",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://prato.confesercenti.it/2026/09/07/mercato-europeo-dal-10-al-13-settembre-2026-a-prato/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://prato.confesercenti.it/2026/09/07/mercato-europeo-dal-10-al-13-settembre-2026-a-prato/",
+        "note": "Selezione tramite organizzatore. Giovedì 18–24, venerdì–domenica 10–24; inaugurazione giovedì ore 16. Cartellone e cronaca riportano talvolta 11–13 settembre: usate date dell’organizzatore."
+      },
+      "contacts": {
+        "phone": "0574 40291",
+        "email": "direzione@confesercenti.prato.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Mercatale Viva",
+      "category": "mercatino",
+      "months": [
+        3,
+        4,
+        9,
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/event/7549f260-f518-11f0-921b-07001592f1c6/appointment/f2ac1540-b826-11f1-ae74-db8072bcef6f",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Mercatale, area pedonalizzata",
+      "sectors": "Vintage, usato, collezionismo, antiquariato e opere dell’ingegno",
+      "organizer": "Associazione Mercatini Indipendenti",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-15",
+          "end": "2026-10-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/7549f260-f518-11f0-921b-07001592f1c6/appointment/f2ac1540-b826-11f1-ae74-db8072bcef6f"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/7549f260-f518-11f0-921b-07001592f1c6/appointment/f2ac1540-b826-11f1-ae74-db8072bcef6f"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-19",
+          "end": "2026-03-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-22",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-26",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000171"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-17",
+          "end": "2026-09-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://ordinanzeviabilita2.comune.prato.it/ordinanzeviabilitabinj/servlet/OrdinanzeviabilitaServlet?anno=2026&numero=2182&tpope=PREVIEW"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://ordinanzeviabilita2.comune.prato.it/ordinanzeviabilitabinj/servlet/OrdinanzeviabilitaServlet?anno=2026&numero=2182&tpope=PREVIEW"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://tempolibero.comune.prato.it/event/7549f260-f518-11f0-921b-07001592f1c6/appointment/f2ac1540-b826-11f1-ae74-db8072bcef6f",
+        "note": "Per privati, creativi, collezionisti e hobbisti; ammissione professionale da chiedere all’associazione. Edizioni ottobre 8–18."
+      },
+      "contacts": {
+        "phone": "348 5112151",
+        "email": "gattorandagi@gmail.com"
+      },
+      "additionalSources": [
+        "https://www.comune.prato.it/it/per-i-cittadini/tempo-libero/partecipare-mercatini-fierucole/pagina4191.html",
+        "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072",
+        "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000171",
+        "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000498"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Il Mercante in Fiera a San Paolo",
+      "category": "mercatino",
+      "months": [
+        3,
+        9
+      ],
+      "source": {
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000498",
+        "label": "comunicati.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Giardini di via Vivaldi",
+      "sectors": "Collezionismo, vintage, artigianato e prodotti tipici",
+      "organizer": "Associazione Mercatini Indipendenti",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000498"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-21",
+          "end": "2026-03-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000498",
+        "note": "Collezionisti, produttori, privati e associazioni; contattare organizzatore per selezione e quote."
+      },
+      "contacts": {
+        "phone": "348 5112151",
+        "email": "gattorandagi@gmail.com"
+      },
+      "additionalSources": [
+        "https://www.comune.prato.it/it/per-i-cittadini/tempo-libero/partecipare-mercatini-fierucole/pagina4191.html"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Fiera del libro e dell’arte",
+      "category": "mercatino",
+      "months": [
+        3,
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/event/38e82d80-f519-11f0-bae5-e381e6ec5537/appointment/03f03340-b825-11f1-9cdd-691bb267ac14",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Filippo Lippi",
+      "sectors": "Libri antichi e usati, manoscritti, stampe e arte su carta",
+      "organizer": "Associazione Asterisco",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/38e82d80-f519-11f0-bae5-e381e6ec5537/appointment/03f03340-b825-11f1-9cdd-691bb267ac14"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-08",
+          "end": "2026-03-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://tempolibero.comune.prato.it/event/38e82d80-f519-11f0-bae5-e381e6ec5537/appointment/03f03340-b825-11f1-9cdd-691bb267ac14",
+        "note": "Operatori culturali, professionisti e privati: contattare Asterisco. L’11 ottobre 9–18; altre ricorrenze non proiettate automaticamente."
+      },
+      "contacts": {
+        "phone": "347 7370308",
+        "email": "asterisco.prato@gmail.com"
+      },
+      "additionalSources": [
+        "https://www.comune.prato.it/it/per-i-cittadini/tempo-libero/partecipare-mercatini-fierucole/pagina4191.html"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Fierucola delle Bigonge",
+      "category": "mercatino",
+      "months": [
+        3,
+        9
+      ],
+      "source": {
+        "url": "https://ordinanzeviabilita2.comune.prato.it/ordinanzeviabilitabinj/servlet/OrdinanzeviabilitaServlet?anno=2026&numero=2181&tpope=PREVIEW",
+        "label": "ordinanzeviabilita2.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Sant’Antonino, Santa Maria in Castello e Buonamici",
+      "sectors": "Agricoltura biologica, alimentare e artigianato sostenibile",
+      "organizer": "Associazione Pane di Luna",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://ordinanzeviabilita2.comune.prato.it/ordinanzeviabilitabinj/servlet/OrdinanzeviabilitaServlet?anno=2026&numero=2181&tpope=PREVIEW"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-28",
+          "end": "2026-03-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://ordinanzeviabilita2.comune.prato.it/ordinanzeviabilitabinj/servlet/OrdinanzeviabilitaServlet?anno=2026&numero=2181&tpope=PREVIEW",
+        "note": "Candidatura descrivendo i prodotti all’associazione. Il 10–11 ottobre è stato anticipato al 19 settembre. Apertura serale 17–24 nel comunicato, viabilità dall’ordinanza ore 15."
+      },
+      "contacts": {
+        "phone": "348 5796433",
+        "email": "panediluna@gmail.com"
+      },
+      "additionalSources": [
+        "https://www.comune.prato.it/it/per-i-cittadini/tempo-libero/partecipare-mercatini-fierucole/pagina4191.html",
+        "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000498"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Collezionare in Piazza",
+      "category": "mercatino",
+      "months": [
+        3,
+        4,
+        9,
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/event/93ffae30-10b9-11f1-8e8a-0d5e43366c36/appointment/aab3c840-b723-11f1-a57b-9d0a1fa99b24",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza San Francesco",
+      "sectors": "Antiquariato, collezionismo, modernariato, artigianato e vintage",
+      "organizer": "Associazione Il Penny",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-27",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/93ffae30-10b9-11f1-8e8a-0d5e43366c36/appointment/aab3c840-b723-11f1-a57b-9d0a1fa99b24"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-28",
+          "end": "2026-03-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000171"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-24",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/category/a29c10f0-f2b0-11ea-9fa4-a168488a36af"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://tempolibero.comune.prato.it/event/93ffae30-10b9-11f1-8e8a-0d5e43366c36/appointment/aab3c840-b723-11f1-a57b-9d0a1fa99b24",
+        "note": "Contattare Il Penny: pagina partecipazione indica collezionisti, non professionisti e privati. Ammissione professionale e quota da verificare. Edizione Vintage 24–25 ottobre consolidata nella stessa manifestazione."
+      },
+      "contacts": {
+        "phone": "333 8975175",
+        "email": "mostremercato@virgilio.it"
+      },
+      "additionalSources": [
+        "https://www.comune.prato.it/it/per-i-cittadini/tempo-libero/partecipare-mercatini-fierucole/pagina4191.html",
+        "https://tempolibero.comune.prato.it/category/a29c10f0-f2b0-11ea-9fa4-a168488a36af"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Prato Antiquaria",
+      "category": "mercatino",
+      "months": [
+        3,
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/event/ae70d460-bb1a-11f1-93b7-83ab0570d65d/appointment/bd5960f0-bb1a-11f1-b322-d722e732e548",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Santa Maria delle Carceri",
+      "sectors": "Antiquariato, collezionismo e vintage",
+      "organizer": "Mercatotenda",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/ae70d460-bb1a-11f1-93b7-83ab0570d65d/appointment/bd5960f0-bb1a-11f1-b322-d722e732e548"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-08",
+          "end": "2026-03-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://tempolibero.comune.prato.it/event/ae70d460-bb1a-11f1-93b7-83ab0570d65d/appointment/bd5960f0-bb1a-11f1-b322-d722e732e548",
+        "note": "Chiedere selezione e quota a Mercatotenda; orario scheda comunale 9–19."
+      },
+      "contacts": {
+        "email": "mercatotenda@gmail.com"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Vintakids / Slow Sunday",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/event/6aa15cf0-b828-11f1-9a4c-d730947b0e56/appointment/7e715a20-b828-11f1-b499-4f0cba34d2b3",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza San Domenico",
+      "sectors": "Artigianato per bambini, abbigliamento e attrezzature usate",
+      "organizer": "Comitato Piazza San Domenico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/6aa15cf0-b828-11f1-9a4c-d730947b0e56/appointment/7e715a20-b828-11f1-b499-4f0cba34d2b3"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://tempolibero.comune.prato.it/event/6aa15cf0-b828-11f1-9a4c-d730947b0e56/appointment/7e715a20-b828-11f1-b499-4f0cba34d2b3",
+        "note": "Format rinnovato, ore 9–19. Pagina partecipazione cita privati e artigiani; contattare Comitato per selezione e formato 2026."
+      },
+      "additionalSources": [
+        "https://www.comune.prato.it/it/per-i-cittadini/tempo-libero/partecipare-mercatini-fierucole/pagina4191.html"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Pianeta Verde",
+      "category": "mercatino",
+      "months": [
+        3,
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero2.comune.prato.it/event/3c79c9c0-b829-11f1-9c47-05a3df487a60/appointment/4edee660-b829-11f1-b327-e556e2a7d04d",
+        "label": "tempolibero2.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Cinema Terminale, via Carbonaia 31",
+      "sectors": "Prodotti biologici di filiera corta e artigianato sostenibile",
+      "organizer": "I’Gasse, Casa del Cinema, Arci e Legambiente",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero2.comune.prato.it/event/3c79c9c0-b829-11f1-9c47-05a3df487a60/appointment/4edee660-b829-11f1-b327-e556e2a7d04d"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://tempolibero2.comune.prato.it/event/3c79c9c0-b829-11f1-9c47-05a3df487a60/appointment/4edee660-b829-11f1-b327-e556e2a7d04d",
+        "note": "Contattare mercatino per criteri e candidatura; ottobre 9–13."
+      },
+      "contacts": {
+        "phone": "333 4280790",
+        "email": "mercatopianetaverde@gmail.com"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Mercatino regionale francese",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero2.comune.prato.it/event/d69dc950-bb1c-11f1-80a7-3968a630133b",
+        "label": "tempolibero2.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Mercatale",
+      "sectors": "Enogastronomia e artigianato francese",
+      "organizer": "",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-09",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero2.comune.prato.it/event/d69dc950-bb1c-11f1-80a7-3968a630133b"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://tempolibero2.comune.prato.it/event/d69dc950-bb1c-11f1-80a7-3968a630133b",
+        "note": "Selezione da verificare con organizzatore/SUEAP. Venerdì 12–20, sabato e domenica 9–20; non usare luogo e date delle edizioni precedenti."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Mercatino regionale piemontese",
+      "category": "mercatino",
+      "months": [
+        3,
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/event/a502c400-b823-11f1-9813-c3c3adbc5250",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza San Francesco",
+      "sectors": "Formaggi, salumi, dolci, vini e prodotti biologici",
+      "organizer": "Associazione culturale Mercatino regionale piemontese",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/a502c400-b823-11f1-9813-c3c3adbc5250"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-14",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.mercatinoregionalepiemontese.it/",
+        "note": "Selezione produttori tramite organizzatore; quota da chiedere. Ottobre 9:30–19:30."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Un Prato di Cioccolato",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/event/9e0426e0-b827-11f1-bd6d-dbc62e3394ec",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Duomo",
+      "sectors": "Cioccolato artigianale e pasticceria",
+      "organizer": "Chocomoments",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-15",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/9e0426e0-b827-11f1-bd6d-dbc62e3394ec"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.chocomoments.it/",
+        "note": "Chiedere a Chocomoments selezione e costo stand; pubblico 10–20, inaugurazione 15 ottobre 12:30."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Eccellenze Sabaude: Lombardia, Piemonte e Sardegna",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/event/dceeea00-b829-11f1-968b-8301ef9a1217",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Mercatale",
+      "sectors": "Eccellenze gastronomiche regionali e cioccolato",
+      "organizer": "",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-23",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/dceeea00-b829-11f1-968b-8301ef9a1217"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://tempolibero.comune.prato.it/event/dceeea00-b829-11f1-968b-8301ef9a1217",
+        "note": "Verificare con organizzatore/SUEAP selezione delle produzioni regionali e costo stand."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Passioni d’Autunno – Festa del cioccolato e della castagna",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://gestionaletempolibero.comune.prato.it/event/266827b0-b826-11f1-98a4-278c12fe9890/appointment/43eb1610-b826-11f1-a15d-0fdd184ae4ca",
+        "label": "gestionaletempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Via di Vergaio e piazza della Chiesa",
+      "sectors": "Cioccolato, castagne, vino, oggettistica, bigiotteria e artigianato",
+      "organizer": "Pro Loco di Vergaio",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://gestionaletempolibero.comune.prato.it/event/266827b0-b826-11f1-98a4-278c12fe9890/appointment/43eb1610-b826-11f1-a15d-0fdd184ae4ca"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://gestionaletempolibero.comune.prato.it/event/266827b0-b826-11f1-98a4-278c12fe9890/appointment/43eb1610-b826-11f1-a15d-0fdd184ae4ca",
+        "note": "Contattare Pro Loco per mercatino e quota. Scheda comunale 11 ottobre 9–20; 10 ottobre indicato da aggregatori non confermato."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Manifestazione ricreativa ambulanti – via Ferraris",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/event/8b95e100-b826-11f1-88f4-8724b687ca47/appointment/a5866600-b826-11f1-89fb-673c6e2bd056",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Via Ferraris",
+      "sectors": "Abbigliamento, casalinghi e alimentare",
+      "organizer": "Consorzio Il Mercato ANVA",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/event/8b95e100-b826-11f1-88f4-8724b687ca47/appointment/a5866600-b826-11f1-89fb-673c6e2bd056"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://tempolibero.comune.prato.it/event/8b95e100-b826-11f1-88f4-8724b687ca47/appointment/a5866600-b826-11f1-89fb-673c6e2bd056",
+        "note": "Chiedere al Consorzio requisiti, posti e quota; orario 8–19."
+      },
+      "contacts": {
+        "phone": "0574 40291",
+        "email": "direzione@confesercenti.prato.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Manifestazione ricreativa ambulanti – via di Reggiana",
+      "category": "mercatino",
+      "months": [
+        3,
+        10
+      ],
+      "source": {
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000525",
+        "label": "comunicati.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Via di Reggiana",
+      "sectors": "Abbigliamento, pelletteria, tessile casa e alimentare",
+      "organizer": "Consorzio Il Mercato ANVA",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-04",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000525"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-22",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000525",
+        "note": "Chiedere al Consorzio requisiti, posti e quota; orario 8–19."
+      },
+      "contacts": {
+        "phone": "0574 40291",
+        "email": "direzione@confesercenti.prato.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Manifestazione ricreativa ambulanti – via del Guado",
+      "category": "mercatino",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072",
+        "label": "comunicati.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Via del Guado, Narnali",
+      "sectors": "Abbigliamento e non alimentare",
+      "organizer": "Consorzio Il Mercato ANVA",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072",
+        "note": "Chiedere al Consorzio requisiti e quota; orario 8–19."
+      },
+      "contacts": {
+        "phone": "0574 40291",
+        "email": "direzione@confesercenti.prato.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Manifestazione CISL Ambulanti – piazza Mercatale",
+      "category": "mercatino",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072",
+        "label": "comunicati.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Mercatale, parcheggio rialzato",
+      "sectors": "Abbigliamento, accessori e alimentare",
+      "organizer": "CISL Ambulanti",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-08",
+          "end": "2026-03-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072",
+        "note": "Contattare CISL Ambulanti per domanda e quota; orario 8–19."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Manifestazione CISL Ambulanti – via Matteotti",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000498",
+        "label": "comunicati.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Via Matteotti, presso stazione",
+      "sectors": "Abbigliamento, accessori, tessile casa, pelletteria, calzature e alimentare",
+      "organizer": "CISL Ambulanti",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000498"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000498",
+        "note": "Contattare CISL Ambulanti per selezione e quota. Oltre 50 espositori indicati, non posti liberi; orario 8–19."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Piazza in Fiore – ambulanti in piazza San Francesco",
+      "category": "mercatino",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072",
+        "label": "comunicati.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza San Francesco",
+      "sectors": "Abbigliamento, calzature, alimentare e florovivaismo",
+      "organizer": "Confcommercio Pistoia-Prato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-01",
+          "end": "2026-03-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000072",
+        "note": "Chiedere a Confcommercio ammissione e quote; orario 8–19."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Manifestazione mercatale – via Bologna",
+      "category": "mercatino",
+      "months": [
+        4,
+        10
+      ],
+      "source": {
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000171",
+        "label": "comunicati.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Via Bologna, Santa Lucia",
+      "sectors": "Abbigliamento, casalinghi, tessuti e alimentare",
+      "organizer": "Confcommercio Pistoia-Prato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000171"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/category/a29c10f0-f2b0-11ea-9fa4-a168488a36af"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://comunicati.comune.prato.it/generali/?action=dettaglio&comunicato=14202600000171",
+        "note": "Contattare Confcommercio per domanda e quota. Aprile 8–19; dettagli organizzativi ottobre da riconfermare."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Prato",
+      "name": "Manifestazione ricreativa – piazza San Francesco",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://tempolibero.comune.prato.it/category/a29c10f0-f2b0-11ea-9fa4-a168488a36af",
+        "label": "tempolibero.comune.prato.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza San Francesco",
+      "sectors": "",
+      "organizer": "",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://tempolibero.comune.prato.it/category/a29c10f0-f2b0-11ea-9fa4-a168488a36af"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://tempolibero.comune.prato.it/category/a29c10f0-f2b0-11ea-9fa4-a168488a36af",
+        "note": "Chiedere a SUEAP organizzatore, settori, procedura e quota. Gestore non dedotto da altre edizioni."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Carmignano",
+      "name": "Antica Fiera annuale di Carmignano",
+      "category": "tradizionale",
+      "months": [
+        12
+      ],
+      "source": {
+        "url": "https://prato.confesercenti.it/wp-content/uploads/sites/6/2026/09/AVVISO-PUBBLICO-FIERA-DI-CARMIGNANO.pdf",
+        "label": "prato.confesercenti.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Matteotti/Vittorio Emanuele II e SS. Michele e Francesco",
+      "sectors": "Alimentare, non alimentare, produzioni agricole e artigianato",
+      "organizer": "Comune di Carmignano",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Primo martedì di dicembre; programma operativo 2026 da confermare",
+          "dateType": "calendar",
+          "sourceUrl": "https://prato.confesercenti.it/wp-content/uploads/sites/6/2026/09/AVVISO-PUBBLICO-FIERA-DI-CARMIGNANO.pdf"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://prato.confesercenti.it/wp-content/uploads/sites/6/2026/09/AVVISO-PUBBLICO-FIERA-DI-CARMIGNANO.pdf",
+        "note": "Bando 2026: 13 posteggi, comprese due riserve. Modelli in bollo via PEC a comune.carmignano@postacert.toscana.it, massimo due posteggi. Titolo ambulante, impresa attiva e requisiti previsti. Concessione decennale, canone annuale da quantificare. Nuovo bando supera gli atti 2025 e i vecchi 14 posti.",
+        "deadline": "2026-10-31",
+        "deadlineLabel": "Bando concessioni decennali: domande 6–31 ottobre 2026 (BURT 16 settembre; dal 20° al 45° giorno)."
+      },
+      "contacts": {
+        "phone": "055 8750285 / 055 8750255",
+        "email": "suap@comune.carmignano.po.it"
+      },
+      "additionalSources": [
+        "https://prato.confesercenti.it/2026/09/18/bando-fiera-annuale-di-carmignano-domande-dal-6-al-31-ottobre-2026/"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Carmignano",
+      "name": "Mercato dell’antiquariato di Carmignano",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://comune.carmignano.po.it/pagina168855_mercatini-periodici.html",
+        "label": "comune.carmignano.po.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Matteotti e cantine ex Niccolini",
+      "sectors": "Antiquariato, collezionismo e usato",
+      "organizer": "Pro Loco Carmignano",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Prima domenica del mese escluso agosto; sede e giornate da confermare",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.carmignano.po.it/pagina168855_mercatini-periodici.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.carmignano.po.it/pagina168855_mercatini-periodici.html",
+        "note": "Contattare Pro Loco per iscrizione, categorie e quote. Ricorrenza pubblicata, non calendario di singole giornate."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Carmignano",
+      "name": "La Soffitta in Piazza – Seano",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://comune.carmignano.po.it/pagina168855_mercatini-periodici.html",
+        "label": "comune.carmignano.po.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Seano, Pista Rossa, via Statale",
+      "sectors": "Usato, antiquariato e artigianato",
+      "organizer": "Pro Loco Carmignano",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Seconda domenica del mese escluso agosto; giornate da confermare",
+          "dateType": "calendar",
+          "sourceUrl": "https://comune.carmignano.po.it/pagina168855_mercatini-periodici.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.carmignano.po.it/pagina168855_mercatini-periodici.html",
+        "note": "Contattare Pro Loco per iscrizione, categorie e quote. Ricorrenza pubblicata, non calendario di singole giornate."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Montemurlo",
+      "name": "Novecento – Mostra mercato dell’antiquariato",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.montemurlo.po.it/pagina137706_novecento-mostra-mercato-dellantiquariato-di-montemurlo.html",
+        "label": "www.comune.montemurlo.po.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza della Costituzione; giugno piazza Amendola secondo Comune",
+      "sectors": "Antiquariato, collezionismo, opere dell’ingegno, biologico e apicoltura",
+      "organizer": "Comune di Montemurlo",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Ultima domenica del mese escluso agosto secondo Comune; sede e ricorrenza 2026 da riconfermare",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.montemurlo.po.it/pagina137706_novecento-mostra-mercato-dellantiquariato-di-montemurlo.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.montemurlo.po.it/pagina137706_novecento-mostra-mercato-dellantiquariato-di-montemurlo.html",
+        "note": "Pagina comunale: presentazione dalle 8 e suolo pubblico riscosso da So.Ri; niente oggetti nuovi. Fonti recenti indicano piazza Don Milani e quarta domenica: confermare con SUAP/Pro Loco sede, ricorrenza e procedura."
+      },
+      "contacts": {
+        "phone": "0574 5581"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Montemurlo",
+      "name": "Montemurlo Craft & Park",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.unplitoscana.it/event/montemurlo-craft-e-park-a-montemurlo-po/",
+        "label": "www.unplitoscana.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza della Repubblica e Parco Urbano",
+      "sectors": "Birre artigianali, food truck e gastronomia",
+      "organizer": "Pro Loco Montemurlo APS",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-11",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.unplitoscana.it/event/montemurlo-craft-e-park-a-montemurlo-po/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.unplitoscana.it/event/montemurlo-craft-e-park-a-montemurlo-po/",
+        "note": "Operatori selezionati: chiedere eventuali candidature e costi alla Pro Loco."
+      },
+      "contacts": {
+        "phone": "0574 558584",
+        "email": "prolocomontemurlo@hotmail.it"
+      },
+      "additionalSources": [
+        "https://www.prolocomontemurloaps.it/eventi/"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Montemurlo",
+      "name": "Mercatino di Natale di Montemurlo",
+      "category": "mercatino",
+      "months": [
+        12
+      ],
+      "source": {
+        "url": "https://www.prolocomontemurloaps.it/eventi/",
+        "label": "www.prolocomontemurloaps.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Montemurlo; area espositiva da confermare",
+      "sectors": "",
+      "organizer": "Pro Loco Montemurlo APS",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-20",
+          "end": "2026-12-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.prolocomontemurloaps.it/eventi/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.prolocomontemurloaps.it/eventi/",
+        "note": "Programma organizzatore 9–19. Chiedere sede, settori, candidatura, scadenza e quota 2026."
+      },
+      "contacts": {
+        "phone": "0574 558584",
+        "email": "prolocomontemurlo@hotmail.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Montemurlo",
+      "name": "Montemurlo sotto le stelle",
+      "category": "mercatino",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.prolocomontemurloaps.it/eventi/",
+        "label": "www.prolocomontemurloaps.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Centro di Montemurlo",
+      "sectors": "Street food",
+      "organizer": "Pro Loco Montemurlo e commercianti",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-08",
+          "end": "2026-07-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.prolocomontemurloaps.it/eventi/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.prolocomontemurloaps.it/eventi/",
+        "note": "Serata 20–24 con street food; selezione esterni da verificare. Negozi aperti non equivalgono a posteggi disponibili."
+      },
+      "contacts": {
+        "phone": "0574 558584",
+        "email": "prolocomontemurlo@hotmail.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Poggio a Caiano",
+      "name": "Piazza dei Sapori e dei Saperi",
+      "category": "mercatino",
+      "months": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano",
+        "label": "www.at-bus.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Piazza Risorgimento e via Garibaldi",
+      "sectors": "Artigianato, antiquariato, collezionismo e alimentare",
+      "organizer": "Pro Loco Poggio a Caiano",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-15",
+          "end": "2026-02-15",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-19",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-17",
+          "end": "2026-05-17",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-21",
+          "end": "2026-06-21",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-19",
+          "end": "2026-07-19",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-15",
+          "end": "2026-11-15",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-20",
+          "end": "2026-12-20",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.at-bus.it/it/viaggia/avvisi/mercatino-ogni-terza-domenica-del-mese-poggio-caiano",
+        "note": "Contattare Pro Loco per requisiti e quota. Date ricavate dalla regola annuale 2026 dell’avviso trasporti: terza domenica febbraio–dicembre escluso agosto. Rinvii da ricontrollare."
+      },
+      "contacts": {
+        "phone": "055 8798779",
+        "email": "info@prolocopoggioacaiano.it"
+      },
+      "additionalSources": [
+        "https://tempolibero.comune.prato.it/category/a29c10f0-f2b0-11ea-9fa4-a168488a36af",
+        "https://www.lanazione.it/prato/cronaca/santantonio-la-festa-degli-animali-acdaef0b"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Poggio a Caiano",
+      "name": "Antica Fiera di Sant’Antonio",
+      "category": "tradizionale",
+      "months": [
+        1
+      ],
+      "source": {
+        "url": "https://trasparenza.comune.poggio-a-caiano.po.it/page/126/atti-di-concessione.html",
+        "label": "trasparenza.comune.poggio-a-caiano.po.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Centro; via Risorgimento e Garibaldi per mercatino",
+      "sectors": "Artigianato, antiquariato, collezionismo e alimentare",
+      "organizer": "Pro Loco Poggio a Caiano",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-18",
+          "end": "2026-01-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://trasparenza.comune.poggio-a-caiano.po.it/page/126/atti-di-concessione.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://trasparenza.comune.poggio-a-caiano.po.it/page/126/atti-di-concessione.html",
+        "note": "Rivolgersi alla Pro Loco per domanda e quota; il 19 gennaio nella pagina storica non è data 2026."
+      },
+      "contacts": {
+        "phone": "055 8798779",
+        "email": "info@prolocopoggioacaiano.it"
+      },
+      "additionalSources": [
+        "https://www.lanazione.it/prato/cronaca/santantonio-la-festa-degli-animali-acdaef0b"
+      ]
+    },
+    {
+      "region": "Toscana",
+      "city": "Vernio",
+      "name": "Antica Fiera di San Giuseppe",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.comune.vernio.po.it/novita/eventi/antica-fiera-di-san-giuseppe",
+        "label": "www.comune.vernio.po.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Da Mercatale a San Quirico",
+      "sectors": "Artigianato, piante, prodotti e macchinari agricoli",
+      "organizer": "Comune di Vernio",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-10",
+          "end": "2026-05-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.vernio.po.it/novita/eventi/antica-fiera-di-san-giuseppe"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.vernio.po.it/novita/eventi/antica-fiera-di-san-giuseppe",
+        "note": "Mercato il 10 maggio, distinto dalle attività del 9. Chiedere al Comune assegnazione e canone; gratuito nella pagina riguarda i visitatori."
+      },
+      "contacts": {
+        "phone": "0574 931026",
+        "email": "comune@comune.vernio.po.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Vernio",
+      "name": "Vernio Comics",
+      "category": "espositiva",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.comune.vernio.po.it/novita/notizie/vernio-comics-2026-torna-la-fiera-in-val-di-bisenzio-dedicata-a-fumetti-e-cosplay",
+        "label": "www.comune.vernio.po.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Ex Meucci e parco dell’Albereta",
+      "sectors": "Gadget, fumetti, produzioni artistiche e food",
+      "organizer": "CCN Vivere Vernio e Azione Cosplay Prato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-13",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.vernio.po.it/novita/notizie/vernio-comics-2026-torna-la-fiera-in-val-di-bisenzio-dedicata-a-fumetti-e-cosplay"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.comune.vernio.po.it/novita/notizie/vernio-comics-2026-torna-la-fiera-in-val-di-bisenzio-dedicata-a-fumetti-e-cosplay",
+        "note": "Contattare organizzatori per stand, artist alley e food. Biglietti visitatori non determinano costo stand."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Vernio",
+      "name": "Dolce Vernio",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.comune.vernio.po.it/novita/notizie/quando-la-terra-si-fa-racconto-il-programma-autunnale-con-dolce-vernio-e-i-prodotti-del-territorio-protagonisti",
+        "label": "www.comune.vernio.po.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Ex Meucci, Mercatale",
+      "sectors": "Miele e prodotti del territorio",
+      "organizer": "Comune di Vernio e ARPAT",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.vernio.po.it/novita/notizie/quando-la-terra-si-fa-racconto-il-programma-autunnale-con-dolce-vernio-e-i-prodotti-del-territorio-protagonisti"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.vernio.po.it/novita/notizie/quando-la-terra-si-fa-racconto-il-programma-autunnale-con-dolce-vernio-e-i-prodotti-del-territorio-protagonisti",
+        "note": "Mostra mercato 10–18; rivolgersi a Comune/ARPAT per ammissione, disponibilità e quota."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Vernio",
+      "name": "Mercatini di Natale a Poggiole",
+      "category": "mercatino",
+      "months": [
+        12
+      ],
+      "source": {
+        "url": "https://hobbistando.it/evento/mercatino-di-natale-poggiole-2026-12-05/",
+        "label": "hobbistando.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Santuario S. Antonio Maria Pucci, Poggiole",
+      "sectors": "Hobbistica e creazioni",
+      "organizer": "Eventi di Elisa – Poggiole",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-05",
+          "end": "2026-12-06",
+          "dateType": "calendar",
+          "sourceUrl": "https://hobbistando.it/evento/mercatino-di-natale-poggiole-2026-12-05/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://hobbistando.it/evento/mercatino-di-natale-poggiole-2026-12-05/",
+        "note": "Fonte specialistica e programma provvisorio: conferma entro 15 novembre, €20 totali per una o due giornate. Gazebo bianco 3×3 e tavolo propri; luce disponibile, scaldini vietati. Hobbisti con tesserino e partite IVA nei regimi ammessi, da confermare direttamente. Contatti dietro accesso non copiati.",
+        "deadline": "2026-11-15",
+        "deadlineLabel": "Conferma espositori entro 15 novembre 2026; condizioni da riconfermare."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Vaiano",
+      "name": "Beer Festival La Briglia",
+      "category": "mercatino",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://corrierepratese.it/vaiano/cultura-ed-eventi/alla-briglia-torna-il-beer-festival-tra-musica-dal-vivo-gastronomia-e-divertimento/",
+        "label": "corrierepratese.it",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Circolo Spola d’Oro, via Bruno Fattori 4",
+      "sectors": "Birra artigianale, gastronomia e bancarelle",
+      "organizer": "Beer in Briglia e Circolo Spola d’Oro",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-20",
+          "end": "2026-06-21",
+          "dateType": "calendar",
+          "sourceUrl": "https://corrierepratese.it/vaiano/cultura-ed-eventi/alla-briglia-torna-il-beer-festival-tra-musica-dal-vivo-gastronomia-e-divertimento/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://corrierepratese.it/vaiano/cultura-ed-eventi/alla-briglia-torna-il-beer-festival-tra-musica-dal-vivo-gastronomia-e-divertimento/",
+        "note": "Bancarelle documentate da cronaca locale; chiedere categorie e candidature al circolo. Ammissione professionale non verificata."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Cantagallo",
+      "name": "Festa di Sant’Anna – mercatino alla Cascina di Spedaletto",
+      "category": "mercatino",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.reportpistoia.com/rievocazione-della-festa-di-santanna-a-cascina-di-spedaletto/",
+        "label": "www.reportpistoia.com",
+        "checkedAt": "2026-10-11"
+      },
+      "venue": "Cascina di Spedaletto",
+      "sectors": "Prodotti di filiera corta, artigianato e arte",
+      "organizer": "AST Val Bisenzio, Passione Natura Biobiettivi e Centro Visite",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-26",
+          "end": "2026-07-26",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.reportpistoia.com/rievocazione-della-festa-di-santanna-a-cascina-di-spedaletto/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.reportpistoia.com/rievocazione-della-festa-di-santanna-a-cascina-di-spedaletto/",
+        "note": "Mercatino nella cronaca locale; contattare organizzatori per selezione e quota. Trekking e pranzo non sono ulteriori giornate commerciali."
+      }
+    }
+  ]
+}

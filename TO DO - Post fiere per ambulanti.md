@@ -114,7 +114,18 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
   giornate intermedie Aurisina, nuove edizioni e ammissioni professionali.
   Muggia: bando gestione entro 23 ottobre ore 12, distinto dalle domande espositori.
 
-**Ricerca approfondita ancora da fare: 104 province e unità territoriali equivalenti.**
+- [x] **Prato — ricerca approfondita completata**: sette comuni controllati,
+  38 manifestazioni pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Prato),
+  prima nessuna scheda. Date, settori, contatti e partecipazione dove documentati.
+  Carmignano: 13 concessioni, domande dal 6 al 31 ottobre 2026.
+  Fonti, esclusioni e limiti in `data/fiere-prato.json` e `data/FIERE.md`.
+- [ ] **Prato — aggiornamenti periodici**: calendari PDF annuali non recuperati,
+  Festa dell'Olio, Comeana, Assedio e Natale; programmi commerciali mancanti.
+  Confermare sede/ricorrenza Novecento, ammissioni professionali e Poggiole Natale
+  (5–6 dicembre provvisorio, candidatura indicata entro 15 novembre).
+  Fierucola delle Bigonge: 10–11 ottobre spostata al 19 settembre, non riproporre.
+
+**Ricerca approfondita ancora da fare: 103 province e unità territoriali equivalenti.**
 Gli eventi già presenti e gli import regionali costituiscono una base; le caselle
 seguenti indicano il lavoro provinciale da completare nelle prossime sessioni.
 Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegna 2026.
@@ -261,7 +272,7 @@ Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegn
 - [ ] Massa-Carrara
 - [ ] Pisa
 - [ ] Pistoia
-- [ ] Prato
+- [x] Prato — completata l’11 ottobre 2026; aggiornamenti periodici sopra
 - [ ] Siena
 
 #### Trentino-Alto Adige

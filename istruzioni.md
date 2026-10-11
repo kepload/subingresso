@@ -1032,6 +1032,14 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+Ricerca Prato (11 ottobre 2026): tutti i sette comuni, 38 manifestazioni aggiunte.
+Override riproducibile in `data/fiere-prato.json`; fonti, esclusioni e limiti in
+`data/FIERE.md`. Settima provincia approfondita, 103 restanti. Carmignano:
+13 concessioni, domande 6–31 ottobre; Bigonge ottobre spostata al 19 settembre.
+Poggiole Natale provvisorio; ricorrenze testuali e conflitti conservati.
+Cache fiere.js 22, fiere.json 15. Non proiettare programmi storici sul 2026
+né considerare automaticamente ammessi ambulanti professionali.
+
 Ricerca Trieste (11 ottobre 2026): sei comuni controllati, 24 manifestazioni in
 quattro comuni (+23), 22 con edizioni 2026 e due con storico 2025. Dati e audit
 in `data/fiere-trieste.json`; 45 fonti, pagine comunali renderizzate in browser,

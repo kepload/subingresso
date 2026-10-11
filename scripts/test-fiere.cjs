@@ -22,6 +22,22 @@ for (const region of regions) assert(events.filter(e => e.region === region).len
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
 // Trieste: source-specific dates, separate markets and deadlines for the correct edition.
+const pratoEvents = events.filter(e => e.province === 'Prato');
+assert.equal(pratoEvents.length,38);
+assert.equal(new Set(pratoEvents.map(e => e.city)).size,7);
+const pratoResearch = JSON.parse(fs.readFileSync(path.join(root,'data/fiere-prato.json'),'utf8'));
+assert.equal(pratoResearch.research.municipalityCoverage.length,7);
+const pratoEvent = name => pratoEvents.find(e => e.name === name);
+assert.deepEqual(pratoEvent('Antica Fiera di San Giuseppe').editions.map(e => e.start),['2026-05-10']);
+assert(!pratoEvent('Fierucola delle Bigonge').editions.some(e => e.start.startsWith('2026-10')));
+assert.deepEqual(pratoEvent('Mercatale Viva').editions.filter(e => e.start.startsWith('2026-10')).map(e => [e.start,e.end]),[['2026-10-15','2026-10-15'],['2026-10-18','2026-10-18']]);
+assert.equal(pratoEvent('Antica Fiera annuale di Carmignano').participation.deadline,'2026-10-31');
+assert(pratoEvent('Antica Fiera annuale di Carmignano').editions.every(e => !e.start));
+assert.equal(pratoEvent('Mercatini di Natale a Poggiole').editions[0].dateType,'calendar');
+assert.equal(pratoEvent('Mercatini di Natale a Poggiole').participation.deadline,'2026-11-15');
+assert.equal(pratoEvent('Mercatino di Natale di Montemurlo').editions[0].start,'2026-12-20');
+assert.equal(pratoEvent('Piazza dei Sapori e dei Saperi').editions.length,10);
+assert(!pratoEvent('Piazza dei Sapori e dei Saperi').editions.some(e => e.start.startsWith('2026-08')));
 const triesteEvents = events.filter(e => e.province === 'Trieste');
 assert.equal(triesteEvents.length,24);
 assert.equal(new Set(triesteEvents.map(e => e.city)).size,4);
