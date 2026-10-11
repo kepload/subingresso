@@ -1040,7 +1040,26 @@ multi categoria; antiquariato/artigianato inclusi anche nel non alimentare;
 indicazioni insufficienti solo in Tutti i settori. Non dedurre alimentari da
 “non alimentare”, “misto”, “merci varie” o dal tipo sagra. URL `settore`, elenco,
 mappa, mesi, reset e dettaglio allineati; test test-fiere-sectors.py/test-fiere.cjs.
-Cache fiere.js 19, fiere.json 12; dettagli in data/FIERE.md.
+Cache fiere.js 20, fiere.json 13; dettagli in data/FIERE.md.
+
+Ricerca Arezzo (11 ottobre 2026): scelta casuale tra province incomplete; 36 comuni
+cercati, 89 manifestazioni in 31 comuni (+88). `data/fiere-arezzo.json` conserva
+fonti, copertura comunale, esclusioni/dubbi, hash di 79 HTML e sette PDF; 15
+download HTTP/TLS falliti registrati, diverse fonti lette via web. Programma
+CASENTINO2000 96 pagine: testo estratto e passaggi commerciali consultati;
+planimetria Natale solo testo, grafica non verificata. 77 schede con giornate
+precise, tre periodi, sei edizioni testuali, tre con mesi/ricorrenze; 24 con
+contatti, cinque scadenze. Arezzo Natale domanda PEC 31 ottobre; Castiglion
+Fiorentino 16 ottobre, dieci giornate natalizie separate. Ranco/Mostra Chianina
+consolidata a Sestino (28–29 settembre), Nirvana in Passioni in Fiera; mercatini
+dei privati/hobbisti e beneficenza esclusi, Soci solo street food esterno.
+Cavriglia fiera 1 agosto/mercato 2; Raggiolo mercatino 1 novembre. Date non
+dedotte dalle delibere o dalle ricorrenze, bandi scaduti/non generalisti distinti.
+Laterina usa coordinate documentate della località (coordinateSource), comune
+unificato privo di coordinate. Build conserva identiche le altre 2.037 schede
+e ID Antiquaria. Totale 2.126 eventi, 1.965 con edizioni, 1.692 con date; quinta
+provincia ricercata, 105 ancora da approfondire. Cache fiere.js 20, fiere.json 13;
+regressioni provinciali/browser in scripts/test-fiere.cjs, dettagli in data/FIERE.md.
 
 Ricerca Monza e della Brianza (10 ottobre 2026): `data/fiere-monza-brianza.json`,
 55 comuni cercati, 86 manifestazioni in 29 comuni (+72), 199 righe regionali e

@@ -45,7 +45,7 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 - [ ] 🟠 Migliorare la ricerca delle fiere e il calendario — unificare gli interventi per chi cerca eventi e posteggi; il calendario esiste già, concentrarsi su date confermate e informazioni per partecipare prima di ampliare i filtri.
 - [ ] 🟢 Creare la sezione «Fiere per ambulanti» — filtri per regione, mese e domande aperte.
 
-### Ricerca approfondita per provincia — aggiornamento 10 ottobre 2026
+### Ricerca approfondita per provincia — aggiornamento 11 ottobre 2026
 
 - [x] **Brescia — ricerca approfondita completata**: 206 manifestazioni in 86 comuni
   pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Brescia). Esaminate 1.031
@@ -88,7 +88,21 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
   rinvii e nuove edizioni; chiarire Biassono San Martino, Pro Loco in Fiore
   Lissone, Oreno, mercatini natalizi e programmi scansione non ancora verificati.
 
-**Ricerca approfondita ancora da fare: 106 province e unità territoriali equivalenti.**
+- [x] **Arezzo — ricerca approfondita completata**: scelta casualmente; ricerca
+  nei 36 comuni, 89 manifestazioni in 31 comuni pubblicate in
+  [/fiere](https://subingresso.it/fiere?provincia=Arezzo), prima una sola scheda.
+  77 con giornate precise, tre periodi, sei edizioni testuali e tre con soli
+  mesi/ricorrenze; 24 schede con contatti e cinque scadenze documentate.
+  Comuni/SUAP, organizzatori, associazioni, programmi territoriali e AEFI;
+  audit, hash, esclusioni e dubbi in `data/fiere-arezzo.json` e `data/FIERE.md`.
+  Natale Castiglion Fiorentino: domanda 16 ottobre; Arezzo San Jacopo/Risorgimento:
+  Allegato A via PEC entro 31 ottobre. Ranco consolidata a Sestino, senza duplicati.
+- [ ] **Arezzo — aggiornamenti periodici**: bandi, nuove edizioni e disponibilità;
+  chiarire Fiera di Primavera Castel Focognano, Fiera del Tordo Chitignano,
+  Ceppo Lucignano e programmi natalizi ancora storici. Verificare ammissioni
+  professionali, giorni commerciali dei periodi/feste e allegati grafici residui.
+
+**Ricerca approfondita ancora da fare: 105 province e unità territoriali equivalenti.**
 Gli eventi già presenti e gli import regionali costituiscono una base; le caselle
 seguenti indicano il lavoro provinciale da completare nelle prossime sessioni.
 Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegna 2026.
@@ -227,7 +241,7 @@ Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegn
 
 #### Toscana
 
-- [ ] Arezzo
+- [x] Arezzo — ricerca completata l’11 ottobre 2026; aggiornamenti periodici sopra
 - [ ] Firenze
 - [ ] Grosseto
 - [ ] Livorno

@@ -1,0 +1,4509 @@
+{
+  "province": "Arezzo",
+  "checkedAt": "2026-10-11",
+  "research": {
+    "municipalitiesReviewed": 36,
+    "previousCatalogEvents": 1,
+    "selection": "Estrazione casuale con PowerShell Get-Random dalla lista delle province ancora incomplete.",
+    "method": "Ricerca nominativa dei 36 comuni; Comuni/SUAP, organizzatori, associazioni di categoria, Casentino2000, portali turistici di Casentino/Valtiberina/Valdichiana/Valdarno, AEFI e stampa locale. Fatti sintetizzati dai contenuti consultati; nessuna data dedotta da ricorrenze.",
+    "scopeLimit": "Ricerca documentale nelle fonti accessibili all’11 ottobre 2026, senza garanzia di censimento esaustivo o disponibilità di posteggi. Sagre incluse con evidenza di mercatino/vendita esterna. Alcune schede sono per produttori, artigiani, hobbisti o espositori selezionati: ammissione professionale esplicitamente da verificare quando manca un regolamento.",
+    "sourceAuditNote": "Gli hash documentano i download riusciti. Errori HTTP/TLS sono registrati; diverse pagine sono state consultate anche tramite ricerca/apertura web. Uno stato HTTP non dimostra da solo verifica dei contenuti. Originali HTML/PDF conservati fuori dal repository; planimetria grafica non verificata.",
+    "municipalityCoverage": [
+      {
+        "city": "Anghiari",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 4,
+        "sources": [
+          "https://comune.anghiari.ar.it/eventi/2982514/memorandia",
+          "https://comune.anghiari.ar.it/eventi/3661316/centogusti-appennino",
+          "https://www.lintrepida.it/en/programme-vintage-bike-ride/",
+          "https://www.mostramercatovaltiberina.it/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Arezzo",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 17,
+        "sources": [
+          "https://comune.arezzo.it/novita/fiera-del-mestolo-edizione-di-settembre-2026",
+          "https://confcommercio.ar.it/articoli/ambulanti/23837-mercato-internazionale-ventanni-di-sapori-dal-mondo",
+          "https://mercatininatalearezzo.it/",
+          "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+          "https://www.comune.arezzo.it/fiere-e-mercati",
+          "https://www.comune.arezzo.it/novita/fiera-mercatino-di-natale-di-piazza-san-jacopo-e-piazza-risorgimento-1",
+          "https://www.confesercenti.ar.it/il-mercatale-raddoppia-sotto-i-portici-di-via-roma-anzi-triplica/",
+          "https://www.confesercenti.ar.it/via-romana-in-festa-sabato-12-settembre/",
+          "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/",
+          "https://www.lanazione.it/arezzo/cronaca/fiera-della-madonna-del-conforto-le-disposizioni-per-il-decoro-e-la-vivibilita-urbana-ecz45tc6",
+          "https://www.lanazione.it/arezzo/cronaca/san-donato-programma-dei-festeggiamenti-e-variazioni-al-traffico-e-alla-sosta-kwuricfh",
+          "https://www.lanazione.it/arezzo/cronaca/santissima-annunziata-oggi-torna-la-fiera-dei-fiori-kmcp3r2r",
+          "https://www.mercatodellepulciarezzo.it/",
+          "https://www.passioniinfiera.it/opportunita-espositori/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Badia Tedalda",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 0,
+        "sources": [
+          "https://www.aia.it/2026/09/01/cinque-secoli-di-storia-e-una-protagonista-deccezione-la-chianina-allantica-fiera-del-ranco/"
+        ],
+        "result": "Nessuna manifestazione commerciale pubblicabile verificata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Bibbiena",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 3,
+        "sources": [
+          "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+          "https://www.halleyweb.com/c051004/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/3",
+          "https://www.mercatodellepulciarezzo.it/calendario/",
+          "https://www.sagretoscane.com/fiere-mercati/ar/bibbiena/mostra-scambio-casentinese-soci.html"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Bucine",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://www.retevaldarno.it/sagra-della-ribollita-festa-delle-palme-2026.html",
+          "https://www.sagretoscane.com/sagre/ar/bucine/sagra-del-crostino-casalingo.html"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Capolona",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Caprese Michelangelo",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.meetvaltiberina.it/festa-castagna-marrone-caprese-michelangelo"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Castel Focognano",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://serviziweb.comune.castel-focognano.ar.it/zf/index.php/provvedimenti/index/list/categoria/112/tipoProvvedimento/0/tipo/1/page/7",
+          "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Castel San Niccolò",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 4,
+        "sources": [
+          "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+          "https://www.comune.castel-san-niccolo.ar.it/vivere_il_comune/eventi/evento_3.html",
+          "https://www.sagretoscane.com/sagre/ar/castel-san-niccolo/festa-del-paese-e-del-tortello-di-patate.html"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Castelfranco Piandiscò",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 0,
+        "sources": [
+          "https://comune.castelfranco-piandisco.ar.it/it/eventi/711530",
+          "https://comune.castelfranco-piandisco.ar.it/it/news/2031785"
+        ],
+        "result": "Nessuna manifestazione commerciale pubblicabile verificata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Castiglion Fibocchi",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://www.comune.castiglionfibocchi.ar.it/eventi/FIera-prodotti-montagan.html",
+          "https://www.comune.castiglionfibocchi.ar.it/eventi/Mercatino-dei-Ragazzi-del-CALCIT-Castiglion-Fibocchi-2026.html",
+          "https://www.comune.castiglionfibocchi.ar.it/notizie/Avviso-di-partecipazione-nei-posteggi-liberi-della-fiera-annuale-2026.html"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Castiglion Fiorentino",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 5,
+        "sources": [
+          "https://comune.castiglionfiorentino.ar.it/it/news/al-via-il-maggio-castiglionese-domani-mattina-ore-10-00-porta-fiorentina?type=2",
+          "https://www.castiglioniexperience.it/Home/Detail/1081/valdichiana-wine-festival",
+          "https://www.comune.castiglionfiorentino.ar.it/it/news/564595/amarcord-ai-giardini-pubblici-torna-la-mostra-scambio-di-cose-vecchie-e-usate",
+          "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403",
+          "https://www.vintage-festival.it/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Cavriglia",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://www.retevaldarno.it/perdono-cavriglia-2026.html",
+          "https://www.sagretoscane.com/fiere-mercati/ar/cavriglia/festa-di-primavera-cavriglia.html"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Chitignano",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 0,
+        "sources": [
+          "https://www.cooperativainquiete.it/attivita/tutti-gli-eventi/2-agosto-boschi-sonori-badia-santa-trinita-in-alpe/",
+          "https://www.unplitoscana.it/events/categoria/enogastronomia/2026-07/"
+        ],
+        "result": "Nessuna manifestazione commerciale pubblicabile verificata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Chiusi della Verna",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.umbriaeventi.com/eventi/sagra-del-tartufo-chiusi-della-verna-14101"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Civitella in Val di Chiana",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.comune.civitella-in-val-di-chiana.ar.it/vivere_il_comune/eventi/evento_8.html",
+          "https://www.festivalinitalia.it/en/festival/flavors-and-earth-market-tegoleto"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Cortona",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 8,
+        "sources": [
+          "https://cortonacomics.it/notizie/",
+          "https://www.comune.cortona.ar.it/commercio-ambulante",
+          "https://www.comune.cortona.ar.it/novita/notizie/camucia-fiera-maggio-26",
+          "https://www.comune.cortona.ar.it/novita/notizie/cortona-fiore-programma-2026",
+          "https://www.comune.cortona.ar.it/novita/notizie/cortona-top-festival-date-2026",
+          "https://www.comune.cortona.ar.it/vivere-il-comune/eventi/eventi-sociali/raduno-di-comunita/mercatini-medievali",
+          "https://www.cortonantiquaria.it/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Foiano della Chiana",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 3,
+        "sources": [
+          "https://comune.foiano.ar.it/eventi/3562263/foiano-fiore-via-40-edizione-storica-fiera",
+          "https://turismo.comune.foiano.ar.it/contenuti/1688658/fiere-mercati",
+          "https://turismo.comune.foiano.ar.it/eventi/3570720/antiquariandolo"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Laterina Pergine Valdarno",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.laterinamedievale.it/it/espositori"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Loro Ciuffenna",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://lorociuffenna.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/4/atto/G1XpVMETUTT0-A",
+          "https://www.confesercenti.ar.it/loro-ciuffenna-due-domeniche-di-gusto-musica-e-shopping-nel-borgo-piu-bello-del-valdarno/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Lucignano",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 1,
+        "sources": [
+          "https://comune.lucignano.ar.it/eventi/3613972/giovedi",
+          "https://portaleventi.it/evento/maggiolata-lucignanese-lucignano",
+          "https://www.visitvaldichiana.it/eventi/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Marciano della Chiana",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 1,
+        "sources": [
+          "https://marcianodellachianaexperience.it/eventi/piacere-marciano/",
+          "https://www.visitvaldichiana.it/eventi/la-chianina-ciclostorica-2026/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Monte San Savino",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://halleyegov.it/c051025/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/5/atto/G1XpJNUTUQT0-A",
+          "https://www.arezzo24.net/notizie/wine-food/gin-in-porchetta-torna-a-monte-san-savino-due-serate-tra-distillati-gusto-e-musica/",
+          "https://www.mercatodellepulciarezzo.it/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Montemignaio",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 0,
+        "sources": [
+          "https://comune.montemignaio.ar.it/argomento/turismo/"
+        ],
+        "result": "Nessuna manifestazione commerciale pubblicabile verificata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Monterchi",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.meetvaltiberina.it/fiera-sant-antonio-monterchi"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Montevarchi",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 4,
+        "sources": [
+          "https://www.comune.montevarchi.ar.it/eventi/3654475/torna-mercato-via-musei",
+          "https://www.comune.montevarchi.ar.it/notizie/3529176/mercato-forte-torna-far-tappa-montevarchi",
+          "https://www.mineralexpo.it/edizioni/il-mondo-dei-minerali/",
+          "https://www.retevaldarno.it/festa-del-perdono-e-gioco-del-pozzo-2026.html"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Ortignano Raggiolo",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://gocasentino.com/events/castagnatura-raggiolo-2026.html",
+          "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Pieve Santo Stefano",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 0,
+        "sources": [
+          "https://comune.pievesantostefano.ar.it/eventi/3641967/7-8-settembre-pieve-santo-stefano-ormai-ci-siamo",
+          "https://www.visittuscany.com/it/eventi/pieve-santo-stefano-sagra-del-prugnolo-maggio-2026/"
+        ],
+        "result": "Nessuna manifestazione commerciale pubblicabile verificata nelle fonti consultate; non prova assenza di eventi."
+      },
+      {
+        "city": "Poppi",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://comune.poppi.ar.it/vivere-il-comune/eventi/mercato-contadino-del-casentino/",
+          "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+          "https://www.confesercenti.ar.it/fiera-di-san-torello-domenica-19-aprile-regolamento-e-domanda-di-partecipazione/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Pratovecchio Stia",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+          "https://www.comune.pratovecchiostia.ar.it/c051041/zf/index.php/bandi-gara/avvisi/dettaglio-avviso/avviso/11"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "San Giovanni Valdarno",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 4,
+        "sources": [
+          "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3564881/ecco-terza-edizione-sangiovese-festival",
+          "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3649193/perdono-sapori-saperi-torna-san-giovanni-valdarno",
+          "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3660493/torna-mystufato-san-giovanni-valdarno",
+          "https://www.confesercenti.ar.it/festa-del-perdono-a-san-giovanni-valdarno-2/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Sansepolcro",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://www.comune.sansepolcro.ar.it/it/page/mercati-e-fiere"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Sestino",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 2,
+        "sources": [
+          "https://www.meetvaltiberina.it/chianina2026",
+          "https://www.sagrabisteccachianinasestino.it/programma.html"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Subbiano",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 3,
+        "sources": [
+          "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+          "https://www.sagretoscane.com/fiere-mercati/ar/subbiano/mercatino-della-carabattola.html"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Talla",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 1,
+        "sources": [
+          "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      },
+      {
+        "city": "Terranuova Bracciolini",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercati 2026",
+          "sagre con mercatini o bancarelle",
+          "espositori e domande",
+          "frazioni e programmi territoriali"
+        ],
+        "method": "Ricerca web nominativa e riscontri con Comuni, organizzatori, calendari territoriali e stampa locale.",
+        "eventsFound": 3,
+        "sources": [
+          "https://aterranuova.it/2026/03/17/terranuova-celebra-la-primavera-con-l11a-fiera-nazionale-degli-uccelli/",
+          "https://aterranuova.it/2026/09/14/tradizione-nuovi-spazi-e-una-citta-in-festa-il-perdono-2026/",
+          "https://www.festaperdonoterranuova.it/"
+        ],
+        "result": "Manifestazioni documentate incluse; requisiti professionali incerti segnalati."
+      }
+    ],
+    "downloadedSources": [
+      {
+        "url": "https://aterranuova.it/2026/03/17/terranuova-celebra-la-primavera-con-l11a-fiera-nazionale-degli-uccelli/",
+        "finalUrl": "https://aterranuova.it/2026/03/17/terranuova-celebra-la-primavera-con-l11a-fiera-nazionale-degli-uccelli/",
+        "sha256": "08a723db175d2462381b4b01832cac2036d3b045e90633e876b02cca821f9e62",
+        "status": 200,
+        "characters": 1416
+      },
+      {
+        "url": "https://aterranuova.it/2026/09/14/tradizione-nuovi-spazi-e-una-citta-in-festa-il-perdono-2026/",
+        "finalUrl": "https://aterranuova.it/2026/09/14/tradizione-nuovi-spazi-e-una-citta-in-festa-il-perdono-2026/",
+        "sha256": "1cf72411757337147babd0743031cfa63b0bac4adbbdf3328bbc78192d6ea90d",
+        "status": 200,
+        "characters": 4884
+      },
+      {
+        "url": "https://comune.anghiari.ar.it/eventi/3661316/centogusti-appennino",
+        "finalUrl": "https://comune.anghiari.ar.it/eventi/3661316/centogusti-appennino",
+        "sha256": "f5fab0c56e7034975e2d6b7d7280692426ecfc66a025efac6930860a77c932aa",
+        "status": 200,
+        "characters": 1550
+      },
+      {
+        "url": "https://comune.arezzo.it/node/23986",
+        "finalUrl": "https://comune.arezzo.it/node/23986",
+        "sha256": "b0d696d9fb12f45ebf6c39946e91884dbd7a181a10dd8bfb1170a7aa88ade0bc",
+        "status": 200,
+        "characters": 6583
+      },
+      {
+        "url": "https://comune.arezzo.it/novita/fiera-del-mestolo-edizione-di-settembre-2026",
+        "error": "403 Client Error: Forbidden for url: https://comune.arezzo.it/novita/fiera-del-mestolo-edizione-di-settembre-2026"
+      },
+      {
+        "url": "https://comune.castelfranco-piandisco.ar.it/it/eventi/711530",
+        "finalUrl": "https://comune.castelfranco-piandisco.ar.it/it/eventi/711530",
+        "sha256": "8408bd2983a7fc235161d2e463ad9984e92d63b69f8739485e31e4731ab92ae8",
+        "status": 200,
+        "characters": 1439
+      },
+      {
+        "url": "https://comune.foiano.ar.it/eventi/3562263/foiano-fiore-via-40-edizione-storica-fiera",
+        "finalUrl": "https://comune.foiano.ar.it/eventi/3562263/foiano-fiore-via-40-edizione-storica-fiera",
+        "sha256": "185a5411ad43da64f2c2042dfe6163cd6d26aadc9cf0edd67c3ca845aa0a2baf",
+        "status": 200,
+        "characters": 3197
+      },
+      {
+        "url": "https://comune.montemignaio.ar.it/argomento/turismo/",
+        "error": "403 Client Error: Forbidden for url: https://comune.montemignaio.ar.it/argomento/turismo/"
+      },
+      {
+        "url": "https://comune.pievesantostefano.ar.it/eventi/3641967/7-8-settembre-pieve-santo-stefano-ormai-ci-siamo",
+        "finalUrl": "https://comune.pievesantostefano.ar.it/eventi/3641967/7-8-settembre-pieve-santo-stefano-ormai-ci-siamo",
+        "sha256": "2935d48e2bf66efb32aacecc793f9ef59dd4123eb8d3e93a373f3f120f61cf2c",
+        "status": 200,
+        "characters": 4908
+      },
+      {
+        "url": "https://comune.poppi.ar.it/vivere-il-comune/eventi/mercato-contadino-del-casentino/",
+        "error": "403 Client Error: Forbidden for url: https://comune.poppi.ar.it/vivere-il-comune/eventi/mercato-contadino-del-casentino/"
+      },
+      {
+        "url": "https://confcommercio.ar.it/articoli/ambulanti/23837-mercato-internazionale-ventanni-di-sapori-dal-mondo",
+        "finalUrl": "https://confcommercio.ar.it/articoli/ambulanti/23837-mercato-internazionale-ventanni-di-sapori-dal-mondo",
+        "sha256": "945e3f174047e24a3ae177a6938433afa567fb4951a5e24be465a03577fb0d0f",
+        "status": 200,
+        "characters": 12145
+      },
+      {
+        "url": "https://gocasentino.com/events/castagnatura-raggiolo-2026.html",
+        "finalUrl": "https://gocasentino.com/events/castagnatura-raggiolo-2026.html",
+        "sha256": "a62930b172fde031c1b4aa1efea09d880c684afdebae3479848bc4220c57d3fa",
+        "status": 200,
+        "characters": 1640
+      },
+      {
+        "url": "https://halleyegov.it/c051025/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/5/atto/G1XpJNUTUQT0-A",
+        "finalUrl": "https://halleyegov.it/c051025/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/5/atto/G1XpJNUTUQT0-A",
+        "sha256": "90fb9720bb14ceff3de1890ff7bd0ab31392462e4d201a231d84313c92f57d05",
+        "status": 200,
+        "characters": 1110
+      },
+      {
+        "url": "https://lorociuffenna.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/4/atto/G1XpVMETUTT0-A",
+        "finalUrl": "https://lorociuffenna.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/4/atto/G1XpVMETUTT0-A",
+        "sha256": "8e3f6ed1fffb264c5c11980e5f589bda32b93008e4cdc0ea52fbd4e185889fc9",
+        "status": 200,
+        "characters": 1120
+      },
+      {
+        "url": "https://marcianodellachianaexperience.it/eventi/piacere-marciano/",
+        "finalUrl": "https://marcianodellachianaexperience.it/eventi/piacere-marciano/",
+        "sha256": "998206c1162b6f2556281f2078b876638708848adfeb19441793d1d24c2c2f31",
+        "status": 200,
+        "characters": 1379
+      },
+      {
+        "url": "https://mercatininatalearezzo.it/",
+        "finalUrl": "https://mercatininatalearezzo.it/",
+        "sha256": "645652734d3ba4bc7a3b313877bf9758b9c1d38bc28c523172619adb5b26a744",
+        "status": 200,
+        "characters": 3897
+      },
+      {
+        "url": "https://portaleventi.it/evento/maggiolata-lucignanese-lucignano",
+        "finalUrl": "https://portaleventi.it/evento/maggiolata-lucignanese-lucignano",
+        "sha256": "a1560aed39423803478410a30fc972f9ad77d6c2e7d738c4ffbda0b61f0e4ba4",
+        "status": 200,
+        "characters": 4926
+      },
+      {
+        "url": "https://serviziweb.comune.castel-focognano.ar.it/zf/index.php/provvedimenti/index/list/categoria/112/tipoProvvedimento/0/tipo/1/page/7",
+        "error": "HTTPSConnectionPool(host='serviziweb.comune.castel-focognano.ar.it', port=443): Max retries exceeded with url: /zf/index.php/provvedimenti/index/list/categoria/112/tipoProvvedimento/0/tipo/1/page/7 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1006)')))"
+      },
+      {
+        "url": "https://turismo.comune.foiano.ar.it/contenuti/1688658/fiere-mercati",
+        "finalUrl": "https://turismo.comune.foiano.ar.it/contenuti/1688658/fiere-mercati",
+        "sha256": "1114ea66b4fddca5b50babd353364c12653fbb0c15c0939245bbf89f5df5cc46",
+        "status": 200,
+        "characters": 2427
+      },
+      {
+        "url": "https://turismo.comune.foiano.ar.it/eventi/3570720/antiquariandolo",
+        "finalUrl": "https://turismo.comune.foiano.ar.it/eventi/3570720/antiquariandolo",
+        "sha256": "5957a7c84023f144a5ce53fe7e8ca2acb638db6e287e65d20359a9e190dc35b4",
+        "status": 200,
+        "characters": 2180
+      },
+      {
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "finalUrl": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "sha256": "d26cc6f5d91ebc241ad4d133d9517d39b990e68ea4f368281fe8103b718c3c94",
+        "status": 200,
+        "characters": 9569
+      },
+      {
+        "url": "https://www.aia.it/2026/09/01/cinque-secoli-di-storia-e-una-protagonista-deccezione-la-chianina-allantica-fiera-del-ranco/",
+        "finalUrl": "https://www.aia.it/2026/09/01/cinque-secoli-di-storia-e-una-protagonista-deccezione-la-chianina-allantica-fiera-del-ranco/",
+        "sha256": "dc39b072002ca730f2494d1204720b1a343d7d01ad1b67b1d3864e7b6ae50e4e",
+        "status": 200,
+        "characters": 5182
+      },
+      {
+        "url": "https://www.comune.arezzo.it/fiere-e-mercati",
+        "finalUrl": "https://www.comune.arezzo.it/fiere-e-mercati",
+        "sha256": "4c62e88bcfe5bf48f57298f0535124d31790103e6ae96a231aa3200ff0f9918c",
+        "status": 200,
+        "characters": 2487
+      },
+      {
+        "url": "https://www.comune.arezzo.it/novita/fiera-mercatino-di-natale-di-piazza-san-jacopo-e-piazza-risorgimento-1",
+        "finalUrl": "https://www.comune.arezzo.it/novita/fiera-mercatino-di-natale-di-piazza-san-jacopo-e-piazza-risorgimento-1",
+        "sha256": "edf4a18f0ebecf7c91c2e0d1d5473a631ec1b3c11b24768697c81b45a7f4cd6a",
+        "status": 200,
+        "characters": 3351
+      },
+      {
+        "url": "https://www.comune.castel-san-niccolo.ar.it/vivere_il_comune/eventi/evento_3.html",
+        "finalUrl": "https://www.comune.castel-san-niccolo.ar.it/vivere_il_comune/eventi/evento_3.html",
+        "sha256": "b5b940097be6d716bbc6999d189b6746856a01da1032f19d1ddca3ca728eef3d",
+        "status": 200,
+        "characters": 1020
+      },
+      {
+        "url": "https://www.comune.castiglionfibocchi.ar.it/eventi/FIera-prodotti-montagan.html",
+        "finalUrl": "https://www.comune.castiglionfibocchi.ar.it/eventi/FIera-prodotti-montagan.html",
+        "sha256": "cc28912b3a2e2d393ba1a69d0054b0818ba4ede049e76adfcb2d916e0e7acda7",
+        "status": 200,
+        "characters": 2623
+      },
+      {
+        "url": "https://www.comune.castiglionfibocchi.ar.it/eventi/Mercatino-dei-Ragazzi-del-CALCIT-Castiglion-Fibocchi-2026.html",
+        "finalUrl": "https://www.comune.castiglionfibocchi.ar.it/eventi/Mercatino-dei-Ragazzi-del-CALCIT-Castiglion-Fibocchi-2026.html",
+        "sha256": "ef8f0469b952fd9d3b3e72a55efd746743dd0dfd0f59a6086382fe7a321e2c77",
+        "status": 200,
+        "characters": 2022
+      },
+      {
+        "url": "https://www.comune.castiglionfibocchi.ar.it/notizie/Avviso-di-partecipazione-nei-posteggi-liberi-della-fiera-annuale-2026.html",
+        "finalUrl": "https://www.comune.castiglionfibocchi.ar.it/notizie/Avviso-di-partecipazione-nei-posteggi-liberi-della-fiera-annuale-2026.html",
+        "sha256": "049ed49408c216d6f797b09349c570c2f75c3513f570a41c9188256b06aa482e",
+        "status": 200,
+        "characters": 1823
+      },
+      {
+        "url": "https://www.comune.castiglionfiorentino.ar.it/it/news/564595/amarcord-ai-giardini-pubblici-torna-la-mostra-scambio-di-cose-vecchie-e-usate",
+        "finalUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/564595/amarcord-ai-giardini-pubblici-torna-la-mostra-scambio-di-cose-vecchie-e-usate",
+        "sha256": "baaa471af5950e58a26961ba7429e1fc736fc368cbbcf8e787b087989fe55c7a",
+        "status": 200,
+        "characters": 1669
+      },
+      {
+        "url": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403",
+        "finalUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403",
+        "sha256": "846083e3810b10f4c63739968677c65eaba6fa92a20796aba4b508273e412c1b",
+        "status": 200,
+        "characters": 3422
+      },
+      {
+        "url": "https://www.comune.civitella-in-val-di-chiana.ar.it/vivere_il_comune/eventi/evento_8.html",
+        "finalUrl": "https://www.comune.civitella-in-val-di-chiana.ar.it/vivere_il_comune/eventi/evento_8.html",
+        "sha256": "2b6af3d611cdbc43887a1913b5792cfd4b1271a94b5fcd02f69572bbd5cc3623",
+        "status": 200,
+        "characters": 677
+      },
+      {
+        "url": "https://www.comune.cortona.ar.it/commercio-ambulante",
+        "finalUrl": "https://www.comune.cortona.ar.it/commercio-ambulante",
+        "sha256": "c6b54a391bea05a026eb621f6e4fad50860265c81295b84e2857a4e44d8dc67e",
+        "status": 200,
+        "characters": 1164
+      },
+      {
+        "url": "https://www.comune.cortona.ar.it/novita/notizie/camucia-fiera-maggio-26",
+        "finalUrl": "https://www.comune.cortona.ar.it/novita/notizie/camucia-fiera-maggio-26",
+        "sha256": "75afb7abd0a94fc118b51b30c996ba1ae027c38262239147995dfd617ac6328a",
+        "status": 200,
+        "characters": 3307
+      },
+      {
+        "url": "https://www.comune.cortona.ar.it/novita/notizie/cortona-fiore-programma-2026",
+        "finalUrl": "https://www.comune.cortona.ar.it/novita/notizie/cortona-fiore-programma-2026",
+        "sha256": "f8d987058d8887cf1c172778be53b8c5523694fa5429aaf5b8c8c2c527178b2b",
+        "status": 200,
+        "characters": 3353
+      },
+      {
+        "url": "https://www.comune.cortona.ar.it/novita/notizie/cortona-top-festival-date-2026",
+        "finalUrl": "https://www.comune.cortona.ar.it/novita/notizie/cortona-top-festival-date-2026",
+        "sha256": "d4234666f78c8dd4ad286b33ca9bd3e6a61de94ce28e2298f1a7c4808984776a",
+        "status": 200,
+        "characters": 2552
+      },
+      {
+        "url": "https://www.comune.montevarchi.ar.it/eventi/3654475/torna-mercato-via-musei",
+        "finalUrl": "https://www.comune.montevarchi.ar.it/eventi/3654475/torna-mercato-via-musei",
+        "sha256": "d926d0fdcfc9a552df835f9bd719ee461edb5ad1eb14f361168f4f277ac2dd8d",
+        "status": 200,
+        "characters": 1720
+      },
+      {
+        "url": "https://www.comune.montevarchi.ar.it/notizie/3529176/mercato-forte-torna-far-tappa-montevarchi",
+        "finalUrl": "https://www.comune.montevarchi.ar.it/notizie/3529176/mercato-forte-torna-far-tappa-montevarchi",
+        "sha256": "96ecd1b1eb0ca50c2afaa6e65b1dd83eafd9dcc3c271e9696dbd5a7b50c7e9b7",
+        "status": 200,
+        "characters": 2511
+      },
+      {
+        "url": "https://www.comune.pratovecchiostia.ar.it/c051041/zf/index.php/bandi-gara/avvisi/dettaglio-avviso/avviso/11",
+        "finalUrl": "https://www.comune.pratovecchiostia.ar.it/c051041/zf/index.php/bandi-gara/avvisi/dettaglio-avviso/avviso/11",
+        "sha256": "c97228d6c292fa2eec505cc6493baa6534d5df201ffa988d95120defa4d42add",
+        "status": 200,
+        "characters": 3685
+      },
+      {
+        "url": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3649193/perdono-sapori-saperi-torna-san-giovanni-valdarno",
+        "finalUrl": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3649193/perdono-sapori-saperi-torna-san-giovanni-valdarno",
+        "sha256": "3c23198a1443749d9f2d3977010521c95f022903ed240bb2a215c7b499814d8f",
+        "status": 200,
+        "characters": 7940
+      },
+      {
+        "url": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3660493/torna-mystufato-san-giovanni-valdarno",
+        "finalUrl": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3660493/torna-mystufato-san-giovanni-valdarno",
+        "sha256": "6c7b7dcfc8de54ee875652bcece848fba862a590ba6a69c75cf9b178a5748c84",
+        "status": 200,
+        "characters": 12273
+      },
+      {
+        "url": "https://www.comune.sansepolcro.ar.it/it/page/mercati-e-fiere",
+        "finalUrl": "https://www.comune.sansepolcro.ar.it/it/page/mercati-e-fiere",
+        "sha256": "d209a30c9c4d29a9ab85de456de74391a3dc95535a9e0f97ab32a7059989ce10",
+        "status": 200,
+        "characters": 1980
+      },
+      {
+        "url": "https://www.confesercenti.ar.it/festa-del-perdono-a-san-giovanni-valdarno-2/",
+        "error": "403 Client Error: Forbidden for url: https://www.confesercenti.ar.it/festa-del-perdono-a-san-giovanni-valdarno-2/"
+      },
+      {
+        "url": "https://www.confesercenti.ar.it/fiera-di-san-torello-domenica-19-aprile-regolamento-e-domanda-di-partecipazione/",
+        "error": "403 Client Error: Forbidden for url: https://www.confesercenti.ar.it/fiera-di-san-torello-domenica-19-aprile-regolamento-e-domanda-di-partecipazione/"
+      },
+      {
+        "url": "https://www.confesercenti.ar.it/il-mercatale-raddoppia-sotto-i-portici-di-via-roma-anzi-triplica/",
+        "error": "403 Client Error: Forbidden for url: https://www.confesercenti.ar.it/il-mercatale-raddoppia-sotto-i-portici-di-via-roma-anzi-triplica/"
+      },
+      {
+        "url": "https://www.confesercenti.ar.it/loro-ciuffenna-due-domeniche-di-gusto-musica-e-shopping-nel-borgo-piu-bello-del-valdarno/",
+        "error": "403 Client Error: Forbidden for url: https://www.confesercenti.ar.it/loro-ciuffenna-due-domeniche-di-gusto-musica-e-shopping-nel-borgo-piu-bello-del-valdarno/"
+      },
+      {
+        "url": "https://www.confesercenti.ar.it/via-romana-in-festa-sabato-12-settembre/",
+        "error": "403 Client Error: Forbidden for url: https://www.confesercenti.ar.it/via-romana-in-festa-sabato-12-settembre/"
+      },
+      {
+        "url": "https://www.cortonantiquaria.it/",
+        "finalUrl": "https://www.cortonantiquaria.it/",
+        "sha256": "d744cfe5f64d8257794fc497d414f6c47599b4b87f11cfa62e2ec1c6271ae7b5",
+        "status": 200,
+        "characters": 44
+      },
+      {
+        "url": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/",
+        "error": "403 Client Error: Forbidden for url: https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+      },
+      {
+        "url": "https://www.festaperdonoterranuova.it/",
+        "finalUrl": "https://www.festaperdonoterranuova.it/",
+        "sha256": "a35a32e23cfedf07d0ca671e1741ffb34d6efd517c060df7a59559e2b100c637",
+        "status": 200,
+        "characters": 721
+      },
+      {
+        "url": "https://www.festivalinitalia.it/en/festival/flavors-and-earth-market-tegoleto",
+        "error": "403 Client Error: Forbidden for url: https://www.festivalinitalia.it/en/festival/flavors-and-earth-market-tegoleto"
+      },
+      {
+        "url": "https://www.halleyweb.com/c051004/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/3",
+        "finalUrl": "https://www.halleyweb.com/c051004/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/3",
+        "sha256": "7e88ea7dd33d8ab15e164527ea59394a2af40dbacb0f88e680990e2344249256",
+        "status": 200,
+        "characters": 25486
+      },
+      {
+        "url": "https://www.halleyweb.com/c051037/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/2/atto/GTVRFME65UT0-H",
+        "finalUrl": "https://www.halleyweb.com/c051037/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/2/atto/GTVRFME65UT0-H",
+        "sha256": "b2a3f8f1b701d9c7cf676bc27ca8a0554e5f6475ebcbd0ccfd09b3cd27716708",
+        "status": 200,
+        "characters": 1114
+      },
+      {
+        "url": "https://www.lanazione.it/arezzo/cronaca/fiera-della-madonna-del-conforto-le-disposizioni-per-il-decoro-e-la-vivibilita-urbana-ecz45tc6",
+        "finalUrl": "https://www.lanazione.it/arezzo/cronaca/fiera-della-madonna-del-conforto-le-disposizioni-per-il-decoro-e-la-vivibilita-urbana-ecz45tc6",
+        "sha256": "0a8781fb575b35b8ed0f41ba4107bba8883edf80d9533d9bb8f0dada5620c8c1",
+        "status": 200,
+        "characters": 2971
+      },
+      {
+        "url": "https://www.lanazione.it/arezzo/cronaca/santissima-annunziata-oggi-torna-la-fiera-dei-fiori-kmcp3r2r",
+        "finalUrl": "https://www.lanazione.it/arezzo/cronaca/santissima-annunziata-oggi-torna-la-fiera-dei-fiori-kmcp3r2r",
+        "sha256": "41276c32ffc4580aa8e6874c2889f6a990da655738eea61cbabd754ef5e3fb74",
+        "status": 200,
+        "characters": 3964
+      },
+      {
+        "url": "https://www.laterinamedievale.it/it/espositori",
+        "error": "403 Client Error: Forbidden for url: https://www.laterinamedievale.it/it/espositori"
+      },
+      {
+        "url": "https://www.lintrepida.it/en/programme-vintage-bike-ride/",
+        "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      },
+      {
+        "url": "https://www.meetvaltiberina.it/chianina2026",
+        "finalUrl": "https://www.meetvaltiberina.it/chianina2026",
+        "sha256": "cf478604a555602cb579e93a96c4bde13b365867103aefabbcc4a3085190bd36",
+        "status": 200,
+        "characters": 1973
+      },
+      {
+        "url": "https://www.meetvaltiberina.it/festa-castagna-marrone-caprese-michelangelo",
+        "finalUrl": "https://www.meetvaltiberina.it/festa-castagna-marrone-caprese-michelangelo",
+        "sha256": "a7401cc9155615ce63d52698dcb0531984404408b3a7633308277bce7a9bccd0",
+        "status": 200,
+        "characters": 928
+      },
+      {
+        "url": "https://www.meetvaltiberina.it/fiera-sant-antonio-monterchi",
+        "finalUrl": "https://www.meetvaltiberina.it/fiera-sant-antonio-monterchi",
+        "sha256": "3f5c118ac279bcdbbb7a73f6a68545882717dc8bde8d4d04c821be77b00efa87",
+        "status": 200,
+        "characters": 733
+      },
+      {
+        "url": "https://www.mercatodellepulciarezzo.it/",
+        "finalUrl": "https://www.mercatodellepulciarezzo.it/",
+        "sha256": "5975d3cacf626e48f532f649558f55d21206fd5d6a0ecc7de414798d03b4a9c9",
+        "status": 200,
+        "characters": 1679
+      },
+      {
+        "url": "https://www.mercatodellepulciarezzo.it/calendario/",
+        "finalUrl": "https://www.mercatodellepulciarezzo.it/calendario/",
+        "sha256": "2e52c4985199e63c203ffe65636589abd9b8524f55d776b2f55efbe3ce001be6",
+        "status": 200,
+        "characters": 411
+      },
+      {
+        "url": "https://www.mineralexpo.it/edizioni/il-mondo-dei-minerali/",
+        "finalUrl": "https://www.mineralexpo.it/edizioni/il-mondo-dei-minerali/",
+        "sha256": "90769b16fa324983112b099ed4023e6b89fd4102bec30379ad44d00d097e1bd4",
+        "status": 200,
+        "characters": 78
+      },
+      {
+        "url": "https://www.mostramercatovaltiberina.it/",
+        "error": "403 Client Error: Forbidden for url: https://www.mostramercatovaltiberina.it/"
+      },
+      {
+        "url": "https://www.retevaldarno.it/festa-del-perdono-e-gioco-del-pozzo-2026.html",
+        "finalUrl": "https://www.retevaldarno.it/festa-del-perdono-e-gioco-del-pozzo-2026.html",
+        "sha256": "74858991b734ef1a1127d9f0a2c5e963dd9a17a9d2ffd1b6a7d0912960ece6c4",
+        "status": 200,
+        "characters": 12846
+      },
+      {
+        "url": "https://www.retevaldarno.it/perdono-cavriglia-2026.html",
+        "finalUrl": "https://www.retevaldarno.it/perdono-cavriglia-2026.html",
+        "sha256": "651f72a17493e89cb546c38061a4dbafe76e94a51f0ff8f5bbdcefab8bc57bbf",
+        "status": 200,
+        "characters": 4334
+      },
+      {
+        "url": "https://www.retevaldarno.it/sagra-della-ribollita-festa-delle-palme-2026.html",
+        "finalUrl": "https://www.retevaldarno.it/sagra-della-ribollita-festa-delle-palme-2026.html",
+        "sha256": "c85ab360578eb462b2bee6698cd4cdacb42c009a15a3c29f2bfc96a88b2e8eeb",
+        "status": 200,
+        "characters": 1841
+      },
+      {
+        "url": "https://www.sagrabisteccachianinasestino.it/programma.html",
+        "finalUrl": "https://www.sagrabisteccachianinasestino.it/programma.html",
+        "sha256": "19d173bd008a882866f2e3e3ea02e33eade6ba9cf1544c4a8978d4b30090d63f",
+        "status": 200,
+        "characters": 561
+      },
+      {
+        "url": "https://www.sagretoscane.com/fiere-mercati/ar/cavriglia/festa-di-primavera-cavriglia.html",
+        "finalUrl": "https://www.sagretoscane.com/fiere-mercati/ar/cavriglia/festa-di-primavera-cavriglia.html",
+        "sha256": "46ba06ec774a8fcac14acda3d9bd4ba3af59187afab4a3c7addfc45ac27d3401",
+        "status": 200,
+        "characters": 2944
+      },
+      {
+        "url": "https://www.sagretoscane.com/fiere-mercati/ar/subbiano/mercatino-della-carabattola.html",
+        "finalUrl": "https://www.sagretoscane.com/fiere-mercati/ar/subbiano/mercatino-della-carabattola.html",
+        "sha256": "3bd2f9380c0fbe66ed7f6da6c3bcacc81db06a952bf6b53500952782ff8ff699",
+        "status": 200,
+        "characters": 2279
+      },
+      {
+        "url": "https://www.sagretoscane.com/sagre/ar/bucine/sagra-del-crostino-casalingo.html",
+        "finalUrl": "https://www.sagretoscane.com/sagre/ar/bucine/sagra-del-crostino-casalingo.html",
+        "sha256": "5ffed607619e0c339809b066e446f23611931fede3d166623a344c4f2c7d4fb1",
+        "status": 200,
+        "characters": 2795
+      },
+      {
+        "url": "https://www.sagretoscane.com/sagre/ar/castel-san-niccolo/festa-del-paese-e-del-tortello-di-patate.html",
+        "finalUrl": "https://www.sagretoscane.com/sagre/ar/castel-san-niccolo/festa-del-paese-e-del-tortello-di-patate.html",
+        "sha256": "1122bb12832c15941f7c4b92e47b27cd045ffc16c4ba19d01b7bce7eaecea5b6",
+        "status": 200,
+        "characters": 2577
+      },
+      {
+        "url": "https://www.sr71.it/2026/10/09/antiquariandolo-torna-a-foiano-oltre-70-espositori-per-il-primo-appuntamento-autunnale/",
+        "finalUrl": "https://www.sr71.it/2026/10/09/antiquariandolo-torna-a-foiano-oltre-70-espositori-per-il-primo-appuntamento-autunnale/",
+        "sha256": "4af93fec35c96c52b8ec684ab612140706344e71d630f6c57ff14c0e903bd790",
+        "status": 200,
+        "characters": 5098
+      },
+      {
+        "url": "https://www.touringclub.it/eventi/maggiolata-lucignanese-2026",
+        "finalUrl": "https://www.touringclub.it/eventi/maggiolata-lucignanese-2026",
+        "sha256": "2e78547a7593e00d4d23e7f2b45b9c9ef151c76b376490da3e22ca7194ee3da4",
+        "status": 200,
+        "characters": 2053
+      },
+      {
+        "url": "https://www.umbriaeventi.com/eventi/sagra-del-tartufo-chiusi-della-verna-14101",
+        "finalUrl": "https://www.umbriaeventi.com/eventi/sagra-del-tartufo-chiusi-della-verna-14101",
+        "sha256": "0264eaf8c3c7484c00d6a20ee52ef09af2898944eb65c492c7202ecec2952efb",
+        "status": 200,
+        "characters": 2092
+      },
+      {
+        "url": "https://www.unplitoscana.it/events/categoria/enogastronomia/2026-07/",
+        "finalUrl": "https://www.unplitoscana.it/events/categoria/enogastronomia/2026-07/",
+        "sha256": "7338c28503dd04889854e3a883df79021ce20bc0e5c90d30b4284005a50db2de",
+        "status": 200,
+        "characters": 49873
+      },
+      {
+        "url": "https://www.vintage-festival.it/",
+        "finalUrl": "https://www.vintage-festival.it/",
+        "sha256": "7115875fd1227c13e99a5f5cfdcbf6f3a6b0c75da12d9290f924aef15d9bc2b8",
+        "status": 200,
+        "characters": 3693
+      },
+      {
+        "url": "https://www.visittuscany.com/it/eventi/pieve-santo-stefano-sagra-del-prugnolo-maggio-2026/",
+        "finalUrl": "https://www.visittuscany.com/it/eventi/pieve-santo-stefano-sagra-del-prugnolo-maggio-2026/",
+        "sha256": "61f4d03dca0b6ebf7229d36c2d03f80083e5daa5a72cdb7409f8ea1f88a54b06",
+        "status": 200,
+        "characters": 3484
+      },
+      {
+        "url": "https://www.visitvaldichiana.it/eventi/la-chianina-ciclostorica-2026/",
+        "finalUrl": "https://www.visitvaldichiana.it/eventi/la-chianina-ciclostorica-2026/",
+        "sha256": "3ef73cfe7269500dae4939aab35d6e72a51df9de3fb4633d4a1183ed1fdeabc3",
+        "status": 200,
+        "characters": 4219
+      },
+      {
+        "url": "https://comune.anghiari.ar.it/eventi/2982514/memorandia",
+        "finalUrl": "https://comune.anghiari.ar.it/eventi/2982514/memorandia",
+        "sha256": "ffdb50d21f5acb62f368f03ecb44c290a891ec962d0e5df10491746748ed4722",
+        "status": 200,
+        "characters": 1271
+      },
+      {
+        "url": "https://comunearezzo.elixforms.it/rwe2/module_preview.jsp?MODULE_TAG=MOD_FANT_SPUN_2026",
+        "finalUrl": "https://comunearezzo.elixforms.it/rwe2/module_preview.jsp?MODULE_TAG=MOD_FANT_SPUN_2026",
+        "sha256": "e14aabdab6be2ffc682a2a428ffa1e78ad64a36ce788a52432c6a3d46fcae1ae",
+        "status": 200,
+        "characters": 5651
+      },
+      {
+        "url": "https://sangiovesefestival.it/",
+        "finalUrl": "https://sangiovesefestival.it/",
+        "sha256": "6cf9f96d5036ef82b49eaf14d0a2122a0e156eaed0b3f96c897b0481c494a030",
+        "status": 200,
+        "characters": 224
+      },
+      {
+        "url": "https://www.lanazione.it/arezzo/cronaca/san-donato-programma-dei-festeggiamenti-e-variazioni-al-traffico-e-alla-sosta-kwuricfh",
+        "finalUrl": "https://www.lanazione.it/arezzo/cronaca/san-donato-programma-dei-festeggiamenti-e-variazioni-al-traffico-e-alla-sosta-kwuricfh",
+        "sha256": "fd81c4bdbf14b7255a9ecba71dacbece1ac0b01fd226c6699243f0bc09fa144c",
+        "status": 200,
+        "characters": 3981
+      },
+      {
+        "url": "https://www.passioniinfiera.it/opportunita-espositori/",
+        "finalUrl": "https://www.passioniinfiera.it/opportunita-espositori/",
+        "sha256": "2fdddad87714517d559fd8180ba42e6b717ad391c710056ff5e6c32baaa0825b",
+        "status": 200,
+        "characters": 4488
+      },
+      {
+        "url": "https://www.sagretoscane.com/fiere-mercati/ar/bibbiena/mostra-scambio-casentinese-soci.html",
+        "finalUrl": "https://www.sagretoscane.com/fiere-mercati/ar/bibbiena/mostra-scambio-casentinese-soci.html",
+        "sha256": "602ae5ff0a7ad83b82505740fad64998d1d931697a46d4ce75965b0bd8f4da6d",
+        "status": 200,
+        "characters": 2588
+      },
+      {
+        "url": "https://comune.lucignano.ar.it/eventi/3613972/giovedi",
+        "finalUrl": "https://comune.lucignano.ar.it/eventi/3613972/giovedi",
+        "sha256": "cdfa96fa18897697ec500f97bd50b60938af99e75ec3231afc521b7c33321597",
+        "status": 200,
+        "characters": 2305
+      },
+      {
+        "url": "https://cortonacomics.it/notizie/",
+        "error": "403 Client Error: Forbidden for url: https://cortonacomics.it/notizie/"
+      },
+      {
+        "url": "https://www.comune.cortona.ar.it/vivere-il-comune/eventi/eventi-sociali/raduno-di-comunita/mercatini-medievali",
+        "finalUrl": "https://www.comune.cortona.ar.it/vivere-il-comune/eventi/eventi-sociali/raduno-di-comunita/mercatini-medievali",
+        "sha256": "bba45f1575c0a0a98fb8f0bacfdd0013dae18fb75773426dbe98ad00ee134179",
+        "status": 200,
+        "characters": 1760
+      },
+      {
+        "url": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3564881/ecco-terza-edizione-sangiovese-festival",
+        "finalUrl": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3564881/ecco-terza-edizione-sangiovese-festival",
+        "sha256": "c300ac5603acdc6202b2aaa93d480a187e53f10ac89c17d34ed307b43dfd18ba",
+        "status": 200,
+        "characters": 22248
+      },
+      {
+        "url": "https://www.cooperativainquiete.it/attivita/tutti-gli-eventi/2-agosto-boschi-sonori-badia-santa-trinita-in-alpe/",
+        "finalUrl": "https://www.cooperativainquiete.it/attivita/tutti-gli-eventi/2-agosto-boschi-sonori-badia-santa-trinita-in-alpe/",
+        "sha256": "dbfc31aa866901ec2219b52bace9a0195228a388061dd4cc095f70e84b498c49",
+        "status": 200,
+        "characters": 1564
+      },
+      {
+        "url": "https://www.visitvaldichiana.it/eventi/",
+        "finalUrl": "https://www.visitvaldichiana.it/eventi/",
+        "sha256": "bda3882c6277c9e53f782036f9b80376eb40f345581f1fa0e5abfc8440b54806",
+        "status": 200,
+        "characters": 3866
+      },
+      {
+        "url": "https://comune.castiglionfiorentino.ar.it/it/news/al-via-il-maggio-castiglionese-domani-mattina-ore-10-00-porta-fiorentina?type=2",
+        "finalUrl": "https://comune.castiglionfiorentino.ar.it/it/news/al-via-il-maggio-castiglionese-domani-mattina-ore-10-00-porta-fiorentina?type=2",
+        "sha256": "0317121c6cf7aced61869803cf761f8602c2dfbed754af36becf84ab9cb890ff",
+        "status": 200,
+        "characters": 3173
+      },
+      {
+        "url": "https://www.castiglioniexperience.it/Home/Detail/1081/valdichiana-wine-festival",
+        "finalUrl": "https://www.castiglioniexperience.it/Home/Detail/1081/valdichiana-wine-festival",
+        "sha256": "b23de04cda53009ede66d89072f95509e63ff81a492f5e483a0991ccf79bd9d8",
+        "status": 200,
+        "characters": 4360
+      },
+      {
+        "url": "https://comune.castelfranco-piandisco.ar.it/it/news/2031785",
+        "finalUrl": "https://comune.castelfranco-piandisco.ar.it/it/news/2031785",
+        "sha256": "7311689f8f2515b7a6f4647a330b5117fae1df7bb17a9ea9462aae5076712d8f",
+        "status": 200,
+        "characters": 2405
+      },
+      {
+        "url": "https://www.arezzo24.net/notizie/wine-food/gin-in-porchetta-torna-a-monte-san-savino-due-serate-tra-distillati-gusto-e-musica/",
+        "finalUrl": "https://www.arezzo24.net/notizie/wine-food/gin-in-porchetta-torna-a-monte-san-savino-due-serate-tra-distillati-gusto-e-musica/",
+        "sha256": "8e4da8a4d93071e89023f8f4ed8752dcdf77cbcbad5c5335662e69024c07cfb0",
+        "status": 200,
+        "characters": 5846
+      }
+    ],
+    "documents": [
+      {
+        "name": "arezzo-natale-disciplinare",
+        "url": "https://www.comune.arezzo.it/sites/default/files/2026-10/Disciplinare_Mercatino_di_Natale%202026.pdf",
+        "sha256": "6f30ea37e230aecb8204e48e7356302bfbe0ff3a5e77dad59fd09cc80c3a6261",
+        "pages": 2,
+        "characters": 4477,
+        "review": "Testo estratto; sezioni pertinenti a calendario e partecipazione consultate."
+      },
+      {
+        "name": "arezzo-natale-modello",
+        "url": "https://www.comune.arezzo.it/sites/default/files/2026-10/All_A_2026.pdf",
+        "sha256": "c7fb0bb34ab6fc8547bd1b63f2be7ad2f892b3e56b42a0624c6e99d9e3e1c9d3",
+        "pages": 2,
+        "characters": 5796,
+        "review": "Testo estratto; sezioni pertinenti a calendario e partecipazione consultate."
+      },
+      {
+        "name": "arezzo-natale-planimetria",
+        "url": "https://www.comune.arezzo.it/sites/default/files/2026-10/All_B.pdf",
+        "sha256": "1394d286573bde9a9b0bc4cd16964ec4d9439dc9a68c991fc9f4f4b93b03b2d4",
+        "pages": 1,
+        "characters": 337,
+        "review": "Solo testo estraibile: grafica della planimetria non verificata visivamente."
+      },
+      {
+        "name": "fibocchi-rosario",
+        "url": "https://www.comune.castiglionfibocchi.ar.it/dam/jcr:ed0fb286-9145-43a0-bd3b-5d0c62bee330/Avviso%20Fiera%20df.pdf",
+        "sha256": "45fd0a3102a2e876ab46998658c1251e1765ef47d77451943f94bdd8fd80c9bb",
+        "pages": 1,
+        "characters": 2286,
+        "review": "Testo estratto; sezioni pertinenti a calendario e partecipazione consultate."
+      },
+      {
+        "name": "stia-assunta",
+        "url": "https://www.comune.pratovecchiostia.ar.it/c051041/zf/index.php/bandi-gara/avvisi/download-allegato/avviso/11/allegato/56",
+        "sha256": "2494caf2c46b3037cee4af143ea5d2801417338d24d6b09ebe69dff8bed53e00",
+        "pages": 12,
+        "characters": 26455,
+        "review": "Testo estratto; sezioni pertinenti a calendario e partecipazione consultate."
+      },
+      {
+        "name": "laterina-espositori",
+        "url": "https://globaluserfiles.com/media/15946_a38d3a82b69e79b0db48439f0384367c96c1b40e.pdf/o/bando%20espositori%202026.pdf",
+        "sha256": "068ab848c43f00f9b0a2bf9d58ba6938ec926cb58a67dec793c8c62fd226fcd6",
+        "pages": 2,
+        "characters": 4586,
+        "review": "Testo estratto; sezioni pertinenti a calendario e partecipazione consultate."
+      },
+      {
+        "name": "casentino2026",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "sha256": "0904fbeb027232a28d288b61846f3d50104c5b200b128bf3a17c0a441bc4cd23",
+        "pages": 96,
+        "characters": 44549,
+        "review": "Testo estratto; sezioni pertinenti a calendario e partecipazione consultate."
+      }
+    ],
+    "excludedExamples": [
+      {
+        "city": "Arezzo",
+        "url": "https://www.mercatodellepulciarezzo.it/",
+        "reason": "Grande Mercato delle Pulci e Saione Mob: il sito organizzatore descrive usato dei privati. Non provato accesso professionale; non importati come posteggi ambulanti."
+      },
+      {
+        "city": "Bibbiena",
+        "url": "https://www.mercatodellepulciarezzo.it/calendario/",
+        "reason": "Mostra scambio di usato del circuito privati: ammissione dei rivenditori professionali non verificata. Inclusa separatamente la sola area street food commerciale documentata."
+      },
+      {
+        "city": "Marciano della Chiana",
+        "url": "https://marcianodellachianaexperience.it/eventi/piacere-marciano/",
+        "reason": "Piacere Marciano: Mercato delle Pulci del circuito privati e Borgo Culinario, senza procedura commerciale esterna verificata."
+      },
+      {
+        "city": "Monte San Savino",
+        "url": "https://www.mercatodellepulciarezzo.it/",
+        "reason": "Mercato delle Pulci del circuito privati: non provato accesso professionale."
+      },
+      {
+        "city": "Castelfranco Piandiscò",
+        "url": "https://comune.castelfranco-piandisco.ar.it/it/eventi/711530",
+        "reason": "Mercatino Vintage 25 aprile: avviso per oggetti inutilizzati da scambiare, riciclare o rivendere; ammissione professionale non dimostrata. Il costo gratuito non è interpretato come tariffa espositore."
+      },
+      {
+        "city": "Castiglion Fibocchi",
+        "url": "https://www.comune.castiglionfibocchi.ar.it/eventi/Mercatino-dei-Ragazzi-del-CALCIT-Castiglion-Fibocchi-2026.html",
+        "reason": "CALCIT: mercatino dei ragazzi per beneficenza, non posteggi commerciali esterni."
+      },
+      {
+        "city": "Chitignano",
+        "url": "https://www.unplitoscana.it/events/categoria/enogastronomia/2026-07/",
+        "reason": "Bisteccata, Stinco e Birra: ristoro locale senza offerta commerciale esterna documentata. Mercato settimanale escluso dal calendario manifestazioni."
+      },
+      {
+        "city": "Pieve Santo Stefano",
+        "url": "https://www.visittuscany.com/it/eventi/pieve-santo-stefano-sagra-del-prugnolo-maggio-2026/",
+        "reason": "Sagra del Prugnolo: evento verificato, ma mercato esterno e procedura professionale non dimostrati nella pagina consultata."
+      },
+      {
+        "city": "Pieve Santo Stefano",
+        "url": "https://comune.pievesantostefano.ar.it/eventi/3641967/7-8-settembre-pieve-santo-stefano-ormai-ci-siamo",
+        "reason": "Madonna dei Lumi: celebrazioni documentate, senza giornata commerciale esterna verificata."
+      },
+      {
+        "city": "Arezzo",
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "reason": "Campus, Tattoo Convention e Agri e Tour: non individuato un mercato pertinente per vendita ambulante nelle fonti consultate."
+      },
+      {
+        "city": "Badia Tedalda",
+        "url": "https://www.aia.it/2026/09/01/cinque-secoli-di-storia-e-una-protagonista-deccezione-la-chianina-allantica-fiera-del-ranco/",
+        "reason": "Antica Fiera del Ranco: origine storica a Badia Tedalda, ma sede attuale Ponte Presale nel comune di Sestino. Consolidata con la Mostra Chianina; nessun secondo evento attribuito a Badia."
+      },
+      {
+        "city": "Lucignano",
+        "url": "https://portaleventi.it/evento/maggiolata-lucignanese-lucignano",
+        "reason": "Mercatino della Maggiolata descritto come Mercatino degli Hobbisti selezionati: ammissione professionale non documentata. Conservato nell’audit, non presentato come posteggio per ambulanti."
+      },
+      {
+        "city": "Arezzo",
+        "url": "https://www.passioniinfiera.it/opportunita-espositori/",
+        "reason": "Nirvana è descritta come area olistica di Passioni in Fiera. Consolidata nella manifestazione, evitando un doppio conteggio nello stesso luogo e giorni."
+      },
+      {
+        "city": "Castiglion Fiorentino",
+        "url": "https://comune.castiglionfiorentino.ar.it/it/news/al-via-il-maggio-castiglionese-domani-mattina-ore-10-00-porta-fiorentina?type=2",
+        "reason": "Primi di Maggio: cucina dei 12 ristoranti del centro commerciale naturale, non banchi per somministratori esterni. Incluse separatamente Fiera Campionaria e Valdichiana Wine Festival."
+      }
+    ],
+    "unresolvedLeads": [
+      {
+        "city": "Montemignaio",
+        "url": "https://comune.montemignaio.ar.it/argomento/turismo/",
+        "reason": "Mercatino di Natale: pagina ancora riferita al 2025; date e accesso professionale da riconfermare."
+      },
+      {
+        "city": "Talla",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "reason": "Sagra della Castagna 1 novembre 2026 e Faltona 8 dicembre: data documentata, ma nessun mercato commerciale esterno nel calendario."
+      },
+      {
+        "city": "Bibbiena",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "reason": "Festa d’autunno, Natale e Aspettando Natale: programmi commerciali non ancora disponibili; non dedotti banchi da nomi generici."
+      },
+      {
+        "city": "Poppi",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "reason": "Castagnata Badia Prataglia: 24–25 ottobre, ma mercatino esterno non dimostrato dal calendario."
+      },
+      {
+        "city": "Pratovecchio Stia",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "reason": "Vinolionovo 14–15 novembre: mostra di produzioni tipiche da approfondire, giorni e accesso commerciale da verificare."
+      },
+      {
+        "city": "Civitella in Val di Chiana",
+        "url": "https://www.festivalinitalia.it/en/festival/flavors-and-earth-market-tegoleto",
+        "reason": "Mercato dei Sapori e della Terra 19 aprile 2026: segnalazione da verificare con Pro Loco/Comune prima di confermare."
+      },
+      {
+        "city": "Arezzo",
+        "url": "https://www.comune.arezzo.it/fiere-e-mercati",
+        "reason": "Fiera di Natale di Sant’Agostino e Fiera dei Fuochi: ricorrenze ufficiali, ma giornate commerciali e procedure 2026 non documentate nelle fonti consultate."
+      },
+      {
+        "city": "Castel Focognano",
+        "url": "https://serviziweb.comune.castel-focognano.ar.it/zf/index.php/provvedimenti/index/list/categoria/112/tipoProvvedimento/0/tipo/1/page/7",
+        "reason": "Fiera di Primavera: delibera 44 del 28 aprile 2026 su posteggi, ma mese/giorno della fiera non documentati. Non dedotti dalla data della delibera."
+      },
+      {
+        "city": "Lucignano",
+        "url": "https://www.visitvaldichiana.it/eventi/",
+        "reason": "Fiera del Ceppo: portale ancora all’edizione del 21 dicembre 2025; altre segnalazioni riportano il 14. Nessuna nuova data 2026 dedotta."
+      },
+      {
+        "city": "Chitignano",
+        "url": "https://www.cooperativainquiete.it/attivita/tutti-gli-eventi/2-agosto-boschi-sonori-badia-santa-trinita-in-alpe/",
+        "reason": "Fiera del Tordo 18 ottobre 2026 riscontrata nel programma dell’escursione, ma documentati soltanto stand gastronomici della Pro Loco. Mercato/vendita esterna da verificare, non dedotti da programmi storici del 2010–2011."
+      },
+      {
+        "city": "Castelfranco Piandiscò",
+        "url": "https://comune.castelfranco-piandisco.ar.it/it/news/2031785",
+        "reason": "Perdono: mercatino vintage 31 agosto nell’avviso comunale, altre fonti anche 30, definito Vintage e Svuota Cantine. Ammissione dei professionisti non documentata; fiere di beneficenza e ristorazione locale escluse."
+      }
+    ]
+  },
+  "events": [
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Fiera Antiquaria",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/",
+        "label": "discoverarezzo.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-03",
+          "end": "2026-01-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-01-31",
+          "end": "2026-02-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-28",
+          "end": "2026-03-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-04",
+          "end": "2026-04-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-06",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-04",
+          "end": "2026-07-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-01",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-05",
+          "end": "2026-09-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-05",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discoverarezzo.com/eventi/fiera-antiquaria-di-arezzo/"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://comunearezzo.elixforms.it/rwe2/module_preview.jsp?MODULE_TAG=MOD_FANT_SPUN_2026",
+        "note": "Spunta 2026: domanda online con SPID tramite il Comune. Le domande pervenute oltre il giorno 15 sono ammesse all’edizione del mese successivo a quello di invio. Settore antiquariato; operatori non professionisti seguono tesserino e regole specifiche. Verificare graduatoria, registrazione e posteggi temporaneamente liberi.",
+        "deadlineLabel": "Regola mensile del giorno 15 nel modulo comunale 2026; non è una scadenza annuale."
+      },
+      "sectors": "Antiquariato, modernariato, vintage, arte, collezionismo",
+      "venue": "Piazza Grande e centro storico",
+      "contacts": {
+        "phone": "0575 377845 / 0575 377472",
+        "email": "info@fieraantiquaria.org"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Fiera del Mestolo",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://comune.arezzo.it/novita/fiera-del-mestolo-edizione-di-settembre-2026",
+        "label": "comune.arezzo.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-09",
+          "end": "2026-09-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.arezzo.it/novita/fiera-del-mestolo-edizione-di-settembre-2026"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://comune.arezzo.it/novita/fiera-del-mestolo-edizione-di-settembre-2026",
+        "note": "Spunta all’Informagiovani di piazza Sant’Agostino: il 9 settembre registrazione dalle 7:20 e scelta alle 8:15; il 10 e 11 registrazione dalle 7:30 e scelta alle 7:45. Portare licenza/SCIA, visura camerale e documento; richiesta regolarità contributiva. I nuovi operatori possono anticipare i documenti via email, senza diritto di precedenza."
+      },
+      "sectors": "Alimentari, casalinghi, utensili, legno e vimini",
+      "venue": "Via Margaritone, Guadagnoli, Niccolò Aretino, Spinello, Arena Eden e via Signorelli",
+      "hours": "8:00–20:00 secondo Discover Arezzo",
+      "contacts": {
+        "email": "fieremercati@comune.arezzo.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Mercatino di Natale — San Jacopo e Risorgimento",
+      "category": "mercatino",
+      "months": [
+        11,
+        12,
+        1
+      ],
+      "source": {
+        "url": "https://www.comune.arezzo.it/novita/fiera-mercatino-di-natale-di-piazza-san-jacopo-e-piazza-risorgimento-1",
+        "label": "comune.arezzo.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2027-01-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.arezzo.it/novita/fiera-mercatino-di-natale-di-piazza-san-jacopo-e-piazza-risorgimento-1",
+          "periodOnly": true,
+          "label": "14 novembre 2026–6 gennaio 2027: periodo dell’avviso; calendario giornaliero da verificare"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://www.comune.arezzo.it/novita/fiera-mercatino-di-natale-di-piazza-san-jacopo-e-piazza-risorgimento-1",
+        "note": "Titolari e spuntisti con autorizzazione/SCIA per commercio su area pubblica: inviare Allegato A via PEC entro il 31 ottobre 2026. Obbligatorie casette in legno acquistate o noleggiate dall’espositore. Vietati brace, frittura, preparazioni con fumi/odori e GPL; consultare il disciplinare 2026. L’avviso non garantisce l’assegnazione agli spuntisti.",
+        "deadline": "2026-10-31",
+        "deadlineLabel": "Conferma/domanda Allegato A per l’edizione 2026–2027",
+        "costs": "Casetta a carico dell’espositore; canone, utenze e altri importi da verificare con l’ufficio."
+      },
+      "sectors": "Alimentari e non alimentari natalizi",
+      "venue": "Piazza San Jacopo e Piazza Risorgimento",
+      "contacts": {
+        "email": "fieremercati@comune.arezzo.it",
+        "pec": "comune.arezzo@postacert.toscana.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Villaggio Tirolese — Mercatini di Natale",
+      "category": "mercatino",
+      "months": [
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://mercatininatalearezzo.it/",
+        "label": "mercatininatalearezzo.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2026-12-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mercatininatalearezzo.it/",
+          "periodOnly": true,
+          "label": "14 novembre–27 dicembre: giovedì–domenica; dal 17 dicembre apertura quotidiana secondo le FAQ ufficiali"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://mercatininatalearezzo.it/",
+        "note": "Espositori tipici selezionati dall’organizzazione. Chiedere candidatura, merceologie, contratto e costi; l’annuncio di selezione dello staff non è una domanda per un banco."
+      },
+      "sectors": "Artigianato, prodotti tipici e street food tirolese",
+      "venue": "Piazza Grande",
+      "contacts": {
+        "email": "info@mercatininatalearezzo.it"
+      },
+      "hours": "10:00–21:00; chiusura 27 dicembre alle 20:00. Confermare festività e orari con l’organizzazione."
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Mercato Internazionale",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://confcommercio.ar.it/articoli/ambulanti/23837-mercato-internazionale-ventanni-di-sapori-dal-mondo",
+        "label": "confcommercio.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-09",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://confcommercio.ar.it/articoli/ambulanti/23837-mercato-internazionale-ventanni-di-sapori-dal-mondo"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://confcommercio.ar.it/articoli/ambulanti/23837-mercato-internazionale-ventanni-di-sapori-dal-mondo",
+        "note": "Manifestazione organizzata da Confcommercio con selezione di espositori. Richiedere ammissione per settore, requisiti sanitari, dimensioni del banco e preventivo; nessuna disponibilità residua pubblicata."
+      },
+      "sectors": "Alimentari, street food, prodotti tipici e artigianato",
+      "venue": "Area Eden e centro storico; produttori locali in piazza San Jacopo"
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Fiera della Madonna del Conforto",
+      "category": "tradizionale",
+      "months": [
+        2
+      ],
+      "source": {
+        "url": "https://www.lanazione.it/arezzo/cronaca/fiera-della-madonna-del-conforto-le-disposizioni-per-il-decoro-e-la-vivibilita-urbana-ecz45tc6",
+        "label": "lanazione.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-15",
+          "end": "2026-02-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.lanazione.it/arezzo/cronaca/fiera-della-madonna-del-conforto-le-disposizioni-per-il-decoro-e-la-vivibilita-urbana-ecz45tc6"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.lanazione.it/arezzo/cronaca/fiera-della-madonna-del-conforto-le-disposizioni-per-il-decoro-e-la-vivibilita-urbana-ecz45tc6",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "venue": "Via Ricasoli, piazza della Libertà e parte del parcheggio di via Pietri",
+      "contacts": {
+        "email": "fieremercati@comune.arezzo.it"
+      },
+      "frequencyNote": "Fonte giornalistica locale sull’ordinanza 2026; procedura di assegnazione da chiedere al Comune."
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Fiera della Santissima Annunziata",
+      "category": "tradizionale",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.lanazione.it/arezzo/cronaca/santissima-annunziata-oggi-torna-la-fiera-dei-fiori-kmcp3r2r",
+        "label": "lanazione.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-25",
+          "end": "2026-03-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.lanazione.it/arezzo/cronaca/santissima-annunziata-oggi-torna-la-fiera-dei-fiori-kmcp3r2r"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.lanazione.it/arezzo/cronaca/santissima-annunziata-oggi-torna-la-fiera-dei-fiori-kmcp3r2r",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Fiori e piante; altri settori da verificare",
+      "venue": "Piazza Santissima Annunziata e Badia",
+      "contacts": {
+        "email": "fieremercati@comune.arezzo.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Via Romana in Festa — mercatino dell’ingegno",
+      "category": "artigianato",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.confesercenti.ar.it/via-romana-in-festa-sabato-12-settembre/",
+        "label": "confesercenti.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-12",
+          "end": "2026-09-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.confesercenti.ar.it/via-romana-in-festa-sabato-12-settembre/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.confesercenti.ar.it/via-romana-in-festa-sabato-12-settembre/",
+        "note": "La presenza commerciale esterna documentata riguarda opere dell’ingegno. Non equivale a un mercato generalista per ambulanti; chiedere all’organizzatore categorie ammesse e iscrizione."
+      },
+      "sectors": "Opere dell’ingegno",
+      "venue": "Via Romana",
+      "hours": "18:00–24:00",
+      "organizer": "Confesercenti e commercianti della zona"
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Il Mercatale — prodotti del territorio",
+      "category": "mercatino",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.confesercenti.ar.it/il-mercatale-raddoppia-sotto-i-portici-di-via-roma-anzi-triplica/",
+        "label": "confesercenti.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.confesercenti.ar.it/il-mercatale-raddoppia-sotto-i-portici-di-via-roma-anzi-triplica/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.confesercenti.ar.it/il-mercatale-raddoppia-sotto-i-portici-di-via-roma-anzi-triplica/",
+        "note": "Mercato della rete di produttori del territorio. Chiedere a Confesercenti requisiti di adesione e giornate successive; non sono documentati posteggi per rivenditori generalisti."
+      },
+      "sectors": "Prodotti agricoli, formaggi, miele, marmellate e prugnoli",
+      "venue": "Portici di via Roma",
+      "organizer": "Rete Il Mercatale / Confesercenti Arezzo"
+    },
+    {
+      "region": "Toscana",
+      "city": "Anghiari",
+      "name": "Mostra Mercato dell’Artigianato della Valtiberina Toscana",
+      "category": "artigianato",
+      "months": [
+        4,
+        5
+      ],
+      "source": {
+        "url": "https://www.mostramercatovaltiberina.it/",
+        "label": "mostramercatovaltiberina.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-24",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.mostramercatovaltiberina.it/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.mostramercatovaltiberina.it/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.mostramercatovaltiberina.it/",
+        "note": "Artigiani ospitati nelle botteghe del centro storico. Chiedere all’Ente Mostra ammissione, spazi e quota; non è una spunta per ambulanti generalisti."
+      },
+      "sectors": "Artigianato artistico: legno, cuoio, ferro, ceramica e tessuti",
+      "venue": "Centro storico",
+      "hours": "10:00–19:00 secondo il sito organizzatore",
+      "contacts": {
+        "email": "info@mostramercatovaltiberina.it",
+        "phone": "0575 749279"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Anghiari",
+      "name": "I Centogusti dell’Appennino",
+      "category": "mercatino",
+      "months": [
+        10,
+        11
+      ],
+      "source": {
+        "url": "https://comune.anghiari.ar.it/eventi/3661316/centogusti-appennino",
+        "label": "comune.anghiari.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-30",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.anghiari.ar.it/eventi/3661316/centogusti-appennino"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.anghiari.ar.it/eventi/3661316/centogusti-appennino",
+        "note": "Mostra mercato di produttori e aziende enogastronomiche nelle botteghe del centro storico. Contattare l’organizzazione su icentogusti.it per selezione, spazi e costi; il costo gratuito indicato dal Comune riguarda l’ingresso del pubblico."
+      },
+      "sectors": "Prodotti agroalimentari, agriturismo ed enogastronomia",
+      "venue": "Centro storico"
+    },
+    {
+      "region": "Toscana",
+      "city": "Anghiari",
+      "name": "L’Intrepida — mercatini vintage",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.lintrepida.it/en/programme-vintage-bike-ride/",
+        "label": "lintrepida.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "label": "15–18 ottobre 2026: programma generale; giornate dei mercatini da verificare",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.lintrepida.it/en/programme-vintage-bike-ride/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.lintrepida.it/en/programme-vintage-bike-ride/",
+        "note": "Mercatini tematici legati alla cicloturistica. Chiedere giorni effettivi del mercato, ammissione e tariffe agli organizzatori; le quattro giornate del programma generale non provano vendita quotidiana."
+      },
+      "sectors": "Biciclette, abbigliamento e oggettistica d’epoca",
+      "venue": "Centro storico",
+      "frequencyNote": "Programma generale 15–18 ottobre 2026; giorni dei mercatini da verificare."
+    },
+    {
+      "region": "Toscana",
+      "city": "Bibbiena",
+      "name": "Fiera di Maggio — Soci",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.halleyweb.com/c051004/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/3",
+        "label": "halleyweb.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-11",
+          "end": "2026-05-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.halleyweb.com/c051004/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/3"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.halleyweb.com/c051004/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/3",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "venue": "Soci",
+      "frequencyNote": "Ordinanza comunale reg. gen. 97 / num. 76 del 27 aprile 2026."
+    },
+    {
+      "region": "Toscana",
+      "city": "Bibbiena",
+      "name": "Fiera del Forte — Bibbiena Stazione",
+      "category": "tradizionale",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2026-11-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Abbigliamento e accessori; settori ammessi da verificare",
+      "venue": "Bibbiena Stazione",
+      "frequencyNote": "Data pubblicata dal calendario locale CASENTINO2000; verificare programma aggiornato e accesso degli espositori."
+    },
+    {
+      "region": "Toscana",
+      "city": "Bucine",
+      "name": "Sagra del Crostino Casalingo — mercatino artigianale",
+      "category": "sagra",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.sagretoscane.com/sagre/ar/bucine/sagra-del-crostino-casalingo.html",
+        "label": "sagretoscane.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-05",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagretoscane.com/sagre/ar/bucine/sagra-del-crostino-casalingo.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.sagretoscane.com/sagre/ar/bucine/sagra-del-crostino-casalingo.html",
+        "note": "La fonte locale segnala il mercatino artigianale nelle giornate della sagra. Chiedere ammissione professionale, giornate, costi e allestimento alla Pro Loco; la fiera di beneficenza non è un posteggio commerciale."
+      },
+      "sectors": "Artigianato",
+      "venue": "San Leolino, via Magiotti 3/5",
+      "organizer": "Pro Loco Comitato Festeggiamenti San Leolino APS"
+    },
+    {
+      "region": "Toscana",
+      "city": "Bucine",
+      "name": "Sagra della Ribollita — mercatino di primavera",
+      "category": "sagra",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.retevaldarno.it/sagra-della-ribollita-festa-delle-palme-2026.html",
+        "label": "retevaldarno.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-29",
+          "end": "2026-03-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.retevaldarno.it/sagra-della-ribollita-festa-delle-palme-2026.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.retevaldarno.it/sagra-della-ribollita-festa-delle-palme-2026.html",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "venue": "Mercatale Valdarno",
+      "organizer": "Pro Loco Mercatale Valdarno"
+    },
+    {
+      "region": "Toscana",
+      "city": "Capolona",
+      "name": "Fiera d’Agosto",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-22",
+          "end": "2026-08-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "frequencyNote": "Data nel calendario locale CASENTINO2000; settori, posteggi e spunta da confermare con il Comune."
+    },
+    {
+      "region": "Toscana",
+      "city": "Caprese Michelangelo",
+      "name": "Festa della Castagna e del Marrone DOP",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.meetvaltiberina.it/festa-castagna-marrone-caprese-michelangelo",
+        "label": "meetvaltiberina.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.meetvaltiberina.it/festa-castagna-marrone-caprese-michelangelo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-24",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.meetvaltiberina.it/festa-castagna-marrone-caprese-michelangelo"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.meetvaltiberina.it/festa-castagna-marrone-caprese-michelangelo",
+        "note": "Bancarelle di prodotti tipici nel programma del portale territoriale. Chiedere all’organizzazione requisiti, eventuale riserva ai produttori locali, ammissione di artigiani e costi; non è documentata una spunta aperta."
+      },
+      "sectors": "Marroni DOP e prodotti tipici",
+      "venue": "Borgo di Caprese Michelangelo"
+    },
+    {
+      "region": "Toscana",
+      "city": "Castel Focognano",
+      "name": "Fiera di Sant’Anna",
+      "category": "tradizionale",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-26",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "venue": "Rassina",
+      "frequencyNote": "La delibera comunale 66 del 2 luglio 2026 dispone spostamenti sperimentali di posteggi in via Regina Elena. Verificare la planimetria aggiornata."
+    },
+    {
+      "region": "Toscana",
+      "city": "Castel Focognano",
+      "name": "Mercato del Tempo",
+      "category": "mercatino",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-30",
+          "end": "2026-08-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Antiquariato",
+      "venue": "Rassina, piazza Mazzini",
+      "frequencyNote": "Data esplicita nel calendario 2026. Il Comune ha confermato anche la ricorrenza della quinta domenica: ulteriori giornate da verificare, senza calcolarle."
+    },
+    {
+      "region": "Toscana",
+      "city": "Castel San Niccolò",
+      "name": "Fiera di Pasquetta",
+      "category": "tradizionale",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://www.comune.castel-san-niccolo.ar.it/vivere_il_comune/eventi/evento_3.html",
+        "label": "comune.castel-san-niccolo.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-06",
+          "end": "2026-04-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castel-san-niccolo.ar.it/vivere_il_comune/eventi/evento_3.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.castel-san-niccolo.ar.it/vivere_il_comune/eventi/evento_3.html",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "contacts": {
+        "phone": "0575 571032"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Castel San Niccolò",
+      "name": "Borgo in Fiera",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-03",
+          "end": "2026-08-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "venue": "Borgo alla Collina"
+    },
+    {
+      "region": "Toscana",
+      "city": "Castel San Niccolò",
+      "name": "C’era una volta la Fiera in Prato",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "venue": "Prato di Strada",
+      "frequencyNote": "Prato di Strada appartiene a Castel San Niccolò; alcune aggregazioni web lo attribuiscono erroneamente a Castel Focognano."
+    },
+    {
+      "region": "Toscana",
+      "city": "Castel San Niccolò",
+      "name": "Festa del Paese e del Tortello di Patate — mercatino",
+      "category": "sagra",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.sagretoscane.com/sagre/ar/castel-san-niccolo/festa-del-paese-e-del-tortello-di-patate.html",
+        "label": "sagretoscane.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagretoscane.com/sagre/ar/castel-san-niccolo/festa-del-paese-e-del-tortello-di-patate.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.sagretoscane.com/sagre/ar/castel-san-niccolo/festa-del-paese-e-del-tortello-di-patate.html",
+        "note": "La fonte segnala stand del mercatino; chiedere a Pro Loco requisiti professionali, merceologie e giorni di vendita. La ristorazione della sagra non implica ammissione di food truck esterni."
+      },
+      "venue": "Cetica"
+    },
+    {
+      "region": "Toscana",
+      "city": "Castiglion Fibocchi",
+      "name": "Fiera della Madonna del Rosario",
+      "category": "tradizionale",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.comune.castiglionfibocchi.ar.it/notizie/Avviso-di-partecipazione-nei-posteggi-liberi-della-fiera-annuale-2026.html",
+        "label": "comune.castiglionfibocchi.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-04",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfibocchi.ar.it/notizie/Avviso-di-partecipazione-nei-posteggi-liberi-della-fiera-annuale-2026.html"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://www.comune.castiglionfibocchi.ar.it/notizie/Avviso-di-partecipazione-nei-posteggi-liberi-della-fiera-annuale-2026.html",
+        "note": "Avviso comunale per assegnazioni temporanee nei posteggi liberi tramite domanda allegata. Posteggi ancora liberi assegnati alla spunta delle 8:15, secondo comparto merceologico, presenze e anzianità; non è documentata una scadenza datata né una disponibilità attuale. Consultare avviso e modulo."
+      },
+      "frequencyNote": "4 ottobre 2026 nell’avviso comunale. Il PDF reca un’intestazione 2025, ma il corpo e l’avviso si riferiscono al 2026.",
+      "venue": "Piazza delle Fiere",
+      "hours": "8:00–23:00; spunta alle 8:15"
+    },
+    {
+      "region": "Toscana",
+      "city": "Castiglion Fibocchi",
+      "name": "Fiera dei Prodotti della Montagna del Pratomagno",
+      "category": "mercatino",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.comune.castiglionfibocchi.ar.it/eventi/FIera-prodotti-montagan.html",
+        "label": "comune.castiglionfibocchi.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-29",
+          "end": "2026-08-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfibocchi.ar.it/eventi/FIera-prodotti-montagan.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.castiglionfibocchi.ar.it/eventi/FIera-prodotti-montagan.html",
+        "note": "Evento per produzioni locali: chiedere agli organizzatori adesione, provenienza dei prodotti e preventivo. Ingresso del pubblico e quota espositore sono cose distinte."
+      },
+      "sectors": "Vino, miele, olio, zafferano, formaggi, erboristeria e alimentari",
+      "venue": "Via del Marchese Alessandro dal Borro",
+      "hours": "Dalle 17:00"
+    },
+    {
+      "region": "Toscana",
+      "city": "Castiglion Fiorentino",
+      "name": "Vintage Festival — Vintage Market",
+      "category": "mercatino",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.vintage-festival.it/",
+        "label": "vintage-festival.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-13",
+          "end": "2026-08-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.vintage-festival.it/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.vintage-festival.it/",
+        "note": "Vintage Market con espositori selezionati; richiedere candidatura, categoria, dimensioni e quota all’organizzatore. Non è un mercato generalista con spunta."
+      },
+      "sectors": "Vintage, abbigliamento, artigianato, design, vinili, libri, giochi, piante e collezionismo",
+      "venue": "Centro storico"
+    },
+    {
+      "region": "Toscana",
+      "city": "Castiglion Fiorentino",
+      "name": "La Torre di Babbo Natale e i Mercatini Natalizi",
+      "category": "mercatino",
+      "months": [
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403",
+        "label": "comune.castiglionfiorentino.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-05",
+          "end": "2026-12-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-06",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-08",
+          "end": "2026-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-12",
+          "end": "2026-12-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-13",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-19",
+          "end": "2026-12-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-20",
+          "end": "2026-12-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-24",
+          "end": "2026-12-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-26",
+          "end": "2026-12-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-27",
+          "end": "2026-12-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.castiglionfiorentino.ar.it/it/news/6487403",
+        "note": "Inviare il modulo con tipologia di merce e tre fotografie a natalecastiglionfiorentino@gmail.com entro il 16 ottobre 2026. Domanda distinta per ogni casina destinata ad attività diversa. Priorità a prodotti coerenti con il Natale e le tipicità del territorio. Le casine sono messe a disposizione dal Comune; chiedere condizioni e quota. Se il modulo non è reperibile nel portale collegato, richiederlo all’indirizzo dell’organizzazione.",
+        "deadline": "2026-10-16",
+        "deadlineLabel": "Manifestazione di interesse per le casine 2026; verificare residua disponibilità con l’organizzazione"
+      },
+      "sectors": "Alimentari, non alimentari, artigianato e tipicità natalizie",
+      "venue": "Area del Cassero",
+      "contacts": {
+        "email": "natalecastiglionfiorentino@gmail.com"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Castiglion Fiorentino",
+      "name": "Amarcord — mostra scambio di cose vecchie e usate",
+      "category": "mercatino",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.comune.castiglionfiorentino.ar.it/it/news/564595/amarcord-ai-giardini-pubblici-torna-la-mostra-scambio-di-cose-vecchie-e-usate",
+        "label": "comune.castiglionfiorentino.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-26",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castiglionfiorentino.ar.it/it/news/564595/amarcord-ai-giardini-pubblici-torna-la-mostra-scambio-di-cose-vecchie-e-usate"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.castiglionfiorentino.ar.it/it/news/564595/amarcord-ai-giardini-pubblici-torna-la-mostra-scambio-di-cose-vecchie-e-usate",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Antiquariato, modernariato, collezionismo e usato",
+      "venue": "Giardini pubblici",
+      "organizer": "Pro Loco Castiglion Fiorentino",
+      "frequencyNote": "Quarta domenica del mese secondo il Comune; pubblicata la giornata del 26 luglio 2026, senza calcolare altre date.",
+      "contacts": {
+        "phone": "349 5764969"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Cavriglia",
+      "name": "Festa di Primavera — Castelnuovo dei Sabbioni",
+      "category": "artigianato",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://www.sagretoscane.com/fiere-mercati/ar/cavriglia/festa-di-primavera-cavriglia.html",
+        "label": "sagretoscane.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-17",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagretoscane.com/fiere-mercati/ar/cavriglia/festa-di-primavera-cavriglia.html",
+          "periodOnly": true,
+          "label": "17–19 aprile 2026: periodo della festa; giornate del mercatino da verificare"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.sagretoscane.com/fiere-mercati/ar/cavriglia/festa-di-primavera-cavriglia.html",
+        "note": "Il programma segnala un mercatino hobbisti e stand di fiori. Chiedere se è ammesso il proprio profilo professionale; non sono provati posteggi per ambulanti generalisti. Giorni esatti del mercatino da confermare."
+      },
+      "sectors": "Fiori e hobbistica",
+      "venue": "Castelnuovo dei Sabbioni"
+    },
+    {
+      "region": "Toscana",
+      "city": "Cavriglia",
+      "name": "Fiera del Perdono",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.retevaldarno.it/perdono-cavriglia-2026.html",
+        "label": "retevaldarno.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-01",
+          "end": "2026-08-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.retevaldarno.it/perdono-cavriglia-2026.html"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.retevaldarno.it/perdono-cavriglia-2026.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.retevaldarno.it/perdono-cavriglia-2026.html",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "venue": "Viale Principe di Piemonte",
+      "frequencyNote": "Inserite soltanto fiera del 1 agosto e mercato del 2 agosto; il programma della festa va dal 29 luglio al 4 agosto.",
+      "hours": "1 agosto: fiera dalle 16:00; 2 agosto: mercato dalle 8:00"
+    },
+    {
+      "region": "Toscana",
+      "city": "Chiusi della Verna",
+      "name": "Sagra del Tartufo — mercatino",
+      "category": "sagra",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.umbriaeventi.com/eventi/sagra-del-tartufo-chiusi-della-verna-14101",
+        "label": "umbriaeventi.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-14",
+          "end": "2026-08-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.umbriaeventi.com/eventi/sagra-del-tartufo-chiusi-della-verna-14101"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.umbriaeventi.com/eventi/sagra-del-tartufo-chiusi-della-verna-14101",
+        "note": "La fonte segnala un mercatino ogni giorno; chiedere all’organizzazione l’accesso di produttori o ambulanti e i requisiti sanitari, senza confonderlo con il ristoro della sagra."
+      },
+      "sectors": "Tartufo e prodotti alimentari"
+    },
+    {
+      "region": "Toscana",
+      "city": "Civitella in Val di Chiana",
+      "name": "Mercato del Cacio",
+      "category": "mercatino",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.comune.civitella-in-val-di-chiana.ar.it/vivere_il_comune/eventi/evento_8.html",
+        "label": "comune.civitella-in-val-di-chiana.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-17",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.civitella-in-val-di-chiana.ar.it/vivere_il_comune/eventi/evento_8.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.civitella-in-val-di-chiana.ar.it/vivere_il_comune/eventi/evento_8.html",
+        "note": "Manifestazione di produzioni casearie: richiedere ammissione, requisiti dei produttori e costi all’organizzazione."
+      },
+      "sectors": "Formaggi e produzioni casearie",
+      "venue": "Borgo di Civitella"
+    },
+    {
+      "region": "Toscana",
+      "city": "Cortona",
+      "name": "Camucia in Fiera",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.comune.cortona.ar.it/novita/notizie/camucia-fiera-maggio-26",
+        "label": "comune.cortona.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-17",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cortona.ar.it/novita/notizie/camucia-fiera-maggio-26"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.cortona.ar.it/novita/notizie/camucia-fiera-maggio-26",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Abbigliamento, calzature, biancheria, casalinghi, prodotti tipici, artigianato e florovivaismo",
+      "venue": "Camucia: piazza Sergardi, via Lauretana, XXV Aprile, Sandrelli e 24 maggio",
+      "organizer": "Comune di Cortona e Confesercenti Arezzo"
+    },
+    {
+      "region": "Toscana",
+      "city": "Cortona",
+      "name": "Fiera di Settembre — Camucia",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.cortona.ar.it/commercio-ambulante",
+        "label": "comune.cortona.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-14",
+          "end": "2026-09-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cortona.ar.it/commercio-ambulante"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.cortona.ar.it/commercio-ambulante",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Merci varie",
+      "venue": "Camucia",
+      "organizer": "Comune e Confesercenti",
+      "frequencyNote": "Il Comune annuncia oltre 150 venditori ambulanti, non altrettanti posteggi disponibili."
+    },
+    {
+      "region": "Toscana",
+      "city": "Cortona",
+      "name": "Cortona in Fiore",
+      "category": "mercatino",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.comune.cortona.ar.it/novita/notizie/cortona-fiore-programma-2026",
+        "label": "comune.cortona.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cortona.ar.it/novita/notizie/cortona-fiore-programma-2026"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.cortona.ar.it/novita/notizie/cortona-fiore-programma-2026",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Fiori, piante e artigianato del rame",
+      "venue": "Centro storico",
+      "organizer": "Comune di Cortona e Confesercenti",
+      "hours": "9:00–20:00 secondo il programma"
+    },
+    {
+      "region": "Toscana",
+      "city": "Cortona",
+      "name": "Cortonantiquaria",
+      "category": "espositiva",
+      "months": [
+        8,
+        9
+      ],
+      "source": {
+        "url": "https://www.cortonantiquaria.it/",
+        "label": "cortonantiquaria.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-29",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.cortonantiquaria.it/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.cortonantiquaria.it/",
+        "note": "Mostra antiquaria con gallerie e antiquari selezionati. Chiedere contratto, settore ammesso e preventivo per lo stand; non si accede tramite spunta."
+      },
+      "sectors": "Arte e antiquariato"
+    },
+    {
+      "region": "Toscana",
+      "city": "Cortona",
+      "name": "Top Festival — mostra mercato",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.cortona.ar.it/novita/notizie/cortona-top-festival-date-2026",
+        "label": "comune.cortona.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cortona.ar.it/novita/notizie/cortona-top-festival-date-2026"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.cortona.ar.it/novita/notizie/cortona-top-festival-date-2026",
+        "note": "Iniziativa dedicata alle aziende cortonesi e alle loro produzioni: chiedere condizioni di ammissione. La cena del 18 settembre non è una giornata della mostra mercato."
+      },
+      "sectors": "Prodotti agricoli e tipici del territorio",
+      "venue": "Piazze del centro storico"
+    },
+    {
+      "region": "Toscana",
+      "city": "Cortona",
+      "name": "Mercatino dei Prodotti Tipici Nazionali",
+      "category": "mercatino",
+      "months": [
+        1
+      ],
+      "source": {
+        "url": "https://www.comune.cortona.ar.it/commercio-ambulante",
+        "label": "comune.cortona.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-10",
+          "end": "2026-01-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cortona.ar.it/commercio-ambulante"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.cortona.ar.it/commercio-ambulante",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Prodotti tipici alimentari",
+      "frequencyNote": "Edizione di recupero dopo il rinvio per maltempo dell’Epifania; non inserita anche la data annullata del 6 gennaio."
+    },
+    {
+      "region": "Toscana",
+      "city": "Foiano della Chiana",
+      "name": "Foiano in Fiore",
+      "category": "mercatino",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://comune.foiano.ar.it/eventi/3562263/foiano-fiore-via-40-edizione-storica-fiera",
+        "label": "comune.foiano.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-18",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.foiano.ar.it/eventi/3562263/foiano-fiore-via-40-edizione-storica-fiera"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.foiano.ar.it/eventi/3562263/foiano-fiore-via-40-edizione-storica-fiera",
+        "note": "Florovivaismo e Mercatino dell’Ingegno a tema floreale; area food gestita dalle attività locali. Chiedere all’organizzazione l’ammissione per il proprio settore e la quota."
+      },
+      "sectors": "Fiori, piante e artigianato floreale",
+      "venue": "Centro storico"
+    },
+    {
+      "region": "Toscana",
+      "city": "Foiano della Chiana",
+      "name": "Antiquariandolo",
+      "category": "mercatino",
+      "months": [
+        9,
+        10
+      ],
+      "source": {
+        "url": "https://turismo.comune.foiano.ar.it/eventi/3570720/antiquariandolo",
+        "label": "turismo.comune.foiano.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://turismo.comune.foiano.ar.it/eventi/3570720/antiquariandolo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sr71.it/2026/10/09/antiquariandolo-torna-a-foiano-oltre-70-espositori-per-il-primo-appuntamento-autunnale/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://turismo.comune.foiano.ar.it/eventi/3570720/antiquariandolo",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Antiquariato, modernariato e collezionismo",
+      "venue": "Centro storico",
+      "frequencyNote": "Ulteriori appuntamenti mensili da confermare; nessuna proiezione automatica delle domeniche."
+    },
+    {
+      "region": "Toscana",
+      "city": "Foiano della Chiana",
+      "name": "Fiera della Zucca",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://turismo.comune.foiano.ar.it/contenuti/1688658/fiere-mercati",
+        "label": "turismo.comune.foiano.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "url": "https://turismo.comune.foiano.ar.it/contenuti/1688658/fiere-mercati",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Artigianato e prodotti tipici",
+      "frequencyNote": "Manifestazione descritta dal portale turistico comunale. Edizione e date 2026 non ancora confermate: contattare l’organizzatore."
+    },
+    {
+      "region": "Toscana",
+      "city": "Laterina Pergine Valdarno",
+      "name": "Laterina Medievale — banchi di vendita",
+      "category": "artigianato",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.laterinamedievale.it/it/espositori",
+        "label": "laterinamedievale.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-24",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.laterinamedievale.it/it/espositori"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.laterinamedievale.it/it/espositori",
+        "note": "Inviare regolamento firmato, foto del banco e lista delle merci a info@laterinamedievale.it. Banco, illuminazione, abiti e merce devono essere coerenti con il periodo storico; selezione dell’associazione La Rocca APS.",
+        "deadline": "2026-06-30",
+        "deadlineLabel": "Bando espositori 2026 già concluso",
+        "costs": "Regolamento 2026: contributo una tantum di €100, caparra del 30%; leggere condizioni di rinuncia e contratto."
+      },
+      "sectors": "Artigianato e merci coerenti con il Medioevo",
+      "venue": "Centro storico di Laterina",
+      "contacts": {
+        "email": "info@laterinamedievale.it"
+      },
+      "lat": 43.50818,
+      "lng": 11.71026,
+      "coordinateSource": {
+        "url": "https://mapcarta.com/18695812",
+        "label": "OpenStreetMap / Mapcarta — centro di Laterina",
+        "checkedAt": "2026-10-11",
+        "note": "Il comune unificato è senza coordinate nell’anagrafica del sito; usato il centro della località Laterina, sede documentata della manifestazione. Non è il punto preciso del banco."
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Loro Ciuffenna",
+      "name": "Fiera di Mezza Estate",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.confesercenti.ar.it/loro-ciuffenna-due-domeniche-di-gusto-musica-e-shopping-nel-borgo-piu-bello-del-valdarno/",
+        "label": "confesercenti.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-09",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.confesercenti.ar.it/loro-ciuffenna-due-domeniche-di-gusto-musica-e-shopping-nel-borgo-piu-bello-del-valdarno/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.confesercenti.ar.it/loro-ciuffenna-due-domeniche-di-gusto-musica-e-shopping-nel-borgo-piu-bello-del-valdarno/",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Antiquariato; altre merceologie da verificare",
+      "organizer": "Centro commerciale naturale / Confesercenti"
+    },
+    {
+      "region": "Toscana",
+      "city": "Loro Ciuffenna",
+      "name": "Sagra della Trota — mercato di prodotti locali",
+      "category": "sagra",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://lorociuffenna.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/4/atto/G1XpVMETUTT0-A",
+        "label": "lorociuffenna.halleyweb.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://lorociuffenna.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/4/atto/G1XpVMETUTT0-A"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://lorociuffenna.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/4/atto/G1XpVMETUTT0-A",
+        "note": "L’ordinanza conferma mercato di prodotti locali e mercatino CALCIT. Richiedere ammissione ai banchi commerciali: il mercatino benefico non dimostra un posteggio per ambulanti."
+      },
+      "sectors": "Prodotti locali"
+    },
+    {
+      "region": "Toscana",
+      "city": "Marciano della Chiana",
+      "name": "La Chianina Ciclostorica — mercatini",
+      "category": "mercatino",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.visitvaldichiana.it/eventi/la-chianina-ciclostorica-2026/",
+        "label": "visitvaldichiana.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "label": "12–14 giugno 2026: programma generale; giornate dei mercatini da verificare",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitvaldichiana.it/eventi/la-chianina-ciclostorica-2026/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.visitvaldichiana.it/eventi/la-chianina-ciclostorica-2026/",
+        "note": "Il programma generale comprende mercatini. Chiedere all’organizzatore giorni di vendita, settori ammessi e quota; le date della manifestazione sportiva non equivalgono a banco attivo tutti i giorni."
+      },
+      "sectors": "Biciclette e abbigliamento d’epoca"
+    },
+    {
+      "region": "Toscana",
+      "city": "Monte San Savino",
+      "name": "Fiera della Domenica delle Palme e del Volontariato",
+      "category": "tradizionale",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://halleyegov.it/c051025/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/5/atto/G1XpJNUTUQT0-A",
+        "label": "halleyegov.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-29",
+          "end": "2026-03-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://halleyegov.it/c051025/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/5/atto/G1XpJNUTUQT0-A"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://halleyegov.it/c051025/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/5/atto/G1XpJNUTUQT0-A",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "frequencyNote": "Ordinanza comunale con disposizioni per la vendita su aree pubbliche."
+    },
+    {
+      "region": "Toscana",
+      "city": "Monterchi",
+      "name": "Fiera di Sant’Antonio",
+      "category": "tradizionale",
+      "months": [
+        1
+      ],
+      "source": {
+        "url": "https://www.meetvaltiberina.it/fiera-sant-antonio-monterchi",
+        "label": "meetvaltiberina.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-17",
+          "end": "2026-01-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.meetvaltiberina.it/fiera-sant-antonio-monterchi"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.meetvaltiberina.it/fiera-sant-antonio-monterchi",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Bestiame, artigianato e prodotti per agricoltura e casa",
+      "venue": "Piazzale San Rocco / zona Mercatale"
+    },
+    {
+      "region": "Toscana",
+      "city": "Montevarchi",
+      "name": "Mercato di Via dei Musei",
+      "category": "mercatino",
+      "months": [
+        1,
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.montevarchi.ar.it/eventi/3654475/torna-mercato-via-musei",
+        "label": "comune.montevarchi.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-27",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.montevarchi.ar.it/eventi/3654475/torna-mercato-via-musei"
+        },
+        {
+          "year": 2026,
+          "start": "2026-01-25",
+          "end": "2026-01-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.montevarchi.ar.it/notizie/3529176/mercato-forte-torna-far-tappa-montevarchi"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.montevarchi.ar.it/eventi/3654475/torna-mercato-via-musei",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Antiquariato, modernariato, collezionismo e opere dell’ingegno",
+      "venue": "Via Isidoro del Lungo e via Poggio Bracciolini",
+      "frequencyNote": "Quarta domenica del mese: altre giornate non calcolate automaticamente. Il Comune documenta anche il 25 gennaio 2026.",
+      "hours": "Dalle 9:00"
+    },
+    {
+      "region": "Toscana",
+      "city": "Montevarchi",
+      "name": "Il Mercato del Forte",
+      "category": "tradizionale",
+      "months": [
+        1
+      ],
+      "source": {
+        "url": "https://www.comune.montevarchi.ar.it/notizie/3529176/mercato-forte-torna-far-tappa-montevarchi",
+        "label": "comune.montevarchi.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-25",
+          "end": "2026-01-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.montevarchi.ar.it/notizie/3529176/mercato-forte-torna-far-tappa-montevarchi"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.montevarchi.ar.it/notizie/3529176/mercato-forte-torna-far-tappa-montevarchi",
+        "note": "Tappa degli operatori commerciali di Forte dei Marmi. Chiedere adesione al consorzio/organizzatore; non è una spunta generalista."
+      },
+      "sectors": "Abbigliamento, accessori, pelletteria, cashmere e biancheria",
+      "venue": "Centro storico"
+    },
+    {
+      "region": "Toscana",
+      "city": "Montevarchi",
+      "name": "Il Mondo dei Minerali — PaleoFest",
+      "category": "espositiva",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.mineralexpo.it/edizioni/il-mondo-dei-minerali/",
+        "label": "mineralexpo.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-04",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.mineralexpo.it/edizioni/il-mondo-dei-minerali/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.mineralexpo.it/edizioni/il-mondo-dei-minerali/",
+        "note": "Espositori tematici: contattare MineralExpo per ammissione e preventivo dello stand."
+      },
+      "sectors": "Minerali da collezione",
+      "venue": "Museo Paleontologico, via Poggio Bracciolini 36/40"
+    },
+    {
+      "region": "Toscana",
+      "city": "Montevarchi",
+      "name": "Fiera del Perdono",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.retevaldarno.it/festa-del-perdono-e-gioco-del-pozzo-2026.html",
+        "label": "retevaldarno.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-07",
+          "end": "2026-09-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.retevaldarno.it/festa-del-perdono-e-gioco-del-pozzo-2026.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.retevaldarno.it/festa-del-perdono-e-gioco-del-pozzo-2026.html",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Merci varie",
+      "frequencyNote": "Inserita solo la giornata della fiera ambulante, non l’intera Festa del Perdono."
+    },
+    {
+      "region": "Toscana",
+      "city": "Ortignano Raggiolo",
+      "name": "La Mercatella",
+      "category": "mercatino",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-14",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "Mercatino di produttori e artigiani del Casentino: chiedere requisiti di adesione e costi all’organizzazione; ulteriori ricorrenze non proiettate."
+      },
+      "sectors": "Prodotti locali e artigianato",
+      "venue": "Raggiolo"
+    },
+    {
+      "region": "Toscana",
+      "city": "Ortignano Raggiolo",
+      "name": "Festa di Castagnatura",
+      "category": "sagra",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://gocasentino.com/events/castagnatura-raggiolo-2026.html",
+        "label": "gocasentino.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://gocasentino.com/events/castagnatura-raggiolo-2026.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://gocasentino.com/events/castagnatura-raggiolo-2026.html",
+        "note": "Festa con mercatino artigianale: verificare il programma aggiornato, giornate e accesso degli operatori con Brigata di Raggiolo / Comune."
+      },
+      "sectors": "Castagne e artigianato",
+      "venue": "Raggiolo",
+      "frequencyNote": "Festa 31 ottobre–1 novembre; mercatino artigianale nel programma della domenica 1 novembre."
+    },
+    {
+      "region": "Toscana",
+      "city": "Poppi",
+      "name": "Fiera di San Torello",
+      "category": "tradizionale",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://www.confesercenti.ar.it/fiera-di-san-torello-domenica-19-aprile-regolamento-e-domanda-di-partecipazione/",
+        "label": "confesercenti.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.confesercenti.ar.it/fiera-di-san-torello-domenica-19-aprile-regolamento-e-domanda-di-partecipazione/"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://www.confesercenti.ar.it/fiera-di-san-torello-domenica-19-aprile-regolamento-e-domanda-di-partecipazione/",
+        "note": "Bando 2026 per 46 posteggi. Domanda completa del pagamento entro il 28 marzo 2026, a mano presso ANVA Confesercenti Arezzo, via Fiorentina 240, oppure via email o WhatsApp. Consultare regolamento per settori, requisiti e quota.",
+        "deadline": "2026-03-28",
+        "deadlineLabel": "Bando Fiera di San Torello 2026 concluso"
+      },
+      "venue": "Ponte a Poppi",
+      "stallCount": 46,
+      "contacts": {
+        "email": "segreteria@confesercenti.ar.it",
+        "phone": "338 7417046"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Poppi",
+      "name": "Mercato Contadino del Casentino",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://comune.poppi.ar.it/vivere-il-comune/eventi/mercato-contadino-del-casentino/",
+        "label": "comune.poppi.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.poppi.ar.it/vivere-il-comune/eventi/mercato-contadino-del-casentino/",
+        "note": "Mercato di produttori del territorio: chiedere adesione e requisiti di filiera corta. Non documentati posteggi per rivenditori ambulanti generalisti."
+      },
+      "sectors": "Prodotti agricoli, frutta, verdura e prodotti tipici",
+      "venue": "Piazza Garibaldi, Ponte a Poppi",
+      "frequencyNote": "Secondo e quarto sabato del mese; ricorrenza comunale, senza calcolare giorni non pubblicati."
+    },
+    {
+      "region": "Toscana",
+      "city": "Pratovecchio Stia",
+      "name": "Fiera dell’Assunta",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.comune.pratovecchiostia.ar.it/c051041/zf/index.php/bandi-gara/avvisi/dettaglio-avviso/avviso/11",
+        "label": "comune.pratovecchiostia.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-16",
+          "end": "2026-08-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.pratovecchiostia.ar.it/c051041/zf/index.php/bandi-gara/avvisi/dettaglio-avviso/avviso/11"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://www.comune.pratovecchiostia.ar.it/c051041/zf/index.php/bandi-gara/avvisi/dettaglio-avviso/avviso/11",
+        "note": "Bando 2026 per 35 concessioni dodicennali: numero offerto, non disponibilità residua. Operatori con autorizzazione/SCIA e iscrizione camerale, con requisiti specifici per i posteggi riservati. Domanda firmata via PEC entro il 13 giugno; graduatoria del 30 giugno. Eventuale spunta da verificare con il Comune.",
+        "deadline": "2026-06-13",
+        "deadlineLabel": "Bando posteggi Fiera dell’Assunta 2026 concluso",
+        "costs": "Bollo di 16 € sull’autorizzazione; canone annuale secondo tariffe comunali da verificare. Non è indicata una quota unica di partecipazione."
+      },
+      "venue": "Stia",
+      "stallCount": 35,
+      "contacts": {
+        "pec": "c.pratovecchiostia@postacert.toscana.it",
+        "email": "pl.pratovecchiostia@casentino.toscana.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Pratovecchio Stia",
+      "name": "Fiera di San Michele",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-25",
+          "end": "2026-09-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "venue": "Centro storico di Pratovecchio"
+    },
+    {
+      "region": "Toscana",
+      "city": "San Giovanni Valdarno",
+      "name": "Fiera del Perdono",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3649193/perdono-sapori-saperi-torna-san-giovanni-valdarno",
+        "label": "comune.san-giovanni-valdarno.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-21",
+          "end": "2026-09-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3649193/perdono-sapori-saperi-torna-san-giovanni-valdarno"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3649193/perdono-sapori-saperi-torna-san-giovanni-valdarno",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Merci varie",
+      "venue": "Corso Italia",
+      "hours": "9:00–20:00",
+      "organizer": "Confesercenti Arezzo",
+      "frequencyNote": "Fiera del lunedì distinta dal mercato Sapori e Saperi del fine settimana."
+    },
+    {
+      "region": "Toscana",
+      "city": "San Giovanni Valdarno",
+      "name": "Il Perdono dei Sapori e Saperi",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.confesercenti.ar.it/festa-del-perdono-a-san-giovanni-valdarno-2/",
+        "label": "confesercenti.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.confesercenti.ar.it/festa-del-perdono-a-san-giovanni-valdarno-2/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.confesercenti.ar.it/festa-del-perdono-a-san-giovanni-valdarno-2/",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Prodotti tipici, artigianato e opere dell’ingegno",
+      "venue": "Corso Italia",
+      "organizer": "Confesercenti"
+    },
+    {
+      "region": "Toscana",
+      "city": "San Giovanni Valdarno",
+      "name": "MyStufato Food & Fun — Mercatino Artigiani",
+      "category": "artigianato",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3660493/torna-mystufato-san-giovanni-valdarno",
+        "label": "comune.san-giovanni-valdarno.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3660493/torna-mystufato-san-giovanni-valdarno"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3660493/torna-mystufato-san-giovanni-valdarno",
+        "note": "Mercatino degli Artigiani e delle Arti Fatte a Mano nel programma comunale: chiedere all’organizzazione selezione, quota e giorni effettivi. Lo stufato preparato dai ristoratori non prova accesso di food truck esterni."
+      },
+      "sectors": "Artigianato, handmade, illustrazione e design",
+      "venue": "Centro cittadino"
+    },
+    {
+      "region": "Toscana",
+      "city": "Sansepolcro",
+      "name": "Fiere di Mezzaquaresima",
+      "category": "tradizionale",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.comune.sansepolcro.ar.it/it/page/mercati-e-fiere",
+        "label": "comune.sansepolcro.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-19",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.sansepolcro.ar.it/it/page/mercati-e-fiere"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://www.comune.sansepolcro.ar.it/it/page/mercati-e-fiere",
+        "note": "Il Comune pubblica graduatorie separate per ambulanti, somministrazione e posteggi riservati, istruzioni di ritiro concessioni, prescrizioni alimentari e SCIA sanitaria. Contattare il servizio commercio per eventuale spunta; graduatorie pubblicate non equivalgono a un bando ancora aperto."
+      },
+      "sectors": "Alimentari, non alimentari, artigianato, agricoltura e macchine agricole",
+      "venue": "Centro storico e Centro Tevere Expo",
+      "contacts": {
+        "phone": "0575 732209 / 0575 732236",
+        "email": "bianconi.monia@comune.sansepolcro.ar.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Sansepolcro",
+      "name": "Mercatale — produzioni di qualità",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.sansepolcro.ar.it/it/page/mercati-e-fiere",
+        "label": "comune.sansepolcro.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.sansepolcro.ar.it/it/page/mercati-e-fiere",
+        "note": "Mercato di produzioni del territorio: chiedere al Servizio commercio requisiti di adesione, selezione e costi."
+      },
+      "sectors": "Prodotti agroalimentari del territorio",
+      "venue": "Piazza Torre di Berta",
+      "frequencyNote": "Terzo sabato del mese secondo il Comune; date giornaliere non calcolate.",
+      "contacts": {
+        "phone": "0575 732236 / 0575 732209",
+        "email": "quieti.paolo@comune.sansepolcro.ar.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Sestino",
+      "name": "Sagra della Bistecca Chianina — mercatino",
+      "category": "sagra",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.sagrabisteccachianinasestino.it/programma.html",
+        "label": "sagrabisteccachianinasestino.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "label": "26–28 giugno 2026: programma generale, giornate del mercatino da verificare",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagrabisteccachianinasestino.it/programma.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.sagrabisteccachianinasestino.it/programma.html",
+        "note": "Il programma prevede mercatino artigianale e hobbistico: chiedere giorni, ammissione professionale e quota all’organizzazione. I pasti della sagra non sono un posteggio per somministrazione esterna."
+      },
+      "sectors": "Artigianato e hobbistica",
+      "venue": "Centro di Sestino",
+      "frequencyNote": "Manifestazione 26–28 giugno 2026; singoli giorni del mercatino da verificare."
+    },
+    {
+      "region": "Toscana",
+      "city": "Sestino",
+      "name": "Antica Fiera del Ranco — Mostra Chianina",
+      "category": "espositiva",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.meetvaltiberina.it/chianina2026",
+        "label": "meetvaltiberina.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-28",
+          "end": "2026-09-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.meetvaltiberina.it/chianina2026"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.meetvaltiberina.it/chianina2026",
+        "note": "Mostra zootecnica e mercato dei torelli. Richiedere agli organizzatori requisiti per esposizione/vendita di bestiame ed eventuali stand commerciali; il programma non documenta posteggi per ambulanti generalisti."
+      },
+      "sectors": "Zootecnia e prodotti agricoli",
+      "venue": "Complesso Zootecnico Silvio Datti, Ponte Presale",
+      "frequencyNote": "28–29 settembre 2026: mostra e mercato dei torelli. La sede attuale è nel comune di Sestino."
+    },
+    {
+      "region": "Toscana",
+      "city": "Subbiano",
+      "name": "Mercatino Vintage della Carabattola",
+      "category": "mercatino",
+      "months": [
+        6,
+        8
+      ],
+      "source": {
+        "url": "https://www.sagretoscane.com/fiere-mercati/ar/subbiano/mercatino-della-carabattola.html",
+        "label": "sagretoscane.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-30",
+          "end": "2026-08-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagretoscane.com/fiere-mercati/ar/subbiano/mercatino-della-carabattola.html"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-21",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.halleyweb.com/c051037/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/2/atto/GTVRFME65UT0-H"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.sagretoscane.com/fiere-mercati/ar/subbiano/mercatino-della-carabattola.html",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Antiquariato, modernariato, vintage e oggettistica",
+      "venue": "Centro storico",
+      "hours": "Dalle 17:00 nell’edizione del 30 agosto",
+      "organizer": "Pro Loco Subbiano",
+      "contacts": {
+        "phone": "338 1276307"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Subbiano",
+      "name": "Mercatino del Tempo che Fu",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Usato e vintage",
+      "venue": "Centro storico",
+      "frequencyNote": "Giornata di chiusura della Festa di Fine Estate, nel calendario locale."
+    },
+    {
+      "region": "Toscana",
+      "city": "Subbiano",
+      "name": "Fiera del Tartufo",
+      "category": "mercatino",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-11",
+          "end": "2026-07-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Tartufo",
+      "venue": "Centro storico",
+      "hours": "Dalle 8:00 secondo il calendario locale"
+    },
+    {
+      "region": "Toscana",
+      "city": "Talla",
+      "name": "Mercatino di Prodotti Locali",
+      "category": "mercatino",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "label": "casentino2000.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-23",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.casentino2000.it/wp-content/uploads/2026/06/Eventi-in-Casentino-2026.pdf",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Prodotti locali",
+      "venue": "Talla",
+      "hours": "Pomeriggio; concerto e degustazioni nel programma"
+    },
+    {
+      "region": "Toscana",
+      "city": "Terranuova Bracciolini",
+      "name": "Fiera della Festa del Perdono",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://aterranuova.it/2026/09/14/tradizione-nuovi-spazi-e-una-citta-in-festa-il-perdono-2026/",
+        "label": "aterranuova.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Festa 25–29 settembre 2026: giornate della fiera ambulante da verificare",
+          "dateType": "confirmed",
+          "sourceUrl": "https://aterranuova.it/2026/09/14/tradizione-nuovi-spazi-e-una-citta-in-festa-il-perdono-2026/"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "url": "https://aterranuova.it/2026/09/14/tradizione-nuovi-spazi-e-una-citta-in-festa-il-perdono-2026/",
+        "note": "Richiedere al SUAP disciplina delle concessioni e della spunta. Il bando migliorie 2026, con termine 20 aprile, è riservato ai titolari già concessionari e non è un bando di nuovi posteggi."
+      },
+      "sectors": "Merci varie",
+      "venue": "Centro cittadino",
+      "contacts": {
+        "email": "suap@comune.terranuova-bracciolini.ar.it",
+        "phone": "055 9194751 / 055 9194729"
+      },
+      "frequencyNote": "Festa 25–29 settembre 2026: verificare giorni effettivi della fiera ambulante."
+    },
+    {
+      "region": "Toscana",
+      "city": "Terranuova Bracciolini",
+      "name": "Valdarno Espone — Fiera Campionaria",
+      "category": "espositiva",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.festaperdonoterranuova.it/",
+        "label": "festaperdonoterranuova.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Perdono 25–29 settembre 2026: orari e giornate di Valdarno Espone da verificare",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.festaperdonoterranuova.it/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.festaperdonoterranuova.it/",
+        "note": "Fiera campionaria con elenco espositori 2026 e selezione dell’organizzazione, distinta dalle concessioni della fiera ambulante. Chiedere giorni di apertura, contratto e preventivo per lo stand."
+      },
+      "sectors": "Artigianato, casa, arredamento, prodotti tipici e alimentari",
+      "venue": "Viale Piave",
+      "frequencyNote": "Manifestazione nel Perdono 25–29 settembre 2026; calendario commerciale da verificare."
+    },
+    {
+      "region": "Toscana",
+      "city": "Terranuova Bracciolini",
+      "name": "Fiera Nazionale Primaverile e degli Uccelli",
+      "category": "tradizionale",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://aterranuova.it/2026/03/17/terranuova-celebra-la-primavera-con-l11a-fiera-nazionale-degli-uccelli/",
+        "label": "aterranuova.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-22",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://aterranuova.it/2026/03/17/terranuova-celebra-la-primavera-con-l11a-fiera-nazionale-degli-uccelli/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://aterranuova.it/2026/03/17/terranuova-celebra-la-primavera-con-l11a-fiera-nazionale-degli-uccelli/",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "venue": "Piazza della Repubblica e via Roma",
+      "hours": "Dalle 8:00"
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Arezzo Classic Motors",
+      "category": "espositiva",
+      "months": [
+        1
+      ],
+      "source": {
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "label": "aefi.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-10",
+          "end": "2026-01-11",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month="
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "note": "Date dal calendario AEFI 2026. Fiera specializzata: chiedere all’organizzatore ammissione per categoria, preventivo e contratto dello stand; non si partecipa come spuntista. Le date del calendario possono essere aggiornate."
+      },
+      "sectors": "Auto e moto d’epoca, ricambi, accessori e modellismo",
+      "venue": "Arezzo Fiere e Congressi"
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Fiera del Giocattolo d’Epoca e da Collezione",
+      "category": "espositiva",
+      "months": [
+        1,
+        2
+      ],
+      "source": {
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "label": "aefi.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-30",
+          "end": "2026-02-01",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month="
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "note": "Date dal calendario AEFI 2026. Fiera specializzata: chiedere all’organizzatore ammissione per categoria, preventivo e contratto dello stand; non si partecipa come spuntista. Le date del calendario possono essere aggiornate."
+      },
+      "sectors": "Giocattoli e collezionismo",
+      "venue": "Arezzo Fiere e Congressi"
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Arezzo Mineral Expo",
+      "category": "espositiva",
+      "months": [
+        1,
+        2
+      ],
+      "source": {
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "label": "aefi.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-30",
+          "end": "2026-02-01",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month="
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "note": "Date dal calendario AEFI 2026. Fiera specializzata: chiedere all’organizzatore ammissione per categoria, preventivo e contratto dello stand; non si partecipa come spuntista. Le date del calendario possono essere aggiornate."
+      },
+      "sectors": "Minerali e collezionismo",
+      "venue": "Arezzo Fiere e Congressi"
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Esotika Pet Show",
+      "category": "espositiva",
+      "months": [
+        2,
+        9
+      ],
+      "source": {
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "label": "aefi.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-07",
+          "end": "2026-02-08",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month="
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-12",
+          "end": "2026-09-13",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month="
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "note": "Date dal calendario AEFI 2026. Fiera specializzata: chiedere all’organizzatore ammissione per categoria, preventivo e contratto dello stand; non si partecipa come spuntista. Le date del calendario possono essere aggiornate."
+      },
+      "sectors": "Animali, accessori e prodotti per animali",
+      "venue": "Arezzo Fiere e Congressi"
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Econatura",
+      "category": "espositiva",
+      "months": [
+        2,
+        3
+      ],
+      "source": {
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "label": "aefi.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-27",
+          "end": "2026-03-01",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month="
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "note": "Date dal calendario AEFI 2026. Fiera specializzata: chiedere all’organizzatore ammissione per categoria, preventivo e contratto dello stand; non si partecipa come spuntista. Le date del calendario possono essere aggiornate."
+      },
+      "sectors": "Settori e ammissione da verificare",
+      "venue": "Arezzo Fiere e Congressi"
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Passioni in Fiera",
+      "category": "espositiva",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.passioniinfiera.it/opportunita-espositori/",
+        "label": "passioniinfiera.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-07",
+          "end": "2026-03-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.passioniinfiera.it/opportunita-espositori/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.passioniinfiera.it/opportunita-espositori/",
+        "note": "L’organizzatore propone stand con vendita diretta e un modulo di richiesta informazioni per espositori. Richiedere ammissione per settore, preventivo e contratto: non sono pubblicate disponibilità residua o scadenza di domanda."
+      },
+      "sectors": "Casa, arredamento, outdoor, giardinaggio, enogastronomia, artigianato e benessere",
+      "venue": "Arezzo Fiere e Congressi",
+      "contacts": {
+        "email": "info@passioniinfiera.it",
+        "phone": "0575 9361"
+      },
+      "frequencyNote": "Comprende l’area olistica Nirvana e Arezzo Tattoo Show: non pubblicate come fiere duplicate."
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Oroarezzo",
+      "category": "espositiva",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "label": "aefi.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-09",
+          "end": "2026-05-12",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month="
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.aefi.it/it/calendario/?expo_center_uuid=db207f5d-e9e7-48d3-9b76-e09fe4f61427&fair_year=2026&month=",
+        "note": "Date dal calendario AEFI 2026. Fiera specializzata: chiedere all’organizzatore ammissione per categoria, preventivo e contratto dello stand; non si partecipa come spuntista. Le date del calendario possono essere aggiornate."
+      },
+      "sectors": "Gioielli e oreficeria",
+      "venue": "Arezzo Fiere e Congressi"
+    },
+    {
+      "region": "Toscana",
+      "city": "Anghiari",
+      "name": "Memorandia",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://comune.anghiari.ar.it/eventi/2982514/memorandia",
+        "label": "comune.anghiari.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Seconda domenica del mese — calendario comunale 2026",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.anghiari.ar.it/eventi/2982514/memorandia"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://comune.anghiari.ar.it/eventi/2982514/memorandia",
+        "note": "La fonte documenta la manifestazione commerciale, ma non una disponibilità di posteggi. Chiedi al Comune o all’organizzatore requisiti, settore ammesso, domanda, giornate di vendita e costi."
+      },
+      "sectors": "Antiquariato, collezionismo e modernariato",
+      "venue": "Piazza Baldaccio e Galleria Girolamo Magi (Logge)",
+      "hours": "8:00–19:30",
+      "frequencyNote": "Seconda domenica del mese, nel calendario comunale 2026. Nessuna data calcolata dalla ricorrenza.",
+      "contacts": {
+        "phone": "0575 789522",
+        "email": "protocollo@comune.anghiari.ar.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "San Giovanni Valdarno",
+      "name": "Sangiovese Festival",
+      "category": "mercatino",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3564881/ecco-terza-edizione-sangiovese-festival",
+        "label": "comune.san-giovanni-valdarno.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-18",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3564881/ecco-terza-edizione-sangiovese-festival"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://sangiovesefestival.it/",
+        "note": "Festival con produttori vinicoli e food truck documentati nel programma comunale. Chiedere all’organizzatore selezione per settore, requisiti sanitari, spazi e preventivo; non è un mercato generalista con spunta."
+      },
+      "sectors": "Vino, produzioni enogastronomiche e street food",
+      "venue": "Piazza Cavour e Piazza Masaccio",
+      "contacts": {
+        "email": "info@sangiovesefestival.it"
+      },
+      "organizer": "Comune e Confcommercio Firenze-Arezzo"
+    },
+    {
+      "region": "Toscana",
+      "city": "Bibbiena",
+      "name": "Soci Ti Mostra — area street food",
+      "category": "mercatino",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.sagretoscane.com/fiere-mercati/ar/bibbiena/mostra-scambio-casentinese-soci.html",
+        "label": "sagretoscane.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-18",
+          "end": "2026-07-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagretoscane.com/fiere-mercati/ar/bibbiena/mostra-scambio-casentinese-soci.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.sagretoscane.com/fiere-mercati/ar/bibbiena/mostra-scambio-casentinese-soci.html",
+        "note": "Area gastronomica con street food esterno da Toscana, Sicilia e Abruzzo. Chiedere selezione, requisiti sanitari e quota per operatori alimentari. La mostra scambio di usato del circuito privati non è presentata come posteggio per rivenditori professionali."
+      },
+      "sectors": "Street food",
+      "venue": "Soci",
+      "hours": "17:00–23:00 secondo la fonte locale"
+    },
+    {
+      "region": "Toscana",
+      "city": "Arezzo",
+      "name": "Fiera di San Donato",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.lanazione.it/arezzo/cronaca/san-donato-programma-dei-festeggiamenti-e-variazioni-al-traffico-e-alla-sosta-kwuricfh",
+        "label": "lanazione.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-07",
+          "end": "2026-08-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.lanazione.it/arezzo/cronaca/san-donato-programma-dei-festeggiamenti-e-variazioni-al-traffico-e-alla-sosta-kwuricfh"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "url": "https://www.lanazione.it/arezzo/cronaca/san-donato-programma-dei-festeggiamenti-e-variazioni-al-traffico-e-alla-sosta-kwuricfh",
+        "note": "Fiera alimentare del 7 agosto nel programma locale 2026. Chiedere al Comune condizioni di concessione/spunta e requisiti sanitari; il programma dei festeggiamenti non costituisce un bando di partecipazione."
+      },
+      "sectors": "Alimentari",
+      "venue": "Corso Italia, tratto da via Cavour a via Vasari",
+      "contacts": {
+        "email": "fieremercati@comune.arezzo.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Lucignano",
+      "name": "Di Giovedì — street food e food truck",
+      "category": "mercatino",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://comune.lucignano.ar.it/eventi/3613972/giovedi",
+        "label": "comune.lucignano.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-09",
+          "end": "2026-07-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.lucignano.ar.it/eventi/3613972/giovedi"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-16",
+          "end": "2026-07-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.lucignano.ar.it/eventi/3613972/giovedi"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://comune.lucignano.ar.it/eventi/3613972/giovedi",
+        "note": "Il programma comunale documenta food truck esterni accanto alle attività del borgo nelle serate del 9 e 16 luglio. Chiedere selezione, requisiti sanitari e costi all’organizzazione. Non estese le date commerciali a Jazz & Wine, picnic e BBQ senza riscontro."
+      },
+      "sectors": "Street food",
+      "venue": "Centro storico",
+      "hours": "Street food dalle 20:00 per le due serate documentate",
+      "contacts": {
+        "phone": "0575 838033",
+        "email": "turismo@comune.lucignano.ar.it"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Cortona",
+      "name": "Mercatini Medievali dell’Archidado",
+      "category": "artigianato",
+      "months": [
+        5,
+        6
+      ],
+      "source": {
+        "url": "https://www.comune.cortona.ar.it/vivere-il-comune/eventi/eventi-sociali/raduno-di-comunita/mercatini-medievali",
+        "label": "comune.cortona.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-31",
+          "end": "2026-06-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.cortona.ar.it/vivere-il-comune/eventi/eventi-sociali/raduno-di-comunita/mercatini-medievali"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.cortona.ar.it/vivere-il-comune/eventi/eventi-sociali/raduno-di-comunita/mercatini-medievali",
+        "note": "Il Comune conferma il mercato medievale 31 maggio–2 giugno, distinto dai successivi giorni della Giostra. Chiedere al Consiglio dei Terzieri ammissione, allestimento storico, categorie e quota; non è documentata una spunta generalista."
+      },
+      "sectors": "Artigianato e antichi mestieri",
+      "venue": "Piazza Signorelli",
+      "organizer": "Consiglio dei Terzieri"
+    },
+    {
+      "region": "Toscana",
+      "city": "Cortona",
+      "name": "Cortona Comics — mercato e food truck",
+      "category": "espositiva",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://cortonacomics.it/notizie/",
+        "label": "cortonacomics.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-05",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://cortonacomics.it/notizie/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://cortonacomics.it/notizie/",
+        "note": "Programma dell’organizzatore con espositori commerciali e Food Truck Experience. Richiedere selezione, contratto e preventivo per il proprio settore; il biglietto del pubblico non è una quota espositore."
+      },
+      "sectors": "Fumetti, collezionismo, gadget e street food",
+      "venue": "Centro Convegni Sant’Agostino e Piazza Garibaldi",
+      "organizer": "Cortona Sviluppo SRL",
+      "contacts": {
+        "email": "info@cortonasviluppo.it",
+        "phone": "0575 630158 / 339 8275557"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Castiglion Fiorentino",
+      "name": "Maggio Castiglionese — Fiera Campionaria",
+      "category": "espositiva",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://comune.castiglionfiorentino.ar.it/it/news/al-via-il-maggio-castiglionese-domani-mattina-ore-10-00-porta-fiorentina?type=2",
+        "label": "comune.castiglionfiorentino.ar.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.castiglionfiorentino.ar.it/it/news/al-via-il-maggio-castiglionese-domani-mattina-ore-10-00-porta-fiorentina?type=2"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-03",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.castiglionfiorentino.ar.it/it/news/al-via-il-maggio-castiglionese-domani-mattina-ore-10-00-porta-fiorentina?type=2"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://comune.castiglionfiorentino.ar.it/it/news/al-via-il-maggio-castiglionese-domani-mattina-ore-10-00-porta-fiorentina?type=2",
+        "note": "Il Comune conferma le due giornate della fiera campionaria, 1 e 3 maggio: non inserito il giorno intermedio. Chiedere organizzazione, categorie ammesse, contratto e quota per lo stand; la ristorazione Primi di Maggio è gestita dai ristoranti del centro commerciale naturale."
+      },
+      "venue": "Viale Marconi"
+    },
+    {
+      "region": "Toscana",
+      "city": "Castiglion Fiorentino",
+      "name": "Valdichiana Wine Festival",
+      "category": "mercatino",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.castiglioniexperience.it/Home/Detail/1081/valdichiana-wine-festival",
+        "label": "castiglioniexperience.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.castiglioniexperience.it/Home/Detail/1081/valdichiana-wine-festival"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.castiglioniexperience.it/Home/Detail/1081/valdichiana-wine-festival",
+        "note": "Produttori vinicoli del territorio e Wine Shop documentati nel portale turistico collegato dal Comune. Richiedere selezione, condizioni di vendita, quota e spazi; biglietti e prenotazioni delle masterclass riguardano i visitatori."
+      },
+      "sectors": "Vino",
+      "venue": "Chiostro di San Francesco",
+      "hours": "11:00–19:00",
+      "organizer": "Comune, Barolo vs Brunello, Pro Loco e Strada del Vino Terre di Arezzo",
+      "contacts": {
+        "email": "info@experiencecastiglionfiorentino.it",
+        "phone": "0575 656493"
+      }
+    },
+    {
+      "region": "Toscana",
+      "city": "Monte San Savino",
+      "name": "Gin in Porchetta",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.arezzo24.net/notizie/wine-food/gin-in-porchetta-torna-a-monte-san-savino-due-serate-tra-distillati-gusto-e-musica/",
+        "label": "arezzo24.net",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-11",
+          "end": "2026-09-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.arezzo24.net/notizie/wine-food/gin-in-porchetta-torna-a-monte-san-savino-due-serate-tra-distillati-gusto-e-musica/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "url": "https://www.arezzo24.net/notizie/wine-food/gin-in-porchetta-torna-a-monte-san-savino-due-serate-tra-distillati-gusto-e-musica/",
+        "note": "Produttori di distillati esterni documentati nella stampa locale, nel programma della Sagra della Porchetta. Chiedere selezione per categoria, requisiti per somministrazione/vendita e quota alla Pro Loco; non estese le date a tutti i giorni della sagra."
+      },
+      "sectors": "Gin, liquori, distillati e bevande",
+      "venue": "Giardini Pensili del Palazzo Comunale",
+      "hours": "Dalle 19:00",
+      "organizer": "Pro Loco Monte San Savino"
+    }
+  ]
+}
