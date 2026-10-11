@@ -1032,6 +1032,16 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+Aggiornamento 11 ottobre 2026 — Bergamo: 80 schede (prima 33), 42 comuni con
+eventi, ricerca nominale nei 243 comuni e 261 programmi regionali scaricati.
+Override `data/fiere-bergamo.json`, audit fonti, esclusioni e incongruenze;
+40 contatti e cinque scadenze. Albino solo 9/11 ottobre, Palosco tre domeniche,
+Clusone Natale 28 giornate con termine 11 ottobre; nessun posteggio garantito.
+Catalogo 2.352 eventi, 2.192 con edizioni; altre province preservate.
+Cache fiere.js v=25, fiere.json v=18. TO DO: 10 province completate, 100 mancanti.
+Prossime priorità Verona, Padova, Treviso; nessuna autorizzazione automatica.
+Limiti delle scansioni, fonti indicizzate e segnalazioni in data/FIERE.md.
+
 Aggiornamento 11 ottobre 2026 — Milano: 83 schede (prima 15), 47 comuni con
 eventi, ricerca nei 133 comuni. Override `data/fiere-milano.json`, 140 programmi
 regionali scaricati e audit fonti/comuni/esclusioni. Nove fiere comunali con

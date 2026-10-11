@@ -21,6 +21,31 @@ assert.equal(Object.keys(boundaries.sardiniaMunicipalities).length,377);
 for (const region of regions) assert(events.filter(e => e.region === region).length >= 10);
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
+// Bergamo: explicit trading days, distinct fair procedures and historical editions.
+const bgResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-bergamo.json'), 'utf8'));
+const bgEvents = events.filter(e => e.province === 'Bergamo');
+const bgEvent = (city, pattern) => bgEvents.find(e => e.city === city && pattern.test(e.name));
+assert.equal(bgEvents.length, 80);
+assert.equal(new Set(bgResearch.research.municipalityCoverage.map(c => c.city)).size, 243);
+assert.equal(bgResearch.research.municipalityCoverage.reduce((n, c) => n + c.eventsFound, 0), 80);
+assert.deepEqual(bgEvent('Albino', /Gamba/).editions.map(e => e.start), ['2026-10-09', '2026-10-11']);
+assert.deepEqual(bgEvent('Palosco', /Natale/).editions.map(e => e.start), ['2026-12-06', '2026-12-13', '2026-12-20']);
+const bgChristmas = bgEvent('Clusone', /Natale/);
+assert.equal(bgChristmas.editions.length, 28);
+assert(bgChristmas.editions.every(e => e.start === e.end));
+assert.equal(bgChristmas.editions.at(-1).start, '2027-01-06');
+assert(!bgChristmas.editions.some(e => e.start === '2026-12-25'));
+assert.equal(bgChristmas.participation.deadline, '2026-10-11');
+assert(bgChristmas.participation.costs.includes('IVA'));
+assert.equal(bgEvent('Almenno San Salvatore', /Candelora/).participation.deadline, '2025-11-29');
+assert.equal(bgEvent('Bonate Sopra', /Ghiaie/).participation.deadline, '2026-04-10');
+assert.equal(bgEvent('Ardesio', /Apparizione/).participation.deadline, '2026-04-24');
+assert(bgEvent('Leffe', /Monte croce/i).editions.every(e => !e.start));
+assert(!bgEvent('Leffe', /San rocco/i));
+assert(bgEvent('Castione della Presolana', /Natale/).editions.every(e => e.year === 2025));
+assert.equal(bgEvent('Bergamo', /Campionaria/).participation.type, 'exhibitors');
+assert.equal(bgEvent('Bergamo', /Mercatanti/).participation.type, 'selected');
+
 // Milano: real market days, cancellation and application versus payment terms.
 const miResearch = JSON.parse(fs.readFileSync(path.join(root,'data/fiere-milano.json'),'utf8'));
 const miEvents = events.filter(e => e.province === 'Milano');

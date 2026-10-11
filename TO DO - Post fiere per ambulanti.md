@@ -149,7 +149,18 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
   le segnalazioni conservate nell’audit, chiarire EcoFesta Paderno, Olcella,
   Notte Bianca Gorgonzola, calendari cittadini e giorni commerciali non definiti.
 
-**Ricerca approfondita: 9 province completate, 101 ancora da fare su 110.**
+- [x] **Bergamo — ricerca approfondita completata**: ricerca nei 243 comuni;
+  80 manifestazioni in 42 comuni, prima 33, pubblicate in
+  [/fiere](https://subingresso.it/fiere?provincia=Bergamo). Confrontate 261 righe
+  regionali e scaricati tutti i programmi; 40 contatti e cinque scadenze.
+  Albino in due giornate, Palosco Natale in tre domeniche, Clusone Natale
+  in 28 giornate con domanda entro l'11 ottobre. Fonti, esclusioni e limiti
+  in `data/fiere-bergamo.json` e `data/FIERE.md`.
+- [ ] **Bergamo — aggiornamenti periodici**: nuove edizioni, bandi e disponibilità;
+  chiarire Calcio Pasquetta, Leffe Monte Croce, programmi solo scansionati
+  e giorni commerciali non definiti; riconfermare lo storico Castione Natale.
+
+**Ricerca approfondita: 10 province completate, 100 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -163,7 +174,7 @@ e conversioni. Rivalutare con Search Console, annunci e contatti effettivi.
 La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulanti.
 
 - [x] **1. Milano** — Lombardia; ricerca completata, vedi sopra
-- [ ] **2. Bergamo** — Lombardia
+- [x] **2. Bergamo** — Lombardia
 - [ ] **3. Verona** — Veneto
 - [ ] **4. Padova** — Veneto
 - [ ] **5. Treviso** — Veneto
