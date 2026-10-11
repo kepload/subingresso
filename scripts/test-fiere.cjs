@@ -21,6 +21,31 @@ assert.equal(Object.keys(boundaries.sardiniaMunicipalities).length,377);
 for (const region of regions) assert(events.filter(e => e.region === region).length >= 10);
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
+// Verona: market days versus festival periods, seasonal exceptions and distinct admission.
+const vrResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-verona.json'), 'utf8'));
+const vrEvents = events.filter(e => e.province === 'Verona');
+const vrEvent = (city, pattern) => vrEvents.find(e => e.city === city && pattern.test(e.name));
+assert.equal(vrEvents.length, 75);
+assert.equal(new Set(vrResearch.research.municipalityCoverage.map(c => c.city)).size, 98);
+assert.equal(vrResearch.research.municipalityCoverage.reduce((n, c) => n + c.eventsFound, 0), 75);
+assert.equal(vrResearch.research.regionalRowsReviewed.length, 277);
+assert(!JSON.stringify(vrEvents).includes('\uFFFD'));
+assert.deepEqual(vrEvent('Tregnago', /San Martino/).editions.map(e => e.start), ['2026-11-08', '2026-11-11']);
+assert.equal(vrEvent('Tregnago', /San Martino/).participation.deadline, '2026-10-25');
+assert(vrEvent('Tregnago', /San Martino/).participation.costs.includes('1,40'));
+assert.equal(vrEvent('Garda', /Natale/).participation.deadline, '2026-10-15');
+assert(vrEvent('Garda', /Natale/).participation.note.includes('2 ottobre'));
+assert.deepEqual(vrEvent('Sommacampagna', /Slow Food/).editions.filter(e => e.start.startsWith('2026-04')).map(e => e.start), ['2026-04-19']);
+assert.equal(vrEvent('Sommacampagna', /Slow Food/).participation.type, 'selected');
+assert.equal(vrEvent('Villafranca di Verona', /Antiquariato/).editions.length, 10);
+assert(!vrEvent('Villafranca di Verona', /Antiquariato/).months.some(m => [7, 8].includes(m)));
+assert.deepEqual(vrEvent('San Zeno di Montagna', /Marrone/).editions.map(e => e.start), ['2026-10-16', '2026-10-17', '2026-10-18', '2026-10-24', '2026-10-25', '2026-10-31', '2026-11-01']);
+assert.deepEqual(vrEvent('Isola della Scala', /^Fiera del Riso$/).editions.map(e => [e.start, e.end, e.periodOnly]), [['2026-09-17', '2026-10-13', true]]);
+assert.equal(vrEvent('Bardolino', /Natale/).editions[0].end, '2027-01-06');
+assert.equal(vrEvent('Verona', /^Vinitaly$/).participation.type, 'exhibitors');
+assert(vrEvent('Torri del Benaco', /Unicum/).editions.every(e => e.periodOnly));
+assert(!vrEvents.some(e => e.city === 'Pescantina' && /usato/i.test(e.name)));
+
 // Bergamo: explicit trading days, distinct fair procedures and historical editions.
 const bgResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-bergamo.json'), 'utf8'));
 const bgEvents = events.filter(e => e.province === 'Bergamo');

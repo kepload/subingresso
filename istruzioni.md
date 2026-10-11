@@ -1032,6 +1032,17 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+Aggiornamento 11 ottobre 2026 — Verona: 75 schede (prima 20), 36 comuni con
+manifestazioni, ricerca nei 98 comuni; 277 segnalazioni regionali e sei documenti
+scaricati. Override `data/fiere-verona.json`, audit comuni/fonti/esclusioni e dubbi.
+Tregnago solo 8/11 novembre con termine 25 ottobre; Garda termine 15 ottobre
+con testo incoerente segnalato; San Zeno sette giorni di mercato; Sommacampagna
+aprile solo il 19. Sagre stagionali distinte dalle giornate commerciali; saloni
+con ammissione espositiva. Catalogo 2.407 eventi, 2.250 con edizioni, 1.917 con
+date pubblicate; altre province identiche. Cache fiere.js v=26, JSON v=19.
+TO DO: 11 province completate, 99 mancanti; prossime Padova, Treviso.
+Nessuna autorizzazione automatica a nuovi interventi; limiti in data/FIERE.md.
+
 Aggiornamento 11 ottobre 2026 — Bergamo: 80 schede (prima 33), 42 comuni con
 eventi, ricerca nominale nei 243 comuni e 261 programmi regionali scaricati.
 Override `data/fiere-bergamo.json`, audit fonti, esclusioni e incongruenze;

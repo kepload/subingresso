@@ -160,7 +160,19 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
   chiarire Calcio Pasquetta, Leffe Monte Croce, programmi solo scansionati
   e giorni commerciali non definiti; riconfermare lo storico Castione Natale.
 
-**Ricerca approfondita: 10 province completate, 100 ancora da fare su 110.**
+- [x] **Verona — ricerca approfondita completata**: ricerca nei 98 comuni;
+  75 manifestazioni in 36 comuni pubblicate in
+  [/fiere](https://subingresso.it/fiere?provincia=Verona), rispetto alle 20 precedenti.
+  Confrontate 277 segnalazioni regionali e calendari fiere, antiquariato e mercati;
+  approfonditi Comuni e organizzatori. Date commerciali, contatti, ammissione,
+  costi e termini quando pubblicati; Tregnago 8/11 novembre, termine 25 ottobre;
+  Garda termine 15 ottobre con incongruenza da confermare. Limiti, esclusioni
+  e fonti in `data/fiere-verona.json` e `data/FIERE.md`.
+- [ ] **Verona — aggiornamenti periodici**: ricontrollare bandi, disponibilità,
+  giornate operative e conflitti; completare i riscontri rimasti senza fonte
+  primaria corrente. Nessuna autorizzazione automatica a nuovi interventi.
+
+**Ricerca approfondita: 11 province completate, 99 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -175,7 +187,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 
 - [x] **1. Milano** — Lombardia; ricerca completata, vedi sopra
 - [x] **2. Bergamo** — Lombardia
-- [ ] **3. Verona** — Veneto
+- [x] **3. Verona** — Veneto
 - [ ] **4. Padova** — Veneto
 - [ ] **5. Treviso** — Veneto
 - [ ] **6. Vicenza** — Veneto
