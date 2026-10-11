@@ -21,6 +21,24 @@ assert.equal(Object.keys(boundaries.sardiniaMunicipalities).length,377);
 for (const region of regions) assert(events.filter(e => e.region === region).length >= 10);
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
+// Bologna: commercial days, annual exceptions and separate weekends.
+const bolognaEvents = events.filter(e => e.province === 'Bologna');
+assert.equal(bolognaEvents.length,65);
+const bolognaResearch = JSON.parse(fs.readFileSync(path.join(root,'data/fiere-bologna.json'),'utf8'));
+assert.equal(bolognaResearch.research.municipalityCoverage.length,55);
+assert.equal(new Set(bolognaResearch.research.municipalityCoverage.map(c => c.city)).size,55);
+const bolognaEvent = name => bolognaEvents.find(e => e.name === name);
+assert.deepEqual(bolognaEvent('Fiera di Santa Lucia').editions.map(e => [e.start,e.end]),[['2026-11-06','2026-12-27']]);
+assert.equal(bolognaEvent('Natale a Porta Galliera').editions[0].end,'2027-01-06');
+assert.deepEqual(bolognaEvent('Tartòfla – Tartufesta di Savigno').editions.map(e => [e.start,e.end]),[['2026-10-24','2026-10-25'],['2026-10-31','2026-11-01'],['2026-11-07','2026-11-08'],['2026-11-14','2026-11-15']]);
+assert.equal(bolognaEvents.filter(e => e.city === 'Sasso Marconi' && /Tartufesta|Fiera del tartufo/i.test(e.name)).length,1);
+const crevalcoreRiuso = bolognaEvents.find(e => e.city === 'Crevalcore' && e.name === 'Mercatino del Riuso');
+assert(crevalcoreRiuso.editions.some(e => e.start === '2026-11-22'));
+assert(!crevalcoreRiuso.editions.some(e => e.start === '2026-11-15'));
+assert.equal(bolognaEvent('La Dolce Fiera').editions[0].start,'2026-06-05');
+assert.equal(bolognaEvent('La Dolce Fiera').editions[0].end,'2026-06-05');
+assert.equal(bolognaEvent('Mercanti all’Alberino – La domenica del Circolo').editions.at(-1).start,'2026-12-08');
+assert(bolognaEvent('Anticamente Sangio').editions.every(e => !e.start));
 // Trieste: source-specific dates, separate markets and deadlines for the correct edition.
 const pratoEvents = events.filter(e => e.province === 'Prato');
 assert.equal(pratoEvents.length,38);

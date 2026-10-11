@@ -125,179 +125,133 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
   (5–6 dicembre provvisorio, candidatura indicata entro 15 novembre).
   Fierucola delle Bigonge: 10–11 ottobre spostata al 19 settembre, non riproporre.
 
-**Ricerca approfondita ancora da fare: 103 province e unità territoriali equivalenti.**
-Gli eventi già presenti e gli import regionali costituiscono una base; le caselle
-seguenti indicano il lavoro provinciale da completare nelle prossime sessioni.
-Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegna 2026.
+- [x] **Bologna — ricerca approfondita completata**: controllate le fonti nei 55
+  comuni, 65 manifestazioni in 39 comuni pubblicate in
+  [/fiere](https://subingresso.it/fiere?provincia=Bologna), prima 15 schede.
+  Date separate, contatti e categorie di partecipazione dove documentati.
+  Santa Lucia: 6 novembre–27 dicembre; Tartòfla: quattro fine settimana;
+  riuso Crevalcore: 22 novembre. Consolidata la Tartufesta di Sasso Marconi.
+  Fonti, esclusioni e limiti in `data/fiere-bologna.json` e `data/FIERE.md`.
+- [ ] **Bologna — aggiornamenti periodici**: nuove edizioni, bandi, costi,
+  disponibilità e ammissioni professionali; completare il calendario regionale
+  non recuperabile integralmente, i programmi scansione e i saloni espositivi.
+  Chiarire le fonti discordanti e le Tartufeste senza mercato documentato.
 
-#### Abruzzo
+**Ricerca approfondita: 8 province completate, 102 ancora da fare su 110.**
+Le schede importate nelle altre province non equivalgono a ricerca approfondita.
+Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
-- [ ] Chieti
-- [ ] L'Aquila
-- [ ] Pescara
-- [ ] Teramo
+**Ordine operativo aggiornato l’11 ottobre 2026, dalla più importante alla meno
+importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
+bacino di operatori/clienti, capacità di spesa e turismo, poi vicinanza alla
+Lombardia e beneficio atteso della ricerca. Favorire il Nord e le zone ricche
+richieste dall’utente. Questa è una stima commerciale qualitativa, non una
+classifica di volumi Google: mancano dati provinciali comparabili di ricerche
+e conversioni. Rivalutare con Search Console, annunci e contatti effettivi.
+La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulanti.
 
-#### Basilicata
-
-- [ ] Matera
-- [ ] Potenza
-
-#### Calabria
-
-- [ ] Catanzaro
-- [ ] Cosenza
-- [ ] Crotone
-- [ ] Reggio Calabria
-- [ ] Vibo Valentia
-
-#### Campania
-
-- [ ] Avellino
-- [ ] Benevento
-- [ ] Caserta
-- [ ] Napoli
-- [ ] Salerno
-
-#### Emilia-Romagna
-
-- [ ] Bologna
-- [ ] Ferrara
-- [ ] Forlì-Cesena
-- [ ] Modena
-- [ ] Parma
-- [ ] Piacenza
-- [ ] Ravenna
-- [ ] Reggio nell'Emilia
-- [ ] Rimini
-
-#### Friuli-Venezia Giulia
-
-- [ ] Gorizia
-- [ ] Pordenone
-- [x] Trieste — completata l’11 ottobre 2026; aggiornamenti periodici sopra
-- [ ] Udine
-
-#### Lazio
-
-- [ ] Frosinone
-- [ ] Latina
-- [ ] Rieti
-- [ ] Roma
-- [ ] Viterbo
-
-#### Liguria
-
-- [ ] Genova
-- [ ] Imperia
-- [ ] La Spezia
-- [ ] Savona
-
-#### Lombardia
-
-- [ ] Bergamo
-- [ ] Como
-- [ ] Cremona
-- [x] Lecco — ricerca completata; aggiornamenti periodici sopra
-- [x] Lodi — completata il 10 ottobre 2026; aggiornamenti periodici separati
-- [ ] Mantova
-- [ ] Milano
-- [x] Monza e della Brianza — ricerca completata; aggiornamenti periodici sopra
-- [ ] Pavia
-- [ ] Sondrio
-- [ ] Varese
-
-#### Marche
-
-- [ ] Ancona
-- [ ] Ascoli Piceno
-- [ ] Fermo
-- [ ] Macerata
-- [ ] Pesaro e Urbino
-
-#### Molise
-
-- [ ] Campobasso
-- [ ] Isernia
-
-#### Piemonte
-
-- [ ] Alessandria
-- [ ] Asti
-- [ ] Biella
-- [ ] Cuneo
-- [ ] Novara
-- [ ] Torino
-- [ ] Verbano-Cusio-Ossola
-- [ ] Vercelli
-
-#### Puglia
-
-- [ ] Bari
-- [ ] Barletta-Andria-Trani
-- [ ] Brindisi
-- [ ] Foggia
-- [ ] Lecce
-- [ ] Taranto
-
-#### Sardegna
-
-- [ ] Cagliari
-- [ ] Gallura Nord-Est Sardegna
-- [ ] Medio Campidano
-- [ ] Nuoro
-- [ ] Ogliastra
-- [ ] Oristano
-- [ ] Sassari
-- [ ] Sulcis Iglesiente
-
-#### Sicilia
-
-- [ ] Agrigento
-- [ ] Caltanissetta
-- [ ] Catania
-- [ ] Enna
-- [ ] Messina
-- [ ] Palermo
-- [ ] Ragusa
-- [ ] Siracusa
-- [ ] Trapani
-
-#### Toscana
-
-- [x] Arezzo — ricerca completata l’11 ottobre 2026; aggiornamenti periodici sopra
-- [ ] Firenze
-- [ ] Grosseto
-- [ ] Livorno
-- [ ] Lucca
-- [ ] Massa-Carrara
-- [ ] Pisa
-- [ ] Pistoia
-- [x] Prato — completata l’11 ottobre 2026; aggiornamenti periodici sopra
-- [ ] Siena
-
-#### Trentino-Alto Adige
-
-- [ ] Bolzano/Bozen
-- [ ] Trento
-
-#### Umbria
-
-- [ ] Perugia
-- [ ] Terni
-
-#### Valle d'Aosta
-
-- [ ] Valle d'Aosta/Vallée d'Aoste
-
-#### Veneto
-
-- [ ] Belluno
-- [ ] Padova
-- [ ] Rovigo
-- [ ] Treviso
-- [ ] Venezia
-- [ ] Verona
-- [ ] Vicenza
+- [ ] **1. Milano** — Lombardia
+- [ ] **2. Bergamo** — Lombardia
+- [ ] **3. Verona** — Veneto
+- [ ] **4. Padova** — Veneto
+- [ ] **5. Treviso** — Veneto
+- [ ] **6. Vicenza** — Veneto
+- [ ] **7. Modena** — Emilia-Romagna
+- [ ] **8. Parma** — Emilia-Romagna
+- [ ] **9. Reggio nell'Emilia** — Emilia-Romagna
+- [ ] **10. Varese** — Lombardia
+- [ ] **11. Como** — Lombardia
+- [ ] **12. Torino** — Piemonte
+- [ ] **13. Venezia** — Veneto
+- [ ] **14. Mantova** — Lombardia
+- [ ] **15. Cremona** — Lombardia
+- [ ] **16. Pavia** — Lombardia
+- [ ] **17. Novara** — Piemonte
+- [ ] **18. Cuneo** — Piemonte
+- [ ] **19. Trento** — Trentino-Alto Adige
+- [ ] **20. Bolzano/Bozen** — Trentino-Alto Adige
+- [ ] **21. Firenze** — Toscana
+- [ ] **22. Roma** — Lazio
+- [ ] **23. Rimini** — Emilia-Romagna
+- [ ] **24. Ravenna** — Emilia-Romagna
+- [ ] **25. Forlì-Cesena** — Emilia-Romagna
+- [ ] **26. Piacenza** — Emilia-Romagna
+- [ ] **27. Udine** — Friuli-Venezia Giulia
+- [ ] **28. Pordenone** — Friuli-Venezia Giulia
+- [ ] **29. Ferrara** — Emilia-Romagna
+- [ ] **30. Lucca** — Toscana
+- [ ] **31. Pisa** — Toscana
+- [ ] **32. Pistoia** — Toscana
+- [ ] **33. Genova** — Liguria
+- [ ] **34. Alessandria** — Piemonte
+- [ ] **35. Asti** — Piemonte
+- [ ] **36. Pesaro e Urbino** — Marche
+- [ ] **37. Ancona** — Marche
+- [ ] **38. Perugia** — Umbria
+- [ ] **39. Napoli** — Campania
+- [ ] **40. Bari** — Puglia
+- [ ] **41. Salerno** — Campania
+- [ ] **42. Siena** — Toscana
+- [ ] **43. Livorno** — Toscana
+- [ ] **44. Savona** — Liguria
+- [ ] **45. La Spezia** — Liguria
+- [ ] **46. Vercelli** — Piemonte
+- [ ] **47. Biella** — Piemonte
+- [ ] **48. Sondrio** — Lombardia
+- [ ] **49. Belluno** — Veneto
+- [ ] **50. Gorizia** — Friuli-Venezia Giulia
+- [ ] **51. Rovigo** — Veneto
+- [ ] **52. Verbano-Cusio-Ossola** — Piemonte
+- [ ] **53. Imperia** — Liguria
+- [ ] **54. Massa-Carrara** — Toscana
+- [ ] **55. Grosseto** — Toscana
+- [ ] **56. Valle d'Aosta/Vallée d'Aoste** — Valle d'Aosta
+- [ ] **57. Macerata** — Marche
+- [ ] **58. Fermo** — Marche
+- [ ] **59. Ascoli Piceno** — Marche
+- [ ] **60. Pescara** — Abruzzo
+- [ ] **61. Teramo** — Abruzzo
+- [ ] **62. Chieti** — Abruzzo
+- [ ] **63. Latina** — Lazio
+- [ ] **64. Viterbo** — Lazio
+- [ ] **65. Frosinone** — Lazio
+- [ ] **66. Terni** — Umbria
+- [ ] **67. Caserta** — Campania
+- [ ] **68. Lecce** — Puglia
+- [ ] **69. Cagliari** — Sardegna
+- [ ] **70. Sassari** — Sardegna
+- [ ] **71. Gallura Nord-Est Sardegna** — Sardegna
+- [ ] **72. Palermo** — Sicilia
+- [ ] **73. Catania** — Sicilia
+- [ ] **74. Messina** — Sicilia
+- [ ] **75. Ragusa** — Sicilia
+- [ ] **76. Siracusa** — Sicilia
+- [ ] **77. Trapani** — Sicilia
+- [ ] **78. Barletta-Andria-Trani** — Puglia
+- [ ] **79. Brindisi** — Puglia
+- [ ] **80. Taranto** — Puglia
+- [ ] **81. Foggia** — Puglia
+- [ ] **82. Avellino** — Campania
+- [ ] **83. Benevento** — Campania
+- [ ] **84. L'Aquila** — Abruzzo
+- [ ] **85. Matera** — Basilicata
+- [ ] **86. Cosenza** — Calabria
+- [ ] **87. Catanzaro** — Calabria
+- [ ] **88. Reggio Calabria** — Calabria
+- [ ] **89. Potenza** — Basilicata
+- [ ] **90. Campobasso** — Molise
+- [ ] **91. Rieti** — Lazio
+- [ ] **92. Agrigento** — Sicilia
+- [ ] **93. Oristano** — Sardegna
+- [ ] **94. Nuoro** — Sardegna
+- [ ] **95. Vibo Valentia** — Calabria
+- [ ] **96. Crotone** — Calabria
+- [ ] **97. Caltanissetta** — Sicilia
+- [ ] **98. Enna** — Sicilia
+- [ ] **99. Ogliastra** — Sardegna
+- [ ] **100. Sulcis Iglesiente** — Sardegna
+- [ ] **101. Medio Campidano** — Sardegna
+- [ ] **102. Isernia** — Molise
 
 
 ## ⚡ Velocità e visibilità su Google

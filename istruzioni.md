@@ -1032,6 +1032,18 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+Aggiornamento 11 ottobre 2026 — Bologna: 65 schede (prima 15), 39 comuni con eventi,
+55 comuni controllati; `data/fiere-bologna.json`, override nel build. Catalogo
+2.237 eventi, 2076 con edizioni, 1784 con date. Santa Lucia 6 novembre–27 dicembre;
+Tartòfla quattro weekend, Crevalcore riuso 22 novembre, Alberino 8 dicembre;
+consolidata Tartufesta Sasso. Limiti e fonti in data/FIERE.md.
+Cache fiere.js v=23, fiere.json v=16. TO DO: 8 province completate e 102 mancanti,
+in ordine globale di priorità commerciale. Preferenza utente: Nord, zone
+ricche e fiere richieste; stima per ambulanti, non volumi Google misurati.
+Prossime: Milano, Bergamo, Verona, Padova, Treviso. L’ordine non costituisce
+autorizzazione a nuove ricerche/interventi automatici.
+
+
 Ricerca Prato (11 ottobre 2026): tutti i sette comuni, 38 manifestazioni aggiunte.
 Override riproducibile in `data/fiere-prato.json`; fonti, esclusioni e limiti in
 `data/FIERE.md`. Settima provincia approfondita, 103 restanti. Carmignano:
