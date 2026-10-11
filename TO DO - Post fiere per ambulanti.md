@@ -137,7 +137,19 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
   non recuperabile integralmente, i programmi scansione e i saloni espositivi.
   Chiarire le fonti discordanti e le Tartufeste senza mercato documentato.
 
-**Ricerca approfondita: 8 province completate, 102 ancora da fare su 110.**
+- [x] **Milano — ricerca approfondita completata**: ricerca documentale nei 133
+  comuni; 83 manifestazioni in 47 comuni, prima 15, pubblicate in
+  [/fiere](https://subingresso.it/fiere?provincia=Milano). Confrontate 140 righe
+  regionali e scaricati 140 programmi; aggiunte fonti comunali e organizzatori.
+  Nove fiere comunali di Milano con termini distinti, mercatone Naviglio con
+  13 date, Assago Natale in tre giornate e Paderno primavera solo il 22 marzo.
+  Schede, audit dei 133 comuni, esclusioni e limiti in `data/fiere-milano.json`
+  e `data/FIERE.md`; ammissioni non pubblicate sempre da verificare.
+- [ ] **Milano — aggiornamenti periodici**: nuovi bandi e disponibilità; completare
+  le segnalazioni conservate nell’audit, chiarire EcoFesta Paderno, Olcella,
+  Notte Bianca Gorgonzola, calendari cittadini e giorni commerciali non definiti.
+
+**Ricerca approfondita: 9 province completate, 101 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -150,7 +162,7 @@ classifica di volumi Google: mancano dati provinciali comparabili di ricerche
 e conversioni. Rivalutare con Search Console, annunci e contatti effettivi.
 La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulanti.
 
-- [ ] **1. Milano** — Lombardia
+- [x] **1. Milano** — Lombardia; ricerca completata, vedi sopra
 - [ ] **2. Bergamo** — Lombardia
 - [ ] **3. Verona** — Veneto
 - [ ] **4. Padova** — Veneto

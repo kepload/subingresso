@@ -21,6 +21,25 @@ assert.equal(Object.keys(boundaries.sardiniaMunicipalities).length,377);
 for (const region of regions) assert(events.filter(e => e.region === region).length >= 10);
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
+// Milano: real market days, cancellation and application versus payment terms.
+const miResearch = JSON.parse(fs.readFileSync(path.join(root,'data/fiere-milano.json'),'utf8'));
+const miEvents = events.filter(e => e.province === 'Milano');
+assert.equal(miEvents.length,83);
+assert.equal(new Set(miResearch.research.municipalityCoverage.map(c => c.city)).size,133);
+assert.equal(miResearch.research.municipalityCoverage.reduce((n,c) => n+c.eventsFound,0),83);
+const miEvent = (city,pattern) => miEvents.find(e => e.city === city && pattern.test(e.name));
+assert.deepEqual(miEvent('Paderno Dugnano',/^Fiera di primavera$/i).editions.map(e => e.start),['2026-03-22']);
+assert.deepEqual(miEvent('Assago',/villaggio/i).editions.map(e => [e.start,e.end]),[['2026-12-13','2026-12-13'],['2026-12-19','2026-12-19'],['2026-12-20','2026-12-20']]);
+assert.deepEqual(miEvent('Melegnano',/Perdono/).editions.map(e => e.start),['2026-04-02','2026-04-05','2026-04-06']);
+assert.equal(miEvent('Milano',/Oh Bej/).participation.deadline,'2026-10-06');
+assert.equal(miEvent('Milano',/Mercatone/).editions.length,13);
+assert.equal(miEvent('Milano',/Mercatone/).editions.at(-1).start,'2026-12-20');
+assert(!miEvent('Magenta',/Curiosità/).editions.some(e => e.start === '2026-07-04'));
+assert(miEvent('Magenta',/Curiosità/).editions.some(e => e.start === '2026-11-14'));
+assert.equal(miEvent('Motta Visconti',/fungo/i).editions[0].start,'2026-09-27');
+assert.equal(miEvent('Rescaldina',/Autunnale/).participation.deadline,undefined);
+assert(miEvent('Legnano',/Morti/).editions.every(e => !e.start));
+
 // Bologna: commercial days, annual exceptions and separate weekends.
 const bolognaEvents = events.filter(e => e.province === 'Bologna');
 assert.equal(bolognaEvents.length,65);

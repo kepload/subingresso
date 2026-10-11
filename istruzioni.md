@@ -1032,6 +1032,15 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+Aggiornamento 11 ottobre 2026 — Milano: 83 schede (prima 15), 47 comuni con
+eventi, ricerca nei 133 comuni. Override `data/fiere-milano.json`, 140 programmi
+regionali scaricati e audit fonti/comuni/esclusioni. Nove fiere comunali con
+scadenze; corretti giorni commerciali Paderno, Assago, Melegnano e Motta.
+Catalogo 2.305 eventi, 2.145 con edizioni, 1.842 con date pubblicate.
+Cache fiere.js v=24, fiere.json v=17. TO DO: 9 province completate, 101 mancanti.
+Prossime priorità Bergamo, Verona, Padova, Treviso; nessuna autorizzazione a
+nuovi interventi automatici. Limiti e segnalazioni da approfondire in data/FIERE.md.
+
 Aggiornamento 11 ottobre 2026 — Bologna: 65 schede (prima 15), 39 comuni con eventi,
 55 comuni controllati; `data/fiere-bologna.json`, override nel build. Catalogo
 2.237 eventi, 2076 con edizioni, 1784 con date. Santa Lucia 6 novembre–27 dicembre;
