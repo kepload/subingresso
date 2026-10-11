@@ -1,0 +1,2516 @@
+{
+  "province": "Trieste",
+  "checkedAt": "2026-10-11",
+  "research": {
+    "municipalitiesReviewed": 6,
+    "previousCatalogEvents": 1,
+    "selection": "Scelta fra le province incomplete; sei comuni per completare il territorio in una sessione.",
+    "method": "Ricerca nominativa dei sei comuni e delle frazioni, Comuni e SUAP in browser, Discover Trieste, PromoTurismoFVG, organizzatori, Pro Loco e calendario fieristico regionale 5 maggio 2026 (due manifestazioni triestine).",
+    "scopeLimit": "Ricerca documentale nelle fonti accessibili; non è un censimento esaustivo e non garantisce posteggi liberi. Escluse sagre senza commercio esterno documentato, mercati ordinari e date operative contraddittorie.",
+    "municipalityCoverage": [
+      {
+        "city": "Duino Aurisina",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercatini 2026",
+          "bandi, espositori, scadenze",
+          "frazioni, sagre con commercio esterno, Natale"
+        ],
+        "eventsFound": 1,
+        "sources": [
+          "https://www.turismofvg.it/eventi/mercatino-delle-pulci-cose-di-vecchie-case",
+          "https://www.turismofvg.it/proxyvfs.axd/null/r358113?ext=.pdf&v=437371"
+        ],
+        "result": "Manifestazioni documentate incluse; dubbi e limiti conservati."
+      },
+      {
+        "city": "Monrupino",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercatini 2026",
+          "bandi, espositori, scadenze",
+          "frazioni, sagre con commercio esterno, Natale"
+        ],
+        "eventsFound": 0,
+        "sources": [
+          "https://www.comune.monrupino.ts.it/it/events"
+        ],
+        "result": "Nessuna manifestazione commerciale pubblicabile verificata nelle fonti consultate; non prova assenza di eventi. Calendario comunale consultato ancora prevalentemente 2025."
+      },
+      {
+        "city": "Muggia",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercatini 2026",
+          "bandi, espositori, scadenze",
+          "frazioni, sagre con commercio esterno, Natale"
+        ],
+        "eventsFound": 5,
+        "sources": [
+          "https://chipmunk-daffodil-f58e.squarespace.com/eventi/il-mercatino-dei-fiori-2026",
+          "https://chipmunk-daffodil-f58e.squarespace.com/eventi/madonna-dagosto-eventi-2026",
+          "https://comune.muggia.ts.it/it/novita-44201/avvisi-44605/avviso-pubblico-per-laffidamento-in-gestione-del-mercatino-delle-pulci-e-degli-hobby-174509",
+          "https://www.autoraduni.it/autoraduno/1-montedoro-expo/",
+          "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta",
+          "https://www.turismofvg.it/eventi/mercatino-di-muggia-cose-di-vecchie-case-annullato-per-lavori-in-corso-su-piazza-della-repubblica",
+          "https://www.turismofvg.it/eventi/mercatino-di-muggia-cose-di-vecchie-case?LangSetCMS=it",
+          "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it",
+          "https://www.turismofvg.it/eventi/muggia-crea-mostra-mercato-dell-artigianato"
+        ],
+        "result": "Manifestazioni documentate incluse; dubbi e limiti conservati."
+      },
+      {
+        "city": "San Dorligo della Valle",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercatini 2026",
+          "bandi, espositori, scadenze",
+          "frazioni, sagre con commercio esterno, Natale"
+        ],
+        "eventsFound": 1,
+        "sources": [
+          "https://www.majenca.com/it/home/",
+          "https://www.turismofvg.it/eventi/mercatino-dell-artigianato-503658"
+        ],
+        "result": "Manifestazioni documentate incluse; dubbi e limiti conservati."
+      },
+      {
+        "city": "Sgonico",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercatini 2026",
+          "bandi, espositori, scadenze",
+          "frazioni, sagre con commercio esterno, Natale"
+        ],
+        "eventsFound": 0,
+        "sources": [
+          "https://www.anbimafvg.it/index.php/2026/08/11/sagra-a-sgonico-con-il-complesso-bandistico-prosek/"
+        ],
+        "result": "Nessuna manifestazione commerciale pubblicabile verificata nelle fonti consultate; non prova assenza di eventi. Calendario comunale consultato ancora prevalentemente 2025."
+      },
+      {
+        "city": "Trieste",
+        "checkedAt": "2026-10-11",
+        "searchTopics": [
+          "fiere e mercatini 2026",
+          "bandi, espositori, scadenze",
+          "frazioni, sagre con commercio esterno, Natale"
+        ],
+        "eventsFound": 17,
+        "sources": [
+          "https://amministrazionetrasparente.comune.trieste.it/wp-content/uploads/2026/05/01_Relazione_Giunta_2025.pdf",
+          "https://www.barbacanproduce.com/wp-content/uploads/2026/01/Regolamento-BP-2026.pdf",
+          "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/bioest-2026-323717",
+          "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/inaugurate-dal-sindaco-dipiazza-la-pista-di-pattinaggio-sul-ghiaccio-aperta-fino-all11-gennaio-2026-in-piazza-ponterosso-e-la-tradizionale-fiera-di-san-nicolo-315407",
+          "https://www.comune.trieste.it/it/novita-227102/notizie-227103/partecipazione-operatori-commerciali-fiera-di-san-nicolo-di-trieste-28-novembre-6-dicembre-2026-326318",
+          "https://www.discover-trieste.it/vivi/trieste-now/creattivamente",
+          "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+          "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+          "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo",
+          "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+          "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+          "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+          "https://www.oliocapitale.it/pianifica/",
+          "https://www.triestespresso.it/modulistica",
+          "https://www.turismofvg.it/eventi/mercatino-agricolo-in-piazza-vittorio-veneto-480975?LangSetCMS=it",
+          "https://www.turismofvg.it/eventi/world-animal-day-trieste"
+        ],
+        "result": "Manifestazioni documentate incluse; dubbi e limiti conservati."
+      }
+    ],
+    "regionalCalendarAudit": {
+      "url": "https://www.regione.fvg.it/rafvg/export/sites/default/RAFVG/economia-imprese/commercio-terziario/FOGLIA102/documentazione/Calendario_fiere_regionale_2026_ver_05_05_2026.pdf",
+      "provinceRows": 2,
+      "events": [
+        "Olio Capitale",
+        "Triestespresso Expo"
+      ]
+    },
+    "exclusions": [
+      {
+        "city": "Muggia",
+        "name": "Corte dei Miracoli / Mercatino delle pulci e degli hobby",
+        "reason": "Non pubblicata come operativa: fonti PromoTurismoFVG contraddittorie (una titolata ANNULLATO per lavori, altre con date fino a maggio 2027). Il Comune ha aperto affidamento della gestione l’8 ottobre; ciò non dimostra svolgimento delle singole date. Termine 23 ottobre ore 12 riguarda il gestore, non la domanda di un espositore.",
+        "sources": [
+          "https://www.turismofvg.it/eventi/mercatino-di-muggia-cose-di-vecchie-case?LangSetCMS=it",
+          "https://www.turismofvg.it/eventi/mercatino-di-muggia-cose-di-vecchie-case-annullato-per-lavori-in-corso-su-piazza-della-repubblica",
+          "https://comune.muggia.ts.it/it/novita-44201/avvisi-44605/avviso-pubblico-per-laffidamento-in-gestione-del-mercatino-delle-pulci-e-degli-hobby-174509"
+        ]
+      },
+      {
+        "city": "Muggia",
+        "name": "Mercatino dei Fiori di Muggia Vecchia",
+        "reason": "5 settembre 2026: iniziativa principalmente di scambio/donazione di piante e giardinaggio; non documentata selezione di posteggi commerciali. Da rivalutare se emerge opportunità per ambulanti.",
+        "sources": [
+          "https://chipmunk-daffodil-f58e.squarespace.com/eventi/il-mercatino-dei-fiori-2026"
+        ]
+      },
+      {
+        "city": "San Dorligo della Valle",
+        "name": "Majenca",
+        "reason": "Date 8–12 maggio 2026 documentate dall’organizzatore; non trovata evidenza sufficiente di mercatino esterno o ammissione ambulanti. Ristorazione, degustazioni e spettacoli non bastano.",
+        "sources": [
+          "https://www.majenca.com/it/home/"
+        ]
+      },
+      {
+        "city": "Sgonico",
+        "name": "Sagra di Sgonico",
+        "reason": "14–16 agosto 2026: programma gastronomico e musicale, senza mercatino esterno documentato nelle fonti consultate.",
+        "sources": [
+          "https://www.anbimafvg.it/index.php/2026/08/11/sagra-a-sgonico-con-il-complesso-bandistico-prosek/"
+        ]
+      },
+      {
+        "city": "Monrupino",
+        "name": "Nozze Carsiche",
+        "reason": "Calendario comunale consultato ancora con edizione 2025. Nessuna edizione 2026 commerciale verificata; nessuna proiezione automatica al 2027.",
+        "sources": [
+          "https://www.comune.monrupino.ts.it/it/events"
+        ]
+      },
+      {
+        "city": "Duino Aurisina",
+        "name": "Primavera al Castello",
+        "reason": "Programma culturale 2026; mercatino dei bambini segnalato, non opportunità commerciale professionale documentata.",
+        "sources": [
+          "https://www.turismofvg.it/proxyvfs.axd/null/r358113?ext=.pdf&v=437371"
+        ]
+      },
+      {
+        "city": "Monrupino / Sgonico / altri comuni",
+        "name": "Le Notti del Vino",
+        "reason": "Serate di degustazione e abbinamenti gastronomici; nessuna ammissione commerciale esterna documentata.",
+        "sources": [
+          "https://cittadelvinofvg.it/news/le-notti-del-vino-2026/"
+        ]
+      },
+      {
+        "city": "Trieste / Muggia",
+        "name": "Mercati settimanali comunali e mercati agricoli settimanali",
+        "reason": "Fuori dal censimento fiere: mercati ordinari settimanali; mantenute soltanto manifestazioni/mercatini con calendario specifico. Campagna Amica e Turismo Agricolo valutati, senza inventare giornate da ricorrenze.",
+        "sources": [
+          "https://www.comune.trieste.it/it/guide-223180/guida-alle-attivita-economiche-230935/attivita-di-mercato-13598/mercato-su-aree-pubbliche-13599",
+          "https://www.discover-trieste.it/vivi/trieste-now/campagna-amica-trieste",
+          "https://www.discover-trieste.it/vivi/trieste-now/il-turismo-agricolo-in-fvg"
+        ]
+      }
+    ],
+    "pendingVerification": [
+      {
+        "city": "Trieste",
+        "name": "Fiera San Martino",
+        "note": "2025 ufficiale conservato; segnalazione 2026 generata AI richiede atto comunale.",
+        "sources": [
+          "https://amministrazionetrasparente.comune.trieste.it/wp-content/uploads/2026/05/01_Relazione_Giunta_2025.pdf",
+          "https://fvg.piazzainfesta.it/trieste/fiera-di-san-martino-a-prosecco-83129"
+        ]
+      },
+      {
+        "city": "Trieste",
+        "name": "Natale 2026 e mercatini rionali",
+        "note": "Nessuna trasposizione delle date 2025. Prosvetni dom e Natale con noi Opicina da ricontrollare.",
+        "sources": [
+          "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/inaugurate-dal-sindaco-dipiazza-la-pista-di-pattinaggio-sul-ghiaccio-aperta-fino-all11-gennaio-2026-in-piazza-ponterosso-e-la-tradizionale-fiera-di-san-nicolo-315407",
+          "https://www.comune.trieste.it/media/files/032006/attachment/Nataleopicina2025.pdf"
+        ]
+      }
+    ],
+    "sourceAudit": [
+      {
+        "url": "https://amministrazionetrasparente.comune.trieste.it/wp-content/uploads/2026/05/01_Relazione_Giunta_2025.pdf",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "71f9affe97dcc41385f1e4016a92c00bc959e6f753d40b18a8bd3ce5fe729751",
+        "bytes": 7838691,
+        "extractedTextCharacters": 604524,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://chipmunk-daffodil-f58e.squarespace.com/eventi/il-mercatino-dei-fiori-2026",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "633fa76551c10d4ad37b3397703b2d83bb4ac6cb8e8166299f61a56ccc361c4e",
+        "bytes": 246013,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://chipmunk-daffodil-f58e.squarespace.com/eventi/madonna-dagosto-eventi-2026",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "063c3f8143090a336d61ea9230dee9bf0dd28550b82f9afbfdf1c29dee8f415f",
+        "bytes": 140858,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://cittadelvinofvg.it/news/le-notti-del-vino-2026/",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "9946bd712345d6c51210548bc4366e309a7e7b9f28b52922494a438d6f8ce1c5",
+        "bytes": 197108,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://comune.muggia.ts.it/it/novita-44201/avvisi-44605/avviso-pubblico-per-laffidamento-in-gestione-del-mercatino-delle-pulci-e-degli-hobby-174509",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "cee14e7ef026feca653751688a55130d4b23929932d1ca56290537c07b29896f",
+        "bytes": 21541,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://comune.muggia.ts.it/media/files/032003/attachment/Avviso_pubblico_mercatino-signed_H8MOhPl.pdf",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "5b5eed37cc5a3c95dde41fbd526e20fb92853877742194759e43ca8016c3f80c",
+        "bytes": 198773,
+        "extractedTextCharacters": 4849,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://fvg.piazzainfesta.it/trieste/fiera-di-san-martino-a-prosecco-83129",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "df0e1bfee00f26b39423951b486ab5051be370c0fac84c3bbcc4bac0455e5656",
+        "bytes": 42197,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.anbimafvg.it/index.php/2026/08/11/sagra-a-sgonico-con-il-complesso-bandistico-prosek/",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "de8bf13bb12030010f4594fb775316f17b8e1036c0d41c6590172920e4d3c0c4",
+        "bytes": 67038,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.autoraduni.it/autoraduno/1-montedoro-expo/",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "1d16fd566f3768f65a01988cc2b2bb63e7aa67cd32f70048dac8a2a624e1f346",
+        "bytes": 135793,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.barbacanproduce.com/wp-content/uploads/2026/01/Regolamento-BP-2026.pdf",
+        "checkedAt": "2026-10-11",
+        "status": 403,
+        "sha256": "5b13fb5957b84ef7bb9d0b6cd509c947ff6a37d67efdac2b896ddd3b908aad10",
+        "bytes": 199,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.monrupino.ts.it/it/events",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "cee14e7ef026feca653751688a55130d4b23929932d1ca56290537c07b29896f",
+        "bytes": 21541,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.sgonico.ts.it/it/events",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "213ba4fe54ebffaaf0394c386ff6fa3fb876a43136c3279a20994209193cf73c",
+        "bytes": 21541,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.trieste.it/it/guide-223180/guida-alle-attivita-economiche-230935/attivita-di-mercato-13598/mercato-su-aree-pubbliche-13599",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "a866eff7346f14776c833c98e08d406e7ed66b9ec53a44003e90d289250fec6a",
+        "bytes": 21541,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.trieste.it/it/mercatino-dellantiquariato-e-dellusato-210668",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "a866eff7346f14776c833c98e08d406e7ed66b9ec53a44003e90d289250fec6a",
+        "bytes": 21541,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/bioest-2026-323717",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "a866eff7346f14776c833c98e08d406e7ed66b9ec53a44003e90d289250fec6a",
+        "bytes": 21541,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/inaugurate-dal-sindaco-dipiazza-la-pista-di-pattinaggio-sul-ghiaccio-aperta-fino-all11-gennaio-2026-in-piazza-ponterosso-e-la-tradizionale-fiera-di-san-nicolo-315407",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "a866eff7346f14776c833c98e08d406e7ed66b9ec53a44003e90d289250fec6a",
+        "bytes": 21541,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.trieste.it/it/novita-227102/notizie-227103/partecipazione-operatori-commerciali-fiera-di-san-nicolo-di-trieste-28-novembre-6-dicembre-2026-326318",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "a866eff7346f14776c833c98e08d406e7ed66b9ec53a44003e90d289250fec6a",
+        "bytes": 21541,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.trieste.it/media/files/032006/attachment/Nataleopicina2025.pdf",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "18e3466f2423ac906ad9cef900d6b8e08c67ef1eee7cede1a9ff51e15986b08b",
+        "bytes": 7595471,
+        "extractedTextCharacters": 17997,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.trieste.it/media/files/md/032006/Comunicato_scadenze_e_sorteggio_2027.pdf",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "158817f2d93c2d3a27fb0d20a42502aa693a51d6da42a5025bb72030b297711e",
+        "bytes": 119318,
+        "extractedTextCharacters": 1993,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "217dec08be9e9af31a1555a3e9c2ea4953bcc2f60c4d3a6ece84ea12350d7af5",
+        "bytes": 290163,
+        "extractedTextCharacters": 19628,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/campagna-amica-trieste",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "fcd2908b803b6894e9f0139a54479dac9c05b1d1442014e4e87afbbcfe24d96a",
+        "bytes": 95953,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "7ac0cfff3feea325b72519f5fb90f9cedc47bbcae65fb4e44fa22ff9deed9a04",
+        "bytes": 94274,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/il-turismo-agricolo-in-fvg",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "c25f617726ecc49f5ef53348abcd01893deded3ec73713b01d5d574f132d78c0",
+        "bytes": 94997,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "587086d6711a73623bbfb5d1799681cd86bc1a6e45339dd0cf80a43c629266be",
+        "bytes": 94847,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "d2e803df8fcdaec4053177f7fb2a23c5c11de7606a450ddf0054e612103c868f",
+        "bytes": 94887,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "35a56e9f70103d11a9f93822707c53530b4723157806057e00c234368ae3a28f",
+        "bytes": 94928,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "86653be6c82b7fd48e9afd621e3885f1338b7e3850b0ea6eff025788a2b3f481",
+        "bytes": 94774,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "46c94c5b405fb1839b8c74536eb15ee685d36492c66261dcd2dfb14412f3c240",
+        "bytes": 95016,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "30eccb72b494f750d365d5befe7552068a22968fa04f3a0fb02647ca8ab18904",
+        "bytes": 98579,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.majenca.com/it/home/",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "d774c45024b07f40da25f7ac5694bb5517ed6a25eb26ccd545054b6512afb895",
+        "bytes": 86592,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.oliocapitale.it/contatti",
+        "checkedAt": "2026-10-11",
+        "status": 403,
+        "sha256": "a27ea71894036dae45d9ab02d8e8224a76ccfdae15135cb9ce90eb10957a591e",
+        "bytes": 373,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.oliocapitale.it/pianifica/",
+        "checkedAt": "2026-10-11",
+        "status": 403,
+        "sha256": "c1e11d732651222d07443eac3a86c5db3d9228e39b2dbddd47e0eecd7c5fceed",
+        "bytes": 373,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.regione.fvg.it/rafvg/export/sites/default/RAFVG/economia-imprese/commercio-terziario/FOGLIA102/documentazione/Calendario_fiere_regionale_2026_ver_05_05_2026.pdf",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "094a222c63b06147b55e1731ec60aa88764b80b9531e23d97f92a9795b00639f",
+        "bytes": 48089,
+        "extractedTextCharacters": 8603,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.triestespresso.it/modulistica",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "c1755c9cd533bbfe34b7845f695aec47fe757905cb24a17909fcb517d95de4ac",
+        "bytes": 511537,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "8bd7b05f6f6d2c2aa6c5d90846410c7b64234d2473a3a2110fd2ea42444c37f9",
+        "bytes": 57220,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/mercatino-agricolo-in-piazza-vittorio-veneto-480975?LangSetCMS=it",
+        "checkedAt": "2026-10-11",
+        "status": 404,
+        "sha256": "b072b07099f97c6ad4ae2642a29cbfe6e5d9abb55add484c6fa939837d399390",
+        "bytes": 3348,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/mercatino-dell-artigianato-503658",
+        "checkedAt": "2026-10-11",
+        "status": 404,
+        "sha256": "b072b07099f97c6ad4ae2642a29cbfe6e5d9abb55add484c6fa939837d399390",
+        "bytes": 3348,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/mercatino-delle-pulci-cose-di-vecchie-case",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "7ac764076c28038d887dbf689e55648f1fcbb6b670a8a088184db14bfcac4783",
+        "bytes": 57671,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/mercatino-di-muggia-cose-di-vecchie-case-annullato-per-lavori-in-corso-su-piazza-della-repubblica",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "07df2f9f6200a063088744aac873fe414361b919557fdfda665955dcb70a3b0d",
+        "bytes": 58529,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/mercatino-di-muggia-cose-di-vecchie-case?LangSetCMS=it",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "163a268ed2af1e9d8c2299be9990c0f5dc140a894455cad4b0b0931bac256b28",
+        "bytes": 58547,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "c0a0bfe7c7344bb4d12ae9220198fe4b8e81aee771972b0f2dd36a83696fedaa",
+        "bytes": 57131,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/muggia-crea-mostra-mercato-dell-artigianato",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "13f42672b62d27c81f0414fe81b2d3f12212870065d7d1d79edc55d7970ec33a",
+        "bytes": 60916,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/world-animal-day-trieste",
+        "checkedAt": "2026-10-11",
+        "status": 404,
+        "sha256": "b072b07099f97c6ad4ae2642a29cbfe6e5d9abb55add484c6fa939837d399390",
+        "bytes": 3348,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/proxyvfs.axd/null/r355539",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "792b9624ca57d5d67fc60b3cab8c1d19a853786e9637ea34bd3edaec7249b740",
+        "bytes": 1574422,
+        "extractedTextCharacters": 30931,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "url": "https://www.turismofvg.it/proxyvfs.axd/null/r358113?ext=.pdf&v=437371",
+        "checkedAt": "2026-10-11",
+        "status": 200,
+        "sha256": "a00b4290b5633f305c654462ed15cedefee1c01c2c13b1a468416f00732727f9",
+        "bytes": 6339978,
+        "extractedTextCharacters": 10371,
+        "downloadNote": "Download e hash non provano verifica del contenuto. Fonti editoriali consultate via web; siti comunali JavaScript letti anche in browser."
+      },
+      {
+        "artifact": "municipal-0.txt",
+        "checkedAt": "2026-10-11",
+        "sha256": "a9681dd7a8f56be1e7d4279d53a4776afd4571c73b48ee223efd975d4bd4d274",
+        "method": "Testo della pagina comunale renderizzata in Chromium; originale fuori repository."
+      },
+      {
+        "artifact": "municipal-1.txt",
+        "checkedAt": "2026-10-11",
+        "sha256": "747d743fed897bbec5226084c7bf6682c781236dfb66f3a268c8f4a8af74f8f6",
+        "method": "Testo della pagina comunale renderizzata in Chromium; originale fuori repository."
+      },
+      {
+        "artifact": "municipal-2.txt",
+        "checkedAt": "2026-10-11",
+        "sha256": "a8c541cd55630df2f591db29571513e8aae29d0dc7c3cd55f252615bfd98e218",
+        "method": "Testo della pagina comunale renderizzata in Chromium; originale fuori repository."
+      },
+      {
+        "artifact": "municipal-3.txt",
+        "checkedAt": "2026-10-11",
+        "sha256": "ffa903d990c77932e2f27f526e2ef92b90c7e3a23e1878f5a487b5b8913c061d",
+        "method": "Testo della pagina comunale renderizzata in Chromium; originale fuori repository."
+      },
+      {
+        "artifact": "municipal-4.txt",
+        "checkedAt": "2026-10-11",
+        "sha256": "0f1830190c63d91f7666e962c33d222c730db2182cd7b1cfae4645d369b6efd8",
+        "method": "Testo della pagina comunale renderizzata in Chromium; originale fuori repository."
+      }
+    ],
+    "sourceAuditNote": "Originali fuori repository in Documents/ricerca-fiere-trieste-20261011. HTML comunali possono essere gusci JavaScript: riscontri effettivi via browser salvati separatamente. PDF grafici non interpretati come prova di date o ammissioni."
+  },
+  "events": [
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Fiera di San Nicolò",
+      "category": "tradizionale",
+      "months": [
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.trieste.it/it/novita-227102/notizie-227103/partecipazione-operatori-commerciali-fiera-di-san-nicolo-di-trieste-28-novembre-6-dicembre-2026-326318",
+        "label": "www.comune.trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-28",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/it/novita-227102/notizie-227103/partecipazione-operatori-commerciali-fiera-di-san-nicolo-di-trieste-28-novembre-6-dicembre-2026-326318"
+        }
+      ],
+      "venue": "Viale XX Settembre",
+      "sectors": "",
+      "organizer": "Comune di Trieste",
+      "participation": {
+        "type": "public",
+        "url": "https://www.comune.trieste.it/it/novita-227102/notizie-227103/partecipazione-operatori-commerciali-fiera-di-san-nicolo-di-trieste-28-novembre-6-dicembre-2026-326318",
+        "note": "Per eventuali posteggi residui dopo la graduatoria ufficiale, inviare via PEC a comune.trieste@certgov.fvg.it dati personali e dell’impresa, telefono, email, dichiarazione d’interesse e copia dell’autorizzazione al commercio su aree pubbliche. Gli interessati vengono contattati in ordine di comunicazione solo se rimangono posti. L’avviso non indica un termine ultimo né disponibilità garantita."
+      },
+      "contacts": {
+        "phone": "040 6758011",
+        "email": "commercioareepubbliche@comune.trieste.it"
+      }
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Mercatino dell’Antiquariato e dell’Usato",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+        "label": "www.discover-trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-18",
+          "end": "2026-01-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-15",
+          "end": "2026-02-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-17",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-21",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-19",
+          "end": "2026-07-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-16",
+          "end": "2026-08-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-15",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-20",
+          "end": "2026-12-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato"
+        },
+        {
+          "year": 2027,
+          "start": "2027-01-17",
+          "end": "2027-01-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-02-21",
+          "end": "2027-02-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-03-21",
+          "end": "2027-03-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-04-18",
+          "end": "2027-04-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-05-16",
+          "end": "2027-05-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-06-20",
+          "end": "2027-06-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-07-18",
+          "end": "2027-07-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-08-15",
+          "end": "2027-08-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-09-19",
+          "end": "2027-09-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-10-10",
+          "end": "2027-10-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-10-17",
+          "end": "2027-10-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-11-21",
+          "end": "2027-11-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        },
+        {
+          "year": 2027,
+          "start": "2027-12-19",
+          "end": "2027-12-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+        }
+      ],
+      "venue": "Largo Granatieri e vie limitrofe",
+      "sectors": "Antiquariato, modernariato, usato d’epoca",
+      "organizer": "Comune di Trieste",
+      "participation": {
+        "type": "public",
+        "url": "https://suo.comune.trieste.it",
+        "note": "Commercianti di settore, privati e artisti: domande per il 2027 dal 19 ottobre al 18 novembre 2026 tramite SUO con identità digitale. Sorteggio primo semestre: 20 novembre ore 10. Graduatorie e canone tramite pagoPA. Posteggi non occupati entro le 8:30 possono essere assegnati giornalmente agli interessati presenti, con modulo alla Polizia Locale e plateatico. Verificare categoria e pagamenti pregressi.",
+        "deadline": "2026-11-18",
+        "deadlineLabel": "Domande edizioni 2027: 19 ottobre–18 novembre 2026; non riguarda le date 2026 elencate."
+      },
+      "contacts": {
+        "phone": "040 6758094",
+        "email": "promozione@comune.trieste.it"
+      },
+      "additionalSources": [
+        "https://www.comune.trieste.it/it/mercatino-dellantiquariato-e-dellusato-210668",
+        "https://www.comune.trieste.it/media/files/md/032006/Comunicato_scadenze_e_sorteggio_2027.pdf",
+        "https://www.comune.trieste.it/media/files/md/032006/DG_536_05.10.2026_meYGezX.pdf"
+      ],
+      "calendarSource": {
+        "url": "https://www.comune.trieste.it/it/mercatino-dellantiquariato-e-dellusato-210668",
+        "label": "Comune di Trieste - modalita e domande 2027",
+        "checkedAt": "2026-10-11"
+      }
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Barbacan Produce",
+      "category": "artigianato",
+      "months": [
+        4,
+        6,
+        9,
+        10,
+        12
+      ],
+      "source": {
+        "url": "https://www.barbacanproduce.com/wp-content/uploads/2026/01/Regolamento-BP-2026.pdf",
+        "label": "www.barbacanproduce.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-12",
+          "end": "2026-04-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.barbacanproduce.com/wp-content/uploads/2026/01/Regolamento-BP-2026.pdf"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-14",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.barbacanproduce.com/wp-content/uploads/2026/01/Regolamento-BP-2026.pdf"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-06",
+          "end": "2026-09-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.barbacanproduce.com/wp-content/uploads/2026/01/Regolamento-BP-2026.pdf"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.barbacanproduce.com/wp-content/uploads/2026/01/Regolamento-BP-2026.pdf"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-13",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.barbacanproduce.com/wp-content/uploads/2026/01/Regolamento-BP-2026.pdf"
+        }
+      ],
+      "venue": "Piazza Barbacan, Arco di Riccardo, San Silvestro e scalinate delle Medaglie d’Oro",
+      "sectors": "Artigianato, design, creazioni artistiche",
+      "organizer": "Associazione Barbacan Produce",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.barbacanproduce.com/",
+        "note": "Candidatura tramite modulo online e selezione della giuria. Ammessi produttori diretti con partita IVA e hobbisti; esclusi concept store. Quota 80 euro IVA inclusa per edizione. Spazio 2 × 1,5 m, un solo marchio; tavolo e ombrellone propri, senza elettricità e gazebo. Iscrizioni dicembre dal 30 ottobre all’8 novembre; ottobre chiuso il 20 settembre. Quota non rimborsabile per rinuncia o maltempo.",
+        "deadline": "2026-11-08",
+        "deadlineLabel": "Edizione 13 dicembre 2026: iscrizioni 30 ottobre–8 novembre.",
+        "costs": "80 euro IVA inclusa per edizione; quota non rimborsabile per rinuncia o annullamento per maltempo."
+      },
+      "contacts": {
+        "email": "info@barbacanproduce.com"
+      },
+      "hours": "10:30–18:30; 14 giugno e 6 settembre 17:00–22:00"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Un pozzo di occasioni – Opicina",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+        "label": "www.discover-trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-24",
+          "end": "2026-01-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-28",
+          "end": "2026-02-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-28",
+          "end": "2026-03-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-23",
+          "end": "2026-05-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-27",
+          "end": "2026-06-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-22",
+          "end": "2026-08-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-24",
+          "end": "2026-10-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-28",
+          "end": "2026-11-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-26",
+          "end": "2026-12-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni"
+        }
+      ],
+      "venue": "Opicina: via Nazionale, Strada per Vienna e via di Prosecco",
+      "sectors": "Antiquariato, modernariato, collezionismo, artigianato artistico",
+      "organizer": "Associazione Cose di Vecchie Case, in coorganizzazione con il Comune",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "contacts": {
+        "email": "cosedivecchiecase.trieste@virgilio.it"
+      },
+      "hours": "Dalle 8 al tramonto"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Mercatino del Porto Vecchio",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+        "label": "www.discover-trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-11",
+          "end": "2026-01-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-08",
+          "end": "2026-02-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-08",
+          "end": "2026-03-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-12",
+          "end": "2026-04-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-10",
+          "end": "2026-05-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-14",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-12",
+          "end": "2026-07-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-09",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-08",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-13",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio"
+        }
+      ],
+      "venue": "Largo Città di Santos",
+      "sectors": "Antiquariato, modernariato, usato, libri, dischi, collezionismo",
+      "organizer": "Associazione Mericordo",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "Dalle 8 al tramonto; riconfermare orario e svolgimento in caso di maltempo"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Mercatino di Cavana",
+      "category": "mercatino",
+      "months": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+        "label": "www.discover-trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-01",
+          "end": "2026-02-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-01",
+          "end": "2026-03-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-05",
+          "end": "2026-04-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-03",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-07",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-05",
+          "end": "2026-07-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-06",
+          "end": "2026-09-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-04",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-06",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        }
+      ],
+      "venue": "Piazza Cavana e via del Pesce",
+      "sectors": "Antiquariato, modernariato, usato, libri, dischi, collezionismo",
+      "organizer": "Associazione Mericordo",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "Dalle 8 al tramonto; riconfermare orario e svolgimento in caso di maltempo"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Mercatino di Borgo San Sergio",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo",
+        "label": "www.discover-trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-17",
+          "end": "2026-01-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-14",
+          "end": "2026-02-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-14",
+          "end": "2026-03-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-18",
+          "end": "2026-04-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-16",
+          "end": "2026-05-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-20",
+          "end": "2026-06-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-18",
+          "end": "2026-07-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-15",
+          "end": "2026-08-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2026-11-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-19",
+          "end": "2026-12-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo"
+        }
+      ],
+      "venue": "Piazza XXV Aprile, Borgo San Sergio",
+      "sectors": "Antiquariato, modernariato, usato, libri, dischi, collezionismo",
+      "organizer": "Associazione Mericordo",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-borgo",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "Dalle 8 al tramonto; riconfermare orario e svolgimento in caso di maltempo"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Mercatino di Ponterosso",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+        "label": "www.discover-trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-25",
+          "end": "2026-01-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-22",
+          "end": "2026-02-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-22",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-26",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-24",
+          "end": "2026-05-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-28",
+          "end": "2026-06-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-26",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-23",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-27",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-22",
+          "end": "2026-11-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-27",
+          "end": "2026-12-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+        }
+      ],
+      "venue": "Via Bellini, presso piazza Ponterosso",
+      "sectors": "Antiquariato, modernariato, usato, libri, dischi, collezionismo",
+      "organizer": "Associazione Mericordo",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "Dalle 8 al tramonto; riconfermare orario e svolgimento in caso di maltempo"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "CreAttivaMente – Piazza Cavana",
+      "category": "artigianato",
+      "months": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente",
+        "label": "www.discover-trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-15",
+          "end": "2026-02-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-17",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-21",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-19",
+          "end": "2026-07-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-16",
+          "end": "2026-08-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-15",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-20",
+          "end": "2026-12-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        }
+      ],
+      "venue": "Piazza Cavana e via del Pesce",
+      "sectors": "Artigianato e creazioni artistiche",
+      "organizer": "Associazione culturale CreAttivaMente",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "Dall’alba al tramonto"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "CreAttivaMente – Piazza Hortis",
+      "category": "artigianato",
+      "months": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente",
+        "label": "www.discover-trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-08",
+          "end": "2026-02-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-08",
+          "end": "2026-03-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-12",
+          "end": "2026-04-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-10",
+          "end": "2026-05-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-14",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-12",
+          "end": "2026-07-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-09",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-08",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-13",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente"
+        }
+      ],
+      "venue": "Piazza Hortis",
+      "sectors": "Artigianato e creazioni artistiche",
+      "organizer": "Associazione culturale CreAttivaMente",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.discover-trieste.it/vivi/trieste-now/creattivamente",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "Dall’alba al tramonto"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Bioest",
+      "category": "espositiva",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/bioest-2026-323717",
+        "label": "www.comune.trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-06",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/bioest-2026-323717"
+        }
+      ],
+      "venue": "Parco di San Giovanni",
+      "sectors": "Prodotti biologici, alimentari, biocosmesi e fitocosmesi, benessere",
+      "organizer": "Associazione Bioest e Comune di Trieste",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/bioest-2026-323717",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "10:00–20:00"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Olio Capitale",
+      "category": "espositiva",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.oliocapitale.it/pianifica/",
+        "label": "www.oliocapitale.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-13",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.oliocapitale.it/pianifica/"
+        }
+      ],
+      "venue": "Trieste Convention Center, Porto Vecchio, padiglioni 27, 28 e 28 bis",
+      "sectors": "Olio extravergine d’oliva e prodotti del settore oleario",
+      "organizer": "Camera di Commercio Venezia Giulia / Aries",
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.oliocapitale.it/pianifica/",
+        "note": "Stand espositivi del settore oleario tramite organizzatore: richiedere ammissione, preventivo e contratto. Il prezzo del biglietto per visitatori non è il costo dello stand."
+      },
+      "contacts": {
+        "phone": "+39 040 6701281",
+        "email": "info@oliocapitale.it"
+      },
+      "hours": "10:00–19:00",
+      "additionalSources": [
+        "https://www.oliocapitale.it/contatti"
+      ]
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Triestespresso Expo",
+      "category": "espositiva",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.triestespresso.it/modulistica",
+        "label": "www.triestespresso.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-21",
+          "end": "2026-10-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.triestespresso.it/modulistica"
+        }
+      ],
+      "venue": "Trieste Convention Center, padiglioni 27, 28 e 28 bis",
+      "sectors": "Caffè, macchine e tecnologie della filiera del caffè",
+      "organizer": "Aries scarl / Camera di Commercio Venezia Giulia",
+      "participation": {
+        "type": "exhibitors",
+        "url": "https://www.triestespresso.it/modulistica",
+        "note": "Manifestazione B2B della filiera del caffè. Richiedere lo stand all’organizzatore, preventivo e modulistica tecnica; i giorni di allestimento e disallestimento non sono date di apertura. I biglietti visitatori non sono tariffe espositore."
+      },
+      "contacts": {
+        "email": "info@triestespresso.it"
+      },
+      "hours": "9:30–18:00"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "World Animal Day – mercatino e street food",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.turismofvg.it/eventi/world-animal-day-trieste",
+        "label": "www.turismofvg.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/world-animal-day-trieste"
+        }
+      ],
+      "venue": "Viale Romolo Gessi",
+      "sectors": "Artigianato senza derivati animali, libri, alimentari vegan e street food",
+      "organizer": "NAICA ODV",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.turismofvg.it/eventi/world-animal-day-trieste",
+        "note": "Evento con associazioni invitate, mercatino artigianale e street food vegan. Contattare NAICA per verificare se vengono ammessi espositori professionali esterni e con quali requisiti e costi."
+      }
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Fiera di San Martino – Prosecco",
+      "category": "tradizionale",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://amministrazionetrasparente.comune.trieste.it/wp-content/uploads/2026/05/01_Relazione_Giunta_2025.pdf",
+        "label": "amministrazionetrasparente.comune.trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-11",
+          "end": "2025-11-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://amministrazionetrasparente.comune.trieste.it/wp-content/uploads/2026/05/01_Relazione_Giunta_2025.pdf"
+        }
+      ],
+      "venue": "Prosecco",
+      "sectors": "",
+      "organizer": "Comune di Trieste",
+      "participation": {
+        "type": "selected",
+        "url": "https://amministrazionetrasparente.comune.trieste.it/wp-content/uploads/2026/05/01_Relazione_Giunta_2025.pdf",
+        "note": "Edizione 2025 documentata nel rendiconto comunale. Data e modalità 2026 da confermare con l’Ufficio Commercio; la segnalazione 11 novembre 2026 su un calendario generato con AI non è stata assunta come conferma ufficiale."
+      }
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Mercatino di Natale di Trieste",
+      "category": "mercatino",
+      "months": [
+        1,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/inaugurate-dal-sindaco-dipiazza-la-pista-di-pattinaggio-sul-ghiaccio-aperta-fino-all11-gennaio-2026-in-piazza-ponterosso-e-la-tradizionale-fiera-di-san-nicolo-315407",
+        "label": "www.comune.trieste.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-07",
+          "end": "2026-01-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/inaugurate-dal-sindaco-dipiazza-la-pista-di-pattinaggio-sul-ghiaccio-aperta-fino-all11-gennaio-2026-in-piazza-ponterosso-e-la-tradizionale-fiera-di-san-nicolo-315407"
+        }
+      ],
+      "venue": "Via delle Torri, Ponchielli, Bellini, piazza Ponterosso e piazza della Borsa",
+      "sectors": "",
+      "organizer": "Comune di Trieste / organizzazione mercatino",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.comune.trieste.it/it/novita-227102/comunicati-227104/inaugurate-dal-sindaco-dipiazza-la-pista-di-pattinaggio-sul-ghiaccio-aperta-fino-all11-gennaio-2026-in-piazza-ponterosso-e-la-tradizionale-fiera-di-san-nicolo-315407",
+        "note": "È documentata soltanto l’edizione Natale 2025–Epifania 2026. Date, ammissioni, costi e domande del Natale 2026 da riconfermare; non confondere con la Fiera di San Nicolò in viale XX Settembre."
+      }
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Trieste",
+      "name": "Mercatino agricolo di Piazza Vittorio Veneto",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.turismofvg.it/eventi/mercatino-agricolo-in-piazza-vittorio-veneto-480975?LangSetCMS=it",
+        "label": "www.turismofvg.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-05",
+          "end": "2026-09-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-agricolo-in-piazza-vittorio-veneto-480975?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-agricolo-in-piazza-vittorio-veneto-480975?LangSetCMS=it"
+        }
+      ],
+      "venue": "Piazza Vittorio Veneto",
+      "sectors": "Frutta, verdura, miele, conserve e prodotti agricoli locali",
+      "organizer": "Associazione Mercatino Agricolo",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.turismofvg.it/eventi/mercatino-agricolo-in-piazza-vittorio-veneto-480975?LangSetCMS=it",
+        "note": "La fonte documenta soltanto le due giornate di settembre. Chiedere all’associazione requisiti per produttori, domanda e costo; non equiparare automaticamente l’attività agricola al commercio ambulante e non confondere con Campagna Amica."
+      },
+      "hours": "8:00–14:00"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Muggia",
+      "name": "Mercatino META",
+      "category": "mercatino",
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta",
+        "label": "www.turismofvg.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-01",
+          "end": "2026-03-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-05",
+          "end": "2026-04-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-03",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-17",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-07",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-21",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-05",
+          "end": "2026-07-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-19",
+          "end": "2026-07-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-16",
+          "end": "2026-08-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-06",
+          "end": "2026-09-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-04",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-15",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-06",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-13",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-20",
+          "end": "2026-12-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta"
+        }
+      ],
+      "venue": "Piazza Galilei",
+      "sectors": "Artigianato, fai da te, modernariato e vintage",
+      "organizer": "Associazione META Turisti",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.turismofvg.it/eventi/mercatino-a-muggia-meta",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      }
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Muggia",
+      "name": "Mercatino CreAttivaMente",
+      "category": "mercatino",
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it",
+        "label": "www.turismofvg.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-21",
+          "end": "2026-03-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-06",
+          "end": "2026-04-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-18",
+          "end": "2026-04-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-16",
+          "end": "2026-05-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-02",
+          "end": "2026-06-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-20",
+          "end": "2026-06-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-21",
+          "end": "2026-11-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-19",
+          "end": "2026-12-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it"
+        }
+      ],
+      "venue": "Piazza Galilei",
+      "sectors": "Artigianato, riciclo, vintage, modernariato e usato",
+      "organizer": "CreAttivaMente",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.turismofvg.it/eventi/mercatino-di-muggia-creattivamente?LangSetCMS=it",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "9:00–17:00"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Muggia",
+      "name": "Muggia Crea",
+      "category": "artigianato",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.turismofvg.it/eventi/muggia-crea-mostra-mercato-dell-artigianato",
+        "label": "www.turismofvg.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-10",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/muggia-crea-mostra-mercato-dell-artigianato"
+        }
+      ],
+      "venue": "Largo Nazario Sauro",
+      "sectors": "Bigiotteria artigianale, borse, ceramica, pittura e lavorazioni in legno",
+      "organizer": "Pro Loco Muggia",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.turismofvg.it/eventi/muggia-crea-mostra-mercato-dell-artigianato",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "10:00–19:00"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Muggia",
+      "name": "Madonna d’Agosto – mercatini di Muggia Vecchia",
+      "category": "artigianato",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://chipmunk-daffodil-f58e.squarespace.com/eventi/madonna-dagosto-eventi-2026",
+        "label": "chipmunk-daffodil-f58e.squarespace.com",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-15",
+          "end": "2026-08-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://chipmunk-daffodil-f58e.squarespace.com/eventi/madonna-dagosto-eventi-2026"
+        }
+      ],
+      "venue": "Parco di Muggia Vecchia, Salita Muggia Vecchia 53",
+      "sectors": "Libro usato di beneficenza e artigianato del laboratorio Il Filo Che Unisce",
+      "organizer": "Parrocchia Santa Maria Assunta e Amici di Muggia Vecchia APS",
+      "participation": {
+        "type": "selected",
+        "url": "https://chipmunk-daffodil-f58e.squarespace.com/eventi/madonna-dagosto-eventi-2026",
+        "note": "Il programma della festa va dal 5 al 16 agosto, ma i mercatini sono indicati soltanto il 15 agosto. Attività benefiche e del laboratorio artigianale: nessuna ammissione libera per ambulanti esterni documentata; chiedere all’organizzatore."
+      },
+      "contacts": {
+        "phone": "040 271164",
+        "email": "santuariomuggiavecchia@gmail.com"
+      },
+      "hours": "Dall’alba al tramonto"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Muggia",
+      "name": "Montedoro Expò – mostra scambio e mercatino",
+      "category": "espositiva",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.autoraduni.it/autoraduno/1-montedoro-expo/",
+        "label": "www.autoraduni.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-14",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.autoraduni.it/autoraduno/1-montedoro-expo/"
+        }
+      ],
+      "venue": "Centro Commerciale Montedoro, via Flavia di Stramare 119",
+      "sectors": "Veicoli storici, mostra scambio e mercatino motoristico",
+      "organizer": "ASD Raggi Incrociati Veicoli Storici Trieste",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.autoraduni.it/autoraduno/1-montedoro-expo/",
+        "note": "Contattare l’ASD per esposizione e mercatino; verificare merceologie, eventuale ammissione professionale e costo. Ingresso visitatori e parcheggio gratuiti non equivalgono a stand gratuito."
+      },
+      "contacts": {
+        "phone": "3270750000",
+        "email": "raggi.incrociati@gmail.com"
+      },
+      "hours": "14 marzo 9:00–20:30; 15 marzo 10:00–20:00",
+      "additionalSources": [
+        "https://www.turismofvg.it/proxyvfs.axd/null/r355539"
+      ]
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "Duino Aurisina",
+      "name": "Mercatino delle pulci di Aurisina",
+      "category": "mercatino",
+      "months": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "source": {
+        "url": "https://www.turismofvg.it/eventi/mercatino-delle-pulci-cose-di-vecchie-case",
+        "label": "www.turismofvg.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-18",
+          "end": "2026-04-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-delle-pulci-cose-di-vecchie-case"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-delle-pulci-cose-di-vecchie-case"
+        },
+        {
+          "year": 2026,
+          "label": "Terzo sabato del mese nel periodo aprile–ottobre; singole giornate intermedie da riconfermare",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-delle-pulci-cose-di-vecchie-case"
+        }
+      ],
+      "venue": "Piazza San Rocco, Aurisina",
+      "sectors": "Piccolo antiquariato, modernariato, collezionismo, artigianato artistico e hobbistica",
+      "organizer": "Associazione Cose di Vecchie Case e Comune di Duino Aurisina",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.turismofvg.it/eventi/mercatino-delle-pulci-cose-di-vecchie-case",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "contacts": {
+        "email": "cosedivecchiecase.trieste@virgilio.it"
+      },
+      "hours": "Dalle 8; ingresso libero per visitatori"
+    },
+    {
+      "region": "Friuli-Venezia Giulia",
+      "city": "San Dorligo della Valle",
+      "name": "Mercatino dell’artigianato di Bagnoli della Rosandra",
+      "category": "artigianato",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.turismofvg.it/eventi/mercatino-dell-artigianato-503658",
+        "label": "www.turismofvg.it",
+        "checkedAt": "2026-10-11"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismofvg.it/eventi/mercatino-dell-artigianato-503658"
+        }
+      ],
+      "venue": "Piazza Bagnoli della Rosandra",
+      "sectors": "Artigianato",
+      "organizer": "Associazione Naturosandra",
+      "participation": {
+        "type": "selected",
+        "url": "https://www.turismofvg.it/eventi/mercatino-dell-artigianato-503658",
+        "note": "Contattare l’organizzatore per selezione degli espositori, ammissione professionale, domanda, costi e disponibilità; le date pubblicate non attestano posteggi liberi."
+      },
+      "hours": "10:30–17:00"
+    }
+  ]
+}

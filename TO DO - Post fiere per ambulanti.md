@@ -102,7 +102,19 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
   Ceppo Lucignano e programmi natalizi ancora storici. Verificare ammissioni
   professionali, giorni commerciali dei periodi/feste e allegati grafici residui.
 
-**Ricerca approfondita ancora da fare: 105 province e unità territoriali equivalenti.**
+- [x] **Trieste — ricerca approfondita completata**: controllati i sei comuni,
+  24 manifestazioni in quattro comuni pubblicate in
+  [/fiere](https://subingresso.it/fiere?provincia=Trieste), prima una sola scheda.
+  22 con edizioni 2026 e due con storico 2025; date distinte, contatti e procedure
+  dove documentati. Barbacan dicembre: candidatura 30 ottobre–8 novembre;
+  antiquariato Trieste 2027: domanda 19 ottobre–18 novembre 2026.
+  Fonti, esclusioni e limiti in `data/fiere-trieste.json` e `data/FIERE.md`.
+- [ ] **Trieste — aggiornamenti periodici**: San Martino e Natale 2026,
+  conferma Corte dei Miracoli Muggia (fonti discordanti e nuovo affidamento),
+  giornate intermedie Aurisina, nuove edizioni e ammissioni professionali.
+  Muggia: bando gestione entro 23 ottobre ore 12, distinto dalle domande espositori.
+
+**Ricerca approfondita ancora da fare: 104 province e unità territoriali equivalenti.**
 Gli eventi già presenti e gli import regionali costituiscono una base; le caselle
 seguenti indicano il lavoro provinciale da completare nelle prossime sessioni.
 Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegna 2026.
@@ -151,7 +163,7 @@ Elenco allineato alle 110 unità territoriali del calendario, inclusa la Sardegn
 
 - [ ] Gorizia
 - [ ] Pordenone
-- [ ] Trieste
+- [x] Trieste — completata l’11 ottobre 2026; aggiornamenti periodici sopra
 - [ ] Udine
 
 #### Lazio

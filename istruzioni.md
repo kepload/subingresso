@@ -1032,6 +1032,21 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+Ricerca Trieste (11 ottobre 2026): sei comuni controllati, 24 manifestazioni in
+quattro comuni (+23), 22 con edizioni 2026 e due con storico 2025. Dati e audit
+in `data/fiere-trieste.json`; 45 fonti, pagine comunali renderizzate in browser,
+PDF operativi e calendario regionale (due fiere espositive). Barbacan dicembre:
+80 euro, produttori diretti, candidatura 30 ottobre–8 novembre. Antiquariato
+Trieste 2027: 13 giornate approvate, domanda SUO 19 ottobre–18 novembre 2026. San Nicolò: PEC per
+eventuali posti residui, senza disponibilità garantita. Corte dei Miracoli Muggia
+esclusa per fonti discordanti; avviso gestione 23 ottobre ore 12 riguarda il gestore.
+San Martino/Natale restano storici; mercatino Madonna d’Agosto solo 15 agosto.
+Altre province identiche; totale 2.149 eventi, 1.988 con edizioni, 1.715 con date
+precise. Sesta provincia ricercata, 104 da approfondire. Cache fiere.js 21,
+fiere.json 14. Build, settori, regressioni catalogo e browser Chromium/WebKit
+verificati; dettagli Trieste ricontrollati dopo le date 2027.
+Limiti e aggiornamenti in data/FIERE.md e TODO.
+
 10 ottobre: filtro principale “Cosa vendi” con quattro macro categorie
 (alimentare, non alimentare, antiquariato e vintage, artigianato/hobbistica).
 Campo `merchandiseSectors` generato da build-fiere.py usando settori della fonte
