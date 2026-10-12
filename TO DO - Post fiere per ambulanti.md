@@ -174,13 +174,15 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 
 - [x] **Padova — ricerca approfondita completata**: ricerca nei 101 comuni attuali
   (102 chiavi del dataset più Santa Caterina d’Este); 95 manifestazioni in 41 comuni,
-  prima 11, pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Padova).
+  prima 11, integrate nel catalogo per [/fiere](https://subingresso.it/fiere?provincia=Padova).
   Esaminate 167 segnalazioni Veneto e quattro calendari ufficiali; integrate fonti
   comunali e organizzatori, 43 contatti e nove scadenze. Piove sei giorni di banchi,
   Arsego mercato 17–20 ottobre, Baone Bisi 16–17 maggio e Rustega 3 maggio.
   Moduli Bertipaglia e bando espositori Cittadella distinti dalle domande ambulanti;
   Natale storico e periodi generali segnalati. Fonti, esclusioni e limiti in
   `data/fiere-padova.json` e `data/FIERE.md`.
+  **Pubblicazione da verificare**: push eseguito, ma Vercel non ha avviato il deploy;
+  il controllo live continua a trovare 11 schede. Ricerca e test locali completati.
 - [ ] **Padova — aggiornamenti periodici**: nuove edizioni, bandi, disponibilità e
   ammissioni; chiarire antiquariato Cittadella, giorni banchi Folpo e Arzergrande,
   San Luca Camposampiero, Montagnanese, Polverara, Natale e programmi in immagini.

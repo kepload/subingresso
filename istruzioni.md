@@ -1045,6 +1045,11 @@ Folpo periodo 22–27 ottobre, giorni banchi da verificare; Natale solo storico.
 Catalogo 2.491 eventi, 2.336 con edizioni, 1.961 con date pubblicate; altre province
 identiche. Cache fiere.js v=27, JSON v=20. TO DO: 12 completate, 98 mancanti;
 prossima Treviso. Fonti e limiti in data/FIERE.md, nessun invio di domande.
+Pubblicazione Padova in attesa: push `61503dc` riuscito, ma nessun check/deployment
+Vercel apparso e live ancora a 11 schede. CLI non autenticata; vecchio progetto
+locale `subingresso.it` diverso dal `subingresso` nel precedente stato GitHub.
+Non fare deploy su quel collegamento senza verifica. Ricerca e test completati;
+riattivare/verificare integrazione e controllare live 95 schede/hash catalogo.
 
 Aggiornamento 11 ottobre 2026 — Verona: 75 schede (prima 20), 36 comuni con
 manifestazioni, ricerca nei 98 comuni; 277 segnalazioni regionali e sei documenti

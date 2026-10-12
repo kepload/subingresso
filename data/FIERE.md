@@ -88,6 +88,19 @@ WebKit 390 px, filtri di tutte le province, lista/mappa, dettagli, tastiera,
 gestione errori e assenza di overflow. Confronto prima/dopo sulle altre province
 superato. Modifiche precedenti dell’utente escluse dal commit.
 
+**Pubblicazione non ancora verificata — 12 ottobre 2026:** commit `61503dc`
+inviato a `main`, ma dopo i tentativi di verifica il dominio continua a servire
+il catalogo dell’11 ottobre con 11 schede di Padova. GitHub non mostra stato,
+check o deployment Vercel per il nuovo commit; quello precedente risulta
+pubblicato correttamente. Identità autore invariata. La CLI Vercel non ha una
+sessione autenticata; il login automatico è stato interrotto, senza cambiare
+configurazioni di hosting. Il vecchio collegamento locale `.vercel/project.json`
+indica `subingresso.it`, mentre lo stato GitHub precedente rimanda a `subingresso`:
+non usarlo per un deploy manuale senza verificare il progetto corretto.
+Controllare integrazione GitHub/Vercel e pubblicare il catalogo, poi verificare
+95 schede e hash dell’asset; script di verifica nell’archivio esterno. Nessun
+annuncio, account, database o configurazione di produzione modificati.
+
 ## Verona: ricerca approfondita — 11 ottobre 2026
 
 75 manifestazioni in 36 comuni, rispetto alle 20 precedenti. Ricerca nominale
