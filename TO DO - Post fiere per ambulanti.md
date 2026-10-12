@@ -45,7 +45,7 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 - [ ] 🟠 Migliorare la ricerca delle fiere e il calendario — unificare gli interventi per chi cerca eventi e posteggi; il calendario esiste già, concentrarsi su date confermate e informazioni per partecipare prima di ampliare i filtri.
 - [ ] 🟢 Creare la sezione «Fiere per ambulanti» — filtri per regione, mese e domande aperte.
 
-### Ricerca approfondita per provincia — aggiornamento 11 ottobre 2026
+### Ricerca approfondita per provincia — aggiornamento 12 ottobre 2026
 
 - [x] **Brescia — ricerca approfondita completata**: 206 manifestazioni in 86 comuni
   pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Brescia). Esaminate 1.031
@@ -172,11 +172,24 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
   giornate operative e conflitti; completare i riscontri rimasti senza fonte
   primaria corrente. Nessuna autorizzazione automatica a nuovi interventi.
 
-**Ricerca approfondita: 11 province completate, 99 ancora da fare su 110.**
+- [x] **Padova — ricerca approfondita completata**: ricerca nei 101 comuni attuali
+  (102 chiavi del dataset più Santa Caterina d’Este); 95 manifestazioni in 41 comuni,
+  prima 11, pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Padova).
+  Esaminate 167 segnalazioni Veneto e quattro calendari ufficiali; integrate fonti
+  comunali e organizzatori, 43 contatti e nove scadenze. Piove sei giorni di banchi,
+  Arsego mercato 17–20 ottobre, Baone Bisi 16–17 maggio e Rustega 3 maggio.
+  Moduli Bertipaglia e bando espositori Cittadella distinti dalle domande ambulanti;
+  Natale storico e periodi generali segnalati. Fonti, esclusioni e limiti in
+  `data/fiere-padova.json` e `data/FIERE.md`.
+- [ ] **Padova — aggiornamenti periodici**: nuove edizioni, bandi, disponibilità e
+  ammissioni; chiarire antiquariato Cittadella, giorni banchi Folpo e Arzergrande,
+  San Luca Camposampiero, Montagnanese, Polverara, Natale e programmi in immagini.
+
+**Ricerca approfondita: 12 province completate, 98 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
-**Ordine operativo aggiornato l’11 ottobre 2026, dalla più importante alla meno
+**Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
 bacino di operatori/clienti, capacità di spesa e turismo, poi vicinanza alla
 Lombardia e beneficio atteso della ricerca. Favorire il Nord e le zone ricche
@@ -188,7 +201,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **1. Milano** — Lombardia; ricerca completata, vedi sopra
 - [x] **2. Bergamo** — Lombardia
 - [x] **3. Verona** — Veneto
-- [ ] **4. Padova** — Veneto
+- [x] **4. Padova** — Veneto; ricerca completata, vedi sopra
 - [ ] **5. Treviso** — Veneto
 - [ ] **6. Vicenza** — Veneto
 - [ ] **7. Modena** — Emilia-Romagna

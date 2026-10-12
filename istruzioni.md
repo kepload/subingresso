@@ -1032,6 +1032,20 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+Aggiornamento 12 ottobre 2026 — Padova: 95 schede in 41 comuni, prima 11.
+Ricerca nei 101 comuni attuali (102 chiavi geo più Santa Caterina d’Este),
+167 righe Veneto, quattro calendari ufficiali e fonti comunali/organizzatori.
+Override `data/fiere-padova.json`, audit fonti/comuni/esclusioni e limiti;
+43 contatti, nove termini. Piove sei giorni di banchi; Arsego mercato 17–20;
+Baone Bisi 16–17 maggio; Rustega 3 maggio; Saonara mercato 10 maggio;
+Gazzo 11 ottobre; San Lorenzo Vo’ 8–10 agosto; Bartolomeo Battaglia 22 agosto.
+Bertipaglia termine 16 ottobre solo ragazzi, Cittadella 30 settembre solo
+esposizione senza vendita; antiquariato Cittadella con procedura sospesa da chiarire.
+Folpo periodo 22–27 ottobre, giorni banchi da verificare; Natale solo storico.
+Catalogo 2.491 eventi, 2.336 con edizioni, 1.961 con date pubblicate; altre province
+identiche. Cache fiere.js v=27, JSON v=20. TO DO: 12 completate, 98 mancanti;
+prossima Treviso. Fonti e limiti in data/FIERE.md, nessun invio di domande.
+
 Aggiornamento 11 ottobre 2026 — Verona: 75 schede (prima 20), 36 comuni con
 manifestazioni, ricerca nei 98 comuni; 277 segnalazioni regionali e sei documenti
 scaricati. Override `data/fiere-verona.json`, audit comuni/fonti/esclusioni e dubbi.
