@@ -224,7 +224,21 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   calendario Recoaro, Natale Vicenza, giornate Nove, date testuali e scansioni residue.
   Non applicare moduli storici al 2026 né periodi delle feste ai giorni dei banchi.
 
-**Ricerca approfondita: 14 province completate, 96 ancora da fare su 110.**
+- [x] **Modena — ricerca approfondita completata (14 ottobre 2026)**: ricerca
+  nominale nei 47 comuni; 74 manifestazioni in 33 comuni, prima 10, nel calendario
+  [/fiere](https://subingresso.it/fiere?provincia=Modena). Fonti comunali, turistiche,
+  organizzatori e PDF operativi; 120 documenti tentati e dieci scadenze.
+  Castelfranco casette: termine 17 ottobre; Pievepelago Castagna: 27 ottobre ore 12;
+  Castelvetro Natale: 16 novembre, P.IVA 3×3 m 48 €. Ognissanti Concordia in due
+  giornate; Vignola distingue fiori, opere proprie e ambulanti. Calendario regionale
+  completo non recuperato, snapshot conservati e limiti espliciti in
+  `data/fiere-modena.json` e `data/FIERE.md`. Altre 2.573 schede identiche.
+- [ ] **Modena — aggiornamenti periodici**: disponibilità, bandi e quote; recuperare
+  disciplinare casette Castelfranco 2026, registro regionale completo e programmi
+  residui, Bruino Medolla, calendari montani e Natale. Non trasferire documenti
+  storici alle nuove edizioni né periodi generali ai giorni dei banchi.
+
+**Ricerca approfondita: 15 province completate, 95 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -243,7 +257,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **4. Padova** — Veneto; ricerca completata, vedi sopra
 - [x] **5. Treviso** — Veneto; ricerca completata, vedi sopra
 - [x] **6. Vicenza** — Veneto; ricerca completata, vedi sopra
-- [ ] **7. Modena** — Emilia-Romagna
+- [x] **7. Modena** — Emilia-Romagna; ricerca completata, vedi sopra
 - [ ] **8. Parma** — Emilia-Romagna
 - [ ] **9. Reggio nell'Emilia** — Emilia-Romagna
 - [ ] **10. Varese** — Lombardia

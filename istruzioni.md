@@ -1,5 +1,17 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Ricerca Modena (14 ottobre 2026): 74 manifestazioni in 33 comuni, prima 10;
+47 comuni cercati, 120 documenti tentati, dieci scadenze. Override
+`data/fiere-modena.json`; fonti/esclusioni/limiti in `data/FIERE.md`, archivio locale
+`Documents/ricerca-fiere-modena-20261014`. Calendario regionale integrale non
+recuperato; snapshot regionali conservati, senza fingere verifica delle righe.
+Castelfranco casette termine 17 ottobre; Pievepelago Castagna 27 ottobre ore 12;
+Castelvetro Natale 16 novembre, 48 € per P.IVA 3×3 m. Concordia 31 ottobre/1 novembre;
+fiere Modena 17/31 gennaio 2027 da avviso esplicito. Catalogo 2.647 eventi, altre
+2.573 schede identiche. Cache fiere.js 31, catalogo 24; TO DO 15 province fatte,
+95 mancanti. Pubblicazione e verifiche registrate al termine della sessione.
+
+
 Manuale operativo per le sessioni AI. Contiene solo informazioni "evergreen": regole, pattern, stato sistema, bug ricorrenti.
 
 ## Qualità dati e profilo admin — 8 ottobre 2026
