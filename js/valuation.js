@@ -1,4 +1,4 @@
-/* Valutazione indicativa v2.2. Ipotesi di modello, NON prezzi di compravendite.
+/* Valutazione indicativa v2.3. Ipotesi di modello, NON prezzi di compravendite.
  * Importabile anche in Node per verificare i casi limite.
  */
 (function (root, factory) {
@@ -6,7 +6,7 @@
     else root.PosteggioValuation = factory();
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
-    const VERSION = '2.2';
+    const VERSION = '2.3';
     const choices = {
         baseIncasso: ['giorno', 'anno'], frequenza: ['settimanale', 'giornaliero', 'fiera'],
         zona: ['mare_lago', 'turistica', 'interna'], clientela: ['residenti', 'mista', 'turisti', 'non_so'],
@@ -60,9 +60,10 @@
         return d;
     }
     function estimate(input, version = VERSION) {
-        if (!['2.0', '2.1', VERSION].includes(version)) throw new Error('Versione del modello non disponibile.');
+        if (!['2.0', '2.1', '2.2', VERSION].includes(version)) throw new Error('Versione del modello non disponibile.');
         const d = validate(input);
-        const current = version === VERSION;
+        const current = ['2.2', VERSION].includes(version);
+        const revisedNonFood = version === VERSION && d.settore === 'non_alimentare';
         const knownProfit = d.utileGiorno !== null;
         const surplus = knownProfit ? d.utileGiorno * d.giornate : d.fatturato * 0.20;
         const notes = ['Stima indicativa: coefficienti prudenziali ancora da calibrare su vendite concluse. Merce, furgone e attrezzature esclusi.'];
@@ -72,8 +73,8 @@
         // Ogni euro aggiuntivo di incasso aumenta la base, senza scatti di soglia.
         const revenueBase = current ? d.giornate * (
             Math.min(dailyRevenue, 1100) * 0.88
-            + Math.min(Math.max(dailyRevenue - 1100, 0), 900) * 0.25
-            + Math.max(dailyRevenue - 2000, 0) * 0.65
+            + Math.min(Math.max(dailyRevenue - 1100, 0), 900) * (revisedNonFood ? 0.53 : 0.25)
+            + Math.max(dailyRevenue - 2000, 0) * (revisedNonFood ? 0.71 : 0.65)
         ) : d.fatturato * 0.5;
         const base = current
             ? (knownProfit ? Math.min(revenueBase * (surplus / d.fatturato) / 0.20, revenueBase * 1.5) : revenueBase)
