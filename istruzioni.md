@@ -653,7 +653,14 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - `loadRecentListings()` `.limit(12)`, `created_at DESC`, fallback `LISTINGS.slice(0,12)`.
 - Banner mobile sopra "Vendi in 3 passi": link verde a `valutatore.html`.
 
-## 🧮 Valutatore v2 (7 ottobre 2026)
+## 🧮 Valutatore v2.1 (14 ottobre 2026)
+
+- **Nuova decisione dell’utente:** riconoscere il maggior valore dell’alimentare (+30% di base sul non alimentare) e degli incassi elevati; riferimento circa € 70–80 mila per € 2.000 a giornata in un posteggio settimanale ordinario. Sono ipotesi commerciali del modello, non prezzi di compravendite documentate.
+- V2.1: base economica v2 invariata, ×1,30 per alimentare; ulteriore premio continuo `1 + min(0,30; max(0; (incasso medio giornaliero − 1000) / 1000 × 0,15))`. Usa incasso annuo/giornate anche con input annuo. Con 50 giornate, concessione stabile, caratteristiche neutre e spese non indicate: € 2.000/giorno → **€ 74.750**, € 3.000/giorno → **€ 126.750**; a 52 giornate il primo vale € 77.740. Margine dichiarato nullo resta zero; spese elevate e durata breve continuano a limitare il valore. Nessun minimo forzato per attività stagionali o concessioni brevi.
+- `PATCH_VALUTATORE_V21.sql` introduce la RPC `save_valutazione_v21` con gli stessi controlli della v2, salva versione 2.1 e moltiplicatori e ammette il claim anonimo sia 2.0 sia 2.1. Conserva la RPC 2.0 per le pagine già aperte; applicare dopo `PATCH_VALUTATORE_V2.sql`. Allinea il contatore admin alla versione 2.1. Nessun report storico modificato. `estimate(input, versione)` e il report mantengono spiegazioni e fattori propri della versione salvata.
+- Cache: `js/valuation.js?v=3` in valutatore/report/dashboard, `js/pages/valutatore.js?v=4`. Metodologia pubblica aggiornata. Regressioni: 34.560 scenari JS e 1.296 confronti JS/SQL in transazione **ROLLBACK**, inclusi soglie, input annuo/giornaliero, margini, concessioni, claim, permessi/RLS e compatibilità della vecchia RPC. Browser v2.1: `%TEMP%/subingresso-valutatore-v21-browser.cjs`.
+
+### Storico v2.0 (7 ottobre 2026; coefficienti alimentari superati dalla v2.1)
 
 - `valutatore.html` raccoglie 8 schermate; `js/pages/valutatore.js?v=1` gestisce il flusso; `js/valuation.js?v=1` è il modello condiviso con `report.html` e i test. JS vanilla, CSS locale: nessun rebuild Tailwind necessario.
 - **Priorità richiesta dall’utente: stime oneste. Rimosso il premio commerciale +18%** e i moltiplicatori eccessivi del v1. Non ripristinare gonfiature per incentivare gli annunci.
