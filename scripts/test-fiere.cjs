@@ -21,6 +21,35 @@ assert.equal(Object.keys(boundaries.sardiniaMunicipalities).length,377);
 for (const region of regions) assert(events.filter(e => e.region === region).length >= 10);
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
+// Vicenza: operational dates and category-specific conditions must survive the build.
+const viResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-vicenza.json'), 'utf8'));
+const viEvents = events.filter(e => e.province === 'Vicenza');
+const viEvent = (city, pattern) => viEvents.find(e => e.city === city && pattern.test(e.name));
+assert.equal(viEvents.length, 117);
+assert.equal(new Set(viResearch.research.municipalityCoverage.map(c => c.city)).size, 114);
+assert.equal(viResearch.research.municipalityCoverage.reduce((n,c) => n+c.eventsFound,0),117);
+assert.equal(new Set(viResearch.research.regionalRowsReviewed.map(r => r.row)).size,549);
+assert.equal(viEvent('Sarcedo', /Natale/).participation.deadline,'2026-12-03');
+assert(viEvent('Sarcedo', /Natale/).participation.note.includes('tipo B'));
+assert(viEvent('Sarcedo', /Natale/).participation.costs.includes('Nessun pagamento'));
+assert.deepEqual(viEvent('Barbarano Mossano', /CATERINA/).editions.map(d => d.start),['2026-11-22','2026-11-25']);
+assert(viEvent('Barbarano Mossano', /CATERINA/).participation.costs.includes('€80 / €100'));
+assert(viEvent('Barbarano Mossano', /CATERINA/).participation.note.includes('Nessuna energia elettrica'));
+assert.deepEqual(viEvent('Dueville', /Mostra Scambio/).editions.map(d => d.start),['2026-07-11','2026-07-12']);
+assert.deepEqual(viEvent('Enego', /Straordinari/).editions.map(d => d.start),['2026-08-09','2026-08-15','2026-08-23']);
+assert.equal(viEvent('Asiago', /Fiera dei Santi/).editions[0].start,'2026-11-02');
+assert(viEvent('Asiago', /Fiera dei Santi/).participation.note.includes('soltanto ditte industriali'));
+assert.equal(viEvent('Marostica', /San Simeone/).editions[0].start,'2026-10-25');
+assert.equal(viEvent('Santorso', /Natale/).editions[0].year,2025);
+assert(viEvent('Nove', /Ceramica/).editions.every(d => d.periodOnly));
+assert.deepEqual(viEvent('Recoaro Terme', /SALOTTO/).months,[6,7,8]);
+assert(!viEvents.some(e => /SFILATA CARRI|VIOFF|Mercatino di Primavera/.test(e.name)));
+assert(!JSON.stringify(viEvents).includes('\uFFFD'));
+for (const city of ['Barbarano Mossano','Colceresa','Lusiana Conco']) {
+    const e = viEvents.find(e => e.city === city);
+    assert(Number.isFinite(e.lat) && Number.isFinite(e.lng));
+    assert(e.coordinateSource.url.startsWith('https://www.geonames.org/'));
+}
 // Treviso: primary programmes override register dates; periods, categories and costs stay distinct.
 const tvResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-treviso.json'), 'utf8'));
 const tvEvents = events.filter(e => e.province === 'Treviso');

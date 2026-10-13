@@ -1032,6 +1032,18 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+13 ottobre 2026 — Vicenza: 117 schede in 49 comuni (prima 59), ricerca nominale
+nei 114 comuni e confronto con 549 programmi Veneto; audit in fiere-vicenza.json
+e data/FIERE.md. 55 giornate precise, 20 periodi, 42 testuali; 48 contatti, 6 scadenze.
+Sarcedo 8 dicembre: domanda 3 dicembre 23:59, suolo gratuito, tipo B e alimentari
+con SCIA; Barbarano 22/25 novembre con tariffe e moduli distinti, termini passati.
+Asiago Santi 2 novembre, occupazione 7:30; 30 giorni solo per ditte in P.tta Poste.
+Coordinate tre comuni unificati da GeoNames/localita.json; altre 2.466 schede
+identiche. Scartato nonholeta.it con contenuti estranei; Bassano/Malo e programmi
+Nove da approfondire, scansioni residue non verificate. Nessun modello locale.
+Cache fiere.js 30, catalogo 23; TO DO 14 completate, 96 mancanti su 110.
+Pubblicazione da verificare dopo push; nessun nuovo intervento automatico autorizzato.
+
 13 ottobre 2026 — Treviso: ricerca nei 94 comuni, 337 righe regionali e tre
 calendari Veneto; catalogo pubblicato e verificato con 79 schede in 39 comuni, prima 48.
 Override `data/fiere-treviso.json`, audit di fonti/comuni/esclusioni e limiti.

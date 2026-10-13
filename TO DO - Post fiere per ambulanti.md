@@ -209,7 +209,21 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Non applicare moduli 2025 al 2026 né dedurre nuove edizioni; nessun altro
   intervento automatico autorizzato.
 
-**Ricerca approfondita: 13 province completate, 97 ancora da fare su 110.**
+- [x] **Vicenza — ricerca approfondita completata (13 ottobre 2026)**: ricerca
+  nominale nei 114 comuni, 549 programmi regionali e calendari antiquariato/fieristico;
+  117 manifestazioni in 49 comuni, prima 59, in
+  [/fiere](https://subingresso.it/fiere?provincia=Vicenza). 55 schede con giornate
+  precise, 20 periodi e 42 indicazioni testuali; 48 contatti e sei scadenze.
+  Sarcedo Natale: 8 dicembre, domanda entro 3 dicembre ore 23:59, suolo gratuito;
+  Asiago Santi: 2 novembre. Barbarano: 22 e 25 novembre, moduli e tariffe distinti,
+  termini ordinari già trascorsi. Fonti e limiti in `data/fiere-vicenza.json`
+  e `data/FIERE.md`. Altre 2.466 schede identiche; pubblicazione da verificare.
+- [ ] **Vicenza — aggiornamenti periodici**: nuove edizioni, bandi, quote,
+  disponibilità e ammissioni; approfondire Bassano e Malo con fonti primarie correnti,
+  calendario Recoaro, Natale Vicenza, giornate Nove, date testuali e scansioni residue.
+  Non applicare moduli storici al 2026 né periodi delle feste ai giorni dei banchi.
+
+**Ricerca approfondita: 14 province completate, 96 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -227,7 +241,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **3. Verona** — Veneto
 - [x] **4. Padova** — Veneto; ricerca completata, vedi sopra
 - [x] **5. Treviso** — Veneto; ricerca completata, vedi sopra
-- [ ] **6. Vicenza** — Veneto
+- [x] **6. Vicenza** — Veneto; ricerca completata, vedi sopra
 - [ ] **7. Modena** — Emilia-Romagna
 - [ ] **8. Parma** — Emilia-Romagna
 - [ ] **9. Reggio nell'Emilia** — Emilia-Romagna
