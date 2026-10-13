@@ -88,8 +88,17 @@ comunali/regionali. Vecchio calendario Vicenza reindirizza alla homepage; non
 usato come prova. Mercatino scolastico Mussolente, festa Salcedo senza banchi,
 VIOFF e saloni industriali senza opportunità pertinenti esclusi. Gli appuntamenti
 di hobbisti/opere proprie non garantiscono ammissione di rivenditori professionali.
-Nessuna disponibilità, ammissione, proroga o ricavo garantiti. Pubblicazione e
-verifica online da completare dopo il push.
+Nessuna disponibilità, ammissione, proroga o ricavo garantiti.
+
+**Pubblicazione verificata:** commit `b7f1e13`, Vercel riuscito, catalogo online
+identico al contenuto del commit (SHA-256
+`d10c60628c69a143205f8aafb4cb9596e266650d5dc8c324099c2f332a354c75`).
+[/fiere?provincia=Vicenza](https://subingresso.it/fiere?provincia=Vicenza):
+117 schede, verifica Chromium desktop/telefono con sei dettagli operativi,
+caricamento completo, quattro filtri merceologici, nessun errore o overflow.
+Prima del push passati build, sintassi, controlli dati/settori e calendario
+Chromium desktop/tablet/mobile e WebKit mobile su tutte le province.
+Riscontri e schermate conservati nell’archivio locale della ricerca.
 
 ## Prova ibrida per comune — Gattinara, 13 ottobre 2026
 

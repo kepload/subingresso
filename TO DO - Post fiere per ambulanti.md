@@ -217,7 +217,8 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Sarcedo Natale: 8 dicembre, domanda entro 3 dicembre ore 23:59, suolo gratuito;
   Asiago Santi: 2 novembre. Barbarano: 22 e 25 novembre, moduli e tariffe distinti,
   termini ordinari già trascorsi. Fonti e limiti in `data/fiere-vicenza.json`
-  e `data/FIERE.md`. Altre 2.466 schede identiche; pubblicazione da verificare.
+  e `data/FIERE.md`. Altre 2.466 schede identiche; Vercel e sito verificati,
+  incluse sei schede operative e i filtri su desktop e telefono.
 - [ ] **Vicenza — aggiornamenti periodici**: nuove edizioni, bandi, quote,
   disponibilità e ammissioni; approfondire Bassano e Malo con fonti primarie correnti,
   calendario Recoaro, Natale Vicenza, giornate Nove, date testuali e scansioni residue.

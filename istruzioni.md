@@ -1042,7 +1042,10 @@ Coordinate tre comuni unificati da GeoNames/localita.json; altre 2.466 schede
 identiche. Scartato nonholeta.it con contenuti estranei; Bassano/Malo e programmi
 Nove da approfondire, scansioni residue non verificate. Nessun modello locale.
 Cache fiere.js 30, catalogo 23; TO DO 14 completate, 96 mancanti su 110.
-Pubblicazione da verificare dopo push; nessun nuovo intervento automatico autorizzato.
+Commit b7f1e13 pubblicato: Vercel riuscito, hash catalogo online uguale al commit;
+117 schede e sei dettagli operativi verificati su desktop/telefono, filtri senza
+errori. Build, settori e calendario completo Chromium/WebKit passati.
+Nessun nuovo intervento automatico autorizzato.
 
 13 ottobre 2026 — Treviso: ricerca nei 94 comuni, 337 righe regionali e tre
 calendari Veneto; catalogo pubblicato e verificato con 79 schede in 39 comuni, prima 48.
