@@ -187,13 +187,29 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Moduli Bertipaglia e bando espositori Cittadella distinti dalle domande ambulanti;
   Natale storico e periodi generali segnalati. Fonti, esclusioni e limiti in
   `data/fiere-padova.json` e `data/FIERE.md`.
-  **Pubblicazione da verificare**: push eseguito, ma Vercel non ha avviato il deploy;
-  il controllo live continua a trovare 11 schede. Ricerca e test locali completati.
+  Pubblicazione verificata il 13 ottobre: 95 schede online, attesa deploy risolta.
 - [ ] **Padova — aggiornamenti periodici**: nuove edizioni, bandi, disponibilità e
   ammissioni; chiarire antiquariato Cittadella, giorni banchi Folpo e Arzergrande,
   San Luca Camposampiero, Montagnanese, Polverara, Natale e programmi in immagini.
 
-**Ricerca approfondita: 12 province completate, 98 ancora da fare su 110.**
+- [x] **Treviso — ricerca approfondita completata**: confronto dei 94 comuni,
+  337 righe Veneto e tre calendari regionali; 79 manifestazioni in 39 comuni
+  pubblicate e verificate in [/fiere](https://subingresso.it/fiere?provincia=Treviso),
+  prima 48. 52 schede con giornate precise, 23 date testuali e quattro periodi;
+  38 contatti e due scadenze documentate, entrambe passate. Stelle a Natale
+  include il 7 dicembre; San Gregorio commerciale 7–9 marzo; Santa Lucia 12–14
+  dicembre, termine 30 settembre. Sei falsi positivi esclusi con motivazione.
+  Qwen su otto microtask, tutte le prove e note controllate da Codex; 4.782 token
+  locali, risparmio netto non misurato. Audit e limiti in `data/fiere-treviso.json`
+  e `data/FIERE.md`; le altre 2.446 schede sono identiche. Vercel e sito verificati.
+- [ ] **Treviso — aggiornamenti periodici**: bandi, disponibilità, quote e
+  ammissioni; chiarire Castelcucco, San Luca, Vi-Ve in Vintage e giornate dei
+  banchi nei periodi di festa. Approfondire Segusino, Tovena, Sarmede Teatro,
+  Natale Conegliano, Tucogiò e scansioni Istrana/Delizie non verificate visivamente.
+  Non applicare moduli 2025 al 2026 né dedurre nuove edizioni; nessun altro
+  intervento automatico autorizzato.
+
+**Ricerca approfondita: 13 province completate, 97 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -210,7 +226,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **2. Bergamo** — Lombardia
 - [x] **3. Verona** — Veneto
 - [x] **4. Padova** — Veneto; ricerca completata, vedi sopra
-- [ ] **5. Treviso** — Veneto
+- [x] **5. Treviso** — Veneto; ricerca completata, vedi sopra
 - [ ] **6. Vicenza** — Veneto
 - [ ] **7. Modena** — Emilia-Romagna
 - [ ] **8. Parma** — Emilia-Romagna

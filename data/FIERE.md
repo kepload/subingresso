@@ -867,7 +867,7 @@ rimangono da confermare; nessuna data 2027 è dedotta automaticamente.
 
 ## Ricerca approfondita — Treviso, 13 ottobre 2026
 
-Catalogo preparato con **79 manifestazioni in 39 comuni**, rispetto alle 48
+Catalogo pubblicato e verificato con **79 manifestazioni in 39 comuni**, rispetto alle 48
 precedenti. Ricerca nominale sul web dei **94 comuni** e confronto di tutte le
 **337 righe** provinciali del registro Veneto aggiornato all’8 ottobre, del
 calendario fieristico 24 agosto e dei mercatini antiquari 2026. Approfondite
@@ -949,4 +949,8 @@ e percentuale non misurati: manca un confronto sullo stesso caso solo Codex.
 Fonti, contesti e risultati privati in
 `Documents/AI-Fiere-Treviso-20261013`; nessun accesso autonomo web o pubblicazione
 del worker. Il build sostituisce solo Treviso. Cache fiere.js **29**, JSON **22**.
-Pubblicazione e controllo live da verificare dopo il push.
+Pubblicazione verificata: commit `2056461`, Vercel riuscito, hash
+del catalogo online identico alla versione committata. Controllo pubblico su
+desktop e telefono: 79 schede, sei dettagli critici e tutti i quattro filtri
+merceologici. Il caricamento iniziale mostra 12 schede; «Mostra altre fiere»
+permette di raggiungere tutte le 79. Suite completa Chromium/WebKit superata.
