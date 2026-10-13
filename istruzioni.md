@@ -1032,6 +1032,20 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+13 ottobre 2026 — Treviso: ricerca nei 94 comuni, 337 righe regionali e tre
+calendari Veneto; catalogo preparato con 79 schede in 39 comuni, prima 48.
+Override `data/fiere-treviso.json`, audit di fonti/comuni/esclusioni e limiti.
+42 ID conservati, 37 nuovi; sei falsi positivi rimossi, altre 2.446 schede identiche.
+Stelle a Natale aggiunge 7 dicembre; San Gregorio commerciale 7–9 marzo,
+street food/luna park 6–10. Santa Lucia domanda 30 settembre passato; Nervesa
+24 aprile passato. Tariffe e moduli distinti per operatori; date ambigue testuali.
+Qwen su otto microtask, 4.782 token locali, 288 s; quattro note usate dopo
+revisione Codex (una intatta, due correzioni semantiche e una formulazione).
+Worker senza web/pubblicazione; operation treviso-fiere-micro-v1-20261013 conclusa,
+non ripetere. Risparmio netto non misurato. Cache fiere.js 29, catalogo 22.
+Pubblicazione da verificare; TODO provincia da spuntare solo dopo controllo live.
+
+
 13 ottobre 2026 — prova ibrida per il solo comune di Gattinara: tre nuove schede
 in `data/fiere-comuni.json`, applicate dal build solo al comune approvato.
 Codex sceglie fonti, controlla date/costi/ammissioni e pubblica; Qwen trova ID
