@@ -216,7 +216,7 @@
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=20"></script>
 <script src="js/auth.js?v=22"></script>
-<script src="js/valuation.js?v=3"></script>
+<script src="js/valuation.js?v=4"></script>
 
 <script>
 (function() {
@@ -309,13 +309,16 @@
         const roi = Number(log.prezzo_avg) > 0 && Number.isFinite(Number(log.affitto_annuo)) ? (log.affitto_annuo / log.prezzo_avg * 100) : 0;
         document.getElementById('rRoi').textContent = roi.toFixed(1);
 
-        const isV2 = ['2.0', '2.1'].includes(log.algoritmo_version);
+        const isV2 = ['2.0', '2.1', '2.2'].includes(log.algoritmo_version);
         const isV21 = log.algoritmo_version === '2.1';
+        const isV22 = log.algoritmo_version === '2.2';
         let calculation = null;
         if (isV2 && log.dettagli_calcolo?.input) {
             try { calculation = PosteggioValuation.estimate(log.dettagli_calcolo.input, log.algoritmo_version); } catch (_) {}
         }
-        document.getElementById('rMethod').textContent = isV21
+        document.getElementById('rMethod').textContent = isV22
+            ? 'Base per giornata: 88% dei primi € 1.100 di incasso, 25% della parte fra € 1.100 e € 2.000, 65% della parte oltre € 2.000; somma moltiplicata per le giornate annue. Il margine dichiarato adegua questa base rispetto al margine ipotetico del 20%, fino a 1,5 volte la base. Alimentare +30%; oltre € 2.000/giorno premio crescente fino a +15% da € 4.000. Posizione e sole incidono meno: sole davanti −2% per alimentare, −5% per non alimentare. Concessione breve può limitare il valore. Sono ipotesi commerciali, da verificare su vendite concluse.'
+            : isV21
             ? 'Base: 50% degli incassi annui, oppure 2,5 volte il margine dichiarato (massimo 90% degli incassi). Alimentare +30%; incasso medio oltre € 1.000 a giornata: premio graduale, +15% a € 2.000, massimo +30% da € 3.000. Seguono le caratteristiche del banco. I premi si moltiplicano. Margine prima delle tasse personali e del compenso del titolare; la concessione breve può limitare il risultato. Sono ipotesi da calibrare su vendite concluse.'
             : isV2
             ? 'Ipotesi prudenziali: 50% degli incassi annui, oppure 2,5 volte il margine dichiarato (massimo 90% degli incassi), corretti per le caratteristiche del banco. Il margine è prima delle tasse personali e del compenso per il tuo lavoro. Le percentuali si moltiplicano; la concessione breve può limitare il risultato.'
@@ -323,7 +326,7 @@
         const notes = document.getElementById('rNotes');
         notes.replaceChildren();
         if (calculation) calculation.notes.forEach(note => { const p = document.createElement('p'); p.textContent = note; notes.appendChild(p); });
-        if (isV2 && !isV21) { const p = document.createElement('p'); p.textContent = 'Report storico v2.0: non include il premio alimentare e quello per incassi elevati. Rifai il calcolo per una stima aggiornata.'; notes.appendChild(p); }
+        if (isV2 && !isV22) { const p = document.createElement('p'); p.textContent = 'Report storico v' + log.algoritmo_version + ': conserva i coefficienti originali. Rifai il calcolo per una stima aggiornata.'; notes.appendChild(p); }
         if (isV2 && !calculation) notes.textContent = 'Dettagli del modello non disponibili: rifai il calcolo per una nuova stima.';
 
         // Dati inseriti

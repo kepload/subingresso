@@ -1,30 +1,37 @@
 const assert = require('node:assert/strict');
 const V = require('../js/valuation.js');
-const base = { baseIncasso:'giorno', incasso:500, giornate:50, frequenza:'settimanale', settore:'non_alimentare', zona:'interna',
+const base = { baseIncasso:'giorno', incasso:500, giornate:52, frequenza:'settimanale', settore:'non_alimentare', zona:'interna',
     clientela:'residenti', passaggio:'medio', posizione:'linea', sole:'riparato', concessione:'stabile', utileGiorno:null };
 const e = extra => V.estimate({ ...base, ...extra });
-assert.equal(e().avg,12500);
-assert.equal(e({sole:'frontale'}).avg,11250);
-assert.equal(e({sole:'variabile'}).avg,11875);
-assert.equal(e({baseIncasso:'anno',incasso:25000}).avg,e().avg);
-assert.equal(e({baseIncasso:'anno',incasso:25000,frequenza:'giornaliero',giornate:250}).avg,e().avg);
+assert.equal(e().avg,22880);
+assert.equal(e({sole:'frontale'}).avg,21736);
+assert.equal(e({sole:'variabile'}).avg,22422);
+assert.equal(e({baseIncasso:'anno',incasso:26000}).avg,e().avg);
+assert.equal(e({settore:'alimentare',sole:'frontale'}).avg,Math.round(e({settore:'alimentare'}).avg*.98));
 assert.equal(e({settore:'alimentare'}).avg,e().avg*1.3);
-assert.equal(e({settore:'alimentare',incasso:2000}).avg,74750);
-assert.equal(e({settore:'alimentare',incasso:2000,giornate:52}).avg,77740);
-assert.equal(e({settore:'alimentare',incasso:3000}).avg,126750);
-assert.equal(e({settore:'non_alimentare',incasso:2000}).avg,50000);
-assert.equal(e({settore:'non_alimentare',incasso:3000}).avg,75000);
+assert(e({incasso:450,passaggio:'laterale'}).avg>=19000 && e({incasso:450,passaggio:'laterale'}).avg<=22000,'Caso 3 vicino a 20 mila');
+assert(e({incasso:4000,sole:'frontale'}).avg>=120000,'Caso 5 almeno 120 mila');
+assert(e({incasso:1100,posizione:'angolare',sole:'variabile'}).avg>=50000,'Caso 6 almeno 50 mila');
+const food3500={settore:'alimentare',incasso:3500,posizione:'angolare',passaggio:'alto'};
+const food4000={settore:'alimentare',incasso:4000,posizione:'angolare',sole:'frontale'};
+assert(e(food4000).avg>e(food3500).avg,'Incassi 4k prevalgono sulle piccole differenze di posizione/sole dei casi 1/8');
+assert(e({settore:'alimentare',incasso:2000}).avg>=70000 && e({settore:'alimentare',incasso:2000}).avg<=85000);
 assert.equal(e({settore:'alimentare',incasso:2000,utileGiorno:0}).avg,0);
-assert.equal(e({settore:'alimentare',incasso:2000,utileGiorno:100}).avg,18688);
+assert(e({settore:'alimentare',incasso:2000,utileGiorno:100}).avg<e({settore:'alimentare',incasso:2000}).avg);
 assert.equal(e({settore:'alimentare',incasso:2000,concessione:'breve',mesiResidui:6}).avg,e({incasso:2000,concessione:'breve',mesiResidui:6}).avg);
-assert.equal(e({settore:'alimentare',baseIncasso:'anno',incasso:100000}).avg,74750);
-assert.equal(V.estimate({...base,settore:'alimentare',incasso:2000},'2.0').avg,50000);
-assert.equal(V.estimate({...base,settore:'alimentare'},'2.0').avg,12500);
+assert.equal(e({settore:'alimentare',baseIncasso:'anno',incasso:104000}).avg,e({settore:'alimentare',incasso:2000}).avg);
+assert.equal(V.estimate({...base,settore:'alimentare',incasso:2000},'2.0').avg,52000);
+assert.equal(V.estimate({...base,settore:'alimentare',incasso:2000},'2.1').avg,77740);
+assert.equal(V.estimate({...base,...food3500},'2.1').avg,177627);
+assert.equal(V.estimate({...base,...food4000},'2.1').avg,166093);
+assert.equal(V.estimate({...base,incasso:450,passaggio:'laterale'},'2.1').avg,9945);
+assert.equal(V.estimate({...base,incasso:1100,posizione:'angolare',sole:'variabile'},'2.1').avg,28529);
+assert.equal(V.estimate({...base,incasso:4000,sole:'frontale'},'2.1').avg,93600);
 assert.throws(()=>V.estimate(base,'unsupported'));
 assert.equal(e({settore:'alimentare',incasso:2000}).impacts[0].delta,30);
-assert.equal(e({settore:'alimentare',incasso:2000}).impacts[1].delta,15);
-assert.equal(e({settore:'alimentare',incasso:3000}).impacts[1].delta,30);
-for(const boundary of [1000,2000,3000]) {
+assert.equal(e({settore:'alimentare',incasso:2000}).impacts[1].delta,0);
+assert.equal(e({settore:'alimentare',incasso:4000}).impacts[1].delta,15);
+for(const boundary of [1100,2000,4000]) {
     const below=e({settore:'alimentare',incasso:boundary-.01});
     const exact=e({settore:'alimentare',incasso:boundary});
     const above=e({settore:'alimentare',incasso:boundary+.01});
@@ -34,7 +41,7 @@ for(const boundary of [1000,2000,3000]) {
 assert.equal(e({zona:'mare_lago',clientela:'turisti'}).avg,e().avg);
 assert.equal(e({utileGiorno:0}).avg,0);
 assert.equal(e({utileGiorno:0}).rent,0);
-assert.equal(e({utileGiorno:20}).avg,2500);
+assert.equal(e({utileGiorno:20}).avg,4576);
 assert.equal(e({concessione:'temporanea'}).status,'non_stimabile');
 assert(e({concessione:'breve',mesiResidui:1}).avg < e({concessione:'breve',mesiResidui:12}).avg);
 assert(e({concessione:'breve',mesiResidui:12}).avg < e({concessione:'breve',mesiResidui:24}).avg);
@@ -53,18 +60,18 @@ function walk(d,i) {
         assert(r.rent <= r.surplus*.3+1);
         assert(Math.abs(r.monthly*12-r.rent)<=6);
         assert.equal(V.estimate({...r.input,baseIncasso:'anno',incasso:r.input.fatturato}).avg,r.avg);
-        const old=V.estimate(r.input,'2.0');
-        if(r.input.settore==='non_alimentare') assert.deepEqual({...r,version:'2.0',impacts:r.impacts.slice(1)},old);
-        else assert(r.avg>=old.avg,'Il nuovo premio non riduce il valore');
+        assert(V.estimate({...r.input,incasso:incasso+1,utileGiorno:null}).avg>=V.estimate({...r.input,utileGiorno:null}).avg,'Incassi maggiori non riducono il valore');
+        const defaultMargin=V.estimate({...r.input,utileGiorno:incasso*.2});
+        assert.equal(defaultMargin.avg,V.estimate({...r.input,utileGiorno:null}).avg,'Margine del 20% coerente con ipotesi base');
         {
             const shade=V.estimate({...r.input,sole:'riparato'});
             const sun=V.estimate({...r.input,sole:'frontale'});
-            assert(Math.abs(sun.avg-shade.avg*.9)<=1);
+            assert(Math.abs(sun.avg-shade.avg*(r.input.settore==='alimentare'?.98:.95))<=1);
         }
     }
 }
 walk(base,0);
-console.log('OK: '+scenarios+' scenari, importi, input errati, sole −10%, redditività, durata e coerenza annuale/mensile.');
+console.log('OK: '+scenarios+' scenari, riferimenti utente, crescita continua, sole alimentare −2%, margini, durata e report storici.');
 for (const [name,input] of [['Settimanale normale',base],['Alimentare 2.000/giorno',{...base,settore:'alimentare',incasso:2000}],['Alimentare 3.000/giorno',{...base,settore:'alimentare',incasso:3000}],['Stesso banco al sole',{...base,sole:'frontale'}],['Stagionale turistico',{...base,incasso:800,giornate:22,zona:'mare_lago',clientela:'mista',passaggio:'alto',posizione:'angolare'}],['Incassi alti e margine basso',{...base,incasso:1000,utileGiorno:50}],['Concessione di 6 mesi',{...base,concessione:'breve',mesiResidui:6}]]) {
     const r=V.estimate(input); console.log(name+': '+JSON.stringify({min:r.min,avg:r.avg,max:r.max,rent:r.rent}));
 }

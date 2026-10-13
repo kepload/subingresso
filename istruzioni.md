@@ -667,7 +667,14 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - `loadRecentListings()` `.limit(12)`, `created_at DESC`, fallback `LISTINGS.slice(0,12)`.
 - Banner mobile sopra "Vendi in 3 passi": link verde a `valutatore.html`.
 
-## 🧮 Valutatore v2.1 (14 ottobre 2026)
+## 🧮 Valutatore v2.2 (14 ottobre 2026)
+
+- **Ritaratura richiesta dall’utente:** a 52 giornate, non alimentare € 450/giorno laterale circa € 20 mila; € 1.100/giorno almeno € 50 mila; € 4.000/giorno al sole almeno € 120 mila. Incassi dichiarati già riflettono posizione/esposizione: evitare grandi penalità aggiuntive. Interpretati gli «al mese» dei casi 3/6 come riferimenti agli incassi giornalieri della tabella; domanda di chiarimento facoltativa, assunzione comunicata.
+- Base continua per giornata: `0,88 × min(incasso,1100) + 0,25 × min(max(incasso−1100,0),900) + 0,65 × max(incasso−2000,0)`; moltiplicata per giornate effettive. Crescente a tutte le soglie. Margine indicato: base × (margine/incassi)/0,20, massimo 1,5 × base; zero resta zero. Premio alimentare +30%; ulteriore premio graduale da € 2.000/giorno, massimo +15% a € 4.000. Sole alimentare −2% frontale/−1% parziale; non alimentare −5%/−2%. Passaggio alto +3%, laterale −5%, angolo +2%. Altri limiti per concessione/incertezza e canone conservati. Coefficienti commerciali, non statistiche di transazioni.
+- Riferimenti verificati, 52 giornate, spese non indicate e concessione stabile: non alimentare 450 laterale **€ 19.562**, 1100 angolo/sole parziale **€ 50.316**, 4000 sole davanti **€ 123.154**. Alimentare ordinario 2000 **€ 80.647**; 3500 angolo/passaggio alto **€ 171.294**, 4000 angolo/sole davanti **€ 193.728**.
+- `PATCH_VALUTATORE_V22.sql` aggiunge `save_valutazione_v22`; conserva RPC 2.0/2.1, report e coefficienti storici. Claim accetta 2.0/2.1/2.2; contatore admin corrente 2.2. Cache valuation 4, pagina valutatore 5, riferimenti valutatore/report/dashboard allineati. Test: 34.560 scenari JS e 1.728 confronti JS/SQL con **ROLLBACK**, input annui arrotondati ai centesimi per evitare errori floating point nei dati di test; claim, permessi/RLS, idempotenza e compatibilità precedenti. Browser in `%TEMP%/subingresso-valutatore-v22-browser.cjs`.
+
+### Storico v2.1 (14 ottobre 2026; curva e pesi superati dalla v2.2)
 
 - **Nuova decisione dell’utente:** riconoscere il maggior valore dell’alimentare (+30% di base sul non alimentare) e degli incassi elevati; riferimento circa € 70–80 mila per € 2.000 a giornata in un posteggio settimanale ordinario. Sono ipotesi commerciali del modello, non prezzi di compravendite documentate.
 - V2.1: base economica v2 invariata, ×1,30 per alimentare; ulteriore premio continuo `1 + min(0,30; max(0; (incasso medio giornaliero − 1000) / 1000 × 0,15))`. Usa incasso annuo/giornate anche con input annuo. Con 50 giornate, concessione stabile, caratteristiche neutre e spese non indicate: € 2.000/giorno → **€ 74.750**, € 3.000/giorno → **€ 126.750**; a 52 giornate il primo vale € 77.740. Margine dichiarato nullo resta zero; spese elevate e durata breve continuano a limitare il valore. Nessun minimo forzato per attività stagionali o concessioni brevi.
