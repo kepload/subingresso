@@ -1,0 +1,179 @@
+{
+  "municipalities": [
+    {
+      "city": "Gattinara",
+      "region": "Piemonte",
+      "province": "Vercelli",
+      "checkedAt": "2026-10-13",
+      "approval": "codex-reviewed",
+      "research": {
+        "scope": "Ricerca documentale per il solo comune, non per tutta la provincia di Vercelli.",
+        "method": "Codex seleziona e recupera le fonti; programma assegna ID, estrae contatti e controlla duplicati; Qwen trova passaggi pertinenti e prepara note brevi; Codex verifica i punti importanti e approva la scheda.",
+        "localModel": "Qwen3.8-27B Q6_K",
+        "localMicrotasks": 6,
+        "sources": [
+          {
+            "id": "SM",
+            "url": "https://comune.gattinara.vc.it/Dettaglionews?IDNews=416044",
+            "sha256": "222acdb6b9b9edbc12bb28c325de87a9547676eda876f52005cf41ea151a2735",
+            "retrieved_at": "2026-10-13"
+          },
+          {
+            "id": "RR",
+            "url": "https://visitgattinara.it/notizie/iscrizione-mercatinini-rosa-rosso-maggio-2026",
+            "sha256": "d62f5302e2f3fca3ff6a7a724130f1b099ce5033fe6918320bbb6716df9f4d5c",
+            "retrieved_at": "2026-10-13"
+          },
+          {
+            "id": "LU",
+            "url": "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte",
+            "sha256": "20c63e630671fb2b956d8fb44965e14290ca2faee23688f9183b54e65894dc23",
+            "retrieved_at": "2026-10-13"
+          }
+        ],
+        "sourceIssues": [
+          {
+            "url": "https://prolocodigattinara.it/rosa-e-rosso-di-maggio/registrazione-espositori-rosa-e-rosso-di-maggio/",
+            "status": 404
+          },
+          {
+            "url": "https://prolocodigattinara.it/rosa-e-rosso-di-maggio/registrazione-somministratori-rosa-e-rosso-di-maggio/",
+            "status": 404
+          },
+          {
+            "url": "https://prolocodigattinara.it/luva/registrazione-espositori/",
+            "status": 404
+          }
+        ],
+        "unresolved": [
+          "Nessuna edizione natalizia 2026 documentata nelle fonti selezionate; non inferire assenza di altri eventi.",
+          "LUVA: giornate delle singole bancarelle, quote, termine e categorie ancora da documentare.",
+          "Calendario regionale PDF 2026 non recuperato integralmente: la ricerca comunale non è esaustiva."
+        ],
+        "publicationRules": "Nessuna iscrizione inviata, nessun posteggio o ammissione garantiti. Fonti 2026 passate restano esplicitamente storiche."
+      },
+      "events": [
+        {
+          "region": "Piemonte",
+          "city": "Gattinara",
+          "name": "Fiera di San Martino",
+          "category": "tradizionale",
+          "months": [
+            11
+          ],
+          "sectors": "Commercio ambulante; categorie merceologiche da verificare con il Comune",
+          "venue": "Corso Valsesia, Corso Garibaldi, Corso Vercelli, Piazza Cinema Italia e Piazza Paolotti",
+          "organizer": "Comune di Gattinara",
+          "hours": "Fiera 8:00–18:00; accesso degli operatori dalle 6:30, dal varco assegnato.",
+          "summary": "Stalli di 45 m² (10 × 4,5 m). Chi ha già un posto nel mercato del martedì lo mantiene senza presentare domanda.",
+          "source": {
+            "url": "https://comune.gattinara.vc.it/Dettaglionews?IDNews=416044",
+            "label": "Comune di Gattinara",
+            "checkedAt": "2026-10-13"
+          },
+          "editions": [
+            {
+              "year": 2026,
+              "start": "2026-11-10",
+              "end": "2026-11-10",
+              "dateType": "confirmed",
+              "sourceUrl": "https://comune.gattinara.vc.it/Dettaglionews?IDNews=416044"
+            }
+          ],
+          "participation": {
+            "type": "public",
+            "note": "Fai domanda solo sullo sportello online del Comune con SPID o CIE. Non presentarti alla spunta: serve l’assegnazione prima della fiera.",
+            "deadline": "2026-10-16",
+            "url": "https://servizi.comune.gattinara.vc.it/Servizi/FiloDiretto2/ProcedimentiClient.Aspx?CE=gtnr008&IDGruppoSelez=8596",
+            "costs": "Canone: importo non pubblicato. PagoPA entro il 2 novembre dopo l’assegnazione; senza pagamento si perde il posto."
+          },
+          "contacts": {
+            "phone": "0163824334",
+            "email": "ufficio.commercio@comune.gattinara.vc.it",
+            "pec": "suapgattinara@pec.it"
+          },
+          "contactsSourceUrl": "https://www.comune.gattinara.vc.it/Uffici?IDUfficio=28138"
+        },
+        {
+          "region": "Piemonte",
+          "city": "Gattinara",
+          "name": "Mercatino Rosa e Rosso di Maggio",
+          "category": "mercatino",
+          "months": [
+            5
+          ],
+          "sectors": "Hobbisti, artigiani e associazioni; somministrazione di alimenti e bevande",
+          "venue": "Centro storico di Gattinara; postazioni di 3 × 3 m",
+          "organizer": "Comune di Gattinara e Pro Loco di Gattinara",
+          "hours": "30 maggio 15:00–24:00; 31 maggio 10:00–23:00. Allestimento dalle 14:00 e dalle 8:30.",
+          "summary": "Condizioni distinte per hobbisti, somministratori e associazioni. Gli ambulanti professionali devono verificare con l’organizzatore la categoria ammessa.",
+          "source": {
+            "url": "https://visitgattinara.it/notizie/iscrizione-mercatinini-rosa-rosso-maggio-2026",
+            "label": "Visit Gattinara · portale del Comune",
+            "checkedAt": "2026-10-13"
+          },
+          "editions": [
+            {
+              "year": 2026,
+              "start": "2026-05-30",
+              "end": "2026-05-31",
+              "dateType": "confirmed",
+              "sourceUrl": "https://visitgattinara.it/notizie/iscrizione-mercatinini-rosa-rosso-maggio-2026"
+            }
+          ],
+          "participation": {
+            "type": "selected",
+            "note": "Regole diverse per hobbisti e somministratori, senza tariffa unica. Niente corrente né bombole a gas; l'edizione è conclusa: per partecipare serve un nuovo avviso.",
+            "deadline": "2026-05-15",
+            "url": "https://visitgattinara.it/notizie/iscrizione-mercatinini-rosa-rosso-maggio-2026",
+            "costs": "Edizione 2026: hobbisti 10 € a postazione per entrambe le giornate; somministratori 150 € a postazione; associazioni no profit una postazione gratuita. Non sono tariffe generali per tutti gli ambulanti."
+          },
+          "contacts": {
+            "phone": "0163824394",
+            "email": "protocollo@comune.gattinara.vc.it"
+          },
+          "contactsSourceUrl": "https://visitgattinara.it/notizie/iscrizione-mercatinini-rosa-rosso-maggio-2026"
+        },
+        {
+          "region": "Piemonte",
+          "city": "Gattinara",
+          "name": "LUVA · Festa dell’Uva",
+          "category": "sagra",
+          "months": [
+            9
+          ],
+          "sectors": "Bancarelle e degustazioni; categorie degli espositori da verificare con la Pro Loco",
+          "venue": "Centro di Gattinara",
+          "organizer": "Comune di Gattinara e Pro Loco di Gattinara",
+          "summary": "Le date indicano il periodo della festa. Le giornate e gli orari delle singole bancarelle non sono specificati nell’avviso consultato.",
+          "source": {
+            "url": "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte",
+            "label": "Visit Gattinara · portale del Comune",
+            "checkedAt": "2026-10-13"
+          },
+          "editions": [
+            {
+              "year": 2026,
+              "start": "2026-09-04",
+              "end": "2026-09-06",
+              "dateType": "confirmed",
+              "sourceUrl": "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte",
+              "periodOnly": true
+            }
+          ],
+          "participation": {
+            "type": "check",
+            "note": "Iscrizione tramite Pro Loco. L'edizione è conclusa: chiedi all'organizzatore le nuove condizioni.",
+            "url": "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte",
+            "costs": "La fonte non indica tariffe o scadenza della domanda. Non trasferire al prossimo anno le condizioni della vecchia edizione."
+          },
+          "contacts": {
+            "phone": "0163824316",
+            "email": "protocollo@comune.gattinara.vc.it"
+          },
+          "contactsSourceUrl": "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte"
+        }
+      ]
+    }
+  ]
+}

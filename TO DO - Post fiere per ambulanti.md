@@ -47,6 +47,12 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 
 ### Ricerca approfondita per provincia — aggiornamento 12 ottobre 2026
 
+**13 ottobre — prova ibrida sul solo comune di Gattinara:** tre schede per
+San Martino, Rosa e Rosso di Maggio e LUVA. Codex dirige ricerca, verifica e
+pubblicazione; Qwen individua prove e prepara brevi note. Audit in
+`data/fiere-comuni.json` e `data/FIERE.md`. **Vercelli resta da approfondire**:
+questa prova non completa la provincia. Il catalogo Padova è ora verificato online.
+
 - [x] **Brescia — ricerca approfondita completata**: 206 manifestazioni in 86 comuni
   pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Brescia). Esaminate 1.031
   righe regionali e fonti di Comuni, Pro Loco, portali turistici e organizzatori;

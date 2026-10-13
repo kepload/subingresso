@@ -19,7 +19,7 @@ REGION_ALIASES = {
     "Valle d'Aosta/Vallée d'Aoste": "Valle d'Aosta",
 }
 CATEGORIES = {"tradizionale", "artigianato", "sagra", "espositiva", "mercatino"}
-CATALOG_DATE = "2026-10-12"
+CATALOG_DATE = "2026-10-13"
 MERCHANDISE_SECTORS = ("alimentare", "non-alimentare", "antiquariato", "artigianato")
 
 
@@ -120,6 +120,22 @@ def build_catalog():
         combined = [row for row in combined if
             locations.get((key(row["city"]), row["region"]), {}).get("provincia") != province]
         combined.extend(researched["events"])
+    # Small municipality audits replace only their own city, after provincial data.
+    # Local-model proposals enter the catalogue only after a Codex source review.
+    municipal_path = ROOT / "data/fiere-comuni.json"
+    if municipal_path.exists():
+        municipal = json.loads(municipal_path.read_text(encoding="utf-8"))
+        audited_cities = set()
+        for audit in municipal["municipalities"]:
+            identity = (key(audit["city"]), audit["region"])
+            assert identity not in audited_cities and audit["approval"] == "codex-reviewed"
+            assert audit["checkedAt"] <= CATALOG_DATE
+            location = locations.get(identity)
+            assert location and location["provincia"] == audit["province"]
+            assert all((key(row["city"]), row["region"]) == identity for row in audit["events"])
+            audited_cities.add(identity)
+            combined = [row for row in combined if (key(row["city"]), row["region"]) != identity]
+            combined.extend(audit["events"])
     events = []
     for row in combined:
         city = locations.get((key(row["city"]), row["region"]))

@@ -1032,6 +1032,19 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+13 ottobre 2026 — prova ibrida per il solo comune di Gattinara: tre nuove schede
+in `data/fiere-comuni.json`, applicate dal build solo al comune approvato.
+Codex sceglie fonti, controlla date/costi/ammissioni e pubblica; Qwen trova ID
+delle prove e scrive note brevi. Sei microtask validi, circa 250 secondi;
+due note intatte, una piccola correzione. San Martino 10 novembre, domanda
+16 ottobre e niente spunta; Rosa e Rosso 30–31 maggio con quote per categorie;
+LUVA 4–6 settembre come solo periodo della festa. Moduli Pro Loco storici 404,
+nuove edizioni non inferite. Audit e limiti in `data/FIERE.md`.
+Invio locale parametrico autenticato installato, niente cloud per singolo avvio.
+La precedente pubblicazione Padova è stata verificata live: 95 schede e
+deployment GitHub/Vercel riusciti; la nota pendente del 12 ottobre è storico.
+Cache fiere.js 28, catalogo 21; ricerca del resto di Vercelli ancora da svolgere.
+
 Aggiornamento 12 ottobre 2026 — Padova: 95 schede in 41 comuni, prima 11.
 Ricerca nei 101 comuni attuali (102 chiavi geo più Santa Caterina d’Este),
 167 righe Veneto, quattro calendari ufficiali e fonti comunali/organizzatori.
