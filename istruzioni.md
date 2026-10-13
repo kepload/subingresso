@@ -9,7 +9,9 @@ Castelfranco casette termine 17 ottobre; Pievepelago Castagna 27 ottobre ore 12;
 Castelvetro Natale 16 novembre, 48 € per P.IVA 3×3 m. Concordia 31 ottobre/1 novembre;
 fiere Modena 17/31 gennaio 2027 da avviso esplicito. Catalogo 2.647 eventi, altre
 2.573 schede identiche. Cache fiere.js 31, catalogo 24; TO DO 15 province fatte,
-95 mancanti. Pubblicazione e verifiche registrate al termine della sessione.
+95 mancanti. Commit 11dd0e4 pubblicato e catalogo online identico; build, sintassi,
+settori e browser Chromium/WebKit passati; sette dettagli operativi verificati
+anche in produzione su desktop e telefono, senza errori o overflow.
 
 
 Manuale operativo per le sessioni AI. Contiene solo informazioni "evergreen": regole, pattern, stato sistema, bug ricorrenti.

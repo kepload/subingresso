@@ -233,6 +233,8 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   giornate; Vignola distingue fiori, opere proprie e ambulanti. Calendario regionale
   completo non recuperato, snapshot conservati e limiti espliciti in
   `data/fiere-modena.json` e `data/FIERE.md`. Altre 2.573 schede identiche.
+  Pubblicazione verificata: 74 schede online, sette dettagli su desktop/telefono;
+  controlli catalogo, filtri e browser passati.
 - [ ] **Modena — aggiornamenti periodici**: disponibilità, bandi e quote; recuperare
   disciplinare casette Castelfranco 2026, registro regionale completo e programmi
   residui, Bruino Medolla, calendari montani e Natale. Non trasferire documenti

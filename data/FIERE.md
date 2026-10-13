@@ -66,7 +66,13 @@ servizio riuso Medolla e falsi positivi di San Prospero fuori provincia esclusi.
 Usatissimo esplicitamente riservato ai privati; Collezionando è un salone
 specialistico, non spunta. Nessuna domanda inviata, nessun posto o ricavo garantito.
 
-Pubblicazione: verifica di produzione registrata al termine della sessione.
+Pubblicazione verificata: commit `11dd0e4`, catalogo online identico al commit
+(SHA-256 `3c4b3f83910b71b1b426b44a0e3ea36c0b408c4c121f90bf89c40d5512740f86`). Le **74 schede** sono visibili
+in [/fiere?provincia=Modena](https://subingresso.it/fiere?provincia=Modena).
+Passati build, sintassi, settori e controlli del calendario su Chromium
+desktop/tablet/mobile e WebKit mobile, tutte le province; sette dettagli
+operativi verificati anche in produzione su desktop e telefono, senza errori
+o overflow. Riscontri e schermate nell?archivio locale.
 
 
 ## Ricerca approfondita — provincia di Vicenza, 13 ottobre 2026
