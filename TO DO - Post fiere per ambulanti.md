@@ -358,6 +358,24 @@ rileggere lo stato attuale prima di generare/pushare il catalogo: conservare
 `fiere-mantova.json` e la sua voce nel build, partire almeno da cache fiere.js 37
 e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
 
+- [ ] **Cremona — ricerca preparata, verifica della pubblicazione in corso (14 ottobre 2026)**:
+  71 manifestazioni in 31 comuni, prima nove; 113 comuni confrontati,
+  71 programmi regionali recuperati e cinque grafici letti visivamente.
+  61 schede con contatti e otto scadenze assolute; audit, fonti e limiti
+  in data/fiere-cremona.json e data/FIERE.md.
+  Buongusto Pizzighettone: termine 19 ottobre, quote + IVA 22%; Natale Idee
+  Regalo: quattro date, termine 16 novembre, quote IVA inclusa.
+  Ostiano banchi 25 ottobre, Ratatuia 25 ottobre solo su invito;
+  Santa Maria della Croce 28–30 marzo da Comune, non 27–29 del registro.
+  Periodi provinciali e San Carlo da confermare, nessun termine dei gestori
+  o del 2025 trasferito agli espositori. Tutti i nove ID e altre 3.132 schede
+  preservati. Checkout isolato, Venezia resta alla sessione sospesa.
+- [ ] **Cremona — aggiornamenti periodici**: disponibilità, bandi, nuove
+  edizioni e calendari natalizi definitivi; chiarire Sant’Apollonia, San Carlo,
+  Santa Lucia, modulo hobbisti Monte Cremasco e termine relativo Ratatuia;
+  recuperare Bonemerse, Creare, programmi commerciali settembrini e altri
+  allegati residui. Date da stampa locale esplicite, non programmi comunali.
+
 **Ricerca approfondita: 21 province completate, 89 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.

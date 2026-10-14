@@ -1,5 +1,16 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Calendario Cremona, 14 ottobre 2026: 71 schede in 31 comuni, prima nove;
+113 comuni confrontati e 71 programmi regionali recuperati, cinque grafici
+verificati visivamente. Audit/fonti/limiti in data/fiere-cremona.json e FIERE.md.
+Buongusto domanda 19 ottobre, listino +IVA22%; Natale Idee Regalo 16 novembre,
+quote IVA inclusa. Ostiano banchi 25 ottobre, Ratatuia 25 solo su invito.
+San Carlo/Sant’Apollonia e Natale provinciale hanno periodi da confermare;
+termini 2025 o dei gestori non trasferiti. 9 ID e altre 3.132 schede preservati;
+catalogo 3.203, cache fiere.js 38/catalogo 31. Verifica online ancora da registrare.
+Checkout isolato, Venezia resta alla sessione sospesa: riprendere da origin/main
+conservando Mantova e Cremona. Nessun’altra provincia avviata.
+
 Calendario Torino, 14 ottobre 2026: ricerca nei 312 comuni e 240 righe dei
 due registri Piemonte; 241 schede in 115 comuni, prima 108. Fonti, moduli,
 copertura, esclusioni e limiti in `data/fiere-torino.json`/`data/FIERE.md`.
