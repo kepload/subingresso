@@ -378,7 +378,33 @@ e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
   recuperare Bonemerse, Creare, programmi commerciali settembrini e altri
   allegati residui. Date da stampa locale esplicite, non programmi comunali.
 
-**Ricerca approfondita: 22 province completate, 88 ancora da fare su 110.**
+- [x] **Venezia — ricerca documentale approfondita completata (14 ottobre 2026)**:
+  84 manifestazioni in 26 comuni, prima 16, pubblicate in
+  [/fiere](https://subingresso.it/fiere?provincia=Venezia). Ricerca nei 44 comuni,
+  tutte le 132 righe Veneto esaminate; 40 appuntamenti del calendario Caorle
+  raggruppati in sette rassegne. Comuni, organizzatori, calendari turistici,
+  antiquariato e moduli: 17 contatti e un termine assoluto documentato.
+  Sant’Andrea: ambulanti/produttori 28–29 novembre, modulo C entro 30 ottobre,
+  quote + IVA 22% e CUP; 22 novembre riservato ad altre categorie.
+  Noale in Fiore 12 aprile, Primavera Portogruaro 11–12 aprile, Bisi banchi
+  31 maggio; categorie Caorle e Corbolone distinte. Jesolo e Caorle Natale
+  con periodi 2026–2027, singole aperture da confermare.
+  Copertura, esclusioni e limiti in `data/fiere-venezia.json` e `data/FIERE.md`;
+  56 schede con giornate precise, 21 periodi e sette ricorrenze/testi.
+  Tutti i 16 ID e le altre 3.187 schede preservati, comprese Mantova e Cremona.
+  Commit dati 765cb5e: Vercel riuscito, catalogo e script online conformi;
+  84 risultati e dodici dettagli verificati su computer/telefono Chromium
+  e WebKit, controlli dati e cinque browser/schermi passati. Sessione ripresa
+  e conclusa: le precedenti note di sospensione di Venezia sono superate.
+- [ ] **Venezia — aggiornamenti periodici**: nuove edizioni, disponibilità,
+  quote e candidature non pubblicate; chiarire programmi commerciali
+  Scorzè, Musile e Summaga, Natale provinciale, piste Eraclea/Jesolo estate,
+  Torre di Mosto, Cavarzere, Santa Maria di Sala e comuni senza schede.
+  San Donà: recuperare moduli correnti, sito non accessibile; Camponogara
+  conferma operativa oltre l’estratto ACTV. Natale Mira resta provvisorio;
+  nessuna proiezione di date/termini storici o dei gestori agli espositori.
+
+**Ricerca approfondita: 23 province completate, 87 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -403,7 +429,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **10. Varese** — Lombardia; ricerca completata, vedi sopra
 - [x] **11. Como** — Lombardia; ricerca completata, vedi sopra
 - [x] **12. Torino** — Piemonte; ricerca completata, vedi sopra
-- [ ] **13. Venezia** — Veneto
+- [x] **13. Venezia** — Veneto; ricerca completata e verificata online, vedi sopra
 - [x] **14. Mantova** — Lombardia; ricerca completata e verificata online, vedi sopra
 - [x] **15. Cremona** — Lombardia; ricerca completata e verificata online, vedi sopra
 - [ ] **16. Pavia** — Lombardia

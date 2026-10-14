@@ -77,8 +77,14 @@ residuo conservate nell’audit. Nessuna richiesta o comunicazione a terzi.
 
 Build sul repository corrente, conservando Mantova e Cremona: altre **3.187**
 schede identiche e tutti i 16 ID Venezia preservati. Catalogo **3.271** schede;
-cache fiere.js **39**, catalogo **32**. Pubblicazione e verifica online da
-registrare dopo il deploy; TO DO ancora non spuntata.
+cache fiere.js **39**, catalogo **32**. Commit dati `765cb5e`: Vercel riuscito,
+catalogo pubblico e JavaScript identici ai file del commit, pagina HTTP 200
+con cache aggiornata. Verificati online 84 risultati, mappa e dodici dettagli
+in Chromium computer/telefono e WebKit telefono: fonti, contatti, moduli,
+quote e assenza di errori/overflow. Controlli dati, settori e calendario
+completo sui cinque browser/schermi passati. Evidenze locali in
+`deployment-verification.json` e `verification-online.json` nell’archivio.
+TO DO aggiornata dopo la verifica: **23 province completate, 87 rimaste**.
 
 ## Ricerca approfondita Cremona — 14 ottobre 2026
 

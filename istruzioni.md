@@ -1,5 +1,28 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Calendario Venezia, 14 ottobre 2026: sessione ripresa e conclusa sulle fonti
+reperibili; 84 schede in 26 comuni, prima 16. Ricerca nei 44 comuni e 132 righe
+Veneto, 40 appuntamenti Caorle raggruppati in sette rassegne. Audit/fonti/hash,
+esclusioni e limiti in data/fiere-venezia.json e data/FIERE.md; archivio locale
+Documents/ricerca-fiere-venezia-20261014. 56 giornate precise, 21 periodi,
+sette testi/ricorrenze; 17 contatti e un termine assoluto. Sant’Andrea ambulanti
+28–29 novembre, modulo C entro 30 ottobre, quote +IVA22% e CUP; 22 per altre
+categorie. Noale in Fiore 12 aprile, Primavera Portogruaro 11–12, Bisi 31 maggio;
+Ocaria 7–8 novembre. Natale Jesolo/Caorle periodi 2026–2027, Mira provvisorio.
+Caorle OPI/Officine e Corbolone: categorie distinte; termini dei gestori o del
+2025 non applicati agli espositori. San Donà sito non disponibile, ACTV 403
+con estratto datato dichiarato: limiti espliciti. Moduli B/D Portogruaro con
+refusi, listino C e categorie Caorle verificati anche visivamente.
+Conservati tutti i 16 ID e altre 3.187 schede, incluse Mantova e Cremona;
+totale 3.271, cache fiere.js 39/catalogo 32. Commit dati 765cb5e: Vercel riuscito,
+catalogo/script pubblici identici al commit e 84 risultati/dodici dettagli
+verificati online in Chromium computer/telefono e WebKit telefono; controlli
+dati, settori e cinque browser/schermi passati con PLAYWRIGHT_MODULE.
+TO DO spuntata dopo verifica: 23 completate, 87 rimaste. Le note precedenti
+di Venezia sospesa sono superate; nessun’altra provincia lavorata da questa
+sessione, nessun contatto a terzi. Nel formato del calendario usare contacts
+come oggetto (phone/email/pec) e participation.url per il pulsante del modulo.
+
 Calendario Cremona, 14 ottobre 2026: 71 schede in 31 comuni, prima nove;
 113 comuni confrontati e 71 programmi regionali recuperati, cinque grafici
 verificati visivamente. Audit/fonti/limiti in data/fiere-cremona.json e FIERE.md.
