@@ -1,5 +1,7 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Calendario fiere, 14 ottobre 2026: completata Varese, 81 schede in 36 comuni; audit 136 comuni e 123 programmi regionali, dati e limiti in `data/fiere-varese.json` e `data/FIERE.md`. Ricerca completata in 18 province, 92 rimaste; prossima nell’ordine operativo Como. Cache catalogo v27, pagina fiere v34.
+
 Ricerca Modena (14 ottobre 2026): 74 manifestazioni in 33 comuni, prima 10;
 47 comuni cercati, 120 documenti tentati, dieci scadenze. Override
 `data/fiere-modena.json`; fonti/esclusioni/limiti in `data/FIERE.md`, archivio locale

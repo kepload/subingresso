@@ -21,6 +21,25 @@ assert.equal(Object.keys(boundaries.sardiniaMunicipalities).length,377);
 for (const region of regions) assert(events.filter(e => e.region === region).length >= 10);
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
+// Varese: operational conditions, conflicting dates and suspended events.
+const vaResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-varese.json'), 'utf8'));
+const vaEvents = events.filter(e => e.province === 'Varese');
+const vaEvent = (city, pattern) => vaEvents.find(e => e.city === city && pattern.test(e.name));
+assert.equal(vaEvents.length,81);
+assert.equal(new Set(vaResearch.research.municipalityCoverage.map(c => c.city)).size,136);
+assert.equal(vaResearch.research.regionalRecordAudit.length,123);
+assert.equal(vaEvent('Inarzo', /Cioccolato/).participation.deadline,'2026-10-22');
+assert.match(vaEvent('Inarzo', /Cioccolato/).participation.costs,/25.*50/);
+assert.equal(vaEvent('Inarzo', /Cioccolato/).editions[0].start,'2026-11-15');
+assert.match(vaEvent('Carnago', /Natale/).participation.costs,/cauzione 10/);
+assert.match(vaEvent('Carnago', /Natale/).participation.deadlineLabel,/cinque giorni/);
+assert.equal(vaEvent('Porto Valtravaglia', /Natale/).participation.deadline,'2026-10-10');
+assert.match(vaEvent('Porto Valtravaglia', /Natale/).participation.costs,/30.*6,25/);
+assert.equal(vaEvent('Gazzada Schianno', /Natale/).editions[0].start,'2026-11-29');
+assert(vaEvent('Caronno Varesino', /natale/i).editions.every(d => !d.start));
+assert(vaEvent('Cassano Magnago', /primavera/i).editions.every(d => !d.start));
+assert(vaEvent('Barasso', /Martino/).editions.every(d => d.year===2025));
+assert(!vaEvents.some(e => e.city==='Caronno Pertusella' || /Music 4.0/.test(e.name)));
 // Reggio Emilia: current local programmes correct regional dates and scoped deadlines.
 const reResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-reggio-emilia.json'), 'utf8'));
 const reEvents = events.filter(e => e.province === "Reggio nell'Emilia");

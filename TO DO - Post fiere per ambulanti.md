@@ -277,7 +277,22 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Chiarire Fiera di Maggio San Martino, antiquariato Scandiano e Ciccioli Albinea.
   Non applicare moduli storici a nuove edizioni né periodi generali ai banchi.
 
-**Ricerca approfondita: 17 province completate, 93 ancora da fare su 110.**
+- [x] **Varese — ricerca approfondita completata (14 ottobre 2026)**:
+  ricerca nominale nei 136 comuni attuali; 81 manifestazioni in 36 comuni,
+  prima quattro. Esaminate tutte le 123 righe regionali 2026 e i programmi:
+  111 con testo, 12 scansionati verificati visivamente; calendari turistici,
+  Comuni e organizzatori, moduli e regolamenti 2026. 38 schede con contatti.
+  Inarzo 15 novembre, domanda 22 ottobre, 25 €/3 metri; Carnago 7–8 dicembre,
+  gratuito con cauzione 10 €; Gazzada 29 novembre gratuito per opere proprie;
+  Porto Valtravaglia termine 10 ottobre scaduto, 30 € più canone commerciale.
+  Sospensioni, conflitti e tre schede storiche 2025 espliciti; nessuna data
+  dedotta da ricorrenze. Audit in `data/fiere-varese.json` e `data/FIERE.md`.
+  Tutti i quattro ID precedenti preservati; altre 2.788 schede identiche.
+- [ ] **Varese — aggiornamenti periodici**: recuperare allegati Cairate,
+  calendari giugno/luglio/settembre e candidature non pubblicate; chiarire
+  date Cassano/Caronno Varesino, banchi Somma e segnalazioni nell’audit.
+
+**Ricerca approfondita: 18 province completate, 92 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -299,7 +314,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **7. Modena** — Emilia-Romagna; ricerca completata, vedi sopra
 - [x] **8. Parma** — Emilia-Romagna; ricerca completata, vedi sopra
 - [x] **9. Reggio nell'Emilia** — Emilia-Romagna; ricerca completata, vedi sopra
-- [ ] **10. Varese** — Lombardia
+- [x] **10. Varese** — Lombardia; ricerca completata, vedi sopra
 - [ ] **11. Como** — Lombardia
 - [ ] **12. Torino** — Piemonte
 - [ ] **13. Venezia** — Veneto
