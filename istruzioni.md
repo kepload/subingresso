@@ -7,7 +7,9 @@ Buongusto domanda 19 ottobre, listino +IVA22%; Natale Idee Regalo 16 novembre,
 quote IVA inclusa. Ostiano banchi 25 ottobre, Ratatuia 25 solo su invito.
 San Carlo/Sant’Apollonia e Natale provinciale hanno periodi da confermare;
 termini 2025 o dei gestori non trasferiti. 9 ID e altre 3.132 schede preservati;
-catalogo 3.203, cache fiere.js 38/catalogo 31. Verifica online ancora da registrare.
+catalogo 3.203, cache fiere.js 38/catalogo 31. Vercel riuscito e catalogo online
+conforme al commit dati 7f05e52; 13 dettagli verificati su computer/telefono
+Chromium e WebKit, build e regressioni passati. 22 province fatte, 88 rimaste.
 Checkout isolato, Venezia resta alla sessione sospesa: riprendere da origin/main
 conservando Mantova e Cremona. Nessun’altra provincia avviata.
 

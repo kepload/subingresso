@@ -7098,6 +7098,39 @@
       "sectorsTest": "passed",
       "checkedAt": "2026-10-14",
       "generalBrowserRegression": "Chromium 1440/820/390/320 e WebKit390: passed"
+    },
+    "publicationVerification": {
+      "checkedAt": "2026-10-14T19:59:18Z",
+      "dataCommit": "7f05e52fa70716a542757f13f4be6b80bb03952b",
+      "deployment": "Vercel success",
+      "catalogHttp": 200,
+      "catalogSha256": "58a4459ad21e56ae51f0df6ba408a8dd48f65dde1ca275a8956d6bf2580ab5d3",
+      "committedCatalogIdentical": true,
+      "provinceEvents": 71,
+      "browserChecks": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "events": 71,
+          "details": 13,
+          "errors": []
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "events": 71,
+          "details": 13,
+          "errors": []
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "events": 71,
+          "details": 13,
+          "errors": []
+        }
+      ],
+      "secretScan": "gitleaks: no leaks found"
     }
   },
   "events": [

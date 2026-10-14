@@ -92,7 +92,15 @@ coordinate del [municipio pubblicate dal Comune](https://www.comune.piadena-driz
 con fonte esplicita; marker comunale, non ingresso. Anagrafica invariata.
 Build conserva tutti i nove ID precedenti e le altre **3.132 schede identiche**:
 3.203 eventi, 3.025 con edizioni. Cache catalogo 31, pagina fiere 38.
-Verifica della pubblicazione da registrare dopo il deploy.
+Pubblicazione verificata il 14 ottobre 2026 alle 19:59 UTC: commit dati
+7f05e52, Vercel riuscito, catalogo online byte per byte identico al commit
+(SHA-256 58a4459ad21e56ae51f0df6ba408a8dd48f65dde1ca275a8956d6bf2580ab5d3).
+Elenco completo, quattro filtri settori e 13 dettagli controllati in Chromium
+1440/390 e WebKit 390, senza errori o overflow. Build e test settori passati;
+regressione generale Chromium 1440/820/390/320 e WebKit 390 passata.
+Gitleaks del commit eseguito dal binario del checkout originale: nessun segreto.
+Il hook nel checkout isolato aveva saltato il controllo per binario assente.
+TO DO spuntata solo dopo questi riscontri: 22 province completate, 88 rimaste.
 
 Coordinamento: lavoro svolto in checkout isolato; Venezia resta assegnata
 alla sessione sospesa. Alla ripresa partire da `origin/main` e preservare

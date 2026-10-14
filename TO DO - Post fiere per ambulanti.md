@@ -358,7 +358,7 @@ rileggere lo stato attuale prima di generare/pushare il catalogo: conservare
 `fiere-mantova.json` e la sua voce nel build, partire almeno da cache fiere.js 37
 e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
 
-- [ ] **Cremona — ricerca preparata, verifica della pubblicazione in corso (14 ottobre 2026)**:
+- [x] **Cremona — ricerca documentale approfondita completata (14 ottobre 2026)**:
   71 manifestazioni in 31 comuni, prima nove; 113 comuni confrontati,
   71 programmi regionali recuperati e cinque grafici letti visivamente.
   61 schede con contatti e otto scadenze assolute; audit, fonti e limiti
@@ -369,14 +369,16 @@ e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
   Santa Maria della Croce 28–30 marzo da Comune, non 27–29 del registro.
   Periodi provinciali e San Carlo da confermare, nessun termine dei gestori
   o del 2025 trasferito agli espositori. Tutti i nove ID e altre 3.132 schede
-  preservati. Checkout isolato, Venezia resta alla sessione sospesa.
+  preservati. Vercel riuscito, catalogo online conforme al commit 7f05e52;
+  13 dettagli e filtri verificati in Chromium computer/telefono e WebKit telefono.
+  Checkout isolato, Venezia resta alla sessione sospesa.
 - [ ] **Cremona — aggiornamenti periodici**: disponibilità, bandi, nuove
   edizioni e calendari natalizi definitivi; chiarire Sant’Apollonia, San Carlo,
   Santa Lucia, modulo hobbisti Monte Cremasco e termine relativo Ratatuia;
   recuperare Bonemerse, Creare, programmi commerciali settembrini e altri
   allegati residui. Date da stampa locale esplicite, non programmi comunali.
 
-**Ricerca approfondita: 21 province completate, 89 ancora da fare su 110.**
+**Ricerca approfondita: 22 province completate, 88 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -403,7 +405,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **12. Torino** — Piemonte; ricerca completata, vedi sopra
 - [ ] **13. Venezia** — Veneto
 - [x] **14. Mantova** — Lombardia; ricerca completata e verificata online, vedi sopra
-- [ ] **15. Cremona** — Lombardia
+- [x] **15. Cremona** — Lombardia; ricerca completata e verificata online, vedi sopra
 - [ ] **16. Pavia** — Lombardia
 - [ ] **17. Novara** — Piemonte
 - [ ] **18. Cuneo** — Piemonte
@@ -589,4 +591,4 @@ Le caselle qui sotto indicano gli articoli completati e pubblicati. Procedere pr
 - [ ] Lombardia Carne — Rovato
 - [ ] Bovimac — Gonzaga
 
-**Coordinamento 14 ottobre, ore 21:20: Cremona riservata alla sessione manuale corrente** in checkout isolato Documents/subingresso-cremona-20261014. Venezia resta alla sessione sospesa. Prima di riprendere leggere origin/main e conservare tutte le province aggiunte nel frattempo; non rigenerare da snapshot vecchi.
+**Coordinamento 14 ottobre, ore 22:00: Cremona conclusa e verificata online** in checkout isolato Documents/subingresso-cremona-20261014. Venezia resta alla sessione sospesa. Alla ripresa leggere origin/main e conservare Mantova, fiere-cremona.json e la sua voce nel build, oltre alle altre aggiunte. Partire almeno da cache fiere.js 38 e catalogo 31; non rigenerare da snapshot vecchi. Prossima provincia libera nell’ordine: Pavia, non avviata.
