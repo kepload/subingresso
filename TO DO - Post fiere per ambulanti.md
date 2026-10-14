@@ -570,3 +570,5 @@ Le caselle qui sotto indicano gli articoli completati e pubblicati. Procedere pr
 - [ ] Il Bontà e Gusto Divino — Cremona
 - [ ] Lombardia Carne — Rovato
 - [ ] Bovimac — Gonzaga
+
+**Coordinamento 14 ottobre, ore 21:20: Cremona riservata alla sessione manuale corrente** in checkout isolato Documents/subingresso-cremona-20261014. Venezia resta alla sessione sospesa. Prima di riprendere leggere origin/main e conservare tutte le province aggiunte nel frattempo; non rigenerare da snapshot vecchi.
