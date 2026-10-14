@@ -361,7 +361,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **11. Como** — Lombardia; ricerca completata, vedi sopra
 - [x] **12. Torino** — Piemonte; ricerca completata, vedi sopra
 - [ ] **13. Venezia** — Veneto
-- [ ] **14. Mantova** — Lombardia
+- [ ] **14. Mantova** — Lombardia; **in lavorazione nella sessione manuale del 14 ottobre 2026**, cartella isolata `Documents/subingresso-mantova-20261014`. Le altre sessioni devono saltare questa provincia fino alla chiusura della ricerca.
 - [ ] **15. Cremona** — Lombardia
 - [ ] **16. Pavia** — Lombardia
 - [ ] **17. Novara** — Piemonte
