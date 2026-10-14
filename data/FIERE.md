@@ -68,9 +68,13 @@ come opportunità per qualunque ambulante. Nessuna domanda o messaggio inviato.
 
 Catalogo **2.719 eventi**, 2.564 con edizioni e 2.139 con date pubblicate.
 Le altre **2.638 schede sono identiche** e tutti i nove ID Parma precedenti
-conservati. Build offline; cache fiere.js **32**, catalogo **25**. Controlli dati,
-filtri e otto dettagli locali su desktop/telefono superati; verifica della
-pubblicazione ancora da registrare.
+conservati. Build offline; cache fiere.js **32**, catalogo **25**. Pubblicazione
+verificata: commit `dff6cc9`, Vercel riuscito e catalogo online identico al file
+nel commit (SHA-256 `19f5f2f6a3cb09dc7b4e045fee36c5fd6622bab017ddaf6bb8a12af98d11e9bf`).
+Le **81 schede** e otto dettagli operativi sono stati controllati in produzione
+su desktop e telefono, senza errori o overflow. Passati sintassi, build, settori
+e calendario completo su Chromium desktop/tablet/mobile e WebKit mobile.
+Schermate e riscontri nell’archivio locale. Nessun nuovo intervento automatico.
 
 ## Ricerca approfondita — provincia di Modena, 14 ottobre 2026
 

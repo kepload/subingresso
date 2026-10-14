@@ -250,7 +250,8 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Natale Piazza Ghiaia in sei giornate. Fiere Borgo Val di Taro 2027 esplicite.
   Fonti, conflitti, esclusioni e limiti in `data/fiere-parma.json` e `data/FIERE.md`;
   registro annuale completo non recuperato. Altre 2.638 schede identiche.
-  Pubblicazione da verificare e registrare; otto dettagli locali verificati.
+  Pubblicazione verificata: 81 schede online e otto dettagli su desktop/telefono;
+  controlli dati, filtri e browser passati. Vercel riuscito, catalogo conforme.
 - [ ] **Parma — aggiornamenti periodici**: nuovi bandi, disponibilità, quote,
   Natale e programmi residui; chiarire Rocca e Natura dicembre, Consorzio
   Fontanellato 8 dicembre, Varsi Primavera, Bardi Giugno e casette Parma/GIA.

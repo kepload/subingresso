@@ -1079,8 +1079,10 @@ Fidenza PAC26 e conflitto termine 6/7 settembre dichiarati, entrambi trascorsi.
 Rocca e Natura Natale, Fontanellato 8 dicembre, Varsi e Bardi senza correzioni
 ipotetiche; moduli 2021/2022/2025 non estesi al 2026. Nove ID Parma conservati,
 altre 2.638 schede identiche. Cache fiere.js 32, catalogo 25; TO DO 16 province
-completate, 94 mancanti. Verifica pubblicazione da registrare. Nessun modello
-locale né nuovo intervento automatico autorizzato.
+completate, 94 mancanti. Commit dff6cc9: Vercel riuscito, catalogo online identico
+al file nel commit; 81 schede e otto dettagli verificati su desktop/telefono,
+senza errori. Build/settori e calendario completo Chromium/WebKit passati.
+Nessun modello locale né nuovo intervento automatico autorizzato.
 
 13 ottobre 2026 — Vicenza: 117 schede in 49 comuni (prima 59), ricerca nominale
 nei 114 comuni e confronto con 549 programmi Veneto; audit in fiere-vicenza.json
