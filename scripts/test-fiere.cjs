@@ -21,6 +21,37 @@ assert.equal(Object.keys(boundaries.sardiniaMunicipalities).length,377);
 for (const region of regions) assert(events.filter(e => e.region === region).length >= 10);
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
+// Como: scoped commercial days, current municipal merger and category-specific terms.
+const coResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-como.json'), 'utf8'));
+const coEvents = events.filter(e => e.province === 'Como');
+const coEvent = (city, pattern) => coEvents.find(e => e.city === city && pattern.test(e.name));
+assert.equal(coEvents.length, 83);
+assert.equal(new Set(coResearch.research.municipalityCoverage.map(c => c.city)).size, 147);
+assert.equal(coResearch.research.regionalRecordAudit.length, 65);
+assert.equal(coEvent('Anzano del Parco', /michele/i).editions[0].start, '2026-09-27');
+assert.equal(coEvent('Cantù', /Crocifisso/).participation.deadline, '2026-08-19');
+assert.match(coEvent('Cantù', /Crocifisso/).participation.note, /spunta.*ordine di arrivo/);
+assert.equal(coEvent('Cantù', /Tutti i Santi/).participation.deadline, '2026-09-30');
+assert.deepEqual(coEvent('Cantù', /Mercanti/).editions.map(d => d.start), ['2026-05-17', '2026-11-15']);
+assert.deepEqual(coEvent('Erba', /MOMA/).editions.map(d => [d.start, d.end]), [
+    ['2026-10-24', '2026-10-25'], ['2026-10-30', '2026-11-01']
+]);
+assert.equal(coEvent('Erba', /Masigott/).editions[0].start, '2026-10-18');
+assert.equal(coEvent('Griante', /maiolica/i).editions[0].start, '2026-11-16');
+assert.equal(coEvent('Cernobbio', /Lombardia Eventi/).editions.length, 13);
+assert(coEvent('Cernobbio', /Asso Promo/).editions.every(d => d.year === 2025));
+assert(coEvent('Fino Mornasco', /Mosaico/).editions.every(d => d.year === 2025));
+assert(coEvent('Menaggio', /venerdì/).editions.every(d => !d.start));
+assert.match(coEvent('Domaso', /estivo/).frequencyNote, /20 agosto.*annullato/);
+assert.deepEqual(coEvent('Dongo', /estivo/).editions.filter(d => !d.periodOnly).map(d => d.start), [
+    '2026-07-24', '2026-07-25', '2026-07-26'
+]);
+assert.equal(coEvent('Uggiate-Trevano', /Natale/).participation.deadline, '2026-11-27');
+assert.match(coEvent('Uggiate-Trevano', /Natale/).participation.costs, /10 €.*20 €.*lettere.*incoerenti/);
+assert.equal(coEvent('Uggiate-Trevano', /Natale/).editions.length, 1);
+assert.equal(coEvent('Mozzate', /Libri/).participation.deadline, '2026-10-09');
+assert.equal(coEvent('Mozzate', /Libri/).editions.length, 1);
+assert(!coEvents.some(e => e.city === 'Rovello Porro' || e.city === 'Turate'));
 // Varese: operational conditions, conflicting dates and suspended events.
 const vaResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-varese.json'), 'utf8'));
 const vaEvents = events.filter(e => e.province === 'Varese');
