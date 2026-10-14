@@ -47,7 +47,53 @@ for(const boundary of [1100,2000,4000]) {
 assert.equal(e({zona:'mare_lago',clientela:'turisti'}).avg,e().avg);
 assert.equal(e({utileGiorno:0}).avg,0);
 assert.equal(e({utileGiorno:0}).rent,0);
-assert.equal(e({utileGiorno:20}).avg,4576);
+assert(e({utileGiorno:20}).avg>4576 && e({utileGiorno:20}).avg<5000);
+// I riferimenti già concordati e i report precedenti restano invariati.
+assert.equal(V.estimate({...base,incasso:2000},'2.3').avg,75140);
+assert.equal(V.estimate({...base,incasso:10},'2.3').avg,458);
+assert(e({incasso:10}).avg>1000 && e({incasso:10}).min===1000);
+for (const incasso of [2,5,10,20,50,100]) {
+    const r=e({incasso});
+    assert(r.min>=1000 && r.min<=r.avg && r.avg<=r.max,'Soglia commerciale su tutta la fascia');
+}
+for (const settore of V.choices.settore) {
+    let previous=-Infinity;
+    for (let cents=193; cents<=20000; cents++) {
+        const r=e({settore,incasso:cents/100});
+        assert(r.avg>=previous,'Curva crescente con incassi bassi');
+        previous=r.avg;
+    }
+}
+for (const incasso of [300,500,700,1000,1500,2000,4000]) {
+    for (const settore of V.choices.settore) {
+        const input={...base,settore,incasso};
+        const legacy=V.estimate(input,'2.3'),current=V.estimate(input);
+        for(const key of ['min','avg','max']) assert.equal(current[key],legacy[key],'Valori di cessione ordinari conservati');
+        if(legacy.rent>=3000) assert.equal(current.rent,legacy.rent,'Canoni sopra soglia conservati');
+    }
+}
+const atFloor=e({incasso:100,utileGiorno:0.01});
+assert.equal(atFloor.avg,1001);
+assert.equal(atFloor.min,1000);
+const shortLow=e({incasso:10,concessione:'breve',mesiResidui:1});
+assert(shortLow.avg<1000 && shortLow.max<1000,'Durata breve prevale sulla soglia commerciale');
+for(const utileGiorno of [21.85,21.86,21.87]) {
+    const r=e({utileGiorno}),old=V.estimate({...base,utileGiorno},'2.3');
+    assert(r.avg>=old.avg && r.avg-old.avg<=1,'Raccordo continuo a 5.000 euro');
+}
+assert.equal(e({incasso:320}).rent,2297,'Riferimento utente: circa 2.300 euro annui a 320/giorno');
+assert.equal(e({incasso:320,settore:'alimentare'}).rent,2297);
+assert.equal(e({incasso:1000}).rent,3120);
+assert(e({incasso:100}).rent>=500,'Minimo commerciale quando il margine lo consente');
+assert(e({incasso:320,utileGiorno:1}).rent<500,'Margine insufficiente prevale sul minimo');
+assert.equal(shortLow.rent,V.estimate({...base,incasso:10,concessione:'breve',mesiResidui:1},'2.3').rent);
+let previousRent=-Infinity;
+for(let cents=193;cents<=100000;cents++) {
+    const r=e({incasso:cents/100});
+    assert(r.rent>=previousRent,'Canone crescente, comprese soglie e vincoli');
+    assert(r.rent<=r.surplus*.7+1,'Canone entro il margine sostenibile');
+    previousRent=r.rent;
+}
 assert.equal(e({concessione:'temporanea'}).status,'non_stimabile');
 assert(e({concessione:'breve',mesiResidui:1}).avg < e({concessione:'breve',mesiResidui:12}).avg);
 assert(e({concessione:'breve',mesiResidui:12}).avg < e({concessione:'breve',mesiResidui:24}).avg);
@@ -63,7 +109,7 @@ function walk(d,i) {
         const r=V.estimate({...d,incasso,utileGiorno,concessione,mesiResidui:6}); scenarios++;
         for (const k of ['min','avg','max','rent','monthly','roi']) assert(Number.isFinite(r[k]) && r[k]>=0, k);
         assert(r.min <= r.avg && r.avg <= r.max);
-        assert(r.rent <= r.surplus*.3+1);
+        assert(r.rent <= r.surplus*.7+1);
         assert(Math.abs(r.monthly*12-r.rent)<=6);
         assert.equal(V.estimate({...r.input,baseIncasso:'anno',incasso:r.input.fatturato}).avg,r.avg);
         assert(V.estimate({...r.input,incasso:incasso+1,utileGiorno:null}).avg>=V.estimate({...r.input,utileGiorno:null}).avg,'Incassi maggiori non riducono il valore');
@@ -72,12 +118,19 @@ function walk(d,i) {
         {
             const shade=V.estimate({...r.input,sole:'riparato'});
             const sun=V.estimate({...r.input,sole:'frontale'});
-            assert(Math.abs(sun.avg-shade.avg*(r.input.settore==='alimentare'?.98:.95))<=1);
+            const oldShade=V.estimate({...r.input,sole:'riparato'},'2.3');
+            const oldSun=V.estimate({...r.input,sole:'frontale'},'2.3');
+            assert(sun.avg<=shade.avg,'Il sole non aumenta il valore');
+            if (oldSun.avg>=5000 || shade.avg===0 || r.input.concessione==='breve') {
+                assert(Math.abs(sun.avg-shade.avg*(r.input.settore==='alimentare'?.98:.95))<=1);
+            } else {
+                assert(shade.avg>=oldShade.avg && sun.avg>=oldSun.avg);
+            }
         }
     }
 }
 walk(base,0);
-console.log('OK: '+scenarios+' scenari, riferimenti utente, crescita continua, sole alimentare −2%, margini, durata e report storici.');
+console.log('OK: '+scenarios+' scenari, soglia commerciale, curva crescente, riferimenti utente, margini, durata e report storici.');
 for (const [name,input] of [['Settimanale normale',base],['Alimentare 2.000/giorno',{...base,settore:'alimentare',incasso:2000}],['Alimentare 3.000/giorno',{...base,settore:'alimentare',incasso:3000}],['Stesso banco al sole',{...base,sole:'frontale'}],['Stagionale turistico',{...base,incasso:800,giornate:22,zona:'mare_lago',clientela:'mista',passaggio:'alto',posizione:'angolare'}],['Incassi alti e margine basso',{...base,incasso:1000,utileGiorno:50}],['Concessione di 6 mesi',{...base,concessione:'breve',mesiResidui:6}]]) {
     const r=V.estimate(input); console.log(name+': '+JSON.stringify({min:r.min,avg:r.avg,max:r.max,rent:r.rent}));
 }

@@ -149,7 +149,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 - `js/pages/annuncio-detail.js?v=22` (anche in `annuncio.html` + `api/annuncio.js`)
 - `css/tailwind.css?v=4`
 - `page-view-tracker.js?v=4`
-- `js/pages/valutatore.js?v=3`
+- `js/valuation.js?v=6`, `js/pages/valutatore.js?v=7` (v2.4: soglie commerciali cessione € 1.000 e affitto € 500/anno; dettagli in `istruzioni.md`)
 
 ---
 

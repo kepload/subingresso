@@ -667,7 +667,15 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - `loadRecentListings()` `.limit(12)`, `created_at DESC`, fallback `LISTINGS.slice(0,12)`.
 - Banner mobile sopra "Vendi in 3 passi": link verde a `valutatore.html`.
 
-## 🧮 Valutatore v2.3 (14 ottobre 2026)
+## 🧮 Valutatore v2.4 (14 ottobre 2026)
+
+- Preferenza utente: piccoli incentivi commerciali alle stime basse per favorire cessione/affitto sul sito; soglie indicative € 1.000 per cessione e € 500/anno per affitto. Riferimento affitto: **320/giorno × 52 giornate → circa € 2.300/anno**. Non sono dati di vendite concluse.
+- Cessione: sul valore positivo dopo sole/fattori, sostegno `1000 × (1 − valore/5000)²` solo sotto € 5.000; curva crescente e raccordo continuo, minimo della fascia almeno € 1.000 se la durata lo consente. Margine dichiarato nullo resta zero; limite di durata prevale. Stime di cessione ordinarie ≥ € 5.000 conservate.
+- Affitto: base precedente = min(18% valore prima del sostegno cessione, 30% margine annuo). Solo sotto € 3.000/anno: fino a € 1.000 di base, `500 + 1,8 × base`; da € 1.000 a € 3.000, `2300 + 0,35 × (base − 1000)`. Curve continue/crescenti. Limiti: 70% margine annuo e 18% cap di durata; margine insufficiente o durata breve possono produrre meno di € 500. Con 52 giornate, condizioni neutre e spese ignote: 320/giorno → **€ 2.297/anno**; 500/giorno → € 2.496; 1.000/giorno → € 3.120.
+- `PATCH_VALUTATORE_V24.sql` / RPC `save_valutazione_v24`: calcolo server uguale al client, claim fino a 2.4, contatore admin 2.4; RPC/report 2.0–2.3 conservati. Cache valuation 6 e pagina valutatore 7. Metodologia pubblica e report allineati. Grafici consegnati fuori repo nella v2.3 restano snapshot di quella versione.
+- Verificato: 34.560 scenari JS e crescita alle soglie; 3.744 confronti JS/SQL di cessione/canone con ROLLBACK, claim/RLS/idempotenza; 1.152 confronti con le versioni storiche invariati. Browser Chromium/WebKit a 390 e 1280 px: importi, salvataggio/retry, report vecchi/nuovi e assenza di overflow. Patch applicata e RPC/contatore/permessi verificati live. Backup remoto `backup/session-20261014-115145-valutatore-minimo-1000` e branch `backup/pre-valutatore-minimo1000-20261014`.
+
+### Storico v2.3 (14 ottobre 2026; sotto le soglie commerciali superato dalla v2.4)
 
 - **Ulteriore indicazione utente:** non alimentare € 2.000/giorno ordinario circa € 70–80 mila; € 4.000/giorno al sole almeno € 140 mila. Gli altri dieci casi v2.2 approvati. A 52 giornate i due casi ora valgono **€ 75.140** e **€ 141.531**; incassi ≤€ 1.100 e tutta la curva alimentare conservati.
 - Solo non alimentare v2.3: quote di base per giornata **88% / 53% / 71%** sui tratti ≤1100, 1100–2000, >2000. Alimentare resta 88%/25%/65%, poi +30% sulla sua base e premio fino a +15%. Le due curve ora hanno ipotesi differenti: il +30% alimentare non descrive il divario finale fra i settori a tutti gli incassi. Curve crescenti/continue; margini, giornate, concessione e altri fattori v2.2 conservati.

@@ -1,4 +1,4 @@
-/* Valutazione indicativa v2.3. Ipotesi di modello, NON prezzi di compravendite.
+/* Valutazione indicativa v2.4. Ipotesi di modello, NON prezzi di compravendite.
  * Importabile anche in Node per verificare i casi limite.
  */
 (function (root, factory) {
@@ -6,7 +6,7 @@
     else root.PosteggioValuation = factory();
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
-    const VERSION = '2.3';
+    const VERSION = '2.4';
     const choices = {
         baseIncasso: ['giorno', 'anno'], frequenza: ['settimanale', 'giornaliero', 'fiera'],
         zona: ['mare_lago', 'turistica', 'interna'], clientela: ['residenti', 'mista', 'turisti', 'non_so'],
@@ -60,10 +60,10 @@
         return d;
     }
     function estimate(input, version = VERSION) {
-        if (!['2.0', '2.1', '2.2', VERSION].includes(version)) throw new Error('Versione del modello non disponibile.');
+        if (!['2.0', '2.1', '2.2', '2.3', VERSION].includes(version)) throw new Error('Versione del modello non disponibile.');
         const d = validate(input);
-        const current = ['2.2', VERSION].includes(version);
-        const revisedNonFood = version === VERSION && d.settore === 'non_alimentare';
+        const current = ['2.2', '2.3', VERSION].includes(version);
+        const revisedNonFood = ['2.3', VERSION].includes(version) && d.settore === 'non_alimentare';
         const knownProfit = d.utileGiorno !== null;
         const surplus = knownProfit ? d.utileGiorno * d.giornate : d.fatturato * 0.20;
         const notes = ['Stima indicativa: coefficienti prudenziali ancora da calibrare su vendite concluse. Merce, furgone e attrezzature esclusi.'];
@@ -104,14 +104,33 @@
         }
         value *= sun;
         horizonCap *= sun;
+        const operatingValue = value;
+        // Soglia commerciale: sostegno continuo solo alle stime sotto 5.000 euro.
+        // Margine nullo e limite di durata prevalgono sulla soglia di 1.000 euro.
+        if (version === VERSION && value > 0 && value < 5000) {
+            value = Math.min(value + 1000 * Math.pow(1 - value / 5000, 2), horizonCap);
+            notes.push('Per i valori bassi usiamo una soglia commerciale indicativa di € 1.000. L’aumento si riduce gradualmente fino a € 5.000; la durata breve può limitare il risultato.');
+        }
         const unknowns = ['clientela', 'passaggio', 'sole'].filter(k => d[k] === 'non_so').length;
         const uncertainty = Math.min(0.55, (knownProfit ? 0.25 : 0.35) + unknowns * 0.05 + (d.clientela === 'turisti' ? 0.05 : 0) + (d.concessione === 'non_so' ? 0.1 : 0));
         const stable = n => Math.round(n * 1e6) / 1e6;
         value = stable(value);
-        const min = Math.floor(stable(value * (1 - uncertainty)));
+        const commercialFloor = version === VERSION && value > 0 ? Math.min(1000, horizonCap) : 0;
+        const min = Math.floor(stable(Math.max(value * (1 - uncertainty), commercialFloor)));
         const max = Math.ceil(stable(Math.min(value * (1 + uncertainty), horizonCap)));
         const avg = Math.round(value);
-        const rent = Math.floor(stable(Math.min(value * 0.18, surplus * 0.30)));
+        const baseRent = Math.min((version === VERSION ? operatingValue : value) * 0.18, surplus * 0.30);
+        let rentValue = baseRent;
+        if (version === VERSION && baseRent > 0 && baseRent < 3000) {
+            // 500 euro iniziali, circa 2.300 su una base di 1.000; raccordo
+            // crescente alla curva precedente a 3.000 euro annui.
+            const supportedRent = baseRent <= 1000
+                ? 500 + baseRent * 1.8
+                : 2300 + (baseRent - 1000) * 0.35;
+            rentValue = Math.min(supportedRent, surplus * 0.70, horizonCap * 0.18);
+            notes.push('Per i canoni bassi usiamo una soglia commerciale indicativa di € 500 all’anno e un sostegno graduale fino a € 3.000. Il margine disponibile e la durata residua possono limitare il canone.');
+        }
+        const rent = Math.floor(stable(rentValue));
         if (!knownProfit) notes.push('Spese non indicate: la fascia è più ampia. Il canone usa un margine ipotetico del 20% degli incassi.');
         if (knownProfit && surplus === 0) notes.push('Con quanto dichiarato non resta un margine: non stimiamo un avviamento positivo. Eventuali beni vanno valutati a parte.');
         if (d.concessione === 'non_so') notes.push('Scadenza e possibilità di subingresso da verificare al SUAP.');
