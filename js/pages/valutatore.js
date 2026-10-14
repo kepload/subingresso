@@ -122,7 +122,7 @@
         let timer;
         try {
             if (typeof _supabase === 'undefined') throw new Error('Servizio non disponibile');
-            const request = _supabase.rpc('save_valutazione_v24', { p_input: result.input, p_session_token: session, p_request_id: requestId, p_context: context() });
+            const request = _supabase.rpc('save_valutazione_v25', { p_input: result.input, p_session_token: session, p_request_id: requestId, p_context: context() });
             const { data: log, error: err } = await Promise.race([request, new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('Salvataggio non confermato')), 10000); })]);
             if (err || !log) throw new Error('Salvataggio non riuscito');
             // Gli importi salvati vengono ricalcolati sul server.

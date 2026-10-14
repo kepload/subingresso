@@ -216,7 +216,7 @@
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=20"></script>
 <script src="js/auth.js?v=22"></script>
-<script src="js/valuation.js?v=6"></script>
+<script src="js/valuation.js?v=7"></script>
 
 <script>
 (function() {
@@ -309,16 +309,19 @@
         const roi = Number(log.prezzo_avg) > 0 && Number.isFinite(Number(log.affitto_annuo)) ? (log.affitto_annuo / log.prezzo_avg * 100) : 0;
         document.getElementById('rRoi').textContent = roi.toFixed(1);
 
-        const isV2 = ['2.0', '2.1', '2.2', '2.3', '2.4'].includes(log.algoritmo_version);
+        const isV2 = ['2.0', '2.1', '2.2', '2.3', '2.4', '2.5'].includes(log.algoritmo_version);
         const isV21 = log.algoritmo_version === '2.1';
         const isV22 = log.algoritmo_version === '2.2';
         const isV23 = log.algoritmo_version === '2.3';
         const isV24 = log.algoritmo_version === '2.4';
+        const isV25 = log.algoritmo_version === '2.5';
         let calculation = null;
         if (isV2 && log.dettagli_calcolo?.input) {
             try { calculation = PosteggioValuation.estimate(log.dettagli_calcolo.input, log.algoritmo_version); } catch (_) {}
         }
-        document.getElementById('rMethod').textContent = (isV23 || isV24)
+        document.getElementById('rMethod').textContent = isV25
+            ? 'Sotto € 100 di incasso medio a giornata: cessione fissa di € 1.000. A 52 giornate e in condizioni ordinarie, non alimentare: curva progressiva da € 1.000 a € 8.000 tra € 100 e € 200/giorno, poi fino a € 27.000 a € 400/giorno. Raccordo crescente alle fasce superiori. Giornate e caratteristiche correggono il valore sopra la soglia commerciale; i premi si applicano alla parte sopra € 1.000. Affitto minimo € 500/anno; sostegno graduale sotto € 3.000/anno. I minimi restano anche con margine nullo o durata breve: sono soglie commerciali, non redditività dimostrata.'
+            : (isV23 || isV24)
             ? 'Base per giornata per non alimentare: 88% dei primi € 1.100 di incasso, 53% della parte fra € 1.100 e € 2.000, 71% della parte oltre € 2.000. Alimentare: 88%, 25% e 65%, poi +30% sulla sua base e premio crescente oltre € 2.000/giorno fino a +15% da € 4.000. Somme moltiplicate per giornate annue. Il margine indicato adegua la base rispetto al 20%, massimo 1,5 volte la base. Posizione e sole incidono poco; la durata breve può limitare il risultato. Sono ipotesi commerciali da verificare su vendite concluse.'
             : isV22
             ? 'Base per giornata: 88% dei primi € 1.100 di incasso, 25% della parte fra € 1.100 e € 2.000, 65% della parte oltre € 2.000; somma moltiplicata per le giornate annue. Il margine dichiarato adegua questa base rispetto al margine ipotetico del 20%, fino a 1,5 volte la base. Alimentare +30%; oltre € 2.000/giorno premio crescente fino a +15% da € 4.000. Posizione e sole incidono meno: sole davanti −2% per alimentare, −5% per non alimentare. Concessione breve può limitare il valore. Sono ipotesi commerciali, da verificare su vendite concluse.'
@@ -331,7 +334,7 @@
         const notes = document.getElementById('rNotes');
         notes.replaceChildren();
         if (calculation) calculation.notes.forEach(note => { const p = document.createElement('p'); p.textContent = note; notes.appendChild(p); });
-        if (isV2 && !isV24) { const p = document.createElement('p'); p.textContent = 'Report storico v' + log.algoritmo_version + ': conserva i coefficienti originali. Rifai il calcolo per una stima aggiornata.'; notes.appendChild(p); }
+        if (isV2 && !isV25) { const p = document.createElement('p'); p.textContent = 'Report storico v' + log.algoritmo_version + ': conserva i coefficienti originali. Rifai il calcolo per una stima aggiornata.'; notes.appendChild(p); }
         if (isV2 && !calculation) notes.textContent = 'Dettagli del modello non disponibili: rifai il calcolo per una nuova stima.';
 
         // Dati inseriti

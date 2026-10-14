@@ -667,7 +667,16 @@ Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle ob
 - `loadRecentListings()` `.limit(12)`, `created_at DESC`, fallback `LISTINGS.slice(0,12)`.
 - Banner mobile sopra "Vendi in 3 passi": link verde a `valutatore.html`.
 
-## 🧮 Valutatore v2.4 (14 ottobre 2026)
+## 🧮 Valutatore v2.5 (14 ottobre 2026)
+
+- Ultima decisione esplicita utente, prevale sulle eccezioni v2.4: **sotto € 100/giorno cessione sempre € 1.000**, anche fascia min/max; **affitto sempre almeno € 500/anno**. Valgono anche con margine dichiarato nullo o concessione breve; assegnazioni temporanee restano non stimabili. Sono soglie commerciali, non redditività dimostrata: chiarito nel calcolatore/report.
+- Ancore non alimentare, condizioni neutre, 52 giornate: 100/giorno → 1.000; 200 → 8.000; 400 → 27.000. Tra 100 e 400: parabola `1000 + (185/3) × (incasso−100) + (incasso−100)²/12`, pendenza crescente. Tra 400 e 1100: raccordo cubico crescente a 50.336, con pendenza finale 52×0,53 (non alimentare) o 52×0,25 (alimentare); poi precedenti quote 53%/71% o 25%/65%.
+- Giorni effettivi: si scala solo la componente sopra € 1.000 rispetto a 52. Margine dichiarato adegua la base al rapporto con il 20%, massimo 1,5 volte; fattori di settore/posizione/sole si applicano alla parte sopra € 1.000. Margine/durata possono ridurla fino al minimo, mai sotto. Sotto 100/giorno tutti i fattori sono neutralizzati dalla soglia fissa.
+- Affitto conserva il sostegno v2.4 sotto € 3.000/anno, poi applica **sempre** il minimo € 500. Riferimento 320/giorno ×52 → € 2.297/anno conservato. Non ripristinare limiti che abbassano i minimi commerciali senza nuova istruzione dell’utente.
+- `PATCH_VALUTATORE_V25.sql` / RPC `save_valutazione_v25`, claim fino a 2.5 e contatore admin 2.5; salvataggi e report 2.0–2.4 conservati. Cache valuation 7, pagina valutatore 8; metodologia e report allineati.
+- Verifiche: 41.472 scenari JS e crescita continua alle soglie; 3.744 confronti JS/SQL di vendita/affitto con ROLLBACK, claim/RLS/idempotenza; 1.440 confronti storici invariati. Browser Chromium/WebKit a 390/1280 px: minimi, ancore 100/200/400, salvataggio/retry, report vecchi/nuovi e nessun overflow. Patch applicata e RPC/contatore/permessi verificati live. Backup remoto `backup/session-20261014-122949-valutatore-v25` e branch `backup/pre-valutatore-v25-20261014`.
+
+### Storico v2.4 (14 ottobre 2026; minimi condizionati e sostegno cessione superati dalla v2.5)
 
 - Preferenza utente: piccoli incentivi commerciali alle stime basse per favorire cessione/affitto sul sito; soglie indicative € 1.000 per cessione e € 500/anno per affitto. Riferimento affitto: **320/giorno × 52 giornate → circa € 2.300/anno**. Non sono dati di vendite concluse.
 - Cessione: sul valore positivo dopo sole/fattori, sostegno `1000 × (1 − valore/5000)²` solo sotto € 5.000; curva crescente e raccordo continuo, minimo della fascia almeno € 1.000 se la durata lo consente. Margine dichiarato nullo resta zero; limite di durata prevale. Stime di cessione ordinarie ≥ € 5.000 conservate.
