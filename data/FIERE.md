@@ -95,7 +95,13 @@ identiche**, tutti i **14 ID** precedenti conservati. Cache fiere.js **33**,
 catalogo **26**. Verificati localmente 87 risultati e otto dettagli operativi
 su desktop e telefono, senza errori o overflow. Passati build, sintassi, settori
 e calendario completo su Chromium desktop/tablet/mobile e WebKit mobile.
-Pubblicazione da verificare.
+Pubblicazione verificata: commit `da0acc0`, Vercel riuscito, catalogo online
+identico al file nel commit (SHA-256
+`470c97d5525bbeb220acb1c095696656ea1f231cc2776fcd3a9da1eb2b748c31`).
+Verificate **87 schede** e **otto dettagli operativi** in produzione su desktop
+e telefono, senza errori o overflow. Riscontri e schermate nell’archivio locale.
+TO DO aggiornato: **17 province completate, 93 rimaste**; prossima Varese.
+Nessun nuovo intervento automatico autorizzato.
 
 ## Ricerca approfondita — provincia di Parma, 14 ottobre 2026
 

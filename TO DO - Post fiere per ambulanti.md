@@ -259,8 +259,8 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Sala Baganza, Lesignano, Torrile e comuni montani. Non applicare moduli
   storici al 2026 né programmi gastronomici ai giorni dei banchi.
 
-- [ ] **Reggio nell'Emilia — ricerca preparata (14 ottobre 2026), pubblicazione
-  da verificare**: ricerca nominale nei 42 comuni; 87 manifestazioni in 38 comuni,
+- [x] **Reggio nell'Emilia — ricerca approfondita completata (14 ottobre 2026)**:
+  ricerca nominale nei 42 comuni; 87 manifestazioni in 38 comuni,
   prima 14. Controllate 211 schede regionali candidate, 47 valide; Comuni/SUAP,
   IAT, Pro Loco, Com.Re e organizzatori, PDF San Luca verificato visivamente.
   47 contatti e cinque termini assoluti/relativi. San Martein 8 novembre,
@@ -269,14 +269,15 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Fonti, conflitti, esclusioni e limiti in `data/fiere-reggio-emilia.json`
   e `data/FIERE.md`; registro regionale annuale integrale non recuperato.
   Altre 2.705 schede identiche e tutti i 14 ID precedenti preservati.
-  87 schede e otto dettagli verificati localmente su desktop e telefono.
+  Pubblicazione verificata: 87 schede e otto dettagli online su desktop e
+  telefono; Vercel riuscito, catalogo conforme, controlli dati e browser passati.
 - [ ] **Reggio nell'Emilia — aggiornamenti periodici**: nuove edizioni,
   bandi, quote e disponibilità; approfondire Reggiolo, Novellara, antiquariato
   Cavriago, Cadelbosco, Castelnovo di Sotto, Natale e comuni montani.
   Chiarire Fiera di Maggio San Martino, antiquariato Scandiano e Ciccioli Albinea.
   Non applicare moduli storici a nuove edizioni né periodi generali ai banchi.
 
-**Ricerca approfondita: 16 province completate, 94 ancora da fare su 110.**
+**Ricerca approfondita: 17 province completate, 93 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -297,7 +298,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **6. Vicenza** — Veneto; ricerca completata, vedi sopra
 - [x] **7. Modena** — Emilia-Romagna; ricerca completata, vedi sopra
 - [x] **8. Parma** — Emilia-Romagna; ricerca completata, vedi sopra
-- [ ] **9. Reggio nell'Emilia** — Emilia-Romagna
+- [x] **9. Reggio nell'Emilia** — Emilia-Romagna; ricerca completata, vedi sopra
 - [ ] **10. Varese** — Lombardia
 - [ ] **11. Como** — Lombardia
 - [ ] **12. Torino** — Piemonte
