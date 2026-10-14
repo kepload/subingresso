@@ -1099,6 +1099,22 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+14 ottobre 2026 — Mantova: 84 schede in 33 comuni, prima 12; confronto dei
+64 comuni e 195 registrazioni Lombardia, tutti i programmi scaricati. Fonti,
+hash, decisioni e limiti in `data/fiere-mantova.json` e `data/FIERE.md`; archivio
+`Documents/ricerca-fiere-mantova-20261014`. 50 schede con contatti, due termini
+documentati (15 maggio, scaduti). Natale Mantova 19 aperture; San Fortunato
+18 ottobre, Madonnina 6 settembre, San Gallo 18 ottobre; Sermide market
+26–28 giugno. Grazie 97 posteggi previsti, incongruenza validità fino al 17
+agosto dichiarata; Viadana 70 €/giorno somministrazione e hobbisti gratuiti.
+Gonzaga centro 11 date distinto dalle tre fiere nazionali; programmi grafici
+letti visivamente. Postumia con date discordanti resta testuale; tartufo/riso
+senza commercio esterno documentato nell’audit. Coordinate per comuni fusi
+da registro/mappa ufficiale, anagrafica conservata. 12 ID precedenti mantenuti,
+altre 3.057 schede identiche; catalogo 3.141. Cache fiere.js 37, JSON 30.
+Sessione manuale in checkout isolato, Venezia resta alla sessione sospesa;
+Mantova riservata nella TO DO, spunta dopo verifica della pubblicazione.
+
 14 ottobre 2026 — Como: 83 schede in 31 comuni (prima 16), ricerca nominale
 nei 147 comuni attuali e lettura di tutti i 65 programmi Lombardia CO/2026.
 Anagrafica 148 chiavi: Ronago/Uggiate-Trevano accorpati nell’audit a Uggiate
