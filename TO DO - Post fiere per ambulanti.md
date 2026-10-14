@@ -288,6 +288,9 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Sospensioni, conflitti e tre schede storiche 2025 espliciti; nessuna data
   dedotta da ricorrenze. Audit in `data/fiere-varese.json` e `data/FIERE.md`.
   Tutti i quattro ID precedenti preservati; altre 2.788 schede identiche.
+  Pubblicazione verificata: 81 schede e otto dettagli online su computer e
+  telefono; catalogo conforme al commit, controlli dati e cinque browser/schermi
+  passati. Prossima provincia nell’ordine operativo: Como.
 - [ ] **Varese — aggiornamenti periodici**: recuperare allegati Cairate,
   calendari giugno/luglio/settembre e candidature non pubblicate; chiarire
   date Cassano/Caronno Varesino, banchi Somma e segnalazioni nell’audit.

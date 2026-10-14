@@ -37,6 +37,12 @@ esaustivo: calendari estivi incompleti, timeout Busto, allegati Cairate con
 errore interno e altri candidati da approfondire nell’audit. Nessuna domanda
 o comunicazione inviata. Quattro ID precedenti e 2.788 altre schede conservati.
 
+Validazione: build, test settori, regressioni provinciali e controlli del
+calendario in Chromium 1440/820/390/320 e WebKit 390 passati; nessun errore
+o overflow. Commit `2893d5d`: catalogo online identico (SHA-256), 2.869 schede
+totali e 81 di Varese. Otto dettagli operativi verificati online sia a 1440
+sia a 390 pixel, comprese tariffe, scadenze, storico e date discordanti.
+
 
 ## Ricerca approfondita — provincia di Reggio nell’Emilia, 14 ottobre 2026
 
