@@ -1067,6 +1067,21 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 ### Calendario fiere (9 ottobre 2026)
 
+14 ottobre 2026 — Parma: 81 schede in 30 comuni (prima 9), ricerca nominale
+nei 44 comuni e 242 dettagli regionali candidati, 42 validi. Registro annuale
+completo non recuperato; fonti/hash, esclusioni e conflitti in fiere-parma.json
+e data/FIERE.md; archivio Documents/ricerca-fiere-parma-20261014. 76 schede con
+date precise, 2 periodi, 1 testuale, 2 ricorrenze; 14 contatti, 6 termini
+assoluti/relativi. November Porc mercati solo sabato/domenica; Fragno quattro
+domeniche, Natale Ghiaia sei date. Borgo Val di Taro 2027: modulo esplicito,
+domanda almeno 60 giorni prima. San Giuseppe quote distinte per categoria;
+Fidenza PAC26 e conflitto termine 6/7 settembre dichiarati, entrambi trascorsi.
+Rocca e Natura Natale, Fontanellato 8 dicembre, Varsi e Bardi senza correzioni
+ipotetiche; moduli 2021/2022/2025 non estesi al 2026. Nove ID Parma conservati,
+altre 2.638 schede identiche. Cache fiere.js 32, catalogo 25; TO DO 16 province
+completate, 94 mancanti. Verifica pubblicazione da registrare. Nessun modello
+locale né nuovo intervento automatico autorizzato.
+
 13 ottobre 2026 — Vicenza: 117 schede in 49 comuni (prima 59), ricerca nominale
 nei 114 comuni e confronto con 549 programmi Veneto; audit in fiere-vicenza.json
 e data/FIERE.md. 55 giornate precise, 20 periodi, 42 testuali; 48 contatti, 6 scadenze.

@@ -240,7 +240,25 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   residui, Bruino Medolla, calendari montani e Natale. Non trasferire documenti
   storici alle nuove edizioni né periodi generali ai giorni dei banchi.
 
-**Ricerca approfondita: 15 province completate, 95 ancora da fare su 110.**
+- [x] **Parma — ricerca approfondita completata (14 ottobre 2026)**: ricerca
+  nominale nei 44 comuni; 81 manifestazioni in 30 comuni, prima nove, nel
+  calendario [/fiere](https://subingresso.it/fiere?provincia=Parma). Verificate
+  242 schede regionali candidate, 42 valide; Comuni, IAT, organizzatori e PDF.
+  76 schede con giornate precise, due periodi, una testuale e due ricorrenze;
+  14 contatti, sei termini assoluti/relativi. November Porc: mercati sabato e
+  domenica, venerdì gastronomico separato; Fragno in quattro domeniche;
+  Natale Piazza Ghiaia in sei giornate. Fiere Borgo Val di Taro 2027 esplicite.
+  Fonti, conflitti, esclusioni e limiti in `data/fiere-parma.json` e `data/FIERE.md`;
+  registro annuale completo non recuperato. Altre 2.638 schede identiche.
+  Pubblicazione da verificare e registrare; otto dettagli locali verificati.
+- [ ] **Parma — aggiornamenti periodici**: nuovi bandi, disponibilità, quote,
+  Natale e programmi residui; chiarire Rocca e Natura dicembre, Consorzio
+  Fontanellato 8 dicembre, Varsi Primavera, Bardi Giugno e casette Parma/GIA.
+  Approfondire Sorbolo, Roccabianca San Michele, Felino, Sissa/Trecasali,
+  Sala Baganza, Lesignano, Torrile e comuni montani. Non applicare moduli
+  storici al 2026 né programmi gastronomici ai giorni dei banchi.
+
+**Ricerca approfondita: 16 province completate, 94 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -260,7 +278,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **5. Treviso** — Veneto; ricerca completata, vedi sopra
 - [x] **6. Vicenza** — Veneto; ricerca completata, vedi sopra
 - [x] **7. Modena** — Emilia-Romagna; ricerca completata, vedi sopra
-- [ ] **8. Parma** — Emilia-Romagna
+- [x] **8. Parma** — Emilia-Romagna; ricerca completata, vedi sopra
 - [ ] **9. Reggio nell'Emilia** — Emilia-Romagna
 - [ ] **10. Varese** — Lombardia
 - [ ] **11. Como** — Lombardia

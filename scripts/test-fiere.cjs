@@ -21,6 +21,27 @@ assert.equal(Object.keys(boundaries.sardiniaMunicipalities).length,377);
 for (const region of regions) assert(events.filter(e => e.region === region).length >= 10);
 assert.equal(catalog.eventsWithEditionData, events.filter(e => e.editions.length).length);
 assert.equal(catalog.eventsWithPublishedDates, events.filter(e => e.editions.some(d => d.start && !d.periodOnly)).length);
+// Parma: distinguish market days, general festival periods and obsolete forms.
+const prResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-parma.json'), 'utf8'));
+const prEvents = events.filter(e => e.province === 'Parma');
+const prEvent = (city, pattern) => prEvents.find(e => e.city === city && pattern.test(e.name));
+assert.equal(prResearch.research.municipalityCoverage.length, 44);
+assert.equal(prEvents.length, prResearch.research.statistics.events);
+for (const e of prEvents.filter(e => /NOVEMBER PORC|November Porc/.test(e.name))) {
+    assert.equal(e.editions.length, 2);
+    assert(e.editions.every(d => [0,6].includes(new Date(d.start+'T12:00:00Z').getUTCDay())));
+    assert.match(e.researchNote, /venerdì/i);
+}
+assert.deepEqual(prEvent('Calestano', /Tartufo/).editions.map(d => d.start), ['2026-10-18','2026-10-25','2026-11-01','2026-11-08']);
+assert.deepEqual(prEvent('Parma', /Natale in Piazza Ghiaia/).editions.map(d => d.start), ['2026-11-29','2026-12-06','2026-12-07','2026-12-08','2026-12-13','2026-12-20']);
+assert(prEvent('Fidenza', /Borgofood/).editions.every(d => d.periodOnly));
+assert.match(prEvent('Parma', /San Giuseppe/).participation.costs, /Furgoni.*180/);
+assert.equal(prEvent('Parma', /San Giuseppe/).participation.deadline, '2026-02-20');
+assert(prEvent('Salsomaggiore Terme', /Oro, Incenso/).editions.every(d => d.year === 2025));
+assert(prEvent('Varsi', /Primavera/).editions.every(d => !d.start));
+assert(prEvent('Fontanellato', /Rocca e Natura/).editions.filter(d => d.label).every(d => !d.start));
+assert.deepEqual(prEvent('Borgo Val di Taro', /PENTECOSTE/).editions.map(d => d.start), ['2026-05-25','2027-05-17']);
+assert(!prEvents.some(e => e.city === 'Felino' || /SPS ITALIA|SOLIDS|LABOTEC/.test(e.name)));
 // Vicenza: operational dates and category-specific conditions must survive the build.
 const viResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-vicenza.json'), 'utf8'));
 const viEvents = events.filter(e => e.province === 'Vicenza');
