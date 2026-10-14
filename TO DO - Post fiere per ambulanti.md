@@ -335,7 +335,30 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   termine del gestore distinto da espositori. Non trasferire termini tra
   categorie, periodi di feste ai banchi né programmi 2025 al 2026.
 
-**Ricerca approfondita: 20 province completate, 90 ancora da fare su 110.**
+- [x] **Mantova — ricerca documentale approfondita completata (14 ottobre 2026)**:
+  confronto dei 64 comuni e 195 record regionali, tutti i programmi scaricati;
+  **84 manifestazioni in 33 comuni**, prima 12, pubblicate e verificate in
+  [/fiere](https://subingresso.it/fiere?provincia=Mantova). 50 schede con contatti
+  e due termini assoluti documentati (15 maggio, scaduti); 76 con giornate
+  precise, quattro periodi e quattro date testuali. Natale Mantova 19 aperture,
+  San Fortunato e San Gallo 18 ottobre, Madonnina 6 settembre; Grazie 97 posteggi
+  previsti e Viadana quote distinte. Fonti, esclusioni e incongruenze in
+  `data/fiere-mantova.json` e `data/FIERE.md`. Test locali Chromium/WebKit e
+  verifica online di 13 dettagli su computer/telefono superati; 12 ID mantenuti
+  e altre 3.057 schede identiche. Commit dati `d6a96b0`, deploy Vercel riuscito.
+- [ ] **Mantova — aggiornamenti periodici**: bandi, disponibilità e quote;
+  chiarire Postumia Gazoldo, Grazie validità fino al 17 agosto, condizioni
+  Broccante per professionisti, calendari Amarcord/Ostiglia/Solferino e tre
+  scansioni non lette. Approfondire Guidizzolo, Motteggiana e Baule della Nonna;
+  tartufo/riso conservati nell’audit senza posteggi esterni documentati.
+
+**Coordinamento sessioni del 14 ottobre:** Mantova conclusa nella sessione
+manuale in checkout isolato; **Venezia resta alla sessione sospesa**. Alla ripresa
+rileggere lo stato attuale prima di generare/pushare il catalogo: conservare
+`fiere-mantova.json` e la sua voce nel build, partire almeno da cache fiere.js 37
+e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
+
+**Ricerca approfondita: 21 province completate, 89 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -361,7 +384,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **11. Como** — Lombardia; ricerca completata, vedi sopra
 - [x] **12. Torino** — Piemonte; ricerca completata, vedi sopra
 - [ ] **13. Venezia** — Veneto
-- [ ] **14. Mantova** — Lombardia; **in lavorazione nella sessione manuale del 14 ottobre 2026**, cartella isolata `Documents/subingresso-mantova-20261014`. Le altre sessioni devono saltare questa provincia fino alla chiusura della ricerca.
+- [x] **14. Mantova** — Lombardia; ricerca completata e verificata online, vedi sopra
 - [ ] **15. Cremona** — Lombardia
 - [ ] **16. Pavia** — Lombardia
 - [ ] **17. Novara** — Piemonte

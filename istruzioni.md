@@ -1113,7 +1113,12 @@ senza commercio esterno documentato nell’audit. Coordinate per comuni fusi
 da registro/mappa ufficiale, anagrafica conservata. 12 ID precedenti mantenuti,
 altre 3.057 schede identiche; catalogo 3.141. Cache fiere.js 37, JSON 30.
 Sessione manuale in checkout isolato, Venezia resta alla sessione sospesa;
-Mantova riservata nella TO DO, spunta dopo verifica della pubblicazione.
+commit dati `d6a96b0`, Vercel riuscito, hash catalogo online identico. Verificati
+84 risultati e 13 dettagli/filtri su computer e telefono senza errori. Test
+generali Chromium/WebKit, settori, controlli provinciali e gitleaks superati.
+TO DO spuntata dopo verifica: 21 province completate, 89 mancanti. Alla ripresa
+rileggere main e preservare Mantova nel build/cache; modifiche preesistenti
+conservate. Nessuna candidatura o comunicazione a terzi.
 
 14 ottobre 2026 — Como: 83 schede in 31 comuni (prima 16), ricerca nominale
 nei 147 comuni attuali e lettura di tutti i 65 programmi Lombardia CO/2026.

@@ -1639,5 +1639,19 @@ test settori e controlli dati/browser verificano giornate, termini, costi e
 coordinate. Cache `fiere.js` **37**, catalogo **30**.
 
 Lavoro in checkout separato `Documents/subingresso-mantova-20261014`:
-Venezia resta affidata alla sessione sospesa. Mantova è riservata nella TO DO
-condivisa; chiusura e spunta soltanto dopo verifica online.
+Venezia resta affidata alla sessione sospesa. Commit dati `d6a96b0`, deploy
+Vercel riuscito; HTTP 200, catalogo online SHA-256
+`ef19d5def607f78a6ff2a4b39a9441911ed75a962f364a5915c9092b8bccd546`
+identico al commit. Verificati 84 risultati, 13 dettagli e filtri settori su
+computer e telefono senza errori. Test generale Chromium (1440/820/390/320)
+e WebKit (390), settori e controlli provinciali superati; ultimo calendario
+puntuale Sabbioneta controllato con le asserzioni finali e il dettaglio browser.
+TO DO spuntata dopo verifica: 21 province completate, 89 mancanti.
+Alla ripresa delle altre sessioni mantenere Mantova nel build e incrementare
+le versioni dal valore attuale. Cambiamenti preesistenti conservati.
+
+Nota tecnica: backup `backup/session-20261014-204832-fiere-mantova-isolata`
+pubblicato correttamente; la pulizia automatica dei vecchi tag nello script
+esistente ha emesso errori, senza impedirne la creazione. Nessuna correzione
+fuori ambito. Gitleaks assente nel checkout isolato: eseguita esplicitamente
+la scansione del commit con il binario del checkout principale, esito pulito.
