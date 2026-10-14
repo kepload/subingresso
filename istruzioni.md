@@ -1,6 +1,6 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
-Calendario fiere, 14 ottobre 2026: completata Varese, 81 schede in 36 comuni; audit 136 comuni e 123 programmi regionali, dati e limiti in `data/fiere-varese.json` e `data/FIERE.md`. Ricerca completata in 18 province, 92 rimaste; prossima nell’ordine operativo Como. Cache catalogo v27, pagina fiere v34.
+Calendario fiere, 14 ottobre 2026: completata Como, 83 schede in 31 comuni; audit 147 comuni attuali e 65 programmi regionali, dati e limiti in `data/fiere-como.json` e `data/FIERE.md`. Ricerca completata in 19 province, 91 rimaste. Cache catalogo v28, pagina fiere v35. Nessun’altra provincia avviata.
 
 Ricerca Modena (14 ottobre 2026): 74 manifestazioni in 33 comuni, prima 10;
 47 comuni cercati, 120 documenti tentati, dieci scadenze. Override
@@ -1085,6 +1085,28 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 
 
 ### Calendario fiere (9 ottobre 2026)
+
+14 ottobre 2026 — Como: 83 schede in 31 comuni (prima 16), ricerca nominale
+nei 147 comuni attuali e lettura di tutti i 65 programmi Lombardia CO/2026.
+Anagrafica 148 chiavi: Ronago/Uggiate-Trevano accorpati nell’audit a Uggiate
+con Ronago, coordinate nazionali conservate. Override `data/fiere-como.json`,
+fonti/hash, esclusioni e limiti in `data/FIERE.md`; archivio locale
+`Documents/ricerca-fiere-como-20261014`. 32 contatti, 11 termini assoluti;
+Uggiate 13 dicembre, termine 27 novembre, hobbisti 10 € e P.IVA 20 €, refusi
+del modulo dichiarati. Cantù Crocifisso 18 ottobre, termine 19 agosto e spunta;
+Santi 30 ottobre–2 novembre, termine 30 settembre per un posteggio dolciumi.
+Anzano banchi solo 27 settembre; MOMA due appuntamenti separati; Griante
+lunedì 16 novembre. Domaso 20 agosto annullato; Menaggio date discordanti
+testuali. Natale 2025 esplicito in nove schede, Como casette 2026 non dedotto
+dall’opzione del bando. Bandi Cantù recuperati dal browser, Masigott grafico
+letto visivamente; presenza agricoltori solo domenica 18. Tutti i 16 ID Como
+preservati e altre 2.853 schede identiche. Commit `68c72cd`: Vercel riuscito,
+catalogo online identico al commit; 83 schede e dieci dettagli su computer e
+telefono, filtri settori e assenza di errori verificati. Build/settori, regressioni
+dati e calendario Chromium/WebKit passati, usando `PLAYWRIGHT_MODULE`.
+Cache fiere.js 35, JSON 28; TO DO 19 completate, 91 mancanti su 110,
+spuntata dopo verifica. Nessuna candidatura o comunicazione a terzi;
+nessun altro intervento o provincia avviati.
 
 14 ottobre 2026 — Parma: 81 schede in 30 comuni (prima 9), ricerca nominale
 nei 44 comuni e 242 dettagli regionali candidati, 42 validi. Registro annuale

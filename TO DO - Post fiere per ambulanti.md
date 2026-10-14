@@ -295,7 +295,27 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   calendari giugno/luglio/settembre e candidature non pubblicate; chiarire
   date Cassano/Caronno Varesino, banchi Somma e segnalazioni nell’audit.
 
-**Ricerca approfondita: 18 province completate, 92 ancora da fare su 110.**
+- [x] **Como — ricerca approfondita completata (14 ottobre 2026)**:
+  ricerca nominale nei 147 comuni attuali; 83 manifestazioni in 31 comuni,
+  prima 16, pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Como).
+  Letti tutti i 65 programmi Lombardia CO/2026, confrontati registri fieristici,
+  Comuni, calendari turistici e organizzatori; 32 contatti e 11 termini assoluti.
+  Uggiate con Ronago: 13 dicembre, domanda 27 novembre, hobbisti 10 € e
+  espositori 20 €, refusi del modulo dichiarati. Cantù Crocifisso 18 ottobre
+  con termine già trascorso e spunta; Santi un posteggio dolciumi. Anzano
+  banchi solo 27 settembre, MOMA in due appuntamenti, Griante 16 novembre.
+  Nove schede solo storiche 2025; date discordanti e ricorrenze esplicite.
+  Audit, esclusioni e limiti in `data/fiere-como.json` e `data/FIERE.md`.
+  Tutti i 16 ID conservati; altre 2.853 schede identiche. Vercel riuscito e
+  catalogo online conforme al commit; 83 schede e dieci dettagli verificati
+  su computer/telefono, filtri e controlli dati/browser passati.
+- [ ] **Como — aggiornamenti periodici**: disponibilità, bandi, quote e nuove
+  edizioni; chiarire modulo Uggiate per importi in lettere e profili P.IVA,
+  Menaggio, Natale 2026, calendari Como dopo agosto, Turate e segnalazioni
+  senza fonte primaria nell’audit. Non trasferire termini dei promotori o
+  iscrizioni volontari alle domande espositori; nessuna nuova provincia avviata.
+
+**Ricerca approfondita: 19 province completate, 91 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -318,7 +338,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **8. Parma** — Emilia-Romagna; ricerca completata, vedi sopra
 - [x] **9. Reggio nell'Emilia** — Emilia-Romagna; ricerca completata, vedi sopra
 - [x] **10. Varese** — Lombardia; ricerca completata, vedi sopra
-- [ ] **11. Como** — Lombardia
+- [x] **11. Como** — Lombardia; ricerca completata, vedi sopra
 - [ ] **12. Torino** — Piemonte
 - [ ] **13. Venezia** — Veneto
 - [ ] **14. Mantova** — Lombardia

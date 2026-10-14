@@ -77,7 +77,13 @@ nell’audit. Nessuna domanda, messaggio o email inviati a terzi.
 Validazione locale: build, settori, regressioni dati e calendario in Chromium
 1440/820/390/320 e WebKit 390 passati. Dieci schede operative su computer e
 telefono senza errori o overflow. Conservati tutti i 16 ID di Como e le altre
-2.853 schede, identiche. Pubblicazione in corso: TO DO non ancora spuntata.
+2.853 schede, identiche. Commit `68c72cd`: Vercel riuscito, 2.936 schede
+online di cui 83 di Como; SHA-256 del catalogo online identico al commit
+(`f32b9f301390c525ccddd49865baa3e34427c56881cd941bcb1590098e7c3208`).
+Verificati in produzione dieci dettagli a 1440 e 390 pixel, tutti i settori,
+elenco completo e assenza di errori/overflow. TO DO spuntata solo dopo questi
+riscontri: 19 province completate, 91 rimaste su 110. Nessun’altra provincia
+avviata e nessuna comunicazione a terzi.
 
 ## Ricerca approfondita Varese — 14 ottobre 2026
 
