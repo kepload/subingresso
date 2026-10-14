@@ -315,7 +315,27 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   senza fonte primaria nell’audit. Non trasferire termini dei promotori o
   iscrizioni volontari alle domande espositori; nessuna nuova provincia avviata.
 
-**Ricerca approfondita: 19 province completate, 91 ancora da fare su 110.**
+- [x] **Torino — ricerca approfondita completata (14 ottobre 2026)**:
+  312 comuni cercati e 240 righe regionali esaminate (139 sagre, 101 fiere);
+  241 manifestazioni in 115 comuni, prima 108, pubblicate in
+  [/fiere](https://subingresso.it/fiere?provincia=Torino). Confrontati calendari
+  regionali, Comuni, Turismo Torino e organizzatori, moduli PDF/DOCX e
+  manifesto Luserna. 222 schede con contatti e otto termini assoluti;
+  candidature e costi distinti per categoria, otto edizioni solo storiche 2025.
+  Cuorgnè termine 15 ottobre, Almese Natale 29 novembre; Tuttomele banchi
+  nei due weekend, Rivoli spunta con domanda preventiva, Villafranca 13 dicembre.
+  Fonti, copertura, esclusioni e limiti in `data/fiere-torino.json`
+  e `data/FIERE.md`; conservati tutti i 108 ID e le altre 2.828 schede identiche.
+  Vercel riuscito e catalogo online conforme al commit: 241 schede e dodici
+  dettagli verificati su computer/telefono, Chromium e WebKit; filtri,
+  mappa e controlli dati/browser passati. Nessun'altra provincia avviata.
+- [ ] **Torino — aggiornamenti periodici**: disponibilità, bandi, quote,
+  Natale e programmi montani residui; chiarire Collegno in Bancarella,
+  Volvera, Pramollo, Brocante e nuovi mercati tematici. Pinerolo Natale:
+  termine del gestore distinto da espositori. Non trasferire termini tra
+  categorie, periodi di feste ai banchi né programmi 2025 al 2026.
+
+**Ricerca approfondita: 20 province completate, 90 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -339,7 +359,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **9. Reggio nell'Emilia** — Emilia-Romagna; ricerca completata, vedi sopra
 - [x] **10. Varese** — Lombardia; ricerca completata, vedi sopra
 - [x] **11. Como** — Lombardia; ricerca completata, vedi sopra
-- [ ] **12. Torino** — Piemonte
+- [x] **12. Torino** — Piemonte; ricerca completata, vedi sopra
 - [ ] **13. Venezia** — Veneto
 - [ ] **14. Mantova** — Lombardia
 - [ ] **15. Cremona** — Lombardia

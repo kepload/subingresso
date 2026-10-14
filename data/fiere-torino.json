@@ -11392,7 +11392,43 @@
         "subject": "Coordinate dei comuni istituiti nel 2019",
         "note": "Val di Chy e Valchiusa senza coordinate nell’anagrafica nazionale: integrate nelle sole schede coordinate DMS pubblicate dai rispettivi Comuni, conversione aritmetica e fonte esplicita. Marker comunale, non ingresso; anagrafica e altre province preservate."
       }
-    ]
+    ],
+    "publication": {
+      "status": "verified",
+      "commit": "b24a1fea0c2682bd2b0d520cc74a1dffc4348d8e",
+      "url": "https://subingresso.it/fiere?provincia=Torino",
+      "verifiedAt": "2026-10-14T17:32:58.035Z",
+      "deploymentStatus": "Vercel success",
+      "catalogueSha256": "f425e091ff84bc34097c8331bbe1c2ff5a820e0ddc73632fb8963b52f98b7828",
+      "catalogueTotal": 3069,
+      "provinceEvents": 241,
+      "otherProvinceEventsUnchanged": 2828,
+      "previousIdsPreserved": 108,
+      "browserChecks": [
+        {
+          "browser": "chromium",
+          "width": 1440,
+          "events": 241,
+          "details": 12,
+          "errors": []
+        },
+        {
+          "browser": "chromium",
+          "width": 390,
+          "events": 241,
+          "details": 12,
+          "errors": []
+        },
+        {
+          "browser": "webkit",
+          "width": 390,
+          "events": 241,
+          "details": 12,
+          "errors": []
+        }
+      ],
+      "localChecks": "Build, settori e regressione generale Chromium 1440/820/390/320 e WebKit 390 passati; controlli mirati Torino anche dopo la revisione finale dei dati."
+    }
   },
   "events": [
     {

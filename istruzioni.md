@@ -1,5 +1,18 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Calendario Torino, 14 ottobre 2026: ricerca nei 312 comuni e 240 righe dei
+due registri Piemonte; 241 schede in 115 comuni, prima 108. Fonti, moduli,
+copertura, esclusioni e limiti in `data/fiere-torino.json`/`data/FIERE.md`.
+Tuttomele banchi due weekend, Chieri mercatoni 8/10 novembre, Rivoli istanza
+preventiva anche per spunta, Settimo termine Vetrina distinto; Cuorgnè domanda
+15 ottobre, Almese Natale 29 novembre, Villafranca Immacolata 13 dicembre.
+Coordinate mancanti Val di Chy/Valchiusa solo nelle schede con fonte comunale;
+anagrafica e altre 2.828 schede identiche, tutti i 108 ID preservati. Build,
+settori e cinque browser/schermi passati; online catalogo conforme al commit
+e 12 dettagli su Chromium desktop/telefono e WebKit. Cache catalogo 29,
+pagina fiere 36; 20 province completate, 90 rimaste. Nessun'altra provincia
+avviata; comunicazioni a terzi non inviate. Limiti e rinnovi periodici nell'audit.
+
 Calendario fiere, 14 ottobre 2026: completata Como, 83 schede in 31 comuni; audit 147 comuni attuali e 65 programmi regionali, dati e limiti in `data/fiere-como.json` e `data/FIERE.md`. Ricerca completata in 19 province, 91 rimaste. Cache catalogo v28, pagina fiere v35. Nessun’altra provincia avviata.
 
 Ricerca Modena (14 ottobre 2026): 74 manifestazioni in 33 comuni, prima 10;

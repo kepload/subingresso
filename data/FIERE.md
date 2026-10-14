@@ -100,7 +100,18 @@ schede le coordinate geografiche pubblicate dai rispettivi Comuni, con fonte
 esplicita: marker comunale, non ingresso. Anagrafica nazionale invariata.
 Build conserva tutti i 108 ID precedenti di Torino e le altre 2.828 schede
 identiche; catalogo 3.069 eventi, 2.893 con edizioni. Cache catalogo 29 e
-pagina fiere 36. Pubblicazione e verifica online ancora da registrare.
+pagina fiere 36.
+
+Pubblicazione verificata il 14 ottobre 2026 alle 17:32 UTC: commit `b24a1fe`,
+Vercel riuscito e catalogo online byte per byte identico al file del commit
+(SHA-256 `f425e091ff84bc34097c8331bbe1c2ff5a820e0ddc73632fb8963b52f98b7828`).
+3.069 schede online, 241 di Torino; verificati elenco completo, filtri dei
+quattro settori, mappa e dodici dettagli in Chromium 1440/390 e WebKit 390,
+senza errori o overflow. Build, settori e regressione generale Chromium
+1440/820/390/320 e WebKit 390 passati. Differenze di fine riga locali Windows
+normalizzate dal commit, dati JSON identici. Registro verifiche locale
+`verification-live.json`; esito salvato anche nell’audit provinciale.
+TO DO spuntata solo dopo questi riscontri: 20 province completate, 90 rimaste.
 
 ## Ricerca approfondita Como — 14 ottobre 2026
 
