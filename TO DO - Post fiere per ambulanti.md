@@ -592,3 +592,5 @@ Le caselle qui sotto indicano gli articoli completati e pubblicati. Procedere pr
 - [ ] Bovimac — Gonzaga
 
 **Coordinamento 14 ottobre, ore 22:00: Cremona conclusa e verificata online** in checkout isolato Documents/subingresso-cremona-20261014. Venezia resta alla sessione sospesa. Alla ripresa leggere origin/main e conservare Mantova, fiere-cremona.json e la sua voce nel build, oltre alle altre aggiunte. Partire almeno da cache fiere.js 38 e catalogo 31; non rigenerare da snapshot vecchi. Prossima provincia libera nell’ordine: Pavia, non avviata.
+
+**Coordinamento 14 ottobre, ore 23:03: Pavia riservata alla sessione manuale corrente**, in checkout isolato `Documents/subingresso-pavia-20261014`. Venezia resta alla sessione sospesa. Non avviare Pavia in parallelo; prima di pubblicare rileggere origin/main e mantenere tutte le province gi? integrate.
