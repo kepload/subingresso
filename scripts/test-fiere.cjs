@@ -10,6 +10,23 @@ const { events } = catalog;
 const boundaries = JSON.parse(fs.readFileSync(path.join(root, 'data/italia-province.json'), 'utf8'));
 require('../js/pages/fiere.js');
 const api = globalThis.FiereCalendar;
+// Price evidence must keep its edition, conditions and source; missing is never free.
+const feeResearch = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere-costi.json'), 'utf8'));
+for (const [id, pricing] of Object.entries(feeResearch.events)) {
+    const event = events.find(e => e.id === id);
+    assert(event, 'Price entry has a matching fair: ' + id);
+    assert.deepEqual(event.pricing, pricing);
+    assert.equal(event.participation.costs, pricing.details);
+    assert.match(pricing.sourceUrl, /^https:\/\//);
+    assert(pricing.checkedAt <= catalog.catalogUpdatedAt);
+}
+assert.equal(api.feeLabel({participation:{}}), 'Costo banco da verificare');
+assert.equal(api.feeLabel({participation:{costs:'Preventivo da richiedere'}}), 'Costi: vedi scheda');
+assert.match(api.feeLabel(events.find(e => e.id === 'trentino-alto-adige-bolzano-klimahouse')), /^Costi 2027:/);
+assert.match(api.feeLabel(events.find(e => e.id === 'lombardia-secugnago-mercatino-per-l-accensione-dell-albero-di-natale')), /Nessuna quota/);
+assert.match(events.find(e => e.id === 'lombardia-monza-monzacon').pricing.details, /70 € per iscrizione/);
+assert.match(events.find(e => e.id === 'piemonte-torino-gran-balon').pricing.label, /90 €/);
+assert.match(events.find(e => e.id === 'piemonte-torino-balon-del-sabato').pricing.label, /29 €/);
 // Date order must survive month/province filters; ongoing events precede future dates.
 {
     const event = (id, start, end = start, extra = {}) => ({ id, name: id, city: 'Roma', months: [10], editions: start ? [{start, end, year: Number(start.slice(0, 4)), ...extra}] : [] });
@@ -1039,6 +1056,31 @@ async function run(engine,name,viewport,base) {
         assert((await page.locator('#detail-deadline').textContent()).includes('20 nov 2026'));
         assert((await page.locator('#detail-costs').textContent()).includes('Nessuna quota'));
         assert.equal(await page.locator('#detail-participation-link').getAttribute('href'),secugnago.participation.url);
+        await page.locator('#close-detail').click();
+        for (const id of ['piemonte-cuneo-mercati-straordinari-del-marrone',
+            'valle-d-aosta-aosta-marche-vert-noel', 'trentino-alto-adige-bolzano-klimahouse',
+            'veneto-piove-di-sacco-fiera-e-festeggiamenti-di-san-martino', 'piemonte-torino-gran-balon']) {
+            const event = events.find(e => e.id === id);
+            const params = new URLSearchParams({provincia:event.province, q:event.name});
+            await page.goto(base + '/fiere?' + params);
+            await count(api.filterEvents(events, {province:event.province,query:event.name,months:[]}).length);
+            const card = page.locator('.fiere-card[data-event-id="' + id + '"]');
+            assert.equal(await card.locator('.fiere-card-cost').textContent(), api.feeLabel(event));
+            await card.locator('.fiere-card-button').click();
+            assert.equal(await page.locator('#detail-costs').textContent(), event.pricing.details);
+            assert.equal(await page.locator('#detail-costs-source').getAttribute('href'), event.pricing.sourceUrl);
+            assert(await page.locator('#detail-costs-source').isVisible());
+            if (event.pricing.period) assert((await page.locator('#detail-costs-meta').textContent()).includes(event.pricing.period));
+            assert(await page.locator('#fair-dialog').evaluate(d => d.scrollWidth <= d.clientWidth + 1));
+            await page.locator('#close-detail').click();
+        }
+        const noPrice = events.find(e => !e.pricing && !e.participation.costs && !e.name.includes('/'));
+        await page.goto(base + '/fiere?' + new URLSearchParams({provincia:noPrice.province,q:noPrice.name}));
+        await count(api.filterEvents(events, {province:noPrice.province,query:noPrice.name,months:[]}).length);
+        await page.locator('.fiere-card[data-event-id="' + noPrice.id + '"] .fiere-card-button').click();
+        assert.match(await page.locator('#detail-costs').textContent(), /Importo non verificato/);
+        assert.equal(await page.locator('#detail-costs-source').isVisible(), false);
+        assert.equal(await page.locator('#detail-costs-meta').isVisible(), false);
         await page.locator('#close-detail').click();
         await page.goto(base + '/fiere?provincia=Lodi&mesi=10');
         await matches(lodi.filter(e => e.months.includes(10)));

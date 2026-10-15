@@ -1,0 +1,1148 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-15",
+  "research": {
+    "catalogEventsScreened": 3447,
+    "catalogSourceRequests": 1870,
+    "relatedSourceRequests": 453,
+    "retrievableTexts": 2182,
+    "method": "Ricognizione delle fonti e dei collegamenti di partecipazione di tutte le schede; controllo automatico dei candidati seguito da lettura e selezione editoriale. Le note già presenti conservano la data del precedente audit. I recuperi HTTP non equivalgono a documenti tutti letti integralmente.",
+    "limitations": "Ricerca delle fonti pubbliche reperibili, non censimento esaustivo dei prezzi. Errori HTTP, immagini, moduli dinamici e preventivi privati possono lasciare importi non verificati. Gratuità visitatori, bolli, cauzioni e tariffe di altre categorie non sono prezzi complessivi del banco."
+  },
+  "events": {
+    "calabria-amantea-fiera-di-ognissanti": {
+      "label": "Canone 1,70 €/m²/giorno + pratica 10 €",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Secondo il resoconto del disciplinare 2026: 1,70 €/m² al giorno e 10 € per la pratica. La fiera è prevista dal 31 ottobre al 2 novembre; il totale dipende da superficie, durata e altri oneri. Fonte giornalistica, da confermare con il Comune prima del pagamento.",
+      "sourceUrl": "https://www.miocomune.tv/post/amantea-fiera-ognissanti-2026-posteggi",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "calabria-cosenza-fiera-di-san-giuseppe": {
+      "label": "Canone: 140 € merce varia/food; 160 € altre categorie",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Canone per l’intero periodo previsto dal bando 2026: merce varia e food, modulo 3×3 m, 140 €; vimini, terrecotte, lampadari e porcellane, modulo 3×4 m, 160 €. Bolli ed eventuali altri oneri non sono compresi in un totale verificato. Le categorie hanno periodi di occupazione differenti; importi riportati da Confartigianato Cosenza, con un refuso nella data della delibera citata.",
+      "sourceUrl": "https://www.confartigianatocosenza.it/2026/02/20/comune-di-cosenza-fiera-di-san-giuseppe-2026-approvazione-e-pubblicazione-bando/",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "emilia-romagna-borgo-val-di-taro-fiera-del-fungo-di-borgotaro-igp": {
+      "label": "Alimentari 3×3: 200 € + IVA/weekend; corrente extra",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Modulo enoagroalimentari: 3×3 m 200 € per un weekend o 350 € per entrambi; 3×4,5 m 240/420 €; 3×6 m 280/460 €. IVA 22% da aggiungere; singola giornata non ammessa. Elettricità per weekend: 0,5/1/2/3 kW 30/40/70/100 €, con condizioni fiscali da confermare. Categorie merceologiche specifiche possono avere maggiorazioni; nessun importo trasferito ai non alimentari.",
+      "sourceUrl": "https://www.sagradelfungodiborgotaro.it/wp-content/uploads/2026/03/modulo-enoagroalimentare-2026-1.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "emilia-romagna-castelvetro-di-modena-mercatino-di-natale": {
+      "label": "P.IVA: 48 € per spazio 3×3 m, IVA e CUP inclusi",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Operatori con P.IVA: spazio scoperto 3×3 m, 48 € IVA e CUP inclusi; 1 kW incluso. Sconto 20% agli associati del Consorzio. Altre metrature/forniture da concordare. Tariffe OPI distinte.",
+      "sourceUrl": "https://www.visitcastelvetro.it/wp-content/uploads/2025/10/DOMANDA-COMPLETApartecipazione_Natale-P.IVA_-1.pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-fidenza-gran-fiera-di-borgo-san-donnino-borgofood": {
+      "label": "Agricoli 235 € + IVA; altri pacchetti distinti",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Scheda PAC26: pacchetto A riservato a piccoli produttori agricoli, 235 € + IVA; B vendita senza somministrazione, 440 € + IVA; spazio food truck 6×3, 505 € + IVA. Altri pacchetti, spazi e supplementi distinti: consultare la scheda completa.",
+      "sourceUrl": "https://www.comune.fidenza.pr.it/wp-content/uploads/2026/05/Avviso-manifestazione-di-interesse-espositori-gran-fiera-2026.pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-parma-antica-fiera-di-san-giuseppe": {
+      "label": "3×3 alimentari da 80 € + IVA/giorno",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Modulo P.IVA alimentari senza somministrazione, spazio 3×3: 80 € + IVA per un giorno, 110 € + IVA per due. Furgoni/ombrelloni non alimentari: 180 € + IVA un giorno, 250 € + IVA due. Corrente su accordo 30 €/kW. Altre misure e categorie con tariffe proprie.",
+      "sourceUrl": "https://www.biebieventi.com/san-giuseppe-2026/",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-parma-remira-market": {
+      "label": "146,40 €/giorno per 3×2 m, IVA inclusa",
+      "kind": "fee",
+      "period": null,
+      "details": "Regolamento consultato: 120 € + IVA, 146,40 € al giorno per postazione 3×2 m. Preventivo da riconfermare per la singola data.",
+      "sourceUrl": "https://parma.remiramarket.it/",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-pievepelago-mercatino-della-festa-del-fungo-porcino": {
+      "label": "Quota di partecipazione gratuita",
+      "kind": "free",
+      "period": "2026",
+      "details": "Quota gratuita.",
+      "sourceUrl": "https://www.comune.pievepelago.mo.it/dam/jcr:a011090b-54e9-439b-afce-0c5f93563d70/AVVISO%20MERCATINO%20STRAORDINARIO%20FESTA%20DEL%20FUNGO%202026_signed.pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-pievepelago-mercatino-della-festa-della-castagna": {
+      "label": "Quota di partecipazione gratuita",
+      "kind": "free",
+      "period": "2026",
+      "details": "Partecipazione gratuita secondo l’avviso 2026; attrezzature a proprio carico.",
+      "sourceUrl": "https://www.comune.pievepelago.mo.it/dam/jcr:9c712b94-2ed8-443b-93cf-3e30181514a9/Avviso%20Mercatino%20Straordinario%20Festa%20della%20Castagna%20-%20Comune%20di%20Pievepelago_signed(1).pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-pievepelago-mercatino-della-festa-patronale-capoluogo": {
+      "label": "Nessuna quota richiesta",
+      "kind": "free",
+      "period": "2026",
+      "details": "Quota non richiesta.",
+      "sourceUrl": "https://www.comune.pievepelago.mo.it/dam/jcr:a52dc648-d825-496d-b650-c1f77a23e238/COMUNE%20DI%20PIEVEPELAGO%20AVVISO%20FESTA%20PATRONALE%20DI%20PIEVEPELAGO%202026_signed.pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-pievepelago-mercatino-straordinario-del-corpus-domini": {
+      "label": "Suolo pubblico esente; altri oneri da verificare",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Nessuna COSAP secondo l’avviso.",
+      "sourceUrl": "https://www.comune.pievepelago.mo.it/dam/jcr:593f5d30-e95d-4070-ab9b-3c57750754dc/AVVISO%20MERCATINO%20CORPUS%20DOMINI_signed.pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-pievepelago-verdepieve": {
+      "label": "Suolo pubblico esente; altri oneri da verificare",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Nessuna COSAP per il mercatino organizzato dal Comune secondo l’avviso.",
+      "sourceUrl": "https://www.comune.pievepelago.mo.it/dam/jcr:0be244a0-43be-476b-846e-d366bfea0c53/Avviso%20Verdepieve_signed%20(1).pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-polinago-fiera-dello-statuto": {
+      "label": "Tributo suolo: 15 €/posteggio",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Tributo suolo pubblico 15 € per posteggio, secondo avviso 2026.",
+      "sourceUrl": "https://www.comune.polinago.mo.it/Dettaglionews?IDNews=243403",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "emilia-romagna-vezzano-sul-crostolo-fiera-di-san-martino": {
+      "label": "P.IVA da 35 €; hobbisti da 20 €; food 80 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Modulo P.IVA: 3×3 m 35 €, 4,5×3 m 40 €, 6×3 m 50 €, 8×3 m 60 €. Food: 80 €, elettricità massimo 3 kW. OPI/hobbisti: 3×3 m 20 €, 4,5×3 m 27 €, 6×3 m 35 €. Importi dei moduli; trattamento IVA da verificare. Solo enti no profit: 3×3 m gratuito.",
+      "sourceUrl": "https://www.comune.vezzano-sul-crostolo.re.it/2026/10/xxi-edizione-della-fiera-di-san-martino-modulistica-per-gli-espositori/",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "friuli-venezia-giulia-gorizia-gusti-di-frontiera": {
+      "label": "Vendita 250/450 €; somministrazione 950/1.400 € + extra",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Tariffa 2026: vendita non alimentare 250 €, vendita alimentare fino a 25 m² 450 €, somministrazione senza cucina fino a 25 m² 950 €, con cucina fino a 25 m² 1.400 €. Oltre 25 m² supplemento 7 €/m². Allacciamento elettrico, noleggio stand e attrezzature si pagano separatamente. Sono previste condizioni diverse per attività in sede fissa nell’area dell’evento; queste non sono tariffe generali per ambulanti.",
+      "sourceUrl": "https://gustidifrontiera.it/documents/59/LINEE_GUIDA_2026_.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "friuli-venezia-giulia-trieste-barbacan-produce": {
+      "label": "80 €/edizione, IVA inclusa",
+      "kind": "fee",
+      "period": "2026",
+      "details": "80 euro IVA inclusa per edizione; quota non rimborsabile per rinuncia o annullamento per maltempo.",
+      "sourceUrl": "https://www.barbacanproduce.com/",
+      "checkedAt": "2026-10-11",
+      "review": "existing-curated-note"
+    },
+    "liguria-genova-cornigliano": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-del-mare": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-dell-angelo": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-fiera-di-pontedecimo": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-fiera-di-san-pietro-e-paolo": {
+      "label": "Canone 1,04–4,80 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario speciale per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita: canone giornaliero 4,80 / 3,95 / 3,11 / 1,77 / 1,04 €/m² dalla prima alla quinta categoria stradale nella delibera. L’allegato indica 3,90 € per la seconda categoria invece di 3,95 €: discordanza da risolvere con il Comune. Totale dipendente da strada, superficie e durata; non è una quota complessiva comprensiva di tutti gli oneri.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-fiera-di-sant-agata": {
+      "label": "Canone 1,04–4,80 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario speciale per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita: canone giornaliero 4,80 / 3,95 / 3,11 / 1,77 / 1,04 €/m² dalla prima alla quinta categoria stradale nella delibera. L’allegato indica 3,90 € per la seconda categoria invece di 3,95 €: discordanza da risolvere con il Comune. Totale dipendente da strada, superficie e durata; non è una quota complessiva comprensiva di tutti gli oneri.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-maggio": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-s-antonio": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-s-carlino": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-s-carlo": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-s-giuseppe": {
+      "label": "Canone 1,04–4,80 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario speciale per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita: canone giornaliero 4,80 / 3,95 / 3,11 / 1,77 / 1,04 €/m² dalla prima alla quinta categoria stradale nella delibera. L’allegato indica 3,90 € per la seconda categoria invece di 3,95 €: discordanza da risolvere con il Comune. Totale dipendente da strada, superficie e durata; non è una quota complessiva comprensiva di tutti gli oneri.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-s-pietro-pra": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-s-rita": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-s-salvatore": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-s-zita": {
+      "label": "Canone 1,04–4,80 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario speciale per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita: canone giornaliero 4,80 / 3,95 / 3,11 / 1,77 / 1,04 €/m² dalla prima alla quinta categoria stradale nella delibera. L’allegato indica 3,90 € per la seconda categoria invece di 3,95 €: discordanza da risolvere con il Comune. Totale dipendente da strada, superficie e durata; non è una quota complessiva comprensiva di tutti gli oneri.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-ss-cosma-e-damiano": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-genova-struppa": {
+      "label": "Canone 1,26–5,76 €/m²/giorno secondo strada",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Tariffario comunale 2026, occupazioni temporanee per fiere e sagre: prima categoria stradale 5,76 €/m²/giorno, seconda 4,69 €, terza 3,74 €, quarta 2,13 €, quinta 1,26 €. La fiera è elencata nel calendario comunale 2026. Il totale dipende da via, metri quadrati e giorni assegnati; eventuali altri oneri vanno confermati. Tariffario speciale distinto per Sant’Agata, San Pietro alla Foce, San Giuseppe e Santa Zita.",
+      "sourceUrl": "https://www.comune.genova.it/sites/default/files/2025-12/Tariffe%202026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "liguria-laigueglia-fiera-di-san-matteo": {
+      "label": "Tre giorni: non food da 150 €; alimentari da 240 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Listino 2026 riportato dalla cronaca locale sull’avviso comunale: stand non alimentari 3×3 o 3×2 m 150 €, 6×3 m 300 €; alimentari 3×3 o 3×2 m 240 €, 6×3 m 360 €. Importi per l’edizione 25–27 settembre; IVA e servizi inclusi non specificati nell’articolo. Fonte giornalistica: confermare il preventivo con l’Ufficio Commercio.",
+      "sourceUrl": "https://www.liguria2000news.it/primo_piano/fiera-san-matteo-via-alle-domande-2026/",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "lombardia-barbariga-fiera-del-casoncello-de-co": {
+      "label": "2 €/m²/giorno + IVA 22%",
+      "kind": "unit",
+      "period": "2026",
+      "details": "€2 al m² al giorno + IVA 22%, secondo il regolamento espositori 2026. Gazebo, tavoli e sedie non forniti.",
+      "sourceUrl": "https://fieradelcasoncello.it/wp-content/themes/casoncello/files/Richiesta%20espositori%202026.pdf",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-bonate-sopra-fiera-madonna-delle-ghiaie": {
+      "label": "Bollo 16 € + diritti e canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Avviso 2026: domanda in bollo da 16 € e pagamento dei diritti di segreteria secondo tariffario SUAP. La notizia non pubblica il costo complessivo del posteggio: canone e altri oneri vanno richiesti al Comune.",
+      "sourceUrl": "https://www.comune.bonatesopra.bg.it/novita/avvisi/dettaglio-notizia/Avviso-pubblico-per-lassegnazione-di-n.-10-concessioni-annuali-di-posteggio-nella-Fiera-Madonna-delle-Ghiaie-del-13-maggio-2026/",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "lombardia-brescia-fiera-dei-santi-faustino-e-giovita": {
+      "label": "64 € (5×3 m) / 129 € (10×3 m)",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€64 (5×3 m) / €129 (10×3 m) nel calendario comunale 2026. Per gli spuntisti il pagamento segue l’assegnazione del posteggio.",
+      "sourceUrl": "https://comune.brescia.it/it/servizi/partecipazione-alla-spunta-delle-fiere-cittadine",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-brescia-fiera-della-madunina-dei-custu": {
+      "label": "56 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€56 nel calendario comunale 2026. Per gli spuntisti il pagamento segue l’assegnazione del posteggio.",
+      "sourceUrl": "https://comune.brescia.it/it/servizi/partecipazione-alla-spunta-delle-fiere-cittadine",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-brescia-fiera-di-cristo-re": {
+      "label": "56 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€56 nel calendario comunale 2026. Per gli spuntisti il pagamento segue l’assegnazione del posteggio.",
+      "sourceUrl": "https://comune.brescia.it/it/servizi/partecipazione-alla-spunta-delle-fiere-cittadine",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-brescia-fiera-di-ognissanti": {
+      "label": "34–69 € secondo superficie",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€34 / €52 / €69 secondo le dimensioni nel calendario comunale 2026. Per gli spuntisti il pagamento segue l’assegnazione del posteggio.",
+      "sourceUrl": "https://comune.brescia.it/it/servizi/partecipazione-alla-spunta-delle-fiere-cittadine",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-brescia-fiera-di-sant-angela-merici": {
+      "label": "39–77 € secondo superficie",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€39 / €59 / €77 secondo le dimensioni nel calendario comunale 2026. Per gli spuntisti il pagamento segue l’assegnazione del posteggio.",
+      "sourceUrl": "https://comune.brescia.it/it/servizi/partecipazione-alla-spunta-delle-fiere-cittadine",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-brescia-fiera-di-sant-antonio": {
+      "label": "39 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€39 nel calendario comunale 2026. Per gli spuntisti il pagamento segue l’assegnazione del posteggio.",
+      "sourceUrl": "https://comune.brescia.it/it/servizi/partecipazione-alla-spunta-delle-fiere-cittadine",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-brescia-fiera-di-santa-maria-crocifissa-di-rosa": {
+      "label": "51 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€51 nel calendario comunale 2026. Per gli spuntisti il pagamento segue l’assegnazione del posteggio.",
+      "sourceUrl": "https://comune.brescia.it/it/servizi/partecipazione-alla-spunta-delle-fiere-cittadine",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-brescia-fiera-di-santa-maria-della-vittoria": {
+      "label": "53 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€53 nel calendario comunale 2026. Per gli spuntisti il pagamento segue l’assegnazione del posteggio.",
+      "sourceUrl": "https://comune.brescia.it/it/servizi/partecipazione-alla-spunta-delle-fiere-cittadine",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-brescia-fiera-di-santa-maria-delle-grazie": {
+      "label": "39 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€39 nel calendario comunale 2026. Per gli spuntisti il pagamento segue l’assegnazione del posteggio.",
+      "sourceUrl": "https://comune.brescia.it/it/servizi/partecipazione-alla-spunta-delle-fiere-cittadine",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-busto-arsizio-mostra-scambio-auto-moto-bici": {
+      "label": "Ottobre: esterno 80 € / interno da 120 € per due giorni",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Solo edizione ottobre 2026, entrambe le giornate, IVA compresa: interno 4×4 m 120 €, ad angolo 140 €; esterno 5×4 m 80 €; esposizione auto coperta 30 €; corrente solo interna 50 €.",
+      "sourceUrl": "https://www.mostrascambiobustoarsizio.it/eventi/mostra-scambio-busto-arsizio-34-edizione-2026/",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-cantu-festa-della-giubiana": {
+      "label": "Bollo 16 € + diritti e canone da quantificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo domanda 16 €; diritti SUAP secondo tariffario e canone suolo calcolato da ABACO (031 700084, info.cantu@abacospa.it). Non sono quote forfettarie né costi dello spettacolo viaggiante.",
+      "sourceUrl": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-cantu-festa-di-sant-antonio-abate": {
+      "label": "Bollo 16 € + diritti e canone da quantificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo domanda 16 €; diritti SUAP secondo tariffario e canone suolo calcolato da ABACO (031 700084, info.cantu@abacospa.it). Non sono quote forfettarie né costi dello spettacolo viaggiante.",
+      "sourceUrl": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-cantu-festa-di-santa-rita": {
+      "label": "Bollo 16 € + diritti e canone da quantificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo domanda 16 €; diritti SUAP secondo tariffario e canone suolo calcolato da ABACO (031 700084, info.cantu@abacospa.it). Non sono quote forfettarie né costi dello spettacolo viaggiante.",
+      "sourceUrl": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-cantu-fiera-del-crocifisso": {
+      "label": "Bollo 16 € + diritti e canone da quantificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo domanda 16 €; diritti SUAP secondo tariffario e canone suolo calcolato da ABACO (031 700084, info.cantu@abacospa.it). Non sono quote forfettarie né costi dello spettacolo viaggiante.",
+      "sourceUrl": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-cantu-fiera-di-s-apollonia": {
+      "label": "Bollo 16 € + diritti e canone da quantificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo domanda 16 €; diritti SUAP secondo tariffario e canone suolo calcolato da ABACO (031 700084, info.cantu@abacospa.it). Non sono quote forfettarie né costi dello spettacolo viaggiante.",
+      "sourceUrl": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-cantu-fiera-di-s-rocco": {
+      "label": "Bollo 16 € + diritti e canone da quantificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo domanda 16 €; diritti SUAP secondo tariffario e canone suolo calcolato da ABACO (031 700084, info.cantu@abacospa.it). Non sono quote forfettarie né costi dello spettacolo viaggiante.",
+      "sourceUrl": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-cantu-tutti-i-santi-e-ricorrenza-dei-defunti": {
+      "label": "Bollo 16 € + diritti e canone da quantificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo domanda 16 €; diritti SUAP secondo tariffario e canone suolo calcolato da ABACO (031 700084, info.cantu@abacospa.it). Non sono quote forfettarie né costi dello spettacolo viaggiante.",
+      "sourceUrl": "https://www.comune.cantu.co.it/servizi/imprese_e_commercio/servizio_174.html",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-carnago-mercatini-albero-di-natale": {
+      "label": "Partecipazione gratuita; cauzione restituibile 10 €",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Partecipazione gratuita; cauzione 10 € per piazzola 3×3 m, restituita ai presenti. Corrente compresa; gazebo, tavolo, luci e prolunghe propri.",
+      "sourceUrl": "https://www.mercatiniealberocarnago.it/espositori/",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-caselle-landi-fiera-autunnale-di-merci-uve-bestiame-commercio-e-artigianato": {
+      "label": "Suolo pubblico esente; altri oneri da verificare",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Il modulo 2026 esclude versamenti per occupazione suolo pubblico; eventuali servizi aggiuntivi da verificare.",
+      "sourceUrl": "https://www.comune.casellelandi.lo.it/it-it/download/scheda-di-adesione-479561-4-1468-8f1d8db382c63023ab7b91db9b4b878b",
+      "checkedAt": "2026-10-10",
+      "review": "existing-curated-note"
+    },
+    "lombardia-chiari-giornata-del-riuso-e-non-solo": {
+      "label": "11 gennaio: 25 € per spazio 3×3 m",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Scheda dell’11 gennaio 2026: quota 25 € per uno spazio 3×3 m; spazi ulteriori a multipli di 3×3 m. Ammissione previa selezione. Il prezzo riguarda questa edizione e non è esteso automaticamente alle altre date della rassegna; trattamento IVA non specificato nella pagina.",
+      "sourceUrl": "https://www.nonsolovinile.com/scheda_di_adesione_giornata_del_riuso_chiari1.html",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "lombardia-clusone-mercatini-di-natale": {
+      "label": "Casette da 30 € + IVA/giorno; cauzione 200 €",
+      "kind": "fee",
+      "period": "2026/2027",
+      "details": "Edizione 2026: 40 € + IVA/giorno casetta standard, 30 € + IVA piccola; 28 date 1.000 €/780 € + IVA. Cauzione 200 €. Dal 1 al 6 gennaio sconto 20%, secondo regolamento.",
+      "sourceUrl": "https://turismoproclusone.it/wp-content/uploads/2026/09/MERCATINI-DI-NATALE-2026-TPC-Regolamento.pdf",
+      "checkedAt": "2026-10-11",
+      "review": "existing-curated-note"
+    },
+    "lombardia-como-fiera-del-giovedi-santo": {
+      "label": "Emergenze 120 € + bollo 16 € + canone/TARI",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo domanda 16 €; canone unico, rimborso piano emergenze 120 € e TARI alimentari se dovuta, secondo pagina comunale.",
+      "sourceUrl": "https://www.comune.como.it/servizi/Fiera-del-Giovedi-Santo/",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-cornegliano-laudense-festa-della-zucca": {
+      "label": "Commercianti da 25 €/giorno; hobbisti/agricoli 15 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Per giornata: hobbisti 3×3 e produttori agricoli €15; commercianti 3×3 €25, fino a 4,5 m €30, oltre 4,5 e fino a 6 m €50.",
+      "sourceUrl": "https://comune.cornegliano-laudense.lo.it/notizie/3607564/sagra-ss-simone-giuda-callisto-festa-zucca-2026",
+      "checkedAt": "2026-10-10",
+      "review": "existing-curated-note"
+    },
+    "lombardia-cornegliano-laudense-sagra-dei-santi-simone-giuda-e-callisto": {
+      "label": "Commercianti da 25 €/giorno; hobbisti/agricoli 15 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Per giornata: hobbisti 3×3 e produttori agricoli €15; commercianti 3×3 €25, fino a 4,5 m €30, oltre 4,5 e fino a 6 m €50.",
+      "sourceUrl": "https://comune.cornegliano-laudense.lo.it/notizie/3607564/sagra-ss-simone-giuda-callisto-festa-zucca-2026",
+      "checkedAt": "2026-10-10",
+      "review": "existing-curated-note"
+    },
+    "lombardia-curtatone-antichissima-fiera-delle-grazie": {
+      "label": "40 € + canone/m² + fronte espositivo + corrente",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Per i tre giorni: CUP 1,645 €/m²/giorno in Via Fiera/Via Pozzarello, 1,2173 nelle altre due aree. Si aggiungono 40 € fissi, 19,03 €/metro lineare di fronte nelle prime vie oppure 11,71 nelle altre aree, e corrente 16,77 €/kW (8,39 € per mezzo kW). Esempio del Comune, 8×4 m e 1 kW: totale 366,93 € nelle prime vie o 267,31 € in Parco Paganini/Piazzale Fiera.",
+      "sourceUrl": "https://www.levata.org/cdq1/documenti/albo_pretorio/determina/2026_03/20260252-approvazione-di-bando-pubblico-per-l-assegnazione-dei-posteggi-destinati-al-commercio-su-aree-pubbliche-nell-ambito-dell-antichissima-fiera-delle-grazie-edizione-2026/bando-completo-per-determina.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "lombardia-desenzano-del-garda-mercatino-dell-antiquariato": {
+      "label": "60 €/edizione + 20 € associativi alla prima",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Singola edizione €60, più €20 di quota associativa alla prima partecipazione; abbonamento 11 edizioni €440 inclusa quota, secondo il modulo 2026.",
+      "sourceUrl": "https://www.antiquariatovintagedesenzano.it/partecipazione-antiquariato/",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-desenzano-del-garda-un-mondo-di-vintage": {
+      "label": "60 €/edizione + 20 € associativi alla prima",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Singola edizione 60 €, più quota associativa di 20 € alla prima partecipazione. Abbonamento indicato per 11 edizioni: 440 € inclusa quota associativa, in due rate 240/200 €. IVA e tasse comunali incluse secondo il modulo. Il testo contiene anche un richiamo finale a sette edizioni: riconfermare il numero coperto dall’abbonamento prima di pagare.",
+      "sourceUrl": "https://www.antiquariatovintagedesenzano.it/partecipazione-vintage/",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "lombardia-gaggiano-gagian-in-festa-bancarelle": {
+      "label": "P.IVA residenti 20 € / esterni 30 € per 3×3 m",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Modulo della domenica 4 ottobre: negozi/artigiani con P.IVA 20 € residenti, 30 € non residenti; hobbisti/artisti/usato 10 € residenti, 20 € non residenti. Associazioni residenti gratuite, esterne 10 €. Quote per unità di 9 m²; superficie maggiore quotata in proporzione. La parte testuale conserva anche un termine e un programma precedenti: riconfermare condizioni e servizi con la Pro Loco.",
+      "sourceUrl": "https://www.prolocogaggiano.it/web/gagian-in-festa/",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "lombardia-gazzada-schianno-mercatino-di-natale": {
+      "label": "Partecipazione gratuita",
+      "kind": "free",
+      "period": "2026",
+      "details": "Partecipazione gratuita, come da lettera 2026.",
+      "sourceUrl": "https://www.comune.gazzada-schianno.va.it/it/news/6487133",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-inarzo-festa-del-cioccolato": {
+      "label": "25 € per 3 metri; 50 € per due spazi",
+      "kind": "fee",
+      "period": "2026",
+      "details": "25 € per 3 metri lineari; 50 € per due spazi; esenti asili, scuole e ONLUS. Corrente elettrica non fornita.",
+      "sourceUrl": "https://forms.gle/BokQaRDho57J4EVr6",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-legnano-fiera-dei-morti": {
+      "label": "Organizzazione 26 € + due bolli da 16 €; tasse ulteriori",
+      "kind": "partial",
+      "period": null,
+      "details": "Il servizio comunale richiede contributo organizzativo 26 € e due marche da bollo da 16 € (domanda e concessione). Riporta inoltre il pagamento delle tasse dovute: 58 € non va inteso come costo complessivo del banco. Verificare canone e oneri dello spazio assegnato.",
+      "sourceUrl": "https://comune.legnano.mi.it/servizi/servizio-dettaglio/1869796",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "lombardia-monza-monzacon": {
+      "label": "Spazio da 140 € + iscrizione 70 € + IVA",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Summer Edition del 4–5 luglio 2026, prezzi IVA esclusa: EXPO2 140 €, EXPO4 280 €, EXPO6 420 €, isola 4×4 m 700 €, isola 6×4 m 980 €, tatuatori 210 €. Il modulo indica separatamente 70 € per iscrizione e assicurazione. Tavoli 30 € e sedie 5 € ciascuno, eventuali preallestimenti e food truck su accordo. Confermare il preventivo complessivo; la promozione con pagamento entro marzo è scaduta.",
+      "sourceUrl": "https://www.monzacon.com/downloads/Modulo_Espositore_MonzaCon_SE26.pdf",
+      "checkedAt": "2026-10-10",
+      "review": "existing-curated-note"
+    },
+    "lombardia-pizzighettone-buongusto": {
+      "label": "Esterno 20 m² da 150 € + IVA per weekend",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Listino 2026: importi + IVA 22%. Esterno circa 20 m²: 200 € primo weekend, 150 € secondo, 310 € pacchetto completo. Interno ¼ casamatta (12–15 m²): 270/210/440 €; ½ casamatta (30–35 m²): 410/290/640 €. Casamatta intera su accordo. Il listino comprende anche interni primo weekend, ma l’avviso attuale indica solo esterno disponibile: richiedere conferma prima di scegliere.",
+      "sourceUrl": "https://forms.gle/LyAccj9QotQV45oH6",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-pizzighettone-natale-idee-regalo": {
+      "label": "¼ casamatta da 61 €/giornata, IVA inclusa",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Quota totale IVA inclusa, per 1/2/3/4 giornate: ¼ casamatta (12–15 m²) 61/109,80/127/133 €; ½ casamatta (30–35 m²) 122/219/252/265 €; casamatta intera (circa 100 m²) 244/439/505/530 €. Confermare disponibilità e servizi compresi con l’organizzatore.",
+      "sourceUrl": "https://www.pizzighettone.it/manifestazione/990-Natale_Idee_Regalo_Unisciti_a_noi_.php",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-ponte-di-legno-mercatini-di-natale-il-sentiero-del-bosco-incantato": {
+      "label": "Intero periodo: 1.500–3.000 € secondo categoria",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Intero periodo: esterni €2.500 artigianato/commercio o €3.000 food & drink; attività con sede nel Comune €1.500 o €2.000 food & drink. Verificare le condizioni fiscali nel bando.",
+      "sourceUrl": "https://www.prolocopontedilegno.it/mercatini-di-natale-2026/",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-porto-valtravaglia-auguri-in-piazza-mercatini-di-natale": {
+      "label": "Segreteria 30 € + commercianti 6,25 €/giorno",
+      "kind": "partial",
+      "period": "2026",
+      "details": "30 € diritti di segreteria per postazione, indipendentemente dai giorni; operatori commerciali anche 6,25 € di canone al giorno per postazione.",
+      "sourceUrl": "https://comune.portovaltravaglia.va.it/eventi/2106502/manifestazione-auguri-piazza",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-roccafranca-sagra-del-quaranti-mercatino": {
+      "label": "Plateatico gratuito; servizi da verificare",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Plateatico gratuito secondo il modulo mercatino 2026; eventuali servizi aggiuntivi da verificare.",
+      "sourceUrl": "https://www.sagradelquaranti.it/area-espositori/",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "lombardia-secugnago-mercatino-per-l-accensione-dell-albero-di-natale": {
+      "label": "Nessuna quota di partecipazione",
+      "kind": "free",
+      "period": "2026",
+      "details": "Nessuna quota di partecipazione secondo il modulo 2026.",
+      "sourceUrl": "https://forms.gle/BELAXgzZV1eBNTpJ9",
+      "checkedAt": "2026-10-10",
+      "review": "existing-curated-note"
+    },
+    "lombardia-soresina-fiera-di-ariadello": {
+      "label": "Diritti SUAP 50 €; canone da aggiungere",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Diritti istruttoria SUAP 50 € tramite PagoPA; canone e costi ulteriori non recuperati.",
+      "sourceUrl": "https://soresina-api.municipiumapp.it/s3/6985/allegati/avviso-ambulanti-per-domande-ariadello-2026.pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-soresina-mercato-straordinario-dell-angelo": {
+      "label": "Diritti SUAP 50 €; canone da aggiungere",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Diritti di istruttoria SUAP 50 €; non è il totale del costo del banco. Canone e altre quote da verificare.",
+      "sourceUrl": "https://soresina-api.municipiumapp.it/s3/6985/allegati/avviso-2026-x-ambulanti-docx.pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-uggiate-trevano-mercatino-di-natale-di-uggiate-con-ronago": {
+      "label": "Hobbisti 10 € / espositori 20 €: importi da confermare",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Hobbisti 10 €, espositori 20 €, associazioni gratuite; PagoPA contestuale alla domanda. Nel modulo gli importi in lettere sono incoerenti: verificare il pagamento col Comune prima di versare.",
+      "sourceUrl": "https://comune.uggiateconronago.co.it/notizie/3659763/mercatino-natale-2026-aperte-adesioni",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "lombardia-viadana-fiera-di-san-pietro-e-sagra-del-melone": {
+      "label": "Ristoro 70 €/giorno; hobbisti/artisti gratis",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Somministrazione: 70 € per ogni giornata (140 € per due giorni); hobbisti/artisti: gratuito. Altri stand: chiedere preventivo, il modulo non riporta un prezzo.",
+      "sourceUrl": "https://www.prolocoviadana.it/wp-content/uploads/2026/03/ACCORDO-DI-ASSEGNAZIONE-POSTEGGIO-FIERA-2026.pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "marche-grottammare-fiera-di-san-martino": {
+      "label": "Base 3×3 m: 90 € per due giorni; altre tariffe distinte",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Listino comunale per il 10–11 novembre: tariffa base 3×3 m 90 €, 4×3 96 €, 5×3 102 €, 6×3 117 €, fino a 10×3 160 € complessivi per due giorni. Nelle vie a maggiore potenzialità 3×3 109 €, fino a 10×3 200 €. Somministrazione: 6×3 185 € nelle vie ordinarie o 270 € nelle vie di maggiore potenzialità; superfici maggiori hanno quote diverse. Artigiani ed espositori hanno tariffe proprie: consultare la tabella e la planimetria.",
+      "sourceUrl": "https://www.comune.grottammare.ap.it/wp-content/uploads/2026/05/TARIFFE-2026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "piemonte-alpignano-fiera-autunnale-o-di-san-martino": {
+      "label": "Bollo 16 € + canone secondo superficie",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo 16 € e canone suolo proporzionale alla superficie dopo assegnazione.",
+      "sourceUrl": "https://www.comune.alpignano.to.it/it-it/servizi/imprese-e-commercio/mercati-e-fiere-488-59467-1-8c166a79e7833056ff36265944ac372a",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "piemonte-casale-monferrato-mostra-nazionale-di-san-giuseppe": {
+      "label": "Iscrizione 250 € + stand 3×3 da 1.700 €",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Listino della 77ª edizione: iscrizione obbligatoria 250 €, stand preallestito senza moquette 3×3 m 1.700 € o 4×3 m 2.000 €. Area nuda per macchine agricole/arredo giardino/tempo libero 90 €/m²; autovetture 70 €/m². Angolo 250 €, corrente supplementare 70 €/kW e altri servizi separati. Confermare IVA e preventivo complessivo nel contratto.",
+      "sourceUrl": "https://www.mostrasangiuseppe.it/area-espositori/",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "piemonte-casteldelfino-fiero-de-son-martin": {
+      "label": "Partecipazione gratuita",
+      "kind": "free",
+      "period": "2026",
+      "details": "Partecipazione gratuita.",
+      "sourceUrl": "https://www.comune.casteldelfino.cn.it/portals/1916/SiscomArchivio/6/Scheda%20adesione%20mercatino.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "existing-curated-note"
+    },
+    "piemonte-cavour-tuttomele": {
+      "label": "P.IVA quattro giorni da 120 € + IVA; hobbisti separati",
+      "kind": "fee",
+      "period": "2026",
+      "details": "P.IVA, quattro giornate: 3×3 senza corrente 120 € + IVA; 5×3 con corrente 210 € + IVA; 6×3 con corrente 220 € + IVA. Piazza Solferino ha quote proprie per metratura/weekend. Hobbisti senza P.IVA: 3×3 50 € per weekend o 100 € entrambi, presenza obbligatoria sabato e domenica.",
+      "sourceUrl": "https://www.cavour.info/news/tuttomele-2026-regolamento-e-scheda-di-adesione-bancarelle-e-hobbisti",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "piemonte-cuneo-mercati-straordinari-del-marrone": {
+      "label": "25 € per posteggio e singolo mercato",
+      "kind": "fee",
+      "period": "2026",
+      "details": "€25 per posteggio e per singolo mercato.",
+      "sourceUrl": "https://www.comune.cuneo.it/wp-content/uploads/2026/09/Modulo-Adesione-Mercati-del-Marrone-2026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "existing-curated-note"
+    },
+    "piemonte-fossano-coloratissimo-autunno": {
+      "label": "10 € + CUP/TARI; corrente 5 €/giorno",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Regolamento 2026: €10 organizzazione + CUP €1,23/m² per giornata + TARI €1/giorno sotto 10 m² o €2/giorno sopra 10 m² + €5/giorno per allaccio luce. Istanza in bollo. Il caso esatto di 10 m² non è chiarito dal testo. Quota non rimborsabile per disdetta o assenza.",
+      "sourceUrl": "https://www.confagricolturacuneo.it/wp-content/uploads/2026/09/Regolamento-Coloratissimo-autunno.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "existing-curated-note"
+    },
+    "piemonte-gattinara-mercatino-rosa-e-rosso-di-maggio": {
+      "label": "Hobbisti 10 € / somministrazione 150 € per postazione",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Edizione 2026: hobbisti 10 € a postazione per entrambe le giornate; somministratori 150 € a postazione; associazioni no profit una postazione gratuita. Non sono tariffe generali per tutti gli ambulanti.",
+      "sourceUrl": "https://visitgattinara.it/notizie/iscrizione-mercatinini-rosa-rosso-maggio-2026",
+      "checkedAt": "2026-10-13",
+      "review": "existing-curated-note"
+    },
+    "piemonte-ghemme-natale-nelle-cantine": {
+      "label": "P.IVA gazebo 3×3: 30 €/giorno; hobbisti 20 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Gazebo 3×3: tesserino 20 €/giorno, P.IVA 30; fino 6×3: 35/50 €/giorno. Furgone/banco con veicolo fino 6×3: 40/50 €/giorno. Gazebo senza corrente. Cantina per tre giorni con corrente: 100/130 €; aree ristoro su accordo.",
+      "sourceUrl": "https://www.noidelcastello.com/wp-content/uploads/2026/09/Natale-nelle-Cantine-2026-Richiesta-di-candidatura-e-partecipazione-B.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "existing-curated-note"
+    },
+    "piemonte-pomaretto-fiero-da-pai-da-ramie": {
+      "label": "Nessuna quota; offerta facoltativa",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Pagina comunale: nessun costo di partecipazione, offerta facoltativa durante la giornata.",
+      "sourceUrl": "https://www.comune.pomaretto.to.it/novita/evento/936/Fiero-d-c3-a2-pa-c3-ae-d-c3-a2-ram-c3-ace",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "piemonte-prato-sesia-mercatino-d-autunno-sagra-della-castagna": {
+      "label": "Partecipazione gratuita; senza corrente",
+      "kind": "free",
+      "period": "2026",
+      "details": "Partecipazione al mercatino gratuita; nessun allaccio elettrico.",
+      "sourceUrl": "https://www.pratosesia.com/castagnata/2026/MercatinoAutunnoSchedaAdesione.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "existing-curated-note"
+    },
+    "piemonte-prato-sesia-mercatino-di-natale": {
+      "label": "10 € con preiscrizione; 20 € senza",
+      "kind": "fee",
+      "period": "2026",
+      "details": "10 € con preiscrizione; 20 € senza preiscrizione, dopo assegnazione dei posti agli iscritti. Nessun allaccio elettrico.",
+      "sourceUrl": "https://www.pratosesia.com/Mercatino/Mercatino2026/SchedaMercatinoNatale.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "existing-curated-note"
+    },
+    "piemonte-rivalba-mostra-mercato-del-tartufo-bianco-d-alba-della-regione-piemonte-raccolto-nelle-colline-torinesi": {
+      "label": "Bollo ordinario 16 €; altre quote da verificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo 16 € per istanza ordinaria; hobbisti esenti dal bollo. Altre quote non verificate.",
+      "sourceUrl": "https://www.comune.rivalba.to.it/Dettaglionews?IDNews=413019",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "piemonte-rivalta-di-torino-mostra-mercato-commerciale-ed-artigianale": {
+      "label": "Bollo 16 €; altre quote da verificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo 16 € per produttori/commercianti; altre quote da verificare.",
+      "sourceUrl": "https://www.comune.rivalta.to.it/schede-informative/fiere-mercati",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "piemonte-rivalta-di-torino-sagra-del-tomino": {
+      "label": "Bollo 16 €; altre quote da verificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo 16 € per produttori/commercianti; altre quote da verificare.",
+      "sourceUrl": "https://www.comune.rivalta.to.it/schede-informative/fiere-mercati",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "piemonte-roccabruna-fiera-di-valle": {
+      "label": "3×3: 20 € senza / 40 € con corrente, IVA inclusa",
+      "kind": "fee",
+      "period": "2026",
+      "details": "IVA compresa: 3×3 m €20 senza corrente, €40 con corrente; oltre 3×3 €40 senza, €80 con. Gazebo facoltativo.",
+      "sourceUrl": "https://www.confagricolturacuneo.it/aperte-le-iscrizioni-per-la-xxii-fiera-di-valle-di-roccabruna-in-programma-domenica-4-ottobre-2026/",
+      "checkedAt": "2026-10-15",
+      "review": "existing-curated-note"
+    },
+    "piemonte-san-giorgio-canavese-fiera-di-maggio": {
+      "label": "Bollo 16 €; tariffa posteggio da verificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo 16 €; tariffa posteggio non indicata nel modulo.",
+      "sourceUrl": "https://comune.sangiorgiocanavese.to.it/it-it/download/domanda-partecipazione-fiere-2026-170574-9-1138-bd8dde63211733f4d03c75e5baefc7d2",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "piemonte-san-giorgio-canavese-fiera-di-san-martino": {
+      "label": "Bollo 16 €; tariffa posteggio da verificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo 16 €; tariffa posteggio non indicata nel modulo.",
+      "sourceUrl": "https://comune.sangiorgiocanavese.to.it/it-it/download/domanda-partecipazione-fiere-2026-170574-9-1138-bd8dde63211733f4d03c75e5baefc7d2",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "piemonte-savigliano-fiera-di-primavera": {
+      "label": "35 € + IVA + suolo pubblico e bollo 16 €",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Marca da bollo €16; partecipazione €35 + IVA 22%, oltre occupazione aree. Pagamento sul posto con bancomat/carta.",
+      "sourceUrl": "https://www.entemanifestazioni.com/wp-content/uploads/2025/12/DomandaPartecipazione2026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "existing-curated-note"
+    },
+    "piemonte-torino-balon-del-sabato": {
+      "label": "29 €/spazio standard + quota annuale 30 €",
+      "kind": "fee",
+      "period": null,
+      "details": "La pagina dell’associazione indica 29 € per spazio standard di questa rassegna, più quota annuale 30 € per ciascuna anagrafica, comune agli eventi dell’associazione. Il prezzo del Balon del sabato è diverso da quello del Gran Balon domenicale. Riduzioni secondo collocazione da concordare; anno tariffario, dimensioni standard e IVA non esplicitati nel blocco prezzi.",
+      "sourceUrl": "https://www.balon.it/partecipa-balon-torino-vendere-al-balon/",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "piemonte-torino-gran-balon": {
+      "label": "90 €/spazio standard + quota annuale 30 €",
+      "kind": "fee",
+      "period": null,
+      "details": "La pagina dell’associazione indica 90 € per spazio standard di questa rassegna, più quota annuale 30 € per ciascuna anagrafica, comune agli eventi dell’associazione. Il prezzo del Balon del sabato è diverso da quello del Gran Balon domenicale. Riduzioni secondo collocazione da concordare; anno tariffario, dimensioni standard e IVA non esplicitati nel blocco prezzi.",
+      "sourceUrl": "https://www.balon.it/partecipa-balon-torino-vendere-al-balon/",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "piemonte-viu-mostra-mercato-di-san-martino": {
+      "label": "15 € fino a 3×3 m; 20 € per spazi maggiori",
+      "kind": "fee",
+      "period": "2026",
+      "details": "15 € per stand fino a 3×3; 20 € oltre 3×3, nei moduli 2026 per professionali e hobbisti.",
+      "sourceUrl": "https://www.comune.viu.to.it/Dettaglionews?IDNews=415085",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "sardegna-sestu-fiera-di-san-gemiliano": {
+      "label": "Bollo domanda 16 €; costo banco da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il modulo per il 4–6 settembre 2026 richiede una marca da bollo da 16 €. Questa è soltanto un’imposta sulla domanda e non la quota di partecipazione o il canone dello spazio: importi ulteriori da chiedere all’Ufficio Commercio.",
+      "sourceUrl": "https://comune.sestu.ca.it/wp-content/uploads/2026/08/Modulo-di-domanda_SGM2026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "toscana-laterina-pergine-valdarno-laterina-medievale-banchi-di-vendita": {
+      "label": "Contributo 100 €; caparra del 30%",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Regolamento 2026: contributo una tantum di €100, caparra del 30%; leggere condizioni di rinuncia e contratto.",
+      "sourceUrl": "https://www.laterinamedievale.it/it/espositori",
+      "checkedAt": "2026-10-11",
+      "review": "existing-curated-note"
+    },
+    "toscana-poppi-fiera-di-san-torello": {
+      "label": "Non soci: 100 € non food / 110 € food; soci 70/80 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Fiera del 19 aprile: non alimentare 70 € soci Confesercenti in regola con la quota 2026, 100 € non soci; alimentare 80 € soci, 110 € non soci. Comprende le spese organizzative elencate nel regolamento, pulizia e sicurezza; verificare eventuali altri oneri e trattamento IVA prima del versamento.",
+      "sourceUrl": "https://www.confesercenti.ar.it/wp-content/uploads/2026/03/bando-e-regolamento-fiera-san-Torello-2026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "toscana-prato-festa-regionale-degli-ambulanti": {
+      "label": "Quota 105 € + bollo 16 €; confermare per data",
+      "kind": "partial",
+      "period": "2026",
+      "details": "L’avviso dell’organizzatore per le domeniche 17 e 24 maggio riporta quota 105 €, comprensiva di suolo pubblico, organizzazione, segreteria e pubblicità, e domanda in bollo da 16 €. L’articolo non chiarisce espressamente se la quota copra una sola domenica o entrambe: chiedere conferma al gestore prima di considerarla un totale.",
+      "sourceUrl": "https://prato.confesercenti.it/2026/03/25/festa-regionale-degli-ambulanti-2026/",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "toscana-pratovecchio-stia-fiera-dell-assunta": {
+      "label": "Solo bollo noto: 16 €; canone da verificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo di 16 € sull’autorizzazione; canone annuale secondo tariffe comunali da verificare. Non è indicata una quota unica di partecipazione.",
+      "sourceUrl": "https://www.comune.pratovecchiostia.ar.it/c051041/zf/index.php/bandi-gara/avvisi/dettaglio-avviso/avviso/11",
+      "checkedAt": "2026-10-11",
+      "review": "existing-curated-note"
+    },
+    "trentino-alto-adige-bolzano-klimahouse": {
+      "label": "73–118 €/m² + quota 400 € + IVA; allestimento extra",
+      "kind": "unit",
+      "period": "2027",
+      "details": "Listino Klimahouse 2027: area nuda 118 €/m² nel padiglione livello -1, 103 €/m² in galleria -1, 73 €/m² in galleria 0; quota di partecipazione 400 €. Supplemento angolo/testa/isola 100/170/310 €. IVA esclusa e preallestimento da aggiungere. Queste tariffe riguardano il 2027 e non l’edizione 2026 presente nello storico del calendario.",
+      "sourceUrl": "https://www.fierabolzano.it/it/klimahouse/diventa-espositore",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "trentino-alto-adige-bolzano-tempo-libero": {
+      "label": "Spazio fino a 35 m²: 57 €/m² + quota 200 €",
+      "kind": "unit",
+      "period": null,
+      "details": "La pagina espositori riporta 57 €/m² fino a 35 m², 38 €/m² per 36–60 m², 16 €/m² per 61–80 m² e 7 €/m² oltre 80 m², più quota 200 €. Allestimenti Easy/Basic/Medium rispettivamente 45/69/77 €/m². Non è esplicitato se gli scaglioni siano progressivi, né l’anno tariffario o il trattamento IVA in questo blocco: richiedere preventivo. Il pacchetto startup gratuito è soggetto a requisiti e ammissione.",
+      "sourceUrl": "https://www.fierabolzano.it/it/tempo-libero/diventa-espositore",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "trentino-alto-adige-trento-fiera-di-san-giuseppe": {
+      "label": "Canone 2,18 €/m²/giorno + bolli e diritti",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Il servizio indica due bolli da 16 €, diritti di 27 € e canone di 2,18 €/m² al giorno; alcuni importi sono dovuti solo in caso di assegnazione. Verifica le tariffe dell’edizione.",
+      "sourceUrl": "https://www.comune.trento.it/Servizi/Concessione-di-occupazione-temporanea-di-suolo-pubblico-nei-mercati-saltuari-spuntisti",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "trentino-alto-adige-trento-fiera-di-santa-lucia": {
+      "label": "Canone 2,18 €/m²/giorno + bolli e diritti",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Spuntisti: canone mercatale 2,18 €/m² al giorno, bollo sulla domanda 16 €, bollo sul provvedimento 16 € e diritti 27 €. La prima marca si applica alla domanda; gli altri importi sono dovuti solo in caso di assegnazione e rilascio della concessione, secondo il servizio comunale valido dal 2 febbraio 2026.",
+      "sourceUrl": "https://www.comune.trento.it/Servizi/Concessione-di-occupazione-temporanea-di-suolo-pubblico-nei-mercati-saltuari-spuntisti",
+      "checkedAt": "2026-10-09",
+      "review": "existing-curated-note"
+    },
+    "valle-d-aosta-aosta-marche-vert-noel": {
+      "label": "Intero periodo: 3.800 / 4.000 / 10.000 € secondo attività",
+      "kind": "fee",
+      "period": "2026/2027",
+      "details": "Intero periodo 21 novembre–6 gennaio: chalet indicativo 3×2,40 m per artigiani/produttori/oggettistica 3.800 €, vendita alimentare 4.000 €; ristorazione con preparazione e somministrazione 10.000 €. Il bando comprende IVA 22%, impianto e consumi elettrici base e RSU. Potenza elettrica aggiuntiva 200/250/400 € secondo kW e parcheggio riservato 250 € sono extra. Caparre comprese nel totale, non da sommare nuovamente.",
+      "sourceUrl": "https://aosta-api.municipiumapp.it/s3/266/allegati/sport/avviso-edizione-2026_con-data_signed.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "veneto-asolo-mercatino-dell-antiquariato-e-del-collezionismo": {
+      "label": "40 € anticipato / 50 € in giornata; sconti vincolati",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Tariffe 2026 per un posteggio 4×3 m, totale fattura: singola anticipata €40; pagamento domenicale elettronico €50; nuovi operatori commerciali €35 per massimo due edizioni; annuale €361; 10 edizioni €311; 6 €211; 4 €151.",
+      "sourceUrl": "https://www.comune.asolo.tv.it/content/download/714/14340/file/Tariffe_mercatino_2026.pdf",
+      "checkedAt": "2026-10-13",
+      "review": "existing-curated-note"
+    },
+    "veneto-bagnoli-di-sopra-mercato-fuori-porta-convention-ippocrate": {
+      "label": "Non iscritti: donazione 40 €; iscritti ammessi gratis",
+      "kind": "conditional",
+      "period": null,
+      "details": "Spazio gratuito per titolari o legali rappresentanti iscritti a IppocrateOrg; per non iscritti donazione 40 € dopo accettazione. Spazio oltre 3×3 m: supplemento 35 €; elettricità a pagamento.",
+      "sourceUrl": "https://www.conventionippocrate.org/en/market/",
+      "checkedAt": "2026-10-12",
+      "review": "existing-curated-note"
+    },
+    "veneto-baone-festa-dei-bisi-area-espositori": {
+      "label": "P.IVA 50 €; hobbisti/associazioni 30 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "30 € associazioni/hobbisti per 3×3 m; 50 € attività con partita IVA per massimo 5×3 m; dimensioni superiori: contributo per due spazi.",
+      "sourceUrl": "https://www.festadeibisi.it/wp-content/uploads/2026/03/espositori2026_regolamentomodulo_compilabile.pdf",
+      "checkedAt": "2026-10-12",
+      "review": "existing-curated-note"
+    },
+    "veneto-barbarano-mossano-fiera-di-santa-caterina": {
+      "label": "Ambulanti 80 €/1 giorno o 100 €/2 giorni",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Tariffe 2026 per 1 / 2 giorni: ambulanti €80 / €100; hobbisti, espositori e produttori agricoli fino a 3×3 m €25 / €40; Via Zonato €65 / €80.",
+      "sourceUrl": "https://www.comune.barbaranomossano.vi.it/home/vivere/Territorio/702--Fiera-di-Santa-Caterina-e-Tradizione-di-Santa-Caterina.html",
+      "checkedAt": "2026-10-13",
+      "review": "existing-curated-note"
+    },
+    "veneto-brugine-mercatino-di-villa-roberti": {
+      "label": "30–50 €/giornata secondo area",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Tariffe da gennaio 2026: Barchessa 30 € all’aperto o 35 € al coperto, inclusi spazio e due ingressi. Brolo/Bosco: piazzola con auto e due ingressi 40 €; furgone in area riservata e due ingressi 50 €. Prenotare e pagare dopo l’assegnazione; importi non rimborsabili per pioggia o assenza e non trasferibili a date successive.",
+      "sourceUrl": "https://mercatinobrugine.it/wp-content/uploads/2025/10/Mercatino-Pieghevole_MM-2.pdf",
+      "checkedAt": "2026-10-12",
+      "review": "existing-curated-note"
+    },
+    "veneto-campodarsego-fiera-dell-angelo": {
+      "label": "Bollo 16 € + canone da quantificare",
+      "kind": "partial",
+      "period": null,
+      "details": "Bollo 16 € sulla domanda dei fieristi; canone patrimoniale anticipato tramite pagoPA, importo da verificare.",
+      "sourceUrl": "https://www.comune.campodarsego.pd.it/wp-content/uploads/2026/01/DISPOSIZIONI-PARTECIPAZIONE-FIERA-ANGELO-2026-ALLEGATO_SUB_B_delibera_Giunta.pdf",
+      "checkedAt": "2026-10-12",
+      "review": "existing-curated-note"
+    },
+    "veneto-colceresa-ciliegia-in-festa-mercatino": {
+      "label": "Hobbisti: canone 0,522 €/m²/giorno",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Il modulo per espositori hobbisti della Festa delle ciliegie del 7 giugno indica occupazione area pubblica 0,522 €/m²/giorno. Gazebo, tavoli e sedie propri. Questo importo riguarda gli hobbisti e non costituisce una tariffa verificata per i commercianti professionali.",
+      "sourceUrl": "https://www.comune.colceresa.vi.it/wp-content/uploads/2026/04/domanda-espositori-hobbisti-2026.pdf",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "veneto-nervesa-della-battaglia-nervesa-in-fiore": {
+      "label": "Gazebo: 10 €/giorno; altre superfici da concordare",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Gazebo standard/occupazione: €10 al giorno, €1/m²; esenzione indicata per enti non commerciali senza scopo di lucro. PagoPA dopo conferma; eventuali diverse superfici da concordare.",
+      "sourceUrl": "https://www.comune.nervesa.tv.it/wp-content/uploads/2026/03/01_Avviso-Mercatino.pdf",
+      "checkedAt": "2026-10-13",
+      "review": "existing-curated-note"
+    },
+    "veneto-piove-di-sacco-fiera-e-festeggiamenti-di-san-martino": {
+      "label": "Oneri domanda 66 € + canone da quantificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Domanda precari: bollo 16 € e spese istruttorie 50 €, oltre al canone da quantificare all’assegnazione.",
+      "sourceUrl": "https://piovedisacco-api.municipiumapp.it/s3/5271/allegati/sito-web/settore-iv/istruzioni-per-operatori-economici-intessati-alla-partecipazione_2026.pdf",
+      "checkedAt": "2026-10-12",
+      "review": "existing-curated-note"
+    },
+    "veneto-portobuffole-colori-e-sapori-a-portobuffole": {
+      "label": "Non alimentari/hobbisti 20 €; alimentari 35 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Fiera del 19 aprile: commercianti alimentari con o senza somministrazione 35 €; commercio generico/altro, hobbisti e artisti 20 €. Iscrizione e pagamento tramite il portale indicato dal Comune; nessun trattamento IVA esplicitato nella notizia.",
+      "sourceUrl": "https://www.comune.portobuffole.tv.it/notizie/MERCATO-COLORI-E-SAPORI-2024.html",
+      "checkedAt": "2026-10-15",
+      "review": "live-source-review"
+    },
+    "veneto-portogruaro-fiera-di-sant-andrea": {
+      "label": "Due giorni da 50 € + IVA + CUP; dipende da area/m²",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Quota per entrambe le giornate: fino a 10 m² 60 € in Corso Martiri / 50 € altre zone; 11–20 m² 115/95 €; 21–30 m² 175/150 €; 31–40 m² 225/200 €; 41–64 m² 270/250 €, più IVA 22% e CUP 0,37 €/m²/giorno. Corrente: fino a 200 W senza maggiorazione; fino a 3 kW 42,70 €, fino a 5 kW 79,30 €, fino a 10 kW 122 €, IVA inclusa. Quote differenti per associazioni, hobbisti e negozianti.",
+      "sourceUrl": "https://portogruaro-api.municipiumapp.it/s3/5462/allegati/commercio/2026/allegato-c-commercio-su-area-pubblica-produttori-agricoli.pdf",
+      "checkedAt": "2026-10-14",
+      "review": "existing-curated-note"
+    },
+    "veneto-rotzo-mercatini-estivi-del-bostel": {
+      "label": "Offerta libera volontaria",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Offerta libera, donazione volontaria per Museo e Parco archeologico.",
+      "sourceUrl": "https://www.bosteldirotzo.it/call-per-espositori-mercatini-estivi-2026-al-bostel-di-rotzo/",
+      "checkedAt": "2026-10-13",
+      "review": "existing-curated-note"
+    },
+    "veneto-santa-lucia-di-piave-fiera-internazionale-dell-agricoltura": {
+      "label": "Iscrizione 139 € + area e servizi + IVA",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Modulo 2026, IVA esclusa: iscrizione €139; ridotta €89 solo con caparra entro il 31 luglio, termine passato. Caparra €300 non soggetta a IVA. Area e servizi da aggiungere: ad esempio stand coperto 4×3 m €940 oppure 3×3 m €700. Il preventivo totale dipende dalla soluzione.",
+      "sourceUrl": "https://www.fieresantalucia.it/fiera-internazionale-agricoltura/espositori/",
+      "checkedAt": "2026-10-13",
+      "review": "existing-curated-note"
+    },
+    "veneto-sarcedo-mercatino-di-natale": {
+      "label": "Suolo e corrente ove presente gratuiti",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Nessun pagamento per il suolo pubblico; utenze elettriche gratuite ove presenti. Gazebo e attrezzatura a carico del partecipante.",
+      "sourceUrl": "https://www.comune.sarcedo.vi.it/wp-content/uploads/2026/09/ALL_A_AVVISO-MANIFESTAZIONE-INTERESSE-MERCATINO-NATALE2026.pdf",
+      "checkedAt": "2026-10-13",
+      "review": "existing-curated-note"
+    },
+    "veneto-thiene-thiene-tra-fiori-e-sapori-spaventapasseri-festival-centro-storico": {
+      "label": "Contributo solidale senza importo fisso",
+      "kind": "conditional",
+      "period": null,
+      "details": "Nessuna quota fissa; richiesto contributo per opere di solidarietà a favore dei bambini. Importo non fissato.",
+      "sourceUrl": "https://www.comune.thiene.vi.it/myportal/C_L157/api/content/download?id=69aeada3ad823f008d61cd30",
+      "checkedAt": "2026-10-13",
+      "review": "existing-curated-note"
+    },
+    "veneto-tregnago-antica-fiera-di-san-martino": {
+      "label": "Canone 0,362–1,40 €/m² secondo categoria",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Suolo pubblico: espositori e creativi 0,362 €/m²; KM 0 1,40 €/m²; macchine agricole 0,4073 €/m². Bollo sull’autorizzazione; pagoPA dopo il rilascio. Confermare base di calcolo e importo totale.",
+      "sourceUrl": "https://www.comune.tregnago.vr.it/notizie/FIERA-DI-SAN-MARTINO-2026-DOMANDE-DI-PARTECIPAZIONE-PER-ASSOCIAZIONI--ESPOSITORI--AGRICOLTORI--KM-0---VENDITORI-DI-PRODOTTI-DELL-INGEGNO-CREATIVO-ED-ESPOSITORI-DI-MACCHINE-AGRICOLE..html",
+      "checkedAt": "2026-10-11",
+      "review": "existing-curated-note"
+    }
+  }
+}

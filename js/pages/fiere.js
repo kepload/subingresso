@@ -72,6 +72,10 @@
         return (participation.deadline < today ? 'Termine scaduto: ' : 'Scadenza pubblicata: ') + dateLabel(participation.deadline)
             + (participation.deadlineLabel ? ' · ' + participation.deadlineLabel : '');
     }
+    function feeLabel(event) {
+        if (event.pricing) return 'Costi' + (event.pricing.period ? ' ' + event.pricing.period : '') + ': ' + event.pricing.label;
+        return event.participation?.costs ? 'Costi: vedi scheda' : 'Costo banco da verificare';
+    }
     function sortEvents(events, today = todayInRome()) {
         const ranked = events.map(event => {
             const edition = selectEdition(event, today);
@@ -94,7 +98,7 @@
             || a.event.name.localeCompare(b.event.name, 'it') || a.event.city.localeCompare(b.event.city, 'it'));
         return ranked.map(item => item.event);
     }
-    const api = { MONTHS, CATEGORIES, SECTORS, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, sortEvents };
+    const api = { MONTHS, CATEGORIES, SECTORS, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
@@ -181,7 +185,9 @@
             button.addEventListener('click', () => openDetail(event));
             const foot = node('div', 'fiere-card-foot');
             foot.append(category, button);
-            card.append(head, node('p', '', event.city + ' · ' + event.province), node('p', 'fiere-card-period', edition ? editionLabel(edition) : periodLabel(event)), foot);
+            const cost = node('p', 'fiere-card-cost', feeLabel(event));
+            cost.dataset.known = String(Boolean(event.pricing));
+            card.append(head, node('p', '', event.city + ' · ' + event.province), node('p', 'fiere-card-period', edition ? editionLabel(edition) : periodLabel(event)), cost, foot);
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
@@ -319,8 +325,12 @@
         $('detail-participation-note').textContent = participation.note;
         $('detail-deadline').textContent = deadlineStatus(participation);
         $('detail-deadline').hidden = !$('detail-deadline').textContent;
-        $('detail-costs').textContent = participation.costs || '';
-        $('detail-costs').hidden = !participation.costs;
+        $('detail-costs').textContent = event.pricing?.details || participation.costs || 'Importo non verificato per questa fiera. Chiedi all’organizzatore la quota del banco, il canone e gli eventuali servizi aggiuntivi.';
+        $('detail-costs-meta').hidden = !event.pricing;
+        if (event.pricing) $('detail-costs-meta').textContent = (event.pricing.period ? 'Tariffe ' + event.pricing.period : 'Fonte senza anno tariffario esplicito: conferma l’edizione') + ' · fonte consultata il ' + dateLabel(event.pricing.checkedAt);
+        const costSource = event.pricing?.sourceUrl || (participation.costs ? participation.url : '');
+        $('detail-costs-source').hidden = !costSource;
+        if (costSource) $('detail-costs-source').href = costSource;
         $('detail-participation-link').hidden = !participation.url;
         if (participation.url) $('detail-participation-link').href = participation.url;
         const contacts = document.createDocumentFragment();
@@ -375,7 +385,7 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=34');
+            const data = await fetchJSON('/data/fiere.json?v=35');
             if (!Array.isArray(data.provinces) || !data.provinces.length || new Set(data.provinces).size !== data.provinces.length
                 || !data.provinces.every(province => typeof province === 'string' && province) || !Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.province === 'string' && data.provinces.includes(event.province)

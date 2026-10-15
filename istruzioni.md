@@ -1,5 +1,20 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Costi fiere, 15 ottobre 2026: archivio editoriale data/fiere-costi.json,
+applicato da build-fiere.py dopo gli audit provinciali. 126 sintesi con
+fonte/periodo/data e tipo di costo; 40 nuove note, totale note 146 su 3.447.
+Mostrare prezzo nell'elenco e sezione costi nel dettaglio; conservare anno,
+categoria, superficie, durata, IVA ed extra. Oneri domanda e canone parziale
+non sono preventivi completi; suolo esente non significa ogni servizio gratis.
+Importo non verificato non diventa zero. Note ereditate conservano la data
+del loro audit; tariffe nuove non proiettate su altre edizioni. Fonte senza
+anno esplicito dichiarata; Klimahouse prezzi 2027, Genova discordanza seconda
+categoria nel listino speciale dichiarata. Fonte secondaria segnalata per
+Laigueglia/Amantea; nessun contatto a terzi. Fonti e limiti in data/FIERE.md,
+evidenze Documents/ricerca-costi-fiere-20261015. Cache JS43/catalogo35/CSS13.
+Per aggiornare un prezzo già presente modificare l'overlay, che prevale sulle
+note provinciali. Build, settori e suite calendario Chromium/WebKit passati.
+
 Calendario fiere, 15 ottobre 2026: ordine per data anche con filtri mesi,
 provincia e settore. Prima edizioni in corso (pari data odierna), poi future
 crescenti; seguono date non definite e infine concluse dalla pi? recente.

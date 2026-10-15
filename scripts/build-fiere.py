@@ -137,6 +137,9 @@ def build_catalog():
             combined = [row for row in combined if (key(row["city"]), row["region"]) != identity]
             combined.extend(audit["events"])
     events = []
+    fee_research = json.loads((ROOT / "data/fiere-costi.json").read_text(encoding="utf-8"))
+    fees = fee_research["events"]
+    assert fee_research["checkedAt"] <= CATALOG_DATE
     for row in combined:
         city = locations.get((key(row["city"]), row["region"]))
         if city is None:
@@ -172,7 +175,18 @@ def build_catalog():
                 "note": "Partecipazione tramite l’organizzatore e selezione degli espositori. Verifica categoria ammessa, preventivo e contratto dello stand." if event["category"] == "espositiva" else
                 "Non è ancora disponibile una scheda operativa verificata. Consulta la fonte e chiedi al Comune o all’organizzatore se sono previsti posteggi per il tuo settore, come presentare domanda e quali sono i costi."}
         assert event["participation"]["type"] in {"public", "selected", "exhibitors", "check"}
+        if event["id"] in fees:
+            pricing = fees[event["id"]]
+            assert pricing["kind"] in {"fee", "unit", "partial", "free", "conditional"}
+            assert isinstance(pricing["label"], str) and 0 < len(pricing["label"]) <= 160
+            assert isinstance(pricing["details"], str) and pricing["details"]
+            assert pricing["sourceUrl"].startswith("https://")
+            assert date.fromisoformat(pricing["checkedAt"]) <= date.fromisoformat(CATALOG_DATE)
+            assert pricing["period"] is None or re.fullmatch(r"20\d{2}(?:/20\d{2})?", pricing["period"])
+            event["pricing"] = pricing
+            event["participation"] = dict(event["participation"], costs=pricing["details"])
         events.append(event)
+    assert not (set(fees) - {event["id"] for event in events}), "Costs refer to unknown event IDs"
     counts = Counter(e["region"] for e in events)
     assert len(events) == len({e["id"] for e in events}) and len(events) >= 200
     assert len(counts) == 20
