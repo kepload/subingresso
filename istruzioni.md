@@ -1,5 +1,26 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Calendario fiere, 15 ottobre 2026: Cuneo completata e verificata online,
+173 schede in 93 comuni (prima 55); ricerca nominale nei 247 comuni,
+160 righe dei due registri Piemonte e 82 record distinti Visit Cuneese.
+Audit/fonti/esclusioni/limiti in data/fiere-cuneo.json e data/FIERE.md;
+archivio Documents/ricerca-fiere-cuneo-20261015. 117 con giornate precise,
+54 con periodi e due senza date; 165 recapiti, dieci termini documentati.
+Distinti i mercati straordinari del Marrone dalla fiera; Gusta Cherasco
+domanda 16 ottobre, Natura 31 ottobre nel canale Cascine Piemontesi.
+Venasca mercato 18 ottobre, Dula Paroldo 31 maggio; Govone 14 giornate,
+portale espositori letto tramite web dopo HTTP 403. BEE Villanova ATL
+20–22 novembre contro registro 14–15, periodo da confermare. Modulo Fossano
+collegato ancora al 2025 segnalato, regolamento e quote 2026 verificati.
+Cheese pagina 503: scheda biennale conservata senza inventare edizioni.
+55 ID conservati e altre 3.274 schede identiche, totale 3.447; cache pagina
+41/catalogo 34. Build, settori, suite generale Chromium/WebKit e test Cuneo
+passati; commit dati 17e2ee0, Vercel riuscito, hash dei file pubblici uguali
+ai blob Git, 173 risultati/mappa e dodici dettagli verificati online,
+anche pagina reale senza intercettare richieste. TO DO spuntata dopo
+verifica: 25 completate, 85 rimaste. Nessuna comunicazione a terzi o altra
+provincia lavorata; aggiornamenti periodici e limiti rimangono nell’audit.
+
 Calendario fiere, 15 ottobre 2026: Novara completata e verificata online,
 71 schede in 36 comuni (prima 13); ricerca nominale negli 87 comuni, 25 righe
 Piemonte e vaglio completo delle tre categorie ATL (261 dettagli distinti).

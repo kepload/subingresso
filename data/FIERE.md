@@ -110,7 +110,18 @@ controlli settori e test specifico Cuneo passati in Chromium computer/telefono
 e WebKit telefono: 173 risultati, mappa ed elenco coerenti, dodici dettagli.
 Passata anche la suite generale del calendario su Chromium 1440/820/390/320
 e WebKit 390: filtri, province, dettagli, tastiera, errori/retry e overflow.
-La TO DO resta non spuntata fino alla verifica del deploy e del catalogo online.
+Commit dati `17e2ee0`: deploy Vercel riuscito il 15 ottobre, verifica conclusa
+alle **08:43 UTC**. Pagina HTTP 200 con fiere.js 41; catalogo e JavaScript
+pubblici identici ai blob Git, confrontando i byte del commit e non i fine
+riga del checkout Windows. SHA-256 del catalogo pubblicato:
+`7e1eb37fc14496437121da28b5017cab66c34ddbdf9e397a02e21323b132c428`.
+Verificati online 173 risultati, mappa ed elenco e dodici dettagli su Chromium
+computer/telefono e WebKit telefono; anche pagina reale senza intercettare
+richieste su computer/telefono, nessun errore JavaScript o overflow. Evidenze
+locali `deployment-verification.json`, `verification-online.json`,
+`live-smoke.json`, `integration-check.json` e schermate.
+TO DO spuntata solo dopo questi riscontri: **25 province completate, 85
+rimaste su 110**. Nessun'altra provincia o attività avviata.
 
 ## Ricerca approfondita Novara — 15 ottobre 2026
 

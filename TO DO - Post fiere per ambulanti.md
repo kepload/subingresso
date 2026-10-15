@@ -424,7 +424,30 @@ e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
   Castelletto, Le Pigne, Comignago e Romentino Artiquariando. Meina resta
   storico 2025; nessuna quota, domanda o data da ricostruire per ipotesi.
 
-**Ricerca approfondita: 24 province completate, 86 ancora da fare su 110.**
+- [x] **Cuneo — ricerca documentale approfondita completata (15 ottobre 2026)**:
+  ricerca nominale nei 247 comuni; 173 manifestazioni in 93 comuni, prima 55,
+  pubblicate e verificate in [/fiere](https://subingresso.it/fiere?provincia=Cuneo).
+  Esaminate 160 righe dei due registri Piemonte e 82 record distinti ATL,
+  confrontati PDF regionali, Comuni, organizzatori, Pro Loco e calendario LMR.
+  117 schede con giornate precise, 54 con periodi, due senza edizioni datate;
+  165 con recapiti e dieci termini documentati. Fonti, copertura, esclusioni
+  e conflitti in `data/fiere-cuneo.json` e `data/FIERE.md`.
+  Gusta Cherasco 24–25 ottobre, termine del canale Cascine Piemontesi
+  16 ottobre; Cherasco Natura 8 novembre, termine dello stesso canale 31 ottobre.
+  Distinti i mercati ambulanti del Marrone dalla fiera; Venasca mercato
+  18 ottobre, Dula Paroldo 31 maggio, Govone 14 giornate esplicite.
+  Conservati tutti i 55 ID e le altre 3.274 schede. Commit dati `17e2ee0`,
+  Vercel riuscito, catalogo/script online identici al commit; 173 risultati,
+  mappa e dodici dettagli verificati su Chromium computer/telefono e WebKit.
+- [ ] **Cuneo — aggiornamenti periodici**: bandi, disponibilità e nuovi programmi;
+  BEE Villanova 20–22 novembre ATL contro 14–15 regionale, giorni commerciali
+  dei periodi ancora non definiti e programmi futuri. Modulo Fossano ancora
+  2025 nella notizia 2026; pagine ritirate Dronero/Fossano, Monforte creativi,
+  Cervasca, Natale Paesana/Saluzzo/Castellar e nuova edizione Cheese da
+  ricontrollare. Le esclusioni e le ricorrenze non sono date 2026 confermate.
+  Nessuna domanda, candidatura o comunicazione a terzi inviata.
+
+**Ricerca approfondita: 25 province completate, 85 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -454,7 +477,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **15. Cremona** — Lombardia; ricerca completata e verificata online, vedi sopra
 - [ ] **16. Pavia** — Lombardia
 - [x] **17. Novara** — Piemonte; ricerca completata e verificata online, vedi sopra
-- [ ] **18. Cuneo** — Piemonte
+- [x] **18. Cuneo** — Piemonte; ricerca completata e verificata online, vedi sopra
 - [ ] **19. Trento** — Trentino-Alto Adige
 - [ ] **20. Bolzano/Bozen** — Trentino-Alto Adige
 - [ ] **21. Firenze** — Toscana
