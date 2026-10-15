@@ -72,7 +72,29 @@
         return (participation.deadline < today ? 'Termine scaduto: ' : 'Scadenza pubblicata: ') + dateLabel(participation.deadline)
             + (participation.deadlineLabel ? ' · ' + participation.deadlineLabel : '');
     }
-    const api = { MONTHS, CATEGORIES, SECTORS, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus };
+    function sortEvents(events, today = todayInRome()) {
+        const ranked = events.map(event => {
+            const edition = selectEdition(event, today);
+            let group = 2, date = '';
+            if (edition) {
+                if (edition.start && !edition.periodOnly && edition.end >= today) {
+                    group = 0;
+                    date = edition.start < today ? today : edition.start;
+                } else if ((edition.periodOnly && edition.end >= today) || (!edition.start && edition.year >= Number(today.slice(0, 4)))) {
+                    group = 1;
+                } else {
+                    group = 3;
+                    date = edition.end || edition.start || String(edition.year);
+                }
+            }
+            return { event, group, date };
+        });
+        ranked.sort((a, b) => a.group - b.group
+            || (a.group === 3 ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date))
+            || a.event.name.localeCompare(b.event.name, 'it') || a.event.city.localeCompare(b.event.city, 'it'));
+        return ranked.map(item => item.event);
+    }
+    const api = { MONTHS, CATEGORIES, SECTORS, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, sortEvents };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
@@ -102,26 +124,6 @@
     }
     function selectedMonthsLabel() {
         return !state.months.length || state.months.length === 12 ? 'Tutto l’anno' : state.months.map(month => MONTHS[month - 1]).join(', ');
-    }
-    function sortEvents(events) {
-        if (!state.months.length || state.months.length === 12) {
-            const today = todayInRome();
-            const rank = event => {
-                const edition = selectEdition(event, today);
-                if (!edition) return [2, ''];
-                if (edition.periodOnly && edition.end >= today) return [1, ''];
-                if (edition.start && edition.end >= today) return [0, edition.start];
-                if (!edition.start && edition.year >= Number(today.slice(0, 4))) return [1, ''];
-                return [3, ''];
-            };
-            return events.slice().sort((a, b) => {
-                const ra = rank(a), rb = rank(b);
-                return ra[0] - rb[0] || ra[1].localeCompare(rb[1]) || a.name.localeCompare(b.name, 'it') || a.city.localeCompare(b.city, 'it');
-            });
-        }
-        const orderedMonths = state.months.length ? state.months : intervalMonths(1, 12);
-        const first = event => Math.min(...event.months.map(month => orderedMonths.indexOf(month)).filter(index => index >= 0));
-        return events.slice().sort((a, b) => first(a) - first(b) || a.name.localeCompare(b.name, 'it') || a.city.localeCompare(b.city, 'it'));
     }
     function syncURL() {
         const url = new URL(location.href);

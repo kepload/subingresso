@@ -10,6 +10,19 @@ const { events } = catalog;
 const boundaries = JSON.parse(fs.readFileSync(path.join(root, 'data/italia-province.json'), 'utf8'));
 require('../js/pages/fiere.js');
 const api = globalThis.FiereCalendar;
+// Date order must survive month/province filters; ongoing events precede future dates.
+{
+    const event = (id, start, end = start, extra = {}) => ({ id, name: id, city: 'Roma', months: [10], editions: start ? [{start, end, year: Number(start.slice(0, 4)), ...extra}] : [] });
+    const fixtures = [event('A-far', '2026-10-30'), event('Z-near', '2026-10-16'),
+        event('ongoing-recent', '2026-10-14', '2026-10-17'), event('ongoing-long', '2026-10-01', '2026-10-31'),
+        event('period', '2026-10-01', '2026-12-31', {periodOnly:true}), event('unknown'),
+        event('old', '2026-01-01'), event('recent-past', '2026-10-14')];
+    const before = fixtures.map(e => e.id);
+    const expected = ['ongoing-long','ongoing-recent','Z-near','A-far','period','unknown','recent-past','old'];
+    assert.deepEqual(api.sortEvents(fixtures, '2026-10-15').map(e => e.id), expected);
+    assert.deepEqual(api.sortEvents(api.filterEvents(fixtures, {query:'',months:[10]}), '2026-10-15').map(e => e.id), expected);
+    assert.deepEqual(fixtures.map(e => e.id), before);
+}
 const regions = [...new Set(events.map(e => e.region))];
 assert(events.length > 200);
 assert.equal(new Set(events.map(e => e.id)).size, events.length);
@@ -778,6 +791,11 @@ async function run(engine,name,viewport,base) {
             assert.deepEqual(ids,expected.map(e => e.id).sort());
             const list = await page.locator('.fiere-card').evaluateAll(cards => cards.map(c => c.dataset.eventId));
             assert(list.every(id => ids.includes(id)));
+            const today = await page.evaluate(() => {
+                const parts = new Intl.DateTimeFormat('en', {timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+                return ['year','month','day'].map(type => parts.find(p => p.type === type).value).join('-');
+            });
+            assert.deepEqual(list, api.sortEvents(expected, today).slice(0,12).map(e => e.id));
             assert.equal(list.length, Math.min(12,expected.length));
         }
         await page.goto(base + '/fiere');

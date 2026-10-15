@@ -1,5 +1,11 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Calendario fiere, 15 ottobre 2026: ordine per data anche con filtri mesi,
+provincia e settore. Prima edizioni in corso (pari data odierna), poi future
+crescenti; seguono date non definite e infine concluse dalla pi? recente.
+Stesso ordine in elenco, caricamento successivo e gruppi della mappa.
+Cache fiere.js 42; catalogo invariato. Regressioni ordine in test-fiere.cjs.
+
 Calendario fiere, 15 ottobre 2026: Cuneo completata e verificata online,
 173 schede in 93 comuni (prima 55); ricerca nominale nei 247 comuni,
 160 righe dei due registri Piemonte e 82 record distinti Visit Cuneese.
