@@ -404,7 +404,27 @@ e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
   conferma operativa oltre l’estratto ACTV. Natale Mira resta provvisorio;
   nessuna proiezione di date/termini storici o dei gestori agli espositori.
 
-**Ricerca approfondita: 23 province completate, 87 ancora da fare su 110.**
+- [x] **Novara — ricerca documentale approfondita completata (15 ottobre 2026)**:
+  ricerca nominale negli 87 comuni; 71 manifestazioni in 36 comuni, prima 13,
+  pubblicate e verificate in [/fiere](https://subingresso.it/fiere?provincia=Novara).
+  Confrontate tutte le 25 righe dei due registri Piemonte e le 33 schede ATL
+  Fiere e Mercati; vagliate Enogastronomia e Sagre, 261 dettagli distinti.
+  45 schede con contatti, sei scadenze; 69 con date precise, una testuale,
+  una sola ricorrenza. Fonti, copertura, esclusioni e limiti documentati in
+  `data/fiere-novara.json` e `data/FIERE.md`; nessuna data proiettata.
+  Ameno domanda 30 ottobre; Ghemme Natale 15 novembre; Prato Sesia Natale
+  11 dicembre. Cureggio mercato annullato escluso; fiere Novara in nuove aree,
+  Lesa 22 agosto e Fiorissimo 2–4 aprile 2027 da annunci espliciti.
+  Commit dati `e92ded2`, Vercel riuscito; catalogo online identico al commit,
+  mappa e dieci dettagli verificati su computer/telefono Chromium e WebKit.
+- [ ] **Novara — aggiornamenti periodici**: nuove edizioni, bandi e disponibilità;
+  chiarire giorni del weekend Novara e consistenze discordanti, sede/condizioni
+  Roba Végia, sede Arona tartufo, Ghemme vino e calendario Boca. Recuperare
+  avviso domande Trecate e programmi correnti Natale Briga, Bellinzago,
+  Castelletto, Le Pigne, Comignago e Romentino Artiquariando. Meina resta
+  storico 2025; nessuna quota, domanda o data da ricostruire per ipotesi.
+
+**Ricerca approfondita: 24 province completate, 86 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -433,7 +453,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **14. Mantova** — Lombardia; ricerca completata e verificata online, vedi sopra
 - [x] **15. Cremona** — Lombardia; ricerca completata e verificata online, vedi sopra
 - [ ] **16. Pavia** — Lombardia
-- [ ] **17. Novara** — Piemonte
+- [x] **17. Novara** — Piemonte; ricerca completata e verificata online, vedi sopra
 - [ ] **18. Cuneo** — Piemonte
 - [ ] **19. Trento** — Trentino-Alto Adige
 - [ ] **20. Bolzano/Bozen** — Trentino-Alto Adige

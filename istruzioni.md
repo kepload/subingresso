@@ -1424,3 +1424,17 @@ Pagina /fiere: 836 manifestazioni in 20 regioni, di cui 671 con informazioni sul
 Interfaccia semplificata: mesi con nomi completi e regione sempre visibili; intervallo mesi, tipologia e ricerca per nome/comune nel menu Altri filtri, con contatore dei filtri secondari attivi anche su URL condivisi. Mappa a destra dei filtri e della lista su desktop, subito dopo i filtri su mobile. Legenda/fonti e informazioni sul calendario apribili. Test Chromium desktop/tablet/mobile e WebKit mobile: filtri, URL, elenco/puntini, schede, tastiera, retry e assenza di overflow.
 
 Tutto l’anno: testo e switch senza riquadro né ON/OFF, stato accessibile con aria-checked. Mappa: raggruppamento entro 28 pixel, coordinate degli eventi riutilizzate e puntini senza filtro ombra. Il trascinamento aggiorna solo la vista SVG; rotella e pinch ricalcolano i gruppi dopo 120 ms di pausa. I test verificano anche che il trascinamento non ricrei i puntini.
+Calendario fiere, 15 ottobre 2026: Novara completata e verificata online,
+71 schede in 36 comuni (prima 13); ricerca nominale negli 87 comuni, 25 righe
+Piemonte e vaglio completo delle tre categorie ATL (261 dettagli distinti).
+Audit/fonti/limiti in data/fiere-novara.json e data/FIERE.md; archivio locale
+Documents/ricerca-fiere-novara-20261015. 45 contatti, sei termini; Cureggio
+mercato annullato escluso, nuove aree Novara, Lesa 22 agosto, Fiorissimo
+2–4 aprile 2027 esplicito. Gattico-Veruno usa il punto della mappa ATL con
+coordinateSource; anagrafica invariata. Build/settori e suite Chromium/WebKit
+passati; altre 3.258 schede identiche e 13 ID Novara conservati. Catalogo 3.329,
+cache fiere.js 40/catalogo 33. Commit dati e92ded2, Vercel riuscito, hash Git e
+file pubblici uguali; 71 risultati/mappa e dieci dettagli verificati online,
+anche pagina reale senza simulazioni. TO DO dopo verifica: 24 completate,
+86 rimaste. Nessuna comunicazione a terzi né altra provincia avviata.
+

@@ -89,8 +89,16 @@ completo passati su Chromium (1440/820/390/320) e WebKit (390). Test Novara:
 71 risultati, corrispondenza mappa/elenco e dieci dettagli in tre combinazioni
 browser/schermo. Altre **3.258 schede identiche** e tutti i **13 ID Novara**
 conservati; catalogo **3.329** schede. Scansione segreti staged senza rilievi.
-Pubblicazione e verifica online da registrare dopo il deploy; TO DO ancora
-non spuntata durante la preparazione.
+Commit dati `e92ded2`: Vercel riuscito, pagina HTTP 200 con cache aggiornata.
+Catalogo pubblico SHA-256
+`0316ed9da979590f362ae3a791965e5eabd59fb47d83becae9696b48a62cc720`
+e JavaScript identici ai blob del commit (confronto Git, indipendente dai fine
+riga Windows). Verificati online tutti i 71 risultati e la mappa, dieci
+dettagli in Chromium computer/telefono e WebKit telefono; anche pagina reale
+senza simulare script esterni, nessun errore JavaScript o overflow. Evidenze
+locali in `deployment-verification.json`, `verification-online.json` e
+`live-smoke.json`. TO DO spuntata solo dopo questi controlli:
+**24 province completate, 86 rimaste**. Nessun’altra provincia avviata.
 
 ## Ricerca approfondita Venezia — 14 ottobre 2026
 
