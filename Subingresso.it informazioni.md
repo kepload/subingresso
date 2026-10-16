@@ -1,5 +1,21 @@
 # Subingresso.it — informazioni e TO DO
 
+**Blog fiere Liguria, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
+in Liguria da conoscere se fai l’ambulante», ID `348db8f1-c562-4c32-a83a-6db8ffa43e21`,
+[/blog?post=migliori-fiere-liguria](https://subingresso.it/blog?post=migliori-fiere-liguria).
+Regione assente verificata live; 1.732 parole, dieci fiere nelle quattro
+province, quattordici fonti raggiungibili e due richiami discreti al calendario.
+Sarzana aggiornata alla scheda comunale 13–15 marzo 2027 dopo 404 del vecchio
+URL; Chiavari luglio 410 sostituito con pagina graduatorie, senza conservare
+orari dell’avviso rimosso. Distinte spunta anticipata Sant’Agata, domanda
+Lavagna già scaduta e accesso pubblico gratuito dalle quote espositori.
+Pubblicazione, testo/meta/canonical, indice, sitemap e calendario regionale
+verificati su Chromium 1440/390 px, senza overflow. Conservati gli 87 articoli
+precedenti. Testo, fonti e riscontri in `Documents/articoli-subingresso/`,
+prefisso `migliori-fiere-liguria`, script `liguria-lavorazione.cjs`.
+Backup remoto verificato; errore già noto nel cleanup dei tag PowerShell,
+checkpoint valido. Nessuna modifica al codice o ai dati delle fiere.
+
 **Blog fiere Friuli-Venezia Giulia, 16 ottobre 2026:** pubblicato «Le 10 migliori
 fiere in Friuli-Venezia Giulia da conoscere se fai l’ambulante», ID
 `02e46433-b91d-4f23-b1da-9b170155f803`,
