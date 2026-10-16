@@ -102,14 +102,8 @@ async function run(engine, label, viewport, base) {
             assert.equal(await page.locator('#detail-reputation-badge [data-reputation]').getAttribute('data-reputation'), level);
             const id = await cards.first().getAttribute('data-event-id');
             const event = expected.find(e => e.id === id);
-            if (level === 'unknown') {
-                assert(await page.locator('#detail-reputation-sources').isHidden());
-                assert.match(await page.locator('#detail-reputation-reason').innerText(), /insufficienti/);
-            } else {
-                assert.equal(await page.locator('#detail-reputation-reason').innerText(), event.reputation.reason);
-                await page.locator('#detail-reputation-sources summary').click();
-                assert.deepEqual(await page.locator('#detail-reputation-evidence a').evaluateAll(links => links.map(a => a.href)), event.reputation.evidence.map(e => e.url));
-            }
+            assert.equal(await page.locator('#fair-dialog #detail-reputation-reason, #fair-dialog #detail-reputation-sources, #fair-dialog .fiere-reputation-help').count(), 0);
+            assert.equal((await page.locator('#detail-reputation-badge').textContent()).trim(), api.REPUTATIONS[level].icon + api.REPUTATIONS[level].label);
             if (level === 'rinomata' || level === 'recente') {
                 await page.locator('#fair-dialog').screenshot({ path: path.join(os.tmpdir(), 'fiere-rinomatezza-' + label + '-' + level + '.png') });
             }

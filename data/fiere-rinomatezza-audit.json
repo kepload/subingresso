@@ -1,0 +1,2608 @@
+{
+  "matches": [
+    {
+      "id": "lombardia-sondrio-fiera-di-maggio",
+      "method": "edition-count",
+      "recordId": "26705",
+      "sourceName": "FIERA DI MAGGIO",
+      "sourceYear": 2026,
+      "editionCount": 25
+    },
+    {
+      "id": "lombardia-teglio-fiera-di-s-luigi",
+      "method": "edition-count",
+      "recordId": "26912",
+      "sourceName": "FIERA DI S.LUIGI",
+      "sourceYear": 2026,
+      "editionCount": 74
+    },
+    {
+      "id": "lombardia-grosotto-fiera-di-sant-antonio",
+      "method": "edition-count",
+      "recordId": "25092",
+      "sourceName": "FIERA DI SANT'ANTONIO",
+      "sourceYear": 2026,
+      "editionCount": 53
+    },
+    {
+      "id": "lombardia-grosotto-fiera-della-cintura",
+      "method": "edition-count",
+      "recordId": "25098",
+      "sourceName": "FIERA DELLA CINTURA",
+      "sourceYear": 2026,
+      "editionCount": 53
+    },
+    {
+      "id": "lombardia-chiuro-fiera-di-s-andrea",
+      "method": "edition-count",
+      "recordId": "24468",
+      "sourceName": "FIERA DI S.ANDREA",
+      "sourceYear": 2026,
+      "editionCount": 305
+    },
+    {
+      "id": "lombardia-garlasco-fiera-di-pasqua",
+      "method": "edition-count",
+      "recordId": "26090",
+      "sourceName": "FIERA DI PASQUA",
+      "sourceYear": 2026,
+      "editionCount": 69
+    },
+    {
+      "id": "lombardia-broni-fiera-di-san-contardino",
+      "method": "edition-count",
+      "recordId": "24058",
+      "sourceName": "FIERA DI SAN CONTARDINO",
+      "sourceYear": 2026,
+      "editionCount": 161
+    },
+    {
+      "id": "lombardia-morbegno-mostra-del-bitto",
+      "method": "edition-count",
+      "recordId": "25979",
+      "sourceName": "119^ MOSTRA DEL BITTO",
+      "sourceYear": 2026,
+      "editionCount": 119
+    },
+    {
+      "id": "lombardia-borgo-san-siro-fiera-per-la-festa-del-paese",
+      "method": "edition-count",
+      "recordId": "26086",
+      "sourceName": "FIERA PER LA FESTA DEL PAESE",
+      "sourceYear": 2026,
+      "editionCount": 25
+    },
+    {
+      "id": "lombardia-villa-di-chiavenna-fiera-annuale",
+      "method": "edition-count",
+      "recordId": "25236",
+      "sourceName": "FIERA ANNUALE",
+      "sourceYear": 2026,
+      "editionCount": 13
+    },
+    {
+      "id": "lombardia-broni-fiera-di-san-contardo",
+      "method": "edition-count",
+      "recordId": "24059",
+      "sourceName": "FIERA DI SAN CONTARDO",
+      "sourceYear": 2026,
+      "editionCount": 238
+    },
+    {
+      "id": "lombardia-lomello-fiera-di-maggio",
+      "method": "edition-count",
+      "recordId": "26104",
+      "sourceName": "FIERA DI MAGGIO",
+      "sourceYear": 2026,
+      "editionCount": 34
+    },
+    {
+      "id": "lombardia-chiesa-in-valmalenco-fiera-di-s-antonio",
+      "method": "edition-count",
+      "recordId": "25535",
+      "sourceName": "FIERA DI S.ANTONIO",
+      "sourceYear": 2026,
+      "editionCount": 35
+    },
+    {
+      "id": "lombardia-sondrio-fiera-di-settembre",
+      "method": "edition-count",
+      "recordId": "26736",
+      "sourceName": "FIERA DI SETTEMBRE",
+      "sourceYear": 2026,
+      "editionCount": 45
+    },
+    {
+      "id": "lombardia-calcinato-fiera-di-santa-maria",
+      "method": "edition-count",
+      "recordId": "25013",
+      "sourceName": "FIERA DI SANTA MARIA",
+      "sourceYear": 2026,
+      "editionCount": 56
+    },
+    {
+      "id": "lombardia-castegnato-franciacorta-in-bianco",
+      "method": "edition-count",
+      "recordId": "24484",
+      "sourceName": "FRANCIACORTA IN BIANCO 2026",
+      "sourceYear": 2026,
+      "editionCount": 28
+    },
+    {
+      "id": "lombardia-castelcovati-festa-di-sant-antonio-abate-i-canunsei-de-sant-antone",
+      "method": "edition-count",
+      "recordId": "25646",
+      "sourceName": "FESTA DI S.ANTONIO ABATE - I CANUNSEI DE S.ANTONE",
+      "sourceYear": 2026,
+      "editionCount": 18
+    },
+    {
+      "id": "lombardia-cazzago-san-martino-franciacorta-in-fiore",
+      "method": "edition-count",
+      "recordId": "26219",
+      "sourceName": "FRANCIACORTA IN FIORE",
+      "sourceYear": 2026,
+      "editionCount": 27
+    },
+    {
+      "id": "lombardia-cevo-mostra-mercato-del-fungo",
+      "method": "edition-count",
+      "recordId": "24451",
+      "sourceName": "MOSTRA MERCATO DEL FUNGO",
+      "sourceYear": 2026,
+      "editionCount": 43
+    },
+    {
+      "id": "lombardia-cividate-camuno-sagra-di-santo-stefano",
+      "method": "edition-count",
+      "recordId": "25767",
+      "sourceName": "SAGRA DI SANTO STEFANO",
+      "sourceYear": 2026,
+      "editionCount": 45
+    },
+    {
+      "id": "lombardia-coccaglio-festa-patronale-e-mercatini",
+      "method": "edition-count",
+      "recordId": "26183",
+      "sourceName": "FESTA PATRONALE E MERCATINI 2025",
+      "sourceYear": 2026,
+      "editionCount": 22
+    },
+    {
+      "id": "lombardia-collebeato-festa-dei-persech",
+      "method": "edition-count",
+      "recordId": "23996",
+      "sourceName": "41Â° FESTA DEI PERSECH",
+      "sourceYear": 2026,
+      "editionCount": 41
+    },
+    {
+      "id": "lombardia-gargnano-fiera-dell-ottava-di-pasqua",
+      "method": "edition-count",
+      "recordId": "24861",
+      "sourceName": "FIERA VIII PASQUA",
+      "sourceYear": 2026,
+      "editionCount": 55
+    },
+    {
+      "id": "lombardia-gargnano-fiera-di-san-giacomo",
+      "method": "edition-count",
+      "recordId": "24870",
+      "sourceName": "FIERA SAN GIANCOMO",
+      "sourceYear": 2026,
+      "editionCount": 56
+    },
+    {
+      "id": "lombardia-gargnano-fiera-di-san-martino",
+      "method": "edition-count",
+      "recordId": "24877",
+      "sourceName": "FIERA DI SAN MARTINO",
+      "sourceYear": 2026,
+      "editionCount": 56
+    },
+    {
+      "id": "lombardia-ghedi-festa-aspettando-il-natale",
+      "method": "edition-count",
+      "recordId": "26000",
+      "sourceName": "FESTA ASPETTANDO IL NATALE",
+      "sourceYear": 2026,
+      "editionCount": 17
+    },
+    {
+      "id": "lombardia-ghedi-mestieri-e-sapori",
+      "method": "edition-count",
+      "recordId": "25987",
+      "sourceName": "MESTIERI E SAPORI",
+      "sourceYear": 2026,
+      "editionCount": 14
+    },
+    {
+      "id": "lombardia-ghedi-sapori-d-autunno",
+      "method": "edition-count",
+      "recordId": "25997",
+      "sourceName": "FESTA SAPORI D'AUTUNNO",
+      "sourceYear": 2026,
+      "editionCount": 10
+    },
+    {
+      "id": "lombardia-gussago-fiera-della-caccia",
+      "method": "edition-count",
+      "recordId": "25190",
+      "sourceName": "FIERA DELLA CACCIA",
+      "sourceYear": 2026,
+      "editionCount": 79
+    },
+    {
+      "id": "lombardia-iseo-mercato-europeo",
+      "method": "edition-count",
+      "recordId": "24805",
+      "sourceName": "MERCATO EUROPEO",
+      "sourceYear": 2026,
+      "editionCount": 10
+    },
+    {
+      "id": "lombardia-lodrino-mercatini-di-natale",
+      "method": "edition-count",
+      "recordId": "24542",
+      "sourceName": "MERCATINI DI NATALE",
+      "sourceYear": 2026,
+      "editionCount": 15
+    },
+    {
+      "id": "lombardia-orzinuovi-fiera-di-orzinuovi",
+      "method": "edition-count",
+      "recordId": "24272",
+      "sourceName": "FIERA DI ORZINUOVI",
+      "sourceYear": 2026,
+      "editionCount": 78
+    },
+    {
+      "id": "lombardia-ospitaletto-san-giacomo",
+      "method": "edition-count",
+      "recordId": "26215",
+      "sourceName": "SAN GIACOMO",
+      "sourceYear": 2026,
+      "editionCount": 31
+    },
+    {
+      "id": "lombardia-palazzolo-sull-oglio-fiera-di-ognissanti",
+      "method": "edition-count",
+      "recordId": "24120",
+      "sourceName": "OGNISSANTI",
+      "sourceYear": 2026,
+      "editionCount": 36
+    },
+    {
+      "id": "lombardia-palazzolo-sull-oglio-fiera-di-san-rocco",
+      "method": "edition-count",
+      "recordId": "24122",
+      "sourceName": "SAN ROCCO",
+      "sourceYear": 2026,
+      "editionCount": 36
+    },
+    {
+      "id": "lombardia-palazzolo-sull-oglio-san-fedele",
+      "method": "edition-count",
+      "recordId": "24119",
+      "sourceName": "SAN FEDELE",
+      "sourceYear": 2026,
+      "editionCount": 36
+    },
+    {
+      "id": "lombardia-piancogno-fiera-dei-fiori-di-piancogno",
+      "method": "edition-count",
+      "recordId": "25808",
+      "sourceName": "FIERA DEI FIORI PIANCOGNO",
+      "sourceYear": 2026,
+      "editionCount": 33
+    },
+    {
+      "id": "lombardia-pisogne-mostra-mercato-di-pisogne",
+      "method": "edition-count",
+      "recordId": "24990",
+      "sourceName": "MOSTRA MERCATO DI PISOGNE",
+      "sourceYear": 2026,
+      "editionCount": 28
+    },
+    {
+      "id": "lombardia-pozzolengo-fiera-di-san-giuseppe",
+      "method": "edition-count",
+      "recordId": "25309",
+      "sourceName": "FIERA DI SAN GIUSEPPE",
+      "sourceYear": 2026,
+      "editionCount": 124
+    },
+    {
+      "id": "lombardia-sale-marasino-mercatini-di-natale",
+      "method": "edition-count",
+      "recordId": "24297",
+      "sourceName": "MERCATINI DI NATALE",
+      "sourceYear": 2026,
+      "editionCount": 21
+    },
+    {
+      "id": "lombardia-sale-marasino-sale-in-zucca",
+      "method": "edition-count",
+      "recordId": "24295",
+      "sourceName": "SALE IN ZUCCA - FESTIVAL DELLA TRADIZIONE LOCALE",
+      "sourceYear": 2026,
+      "editionCount": 43
+    },
+    {
+      "id": "lombardia-san-zeno-naviglio-mercatini-di-natale",
+      "method": "edition-count",
+      "recordId": "24565",
+      "sourceName": "MERCATINI DI NATALE",
+      "sourceYear": 2026,
+      "editionCount": 23
+    },
+    {
+      "id": "lombardia-serle-brostoi-formai-e",
+      "method": "edition-count",
+      "recordId": "26994",
+      "sourceName": "BROSTOI, FORMAI E... 2026",
+      "sourceYear": 2026,
+      "editionCount": 24
+    },
+    {
+      "id": "lombardia-vezza-d-oglio-benessere-in-fiera",
+      "method": "edition-count",
+      "recordId": "24582",
+      "sourceName": "BENESSERE IN FIERA",
+      "sourceYear": 2026,
+      "editionCount": 11
+    },
+    {
+      "id": "lombardia-casalmaiocco-festa-di-san-martino-e-del-ringraziamento",
+      "method": "edition-count",
+      "recordId": "27003",
+      "sourceName": "FESTA DI SAN MARTINO FESTA DEL RINGRAZIAMENTO",
+      "sourceYear": 2026,
+      "editionCount": 35
+    },
+    {
+      "id": "lombardia-sant-angelo-lodigiano-fiera-di-maggio",
+      "method": "edition-count",
+      "recordId": "25307",
+      "sourceName": "FIERA DI MAGGIO",
+      "sourceYear": 2026,
+      "editionCount": 61
+    },
+    {
+      "id": "lombardia-abbadia-lariana-fiera-di-sant-apollonia",
+      "method": "edition-count",
+      "recordId": "25276",
+      "sourceName": "FIERA DI SANT'APOLLONIA",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-casatenovo-festa-del-salame-di-campofiorenzo",
+      "method": "edition-count",
+      "recordId": "26812",
+      "sourceName": "FESTA DEL SALAME",
+      "sourceYear": 2026,
+      "editionCount": 49
+    },
+    {
+      "id": "lombardia-casatenovo-fiera-mercato-di-san-gaetano",
+      "method": "edition-count",
+      "recordId": "26730",
+      "sourceName": "FIERA MERCATO DI SAN GAETANO",
+      "sourceYear": 2026,
+      "editionCount": 75
+    },
+    {
+      "id": "lombardia-mandello-del-lario-biker-laghee-fest",
+      "method": "edition-count",
+      "recordId": "26037",
+      "sourceName": "21^ BIKER LAGHEE FEST",
+      "sourceYear": 2026,
+      "editionCount": 21
+    },
+    {
+      "id": "lombardia-oggiono-carnevale-oggionese-bancarelle",
+      "method": "edition-count",
+      "recordId": "26506",
+      "sourceName": "CARNEVALE OGGIONESE EDIZIONE 2025",
+      "sourceYear": 2026,
+      "editionCount": 59
+    },
+    {
+      "id": "lombardia-oggiono-fiera-di-sant-andrea",
+      "method": "edition-count",
+      "recordId": "26508",
+      "sourceName": "FERON DE UGIONN",
+      "sourceYear": 2026,
+      "editionCount": 411
+    },
+    {
+      "id": "lombardia-santa-maria-hoe-fiera-della-beata-vergine-dell-addolorata",
+      "method": "edition-count",
+      "recordId": "26939",
+      "sourceName": "BEATA VERGINE DELL'ADDOLORATA",
+      "sourceYear": 2026,
+      "editionCount": 242
+    },
+    {
+      "id": "lombardia-albiate-fiera-di-san-fermo",
+      "method": "edition-count",
+      "recordId": "26996",
+      "sourceName": "FIERA DI SAN FERMO",
+      "sourceYear": 2026,
+      "editionCount": 417
+    },
+    {
+      "id": "lombardia-besana-in-brianza-fiera-di-santa-caterina",
+      "method": "edition-count",
+      "recordId": "26345",
+      "sourceName": "FIERA DI SANTA CATERINA",
+      "sourceYear": 2026,
+      "editionCount": 132
+    },
+    {
+      "id": "lombardia-seregno-fiera-di-santa-valeria",
+      "method": "edition-count",
+      "recordId": "24082",
+      "sourceName": "FIERA DI SANTA VALERIA",
+      "sourceYear": 2026,
+      "editionCount": 152
+    },
+    {
+      "id": "lombardia-cernusco-sul-naviglio-fiera-di-san-giuseppe",
+      "method": "edition-count",
+      "recordId": "26765",
+      "sourceName": "FIERA DI SAN GIUSEPPE",
+      "sourceYear": 2026,
+      "editionCount": 104
+    },
+    {
+      "id": "lombardia-parabiago-fiera-di-autunno",
+      "method": "edition-count",
+      "recordId": "26692",
+      "sourceName": "FIERA DI AUTUNNO",
+      "sourceYear": 2026,
+      "editionCount": 24
+    },
+    {
+      "id": "lombardia-parabiago-fiera-di-san-michele",
+      "method": "edition-count",
+      "recordId": "26693",
+      "sourceName": "FIERA DI SAN MICHELE",
+      "sourceYear": 2026,
+      "editionCount": 75
+    },
+    {
+      "id": "lombardia-paderno-dugnano-fiera-di-primavera",
+      "method": "edition-count",
+      "recordId": "24332",
+      "sourceName": "FIERA DI PRIMAVERA",
+      "sourceYear": 2026,
+      "editionCount": 45
+    },
+    {
+      "id": "lombardia-paderno-dugnano-fiera-d-autunno",
+      "method": "edition-count",
+      "recordId": "24345",
+      "sourceName": "FIERA D'AUTUNNO",
+      "sourceYear": 2026,
+      "editionCount": 30
+    },
+    {
+      "id": "lombardia-assago-fiera-di-natale-villaggio-di-babbo-natale",
+      "method": "edition-count",
+      "recordId": "24607",
+      "sourceName": "FIERA DI NATALE - VILLAGGIO DI BABBO NATALE",
+      "sourceYear": 2026,
+      "editionCount": 23
+    },
+    {
+      "id": "lombardia-gorgonzola-fiera-di-santa-caterina",
+      "method": "edition-count",
+      "recordId": "23989",
+      "sourceName": "242ESIMA FIERA DI S. CATERINA",
+      "sourceYear": 2026,
+      "editionCount": 242
+    },
+    {
+      "id": "lombardia-gorgonzola-mercatini-di-arte-e-cultura",
+      "method": "edition-count",
+      "recordId": "23982",
+      "sourceName": "MERCATINI DI ARTE E CULTURA",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-paderno-dugnano-arti-e-mestieri-del-natale",
+      "method": "edition-count",
+      "recordId": "24349",
+      "sourceName": "ARTI E MESTIERI DEL NATALE",
+      "sourceYear": 2026,
+      "editionCount": 14
+    },
+    {
+      "id": "lombardia-paderno-dugnano-fera-de-dugnan",
+      "method": "edition-count",
+      "recordId": "24346",
+      "sourceName": "FERA DE DUGNAN",
+      "sourceYear": 2026,
+      "editionCount": 41
+    },
+    {
+      "id": "lombardia-pero-pero-in-festa",
+      "method": "edition-count",
+      "recordId": "24885",
+      "sourceName": "PERO IN FESTA",
+      "sourceYear": 2026,
+      "editionCount": 26
+    },
+    {
+      "id": "lombardia-cologno-monzese-sagra-del-commercio-e-artigianato",
+      "method": "edition-count",
+      "recordId": "25641",
+      "sourceName": "SAGRA DEL COMMERCIO E ARTIGIANATO",
+      "sourceYear": 2026,
+      "editionCount": 51
+    },
+    {
+      "id": "lombardia-san-colombano-al-lambro-sagra-dell-uva",
+      "method": "edition-count",
+      "recordId": "26259",
+      "sourceName": "SAGRA DELL'UVA",
+      "sourceYear": 2026,
+      "editionCount": 67
+    },
+    {
+      "id": "lombardia-san-colombano-al-lambro-sagra-delle-erbe-e-delle-ciliegie",
+      "method": "edition-count",
+      "recordId": "26255",
+      "sourceName": "SAGRA DELLE ERBE E DELLE CILIEGIE",
+      "sourceYear": 2026,
+      "editionCount": 37
+    },
+    {
+      "id": "lombardia-san-colombano-al-lambro-sagra-del-guiderdone-banino",
+      "method": "edition-count",
+      "recordId": "26258",
+      "sourceName": "SAGRA DEL GUIDERDONE BANINO",
+      "sourceYear": 2026,
+      "editionCount": 31
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-dicembre",
+      "method": "edition-count",
+      "recordId": "26324",
+      "sourceName": "FIERA DELL'ANTICO DICEMBRE",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-seriate-fiera-di-primavera",
+      "method": "edition-count",
+      "recordId": "26326",
+      "sourceName": "FIERA DI PRIMAVERA",
+      "sourceYear": 2026,
+      "editionCount": 15
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-novembre",
+      "method": "edition-count",
+      "recordId": "26323",
+      "sourceName": "FIERA DELL'ANTICO NOVEMBRE",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-marzo",
+      "method": "edition-count",
+      "recordId": "26317",
+      "sourceName": "FIERA DELL'ANTICO MARZO",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-gennaio",
+      "method": "edition-count",
+      "recordId": "26313",
+      "sourceName": "FIERA DELL'ANTICO GENNAIO",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-aprile",
+      "method": "edition-count",
+      "recordId": "26318",
+      "sourceName": "FIERA DELL'ANTICO APRILE",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-febbraio",
+      "method": "edition-count",
+      "recordId": "26316",
+      "sourceName": "FIERA DELL'ANTICO FEBBRAIO",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-settembre",
+      "method": "edition-count",
+      "recordId": "26321",
+      "sourceName": "FIERA DELL'ANTICO SETTEMBRE",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-villa-d-alme-fiera-di-san-mauro",
+      "method": "edition-count",
+      "recordId": "25685",
+      "sourceName": "FIERA DI SAN MAURO",
+      "sourceYear": 2026,
+      "editionCount": 44
+    },
+    {
+      "id": "lombardia-san-giovanni-bianco-fiera-della-sacra-spina",
+      "method": "edition-count",
+      "recordId": "25993",
+      "sourceName": "FIERA DELLA SACRA SPINA",
+      "sourceYear": 2026,
+      "editionCount": 531
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-maggio",
+      "method": "edition-count",
+      "recordId": "26319",
+      "sourceName": "FIERA DELL'ANTICO MAGGIO",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-giugno",
+      "method": "edition-count",
+      "recordId": "26320",
+      "sourceName": "FIERA DELL'ANTICO GIUGNO",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-seriate-fiera-dell-antico-ottobre",
+      "method": "edition-count",
+      "recordId": "26322",
+      "sourceName": "FIERA DELL'ANTICO OTTOBRE",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-alme-mercatini-di-natale",
+      "method": "edition-count",
+      "recordId": "25701",
+      "sourceName": "MERCATINI DI NATALE",
+      "sourceYear": 2026,
+      "editionCount": 14
+    },
+    {
+      "id": "lombardia-urgnano-sagra-di-ottobre-sapori-erranti",
+      "method": "edition-count",
+      "recordId": "26885",
+      "sourceName": "SAGRA DI OTTOBRE - SAPORI ERRANTI",
+      "sourceYear": 2026,
+      "editionCount": 53
+    },
+    {
+      "id": "lombardia-tradate-falo-di-sant-antonio",
+      "method": "edition-count",
+      "recordId": "24731",
+      "sourceName": "FALÃ’ DI SANT'ANTONIO",
+      "sourceYear": 2026,
+      "editionCount": 28
+    },
+    {
+      "id": "lombardia-tradate-sagra-delle-ciliegie-festa-di-primavera",
+      "method": "edition-count",
+      "recordId": "24742",
+      "sourceName": "SAGRA DELLE CILIEGIE (FESTA DI PRIMAVERA)",
+      "sourceYear": 2026,
+      "editionCount": 41
+    },
+    {
+      "id": "lombardia-tradate-sagra-delle-castagne-festa-d-autunno",
+      "method": "edition-count",
+      "recordId": "24746",
+      "sourceName": "SAGRA DELLE CASTAGNE (FESTA D'AUTUNNO)",
+      "sourceYear": 2026,
+      "editionCount": 30
+    },
+    {
+      "id": "lombardia-tradate-festa-patronale-sant-anna",
+      "method": "edition-count",
+      "recordId": "24749",
+      "sourceName": "FESTA PATRONALE SANT'ANNA",
+      "sourceYear": 2026,
+      "editionCount": 41
+    },
+    {
+      "id": "lombardia-tradate-festa-beata-vergine-maria-assunta",
+      "method": "edition-count",
+      "recordId": "24755",
+      "sourceName": "FESTA BEATA VERGINE MARIA ASSUNTA",
+      "sourceYear": 2026,
+      "editionCount": 191
+    },
+    {
+      "id": "lombardia-tradate-sagra-della-polenta",
+      "method": "edition-count",
+      "recordId": "24758",
+      "sourceName": "SAGRA DELLA POLENTA",
+      "sourceYear": 2026,
+      "editionCount": 20
+    },
+    {
+      "id": "lombardia-tradate-mostra-agricolo-zootecnica-agritradate",
+      "method": "edition-count",
+      "recordId": "24765",
+      "sourceName": "MOSTRA AGRICOLO ZOOTECNICA - AGRITRADATE",
+      "sourceYear": 2026,
+      "editionCount": 39
+    },
+    {
+      "id": "lombardia-oggiona-con-santo-stefano-festa-dei-sapori-e-benessere",
+      "method": "edition-count",
+      "recordId": "25251",
+      "sourceName": "FESTA DEI SAPORI E BENESSERE",
+      "sourceYear": 2026,
+      "editionCount": 10
+    },
+    {
+      "id": "lombardia-oggiona-con-santo-stefano-natale-in-pineta",
+      "method": "edition-count",
+      "recordId": "25261",
+      "sourceName": "NATALE IN PINETA",
+      "sourceYear": 2026,
+      "editionCount": 11
+    },
+    {
+      "id": "lombardia-saronno-sagra-sant-antonio-2026",
+      "method": "edition-count",
+      "recordId": "25380",
+      "sourceName": "SAGRA SANT'ANTONIO 2026",
+      "sourceYear": 2026,
+      "editionCount": 17
+    },
+    {
+      "id": "lombardia-somma-lombardo-fiera-del-castello",
+      "method": "edition-count",
+      "recordId": "26357",
+      "sourceName": "FIERA DEL CASTELLO",
+      "sourceYear": 2026,
+      "editionCount": 40
+    },
+    {
+      "id": "lombardia-cantu-fiera-del-crocifisso",
+      "method": "edition-count",
+      "recordId": "24306",
+      "sourceName": "FIERA DEL CROCIFISSO",
+      "sourceYear": 2026,
+      "editionCount": 122
+    },
+    {
+      "id": "lombardia-anzano-del-parco-fiera-di-san-michele",
+      "method": "edition-count",
+      "recordId": "26229",
+      "sourceName": "FIERA DI SAN MICHELE",
+      "sourceYear": 2026,
+      "editionCount": 13
+    },
+    {
+      "id": "lombardia-cantu-fiera-di-s-apollonia",
+      "method": "edition-count",
+      "recordId": "24315",
+      "sourceName": "FIERA DI S.APOLLONIA",
+      "sourceYear": 2026,
+      "editionCount": 123
+    },
+    {
+      "id": "lombardia-cantu-fiera-di-s-rocco",
+      "method": "edition-count",
+      "recordId": "24313",
+      "sourceName": "FIERA DI S.ROCCO",
+      "sourceYear": 2026,
+      "editionCount": 122
+    },
+    {
+      "id": "lombardia-albavilla-festa-dei-crotti",
+      "method": "edition-count",
+      "recordId": "26466",
+      "sourceName": "FESTA DEI CROTTI",
+      "sourceYear": 2026,
+      "editionCount": 21
+    },
+    {
+      "id": "lombardia-albavilla-natale-in-villa",
+      "method": "edition-count",
+      "recordId": "26469",
+      "sourceName": "NATALE IN VILLA",
+      "sourceYear": 2026,
+      "editionCount": 11
+    },
+    {
+      "id": "lombardia-albavilla-serate-albavillesi-mercatini-artigianali",
+      "method": "edition-count",
+      "recordId": "26460",
+      "sourceName": "SERATE ALBAVILLESI",
+      "sourceYear": 2026,
+      "editionCount": 11
+    },
+    {
+      "id": "lombardia-tavernerio-sagra-di-san-fereolo",
+      "method": "edition-count",
+      "recordId": "26699",
+      "sourceName": "SAGRA DI SAN FEREOLO",
+      "sourceYear": 2026,
+      "editionCount": 141
+    },
+    {
+      "id": "lombardia-erba-sagra-del-masigott",
+      "method": "edition-count",
+      "recordId": "26982",
+      "sourceName": "SAGRA DEL MASIGOTT",
+      "sourceYear": 2026,
+      "editionCount": 40
+    },
+    {
+      "id": "lombardia-marmirolo-sagra-del-luccio-in-salsa",
+      "method": "edition-count",
+      "recordId": "25575",
+      "sourceName": "SAGRA DEL LUCCIO IN SALSA",
+      "sourceYear": 2026,
+      "editionCount": 52
+    },
+    {
+      "id": "lombardia-ceresara-fiera-della-possenta",
+      "method": "edition-count",
+      "recordId": "24963",
+      "sourceName": "75^ FIERA DELLA POSSENTA",
+      "sourceYear": 2026,
+      "editionCount": 75
+    },
+    {
+      "id": "lombardia-curtatone-fiera-del-mese-mariano",
+      "method": "edition-count",
+      "recordId": "24097",
+      "sourceName": "FIERA DEL MESE MARIANO",
+      "sourceYear": 2026,
+      "editionCount": 47
+    },
+    {
+      "id": "lombardia-pegognaga-antica-sagra-di-san-lorenzo",
+      "method": "edition-count",
+      "recordId": "24076",
+      "sourceName": "ANTICA SAGRA DI SAN LORENZO",
+      "sourceYear": 2026,
+      "editionCount": 44
+    },
+    {
+      "id": "lombardia-poggio-rusco-fiera-di-settembre",
+      "method": "edition-count",
+      "recordId": "26368",
+      "sourceName": "FIERA DI SETTEMBRE",
+      "sourceYear": 2026,
+      "editionCount": 226
+    },
+    {
+      "id": "lombardia-asola-antica-fiera-dei-morti",
+      "method": "edition-count",
+      "recordId": "26752",
+      "sourceName": "ANTICA FIERA DEI MORTI 2026",
+      "sourceYear": 2026,
+      "editionCount": 25
+    },
+    {
+      "id": "lombardia-castel-d-ario-festa-del-riso-alla-pilota-de-co",
+      "method": "edition-count",
+      "recordId": "24630",
+      "sourceName": "FESTA DEL RISO ALLA PILOTA DE.CO",
+      "sourceYear": 2026,
+      "editionCount": 34
+    },
+    {
+      "id": "lombardia-curtatone-fiera-de-i-stradei",
+      "method": "edition-count",
+      "recordId": "24095",
+      "sourceName": "FIERA DE I STRADEI",
+      "sourceYear": 2026,
+      "editionCount": 49
+    },
+    {
+      "id": "lombardia-gonzaga-festa-dell-uva-di-palidano",
+      "method": "edition-count",
+      "recordId": "25581",
+      "sourceName": "FESTA DELL'UVA",
+      "sourceYear": 2026,
+      "editionCount": 45
+    },
+    {
+      "id": "lombardia-castel-d-ario-bigolada",
+      "method": "edition-count",
+      "recordId": "24629",
+      "sourceName": "BIGOLADA",
+      "sourceYear": 2026,
+      "editionCount": 176
+    },
+    {
+      "id": "lombardia-canneto-sull-oglio-fiera-d-ottobre",
+      "method": "edition-count",
+      "recordId": "26632",
+      "sourceName": "FIERA D'OTTOBRE",
+      "sourceYear": 2026,
+      "editionCount": 100
+    },
+    {
+      "id": "lombardia-san-benedetto-po-fiera-d-agosto",
+      "method": "edition-count",
+      "recordId": "26342",
+      "sourceName": "FIERA D'AGOSTO",
+      "sourceYear": 2026,
+      "editionCount": 149
+    },
+    {
+      "id": "lombardia-villimpenta-festa-del-risotto",
+      "method": "edition-count",
+      "recordId": "24831",
+      "sourceName": "FESTA DEL RISOTTO",
+      "sourceYear": 2026,
+      "editionCount": 78
+    },
+    {
+      "id": "lombardia-pegognaga-festa-d-autunno",
+      "method": "edition-count",
+      "recordId": "24078",
+      "sourceName": "FESTA D'AUTUNNO",
+      "sourceYear": 2026,
+      "editionCount": 24
+    },
+    {
+      "id": "lombardia-poggio-rusco-fiera-di-giugno",
+      "method": "edition-count",
+      "recordId": "26360",
+      "sourceName": "FIERA DI GIUGNO",
+      "sourceYear": 2026,
+      "editionCount": 32
+    },
+    {
+      "id": "lombardia-gazoldo-degli-ippoliti-mercatino-di-natale",
+      "method": "edition-count",
+      "recordId": "25354",
+      "sourceName": "MERCATINO DI NATALE",
+      "sourceYear": 2026,
+      "editionCount": 17
+    },
+    {
+      "id": "lombardia-pegognaga-sagra-di-polesine",
+      "method": "edition-count",
+      "recordId": "24075",
+      "sourceName": "SAGRA DI POLESINE",
+      "sourceYear": 2026,
+      "editionCount": 54
+    },
+    {
+      "id": "lombardia-villimpenta-fiera-di-luglio",
+      "method": "edition-count",
+      "recordId": "24828",
+      "sourceName": "FIERA DI LUGLIO",
+      "sourceYear": 2026,
+      "editionCount": 150
+    },
+    {
+      "id": "lombardia-gazoldo-degli-ippoliti-fiera-delle-postumia",
+      "method": "edition-count",
+      "recordId": "25353",
+      "sourceName": "FIERA DELLE POSTUMIA",
+      "sourceYear": 2026,
+      "editionCount": 33
+    },
+    {
+      "id": "lombardia-castel-d-ario-fiera-d-agosto-festival-del-riso",
+      "method": "edition-count",
+      "recordId": "24631",
+      "sourceName": "FIERA D'AGOSTO - FESTIVAL DEL RISO",
+      "sourceYear": 2026,
+      "editionCount": 173
+    },
+    {
+      "id": "lombardia-gonzaga-festa-del-cicciolo",
+      "method": "edition-count",
+      "recordId": "25540",
+      "sourceName": "FESTA DEL CICCIOLO",
+      "sourceYear": 2026,
+      "editionCount": 13
+    },
+    {
+      "id": "lombardia-marmirolo-marmirolo-paese-in-festa",
+      "method": "edition-count",
+      "recordId": "25550",
+      "sourceName": "MARMIROLO PAESE IN FESTA",
+      "sourceYear": 2026,
+      "editionCount": 24
+    },
+    {
+      "id": "lombardia-casaletto-ceredano-sagra-di-sant-orsola",
+      "method": "edition-count",
+      "recordId": "24614",
+      "sourceName": "SAGRA DI SANT'ORSOLA",
+      "sourceYear": 2026,
+      "editionCount": 15
+    },
+    {
+      "id": "lombardia-casaletto-vaprio-sagra-di-s-giorgio",
+      "method": "edition-count",
+      "recordId": "24608",
+      "sourceName": "SAGRA DI S. GIORGIO",
+      "sourceYear": 2026,
+      "editionCount": 10
+    },
+    {
+      "id": "lombardia-crema-fiera-di-santa-lucia",
+      "method": "edition-count",
+      "recordId": "26521",
+      "sourceName": "FIERA DI SANTA LUCIA",
+      "sourceYear": 2026,
+      "editionCount": 569
+    },
+    {
+      "id": "lombardia-crema-fiera-di-santa-maria-della-croce",
+      "method": "edition-count",
+      "recordId": "26517",
+      "sourceName": "FIERA DI SANTA MARIA DELLA CROCE",
+      "sourceYear": 2026,
+      "editionCount": 359
+    },
+    {
+      "id": "lombardia-cremona-eatinero-cremona",
+      "method": "edition-count",
+      "recordId": "25771",
+      "sourceName": "EATINERO CREMONA 2026",
+      "sourceYear": 2026,
+      "editionCount": 10
+    },
+    {
+      "id": "lombardia-ostiano-fiera-san-gaudenzio",
+      "method": "edition-count",
+      "recordId": "25775",
+      "sourceName": "507^ FIERA SAN GAUDENZIO",
+      "sourceYear": 2026,
+      "editionCount": 507
+    },
+    {
+      "id": "lombardia-pandino-festa-di-santa-marta",
+      "method": "edition-count",
+      "recordId": "26973",
+      "sourceName": "FESTA DI SANTA MARTA",
+      "sourceYear": 2026,
+      "editionCount": 100
+    },
+    {
+      "id": "lombardia-pandino-sagra-di-autunno",
+      "method": "edition-count",
+      "recordId": "26974",
+      "sourceName": "SAGRA DI AUTUNNO 2026",
+      "sourceYear": 2026,
+      "editionCount": 100
+    },
+    {
+      "id": "piemonte-casale-monferrato-mostra-nazionale-di-san-giuseppe",
+      "method": "historical-calendar",
+      "oldName": "Mostra di San Giuseppe",
+      "page": 9,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-alessandria-l-officina-delle-memorie-mercatino-dell-antiquariato",
+      "method": "historical-calendar",
+      "oldName": "L'officina delle Memorie - Mercatino dell'Antiquariato",
+      "page": 40,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-alessandria-festa-di-borgo-rovereto",
+      "method": "historical-calendar",
+      "oldName": "20^ Festa di Borgo Rovereto",
+      "page": 41,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-arquata-scrivia-fiera-dei-ss-filippo-e-giacomo",
+      "method": "historical-calendar",
+      "oldName": "Fiera dei SS. Filippo e Giacomo",
+      "page": 43,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-arquata-scrivia-fiera-di-san-bartolomeo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Bartolomeo",
+      "page": 43,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-arquata-scrivia-fiera-di-san-carlo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Carlo",
+      "page": 43,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-asti-mostra-mercato-oggetti-antichi-e-usati",
+      "method": "historical-calendar",
+      "oldName": "Mostra Mercato Oggetti Antichi e Usati",
+      "page": 43,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-asti-fiera-di-primavera",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Primavera",
+      "page": 43,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-asti-fiera-carolingia",
+      "method": "historical-calendar",
+      "oldName": "Fiera Carolingia",
+      "page": 43,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-asti-fiera-d-autunno",
+      "method": "historical-calendar",
+      "oldName": "Fiera d'Autunno",
+      "page": 44,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-casale-monferrato-mercatino-dell-antiquariato-e-dell-usato",
+      "method": "historical-calendar",
+      "oldName": "Mercatino dell'antiquariato",
+      "page": 52,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-casale-monferrato-fiera-di-marzo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Marzo",
+      "page": 52,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-casale-monferrato-fiera-di-aprile",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Aprile",
+      "page": 52,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-casale-monferrato-fiera-di-agosto",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Agosto",
+      "page": 53,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-casale-monferrato-fiera-di-novembre",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Novembre",
+      "page": 54,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-casale-monferrato-fiera-di-dicembre",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Dicembre",
+      "page": 54,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cassine-festa-di-san-giacomo",
+      "method": "historical-calendar",
+      "oldName": "Festa di San Giacomo",
+      "page": 55,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-castellero-fiera-citta-della-nocciola",
+      "method": "historical-calendar",
+      "oldName": "Fiera \"CittÃƒÂ  della Nocciola\"",
+      "page": 10,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-castelnuovo-don-bosco-fiera-di-sant-andrea",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Sant'Andrea",
+      "page": 56,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cossato-fiera-di-san-rocco",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Rocco",
+      "page": 62,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-formazza-fiera-d-estate",
+      "method": "historical-calendar",
+      "oldName": "Fiera d'Estate",
+      "page": 66,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-garbagna-sagra-delle-castagne",
+      "method": "historical-calendar",
+      "oldName": "45^ Sagra delle Castagne",
+      "page": 67,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-molino-dei-torti-sagra-dell-aglio",
+      "method": "historical-calendar",
+      "oldName": "Sagra Mercato dell'Aglio",
+      "page": 76,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-monastero-bormida-sagra-del-polentonissimo",
+      "method": "historical-calendar",
+      "oldName": "Sagra del Polentonissimo",
+      "page": 76,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-nizza-monferrato-libri-in-nizza",
+      "method": "historical-calendar",
+      "oldName": "Libri in Nizza",
+      "page": 22,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-nizza-monferrato-fiera-patronale-di-san-carlo-giornata-del-tartufo-e-del-cardo-gobbo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Carlo - Giornata del Tartufo e del Cardo Gobbo",
+      "page": 22,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-nizza-monferrato-nizza-e-bagna-cauda",
+      "method": "historical-calendar",
+      "oldName": "Nizza ÃƒÂ¨ Bagna Cauda",
+      "page": 22,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-nizza-monferrato-fiera-del-bue-grasso-e-del-manzo",
+      "method": "historical-calendar",
+      "oldName": "Fiera del Bue Grasso e del Manzo",
+      "page": 22,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-novi-ligure-fiera-di-agosto",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Agosto",
+      "page": 85,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-novi-ligure-fiera-di-santa-caterina",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Santa Caterina",
+      "page": 85,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ovada-fiera-di-santa-croce",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Santa Croce",
+      "page": 86,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ovada-fiera-di-san-simone",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Simone",
+      "page": 86,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ovada-fiera-di-sant-andrea",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Sant'Andrea",
+      "page": 86,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-portacomaro-fiera-di-san-bartolomeo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Bartolomeo",
+      "page": 90,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-sale-festa-patronale-di-sant-anna-2026",
+      "method": "historical-calendar",
+      "oldName": "Festa Patronale di Sant'Anna 2014",
+      "page": 93,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-san-damiano-d-asti-fiera-dei-santi-2026",
+      "method": "historical-calendar",
+      "oldName": "Fiera dei Santi",
+      "page": 95,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-san-salvatore-monferrato-primafesta",
+      "method": "historical-calendar",
+      "oldName": "Primafesta",
+      "page": 96,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-san-salvatore-monferrato-quantefeste",
+      "method": "historical-calendar",
+      "oldName": "Quante feste",
+      "page": 96,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-serravalle-scrivia-fiera-di-san-martino",
+      "method": "historical-calendar",
+      "oldName": "Festa di San Martino",
+      "page": 101,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-tortona-fiera-di-santa-croce",
+      "method": "historical-calendar",
+      "oldName": "Festa e Fiera di Santa Croce",
+      "page": 104,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-tortona-fiera-della-madonna-della-guardia",
+      "method": "historical-calendar",
+      "oldName": "Fiera e Festa della Madonna della Guardia",
+      "page": 104,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-trino-fiera-di-san-biagio",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Biagio",
+      "page": 104,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-trino-fiera-di-maggio",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Maggio",
+      "page": 104,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-trino-fiera-di-san-bartolomeo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Bartolomeo",
+      "page": 104,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-trino-fiera-di-dicembre",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Dicembre",
+      "page": 104,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-valfenera-fiera-di-sant-orsola",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Sant'Orsola",
+      "page": 106,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-barbania-fiera-agricola-autunnale-barbaniese",
+      "method": "historical-calendar",
+      "oldName": "Fiera Agricola Autunnale Barbaniese",
+      "page": 47,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cafasse-fiera-di-primavera",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Primavera",
+      "page": 50,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cafasse-sagra-della-zucca",
+      "method": "historical-calendar",
+      "oldName": "Sagra della Zucca",
+      "page": 50,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-caprie-la-mela-e-dintorni",
+      "method": "historical-calendar",
+      "oldName": "La Mela e Dintorni",
+      "page": 51,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-casalborgone-fiera-del-pisello-di-casalborgone",
+      "method": "historical-calendar",
+      "oldName": "Sagra del Pisello di Casalborgone",
+      "page": 9,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-caselle-torinese-fiera-dei-rastei-e-d-le-capline",
+      "method": "historical-calendar",
+      "oldName": "Fiera dei Rastei e D'le Capline",
+      "page": 55,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-caselle-torinese-fiera-di-sant-andrea",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Sant'Andrea",
+      "page": 55,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-caselette-fiera-di-san-giorgio",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Giorgio",
+      "page": 9,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-castellamonte-fiera-di-carnevale",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Carnevale",
+      "page": 55,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-castellamonte-fiera-primaverile",
+      "method": "historical-calendar",
+      "oldName": "Fiera Primaverile",
+      "page": 55,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-castellamonte-mercatino-del-crisantemo",
+      "method": "historical-calendar",
+      "oldName": "Mercatino del Crisantemo",
+      "page": 56,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-collegno-festa-patronale-di-san-lorenzo",
+      "method": "historical-calendar",
+      "oldName": "Festa Patronale di San Lorenzo",
+      "page": 62,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-fiano-mercatino-di-natale",
+      "method": "historical-calendar",
+      "oldName": "Mercatino di Natale a Fiano",
+      "page": 66,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-gassino-torinese-fiera-di-settembre",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Settembre",
+      "page": 67,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-germagnano-fiera-d-autunno",
+      "method": "historical-calendar",
+      "oldName": "Fiera d'Autunno",
+      "page": 15,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-la-loggia-fiera-del-cossot-fiera-dello-zucchino",
+      "method": "historical-calendar",
+      "oldName": "Fera del Cossot (Fiera dello Zucchino)",
+      "page": 16,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-montanaro-la-via-del-gust-sota-i-porti-del-burcanin",
+      "method": "historical-calendar",
+      "oldName": "La Via del Gust Sota i PÃƒÂ²rti del Burcanin",
+      "page": 20,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-montanaro-fiera-di-santa-cecilia",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Santa Cecilia",
+      "page": 80,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-nole-sagra-dell-ofela",
+      "method": "historical-calendar",
+      "oldName": "Sagra dell'Ofela",
+      "page": 84,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-none-fiera-di-san-martino",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Martino",
+      "page": 84,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-perosa-argentina-erbe-in-fiera-e-del-vino-nuovo",
+      "method": "historical-calendar",
+      "oldName": "Erbe in Fiera e del Vino Nuovo",
+      "page": 87,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-perosa-argentina-mercatino-delle-pulci-e-dei-pulcini",
+      "method": "historical-calendar",
+      "oldName": "Mercatino delle Pulci e Pulcini",
+      "page": 87,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-perosa-argentina-fiera-del-plaisentif",
+      "method": "historical-calendar",
+      "oldName": "Fiera del Plaisentif",
+      "page": 87,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-perosa-argentina-mercatino-dell-avvento",
+      "method": "historical-calendar",
+      "oldName": "Mercatino dell'Avvento",
+      "page": 87,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-poirino-fiera-dell-asparago-e-della-tinca",
+      "method": "historical-calendar",
+      "oldName": "Fiera dell'Asparago e della Tinca",
+      "page": 89,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-poirino-fiera-di-sant-orsola",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Sant'Orsola",
+      "page": 89,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-pont-canavese-fiera-di-san-matteo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Matteo",
+      "page": 89,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-pont-canavese-fiera-di-san-luca",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Luca",
+      "page": 90,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivara-fiera-autunnale-e-mostra-zootecnica",
+      "method": "historical-calendar",
+      "oldName": "Fiera Autunnale e Mostra Zootecnica",
+      "page": 28,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivarolo-canavese-fiera-di-san-giacomo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Giacomo",
+      "page": 91,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivarolo-canavese-fiera-di-san-michele",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Michele",
+      "page": 91,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivarolo-canavese-fiera-di-natale",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Natale",
+      "page": 91,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivoli-mercato-dell-usato",
+      "method": "historical-calendar",
+      "oldName": "Mercato dell'Usato",
+      "page": 91,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivoli-fiera-di-primavera",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Primavera",
+      "page": 28,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivoli-fiera-di-santa-caterina",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Santa Caterina",
+      "page": 92,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-san-giorgio-canavese-fiera-di-maggio",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Maggio",
+      "page": 95,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-san-giorgio-canavese-fiera-di-san-martino",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Martino",
+      "page": 95,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-san-maurizio-canavese-fiera-di-san-maurizio-artigianato-agricoltura-e-dintorni",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Maurizio - Artigianato, Agricoltura eÃ¢â‚¬Â¦Dintorni",
+      "page": 30,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-santena-fiera-primaverile",
+      "method": "historical-calendar",
+      "oldName": "Fiera Primaverile",
+      "page": 98,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-santena-fiera-autunnale",
+      "method": "historical-calendar",
+      "oldName": "Fiera Autunnale",
+      "page": 99,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-settimo-torinese-fiera-d-la-contenta",
+      "method": "historical-calendar",
+      "oldName": "Fera Dla Contenta",
+      "page": 101,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-settimo-torinese-fera-dij-coj",
+      "method": "historical-calendar",
+      "oldName": "Fera Dij Coj",
+      "page": 101,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-susa-fiera-di-primavera",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Primavera",
+      "page": 102,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-susa-fiera-d-autunno",
+      "method": "historical-calendar",
+      "oldName": "Fiera d'Autunno",
+      "page": 102,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-torre-pellice-fiera-di-pasquetta",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Pasquetta",
+      "page": 103,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-torre-pellice-fiera-di-dicembre",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Dicembre",
+      "page": 103,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-trana-fiera-di-maggio",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Maggio",
+      "page": 104,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-venaria-reale-mercatino-dell-antiquariato-minore-e-del-collezionismo-belle-epoque",
+      "method": "historical-calendar",
+      "oldName": "Mercatino dell' Antiquariato Minore \"Belle Epoque\"",
+      "page": 106,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-vigone-fiera-di-carnevale",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Carnevale",
+      "page": 108,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-vigone-fiera-autunnale",
+      "method": "historical-calendar",
+      "oldName": "Fiera Autunnale",
+      "page": 108,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-vigone-fiera-di-natale",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Natale",
+      "page": 108,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-villafranca-piemonte-fiera-dei-pescatori",
+      "method": "historical-calendar",
+      "oldName": "Fiera dei Pescatori",
+      "page": 108,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-angrogna-fiera-autunnale",
+      "method": "historical-calendar",
+      "oldName": "Fiera Autunnale",
+      "page": 3,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-balangero-balangero-in-fiore",
+      "method": "historical-calendar",
+      "oldName": "Balangero in Fiore",
+      "page": 4,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-banchette-evento-tradizionale-del-biologico-pignoletto-rosso-2026",
+      "method": "historical-calendar",
+      "oldName": "Evento Tradizionale del Biologico \"Pignoletto Rosso\"",
+      "page": 4,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-bibiana-sagra-del-kiwi",
+      "method": "historical-calendar",
+      "oldName": "Sagra del Kiwi",
+      "page": 5,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cantalupa-canta-libri-2026",
+      "method": "historical-calendar",
+      "oldName": "Canta-Libri",
+      "page": 7,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-carignano-sagra-del-ciapinabo",
+      "method": "historical-calendar",
+      "oldName": "Sagra del CiapinabÃƒÂ²",
+      "page": 51,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-carmagnola-fiera-del-bovino-da-carne-di-razza-piemontese-e-della-giora",
+      "method": "historical-calendar",
+      "oldName": "Fiera del Bovino da Carne di Razza Piemontese e della Giora",
+      "page": 8,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-castellamonte-fiera-agricola-autunnale-di-ognissanti",
+      "method": "historical-calendar",
+      "oldName": "Fiera Agricola Autunnale di Ognissanti",
+      "page": 10,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-chivasso-antica-fiera-del-beato-angelo-carletti",
+      "method": "historical-calendar",
+      "oldName": "Antica Fiera del Beato Angelo Carletti",
+      "page": 11,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-collegno-follia-in-fiore",
+      "method": "historical-calendar",
+      "oldName": "Follia in Fiore",
+      "page": 12,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-collegno-filo-lungo-filo-un-nodo-si-fara",
+      "method": "historical-calendar",
+      "oldName": "Filo Lungo Filo Un Nodo si farÃƒÂ ",
+      "page": 12,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-giaveno-fungo-in-festa",
+      "method": "historical-calendar",
+      "oldName": "Fungo in Festa",
+      "page": 16,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-luserna-san-giovanni-fiera-dei-santi-2026",
+      "method": "historical-calendar",
+      "oldName": "Fiera dei Santi 2014",
+      "page": 18,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-marentino-fiera-del-miele-e-mostra-mercato-dei-prodotti-agroalimentari-e-dell-artigianato-locale",
+      "method": "historical-calendar",
+      "oldName": "Fiera del Miele e Mostra Mercato dei Prodotti Agroalimentari e dell'Artigianato Locali",
+      "page": 18,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-montanaro-sagra-del-canastrel",
+      "method": "historical-calendar",
+      "oldName": "Sagra del Canastrel",
+      "page": 20,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-moriondo-torinese-sagra-del-cavolo-liscio",
+      "method": "historical-calendar",
+      "oldName": "Sagra del Cavolo Liscio",
+      "page": 80,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-orbassano-fiera-primaverile",
+      "method": "historical-calendar",
+      "oldName": "Fiera Primaverile",
+      "page": 24,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-pancalieri-viverbe",
+      "method": "historical-calendar",
+      "oldName": "Viverbe 2014",
+      "page": 25,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-pinasca-fera-d-le-capline",
+      "method": "historical-calendar",
+      "oldName": "Fera d'le Capline",
+      "page": 25,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-pinerolo-rassegna-dell-artigianato-del-pinerolese",
+      "method": "historical-calendar",
+      "oldName": "XXXVIII^ Rassegna dell'Artigianato del Pinerolese",
+      "page": 26,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-pralormo-cascine-in-piazza",
+      "method": "historical-calendar",
+      "oldName": "Cascine in Piazza",
+      "page": 27,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivalba-mostra-mercato-del-tartufo-bianco-d-alba-della-regione-piemonte-raccolto-nelle-colline-torinesi",
+      "method": "historical-calendar",
+      "oldName": "Mostra Mercato del Tartufo Bianco d'Alba della Regione Piemonte raccolto nelle Colline Torinesi",
+      "page": 28,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-sant-ambrogio-di-torino-meliga-day",
+      "method": "historical-calendar",
+      "oldName": "Meliga Day",
+      "page": 31,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-torino-salone-internazionale-del-libro-di-torino",
+      "method": "historical-calendar",
+      "oldName": "Salone Internazionale del Libro",
+      "page": 33,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-torino-artissima-internazionale-d-arte-contemporanea-a-torino",
+      "method": "historical-calendar",
+      "oldName": "Artissima 21 - Internazionale d'Arte Contemporanea a Torino",
+      "page": 34,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-usseaux-rassegna-zootecnica-di-balboutet",
+      "method": "historical-calendar",
+      "oldName": "Fiera Zootecnica di Balboutet",
+      "page": 35,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-usseglio-mostra-nazionale-della-toma-di-lanzo-e-dei-formaggi-d-alpeggio",
+      "method": "historical-calendar",
+      "oldName": "18^ Mostra Mercato della Toma di Lanzo e dei Formaggi d'Alpeggio",
+      "page": 35,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-usseglio-mostra-dei-prodotti-naturali-e-mestieri-delle-valli",
+      "method": "historical-calendar",
+      "oldName": "18^ Mostra dei Prodotti Naturali e dei Mestieri delle Valli",
+      "page": 35,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-vaie-sagra-del-canestrello",
+      "method": "historical-calendar",
+      "oldName": "Sagra del Canestrello 2014",
+      "page": 36,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-vigone-fiera-della-meccanizzazione-agricola",
+      "method": "historical-calendar",
+      "oldName": "Fiera della Meccanizzazione Agricola",
+      "page": 39,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-vigone-vigoflor",
+      "method": "historical-calendar",
+      "oldName": "VigoFlor",
+      "page": 38,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-villar-focchiardo-sagra-valsusina-del-marrone",
+      "method": "historical-calendar",
+      "oldName": "53^ Sagra Valsusina del Marrone",
+      "page": 38,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-villar-pellice-mostra-mercato-della-festa-d-autunno",
+      "method": "historical-calendar",
+      "oldName": "Mostra Mercato della Festa d'Autunno",
+      "page": 39,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-albiano-d-ivrea-festa-di-maggio",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Maggio",
+      "page": 40,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-villanova-canavese-villexpo",
+      "method": "historical-calendar",
+      "oldName": "Villexpo",
+      "page": 109,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-condove-fiera-della-toma",
+      "method": "historical-calendar",
+      "oldName": "Fiera della Toma",
+      "page": 13,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-giaveno-mercatino-delle-pulci-e-dell-artigianato",
+      "method": "historical-calendar",
+      "oldName": "Mercatino delle Pulci di Giaveno",
+      "page": 70,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivalta-di-torino-mostra-mercato-commerciale-ed-artigianale",
+      "method": "historical-calendar",
+      "oldName": "Mostra Mercato Commerciale ed Artigianale",
+      "page": 90,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-rivalta-di-torino-sagra-del-tomino",
+      "method": "historical-calendar",
+      "oldName": "Sagra del Tomino",
+      "page": 90,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-torino-antiquariato-minore-piazza-vittorio",
+      "method": "historical-calendar",
+      "oldName": "Antiquariato Minore di Piazza Vittorio Veneto",
+      "page": 102,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ghemme-antica-fiera-di-febbraio",
+      "method": "historical-calendar",
+      "oldName": "Antica Fiera di Febbraio",
+      "page": 68,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ghemme-antica-fiera-della-beata-panacea",
+      "method": "historical-calendar",
+      "oldName": "Antica Fiera della Beata Panacea",
+      "page": 68,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ghemme-sagra-beata-panacea",
+      "method": "historical-calendar",
+      "oldName": "Sagra della Beata Panacea",
+      "page": 68,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ghemme-antica-fiera-di-san-rocco",
+      "method": "historical-calendar",
+      "oldName": "Antica Fiera di San Rocco",
+      "page": 69,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ghemme-antica-fiera-di-ottobre",
+      "method": "historical-calendar",
+      "oldName": "Antica Fiera di Ottobre",
+      "page": 69,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-novara-mercatino-dell-antiquariato-minore",
+      "method": "historical-calendar",
+      "oldName": "Mercatino dell'Antiquariato Minore",
+      "page": 84,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-novara-festa-patronale-di-san-gaudenzio",
+      "method": "historical-calendar",
+      "oldName": "Festa Patronale di San Gaudenzio",
+      "page": 84,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-novara-fiera-di-marzo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Marzo",
+      "page": 85,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-novara-fiera-di-agosto",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Agosto",
+      "page": 85,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-novara-fiera-di-novembre",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Novembre",
+      "page": 85,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ghemme-mostra-mercato-ghemme-docg",
+      "method": "historical-calendar",
+      "oldName": "Mostra Mercato Ghemme D.O.C.G.",
+      "page": 15,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-boca-mostra-mercato-del-vino-di-boca",
+      "method": "historical-calendar",
+      "oldName": "Mostra Mercato Vino Locale",
+      "page": 5,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-alba-grande-rassegna-bovini-piemontesi-di-sottorazza-albese-della-coscia",
+      "method": "historical-calendar",
+      "oldName": "Grande Rassegna Bovini Piemontesi di Sottorazza Albese della Coscia",
+      "page": 3,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-alba-fiera-internazionale-vinum",
+      "method": "historical-calendar",
+      "oldName": "38^ Fiera Nazionale Vinum 2014",
+      "page": 3,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-caraglio-mostra-mercato-di-arte-tessile-di-filo-in-filo",
+      "method": "historical-calendar",
+      "oldName": "Mostra Mercato di Arte Tessile \"Di filo in filo\"",
+      "page": 7,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cervere-fiera-zootecnica-di-santa-croce",
+      "method": "historical-calendar",
+      "oldName": "Fiera Zootecnica di Santa Croce",
+      "page": 11,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cervere-fiera-del-porro-cervere",
+      "method": "historical-calendar",
+      "oldName": "35^ Fiera del Porro di Cervere",
+      "page": 11,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-ceva-rassegna-zootecnica-dei-bovini-di-razza-piemontese",
+      "method": "historical-calendar",
+      "oldName": "Rassegna Zootecnica dei Bovini di Razza Piemontese",
+      "page": 11,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-chiusa-di-pesio-festa-del-re-marrone",
+      "method": "historical-calendar",
+      "oldName": "Festa del Marrone",
+      "page": 60,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-corneliano-d-alba-fiera-di-san-carlo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Carlo",
+      "page": 12,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cuneo-mostra-regionale-zootecnica-di-quaresima",
+      "method": "historical-calendar",
+      "oldName": "64^ Mostra Regionale Zootecnica di Quaresima",
+      "page": 13,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cuneo-mostra-regionale-ortofrutticola-citta-di-cuneo",
+      "method": "historical-calendar",
+      "oldName": "87^ Mostra Regionale Ortofrutticola - CittÃƒÂ  di Cuneo",
+      "page": 14,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-dogliani-antica-fiera-della-ciliegia-manufatti-d-autore",
+      "method": "historical-calendar",
+      "oldName": "Antica Fiera della Ciliegia - Manufatti d'Autore",
+      "page": 14,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-entracque-fiera-della-patata-di-entracque",
+      "method": "historical-calendar",
+      "oldName": "Fiera della Patata di Entracque",
+      "page": 66,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-farigliano-fiera-dei-pucio-e-di-san-nicolao",
+      "method": "historical-calendar",
+      "oldName": "Fiera dei Puciu e di San Nicolao",
+      "page": 66,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-frabosa-soprana-sagra-della-raschera-e-del-bruss",
+      "method": "historical-calendar",
+      "oldName": "Sagra della Raschera e del Bruss",
+      "page": 14,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-lagnasco-fruttinfiore-2026",
+      "method": "historical-calendar",
+      "oldName": "Fruttinfiore 2014",
+      "page": 16,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-mombasiglio-fiera-dei-produttori-agricoli-della-valle-mongia",
+      "method": "historical-calendar",
+      "oldName": "Fiera dei Produttori Agricoli della Valle Mongia",
+      "page": 18,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-paroldo-fiera-estate-di-san-martino-fiera-del-tartufo-dell-alta-langa-e-del-cebano",
+      "method": "historical-calendar",
+      "oldName": "\"Estate di San Martino\" - Fiera del Tartufo dell'Alta Langa e del Cebano",
+      "page": 25,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-peveragno-sagra-della-fragola",
+      "method": "historical-calendar",
+      "oldName": "Sagra della Fragola",
+      "page": 25,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-piozzo-fiera-della-zucca",
+      "method": "historical-calendar",
+      "oldName": "Sagra della Zucca",
+      "page": 27,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-priocca-fiera-di-primavera-sagra-del-vino-nuovo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Primavera - Sagra del Vino Nuovo",
+      "page": 28,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-roaschia-mostra-interprovinciale-ovini-di-razza-frabosana-roaschina",
+      "method": "historical-calendar",
+      "oldName": "21^ Mostra Interprovinciale Ovini di Razza Frabosana- Roaschina",
+      "page": 92,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-roccavione-fiera-mercato-castagnata",
+      "method": "historical-calendar",
+      "oldName": "Fiera Mercato \"Castagnata\"",
+      "page": 93,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-saluzzo-mostra-nazionale-dell-antiquariato",
+      "method": "historical-calendar",
+      "oldName": "37^ Mostra Nazionale di Antiquariato di Saluzzo",
+      "page": 29,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-saluzzo-mostra-nazionale-della-meccanica-agricola",
+      "method": "historical-calendar",
+      "oldName": "67^ Mostra Nazionale della Meccanica Agricola",
+      "page": 29,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-scagnello-festa-del-tartufo-nero-di-scagnello",
+      "method": "historical-calendar",
+      "oldName": "Festa del Tartufo Nero di Scagnello",
+      "page": 31,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-sommariva-del-bosco-festival-dei-mieli-ame-l-amel",
+      "method": "historical-calendar",
+      "oldName": "Festival dei Mieli AmÃƒÂ¨l AmÃƒÂ¨l",
+      "page": 31,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-villanova-solaro-fiera-di-san-martino",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Martino",
+      "page": 38,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-vinadio-fiera-della-pecora-sambucana",
+      "method": "historical-calendar",
+      "oldName": "Fiera della Pecora Sambucana",
+      "page": 39,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-bagnasco-fiera-della-madonna-del-rosario",
+      "method": "historical-calendar",
+      "oldName": "Fiera della Madonna del Rosario",
+      "page": 46,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-barge-fiera-di-san-giovanni",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Giovanni",
+      "page": 47,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-casteldelfino-sagra-del-miele-e-delle-erbe-curative",
+      "method": "historical-calendar",
+      "oldName": "31^ Sagra del Miele e delle Erbe Curative",
+      "page": 10,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cherasco-mercato-dell-antiquariato-e-del-collezionismo",
+      "method": "historical-calendar",
+      "oldName": "Mercato dell'Antiquariato e del Collezionismo",
+      "page": 58,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cortemilia-fiera-dell-ascensione",
+      "method": "historical-calendar",
+      "oldName": "Fiera dell'Ascensione",
+      "page": 62,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cortemilia-fiera-di-santa-caterina",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Santa Caterina",
+      "page": 62,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-costigliole-saluzzo-sagra-dell-uva-quagliano",
+      "method": "historical-calendar",
+      "oldName": "Sagra dell'Uva Quagliano - 77^ Edizione",
+      "page": 62,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-crissolo-fiera-di-san-chiaffredo",
+      "method": "historical-calendar",
+      "oldName": "Fiera Locale di San Chiaffredo",
+      "page": 62,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cuneo-cuneo-in-fiore-e-biofotovoltaico",
+      "method": "historical-calendar",
+      "oldName": "Cuneo in Fiore e Biofotovoltaico",
+      "page": 63,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-demonte-fiera-di-pasqua",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Pasqua",
+      "page": 65,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-demonte-fiera-prima-d-oc",
+      "method": "historical-calendar",
+      "oldName": "Fiera Prima DÃƒÂ²C",
+      "page": 14,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-demonte-fiera-di-san-donato",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Donato",
+      "page": 65,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-demonte-fiera-di-san-luca",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Luca",
+      "page": 14,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-demonte-fiera-di-natale",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Natale",
+      "page": 65,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-melle-sagra-del-toumin-dal-mel",
+      "method": "historical-calendar",
+      "oldName": "XXXXI^ Sagra del Tomin dal Mel",
+      "page": 76,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-montelupo-albese-bancarelle-nel-borgo-antico",
+      "method": "historical-calendar",
+      "oldName": "Bancarelle nel Borgo Antico",
+      "page": 20,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-murello-fiera-mercato-di-santa-caterina",
+      "method": "historical-calendar",
+      "oldName": "Fiera Mercato di Santa Caterina",
+      "page": 80,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-narzole-fiera-napoleonica",
+      "method": "historical-calendar",
+      "oldName": "Fiera Napoleonica",
+      "page": 80,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-niella-belbo-fiera-di-primavera",
+      "method": "historical-calendar",
+      "oldName": "18^ Fiera di Primavera",
+      "page": 21,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-racconigi-fiera-di-santa-lucia",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Santa Lucia",
+      "page": 90,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-robilante-fiera-di-sant-eligio",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Sant'Eligio",
+      "page": 92,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-robilante-fiera-dei-santi",
+      "method": "historical-calendar",
+      "oldName": "Fiera dei Santi",
+      "page": 93,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-roccabruna-fiera-di-valle",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Valle",
+      "page": 28,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-saluzzo-fiera-di-carnevale",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Carnevale",
+      "page": 93,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-saluzzo-fiera-di-primavera",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Primavera",
+      "page": 94,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-saluzzo-festa-di-san-chiaffredo",
+      "method": "historical-calendar",
+      "oldName": "Festa di San Chiaffredo",
+      "page": 94,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-saluzzo-mercato-dei-santi",
+      "method": "historical-calendar",
+      "oldName": "Mercato dei Santi",
+      "page": 94,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-saluzzo-fiera-di-sant-andrea",
+      "method": "historical-calendar",
+      "oldName": "Fiera di Sant'Andrea",
+      "page": 94,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-valdieri-la-fiero",
+      "method": "historical-calendar",
+      "oldName": "La Fiero",
+      "page": 105,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-savigliano-festa-del-pane",
+      "method": "historical-calendar",
+      "oldName": "Festa del Pane",
+      "page": 31,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-saluzzo-fiera-di-san-chiaffredo",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Chiaffredo",
+      "page": 94,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-cuneo-il-trovarobe",
+      "method": "historical-calendar",
+      "oldName": "Trovarobe",
+      "page": 62,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-brossasco-festa-del-legno",
+      "method": "historical-calendar",
+      "oldName": "Festa del Legno",
+      "page": 6,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-savigliano-fiera-di-primavera",
+      "method": "historical-calendar",
+      "oldName": "Fiera di primavera",
+      "page": 100,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-savigliano-quintessenza",
+      "method": "historical-calendar",
+      "oldName": "Quintessenza",
+      "page": 100,
+      "sourceYear": 2014
+    },
+    {
+      "id": "piemonte-gattinara-fiera-di-san-martino",
+      "method": "historical-calendar",
+      "oldName": "Fiera di San Martino",
+      "page": 68,
+      "sourceYear": 2014
+    }
+  ],
+  "excluded": {
+    "piemonte-santhia-fiera-di-santa-caterina": "Il documento storico riguarda Sant Agata, evento diverso.",
+    "piemonte-none-natale-al-cioccolato-2026": "None al Cioccolato non prova identita della variante natalizia.",
+    "piemonte-torino-casalia-salone-dell-arredamento-e-delle-idee-per-abitare": "Cambio nome Expocasa/Casalia da documentare."
+  },
+  "checkedAt": "2026-10-16",
+  "sources": [
+    {
+      "url": "https://www.dati.lombardia.it/resource/hs8z-dcey.json?$limit=50000",
+      "sha256": "082cd0020714a0410645dcc5a158a60f48149961aaf21f0a1941bb312190f990",
+      "downloadedAt": "2026-10-16"
+    },
+    {
+      "url": "https://www.regione.piemonte.it/governo/bollettino/abbonati/2014/10/attach/dddb160000641_180.pdf",
+      "sha256": "687a84d3d3f99bc7a5e0c3093f7e43ce53eb8b4e620ea30015f52d7b85ca8b52",
+      "downloadedAt": "2026-10-16"
+    }
+  ]
+}

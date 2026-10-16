@@ -1,5 +1,16 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Valutazioni fiere, 16 ottobre 2026: 400 su 3.972 (17 molto conosciute,
+380 di lunga tradizione, 3 nuove), prima 41. Restano 3.572 da valutare:
+ricerca nazionale non conclusa. Registro Lombardia con edizioni esplicite,
+calendario Piemonte 2014 confrontato per identità/comune e verifiche mirate.
+Fonti e motivi in fiere-rinomatezza.json, riscontri/esclusioni/impronte in
+fiere-rinomatezza-audit.json. Documenti esterni in Documents/ricerca-valutazioni-fiere-20261016.
+Martinengo e dieci schede mensili dell'Antico Seriate: Di lunga tradizione.
+Scheda pubblica con solo bollino e dicitura, senza titolo, motivo, fonti
+apribili e avvertenze. Prove conservate nei dati. Cache JS53/catalogo42.
+Preferenza corrente supera la precedente richiesta di spiegazioni in scheda.
+
 Testi fiere, 16 ottobre 2026: titolo pubblico «Quanto è conosciuta»; bollini
 Molto conosciuta / Di lunga tradizione / Nuova / Da valutare. Restano gli ID
 interni e il parametro URL rinomatezza per compatibilità. Niente righe «Da

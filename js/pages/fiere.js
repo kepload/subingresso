@@ -190,10 +190,10 @@
         const icon = node('span', 'fiere-reputation-icon', info.icon);
         icon.setAttribute('aria-hidden', 'true');
         badge.append(icon, document.createTextNode(info.label));
-        badge.title = 'Quanto è conosciuta: ' + info.description;
+        badge.title = info.label;
         if (clickable) {
             badge.type = 'button';
-            badge.setAttribute('aria-label', 'Quanto è conosciuta: ' + info.label + '. Scopri perché: ' + event.name);
+            badge.setAttribute('aria-label', 'Quanto è conosciuta: ' + info.label + '. Apri scheda: ' + event.name);
             badge.addEventListener('click', () => openDetail(event));
         }
         return badge;
@@ -393,23 +393,7 @@
         $('detail-frequency').hidden = !event.frequencyNote;
         $('detail-description').textContent = event.summary || '';
         $('detail-description').hidden = !event.summary;
-        const level = reputationLevel(event), rating = event.reputation;
         $('detail-reputation-badge').replaceChildren(reputationBadge(event));
-        $('detail-reputation-reason').textContent = level === 'unknown'
-            ? (rating ? 'Informazioni da aggiornare.' : REPUTATIONS.unknown.description)
-            : rating.reason;
-        $('detail-reputation-sources').hidden = level === 'unknown';
-        $('detail-reputation-sources').open = false;
-        $('detail-reputation-evidence').replaceChildren();
-        if (level !== 'unknown') {
-            $('detail-reputation-meta').textContent = 'Valutazione editoriale aggiornata il ' + dateLabel(rating.checkedAt);
-            for (const item of rating.evidence) {
-                const li = node('li', '');
-                const link = node('a', '', item.label + ' ↗');
-                link.href = item.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
-                li.append(link); $('detail-reputation-evidence').append(li);
-            }
-        }
         const editions = document.createDocumentFragment();
         for (const edition of event.editions || []) {
             const item = node('div', 'fiere-edition');
@@ -493,7 +477,7 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=41');
+            const data = await fetchJSON('/data/fiere.json?v=42');
             if (!Array.isArray(data.provinces) || !data.provinces.length || new Set(data.provinces).size !== data.provinces.length
                 || !data.provinces.every(province => typeof province === 'string' && province) || !Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.province === 'string' && data.provinces.includes(event.province)

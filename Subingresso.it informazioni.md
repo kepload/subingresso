@@ -301,6 +301,17 @@ In caso di conflitto, usare questo ordine:
 
 ### Quanto è conosciuta la fiera — richiesta del 16 ottobre 2026
 
+**Valutazioni e scheda, 16 ottobre 2026:** nuova priorità dell'utente:
+valutare concretamente fiere, sagre ed eventi; nella scheda soltanto bollino
+con dicitura, senza titolo e spiegazioni. Prima estensione da 41 a 400
+valutazioni su 3.972: 17 Molto conosciuta, 380 Di lunga tradizione, 3 Nuova.
+Restano 3.572 da valutare; ricerca nazionale non completata. Registro
+Lombardia, confronto calendario Piemonte 2014 e verifiche mirate; audit
+con fonti ed esclusioni in data/fiere-rinomatezza-audit.json e data/FIERE.md.
+Martinengo e dieci schede dell'Antico Seriate ora Di lunga tradizione.
+Prove conservate nei dati, rimosse le spiegazioni dalla scheda pubblica.
+Cache JS53/catalogo42. Le altre modifiche al prodotto restano fuori sessione.
+
 **Preferenza testi, 16 ottobre 2026:** usare «Quanto è conosciuta», con bollini
 «Molto conosciuta», «Di lunga tradizione», «Nuova» e «Da valutare». Evitare
 diciture di stato accanto alle date (Da calendario, Date pubblicate, ecc.):
