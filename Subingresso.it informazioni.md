@@ -434,6 +434,20 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 
 ## 🎪 Fiere: ricerca e calendario
 
+### Strategia di crescita, ricavi e Google — sintesi del 16 ottobre 2026
+
+- **Obiettivo:** diventare il riferimento degli ambulanti per trovare occasioni concrete di lavoro; favorire ritorni settimanali e crescita anche degli annunci di Subingresso.
+- **Base verificata nell'analisi:** 3.972 schede in 20 regioni; 171 con tariffe documentate, 183 con scadenza di domanda, comprese quelle scadute. Sono presenti eventi conclusi e ricorrenze da riconfermare: il totale non indica opportunità ancora disponibili.
+- **Priorità prodotto:** completare date, costi, requisiti, contatti e candidature degli eventi imminenti; ricerca per prodotto, distanza, periodo, costo e domande aperte, distinguendo professionisti, artigiani e hobbisti.
+- **Far tornare gli utenti:** avvisi personalizzati per zona e merce venduta, soprattutto all'apertura delle candidature; misurare candidature generate e ritorni.
+- **Dati affidabili e concorrenza:** permettere agli organizzatori di aggiornare e confermare le schede; raccogliere esperienze degli espositori su organizzazione, affluenza e rapporto costo/risultato, distinguendo i settori. Notorietà e anzianità non dimostrano redditività.
+- **Partnership:** collaborare con Pro Loco, associazioni e organizzatori per aggiornamenti, acquisizione di utenti e collegamenti spontanei al sito. Calendari e filtri esistono già su Eventi e Sagre e Ambulanti Online: differenziarsi sulla possibilità concreta di scegliere e partecipare.
+- **Google:** nell'analisi le schede del calendario si aprono dentro `/fiere`, senza pagine autonome. Creare una pagina per evento con contenuti subito leggibili, titolo e indirizzo propri; pagine territoriali curate solo con dati sufficienti; collegamenti interni, sitemap e dati strutturati Event per date e luoghi documentati. Controllare indicizzazione e ricerche in Search Console; nessuna posizione garantita.
+- **Ricavi da validare:** consultazione gratuita; provare strumenti a pagamento per organizzatori e funzioni avanzate per ambulanti, cercando prima acquisti reali. Esempi puramente ipotetici: 300 ambulanti × 9 €/mese + 20 organizzatori × 49 €/mese = 3.680 €/mese; 1.000 × 9 € + 50 × 49 € = 11.450 €/mese. Fatturato lordo prima di aggiornamento dati, assistenza, tecnologia e imposte; prezzi e scenari non ancora validati. Verificare rinnovi e tempo di gestione.
+- **Primi 90 giorni, proposta:** pagine indicizzabili, 200 eventi imminenti ben documentati in Lombardia, avvisi personalizzati e una prima prova commerciale con organizzatori. Misurare candidature, utenti che tornano e clienti paganti; ampliare dopo una prova riuscita.
+
+Riferimenti: [Google: JavaScript e indicizzazione](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics), [Google: dati strutturati Event](https://developers.google.com/search/docs/appearance/structured-data/event).
+
 - [ ] 🟠 Migliorare la ricerca delle fiere e il calendario — unificare gli interventi per chi cerca eventi e posteggi; il calendario esiste già, concentrarsi su date confermate e informazioni per partecipare prima di ampliare i filtri.
 - [ ] 🟢 Creare la sezione «Fiere per ambulanti» — filtri per regione, mese e domande aperte.
 
