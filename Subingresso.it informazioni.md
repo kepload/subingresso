@@ -1,5 +1,20 @@
 # Subingresso.it — informazioni e TO DO
 
+**Blog fiere Toscana, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
+in Toscana da conoscere se fai l’ambulante», ID `8ac5a320-3276-4db9-a7d5-bb6ed5d4a748`,
+[/blog?post=migliori-fiere-toscana](https://subingresso.it/blog?post=migliori-fiere-toscana).
+Regione assente verificata live; già presenti Lombardia, Veneto, Piemonte
+ed Emilia-Romagna. Testo di 1.755 parole, dieci fonti ufficiali raggiungibili,
+due richiami discreti a `/fiere` e al filtro Toscana. Distinte giornate dei
+mercati/festa a Pontedera e Dicomano, settori di Arezzo e termine Scandicci
+già trascorso. Verificati pubblicazione, testo/meta/canonical, indice blog,
+sitemap e calendario filtrato su Chromium 1440/390 px, senza overflow.
+Conservati tutti gli 84 articoli precedenti. Testo e riscontri in
+`Documents/articoli-subingresso/`, prefisso `migliori-fiere-toscana` e script
+`toscana-lavorazione.cjs`. Backup remoto creato; cleanup dei vecchi tag nello
+script segnala errore PowerShell (`-ErrorAction` passato a git), senza
+compromettere il checkpoint. Codice del sito e dati del calendario invariati.
+
 **Blog fiere Emilia-Romagna, 16 ottobre 2026:** pubblicato «Le 10 migliori
 fiere in Emilia-Romagna da conoscere se fai l’ambulante», ID
 `2f1ee0ac-423f-4f71-9cbe-962db6ebb7d1`,
