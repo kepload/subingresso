@@ -1,5 +1,11 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Date fiere, 16 ottobre 2026: giorno della settimana con iniziale maiuscola
+nelle date puntuali di uno o due giorni, in elenco e dettaglio. Intervalli
+di almeno tre giorni, soli periodi indicativi, scadenze e date delle fonti
+conservano il formato precedente. Durata calcolata su date ISO in UTC per
+evitare errori al cambio dell'ora. `editionLabel()` condivisa, cache JS51.
+
 Rinomatezza fiere, 16 ottobre 2026: bollini editoriali Rinomata / Consolidata /
 Recente; senza prove sufficienti o revisione scaduta, Da valutare. Archivio per
 ID stabile `data/fiere-rinomatezza.json`, applicato e validato da build-fiere.py

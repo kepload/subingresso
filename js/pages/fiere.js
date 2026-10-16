@@ -85,13 +85,17 @@
         const part = type => parts.find(item => item.type === type).value;
         return part('year') + '-' + part('month') + '-' + part('day');
     }
-    function dateLabel(value) {
-        return new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(value + 'T12:00:00'));
+    function dateLabel(value, withWeekday = false) {
+        const label = new Intl.DateTimeFormat('it-IT', { weekday: withWeekday ? 'long' : undefined, day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(value + 'T12:00:00'));
+        return withWeekday ? label.charAt(0).toUpperCase() + label.slice(1) : label;
     }
     function editionLabel(edition) {
         if (!edition.start) return edition.label + ' · calendario ' + edition.year;
         if (edition.periodOnly) return 'Periodo: ' + dateLabel(edition.start) + ' – ' + dateLabel(edition.end) + ' · giorni da verificare';
-        return edition.start === edition.end ? dateLabel(edition.start) : dateLabel(edition.start) + ' – ' + dateLabel(edition.end);
+        // ISO date subtraction uses UTC, so daylight-saving changes do not affect duration.
+        const daysBetween = (Date.parse(edition.end) - Date.parse(edition.start)) / 86400000;
+        const withWeekday = daysBetween === 0 || daysBetween === 1;
+        return edition.start === edition.end ? dateLabel(edition.start, withWeekday) : dateLabel(edition.start, withWeekday) + ' – ' + dateLabel(edition.end, withWeekday);
     }
     function selectEdition(event, today = todayInRome()) {
         const editions = event.editions || [];

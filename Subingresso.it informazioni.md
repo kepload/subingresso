@@ -301,6 +301,11 @@ In caso di conflitto, usare questo ordine:
 
 ### Rinomatezza delle fiere — richiesta del 16 ottobre 2026
 
+**Date, 16 ottobre 2026:** giorno della settimana nelle fiere di uno o due
+giorni (es. Domenica 18 ott 2026; Sabato 17 ott 2026 – Domenica 18 ott 2026).
+Da tre giorni in su resta il formato precedente. Stessa regola in elenco
+e dettaglio; periodi indicativi conservati. Cache fiere.js 51.
+
 Bollini Rinomata, Consolidata e Recente, con stato neutro Da valutare quando
 mancano prove. Motivo e fonti apribili, filtro dedicato e revisione con scadenza.
 Misura notorietà e storia documentate; compatibilità con il tipo di articolo
