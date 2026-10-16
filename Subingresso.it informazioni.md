@@ -1,5 +1,21 @@
 # Subingresso.it — informazioni e TO DO
 
+**Blog fiere Marche, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere nelle
+Marche da conoscere se fai l’ambulante», ID `f904bde5-356f-41db-bae5-4e0d73e6df8b`,
+[/blog?post=migliori-fiere-marche](https://subingresso.it/blog?post=migliori-fiere-marche).
+Regione assente verificata live; 1.699 parole, cinque province, nove fiere
+tradizionali e Acqualagna specializzata. Dodici fonti raggiungibili e due
+richiami discreti al calendario. San Crispino con assegnazioni già avviate e
+spunta da aggiornare; Grottammare domanda scaduta e graduatoria senza posto
+distinte. Sant’Agostino indicata a fine agosto per date discordanti nelle fonti.
+Sostituiti URL rimossi Ancona/Porto Sant’Elpidio; conservati i parametri necessari
+alla pagina Pesaro. Pubblicazione, testo/meta/canonical, indice, sitemap e filtro
+regionale verificati su Chromium 1440/390 px, senza overflow; preservati gli 88
+articoli precedenti. Testo e riscontri in `Documents/articoli-subingresso/`,
+prefisso `migliori-fiere-marche`, script `marche-lavorazione.cjs`. Backup remoto
+verificato; cleanup tag con errore PowerShell già noto, checkpoint valido.
+Nessuna modifica al codice o ai dati delle fiere.
+
 **Blog fiere Liguria, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
 in Liguria da conoscere se fai l’ambulante», ID `348db8f1-c562-4c32-a83a-6db8ffa43e21`,
 [/blog?post=migliori-fiere-liguria](https://subingresso.it/blog?post=migliori-fiere-liguria).
