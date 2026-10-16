@@ -5,7 +5,7 @@
     const SECTORS = { alimentare: 'Alimentare', 'non-alimentare': 'Non alimentare', antiquariato: 'Antiquariato e vintage', artigianato: 'Artigianato' };
     const REPUTATIONS = {
         rinomata: { label: 'Molto conosciuta', icon: '★', description: 'Richiamo ampio o oltre il territorio locale documentato da fonti e dati.' },
-        consolidata: { label: 'Di lunga tradizione', icon: '◆', description: 'Almeno 10 edizioni o 10 anni di storia documentati; richiamo più ampio da accertare.' },
+        consolidata: { label: 'Storica', icon: '◆', description: 'Almeno 10 edizioni o 10 anni di storia documentati; richiamo più ampio da accertare.' },
         recente: { label: 'Nuova', icon: '✦', description: 'Prima, seconda o terza edizione documentata. Richiamo ancora da valutare.' },
         unknown: { label: 'Da valutare', icon: '?', description: 'Informazioni insufficienti per assegnare un livello. Non significa che la fiera sia nuova o poco frequentata.' }
     };

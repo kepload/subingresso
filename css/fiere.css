@@ -23,9 +23,9 @@ button,summary{cursor:pointer}button:disabled{cursor:wait;opacity:.5}[hidden]{di
 .fiere-place{margin-top:16px}.fiere-place>label{margin-bottom:8px}
 .fiere-reputation{display:inline-flex;align-items:center;gap:6px;width:fit-content;max-width:100%;border:1px solid #d8e0e9;border-radius:20px;padding:5px 10px;background:#f1f5f9;color:#475569;font-size:11px;font-weight:800;line-height:1.5;text-align:left}
 button.fiere-reputation{min-height:36px;text-decoration:none}
-.fiere-reputation[data-reputation=rinomata]{color:#854d0e;background:#fef9c3;border-color:#e7cd6a}
+.fiere-reputation[data-reputation=rinomata]{color:#166534;background:#f0fdf4;border-color:#86efac}
 .fiere-reputation[data-reputation=consolidata]{color:#1e40af;background:#eff6ff;border-color:#bfdbfe}
-.fiere-reputation[data-reputation=recente]{color:#0f766e;background:#f0fdfa;border-color:#99ddd2}
+.fiere-reputation[data-reputation=recente]{color:#6b21a8;background:#faf5ff;border-color:#d8b4fe}
 .fiere-reputation-icon{font-size:14px;line-height:1}.fiere-card-reputation{margin:9px 0 4px}
 .fiere-reputation-help{font-size:11px!important;color:#64748b;line-height:1.6;margin-top:7px}
 .fiere-reputation-legend{margin-top:6px;font-size:11px;line-height:1.65;color:#475569}.fiere-reputation-legend summary{min-height:32px;padding:6px 0;color:#1d4ed8;font-weight:600}.fiere-reputation-legend p{margin:7px 0}

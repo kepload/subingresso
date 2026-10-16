@@ -301,6 +301,11 @@ In caso di conflitto, usare questo ordine:
 
 ### Anteprime essenziali — richiesta del 16 ottobre 2026
 
+**Nomi e colori correnti, 16 ottobre 2026:** «Di lunga tradizione» rinominata
+«Storica» in card, scheda, popup, filtro e legenda. Molto conosciuta in verde,
+Storica in blu, Nuova in viola; niente rosso per gli eventi nuovi. Conservati
+simboli, criteri e dati. Cache JS55/CSS17.
+
 **Bollini, 16 ottobre 2026:** rimossa la sottolineatura a pallini da tutti
 i bollini cliccabili, su richiesta dell'utente. Cache CSS16.
 

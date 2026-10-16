@@ -1,5 +1,17 @@
 # Calendario fiere — fonti e aggiornamento
 
+## Nomi e colori dei bollini — 16 ottobre 2026
+
+«Di lunga tradizione» diventa «Storica» in tutta l'interfaccia, inclusi filtro
+e legenda. Colori dei bollini: Molto conosciuta verde, Storica blu, Nuova
+viola, senza usare il rosso per le nuove. Testi scuri su sfondi chiari;
+simboli e diciture distinguono i livelli anche senza colore. Nessuna modifica
+a criteri, valutazioni, dati o ID interni (`rinomata`, `consolidata`, `recente`).
+Conservata l'assenza di sottolineature e bollini per dati mancanti.
+Cache JS55/CSS17.
+Sintassi, contrasto dei tre colori e test bollini su Chromium computer/telefono
+e WebKit passati; conservazione dei dati verificata.
+
 ## Anteprime senza dati mancanti — 16 ottobre 2026
 
 Preferenza utente: costo nelle anteprime soltanto con una tariffa documentata
