@@ -307,6 +307,9 @@ diciture di stato accanto alle date (Da calendario, Date pubblicate, ecc.):
 un piccolo ! apribile indica i casi da riconfermare e spiega il motivo al
 tocco, anche per sole ricorrenze, periodi e informazioni di edizioni passate.
 Cache fiere.js 52, CSS15. Dati e formati con giorno settimanale conservati.
+Pubblicato `b9aac0b`, Vercel riuscito; pagina/JS/CSS online identici.
+Controllati su computer, telefono piccolo e WebKit: nomi, sei casi di date,
+simbolo ! apribile con tocco/tastiera, senza errori o scorrimento orizzontale.
 
 **Date, 16 ottobre 2026:** giorno della settimana nelle fiere di uno o due
 giorni (es. Domenica 18 ott 2026; Sabato 17 ott 2026 – Domenica 18 ott 2026).

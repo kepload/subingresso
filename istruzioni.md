@@ -13,6 +13,10 @@ Controlli locali: sintassi, suite generale a 320 px e verifica dedicata su
 Chromium computer/320 px e WebKit telefono passati. Provati date certe,
 da calendario, sole ricorrenze, periodi, edizioni passate e dati assenti;
 apertura/chiusura del ! con click e tastiera, senza spostamenti al cambio focus.
+Pubblicato b9aac0b, Vercel READY dpl_B7ygU2AQyLimyVbHjnQFk8NQcxze.
+HTML/JS/CSS online identici al commit. Stessi sei casi provati in produzione
+su Chromium 1440/320 px e WebKit 390 px; nessun errore o overflow rilevato.
+Verifica ripetibile in Documents/verifica-testi-date-fiere-20261016.cjs.
 
 Date fiere, 16 ottobre 2026: giorno della settimana con iniziale maiuscola
 nelle date puntuali di uno o due giorni, in elenco e dettaglio. Intervalli
