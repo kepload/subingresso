@@ -1,5 +1,21 @@
 # Subingresso.it — informazioni e TO DO
 
+**Blog fiere Trentino-Alto Adige, 16 ottobre 2026:** pubblicato «Le 10 migliori
+fiere in Trentino-Alto Adige da conoscere se fai l’ambulante», ID
+`b21014a9-6e8e-46d9-a7d6-5568c22bac58`,
+[/blog?post=migliori-fiere-trentino-alto-adige](https://subingresso.it/blog?post=migliori-fiere-trentino-alto-adige).
+Regione assente nella serie verificata live; 1.727 parole, otto fiere/mercati
+tradizionali e due mercatini natalizi, quindici fonti raggiungibili e due
+richiami discreti al calendario. Date e termini verificati; distinta spunta
+Santa Lucia entro 31 ottobre dalle selezioni natalizie già chiuse.
+Pubblicazione, testo/meta/canonical, indice, sitemap e filtro regionale
+verificati su Chromium 1440/390 px, senza overflow. Conservati gli 85 articoli
+precedenti. Testo, fonti e riscontri in `Documents/articoli-subingresso/`,
+prefisso `migliori-fiere-trentino-alto-adige`, script `trentino-alto-adige-lavorazione.cjs`.
+Backup remoto creato; cleanup tag con errore PowerShell già noto, checkpoint
+valido. Corretto solo nel controllo l’atteso URL (spazio codificato con +).
+Nessuna modifica al codice o ai dati del calendario.
+
 **Blog fiere Toscana, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
 in Toscana da conoscere se fai l’ambulante», ID `8ac5a320-3276-4db9-a7d5-bb6ed5d4a748`,
 [/blog?post=migliori-fiere-toscana](https://subingresso.it/blog?post=migliori-fiere-toscana).
