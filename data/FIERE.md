@@ -194,7 +194,16 @@ Lariano ha cronaca successiva 11–14 settembre per maltempo contro programma
 10–13, distinta dalla festa trasferita a Velletri: fonti operative primarie
 ancora insufficienti. Calendari finali dei 15 Municipi non ricostruiti.
 **Roma resta da completare; riepilogo invariato 28 completate e 82 rimaste.**
-Nessun contatto o invio a terzi. Verifica pubblicazione da registrare dopo deploy.
+Nessun contatto o invio a terzi. Pubblicato commit dati `fbc506b`; deploy Vercel
+riuscito sul successivo commit documentale concorrente `bb9ab1e`, che contiene
+i dati. Catalogo, JS e pagina live identici al commit dati, prima corrispondenza
+20:49 UTC entro dieci minuti dal push. Build, settori, sintassi e conservazione
+di tutte le 3.972 schede precedenti verificati; suite generale passata su cinque
+formati/browser. Test Roma locale e online: 116 risultati, mappa e 29 dettagli
+su Chromium 1440/390 e WebKit 390, sempre con `PLAYWRIGHT_MODULE`.
+Tutte le 17 nuove pagine autonome HTTP 200 con nome, fonte, canonical e condizioni;
+Tolfa, Anguillara e Guidonia leggibili senza JS e senza overflow nei tre formati.
+Audit e TO DO aggiornati dopo i controlli online; provincia non completata.
 
 ## Roma — ricerca parziale, 16 ottobre 2026
 

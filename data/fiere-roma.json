@@ -3985,7 +3985,27 @@
       ],
       "unresolved": "Calendari commerciali finali dei Municipi e Befana; atto Vicovaro 2026; fonti primarie delle due formule Lariano; giorni di mercato Cave; settore artigianale TolfArte e altre piste già nell’audit. Informazioni necessarie non disponibili nei riscontri accessibili: provincia resta parziale.",
       "publication": {
-        "status": "pending-verification"
+        "status": "verified-partial",
+        "dataCommit": "fbc506baa4e0e4c514a561b42b56d8c4aad05bac",
+        "verifiedAt": "2026-10-16",
+        "productionUrl": "https://subingresso.it/fiere?provincia=Roma",
+        "deploymentCommit": "bb9ab1e1ff73e5c85d2005ef48faa8208096939a",
+        "vercelStatus": "success",
+        "deploymentUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/MbRRLWQ6NmC6WzhmEkJDjWmLLSaW",
+        "deploymentNote": "Commit successivo di documentazione concorrente, discendente del commit dati; catalogo, script e pagina online identici al commit dati. Prima corrispondenza online rilevata 20:49 UTC, entro 10 minuti dal push.",
+        "publishedFilesMatchDataCommit": [
+          "data/fiere.json",
+          "js/pages/fiere.js",
+          "fiere.html"
+        ],
+        "browserChecks": [
+          "Chromium 1440: 116 risultati, mappa e 29 dettagli",
+          "Chromium 390: 116 risultati, mappa e 29 dettagli",
+          "WebKit 390: 116 risultati, mappa e 29 dettagli"
+        ],
+        "standalonePages": "17 nuove pagine HTTP 200 con nome, canonical, fonte e condizioni; Tolfa, Anguillara e Guidonia senza JavaScript e senza overflow su Chromium 1440/390 e WebKit 390.",
+        "localChecks": "Build, settori, sintassi, diff check, integrità delle 3.972 schede precedenti; suite generale Chromium 1440/820/390/320 e WebKit 390; test dedicato Roma locale e online.",
+        "todo": "Roma non spuntata: 28 province completate e 82 rimaste. Esito della sessione DA_VERIFICARE per ricerca provinciale incompleta, pubblicazione delle 17 aggiunte verificata."
       }
     }
   },

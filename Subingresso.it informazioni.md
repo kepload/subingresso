@@ -984,26 +984,35 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   esterno restano nell'audit. Privati/hobbisti distinti dai professionisti;
   nessuna candidatura, comunicazione o pagamento a terzi.
 
-- [ ] **Roma — ricerca parziale pubblicata e verificata (16 ottobre 2026)**:
-  99 manifestazioni in 43 comuni, prima tre, online in
-  [/fiere](https://subingresso.it/fiere?provincia=Roma). Ricerca nominale nei
-  121 comuni e confronto delle 31 righe del registro Lazio; 51 recapiti,
-  11 termini documentati e sette sintesi di costo. Fonti, copertura,
+- [ ] **Roma — ricerca parziale ampliata, pubblicata e verificata (16 ottobre 2026)**:
+  **116 manifestazioni in 46 comuni**, prima 99 in 43 comuni, online in
+  [/fiere](https://subingresso.it/fiere?provincia=Roma). Ricognizione iniziale nei
+  121 comuni e confronto delle 31 righe del registro Lazio conservati; ripresa
+  mirata dei punti aperti e aggiunta di 17 tappe TTS Food da fonti organizzatore.
+  68 recapiti, 11 termini e sette sintesi di costo. Audit di fonti, copertura,
   esclusioni e limiti in `data/fiere-roma.json` e `data/FIERE.md`.
-  Castel San Pietro Natale: 13/20/27 dicembre, domanda 15 novembre,
-  quote 50/70 euro a giornata. Segni domanda scaduta 9 ottobre; Bajocco
-  1 settembre saldo, non candidatura. Date commerciali separate a Nettuno,
-  Castel Gandolfo e Genzano; Maker Faire 23–25 ottobre e Landriana 28–29 marzo.
-  Commit dati `1429fa3`, Vercel riuscito; catalogo/script/pagina online
-  identici al commit, 99 risultati, mappa e dodici dettagli verificati su
-  Chromium computer/telefono e WebKit. Build, settori e suite generale passati.
-  **Non completata**: restano calendari commerciali finali dei Municipi di Roma
-  e Befana, atti correnti Vicovaro, formule Lariano e programmi commerciali
-  Tolfa/Cave, oltre alle piste in audit senza fonte primaria sufficiente.
-  Nessuna candidatura o comunicazione a terzi. Modifiche preesistenti preservate.
+  TolfArte food court solo **8–9 agosto**, testo operativo e orari contro
+  riepilogo 7–9; nessuna estensione agli artigiani o agli spettacoli di settembre.
+  Casal Monastero annullata esclusa. Operatori selezionati, quote non pubblicate;
+  ingresso libero del pubblico distinto dal costo dei posteggi. Nessun 2027 dedotto.
+  Conservate tutte le precedenti 3.972 schede; catalogo nazionale 3.989.
+  Commit dati `fbc506b`, deploy Vercel riuscito sul discendente `bb9ab1e`;
+  catalogo/script/pagina online identici ai dati pubblicati entro dieci minuti.
+  116 risultati, mappa e 29 dettagli verificati su Chromium computer/telefono
+  e WebKit; 17 nuove pagine autonome raggiungibili, con fonti e canonical.
+  Tolfa/Anguillara/Guidonia leggibili senza JS e senza overflow nei tre formati.
+  Build, settori e suite generale su cinque formati/browser passati.
+  **Non completata**: calendari commerciali finali dei Municipi e Befana;
+  atto corrente Vicovaro (browser mostra ancora 2023/2022 contro indice 2026);
+  fonti operative delle due formule Lariano e giorni commerciali Cave;
+  artigiani TolfArte e ulteriori piste in audit prive di fonte primaria sufficiente.
+  Lariano: cronaca successiva 11–14 settembre per maltempo contro programma
+  10–13, distinta dalla festa trasferita a Velletri; nessun accorpamento dedotto.
+  Nessuna candidatura o comunicazione a terzi. Modifiche preesistenti e note
+  concorrenti sugli articoli preservate; esito della sessione **DA_VERIFICARE**.
 
 **Ricerca approfondita: 28 province completate, 82 ancora da fare su 110.**
-Riepilogo ricontrollato il 16 ottobre 2026 dopo la pubblicazione parziale di Roma:
+Riepilogo ricontrollato il 16 ottobre 2026 dopo la ripresa e la verifica di Roma:
 Roma resta nelle 82 da completare e non aumenta il conteggio delle concluse.
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
@@ -1038,7 +1047,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **19. Trento** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
 - [x] **20. Bolzano/Bozen** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
 - [x] **21. Firenze** — Toscana; ricerca completata e verificata online, vedi sopra
-- [ ] **22. Roma** — Lazio; 99 schede pubblicate e verificate, ricerca provinciale parziale, vedi sopra
+- [ ] **22. Roma** — Lazio; 116 schede pubblicate e verificate, ricerca provinciale parziale, vedi sopra
 - [ ] **23. Rimini** — Emilia-Romagna
 - [ ] **24. Ravenna** — Emilia-Romagna
 - [ ] **25. Forlì-Cesena** — Emilia-Romagna
