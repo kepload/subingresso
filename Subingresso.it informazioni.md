@@ -301,6 +301,14 @@ In caso di conflitto, usare questo ordine:
 
 ### Anteprime essenziali — richiesta del 16 ottobre 2026
 
+**Colori attenuati, 16 ottobre 2026:** verde salvia, oliva e terracotta
+meno saturi, testo bianco conservato; contrasto minimo 4,83:1.
+Cache CSS21; allineamento verificato Chromium 1440/320 e WebKit 390.
+Analisi per velocizzare le valutazioni: 3.572 mancanti, 1.822 URL di fonte
+principale distinti; i primi 10 coprono 1.267 schede. Proposta: estrazione
+in blocco dalle fonti condivise, abbinamento nome/comune e prova per ID,
+revisione dei casi dubbi. Nessuna nuova valutazione assegnata.
+
 **Posizione bollini, 16 ottobre 2026:** spostati in alto a destra, accanto
 al titolo delle anteprime. Allineamento senza sovrapposizioni verificato su
 Chromium 1440/320 px e WebKit 390 px. Cache JS56/CSS20.
