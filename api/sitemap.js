@@ -9,6 +9,7 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
 
 const { CAPOLUOGHI } = require('./_capoluoghi.js');
+const { events: fairEvents, fairPath, isIndexable, catalog: fairCatalog } = require('./_fiere.js');
 
 // "Reggio Emilia" → "reggio-emilia"
 function cityToSlug(city) {
@@ -79,6 +80,10 @@ module.exports = async function handler(req, res) {
     }
 
     const parts = [
+        urlTag(SITE + '/fiere/elenco', fairCatalog.catalogUpdatedAt, 'weekly', '0.7'),
+        ...fairEvents.filter(isIndexable).map(event =>
+            urlTag(SITE + fairPath(event), fairCatalog.catalogUpdatedAt, 'weekly', '0.6')
+        ),
         // Pagine statiche
         ...STATIC_PAGES.map(p =>
             urlTag(SITE + p.loc, today, p.changefreq, p.priority)

@@ -399,6 +399,7 @@
         $('detail-category').textContent = CATEGORIES[event.category];
         $('detail-category').dataset.category = event.category;
         $('detail-title').textContent = event.name;
+        $('detail-page-link').href = '/fiere/' + encodeURIComponent(event.id);
         $('detail-location').textContent = event.city + ' · ' + event.province;
         $('detail-months').textContent = periodLabel(event);
         $('detail-frequency').textContent = event.frequencyNote || '';

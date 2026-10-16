@@ -1,5 +1,12 @@
 # Subingresso.it — informazioni e TO DO
 
+**Pagine fiere, 16 ottobre 2026:** autorizzate pagine autonome con completamento
+progressivo, mantenendo apertura rapida nel calendario. Implementati indirizzi
+stabili `/fiere/<id>` e archivio `/fiere/elenco`, con stessi dati del calendario.
+Schede incomplete consultabili ma noindex finché prive di contenuto operativo
+sufficiente; sitemap automatica per le altre. Nessuna ricerca provinciale
+dichiarata completata da questo intervento. Test e pubblicazione in verifica.
+
 Unione del 16 ottobre 2026. Le informazioni tecniche conservano la ricognizione del 6 ottobre; le attività mantengono le rispettive date. Questa unione non costituisce una nuova verifica del sito o dei servizi live.
 
 ## Indice

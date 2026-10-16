@@ -1,5 +1,17 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Pagine fiere, 16 ottobre 2026: `/fiere/<id-stabile>` servite in HTML da
+api/fiera.js, archivio condiviso data/fiere.json; `/fiere/elenco` paginato
+100 schede con link navigabili senza JavaScript. Calendario conserva dialog
+rapido, aggiunto link pagina nel dettaglio e archivio sotto il calendario.
+Schede parziali accessibili noindex,follow: sitemap include automaticamente
+solo fonte + partecipazione diversa da check con nota e date/descrizione/luogo
+documentati (1.292 su 3.972 iniziali). Non è garanzia di indicizzazione.
+Nessuna data/costo inventato, ID senza anno, 404 reali; CSS dedicato leggero,
+nessuna query al database per le schede. Cache fiere.js 59.
+Test scripts/test-fiere-pages.cjs: tutte le schede, sitemap, archivio, escaping,
+browser Chromium desktop/320 px e WebKit 390 px, senza JS e dialog rapido.
+
 Fiere, preferenze correnti 16 ottobre 2026: anteprime con costo solo se
 disponibile e nessun bollino per valutazioni mancanti. Nomi Molto conosciuta,
 Storica, Nuova; scala verde → giallo oliva → arancione scuro quasi rosso.
