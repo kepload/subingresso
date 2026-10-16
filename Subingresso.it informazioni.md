@@ -305,6 +305,8 @@ In caso di conflitto, usare questo ordine:
 giorni (es. Domenica 18 ott 2026; Sabato 17 ott 2026 – Domenica 18 ott 2026).
 Da tre giorni in su resta il formato precedente. Stessa regola in elenco
 e dettaglio; periodi indicativi conservati. Cache fiere.js 51.
+Pubblicato `8e13acc`, verificato online su computer/telefono e WebKit:
+date di 1/2/3+ giorni in elenco e scheda corrette, pagina e JS identici al commit.
 
 Bollini Rinomata, Consolidata e Recente, con stato neutro Da valutare quando
 mancano prove. Motivo e fonti apribili, filtro dedicato e revisione con scadenza.

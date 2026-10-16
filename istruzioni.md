@@ -5,6 +5,10 @@ nelle date puntuali di uno o due giorni, in elenco e dettaglio. Intervalli
 di almeno tre giorni, soli periodi indicativi, scadenze e date delle fonti
 conservano il formato precedente. Durata calcolata su date ISO in UTC per
 evitare errori al cambio dell'ora. `editionLabel()` condivisa, cache JS51.
+Commit 8e13acc pubblicato, Vercel READY; HTML/JS online identici al commit.
+Verificate date 1/2/3+ giorni nell'elenco e dettaglio su Chromium computer e
+telefono e WebKit telefono; confini di mese/anno, ora legale, periodi indicativi
+e scadenze controllati. Verifica locale in Documents/verifica-giorni-fiere-20261016.cjs.
 
 Rinomatezza fiere, 16 ottobre 2026: bollini editoriali Rinomata / Consolidata /
 Recente; senza prove sufficienti o revisione scaduta, Da valutare. Archivio per
