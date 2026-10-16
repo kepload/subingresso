@@ -819,7 +819,27 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   esterno restano nell'audit. Privati/hobbisti distinti dai professionisti;
   nessuna candidatura, comunicazione o pagamento a terzi.
 
+- [ ] **Roma — ricerca parziale pubblicata e verificata (16 ottobre 2026)**:
+  99 manifestazioni in 43 comuni, prima tre, online in
+  [/fiere](https://subingresso.it/fiere?provincia=Roma). Ricerca nominale nei
+  121 comuni e confronto delle 31 righe del registro Lazio; 51 recapiti,
+  11 termini documentati e sette sintesi di costo. Fonti, copertura,
+  esclusioni e limiti in `data/fiere-roma.json` e `data/FIERE.md`.
+  Castel San Pietro Natale: 13/20/27 dicembre, domanda 15 novembre,
+  quote 50/70 euro a giornata. Segni domanda scaduta 9 ottobre; Bajocco
+  1 settembre saldo, non candidatura. Date commerciali separate a Nettuno,
+  Castel Gandolfo e Genzano; Maker Faire 23–25 ottobre e Landriana 28–29 marzo.
+  Commit dati `1429fa3`, Vercel riuscito; catalogo/script/pagina online
+  identici al commit, 99 risultati, mappa e dodici dettagli verificati su
+  Chromium computer/telefono e WebKit. Build, settori e suite generale passati.
+  **Non completata**: restano calendari commerciali finali dei Municipi di Roma
+  e Befana, atti correnti Vicovaro, formule Lariano e programmi commerciali
+  Tolfa/Cave, oltre alle piste in audit senza fonte primaria sufficiente.
+  Nessuna candidatura o comunicazione a terzi. Modifiche preesistenti preservate.
+
 **Ricerca approfondita: 28 province completate, 82 ancora da fare su 110.**
+Riepilogo ricontrollato il 16 ottobre 2026 dopo la pubblicazione parziale di Roma:
+Roma resta nelle 82 da completare e non aumenta il conteggio delle concluse.
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -853,7 +873,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **19. Trento** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
 - [x] **20. Bolzano/Bozen** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
 - [x] **21. Firenze** — Toscana; ricerca completata e verificata online, vedi sopra
-- [ ] **22. Roma** — Lazio
+- [ ] **22. Roma** — Lazio; 99 schede pubblicate e verificate, ricerca provinciale parziale, vedi sopra
 - [ ] **23. Rimini** — Emilia-Romagna
 - [ ] **24. Ravenna** — Emilia-Romagna
 - [ ] **25. Forlì-Cesena** — Emilia-Romagna

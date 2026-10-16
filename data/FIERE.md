@@ -65,9 +65,17 @@ Allumiere: riepilogo settembre contro testo ottobre, conflitto visibile in sched
 Carpineto e Santa Lucia Bracciano restano storici 2025; ricorrenze senza edizione
 non proiettate sul 2026. Quote mancanti non gratuite, nessun posto garantito.
 
-Build, settori e test dedicato `scripts/test-fiere-roma.cjs` passati localmente
-con `PLAYWRIGHT_MODULE`: computer/telefono Chromium e telefono WebKit, mappa
-e dodici dettagli operativi. Pubblicazione e verifica online ancora da registrare.
+Build, settori e suite generale passati sui cinque formati/browser previsti.
+Test dedicato `scripts/test-fiere-roma.cjs` passato localmente e in produzione
+con `PLAYWRIGHT_MODULE`: computer/telefono Chromium e telefono WebKit, 99 risultati,
+mappa e dodici dettagli operativi. Commit dati **1429fa3**, Vercel riuscito;
+catalogo, JS e pagina online identici ai file del commit (confronto su `git show`,
+non sulle terminazioni CRLF del checkout Windows). Verifica conclusa entro dieci
+minuti dal push. Registro e immagini dei test nell'archivio esterno.
+TO DO registrata dopo la verifica nel documento unificato
+`Subingresso.it informazioni.md`: Roma non spuntata, **28 completate e 82 rimaste**.
+L'unificazione concorrente `c69b400` è stata preservata; il vecchio file TO DO
+resta il rinvio al documento unico. Nessun cambiamento estraneo incluso nei commit.
 Nessun messaggio, email, modulo, candidatura o pagamento inviato a terzi.
 
 ## Bolzano/Bozen — ricerca provinciale, 16 ottobre 2026

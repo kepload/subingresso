@@ -3729,7 +3729,24 @@
       "eventsWithPricing": 7
     },
     "publication": {
-      "status": "pending-verification"
+      "status": "verified-partial",
+      "dataCommit": "1429fa3ef292e78eb1b4031aa5105c45a3b179fa",
+      "verifiedAt": "2026-10-16",
+      "productionUrl": "https://subingresso.it/fiere?provincia=Roma",
+      "vercelStatus": "success",
+      "publishedFilesMatchGitCommit": [
+        "data/fiere.json",
+        "js/pages/fiere.js",
+        "fiere.html"
+      ],
+      "browserChecks": [
+        "Chromium 1440: 99 risultati, mappa e 12 dettagli",
+        "Chromium 390: 99 risultati, mappa e 12 dettagli",
+        "WebKit 390: 99 risultati, mappa e 12 dettagli"
+      ],
+      "generalSuite": "Chromium 1440/820/390/320 e WebKit 390 superati",
+      "todo": "Non spuntata; 28 province completate, 82 rimaste. Lista ora in Subingresso.it informazioni.md; unificazione concorrente c69b400 preservata.",
+      "note": "Solo dati verificati pubblicati. Ricerca provinciale parziale, non certificare completamento."
     },
     "completionLimit": "Ricerca nominale nei 121 comuni e dati verificabili integrati, ma ricerca provinciale non completa: restano calendari commerciali definitivi dei Municipi di Roma, atti correnti Vicovaro, formule Lariano, programmi commerciali Tolfa/Cave e candidati senza fonte primaria adeguata. Provincia da non spuntare."
   },

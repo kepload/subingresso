@@ -11,8 +11,13 @@ euro + IVA per tre giorni, 1 settembre saldo e non domanda. Grottaferrata A
 9 m² nuovi 1.334 euro + IVA inclusa iscrizione. Montelibretti spunta 80 euro,
 prenotazioni distinte; Maker Faire 23–25 ottobre, Landriana 28–29 marzo.
 Tre ID e altre 3.873 schede conservati, totale 3.972. Cache JS49/catalogo40.
-Build, settori e test Roma locali con PLAYWRIGHT_MODULE superati; verifica
-online ancora da registrare. Nessun invio a terzi o file estraneo committato.
+Build, settori, suite generale cinque formati/browser e test Roma locali/online
+con PLAYWRIGHT_MODULE superati: 99 risultati, mappa e 12 dettagli su Chromium
+computer/telefono e WebKit telefono. Commit dati 1429fa3, Vercel riuscito,
+catalogo/JS/pagina online identici ai file del commit. Verifica entro dieci minuti.
+TO DO dopo verifica nel documento unificato Subingresso.it informazioni.md:
+Roma non spuntata, 28 completate e 82 rimaste. Preservata unificazione concorrente
+c69b400; vecchio TO DO solo rinvio. Nessun invio a terzi o file estraneo committato.
 
 Firenze, 16 ottobre 2026: ricerca documentale nei 41 comuni, 113 schede in
 40 comuni (prima tre), pubblicate e verificate online. Fonti e
