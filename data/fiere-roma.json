@@ -62,9 +62,11 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 2,
         "searchEvidenceSha256": "e749f288297ed04f00046e40d0ba4ec9703e8d9cecabc62929109c03b2cd4fb7",
-        "eventsIncluded": 0,
-        "sources": [],
-        "result": "Nessuna scheda con prova commerciale sufficiente selezionata dai riscontri della ricerca. Esito documentale limitato, non certificazione di assenza di fiere."
+        "eventsIncluded": 1,
+        "sources": [
+          "https://www.ttsfood.it/event/anguillara-street-food-29-31-maggio/"
+        ],
+        "result": "Integrate anche le tappe TTS Food 2026 con operatori esterni selezionati; non equivale a disponibilità corrente o a censimento completo."
       },
       {
         "city": "Anticoli Corrado",
@@ -386,12 +388,13 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 9,
         "searchEvidenceSha256": "25fcf48be03c2091f9d290ed30456dd5ff2b4233e3fee4ea537202df2045baf5",
-        "eventsIncluded": 2,
+        "eventsIncluded": 3,
         "sources": [
           "https://civitavecchia.portaleamministrazionetrasparente.it/archivio28_provvedimenti-amministrativi_0_372970_726_1.html",
-          "https://www.termeinfiore.it/"
+          "https://www.termeinfiore.it/",
+          "https://www.ttsfood.it/event/civitavecchia-summer-food-25-28-giugno/"
         ],
-        "result": "Schede con prova commerciale integrate; fonti senza informazioni operative non diventano disponibilità."
+        "result": "Integrate anche le tappe TTS Food 2026 con operatori esterni selezionati; non equivale a disponibilità corrente o a censimento completo."
       },
       {
         "city": "Civitella San Paolo",
@@ -578,9 +581,11 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 13,
         "searchEvidenceSha256": "db9748f69ab2286f1c7f4f123aec14a415593879e86be509a1e49f9a5fc2bff6",
-        "eventsIncluded": 0,
-        "sources": [],
-        "result": "Nessuna scheda con prova commerciale sufficiente selezionata dai riscontri della ricerca. Esito documentale limitato, non certificazione di assenza di fiere."
+        "eventsIncluded": 1,
+        "sources": [
+          "https://www.ttsfood.it/event/guidonia-street-food-17-19-aprile/"
+        ],
+        "result": "Integrate anche le tappe TTS Food 2026 con operatori esterni selezionati; non equivale a disponibilità corrente o a censimento completo."
       },
       {
         "city": "Jenne",
@@ -1059,16 +1064,28 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 25,
         "searchEvidenceSha256": "477ec66de521891071fbb19018cd26c3cffeaa76e793fdfeb90bc71f299d21c4",
-        "eventsIncluded": 29,
+        "eventsIncluded": 41,
         "sources": [
           "https://www.comune.roma.it/web-resources/cms/documents/CA20250145829AVVISO_PUBBLICO_MERCATINI_DI_NATALE_TRIENNIO_20252027.pdf",
           "https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1560193",
           "https://www.regione.lazio.it/sites/default/files/2026-10/Manifestazioni-fieristiche-V-2026-09-10-2026.xlsx",
           "https://www.rm.camcom.it/archivio27_focus_0_746_0_10.html",
           "https://www.turismoroma.it/it/eventi/la-conserva-della-neve-celebra-i-frutti-della-natura",
-          "https://www.turismoroma.it/it/eventi/vgmt"
+          "https://www.turismoroma.it/it/eventi/vgmt",
+          "https://www.ttsfood.it/event/ottavia-chef-in-tour/",
+          "https://www.ttsfood.it/event/torrevecchia-chef-in-tour/",
+          "https://www.ttsfood.it/event/colli-aniene-chef-in-tour/",
+          "https://www.ttsfood.it/event/gusto-in-musica-03-05-luglio/",
+          "https://www.ttsfood.it/event/casal-tidei-street-food-12-14-giugno/",
+          "https://www.ttsfood.it/event/balduina-street-food-05-07-giugno/",
+          "https://www.ttsfood.it/event/romanina-street-food-22-24-maggio/",
+          "https://www.ttsfood.it/event/san-pietro-street-food-15-17-maggio/",
+          "https://www.ttsfood.it/event/cinecitta-street-food-08-10-maggio/",
+          "https://www.ttsfood.it/event/tiburtina-street-food-01-03-maggio/",
+          "https://www.ttsfood.it/event/monteverde-street-food-24-26-aprile/",
+          "https://www.ttsfood.it/event/torresina-street-food-20-22-marzo/"
         ],
-        "result": "Schede con prova commerciale integrate; fonti senza informazioni operative non diventano disponibilità."
+        "result": "Integrate anche le tappe TTS Food 2026 con operatori esterni selezionati; non equivale a disponibilità corrente o a censimento completo."
       },
       {
         "city": "Roviano",
@@ -1210,11 +1227,12 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 28,
         "searchEvidenceSha256": "431927e415a6d7fc49414935937bd882895f7ecb01001bf850ebc8060dac9af6",
-        "eventsIncluded": 1,
+        "eventsIncluded": 2,
         "sources": [
-          "https://www.comune.tivoli.rm.it/wp-content/uploads/2026/01/AVVISO-PUBBLICO-2.pdf"
+          "https://www.comune.tivoli.rm.it/wp-content/uploads/2026/01/AVVISO-PUBBLICO-2.pdf",
+          "https://www.ttsfood.it/event/tivoli-street-food-19-21-giugno/"
         ],
-        "result": "Schede con prova commerciale integrate; fonti senza informazioni operative non diventano disponibilità."
+        "result": "Integrate anche le tappe TTS Food 2026 con operatori esterni selezionati; non equivale a disponibilità corrente o a censimento completo."
       },
       {
         "city": "Tolfa",
@@ -1222,9 +1240,11 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 28,
         "searchEvidenceSha256": "431927e415a6d7fc49414935937bd882895f7ecb01001bf850ebc8060dac9af6",
-        "eventsIncluded": 0,
-        "sources": [],
-        "result": "Nessuna scheda con prova commerciale sufficiente selezionata dai riscontri della ricerca. Esito documentale limitato, non certificazione di assenza di fiere."
+        "eventsIncluded": 1,
+        "sources": [
+          "https://www.ttsfood.it/event/tolfarte-2026/"
+        ],
+        "result": "Integrate anche le tappe TTS Food 2026 con operatori esterni selezionati; non equivale a disponibilità corrente o a censimento completo."
       },
       {
         "city": "Torrita Tiberina",
@@ -1774,7 +1794,7 @@
       {
         "city": "Tolfa",
         "candidate": "TolfArte",
-        "decision": "Programma 7–9 agosto e appendice spettacoli 18–20 settembre; la presenza di artigianato artistico nel titolo non certifica bancarelle in ogni data. Da recuperare selezione/programma commerciale, non duplicata l’appendice teatrale."
+        "decision": "Area TTS Food ora integrata soltanto 8–9 agosto dal programma dell’organizzatore gastronomico; archivio/riepilogo 7–9 in conflitto. Selezione artigianale e appendice teatrale settembre restano senza calendario commerciale sufficiente, non importate."
       },
       {
         "city": "Vallepietra",
@@ -1790,6 +1810,12 @@
         "city": "Zagarolo",
         "candidate": "Sagra Uva e mercati ordinari",
         "decision": "Programma 2–4 ottobre con cantine/osterie: nessuna prova sufficiente di banchi esterni. Il farmer market ordinario escluso, mercatino specializzato mantenuto come ricorrenza da riconfermare."
+      },
+      {
+        "city": "Roma",
+        "candidate": "Casal Monastero Street Food 10–12 aprile 2026",
+        "decision": "Esclusa: archivio dell’organizzatore esplicitamente «Evento annullato», anche se il dettaglio conserva testo promozionale e stato generico Evento Concluso.",
+        "sourceUrl": "https://www.ttsfood.it/archivio-eventi/"
       }
     ],
     "sourceReceipts": [
@@ -3708,6 +3734,159 @@
         "checkedAt": "2026-10-16",
         "access": "Lettura tramite strumento web del contenuto istituzionale indicizzato; nessun hash del download disponibile.",
         "use": "Prova documentale della scheda, con limiti dichiarati nella nota."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/ottavia-chef-in-tour/",
+        "sha256": "39dc9b97b4baf41a9f466886cebe5c95e6fe66e43797ccf9ca4fa041c3dad050",
+        "checkedAt": "2026-10-16",
+        "textLength": 8092,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/torrevecchia-chef-in-tour/",
+        "sha256": "fc9bfb8da619409a91505dd6f5d88ee2ef40e112a77d03e90ad393ce67bffe1f",
+        "checkedAt": "2026-10-16",
+        "textLength": 7724,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/colli-aniene-chef-in-tour/",
+        "sha256": "dd48f2179940fe3bec6b07f3df24c6aeca8790d75e4cc4d00fd0a1a0a8ef8e8f",
+        "checkedAt": "2026-10-16",
+        "textLength": 7617,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/tolfarte-2026/",
+        "sha256": "b6ca8c62722f4dd082fed21f4f76be1dc0fcc97d0464885c7b50036e55ca50f9",
+        "checkedAt": "2026-10-16",
+        "textLength": 3666,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/gusto-in-musica-03-05-luglio/",
+        "sha256": "0967a96afc12c33a81415ba2a9eaea08bc6a765851956a8b142ade5054bdfae3",
+        "checkedAt": "2026-10-16",
+        "textLength": 5711,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/civitavecchia-summer-food-25-28-giugno/",
+        "sha256": "d6e322f15d99472dab718774a66116c3ce926a2cded4985f6de144a9a303e208",
+        "checkedAt": "2026-10-16",
+        "textLength": 6396,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/tivoli-street-food-19-21-giugno/",
+        "sha256": "9565f63773d0d6ed4889ba1edf50e5a9c391cc1f7a7fdb6dcb00721a01c0f306",
+        "checkedAt": "2026-10-16",
+        "textLength": 6698,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/casal-tidei-street-food-12-14-giugno/",
+        "sha256": "dbfcb8815a26dfda906fcf763b144aeb5cf652112f5fa1c11431f433ab075f08",
+        "checkedAt": "2026-10-16",
+        "textLength": 6529,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/balduina-street-food-05-07-giugno/",
+        "sha256": "373448094986866548bd59fa6840ebef3757f11ea07ce2a00a2806a3bc8336a2",
+        "checkedAt": "2026-10-16",
+        "textLength": 6292,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/anguillara-street-food-29-31-maggio/",
+        "sha256": "fae3dbcc7d4e771cf656a55cd503a065b0dd153d21cc18f853828a837bb2030e",
+        "checkedAt": "2026-10-16",
+        "textLength": 6160,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/romanina-street-food-22-24-maggio/",
+        "sha256": "0a4f85a81f7eb8efe24feaed187d174283d1c55d7593611faca3f0acef4999a6",
+        "checkedAt": "2026-10-16",
+        "textLength": 6247,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/san-pietro-street-food-15-17-maggio/",
+        "sha256": "0bedbebcca491b745feabc995b2b1f52e33917ec1eee4fc8babb976d71d7962e",
+        "checkedAt": "2026-10-16",
+        "textLength": 6355,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/cinecitta-street-food-08-10-maggio/",
+        "sha256": "3c6fed904db3302e41e13b3475b27593237c48137047da3463aec4fa82b5bd8c",
+        "checkedAt": "2026-10-16",
+        "textLength": 6219,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/tiburtina-street-food-01-03-maggio/",
+        "sha256": "f3941991b4ee5e36c197d088b3711af7d5ea193a1099f732f4839db3713acfcc",
+        "checkedAt": "2026-10-16",
+        "textLength": 6029,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/monteverde-street-food-24-26-aprile/",
+        "sha256": "04ef000241ff5ed59d7e371c846e09afb6606cc1adbe9c784788b41427940ddb",
+        "checkedAt": "2026-10-16",
+        "textLength": 6359,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/guidonia-street-food-17-19-aprile/",
+        "sha256": "e94499f4358b61f934b83ed3402edd7f88fc15f34201b988b07c4834d57e9c48",
+        "checkedAt": "2026-10-16",
+        "textLength": 7575,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
+      },
+      {
+        "url": "https://www.ttsfood.it/event/torresina-street-food-20-22-marzo/",
+        "sha256": "6ab94f2c68047f45f1bd060d0ddd1156464d329bfc5017fa245ee39be12263b4",
+        "checkedAt": "2026-10-16",
+        "textLength": 5320,
+        "access": "HTML renderizzato e testo letti con Chromium via PLAYWRIGHT_MODULE; hash del DOM serializzato, non del corpo HTTP originale.",
+        "use": "Date commerciali, sede, selezione operatori e recapito pubblico; nessuna tariffa espositore pubblicata.",
+        "httpStatusNote": "Stato HTTP non registrato dalla raccolta browser; contenuto e date verificati nel testo renderizzato, non dedotti dallo stato di risposta."
       }
     ],
     "limits": [
@@ -3721,10 +3900,10 @@
       "Quote mancanti non significano gratuite; ingressi visitatori e somme dell’organizzatore distinti dai costi espositivi. Disponibilità, ammissione professionisti/hobbisti, SCIA, annullamenti e meteo vanno sempre verificati."
     ],
     "statistics": {
-      "events": 99,
-      "municipalitiesWithEvents": 43,
+      "events": 116,
+      "municipalitiesWithEvents": 46,
       "municipalitiesSearched": 121,
-      "eventsWithContacts": 51,
+      "eventsWithContacts": 68,
       "eventsWithDeadline": 11,
       "eventsWithPricing": 7
     },
@@ -3748,7 +3927,67 @@
       "todo": "Non spuntata; 28 province completate, 82 rimaste. Lista ora in Subingresso.it informazioni.md; unificazione concorrente c69b400 preservata.",
       "note": "Solo dati verificati pubblicati. Ricerca provinciale parziale, non certificare completamento."
     },
-    "completionLimit": "Ricerca nominale nei 121 comuni e dati verificabili integrati, ma ricerca provinciale non completa: restano calendari commerciali definitivi dei Municipi di Roma, atti correnti Vicovaro, formule Lariano, programmi commerciali Tolfa/Cave e candidati senza fonte primaria adeguata. Provincia da non spuntare."
+    "completionLimit": "Ricerca provinciale ancora parziale. Ripresa con 17 nuove tappe TTS Food verificate; necessarie le fonti operative elencate in followUp20261016.unresolved. Non spuntare Roma né aumentare il numero delle province completate.",
+    "followUp20261016": {
+      "baselineCommit": "4a83bc234cc468b7206438deab7dec597efeb1a8",
+      "eventsAdded": 17,
+      "addedNames": [
+        "Ottavia - Chef in Tour",
+        "Torrevecchia - Chef in Tour",
+        "Colli Aniene - Chef in Tour",
+        "TolfArte, area TTS Food",
+        "Gusto in Musica, area TTS Food",
+        "Civitavecchia Summer Food",
+        "Tivoli Street Food",
+        "Casal Tidei Street Food",
+        "Balduina Street Food",
+        "Anguillara Street Food",
+        "Romanina Street Food",
+        "San Pietro Street Food",
+        "Cinecittà Street Food",
+        "Tiburtina Street Food",
+        "Monteverde Street Food",
+        "Guidonia Street Food",
+        "Torresina Street Food"
+      ],
+      "scope": "Ripresa dei punti aperti Roma/Municipi, Befana, Vicovaro, Lariano, Tolfa e Cave; tutte le tappe 2026 TTS Food della sola provincia confrontate con archivio e pagine operative. Due tappe fuori provincia ignorate senza ricerca né integrazione; Casal Monastero annullata esclusa.",
+      "findings": [
+        {
+          "topic": "Vicovaro",
+          "url": "https://vicovaro.halleyweb.it/c058112/po/elenco_news.php?area=H",
+          "result": "Chromium e dominio comunedivicovaro mostrano collegamenti Perdono 2023 id=364 e rettifica 2022 id=315, mentre l’indice web espone avviso 6 luglio 2026. Atto 2026 completo non recuperato: date, termine 28 luglio e spunta riportati da aggregatore non importati."
+        },
+        {
+          "topic": "Befana",
+          "url": "https://it.linkedin.com/posts/romacapitale_festa-della-befana-a-piazza-navona-2026-activity-7515381156062789632-r7qC",
+          "result": "Post ufficiale QH/435/2026: 1 dicembre–6 gennaio, termine 9 novembre ore 10 per iniziative sociali/culturali/didattiche. Non è domanda per banchi commerciali: resta escluso il trasferimento di questo termine al calendario fiere."
+        },
+        {
+          "topic": "Cave",
+          "url": "https://www.prolococaveaps.it/eventi-2026/",
+          "result": "Riletta fonte Pro Loco: 22–25 ottobre contro 23–25 nel sito dedicato; programma commerciale primario 2026 non ricostruito. Non convertita la sagra generica in quattro giorni di mercato."
+        },
+        {
+          "topic": "Tolfa",
+          "url": "https://www.ttsfood.it/event/tolfarte-2026/",
+          "result": "Risolto il solo segmento gastronomico: testo e orari 8–9 agosto prevalgono su riepilogo 7–9; non attribuite queste date agli artigiani."
+        },
+        {
+          "topic": "Lariano",
+          "url": "https://lariano.net/2026/09/lariano-sagra-del-fungo-porcino-il-centro-si-riempie-tra-tradizione-sapori-e-partecipazione/",
+          "result": "Cronaca successiva distingue svolgimento 11–14 settembre dal programma originario 10–13 per maltempo e cita artigianato. Festa dell’associazione Fungo Porcino trasferita a Velletri 3–20 settembre è distinta; fonti operative primarie incomplete, nessun accorpamento o giorno commerciale inferito."
+        },
+        {
+          "topic": "Municipi Roma",
+          "url": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?pagina=38&str=str_ao20",
+          "result": "Ricerca aggiornata riporta avvisi per gestione mercati XII 15 aprile–30 settembre e Natale VIII 2024–2026, senza ricostruzione integrale di calendari finali/concessioni. Nessun completamento dei 15 Municipi dichiarato."
+        }
+      ],
+      "unresolved": "Calendari commerciali finali dei Municipi e Befana; atto Vicovaro 2026; fonti primarie delle due formule Lariano; giorni di mercato Cave; settore artigianale TolfArte e altre piste già nell’audit. Informazioni necessarie non disponibili nei riscontri accessibili: provincia resta parziale.",
+      "publication": {
+        "status": "pending-verification"
+      }
+    }
   },
   "events": [
     {
@@ -6990,6 +7229,618 @@
         "note": "Graduatoria comunale del 29 luglio 2026 per la fiera annuale del 7 agosto, riscontrata nell’indice istituzionale e nel programma Pro Loco 2026. La selezione risulta conclusa; domanda, tariffe e disponibilità residua non recuperate, nessuna condizione ricostruita dal calendario storico."
       },
       "sectors": "Merci varie e bestiame"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Ottavia - Chef in Tour",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/ottavia-chef-in-tour/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-09",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/ottavia-chef-in-tour/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/ottavia-chef-in-tour/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Via Luisa Spagnoli – 00135 Roma RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 9 ottobre: dalle 18:00 alle 24:00; Sabato 10 ottobre: dalle 12:00 alle 24:00; Domenica 11 ottobre: dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Torrevecchia - Chef in Tour",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/torrevecchia-chef-in-tour/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-25",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/torrevecchia-chef-in-tour/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/torrevecchia-chef-in-tour/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Parcheggio tra via Cesare Castiglioni e via Sebastiano Vinci – Roma",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 25 settembre: dalle 18:00 alle 24:00; Sabato 26 settembre: dalle 12:00 alle 24:00; Domenica 27 settembre: dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Colli Aniene - Chef in Tour",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/colli-aniene-chef-in-tour/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-18",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/colli-aniene-chef-in-tour/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/colli-aniene-chef-in-tour/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Viale Fernando Santi, 65, 00155 Roma RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 18 settembre: dalle 18:00 alle 24:00; Sabato 19 settembre: dalle 12:00 alle 24:00; Domenica 20 settembre: dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Tolfa",
+      "name": "TolfArte, area TTS Food",
+      "category": "sagra",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/tolfarte-2026/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-08",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/tolfarte-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito. Il testo operativo e gli orari indicano soltanto 8–9 agosto; archivio e riepilogo riportano 7–9. Adottati i due giorni espliciti della food court. Non estesi al 7 agosto né alla ripresa teatrale 18–20 settembre; artigiani del festival non inclusi in questa scheda alimentare.",
+        "url": "https://www.ttsfood.it/event/tolfarte-2026/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Piazza Vittorio Veneto - 00059 Tolfa RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "8 e 9 agosto: 17:00–24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Gusto in Musica, area TTS Food",
+      "category": "sagra",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/gusto-in-musica-03-05-luglio/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-03",
+          "end": "2026-07-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/gusto-in-musica-03-05-luglio/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/gusto-in-musica-03-05-luglio/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Parco delle Valli - Arena Rino Gaetano (Conca d'Oro) Roma",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 3 luglio dalle 17:00 alle 24:00; Sabato 4 luglio dalle 17:00 alle 24:00; Domenica 5 luglio dalle 17:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Civitavecchia",
+      "name": "Civitavecchia Summer Food",
+      "category": "sagra",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/civitavecchia-summer-food-25-28-giugno/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-25",
+          "end": "2026-06-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/civitavecchia-summer-food-25-28-giugno/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/civitavecchia-summer-food-25-28-giugno/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Viale Giuseppe Garibaldi 00053 Civitavecchia RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Giovedì 25 Giugno dalle 17:00 alle 24:00; Venerdì 26 Giugno dalle 17:00 alle 24:00; Sabato 27 Giugno dalle 17:00 alle 24:00; Domenica 28 Giugno dalle 17:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Tivoli",
+      "name": "Tivoli Street Food",
+      "category": "sagra",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/tivoli-street-food-19-21-giugno/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-19",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/tivoli-street-food-19-21-giugno/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/tivoli-street-food-19-21-giugno/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Anfiteatro di Bleso - 00019 Tivoli (RM)",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 19 Giugno dalle 17:00 alle 24:00; Sabato 20 Giugno dalle 17:00 alle 24:00; Domenica 21 Giugno dalle 17:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Casal Tidei Street Food",
+      "category": "sagra",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/casal-tidei-street-food-12-14-giugno/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-12",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/casal-tidei-street-food-12-14-giugno/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/casal-tidei-street-food-12-14-giugno/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Via Casal Tidei (Quartiere San Basilio) 00156 Roma RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 12 Giugno dalle 17:00 alle 24:00; Sabato 13 Giugno dalle 17:00 alle 24:00; Domenica 14 Giugno dalle 17:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Balduina Street Food",
+      "category": "sagra",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/balduina-street-food-05-07-giugno/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-05",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/balduina-street-food-05-07-giugno/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/balduina-street-food-05-07-giugno/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Piazza della Balduina - 00136 Roma RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 05 Giugno dalle 17:00 alle 24:00; Sabato 06 Giugno dalle 12:00 alle 24:00; Domenica 07 Giugno dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Anguillara Sabazia",
+      "name": "Anguillara Street Food",
+      "category": "sagra",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/anguillara-street-food-29-31-maggio/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-29",
+          "end": "2026-05-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/anguillara-street-food-29-31-maggio/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/anguillara-street-food-29-31-maggio/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Viale Reginaldo Belloni, 00061 Anguillara Sabazia RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 29 Maggio dalle 17:00 alle 24:00; Sabato 30 Maggio dalle 12:00 alle 24:00; Domenica 31 Maggio dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Romanina Street Food",
+      "category": "sagra",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/romanina-street-food-22-24-maggio/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-22",
+          "end": "2026-05-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/romanina-street-food-22-24-maggio/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/romanina-street-food-22-24-maggio/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Via Biagio Petrocelli - 00173 Roma RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 22 Maggio dalle 17:00 alle 24:00; Sabato 23 Maggio dalle 12:00 alle 24:00; Domenica 24 Maggio dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "San Pietro Street Food",
+      "category": "sagra",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/san-pietro-street-food-15-17-maggio/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-15",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/san-pietro-street-food-15-17-maggio/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/san-pietro-street-food-15-17-maggio/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Piazzale Gregorio VII - 00165 Roma RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 15 Maggio dalle 17:00 alle 24:00; Sabato 16 Maggio dalle 12:00 alle 24:00; Domenica 17 Maggio dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Cinecittà Street Food",
+      "category": "sagra",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/cinecitta-street-food-08-10-maggio/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-08",
+          "end": "2026-05-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/cinecitta-street-food-08-10-maggio/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/cinecitta-street-food-08-10-maggio/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Via Stefano Oberto, 00173 Roma RM",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 08 Maggio dalle 17:00 alle 24:00; Sabato 09 Maggio dalle 12:00 alle 24:00; Domenica 10 Maggio dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Tiburtina Street Food",
+      "category": "sagra",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/tiburtina-street-food-01-03-maggio/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/tiburtina-street-food-01-03-maggio/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/tiburtina-street-food-01-03-maggio/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Via Tiburtina, 521 - 00159 Roma",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 01 Maggio dalle 12:00 alle 24:00; Sabato 02 Maggio dalle 11:00 alle 24:00; Domenica 03 Maggio dalle 11:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Monteverde Street Food",
+      "category": "sagra",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/monteverde-street-food-24-26-aprile/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-24",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/monteverde-street-food-24-26-aprile/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/monteverde-street-food-24-26-aprile/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Largo Alessandrina Ravizza - 00152 Roma",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 24 Aprile dalle 17:00 alle 24:00; Sabato 25 Aprile dalle 12:00 alle 24:00; Domenica 26 Aprile dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Guidonia Montecelio",
+      "name": "Guidonia Street Food",
+      "category": "sagra",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/guidonia-street-food-17-19-aprile/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-17",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/guidonia-street-food-17-19-aprile/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/guidonia-street-food-17-19-aprile/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Viale Roma 5 (Parcheggio Stazione) - 00012 Guidonia Montecelio (Roma)",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 17 Aprile dalle 17:00 alle 24:00; Sabato 18 Aprile dalle 12:00 alle 24:00; Domenica 19 Aprile dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Torresina Street Food",
+      "category": "sagra",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://www.ttsfood.it/event/torresina-street-food-20-22-marzo/",
+        "label": "TTS Food - organizzatore Mela Eventi",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-20",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ttsfood.it/event/torresina-street-food-20-22-marzo/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Operatori di cucina itinerante selezionati dall’organizzatore; la presenza di food truck e stand cucina non implica ammissione libera dei banchi generalisti. Edizione 2026 già trascorsa: nessuna data 2027 dedotta. Quote, requisiti, scadenze e disponibilità da verificare con Mela Eventi; ingresso libero per il pubblico non significa posteggio gratuito.",
+        "url": "https://www.ttsfood.it/event/torresina-street-food-20-22-marzo/"
+      },
+      "sectors": "Street food, cucina itinerante e bevande",
+      "venue": "Parcheggio V.le Montanelli",
+      "organizer": "Mela Eventi - TTS Food",
+      "contacts": {
+        "email": "info@ttsfood.it",
+        "phone": "+39 06 69352153"
+      },
+      "hours": "Venerdì 20 Marzo dalle 18:00 alle 24:00; Sabato 21 Marzo dalle 12:00 alle 24:00; Domenica 22 Marzo dalle 12:00 alle 24:00"
     }
   ]
 }

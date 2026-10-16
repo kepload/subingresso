@@ -9,15 +9,22 @@ const root = path.resolve(__dirname, '..');
 const read = f => JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
 const catalog=read('data/fiere.json'),audit=read('data/fiere-roma.json');
 const events=catalog.events.filter(e=>e.province==='Roma');
-const baseline=JSON.parse(cp.execFileSync('git',['show','151bf40:data/fiere.json'],{cwd:root,maxBuffer:20*1024*1024}));
+const baseline=JSON.parse(cp.execFileSync('git',['show','4a83bc2:data/fiere.json'],{cwd:root,maxBuffer:20*1024*1024}));
 assert.deepEqual(catalog.events.filter(e=>e.province!=='Roma'),baseline.events.filter(e=>e.province!=='Roma'));
 for(const old of baseline.events.filter(e=>e.province==='Roma'))assert(events.some(e=>e.id===old.id));
-assert.equal(events.length,99);assert.equal(new Set(events.map(e=>e.city)).size,43);
+assert.equal(events.length,116);assert.equal(new Set(events.map(e=>e.city)).size,46);
 assert.equal(audit.research.municipalities.length,121);
 assert.equal(new Set(audit.research.municipalities.map(m=>m.city)).size,121);
 assert.equal(audit.research.regionalRegistry.length,31);
 assert.equal(audit.research.status,'partial-documental-research');
 const find=name=>{const e=events.find(e=>e.name===name);assert(e,name);return e;};
+for(const old of baseline.events.filter(e=>e.province==='Roma'))assert.deepEqual(events.find(e=>e.id===old.id),old);
+assert.equal(audit.research.followUp20261016.eventsAdded,17);
+assert(!events.some(e=>/Casal Monastero/.test(e.name)));
+const tolfa=find('TolfArte, area TTS Food');assert.equal(tolfa.editions[0].start,'2026-08-08');assert.equal(tolfa.editions[0].end,'2026-08-09');
+assert.deepEqual(tolfa.merchandiseSectors,['alimentare']);assert(!tolfa.pricing);
+for(const name of audit.research.followUp20261016.addedNames){const e=find(name);assert(e.editions[0].end<'2026-10-16');assert.match(e.participation.note,/selezionati/);assert(!e.pricing);}
+
 const days=name=>find(name).editions.map(e=>e.start);
 const has=(name,day)=>find(name).editions.some(e=>e.start&&e.start<=day&&day<=e.end);
 assert.deepEqual(days('Mercatini di Natale'),['2026-12-13','2026-12-20','2026-12-27']);
@@ -58,6 +65,7 @@ const server=http.createServer((req,res)=>{
   fs.readFile(full,(e,data)=>e?res.writeHead(404).end():res.end(data));
 });
 const selected=["Mercatini di Natale", "Sagra del Marrone Segnino, fiera ambulante", "Bajocco Festival, mercatino artigianato artistico", "Fiera Nazionale dell'Artigianato e dell'Enogastronomia", "Fiera di San Nicola da Bari", "Fiera della Beata Vergine del Carmine", "Festa di Maggio, fiera gastronomica", "Sagra delle Pesche, street food e mercatino sul lungolago", "Maker Faire Rome", "Primavera alla Landriana", "Fiera di Santa Lucia", "Mercatino di Trevignano Romano"];
+selected.push(...audit.research.followUp20261016.addedNames);
 async function browserTest(engine,label,viewport,base){
   const browser=await engine.launch();
   try{
@@ -69,7 +77,7 @@ async function browserTest(engine,label,viewport,base){
     });
     const page=await context.newPage(), errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto(base+'/fiere?provincia=Roma');
-    await page.waitForFunction(()=>document.querySelector('#list-count').textContent==='99');
+    await page.waitForFunction(()=>document.querySelector('#list-count').textContent==='116');
     assert.equal(await page.locator('#province-filter').inputValue(),'Roma');
     const markers=await page.locator('#map-markers > g').evaluateAll(nodes=>nodes.flatMap(n=>n.dataset.events.split(',')).sort());
     assert.deepEqual(markers,events.map(e=>e.id).sort());
@@ -87,7 +95,7 @@ async function browserTest(engine,label,viewport,base){
       if(process.env.FIERE_SCREENSHOT_DIR&&name==='Mercatini di Natale') await page.screenshot({path:path.join(process.env.FIERE_SCREENSHOT_DIR,label.replace(/\W/g,'-')+'.png'),fullPage:true});
       await page.locator('#close-detail').click();
     }
-    assert.deepEqual(errors,[]);console.log(label+': 99 risultati, mappa e 12 dettagli verificati');
+    assert.deepEqual(errors,[]);console.log(label+': 116 risultati, mappa e 29 dettagli verificati');
   }finally{await browser.close();}
 }
 (async()=>{
