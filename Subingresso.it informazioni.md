@@ -1,4 +1,4 @@
-﻿# Subingresso.it — informazioni e TO DO
+# Subingresso.it — informazioni e TO DO
 
 Unione del 16 ottobre 2026. Le informazioni tecniche conservano la ricognizione del 6 ottobre; le attività mantengono le rispettive date. Questa unione non costituisce una nuova verifica del sito o dei servizi live.
 
@@ -300,6 +300,10 @@ In caso di conflitto, usare questo ordine:
 # Parte B — Attività, priorità e storico delle fiere
 
 ### Anteprime essenziali — richiesta del 16 ottobre 2026
+
+**Posizione bollini, 16 ottobre 2026:** spostati in alto a destra, accanto
+al titolo delle anteprime. Allineamento senza sovrapposizioni verificato su
+Chromium 1440/320 px e WebKit 390 px. Cache JS56/CSS20.
 
 **Nomi, colori e dimensioni correnti, 16 ottobre 2026:** «Di lunga tradizione»
 rinominata «Storica» in card, scheda, popup, filtro e legenda. Nuova preferenza:

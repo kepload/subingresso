@@ -278,7 +278,7 @@
             if (badge) {
                 const reputation = node('div', 'fiere-card-reputation');
                 reputation.append(badge);
-                card.append(reputation);
+                head.append(reputation);
             }
             card.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
             const fee = feeLabel(event);
