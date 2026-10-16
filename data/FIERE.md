@@ -170,7 +170,7 @@ i quattro stati, fonti del dettaglio, combinazione provincia/rinomatezza,
 mappa, URL e ricaricamento, tastiera, reset e assenza di overflow.
 Test con autenticazione e tracking esclusi per evitare dati artificiali.
 
-## Roma — chiusura delle piste documentali, verifica pubblicazione in corso
+## Roma — ricerca documentale corrente completata, pubblicata e verificata (16 ottobre 2026)
 
 Ripresa dall’audit già pubblicato di 116 schede: **127 manifestazioni in 48
 comuni**, undici aggiunte; **4.000** schede nazionali. Tutte le 3.989 precedenti
@@ -181,8 +181,8 @@ modifiche; il noto errore di cleanup tag non compromette il checkpoint.
 
 Ricerca corrente chiusa nelle fonti accessibili con limiti espliciti in
 `fiere-roma.json`, `research.closure20261016`. Pubblicazione e verifica finale
-ancora in corso: **TO DO non spuntata in questa fase**. Le sezioni parziali
-successive sono lo storico e non descrivono l’esito di questa ripresa.
+concluse prima della spunta: **29 province completate, 81 rimaste**. Le sezioni
+parziali successive sono lo storico e non descrivono l’esito di questa ripresa.
 Evidenze fuori repository: `Documents/ricerca-fiere-roma-20261016/chiusura`.
 
 - **Vicovaro**: archivio determine con `ricerca=1`, determina 52/2026, avviso
@@ -234,7 +234,7 @@ Evidenze fuori repository: `Documents/ricerca-fiere-roma-20261016/chiusura`.
   originale scaricata: **23–25 ottobre** supera calendario generico 22–25.
   Orari documentati di stand e cantine, ma mercatini artigiani ancora nella
   notizia 2025. Settore esterno escluso, nessuna estensione dei 40 espositori
-  storici al 2026. Letti PDF originali determina 833/2026 e delibera 47/2026
+  storici al 2026. Letti PDF originali determine 833/834 e delibera 47/2026
   da consultazione atti Urbi: affidamento/contributi, non bando espositori.
   Finestra progetto 17–31 ottobre non è calendario commerciale. Ricerca 2026
   castagna: tre risultati, mercat: quattro estranei, artigian: nessuno.
@@ -257,6 +257,16 @@ calendari nominativi, conferme e quote dei singoli espositori; giorni commercial
 Cave/Lariano/TolfArte e documenti XIV leggibili. Copertura non esaustiva, nessuna
 garanzia di posti o di accesso professionale. Nessun invio o contatto a terzi.
 72 schede con recapiti, 12 con termine e nove con sintesi costo.
+
+Pubblicato commit dati `4ef29d1`, Vercel riuscito; i tre file pubblici confrontati
+con impronte SHA-256 coincidono con il commit, deploy verificato in 47 secondi.
+127 risultati/mappa e **40 dettagli** provati online su Chromium computer/telefono
+e WebKit telefono. Undici nuove pagine autonome HTTP 200, canonical e fonte;
+Vicovaro, Lariano e artigiani TolfArte leggibili senza JavaScript e senza overflow
+nei tre browser/formati. Build, due test settori, test Roma locale/online, suite
+pagine (4.000 schede, 1.298 in sitemap), suite generale su cinque formati passati.
+Spunta e riepilogo aggiornati soltanto dopo verifica online. Conservate modifiche
+preesistenti estranee e note concorrenti del documento unificato; nessun invio a terzi.
 
 ## Roma — ripresa documentale del 16 ottobre 2026, provincia ancora parziale
 

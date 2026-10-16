@@ -1053,36 +1053,46 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   esterno restano nell'audit. Privati/hobbisti distinti dai professionisti;
   nessuna candidatura, comunicazione o pagamento a terzi.
 
-- [ ] **Roma — ricerca parziale ampliata, pubblicata e verificata (16 ottobre 2026)**:
-  **116 manifestazioni in 46 comuni**, prima 99 in 43 comuni, online in
-  [/fiere](https://subingresso.it/fiere?provincia=Roma). Ricognizione iniziale nei
-  121 comuni e confronto delle 31 righe del registro Lazio conservati; ripresa
-  mirata dei punti aperti e aggiunta di 17 tappe TTS Food da fonti organizzatore.
-  68 recapiti, 11 termini e sette sintesi di costo. Audit di fonti, copertura,
-  esclusioni e limiti in `data/fiere-roma.json` e `data/FIERE.md`.
-  TolfArte food court solo **8–9 agosto**, testo operativo e orari contro
-  riepilogo 7–9; nessuna estensione agli artigiani o agli spettacoli di settembre.
-  Casal Monastero annullata esclusa. Operatori selezionati, quote non pubblicate;
-  ingresso libero del pubblico distinto dal costo dei posteggi. Nessun 2027 dedotto.
-  Conservate tutte le precedenti 3.972 schede; catalogo nazionale 3.989.
-  Commit dati `fbc506b`, deploy Vercel riuscito sul discendente `bb9ab1e`;
-  catalogo/script/pagina online identici ai dati pubblicati entro dieci minuti.
-  116 risultati, mappa e 29 dettagli verificati su Chromium computer/telefono
-  e WebKit; 17 nuove pagine autonome raggiungibili, con fonti e canonical.
-  Tolfa/Anguillara/Guidonia leggibili senza JS e senza overflow nei tre formati.
-  Build, settori e suite generale su cinque formati/browser passati.
-  **Non completata**: calendari commerciali finali dei Municipi e Befana;
-  atto corrente Vicovaro (browser mostra ancora 2023/2022 contro indice 2026);
-  fonti operative delle due formule Lariano e giorni commerciali Cave;
-  artigiani TolfArte e ulteriori piste in audit prive di fonte primaria sufficiente.
-  Lariano: cronaca successiva 11–14 settembre per maltempo contro programma
-  10–13, distinta dalla festa trasferita a Velletri; nessun accorpamento dedotto.
-  Nessuna candidatura o comunicazione a terzi. Modifiche preesistenti e note
-  concorrenti sugli articoli preservate; esito della sessione **DA_VERIFICARE**.
+- [x] **Roma — ricerca documentale corrente completata (16 ottobre 2026)**:
+  **127 manifestazioni in 48 comuni**, prima 116 in 46, pubblicate e verificate in
+  [/fiere](https://subingresso.it/fiere?provincia=Roma). Ripresa delle piste aperte,
+  conservati ricognizione nei 121 comuni e confronto delle 31 righe Lazio.
+  Undici aggiunte; tutte le 3.989 schede precedenti identiche, totale **4.000**.
+  72 schede con recapiti, 12 termini e nove sintesi di costo. Copertura, fonti,
+  tentativi, esclusioni e limiti in `data/fiere-roma.json` e `data/FIERE.md`.
+  Vicovaro: atti originali recuperati, 1–2 agosto, domanda 28 luglio ore 11,
+  spunta dalle 14:30; tariffa con ambiguità oraria/giornaliera, nessun totale.
+  Befana e Municipi III/V: finestre commerciali da bando/atti, non promessa di
+  aperture quotidiane o posti; San Felice e Tor Sapienza da provvedimenti 2026.
+  Lariano: delibera 129 e convenzione per circa 23 gazebo e operatori terzi;
+  finestra 11–14 settembre dopo rinvio/proroga, quota Pro Loco non pubblicata,
+  esenzione suolo per attività locali non significa stand gratuito. Distinta
+  la festa dell’associazione a Velletri, Colle Rosso, 3–20 settembre.
+  TolfArte: 37 artigiani nominativi 2026, periodo agosto senza forzare giorni;
+  TTS Food resta separato 8–9 agosto, niente spettacoli di settembre accorpati.
+  Cave: programma originale 23–25 ottobre; atti Urbi e SUAP consultati,
+  mercatino esterno ancora non provato per il 2026, escluso esplicitamente.
+  Copertura nominativa dei 15 Municipi; altri bandi senza calendario operativo
+  esclusi. XIV: calendario scansionato non leggibile nei tentativi registrati;
+  non inventati giorni o gestori. Limiti documentali, non attestazioni di assenza.
+  Ricerca attuale conclusa nelle fonti accessibili; nessun censimento esaustivo
+  o garanzia di disponibilità. Nuovi bandi e conferme sono manutenzione futura.
+  Commit dati `4ef29d1`, Vercel riuscito; catalogo/script/pagina online identici
+  entro 47 secondi. 127 risultati, mappa e 40 dettagli verificati su Chromium
+  computer/telefono e WebKit; undici nuove pagine con HTTP 200, canonical/fonti.
+  Vicovaro/Lariano/artigiani TolfArte leggibili senza JS nei tre formati.
+  Build, settori, suite Roma locale/online, pagine e suite generale passate.
+  Spunta successiva alla verifica online; nessuna comunicazione o candidatura
+  a terzi, modifiche estranee e note concorrenti sugli articoli preservate.
+- [ ] **Roma — aggiornamenti periodici**: titoli annuali Befana, concessioni e
+  calendari dei Municipi, documenti XIV leggibili; prossime edizioni, quote,
+  disponibilità e giorni dei singoli banchi TolfArte/Lariano/Cave. Riconfermare
+  anche le altre esclusioni soltanto con nuove fonti, senza riaprire per questo
+  la ricerca documentale corrente o attendere pubblicazioni future.
 
-**Ricerca approfondita: 28 province completate, 82 ancora da fare su 110.**
+**Ricerca approfondita: 29 province completate, 81 ancora da fare su 110.**
 Riepilogo ricontrollato il 16 ottobre 2026 dopo la ripresa e la verifica di Roma:
-Roma resta nelle 82 da completare e non aumenta il conteggio delle concluse.
+Roma entra fra le 29 concluse; le verifiche periodiche restano distinte.
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -1116,7 +1126,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **19. Trento** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
 - [x] **20. Bolzano/Bozen** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
 - [x] **21. Firenze** — Toscana; ricerca completata e verificata online, vedi sopra
-- [ ] **22. Roma** — Lazio; 116 schede pubblicate e verificate, ricerca provinciale parziale, vedi sopra
+- [x] **22. Roma** — Lazio; ricerca documentale completata, 127 schede in 48 comuni pubblicate e verificate, limiti espliciti sopra
 - [ ] **23. Rimini** — Emilia-Romagna
 - [ ] **24. Ravenna** — Emilia-Romagna
 - [ ] **25. Forlì-Cesena** — Emilia-Romagna

@@ -2,7 +2,7 @@
   "province": "Roma",
   "checkedAt": "2026-10-16",
   "research": {
-    "status": "documental-research-complete-publication-pending",
+    "status": "documental-research-complete",
     "baselineCommit": "151bf40",
     "previousCatalogEvents": 3,
     "method": "Ricerca nominale dei 121 comuni; confronto integrale delle 31 righe del registro fieristico Lazio aggiornato 9 ottobre 2026, fonti comunali, turismo ufficiale, organizzatori e associazioni. Allegati operativi letti e prezzi grafici verificati visivamente. Nessun messaggio, domanda, candidatura o pagamento a terzi.",
@@ -3934,10 +3934,57 @@
       "eventsWithPricing": 9
     },
     "publication": {
-      "status": "pending",
-      "productionUrl": "https://subingresso.it/fiere?provincia=Roma"
+      "status": "verified",
+      "commit": "4ef29d195890ce65dec55997b8ad5df39cb63244",
+      "productionUrl": "https://subingresso.it/fiere?provincia=Roma",
+      "verifiedAt": "2026-10-16T21:36:52.736643+00:00",
+      "deployState": "success",
+      "deployUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/63iaMzWCZgp7wFYLCkmy3faoXfZ9",
+      "deployVerifiedWithinSeconds": 47,
+      "assets": [
+        {
+          "file": "data/fiere.json",
+          "http": 200,
+          "sha256": "c798509b559b6ad6b7c8c580bd55a9c82ab8d07acc3a27dbe536258435e83dc7",
+          "expectedSha256": "c798509b559b6ad6b7c8c580bd55a9c82ab8d07acc3a27dbe536258435e83dc7",
+          "identical": true
+        },
+        {
+          "file": "js/pages/fiere.js",
+          "http": 200,
+          "sha256": "1ba34e137c14e59341f5ac1e17025c8cdb45917b1d18bfdf3fd3b462f2358900",
+          "expectedSha256": "1ba34e137c14e59341f5ac1e17025c8cdb45917b1d18bfdf3fd3b462f2358900",
+          "identical": true
+        },
+        {
+          "file": "fiere.html",
+          "http": 200,
+          "sha256": "a0fbf216f150db773597e42908fef2aa6a1c271adee77edfcd0cdb98fea7b7ad",
+          "expectedSha256": "a0fbf216f150db773597e42908fef2aa6a1c271adee77edfcd0cdb98fea7b7ad",
+          "identical": true
+        }
+      ],
+      "catalogEvents": 4000,
+      "provinceEvents": 127,
+      "provinceMunicipalities": 48,
+      "newPagesVerified": 11,
+      "browserVerification": [
+        "Chromium 1440: 127 risultati, mappa, 40 dettagli",
+        "Chromium 390: 127 risultati, mappa, 40 dettagli",
+        "WebKit 390: 127 risultati, mappa, 40 dettagli",
+        "Undici nuove pagine: HTTP 200, canonical e fonti",
+        "Vicovaro/TolfArte/Lariano: navigazione senza JavaScript, nessun overflow nei tre browser/formati"
+      ],
+      "localChecks": [
+        "build-fiere.py",
+        "test-fiere-sectors.py: due test",
+        "test-fiere-roma.cjs: tre browser/formati",
+        "test-fiere-pages.cjs: 4000 schede, 1298 sitemap, archivio e browser",
+        "test-fiere.cjs: cinque browser/formati"
+      ],
+      "evidenceArchive": "C:/Users/utente/Documents/ricerca-fiere-roma-20261016/chiusura"
     },
-    "completionLimit": "Chiusura documentale corrente nelle fonti accessibili, con limiti ed esclusioni in closure20261016; pubblicazione e verifica finale in corso. Storico delle precedenti fasi parziali conservato.",
+    "completionLimit": "Ricerca documentale corrente completata e pubblicata nelle fonti accessibili, con esclusioni e limiti espliciti in closure20261016. Non garantisce censimento esaustivo, singole giornate dei banchi, quote o posti; verifiche periodiche distinte. Storico delle fasi parziali conservato.",
     "followUp20261016": {
       "baselineCommit": "4a83bc234cc468b7206438deab7dec597efeb1a8",
       "eventsAdded": 17,
@@ -4020,7 +4067,7 @@
       "supersededBy": "closure20261016: decisioni e limiti della ricerca corrente. Le verifiche di future pubblicazioni sono distinte dalla chiusura documentale."
     },
     "closure20261016": {
-      "status": "research-closed-publication-pending",
+      "status": "complete",
       "baselineCommit": "da814ba6632303ee33f9defe72fa47bb605d1992",
       "baselineEvents": 116,
       "eventsAdded": 11,
@@ -4079,9 +4126,10 @@
             "https://www.sagradellacastagnacave.it/media/news/programma-2026.jpg",
             "https://www.prolococaveaps.it/eventi-2026/",
             "https://cloud.urbi.it/urbi/progs/urp/ur1DE001.sto?DB_NAME=n1201258&w3cbt=S&StwEvent=91000302&IdDelibere=105321",
-            "https://cloud.urbi.it/urbi/progs/urp/ur1DE001.sto?DB_NAME=n1201258&w3cbt=S&StwEvent=91000302&IdDelibere=105010"
+            "https://cloud.urbi.it/urbi/progs/urp/ur1DE001.sto?DB_NAME=n1201258&w3cbt=S&StwEvent=91000302&IdDelibere=105010",
+            "https://cloud.urbi.it/urbi/progs/urp/ur1DE001.sto?DB_NAME=n1201258&w3cbt=S&StwEvent=91000302&IdDelibere=105323"
           ],
-          "result": "Originale del 13 ottobre e locandina 2026 scaricati e letti visivamente: 23–25 ottobre, stand/cantine venerdì 19, sabato e domenica 12. Prevale sul calendario generico Pro Loco 22–25. Notizia mercatini rimasta 2025: esclusa l’estensione del settore artigianale al 2026. Consultazione atti Urbi 2026: ricerca castagna tre risultati, mercat quattro risultati estranei, artigian nessun risultato. Letti integralmente PDF originali determina 833 del 25 settembre e delibera 47 del 23 giugno: contributi e affidamento Pro Loco, nessuna disciplina per espositori terzi. Finestra progetto 17–31 ottobre non trasformata in giorni di mercato.",
+          "result": "Originale del 13 ottobre e locandina 2026 scaricati e letti visivamente: 23–25 ottobre, stand/cantine venerdì 19, sabato e domenica 12. Prevale sul calendario generico Pro Loco 22–25. Notizia mercatini rimasta 2025: esclusa l’estensione del settore artigianale al 2026. Consultazione atti Urbi 2026: ricerca castagna tre risultati, mercat quattro risultati estranei, artigian nessun risultato. Letti integralmente PDF originali determina 833 del 25 settembre e delibera 47 del 23 giugno: contributi e affidamento Pro Loco, nessuna disciplina per espositori terzi. Finestra progetto 17–31 ottobre non trasformata in giorni di mercato. Letta anche determina 834/2026, terzo risultato: acconto Pro Loco, non tariffe espositori; nessun ulteriore allegato operativo.",
           "limit": "Programma corrente descrive stand gastronomici e cantine; non dà giorni/bando per espositori esterni. Nessun trasferimento dei 40 espositori 2025, di quote o di una domanda concorsi gastronomici ai banchi. Conservate le due schede commerciali già verificate. Verificati Albo, consultazione atti e SUAP associato XI Comunità Montana: nessun allegato operativo espositori ottenuto; presentazione pratiche riservata, nessuna istanza inviata.",
           "checkedAt": "2026-10-16"
         },
@@ -4966,6 +5014,13 @@
           "http": 200,
           "sha256": "cc20696c7af530023124427d5519aa202351f85cd0778c14bb1414c4b597f82d",
           "textLength": 6563
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=946345&DOCORE_versione=1&FNSTR=TBXYAU_GBRHUKF_638348325578956815392469402435.YFG.A7T&DB_NAME=n1201258&ContestoChk=DE&P7M=S",
+          "file": "cave-ed8c1408d6be7933",
+          "http": 200,
+          "sha256": "def6be1a5acfa6208f4d9422e5f394b0f7bdde43b4b934e037ef9d9f4b4ed571",
+          "textLength": 8674
         }
       ],
       "webEvidenceFiles": [
@@ -5056,7 +5111,8 @@
           "sha256": "b153b7fd65b27deba869cbb55d54caed7010a387e6c9c2636eb25148bf2a5239",
           "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
         }
-      ]
+      ],
+      "completionCriteria": "Riprese solo le piste aperte dell’audit pubblicato; recuperati atti e allegati alternativi praticabili, originali e albi/SUAP/organizzatori verificati. Piste residue escluse o limitate con tentativi reali registrati. Chiusura della ricerca corrente, distinta dalla manutenzione periodica e da un censimento esaustivo. Pubblicazione e controlli online conclusi prima della spunta."
     },
     "limitsAtPreviousStage": [
       "Registri comunali completi e calendari commerciali finali dei 15 Municipi di Roma non recuperati integralmente. Gli avvisi di gestione non dimostrano l’effettiva apertura né una domanda libera per banchi.",

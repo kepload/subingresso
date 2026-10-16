@@ -1,5 +1,25 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Roma, chiusura documentale 16 ottobre 2026: supera gli stati parziali storici sotto.
+127 manifestazioni in 48 comuni, 11 aggiunte rispetto a 116/46; 4.000 nazionali,
+3.989 precedenti identiche. Audit data/fiere-roma.json, closure20261016 e FIERE.md.
+Vicovaro atti originali: 1–2 agosto, domanda 28 luglio ore 11, spunta 14:30;
+tariffa ambigua oraria/giornaliera, nessun totale. Befana/III/V solo finestre
+commerciali da atti, non aperture quotidiane; San Felice/Tor Sapienza da atti 2026.
+Lariano delibera 129 e convenzione: circa 23 gazebo e operatori terzi Pro Loco,
+11–14 settembre dopo rinvio/proroga, quota ignota; esenzione suolo solo locali.
+Velletri Colle Rosso 3–20 settembre distinta. TolfArte artigiani 37 nominativi,
+solo agosto senza giorni dedotti; TTS Food invariato 8–9. Cave 23–25 ottobre,
+atti Urbi letti ma settore esterno non provato; XIV scansione non leggibile,
+fonti/ tentativi/ esclusioni espliciti. Ricerca corrente chiusa, manutenzione
+periodica distinta, nessuna garanzia esaustiva o posti, nessun invio a terzi.
+Commit dati 4ef29d1, Vercel riuscito in 47 secondi; HTML/JS/catalogo identici.
+Test Roma locale/online Chromium computer/telefono e WebKit: 127/mappa/40 dettagli;
+11 pagine autonome e tre senza JS nei tre formati. Build, settori, pagine4000/
+sitemap1298 e suite generale cinque formati passati. Cache JS61/catalogo45.
+TO DO spuntata dopo esito online nel documento unificato: 29 concluse, 81 rimaste.
+Modifiche estranee e note concorrenti preservate; backup remoto prima degli edit.
+
 Pagine fiere, 16 ottobre 2026: `/fiere/<id-stabile>` servite in HTML da
 api/fiera.js, archivio condiviso data/fiere.json; `/fiere/elenco` paginato
 100 schede con link navigabili senza JavaScript. Calendario conserva dialog
