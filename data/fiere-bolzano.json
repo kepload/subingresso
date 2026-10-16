@@ -2,7 +2,7 @@
   "province": "Bolzano/Bozen",
   "checkedAt": "2026-10-16",
   "research": {
-    "status": "researched-awaiting-publication",
+    "status": "completed-verified",
     "scope": "Ricerca documentale nei 116 comuni: 338 righe HDS/FIVA, calendari comunali e turistici, organizzatori e procedure. Non certifica ogni singolo evento esistente né la disponibilità di posteggi.",
     "archive": "Documents/ricerca-fiere-bolzano-20261016",
     "municipalityCount": 116,
@@ -5850,6 +5850,73 @@
         "included-annual": 123,
         "excluded-ordinary-cycle": 184
       }
+    },
+    "publication": {
+      "commit": "e4f98e20c15d401d48cfc6ebc6d97f308928944c",
+      "checkedAt": "2026-10-16T07:30:23Z",
+      "files": {
+        "data/fiere.json": {
+          "status": 200,
+          "sha256": "ef541466f9573def4eb154cafa28f365d01af608de0bc541679988682c68f331",
+          "expected": "ef541466f9573def4eb154cafa28f365d01af608de0bc541679988682c68f331",
+          "matches": true
+        },
+        "js/pages/fiere.js": {
+          "status": 200,
+          "sha256": "a5df3907760adcdf6f34efdd98741662f53c7b0ac0a63787e658de15db172097",
+          "expected": "a5df3907760adcdf6f34efdd98741662f53c7b0ac0a63787e658de15db172097",
+          "matches": true
+        },
+        "fiere.html": {
+          "status": 200,
+          "sha256": "896746e2779587dd93b1308a3441a01bfaf20d129a2e3a4aaba3c9fdd848f07a",
+          "expected": "896746e2779587dd93b1308a3441a01bfaf20d129a2e3a4aaba3c9fdd848f07a",
+          "matches": true
+        }
+      },
+      "statuses": [
+        {
+          "context": "Vercel",
+          "state": "success",
+          "targetUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/9NUPqsFHrTezEsPnqmmsa2435tnY"
+        }
+      ],
+      "vercelSuccess": true,
+      "provinceEvents": 207,
+      "catalogEvents": 3766,
+      "ok": true,
+      "browser": {
+        "result": "passed",
+        "module": "PLAYWRIGHT_MODULE",
+        "engines": [
+          "Chromium desktop 1440",
+          "Chromium mobile 390",
+          "WebKit mobile 390"
+        ],
+        "provinceResults": 207,
+        "detailsPerEngine": 14,
+        "checks": [
+          "province filter",
+          "list/map identities",
+          "detail editions",
+          "source links",
+          "prices",
+          "no overflow",
+          "no page errors"
+        ]
+      }
+    },
+    "validation": {
+      "build": "passed, reproducible",
+      "sectors": "passed (2 tests)",
+      "generalBrowserSuite": "passed Chromium 1440/820/390/320, WebKit 390",
+      "provinceBrowserSuite": "passed locally and online, 207 results and 14 details on each of 3 engines/viewports",
+      "preservedOtherEvents": 3559,
+      "preservedExistingIds": 5,
+      "newPricedEvents": 4,
+      "retainedPricedEvents": 2,
+      "backupTag": "backup/session-20261016-090314-fiere-bolzano",
+      "backupBranch": "backup/pre-fiere-bolzano-20261016"
     }
   },
   "events": [

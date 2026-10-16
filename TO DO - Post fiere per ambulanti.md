@@ -473,7 +473,35 @@ e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
   eventi; quote non pubblicate mai interpretate come gratuite. Nessuna domanda,
   candidatura o comunicazione a terzi inviata.
 
-**Ricerca approfondita: 26 province completate, 84 ancora da fare su 110.**
+- [x] **Bolzano/Bozen — ricerca documentale approfondita completata (16 ottobre 2026)**:
+  ricerca nominale nei 116 comuni; 207 manifestazioni in 73 comuni, prima cinque,
+  pubblicate e verificate in [/fiere](https://subingresso.it/fiere?provincia=Bolzano%2FBozen).
+  Letto integralmente e controllato visivamente il calendario HDS/FIVA 2026:
+  338 righe, 123 annuali; 31 ricorrenze nominative riscontrate nei calendari
+  locali di Sarentino, Vipiteno e Chiusa, 184 righe ordinarie escluse.
+  Comuni, associazioni turistiche e organizzatori; 196 schede con giornate
+  pubblicate e 11 con soli periodi, 69 recapiti e cinque termini scaduti.
+  Quattro nuove sintesi di costo e due precedenti conservate; IVA, cauzioni,
+  spese e biglietti visitatori distinti. Fonti, copertura, esclusioni e limiti
+  in `data/fiere-bolzano.json` e `data/FIERE.md`.
+  Stegona 26–28 ottobre; Brunico Natale domanda 30 aprile 2026, non riaperta;
+  Merano gara triennale scaduta 10 maggio 2024, Bressanone 16 marzo 2025.
+  Ortisei 25 dicembre solo gastronomia; Renon venti giornate, Corvara include
+  Natale; Fiè solo storico 2025/26. Nessuna data o disponibilità inventata.
+  Conservati tutti i cinque ID e le altre 3.559 schede. Commit dati `e4f98e2`,
+  Vercel riuscito; catalogo, script e pagina online identici al commit.
+  207 risultati, mappa e 14 dettagli verificati su Chromium computer/telefono
+  e WebKit; build, settori e suite generale su cinque schermi/browser passati.
+- [ ] **Bolzano/Bozen — aggiornamenti periodici**: nuove edizioni, bandi,
+  disponibilità e ammissioni; completare i programmi commerciali di Lana,
+  Castelrotto, Tirolo, Bressanone e Vipiteno, riconfermare Fiè e verificare
+  nuove fonti Carezza/Tires. Recuperare bando Flower Festival (link con errore
+  DNS), avvisi dei mercati minori e pagine che hanno rimosso le date passate.
+  Quote non pubblicate non gratuite; termini di pagamento e bandi per
+  categorie specifiche non sono candidature generali. Nessuna comunicazione,
+  domanda o candidatura a terzi inviata; nessun'altra provincia avviata.
+
+**Ricerca approfondita: 27 province completate, 83 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -505,7 +533,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **17. Novara** — Piemonte; ricerca completata e verificata online, vedi sopra
 - [x] **18. Cuneo** — Piemonte; ricerca completata e verificata online, vedi sopra
 - [x] **19. Trento** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
-- [ ] **20. Bolzano/Bozen** — Trentino-Alto Adige
+- [x] **20. Bolzano/Bozen** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
 - [ ] **21. Firenze** — Toscana
 - [ ] **22. Roma** — Lazio
 - [ ] **23. Rimini** — Emilia-Romagna

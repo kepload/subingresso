@@ -107,7 +107,19 @@ gratuità. Nessuna comunicazione, domanda o candidatura a terzi inviata.
 
 Cache `fiere.js` **47**, catalogo **38**. Verifiche dati/browser in
 `scripts/test-fiere-bolzano.cjs`, tramite `PLAYWRIGHT_MODULE`.
-**Pubblicazione e verifica online ancora da registrare: TO DO non spuntata.**
+Commit dati `e4f98e2`: **Vercel riuscito**, HTTP 200, catalogo, script e
+pagina pubblica identici ai file Git del commit. Catalogo SHA-256
+`ef541466f9573def4eb154cafa28f365d01af608de0bc541679988682c68f331`.
+Verificati online 207 risultati, identità elenco/mappa e **14 dettagli**
+su Chromium computer/telefono e WebKit telefono, inclusi prezzi e fonti.
+Build riproducibile, test settori, test provinciale e suite generale su
+cinque schermi/browser superati. Esito in `research.publication` nell'audit
+e `verification-live.json` nell'archivio locale. La TO DO è stata spuntata
+**solo dopo** questi riscontri: **27 province completate, 83 rimanenti**.
+Backup remoto `backup/session-20261016-090314-fiere-bolzano` e branch
+`backup/pre-fiere-bolzano-20261016`. Cambiamenti preesistenti a CLI, PDF
+dashboard e cache Python preservati e non committati. Nessun'altra provincia,
+database, email o attività della lista modificata.
 
 ## Trento — ricerca provinciale, 16 ottobre 2026
 

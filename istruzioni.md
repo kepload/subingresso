@@ -1,5 +1,24 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Calendario Bolzano/Bozen, 16 ottobre 2026: ricerca nominale nei 116 comuni,
+207 schede in 73 comuni (prima cinque), pubblicate e verificate online.
+HDS/FIVA 2026 letto integralmente/visivamente: 338 righe, 123 annuali,
+31 fiere nominative da calendari locali, 184 righe ordinarie escluse.
+196 date puntuali/11 periodi, 69 recapiti, cinque termini scaduti; quattro
+nuove sintesi prezzi + due conservate. Merano/Bressanone gare pluriennali
+già scadute; Brunico domanda 30 aprile. IVA/cauzioni e ingressi distinti.
+Ortisei 25 dicembre solo gastronomia, Renon 20 giornate, Fiè storico 2025/26.
+Audit/fonti/limiti in data/fiere-bolzano.json e data/FIERE.md; archivio
+Documents/ricerca-fiere-bolzano-20261016. Cinque ID e altre 3.559 schede
+identici, totale 3.766; cache JS47/catalogo38. Commit dati e4f98e2,
+Vercel riuscito e hash catalogo/script/pagina conformi; 207 risultati,
+mappa e 14 dettagli verificati online su Chromium desktop/mobile e WebKit.
+Build, settori e suite generale cinque schermi/browser passati; test
+dedicato scripts/test-fiere-bolzano.cjs usa PLAYWRIGHT_MODULE. TO DO spuntata
+dopo verifica: 27 province completate, 83 rimaste. Nessun contatto a terzi,
+nessun'altra provincia; file estranei preesistenti non committati.
+
+
 Calendario Trento, 16 ottobre 2026: ricerca nominale nei 166 comuni, 122 schede
 in 62 comuni (prima cinque), pubblicate e verificate online. ANVA 2026 letto
 integralmente/visivamente; Comuni, APT e organizzatori, AEFI Riva B2B distinto
