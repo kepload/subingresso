@@ -828,7 +828,7 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('#province-filter').isVisible(),true);
         assert.equal(await page.locator('#sector-filter').isVisible(),true);
         assert.equal(await page.locator('#sector-filter option').count(),5);
-        assert.equal(await page.locator('#province-filter option').count(),111);
+        assert.equal(await page.locator('#province-filter option').count(),131);
         assert.equal(await page.locator('#region-filter').count(),0);
         assert.equal(await page.locator('#month-bar button').first().textContent(),'Gennaio');
         const filtersBox = await page.locator('.fiere-filters').boundingBox();
@@ -1164,10 +1164,30 @@ async function run(engine,name,viewport,base) {
         await page.locator('#retry-map').click();
         await page.waitForFunction(() => document.querySelector('#map-provinces').children.length === 110);
         assert.equal(await page.locator('#map-error').isVisible(),false);
+        // Regions share the location menu with provinces and preserve all other filters.
+        await page.goto(base + '/fiere');
+        await count(events.length);
+        for (const region of regions) {
+            await page.selectOption('#province-filter', 'regione:' + region);
+            await matches(events.filter(e => e.region === region));
+            assert.equal(new URL(page.url()).searchParams.get('regione'), region);
+            assert.equal(new URL(page.url()).searchParams.get('provincia'), null);
+            assert.equal(await page.locator('#province-filter').evaluate(el => getComputedStyle(el).fontWeight), '700');
+            const expectedProvinces = await page.locator('#province-filter').evaluate((el, region) => {
+                const options = [...el.options];
+                const start = options.findIndex(o => o.value === 'regione:' + region) + 1;
+                const end = options.findIndex((o, i) => i >= start && o.value.startsWith('regione:'));
+                return (end < 0 ? options.slice(start) : options.slice(start, end)).map(o => o.value);
+            }, region);
+            assert.deepEqual((await page.locator('.fiere-province.is-selected').evaluateAll(els => els.map(el => el.dataset.province))).sort(), expectedProvinces.sort());
+        }
+        await page.selectOption('#province-filter', 'Lodi');
+        await matches(events.filter(e => e.province === 'Lodi'));
+        assert.equal(new URL(page.url()).searchParams.get('regione'), null);
         await page.goto(base + '/fiere?regione=Lombardia&provincia=inesistente&mesi=10&tipo=tradizionale');
-        await matches(events.filter(e => e.category === 'tradizionale' && e.months.includes(10)));
-        assert.equal(await page.locator('#province-filter').inputValue(),'');
-        assert.equal(new URL(page.url()).searchParams.get('regione'),null);
+        await matches(events.filter(e => e.region === 'Lombardia' && e.category === 'tradizionale' && e.months.includes(10)));
+        assert.equal(await page.locator('#province-filter').inputValue(),'regione:Lombardia');
+        assert.equal(new URL(page.url()).searchParams.get('regione'),'Lombardia');
         assert.equal(new URL(page.url()).searchParams.get('provincia'),null);
         assert.deepEqual(errors,[]);
         console.log(name + ' ' + viewport.width + ': passed filters, all provinces, list/map consistency, details, keyboard, retries and overflow');

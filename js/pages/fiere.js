@@ -3,6 +3,29 @@
     const MONTHS = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
     const CATEGORIES = { tradizionale: 'Fiera tradizionale', artigianato: 'Artigianato e mostre mercato', sagra: 'Sagra o festa', espositiva: 'Fiera espositiva', mercatino: 'Mercatino' };
     const SECTORS = { alimentare: 'Alimentare', 'non-alimentare': 'Non alimentare', antiquariato: 'Antiquariato e vintage', artigianato: 'Artigianato' };
+    // Territorial grouping includes provinces without catalogue events.
+    const REGION_PROVINCES = {
+        "Abruzzo": ["Chieti", "L'Aquila", "Pescara", "Teramo"],
+        "Basilicata": ["Matera", "Potenza"],
+        "Calabria": ["Catanzaro", "Cosenza", "Crotone", "Reggio Calabria", "Vibo Valentia"],
+        "Campania": ["Avellino", "Benevento", "Caserta", "Napoli", "Salerno"],
+        "Emilia-Romagna": ["Bologna", "Ferrara", "Forlì-Cesena", "Modena", "Parma", "Piacenza", "Ravenna", "Reggio nell'Emilia", "Rimini"],
+        "Friuli-Venezia Giulia": ["Gorizia", "Pordenone", "Trieste", "Udine"],
+        "Lazio": ["Frosinone", "Latina", "Rieti", "Roma", "Viterbo"],
+        "Liguria": ["Genova", "Imperia", "La Spezia", "Savona"],
+        "Lombardia": ["Bergamo", "Brescia", "Como", "Cremona", "Lecco", "Lodi", "Mantova", "Milano", "Monza e della Brianza", "Pavia", "Sondrio", "Varese"],
+        "Marche": ["Ancona", "Ascoli Piceno", "Fermo", "Macerata", "Pesaro e Urbino"],
+        "Molise": ["Campobasso", "Isernia"],
+        "Piemonte": ["Alessandria", "Asti", "Biella", "Cuneo", "Novara", "Torino", "Verbano-Cusio-Ossola", "Vercelli"],
+        "Puglia": ["Bari", "Barletta-Andria-Trani", "Brindisi", "Foggia", "Lecce", "Taranto"],
+        "Sardegna": ["Cagliari", "Gallura Nord-Est Sardegna", "Medio Campidano", "Nuoro", "Ogliastra", "Oristano", "Sassari", "Sulcis Iglesiente"],
+        "Sicilia": ["Agrigento", "Caltanissetta", "Catania", "Enna", "Messina", "Palermo", "Ragusa", "Siracusa", "Trapani"],
+        "Toscana": ["Arezzo", "Firenze", "Grosseto", "Livorno", "Lucca", "Massa-Carrara", "Pisa", "Pistoia", "Prato", "Siena"],
+        "Trentino-Alto Adige": ["Bolzano/Bozen", "Trento"],
+        "Umbria": ["Perugia", "Terni"],
+        "Valle d'Aosta": ["Valle d'Aosta/Vallée d'Aoste"],
+        "Veneto": ["Belluno", "Padova", "Rovigo", "Treviso", "Venezia", "Verona", "Vicenza"]
+    };
     const HOME = [0, 0, 660, 730];
     const normalize = text => String(text || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
     function intervalMonths(from, to) {
@@ -13,7 +36,7 @@
     }
     function filterEvents(events, state, ignoreMonths) {
         const words = normalize(state.query).split(' ').filter(Boolean);
-        return events.filter(event => (!state.province || event.province === state.province) && (!state.category || event.category === state.category)
+        return events.filter(event => (!state.region || event.region === state.region) && (!state.province || event.province === state.province) && (!state.category || event.category === state.category)
             && (!state.sector || event.merchandiseSectors.includes(state.sector))
             && (ignoreMonths || !state.months.length || event.months.some(month => state.months.includes(month)))
             && words.every(word => normalize([event.name, event.city, event.region, event.province, event.venue, event.sectors].join(' ')).includes(word)));
@@ -103,7 +126,7 @@
     if (typeof document === 'undefined') return;
 
     const $ = id => document.getElementById(id);
-    const state = { events: [], provinces: null, province: '', category: '', sector: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
+    const state = { events: [], provinces: null, region: '', province: '', category: '', sector: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
     let searchTimer, mapMarkerTimer, hoveredCard, focusedCard;
     function node(tag, className, text) {
         const element = document.createElement(tag);
@@ -133,6 +156,7 @@
         const url = new URL(location.href);
         for (const key of ['mesi', 'regione', 'provincia', 'tipo', 'settore', 'q']) url.searchParams.delete(key);
         if (state.months.length) url.searchParams.set('mesi', state.months.join(','));
+        if (state.region) url.searchParams.set('regione', state.region);
         if (state.province) url.searchParams.set('provincia', state.province);
         if (state.category) url.searchParams.set('tipo', state.category);
         if (state.sector) url.searchParams.set('settore', state.sector);
@@ -142,11 +166,12 @@
     function readURL() {
         const params = new URLSearchParams(location.search);
         state.months = [...new Set((params.get('mesi') || '').split(',').map(Number).filter(n => Number.isInteger(n) && n >= 1 && n <= 12))];
-        state.province = [...$('province-filter').options].some(option => option.value === params.get('provincia')) ? params.get('provincia') || '' : '';
+        state.province = Object.values(REGION_PROVINCES).some(provinces => provinces.includes(params.get('provincia'))) ? params.get('provincia') || '' : '';
+        state.region = !state.province && Object.hasOwn(REGION_PROVINCES, params.get('regione')) ? params.get('regione') : '';
         state.category = Object.hasOwn(CATEGORIES, params.get('tipo')) ? params.get('tipo') : '';
         state.sector = Object.hasOwn(SECTORS, params.get('settore')) ? params.get('settore') : '';
         state.query = (params.get('q') || '').slice(0, 100);
-        $('province-filter').value = state.province;
+        $('province-filter').value = state.province || (state.region ? 'regione:' + state.region : '');
         $('type-filter').value = state.category;
         $('sector-filter').value = state.sector;
         $('fair-search').value = state.query;
@@ -209,15 +234,15 @@
             }).join(' ') + ' Z').join(' ')).join(' ');
             const path = svgNode('path', { d, class: 'fiere-province', 'data-province': province, role: 'button', tabindex: '0', 'aria-label': 'Mostra le fiere nella provincia di ' + province, 'fill-rule': 'evenodd' });
             const title = svgNode('title'); title.textContent = province; path.append(title);
-            activate(path, () => { if (!state.ready) return; state.province = province; $('province-filter').value = province; changed(true); });
+            activate(path, () => { if (!state.ready) return; state.region = ''; state.province = province; $('province-filter').value = province; changed(true); });
             fragment.append(path);
         }
         $('map-provinces').replaceChildren(fragment);
     }
     function fitProvince() {
-        const feature = state.provinces?.features.find(item => item.properties.name === state.province);
-        if (!feature) { state.view = HOME.slice(); return; }
-        const points = polygons(feature).flat(2).map(point => project(...point));
+        const features = state.provinces?.features.filter(item => state.province ? item.properties.name === state.province : state.region && REGION_PROVINCES[state.region].includes(item.properties.name)) || [];
+        if (!features.length) { state.view = HOME.slice(); return; }
+        const points = features.flatMap(feature => polygons(feature).flat(2)).map(point => project(...point));
         const minX = Math.min(...points.map(p => p[0])), maxX = Math.max(...points.map(p => p[0]));
         const minY = Math.min(...points.map(p => p[1])), maxY = Math.max(...points.map(p => p[1]));
         const width = Math.max(maxX - minX + 55, (maxY - minY + 55) * HOME[2] / HOME[3]);
@@ -239,10 +264,10 @@
         for (const item of $('fair-list').children) {
             item.classList.toggle('is-preview', item === card);
         }
-        const previewProvince = !state.province ? card?.dataset.province || '' : '';
-        const previewEvent = state.province ? card?.dataset.eventId || '' : '';
+        const previewProvince = !state.province && !state.region ? card?.dataset.province || '' : '';
+        const previewEvent = (state.province || state.region) ? card?.dataset.eventId || '' : '';
         for (const path of $('map-provinces').children) {
-            path.classList.toggle('is-selected', path.dataset.province === state.province);
+            path.classList.toggle('is-selected', path.dataset.province === state.province || Boolean(state.region && REGION_PROVINCES[state.region].includes(path.dataset.province)));
             path.classList.toggle('is-preview', path.dataset.province === previewProvince);
         }
         for (const marker of $('map-markers').children) {
@@ -353,11 +378,12 @@
     function render() {
         const events = sortEvents(filterEvents(state.events, state));
         renderMonths(); renderList(events); renderMap(events);
-        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '');
+        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '');
         const extraCount = Number(Boolean(state.category)) + Number(Boolean(state.query));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
         $('extra-filters').querySelector('summary').setAttribute('aria-label', 'Altri filtri' + (extraCount ? ', ' + extraCount + ' attivi' : ''));
+        $('province-filter').style.fontWeight = state.region ? '700' : '400';
         syncURL();
     }
     function changed(refit) {
@@ -367,7 +393,7 @@
     }
     function reset() {
         clearTimeout(searchTimer);
-        Object.assign(state, { province: '', category: '', sector: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
+        Object.assign(state, { region: '', province: '', category: '', sector: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
         for (const id of ['province-filter', 'type-filter', 'sector-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
         changed(false);
     }
@@ -398,13 +424,22 @@
             state.events = data.events;
             $('catalog-count').textContent = String(state.events.length);
             $('catalog-info').textContent = data.eventsWithEditionData + ' schede con edizioni documentate · aggiornato il ' + dateLabel(data.catalogUpdatedAt);
-            const previous = state.province;
+            const previous = $('province-filter').value;
             $('province-filter').replaceChildren(node('option', '', 'Tutta Italia'));
             $('province-filter').firstChild.value = '';
-            for (const province of data.provinces.slice().sort((a, b) => a.localeCompare(b, 'it'))) {
-                const option = node('option', '', province); option.value = province; $('province-filter').append(option);
+            for (const region of Object.keys(REGION_PROVINCES).sort((a, b) => a.localeCompare(b, 'it'))) {
+                const option = node('option', '', region);
+                option.value = 'regione:' + region;
+                option.style.fontWeight = '700';
+                $('province-filter').append(option);
+                for (const province of REGION_PROVINCES[region]) {
+                    const child = node('option', '', '\u00a0\u00a0\u00a0' + province);
+                    child.value = province;
+                    child.style.fontWeight = '400';
+                    $('province-filter').append(child);
+                }
             }
-            if (!state.ready) readURL(); else { state.province = previous; $('province-filter').value = previous; }
+            if (!state.ready) readURL(); else $('province-filter').value = previous;
             state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; fitProvince(); render();
         } catch (error) {
             $('catalog-error').hidden = false;
@@ -504,7 +539,7 @@
             state.months = intervalMonths(from, to); changed(false);
         });
         $('all-months').addEventListener('click', () => { state.months = state.months.length === 12 ? [] : intervalMonths(1, 12); $('month-from').value = ''; $('month-to').value = ''; changed(false); });
-        $('province-filter').addEventListener('change', () => { state.province = $('province-filter').value; changed(true); });
+        $('province-filter').addEventListener('change', () => { const value = $('province-filter').value; state.region = value.startsWith('regione:') ? value.slice(8) : ''; state.province = state.region ? '' : value; changed(true); });
         $('type-filter').addEventListener('change', () => { state.category = $('type-filter').value; changed(false); });
         $('sector-filter').addEventListener('change', () => { state.sector = $('sector-filter').value; changed(false); });
         $('fair-search').addEventListener('input', () => {
