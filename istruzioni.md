@@ -1,7 +1,7 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
 Firenze, 16 ottobre 2026: ricerca documentale nei 41 comuni, 113 schede in
-40 comuni (prima tre), integrazione in verifica di pubblicazione. Fonti e
+40 comuni (prima tre), pubblicate e verificate online. Fonti e
 limiti data/fiere-firenze.json e data/FIERE.md; archivio Documents/ricerca-fiere-firenze-20261016.
 Firenze Natale domanda 23 ottobre (23 posteggi; 46 € oneri, non banco),
 Rionalissima 16 ottobre, Prim.OLIO 26 ottobre (300 € salvo Onlus),
@@ -11,7 +11,12 @@ B 25 €/giorno; candidatura 12 ottobre distinta dal tesserino 2 novembre.
 sintesi costi (nove schede con termine). Tre ID e altre 3.763 schede conservati, totale 3.876.
 Tavarnelle coordinate GeoNames 6534685 da data/localita.json (CC BY 4.0):
 anagrafica comuni invariata. Cache JS48/catalogo39. Nessun invio a terzi.
-La lista resta non spuntata finché non completata la verifica online.
+Commit dati 8975717, Vercel riuscito e catalogo/JS/pagina online identici.
+113 risultati, mappa e 12 dettagli verificati su Chromium computer/telefono
+e WebKit. Build, settori e suite generale cinque formati/browser passati;
+WebKit ripetuto dopo un timeout hover su La Spezia, asserzioni invariate.
+TO DO aggiornata dopo verifica: 28 completate, 82 mancanti su 110.
+
 
 Calendario Bolzano/Bozen, 16 ottobre 2026: ricerca nominale nei 116 comuni,
 207 schede in 73 comuni (prima cinque), pubblicate e verificate online.

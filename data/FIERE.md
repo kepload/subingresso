@@ -2479,4 +2479,19 @@ Nessun contatto a terzi, candidatura, invio di moduli o pagamento.
 
 Conservati i tre identificativi Firenze e tutte le altre province, incluso
 l'aggiornamento regionale e i costi Pisogne. Cache JS **48**, catalogo **39**.
-La lista sarà spuntata soltanto dopo verifica online.
+Pubblicazione verificata: commit dati `8975717`, stato Vercel riuscito;
+catalogo, JS e pagina online identici al commit. 113 risultati e mappa,
+dodici dettagli critici con scadenze/costi verificati in produzione su
+Chromium computer/telefono e WebKit telefono. Build, test settori e
+`scripts/test-fiere-firenze.cjs` passati; suite generale superata sui cinque
+formati/browser (1440/820/390/320 Chromium, 390 WebKit). Prima esecuzione
+WebKit interrotta da timeout stabilità hover su scheda La Spezia invariata;
+ripetizione con le stesse asserzioni passata, nessuna modifica al prodotto
+o alle asserzioni. Test ripetuto soltanto per gli ultimi due formati mancanti.
+Lista spuntata dopo controllo online: **28 province completate, 82 rimaste**.
+Tavarnelle Val di Pesa usa il punto GeoNames 6534685 presente in
+`data/localita.json`, estratto 7 ottobre 2026, CC BY 4.0, perché il comune
+fuso non ha coordinate in `comuni.json`; anagrafica condivisa invariata.
+Backup di sessione pubblicato; consueti errori nella sola pulizia vecchi tag
+non ne hanno impedito la creazione. Gitleaks sul commit pulito.
+
