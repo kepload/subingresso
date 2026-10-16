@@ -5,7 +5,11 @@ progressivo, mantenendo apertura rapida nel calendario. Implementati indirizzi
 stabili `/fiere/<id>` e archivio `/fiere/elenco`, con stessi dati del calendario.
 Schede incomplete consultabili ma noindex finché prive di contenuto operativo
 sufficiente; sitemap automatica per le altre. Nessuna ricerca provinciale
-dichiarata completata da questo intervento. Test e pubblicazione in verifica.
+dichiarata completata da questo intervento. Pubblicato 50160c9, Vercel READY
+dpl_BmDkYWKAMdvJjpm7aJbTsqP4qmpD; 3.972 pagine, 1.292 schede in sitemap
+più archivio. Suite calendario cinque formati/browser passata; test pagine
+locale/online Chromium 1440/320 e WebKit 390 passati, inclusi assenza JS,
+dialog senza navigazione, link dettaglio, overflow, sitemap, escaping e 404.
 
 Unione del 16 ottobre 2026. Le informazioni tecniche conservano la ricognizione del 6 ottobre; le attività mantengono le rispettive date. Questa unione non costituisce una nuova verifica del sito o dei servizi live.
 

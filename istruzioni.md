@@ -11,6 +11,10 @@ Nessuna data/costo inventato, ID senza anno, 404 reali; CSS dedicato leggero,
 nessuna query al database per le schede. Cache fiere.js 59.
 Test scripts/test-fiere-pages.cjs: tutte le schede, sitemap, archivio, escaping,
 browser Chromium desktop/320 px e WebKit 390 px, senza JS e dialog rapido.
+Pubblicato 50160c9, Vercel READY dpl_BmDkYWKAMdvJjpm7aJbTsqP4qmpD.
+Test pagine locale/online passati sui tre browser/formati; suite calendario
+cinque formati/browser passata. Sitemap online: 1.292 schede + archivio.
+Verificati HTTP 200, canonical, paginazione e 404 della fiera inesistente.
 
 Fiere, preferenze correnti 16 ottobre 2026: anteprime con costo solo se
 disponibile e nessun bollino per valutazioni mancanti. Nomi Molto conosciuta,
