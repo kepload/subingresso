@@ -82,7 +82,16 @@ Pisogne. Totale nazionale **3.564**. Cache `fiere.js` **46**, catalogo **37**.
 Test dedicato `scripts/test-fiere-trento.cjs`, usando `PLAYWRIGHT_MODULE`:
 controlli su date, IVA/cauzioni, scadenze, mesi a cavallo d'anno, copertura,
 mappa e dodici dettagli su Chromium computer/telefono e WebKit telefono.
-La TO DO verrà spuntata soltanto dopo verifica di deploy e catalogo online.
+Commit dati `3c80a59`: Vercel riuscito, HTTP 200 e catalogo/script online
+identici ai file del commit (non alle conversioni CRLF locali). Catalogo SHA-256
+`9acf669c2cc0ac5bf9e6c88a882a1352da81bd7e69c2799b2dec4c6e74229e10`. Verificati online 122 risultati, mappa e
+dodici dettagli su Chromium computer/telefono e WebKit telefono. Build, test
+settori, test provinciale e suite generale sui cinque schermi/browser superati.
+TO DO spuntata dopo queste verifiche: **26 province completate, 84 mancanti**.
+Backup remoto `backup/session-20261016-082343-fiere-trento`; prima delle modifiche
+creato anche `backup/pre-fiere-trento-20261016`. Aggiornamento remoto dei filtri
+regionali acquisito senza includerlo nel commit Trento; file preesistenti estranei
+conservati e non committati. Nessuna modifica a database o servizi email.
 
 ## Integrazione costi Pisogne — 16 ottobre 2026
 

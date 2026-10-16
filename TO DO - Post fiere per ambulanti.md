@@ -447,7 +447,33 @@ e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
   ricontrollare. Le esclusioni e le ricorrenze non sono date 2026 confermate.
   Nessuna domanda, candidatura o comunicazione a terzi inviata.
 
-**Ricerca approfondita: 25 province completate, 85 ancora da fare su 110.**
+- [x] **Trento — ricerca documentale approfondita completata (16 ottobre 2026)**:
+  ricerca nominale nei 166 comuni; 122 manifestazioni in 62 comuni, prima cinque,
+  pubblicate e verificate in [/fiere](https://subingresso.it/fiere?provincia=Trento).
+  Letto integralmente e verificato visivamente il calendario ANVA 2026;
+  confrontati Comuni, APT territoriali, organizzatori e calendario AEFI Riva.
+  115 schede con giornate pubblicate, cinque periodi, due date testuali;
+  95 con recapiti, 13 con termine documentato. Fonti, copertura, esclusioni
+  e limiti in `data/fiere-trento.json` e `data/FIERE.md`.
+  Trento San Giuseppe 15 marzo, Cles San Rocco 16 agosto; distinte fiera
+  ambulante Cles 2 maggio e mostra agricola 1–2 maggio. Natale Ala domanda
+  20 ottobre da allegati; costi, IVA e cauzioni verificati nei disciplinari
+  di Trento, Ala, Ossana, Pomarolo e Ciuiga. Date di pagamento non scambiate
+  per scadenze delle domande; periodi senza singole aperture dichiarati.
+  Conservati i cinque ID e le altre 3.442 schede, inclusi costi Pisogne;
+  preservato anche l'aggiornamento parallelo dei filtri regionali.
+  Commit dati `3c80a59`, Vercel riuscito; catalogo e script online
+  identici al commit. 122 risultati, mappa e dodici dettagli verificati su
+  Chromium computer/telefono e WebKit; build, settori e suite generale passati.
+- [ ] **Trento — aggiornamenti periodici**: bandi, disponibilità e nuove edizioni;
+  giorni commerciali di Siror, Moena, Canazei, Campitello, Vallarsa e Caderzone;
+  apertura Natale Pergine 25 dicembre, giorno San Marco Rovereto e possibili
+  rinvii meteo. Recuperare nuove fonti per Val di Gresta, Folgaria artigianato
+  estivo e Avio Herbarium. Le query nominali non certificano l'assenza di altri
+  eventi; quote non pubblicate mai interpretate come gratuite. Nessuna domanda,
+  candidatura o comunicazione a terzi inviata.
+
+**Ricerca approfondita: 26 province completate, 84 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -478,7 +504,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [ ] **16. Pavia** — Lombardia
 - [x] **17. Novara** — Piemonte; ricerca completata e verificata online, vedi sopra
 - [x] **18. Cuneo** — Piemonte; ricerca completata e verificata online, vedi sopra
-- [ ] **19. Trento** — Trentino-Alto Adige
+- [x] **19. Trento** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
 - [ ] **20. Bolzano/Bozen** — Trentino-Alto Adige
 - [ ] **21. Firenze** — Toscana
 - [ ] **22. Roma** — Lazio

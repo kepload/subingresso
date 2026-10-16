@@ -1,5 +1,21 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Calendario Trento, 16 ottobre 2026: ricerca nominale nei 166 comuni, 122 schede
+in 62 comuni (prima cinque), pubblicate e verificate online. ANVA 2026 letto
+integralmente/visivamente; Comuni, APT e organizzatori, AEFI Riva B2B distinto
+dai posteggi. 115 date puntuali, cinque periodi, due testi; 95 recapiti e 13
+termini. Fonti/esclusioni/limiti in data/fiere-trento.json e data/FIERE.md;
+evidenze Documents/ricerca-fiere-trento-20261016. Ala Natale domanda 20 ottobre
+da allegati, non scadenza notizia 21; Ossana saldo 27 ottobre distinto dalla
+domanda 27 settembre. IVA, durata e cauzioni distinte; nessun posto garantito.
+Cinque ID e altre 3.442 schede/costi conservati; acquisito aggiornamento remoto
+dei filtri regionali. Cache JS46/catalogo37, totale 3.564. Build, settori,
+suite generale e test-fiere-trento.cjs locali/online con PLAYWRIGHT_MODULE
+superati. Vercel riuscito, catalogo/script conformi al commit 3c80a59.
+TO DO aggiornata solo dopo verifica: 26 province completate, 84 rimanenti.
+Nessun contatto a terzi; file estranei preesistenti non committati.
+
+
 Pisogne costi, 16 ottobre 2026: recuperato regolamento XXVIII Mostra Mercato
 12–16 agosto dal link Google Drive nel modulo e nel sito Canva renderizzato.
 Era sfuggito al controllo delle sole ancore HTML; per siti Canva/dinamici e
