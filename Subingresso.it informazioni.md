@@ -306,7 +306,8 @@ rinominata «Storica» in card, scheda, popup, filtro e legenda. Nuova preferenz
 scala dal verde al giallo oliva per Storica e all'arancione scuro, quasi rosso,
 per Nuova; supera blu/viola e il precedente divieto del rosso. Bollini più
 compatti: altezza minima 24 px invece di 36, spazi interni e margini ridotti,
-testo sempre 11 px. Conservati simboli, criteri e dati. Cache JS55/CSS18.
+testo sempre 11 px. Colore pieno con scritta e simboli bianchi, come un vero
+bollino; conservati criteri e dati. Cache JS55/CSS19.
 
 **Bollini, 16 ottobre 2026:** rimossa la sottolineatura a pallini da tutti
 i bollini cliccabili, su richiesta dell'utente. Cache CSS16.

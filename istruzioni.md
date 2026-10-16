@@ -1,5 +1,11 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Fiere, preferenze correnti 16 ottobre 2026: anteprime con costo solo se
+disponibile e nessun bollino per valutazioni mancanti. Nomi Molto conosciuta,
+Storica, Nuova; scala verde → giallo oliva → arancione scuro quasi rosso.
+Bollini pieni con testo e simboli bianchi, alti 24 px, testo 11 px, margini
+ridotti e nessuna sottolineatura. Criteri e dati invariati. Cache JS55/CSS19.
+
 Valutazioni fiere, 16 ottobre 2026: 400 su 3.972 (17 molto conosciute,
 380 di lunga tradizione, 3 nuove), prima 41. Restano 3.572 da valutare:
 ricerca nazionale non conclusa. Registro Lombardia con edizioni esplicite,
