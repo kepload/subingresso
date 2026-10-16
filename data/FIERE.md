@@ -2494,4 +2494,3 @@ Tavarnelle Val di Pesa usa il punto GeoNames 6534685 presente in
 fuso non ha coordinate in `comuni.json`; anagrafica condivisa invariata.
 Backup di sessione pubblicato; consueti errori nella sola pulizia vecchi tag
 non ne hanno impedito la creazione. Gitleaks sul commit pulito.
-
