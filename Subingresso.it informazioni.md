@@ -301,10 +301,12 @@ In caso di conflitto, usare questo ordine:
 
 ### Anteprime essenziali — richiesta del 16 ottobre 2026
 
-**Nomi e colori correnti, 16 ottobre 2026:** «Di lunga tradizione» rinominata
-«Storica» in card, scheda, popup, filtro e legenda. Molto conosciuta in verde,
-Storica in blu, Nuova in viola; niente rosso per gli eventi nuovi. Conservati
-simboli, criteri e dati. Cache JS55/CSS17.
+**Nomi, colori e dimensioni correnti, 16 ottobre 2026:** «Di lunga tradizione»
+rinominata «Storica» in card, scheda, popup, filtro e legenda. Nuova preferenza:
+scala dal verde al giallo oliva per Storica e all'arancione scuro, quasi rosso,
+per Nuova; supera blu/viola e il precedente divieto del rosso. Bollini più
+compatti: altezza minima 24 px invece di 36, spazi interni e margini ridotti,
+testo sempre 11 px. Conservati simboli, criteri e dati. Cache JS55/CSS18.
 
 **Bollini, 16 ottobre 2026:** rimossa la sottolineatura a pallini da tutti
 i bollini cliccabili, su richiesta dell'utente. Cache CSS16.

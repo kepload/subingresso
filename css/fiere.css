@@ -21,17 +21,17 @@ button,summary{cursor:pointer}button:disabled{cursor:wait;opacity:.5}[hidden]{di
 .fiere-month:hover{border-color:#93c5fd}.fiere-month[aria-pressed=true]{background:#2563eb;color:white;border-color:#2563eb}
 .fiere-month strong{display:block;font-size:12px;font-weight:600}
 .fiere-place{margin-top:16px}.fiere-place>label{margin-bottom:8px}
-.fiere-reputation{display:inline-flex;align-items:center;gap:6px;width:fit-content;max-width:100%;border:1px solid #d8e0e9;border-radius:20px;padding:5px 10px;background:#f1f5f9;color:#475569;font-size:11px;font-weight:800;line-height:1.5;text-align:left}
-button.fiere-reputation{min-height:36px;text-decoration:none}
-.fiere-reputation[data-reputation=rinomata]{color:#166534;background:#f0fdf4;border-color:#86efac}
-.fiere-reputation[data-reputation=consolidata]{color:#1e40af;background:#eff6ff;border-color:#bfdbfe}
-.fiere-reputation[data-reputation=recente]{color:#6b21a8;background:#faf5ff;border-color:#d8b4fe}
-.fiere-reputation-icon{font-size:14px;line-height:1}.fiere-card-reputation{margin:9px 0 4px}
+.fiere-reputation{display:inline-flex;align-items:center;gap:4px;width:fit-content;max-width:100%;min-height:24px;border:1px solid #d8e0e9;border-radius:20px;padding:2px 7px;background:#f1f5f9;color:#475569;font-size:11px;font-weight:700;line-height:1.35;text-align:left}
+button.fiere-reputation{text-decoration:none}
+.fiere-reputation[data-reputation=rinomata]{color:#166534;background:#dcfce7;border-color:#86efac}
+.fiere-reputation[data-reputation=consolidata]{color:#66610f;background:#f5f3c4;border-color:#d6cd67}
+.fiere-reputation[data-reputation=recente]{color:#9a3412;background:#ffedd5;border-color:#fdba74}
+.fiere-reputation-icon{font-size:12px;line-height:1}.fiere-card-reputation{margin:5px 0 2px}
 .fiere-reputation-help{font-size:11px!important;color:#64748b;line-height:1.6;margin-top:7px}
 .fiere-reputation-legend{margin-top:6px;font-size:11px;line-height:1.65;color:#475569}.fiere-reputation-legend summary{min-height:32px;padding:6px 0;color:#1d4ed8;font-weight:600}.fiere-reputation-legend p{margin:7px 0}
 .fiere-detail-reputation{border:1px solid #dbe3ee;border-radius:12px;padding:15px;margin:18px 0;background:#f8fafc}
 .fiere-detail-reputation h3{font-size:12px;font-weight:800;margin-bottom:9px}.fiere-detail-reputation>p{font-size:13px;line-height:1.7;margin-top:10px}
-.fiere-detail-reputation details{margin-top:8px;font-size:12px;line-height:1.7}.fiere-detail-reputation summary{min-height:36px;padding:7px 0;color:#1d4ed8;font-weight:700}.fiere-detail-reputation li{margin:8px 0;overflow-wrap:anywhere}.fiere-detail-reputation a{color:#1d4ed8;text-decoration:underline}.fiere-popup-event .fiere-reputation{margin-top:6px}
+.fiere-detail-reputation details{margin-top:8px;font-size:12px;line-height:1.7}.fiere-detail-reputation summary{min-height:36px;padding:7px 0;color:#1d4ed8;font-weight:700}.fiere-detail-reputation li{margin:8px 0;overflow-wrap:anywhere}.fiere-detail-reputation a{color:#1d4ed8;text-decoration:underline}.fiere-popup-event .fiere-reputation{margin-top:4px}
 .fiere-place select,.fiere-filter-row select,.fiere-filter-row input{width:100%;min-width:0;min-height:42px;padding:8px 12px;border:1px solid #dbe3ee;border-radius:9px;background:white;color:#0f172a;font-size:14px;font-weight:500}
 .fiere-extra-filters{margin-top:12px;border-top:1px solid #edf2f7}
 .fiere-extra-filters>summary{display:flex;align-items:center;justify-content:space-between;list-style:none;min-height:36px;padding:10px 0 0;font-size:13px;font-weight:600;color:#475569;gap:10px}
