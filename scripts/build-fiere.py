@@ -89,6 +89,7 @@ def validate_reputation(rating):
         assert isinstance(item["year"], int) and 1900 <= item["year"] <= checked.year
     history = [e for e in rating["evidence"] if e["kind"] == "history"
                and (isinstance(e.get("editionCount"), int) and e["editionCount"] >= 10
+                    or isinstance(e.get("historyYears"), int) and e["historyYears"] >= 10
                     or isinstance(e.get("sinceYear"), int) and 1 <= e["sinceYear"] <= e["year"] - 10)]
     reach = [e for e in rating["evidence"] if e["kind"] == "reach"
              and e.get("scope") in {"sovralocale", "nazionale", "internazionale"}

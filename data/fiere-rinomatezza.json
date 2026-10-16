@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-10-16",
-  "method": "Valutazioni editoriali per ID: richiamo documentato, edizioni esplicite o confronto tra fonti storiche e schede attuali nello stesso comune. Esclusi numeri uguali all'anno, abbonamenti e omonimie. I confronti storici provano un arco documentale, non continuità annuale né data di fondazione. Copertura progressiva.",
+  "method": "Valutazioni editoriali per ID: prima selezione assistita dalle fonti condivise, poi controllo manuale di identità, edizione e contesto. Nuova solo con debutto o prime tre edizioni documentati, non dal semplice contatore amministrativo. Storica con almeno dieci edizioni o anni; Molto conosciuta con richiamo ampio documentato. Copertura parziale.",
   "events": {
     "lazio-fiumicino-sagra-del-pesce-mercatino-di-prodotti-tipici": {
       "level": "consolidata",
@@ -7401,6 +7401,1842 @@
           "url": "https://www.regione.veneto.it/documents/10713/13530434/Calendario+Sagre+e+Fiere+08.10.2026.xlsx/ebd944f5-d5ec-4826-bbc4-faa0a6edce98",
           "year": 2026,
           "editionCount": 15
+        }
+      ]
+    },
+    "abruzzo-crognaleto-fiera-della-pastorizia-di-piano-roseto": {
+      "level": "consolidata",
+      "reason": "La Camera di Commercio documenta la 162ª Fiera della Pastorizia di Piano Roseto nel luglio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La Camera di Commercio documenta la 162ª Fiera della Pastorizia di Piano Roseto nel luglio 2026.",
+          "url": "https://www.cameragransasso.camcom.it/it/notizie/fierapianoroseto/",
+          "year": 2026,
+          "editionCount": 162
+        }
+      ]
+    },
+    "abruzzo-guardiagrele-mostra-dell-artigianato-artistico-abruzzese": {
+      "level": "consolidata",
+      "reason": "L’organizzatore annuncia la cinquantaseiesima Mostra dell’Artigianato Artistico Abruzzese nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore annuncia la cinquantaseiesima Mostra dell’Artigianato Artistico Abruzzese nel 2026.",
+          "url": "https://www.artigianatoabruzzese.it/",
+          "year": 2026,
+          "editionCount": 56
+        }
+      ]
+    },
+    "abruzzo-lanciano-fiera-dell-agricoltura": {
+      "level": "consolidata",
+      "reason": "Lancianofiera documenta la sessantaquattresima Fiera Nazionale dell’Agricoltura nell’aprile 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Lancianofiera documenta la sessantaquattresima Fiera Nazionale dell’Agricoltura nell’aprile 2026.",
+          "url": "https://agricoltura.lancianofiera.it/edizione-2026/index.html",
+          "year": 2026,
+          "editionCount": 64
+        }
+      ]
+    },
+    "abruzzo-pescara-mostra-del-fiore-florviva": {
+      "level": "rinomata",
+      "reason": "Gli organizzatori dichiarano oltre 70.000 presenze annue nelle passate edizioni, produttori da quindici regioni e venti Paesi: richiamo documentato oltre il territorio locale. Non è una previsione di incassi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Gli organizzatori documentano la manifestazione congiunta Mostra del Fiore Florviva dal 2012.",
+          "url": "https://www.mostradelfioreflorviva.it/",
+          "year": 2026,
+          "sinceYear": 2012
+        },
+        {
+          "kind": "reach",
+          "label": "Gli organizzatori dichiarano oltre 70.000 presenze annue nelle passate edizioni, produttori da quindici regioni e venti Paesi: richiamo documentato oltre il territorio locale.",
+          "url": "https://www.mostradelfioreflorviva.it/",
+          "year": 2026,
+          "scope": "internazionale"
+        }
+      ]
+    },
+    "campania-san-gennaro-vesuviano-fiera-vesuviana": {
+      "level": "consolidata",
+      "reason": "La Regione Campania documenta la Fiera Vesuviana dal 1613. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La Regione Campania documenta la Fiera Vesuviana dal 1613.",
+          "url": "https://agricoltura.regione.campania.it/fiere/fiera-vesuviana-2025.html",
+          "year": 2025,
+          "sinceYear": 1613
+        }
+      ]
+    },
+    "campania-venticano-fiera-campionaria-di-venticano": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la nascita della Fiera Campionaria di Venticano nel 1978. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la nascita della Fiera Campionaria di Venticano nel 1978.",
+          "url": "https://www.prolocoventicano.com/fiera-campionaria-venticano/",
+          "year": 2026,
+          "sinceYear": 1978
+        }
+      ]
+    },
+    "emilia-romagna-bologna-peonia-in-bloom-special-autumn-edition": {
+      "level": "consolidata",
+      "reason": "Il portale turistico metropolitano documenta la sedicesima Peonia in Bloom nell’autunno 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il portale turistico metropolitano documenta la sedicesima Peonia in Bloom nell’autunno 2026.",
+          "url": "https://www.bolognawelcome.com/it/eventi/mercati/peonia-in-bloom-autunno",
+          "year": 2026,
+          "editionCount": 16
+        }
+      ]
+    },
+    "emilia-romagna-budrio-primaveranda": {
+      "level": "consolidata",
+      "reason": "Il portale turistico metropolitano documenta la trentasettesima Primaveranda nell’aprile–maggio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il portale turistico metropolitano documenta la trentasettesima Primaveranda nell’aprile–maggio 2026.",
+          "url": "https://www.comune.budrio.bo.it/vivere-il-comune/eventi/primaveranda-2026",
+          "year": 2026,
+          "editionCount": 37
+        }
+      ]
+    },
+    "emilia-romagna-colorno-nel-segno-del-giglio": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la trentunesima edizione di Nel Segno del Giglio nell’aprile 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la trentunesima edizione di Nel Segno del Giglio nell’aprile 2026.",
+          "url": "https://www.nelsegnodelgiglio.it/visitatori/",
+          "year": 2026,
+          "editionCount": 31
+        }
+      ]
+    },
+    "emilia-romagna-compiano-c-e-piu-gusto-a-compiano": {
+      "level": "recente",
+      "reason": "Il portale turistico della Val Taro documenta la seconda edizione di C’è più Gusto a Compiano nel luglio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il portale turistico della Val Taro documenta la seconda edizione di C’è più Gusto a Compiano nel luglio 2026.",
+          "url": "https://www.turismovaltaro.it/ce-piu-gusto-a-compiano-19-07-2026/",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "emilia-romagna-correggio-natura-bio": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la diciottesima Natura Bio nel settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la diciottesima Natura Bio nel settembre 2026.",
+          "url": "https://www.fieranaturabio.it/",
+          "year": 2026,
+          "editionCount": 18
+        }
+      ]
+    },
+    "emilia-romagna-faenza-antica-fiera-di-san-rocco": {
+      "level": "consolidata",
+      "reason": "La Pro Loco documenta la ventinovesima edizione moderna della Fiera di San Rocco, oltre alla sua origine medievale. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La Pro Loco documenta la ventinovesima edizione moderna della Fiera di San Rocco, oltre alla sua origine medievale.",
+          "url": "https://www.prolocofaenza.it/evento/fiera-di-san-rocco-2/",
+          "year": 2026,
+          "editionCount": 29
+        }
+      ]
+    },
+    "emilia-romagna-guiglia-sagra-del-borlengo-mercatino-arte-e-ingegno": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la cinquantacinquesima Sagra del Borlengo di Guiglia nel maggio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La fonte documenta la cinquantacinquesima Sagra del Borlengo di Guiglia nel maggio 2026.",
+          "url": "https://www.prolocoemiliaromagna.it/il-borlengo-e-la-sfida-alimentare-gluten-free-vegan-guiglia-2026/",
+          "year": 2026,
+          "editionCount": 55
+        }
+      ]
+    },
+    "emilia-romagna-lama-mocogno-parmigiano-reggiano-da-gustare": {
+      "level": "consolidata",
+      "reason": "Il portale turistico documenta la ventunesima Parmigiano Reggiano da Gustare nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il portale turistico documenta la ventunesima Parmigiano Reggiano da Gustare nel 2026.",
+          "url": "https://emiliaromagnaturismo.it/it/eventi/lama-mocogno-parmigiano-reggiano-da-gustare",
+          "year": 2026,
+          "editionCount": 21
+        }
+      ]
+    },
+    "emilia-romagna-parma-artparma-fair": {
+      "level": "consolidata",
+      "reason": "Il catalogo ufficiale documenta la ventitreesima ArtParma Fair nell’autunno 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il catalogo ufficiale documenta la ventitreesima ArtParma Fair nell’autunno 2026.",
+          "url": "https://www.artparmafair.it/informazioni-generali-evento/",
+          "year": 2026,
+          "editionCount": 23
+        }
+      ]
+    },
+    "emilia-romagna-rolo-fiera-di-san-simone": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la trentatreesima Fiera di San Simone di Rolo nell’ottobre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la trentatreesima Fiera di San Simone di Rolo nell’ottobre 2026.",
+          "url": "https://www.comune.rolo.re.it/novita/notizie/fiera-di-san-simone-2026",
+          "year": 2026,
+          "editionCount": 33
+        }
+      ]
+    },
+    "emilia-romagna-san-lazzaro-di-savena-fiera-di-san-lazzaro": {
+      "level": "consolidata",
+      "reason": "Il portale turistico metropolitano documenta la Fiera di San Lazzaro dal 1830. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il portale turistico metropolitano documenta la Fiera di San Lazzaro dal 1830.",
+          "url": "https://appenninobolognese.cittametropolitana.bo.it/it/eventi/fiere/fiera-di-san-lazzaro-",
+          "year": 2026,
+          "sinceYear": 1830
+        }
+      ]
+    },
+    "emilia-romagna-santarcangelo-di-romagna-fiera-di-san-michele": {
+      "level": "consolidata",
+      "reason": "Il sito organizzativo documenta la 654ª edizione della Fiera di San Michele di Santarcangelo nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il sito organizzativo documenta la 654ª edizione della Fiera di San Michele di Santarcangelo nel 2026.",
+          "url": "https://www.santarcangelofiere.it/fiera-di-san-michele",
+          "year": 2026,
+          "editionCount": 654
+        }
+      ]
+    },
+    "emilia-romagna-sassuolo-vintage-pride-market": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la ventottesima edizione del Vintage Pride Market nel settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la ventottesima edizione del Vintage Pride Market nel settembre 2026.",
+          "url": "https://www.comune.sassuolo.mo.it/vivere-sassuolo/eventi/vintage-pride-market-3",
+          "year": 2026,
+          "editionCount": 28
+        }
+      ]
+    },
+    "emilia-romagna-soragna-edizione-della-mostra-dell-artigianato-agricoltura-e-commercio-di-soragna": {
+      "level": "consolidata",
+      "reason": "Il registro regionale documenta la quarantasettesima Mostra di Artigianato, Agricoltura e Commercio di Soragna nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il registro regionale documenta la quarantasettesima Mostra di Artigianato, Agricoltura e Commercio di Soragna nel 2026.",
+          "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=034036&progr_fiera=2",
+          "year": 2026,
+          "editionCount": 47
+        }
+      ]
+    },
+    "friuli-venezia-giulia-muggia-montedoro-expo-mostra-scambio-e-mercatino": {
+      "level": "recente",
+      "reason": "Il calendario ufficiale PromoTurismoFVG di marzo 2026 presenta Montedoro Expò di Muggia come prima edizione. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il calendario ufficiale PromoTurismoFVG di marzo 2026 presenta Montedoro Expò di Muggia come prima edizione.",
+          "url": "https://www.turismofvg.it/proxyvfs.axd/null/r355539/100eventi_marzo2026-pdf?ext=.pdf&v=434105",
+          "year": 2026,
+          "editionCount": 1
+        }
+      ]
+    },
+    "friuli-venezia-giulia-pordenone-pordenonelegge": {
+      "level": "rinomata",
+      "reason": "Il bilancio ufficiale 2026 descrive il festival come riferimento nazionale e riporta oltre 190.000 presenze stimate dalla Prefettura, con pubblico turistico anche internazionale. Non è una previsione di incassi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore pubblica il bilancio della ventisettesima edizione di pordenonelegge nel 2026.",
+          "url": "https://www.pordenonelegge.it/",
+          "year": 2026,
+          "editionCount": 27
+        },
+        {
+          "kind": "reach",
+          "label": "Il bilancio ufficiale 2026 descrive il festival come riferimento nazionale e riporta oltre 190.000 presenze stimate dalla Prefettura, con pubblico turistico anche internazionale.",
+          "url": "https://www.pordenonelegge.it/notizie/pordenonelegge-2026-festa-del-ringraziamento",
+          "year": 2026,
+          "scope": "nazionale"
+        }
+      ]
+    },
+    "friuli-venezia-giulia-trieste-triestespresso-expo": {
+      "level": "consolidata",
+      "reason": "Le informazioni ufficiali per gli espositori documentano la dodicesima TriestEspresso Expo nell’ottobre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Le informazioni ufficiali per gli espositori documentano la dodicesima TriestEspresso Expo nell’ottobre 2026.",
+          "url": "https://www.triestespresso.it/modulistica",
+          "year": 2026,
+          "editionCount": 12
+        }
+      ]
+    },
+    "lazio-ardea-autunno-alla-landriana": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la venticinquesima Autunno alla Landriana nell’ottobre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la venticinquesima Autunno alla Landriana nell’ottobre 2026.",
+          "url": "https://www.landriana.com/mostra-autunno-2026/",
+          "year": 2026,
+          "editionCount": 25
+        }
+      ]
+    },
+    "lazio-ardea-primavera-alla-landriana": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la trentesima Primavera alla Landriana nel marzo 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la trentesima Primavera alla Landriana nel marzo 2026.",
+          "url": "https://www.landriana.com/mostra-primavera-2026/",
+          "year": 2026,
+          "editionCount": 30
+        }
+      ]
+    },
+    "lazio-ariccia-sagra-della-porchetta": {
+      "level": "consolidata",
+      "reason": "Gli atti comunali documentano la settantatreesima Sagra della Porchetta di Ariccia nel settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Gli atti comunali documentano la settantatreesima Sagra della Porchetta di Ariccia nel settembre 2026.",
+          "url": "https://www.comune.ariccia.rm.it/it/news-category/123019?type=0",
+          "year": 2026,
+          "editionCount": 73
+        }
+      ]
+    },
+    "lazio-marino-sagra-dell-uva": {
+      "level": "consolidata",
+      "reason": "Il programma ufficiale documenta la 102ª Sagra dell’Uva di Marino nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il programma ufficiale documenta la 102ª Sagra dell’Uva di Marino nel 2026.",
+          "url": "https://www.sagradelluvamarino.it/la-sagra-2026-edizione-102/",
+          "year": 2026,
+          "editionCount": 102
+        }
+      ]
+    },
+    "lazio-rocca-di-papa-sagra-delle-castagne": {
+      "level": "consolidata",
+      "reason": "La fonte della scheda documenta la quarantaseiesima Sagra delle Castagne di Rocca di Papa nell’ottobre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La fonte della scheda documenta la quarantaseiesima Sagra delle Castagne di Rocca di Papa nell’ottobre 2026.",
+          "url": "https://www.cittametropolitanaroma.it/events/event/rocca-di-papa-46a-sagra-delle-castagne/",
+          "year": 2026,
+          "editionCount": 46
+        }
+      ]
+    },
+    "liguria-bardineto-festa-nazionale-del-fungo-d-oro": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 42 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 42 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 42
+        }
+      ]
+    },
+    "liguria-bardineto-festa-patronale-di-san-rocco": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 51 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 51 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 51
+        }
+      ]
+    },
+    "liguria-cairo-montenotte-sagra-della-tira": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 25 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 25 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 25
+        }
+      ]
+    },
+    "liguria-camporosso-festa-patronale-di-san-sebastiano": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 100 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 100 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 100
+        }
+      ]
+    },
+    "liguria-imperia-ineja-festa-di-san-giovanni": {
+      "level": "consolidata",
+      "reason": "Il Comune di Imperia documenta la quarantaseiesima edizione della Festa di San Giovanni–Ineja nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune di Imperia documenta la quarantaseiesima edizione della Festa di San Giovanni–Ineja nel 2026.",
+          "url": "https://comune.imperia.it/en/news/ineja-2026?type=2",
+          "year": 2026,
+          "editionCount": 46
+        }
+      ]
+    },
+    "liguria-laigueglia-fiera-di-san-matteo": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la quarantaquattresima edizione della Fiera di San Matteo nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la quarantaquattresima edizione della Fiera di San Matteo nel 2026.",
+          "url": "https://www.comune.laigueglia.sv.it/vivere-il-comune/eventi/44-fiera-di-san-matteo/",
+          "year": 2026,
+          "editionCount": 44
+        }
+      ]
+    },
+    "liguria-moneglia-mostra-mercato-dell-olio-d-oliva": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 45 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 45 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 45
+        }
+      ]
+    },
+    "liguria-noli-la-repubblica-del-gusto": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 22 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 22 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 22
+        }
+      ]
+    },
+    "liguria-pieve-di-teco-expo-valle-arroscia": {
+      "level": "consolidata",
+      "reason": "Il Comune di Pieve di Teco presenta la tredicesima Expo Valle Arroscia nel settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune di Pieve di Teco presenta la tredicesima Expo Valle Arroscia nel settembre 2026.",
+          "url": "https://www.comune.pievediteco.im.it/wp/2026/09/01/expo-valle-arroscia-13a-edizione-pieve-di-teco-4-5-6-settembre-2026/",
+          "year": 2026,
+          "editionCount": 13
+        }
+      ]
+    },
+    "liguria-pieve-ligure-sagra-della-mimosa": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 50 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 50 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 50
+        }
+      ]
+    },
+    "liguria-ronco-scrivia-festa-patronale-madonna-della-guardia": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 50 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 50 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 50
+        }
+      ]
+    },
+    "liguria-ronco-scrivia-mercatini-di-natale-villavecchia": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 15 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 15 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 15
+        }
+      ]
+    },
+    "liguria-ronco-scrivia-un-viaggio-nella-storia": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 17 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 17 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 17
+        }
+      ]
+    },
+    "liguria-triora-strigora": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 25 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 25 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 25
+        }
+      ]
+    },
+    "liguria-valbrevenna-u-mundantigu": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 24 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 24 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 24
+        }
+      ]
+    },
+    "liguria-vezzano-ligure-sagra-dell-uva": {
+      "level": "consolidata",
+      "reason": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 50 anni di storicità; il dato non è un numero di edizioni. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il calendario Eventi Autentici 2026 della Regione Liguria attribuisce alla manifestazione almeno 50 anni di storicità; il dato non è un numero di edizioni.",
+          "url": "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=77284%3Aeventi-autentici-calendario-2026.pdf",
+          "year": 2026,
+          "historyYears": 50
+        }
+      ]
+    },
+    "lombardia-abbiategrasso-fiera-regionale-agricola": {
+      "level": "consolidata",
+      "reason": "Il portale cittadino documenta la 543ª Fiera Regionale Agricola di Abbiategrasso. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il portale cittadino documenta la 543ª Fiera Regionale Agricola di Abbiategrasso.",
+          "url": "https://www.abbiategrassodavivere.it/it/evento/fiera-regionale-agrigola-di-abbiategrasso-543a-edizione-1/",
+          "year": 2026,
+          "editionCount": 543
+        }
+      ]
+    },
+    "lombardia-arsago-seprio-natale-nel-bosco": {
+      "level": "consolidata",
+      "reason": "La Pro Loco documenta l’avvio di Natale nel Bosco di Arsago Seprio nel 2015. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La Pro Loco documenta l’avvio di Natale nel Bosco di Arsago Seprio nel 2015.",
+          "url": "https://prolocoarsagoseprio.it/il-natale/",
+          "year": 2026,
+          "sinceYear": 2015
+        }
+      ]
+    },
+    "lombardia-barbariga-fiera-del-casoncello-de-co": {
+      "level": "consolidata",
+      "reason": "La comunicazione agli espositori documenta la ventunesima Fiera del Casoncello di Barbariga nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La comunicazione agli espositori documenta la ventunesima Fiera del Casoncello di Barbariga nel 2026.",
+          "url": "https://fieradelcasoncello.it/wp-content/themes/casoncello/files/Richiesta%20espositori%202026.pdf",
+          "year": 2026,
+          "editionCount": 21
+        }
+      ]
+    },
+    "lombardia-barzio-sagra-delle-sagre": {
+      "level": "consolidata",
+      "reason": "Il sito organizzativo documenta la sessantunesima edizione della Sagra delle Sagre nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il sito organizzativo documenta la sessantunesima edizione della Sagra delle Sagre nel 2026.",
+          "url": "https://www.sagradellesagre.it/",
+          "year": 2026,
+          "editionCount": 61
+        }
+      ]
+    },
+    "lombardia-besana-in-brianza-c-era-una-volta-la-brianza-brocante": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la trentanovesima edizione di C’era una volta la Brianza nel maggio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la trentanovesima edizione di C’era una volta la Brianza nel maggio 2026.",
+          "url": "https://www.sacrocuorebesana.it/2026/04/30/39-cera-una-volta-la-brianza-ce-ancora/",
+          "year": 2026,
+          "editionCount": 39
+        }
+      ]
+    },
+    "lombardia-borghetto-lodigiano-fiera-regionale-plurisettoriale": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta nel 1970 la prima edizione moderna della Fiera di Borghetto Lodigiano. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta nel 1970 la prima edizione moderna della Fiera di Borghetto Lodigiano.",
+          "url": "https://www.fieraborghetto.it/",
+          "year": 2026,
+          "sinceYear": 1970
+        }
+      ]
+    },
+    "lombardia-brescia-brescia-in-fiore": {
+      "level": "recente",
+      "reason": "Il Comune di Brescia presenta come prima edizione la mostra mercato Brescia in Fiore del 25 e 26 aprile 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il Comune di Brescia presenta come prima edizione la mostra mercato Brescia in Fiore del 25 e 26 aprile 2026.",
+          "url": "https://www.comune.brescia.it/it/eventi/brescia-in-fiore",
+          "year": 2026,
+          "editionCount": 1
+        }
+      ]
+    },
+    "lombardia-busto-arsizio-acquariaitalia": {
+      "level": "recente",
+      "reason": "MalpensaFiere documenta la seconda AcquariaItalia nel settembre 2026, distinguendo giornate pubbliche e B2B. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "MalpensaFiere documenta la seconda AcquariaItalia nel settembre 2026, distinguendo giornate pubbliche e B2B.",
+          "url": "https://www.malpensafiere.it/acquaria-settembre2026/",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "lombardia-busto-arsizio-malpensa-mineral-bijoux": {
+      "level": "recente",
+      "reason": "MalpensaFiere documenta la terza edizione di Malpensa Mineral & Bijoux nel febbraio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "MalpensaFiere documenta la terza edizione di Malpensa Mineral & Bijoux nel febbraio 2026.",
+          "url": "https://www.malpensafiere.it/malpensa-mineral-bijoux-2026/",
+          "year": 2026,
+          "editionCount": 3
+        }
+      ]
+    },
+    "lombardia-busto-arsizio-mostra-scambio-auto-moto-bici": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la trentaquattresima Mostra Scambio di Busto Arsizio nell’ottobre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la trentaquattresima Mostra Scambio di Busto Arsizio nell’ottobre 2026.",
+          "url": "https://www.mostrascambiobustoarsizio.it/eventi/mostra-scambio-busto-arsizio-34-edizione-2026/",
+          "year": 2026,
+          "editionCount": 34
+        }
+      ]
+    },
+    "lombardia-casatenovo-fiera-zootecnica-di-san-gaetano": {
+      "level": "consolidata",
+      "reason": "La cronaca locale documenta la settantacinquesima Fiera Zootecnica di San Gaetano nel luglio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La cronaca locale documenta la settantacinquesima Fiera Zootecnica di San Gaetano nel luglio 2026.",
+          "url": "https://www.casateonline.it/notizie/156109/rogoredo-tutto-pronto-per-la-fiera-di-san-gaetano-75-deg-edizione",
+          "year": 2026,
+          "editionCount": 75
+        }
+      ]
+    },
+    "lombardia-cassina-de-pecchi-cassina-in-vinile": {
+      "level": "recente",
+      "reason": "Il Comune documenta la prima edizione di Cassina in Vinile, mercato di dischi e memorabilia del settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il Comune documenta la prima edizione di Cassina in Vinile, mercato di dischi e memorabilia del settembre 2026.",
+          "url": "https://www.comune.cassinadepecchi.mi.it/it/eventi/cassina-in-vinile-1a-edizione",
+          "year": 2026,
+          "editionCount": 1
+        }
+      ]
+    },
+    "lombardia-castiglione-d-adda-fiera-di-san-bernardino": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la sessantaquattresima Fiera di San Bernardino nel maggio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la sessantaquattresima Fiera di San Bernardino nel maggio 2026.",
+          "url": "https://comune.castiglionedadda.lo.it/vivere-il-comune/eventi/64-fiera-di-san-bernardino/",
+          "year": 2026,
+          "editionCount": 64
+        }
+      ]
+    },
+    "lombardia-cesano-maderno-mercato-europeo": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la ventiquattresima edizione del Mercato Europeo di Cesano Maderno nell’ottobre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la ventiquattresima edizione del Mercato Europeo di Cesano Maderno nell’ottobre 2026.",
+          "url": "https://www.comune.cesano-maderno.mb.it/novita/notizie/mercato-europeo-2026-dal-16-al-18-ottobre/",
+          "year": 2026,
+          "editionCount": 24
+        }
+      ]
+    },
+    "lombardia-cittiglio-sti-laven-insem-mercatini-lungo-la-ciclabile": {
+      "level": "recente",
+      "reason": "Il Comune documenta la prima Stì Laven Insem nel settembre 2026, con mercatini lungo la ciclabile. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il Comune documenta la prima Stì Laven Insem nel settembre 2026, con mercatini lungo la ciclabile.",
+          "url": "https://www.comune.cittiglio.va.it/vivere_il_comune/eventi/evento_45.html",
+          "year": 2026,
+          "editionCount": 1
+        }
+      ]
+    },
+    "lombardia-garlate-festa-delle-corti": {
+      "level": "consolidata",
+      "reason": "Il portale turistico regionale documenta la trentatreesima Festa delle Corti di Garlate nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il portale turistico regionale documenta la trentatreesima Festa delle Corti di Garlate nel 2026.",
+          "url": "https://www.in-lombardia.it/evento/festa-delle-corti-33-edizione",
+          "year": 2026,
+          "editionCount": 33
+        }
+      ]
+    },
+    "lombardia-gottolengo-sagra-della-patata-e-dei-sapori": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la ventiquattresima Sagra della Patata e dei Sapori nel settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la ventiquattresima Sagra della Patata e dei Sapori nel settembre 2026.",
+          "url": "https://comune.gottolengo.bs.it/it/eventi/sagra-della-patata-e-dei-sapori-di-gottolengo-6-7-8-settembre-2024",
+          "year": 2026,
+          "editionCount": 24
+        }
+      ]
+    },
+    "lombardia-gussago-fiera-dell-uva": {
+      "level": "consolidata",
+      "reason": "L’avviso comunale agli operatori documenta la cinquantaseiesima Fiera dell’Uva di Gussago nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’avviso comunale agli operatori documenta la cinquantaseiesima Fiera dell’Uva di Gussago nel 2026.",
+          "url": "https://www.comune.gussago.bs.it/novita/avvisi/novita_481.html",
+          "year": 2026,
+          "editionCount": 56
+        }
+      ]
+    },
+    "lombardia-inarzo-festa-del-cioccolato": {
+      "level": "consolidata",
+      "reason": "Il regolamento della Pro Loco documenta la quattordicesima Festa del Cioccolato di Inarzo nel novembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il regolamento della Pro Loco documenta la quattordicesima Festa del Cioccolato di Inarzo nel novembre 2026.",
+          "url": "https://prolocoinarzo.it/festa-cioccolato-2026",
+          "year": 2026,
+          "editionCount": 14
+        }
+      ]
+    },
+    "lombardia-lonato-del-garda-mercantico": {
+      "level": "consolidata",
+      "reason": "Il portale turistico bresciano documenta il Mercantico di Lonato attivo dal 1996. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il portale turistico bresciano documenta il Mercantico di Lonato attivo dal 1996.",
+          "url": "https://www.visitbrescia.it/eventi/mercantico-lonato-garda/",
+          "year": 2026,
+          "sinceYear": 1996
+        }
+      ]
+    },
+    "lombardia-magasa-sagra-del-formaggio-tombea": {
+      "level": "consolidata",
+      "reason": "Il portale turistico bresciano documenta la quarantacinquesima Sagra del Formaggio nel settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il portale turistico bresciano documenta la quarantacinquesima Sagra del Formaggio nel settembre 2026.",
+          "url": "https://www.visitbrescia.it/eventi/sagra-formaggio-valvestino/",
+          "year": 2026,
+          "editionCount": 45
+        }
+      ]
+    },
+    "lombardia-mantova-aspettando-naturalmentemantova": {
+      "level": "recente",
+      "reason": "Arci Papacqua documenta il debutto di Aspettando Naturalmentemantova nell’aprile 2026; non è la storicità del festival principale. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Arci Papacqua documenta il debutto di Aspettando Naturalmentemantova nell’aprile 2026; non è la storicità del festival principale.",
+          "url": "https://www.papacqua.it/events/aspettando-naturalmentemantova-mercatino-dellhand-made-e-del-naturale/",
+          "year": 2026,
+          "editionCount": 1
+        }
+      ]
+    },
+    "lombardia-novate-milanese-novate-in-fiera": {
+      "level": "recente",
+      "reason": "Il Comune annuncia il ritorno di Novate Fiera nel settembre 2026 dopo la prima edizione: è il secondo appuntamento annuale. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il Comune annuncia il ritorno di Novate Fiera nel settembre 2026 dopo la prima edizione: è il secondo appuntamento annuale.",
+          "url": "https://comune.novate-milanese.mi.it/eventi/3617213/novate-fiera-2026",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "lombardia-pieve-emanuele-pieve-delle-meraviglie": {
+      "level": "recente",
+      "reason": "Il Comune presenta Pieve delle Meraviglie del 7 giugno 2026 come prima edizione dedicata al commercio locale. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il Comune presenta Pieve delle Meraviglie del 7 giugno 2026 come prima edizione dedicata al commercio locale.",
+          "url": "https://comune.pieveemanuele.mi.it/it/eventi/pieve-delle-meraviglie",
+          "year": 2026,
+          "editionCount": 1
+        }
+      ]
+    },
+    "lombardia-pisogne-festa-del-fungo-e-della-castagna": {
+      "level": "consolidata",
+      "reason": "Il Comune di Pisogne documenta la settantaseiesima Festa del Fungo e della Castagna nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune di Pisogne documenta la settantaseiesima Festa del Fungo e della Castagna nel 2026.",
+          "url": "https://www.comune.pisogne.bs.it/vivere_il_comune/eventi/evento_4.html",
+          "year": 2026,
+          "editionCount": 76
+        }
+      ]
+    },
+    "lombardia-pizzighettone-hobby-e-sapori-nelle-mura": {
+      "level": "recente",
+      "reason": "L’organizzatore documenta la seconda Hobby e Sapori nelle Mura nel marzo 2026, distinta dalla ventisettesima Sagra della Polenta. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "L’organizzatore documenta la seconda Hobby e Sapori nelle Mura nel marzo 2026, distinta dalla ventisettesima Sagra della Polenta.",
+          "url": "https://www.pizzighettone.it/manifestazione/934-HOBBY_e_SAPORI_NELLE_MURA_Unisciti_a_noi_.php",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "lombardia-settimo-milanese-in-vino-veritas-in-birra-figuriamoci": {
+      "level": "recente",
+      "reason": "Il programma nominativo depositato in Regione riporta la seconda edizione di In Vino Veritas – In Birra Figuriamocis, aprile 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il programma nominativo depositato in Regione riporta la seconda edizione di In Vino Veritas – In Birra Figuriamocis, aprile 2026.",
+          "url": "https://www.procedimenti.servizirl.it/sagre/public/programma/25088",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "lombardia-varese-fiera-di-varese": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la quarantottesima Fiera di Varese nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la quarantottesima Fiera di Varese nel 2026.",
+          "url": "https://www.comune.varese.it/vivere_il_comune/eventi/evento_1030.html",
+          "year": 2026,
+          "editionCount": 48
+        }
+      ]
+    },
+    "lombardia-villa-cortese-fiera-autunnale": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la quarantatreesima Fiera Autunnale di Villa Cortese nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la quarantatreesima Fiera Autunnale di Villa Cortese nel 2026.",
+          "url": "https://comune.villacortese.mi.it/notizie/3637178/fiera-autunnale-villa-cortese-2026",
+          "year": 2026,
+          "editionCount": 43
+        }
+      ]
+    },
+    "molise-frosolone-mostra-mercato-del-coltello-artigianale": {
+      "level": "consolidata",
+      "reason": "La fonte della scheda documenta la Mostra Mercato delle Forbici e dei Coltelli di Frosolone dal 1996. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La fonte della scheda documenta la Mostra Mercato delle Forbici e dei Coltelli di Frosolone dal 1996.",
+          "url": "https://comune.frosolone.is.it/lartigianato/",
+          "year": 2026,
+          "sinceYear": 1996
+        }
+      ]
+    },
+    "piemonte-beinasco-mercatino-di-beinasco": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta il Mercatino di Beinasco attivo dal 2003. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta il Mercatino di Beinasco attivo dal 2003.",
+          "url": "https://www.prolocobeinasco.it/mercatino_beinasco/",
+          "year": 2026,
+          "sinceYear": 2003
+        }
+      ]
+    },
+    "piemonte-fossano-coloratissimo-autunno": {
+      "level": "consolidata",
+      "reason": "La comunicazione agli espositori documenta la ventiseiesima Coloratissimo Autunno di Fossano nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La comunicazione agli espositori documenta la ventiseiesima Coloratissimo Autunno di Fossano nel 2026.",
+          "url": "https://www.confagricolturacuneo.it/aperte-le-manifestazioni-di-interesse-per-la-26esima-edizione-di-coloratissimo-autunnofossano-11-12-ottobre-cloned/",
+          "year": 2026,
+          "editionCount": 26
+        }
+      ]
+    },
+    "piemonte-gaiola-bassa-valle-sturun-mercatino-dei-prodotti-locali": {
+      "level": "recente",
+      "reason": "ATL Cuneese documenta la seconda Bassa Valle StuRUN nell’ottobre 2026, comprendente il mercatino di prodotti locali. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "ATL Cuneese documenta la seconda Bassa Valle StuRUN nell’ottobre 2026, comprendente il mercatino di prodotti locali.",
+          "url": "https://www.visitcuneese.it/dettaglio-evento/-/d/bassa-valle-stu-run",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "piemonte-ghemme-natale-nelle-cantine": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la tredicesima Natale nelle Cantine di Ghemme nel dicembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la tredicesima Natale nelle Cantine di Ghemme nel dicembre 2026.",
+          "url": "https://www.noidelcastello.com/natale/",
+          "year": 2026,
+          "editionCount": 13
+        }
+      ]
+    },
+    "piemonte-maggiora-maggiora-agri-festival": {
+      "level": "recente",
+      "reason": "L’organizzatore documenta la seconda edizione del Maggiora Agri Festival nel luglio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "L’organizzatore documenta la seconda edizione del Maggiora Agri Festival nel luglio 2026.",
+          "url": "https://www.maggioraoffroadarena.it/2026/07/13/maggiora-agri-festival-una-seconda-edizione-indimenticabile/",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "piemonte-romagnano-sesia-bonfa-in-campo": {
+      "level": "recente",
+      "reason": "ATL Novara documenta la seconda Bonfa in Campo, fiera agricola degli studenti del Bonfantini nel maggio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "ATL Novara documenta la seconda Bonfa in Campo, fiera agricola degli studenti del Bonfantini nel maggio 2026.",
+          "url": "https://www.turismonovara.it/it/appuntamentischeda?Id=31941",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "piemonte-saluzzo-mostra-nazionale-dell-artigianato": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta l’ottantottesima Mostra Nazionale dell’Artigianato di Saluzzo nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta l’ottantottesima Mostra Nazionale dell’Artigianato di Saluzzo nel 2026.",
+          "url": "https://startsaluzzo.it/start-artigianato/",
+          "year": 2026,
+          "editionCount": 88
+        }
+      ]
+    },
+    "piemonte-torino-horeca-expoforum": {
+      "level": "recente",
+      "reason": "La Regione Piemonte documenta la terza Horeca Expoforum del marzo 2026; non si usa il contatore della pagina già aggiornata al 2027. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "La Regione Piemonte documenta la terza Horeca Expoforum del marzo 2026; non si usa il contatore della pagina già aggiornata al 2027.",
+          "url": "https://www.regione.piemonte.it/web/temi/agricoltura/promozione-qualita-educazione-alimentare/regione-piemonte-ad-horeca-expoforum-dal-15-al-17-marzo",
+          "year": 2026,
+          "editionCount": 3
+        }
+      ]
+    },
+    "piemonte-torino-restructura-riqualificazione-recupero-ristrutturazione": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la trentottesima Restructura nel novembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la trentottesima Restructura nel novembre 2026.",
+          "url": "https://www.restructura.com/",
+          "year": 2026,
+          "editionCount": 38
+        }
+      ]
+    },
+    "piemonte-vigone-mais-e-cavalli": {
+      "level": "consolidata",
+      "reason": "Il programma ufficiale documenta la ventisettesima Mais e Cavalli nell’ottobre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il programma ufficiale documenta la ventisettesima Mais e Cavalli nell’ottobre 2026.",
+          "url": "https://www.prolocovigone.it/programma_Mais%26ampCavalli_2026.html",
+          "year": 2026,
+          "editionCount": 27
+        }
+      ]
+    },
+    "puglia-gravina-in-puglia-fiera-di-san-giorgio": {
+      "level": "consolidata",
+      "reason": "Il sito della manifestazione documenta la 732ª Fiera di San Giorgio di Gravina nell’aprile 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il sito della manifestazione documenta la 732ª Fiera di San Giorgio di Gravina nell’aprile 2026.",
+          "url": "https://fierasangiorgiogravina.it/",
+          "year": 2026,
+          "editionCount": 732
+        }
+      ]
+    },
+    "toscana-bagno-a-ripoli-prim-olio": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la ventottesima Prim.OLIO di Bagno a Ripoli nel novembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la ventottesima Prim.OLIO di Bagno a Ripoli nel novembre 2026.",
+          "url": "https://www.comune.bagno-a-ripoli.fi.it/novita/notizie/primolio-2026-14-e-15-novembre-2026-28deg-edizione",
+          "year": 2026,
+          "editionCount": 28
+        }
+      ]
+    },
+    "toscana-barberino-di-mugello-mostra-mercato-del-tartufo-bianco-e-nero": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la ventunesima mostra mercato del tartufo di Barberino nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la ventunesima mostra mercato del tartufo di Barberino nel 2026.",
+          "url": "https://www.comune.barberinodimugello.fi.it/it/news/barberino-celebra-il-tartufo-con-la-21-mostra-mercato-del-tartufo-bianco-e-nero",
+          "year": 2026,
+          "editionCount": 21
+        }
+      ]
+    },
+    "toscana-borgo-san-lorenzo-fiera-agricola-mugellana": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la quarantacinquesima Fiera Agricola Mugellana nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la quarantacinquesima Fiera Agricola Mugellana nel 2026.",
+          "url": "https://www.comune.borgo-san-lorenzo.fi.it/it/news/45a-edizione-della-fiera-agricola-mugellana-un-edizione-che-guarda-al-futuro-partendo-dalle-radici-del-territorio?type=2",
+          "year": 2026,
+          "editionCount": 45
+        }
+      ]
+    },
+    "toscana-caprese-michelangelo-festa-della-castagna-e-del-marrone-dop": {
+      "level": "consolidata",
+      "reason": "Il programma documenta la cinquantaseiesima Festa della Castagna e del Marrone DOP di Caprese Michelangelo. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il programma documenta la cinquantaseiesima Festa della Castagna e del Marrone DOP di Caprese Michelangelo.",
+          "url": "https://www.meetvaltiberina.it/festa-castagna-marrone-caprese-michelangelo",
+          "year": 2026,
+          "editionCount": 56
+        }
+      ]
+    },
+    "toscana-cortona-top-festival-mostra-mercato": {
+      "level": "recente",
+      "reason": "Il Comune di Cortona conferma il Top Festival 2026 dopo il debutto del 2025: seconda edizione della manifestazione. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il Comune di Cortona conferma il Top Festival 2026 dopo il debutto del 2025: seconda edizione della manifestazione.",
+          "url": "https://www.comune.cortona.ar.it/novita/notizie/cortona-top-festival-date-2026",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "toscana-firenzuola-dal-bosco-e-dalla-pietra": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la trentunesima Dal Bosco e dalla Pietra di Firenzuola nell’ottobre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la trentunesima Dal Bosco e dalla Pietra di Firenzuola nell’ottobre 2026.",
+          "url": "https://www.comune.firenzuola.fi.it/it/eventi/dal-bosco-e-dalla-pietra-727865-727866",
+          "year": 2026,
+          "editionCount": 31
+        }
+      ]
+    },
+    "toscana-foiano-della-chiana-foiano-in-fiore": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la quarantesima edizione di Foiano in Fiore nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la quarantesima edizione di Foiano in Fiore nel 2026.",
+          "url": "https://comune.foiano.ar.it/eventi/3562263/foiano-fiore-via-40-edizione-storica-fiera",
+          "year": 2026,
+          "editionCount": 40
+        }
+      ]
+    },
+    "toscana-lastra-a-signa-antica-fiera-di-lastra": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la 245ª Antica Fiera di Lastra nell’agosto 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la 245ª Antica Fiera di Lastra nell’agosto 2026.",
+          "url": "https://www.comune.lastra-a-signa.fi.it/it/news/torna-dal-28-al-30-agosto-la-245a-antica-fiera-di-lastra-tre-giorni-di-tradizione-grandi-spettacoli-musica-e-cultura?type=2",
+          "year": 2026,
+          "editionCount": 245
+        }
+      ]
+    },
+    "toscana-marradi-mostra-mercato-del-marron-buono-di-marradi": {
+      "level": "consolidata",
+      "reason": "La fonte turistica documenta la sessantatreesima mostra mercato del Marron Buono di Marradi nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La fonte turistica documenta la sessantatreesima mostra mercato del Marron Buono di Marradi nel 2026.",
+          "url": "https://www.visittuscany.com/it/eventi/mostra-mercato-del-marron-buono-di-marradi/",
+          "year": 2026,
+          "editionCount": 63
+        }
+      ]
+    },
+    "toscana-montemurlo-montemurlo-craft-park": {
+      "level": "recente",
+      "reason": "UNPLI Toscana documenta la seconda edizione di Montemurlo Craft & Park nell’11–13 settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "UNPLI Toscana documenta la seconda edizione di Montemurlo Craft & Park nell’11–13 settembre 2026.",
+          "url": "https://www.unplitoscana.it/event/montemurlo-craft-e-park-a-montemurlo-po/",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "toscana-san-giovanni-valdarno-sangiovese-festival": {
+      "level": "recente",
+      "reason": "Il Comune di San Giovanni Valdarno documenta la terza edizione del Sangiovese Festival nell’aprile 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il Comune di San Giovanni Valdarno documenta la terza edizione del Sangiovese Festival nell’aprile 2026.",
+          "url": "https://www.comune.san-giovanni-valdarno.ar.it/notizie/3564881/ecco-terza-edizione-sangiovese-festival",
+          "year": 2026,
+          "editionCount": 3
+        }
+      ]
+    },
+    "toscana-scandicci-scandicci-fiera": {
+      "level": "rinomata",
+      "reason": "Il sito ufficiale 2026 presenta Scandicci Fiera come maggiore campionaria toscana e dichiara un bacino di 500.000 visitatori da tutta Italia; è un dato promozionale, non un consuntivo certificato. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Il sito ufficiale 2026 presenta Scandicci Fiera come maggiore campionaria toscana e dichiara un bacino di 500.000 visitatori da tutta Italia; è un dato promozionale, non un consuntivo certificato.",
+          "url": "https://www.scandiccifiera.it/",
+          "year": 2026,
+          "scope": "nazionale"
+        }
+      ]
+    },
+    "toscana-sestino-antica-fiera-del-ranco-mostra-chianina": {
+      "level": "consolidata",
+      "reason": "La fonte della scheda documenta la trentesima edizione della mostra Chianina alla Fiera del Ranco nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La fonte della scheda documenta la trentesima edizione della mostra Chianina alla Fiera del Ranco nel 2026.",
+          "url": "https://www.meetvaltiberina.it/chianina2026",
+          "year": 2026,
+          "editionCount": 30
+        }
+      ]
+    },
+    "toscana-sestino-sagra-della-bistecca-chianina-mercatino": {
+      "level": "consolidata",
+      "reason": "Il programma organizzativo documenta la trentaduesima Sagra della Bistecca Chianina nel giugno 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il programma organizzativo documenta la trentaduesima Sagra della Bistecca Chianina nel giugno 2026.",
+          "url": "https://www.sagrabisteccachianinasestino.it/programma.html",
+          "year": 2026,
+          "editionCount": 32
+        }
+      ]
+    },
+    "trentino-alto-adige-altopiano-della-vigolana-artigiani-a-bosentino-mercatino-di-natale": {
+      "level": "consolidata",
+      "reason": "La fonte turistica documenta la trentunesima Artigiani a Bosentino nel dicembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La fonte turistica documenta la trentunesima Artigiani a Bosentino nel dicembre 2026.",
+          "url": "https://www.visittrentino.info/it/guida/mercatini-di-natale/artigiani-a-bosentino-il-mercatino-di-natale_e_130551181",
+          "year": 2026,
+          "editionCount": 31
+        }
+      ]
+    },
+    "trentino-alto-adige-ortisei-nadel-urtijei-il-paese-di-natale": {
+      "level": "consolidata",
+      "reason": "La fonte turistica ufficiale documenta il Paese di Natale di Ortisei dal 2014. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La fonte turistica ufficiale documenta il Paese di Natale di Ortisei dal 2014.",
+          "url": "https://www.valgardena.it/it/dettaglio/base/events/ortisei-il-paese-di-natale-nadel-urtijeei/8D0EF01E2C0E4258AC17FFC59838540E/",
+          "year": 2026,
+          "sinceYear": 2014
+        }
+      ]
+    },
+    "trentino-alto-adige-sarentino-avvento-alpino-val-sarentino": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta l’Avvento Alpino Val Sarentino dal 2004. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta l’Avvento Alpino Val Sarentino dal 2004.",
+          "url": "https://www.sarntal.com/it/vacanze/events-highlights/avvento-alpino-val-sarentino.html",
+          "year": 2026,
+          "sinceYear": 2004
+        }
+      ]
+    },
+    "trentino-alto-adige-trento-mostra-dell-agricoltura": {
+      "level": "consolidata",
+      "reason": "Il Comune di Trento documenta la settantanovesima Mostra dell’Agricoltura nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune di Trento documenta la settantanovesima Mostra dell’Agricoltura nel 2026.",
+          "url": "https://www.comune.trento.it/Vivere-il-Comune/Eventi/Mostra-dell-Agricoltura",
+          "year": 2026,
+          "editionCount": 79
+        }
+      ]
+    },
+    "umbria-norcia-nero-norcia": {
+      "level": "consolidata",
+      "reason": "Il programma dell’organizzatore documenta la sessantaduesima edizione di Nero Norcia. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il programma dell’organizzatore documenta la sessantaduesima edizione di Nero Norcia.",
+          "url": "https://www.nero-norcia.it/",
+          "year": 2026,
+          "editionCount": 62
+        }
+      ]
+    },
+    "veneto-asiago-made-in-malga": {
+      "level": "consolidata",
+      "reason": "Il portale turistico locale documenta la quattordicesima Made in Malga nel settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il portale turistico locale documenta la quattordicesima Made in Malga nel settembre 2026.",
+          "url": "https://www.asiago.it/it/eventi/art_made-in-malga-2026-ad-asiago-4-6-e-11-13-settembre-2026.27802/",
+          "year": 2026,
+          "editionCount": 14
+        }
+      ]
+    },
+    "veneto-asolo-mercatino-dell-antiquariato-e-del-collezionismo": {
+      "level": "consolidata",
+      "reason": "La fonte turistica ufficiale documenta il mercatino dell’antiquariato di Asolo dal 1976. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La fonte turistica ufficiale documenta il mercatino dell’antiquariato di Asolo dal 1976.",
+          "url": "https://npt-cms.veneto.eu/it/evento/mercatino-dellantiquariato-1",
+          "year": 2026,
+          "sinceYear": 1976
+        }
+      ]
+    },
+    "veneto-battaglia-terme-antica-fiera-di-san-bartolomeo-bancarelle": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta l’Antica Fiera di San Bartolomeo di Battaglia Terme dal 1817. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta l’Antica Fiera di San Bartolomeo di Battaglia Terme dal 1817.",
+          "url": "https://www.comune.battaglia-terme.pd.it/vivere-il-comune/eventi/%F0%9F%8C%9F-antica-fiera-di-san-bartolomeo-2026-%F0%9F%8C%9F/",
+          "year": 2026,
+          "sinceYear": 1817
+        }
+      ]
+    },
+    "veneto-castelcucco-fiera-di-santa-lucia": {
+      "level": "recente",
+      "reason": "La Camera di Commercio Treviso-Belluno documenta nel 2026 la seconda edizione della Fiera di Santa Lucia di Castelcucco. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "La Camera di Commercio Treviso-Belluno documenta nel 2026 la seconda edizione della Fiera di Santa Lucia di Castelcucco.",
+          "url": "https://albocamerale.camcom.it/tb/node/1976",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "veneto-cison-di-valmarino-stelle-a-natale": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta la ventitreesima Stelle a Natale nel dicembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta la ventitreesima Stelle a Natale nel dicembre 2026.",
+          "url": "https://artigianatovivo.it/",
+          "year": 2026,
+          "editionCount": 23
+        }
+      ]
+    },
+    "veneto-cona-mercatino-della-festa-de-carnevae": {
+      "level": "recente",
+      "reason": "Il Comune di Cona documenta la seconda Festa de Carnevae nel maggio 2026, con mercatino e bancarelle nella stessa manifestazione. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-01-01",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Il Comune di Cona documenta la seconda Festa de Carnevae nel maggio 2026, con mercatino e bancarelle nella stessa manifestazione.",
+          "url": "https://www.comune.cona.ve.it/it/eventi/carnevale-2026",
+          "year": 2026,
+          "editionCount": 2
+        }
+      ]
+    },
+    "veneto-erbezzo-antica-fiera-del-bestiame": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la 119ª Fiera del Bestiame di Erbezzo nel settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la 119ª Fiera del Bestiame di Erbezzo nel settembre 2026.",
+          "url": "https://www.comune.erbezzo.vr.it/novita/antica-fiera-del-bestiame-sabato-12-settembre-2026/",
+          "year": 2026,
+          "editionCount": 119
+        }
+      ]
+    },
+    "veneto-isola-della-scala-fiera-del-riso": {
+      "level": "rinomata",
+      "reason": "La comunicazione ufficiale 2026 presenta la Fiera del Riso tra le principali manifestazioni italiane del settore; il rilievo nazionale è riscontrato anche dalla Regione Veneto. Non è una previsione di incassi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La comunicazione ufficiale documenta la cinquantottesima Fiera del Riso nel settembre–ottobre 2026.",
+          "url": "https://www.fieradelriso.it/news/dopo-20-anni-la-fiera-del-riso-torna-a-roma",
+          "year": 2026,
+          "editionCount": 58
+        },
+        {
+          "kind": "reach",
+          "label": "La comunicazione ufficiale 2026 presenta la Fiera del Riso tra le principali manifestazioni italiane del settore; il rilievo nazionale è riscontrato anche dalla Regione Veneto.",
+          "url": "https://www.fieradelriso.it/news/dopo-20-anni-la-fiera-del-riso-torna-a-roma",
+          "year": 2026,
+          "scope": "nazionale"
+        }
+      ]
+    },
+    "veneto-mirano-fiera-di-san-matteo": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta l’istituzione della Fiera di San Matteo di Mirano nel 1477, con sospensioni esplicitamente ricordate. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta l’istituzione della Fiera di San Matteo di Mirano nel 1477, con sospensioni esplicitamente ricordate.",
+          "url": "https://www.comune.mirano.ve.it/index.php/it/news/118356/dal-19-al-23-settembre-2025-torna-lantica-fiera-di-san-matteo-2041442",
+          "year": 2026,
+          "sinceYear": 1477
+        }
+      ]
+    },
+    "veneto-noale-noale-in-fiore-centro-storico": {
+      "level": "consolidata",
+      "reason": "La comunicazione istituzionale documenta la quarantacinquesima Noale in Fiore nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La comunicazione istituzionale documenta la quarantacinquesima Noale in Fiore nel 2026.",
+          "url": "https://www.comune.noale.ve.it/vivere-il-comune/eventi/noaleinfiore-14-aprile-2025/",
+          "year": 2026,
+          "editionCount": 45
+        }
+      ]
+    },
+    "veneto-noventa-vicentina-fiera-autunnale-dell-area-berica": {
+      "level": "consolidata",
+      "reason": "La comunicazione comunale documenta la trentanovesima Fiera Autunnale dell’Area Berica. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La comunicazione comunale documenta la trentanovesima Fiera Autunnale dell’Area Berica.",
+          "url": "https://www.comune.noventa-vicentina.vi.it/Guidaalpaese?IDDettaglio=57489",
+          "year": 2026,
+          "editionCount": 39
+        }
+      ]
+    },
+    "veneto-noventa-vicentina-noventa-in-fiore": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la ventiduesima Noventa in Fiore nel marzo 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune documenta la ventiduesima Noventa in Fiore nel marzo 2026.",
+          "url": "https://comune.noventa-vicentina.vi.it/Guidaalpaese?IDDettaglio=57513",
+          "year": 2026,
+          "editionCount": 22
+        }
+      ]
+    },
+    "veneto-portogruaro-mercatino-radioamatoriale-e-radio-d-epoca": {
+      "level": "consolidata",
+      "reason": "ARI Portogruaro documenta il trentaquattresimo mercatino radioamatoriale nel settembre 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "ARI Portogruaro documenta il trentaquattresimo mercatino radioamatoriale nel settembre 2026.",
+          "url": "https://www.ariportogruaro.it/34-mercatino-radioamatoriale/",
+          "year": 2026,
+          "editionCount": 34
+        }
+      ]
+    },
+    "veneto-valdagno-festa-della-maresina-mostra-mercato": {
+      "level": "consolidata",
+      "reason": "La comunicazione istituzionale documenta la tredicesima Festa della Maresina nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "La comunicazione istituzionale documenta la tredicesima Festa della Maresina nel 2026.",
+          "url": "https://www.provaldagno.com/news/grande-partecipazione-alla-festa-della-maresina-2026/",
+          "year": 2026,
+          "editionCount": 13
+        }
+      ]
+    },
+    "veneto-venezia-mercatino-dell-antiquariato-di-campo-san-maurizio": {
+      "level": "consolidata",
+      "reason": "L’organizzatore documenta il mercatino di Campo San Maurizio a Venezia dal 1970. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’organizzatore documenta il mercatino di Campo San Maurizio a Venezia dal 1970.",
+          "url": "https://www.mercatinocamposanmaurizio.it/",
+          "year": 2026,
+          "sinceYear": 1970
+        }
+      ]
+    },
+    "veneto-verona-le-piazze-dei-sapori": {
+      "level": "consolidata",
+      "reason": "Il Comune di Verona documenta la ventiquattresima edizione di Le Piazze dei Sapori nel maggio 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Il Comune di Verona documenta la ventiquattresima edizione di Le Piazze dei Sapori nel maggio 2026.",
+          "url": "https://www.comune.verona.it/Vivere-il-comune/Eventi/Le-Piazze-dei-Sapori-2026",
+          "year": 2026,
+          "editionCount": 24
+        }
+      ]
+    },
+    "veneto-vo-antica-fiera-di-san-lorenzo": {
+      "level": "consolidata",
+      "reason": "L’avviso comunale documenta la 375ª Antica Fiera di San Lorenzo nel 2026. Valutazione documentale riferita alla manifestazione; non misura incassi o disponibilità dei posteggi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "L’avviso comunale documenta la 375ª Antica Fiera di San Lorenzo nel 2026.",
+          "url": "https://www.comune.vo.pd.it/novita/fiera2025-copy/",
+          "year": 2026,
+          "editionCount": 375
         }
       ]
     }

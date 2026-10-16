@@ -27,6 +27,15 @@ assert.equal(api.reputationLevel({ reputation: { ...debut.reputation, level: 'to
 assert.equal(api.reputationLevel({ reputation: { ...debut.reputation, checkedAt: '2027-01-01' } }, today), 'unknown');
 assert.equal(api.reputationLevel(debut, debut.reputation.reviewAfter), 'recente');
 assert.equal(api.reputationLevel(debut, '2027-10-17'), 'unknown');
+// A low administrative counter, a seasonal sub-edition or a new venue must
+// not silently become a debut badge for an older or combined event.
+for (const id of ['lombardia-monza-monzacon', 'lombardia-iseo-natale-con-gusto',
+    'lombardia-monza-mi-fido-di-te-2026-sesta-edizione',
+    'liguria-genova-nuova-fiera-primavera', 'lombardia-gonzaga-mercatino-di-marzaglia-a-gonzaga']) {
+    const event = catalog.events.find(e => e.id === id);
+    assert(event, id);
+    assert.notEqual(api.reputationLevel(event, today), 'recente', id);
+}
 for (const level of levels) {
     const state = { reputation: level, months: [], query: '' };
     assert.deepEqual(api.filterEvents(catalog.events, state), catalog.events.filter(e => api.reputationLevel(e) === level));
@@ -48,6 +57,16 @@ spec=importlib.util.spec_from_file_location('build',Path('scripts/build-fiere.py
 b=importlib.util.module_from_spec(spec); spec.loader.exec_module(b)
 ratings=json.loads(Path('data/fiere-rinomatezza.json').read_text(encoding='utf-8'))['events']
 for rating in ratings.values(): b.validate_reputation(rating)
+# Regional calendars can document years of history without giving edition counts
+# or a foundation date. Keep those distinct and enforce the same ten-year floor.
+years=copy.deepcopy(next(r for r in ratings.values() if r['level']=='consolidata'))
+years['evidence']=[dict(kind='history',label='Calendario ufficiale: anni di storicita',url='https://example.org/calendar',year=2026,historyYears=10)]
+b.validate_reputation(years)
+for value in [0,3,9,'10',None]:
+    invalid=copy.deepcopy(years); invalid['evidence'][0]['historyYears']=value
+    try: b.validate_reputation(invalid)
+    except (AssertionError,ValueError): pass
+    else: raise AssertionError('Insufficient history years accepted')
 sample=copy.deepcopy(next(iter(ratings.values())))
 bad=[]
 for patch in [{'evidence':[]},{'level':'rinomata'},{'reviewAfter':'2026-01-01'},{'checkedAt':'2027-01-01'},{'level':'recente'}]:

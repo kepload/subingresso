@@ -301,6 +301,19 @@ In caso di conflitto, usare questo ordine:
 
 ### Anteprime essenziali — richiesta del 16 ottobre 2026
 
+**Selezione bollini, 16 ottobre 2026:** aggiunte 121 valutazioni (21 Nuova,
+96 Storica, 4 Molto conosciuta); totale 521/3.972, 24 nuove e 3.451 non valutate.
+Screening 1.790 fonti principali: 1.711 estratte, 79 errori, più registri condivisi;
+copertura parziale. Nuova da narrativa/programmi nominativi verificati, mai dal
+solo contatore 1/2/3: riscontrati reset ed errori. Revisione nuove 1 gennaio 2027.
+Anni dichiarati dalla Liguria conservati come historyYears, senza inventare
+edizioni o fondazioni. Le 400 valutazioni precedenti e tutti gli altri dati
+conservati. Audit, esclusioni e limiti in data/fiere-rinomatezza-audit.json;
+snapshot e riepilogo in Documents/ricerca-bollini-nuove-20261016. Cache JS57/dati43.
+Priorità richiesta dall'utente: individuare soprattutto le nuove con prove.
+Build, settori, integrità dei dati, bollini su Chromium/WebKit e suite generale
+su cinque schermi/browser passati localmente.
+
 **Colori attenuati, 16 ottobre 2026:** verde salvia, oliva e terracotta
 meno saturi, testo bianco conservato; contrasto minimo 4,83:1.
 Cache CSS21; allineamento verificato Chromium 1440/320 e WebKit 390.
