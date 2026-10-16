@@ -631,7 +631,7 @@
             clearTimeout(searchTimer); searchTimer = setTimeout(() => changed(false), 100);
         });
         for (const id of ['reset-filters', 'empty-reset']) $(id).addEventListener('click', reset);
-        $('load-more').addEventListener('click', () => { state.visible += 12; renderList(sortEvents(filterEvents(state.events, state))); });
+        $('load-more').addEventListener('click', () => { state.visible += 50; renderList(sortEvents(filterEvents(state.events, state))); });
         $('close-popup').addEventListener('click', () => { $('map-popup').hidden = true; });
         $('map-zoom-in').addEventListener('click', () => zoom(0.7));
         $('map-zoom-out').addEventListener('click', () => zoom(1 / 0.7));

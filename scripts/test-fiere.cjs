@@ -907,7 +907,7 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('.fiere-province.is-preview').count(),0);
         assert.equal(await page.locator('#map-caption').textContent(),'Trascina e ingrandisci');
         await page.locator('#load-more').click();
-        assert.equal(await page.locator('.fiere-card').count(),24);
+        assert.equal(await page.locator('.fiere-card').count(),62);
         for (const province of provinces) {
             await page.mouse.move(0,0);
             await page.selectOption('#province-filter',province);
