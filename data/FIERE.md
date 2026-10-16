@@ -34,6 +34,10 @@ Scheda: soltanto bollino e dicitura, rimossi titolo, spiegazioni e pannello
 delle prove; documentazione conservata nei dati. Tooltip con la sola dicitura.
 Cache JS53/catalogo42. Identità e tutti gli altri campi dei 3.972 eventi
 conservati. Test dedicato aggiornato alla presentazione essenziale.
+Pubblicato `23627c1`, Vercel READY `dpl_8UikWgaKQ5a5SB3zUzAVETkg3R63`;
+HTML, JS e catalogo online identici. Build, settori e suite generale su cinque
+schermi/browser passati. Test dedicato locale e online su Chromium computer,
+telefono e WebKit riuscito: bollini, filtri, mappa, URL, tastiera e overflow.
 
 ## Rinomatezza — 16 ottobre 2026
 

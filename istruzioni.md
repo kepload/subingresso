@@ -10,6 +10,9 @@ Martinengo e dieci schede mensili dell'Antico Seriate: Di lunga tradizione.
 Scheda pubblica con solo bollino e dicitura, senza titolo, motivo, fonti
 apribili e avvertenze. Prove conservate nei dati. Cache JS53/catalogo42.
 Preferenza corrente supera la precedente richiesta di spiegazioni in scheda.
+Pubblicato 23627c1, Vercel READY dpl_8UikWgaKQ5a5SB3zUzAVETkg3R63.
+HTML/JS/catalogo online identici. Build, settori, suite generale cinque
+schermi/browser e test dedicato locale/online Chromium/WebKit passati.
 
 Testi fiere, 16 ottobre 2026: titolo pubblico «Quanto è conosciuta»; bollini
 Molto conosciuta / Di lunga tradizione / Nuova / Da valutare. Restano gli ID

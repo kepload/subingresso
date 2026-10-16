@@ -311,6 +311,9 @@ con fonti ed esclusioni in data/fiere-rinomatezza-audit.json e data/FIERE.md.
 Martinengo e dieci schede dell'Antico Seriate ora Di lunga tradizione.
 Prove conservate nei dati, rimosse le spiegazioni dalla scheda pubblica.
 Cache JS53/catalogo42. Le altre modifiche al prodotto restano fuori sessione.
+Pubblicato `23627c1`, Vercel READY; pagina, JS e catalogo online identici.
+Build, settori e suite generale su cinque schermi/browser passati; verifica
+dedicata locale e online su Chromium computer/telefono e WebKit riuscita.
 
 **Preferenza testi, 16 ottobre 2026:** usare «Quanto è conosciuta», con bollini
 «Molto conosciuta», «Di lunga tradizione», «Nuova» e «Da valutare». Evitare
