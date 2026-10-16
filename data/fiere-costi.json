@@ -1,13 +1,21 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-15",
+  "checkedAt": "2026-10-16",
   "research": {
     "catalogEventsScreened": 3447,
     "catalogSourceRequests": 1870,
     "relatedSourceRequests": 453,
     "retrievableTexts": 2182,
     "method": "Ricognizione delle fonti e dei collegamenti di partecipazione di tutte le schede; controllo automatico dei candidati seguito da lettura e selezione editoriale. Le note già presenti conservano la data del precedente audit. I recuperi HTTP non equivalgono a documenti tutti letti integralmente.",
-    "limitations": "Ricerca delle fonti pubbliche reperibili, non censimento esaustivo dei prezzi. Errori HTTP, immagini, moduli dinamici e preventivi privati possono lasciare importi non verificati. Gratuità visitatori, bolli, cauzioni e tariffe di altre categorie non sono prezzi complessivi del banco."
+    "limitations": "Ricerca delle fonti pubbliche reperibili, non censimento esaustivo dei prezzi. Errori HTTP, immagini, moduli dinamici e preventivi privati possono lasciare importi non verificati. Gratuità visitatori, bolli, cauzioni e tariffe di altre categorie non sono prezzi complessivi del banco.",
+    "screenedAt": "2026-10-15",
+    "targetedUpdates": [
+      {
+        "checkedAt": "2026-10-16",
+        "eventId": "lombardia-pisogne-mostra-mercato-di-pisogne",
+        "method": "Sito organizzatore renderizzato e modulo Google pubblico; PDF del regolamento collegato da entrambi, scaricato e letto anche visivamente. Il modulo etichetta il documento XXVII, ma il PDF è XXVIII edizione e contiene le date 12–16 agosto 2026."
+      }
+    ]
   },
   "events": {
     "calabria-amantea-fiera-di-ognissanti": {
@@ -621,6 +629,15 @@
       "sourceUrl": "https://www.monzacon.com/downloads/Modulo_Espositore_MonzaCon_SE26.pdf",
       "checkedAt": "2026-10-10",
       "review": "existing-curated-note"
+    },
+    "lombardia-pisogne-mostra-mercato-di-pisogne": {
+      "label": "Artigiani/hobbisti: esterno 275 € ricevuta / 305 € fattura",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Intera Mostra Mercato del 12–16 agosto 2026, con presenza per tutte le cinque serate. Artigiani e hobbisti: spazio all’aperto, quota base 250 €, totale 275 € con ricevuta (+10% spese amministrative) oppure 305 € con fattura (+IVA 22%); spazio al chiuso, base 350 €, totale 385 € con ricevuta o 427 € con fattura. Vendita alimentare senza somministrazione all’aperto: base 300 € + IVA 22%, totale con fattura 366 €. Il regolamento distingue ricevuta e fattura secondo la forma fiscale ammessa: confermare il proprio caso con l’organizzatore. Postazione esterna 3×3 m e corrente fino a 1 kW comprese nella quota; gazebo bianco e allestimento propri. Somministrazione: modulo e condizioni separati da richiedere al comitato. Acconto 50% entro sette giorni dalla conferma e saldo restante entro il termine di 72 ore dall’inizio indicato nel regolamento; non sommare l’acconto al totale.",
+      "sourceUrl": "https://drive.google.com/file/d/1DpcmBoSrxO096Ldn9WmP9lSbYhj4w2hJ/view",
+      "checkedAt": "2026-10-16",
+      "review": "live-source-review"
     },
     "lombardia-pizzighettone-buongusto": {
       "label": "Esterno 20 m² da 150 € + IVA per weekend",

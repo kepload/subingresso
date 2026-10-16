@@ -1,5 +1,17 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Pisogne costi, 16 ottobre 2026: recuperato regolamento XXVIII Mostra Mercato
+12–16 agosto dal link Google Drive nel modulo e nel sito Canva renderizzato.
+Era sfuggito al controllo delle sole ancore HTML; per siti Canva/dinamici e
+moduli iscrizione seguire anche link nei dati incorporati o nel contenuto
+renderizzato. Etichetta modulo XXVII errata, PDF attuale XXVIII/2026 verificato.
+Artigiani/hobbisti esterno 250 base -> 275 ricevuta / 305 fattura; interno
+350 -> 385/427. Alimentari senza somministrazione 300+IVA22%=366 con fattura.
+Quota intere cinque serate, esterno3×3 e 1kW compresi, allestimento proprio.
+Overlay aggiornato: 127 sintesi/147 note, cache JS44/catalogo36; altri dati
+conservati. Fonte, condizioni e limiti in data/FIERE.md, evidenze in
+Documents/ricerca-costi-pisogne-20261016. Nessun invio o contatto a terzi.
+
 Costi fiere, 15 ottobre 2026: archivio editoriale data/fiere-costi.json,
 applicato da build-fiere.py dopo gli audit provinciali. 126 sintesi con
 fonte/periodo/data e tipo di costo; 40 nuove note, totale note 146 su 3.447.
