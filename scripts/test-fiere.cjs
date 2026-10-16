@@ -836,7 +836,7 @@ async function run(engine,name,viewport,base) {
         const listBox = await page.locator('.fiere-list-panel').boundingBox();
         const headerBox = await page.locator('header').boundingBox();
         assert(Math.abs(filtersBox.y - (headerBox.y + headerBox.height) - 16) < 2,'Filters directly below the header');
-        assert(mapBox.y < viewport.height,'Map starts in the first screen');
+        assert(mapBox.y < viewport.height,'Map starts in the first screen (top=' + mapBox.y + ', height=' + viewport.height + ')');
         if (viewport.width > 720) {
             assert(Math.abs(mapBox.y - filtersBox.y) < 2,'Map beside the primary filters');
             assert(mapBox.x > filtersBox.x + filtersBox.width,'Map to the right');
@@ -900,7 +900,7 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('.fiere-province.is-preview').getAttribute('data-province'),await otherCard.nth(otherIndex).getAttribute('data-province'));
         await page.mouse.move(0,0);
         assert.equal(await page.locator('.fiere-province.is-preview').count(),0);
-        await firstCard.locator('button').focus();
+        await firstCard.locator('.fiere-card-button').focus();
         assert.equal(await page.locator('.fiere-province.is-preview').getAttribute('data-province'),previewProvince);
         await page.locator('#province-filter').focus();
         assert.equal(await page.locator('.fiere-province.is-preview').count(),0);
@@ -938,7 +938,7 @@ async function run(engine,name,viewport,base) {
             await page.mouse.move(0,0);
             assert.equal(await highlightedMarker.count(),0);
             assert.equal(await page.locator('.fiere-province.is-selected').getAttribute('data-province'),province);
-            await provincialCard.locator('button').focus();
+            await provincialCard.locator('.fiere-card-button').focus();
             assert.equal(await highlightedMarker.count(),1);
             await page.locator('#map-zoom-in').evaluate(b => b.click());
             assert.equal(await highlightedMarker.count(),1,'Zoom preserves the preview on the new marker group');
@@ -1198,11 +1198,11 @@ async function run(engine,name,viewport,base) {
     await new Promise(resolve => server.listen(0,'127.0.0.1',resolve));
     const base = 'http://127.0.0.1:' + server.address().port;
     try {
-        await run(playwright.chromium,'chromium',{width:1440,height:1100},base);
-        await run(playwright.chromium,'chromium',{width:820,height:1000},base);
-        await run(playwright.chromium,'chromium',{width:390,height:844},base);
-        await run(playwright.webkit,'webkit',{width:390,height:844},base);
-        await run(playwright.chromium,'chromium',{width:320,height:800},base);
+        const cases = [['chromium',1440,1100],['chromium',820,1000],['chromium',390,844],['webkit',390,844],['chromium',320,800]];
+        for (const [engine,width,height] of cases) {
+            if (process.env.FIERE_TEST_WIDTH && width !== Number(process.env.FIERE_TEST_WIDTH)) continue;
+            await run(playwright[engine],engine,{width,height},base);
+        }
         console.log('Catalogue: ' + events.length + ' unique events, 20 regions; editions, participation, sources and coordinates validated.');
     } finally { await new Promise(resolve => server.close(resolve)); }
 })().catch(error => {console.error(error);process.exitCode=1;server.close();});

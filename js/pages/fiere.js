@@ -3,6 +3,22 @@
     const MONTHS = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
     const CATEGORIES = { tradizionale: 'Fiera tradizionale', artigianato: 'Artigianato e mostre mercato', sagra: 'Sagra o festa', espositiva: 'Fiera espositiva', mercatino: 'Mercatino' };
     const SECTORS = { alimentare: 'Alimentare', 'non-alimentare': 'Non alimentare', antiquariato: 'Antiquariato e vintage', artigianato: 'Artigianato' };
+    const REPUTATIONS = {
+        rinomata: { label: 'Rinomata', icon: '★', description: 'Richiamo ampio o oltre il territorio locale documentato da fonti e dati.' },
+        consolidata: { label: 'Consolidata', icon: '◆', description: 'Almeno 10 edizioni o 10 anni di storia documentati; richiamo più ampio da accertare.' },
+        recente: { label: 'Recente', icon: '✦', description: 'Prima, seconda o terza edizione documentata. Richiamo ancora da valutare.' },
+        unknown: { label: 'Da valutare', icon: '?', description: 'Informazioni insufficienti per assegnare un livello. Non significa che la fiera sia nuova o poco frequentata.' }
+    };
+    // Explicit editorial evidence only: names, cities and missing data never imply reputation.
+    function reputationLevel(event, today = todayInRome()) {
+        const rating = event.reputation;
+        if (!rating || !Object.hasOwn(REPUTATIONS, rating.level) || rating.level === 'unknown'
+            || !/^\d{4}-\d{2}-\d{2}$/.test(rating.reviewAfter || '') || rating.reviewAfter < today
+            || !/^\d{4}-\d{2}-\d{2}$/.test(rating.checkedAt || '') || rating.checkedAt > today
+            || typeof rating.reason !== 'string' || !rating.reason || !Array.isArray(rating.evidence) || !rating.evidence.length
+            || !rating.evidence.every(item => item && typeof item.label === 'string' && item.label && /^https:\/\//.test(item.url))) return 'unknown';
+        return rating.level;
+    }
     // Territorial grouping includes provinces without catalogue events.
     const REGION_PROVINCES = {
         "Abruzzo": ["Chieti", "L'Aquila", "Pescara", "Teramo"],
@@ -36,8 +52,10 @@
     }
     function filterEvents(events, state, ignoreMonths) {
         const words = normalize(state.query).split(' ').filter(Boolean);
+        const today = state.reputation ? todayInRome() : null;
         return events.filter(event => (!state.region || event.region === state.region) && (!state.province || event.province === state.province) && (!state.category || event.category === state.category)
             && (!state.sector || event.merchandiseSectors.includes(state.sector))
+            && (!state.reputation || reputationLevel(event, today) === state.reputation)
             && (ignoreMonths || !state.months.length || event.months.some(month => state.months.includes(month)))
             && words.every(word => normalize([event.name, event.city, event.region, event.province, event.venue, event.sectors].join(' ')).includes(word)));
     }
@@ -121,12 +139,12 @@
             || a.event.name.localeCompare(b.event.name, 'it') || a.event.city.localeCompare(b.event.city, 'it'));
         return ranked.map(item => item.event);
     }
-    const api = { MONTHS, CATEGORIES, SECTORS, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
+    const api = { MONTHS, CATEGORIES, SECTORS, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
     const $ = id => document.getElementById(id);
-    const state = { events: [], provinces: null, region: '', province: '', category: '', sector: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
+    const state = { events: [], provinces: null, region: '', province: '', category: '', sector: '', reputation: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
     let searchTimer, mapMarkerTimer, hoveredCard, focusedCard;
     function node(tag, className, text) {
         const element = document.createElement(tag);
@@ -138,6 +156,21 @@
         const element = document.createElementNS('http://www.w3.org/2000/svg', tag);
         for (const [key, value] of Object.entries(attrs || {})) element.setAttribute(key, value);
         return element;
+    }
+    function reputationBadge(event, clickable = false) {
+        const level = reputationLevel(event), info = REPUTATIONS[level];
+        const badge = node(clickable ? 'button' : 'span', 'fiere-reputation');
+        badge.dataset.reputation = level;
+        const icon = node('span', 'fiere-reputation-icon', info.icon);
+        icon.setAttribute('aria-hidden', 'true');
+        badge.append(icon, document.createTextNode(info.label));
+        badge.title = 'Rinomatezza: ' + info.description;
+        if (clickable) {
+            badge.type = 'button';
+            badge.setAttribute('aria-label', 'Rinomatezza: ' + info.label + '. Scopri perché: ' + event.name);
+            badge.addEventListener('click', () => openDetail(event));
+        }
+        return badge;
     }
     function activate(element, callback) {
         element.addEventListener('click', callback);
@@ -154,12 +187,13 @@
     }
     function syncURL() {
         const url = new URL(location.href);
-        for (const key of ['mesi', 'regione', 'provincia', 'tipo', 'settore', 'q']) url.searchParams.delete(key);
+        for (const key of ['mesi', 'regione', 'provincia', 'tipo', 'settore', 'rinomatezza', 'q']) url.searchParams.delete(key);
         if (state.months.length) url.searchParams.set('mesi', state.months.join(','));
         if (state.region) url.searchParams.set('regione', state.region);
         if (state.province) url.searchParams.set('provincia', state.province);
         if (state.category) url.searchParams.set('tipo', state.category);
         if (state.sector) url.searchParams.set('settore', state.sector);
+        if (state.reputation) url.searchParams.set('rinomatezza', state.reputation);
         if (state.query) url.searchParams.set('q', state.query);
         history.replaceState(null, '', url.pathname + url.search + url.hash);
     }
@@ -170,10 +204,12 @@
         state.region = !state.province && Object.hasOwn(REGION_PROVINCES, params.get('regione')) ? params.get('regione') : '';
         state.category = Object.hasOwn(CATEGORIES, params.get('tipo')) ? params.get('tipo') : '';
         state.sector = Object.hasOwn(SECTORS, params.get('settore')) ? params.get('settore') : '';
+        state.reputation = Object.hasOwn(REPUTATIONS, params.get('rinomatezza')) ? params.get('rinomatezza') : '';
         state.query = (params.get('q') || '').slice(0, 100);
         $('province-filter').value = state.province || (state.region ? 'regione:' + state.region : '');
         $('type-filter').value = state.category;
         $('sector-filter').value = state.sector;
+        $('reputation-filter').value = state.reputation;
         $('fair-search').value = state.query;
     }
     function renderMonths() {
@@ -212,7 +248,9 @@
             foot.append(category, button);
             const cost = node('p', 'fiere-card-cost', feeLabel(event));
             cost.dataset.known = String(Boolean(event.pricing));
-            card.append(head, node('p', '', event.city + ' · ' + event.province), node('p', 'fiere-card-period', edition ? editionLabel(edition) : periodLabel(event)), cost, foot);
+            const reputation = node('div', 'fiere-card-reputation');
+            reputation.append(reputationBadge(event, true));
+            card.append(head, reputation, node('p', '', event.city + ' · ' + event.province), node('p', 'fiere-card-period', edition ? editionLabel(edition) : periodLabel(event)), cost, foot);
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
@@ -309,6 +347,7 @@
             const button = node('button', 'fiere-popup-event', event.name + ' ↗');
             button.type = 'button';
             button.append(node('span', '', event.city + ' · ' + periodLabel(event)));
+            button.append(reputationBadge(event));
             button.addEventListener('click', () => openDetail(event));
             fragment.append(button);
         }
@@ -328,6 +367,23 @@
         $('detail-frequency').hidden = !event.frequencyNote;
         $('detail-description').textContent = event.summary || '';
         $('detail-description').hidden = !event.summary;
+        const level = reputationLevel(event), rating = event.reputation;
+        $('detail-reputation-badge').replaceChildren(reputationBadge(event));
+        $('detail-reputation-reason').textContent = level === 'unknown'
+            ? (rating ? 'La valutazione va aggiornata: per ora non assegniamo un livello di rinomatezza.' : REPUTATIONS.unknown.description)
+            : rating.reason;
+        $('detail-reputation-sources').hidden = level === 'unknown';
+        $('detail-reputation-sources').open = false;
+        $('detail-reputation-evidence').replaceChildren();
+        if (level !== 'unknown') {
+            $('detail-reputation-meta').textContent = 'Valutazione editoriale aggiornata il ' + dateLabel(rating.checkedAt);
+            for (const item of rating.evidence) {
+                const li = node('li', '');
+                const link = node('a', '', item.label + ' ↗');
+                link.href = item.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+                li.append(link); $('detail-reputation-evidence').append(li);
+            }
+        }
         const editions = document.createDocumentFragment();
         for (const edition of event.editions || []) {
             const item = node('div', 'fiere-edition');
@@ -378,7 +434,7 @@
     function render() {
         const events = sortEvents(filterEvents(state.events, state));
         renderMonths(); renderList(events); renderMap(events);
-        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '');
+        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (state.reputation ? ' · Rinomatezza: ' + REPUTATIONS[state.reputation].label : '');
         const extraCount = Number(Boolean(state.category)) + Number(Boolean(state.query));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
@@ -393,8 +449,8 @@
     }
     function reset() {
         clearTimeout(searchTimer);
-        Object.assign(state, { region: '', province: '', category: '', sector: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
-        for (const id of ['province-filter', 'type-filter', 'sector-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
+        Object.assign(state, { region: '', province: '', category: '', sector: '', reputation: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
+        for (const id of ['province-filter', 'type-filter', 'sector-filter', 'reputation-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
         changed(false);
     }
     async function fetchJSON(url) {
@@ -411,7 +467,7 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=40');
+            const data = await fetchJSON('/data/fiere.json?v=41');
             if (!Array.isArray(data.provinces) || !data.provinces.length || new Set(data.provinces).size !== data.provinces.length
                 || !data.provinces.every(province => typeof province === 'string' && province) || !Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.province === 'string' && data.provinces.includes(event.province)
@@ -422,6 +478,9 @@
                 && typeof event.source?.url === 'string' && /^https:\/\//.test(event.source.url)
                 && event.participation && Array.isArray(event.editions))) throw new Error('Invalid catalog');
             state.events = data.events;
+            const today = todayInRome();
+            const rated = state.events.filter(event => reputationLevel(event, today) !== 'unknown').length;
+            $('reputation-coverage').textContent = 'Bollino assegnato a ' + rated + ' di ' + state.events.length + ' eventi. Le altre schede sono da valutare; la ricerca è in corso.';
             $('catalog-count').textContent = String(state.events.length);
             $('catalog-info').textContent = data.eventsWithEditionData + ' schede con edizioni documentate · aggiornato il ' + dateLabel(data.catalogUpdatedAt);
             const previous = $('province-filter').value;
@@ -440,7 +499,7 @@
                 }
             }
             if (!state.ready) readURL(); else $('province-filter').value = previous;
-            state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; fitProvince(); render();
+            state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; $('reputation-filter').disabled = false; fitProvince(); render();
         } catch (error) {
             $('catalog-error').hidden = false;
             $('fair-list').setAttribute('aria-busy', 'false');
@@ -542,6 +601,7 @@
         $('province-filter').addEventListener('change', () => { const value = $('province-filter').value; state.region = value.startsWith('regione:') ? value.slice(8) : ''; state.province = state.region ? '' : value; changed(true); });
         $('type-filter').addEventListener('change', () => { state.category = $('type-filter').value; changed(false); });
         $('sector-filter').addEventListener('change', () => { state.sector = $('sector-filter').value; changed(false); });
+        $('reputation-filter').addEventListener('change', () => { state.reputation = $('reputation-filter').value; changed(false); });
         $('fair-search').addEventListener('input', () => {
             state.query = $('fair-search').value;
             clearTimeout(searchTimer); searchTimer = setTimeout(() => changed(false), 100);

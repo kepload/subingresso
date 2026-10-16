@@ -90,7 +90,7 @@ async function run(engine, label, viewport, base) {
             find('Rovereto','Fiera di San Marco'), find('Riva del Garda','FINE Wine Tourism Marketplace Italy')]) {
             await page.locator('#fair-search').fill(e.name);
             const card = page.locator('.fiere-card[data-event-id="' + e.id + '"]');
-            await card.locator('button').click();
+            await card.locator('.fiere-card-button').click();
             assert.equal(await page.locator('#detail-title').textContent(), e.name);
             assert.equal(await page.locator('#detail-location').textContent(), e.city + ' · Trento');
             assert.equal(await page.locator('#detail-source').getAttribute('href'), e.source.url);

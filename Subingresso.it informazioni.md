@@ -299,6 +299,19 @@ In caso di conflitto, usare questo ordine:
 
 # Parte B — Attività, priorità e storico delle fiere
 
+### Rinomatezza delle fiere — richiesta del 16 ottobre 2026
+
+Bollini Rinomata, Consolidata e Recente, con stato neutro Da valutare quando
+mancano prove. Motivo e fonti apribili, filtro dedicato e revisione con scadenza.
+Misura notorietà e storia documentate; compatibilità con il tipo di articolo
+e valutazione commerciale rinviate come richiesto. Prima copertura: 41 schede
+valutate su 3.972 (13 rinomate, 25 consolidate, 3 recenti); le altre 3.931 da
+valutare. Estendere le valutazioni con prove per singolo evento, senza
+scambiare informazioni mancanti per scarsa qualità. Archivio e criteri in
+`data/fiere-rinomatezza.json` e `data/FIERE.md`. Controlli locali passati su
+computer/telefono e WebKit; campi precedenti delle 3.972 schede conservati.
+Pubblicazione e verifica online in corso.
+
 ## Come funziona questa lista e come scegliere le priorità
 
 **Obiettivo:** far avanzare subingresso.it il più possibile nel tempo disponibile, valutando beneficio atteso, rapidità dei risultati e tempo necessario rispetto alle alternative.

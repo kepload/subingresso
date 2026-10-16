@@ -1,5 +1,23 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Rinomatezza fiere, 16 ottobre 2026: bollini editoriali Rinomata / Consolidata /
+Recente; senza prove sufficienti o revisione scaduta, Da valutare. Archivio per
+ID stabile `data/fiere-rinomatezza.json`, applicato e validato da build-fiere.py
+dopo gli audit provinciali. Rinomata richiede prova esplicita di richiamo ampio
+o sovralocale; Consolidata almeno 10 edizioni o 10 anni documentati; Recente
+prime tre edizioni, con anno e revisione breve. Nessuna deduzione dal nome,
+categoria, città, prezzo, numero di fonti o dati assenti. Copertura iniziale
+parziale: 41 valutazioni (13 rinomate, 25 consolidate, 3 recenti) su 3.972 eventi.
+Card, popup mappa e dettaglio mostrano il livello; nel dettaglio motivo e fonti
+apribili. Filtro visibile, combinabile e condivisibile via `rinomatezza` in URL.
+Scadenza editoriale verificata anche nel browser; non promette incassi né
+compatibilità con la merce. Test `scripts/test-fiere-reputation.cjs`, con
+PLAYWRIGHT_MODULE e FIERE_TEST_BASE_URL opzionale. Cache JS50/catalogo41/CSS14.
+Build, settori, conservazione integrale dei campi precedenti, suite generale
+su cinque formati/browser e test dedicato Chromium/WebKit passati localmente.
+Schermi da 320 px: filtri compatti per mantenere la mappa nella prima schermata.
+Pubblicazione e verifica online da registrare a conclusione.
+
 Roma, 16 ottobre 2026: ricerca PARZIALE, da non spuntare. 99 schede in 43 comuni
 (prima tre), ricerca nominale nei 121 comuni e confronto delle 31 righe Lazio.
 Audit/esclusioni/limiti `data/fiere-roma.json` e `data/FIERE.md`; archivio esterno

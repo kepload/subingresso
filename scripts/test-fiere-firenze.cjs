@@ -84,7 +84,7 @@ async function browserTest(engine,label,viewport,base){
     await page.locator('#extra-filters > summary').click();
     for(const name of selected){
       const e=find(name);await page.locator('#fair-search').fill(name);
-      await page.locator('.fiere-card[data-event-id="'+e.id+'"] button').click();
+      await page.locator('.fiere-card[data-event-id="'+e.id+'"] .fiere-card-button').click();
       assert.equal(await page.locator('#detail-title').textContent(),name);
       assert.equal(await page.locator('#detail-location').textContent(),e.city+' · Firenze');
       assert.equal(await page.locator('#detail-source').getAttribute('href'),e.source.url);

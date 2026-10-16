@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
     <link rel="stylesheet" href="/css/tailwind.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/fiere.css?v=13">
+    <link rel="stylesheet" href="/css/fiere.css?v=14">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -41,6 +41,19 @@
             <label for="sector-filter"><i class="fa-solid fa-store" aria-hidden="true"></i> Cosa vendi</label>
             <select id="sector-filter" aria-describedby="sector-help" disabled><option value="">Tutti i settori</option><option value="alimentare">Alimentare</option><option value="non-alimentare">Non alimentare</option><option value="antiquariato">Antiquariato e vintage</option><option value="artigianato">Artigianato</option></select>
             <p id="sector-help" style="font-size:11px;color:#64748b;line-height:1.6;margin-top:6px">Settori indicati nelle fonti. Le fiere miste compaiono in più categorie.</p>
+        </div>
+        <div class="fiere-place fiere-reputation-control">
+            <label for="reputation-filter"><i class="fa-solid fa-award" aria-hidden="true"></i> Rinomatezza</label>
+            <select id="reputation-filter" aria-describedby="reputation-help" disabled><option value="">Tutti i livelli</option><option value="rinomata">★ Rinomata</option><option value="consolidata">◆ Consolidata</option><option value="recente">✦ Recente</option><option value="unknown">? Da valutare</option></select>
+            <p id="reputation-help" class="fiere-reputation-help">Apri il bollino per vedere motivo e fonti.</p>
+            <details class="fiere-reputation-legend"><summary>Cosa significano i bollini?</summary>
+                <p><strong>★ Rinomata</strong> · Richiamo ampio o oltre il territorio locale, documentato da fonti e dati.</p>
+                <p><strong>◆ Consolidata</strong> · Almeno 10 edizioni o 10 anni di storia documentati; richiamo più ampio da accertare.</p>
+                <p><strong>✦ Recente</strong> · Prima, seconda o terza edizione documentata. Richiamo ancora da valutare.</p>
+                <p><strong>? Da valutare</strong> · Dati insufficienti: non significa nuova o poco frequentata.</p>
+                <p id="reputation-coverage"></p>
+                <p>Valutazione editoriale della notorietà e della storia. Non misura gli incassi né l’idoneità per il tuo articolo. Una fiera storica può avere un pubblico locale; una nuova può già avere grande richiamo.</p>
+            </details>
         </div>
         <details id="extra-filters" class="fiere-extra-filters">
             <summary><span><i class="fa-solid fa-sliders" aria-hidden="true"></i> Altri filtri <span id="extra-filter-count" class="fiere-filter-count" hidden></span></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
@@ -75,6 +88,7 @@
 <dialog id="fair-dialog" class="fiere-dialog" aria-labelledby="detail-title">
     <div class="fiere-dialog-top"><span id="detail-category" class="fiere-tag"></span><button id="close-detail" type="button" aria-label="Chiudi la scheda">×</button></div>
     <h2 id="detail-title"></h2><p id="detail-location"></p><p id="detail-description" hidden></p>
+    <section class="fiere-detail-reputation" aria-labelledby="detail-reputation-title"><h3 id="detail-reputation-title">Rinomatezza</h3><div id="detail-reputation-badge"></div><p id="detail-reputation-reason"></p><details id="detail-reputation-sources"><summary>Fonti e verifica</summary><p id="detail-reputation-meta"></p><ul id="detail-reputation-evidence"></ul></details><p class="fiere-reputation-help">Il bollino descrive notorietà e storia documentate. Incassi e compatibilità con il tuo articolo vanno valutati a parte.</p></section>
     <section class="fiere-detail-info"><h3>Date delle edizioni</h3><div id="detail-editions" class="fiere-editions"></div><p id="detail-editions-empty">La prossima edizione non ha ancora una data pubblicata in questa scheda. Consulta la fonte o contatta l’organizzatore.</p></section>
     <div class="fiere-detail-period"><span>MESI DI RIFERIMENTO</span><strong id="detail-months"></strong><p id="detail-frequency"></p></div>
     <dl id="detail-facts" class="fiere-detail-facts"></dl>
@@ -89,6 +103,6 @@
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/data.js?v=20"></script>
 <script src="/js/auth.js?v=22"></script>
-<script src="/js/pages/fiere.js?v=49"></script>
+<script src="/js/pages/fiere.js?v=50"></script>
 </body>
 </html>

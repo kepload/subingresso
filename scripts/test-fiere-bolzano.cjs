@@ -98,7 +98,7 @@ async function run(engine,label,viewport,base) {
             find('Lagundo','Mercatino di Natale di Lagundo'),find('Merano','Merano Flower Festival'),
             find('Campo Tures','Festival del Formaggio')]) {
             await page.locator('#fair-search').fill(e.name);
-            await page.locator('.fiere-card[data-event-id="' + e.id + '"] button').click();
+            await page.locator('.fiere-card[data-event-id="' + e.id + '"] .fiere-card-button').click();
             assert.equal(await page.locator('#detail-title').textContent(), e.name);
             assert.equal(await page.locator('#detail-location').textContent(), e.city + ' · ' + province);
             assert.equal(await page.locator('#detail-source').getAttribute('href'), e.source.url);

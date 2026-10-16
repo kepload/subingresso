@@ -73,6 +73,34 @@ def write_json(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
 
 
+def validate_reputation(rating):
+    """Fail the build rather than publish an unsupported editorial badge."""
+    assert rating["level"] in {"rinomata", "consolidata", "recente"}
+    checked = date.fromisoformat(rating["checkedAt"])
+    review = date.fromisoformat(rating["reviewAfter"])
+    assert checked <= date.fromisoformat(CATALOG_DATE) < review
+    assert (review - checked).days <= 730
+    assert isinstance(rating["reason"], str) and 20 <= len(rating["reason"]) <= 600
+    assert isinstance(rating["evidence"], list) and rating["evidence"]
+    for item in rating["evidence"]:
+        assert item["kind"] in {"history", "reach", "debut"}
+        assert isinstance(item["label"], str) and 5 <= len(item["label"]) <= 300
+        assert re.match(r"^https://[^/\s]+", item["url"])
+        assert isinstance(item["year"], int) and 1900 <= item["year"] <= checked.year
+    history = [e for e in rating["evidence"] if e["kind"] == "history"
+               and (isinstance(e.get("editionCount"), int) and e["editionCount"] >= 10
+                    or isinstance(e.get("sinceYear"), int) and 1 <= e["sinceYear"] <= e["year"] - 10)]
+    reach = [e for e in rating["evidence"] if e["kind"] == "reach"
+             and e.get("scope") in {"sovralocale", "nazionale", "internazionale"}
+             and e["year"] >= checked.year - 2]
+    debut = [e for e in rating["evidence"] if e["kind"] == "debut"
+             and isinstance(e.get("editionCount"), int) and 1 <= e["editionCount"] <= 3
+             and e["year"] >= checked.year - 1]
+    assert {"rinomata": bool(reach), "consolidata": bool(history), "recente": bool(debut)}[rating["level"]]
+    if rating["level"] == "recente":
+        assert not history and review.year <= max(e["year"] for e in debut) + 1
+
+
 def build_catalog():
     province_map = json.loads((ROOT / "data/italia-province.json").read_text(encoding="utf-8"))
     sardinia_provinces = {key(name): province for name, province in province_map["sardiniaMunicipalities"].items()}
@@ -140,6 +168,11 @@ def build_catalog():
     fee_research = json.loads((ROOT / "data/fiere-costi.json").read_text(encoding="utf-8"))
     fees = fee_research["events"]
     assert fee_research["checkedAt"] <= CATALOG_DATE
+    reputation_research = json.loads((ROOT / "data/fiere-rinomatezza.json").read_text(encoding="utf-8"))
+    reputations = reputation_research["events"]
+    assert reputation_research["checkedAt"] <= CATALOG_DATE
+    for rating in reputations.values():
+        validate_reputation(rating)
     for row in combined:
         city = locations.get((key(row["city"]), row["region"]))
         if city is None:
@@ -185,8 +218,13 @@ def build_catalog():
             assert pricing["period"] is None or re.fullmatch(r"20\d{2}(?:/20\d{2})?", pricing["period"])
             event["pricing"] = pricing
             event["participation"] = dict(event["participation"], costs=pricing["details"])
+        # Keep ratings separate from provincial source imports; no keyword scoring.
+        event.pop("reputation", None)
+        if event["id"] in reputations:
+            event["reputation"] = reputations[event["id"]]
         events.append(event)
     assert not (set(fees) - {event["id"] for event in events}), "Costs refer to unknown event IDs"
+    assert not (set(reputations) - {event["id"] for event in events}), "Reputation refers to unknown event IDs"
     counts = Counter(e["region"] for e in events)
     assert len(events) == len({e["id"] for e in events}) and len(events) >= 200
     assert len(counts) == 20

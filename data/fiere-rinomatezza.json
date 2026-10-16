@@ -1,0 +1,663 @@
+{
+  "checkedAt": "2026-10-16",
+  "method": "Valutazioni editoriali motivate per ID stabile. Prove esplicite di richiamo sovralocale, storia o debutto; nessun punteggio da nome, dimensione del comune, categoria, prezzo o assenza di dati. Prima copertura parziale, estendibile evento per evento. Le ricerche provinciali pregresse conservano le proprie date di verifica.",
+  "events": {
+    "lazio-fiumicino-sagra-del-pesce-mercatino-di-prodotti-tipici": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 54ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "54ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://prolocofiumicino.it/",
+          "year": 2026,
+          "editionCount": 54
+        }
+      ]
+    },
+    "lazio-grottaferrata-fiera-nazionale-dell-artigianato-e-dell-enogastronomia": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 426ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "426ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.fieradigrottaferrata.it/",
+          "year": 2026,
+          "editionCount": 426
+        }
+      ]
+    },
+    "lazio-ladispoli-sagra-del-carciofo-romanesco": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 73ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "73ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.prolocoladispoliaps.it/sagra-del-carciofo-romanesco/",
+          "year": 2026,
+          "editionCount": 73
+        }
+      ]
+    },
+    "lazio-torrita-tiberina-fiera-del-ponte": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 121ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "121ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://comune.torritatiberina.rm.it/it/news/2038825",
+          "year": 2026,
+          "editionCount": 121
+        }
+      ]
+    },
+    "liguria-andora-xii-edizione-fiera-buona-lettura-festival-ag-noir": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 12ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "12ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.regione.liguria.it/component/publiccompetitions/document/54277:fiere-liguria.html",
+          "year": 2026,
+          "editionCount": 12
+        }
+      ]
+    },
+    "liguria-busalla-festa-delle-rose-2026-xxiv-edizione": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 24ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "24ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.regione.liguria.it/component/publiccompetitions/document/54277:fiere-liguria.html",
+          "year": 2026,
+          "editionCount": 24
+        }
+      ]
+    },
+    "liguria-busalla-mercatini-di-natale-xii-edizione": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 12ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "12ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.regione.liguria.it/component/publiccompetitions/document/54277:fiere-liguria.html",
+          "year": 2026,
+          "editionCount": 12
+        }
+      ]
+    },
+    "liguria-diano-marina-aromatica-profumi-e-sapori-della-riviera-ligure-13-edizione": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 13ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "13ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.regione.liguria.it/component/publiccompetitions/document/54277:fiere-liguria.html",
+          "year": 2026,
+          "editionCount": 13
+        }
+      ]
+    },
+    "liguria-genova-expo-valpolcevera-27-edizione": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 27ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "27ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.regione.liguria.it/component/publiccompetitions/document/54277:fiere-liguria.html",
+          "year": 2026,
+          "editionCount": 27
+        }
+      ]
+    },
+    "liguria-genova-fiera-di-sant-agata": {
+      "level": "rinomata",
+      "reason": "Il Comune la descrive fra le fiere più rilevanti del Nord Italia e documenta oltre 550 bancarelle nell’edizione 2026. È un riscontro di richiamo sovralocale, non una previsione di vendita.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Comune di Genova, 2026: rilievo nel Nord Italia e oltre 550 bancarelle.",
+          "url": "https://www.comune.genova.it/vivere-il-comune/eventi/eventi-sociali/fiera-di-santagata",
+          "year": 2026,
+          "scope": "sovralocale"
+        }
+      ]
+    },
+    "liguria-genova-tipicamente-zena-edizione-inaugurale": {
+      "level": "recente",
+      "reason": "Il calendario regionale 2026 presenta la manifestazione come edizione inaugurale. Il richiamo del pubblico deve ancora essere valutato.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Regione Liguria, calendario 2026: edizione inaugurale.",
+          "url": "https://www.regione.liguria.it/component/publiccompetitions/document/54277:fiere-liguria.html",
+          "year": 2026,
+          "editionCount": 1
+        }
+      ]
+    },
+    "liguria-la-spezia-fiera-di-san-giuseppe": {
+      "level": "rinomata",
+      "reason": "Il Comune documenta nel 2026 oltre 600 banchi e visitatori da tutta la Liguria e dalle regioni vicine. Il richiamo sovralocale è esplicito nella fonte istituzionale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Comune della Spezia, 2026: oltre 600 banchi e visitatori anche dalle regioni vicine.",
+          "url": "https://www.comune.laspezia.it/novita/comunicati/fiera-di-san-giuseppe-2026",
+          "year": 2026,
+          "scope": "sovralocale"
+        }
+      ]
+    },
+    "liguria-vendone-48a-edizione-della-tradizionale-festa-della-montagna": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 48ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "48ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.regione.liguria.it/component/publiccompetitions/document/54277:fiere-liguria.html",
+          "year": 2026,
+          "editionCount": 48
+        }
+      ]
+    },
+    "liguria-vessalico-fiera-dell-aglio-di-vessalico-dal-1760": {
+      "level": "consolidata",
+      "reason": "Il calendario regionale riporta l’origine nel 1760. È una tradizione documentata; l’antichità non dimostra da sola grande affluenza.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Regione Liguria: Fiera dell’aglio di Vessalico, dal 1760.",
+          "url": "https://www.regione.liguria.it/component/publiccompetitions/document/54277:fiere-liguria.html",
+          "year": 2026,
+          "sinceYear": 1760
+        }
+      ]
+    },
+    "lombardia-besana-in-brianza-23-edizione-mercatini-di-natale-2026": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 23ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "23ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.procedimenti.servizirl.it/sagre/public/programma/26347",
+          "year": 2026,
+          "editionCount": 23
+        }
+      ]
+    },
+    "lombardia-brescia-fiera-dei-santi-faustino-e-giovita": {
+      "level": "rinomata",
+      "reason": "La cronaca locale riporta oltre 200.000 presenze nell’edizione 2026; il Comune documenta un organico di 602 posteggi. L’affluenza è riportata dalla stampa, non certificata da Subingresso.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "ÈliveBrescia TV, 15 febbraio 2026: oltre 200.000 presenze riportate dalla cronaca.",
+          "url": "https://www.elivebrescia.tv/san-faustino-brescia-bancarelle-600-tirapicio/",
+          "year": 2026,
+          "scope": "sovralocale"
+        },
+        {
+          "kind": "reach",
+          "label": "Comune di Brescia: organico della fiera di 602 posteggi.",
+          "url": "https://www.comune.brescia.it/it/servizi/partecipazione-alla-fiera-dei-ss-faustino-e-giovita",
+          "year": 2026,
+          "scope": "sovralocale"
+        }
+      ]
+    },
+    "lombardia-caselle-landi-fiera-autunnale-di-merci-uve-bestiame-commercio-e-artigianato": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 161ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "161ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.comune.casellelandi.lo.it/it-it/download/scheda-di-adesione-479561-4-1468-8f1d8db382c63023ab7b91db9b4b878b",
+          "year": 2026,
+          "editionCount": 161
+        }
+      ]
+    },
+    "lombardia-codogno-fiera-autunnale-di-codogno": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 235ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "235ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://comune.codogno.lo.it/edizioni-fiera-autunnale/fiera-edizione-2026/",
+          "year": 2026,
+          "editionCount": 235
+        }
+      ]
+    },
+    "lombardia-cremona-festa-del-torrone": {
+      "level": "rinomata",
+      "reason": "Nel bilancio 2025 l’organizzatore documenta il posizionamento della manifestazione fra gli eventi nazionali. Il richiamo è una valutazione qualitativa supportata dal comunicato; non attribuiamo alla scheda cifre di affluenza non verificate.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Organizzazione, consuntivo 2025: attrattività e posizionamento fra gli eventi nazionali.",
+          "url": "https://www.festadeltorrone.com/_files/ugd/35a2ed_b6b8bdf5b87d4101bd5dbe684e5e6685.pdf",
+          "year": 2025,
+          "scope": "nazionale"
+        }
+      ]
+    },
+    "lombardia-inveruno-antica-fiera-di-san-martino": {
+      "level": "consolidata",
+      "reason": "Il Comune documenta la 418ª edizione nel 2025. La lunga storia è accertata; mancano in questa valutazione dati comparabili sul richiamo del pubblico.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Comune di Inveruno: 418ª edizione, programma 2025.",
+          "url": "https://www.comune.inveruno.mi.it/novita/antica-fiera-di-san-martino-418-edizione/",
+          "year": 2025,
+          "editionCount": 418
+        }
+      ]
+    },
+    "lombardia-lodi-le-forme-del-gusto-mostra-mercato-agroalimentare": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 14ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "14ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://leformedelgusto.it/iscrizioni-14-edizione/",
+          "year": 2026,
+          "editionCount": 14
+        }
+      ]
+    },
+    "lombardia-milano-oh-bej-oh-bej": {
+      "level": "rinomata",
+      "reason": "Il portale turistico ufficiale di Milano presenta la fiera 2025 come un appuntamento per milanesi e turisti, con cinque secoli di tradizione. La valutazione del richiamo turistico è qualitativa: non disponiamo qui di conteggi certificati del pubblico.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Milano & Partners: storia della tradizione degli Oh Bej! Oh Bej!, scheda 2025.",
+          "url": "https://www.milanoandpartners.com/en/whats-on/all-events/oh-bej-oh-bej-christmas-market",
+          "year": 2025,
+          "sinceYear": 1510
+        },
+        {
+          "kind": "reach",
+          "label": "YesMilano, scheda 2025: richiamo per milanesi e turisti.",
+          "url": "https://www.yesmilano.it/eventi/tutti-gli-eventi/fiera-oh-bej-oh-bej",
+          "year": 2025,
+          "scope": "sovralocale"
+        }
+      ]
+    },
+    "lombardia-mozzate-fiera-dei-libri-e-degli-scrittori-indipendenti": {
+      "level": "recente",
+      "reason": "Il Comune documenta la seconda edizione nel 2025. È una manifestazione recente; il livello non è un giudizio negativo sulla qualità e non conferma una nuova edizione.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2026-12-31",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Comune di Mozzate: seconda edizione del 26 ottobre 2025.",
+          "url": "https://www.comune.mozzate.co.it/novita/notizie/novita_85.html",
+          "year": 2025,
+          "editionCount": 2
+        }
+      ]
+    },
+    "lombardia-pomponesco-georgica-mercatino-di-montecitorio-al-lido-po": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 12ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "12ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.georgica.it/xii-edizione-2026/",
+          "year": 2026,
+          "editionCount": 12
+        }
+      ]
+    },
+    "lombardia-primaluna-fiera-della-luna": {
+      "level": "recente",
+      "reason": "Prima edizione documentata nel giugno 2026 dalla cronaca locale, con dichiarazioni del parroco organizzatore. È un debutto dedicato ai produttori locali; affluenza non accertata.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "debut",
+          "label": "Leccoonline: prima Fiera della Luna, intervista all’organizzatore, 28 giugno 2026.",
+          "url": "https://test.leccoonline.com/notizie/97724/primaluna-fiera-della-luna-banchi-con-prodotti-a-km-0",
+          "year": 2026,
+          "editionCount": 1
+        }
+      ]
+    },
+    "lombardia-rho-artigiano-in-fiera": {
+      "level": "rinomata",
+      "reason": "La Regione Sardegna documenta per la manifestazione 2025 oltre un milione di visitatori e 2.500 espositori da 90 Paesi. Il dato riguarda il salone complessivo e non i risultati di ogni stand.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Regione Sardegna, 2025: oltre un milione di visitatori, espositori da 90 Paesi.",
+          "url": "https://www.regione.sardegna.it/notizie/artigiano-in-fiera-a-milano-l-assessore-cuccureddu-taglia-il-nastro",
+          "year": 2025,
+          "scope": "internazionale"
+        }
+      ]
+    },
+    "lombardia-volta-mantovana-mostra-nazionale-dei-vini-passiti-e-da-meditazione": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 23ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "23ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.mostravinipassiti.it/",
+          "year": 2026,
+          "editionCount": 23
+        }
+      ]
+    },
+    "piemonte-alba-fiera-internazionale-del-tartufo-bianco-d-alba": {
+      "level": "rinomata",
+      "reason": "L’Ente Fiera riporta per il 2025 circa 90.000 ingressi al Mercato Mondiale del Tartufo e visitatori da oltre 70 Paesi. Non sono tutti ingressi di ambulanti né una misura delle vendite dei singoli banchi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Ente Fiera di Alba, consuntivo 2025: 90.000 ingressi al Mercato e pubblico da oltre 70 Paesi.",
+          "url": "https://it.linkedin.com/posts/ente-fiera-di-alba_tartufobiancoalba-langhe-alba-activity-7490685575843430400-TMvW",
+          "year": 2025,
+          "scope": "internazionale"
+        }
+      ]
+    },
+    "piemonte-carmagnola-fiera-nazionale-del-peperone": {
+      "level": "rinomata",
+      "reason": "Il portale turistico ufficiale presenta la 76ª edizione del 2025 come la più grande manifestazione italiana dedicata a un prodotto ortofrutticolo. Il richiamo è documentato nell’ambito enogastronomico.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Turismo Torino, 2025: rilievo nazionale nel settore ortofrutticolo.",
+          "url": "https://turismotorino.org/it/visita/eventi/76-fiera-nazionale-del-peperone-di-carmagnola",
+          "year": 2025,
+          "scope": "nazionale"
+        },
+        {
+          "kind": "history",
+          "label": "Turismo Torino: 76ª edizione nel 2025.",
+          "url": "https://turismotorino.org/it/visita/eventi/76-fiera-nazionale-del-peperone-di-carmagnola",
+          "year": 2025,
+          "editionCount": 76
+        }
+      ]
+    },
+    "piemonte-cuneo-fiera-nazionale-del-marrone": {
+      "level": "rinomata",
+      "reason": "Il Comune descrive la 26ª edizione del 2025 fra le più importanti rassegne enogastronomiche italiane. La valutazione riguarda la fiera, non dimostra lo stesso pubblico per i mercati straordinari collegati.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Comune di Cuneo: rilievo fra le rassegne enogastronomiche italiane, 2025.",
+          "url": "https://www.comune.cuneo.it/vivere-il-comune/eventi/fiera-nazionale-del-marrone/",
+          "year": 2025,
+          "scope": "nazionale"
+        },
+        {
+          "kind": "history",
+          "label": "Comune di Cuneo: 26ª edizione nel 2025.",
+          "url": "https://www.comune.cuneo.it/vivere-il-comune/eventi/fiera-nazionale-del-marrone/",
+          "year": 2025,
+          "editionCount": 26
+        }
+      ]
+    },
+    "piemonte-torino-balon-del-sabato": {
+      "level": "consolidata",
+      "reason": "L’associazione organizzatrice documenta il Balon del Sabato dal 1857. È un mercato storico; il richiamo attuale oltre il territorio locale richiede ulteriori dati.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Associazione Balon: mercato del sabato dal 1857.",
+          "url": "https://www.balon.it/en/best-flea-market-in-turin-balon-association/",
+          "year": 2026,
+          "sinceYear": 1857
+        }
+      ]
+    },
+    "piemonte-torino-gran-balon": {
+      "level": "consolidata",
+      "reason": "Mercato dell’antiquariato attivo dal 1985, con oltre 300 banchi indicati dal portale turistico. Storia consolidata; il numero di banchi non misura da solo il pubblico o gli incassi.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Turismo Torino: Gran Balôn dal 1985, oltre 300 banchi.",
+          "url": "https://turismotorino.org/it/visita/eventi/gran-balon/",
+          "year": 2026,
+          "sinceYear": 1985
+        }
+      ]
+    },
+    "toscana-arezzo-fiera-antiquaria": {
+      "level": "rinomata",
+      "reason": "Dal 1968, è descritta dal portale turistico ufficiale come la più antica e grande mostra mercato antiquaria all’aperto d’Italia, con appassionati da tutto il mondo. Il richiamo è documentato nel suo settore.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Organizzazione: Fiera Antiquaria nata il 2 giugno 1968.",
+          "url": "https://fieraantiquaria.org/storia/",
+          "year": 2026,
+          "sinceYear": 1968
+        },
+        {
+          "kind": "reach",
+          "label": "Discover Arezzo: dimensione nazionale e visitatori internazionali.",
+          "url": "https://www.discoverarezzo.com/en/events/arezzo-antiques-fair/",
+          "year": 2026,
+          "scope": "internazionale"
+        }
+      ]
+    },
+    "toscana-figline-e-incisa-valdarno-autumnia": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 27ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "27ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.autumnia.it/cose-autumnia/",
+          "year": 2026,
+          "editionCount": 27
+        }
+      ]
+    },
+    "toscana-firenze-rionalissima": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 40ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "40ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.comune.firenze.it/system/files/attachments/avviso_pubblico_rionalissima_2026.pdf",
+          "year": 2026,
+          "editionCount": 40
+        }
+      ]
+    },
+    "trentino-alto-adige-brunico-mercato-di-stegona": {
+      "level": "rinomata",
+      "reason": "Il Comune di Brunico descrive il mercato autunnale di Stegona come il più grande del Tirolo. Il riferimento è al mercato di ottobre, non agli altri mercati annuali della località.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Comune di Brunico: mercato di ottobre, il più grande del Tirolo.",
+          "url": "https://www.gemeinde.bruneck.bz.it/it/Vivere_a_Brunico/Luoghi/Uffici_istituzioni/Stegona",
+          "year": 2026,
+          "scope": "sovralocale"
+        }
+      ]
+    },
+    "trentino-alto-adige-caderzone-terme-festa-dell-agricoltura-mercatini": {
+      "level": "consolidata",
+      "reason": "La ricerca provinciale documenta la trentesima edizione nel 2026. L’anzianità è accertata; il richiamo oltre il territorio locale resta da approfondire.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Fonte della scheda provinciale: trentesima edizione, 2026.",
+          "url": "https://www.caderzoneterme.it/it/eventi-caderzone/festa-dell-agricoltura",
+          "year": 2026,
+          "editionCount": 30
+        }
+      ]
+    },
+    "umbria-perugia-fiera-dei-morti": {
+      "level": "rinomata",
+      "reason": "Il Comune la presenta nel 2025 come la più grande del Centro Italia, con migliaia di visitatori e centinaia di espositori da tutta la penisola. Il richiamo è documentato oltre l’ambito cittadino.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "reach",
+          "label": "Comune di Perugia, 2025: rilievo nel Centro Italia ed espositori da tutta la penisola.",
+          "url": "https://perugiacomunica.comune.perugia.it/fiera-dei-morti-2025-i-provvedimenti-sulla-circolazione",
+          "year": 2025,
+          "scope": "sovralocale"
+        }
+      ]
+    },
+    "valle-d-aosta-aosta-fiera-di-sant-orso": {
+      "level": "rinomata",
+      "reason": "Il regolamento documenta la 1026ª edizione nel 2026; CNA Valle d’Aosta descrive un pubblico italiano e straniero, riportando oltre 150.000 visitatori annui. È un dato dichiarato dall’associazione, non un conteggio certificato da Subingresso.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "Regolamento regionale: 1026ª Fiera di Sant’Orso, 2026.",
+          "url": "https://www.fieradisantorso.it/fiera/info-utili/regolamento",
+          "year": 2026,
+          "editionCount": 1026
+        },
+        {
+          "kind": "reach",
+          "label": "CNA Valle d’Aosta, gennaio 2026: visitatori italiani e stranieri, affluenza annua dichiarata.",
+          "url": "https://www.cna.vda.it/la-fiera-di-santorso-torna-ad-aosta-il-30-e-il-31-gennaio/",
+          "year": 2026,
+          "scope": "internazionale"
+        }
+      ]
+    },
+    "veneto-resana-sagra-di-san-marco-festa-del-bruscandolo-14-edizione": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 14ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "14ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.regione.veneto.it/documents/10713/13530434/Calendario+Sagre+e+Fiere+08.10.2026.xlsx/ebd944f5-d5ec-4826-bbc4-faa0a6edce98",
+          "year": 2026,
+          "editionCount": 14
+        }
+      ]
+    },
+    "veneto-villaga-festa-dei-bisi-15-edizione": {
+      "level": "consolidata",
+      "reason": "La fonte documenta la 15ª edizione: una manifestazione già consolidata. Non abbiamo ancora dati sufficienti per attribuirle un richiamo oltre il territorio locale.",
+      "checkedAt": "2026-10-16",
+      "reviewAfter": "2027-10-16",
+      "evidence": [
+        {
+          "kind": "history",
+          "label": "15ª edizione documentata nella fonte della scheda (2026).",
+          "url": "https://www.regione.veneto.it/documents/10713/13530434/Calendario+Sagre+e+Fiere+08.10.2026.xlsx/ebd944f5-d5ec-4826-bbc4-faa0a6edce98",
+          "year": 2026,
+          "editionCount": 15
+        }
+      ]
+    }
+  }
+}
