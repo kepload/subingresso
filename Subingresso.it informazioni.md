@@ -301,6 +301,9 @@ In caso di conflitto, usare questo ordine:
 
 ### Anteprime essenziali — richiesta del 16 ottobre 2026
 
+**Bollini, 16 ottobre 2026:** rimossa la sottolineatura a pallini da tutti
+i bollini cliccabili, su richiesta dell'utente. Cache CSS16.
+
 **Preferenza corrente:** mostrare il costo nelle anteprime solo quando è
 disponibile una tariffa; niente «Costo banco da verificare» o «Costi: vedi
 scheda». Nessun bollino «? Da valutare» su card, popup mappa e dettaglio:
