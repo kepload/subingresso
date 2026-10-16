@@ -2,7 +2,7 @@
   "province": "Roma",
   "checkedAt": "2026-10-16",
   "research": {
-    "status": "partial-documental-research",
+    "status": "documental-research-complete-publication-pending",
     "baselineCommit": "151bf40",
     "previousCatalogEvents": 3,
     "method": "Ricerca nominale dei 121 comuni; confronto integrale delle 31 righe del registro fieristico Lazio aggiornato 9 ottobre 2026, fonti comunali, turismo ufficiale, organizzatori e associazioni. Allegati operativi letti e prezzi grafici verificati visivamente. Nessun messaggio, domanda, candidatura o pagamento a terzi.",
@@ -637,9 +637,12 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 14,
         "searchEvidenceSha256": "8a0b23cb9d77fe533bb799f25f7b705f16e42a411324b43852a11254a57df014",
-        "eventsIncluded": 0,
-        "sources": [],
-        "result": "Nessuna scheda con prova commerciale sufficiente selezionata dai riscontri della ricerca. Esito documentale limitato, non certificazione di assenza di fiere."
+        "eventsIncluded": 1,
+        "sources": [
+          "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+          "https://www.comune.lariano.rm.it/novita/notizie/novita_360.html"
+        ],
+        "result": "Pista chiusa: area espositiva provata dalla delibera 129/2026 e convenzione per operatori terzi, rinvio 11 e proroga 14 settembre documentati. Finestra evento, quote e singoli banchi non pubblicati; distinta da Velletri."
       },
       {
         "city": "Licenza",
@@ -1064,7 +1067,7 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 25,
         "searchEvidenceSha256": "477ec66de521891071fbb19018cd26c3cffeaa76e793fdfeb90bc71f299d21c4",
-        "eventsIncluded": 41,
+        "eventsIncluded": 48,
         "sources": [
           "https://www.comune.roma.it/web-resources/cms/documents/CA20250145829AVVISO_PUBBLICO_MERCATINI_DI_NATALE_TRIENNIO_20252027.pdf",
           "https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1560193",
@@ -1083,9 +1086,14 @@
           "https://www.ttsfood.it/event/cinecitta-street-food-08-10-maggio/",
           "https://www.ttsfood.it/event/tiburtina-street-food-01-03-maggio/",
           "https://www.ttsfood.it/event/monteverde-street-food-24-26-aprile/",
-          "https://www.ttsfood.it/event/torresina-street-food-20-22-marzo/"
+          "https://www.ttsfood.it/event/torresina-street-food-20-22-marzo/",
+          "https://www.comune.roma.it/web-resources/cms/documents/QH20250056076ALLEGATO_1BANDO_FESTA_DELLA_BEFANA__20252026.pdf",
+          "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf",
+          "https://www.comune.roma.it/web-resources/cms/documents/CF20250222372Esecutiva_Determina_CF_2869_2025_1.pdf",
+          "https://www.comune.roma.it/web-resources/cms/documents/Esecutiva_Determina_CF_1442_2026.pdf",
+          "https://www.comune.roma.it/web-resources/cms/documents/Esecutiva_Determina_CF_1611_2026.pdf"
         ],
-        "result": "Integrate anche le tappe TTS Food 2026 con operatori esterni selezionati; non equivale a disponibilità corrente o a censimento completo."
+        "result": "Audit precedente conservato; integrazioni e limiti della chiusura in research.closure20261016."
       },
       {
         "city": "Roviano",
@@ -1240,11 +1248,12 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 28,
         "searchEvidenceSha256": "431927e415a6d7fc49414935937bd882895f7ecb01001bf850ebc8060dac9af6",
-        "eventsIncluded": 1,
+        "eventsIncluded": 2,
         "sources": [
-          "https://www.ttsfood.it/event/tolfarte-2026/"
+          "https://www.ttsfood.it/event/tolfarte-2026/",
+          "https://tolfarte.it/artigiani/"
         ],
-        "result": "Integrate anche le tappe TTS Food 2026 con operatori esterni selezionati; non equivale a disponibilità corrente o a censimento completo."
+        "result": "Audit precedente conservato; integrazioni e limiti della chiusura in research.closure20261016."
       },
       {
         "city": "Torrita Tiberina",
@@ -1309,13 +1318,14 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 30,
         "searchEvidenceSha256": "43ee608a59b18a14c9cbb657497b96784f5108ca1a8fa1a9bed80001c3823cf1",
-        "eventsIncluded": 3,
+        "eventsIncluded": 4,
         "sources": [
           "https://www.comune.velletri.rm.it/area_letturaNotizia/591093/pagsistema.html",
           "https://www.comune.velletri.rm.it/area_letturaNotizia/630272/pagsistema.html",
-          "https://www.comune.velletri.rm.it/area_letturaServizio/1518/pagsistema.html"
+          "https://www.comune.velletri.rm.it/area_letturaServizio/1518/pagsistema.html",
+          "https://www.comune.velletri.rm.it/area_letturaNotizia/637579/pagsistema.html"
         ],
-        "result": "Schede con prova commerciale integrate; fonti senza informazioni operative non diventano disponibilità."
+        "result": "Audit precedente conservato; integrazioni e limiti della chiusura in research.closure20261016."
       },
       {
         "city": "Vicovaro",
@@ -1323,9 +1333,11 @@
         "method": "Ricerca nominale web per fiere/mercatini 2026; approfondimento delle fonti reperite, nessuna deduzione di assenza da un risultato negativo.",
         "searchBatch": 30,
         "searchEvidenceSha256": "43ee608a59b18a14c9cbb657497b96784f5108ca1a8fa1a9bed80001c3823cf1",
-        "eventsIncluded": 0,
-        "sources": [],
-        "result": "Nessuna scheda con prova commerciale sufficiente selezionata dai riscontri della ricerca. Esito documentale limitato, non certificazione di assenza di fiere."
+        "eventsIncluded": 1,
+        "sources": [
+          "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GT1RFeUB5PT0-H"
+        ],
+        "result": "Audit precedente conservato; integrazioni e limiti della chiusura in research.closure20261016."
       },
       {
         "city": "Vivaro Romano",
@@ -1614,17 +1626,23 @@
       {
         "city": "Roma",
         "candidate": "Befana Piazza Navona",
-        "decision": "Il post ufficiale 9 ottobre annuncia iniziative culturali/didattiche 1 dicembre–6 gennaio, non una nuova selezione di banchi. La determina QH/464/2025 riguarda graduatorie per sei posteggi 2025/26–2027/28. Calendario commerciale operativo corrente non ricostruito dal solo avviso culturale."
+        "decision": "Inclusa nella chiusura: recuperato bando commerciale 2025/26–2027/28, periodo 2026/27 distinto dalle iniziative culturali. Titolo annuale da riconfermare; nessuna candidatura corrente dedotta.",
+        "decisionAtPreviousStage": "Il post ufficiale 9 ottobre annuncia iniziative culturali/didattiche 1 dicembre–6 gennaio, non una nuova selezione di banchi. La determina QH/464/2025 riguarda graduatorie per sei posteggi 2025/26–2027/28. Calendario commerciale operativo corrente non ricostruito dal solo avviso culturale.",
+        "resolutionReference": "research.closure20261016"
       },
       {
         "city": "Roma",
         "candidate": "Mercati straordinari municipali e Natale VIII/XII",
-        "decision": "Avvisi per gestori o autorizzazioni di aree non trasformati in eventi con sedi/date operative certe né in candidature per i singoli espositori. Recuperare calendari finali e concessioni."
+        "decision": "Quattro aree natalizie III/V integrate soltanto come finestre di programmazione; San Felice/Tor Sapienza da provvedimenti finali. VIII/IX/X/XII/XIV escluse ulteriori schede prive di calendario operativo o allegati leggibili, dopo tentativi documentati in closure20261016.",
+        "decisionAtPreviousStage": "Avvisi per gestori o autorizzazioni di aree non trasformati in eventi con sedi/date operative certe né in candidature per i singoli espositori. Recuperare calendari finali e concessioni.",
+        "resolutionReference": "research.closure20261016"
       },
       {
         "city": "Roma",
         "candidate": "Borghetto Flaminio e Hippie Market",
-        "decision": "Piste da approfondire con fonte dell’organizzatore corrente e condizioni operative, nessun appuntamento proiettato dalla ricorrenza."
+        "decision": "Borghetto: fonte turistica ufficiale letta, dedicato agli amatoriali, giorni da verificare: escluso come occasione professionale documentata. TolfArte artigiani invece ora riscontrato nella pagina ufficiale 2026 e integrato, senza importare altri appuntamenti Hippie senza fonte corrente.",
+        "decisionAtPreviousStage": "Piste da approfondire con fonte dell’organizzatore corrente e condizioni operative, nessun appuntamento proiettato dalla ricorrenza.",
+        "resolutionReference": "research.closure20261016"
       },
       {
         "city": "Anguillara Sabazia",
@@ -1689,7 +1707,9 @@
       {
         "city": "Cave",
         "candidate": "Sagra Castagna",
-        "decision": "Sito dedicato 23–25 ottobre contro 22–25 nel calendario Pro Loco; notizia mercatini ancora 2025. Non trasferiti automaticamente al 2026 i 40 espositori storici. Pubblicati soltanto i due mercatini con date 2026 verificabili."
+        "decision": "Cave: locandina originale 2026 letta visivamente, 23–25 ottobre, stand gastronomici e cantine con orari. Il mercatino artigianale resta documentato solo nella notizia 2025: escluso settore commerciale esterno 2026, senza trasferire i 40 espositori storici.",
+        "decisionAtPreviousStage": "Sito dedicato 23–25 ottobre contro 22–25 nel calendario Pro Loco; notizia mercatini ancora 2025. Non trasferiti automaticamente al 2026 i 40 espositori storici. Pubblicati soltanto i due mercatini con date 2026 verificabili.",
+        "resolutionReference": "research.closure20261016"
       },
       {
         "city": "Civitella San Paolo",
@@ -1724,7 +1744,9 @@
       {
         "city": "Lariano",
         "candidate": "Festa Fungo Porcino 2026",
-        "decision": "Segnalazioni di nuova formula e sede in piazza Sant’Eurosia 10–13 settembre; verificare organizzatore, date commerciali e reale continuità con la precedente fiera, senza accorpare per ipotesi."
+        "decision": "Pista risolta: inclusa area fiera Lariano da delibera 129/2026 e convenzione per operatori terzi; distinta dalla festa dell’associazione a Velletri. Date 11–14 settembre finestra evento, singoli banchi non documentati.",
+        "decisionAtPreviousStage": "Segnalazioni di nuova formula e sede in piazza Sant’Eurosia 10–13 settembre; verificare organizzatore, date commerciali e reale continuità con la precedente fiera, senza accorpare per ipotesi.",
+        "resolutionReference": "research.closure20261016"
       },
       {
         "city": "Marano Equo",
@@ -1739,7 +1761,9 @@
       {
         "city": "Montelanico",
         "candidate": "Sagra Castagna",
-        "decision": "Programma 2026 segnalato 10/11/16/17/18 ottobre; nella pagina Pro Loco i moduli espositivi sono 2025. Non riproposte quote o candidature storiche."
+        "decision": "Cave: locandina originale 2026 letta visivamente, 23–25 ottobre, stand gastronomici e cantine con orari. Il mercatino artigianale resta documentato solo nella notizia 2025: escluso settore commerciale esterno 2026, senza trasferire i 40 espositori storici.",
+        "decisionAtPreviousStage": "Programma 2026 segnalato 10/11/16/17/18 ottobre; nella pagina Pro Loco i moduli espositivi sono 2025. Non riproposte quote o candidature storiche.",
+        "resolutionReference": "research.closure20261016"
       },
       {
         "city": "Monterotondo",
@@ -1764,7 +1788,9 @@
       {
         "city": "Roccagiovine",
         "candidate": "Sagra Castagna",
-        "decision": "Aggregatori distinguono date attese da confermate; manca programma operativo primario corrente, non pubblicata una previsione come data certa."
+        "decision": "Cave: locandina originale 2026 letta visivamente, 23–25 ottobre, stand gastronomici e cantine con orari. Il mercatino artigianale resta documentato solo nella notizia 2025: escluso settore commerciale esterno 2026, senza trasferire i 40 espositori storici.",
+        "decisionAtPreviousStage": "Aggregatori distinguono date attese da confermate; manca programma operativo primario corrente, non pubblicata una previsione come data certa.",
+        "resolutionReference": "research.closure20261016"
       },
       {
         "city": "Roiate",
@@ -1794,7 +1820,9 @@
       {
         "city": "Tolfa",
         "candidate": "TolfArte",
-        "decision": "Area TTS Food ora integrata soltanto 8–9 agosto dal programma dell’organizzatore gastronomico; archivio/riepilogo 7–9 in conflitto. Selezione artigianale e appendice teatrale settembre restano senza calendario commerciale sufficiente, non importate."
+        "decision": "Area alimentare conservata separata; inclusa scheda artigianale dopo lettura Artigianato 2026 con 37 espositori. Solo periodo agosto: giornate del mercatino non dedotte dai giorni degli spettacoli.",
+        "decisionAtPreviousStage": "Area TTS Food ora integrata soltanto 8–9 agosto dal programma dell’organizzatore gastronomico; archivio/riepilogo 7–9 in conflitto. Selezione artigianale e appendice teatrale settembre restano senza calendario commerciale sufficiente, non importate.",
+        "resolutionReference": "research.closure20261016"
       },
       {
         "city": "Vallepietra",
@@ -1804,7 +1832,9 @@
       {
         "city": "Vicovaro",
         "candidate": "Fiera del Perdono",
-        "decision": "Indice segnala avviso 6 luglio 2026, ma contenuto restituito dal sito durante la sessione mostra anche archivio 2023. Non trasferite scadenze storiche né ricostruita la data per consuetudine."
+        "decision": "Inclusa nella chiusura: determina 52/2026, allegati e ordinanza 27/2026 recuperati nell’archivio atti, superando la vecchia pagina news. Vedi closure20261016.",
+        "decisionAtPreviousStage": "Indice segnala avviso 6 luglio 2026, ma contenuto restituito dal sito durante la sessione mostra anche archivio 2023. Non trasferite scadenze storiche né ricostruita la data per consuetudine.",
+        "resolutionReference": "research.closure20261016"
       },
       {
         "city": "Zagarolo",
@@ -3890,44 +3920,24 @@
       }
     ],
     "limits": [
-      "Registri comunali completi e calendari commerciali finali dei 15 Municipi di Roma non recuperati integralmente. Gli avvisi di gestione non dimostrano l’effettiva apertura né una domanda libera per banchi.",
-      "Fonti scaricate con HTTP 200 possono essere soft 404, verifica browser o testo vuoto. Ladispoli bando confermato soft 404 in Chromium; Trevignano superata la verifica e letto in browser; Pro Loco Fiumicino e altre fonti consultate anche tramite strumento web.",
-      "Edizioni 2025 di Carpineto e Santa Lucia conservate storiche. Ricorrenze prive di calendario nominativo restano testuali, senza calcolare automaticamente date 2026 o 2027.",
-      "Allumiere: riepilogo settembre contro testo ottobre; adottato testo con avvertenza. Cave Castagna 22–25 contro 23–25, Lariano nuova formula, Morlupo date non confermate, Vicovaro indice contro archivio: piste escluse finché insufficientemente riscontrate.",
-      "Saloni dal registro regionale conservano date calendar, non confirmed, salvo riscontro prioritario. Blue Planet Economia: bando camerale specifico scaduto 28 settembre, non termine generale di candidatura.",
-      "Bajocco: 1 settembre è saldo bonifico, non termine candidature; percentuale IVA e trattamento acconto da chiarire. Grottaferrata listino grafico controllato pagine 17–18; food esterno e extra da confermare, preadesione con refusi nelle informative.",
-      "Segni: bando 2026 con refuso 2025 nell’art. 5. Date pubblicate riferite alla fiera 24–25, non automaticamente a tutti i banchi della sagra 22–25. Castel San Pietro: quota per giornata, non per tre giornate.",
-      "Quote mancanti non significano gratuite; ingressi visitatori e somme dell’organizzatore distinti dai costi espositivi. Disponibilità, ammissione professionisti/hobbisti, SCIA, annullamenti e meteo vanno sempre verificati."
+      "Ricerca corrente conclusa con limiti documentali, non censimento esaustivo. Rimangono esclusioni per prove insufficienti; nessun impegno a reperire atti non pubblicati o non accessibili.",
+      "Calendari operativi annuali Municipi non recuperati integralmente: soltanto finestre esplicite da bando per aree identificate, contrassegnate come periodi; attività effettiva e disponibilità restano da riconfermare.",
+      "Cave: settore esterno non documentato escluso. Lariano: area espositori provata da delibera e convenzione, solo finestra evento 11?14 settembre, quote Pro Loco ignote. TolfArte: giornate specifiche artigiani non recuperate; nessuna proiezione al 2027.",
+      "Nessun contatto, candidatura, messaggio, pagamento o iscrizione inviato a terzi."
     ],
     "statistics": {
-      "events": 116,
-      "municipalitiesWithEvents": 46,
+      "events": 127,
+      "municipalitiesWithEvents": 48,
       "municipalitiesSearched": 121,
-      "eventsWithContacts": 68,
-      "eventsWithDeadline": 11,
-      "eventsWithPricing": 7
+      "eventsWithContacts": 72,
+      "eventsWithDeadline": 12,
+      "eventsWithPricing": 9
     },
     "publication": {
-      "status": "verified-partial",
-      "dataCommit": "1429fa3ef292e78eb1b4031aa5105c45a3b179fa",
-      "verifiedAt": "2026-10-16",
-      "productionUrl": "https://subingresso.it/fiere?provincia=Roma",
-      "vercelStatus": "success",
-      "publishedFilesMatchGitCommit": [
-        "data/fiere.json",
-        "js/pages/fiere.js",
-        "fiere.html"
-      ],
-      "browserChecks": [
-        "Chromium 1440: 99 risultati, mappa e 12 dettagli",
-        "Chromium 390: 99 risultati, mappa e 12 dettagli",
-        "WebKit 390: 99 risultati, mappa e 12 dettagli"
-      ],
-      "generalSuite": "Chromium 1440/820/390/320 e WebKit 390 superati",
-      "todo": "Non spuntata; 28 province completate, 82 rimaste. Lista ora in Subingresso.it informazioni.md; unificazione concorrente c69b400 preservata.",
-      "note": "Solo dati verificati pubblicati. Ricerca provinciale parziale, non certificare completamento."
+      "status": "pending",
+      "productionUrl": "https://subingresso.it/fiere?provincia=Roma"
     },
-    "completionLimit": "Ricerca provinciale ancora parziale. Ripresa con 17 nuove tappe TTS Food verificate; necessarie le fonti operative elencate in followUp20261016.unresolved. Non spuntare Roma né aumentare il numero delle province completate.",
+    "completionLimit": "Chiusura documentale corrente nelle fonti accessibili, con limiti ed esclusioni in closure20261016; pubblicazione e verifica finale in corso. Storico delle precedenti fasi parziali conservato.",
     "followUp20261016": {
       "baselineCommit": "4a83bc234cc468b7206438deab7dec597efeb1a8",
       "eventsAdded": 17,
@@ -3983,7 +3993,6 @@
           "result": "Ricerca aggiornata riporta avvisi per gestione mercati XII 15 aprile–30 settembre e Natale VIII 2024–2026, senza ricostruzione integrale di calendari finali/concessioni. Nessun completamento dei 15 Municipi dichiarato."
         }
       ],
-      "unresolved": "Calendari commerciali finali dei Municipi e Befana; atto Vicovaro 2026; fonti primarie delle due formule Lariano; giorni di mercato Cave; settore artigianale TolfArte e altre piste già nell’audit. Informazioni necessarie non disponibili nei riscontri accessibili: provincia resta parziale.",
       "publication": {
         "status": "verified-partial",
         "dataCommit": "fbc506baa4e0e4c514a561b42b56d8c4aad05bac",
@@ -4006,7 +4015,1078 @@
         "standalonePages": "17 nuove pagine HTTP 200 con nome, canonical, fonte e condizioni; Tolfa, Anguillara e Guidonia senza JavaScript e senza overflow su Chromium 1440/390 e WebKit 390.",
         "localChecks": "Build, settori, sintassi, diff check, integrità delle 3.972 schede precedenti; suite generale Chromium 1440/820/390/320 e WebKit 390; test dedicato Roma locale e online.",
         "todo": "Roma non spuntata: 28 province completate e 82 rimaste. Esito della sessione DA_VERIFICARE per ricerca provinciale incompleta, pubblicazione delle 17 aggiunte verificata."
-      }
+      },
+      "unresolvedAtThatStage": "Calendari commerciali finali dei Municipi e Befana; atto Vicovaro 2026; fonti primarie delle due formule Lariano; giorni di mercato Cave; settore artigianale TolfArte e altre piste già nell’audit. Informazioni necessarie non disponibili nei riscontri accessibili: provincia resta parziale.",
+      "supersededBy": "closure20261016: decisioni e limiti della ricerca corrente. Le verifiche di future pubblicazioni sono distinte dalla chiusura documentale."
+    },
+    "closure20261016": {
+      "status": "research-closed-publication-pending",
+      "baselineCommit": "da814ba6632303ee33f9defe72fa47bb605d1992",
+      "baselineEvents": 116,
+      "eventsAdded": 11,
+      "addedNames": [
+        "Fiera del Perdono",
+        "Festa della Befana in Piazza Navona",
+        "Mercatino di Natale Municipio III, Piazza degli Euganei",
+        "Mercatino di Natale Municipio III, Viale Adriatico",
+        "Mercatino di Natale Municipio III, Via Francesco Jovine",
+        "Mercatino di Natale Municipio V, Viale Agosta",
+        "Festa di San Felice da Cantalice, fiera commerciale",
+        "Festa di Tor Sapienza, fiera commerciale",
+        "Festa del Fungo Porcino e area espositiva",
+        "TolfArte, mercatino di artigianato artistico",
+        "Sagra del Fungo Porcino, area fiera ed espositori"
+      ],
+      "scope": "Chiusura delle piste documentali aperte dell’audit precedente, senza ripetere la ricognizione dei 121 comuni. Ricerca corrente conclusa nelle fonti accessibili, con esclusioni e limiti espliciti; non censimento esaustivo o certificazione di disponibilità. Nessun invio a terzi.",
+      "decisions": [
+        {
+          "topic": "Vicovaro",
+          "sourceUrls": [
+            "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GT1RFeUB5PT0-H"
+          ],
+          "result": "Recuperati determina 52/2026, avviso PDF, domanda DOCX e ordinanza 27/2026 da archivio atti usando il filtro ricerca=1: superata l’incongruenza delle news 2023. PDF letti integralmente, avviso verificato visivamente. Integrata Fiera del Perdono 1–2 agosto 2026, termine 28 luglio ore 11, spunta dalle 14:30, canone e +30%.",
+          "limit": "Ordinanza con refuso 01/08/2025 sulla presenza e determina datata maggio che cita ordinanza giugno. Titolo, avviso e ordinanza concordano sulle date 2026. Testo tariffa oraria contro formula giornaliera: nessun totale inventato.",
+          "checkedAt": "2026-10-16"
+        },
+        {
+          "topic": "Befana",
+          "sourceUrls": [
+            "https://www.comune.roma.it/web-resources/cms/documents/QH20250056076ALLEGATO_1BANDO_FESTA_DELLA_BEFANA__20252026.pdf",
+            "https://www.comune.roma.it/web-resources/cms/documents/QH20250075557Esecutiva_Determina_QH_464_2025.pdf"
+          ],
+          "result": "Recuperato bando commerciale originale: art.1.1 dispone 1 dicembre–6 gennaio fino a gennaio 2028. Integrato periodo 2026/27 da bando, distinto dall’avviso culturale. Sei banchi della procedura 2025 non sono disponibilità corrente.",
+          "limit": "PDF letto tramite strumento web; download locale fallito TLS/connessione chiusa. Titolo annuale e variazioni operative restano da verificare periodicamente; nessuna domanda commerciale 2026 dichiarata aperta.",
+          "checkedAt": "2026-10-16"
+        },
+        {
+          "topic": "Lariano e Velletri",
+          "sourceUrls": [
+            "https://www.comune.lariano.rm.it/novita/notizie/novita_360.html",
+            "https://www.comune.velletri.rm.it/area_letturaNotizia/637579/pagsistema.html",
+            "https://www.festadelfungoporcino.it/",
+            "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+            "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRnM1UEZz0-F",
+            "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRnM1UEaz0-F"
+          ],
+          "result": "Recuperati archivi Halley, sei determine, sei ordinanze e due delibere 2026, con allegati originali. La delibera 129/2026 e la convenzione, artt. 2/7/14, provano circa 23 gazebo e operatori terzi selezionati dalla Pro Loco: inclusa l’area fiera Lariano. Rinvio comunale all’11 settembre e proroga al 14 nelle ordinanze 81/82; 16 settembre solo smontaggio. Inclusa separatamente l’associazione a Velletri 3–20 settembre, sede Colle Rosso.",
+          "limit": "Homepage www/non-www e programma dell’associazione provati in Chromium: HTTP 503; fonte primaria leggibile nell’indice web e confrontata con Comune di Velletri letto in browser. Indirizzo SP18c in footer non trasferito alla sede: usata Colle Rosso. Nessun accorpamento fra due eventi o prezzi dei menu attribuiti ai banchi. Per Lariano finestra evento periodOnly, giorni/orari dei singoli banchi non distinti. Esenzione suolo solo attività locali, non gratuità stand: quote Pro Loco da rendicontare senza importi. Allegato convenzione è schema approvato, non copia sottoscritta; effettivo svolgimento e proroga riscontrati con provvedimenti successivi. Ricerche artigian/stand negli atti e SUAP non hanno prodotto bando espositori distinto.",
+          "checkedAt": "2026-10-16"
+        },
+        {
+          "topic": "Cave",
+          "sourceUrls": [
+            "https://www.sagradellacastagnacave.it/news/programma2026.html",
+            "https://www.sagradellacastagnacave.it/media/news/programma-2026.jpg",
+            "https://www.prolococaveaps.it/eventi-2026/",
+            "https://cloud.urbi.it/urbi/progs/urp/ur1DE001.sto?DB_NAME=n1201258&w3cbt=S&StwEvent=91000302&IdDelibere=105321",
+            "https://cloud.urbi.it/urbi/progs/urp/ur1DE001.sto?DB_NAME=n1201258&w3cbt=S&StwEvent=91000302&IdDelibere=105010"
+          ],
+          "result": "Originale del 13 ottobre e locandina 2026 scaricati e letti visivamente: 23–25 ottobre, stand/cantine venerdì 19, sabato e domenica 12. Prevale sul calendario generico Pro Loco 22–25. Notizia mercatini rimasta 2025: esclusa l’estensione del settore artigianale al 2026. Consultazione atti Urbi 2026: ricerca castagna tre risultati, mercat quattro risultati estranei, artigian nessun risultato. Letti integralmente PDF originali determina 833 del 25 settembre e delibera 47 del 23 giugno: contributi e affidamento Pro Loco, nessuna disciplina per espositori terzi. Finestra progetto 17–31 ottobre non trasformata in giorni di mercato.",
+          "limit": "Programma corrente descrive stand gastronomici e cantine; non dà giorni/bando per espositori esterni. Nessun trasferimento dei 40 espositori 2025, di quote o di una domanda concorsi gastronomici ai banchi. Conservate le due schede commerciali già verificate. Verificati Albo, consultazione atti e SUAP associato XI Comunità Montana: nessun allegato operativo espositori ottenuto; presentazione pratiche riservata, nessuna istanza inviata.",
+          "checkedAt": "2026-10-16"
+        },
+        {
+          "topic": "TolfArte",
+          "sourceUrls": [
+            "https://tolfarte.it/artigiani/",
+            "https://tolfarte.it/?s=2026",
+            "https://tolfarte.it/programma/",
+            "https://www.visitlazio.com/eventi-lazio/tolfarte-arte-di-strada-in-festival-a-tolfa/"
+          ],
+          "result": "Ricerca interna del sito conduce a Artigianato 2026, 37 espositori: pagina originale letta integralmente in Chromium. Inclusa scheda artigianale con solo periodo agosto, separata dal TTS Food 8–9 agosto.",
+          "limit": "Il programma 138 appuntamenti riguarda spettacoli, non calendario dei banchi. Nessuna data commerciale specifica ricavata dal footer 7–9 agosto o dalle mostre. Art Bonus aggiornato nel 2026 descrive raccolta 2025: non usato per calendario corrente. API WP provata ma non restituisce JSON; /festival/ 404, pagina /artigiani/ invece valida.",
+          "checkedAt": "2026-10-16"
+        },
+        {
+          "topic": "Municipi III e V",
+          "sourceUrls": [
+            "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf",
+            "https://www.comune.roma.it/web-resources/cms/documents/CD20250142141Esecutiva_Determina_CD_2516_2025.pdf",
+            "https://www.comune.roma.it/web-resources/cms/documents/CF20250222372Esecutiva_Determina_CF_2869_2025_1.pdf",
+            "https://www.comune.roma.it/web-resources/cms/documents/Allegato_1_1.pdf"
+          ],
+          "result": "Confrontati avvisi, graduatorie e verbali: tre aree con proposte nel III e sola Viale Agosta nel V. Integrate quattro finestre di programmazione, periodOnly, non aperture giornaliere. Aggiunte San Felice e Tor Sapienza dai provvedimenti commerciali finali 2026.",
+          "limit": "Nove aree senza proposte nel III e Gardenie nel V escluse. Riconferma 1 ottobre 2026 III non è candidatura banco. Il bando è per gestori; nessun prezzo del concessionario ripartito per ipotesi sugli espositori.",
+          "checkedAt": "2026-10-16"
+        },
+        {
+          "topic": "Municipi VIII, IX, X, XII e XIV",
+          "sourceUrls": [
+            "https://www.comune.roma.it/web-resources/cms/documents/Mun08_CM20250105596Determina_Esecutiva_83581_13_10_2025_TH0200020102_firm.pdf",
+            "https://www.comune.roma.it/web-resources/cms/documents/Avviso_pubblico_mostre_mercato_una_domenica_triennio_20262028_apr26.pdf",
+            "https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1282427",
+            "https://www.comune.roma.it/web-resources/cms/documents/mun_12_avviso_pub_sf_07_26_A.pdf",
+            "https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1198982",
+            "https://www.comune.roma.it/web-resources/cms/documents/manifestazioni_comm_ALLEGATO_E_mun14.pdf"
+          ],
+          "result": "Escluse ulteriori schede ricavate dal solo bando per gestione. VIII: CM/2120/2025 riapre e permette sedi da valutare ex post. IX: calendario corretto CN/1054/2026 e avviso con domeniche/festivi, ma non recuperato esito operativo. XII: otto sedi e ricorrenze 15 aprile–30 settembre, senza concessioni finali. X: pagina CO/2329/2024 non espone allegati o esito. XIV: pagina finale dichiara graduatoria CT/1897/2024 e collega calendario E.",
+          "limit": "XIV E rilevato PDF scansionato di tre pagine con zero testo; tentati apertura e screenshot web, download su www/non-www/http, parametro download e Chromium: connessione chiusa/cache miss o nessun contenuto leggibile per trascrivere le celle. Graduatoria PDF cache miss. Non inventate date, gestori o eventi per le dieci piazze. Blocchi WAF/TLS non costituiscono prova di assenza. Le liste filtrate non sono un registro annuale integrale.",
+          "checkedAt": "2026-10-16"
+        },
+        {
+          "topic": "Piste residue dell’audit",
+          "sourceUrls": [
+            "https://www.turismoroma.it/it/luoghi/il-mercatino-del-borghetto-flaminio",
+            "https://www.prolocomontelanico.it/articoli/"
+          ],
+          "result": "Borghetto: fonte turistica ufficiale letta in browser lo riserva a espositori amatoriali e rinvia ai contatti per giorni/orari; escluso come opportunità professionale verificata, senza copiare i 92 euro da aggregatore. Montelanico: archivio Pro Loco letto, ultimi moduli sono settembre 2025; nessuna candidatura/quotazione 2026 dedotta. Le altre esclusioni già motivate nel primo audit restano decisioni negative nella ricerca attuale, non eventi da inventare.",
+          "limit": "Le esclusioni per mancanza di prova commerciale primaria non dimostrano assenza di eventi. Nuovi programmi, concessioni o documenti pubblicati in futuro sono manutenzione periodica, distinta dalla chiusura della ricognizione corrente.",
+          "checkedAt": "2026-10-16"
+        }
+      ],
+      "municipalCoverage": [
+        {
+          "municipio": "I",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_i&tem=commercio_e_impresa",
+          "result": "Quattro schede natalizie esistenti conservate; elenco ottobre 2026 contiene concessioni mercati ordinari, escluse.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "II",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_ii&tem=commercio_e_impresa",
+          "result": "Elenco con spunta luglio 2026 e Immacolata 2025; bando domenicale 2020–2023 non proiettato.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "III",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_iii&tem=commercio_e_impresa",
+          "result": "Avviso e graduatoria natalizi letti: tre aree, nove senza proposte escluse.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "IV",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_iv&tem=commercio_e_impresa",
+          "result": "Mercati Ricotti, Kant, Casal Tidei, Settecamini e spunta sono ordinari; TTS Food già censiti.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "V",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_v&tem=commercio_e_impresa",
+          "result": "Due provvedimenti commerciali finali 2026 e area natalizia Agosta integrati.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "VI",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_vi&tem=commercio_e_impresa",
+          "result": "Elenco mercati ordinari; Fiera produzioni VI gara 12606 del 2 ottobre è ricerca organizzatore (termine 9 ottobre), non ammissione banchi o data operativa. Appalti diretto HTTP500.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "VII",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_vii&tem=commercio_e_impresa",
+          "result": "Elenco 2026 mercati ordinari, spunta e circo esclusi; nessuna data futura derivata dai bandi feste 2025.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "VIII",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_viii&tem=commercio_e_impresa",
+          "result": "Bando integrato CM/2120/2025 letto; proposte in ulteriori aree non danno calendario finale. Ss Pietro e Paolo già censita.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "IX",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_ix&tem=commercio_e_impresa",
+          "result": "Avviso 2026/28 e rettifica letti: non pubblicate domeniche come date confermate senza esito.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "X",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_x&tem=commercio_e_impresa",
+          "result": "CO/2329/2024 pagina originale letta; mancano allegati e calendario finale delle tre aree natalizie. Regina Pacis deserta già esclusa.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "XI",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_xi&tem=commercio_e_impresa",
+          "result": "Elenco luglio 2026 con reti imprese e mercati ordinari; eventi culturali dentro mercati non fiere aggiuntive.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "XII",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_xii&tem=commercio_e_impresa",
+          "result": "Avviso 2026 letto: otto sedi domenicali, escluso come lista eventi operativi.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "XIII",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_xiii&tem=commercio_e_impresa",
+          "result": "Elenco ottobre 2026: Irnerio/Fogaccia e proroghe ordinarie; bandi Natale 2020–2022 non proiettati.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "XIV",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_xiv&tem=commercio_e_impresa",
+          "result": "Pagina graduatoria 2024/26 recuperata, calendario E scansionato non trascrivibile e PDF esito inaccessibile: esclusioni esplicite.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        },
+        {
+          "municipio": "XV",
+          "sourceUrl": "https://www.comune.roma.it/web/it/bandi-e-concorsi.page?mun=municipio_xv&tem=commercio_e_impresa",
+          "result": "Elenco agosto 2026: Diodati/Monteleone/spunta e parco giochi, esclusi; rassegna natalizia culturale non mercato esterno.",
+          "access": "Tentativo HTTP locale TLS fallito; ove reperibile lettura del portale originale tramite strumento web e approfondimento degli allegati sopra indicati. Non attestata lettura integrale di tutti gli albi."
+        }
+      ],
+      "evidenceArchive": "C:/Users/utente/Documents/ricerca-fiere-roma-20261016/chiusura",
+      "limits": [
+        "Ricerca corrente conclusa con limiti documentali, non censimento esaustivo. Rimangono esclusioni per prove insufficienti; nessun impegno a reperire atti non pubblicati o non accessibili.",
+        "Calendari operativi annuali Municipi non recuperati integralmente: soltanto finestre esplicite da bando per aree identificate, contrassegnate come periodi; attività effettiva e disponibilità restano da riconfermare.",
+        "Cave: settore esterno non documentato escluso. Lariano: area espositori provata da delibera e convenzione, solo finestra evento 11?14 settembre, quote Pro Loco ignote. TolfArte: giornate specifiche artigiani non recuperate; nessuna proiezione al 2027.",
+        "Nessun contatto, candidatura, messaggio, pagamento o iscrizione inviato a terzi."
+      ],
+      "periodicChecks": [
+        "Nuove concessioni e calendari commerciali nominativi dei Municipi, riconferme III, titolo annuale Befana, graduatoria/calendario XIV leggibili.",
+        "Programmi commerciali Cave e Lariano, giorni artigiani TolfArte, prossime edizioni e eventuali annullamenti.",
+        "Aggiornamenti delle altre esclusioni dell’audit solo al comparire di nuove fonti primarie; quote e posti disponibili non garantiti."
+      ],
+      "browserEvidence": [
+        {
+          "url": "https://www.sagradellacastagnacave.it/",
+          "status": 200,
+          "error": null,
+          "sha256": "b43ff1551a67e722e64daf34447e86de76bf58857d82514b561bbfbbd243dd1d",
+          "textLength": 3045,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://artbonus.gov.it/3790-festival-tolfarte.html",
+          "status": 200,
+          "error": null,
+          "sha256": "de5494553a3b44c0af282d7580040e9f16e1f9f82d62826f309ecbb326c53d43",
+          "textLength": 6125,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/po/elenco_news.php?area=H&x=",
+          "status": 200,
+          "error": null,
+          "sha256": "9f76aa33a1cd74bb92dede4d551e3328b7b37c5d8945d1c93f845954ed9ca43e",
+          "textLength": 23355,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.lariano.rm.it/novita/avvisi/novita_274.html",
+          "status": 200,
+          "error": null,
+          "sha256": "36c696d03a11c2fb868b6809e3f80ad8d9d22b6462a7283cb7fcf97c9b920bf6",
+          "textLength": 4103,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.sagradellacastagnacave.it/news/programma2026.html",
+          "status": 200,
+          "error": null,
+          "sha256": "61b5dfd891640d7485a21d5089868b0481fc6422b9761f8b6bbaa3b893fcdc75",
+          "textLength": 710,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://tolfarte.it/informazioni/",
+          "status": 200,
+          "error": null,
+          "sha256": "42c34986cd26e206b9ac5a5455ac5b9c2ef1ab798b772780a9d1530318ca1017",
+          "textLength": 2908,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1570855",
+          "status": 500,
+          "error": null,
+          "sha256": "a20d568cab1ec892eeb865acb52ccf050ca071cd5330061a707cccfdbed83df0",
+          "textLength": 212,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1540157",
+          "status": null,
+          "error": "page.goto: net::ERR_CONNECTION_CLOSED at https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1540157\nCall log:\n\u001b[2m  - navigating to \"https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1540157\", waiting until \"domcontentloaded\"\u001b[22m\n",
+          "sha256": null,
+          "textLength": null,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1439636",
+          "status": null,
+          "error": "page.goto: net::ERR_CONNECTION_CLOSED at https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1439636\nCall log:\n\u001b[2m  - navigating to \"https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1439636\", waiting until \"domcontentloaded\"\u001b[22m\n",
+          "sha256": null,
+          "textLength": null,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.lariano.rm.it/novita/notizie/novita_360.html",
+          "status": 200,
+          "error": null,
+          "sha256": "aac35d224acdd625fb61c39d395e1e386b80ae2363de76d0572654994ab8777b",
+          "textLength": 2247,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/mc/mc_p_ricerca.php",
+          "status": 200,
+          "error": null,
+          "sha256": "2593c02ce2ec5980099e999dab05bd7177f8f756c4e567c10128fb105b42f74e",
+          "textLength": 3420,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/determine",
+          "status": 200,
+          "error": null,
+          "sha256": "02b1c7e898f335779b7151bf2bc4bd771e29e7a521ce046363014238721cbfd7",
+          "textLength": 1942,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://tolfarte.it/festival/",
+          "status": 404,
+          "error": null,
+          "sha256": "947acae33a2fdd202ac23ad8fc22fe045997867bda54f8a5670ff3e702f26099",
+          "textLength": 1162,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.mercatiniroma.it/",
+          "status": null,
+          "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.mercatiniroma.it/\nCall log:\n\u001b[2m  - navigating to \"https://www.mercatiniroma.it/\", waiting until \"domcontentloaded\"\u001b[22m\n",
+          "sha256": null,
+          "textLength": null,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/mc/mc_p_ricerca.php?sto=1&oggetto=perdono&anno-pubblicazione=2026",
+          "status": 200,
+          "error": null,
+          "sha256": "82fc625da6f127962f88120f7dfa9e94173c163f2fe22bc79713a2ec99d7974a",
+          "textLength": 3420,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/determine?anno=2026&oggetto=perdono",
+          "status": 200,
+          "error": null,
+          "sha256": "2d84f7cd1ab5fca0e36cc07b4e251e9ecb3da8bb09695b2e27d503fff6c637e8",
+          "textLength": 1942,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/ordinanze?anno=2026&oggetto=perdono",
+          "status": 200,
+          "error": null,
+          "sha256": "fe0384cd93a9e08de7e8363475d24f0e18206250ec3407203037386c94127348",
+          "textLength": 2217,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://appalti.comune.roma.it/gare/dettaglio.php?codice=12622",
+          "status": 500,
+          "error": null,
+          "sha256": "0221c10ec83cf0c4e9d4d95ec9975a3743caed41bc369a82b725de66409c43dc",
+          "textLength": 208,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1429338",
+          "status": null,
+          "error": "page.goto: net::ERR_CONNECTION_CLOSED at https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1429338\nCall log:\n\u001b[2m  - navigating to \"https://www.comune.roma.it/web/it/bando-concorso.page?contentId=BEC1429338\", waiting until \"domcontentloaded\"\u001b[22m\n",
+          "sha256": null,
+          "textLength": null,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GT1RFeUB5PT0-H",
+          "status": 200,
+          "error": null,
+          "sha256": "15c7001689b9232c5d1f565ec74e60a3210fa94246481e9b543ef02c0615b394",
+          "textLength": 1491,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.festadelfungoporcino.it/",
+          "status": 503,
+          "error": null,
+          "sha256": "896b71e3ede99a8596064027f0ee37bb80e62502d92561a254394a0df1e0802d",
+          "textLength": 249,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.visitlazio.com/eventi-lazio/tolfarte-arte-di-strada-in-festival-a-tolfa/",
+          "status": 200,
+          "error": null,
+          "sha256": "13bef87c3d7a6e6a3a75107297fd4563468056ad5679c4fd9eddb704f74d5b55",
+          "textLength": 2408,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://festadelfungoporcino.it/",
+          "status": 503,
+          "error": null,
+          "sha256": "896b71e3ede99a8596064027f0ee37bb80e62502d92561a254394a0df1e0802d",
+          "textLength": 249,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.festadelfungoporcino.it/programma/",
+          "status": 503,
+          "error": null,
+          "sha256": "896b71e3ede99a8596064027f0ee37bb80e62502d92561a254394a0df1e0802d",
+          "textLength": 249,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://tolfarte.it/?s=2026",
+          "status": 200,
+          "error": null,
+          "sha256": "c015a0dcc3e40ee27043758dbd2d7b0d1c77661380af2ae840b8853d366d9653",
+          "textLength": 3936,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.roma.it/web-resources/cms/documents/manifestazioni_comm_ALLEGATO_E_mun14.pdf",
+          "status": null,
+          "error": "page.goto: net::ERR_CONNECTION_CLOSED at https://www.comune.roma.it/web-resources/cms/documents/manifestazioni_comm_ALLEGATO_E_mun14.pdf\nCall log:\n\u001b[2m  - navigating to \"https://www.comune.roma.it/web-resources/cms/documents/manifestazioni_comm_ALLEGATO_E_mun14.pdf\", waiting until \"domcontentloaded\"\u001b[22m\n",
+          "sha256": null,
+          "textLength": null,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.velletri.rm.it/area_letturaNotizia/637579/pagsistema.html",
+          "status": 200,
+          "error": null,
+          "sha256": "52105e44944c4b44d2f01cbf1a13e055ee2f14740fd4619ec02368d84b9a663b",
+          "textLength": 3829,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.lariano.rm.it/novita/notizie/",
+          "status": 200,
+          "error": null,
+          "sha256": "d3f87e2995e88694720bc7b475b04686ccfaa88515665e922e5c06f960058d56",
+          "textLength": 0,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://tolfarte.it/artigiani/",
+          "status": 200,
+          "error": null,
+          "sha256": "bab29420fd01c28bd00d04ed697a56ef087984d0e4dfe8b28fa1807ff76af127",
+          "textLength": 7469,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.prolocomontelanico.it/articoli/",
+          "status": 200,
+          "error": null,
+          "sha256": "3729478e394f3f40ba1b040a1e426dc4c2df48ecf17fd14d870c4787ec292f3c",
+          "textLength": 1470,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.turismoroma.it/it/luoghi/il-mercatino-del-borghetto-flaminio",
+          "status": 200,
+          "error": null,
+          "sha256": "03bbf0d62f8308e24348e500a150ee61f32861b01dc373ac3da29730e50e7c19",
+          "textLength": 2859,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.cave.rm.it/",
+          "status": 200,
+          "error": null,
+          "sha256": "926b2d97e66ddac9c2bc1de45cdb86f23bfe157a75c677e45b76392e3ae667bb",
+          "textLength": 5546,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.comune.lariano.rm.it/",
+          "status": 200,
+          "error": null,
+          "sha256": "2298c5d389defecd5e4eea1da5c97755620062a912d58a72ce17c3db938e9616",
+          "textLength": 4558,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.prolococaveaps.it/",
+          "status": 200,
+          "error": null,
+          "sha256": "fd37620abf4090014f794f0cc63d791a750f0dbf330b60ed6c7bb281ec569e6b",
+          "textLength": 2424,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRnM5EqZz0-F",
+          "status": 200,
+          "error": null,
+          "sha256": "590f8f0b928187672bdbee7bfbe57ff9cce40e5469f4190b49c626416c5288d6",
+          "textLength": 1116,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine?ricerca=1&anno=2026&oggetto=Fungo",
+          "status": 200,
+          "error": null,
+          "sha256": "c195b3f3359b51e7af1110e58bbda004ee532dfbb52cdaa28de385149fcabb5b",
+          "textLength": 4571,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze?ricerca=1&anno=2026&oggetto=Fungo",
+          "status": 200,
+          "error": null,
+          "sha256": "cc788023326b94079280d10cb4b4e0a0eeee526b2523e76a3b034145a8e7047f",
+          "textLength": 5009,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/solhome.sto?DB_NAME=n1201258&areaAttiva=1",
+          "status": 200,
+          "error": null,
+          "sha256": "3dfdaf0148289ce0e9f3007025550fcdf2d8a4791decfc1ea8b72c06cb565edc",
+          "textLength": 1575,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/solhome.sto?DB_NAME=n1200869&areaAttiva=1",
+          "status": 200,
+          "error": null,
+          "sha256": "bbd0a51c48f8e77f437057abf2ce8e8e4386b3f62f82c25781e08555106ca0fb",
+          "textLength": 699,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://www.halleyweb.com/c058115_s/zf/index.php/suap",
+          "status": 200,
+          "error": null,
+          "sha256": "c29722dfb2bfaf796215e56dd767d9a5f95c53aeb6890b0d61a70e155194d1ca",
+          "textLength": 2521,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/ur1ME001.sto?DB_NAME=n1201258&w3cbt=S",
+          "status": 200,
+          "error": null,
+          "sha256": "b4379c2263372bfea07efb8b20c226d6b499a556c7872c90daa2454a1bc8ed64",
+          "textLength": 1960,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/ur1DE001.sto?DB_NAME=n1201258&w3cbt=S",
+          "status": 200,
+          "error": null,
+          "sha256": "c92e1d9c00b03b4e5e7083d897cf515033d9e8c86d079443debde01028f6e041",
+          "textLength": 1825,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/ur1SU001.sto?DB_NAME=n1200869&w3cbt=S",
+          "status": 200,
+          "error": null,
+          "sha256": "90f555bbaeb83dc21bf797b42065abc0d9c4264336b83fb105524dd19d20824b",
+          "textLength": 956,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/ur1DE001.sto?DB_NAME=n1201258&w3cbt=S&StwEvent=91000302&IdDelibere=105321",
+          "status": 200,
+          "error": null,
+          "sha256": "b64ba3e3c21910485370e162ede07fdc4e5ffc9bbed8e7723333f86a4375f658",
+          "textLength": 791,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/ur1DE001.sto?DB_NAME=n1201258&w3cbt=S&StwEvent=91000302&IdDelibere=105010",
+          "status": 200,
+          "error": null,
+          "sha256": "49613e8e6e02fba4bfc802d557ee533a06acad60f5362ba460e4d4e2e5895cbd",
+          "textLength": 992,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere?ricerca=1&anno=2026&oggetto=Fungo",
+          "status": 200,
+          "error": null,
+          "sha256": "fba91d50b9f84611002a296cd6264a831605861707ac174bebb4d476207bafd0",
+          "textLength": 3743,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine?ricerca=1&anno=2026&oggetto=stand",
+          "status": 200,
+          "error": null,
+          "sha256": "2e3dc8392615ae871194cedadcf2c56809a34ccb290172360ad2f69024a2067a",
+          "textLength": 4913,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        },
+        {
+          "url": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine?ricerca=1&anno=2026&oggetto=artigian",
+          "status": 200,
+          "error": null,
+          "sha256": "24f9a1d27d6d26abe4a538a89c8a6f7bb0bdc3ccb01c6fcca7638f146657c11f",
+          "textLength": 3827,
+          "access": "Chromium tramite PLAYWRIGHT_MODULE; hash DOM serializzato."
+        }
+      ],
+      "downloadEvidence": [
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/de/attachment.php?serialDocumento=00N08Y020269F&mosdoc=0",
+          "status": 200,
+          "file": "vicovaro-atto.pdf",
+          "sha256": "3a5b8874c290e36a3f5d726a1deeae39fd11ca7705b8e85a0330dd677877ffea"
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/de/attachment.php?serialDocumento=00N090020269F&mosdoc=0",
+          "status": 200,
+          "file": "vicovaro-avviso.pdf",
+          "sha256": "67163e38e04351c3b8ad98a5ce1a628bc093b849946441f20d415a9dd337d5fb"
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/de/attachment.php?serialDocumento=00N091020269F&mosdoc=0",
+          "status": 200,
+          "file": "vicovaro-domanda.docx",
+          "sha256": "4528d47bf8daadf50bf4fbdaa53929600acb73a6eb8fc5ebcaf25de745854363"
+        },
+        {
+          "url": "https://www.comunedivicovaro.it/c058112/de/attachment.php?serialDocumento=00MC0W0202668&mosdoc=0",
+          "status": 200,
+          "sha256": "b5f86fae1378c2f2038dca6e0462ec4a15c0791e7210c8446ac3b40ada6b4990",
+          "file": "vicovaro-ordinanza-0.pdf"
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM1UUYz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TZWN020269E&p7m=1&mosdoc=0",
+          "file": "lariano-902d81842f1e4f78-0",
+          "http": 200,
+          "sha256": "4d0d789e0924825e049c794fa9b5e73d5f8bdd816523af1effb3f2ec787912d6",
+          "textLength": 7736
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM1UUYz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TZWU020269E&mosdoc=0",
+          "file": "lariano-902d81842f1e4f78-1",
+          "http": 200,
+          "sha256": "5847317c8f8a8be916e27407bd75997dc6b8a14d9492fdd1f1c80531a99b5b02",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM1UUYz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TZWU020269E&p7m=1&mosdoc=0",
+          "file": "lariano-902d81842f1e4f78-2",
+          "http": 200,
+          "sha256": "80ed20e3820ef92460619ce3d04da6f97de1bd0698f3e57b70f995a0fd4ba3c9",
+          "textLength": 1916
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM9EUQT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TYWH020269B&p7m=1&mosdoc=0",
+          "file": "lariano-79b3535bd69e0f8e-0",
+          "http": 200,
+          "sha256": "c599c40eb5303b15969ed2e6694b247e8afd7d5e3b69baf280d4baae18bca924",
+          "textLength": 8215
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM9EUQT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TYY0020269B&mosdoc=0",
+          "file": "lariano-79b3535bd69e0f8e-1",
+          "http": 200,
+          "sha256": "ad68c3b96ae8a74fa810b3a696e41d1819e1011fec7ac9a908b927327755fc1f",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM9EUQT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TYY0020269B&p7m=1&mosdoc=0",
+          "file": "lariano-79b3535bd69e0f8e-2",
+          "http": 200,
+          "sha256": "e4721bece10c4afdf34662546920fca554d843a6e8bea802e80653fa95b09432",
+          "textLength": 3264
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM9EEUT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TVZ80202699&p7m=1&mosdoc=0",
+          "file": "lariano-7952ec37aa09ec4c-0",
+          "http": 200,
+          "sha256": "d15aeca459659cd7e735c85832ec078e1acace425402ad73f8af066a3ca33a92",
+          "textLength": 10499
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM9EEUT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TW4O0202699&mosdoc=0",
+          "file": "lariano-7952ec37aa09ec4c-1",
+          "http": 200,
+          "sha256": "340a7d61e9eb5dad53580e3a99cfb03db4c33fb3dd23e765b5d30c936f747497",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM9EEUT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TW4O0202699&p7m=1&mosdoc=0",
+          "file": "lariano-7952ec37aa09ec4c-2",
+          "http": 200,
+          "sha256": "4b4e54bb5270c1a8830c32a231d8bfb1e864bb434e69c941cea9390aee09788b",
+          "textLength": 2869
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM5E6Yz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TXJ9020269A&p7m=1&mosdoc=0",
+          "file": "lariano-81617a51a341f45e-0",
+          "http": 200,
+          "sha256": "6f5cf5cce3593af90d381fa33e8b9332f2131bd6b16badb639695e495b70b567",
+          "textLength": 10981
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM5E6Yz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TXTK020269A&mosdoc=0",
+          "file": "lariano-81617a51a341f45e-1",
+          "http": 200,
+          "sha256": "76ed98e8ea5516da828a1f3cda8181314f1bfa583ee219d768c2f522f4d85cf4",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM5E6Yz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TXTK020269A&p7m=1&mosdoc=0",
+          "file": "lariano-81617a51a341f45e-2",
+          "http": 200,
+          "sha256": "2100d52fcaae8dc61ed65009e0f317db081b68ba219f20d1d98ce6642435fa8c",
+          "textLength": 3814
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM5Eqaz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TVIN0202699&p7m=1&mosdoc=0",
+          "file": "lariano-0656bdc798c417e4-0",
+          "http": 200,
+          "sha256": "ac0b98729936a5bc2d476fa59a5d52bba8e179caf2ac699bc379f5f3c0c34f63",
+          "textLength": 9454
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM5Eqaz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TW4N0202699&mosdoc=0",
+          "file": "lariano-0656bdc798c417e4-1",
+          "http": 200,
+          "sha256": "004c15f06d31d2a3e385b7f9f2877b11c70e90ca83678ebb6ee65ce3c819fe1a",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GTkRnM5Eqaz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TW4N0202699&p7m=1&mosdoc=0",
+          "file": "lariano-0656bdc798c417e4-2",
+          "http": 200,
+          "sha256": "e9c7c6745c2ca90b6f458bdfba1498550f05353e2a48269175a68dc72273e143",
+          "textLength": 2080
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRnM1UEaz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TZ17020269B&p7m=1&mosdoc=0",
+          "file": "lariano-0c16f94d02245780-0",
+          "http": 200,
+          "sha256": "5e03a06afa70d84a951d8c59291b2d7e009e7354a8ca2be7d8daff6824eea0a6",
+          "textLength": 8287
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRnM1UEZz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TZ1D020269B&p7m=1&mosdoc=0",
+          "file": "lariano-e0b9b3167ab8cacc-0",
+          "http": 200,
+          "sha256": "5fc86aeb799b0d1acf0bb264493812997ed8899c6a4801a7f9d39b12776b3ba3",
+          "textLength": 6708
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRnM9EEZz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TX9B020269A&p7m=1&mosdoc=0",
+          "file": "lariano-ae3eabdc2931922a-0",
+          "http": 200,
+          "sha256": "0443befb66055539456039488d12d346cb5f5e9e41ed5302a8a02ffda7186a94",
+          "textLength": 5727
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRnM5E6WT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TURB0202698&mosdoc=0",
+          "file": "lariano-80ef9afebc67bbf2-0",
+          "http": 200,
+          "sha256": "35160e635cf7500d6264abc7f48cfb6567cac748f22317bb35b38096619dfc27",
+          "textLength": 10249
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRnM5EqZz0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TSOP0202694&p7m=1&mosdoc=0",
+          "file": "lariano-caa1358642e3e313-0",
+          "http": 200,
+          "sha256": "9a1b6048b3d8fe0c0ee7f07c662e9608a8a32317580e174f04dd23c02a80eef2",
+          "textLength": 6739
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TN1J020268S&p7m=1",
+          "file": "lariano-67bb4e8e5790007a-0",
+          "http": 200,
+          "sha256": "369c15500d26754f04fbfdb34d4d76dac112d56af29705b4277ef01dfb790c0d",
+          "textLength": 7390
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00TMFS020268S&mosdoc=0",
+          "file": "lariano-67bb4e8e5790007a-1",
+          "http": 200,
+          "sha256": "c7b9593717a7827301dcdaa0be2b8340e95eacd074fb029ef430d53de4185522",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00TMFS020268S&p7m=1&mosdoc=0",
+          "file": "lariano-67bb4e8e5790007a-2",
+          "http": 200,
+          "sha256": "5b5faedd6811a935852bdae0fa97684f1f63a3e4e956c272970e87b4744bd726",
+          "textLength": 696
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00TMG3020268S&mosdoc=0",
+          "file": "lariano-67bb4e8e5790007a-3",
+          "http": 200,
+          "sha256": "59c775e756461115e8a5837a8cefc039a3422bc1f779044c19ef8e24820cd228",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00TMG3020268S&p7m=1&mosdoc=0",
+          "file": "lariano-67bb4e8e5790007a-4",
+          "http": 200,
+          "sha256": "a219fb2387b8ba511be89e48131eb7af140d1745a356ffd3a1614247199e7065",
+          "textLength": 639
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00TRVW0202693&mosdoc=0",
+          "file": "lariano-67bb4e8e5790007a-5",
+          "http": 200,
+          "sha256": "264ce48ed17b4f5d1471f92211414dda0b7b33a9c187caec5eb66e15adcd46fc",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00TRVW0202693&p7m=1&mosdoc=0",
+          "file": "lariano-67bb4e8e5790007a-6",
+          "http": 200,
+          "sha256": "84a0f4dec9299e79968e11b436ba63b81e2326425bd62d67768e0a6a22c888a6",
+          "textLength": 1004
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00TMGG020268S&mosdoc=0",
+          "file": "lariano-67bb4e8e5790007a-7",
+          "http": 200,
+          "sha256": "516ffa2b3a5bb1bbdc4215bccac6bcf6a852fa399476d8d304fb6b3013fe70dc",
+          "textLength": 20607
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnd50EWT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00SBE4020266B&p7m=1",
+          "file": "lariano-b0046ad48d2c7a61-0",
+          "http": 200,
+          "sha256": "b87dd8b6106d0af0007416ab206697067d986222aac4aa07ffad80e81c28170b",
+          "textLength": 8936
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnd50EWT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00S9FQ0202669&mosdoc=0",
+          "file": "lariano-b0046ad48d2c7a61-1",
+          "http": 200,
+          "sha256": "878d6c5d36839284bd37426e59b944b0456fab67f7416f6415f9dfd2bc430a3d",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnd50EWT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00S9FQ0202669&p7m=1&mosdoc=0",
+          "file": "lariano-b0046ad48d2c7a61-2",
+          "http": 200,
+          "sha256": "b643787539c3248af269903a44fc3c4d6409cf9e2865872f5f94830184af0ed6",
+          "textLength": 869
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnd50EWT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00S9FR0202669&mosdoc=0",
+          "file": "lariano-b0046ad48d2c7a61-3",
+          "http": 200,
+          "sha256": "6d77f94fc62af7642b1c2a257858ea067fd86098956396dbc17844ef4cd52758",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnd50EWT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00S9FR0202669&p7m=1&mosdoc=0",
+          "file": "lariano-b0046ad48d2c7a61-4",
+          "http": 200,
+          "sha256": "f464cea870a574ac3926195bdb63f3ac1b6169250995a64947be384ca0960626",
+          "textLength": 812
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnd50EWT0-F",
+          "url": "https://lariano.halleyweb.it/c058115_s/de/attachment.php?serialDocumento=00SA64020266A&mosdoc=0",
+          "file": "lariano-b0046ad48d2c7a61-5",
+          "http": 200,
+          "sha256": "3fa022ff0a07e3abe897cb3d791bdfdfa9596b1cc9ace3930f439db5ff3490bf",
+          "textLength": 3
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/table-determine-public-page/2/atto/GTkRnM5EEVT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TVA20202698&p7m=1&mosdoc=0",
+          "file": "lariano-b4bc274246545d83-0",
+          "http": 200,
+          "sha256": "319ca07e2ae008926c7a4d8dabfe2899892b2d5662789ec458f485d83a886464",
+          "textLength": 7895
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/table-determine-public-page/2/atto/GTkRnM5EEVT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TW4M0202699&mosdoc=0",
+          "file": "lariano-b4bc274246545d83-1",
+          "http": 200,
+          "sha256": "940c8d80d8fe1ad61c7556d0aaebcfb5dd7fdfd88092dca243d71a5f86e319df",
+          "textLength": 0
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/determine/dettaglio/table-determine-public-page/2/atto/GTkRnM5EEVT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TW4M0202699&p7m=1&mosdoc=0",
+          "file": "lariano-b4bc274246545d83-2",
+          "http": 200,
+          "sha256": "8df2eb7b1d5b2b6495b36b9eccb7b5962ee6b4bba68f12a4b5eaf36c41617bd7",
+          "textLength": 1537
+        },
+        {
+          "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/table-ordinanze-public-page/2/atto/GTkRnM5EqTT0-F",
+          "url": "https://lariano.halleyweb.it/de/attachment.php?serialDocumento=00TRU50202693&p7m=1&mosdoc=0",
+          "file": "lariano-4438c0673d38cb75-0",
+          "http": 200,
+          "sha256": "c70547db5e505385954ceb2b1ecc8c49d74e32d8b30b659a3a9e42b1bb73bd25",
+          "textLength": 7817
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=946338&DOCORE_versione=1&FNSTR=YUYHOB_XFOZKCF_6579677714245681521571396159935.TPR.R7I&DB_NAME=n1201258&ContestoChk=DE&P7M=S",
+          "file": "cave-0f3c73841bc0eb99",
+          "http": 200,
+          "sha256": "39265cbcdefde292bd7bcd3bd2502d4b99f4357a1882e31b23d9e1e5029c07d3",
+          "textLength": 8979
+        },
+        {
+          "url": "https://cloud.urbi.it/urbi/progs/urp/fecore02.sto?DOCORE_testata=895902&DOCORE_versione=1&FNSTR=GZBYYD_BVOCWKF_10236669456817161166516121.NRJ.D7D&DB_NAME=n1201258&ContestoChk=DE&P7M=S",
+          "file": "cave-3eaf7a617c6fed67",
+          "http": 200,
+          "sha256": "cc20696c7af530023124427d5519aa202351f85cd0778c14bb1414c4b597f82d",
+          "textLength": 6563
+        }
+      ],
+      "webEvidenceFiles": [
+        {
+          "file": "fungo-fonti-primarie.web.txt",
+          "sha256": "2c6cee05511913c1781b04f7027535c83dddd5494ea0d29a23f2a53d0f4eac9a",
+          "access": "Estratto dello strumento web, non PDF/HTML originale scaricato."
+        },
+        {
+          "file": "natale3-avviso.web.txt",
+          "sha256": "877c3617509458294741eddc486d6561fde20ddb6bff3eeca356e2fe02de6a12",
+          "access": "Estratto dello strumento web, non PDF/HTML originale scaricato."
+        },
+        {
+          "file": "ricerca-integrativa.web.txt",
+          "sha256": "3d93f8483d31c221c64f7c4149e31b36869023be22ac75ea64ef57aedda1d507",
+          "access": "Estratto dello strumento web, non PDF/HTML originale scaricato."
+        },
+        {
+          "file": "ricerca-piste-residue.web.txt",
+          "sha256": "9e7023e31c397d82bbe2405feadaa0bf38a430acdbb014f2a00165f9ab952b8a",
+          "access": "Estratto dello strumento web, non PDF/HTML originale scaricato."
+        },
+        {
+          "file": "san-felice-atto.web.txt",
+          "sha256": "5bcd61435112e9fc7472c70fbc9c55c1fd5aad6d111a160de73c91566f028515",
+          "access": "Estratto dello strumento web, non PDF/HTML originale scaricato."
+        },
+        {
+          "file": "vicovaro-ordinanze.txt",
+          "sha256": "331ced0bb4728afa01a2dfccdde357307efb6ea89378a613d57be530c9a976f0",
+          "access": "Estratto dello strumento web, non PDF/HTML originale scaricato."
+        },
+        {
+          "file": "web-natale3-pagina.txt",
+          "sha256": "718477f736f87a22788e8626a9cde5b3afbe0fee54ecb0b45585242696d015eb",
+          "access": "Estratto dello strumento web, non PDF/HTML originale scaricato."
+        }
+      ],
+      "additionalArchiveEvidence": [
+        {
+          "file": "cave-atti-artigian.html",
+          "sha256": "7cc4536aee8afde4deb5e703f35ec645805d0eeb4ffb0dad1f005f6a7c0f52c5",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        },
+        {
+          "file": "cave-atti-artigian.txt",
+          "sha256": "9983ebc02fc3c9420fefc12de97bb2f6646ec299e17c1f93c1c9757b1892a9a1",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        },
+        {
+          "file": "cave-atti-castagna.html",
+          "sha256": "151d19c765cf2b2a153426e824f295c2a050e5f0a8b4cad0949e1b5c77ebbb1b",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        },
+        {
+          "file": "cave-atti-castagna.txt",
+          "sha256": "29c037006af89c7fbde25cf79c7a61ed7139bae51b4d16d26573b7131dcc4ad9",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        },
+        {
+          "file": "cave-atti-mercat.html",
+          "sha256": "cdde308f6ec784b5c8357cbffd67c84ef05896867ab2309b54070fdb99d1ccf9",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        },
+        {
+          "file": "cave-atti-mercat.txt",
+          "sha256": "6969cbb7dabd0fff0caa16290efec7bc050bd7ee6ff3a2f101a278b6a1578d5f",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        },
+        {
+          "file": "lariano-determine-page2.html",
+          "sha256": "7fd44554bab9a6b0fc871f64096bb9e4b6f9f1dac660f64226da46e439492a6a",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        },
+        {
+          "file": "lariano-determine-page2.txt",
+          "sha256": "01cf70dec8790e578c44a9318883d05a28e3a072485f092f6c8dabefb0f608d3",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        },
+        {
+          "file": "lariano-ordinanze-page2.html",
+          "sha256": "d3e6a630f6f88fe89652f3467b4305b40dbf331ec2aac6cb899e6f4ce04a1b48",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        },
+        {
+          "file": "lariano-ordinanze-page2.txt",
+          "sha256": "b153b7fd65b27deba869cbb55d54caed7010a387e6c9c2636eb25148bf2a5239",
+          "method": "Ricerca interattiva in archivio pubblico tramite Chromium/PLAYWRIGHT_MODULE; testo e DOM conservati."
+        }
+      ]
+    },
+    "limitsAtPreviousStage": [
+      "Registri comunali completi e calendari commerciali finali dei 15 Municipi di Roma non recuperati integralmente. Gli avvisi di gestione non dimostrano l’effettiva apertura né una domanda libera per banchi.",
+      "Fonti scaricate con HTTP 200 possono essere soft 404, verifica browser o testo vuoto. Ladispoli bando confermato soft 404 in Chromium; Trevignano superata la verifica e letto in browser; Pro Loco Fiumicino e altre fonti consultate anche tramite strumento web.",
+      "Edizioni 2025 di Carpineto e Santa Lucia conservate storiche. Ricorrenze prive di calendario nominativo restano testuali, senza calcolare automaticamente date 2026 o 2027.",
+      "Allumiere: riepilogo settembre contro testo ottobre; adottato testo con avvertenza. Cave Castagna 22–25 contro 23–25, Lariano nuova formula, Morlupo date non confermate, Vicovaro indice contro archivio: piste escluse finché insufficientemente riscontrate.",
+      "Saloni dal registro regionale conservano date calendar, non confirmed, salvo riscontro prioritario. Blue Planet Economia: bando camerale specifico scaduto 28 settembre, non termine generale di candidatura.",
+      "Bajocco: 1 settembre è saldo bonifico, non termine candidature; percentuale IVA e trattamento acconto da chiarire. Grottaferrata listino grafico controllato pagine 17–18; food esterno e extra da confermare, preadesione con refusi nelle informative.",
+      "Segni: bando 2026 con refuso 2025 nell’art. 5. Date pubblicate riferite alla fiera 24–25, non automaticamente a tutti i banchi della sagra 22–25. Castel San Pietro: quota per giornata, non per tre giornate.",
+      "Quote mancanti non significano gratuite; ingressi visitatori e somme dell’organizzatore distinti dai costi espositivi. Disponibilità, ammissione professionisti/hobbisti, SCIA, annullamenti e meteo vanno sempre verificati."
+    ],
+    "publicationAtPreviousStage": {
+      "status": "verified-partial",
+      "dataCommit": "1429fa3ef292e78eb1b4031aa5105c45a3b179fa",
+      "verifiedAt": "2026-10-16",
+      "productionUrl": "https://subingresso.it/fiere?provincia=Roma",
+      "vercelStatus": "success",
+      "publishedFilesMatchGitCommit": [
+        "data/fiere.json",
+        "js/pages/fiere.js",
+        "fiere.html"
+      ],
+      "browserChecks": [
+        "Chromium 1440: 99 risultati, mappa e 12 dettagli",
+        "Chromium 390: 99 risultati, mappa e 12 dettagli",
+        "WebKit 390: 99 risultati, mappa e 12 dettagli"
+      ],
+      "generalSuite": "Chromium 1440/820/390/320 e WebKit 390 superati",
+      "todo": "Non spuntata; 28 province completate, 82 rimaste. Lista ora in Subingresso.it informazioni.md; unificazione concorrente c69b400 preservata.",
+      "note": "Solo dati verificati pubblicati. Ricerca provinciale parziale, non certificare completamento."
     }
   },
   "events": [
@@ -7861,6 +8941,393 @@
         "phone": "+39 06 69352153"
       },
       "hours": "Venerdì 20 Marzo dalle 18:00 alle 24:00; Sabato 21 Marzo dalle 12:00 alle 24:00; Domenica 22 Marzo dalle 12:00 alle 24:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Vicovaro",
+      "name": "Fiera del Perdono",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GT1RFeUB5PT0-H",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-01",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GT1RFeUB5PT0-H"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Edizione 2026 conclusa. Domanda entro il 28 luglio alle ore 11 tramite SUAP Impresainungiorno oppure PEC; ordinanza 27/2026 e avviso allegato alla determina 52/2026. Richiesti autorizzazione itinerante e, per alimentari, titolo sanitario. Domande tardive e spuntisti: maggiorazione del 30% del canone. Spunta dalle 14:30 del 1 agosto, modulo e documenti alla Polizia Locale, fino a esaurimento posti; nessuna disponibilità attuale dedotta. L’ordinanza contiene un refuso 2025 nel paragrafo della presenza: adottati giorni e orari espliciti dell’avviso 2026.",
+        "url": "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GT1RFeUB5PT0-H",
+        "deadline": "2026-07-28",
+        "costs": "Avviso 2026: tariffa base di 0,60 euro × superficie occupata × giorni di occupazione; +30% per domande tardive e spuntisti. Il testo richiama anche una tariffa oraria e le ore di presenza: unità e totale da chiarire con il Comune, senza calcolare un preventivo. Pagamento PagoPA; non è un importo fisso per banco."
+      },
+      "sectors": "Commercio su aree pubbliche, alimentari e non alimentari",
+      "venue": "San Cosimato: Via Tiburtina dal largo della fontana all’Oasi Francescana e Via Valeria Vecchia",
+      "organizer": "Comune di Vicovaro - Ufficio Commercio",
+      "hours": "Vendita dalle 17:00 del 1 agosto alle 13:00 del 2 agosto; spunta 1 agosto dalle 14:30",
+      "contacts": {
+        "pec": "suap@pec.comunedivicovaro.it",
+        "phone": "0774 498002"
+      },
+      "pricing": {
+        "kind": "partial",
+        "label": "Canone a superficie; +30% tardive e spunta",
+        "details": "Avviso 2026: tariffa base di 0,60 euro × superficie occupata × giorni di occupazione; +30% per domande tardive e spuntisti. Il testo richiama anche una tariffa oraria e le ore di presenza: unità e totale da chiarire con il Comune, senza calcolare un preventivo. Pagamento PagoPA; non è un importo fisso per banco.",
+        "sourceUrl": "https://www.comunedivicovaro.it/c058112/zf/index.php/atti-amministrativi/determine/dettaglio/atto/GT1RFeUB5PT0-H",
+        "checkedAt": "2026-10-16",
+        "period": "2026"
+      }
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Festa della Befana in Piazza Navona",
+      "category": "tradizionale",
+      "months": [
+        1,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/QH20250056076ALLEGATO_1BANDO_FESTA_DELLA_BEFANA__20252026.pdf",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-01",
+          "end": "2027-01-06",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.roma.it/web-resources/cms/documents/QH20250056076ALLEGATO_1BANDO_FESTA_DELLA_BEFANA__20252026.pdf",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Periodo commerciale previsto espressamente dal bando 2025/26–2027/28; il titolo viene rilasciato per ciascuna annualità. Sei posteggi oggetto di quella selezione, non sei posti attualmente liberi. Procedura 2025 già conclusa con graduatorie QH/464/2025; nessuna nuova domanda commerciale aperta verificata. Operatori autorizzati e artigiani con requisiti del bando. Canone, assicurazione e smaltimento rifiuti a carico dell’assegnatario; nessun costo fisso pubblicato. Il termine 9 novembre dell’avviso culturale 2026 non riguarda questi banchi. Per gli alimentari ammessi: prodotti confezionati da asporto, senza somministrazione o cottura. Verificare titolo annuale e prescrizioni operative.",
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/QH20250056076ALLEGATO_1BANDO_FESTA_DELLA_BEFANA__20252026.pdf"
+      },
+      "sectors": "Addobbi e presepi, giocattoli, libri per bambini, artigianato natalizio e dolciumi ammessi dal bando",
+      "venue": "Piazza Navona",
+      "organizer": "Roma Capitale - Dipartimento Sviluppo Economico e Attività Produttive"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Mercatino di Natale Municipio III, Piazza degli Euganei",
+      "category": "artigianato",
+      "months": [
+        1,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-08",
+          "end": "2027-01-08",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Finestra prevista dal bando per il Natale 2026/27, anche non continuativa: non significa apertura quotidiana. Area con proposte ammesse nella graduatoria CD/2516/2025; il titolo annuale è subordinato alla riconferma del gestore entro il 1 ottobre 2026 e agli adempimenti OSP. Riconferma e calendario effettivo 2026 non recuperati. Avviso per gestori già scaduto, non candidatura per i singoli banchi; quote e ammissioni da verificare con il concessionario. Non incluse le nove aree senza proposte nel verbale.",
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf"
+      },
+      "sectors": "Artigianato e prodotti natalizi, alimentari e dolci tipici ammessi",
+      "venue": "Piazza degli Euganei",
+      "organizer": "Municipio Roma III - concessionario da verificare per il 2026"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Mercatino di Natale Municipio III, Viale Adriatico",
+      "category": "artigianato",
+      "months": [
+        1,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-08",
+          "end": "2027-01-08",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Finestra prevista dal bando per il Natale 2026/27, anche non continuativa: non significa apertura quotidiana. Area con proposte ammesse nella graduatoria CD/2516/2025; il titolo annuale è subordinato alla riconferma del gestore entro il 1 ottobre 2026 e agli adempimenti OSP. Riconferma e calendario effettivo 2026 non recuperati. Avviso per gestori già scaduto, non candidatura per i singoli banchi; quote e ammissioni da verificare con il concessionario. Non incluse le nove aree senza proposte nel verbale.",
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf"
+      },
+      "sectors": "Artigianato e prodotti natalizi, alimentari e dolci tipici ammessi",
+      "venue": "Viale Adriatico",
+      "organizer": "Municipio Roma III - concessionario da verificare per il 2026"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Mercatino di Natale Municipio III, Via Francesco Jovine",
+      "category": "artigianato",
+      "months": [
+        1,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-08",
+          "end": "2027-01-08",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Finestra prevista dal bando per il Natale 2026/27, anche non continuativa: non significa apertura quotidiana. Area con proposte ammesse nella graduatoria CD/2516/2025; il titolo annuale è subordinato alla riconferma del gestore entro il 1 ottobre 2026 e agli adempimenti OSP. Riconferma e calendario effettivo 2026 non recuperati. Avviso per gestori già scaduto, non candidatura per i singoli banchi; quote e ammissioni da verificare con il concessionario. Non incluse le nove aree senza proposte nel verbale.",
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Avviso_mercatini_natalizi_2025.pdf"
+      },
+      "sectors": "Artigianato e prodotti natalizi, alimentari e dolci tipici ammessi",
+      "venue": "Via Francesco Jovine",
+      "organizer": "Municipio Roma III - concessionario da verificare per il 2026"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Mercatino di Natale Municipio V, Viale Agosta",
+      "category": "artigianato",
+      "months": [
+        1,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/CF20250222372Esecutiva_Determina_CF_2869_2025_1.pdf",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-01",
+          "end": "2027-01-07",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.roma.it/web-resources/cms/documents/CF20250222372Esecutiva_Determina_CF_2869_2025_1.pdf",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Periodo natalizio 2026/27 previsto nella procedura pluriennale CF/2320/2025. La determina CF/2869/2025 approva la proposta ammessa per Viale Agosta e rinvia a separato titolo OSP. Non prova apertura continuativa né disponibilità di banchi; concessione annuale e calendario operativo non recuperati. Procedura per organizzatori già scaduta; quote, requisiti del singolo espositore e giornate da verificare con il concessionario. Non inserita Piazzale delle Gardenie, priva di proposta nel verbale.",
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/CF20250222372Esecutiva_Determina_CF_2869_2025_1.pdf"
+      },
+      "sectors": "Prodotti e artigianato natalizio",
+      "venue": "Viale Agosta, plateatico; autoveicoli esclusi",
+      "organizer": "Municipio Roma V - concessionario dell’area"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Festa di San Felice da Cantalice, fiera commerciale",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Esecutiva_Determina_CF_1442_2026.pdf",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-16",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.roma.it/web-resources/cms/documents/Esecutiva_Determina_CF_1442_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Edizione 2026 conclusa. Concessioni rinnovate ai soli operatori aventi diritto secondo i titoli precedenti; non nuova selezione aperta né spunta libera. Richiesti concessione originale, licenza commerciale e documenti; collaudo e assicurazione per le attrazioni. Canone tramite reversale e obblighi AMA, importi individuali non pubblicati. Le giornate e gli orari indicati riguardano il commercio; montaggio e smontaggio esclusi.",
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Esecutiva_Determina_CF_1442_2026.pdf"
+      },
+      "sectors": "Commercio ambulante alimentare e non alimentare secondo i titoli concessori; spettacolo viaggiante autorizzato",
+      "venue": "Tratti autorizzati di Via dei Castani, Via delle Camelie e Piazza San Felice da Cantalice",
+      "organizer": "Municipio Roma V; Associazione Nazionale Fieristi Italiani",
+      "hours": "16 maggio 12:00–23:00; 17 maggio 09:00–23:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Roma",
+      "name": "Festa di Tor Sapienza, fiera commerciale",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Esecutiva_Determina_CF_1611_2026.pdf",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-30",
+          "end": "2026-05-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.roma.it/web-resources/cms/documents/Esecutiva_Determina_CF_1611_2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Edizione 2026 conclusa. Concessioni rinnovate ai soli operatori aventi diritto secondo i titoli precedenti; non nuova selezione aperta né spunta libera. Richiesti concessione originale, licenza commerciale e documenti; collaudo e assicurazione per le attrazioni. Canone tramite reversale e obblighi AMA, importi individuali non pubblicati. Le giornate e gli orari indicati riguardano il commercio; montaggio e smontaggio esclusi.",
+        "url": "https://www.comune.roma.it/web-resources/cms/documents/Esecutiva_Determina_CF_1611_2026.pdf"
+      },
+      "sectors": "Commercio ambulante alimentare e non alimentare secondo i titoli concessori; spettacolo viaggiante autorizzato",
+      "venue": "Viale Filippo De Pisis, da Viale Giorgio De Chirico a Via di Tor Sapienza",
+      "organizer": "Municipio Roma V; Associazione Nazionale Fieristi Italiani",
+      "hours": "30 maggio 10:00–23:00; 31 maggio 09:00–23:00"
+    },
+    {
+      "region": "Lazio",
+      "city": "Velletri",
+      "name": "Festa del Fungo Porcino e area espositiva",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.velletri.rm.it/area_letturaNotizia/637579/pagsistema.html",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-03",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.velletri.rm.it/area_letturaNotizia/637579/pagsistema.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Edizione 2026 conclusa. Manifestazione dell’Associazione Fungo Porcino Lariano trasferita a Velletri: distinta dalla sagra comunale di Piazza Santa Eurosia a Lariano. Date e sede confermate dal Comune con ordinanza 337/2026; l’organizzatore pubblica un canale di prenotazione spazi al 348 7264371. Homepage e programma dell’organizzatore restituiscono 503 nella verifica diretta, pur essendo leggibili nell’indice web: tariffe, requisiti, giorni dei singoli espositori e recapiti della sede corrente da riconfermare. Prezzi dei menu e numeri promozionali non sono costi o posti disponibili per espositori.",
+        "url": "https://www.comune.velletri.rm.it/area_letturaNotizia/637579/pagsistema.html"
+      },
+      "sectors": "Prodotti tipici, artigianato ed esposizione commerciale",
+      "venue": "Località Colle Rosso, terreno Volsca Ambiente presso il Teatro del Fieno",
+      "organizer": "Associazione Fungo Porcino Lariano",
+      "contacts": {
+        "phone": "348 7264371"
+      }
+    },
+    {
+      "region": "Lazio",
+      "city": "Tolfa",
+      "name": "TolfArte, mercatino di artigianato artistico",
+      "category": "artigianato",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://tolfarte.it/artigiani/",
+        "label": "Fonte ufficiale comunale o organizzatore",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Agosto 2026: settore artigianale; giornate dei banchi non pubblicate separatamente",
+          "dateType": "calendar",
+          "sourceUrl": "https://tolfarte.it/artigiani/",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "La pagina ufficiale Artigianato 2026 elenca 37 espositori con lavorazioni e prodotti: prova del settore commerciale, non 37 posti liberi. Il festival è annunciato il 7–9 agosto, ma non è stato recuperato un calendario distinto delle giornate dei banchi: conservato soltanto agosto, senza estendere automaticamente l’apertura a tutte le giornate del festival. Selezione e condizioni da verificare con APS TolfArte; quote e termini espositori non pubblicati nelle pagine lette. Non comprende la food court TTS Food, già censita separatamente, né gli spettacoli del 18–20 settembre.",
+        "url": "https://tolfarte.it/artigiani/"
+      },
+      "sectors": "Artigianato artistico, cuoio, tessuti, ceramica, gioielli, illustrazione e creazioni handmade",
+      "venue": "Centro storico di Tolfa",
+      "organizer": "Associazione di Promozione Sociale TolfArte",
+      "contacts": {
+        "email": "info@tolfarte.it",
+        "phone": "+39 06 8693 7299"
+      }
+    },
+    {
+      "region": "Lazio",
+      "city": "Lariano",
+      "name": "Sagra del Fungo Porcino, area fiera ed espositori",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+        "label": "Comune di Lariano: delibera 129/2026 e convenzione allegata",
+        "checkedAt": "2026-10-16"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-11",
+          "end": "2026-09-14",
+          "dateType": "calendar",
+          "periodOnly": true,
+          "sourceUrl": "https://www.comune.lariano.rm.it/novita/notizie/novita_360.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Edizione 2026 conclusa. La delibera 129 del 26 agosto e lo schema di convenzione allegato, artt. 2 e 7, prevedono circa 23 gazebo 3x3 e la selezione di espositori e operatori terzi da parte della Pro Loco APS di Lariano. Il numero descrive l’allestimento previsto, non posti disponibili. Inaugurazione rinviata all’11 settembre ore 18:30 dal Comune; proroga della manifestazione al 14 settembre nelle ordinanze 81 e 82 dell’11 settembre. Finestra dell’evento, senza orari o presenza quotidiana dei singoli banchi. Non usare il 16 settembre, riservato allo smontaggio. Termine, requisiti specifici e quota della selezione espositori non pubblicati negli atti recuperati; titoli amministrativi e prescrizioni SUAP comunque necessari. Distinta dalla festa dell’associazione a Velletri dal 3 al 20 settembre.",
+        "url": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F"
+      },
+      "sectors": "Artigianato ed espositori commerciali selezionati; ristorazione gestita dalla Pro Loco",
+      "venue": "Piazza Santa Eurosia e Piazzale dell’Anfiteatro",
+      "organizer": "Pro Loco APS di Lariano, in collaborazione con il Comune",
+      "contacts": {
+        "email": "prolocolariano@gmail.com"
+      },
+      "pricing": {
+        "kind": "partial",
+        "label": "Esenzione suolo per attività locali; quota espositore non pubblicata",
+        "details": "Delibera 129/2026, punto 4: gratuità dell’occupazione di suolo pubblico per le attività commerciali locali durante la manifestazione. Non equivale a stand gratuito per ogni espositore. Schema di convenzione, artt. 7 e 14: le eventuali quote espositori sono riscosse e rendicontate dalla Pro Loco, senza importi pubblicati; nessuna tariffa totale dedotta.",
+        "sourceUrl": "https://lariano.halleyweb.it/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/GTkRnM1EqVT0-F",
+        "checkedAt": "2026-10-16",
+        "period": "2026"
+      }
     }
   ]
 }

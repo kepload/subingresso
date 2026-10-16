@@ -9,14 +9,16 @@ const root = path.resolve(__dirname, '..');
 const read = f => JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
 const catalog=read('data/fiere.json'),audit=read('data/fiere-roma.json');
 const events=catalog.events.filter(e=>e.province==='Roma');
-const baseline=JSON.parse(cp.execFileSync('git',['show','4a83bc2:data/fiere.json'],{cwd:root,maxBuffer:20*1024*1024}));
+const baseline=JSON.parse(cp.execFileSync('git',['show','da814ba6632303ee33f9defe72fa47bb605d1992:data/fiere.json'],{cwd:root,maxBuffer:20*1024*1024}));
 assert.deepEqual(catalog.events.filter(e=>e.province!=='Roma'),baseline.events.filter(e=>e.province!=='Roma'));
 for(const old of baseline.events.filter(e=>e.province==='Roma'))assert(events.some(e=>e.id===old.id));
-assert.equal(events.length,116);assert.equal(new Set(events.map(e=>e.city)).size,46);
+assert.equal(events.length,127);assert.equal(new Set(events.map(e=>e.city)).size,48);
 assert.equal(audit.research.municipalities.length,121);
 assert.equal(new Set(audit.research.municipalities.map(m=>m.city)).size,121);
 assert.equal(audit.research.regionalRegistry.length,31);
-assert.equal(audit.research.status,'partial-documental-research');
+assert(audit.research.status.startsWith('documental-research-complete'));
+assert.equal(audit.research.closure20261016.municipalCoverage.length,15);
+assert.equal(audit.research.closure20261016.eventsAdded,11);
 const find=name=>{const e=events.find(e=>e.name===name);assert(e,name);return e;};
 for(const old of baseline.events.filter(e=>e.province==='Roma'))assert.deepEqual(events.find(e=>e.id===old.id),old);
 assert.equal(audit.research.followUp20261016.eventsAdded,17);
@@ -25,6 +27,16 @@ const tolfa=find('TolfArte, area TTS Food');assert.equal(tolfa.editions[0].start
 assert.deepEqual(tolfa.merchandiseSectors,['alimentare']);assert(!tolfa.pricing);
 for(const name of audit.research.followUp20261016.addedNames){const e=find(name);assert(e.editions[0].end<'2026-10-16');assert.match(e.participation.note,/selezionati/);assert(!e.pricing);}
 
+const perdono=find('Fiera del Perdono');
+assert.equal(perdono.city,'Vicovaro');assert.equal(perdono.participation.deadline,'2026-07-28');
+assert.match(perdono.pricing.details,/0,60 euro/);assert.match(perdono.pricing.details,/30%/);
+assert.match(perdono.participation.note,/ore 11/);assert.match(perdono.hours,/14:30/);
+const befana=find('Festa della Befana in Piazza Navona');assert.equal(befana.editions[0].start,'2026-12-01');
+assert.equal(befana.editions[0].end,'2027-01-06');assert.equal(befana.editions[0].periodOnly,true);assert(!befana.participation.deadline);
+assert.equal(find('Festa del Fungo Porcino e area espositiva').city,'Velletri');
+const lariano=find('Sagra del Fungo Porcino, area fiera ed espositori');assert.equal(lariano.city,'Lariano');assert.equal(lariano.editions[0].start,'2026-09-11');assert.equal(lariano.editions[0].end,'2026-09-14');assert.equal(lariano.editions[0].periodOnly,true);assert.match(lariano.participation.note,/23 gazebo/);assert.match(lariano.pricing.details,/Non equivale a stand gratuito/);
+const artisan=find('TolfArte, mercatino di artigianato artistico');assert(!artisan.editions[0].start);assert.match(artisan.participation.note,/37 espositori/);
+for(const venue of ['Piazza degli Euganei','Viale Adriatico','Via Francesco Jovine'])assert.equal(find('Mercatino di Natale Municipio III, '+venue).editions[0].periodOnly,true);
 const days=name=>find(name).editions.map(e=>e.start);
 const has=(name,day)=>find(name).editions.some(e=>e.start&&e.start<=day&&day<=e.end);
 assert.deepEqual(days('Mercatini di Natale'),['2026-12-13','2026-12-20','2026-12-27']);
@@ -65,7 +77,7 @@ const server=http.createServer((req,res)=>{
   fs.readFile(full,(e,data)=>e?res.writeHead(404).end():res.end(data));
 });
 const selected=["Mercatini di Natale", "Sagra del Marrone Segnino, fiera ambulante", "Bajocco Festival, mercatino artigianato artistico", "Fiera Nazionale dell'Artigianato e dell'Enogastronomia", "Fiera di San Nicola da Bari", "Fiera della Beata Vergine del Carmine", "Festa di Maggio, fiera gastronomica", "Sagra delle Pesche, street food e mercatino sul lungolago", "Maker Faire Rome", "Primavera alla Landriana", "Fiera di Santa Lucia", "Mercatino di Trevignano Romano"];
-selected.push(...audit.research.followUp20261016.addedNames);
+selected.push(...audit.research.followUp20261016.addedNames, ...audit.research.closure20261016.addedNames);
 async function browserTest(engine,label,viewport,base){
   const browser=await engine.launch();
   try{
@@ -77,7 +89,7 @@ async function browserTest(engine,label,viewport,base){
     });
     const page=await context.newPage(), errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto(base+'/fiere?provincia=Roma');
-    await page.waitForFunction(()=>document.querySelector('#list-count').textContent==='116');
+    await page.waitForFunction(()=>document.querySelector('#list-count').textContent==='127');
     assert.equal(await page.locator('#province-filter').inputValue(),'Roma');
     const markers=await page.locator('#map-markers > g').evaluateAll(nodes=>nodes.flatMap(n=>n.dataset.events.split(',')).sort());
     assert.deepEqual(markers,events.map(e=>e.id).sort());
@@ -95,7 +107,7 @@ async function browserTest(engine,label,viewport,base){
       if(process.env.FIERE_SCREENSHOT_DIR&&name==='Mercatini di Natale') await page.screenshot({path:path.join(process.env.FIERE_SCREENSHOT_DIR,label.replace(/\W/g,'-')+'.png'),fullPage:true});
       await page.locator('#close-detail').click();
     }
-    assert.deepEqual(errors,[]);console.log(label+': 116 risultati, mappa e 29 dettagli verificati');
+    assert.deepEqual(errors,[]);console.log(label+': 127 risultati, mappa e 40 dettagli verificati');
   }finally{await browser.close();}
 }
 (async()=>{
