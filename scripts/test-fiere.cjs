@@ -20,8 +20,8 @@ for (const [id, pricing] of Object.entries(feeResearch.events)) {
     assert.match(pricing.sourceUrl, /^https:\/\//);
     assert(pricing.checkedAt <= catalog.catalogUpdatedAt);
 }
-assert.equal(api.feeLabel({participation:{}}), 'Costo banco da verificare');
-assert.equal(api.feeLabel({participation:{costs:'Preventivo da richiedere'}}), 'Costi: vedi scheda');
+assert.equal(api.feeLabel({participation:{}}), '');
+assert.equal(api.feeLabel({participation:{costs:'Preventivo da richiedere'}}), '');
 assert.match(api.feeLabel(events.find(e => e.id === 'trentino-alto-adige-bolzano-klimahouse')), /^Costi 2027:/);
 assert.match(api.feeLabel(events.find(e => e.id === 'lombardia-secugnago-mercatino-per-l-accensione-dell-albero-di-natale')), /Nessuna quota/);
 assert.match(events.find(e => e.id === 'lombardia-monza-monzacon').pricing.details, /70 € per iscrizione/);
@@ -1078,6 +1078,7 @@ async function run(engine,name,viewport,base) {
         const noPrice = events.find(e => !e.pricing && !e.participation.costs && !e.name.includes('/'));
         await page.goto(base + '/fiere?' + new URLSearchParams({provincia:noPrice.province,q:noPrice.name}));
         await count(api.filterEvents(events, {province:noPrice.province,query:noPrice.name,months:[]}).length);
+        assert.equal(await page.locator('.fiere-card[data-event-id="' + noPrice.id + '"] .fiere-card-cost').count(), 0);
         await page.locator('.fiere-card[data-event-id="' + noPrice.id + '"] .fiere-card-button').click();
         assert.match(await page.locator('#detail-costs').textContent(), /Importo non verificato/);
         assert.equal(await page.locator('#detail-costs-source').isVisible(), false);

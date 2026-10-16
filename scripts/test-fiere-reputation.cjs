@@ -93,17 +93,24 @@ async function run(engine, label, viewport, base) {
             assert.equal(new URL(page.url()).searchParams.get('rinomatezza'), level);
             const cards = page.locator('.fiere-card');
             assert.equal(await cards.count(), Math.min(12, expected.length));
-            assert.equal(await cards.locator('.fiere-reputation[data-reputation="' + level + '"]').count(), await cards.count());
+            assert.equal(await cards.locator('.fiere-reputation[data-reputation="' + level + '"]').count(), level === 'unknown' ? 0 : await cards.count());
+            if (level === 'unknown') assert.equal(await cards.locator('.fiere-card-reputation').count(), 0);
             const markerCount = await page.locator('.fiere-marker').evaluateAll(markers => markers.reduce((total, marker) => total + marker.dataset.events.split(',').length, 0));
             assert.equal(markerCount, expected.length);
-            const badge = cards.first().locator('.fiere-reputation');
-            await badge.focus(); await page.keyboard.press('Enter');
+            const opener = cards.first().locator(level === 'unknown' ? '.fiere-card-button' : '.fiere-reputation');
+            await opener.focus(); await page.keyboard.press('Enter');
             await page.waitForSelector('#fair-dialog[open]');
-            assert.equal(await page.locator('#detail-reputation-badge [data-reputation]').getAttribute('data-reputation'), level);
+            if (level === 'unknown') {
+                assert.equal(await page.locator('#detail-reputation-badge [data-reputation]').count(), 0);
+                assert.equal(await page.locator('#detail-reputation-badge').isVisible(), false);
+            } else {
+                assert.equal(await page.locator('#detail-reputation-badge [data-reputation]').getAttribute('data-reputation'), level);
+                assert.equal(await page.locator('#detail-reputation-badge').isVisible(), true);
+            }
             const id = await cards.first().getAttribute('data-event-id');
             const event = expected.find(e => e.id === id);
             assert.equal(await page.locator('#fair-dialog #detail-reputation-reason, #fair-dialog #detail-reputation-sources, #fair-dialog .fiere-reputation-help').count(), 0);
-            assert.equal((await page.locator('#detail-reputation-badge').textContent()).trim(), api.REPUTATIONS[level].icon + api.REPUTATIONS[level].label);
+            assert.equal((await page.locator('#detail-reputation-badge').textContent()).trim(), level === 'unknown' ? '' : api.REPUTATIONS[level].icon + api.REPUTATIONS[level].label);
             if (level === 'rinomata' || level === 'recente') {
                 await page.locator('#fair-dialog').screenshot({ path: path.join(os.tmpdir(), 'fiere-rinomatezza-' + label + '-' + level + '.png') });
             }

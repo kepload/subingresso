@@ -299,6 +299,17 @@ In caso di conflitto, usare questo ordine:
 
 # Parte B — Attività, priorità e storico delle fiere
 
+### Anteprime essenziali — richiesta del 16 ottobre 2026
+
+**Preferenza corrente:** mostrare il costo nelle anteprime solo quando è
+disponibile una tariffa; niente «Costo banco da verificare» o «Costi: vedi
+scheda». Nessun bollino «? Da valutare» su card, popup mappa e dettaglio:
+mostrare soltanto le valutazioni assegnate, senza righe vuote. Stato interno,
+filtro e legenda conservati. Le note sui costi restano nella scheda.
+Modifica di presentazione, dati invariati; cache JS54.
+Controlli locali passati: suite generale su cinque schermi/browser e bollini
+su Chromium computer/telefono e WebKit.
+
 ### Quanto è conosciuta la fiera — richiesta del 16 ottobre 2026
 
 **Valutazioni e scheda, 16 ottobre 2026:** nuova priorità dell'utente:

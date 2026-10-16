@@ -120,7 +120,7 @@
     }
     function feeLabel(event) {
         if (event.pricing) return 'Costi' + (event.pricing.period ? ' ' + event.pricing.period : '') + ': ' + event.pricing.label;
-        return event.participation?.costs ? 'Costi: vedi scheda' : 'Costo banco da verificare';
+        return '';
     }
     function sortEvents(events, today = todayInRome()) {
         const ranked = events.map(event => {
@@ -185,6 +185,7 @@
     }
     function reputationBadge(event, clickable = false) {
         const level = reputationLevel(event), info = REPUTATIONS[level];
+        if (level === 'unknown') return null;
         const badge = node(clickable ? 'button' : 'span', 'fiere-reputation');
         badge.dataset.reputation = level;
         const icon = node('span', 'fiere-reputation-icon', info.icon);
@@ -272,11 +273,21 @@
             button.addEventListener('click', () => openDetail(event));
             const foot = node('div', 'fiere-card-foot');
             foot.append(category, button);
-            const cost = node('p', 'fiere-card-cost', feeLabel(event));
-            cost.dataset.known = String(Boolean(event.pricing));
-            const reputation = node('div', 'fiere-card-reputation');
-            reputation.append(reputationBadge(event, true));
-            card.append(head, reputation, node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)), cost, foot);
+            card.append(head);
+            const badge = reputationBadge(event, true);
+            if (badge) {
+                const reputation = node('div', 'fiere-card-reputation');
+                reputation.append(badge);
+                card.append(reputation);
+            }
+            card.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
+            const fee = feeLabel(event);
+            if (fee) {
+                const cost = node('p', 'fiere-card-cost', fee);
+                cost.dataset.known = 'true';
+                card.append(cost);
+            }
+            card.append(foot);
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
@@ -373,7 +384,8 @@
             const button = node('button', 'fiere-popup-event', event.name + ' ↗');
             button.type = 'button';
             button.append(node('span', '', event.city + ' · ' + periodLabel(event)));
-            button.append(reputationBadge(event));
+            const badge = reputationBadge(event);
+            if (badge) button.append(badge);
             button.addEventListener('click', () => openDetail(event));
             fragment.append(button);
         }
@@ -393,7 +405,9 @@
         $('detail-frequency').hidden = !event.frequencyNote;
         $('detail-description').textContent = event.summary || '';
         $('detail-description').hidden = !event.summary;
-        $('detail-reputation-badge').replaceChildren(reputationBadge(event));
+        const badge = reputationBadge(event);
+        $('detail-reputation-badge').replaceChildren(...(badge ? [badge] : []));
+        $('detail-reputation-badge').hidden = !badge;
         const editions = document.createDocumentFragment();
         for (const edition of event.editions || []) {
             const item = node('div', 'fiere-edition');
