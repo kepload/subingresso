@@ -1,5 +1,19 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Testi fiere, 16 ottobre 2026: titolo pubblico «Quanto è conosciuta»; bollini
+Molto conosciuta / Di lunga tradizione / Nuova / Da valutare. Restano gli ID
+interni e il parametro URL rinomatezza per compatibilità. Niente righe «Da
+calendario», «Date pubblicate», «Edizione conclusa» o suffissi di stato nelle
+date. Solo un piccolo ! apribile accanto alle date da riconfermare, ai soli
+periodi/ricorrenze e alle edizioni passate, con motivo nascosto inizialmente.
+Pulsante accessibile da tastiera e tocco, anche nel dettaglio. Date precise
+confermate e attuali senza simbolo; giorno settimanale per 1/2 giorni conservato.
+Cache JS52/CSS15; nessuna modifica ai dati delle fiere.
+Controlli locali: sintassi, suite generale a 320 px e verifica dedicata su
+Chromium computer/320 px e WebKit telefono passati. Provati date certe,
+da calendario, sole ricorrenze, periodi, edizioni passate e dati assenti;
+apertura/chiusura del ! con click e tastiera, senza spostamenti al cambio focus.
+
 Date fiere, 16 ottobre 2026: giorno della settimana con iniziale maiuscola
 nelle date puntuali di uno o due giorni, in elenco e dettaglio. Intervalli
 di almeno tre giorni, soli periodi indicativi, scadenze e date delle fonti

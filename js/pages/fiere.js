@@ -4,9 +4,9 @@
     const CATEGORIES = { tradizionale: 'Fiera tradizionale', artigianato: 'Artigianato e mostre mercato', sagra: 'Sagra o festa', espositiva: 'Fiera espositiva', mercatino: 'Mercatino' };
     const SECTORS = { alimentare: 'Alimentare', 'non-alimentare': 'Non alimentare', antiquariato: 'Antiquariato e vintage', artigianato: 'Artigianato' };
     const REPUTATIONS = {
-        rinomata: { label: 'Rinomata', icon: '★', description: 'Richiamo ampio o oltre il territorio locale documentato da fonti e dati.' },
-        consolidata: { label: 'Consolidata', icon: '◆', description: 'Almeno 10 edizioni o 10 anni di storia documentati; richiamo più ampio da accertare.' },
-        recente: { label: 'Recente', icon: '✦', description: 'Prima, seconda o terza edizione documentata. Richiamo ancora da valutare.' },
+        rinomata: { label: 'Molto conosciuta', icon: '★', description: 'Richiamo ampio o oltre il territorio locale documentato da fonti e dati.' },
+        consolidata: { label: 'Di lunga tradizione', icon: '◆', description: 'Almeno 10 edizioni o 10 anni di storia documentati; richiamo più ampio da accertare.' },
+        recente: { label: 'Nuova', icon: '✦', description: 'Prima, seconda o terza edizione documentata. Richiamo ancora da valutare.' },
         unknown: { label: 'Da valutare', icon: '?', description: 'Informazioni insufficienti per assegnare un livello. Non significa che la fiera sia nuova o poco frequentata.' }
     };
     // Explicit editorial evidence only: names, cities and missing data never imply reputation.
@@ -90,8 +90,8 @@
         return withWeekday ? label.charAt(0).toUpperCase() + label.slice(1) : label;
     }
     function editionLabel(edition) {
-        if (!edition.start) return edition.label + ' · calendario ' + edition.year;
-        if (edition.periodOnly) return 'Periodo: ' + dateLabel(edition.start) + ' – ' + dateLabel(edition.end) + ' · giorni da verificare';
+        if (!edition.start) return edition.label + ' · ' + edition.year;
+        if (edition.periodOnly) return dateLabel(edition.start) + ' – ' + dateLabel(edition.end);
         // ISO date subtraction uses UTC, so daylight-saving changes do not affect duration.
         const daysBetween = (Date.parse(edition.end) - Date.parse(edition.start)) / 86400000;
         const withWeekday = daysBetween === 0 || daysBetween === 1;
@@ -106,11 +106,12 @@
         return editions.slice().sort((a, b) => b.year - a.year || (b.start || '').localeCompare(a.start || ''))[0] || null;
     }
     function editionStatus(edition, today = todayInRome()) {
-        if (edition.periodOnly) return 'Appuntamenti periodici · calendario ' + edition.year + (edition.end < today ? ' · periodo concluso' : '');
-        if (!edition.start) return 'Calendario ' + edition.year + ' · data esatta da verificare';
-        if (edition.end < today) return 'Edizione conclusa';
-        const source = edition.dateType === 'calendar' ? 'Da calendario' : 'Date pubblicate';
-        return source + (edition.start <= today ? ' · periodo in corso' : '');
+        if (!edition) return 'Le date esatte sono da confermare con l’organizzatore.';
+        if (!edition.start) return (edition.year < Number(today.slice(0, 4)) ? 'Le informazioni si riferiscono al ' + edition.year + '. ' : '') + 'Le date esatte sono da confermare con l’organizzatore.';
+        const past = edition.end < today ? 'Questa edizione è già passata. Le date della prossima sono da confermare. ' : '';
+        if (edition.periodOnly) return past + 'È indicato il periodo complessivo: verifica i singoli giorni di apertura.';
+        if (past) return past.trim();
+        return edition.dateType === 'confirmed' ? '' : 'Le date del calendario generale sono da riconfermare con l’organizzatore.';
     }
     function deadlineStatus(participation, today = todayInRome()) {
         if (!participation.deadline) return participation.deadlineLabel || '';
@@ -149,7 +150,7 @@
 
     const $ = id => document.getElementById(id);
     const state = { events: [], provinces: null, region: '', province: '', category: '', sector: '', reputation: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
-    let searchTimer, mapMarkerTimer, hoveredCard, focusedCard;
+    let searchTimer, mapMarkerTimer, hoveredCard, focusedCard, dateNoteId = 0;
     function node(tag, className, text) {
         const element = document.createElement(tag);
         if (className) element.className = className;
@@ -161,6 +162,27 @@
         for (const [key, value] of Object.entries(attrs || {})) element.setAttribute(key, value);
         return element;
     }
+    function appendEditionDate(element, edition, fallback) {
+        element.append(document.createTextNode(edition ? editionLabel(edition) : fallback));
+        const message = editionStatus(edition);
+        if (!message) return element;
+        const warning = node('span', 'fiere-date-warning');
+        const button = node('button', 'fiere-date-warning-button', '!');
+        const note = node('span', 'fiere-date-note', message);
+        note.id = 'fiere-date-note-' + (++dateNoteId);
+        note.hidden = true;
+        button.type = 'button'; button.title = message;
+        button.setAttribute('aria-label', 'Date da confermare. ' + message);
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-controls', note.id);
+        button.addEventListener('click', event => {
+            event.preventDefault(); event.stopPropagation();
+            note.hidden = !note.hidden;
+            button.setAttribute('aria-expanded', String(!note.hidden));
+        });
+        warning.append(button, note); element.append(warning);
+        return element;
+    }
     function reputationBadge(event, clickable = false) {
         const level = reputationLevel(event), info = REPUTATIONS[level];
         const badge = node(clickable ? 'button' : 'span', 'fiere-reputation');
@@ -168,10 +190,10 @@
         const icon = node('span', 'fiere-reputation-icon', info.icon);
         icon.setAttribute('aria-hidden', 'true');
         badge.append(icon, document.createTextNode(info.label));
-        badge.title = 'Rinomatezza: ' + info.description;
+        badge.title = 'Quanto è conosciuta: ' + info.description;
         if (clickable) {
             badge.type = 'button';
-            badge.setAttribute('aria-label', 'Rinomatezza: ' + info.label + '. Scopri perché: ' + event.name);
+            badge.setAttribute('aria-label', 'Quanto è conosciuta: ' + info.label + '. Scopri perché: ' + event.name);
             badge.addEventListener('click', () => openDetail(event));
         }
         return badge;
@@ -183,7 +205,7 @@
         });
     }
     function periodLabel(event) {
-        if (event.months.length === 12) return 'Tutto l’anno · appuntamenti periodici';
+        if (event.months.length === 12) return 'Tutto l’anno';
         return event.months.map(month => MONTHS[month - 1]).join(' / ');
     }
     function selectedMonthsLabel() {
@@ -241,7 +263,7 @@
             });
             const head = node('div', 'fiere-card-head');
             const edition = selectEdition(event);
-            head.append(node('h3', '', event.name), node('span', 'fiere-card-indicative', edition ? editionStatus(edition) : 'Periodo indicativo'));
+            head.append(node('h3', '', event.name));
             const category = node('span', 'fiere-tag', CATEGORIES[event.category]);
             category.dataset.category = event.category;
             const button = node('button', 'fiere-card-button', 'Apri scheda ↗');
@@ -254,7 +276,7 @@
             cost.dataset.known = String(Boolean(event.pricing));
             const reputation = node('div', 'fiere-card-reputation');
             reputation.append(reputationBadge(event, true));
-            card.append(head, reputation, node('p', '', event.city + ' · ' + event.province), node('p', 'fiere-card-period', edition ? editionLabel(edition) : periodLabel(event)), cost, foot);
+            card.append(head, reputation, node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)), cost, foot);
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
@@ -374,7 +396,7 @@
         const level = reputationLevel(event), rating = event.reputation;
         $('detail-reputation-badge').replaceChildren(reputationBadge(event));
         $('detail-reputation-reason').textContent = level === 'unknown'
-            ? (rating ? 'La valutazione va aggiornata: per ora non assegniamo un livello di rinomatezza.' : REPUTATIONS.unknown.description)
+            ? (rating ? 'Informazioni da aggiornare.' : REPUTATIONS.unknown.description)
             : rating.reason;
         $('detail-reputation-sources').hidden = level === 'unknown';
         $('detail-reputation-sources').open = false;
@@ -391,7 +413,7 @@
         const editions = document.createDocumentFragment();
         for (const edition of event.editions || []) {
             const item = node('div', 'fiere-edition');
-            item.append(node('strong', '', editionLabel(edition)), node('p', '', editionStatus(edition)));
+            item.append(appendEditionDate(node('strong', ''), edition));
             const source = node('a', '', 'Fonte delle date ↗');
             source.href = edition.sourceUrl; source.target = '_blank'; source.rel = 'noopener noreferrer';
             item.append(source); editions.append(item);
@@ -438,7 +460,7 @@
     function render() {
         const events = sortEvents(filterEvents(state.events, state));
         renderMonths(); renderList(events); renderMap(events);
-        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (state.reputation ? ' · Rinomatezza: ' + REPUTATIONS[state.reputation].label : '');
+        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (state.reputation ? ' · ' + REPUTATIONS[state.reputation].label : '');
         const extraCount = Number(Boolean(state.category)) + Number(Boolean(state.query));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;

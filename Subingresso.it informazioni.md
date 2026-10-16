@@ -299,7 +299,14 @@ In caso di conflitto, usare questo ordine:
 
 # Parte B — Attività, priorità e storico delle fiere
 
-### Rinomatezza delle fiere — richiesta del 16 ottobre 2026
+### Quanto è conosciuta la fiera — richiesta del 16 ottobre 2026
+
+**Preferenza testi, 16 ottobre 2026:** usare «Quanto è conosciuta», con bollini
+«Molto conosciuta», «Di lunga tradizione», «Nuova» e «Da valutare». Evitare
+diciture di stato accanto alle date (Da calendario, Date pubblicate, ecc.):
+un piccolo ! apribile indica i casi da riconfermare e spiega il motivo al
+tocco, anche per sole ricorrenze, periodi e informazioni di edizioni passate.
+Cache fiere.js 52, CSS15. Dati e formati con giorno settimanale conservati.
 
 **Date, 16 ottobre 2026:** giorno della settimana nelle fiere di uno o due
 giorni (es. Domenica 18 ott 2026; Sabato 17 ott 2026 – Domenica 18 ott 2026).

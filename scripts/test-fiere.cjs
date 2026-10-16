@@ -540,7 +540,7 @@ assert.deepEqual(ottobrata.editions.map(e => e.start),['2026-10-04','2026-10-11'
 assert(ottobrata.editions.every(e => e.start === e.end));
 assert.equal(api.selectEdition(ottobrata,'2026-10-09').start,'2026-10-11');
 assert.equal(api.selectEdition(ottobrata,'2026-10-18').start,'2026-10-18');
-assert.equal(api.editionStatus(ottobrata.editions[0],'2026-10-09'),'Edizione conclusa');
+assert.match(api.editionStatus(ottobrata.editions[0],'2026-10-09'),/edizione è già passata/);
 assert.equal(api.selectEdition({editions:[]},'2026-10-09'),null);
 const monza = events.find(e => e.city === 'Monza' && e.name === 'Mercatino del brocantage');
 assert.equal(monza.editions.length,15);
@@ -771,7 +771,8 @@ assert(leccoEvent('Premana', /San Matteo/).editions.every(e => !e.start));
 for (const [city,pattern] of [['Colico',/Mercatini serali/],['Colico',/hobby/],['Dervio',/Market and Food/]]) {
     const event=leccoEvent(city,pattern);
     assert(event.editions.every(e => e.periodOnly));
-    assert(api.editionLabel(event.editions[0]).includes('giorni da verificare'));
+    assert(!api.editionLabel(event.editions[0]).includes('giorni da verificare'));
+    assert(api.editionStatus(event.editions[0]).includes('singoli giorni di apertura'));
 }
 const colicoNatale=leccoEvent('Colico',/Natale/);
 assert.equal(colicoNatale.editions.length,21);
