@@ -501,6 +501,26 @@ e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
   categorie specifiche non sono candidature generali. Nessuna comunicazione,
   domanda o candidatura a terzi inviata; nessun'altra provincia avviata.
 
+- [ ] **Firenze — ricerca documentale approfondita, in verifica di pubblicazione (16 ottobre 2026)**:
+  controllati i 41 comuni; 113 manifestazioni in 40 comuni, prima tre.
+  92 schede con giornate pubblicate, sei periodi e 15 ricorrenze testuali;
+  42 con recapiti, nove schede con termine e 28 sintesi di costo documentate.
+  Fonti amministrative, turismo ufficiale e organizzatori; audit, esclusioni,
+  conflitti e limiti in `data/fiere-firenze.json` e `data/FIERE.md`.
+  Firenze Natale: 23 posteggi, domanda 23 ottobre; Rionalissima 16 ottobre;
+  Prim.OLIO 26 ottobre, 300 € per spazio salvo Onlus; Empolissima 30 ottobre
+  per l'8 novembre. Cèramica: candidatura scaduta 12 ottobre, richiesta
+  tesserino 2 novembre distinta; bando A esenzione canone, B 25 €/giorno.
+  Fucecchio banchi 1/3/5/7/8 novembre; Cerbaia 7/14 giugno; Fierucola giugno
+  da calendario organizzatore, senza applicare ricorrenze automatiche.
+  Conservati i tre ID e le altre 3.763 schede; catalogo totale 3.876.
+- [ ] **Firenze — aggiornamenti periodici**: recuperare calendari commerciali
+  completi, Capraia e Limite, nuove disponibilità e quote; chiarire Montaione
+  e seconda giornata Firenzuola, giorni commerciali dei periodi e FAM 4/5 giugno.
+  Riconfermare Londa/Galliano, rimasti storici 2025; segnalazioni prive di mercato
+  esterno restano nell'audit. Privati/hobbisti distinti dai professionisti;
+  nessuna candidatura, comunicazione o pagamento a terzi.
+
 **Ricerca approfondita: 27 province completate, 83 ancora da fare su 110.**
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.

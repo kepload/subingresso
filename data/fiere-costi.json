@@ -1160,6 +1160,230 @@
       "sourceUrl": "https://www.comune.tregnago.vr.it/notizie/FIERA-DI-SAN-MARTINO-2026-DOMANDE-DI-PARTECIPAZIONE-PER-ASSOCIAZIONI--ESPOSITORI--AGRICOLTORI--KM-0---VENDITORI-DI-PRODOTTI-DELL-INGEGNO-CREATIVO-ED-ESPOSITORI-DI-MACCHINE-AGRICOLE..html",
       "checkedAt": "2026-10-11",
       "review": "existing-curated-note"
+    },
+    "toscana-firenze-cascine-in-fiera-grande-fiera-di-ognissanti": {
+      "kind": "conditional",
+      "label": "110 € soci / 220 € non soci",
+      "details": "Edizione 2026: 110 € IVA compresa per associati CISL Firenze/Prato in regola con il tesseramento 2026; 220 € per non tesserati FIVAG CISL Firenze/Prato. Comprende promozione, pulizia finale, piano sicurezza, security/safety, ambulanza e organizzazione. 281 posteggi 6×5 m e uno 3×3 m previsti, non disponibili garantiti.",
+      "sourceUrl": "https://www.cislambulanti.it/fiera-ognissanti-cascine-2026-domande/",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-firenze-indipendenza-antiquaria": {
+      "kind": "unit",
+      "label": "120–140 € mensili secondo superficie",
+      "details": "Bando 2026: 120 € mensili per 4,5×3 m (13,5 m²) e 140 € mensili per 6×3 m (18 m²), pagamento prima della partecipazione. Il prezzo è mensile, non al giorno; IVA non esplicitata, da chiarire.",
+      "sourceUrl": "https://www.comune.firenze.it/system/files/attachments/avviso-pubblico-indipendenza-antiquaria-2026_0.pdf",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-bagno-a-ripoli-prim-olio": {
+      "kind": "conditional",
+      "label": "300 € per spazio; Onlus gratuite",
+      "details": "Invito 2026: 300 € per spazio per aziende agricole (olio, derivati e vino), mercato contadino e aziende commerciali; associazioni di volontariato/Onlus gratuite. IVA non precisata nell’invito. Pagamento tramite bollettino inviato dopo iscrizioni, prima della manifestazione. Priorità a produttori olio e aziende agricole ripolesi, poi altri comuni, con ulteriori criteri nel bando.",
+      "sourceUrl": "https://www.comune.bagno-a-ripoli.fi.it/system/files/2026-10/INVITO-PRIM.OLIO-2026.pdf",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-figline-e-incisa-valdarno-mercati-straordinari-di-figline": {
+      "kind": "partial",
+      "label": "16 € bollo domanda; banco da verificare",
+      "details": "Bollo domanda 16 €: è un onere di istanza, non la quota complessiva del banco. Canone e altri costi da verificare.",
+      "sourceUrl": "https://confcommercio.firenze.it/articoli/ambulanti/23793-figline-e-incisa-valdarno-manifestazioni-straordinarie-del-25-ottobre-e-22-novembre",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-svuota-la-soffitta-di-greve": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 10 € per privati; confermare gestione locale",
+      "details": "Calendario 2026: quota ordinaria 10 € con POS, salvo eventi affidati ad associazioni/Pro Loco con condizioni da verificare. Gazebo e allestimento propri.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-svuota-la-soffitta-di-strada": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 10 € per privati; confermare gestione locale",
+      "details": "Calendario 2026: quota ordinaria 10 € con POS, salvo eventi affidati ad associazioni/Pro Loco con condizioni da verificare. Gazebo e allestimento propri.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-svuota-la-soffitta-di-san-polo": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 10 € per privati; confermare gestione locale",
+      "details": "Calendario 2026: quota ordinaria 10 € con POS, salvo eventi affidati ad associazioni/Pro Loco con condizioni da verificare. Gazebo e allestimento propri.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-svuota-la-soffitta-di-lucolena": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 10 € per privati; confermare gestione locale",
+      "details": "Calendario 2026: quota ordinaria 10 € con POS, salvo eventi affidati ad associazioni/Pro Loco con condizioni da verificare. Gazebo e allestimento propri.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-mercatino-artigiano-di-pasquetta": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-mercatino-artigiano-festa-di-primavera-di-strada": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-mercatino-artigiano-festa-del-giaggiolo": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-stelle-e-mercanti-di-strada": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-mercatino-artigiano-festa-della-schiacciata": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-vetrina-delle-cittaslow-artigiani-all-opera": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-stelle-e-mercanti-di-greve": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-mercatino-artigiano-festa-delle-castagne": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-aspettando-natale-a-greve": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-mercatino-natalizio-di-panzano": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-mercatino-natalizio-di-strada": {
+      "kind": "conditional",
+      "label": "Quota ordinaria 15 €; confermare gestione locale",
+      "details": "Quota ordinaria 2026 di 15 € con POS, salvo iniziative affidate ad associazioni/Pro Loco. Gazebo, luci e prolunga a carico dell’espositore. Confermare condizioni specifiche del singolo evento.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-aspettando-l-expo-mercato-di-montefioralle": {
+      "kind": "conditional",
+      "label": "Partecipazione gratuita, posti limitati e selezione",
+      "details": "Calendario comunale 2026: partecipazione gratuita; posti molto limitati e allestimento proprio, senza allaccio elettrico. Confermare accettazione prima di recarsi sul posto.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-greve-in-chianti-mercatino-natalizio-di-montefioralle": {
+      "kind": "conditional",
+      "label": "Partecipazione gratuita, posti limitati e selezione",
+      "details": "Calendario comunale 2026: partecipazione gratuita; posti molto limitati e allestimento proprio, senza allaccio elettrico. Confermare accettazione prima di recarsi sul posto.",
+      "sourceUrl": "https://www.comune.greve-in-chianti.fi.it/novita/notizie/mercatini-artigiani-e-svuota-la-soffitta-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-montelupo-fiorentino-ceramica-mostra-mercato": {
+      "kind": "conditional",
+      "label": "A: esenzione canone; B: 25 €/giorno",
+      "details": "Bando A professionisti: bollo domanda 16 €; nel bando compare canone 25 €/giorno con esenzione specifica, mentre le FAQ ufficiali chiariscono che il canone di 25 €/giorno NON è dovuto per la fiera promozionale. Non significa assenza di ogni costo: verificare bollo, requisiti RCT e condizioni del proprio bando. Bando B non professionisti: condizioni distinte, non trasferire automaticamente la tariffa A. Bando B non professionisti: quota 25 €/giorno, quindi 100 € per 5–8 dicembre, 50 € per 12–13 e 50 € per 19–20; eventuali più blocchi si sommano. Richiesta tesserino entro 2 novembre, distinta dalla candidatura già scaduta.",
+      "sourceUrl": "https://montelupoeventi.it/wp-content/uploads/2026/09/FAQ-DEF-Bando_A_Fiera_promozionale.pdf",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-san-casciano-in-val-di-pesa-fiera-arte-e-sport-di-cerbaia": {
+      "kind": "fee",
+      "label": "13 € non alimentare / 17 € alimentare al giorno",
+      "details": "Edizione 2026: canone giornaliero 17 € settore alimentare, 13 € non alimentare, comprensivo di occupazione suolo e rifiuti; richiesto con successivo avviso di pagamento. Nessun prezzo dedotto dall’ingresso visitatori.",
+      "sourceUrl": "https://www.comune.san-casciano-val-di-pesa.fi.it/vivere-il-comune/eventi/fiera-arte-e-sport-cerbaia-2026",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-firenze-rionalissima": {
+      "kind": "conditional",
+      "label": "100 € soci / 200 € quota ordinaria",
+      "details": "Edizione 2026: quota 200 €; 100 € per soci Confesercenti in regola con quota annuale 2026 prima della domanda. Comprende suolo pubblico, organizzazione, sicurezza, promozione e pulizia finale. IVA non specificata nell’avviso, da chiarire.",
+      "sourceUrl": "https://www.comune.firenze.it/system/files/attachments/avviso_pubblico_rionalissima_2026.pdf",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-firenze-fiera-di-natale-posteggi-per-abeti": {
+      "kind": "partial",
+      "label": "46 € domanda; canone da verificare",
+      "details": "Natale 2026: 46 € da allegare all’istanza, di cui 30 € diritti istruttoria e 16 € bollo virtuale. Per alimentaristi, solo in caso di avvio di nuova notifica alimentare ulteriori 50 € (20+30). Sono oneri di domanda, non il prezzo complessivo del posteggio; canone e ulteriori oneri da verificare nel bando.",
+      "sourceUrl": "https://www.comune.firenze.it/system/files/attachments/natale-bando-2026.pdf",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-firenze-fiera-di-natale-posteggi-per-dolciumi-e-articoli-natalizi": {
+      "kind": "partial",
+      "label": "46 € domanda; eventuali oneri sanitari extra",
+      "details": "Natale 2026: 46 € da allegare all’istanza, di cui 30 € diritti istruttoria e 16 € bollo virtuale. Per alimentaristi, solo in caso di avvio di nuova notifica alimentare ulteriori 50 € (20+30). Sono oneri di domanda, non il prezzo complessivo del posteggio; canone e ulteriori oneri da verificare nel bando.",
+      "sourceUrl": "https://www.comune.firenze.it/system/files/attachments/natale-bando-2026.pdf",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-firenze-savonarola-antiquaria": {
+      "kind": "unit",
+      "label": "50 € mensili per 13,5 m²",
+      "details": "Bando 2026: 50 € mensili per spazio 4,5×3 m (13,5 m²), pagamento prima della partecipazione. IVA non esplicitata, da chiarire.",
+      "sourceUrl": "https://www.comune.firenze.it/system/files/attachments/avviso-pubblico-fiera-savonarola-antiquaria-2026.pdf",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
+    },
+    "toscana-firenze-fiera-di-oltrarno": {
+      "kind": "unit",
+      "label": "60–100 € mensili secondo superficie",
+      "details": "Bando 2026: quote mensili 60 € per 3×3 m (9 m²), 70 € per 4,5×3 m (13,5 m²), 85 € per 6×3 m (18 m²), 100 € per 6×4 m (24 m²). Pagamento prima della fiera; IVA non esplicitata, da chiarire.",
+      "sourceUrl": "https://www.comune.firenze.it/system/files/attachments/avviso-pubblico-fiera-di-oltrarno-2026.pdf",
+      "checkedAt": "2026-10-16",
+      "period": "2026"
     }
   }
 }
