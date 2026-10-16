@@ -1,5 +1,23 @@
 # Subingresso.it — informazioni e TO DO
 
+**Blog fiere Friuli-Venezia Giulia, 16 ottobre 2026:** pubblicato «Le 10 migliori
+fiere in Friuli-Venezia Giulia da conoscere se fai l’ambulante», ID
+`02e46433-b91d-4f23-b1da-9b170155f803`,
+[/blog?post=migliori-fiere-friuli-venezia-giulia](https://subingresso.it/blog?post=migliori-fiere-friuli-venezia-giulia).
+Regione assente nella serie verificata live; 1.711 parole, otto fiere
+tradizionali, Fiera dei Cesti e Gusti di Frontiera, undici fonti raggiungibili
+e due richiami discreti al calendario. Distinti mercato Codroipo 25 ottobre,
+posti residui condizionati Trieste e date/termini già trascorsi; ricorrenze
+Udine/Cervignano senza inventare date correnti. Vecchio PDF Cervignano con
+certificato scaduto sostituito con copia sul dominio comunale attuale;
+Gusti turismo 404 sostituito con portale turistico comunale. Pubblicazione,
+testo/meta/canonical, indice, sitemap e calendario regionale verificati su
+Chromium 1440/390 px, senza overflow. Conservati gli 86 articoli precedenti.
+Testo, fonti e riscontri in `Documents/articoli-subingresso/`, prefisso
+`migliori-fiere-friuli-venezia-giulia`, script `friuli-venezia-giulia-lavorazione.cjs`.
+Backup remoto verificato; log PowerShell interrotto sullo stderr di git,
+senza compromettere il tag. Nessuna modifica al codice o ai dati delle fiere.
+
 **Blog fiere Trentino-Alto Adige, 16 ottobre 2026:** pubblicato «Le 10 migliori
 fiere in Trentino-Alto Adige da conoscere se fai l’ambulante», ID
 `b21014a9-6e8e-46d9-a7d6-5568c22bac58`,
