@@ -1,5 +1,19 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Roma, 16 ottobre 2026: ricerca PARZIALE, da non spuntare. 99 schede in 43 comuni
+(prima tre), ricerca nominale nei 121 comuni e confronto delle 31 righe Lazio.
+Audit/esclusioni/limiti `data/fiere-roma.json` e `data/FIERE.md`; archivio esterno
+`Documents/ricerca-fiere-roma-20261016`. Restano calendari commerciali Municipi
+Roma/Befana, atti Vicovaro, formule Lariano, programmi Tolfa/Cave e piste in audit.
+Castel San Pietro Natale domanda 15 novembre, 50/70 euro al giorno; Segni
+domanda scaduta 9 ottobre, fiera 24–25 distinta dalla sagra 22–25. Bajocco 130
+euro + IVA per tre giorni, 1 settembre saldo e non domanda. Grottaferrata A
+9 m² nuovi 1.334 euro + IVA inclusa iscrizione. Montelibretti spunta 80 euro,
+prenotazioni distinte; Maker Faire 23–25 ottobre, Landriana 28–29 marzo.
+Tre ID e altre 3.873 schede conservati, totale 3.972. Cache JS49/catalogo40.
+Build, settori e test Roma locali con PLAYWRIGHT_MODULE superati; verifica
+online ancora da registrare. Nessun invio a terzi o file estraneo committato.
+
 Firenze, 16 ottobre 2026: ricerca documentale nei 41 comuni, 113 schede in
 40 comuni (prima tre), pubblicate e verificate online. Fonti e
 limiti data/fiere-firenze.json e data/FIERE.md; archivio Documents/ricerca-fiere-firenze-20261016.
