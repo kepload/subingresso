@@ -310,7 +310,9 @@ valutare. Estendere le valutazioni con prove per singolo evento, senza
 scambiare informazioni mancanti per scarsa qualità. Archivio e criteri in
 `data/fiere-rinomatezza.json` e `data/FIERE.md`. Controlli locali passati su
 computer/telefono e WebKit; campi precedenti delle 3.972 schede conservati.
-Pubblicazione e verifica online in corso.
+Pubblicato e verificato online il 16 ottobre 2026, commit `93fbcc1`, Vercel
+riuscito. Pagina/script/stile/catalogo identici al commit; bollini, motivi,
+fonti, filtri, mappa e URL provati su Chromium computer/telefono e WebKit.
 
 ## Come funziona questa lista e come scegliere le priorità
 

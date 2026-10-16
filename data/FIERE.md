@@ -57,8 +57,13 @@ Test dedicato `scripts/test-fiere-reputation.cjs`: prove/negativi/scadenza,
 conservazione catalogo e flussi browser. Build e settori passati; suite
 generale superata nei cinque formati/browser, con nuova verifica a 320 px
 dopo aver compattato i filtri sui telefoni più stretti. Test dedicato
-Chromium computer/telefono e WebKit passato localmente. Pubblicazione e
-verifica online da registrare a conclusione.
+Chromium computer/telefono e WebKit passato localmente e in produzione.
+Pubblicato con commit **93fbcc1**, Vercel READY
+`dpl_GrgvRv34HYtETDxRRTAz1rMczAep`; HTML, JS, CSS e catalogo online
+identici al commit, con terminazioni di riga normalizzate. Verificati online
+i quattro stati, fonti del dettaglio, combinazione provincia/rinomatezza,
+mappa, URL e ricaricamento, tastiera, reset e assenza di overflow.
+Test con autenticazione e tracking esclusi per evitare dati artificiali.
 
 ## Roma — ricerca parziale, 16 ottobre 2026
 

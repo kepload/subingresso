@@ -73,7 +73,11 @@ async function run(engine, label, viewport, base) {
     try {
         const context = await browser.newContext({ viewport, hasTouch: viewport.width < 720 });
         const origin = new URL(base).origin;
-        await context.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.fulfill({ status: 200, body: '' }));
+        await context.route('**/*', route => {
+            const url = new URL(route.request().url());
+            if (url.origin !== origin || /\/js\/(?:supabase-config|auth|page-view-tracker)\.js$/.test(url.pathname)) return route.fulfill({ status: 200, body: '' });
+            return route.continue();
+        });
         const page = await context.newPage();
         const errors = [];
         page.on('pageerror', e => errors.push(e.message));

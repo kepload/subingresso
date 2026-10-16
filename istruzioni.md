@@ -16,7 +16,10 @@ PLAYWRIGHT_MODULE e FIERE_TEST_BASE_URL opzionale. Cache JS50/catalogo41/CSS14.
 Build, settori, conservazione integrale dei campi precedenti, suite generale
 su cinque formati/browser e test dedicato Chromium/WebKit passati localmente.
 Schermi da 320 px: filtri compatti per mantenere la mappa nella prima schermata.
-Pubblicazione e verifica online da registrare a conclusione.
+Pubblicato con commit 93fbcc1; Vercel READY dpl_GrgvRv34HYtETDxRRTAz1rMczAep.
+HTML/JS/CSS/catalogo online identici al commit. Test dedicato passato anche
+in produzione sui tre formati/browser: filtro, mappa, fonti, URL, tastiera,
+azzeramento e assenza di overflow. Test online senza autenticazione/tracking.
 
 Roma, 16 ottobre 2026: ricerca PARZIALE, da non spuntare. 99 schede in 43 comuni
 (prima tre), ricerca nominale nei 121 comuni e confronto delle 31 righe Lazio.
