@@ -1,5 +1,21 @@
 # Subingresso.it — informazioni e TO DO
 
+**Blog fiere Emilia-Romagna, 16 ottobre 2026:** pubblicato «Le 10 migliori
+fiere in Emilia-Romagna da conoscere se fai l’ambulante», ID
+`2f1ee0ac-423f-4f71-9cbe-962db6ebb7d1`,
+[/blog?post=migliori-fiere-emilia-romagna](https://subingresso.it/blog?post=migliori-fiere-emilia-romagna).
+Regione assente nella serie verificata live: già presenti Lombardia, Veneto
+e Piemonte. Testo semplice di circa 1.700 parole, dieci eventi con fonti
+ufficiali, due richiami discreti a `/fiere` e al filtro Emilia-Romagna.
+Distinti festa/mercato, esempi 2026 e scadenza già trascorsa a Sant’Agata.
+Verificati testo/titolo/descrizione pubblici, indice blog, sitemap, canonical,
+lettura e collegamento al calendario filtrato su Chromium 1440/390 px;
+nessuno scorrimento orizzontale. Conservati gli 83 articoli precedenti.
+Testo, riscontri e anteprime in `Documents/articoli-subingresso/`, prefisso
+`migliori-fiere-emilia-romagna` e script `emilia-romagna-lavorazione.cjs`.
+Collegamento comunale Guastalla non più attivo sostituito con sito organizzatore.
+Nessuna modifica al codice del sito o ai dati del calendario.
+
 **Pagine fiere, 16 ottobre 2026:** autorizzate pagine autonome con completamento
 progressivo, mantenendo apertura rapida nel calendario. Implementati indirizzi
 stabili `/fiere/<id>` e archivio `/fiere/elenco`, con stessi dati del calendario.
