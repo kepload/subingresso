@@ -1,5 +1,24 @@
 # Subingresso.it — informazioni e TO DO
 
+**Blog fiere Umbria, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
+in Umbria da conoscere se fai l’ambulante», ID `61741baf-f6cf-4048-a699-9b1916f0a9e0`,
+[/blog?post=migliori-fiere-umbria](https://subingresso.it/blog?post=migliori-fiere-umbria).
+Regione assente verificata live; 1.544 parole, dieci fiere tradizionali nelle
+due province, otto fonti raggiungibili e due richiami discreti al calendario.
+Distinte spunta Perugia con domanda già scaduta il 1° luglio, San Florido
+con termine 14 settembre e regola ordinaria San Feliciano 31 ottobre;
+disposizioni Santo Manno 2025 non estese al 2026. Marsciano 410 scartato;
+PDF Gubbio 403 diretto, dati confrontati con testo ufficiale indicizzato
+e pagina comunale con allegati raggiungibile. Pubblicazione, testo/meta/canonical,
+indice, sitemap e filtro regionale verificati su Chromium 1440/390 px,
+senza overflow; preservati gli 89 articoli precedenti. Serie ora 10/20:
+mancano Abruzzo, Basilicata, Calabria, Campania, Lazio, Molise, Puglia,
+Sardegna, Sicilia e Valle d’Aosta. Testo e riscontri in
+`Documents/articoli-subingresso/`, prefisso `migliori-fiere-umbria`,
+script `umbria-lavorazione.cjs`. Backup remoto verificato; cleanup tag
+con errore PowerShell già noto, checkpoint valido. Nessuna modifica
+al codice del sito o ai dati delle fiere.
+
 **Blog fiere Marche, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere nelle
 Marche da conoscere se fai l’ambulante», ID `f904bde5-356f-41db-bae5-4e0d73e6df8b`,
 [/blog?post=migliori-fiere-marche](https://subingresso.it/blog?post=migliori-fiere-marche).
