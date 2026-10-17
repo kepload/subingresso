@@ -15,7 +15,7 @@ moduli Gambettola e Roncofreddo, regolamento Sogliano, organizzatore Mixer,
 turismo e programmi originali confrontati. I 1.046 URL nel manifest sono
 tentativi HTTP, inclusi 480 endpoint regionali esplorativi abortiti: non
 1.046 documenti letti. Pagine comunali JS renderizzate; sei originali
-controllati anche visivamente. Download HTTP200 può essere shell o pagina
+controllati anche visivamente. Download HTTP 200 può essere shell o pagina
 inesistente: esiti applicativi distinti nei limiti. Nessun contatto a terzi.
 
 Correzioni principali: Dovadola 18/25 ottobre, Natale Forlì dal 21 novembre
@@ -31,7 +31,7 @@ alternativo falliti; ultimo tentativo con query anticache sullo slug2025
 recupera il contenuto aggiornato2026. Letti quattro allegati mercato e
 quattro PiazzaArtusi: domanda mercato20maggio ore13, cauzione100€
 rimborsabile, non quota banco; PiazzaArtusi associazioni1giugno ore9,
-canale separato. Scheda promozioneB.4 richiamata ma non collegata, da
+canale separato. Scheda promozione B.4 richiamata ma non collegata, da
 recuperare per nuove candidature. Avviso logistico non è domanda banco.
 Borghi e Meldola: poster originali riprodotti e cronache secondarie
 dichiarate, moduli/quote non reperiti. Predappio originale organizzatore
@@ -49,8 +49,16 @@ suite generale su cinque formati/browser. Test provinciale: 88 ID in elenco
 e mappa, settori, dialog e pagine senza JavaScript su Chromium 1440/390
 e WebKit 390. Confronto integrale: altre 4.191 schede identiche.
 
-Cache fiere.js70/catalogo50. Pubblicazione e verifica ancora da registrare:
-TO DO e riepilogo province restano invariati finché il deploy non è verificato.
+Cache fiere.js70/catalogo50. Pubblicazione dati `567a1f5`, Vercel riuscito:
+[deploy verificato](https://vercel.com/kycykuardit-9234s-projects/subingresso/7r3DM9rL3ykhVFbLc8wt2LShJZmT).
+Catalogo, audit provinciale, HTML e JS online identici dopo 21 secondi.
+Tutte le 88 pagine pubbliche HTTP 200, H1 e canonical esatti, istruzioni
+presenti. Test provinciale passato anche online su Chromium 1440/390 e
+WebKit 390: ID elenco e mappa, settori, cinque dialog, tre pagine senza JS,
+nessun errore o overflow. Riscontri in `verification-online.json` esterno.
+TO DO spuntata solo dopo questi esiti; riepilogo aggiornato a **32 province
+completate, 78 rimanenti su 110**, totale nazionale **4.279**. Future verifiche
+periodiche distinte e limiti conservati; nessun’altra provincia avviata.
 
 
 ## Ravenna — ricerca documentale del 17 ottobre 2026

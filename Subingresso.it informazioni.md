@@ -4,7 +4,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 17 ottobre 2026
 
-- **Fiere:** 4.214 schede; ricerca approfondita conclusa e verificata online per 31 province, 79 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Fiere:** 4.279 schede; ricerca approfondita conclusa e verificata online per 32 province, 78 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -12,7 +12,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Anteprime e date:** costo soltanto se disponibile, senza «Costo banco da verificare»/«Costi: vedi scheda»; note nella scheda. Nessun bollino per valutazione mancante né riga vuota. Giorno settimanale per fiere di 1–2 giorni, stesso formato in elenco/dettaglio; da 3 giorni e per periodi indicativi formato precedente. Niente diciture di stato accanto alle date: piccolo ! apribile al tocco/tastiera per riconferme, ricorrenze, periodi ed edizioni passate.
 - **Pagine autonome:** `/fiere/<id>` e archivio `/fiere/elenco`, stessi dati del calendario, apertura rapida nel dialog conservata. Schede incomplete consultabili ma noindex finché manca contenuto operativo sufficiente; sitemap automatica per le altre. Non certificano una ricerca provinciale conclusa.
 - **Blog regionale fiere:** serie 10/20 dopo Umbria; mancano Abruzzo, Basilicata, Calabria, Campania, Lazio, Molise, Puglia, Sardegna, Sicilia, Valle d'Aosta. Già presenti Lombardia, Veneto, Piemonte e le sette regioni registrate sotto.
-- **Ultime cache registrate:** fiere JS69/JSON49/CSS24, pagina fiera CSS2. Sono riferimenti storici: cercare sempre le versioni reali prima di modificare.
+- **Ultime cache registrate:** fiere JS70/JSON50/CSS24, pagina fiera CSS2. Sono riferimenti storici: cercare sempre le versioni reali prima di modificare.
 
 ## Registro recente: pubblicazioni e verifiche
 
@@ -775,7 +775,32 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   esclusioni e giorni commerciali dei periodi; manutenzione futura distinta
   dalla ricerca corrente conclusa, senza riaprire altre province.
 
-**Ricerca approfondita: 31 province completate, 79 da fare su 110**, ricontrollate il 17 ottobre dopo Ravenna. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+- [x] **Forlì-Cesena — ricerca documentale conclusa e verificata online (17 ottobre 2026)**:
+  **88 manifestazioni in 30 comuni**, prima 23: 65 aggiunte, 76 con date esatte,
+  14 sintesi di costo. Ricognizione dei 30 comuni, originali comunali/SUAP,
+  graduatorie, regolamenti, programmi e organizzatori. Audit, tentativi,
+  esclusioni e limiti in `data/fiere-forli-cesena.json` e `data/FIERE.md`;
+  archivio `Documents/ricerca-fiere-forli-cesena-20261017`.
+  Artusiana: recuperati otto allegati 2026 superando la cache del sito;
+  cauzione rimborsabile distinta da quota banco e PiazzaArtusi da ambulanti.
+  Fonti secondarie Borghi/Meldola dichiarate; date incerte testuali, Fratta
+  esplicitamente 2025, conflitti Cesenatico non trasformati in conferme.
+  Ricerca corrente chiusa con limiti documentati, senza promessa di censimento
+  esaustivo o posti liberi. Conservati 23 ID e altre 4.191 schede identiche.
+  Commit dati `567a1f5`, Vercel riuscito; catalogo, audit, HTML e JS identici
+  online entro 21 secondi; 88 pagine HTTP 200 con nome, canonical e istruzioni.
+  Build, settori, 4.279 pagine/1.582 sitemap e suite generale cinque formati
+  passati. Test provinciale locale e online tramite PLAYWRIGHT_MODULE:
+  Chromium 1440/390 e WebKit 390, elenco/mappa, settori, dialog e pagine senza JS.
+  Nessun contatto a terzi; file estranei preservati ed esclusi dai commit.
+- [ ] **Forlì-Cesena — verifiche periodiche**: nuove edizioni, disponibilità,
+  quote e canoni, scheda promozione B.4 Artusiana non collegata; calendario
+  Bertinoro/Fratta, Pasquetta/FestinVal/Sangiovese, Zadina e conflitti
+  Pulci/Madamarosè, seconda data Buskers e refuso modulo agricoli Pisello.
+  Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
+  distinta dalla ricerca corrente conclusa, senza avviare altre province.
+
+**Ricerca approfondita: 32 province completate, 78 da fare su 110**, ricontrollate il 17 ottobre dopo Forlì-Cesena. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -810,7 +835,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **22. Roma** — Lazio; ricerca documentale completata, 127 schede in 48 comuni pubblicate e verificate, limiti espliciti sopra
 - [x] **23. Rimini** — Emilia-Romagna; 115 manifestazioni, 27 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
 - [x] **24. Ravenna** — Emilia-Romagna
-- [ ] **25. Forlì-Cesena** — Emilia-Romagna
+- [x] **25. Forlì-Cesena** — Emilia-Romagna; 88 manifestazioni, 30 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
 - [ ] **26. Piacenza** — Emilia-Romagna
 - [ ] **27. Udine** — Friuli-Venezia Giulia
 - [ ] **28. Pordenone** — Friuli-Venezia Giulia
