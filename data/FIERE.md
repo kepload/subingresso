@@ -2444,6 +2444,11 @@ generale calendario320 passate; schermate in
 `Documents/verifica-affinita-fiere-20261017/`. Backup remoto verificato
 `backup/session-20261017-221322-affinita-articolo-fiere`; script interrotto
 dal noto wrapping PowerShell sullo stderr nativo, tag remoto presente.
+Pubblicato `bf960e2`, Vercel riuscito
+`4Dd19MfhDceoL3Br6qebWVKzbb73`; HTML, JS73, CSS26 e JSON51 identici ai
+locali normalizzando CRLF/LF. Test dedicato passato anche online nei quattro
+formati/browser; voti reali verificati e fixture isolate per rosso/incertezza,
+senza scrivere dati di prova. Esiti e fonte Cento nella cartella delle prove.
 
 ### Macrosettori
 

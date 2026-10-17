@@ -14,7 +14,10 @@ Chromium1440/820/320×568 + WebKit390 passati; regressioni articoli e affluenza
 passate, suite generale320 passata. Unica fiera con voti2 oggi: Natale Cento,
 sette articoli alimentari; fonte regionale HTTP200 riconfermata il17/10.
 Prove Documents/verifica-affinita-fiere-20261017, dettaglio data/FIERE.md.
-Pubblicazione e verifica online da completare.
+Pubblicato bf960e2, Vercel riuscito 4Dd19MfhDceoL3Br6qebWVKzbb73;
+HTML/JS/CSS/catalogo online identici. Stesso test dedicato passato online
+sui quattro formati/browser, incluse fixture isolate per rosso e incertezza;
+nessuna modifica al catalogo per ottenere quei casi. Nessun invio reale.
 
 Filtri articoli fiere, 17 ottobre 2026: aggiunto «Tipologia di articolo» tra
 Cosa vendi e Tipo di evento. 31 checkbox in sei gruppi, OR tra selezioni e
