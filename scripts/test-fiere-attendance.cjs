@@ -13,11 +13,12 @@ const research = require('../data/fiere-affluenza.json');
 const today = research.checkedAt;
 const sample = structuredClone(Object.values(research.events)[0]);
 const info = (patch = {}, extra = {}) => api.attendanceInfo({ attendance: { ...sample, ...patch }, ...extra }, today);
-for (const [value, level] of [[1,'low'],[999,'low'],[1000,'medium'],[4999,'medium'],[5000,'high'],[19999,'high'],[20000,'veryHigh']]) {
+for (const [value, level] of [[1,'veryLow'],[499,'veryLow'],[500,'low'],[999,'low'],[1000,'medium'],[4999,'medium'],[5000,'high'],[19999,'high'],[20000,'veryHigh'],[99999,'veryHigh'],[100000,'exceptional']]) {
     assert.equal(info({ value, openDays: 1, relation: 'exact' }).level, level);
 }
 assert.equal(info({value: 9000, openDays: 3, relation: 'exact'}).level, 'medium');
-assert.match(info().label, /almeno/);
+assert.doesNotMatch(info().label, /almeno/);
+assert.equal(info({value:100000,openDays:1}).label,'Affluenza altissima');
 for (const unit of ['visitors', 'uniqueVisitors', 'passages']) assert.equal(info({unit}).level, null);
 for (const scope of ['whole-event', 'partial']) assert.equal(info({scope}).level, null);
 assert.equal(info({openDays:0}).level, null);
@@ -72,11 +73,19 @@ const server=http.createServer((req,res)=>{
    const context=await browser.newContext({viewport:{width,height:1000}}),origin=new URL(base).origin;
    await context.route('**/*',r=>{const u=new URL(r.request().url());return u.origin!==origin||/\/js\/(auth|supabase-config|page-view-tracker)\.js$/.test(u.pathname)?r.fulfill({status:200,body:''}):r.continue();});
    const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
-   for(const event of [catalog.events.find(e=>api.attendanceInfo(e)?.level==='veryHigh'),catalog.events.find(e=>api.attendanceInfo(e)?.level==='high'),catalog.events.find(e=>e.attendance?.unit==='visitors'),catalog.events.find(e=>!e.attendance)]){
+   for(const event of [catalog.events.find(e=>api.attendanceInfo(e)?.level==='exceptional'),catalog.events.find(e=>api.attendanceInfo(e)?.level==='veryHigh'),catalog.events.find(e=>api.attendanceInfo(e)?.level==='high'),catalog.events.find(e=>e.attendance?.unit==='visitors'),catalog.events.find(e=>!e.attendance)]){
     await page.goto(base+'/fiere?provincia='+encodeURIComponent(event.province)+'&q='+encodeURIComponent(event.name));
     const card=page.locator('[data-event-id="'+event.id+'"]');await card.waitFor();
     const a=api.attendanceInfo(event),hasBadge=Boolean(a?.level);
     assert.equal(await card.locator('.fiere-attendance').count(),Number(hasBadge));
+    if(a?.level==='exceptional'){
+     const badge=card.locator('.fiere-attendance');
+     assert.equal(await badge.innerText(),'Affluenza altissima');
+     assert.equal(await badge.evaluate(e=>getComputedStyle(e).animationName),'fiere-attendance-glow');
+     await page.emulateMedia({reducedMotion:'reduce'});
+     assert.equal(await badge.evaluate(e=>getComputedStyle(e).animationName),'none');
+     await page.emulateMedia({reducedMotion:'no-preference'});
+    }
     const button=card.locator(hasBadge?'.fiere-attendance':'.fiere-card-button');await button.focus();await page.keyboard.press('Enter');
     await page.waitForSelector('#fair-dialog[open]');assert.equal(await page.locator('#detail-attendance').isVisible(),Boolean(a));
     if(a){assert((await page.locator('#detail-attendance').textContent()).includes(a.total));await page.locator('#detail-attendance summary').click();assert.equal(await page.locator('#detail-attendance a').first().getAttribute('href'),a.record.source.url);}

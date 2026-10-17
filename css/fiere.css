@@ -111,3 +111,10 @@ button.fiere-reputation{text-decoration:none}
 @media(max-width:400px){.fiere-detail-facts{grid-template-columns:1fr;gap:3px}.fiere-detail-facts dd{margin-bottom:10px}}
 .fiere-card .fiere-card-cost{font-size:12px;line-height:1.6;margin-top:7px;overflow-wrap:anywhere;color:#64748b}.fiere-card .fiere-card-cost[data-known=true]{color:#1e40af;font-weight:700}.fiere-detail-info.fiere-detail-cost-box{padding:16px;background:#eff6ff;border:1px solid #dbeafe;border-radius:12px;margin-top:18px}.fiere-detail-cost-box h3{color:#1e40af}.fiere-detail-cost-box #detail-costs-meta{font-size:11px;color:#475569}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.fiere-attendance[data-attendance=veryLow]{background:#733b3b}
+.fiere-attendance[data-attendance=exceptional]{position:relative;isolation:isolate;overflow:hidden;background:#594005;color:#fff;border:1px solid #b99027;box-shadow:0 0 5px #e7b52a,0 0 12px #e7b52a66;animation:fiere-attendance-glow 3s ease-in-out infinite}
+.fiere-attendance[data-attendance=exceptional]::after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 20%,#fff8 48%,transparent 75%);transform:translateX(-150%);animation:fiere-attendance-shine 4s ease-in-out infinite}
+@keyframes fiere-attendance-glow{50%{box-shadow:0 0 8px #e7b52a,0 0 18px #e7b52a88}}
+@keyframes fiere-attendance-shine{0%,25%{transform:translateX(-150%)}75%,100%{transform:translateX(150%)}}
+@media(prefers-reduced-motion:reduce){.fiere-attendance[data-attendance=exceptional],.fiere-attendance[data-attendance=exceptional]::after{animation:none}}

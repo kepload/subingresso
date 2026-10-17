@@ -114,10 +114,12 @@
     }
     // Editorial volume bands, not a forecast or a commercial assessment.
     const ATTENDANCE = {
+        exceptional: { label: 'Affluenza altissima', min: 100000 },
         veryHigh: { label: 'Affluenza molto alta', min: 20000 },
         high: { label: 'Affluenza alta', min: 5000 },
         medium: { label: 'Affluenza media', min: 1000 },
-        low: { label: 'Affluenza bassa', min: 0 }
+        low: { label: 'Affluenza bassa', min: 500 },
+        veryLow: { label: 'Affluenza molto bassa', min: 0 }
     };
     function attendanceInfo(event, today = todayInRome()) {
         const a = event.attendance;
@@ -149,7 +151,7 @@
             daily = a.value / a.openDays;
             level = Object.keys(ATTENDANCE).find(key => daily >= ATTENDANCE[key].min);
         }
-        const label = level ? ATTENDANCE[level].label.replace('Affluenza ', a.relation === 'over' && level !== 'veryHigh' ? 'Affluenza almeno ' : 'Affluenza ') : '';
+        const label = level ? ATTENDANCE[level].label : '';
         const comparison = level
             ? (a.relation === 'over' ? 'Più di ' : a.relation === 'about' ? 'Circa ' : '') + format(daily) + ' ' + units[a.unit] + '/giorno in media sull’edizione.'
             : newerEdition ? 'È disponibile un dato di un’edizione precedente; il bollino attende un riscontro più recente.'
@@ -157,7 +159,7 @@
         return { level, label, total: total + days, status, comparison, year: a.start.slice(0, 4), record: a };
     }
     function attendanceCriteria() {
-        return 'Fasce editoriali sulla media giornaliera di ingressi o presenze: bassa sotto 1.000; media da 1.000 a meno di 5.000; alta da 5.000 a meno di 20.000; molto alta da 20.000. La media non descrive ogni singola giornata o il passaggio davanti al banco. I conteggi possono includere ritorni della stessa persona. Le cifre dichiarate o stimate restano tali; “almeno” indica una soglia minima. Nessun bollino quando mancano dati confrontabili.';
+        return 'Fasce editoriali sulla media giornaliera di ingressi o presenze: molto bassa sotto 500; bassa da 500 a meno di 1.000; media da 1.000 a meno di 5.000; alta da 5.000 a meno di 20.000; molto alta da 20.000 a meno di 100.000; altissima da 100.000. Altissima è riservata a volumi eccezionali e non certifica un primato storico. La media non descrive ogni singola giornata o il passaggio davanti al banco. I conteggi possono includere ritorni della stessa persona. Le cifre dichiarate o stimate restano tali; i dati “oltre” indicano un limite minimo e la fascia si basa su quel limite. Nessun bollino quando mancano dati confrontabili.';
     }
     const REPUTATIONS = {
         rinomata: { label: 'Molto conosciuta', icon: '★', description: 'Richiamo ampio o oltre il territorio locale documentato da fonti e dati.' },

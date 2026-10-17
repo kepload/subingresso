@@ -1039,3 +1039,6 @@ provinciale Chromium1440/320 e WebKit390 online passati tramite PLAYWRIGHT_MODUL
 Build, settori e 4.322 pagine locali passati. Ricerca approfondita ancora
 incompleta: TO DO non spuntata, riepilogo resta 32 completate e 78 da fare.
 Residui documentali in research.openLeads; nessun contatto a terzi.
+
+
+Affluenza, 17 ottobre 2026 - preferenza corrente: eliminato "almeno" dai bollini. Sei fasce di ingressi/presenze medi al giorno: molto bassa <500; bassa 500-999; media 1.000-4.999; alta 5.000-19.999; molto alta 20.000-99.999; altissima da 100.000. Altissima riservata a volumi eccezionali, senza certificare primati storici: bollino dorato con luce e riflesso, movimento disattivato con prefers-reduced-motion. Fonti, stime e limiti "oltre" nei dettagli; catalogo invariato. Supera le quattro fasce precedenti. Cache fiere JS74/CSS27, fiera CSS3. Test affluenza Chromium1440/320 e WebKit390 passati, incluse nuove soglie, luce e movimento ridotto; 4.322 pagine e 1.625 voci sitemap, navigazione senza JS e dialog verificati. Pubblicazione in corso.
