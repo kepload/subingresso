@@ -673,7 +673,6 @@
                         <h3 class="font-black text-slate-900 text-lg flex items-center gap-2">
                             <i class="fas fa-chart-line text-blue-500"></i> Performance posteggi
                         </h3>
-                        <p class="text-xs text-slate-500 font-semibold mt-1">Visualizzazioni, messaggi ricevuti e clic nel periodo selezionato.</p>
                     </div>
                     <div class="flex flex-wrap items-center gap-2">
                         <select id="sellerAnalyticsListingSelect" aria-label="Annuncio da analizzare" onchange="renderSellerAnalytics()" class="border border-slate-200 rounded-xl px-3 py-2 text-xs font-black text-slate-600 outline-none focus:border-blue-400 bg-white max-w-full">
@@ -686,21 +685,20 @@
                 </div>
 
                 <p id="sellerAnalyticsPeriod" class="text-xs text-slate-500 font-bold mb-3" aria-live="polite"></p>
+                <div id="sellerAnalyticsChartWrap" class="relative w-full hidden mb-5" style="height:280px">
+                    <canvas id="sellerAnalyticsChart"></canvas>
+                </div>
+
                 <div id="sellerAnalyticsSummary" class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 mb-3" aria-live="polite">
                     <div class="text-center py-8 text-slate-300 col-span-full"><i class="fas fa-spinner fa-spin text-xl"></i></div>
                 </div>
 
                 <div id="sellerAnalyticsActions" class="hidden text-xs text-slate-500 font-semibold mb-3" aria-live="polite"></div>
-                <p class="text-xs text-slate-500 font-semibold mb-3">Un clic su telefono o WhatsApp non conferma una chiamata o un messaggio inviato.</p>
-                <p id="sellerAnalyticsHistoryNote" class="hidden text-xs text-amber-800 font-semibold mb-3"></p>
-
-                <div id="sellerAnalyticsChartWrap" class="relative w-full hidden" style="height:280px">
-                    <canvas id="sellerAnalyticsChart"></canvas>
-                </div>
 
                 <details class="text-xs text-slate-500 font-semibold mt-3">
                     <summary class="cursor-pointer font-bold">Come leggere i numeri</summary>
-                    <p class="mt-2">Le visualizzazioni includono anteprime e aperture degli annunci, anche ripetute: non sono persone uniche. I messaggi ricevuti sono quelli inviati dagli acquirenti nella chat di Subingresso.it; le tue risposte sono escluse. Le chat aperte contano i clic per entrare nella chat, anche senza scrivere. I nuovi preferiti contano le aggiunte nel periodo, anche se poi rimosse. Tutti i dati e il grafico seguono lo stesso periodo, oggi incluso, con giorni conteggiati in UTC.</p>
+                    <p class="mt-2">Visualizzazioni: anteprime e aperture, anche ripetute. Messaggi: ricevuti nella chat del sito. Click e aperture chat non confermano invii. Preferiti: nuove aggiunte. Vetrina: attività durante la promozione, dall'8 ottobre 2026.</p>
+                    <p id="sellerAnalyticsHistoryNote" class="hidden mt-2"></p>
                 </details>
 
                 <div id="sellerVetrinaResults" class="mt-5" aria-live="polite"></div>
@@ -3671,13 +3669,13 @@ function renderSellerAnalytics() {
     });
 
     const sum = key => buckets.reduce((total, b) => total + b[key], 0);
-    if (periodLabel) periodLabel.textContent = `Dal ${_sellerDate(buckets[0].key)} al ${_sellerDate(buckets[buckets.length - 1].key)} · oggi incluso`;
+    if (periodLabel) periodLabel.textContent = `${_sellerDate(buckets[0].key)} – ${_sellerDate(buckets[buckets.length - 1].key)}`;
 
     summary.innerHTML = [
-        _sellerStatCard('Visualizzazioni', _sellerNum(sum('views')), 'anteprime e aperture', 'fa-eye', 'blue'),
-        _sellerStatCard('Messaggi ricevuti', _sellerNum(sum('messages')), 'nella chat del sito', 'fa-comments', 'emerald'),
-        _sellerStatCard('Clic telefono', _sellerNum(sum('calls')), 'sul pulsante Chiama', 'fa-phone', 'amber'),
-        _sellerStatCard('Clic WhatsApp', _sellerNum(sum('whatsapp')), 'sul pulsante WhatsApp', 'fa-comment', 'violet')
+        _sellerStatCard('Visualizzazioni', _sellerNum(sum('views')), 'fa-eye', 'blue'),
+        _sellerStatCard('Messaggi ricevuti', _sellerNum(sum('messages')), 'fa-comments', 'emerald'),
+        _sellerStatCard('Click telefono', _sellerNum(sum('calls')), 'fa-phone', 'amber'),
+        _sellerStatCard('Click WhatsApp', _sellerNum(sum('whatsapp')), 'fa-comment', 'violet')
     ].join('');
     if (actions) {
         actions.textContent = `Chat aperte: ${_sellerNum(sum('chats'))} · Nuovi preferiti: ${_sellerNum(sum('saves'))}`;
@@ -3688,7 +3686,7 @@ function renderSellerAnalytics() {
     if (historyNote) {
         const partial = buckets[0].key < _sellerAnalyticsState.trackingSince;
         historyNote.textContent = partial
-            ? `Storico parziale: visualizzazioni, clic e nuovi preferiti rilevati dal ${_sellerDate(_sellerAnalyticsState.trackingSince)}. Le date precedenti non sono disponibili. I messaggi ricevuti coprono tutto il periodo selezionato.`
+            ? `Visualizzazioni, click e preferiti disponibili dal ${_sellerDate(_sellerAnalyticsState.trackingSince)}.`
             : '';
         historyNote.classList.toggle('hidden', !partial);
     }
@@ -3723,7 +3721,6 @@ function _renderSellerVetrinaResults(listings) {
         el.innerHTML = `
             <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4">
                 <h4 class="text-sm font-black text-slate-900"><i class="fas fa-crown text-amber-500 mr-1"></i> Risultati durante la Vetrina</h4>
-                <p class="text-xs text-slate-500 mt-1">Nel periodo selezionato, solo mentre la promozione era attiva.</p>
                 ${waitingDays ? `<p class="text-xs font-bold text-amber-800 mt-3">${waitingDays} giorni acquistati in attesa di approvazione. La durata inizierà quando l'annuncio sarà online.</p>` : ''}
                 <div class="grid grid-cols-3 gap-2 mt-3">
                     ${[['Apparizioni', impressions], ['Visite', visits], ['Azioni', actions]].map(([label, count]) => `
@@ -3732,8 +3729,6 @@ function _renderSellerVetrinaResults(listings) {
                             <p class="text-2xl font-black text-slate-900 mt-1">${_sellerNum(count)}</p>
                         </div>`).join('')}
                 </div>
-                <p class="text-xs text-slate-500 mt-3">Apparizioni della card, aperture dell'annuncio e azioni su telefono, WhatsApp e chat.</p>
-                <p class="text-xs text-slate-500 mt-3 leading-relaxed">Rilevazione dall'8 ottobre 2026. I conteggi possono includere più azioni della stessa persona; le tue visite sono escluse.</p>
             </div>`;
     }
     const candidate = listings.find(l => l.status === 'active' && !isListingExpired(l) && !isListingFeatured(l)
@@ -3749,7 +3744,7 @@ function _renderSellerVetrinaResults(listings) {
     }
 }
 
-function _sellerStatCard(label, value, sub, icon, color) {
+function _sellerStatCard(label, value, icon, color) {
     const palette = {
         blue: 'bg-blue-50 text-blue-600',
         emerald: 'bg-emerald-50 text-emerald-600',
@@ -3762,7 +3757,6 @@ function _sellerStatCard(label, value, sub, icon, color) {
                 <span class="${palette} mr-1"><i class="fas ${icon} text-xs"></i></span>${label}
             </div>
             <div class="text-2xl md:text-3xl font-black text-slate-900 leading-none mt-3 truncate">${value}</div>
-            <div class="text-[10px] font-bold text-slate-500 mt-1">${escapeHTML(sub)}</div>
         </div>`;
 }
 
@@ -3794,7 +3788,7 @@ function _renderSellerAnalyticsChart(canvas, buckets) {
                 pointHoverRadius: 4
             },
             {
-                label: 'Clic telefono / WhatsApp / chat',
+                label: 'Click contatti',
                 data: buckets.map(b => b.key < _sellerAnalyticsState.trackingSince ? null : b.calls + b.whatsapp + b.chats),
                 borderColor: '#8b5cf6',
                 borderWidth: 2,
@@ -3895,10 +3889,6 @@ function _buildSellerAdvice(listings) {
     });
     if (savedNoContacts) {
         addTip('fa-bookmark', 'Nuovi preferiti nel periodo', `${savedNoContacts.titolo || 'Questo annuncio'} è stato salvato ma non ha ricevuto clic sui contatti o messaggi nel periodo. Aggiungi i dettagli utili a chi sta valutando il posteggio.`, `/modifica-annuncio?id=${encodeURIComponent(savedNoContacts.id)}`, 'Completa');
-    }
-
-    if (!tips.length) {
-        addTip('fa-check-circle', 'Annunci in ordine', 'Le basi ci sono. Continua ad aggiornare foto, prezzo e descrizione quando cambiano le condizioni.', '/dashboard', 'Ok');
     }
 
     return tips.map(t => `

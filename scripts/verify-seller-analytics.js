@@ -71,7 +71,7 @@ async function main() {
     assert.equal(evaluate('_sellerAnalyticsChart.data.datasets[2].data.reduce((a, b) => a + b, 0)'), 6);
     assert.equal(evaluate('_sellerAnalyticsChart.data.datasets[3].data.reduce((a, b) => a + b, 0)'), 5);
     assert.equal(evaluate('_sellerAnalyticsChart.data.datasets[0].data[0]'), null, 'Storico indisponibile, non zero');
-    assert.match(node('sellerAnalyticsHistoryNote').textContent, /Storico parziale/);
+    assert.match(node('sellerAnalyticsHistoryNote').textContent, /disponibili dal 6 ott 2026/);
     assert.match(node('sellerAnalyticsPeriod').textContent, /18 set 2026.*17 ott 2026/);
     assert.match(node('sellerVetrinaResults').innerHTML, /Risultati durante la Vetrina/);
     assert.match(node('sellerVetrinaResults').innerHTML, /Apparizioni/);

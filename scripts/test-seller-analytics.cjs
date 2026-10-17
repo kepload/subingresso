@@ -69,10 +69,11 @@ async function main() {
                 await page.getByRole('button', { name: 'Ultimi 90 giorni', exact: true }).click();
                 await page.waitForFunction(() => !_sellerAnalyticsState.loading);
                 assert.deepEqual(await values(), ['10', '5', '1', '2']);
-                assert.equal(await page.locator('#sellerAnalyticsHistoryNote').isVisible(), true);
+                assert.equal(await page.locator('#sellerAnalyticsHistoryNote').isVisible(), false);
                 assert.equal(await page.evaluate(() => _sellerAnalyticsChart.data.datasets[0].data[0]), null);
                 await page.getByText('Come leggere i numeri', { exact: true }).click();
                 assert.equal(await page.locator('details').getAttribute('open'), '');
+                assert.equal(await page.locator('#sellerAnalyticsHistoryNote').isVisible(), true);
                 assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `Nessun overflow ${name} ${width}`);
                 await page.evaluate(() => { window.fail = true; setSellerAnalyticsDays(7); });
                 await page.getByRole('button', { name: 'Riprova', exact: true }).waitFor();
@@ -88,6 +89,7 @@ async function main() {
                 assert.deepEqual(errors, []);
                 if (process.env.SELLER_SCREENSHOT_DIR) {
                     fs.mkdirSync(process.env.SELLER_SCREENSHOT_DIR, { recursive: true });
+                    await page.locator('details').evaluate(el => { el.open = false; });
                     await page.screenshot({ path: path.join(process.env.SELLER_SCREENSHOT_DIR, `statistiche-${name}-${width}.png`), fullPage: true });
                 }
                 console.log(`OK: ${name} ${width}px ${timezoneId}: numeri, filtri, grafico reale, messaggi/clic, zero recente, storico, errori/riprova e richieste rapide.`);
