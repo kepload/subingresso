@@ -48,6 +48,27 @@
             box-shadow: 0 15px 30px -10px rgba(37,99,235,0.4);
             background: #1d4ed8;
         }
+        /* Anteprime nel testo: un richiamo breve, con spazio per continuare a leggere. */
+        .blog-listings-slot { margin: 20px 0; }
+        .blog-listings { padding: 12px; border: 1px solid #e2e8f0; border-radius: 16px; background: #f8fafc; }
+        .blog-listings-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+        .blog-listings-header h3 { margin: 0; font-size: 15px; line-height: 20px; font-weight: 800; }
+        .blog-listings .blog-listings-all { flex-shrink: 0; padding: 2px 0; font-size: 11px; line-height: 18px; white-space: nowrap; }
+        .blog-listings-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+        .blog-listings .blog-posteggio { display: grid; grid-template-columns: 56px minmax(0, 1fr); align-items: center; gap: 10px; min-width: 0; height: 82px; padding: 8px; border: 1px solid #e2e8f0; border-left: 3px solid #10b981; border-radius: 10px; background: white; color: #0f172a; text-decoration: none; }
+        .blog-listings .blog-posteggio:hover { border-color: #93c5fd; background: #eff6ff; }
+        .blog-listings .blog-posteggio:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        .blog-listings .blog-posteggio-rent { border-left-color: #3b82f6; }
+        .blog-listings .blog-posteggio-featured { border-color: #fbbf24; }
+        .blog-posteggio-thumb { position: relative; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; overflow: hidden; border-radius: 7px; background: #f1f5f9; color: #94a3b8; }
+        .blog-posteggio-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .blog-posteggio-vetrina { position: absolute; bottom: 0; left: 0; right: 0; background: #fef3c7; color: #92400e; font-size: 8px; line-height: 14px; font-weight: 800; text-align: center; }
+        .blog-posteggio-info { min-width: 0; }
+        .blog-posteggio-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 12px; line-height: 16px; font-weight: 800; }
+        .blog-posteggio-location, .blog-posteggio-price { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; line-height: 14px; }
+        .blog-posteggio-location { color: #64748b; font-weight: 500; }
+        .blog-posteggio-price { color: #334155; font-weight: 700; }
+        @media (min-width: 768px) { .blog-listings-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     </style>
 </head>
 <body class="bg-neutral-100 text-slate-900">
@@ -117,7 +138,7 @@ const _IS_BANDI    = !!_BLOG_REGIONE;
 const _BOLKESTEIN_HUB_SLUG = 'bolkestein-ambulanti-ultime-notizie-2026';
 const _IS_BOLKESTEIN_HUB   = slug === _BOLKESTEIN_HUB_SLUG;
 
-// Select annunci con SOLO le colonne safe (no tel/email per RLS) usate da buildCard.
+// Select annunci con SOLO le colonne safe (no tel/email per RLS) per le anteprime.
 const _SAFE_COLS_LISTING = 'id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, saved_count, featured, featured_until, featured_tier, featured_since, video_url';
 
 // ── Listener click delegato: traccia CTA regionale + click sulle card del box live ──
@@ -177,6 +198,26 @@ function _featuredFirst(list, n) {
     return f.concat(r).slice(0, n);
 }
 
+function _blogListingPreview(listing) {
+    let extra = listing.dettagli_extra;
+    if (typeof extra === 'string') { try { extra = JSON.parse(extra); } catch (_) { extra = null; } }
+    const images = listing.img_urls?.length ? listing.img_urls : extra?.images || [];
+    const featured = isListingFeatured(listing);
+    const image = images.length ? images[featured ? Math.floor(Math.random() * images.length) : 0] : null;
+    const location = [listing.comune, listing.regione].filter(Boolean).join(', ');
+    const rent = listing.stato === 'Affitto mensile';
+    return '<a href="/annuncio?id=' + encodeURIComponent(listing.id) + '" data-listing-id="' + escapeHTML(listing.id) + '"'
+        + ' class="blog-posteggio' + (rent ? ' blog-posteggio-rent' : '') + (featured ? ' blog-posteggio-featured' : '') + '">'
+        + '<span class="blog-posteggio-thumb" aria-hidden="true"><i class="fas fa-store"></i>'
+        + (image ? '<img src="' + escapeHTML(getOptimizedImageUrl(image, 192)) + '" alt="" width="56" height="56" loading="lazy" decoding="async" onerror="this.hidden=true">' : '')
+        + (featured ? '<span class="blog-posteggio-vetrina">In Vetrina</span>' : '') + '</span>'
+        + '<span class="blog-posteggio-info">'
+        + '<span class="blog-posteggio-title">' + escapeHTML(listing.titolo || 'Posteggio') + '</span>'
+        + '<span class="blog-posteggio-location">' + escapeHTML(location) + '</span>'
+        + '<span class="blog-posteggio-price">' + (rent ? 'Affitto' : 'Vendita') + ' · ' + escapeHTML(formatPrice(listing)) + '</span>'
+        + '</span></a>';
+}
+
 // ── Box "Posteggi disponibili adesso" — fetch + render ──
 // regione=null → versione generic (annunci recenti misti, niente fallback).
 // regione!=null → filtra per regione, fallback "Ancora pochi posteggi qui" se 0.
@@ -200,21 +241,6 @@ async function _loadBandoListingsBox(regione, postSlug) {
         // Tra i featured si pesca a rotazione per equità.
         const data = _featuredFirst(pool, 3);
 
-        // Popola cache nomi venditori per buildCard (USER_NAMES)
-        const userIds = Array.from(new Set((data || []).map(l => l.user_id).filter(Boolean)));
-        if (userIds.length && typeof USER_NAMES !== 'undefined') {
-            const { data: profs } = await _supabase
-                .from('profiles')
-                .select('id, nome, cognome, avatar_url')
-                .in('id', userIds);
-            (profs || []).forEach(p => {
-                USER_NAMES[p.id] = (typeof formatFullName === 'function')
-                    ? (formatFullName(p.nome, p.cognome) || 'Venditore')
-                    : ([p.nome, p.cognome].filter(Boolean).join(' ').trim() || 'Venditore');
-                if (p.avatar_url && typeof USER_AVATARS !== 'undefined') USER_AVATARS[p.id] = p.avatar_url;
-            });
-        }
-
         if (!data || data.length === 0) {
             if (regione) {
                 // FALLBACK 2.5: regione conosciuta + 0 risultati → CTA avvisi.
@@ -230,21 +256,16 @@ async function _loadBandoListingsBox(regione, postSlug) {
             return;
         }
 
-        const cards = data.map(l => buildCard(l)).join('');
+        const cards = data.map(_blogListingPreview).join('');
         const heading  = regione ? 'Posteggi disponibili adesso in ' + escapeHTML(regione) : 'Posteggi disponibili adesso';
         const seeAllUrl = regione ? '/annunci?regione=' + encodeURIComponent(regione) : '/annunci';
-        const lead     = regione
-            ? 'Mentre aspetti il prossimo bando, qui ci sono <strong>posteggi privati già attivi</strong> in ' + escapeHTML(regione) + ', con licenza in regola e clientela fidelizzata.'
-            : '<strong>Posteggi privati già attivi</strong>, licenza in regola e clientela avviata: si cedono adesso, senza aspettare un bando.';
-
-        target.innerHTML = '<div class="not-prose mt-12" data-box-listings' + (regione ? ' data-regione="' + escapeHTML(regione) + '"' : '') + '>'
-            + '<div class="flex items-baseline justify-between gap-4 mb-4">'
-            +   '<h3 class="text-xl md:text-2xl font-black text-slate-900">' + heading + '</h3>'
-            +   '<a href="' + seeAllUrl + '" class="text-xs font-black text-blue-600 hover:underline whitespace-nowrap">Vedi tutti →</a>'
+        target.innerHTML = '<section class="not-prose blog-listings" aria-label="Posteggi disponibili" data-box-listings' + (regione ? ' data-regione="' + escapeHTML(regione) + '"' : '') + '>'
+            + '<div class="blog-listings-header">'
+            +   '<h3>' + heading + '</h3>'
+            +   '<a href="' + seeAllUrl + '" class="blog-listings-all">Vedi tutti →</a>'
             + '</div>'
-            + '<p class="text-sm text-slate-500 font-medium mb-6 leading-relaxed">' + lead + '</p>'
-            + '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">' + cards + '</div>'
-            + '</div>';
+            + '<div class="blog-listings-grid">' + cards + '</div>'
+            + '</section>';
         if (typeof observeCardViews === 'function') observeCardViews();
     } catch (e) {
         // Errore silenzioso: il box semplicemente non appare
@@ -524,7 +545,7 @@ function _insertBlogPromo(html) {
     if (_IS_BANDI) {
         promo = _bandoAlertFormHtml(_BLOG_REGIONE);
     } else {
-        promo = `<div id="bandoListingsBox" class="not-prose my-8"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`;
+        promo = `<div id="bandoListingsBox" class="not-prose blog-listings-slot"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`;
         _inlineBoxInjected = true;
     }
     return html.slice(0, splitAt) + promo + html.slice(splitAt);
@@ -607,7 +628,7 @@ function renderPost(post) {
     // box in coda) o se l'articolo è troppo corto per l'inline (fallback anti-sparizione).
     const _bodyHtml = _insertBlogPromo(safeContent);
     const finalCtaBlock = (_IS_BANDI || !_inlineBoxInjected)
-        ? `<div id="bandoListingsBox" class="mt-16"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`
+        ? `<div id="bandoListingsBox" class="not-prose blog-listings-slot"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`
         : '';
 
     container.innerHTML = `

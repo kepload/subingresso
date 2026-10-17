@@ -1035,9 +1035,9 @@ Pubblicazione verificata `effb12b` + `35da1fd`, Vercel riuscito `Fs4xUe5bYZu4E8f
 
 ## 📣 Blog Promo Inline
 
-- `_insertBlogPromo(html)` in `blog.html`: banner dopo il 3° `</p>`. Solo non loggati.
-- Click setta `sessionStorage._reg_src='popup'` → mostra il popup di benvenuto post-registrazione (lotteria rimossa 23 mag 2026).
-- < 3 paragrafi → no banner.
+- `_insertBlogPromo(html)` in `blog-template.html`: dopo il 3° paragrafo, avvisi con account sui bandi; anteprime annunci sugli altri articoli. Consultabili anche da autenticati; con meno di tre paragrafi richiamo in coda.
+- 17 ottobre 2026: `_blogListingPreview` sostituisce `buildCard` solo nei richiami blog. Foto 56×56, titolo su massimo due righe, località, vendita/affitto e prezzo; tre colonne da 768 px, tre righe da 82 px sotto. Titolo sezione piccolo, senza introduzione promozionale né spazi superiori eccessivi. CSS confinato a `.blog-listings`; nessuna variazione alle schede nella ricerca annunci. Profilo venditore non caricato nel richiamo.
+- Priorità Vetrina con indicazione, foto a rotazione, filtro regione, link dettaglio/“Vedi tutti”, `data-listing-id` per impression e `box_listing_click` conservati. Test dedicati su articoli Umbria e bandi Lombardia, Chromium 1440/768/390/320×568 e WebKit390: riquadro 140 px su computer/tablet, 320–338 telefono; testo seguente visibile a 320×568, link/prezzi/foto/fallback/escaping/tracciamenti corretti. Prove fuori repo `Documents/verifica-blog-promo-compatta-20261017.cjs` e cartella omonima; annunci simulati, nessuna scrittura reale. Il primo test click era bloccato correttamente da `navigator.webdriver`: adattata solo la fixture. Backup remoto pre-modifica valido; noto errore cleanup tag.
 
 ## 🏠 Home Page Sezioni
 
