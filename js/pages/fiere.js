@@ -52,10 +52,8 @@
     }
     function filterEvents(events, state, ignoreMonths) {
         const words = normalize(state.query).split(' ').filter(Boolean);
-        const today = state.reputation ? todayInRome() : null;
         return events.filter(event => (!state.region || event.region === state.region) && (!state.province || event.province === state.province) && (!state.category || event.category === state.category)
             && (!state.sector || event.merchandiseSectors.includes(state.sector))
-            && (!state.reputation || reputationLevel(event, today) === state.reputation)
             && (ignoreMonths || !state.months.length || event.months.some(month => state.months.includes(month)))
             && words.every(word => normalize([event.name, event.city, event.region, event.province, event.venue, event.sectors].join(' ')).includes(word)));
     }
@@ -149,7 +147,7 @@
     if (typeof document === 'undefined') return;
 
     const $ = id => document.getElementById(id);
-    const state = { events: [], provinces: null, region: '', province: '', category: '', sector: '', reputation: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
+    const state = { events: [], provinces: null, region: '', province: '', category: '', sector: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
     let searchTimer, mapMarkerTimer, hoveredCard, focusedCard, dateNoteId = 0;
     function node(tag, className, text) {
         const element = document.createElement(tag);
@@ -183,22 +181,6 @@
         warning.append(button, note); element.append(warning);
         return element;
     }
-    function reputationBadge(event, clickable = false) {
-        const level = reputationLevel(event), info = REPUTATIONS[level];
-        if (level === 'unknown') return null;
-        const badge = node(clickable ? 'button' : 'span', 'fiere-reputation');
-        badge.dataset.reputation = level;
-        const icon = node('span', 'fiere-reputation-icon', info.icon);
-        icon.setAttribute('aria-hidden', 'true');
-        badge.append(icon, document.createTextNode(info.label));
-        badge.title = info.label;
-        if (clickable) {
-            badge.type = 'button';
-            badge.setAttribute('aria-label', 'Quanto è conosciuta: ' + info.label + '. Apri scheda: ' + event.name);
-            badge.addEventListener('click', () => openDetail(event));
-        }
-        return badge;
-    }
     function activate(element, callback) {
         element.addEventListener('click', callback);
         element.addEventListener('keydown', event => {
@@ -220,7 +202,6 @@
         if (state.province) url.searchParams.set('provincia', state.province);
         if (state.category) url.searchParams.set('tipo', state.category);
         if (state.sector) url.searchParams.set('settore', state.sector);
-        if (state.reputation) url.searchParams.set('rinomatezza', state.reputation);
         if (state.query) url.searchParams.set('q', state.query);
         history.replaceState(null, '', url.pathname + url.search + url.hash);
     }
@@ -231,12 +212,10 @@
         state.region = !state.province && Object.hasOwn(REGION_PROVINCES, params.get('regione')) ? params.get('regione') : '';
         state.category = Object.hasOwn(CATEGORIES, params.get('tipo')) ? params.get('tipo') : '';
         state.sector = Object.hasOwn(SECTORS, params.get('settore')) ? params.get('settore') : '';
-        state.reputation = Object.hasOwn(REPUTATIONS, params.get('rinomatezza')) ? params.get('rinomatezza') : '';
         state.query = (params.get('q') || '').slice(0, 100);
         $('province-filter').value = state.province || (state.region ? 'regione:' + state.region : '');
         $('type-filter').value = state.category;
         $('sector-filter').value = state.sector;
-        $('reputation-filter').value = state.reputation;
         $('fair-search').value = state.query;
     }
     function renderMonths() {
@@ -273,12 +252,6 @@
             const foot = node('div', 'fiere-card-foot');
             foot.append(category, button);
             card.append(head);
-            const badge = reputationBadge(event, true);
-            if (badge) {
-                const reputation = node('div', 'fiere-card-reputation');
-                reputation.append(badge);
-                head.append(reputation);
-            }
             card.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
             const fee = feeLabel(event);
             if (fee) {
@@ -383,8 +356,6 @@
             const button = node('button', 'fiere-popup-event', event.name + ' ↗');
             button.type = 'button';
             button.append(node('span', '', event.city + ' · ' + periodLabel(event)));
-            const badge = reputationBadge(event);
-            if (badge) button.append(badge);
             button.addEventListener('click', () => openDetail(event));
             fragment.append(button);
         }
@@ -405,9 +376,6 @@
         $('detail-frequency').hidden = !event.frequencyNote;
         $('detail-description').textContent = event.summary || '';
         $('detail-description').hidden = !event.summary;
-        const badge = reputationBadge(event);
-        $('detail-reputation-badge').replaceChildren(...(badge ? [badge] : []));
-        $('detail-reputation-badge').hidden = !badge;
         const editions = document.createDocumentFragment();
         for (const edition of event.editions || []) {
             const item = node('div', 'fiere-edition');
@@ -458,7 +426,7 @@
     function render() {
         const events = sortEvents(filterEvents(state.events, state));
         renderMonths(); renderList(events); renderMap(events);
-        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (state.reputation ? ' · ' + REPUTATIONS[state.reputation].label : '');
+        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '');
         const extraCount = Number(Boolean(state.category)) + Number(Boolean(state.query));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
@@ -473,8 +441,8 @@
     }
     function reset() {
         clearTimeout(searchTimer);
-        Object.assign(state, { region: '', province: '', category: '', sector: '', reputation: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
-        for (const id of ['province-filter', 'type-filter', 'sector-filter', 'reputation-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
+        Object.assign(state, { region: '', province: '', category: '', sector: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
+        for (const id of ['province-filter', 'type-filter', 'sector-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
         changed(false);
     }
     async function fetchJSON(url) {
@@ -520,7 +488,7 @@
                 }
             }
             if (!state.ready) readURL(); else $('province-filter').value = previous;
-            state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; $('reputation-filter').disabled = false; fitProvince(); render();
+            state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; fitProvince(); render();
         } catch (error) {
             $('catalog-error').hidden = false;
             $('fair-list').setAttribute('aria-busy', 'false');
@@ -622,7 +590,6 @@
         $('province-filter').addEventListener('change', () => { const value = $('province-filter').value; state.region = value.startsWith('regione:') ? value.slice(8) : ''; state.province = state.region ? '' : value; changed(true); });
         $('type-filter').addEventListener('change', () => { state.category = $('type-filter').value; changed(false); });
         $('sector-filter').addEventListener('change', () => { state.sector = $('sector-filter').value; changed(false); });
-        $('reputation-filter').addEventListener('change', () => { state.reputation = $('reputation-filter').value; changed(false); });
         $('fair-search').addEventListener('input', () => {
             state.query = $('fair-search').value;
             clearTimeout(searchTimer); searchTimer = setTimeout(() => changed(false), 100);

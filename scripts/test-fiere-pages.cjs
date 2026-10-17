@@ -15,6 +15,7 @@ for (const event of events) {
     assert(result.html.includes('https://subingresso.it' + fairPath(event)));
     assert(result.html.includes(isIndexable(event) ? 'content="index,follow"' : 'content="noindex,follow"'));
     assert(!result.html.includes('undefined'));
+    assert(!result.html.includes('class="badge '), 'Suspended reputation badge: ' + event.id);
 }
 assert.equal(render({slug:'inesistente'}).code,404);
 assert.equal(render({slug:'elenco',pagina:'0'}).code,404);

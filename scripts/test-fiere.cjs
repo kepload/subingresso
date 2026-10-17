@@ -847,7 +847,7 @@ async function run(engine,name,viewport,base) {
         assert.equal(new Set(monthButtons.map(button => Math.round(button.y))).size, viewport.width < 360 ? 3 : 2);
         assert(monthButtons.every(button => button.width >= 44 && button.height >= 44 && !button.clipped), 'Readable months with touch targets of at least 44 pixels');
         assert.equal(await page.locator('#sector-help, #reputation-help, .fiere-reputation-legend').count(),0);
-        assert.equal(await page.locator('#sector-filter, #reputation-filter').evaluateAll(selects => selects.some(select => select.hasAttribute('aria-describedby'))),false);
+        assert.equal(await page.locator('#sector-filter').evaluateAll(selects => selects.some(select => select.hasAttribute('aria-describedby'))),false);
         const filtersBox = await page.locator('.fiere-filters').boundingBox();
         const mapBox = await page.locator('.fiere-map-panel').boundingBox();
         const listBox = await page.locator('.fiere-list-panel').boundingBox();

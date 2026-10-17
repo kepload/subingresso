@@ -41,10 +41,6 @@
             <label for="sector-filter"><i class="fa-solid fa-store" aria-hidden="true"></i> Cosa vendi</label>
             <select id="sector-filter" disabled><option value="">Tutti i settori</option><option value="alimentare">Alimentare</option><option value="non-alimentare">Non alimentare</option><option value="antiquariato">Antiquariato e vintage</option><option value="artigianato">Artigianato</option></select>
         </div>
-        <div class="fiere-place fiere-reputation-control">
-            <label for="reputation-filter"><i class="fa-solid fa-award" aria-hidden="true"></i> Quanto è conosciuta</label>
-            <select id="reputation-filter" disabled><option value="">Tutte le fiere</option><option value="rinomata">★ Molto conosciuta</option><option value="consolidata">◆ Storica</option><option value="recente">✦ Nuova</option><option value="unknown">? Da valutare</option></select>
-        </div>
         <details id="extra-filters" class="fiere-extra-filters">
             <summary><span><i class="fa-solid fa-sliders" aria-hidden="true"></i> Altri filtri <span id="extra-filter-count" class="fiere-filter-count" hidden></span></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
             <div class="fiere-filter-row">
@@ -79,7 +75,6 @@
 <dialog id="fair-dialog" class="fiere-dialog" aria-labelledby="detail-title">
     <div class="fiere-dialog-top"><span id="detail-category" class="fiere-tag"></span><button id="close-detail" type="button" aria-label="Chiudi la scheda">×</button></div>
     <h2 id="detail-title"></h2><p id="detail-location"></p><p><a id="detail-page-link">Apri la pagina della fiera →</a></p><p id="detail-description" hidden></p>
-    <div class="fiere-card-reputation" id="detail-reputation-badge"></div>
     <section class="fiere-detail-info"><h3>Date delle edizioni</h3><div id="detail-editions" class="fiere-editions"></div><p id="detail-editions-empty">La prossima edizione non ha ancora una data pubblicata in questa scheda. Consulta la fonte o contatta l’organizzatore.</p></section>
     <div class="fiere-detail-period"><span>MESI DI RIFERIMENTO</span><strong id="detail-months"></strong><p id="detail-frequency"></p></div>
     <dl id="detail-facts" class="fiere-detail-facts"></dl>
@@ -94,6 +89,6 @@
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/data.js?v=20"></script>
 <script src="/js/auth.js?v=22"></script>
-<script src="/js/pages/fiere.js?v=64"></script>
+<script src="/js/pages/fiere.js?v=65"></script>
 </body>
 </html>

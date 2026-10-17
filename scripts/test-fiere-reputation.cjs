@@ -1,4 +1,4 @@
-// Evidence, expiry, preservation and real interactions for reputation badges.
+// Preserve archived evaluations while their public filter and badges are suspended.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -38,10 +38,10 @@ for (const id of ['lombardia-monza-monzacon', 'lombardia-iseo-natale-con-gusto',
 }
 for (const level of levels) {
     const state = { reputation: level, months: [], query: '' };
-    assert.deepEqual(api.filterEvents(catalog.events, state), catalog.events.filter(e => api.reputationLevel(e) === level));
+    assert.deepEqual(api.filterEvents(catalog.events, state), catalog.events, 'Suspended reputation cannot filter results');
     assert(api.filterEvents(catalog.events, state).length > 0, level);
     const combined = { ...state, province: 'Genova', months: [5] };
-    assert.deepEqual(api.filterEvents(catalog.events, combined), catalog.events.filter(e => api.reputationLevel(e) === level && e.province === 'Genova' && e.months.includes(5)));
+    assert.deepEqual(api.filterEvents(catalog.events, combined), catalog.events.filter(e => e.province === 'Genova' && e.months.includes(5)));
 }
 // Content comparison against the committed catalogue catches unrelated data loss.
 if (!process.env.FIERE_TEST_BASE_URL) {
@@ -101,66 +101,59 @@ async function run(engine, label, viewport, base) {
         const errors = [];
         page.on('pageerror', e => errors.push(e.message));
         const count = expected => page.waitForFunction(n => document.querySelector('#list-count').textContent === String(n), expected);
-        await page.goto(base + '/fiere?rinomatezza=rinomata');
-        await page.waitForSelector('.fiere-province');
-        await count(catalog.events.filter(e => api.reputationLevel(e) === 'rinomata').length);
-        assert.equal(await page.locator('#reputation-filter').inputValue(), 'rinomata');
-        for (const level of levels) {
-            await page.selectOption('#reputation-filter', level);
-            const expected = catalog.events.filter(e => api.reputationLevel(e) === level);
+        const absent = '#reputation-filter, .fiere-reputation, .fiere-card-reputation, #detail-reputation-badge';
+        for (const level of [...levels, 'toString']) {
+            await page.goto(base + '/fiere?rinomatezza=' + level);
+            await page.waitForSelector('.fiere-province');
+            await count(catalog.events.length);
+            assert.equal(await page.locator(absent).count(), 0);
+            assert.equal(new URL(page.url()).searchParams.get('rinomatezza'), null);
+            assert.equal(await page.locator('.fiere-marker').count(), 0);
+        }
+        // A rated event must also lose its badge in the list and open detail.
+        for (const level of levels.filter(level => level !== 'unknown')) {
+            const sample = catalog.events.find(e => api.reputationLevel(e) === level);
+            const params = new URLSearchParams({ rinomatezza: level, provincia: sample.province, q: sample.name });
+            await page.goto(base + '/fiere?' + params);
+            const expected = api.filterEvents(catalog.events, { province: sample.province, query: sample.name, months: [] });
             await count(expected.length);
-            assert.equal(new URL(page.url()).searchParams.get('rinomatezza'), level);
-            const cards = page.locator('.fiere-card');
-            assert.equal(await cards.count(), Math.min(12, expected.length));
-            assert.equal(await cards.locator('.fiere-reputation[data-reputation="' + level + '"]').count(), level === 'unknown' ? 0 : await cards.count());
-            if (level === 'unknown') assert.equal(await cards.locator('.fiere-card-reputation').count(), 0);
-            const markerCount = await page.locator('.fiere-marker').evaluateAll(markers => markers.reduce((total, marker) => total + marker.dataset.events.split(',').length, 0));
-            assert.equal(markerCount, 0, 'Reputation alone does not show markers without selected months');
-            const opener = cards.first().locator(level === 'unknown' ? '.fiere-card-button' : '.fiere-reputation');
+            assert.equal(await page.locator(absent).count(), 0);
+            const opener = page.locator('[data-event-id="' + sample.id + '"] .fiere-card-button');
             await opener.focus(); await page.keyboard.press('Enter');
             await page.waitForSelector('#fair-dialog[open]');
-            if (level === 'unknown') {
-                assert.equal(await page.locator('#detail-reputation-badge [data-reputation]').count(), 0);
-                assert.equal(await page.locator('#detail-reputation-badge').isVisible(), false);
-            } else {
-                assert.equal(await page.locator('#detail-reputation-badge [data-reputation]').getAttribute('data-reputation'), level);
-                assert.equal(await page.locator('#detail-reputation-badge').isVisible(), true);
-            }
-            const id = await cards.first().getAttribute('data-event-id');
-            const event = expected.find(e => e.id === id);
-            assert.equal(await page.locator('#fair-dialog #detail-reputation-reason, #fair-dialog #detail-reputation-sources, #fair-dialog .fiere-reputation-help').count(), 0);
-            assert.equal((await page.locator('#detail-reputation-badge').textContent()).trim(), level === 'unknown' ? '' : api.REPUTATIONS[level].icon + api.REPUTATIONS[level].label);
-            if (level === 'rinomata' || level === 'recente') {
-                await page.locator('#fair-dialog').screenshot({ path: path.join(os.tmpdir(), 'fiere-rinomatezza-' + label + '-' + level + '.png') });
-            }
+            assert.equal(await page.locator('#detail-title').textContent(), sample.name);
+            assert.equal(await page.locator(absent).count(), 0);
             await page.keyboard.press('Escape');
-            await page.locator('#reset-filters').click();
-            await count(catalog.events.length);
         }
-        await page.selectOption('#reputation-filter', 'recente');
-        await page.selectOption('#province-filter', 'Genova');
-        await count(1);
-        assert.equal(await page.locator('.fiere-marker').count(), 0);
-        const recentGenova = catalog.events.find(e => api.reputationLevel(e) === 'recente' && e.province === 'Genova');
-        await page.locator('[data-month="' + recentGenova.months[0] + '"]').click();
-        await count(1);
-        await page.reload(); await count(1);
-        assert.equal(await page.locator('#reputation-filter').inputValue(), 'recente');
-        await page.locator('.fiere-marker').first().click();
-        await page.waitForSelector('#map-popup:not([hidden]) .fiere-reputation[data-reputation="recente"]');
+        const sample = catalog.events.find(e => api.reputationLevel(e) === 'recente' && e.province === 'Genova');
+        const month = sample.months[0], sector = sample.merchandiseSectors[0];
+        const params = new URLSearchParams({ rinomatezza: 'recente', provincia: 'Genova', mesi: String(month), settore: sector });
+        await page.goto(base + '/fiere?' + params);
+        const expected = api.filterEvents(catalog.events, { province: 'Genova', sector, months: [month], query: '' });
+        await count(expected.length);
+        assert.equal(new URL(page.url()).searchParams.get('rinomatezza'), null);
+        assert.equal(await page.locator('#province-filter').inputValue(), 'Genova');
+        assert.equal(await page.locator('#sector-filter').inputValue(), sector);
+        await page.reload(); await count(expected.length);
+        const marker = page.locator('.fiere-marker').filter({ has: page.locator('title') });
+        // Marker IDs are comma-separated; choose the group containing this event.
+        const markerIndex = await marker.evaluateAll((markers, id) => markers.findIndex(m => m.dataset.events.split(',').includes(id)), sample.id);
+        assert(markerIndex >= 0);
+        await marker.nth(markerIndex).click();
+        await page.waitForSelector('#map-popup:not([hidden]) .fiere-popup-event');
+        assert.equal(await page.locator(absent).count(), 0);
         await page.locator('.fiere-popup-event').first().click();
         await page.waitForSelector('#fair-dialog[open]');
+        assert.equal(await page.locator(absent).count(), 0);
         await page.keyboard.press('Escape');
         await page.locator('#reset-filters').click(); await count(catalog.events.length);
-        assert.equal(await page.locator('#reputation-filter').inputValue(), '');
+        assert.equal(await page.locator('.fiere-marker').count(), 0);
         assert.equal(new URL(page.url()).searchParams.get('rinomatezza'), null);
-        await page.goto(base + '/fiere?rinomatezza=toString'); await count(catalog.events.length);
-        assert.equal(await page.locator('#reputation-filter').inputValue(), '');
         assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
         assert.equal(await page.locator('#reputation-help, #reputation-coverage, .fiere-reputation-legend').count(), 0);
         await page.screenshot({ path: path.join(os.tmpdir(), 'fiere-rinomatezza-' + label + '.png'), fullPage: false });
         assert.deepEqual(errors, []);
-        console.log(label + ': badges, evidence, filter combinations, map, URL, keyboard, reset and overflow passed');
+        console.log(label + ': suspended badges/filter, legacy URLs, other filters, map, detail, keyboard and reset passed');
     } finally { await browser.close(); }
 }
 (async () => {

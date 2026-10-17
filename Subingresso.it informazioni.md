@@ -1,5 +1,16 @@
 # Subingresso.it — informazioni e TO DO
 
+**Parametro fiere sospeso, 17 ottobre 2026:** su richiesta dell'utente,
+rimosso per ora «Quanto è conosciuta»: filtro e bollini in anteprime,
+popup mappa, dialog e pagine autonome. I vecchi URL con `rinomatezza`
+non filtrano più; gli altri filtri restano validi. Valutazioni e prove
+conservate per un eventuale ripristino; sospendere nuove assegnazioni.
+Cache JS65; catalogo, fonti e ricerca Rimini conservati.
+Sintassi, verifiche dedicate Chromium/WebKit e 4.102 pagine autonome
+passate localmente; suite calendario generale e pubblicazione in corso.
+Backup remoto creato; cleanup tag
+con errore PowerShell già noto, checkpoint valido.
+
 **Mappa e azzeramento, 17 ottobre 2026:** Azzera filtri spostato accanto
 a Quando al posto di Tutto l’anno. Nessun puntino senza mesi selezionati,
 anche con altri filtri o zoom; puntini al primo mese, rimossi all’ultimo
