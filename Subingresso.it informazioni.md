@@ -1,5 +1,11 @@
 # Subingresso.it — informazioni e TO DO
 
+**Filtri fiere, 17 ottobre 2026:** rimosse note e legenda sotto i filtri.
+Mesi Gen–Dic su due righe da sei, tre da quattro sotto 360 px, pulsanti
+di almeno 44 px e nomi completi accessibili. Cache JS62/CSS22.
+Verifiche locali: suite calendario su cinque formati/browser e test
+valutazioni Chromium/WebKit passati; catalogo invariato.
+
 **Blog fiere Umbria, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
 in Umbria da conoscere se fai l’ambulante», ID `61741baf-f6cf-4048-a699-9b1916f0a9e0`,
 [/blog?post=migliori-fiere-umbria](https://subingresso.it/blog?post=migliori-fiere-umbria).

@@ -1,5 +1,14 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Filtri fiere, 17 ottobre 2026: eliminate le note sotto Cosa vendi e Quanto è
+conosciuta, compresa la legenda dei bollini. Mesi abbreviati in due righe da
+sei; sotto 360 px tre righe da quattro per conservare pulsanti di almeno
+44 px. Nomi completi in etichette accessibili e tooltip, intervalli con nomi
+interi. Cache JS62/CSS22; catalogo invariato. Backup remoto creato; cleanup
+dei tag con il noto errore PowerShell, checkpoint valido.
+Sintassi, suite calendario su cinque formati/browser e test valutazioni
+Chromium computer/telefono e WebKit passati localmente.
+
 Roma, chiusura documentale 16 ottobre 2026: supera gli stati parziali storici sotto.
 127 manifestazioni in 48 comuni, 11 aggiunte rispetto a 116/46; 4.000 nazionali,
 3.989 precedenti identiche. Audit data/fiere-roma.json, closure20261016 e FIERE.md.

@@ -503,9 +503,6 @@
                 && typeof event.source?.url === 'string' && /^https:\/\//.test(event.source.url)
                 && event.participation && Array.isArray(event.editions))) throw new Error('Invalid catalog');
             state.events = data.events;
-            const today = todayInRome();
-            const rated = state.events.filter(event => reputationLevel(event, today) !== 'unknown').length;
-            $('reputation-coverage').textContent = 'Bollino assegnato a ' + rated + ' di ' + state.events.length + ' eventi. Le altre schede sono da valutare; la ricerca è in corso.';
             $('catalog-count').textContent = String(state.events.length);
             $('catalog-info').textContent = data.eventsWithEditionData + ' schede con edizioni documentate · aggiornato il ' + dateLabel(data.catalogUpdatedAt);
             const previous = $('province-filter').value;
@@ -608,7 +605,8 @@
         initMapGestures();
         for (let i = 0; i < 12; i++) {
             const button = node('button', 'fiere-month'); button.type = 'button'; button.dataset.month = String(i + 1);
-            button.setAttribute('aria-pressed', 'false'); button.append(node('strong', '', MONTHS[i]));
+            button.setAttribute('aria-pressed', 'false'); button.setAttribute('aria-label', MONTHS[i]); button.title = MONTHS[i];
+            button.append(node('strong', '', MONTHS[i].slice(0, 3)));
             button.addEventListener('click', () => {
                 const month = i + 1;
                 state.months = state.months.includes(month) ? state.months.filter(item => item !== month) : [...state.months, month].sort((a, b) => a - b);

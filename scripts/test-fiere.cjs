@@ -831,7 +831,17 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('#sector-filter option').count(),5);
         assert.equal(await page.locator('#province-filter option').count(),131);
         assert.equal(await page.locator('#region-filter').count(),0);
-        assert.equal(await page.locator('#month-bar button').first().textContent(),'Gennaio');
+        assert.equal(await page.locator('#month-bar button').first().textContent(),'Gen');
+        assert.match(await page.locator('#month-bar button').first().getAttribute('aria-label'),/^Gennaio, \d+ eventi$/);
+        assert.equal(await page.locator('#month-bar button').first().getAttribute('title'),'Gennaio');
+        const monthButtons = await page.locator('#month-bar button').evaluateAll(buttons => buttons.map(button => {
+            const { x, y, width, height } = button.getBoundingClientRect();
+            return { x, y, width, height, clipped: button.scrollWidth > button.clientWidth };
+        }));
+        assert.equal(new Set(monthButtons.map(button => Math.round(button.y))).size, viewport.width < 360 ? 3 : 2);
+        assert(monthButtons.every(button => button.width >= 44 && button.height >= 44 && !button.clipped), 'Readable months with touch targets of at least 44 pixels');
+        assert.equal(await page.locator('#sector-help, #reputation-help, .fiere-reputation-legend').count(),0);
+        assert.equal(await page.locator('#sector-filter, #reputation-filter').evaluateAll(selects => selects.some(select => select.hasAttribute('aria-describedby'))),false);
         const filtersBox = await page.locator('.fiere-filters').boundingBox();
         const mapBox = await page.locator('.fiere-map-panel').boundingBox();
         const listBox = await page.locator('.fiere-list-panel').boundingBox();

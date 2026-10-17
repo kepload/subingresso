@@ -153,8 +153,7 @@ async function run(engine, label, viewport, base) {
         await page.goto(base + '/fiere?rinomatezza=toString'); await count(catalog.events.length);
         assert.equal(await page.locator('#reputation-filter').inputValue(), '');
         assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
-        await page.locator('.fiere-reputation-legend summary').click();
-        assert((await page.locator('#reputation-coverage').innerText()).includes(Object.keys(research.events).length + ' di ' + catalog.events.length));
+        assert.equal(await page.locator('#reputation-help, #reputation-coverage, .fiere-reputation-legend').count(), 0);
         await page.screenshot({ path: path.join(os.tmpdir(), 'fiere-rinomatezza-' + label + '.png'), fullPage: false });
         assert.deepEqual(errors, []);
         console.log(label + ': badges, evidence, filter combinations, map, URL, keyboard, reset and overflow passed');
