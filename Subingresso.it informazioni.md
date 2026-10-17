@@ -1151,9 +1151,32 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   calendari estivi completi e nuove fonti per eventi esclusi o ricorrenze testuali.
   Attività futura distinta dalla ricerca documentale corrente conclusa.
 
-**Ricerca approfondita: 30 province completate, 80 ancora da fare su 110.**
-Riepilogo ricontrollato il 17 ottobre 2026 dopo la verifica online di Rimini:
-Rimini entra fra le 30 concluse; le verifiche periodiche restano distinte.
+- [x] **Ravenna — ricerca documentale conclusa e verificata online (17 ottobre 2026)**:
+  **131 manifestazioni in 17 comuni**, prima 19; controllati tutti i 18 comuni.
+  Fonti, copertura, tentativi, esclusioni e limiti in `data/fiere-ravenna.json`
+  e `data/FIERE.md`; originali in `Documents/ricerca-fiere-ravenna-20261017`.
+  Programmi e moduli originali, Comuni/SUAP, turismo e organizzatori; 23 schede
+  regionali complete recuperate, altre originali via indice web. Date dei
+  banchi distinte da feste, recuperi e ricorrenze ancora 2025; quote per evento,
+  stagione, categoria e IVA, bolli parziali. Bagnara senza prova commerciale
+  sufficiente: esclusioni documentate, non dichiarata assenza. Ricerca attuale
+  chiusa con limiti espliciti, senza attendere futuri bandi o garantire esaustività.
+  Commit dati `6e9e899`, Vercel READY; catalogo/HTML/JS identici online,
+  131 pagine HTTP 200 con canonical e istruzioni. PLAYWRIGHT_MODULE: Chromium
+  computer/telefono e WebKit, elenco, mappa, settori, dialog e pagine senza JS
+  passati localmente e online. Build, settori, 4.214 pagine e suite generale
+  passati; conservati tutti i 19 ID e le altre 4.083 schede identiche.
+  Nessuna comunicazione, candidatura o pagamento a terzi; cambiamenti estranei
+  preservati ed esclusi dai commit. Spunta solo dopo le verifiche pubbliche.
+- [ ] **Ravenna — verifiche periodiche**: nuove edizioni, bandi, disponibilità
+  e quote; calendari hobbisti/Brazadèl, dettaglio ëMarkè dicembre, Borgomarina
+  24 settembre, antiquariato maggio e recuperi Raboj. Nuovi originali per le
+  esclusioni e giorni commerciali dei periodi; manutenzione futura distinta
+  dalla ricerca corrente conclusa, senza riaprire altre province.
+
+**Ricerca approfondita: 31 province completate, 79 ancora da fare su 110.**
+Riepilogo ricontrollato il 17 ottobre 2026 dopo la verifica online di Ravenna:
+Ravenna entra fra le 31 concluse; le verifiche periodiche restano distinte.
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -1189,7 +1212,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **21. Firenze** — Toscana; ricerca completata e verificata online, vedi sopra
 - [x] **22. Roma** — Lazio; ricerca documentale completata, 127 schede in 48 comuni pubblicate e verificate, limiti espliciti sopra
 - [x] **23. Rimini** — Emilia-Romagna; 115 manifestazioni, 27 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
-- [ ] **24. Ravenna** — Emilia-Romagna
+- [x] **24. Ravenna** — Emilia-Romagna; ricerca completata e verificata online
 - [ ] **25. Forlì-Cesena** — Emilia-Romagna
 - [ ] **26. Piacenza** — Emilia-Romagna
 - [ ] **27. Udine** — Friuli-Venezia Giulia

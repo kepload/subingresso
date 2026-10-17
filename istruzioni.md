@@ -1,5 +1,19 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Ravenna, 17 ottobre 2026: ricerca corrente chiusa nei 18 comuni, 131 schede
+in 17 comuni (+112), audit `data/fiere-ravenna.json` e `data/FIERE.md`.
+115 con giornate, cinque periodi, undici testuali; 56 recapiti, sette termini,
+undici sintesi di costo. Registro, calendari e moduli originali, 221 tentativi
+regionali con errori espliciti; Bagnara esclusioni documentate, non assenza.
+Originali fuori repo in Documents/ricerca-fiere-ravenna-20261017. Quote per
+categoria/periodo e IVA; giorni dei banchi distinti dalle feste, nessun inventato.
+Conservati 19 ID e 4.083 eventi esterni identici; totale 4.214, cache JS67/JSON47.
+Pubblicazione `6e9e899`, Vercel READY, catalogo/HTML/JS identici; 131 pagine
+pubbliche e suite provinciale Chromium/WebKit locale/online passate tramite
+PLAYWRIGHT_MODULE. Build, settori, pagine e suite generale passati; 320 ripetuto
+dopo timeout senza modifiche al prodotto. TO DO dopo verifica: 31 concluse,
+79 rimanenti; future verifiche distinte. Nessun contatto o candidatura a terzi.
+
 Rimini, 17 ottobre 2026: ricerca documentale dei 27 comuni attuali, 115 schede
 in 25 comuni (+102), fonte data/fiere-rimini.json e audit data/FIERE.md.
 Calendari Rimini 2026/2027; Natale separato in alberi/generi vari/casette,

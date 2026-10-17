@@ -5032,7 +5032,7 @@
       }
     ],
     "limits": [
-      "Registro regionale: 23 originali completi recuperati e letti direttamente su 180 tentativi iniziali (23 HTTP 200, 73 HTTP 500, 84 ConnectionError), poi 40 ulteriori tentativi con connessione fallita e confronto via indice web delle schede originali, incluse altre schede già importate. Intervallo 1–10 nei 18 comuni e numeri ulteriori per Brisighella, non garanzia di copertura integrale né di assenza dove errore. Molte fonti primarie alternative recuperate; errori registrati per URL.",
+      "Registro regionale: 23 originali completi recuperati e letti direttamente su 180 tentativi iniziali (23 HTTP 200, 73 HTTP 500, 84 ConnectionError), poi 40 ulteriori tentativi con connessione fallita e confronto via indice web delle schede originali, incluse altre schede già importate. Intervallo 1–10 nei 18 comuni e numeri ulteriori per Brisighella, non garanzia di copertura integrale né di assenza dove errore. Molte fonti primarie alternative recuperate; errori registrati per URL. Esiti degli ulteriori 18 controlli di originali via indice web registrati separatamente in webOriginalChecks, non conteggiati nei download diretti.",
       "Faenza: diverse pagine 403, API e calendario originale alternativi. ëMarkè dicembre confermato nei riquadri originali 12–13 dicembre 2026 e API ricerca, dettaglio/API evento 403 e organizzatore in timeout: solo dati effettivamente pubblicati, condizioni e tariffe non dedotte. Modulo MEI chiuso, non accetta risposte.",
       "Brazadèl, hobbisti Massa e Sant’Agata: programmi nominativi ancora 2025; ricorrenze dichiarate con anno originale, senza proiezione automatica. Casola Vintage invece confermato 2026 in pagina e dati strutturati turistici, poster Pro Loco storico non trasferito.",
       "Borgomarina: modulo/riepilogo cita 24 settembre, dettaglio turistico termina 17: il 24 non è importato come confermato. Antiquariato Ravenna maggio ha date regionali incoerenti col terzo weekend; mantenuto mese con etichetta di conflitto, non calcolata una data sostitutiva.",
@@ -5047,8 +5047,119 @@
       "Riconferma Borgomarina 24 settembre, antiquariato maggio, recuperi Raboj, dettaglio ëMarkè Natale e giornate precise dei periodi di festa."
     ],
     "publication": {
-      "status": "pending-live-verification"
-    }
+      "status": "verified-online",
+      "commit": "6e9e899",
+      "deploymentId": "dpl_CxVSS2yEMfG8gRprq7RjbhSm36bX",
+      "deploymentStatus": "READY",
+      "checkedAt": "2026-10-17T07:47:29Z",
+      "nationalEvents": 4214,
+      "provinceEvents": 131,
+      "otherProvinceEventsUnchanged": 4083,
+      "liveChecks": [
+        "Catalogo completo, HTML e JavaScript identici al commit pubblicato.",
+        "131 pagine Ravenna HTTP 200: nome, canonical e istruzioni per partecipare.",
+        "PLAYWRIGHT_MODULE: Chromium 1440/390 e WebKit 390, 131 risultati/ID, mappa, settori, dialog e schede senza JavaScript."
+      ],
+      "localChecks": [
+        "Build offline e settori passati.",
+        "Suite provinciale passata sui tre browser/formati.",
+        "4.214 pagine validate, sitemap e navigazione senza JavaScript.",
+        "Suite generale passata sui cinque formati; timeout nel formato 320 risolto alla ripetizione senza modifiche al prodotto."
+      ],
+      "checklist": "Spunta e riepilogo aggiornati dopo tutte le verifiche online: 31 completate, 79 rimanenti su 110."
+    },
+    "webOriginalChecks": [
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039004&dt_dataa=&dt_datada=&progr_fiera=11&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "original-read",
+        "limitation": "Scheda originale letta via indice web; download diretto fallito separatamente registrato."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039004&dt_dataa=&dt_datada=&progr_fiera=12&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039004&dt_dataa=&dt_datada=&progr_fiera=12&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039004&dt_dataa=&dt_datada=&progr_fiera=13&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "original-read",
+        "limitation": "Scheda originale letta via indice web; download diretto fallito separatamente registrato."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039004&dt_dataa=&dt_datada=&progr_fiera=14&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "Failed to fetch https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039004&dt_dataa=&dt_datada=&progr_fiera=14&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=: (400) Unicode decoding error"
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039004&dt_dataa=&dt_datada=&progr_fiera=15&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "original-read",
+        "limitation": "Scheda originale letta via indice web; download diretto fallito separatamente registrato."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039010&dt_dataa=&dt_datada=&progr_fiera=7&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039010&dt_dataa=&dt_datada=&progr_fiera=7&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039010&dt_dataa=&dt_datada=&progr_fiera=8&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039010&dt_dataa=&dt_datada=&progr_fiera=8&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039011&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "Failed to fetch https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039011&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=: Cache miss"
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039012&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "Failed to fetch https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039012&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=: (400) Unicode decoding error"
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039012&dt_dataa=&dt_datada=&progr_fiera=2&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "Failed to fetch https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039012&dt_dataa=&dt_datada=&progr_fiera=2&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=: (400) Unicode decoding error"
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039012&dt_dataa=&dt_datada=&progr_fiera=3&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039012&dt_dataa=&dt_datada=&progr_fiera=3&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039013&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039013&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039014&dt_dataa=&dt_datada=&progr_fiera=5&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039014&dt_dataa=&dt_datada=&progr_fiera=5&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039015&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039015&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039015&dt_dataa=&dt_datada=&progr_fiera=2&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039015&dt_dataa=&dt_datada=&progr_fiera=2&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039015&dt_dataa=&dt_datada=&progr_fiera=4&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "Failed to fetch https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039015&dt_dataa=&dt_datada=&progr_fiera=4&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=: Cache miss"
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039017&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039017&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039018&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords=",
+        "outcome": "not-accessible",
+        "limitation": "URL https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=039018&dt_dataa=&dt_datada=&progr_fiera=1&r1=&r2=&strr_provincia=&strr_sede=&strs_keywords= is not accessible via this tool."
+      }
+    ]
   },
   "events": [
     {

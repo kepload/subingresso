@@ -13,7 +13,12 @@ in `fiere-ravenna.json`; archivio esterno `Documents/ricerca-fiere-ravenna-20261
 Ricerca documentale corrente conclusa con limiti espliciti, senza censimento
 esaustivo o garanzia di posteggi. Verifiche periodiche future distinte dalla
 chiusura attuale. Nessun contatto, messaggio, candidatura o pagamento a terzi.
-Pubblicazione e verifica online ancora da registrare; TO DO non ancora spuntata.
+Pubblicazione `6e9e899`, Vercel **READY** `dpl_CxVSS2yEMfG8gRprq7RjbhSm36bX`.
+Catalogo, HTML e JS online identici entro 15 secondi dall’avvio della verifica;
+131 pagine pubbliche HTTP 200 con nome, canonical e istruzioni. Test online
+Chromium 1440/390 e WebKit 390 passati: elenco/ID, mappa, settori, dialog e
+pagine senza JS. TO DO spuntata soltanto dopo questi riscontri: **31 province
+completate, 79 rimanenti su 110**.
 
 - **Fonti:** programmi e moduli originali comunali/Pro Loco/Consorzi, SUAP,
   turismo regionale e locale, calendari e API pubbliche. 196 risultati Bassa
@@ -85,8 +90,10 @@ Pubblicazione e verifica online ancora da registrare; TO DO non ancora spuntata.
 Controlli dedicati `scripts/test-fiere-ravenna.cjs` tramite `PLAYWRIGHT_MODULE`:
 131 risultati e ID originali, integrità delle altre province, date/quote,
 mappa, settori, dialog e pagine autonome senza JS in Chromium 1440/390 e
-WebKit 390. Cache pagina **JS67**, catalogo **JSON47**. Esito pubblicazione
-da aggiungere dopo il controllo del deploy e del catalogo pubblico.
+WebKit 390. Build, settori e 4.214 pagine autonome validati; suite generale
+sui cinque formati/browser passata (320 ripetuto dopo timeout, senza modifiche
+al prodotto). Cache pagina **JS67**, catalogo **JSON47**. Originali e risultati
+dei test conservati nell’archivio esterno; nessun file estraneo incluso.
 
 ## Rimini — ricerca documentale del 17 ottobre 2026
 
