@@ -829,7 +829,8 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('#reset-filters').count(),1);
         assert.equal(await page.locator('.fiere-period-heading #reset-filters').textContent(),'Azzera filtri');
         assert.equal(await page.locator('#extra-filters').getAttribute('open'),null);
-        assert.equal(await page.locator('#type-filter').isVisible(),false);
+        assert.equal(await page.locator('#type-filter').isVisible(),true);
+        assert.equal(await page.locator('#extra-filters #type-filter').count(),0);
         assert.equal(await page.locator('#fair-search').isVisible(),false);
         assert.equal(await page.locator('#month-from').isVisible(),false);
         assert.equal(await page.locator('#province-filter').isVisible(),true);
@@ -1006,12 +1007,12 @@ async function run(engine,name,viewport,base) {
         await page.locator('#extra-filters > summary').click();
         await page.selectOption('#type-filter','tradizionale');
         await matches(events.filter(e => e.category === 'tradizionale' && e.months.some(m => [11,12,1,2].includes(m))));
-        assert.equal(await page.locator('#extra-filter-count').textContent(),'1');
+        assert.equal(await page.locator('#extra-filter-count').textContent(),'0');
         await page.locator('#extra-filters > summary').click();
-        assert(await page.locator('#extra-filter-count').isVisible());
+        assert.equal(await page.locator('#extra-filter-count').isVisible(),false);
         await page.reload();
         await matches(events.filter(e => e.category === 'tradizionale' && e.months.some(m => [11,12,1,2].includes(m))));
-        assert(await page.locator('#extra-filter-count').isVisible());
+        assert.equal(await page.locator('#extra-filter-count').isVisible(),false);
         await page.locator('#reset-filters').click();
         assert.equal(await page.locator('#extra-filter-count').isVisible(),false);
         await page.locator('#extra-filters > summary').click();

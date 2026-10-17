@@ -427,7 +427,7 @@
         const events = sortEvents(filterEvents(state.events, state));
         renderMonths(); renderList(events); renderMap(events);
         $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '');
-        const extraCount = Number(Boolean(state.category)) + Number(Boolean(state.query));
+        const extraCount = Number(Boolean(state.query));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
         $('extra-filters').querySelector('summary').setAttribute('aria-label', 'Altri filtri' + (extraCount ? ', ' + extraCount + ' attivi' : ''));

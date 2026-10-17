@@ -1,5 +1,12 @@
 # Subingresso.it — informazioni e TO DO
 
+**Tipo di evento visibile, 17 ottobre 2026:** spostato tra i filtri principali,
+sotto Cosa vendi, al posto di Quanto è conosciuta; rimosso da Altri filtri
+e dal relativo conteggio. Opzioni e comportamento conservati. Cache JS66;
+catalogo invariato. Sintassi e suite calendario Chromium 320 px passate;
+pubblicazione e verifica online in corso. Backup remoto creato;
+cleanup tag con errore PowerShell già noto, checkpoint valido.
+
 **Parametro fiere sospeso, 17 ottobre 2026:** su richiesta dell'utente,
 rimosso per ora «Quanto è conosciuta»: filtro e bollini in anteprime,
 popup mappa, dialog e pagine autonome. I vecchi URL con `rinomatezza`
