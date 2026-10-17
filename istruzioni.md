@@ -1741,3 +1741,6 @@ Tutto l’anno: testo e switch senza riquadro né ON/OFF, stato accessibile con 
 
 
 Filtro regioni fiere (16 ottobre 2026): nel menu Dove le 20 regioni sono selezionabili in grassetto, con le 110 province rientrate sotto la rispettiva regione. URL `regione` o `provincia` (una provincia valida prevale), filtri combinati, mappa e reset coerenti; confini regionali ottenuti raggruppando quelli provinciali, incluse province senza eventi. Cache fiere.js 45; catalogo e ricerche provinciali invariati. Lavoro isolato in `Documents/subingresso-regioni-20261016` per preservare la ricerca Pavia dell?altra sessione.
+
+
+Forlì-Cesena (17 ottobre 2026): ricerca documentale corrente: 88 manifestazioni in 30 comuni, 65 aggiunte, 14 sintesi costo. Audit data/fiere-forli-cesena.json, limiti ed esclusioni in data/FIERE.md; altre 4.191 schede invariate, 23 ID conservati. Cache fiere.js70/catalogo50. Test dedicato scripts/test-fiere-forli-cesena.cjs usa PLAYWRIGHT_MODULE e FIERE_FC_BASE_URL per verifica pubblica. TODO e riepilogo da aggiornare soltanto dopo deploy verificato.
