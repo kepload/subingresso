@@ -11,7 +11,10 @@ target44 px; dettaglio dialog/pagina allineato. Cache JS72/CSS25, JSON51.
 Test dedicato scripts/test-fiere-articles.cjs Chromium1440/820/320×568 e
 WebKit390 passato; suite calendario cinque formati/browser, pagine4322/
 sitemap1625 e settori passati. Dettagli FIERE.md,
-schermate Documents/verifica-filtri-articoli-20261017. Verifica online da fare.
+schermate Documents/verifica-filtri-articoli-20261017. Pubblicato 663df3f,
+Vercel riuscito 8NTFyGveCu85Amu589Fu5YYDZGem; HTML/JS/CSS/catalogo identici.
+Stesso test dedicato passato online sui quattro formati/browser; riga
+Tipologie di articolo verificata anche sulla pagina autonoma pubblica.
 
 Affluenza, 17 ottobre 2026: criterio richiesto soltanto pubblico; quattro
 fasce editoriali su ingressi/presenze medi per giornata, soglie 1k/5k/20k.

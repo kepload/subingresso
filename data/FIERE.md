@@ -2396,6 +2396,13 @@ Schermate in `Documents/verifica-filtri-articoli-20261017/`.
 Verifiche locali passate: test dedicato, suite generale calendario su cinque
 formati/browser, 4.322 pagine/1.625 sitemap, settori e sintassi. Backup tag
 remoto prima delle modifiche; cleanup locale con errore PowerShell noto.
+Pubblicato `663df3f`, Vercel riuscito
+`8NTFyGveCu85Amu589Fu5YYDZGem` (stato GitHub/Vercel success).
+HTML, JS72, CSS25 e catalogo pubblico identici ai locali dopo normalizzazione
+CRLF/LF. Test dedicato passato anche online nei quattro formati/browser;
+riga «Tipologie di articolo» verificata nella pagina autonoma pubblica.
+Esiti di pubblicazione e copertura in `pubblicazione.json`/`copertura.json`
+nella cartella delle prove. Nessuna modifica al DB o comunicazione a terzi.
 
 ### Macrosettori
 
