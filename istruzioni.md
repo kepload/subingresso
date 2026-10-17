@@ -541,7 +541,13 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - Il dettaglio mostra tutte le foto, eventuale video e note fiera, senza incrementare visualizzazioni né creare JSON-LD durante la revisione. Script dettaglio aggiornato a `v=20` nei due template.
 - Verifica: `python scripts/verify-listing-moderation.py` (Chromium e WebKit, dati simulati); `scripts/verify-listing-moderation.sql` controlla accessi e colonne usando fixture temporanee con le policy live, senza moderare annunci reali.
 
-### Statistiche venditore (correzione 6 ottobre 2026)
+### Statistiche venditore (correzione 17 ottobre 2026)
+
+- `Performance posteggi`: numeri e grafico soltanto nel periodo 7/30/90 giorni selezionato, stesso filtro annuncio. Quattro card: visualizzazioni (anteprime + aperture), messaggi ricevuti sul sito, clic telefono, clic WhatsApp; chat aperte e nuove aggiunte ai preferiti separati. Nessun totale storico o tasso che sommi clic e messaggi. I clic non confermano telefonate/invii esterni; le risposte del venditore e il supporto non sono messaggi ricevuti dai compratori.
+- Patch live `PATCH_SELLER_ANALYTICS_PERIOD_20261017.sql`: RPC privata estesa, giorni e confini UTC restituiti dal DB, messaggi giornalieri da eventi effettivi anche senza visite nello stesso giorno. Totali precedenti mantenuti solo per compatibilità; nessun backfill inventato. Storico visite/clic/preferiti dal 6 ottobre: avviso parziale e punti mancanti nel grafico, non zeri anteriori alla rilevazione. Hero superiore identificata come riepilogo complessivo, eliminato il falso “— 7g” sulle viste.
+- Prove: `scripts/verify-seller-analytics.sql` con ROLLBACK, 112 profili, isolamento e aggregati reali per 7/30/90, contatori, fixture temporanee per messaggi a mezzanotte/confini, date future, risposte/supporto e UTC anche con fuso +14. Guardie dati e trigger conservati. `scripts/verify-seller-analytics.js`; browser `scripts/test-seller-analytics.cjs` con Chart.js reale, Chromium 1440/320 e WebKit 390, fusi diversi, zero recente con 900 storiche, cambio annuncio/periodo, richieste fuori ordine, errori/riprova e overflow. Nessun messaggio reale nei test; snapshot funzione precedente e immagini in `Documents/verifica-statistiche-20261017`. Email settimanali ancora da correggere separatamente.
+
+Correzione storica del 6 ottobre:
 
 - Il pannello `Performance posteggi` chiamava `dashboard_seller_analytics`, ma `PATCH_LISTING_ANALYTICS_20260620.sql` non era mai stata applicata in produzione. RPC e `listing_stats_daily` mancavano: ogni account vedeva "Statistiche in attivazione".
 - Patch applicata al DB il 6 ottobre 2026, in transazione. Il deploy Vercel non esegue SQL: le nuove patch database vanno applicate e verificate separatamente.
@@ -549,10 +555,10 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 - Controlli: `scripts/verify-seller-analytics.sql` prova tutti i profili con ruolo autenticato, periodi 7/30/90, isolamento, viste/contatti/preferiti e annulla gli eventi di prova con `ROLLBACK`. `node scripts/verify-seller-analytics.js` verifica il pannello e la sintassi degli script inline.
 - Se il caricamento fallisce, il pannello offre `Riprova` e nasconde il grafico vuoto. Risposte di richieste precedenti non sovrascrivono il periodo scelto.
 
-- Colonna `visualizzazioni integer DEFAULT 0` in `annunci`. Funzione DB: `increment_views(listing_id uuid, amount integer)` SECURITY DEFINER con GRANT a anon/authenticated.
+- Colonna `visualizzazioni integer DEFAULT 0` in `annunci`. Client attuali: `track_listing_view(listing_id, view_type)` per anteprima/dettaglio; `increment_views` è interna/service_role, accetta solo +1, esclude proprietario/demo/scaduti/non attivi.
 - Anteprima card: +1 via `observeCardViews()` in `data.js` — scroll listener con `getBoundingClientRect`. Chiamarla dopo ogni render `buildCard()`.
 - **`_supabase.rpc().catch()` NON ESISTE** in Supabase JS v2 — usare `async/await`.
-- Visita diretta: random 1-2 views (`Math.random() < 0.5 ? 1 : 2`) via RPC in `annuncio-detail.js`.
+- Visita diretta attuale: +1 con `view_type='detail'`. Il vecchio random 1–2 e il cron Vetrina casuale sono storici; non ripristinarli.
 - **`visualizzazioni` NON va nella select principale di `annuncio-detail.js`** — fetcharlo in IIFE asincrona isolata.
 - Display: `#viewCount` + `#viewCountVal` nel title block.
 

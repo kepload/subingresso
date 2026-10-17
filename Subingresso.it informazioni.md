@@ -4,6 +4,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 17 ottobre 2026
 
+- **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Messaggi ricevuti sul sito distinti da clic telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Storico giornaliero dal 6 ottobre segnalato come parziale quando necessario. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
 - **Fiere:** 4.279 schede; ricerca approfondita conclusa e verificata online per 32 province, 78 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
@@ -931,7 +932,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 
 ## 📊 Statistiche e provenienza degli utenti
 
-- [ ] 🟠 Correggere le statistiche — dati, grafico, filtri ed email settimanali.
+- [ ] 🟠 Completare le statistiche — dashboard, grafico e filtri corretti il 17 ottobre; restano le email settimanali.
 - [ ] 🔴 Capire da dove arrivano gli utenti — distinguere blog, bandi, valutatore, homepage e fiere; prima una misura essenziale di quali percorsi portano iscrizioni, annunci e contatti, per scegliere dove investire il tempo. Riutilizzare il tracciamento esistente e allinearlo alle scelte privacy.
 
 ## ✍️ Blog: un articolo per ogni fiera lombarda importante
