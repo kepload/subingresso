@@ -15,7 +15,11 @@ Anteprime, popup, dialog e pagine autonome allineati; dati precedenti delle
 4.214 fiere conservati. Cache JS68/JSON48/CSS24, fiera CSS2.
 Build, settori, verifiche dedicate Chromium/WebKit, pagine e suite generale
 su cinque formati/browser passati; campi precedenti conservati e contrasto
-testo bianco ≥4,90:1. Pubblicazione in corso. Backup tag e branch remoti creati;
+testo bianco ≥4,90:1. Pubblicato d3d36e2, Vercel READY
+dpl_7yVZ4YRacJNdyDuBU3gY69TLw8MF; HTML/JS/CSS/catalogo online identici.
+Verificate le 13 pagine autonome e interazioni online Chromium 1440/320
+e WebKit 390: bollini, fonti, dati senza fascia, popup e assenza overflow.
+Backup tag e branch remoti creati;
 cleanup tag con errore PowerShell già noto. Dettaglio e limiti in data/FIERE.md.
 
 **Tipo di evento visibile, 17 ottobre 2026:** spostato tra i filtri principali,

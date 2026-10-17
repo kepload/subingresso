@@ -3113,3 +3113,10 @@ Verifiche: build, validazione delle prove, confini delle quattro fasce,
 unità e scope non confrontabili, scadenze, iniezione HTML/URL, preservazione
 dei campi precedenti e interazioni browser in `scripts/test-fiere-attendance.cjs`.
 La copertura resta parziale e dovrà proseguire con consuntivi equivalenti.
+
+Pubblicazione d3d36e2, Vercel READY dpl_7yVZ4YRacJNdyDuBU3gY69TLw8MF.
+HTML, JavaScript, entrambi i CSS e catalogo online identici al commit.
+Verificate le 13 pagine autonome e le interazioni sul sito pubblico con
+Chromium 1440/320 e WebKit 390; build, settori, pagine, archivio dei vecchi
+bollini e suite calendario su cinque formati/browser passati localmente.
+Preservati tutti i campi precedenti delle 4.214 manifestazioni.

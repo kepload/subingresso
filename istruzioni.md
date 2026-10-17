@@ -10,8 +10,9 @@ Archivio `data/fiere-affluenza.json`, controlli nel build e helper condivisi
 in fiere.js per browser/SSR. Niente nuovi filtri. Dettaglio in data/FIERE.md;
 originali in Documents/ricerca-affluenza-fiere-20261017. Cache JS68/JSON48,
 CSS24 e fiera CSS2. Build, settori, suite generale cinque formati/browser,
-prove dedicate Chromium/WebKit e pagine passate. Pubblicazione e verifica
-online in corso.
+prove dedicate Chromium/WebKit e pagine passate. Pubblicato d3d36e2,
+Vercel READY dpl_7yVZ4YRacJNdyDuBU3gY69TLw8MF; asset/catalogo identici,
+13 pagine e test dedicati online Chromium 1440/320 e WebKit 390 passati.
 
 Ravenna, 17 ottobre 2026: ricerca corrente chiusa nei 18 comuni, 131 schede
 in 17 comuni (+112), audit `data/fiere-ravenna.json` e `data/FIERE.md`.
