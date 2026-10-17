@@ -1,5 +1,17 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Rimini, 17 ottobre 2026: ricerca documentale dei 27 comuni attuali, 115 schede
+in 25 comuni (+102), fonte data/fiere-rimini.json e audit data/FIERE.md.
+Calendari Rimini 2026/2027; Natale separato in alberi/generi vari/casette,
+Pasqua sospesa. Sant’Agata Natale include 7 dicembre, quote per categoria;
+MotoGP 61/55 euro al metro più oneri, Cattolica OPI 30 euro più canone.
+Montecopiolo/Sassofeltrio corretti solo nel build, anagrafica condivisa intatta.
+3.987 eventi esterni identici; catalogo 4.102, cache JS64/JSON46.
+Originali in Documents/ricerca-fiere-rimini-20261017; fonti fallite, esclusioni
+ed estremi incerti espliciti, nessuna comunicazione a terzi.
+Pubblicazione Rimini in attesa della verifica online; TO DO non spuntata.
+
+
 Fiere, 17 ottobre 2026: Azzera filtri accanto a Quando sostituisce lo switch
 Tutto l’anno; rimosso il duplicato sotto i filtri. renderMap genera puntini
 solo con almeno un mese selezionato, anche durante zoom/resize/caricamenti.

@@ -19,7 +19,7 @@ REGION_ALIASES = {
     "Valle d'Aosta/Vallée d'Aoste": "Valle d'Aosta",
 }
 CATEGORIES = {"tradizionale", "artigianato", "sagra", "espositiva", "mercatino"}
-CATALOG_DATE = "2026-10-16"
+CATALOG_DATE = "2026-10-17"
 MERCHANDISE_SECTORS = ("alimentare", "non-alimentare", "antiquariato", "artigianato")
 
 
@@ -137,10 +137,14 @@ def build_catalog():
         combined.append(event)
     combined.extend(groups.values())
     comuni = json.loads((ROOT / "data/comuni.json").read_text(encoding="utf-8"))
+    # Calendar-only correction: both municipalities joined Rimini in June 2021.
+    # Keep the shared location dataset untouched by this provincial research.
+    comuni = [dict(c, regione="Emilia-Romagna", provincia="Rimini")
+              if c["nome"] in {"Montecopiolo", "Sassofeltrio"} else c for c in comuni]
     locations = {(key(c["nome"]), REGION_ALIASES.get(c["regione"], c["regione"])): c for c in comuni}
     # This audited provincial file replaces its older regional/editorial entries.
     # Keep the national source snapshots intact and preserve every other province.
-    for province, filename in (("Brescia", "fiere-brescia.json"), ("Lodi", "fiere-lodi.json"), ("Lecco", "fiere-lecco.json"), ("Monza e della Brianza", "fiere-monza-brianza.json"), ("Arezzo", "fiere-arezzo.json"), ("Trieste", "fiere-trieste.json"), ("Prato", "fiere-prato.json"), ("Bologna", "fiere-bologna.json"), ("Milano", "fiere-milano.json"), ("Bergamo", "fiere-bergamo.json"), ("Verona", "fiere-verona.json"), ("Padova", "fiere-padova.json"), ("Treviso", "fiere-treviso.json"), ("Vicenza", "fiere-vicenza.json"), ("Modena", "fiere-modena.json"), ("Parma", "fiere-parma.json"), ("Reggio nell'Emilia", "fiere-reggio-emilia.json"), ("Varese", "fiere-varese.json"), ("Como", "fiere-como.json"), ("Torino", "fiere-torino.json"), ("Mantova", "fiere-mantova.json"), ("Cremona", "fiere-cremona.json"), ("Venezia", "fiere-venezia.json"), ("Novara", "fiere-novara.json"), ("Cuneo", "fiere-cuneo.json"), ("Trento", "fiere-trento.json"), ("Bolzano/Bozen", "fiere-bolzano.json"), ("Firenze", "fiere-firenze.json"), ("Roma", "fiere-roma.json")):
+    for province, filename in (("Brescia", "fiere-brescia.json"), ("Lodi", "fiere-lodi.json"), ("Lecco", "fiere-lecco.json"), ("Monza e della Brianza", "fiere-monza-brianza.json"), ("Arezzo", "fiere-arezzo.json"), ("Trieste", "fiere-trieste.json"), ("Prato", "fiere-prato.json"), ("Bologna", "fiere-bologna.json"), ("Milano", "fiere-milano.json"), ("Bergamo", "fiere-bergamo.json"), ("Verona", "fiere-verona.json"), ("Padova", "fiere-padova.json"), ("Treviso", "fiere-treviso.json"), ("Vicenza", "fiere-vicenza.json"), ("Modena", "fiere-modena.json"), ("Parma", "fiere-parma.json"), ("Reggio nell'Emilia", "fiere-reggio-emilia.json"), ("Varese", "fiere-varese.json"), ("Como", "fiere-como.json"), ("Torino", "fiere-torino.json"), ("Mantova", "fiere-mantova.json"), ("Cremona", "fiere-cremona.json"), ("Venezia", "fiere-venezia.json"), ("Novara", "fiere-novara.json"), ("Cuneo", "fiere-cuneo.json"), ("Trento", "fiere-trento.json"), ("Bolzano/Bozen", "fiere-bolzano.json"), ("Firenze", "fiere-firenze.json"), ("Roma", "fiere-roma.json"), ("Rimini", "fiere-rimini.json")):
         researched = json.loads((ROOT / "data" / filename).read_text(encoding="utf-8"))
         assert researched["province"] == province and researched["checkedAt"] <= CATALOG_DATE
         for row in researched["events"]:
