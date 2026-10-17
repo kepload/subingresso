@@ -6,9 +6,12 @@ popup mappa, dialog e pagine autonome. I vecchi URL con `rinomatezza`
 non filtrano più; gli altri filtri restano validi. Valutazioni e prove
 conservate per un eventuale ripristino; sospendere nuove assegnazioni.
 Cache JS65; catalogo, fonti e ricerca Rimini conservati.
-Sintassi, verifiche dedicate Chromium/WebKit e 4.102 pagine autonome
-passate localmente; suite calendario generale e pubblicazione in corso.
-Backup remoto creato; cleanup tag
+Sintassi, suite calendario su cinque formati/browser, verifiche dedicate
+Chromium/WebKit e 4.102 pagine autonome passate localmente.
+Pubblicato 36dc55b, Vercel READY dpl_EKVY7e3brYd6skzVy21Y4PjZJR3h;
+HTML/JS online identici, schede autonome senza bollini e catalogo invariato.
+Verifiche online Chromium computer/telefono e WebKit passate: vecchi URL,
+filtri combinati, mappa, schede e azzeramento. Backup remoto creato; cleanup tag
 con errore PowerShell già noto, checkpoint valido.
 
 **Mappa e azzeramento, 17 ottobre 2026:** Azzera filtri spostato accanto
