@@ -3,6 +3,53 @@
     const MONTHS = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
     const CATEGORIES = { tradizionale: 'Fiera tradizionale', artigianato: 'Artigianato e mostre mercato', sagra: 'Sagra o festa', espositiva: 'Fiera espositiva', mercatino: 'Mercatino' };
     const SECTORS = { alimentare: 'Alimentare', 'non-alimentare': 'Non alimentare', antiquariato: 'Antiquariato e vintage', artigianato: 'Artigianato' };
+    // Editorial volume bands, not a forecast or a commercial assessment.
+    const ATTENDANCE = {
+        veryHigh: { label: 'Affluenza molto alta', min: 20000 },
+        high: { label: 'Affluenza alta', min: 5000 },
+        medium: { label: 'Affluenza media', min: 1000 },
+        low: { label: 'Affluenza bassa', min: 0 }
+    };
+    function attendanceInfo(event, today = todayInRome()) {
+        const a = event.attendance;
+        const iso = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
+        if (!a || !iso(a.start) || !iso(a.end) || a.start > a.end || a.end > today
+            || !iso(a.checkedAt) || a.checkedAt > today || a.checkedAt < a.end
+            || !iso(a.reviewAfter) || a.reviewAfter < today
+            || Date.parse(today) - Date.parse(a.end) > 730 * 86400000
+            || !Number.isSafeInteger(a.value) || a.value <= 0
+            || !['exact', 'over', 'about', 'under'].includes(a.relation)
+            || !['entries', 'presences', 'visitors', 'uniqueVisitors', 'passages'].includes(a.unit)
+            || !['counted', 'declared', 'estimated'].includes(a.status)
+            || !['not-published', 'ticketing', 'counters', 'audit'].includes(a.countingMethod)
+            || (a.status === 'counted' && a.countingMethod === 'not-published')
+            || !['fair', 'whole-event', 'partial'].includes(a.scope)
+            || !Number.isInteger(a.openDays) || a.openDays < 0 || a.openDays > (Date.parse(a.end) - Date.parse(a.start)) / 86400000 + 1
+            || !a.source || !/^https:\/\/[^/\s]+/.test(a.source.url || '') || !a.source.label || !a.note) return null;
+        const units = { entries: 'ingressi', presences: 'presenze', visitors: 'visitatori dichiarati', uniqueVisitors: 'visitatori unici', passages: 'passaggi' };
+        const prefixes = { exact: '', over: 'Oltre ', about: 'Circa ', under: 'Meno di ' };
+        const format = value => new Intl.NumberFormat('it-IT', { maximumFractionDigits: 0 }).format(value);
+        const total = prefixes[a.relation] + format(a.value) + ' ' + units[a.unit];
+        const days = a.openDays ? ' in ' + a.openDays + (a.openDays === 1 ? ' giornata' : ' giornate') : '';
+        const status = { counted: 'Conteggio documentato', declared: 'Dato dichiarato dalla fonte', estimated: 'Stima riportata dalla fonte' }[a.status];
+        let level = null, daily = null;
+        const newerEdition = (event.editions || []).some(e => e.end && !e.periodOnly && e.end <= today && e.end > a.end);
+        // Unique people, unspecified visitor counts, city-wide festivals and
+        // partial counts cannot become comparable daily attendance badges.
+        if (!newerEdition && a.scope === 'fair' && a.openDays && ['entries', 'presences'].includes(a.unit) && a.relation !== 'under') {
+            daily = a.value / a.openDays;
+            level = Object.keys(ATTENDANCE).find(key => daily >= ATTENDANCE[key].min);
+        }
+        const label = level ? ATTENDANCE[level].label.replace('Affluenza ', a.relation === 'over' && level !== 'veryHigh' ? 'Affluenza almeno ' : 'Affluenza ') : '';
+        const comparison = level
+            ? (a.relation === 'over' ? 'Più di ' : a.relation === 'about' ? 'Circa ' : '') + format(daily) + ' ' + units[a.unit] + '/giorno in media sull’edizione.'
+            : newerEdition ? 'È disponibile un dato di un’edizione precedente; il bollino attende un riscontro più recente.'
+            : 'Dato conservato senza bollino: unità, area o durata non permettono un confronto giornaliero affidabile.';
+        return { level, label, total: total + days, status, comparison, year: a.start.slice(0, 4), record: a };
+    }
+    function attendanceCriteria() {
+        return 'Fasce editoriali sulla media giornaliera di ingressi o presenze: bassa sotto 1.000; media da 1.000 a meno di 5.000; alta da 5.000 a meno di 20.000; molto alta da 20.000. La media non descrive ogni singola giornata o il passaggio davanti al banco. I conteggi possono includere ritorni della stessa persona. Le cifre dichiarate o stimate restano tali; “almeno” indica una soglia minima. Nessun bollino quando mancano dati confrontabili.';
+    }
     const REPUTATIONS = {
         rinomata: { label: 'Molto conosciuta', icon: '★', description: 'Richiamo ampio o oltre il territorio locale documentato da fonti e dati.' },
         consolidata: { label: 'Storica', icon: '◆', description: 'Almeno 10 edizioni o 10 anni di storia documentati; richiamo più ampio da accertare.' },
@@ -142,7 +189,7 @@
             || a.event.name.localeCompare(b.event.name, 'it') || a.event.city.localeCompare(b.event.city, 'it'));
         return ranked.map(item => item.event);
     }
-    const api = { MONTHS, CATEGORIES, SECTORS, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
+    const api = { MONTHS, CATEGORIES, SECTORS, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
@@ -186,6 +233,40 @@
         element.addEventListener('keydown', event => {
             if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); callback(); }
         });
+    }
+    function attendanceBadge(event, clickable = false) {
+        const info = attendanceInfo(event);
+        if (!info || !info.level) return null;
+        const badge = node(clickable ? 'button' : 'span', 'fiere-attendance', info.label);
+        badge.dataset.attendance = info.level;
+        badge.title = info.total + ' · ' + info.year + ' · ' + info.status;
+        if (clickable) {
+            badge.type = 'button';
+            badge.setAttribute('aria-label', info.label + '. ' + badge.title + '. Apri dati e fonte: ' + event.name);
+            badge.addEventListener('click', () => openDetail(event));
+        }
+        return badge;
+    }
+    function renderAttendanceDetail(event) {
+        const section = $('detail-attendance'), info = attendanceInfo(event);
+        section.replaceChildren(); section.hidden = !info;
+        if (!info) return;
+        section.append(node('h3', '', 'Affluenza'));
+        const badge = attendanceBadge(event);
+        if (badge) section.append(badge);
+        section.append(node('p', '', info.total + ' · edizione ' + info.year), node('p', 'fiere-attendance-meta', info.status));
+        const details = node('details', 'fiere-attendance-evidence');
+        details.append(node('summary', '', 'Dato, fonte e criterio'), node('p', '', info.record.note), node('p', '', info.comparison));
+        const source = node('a', 'fiere-detail-link', info.record.source.label + ' ↗');
+        source.href = info.record.source.url; source.target = '_blank'; source.rel = 'noopener noreferrer';
+        details.append(source);
+        for (const item of info.record.additionalSources || []) {
+            if (!/^https:\/\/[^/\s]+/.test(item.url || '') || !item.label) continue;
+            const extra = node('a', 'fiere-detail-link', item.label + ' ↗');
+            extra.href = item.url; extra.target = '_blank'; extra.rel = 'noopener noreferrer'; details.append(extra);
+        }
+        details.append(node('p', '', 'Periodo: ' + dateLabel(info.record.start) + ' – ' + dateLabel(info.record.end) + '. Fonte consultata il ' + dateLabel(info.record.checkedAt) + '.'), node('p', '', attendanceCriteria()));
+        section.append(details);
     }
     function periodLabel(event) {
         if (event.months.length === 12) return 'Tutto l’anno';
@@ -252,6 +333,8 @@
             const foot = node('div', 'fiere-card-foot');
             foot.append(category, button);
             card.append(head);
+            const attendance = attendanceBadge(event, true);
+            if (attendance) { const wrap = node('div', 'fiere-card-attendance'); wrap.append(attendance); head.append(wrap); }
             card.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
             const fee = feeLabel(event);
             if (fee) {
@@ -356,6 +439,8 @@
             const button = node('button', 'fiere-popup-event', event.name + ' ↗');
             button.type = 'button';
             button.append(node('span', '', event.city + ' · ' + periodLabel(event)));
+            const attendance = attendanceBadge(event);
+            if (attendance) button.append(attendance);
             button.addEventListener('click', () => openDetail(event));
             fragment.append(button);
         }
@@ -376,6 +461,7 @@
         $('detail-frequency').hidden = !event.frequencyNote;
         $('detail-description').textContent = event.summary || '';
         $('detail-description').hidden = !event.summary;
+        renderAttendanceDetail(event);
         const editions = document.createDocumentFragment();
         for (const edition of event.editions || []) {
             const item = node('div', 'fiere-edition');
@@ -459,7 +545,7 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=47');
+            const data = await fetchJSON('/data/fiere.json?v=48');
             if (!Array.isArray(data.provinces) || !data.provinces.length || new Set(data.provinces).size !== data.provinces.length
                 || !data.provinces.every(province => typeof province === 'string' && province) || !Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.province === 'string' && data.provinces.includes(event.province)

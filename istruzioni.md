@@ -1,5 +1,18 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Affluenza, 17 ottobre 2026: criterio richiesto soltanto pubblico; quattro
+fasce editoriali su ingressi/presenze medi per giornata, soglie 1k/5k/20k.
+Fonti e cifre originali con anno, periodo, unità, stato dichiarato/stimato;
+visite ripetute distinte da persone uniche, pubblico della festa non
+trasferito ai banchi. Primi 20 casi: 13 resoconti, quattro bollini e sette
+esclusioni; copertura parziale, nessun livello basso da assenza di prove.
+Archivio `data/fiere-affluenza.json`, controlli nel build e helper condivisi
+in fiere.js per browser/SSR. Niente nuovi filtri. Dettaglio in data/FIERE.md;
+originali in Documents/ricerca-affluenza-fiere-20261017. Cache JS68/JSON48,
+CSS24 e fiera CSS2. Build, settori, suite generale cinque formati/browser,
+prove dedicate Chromium/WebKit e pagine passate. Pubblicazione e verifica
+online in corso.
+
 Ravenna, 17 ottobre 2026: ricerca corrente chiusa nei 18 comuni, 131 schede
 in 17 comuni (+112), audit `data/fiere-ravenna.json` e `data/FIERE.md`.
 115 con giornate, cinque periodi, undici testuali; 56 recapiti, sette termini,

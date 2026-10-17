@@ -1,0 +1,296 @@
+{
+  "checkedAt": "2026-10-17",
+  "policyVersion": 1,
+  "method": "Affluenza soltanto: quattro fasce editoriali iniziali sulla media di ingressi o presenze per giornata di apertura documentata (<1.000; 1.000–<5.000; 5.000–<20.000; >=20.000). Soglie convenzionali, non una misura della densità o del rendimento del banco. Le cifre oltre una soglia sono limiti minimi; circa è approssimativo. Conservare separati conteggi, dichiarazioni e stime. Visitatori senza definizione, persone uniche, passaggi, dati parziali o di tutta una festa non producono un bollino giornaliero. Nessuna inferenza da notorietà, storia, numero dei banchi, vendite, foto isolate o dati mancanti. Copertura iniziale parziale e orientata alle manifestazioni che pubblicano un consuntivo.",
+  "events": {
+    "lombardia-montichiari-fazi-fiera-agricola-zootecnica-italiana": {
+      "start": "2025-10-24",
+      "end": "2025-10-26",
+      "openDays": 3,
+      "value": 42000,
+      "unit": "presences",
+      "relation": "over",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Centro Fiera Montichiari · consuntivo FAZI 2025",
+        "url": "https://www.fieragri.it/wp-content/uploads/2025/10/CS-8-MAN-FAZI-BILANCIO-FINALE-28-OTT-25-1.pdf"
+      },
+      "note": "Il consuntivo dell’organizzatore indica oltre 42.000 presenze nella 97ª edizione. Il metodo di conteggio non è descritto. Il dato riguarda tutta la manifestazione, senza una misura per singola corsia.",
+      "additionalSources": [
+        {
+          "label": "Centro Fiera · date FAZI 2025",
+          "url": "https://www.fieragri.it/2025/10/20/fazi-2025-dal-24-al-26-ottobre-focus-verticale-su-agricoltura-e-zootecnia/"
+        }
+      ]
+    },
+    "trentino-alto-adige-bolzano-tempo-libero": {
+      "start": "2026-04-16",
+      "end": "2026-04-19",
+      "openDays": 4,
+      "value": 40000,
+      "unit": "entries",
+      "relation": "about",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Fiera Bolzano · bilancio Tempo Libero 2026",
+        "url": "https://www.fierabolzano.it/it/press/bilancio-positivo-per-tempo-libero-2026"
+      },
+      "note": "L’organizzatore riporta quasi 40.000 ingressi per l’edizione 2026. Il valore è arrotondato e può includere ritorni della stessa persona; non è una misura dei visitatori unici. La media serve a descrivere il volume dell’intera fiera.",
+      "additionalSources": [
+        {
+          "label": "Fiera Bolzano · periodo di apertura",
+          "url": "https://www.fierabolzano.it/it/tempo-libero/"
+        }
+      ]
+    },
+    "veneto-godega-di-sant-urbano-antica-fiera-di-godega": {
+      "start": "2026-02-28",
+      "end": "2026-03-02",
+      "openDays": 3,
+      "value": 100000,
+      "unit": "presences",
+      "relation": "exact",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Godega Fiere · bilancio del Comune 2026",
+        "url": "https://www.godegafiere.it/post/100mila-visitatori-all-antica-fiera-di-godega-2026"
+      },
+      "note": "Nel resoconto pubblicato sul sito della fiera, l’amministrazione comunale dichiara 100.000 presenze per le tre giornate. Non è pubblicato il procedimento di conteggio. Il dato comprende l’intero quartiere fieristico."
+    },
+    "lombardia-brescia-fiera-dei-santi-faustino-e-giovita": {
+      "start": "2026-02-15",
+      "end": "2026-02-15",
+      "openDays": 1,
+      "value": 200000,
+      "unit": "presences",
+      "relation": "over",
+      "status": "estimated",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "ÈliveBrescia TV · resoconto del 15 febbraio 2026",
+        "url": "https://www.elivebrescia.tv/san-faustino-brescia-bancarelle-600-tirapicio/"
+      },
+      "note": "La cronaca locale riferisce oltre 200.000 presenze tra le bancarelle nella giornata della fiera. Mancano metodo e attribuzione del conteggio: trattiamo il numero come una stima giornalistica, non come un conteggio certificato."
+    },
+    "lombardia-bergamo-creattiva-fiera-delle-arti-manuali": {
+      "start": "2026-10-01",
+      "end": "2026-10-04",
+      "openDays": 4,
+      "value": 56000,
+      "unit": "visitors",
+      "relation": "over",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Promoberg · consuntivo Creattiva autunno 2026",
+        "url": "https://www.bergamofiera.it/2026/10/05/creattiva-chiude-la-34a-edizione-con-un-record-di-oltre-56mila-visitatori-si-conferma-il-successo-della-manifestazione-internazionale-dedicata-alle-arti-manuali/"
+      },
+      "note": "Il comunicato riporta oltre 56.000 visitatori nella 34ª edizione, dal 1 al 4 ottobre. Non chiarisce se siano persone distinte o ingressi: il numero resta visibile, senza trasformarlo in presenze medie giornaliere o in un bollino."
+    },
+    "lombardia-bergamo-fiera-di-sant-alessandro": {
+      "start": "2026-09-04",
+      "end": "2026-09-06",
+      "openDays": 3,
+      "value": 50000,
+      "unit": "visitors",
+      "relation": "over",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Promoberg · consuntivo Sant’Alessandro 2026",
+        "url": "https://www.bergamofiera.it/2026/09/07/fiera-di-santalessandro-2026-si-chiude-unaltra-edizione-di-grande-successo/"
+      },
+      "note": "L’organizzatore indica oltre 50.000 visitatori per l’intera manifestazione agricola. Il totale non distingue persone uniche e accessi ripetuti. Nessun bollino giornaliero e nessuna attribuzione automatica al passaggio davanti ai banchi."
+    },
+    "lombardia-bergamo-fiera-campionaria": {
+      "start": "2025-10-29",
+      "end": "2025-11-02",
+      "openDays": 5,
+      "value": 67000,
+      "unit": "visitors",
+      "relation": "over",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Promoberg · consuntivo Campionaria 2025",
+        "url": "https://www.bergamofiera.it/2025/11/02/campionaria-un-successo-senza-precedenti/"
+      },
+      "note": "Il consuntivo 2025 riporta oltre 67.000 visitatori nei cinque giorni. Il metodo non specifica se il totale includa ritorni: conserviamo il dato originale senza un bollino confrontabile."
+    },
+    "toscana-scandicci-scandicci-fiera": {
+      "start": "2026-10-03",
+      "end": "2026-10-11",
+      "openDays": 9,
+      "value": 500000,
+      "unit": "visitors",
+      "relation": "about",
+      "status": "declared",
+      "scope": "whole-event",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Comune di Scandicci · consuntivo 2026",
+        "url": "https://www.comune.scandicci.fi.it/novita/notizie/mezzo-milione-di-visitatori-alla-fiera-di-scandicci-2026"
+      },
+      "note": "Il Comune comunica circa mezzo milione di visitatori nell’insieme della Fiera, comprese le diverse aree e attività. Il metodo non distingue ingressi e persone uniche. Il totale non viene trasferito al solo Fierone ambulante del giovedì.",
+      "additionalSources": [
+        {
+          "label": "Scandicci Fiera · date e aree 2026",
+          "url": "https://www.scandiccifiera.it/"
+        }
+      ]
+    },
+    "lombardia-busto-arsizio-acquariaitalia": {
+      "start": "2026-09-19",
+      "end": "2026-09-20",
+      "openDays": 2,
+      "value": 8500,
+      "unit": "visitors",
+      "relation": "exact",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "AcquariaItalia · bilancio dell’organizzatore 2026",
+        "url": "https://www.acquariaitalia.com/"
+      },
+      "note": "Il co-organizzatore dichiara 8.500 persone nelle due giornate di apertura al pubblico. Il lunedì B2B è escluso. Mancando una definizione tra persone distinte e ingressi, non assegnamo una fascia giornaliera."
+    },
+    "lombardia-gonzaga-bovimac": {
+      "start": "2026-01-16",
+      "end": "2026-01-18",
+      "openDays": 3,
+      "value": 7000,
+      "unit": "visitors",
+      "relation": "over",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Radio Pico · resoconto e intervista al presidente della Fiera",
+        "url": "https://www.radiopico.it/grande-successo-per-ledizione-2026-di-bovimac-alla-fiera-millenaria-di-gonzaga-mn/"
+      },
+      "note": "Il resoconto, accompagnato dall’intervista al presidente della Fiera, riporta più di 7.000 visitatori dal 16 al 18 gennaio. La fonte non distingue persone e ingressi: dato conservato senza bollino. La rivista di Confcommercio concorda nel testo indicizzato, ma il relativo PDF restituisce 404 alla verifica diretta."
+    },
+    "piemonte-alba-fiera-internazionale-del-tartufo-bianco-d-alba": {
+      "start": "2025-10-11",
+      "end": "2025-12-08",
+      "openDays": 0,
+      "value": 90000,
+      "unit": "entries",
+      "relation": "exact",
+      "status": "declared",
+      "scope": "partial",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Ente Fiera di Alba · consuntivo Mercato 2025",
+        "url": "https://it.linkedin.com/posts/ente-fiera-di-alba_tartufobiancoalba-langhe-alba-activity-7490685575843430400-TMvW"
+      },
+      "note": "L’Ente Fiera attribuisce 90.000 ingressi al solo Mercato Mondiale del Tartufo, non alla totalità degli appuntamenti cittadini. Senza un calendario delle giornate 2025 verificato in questa ricerca non dividiamo per i giorni di calendario e non assegniamo un bollino."
+    },
+    "friuli-venezia-giulia-pordenone-pordenonelegge": {
+      "start": "2026-09-16",
+      "end": "2026-09-20",
+      "openDays": 5,
+      "value": 190000,
+      "unit": "presences",
+      "relation": "over",
+      "status": "estimated",
+      "scope": "whole-event",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Fondazione Pordenonelegge · bilancio 2026",
+        "url": "https://www.pordenonelegge.it/notizie/pordenonelegge-2026-festa-del-ringraziamento"
+      },
+      "note": "Il consuntivo riporta una stima della Prefettura riferita al festival e ai suoi appuntamenti diffusi. Non è il conteggio di un’area commerciale: conserviamo il contesto senza attribuire un bollino ai banchi."
+    },
+    "lombardia-rho-artigiano-in-fiera": {
+      "start": "2025-12-06",
+      "end": "2025-12-14",
+      "openDays": 9,
+      "value": 1000000,
+      "unit": "visitors",
+      "relation": "exact",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Ge.Fi. · comunicato finale Artigiano in Fiera 2025",
+        "url": "https://www.it-exhibition.com/wp-content/uploads/2025/12/AF_CS_chiusura_14.12.25-1.pdf"
+      },
+      "note": "Il comunicato dell’organizzatore riporta un milione di visitatori nell’edizione invernale. Non definisce il totale come persone uniche o accessi. Nessun riuso per la distinta Anteprima d’Estate; nessun bollino giornaliero in assenza di definizione."
+    }
+  },
+  "exclusions": [
+    {
+      "id": "liguria-genova-fiera-di-sant-agata",
+      "url": "https://www.comune.genova.it/vivere-il-comune/eventi/eventi-sociali/fiera-di-santagata",
+      "reason": "Dimensione dell’organico e rilievo della fiera non misurano l’affluenza; nessun consuntivo numerico verificato."
+    },
+    {
+      "id": "liguria-la-spezia-fiera-di-san-giuseppe",
+      "url": "https://www.comune.laspezia.it/novita/comunicati/fiera-di-san-giuseppe-2026",
+      "reason": "Banchi ed espositori non sono visitatori; nessun numero di pubblico confrontabile verificato."
+    },
+    {
+      "id": "abruzzo-pescara-mostra-del-fiore-florviva",
+      "url": "https://www.mostradelfioreflorviva.it/",
+      "reason": "Le presenze promozionali annue delle passate edizioni non identificano un consuntivo con anno, periodo e metodo sufficienti."
+    },
+    {
+      "id": "valle-d-aosta-aosta-fiera-di-sant-orso",
+      "url": "https://www.ansa.it/valledaosta/notizie/2026/01/31/fiera-di-santorso-2026-grande-partecipazione_7a73a96e-a569-415c-928c-0eeaa226c095.html",
+      "reason": "Il resoconto 2026 confronta veicoli e passaggi in piazza: non equivale a visitatori unici o a un conteggio dell’intero percorso."
+    },
+    {
+      "id": "toscana-scandicci-fierone-ambulante-di-scandicci",
+      "url": "https://www.comune.scandicci.fi.it/novita/notizie/mezzo-milione-di-visitatori-alla-fiera-di-scandicci-2026",
+      "reason": "Il totale della Fiera di nove giorni non viene assegnato al solo mercato ambulante di un giorno."
+    },
+    {
+      "id": "veneto-isola-della-scala-fiera-del-riso",
+      "url": "https://daily.veronanetwork.it/provincia/isola-della-scala-incassi-fiera-del-riso-a-24-milioni-la-stagione-della-ripartenza/",
+      "reason": "L’incremento percentuale 2026 e le porzioni vendute non forniscono un conteggio assoluto confrontabile del pubblico della zona commerciale."
+    },
+    {
+      "id": "toscana-firenze-mostra-internazionale-dell-artigianato-mida",
+      "url": "https://www.firenzefiera.it/it/press-area/comunicati-stampa/presentata-stamani-mida90-la-90esima-edizione-della-mostra-internazionale-dellartigianato-dal-25-aprile-al-3-maggio-alla-fortezza-da-basso-di-firenze",
+      "reason": "Il comunicato di presentazione 2026 riporta 65.000 visitatori 2025: non è il consuntivo dell’edizione 2026 già conclusa; mancano conteggio giornaliero e definizione dell’unità."
+    }
+  ]
+}

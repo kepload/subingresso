@@ -46,7 +46,7 @@ for (const level of levels) {
 // Content comparison against the committed catalogue catches unrelated data loss.
 if (!process.env.FIERE_TEST_BASE_URL) {
     const previous = JSON.parse(execFileSync('git', ['show', 'HEAD:data/fiere.json'], { cwd: root, encoding: 'utf8', maxBuffer: 40 * 1024 * 1024 }));
-    const withoutRatings = data => ({ ...data, events: data.events.map(({ reputation, ...event }) => event) });
+    const withoutRatings = data => ({ ...data, events: data.events.map(({ attendance, ...event }) => event) });
     assert.deepEqual(withoutRatings(catalog), withoutRatings(previous));
 }
 // Invalid editorial entries must fail before they can be published.

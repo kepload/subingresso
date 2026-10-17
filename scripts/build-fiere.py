@@ -102,6 +102,26 @@ def validate_reputation(rating):
         assert not history and review.year <= max(e["year"] for e in debut) + 1
 
 
+def validate_attendance(record):
+    """Keep source quantities distinct; comparable volume is classified in JS."""
+    start, end, checked, review = (date.fromisoformat(record[k]) for k in ("start", "end", "checkedAt", "reviewAfter"))
+    assert start <= end <= checked <= date.fromisoformat(CATALOG_DATE) < review
+    assert (checked - end).days <= 730 and (review - checked).days <= 730
+    assert type(record["value"]) is int and 0 < record["value"] < 2**53
+    assert type(record["openDays"]) is int and 0 <= record["openDays"] <= (end - start).days + 1
+    assert record["unit"] in {"entries", "presences", "visitors", "uniqueVisitors", "passages"}
+    assert record["relation"] in {"exact", "over", "about", "under"}
+    assert record["scope"] in {"fair", "whole-event", "partial"}
+    assert record["status"] in {"counted", "declared", "estimated"}
+    assert record["countingMethod"] in {"not-published", "ticketing", "counters", "audit"}
+    assert record["status"] != "counted" or record["countingMethod"] != "not-published"
+    assert isinstance(record["note"], str) and 15 <= len(record["note"]) <= 1200
+    assert isinstance(record["source"]["label"], str) and record["source"]["label"]
+    assert re.match(r"^https://[^/\s]+", record["source"]["url"])
+    for source in record.get("additionalSources", []):
+        assert source["label"] and re.match(r"^https://[^/\s]+", source["url"])
+
+
 def build_catalog():
     province_map = json.loads((ROOT / "data/italia-province.json").read_text(encoding="utf-8"))
     sardinia_provinces = {key(name): province for name, province in province_map["sardiniaMunicipalities"].items()}
@@ -178,6 +198,11 @@ def build_catalog():
     assert reputation_research["checkedAt"] <= CATALOG_DATE
     for rating in reputations.values():
         validate_reputation(rating)
+    attendance_research = json.loads((ROOT / "data/fiere-affluenza.json").read_text(encoding="utf-8"))
+    assert attendance_research["checkedAt"] <= CATALOG_DATE
+    attendances = attendance_research["events"]
+    for record in attendances.values():
+        validate_attendance(record)
     for row in combined:
         city = locations.get((key(row["city"]), row["region"]))
         if city is None:
@@ -227,9 +252,13 @@ def build_catalog():
         event.pop("reputation", None)
         if event["id"] in reputations:
             event["reputation"] = reputations[event["id"]]
+        event.pop("attendance", None)
+        if event["id"] in attendances:
+            event["attendance"] = attendances[event["id"]]
         events.append(event)
     assert not (set(fees) - {event["id"] for event in events}), "Costs refer to unknown event IDs"
     assert not (set(reputations) - {event["id"] for event in events}), "Reputation refers to unknown event IDs"
+    assert not (set(attendances) - {event["id"] for event in events}), "Attendance refers to unknown event IDs"
     counts = Counter(e["region"] for e in events)
     assert len(events) == len({e["id"] for e in events}) and len(events) >= 200
     assert len(counts) == 20

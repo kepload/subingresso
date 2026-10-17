@@ -1,5 +1,23 @@
 # Subingresso.it — informazioni e TO DO
 
+**Affluenza fiere, 17 ottobre 2026:** nuova decisione dell’utente: valutare
+soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità.
+Quattro fasce editoriali sulla media giornaliera di ingressi/presenze:
+bassa <1.000, media 1.000–<5.000, alta 5.000–<20.000, molto alta ≥20.000.
+Prima ricognizione mirata di 20 fiere: 13 resoconti, di cui quattro con
+bollino (due molto alta, due alta); nove dati non confrontabili e sette
+esclusioni motivate. Nessuna bassa/media attribuita per dati mancanti.
+Fonti, unità, periodo, stime/dichiarazioni e criteri apribili nelle schede;
+niente conversione di visitatori unici, passaggi o pubblico di tutta una
+festa in affluenza dei banchi. Archivio `data/fiere-affluenza.json`, fonti
+fuori repo in `Documents/ricerca-affluenza-fiere-20261017`; copertura parziale.
+Anteprime, popup, dialog e pagine autonome allineati; dati precedenti delle
+4.214 fiere conservati. Cache JS68/JSON48/CSS24, fiera CSS2.
+Build, settori, verifiche dedicate Chromium/WebKit, pagine e suite generale
+su cinque formati/browser passati; campi precedenti conservati e contrasto
+testo bianco ≥4,90:1. Pubblicazione in corso. Backup tag e branch remoti creati;
+cleanup tag con errore PowerShell già noto. Dettaglio e limiti in data/FIERE.md.
+
 **Tipo di evento visibile, 17 ottobre 2026:** spostato tra i filtri principali,
 sotto Cosa vendi, al posto di Quanto è conosciuta; rimosso da Altri filtri
 e dal relativo conteggio. Opzioni e comportamento conservati. Cache JS66;
