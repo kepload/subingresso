@@ -1,0 +1,2513 @@
+{
+  "province": "Piacenza",
+  "checkedAt": "2026-10-17",
+  "research": {
+    "status": "partial-documental-research",
+    "checkedAt": "2026-10-17",
+    "archive": "C:\\Users\\utente\\Documents\\ricerca-fiere-piacenza-20261017",
+    "baseline": {
+      "commit": "606ce15",
+      "provinceEvents": 4,
+      "nationalEvents": 4279
+    },
+    "method": "Ricognizione preliminare dei nomi dei 46 comuni, confronto portali regionali/turismo, lettura di fonti comunali e organizzatori e allegati originali. Nessuna comunicazione, domanda o candidatura inviata. Questa integrazione non chiude la ricerca approfondita provinciale.",
+    "limits": [
+      "Portale regionale limita i risultati alle manifestazioni dal giorno della consultazione; endpoint annuale e browser non accessibili. Nessun recupero annuale completo dimostrato.",
+      "Visit Piacenza: sitemap accessibili, pagine originali spesso 500/timeout da HTTP e browser. Numerose pagine lette tramite web, che conserva versioni indicizzate talvolta divergenti: queste non garantiscono attualità operativa.",
+      "La ricognizione non ha ancora verificato in modo sufficiente albi/SUAP e calendari dei 46 comuni; non equivale a copertura approfondita. Nessuna assenza di eventi dedotta dai soli risultati negativi.",
+      "Pianello e Bobbio: allegati generati da endpoint pubblico recuperati con la stessa richiesta di sola lettura della pagina, estratti e archiviati; planimetrie scansite richiedono ancora controllo visivo.",
+      "Mercanti di Qualità: calendario completo del circuito non recuperato; fonte Festivalinitalia Gossolengo riporta falsi giorni settimanali 24 marzo/13 aprile 2026, esclusa come prova sufficiente."
+    ],
+    "excluded": [
+      {
+        "event": "Cuore di Mamma, Vigolzone 2026",
+        "reason": "Sospensione esplicita GC19/2026.",
+        "sourceUrl": "https://www.comune.vigolzone.pc.it/notizie/Fiera--Cuore-di-Mamma----edizione-2024..html"
+      },
+      {
+        "event": "Fiere Carnevale, San Giuseppe, San Lazzaro, Santa Franca, Santi e Morti e Natale di Piacenza",
+        "reason": "Soppresse art.6 regolamento fiere; non ripristinate in assenza di atto successivo. Mercatini natalizi diversi richiedono fonti autonome.",
+        "sourceUrl": "https://www.comune.piacenza.it/s3/5141/allegati/documenti-e-dati/atto-normativo/regolamenti/regolamenti-criteri-e-indirizziattivit-economiche-commercio-regolamenti/regolamento_fiere_su-aree-pubbliche.pdf"
+      },
+      {
+        "event": "Mercatino Francese 2024 e Mercatino Hobbisti Cadeo 2023",
+        "reason": "Pagine obsolete, nessuna proiezione nel 2026."
+      },
+      {
+        "event": "Bazarino ragazzi e mercatino Elfi bambini",
+        "reason": "Canali per minori, non opportunità professionali."
+      },
+      {
+        "event": "Mercato medievale Castello Gropparello",
+        "reason": "Allestimento e dimostrazione storica, commercio esterno non dimostrato."
+      }
+    ],
+    "openLeads": [
+      "Completare verifica comunale nominale, albi e SUAP dei 46 comuni; consultare piste senza schede senza dedurne assenza.",
+      "Chiudere programma commerciale San Giovanni Castel San Giovanni 2026, Ascensione Agazzano, Gossolengo, Fiera Busslanein, Ciliegi/Pizzavacca, Pontenure antiquariato e Frutti del Castello, Grazzano eventi e calendari natalizi comunali.",
+      "Recuperare calendario Mercanti di Qualità e atti/quote 2026, distinguere tappe dalle fiere già registrate.",
+      "Verificare fonti alternative per Ferriere, Ottone, Cerignale, Zerba, Corte Brugnatella, Besenzone, San Pietro in Cerro e gli altri comuni non ancora documentati.",
+      "Riesaminare calendario Piacenza Expo annuale, pagine eventi autonome, regolamenti e candidature per saloni; non considerare il calendario parziale sufficiente."
+    ],
+    "municipalities": [
+      {
+        "city": "Agazzano",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Alseno",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Alta Val Tidone",
+        "eventCount": 2,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitaltavaltidone.it/alta-val-tidone-si-prepara-a-un-2026-di-eventi-tra-radici-e-futuro/",
+          "https://visitpiacenza.it/events/rassegna-provinciale-del-tartufo/"
+        ]
+      },
+      {
+        "city": "Besenzone",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Bettola",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://www.comune.bettola.pc.it/eventi/antica-fiera-di-settembre-2026.html"
+        ]
+      },
+      {
+        "city": "Bobbio",
+        "eventCount": 4,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html",
+          "https://visitpiacenza.it/events/bobbio-vintage/",
+          "https://visitpiacenza.it/events/castello-in-fiore/",
+          "https://visitpiacenza.it/events/festa-uva-sagra-fungo-tartufo-bobbio/"
+        ]
+      },
+      {
+        "city": "Borgonovo Val Tidone",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://comune.borgonovo.pc.it/it/news/1971386"
+        ]
+      },
+      {
+        "city": "Cadeo",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/fiera-provinciale-roveleto/"
+        ]
+      },
+      {
+        "city": "Calendasco",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/fiera-del-po-e-del-pesce-fritto/"
+        ]
+      },
+      {
+        "city": "Caorso",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://www.comune.caorso.pc.it/vivere_il_comune/eventi/evento_49.html"
+        ]
+      },
+      {
+        "city": "Carpaneto Piacentino",
+        "eventCount": 2,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/fiera-di-primavera/",
+          "https://visitpiacenza.it/events/festa-della-coppa-carpaneto-piacentino/"
+        ]
+      },
+      {
+        "city": "Castel San Giovanni",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Castell'Arquato",
+        "eventCount": 2,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/mercatini-castellarquato/",
+          "https://www.comune.castellarquato.pc.it/it/news/castello-colleziona"
+        ]
+      },
+      {
+        "city": "Castelvetro Piacentino",
+        "eventCount": 2,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/",
+          "https://visitpiacenza.it/events/sagra-dello-scalogno-piacentino/"
+        ]
+      },
+      {
+        "city": "Cerignale",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Coli",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033016&progr_fiera=5"
+        ]
+      },
+      {
+        "city": "Corte Brugnatella",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Cortemaggiore",
+        "eventCount": 2,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/fiera-di-san-giuseppe-a-cortemaggiore/",
+          "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        ]
+      },
+      {
+        "city": "Farini",
+        "eventCount": 2,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/fiera-di-san-giuseppe/",
+          "https://visitpiacenza.it/events/gran-fiera-della-torta-di-patate-de-co/"
+        ]
+      },
+      {
+        "city": "Ferriere",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Fiorenzuola d'Arda",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033021&progr_fiera=2"
+        ]
+      },
+      {
+        "city": "Gazzola",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Gossolengo",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Gragnano Trebbiense",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Gropparello",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Lugagnano Val d'Arda",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033026&progr_fiera=1"
+        ]
+      },
+      {
+        "city": "Monticelli d'Ongina",
+        "eventCount": 2,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/fiera-di-maggio-a-monticelli/",
+          "https://visitpiacenza.it/events/fiera-dellaglio-a-monticelli-dongina/"
+        ]
+      },
+      {
+        "city": "Morfasso",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/morfasso-in-festa-fiera-di-luglio/"
+        ]
+      },
+      {
+        "city": "Ottone",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Piacenza",
+        "eventCount": 7,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://www.comune.piacenza.it/it/services/339",
+          "https://visitpiacenza.it/events/creare/",
+          "https://visitpiacenza.it/events/piacenza-in-fiore/",
+          "https://visitpiacenza.it/events/mercato-europeo/",
+          "https://www.piacenzaexpo.it/events-timeline/"
+        ]
+      },
+      {
+        "city": "Pianello Val Tidone",
+        "eventCount": 4,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+          "https://visitpiacenza.it/events/fiera-arti-mestieri-pianello-val-tidone/"
+        ]
+      },
+      {
+        "city": "Piozzano",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Podenzano",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Ponte dell'Olio",
+        "eventCount": 3,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033036&progr_fiera=1",
+          "https://visitpiacenza.it/events/fiera-della-pancetta-e-di-primavera/",
+          "https://visitpiacenza.it/events/fiera-di-san-rocco/"
+        ]
+      },
+      {
+        "city": "Pontenure",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Rivergaro",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Rottofreno",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "San Giorgio Piacentino",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "San Pietro in Cerro",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Sarmato",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Travo",
+        "eventCount": 2,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/travo-vintage/",
+          "https://visitpiacenza.it/events/fiera-evento-a-travo/"
+        ]
+      },
+      {
+        "city": "Vernasca",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/vigoleno-i-mercatini-delle-meraviglie/"
+        ]
+      },
+      {
+        "city": "Vigolzone",
+        "eventCount": 2,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/fiera-dautunno/",
+          "https://natale.grazzano.it/"
+        ]
+      },
+      {
+        "city": "Villanova sull'Arda",
+        "eventCount": 1,
+        "result": "partial-sources-reviewed",
+        "sourceUrls": [
+          "https://visitpiacenza.it/events/festa-dei-ciliegi-in-fiore-a-villanova-sullarda/"
+        ]
+      },
+      {
+        "city": "Zerba",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      },
+      {
+        "city": "Ziano Piacentino",
+        "eventCount": 0,
+        "result": "not-yet-sufficiently-verified",
+        "sourceUrls": []
+      }
+    ],
+    "sourceDownloads": [
+      {
+        "url": "https://visitpiacenza.it/sitemap_index.xml",
+        "status": 200,
+        "sha256": "6b9f043708f9d5180909f24a07c9e9d8a77bfaee78d297803e52a40fe38a1626",
+        "file": "a5d5371692df7c1f32fab4d30a66bbf5cb9966744d919dd3604e61eaa657963d"
+      },
+      {
+        "url": "https://visitpiacenza.it/wp-sitemap.xml",
+        "status": 200,
+        "sha256": "6b9f043708f9d5180909f24a07c9e9d8a77bfaee78d297803e52a40fe38a1626",
+        "file": "63f9ea81253d346d8f937db2593cc0be677636c91241f88b48137f9794d152b5"
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/ris_ricerca_sagre.asp?dt_datada=01/01/2026&dt_dataa=31/12/2026&pg=note&r1=&r2=&strr_sede=&strs_keywords=",
+        "error": "('Connection aborted.', ConnectionAbortedError(10053, 'Connessione interrotta dal software del computer host', None, 10053, None))"
+      },
+      {
+        "url": "https://www.piacenzaexpo.it/calendario/",
+        "status": 404,
+        "sha256": "1976af167efd5f1f2ac43bbc9f8005de2c1395fe77067b3fcd3824e5903c2651",
+        "file": "9972bde62a81e7cb324cb49ffc1e132fdd3ff639ccfb4c5d20b0c197b3802940"
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/default.asp",
+        "error": "('Connection aborted.', ConnectionAbortedError(10053, 'Connessione interrotta dal software del computer host', None, 10053, None))"
+      },
+      {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/ris_ricerca_sagre.asp?dt_dataa=&dt_datada=&pg=note&r1=&r2=&strr_sede=&strs_keywords=",
+        "error": "('Connection aborted.', ConnectionAbortedError(10053, 'Connessione interrotta dal software del computer host', None, 10053, None))"
+      },
+      {
+        "url": "https://www.piacenzaexpo.it/",
+        "status": 200,
+        "sha256": "345c30b856763e8f14f1f9586d22e0d94d43e8951799bb6adcbe7f6673c3436e",
+        "file": "2066b1addcd7a45d982dda806a68a8c3ccdd698ef9cbfca2703604271e149180"
+      },
+      {
+        "url": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "status": 200,
+        "sha256": "51fc398f8d382a07e7efcfd01bab7c4aa1b7232759e6673a56e22236501c6484",
+        "file": "ebf6ca1598e06bc31ce2d0767b0378bce9f4b6311514fc47b5828a9c9eec5789"
+      },
+      {
+        "url": "https://comune.cadeo.pc.it/it/topics/36",
+        "status": 200,
+        "sha256": "7d795fe6726b57266050dd50690660dc89e0ac8462128d1adf0ecdf1f73a83b0",
+        "file": "cc5f9e77d7231953200ba22f8b04f5b187c4f93b206a06bd73ed56344fdeb86e"
+      },
+      {
+        "url": "https://www.comune.bettola.pc.it/eventi/antica-fiera-di-settembre-2026.html",
+        "status": 200,
+        "sha256": "bd70c59aa4821744a6213cbcbcad525f91654fdb7dc85b59d077a4ed3ef0fd31",
+        "file": "3a6a18453574bb0d6d0c2d88aae30b845cc56b92b6bb7e1b0d7beb4cd9aeae83"
+      },
+      {
+        "url": "https://comune.borgonovo.pc.it/it/news/1971386",
+        "status": 200,
+        "sha256": "e30aa63c650bc0a6e62265e5d6a49b50c490e41258515aa7f8c7acbb1a466a1a",
+        "file": "7222a9ad282df2dbf43412ce4d18f2262832d41f43510df531fd97c31a7a9ada"
+      },
+      {
+        "url": "https://www.comune.castelsangiovanni.pc.it/it/news/37-fiera-di-san-giovanni-battista-2006228?type=1",
+        "status": 410,
+        "sha256": "fca93a75d8b51a5a7a812b777d0039f2864ffb6aaf7af447bf1c828dd3fb8047",
+        "file": "05f1f6b16d13915b6eaf043a67d0e198d5b0fbee1393070b42786fc430bdbb59"
+      },
+      {
+        "url": "https://comune.cortemaggiore.pc.it/it/documenti_pubblici/regolamento-mostra-mercato-antiquariato-e-cose-d-altri-tempi",
+        "status": 200,
+        "sha256": "c0e106e828f7c50ec9c07757f56bc269138d66eceaf3e2fbb65f95f8995d3765",
+        "file": "1ac6cbf0bd6e57e5e2caa7d8a14a8a1000c1a7791910ffdc5593b5f228a070ff"
+      },
+      {
+        "url": "https://www.comune.vigolzone.pc.it/notizie/Fiera--Cuore-di-Mamma----edizione-2024..html",
+        "status": 200,
+        "sha256": "e771c0eef376beee923bfe4494e82bd9180e2b599a9c21e19477db6374d94459",
+        "file": "8532fa6831d11c7955d89b2dae08b0c8433c0fdef3def81026ce405bc041535f"
+      },
+      {
+        "url": "https://www.comune.piacenza.it/s3/5141/allegati/documenti-e-dati/atto-normativo/regolamenti/regolamenti-criteri-e-indirizziattivit-economiche-commercio-regolamenti/regolamento_fiere_su-aree-pubbliche.pdf",
+        "status": 200,
+        "sha256": "07da923c4e52b17e55ed918577b078bed973c836a0d03cbaf0922e3d91f2f686",
+        "file": "0ceb72f9b7264556dab2b5d47ae58ec917ea604edc5e9a033351444e72b27b1f"
+      },
+      {
+        "url": "https://comune.cortemaggiore.pc.it/s3/2380/allegati/regolamento-mercato-antiquariato-2026.pdf",
+        "status": 200,
+        "sha256": "e9fb39eb3d3e38e04f31c25e7942915d5ead13dc8ea6dec8a40818e6e4c20c27",
+        "file": "4abbe354715349bbb32f4b9f1d6542d8390ffe02f4b62d0e52f314c0b091e173"
+      },
+      {
+        "url": "https://cloud.municipiumapp.it/s3/821/allegati/mappa-fiera-2026.pdf",
+        "status": 403,
+        "sha256": "c996c0469ef05ff6fdd1f7cefbc3f7e109bb21969de42fcf591498a828a7ad5f",
+        "file": "58f65ad5156250a00e2ca5f0a3781bc874a661a7736bf7dc26c32e13c6e3f48c"
+      },
+      {
+        "url": "https://visitaltavaltidone.it/cms/wp-content/uploads/2026/03/Piacere-AVT_Pieghevole-026-volta.pdf",
+        "status": 200,
+        "sha256": "42d036a0628a716043d226a4c0008336787f51f00d24b59579e7420a73c85fb6",
+        "file": "385fe756ff102b4d7a3d10f1f95e47171d90fede6e50dbc125675ca37320e92b"
+      },
+      {
+        "url": "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html",
+        "status": 200,
+        "sha256": "40b36bdf5365d9605074f149ab6fa39ae766a35863410d3dd64c5ff0fa72fd99",
+        "file": "a6d54730d132a895efeb300017b3444a23fae6455d254a1e16884d018016055f"
+      },
+      {
+        "url": "https://www.comune.piacenza.it/it/unita_organizzative/ufficio-commercio-su-aree-pubbliche",
+        "status": 200,
+        "sha256": "0bca8dbc4907685e8b23d8716077fc54ec880908b5918639b0d66d6656baa925",
+        "file": "3e61125829fa487c22979cd125156dfa9242e978276f97bdd7f8bb33adf3037a"
+      },
+      {
+        "url": "https://natale.grazzano.it/",
+        "status": 200,
+        "sha256": "cbfeff06b3f35a3c742b5a010434ac9d5a2e5bc21802824a3e09a785fd77d0cd",
+        "file": "8e2da8573268d0aad5a0f8336b6f175295c0c504d6200edee60b30d4bb208621"
+      },
+      {
+        "url": "https://castellarquatoturismo.it/eventi-castellarquato-mercatinicuriosando/",
+        "status": 200,
+        "sha256": "e3b2dc1d95f4184b1212ab6f8dde965b06169f26a9975a92e09325d25ecb239e",
+        "file": "c62c64ef9dbdfc2394593600dac7412e5e59e0304097b5a3c805045c089a4d72"
+      },
+      {
+        "url": "https://www.piacenzaexpo.it/events-timeline/",
+        "status": 200,
+        "sha256": "24f0dc76e23e640c987cab43c0a18bf7b8db5572b52bfa96b38b0202ae5e7a58",
+        "file": "1335bf7b1ea4ef0b4594db78727c025ecf62626e295299b91028426c0c59270c"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001BC010261E&FORM=docx",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159347.docx",
+        "sha256": "7cae995e067137356a479f7007a777f147c04a0dc0da5778e6a99a8aa7944622",
+        "downloadStatus": 200,
+        "file": "fb17c4b4dc0413df645cb60d2ddbb9c495228ae161ba45c8bb6d2ffbf08c4b82"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001BE010261E&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159344.pdf",
+        "sha256": "9073d4ef92d3844b52546b3db5e2a0c4fd6d86848bf3171e4dc2fc526519a578",
+        "downloadStatus": 200,
+        "file": "a85fe81e6a6dbf2d85f4b42ba25aee7ff980a61a3b91d83f007e625fb0a6d473"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001E2010264R&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159345.pdf",
+        "sha256": "7a0afd97737c34b7f469aa4398701a9314a0b02a34b4703a6b75d02ecbaf87c3",
+        "downloadStatus": 200,
+        "file": "a018485aa01615fdf456cd8fabdf880535f55f0e53c0e22fd52b653c93b6049a"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001E3010264R&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159343.pdf",
+        "sha256": "085d8c19841013ca9ef452abd5f24b6715c9b9ce87669f732382cf868e7031ad",
+        "downloadStatus": 200,
+        "file": "437c556ad2c22899da53d833cd82a6bbc74095f227e79f6bc1a132f7f3433f95"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001E4010264R&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159348.pdf",
+        "sha256": "60f934007b61f0c4f735520ef442d7e4eb92c1ad3370e49bcfb063256c23d3f7",
+        "downloadStatus": 200,
+        "file": "261a358893be6a3e0b3ecd4a4942b96a431f1bac36415ce00d1a4cb5169d79cd"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001H2010268I&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159353.pdf",
+        "sha256": "846a36b080a1d93c103034ab2916dd59672d8ae59365df9ea0eaddfbbda11873",
+        "downloadStatus": 200,
+        "file": "89174b4a820ef74ab88146e2077430b0b18ad64dd47fa23982565ca04a9e2117"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001H3010268I&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159355.pdf",
+        "sha256": "ba2fd928896458ad088104829617fa5f89fe609eebba410908c0f7f49474110a",
+        "downloadStatus": 200,
+        "file": "be015c05e3c5a45f173c3c463111cfeefc989dd5cd5e594d11bddf052d79019d"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001H5010268I&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159356.pdf",
+        "sha256": "acdaf1ab3451f15ec25a866eb1e9eba4adf31cbd4fd4568d3db0e16ed905ba99",
+        "downloadStatus": 200,
+        "file": "d44e3191db3c1d08910a924aa495c527645b9d2eabb5f636aee2a635488e4a72"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001HM010269B&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159358.pdf",
+        "sha256": "550f8f8eb42d3995fd30040366aea07761e4f6b7ac32c3e82d2419280a8a2379",
+        "downloadStatus": 200,
+        "file": "37960db430c421414ff8de0c031e50cff4846255d180073cafc4ed0fb44a1a10"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001HN010269B&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159360.pdf",
+        "sha256": "b4ef222aac7b37f6ddc794f121404d726a084a234a3032a896d0845f67881bb3",
+        "downloadStatus": 200,
+        "file": "8d435d66d62f6aa6cfcb1fb6460b1ffd1989180ded6b2ccb4c8d7651906605b7"
+      },
+      {
+        "pageUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "request": "en=eg676&MESSA=PUBBLICA&DSK=0001HS010269L&FORM=pdf",
+        "endpoint": "https://www.comune.pianellovaltidone.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.pianellovaltidone.pc.it/halley//ht/eg676/TMPD159363.pdf",
+        "sha256": "ace216e04c2de4d995d29637e3602c95a6b643b7c8cc1a2d63269ef14c4bf479",
+        "downloadStatus": 200,
+        "file": "98a96493a2cfe918593328f085170291e40d532537a3ea5a1171ecd9964f6215"
+      },
+      {
+        "pageUrl": "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html",
+        "request": "en=egt66&MESSA=PUBBLICA&DSK=0001AD010264B&FORM=pdf",
+        "endpoint": "https://www.comune.bobbio.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.bobbio.pc.it/halley//ht/egt66/TMPN334016.pdf",
+        "sha256": "7cb2cd34884d8dd823ac8d5badfe0e2fb53567994f4047fd9bce3e4774313910",
+        "downloadStatus": 200,
+        "file": "17c307853daafe5fdd6506c48c43bd1ace24159a6f9ac19725511e2a5d9453ad"
+      },
+      {
+        "pageUrl": "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html",
+        "request": "en=egt66&MESSA=PUBBLICA&DSK=0001AE010264B&FORM=pdf",
+        "endpoint": "https://www.comune.bobbio.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.bobbio.pc.it/halley//ht/egt66/TMPN334019.pdf",
+        "sha256": "bf65b6bdbae11a8094f480fa59488841a8b98db5cd06dc2821f6b71062815719",
+        "downloadStatus": 200,
+        "file": "9a09b988b303c08ac3e2c743cefef87ee34543a55571b0f2773ee40a02e85c06"
+      },
+      {
+        "pageUrl": "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html",
+        "request": "en=egt66&MESSA=PUBBLICA&DSK=0001AF010264B&FORM=pdf",
+        "endpoint": "https://www.comune.bobbio.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.bobbio.pc.it/halley//ht/egt66/TMPN334018.pdf",
+        "sha256": "7add031425054a87396d4bc1cf731d0622333bc2be14693b9f2a9e5332af1307",
+        "downloadStatus": 200,
+        "file": "e08004c16f378a56b5b1cacbe67461ef49610c768ac1d7eef5a91b24475058fd"
+      },
+      {
+        "pageUrl": "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html",
+        "request": "en=egt66&MESSA=PUBBLICA&DSK=0001AG010264B&FORM=pdf",
+        "endpoint": "https://www.comune.bobbio.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.bobbio.pc.it/halley//ht/egt66/TMPN334020.pdf",
+        "sha256": "1f8d3447afc7f9903202ac542f571a31717e6fee2b7c82099fb37f91f504ce10",
+        "downloadStatus": 200,
+        "file": "3f6b6ddee60ad629211e3c28ff943d7da137e49d9154fecf830a97ca072f5cb7"
+      },
+      {
+        "pageUrl": "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html",
+        "request": "en=egt66&MESSA=PUBBLICA&DSK=0001AH010264B&FORM=pdf",
+        "endpoint": "https://www.comune.bobbio.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.bobbio.pc.it/halley//ht/egt66/TMPN334024.pdf",
+        "sha256": "5b2cd250579004971ca61052ca36cfb1e8b289ea52bef5c9f19b9d546d9547a5",
+        "downloadStatus": 200,
+        "file": "2615c8be289e1ef531f669a78ab95eea034ec7d45c1d06cae494a76469830997"
+      },
+      {
+        "pageUrl": "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html",
+        "request": "en=egt66&MESSA=PUBBLICA&DSK=0001BP010264L&FORM=doc",
+        "endpoint": "https://www.comune.bobbio.pc.it/EG0/EGDOCVISJS.HBL",
+        "status": 200,
+        "url": "https://www.comune.bobbio.pc.it/halley//ht/egt66/TMPN334026.doc",
+        "sha256": "3adf7dbdf921603576b083090ec67f4d0c8c9225ee76479d2b1742b8a8d30945",
+        "downloadStatus": 200,
+        "file": "fb8d0474729efa8299db2d9357e70e0cc2def82c903dafb70ea2dda74d24b8fa"
+      }
+    ]
+  },
+  "events": [
+    {
+      "region": "Emilia-Romagna",
+      "city": "Fiorenzuola d'Arda",
+      "name": "FIERA DI SAN FIORENZO",
+      "category": "tradizionale",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033021&progr_fiera=2",
+        "label": "Regione Emilia-Romagna - calendario 2026",
+        "checkedAt": "2026-10-09"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-17",
+          "dateType": "calendar",
+          "sourceUrl": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033021&progr_fiera=2"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "calendar",
+          "sourceUrl": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033021&progr_fiera=2"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Fiera su area pubblica nel calendario regionale. I posteggi sono l’organico dichiarato, non la disponibilità attuale. Contatta il SUAP comunale per domanda, graduatoria/spunta, tariffe e restrizioni del tuo settore."
+      },
+      "venue": "centro storico",
+      "sourceRecordIds": [
+        "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033021&progr_fiera=2"
+      ],
+      "sectors": "alimentari e non alimentari",
+      "stallCount": 58
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Coli",
+      "name": "RASSEGNA DEI PRODOTTI DELLA MONTAGNA",
+      "category": "tradizionale",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033016&progr_fiera=5",
+        "label": "Regione Emilia-Romagna - calendario 2026",
+        "checkedAt": "2026-10-09"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "calendar",
+          "sourceUrl": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033016&progr_fiera=5"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Fiera su area pubblica nel calendario regionale. I posteggi sono l’organico dichiarato, non la disponibilità attuale. Contatta il SUAP comunale per domanda, graduatoria/spunta, tariffe e restrizioni del tuo settore."
+      },
+      "venue": "piazza aldo moro",
+      "sourceRecordIds": [
+        "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033016&progr_fiera=5"
+      ],
+      "sectors": "prodotti della montagna, del bosco e sottobosco, artigianato locale, prodotti delle aziende agricole locali.",
+      "stallCount": 22
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Lugagnano Val d'Arda",
+      "name": "FIERA FREDDA - SAGRA DELLE CASTAGNE",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033026&progr_fiera=1",
+        "label": "Regione Emilia-Romagna - calendario 2026",
+        "checkedAt": "2026-10-09"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "dateType": "calendar",
+          "sourceUrl": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033026&progr_fiera=1"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Fiera su area pubblica nel calendario regionale. I posteggi sono l’organico dichiarato, non la disponibilità attuale. Contatta il SUAP comunale per domanda, graduatoria/spunta, tariffe e restrizioni del tuo settore."
+      },
+      "venue": "via bersani, via fleming, via s.g.bosco, via illica, via montegiogo, largo col. rossi, piazza casana",
+      "sourceRecordIds": [
+        "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033026&progr_fiera=1"
+      ],
+      "sectors": "alimentari e non alimentari",
+      "stallCount": 68
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Ponte dell'Olio",
+      "name": "I SAPORI DEL BORGO",
+      "category": "tradizionale",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033036&progr_fiera=1",
+        "label": "Regione Emilia-Romagna - calendario 2026",
+        "checkedAt": "2026-10-09"
+      },
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-08",
+          "end": "2026-11-08",
+          "dateType": "calendar",
+          "sourceUrl": "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033036&progr_fiera=1"
+        }
+      ],
+      "participation": {
+        "type": "public",
+        "note": "Fiera su area pubblica nel calendario regionale. I posteggi sono l’organico dichiarato, non la disponibilità attuale. Contatta il SUAP comunale per domanda, graduatoria/spunta, tariffe e restrizioni del tuo settore."
+      },
+      "venue": "via v. veneto",
+      "sourceRecordIds": [
+        "https://wwwservizi.regione.emilia-romagna.it/sagre/note.asp?anno=2026&cod_co=033036&progr_fiera=1"
+      ],
+      "sectors": "mostra mercato a indirizzo eno-gastronomico",
+      "stallCount": 53
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Bettola",
+      "name": "Antica Fiera di Settembre",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.bettola.pc.it/eventi/antica-fiera-di-settembre-2026.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piazza Colombo e Foro Boario",
+      "sectors": "Prodotti agricoli e merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.bettola.pc.it/eventi/antica-fiera-di-settembre-2026.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Sabato 12 settembre annullato. Mercato domenica 9–19 e lunedì mattina; mostra zootecnica lunedì 9–13. Rivolgersi al SUAP per le assegnazioni. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "phone": "0523 917718"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Bobbio",
+      "name": "Féra ad San Giuvan",
+      "category": "tradizionale",
+      "months": [
+        6
+      ],
+      "source": {
+        "url": "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Via di Corgnate, Largo Stefania Troglio e Piazza Duomo",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-21",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.bobbio.pc.it/novita/notizie/novita_143.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Banchi 8–19 il 21 giugno, non 13–14 giugno. Avviso GC40/2026: domanda entro 10 maggio via modulo a protocollo@comune.bobbio.pc.it, termine trascorso; concessioni decennali. Piazza Duomo alimentari esclusi food truck, mezzi ingombranti valutati per altre aree. Il 20 giugno riguarda street food e spettacoli. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda.",
+        "deadline": "2026-05-10"
+      },
+      "contacts": {
+        "email": "protocollo@comune.bobbio.pc.it",
+        "phone": "0523 962806"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Bobbio",
+      "name": "Bobbio Vintage",
+      "category": "mercatino",
+      "months": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/bobbio-vintage/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Portici di Piazza Santa Fara",
+      "sectors": "Vintage, antiquariato, modernariato e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-22",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/bobbio-vintage/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-21",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/bobbio-vintage/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/bobbio-vintage/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-13",
+          "end": "2026-12-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/bobbio-vintage/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Selezione degli espositori tramite Pro Loco; il 21 giugno è anche il mercatino vintage nel programma di San Giovanni, non una seconda manifestazione da duplicare. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Bobbio",
+      "name": "Castello in Fiore",
+      "category": "artigianato",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/castello-in-fiore/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Castello Malaspina Dal Verme, Strada del Torrino",
+      "sectors": "Fiori, piante, artigianato artistico e prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-30",
+          "end": "2026-05-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/castello-in-fiore/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Mostra mercato 10–19; chiedere selezione, spazio e requisiti per produttori/artigiani. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "bobbiocastelloinfiore@gmail.com",
+        "phone": "0523 962815"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Bobbio",
+      "name": "Sagra del Fungo e del Tartufo e Festa dell’Uva",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/festa-uva-sagra-fungo-tartufo-bobbio/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro storico, Piazza Duomo",
+      "sectors": "Prodotti tipici, funghi, tartufi e vini",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-04",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/festa-uva-sagra-fungo-tartufo-bobbio/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Mercato e mostra dalle 8. Il solo pranzo nei ristoranti non costituisce un posteggio; ammissione da concordare con organizzazione. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "phone": "0523 962815"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Borgonovo Val Tidone",
+      "name": "Fiera dell’Angelo",
+      "category": "tradizionale",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://comune.borgonovo.pc.it/it/news/1971386",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro e fossato della Rocca",
+      "sectors": "Prodotti agricoli, alimentari e merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-05",
+          "end": "2026-04-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.borgonovo.pc.it/it/news/1971386"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Mercatini ed esposizioni il 5–6 aprile. Il convegno del 1 aprile è escluso dalle giornate commerciali. Domanda e assegnazione vanno verificate al SUAP. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Cadeo",
+      "name": "Fiera dell’Agricoltura, dell’Industria e dell’Artigianato",
+      "category": "tradizionale",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-provinciale-roveleto/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Roveleto, Viale Aldo Moro",
+      "sectors": "Fiori, artigianato e prodotti alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-12",
+          "end": "2026-04-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-provinciale-roveleto/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Il Comune apre le iscrizioni espositori per domenica 12 aprile; l’11 comprende gli eventi collaterali. L’avviso per scegliere il gestore è un canale diverso dalla domanda banco. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "phone": "0523 503311"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Calendasco",
+      "name": "Fiera del Po e del Pesce Fritto",
+      "category": "mercatino",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-del-po-e-del-pesce-fritto/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piazza Bergamaschi e area comunale",
+      "sectors": "Usato e merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-28",
+          "end": "2026-03-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-del-po-e-del-pesce-fritto/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Sabato mercatino dell’usato dal mattino; domenica bancarelle e fiera. Verificare la categoria ammessa per ciascuna giornata. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "phone": "0523 772722"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Caorso",
+      "name": "Mercatino dell’Antiquariato e del Riuso",
+      "category": "mercatino",
+      "months": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://www.comune.caorso.pc.it/vivere_il_comune/eventi/evento_49.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro paese",
+      "sectors": "Antiquariato, modernariato, usato, collezionismo e creatività",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Quarta domenica del mese, escluso gennaio; confermare il singolo appuntamento.",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.caorso.pc.it/vivere_il_comune/eventi/evento_49.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Fonte comunale: quarta domenica escluso gennaio. La pagina consultata mostra agosto mentre il risultato indicizzato mostra settembre; conservata la ricorrenza testuale senza proiettare un calendario annuale. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Carpaneto Piacentino",
+      "name": "Fiera Agricola di Primavera",
+      "category": "tradizionale",
+      "months": [
+        4
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-di-primavera/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Vie del centro",
+      "sectors": "Artigianato e merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-17",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-di-primavera/",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Fonte turistica: programma 17–19 aprile con animali e bancarelle. Giorni e orari del singolo banco non distinti nel programma letto: il periodo non certifica tre giornate di vendita. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "iat@valnure.info",
+        "phone": "0523 870997"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Carpaneto Piacentino",
+      "name": "Festa della Coppa, Fiera delle Bancarelle",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/festa-della-coppa-carpaneto-piacentino/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Vie del centro",
+      "sectors": "Prodotti alimentari, salumi e merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-06",
+          "end": "2026-09-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/festa-della-coppa-carpaneto-piacentino/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Grande fiera domenica dalle 8; punti vendita salumifici dalle 9. La festa 4–7 settembre non equivale a quattro giornate per gli ambulanti. Bazarino dei ragazzi escluso dal canale professionale. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "phone": "0523 870997"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Castell'Arquato",
+      "name": "Curiosando a Castell’Arquato",
+      "category": "mercatino",
+      "months": [
+        3,
+        4,
+        6,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/mercatini-castellarquato/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piazza Europa e Via Roma",
+      "sectors": "Artigianato creativo, hobbistica e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatini-castellarquato/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-05",
+          "end": "2026-04-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatini-castellarquato/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-06",
+          "end": "2026-04-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatini-castellarquato/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-25",
+          "end": "2026-04-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatini-castellarquato/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-02",
+          "end": "2026-06-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatini-castellarquato/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatini-castellarquato/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-29",
+          "end": "2026-11-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatini-castellarquato/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-06",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatini-castellarquato/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-08",
+          "end": "2026-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatini-castellarquato/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Val d’Arda Promotion seleziona artigiani, hobbisti e produttori; 9–19. Il 6 settembre compare solo in un riquadro IAT e non nell’elenco principale né in Visit Piacenza: non inserito. Il 15 marzo è la componente Curiosando della Fiera di San Giuseppe, senza duplicarla. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "va.promotion@libero.it",
+        "phone": "393 7053201"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Castell'Arquato",
+      "name": "Castello Colleziona",
+      "category": "mercatino",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.castellarquato.pc.it/it/news/castello-colleziona",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Palarquato, Via Carlo Colla",
+      "sectors": "Antiquariato, vintage, brocantage, filatelia e collezionismo",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-05",
+          "end": "2026-09-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castellarquato.pc.it/it/news/castello-colleziona"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Mostra mercato 9–17, aree interne ed esterne. Ingresso pubblico gratuito distinto dalla quota espositore. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Castelvetro Piacentino",
+      "name": "Mercatino Vintage e Piccolo Antiquariato",
+      "category": "mercatino",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro paese",
+      "sectors": "Vintage, usato e piccolo antiquariato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-25",
+          "end": "2026-01-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-22",
+          "end": "2026-02-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-29",
+          "end": "2026-03-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-26",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-31",
+          "end": "2026-05-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-28",
+          "end": "2026-06-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-26",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-30",
+          "end": "2026-08-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-27",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-29",
+          "end": "2026-11-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-08",
+          "end": "2026-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercatino-di-castelvetro-piacentino/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Fonte riporta 7:30–16, nei mesi estivi fino alle 14; circa 80 espositori non significano 80 posti liberi. L’8 dicembre è pubblicato come data speciale, ma il giorno settimanale nella fonte è errato. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "phone": "329 9344582"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Castelvetro Piacentino",
+      "name": "Sagra dello Scalogno Piacentino",
+      "category": "sagra",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/sagra-dello-scalogno-piacentino/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piazza Biazzi",
+      "sectors": "Street food e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-03",
+          "end": "2026-09-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/sagra-dello-scalogno-piacentino/",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Organizzazione Pro Loco; contatto specifico espositori. Il Comune conserva nel corpo vecchi appuntamenti 2025: non utilizzati per dedurre il calendario banco 2026. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "espositori@sagradelloscalognopiacentino.it"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Cortemaggiore",
+      "name": "Fiera di San Giuseppe",
+      "category": "tradizionale",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-di-san-giuseppe-a-cortemaggiore/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro, Piazza Patrioti e Via Matteotti",
+      "sectors": "Prodotti alimentari, artigianato e macchine agricole",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-14",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-di-san-giuseppe-a-cortemaggiore/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Stand aperti 14–15 marzo, creativi al Parco San Francesco solo domenica 15. Il 13 è cena e non una giornata automatica di mercato. Canale espositori distinto dagli ambulanti. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Cortemaggiore",
+      "name": "Mostra Mercato dell’Antiquariato e Cose d’Altri Tempi",
+      "category": "mercatino",
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro storico e Via Garibaldi",
+      "sectors": "Antiquariato, modernariato, collezionismo e vintage",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-01",
+          "end": "2026-03-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-05",
+          "end": "2026-04-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-03",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-07",
+          "end": "2026-06-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-05",
+          "end": "2026-07-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-06",
+          "end": "2026-09-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-04",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-06",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-dellantiquariato-a-cortemaggiore/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Regolamento aggiornato CC3/2026: riservato a operatori autorizzati al commercio su aree pubbliche nelle merceologie ammesse. Concessioni e spunta regolamentate; canone e TARI dovuti. Calendario turistico nominativo da marzo; febbraio non aggiunto dalla sola ricorrenza. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "assturisticacortemaggiore@gmail.com",
+        "phone": "366 3065722"
+      },
+      "stallCount": 155
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Farini",
+      "name": "Fiera di San Giuseppe",
+      "category": "tradizionale",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-di-san-giuseppe/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piazza Marconi",
+      "sectors": "Merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-22",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-di-san-giuseppe/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Bancarelle per l’intera giornata, circa 10–19. Il banco di beneficenza è separato dal mercato; ammissioni tramite organizzazione. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "iat@valnure.info",
+        "phone": "0523 870997"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Farini",
+      "name": "Gran Fiera della Torta di Patate De.Co.",
+      "category": "tradizionale",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/gran-fiera-della-torta-di-patate-de-co/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Groppallo",
+      "sectors": "Prodotti tipici e merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/gran-fiera-della-torta-di-patate-de-co/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Piccola fiera sabato dalle 15; gran fiera con bancarelle domenica dalle 9. Partecipazione tramite Pro Loco; non estendere ai banchi l’orario dei ristoranti. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Monticelli d'Ongina",
+      "name": "Fiera di Maggio - Di Sana Pianta",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-di-maggio-a-monticelli/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro storico e Piazza Casali",
+      "sectors": "Fiori, piante, prodotti della terra e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-15",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-di-maggio-a-monticelli/",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Espositori selezionati dalla Pro Loco. È il periodo della manifestazione: singoli giorni commerciali e quote non distinti nel testo letto. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "prolocomonticelli@gmail.com"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Monticelli d'Ongina",
+      "name": "Fiera dell’Aglio, Market",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-dellaglio-a-monticelli-dongina/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piazza Casali",
+      "sectors": "Prodotti tipici e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-dellaglio-a-monticelli-dongina/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Market il 3–4 ottobre dalle 9, non l’intero programma 1–4 ottobre. Selezione espositori tramite Pro Loco. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "prolocomonticelli@gmail.com",
+        "phone": "351 6274326"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Morfasso",
+      "name": "Morfasso in Festa, Fiera di Luglio",
+      "category": "tradizionale",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/morfasso-in-festa-fiera-di-luglio/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piazza Tenente Inzani",
+      "sectors": "Merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-12",
+          "end": "2026-07-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/morfasso-in-festa-fiera-di-luglio/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Bancarelle e mercatini soltanto domenica 12; il 10 e l’11 sono serate gastronomiche e musicali. Partecipazione tramite Pro Loco. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "proloco@morfasso.com"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Alta Val Tidone",
+      "name": "Grande Fiera di Nibbiano",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://visitaltavaltidone.it/alta-val-tidone-si-prepara-a-un-2026-di-eventi-tra-radici-e-futuro/",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Nibbiano",
+      "sectors": "Merci varie, agricoltura e bestiame",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-18",
+          "end": "2026-08-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitaltavaltidone.it/alta-val-tidone-si-prepara-a-un-2026-di-eventi-tra-radici-e-futuro/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Data 2026 dal calendario ufficiale territoriale. Informativa SUAP trovata per il 2024: scadenza e condizioni storiche non trasferite al 2026. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "lat": 44.90506,
+      "lng": 9.32826,
+      "coordinateSource": {
+        "url": "https://www.geonames.org/3172275/",
+        "label": "GeoNames - Nibbiano; dataset locale 7 ottobre 2026, CC BY 4.0"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Alta Val Tidone",
+      "name": "Rassegna Provinciale del Tartufo",
+      "category": "sagra",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/rassegna-provinciale-del-tartufo/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Via centrale di Pecorara",
+      "sectors": "Tartufi, miele, farine e confetture",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/rassegna-provinciale-del-tartufo/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Banchi di prodotti del territorio documentati; gare e ristorazione non garantiscono accesso a venditori generici. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "info@comunealtavaltidone.pc.it",
+        "phone": "0523 993711"
+      },
+      "lat": 44.87582,
+      "lng": 9.38387,
+      "coordinateSource": {
+        "url": "https://www.geonames.org/3171347/",
+        "label": "GeoNames - Pecorara; dataset locale 7 ottobre 2026, CC BY 4.0"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Pianello Val Tidone",
+      "name": "Fiera del Primo Maggio",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro storico, Piazza Umberto I e Piazza Alpini",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-01",
+          "end": "2026-05-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Moduli, elenchi autorizzati e spunta preordinata originali 2026. Richiesta anche cumulativa tramite SuapER o PEC con modulo; arrivo 6:30–7:30, montaggio dopo 8:30, niente miglioria. Elenchi e banchi vuoti non sono disponibilità attuale. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda.",
+        "costs": "Quota organizzazione 2026 di 30 € più canone commisurato alla superficie. Gli elenchi riportano importi differenziati per posteggio e possibili arrotondamenti: non esiste un prezzo totale unico; verificare l’importo assegnato e le condizioni fiscali con il SUAP."
+      },
+      "contacts": {
+        "email": "tecnico@comunepianellovaltidone.it",
+        "phone": "0523 9941"
+      },
+      "pricing": {
+        "kind": "partial",
+        "label": "30 € più canone per superficie",
+        "details": "Quota organizzazione 2026 di 30 € più canone commisurato alla superficie. Gli elenchi riportano importi differenziati per posteggio e possibili arrotondamenti: non esiste un prezzo totale unico; verificare l’importo assegnato e le condizioni fiscali con il SUAP.",
+        "sourceUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "checkedAt": "2026-10-17",
+        "period": "2026"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Pianello Val Tidone",
+      "name": "Grande Fiera d’Agosto",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro storico, Piazza Umberto I e Piazza Alpini",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-26",
+          "end": "2026-08-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Moduli, elenchi autorizzati e spunta preordinata originali 2026. Richiesta anche cumulativa tramite SuapER o PEC con modulo; arrivo 6:30–7:30, montaggio dopo 8:30, niente miglioria. Elenchi e banchi vuoti non sono disponibilità attuale. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda.",
+        "costs": "Quota organizzazione 2026 di 30 € più canone commisurato alla superficie. Gli elenchi riportano importi differenziati per posteggio e possibili arrotondamenti: non esiste un prezzo totale unico; verificare l’importo assegnato e le condizioni fiscali con il SUAP."
+      },
+      "contacts": {
+        "email": "tecnico@comunepianellovaltidone.it",
+        "phone": "0523 9941"
+      },
+      "pricing": {
+        "kind": "partial",
+        "label": "30 € più canone per superficie",
+        "details": "Quota organizzazione 2026 di 30 € più canone commisurato alla superficie. Gli elenchi riportano importi differenziati per posteggio e possibili arrotondamenti: non esiste un prezzo totale unico; verificare l’importo assegnato e le condizioni fiscali con il SUAP.",
+        "sourceUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "checkedAt": "2026-10-17",
+        "period": "2026"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Pianello Val Tidone",
+      "name": "Fiera di San Maurizio",
+      "category": "tradizionale",
+      "months": [
+        9
+      ],
+      "source": {
+        "url": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro storico, Piazza Umberto I e Piazza Alpini",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-27",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Moduli, elenchi autorizzati e spunta preordinata originali 2026. Richiesta anche cumulativa tramite SuapER o PEC con modulo; arrivo 6:30–7:30, montaggio dopo 8:30, niente miglioria. Elenchi e banchi vuoti non sono disponibilità attuale. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda.",
+        "costs": "Quota organizzazione 2026 di 30 € più canone commisurato alla superficie. Gli elenchi riportano importi differenziati per posteggio e possibili arrotondamenti: non esiste un prezzo totale unico; verificare l’importo assegnato e le condizioni fiscali con il SUAP."
+      },
+      "contacts": {
+        "email": "tecnico@comunepianellovaltidone.it",
+        "phone": "0523 9941"
+      },
+      "pricing": {
+        "kind": "partial",
+        "label": "30 € più canone per superficie",
+        "details": "Quota organizzazione 2026 di 30 € più canone commisurato alla superficie. Gli elenchi riportano importi differenziati per posteggio e possibili arrotondamenti: non esiste un prezzo totale unico; verificare l’importo assegnato e le condizioni fiscali con il SUAP.",
+        "sourceUrl": "https://www.comune.pianellovaltidone.pc.it/novita/avvisi/novita_213.html",
+        "checkedAt": "2026-10-17",
+        "period": "2026"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Pianello Val Tidone",
+      "name": "Fiera Arti e Mestieri",
+      "category": "artigianato",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-arti-mestieri-pianello-val-tidone/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro storico",
+      "sectors": "Artigianato, hobbistica e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-23",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-arti-mestieri-pianello-val-tidone/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Artigiani, hobbisti, commercianti e attività del territorio; non confondere con Grande Fiera del 26 agosto. Candidature da concordare con organizzazione. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Piacenza",
+      "name": "Fiera di Sant’Antonino",
+      "category": "tradizionale",
+      "months": [
+        7
+      ],
+      "source": {
+        "url": "https://www.comune.piacenza.it/it/services/339",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Pubblico Passeggio, vie e piazze limitrofe",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-04",
+          "end": "2026-07-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.piacenza.it/it/services/339"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Regolamento: 4 luglio, allestimento il 3 senza vendita. Servizio comunale distingue concessionari e spunta con istanza SUAP 60 giorni prima; pagina operativa conserva dettagli edizione 2024, inclusi 25 € diritti: non confermati per il 2026. Verificare canone, luce e graduatoria presso Ufficio Aree Pubbliche. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "phone": "0523 492205"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Piacenza",
+      "name": "Creare, Alto Artigianato",
+      "category": "artigianato",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/creare/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Ex Chiesa del Carmine, Piazza Casali 10",
+      "sectors": "Artigianato, moda e complementi d’arredo",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-21",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/creare/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Mostra mercato 10–19 riservata alle piccole produzioni artigianali; contattare il curatore per selezione. Nessuna edizione natalizia 2026 dedotta dal testo riutilizzato. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "creare.altoartigianato@gmail.com"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Piacenza",
+      "name": "Piacenza in Fiore",
+      "category": "tradizionale",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/piacenza-in-fiore/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piazza Duomo, Piazza Cavalli e vie circostanti",
+      "sectors": "Fiori, piante, miele e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-20",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/piacenza-in-fiore/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Florovivaisti, apicoltori, creativi e hobbisti: chiedere selezione di settore agli organizzatori. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "piacenzainfiore@gmail.com"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Piacenza",
+      "name": "Mercato Europeo",
+      "category": "mercatino",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/mercato-europeo/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Pubblico Passeggio",
+      "sectors": "Prodotti alimentari e non alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-02",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/mercato-europeo/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Mercato internazionale con selezione degli operatori; non è spunta del mercato ordinario. Quote e candidatura da verificare tramite organizzatore. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Ponte dell'Olio",
+      "name": "Fiera della Pancetta e di Primavera",
+      "category": "tradizionale",
+      "months": [
+        5
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-della-pancetta-e-di-primavera/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Via Veneto e Via Roma",
+      "sectors": "Prodotti tipici, artigianato e oggettistica",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-03",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-della-pancetta-e-di-primavera/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Bancarelle artigianali e oggettistica di qualità; verificare con organizzatore canale e requisiti distinti dai punti ristorazione. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "iat@valnure.info",
+        "phone": "0523 870997"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Ponte dell'Olio",
+      "name": "Fiera di San Rocco",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-di-san-rocco/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Vie del centro e Piazza Primo Maggio",
+      "sectors": "Merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-14",
+          "end": "2026-08-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-di-san-rocco/",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Bancarelle e negozi fino a sera nel periodo pubblicato. Turni del singolo banco e condizioni di accesso da verificare. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Travo",
+      "name": "Travo Vintage",
+      "category": "mercatino",
+      "months": [
+        6,
+        7,
+        8
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/travo-vintage/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piazza Trento e Via Cesare Battisti",
+      "sectors": "Vintage e riuso",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Giovedì sera dall’11 giugno al 27 agosto 2026.",
+          "dateType": "calendar",
+          "sourceUrl": "https://visitpiacenza.it/events/travo-vintage/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Organizzano Comune ed Enoteca Simo’s Palate; sole serate del giovedì, non mercato quotidiano. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Travo",
+      "name": "Fiera Evento",
+      "category": "tradizionale",
+      "months": [
+        8
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-evento-a-travo/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro storico",
+      "sectors": "Merci varie e prodotti agricoli",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-23",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-evento-a-travo/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Mercanti di Qualità 8–19; canale selezionato del circuito, distinto dagli stand del Gruppo Alpini. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Vernasca",
+      "name": "Mercatini delle Meraviglie a Vigoleno",
+      "category": "artigianato",
+      "months": [
+        5,
+        6,
+        7,
+        9
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/vigoleno-i-mercatini-delle-meraviglie/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Vigoleno, Piazza IV Novembre e Piazza della Fontana",
+      "sectors": "Artigianato artistico",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-24",
+          "end": "2026-05-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/vigoleno-i-mercatini-delle-meraviglie/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-14",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/vigoleno-i-mercatini-delle-meraviglie/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-12",
+          "end": "2026-07-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/vigoleno-i-mercatini-delle-meraviglie/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/vigoleno-i-mercatini-delle-meraviglie/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Banchi 9–19, selezione a cura dell’organizzazione territoriale. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "info@visitvigoleno.it",
+        "phone": "329 7503774"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Vigolzone",
+      "name": "Fiera d’Autunno",
+      "category": "tradizionale",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/fiera-dautunno/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Via Roma e Piazza Serena",
+      "sectors": "Prodotti tipici, merci varie e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/fiera-dautunno/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Grande mercato dalle 8 con ambulanti, creativi e produttori; 80 bancarelle dichiarate non equivalgono a posti liberi. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "phone": "0523 870997"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Vigolzone",
+      "name": "Natale a Grazzano Visconti",
+      "category": "mercatino",
+      "months": [
+        1,
+        11,
+        12
+      ],
+      "source": {
+        "url": "https://natale.grazzano.it/",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Borgo di Grazzano Visconti",
+      "sectors": "Artigianato a tema, hobbistica e prodotti natalizi",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2027-01-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://natale.grazzano.it/",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Organizzatore pubblica la finestra 14 novembre–6 gennaio 2027 e contatto espositori. Giorni effettivi di ciascun banco, selezioni e quote non pubblicati nella pagina letta; periodo non apertura continuativa. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "mercatinitipicoeventi@gmail.com"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Villanova sull'Arda",
+      "name": "Mercatino di Primavera dei Ciliegi in Fiore",
+      "category": "mercatino",
+      "months": [
+        3
+      ],
+      "source": {
+        "url": "https://visitpiacenza.it/events/festa-dei-ciliegi-in-fiore-a-villanova-sullarda/",
+        "label": "Visit Piacenza - turismo ufficiale",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Centro di Villanova sull’Arda",
+      "sectors": "Merci varie",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-29",
+          "end": "2026-03-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://visitpiacenza.it/events/festa-dei-ciliegi-in-fiore-a-villanova-sullarda/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Mercatino il 29 marzo dalle 9; esclusi dagli appuntamenti banco la cena del 28 e picnic/biciclettate di aprile. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      },
+      "contacts": {
+        "email": "proloco1950villanovasullarda@gmail.com"
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Piacenza",
+      "name": "Mostra Mercato Giocattolo Vintage",
+      "category": "espositiva",
+      "months": [
+        10
+      ],
+      "source": {
+        "url": "https://www.piacenzaexpo.it/events-timeline/",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piacenza Expo, Via Tirotti 11",
+      "sectors": "Giocattoli vintage e collezionismo",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-10-31",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.piacenzaexpo.it/events-timeline/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Ammissione espositiva e contratto stand tramite organizzatore; biglietto del visitatore distinto dal costo dello stand. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Piacenza",
+      "name": "Fiera dei Vini",
+      "category": "espositiva",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://www.piacenzaexpo.it/events-timeline/",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piacenza Expo, Via Tirotti 11",
+      "sectors": "Vini",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2026-11-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.piacenzaexpo.it/events-timeline/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Ammissione espositiva e contratto stand tramite organizzatore; biglietto del visitatore distinto dal costo dello stand. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    },
+    {
+      "region": "Emilia-Romagna",
+      "city": "Piacenza",
+      "name": "Piace Mattoncini",
+      "category": "espositiva",
+      "months": [
+        11
+      ],
+      "source": {
+        "url": "https://www.piacenzaexpo.it/events-timeline/",
+        "label": "Comune / organizzatore",
+        "checkedAt": "2026-10-17"
+      },
+      "venue": "Piacenza Expo, Via Tirotti 11",
+      "sectors": "Mattoncini e collezionismo",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-28",
+          "end": "2026-11-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.piacenzaexpo.it/events-timeline/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Ammissione espositiva e contratto stand tramite organizzatore; biglietto del visitatore distinto dal costo dello stand. Quote e disponibilità non confermate, salvo indicazioni specifiche riportate nella scheda."
+      }
+    }
+  ]
+}
