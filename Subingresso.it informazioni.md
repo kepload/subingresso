@@ -4,7 +4,10 @@
 sotto Cosa vendi, al posto di Quanto è conosciuta; rimosso da Altri filtri
 e dal relativo conteggio. Opzioni e comportamento conservati. Cache JS66;
 catalogo invariato. Sintassi e suite calendario Chromium 320 px passate;
-pubblicazione e verifica online in corso. Backup remoto creato;
+pubblicato 5fcfb38, Vercel READY dpl_3UK2tthZQbU29FWa4mDWxobBohdK.
+HTML/JS online identici; verifiche Chromium 1440/320 e WebKit 390 passate:
+posizione, conteggio, URL/ricaricamento, azzeramento e assenza overflow.
+Backup remoto creato;
 cleanup tag con errore PowerShell già noto, checkpoint valido.
 
 **Parametro fiere sospeso, 17 ottobre 2026:** su richiesta dell'utente,
