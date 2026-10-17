@@ -1,5 +1,23 @@
 # Calendario fiere — fonti e aggiornamento
 
+## Conservazione ricerche e affinità senza selezione — 18 ottobre 2026
+
+Preferenza permanente: conservare tutti i materiali raccolti nelle ricerche,
+comprese fonti, originali disponibili, estrazioni, criteri, voti, esclusioni,
+tentativi falliti, limiti e prove. Cataloghi/audit nel Git; documenti di terzi
+fuori dal repository e dal sito pubblico. Dopo nuove ricerche usare
+`python scripts/backup-fiere-research.py`: nuova copia locale senza cancellazioni,
+manifest con percorsi/dimensioni/SHA256, controllo di ogni copia, uscita in errore
+se manca anche un file. Comprende gli archivi fiere in Documents, costi Pisogne,
+bollini, dati delle copie di lavoro provinciali e sorgenti/riproduzione del repo.
+Non recupera materiali mai salvati; non attiva esecuzioni periodiche e la copia
+sullo stesso computer non costituisce un backup esterno. Prima copia in corso.
+
+Senza articoli selezionati, nessun elemento affinità viene creato nelle anteprime;
+la colonna destra resta disponibile per l'affluenza. Selezionando un articolo
+tornano voto o «Da valutare» e motivi/fonti. Cache JS76, CSS29/catalogo52 invariati.
+Test dedicati e pubblicazione da verificare.
+
 ## Affinità articoli — revisione del 17 ottobre 2026
 
 Questa revisione sostituisce la prima scala basata soprattutto sulla presenza

@@ -580,6 +580,7 @@
     }
     function articleAffinityBadge(event) {
         const assessment = articleAffinitySummary(event, state.articles);
+        if (!assessment.items.length) return null;
         const button = node('button', 'fiere-fit-badge');
         button.type = 'button';
         button.append(node('span', 'fiere-fit-caption', 'Affinità articolo'));
@@ -592,16 +593,11 @@
             if (assessment.items.length > 1) button.append(node('span', 'fiere-fit-more', 'Migliore su ' + assessment.items.length));
             button.setAttribute('aria-label', 'Affinità ' + assessment.best.label + ': ' + assessment.score + ' su 10. ' + (assessment.items.length > 1 ? 'Voto migliore tra ' + assessment.items.length + ' articoli. ' : '') + 'Vedi motivi per ' + event.name);
         } else {
-            button.append(node('strong', 'fiere-fit-pending', assessment.items.length ? 'Da valutare' : 'Scegli articolo'));
-            button.setAttribute('aria-label', assessment.items.length ? 'Affinità da valutare. Vedi motivi per ' + event.name : 'Scegli un articolo per valutare l’affinità con ' + event.name);
+            button.append(node('strong', 'fiere-fit-pending', 'Da valutare'));
+            button.setAttribute('aria-label', 'Affinità da valutare. Vedi motivi per ' + event.name);
         }
-        if (assessment.items.length) button.append(node('span', 'fiere-fit-more', 'Vedi motivi'));
-        button.addEventListener('click', clickEvent => {
-            if (assessment.items.length) return openArticleAffinity(event);
-            clickEvent.stopPropagation();
-            $('article-summary').scrollIntoView({ block: 'center' });
-            $('article-filter').open = true; $('article-summary').focus(); positionArticleMenu();
-        });
+        button.append(node('span', 'fiere-fit-more', 'Vedi motivi'));
+        button.addEventListener('click', () => openArticleAffinity(event));
         return button;
     }
     function renderList(events) {
@@ -634,7 +630,8 @@
             content.append(head);
             const attendance = attendanceBadge(event, true);
             if (attendance) { const wrap = node('div', 'fiere-card-attendance'); wrap.append(attendance); side.append(wrap); }
-            side.append(articleAffinityBadge(event));
+            const affinity = articleAffinityBadge(event);
+            if (affinity) side.append(affinity);
             content.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
             const fee = feeLabel(event);
             if (fee) {
