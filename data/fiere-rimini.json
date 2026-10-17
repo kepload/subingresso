@@ -3690,7 +3690,27 @@
     ],
     "municipalityCoverageCount": 27,
     "publication": {
-      "status": "pending-verification"
+      "status": "verified",
+      "commit": "3af5098",
+      "verifiedAt": "2026-10-17T07:03:10Z",
+      "url": "https://subingresso.it/fiere",
+      "catalogUrl": "https://subingresso.it/data/fiere.json?v=46",
+      "catalogSha256": "1c08d60906ebb09bfb1a6077e3289178d5b1fd064e374def2df2af466e5c6ab8",
+      "catalogHashNormalization": "LF, identical to Git blob; local Windows CRLF normalized",
+      "catalogEvents": 4102,
+      "provinceEvents": 115,
+      "browserTests": [
+        "Chromium 1440",
+        "Chromium 390",
+        "WebKit 390"
+      ],
+      "checks": [
+        "Live catalogue matches published Git data",
+        "115 provincial cards, list/map and sectors",
+        "Public detail pages and pages without JavaScript"
+      ],
+      "currentResearchClosed": true,
+      "periodicReviewsSeparate": true
     },
     "archive": "C:/Users/utente/Documents/ricerca-fiere-rimini-20261017",
     "baseline": {

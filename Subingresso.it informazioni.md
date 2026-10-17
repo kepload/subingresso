@@ -1111,9 +1111,25 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   anche le altre esclusioni soltanto con nuove fonti, senza riaprire per questo
   la ricerca documentale corrente o attendere pubblicazioni future.
 
-**Ricerca approfondita: 29 province completate, 81 ancora da fare su 110.**
-Riepilogo ricontrollato il 16 ottobre 2026 dopo la ripresa e la verifica di Roma:
-Roma entra fra le 29 concluse; le verifiche periodiche restano distinte.
+- [x] **Rimini — ricerca documentale conclusa e verificata online (17 ottobre 2026)**:
+  115 manifestazioni in 25 comuni (+102), verificati tutti i 27 comuni attuali.
+  Calendari comunali, atti e PDF originali, SUAP, organizzatori e fonti turistiche;
+  corretti Natale Rimini, date Sant’Agata, Casteldelci e territorio Montecopiolo/
+  Sassofeltrio. Fonti, 375 tentativi regionali, esclusioni e limiti espliciti in
+  `data/fiere-rimini.json` e `data/FIERE.md`; nessun dato inventato o contatto a terzi.
+  Registro regionale annuale non integralmente accessibile; ricorrenze incerte
+  testuali, quote mancanti non gratuite. Ricerca attuale chiusa senza attendere
+  nuovi bandi; nessuna promessa di censimento esaustivo.
+  Pubblicazione `3af5098`: catalogo online identico al Git (LF), 115 schede,
+  dettagli, mappa e settori verificati con PLAYWRIGHT_MODULE in Chromium e WebKit;
+  test generali calendario/pagine/settori passati. 3.987 eventi esterni invariati.
+- [ ] **Rimini — verifiche periodiche**: nuovi bandi, quote e disponibilità,
+  calendari estivi completi e nuove fonti per eventi esclusi o ricorrenze testuali.
+  Attività futura distinta dalla ricerca documentale corrente conclusa.
+
+**Ricerca approfondita: 30 province completate, 80 ancora da fare su 110.**
+Riepilogo ricontrollato il 17 ottobre 2026 dopo la verifica online di Rimini:
+Rimini entra fra le 30 concluse; le verifiche periodiche restano distinte.
 Le schede importate nelle altre province non equivalgono a ricerca approfondita.
 Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
 
@@ -1148,7 +1164,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **20. Bolzano/Bozen** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
 - [x] **21. Firenze** — Toscana; ricerca completata e verificata online, vedi sopra
 - [x] **22. Roma** — Lazio; ricerca documentale completata, 127 schede in 48 comuni pubblicate e verificate, limiti espliciti sopra
-- [ ] **23. Rimini** — Emilia-Romagna
+- [x] **23. Rimini** — Emilia-Romagna; 115 manifestazioni, 27 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
 - [ ] **24. Ravenna** — Emilia-Romagna
 - [ ] **25. Forlì-Cesena** — Emilia-Romagna
 - [ ] **26. Piacenza** — Emilia-Romagna

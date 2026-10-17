@@ -72,8 +72,13 @@ Catalogo nazionale **4.102** eventi, **3.987 schede esterne a Rimini identiche**
 al commit iniziale `1c6e0cb`. Test `scripts/test-fiere-rimini.cjs` mediante
 PLAYWRIGHT_MODULE: preservazione, giorni commerciali, tariffe, mappa, settori,
 dettagli e pagine senza JavaScript; Chromium 1440/390 e WebKit 390.
-Cache JS64/catalogo46. **Pubblicazione in attesa di verifica online;
-TO DO ancora non spuntata.**
+Cache JS64/catalogo46. **Pubblicazione verificata online il 17 ottobre 2026**,
+commit `3af5098`: catalogo identico al Git pubblicato (SHA-256
+`1c08d60906ebb09bfb1a6077e3289178d5b1fd064e374def2df2af466e5c6ab8`, fine riga LF).
+115 schede verificate live su Chromium 1440/390 e WebKit 390, inclusi
+mappa, settori, dettagli e pagine senza JavaScript. Passati anche i test
+generali calendario, pagine e settori. TO DO spuntata dopo la verifica:
+**30 province concluse, 80 rimanenti**; aggiornamenti periodici distinti.
 
 
 ## Selezione assistita, priorità alle nuove — 16 ottobre 2026

@@ -9,7 +9,9 @@ Montecopiolo/Sassofeltrio corretti solo nel build, anagrafica condivisa intatta.
 3.987 eventi esterni identici; catalogo 4.102, cache JS64/JSON46.
 Originali in Documents/ricerca-fiere-rimini-20261017; fonti fallite, esclusioni
 ed estremi incerti espliciti, nessuna comunicazione a terzi.
-Pubblicazione Rimini in attesa della verifica online; TO DO non spuntata.
+Pubblicazione Rimini verificata online (commit 3af5098): catalogo identico al Git,
+115 schede e dettagli testati live con Chromium/WebKit tramite PLAYWRIGHT_MODULE.
+TO DO spuntata dopo verifica: 30 province concluse, 80 rimanenti; revisioni future distinte.
 
 
 Fiere, 17 ottobre 2026: Azzera filtri accanto a Quando sostituisce lo switch
