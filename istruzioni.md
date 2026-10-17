@@ -1,5 +1,15 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Spazi filtri fiere,17/10: quattro campi in griglia2×2 quando c’è spazio;
+sotto520px e nei pannelli tablet stretti etichetta96px accanto al campo.
+Margini/etichette/padding compatti, controlli e mesi ≥44px, popup articoli
+larga quanto il gruppo. Altezza prima/dopo:1440 593→379,820 585→429,
+697 613→395,390 613→445,320 519→495; WebKit390613→445. Test articoli
+quattro formati passati e confronto sette casi senza overflow. Cache CSS28,
+JS74/JSON51 invariati; prove Documents/verifica-spazi-fiere-20261017.
+Ricerca miglioramento affinità articoli ancora in corso, separata da questo
+intervento di spaziatura; nessun nuovo voto pubblicato con questa modifica.
+
 Affinità articolo fiere, 17 ottobre 2026: voto nella colonna destra delle
 anteprime, colori rosso→verde, motivi e fonte apribili. Senza articolo si apre
 la selezione; con più articoli il riquadro mostra il migliore e il dialog

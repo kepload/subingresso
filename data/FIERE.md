@@ -2406,6 +2406,16 @@ nella cartella delle prove. Nessuna modifica al DB o comunicazione a terzi.
 
 ### Affinità articolo — 17 ottobre 2026
 
+Intervento successivo spazi filtri: campi principali in2×2, oppure etichetta
+96px/campo sui telefoni e nei pannelli tablet stretti. Ridotti margini,
+padding e titoli, mantenendo controlli/mesi ≥44px e il menu articoli aperto
+senza overflow. CSS28, JS74 e JSON51 invariati. Suite articoli sui quattro
+formati/browser passata; confronto sette casi in
+`Documents/verifica-spazi-fiere-20261017/misure.json`: a697px altezza
+613→395; a390px613→445, a320px519→495. Ricerca di una valutazione
+articoli più precisa in corso separatamente: nessun nuovo punteggio in
+questo intervento di sola disposizione dei filtri.
+
 Richiesta: stima prudente di pertinenza dell’articolo, su10, nella parte
 destra delle anteprime e con colori rosso→verde. Nessuna previsione di
 vendite, incassi, affluenza, concorrenza o ammissione. Algoritmo editoriale

@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
     <link rel="stylesheet" href="/css/tailwind.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/fiere.css?v=27">
+    <link rel="stylesheet" href="/css/fiere.css?v=28">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -33,6 +33,7 @@
             <button type="button" id="reset-filters" class="fiere-reset">Azzera filtri</button>
         </div>
         <div id="month-bar" class="fiere-months" role="group" aria-label="Mesi dell’anno"></div>
+        <div class="fiere-main-fields">
         <div class="fiere-place">
             <label for="province-filter"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dove</label>
             <select id="province-filter" aria-label="Regione o provincia" disabled><option value="">Tutta Italia</option></select>
@@ -55,6 +56,7 @@
         <div class="fiere-place">
             <label for="type-filter"><i class="fa-solid fa-list" aria-hidden="true"></i> Tipo di evento</label>
             <select id="type-filter"><option value="">Tutti gli eventi</option><option value="tradizionale">Fiere tradizionali</option><option value="artigianato">Artigianato e mostre mercato</option><option value="sagra">Sagre e feste</option><option value="espositiva">Fiere espositive</option><option value="mercatino">Mercatini</option></select>
+        </div>
         </div>
         <details id="extra-filters" class="fiere-extra-filters">
             <summary><span><i class="fa-solid fa-sliders" aria-hidden="true"></i> Altri filtri <span id="extra-filter-count" class="fiere-filter-count" hidden></span></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
