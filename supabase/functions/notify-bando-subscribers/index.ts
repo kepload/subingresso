@@ -115,7 +115,7 @@ Deno.serve(async (req) => {
 
     // Subscribers per la regione dell'annuncio.
     const { data: subs, error: subsErr } = await admin
-      .from('bando_alerts')
+      .from('registered_bando_alerts')
       .select('id, email, unsub_token, regione')
       .eq('regione', rec.regione);
     if (subsErr) {

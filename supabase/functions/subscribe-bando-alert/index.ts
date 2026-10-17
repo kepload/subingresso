@@ -1,6 +1,6 @@
 // ============================================================
 //  Subingresso.it — Edge Function: subscribe-bando-alert
-//  Lead magnet pubblico. L'iscrizione vale per BANDI + ANNUNCI
+//  Solo utenti autenticati. L'iscrizione vale per BANDI + ANNUNCI
 //  della stessa regione (bundle obbligatorio).
 //  Single opt-in: l'iscrizione e' immediata, l'email welcome ha
 //  link "annulla in 1 click" come safety GDPR.
@@ -105,10 +105,20 @@ Deno.serve(async (req) => {
   if (req.method !== 'POST')    return json({ error: 'Method not allowed' }, 405);
 
   try {
+    const token = (req.headers.get('Authorization') || '').match(/^Bearer\s+(.+)$/i)?.[1];
+    if (!token) return json({ error: 'Registrati o accedi al sito per attivare gli avvisi.' }, 401);
+    const admin = createClient(SUPABASE_URL, SB_SECRET_KEY, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
+    const { data: authData, error: authError } = await admin.auth.getUser(token);
+    const user = authData?.user;
+    if (authError || !user?.id || !user.email || user.is_anonymous) {
+      return json({ error: 'Registrati o accedi al sito per attivare gli avvisi.' }, 401);
+    }
     const body = await req.json().catch(() => null);
     if (!body || typeof body !== 'object' || Array.isArray(body)) return json({ error: 'Body mancante' }, 400);
 
-    const { email, regione, source, website, ts_form_started } = body as Record<string, unknown>;
+    const { regione, source, website, ts_form_started } = body as Record<string, unknown>;
 
     // ── Honeypot: campo "website" pieno = bot. Finto 200 (non rivelo la trappola). ──
     if (typeof website === 'string' && website.trim().length > 0) {
@@ -123,7 +133,8 @@ Deno.serve(async (req) => {
       }
     }
 
-    const cleanEmail   = validEmail(email);
+    // Il destinatario viene dall'account verificato, mai da un indirizzo scelto dal browser.
+    const cleanEmail   = validEmail(user.email);
     const cleanRegione = typeof regione === 'string' ? regione.trim() : '';
 
     if (!cleanEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail) || cleanEmail.length > 200) {
@@ -140,10 +151,6 @@ Deno.serve(async (req) => {
     }
 
     const cleanSource = typeof source === 'string' && /^[a-z0-9/_-]{1,120}$/.test(source) ? source : null;
-
-    const admin = createClient(SUPABASE_URL, SB_SECRET_KEY, {
-      auth: { persistSession: false, autoRefreshToken: false },
-    });
 
     // Idempotenza: se gia' iscritto a (email, regione) niente errore, niente doppia welcome.
     const { data: existing, error: existingError } = await admin

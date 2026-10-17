@@ -254,15 +254,13 @@ module.exports = async function handler(req, res) {
       <div class="flex-1">
         <span class="inline-block bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded mb-2">Avvisi gratuiti</span>
         <h3 class="text-lg md:text-xl font-black text-slate-900 mb-1">Ricevi i prossimi bandi per ${esc(regione)} via email</h3>
-        <p class="text-sm text-slate-700 leading-relaxed">Niente spam, solo bandi reali quando escono. + Annunci privati dell'area.</p>
+        <p class="text-sm text-slate-700 leading-relaxed">Registrati gratis al sito per ricevere bandi e annunci di posteggi in zona. Hai già un account? Accedi e attiva gli avvisi.</p>
       </div>
       <form id="quickSubBandoAlert" class="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
-        <input type="email" id="qsEmail" required placeholder="La tua email" class="flex-1 md:w-64 px-3 py-2.5 border border-slate-300 rounded-xl text-sm font-bold focus:outline-none focus:border-blue-500">
-        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;">
-        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-black text-sm px-5 py-2.5 rounded-xl whitespace-nowrap transition">Iscrivimi</button>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-black text-sm px-5 py-2.5 rounded-xl transition">Registrati e attiva avvisi</button>
       </form>
     </div>
-    <p id="qsMsg" class="mt-3 text-xs font-bold hidden"></p>
+    <p id="qsMsg" role="status" class="mt-3 text-xs font-bold hidden"></p>
   </section>
 
 </main>
@@ -272,8 +270,7 @@ module.exports = async function handler(req, res) {
 <script>
 window.SUPABASE_URL = '${SUPABASE_URL}';
 window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';
-window._BANDO_REGIONE = '${esc(regione)}';
-window._formStartedAt = Date.now();
+window._BANDO_REGIONE = ${safeJson(regione)};
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/supabase-config.js?v=2"></script>
@@ -282,41 +279,9 @@ window._formStartedAt = Date.now();
 <script src="/js/data.js?v=20"></script>
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/auth.js?v=22"></script>
+<script src="/js/bando-alerts.js?v=1"></script>
 <script>
-// Quick subscribe form
-(function(){
-  const form = document.getElementById('quickSubBandoAlert');
-  const msg = document.getElementById('qsMsg');
-  if (!form || !msg) return;
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.getElementById('qsEmail').value.trim().toLowerCase();
-    const website = form.website.value;
-    const dt = Date.now() - (window._formStartedAt || 0);
-    if (website || dt < 2500) { msg.textContent = 'Email non valida'; msg.className = 'mt-3 text-xs font-bold text-red-600'; return; }
-    msg.className = 'mt-3 text-xs font-bold text-slate-500'; msg.textContent = 'Iscrizione in corso…';
-    try {
-      const res = await fetch(window.SUPABASE_URL + '/functions/v1/subscribe-bando-alert', {
-        method: 'POST',
-        headers: { 'Content-Type':'application/json', 'apikey': window.SUPABASE_ANON_KEY, 'Authorization':'Bearer ' + window.SUPABASE_ANON_KEY },
-        body: JSON.stringify({ email, regione: window._BANDO_REGIONE, source: 'bando_page', website, dt }),
-      });
-      if (res.ok) {
-        msg.className = 'mt-3 text-xs font-bold text-emerald-600';
-        msg.textContent = '✓ Iscrizione registrata! Ti scriviamo appena escono nuovi bandi in ' + window._BANDO_REGIONE + '.';
-        form.reset();
-      } else {
-        const err = await res.json().catch(()=>({}));
-        msg.className = 'mt-3 text-xs font-bold text-red-600';
-        msg.textContent = err.error || 'Errore: riprova fra qualche minuto';
-      }
-    } catch (_) {
-      msg.className = 'mt-3 text-xs font-bold text-red-600';
-      msg.textContent = 'Errore di rete, riprova';
-    }
-    msg.classList.remove('hidden');
-  });
-})();
+bindBandoAlertForm('quickSubBandoAlert', 'qsMsg', window._BANDO_REGIONE, 'bando_page');
 </script>
 </body>
 </html>`;

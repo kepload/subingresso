@@ -183,7 +183,7 @@ Deno.serve(async (req) => {
 
     // Carica iscritti della regione
     const { data: subs } = await admin
-      .from('bando_alerts')
+      .from('registered_bando_alerts')
       .select('id, email, unsub_token')
       .eq('regione', row.regione);
 

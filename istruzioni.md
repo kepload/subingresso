@@ -999,7 +999,9 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 
 ## 📬 Avvisi Bandi (lead magnet bundle, 6 mag 2026 sera fase 1)
 
-Sistema "Avvisi" — chi si iscrive con (email, regione) riceve come **bundle obbligatorio** sia gli avvisi bandi pubblici sia i nuovi annunci privati della stessa regione. Single opt-in (no double-confirm), unsub in 1 click via token.
+**17 ottobre 2026, regola corrente:** avvisi solo con account del sito. Blog e landing bando usano `js/bando-alerts.js?v=1`: il pulsante apre il modulo standard in `auth.js`, poi attiva la regione dopo registrazione/accesso; chi è già autenticato attiva direttamente. Chiusura del modulo annulla la richiesta, errori avvisi separati dal successo account. Endpoint `subscribe-bando-alert` verifica il token con `auth.getUser` e usa soltanto l'email dell'account. `PATCH_BANDO_ACCOUNT_REQUIRED_20261017.sql` revoca INSERT pubblici e crea la vista `registered_bando_alerts`, leggibile solo da service_role: invii bandi/annunci e Scout escludono email senza account esistente. Nessuna creazione automatica di account o eliminazione di iscrizioni pregresse. Verifica live iniziale: 32 righe, 12 con account, 20 sospese dagli invii. Quattro funzioni ripubblicate; test `scripts/test-bando-account.cjs` con backend simulato su Chromium 1440/320 e WebKit 390, più regressioni qualità dati e acquisizione passati.
+
+Il servizio resta un bundle di bandi pubblici e nuovi annunci privati della stessa regione, con cancellazione in un click. I dettagli del 6 maggio sotto sono storici dove superati dal requisito account.
 
 - **Schema:** `bando_alerts(id uuid, email, regione, source, unsub_token uuid UNIQUE, created_at, last_listing_sent_at, last_bando_digest_sent_at)` UNIQUE(email,regione). `bando_alert_log(alert_id, annuncio_id)` PK composita per dedup invii.
 - **RLS:** anon+authenticated solo INSERT su `bando_alerts`. Niente accesso pubblico al log. Edge functions usano service_role per bypass.

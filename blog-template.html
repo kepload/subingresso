@@ -79,6 +79,7 @@
 <script src="js/data.js?v=20"></script>
 <script src="js/ui-components.js?v=12"></script>
 <script src="js/auth.js?v=22"></script>
+<script src="js/bando-alerts.js?v=1"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const slug = params.get('post');
@@ -147,62 +148,19 @@ function _bandoAlertFormHtml(regione) {
       +   '<div class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-bell"></i></div>'
       +   '<div class="min-w-0 flex-1">'
       +     '<h3 class="font-black text-slate-900 text-base md:text-lg leading-tight">Avvisi per bandi e posteggi in ' + reg + '</h3>'
-      +     '<p class="text-xs text-slate-500 font-semibold mt-1 leading-relaxed">Ti scriviamo quando esce un nuovo bando pubblico <strong>e</strong> quando arriva un annuncio privato di posteggio in zona. Max 1 email a settimana, niente spam.</p>'
+      +     '<p class="text-xs text-slate-500 font-semibold mt-1 leading-relaxed">Registrati gratis al sito per ricevere i nuovi bandi pubblici e gli annunci di posteggi in zona. Se hai già un account, accedi e attiva gli avvisi.</p>'
       +   '</div>'
       + '</div>'
       + '<form id="bandoAlertForm" class="flex flex-col sm:flex-row gap-2 mt-4">'
-      +   '<input type="email" name="email" required placeholder="la tua email" class="flex-1 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">'
-      +   '<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">'
-      +   '<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-black text-sm px-6 py-3 rounded-xl transition whitespace-nowrap shadow-sm">Attiva avvisi <i class="fas fa-arrow-right ml-1 text-xs"></i></button>'
+      +   '<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-black text-sm px-6 py-3 rounded-xl transition shadow-sm">Registrati e attiva avvisi</button>'
       + '</form>'
-      + '<p id="bandoAlertMsg" class="hidden mt-3 text-xs font-bold"></p>'
+      + '<p id="bandoAlertMsg" role="status" class="hidden mt-3 text-xs font-bold"></p>'
       + '<p class="mt-3 text-[10px] text-slate-400 leading-relaxed">Annulli l\'iscrizione in un click dal link in ogni email. <a href="/privacy" class="underline hover:text-slate-600">Privacy</a>.</p>'
       + '</div>';
 }
 
 function _bindBandoAlertForm(regione, postSlug) {
-    const form = document.getElementById('bandoAlertForm');
-    if (!form || !regione) return;
-    const tsStart = Date.now();
-    form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const fd = new FormData(form);
-        const email = String(fd.get('email') || '').trim();
-        const website = String(fd.get('website') || '');
-        const msg = document.getElementById('bandoAlertMsg');
-        const btn = form.querySelector('button[type="submit"]');
-        btn.disabled = true; btn.classList.add('opacity-60', 'cursor-wait');
-        msg.classList.add('hidden');
-        try {
-            const res = await fetch(`${SUPABASE_URL}/functions/v1/subscribe-bando-alert`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY },
-                body: JSON.stringify({ email, regione, source: postSlug, ts_form_started: tsStart, website,
-                    visitor_id: (()=>{try{return localStorage.getItem('_visitor_id');}catch(_){return null;}})(),
-                    session_id: (()=>{try{return sessionStorage.getItem('_session_id');}catch(_){return null;}})() })
-            });
-            const data = await res.json().catch(() => ({}));
-            if (res.ok && data.success) {
-                msg.textContent = data.already_subscribed
-                    ? 'Sei già iscritto agli avvisi per ' + regione + '. Ti scriviamo non appena esce qualcosa.'
-                    : '✓ Iscrizione attivata. Ti scriviamo da ' + regione + ' (controlla l\'email).';
-                msg.className = 'mt-3 text-xs font-bold text-emerald-600';
-                msg.classList.remove('hidden');
-                form.querySelector('input[name="email"]').value = '';
-                btn.disabled = false; btn.classList.remove('opacity-60', 'cursor-wait');
-            } else {
-                msg.textContent = (data && data.error) ? data.error : 'Errore. Riprova tra un attimo.';
-                msg.className = 'mt-3 text-xs font-bold text-red-600';
-                msg.classList.remove('hidden');
-                btn.disabled = false; btn.classList.remove('opacity-60', 'cursor-wait');
-            }
-        } catch (err) {
-            msg.textContent = 'Errore di connessione. Riprova.';
-            msg.className = 'mt-3 text-xs font-bold text-red-600';
-            msg.classList.remove('hidden');
-            btn.disabled = false; btn.classList.remove('opacity-60', 'cursor-wait');
-        }
-    });
+    window.bindBandoAlertForm('bandoAlertForm', 'bandoAlertMsg', regione, postSlug);
 }
 
 // Annunci in Vetrina attiva davanti a tutti (chi paga ha priorità qui).

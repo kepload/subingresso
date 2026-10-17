@@ -412,7 +412,7 @@ Deno.serve(async (req) => {
 
     const admin = createClient(SUPABASE_URL, SB_SECRET_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
 
-    const { data: subs, error: subsErr } = await admin.from('bando_alerts').select('regione');
+    const { data: subs, error: subsErr } = await admin.from('registered_bando_alerts').select('regione');
     if (subsErr) {
       console.error('subs query:', subsErr);
       return new Response(JSON.stringify({ error: 'subs_query' }), { status: 500 });
