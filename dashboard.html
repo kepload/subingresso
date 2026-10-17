@@ -663,9 +663,6 @@
         <!-- Milestone banners — achievement persistenti (first_save, views_10, ecc.) -->
         <div id="milestonesBanner" class="hidden mb-4 space-y-2"></div>
 
-        <!-- Seller hero — il tuo annuncio + stats live + compratori in zona -->
-        <div id="sellerHeroSection" class="hidden mb-6"></div>
-
         <div id="sellerAnalyticsPanel" class="hidden mb-6">
             <div class="bg-white border border-slate-100 rounded-2xl p-4 md:p-6 shadow-sm">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
@@ -1386,7 +1383,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadOnboardingWidget(user, profile);
     loadMyListings();
     loadPendingListings();
-    loadSellerHero();
     loadMilestones();
     loadSellerAnalytics();
 
@@ -3246,162 +3242,6 @@ async function loadMySaved() {
         badge.textContent = orderedListings.length;
         badge.classList.toggle('hidden', orderedListings.length === 0);
     }
-}
-
-// ── Seller Dashboard Hero (top annuncio + stats live + regional demand) ────
-let _sellerHeroState = { listings: [], idx: 0 };
-
-async function loadSellerHero() {
-    const section = document.getElementById('sellerHeroSection');
-    if (!section) return;
-    try {
-        const { data, error } = await _supabase.rpc('dashboard_seller_summary');
-        if (error || !data || data.error) { section.classList.add('hidden'); return; }
-        const listings = Array.isArray(data.listings) ? data.listings : [];
-        if (!listings.length) { section.classList.add('hidden'); return; }
-        _sellerHeroState.listings = listings;
-        _sellerHeroState.idx = 0;
-        section.classList.remove('hidden');
-        _renderSellerHero();
-    } catch (_) {
-        section.classList.add('hidden');
-    }
-}
-
-function _renderSellerHero() {
-    const section = document.getElementById('sellerHeroSection');
-    if (!section || !_sellerHeroState.listings.length) return;
-    const l = _sellerHeroState.listings[_sellerHeroState.idx];
-    const total = _sellerHeroState.listings.length;
-    const cover = (l.img_urls && l.img_urls[0]) || '';
-    const isFeatured = l.featured && l.featured_until && new Date(l.featured_until) > new Date();
-    const tipoBadge = l.tipo === 'vendita'
-        ? 'bg-emerald-50 text-emerald-700'
-        : 'bg-blue-50 text-blue-700';
-    const featuredBadge = isFeatured
-        ? `<span class="bg-gradient-to-r from-amber-400 to-orange-500 text-white text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-md inline-flex items-center gap-1"><i class="fas fa-crown text-[9px]"></i>Vetrina</span>`
-        : '';
-    // formatPrice accetta l'oggetto listing intero, non (prezzo, tipo). Se passato un
-    // numero, l.prezzo e' undefined dentro la function -> ritorna "Trattativa riservata".
-    const priceFmt = (typeof formatPrice === 'function')
-        ? formatPrice(l)
-        : `€ ${Number(l.prezzo || 0).toLocaleString('it-IT')}`;
-
-    const _stat = (label, total, delta, color, icon) => {
-        const deltaTxt = delta == null
-            ? '<span class="text-[10px] font-bold text-slate-400 mt-0.5">dalla pubblicazione</span>'
-            : `<span class="text-[10px] font-black ${color === 'blue' ? 'text-blue-600' : color === 'emerald' ? 'text-emerald-600' : 'text-violet-600'} mt-0.5">${delta > 0 ? '+' : ''}${Number(delta || 0)}<span class="text-slate-400 font-bold ml-1">ultimi 7g</span></span>`;
-        return `
-        <div class="flex-1 min-w-0 bg-slate-50 rounded-2xl p-3 md:p-4 flex flex-col">
-            <div class="flex items-center gap-1.5 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                <i class="fas ${icon} text-slate-300"></i>${label}
-            </div>
-            <div class="text-2xl md:text-3xl font-black text-slate-900 leading-none mt-2">${Number(total || 0).toLocaleString('it-IT')}</div>
-            ${deltaTxt}
-        </div>`;
-    };
-
-    const unreadBadge = l.msg_unread > 0
-        ? `<span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-black rounded-full min-w-5 h-5 px-1.5 inline-flex items-center justify-center border-2 border-white">${l.msg_unread}</span>`
-        : '';
-
-    const regionalChip = (l.regional_alerts > 0 || l.regional_active_buyers > 0)
-        ? `<div class="mt-4 px-4 py-3 bg-gradient-to-r from-blue-50 to-violet-50 border border-blue-100 rounded-2xl flex flex-wrap items-center gap-2 text-xs">
-            <i class="fas fa-location-dot text-blue-600"></i>
-            <span class="font-bold text-slate-600">In ${escapeHTML(l.regione || 'zona')}:</span>
-            ${l.regional_alerts > 0 ? `<span class="font-black text-blue-700"><span class="text-base">${l.regional_alerts}</span> iscritti agli avvisi</span>` : ''}
-            ${(l.regional_alerts > 0 && l.regional_active_buyers > 0) ? '<span class="text-slate-300">·</span>' : ''}
-            ${l.regional_active_buyers > 0 ? `<span class="font-black text-violet-700"><span class="text-base">${l.regional_active_buyers}</span> compratori attivi <span class="text-slate-400 font-bold text-[10px]">(30g)</span></span>` : ''}
-           </div>`
-        : '';
-
-    const dots = total > 1
-        ? `<div class="flex justify-center gap-2 mt-4">
-            ${_sellerHeroState.listings.map((_, i) => `
-                <button onclick="setSellerHeroIdx(${i})" class="w-2 h-2 rounded-full transition ${i === _sellerHeroState.idx ? 'bg-blue-600 w-6' : 'bg-slate-300 hover:bg-slate-400'}"></button>
-            `).join('')}
-           </div>`
-        : '';
-
-    const navArrows = total > 1
-        ? `<div class="absolute top-4 right-4 flex gap-1.5">
-            <button onclick="prevSellerHero()" aria-label="Precedente" class="w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-md text-slate-600 hover:text-blue-600 transition"><i class="fas fa-chevron-left text-xs"></i></button>
-            <button onclick="nextSellerHero()" aria-label="Successivo" class="w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-md text-slate-600 hover:text-blue-600 transition"><i class="fas fa-chevron-right text-xs"></i></button>
-           </div>`
-        : '';
-
-    section.innerHTML = `
-    <div class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm relative">
-        <div class="p-5 md:p-6">
-            <div class="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">
-                <i class="fas fa-bolt text-amber-500"></i>
-                Il tuo annuncio${total > 1 ? ` <span class="text-slate-300">·</span> <span class="text-slate-500">${_sellerHeroState.idx + 1} di ${total}</span>` : ''}
-            </div>
-            ${navArrows}
-            <div class="flex flex-col md:flex-row gap-4 md:gap-5">
-                <a href="/annuncio?id=${encodeURIComponent(l.id)}" target="_blank" rel="noopener" style="aspect-ratio:1/1" class="block flex-shrink-0 w-full md:w-44 rounded-2xl overflow-hidden bg-slate-100 group">
-                    ${cover ? `<img src="${escapeHTML(getOptimizedImageUrl(cover, 768))}" alt="${escapeHTML(l.titolo || '')}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` : '<div class="w-full h-full flex items-center justify-center text-slate-300"><i class="fas fa-image text-3xl"></i></div>'}
-                </a>
-                <div class="flex-1 min-w-0">
-                    <div class="flex flex-wrap items-center gap-1.5 mb-2">
-                        <span class="${tipoBadge} text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-md">${escapeHTML(l.tipo || '')}</span>
-                        ${featuredBadge}
-                    </div>
-                    <a href="/annuncio?id=${encodeURIComponent(l.id)}" target="_blank" rel="noopener" class="block">
-                        <h2 class="text-lg md:text-xl font-black text-slate-900 hover:text-blue-600 transition tracking-tight leading-tight line-clamp-2">${escapeHTML(l.titolo || '')}</h2>
-                    </a>
-                    <p class="text-xs text-slate-500 font-bold mt-1"><i class="fas fa-location-dot text-slate-300 mr-1"></i>${escapeHTML(l.comune || '')}, ${escapeHTML(l.regione || '')}</p>
-                    <p class="text-base md:text-lg font-black text-slate-900 mt-2">${escapeHTML(priceFmt)}</p>
-                </div>
-            </div>
-            <p class="text-xs text-slate-500 font-bold mt-5">Riepilogo complessivo dell'annuncio</p>
-            <div class="flex flex-wrap gap-2 md:gap-3 mt-2">
-                ${_stat('Viste', l.views_total, null, 'blue', 'fa-eye')}
-                ${_stat('Salvati', l.saved_total, l.saved_7d, 'emerald', 'fa-bookmark')}
-                ${_stat('Messaggi', l.msg_total, l.msg_7d, 'violet', 'fa-envelope')}
-                <div class="flex-1 min-w-0 bg-slate-50 rounded-2xl p-3 md:p-4 flex flex-col relative">
-                    <div class="flex items-center gap-1.5 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                        <i class="fas fa-bell text-slate-300"></i>Da leggere
-                    </div>
-                    <div class="text-2xl md:text-3xl font-black ${l.msg_unread > 0 ? 'text-red-600' : 'text-slate-300'} leading-none mt-2 relative inline-block">
-                        ${Number(l.msg_unread || 0).toLocaleString('it-IT')}
-                        ${unreadBadge}
-                    </div>
-                    <span class="text-[10px] font-bold text-slate-300 mt-0.5">non letti</span>
-                </div>
-            </div>
-            ${regionalChip}
-            <div class="flex flex-wrap gap-2 mt-5">
-                <a href="/annuncio?id=${encodeURIComponent(l.id)}" target="_blank" rel="noopener" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-widest px-4 py-2.5 rounded-xl transition inline-flex items-center gap-2"><i class="fas fa-arrow-up-right-from-square text-[10px]"></i>Apri annuncio</a>
-                <a href="/modifica-annuncio?id=${encodeURIComponent(l.id)}" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-black uppercase tracking-widest px-4 py-2.5 rounded-xl transition inline-flex items-center gap-2"><i class="fas fa-pen text-[10px]"></i>Modifica</a>
-                ${!isFeatured ? `<button onclick="openVetrinaFromHero(${_sellerHeroState.idx})" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-black uppercase tracking-widest px-4 py-2.5 rounded-xl transition inline-flex items-center gap-2"><i class="fas fa-crown text-[10px]"></i>Metti in vetrina</button>` : ''}
-            </div>
-            ${dots}
-        </div>
-    </div>`;
-}
-
-function nextSellerHero() {
-    if (_sellerHeroState.listings.length <= 1) return;
-    _sellerHeroState.idx = (_sellerHeroState.idx + 1) % _sellerHeroState.listings.length;
-    _renderSellerHero();
-}
-
-function prevSellerHero() {
-    if (_sellerHeroState.listings.length <= 1) return;
-    _sellerHeroState.idx = (_sellerHeroState.idx - 1 + _sellerHeroState.listings.length) % _sellerHeroState.listings.length;
-    _renderSellerHero();
-}
-
-function setSellerHeroIdx(i) {
-    if (i < 0 || i >= _sellerHeroState.listings.length) return;
-    _sellerHeroState.idx = i;
-    _renderSellerHero();
-}
-
-function openVetrinaFromHero(idx) {
-    const l = _sellerHeroState.listings[idx];
-    if (l && typeof openVetrinaModal === 'function') openVetrinaModal(l);
 }
 
 // ── Milestones (achievement persistenti) ────────────────────────
