@@ -5,6 +5,9 @@ Mesi Gen–Dic su due righe da sei, tre da quattro sotto 360 px, pulsanti
 di almeno 44 px e nomi completi accessibili. Cache JS62/CSS22.
 Verifiche locali: suite calendario su cinque formati/browser e test
 valutazioni Chromium/WebKit passati; catalogo invariato.
+Pubblicato 30c4955, Vercel READY dpl_8Aztctw3oDCKzs58ZFVE6nvvgTUh;
+HTML/JS/CSS online identici al commit. Test valutazioni online passati
+su Chromium computer/telefono e WebKit.
 
 **Blog fiere Umbria, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
 in Umbria da conoscere se fai l’ambulante», ID `61741baf-f6cf-4048-a699-9b1916f0a9e0`,

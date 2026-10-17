@@ -8,6 +8,9 @@ interi. Cache JS62/CSS22; catalogo invariato. Backup remoto creato; cleanup
 dei tag con il noto errore PowerShell, checkpoint valido.
 Sintassi, suite calendario su cinque formati/browser e test valutazioni
 Chromium computer/telefono e WebKit passati localmente.
+Pubblicato 30c4955, Vercel READY dpl_8Aztctw3oDCKzs58ZFVE6nvvgTUh;
+HTML/JS/CSS online identici al commit (checkout Windows con CRLF).
+Test valutazioni online passato sui tre formati/browser.
 
 Roma, chiusura documentale 16 ottobre 2026: supera gli stati parziali storici sotto.
 127 manifestazioni in 48 comuni, 11 aggiunte rispetto a 116/46; 4.000 nazionali,
