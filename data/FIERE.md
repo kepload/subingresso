@@ -2365,6 +2365,40 @@ avviso scaduto non viene presentato come domanda aperta.
 
 ## Filtri per settore merceologico — 10 ottobre 2026
 
+### Tipologie di articolo e selezione multipla — 17 ottobre 2026
+
+Su richiesta, filtro principale «Tipologia di articolo» tra «Cosa vendi» e
+«Tipo di evento»: 31 scelte in sei gruppi, checkbox combinabili anche tra
+gruppi diversi. Le tipologie selezionate sono in **OR**; settore, territorio,
+mesi, evento e testo rimangono in **AND**. Contatori delle opzioni calcolati
+senza il filtro articoli, rispettando gli altri filtri. Scelte visibili e
+rimuovibili singolarmente; «Deseleziona tutte» riguarda soltanto gli articoli,
+«Azzera filtri» azzera tutto. Con un macrosettore si mostrano le tipologie
+pertinenti e si eliminano le selezioni incompatibili. URL `articoli=id,id`,
+valori ripetuti/ignoti scartati e selezione conservata al ricaricamento.
+
+Classificazione condivisa browser/SSR in `articleTypes()` di `fiere.js`,
+esclusivamente sul campo `sectors` già documentato. Nessuna attribuzione dal
+nome, da «merci varie», da artigianato generico o dalla categoria evento.
+Esclusioni esplicite ignorate; divieto di somministrazione distinto dalla
+vendita documentata. Copertura iniziale: **1.512 su 4.322 schede**; intimo e
+detergenti non hanno ancora riscontri espliciti. Non è una nuova ricerca né
+garanzia di ammissione. Catalogo, ID, fonti e macrosettori invariati. Dettagli
+nel dialog e nelle pagine autonome allineati; menu scorrevole che si apre
+verso lo spazio disponibile, checkbox e rimozioni alte almeno 44 px.
+
+Cache JS72/CSS25, JSON51 invariato. Test dedicato
+`scripts/test-fiere-articles.cjs` (opzionali `PLAYWRIGHT_MODULE`,
+`FIERE_TEST_BASE_URL`, `FIERE_ARTICLES_OUTPUT`): classificazioni, esclusioni,
+OR/AND, conservazione catalogo, URL/ricaricamento, reset, tastiera, elenco,
+mappa, schede e overflow su Chromium 1440/820/320×568 e WebKit390.
+Schermate in `Documents/verifica-filtri-articoli-20261017/`.
+Verifiche locali passate: test dedicato, suite generale calendario su cinque
+formati/browser, 4.322 pagine/1.625 sitemap, settori e sintassi. Backup tag
+remoto prima delle modifiche; cleanup locale con errore PowerShell noto.
+
+### Macrosettori
+
 Quattro macro categorie: alimentare, non alimentare, antiquariato e vintage,
 artigianato (incluse creazioni e hobbistica). `merchandiseSectors` è un elenco:
 una fiera mista compare in tutti i settori documentati; antiquariato e

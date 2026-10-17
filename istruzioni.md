@@ -1,5 +1,18 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Filtri articoli fiere, 17 ottobre 2026: aggiunto «Tipologia di articolo» tra
+Cosa vendi e Tipo di evento. 31 checkbox in sei gruppi, OR tra selezioni e
+AND con gli altri filtri; contatori, rimozioni singole, deseleziona tutte,
+URL articoli=id,id e reset. Macrosettore limita le opzioni e scarta quelle
+incompatibili. Classificazione browser/SSR solo dai settori documentati,
+esclusioni rispettate: 1.512/4.322 schede, nessuna deduzione da merci varie
+o nomi. Catalogo invariato. Menu scorrevole sopra/sotto secondo lo spazio,
+target44 px; dettaglio dialog/pagina allineato. Cache JS72/CSS25, JSON51.
+Test dedicato scripts/test-fiere-articles.cjs Chromium1440/820/320×568 e
+WebKit390 passato; suite calendario cinque formati/browser, pagine4322/
+sitemap1625 e settori passati. Dettagli FIERE.md,
+schermate Documents/verifica-filtri-articoli-20261017. Verifica online da fare.
+
 Affluenza, 17 ottobre 2026: criterio richiesto soltanto pubblico; quattro
 fasce editoriali su ingressi/presenze medi per giornata, soglie 1k/5k/20k.
 Fonti e cifre originali con anno, periodo, unità, stato dichiarato/stimato;

@@ -3,6 +3,54 @@
     const MONTHS = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
     const CATEGORIES = { tradizionale: 'Fiera tradizionale', artigianato: 'Artigianato e mostre mercato', sagra: 'Sagra o festa', espositiva: 'Fiera espositiva', mercatino: 'Mercatino' };
     const SECTORS = { alimentare: 'Alimentare', 'non-alimentare': 'Non alimentare', antiquariato: 'Antiquariato e vintage', artigianato: 'Artigianato' };
+    const ARTICLE_GROUPS = ['Abbigliamento e accessori', 'Casa e persona', 'Altri prodotti', 'Alimentari', 'Artigianato', 'Usato e collezionismo'];
+    // Match only goods documented in the source sector text, never a generic
+    // event name, its category or an assumed permission to trade.
+    const ARTICLE_TYPES = {
+        abbigliamento: { label: 'Abbigliamento', group: 0, sectors: ['non-alimentare'], pattern: /\b(?:abbigliamento|vestiti|vestiario|maglieria)\b/ },
+        intimo: { label: 'Intimo e calze', group: 0, sectors: ['non-alimentare'], pattern: /\b(?:intimo|biancheria intima|calze|calzini|calzetteria|calzeria|calzamaglie)\b/ },
+        calzature: { label: 'Calzature', group: 0, sectors: ['non-alimentare'], pattern: /\b(?:calzature|scarpe|sandali|ciabatte)\b/ },
+        pelletteria: { label: 'Borse e pelletteria', group: 0, sectors: ['non-alimentare'], pattern: /\b(?:bors[ae]|pelletteria|portafogli|cinture|accessori in pelle)\b/ },
+        bigiotteria: { label: 'Bigiotteria', group: 0, sectors: ['non-alimentare', 'artigianato'], pattern: /\bbigiotteri\w*\b/ },
+        casalinghi: { label: 'Casalinghi e cucina', group: 1, sectors: ['non-alimentare'], pattern: /\b(?:casalinghi|articoli (?:per la casa|da cucina)|utensili da cucina|pentol[ae]|stoviglie)\b/ },
+        'biancheria-casa': { label: 'Biancheria per la casa', group: 1, sectors: ['non-alimentare'], pattern: /\b(?:biancheria (?:per la casa|da casa|da letto)|tessili (?:per la casa|da casa)|lenzuol[ao]|asciugamani|tovaglie|tendaggi)\b/ },
+        cosmetici: { label: 'Cosmetici e profumeria', group: 1, sectors: ['non-alimentare'], pattern: /\b(?:cosmetic\w*|profumeria|profumi|prodotti (?:di bellezza|per la cura della persona)|saponi)\b/ },
+        detergenti: { label: 'Detergenti', group: 1, sectors: ['non-alimentare'], pattern: /\b(?:detergenti|detersivi|prodotti per la pulizia)\b/ },
+        giocattoli: { label: 'Giocattoli', group: 2, sectors: ['non-alimentare'], pattern: /\b(?:giocattoli|giocattoleria|giochi da tavolo)\b/ },
+        libri: { label: 'Libri e fumetti', group: 2, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:libri|libro|libraria|editoria|fumetti)\b/ },
+        elettronica: { label: 'Elettronica e accessori telefonici', group: 2, sectors: ['non-alimentare'], pattern: /\b(?:elettronic\w*|telefonia|accessori (?:telefonici|per (?:cellulari|smartphone|telefoni)))\b/ },
+        piante: { label: 'Fiori e piante', group: 2, sectors: ['non-alimentare'], pattern: /\b(?:fiori|piante|florovivais\w*|floricoltura|vivaismo|bulbi|sementi)\b/ },
+        animali: { label: 'Articoli per animali', group: 2, sectors: ['non-alimentare'], pattern: /\b(?:articoli per animali|accessori per (?:animali|cani|gatti)|prodotti per animali|mangimi|pet food|pet shop)\b/ },
+        'salumi-formaggi': { label: 'Salumi e formaggi', group: 3, sectors: ['alimentare'], pattern: /\b(?:salumi|formaggi|latticini|caseari|insaccati)\b/ },
+        forno: { label: 'Prodotti da forno', group: 3, sectors: ['alimentare'], pattern: /\b(?:prodotti da forno|pane|panific\w*|focacce|biscotti|taralli)\b/ },
+        dolciumi: { label: 'Dolciumi', group: 3, sectors: ['alimentare'], pattern: /\b(?:dolc\w*|cioccolat\w*|pasticceria|caramelle|torrone|gelat[oi])\b/ },
+        agricoli: { label: 'Prodotti agricoli', group: 3, sectors: ['alimentare'], pattern: /\b(?:prodotti agricoli|ortofrutta|frutta|verdura|ortaggi|miele|olio (?:di oliva|d oliva|extravergine))\b/ },
+        tipici: { label: 'Conserve e prodotti tipici', group: 3, sectors: ['alimentare'], pattern: /\b(?:conserve|confetture|marmellate|sottoli|prodotti tipici|specialita (?:alimentari|gastronomiche))\b/ },
+        bevande: { label: 'Bevande', group: 3, sectors: ['alimentare'], pattern: /\b(?:bevande|vino|vini|birra|birre|liquori|distillati|sidro|caffe)\b/ },
+        'street-food': { label: 'Street food', group: 3, sectors: ['alimentare'], pattern: /\b(?:street food|food truck|cucina itinerante|cibo di strada|ristorazione ambulante)\b/ },
+        ceramica: { label: 'Ceramica', group: 4, sectors: ['non-alimentare', 'artigianato'], pattern: /\b(?:ceramica|ceramiche|terrecotte|terracotta)\b/ },
+        legno: { label: 'Lavorazioni in legno', group: 4, sectors: ['non-alimentare', 'artigianato'], pattern: /\b(?:lavorazioni (?:in|del) legno|artigianato (?:in|del) legno|(?:oggetti|articoli|manufatti|sculture) (?:in|di) legno|intagli(?:o| in legno))\b/ },
+        tessili: { label: 'Creazioni tessili', group: 4, sectors: ['non-alimentare', 'artigianato'], pattern: /\b(?:creazioni tessili|artigianato tessile|ricami|ricamo|uncinetto|merletti|tessitura artigianale)\b/ },
+        'gioielli-artigianali': { label: 'Gioielli artigianali', group: 4, sectors: ['non-alimentare', 'artigianato'], pattern: /\b(?:(?:gioielli|bigiotteria|monili) (?:artigianal\w*|fatti a mano)|gioielleria artigianale|(?:creazione|produzione) artigianale di gioielli)\b/ },
+        decorazioni: { label: 'Decorazioni e articoli da regalo', group: 4, sectors: ['non-alimentare', 'artigianato'], pattern: /\b(?:decorazioni|addobbi|articoli da regalo|oggetti da regalo|presepi)\b/ },
+        antiquariato: { label: 'Antiquariato', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:antiquariat\w*|brocantage|oggetti d epoca)\b/ },
+        modernariato: { label: 'Modernariato', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\bmodernariato\b/ },
+        vintage: { label: 'Vintage', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\bvintage\b/ },
+        usato: { label: 'Usato', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:usato|usati|usate|seconda mano|second hand|riuso)\b/ },
+        collezionismo: { label: 'Collezionismo', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:collezion\w*|oggetti da collezione|filatelia|numismatica|modellismo)\b/ }
+    };
+    const articleCache = new WeakMap();
+    function articleTypes(event) {
+        if (articleCache.has(event)) return articleCache.get(event);
+        // Exclusions end at a source clause boundary. In particular, a ban on
+        // serving food must not exclude a documented sale of packaged goods.
+        const text = String(event.sectors || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+            .replace(/\b(?:esclus[oaie]|vietat[oaie]|non (?:sono )?ammess[oaie]|divieto di vendita|senza vendita|ad esclusione di)\b[^;.\n)]*/g, '')
+            .replace(/[^a-z0-9]+/g, ' ');
+        const types = Object.keys(ARTICLE_TYPES).filter(key => ARTICLE_TYPES[key].pattern.test(text));
+        articleCache.set(event, types);
+        return types;
+    }
     // Editorial volume bands, not a forecast or a commercial assessment.
     const ATTENDANCE = {
         veryHigh: { label: 'Affluenza molto alta', min: 20000 },
@@ -101,6 +149,7 @@
         const words = normalize(state.query).split(' ').filter(Boolean);
         return events.filter(event => (!state.region || event.region === state.region) && (!state.province || event.province === state.province) && (!state.category || event.category === state.category)
             && (!state.sector || event.merchandiseSectors.includes(state.sector))
+            && (!state.articles?.length || state.articles.some(type => articleTypes(event).includes(type)))
             && (ignoreMonths || !state.months.length || event.months.some(month => state.months.includes(month)))
             && words.every(word => normalize([event.name, event.city, event.region, event.province, event.venue, event.sectors].join(' ')).includes(word)));
     }
@@ -189,12 +238,12 @@
             || a.event.name.localeCompare(b.event.name, 'it') || a.event.city.localeCompare(b.event.city, 'it'));
         return ranked.map(item => item.event);
     }
-    const api = { MONTHS, CATEGORIES, SECTORS, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
+    const api = { MONTHS, CATEGORIES, SECTORS, ARTICLE_GROUPS, ARTICLE_TYPES, articleTypes, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
     const $ = id => document.getElementById(id);
-    const state = { events: [], provinces: null, region: '', province: '', category: '', sector: '', months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
+    const state = { events: [], provinces: null, region: '', province: '', category: '', sector: '', articles: [], months: [], query: '', visible: 12, selected: '', view: HOME.slice(), ready: false };
     let searchTimer, mapMarkerTimer, hoveredCard, focusedCard, dateNoteId = 0;
     function node(tag, className, text) {
         const element = document.createElement(tag);
@@ -277,12 +326,13 @@
     }
     function syncURL() {
         const url = new URL(location.href);
-        for (const key of ['mesi', 'regione', 'provincia', 'tipo', 'settore', 'rinomatezza', 'q']) url.searchParams.delete(key);
+        for (const key of ['mesi', 'regione', 'provincia', 'tipo', 'settore', 'articoli', 'rinomatezza', 'q']) url.searchParams.delete(key);
         if (state.months.length) url.searchParams.set('mesi', state.months.join(','));
         if (state.region) url.searchParams.set('regione', state.region);
         if (state.province) url.searchParams.set('provincia', state.province);
         if (state.category) url.searchParams.set('tipo', state.category);
         if (state.sector) url.searchParams.set('settore', state.sector);
+        if (state.articles.length) url.searchParams.set('articoli', state.articles.join(','));
         if (state.query) url.searchParams.set('q', state.query);
         history.replaceState(null, '', url.pathname + url.search + url.hash);
     }
@@ -293,11 +343,85 @@
         state.region = !state.province && Object.hasOwn(REGION_PROVINCES, params.get('regione')) ? params.get('regione') : '';
         state.category = Object.hasOwn(CATEGORIES, params.get('tipo')) ? params.get('tipo') : '';
         state.sector = Object.hasOwn(SECTORS, params.get('settore')) ? params.get('settore') : '';
+        state.articles = [...new Set(params.getAll('articoli').flatMap(value => value.split(',')))].filter(key => Object.hasOwn(ARTICLE_TYPES, key) && (!state.sector || ARTICLE_TYPES[key].sectors.includes(state.sector)));
         state.query = (params.get('q') || '').slice(0, 100);
         $('province-filter').value = state.province || (state.region ? 'regione:' + state.region : '');
         $('type-filter').value = state.category;
         $('sector-filter').value = state.sector;
         $('fair-search').value = state.query;
+    }
+    function positionArticleMenu() {
+        if (!$('article-filter').open) return;
+        const rect = $('article-summary').getBoundingClientRect();
+        const below = innerHeight - rect.bottom - 12, above = rect.top - 12;
+        const openAbove = below < Math.min(280, above);
+        $('article-filter').classList.toggle('opens-above', openAbove);
+        $('article-filter').querySelector('.fiere-article-menu').style.maxHeight = Math.max(100, Math.min(360, openAbove ? above : below)) + 'px';
+    }
+    function initArticles() {
+        for (let group = 0; group < ARTICLE_GROUPS.length; group++) {
+            const fieldset = node('fieldset', 'fiere-article-group');
+            fieldset.append(node('legend', '', ARTICLE_GROUPS[group]));
+            for (const [key, type] of Object.entries(ARTICLE_TYPES)) {
+                if (type.group !== group) continue;
+                const label = node('label', 'fiere-article-option');
+                const input = node('input');
+                input.type = 'checkbox'; input.value = key; input.name = 'articoli'; input.disabled = true;
+                const count = node('span', 'fiere-article-count');
+                count.setAttribute('aria-hidden', 'true');
+                label.append(input, node('span', '', type.label), count);
+                input.addEventListener('change', () => {
+                    state.articles = input.checked ? [...state.articles, key] : state.articles.filter(value => value !== key);
+                    changed(false);
+                });
+                fieldset.append(label);
+            }
+            $('article-options').append(fieldset);
+        }
+        $('clear-articles').addEventListener('click', () => { state.articles = []; changed(false); });
+        $('article-filter').addEventListener('toggle', positionArticleMenu);
+        window.addEventListener('resize', positionArticleMenu);
+        window.addEventListener('scroll', positionArticleMenu, { passive: true });
+        document.addEventListener('click', event => {
+            if (!$('article-filter').contains(event.target)) $('article-filter').open = false;
+        });
+        $('article-filter').addEventListener('keydown', event => {
+            if (event.key === 'Escape' && $('article-filter').open) {
+                event.preventDefault(); $('article-filter').open = false; $('article-summary').focus();
+            }
+        });
+    }
+    function renderArticles() {
+        const counts = Object.fromEntries(Object.keys(ARTICLE_TYPES).map(key => [key, 0]));
+        for (const event of filterEvents(state.events, { ...state, articles: [] })) {
+            for (const key of articleTypes(event)) counts[key]++;
+        }
+        for (const input of $('article-options').querySelectorAll('input')) {
+            const type = ARTICLE_TYPES[input.value];
+            input.disabled = !state.ready;
+            input.checked = state.articles.includes(input.value);
+            input.parentElement.hidden = Boolean(state.sector && !type.sectors.includes(state.sector));
+            input.parentElement.querySelector('.fiere-article-count').textContent = String(counts[input.value]);
+        }
+        for (const group of $('article-options').children) group.hidden = ![...group.querySelectorAll('label')].some(label => !label.hidden);
+        $('article-summary-text').textContent = !state.articles.length ? 'Tutte le tipologie' : state.articles.length === 1 ? ARTICLE_TYPES[state.articles[0]].label : state.articles.length + ' tipologie selezionate';
+        $('clear-articles').disabled = !state.articles.length;
+        const chips = document.createDocumentFragment();
+        for (const key of state.articles) {
+            const button = node('button', 'fiere-article-chip');
+            button.type = 'button';
+            button.setAttribute('aria-label', 'Rimuovi ' + ARTICLE_TYPES[key].label);
+            const cross = node('span', '', '×'); cross.setAttribute('aria-hidden', 'true');
+            button.append(node('span', '', ARTICLE_TYPES[key].label), cross);
+            button.addEventListener('click', () => {
+                state.articles = state.articles.filter(value => value !== key);
+                changed(false); $('article-summary').focus();
+            });
+            chips.append(button);
+        }
+        $('selected-articles').replaceChildren(chips);
+        $('selected-articles').hidden = !state.articles.length;
+        positionArticleMenu();
     }
     function renderMonths() {
         const pool = filterEvents(state.events, state, true);
@@ -473,7 +597,7 @@
         $('detail-editions').replaceChildren(editions);
         $('detail-editions-empty').hidden = Boolean(event.editions?.length);
         const facts = document.createDocumentFragment();
-        for (const [label, value] of [['Luogo', event.venue], ['Organizzatore', event.organizer], ['Orari indicati dalla fonte', event.hours], ['Categorie', event.merchandiseSectors.map(sector => SECTORS[sector]).join(' · ') || 'Settori da verificare'], ['Settori nella fonte', event.sectors], ['Posteggi dichiarati', event.stallCount ? event.stallCount + ' · ' + (event.stallCountNote || 'organico della manifestazione, non posti liberi') : '']]) {
+        for (const [label, value] of [['Luogo', event.venue], ['Organizzatore', event.organizer], ['Orari indicati dalla fonte', event.hours], ['Categorie', event.merchandiseSectors.map(sector => SECTORS[sector]).join(' · ') || 'Settori da verificare'], ['Tipologie di articolo', articleTypes(event).map(key => ARTICLE_TYPES[key].label).join(' · ')], ['Settori nella fonte', event.sectors], ['Posteggi dichiarati', event.stallCount ? event.stallCount + ' · ' + (event.stallCountNote || 'organico della manifestazione, non posti liberi') : '']]) {
             if (!value) continue;
             facts.append(node('dt', '', label), node('dd', '', value));
         }
@@ -511,8 +635,8 @@
     }
     function render() {
         const events = sortEvents(filterEvents(state.events, state));
-        renderMonths(); renderList(events); renderMap(events);
-        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '');
+        renderMonths(); renderArticles(); renderList(events); renderMap(events);
+        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (state.articles.length ? ' · ' + state.articles.length + (state.articles.length === 1 ? ' tipologia' : ' tipologie') : '');
         const extraCount = Number(Boolean(state.query));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
@@ -527,7 +651,8 @@
     }
     function reset() {
         clearTimeout(searchTimer);
-        Object.assign(state, { region: '', province: '', category: '', sector: '', months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
+        Object.assign(state, { region: '', province: '', category: '', sector: '', articles: [], months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
+        $('article-filter').open = false;
         for (const id of ['province-filter', 'type-filter', 'sector-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
         changed(false);
     }
@@ -656,6 +781,7 @@
     }
     function init() {
         initMapGestures();
+        initArticles();
         for (let i = 0; i < 12; i++) {
             const button = node('button', 'fiere-month'); button.type = 'button'; button.dataset.month = String(i + 1);
             button.setAttribute('aria-pressed', 'false'); button.setAttribute('aria-label', MONTHS[i]); button.title = MONTHS[i];
@@ -675,7 +801,11 @@
         });
         $('province-filter').addEventListener('change', () => { const value = $('province-filter').value; state.region = value.startsWith('regione:') ? value.slice(8) : ''; state.province = state.region ? '' : value; changed(true); });
         $('type-filter').addEventListener('change', () => { state.category = $('type-filter').value; changed(false); });
-        $('sector-filter').addEventListener('change', () => { state.sector = $('sector-filter').value; changed(false); });
+        $('sector-filter').addEventListener('change', () => {
+            state.sector = $('sector-filter').value;
+            state.articles = state.articles.filter(key => !state.sector || ARTICLE_TYPES[key].sectors.includes(state.sector));
+            changed(false);
+        });
         $('fair-search').addEventListener('input', () => {
             state.query = $('fair-search').value;
             clearTimeout(searchTimer); searchTimer = setTimeout(() => changed(false), 100);
