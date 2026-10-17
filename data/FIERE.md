@@ -3189,3 +3189,19 @@ WebKit 390), `scripts/test-fiere-pages.cjs` (4.214 pagine/1.515 sitemap),
 suite generale calendario su cinque formati/browser, sintassi e diff.
 Confronto JSON integrale: tutti i campi precedenti del catalogo, i 13
 resoconti e le sette esclusioni iniziali invariati. File estranei preservati.
+
+Pubblicazione dati `73aadd8`, Vercel READY
+`dpl_ALkaRg8Dqny9ekQQTpmoGpKCgK6K`. Catalogo e registro pubblico identici
+ai JSON locali, HTML e JS identici dopo normalizzazione CRLF/LF.
+Tutte le 20 pagine pubbliche HTTP 200 con presenza/assenza del bollino coerente.
+Verificati gli otto nuovi resoconti, testo delle note e collegamenti delle
+fonti su Chromium 1440/320 e WebKit 390; Millenaria e Merate controllate anche
+nel dialog del calendario. Nessun errore JavaScript o overflow rilevato.
+`scripts/test-fiere-attendance.cjs` passato anche sul sito pubblico nei tre
+formati/browser, inclusi popup, fonti e dati senza bollino.
+Ricontrollati dopo la pubblicazione tutti i 56 URL: le otto fonti principali
+dei nuovi resoconti sono HTTP 200. Pro Cantù è tornata HTTP 200; restano i
+403/404/410 già documentati, con alternative leggibili e originali conservati.
+Riscontri successivi in `sessione-02/dopo-pubblicazione/`, esiti browser in
+`verifica-online.json` e schermate nella stessa cartella della sessione.
+Nessun nuovo bollino attribuito ai dodici casi privi di dati sufficienti.

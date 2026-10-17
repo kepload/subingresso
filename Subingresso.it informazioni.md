@@ -9,7 +9,13 @@ Merate: refuso ottobre risolto con programma di dicembre; celle telefoniche
 distinte dagli ingressi. Ortogiardino–Cucinare, Natale cittadino, dati parziali
 e stima Bolzano controversa senza bollino. Originali e limiti in
 `Documents/ricerca-affluenza-fiere-20261017/sessione-02/`; dettaglio in
-`data/FIERE.md`. Cache JS69/JSON49; pubblicazione e verifiche finali da registrare.
+`data/FIERE.md`. Cache JS69/JSON49. Build, settori, affluenza, 4.214 pagine
+e suite calendario cinque formati/browser passati. Pubblicato `73aadd8`,
+Vercel READY `dpl_ALkaRg8Dqny9ekQQTpmoGpKCgK6K`; catalogo, registro,
+HTML e JS online identici. Verificate tutte le 20 pagine e gli otto nuovi
+resoconti/fonti su Chromium 1440/320 e WebKit 390; test affluenza online
+passato, otto fonti principali HTTP 200. Pro Cantù tornata HTTP 200 al
+ricontrollo; altri limiti e alternative registrati. Modifiche estranee intatte.
 
 **Affluenza fiere, 17 ottobre 2026:** nuova decisione dell’utente: valutare
 soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità.
