@@ -793,6 +793,7 @@ const server = http.createServer((req,res) => {
 });
 
 async function run(engine,name,viewport,base) {
+    const allMonths = Array.from({length:12}, (_, i) => i + 1).join(',');
     const browser = await engine.launch({headless:true});
     try {
         const context = await browser.newContext({viewport,hasTouch:viewport.width < 720});
@@ -806,9 +807,10 @@ async function run(engine,name,viewport,base) {
         async function matches(expected) {
             await count(expected.length);
             const ids = await page.locator('#map-markers > g').evaluateAll(markers => markers.flatMap(m => m.dataset.events.split(',')).sort());
-            assert.deepEqual(ids,expected.map(e => e.id).sort());
+            const hasMonths = await page.locator('#month-bar button[aria-pressed="true"]').count() > 0;
+            assert.deepEqual(ids,hasMonths ? expected.map(e => e.id).sort() : []);
             const list = await page.locator('.fiere-card').evaluateAll(cards => cards.map(c => c.dataset.eventId));
-            assert(list.every(id => ids.includes(id)));
+            assert(list.every(id => expected.some(event => event.id === id)));
             const today = await page.evaluate(() => {
                 const parts = new Intl.DateTimeFormat('en', {timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
                 return ['year','month','day'].map(type => parts.find(p => p.type === type).value).join('-');
@@ -822,6 +824,10 @@ async function run(engine,name,viewport,base) {
         await page.waitForFunction(() => document.querySelector('#map-provinces').children.length === 110);
         assert.equal(await page.locator('.nav-link-fiere').getAttribute('aria-current'), 'page');
         assert.equal(await page.locator('#month-bar button').count(),12);
+        assert.equal(await page.locator('#map-markers > g').count(),0,'Initial map has no markers without selected months');
+        assert.equal(await page.locator('#all-months').count(),0);
+        assert.equal(await page.locator('#reset-filters').count(),1);
+        assert.equal(await page.locator('.fiere-period-heading #reset-filters').textContent(),'Azzera filtri');
         assert.equal(await page.locator('#extra-filters').getAttribute('open'),null);
         assert.equal(await page.locator('#type-filter').isVisible(),false);
         assert.equal(await page.locator('#fair-search').isVisible(),false);
@@ -918,6 +924,8 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('#map-caption').textContent(),'Trascina e ingrandisci');
         await page.locator('#load-more').click();
         assert.equal(await page.locator('.fiere-card').count(),62);
+        await page.goto(base + '/fiere?mesi=' + allMonths);
+        await matches(events);
         for (const province of provinces) {
             await page.mouse.move(0,0);
             await page.selectOption('#province-filter',province);
@@ -958,28 +966,31 @@ async function run(engine,name,viewport,base) {
             assert.equal(await highlightedMarker.count(),0);
         }
         await page.locator('#reset-filters').click();
-        assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'false');
-        assert.equal(await page.locator('#all-months').textContent(),'Tutto l’anno');
-        assert.equal(await page.locator('#all-months').getAttribute('role'),'switch');
-        await page.locator('#all-months').click();
-        assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
-        assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'true');
-        assert.equal(await page.locator('#all-months').textContent(),'Tutto l’anno');
+        assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),0);
         await matches(events);
+        await page.goto(base + '/fiere?mesi=' + allMonths);
+        await matches(events);
+        assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
         await page.reload();
         await matches(events);
         assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
         await page.locator('[data-month="11"]').click();
         assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),11);
-        assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'false');
         await matches(events.filter(e => e.months.some(m => m !== 11)));
-        await page.locator('#all-months').click();
-        assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),12);
-        await page.locator('#all-months').click();
+        await page.locator('#reset-filters').click();
         assert.equal(await page.locator('#month-bar button[aria-pressed="true"]').count(),0);
-        assert.equal(await page.locator('#all-months').getAttribute('aria-checked'),'false');
         assert.equal(new URL(page.url()).searchParams.get('mesi'),null);
         await matches(events);
+        await page.locator('[data-month="11"]').click();
+        await matches(events.filter(e => e.months.includes(11)));
+        assert(await page.locator('#map-markers > g').count() > 0);
+        await page.locator('[data-month="11"]').click();
+        await matches(events);
+        assert.equal(new URL(page.url()).searchParams.get('mesi'),null);
+        await page.locator('#map-zoom-in').click();
+        assert.equal(await page.locator('#map-markers > g').count(),0,'Zoom keeps an unselected map empty');
+        await page.locator('#map-home').click();
+        assert.equal(await page.locator('#map-markers > g').count(),0);
         await page.locator('[data-month="11"]').click();
         await matches(events.filter(e => e.months.includes(11)));
         await page.locator('[data-month="12"]').click();
@@ -1053,6 +1064,8 @@ async function run(engine,name,viewport,base) {
         await page.locator('#reset-filters').click();
         await page.selectOption('#province-filter','Brescia');
         await matches(events.filter(e => e.province === 'Brescia'));
+        await page.locator('[data-month="10"]').click();
+        await matches(events.filter(e => e.province === 'Brescia' && e.months.includes(10)));
         const marker = page.locator('#map-markers > g').first();
         await marker.focus(); await page.keyboard.press('Enter');
         assert(await page.locator('#map-popup').isVisible());
@@ -1113,6 +1126,8 @@ async function run(engine,name,viewport,base) {
         await matches(ar.filter(e => e.merchandiseSectors.includes('alimentare') && e.months.includes(10)));
         await page.locator('#reset-filters').click();
         await count(events.length);
+        await page.goto(base + '/fiere?mesi=' + allMonths);
+        await matches(events);
         const before = await page.locator('#italy-map').getAttribute('viewBox');
         await page.locator('#map-zoom-in').click();
         assert.notEqual(await page.locator('#italy-map').getAttribute('viewBox'),before);

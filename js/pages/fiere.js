@@ -210,7 +210,7 @@
         return event.months.map(month => MONTHS[month - 1]).join(' / ');
     }
     function selectedMonthsLabel() {
-        return !state.months.length || state.months.length === 12 ? 'Tutto l’anno' : state.months.map(month => MONTHS[month - 1]).join(', ');
+        return !state.months.length ? 'Nessun mese selezionato' : state.months.length === 12 ? 'Tutti i mesi' : state.months.map(month => MONTHS[month - 1]).join(', ');
     }
     function syncURL() {
         const url = new URL(location.href);
@@ -241,7 +241,6 @@
     }
     function renderMonths() {
         const pool = filterEvents(state.events, state, true);
-        $('all-months').setAttribute('aria-checked', String(state.months.length === 12));
         for (const button of $('month-bar').children) {
             const month = Number(button.dataset.month);
             button.setAttribute('aria-pressed', String(state.months.includes(month)));
@@ -355,7 +354,7 @@
         updateMapView();
         // Convert screen pixels to the SVG coordinate system to keep markers tappable on zoom.
         const scale = Math.max(state.view[2] / Math.max($('italy-map').clientWidth, 1), state.view[3] / Math.max($('italy-map').clientHeight, 1));
-        const groups = clusterEvents(events, 28 * scale);
+        const groups = state.months.length ? clusterEvents(events, 28 * scale) : [];
         const fragment = document.createDocumentFragment();
         for (const group of groups) {
             const cities = [...new Set(group.events.map(event => event.city))];
@@ -620,7 +619,6 @@
             if (!from || !to) return;
             state.months = intervalMonths(from, to); changed(false);
         });
-        $('all-months').addEventListener('click', () => { state.months = state.months.length === 12 ? [] : intervalMonths(1, 12); $('month-from').value = ''; $('month-to').value = ''; changed(false); });
         $('province-filter').addEventListener('change', () => { const value = $('province-filter').value; state.region = value.startsWith('regione:') ? value.slice(8) : ''; state.province = state.region ? '' : value; changed(true); });
         $('type-filter').addEventListener('change', () => { state.category = $('type-filter').value; changed(false); });
         $('sector-filter').addEventListener('change', () => { state.sector = $('sector-filter').value; changed(false); });

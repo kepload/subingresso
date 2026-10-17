@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
     <link rel="stylesheet" href="/css/tailwind.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/fiere.css?v=22">
+    <link rel="stylesheet" href="/css/fiere.css?v=23">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -30,7 +30,7 @@
     <section class="fiere-filters" aria-label="Filtra le fiere">
         <div class="fiere-period-heading">
             <h2><i class="fa-regular fa-calendar" aria-hidden="true"></i> Quando</h2>
-            <button type="button" id="all-months" class="fiere-toggle" role="switch" aria-label="Tutto l’anno" aria-checked="false" aria-controls="month-bar"><span>Tutto l’anno</span><span class="fiere-toggle-track" aria-hidden="true"><span></span></span></button>
+            <button type="button" id="reset-filters" class="fiere-reset">Azzera filtri</button>
         </div>
         <div id="month-bar" class="fiere-months" role="group" aria-label="Mesi dell’anno"></div>
         <div class="fiere-place">
@@ -55,7 +55,7 @@
         </details>
     </section>
 
-    <div class="fiere-results-heading"><p id="results-summary" role="status" aria-live="polite">Caricamento del calendario…</p><button id="reset-filters" type="button" class="fiere-reset">Azzera filtri</button></div>
+    <div class="fiere-results-heading"><p id="results-summary" role="status" aria-live="polite">Caricamento del calendario…</p></div>
     <div id="catalog-error" class="fiere-error" hidden><p>Il calendario non è stato caricato. Controlla la connessione e riprova.</p><button id="retry-catalog" class="fiere-button" type="button">Riprova</button></div>
     </div>
         <section class="fiere-map-panel" aria-labelledby="map-title">
@@ -94,6 +94,6 @@
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/data.js?v=20"></script>
 <script src="/js/auth.js?v=22"></script>
-<script src="/js/pages/fiere.js?v=62"></script>
+<script src="/js/pages/fiere.js?v=63"></script>
 </body>
 </html>

@@ -1,5 +1,15 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Fiere, 17 ottobre 2026: Azzera filtri accanto a Quando sostituisce lo switch
+Tutto l’anno; rimosso il duplicato sotto i filtri. renderMap genera puntini
+solo con almeno un mese selezionato, anche durante zoom/resize/caricamenti.
+Azzeramento o ultimo mese deselezionato svuotano la mappa e chiudono il popup;
+URL con mesi restano condivisibili. Elenco senza mesi ancora consultabile,
+riepilogo Nessun mese selezionato. Cache JS63/CSS23; catalogo invariato.
+Suite calendario cinque formati/browser e test valutazioni Chromium/WebKit
+locali passati: mappa iniziale vuota, altri filtri senza mesi, primo/ultimo
+mese, reset, URL, zoom e schede. Backup remoto prima delle modifiche.
+
 Filtri fiere, 17 ottobre 2026: eliminate le note sotto Cosa vendi e Quanto è
 conosciuta, compresa la legenda dei bollini. Mesi abbreviati in due righe da
 sei; sotto 360 px tre righe da quattro per conservare pulsanti di almeno

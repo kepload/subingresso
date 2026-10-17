@@ -115,7 +115,7 @@ async function run(engine, label, viewport, base) {
             assert.equal(await cards.locator('.fiere-reputation[data-reputation="' + level + '"]').count(), level === 'unknown' ? 0 : await cards.count());
             if (level === 'unknown') assert.equal(await cards.locator('.fiere-card-reputation').count(), 0);
             const markerCount = await page.locator('.fiere-marker').evaluateAll(markers => markers.reduce((total, marker) => total + marker.dataset.events.split(',').length, 0));
-            assert.equal(markerCount, expected.length);
+            assert.equal(markerCount, 0, 'Reputation alone does not show markers without selected months');
             const opener = cards.first().locator(level === 'unknown' ? '.fiere-card-button' : '.fiere-reputation');
             await opener.focus(); await page.keyboard.press('Enter');
             await page.waitForSelector('#fair-dialog[open]');
@@ -139,6 +139,10 @@ async function run(engine, label, viewport, base) {
         }
         await page.selectOption('#reputation-filter', 'recente');
         await page.selectOption('#province-filter', 'Genova');
+        await count(1);
+        assert.equal(await page.locator('.fiere-marker').count(), 0);
+        const recentGenova = catalog.events.find(e => api.reputationLevel(e) === 'recente' && e.province === 'Genova');
+        await page.locator('[data-month="' + recentGenova.months[0] + '"]').click();
         await count(1);
         await page.reload(); await count(1);
         assert.equal(await page.locator('#reputation-filter').inputValue(), 'recente');

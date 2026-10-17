@@ -1,5 +1,14 @@
 # Subingresso.it — informazioni e TO DO
 
+**Mappa e azzeramento, 17 ottobre 2026:** Azzera filtri spostato accanto
+a Quando al posto di Tutto l’anno. Nessun puntino senza mesi selezionati,
+anche con altri filtri o zoom; puntini al primo mese, rimossi all’ultimo
+deselezionato o all’azzeramento. URL con mesi conserva la selezione.
+Elenco consultabile anche senza mesi. Cache JS63/CSS23; catalogo invariato.
+Sintassi, suite calendario su cinque formati/browser e test valutazioni
+Chromium/WebKit passati localmente, inclusi mappa vuota, primo/ultimo mese,
+reset, filtri combinati, URL e zoom.
+
 **Filtri fiere, 17 ottobre 2026:** rimosse note e legenda sotto i filtri.
 Mesi Gen–Dic su due righe da sei, tre da quattro sotto 360 px, pulsanti
 di almeno 44 px e nomi completi accessibili. Cache JS62/CSS22.
