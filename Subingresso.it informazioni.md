@@ -1,5 +1,16 @@
 # Subingresso.it — informazioni e TO DO
 
+**Affluenza, secondo gruppo di 20, 17 ottobre 2026:** 12 fiere tradizionali,
+quattro mercatini e quattro espositive; otto nuovi resoconti, un solo nuovo
+bollino (Millenaria, almeno alta), sette resoconti senza fascia e dodici
+esclusioni motivate. Totale 40 ID verificati, 21 resoconti/19 esclusioni;
+tre alta, due molto alta, 16 senza fascia. Precedenti e catalogo conservati.
+Merate: refuso ottobre risolto con programma di dicembre; celle telefoniche
+distinte dagli ingressi. Ortogiardino–Cucinare, Natale cittadino, dati parziali
+e stima Bolzano controversa senza bollino. Originali e limiti in
+`Documents/ricerca-affluenza-fiere-20261017/sessione-02/`; dettaglio in
+`data/FIERE.md`. Cache JS69/JSON49; pubblicazione e verifiche finali da registrare.
+
 **Affluenza fiere, 17 ottobre 2026:** nuova decisione dell’utente: valutare
 soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità.
 Quattro fasce editoriali sulla media giornaliera di ingressi/presenze:

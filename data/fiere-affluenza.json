@@ -254,6 +254,217 @@
         "url": "https://www.it-exhibition.com/wp-content/uploads/2025/12/AF_CS_chiusura_14.12.25-1.pdf"
       },
       "note": "Il comunicato dell’organizzatore riporta un milione di visitatori nell’edizione invernale. Non definisce il totale come persone uniche o accessi. Nessun riuso per la distinta Anteprima d’Estate; nessun bollino giornaliero in assenza di definizione."
+    },
+    "lombardia-gonzaga-la-nuova-millenaria": {
+      "start": "2026-09-04",
+      "end": "2026-09-08",
+      "openDays": 5,
+      "value": 25000,
+      "unit": "presences",
+      "relation": "over",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Mantovauno · consuntivo e dichiarazione del presidente 2026",
+        "url": "https://mantovauno.it/cultura-e-spettacolo/la-nuova-millenaria-e-un-successo-25mila-presenze-ridiamo-forza-al-sistema-mantova/"
+      },
+      "note": "Il presidente della Fiera dichiara oltre 25.000 presenze nell’intero polo fieristico in cinque giorni. Il metodo non è pubblicato: non è un conteggio certificato né una misura davanti al banco. Il riscontro di Immergas indica 25.000 visitatori e conferma il 4–8 settembre: unità distinta, non usata per convertire visitatori in presenze. La pagina ufficiale conserva titolo 2025 e numero promozionale 35.000 visitatori non datato: non sostituisce il consuntivo 2026.",
+      "additionalSources": [
+        {
+          "label": "Fiera Millenaria · programma 2026",
+          "url": "https://www.fieramillenaria.it/millenaria-2026"
+        },
+        {
+          "label": "Immergas · riscontro e periodo 2026",
+          "url": "https://www.immergas.com/it/news/6aad09f448e7557cf3beafce/"
+        }
+      ]
+    },
+    "veneto-verona-fieracavalli": {
+      "start": "2025-11-06",
+      "end": "2025-11-09",
+      "openDays": 4,
+      "value": 140000,
+      "unit": "visitors",
+      "relation": "over",
+      "status": "declared",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Veronafiere · consuntivo Fieracavalli 2025",
+        "url": "https://www.fieracavalli.it/news-generiche/fieracavalli-2025-chiude-con-oltre-140mila-visitatori-edizione-piu-internazionale-di-sempre-con-presenze-da-79-paesi/"
+      },
+      "note": "L’organizzatore riporta più di 140.000 visitatori e operatori nei quattro giorni della 127ª edizione, nell’intero quartiere (12 padiglioni e sei aree esterne). Non definisce se il totale rappresenti persone distinte o accessi ripetuti; il riferimento agli ingressi in crescita non definisce l’unità del totale. Nessun bollino giornaliero.",
+      "additionalSources": []
+    },
+    "friuli-venezia-giulia-pordenone-ortogiardino": {
+      "start": "2026-03-07",
+      "end": "2026-03-15",
+      "openDays": 9,
+      "value": 60000,
+      "unit": "entries",
+      "relation": "over",
+      "status": "declared",
+      "scope": "whole-event",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Pordenone Fiere · consuntivo congiunto Ortogiardino–Cucinare 2026",
+        "url": "https://www.ortogiardinopordenone.it/nella-giornata-conclusiva-tanti-eventi-tra-degustazioni-show-cooking-e-premiazioni-2026/"
+      },
+      "note": "Il consuntivo dell’organizzatore comunica oltre 60.000 ingressi complessivi per l’abbinata Ortogiardino–Cucinare, aperta nove giorni. Il totale comprende entrambe le manifestazioni e non consente di isolare Ortogiardino o le sue corsie; nessun bollino per il singolo evento. Non usati i più di 20.000 visitatori del solo ultimo fine settimana come totale.",
+      "additionalSources": [
+        {
+          "label": "Pordenone Fiere · date 7–15 marzo 2026",
+          "url": "https://www.ortogiardinopordenone.it/ortogiardino-in-contemporanea-con-cucinare-dal-7-al-15-marzo-alla-fiera-di-pordenone/"
+        },
+        {
+          "label": "Nordest24 · riscontro del consuntivo",
+          "url": "https://www.nordest24.it/pordenone-ortogiardino-cucinare-record-visitatori-edizione-2026"
+        }
+      ]
+    },
+    "lombardia-merate-fiera-di-sant-ambrogio": {
+      "start": "2025-12-07",
+      "end": "2025-12-08",
+      "openDays": 2,
+      "value": 13011,
+      "unit": "visitors",
+      "relation": "exact",
+      "status": "estimated",
+      "scope": "whole-event",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Comune di Merate · comunicato sui dati Confcommercio Analytics 2025",
+        "url": "https://www.merateonline.it/public/filemanager/pub_files/2025/Dicembre/Numeri_Fiera_di_Sant_Ambrogio_2025_Comunicato_Stampa.pdf"
+      },
+      "note": "Il Comune riporta 13.011 visitatori e 17.642 visite contando anche i residenti. Analisi di celle telefoniche secondo Merateonline, affidabilità dichiarata 92%: non è una conta ai varchi. Area cittadina e festa diffusa, senza conteggio separato dei banchi. Il PDF scrive 7 e 8 ottobre, ma indica domenica e lunedì: il programma comunale e le due cronache identificano il 7–8 dicembre 2025. Refuso conservato e risolto tramite riscontri, senza convertire visitatori o visite in ingressi. LeccoNotizie è leggibile via ricerca ma restituisce 403 al download diretto.",
+      "additionalSources": [
+        {
+          "label": "LeccoNotizie · dati e limiti",
+          "url": "https://lecconotizie.com/societa/merate-societa/fiera-di-santambrogio-oltre-15mila-visitatori-a-merate/"
+        },
+        {
+          "label": "Merateonline · metodo delle celle telefoniche",
+          "url": "https://www.merateonline.it/notizie/152096/merate-fiera-s-ambrogio-ecco-il-report-della-giunta"
+        },
+        {
+          "label": "Comune di Merate · programma 7–8 dicembre 2025",
+          "url": "https://www.merateonline.it/public/filemanager/pub_files/2025/Dicembre/FieraAmbrogio2025.pdf"
+        }
+      ]
+    },
+    "lombardia-sarezzo-fiera-dei-santi-faustino-e-giovita": {
+      "start": "2026-02-20",
+      "end": "2026-02-24",
+      "openDays": 0,
+      "value": 34000,
+      "unit": "presences",
+      "relation": "exact",
+      "status": "estimated",
+      "scope": "partial",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Giornale di Brescia · rilevazione parziale della Fiera 2026",
+        "url": "https://www.giornaledibrescia.it/cronaca/in-piazza-con-noi-sarezzo-fiera-santi-faustino-giovita-2026-lqts5s1q"
+      },
+      "note": "La cronaca del 23 febbraio riferisce 34.000 presenze registrate già alle 19 del sabato, durante la fiera del 20–24 febbraio. Non chiarisce se il numero sia del solo sabato o cumulato né pubblica il metodo. Non è il consuntivo dei cinque giorni: durata effettiva del conteggio non verificata (openDays 0), nessuna media e nessun bollino.",
+      "additionalSources": [
+        {
+          "label": "Montagne & Paesi · periodo 20–24 febbraio 2026",
+          "url": "https://www.montagneepaesi.com/sarezzo-torna-la-fiera-dei-santi-faustino-e-giovita-cinque-giorni-di-festa-dal-20-al-24-febbraio/"
+        }
+      ]
+    },
+    "piemonte-casale-monferrato-mostra-nazionale-di-san-giuseppe": {
+      "start": "2026-03-13",
+      "end": "2026-03-22",
+      "openDays": 10,
+      "value": 143000,
+      "unit": "visitors",
+      "relation": "about",
+      "status": "estimated",
+      "scope": "fair",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Il Torinese · prima stima conclusiva San Giuseppe 2026",
+        "url": "https://iltorinese.it/2026/03/24/tradizione-e-innovazione-a-braccetto-alla-san-giuseppe-2026/"
+      },
+      "note": "Il resoconto conclusivo descrive una prima stima in linea con i circa 143.000 visitatori 2025, con leggero rialzo non quantificato, nei dieci giorni 13–22 marzo 2026 al Polo Coppo. Il valore è un riferimento approssimativo della stima, non un conteggio esatto 2026. Persone uniche e accessi non sono distinti: nessuna fascia giornaliera. Non usata la forchetta promozionale annua 100.000–140.000 del sito ufficiale.",
+      "additionalSources": [
+        {
+          "label": "Organizzatore D&N · periodo e orari 2026",
+          "url": "https://www.mostrasangiuseppe.it/"
+        }
+      ]
+    },
+    "trentino-alto-adige-trento-mercatino-di-natale-di-trento": {
+      "start": "2025-11-21",
+      "end": "2026-01-06",
+      "openDays": 0,
+      "value": 750000,
+      "unit": "presences",
+      "relation": "about",
+      "status": "estimated",
+      "scope": "whole-event",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "ANSA · bilancio APT Natale Trento 2025/2026",
+        "url": "https://www.ansa.it/amp/trentino/notizie/2026/01/08/al-mercatino-di-natale-di-trento-chiude-con-750.000-presenze_36bdd4ee-dccb-4aa9-8aaa-a600a30230fd.html"
+      },
+      "note": "ANSA riferisce circa 750.000 presenze dal bilancio APT; l’atto comunale attribuisce le 750.000 unità a Trento città del Natale e il Corriere al capoluogo nel periodo natalizio. Non sono isolati gli ingressi alle casette. Programma dal 21 novembre al 6 gennaio; giornate effettive non verificate a consuntivo, incluse eventuali chiusure straordinarie: openDays 0, nessuna media.",
+      "additionalSources": [
+        {
+          "label": "APT Trento · calendario originario 2025/2026",
+          "url": "https://partner.visittrento.it/documents/6573705/13323100/18.11.2025_Cs%20Trento%20Citt%C3%A0%20del%20Natale.pdf/aba515fa-74aa-ab76-f82a-79aef57b37cc"
+        },
+        {
+          "label": "Comune di Trento · rendiconto città del Natale",
+          "url": "https://albo.comune.trento.it/L190/atto/downloadSbustato/88354?activePage=35&idSezione=384&justGrid=1&order=asc&sort=unita"
+        }
+      ]
+    },
+    "trentino-alto-adige-bolzano-mercatino-di-natale-di-bolzano": {
+      "start": "2025-11-28",
+      "end": "2026-01-06",
+      "openDays": 0,
+      "value": 1000000,
+      "unit": "visitors",
+      "relation": "about",
+      "status": "estimated",
+      "scope": "whole-event",
+      "countingMethod": "not-published",
+      "checkedAt": "2026-10-17",
+      "reviewAfter": "2027-04-17",
+      "source": {
+        "label": "Alto Adige Innovazione · verifica critica della stima Bolzano 2025/2026",
+        "url": "https://www.altoadigeinnovazione.it/bolzano-numeri-mercatino/"
+      },
+      "note": "L’articolo del 24 gennaio riporta e contesta la stima di un milione di visitatori attribuita all’Azienda di Soggiorno, senza metodo ottenuto dalla redazione. Riporta anche picchi oltre 10.000 giornalieri, non una media. Cifra controversa conservata come stima riportata, non conteggio validato. I 94.653 pernottamenti comunali di dicembre non sono pubblico del mercatino. Perimetro e giornate effettive non verificati: nessun bollino. Pagina comunale leggibile via ricerca ma HTTP 410 al download diretto.",
+      "additionalSources": [
+        {
+          "label": "Informazioni turistiche · periodo 28 novembre–6 gennaio",
+          "url": "https://www.ciaspolada.it/documenti/stampati/2026/vdn_info_utili_inverno_2025_web.pdf"
+        },
+        {
+          "label": "Corriere Alto Adige · picchi, non media dell’edizione",
+          "url": "https://corrieredellaltoadige.corriere.it/notizie/cronaca/26_gennaio_04/alto-adige-mercatini-di-natale-da-record-commercianti-soddisfatti-fino-a-10-mila-visitatori-al-giorno-8c8ab3cf-c6c3-4242-a174-d02ea2c2dxlk.shtml"
+        }
+      ]
     }
   },
   "exclusions": [
@@ -291,6 +502,166 @@
       "id": "toscana-firenze-mostra-internazionale-dell-artigianato-mida",
       "url": "https://www.firenzefiera.it/it/press-area/comunicati-stampa/presentata-stamani-mida90-la-90esima-edizione-della-mostra-internazionale-dellartigianato-dal-25-aprile-al-3-maggio-alla-fortezza-da-basso-di-firenze",
       "reason": "Il comunicato di presentazione 2026 riporta 65.000 visitatori 2025: non è il consuntivo dell’edizione 2026 già conclusa; mancano conteggio giornaliero e definizione dell’unità."
+    },
+    {
+      "id": "lombardia-milano-oh-bej-oh-bej",
+      "url": "https://servizi.comune.milano.it/documents/20121/288802913/DD_2025_9634.pdf/786007e8-264e-e306-4af8-20a62d9cf4d0?t=1761837355935",
+      "reason": "Atto comunale e cronaca dell’8 dicembre descrivono la fiera, ma non pubblicano un totale del pubblico. YesMilano restituisce 403 via browser di ricerca: usati atto comunale e Tgcom24. Nessuna deduzione dalla tradizione o dalle fotografie. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "www.tgcom24.mediaset.it",
+          "url": "https://www.tgcom24.mediaset.it/2025/video/arriva-oh-bej-oh-bej-e-a-milano-e-subito-natale_106888033-02k.shtml"
+        },
+        {
+          "label": "www.yesmilano.it",
+          "url": "https://www.yesmilano.it/eventi/tutti-gli-eventi/fiera-oh-bej-oh-bej"
+        }
+      ]
+    },
+    {
+      "id": "lombardia-inveruno-antica-fiera-di-san-martino",
+      "url": "https://ticinonotizie.it/inveruno-la-fiera-di-san-martino-conquista-ancora-folla-e-tradizione-nonostante-la-pioggia/",
+      "reason": "Programma comunale 14–17 novembre, notiziario di dicembre e cronaca del 16 descrivono la fiera e l’affollamento, ma senza un consuntivo numerico del pubblico utilizzabile in questa verifica. Nessuna deduzione da tradizione, espositori o foto. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "www.comune.inveruno.mi.it",
+          "url": "https://www.comune.inveruno.mi.it/wp-content/uploads/2025/12/NUMERO-13-DICEMBRE-2025.pdf"
+        },
+        {
+          "label": "www.comune.inveruno.mi.it",
+          "url": "https://www.comune.inveruno.mi.it/novita/antica-fiera-di-san-martino-418-edizione/"
+        }
+      ]
+    },
+    {
+      "id": "lombardia-gorgonzola-fiera-di-santa-caterina",
+      "url": "https://www.fieridellafiera.it/wp/2025/11/21/241a-fiera-di-santa-caterina/",
+      "reason": "Programma dell’organizzatore e servizio comunale descrivono percorso e due giornate; la stampa riporta il numero degli ambulanti, non del pubblico. Nessun consuntivo numerico verificato; non riutilizzato il pubblico della distinta Sagra del Gorgonzola. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "comune.gorgonzola.mi.it",
+          "url": "https://comune.gorgonzola.mi.it/servizio/fiera-di-santa-caterina/"
+        },
+        {
+          "label": "www.ilgiorno.it",
+          "url": "https://www.ilgiorno.it/milano/cronaca/santa-caterina-in-moto-la-72867aa4"
+        }
+      ]
+    },
+    {
+      "id": "lombardia-oggiono-fiera-di-sant-andrea",
+      "url": "https://lecconotizie.com/societa/oggiono-si-prepara-al-ferun-quattro-giorni-di-tradizione-gusto-e-comunita/",
+      "reason": "Le fonti distinguono ristorazione dal 24 ottobre e banchi il 26–27; il resoconto d’apertura non offre un totale del pubblico. Le generiche migliaia attese non sono un consuntivo e i partecipanti al pranzo non sono il pubblico della fiera. LeccoNotizie leggibile via ricerca ma HTTP 403 diretto; alternativa cronaca Casateonline. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "www.casateonline.it",
+          "url": "https://www.casateonline.it/notizie/151731/oggiono-il-410-deg-fierone-al-via-con-il-pranzo-della-tradizione"
+        }
+      ]
+    },
+    {
+      "id": "lombardia-cantu-fiera-del-crocifisso",
+      "url": "https://www.comune.cantu.co.it/vivere_il_comune/eventi/evento_847.html",
+      "reason": "La pagina comunale 2025 documenta giornata e percorso ma non un conteggio del pubblico. La pagina Pro Cantù è generica e contiene indicazioni storiche discordanti: non usata per dedurre durata o presenze; nessun consuntivo numerico recente verificato. Pro Cantù leggibile via browser di ricerca ma HTTP 500 al download diretto; usata in alternativa la pagina comunale. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "www.procantu.co.it",
+          "url": "https://www.procantu.co.it/manifestazioni/"
+        }
+      ]
+    },
+    {
+      "id": "lombardia-cernusco-sul-naviglio-fiera-di-san-giuseppe",
+      "url": "https://prolococernusco.wordpress.com/2026/02/26/fiera-san-giuseppe-mercatini-sold-out/",
+      "reason": "Il sold out annunciato dalla Pro Loco riguarda iscrizioni degli espositori, non ingressi del pubblico. Programma comunale e resoconto associativo non forniscono un consuntivo di affluenza dei banchi. ABIO in timeout via ricerca: consultata in alternativa la pagina ARI, senza conteggi. Pagina ABIO leggibile al download diretto dopo timeout del browser di ricerca. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "s3.eu-south-1.amazonaws.com",
+          "url": "https://s3.eu-south-1.amazonaws.com/assets.h2o.cloudsinet/assets.cernuscosulnaviglio/uploads/2026/03/SAN-GIUSEPPE-2026-PROGRAMMA.pdf"
+        },
+        {
+          "label": "www.abiomartesana.it",
+          "url": "https://www.abiomartesana.it/2026/04/03/fiera-di-san-giuseppe-e-domenica-delle-palme-2026/"
+        },
+        {
+          "label": "www.aricernusco.it",
+          "url": "https://www.aricernusco.it/it/fiera-di-san-giuseppe.html"
+        }
+      ]
+    },
+    {
+      "id": "lombardia-magenta-fiera-di-san-biagio",
+      "url": "https://comune.magenta.mi.it/mercati-e-fiere/fiera-di-san-biagio-2024-2/",
+      "reason": "Il Comune documenta la giornata; la cronaca del 3 febbraio descrive un’affluenza condizionata dalla pioggia ma non la quantifica. Una descrizione di minore affollamento non giustifica un livello basso. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "ticinonotizie.it",
+          "url": "https://ticinonotizie.it/magenta-resiste-la-fiera-di-san-biagio-nonostante-il-tempo-incerto-fedeli-al-bacio-della-reliquia/"
+        }
+      ]
+    },
+    {
+      "id": "lombardia-paderno-dugnano-fiera-di-primavera",
+      "url": "https://www.comune.paderno-dugnano.mi.it/novita/notizie/dettaglio-notizia/Fiera-di-Primavera-00001/",
+      "reason": "Il Comune parla di diverse migliaia ogni anno, non di un conteggio dell’edizione conclusa. Banchi domenica 22, distinti dal programma 21–23: nessuna divisione del pubblico generico della festa per i giorni del mercato; consuntivo numerico non verificato. Pagina del programma del Comitato leggibile via ricerca ma HTTP 404 al download diretto: alternativa pagina comunale e archivio edizioni. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "www.fieradiprimavera.it",
+          "url": "https://www.fieradiprimavera.it/2026/03/03/on-line-il-programma/"
+        },
+        {
+          "label": "www.fieradiprimavera.it",
+          "url": "https://www.fieradiprimavera.it/archivio-edizioni/"
+        }
+      ]
+    },
+    {
+      "id": "lombardia-rivolta-d-adda-fiera-di-santa-apollonia",
+      "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/02-fiere/sch-il-calendario-2026-delle-manifestazioni-fieristiche-in-lombardia/allegati/dec-n-2656-all-c-fiere-regionali-2026-2-aggiornamento.pdf",
+      "reason": "Il calendario dell’ente e le pagine evento documentano l’8–9 febbraio; il programma più ampio comprende convegni precedenti. Nessun consuntivo numerico del pubblico verificato. Istituto Spallanzani mostra una verifica antibot: alternativa calendario regionale e scheda evento leggibili. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "www.panesalamina.com",
+          "url": "https://www.panesalamina.com/fiera-regionale-di-sant-apollonia-2026.html"
+        },
+        {
+          "label": "www.istitutospallanzani.it",
+          "url": "https://www.istitutospallanzani.it/2026/01/zootecnia-di-precisione-ai-convegni-di-santapollonia/"
+        }
+      ]
+    },
+    {
+      "id": "lombardia-crema-fiera-di-santa-lucia",
+      "url": "https://crema-news.it/la-foto/crema-s.lucia-le-bancarelle",
+      "reason": "La cronaca del 12 dicembre descrive i banchi a Crema ma senza cifre del pubblico; la pagina comunale è già passata al programma 2026. Non confusi la fiera di Crema, quella di Lodi e la distinta Santa Lucia di Piave; nessun numero dedotto dalle fotografie. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "comune.crema.cr.it",
+          "url": "https://comune.crema.cr.it/it/eventi/fiera-di-santa-lucia"
+        }
+      ]
+    },
+    {
+      "id": "toscana-arezzo-fiera-antiquaria",
+      "url": "https://comune.arezzo.it/novita/la-fiera-antiquaria-torna-nel-centro-storico-sabato-3-e-domenica-4-ottobre-2026",
+      "reason": "Avviso comunale e cronaca di ottobre non pubblicano un totale numerico del pubblico. I 225 banchi riportati dalla stampa e i visitatori del distinto polo Arezzo Fiere o di Cortonantiquaria non misurano l’affluenza della Fiera Antiquaria. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "arezzonetweek.it",
+          "url": "https://arezzonetweek.it/arezzo/arezzo-la-fiera-antiquaria-sfida-parma-tra-acquisti-e-turisti/"
+        }
+      ]
+    },
+    {
+      "id": "veneto-piazzola-sul-brenta-mercatino-dell-antiquariato-cose-d-altri-tempi",
+      "url": "https://www.propiazzola.it/eventi/fiori-e-colori/",
+      "reason": "La Pro Loco documenta il mercatino del 27 settembre insieme a Fiori e Colori, ma senza un consuntivo di pubblico separato. Nessun totale recente verificato; non attribuito ai banchi il pubblico dell’altra manifestazione. La data differisce dal 20 settembre nel catalogo regionale: anagrafica conservata, conflitto segnalato. Esclusione della verifica del 17 ottobre 2026, non prova di assenza di pubblico.",
+      "additionalSources": [
+        {
+          "label": "sagramap.com",
+          "url": "https://sagramap.com/evento/mercatino-dellantiquariato-di-piazzola-sul-brenta"
+        }
+      ]
     }
   ]
 }
