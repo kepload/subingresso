@@ -14,7 +14,8 @@ pagine4322/sitemap1625, calendario320, settori e sintassi passati localmente.
 4322 ID e dati precedenti conservati salvo aggiunte verificate su18 schede
 e relativi macrosettori. Cache JS75/CSS29/JSON52, pagina autonoma CSS2.
 Archivio Documents/ricerca-affinita-fiere-20261017; Olio Capitale403 diretto,
-contenuto primario letto via web. Pubblicazione da verificare.
+contenuto primario letto via web.
+Pubblicato `35d27cf`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/DJxc2iwEKCpp9BjEw9DWo7qJ9Sti); HTML/JS/CSS/catalogo/profili online identici. Test ricerca e affinità passati anche online su Chromium1440/820/320 e WebKit390, incluse varianti6/9, condizioni, fonti, selezione multipla e colori. Prove in `Documents/ricerca-affinita-fiere-20261017/online` e `pubblicazione.json`.
 Filtri compatti già online a98f526, Vercel BWxv1zQ4PJY93gWFshv1v9ocgswA:
 HTML/CSS identici e suite articoli online quattro formati passata. Conclusi.
 
@@ -25,8 +26,8 @@ larga quanto il gruppo. Altezza prima/dopo:1440 593→379,820 585→429,
 697 613→395,390 613→445,320 519→495; WebKit390613→445. Test articoli
 quattro formati passati e confronto sette casi senza overflow. Cache CSS28,
 JS74/JSON51 invariati; prove Documents/verifica-spazi-fiere-20261017.
-Ricerca miglioramento affinità articoli ancora in corso, separata da questo
-intervento di spaziatura; nessun nuovo voto pubblicato con questa modifica.
+Prima fase dedicata agli spazi; revisione dei voti pubblicata successivamente,
+con esiti registrati sopra.
 
 Affinità articolo fiere, 17 ottobre 2026: voto nella colonna destra delle
 anteprime, colori rosso→verde, motivi e fonte apribili. Senza articolo si apre

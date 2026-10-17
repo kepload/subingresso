@@ -54,7 +54,9 @@ esplicite per2. Conservazione integrale salvo aggiunte autorizzate, scadenze,
 validazione build, varianti/condizioni/fonti e quattro formati/browser passati.
 Regressioni articoli e affinità quattro formati, affluenza e pagine Chromium1440/320
 e WebKit390, calendario320, settori, build e sintassi passati. Tutte4322 pagine
-e1625 voci sitemap validate. Pubblicazione in corso. Cache JS75/CSS29/catalogo52.
+e1625 voci sitemap validate. Cache JS75/CSS29/catalogo52.
+
+Pubblicato `35d27cf`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/DJxc2iwEKCpp9BjEw9DWo7qJ9Sti); HTML/JS/CSS/catalogo/profili online identici. Test ricerca e affinità passati anche online su Chromium1440/820/320 e WebKit390, incluse varianti6/9, condizioni, fonti, selezione multipla e colori. Prove in `Documents/ricerca-affinita-fiere-20261017/online` e `pubblicazione.json`.
 
 Filtri compatti già pubblicati in `a98f526`, Vercel
 [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/BWxv1zQ4PJY93gWFshv1v9ocgswA).
