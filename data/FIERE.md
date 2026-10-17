@@ -50,7 +50,16 @@ mercatini natalizi e saloni Expo annuali. I comuni senza schede non sono dichiar
 privi di eventi. Queste sono attività residue della ricerca corrente, distinte
 dalla manutenzione periodica futura. Nessuna comunicazione o domanda a terzi.
 
-Pubblicazione e verifiche: in corso; non certificano la chiusura provinciale.
+Pubblicazione `8b962c2` verificata: [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/6dw7jRvmAWsowHAhMhNiBA6VNDNu).
+Catalogo pubblico identico al blob Git (SHA256
+`a0b70349eff49901a68e213b6e372cfc7a8073f9bb8921080a9cf9b946607b26`);
+HTML, JS e audit corrispondenti dopo normalizzazione CRLF/LF. Tutte le 47
+pagine online HTTP200, H1 e canonical esatti. Suite provinciale locale/online
+Chromium1440/320 e WebKit390: tutti gli ID in elenco e mappa, tre pagine senza
+JavaScript, nessun errore o overflow. Build, settori e verifica delle 4.322
+pagine/1.625 voci sitemap passati. Cache JS71/catalogo51. Riepilogo aggiornato
+solo per schede pubblicate: 4.322; province concluse restano 32, mancanti 78.
+La pubblicazione verificata non chiude la ricerca approfondita di Piacenza.
 
 ## Forlì-Cesena — ricerca documentale del 17 ottobre 2026
 

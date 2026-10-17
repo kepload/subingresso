@@ -543,6 +543,7 @@ In molti HTML (vendi, valutatore, dashboard) lo `<style>` inline viene caricato 
 
 ### Statistiche venditore (correzione 17 ottobre 2026)
 
+- Preferenza utente aggiornata: grafico sopra i quattro riquadri, solo etichetta e numero (es. “Click WhatsApp”), nessun sottotitolo ripetitivo o spiegazione visibile. Definizioni/storico nella voce apribile; rimossi sottotitolo del pannello, note Vetrina ripetute e suggerimento generico “Annunci in ordine”. Periodo compatto; calcoli e filtri conservati.
 - `Performance posteggi`: numeri e grafico soltanto nel periodo 7/30/90 giorni selezionato, stesso filtro annuncio. Quattro card: visualizzazioni (anteprime + aperture), messaggi ricevuti sul sito, clic telefono, clic WhatsApp; chat aperte e nuove aggiunte ai preferiti separati. Nessun totale storico o tasso che sommi clic e messaggi. I clic non confermano telefonate/invii esterni; le risposte del venditore e il supporto non sono messaggi ricevuti dai compratori.
 - Patch live `PATCH_SELLER_ANALYTICS_PERIOD_20261017.sql`: RPC privata estesa, giorni e confini UTC restituiti dal DB, messaggi giornalieri da eventi effettivi anche senza visite nello stesso giorno. Totali precedenti mantenuti solo per compatibilità; nessun backfill inventato. Storico visite/clic/preferiti dal 6 ottobre: avviso parziale e punti mancanti nel grafico, non zeri anteriori alla rilevazione. Hero superiore identificata come riepilogo complessivo, eliminato il falso “— 7g” sulle viste.
 - Prove: `scripts/verify-seller-analytics.sql` con ROLLBACK, 112 profili, isolamento e aggregati reali per 7/30/90, contatori, fixture temporanee per messaggi a mezzanotte/confini, date future, risposte/supporto e UTC anche con fuso +14. Guardie dati e trigger conservati. `scripts/verify-seller-analytics.js`; browser `scripts/test-seller-analytics.cjs` con Chart.js reale, Chromium 1440/320 e WebKit 390, fusi diversi, zero recente con 900 storiche, cambio annuncio/periodo, richieste fuori ordine, errori/riprova e overflow. Nessun messaggio reale nei test; snapshot funzione precedente e immagini in `Documents/verifica-statistiche-20261017`. Email settimanali ancora da correggere separatamente.
@@ -1751,3 +1752,16 @@ Filtro regioni fiere (16 ottobre 2026): nel menu Dove le 20 regioni sono selezio
 
 
 Forlì-Cesena (17 ottobre 2026): ricerca documentale corrente: 88 manifestazioni in 30 comuni, 65 aggiunte, 14 sintesi costo. Audit data/fiere-forli-cesena.json, limiti ed esclusioni in data/FIERE.md; altre 4.191 schede invariate, 23 ID conservati. Cache fiere.js70/catalogo50. Test dedicato scripts/test-fiere-forli-cesena.cjs usa PLAYWRIGHT_MODULE e FIERE_FC_BASE_URL per verifica pubblica. Pubblicato 567a1f5, Vercel riuscito; catalogo/audit/HTML/JS online identici, 88 pagine HTTP200 e test provinciale Chromium1440/390 e WebKit390 online passati. Build, settori, 4.279 pagine e suite generale cinque formati passati. TO DO spuntata dopo verifica: 32 province completate, 78 rimanenti. Nessun contatto a terzi, modifiche estranee escluse.
+
+
+Piacenza, 17 ottobre 2026: integrazione parziale di 47 manifestazioni in 24
+comuni (+43), audit data/fiere-piacenza.json applicato dal build. Quattro ID
+conservati e 4.275 schede esterne identiche. 17 allegati originali pubblici
+Pianello/Bobbio recuperati, regolamenti Piacenza/Cortemaggiore letti; date
+commerciali distinte dalle feste. Ricerca provinciale non conclusa: residui
+comunali/SUAP, Mercanti di Qualità, Paderna/Pontenure, Natale ed Expo nell’audit;
+TO DO non spuntata, riepilogo invariato 32 concluse/78 da fare, catalogo 4.322.
+Commit 8b962c2, Vercel riuscito, catalogo/audit/HTML/JS corrispondenti online;
+47 pagine HTTP200/H1/canonical e test provinciale Chromium1440/320/WebKit390
+locale e online tramite PLAYWRIGHT_MODULE passati. Build, settori e pagine
+4.322/sitemap1.625 passati. Cache JS71/JSON51; nessun contatto a terzi.

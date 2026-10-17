@@ -4,8 +4,8 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 17 ottobre 2026
 
-- **Statistiche posteggi:** pubblicate e verificate; riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Messaggi ricevuti sul sito distinti da clic telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Storico giornaliero dal 6 ottobre segnalato come parziale quando necessario. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
-- **Fiere:** 4.279 schede; ricerca approfondita conclusa e verificata online per 32 province, 78 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Preferenza corrente: grafico sopra i quattro riquadri, etichette e numeri senza sottotitoli; spiegazioni/storico solo nella voce apribile. Messaggi ricevuti distinti dai click telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
+- **Fiere:** 4.322 schede; ricerca approfondita conclusa e verificata online per 32 province, 78 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -13,7 +13,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Anteprime e date:** costo soltanto se disponibile, senza «Costo banco da verificare»/«Costi: vedi scheda»; note nella scheda. Nessun bollino per valutazione mancante né riga vuota. Giorno settimanale per fiere di 1–2 giorni, stesso formato in elenco/dettaglio; da 3 giorni e per periodi indicativi formato precedente. Niente diciture di stato accanto alle date: piccolo ! apribile al tocco/tastiera per riconferme, ricorrenze, periodi ed edizioni passate.
 - **Pagine autonome:** `/fiere/<id>` e archivio `/fiere/elenco`, stessi dati del calendario, apertura rapida nel dialog conservata. Schede incomplete consultabili ma noindex finché manca contenuto operativo sufficiente; sitemap automatica per le altre. Non certificano una ricerca provinciale conclusa.
 - **Blog regionale fiere:** serie 10/20 dopo Umbria; mancano Abruzzo, Basilicata, Calabria, Campania, Lazio, Molise, Puglia, Sardegna, Sicilia, Valle d'Aosta. Già presenti Lombardia, Veneto, Piemonte e le sette regioni registrate sotto.
-- **Ultime cache registrate:** fiere JS70/JSON50/CSS24, pagina fiera CSS2. Sono riferimenti storici: cercare sempre le versioni reali prima di modificare.
+- **Ultime cache registrate:** fiere JS71/JSON51/CSS24, pagina fiera CSS2. Sono riferimenti storici: cercare sempre le versioni reali prima di modificare.
 
 ## Registro recente: pubblicazioni e verifiche
 
@@ -838,7 +838,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **23. Rimini** — Emilia-Romagna; 115 manifestazioni, 27 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
 - [x] **24. Ravenna** — Emilia-Romagna
 - [x] **25. Forlì-Cesena** — Emilia-Romagna; 88 manifestazioni, 30 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
-- [ ] **26. Piacenza** — Emilia-Romagna
+- [ ] **26. Piacenza** — Emilia-Romagna — **ricerca incompleta**, integrazione verificata il 17 ottobre: 47 manifestazioni in 24 comuni (+43). Restano verifiche comunali/albi/SUAP, circuito Mercanti di Qualità, Pontenure/Paderna e calendari natalizi/Expo. Piste e limiti in `data/fiere-piacenza.json` e `data/FIERE.md`; non conteggiata fra le province concluse.
 - [ ] **27. Udine** — Friuli-Venezia Giulia
 - [ ] **28. Pordenone** — Friuli-Venezia Giulia
 - [ ] **29. Ferrara** — Emilia-Romagna
@@ -1022,3 +1022,13 @@ Le caselle qui sotto indicano gli articoli completati e pubblicati. Procedere pr
 - **Mantova conclusa**, sessione manuale in checkout isolato; Venezia allora sospesa. Alla ripresa rileggere stato, preservare `fiere-mantova.json`/voce build e aggiunte concorrenti; minimo JS37/catalogo30.
 - **Ore 22:00, Cremona conclusa/verificata online**, checkout `Documents/subingresso-cremona-20261014`; Venezia allora sospesa. Rileggere `origin/main`, preservare Mantova/Cremona (`fiere-cremona.json` + build) e ogni aggiunta; minimo JS38/catalogo31, mai rigenerare da snapshot vecchi. Pavia allora prossima libera, non avviata.
 - **Ore 23:03, Pavia riservata alla sessione manuale**, checkout `Documents/subingresso-pavia-20261014`; non avviarla in parallelo senza verificarne lo stato. Prima del push rileggere `origin/main` e mantenere tutte le province integrate. Venezia era ancora sospesa.
+
+
+Piacenza, 17 ottobre 2026 — integrazione parziale pubblicata `8b962c2`:
+47 manifestazioni in 24 comuni, prima quattro; 4.275 eventi esterni identici.
+Catalogo 4.322; cache JS71/JSON51. Vercel riuscito, catalogo/audit/HTML/JS
+corrispondenti al commit; 47 pagine HTTP200 con H1/canonical esatti e test
+provinciale Chromium1440/320 e WebKit390 online passati tramite PLAYWRIGHT_MODULE.
+Build, settori e 4.322 pagine locali passati. Ricerca approfondita ancora
+incompleta: TO DO non spuntata, riepilogo resta 32 completate e 78 da fare.
+Residui documentali in research.openLeads; nessun contatto a terzi.
