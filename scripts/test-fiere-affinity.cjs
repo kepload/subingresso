@@ -10,10 +10,11 @@ const catalog = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere.json'), '
 const today = '2026-10-17';
 const baseEvent = { source: { url: 'https://example.org/fair', label: 'Fonte della fiera', checkedAt: today }, editions: [{ year: 2026, start: '2026-12-01', end: '2026-12-02' }] };
 const rate = (sectors, article, patch = {}) => api.articleAffinity({ ...baseEvent, sectors, ...patch }, article, today);
-assert.equal(rate('Calzature', 'calzature').score, 8);
-assert.equal(rate('Merci varie, calzature', 'calzature').score, 7);
-assert.equal(rate('Abbigliamento, calzature e casalinghi', 'calzature').score, 7);
-assert.equal(rate('Abbigliamento', 'calzature').score, 6);
+assert.equal(rate('Calzature', 'calzature').score, 6);
+assert.equal(rate('Calzature', 'calzature', { name: 'Fiera delle calzature' }).score, 8);
+assert.equal(rate('Merci varie, calzature', 'calzature').score, 6);
+assert.equal(rate('Abbigliamento, calzature e casalinghi', 'calzature').score, 6);
+assert.equal(rate('Abbigliamento', 'calzature').score, null);
 assert.equal(rate('Solo settore non alimentare', 'dolciumi').score, 2);
 assert.equal(rate('Solo alimentari', 'calzature').score, 2);
 assert.equal(rate('Alimentari e non alimentari', 'calzature').score, null);
@@ -22,8 +23,8 @@ assert.equal(rate('Libri non ammessi', 'libri').score, 2);
 assert.equal(rate('Esclusi prodotti non alimentari', 'calzature').score, 2);
 assert.equal(rate('Esclusi prodotti non alimentari', 'dolciumi').score, null);
 assert.equal(rate('Solo alimentari e non alimentari', 'calzature').score, null);
-assert.equal(rate('Dolci confezionati; esclusa somministrazione', 'dolciumi').score, 8);
-assert.equal(rate('Vino confezionato; vietata somministrazione di bevande', 'bevande').score, 8);
+assert.equal(rate('Dolci confezionati; esclusa somministrazione', 'dolciumi').score, 6);
+assert.equal(rate('Vino confezionato; vietata somministrazione di bevande', 'bevande').score, 6);
 for (const sectors of ['Merci varie', 'Misto', 'Artigianato', 'Non alimentare', 'Antiquariato', 'Fiera espositiva']) assert.equal(rate(sectors, 'calzature').score, null, sectors);
 assert.equal(rate('Solo opere proprie; esclusi alimentari per hobbisti', 'dolciumi').score, null);
 assert.equal(rate('Bancarelle alimentari. Hobbisti: esclusi alimentari, antiquariato e libri', 'dolciumi').score, null);
@@ -38,8 +39,8 @@ assert.equal(api.articleAffinity(baseEvent, 'toString', today), null);
 assert.equal(api.articleAffinity(baseEvent, 'inesistente', today), null);
 assert.deepEqual(api.articleAffinitySummary(baseEvent, [], today), { items: [], best: null, score: null });
 const mixed = api.articleAffinitySummary({ ...baseEvent, sectors: 'Calzature; esclusi alimentari' }, ['calzature', 'dolciumi', 'intimo', 'calzature', 'inesistente'], today);
-assert.equal(mixed.score, 8);
-assert.deepEqual(mixed.items.map(item => item.score), [8, 2, 6]);
+assert.equal(mixed.score, 6);
+assert.deepEqual(mixed.items.map(item => item.score), [6, 2, null]);
 assert.equal(mixed.items.length, 3);
 assert.equal(mixed.best.article, 'calzature');
 const cento = catalog.events.find(e => e.id === 'emilia-romagna-cento-fiera-di-natale');
@@ -51,12 +52,13 @@ assert.equal(api.articleAffinity(prato, 'libri', today).score, null, 'Past-editi
 for (const event of catalog.events) {
     for (const article of Object.keys(api.ARTICLE_TYPES)) {
         const value = api.articleAffinity(event, article, today);
-        assert(value.score === null || [2, 6, 7, 8].includes(value.score));
+        assert(value.score === null || [2, 6, 7, 8, 9].includes(value.score));
         if (value.score !== null && value.score < 6) assert.equal(value.evidence, 'excluded');
     }
 }
-assert.deepEqual(catalog, JSON.parse(execFileSync('git', ['show', 'HEAD:data/fiere.json'], { cwd: root, encoding: 'utf8', maxBuffer: 40 * 1024 * 1024 })));
-console.log('Prudent affinity: direct/related/unknown, explicit exclusions, freshness, operator/area scope, food-service exception and 133,982 fair/article pairs passed.');
+const withoutResearch = data => ({ ...data, events: data.events.map(({ articleResearch, merchandiseSectors, ...event }) => event) });
+assert.deepEqual(withoutResearch(catalog), withoutResearch(JSON.parse(execFileSync('git', ['show', 'HEAD:data/fiere.json'], { cwd: root, encoding: 'utf8', maxBuffer: 40 * 1024 * 1024 }))));
+console.log('Prudent affinity: explicit/unknown, exclusions, freshness, operator/area scope, food-service exception and ' + catalog.events.length * Object.keys(api.ARTICLE_TYPES).length + ' fair/article pairs passed.');
 const server = http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');
     const file = path.resolve(root, (url.pathname === '/fiere' ? '/fiere.html' : url.pathname).slice(1));
@@ -136,7 +138,7 @@ async function run(engine, label, width, height, base) {
             const future = String(Number(current.slice(0, 4)) + 1) + '-12-01';
             const template = catalog.events[0];
             const definitions = ['Calzature; esclusi alimentari', 'Calzature e casalinghi', 'Calzature; hobbisti: esclusi alimentari'];
-            const fixtures = definitions.map((sectors, index) => ({ ...template, id: 'affinity-fixture-' + index, name: ['Scarpe: fonte mirata', 'Merci diverse', 'Regole per hobbisti'][index], sectors, attendance: undefined, months: [10], merchandiseSectors: ['non-alimentare'], source: { ...template.source, checkedAt: current }, editions: [{ year: Number(future.slice(0, 4)), start: future, end: future, dateType: 'confirmed', sourceUrl: template.source.url }] }));
+            const fixtures = definitions.map((sectors, index) => ({ ...template, articleResearch: undefined, id: 'affinity-fixture-' + index, name: ['Fiera delle calzature', 'Merci diverse', 'Regole per hobbisti'][index], sectors, attendance: undefined, months: [10], merchandiseSectors: ['non-alimentare'], source: { ...template.source, checkedAt: current }, editions: [{ year: Number(future.slice(0, 4)), start: future, end: future, dateType: 'confirmed', sourceUrl: template.source.url }] }));
             return route.fulfill({ json: { ...catalog, events: fixtures } });
         });
         await page.goto(base + '/fiere?articoli=calzature,dolciumi,intimo');
@@ -145,15 +147,15 @@ async function run(engine, label, width, height, base) {
         assert.equal(await fixture.getAttribute('data-score'), '8');
         await fixture.click();
         const values = await page.locator('#fit-items .fiere-fit-value').allTextContents();
-        assert.deepEqual(values, ['8/10', '2/10', '6/10']);
+        assert.deepEqual(values, ['8/10', '2/10', 'Da valutare']);
         const colors = await page.locator('#fit-items .fiere-fit-value').evaluateAll(nodes => nodes.map(node => ({ score: node.dataset.score, color: getComputedStyle(node).color, background: getComputedStyle(node).backgroundColor })));
         for (const value of colors) assert(contrast(value.color, value.background) >= 4.5);
         const [green, red] = colors;
         assert.notEqual(green.color, red.color);
         await page.locator('#close-article-fit').click();
-        assert.equal(await page.locator('[data-event-id="affinity-fixture-1"] .fiere-fit-badge').getAttribute('data-score'), '7');
+        assert.equal(await page.locator('[data-event-id="affinity-fixture-1"] .fiere-fit-badge').getAttribute('data-score'), '6');
         await page.locator('[data-event-id="affinity-fixture-2"] .fiere-fit-badge').click();
-        assert.deepEqual(await page.locator('#fit-items .fiere-fit-value').allTextContents(), ['7/10', 'Da valutare', '6/10']);
+        assert.deepEqual(await page.locator('#fit-items .fiere-fit-value').allTextContents(), ['6/10', 'Da valutare', 'Da valutare']);
         assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
         assert.deepEqual(errors, []);
         console.log(label + ' ' + width + 'x' + height + ': real scores, right-side cards, source/criteria, multi-article, neutral/red/green, contrast, touch, keyboard, reload and reset passed.');

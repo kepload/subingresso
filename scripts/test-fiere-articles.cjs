@@ -11,7 +11,7 @@ const api = globalThis.FiereCalendar;
 const catalog = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere.json'), 'utf8'));
 const events = catalog.events;
 const classify = sectors => api.articleTypes({ sectors });
-assert.equal(Object.keys(api.ARTICLE_TYPES).length, 31);
+assert.equal(Object.keys(api.ARTICLE_TYPES).length, 35);
 assert.deepEqual(classify('Abbigliamento, calzature, borse e pelletteria, intimo e calze'), ['abbigliamento', 'intimo', 'calzature', 'pelletteria']);
 assert.deepEqual(classify('Biancheria per la casa; casalinghi; profumeria; detersivi'), ['casalinghi', 'biancheria-casa', 'cosmetici', 'detergenti']);
 assert.deepEqual(classify('Bigiotteria artigianale, borse, ceramica, lavorazioni in legno e ricamo'), ['pelletteria', 'bigiotteria', 'ceramica', 'legno', 'tessili', 'gioielli-artigianali']);
@@ -27,13 +27,14 @@ assert.deepEqual(classify('Dolci e bevande confezionate; esclusa somministrazion
 assert.deepEqual(classify('Alimentari (ad esclusione di ambulanti con autorizzazioni per somministrazione alimenti e bevande) e non alimentari'), []);
 assert.deepEqual(classify('Produttori esclusivamente alimentari; formaggi'), ['salumi-formaggi']);
 const state = { months: [], query: '', articles: ['calzature', 'dolciumi'] };
-const union = events.filter(e => classify(e.sectors).some(type => state.articles.includes(type)));
+const union = events.filter(e => api.articleTypes(e).some(type => state.articles.includes(type)));
 assert(union.length > api.filterEvents(events, { ...state, articles: ['calzature'] }).length);
 assert.deepEqual(api.filterEvents(events, state), union);
 assert.deepEqual(api.filterEvents(events, { ...state, region: 'Lombardia', months: [10], category: 'tradizionale' }), union.filter(e => e.region === 'Lombardia' && e.months.includes(10) && e.category === 'tradizionale'));
 assert.deepEqual(api.filterEvents(events, { months: [], query: '' }), events, 'Old URLs and callers keep their results');
 const digest = text => createHash('sha256').update(text.replace(/\r\n/g, '\n')).digest('hex');
-assert.equal(digest(fs.readFileSync(path.join(root, 'data/fiere.json'), 'utf8')), digest(execFileSync('git', ['show', 'HEAD:data/fiere.json'], { cwd: root, encoding: 'utf8', maxBuffer: 40 * 1024 * 1024 })), 'Catalogue remains unchanged');
+const withoutResearch = data => ({ ...data, events: data.events.map(({ articleResearch, merchandiseSectors, ...event }) => event) });
+assert.equal(digest(JSON.stringify(withoutResearch(catalog))), digest(JSON.stringify(withoutResearch(JSON.parse(execFileSync('git', ['show', 'HEAD:data/fiere.json'], { cwd: root, encoding: 'utf8', maxBuffer: 40 * 1024 * 1024 }))))), 'Previous catalogue fields remain unchanged');
 console.log('Article classification, exclusions, union, combined filters and catalogue preservation passed.');
 const handler = require('../api/fiera');
 const server = http.createServer((req, res) => {
@@ -69,7 +70,7 @@ async function run(engine, engineName, width, height, base) {
         await page.goto(base + '/fiere');
         await verify(events);
         await page.locator('#article-summary').click();
-        assert.equal(await page.locator('#article-options input').count(), 31);
+        assert.equal(await page.locator('#article-options input').count(), 35);
         for (const type of ['calzature', 'dolciumi']) await checkbox(type).check();
         await verify(union);
         assert.equal(await page.locator('#selected-articles button').count(), 2);
@@ -122,7 +123,7 @@ async function run(engine, engineName, width, height, base) {
         await checkbox('dolciumi').focus();
         await page.keyboard.press('Space');
         await verify(events);
-        await checkbox('intimo').check();
+        await checkbox('detergenti').check();
         await verify([]);
         assert(await page.locator('#empty-results').isVisible());
         await page.locator('#article-summary').focus();

@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-17",
+  "profiles": [
+    {
+      "id": "gli-ambulanti-originali",
+      "eventIds": ["liguria-riva-ligure-mercato-ambulante-di-forte-dei-marmi", "lombardia-lissone-evento-mercato-gli-ambulanti-di-forte-dei-marmi", "lombardia-monza-il-mercatino-di-qualita-piu-famoso-d-italia"],
+      "theme": "Shopping moda, pelletteria e tessili casa del consorzio identificato nelle fonti locali",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["non-alimentare"],
+      "sources": [{"label": "Gli Ambulanti di Forte dei Marmi: prodotti e banchi di vendita", "url": "https://www.gliambulantidifortedeimarmi.it/about"}],
+      "articles": {
+        "abbigliamento": {"role": "core", "reason": "Abbigliamento e maglieria sono prodotti centrali dell'offerta commerciale descritta dal consorzio."},
+        "calzature": {"role": "core", "reason": "Il consorzio cita le scarpe tra le proposte di pelletteria dei banchi di vendita."},
+        "pelletteria": {"role": "core", "reason": "Borse e pelletteria sono una componente centrale della proposta di shopping."},
+        "biancheria-casa": {"role": "core", "reason": "Lenzuola, asciugamani e biancheria casa sono esplicitamente proposti ai clienti."},
+        "bigiotteria": {"role": "secondary", "reason": "I bijoux sono presenti nell'assortimento, insieme a moda e tessili."},
+        "ceramica": {"role": "conditional", "condition": "Porcellane per la casa", "reason": "Sono citate porcellane e ceramiche per la casa; non tutte le lavorazioni ceramiche sono equivalenti."}
+      }
+    },
+    {
+      "id": "versilia-crevalcore",
+      "eventIds": ["emilia-romagna-crevalcore-mercato-straordinario-della-versilia"],
+      "theme": "Mercato del Consorzio Versilia: moda, accessori e tessili",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["non-alimentare"],
+      "sources": [{"label": "Consorzio Versilia: assortimento e calendario Crevalcore", "url": "https://www.consorzioversiliafortedeimarmi.it/"}, {"label": "Città metropolitana: Mercato della Versilia a Crevalcore", "url": "https://turismoinpianura.cittametropolitana.bo.it/it/eventi/mercati/mercato-della-versilia-a-crevalcore"}],
+      "articles": {
+        "abbigliamento": {"role": "core", "reason": "Moda uomo, donna e bambino è una linea centrale del consorzio."},
+        "intimo": {"role": "core", "reason": "Il catalogo del consorzio comprende esplicitamente intimo, pigiami e calze."},
+        "calzature": {"role": "core", "reason": "Il catalogo presenta una linea di calzature classiche, eleganti e sportive."},
+        "pelletteria": {"role": "core", "reason": "Borse e piccola pelletteria sono linee commerciali dichiarate."},
+        "biancheria-casa": {"role": "core", "reason": "Sono proposti tessili d'arredo e biancheria da letto."},
+        "bigiotteria": {"role": "secondary", "reason": "La bigiotteria compare nell'assortimento accessori del consorzio."}
+      }
+    },
+    {
+      "id": "qualita-mercati-parma",
+      "eventIds": ["emilia-romagna-collecchio-mercato-di-qualita-natale-e-saldi", "emilia-romagna-fontanellato-mercato-di-qualita-festivita", "emilia-romagna-parma-mercato-di-qualita-via-montebello", "emilia-romagna-parma-mercato-di-qualita-via-zarotto", "emilia-romagna-parma-mercato-di-qualita-via-spezia"],
+      "theme": "Shopping del Consorzio La Qualità dei Mercati, calendario e format comuni",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["non-alimentare"],
+      "sources": [{"label": "Ascom Parma: consorzio e calendario ufficiale", "url": "https://www.ascom.pr.it/it-it/consorzio-qualita-dei-mercati-1.aspx"}, {"label": "Ascom Parma: proposte moda, calzature e tessili del consorzio", "url": "https://www.ascom.pr.it/it-it/notizie/mercato-in-via-spezia-a-parma-5.aspx"}],
+      "articles": {
+        "abbigliamento": {"role": "core", "reason": "La presentazione del format mette al centro moda stagionale e abbigliamento."},
+        "calzature": {"role": "secondary", "reason": "Le calzature sono citate nell'assortimento del mercato, che propone anche moda, casa e oggettistica."},
+        "biancheria-casa": {"role": "secondary", "reason": "I tessili casa sono esplicitamente presenti come parte dell'assortimento misto."}
+      }
+    },
+    {
+      "id": "vintage-forli",
+      "eventIds": ["emilia-romagna-forli-vintage-la-moda-che-vive-due-volte"],
+      "theme": "Vintage, remake, collezionismo e modernariato in aree distinte",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["non-alimentare", "antiquariato", "artigianato", "alimentare"],
+      "sources": [{"label": "Romagna Fiere: aree e prodotti di Vintage", "url": "https://www.fieravintage.it/fieravintage/elenco-espositori-2/"}, {"label": "Romagna Fiere: partecipazione e area Retro-Gusto", "url": "https://www.fieravintage.it/fieravintage/per-partecipare-2/"}],
+      "articles": {
+        "vintage": {"role": "core", "reason": "Il vintage è il tema principale e l'organizzatore descrive la possibilità di acquistare."},
+        "abbigliamento-vintage": {"role": "core", "reason": "L'area principale è dedicata ad abbigliamento e accessori del secolo scorso."},
+        "abbigliamento": {"role": "conditional", "condition": "Vintage o remake", "reason": "La categoria generica non distingue capi nuovi ordinari da vintage e capi rielaborati, cui sono dedicate le aree."},
+        "modernariato": {"role": "secondary", "reason": "Una specifica area propone design e modernariato del Novecento."},
+        "collezionismo": {"role": "secondary", "reason": "È presente un'area dedicata a oggetti da collezione."},
+        "giocattoli": {"role": "conditional", "condition": "Giocattoli antichi", "reason": "La fonte cita giocattoli antichi nell'area collezionismo, non un'offerta generica di giochi nuovi."},
+        "cosmetici": {"role": "conditional", "condition": "Profumi da collezione", "reason": "Sono indicati profumi da collezione: non è prova di un mercato per cosmetici nuovi ordinari."},
+        "elettronica": {"role": "conditional", "condition": "Radio e TV d'epoca", "reason": "L'area collezionismo cita radio e televisori del passato."},
+        "libri": {"role": "conditional", "condition": "Libri da collezione", "reason": "Libri e fumetti sono descritti nell'area dedicata agli oggetti del passato."},
+        "libri-antichi": {"role": "secondary", "reason": "Libri e fumetti da collezione sono esplicitamente citati nell'area dedicata."},
+        "tessili": {"role": "conditional", "condition": "Materiali rielaborati", "reason": "L'area Remake propone creazioni realizzate rielaborando tessuti e altri materiali dismessi."},
+        "street-food": {"role": "secondary", "condition": "Area Retro-Gusto", "reason": "È prevista una domanda specifica per i food truck: l'accesso riguarda quell'area, non un banco qualunque."}
+      }
+    },
+    {
+      "id": "expo-elettronica",
+      "eventIds": ["veneto-cerea-expo-elettronica-cerea", "lombardia-busto-arsizio-expo-elettronica"],
+      "theme": "Mostra mercato di elettronica professionale e di consumo",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["non-alimentare"],
+      "sources": [{"label": "Blu Nautilus: cosa si vende a Expo Elettronica", "url": "https://www.expoelettronica.it/esponi"}, {"label": "Expo Elettronica Cerea 2026: prodotti e componenti", "url": "https://www.expoelettronica.it/event-details/expo-elettronica-cerea-28-febbraio-1-marzo-2026"}],
+      "articles": {
+        "elettronica": {"role": "core", "reason": "La manifestazione è dichiaratamente una mostra mercato dove vendere elettronica nuova e ricondizionata."},
+        "usato": {"role": "conditional", "condition": "Solo elettronica", "reason": "L'usato ammesso nel format è elettronica: il dato non riguarda usato di qualsiasi genere."},
+        "vintage": {"role": "conditional", "condition": "Elettronica vintage", "reason": "La fonte menziona vintage e collezione nel settore elettronico, non abbigliamento vintage."},
+        "collezionismo": {"role": "conditional", "condition": "Collezione elettronica", "reason": "La collezione è riferita ai prodotti del settore tecnologico descritto."}
+      }
+    },
+    {
+      "id": "orticolario",
+      "eventIds": ["lombardia-cernobbio-orticolario"],
+      "theme": "Piante, paesaggio, giardini e proposta artistica selezionata",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["non-alimentare", "artigianato"],
+      "sources": [{"label": "Orticolario: regolamento 2026, tema, ammissione e vendita (articoli 5 e 20)", "url": "https://www.orticolario.it/wp-content/uploads/2025/11/Orticolario-2026_Regolamento-generale-con-form-di-iscrizione-spazio-vendita-1.pdf"}],
+      "articles": {
+        "piante": {"role": "core", "reason": "Le piante sono protagoniste del tema e il regolamento permette la vendita con consegna al pubblico; resta la selezione della commissione."},
+        "decorazioni": {"role": "conditional", "condition": "Arte e giardino", "reason": "La proposta deve essere coerente con natura, paesaggio e progetto artistico; la categoria regalo generica è troppo ampia."}
+      }
+    },
+    {
+      "id": "ortogiardino",
+      "eventIds": ["friuli-venezia-giulia-pordenone-ortogiardino"],
+      "theme": "Florovivaismo, giardinaggio e spazi all'aperto",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": false,
+      "sectors": ["non-alimentare"],
+      "sources": [{"label": "Pordenone Fiere: settori di Ortogiardino e distinzione da Cucinare", "url": "https://www.ortogiardinopordenone.it/"}, {"label": "Ortogiardino: mostre mercato e decori per esterni", "url": "https://www.ortogiardinopordenone.it/eventi-collaterali/"}],
+      "articles": {
+        "piante": {"role": "core", "reason": "Florovivaismo, fiori e giardinaggio costituiscono il settore centrale della manifestazione."},
+        "decorazioni": {"role": "conditional", "condition": "Per giardini e terrazzi", "reason": "La mostra mercato citata riguarda decori e arredi per spazi esterni, non decorazioni di qualsiasi genere."},
+        "tipici": {"role": "unknown", "condition": "Area Cucinare distinta", "reason": "Il salone gastronomico affiancato ha un percorso espositivo proprio: non trasferiamo l'ammissione dei prodotti alimentari a Ortogiardino."},
+        "bevande": {"role": "unknown", "condition": "Area Cucinare distinta", "reason": "Vini e birre sono riferiti al salone Cucinare: occorre verificare quella specifica partecipazione."}
+      }
+    },
+    {
+      "id": "olio-capitale",
+      "eventIds": ["friuli-venezia-giulia-trieste-olio-capitale"],
+      "theme": "Olio extravergine e settore oleario",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["alimentare"],
+      "sources": [{"label": "Aries: Olio Capitale, visitatori e percorso Esponi e Vendi", "url": "https://www.oliocapitale.it/pianifica/"}],
+      "articles": {
+        "olio": {"role": "core", "reason": "L'olio extravergine è il prodotto centrale; il sito prevede esplicitamente il percorso Esponi e Vendi."},
+        "agricoli": {"role": "conditional", "condition": "Olio e settore oleario", "reason": "Prodotti agricoli è una categoria troppo ampia: la fonte non documenta un mercato generico di frutta e verdura."},
+        "tipici": {"role": "conditional", "condition": "Prodotti del settore oleario", "reason": "La coerenza riguarda il settore oleario, non tutti i prodotti tipici alimentari."}
+      }
+    },
+    {
+      "id": "salone-libro-torino",
+      "eventIds": ["piemonte-torino-salone-internazionale-del-libro-di-torino"],
+      "theme": "Libri, editoria e lettori",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["non-alimentare"],
+      "sources": [{"label": "Salone del Libro: libreria e vendite documentate nell'edizione 2026", "url": "https://www.salonelibro.it/news/tutte-news/I-self-publisher-al-Salone0.html"}],
+      "articles": {"libri": {"role": "core", "reason": "La manifestazione è rivolta a libri e lettori; la pagina ufficiale documenta anche il percorso di vendita, con selezione degli aderenti."}}
+    },
+    {
+      "id": "eurochocolate",
+      "eventIds": ["umbria-perugia-eurochocolate"],
+      "theme": "Cioccolato e prodotti del cacao",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["alimentare"],
+      "sources": [{"label": "Eurochocolate Perugia 2026: espositori e Chocolate Show", "url": "https://www.eurochocolate.com/perugia2026/"}],
+      "articles": {
+        "cioccolato": {"role": "core", "reason": "Il Chocolate Show è specificamente dedicato alla proposta commerciale di cioccolato e prodotti al cacao."},
+        "dolciumi": {"role": "conditional", "condition": "Cioccolato e cacao", "reason": "Il tema non dimostra la pertinenza di qualunque caramella o dolciume: il prodotto va precisato."}
+      }
+    },
+    {
+      "id": "mercanteinfiera",
+      "eventIds": ["emilia-romagna-parma-mercanteinfiera"],
+      "theme": "Antichità, modernariato e collezionismo",
+      "checkedAt": "2026-10-17", "reviewAfter": "2027-04-17", "retail": true,
+      "sectors": ["non-alimentare", "antiquariato"],
+      "sources": [{"label": "Fiere di Parma: oggetto della mostra e visitatori interessati all'acquisto", "url": "https://www.mercanteinfiera.it/visitare/info-generali/"}],
+      "articles": {
+        "antiquariato": {"role": "core", "reason": "L'antiquariato è oggetto della mostra e la fonte descrive visitatori interessati all'acquisto."},
+        "modernariato": {"role": "core", "reason": "Il modernariato è uno dei settori centrali dell'offerta rivolta ai collezionisti."},
+        "collezionismo": {"role": "core", "reason": "Il collezionismo è indicato sia nell'oggetto della fiera sia nel pubblico cui si rivolge."}
+      }
+    }
+  ]
+}

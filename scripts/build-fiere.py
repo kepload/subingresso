@@ -21,6 +21,7 @@ REGION_ALIASES = {
 CATEGORIES = {"tradizionale", "artigianato", "sagra", "espositiva", "mercatino"}
 CATALOG_DATE = "2026-10-17"
 MERCHANDISE_SECTORS = ("alimentare", "non-alimentare", "antiquariato", "artigianato")
+ARTICLE_IDS = set("abbigliamento intimo calzature pelletteria bigiotteria casalinghi biancheria-casa cosmetici detergenti giocattoli libri elettronica piante animali salumi-formaggi forno dolciumi agricoli tipici bevande street-food cioccolato olio ceramica legno tessili gioielli-artigianali decorazioni antiquariato modernariato vintage usato collezionismo abbigliamento-vintage libri-antichi".split())
 
 
 def merchandise_sectors(row):
@@ -122,6 +123,20 @@ def validate_attendance(record):
         assert source["label"] and re.match(r"^https://[^/\s]+", source["url"])
 
 
+def validate_article_research(profile):
+    checked, review = (date.fromisoformat(profile[k]) for k in ("checkedAt", "reviewAfter"))
+    assert checked <= date.fromisoformat(CATALOG_DATE) < review and (review - checked).days <= 366
+    assert type(profile["retail"]) is bool and isinstance(profile["theme"], str) and profile["theme"]
+    assert profile["eventIds"] and len(set(profile["eventIds"])) == len(profile["eventIds"])
+    assert profile["sources"] and all(s["label"] and re.match(r"^https://[^/\s]+", s["url"]) for s in profile["sources"])
+    assert profile["sectors"] and set(profile["sectors"]) <= set(MERCHANDISE_SECTORS)
+    assert profile["articles"] and set(profile["articles"]) <= ARTICLE_IDS
+    for item in profile["articles"].values():
+        assert item["role"] in {"core", "secondary", "listed", "conditional", "unknown"}
+        assert isinstance(item["reason"], str) and 15 <= len(item["reason"]) <= 600
+        assert item["role"] != "conditional" or (isinstance(item.get("condition"), str) and item["condition"])
+
+
 def build_catalog():
     province_map = json.loads((ROOT / "data/italia-province.json").read_text(encoding="utf-8"))
     sardinia_provinces = {key(name): province for name, province in province_map["sardiniaMunicipalities"].items()}
@@ -203,6 +218,14 @@ def build_catalog():
     attendances = attendance_research["events"]
     for record in attendances.values():
         validate_attendance(record)
+    article_research = json.loads((ROOT / "data/fiere-affinita.json").read_text(encoding="utf-8"))
+    assert article_research["schemaVersion"] == 1 and article_research["checkedAt"] <= CATALOG_DATE
+    article_profiles = {}
+    for profile in article_research["profiles"]:
+        validate_article_research(profile)
+        for event_id in profile["eventIds"]:
+            assert event_id not in article_profiles, "Duplicate article profile: " + event_id
+            article_profiles[event_id] = {k: v for k, v in profile.items() if k != "eventIds"}
     for row in combined:
         city = locations.get((key(row["city"]), row["region"]))
         if city is None:
@@ -255,10 +278,16 @@ def build_catalog():
         event.pop("attendance", None)
         if event["id"] in attendances:
             event["attendance"] = attendances[event["id"]]
+        event.pop("articleResearch", None)
+        if event["id"] in article_profiles:
+            profile = article_profiles[event["id"]]
+            event["articleResearch"] = profile
+            event["merchandiseSectors"] = [sector for sector in MERCHANDISE_SECTORS if sector in set(event["merchandiseSectors"]) | set(profile["sectors"])]
         events.append(event)
     assert not (set(fees) - {event["id"] for event in events}), "Costs refer to unknown event IDs"
     assert not (set(reputations) - {event["id"] for event in events}), "Reputation refers to unknown event IDs"
     assert not (set(attendances) - {event["id"] for event in events}), "Attendance refers to unknown event IDs"
+    assert not (set(article_profiles) - {event["id"] for event in events}), "Article profiles refer to unknown event IDs"
     counts = Counter(e["region"] for e in events)
     assert len(events) == len({e["id"] for e in events}) and len(events) >= 200
     assert len(counts) == 20

@@ -1,5 +1,23 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Revisione affinità articoli,17/10: questa nota aggiorna la prima scala sotto.
+35 tipologie, incluse abbigliamento vintage/libri antichi/cioccolato/olio.
+18 fiere con profili da fonti primarie in data/fiere-affinita.json, copertura
+parziale, revisione entro17/04/2027. 9 centrale e vendita documentata,8 tema
+coerente e articolo documentato,7 complementare,6 generico o condizionato;
+niente6 automatico da famiglia vicina. Condizioni visibili («Vintage o remake»,
+«Solo elettronica»), provenienza/fonti nei voti apribili e schede autonome.
+Incertezza senza voto; negativi soltanto per esclusioni esplicite recenti
+globali, mantenendo tutte le cautele precedenti. 151.270 coppie controllate,
+test dedicato quattro formati passato; regressioni articoli/affinità/affluenza,
+pagine4322/sitemap1625, calendario320, settori e sintassi passati localmente.
+4322 ID e dati precedenti conservati salvo aggiunte verificate su18 schede
+e relativi macrosettori. Cache JS75/CSS29/JSON52, pagina autonoma CSS2.
+Archivio Documents/ricerca-affinita-fiere-20261017; Olio Capitale403 diretto,
+contenuto primario letto via web. Pubblicazione da verificare.
+Filtri compatti già online a98f526, Vercel BWxv1zQ4PJY93gWFshv1v9ocgswA:
+HTML/CSS identici e suite articoli online quattro formati passata. Conclusi.
+
 Spazi filtri fiere,17/10: quattro campi in griglia2×2 quando c’è spazio;
 sotto520px e nei pannelli tablet stretti etichetta96px accanto al campo.
 Margini/etichette/padding compatti, controlli e mesi ≥44px, popup articoli

@@ -40,7 +40,7 @@ for (const [id, record] of Object.entries(research.events)) {
     assert.equal(html.includes('data-attendance='), Boolean(assessment.level));
 }
 const original = JSON.parse(execFileSync('git',['show','HEAD:data/fiere.json'],{cwd:root,encoding:'utf8',maxBuffer:40*1024*1024}));
-const strip = data => ({...data,events:data.events.map(({attendance,...e})=>e)});
+const strip = data => ({...data,events:data.events.map(({attendance,articleResearch,merchandiseSectors,...e})=>e)});
 assert.deepEqual(strip(catalog),strip(original),'Every pre-existing catalogue field is preserved');
 assert.equal(catalog.events.filter(e => e.attendance).length,Object.keys(research.events).length);
 // Python build must reject unsupported evidence before publishing.

@@ -28,6 +28,8 @@
         tipici: { label: 'Conserve e prodotti tipici', group: 3, sectors: ['alimentare'], pattern: /\b(?:conserve|confetture|marmellate|sottoli|prodotti tipici|specialita (?:alimentari|gastronomiche))\b/ },
         bevande: { label: 'Bevande', group: 3, sectors: ['alimentare'], pattern: /\b(?:bevande|vino|vini|birra|birre|liquori|distillati|sidro|caffe)\b/ },
         'street-food': { label: 'Street food', group: 3, sectors: ['alimentare'], pattern: /\b(?:street food|food truck|cucina itinerante|cibo di strada|ristorazione ambulante)\b/ },
+        cioccolato: { label: 'Cioccolato e cacao', group: 3, sectors: ['alimentare'], pattern: /\b(?:cioccolat\w*|cacao)\b/ },
+        olio: { label: 'Olio d’oliva e derivati', group: 3, sectors: ['alimentare'], pattern: /\b(?:olio (?:di oliva|d oliva|extravergine)|prodotti (?:oleari|del settore oleario))\b/ },
         ceramica: { label: 'Ceramica', group: 4, sectors: ['non-alimentare', 'artigianato'], pattern: /\b(?:ceramica|ceramiche|terrecotte|terracotta)\b/ },
         legno: { label: 'Lavorazioni in legno', group: 4, sectors: ['non-alimentare', 'artigianato'], pattern: /\b(?:lavorazioni (?:in|del) legno|artigianato (?:in|del) legno|(?:oggetti|articoli|manufatti|sculture) (?:in|di) legno|intagli(?:o| in legno))\b/ },
         tessili: { label: 'Creazioni tessili', group: 4, sectors: ['non-alimentare', 'artigianato'], pattern: /\b(?:creazioni tessili|artigianato tessile|ricami|ricamo|uncinetto|merletti|tessitura artigianale)\b/ },
@@ -37,31 +39,69 @@
         modernariato: { label: 'Modernariato', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\bmodernariato\b/ },
         vintage: { label: 'Vintage', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\bvintage\b/ },
         usato: { label: 'Usato', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:usato|usati|usate|seconda mano|second hand|riuso)\b/ },
-        collezionismo: { label: 'Collezionismo', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:collezion\w*|oggetti da collezione|filatelia|numismatica|modellismo)\b/ }
+        collezionismo: { label: 'Collezionismo', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:collezion\w*|oggetti da collezione|filatelia|numismatica|modellismo)\b/ },
+        'abbigliamento-vintage': { label: 'Abbigliamento vintage', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:abbigliamento|vestiti|capi) (?:vintage|d epoca)\b/ },
+        'libri-antichi': { label: 'Libri antichi e da collezione', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:libri (?:antichi|d epoca|da collezione)|editoria antiquaria|antiquariato librario)\b/ }
     };
     const articleCache = new WeakMap();
-    function articleTypes(event) {
-        if (articleCache.has(event)) return articleCache.get(event);
+    const researchCache = new WeakMap();
+    function articleResearch(event, today = todayInRome()) {
+        const cached = researchCache.get(event);
+        if (cached?.today === today) return cached.value;
+        const profile = event.articleResearch;
+        const validDate = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
+        const valid = profile && validDate(profile.checkedAt) && validDate(profile.reviewAfter) && profile.checkedAt <= today && profile.reviewAfter >= today
+            && Date.parse(profile.reviewAfter) - Date.parse(profile.checkedAt) <= 366 * 86400000
+            && typeof profile.retail === 'boolean' && typeof profile.theme === 'string' && profile.theme
+            && Array.isArray(profile.sources) && profile.sources.length && profile.sources.every(source => source?.label && /^https:\/\/[^/\s]+/.test(source.url || ''))
+            && profile.articles && Object.entries(profile.articles).every(([key, item]) => Object.hasOwn(ARTICLE_TYPES, key)
+                && ['core', 'secondary', 'listed', 'conditional', 'unknown'].includes(item?.role) && typeof item.reason === 'string' && item.reason
+                && (item.role !== 'conditional' || (typeof item.condition === 'string' && item.condition)));
+        const value = valid ? profile : null;
+        researchCache.set(event, { today, value });
+        return value;
+    }
+    function articleTypes(event, today = todayInRome()) {
+        const cached = articleCache.get(event);
+        if (cached?.today === today) return cached.types;
         // Exclusions end at a source clause boundary. In particular, a ban on
         // serving food must not exclude a documented sale of packaged goods.
         const text = String(event.sectors || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
             .replace(/\b(?:esclus[oaie]|vietat[oaie]|non (?:sono )?ammess[oaie]|divieto di vendita|senza vendita|ad esclusione di)\b[^;.\n)]*/g, '')
             .replace(/[^a-z0-9]+/g, ' ');
         const types = Object.keys(ARTICLE_TYPES).filter(key => ARTICLE_TYPES[key].pattern.test(text));
-        articleCache.set(event, types);
+        const profile = articleResearch(event, today);
+        if (profile) for (const [key, item] of Object.entries(profile.articles)) {
+            if (item.role !== 'unknown' && !types.includes(key)) types.push(key);
+        }
+        articleCache.set(event, { today, types });
         return types;
     }
-    const AFFINITY_FAMILIES = [
-        ['abbigliamento', 'intimo', 'calzature', 'pelletteria', 'bigiotteria'],
-        ['casalinghi', 'biancheria-casa', 'detergenti', 'decorazioni'],
-        ['salumi-formaggi', 'forno', 'dolciumi', 'agricoli', 'tipici', 'bevande', 'street-food'],
-        ['bigiotteria', 'ceramica', 'legno', 'tessili', 'gioielli-artigianali', 'decorazioni'],
-        ['antiquariato', 'modernariato', 'vintage', 'usato', 'collezionismo']
-    ];
+    // A title can corroborate an already documented product; it cannot add
+    // products, prove sales or cause a negative rating.
+    const ARTICLE_THEMES = {
+        abbigliamento: /\b(?:abbigliamento|moda|fashion)\b/, intimo: /\b(?:intimo|calze)\b/,
+        calzature: /\b(?:calzature|scarpe)\b/, pelletteria: /\b(?:pelletteria|borse)\b/,
+        bigiotteria: /\b(?:bigiotteria|bijoux|gioielli)\b/, casalinghi: /\b(?:casalinghi|casa|arredo)\b/,
+        'biancheria-casa': /\b(?:biancheria|tessili)\b/, cosmetici: /\b(?:cosmetica|cosmetici|profumi|bellezza)\b/,
+        detergenti: /\b(?:detergenti|pulizia)\b/, giocattoli: /\b(?:giocattoli|giochi)\b/,
+        libri: /\b(?:libro|libri|editoria|fumetti|comics)\b/, elettronica: /\b(?:elettronica|elettronico|radio|radiantistica|informatica)\b/,
+        piante: /\b(?:fiori|piante|flor\w*|ortogiardino|orticolario|giardino|giardini)\b/,
+        animali: /\b(?:animali|pet|cani|gatti)\b/, 'salumi-formaggi': /\b(?:salumi|formaggi|formaggio|tomino)\b/,
+        forno: /\b(?:pane|forno|panificazione|focaccia)\b/, dolciumi: /\b(?:dolci|dolciumi|pasticceria)\b/,
+        agricoli: /\b(?:agricol\w*|ortofrutta|prodotti agricoli)\b/, tipici: /\b(?:prodotti tipici|sapori|gastronomia|enogastronom\w*)\b/,
+        bevande: /\b(?:vino|vini|birra|birre|bevande)\b/, 'street-food': /\b(?:street food|food truck|cucine del mondo|cibo di strada)\b/,
+        cioccolato: /\b(?:cioccolat\w*|eurochocolate|cacao)\b/, olio: /\b(?:olio|oli|oleario)\b/,
+        ceramica: /\b(?:ceramica|ceramiche)\b/, legno: /\b(?:legno|intaglio)\b/, tessili: /\b(?:ricamo|ricami|tessile|tessili|tessitura)\b/,
+        'gioielli-artigianali': /\b(?:gioielli|oreficeria)\b/, decorazioni: /\b(?:decorazioni|addobbi|presepi)\b/,
+        antiquariato: /\b(?:antiquari\w*|mercanteinfiera)\b/, modernariato: /\bmodernariato\b/,
+        vintage: /\bvintage\b/, usato: /\b(?:usato|riuso|seconda mano)\b/, collezionismo: /\b(?:collezion\w*|filatelia|numismatica|modellismo)\b/,
+        'abbigliamento-vintage': /\b(?:vintage|moda)\b/, 'libri-antichi': /\b(?:libri antichi|antiquariat\w*|collezion\w*)\b/
+    };
     function articleAffinity(event, article, today = todayInRome()) {
         if (!Object.hasOwn(ARTICLE_TYPES, article)) return null;
         const type = ARTICLE_TYPES[article];
-        const result = (score, evidence, reason) => ({ article, label: type.label, score, evidence, reason });
+        const result = (score, evidence, reason, extra = {}) => ({ article, label: type.label, score, evidence, reason, method: 'catalog', condition: '', ...extra });
         if (!/^https:\/\//.test(event.source?.url || '')) return result(null, 'unknown', 'Manca una fonte consultabile per i settori di questa fiera.');
         const text = String(event.sectors || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[-’']/g, ' ');
         const isFood = type.group === 3;
@@ -94,17 +134,29 @@
                 ? result(2, 'excluded', 'I settori della fonte escludono esplicitamente questo articolo o il suo settore per l’edizione indicata.')
                 : result(null, 'unknown', 'È riportata un’esclusione, ma va riconfermata per un’edizione attuale con una fonte recente.');
         }
-        const documented = articleTypes(event);
-        if (documented.includes(article)) {
-            const positiveText = text.replace(/\b(?:esclus[oaie]|vietat[oaie]|non (?:sono )?ammess[oaie]|divieto di vendita|senza vendita|ad esclusione di)\b[^;.\n)]*/g, '');
-            const broad = /\b(?:merci varie|generi vari|misto|mista|multisettoriale|commercio|artigian\w*|hobbist\w*|alimentar\w*|altri|altre|ecc|da verificare|da confermare)\b/.test(positiveText);
-            const focused = !broad && documented.every(key => ARTICLE_TYPES[key].group === type.group);
-            return focused
-                ? result(8, 'direct', 'L’articolo è citato e i prodotti descritti appartengono alla stessa famiglia: affinità tematica alta.')
-                : result(7, 'direct', 'L’articolo è citato tra i prodotti della fiera, insieme ad altri settori: affinità tematica buona.');
+        const profile = articleResearch(event, today);
+        const researched = profile?.articles[article];
+        if (researched) {
+            const score = { core: profile.retail ? 9 : 8, secondary: profile.retail ? 7 : 6, listed: 6, conditional: 6, unknown: null }[researched.role];
+            return result(score, researched.role, researched.reason, { method: 'reviewed', condition: researched.condition || '', sources: profile.sources, checkedAt: profile.checkedAt, theme: profile.theme });
         }
-        const family = AFFINITY_FAMILIES.find(group => group.includes(article) && documented.some(key => group.includes(key)));
-        if (family) return result(6, 'related', 'La fonte cita prodotti vicini a questo articolo, ma non l’articolo stesso: pertinenza da confermare.');
+        const documented = articleTypes(event, today);
+        if (documented.includes(article)) {
+            const title = normalize(event.name);
+            let condition = '';
+            if (article === 'abbigliamento' && /\babbigliamento (?:e accessori )?(?:vintage|d epoca)\b/.test(text)) condition = 'Abbigliamento vintage';
+            if (article === 'libri' && /\b(?:libri (?:antichi|d epoca|da collezione)|editoria del settore)\b/.test(text)) condition = 'Libri del settore indicato';
+            if (article === 'dolciumi' && documented.includes('cioccolato') && /\b(?:cioccolat\w*|eurochocolate|cacao)\b/.test(title)) condition = 'Focus cioccolato';
+            if (article === 'agricoli' && documented.includes('olio') && /\b(?:olio|oli|oleario)\b/.test(title)) condition = 'Focus settore oleario';
+            if (['usato', 'vintage', 'collezionismo'].includes(article) && documented.includes('elettronica') && ARTICLE_THEMES.elettronica.test(title)) condition = 'Solo settore elettronico';
+            if (condition) return result(6, 'conditional', 'La scheda riguarda un sottotipo preciso. Il voto è valido per quel sottotipo; gli altri prodotti della categoria restano da verificare.', { condition });
+            if (ARTICLE_THEMES[article]?.test(title)) return result(8, 'theme', 'L’articolo è documentato nei settori e coincide con il tema dichiarato della fiera. Non è una previsione delle vendite.');
+            const foodTheme = /\b(?:gastronom\w*|enogastronom\w*|sapori|gusto|vino|vini|birra|formaggi|salumi|food)\b/.test(title);
+            const fashionTheme = /\b(?:moda|fashion|abbigliamento)\b/.test(title);
+            const craftTheme = /\b(?:artigian\w*|creativ\w*)\b/.test(title);
+            if ((isFood && foodTheme) || (type.group === 0 && fashionTheme) || (type.group === 4 && craftTheme)) return result(7, 'secondary', 'L’articolo è citato e può completare il tema della fiera, ma non risulta il prodotto centrale.');
+            return result(6, 'listed', 'La presenza dell’articolo è documentata, ma mancano elementi sul pubblico interessato a quel prodotto: compatibilità generica da approfondire.');
+        }
         return result(null, 'unknown', 'I settori descritti non bastano per stimare l’affinità. L’assenza dell’articolo non prova che sia fuori tema.');
     }
     function articleAffinitySummary(event, articles = [], today = todayInRome()) {
@@ -301,7 +353,7 @@
             || a.event.name.localeCompare(b.event.name, 'it') || a.event.city.localeCompare(b.event.city, 'it'));
         return ranked.map(item => item.event);
     }
-    const api = { MONTHS, CATEGORIES, SECTORS, ARTICLE_GROUPS, ARTICLE_TYPES, articleTypes, articleAffinity, articleAffinitySummary, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
+    const api = { MONTHS, CATEGORIES, SECTORS, ARTICLE_GROUPS, ARTICLE_TYPES, articleResearch, articleTypes, articleAffinity, articleAffinitySummary, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
@@ -506,6 +558,16 @@
             if (item.score !== null) score.dataset.score = String(item.score);
             head.append(node('h3', '', item.label), score);
             row.append(head, node('p', '', item.reason));
+            if (item.condition) row.append(node('p', 'fiere-fit-condition', item.condition));
+            row.append(node('p', 'fiere-fit-provenance', item.method === 'reviewed' ? 'Verifica sulle fonti dell’organizzatore · ' + dateLabel(item.checkedAt) : 'Stima dai settori e dal tema della scheda'));
+            if (item.sources) {
+                const sources = node('div', 'fiere-fit-sources');
+                for (const source of item.sources) {
+                    const link = node('a', '', source.label + ' ↗');
+                    link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; sources.append(link);
+                }
+                row.append(sources);
+            }
             items.append(row);
         }
         $('fit-items').replaceChildren(items);
@@ -526,6 +588,7 @@
             const value = node('strong', 'fiere-fit-number', String(assessment.score));
             value.append(node('span', '', '/10'));
             button.append(value, node('span', 'fiere-fit-article', assessment.best.label));
+            if (assessment.best.condition) button.append(node('span', 'fiere-fit-condition', assessment.best.condition));
             if (assessment.items.length > 1) button.append(node('span', 'fiere-fit-more', 'Migliore su ' + assessment.items.length));
             button.setAttribute('aria-label', 'Affinità ' + assessment.best.label + ': ' + assessment.score + ' su 10. ' + (assessment.items.length > 1 ? 'Voto migliore tra ' + assessment.items.length + ' articoli. ' : '') + 'Vedi motivi per ' + event.name);
         } else {
@@ -785,7 +848,7 @@
         $('catalog-error').hidden = true;
         $('fair-list').setAttribute('aria-busy', 'true');
         try {
-            const data = await fetchJSON('/data/fiere.json?v=51');
+            const data = await fetchJSON('/data/fiere.json?v=52');
             if (!Array.isArray(data.provinces) || !data.provinces.length || new Set(data.provinces).size !== data.provinces.length
                 || !data.provinces.every(province => typeof province === 'string' && province) || !Array.isArray(data.events) || !data.events.length || !data.events.every(event => typeof event.id === 'string'
                 && typeof event.province === 'string' && data.provinces.includes(event.province)
