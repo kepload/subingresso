@@ -51,6 +51,67 @@
         articleCache.set(event, types);
         return types;
     }
+    const AFFINITY_FAMILIES = [
+        ['abbigliamento', 'intimo', 'calzature', 'pelletteria', 'bigiotteria'],
+        ['casalinghi', 'biancheria-casa', 'detergenti', 'decorazioni'],
+        ['salumi-formaggi', 'forno', 'dolciumi', 'agricoli', 'tipici', 'bevande', 'street-food'],
+        ['bigiotteria', 'ceramica', 'legno', 'tessili', 'gioielli-artigianali', 'decorazioni'],
+        ['antiquariato', 'modernariato', 'vintage', 'usato', 'collezionismo']
+    ];
+    function articleAffinity(event, article, today = todayInRome()) {
+        if (!Object.hasOwn(ARTICLE_TYPES, article)) return null;
+        const type = ARTICLE_TYPES[article];
+        const result = (score, evidence, reason) => ({ article, label: type.label, score, evidence, reason });
+        if (!/^https:\/\//.test(event.source?.url || '')) return result(null, 'unknown', 'Manca una fonte consultabile per i settori di questa fiera.');
+        const text = String(event.sectors || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[-’']/g, ' ');
+        const isFood = type.group === 3;
+        // Restrictions applying to a specific operator, stand or area are not
+        // restrictions on the whole fair. Do not infer rejection from its theme.
+        const qualified = /\b(?:hobbisti|artigiani|produttori|commercianti|operatori)\b|\b(?:area|sezione|categoria|stand)\b|\b(?:se|salvo|tranne|eccetto)\b/.test(text);
+        let excluded = false;
+        const rejects = clause => {
+            if (/\b(?:somministrazione|degustazione|preparazione)\b/.test(clause)) return false;
+            const nonFood = /\bnon alimentar\w*\b/.test(clause);
+            const food = /\b(?:alimentar\w*|agroalimentar\w*|enogastronom\w*)\b/.test(clause.replace(/\bnon alimentar\w*\b/g, ''));
+            return (nonFood && !isFood) || (food && isFood) || type.pattern.test(clause.replace(/[^a-z0-9]+/g, ' '));
+        };
+        for (const match of text.matchAll(/\b(?:esclus[oaie]|vietat[oaie]|non (?:sono )?ammess[oaie]|divieto di vendita|senza vendita|ad esclusione di)\b([^;.\n)]*)/g)) {
+            if (rejects(match[1])) excluded = true;
+        }
+        for (const clause of text.split(/[;.\n]/)) {
+            const postfix = clause.match(/^(.*?)\b(?:non (?:sono )?ammess[oaie]|vietat[oaie]|esclus[oaie])\s*$/);
+            if (postfix && rejects(postfix[1])) excluded = true;
+            const only = clause.match(/\b(?:solo|esclusivamente)\s+(?:(?:il|settore|prodotti|merci|generi)\s+)*(non alimentar\w*|alimentar\w*)\b(.*)/);
+            if (only && !/\b(?:alimentar\w*|artigian\w*|hobbist\w*)\b/.test(only[2]) && isFood === only[1].startsWith('non ')) excluded = true;
+        }
+        if (excluded) {
+            if (qualified) return result(null, 'unknown', 'La fonte distingue operatori o aree: non è certo che il limite riguardi il tuo banco.');
+            const checked = event.source.checkedAt || '';
+            const age = Date.parse(today) - Date.parse(checked);
+            const currentEdition = (event.editions || []).some(edition => edition.end ? edition.end >= today : edition.year >= Number(today.slice(0, 4)));
+            const recent = /^\d{4}-\d{2}-\d{2}$/.test(checked) && Number.isFinite(age) && new Date(checked).toISOString().slice(0, 10) === checked && age >= 0 && age <= 180 * 86400000 && currentEdition;
+            return recent
+                ? result(2, 'excluded', 'I settori della fonte escludono esplicitamente questo articolo o il suo settore per l’edizione indicata.')
+                : result(null, 'unknown', 'È riportata un’esclusione, ma va riconfermata per un’edizione attuale con una fonte recente.');
+        }
+        const documented = articleTypes(event);
+        if (documented.includes(article)) {
+            const positiveText = text.replace(/\b(?:esclus[oaie]|vietat[oaie]|non (?:sono )?ammess[oaie]|divieto di vendita|senza vendita|ad esclusione di)\b[^;.\n)]*/g, '');
+            const broad = /\b(?:merci varie|generi vari|misto|mista|multisettoriale|commercio|artigian\w*|hobbist\w*|alimentar\w*|altri|altre|ecc|da verificare|da confermare)\b/.test(positiveText);
+            const focused = !broad && documented.every(key => ARTICLE_TYPES[key].group === type.group);
+            return focused
+                ? result(8, 'direct', 'L’articolo è citato e i prodotti descritti appartengono alla stessa famiglia: affinità tematica alta.')
+                : result(7, 'direct', 'L’articolo è citato tra i prodotti della fiera, insieme ad altri settori: affinità tematica buona.');
+        }
+        const family = AFFINITY_FAMILIES.find(group => group.includes(article) && documented.some(key => group.includes(key)));
+        if (family) return result(6, 'related', 'La fonte cita prodotti vicini a questo articolo, ma non l’articolo stesso: pertinenza da confermare.');
+        return result(null, 'unknown', 'I settori descritti non bastano per stimare l’affinità. L’assenza dell’articolo non prova che sia fuori tema.');
+    }
+    function articleAffinitySummary(event, articles = [], today = todayInRome()) {
+        const items = [...new Set(articles)].filter(key => Object.hasOwn(ARTICLE_TYPES, key)).map(key => articleAffinity(event, key, today));
+        const best = items.filter(item => item.score !== null).sort((a, b) => b.score - a.score)[0] || null;
+        return { items, best, score: best?.score ?? null };
+    }
     // Editorial volume bands, not a forecast or a commercial assessment.
     const ATTENDANCE = {
         veryHigh: { label: 'Affluenza molto alta', min: 20000 },
@@ -238,7 +299,7 @@
             || a.event.name.localeCompare(b.event.name, 'it') || a.event.city.localeCompare(b.event.city, 'it'));
         return ranked.map(item => item.event);
     }
-    const api = { MONTHS, CATEGORIES, SECTORS, ARTICLE_GROUPS, ARTICLE_TYPES, articleTypes, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
+    const api = { MONTHS, CATEGORIES, SECTORS, ARTICLE_GROUPS, ARTICLE_TYPES, articleTypes, articleAffinity, articleAffinitySummary, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
@@ -432,6 +493,52 @@
             button.setAttribute('aria-label', MONTHS[month - 1] + ', ' + count + ' eventi');
         }
     }
+    function openArticleAffinity(event) {
+        const assessment = articleAffinitySummary(event, state.articles);
+        $('fit-event-name').textContent = event.name + ' · ' + event.city;
+        const items = document.createDocumentFragment();
+        for (const item of assessment.items) {
+            const row = node('li', 'fiere-fit-item');
+            const head = node('div', 'fiere-fit-item-head');
+            const score = node('strong', 'fiere-fit-value', item.score === null ? 'Da valutare' : item.score + '/10');
+            if (item.score !== null) score.dataset.score = String(item.score);
+            head.append(node('h3', '', item.label), score);
+            row.append(head, node('p', '', item.reason));
+            items.append(row);
+        }
+        $('fit-items').replaceChildren(items);
+        $('fit-selection-note').hidden = assessment.items.length < 2;
+        $('fit-source-text').textContent = event.sectors || 'La scheda non riporta settori sufficientemente precisi.';
+        $('fit-source').href = event.source.url;
+        $('fit-source').textContent = event.source.label + ' ↗';
+        $('fit-source-date').textContent = event.source.checkedAt ? 'Fonte consultata il ' + dateLabel(event.source.checkedAt) : '';
+        $('article-fit-dialog').showModal();
+    }
+    function articleAffinityBadge(event) {
+        const assessment = articleAffinitySummary(event, state.articles);
+        const button = node('button', 'fiere-fit-badge');
+        button.type = 'button';
+        button.append(node('span', 'fiere-fit-caption', 'Affinità articolo'));
+        if (assessment.score !== null) {
+            button.dataset.score = String(assessment.score);
+            const value = node('strong', 'fiere-fit-number', String(assessment.score));
+            value.append(node('span', '', '/10'));
+            button.append(value, node('span', 'fiere-fit-article', assessment.best.label));
+            if (assessment.items.length > 1) button.append(node('span', 'fiere-fit-more', 'Migliore su ' + assessment.items.length));
+            button.setAttribute('aria-label', 'Affinità ' + assessment.best.label + ': ' + assessment.score + ' su 10. ' + (assessment.items.length > 1 ? 'Voto migliore tra ' + assessment.items.length + ' articoli. ' : '') + 'Vedi motivi per ' + event.name);
+        } else {
+            button.append(node('strong', 'fiere-fit-pending', assessment.items.length ? 'Da valutare' : 'Scegli articolo'));
+            button.setAttribute('aria-label', assessment.items.length ? 'Affinità da valutare. Vedi motivi per ' + event.name : 'Scegli un articolo per valutare l’affinità con ' + event.name);
+        }
+        if (assessment.items.length) button.append(node('span', 'fiere-fit-more', 'Vedi motivi'));
+        button.addEventListener('click', clickEvent => {
+            if (assessment.items.length) return openArticleAffinity(event);
+            clickEvent.stopPropagation();
+            $('article-summary').scrollIntoView({ block: 'center' });
+            $('article-filter').open = true; $('article-summary').focus(); positionArticleMenu();
+        });
+        return button;
+    }
     function renderList(events) {
         const fragment = document.createDocumentFragment();
         for (const event of events.slice(0, state.visible)) {
@@ -456,17 +563,22 @@
             button.addEventListener('click', () => openDetail(event));
             const foot = node('div', 'fiere-card-foot');
             foot.append(category, button);
-            card.append(head);
+            const body = node('div', 'fiere-card-body');
+            const content = node('div', 'fiere-card-content');
+            const side = node('div', 'fiere-card-side');
+            content.append(head);
             const attendance = attendanceBadge(event, true);
-            if (attendance) { const wrap = node('div', 'fiere-card-attendance'); wrap.append(attendance); head.append(wrap); }
-            card.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
+            if (attendance) { const wrap = node('div', 'fiere-card-attendance'); wrap.append(attendance); side.append(wrap); }
+            side.append(articleAffinityBadge(event));
+            content.append(node('p', '', event.city + ' · ' + event.province), appendEditionDate(node('p', 'fiere-card-period'), edition, periodLabel(event)));
             const fee = feeLabel(event);
             if (fee) {
                 const cost = node('p', 'fiere-card-cost', fee);
                 cost.dataset.known = 'true';
-                card.append(cost);
+                content.append(cost);
             }
-            card.append(foot);
+            body.append(content, side);
+            card.append(body, foot);
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
@@ -653,6 +765,7 @@
         clearTimeout(searchTimer);
         Object.assign(state, { region: '', province: '', category: '', sector: '', articles: [], months: [], query: '', selected: '', view: HOME.slice(), visible: 12 });
         $('article-filter').open = false;
+        $('article-fit-dialog').close();
         for (const id of ['province-filter', 'type-filter', 'sector-filter', 'fair-search', 'month-from', 'month-to']) $(id).value = '';
         changed(false);
     }
@@ -817,6 +930,12 @@
         $('map-zoom-out').addEventListener('click', () => zoom(1 / 0.7));
         $('map-home').addEventListener('click', () => { state.view = HOME.slice(); $('map-popup').hidden = true; renderMap(filterEvents(state.events, state)); });
         $('close-detail').addEventListener('click', () => $('fair-dialog').close());
+        $('close-article-fit').addEventListener('click', () => $('article-fit-dialog').close());
+        $('article-fit-dialog').addEventListener('click', event => {
+            if (event.target !== $('article-fit-dialog')) return;
+            const rect = $('article-fit-dialog').getBoundingClientRect();
+            if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) $('article-fit-dialog').close();
+        });
         $('fair-dialog').addEventListener('click', event => { if (event.target === $('fair-dialog')) {
             const rect = $('fair-dialog').getBoundingClientRect();
             if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) $('fair-dialog').close();

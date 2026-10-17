@@ -2404,6 +2404,47 @@ riga «Tipologie di articolo» verificata nella pagina autonoma pubblica.
 Esiti di pubblicazione e copertura in `pubblicazione.json`/`copertura.json`
 nella cartella delle prove. Nessuna modifica al DB o comunicazione a terzi.
 
+### Affinità articolo — 17 ottobre 2026
+
+Richiesta: stima prudente di pertinenza dell’articolo, su10, nella parte
+destra delle anteprime e con colori rosso→verde. Nessuna previsione di
+vendite, incassi, affluenza, concorrenza o ammissione. Algoritmo editoriale
+trasparente `articleAffinity()`/`articleAffinitySummary()` in fiere.js:
+
+- **8:** articolo esplicitamente citato, soli prodotti della stessa famiglia
+  e assenza di indicazioni di offerta generica; **7:** citato tra merci varie
+  o settori diversi; **6:** famiglia merceologica vicina, articolo non citato.
+- **2:** esclusione esplicita dell’articolo/settore o solo settore opposto,
+  senza ambiguità su operatori/aree/eccezioni; fonte HTTPS con data valida
+  non futura, consultata entro180 giorni, edizione ancora attuale/futura.
+- Mancanza di prove, limiti per hobbisti/operatori/aree, vecchie edizioni o
+  fonti non recenti: **Da valutare**, senza voto né rosso. Divieti di sola
+  somministrazione non escludono la vendita. Nessun negativo dal nome o dal
+  tipo evento; non assegnati9/10 o10/10 senza ulteriori evidenze.
+
+Filtri articoli precedenti conservati: elenco selettivo invariato. Con più
+articoli il riquadro mostra il migliore con dicitura «Migliore su N»; dialog
+accessibile con tutti i singoli voti, motivi, fonte/testo originale, scala e
+limiti. Nessun articolo: pulsante «Scegli articolo» apre il filtro. Target
+almeno44 px e contrasto ≥4,5:1. Nessuna modifica a catalogo, ID o fonti.
+
+Controllate133.982 coppie (4.322×31): 7 voti2, 7.243 voti6, 1.558 voti7,
+888 voti8 e124.286 senza voto. I sette negativi sono i soli articoli
+alimentari a Natale Cento: la fonte regionale 2026, ricontrollata HTTP200
+il17 ottobre, conferma «previsto misto ma attualmente solo settore non
+alimentare». Prato Sesia: limitazioni reali ma edizione conclusa11 ottobre,
+quindi nessun negativo trasferito al futuro. TUTTOMELE: regole hobbisti
+non generalizzate alle bancarelle. Questi conteggi non sono nuove ricerche.
+
+Cache JS73/CSS26, JSON51 invariato. Test dedicato
+`scripts/test-fiere-affinity.cjs`: unità, freschezza/eccezioni, tutti i valori
+del catalogo e browser Chromium1440/820/320×568 + WebKit390 passati.
+Regressioni articoli sui quattro formati, affluenza sui tre formati e suite
+generale calendario320 passate; schermate in
+`Documents/verifica-affinita-fiere-20261017/`. Backup remoto verificato
+`backup/session-20261017-221322-affinita-articolo-fiere`; script interrotto
+dal noto wrapping PowerShell sullo stderr nativo, tag remoto presente.
+
 ### Macrosettori
 
 Quattro macro categorie: alimentare, non alimentare, antiquariato e vintage,

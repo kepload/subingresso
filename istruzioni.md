@@ -1,5 +1,21 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Affinità articolo fiere, 17 ottobre 2026: voto nella colonna destra delle
+anteprime, colori rosso→verde, motivi e fonte apribili. Senza articolo si apre
+la selezione; con più articoli il riquadro mostra il migliore e il dialog
+tutti i voti. Stima tematica prudente, nessuna previsione di incassi o posti.
+8 citato/offerta mirata; 7 citato/merci diverse; 6 famiglia vicina; dati
+insufficienti Da valutare. 2 solo con esclusione esplicita globale, fonte
+entro180 giorni ed edizione attuale/futura; nessun negativo per assenza,
+nome, sagra/espositiva, regole per operatori/aree, vecchie edizioni o solo
+divieto di somministrazione. Filtri e catalogo invariati. Cache JS73/CSS26.
+Test scripts/test-fiere-affinity.cjs: 133.982 coppie, casi limite e browser
+Chromium1440/820/320×568 + WebKit390 passati; regressioni articoli e affluenza
+passate, suite generale320 passata. Unica fiera con voti2 oggi: Natale Cento,
+sette articoli alimentari; fonte regionale HTTP200 riconfermata il17/10.
+Prove Documents/verifica-affinita-fiere-20261017, dettaglio data/FIERE.md.
+Pubblicazione e verifica online da completare.
+
 Filtri articoli fiere, 17 ottobre 2026: aggiunto «Tipologia di articolo» tra
 Cosa vendi e Tipo di evento. 31 checkbox in sei gruppi, OR tra selezioni e
 AND con gli altri filtri; contatori, rimozioni singole, deseleziona tutte,
