@@ -1,217 +1,46 @@
 # Subingresso.it — informazioni e TO DO
 
-**Affluenza, secondo gruppo di 20, 17 ottobre 2026:** 12 fiere tradizionali,
-quattro mercatini e quattro espositive; otto nuovi resoconti, un solo nuovo
-bollino (Millenaria, almeno alta), sette resoconti senza fascia e dodici
-esclusioni motivate. Totale 40 ID verificati, 21 resoconti/19 esclusioni;
-tre alta, due molto alta, 16 senza fascia. Precedenti e catalogo conservati.
-Merate: refuso ottobre risolto con programma di dicembre; celle telefoniche
-distinte dagli ingressi. Ortogiardino–Cucinare, Natale cittadino, dati parziali
-e stima Bolzano controversa senza bollino. Originali e limiti in
-`Documents/ricerca-affluenza-fiere-20261017/sessione-02/`; dettaglio in
-`data/FIERE.md`. Cache JS69/JSON49. Build, settori, affluenza, 4.214 pagine
-e suite calendario cinque formati/browser passati. Pubblicato `73aadd8`,
-Vercel READY `dpl_ALkaRg8Dqny9ekQQTpmoGpKCgK6K`; catalogo, registro,
-HTML e JS online identici. Verificate tutte le 20 pagine e gli otto nuovi
-resoconti/fonti su Chromium 1440/320 e WebKit 390; test affluenza online
-passato, otto fonti principali HTTP 200. Pro Cantù tornata HTTP 200 al
-ricontrollo; altri limiti e alternative registrati. Modifiche estranee intatte.
+Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Desktop\Ardit\subingresso.it`. Ricognizione tecnica: 6 ottobre 2026; unione documenti: 16 ottobre; snellimento: 17 ottobre. Le registrazioni mantengono le proprie date: questa revisione non verifica nuovamente sito o servizi live.
 
-**Affluenza fiere, 17 ottobre 2026:** nuova decisione dell’utente: valutare
-soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità.
-Quattro fasce editoriali sulla media giornaliera di ingressi/presenze:
-bassa <1.000, media 1.000–<5.000, alta 5.000–<20.000, molto alta ≥20.000.
-Prima ricognizione mirata di 20 fiere: 13 resoconti, di cui quattro con
-bollino (due molto alta, due alta); nove dati non confrontabili e sette
-esclusioni motivate. Nessuna bassa/media attribuita per dati mancanti.
-Fonti, unità, periodo, stime/dichiarazioni e criteri apribili nelle schede;
-niente conversione di visitatori unici, passaggi o pubblico di tutta una
-festa in affluenza dei banchi. Archivio `data/fiere-affluenza.json`, fonti
-fuori repo in `Documents/ricerca-affluenza-fiere-20261017`; copertura parziale.
-Anteprime, popup, dialog e pagine autonome allineati; dati precedenti delle
-4.214 fiere conservati. Cache JS68/JSON48/CSS24, fiera CSS2.
-Build, settori, verifiche dedicate Chromium/WebKit, pagine e suite generale
-su cinque formati/browser passati; campi precedenti conservati e contrasto
-testo bianco ≥4,90:1. Pubblicato d3d36e2, Vercel READY
-dpl_7yVZ4YRacJNdyDuBU3gY69TLw8MF; HTML/JS/CSS/catalogo online identici.
-Verificate le 13 pagine autonome e interazioni online Chromium 1440/320
-e WebKit 390: bollini, fonti, dati senza fascia, popup e assenza overflow.
-Backup tag e branch remoti creati;
-cleanup tag con errore PowerShell già noto. Dettaglio e limiti in data/FIERE.md.
+## Stato recente e decisioni correnti — 17 ottobre 2026
 
-**Tipo di evento visibile, 17 ottobre 2026:** spostato tra i filtri principali,
-sotto Cosa vendi, al posto di Quanto è conosciuta; rimosso da Altri filtri
-e dal relativo conteggio. Opzioni e comportamento conservati. Cache JS66;
-catalogo invariato. Sintassi e suite calendario Chromium 320 px passate;
-pubblicato 5fcfb38, Vercel READY dpl_3UK2tthZQbU29FWa4mDWxobBohdK.
-HTML/JS online identici; verifiche Chromium 1440/320 e WebKit 390 passate:
-posizione, conteggio, URL/ricaricamento, azzeramento e assenza overflow.
-Backup remoto creato;
-cleanup tag con errore PowerShell già noto, checkpoint valido.
+- **Fiere:** 4.214 schede; ricerca approfondita conclusa e verificata online per 31 province, 79 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
+- **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
+- **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
+- **Filtri:** «Tipo di evento» tra i principali sotto «Cosa vendi», fuori da «Altri filtri» e dal suo conteggio; opzioni/comportamento conservati. «Azzera filtri» accanto a «Quando» sostituisce «Tutto l'anno». Mappa senza puntini finché non si seleziona almeno un mese, anche con altri filtri o zoom; ultimo mese deselezionato/reset la svuotano. URL con mesi conserva la selezione; elenco consultabile senza mesi. Note/legenda sotto i filtri rimosse. Mesi Gen–Dic: due righe da sei, tre da quattro sotto 360 px; pulsanti ≥44 px, nomi completi accessibili.
+- **Anteprime e date:** costo soltanto se disponibile, senza «Costo banco da verificare»/«Costi: vedi scheda»; note nella scheda. Nessun bollino per valutazione mancante né riga vuota. Giorno settimanale per fiere di 1–2 giorni, stesso formato in elenco/dettaglio; da 3 giorni e per periodi indicativi formato precedente. Niente diciture di stato accanto alle date: piccolo ! apribile al tocco/tastiera per riconferme, ricorrenze, periodi ed edizioni passate.
+- **Pagine autonome:** `/fiere/<id>` e archivio `/fiere/elenco`, stessi dati del calendario, apertura rapida nel dialog conservata. Schede incomplete consultabili ma noindex finché manca contenuto operativo sufficiente; sitemap automatica per le altre. Non certificano una ricerca provinciale conclusa.
+- **Blog regionale fiere:** serie 10/20 dopo Umbria; mancano Abruzzo, Basilicata, Calabria, Campania, Lazio, Molise, Puglia, Sardegna, Sicilia, Valle d'Aosta. Già presenti Lombardia, Veneto, Piemonte e le sette regioni registrate sotto.
+- **Ultime cache registrate:** fiere JS69/JSON49/CSS24, pagina fiera CSS2. Sono riferimenti storici: cercare sempre le versioni reali prima di modificare.
 
-**Parametro fiere sospeso, 17 ottobre 2026:** su richiesta dell'utente,
-rimosso per ora «Quanto è conosciuta»: filtro e bollini in anteprime,
-popup mappa, dialog e pagine autonome. I vecchi URL con `rinomatezza`
-non filtrano più; gli altri filtri restano validi. Valutazioni e prove
-conservate per un eventuale ripristino; sospendere nuove assegnazioni.
-Cache JS65; catalogo, fonti e ricerca Rimini conservati.
-Sintassi, suite calendario su cinque formati/browser, verifiche dedicate
-Chromium/WebKit e 4.102 pagine autonome passate localmente.
-Pubblicato 36dc55b, Vercel READY dpl_EKVY7e3brYd6skzVy21Y4PjZJR3h;
-HTML/JS online identici, schede autonome senza bollini e catalogo invariato.
-Verifiche online Chromium computer/telefono e WebKit passate: vecchi URL,
-filtri combinati, mappa, schede e azzeramento. Backup remoto creato; cleanup tag
-con errore PowerShell già noto, checkpoint valido.
+## Registro recente: pubblicazioni e verifiche
 
-**Mappa e azzeramento, 17 ottobre 2026:** Azzera filtri spostato accanto
-a Quando al posto di Tutto l’anno. Nessun puntino senza mesi selezionati,
-anche con altri filtri o zoom; puntini al primo mese, rimossi all’ultimo
-deselezionato o all’azzeramento. URL con mesi conserva la selezione.
-Elenco consultabile anche senza mesi. Cache JS63/CSS23; catalogo invariato.
-Sintassi, suite calendario su cinque formati/browser e test valutazioni
-Chromium/WebKit passati localmente, inclusi mappa vuota, primo/ultimo mese,
-reset, filtri combinati, URL e zoom.
-Pubblicato 3d4d479, Vercel READY dpl_Eg5Wdjgf3trQJXGAtuujxsCn1SXM;
-HTML/JS/CSS online identici al commit. Test online Chromium computer/telefono
-e WebKit passati usando i dati pubblicati, preservata la ricerca Rimini concorrente.
+Le righe seguenti accorpano i resoconti ripetuti, senza costituire nuovi test. Nei relativi interventi: catalogo/dati precedenti e modifiche estranee conservati; asset pubblici confrontati col commit; Vercel riuscito/READY. Suite calendario su cinque formati/browser e verifiche Chromium computer/320 px e WebKit 390 px passate, salvo specifiche sotto. Backup remoti validi; il noto errore PowerShell nel cleanup dei tag non compromette il checkpoint.
 
-**Filtri fiere, 17 ottobre 2026:** rimosse note e legenda sotto i filtri.
-Mesi Gen–Dic su due righe da sei, tre da quattro sotto 360 px, pulsanti
-di almeno 44 px e nomi completi accessibili. Cache JS62/CSS22.
-Verifiche locali: suite calendario su cinque formati/browser e test
-valutazioni Chromium/WebKit passati; catalogo invariato.
-Pubblicato 30c4955, Vercel READY dpl_8Aztctw3oDCKzs58ZFVE6nvvgTUh;
-HTML/JS/CSS online identici al commit. Test valutazioni online passati
-su Chromium computer/telefono e WebKit.
+| Data/intervento | Esito e dettaglio specifico | Cache | Commit / deploy Vercel |
+| --- | --- | --- | --- |
+| 17/10, affluenza gruppo 2 | 12 tradizionali, 4 mercatini, 4 espositive; 8 nuovi resoconti, un nuovo bollino Millenaria almeno alta, 7 senza fascia, 12 esclusioni. Build, settori, affluenza, 4.214 pagine e suite generale passati. Tutte le 20 pagine e gli 8 resoconti/fonti verificati online; test affluenza riuscito, 8 fonti principali HTTP 200; catalogo/registro/HTML/JS identici. | JS69/JSON49 | `73aadd8` / `dpl_ALkaRg8Dqny9ekQQTpmoGpKCgK6K` |
+| 17/10, affluenza gruppo 1 | 20 casi: 13 resoconti, 4 bollini (2 molto alta/2 alta), 9 non confrontabili, 7 esclusioni. Anteprime/popup/dialog/pagine allineati; campi precedenti delle 4.214 fiere conservati. Build, settori, pagine e test dedicati locali/online passati; 13 pagine verificate, fonti e interazioni senza overflow; testo bianco ≥4,90:1. Backup tag e branch remoti; dettaglio/limiti in `data/FIERE.md`. | JS68/JSON48/CSS24; fiera CSS2 | `d3d36e2` / `dpl_7yVZ4YRacJNdyDuBU3gY69TLw8MF` |
+| 17/10, Tipo di evento | Sintassi, suite Chromium 320 e verifiche online 1440/320/WebKit 390: posizione, conteggio, URL/ricaricamento, reset, overflow. Catalogo invariato, HTML/JS identici. | JS66 | `5fcfb38` / `dpl_3UK2tthZQbU29FWa4mDWxobBohdK` |
+| 17/10, sospensione notorietà | Sintassi, suite cinque formati/browser, test dedicati e 4.102 pagine passati localmente; online vecchi URL, filtri combinati, mappa, schede e reset. HTML/JS identici, catalogo/fonti/ricerca Rimini conservati. | JS65 | `36dc55b` / `dpl_EKVY7e3brYd6skzVy21Y4PjZJR3h` |
+| 17/10, mappa/reset | Sintassi e test valutazioni locali/online: mappa vuota, primo/ultimo mese, filtri combinati, URL, zoom, reset; dati pubblicati usati nelle prove. Catalogo e ricerca Rimini concorrente conservati. | JS63/CSS23 | `3d4d479` / `dpl_Eg5Wdjgf3trQJXGAtuujxsCn1SXM` |
+| 17/10, filtri/mesi | Sintassi, suite generale e test valutazioni locali/online passati; catalogo invariato. | JS62/CSS22 | `30c4955` / `dpl_8Aztctw3oDCKzs58ZFVE6nvvgTUh` |
+| 16/10, pagine fiere | `50160c9`: 3.972 pagine, 1.292 schede in sitemap + archivio. Suite calendario e test pagine locali/online: senza JS, dialog senza navigazione, link dettaglio, overflow, sitemap, escaping, 404. | — | `50160c9` / `dpl_BmDkYWKAMdvJjpm7aJbTsqP4qmpD` |
 
-**Blog fiere Umbria, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
-in Umbria da conoscere se fai l’ambulante», ID `61741baf-f6cf-4048-a699-9b1916f0a9e0`,
-[/blog?post=migliori-fiere-umbria](https://subingresso.it/blog?post=migliori-fiere-umbria).
-Regione assente verificata live; 1.544 parole, dieci fiere tradizionali nelle
-due province, otto fonti raggiungibili e due richiami discreti al calendario.
-Distinte spunta Perugia con domanda già scaduta il 1° luglio, San Florido
-con termine 14 settembre e regola ordinaria San Feliciano 31 ottobre;
-disposizioni Santo Manno 2025 non estese al 2026. Marsciano 410 scartato;
-PDF Gubbio 403 diretto, dati confrontati con testo ufficiale indicizzato
-e pagina comunale con allegati raggiungibile. Pubblicazione, testo/meta/canonical,
-indice, sitemap e filtro regionale verificati su Chromium 1440/390 px,
-senza overflow; preservati gli 89 articoli precedenti. Serie ora 10/20:
-mancano Abruzzo, Basilicata, Calabria, Campania, Lazio, Molise, Puglia,
-Sardegna, Sicilia e Valle d’Aosta. Testo e riscontri in
-`Documents/articoli-subingresso/`, prefisso `migliori-fiere-umbria`,
-script `umbria-lavorazione.cjs`. Backup remoto verificato; cleanup tag
-con errore PowerShell già noto, checkpoint valido. Nessuna modifica
-al codice del sito o ai dati delle fiere.
+### Blog regionale — pubblicazioni del 16 ottobre 2026
 
-**Blog fiere Marche, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere nelle
-Marche da conoscere se fai l’ambulante», ID `f904bde5-356f-41db-bae5-4e0d73e6df8b`,
-[/blog?post=migliori-fiere-marche](https://subingresso.it/blog?post=migliori-fiere-marche).
-Regione assente verificata live; 1.699 parole, cinque province, nove fiere
-tradizionali e Acqualagna specializzata. Dodici fonti raggiungibili e due
-richiami discreti al calendario. San Crispino con assegnazioni già avviate e
-spunta da aggiornare; Grottammare domanda scaduta e graduatoria senza posto
-distinte. Sant’Agostino indicata a fine agosto per date discordanti nelle fonti.
-Sostituiti URL rimossi Ancona/Porto Sant’Elpidio; conservati i parametri necessari
-alla pagina Pesaro. Pubblicazione, testo/meta/canonical, indice, sitemap e filtro
-regionale verificati su Chromium 1440/390 px, senza overflow; preservati gli 88
-articoli precedenti. Testo e riscontri in `Documents/articoli-subingresso/`,
-prefisso `migliori-fiere-marche`, script `marche-lavorazione.cjs`. Backup remoto
-verificato; cleanup tag con errore PowerShell già noto, checkpoint valido.
-Nessuna modifica al codice o ai dati delle fiere.
+Per ciascuna regione: assenza nella serie controllata live; due richiami discreti al calendario regionale; pubblicazione, testo/titolo/meta/canonical, indice, sitemap e filtro/calendario verificati su Chromium 1440/390 px senza overflow. Articoli precedenti conservati; nessuna modifica al codice o ai dati delle fiere. Testi, fonti, riscontri e anteprime in `Documents/articoli-subingresso/`: prefisso uguale allo slug `migliori-fiere-REGIONE`, script `REGIONE-lavorazione.cjs` (per Friuli: `friuli-venezia-giulia`). Backup remoti verificati; cleanup tag con errore PowerShell noto. In Friuli il log si è interrotto sullo stderr di git, tag valido; in Trentino corretto soltanto l'URL atteso dal controllo (spazio `+`).
 
-**Blog fiere Liguria, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
-in Liguria da conoscere se fai l’ambulante», ID `348db8f1-c562-4c32-a83a-6db8ffa43e21`,
-[/blog?post=migliori-fiere-liguria](https://subingresso.it/blog?post=migliori-fiere-liguria).
-Regione assente verificata live; 1.732 parole, dieci fiere nelle quattro
-province, quattordici fonti raggiungibili e due richiami discreti al calendario.
-Sarzana aggiornata alla scheda comunale 13–15 marzo 2027 dopo 404 del vecchio
-URL; Chiavari luglio 410 sostituito con pagina graduatorie, senza conservare
-orari dell’avviso rimosso. Distinte spunta anticipata Sant’Agata, domanda
-Lavagna già scaduta e accesso pubblico gratuito dalle quote espositori.
-Pubblicazione, testo/meta/canonical, indice, sitemap e calendario regionale
-verificati su Chromium 1440/390 px, senza overflow. Conservati gli 87 articoli
-precedenti. Testo, fonti e riscontri in `Documents/articoli-subingresso/`,
-prefisso `migliori-fiere-liguria`, script `liguria-lavorazione.cjs`.
-Backup remoto verificato; errore già noto nel cleanup dei tag PowerShell,
-checkpoint valido. Nessuna modifica al codice o ai dati delle fiere.
-
-**Blog fiere Friuli-Venezia Giulia, 16 ottobre 2026:** pubblicato «Le 10 migliori
-fiere in Friuli-Venezia Giulia da conoscere se fai l’ambulante», ID
-`02e46433-b91d-4f23-b1da-9b170155f803`,
-[/blog?post=migliori-fiere-friuli-venezia-giulia](https://subingresso.it/blog?post=migliori-fiere-friuli-venezia-giulia).
-Regione assente nella serie verificata live; 1.711 parole, otto fiere
-tradizionali, Fiera dei Cesti e Gusti di Frontiera, undici fonti raggiungibili
-e due richiami discreti al calendario. Distinti mercato Codroipo 25 ottobre,
-posti residui condizionati Trieste e date/termini già trascorsi; ricorrenze
-Udine/Cervignano senza inventare date correnti. Vecchio PDF Cervignano con
-certificato scaduto sostituito con copia sul dominio comunale attuale;
-Gusti turismo 404 sostituito con portale turistico comunale. Pubblicazione,
-testo/meta/canonical, indice, sitemap e calendario regionale verificati su
-Chromium 1440/390 px, senza overflow. Conservati gli 86 articoli precedenti.
-Testo, fonti e riscontri in `Documents/articoli-subingresso/`, prefisso
-`migliori-fiere-friuli-venezia-giulia`, script `friuli-venezia-giulia-lavorazione.cjs`.
-Backup remoto verificato; log PowerShell interrotto sullo stderr di git,
-senza compromettere il tag. Nessuna modifica al codice o ai dati delle fiere.
-
-**Blog fiere Trentino-Alto Adige, 16 ottobre 2026:** pubblicato «Le 10 migliori
-fiere in Trentino-Alto Adige da conoscere se fai l’ambulante», ID
-`b21014a9-6e8e-46d9-a7d6-5568c22bac58`,
-[/blog?post=migliori-fiere-trentino-alto-adige](https://subingresso.it/blog?post=migliori-fiere-trentino-alto-adige).
-Regione assente nella serie verificata live; 1.727 parole, otto fiere/mercati
-tradizionali e due mercatini natalizi, quindici fonti raggiungibili e due
-richiami discreti al calendario. Date e termini verificati; distinta spunta
-Santa Lucia entro 31 ottobre dalle selezioni natalizie già chiuse.
-Pubblicazione, testo/meta/canonical, indice, sitemap e filtro regionale
-verificati su Chromium 1440/390 px, senza overflow. Conservati gli 85 articoli
-precedenti. Testo, fonti e riscontri in `Documents/articoli-subingresso/`,
-prefisso `migliori-fiere-trentino-alto-adige`, script `trentino-alto-adige-lavorazione.cjs`.
-Backup remoto creato; cleanup tag con errore PowerShell già noto, checkpoint
-valido. Corretto solo nel controllo l’atteso URL (spazio codificato con +).
-Nessuna modifica al codice o ai dati del calendario.
-
-**Blog fiere Toscana, 16 ottobre 2026:** pubblicato «Le 10 migliori fiere
-in Toscana da conoscere se fai l’ambulante», ID `8ac5a320-3276-4db9-a7d5-bb6ed5d4a748`,
-[/blog?post=migliori-fiere-toscana](https://subingresso.it/blog?post=migliori-fiere-toscana).
-Regione assente verificata live; già presenti Lombardia, Veneto, Piemonte
-ed Emilia-Romagna. Testo di 1.755 parole, dieci fonti ufficiali raggiungibili,
-due richiami discreti a `/fiere` e al filtro Toscana. Distinte giornate dei
-mercati/festa a Pontedera e Dicomano, settori di Arezzo e termine Scandicci
-già trascorso. Verificati pubblicazione, testo/meta/canonical, indice blog,
-sitemap e calendario filtrato su Chromium 1440/390 px, senza overflow.
-Conservati tutti gli 84 articoli precedenti. Testo e riscontri in
-`Documents/articoli-subingresso/`, prefisso `migliori-fiere-toscana` e script
-`toscana-lavorazione.cjs`. Backup remoto creato; cleanup dei vecchi tag nello
-script segnala errore PowerShell (`-ErrorAction` passato a git), senza
-compromettere il checkpoint. Codice del sito e dati del calendario invariati.
-
-**Blog fiere Emilia-Romagna, 16 ottobre 2026:** pubblicato «Le 10 migliori
-fiere in Emilia-Romagna da conoscere se fai l’ambulante», ID
-`2f1ee0ac-423f-4f71-9cbe-962db6ebb7d1`,
-[/blog?post=migliori-fiere-emilia-romagna](https://subingresso.it/blog?post=migliori-fiere-emilia-romagna).
-Regione assente nella serie verificata live: già presenti Lombardia, Veneto
-e Piemonte. Testo semplice di circa 1.700 parole, dieci eventi con fonti
-ufficiali, due richiami discreti a `/fiere` e al filtro Emilia-Romagna.
-Distinti festa/mercato, esempi 2026 e scadenza già trascorsa a Sant’Agata.
-Verificati testo/titolo/descrizione pubblici, indice blog, sitemap, canonical,
-lettura e collegamento al calendario filtrato su Chromium 1440/390 px;
-nessuno scorrimento orizzontale. Conservati gli 83 articoli precedenti.
-Testo, riscontri e anteprime in `Documents/articoli-subingresso/`, prefisso
-`migliori-fiere-emilia-romagna` e script `emilia-romagna-lavorazione.cjs`.
-Collegamento comunale Guastalla non più attivo sostituito con sito organizzatore.
-Nessuna modifica al codice del sito o ai dati del calendario.
-
-**Pagine fiere, 16 ottobre 2026:** autorizzate pagine autonome con completamento
-progressivo, mantenendo apertura rapida nel calendario. Implementati indirizzi
-stabili `/fiere/<id>` e archivio `/fiere/elenco`, con stessi dati del calendario.
-Schede incomplete consultabili ma noindex finché prive di contenuto operativo
-sufficiente; sitemap automatica per le altre. Nessuna ricerca provinciale
-dichiarata completata da questo intervento. Pubblicato 50160c9, Vercel READY
-dpl_BmDkYWKAMdvJjpm7aJbTsqP4qmpD; 3.972 pagine, 1.292 schede in sitemap
-più archivio. Suite calendario cinque formati/browser passata; test pagine
-locale/online Chromium 1440/320 e WebKit 390 passati, inclusi assenza JS,
-dialog senza navigazione, link dettaglio, overflow, sitemap, escaping e 404.
-
-Unione del 16 ottobre 2026. Le informazioni tecniche conservano la ricognizione del 6 ottobre; le attività mantengono le rispettive date. Questa unione non costituisce una nuova verifica del sito o dei servizi live.
+| Regione / articolo | ID | Contenuto e cautele specifiche |
+| --- | --- | --- |
+| [Umbria](https://subingresso.it/blog?post=migliori-fiere-umbria) | `61741baf-f6cf-4048-a699-9b1916f0a9e0` | «Le 10 migliori fiere in Umbria da conoscere se fai l’ambulante», 1.544 parole, 10 tradizionali nelle due province, 8 fonti raggiungibili; preservati 89 articoli. Spunta Perugia domanda scaduta 1° luglio, San Florido 14 settembre, regola ordinaria San Feliciano 31 ottobre. Santo Manno 2025 non esteso al 2026. Marsciano 410 scartato; PDF Gubbio 403 diretto confrontato con testo ufficiale indicizzato e pagina comunale con allegati raggiungibile. |
+| [Marche](https://subingresso.it/blog?post=migliori-fiere-marche) | `f904bde5-356f-41db-bae5-4e0d73e6df8b` | «Le 10 migliori fiere nelle Marche da conoscere se fai l’ambulante», 1.699 parole, 5 province, 9 tradizionali + Acqualagna specializzata, 12 fonti raggiungibili; preservati 88 articoli. San Crispino assegnazioni avviate/spunta da aggiornare; Grottammare domanda scaduta distinta da graduatoria senza posto; Sant’Agostino fine agosto per fonti discordanti. URL rimossi Ancona/Porto Sant’Elpidio sostituiti, parametri Pesaro necessari conservati. |
+| [Liguria](https://subingresso.it/blog?post=migliori-fiere-liguria) | `348db8f1-c562-4c32-a83a-6db8ffa43e21` | «Le 10 migliori fiere in Liguria da conoscere se fai l’ambulante», 1.732 parole, 10 fiere/4 province, 14 fonti raggiungibili; preservati 87 articoli. Sarzana 13–15 marzo 2027 da scheda comunale dopo 404; Chiavari luglio 410 sostituito con graduatorie, senza orari rimossi. Spunta anticipata Sant’Agata, domanda Lavagna scaduta, accesso pubblico gratuito distinto da quote espositori. |
+| [Friuli-Venezia Giulia](https://subingresso.it/blog?post=migliori-fiere-friuli-venezia-giulia) | `02e46433-b91d-4f23-b1da-9b170155f803` | «Le 10 migliori fiere in Friuli-Venezia Giulia da conoscere se fai l’ambulante», 1.711 parole, 8 tradizionali + Fiera dei Cesti/Gusti di Frontiera, 11 fonti raggiungibili; preservati 86 articoli. Codroipo mercato 25 ottobre, Trieste posti residui condizionati, date/termini trascorsi distinti; Udine/Cervignano ricorrenze senza date inventate. PDF Cervignano con certificato scaduto sostituito da copia comunale attuale; Gusti turismo 404 da portale turistico comunale. |
+| [Trentino-Alto Adige](https://subingresso.it/blog?post=migliori-fiere-trentino-alto-adige) | `b21014a9-6e8e-46d9-a7d6-5568c22bac58` | «Le 10 migliori fiere in Trentino-Alto Adige da conoscere se fai l’ambulante», 1.727 parole, 8 fiere/mercati tradizionali + 2 natalizi, 15 fonti raggiungibili; preservati 85 articoli. Date/termini verificati; Santa Lucia domanda entro 31 ottobre distinta dalle selezioni natalizie chiuse. |
+| [Toscana](https://subingresso.it/blog?post=migliori-fiere-toscana) | `8ac5a320-3276-4db9-a7d5-bb6ed5d4a748` | «Le 10 migliori fiere in Toscana da conoscere se fai l’ambulante», 1.755 parole, 10 fonti ufficiali raggiungibili; preservati 84 articoli. Già presenti Lombardia/Veneto/Piemonte/Emilia-Romagna. Distinti festa/mercati Pontedera-Dicomano, settori Arezzo, scadenza Scandicci trascorsa. |
+| [Emilia-Romagna](https://subingresso.it/blog?post=migliori-fiere-emilia-romagna) | `2f1ee0ac-423f-4f71-9cbe-962db6ebb7d1` | «Le 10 migliori fiere in Emilia-Romagna da conoscere se fai l’ambulante», circa 1.700 parole semplici, 10 eventi/fonti ufficiali; preservati 83 articoli. Già presenti Lombardia/Veneto/Piemonte. Festa/mercato ed esempi 2026 distinti; Sant’Agata scadenza trascorsa. Link comunale Guastalla inattivo sostituito da organizzatore. |
 
 ## Indice
 
@@ -219,424 +48,158 @@ Unione del 16 ottobre 2026. Le informazioni tecniche conservano la ricognizione 
 - [Attività, priorità e storico delle fiere](#parte-b)
 - [Coordinamento storico](#coordinamento-storico)
 
-I percorsi relativi citati si riferiscono al repository `C:\Users\utente\Desktop\Ardit\subingresso.it`.
-
 <a id="parte-a"></a>
 
 # Parte A — Informazioni tecniche e regole operative
 
-> Documento di orientamento rapido per iniziare una nuova sessione sul progetto.
-> Ultima ricognizione del repository: 6 ottobre 2026.
-> Questo file descrive struttura e regole stabili; numeri di utenti, annunci, iscritti, versioni e TODO possono cambiare e vanno verificati nel repository o nei servizi live.
-
-## 1. Identità e obiettivo del progetto
-
-Subingresso.it è un marketplace verticale italiano dedicato al **subingresso e alla compravendita di posteggi mercatali e licenze per commercio ambulante su area pubblica**. Non è un portale per ristoranti, bar o normali attività commerciali.
-
-Lessico corretto nei testi e nella SEO:
-
-- posteggio mercatale;
-- licenza ambulante;
-- commercio su aree pubbliche;
-- subingresso;
-- autorizzazione amministrativa.
-
-Non promettere “annunci verificati”, “centinaia di annunci” o “migliori offerte” se non esistono dati reali che lo dimostrino.
-
-## 2. Percorsi, repository e servizi
-
-- Repository locale attuale: `C:\Users\utente\Desktop\Ardit\subingresso.it`
-- Repository GitHub pubblico: `https://github.com/kepload/subingresso`
-- Produzione: `https://subingresso.it`
-- Hosting/deploy: Vercel, deploy automatico dopo il push.
-- Database e backend: Supabase, progetto `mhfbtltgwibwmsudsuvf`.
-- Sistema email: Resend tramite Supabase Edge Functions.
-- Pagamenti Vetrina: Stripe tramite Edge Functions e webhook.
-- Frontend: HTML statico, JavaScript vanilla, Tailwind CSS precompilato.
-
-Nota: alcuni documenti più vecchi indicano `C:\Users\utente\Desktop\subingresso.it`; il percorso rilevato nel 2026-10-06 è quello sotto `Desktop\Ardit`.
-
-## 3. Cosa leggere prima di lavorare
-
-Ordine consigliato:
-
-1. `AGENTS.md`: regole operative, sicurezza e playbook. È la fonte principale per Codex.
-2. `istruzioni.md`: manuale tecnico approfondito, storico dei bug, sistemi e TODO.
-3. `CLAUDE.md`: riepilogo parallelo; se diverge, per Codex prevale `AGENTS.md`.
-4. `git status --short` e ultimi commit: servono a distinguere modifiche dell’utente da stato già pubblicato.
-
-Prima della prima modifica al repository, eseguire dalla root:
-
-```powershell
-.\scripts\session-backup.ps1 -Reason "descrizione-corta"
-```
-
-Lo script crea e pubblica un tag `backup/session-...`. Non è necessario eseguirlo per una semplice analisi senza modifiche.
-
-## 4. Mappa dell’architettura
-
-```text
-subingresso.it/
-├─ *.html                    pagine statiche e logica inline di alcune aree
-├─ api/                      funzioni serverless Vercel e pagine SSR
-│  └─ bandi/[slug].js        landing SSR dei bandi
-├─ js/
-│  ├─ supabase-config.js     inizializzazione client Supabase
-│  ├─ data.js                dati condivisi, helper e card annunci
-│  ├─ auth.js                autenticazione, profilo, modal e tracking signup
-│  ├─ ui-components.js       header e footer comuni
-│  ├─ page-view-tracker.js   tracciamento pagine
-│  ├─ blog-tracker.js        conversioni blog
-│  ├─ blog-generator.js      generazione/pubblicazione articoli lato admin
-│  ├─ moderation.js          moderazione client, oggi non inclusa negli HTML
-│  └─ pages/                 logica di elenco e dettaglio annunci
-├─ css/tailwind.css          CSS Tailwind già compilato
-├─ data/comuni.json          circa 7.904 comuni, usato per pagine geo/slug
-├─ supabase/functions/       Edge Functions Deno
-├─ scripts/                  backup sessione e script di generazione/build
-├─ SETUP_*.sql/.md           setup dei sottosistemi
-├─ PATCH_*.sql               migrazioni/patch idempotenti
-├─ vercel.json               rewrite, redirect e security header
-└─ istruzioni.md             memoria tecnica completa del progetto
-```
-
-Non esiste un framework frontend o un processo di build applicativo tradizionale. Molta logica delle pagine grandi vive direttamente negli HTML, soprattutto in `dashboard.html`, `vendi.html`, `messaggi.html`, `valutatore.html` e `modifica-annuncio.html`.
-
-## 5. Pagine principali
-
-- `index.html`: home e accesso ai flussi principali.
-- `annunci.html` + `js/pages/annunci.js`: ricerca, filtri, card, preferiti e alert.
-- `api/annuncio.js`: vera pagina dettaglio SSR usata in produzione su `/annuncio?id=...`.
-- `annuncio.html`: duplicato client/orfano tenuto fuori dal deploy; non rimuoverlo dalla `.vercelignore` e mantenere allineati gli script quando necessario.
-- `vendi.html`: wizard critico in 5 step per pubblicare un annuncio; contiene molta logica inline.
-- `modifica-annuncio.html`: modifica di un annuncio esistente.
-- `dashboard.html`: area utente e amministrazione; annunci, profilo, statistiche, blog, segnalazioni, sicurezza, bandi e strumenti admin.
-- `messaggi.html`: chat acquirente-venditore e chat supporto.
-- `profilo.html?id=...`: profilo pubblico del venditore e annunci attivi.
-- `valutatore.html` e `report.html`: valutazione indicativa del posteggio e relativo report.
-- `blog-template.html` + `api/blog.js`: lista e dettaglio blog SSR; il template contiene anche il rendering client.
-- `api/annunci-citta.js`: landing SEO SSR per città/capoluoghi.
-- `api/bandi/[slug].js`: landing SEO dei bandi approvati.
-- `grazie.html`: esito del pagamento Vetrina.
-- `reset-password.html`, `unsubscribe.html`: flussi account/email.
-- `privacy.html`, `termini.html`, `contatti.html`, `404.html`: pagine informative e legali.
-
-Rewrite principali in `vercel.json`:
-
-- `/sitemap.xml` → `/api/sitemap`
-- `/annuncio` → `/api/annuncio`
-- `/annunci/:citta` → `/api/annunci-citta`
-- `/blog` → `/api/blog`
-- `/bandi/:slug` → `/api/bandi/:slug`
-
-`cleanUrls` è attivo: nei link interni usare `/annunci`, `/vendi`, `/valutatore`, ecc., non `.html`.
-
-## 6. JavaScript condiviso
-
-### `js/data.js` — il nucleo comune
-
-Contiene dati e helper usati in molte pagine: `MERCI`, `REGIONI`, comuni, `buildCard()`, `escapeHTML()`, `formatPrice()`, helper telefono, toast, preferiti e tracciamento visualizzazioni card. Prima di duplicare una funzione, controllare se esiste qui.
-
-### `js/auth.js`
-
-Gestisce sessione Supabase, registrazione/login, sincronizzazione profilo, modal di autenticazione, sorgenti di acquisizione, popup e logout. Le cache locali con dati utente devono essere sempre separate per `user_id`; mai introdurre chiavi globali contenenti nome, telefono o bozze di un altro utente.
-
-### `js/ui-components.js`
-
-Genera header e footer comuni. `dashboard.html` mantiene parte dell’header a mano: quando cambia la navigazione, controllare anche il markup della dashboard.
-
-### `js/pages/annunci.js` e `annuncio-detail.js`
-
-Gestiscono lista, filtri, profili venditori, dettaglio, contatti, eventi analytics, correlati e avvio chat. La pagina SSR `api/annuncio.js` deve rimanere coerente con `annuncio-detail.js`, in particolare per script, SEO e JSON-LD.
-
-## 7. Dati e sottosistemi principali
-
-Tabelle centrali rilevate nel codice/documentazione:
-
-- `profiles`: profili, dati utente e ruolo admin;
-- `annunci`: inserzioni, stato moderazione, immagini, scadenza, Vetrina e metriche;
-- `saved_listings`: preferiti;
-- `alerts`: ricerche/avvisi degli acquirenti;
-- `conversazioni`, `messaggi`: chat e supporto;
-- `conversation_reports`: segnalazioni chat;
-- `blog_posts`, `blog_conversions`: contenuti e conversioni blog;
-- `page_views`, `auth_modal_opens`, `valutatore_logs`: analytics e funnel;
-- `payments`: pagamenti Stripe;
-- `bando_alerts`, `bando_alert_log`: iscrizioni e invii bandi;
-- `bando_scouting_log`, `admin_briefing_state`: AI Scout Bandi;
-- varie tabelle di dedup/log per reminder, digest, alert e statistiche.
-
-Il repository contiene file `SETUP_*` e `PATCH_*`, ma non è garantito che rappresentino da soli tutto lo schema live. Per cambi di schema importanti confrontare con Supabase e non assumere che `setup-database.sql` sia aggiornato.
-
-## 8. Flussi funzionali critici
-
-### Pubblicazione annunci
-
-Il wizard `vendi.html` raccoglie dati, foto e contatti. Gli annunci non admin vengono forzati a `pending` dal database. Trigger asincroni notificano venditore e utenti con alert. Non modificare il wizard o i trigger `annunci` senza leggere la sezione dedicata di `istruzioni.md`.
-
-Gli annunci durano 270 giorni dalla pubblicazione o dal rinnovo (8 ottobre 2026). Gli scaduti possono restare visibili, ma i contatti vengono bloccati; il proprietario può riattivarli tramite RPC.
-
-### Contatti e chat
-
-Telefono ed email non vanno letti direttamente nelle normali query. Il contatto dell’annuncio passa dalla RPC `get_listing_contact()`. La chat crea la conversazione solo al primo messaggio; esiste anche una conversazione supporto speciale.
-
-### Vetrina
-
-La promozione a pagamento usa `create-checkout-session`, Stripe Checkout, `stripe-webhook`, tabella `payments` e campi `featured*` su `annunci`. La Vetrina aumenta visibilità ma non prolunga la scadenza dell’annuncio.
-
-### Blog e SEO
-
-Il blog è salvato in `blog_posts`, renderizzato tramite `blog-template.html` e servito SSR da `api/blog.js`. Il contenuto HTML deve passare da DOMPurify. Sitemap, landing città, annunci SSR, JSON-LD e canonical sono parti importanti del prodotto, non decorazioni.
-
-### Avvisi e AI Scout Bandi
-
-Gli utenti si iscrivono per regione. `scout-bandi` usa una pipeline Gemini + verifica HTTP per proporre bandi; l’admin approva o scarta; `bando-action` pubblica e avvia le notifiche. Le landing `/bandi/<slug>` sono SSR e collegano bando, annunci regionali e valutatore. Per diagnosi e manutenzione seguire il playbook in `AGENTS.md`, sezione AI Scout.
-
-### Email e automazioni
-
-Le Edge Functions gestiscono, tra le altre cose: email auth, welcome, alert, messaggi, report, digest settimanali, statistiche venditore, reminder, bandi e anomalie admin. I trigger DB devono usare `pg_net` in modo asincrono; non ricreare webhook Supabase sincroni, perché in passato bloccavano la pubblicazione per molti secondi.
-
-## 9. Edge Functions Supabase
-
-Cartella: `supabase/functions/`. Funzioni presenti alla ricognizione:
-
-- autenticazione/email: `register-bypass`, `send-auth-email`, `welcome-email`, `email-unsubscribe`;
-- annunci e comunicazioni: `notify-seller`, `notify-alert`, `notify-message`, `notify-report`;
-- lifecycle: `engagement-reminders`, `weekly-buyer-digest`, `weekly-seller-stats`;
-- pagamenti: `create-checkout-session`, `stripe-webhook`;
-- bandi: `subscribe-bando-alert`, `notify-bando-subscribers`, `scout-bandi`, `bando-action`;
-- amministrazione: `admin-export-users`, `admin-recent-users`, `admin-valutatore-logs`, `admin-anomaly-check`;
-- storico/compatibilità: `grant-welcome-vetrina` (la vecchia lotteria welcome risulta rimossa dal prodotto).
-
-Deploy tipico di una singola funzione:
-
-```powershell
-npx.cmd supabase functions deploy NOME --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt
-```
-
-Verificare sempre le istruzioni specifiche: alcune funzioni implementano autonomamente l’autenticazione e la loro sicurezza non dipende solo dal flag di deploy.
-
-## 10. Regole di sicurezza da non violare
-
-- Il repository GitHub è pubblico: non inserire mai secret, JWT service role, `sb_secret_*`, chiavi Stripe/Resend/Gemini o password in file versionati.
-- La chiave pubblicabile Supabase nel frontend è pubblica per design; le chiavi privilegiate devono stare solo negli environment secret.
-- Il pre-commit gitleaks e la push protection non vanno aggirati alla leggera.
-- Su `annunci` e `profiles`, `tel`/`email` hanno restrizioni column-level. Da client autenticato, `select('*')` può fallire con `42501`: usare colonne esplicite e senza PII.
-- Ogni nuova colonna su `annunci` o `profiles` può richiedere un `GRANT SELECT (col)` esplicito per `anon` e `authenticated`.
-- Non usare join PostgREST `profiles(...)` nelle query di `annunci` o `conversazioni`: eseguire fetch separati e unire i dati in JavaScript.
-- Ogni testo utente inserito nel DOM va escapato con `escapeHTML()`; il corpo degli articoli va sanificato con DOMPurify.
-- Non cancellare utenti o annunci, neppure con soft delete, senza consenso esplicito dell’utente.
-- Non toccare trigger `annunci`, schema email o `vendi.html` se il task non lo richiede chiaramente.
-
-## 11. CSS, cache e compatibilità
-
-Tailwind è precompilato in `css/tailwind.css`. Una classe nuova non è disponibile solo perché appare nell’HTML. Evitare arbitrary values (`pl-[4.5rem]`, ecc.) salvo rebuild del CSS:
-
-```powershell
-npx.cmd tailwindcss -i tailwind.input.css -o css/tailwind.css --minify
-```
-
-Dopo il rebuild, aggiornare il cache buster di `tailwind.css` in tutti gli HTML. Lo stesso vale per modifiche a `data.js`, `auth.js`, `ui-components.js`, `page-view-tracker.js` e file sotto `js/pages/`: incrementare `?v=N` in ogni pagina e template che li carica, incluse le pagine SSR inline.
-
-Non fidarsi ciecamente dell’elenco versioni in `AGENTS.md`/`istruzioni.md`: alla ricognizione alcuni HTML caricavano `auth.js?v=20`, mentre i documenti riportavano ancora `v=18`. Cercare sempre gli utilizzi reali con `rg`.
-
-Gli `<style>` inclusi dopo Tailwind possono sovrascrivere le utility. Per correzioni puntuali verificare specificità e ordine; non aggiungere `!important` come prima soluzione.
-
-## 12. SEO e rendering server
-
-- `api/annuncio.js` contiene un template HTML inline: una modifica a `annuncio.html` non aggiorna automaticamente la produzione.
-- `api/blog.js` legge e adatta `blog-template.html`.
-- `api/annunci-citta.js` crea pagine città/capoluogo, con fallback geografici e dati strutturati.
-- `api/sitemap.js` include pagine statiche, annunci, blog e landing geografiche.
-- Il JSON-LD dell’annuncio deve contenere sempre un’immagine, usando il fallback brand se l’annuncio non ha foto.
-- Mantenere allineati canonical, Open Graph, title/H1 e link interni senza `.html`.
-- `data/comuni.json` è un asset server-side importante per validazione slug e geografia; non sostituirlo senza verificare struttura e consumatori.
-
-## 13. Git e modo di lavorare
-
-Il repository può avere modifiche non appartenenti alla sessione. Alla ricognizione risultava modificato `supabase/.temp/cli-latest`: non sovrascriverlo o committarlo automaticamente senza capire la provenienza.
-
-Per ogni task:
-
-1. controllare `git status` e diff;
-2. creare il backup di sessione prima di modificare;
-3. leggere i file coinvolti e cercare tutti i riferimenti con `rg`;
-4. fare modifiche puntuali, evitando riscritture regex multi-line aggressive;
-5. verificare sintassi e flusso interessato;
-6. aggiornare i cache buster, la documentazione o lo schema solo quando necessario;
-7. seguire `AGENTS.md` per commit e push automatici delle modifiche al repository.
-
-Su Windows viene usato soprattutto PowerShell 5.1: `&&` e `||` non sono affidabili; usare comandi separati e controllare `$?`. Per messaggi commit complessi è più sicuro `git commit -F file-temporaneo`.
-
-## 14. Errori storici da non ripetere
-
-- Regex multi-line troppo ampie hanno già cancellato funzioni intere: preferire patch locali.
-- Caratteri Unicode invisibili possono rompere confronti e sostituzioni.
-- Enum/whitelist JavaScript e vincoli `CHECK` del database devono restare sincronizzati.
-- `_supabase.rpc(...).catch(...)` non è valido nel client Supabase JS v2: usare `await` con `try/catch`.
-- Cache locali non separate per utente hanno causato contaminazione di nome/telefono su dispositivi condivisi.
-- Webhook DB sincroni hanno rallentato gli insert: usare trigger asincroni `pg_net`.
-- Duplicare logica tra template statici e SSR crea disallineamenti SEO/cache: cercare tutti i punti prima di correggere.
-- Nuove classi Tailwind non compilate falliscono silenziosamente.
-
-## 15. Stato e priorità: come trattarli
-
-`AGENTS.md` e `istruzioni.md` riportano uno snapshot operativo di fine maggio 2026: 34 annunci reali, 32 utenti, AI Scout attivo, blog regionale completato e priorità sulla crescita dell’inventario. Questi numeri **non sono da considerare attuali** senza una verifica live.
-
-Le priorità storiche ancora utili come orientamento erano:
-
-- aumentare annunci veri, inizialmente in Lombardia;
-- monitorare e affinare AI Scout Bandi;
-- completare privacy e data audit;
-- migliorare conversioni blog e landing regionali quando c’è abbastanza inventario;
-- aggiungere lifecycle email per annunci in scadenza;
-- mantenere contenuti Bolkestein aggiornati.
-
-Prima di agire su una priorità, controllare gli ultimi commit, la dashboard e i servizi live. Non assumere che un TODO di maggio sia ancora aperto.
-
-Rispondere in italiano, in modo semplice e breve.
-
-## 16. Fonti di verità
-
-In caso di conflitto, usare questo ordine:
-
-1. codice e configurazione attualmente presenti nel repository;
-2. schema/configurazione live verificata di Supabase, Vercel, Stripe o Resend;
-3. `AGENTS.md` per regole operative e sicurezza;
-4. `istruzioni.md` per architettura, motivazioni e storico;
-5. questo riepilogo, che serve come mappa iniziale e non sostituisce l’ispezione del task specifico.
+## Identità, servizi e avvio sessione
+
+Marketplace italiano di **subingresso e compravendita di posteggi mercatali/licenze ambulanti su area pubblica**; esclusi ristoranti, bar e normali attività commerciali. Lessico: posteggio mercatale, licenza ambulante, commercio su aree pubbliche, subingresso, autorizzazione amministrativa. Niente promesse di «annunci verificati», «centinaia di annunci», «migliori offerte» senza prove reali.
+
+Repo locale `C:\Users\utente\Desktop\Ardit\subingresso.it` (il vecchio `Desktop\subingresso.it` è superato dal percorso rilevato il 6 ottobre); GitHub pubblico `https://github.com/kepload/subingresso`; produzione `https://subingresso.it`. HTML statico, JS vanilla, Tailwind precompilato; Vercel con deploy automatico al push, Supabase `mhfbtltgwibwmsudsuvf` per DB/backend, Resend via Edge Functions, Stripe per Vetrina.
+
+1. Leggere `AGENTS.md` (fonte operativa Codex), `istruzioni.md` (manuale, bug, sistemi/TODO), `CLAUDE.md` (riepilogo parallelo; se diverge prevale AGENTS).
+2. Controllare `git status --short`, diff e ultimi commit; conservare le modifiche estranee. `supabase/.temp/cli-latest` risultava già modificato alla ricognizione: non sovrascriverlo/committarlo automaticamente.
+3. Prima della prima modifica, dalla root: `.\scripts\session-backup.ps1 -Reason "descrizione-corta"`. Crea/pusha tag `backup/session-...`; non serve per sola analisi.
+4. Leggere i file coinvolti e cercare tutti i riferimenti con `rg`; patch puntuali, verifica sintassi/flusso, aggiornamenti cache/documentazione/schema quando necessari; commit/push secondo AGENTS.
+
+Risposte italiane, semplici e brevi. PowerShell 5.1: comandi separati e controllo `$?`, niente `&&`/`||`; commit complessi con `git commit -F file-temporaneo`.
+
+## Mappa di file e pagine
+
+Nessun framework frontend/build applicativo tradizionale; molta logica inline in dashboard, vendi, messaggi, valutatore e modifica-annuncio.
+
+| File/area | Funzione e vincoli |
+| --- | --- |
+| `*.html`, `api/` | Pagine statiche e funzioni Vercel/SSR. `index.html` home; `annunci.html` ricerca/filtri/card/preferiti/alert. |
+| `api/annuncio.js` | Dettaglio **SSR di produzione** `/annuncio?id=...`, template HTML inline. Modificare `annuncio.html` non aggiorna il live. |
+| `annuncio.html` | Duplicato client/orfano escluso dal deploy: mantenerlo nella `.vercelignore`, allineare gli script quando necessario. |
+| `vendi.html`, `modifica-annuncio.html` | Wizard critico 5 step per pubblicazione, modifica annuncio esistente. |
+| `dashboard.html` | Utente/admin: annunci, profilo, statistiche, blog, segnalazioni, sicurezza, bandi, strumenti admin. Parte dell'header è manuale: controllarla se cambia la navigazione. |
+| `messaggi.html`, `profilo.html?id=...` | Chat acquirente-venditore/supporto; profilo pubblico e annunci attivi. |
+| `valutatore.html`, `report.html` | Valutazione indicativa e report. |
+| `blog-template.html`, `api/blog.js` | Lista/dettaglio SSR; API legge/adatta il template, che contiene anche rendering client. |
+| `api/annunci-citta.js` | Landing SEO città/capoluoghi, fallback geografici e dati strutturati. |
+| `api/bandi/[slug].js` | Landing SSR dei bandi approvati. |
+| `grazie.html` | Esito pagamento Vetrina. |
+| `reset-password.html`, `unsubscribe.html` | Flussi account/email. |
+| `privacy.html`, `termini.html`, `contatti.html`, `404.html` | Informazioni/legali/errori. |
+| `js/supabase-config.js` | Inizializza client Supabase. |
+| `js/data.js` | `MERCI`, `REGIONI`, comuni, `buildCard()`, `escapeHTML()`, `formatPrice()`, telefono, toast, preferiti, visualizzazioni card. Cercare qui prima di duplicare helper. |
+| `js/auth.js` | Sessione, signup/login, profilo, modal, acquisizione, popup, logout. Cache con dati utente sempre separate per `user_id`, mai chiavi globali con nome/telefono/bozze. |
+| `js/ui-components.js` | Header/footer condivisi. |
+| `js/pages/annunci.js`, `annuncio-detail.js` | Lista, filtri, venditori, dettaglio, contatti, analytics, correlati, avvio chat. Allineare dettaglio con `api/annuncio.js`, soprattutto script/SEO/JSON-LD. |
+| `js/page-view-tracker.js`, `blog-tracker.js` | Tracciamento pagine e conversioni blog. |
+| `js/blog-generator.js`, `moderation.js` | Generazione/pubblicazione articoli admin; moderazione client oggi non inclusa negli HTML. |
+| `css/tailwind.css` | CSS già compilato. |
+| `data/comuni.json` | Circa 7.904 comuni; asset server per geografia/validazione slug. Non sostituire senza verificarne struttura e consumatori. |
+| `supabase/functions/`, `scripts/` | Edge Functions Deno; backup/build/generazione. |
+| `SETUP_*.sql/.md`, `PATCH_*.sql` | Setup e patch/migrazioni idempotenti; non garantiscono l'intero schema live. Confrontare Supabase prima di cambi importanti; `setup-database.sql` può essere obsoleto. |
+| `vercel.json` | Rewrite/redirect/security header; `cleanUrls` attivo, link interni senza `.html`. |
+
+Rewrite: `/sitemap.xml` → `/api/sitemap`; `/annuncio` → `/api/annuncio`; `/annunci/:citta` → `/api/annunci-citta`; `/blog` → `/api/blog`; `/bandi/:slug` → `/api/bandi/:slug`.
+
+## Dati e flussi critici
+
+Tabelle: `profiles` (profili/admin); `annunci` (inserzioni, moderazione, immagini, scadenza, Vetrina, metriche); `saved_listings` (preferiti); `alerts` (ricerche/avvisi); `conversazioni`, `messaggi`, `conversation_reports` (chat/supporto/segnalazioni); `blog_posts`, `blog_conversions`; `page_views`, `auth_modal_opens`, `valutatore_logs` (analytics/funnel); `payments`; `bando_alerts`, `bando_alert_log` (iscrizioni/invii); `bando_scouting_log`, `admin_briefing_state` (Scout); altre tabelle dedup/log reminder, digest, alert e statistiche.
+
+- **Pubblicazione:** wizard raccoglie dati/foto/contatti; DB forza non admin a `pending`, trigger asincroni notificano venditore/alert. Prima di toccare wizard/trigger leggere la sezione dedicata del manuale. Durata 270 giorni da pubblicazione/rinnovo (8 ottobre); scaduti eventualmente visibili ma senza contatti, riattivabili dal proprietario via RPC.
+- **Contatti/chat:** tel/email non leggibili nelle query normali; RPC `get_listing_contact()`. Conversazione creata al primo messaggio; supporto con conversazione speciale.
+- **Vetrina:** `create-checkout-session` → Stripe Checkout → `stripe-webhook`, tabella `payments`, campi `featured*` annunci. Aumenta visibilità, non prolunga scadenza.
+- **Blog/SEO:** `blog_posts` → template/API SSR; corpo HTML sempre DOMPurify. Sitemap, landing città, JSON-LD, canonical e SSR sono funzionali al prodotto. JSON-LD annuncio sempre con immagine, fallback brand se mancante; canonical, Open Graph, title/H1 e link interni allineati. `api/sitemap.js` include statiche, annunci, blog e landing geografiche.
+- **Bandi:** iscrizioni regionali, `scout-bandi` Gemini + verifica HTTP, approvazione/scarto admin, `bando-action` pubblica/notifica. Landing collega bando/annunci regionali/valutatore; diagnosi nel playbook AI Scout di AGENTS.
+- **Email:** auth, welcome, alert, messaggi, report, digest, statistiche, reminder, bandi, anomalie. Trigger solo asincroni `pg_net`: i vecchi webhook Supabase sincroni bloccavano gli insert per molti secondi.
+
+## Edge Functions Supabase
+
+Funzioni presenti alla ricognizione, sotto `supabase/functions/`:
+
+| Area | Funzioni |
+| --- | --- |
+| Auth/email | `register-bypass`, `send-auth-email`, `welcome-email`, `email-unsubscribe` |
+| Annunci/comunicazioni | `notify-seller`, `notify-alert`, `notify-message`, `notify-report` |
+| Ciclo annunci | `engagement-reminders`, `weekly-buyer-digest`, `weekly-seller-stats` |
+| Pagamenti | `create-checkout-session`, `stripe-webhook` |
+| Bandi | `subscribe-bando-alert`, `notify-bando-subscribers`, `scout-bandi`, `bando-action` |
+| Admin | `admin-export-users`, `admin-recent-users`, `admin-valutatore-logs`, `admin-anomaly-check` |
+| Storico/compatibilità | `grant-welcome-vetrina`; vecchia lotteria welcome rimossa dal prodotto |
+
+Deploy singola funzione: `npx.cmd supabase functions deploy NOME --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt`. Leggere le istruzioni specifiche: alcune funzioni autenticano autonomamente; la sicurezza non dipende soltanto dal flag.
+
+## Sicurezza, CSS/cache e bug da evitare
+
+- Repo pubblico: mai secret, JWT service role, `sb_secret_*`, chiavi Stripe/Resend/Gemini o password nei file versionati. Chiave pubblicabile frontend pubblica per design; privilegiate solo environment secret. Non aggirare alla leggera gitleaks/pre-commit/push protection.
+- `annunci`/`profiles`: tel/email column-restricted, `select('*')` autenticato può fallire `42501`; colonne esplicite senza PII. Nuove colonne possono richiedere `GRANT SELECT (col)` per `anon`, `authenticated`.
+- Niente join PostgREST `profiles(...)` da annunci/conversazioni: fetch separati + merge JS. `_supabase.rpc(...).catch(...)` non valido in Supabase JS v2: `await` + `try/catch`.
+- Testo utente nel DOM con `escapeHTML()`, HTML articoli con DOMPurify. Cache sempre per utente: già avvenuta contaminazione di nome/telefono su dispositivi condivisi.
+- Mai eliminare utenti/annunci, anche soft delete, senza consenso esplicito; non toccare trigger annunci, schema email o vendi se il task non lo richiede chiaramente.
+- Tailwind precompilato: verificare le classi; nuove utility/arbitrary values come `pl-[4.5rem]` falliscono senza rebuild: `npx.cmd tailwindcss -i tailwind.input.css -o css/tailwind.css --minify`.
+- Dopo rebuild aggiornare `tailwind.css?v=N` in tutti gli HTML. Per modifiche a data/auth/ui-components/page-view-tracker/pages JS, incrementare ogni riferimento, inclusi template SSR inline. Cercare versioni reali con `rg`: alla ricognizione auth HTML v20 contro documenti v18.
+- `<style>` dopo Tailwind può sovrascrivere utility: controllare specificità/ordine; `!important` non prima soluzione.
+- Regex multiline ampie hanno cancellato funzioni: edit puntuali. Unicode invisibili rompono confronti/replace. Enum/whitelist JS e `CHECK` DB devono restare allineati. Duplicazione statico/SSR causa disallineamenti SEO/cache: cercare tutti i punti.
+
+## Attendibilità, priorità storiche e fonti
+
+Snapshot fine maggio in AGENTS/manuale (34 annunci reali, 32 utenti, Scout attivo, blog regionale completato) **non attuale senza verifica live**. Orientamenti ancora utili: inventario reale inizialmente Lombardia, monitorare Scout, privacy/data audit, conversioni blog/landing regionali con inventario sufficiente, reminder scadenze, aggiornare Bolkestein. Prima di riprendere TODO storici controllare commit, dashboard e servizi.
+
+Ordine delle fonti: codice/config repo → schema/config live verificati Supabase/Vercel/Stripe/Resend → AGENTS per operatività/sicurezza → istruzioni per architettura/motivazioni/storico → questo riepilogo. Numeri utenti/annunci/iscritti, versioni e TODO vanno verificati quando pertinenti al task.
 
 <a id="parte-b"></a>
 
 # Parte B — Attività, priorità e storico delle fiere
 
-### Anteprime essenziali — richiesta del 16 ottobre 2026
+## Storico fiere del 16 ottobre — notorietà sospesa dal 17 ottobre
 
-**Selezione bollini, 16 ottobre 2026:** aggiunte 121 valutazioni (21 Nuova,
-96 Storica, 4 Molto conosciuta); totale 521/3.972, 24 nuove e 3.451 non valutate.
-Screening 1.790 fonti principali: 1.711 estratte, 79 errori, più registri condivisi;
-copertura parziale. Nuova da narrativa/programmi nominativi verificati, mai dal
-solo contatore 1/2/3: riscontrati reset ed errori. Revisione nuove 1 gennaio 2027.
-Anni dichiarati dalla Liguria conservati come historyYears, senza inventare
-edizioni o fondazioni. Le 400 valutazioni precedenti e tutti gli altri dati
-conservati. Audit, esclusioni e limiti in data/fiere-rinomatezza-audit.json;
-snapshot e riepilogo in Documents/ricerca-bollini-nuove-20261016. Cache JS57/dati43.
-Priorità richiesta dall'utente: individuare soprattutto le nuove con prove.
-Build, settori, integrità dei dati, bollini su Chromium/WebKit e suite generale
-su cinque schermi/browser passati localmente.
+Le decisioni correnti in apertura prevalgono su questo storico. Dati/prove restano conservati; nessuna nuova assegnazione di notorietà finché sospesa.
 
-**Colori attenuati, 16 ottobre 2026:** verde salvia, oliva e terracotta
-meno saturi, testo bianco conservato; contrasto minimo 4,83:1.
-Cache CSS21; allineamento verificato Chromium 1440/320 e WebKit 390.
-Analisi per velocizzare le valutazioni: 3.572 mancanti, 1.822 URL di fonte
-principale distinti; i primi 10 coprono 1.267 schede. Proposta: estrazione
-in blocco dalle fonti condivise, abbinamento nome/comune e prova per ID,
-revisione dei casi dubbi. Nessuna nuova valutazione assegnata.
+- **Criterio originario:** Rinomata / Consolidata / Recente, neutro Da valutare senza prove; motivo/fonti apribili, filtro e revisione con scadenza. Misurava notorietà/storia documentate, rinviando compatibilità merce e giudizio commerciale. Prima copertura 41/3.972 (13 rinomate, 25 consolidate, 3 recenti), 3.931 mancanti. Prove per evento, mai informazioni mancanti = scarsa qualità. Archivio `data/fiere-rinomatezza.json`, criteri `data/FIERE.md`.
+- **Estensione 41 → 400:** 17 Molto conosciuta, 380 Di lunga tradizione, 3 Nuova; 3.572 mancanti, ricerca nazionale incompleta. Registro Lombardia, calendario Piemonte 2014, verifiche mirate; Martinengo e 10 schede Antico Seriate Di lunga tradizione. Audit/fonti/esclusioni `data/fiere-rinomatezza-audit.json` e FIERE.md. Priorità utente: valutare concretamente fiere/sagre/eventi; nella scheda soltanto bollino/dicitura, senza titolo/spiegazioni; prove conservate nei dati. Altre modifiche prodotto fuori sessione.
+- **Selezione nuove, 400 → 521/3.972:** aggiunte 121 valutazioni (21 Nuova, 96 Storica, 4 Molto conosciuta); 24 nuove totali, 3.451 non valutate. Screening 1.790 fonti principali, 1.711 estratte/79 errori + registri condivisi; parziale. Nuova solo da narrativa/programmi nominativi verificati, mai contatore 1/2/3 (reset/errori riscontrati); revisione 1 gennaio 2027. Anni dichiarati Liguria in `historyYears`, senza inventare edizioni/fondazioni. Precedenti 400 e altri dati conservati. Audit/esclusioni/limiti nel file audit; snapshot/riepilogo `Documents/ricerca-bollini-nuove-20261016`. Priorità utente soprattutto nuove con prove.
+- **Analisi velocizzazione precedente:** 3.572 mancanti, 1.822 URL distinti, primi 10 coprono 1.267 schede. Proposta estrazione fonti condivise in blocco, abbinamento nome/comune, prova per ID e revisione dubbi; nessuna valutazione assegnata dall'analisi.
+- **Testi/date:** titolo «Quanto è conosciuta»; nomi Molto conosciuta / Di lunga tradizione / Nuova / Da valutare, poi «Di lunga tradizione» → «Storica» in card/scheda/popup/filtro/legenda. Giorni settimanali per 1–2 giorni (es. Domenica 18 ott 2026; Sabato 17 ott – Domenica 18 ott 2026), invariati 3+ giorni e periodi. Niente «Da calendario», «Date pubblicate» ecc.; ! apribile per casi da riconfermare, ricorrenze, periodi, edizioni passate; dati/formati conservati.
+- **Presentazione:** niente costi segnaposto o «? Da valutare» e righe vuote; note costo nella scheda, stato interno/filtro/legenda allora conservati. Rimossa sottolineatura a pallini dei bollini cliccabili. Bollini in alto a destra accanto al titolo, senza sovrapposizioni; pieni con testo/simboli bianchi, testo 11 px, minimo 24 px invece di 36, spazi/margini ridotti. Verde → oliva per Storica → arancione scuro quasi rosso per Nuova supera blu/viola e divieto rosso; poi colori attenuati salvia/oliva/terracotta, contrasto minimo 4,83:1. Criteri/dati invariati.
 
-**Posizione bollini, 16 ottobre 2026:** spostati in alto a destra, accanto
-al titolo delle anteprime. Allineamento senza sovrapposizioni verificato su
-Chromium 1440/320 px e WebKit 390 px. Cache JS56/CSS20.
+Verifiche storiche: dati precedenti delle 3.972 schede conservati; sintassi/build/settori/integrità, suite generale cinque schermi/browser e test dedicati Chromium computer/telefono + WebKit locali/online passati ove registrati. Per nuove 521 controlli locali; posizioni/colori verificati Chromium 1440/320 e WebKit 390. Pubblicazioni sotto con Vercel riuscito e asset/catalogo interessati identici al commit; nessun errore/overflow. Date provate per 1/2/3+ giorni e sei stati, ! con tocco/tastiera.
 
-**Nomi, colori e dimensioni correnti, 16 ottobre 2026:** «Di lunga tradizione»
-rinominata «Storica» in card, scheda, popup, filtro e legenda. Nuova preferenza:
-scala dal verde al giallo oliva per Storica e all'arancione scuro, quasi rosso,
-per Nuova; supera blu/viola e il precedente divieto del rosso. Bollini più
-compatti: altezza minima 24 px invece di 36, spazi interni e margini ridotti,
-testo sempre 11 px. Colore pieno con scritta e simboli bianchi, come un vero
-bollino; conservati criteri e dati. Cache JS55/CSS19.
+| Intervento | Cache storica | Commit verificato online |
+| --- | --- | --- |
+| Prime 41 valutazioni, fonti/filtri/mappa/URL | JS50/catalogo41/CSS14 | `93fbcc1` |
+| Giorno settimanale elenco/dettaglio | JS51 | `8e13acc` |
+| Testi e ! date | JS52/CSS15 | `b9aac0b` |
+| Estensione 400 e scheda essenziale | JS53/catalogo42 | `23627c1` |
+| Anteprime costo/bollino | JS54 | Controlli locali cinque schermi/browser e bollini |
+| Sottolineatura rimossa | CSS16 | — |
+| Nomi/colori/dimensioni | JS55/CSS19 | — |
+| Posizione in alto a destra | JS56/CSS20 | — |
+| Colori attenuati | CSS21 | — |
+| Selezione nuove, 521 valutazioni | JS57/dati43 | Controlli locali build/settori/integrità/bollini/suite generale |
 
-**Bollini, 16 ottobre 2026:** rimossa la sottolineatura a pallini da tutti
-i bollini cliccabili, su richiesta dell'utente. Cache CSS16.
+## Come scegliere le priorità
 
-**Preferenza corrente:** mostrare il costo nelle anteprime solo quando è
-disponibile una tariffa; niente «Costo banco da verificare» o «Costi: vedi
-scheda». Nessun bollino «? Da valutare» su card, popup mappa e dettaglio:
-mostrare soltanto le valutazioni assegnate, senza righe vuote. Stato interno,
-filtro e legenda conservati. Le note sui costi restano nella scheda.
-Modifica di presentazione, dati invariati; cache JS54.
-Controlli locali passati: suite generale su cinque schermi/browser e bollini
-su Chromium computer/telefono e WebKit.
+**Obiettivo:** massimo avanzamento nel tempo disponibile, confrontando beneficio atteso, rapidità e ore necessarie. 🔴 alta: prima; 🟠 media: dopo; 🟢 bassa: rimandabile. Rivalutare i colori quando cambiano tempi/opportunità/benefici: utilità generale non significa urgenza. Spuntare solo quando tutti gli interventi della voce sono conclusi.
 
-### Quanto è conosciuta la fiera — richiesta del 16 ottobre 2026
-
-**Valutazioni e scheda, 16 ottobre 2026:** nuova priorità dell'utente:
-valutare concretamente fiere, sagre ed eventi; nella scheda soltanto bollino
-con dicitura, senza titolo e spiegazioni. Prima estensione da 41 a 400
-valutazioni su 3.972: 17 Molto conosciuta, 380 Di lunga tradizione, 3 Nuova.
-Restano 3.572 da valutare; ricerca nazionale non completata. Registro
-Lombardia, confronto calendario Piemonte 2014 e verifiche mirate; audit
-con fonti ed esclusioni in data/fiere-rinomatezza-audit.json e data/FIERE.md.
-Martinengo e dieci schede dell'Antico Seriate ora Di lunga tradizione.
-Prove conservate nei dati, rimosse le spiegazioni dalla scheda pubblica.
-Cache JS53/catalogo42. Le altre modifiche al prodotto restano fuori sessione.
-Pubblicato `23627c1`, Vercel READY; pagina, JS e catalogo online identici.
-Build, settori e suite generale su cinque schermi/browser passati; verifica
-dedicata locale e online su Chromium computer/telefono e WebKit riuscita.
-
-**Preferenza testi, 16 ottobre 2026:** usare «Quanto è conosciuta», con bollini
-«Molto conosciuta», «Di lunga tradizione», «Nuova» e «Da valutare». Evitare
-diciture di stato accanto alle date (Da calendario, Date pubblicate, ecc.):
-un piccolo ! apribile indica i casi da riconfermare e spiega il motivo al
-tocco, anche per sole ricorrenze, periodi e informazioni di edizioni passate.
-Cache fiere.js 52, CSS15. Dati e formati con giorno settimanale conservati.
-Pubblicato `b9aac0b`, Vercel riuscito; pagina/JS/CSS online identici.
-Controllati su computer, telefono piccolo e WebKit: nomi, sei casi di date,
-simbolo ! apribile con tocco/tastiera, senza errori o scorrimento orizzontale.
-
-**Date, 16 ottobre 2026:** giorno della settimana nelle fiere di uno o due
-giorni (es. Domenica 18 ott 2026; Sabato 17 ott 2026 – Domenica 18 ott 2026).
-Da tre giorni in su resta il formato precedente. Stessa regola in elenco
-e dettaglio; periodi indicativi conservati. Cache fiere.js 51.
-Pubblicato `8e13acc`, verificato online su computer/telefono e WebKit:
-date di 1/2/3+ giorni in elenco e scheda corrette, pagina e JS identici al commit.
-
-Bollini Rinomata, Consolidata e Recente, con stato neutro Da valutare quando
-mancano prove. Motivo e fonti apribili, filtro dedicato e revisione con scadenza.
-Misura notorietà e storia documentate; compatibilità con il tipo di articolo
-e valutazione commerciale rinviate come richiesto. Prima copertura: 41 schede
-valutate su 3.972 (13 rinomate, 25 consolidate, 3 recenti); le altre 3.931 da
-valutare. Estendere le valutazioni con prove per singolo evento, senza
-scambiare informazioni mancanti per scarsa qualità. Archivio e criteri in
-`data/fiere-rinomatezza.json` e `data/FIERE.md`. Controlli locali passati su
-computer/telefono e WebKit; campi precedenti delle 3.972 schede conservati.
-Pubblicato e verificato online il 16 ottobre 2026, commit `93fbcc1`, Vercel
-riuscito. Pagina/script/stile/catalogo identici al commit; bollini, motivi,
-fonti, filtri, mappa e URL provati su Chromium computer/telefono e WebKit.
-
-## Come funziona questa lista e come scegliere le priorità
-
-**Obiettivo:** far avanzare subingresso.it il più possibile nel tempo disponibile, valutando beneficio atteso, rapidità dei risultati e tempo necessario rispetto alle alternative.
-
-- 🔴 **Priorità alta:** maggior beneficio atteso nel periodo attuale; affrontarle per prime.
-- 🟠 **Priorità media:** benefici meno immediati o inferiori alle rosse; affrontarle dopo.
-- 🟢 **Priorità bassa:** attività rimandabili per concentrarsi su quelle che fanno avanzare più velocemente.
-
-Rivalutare i colori se cambiano tempi, opportunità o benefici: l'utilità generale non basta a rendere un'attività prioritaria adesso.
-
-Spunta una voce quando sono completati tutti gli interventi indicati.
-
-**Valutazione delle priorità — 8 ottobre 2026:** privilegiare acquisizione di utenti pertinenti, contatti e conservazione degli annunci attivi. Queste priorità sono stime basate sul progetto e sul lavoro previsto, da verificare con i risultati; non presumono dati aggiornati su traffico o conversioni. Privacy e sicurezza restano alte per proteggere utenti e fiducia. Per muoverci veloce, completare prima la versione essenziale di ogni intervento: evitare che una voce diventi un rifacimento generale.
+Valutazione dell'8 ottobre 2026: privilegiare utenti pertinenti, contatti e conservazione degli annunci attivi; privacy/sicurezza alte per utenti e fiducia. Sono stime da verificare, senza presumere traffico/conversioni aggiornati. Completare prima la versione essenziale, evitando rifacimenti generali.
 
 ## 💶 Crescita e autonomia economica
 
-**Obiettivo:** costruire un reddito personale sostenibile attraverso subingresso.it. Le visite e gli iscritti servono se portano annunci pertinenti, contatti utili e clienti paganti. Misurare incassi effettivi, costi, rimborsi e tempo di lavoro; il valore dei posteggi pubblicati non è un ricavo del sito. Importo netto mensile desiderato e orizzonte temporale sono ancora da definire con Ardit. Nessuna data di autonomia è garantita.
+**Obiettivo:** reddito personale sostenibile. Visite/iscritti devono produrre annunci pertinenti, contatti e clienti paganti. Misurare incassi, costi, rimborsi e ore; il valore dei posteggi non è ricavo del sito. Netto mensile desiderato e orizzonte ancora da definire con Ardit; nessuna data garantita.
 
-- [ ] 🔴 Definire il traguardo economico e fare i conti sui ricavi necessari — partire dal reddito netto mensile desiderato, considerare costi e accantonamenti fiscali/contributivi da verificare con il commercialista, poi calcolare quanti clienti servono per ciascuna offerta usando prezzi e margini realmente verificati. Distinguere entrate occasionali e ricorrenti; aggiornare una tabella semplice ogni mese, senza costruire subito una nuova dashboard.
-- [ ] 🔴 Verificare cosa gli utenti sono disposti a pagare — raccogliere, con un primo gruppo di circa 10 venditori, acquirenti e operatori professionali, problemi concreti, alternative usate e motivi per pagare o non pagare. Testare una sola offerta alla volta e cercare acquisti reali: interesse dichiarato e questionari non bastano. Per ogni prova fissare prima durata, tempo massimo da investire e criterio per continuare o fermarsi.
-- [ ] 🔴 Concentrare acquisizione e offerta in una prima zona — scegliere con i dati una provincia o un gruppo di mercati, inizialmente in Lombardia, dove possiamo far incontrare domanda e annunci reali. Preparare un piccolo piano di acquisizione diretta tramite operatori, associazioni e comunità pertinenti, con messaggi e canali appropriati; aiutare i primi venditori a pubblicare annunci completi. Misurare annunci attivi, richieste pertinenti e ritorno degli utenti, poi replicare nelle zone vicine. Niente annunci copiati o contatti importati senza autorizzazione.
-- [ ] 🔴 Verificare e migliorare la vendita della Vetrina già esistente — controllare il percorso dalla scelta al pagamento e all'attivazione; misurare acquisti e contatti ricevuti dagli annunci promossi. Provare una modifica alla volta a presentazione, pacchetto o prezzo. Vendere benefici dimostrabili, senza promettere una vendita o un numero di contatti. Prima capire se l'offerta produce valore, poi aumentare il traffico verso di essa.
-- [ ] 🔴 Collegare i contenuti più utili a un'azione concreta — partire dalle pagine che già ricevono visite pertinenti: cercare un posteggio, pubblicare un annuncio o iscriversi agli avvisi giusti. Riusare i collegamenti e i moduli esistenti, correggendo i punti in cui il percorso si interrompe. Valutare iscrizioni, annunci, contatti e acquisti generati, oltre alle visite; dare precedenza a contenuti con intenzione di comprare, vendere o partecipare.
-- [ ] 🟠 Preparare e validare un pacchetto per operatori professionali — per chi gestisce più annunci, testare un'offerta chiara con servizi ripetuti e un prezzo sostenibile, inizialmente anche con gestione manuale. Costruire abbonamenti e strumenti dedicati solo dopo i primi clienti paganti; misurare rinnovi, margine e assistenza richiesta. Mantenere un accesso gratuito utile per alimentare il mercato.
-- [ ] 🟠 Testare una partnership commerciale pertinente — scegliere un solo servizio o fornitore richiesto dagli utenti, verificare condizioni attuali e concordare come attribuire richieste e compensi prima di sviluppare integrazioni. Partire da una prova piccola, trasparente e misurabile. Le vecchie stime di commissioni e i nomi nel manuale sono ipotesi da riconfermare; per eventuali servizi finanziari verificare prima il ruolo consentito e i requisiti con il partner abilitato.
-- [ ] 🟠 Validare il servizio di controllo documenti con un professionista — verificare domanda pagante, partner disponibile, costo di revisione, tempi, responsabilità e gestione riservata dei documenti. Preparare una prova limitata con ambito e prezzo chiari prima di automatizzare. Offrire solo ciò che possiamo erogare con competenza e margine; la pre-verifica AI richiede revisione umana e non garantisce l'esito della trattativa.
-- [ ] 🟠 Far tornare utenti e clienti con avvisi utili — riusare gli alert e le email esistenti per opportunità pertinenti e aggiornamenti richiesti, rispettando preferenze e consensi. Misurare ritorni, contatti e riacquisti; facilitare la condivisione spontanea di annunci e pagine utili. Evitare nuovi sistemi di premi prima di vedere che le persone trovano valore nel servizio.
-- [ ] 🟠 Costruire gradualmente uno storico affidabile degli affari conclusi — partire dalla voce «Registrare vendite e affitti conclusi» qui sotto, con raccolta essenziale e facoltativa degli esiti. Distinguere prezzo richiesto, prezzo effettivamente pagato e informazioni dichiarate/non verificate. È un investimento di lungo periodo per fiducia e qualità del valutatore: anticipare la raccolta quando iniziano a chiudersi affari, rimandando l'archivio pubblico e le analisi complesse.
-- [ ] 🟢 Automatizzare le attività ripetitive quando diventano un limite — registrare prima il tempo speso in assistenza, moderazione, aggiornamento contenuti e gestione partner; automatizzare i compiti frequenti con controlli e possibilità di intervento umano. Anticipare questa voce se il lavoro manuale impedisce di servire clienti paganti. Obiettivo: aumentare i ricavi senza aumentare nella stessa misura le ore di lavoro.
-- [ ] 🟢 Espandere a nuove regioni e poi ad altri settori solo dopo una prova riuscita — prima replicare il modello dei posteggi in un'altra zona e verificare che acquisizione, qualità, margine e carico di lavoro restino sostenibili. Valutare altre licenze solo con domanda pagante osservata e risorse sufficienti; evitare che una nuova nicchia rallenti il settore che già genera ricavi.
+- [ ] 🔴 Definire il traguardo economico e fare i conti sui ricavi necessari — netto desiderato, costi e accantonamenti fiscali/contributivi col commercialista; clienti necessari per offerta con prezzi/margini verificati. Distinguere ricavi occasionali/ricorrenti; tabella mensile semplice, senza nuova dashboard.
+- [ ] 🔴 Verificare cosa gli utenti sono disposti a pagare — circa 10 venditori/acquirenti/professionisti: problemi, alternative, ragioni per pagare o meno. Una sola offerta per prova; acquisti reali, non solo interesse/questionari. Fissare durata, ore massime e criterio di continuazione/stop prima di partire.
+- [ ] 🔴 Concentrare acquisizione e offerta in una prima zona — scegliere con dati una provincia/gruppo di mercati inizialmente lombardi, con domanda e annunci reali. Acquisizione diretta tramite operatori/associazioni/comunità, messaggi e canali appropriati; aiutare a pubblicare annunci completi. Misurare annunci attivi, richieste pertinenti e ritorni, poi replicare vicino. Niente annunci copiati/contatti importati senza autorizzazione.
+- [ ] 🔴 Verificare e migliorare la vendita della Vetrina già esistente — percorso scelta/pagamento/attivazione, acquisti e contatti agli annunci promossi. Una modifica per volta a presentazione/pacchetto/prezzo; benefici dimostrabili, niente garanzie di vendita o contatti. Verificare valore prima di aumentare traffico.
+- [ ] 🔴 Collegare i contenuti più utili a un'azione concreta — dalle pagine già visitate: cercare posteggio, pubblicare, iscriversi ad avvisi pertinenti. Riusare link/moduli e risolvere interruzioni; misurare iscrizioni/annunci/contatti/acquisti oltre alle visite. Prima contenuti con intenzione di comprare/vendere/partecipare.
+- [ ] 🟠 Preparare e validare un pacchetto per operatori professionali — più annunci, servizi ripetuti, prezzo sostenibile; prima anche manualmente. Abbonamenti/strumenti solo dopo clienti paganti; misurare rinnovi, margine, assistenza. Conservare accesso gratuito utile al mercato.
+- [ ] 🟠 Testare una partnership commerciale pertinente — un servizio/fornitore richiesto; condizioni attuali, attribuzione richieste/compensi concordate prima delle integrazioni. Prova piccola, trasparente, misurabile. Nomi/commissioni storici da riconfermare; per finanza verificare ruolo/requisiti col partner abilitato.
+- [ ] 🟠 Validare il servizio di controllo documenti con un professionista — domanda pagante, partner, costo, tempi, responsabilità e riservatezza. Prova limitata con ambito/prezzo chiari prima di automatizzare; solo servizi erogabili con competenza/margine. Pre-verifica AI con revisione umana, nessuna garanzia sull'esito della trattativa.
+- [ ] 🟠 Far tornare utenti e clienti con avvisi utili — riusare alert/email per opportunità e aggiornamenti richiesti, rispettando preferenze/consensi. Misurare ritorni, contatti, riacquisti; facilitare condivisioni spontanee. Premi solo dopo valore osservato.
+- [ ] 🟠 Costruire gradualmente uno storico affidabile degli affari conclusi — dalla voce «Registrare vendite e affitti conclusi», raccolta essenziale/facoltativa. Distinguere prezzo richiesto/pagato e dichiarato/verificato. Anticiparla quando si chiudono affari per fiducia/valutatore; archivio pubblico e analisi complesse dopo.
+- [ ] 🟢 Automatizzare le attività ripetitive quando diventano un limite — misurare ore di assistenza/moderazione/contenuti/partner; automatizzare frequenti con controlli/intervento umano, prima se impediscono di servire clienti paganti. Ricavi crescenti senza aumento proporzionale delle ore.
+- [ ] 🟢 Espandere a nuove regioni e poi ad altri settori solo dopo una prova riuscita — replicare posteggi in altra zona verificando acquisizione, qualità, margine e lavoro sostenibili. Altre licenze solo con domanda pagante e risorse; evitare rallentamenti al settore che genera ricavi.
 
-**Ordine operativo per le future sessioni:** definire il traguardo e misurare la situazione attuale; scegliere una zona e verificare la domanda pagante; migliorare Vetrina e percorsi dai contenuti; provare una sola nuova offerta; replicare ciò che funziona. Tenere al massimo due esperimenti di crescita aperti insieme. Ogni settimana confrontare risultati e ore investite, fermare le prove senza segnali utili e destinare il tempo alle attività con più margine e possibilità di ripetersi. Gli interventi tecnici rossi restano prioritari quando rimuovono un ostacolo concreto a questi percorsi o proteggono utenti e dati.
+**Ordine futuro:** traguardo/situazione attuale → zona/domanda pagante → Vetrina/percorsi contenuti → una nuova offerta → replica. Massimo due esperimenti di crescita contemporanei; confronto settimanale risultati/ore, fermare prove senza segnali e investire su margine/ripetibilità. Interventi tecnici rossi prioritari se rimuovono ostacoli concreti o proteggono utenti/dati.
 
-Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi ricorrenti di Stripe](https://support.stripe.com/questions/understanding-monthly-recurring-revenue-%28mrr%29-and-annual-recurring-revenue-%28arr%29).
+Riferimento: [Stripe, ricavi ricorrenti e vendite occasionali](https://support.stripe.com/questions/understanding-monthly-recurring-revenue-%28mrr%29-and-annual-recurring-revenue-%28arr%29).
 
 ## 🛡️ Privacy e sicurezza
 
@@ -645,17 +208,16 @@ Per distinguere entrate ricorrenti e vendite occasionali: [definizione di ricavi
 
 ## 🎪 Fiere: ricerca e calendario
 
-### Strategia di crescita, ricavi e Google — sintesi del 16 ottobre 2026
+### Strategia fiere, ricavi e Google — analisi del 16 ottobre 2026
 
-- **Obiettivo:** diventare il riferimento degli ambulanti per trovare occasioni concrete di lavoro; favorire ritorni settimanali e crescita anche degli annunci di Subingresso.
-- **Base verificata nell'analisi:** 3.972 schede in 20 regioni; 171 con tariffe documentate, 183 con scadenza di domanda, comprese quelle scadute. Sono presenti eventi conclusi e ricorrenze da riconfermare: il totale non indica opportunità ancora disponibili.
-- **Priorità prodotto:** completare date, costi, requisiti, contatti e candidature degli eventi imminenti; ricerca per prodotto, distanza, periodo, costo e domande aperte, distinguendo professionisti, artigiani e hobbisti.
-- **Far tornare gli utenti:** avvisi personalizzati per zona e merce venduta, soprattutto all'apertura delle candidature; misurare candidature generate e ritorni.
-- **Dati affidabili e concorrenza:** permettere agli organizzatori di aggiornare e confermare le schede; raccogliere esperienze degli espositori su organizzazione, affluenza e rapporto costo/risultato, distinguendo i settori. Notorietà e anzianità non dimostrano redditività.
-- **Partnership:** collaborare con Pro Loco, associazioni e organizzatori per aggiornamenti, acquisizione di utenti e collegamenti spontanei al sito. Calendari e filtri esistono già su Eventi e Sagre e Ambulanti Online: differenziarsi sulla possibilità concreta di scegliere e partecipare.
-- **Google:** nell'analisi le schede del calendario si aprono dentro `/fiere`, senza pagine autonome. Creare una pagina per evento con contenuti subito leggibili, titolo e indirizzo propri; pagine territoriali curate solo con dati sufficienti; collegamenti interni, sitemap e dati strutturati Event per date e luoghi documentati. Controllare indicizzazione e ricerche in Search Console; nessuna posizione garantita.
-- **Ricavi da validare:** consultazione gratuita; provare strumenti a pagamento per organizzatori e funzioni avanzate per ambulanti, cercando prima acquisti reali. Esempi puramente ipotetici: 300 ambulanti × 9 €/mese + 20 organizzatori × 49 €/mese = 3.680 €/mese; 1.000 × 9 € + 50 × 49 € = 11.450 €/mese. Fatturato lordo prima di aggiornamento dati, assistenza, tecnologia e imposte; prezzi e scenari non ancora validati. Verificare rinnovi e tempo di gestione.
-- **Primi 90 giorni, proposta:** pagine indicizzabili, 200 eventi imminenti ben documentati in Lombardia, avvisi personalizzati e una prima prova commerciale con organizzatori. Misurare candidature, utenti che tornano e clienti paganti; ampliare dopo una prova riuscita.
+- **Obiettivo:** riferimento per occasioni concrete di lavoro degli ambulanti, ritorni settimanali e crescita degli annunci.
+- **Base dell'analisi:** 3.972 schede/20 regioni, 171 con tariffe, 183 con scadenze anche passate. Include eventi conclusi/ricorrenze da riconfermare: non misura opportunità disponibili.
+- **Prodotto:** completare date, costi, requisiti, contatti/candidature imminenti; ricerca per prodotto, distanza, periodo, costo, domande aperte, distinguendo professionisti/artigiani/hobbisti. Avvisi zona/merce soprattutto all'apertura candidature; misurare candidature generate e ritorni.
+- **Affidabilità:** organizzatori abilitati ad aggiornare/confermare schede; esperienze espositori su organizzazione, affluenza, costo/risultato per settore. Fama/anzianità non dimostrano redditività.
+- **Partner/concorrenza:** Pro Loco, associazioni, organizzatori per dati, acquisizione e link spontanei. Eventi e Sagre e Ambulanti Online hanno già calendari/filtri: distinguersi per informazioni concrete per scegliere/partecipare.
+- **Google:** nell'analisi le schede erano soltanto dentro `/fiere`; pagine autonome poi implementate il 16 ottobre (registro sopra). Restano contenuti subito leggibili, titolo/URL propri, pagine territoriali solo con dati sufficienti, link interni, sitemap, Event per date/luoghi documentati, controllo indicizzazione/ricerche in Search Console; nessuna posizione garantita.
+- **Ricavi da validare:** consultazione gratuita, strumenti a pagamento organizzatori/funzioni avanzate ambulanti solo con acquisti reali. Ipotesi: 300×9 €/mese + 20×49 € = 3.680 €/mese; 1.000×9 € + 50×49 € = 11.450 €/mese. Lordi prima di dati/assistenza/tecnologia/imposte; prezzi/scenari non validati, misurare rinnovi e ore.
+- **Proposta primi 90 giorni:** pagine indicizzabili, 200 eventi imminenti documentati in Lombardia, avvisi personalizzati, prova commerciale organizzatori. Misurare candidature/ritorni/clienti, ampliare dopo successo.
 
 Riferimenti: [Google: JavaScript e indicizzazione](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics), [Google: dati strutturati Event](https://developers.google.com/search/docs/appearance/structured-data/event).
 
@@ -1213,11 +775,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   esclusioni e giorni commerciali dei periodi; manutenzione futura distinta
   dalla ricerca corrente conclusa, senza riaprire altre province.
 
-**Ricerca approfondita: 31 province completate, 79 ancora da fare su 110.**
-Riepilogo ricontrollato il 17 ottobre 2026 dopo la verifica online di Ravenna:
-Ravenna entra fra le 31 concluse; le verifiche periodiche restano distinte.
-Le schede importate nelle altre province non equivalgono a ricerca approfondita.
-Elenco allineato alle unità territoriali del calendario, inclusa la Sardegna 2026.
+**Ricerca approfondita: 31 province completate, 79 da fare su 110**, ricontrollate il 17 ottobre dopo Ravenna. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -1228,30 +786,30 @@ classifica di volumi Google: mancano dati provinciali comparabili di ricerche
 e conversioni. Rivalutare con Search Console, annunci e contatti effettivi.
 La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulanti.
 
-- [x] **1. Milano** — Lombardia; ricerca completata, vedi sopra
+- [x] **1. Milano** — Lombardia
 - [x] **2. Bergamo** — Lombardia
 - [x] **3. Verona** — Veneto
-- [x] **4. Padova** — Veneto; ricerca completata, vedi sopra
-- [x] **5. Treviso** — Veneto; ricerca completata, vedi sopra
-- [x] **6. Vicenza** — Veneto; ricerca completata, vedi sopra
-- [x] **7. Modena** — Emilia-Romagna; ricerca completata, vedi sopra
-- [x] **8. Parma** — Emilia-Romagna; ricerca completata, vedi sopra
-- [x] **9. Reggio nell'Emilia** — Emilia-Romagna; ricerca completata, vedi sopra
-- [x] **10. Varese** — Lombardia; ricerca completata, vedi sopra
-- [x] **11. Como** — Lombardia; ricerca completata, vedi sopra
-- [x] **12. Torino** — Piemonte; ricerca completata, vedi sopra
-- [x] **13. Venezia** — Veneto; ricerca completata e verificata online, vedi sopra
-- [x] **14. Mantova** — Lombardia; ricerca completata e verificata online, vedi sopra
-- [x] **15. Cremona** — Lombardia; ricerca completata e verificata online, vedi sopra
+- [x] **4. Padova** — Veneto
+- [x] **5. Treviso** — Veneto
+- [x] **6. Vicenza** — Veneto
+- [x] **7. Modena** — Emilia-Romagna
+- [x] **8. Parma** — Emilia-Romagna
+- [x] **9. Reggio nell'Emilia** — Emilia-Romagna
+- [x] **10. Varese** — Lombardia
+- [x] **11. Como** — Lombardia
+- [x] **12. Torino** — Piemonte
+- [x] **13. Venezia** — Veneto
+- [x] **14. Mantova** — Lombardia
+- [x] **15. Cremona** — Lombardia
 - [ ] **16. Pavia** — Lombardia
-- [x] **17. Novara** — Piemonte; ricerca completata e verificata online, vedi sopra
-- [x] **18. Cuneo** — Piemonte; ricerca completata e verificata online, vedi sopra
-- [x] **19. Trento** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
-- [x] **20. Bolzano/Bozen** — Trentino-Alto Adige; ricerca completata e verificata online, vedi sopra
-- [x] **21. Firenze** — Toscana; ricerca completata e verificata online, vedi sopra
+- [x] **17. Novara** — Piemonte
+- [x] **18. Cuneo** — Piemonte
+- [x] **19. Trento** — Trentino-Alto Adige
+- [x] **20. Bolzano/Bozen** — Trentino-Alto Adige
+- [x] **21. Firenze** — Toscana
 - [x] **22. Roma** — Lazio; ricerca documentale completata, 127 schede in 48 comuni pubblicate e verificate, limiti espliciti sopra
 - [x] **23. Rimini** — Emilia-Romagna; 115 manifestazioni, 27 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
-- [x] **24. Ravenna** — Emilia-Romagna; ricerca completata e verificata online
+- [x] **24. Ravenna** — Emilia-Romagna
 - [ ] **25. Forlì-Cesena** — Emilia-Romagna
 - [ ] **26. Piacenza** — Emilia-Romagna
 - [ ] **27. Udine** — Friuli-Venezia Giulia
@@ -1432,14 +990,8 @@ Le caselle qui sotto indicano gli articoli completati e pubblicati. Procedere pr
 
 # Appendice — Coordinamento storico
 
-Le note seguenti sono storiche: la registrazione di Venezia nella Parte B dichiara la sessione ripresa e conclusa, superando i riferimenti alla sospensione. La riserva di Pavia risale al 14 ottobre: verificarne lo stato prima di riprendere. Le versioni cache indicate sono minimi storici da confrontare con lo stato attuale.
+**Note del 14 ottobre, superate dove indicato.** Venezia è stata ripresa/conclusa nella Parte B: i riferimenti alla sua sospensione sono storici. La riserva Pavia va verificata prima di riprendere; cache sotto = minimi storici, confrontare stato corrente.
 
-**Coordinamento sessioni del 14 ottobre:** Mantova conclusa nella sessione
-manuale in checkout isolato; **Venezia resta alla sessione sospesa**. Alla ripresa
-rileggere lo stato attuale prima di generare/pushare il catalogo: conservare
-`fiere-mantova.json` e la sua voce nel build, partire almeno da cache fiere.js 37
-e catalogo 30, senza sovrascrivere le aggiunte pubblicate nel frattempo.
-
-**Coordinamento 14 ottobre, ore 22:00: Cremona conclusa e verificata online** in checkout isolato Documents/subingresso-cremona-20261014. Venezia resta alla sessione sospesa. Alla ripresa leggere origin/main e conservare Mantova, fiere-cremona.json e la sua voce nel build, oltre alle altre aggiunte. Partire almeno da cache fiere.js 38 e catalogo 31; non rigenerare da snapshot vecchi. Prossima provincia libera nell’ordine: Pavia, non avviata.
-
-**Coordinamento 14 ottobre, ore 23:03: Pavia riservata alla sessione manuale corrente**, in checkout isolato `Documents/subingresso-pavia-20261014`. Venezia resta alla sessione sospesa. Non avviare Pavia in parallelo; prima di pubblicare rileggere origin/main e mantenere tutte le province gi? integrate.
+- **Mantova conclusa**, sessione manuale in checkout isolato; Venezia allora sospesa. Alla ripresa rileggere stato, preservare `fiere-mantova.json`/voce build e aggiunte concorrenti; minimo JS37/catalogo30.
+- **Ore 22:00, Cremona conclusa/verificata online**, checkout `Documents/subingresso-cremona-20261014`; Venezia allora sospesa. Rileggere `origin/main`, preservare Mantova/Cremona (`fiere-cremona.json` + build) e ogni aggiunta; minimo JS38/catalogo31, mai rigenerare da snapshot vecchi. Pavia allora prossima libera, non avviata.
+- **Ore 23:03, Pavia riservata alla sessione manuale**, checkout `Documents/subingresso-pavia-20261014`; non avviarla in parallelo senza verificarne lo stato. Prima del push rileggere `origin/main` e mantenere tutte le province integrate. Venezia era ancora sospesa.
