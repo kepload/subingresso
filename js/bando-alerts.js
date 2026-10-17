@@ -1,5 +1,8 @@
 // Gli avvisi richiedono il normale account del sito. Nessuna iscrizione con la sola email.
 (function () {
+    const style = document.createElement('style');
+    style.textContent = '#authOverlay.bando-auth{overflow-y:auto;align-items:flex-start}#authOverlay.bando-auth>div{margin:auto}';
+    document.head.appendChild(style);
     window.bindBandoAlertForm = function (formId, messageId, regione, source) {
         const form = document.getElementById(formId);
         const message = document.getElementById(messageId);
@@ -59,15 +62,18 @@
                 let observer;
                 const afterLogin = function () {
                     observer?.disconnect();
+                    document.getElementById('authOverlay')?.classList.remove('bando-auth');
                     return activate();
                 };
                 window.__onLoginSuccess = afterLogin;
-                openAuthModal('register', 'Registrati gratis al sito per ricevere gli avvisi per ' + regione + '. Se hai già un account, accedi.', 'blog_promo');
+                openAuthModal('register', 'Per ricevere gli avvisi per ' + regione + ', registrati o accedi al sito.', 'blog_promo');
                 // Chiudere il modulo annulla la richiesta: un accesso successivo non attiva avvisi per errore.
                 const overlay = document.getElementById('authOverlay');
+                overlay.classList.add('bando-auth');
                 observer = new MutationObserver(function () {
                     if (!overlay.classList.contains('hidden')) return;
                     observer.disconnect();
+                    overlay.classList.remove('bando-auth');
                     if (window.__onLoginSuccess === afterLogin) {
                         window.__onLoginSuccess = previous;
                         busy = false;

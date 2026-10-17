@@ -99,7 +99,7 @@ async function browsers() {
         for (const [engine, name, width] of [[chromium, 'Chromium', 1440], [chromium, 'Chromium', 320], [webkit, 'WebKit', 390]]) {
             const browser = await engine.launch({ headless: true });
             try {
-                const page = await browser.newPage({ viewport: { width, height: 1000 } });
+                const page = await browser.newPage({ viewport: { width, height: width === 320 ? 568 : 900 } });
                 const errors = []; page.on('pageerror', error => errors.push(error.message));
                 await page.route('https://**/*', route => route.abort());
                 for (const [url, id, msg, regione] of [['/blog', 'bandoAlertForm', 'bandoAlertMsg', 'Lombardia'], ['/bandi/test', 'quickSubBandoAlert', 'qsMsg', "Valle d'Aosta"]]) {

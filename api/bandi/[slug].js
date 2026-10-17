@@ -279,7 +279,7 @@ window._BANDO_REGIONE = ${safeJson(regione)};
 <script src="/js/data.js?v=20"></script>
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/auth.js?v=22"></script>
-<script src="/js/bando-alerts.js?v=1"></script>
+<script src="/js/bando-alerts.js?v=2"></script>
 <script>
 bindBandoAlertForm('quickSubBandoAlert', 'qsMsg', window._BANDO_REGIONE, 'bando_page');
 </script>
