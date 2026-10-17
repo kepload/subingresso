@@ -8,6 +8,9 @@ Elenco consultabile anche senza mesi. Cache JS63/CSS23; catalogo invariato.
 Sintassi, suite calendario su cinque formati/browser e test valutazioni
 Chromium/WebKit passati localmente, inclusi mappa vuota, primo/ultimo mese,
 reset, filtri combinati, URL e zoom.
+Pubblicato 3d4d479, Vercel READY dpl_Eg5Wdjgf3trQJXGAtuujxsCn1SXM;
+HTML/JS/CSS online identici al commit. Test online Chromium computer/telefono
+e WebKit passati usando i dati pubblicati, preservata la ricerca Rimini concorrente.
 
 **Filtri fiere, 17 ottobre 2026:** rimosse note e legenda sotto i filtri.
 Mesi Gen–Dic su due righe da sei, tre da quattro sotto 360 px, pulsanti

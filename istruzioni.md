@@ -9,6 +9,11 @@ riepilogo Nessun mese selezionato. Cache JS63/CSS23; catalogo invariato.
 Suite calendario cinque formati/browser e test valutazioni Chromium/WebKit
 locali passati: mappa iniziale vuota, altri filtri senza mesi, primo/ultimo
 mese, reset, URL, zoom e schede. Backup remoto prima delle modifiche.
+Pubblicato 3d4d479, Vercel READY dpl_Eg5Wdjgf3trQJXGAtuujxsCn1SXM;
+HTML/JS/CSS online identici al commit. Test online Chromium computer/telefono
+e WebKit passati con fixture del commit: il primo confronto usava 4.099
+schede locali (Rimini in lavorazione) contro le 4.000 pubblicate. Modifiche
+concorrenti a catalogo/build e file Rimini preservate e non committate.
 
 Filtri fiere, 17 ottobre 2026: eliminate le note sotto Cosa vendi e Quanto è
 conosciuta, compresa la legenda dei bollini. Mesi abbreviati in due righe da
