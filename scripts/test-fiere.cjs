@@ -656,7 +656,8 @@ assert(genovaAgata[0].calendarSource.url.includes('regione.liguria.it'));
 assert(!events.some(e => e.city === 'Genova' && e.name === 'S. AGATA'));
 const argenta = events.find(e => e.city === 'Argenta' && e.name === 'Fiera natalizia di Argenta');
 assert.deepEqual(argenta.months,[12]);
-assert(argenta.editions.every(e => !e.start && e.label.includes('domeniche')));
+// Ferrara audit recovered the original note listing the four commercial Sundays.
+assert.deepEqual(argenta.editions.map(e => e.start),['2026-12-06','2026-12-13','2026-12-20','2026-12-27']);
 assert(!events.some(e => e.city === "Castello d'Argile" && e.name === 'FIERA DI LUGLIO'));
 const bondeno = events.find(e => e.city === 'Bondeno' && e.name === 'FIERA DI OTTOBRE');
 assert.equal(bondeno.stallCount,21);
