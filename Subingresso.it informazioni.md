@@ -1168,4 +1168,8 @@ preservati.32 casi browser su articoli/indice, integrità90 articoli e36
 riquadri su9 larghezze320–1440 Chromium/WebKit passati. Prove
 `Documents/blog-promo-fiere-20261018/copy-aggressivo/`, dettagli
 `data/BLOG_FIERE_PROMO.md`. Backup remoto verificato; arresto dello script
-sullo stderr PowerShell dopo push del tag riuscito. Pubblicazione da verificare.
+sullo stderr PowerShell dopo push del tag riuscito. Pubblicato `47bc600`,
+Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/3qSwYfPmbrYS21zPyqHfedJKTk6R).
+Template/CSS/JS online identici e v2 corretti;32 casi browser/integrità90
+articoli passati anche sull'HTML pubblicato. Registro organizzatori27c4f43
+preservato nel rebase prima del push.

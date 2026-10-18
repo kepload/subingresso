@@ -113,4 +113,10 @@ confrontata con la schermata dell'utente; ispezionata anche320px. Prove in
 `copy-aggressivo-layout.cjs`. Backup remoto
 `backup/session-20261018-220619-fiere-copy-aggressivo` verificato; lo script
 si è fermato sullo stderr nativo di git in PowerShell dopo il push riuscito.
-Pubblicazione della revisione da verificare.
+Pubblicato `47bc600`, Vercel
+[riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/3qSwYfPmbrYS21zPyqHfedJKTk6R).
+Template/CSS/JS online identici, articolo HTTP200 e riferimenti v2 corretti;
+32 casi browser e integrità90 articoli passati anche sull'HTML pubblicato.
+Prove `copy-aggressivo/online/assets.json`, `browser.json`, `all-posts.json`
+e `copy-aggressivo/deploy.json`. Incluso e preservato anche il registro
+organizzatori concorrente `27c4f43` tramite rebase prima del push.
