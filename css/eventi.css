@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+body { font-family:'Plus Jakarta Sans',sans-serif; }
 .ev { --ev-blue:#2563eb; --ev-ink:#0f172a; --ev-muted:#526178; color:var(--ev-ink); font-family:'Plus Jakarta Sans',sans-serif; line-height:1.6; }
 .ev, .ev *, .ev *::before, .ev *::after { box-sizing:border-box; }
 .ev [hidden] { display:none!important; }
@@ -59,11 +60,6 @@
 .ev-steps span { border:1px solid #cbd5e1; border-radius:50%; width:24px; height:24px; display:grid; place-items:center; font-size:.72rem; }
 .ev-steps li[data-done=true] { color:#047857; }
 .ev-steps li[data-done=true] span { color:#047857; background:#ecfdf5; border-color:#a7f3d0; }
-.ev-finance { background:#0f172a; color:#fff; border:0; }
-.ev-finance .ev-muted { color:#cbd5e1; }
-.ev-split { display:flex; gap:24px; flex-wrap:wrap; padding:12px 0; }
-.ev-split strong { font-size:1.5rem; display:block; }
-.ev-split span { font-size:.8rem; color:#cbd5e1; }
 .ev-empty { text-align:center; padding:32px 16px; color:#526178; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:14px; }
 .ev-mini { font-size:.8rem; }
 .ev-profile-link { margin-top:12px; display:inline-block; }

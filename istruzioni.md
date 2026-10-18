@@ -1,5 +1,12 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+18/10/2026, preferenza organizzatori: contatto privato come percorso principale.
+Pagamenti futuri sul sito facoltativi, 8% solo su quelli gestiti dalla
+piattaforma; condizioni nel percorso di attivazione, niente pubblicità di
+commissioni nei moduli/pagine generali. Rimosso riquadro 8%/92%; CSS eventi2
+applica Plus Jakarta Sans anche al body per logo/menu/footer/accesso coerenti
+nelle pagine organizzatore/evento. Backend e pagamenti invariati.
+
 18/10/2026, organizzatori ed eventi: stesso account, profilo
 organizzatore e singoli eventi con approvazione admin separata. Modifiche da
 riapprovare; posteggi con quantità/prezzi; eventi approvati in fiere/profilo.

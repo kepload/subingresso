@@ -2,6 +2,14 @@
 
 Richiesta: lo stesso account deve poter organizzare fiere e mercatini, creare e gestire eventi approvati dall’admin. Predisporre prenotazioni per ambulanti: incasso sulla piattaforma, trasferimento all’organizzatore, commissione Subingresso **8% su ogni pagamento**. Approvazione separata del profilo organizzatore e di ogni evento; nessuna prenotazione o movimentazione di denaro attivata con questo intervento.
 
+## Preferenza corrente: contatto diretto e coerenza grafica — 18 ottobre 2026
+
+Il contatto privato con l’organizzatore è il percorso principale. I pagamenti sul sito saranno una scelta facoltativa dell’organizzatore; l’8% riguarda soltanto i pagamenti gestiti dalla piattaforma e va spiegato nel percorso di attivazione, senza pubblicizzarlo nei moduli o nelle pagine generali. Rimossa dall’area organizzatore l’intera sezione promozionale con ripartizione 8%/92% ed esempio. Nessun pagamento attivato né regola economica DB modificata.
+
+Font Plus Jakarta Sans applicato anche al body delle pagine organizzatore/evento: logo, menu, footer e finestre di accesso ereditano ora lo stesso carattere delle altre pagine. CSS eventi v2 in tutti e quattro i riferimenti pubblicati; rimossi gli stili del riquadro eliminato.
+
+Verifiche della correzione: flusso completo esistente passato in Chromium1440/320×568 e WebKit390. Confronto con `/contatti` su font realmente caricato, famiglia/peso/dimensione di logo/menu/footer identici; form e accesso standard coerenti, riquadro/percentuali assenti e contatto diretto presente nell’evento simulato. Pagina evento non disponibile verificata con HTML reale; evento200 simulato soltanto nel browser, nessun nuovo profilo/evento o invio reale. Nessun overflow/errore JS. Prove `Documents/verifica-organizzatori-font-20261018/`. Backup remoto verificato; consueto errore cleanup tag PowerShell.
+
 ## Percorsi e stati
 
 - `/organizzatore`: richiesta/modifica profilo, eventi, tipologie di posteggio con quantità, dimensioni, prezzo totale per l’intera manifestazione e condizioni. Accesso dallo stesso account, dashboard e calendario fiere. Nessuna modifica al wizard annunci o al sistema Vetrina.
