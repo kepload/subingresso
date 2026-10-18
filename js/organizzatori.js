@@ -6,7 +6,70 @@
  async function rpc(name,args){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);try{let query=_supabase.rpc(name,args);if(typeof query.abortSignal==='function')query=query.abortSignal(controller.signal);const result=await query;if(result.error)throw Error(result.error.message||'Operazione non riuscita');return result.data;}finally{clearTimeout(timer);}}
  function message(text,error=false,id='organizerMessage'){const el=$(id);if(!el)return;el.textContent=text;el.dataset.error=String(error);el.hidden=!text;}
  function failure(error){const text=error?.message||'Connessione non disponibile. Riprova.';if(/abort|timeout|timed out/i.test(text))return 'Connessione interrotta. Ricarica per verificare il salvataggio prima di riprovare.';return /check constraint|not-null|invalid input|value too long|out of range/i.test(text)?'Controlla i campi: formato, date, quantità e lunghezze devono essere validi.':text;}
- function values(form){return Object.fromEntries(new FormData(form).entries());}
+ function values(form){return Object.fromEntries([...new FormData(form)].map(([key,value])=>[key,typeof value==='string'?value.trim():value]));}
+ function fieldError(input,text){
+  const id=input.form.id+'-'+input.name+'-error';let error=$(id);
+  if(!error&&text){error=document.createElement('small');error.id=id;error.className='ev-field-error';error.setAttribute('aria-live','polite');(input.name==='sectors'?input.closest('fieldset'):input.parentElement).append(error);}
+  if(error){error.textContent=text;error.hidden=!text;}
+  const described=new Set((input.getAttribute('aria-describedby')||'').split(/\s+/).filter(Boolean));
+  if(text){input.setAttribute('aria-invalid','true');described.add(id);}else{input.removeAttribute('aria-invalid');described.delete(id);}
+  if(described.size)input.setAttribute('aria-describedby',[...described].join(' '));else input.removeAttribute('aria-describedby');
+ }
+ function clearErrors(form){for(const input of form.elements)if(input.name)fieldError(input,'');}
+ function addDays(value,days){const date=new Date(value+'T12:00:00Z');date.setUTCDate(date.getUTCDate()+days);return date.toISOString().slice(0,10);}
+ function isDate(input){return input.getAttribute('type')==='date';}
+ function validDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;const date=new Date(value+'T12:00:00Z');return !Number.isNaN(date.getTime())&&date.toISOString().slice(0,10)===value;}
+ function updateDates(adjust=false){
+  const form=$('organizerEventForm'),start=form.elements.start_date,end=form.elements.end_date,deadline=form.elements.application_deadline;
+  const previous=end.value;
+  const validStart=validDate(start.value)&&start.value>=start.min&&start.value<=start.max;
+  if(adjust&&validStart&&(!end.value||end.value<start.value))end.value=start.value;
+  if($('eventDateHint'))$('eventDateHint').textContent=previous&&previous!==end.value?'La fine è stata allineata alla nuova data di inizio. Puoi spostarla più avanti.':'Evento di un solo giorno? Lascia la stessa data di inizio e fine.';
+  end.min=validStart?start.value:'2000-01-01';end.max=validStart?addDays(start.value,366):'2101-12-31';deadline.max=validStart?start.value:'2100-12-31';
+  for(const input of [start,end,deadline]){const error=checkField(input);if(input.value||input.hasAttribute('aria-invalid'))fieldError(input,error);}
+ }
+ function checkField(input){
+  const value=input.value.trim(),form=input.form,name=input.name;
+  if(input.type==='checkbox')return name==='sectors'&&!form.querySelector('[name=sectors]:checked')?'Seleziona almeno un settore ammesso.':'';
+  if(input.validity.badInput)return isDate(input)?'Inserisci una data completa e valida.':'Inserisci un numero valido.';
+  if(input.required&&!value)return 'Compila questo campo.';
+  if(!value)return '';
+  if(name==='private_phone'||name==='public_phone'){const digits=value.replace(/\D/g,'');if(!/^\+?[0-9 ()-]{7,25}$/.test(value)||digits.length<7||digits.length>15)return 'Inserisci un telefono valido (7–15 cifre, prefisso internazionale facoltativo).';}
+  if(input.minLength>0&&[...value].length<input.minLength)return 'Inserisci almeno '+input.minLength+' caratteri, senza contare gli spazi iniziali e finali.';
+  if(input.maxLength>0&&[...value].length>input.maxLength)return 'Usa al massimo '+input.maxLength+' caratteri.';
+  if(input.type==='email'&&(input.validity.typeMismatch||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)))return 'Inserisci un’email completa, per esempio nome@dominio.it.';
+  if(name==='website'&&(!D.safeWebsite(value)||/\s/.test(value)))return 'Inserisci un sito che inizi con https://, senza spazi o credenziali.';
+  if(isDate(input)){
+   if(!validDate(value))return 'Inserisci una data completa e valida.';
+   if(name==='end_date'&&form.elements.start_date.value&&value<form.elements.start_date.value)return 'La data di fine non può precedere la data di inizio.';
+   if(name==='end_date'&&input.max&&value>input.max)return 'La fine deve essere entro 366 giorni dalla data di inizio.';
+   if(name==='application_deadline'&&form.elements.start_date.value&&value>form.elements.start_date.value)return 'La scadenza delle domande deve essere entro la data di inizio dell’evento.';
+   if((input.min&&value<input.min)||(input.max&&value>input.max))return 'Scegli una data compresa tra il 2000 e il 2100.';
+  }
+  if(input.type==='number'){
+   if(!Number.isFinite(Number(value)))return 'Inserisci un numero valido.';
+   if(input.validity.rangeUnderflow||input.validity.rangeOverflow)return 'Inserisci un valore da '+input.min+' a '+input.max+'.';
+   if(input.validity.stepMismatch)return name==='quantity'?'Inserisci un numero intero di posteggi.':'Usa al massimo due cifre decimali.';
+  }
+  return input.validity.valid?'':'Controlla il formato di questo campo.';
+ }
+ function validateForm(form){
+  if(form.id==='organizerEventForm')updateDates();let first=null;
+  for(const input of form.elements){if(!input.name||input.disabled||input.readOnly||(input.name==='sectors'&&input!==form.querySelector('[name=sectors]')))continue;const error=checkField(input);fieldError(input,error);if(error&&!first)first=input;}
+  if(form.id==='organizerProfileForm'&&!['website','public_email','public_phone'].some(name=>form.elements[name].value.trim())){const input=form.elements.public_email;fieldError(input,'Indica almeno un’email pubblica, un telefono pubblico o il sito web per ricevere contatti.');if(!first)first=input;}
+  if(form.id==='organizerEventForm'&&state.picker&&!state.picker.getValue()&&!first){first=form.elements.city;fieldError(first,'Seleziona il comune dall’elenco dei suggerimenti.');}
+  if(first){first.focus();return false;}return true;
+ }
+ function bindValidation(form){
+  form.noValidate=true;
+  form.addEventListener('input',event=>{
+   const input=event.target;if(!input.name)return;
+   if(isDate(input))updateDates();
+   else if(input.hasAttribute('aria-invalid')||input.name==='sectors')fieldError(input.name==='sectors'?form.querySelector('[name=sectors]'):input,checkField(input));
+   if(form.id==='organizerProfileForm'&&['website','public_email','public_phone'].includes(input.name)&&['website','public_email','public_phone'].some(name=>form.elements[name].value.trim()))fieldError(form.elements.public_email,checkField(form.elements.public_email));
+  });
+  form.addEventListener('change',event=>{if(event.target.name==='start_date'){updateDates(true);markEventDirty();}else if(isDate(event.target))updateDates();});
+ }
  function fill(form,data){for(const el of form.elements){if(!el.name||el.name==='sectors')continue;if(el.type==='checkbox')el.checked=data?.[el.name]!==false;else el.value=data?.[el.name]??'';}}
  function selectedEvent(){return state.data?.events.find(e=>e.id===state.selected);}
  function eventSignature(){return JSON.stringify([...new FormData($('organizerEventForm')).entries()]);}
@@ -16,7 +79,7 @@
  function renderWorkspace(){const p=state.data.profile, approved=p?.status==='approved';
   $('organizerStatus').innerHTML=p?D.badge(p.status):'<span class="ev-status">Da richiedere</span>';
   $('organizerReview').hidden=!p;$('organizerReview').textContent=p?.review_note||(approved?'Profilo approvato. Puoi creare e gestire i tuoi eventi.':p?.status==='pending'?'Il tuo profilo è in attesa di revisione. Ritroverai qui l’esito.':'Correggi il profilo seguendo le indicazioni dell’amministratore.');
-  fill($('organizerProfileForm'),p||{organization_type:'impresa'});$('organizerProfileDetails').open=!p||p.status==='rejected';$('organizerProfileSummary').textContent=p?'Dati e modifica del profilo':'Compila il profilo';
+  if(!state.profileDirty){fill($('organizerProfileForm'),p||{organization_type:'impresa'});clearErrors($('organizerProfileForm'));$('organizerProfileDetails').open=!p||p.status==='rejected';}$('organizerProfileSummary').textContent=p?'Dati e modifica del profilo':'Compila il profilo';
   $('organizerProfileForm').querySelector('button[type=submit]').disabled=p?.status==='suspended';
   $('organizerPublicLink').hidden=!approved;$('organizerPublicLink').href='/profilo?id='+encodeURIComponent(state.userId);
   $('newOrganizerEvent').hidden=!approved;$('organizerEventsHint').textContent=approved?'Salva una bozza, aggiungi i posteggi e invia l’evento in revisione.':'Attendi l’approvazione del profilo per creare o modificare eventi.';
@@ -30,15 +93,17 @@
   const data=await rpc('organizer_workspace');if(epoch!==state.epoch||state.userId!==user.id)return;state.data=data;renderWorkspace();$('organizerWorkspace').hidden=false;
  }
  function initPicker(){if(state.picker)return;for(const region of REGIONI){const option=document.createElement('option');option.value=option.textContent=region;$('eventRegion').append(option);}state.picker=createComunePicker({comuneInput:$('eventCity'),regioneSelect:$('eventRegion'),provinciaInput:$('eventProvince'),suggestionsEl:$('eventCities'),statusEl:$('eventCityStatus')});}
- function fillEvent(e){initPicker();fill($('organizerEventForm'),e||{category:'mercatino'});for(const input of $('organizerEventForm').querySelectorAll('[name=sectors]'))input.checked=(e?.sectors||[]).includes(input.value);
+ function fillEvent(e){initPicker();clearErrors($('organizerEventForm'));fill($('organizerEventForm'),e||{category:'mercatino'});updateDates();for(const input of $('organizerEventForm').querySelectorAll('[name=sectors]'))input.checked=(e?.sectors||[]).includes(input.value);
   state.eventSnapshot=eventSignature();
   const request=++state.locationRequest,form=$('organizerEventForm'),save=form.querySelector('button[type=submit]');state.restoring=true;save.disabled=true;form.setAttribute('aria-busy','true');
   state.picker.setValue(e?.city||'',e?.region||'').catch(()=>{}).finally(()=>{if(request!==state.locationRequest)return;state.restoring=false;markEventDirty();form.setAttribute('aria-busy','false');save.disabled=state.busy;});
   $('eventEditorTitle').textContent=e?'Gestisci: '+e.title:'Nuovo evento';$('eventEditor').hidden=false;$('eventPlacesEditor').hidden=!e;state.dirty=false;resetPlace();
+  $('eventPublicationNotice').hidden=!e||!['published','pending'].includes(e.status);
   if(e){$('eventPlacesList').innerHTML=e.places.length?e.places.map(p=>'<article class="ev-card"><div class="ev-card-head"><h3>'+D.esc(p.label)+'</h3>'+(!p.active?'<span class="ev-status">Non attivo</span>':'')+'</div><p>'+p.quantity+' posteggi · '+D.esc(D.money(p.price_cents))+' ciascuno / intero evento</p><button type="button" data-place-edit="'+D.esc(p.id)+'">Modifica tipologia</button></article>').join(''):'<p class="ev-empty">Aggiungi almeno una tipologia di posteggio.</p>';$('submitOrganizerEvent').hidden=!['draft','rejected'].includes(e.status);}
  }
- function resetPlace(){state.placeId=null;state.placeDirty=false;$('eventPlaceForm').reset();$('placeFormTitle').textContent='Aggiungi una tipologia di posteggio';$('placeDetails').open=false;}
+ function resetPlace(){state.placeId=null;state.placeDirty=false;$('eventPlaceForm').reset();clearErrors($('eventPlaceForm'));$('placeFormTitle').textContent='Aggiungi una tipologia di posteggio';$('placeDetails').open=false;}
  async function initOwner(){
+  for(const id of ['organizerProfileForm','organizerEventForm','eventPlaceForm'])bindValidation($(id));
   try{sessionStorage.setItem('_vp','1');}catch(_){}
   $('organizerRefresh').addEventListener('click',event=>{if((state.dirty||state.placeDirty||state.profileDirty)&&!window.confirm('Ricaricare i dati e abbandonare le modifiche non salvate?'))return;state.dirty=false;state.placeDirty=false;state.profileDirty=false;action(event.target,loadWorkspace);});
   $('organizerSignIn').addEventListener('click',()=>openAuthModal('login','Accedi o registrati per creare il tuo profilo organizzatore.','nav_accedi'));
@@ -47,11 +112,11 @@
   $('organizerProfileForm').addEventListener('input',()=>state.profileDirty=true);
   $('organizerEventForm').addEventListener('input',markEventDirty);$('organizerEventForm').addEventListener('change',markEventDirty);
   $('eventPlaceForm').addEventListener('input',()=>state.placeDirty=true);
-  $('organizerProfileForm').addEventListener('submit',event=>{event.preventDefault();if(!mayLeave())return;const data=values(event.target);if(data.website&&!D.safeWebsite(data.website)){message('Il sito web deve iniziare con https:// e non contenere credenziali.',true);return;}if(!data.website&&!data.public_email&&!data.public_phone){message('Indica almeno un contatto pubblico o il sito web per permettere agli ambulanti di contattarti.',true);return;}action(event.submitter,async()=>{await rpc('save_organizer_profile',{p_data:data,p_revision:state.data.profile?.revision??null});state.profileDirty=false;state.dirty=false;state.placeDirty=false;state.selected=null;await loadWorkspace();message('Profilo inviato. L’amministratore lo controllerà prima di renderlo pubblico.');});});
-  $('organizerEventForm').addEventListener('submit',event=>{event.preventDefault();if(state.placeDirty&&!window.confirm('La tipologia di posteggio ha modifiche non salvate. Continuare senza salvarle?'))return;const location=state.picker.getValue();if(!location){message('Seleziona un comune dall’elenco dei suggerimenti.',true);return;}const data=values(event.target);data.region=location.regione;data.province=location.provincia;data.city=location.comune;data.sectors=new FormData(event.target).getAll('sectors');if(!data.sectors.length){message('Seleziona almeno un settore ammesso.',true);return;}if(data.end_date<data.start_date){message('La data finale deve essere uguale o successiva a quella iniziale.',true);return;}action(event.submitter,async()=>{const saved=await rpc('save_organizer_event',{p_id:state.selected,p_data:data,p_revision:selectedEvent()?.revision??null});state.selected=saved.id;state.dirty=false;state.placeDirty=false;await loadWorkspace();message('Bozza salvata. Aggiungi o controlla i posteggi, poi invia l’evento in revisione.');$('eventPlacesEditor').scrollIntoView({block:'nearest',behavior:'smooth'});});});
-  $('eventPlaceForm').addEventListener('submit',event=>{event.preventDefault();if(state.dirty){message('Salva prima le modifiche ai dati dell’evento.',true);return;}const data=values(event.target);data.price_cents=Math.round(Number(data.price)*100);data.quantity=Number(data.quantity);data.active=event.target.elements.active.checked;action(event.submitter,async()=>{await rpc('save_event_place',{p_event_id:state.selected,p_id:state.placeId,p_data:data,p_revision:selectedEvent().revision});state.placeDirty=false;await loadWorkspace();message('Posteggi salvati. L’evento è in bozza: invialo in revisione quando è pronto.');});});
+  $('organizerProfileForm').addEventListener('submit',event=>{event.preventDefault();if(!validateForm(event.target)||!mayLeave())return;const data=values(event.target);action(event.submitter,async()=>{await rpc('save_organizer_profile',{p_data:data,p_revision:state.data.profile?.revision??null});state.profileDirty=false;state.dirty=false;state.placeDirty=false;state.selected=null;await loadWorkspace();message('Profilo inviato. L’amministratore lo controllerà prima di renderlo pubblico.');});});
+  $('organizerEventForm').addEventListener('submit',event=>{event.preventDefault();if(!validateForm(event.target))return;if(state.placeDirty&&!window.confirm('La tipologia di posteggio ha modifiche non salvate. Continuare senza salvarle?'))return;const location=state.picker.getValue(),data=values(event.target);data.region=location.regione;data.province=location.provincia;data.city=location.comune;data.sectors=new FormData(event.target).getAll('sectors');action(event.submitter,async()=>{const saved=await rpc('save_organizer_event',{p_id:state.selected,p_data:data,p_revision:selectedEvent()?.revision??null});state.selected=saved.id;state.dirty=false;state.placeDirty=false;await loadWorkspace();message('Bozza salvata. Aggiungi o controlla i posteggi, poi invia l’evento in revisione.');$('eventPlacesEditor').scrollIntoView({block:'nearest',behavior:'smooth'});});});
+  $('eventPlaceForm').addEventListener('submit',event=>{event.preventDefault();if(!validateForm(event.target))return;if(state.dirty){message('Salva prima le modifiche ai dati dell’evento.',true);return;}const data=values(event.target);data.price_cents=Math.round(Number(data.price)*100);data.quantity=Number(data.quantity);data.active=event.target.elements.active.checked;action(event.submitter,async()=>{await rpc('save_event_place',{p_event_id:state.selected,p_id:state.placeId,p_data:data,p_revision:selectedEvent().revision});state.placeDirty=false;await loadWorkspace();message('Posteggi salvati. L’evento è in bozza: invialo in revisione quando è pronto.');});});
   $('resetPlaceForm').addEventListener('click',()=>{if(state.placeDirty&&!window.confirm('Abbandonare le modifiche alla tipologia?'))return;resetPlace();$('placeDetails').open=true;});
-  $('submitOrganizerEvent').addEventListener('click',event=>{if(state.dirty||state.placeDirty){message('Salva le modifiche prima di inviare l’evento.',true);return;}action(event.target,async()=>{await rpc('submit_organizer_event',{p_id:state.selected,p_revision:selectedEvent().revision});await loadWorkspace();message('Evento inviato. Sarà visibile nel calendario dopo l’approvazione dell’amministratore.');});});
+  $('submitOrganizerEvent').addEventListener('click',event=>{if(state.dirty||state.placeDirty){message('Salva le modifiche prima di inviare l’evento.',true);return;}const form=$('organizerEventForm'),today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());if(!validateForm(form))return;if(form.elements.start_date.value<today){fieldError(form.elements.start_date,'La data di inizio è già passata. Scegli una data da oggi in poi.');form.elements.start_date.focus();return;}if([...form.elements.participation_rules.value.trim()].length<20){fieldError(form.elements.participation_rules,'Descrivi come partecipare in almeno 20 caratteri, poi salva la bozza.');form.elements.participation_rules.focus();return;}if(!selectedEvent().places.some(place=>place.active)){message('Aggiungi almeno una tipologia di posteggio prima di inviare.',true);$('placeDetails').open=true;$('eventPlaceForm').elements.label.focus();return;}action(event.target,async()=>{await rpc('submit_organizer_event',{p_id:state.selected,p_revision:selectedEvent().revision});await loadWorkspace();message('Evento inviato. Sarà visibile nel calendario dopo l’approvazione dell’amministratore.');});});
   $('organizerApp').addEventListener('click',event=>{const edit=event.target.closest('[data-event-edit]'),cancel=event.target.closest('[data-event-cancel]'),place=event.target.closest('[data-place-edit]');if(edit){if(!mayLeave())return;state.selected=edit.dataset.eventEdit;fillEvent(selectedEvent());$('eventEditorTitle').focus();$('eventEditor').scrollIntoView({block:'start',behavior:'smooth'});}if(cancel){if(!window.confirm('Ritirare l’evento? Non sarà più visibile al pubblico e resterà conservato nella tua area.'))return;action(cancel,async()=>{const e=state.data.events.find(e=>e.id===cancel.dataset.eventCancel);await rpc('cancel_organizer_event',{p_id:e.id,p_revision:e.revision});state.dirty=false;state.placeDirty=false;await loadWorkspace();message('Evento ritirato. Puoi modificarlo e inviarlo nuovamente in revisione.');});}if(place){if(state.placeDirty&&!window.confirm('Abbandonare le modifiche alla tipologia?'))return;const p=selectedEvent().places.find(p=>p.id===place.dataset.placeEdit);state.placeId=p.id;fill($('eventPlaceForm'),{...p,price:(p.price_cents/100).toFixed(2)});$('placeFormTitle').textContent='Modifica: '+p.label;$('placeDetails').open=true;state.placeDirty=false;$('placeDetails').scrollIntoView({block:'nearest',behavior:'smooth'});}});
   window.addEventListener('beforeunload',event=>{if(state.dirty||state.placeDirty||state.profileDirty){event.preventDefault();event.returnValue='';}});
   _supabase.auth.onAuthStateChange((_event,session)=>{if(session?.user?.id!==state.userId){++state.epoch;state.data=null;$('organizerWorkspace').hidden=true;setTimeout(()=>loadWorkspace().catch(error=>message(failure(error),true)),0);}});

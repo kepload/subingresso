@@ -39,9 +39,25 @@ BEGIN
  EXECUTE 'RESET ROLE';
  PERFORM set_config('request.jwt.claim.sub',owner_id::text,true); EXECUTE 'SET LOCAL ROLE authenticated';
  BEGIN PERFORM public.save_organizer_event(NULL,event_data||'{"city":"Comune inesistente"}'); RAISE EXCEPTION 'Comune inventato accettato'; EXCEPTION WHEN raise_exception THEN IF SQLERRM NOT LIKE 'Seleziona un comune%' THEN RAISE; END IF; END;
+ -- Le stesse regole del modulo devono restare obbligatorie anche chiamando direttamente le API.
+ BEGIN PERFORM public.save_organizer_event(NULL,event_data||jsonb_build_object('end_date',current_date+29)); RAISE EXCEPTION 'Fine prima di inizio accettata'; EXCEPTION WHEN check_violation THEN NULL; END;
+ BEGIN PERFORM public.save_organizer_event(NULL,event_data||jsonb_build_object('end_date',current_date+397)); RAISE EXCEPTION 'Durata oltre 366 giorni accettata'; EXCEPTION WHEN check_violation THEN NULL; END;
+ BEGIN PERFORM public.save_organizer_event(NULL,event_data||jsonb_build_object('application_deadline',current_date+31)); RAISE EXCEPTION 'Scadenza dopo inizio accettata'; EXCEPTION WHEN check_violation THEN NULL; END;
+ BEGIN PERFORM public.save_organizer_event(NULL,event_data||'{"description":"Troppo breve"}'); RAISE EXCEPTION 'Descrizione breve accettata'; EXCEPTION WHEN check_violation THEN NULL; END;
+ BEGIN PERFORM public.save_organizer_event(NULL,event_data||'{"sectors":[]}'); RAISE EXCEPTION 'Nessun settore accettato'; EXCEPTION WHEN check_violation THEN NULL; END;
+ BEGIN
+  data:=public.save_organizer_event(NULL,event_data||jsonb_build_object('start_date',current_date-2,'end_date',current_date-1));
+  PERFORM public.submit_organizer_event((data->>'id')::uuid,(data->>'revision')::integer);RAISE EXCEPTION 'Invio evento passato accettato';
+ EXCEPTION WHEN raise_exception THEN IF SQLERRM NOT LIKE 'La data di inizio%' THEN RAISE; END IF;END;
+ BEGIN
+  data:=public.save_organizer_event(NULL,event_data||'{"participation_rules":""}');
+  PERFORM public.submit_organizer_event((data->>'id')::uuid,(data->>'revision')::integer);RAISE EXCEPTION 'Invio senza condizioni accettato';
+ EXCEPTION WHEN raise_exception THEN IF SQLERRM NOT LIKE 'Descrivi le condizioni%' THEN RAISE; END IF;END;
  e:=public.save_organizer_event(NULL,event_data); event_id:=(e->>'id')::uuid;
  IF e->>'status'<>'draft' OR (e->>'bookings_enabled')::boolean OR (e->>'organizer_id')::uuid<>owner_id THEN RAISE EXCEPTION 'Pubblicazione o proprietà manomettibile'; END IF;
  BEGIN PERFORM public.submit_organizer_event(event_id,(e->>'revision')::integer); RAISE EXCEPTION 'Invio senza posteggi'; EXCEPTION WHEN raise_exception THEN IF SQLERRM NOT LIKE 'Aggiungi almeno%' THEN RAISE; END IF; END;
+ BEGIN PERFORM public.save_event_place(event_id,NULL,'{"label":"Banco QA","quantity":0,"price_cents":10000}',(e->>'revision')::integer);RAISE EXCEPTION 'Quantità nulla accettata';EXCEPTION WHEN check_violation THEN NULL;END;
+ BEGIN PERFORM public.save_event_place(event_id,NULL,'{"label":"Banco QA","quantity":1,"price_cents":-1}',(e->>'revision')::integer);RAISE EXCEPTION 'Prezzo negativo accettato';EXCEPTION WHEN check_violation THEN NULL;END;
  s:=public.save_event_place(event_id,NULL,'{"label":"Banco 3 x 3","quantity":2,"price_cents":10000,"width_m":3,"depth_m":3}',(e->>'revision')::integer);place_id:=(s->>'id')::uuid;
  e:=public.organizer_workspace()->'events'->0;
  PERFORM public.submit_organizer_event(event_id,(e->>'revision')::integer);

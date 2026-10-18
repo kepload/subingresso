@@ -28,6 +28,11 @@ body { font-family:'Plus Jakarta Sans',sans-serif; }
 .ev label, .ev legend { display:block; font-size:.82rem; font-weight:700; color:#334155; }
 .ev input:not([type=checkbox]), .ev select, .ev textarea { display:block; width:100%; min-width:0; padding:11px 12px; border:1px solid #cbd5e1; border-radius:10px; background:#fff; color:#0f172a; font:inherit; font-size:16px; margin-top:5px; min-height:46px; }
 .ev input[readonly] { background:#f8fafc; color:#475569; }
+.ev .ev-help { display:block; margin-top:6px; color:#526178; font-size:.75rem; font-weight:400; line-height:1.5; }
+.ev .ev-field-error { display:block; margin-top:6px; color:#b91c1c; font-size:.78rem; font-weight:600; line-height:1.5; overflow-wrap:anywhere; }
+.ev input[aria-invalid=true], .ev select[aria-invalid=true], .ev textarea[aria-invalid=true] { border-color:#dc2626; }
+.ev h3.ev-form-heading { margin:8px 0 0; padding-top:18px; border-top:1px solid #e2e8f0; }
+.ev input, .ev select, .ev textarea, .ev fieldset { scroll-margin-top:110px; }
 .ev textarea { min-height:110px; resize:vertical; }
 .ev fieldset { min-width:0; margin:0; padding:0; border:0; }
 .ev-checks { display:flex; gap:8px 18px; flex-wrap:wrap; padding:8px 0; }

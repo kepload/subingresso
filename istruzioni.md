@@ -1,5 +1,14 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+18/10/2026, modulo organizzatori: controlli vicino ai campi e date collegate,
+fine proposta uguale all’inizio, calendario/validazione manuale coerenti anche
+senza date native. Scadenza entro inizio, massimo366 giorni; condizioni min20
+e data non passata prima dell’invio, bozza consentita senza condizioni.
+Campi facoltativi, recapiti e costo intero evento più chiari. Salvataggi
+eventi preservano il profilo non salvato. JS organizzatori3/CSS eventi3;
+DB/pagamenti invariati. Test browser e SQL negativo/ROLLBACK estesi;
+dettagli `data/ORGANIZZATORI_EVENTI.md`, prove Documents/verifica-modulo-eventi-20261018.
+
 18/10/2026, preferenza organizzatori: contatto privato come percorso principale.
 Pagamenti futuri sul sito facoltativi, 8% solo su quelli gestiti dalla
 piattaforma; condizioni nel percorso di attivazione, niente pubblicità di
