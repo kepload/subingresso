@@ -117,6 +117,7 @@
         }
     </style>
     <link rel="stylesheet" href="css/vetrina-account.css?v=1">
+    <link rel="stylesheet" href="css/vetrina-conversion.css?v=1">
 </head>
 <body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900">
 
@@ -168,11 +169,13 @@
 
     <!-- Toast pagamento annullato -->
     <div id="paymentCanceledToast" class="hidden max-w-5xl mx-auto mb-4">
-        <div class="bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl px-5 py-3 flex items-center gap-3 text-sm font-semibold">
-            <i class="fas fa-info-circle text-amber-500"></i>
-            Pagamento annullato. Nessun addebito è stato effettuato.
-            <button onclick="document.getElementById('paymentCanceledToast').classList.add('hidden')" class="ml-auto text-amber-500 hover:text-amber-700">
-                <i class="fas fa-times"></i>
+        <div class="v-payment-return" role="status">
+            <div><strong>Hai lasciato il pagamento.</strong>
+                <p>Il tuo annuncio è conservato. Puoi rivedere le durate e scegliere la Vetrina quando vuoi; se è in revisione, attendi l’approvazione.</p>
+                <button type="button" onclick="showTab('pagamenti'); VetrinaAccount.chooseListing()">Rivedi le opzioni Vetrina</button>
+            </div>
+            <button type="button" onclick="document.getElementById('paymentCanceledToast').classList.add('hidden')" class="v-payment-return-close" aria-label="Chiudi l’avviso sul pagamento">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
     </div>
@@ -869,112 +872,53 @@
 </main>
 
 <!-- ══════════════ MODAL VETRINA ══════════════ -->
-<div id="vetrinaModal" class="hidden fixed inset-0 z-[999] flex items-end sm:items-center justify-center sm:p-4" style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)" onclick="closeVetrinaModal()">
-    <div class="bg-white rounded-t-3xl sm:rounded-3xl w-full max-w-md shadow-2xl" style="max-height:90vh;max-height:90dvh;overflow-y:auto" onclick="event.stopPropagation()">
-
-        <!-- Header -->
-        <div class="bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 px-5 pt-5 pb-4 relative overflow-hidden rounded-t-3xl sm:rounded-t-3xl">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-12 translate-x-12"></div>
-            <button onclick="closeVetrinaModal()" class="absolute top-3 right-3 z-10 w-7 h-7 flex items-center justify-center bg-white/20 hover:bg-white/30 text-white rounded-lg transition">
-                <i class="fas fa-times text-xs"></i>
-            </button>
-            <div class="relative">
-                <span class="inline-flex items-center gap-1.5 bg-white/20 text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-lg">
-                    <i class="fas fa-star text-[8px]"></i> Vetrina in Evidenza
-                </span>
-                <h2 class="font-black text-xl text-white leading-tight mt-1.5">Fai notare il tuo annuncio</h2>
-                <p class="text-white/85 text-xs font-semibold mt-0.5 truncate pr-6" id="vetrinaListingTitle">—</p>
-            </div>
+<div id="vetrinaModal" class="hidden fixed inset-0 flex justify-center" style="z-index:999;background:rgba(15,23,42,.65);backdrop-filter:blur(4px)" onclick="closeVetrinaModal()">
+    <div class="v-offer" role="dialog" aria-modal="true" aria-labelledby="vetrinaOfferTitle" tabindex="-1" onclick="event.stopPropagation()">
+        <div class="v-offer-head">
+            <small>VETRINA PREMIUM</small>
+            <h2 id="vetrinaOfferTitle">Fai notare il tuo posteggio</h2>
+            <p id="vetrinaListingTitle"></p>
+            <button type="button" class="v-offer-close" onclick="closeVetrinaModal()" aria-label="Chiudi la scelta Vetrina">×</button>
         </div>
-
-        <!-- Benefici -->
-        <div class="px-5 pt-4 pb-3 border-b border-slate-100">
-            <div class="grid grid-cols-3 gap-2 text-center">
-                <div class="flex flex-col items-center gap-1">
-                    <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-eye text-amber-500 text-xs"></i>
-                    </div>
-                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Prima dei gratuiti</p>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                    <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-newspaper text-amber-500 text-xs"></i>
-                    </div>
-                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Spazi nel blog</p>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                    <div class="w-8 h-8 bg-amber-50 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-arrow-up text-amber-500 text-xs"></i>
-                    </div>
-                    <p class="text-[9px] font-black text-slate-500 uppercase tracking-wide leading-tight">Tra i consigliati</p>
-                </div>
+        <div class="v-offer-body">
+            <ul class="v-offer-benefits">
+                <li>Priorità nelle ricerche pertinenti e nei consigliati</li>
+                <li>Spazi nel blog, a rotazione con le altre Vetrine</li>
+                <li>Statistiche di apparizioni, visite e azioni di contatto</li>
+            </ul>
+            <p class="v-offer-hint">Stessi vantaggi in ogni pacchetto. Scegli per quanto tempo.</p>
+            <div class="v-offer-plans" role="group" aria-label="Durata della Vetrina">
+                <button type="button" id="tier10d" class="v-offer-plan" onclick="selectVetrinaTier('10d')" aria-pressed="false">
+                    <span class="v-offer-radio" aria-hidden="true"></span>
+                    <span class="v-offer-plan-copy"><strong>10 giorni</strong><small>Per iniziare con una durata breve</small></span>
+                    <span class="v-offer-price"><strong>€ 24,90</strong><small>€ 2,49 / giorno</small></span>
+                </button>
+                <button type="button" id="tier30d" class="v-offer-plan" onclick="selectVetrinaTier('30d')" aria-pressed="true">
+                    <span class="v-offer-radio" aria-hidden="true"></span>
+                    <span class="v-offer-plan-copy"><strong>30 giorni <span class="v-offer-tag">Consigliato</span></strong><small>Un mese di promozione</small></span>
+                    <span class="v-offer-price"><strong>€ 49,90</strong><small>€ 1,66 / giorno</small></span>
+                </button>
+                <button type="button" id="tier90d" class="v-offer-plan" onclick="selectVetrinaTier('90d')" aria-pressed="false">
+                    <span class="v-offer-radio" aria-hidden="true"></span>
+                    <span class="v-offer-plan-copy"><strong>90 giorni</strong><small>Il costo giornaliero più basso</small></span>
+                    <span class="v-offer-price"><strong>€ 99,90</strong><small>€ 1,11 / giorno</small></span>
+                </button>
             </div>
-            <p class="text-xs text-slate-500 mt-3 leading-relaxed">Priorità nelle ricerche pertinenti e negli annunci consigliati. Presenza negli spazi del blog, a rotazione con le altre Vetrine.</p>
-            <p class="text-xs text-amber-700 font-bold mt-3"><i class="fas fa-chart-line mr-1" aria-hidden="true"></i> Statistiche Premium incluse: apparizioni, visite e azioni di contatto. Ordini e ricevute accessibili dalla tua area personale.</p>
-            <details class="mt-3 text-xs">
-                <summary class="font-bold text-blue-600 cursor-pointer">Vedi come apparirà il tuo annuncio</summary>
-                <div id="vetrinaPreview" class="mt-3" style="pointer-events:none" aria-label="Anteprima del tuo annuncio in Vetrina"></div>
+            <details class="v-offer-details">
+                <summary>Quando parte e cosa comprende?</summary>
+                <p>La promozione parte dal pagamento se l’annuncio è online, dall’approvazione se è in revisione. Un’estensione aggiunge giorni alla Vetrina in corso.</p>
+                <p>La priorità rispetta i filtri e l’ordinamento per distanza. Gli spazi del blog sono condivisi a rotazione. Le statistiche mostrano le attività rilevate durante la promozione; non certificano vendite o contatti aggiuntivi.</p>
+                <p>Al termine, la promozione si ferma. La scadenza dell’annuncio resta invariata. Ordini e ricevute sono nella tua area personale.</p>
+            </details>
+            <details class="v-offer-details">
+                <summary>Vedi l’anteprima del tuo annuncio</summary>
+                <div id="vetrinaPreview" style="pointer-events:none" aria-label="Anteprima del tuo annuncio in Vetrina"></div>
             </details>
         </div>
-
-        <!-- Tier options -->
-        <div class="px-5 pt-4 pb-3 space-y-2.5">
-
-            <!-- 10 giorni -->
-            <button id="tier10d" onclick="startCheckout('10d')" class="w-full text-left bg-white border-2 border-slate-100 hover:border-slate-200 rounded-2xl px-4 py-3 transition">
-                <div class="flex items-center justify-between gap-3">
-                    <div>
-                        <h3 class="font-black text-slate-700 text-sm leading-tight">Vetrina 10 giorni</h3>
-                        <p class="text-[10px] text-slate-400 font-semibold mt-0.5">Promozione breve</p>
-                    </div>
-                    <div class="text-right flex-shrink-0">
-                        <p class="text-xl font-black text-slate-700 leading-none">€ 24,90</p>
-                        <p class="text-xs font-bold text-slate-500 mt-1">€ 2,49 / giorno</p>
-                    </div>
-                </div>
-            </button>
-
-            <!-- 30 giorni -->
-            <button id="tier30d" onclick="startCheckout('30d')" class="w-full text-left bg-blue-50 border-2 border-blue-200 hover:border-blue-400 rounded-2xl px-4 py-3 transition">
-                <div class="flex items-center justify-between gap-3">
-                    <div>
-                        <h3 class="font-black text-slate-700 text-sm leading-tight">Vetrina 30 giorni</h3>
-                        <p class="text-[10px] text-blue-600 font-semibold mt-0.5">Consigliato · Un mese di visibilità</p>
-                    </div>
-                    <div class="text-right flex-shrink-0">
-                        <p class="text-xl font-black text-slate-700 leading-none">€ 49,90</p>
-                        <p class="text-xs font-bold text-slate-500 mt-1">€ 1,66 / giorno</p>
-                    </div>
-                </div>
-            </button>
-
-            <!-- 90 giorni — MIGLIOR VALORE -->
-            <button id="tier90d" onclick="startCheckout('90d')" class="relative w-full text-left bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-400 hover:border-amber-500 rounded-2xl px-4 py-3.5 transition shadow-sm shadow-amber-100">
-                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-0.5 rounded-full shadow-md whitespace-nowrap">⭐ Miglior valore</span>
-                <div class="flex items-center justify-between gap-3">
-                    <div>
-                        <h3 class="font-black text-slate-900 text-base leading-tight">Vetrina 90 giorni</h3>
-                        <p class="text-[10px] text-amber-700 font-bold mt-0.5">Tre mesi per la tua trattativa</p>
-                    </div>
-                    <div class="text-right flex-shrink-0">
-                        <p class="text-xl font-black text-slate-900 leading-none">€ 99,90</p>
-                        <p class="text-xs font-bold text-amber-700 mt-1">€ 1,11 / giorno</p>
-                    </div>
-                </div>
-            </button>
-
-        </div>
-
-        <!-- Footer -->
-        <p class="px-5 pb-3 text-xs text-slate-500 leading-relaxed">Annuncio già online: la durata parte dal pagamento. Nuovo annuncio: dall'approvazione. Se estendi una Vetrina attiva, aggiungiamo i giorni alla scadenza attuale.</p>
-        <div class="px-5 pb-5 flex items-center justify-between gap-3">
-            <button onclick="closeVetrinaModal()" class="text-xs font-black text-slate-400 hover:text-slate-600 uppercase tracking-widest transition flex-shrink-0">
-                Annulla
-            </button>
-            <p class="text-[9px] text-slate-400 font-bold flex items-center gap-1.5 truncate">
-                <i class="fas fa-lock text-slate-300 flex-shrink-0"></i> Pagamento sicuro Stripe · pagamento unico, no abbonamento
-            </p>
-            <p class="text-[10px] text-slate-400 font-bold flex-shrink-0" id="vetrinaLoadingMsg"></p>
+        <div class="v-offer-footer">
+            <button type="button" id="vetrinaCheckoutButton" onclick="startCheckout()">Continua con 30 giorni · € 49,90</button>
+            <p class="v-offer-trust">Pagamento unico con Stripe. Nessun rinnovo automatico.</p>
+            <p id="vetrinaLoadingMsg" role="status" aria-live="polite"></p>
         </div>
     </div>
 </div>
@@ -1291,7 +1235,7 @@
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=20"></script>
 <script src="js/valuation.js?v=7"></script>
-<script src="js/vetrina-account.js?v=1"></script>
+<script src="js/vetrina-account.js?v=2"></script>
 <script src="js/auth.js?v=22"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <link rel="stylesheet" href="css/admin-control-room.css?v=2">
@@ -3578,8 +3522,8 @@ function _renderSellerVetrinaResults(listings) {
         el.innerHTML += `
             <div class="border border-slate-100 rounded-2xl p-4 mt-3">
                 <h4 class="text-sm font-black text-slate-900">Vuoi dare più visibilità a questo posteggio?</h4>
-                <p class="text-xs text-slate-500 mt-1 leading-relaxed">${escapeHTML(candidate.titolo || 'Il tuo annuncio')} è online da almeno una settimana. Con la Vetrina ha priorità nella ricerca e negli spazi del blog.</p>
-                <button type="button" data-vetrina-listing="${escapeHTML(candidate.id)}" onclick="openVetrinaFromAnalytics(this.dataset.vetrinaListing)" class="mt-3 bg-amber-50 text-amber-700 border border-amber-200 px-4 py-2 rounded-xl text-xs font-black">Scopri la Vetrina · da € 24,90</button>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">${escapeHTML(candidate.titolo || 'Il tuo annuncio')} è online da almeno una settimana. Promuovilo nelle ricerche pertinenti, nei consigliati e negli spazi del blog a rotazione. Segui apparizioni, visite e azioni di contatto nella tua area personale.</p>
+                <button type="button" data-vetrina-listing="${escapeHTML(candidate.id)}" onclick="openVetrinaFromAnalytics(this.dataset.vetrinaListing)" style="min-height:44px" class="mt-3 bg-amber-50 text-amber-700 border border-amber-200 px-4 py-2 rounded-xl text-xs font-black">Promuovi da € 24,90 · vedi le durate</button>
             </div>`;
     }
 }
@@ -3835,10 +3779,10 @@ async function loadMyListings() {
                     </button>` : ''}
                     ${l.status === 'active' && !isExpired ? `
                     <button onclick='openVetrinaModal(${JSON.stringify({ id: l.id, titolo: l.titolo, featured: isFeatured, featured_until: l.featured_until }).replace(/'/g, "&apos;")})'
-                        class="text-[11px] font-black px-2.5 py-1.5 rounded-lg transition inline-flex items-center gap-1 ${isFeatured
+                        style="min-height:44px" class="text-[11px] font-black px-2.5 py-1.5 rounded-lg transition inline-flex items-center gap-1 ${isFeatured
                             ? 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                             : 'bg-gradient-to-r from-amber-400 to-orange-400 text-white hover:from-amber-500 hover:to-orange-500 shadow-sm'}">
-                        <i class="fas fa-star text-[10px]"></i><span class="hidden sm:inline">${isFeatured ? 'Estendi' : 'Vetrina'}</span>
+                        <i class="fas fa-star text-[10px]" aria-hidden="true"></i><span>${isFeatured ? 'Estendi Vetrina' : 'Promuovi'}</span>
                     </button>` : ''}
                     ${l.status === 'rejected' ? `
                     <button onclick="location.href='/modifica-annuncio?id=${l.id}'"
@@ -4811,9 +4755,31 @@ async function deleteListing(id) {
 // ── Vetrina Modal ─────────────────────────────────────────
 let _vetrinaTarget = null;
 let _vetrinaPreviewRequest = 0;
+let _vetrinaSelectedTier = '30d';
+let _vetrinaCheckoutBusy = false;
+let _vetrinaReturnFocus = null;
+const _VETRINA_PLANS = {
+    '10d': { days: 10, cents: 2490, price: '24,90' },
+    '30d': { days: 30, cents: 4990, price: '49,90' },
+    '90d': { days: 90, cents: 9990, price: '99,90' },
+};
+
+function selectVetrinaTier(tier) {
+    if (!_VETRINA_PLANS[tier] || _vetrinaCheckoutBusy) return;
+    _vetrinaSelectedTier = tier;
+    Object.keys(_VETRINA_PLANS).forEach(key => {
+        document.getElementById('tier' + key).setAttribute('aria-pressed', String(key === tier));
+    });
+    const plan = _VETRINA_PLANS[tier];
+    document.getElementById('vetrinaCheckoutButton').textContent = `Continua con ${plan.days} giorni · € ${plan.price}`;
+    document.getElementById('vetrinaLoadingMsg').textContent = '';
+}
 
 async function openVetrinaModal(listing) {
+    if (!listing || !listing.id) return;
+    _vetrinaReturnFocus = document.activeElement;
     _vetrinaTarget = listing;
+    _vetrinaCheckoutBusy = false;
     const titleEl = document.getElementById('vetrinaListingTitle');
     if (titleEl) titleEl.textContent = listing.titolo || 'Il tuo annuncio';
 
@@ -4822,10 +4788,14 @@ async function openVetrinaModal(listing) {
         const btn = document.getElementById(id);
         if (btn) { btn.disabled = false; btn.classList.remove('opacity-60', 'cursor-wait'); }
     });
+    document.getElementById('vetrinaCheckoutButton').disabled = false;
+    selectVetrinaTier('30d');
     document.getElementById('vetrinaLoadingMsg').textContent = '';
 
     document.getElementById('vetrinaModal').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    document.querySelector('#vetrinaModal .v-offer-body').scrollTop = 0;
+    document.querySelector('#vetrinaModal [role="dialog"]').focus();
     const request = ++_vetrinaPreviewRequest;
     const preview = document.getElementById('vetrinaPreview');
     preview.textContent = 'Caricamento anteprima…';
@@ -4850,12 +4820,31 @@ function closeVetrinaModal() {
     document.body.style.overflow = '';
     _vetrinaTarget = null;
     _vetrinaPreviewRequest++;
+    _vetrinaCheckoutBusy = false;
+    if (_vetrinaReturnFocus?.isConnected) _vetrinaReturnFocus.focus();
 }
 
-async function startCheckout(tier) {
-    if (!_vetrinaTarget || !_vetrinaTarget.id) return;
+document.addEventListener('keydown', event => {
+    const modal = document.getElementById('vetrinaModal');
+    if (modal.classList.contains('hidden')) return;
+    if (event.key === 'Escape') { event.preventDefault(); closeVetrinaModal(); return; }
+    if (event.key !== 'Tab') return;
+    const controls = [...modal.querySelectorAll('button:not(:disabled), summary, [tabindex="0"]')].filter(el => el.getClientRects().length);
+    const first = controls[0], last = controls[controls.length - 1];
+    if (!first) return;
+    if (event.shiftKey && (document.activeElement === first || !controls.includes(document.activeElement))) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && (document.activeElement === last || !controls.includes(document.activeElement))) { event.preventDefault(); first.focus(); }
+});
 
-    const allBtns = ['tier10d', 'tier30d', 'tier90d'].map(id => document.getElementById(id)).filter(Boolean);
+async function startCheckout(tier = _vetrinaSelectedTier) {
+    if (!_vetrinaTarget?.id || !_VETRINA_PLANS[tier] || _vetrinaCheckoutBusy) return;
+    const listingId = _vetrinaTarget.id;
+    const request = _vetrinaPreviewRequest;
+    const ownerId = _currentUser?.id;
+    _vetrinaCheckoutBusy = true;
+    let redirecting = false;
+
+    const allBtns = ['tier10d', 'tier30d', 'tier90d', 'vetrinaCheckoutButton'].map(id => document.getElementById(id)).filter(Boolean);
     const activeBtn = document.getElementById('tier' + tier);
     const msg = document.getElementById('vetrinaLoadingMsg');
 
@@ -4865,11 +4854,11 @@ async function startCheckout(tier) {
 
     try {
         const { data: { session } } = await _supabase.auth.getSession();
+        if (request !== _vetrinaPreviewRequest || _currentUser?.id !== ownerId) return;
         if (!session) {
-            showToast('Sessione scaduta. Accedi nuovamente.', 'warning');
-            location.reload();
-            return;
+            throw new Error('Sessione scaduta. Ricarica la pagina e accedi nuovamente.');
         }
+        if (session.user.id !== ownerId) throw new Error('La sessione è cambiata. Ricarica la pagina.');
 
         const res = await fetch(`${SUPABASE_URL}/functions/v1/create-checkout-session`, {
             method: 'POST',
@@ -4879,24 +4868,32 @@ async function startCheckout(tier) {
                 'apikey':        SUPABASE_ANON_KEY,
             },
             body: JSON.stringify({
-                annuncio_id: _vetrinaTarget.id,
+                annuncio_id: listingId,
                 tier,
-                expected_amount_cents: { '10d': 2490, '30d': 4990, '90d': 9990 }[tier],
+                expected_amount_cents: _VETRINA_PLANS[tier].cents,
             }),
+            signal: AbortSignal.timeout(20000),
         });
 
         const data = await res.json();
+        if (request !== _vetrinaPreviewRequest || _currentUser?.id !== ownerId) return;
         if (!res.ok || !data.url) {
             throw new Error(data.error || 'Errore creazione sessione');
         }
 
-        window.location.href = data.url;
+        const checkoutUrl = new URL(data.url);
+        if (checkoutUrl.protocol !== 'https:' || checkoutUrl.hostname !== 'checkout.stripe.com') throw new Error('Indirizzo di pagamento non disponibile. Riprova.');
+        redirecting = true;
+        window.location.href = checkoutUrl.href;
 
     } catch (e) {
-        console.error('checkout error:', e);
-        msg.textContent = '';
-        showToast('Errore: ' + (e.message || 'impossibile avviare il pagamento'), 'error');
-        allBtns.forEach(b => { b.disabled = false; b.classList.remove('opacity-60', 'cursor-wait'); });
+        if (request !== _vetrinaPreviewRequest || _currentUser?.id !== ownerId) return;
+        msg.textContent = e.name === 'TimeoutError' ? 'Il pagamento tarda ad aprirsi. Riprova tra poco.' : (e.message || 'Pagamento non disponibile. Riprova tra poco.');
+    } finally {
+        if (request === _vetrinaPreviewRequest && !redirecting) {
+            _vetrinaCheckoutBusy = false;
+            allBtns.forEach(b => { b.disabled = false; b.classList.remove('opacity-60', 'cursor-wait'); });
+        }
     }
 }
 

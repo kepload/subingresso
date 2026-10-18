@@ -194,6 +194,17 @@ const server = http.createServer((req, res) => {
         if (process.env.FORM_SCREENSHOT_DIR) await page.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR,'foto-aggiuntive-mobile.png'),fullPage:true});
         await page.locator('#toStep6Btn').click();
         await active(page,6);
+        assert.equal(await page.locator('#pubFree').getAttribute('aria-pressed'),'true');
+        for (const [tier,price] of [['10d','22,41'],['30d','44,91'],['90d','89,91']]) {
+            await page.locator('#pub'+tier).click();
+            assert.match(await page.locator('#submitBtn').innerText(),new RegExp(price));
+            assert.match(await page.locator('#pubFootNote').innerText(),/approvazione.*senza rinnovo automatico/);
+        }
+        await page.setViewportSize({width:320,height:568});
+        assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'scelta Vetrina senza overflow a 320px');
+        if (process.env.FORM_SCREENSHOT_DIR) await page.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR,'vetrina-pubblicazione-320.png'),fullPage:true});
+        await page.setViewportSize({width:390,height:844});
+        await page.locator('#pubFree').click();
         await page.locator('#step6').getByRole('button',{name:'Indietro'}).click();
         await active(page,5);
         await page.reload();

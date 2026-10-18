@@ -538,13 +538,14 @@
                                 <span class="pub-premium-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l5 4 5-7 5 7 5-4-2 13H4L2 6Z"/><path d="M5 22h14"/></svg></span>
                                 <div>
                                     <h2 id="pubPremiumTitle">Vetrina Premium</h2>
-                                    <p>Più visibilità per il tuo posteggio.</p>
+                                    <p>Fai notare il tuo posteggio a chi sta cercando.</p>
                                 </div>
                             </div>
                             <div class="pub-premium-body">
                                 <ul class="pub-benefits">
                                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg> In alto nei risultati di ricerca</li>
                                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h4m3 0h3M7 16h4m3 0h3"/></svg> Negli spazi promozionali del blog</li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10m8 10V4m8 16v-7"/></svg> Statistiche di apparizioni, visite e azioni di contatto</li>
                                 </ul>
 
                                 <details id="pubPromotionDetails" class="faq-item">
@@ -553,11 +554,11 @@
                                         <ol class="pub-process">
                                             <li>
                                                 <span class="pub-process-number" aria-hidden="true">1</span>
-                                                <div><strong>In alto nei risultati di ricerca</strong><p>Il tuo annuncio appare prima degli annunci gratuiti nei risultati di ricerca e tra gli annunci consigliati. Una corona lo rende subito riconoscibile.</p></div>
+                                                <div><strong>Priorità nelle ricerche pertinenti</strong><p>Il tuo annuncio ha priorità nella ricerca e tra i consigliati, rispettando filtri e ordinamento per distanza. Una corona e il bordo dorato lo rendono riconoscibile.</p></div>
                                             </li>
                                             <li>
                                                 <span class="pub-process-number" aria-hidden="true">2</span>
-                                                <div><strong>Negli spazi promozionali del blog</strong><p>Il tuo annuncio compare anche nei nostri articoli, a rotazione con gli altri annunci in Vetrina. Il blog ha raccolto <strong>centinaia di migliaia di visualizzazioni</strong> da lettori interessati ai mercati e alle licenze ambulanti.</p></div>
+                                                <div><strong>Negli spazi promozionali del blog</strong><p>Il tuo annuncio può comparire nei nostri articoli, a rotazione con gli altri annunci in Vetrina e secondo la zona cercata. Dalla tua area personale segui le attività rilevate durante la promozione, senza confonderle con vendite o contatti aggiuntivi garantiti.</p></div>
                                             </li>
                                         </ol>
                                         <p>I giorni di promozione iniziano quando l'annuncio viene approvato. Se è già online, iniziano dal pagamento.</p>
@@ -568,6 +569,7 @@
                                     <span>Scegli la durata</span>
                                     <span class="pub-discount">-10% alla pubblicazione</span>
                                 </div>
+                                <p style="font-size:12px;color:#475569;margin:0 0 12px;line-height:1.5">Stessi vantaggi per 10, 30 o 90 giorni. La promozione parte dall’approvazione.</p>
                                 <div class="pub-plans">
                                     <button type="button" id="pub10d" onclick="_selectPubChoice('10d')" aria-pressed="false"
                                         class="pub-opt pub-plan">
@@ -576,7 +578,7 @@
                                             <span class="pub-plan-title">10 giorni</span>
                                             <span class="pub-plan-daily">Per una promozione breve</span>
                                             <span class="pub-plan-price">€ 22,41 <del>€ 24,90</del></span>
-                                            <span class="pub-plan-daily">€ 2,24 al giorno</span>
+                                            <span class="pub-plan-daily">€ 2,24 al giorno · risparmi € 2,49</span>
                                         </span>
                                     </button>
                                     <button type="button" id="pub30d" onclick="_selectPubChoice('30d')" aria-pressed="false"
@@ -586,7 +588,7 @@
                                             <span class="pub-plan-title">30 giorni <span class="pub-plan-tag">Consigliato</span></span>
                                             <span class="pub-plan-daily">Un mese di visibilità</span>
                                             <span class="pub-plan-price">€ 44,91 <del>€ 49,90</del></span>
-                                            <span class="pub-plan-daily">€ 1,50 al giorno</span>
+                                            <span class="pub-plan-daily">€ 1,50 al giorno · risparmi € 4,99</span>
                                         </span>
                                     </button>
                                     <button type="button" id="pub90d" onclick="_selectPubChoice('90d')" aria-pressed="false"
@@ -596,7 +598,7 @@
                                             <span class="pub-plan-title">90 giorni <span class="pub-plan-tag pub-plan-tag-best">Più conveniente</span></span>
                                             <span class="pub-plan-daily">Tre mesi per la tua trattativa</span>
                                             <span class="pub-plan-price">€ 89,91 <del>€ 99,90</del></span>
-                                            <span class="pub-plan-daily">€ 1,00 al giorno</span>
+                                            <span class="pub-plan-daily">€ 1,00 al giorno · risparmi € 9,99</span>
                                         </span>
                                     </button>
                                 </div>
@@ -709,7 +711,7 @@ function _refreshPublishChoiceUI() {
     if (foot) {
         foot.textContent = (_pubChoice === 'free')
             ? 'L\'annuncio viene controllato prima della pubblicazione.'
-            : 'Pagamento sicuro con Stripe. L\'annuncio viene controllato prima della pubblicazione.';
+            : 'Pagamento unico con Stripe. I giorni partono dall’approvazione, senza rinnovo automatico.';
     }
 }
 

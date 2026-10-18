@@ -44,12 +44,13 @@ function goToProfilo(){document.getElementById('profiloModal').classList.remove(
 function closeProfiloModal(){document.getElementById('profiloModal').classList.add('hidden');}
 window.charts=[];class Chart{constructor(canvas,config){this.config=config;charts.push(this);}destroy(){this.destroyed=true;}}
 window.fail=false;window.delay=0;
+window.availableListings=[{id:'${listing}',titolo:'Posteggio mercato Brescia',status:'active'}];
 const allOrders=Array.from({length:52},(_,i)=>({id:i===0?'${orderId}':('00000000-0000-0000-0000-'+String(i).padStart(12,'0')),
 annuncio_id:'${listing}',listing_id_snapshot:'${listing}',listing_title:i===0?'=HYPERLINK(1)':i===1?'\u003cimg src=x onerror=window.xss=true\u003e':'Posteggio mercato Brescia',tier:'30d',status:i===2?'pending':i===3?'failed':i===4?'refunded':'succeeded',
 amount_cents:4990,currency:'eur',refunded_cents:i===4?4990:0,created_at:'2026-10-08',paid_at:i===2?null:'2026-10-08',activated_at:'2026-10-08',promotion_starts_at:'2026-10-08',promotion_ends_at:'2026-11-07',has_receipt:true,history:[{at:'2026-10-08',kind:'created'}]}));
 const campaign={id:'${listing}',title:'Posteggio mercato Brescia',status:'active',available:true,active:true,featured_until:'2026-11-07',impressions:240,detail_views:38,contact_actions:6,daily:[{day:new Date().toISOString().slice(0,10),impressions:240,detail_views:38,contact_actions:6}]};
 const _supabase={rpc:async(name,args)=>{if(name!=='dashboard_vetrina_account')throw Error(name);const sleep=window.delay;await new Promise(r=>setTimeout(r,sleep));if(window.fail)return{error:{message:'offline'}};const orders=allOrders.filter(p=>args.p_status==='all'||p.status===args.p_status);return{data:{orders:orders.slice(args.p_offset,args.p_offset+50),total:orders.length,campaigns:[campaign],summary:{paid_orders:50,spent_cents:249500,refunded_cents:4990}}};},
-from:()=>({select(){return this;},eq(){return this;},order:async()=>({data:[{id:'${listing}',titolo:'Posteggio mercato Brescia',status:'active'}]}),maybeSingle:async()=>({data:{id:'${listing}',titolo:'Posteggio mercato Brescia',status:'active'}})}),auth:{onAuthStateChange:fn=>window.authChange=fn,resetPasswordForEmail:async()=>({})}};
+from:()=>({select(){return this;},eq(){return this;},order:async()=>({data:window.availableListings}),maybeSingle:async()=>({data:{id:'${listing}',titolo:'Posteggio mercato Brescia',status:'active'}})}),auth:{onAuthStateChange:fn=>window.authChange=fn,resetPasswordForEmail:async()=>({})}};
 ${tabs}
 `;
 const fixture = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace('</body>',`<script>${fixtureScript}</script><script src="/js/vetrina-account.js"></script><script>loadingState.classList.add('hidden');dashContent.classList.remove('hidden');VetrinaAccount.fillProfile(_currentUser);showTab('pagamenti');</script></body>`);
@@ -94,8 +95,18 @@ async function browser(engine,name,width,base) {
         assert.equal(await page.locator('.v-account-order').count(),0);
         await page.evaluate(()=>window.fail=false);await page.locator('.v-account-error button').click();
         await page.locator('.v-account-order').waitFor();
-        await page.locator('.v-account-primary').click();await page.locator('#vetrinaAccountChooser').waitFor();
-        await page.locator('#vetrinaAccountChooser button[data-listing]').click();
+        await page.locator('.v-account-primary').click();
+        await page.waitForFunction(()=>!!window.promoted);
+        assert.equal(await page.locator('#vetrinaAccountChooser').count(),0,'un solo annuncio: nessuna scelta intermedia');
+        assert.equal(await page.evaluate(()=>window.promoted),listing);
+        await page.evaluate(()=>{window.availableListings=[];window.promoted=null;});
+        await page.locator('.v-account-primary').click();
+        await page.locator('#vetrinaAccountChooser a[href="/vendi"]').waitFor();
+        assert.equal(await page.evaluate(()=>window.promoted),null,'nessun annuncio idoneo: nessun pagamento');
+        await page.evaluate(id=>{window.availableListings=[{id,titolo:'Posteggio mercato Brescia',status:'active'},{id:'altro',titolo:'Secondo annuncio',status:'active'}];},listing);
+        await page.locator('.v-account-primary').click();
+        await page.waitForFunction(()=>document.querySelectorAll('#vetrinaAccountChooser button[data-listing]').length===2);
+        await page.locator('#vetrinaAccountChooser button[data-listing]').first().click();
         assert.equal(await page.evaluate(()=>window.promoted),listing);
         await page.evaluate(()=>goToProfilo());
         assert.equal(await page.locator('#profileEmailStatus').innerText(),'Confermata');

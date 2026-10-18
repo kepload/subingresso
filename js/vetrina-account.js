@@ -105,6 +105,8 @@ window.VetrinaAccount = (() => {
             if (_currentUser?.id !== userId) return;
             if (result.error) throw new Error('query');
             listings = (result.data || []).filter(l => !isListingExpired(l));
+            // Con un solo annuncio idoneo, passa direttamente alla durata.
+            if (listings.length === 1) { el('vetrinaAccountChooser')?.remove(); return promote(listings[0].id); }
             let chooser = el('vetrinaAccountChooser');
             if (!chooser) { chooser = document.createElement('div'); chooser.id = 'vetrinaAccountChooser'; el('vetrinaAccountSummary').after(chooser); }
             chooser.innerHTML = `<div class="v-account-campaign"><h4>Scegli l’annuncio da promuovere</h4>${listings.length ? listings.map(l => `<div class="v-account-actions"><button type="button" data-listing="${esc(l.id)}" onclick="VetrinaAccount.promote(this.dataset.listing)">${esc(l.titolo || 'Annuncio')}</button></div>`).join('') : '<p>Pubblica o riattiva un annuncio per acquistare una Vetrina.</p><a class="v-account-secondary" href="/vendi">Pubblica un annuncio</a>'}<button type="button" class="v-account-secondary" onclick="document.getElementById('vetrinaAccountChooser').remove()">Chiudi</button></div>`;
