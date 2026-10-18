@@ -1,5 +1,21 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, selettore profili richiesto: nel modal «Il mio profilo» due
+schede compatte Normale/Organizzatore, indicatore scorrevole e Normale a ogni
+apertura. Registrazione standard invariata. Organizzatore caricato soltanto
+su scelta, riepilogo/stato/note e accesso alla richiesta o gestione completa;
+stesso account, dati aggiuntivi e approvazione esistenti. Rimossi i richiami
+organizzatore dal percorso normale. Nell’area dedicata selettore con ritorno
+al modal normale via /dashboard?profilo=1, consumato dopo apertura.
+Nuovi css/profile-switch.css e js/profile-switch.js v1; campi normali
+conservati tra schede, avviso prima di uscire con modifiche, risposte vecchie
+invalidate e pulizia su logout/cambio account. Tastiera, swipe sul selettore,
+focus e movimento ridotto. Salvataggio normale non chiude una nuova vista.
+172 verifiche (43×4) Chromium1440/820/320 e WebKit390; regressioni eventi,
+usabilità68, account/acquisti6 e admin6 passate. Backend/auth invariati;
+prove Documents/verifica-selettore-profili-20261019, suite
+scripts/test-profile-switch.cjs (PROFILE_USE_PUBLISHED per asset online).
+
 19/10/2026, qualità organizzatori: segnali precisi di cosa manca/pronto
 all’invio, feedback vicino ai form, campi bloccati durante salvataggio e
 focus ripristinato dopo il comune. Modifiche conservate prima del ritiro di

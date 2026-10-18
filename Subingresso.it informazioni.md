@@ -44,6 +44,19 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Registro recente: pubblicazioni e verifiche
 
+19/10/2026 — Preferenza profili: registrazione normale come prima e prioritaria;
+organizzatore scelto esplicitamente, con informazioni aggiuntive e approvazione.
+Nel profilo selettore compatto Normale a sinistra (sempre all’apertura),
+Organizzatore a destra, indicatore scorrevole; clic/swipe/tastiera. Organizzatore:
+stato, note e accesso al percorso completo esistente, stesso account; ritorno
+al normale dall’area dedicata. Rimossi i richiami duplicati dal percorso normale.
+Campi conservati tra schede, avviso prima di abbandonare modifiche, richieste
+vecchie ignorate e pulizia su logout/cambio account.172 verifiche Chromium1440/
+820/320 e WebKit390 e regressioni eventi/usabilità68/account6/admin6 passate.
+Nessuna modifica auth/DB/pagamenti né prova con scritture reali.
+Dettagli data/ORGANIZZATORI_EVENTI.md; prove
+Documents/verifica-selettore-profili-20261019.
+
 Le righe seguenti accorpano i resoconti ripetuti, senza costituire nuovi test. Nei relativi interventi: catalogo/dati precedenti e modifiche estranee conservati; asset pubblici confrontati col commit; Vercel riuscito/READY. Suite calendario su cinque formati/browser e verifiche Chromium computer/320 px e WebKit 390 px passate, salvo specifiche sotto. Backup remoti validi; il noto errore PowerShell nel cleanup dei tag non compromette il checkpoint.
 
 | Data/intervento | Esito e dettaglio specifico | Cache | Commit / deploy Vercel |
