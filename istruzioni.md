@@ -7,7 +7,12 @@ Prenotazioni future: incasso piattaforma, commissione8%, quota organizzatore92%;
 flag server disattivati, nessun checkout/trasferimento attivato. Dettagli,
 RPC e verifiche in `data/ORGANIZZATORI_EVENTI.md`; DB applicato e SQL con
 ROLLBACK passato, flusso completo Chromium1440/320 e WebKit390 passato.
-Codice in pubblicazione; prove `Documents/verifica-organizzatori-20261018/`.
+Pubblicato b63ca32+7984e1a, Vercel READY EaHy6LQm835h6QJzdMAuTJnUYq5p.
+Otto asset online identici; accesso anonimo/modulo auth e calendario con RPC
+reali passati online negli stessi tre formati. AuthSessionMissingError è
+assenza di sessione prevista, non errore di connessione. JS organizzatori2.
+Pagamenti da integrare/attivare in una fase futura; nessuna prova reale di
+acquisto/email/account. Prove `Documents/verifica-organizzatori-20261018/`.
 
 18/10/2026, Pordenone: ricerca documentale conclusa con limiti espliciti,
 86 manifestazioni in29 comuni/50 esaminati,78 date puntuali/14 sintesi costo.
