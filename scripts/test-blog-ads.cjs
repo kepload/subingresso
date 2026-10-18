@@ -45,6 +45,9 @@ async function run(engine,name,width,height) {
                 sessionStorage.setItem('_vp','1');localStorage.setItem('_visitor_id','fixture-blog-ads');sessionStorage.setItem('_session_id','fixture-blog-session');
             });
             await page.route('https://subingresso.it/blog?**',route=>route.fulfill({contentType:'text/html',body:template}));
+            for (const asset of ['js/blog-fiere-promo.js','css/blog-fiere-promo.css','js/blog-tracker.js']) {
+                await page.route('https://subingresso.it/'+asset+'?*',route=>route.fulfill({path:path.join(root,asset)}));
+            }
             await page.route('https://fixture.test/**',route=>route.fulfill({contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56"><rect width="56" height="56" fill="#d1d5db"/></svg>'}));
             await page.route('https://mhfbtltgwibwmsudsuvf.supabase.co/**',async route=>{
                 const req=route.request(),url=new URL(req.url());

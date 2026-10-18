@@ -16,6 +16,7 @@
     <link rel="canonical" id="canonicalBlog" href="https://subingresso.it/blog">
     <link rel="preconnect" href="https://images.pexels.com" crossorigin>
     <link rel="stylesheet" href="css/tailwind.css?v=4">
+    <link rel="stylesheet" href="css/blog-fiere-promo.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
     <style>
@@ -95,7 +96,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
-<script src="js/blog-tracker.js?v=2"></script>
+<script src="js/blog-tracker.js?v=3"></script>
+<script src="js/blog-fiere-promo.js?v=1"></script>
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=20"></script>
 <script src="js/ui-components.js?v=12"></script>
@@ -645,6 +647,8 @@ function renderPost(post) {
     // 3.3 — Link città inline (prima occorrenza, max 5 per articolo).
     _injectInlineCityLinks(document.getElementById('blogPostContent'), _BLOG_REGIONE);
 
+    BlogFierePromo.mount(document.getElementById('blogPostContent'), post, SLUG_TO_REGIONE);
+
     // 4.1 — JSON-LD FAQPage solo sui bandi-* (rich result Google).
     _injectFaqJsonLd(_BLOG_REGIONE);
 
@@ -772,6 +776,7 @@ function renderList(posts) {
                 ${sideStack.map(_sideCard).join('')}
             </div>
         </div>
+        ${BlogFierePromo.card({slug:'',title:''}, 'index', SLUG_TO_REGIONE)}
         ${gridRest.length ? `
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
             ${gridRest.map(_gridCard).join('')}

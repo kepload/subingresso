@@ -1130,3 +1130,21 @@ Nuova copia di conservazione completata con `python scripts/backup-fiere-researc
 manifest verificata. Inclusi originali Pordenone e prove online. Nessun
 archivio precedente cancellato/sovrascritto. Copia locale, non esterna.
 Riscontro `Documents/ricerca-fiere-pordenone-20261018/backup-verified.json`.
+
+## Pubblicità fiere nel blog — 18 ottobre 2026
+
+Richiesta: richiami incisivi al calendario dagli articoli già visitati,
+preservando il lavoro concorrente su organizzatori/eventi. Analisi API:
+335 visualizzazioni negli ultimi30 giorni; Bolkestein ultime notizie111,
+costo posteggio45. Banner blu/oro nell'indice e in89/90 articoli; guida eredi
+esclusa. Prima di una nuova sezione e richiamo finale compatto; un solo
+riquadro quando il testo non offre spazio. Regioni esplicite prefiltrate,
+Garda/più regioni nazionali. San Faustino:200.000+ presenze, stima stampa2026
+con fonte visibile; nessun incasso di5.000 euro inventato. Nuovo click
+`cta_fiere_click`, stessa protezione/deduplica; nessuna modifica alle funzioni
+delle fiere. Checkout separato `Documents/subingresso-blog-promo-fiere-20261018`.
+Test32 casi browser reali Chromium1440/768/320×568 e WebKit390, integrità90
+articoli, regressione annunci32 casi, acquisizione/qualità e SQL ROLLBACK
+passati. Dettagli `data/BLOG_FIERE_PROMO.md`, prove
+`Documents/blog-promo-fiere-20261018/`. Pubblicazione da verificare.
+Backup tag remoto e branch preventivo verificati; noto errore cleanup tag.
