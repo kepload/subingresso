@@ -1,5 +1,10 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+18/10/2026, invio eventi: le bozze non inviate sono visibili e spiegate nel
+pannello admin, ma approvabili solo dopo invio in revisione. Proprietario:
+«Completa e invia», avviso e pulsante sopra i posteggi; JS organizzatori4.
+Intervento sulla UI: nessun evento reale inviato o approvato dall’agente.
+
 18/10/2026, modulo organizzatori: controlli vicino ai campi e date collegate,
 fine proposta uguale all’inizio, calendario/validazione manuale coerenti anche
 senza date native. Scadenza entro inizio, massimo366 giorni; condizioni min20
