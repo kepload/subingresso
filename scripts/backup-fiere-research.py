@@ -13,6 +13,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import tempfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -60,7 +61,7 @@ def main():
 
     # Full research folders, including originals, failed fetches, notes and QA.
     for source in sorted(DOCUMENTS.iterdir()):
-        if research_name(source.name):
+        if research_name(source.name) or source.name == "articoli-subingresso":
             collect(source, Path("Documents") / source.name)
             folders.append(source.name)
         # Isolated research checkouts: retain their fair data without Git/secrets.
@@ -68,6 +69,11 @@ def main():
             for data in sorted((source / "data").glob("*")):
                 if "fiere" in data.name.casefold():
                     collect(data, Path("Documents") / source.name / "data" / data.name)
+
+    # Fair-guide sources from earlier sessions must survive temporary cleanup.
+    for source in sorted(Path(tempfile.gettempdir()).glob("subingresso-blog-fiere-*")):
+        collect(source, Path("temporary-research") / source.name)
+        folders.append(str(source))
 
     # Authoritative catalogues/audits, generator, UI and reproduction scripts.
     for folder in ("data", "scripts"):

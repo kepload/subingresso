@@ -6,7 +6,12 @@ Conservare tutti i materiali delle nostre ricerche, inclusi errori e limiti:
 dati/audit nel Git, originali fuori dal repo pubblico. Dopo nuove ricerche
 eseguire `python scripts/backup-fiere-research.py` e registrarne il manifest
 verificato in `Documents/backup-subingresso/ricerche-fiere-<UTC>`.
-Nessuna esecuzione periodica aggiunta; primo backup/pubblicazione in verifica.
+Nessuna esecuzione periodica aggiunta. Pubblicato9add5cf, Vercel riuscito;
+affinità locale/online quattro formati e ricerca articoli locale passate.
+Copia `Documents/backup-subingresso/ricerche-fiere-20261017-234704`:26.827 file,
+5.250.439.854 byte verificati SHA256, zero errori; incluse guide regionali/Temp.
+Prove `Documents/verifica-affinita-vuota-fiere-20261018`; dettagli in FIERE.md
+e nel file informazioni. Copia locale sullo stesso computer, non esterna.
 
 Revisione affinità articoli,17/10: questa nota aggiorna la prima scala sotto.
 35 tipologie, incluse abbigliamento vintage/libri antichi/cioccolato/olio.
