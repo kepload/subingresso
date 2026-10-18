@@ -68,8 +68,10 @@ async function run(engine, name, width, height) {
                     assert(metrics.height<=380,JSON.stringify({width,slug:post?.slug,metrics}));assert(metrics.target>=44);
                     assert.equal(metrics.heading,await card.evaluate(el=>el.classList.contains('bfp-compact'))?'rgb(15, 23, 42)':'rgb(255, 255, 255)');
                     assert.equal(metrics.button,'rgb(23, 37, 84)');
+                    const phrases=await card.locator('.bfp-keep,.bfp-number').evaluateAll(els=>els.map(el=>({text:el.textContent,lines:el.getClientRects().length,right:el.getBoundingClientRect().right})));
+                    assert(phrases.every(p=>p.lines===1&&p.right<=width),'Frasi intere sulle righe: '+JSON.stringify(phrases));
                 }
-                assert.equal(await page.locator('[data-fiere-promo] [href^="http"]').count(),await page.locator('.bfp-number').count(),'Ogni numero ha una fonte');
+                assert.match(await cards.first().locator('.bfp-title').innerText(),/5\.000\s*€\s*in 2 giorni\?/,'Importo come domanda provocatoria');
                 if(out&&(!post||post.slug===chosen[0]||post.slug===chosen[2])) {
                     fs.mkdirSync(out,{recursive:true});await cards.first().screenshot({path:path.join(out,`${name}-${width}-${post?.slug||'index'}.png`)});
                 }
@@ -94,7 +96,7 @@ async function run(engine, name, width, height) {
             summary.push({name,width,height,slug:post?.slug||'index',cards:await cards.count()});
             await page.close();
         }
-        console.log(`OK ${name} ${width}x${height}: annunci fiere, link, fonti, tracciamento e contenuti conservati.`);
+        console.log(`OK ${name} ${width}x${height}: copy, frasi intere, link, tracciamento e contenuti conservati.`);
     } finally {await browser.close();}
 }
 (async()=>{

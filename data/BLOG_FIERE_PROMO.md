@@ -31,21 +31,24 @@ La guida agli eredi non riceve questi richiami commerciali.
 
 ## Messaggi e destinazioni
 
-- Nazionali e Lombardia: «200.000+ presenze in un giorno» e «San Faustino,
-  Brescia. E tu, dove porti il banco?». Fonte visibile e apribile, esplicitamente
-  stima della stampa, edizione 2026. Dato già nel catalogo, ricontrollato nel
-  [resoconto di ÈliveBrescia TV](https://www.elivebrescia.tv/san-faustino-brescia-bancarelle-600-tirapicio/)
-  del 15 febbraio 2026. Pubblico della fiera, nessuna conversione in incasso.
-- Altre regioni esplicite nel titolo/slug: «Il prossimo grande incasso?
-  Parti dalla fiera giusta». Pulsante con regione già selezionata.
+- **Testo corrente, revisione esplicita dell'utente:** «5.000 € in 2 giorni?
+  Punta alla fiera giusta». Supporto: «La cassa non si riempie da sola.
+  Scegli dove portare il banco». Domanda provocatoria rivolta agli ambulanti,
+  non testimonianza attribuita a San Faustino o previsione personale.
+- Titolo in righe controllate; importo/valuta e «in 2 giorni?» restano interi.
+  «Punta alla» / «fiera giusta» sono gruppi indivisibili nei formati stretti.
+- Regione esplicita nel titolo/slug: pulsante con regione già selezionata.
 - Articoli con più regioni o sul Garda: calendario nazionale. Nessuna regione
   dedotta arbitrariamente; riconoscimento solo di nomi regionali espliciti.
-- Chiusura: «Il banco è pronto. La prossima fiera?». Pulsante «Trova la fiera
-  giusta», sempre visibile. Blu, titoli bianchi, accento e pulsante oro.
+- Chiusura: «Il prossimo incasso? Non lasciarlo agli altri». Supporto:
+  «Scegli la prossima piazza. Il banco ce lo metti tu». Pulsante «Trova la
+  fiera giusta», sempre visibile. Blu, titoli bianchi, importo e pulsante oro.
 
-L'esempio «5.000 euro in 2 giorni» non è una testimonianza documentata:
-non viene presentato come un guadagno reale. Nessun nuovo dato sulle fiere
-aggiunto o materiale di ricerca precedente alterato.
+Preferenza esplicita: pubblicità più aggressive; gli importi possono essere
+una provocazione in forma di domanda, senza trasformarli in un guadagno
+garantito. Sostituito il precedente banner delle 200.000 presenze: il dato
+e la fonte restano nell'archivio storico delle fiere. Nessun nuovo dato sulle
+fiere aggiunto o materiale di ricerca precedente alterato.
 
 ## Misura, isolamento e verifiche
 
@@ -76,6 +79,8 @@ Il miglioramento dei clic/ricavi va misurato dopo la pubblicazione.
 
 ## Pubblicazione verificata
 
+Prima versione, prima della revisione del testo richiesta sotto.
+
 Commit `ec8d0a1811ef6677ea6577925a47ebfcdd3354b0`, Vercel
 [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/EmvLaMzre4XobEPiJLMEPm6r843S).
 Template, CSS e due JS online identici al commit (confronto e SHA256).
@@ -90,3 +95,22 @@ verificata anche sull'HTML online. Scansione segreti superata al commit.
 Prove `online/assets.json`, `online/browser.json`, `online/all-posts.json`,
 `online/destinations.json`, `database-verified.json` e `deploy.json` nella
 cartella di verifica indicata sopra.
+
+## Revisione aggressiva e righe — 18 ottobre 2026
+
+Richiesta successiva dalla schermata: eliminare gli a capo con parole isolate
+e rendere la pubblicità più aggressiva, usando i 5.000 euro come provocazione.
+Testi correnti sopra; CSS e JS dedicati v2. Tracciamento, destinazioni e
+posizionamenti conservati; nessun intervento su DB o funzioni organizzatori.
+Stesso checkout isolato, aggiornato prima al commit organizzatori `7984e1a`.
+
+Verifiche locali:32 casi su articoli veri/indice Chromium1440/768/320×568 e
+WebKit390, integrità90 articoli, collegamenti/click e riquadri ≤380px. Audit
+aggiuntivo di36 riquadri:9 larghezze320/375/390/520/600/768/894/1024/1440 in
+Chromium e WebKit, frasi indivisibili, niente overflow. Immagine a894px
+confrontata con la schermata dell'utente; ispezionata anche320px. Prove in
+`Documents/blog-promo-fiere-20261018/copy-aggressivo/` e script esterno
+`copy-aggressivo-layout.cjs`. Backup remoto
+`backup/session-20261018-220619-fiere-copy-aggressivo` verificato; lo script
+si è fermato sullo stderr nativo di git in PowerShell dopo il push riuscito.
+Pubblicazione della revisione da verificare.

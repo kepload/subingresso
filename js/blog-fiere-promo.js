@@ -1,7 +1,6 @@
 // Richiami al calendario: solo blog, nessuna dipendenza dal codice delle fiere.
 (function () {
     'use strict';
-    const SOURCE = 'https://www.elivebrescia.tv/san-faustino-brescia-bancarelle-600-tirapicio/';
     function escape(value) {
         return String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
     }
@@ -12,24 +11,25 @@
         const text = ' ' + normalized((post.slug || '') + ' ' + (post.title || '')) + ' ';
         const regions = Object.values(regionMap).filter(region => text.includes(' ' + normalized(region) + ' '));
         // Il Garda interessa tre regioni: nessuna destinazione regionale arbitraria.
-        if (/\bgarda\b/.test(text)) return {region:null, proof:false, href:'/fiere'};
+        if (/\bgarda\b/.test(text)) return {region:null, href:'/fiere'};
         const region = regions.length === 1 ? regions[0] : null;
-        return {region, proof:!regions.length || region === 'Lombardia', href:'/fiere' + (region ? '?regione=' + encodeURIComponent(region) : '')};
+        return {region, href:'/fiere' + (region ? '?regione=' + encodeURIComponent(region) : '')};
     }
     function card(post, position, regionMap) {
         const ctx = context(post, regionMap);
         const compact = position === 'closing';
-        const proof = ctx.proof && !compact;
-        const title = compact ? 'Il banco è pronto. La prossima fiera?'
-            : proof ? '<span class="bfp-number">200.000+</span> presenze in un giorno.'
-            : 'Il prossimo grande incasso? <span class="bfp-accent">Parti dalla fiera giusta.</span>';
-        const description = compact ? 'Scegli dove portarlo: cerca per zona, periodo e cosa vendi.'
-            : proof ? 'San Faustino, Brescia. E tu, dove porti il banco?'
-            : 'Cerca per zona, periodo e cosa vendi. Il prossimo appuntamento ti aspetta.';
+        // Domanda provocatoria richiesta dall'utente, senza attribuirla a un
+        // incasso documentato di una specifica fiera o presentarla come promessa.
+        const title = compact
+            ? '<span class="bfp-title-line">Il prossimo incasso?</span><span class="bfp-title-line"><span class="bfp-keep">Non lasciarlo</span> <span class="bfp-keep">agli altri.</span></span>'
+            : '<span class="bfp-title-line bfp-money-line"><span class="bfp-number">5.000&nbsp;€</span> <span class="bfp-keep">in 2 giorni?</span></span><span class="bfp-title-line"><span class="bfp-keep">Punta alla</span> <span class="bfp-keep">fiera giusta.</span></span>';
+        const description = compact
+            ? '<span>Scegli la prossima piazza.</span><span>Il banco ce lo metti tu.</span>'
+            : '<span>La cassa non si riempie da sola.</span><span>Scegli dove portare il banco.</span>';
         return '<aside class="blog-fiere-promo not-prose' + (compact ? ' bfp-compact' : '') + '" data-fiere-promo="' + position + '" aria-label="Fiere e mercatini su Subingresso.it">'
-            + '<div class="bfp-copy"><span class="bfp-eyebrow">Fiere e mercatini' + (ctx.region ? ' · ' + escape(ctx.region) : ' · Trova il tuo prossimo appuntamento') + '</span>'
+            + '<div class="bfp-copy"><span class="bfp-eyebrow">Fiere e mercatini' + (ctx.region ? ' · ' + escape(ctx.region) : ' · Fai girare il banco') + '</span>'
             + '<h2 class="bfp-title">' + title + '</h2><p class="bfp-description">' + description + '</p>'
-            + (proof ? '<p class="bfp-source">Stima della stampa, edizione 2026. <a href="' + SOURCE + '" target="_blank" rel="noopener noreferrer">Fonte: ÈliveBrescia TV</a></p>' : '') + '</div>'
+            + '</div>'
             + '<a class="bfp-button" data-fiere-cta data-regione="' + escape(ctx.region || '') + '" href="' + escape(ctx.href) + '">Trova la fiera giusta <span aria-hidden="true">→</span></a></aside>';
     }
     function mount(article, post, regionMap) {

@@ -1154,3 +1154,18 @@ Template/CSS/due JS online identici al commit;32 casi browser sull'HTML
 pubblicato passati e12 verifiche calendario regionale online riuscite.
 DB applicato/verificato, zero eventi di prova residui.
 Backup tag remoto e branch preventivo verificati; noto errore cleanup tag.
+
+## Pubblicità fiere — copy aggressivo e righe, 18 ottobre 2026
+
+Preferenza esplicita successiva: pubblicità più aggressive,5.000 euro come
+provocazione in forma di domanda. Titolo corrente «5.000 € in2 giorni?
+Punta alla fiera giusta»; chiusura «Il prossimo incasso? Non lasciarlo agli
+altri». Sostituisce il banner delle200.000 presenze. Gruppi di parole/valuta
+interi e righe controllate, senza parole isolate come nella schermata.
+CSS/JS dedicati v2; posizioni/link/click conservati. Solo blog, stesso
+checkout isolato aggiornato al codice organizzatori7984e1a, funzioni/DB
+preservati.32 casi browser su articoli/indice, integrità90 articoli e36
+riquadri su9 larghezze320–1440 Chromium/WebKit passati. Prove
+`Documents/blog-promo-fiere-20261018/copy-aggressivo/`, dettagli
+`data/BLOG_FIERE_PROMO.md`. Backup remoto verificato; arresto dello script
+sullo stderr PowerShell dopo push del tag riuscito. Pubblicazione da verificare.
