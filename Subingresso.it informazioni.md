@@ -56,6 +56,11 @@ vecchie ignorate e pulizia su logout/cambio account.172 verifiche Chromium1440/
 Nessuna modifica auth/DB/pagamenti né prova con scritture reali.
 Dettagli data/ORGANIZZATORI_EVENTI.md; prove
 Documents/verifica-selettore-profili-20261019.
+Pubblicato3c70f4b, Vercel
+[riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/FxD33Ev9aESEvqzazXhwT6u1XhBs).
+Quattro asset online identici ai blob Git e172 verifiche sugli asset pubblicati
+con backend simulato; tre prove browser reali di logo/font/accesso e modulo
+normale riuscite. Nessuna scrittura reale; schermate e resoconto nella cartella.
 
 Le righe seguenti accorpano i resoconti ripetuti, senza costituire nuovi test. Nei relativi interventi: catalogo/dati precedenti e modifiche estranee conservati; asset pubblici confrontati col commit; Vercel riuscito/READY. Suite calendario su cinque formati/browser e verifiche Chromium computer/320 px e WebKit 390 px passate, salvo specifiche sotto. Backup remoti validi; il noto errore PowerShell nel cleanup dei tag non compromette il checkpoint.
 

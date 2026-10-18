@@ -15,6 +15,9 @@ focus e movimento ridotto. Salvataggio normale non chiude una nuova vista.
 usabilità68, account/acquisti6 e admin6 passate. Backend/auth invariati;
 prove Documents/verifica-selettore-profili-20261019, suite
 scripts/test-profile-switch.cjs (PROFILE_USE_PUBLISHED per asset online).
+Pubblicato3c70f4b, Vercel riuscito FxD33Ev9aESEvqzazXhwT6u1XhBs: quattro
+asset identici ai blob,172 test online passati con backend simulato. Tre
+prove anonime reali logo/font/registrazione standard riuscite senza scritture.
 
 19/10/2026, qualità organizzatori: segnali precisi di cosa manca/pronto
 all’invio, feedback vicino ai form, campi bloccati durante salvataggio e
