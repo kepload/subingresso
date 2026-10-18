@@ -1,5 +1,25 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+18/10/2026, Ferrara: ricerca documentale conclusa e verificata online.
+115 manifestazioni/21 comuni, prima13 (+102), 79 con date puntuali e8 costi.
+Catalogo4.656; 13 ID conservati, altre4.541 schede identiche. Audit
+`data/fiere-ferrara.json`, dettaglio `data/FIERE.md`, originali e prove
+`Documents/ricerca-fiere-ferrara-20261018`. 479 ricevute,25 esclusioni;
+registro regionale non integralmente accessibile, conflitti testuali e
+storici2025 espliciti, niente giorni/quote/posti inventati o contatti a terzi.
+Ostellato riuso11/18/25ottobre; Poggio13–14giugno non festa12; Mirabello
+banchi24–25 e streetfood23–25; Renazzo espositori18–20luglio non apertura17.
+Quote originali per categoria/IVA/anno, LEI2027 non applicata al2026.
+Pubblicato `5be1d21`, Vercel riuscito;4 asset identici online,
+115 pagine HTTP200 H1/canonical; suite Ferrara locale/online Chromium1440/320
+e WebKit390 passata,13 dialog e pagine senza JS. Build/settori,4.656 pagine,
+1.966 sitemap e generale5 formati passati; segreti verificati senza bypass.
+TO DO aggiornata dopo verifica:36 concluse/74 da fare. Cache JS82/JSON57;
+modifiche organizzatori/eventi concorrenti e file estranei preservati.
+Copia `ricerche-fiere-20261018-213227`: 33,390 file,
+6,241,295,331 byte SHA256 verificati, zero errori; manifest controllato.
+Aggiornamenti periodici futuri distinti dalla chiusura della ricerca attuale.
+
 18/10/2026, invio eventi: le bozze non inviate sono visibili e spiegate nel
 pannello admin, ma approvabili solo dopo invio in revisione. Proprietario:
 «Completa e invia», avviso e pulsante sopra i posteggi; JS organizzatori4.

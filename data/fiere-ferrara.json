@@ -5299,13 +5299,51 @@
       }
     ],
     "publication": {
-      "status": "pending",
-      "todoChecked": false
+      "status": "verified-online",
+      "dataCommit": "5be1d21947f4f7d28c5978e2ba19033cb51ba953",
+      "deployment": "https://vercel.com/kycykuardit-9234s-projects/subingresso/FLbA3jsx2FfDkSmWVF86eQmkDrdg",
+      "verifiedAt": "2026-10-18T21:45:11Z",
+      "assetsVerified": [
+        "data/fiere.json",
+        "data/fiere-ferrara.json",
+        "fiere.html",
+        "js/pages/fiere.js"
+      ],
+      "publicPagesVerified": 115,
+      "browserCases": [
+        "Chromium1440",
+        "Chromium320",
+        "WebKit390"
+      ],
+      "checks": [
+        "elenco e mappa identici115",
+        "13 dialog date/costi/fonti",
+        "pagine senza JavaScript",
+        "nessun overflow o errore JS"
+      ],
+      "proofs": [
+        "publication-data.json",
+        "online-validation.json",
+        "pages-data-checkpoint.json",
+        "local-validation.json",
+        "originals-validation.json"
+      ],
+      "todoChecked": true,
+      "provinceSummary": {
+        "completed": 36,
+        "remaining": 74,
+        "total": 110
+      },
+      "researchClosure": "Ricerca documentale corrente conclusa con limiti espliciti; aggiornamenti futuri separati. Non censimento esaustivo o garanzia di posti liberi."
     },
     "backup": {
       "tag": "backup/session-20261018-190328-fiere-ferrara",
       "branch": "backup/pre-fiere-ferrara-20261018",
-      "researchSnapshot": "pending-final-publication-proof"
+      "researchSnapshot": "C:/Users/utente/Documents/backup-subingresso/ricerche-fiere-20261018-213227",
+      "verifiedFiles": 33390,
+      "bytes": 6241295331,
+      "manifestSha256": "af2f5c487e94b74ab607b6d1403421eba42c1d6720ba8fd553469b1d579c2f3b",
+      "errors": []
     },
     "supplementaryOriginals": [
       {

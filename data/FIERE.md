@@ -1,6 +1,6 @@
 # Calendario fiere — fonti e aggiornamento
 
-## Ferrara — ricerca documentale del 18 ottobre 2026, pubblicazione da verificare
+## Ferrara — ricerca documentale conclusa e verificata online, 18 ottobre 2026
 
 115 manifestazioni in 21 comuni, prima 13: 102 aggiunte; 79 schede con date
 puntuali, otto sintesi di costo. Catalogo nazionale 4.656. Audit e ricevute:
@@ -51,8 +51,8 @@ verificato in `data/localita.json`, centri abitati e non posizione dei banchi.
 
 Ricerca corrente conclusa con limiti documentali espliciti; nuove edizioni,
 tariffe e riconferme sono verifiche periodiche future distinte. Nessun contatto,
-invio, domanda o candidatura a terzi. TO DO e conteggio province restano
-invariati finché pubblicazione e verifiche online non sono concluse.
+invio, domanda o candidatura a terzi. TO DO spuntata solo dopo la verifica
+completa online: 36 province concluse, 74 da fare su 110.
 Cache fiere JS82/catalogo57; test ripetibile `scripts/test-fiere-ferrara.cjs`,
 `FIERE_FE_BASE_URL` per la verifica pubblica con PLAYWRIGHT_MODULE.
 
@@ -60,6 +60,28 @@ Verifiche locali passate: build, settori, 4.656 pagine/1.966 sitemap, suite
 generale cinque formati e suite Ferrara Chromium1440/320 e WebKit390
 (elenco/mappa, 13 dialog, fonti/costi/date e pagine senza JS). Scansione segreti
 superata senza bypass; 425 originali verificati, zero errori.
+
+
+Pubblicato `5be1d21`, [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/FLbA3jsx2FfDkSmWVF86eQmkDrdg).
+Catalogo/audit/HTML/JS pubblici identici al commit; tutte le 115 pagine HTTP200
+con H1 e canonical corretti. Suite Ferrara online passata in Chromium1440/320
+e WebKit390: elenco/mappa, 13 dialog, costi/date/fonti e pagine senza JS.
+Il primo controllo massivo ha incontrato un timeout di connessione su Remoto:
+verificatore con sessioni riusate e checkpoint ha poi verificato tutte le pagine.
+Prove `publication-data.json`, `online-validation.json`,
+`pages-data-checkpoint.json`; conferma di chiusura in `publication-closure.json`.
+Modifiche organizzatori/eventi e documentazione pubblicate nel frattempo
+preservate; gli altri file inizialmente sporchi esclusi dai commit.
+
+Copia di conservazione `python scripts/backup-fiere-research.py` completata:
+`Documents/backup-subingresso/ricerche-fiere-20261018-213227`, 33,390 file,
+6,241,295,331 byte, ogni copia verificata SHA256, zero errori e checksum
+del manifest verificata. Inclusi originali Ferrara, guide e prove online
+disponibili al momento della copia; nessun archivio precedente cancellato.
+Registrazione finale nel Git; riscontro `backup-verified.json` nell'archivio.
+Copia sullo stesso computer, non backup esterno. Aggiornamenti periodici
+distinti dalla chiusura attuale: nuovi bandi, quote, edizioni e conflitti
+testuali, senza avviare altre province o attendere futuri documenti.
 
 ## Pordenone — ricerca documentale del 18 ottobre 2026
 
