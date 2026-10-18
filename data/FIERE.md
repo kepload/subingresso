@@ -71,11 +71,24 @@ non occorre attendere futuri bandi. Verifiche periodiche separate per nuove
 quote/domande, Natale non confermato, ricorrenze e sostituzione delle fonti
 secondarie. Nessuna promessa di censimento esaustivo o posti disponibili.
 
-Controlli locali: test provinciale Chromium1440/320 e WebKit390 (86 schede,
-mappa, date/costi/fonti, nove dialog e pagine senza JavaScript), settori,
-pagine e suite generale. Cache fiere JS79/catalogo55. Pubblicazione e spunta
-TO DO subordinate alla verifica effettiva del deploy e catalogo pubblico.
+Pubblicato `0119e58`, [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/FnWF2C2K9n74CubB6oEv6Ze4A9pj).
+Catalogo/audit/HTML/JS online identici al commit; tutte le 86 pagine HTTP200
+con H1/canonical corretti. Test provinciale locale e online Chromium1440/320
+e WebKit390 (elenco, mappa, date/costi/fonti, nove dialog, pagine senza JS);
+suite generale cinque formati, settori, build e 4.554 pagine/1.864 sitemap
+passati. Scansione segreti superata; 305 originali verificati, zero errori.
+Cache fiere JS79/catalogo55. TO DO spuntata dopo esito verificato: 35 province
+concluse, 75 da fare. Prove `publication-data.json`, `online-validation.json`,
+`originals-validation.json` nell'archivio esterno. Test ripetibile:
+`scripts/test-fiere-pordenone.cjs`, `FIERE_PN_BASE_URL` per il sito pubblico.
 
+
+Nuova copia di conservazione completata con `python scripts/backup-fiere-research.py`:
+`Documents/backup-subingresso/ricerche-fiere-20261018-165002`, 31,525 file,
+5,899,371,433 byte, ogni copia verificata SHA256, zero errori; checksum del
+manifest verificata. Inclusi originali Pordenone e prove online. Nessun
+archivio precedente cancellato/sovrascritto. Copia locale, non esterna.
+Riscontro `Documents/ricerca-fiere-pordenone-20261018/backup-verified.json`.
 
 ## Udine — ricerca documentale corrente, 18 ottobre 2026
 

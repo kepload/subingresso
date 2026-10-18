@@ -22,7 +22,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Avvisi bandi: account obbligatorio.** Su richiesta, blog e pagine bando aprono la registrazione standard; chi ha un account accede. Attivazione dopo autenticazione, email ricavata dal server. Invii e Scout limitati agli indirizzi con account esistente tramite vista privata `registered_bando_alerts`; inserimenti diretti pubblici revocati. DB prima/dopo: 32 iscrizioni conservate, 12 con account e 20 escluse dagli invii finché non si registrano; nessun account creato automaticamente. Patch e quattro funzioni pubblicate; codice `effb12b`/`35da1fd`, cache avvisi2, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Fs4xUe5bYZu4E8fMvwXYg17TCKd9). Sintassi, qualità dati, acquisizione e test dedicati Chromium 1440/320×568 + WebKit390 passati; sei percorsi su HTML online, account/email simulati, nessun invio reale. Endpoint live senza account/chiave pubblica: 401; vista destinatari non pubblica. Modulo scorrevole su telefoni bassi; JS online identico. Prove in `Documents/verifica-avvisi-bandi-20261017.{cjs,json}`; overflow circoscritto a form/modal, testi lunghi preesistenti dell'articolo fuori perimetro. Backup tag/branch remoti validi; cleanup tag con errore PowerShell noto.
 - **Dashboard:** eliminato su richiesta il riquadro superiore “Il tuo annuncio”, con carousel, totali e domanda regionale. Preferenza: non riproporlo; statistiche nel pannello Performance posteggi e gestione nell'elenco annunci.
 - **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Preferenza corrente: grafico sopra i quattro riquadri, etichette e numeri senza sottotitoli; spiegazioni/storico solo nella voce apribile. Messaggi ricevuti distinti dai click telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
-- **Fiere:** 4.470 schede; ricerca approfondita conclusa e verificata online per 34 province, 76 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Fiere:** 4.554 schede; ricerca approfondita conclusa e verificata online per 35 province, 75 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -821,7 +821,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 34 province completate, 76 da fare su 110**, aggiornate il 18 ottobre dopo Udine. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 35 province completate, 75 da fare su 110**, aggiornate il 18 ottobre dopo Pordenone. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -859,7 +859,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **25. Forlì-Cesena** — Emilia-Romagna; 88 manifestazioni, 30 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
 - [x] **26. Piacenza** — Emilia-Romagna; 111 manifestazioni in 37 comuni, 46 comuni verificati, ricerca documentale chiusa con limiti espliciti e pubblicazione verificata il 18 ottobre 2026. Fonti/esclusioni in `data/fiere-piacenza.json` e `data/FIERE.md`; manutenzione futura separata.
 - [x] **27. Udine** — Friuli-Venezia Giulia; 89 manifestazioni in 48 comuni, ricognizione 134 comuni, ricerca documentale corrente conclusa con limiti espliciti e pubblicazione verificata il 18 ottobre 2026. Audit `data/fiere-udine.json` e `data/FIERE.md`; manutenzione futura separata.
-- [ ] **28. Pordenone** — Friuli-Venezia Giulia
+- [x] **28. Pordenone** — Friuli-Venezia Giulia; 86 manifestazioni in 29 comuni, ricognizione 50 comuni, ricerca documentale conclusa con limiti espliciti e pubblicazione verificata il 18 ottobre 2026. Audit `data/fiere-pordenone.json` e `data/FIERE.md`; verifiche periodiche separate.
 - [ ] **29. Ferrara** — Emilia-Romagna
 - [ ] **30. Lucca** — Toscana
 - [ ] **31. Pisa** — Toscana
@@ -1101,3 +1101,32 @@ conferme Santa Caterina/Cervignano, programma San Carlo/Latisana, Advent Pur
 dal 1 novembre, refuso gennaio Lignano, calendari ricorrenti e nuove fonti
 primarie per le schede secondarie. Manutenzione futura distinta dalla ricerca
 corrente conclusa: non richiede attesa di nuovi bandi né avvio di altre province.
+
+## Pordenone — ricerca e pubblicazione verificate, 18 ottobre 2026
+
+86 manifestazioni in 29 comuni, ricognizione di tutti i 50 comuni; 78 schede
+con date puntuali e 14 sintesi costo. Due ID precedenti conservati, identiche
+le 4.468 schede delle altre province; catalogo 4.554. Audit, copertura nominale,
+22 esclusioni e limiti in `data/fiere-pordenone.json` e `data/FIERE.md`.
+Originali/tentativi/prove in `Documents/ricerca-fiere-pordenone-20261018`.
+Cinque fonti secondarie dichiarate; date provvisorie/ricorrenze testuali,
+moduli chiusi/vecchi e documenti non recuperabili espliciti. Piste accessibili
+esaurite; ricerca attuale chiusa con limiti, verifiche future separate.
+Nessuna comunicazione a terzi; nessuna altra provincia lavorata.
+
+Pubblicato `0119e58`, Vercel riuscito
+[FnWF2C2K9n74CubB6oEv6Ze4A9pj](https://vercel.com/kycykuardit-9234s-projects/subingresso/FnWF2C2K9n74CubB6oEv6Ze4A9pj).
+Catalogo/audit/HTML/JS online identici al commit; 86 pagine HTTP200, H1 e
+canonical corretti. Test provinciale locale/online Chromium1440/320 e WebKit390,
+suite generale cinque formati, build/settori, 4.554 pagine/1.864 sitemap passati.
+305 originali con impronte verificate, zero errori; scansione segreti superata.
+Cache JS79/catalogo55. TO DO spuntata solo dopo esito: 35 concluse, 75 da fare.
+File estranei conservati ed esclusi dai commit. Backup remoto preventivo
+`backup/session-20261018-181439-fiere-pordenone` e branch pre-intervento validi.
+
+Nuova copia di conservazione completata con `python scripts/backup-fiere-research.py`:
+`Documents/backup-subingresso/ricerche-fiere-20261018-165002`, 31,525 file,
+5,899,371,433 byte, ogni copia verificata SHA256, zero errori; checksum del
+manifest verificata. Inclusi originali Pordenone e prove online. Nessun
+archivio precedente cancellato/sovrascritto. Copia locale, non esterna.
+Riscontro `Documents/ricerca-fiere-pordenone-20261018/backup-verified.json`.

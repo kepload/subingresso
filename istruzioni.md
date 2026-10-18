@@ -1,5 +1,19 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+18/10/2026, Pordenone: ricerca documentale conclusa con limiti espliciti,
+86 manifestazioni in29 comuni/50 esaminati,78 date puntuali/14 sintesi costo.
+Catalogo4554, altre4468 schede identiche, due ID precedenti conservati.
+Audit `data/fiere-pordenone.json`, dettaglio `data/FIERE.md`, originali/prove
+`Documents/ricerca-fiere-pordenone-20261018`. Cinque fonti secondarie dichiarate,
+22 esclusioni motivate; ricorrenze/date provvisorie testuali e documenti
+non accessibili espliciti. Verifiche periodiche separate, nessun invio a terzi.
+Pubblicato0119e58, Vercel riuscito FnWF2C2K9n74CubB6oEv6Ze4A9pj; asset identici,
+86 pagine HTTP200/H1/canonical, browser locale/online Chromium1440/320 e
+WebKit390 passati, suite generale cinque formati, build/settori/pagine passati.
+TO DO aggiornata dopo verifica:35 concluse/75 da fare. Cache JS79/JSON55.
+Copia ricerche `ricerche-fiere-20261018-165002`: 31,525 file,
+5,899,371,433 byte SHA256 verificati, zero errori; dettagli/manifest in FIERE.md.
+
 18/10/2026, fiere: senza articoli selezionati area affinità vuota, nessun
 «Scegli articolo»; voto/motivi soltanto dopo la selezione. Cache JS76.
 Conservare tutti i materiali delle nostre ricerche, inclusi errori e limiti:
