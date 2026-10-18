@@ -1,5 +1,13 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, qualità organizzatori: segnali precisi di cosa manca/pronto
+all’invio, feedback vicino ai form, campi bloccati durante salvataggio e
+focus ripristinato dopo il comune. Modifiche conservate prima del ritiro di
+altro evento. Admin: solo ultima risposta, pulizia su logout/cambio account
+e risposte vecchie invalidate. JS organizzatori5/CSS eventi4. Audit nuovo
+`scripts/test-organizer-experience.cjs`, prove prima/dopo in
+Documents/verifica-qualita-organizzatori-20261018; backend/pagamenti invariati.
+
 18/10/2026, Ferrara: ricerca documentale conclusa e verificata online.
 115 manifestazioni/21 comuni, prima13 (+102), 79 con date puntuali e8 costi.
 Catalogo4.656; 13 ID conservati, altre4.541 schede identiche. Audit
