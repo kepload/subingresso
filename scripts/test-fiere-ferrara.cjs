@@ -23,6 +23,7 @@ assert(get('Sagra della Vongola - Fiera su area pubblica').editions.every(d=>!d.
 assert.equal(get('Antica Fiera di Migliarino').editions[0].year,2025);assert.equal(get('Fiera di San Giovanni Battista di Tamara').editions[0].year,2025);
 assert.equal(get('Bundan Celtic Festival - Mercatino tematico').participation.deadline,'2026-04-30');assert.match(get('Bundan Celtic Festival - Mercatino tematico').participation.note,/priorità 2026 agli artigiani italiani/);
 assert.match(get('Antica Fiera di Portomaggiore').pricing.details,/IVA esclusa/);assert.match(get('Fiera di Cento').pricing.details,/al netto IVA/);
+assert.match(get('Fiera di Cento').pricing.details,/solo operatori economici locali: 150 € se presenti in precedenti edizioni, altrimenti 450 €/);
 assert.equal(get('LEI - LovExpòItalia').pricing.period,'2027');assert.match(get('Remoto').sectors,/Moto e biciclette classiche/);assert.match(get('Remoto').pricing.details,/IVA non specificata/);
 const seven=events.filter(e=>e.name.startsWith('Le Sette Perle - '));assert.equal(seven.length,7);for(const e of seven){assert(e.editions.every(d=>d.periodOnly));assert(e.frequencyNote)}
 assert(!events.some(e=>/Work on Work|Unife Orienta|Mercatino della Fantasia/.test(e.name)));

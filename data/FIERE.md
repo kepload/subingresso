@@ -53,7 +53,7 @@ Ricerca corrente conclusa con limiti documentali espliciti; nuove edizioni,
 tariffe e riconferme sono verifiche periodiche future distinte. Nessun contatto,
 invio, domanda o candidatura a terzi. TO DO e conteggio province restano
 invariati finché pubblicazione e verifiche online non sono concluse.
-Cache fiere JS81/catalogo56; test ripetibile `scripts/test-fiere-ferrara.cjs`,
+Cache fiere JS82/catalogo57; test ripetibile `scripts/test-fiere-ferrara.cjs`,
 `FIERE_FE_BASE_URL` per la verifica pubblica con PLAYWRIGHT_MODULE.
 
 Verifiche locali passate: build, settori, 4.656 pagine/1.966 sitemap, suite
