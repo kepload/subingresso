@@ -1075,3 +1075,15 @@ date singole dei mercatini ricorrenti, calendario unico Mercanti, programmi
 Natale 2026 non ancora pubblicati ed eventuali originali sostitutivi delle
 pagine rimosse. Manutenzione futura distinta dalla ricerca attuale conclusa;
 non richiede attesa di futuri bandi e non avvia altre province.
+
+
+Udine, 18 ottobre 2026 — ripresa della ricerca conservata: 89 manifestazioni
+in 48 comuni, prima cinque; ricognizione nominativa dei 134 comuni. Audit
+data/fiere-udine.json, originali Documents/ricerca-fiere-udine-20261018,
+limiti/esclusioni/criteri in data/FIERE.md. Ricerca documentale corrente chiusa
+con limiti espliciti; pubblicazione e controlli online in corso. TO DO non
+spuntata e riepilogo ancora 33 completate, 77 da fare fino all’esito verificato.
+Catalogo 4.470, cinque ID conservati e altre 4.381 schede identiche; JS78/JSON54.
+Date commerciali, costi per categoria/edizione, IVA/cauzioni e requisiti distinti.
+Sospensioni, vecchie edizioni, fonti secondarie e documenti non accessibili
+registrati senza inventare conferme. Nessuna comunicazione a terzi.

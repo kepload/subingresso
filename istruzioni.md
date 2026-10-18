@@ -1872,3 +1872,16 @@ Backup ricerca verificato manifest/SHA256 in
 Documents/backup-subingresso/ricerche-fiere-20261018-061412. Nessun contatto
 a terzi; modifiche estranee escluse. Supera soltanto lo stato parziale Piacenza
 del 17 ottobre, conservato come storia.
+
+
+Udine, 18 ottobre 2026 — ricerca corrente conclusa con limiti documentati;
+pubblicazione in verifica, TO DO non ancora spuntata. 89 manifestazioni in 48
+comuni, prima cinque; ricognizione nominativa 134 comuni, 66 schede con date
+puntuali e sei sintesi costo. Audit data/fiere-udine.json e data/FIERE.md;
+originali Documents/ricerca-fiere-udine-20261018. Conservati cinque ID e altre
+4.381 schede; catalogo 4.470, cache JS78/JSON54. Date banchi distinte dalle
+feste, annullamento Venzone escluso, refuso gennaio Lignano non corretto per
+ipotesi, fonti secondarie e albi inaccessibili espliciti. Quattro eventi Sappada
+con centro abitato OSM documentato senza cambiare anagrafica. Test dedicato
+scripts/test-fiere-udine.cjs con PLAYWRIGHT_MODULE e FIERE_UD_BASE_URL.
+Nessuna comunicazione a terzi; nessun lavoro avviato su altre province.
