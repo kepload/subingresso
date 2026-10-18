@@ -10,6 +10,8 @@ Font Plus Jakarta Sans applicato anche al body delle pagine organizzatore/evento
 
 Verifiche della correzione: flusso completo esistente passato in Chromium1440/320×568 e WebKit390. Confronto con `/contatti` su font realmente caricato, famiglia/peso/dimensione di logo/menu/footer identici; form e accesso standard coerenti, riquadro/percentuali assenti e contatto diretto presente nell’evento simulato. Pagina evento non disponibile verificata con HTML reale; evento200 simulato soltanto nel browser, nessun nuovo profilo/evento o invio reale. Nessun overflow/errore JS. Prove `Documents/verifica-organizzatori-font-20261018/`. Backup remoto verificato; consueto errore cleanup tag PowerShell.
 
+Pubblicato `7b2f50a`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/GD9xNYHHuYzPxmydeBrLz6H5TpaA). Organizzatore/dashboard/profilo/CSS pubblicati identici al commit; evento404 reale con CSSv2 e no-store. Confronto font reale, logo/menu/footer, accesso standard e modulo passati anche sull’HTML online nei tre browser/formati. Apertura del modulo simulata nel browser senza autenticare account; rendering200 dell’evento isolato, CSS scaricato dal sito. Riscontri `asset-online.json`, `font-online.json` e schermate nella cartella prove. Backend, prenotazioni e contatti invariati; scansione segreti superata con il binario principale, hook del checkout isolato senza binario.
+
 ## Percorsi e stati
 
 - `/organizzatore`: richiesta/modifica profilo, eventi, tipologie di posteggio con quantità, dimensioni, prezzo totale per l’intera manifestazione e condizioni. Accesso dallo stesso account, dashboard e calendario fiere. Nessuna modifica al wizard annunci o al sistema Vetrina.
