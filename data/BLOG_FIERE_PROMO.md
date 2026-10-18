@@ -73,3 +73,20 @@ Backup remoto `backup/session-20261018-214606-pubblicita-blog-fiere` verificato;
 branch `backup/pre-blog-promo-fiere-20261018` verificato. Noto errore del cleanup
 tag nello script PowerShell, creazione e invio del checkpoint riusciti.
 Il miglioramento dei clic/ricavi va misurato dopo la pubblicazione.
+
+## Pubblicazione verificata
+
+Commit `ec8d0a1811ef6677ea6577925a47ebfcdd3354b0`, Vercel
+[riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/EmvLaMzre4XobEPiJLMEPm6r843S).
+Template, CSS e due JS online identici al commit (confronto e SHA256).
+Indice e tre articoli principali HTTP200 con nuovi asset. Stessa suite di32
+casi passata sull'HTML pubblicato; servizi di scrittura sempre intercettati.
+Dodici verifiche di destinazione sul calendario reale: Veneto, Lombardia,
+Trentino-Alto Adige e Valle d'Aosta su Chromium1440/320 e WebKit390; regione
+correttamente selezionata e risultati pertinenti. Nessuna scrittura di prova.
+CHECK DB pubblicato verificato: conserva i tre tipi precedenti e aggiunge
+`cta_fiere_click`; zero eventi di prova residui. Integrità di90 contenuti
+verificata anche sull'HTML online. Scansione segreti superata al commit.
+Prove `online/assets.json`, `online/browser.json`, `online/all-posts.json`,
+`online/destinations.json`, `database-verified.json` e `deploy.json` nella
+cartella di verifica indicata sopra.

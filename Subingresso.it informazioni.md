@@ -1146,5 +1146,9 @@ delle fiere. Checkout separato `Documents/subingresso-blog-promo-fiere-20261018`
 Test32 casi browser reali Chromium1440/768/320×568 e WebKit390, integrità90
 articoli, regressione annunci32 casi, acquisizione/qualità e SQL ROLLBACK
 passati. Dettagli `data/BLOG_FIERE_PROMO.md`, prove
-`Documents/blog-promo-fiere-20261018/`. Pubblicazione da verificare.
+`Documents/blog-promo-fiere-20261018/`. Pubblicato `ec8d0a1`, Vercel
+[riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/EmvLaMzre4XobEPiJLMEPm6r843S).
+Template/CSS/due JS online identici al commit;32 casi browser sull'HTML
+pubblicato passati e12 verifiche calendario regionale online riuscite.
+DB applicato/verificato, zero eventi di prova residui.
 Backup tag remoto e branch preventivo verificati; noto errore cleanup tag.
