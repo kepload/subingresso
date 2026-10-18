@@ -5161,9 +5161,42 @@
       ]
     },
     "publication": {
-      "status": "pending",
-      "checkedAt": "2026-10-18",
-      "note": "TO DO e conteggio non aggiornati prima della verifica online."
+      "status": "verified",
+      "dataCommit": "65b6b38",
+      "verifiedAt": "2026-10-18T11:04:52Z",
+      "deployUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/73k8m5MUtcc3NEcfsiwvjTGKXwHn",
+      "catalogEvents": 4470,
+      "provinceEvents": 89,
+      "pagesVerified": 89,
+      "browserTests": [
+        "Chromium 1440",
+        "Chromium 320",
+        "WebKit 390"
+      ],
+      "assetsMatchCommit": [
+        "data/fiere.json",
+        "data/fiere-udine.json",
+        "fiere.html",
+        "js/pages/fiere.js"
+      ],
+      "proofArchive": "C:\\Users\\utente\\Documents\\ricerca-fiere-udine-20261018\\publication-data.json",
+      "note": "Ricerca e dati pubblicati/verificati, TO DO e riepilogo registrati dopo esito positivo. Metadati di chiusura sottoposti a verifica nel deploy finale; nessun evento modificato dopo i test online."
+    },
+    "backup": {
+      "destination": "C:\\Users\\utente\\Documents\\backup-subingresso\\ricerche-fiere-20261018-110518",
+      "expectedFiles": 30055,
+      "verifiedFiles": 30055,
+      "bytes": 5671310309,
+      "errors": [],
+      "manifestSha256": "86f8d0442ba39e0d5f5be6ef8cffedae273d2806d5170c94b98344a44ab15c45"
+    },
+    "registration": {
+      "registeredAt": "2026-10-18",
+      "todoCompleted": true,
+      "completedProvinces": 34,
+      "remainingProvinces": 76,
+      "totalProvinces": 110,
+      "basis": "Pubblicazione dati 65b6b38 verificata online, 89 pagine corrette e suite provinciale Chromium/WebKit online passata; backup ricerca SHA256 concluso."
     }
   },
   "events": [

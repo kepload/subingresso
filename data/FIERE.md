@@ -85,8 +85,22 @@ bandi e quote, conferme Santa Caterina/Cervignano, programma San Carlo/Latisana,
 Advent Pur annunciato dal 1 novembre, refuso gennaio Lignano, ricorrenze e
 sostituzione delle fonti secondarie. Sauris Natale resta edizione 2025.
 
-Pubblicazione e registrazione finale in attesa della verifica online: TO DO
-Udine non ancora spuntata, riepilogo ancora 33 province concluse e 77 da fare.
+Pubblicato **65b6b38**, [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/73k8m5MUtcc3NEcfsiwvjTGKXwHn); catalogo, audit,
+HTML e JS identici ai file del commit, **89 pagine HTTP 200 con H1 e canonical
+corretti**. Test provinciale passato localmente e online su Chromium 1440/320
+e WebKit 390; suite generale locale sui cinque formati, build, settori e
+4.470 pagine/1.778 voci sitemap passati. Scansione segreti senza rilievi.
+Verificate 421 impronte degli originali, zero file mancanti o discordanti.
+Nuova copia della ricerca conclusa in
+`Documents/backup-subingresso/ricerche-fiere-20261018-110518`:
+**30,055 file, 5,671,310,309 byte, tutti verificati SHA256, zero errori**;
+manifest e propria checksum verificati. Include l’archivio Udine e le prove
+online raccolte; nessun archivio precedente eliminato o sovrascritto.
+TO DO spuntata e riepilogo aggiornato **dopo verifica**: 34 province concluse,
+76 da fare su 110. File estranei preservati ed esclusi dai commit.
+Prove `Documents/ricerca-fiere-udine-20261018/publication-data.json`,
+`online-validation.json`, `originals-validation.json`, `backup-verified.json`;
+metadati finali verificati separatamente nel successivo deploy di registrazione.
 Test dedicato `scripts/test-fiere-udine.cjs`: dati precedenti, ID, esclusioni,
 date commerciali, IVA/cauzioni, ricorrenze, elenco/mappa e pagine senza JavaScript
 su Chromium 1440/320 e WebKit 390; variabile `FIERE_UD_BASE_URL` per il sito pubblico.

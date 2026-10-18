@@ -1874,14 +1874,19 @@ a terzi; modifiche estranee escluse. Supera soltanto lo stato parziale Piacenza
 del 17 ottobre, conservato come storia.
 
 
-Udine, 18 ottobre 2026 — ricerca corrente conclusa con limiti documentati;
-pubblicazione in verifica, TO DO non ancora spuntata. 89 manifestazioni in 48
-comuni, prima cinque; ricognizione nominativa 134 comuni, 66 schede con date
-puntuali e sei sintesi costo. Audit data/fiere-udine.json e data/FIERE.md;
-originali Documents/ricerca-fiere-udine-20261018. Conservati cinque ID e altre
-4.381 schede; catalogo 4.470, cache JS78/JSON54. Date banchi distinte dalle
-feste, annullamento Venzone escluso, refuso gennaio Lignano non corretto per
-ipotesi, fonti secondarie e albi inaccessibili espliciti. Quattro eventi Sappada
-con centro abitato OSM documentato senza cambiare anagrafica. Test dedicato
-scripts/test-fiere-udine.cjs con PLAYWRIGHT_MODULE e FIERE_UD_BASE_URL.
-Nessuna comunicazione a terzi; nessun lavoro avviato su altre province.
+Udine, 18 ottobre 2026 — ricerca corrente conclusa con limiti e verificata online.
+89 manifestazioni in 48 comuni (+84), ricognizione nominativa 134 comuni;
+66 con date puntuali e sei sintesi costo. Audit data/fiere-udine.json e FIERE.md,
+originali/prove Documents/ricerca-fiere-udine-20261018. Conservati cinque ID e
+altre 4.381 schede identiche; catalogo 4.470, cache JS78/JSON54. Date banchi
+distinte dalle feste, annullamento Venzone, refuso gennaio Lignano, quote per
+categoria, fonti secondarie e albi inaccessibili espliciti. Quattro schede
+Sappada con centro abitato OSM documentato, anagrafica condivisa invariata.
+Pubblicato 65b6b38, Vercel riuscito; asset/catalogo/audit identici, 89 pagine
+HTTP200/H1/canonical. PLAYWRIGHT_MODULE: test-fiere-udine.cjs locale/online
+Chromium1440/320, WebKit390; FIERE_UD_BASE_URL per prova pubblica. Build,
+settori, 4.470 pagine/1.778 sitemap, suite generale cinque formati passati.
+Backup ricerca ricerche-fiere-20261018-110518: 30,055 file/5,671,310,309 byte,
+tutti verificati SHA256, zero errori; manifest/checksum verificati. TO DO
+spuntata dopo verifica: 34 province concluse, 76 da fare; verifiche periodiche
+separate. Nessun contatto a terzi né lavoro su altre province; estranei preservati.
