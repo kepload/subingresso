@@ -133,7 +133,12 @@
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.comune.agazzano.pc.it/mc/mc_p_ricerca.php",
+          "https://www.comune.agazzano.pc.it/c033001/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Alseno",
@@ -142,11 +147,16 @@
         "sourceUrls": [
           "https://www.comune.alseno.pc.it/",
           "https://www.comune.alseno.pc.it/home/servizi.html?categoria=/Servizi/112",
-          "https://www.comune.alseno.pc.it/home/vivere/eventi.html"
+          "https://www.comune.alseno.pc.it/home/vivere/eventi.html",
+          "https://servizi.comune.alseno.pc.it/ServiziOnLine/Istanze/landingIstanza?Id=34"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito, archivio e piste di associazioni/feste consultati: gastronomia e spettacoli non provano banchi esterni. Mercato agricolo ordinario fuori dal censimento fiere straordinarie; fonte Coldiretti403. Nessuna assenza di manifestazioni dichiarata."
+        "coverageNote": "Sito, archivio e piste di associazioni/feste consultati: gastronomia e spettacoli non provano banchi esterni. Mercato agricolo ordinario fuori dal censimento fiere straordinarie; fonte Coldiretti403. Nessuna assenza di manifestazioni dichiarata.",
+        "administrativeSourceUrls": [
+          "https://servizi.comune.alseno.pc.it/ServiziOnLine/Istanze/landingIstanza?Id=34"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Alta Val Tidone",
@@ -179,11 +189,19 @@
           "https://www.comune.altavaltidone.pc.it/it/events/698321",
           "https://www.comune.altavaltidone.pc.it/it/events/699150",
           "https://www.comune.altavaltidone.pc.it/it/events/699533",
-          "https://www.comune.altavaltidone.pc.it/it/events/723821"
+          "https://www.comune.altavaltidone.pc.it/it/events/723821",
+          "https://altavaltidone.halleyweb.it/mc/mc_p_ricerca.php",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://altavaltidone.halleyweb.it/mc/mc_p_ricerca.php",
+          "https://www.comune.altavaltidone.pc.it/it/page/74498",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Besenzone",
@@ -197,7 +215,11 @@
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto.",
+        "administrativeSourceUrls": [
+          "https://www.comune.besenzone.pc.it/c033003/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Bettola",
@@ -212,11 +234,17 @@
           "https://www.comune.bettola.pc.it/home/vivere/eventi.html",
           "https://www.comune.bettola.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/001",
           "https://www.comune.bettola.pc.it/notizie/AGGIORNAMENTO-ALBO-PRESIDENTI-DI-SEGGIO.html",
-          "https://www.comune.bettola.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/004/001/001"
+          "https://www.comune.bettola.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/004/001/001",
+          "https://servizi.comune.bettola.pc.it/ServiziOnLine/Istanze/landingIstanza?Id=2"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.comune.bettola.pc.it/home/amministrazione/uffici/Ufficio-6.html",
+          "https://servizi.comune.bettola.pc.it/ServiziOnLine/Istanze/landingIstanza?Id=2"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Bobbio",
@@ -232,11 +260,16 @@
           "https://www.comune.bobbio.pc.it/mc/mc_p_ricerca.php",
           "https://www.comune.bobbio.pc.it/EG0/EGSCHTST45.HBL?ARG=11",
           "https://www.comune.bobbio.pc.it/novita/notizie/novita_92.html",
-          "https://www.comune.bobbio.pc.it/vivere_il_comune/eventi/evento_94.html"
+          "https://www.comune.bobbio.pc.it/vivere_il_comune/eventi/evento_94.html",
+          "https://www.halleyweb.com/c033005/mc/mc_p_ricerca.php"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.halleyweb.com/c033005/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Borgonovo Val Tidone",
@@ -253,7 +286,9 @@
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Cadeo",
@@ -273,11 +308,18 @@
           "https://www.comune.cadeo.pc.it/it/news/1946258",
           "https://www.comune.cadeo.pc.it/it/news/1948825",
           "https://www.comune.cadeo.pc.it/it/news/1949331",
-          "https://www.comune.cadeo.pc.it/it/news/1977801"
+          "https://www.comune.cadeo.pc.it/it/news/1977801",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://cadeo.trasparenza-valutazione-merito.it/web/trasparenza/dettaglio-albo-pretorio?p_p_id=jcitygovmenutrasversaleleftcolumn_WAR_jcitygovalbiportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_jcitygovmenutrasversaleleftcolumn_WAR_jcitygovalbiportlet_current-page-parent=0&_jcitygovmenutrasversaleleftcolumn_WAR_jcitygovalbiportlet_current-page=1570"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://cadeo.trasparenza-valutazione-merito.it/web/trasparenza/dettaglio-albo-pretorio?p_p_id=jcitygovmenutrasversaleleftcolumn_WAR_jcitygovalbiportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_count=1&_jcitygovmenutrasversaleleftcolumn_WAR_jcitygovalbiportlet_current-page-parent=0&_jcitygovmenutrasversaleleftcolumn_WAR_jcitygovalbiportlet_current-page=1570"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Calendasco",
@@ -292,11 +334,20 @@
           "https://www.comune.calendasco.pc.it/it/events/664094",
           "https://www.comune.calendasco.pc.it/it/events/696891",
           "https://www.comune.calendasco.pc.it/it/public_documents/regolamento-e-modulistica-biblioteca",
-          "https://www.comune.calendasco.pc.it/it/public_documents/regolamento-ordinamento-uffici-e-servizi"
+          "https://www.comune.calendasco.pc.it/it/public_documents/regolamento-ordinamento-uffici-e-servizi",
+          "https://servizi.comune.calendasco.pc.it/redirect.html?F=MC09&authSystem=&serviceProvider=&authLevel=&idp=&serviceIndex=",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://servizi.comune.calendasco.pc.it/redirect.html?F=MC09"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://servizi.comune.calendasco.pc.it/redirect.html?F=MC09&authSystem=&serviceProvider=&authLevel=&idp=&serviceIndex=",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://servizi.comune.calendasco.pc.it/redirect.html?F=MC09"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Caorso",
@@ -310,11 +361,16 @@
           "https://www.comune.caorso.pc.it/EG0/EGSCHTST45.HBL?ARG=25",
           "https://www.comune.caorso.pc.it/vivere_il_comune/eventi/evento_102.html",
           "https://www.comune.caorso.pc.it/vivere_il_comune/eventi/evento_104.html",
-          "https://www.comune.caorso.pc.it/vivere_il_comune/eventi/evento_52.html"
+          "https://www.comune.caorso.pc.it/vivere_il_comune/eventi/evento_52.html",
+          "https://www.halleyweb.com/c033010/mc/mc_p_ricerca.php"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.halleyweb.com/c033010/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Carpaneto Piacentino",
@@ -327,7 +383,9 @@
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Castel San Giovanni",
@@ -355,11 +413,20 @@
           "https://www.comune.castelsangiovanni.pc.it/it/public_documents/bando-concessioni-mercato-e-fiera",
           "https://www.comune.castelsangiovanni.pc.it/it/public_documents/concessioni-in-scadenza-mercato-e-fiera-punto-informativo",
           "https://www.comune.castelsangiovanni.pc.it/it/public_documents/regolamento-per-la-concessione-di-patrocini-contributi-e-altri-benefici",
-          "https://www.comune.castelsangiovanni.pc.it/it/public_documents/regolamento-tasi"
+          "https://www.comune.castelsangiovanni.pc.it/it/public_documents/regolamento-tasi",
+          "https://imprese.regione.emilia-romagna.it/semplificazione-e-sportello-unico",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://castelsangiovanni.comuneweb.it/Content/landingContent/?AlboPretorio"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://imprese.regione.emilia-romagna.it/semplificazione-e-sportello-unico",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://castelsangiovanni.comuneweb.it/Content/landingContent/?AlboPretorio"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Castell'Arquato",
@@ -377,7 +444,9 @@
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Castelvetro Piacentino",
@@ -390,7 +459,9 @@
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Cerignale",
@@ -399,11 +470,16 @@
         "sourceUrls": [
           "https://www.comune.cerignale.pc.it/",
           "https://www.comune.cerignale.pc.it/mc/mc_p_ricerca.php",
-          "https://www.comune.cerignale.pc.it/EG0/EGSCHTST45.HBL?ARG=5"
+          "https://www.comune.cerignale.pc.it/EG0/EGSCHTST45.HBL?ARG=5",
+          "https://www.halleyweb.com/c033014/mc/mc_p_ricerca.php"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto.",
+        "administrativeSourceUrls": [
+          "https://www.halleyweb.com/c033014/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Coli",
@@ -414,11 +490,16 @@
           "https://www.comune.coli.pc.it/",
           "https://www.comune.coli.pc.it/mc/mc_p_ricerca.php",
           "https://www.comune.coli.pc.it/EG0/EGSCHTST45.HBL?ARG=15",
-          "https://www.comune.coli.pc.it/vivere_il_comune/eventi/evento_7.html"
+          "https://www.comune.coli.pc.it/vivere_il_comune/eventi/evento_7.html",
+          "https://www.halleyweb.com/c033016/mc/mc_p_ricerca.php"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.halleyweb.com/c033016/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Corte Brugnatella",
@@ -428,11 +509,18 @@
           "https://www.comune.cortebrugnatella.pc.it/",
           "https://www.comune.cortebrugnatella.pc.it/c033017/mc/mc_p_ricerca.php",
           "https://www.comune.cortebrugnatella.pc.it/mc/mc_p_ricerca.php",
-          "https://www.comune.cortebrugnatella.pc.it/zf/index.php/esercizi-commerciali"
+          "https://www.comune.cortebrugnatella.pc.it/zf/index.php/esercizi-commerciali",
+          "http://www.alboinrete.it/corteb"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto.",
+        "administrativeSourceUrls": [
+          "https://www.comune.cortebrugnatella.pc.it/mc/mc_p_ricerca.php",
+          "http://www.alboinrete.it/corteb",
+          "https://www.comune.cortebrugnatella.pc.it/c033017/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Cortemaggiore",
@@ -499,11 +587,19 @@
           "https://www.comune.cortemaggiore.pc.it/it/public_documents/regolamento-sulla-protezione-delle-persone-fisiche-con-riguardo-al-trattamento-dei-dati-personali",
           "https://www.comune.cortemaggiore.pc.it/it/public_documents/regolamento-taglio-strade-comunali",
           "https://www.comune.cortemaggiore.pc.it/it/public_documents/regolamento-tares",
-          "https://www.comune.cortemaggiore.pc.it/it/public_documents/regolamento-tutela-e-valorizzazione-prodotti-tipici"
+          "https://www.comune.cortemaggiore.pc.it/it/public_documents/regolamento-tutela-e-valorizzazione-prodotti-tipici",
+          "https://albo.studiok.it/cortemaggiore/albostorico/",
+          "https://servizionline.hspromilaprod.hypersicapp.net/cmscortemaggiore/portale/albopretorio/albopretorioconsultazione.aspx?P=6500"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://albo.studiok.it/cortemaggiore/albostorico/",
+          "https://servizionline.hspromilaprod.hypersicapp.net/cmscortemaggiore/portale/albopretorio/albopretorioconsultazione.aspx?P=6500",
+          "https://www.comune.cortemaggiore.pc.it/it/public_documents/regolamento-per-la-gestione-delle-procedure-di-pubblicazione-all-albo-pretorio-on-line"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Farini",
@@ -515,11 +611,16 @@
           "https://www.comune.farini.pc.it/",
           "https://www.comune.farini.pc.it/home/servizi.html?categoria=/Servizi/112",
           "https://www.comune.farini.pc.it/home/vivere/eventi.html",
-          "https://www.comune.farini.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/004/001"
+          "https://www.comune.farini.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/004/001",
+          "https://servizi.comune.farini.pc.it/ServiziOnLine/Istanze/landingIstanza?Id=9"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://servizi.comune.farini.pc.it/ServiziOnLine/Istanze/landingIstanza?Id=9"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Ferriere",
@@ -529,11 +630,16 @@
           "https://www.comune.ferriere.pc.it/",
           "https://www.comune.ferriere.pc.it/home/servizi.html?categoria=/Servizi/112",
           "https://www.comune.ferriere.pc.it/home/vivere/eventi.html",
-          "https://www.comune.ferriere.pc.it/notizie/AVVISO-DI-SELEZIONE-PUBBLICA-PER-CONFERIMENTO-DI-INCARICO-A-CONTRATTO--EX-ART.-110--COMMA-1-DEL-D.LGS-267-00--A-TEMPO-DETERMINATO-E-PART-TIME--18-36---DI--ISTRUTTORE-DIRETTIVO-TECNICO---CATEGORIA--ELEVATE-QUALIFICAZIONI---A-CUI-CONFERIRE-LA-RESPONSABILITA--DEL-SERVIZIO--LAVORI-PUBBLICI--PATRIMONIO--URBANISTICA--AMBIENTE-e-SUAP--DEL-COMUNE-DI-FERRIERE..html"
+          "https://www.comune.ferriere.pc.it/notizie/AVVISO-DI-SELEZIONE-PUBBLICA-PER-CONFERIMENTO-DI-INCARICO-A-CONTRATTO--EX-ART.-110--COMMA-1-DEL-D.LGS-267-00--A-TEMPO-DETERMINATO-E-PART-TIME--18-36---DI--ISTRUTTORE-DIRETTIVO-TECNICO---CATEGORIA--ELEVATE-QUALIFICAZIONI---A-CUI-CONFERIRE-LA-RESPONSABILITA--DEL-SERVIZIO--LAVORI-PUBBLICI--PATRIMONIO--URBANISTICA--AMBIENTE-e-SUAP--DEL-COMUNE-DI-FERRIERE..html",
+          "http://www.halleyweb.com/c033020/mc/mc_p_ricerca.php"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto.",
+        "administrativeSourceUrls": [
+          "http://www.halleyweb.com/c033020/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Fiorenzuola d'Arda",
@@ -555,11 +661,16 @@
           "https://www.comune.fiorenzuola.pc.it/it/news/2054903",
           "https://www.comune.fiorenzuola.pc.it/it/public_documents/regolamento-cug",
           "https://www.comune.fiorenzuola.pc.it/it/public_documents/regolamento-del-garante-dei-diritti-delle-persone-anziane",
-          "https://www.comune.fiorenzuola.pc.it/it/public_documents/regolamento-urbanistico-edilizio-rue"
+          "https://www.comune.fiorenzuola.pc.it/it/public_documents/regolamento-urbanistico-edilizio-rue",
+          "https://servizi-fiorenzuola.e-pal.it/AlboOnline/ricercaAlbo"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://servizi-fiorenzuola.e-pal.it/AlboOnline/ricercaAlbo"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Gazzola",
@@ -568,11 +679,18 @@
         "sourceUrls": [
           "https://www.comune.gazzola.pc.it/",
           "https://www.comune.gazzola.pc.it/mc/mc_p_ricerca.php",
-          "https://www.comune.gazzola.pc.it/EG0/EGSCHTST45.HBL?ARG=15"
+          "https://www.comune.gazzola.pc.it/EG0/EGSCHTST45.HBL?ARG=15",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://www.halleyweb.com/c033022/mc/mc_p_ricerca.php"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto.",
+        "administrativeSourceUrls": [
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://www.halleyweb.com/c033022/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Gossolengo",
@@ -603,11 +721,19 @@
           "https://www.comune.gossolengo.pc.it/it/news/castagnata-e-mercanti-di-qualita?type=1#top",
           "https://www.comune.gossolengo.pc.it/it/public_documents/regolamento-riscossione-coattiva",
           "https://www.comune.gossolengo.pc.it/it/public_documents/regolamento-urbanistico-edilizio-rue",
-          "https://www.comune.gossolengo.pc.it/it/public_documents/tributi-iuc-imu-tasi-tari-regolamento"
+          "https://www.comune.gossolengo.pc.it/it/public_documents/tributi-iuc-imu-tasi-tari-regolamento",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://servizionline.hspromilaprod.hypersicapp.net/cmsgossolengo/listaservizi.aspx?U=1&S=200"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.comune.gossolengo.pc.it/it/page/145851",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://servizionline.hspromilaprod.hypersicapp.net/cmsgossolengo/listaservizi.aspx?U=1&S=200"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Gragnano Trebbiense",
@@ -623,11 +749,20 @@
           "https://www.comune.gragnanotrebbiense.pc.it/it/news/1942095",
           "https://www.comune.gragnanotrebbiense.pc.it/it/public_documents/regolamento-alienazione-beni-immobili-e-mobili",
           "https://www.comune.gragnanotrebbiense.pc.it/it/public_documents/regolamento-per-l-accesso-dei-servizi-educativi-per-la-prima-infanzia",
-          "https://www.comune.gragnanotrebbiense.pc.it/it/public_documents/regolamento-urbanistico-edilizio-38508"
+          "https://www.comune.gragnanotrebbiense.pc.it/it/public_documents/regolamento-urbanistico-edilizio-38508",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://servizi.comune.gragnanotrebbiense.pc.it/redirect.html?F=MC09",
+          "https://www.halleyweb.com/c033024/mc/mc_p_ricerca.php"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://servizi.comune.gragnanotrebbiense.pc.it/redirect.html?F=MC09",
+          "https://www.halleyweb.com/c033024/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Gropparello",
@@ -639,11 +774,16 @@
           "https://www.comune.gropparello.pc.it/home/servizi.html?categoria=/Servizi/112",
           "https://www.comune.gropparello.pc.it/home/vivere/eventi.html",
           "https://www.comune.gropparello.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/001",
-          "https://www.comune.gropparello.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/004/001"
+          "https://www.comune.gropparello.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/004/001",
+          "https://gropparello.trasparenza-valutazione-merito.it/web/trasparenza/menu-albo-pretorio"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://gropparello.trasparenza-valutazione-merito.it/web/trasparenza/menu-albo-pretorio"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Lugagnano Val d'Arda",
@@ -655,11 +795,16 @@
           "https://www.comune.lugagnano.pc.it/mc/mc_p_ricerca.php",
           "https://www.comune.lugagnano.pc.it/EG0/EGSCHTST45.HBL?ARG=12",
           "https://www.comune.lugagnano.pc.it/novita/notizie/novita_199.html",
-          "https://www.comune.lugagnano.pc.it/vivere_il_comune/eventi/evento_71.html"
+          "https://www.comune.lugagnano.pc.it/vivere_il_comune/eventi/evento_71.html",
+          "https://www.halleyweb.com/c033026/mc/mc_p_ricerca.php"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.halleyweb.com/c033026/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Monticelli d'Ongina",
@@ -712,11 +857,19 @@
           "https://www.comune.monticelli.pc.it/it/public_documents/regolamento-trasporto-scolastico",
           "https://www.comune.monticelli.pc.it/it/public_documents/regolamento-trasporto-sociale-anziani-e-disabili",
           "https://www.comune.monticelli.pc.it/it/public_documents/rue-regolamento-urbanistico-edilizio-approvato",
-          "https://www.comune.monticelli.pc.it/it/public_documents/variante-prg-regolamento-1-2011"
+          "https://www.comune.monticelli.pc.it/it/public_documents/variante-prg-regolamento-1-2011",
+          "https://accessounitario.lepida.it/suaper-fe/#/AreaPersonale"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.comune.monticelli.pc.it/it/page/152737",
+          "https://www.comune.monticelli.pc.it/it/page/146774",
+          "https://www.comune.monticelli.pc.it/it/page/albo-pretorio",
+          "https://accessounitario.lepida.it/suaper-fe/#/AreaPersonale"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Morfasso",
@@ -726,11 +879,16 @@
           "https://visitpiacenza.it/events/morfasso-in-festa-fiera-di-luglio/",
           "https://www.comune.morfasso.pc.it/",
           "https://www.comune.morfasso.pc.it/mc/mc_p_ricerca.php",
-          "https://www.comune.morfasso.pc.it/EG0/EGSCHTST45.HBL?ARG=3"
+          "https://www.comune.morfasso.pc.it/EG0/EGSCHTST45.HBL?ARG=3",
+          "https://www.halleyweb.com/c033028/mc/mc_p_ricerca.php"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.halleyweb.com/c033028/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Ottone",
@@ -738,11 +896,16 @@
         "result": "public-sources-reviewed-with-explicit-limits",
         "sourceUrls": [
           "http://www.comune.ottone.pc.it/",
-          "https://www.comune.ottone.pc.it/"
+          "https://www.comune.ottone.pc.it/",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto.",
+        "administrativeSourceUrls": [
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Piacenza",
@@ -794,7 +957,9 @@
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Pianello Val Tidone",
@@ -805,11 +970,18 @@
           "https://visitpiacenza.it/events/fiera-arti-mestieri-pianello-val-tidone/",
           "https://www.comune.pianellovaltidone.pc.it/",
           "https://www.comune.pianellovaltidone.pc.it/mc/mc_p_ricerca.php",
-          "https://www.comune.pianellovaltidone.pc.it/EG0/EGSCHTST45.HBL?ARG=4"
+          "https://www.comune.pianellovaltidone.pc.it/EG0/EGSCHTST45.HBL?ARG=4",
+          "https://imprese.regione.emilia-romagna.it/semplificazione-e-sportello-unico/doc/moduli-nazionali-unificati-suap-attivita-commerciali-e-assimilate",
+          "https://www.halleyweb.com/c033032/mc/mc_p_ricerca.php"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://imprese.regione.emilia-romagna.it/semplificazione-e-sportello-unico/doc/moduli-nazionali-unificati-suap-attivita-commerciali-e-assimilate",
+          "https://www.halleyweb.com/c033032/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Piozzano",
@@ -822,11 +994,16 @@
           "https://www.comune.piozzano.pc.it/it/events/benvenuto-don-raman-murzich",
           "https://www.comune.piozzano.pc.it/it/events/l-associazione-culturale-rio-canto-incontra-astutillo-malgioglio",
           "https://www.comune.piozzano.pc.it/it/sitemap",
-          "https://www.comune.piozzano.pc.it/it/eventi"
+          "https://www.comune.piozzano.pc.it/it/eventi",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Podenzano",
@@ -841,11 +1018,16 @@
           "https://www.comune.podenzano.pc.it/home/servizi.html?categoria=/Servizi/112",
           "https://www.comune.podenzano.pc.it/home/vivere/eventi.html",
           "https://www.comune.podenzano.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/001/001/005",
-          "https://www.comune.podenzano.pc.it/home/vivere/eventi.html?categoria=/TipiNotizia/001"
+          "https://www.comune.podenzano.pc.it/home/vivere/eventi.html?categoria=/TipiNotizia/001",
+          "https://podenzano.trasparenza-valutazione-merito.it/web/trasparenza/menu-albo-pretorio"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto.",
+        "administrativeSourceUrls": [
+          "https://podenzano.trasparenza-valutazione-merito.it/web/trasparenza/menu-albo-pretorio"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Ponte dell'Olio",
@@ -859,11 +1041,17 @@
           "https://www.comune.pontedellolio.pc.it/home/servizi.html?categoria=/Servizi/112",
           "https://www.comune.pontedellolio.pc.it/home/servizi/servizio/Servizio-1.html",
           "https://www.comune.pontedellolio.pc.it/home/vivere/eventi.html",
-          "https://www.comune.pontedellolio.pc.it/notizie/Revisione-dell-Albo-dei-Presidenti-di-Seggio.html"
+          "https://www.comune.pontedellolio.pc.it/notizie/Revisione-dell-Albo-dei-Presidenti-di-Seggio.html",
+          "https://servizi.comune.pontedellolio.pc.it/ServiziOnLine/Istanze/landingIstanza?Id=1"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.comune.pontedellolio.pc.it/home/servizi/servizio/Servizio-1.html",
+          "https://servizi.comune.pontedellolio.pc.it/ServiziOnLine/Istanze/landingIstanza?Id=1"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Pontenure",
@@ -878,11 +1066,18 @@
           "https://www.comune.pontenure.pc.it/amministrazione-trasparente/bandi-di-gara-e-contratti/avviso-pubblico-per-lindividuazione-di-uno-o-piu-enti-del-terzo-settore-disponibili-alla-co-progettazione-per-la-valorizzazione-del-mercatino-dellantiquariato/#main_container",
           "https://www.comune.pontenure.pc.it/amministrazione-trasparente/bandi-di-gara-e-contratti/avviso-pubblico-per-lindividuazione-di-uno-o-piu-enti-del-terzo-settore-disponibili-alla-co-progettazione-per-la-valorizzazione-del-mercatino-dellantiquariato/#menup",
           "https://www.comune.pontenure.pc.it/wp-content/uploads/2026/05/AVVISO-PUBBLICO-per-sito.pdf",
-          "https://www.comune.pontenure.pc.it/wp-content/uploads/2026/05/schema-convenzione.pdf"
+          "https://www.comune.pontenure.pc.it/wp-content/uploads/2026/05/schema-convenzione.pdf",
+          "http://pontenure.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio",
+          "http://www.amministrazionicomunali.net/main/?comune=pontenure"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "http://pontenure.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio",
+          "http://www.amministrazionicomunali.net/main/?comune=pontenure"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Rivergaro",
@@ -892,11 +1087,30 @@
           "https://www.comune.rivergaro.pc.it/",
           "https://www.comune.rivergaro.pc.it/it/events",
           "https://www.comune.rivergaro.pc.it/it/page/136980?fromService=1",
-          "https://www.comune.rivergaro.pc.it/it/sitemap"
+          "https://www.comune.rivergaro.pc.it/it/sitemap",
+          "https://servizi.comune.rivergaro.pc.it/redirect.html?F=MC09",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRRM065WT0-H",
+          "https://rivergaro.halleyweb.it/c033038/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/6",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVeUq5az0-H",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRRNEU9VT0-H/provvedimenti/2/categoria/114",
+          "https://rivergaro.halleyweb.it/c033038/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/5",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/delibere/index",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRRM0q1UT0-H"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://servizi.comune.rivergaro.pc.it/redirect.html?F=MC09",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRRM065WT0-H",
+          "https://rivergaro.halleyweb.it/c033038/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/6",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVeUq5az0-H",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRRNEU9VT0-H/provvedimenti/2/categoria/114",
+          "https://rivergaro.halleyweb.it/c033038/zf/index.php/atti-amministrativi/ordinanze/index/table-ordinanze-public-page/5",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/delibere/index",
+          "https://rivergaro.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRRM0q1UT0-H"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Rottofreno",
@@ -931,11 +1145,18 @@
           "https://www.comune.rottofreno.pc.it/it/events/729881",
           "https://www.comune.rottofreno.pc.it/it/page/47324",
           "https://www.comune.rottofreno.pc.it/it/public_documents/regolamento-del-servizio-di-polizia-locale",
-          "https://www.comune.rottofreno.pc.it/it/public_documents/regolamento-videosorveglianza"
+          "https://www.comune.rottofreno.pc.it/it/public_documents/regolamento-videosorveglianza",
+          "https://rottofreno.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://rottofreno.trasparenza-valutazione-merito.it/web/trasparenza/albo-pretorio",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "San Giorgio Piacentino",
@@ -949,11 +1170,16 @@
           "https://www.comune.sangiorgiopiacentino.pc.it/home/vivere/eventi.html?categoria=/TipiEvento/001",
           "https://www.comune.sangiorgiopiacentino.pc.it/notizie/Modifiche-temporanee-alla-viabilit--in-occasione-dell-evento--Balloon-Cup-2026-.html",
           "https://visitpiacenza.it/events/festa-del-fungo-e-palio-del-fungaiolo/",
-          "https://www.comune.sangiorgiopiacentino.pc.it/eventi/Concorso-Signor-Fungo.html"
+          "https://www.comune.sangiorgiopiacentino.pc.it/eventi/Concorso-Signor-Fungo.html",
+          "https://sangiorgio.trasparenza-valutazione-merito.it/web/trasparenza/menu-albo-pretorio"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Letti calendario comunale e originali Balloon Cup/Signor Fungo, turismo ufficiale Festa Fungo e annuncio puntuale Mercanti20 settembre; esclusioni motivate, nessuna fiera dedotta dai soli eventi culturali."
+        "coverageNote": "Letti calendario comunale e originali Balloon Cup/Signor Fungo, turismo ufficiale Festa Fungo e annuncio puntuale Mercanti20 settembre; esclusioni motivate, nessuna fiera dedotta dai soli eventi culturali.",
+        "administrativeSourceUrls": [
+          "https://sangiorgio.trasparenza-valutazione-merito.it/web/trasparenza/menu-albo-pretorio"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "San Pietro in Cerro",
@@ -963,11 +1189,16 @@
           "https://www.comune.sanpietroincerro.pc.it/",
           "https://www.comune.sanpietroincerro.pc.it/mc/mc_p_ricerca.php",
           "https://www.comune.sanpietroincerro.pc.it/EG0/EGSCHTST45.HBL?ARG=5",
-          "https://www.comune.sanpietroincerro.pc.it/amministrazione/documenti_e_dati/atti_normativi/documento_101.html"
+          "https://www.comune.sanpietroincerro.pc.it/amministrazione/documenti_e_dati/atti_normativi/documento_101.html",
+          "https://www.halleyweb.com/c033041/mc/mc_p_ricerca.php"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.halleyweb.com/c033041/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Sarmato",
@@ -1005,11 +1236,18 @@
           "https://www.comune.sarmato.pc.it/it/events/696834",
           "https://www.comune.sarmato.pc.it/it/events/696836",
           "https://www.comune.sarmato.pc.it/it/events/719507",
-          "https://www.comune.sarmato.pc.it/it/public_documents/rue-regolamento-urbanistico-edilizio"
+          "https://www.comune.sarmato.pc.it/it/public_documents/rue-regolamento-urbanistico-edilizio",
+          "https://sarmato.halleyegov.it/redirect.html?F=MC09",
+          "https://www.halleyweb.com/c033042/mc/mc_p_ricerca.php"
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://sarmato.halleyegov.it/redirect.html?F=MC09",
+          "https://www.halleyweb.com/c033042/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Travo",
@@ -1020,11 +1258,16 @@
           "https://visitpiacenza.it/events/fiera-evento-a-travo/",
           "https://www.comune.travo.pc.it/",
           "https://www.comune.travo.pc.it/mc/mc_p_ricerca.php",
-          "https://www.comune.travo.pc.it/EG0/EGSCHTST45.HBL?ARG=4"
+          "https://www.comune.travo.pc.it/EG0/EGSCHTST45.HBL?ARG=4",
+          "https://www.halleyweb.com/c033043/mc/mc_p_ricerca.php"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://www.halleyweb.com/c033043/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Vernasca",
@@ -1034,11 +1277,18 @@
           "https://visitpiacenza.it/events/vigoleno-i-mercatini-delle-meraviglie/",
           "https://www.comune.vernasca.pc.it/",
           "https://www.comune.vernasca.pc.it/mc/mc_p_ricerca.php",
-          "https://www.comune.vernasca.pc.it/EG0/EGSCHTST45.HBL?ARG=4"
+          "https://www.comune.vernasca.pc.it/EG0/EGSCHTST45.HBL?ARG=4",
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://www.halleyweb.com/c033044/mc/mc_p_ricerca.php"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://au.lepida.it/suaper-fe/#/AreaPersonale",
+          "https://www.halleyweb.com/c033044/mc/mc_p_ricerca.php"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Vigolzone",
@@ -1050,11 +1300,16 @@
           "https://www.comune.vigolzone.pc.it/",
           "https://www.comune.vigolzone.pc.it/home/servizi.html?categoria=/Servizi/112",
           "https://www.comune.vigolzone.pc.it/home/vivere/eventi.html",
-          "https://www.comune.vigolzone.pc.it/home/vivere/eventi.html?categoria=/TipiNotizia/001"
+          "https://www.comune.vigolzone.pc.it/home/vivere/eventi.html?categoria=/TipiNotizia/001",
+          "https://vigolzone.trasparenza-valutazione-merito.it/web/trasparenza/menu-albo-pretorio"
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [
+          "https://vigolzone.trasparenza-valutazione-merito.it/web/trasparenza/menu-albo-pretorio"
+        ],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Villanova sull'Arda",
@@ -1067,7 +1322,9 @@
         ],
         "previousResult": "partial-sources-reviewed",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Zerba",
@@ -1079,7 +1336,9 @@
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede. Le piste non ammesse e i limiti sono nel registro esclusioni; non dichiarato un calendario comunale vuoto.",
+        "administrativeSourceUrls": [],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       },
       {
         "city": "Ziano Piacentino",
@@ -1090,7 +1349,9 @@
         ],
         "previousResult": "not-yet-sufficiently-verified",
         "checkedAt": "2026-10-18",
-        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede."
+        "coverageNote": "Sito istituzionale e percorsi pubblici pertinenti consultati; atti e documenti disponibili confrontati con organizzatori/turismo. Gli albi correnti hanno finestre di pubblicazione e non equivalgono a storico integrale. Nessuna assenza di fiere dedotta da zero schede.",
+        "administrativeSourceUrls": [],
+        "administrativeCoverageLimit": "Solo percorsi e documenti pubblicamente accessibili; portali dinamici, finestre di albo, errori o area personale non equivalgono a storico integrale né prova di assenza di fiere. Tentativi/esiti nel registro fonti e archivio esterno."
       }
     ],
     "sourceDownloads": [
@@ -7777,16 +8038,31 @@
       }
     ],
     "publication": {
-      "status": "pending-verification",
+      "status": "verified-online",
       "provinceEvents": 111,
       "municipalitiesWithEvents": 37,
       "previousEvents": 47,
-      "previousMunicipalities": 24
+      "previousMunicipalities": 24,
+      "commit": "3ab39be",
+      "verifiedAt": "2026-10-18T06:31:12.187309+00:00",
+      "deploymentUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/8r4JVcHUb1yPv7XqBPif4b8Xfqgy",
+      "nationalEvents": 4386,
+      "allProvincePagesHttp200": 111,
+      "browser": "PLAYWRIGHT_MODULE: Chromium1440/320 e WebKit390, locale e online",
+      "evidence": "C:\\Users\\utente\\Documents\\verifica-piacenza-20261018"
     },
     "continuationBaseline": {
       "commit": "29ff4aed02e3f1913519f691ff497bb4e8fffdf3",
       "provinceEvents": 47,
       "nationalEvents": 4322
+    },
+    "researchBackup": {
+      "path": "C:\\Users\\utente\\Documents\\backup-subingresso\\ricerche-fiere-20261018-061412",
+      "manifest": "manifest.json",
+      "verification": "Copia e verifica SHA256 di ogni file; esito e conteggi nel manifest. Nessun archivio precedente sovrascritto.",
+      "verifiedFiles": 28626,
+      "bytes": 5460853426,
+      "errors": 0
     }
   },
   "events": [

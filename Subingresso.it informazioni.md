@@ -22,7 +22,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Avvisi bandi: account obbligatorio.** Su richiesta, blog e pagine bando aprono la registrazione standard; chi ha un account accede. Attivazione dopo autenticazione, email ricavata dal server. Invii e Scout limitati agli indirizzi con account esistente tramite vista privata `registered_bando_alerts`; inserimenti diretti pubblici revocati. DB prima/dopo: 32 iscrizioni conservate, 12 con account e 20 escluse dagli invii finché non si registrano; nessun account creato automaticamente. Patch e quattro funzioni pubblicate; codice `effb12b`/`35da1fd`, cache avvisi2, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Fs4xUe5bYZu4E8fMvwXYg17TCKd9). Sintassi, qualità dati, acquisizione e test dedicati Chromium 1440/320×568 + WebKit390 passati; sei percorsi su HTML online, account/email simulati, nessun invio reale. Endpoint live senza account/chiave pubblica: 401; vista destinatari non pubblica. Modulo scorrevole su telefoni bassi; JS online identico. Prove in `Documents/verifica-avvisi-bandi-20261017.{cjs,json}`; overflow circoscritto a form/modal, testi lunghi preesistenti dell'articolo fuori perimetro. Backup tag/branch remoti validi; cleanup tag con errore PowerShell noto.
 - **Dashboard:** eliminato su richiesta il riquadro superiore “Il tuo annuncio”, con carousel, totali e domanda regionale. Preferenza: non riproporlo; statistiche nel pannello Performance posteggi e gestione nell'elenco annunci.
 - **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Preferenza corrente: grafico sopra i quattro riquadri, etichette e numeri senza sottotitoli; spiegazioni/storico solo nella voce apribile. Messaggi ricevuti distinti dai click telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
-- **Fiere:** 4.322 schede; ricerca approfondita conclusa e verificata online per 32 province, 78 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Fiere:** 4.386 schede; ricerca approfondita conclusa e verificata online per 33 province, 77 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -821,7 +821,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 32 province completate, 78 da fare su 110**, ricontrollate il 17 ottobre dopo Forlì-Cesena. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 33 province completate, 77 da fare su 110**, aggiornate il 18 ottobre dopo Piacenza. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -857,7 +857,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **23. Rimini** — Emilia-Romagna; 115 manifestazioni, 27 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
 - [x] **24. Ravenna** — Emilia-Romagna
 - [x] **25. Forlì-Cesena** — Emilia-Romagna; 88 manifestazioni, 30 comuni verificati, ricerca chiusa con limiti documentati e pubblicazione verificata il 17 ottobre 2026.
-- [ ] **26. Piacenza** — Emilia-Romagna — **ricerca incompleta**, integrazione verificata il 17 ottobre: 47 manifestazioni in 24 comuni (+43). Restano verifiche comunali/albi/SUAP, circuito Mercanti di Qualità, Pontenure/Paderna e calendari natalizi/Expo. Piste e limiti in `data/fiere-piacenza.json` e `data/FIERE.md`; non conteggiata fra le province concluse.
+- [x] **26. Piacenza** — Emilia-Romagna; 111 manifestazioni in 37 comuni, 46 comuni verificati, ricerca documentale chiusa con limiti espliciti e pubblicazione verificata il 18 ottobre 2026. Fonti/esclusioni in `data/fiere-piacenza.json` e `data/FIERE.md`; manutenzione futura separata.
 - [ ] **27. Udine** — Friuli-Venezia Giulia
 - [ ] **28. Pordenone** — Friuli-Venezia Giulia
 - [ ] **29. Ferrara** — Emilia-Romagna
@@ -1054,3 +1054,24 @@ Residui documentali in research.openLeads; nessun contatto a terzi.
 
 
 Affluenza, 17 ottobre 2026 - preferenza corrente: eliminato "almeno" dai bollini. Sei fasce di ingressi/presenze medi al giorno: molto bassa <500; bassa 500-999; media 1.000-4.999; alta 5.000-19.999; molto alta 20.000-99.999; altissima da 100.000. Altissima riservata a volumi eccezionali, senza certificare primati storici: bollino dorato con luce e riflesso, movimento disattivato con prefers-reduced-motion. Fonti, stime e limiti "oltre" nei dettagli; catalogo invariato. Supera le quattro fasce precedenti. Cache fiere JS74/CSS27, fiera CSS3. Test affluenza Chromium1440/320 e WebKit390 passati, incluse nuove soglie, luce e movimento ridotto; 4.322 pagine e 1.625 voci sitemap, navigazione senza JS e dialog verificati. Pubblicato 91d4408; Vercel READY dpl_G1ypKP3vSAnYX6LXCj5Wh66eAPQX. Test dedicato passato anche online Chromium1440/320 e WebKit390; JS/CSS identici al commit e pagina San Faustino con altissima verificata.
+
+Piacenza, 18 ottobre 2026 — ricerca corrente conclusa e verificata online.
+111 manifestazioni in 37 comuni (+64 dalle 47 già pubblicate), ricognizione 46
+comuni; 99 con data puntuale, 5 sintesi costo. Mercanti, Pontenure/Paderna,
+Natale ed Expo verificati con originali/alternative accessibili; esclusioni,
+tentativi e limiti nell’audit e in data/FIERE.md. Date dei banchi distinte dalle
+feste, vecchie edizioni non proiettate, quote non inventate; nessuna promessa
+di esaustività. Commit dati 3ab39be, Vercel riuscito, catalogo/audit/HTML/JS
+identici online e 111 pagine HTTP 200/H1/canonical. PLAYWRIGHT_MODULE locale/online
+Chromium 1440/320 e WebKit 390 passati; build, settori, 4.386 pagine/1.689 sitemap
+e suite generale cinque formati passati. Conservati 47 ID e altre 4.275 schede.
+Cache JS77/JSON53; archivio Documents/ricerca-fiere-piacenza-20261018 e prove
+Documents/verifica-piacenza-20261018. Backup ricerca verificato con manifest
+SHA256: Documents/backup-subingresso/ricerche-fiere-20261018-061412. TO DO e
+riepilogo aggiornati dopo verifica: 33 completate, 77 da fare. Nessun contatto
+a terzi; file estranei preservati ed esclusi dai commit.
+- [ ] **Piacenza — verifiche periodiche:** nuovi bandi/quote/disponibilità,
+date singole dei mercatini ricorrenti, calendario unico Mercanti, programmi
+Natale 2026 non ancora pubblicati ed eventuali originali sostitutivi delle
+pagine rimosse. Manutenzione futura distinta dalla ricerca attuale conclusa;
+non richiede attesa di futuri bandi e non avvia altre province.

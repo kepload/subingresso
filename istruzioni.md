@@ -1855,3 +1855,20 @@ locale e online tramite PLAYWRIGHT_MODULE passati. Build, settori e pagine
 
 
 Affluenza, 17 ottobre 2026 - preferenza corrente: eliminato "almeno" dai bollini. Sei fasce di ingressi/presenze medi al giorno: molto bassa <500; bassa 500-999; media 1.000-4.999; alta 5.000-19.999; molto alta 20.000-99.999; altissima da 100.000. Altissima riservata a volumi eccezionali, senza certificare primati storici: bollino dorato con luce e riflesso, movimento disattivato con prefers-reduced-motion. Fonti, stime e limiti "oltre" nei dettagli; catalogo invariato. Supera le quattro fasce precedenti. Cache fiere JS74/CSS27, fiera CSS3. Test affluenza Chromium1440/320 e WebKit390 passati, incluse nuove soglie, luce e movimento ridotto; 4.322 pagine e 1.625 voci sitemap, navigazione senza JS e dialog verificati. Pubblicato 91d4408; Vercel READY dpl_G1ypKP3vSAnYX6LXCj5Wh66eAPQX. Test dedicato passato anche online Chromium1440/320 e WebKit390; JS/CSS identici al commit e pagina San Faustino con altissima verificata.
+
+
+Piacenza, 18 ottobre 2026: conclusa e verificata la continuazione documentale
+delle 47 schede: 111 manifestazioni in 37 comuni (+64), 46 comuni ricogniti.
+Audit data/fiere-piacenza.json, fonti/esclusioni/limiti in data/FIERE.md;
+originali Documents/ricerca-fiere-piacenza-20261018. Pontenure 10€ hobbisti
+distinto da 147€ gestore; Paderna 2026/2027, Mercanti comunali, Natale e 23 righe
+AEFI 2026 con Expo corrente. Limiti accesso/storico dichiarati; ricerca attuale
+chiusa, aggiornamenti periodici separati. Commit dati 3ab39be, Vercel riuscito,
+111 pagine HTTP 200/H1/canonical, catalogo/audit/HTML/JS identici; PLAYWRIGHT_MODULE
+locale/online Chromium 1440/320/WebKit 390 passati. Build/settori/pagine 4386 e
+suite generale cinque formati passati. Conservati 47 ID e 4275 schede esterne.
+JS77/JSON53; TODO spuntata dopo verifica, 33 province concluse/77 rimanenti.
+Backup ricerca verificato manifest/SHA256 in
+Documents/backup-subingresso/ricerche-fiere-20261018-061412. Nessun contatto
+a terzi; modifiche estranee escluse. Supera soltanto lo stato parziale Piacenza
+del 17 ottobre, conservato come storia.
