@@ -138,9 +138,6 @@ const _IS_BANDI    = !!_BLOG_REGIONE;
 const _BOLKESTEIN_HUB_SLUG = 'bolkestein-ambulanti-ultime-notizie-2026';
 const _IS_BOLKESTEIN_HUB   = slug === _BOLKESTEIN_HUB_SLUG;
 
-// Select annunci con SOLO le colonne safe (no tel/email per RLS) per le anteprime.
-const _SAFE_COLS_LISTING = 'id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, saved_count, featured, featured_until, featured_tier, featured_since, video_url';
-
 // ── Listener click delegato: traccia CTA regionale + click sulle card del box live ──
 document.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('a') : null;
@@ -157,7 +154,8 @@ document.addEventListener('click', function (e) {
         window.trackBlogConversion('cta_annunci_click', slug || null, null);
     } else if (href.indexOf('/annuncio?id=') === 0 && a.closest('[data-box-listings]')) {
         // Click su una card del box "Posteggi disponibili adesso"
-        window.trackBlogConversion('box_listing_click', slug || null, _BLOG_REGIONE || null);
+        const boxRegion = a.closest('[data-box-listings]').getAttribute('data-regione') || null;
+        window.trackBlogConversion('box_listing_click', slug || null, boxRegion);
     }
 });
 
@@ -184,24 +182,11 @@ function _bindBandoAlertForm(regione, postSlug) {
     window.bindBandoAlertForm('bandoAlertForm', 'bandoAlertMsg', regione, postSlug);
 }
 
-// Annunci in Vetrina attiva davanti a tutti (chi paga ha priorità qui).
-// Featured mescolati per rotazione equa; il resto nell'ordine ricevuto.
-function _featuredFirst(list, n) {
-    const f = [], r = [];
-    (list || []).forEach(l => {
-        ((typeof isListingFeatured === 'function' && isListingFeatured(l)) ? f : r).push(l);
-    });
-    for (let i = f.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [f[i], f[j]] = [f[j], f[i]];
-    }
-    return f.concat(r).slice(0, n);
-}
-
 function _blogListingPreview(listing) {
     let extra = listing.dettagli_extra;
     if (typeof extra === 'string') { try { extra = JSON.parse(extra); } catch (_) { extra = null; } }
-    const images = listing.img_urls?.length ? listing.img_urls : extra?.images || [];
+    const rawImages = Array.isArray(listing.img_urls) && listing.img_urls.length ? listing.img_urls : extra?.images;
+    const images = Array.isArray(rawImages) ? rawImages.filter(image => typeof image === 'string' && image) : [];
     const featured = isListingFeatured(listing);
     const image = images.length ? images[featured ? Math.floor(Math.random() * images.length) : 0] : null;
     const location = [listing.comune, listing.regione].filter(Boolean).join(', ');
@@ -219,35 +204,34 @@ function _blogListingPreview(listing) {
 }
 
 // ── Box "Posteggi disponibili adesso" — fetch + render ──
-// regione=null → versione generic (annunci recenti misti, niente fallback).
-// regione!=null → filtra per regione, fallback "Ancora pochi posteggi qui" se 0.
+// Selezione nel DB su tutti gli annunci: geografia del titolo/slug, Vetrine, tema,
+// sorteggio fra pari. Nessun limite preliminare ai soli 24 annunci recenti.
+let _blogAdsRequest = 0;
 async function _loadBandoListingsBox(regione, postSlug) {
     const target = document.getElementById('bandoListingsBox');
     if (!target) return;
+    const request = ++_blogAdsRequest;
+    const current = () => request === _blogAdsRequest && target.isConnected
+        && document.getElementById('bandoListingsBox') === target;
     try {
-        let q = _supabase
-            .from('annunci')
-            .select(_SAFE_COLS_LISTING)
-            .eq('status', 'active')
-            .order('created_at', { ascending: false })
-            .limit(24);
-        if (regione) q = q.eq('regione', regione);
-        const { data: pool, error } = await q;
-
+        const { data: selection, error } = await _supabase.rpc('blog_listing_ads', { p_slug: postSlug, p_limit: 3 });
+        if (!current()) return;
         if (error) throw error;
-
-        // Chi è in Vetrina (e paga) ha priorità di visibilità anche qui, nel
-        // box "Posteggi disponibili adesso" dentro gli articoli del blog.
-        // Tra i featured si pesca a rotazione per equità.
-        const data = _featuredFirst(pool, 3);
+        if (!selection || !Array.isArray(selection.listings) || !Array.isArray(selection.regions)) throw new Error('Ads unavailable');
+        const regions = selection.regions.filter(r => Object.values(SLUG_TO_REGIONE).includes(r));
+        const localRegion = regions.length === 1 ? regions[0] : null;
+        const data = selection.listings.filter(l => l && l.id && l.status === 'active' && !isListingExpired(l)
+            && (!regions.length || regions.includes(l.regione))).filter((l,index,all) => all.findIndex(other => other.id === l.id) === index).slice(0,3);
 
         if (!data || data.length === 0) {
-            if (regione) {
+            if (localRegion) {
                 // FALLBACK 2.5: regione conosciuta + 0 risultati → CTA avvisi.
                 target.innerHTML = '<div class="not-prose mt-12 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100">'
-                    + '<h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Ancora pochi posteggi in ' + escapeHTML(regione) + '</h3>'
-                    + '<p class="text-sm text-slate-600 mb-2 leading-relaxed">Nessun annuncio attivo qui in questo momento. Lascia l\'email lassù: ti avvisiamo appena ne arriva uno (più i bandi pubblici nuovi).</p>'
-                    + '<a href="#bandoAlertForm" onclick="document.getElementById(\'bandoAlertForm\') && document.getElementById(\'bandoAlertForm\').scrollIntoView({behavior:\'smooth\',block:\'center\'}); return false;" class="inline-block mt-2 text-sm font-black text-blue-600 hover:underline">↑ Attiva gli avvisi</a>'
+                    + '<h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Ancora pochi posteggi in ' + escapeHTML(localRegion) + '</h3>'
+                    + '<p class="text-sm text-slate-600 mb-2 leading-relaxed">Nessun annuncio attivo nella zona in questo momento.</p>'
+                    + (document.getElementById('bandoAlertForm')
+                        ? '<a href="#bandoAlertForm" class="inline-block mt-2 text-sm font-black text-blue-600 hover:underline">Attiva gli avvisi sui bandi della regione</a>'
+                        : '<a href="/annunci?regione=' + encodeURIComponent(localRegion) + '" class="inline-block mt-2 text-sm font-black text-blue-600 hover:underline">Cerca posteggi nella regione →</a>')
                     + '</div>';
             } else {
                 // Articolo generico + 0 annunci attivi (caso raro su tutto il sito) → niente box.
@@ -257,9 +241,10 @@ async function _loadBandoListingsBox(regione, postSlug) {
         }
 
         const cards = data.map(_blogListingPreview).join('');
-        const heading  = regione ? 'Posteggi disponibili adesso in ' + escapeHTML(regione) : 'Posteggi disponibili adesso';
-        const seeAllUrl = regione ? '/annunci?regione=' + encodeURIComponent(regione) : '/annunci';
-        target.innerHTML = '<section class="not-prose blog-listings" aria-label="Posteggi disponibili" data-box-listings' + (regione ? ' data-regione="' + escapeHTML(regione) + '"' : '') + '>'
+        const heading = localRegion ? 'Posteggi disponibili adesso in ' + escapeHTML(localRegion)
+            : regions.length ? 'Posteggi nelle zone dell’articolo' : 'Posteggi disponibili adesso';
+        const seeAllUrl = localRegion ? '/annunci?regione=' + encodeURIComponent(localRegion) : '/annunci';
+        target.innerHTML = '<section class="not-prose blog-listings" aria-label="Posteggi disponibili" data-box-listings' + (localRegion ? ' data-regione="' + escapeHTML(localRegion) + '"' : '') + '>'
             + '<div class="blog-listings-header">'
             +   '<h3>' + heading + '</h3>'
             +   '<a href="' + seeAllUrl + '" class="blog-listings-all">Vedi tutti →</a>'
@@ -269,9 +254,13 @@ async function _loadBandoListingsBox(regione, postSlug) {
         if (typeof observeCardViews === 'function') observeCardViews();
     } catch (e) {
         // Errore silenzioso: il box semplicemente non appare
-        target.innerHTML = '';
+        if (current()) target.innerHTML = '';
     }
 }
+// Una pagina ripristinata dalla cache del browser deve rileggere le Vetrine attuali.
+window.addEventListener('pageshow', event => {
+    if (event.persisted && slug) _loadBandoListingsBox(_BLOG_REGIONE, slug);
+});
 
 // ── 3.3 Link città inline (prima occorrenza, max 5/articolo) ──────
 const _CITY_LINKS = [
@@ -650,7 +639,7 @@ function renderPost(post) {
     // 2.3 — Bind del form Avvisi se presente nel DOM (solo bandi).
     if (_IS_BANDI) _bindBandoAlertForm(_BLOG_REGIONE, post.slug);
 
-    // 2.4 / 2.5 / 3.1 — Carica box live posteggi: filtro regione se bandi, generic altrimenti.
+    // Geografia e rotazione risolte dal server per tutti gli articoli, inclusi fiere e guide.
     _loadBandoListingsBox(_BLOG_REGIONE, post.slug);
 
     // 3.3 — Link città inline (prima occorrenza, max 5 per articolo).
