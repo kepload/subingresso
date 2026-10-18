@@ -19,7 +19,7 @@ REGION_ALIASES = {
     "Valle d'Aosta/Vallée d'Aoste": "Valle d'Aosta",
 }
 CATEGORIES = {"tradizionale", "artigianato", "sagra", "espositiva", "mercatino"}
-CATALOG_DATE = "2026-10-17"
+CATALOG_DATE = "2026-10-18"
 MERCHANDISE_SECTORS = ("alimentare", "non-alimentare", "antiquariato", "artigianato")
 ARTICLE_IDS = set("abbigliamento intimo calzature pelletteria bigiotteria casalinghi biancheria-casa cosmetici detergenti giocattoli libri elettronica piante animali salumi-formaggi forno dolciumi agricoli tipici bevande street-food cioccolato olio ceramica legno tessili gioielli-artigianali decorazioni antiquariato modernariato vintage usato collezionismo abbigliamento-vintage libri-antichi".split())
 
