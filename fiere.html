@@ -68,6 +68,7 @@
     </section>
 
     <div class="fiere-results-heading"><p id="results-summary" role="status" aria-live="polite">Caricamento del calendario…</p></div>
+    <p id="organizer-catalog-error" class="fiere-error" hidden>Gli eventi degli organizzatori non sono stati caricati. Il catalogo delle fiere resta consultabile. <button type="button" id="retry-organizer-catalog">Riprova</button></p>
     <div id="catalog-error" class="fiere-error" hidden><p>Il calendario non è stato caricato. Controlla la connessione e riprova.</p><button id="retry-catalog" class="fiere-button" type="button">Riprova</button></div>
     </div>
         <section class="fiere-map-panel" aria-labelledby="map-title">
@@ -86,6 +87,7 @@
     </div>
     <details class="fiere-note"><summary>Informazioni sul calendario</summary><p><strong id="catalog-count">…</strong> fiere e mercatini in 20 regioni. <span id="catalog-info">Fonti dei Comuni e degli organizzatori.</span></p><p>La copertura è più ampia in Liguria, Piemonte, Marche, Lombardia, Veneto ed Emilia-Romagna. I mesi indicano la ricorrenza: sono consultabili anche edizioni concluse o senza una prossima data pubblicata. Controlla le date e il programma nella scheda. I posteggi dichiarati non indicano posti disponibili: consulta la procedura di partecipazione.</p><a href="mailto:info@subingresso.it?subject=Calendario%20fiere%20-%20segnalazione">Segnala una fiera o una correzione ↗</a></details>
     <p><a href="/fiere/elenco">Sfoglia tutte le schede delle fiere →</a></p>
+    <p style="margin:16px 0;font-size:.85rem"><a href="/organizzatore" style="color:#1d4ed8;font-weight:700;text-decoration:underline;text-underline-offset:3px">Organizzi fiere o mercatini? Crea e gestisci i tuoi eventi →</a></p>
     <noscript><p>Per usare i filtri e la mappa abilita JavaScript nel browser. Le singole schede sono consultabili nell’elenco anche senza JavaScript.</p></noscript>
 </main>
 <dialog id="fair-dialog" class="fiere-dialog" aria-labelledby="detail-title">
@@ -114,6 +116,7 @@
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/data.js?v=20"></script>
 <script src="/js/auth.js?v=22"></script>
-<script src="/js/pages/fiere.js?v=79"></script>
+<script src="/js/event-data.js?v=1"></script>
+<script src="/js/pages/fiere.js?v=80"></script>
 </body>
 </html>

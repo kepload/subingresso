@@ -752,7 +752,7 @@
         $('detail-category').textContent = CATEGORIES[event.category];
         $('detail-category').dataset.category = event.category;
         $('detail-title').textContent = event.name;
-        $('detail-page-link').href = '/fiere/' + encodeURIComponent(event.id);
+        $('detail-page-link').href = event.managedEventId ? '/evento?id=' + encodeURIComponent(event.managedEventId) : '/fiere/' + encodeURIComponent(event.id);
         $('detail-location').textContent = event.city + ' · ' + event.province;
         $('detail-months').textContent = periodLabel(event);
         $('detail-frequency').textContent = event.frequencyNote || '';
@@ -840,6 +840,25 @@
             return await response.json();
         } finally { clearTimeout(timer); }
     }
+    let editorialEvents = [], managedRequest = 0;
+    async function loadManagedEvents() {
+        if (!global.EventData || typeof SUPABASE_URL === 'undefined') return;
+        const request = ++managedRequest;
+        const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 8000);
+        try {
+            const response = await fetch(SUPABASE_URL + '/rest/v1/rpc/published_organizer_events', {method:'POST',headers:{apikey:SUPABASE_ANON_KEY,'Content-Type':'application/json'},body:'{}',signal:controller.signal});
+            if (!response.ok) throw new Error('Eventi non disponibili');
+            const data = await response.json();
+            if (!Array.isArray(data)) throw new Error('Dati evento non validi');
+            const managed = data.map(global.EventData.toCalendar);
+            if (request !== managedRequest) return;
+            state.events = editorialEvents.concat(managed);
+            $('organizer-catalog-error').hidden = true;
+            $('catalog-count').textContent = String(state.events.length);
+            render();
+        } catch (_) { if (request === managedRequest) $('organizer-catalog-error').hidden = false; }
+        finally { clearTimeout(timer); }
+    }
     async function loadCatalog() {
         $('retry-catalog').disabled = true;
         $('catalog-error').hidden = true;
@@ -856,6 +875,7 @@
                 && typeof event.source?.url === 'string' && /^https:\/\//.test(event.source.url)
                 && event.participation && Array.isArray(event.editions))) throw new Error('Invalid catalog');
             state.events = data.events;
+            editorialEvents = data.events;
             $('catalog-count').textContent = String(state.events.length);
             $('catalog-info').textContent = data.eventsWithEditionData + ' schede con edizioni documentate · aggiornato il ' + dateLabel(data.catalogUpdatedAt);
             const previous = $('province-filter').value;
@@ -875,6 +895,7 @@
             }
             if (!state.ready) readURL(); else $('province-filter').value = previous;
             state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; fitProvince(); render();
+            loadManagedEvents();
         } catch (error) {
             $('catalog-error').hidden = false;
             $('fair-list').setAttribute('aria-busy', 'false');
@@ -1003,6 +1024,7 @@
             if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) $('fair-dialog').close();
         } });
         $('retry-catalog').addEventListener('click', loadCatalog);
+        $('retry-organizer-catalog')?.addEventListener('click', loadManagedEvents);
         $('retry-map').addEventListener('click', loadMap);
         let resizeTimer;
         window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (state.ready) renderMap(filterEvents(state.events, state)); }, 100); });

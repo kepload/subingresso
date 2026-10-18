@@ -1,5 +1,14 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+18/10/2026, organizzatori ed eventi: stesso account, profilo
+organizzatore e singoli eventi con approvazione admin separata. Modifiche da
+riapprovare; posteggi con quantità/prezzi; eventi approvati in fiere/profilo.
+Prenotazioni future: incasso piattaforma, commissione8%, quota organizzatore92%;
+flag server disattivati, nessun checkout/trasferimento attivato. Dettagli,
+RPC e verifiche in `data/ORGANIZZATORI_EVENTI.md`; DB applicato e SQL con
+ROLLBACK passato, flusso completo Chromium1440/320 e WebKit390 passato.
+Codice in pubblicazione; prove `Documents/verifica-organizzatori-20261018/`.
+
 18/10/2026, Pordenone: ricerca documentale conclusa con limiti espliciti,
 86 manifestazioni in29 comuni/50 esaminati,78 date puntuali/14 sintesi costo.
 Catalogo4554, altre4468 schede identiche, due ID precedenti conservati.

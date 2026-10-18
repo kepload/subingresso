@@ -118,6 +118,7 @@
     </style>
     <link rel="stylesheet" href="css/vetrina-account.css?v=1">
     <link rel="stylesheet" href="css/vetrina-conversion.css?v=2">
+    <link rel="stylesheet" href="css/eventi.css?v=1">
 </head>
 <body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900">
 
@@ -203,6 +204,7 @@
                 <div id="adminBadge" class="hidden bg-slate-900 text-white px-5 py-3 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2 border border-transparent">
                     <i class="fas fa-shield-alt text-blue-400"></i> Admin
                 </div>
+                <a href="/organizzatore" class="inline-flex items-center gap-2 bg-white text-blue-600 px-5 py-3 rounded-xl font-black text-xs border border-blue-100">Organizza eventi</a>
                 <a href="/vendi" class="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-blue-700 transition shadow-sm border border-transparent">
                     <i class="fas fa-plus"></i> Nuovo annuncio
                 </a>
@@ -214,6 +216,13 @@
 
         <!-- ── ADMIN PANEL (Exclusive) ── -->
         <div id="adminPanel" class="hidden space-y-6">
+            <section class="ev ev-panel" id="eventAdminPanel" aria-labelledby="eventAdminTitle">
+                <div class="ev-card-head"><div><h2 id="eventAdminTitle">Organizzatori ed eventi</h2><p id="eventAdminSummary" class="ev-muted" role="status">Caricamento…</p></div><button type="button" id="eventAdminRefresh">Aggiorna</button></div>
+                <p id="eventAdminMessage" class="ev-notice" role="status" hidden></p>
+                <details id="adminOrganizerDetails"><summary>Profili organizzatore (<span id="adminOrganizerCount">0</span>)</summary><div id="adminOrganizerQueue" class="ev-list"></div></details>
+                <details id="adminEventDetails"><summary>Eventi (<span id="adminEventCount">0</span>)</summary><div id="adminEventQueue" class="ev-list"></div></details>
+                <details><summary>Prenotazioni future e commissioni</summary><p class="ev-muted">Prenotazioni e pagamenti eventi ancora disattivati. Ripartizione predisposta: 8% Subingresso, 92% organizzatore. Esempio su 100 €: 8 € e 92 €. I pagamenti Vetrina restano separati.</p></details>
+            </section>
             <section class="acr" id="adminControlRoom" aria-label="Controllo amministrazione">
                 <div class="acr-head"><div><h3>Il sito sotto controllo</h3><p id="acrState" class="acr-state" role="status">Caricamento…</p></div><button type="button" id="acrRefresh" class="acr-refresh">Aggiorna</button></div>
                 <div class="acr-body">
@@ -997,6 +1006,11 @@
             </form>
 
             <section class="v-profile-account" aria-label="Informazioni account">
+                <h3>Organizzi fiere o mercatini?</h3>
+                <p>Richiedi il profilo organizzatore e gestisci i tuoi eventi dopo l’approvazione admin.</p>
+                <a href="/organizzatore">Apri l’area organizzatore →</a>
+            </section>
+            <section class="v-profile-account" aria-label="Informazioni account e sicurezza">
                 <h3>Account e sicurezza</h3>
                 <dl><div><dt>Iscritto dal</dt><dd id="profileMemberSince">—</dd></div><div><dt>Email</dt><dd id="profileEmailStatus">—</dd></div><div><dt>Accesso</dt><dd id="profileLoginMethod">—</dd></div></dl>
                 <a id="profilePublicLink" href="/profilo">Vedi il mio profilo pubblico <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
@@ -1241,6 +1255,9 @@
 <script src="js/blog-generator.js?v=3"></script>
 <link rel="stylesheet" href="css/admin-control-room.css?v=2">
 <script src="js/admin-control-room.js?v=2"></script>
+<script src="js/event-data.js?v=1"></script>
+<script src="js/organizzatori.js?v=1"></script>
+<dialog id="eventReviewDialog" class="ev ev-dialog" aria-labelledby="eventReviewTitle"><div class="ev-dialog-top"><h2 id="eventReviewTitle">Revisione</h2><button type="button" id="eventReviewClose">Chiudi</button></div><div class="ev-dialog-body"><div id="eventReviewBody"></div><label for="eventReviewNote">Nota per l’organizzatore (obbligatoria per rifiuto o sospensione)</label><textarea id="eventReviewNote" maxlength="2000"></textarea><p id="eventReviewMessage" class="ev-notice" role="status" hidden></p><div class="ev-actions"><button type="button" class="ev-primary" id="eventApprove">Approva</button><button type="button" class="ev-danger" id="eventReject">Richiedi correzioni / Ritira</button><button type="button" class="ev-danger" id="eventSuspend" hidden>Sospendi organizzatore</button></div></div></dialog>
 <dialog id="acrUserDialog" class="acr-dialog" aria-labelledby="acrUserTitle"><button type="button" id="acrUserClose" aria-label="Chiudi dettagli utente">Chiudi</button><h3 id="acrUserTitle">Dettagli utente</h3><div id="acrUserContent"></div></dialog>
 <script>
 
@@ -1285,6 +1302,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('adminLogout').classList.remove('hidden');
         document.getElementById('adminPanel').classList.remove('hidden');
         AdminControlRoom.start(user.id);
+        EventOrganizers.startAdmin();
         loadAdminStats();
         loadAdminGrowthChart();
         loadAdminFunnelStats();

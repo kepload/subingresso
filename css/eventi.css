@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+.ev { --ev-blue:#2563eb; --ev-ink:#0f172a; --ev-muted:#526178; color:var(--ev-ink); font-family:'Plus Jakarta Sans',sans-serif; line-height:1.6; }
+.ev, .ev *, .ev *::before, .ev *::after { box-sizing:border-box; }
+.ev [hidden] { display:none!important; }
+.ev-main { width:min(1080px,100%); margin:auto; padding:36px 24px 64px; }
+.ev h1 { font-size:clamp(1.7rem,4vw,2.5rem); font-weight:800; line-height:1.2; letter-spacing:-.045em; margin:8px 0 16px; }
+.ev h2 { font-size:1.25rem; font-weight:800; letter-spacing:-.025em; margin:0 0 12px; }
+.ev h3 { font-size:1.05rem; font-weight:800; margin:0 0 8px; }
+.ev h1, .ev h2, .ev h3 { overflow-wrap:anywhere; }
+.ev p { margin:8px 0; }
+.ev a { color:#1d4ed8; text-underline-offset:3px; }
+.ev .ev-eyebrow { color:#1d4ed8; font-size:.75rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.ev .ev-muted { color:var(--ev-muted); font-size:.88rem; }
+.ev-panel { background:#fff; border:1px solid #e2e8f0; border-radius:20px; padding:24px; margin:20px 0; min-width:0; }
+.ev-intro { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.ev-intro p { max-width:660px; }
+.ev-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:16px; }
+.ev button, .ev .ev-button { border:1px solid #cbd5e1; background:#fff; color:#1e293b; border-radius:11px; padding:10px 16px; min-height:44px; font:inherit; font-size:.85rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:7px; text-decoration:none; }
+.ev button:hover, .ev .ev-button:hover { background:#f1f5f9; }
+.ev .ev-primary { background:#2563eb; color:white; border-color:#2563eb; }
+.ev .ev-primary:hover { background:#1d4ed8; }
+.ev .ev-danger { color:#b91c1c; border-color:#fecaca; }
+.ev button:disabled { opacity:.55; cursor:wait; }
+.ev :focus-visible { outline:3px solid #60a5fa; outline-offset:3px; }
+.ev-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.ev-wide { grid-column:1 / -1; }
+.ev label, .ev legend { display:block; font-size:.82rem; font-weight:700; color:#334155; }
+.ev input:not([type=checkbox]), .ev select, .ev textarea { display:block; width:100%; min-width:0; padding:11px 12px; border:1px solid #cbd5e1; border-radius:10px; background:#fff; color:#0f172a; font:inherit; font-size:16px; margin-top:5px; min-height:46px; }
+.ev input[readonly] { background:#f8fafc; color:#475569; }
+.ev textarea { min-height:110px; resize:vertical; }
+.ev fieldset { min-width:0; margin:0; padding:0; border:0; }
+.ev-checks { display:flex; gap:8px 18px; flex-wrap:wrap; padding:8px 0; }
+.ev-checks label { display:flex; align-items:center; gap:8px; min-height:44px; }
+.ev-checks input { width:20px; height:20px; accent-color:#2563eb; }
+.ev-status { display:inline-flex; align-items:center; font-size:.75rem; font-weight:800; padding:5px 11px; border-radius:8px; background:#f1f5f9; color:#475569; }
+.ev-status[data-status=pending] { background:#fff7ed; color:#9a3412; }
+.ev-status[data-status=approved], .ev-status[data-status=published] { background:#ecfdf5; color:#065f46; }
+.ev-status[data-status=rejected], .ev-status[data-status=suspended] { background:#fef2f2; color:#991b1b; }
+.ev-notice { padding:14px 16px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:12px; font-size:.88rem; margin:14px 0; overflow-wrap:anywhere; }
+.ev-notice[data-error=true] { background:#fef2f2; border-color:#fecaca; color:#991b1b; }
+.ev-list { display:grid; gap:14px; }
+.ev-card { border:1px solid #e2e8f0; background:white; border-radius:15px; padding:20px; min-width:0; overflow-wrap:anywhere; }
+.ev-card-head { display:flex; align-items:start; justify-content:space-between; gap:12px; }
+.ev-card-head h3 { flex:1; }
+.ev-facts { display:grid; grid-template-columns:160px minmax(0,1fr); gap:8px 16px; margin:16px 0; font-size:.9rem; }
+.ev-facts dt { color:#526178; }
+.ev-facts dd { margin:0; overflow-wrap:anywhere; font-weight:600; }
+.ev-copy { white-space:pre-wrap; overflow-wrap:anywhere; }
+.ev details { margin:14px 0; }
+.ev summary { cursor:pointer; font-weight:800; min-height:44px; display:list-item; padding:10px 0; }
+.ev summary::marker { color:#2563eb; }
+.ev-dialog { border:0; border-radius:20px; padding:0; max-width:760px; width:calc(100% - 28px); max-height:90dvh; overflow:auto; background:#f8fafc; box-shadow:0 24px 80px #0f172a55; }
+.ev-dialog::backdrop { background:#0f172aaa; }
+.ev-dialog-body { padding:24px; }
+.ev-dialog-top { position:sticky; top:0; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:16px 24px; background:#fff; border-bottom:1px solid #e2e8f0; z-index:2; }
+.ev-dialog-top h2 { margin:0; font-size:1.1rem; }
+.ev-steps { display:flex; flex-wrap:wrap; list-style:none; gap:8px 20px; padding:16px 0; font-size:.82rem; font-weight:700; color:#526178; }
+.ev-steps li { display:flex; align-items:center; gap:7px; }
+.ev-steps span { border:1px solid #cbd5e1; border-radius:50%; width:24px; height:24px; display:grid; place-items:center; font-size:.72rem; }
+.ev-steps li[data-done=true] { color:#047857; }
+.ev-steps li[data-done=true] span { color:#047857; background:#ecfdf5; border-color:#a7f3d0; }
+.ev-finance { background:#0f172a; color:#fff; border:0; }
+.ev-finance .ev-muted { color:#cbd5e1; }
+.ev-split { display:flex; gap:24px; flex-wrap:wrap; padding:12px 0; }
+.ev-split strong { font-size:1.5rem; display:block; }
+.ev-split span { font-size:.8rem; color:#cbd5e1; }
+.ev-empty { text-align:center; padding:32px 16px; color:#526178; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:14px; }
+.ev-mini { font-size:.8rem; }
+.ev-profile-link { margin-top:12px; display:inline-block; }
+@media(max-width:600px) { .ev-main { padding:24px 14px 44px; } .ev-panel { padding:18px; border-radius:16px; } .ev-grid { grid-template-columns:minmax(0,1fr); } .ev-card { padding:16px; } .ev-card-head { flex-direction:column; gap:5px; } .ev-dialog-body { padding:18px; } .ev-dialog-top { padding:12px 18px; } .ev-facts { grid-template-columns:minmax(0,1fr); gap:2px; } .ev-facts dd { margin-bottom:9px; } .ev-actions>* { flex-grow:1; } }

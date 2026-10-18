@@ -1,0 +1,16 @@
+const D = require('../js/event-data.js');
+const SITE = 'https://subingresso.it';
+const DB = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
+const KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
+function shell(title,body,id,indexable=false){return `<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${D.esc(title)} — Subingresso.it</title><meta name="robots" content="${indexable?'index,follow':'noindex,follow'}"><meta name="description" content="${D.esc(title)}: date, posteggi, condizioni e contatti dell’organizzatore.">${id?`<link rel="canonical" href="${SITE}/evento?id=${D.esc(id)}"><meta property="og:url" content="${SITE}/evento?id=${D.esc(id)}">`:''}<meta property="og:title" content="${D.esc(title)}"><meta property="og:type" content="website"><meta property="og:image" content="${SITE}/og/og-home.jpg"><link rel="icon" href="/favicon-v2.svg"><link rel="stylesheet" href="/css/tailwind.css?v=4"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/eventi.css?v=1"></head><body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900"><header></header><main class="ev ev-main"><a href="/fiere">← Fiere e mercatini</a>${body}<a class="ev-button" href="/organizzatore">Organizzi un evento? Crea il tuo profilo →</a></main><footer></footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/page-view-tracker.js?v=4"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=20"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/auth.js?v=22"></script></body></html>`;}
+module.exports=async function handler(req,res){
+ res.setHeader('Cache-Control','private, no-store');
+ const id=typeof req.query?.id==='string'?req.query.id:'';
+ if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id))return res.status(404).send(shell('Evento non disponibile','<section class="ev-panel"><h1>Evento non disponibile</h1><p>L’evento potrebbe essere in revisione o essere stato ritirato.</p></section>'));
+ try{
+  const response=await fetch(DB+'/rest/v1/rpc/published_organizer_events',{method:'POST',headers:{apikey:KEY,'Content-Type':'application/json'},body:JSON.stringify({p_id:id}),signal:AbortSignal.timeout(8000)});
+  if(!response.ok)throw Error('Database non disponibile');const events=await response.json();const event=events[0];
+  if(!event)return res.status(404).send(shell('Evento non disponibile','<section class="ev-panel"><h1>Evento non disponibile</h1><p>L’evento potrebbe essere in revisione o essere stato ritirato.</p></section>',id));
+  return res.status(200).send(shell(event.title+' a '+event.city,D.detailHTML(event),id,true));
+ }catch(_){res.setHeader('Retry-After','30');return res.status(503).send(shell('Riprova tra poco','<section class="ev-panel"><h1>Impossibile caricare l’evento</h1><p>Ricarica la pagina tra poco per vedere le informazioni aggiornate.</p></section>',id));}
+};

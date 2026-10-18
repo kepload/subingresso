@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Organizza fiere e mercatini — Subingresso.it</title><meta name="description" content="Crea il tuo profilo organizzatore e gestisci fiere, mercatini ed eventi su Subingresso.it. Pubblicazione dopo approvazione admin."><meta name="robots" content="noindex,follow"><link rel="icon" href="/favicon-v2.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/tailwind.css?v=4"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/eventi.css?v=1"><link rel="stylesheet" href="/css/comune-picker.css?v=1"></head>
+<body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900"><header></header>
+<main class="ev ev-main" id="organizerApp">
+ <div class="ev-intro"><div><p class="ev-eyebrow">Area organizzatore</p><h1>Le tue fiere. I tuoi mercatini.</h1><p class="ev-muted">Crea e gestisci gli eventi con il tuo account Subingresso. Profilo ed eventi diventano pubblici dopo l’approvazione dell’amministratore.</p></div><div class="ev-actions"><a class="ev-button" href="/dashboard">La mia dashboard</a><button type="button" id="organizerRefresh">Aggiorna</button></div></div>
+ <ol class="ev-steps" aria-label="Come pubblicare un evento"><li id="stepProfile"><span>1</span> Profilo approvato</li><li id="stepEvent"><span>2</span> Evento e posteggi</li><li id="stepPublic"><span>3</span> Revisione e pubblicazione</li></ol>
+ <p id="organizerMessage" class="ev-notice" role="status" aria-live="polite" hidden></p>
+ <div id="organizerLoading" class="ev-panel" role="status">Caricamento della tua area…</div>
+ <section id="organizerLogin" class="ev-panel" hidden><h2>Organizzi fiere, mercatini o altri eventi?</h2><p>Accedi con il tuo account o registrati gratis, poi richiedi il profilo organizzatore.</p><div class="ev-actions"><button type="button" class="ev-primary" id="organizerSignIn">Accedi / Registrati</button></div></section>
+ <div id="organizerWorkspace" hidden>
+  <section class="ev-panel"><div class="ev-card-head"><h2>Il tuo profilo organizzatore</h2><div id="organizerStatus"></div></div><p id="organizerReview" class="ev-notice" hidden></p>
+  <details id="organizerProfileDetails"><summary id="organizerProfileSummary">Compila il profilo</summary>
+   <form id="organizerProfileForm"><div class="ev-grid">
+    <label>Nome dell’organizzazione<input name="organization_name" required minlength="3" maxlength="160" autocomplete="organization"></label>
+    <label>Tipo di organizzazione<select name="organization_type" required><option value="impresa">Impresa</option><option value="associazione">Associazione / Pro Loco</option><option value="ente">Comune / Ente</option><option value="altro">Altro organizzatore</option></select></label>
+    <label class="ev-wide">Presentazione pubblica<textarea name="description" maxlength="4000" placeholder="Racconta quali eventi organizzi e in quale zona lavori."></textarea></label>
+    <label>Sito web pubblico (facoltativo)<input name="website" type="url" placeholder="https://…" maxlength="1000"></label>
+    <label>Referente per la revisione<input name="contact_name" required minlength="3" maxlength="160" autocomplete="name"></label>
+    <label>Telefono privato del referente<input name="private_phone" required type="tel" minlength="7" maxlength="25" autocomplete="tel"></label>
+    <p class="ev-muted">Il referente e il telefono privato sono visibili solo a te e all’amministratore.</p>
+    <label>Email pubblica (facoltativa)<input name="public_email" type="email" maxlength="254" placeholder="Visibile ai visitatori"></label>
+    <label>Telefono pubblico (facoltativo)<input name="public_phone" type="tel" maxlength="25" placeholder="Visibile ai visitatori"></label>
+   </div><p class="ev-muted">Indica almeno un contatto pubblico o il sito web. Email e telefono pubblici saranno mostrati nel profilo e negli eventi. Se modifichi un profilo già approvato, profilo ed eventi resteranno nascosti fino alla nuova approvazione.</p><div class="ev-actions"><button type="submit" class="ev-primary">Invia profilo in revisione</button></div></form>
+  </details><a id="organizerPublicLink" class="ev-profile-link" hidden>Vedi il profilo pubblico →</a></section>
+  <section class="ev-panel"><div class="ev-card-head"><div><h2>I tuoi eventi</h2><p class="ev-muted" id="organizerEventsHint">Dopo l’approvazione del profilo potrai creare il primo evento.</p></div><button type="button" class="ev-primary" id="newOrganizerEvent" hidden>+ Crea evento</button></div><div id="organizerEvents" class="ev-list"></div></section>
+  <section class="ev-panel" id="eventEditor" hidden aria-labelledby="eventEditorTitle"><div class="ev-card-head"><h2 id="eventEditorTitle" tabindex="-1">Nuovo evento</h2><button type="button" id="closeEventEditor">Chiudi</button></div><p class="ev-notice">Salva l’evento, aggiungi le tipologie di posteggio e invialo in revisione. Ogni modifica a un evento pubblico o ai suoi posteggi lo riporta in bozza e richiede una nuova approvazione.</p>
+   <form id="organizerEventForm"><div class="ev-grid">
+    <label class="ev-wide">Nome dell’evento<input name="title" required minlength="5" maxlength="180"></label>
+    <label>Tipo di evento<select name="category" required><option value="mercatino">Mercatino</option><option value="tradizionale">Fiera tradizionale</option><option value="artigianato">Artigianato / Mostra mercato</option><option value="sagra">Sagra / Festa</option><option value="espositiva">Fiera espositiva</option></select></label>
+    <label>Regione<select id="eventRegion" name="region" required><option value="">Seleziona regione</option></select></label>
+    <label class="comune-picker">Comune<input id="eventCity" name="city" required autocomplete="off" maxlength="150"><div id="eventCities" class="comune-suggestions" role="listbox"></div><span id="eventCityStatus" class="ev-muted"></span></label>
+    <label>Provincia<input id="eventProvince" name="province" required readonly></label>
+    <label class="ev-wide">Luogo e indirizzo<input name="venue" required minlength="3" maxlength="300" placeholder="Piazza, via, padiglione…"></label>
+    <label>Dal giorno<input name="start_date" type="date" required></label><label>Al giorno<input name="end_date" type="date" required></label>
+    <label>Orari<input name="hours" maxlength="300" placeholder="Es. 9:00–19:00, allestimento dalle 7:00"></label><label>Scadenza domande (facoltativa)<input name="application_deadline" type="date"></label>
+    <label class="ev-wide">Descrizione dell’evento<textarea name="description" required minlength="40" maxlength="12000"></textarea></label>
+    <fieldset class="ev-wide"><legend>Settori ammessi (almeno uno)</legend><div class="ev-checks"><label><input type="checkbox" name="sectors" value="alimentare"> Alimentare</label><label><input type="checkbox" name="sectors" value="non-alimentare"> Non alimentare</label><label><input type="checkbox" name="sectors" value="antiquariato"> Antiquariato / Vintage</label><label><input type="checkbox" name="sectors" value="artigianato"> Artigianato</label></div></fieldset>
+    <label class="ev-wide">Articoli ammessi e limitazioni<textarea name="goods" maxlength="2000" placeholder="Specifica quali prodotti sono ammessi e le eventuali esclusioni."></textarea></label>
+    <label class="ev-wide">Condizioni di partecipazione<textarea name="participation_rules" maxlength="6000" placeholder="Requisiti degli espositori, documenti richiesti, procedura di domanda, servizi inclusi e condizioni di annullamento."></textarea></label>
+   </div><div class="ev-actions"><button type="submit" class="ev-primary">Salva bozza</button></div></form>
+   <section id="eventPlacesEditor" hidden><h3 style="margin-top:28px">Posteggi dell’evento</h3><p class="ev-muted">Crea una tipologia per ogni formato o tariffa. Quantità = posteggi totali previsti; prezzo = totale per un posteggio per l’intero evento.</p><div id="eventPlacesList" class="ev-list"></div>
+    <details id="placeDetails"><summary id="placeFormTitle">Aggiungi una tipologia di posteggio</summary><form id="eventPlaceForm"><div class="ev-grid">
+     <label>Nome della tipologia<input name="label" required minlength="2" maxlength="120" placeholder="Es. Banco 3 × 3 m"></label>
+     <label>Numero di posteggi<input name="quantity" type="number" min="1" max="10000" step="1" value="1" required></label>
+     <label>Prezzo totale per posteggio (€)<input name="price" type="number" min="0" max="100000" step="0.01" required placeholder="0,00"></label>
+     <label>Larghezza (metri, facoltativa)<input name="width_m" type="number" min="0.01" max="1000" step="0.01"></label>
+     <label>Profondità (metri, facoltativa)<input name="depth_m" type="number" min="0.01" max="1000" step="0.01"></label>
+     <label class="ev-wide">Servizi inclusi e condizioni<textarea name="description" maxlength="2000" placeholder="Es. corrente inclusa, accesso furgone, vincoli merceologici…"></textarea></label>
+     <label class="ev-checks"><input name="active" type="checkbox" checked> Tipologia attiva</label>
+    </div><div class="ev-actions"><button type="submit" class="ev-primary">Salva posteggi</button><button type="button" id="resetPlaceForm">Nuova tipologia</button></div></form></details>
+    <div class="ev-actions"><button type="button" class="ev-primary" id="submitOrganizerEvent">Invia evento in revisione</button></div>
+   </section>
+  </section>
+  <section class="ev-panel ev-finance"><p class="ev-eyebrow" style="color:#93c5fd">In preparazione</p><h2>Prenotazioni e pagamenti sul sito</h2><p class="ev-muted">In futuro l’ambulante potrà prenotare e pagare il posteggio su Subingresso.it. Il pagamento passerà dalla piattaforma e la quota dell’organizzatore verrà trasferita al suo conto collegato.</p><div class="ev-split"><div><strong>8%</strong><span>Commissione Subingresso</span></div><div><strong>92%</strong><span>Quota organizzatore</span></div></div><p class="ev-muted">Esempio su 100 €: 8 € alla piattaforma, 92 € all’organizzatore. Le prenotazioni online sono ancora disattivate.</p></section>
+ </div>
+</main><footer></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/page-view-tracker.js?v=4"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=20"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/auth.js?v=22"></script><script src="/js/comune-picker.js?v=7"></script><script src="/js/event-data.js?v=1"></script><script src="/js/organizzatori.js?v=1"></script>
+</body></html>

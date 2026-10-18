@@ -51,17 +51,20 @@ module.exports = async function handler(req, res) {
     let posts    = [];
     let cities   = [];
     let bandi    = [];
+    let managedEvents = [];
 
     try {
-        const [lRes, pRes, cRes, bRes] = await Promise.all([
+        const [lRes, pRes, cRes, bRes, eRes] = await Promise.all([
             fetch(`${SUPABASE_URL}/rest/v1/annunci?select=id,created_at&status=eq.active`, { headers }),
             fetch(`${SUPABASE_URL}/rest/v1/blog_posts?select=slug,published_at`,           { headers }),
             fetch(`${SUPABASE_URL}/rest/v1/annunci?select=comune,created_at&status=eq.active&comune=not.is.null`, { headers }),
             fetch(`${SUPABASE_URL}/rest/v1/rpc/list_published_bandi`, { method:'POST', headers: { ...headers, 'Content-Type':'application/json' }, body: '{}' }),
+            fetch(`${SUPABASE_URL}/rest/v1/rpc/published_organizer_events`, {method:'POST',headers:{apikey:SUPABASE_ANON_KEY,'Content-Type':'application/json'},body:'{}',signal:AbortSignal.timeout(8000)}).catch(()=>null),
         ]);
         if (lRes.ok) listings = await lRes.json();
         if (pRes.ok) posts    = await pRes.json();
         if (bRes.ok) { try { const d = await bRes.json(); if (Array.isArray(d)) bandi = d; } catch(_) {} }
+        if (eRes?.ok) { try {const d=await eRes.json();if(Array.isArray(d))managedEvents=d;}catch(_){} }
         if (cRes.ok) {
             const raw = await cRes.json();
             // Per ogni città: salva l'annuncio più recente come lastmod (segnale di freschezza per Google)
@@ -80,6 +83,7 @@ module.exports = async function handler(req, res) {
     }
 
     const parts = [
+        ...managedEvents.map(event => urlTag(`${SITE}/evento?id=${event.id}`, event.updated_at ? event.updated_at.split('T')[0] : today, 'weekly', '0.6')),
         urlTag(SITE + '/fiere/elenco', fairCatalog.catalogUpdatedAt, 'weekly', '0.7'),
         ...fairEvents.filter(isIndexable).map(event =>
             urlTag(SITE + fairPath(event), fairCatalog.catalogUpdatedAt, 'weekly', '0.6')

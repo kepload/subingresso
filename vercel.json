@@ -10,6 +10,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/evento",             "destination": "/api/evento" },
     { "source": "/fiere/:slug",         "destination": "/api/fiera?slug=:slug" },
     { "source": "/sitemap.xml",        "destination": "/api/sitemap" },
     { "source": "/annuncio",           "destination": "/api/annuncio" },
