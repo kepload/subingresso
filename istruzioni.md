@@ -11,6 +11,11 @@ Documents/verifica-filtri-semplici-fiere-20261019, dettaglio data/FIERE.md.
 Suite articoli locale Chromium1440/820/320 eWebKit390 passata; calendario
 generale cinque formati, ricerca35articoli/4.923schede, settori e font/icone
 reali quattro casi passati. Checkpoint remoto valido, noto errore cleanup.
+Pubblicato fbeeb4b, Vercel READY dpl_DzNfy6G58NFSK7uVNcubJrM6scP3;
+quattro asset identici e prove online Chromium1440/697/320 eWebKit390 con
+font/icone reali, selezioni, settore, contatore, deseleziona/reset passate.
+Backend escluso nelle prove d’interazione; nessuna scrittura di prova.
+Scansione segreti superata; file estranei conservati ed esclusi dai commit.
 
 19/10/2026, Pisa: ricerca documentale corrente conclusa e verificata online.
 144 manifestazioni/36 comuni, ricognizione37; prima2, catalogo4.923.

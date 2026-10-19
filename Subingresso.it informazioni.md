@@ -15,6 +15,11 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   articoli su4.923 schede, settori e font/icone reali quattro casi passati.
   Backup remoto preventivo verificato, noto errore cleanup PowerShell. Prove
   `Documents/verifica-filtri-semplici-fiere-20261019/`; dettagli `data/FIERE.md`.
+  Pubblicato `fbeeb4b`, Vercel READY `dpl_DzNfy6G58NFSK7uVNcubJrM6scP3`:
+  quattro asset identici al commit; prove online con font/icone reali,
+  selezione multipla, settore, contatore, deseleziona/reset e nessun overflow
+  passate Chromium1440/697/320 e WebKit390. Backend escluso nelle prove
+  d’interazione, nessuna scrittura reale. Scansione segreti superata.
 
 - **Pisa conclusa e verificata online,19/10:**144 manifestazioni/36 comuni,
   copertura37; prima due. Catalogo4.923, due ID e altre4.779 schede preservati.

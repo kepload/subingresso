@@ -21,6 +21,11 @@ prove e schermate `Documents/verifica-filtri-semplici-fiere-20261019/`.
 Verifiche locali passate: selezioni/URL/contatori/reset/menu nei quattro casi
 Chromium1440/820/320 e WebKit390, font/icone reali in quattro formati,
 calendario generale in cinque formati,35 articoli/4.923 schede e settori.
+Pubblicato `fbeeb4b`, Vercel READY `dpl_DzNfy6G58NFSK7uVNcubJrM6scP3`;
+HTML/CSS/JS/catalogo identici al commit. Prove online Chromium1440/697/320
+e WebKit390 con font/icone reali, menu, selezioni, macrosettore, indicatore,
+deseleziona/reset e overflow passate, backend escluso solo nel browser.
+Nessuna scrittura di prova; scansione segreti passata.
 
 ## Pisa — ricerca documentale conclusa e verificata online, 19 ottobre 2026
 
