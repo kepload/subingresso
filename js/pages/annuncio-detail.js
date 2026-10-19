@@ -173,6 +173,7 @@ async function initPage() {
     }
     const listing = await loadListing();
     _currentListing = listing;
+    _refreshLocalSaveButtons();
 
     const notFoundEl = document.getElementById('notFound');
     const detailEl   = document.getElementById('detailLayout');
@@ -823,45 +824,50 @@ window.openWhatsApp = openWhatsApp;
 
 // ── Salva preferito (annuncio corrente) ────────────────────
 async function _saveCurrentListing() {
-    if (!_currentListing || !_currentListing.id) return;
+    const id = _currentListing?.id || new URLSearchParams(window.location.search).get('id');
+    if (!id) return;
     if (typeof window.toggleSaveListing === 'function') {
-        await window.toggleSaveListing(_currentListing.id, null);
+        await window.toggleSaveListing(id, null);
         _refreshLocalSaveButtons();
     }
 }
 
 function _refreshLocalSaveButtons() {
-    if (!_currentListing) return;
-    const saved = (typeof SAVED_IDS !== 'undefined') && SAVED_IDS.has(_currentListing.id);
+    const id = _currentListing?.id || new URLSearchParams(window.location.search).get('id');
+    if (!id) return;
+    const state = getSaveListingState(id);
+    const saved = state.saved;
     const desktopBtn = document.getElementById('saveBtn');
     const mobileBtn  = document.getElementById('saveBtnMobile');
 
     if (desktopBtn) {
         const icon = desktopBtn.querySelector('i');
         if (saved) {
-            if (icon) icon.className = 'fas fa-bookmark text-lg';
+            if (icon) icon.className = state.icon + ' text-lg';
             desktopBtn.classList.add('bg-blue-50', 'border-blue-200', 'text-blue-600');
             desktopBtn.classList.remove('border-slate-200', 'text-slate-400');
-            desktopBtn.title = 'Salvato nei preferiti';
-            desktopBtn.setAttribute('aria-label', 'Salvato nei preferiti');
         } else {
-            if (icon) icon.className = 'far fa-bookmark text-lg';
+            if (icon) icon.className = state.icon + ' text-lg';
             desktopBtn.classList.remove('bg-blue-50', 'border-blue-200', 'text-blue-600');
             desktopBtn.classList.add('border-slate-200', 'text-slate-400');
-            desktopBtn.title = 'Salva nei preferiti';
-            desktopBtn.setAttribute('aria-label', 'Salva nei preferiti');
         }
     }
     if (mobileBtn) {
         const icon = mobileBtn.querySelector('i');
-        if (icon) icon.className = saved ? 'fas fa-bookmark text-blue-600' : 'far fa-bookmark text-slate-400';
+        if (icon) icon.className = state.icon;
     }
+    [desktopBtn, mobileBtn].filter(Boolean).forEach(btn => {
+        btn.disabled = state.busy;
+        btn.dataset.saved = saved ? '1' : '0';
+        btn.title = state.label;
+        btn.setAttribute('aria-label', state.label);
+        btn.setAttribute('aria-pressed', String(saved));
+        btn.setAttribute('aria-busy', String(state.busy));
+    });
 }
 
 // Sync iniziale del bottone "Salva" quando i preferiti vengono caricati
-window.addEventListener('listingLoaded', _refreshLocalSaveButtons);
-// Sync periodico dopo il primo render della pagina annuncio
-setTimeout(_refreshLocalSaveButtons, 1500);
-setTimeout(_refreshLocalSaveButtons, 4000);
+window.addEventListener('savedListingsChanged', _refreshLocalSaveButtons);
+_refreshLocalSaveButtons();
 
 window._saveCurrentListing = _saveCurrentListing;

@@ -301,6 +301,7 @@ function isListingExpired(l) {
 }
 
 function buildCard(l, isSmall = false, distance = null) {
+    const saveState = getSaveListingState(l.id);
     const annuncioUrl = `/annuncio?id=${escapeHTML(l.id)}`;
     const profiloUrl  = l.user_id ? `/profilo?id=${escapeHTML(l.user_id)}` : null;
     const distTag = (distance !== null && distance !== Infinity)
@@ -375,11 +376,13 @@ function buildCard(l, isSmall = false, distance = null) {
             </div>
             <button type="button"
                     data-save-id="${escapeHTML(l.id)}"
-                    data-saved="${SAVED_IDS.has(l.id) ? '1' : '0'}"
+                    data-saved="${saveState.saved ? '1' : '0'}"
+                    aria-pressed="${saveState.saved}" aria-busy="${saveState.busy}"
+                    aria-label="${saveState.label}" ${saveState.busy ? 'disabled' : ''}
                     onclick="event.preventDefault(); event.stopPropagation(); toggleSaveListing('${escapeHTML(l.id)}', this)"
-                    title="${SAVED_IDS.has(l.id) ? 'Rimuovi dai preferiti' : 'Salva nei preferiti'}"
+                    title="${saveState.label}"
                     class="absolute top-2.5 right-2.5 w-8 h-8 bg-white/95 hover:bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 active:scale-95 transition">
-                <i class="${SAVED_IDS.has(l.id) ? 'fas fa-bookmark text-blue-600' : 'far fa-bookmark text-slate-400'}"></i>
+                <i class="${saveState.icon}"></i>
             </button>
         </a>
 
@@ -459,86 +462,224 @@ const USER_AVATARS = {};
 // Cache nome attuale venditore — popolata da annunci.js dopo il fetch profiles
 const USER_NAMES = {};
 
-// Cache annunci salvati nei preferiti — popolata da auth.js dopo login
+// Stato condiviso tra card e dettaglio, ripristinato solo per la sessione corrente.
 const SAVED_IDS = new Set();
+const _savedStorageKey = '_saved_listings_v1';
+const _saveLocks = new Map();
+const _savedEdits = new Map();
+const _pendingSavedWrites = new Set();
+const _savedUnconfirmed = new Set();
+let _savedUserId;
+let _savedReady = false;
+let _savedError = false;
+let _savedEpoch = 0;
+let _savedVersion = 0;
+let _savedLoad = null;
+
+function getSaveListingState(annuncioId) {
+    const saved = SAVED_IDS.has(String(annuncioId));
+    const pending = _saveLocks.has(String(annuncioId)) || _savedUnconfirmed.has(String(annuncioId));
+    const unknown = !_savedReady;
+    return {
+        saved,
+        busy: pending || (unknown && !_savedError),
+        label: unknown ? (_savedError ? 'Verifica preferiti non riuscita. Riprova' : 'Verifica preferiti…')
+            : pending ? (saved ? 'Salvataggio…' : 'Rimozione…')
+            : saved ? 'Salvato nei preferiti. Clicca per rimuovere' : 'Salva nei preferiti',
+        icon: unknown ? (_savedError ? 'fas fa-exclamation-circle text-slate-400' : 'fas fa-spinner fa-spin text-slate-400')
+            : saved ? 'fas fa-bookmark text-blue-600' : 'far fa-bookmark text-slate-400'
+    };
+}
+
+function _persistSavedListings() {
+    if (!_savedUserId || !_savedReady) return;
+    try {
+        sessionStorage.setItem(_savedStorageKey, JSON.stringify({ userId: _savedUserId, ids: [...SAVED_IDS], pending: [...new Set([..._pendingSavedWrites, ..._savedUnconfirmed])] }));
+    } catch (_) {}
+}
+
+async function _savedListingRequest(query) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 15000);
+    try { return await query.abortSignal(controller.signal); }
+    finally { clearTimeout(timer); }
+}
+
+function _notifySavedListings() {
+    _refreshSaveButtons();
+    window.dispatchEvent(new Event('savedListingsChanged'));
+}
+
+function _setSavedListingsUser(userId) {
+    if (_savedUserId === userId) return;
+    _savedUserId = userId;
+    _savedEpoch++;
+    _savedReady = !userId;
+    _savedError = false;
+    SAVED_IDS.clear();
+    _saveLocks.clear();
+    _savedEdits.clear();
+    _pendingSavedWrites.clear();
+    _savedUnconfirmed.clear();
+    try {
+        const snapshot = JSON.parse(sessionStorage.getItem(_savedStorageKey));
+        if (userId && snapshot?.userId === userId && Array.isArray(snapshot.ids) && snapshot.ids.every(id => typeof id === 'string')) {
+            snapshot.ids.forEach(id => SAVED_IDS.add(id));
+            if (Array.isArray(snapshot.pending)) snapshot.pending.filter(id => typeof id === 'string').forEach(id => _savedUnconfirmed.add(id));
+            _savedReady = true;
+        } else {
+            sessionStorage.removeItem(_savedStorageKey);
+        }
+    } catch (_) {}
+    _notifySavedListings();
+}
+
+// Anche la dashboard può fornire una lettura completa, senza cancellare clic recenti.
+function setSavedListingsCache(ids, userId, version = _savedVersion) {
+    if (_savedUserId !== userId) return;
+    const serverIds = new Set(ids.map(String));
+    const unconfirmed = [..._savedUnconfirmed].some(id => SAVED_IDS.has(id) !== serverIds.has(id));
+    _savedUnconfirmed.clear();
+    SAVED_IDS.clear();
+    ids.forEach(id => SAVED_IDS.add(String(id)));
+    _savedEdits.forEach((edit, id) => {
+        if (edit.version > version || _saveLocks.has(id)) {
+            if (edit.saved) SAVED_IDS.add(id);
+            else SAVED_IDS.delete(id);
+        }
+    });
+    _savedReady = true;
+    _savedError = false;
+    _persistSavedListings();
+    _notifySavedListings();
+    if (unconfirmed) showToast('L’ultima modifica ai preferiti non è confermata. Riprova.', 'error');
+}
 
 // Toggle "Salva preferito" — chiamata dal cuoricino sulle card e dalla pagina annuncio.
 // Se utente non loggato → apre modal registrazione e marca l'intent in sessionStorage.
 async function toggleSaveListing(annuncioId, btnEl) {
-    if (!annuncioId) return;
-    if (typeof _supabase === 'undefined' || !_supabase) return;
-
-    const { data: sess } = await _supabase.auth.getSession();
-    if (!sess?.session?.user) {
-        // Non loggato → memorizza intent + apre modal
-        try { sessionStorage.setItem('_pending_save_listing', String(annuncioId)); } catch (_) {}
-        if (typeof window.openAuthModal === 'function') window.openAuthModal('register', undefined, 'salva_preferito');
-        return;
-    }
-
-    const userId    = sess.session.user.id;
-    const wasSaved  = SAVED_IDS.has(annuncioId);
-    // Optimistic UI
-    if (wasSaved) SAVED_IDS.delete(annuncioId);
-    else          SAVED_IDS.add(annuncioId);
-    _refreshSaveButtons(annuncioId);
-
+    if (!annuncioId || typeof _supabase === 'undefined' || !_supabase) return false;
+    annuncioId = String(annuncioId);
+    if (_saveLocks.has(annuncioId) || _savedUnconfirmed.has(annuncioId)) return false;
+    const initialUserId = _savedUserId, initialEpoch = _savedEpoch;
+    const lock = { started: Date.now() };
+    _saveLocks.set(annuncioId, lock);
+    _notifySavedListings();
+    let epoch, wasSaved, changed = false;
     try {
+        if (_savedUserId === undefined || !_savedReady) {
+            if (!await loadSavedListingsCache()) throw new Error('Preferiti non verificati');
+            if (initialUserId !== undefined && initialEpoch !== _savedEpoch) return false;
+            // L'inizializzazione della sessione può aver azzerato il blocco.
+            if (_saveLocks.has(annuncioId) && _saveLocks.get(annuncioId) !== lock) return false;
+            _saveLocks.set(annuncioId, lock);
+        }
+        const userId = _savedUserId;
+        if (!userId) {
+            try { sessionStorage.setItem('_pending_save_listing', annuncioId); } catch (_) {}
+            if (typeof window.openAuthModal === 'function') window.openAuthModal('register', undefined, 'salva_preferito');
+            return false;
+        }
+        epoch = _savedEpoch;
+        wasSaved = SAVED_IDS.has(annuncioId);
+        changed = true;
+        if (wasSaved) SAVED_IDS.delete(annuncioId);
+        else SAVED_IDS.add(annuncioId);
+        _savedEdits.set(annuncioId, { version: ++_savedVersion, saved: !wasSaved });
+        _pendingSavedWrites.add(annuncioId);
+        _persistSavedListings();
+        _notifySavedListings();
         if (wasSaved) {
-            const { error } = await _supabase
+            const { error } = await _savedListingRequest(_supabase
                 .from('saved_listings')
                 .delete()
                 .eq('user_id', userId)
-                .eq('annuncio_id', annuncioId);
+                .eq('annuncio_id', annuncioId));
             if (error) throw error;
         } else {
-            const { error } = await _supabase
+            const { error } = await _savedListingRequest(_supabase
                 .from('saved_listings')
-                .insert({ user_id: userId, annuncio_id: annuncioId });
-            if (error && !String(error.message || '').includes('duplicate')) throw error;
+                .insert({ user_id: userId, annuncio_id: annuncioId }));
+            if (error && error.code !== '23505') throw error;
         }
+        if (epoch !== _savedEpoch) return false;
+        _savedEdits.set(annuncioId, { version: ++_savedVersion, saved: !wasSaved });
+        _pendingSavedWrites.delete(annuncioId);
+        _persistSavedListings();
+        return true;
     } catch (e) {
-        // Revert su errore
-        if (wasSaved) SAVED_IDS.add(annuncioId);
-        else          SAVED_IDS.delete(annuncioId);
-        _refreshSaveButtons(annuncioId);
-        console.warn('[saved_listings]', e);
+        if (epoch !== undefined && epoch !== _savedEpoch) return false;
+        if (changed) {
+            _pendingSavedWrites.delete(annuncioId);
+            if (wasSaved) SAVED_IDS.add(annuncioId);
+            else SAVED_IDS.delete(annuncioId);
+            _savedEdits.set(annuncioId, { version: ++_savedVersion, saved: wasSaved });
+            _persistSavedListings();
+        }
+        showToast('Operazione non confermata. Controlla la connessione e riprova.', 'error');
+        return false;
+    } finally {
+        const unlock = () => {
+            if (_saveLocks.get(annuncioId) === lock) {
+                _saveLocks.delete(annuncioId);
+                _notifySavedListings();
+            }
+        };
+        const delay = Math.max(0, 500 - (Date.now() - lock.started));
+        if (delay) setTimeout(unlock, delay);
+        else unlock();
     }
 }
 
 // Aggiorna tutti i bottoni "salva" di un annuncio sulla pagina corrente
 function _refreshSaveButtons(annuncioId) {
-    const saved = SAVED_IDS.has(annuncioId);
-    document.querySelectorAll(`[data-save-id="${annuncioId}"]`).forEach(el => {
+    document.querySelectorAll('[data-save-id]').forEach(el => {
+        if (annuncioId !== undefined && el.dataset.saveId !== String(annuncioId)) return;
+        const state = getSaveListingState(el.dataset.saveId);
         const icon = el.querySelector('i');
-        el.setAttribute('data-saved', saved ? '1' : '0');
-        el.setAttribute('title', saved ? 'Rimuovi dai preferiti' : 'Salva nei preferiti');
-        if (icon) {
-            icon.className = saved ? 'fas fa-bookmark text-blue-600' : 'far fa-bookmark text-slate-400';
-        }
+        el.disabled = state.busy;
+        el.setAttribute('data-saved', state.saved ? '1' : '0');
+        el.setAttribute('title', state.label);
+        el.setAttribute('aria-label', state.label);
+        el.setAttribute('aria-pressed', String(state.saved));
+        el.setAttribute('aria-busy', String(state.busy));
+        if (icon) icon.className = state.icon;
     });
 }
 
 // Carica gli ID dei preferiti dell'utente loggato e popola SAVED_IDS.
 // Chiamata da auth.js dopo login + da pagine che mostrano card.
-async function loadSavedListingsCache() {
-    if (typeof _supabase === 'undefined' || !_supabase) return;
-    try {
-        const { data: sess } = await _supabase.auth.getSession();
-        if (!sess?.session?.user) { SAVED_IDS.clear(); return; }
-        const { data, error } = await _supabase
-            .from('saved_listings')
-            .select('annuncio_id')
-            .eq('user_id', sess.session.user.id);
-        if (error) return;
-        SAVED_IDS.clear();
-        (data || []).forEach(r => SAVED_IDS.add(r.annuncio_id));
-        // Aggiorna i bottoni già renderizzati
-        document.querySelectorAll('[data-save-id]').forEach(el => {
-            const id = el.getAttribute('data-save-id');
-            if (id) _refreshSaveButtons(id);
-        });
-    } catch (_) {}
+function loadSavedListingsCache() {
+    if (typeof _supabase === 'undefined' || !_supabase) return Promise.resolve(false);
+    if (_savedLoad?.epoch === _savedEpoch) return _savedLoad.promise;
+    const request = { epoch: _savedEpoch };
+    _savedLoad = request;
+    request.promise = (async () => {
+        try {
+            const { data: sess, error: authError } = await _supabase.auth.getSession();
+            if (authError) throw authError;
+            const userId = sess?.session?.user?.id || null;
+            if (request.epoch !== _savedEpoch && _savedUserId !== userId) return false;
+            _setSavedListingsUser(userId);
+            request.epoch = _savedEpoch;
+            if (!userId) return true;
+            const version = _savedVersion;
+            const { data, error } = await _savedListingRequest(_supabase.from('saved_listings').select('annuncio_id').eq('user_id', userId));
+            if (request.epoch !== _savedEpoch) return false;
+            if (error) throw error;
+            setSavedListingsCache((data || []).map(r => r.annuncio_id), userId, version);
+            return true;
+        } catch (_) {
+            if (request.epoch === _savedEpoch) {
+                _savedError = true;
+                _notifySavedListings();
+            }
+            return false;
+        } finally {
+            if (_savedLoad === request) _savedLoad = null;
+        }
+    })();
+    return request.promise;
 }
 
 // Auto-salva l'annuncio in sessionStorage dopo registrazione/login completati.
@@ -547,16 +688,32 @@ async function processPendingSaveListing() {
     let pending = null;
     try { pending = sessionStorage.getItem('_pending_save_listing'); } catch (_) {}
     if (!pending) return;
-    try { sessionStorage.removeItem('_pending_save_listing'); } catch (_) {}
-    await loadSavedListingsCache();
-    if (!SAVED_IDS.has(pending)) {
-        await toggleSaveListing(pending, null);
+    if (!await loadSavedListingsCache() || !_savedUserId) return;
+    if (SAVED_IDS.has(pending) || await toggleSaveListing(pending, null)) {
+        try { sessionStorage.removeItem('_pending_save_listing'); } catch (_) {}
     }
 }
 
 window.toggleSaveListing       = toggleSaveListing;
 window.loadSavedListingsCache  = loadSavedListingsCache;
 window.processPendingSaveListing = processPendingSaveListing;
+
+// Legge la sessione locale prima dei fetch delle pagine.
+if (typeof _supabase !== 'undefined' && _supabase) {
+    loadSavedListingsCache();
+    try {
+        _supabase.auth.onAuthStateChange((_event, session) => {
+            const userId = session?.user?.id || null;
+            const changed = _savedUserId !== userId;
+            _setSavedListingsUser(userId);
+            // Le chiamate Supabase devono partire fuori dal callback auth.
+            if (changed && userId) setTimeout(loadSavedListingsCache, 0);
+        });
+    } catch (_) {}
+    window.addEventListener('pageshow', event => {
+        if (event.persisted) loadSavedListingsCache();
+    });
+}
 
 // ── Tracking visualizzazioni anteprima card (shared tra tutte le pagine) ──
 const _viewedPreviews = new Set();

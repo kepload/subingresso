@@ -332,10 +332,10 @@ module.exports = async function handler(req, res) {
                 </div>
                 <div id="titleRow" class="relative pr-12">
                     <h1 id="titolo" class="text-3xl font-black tracking-tight leading-tight text-slate-900">${esc(listing ? listing.titolo : '')}</h1>
-                    <button id="saveBtn" type="button" onclick="_saveCurrentListing()"
+                    <button id="saveBtn" type="button" onclick="_saveCurrentListing()" disabled aria-busy="true"
                             class="absolute top-0 right-0 w-10 h-10 flex items-center justify-center rounded-xl border border-slate-200 text-slate-400 hover:bg-slate-50 hover:text-blue-600 transition active:scale-95"
-                            title="Salva nei preferiti" aria-label="Salva nei preferiti">
-                        <i class="far fa-bookmark text-lg"></i>
+                            title="Verifica preferiti…" aria-label="Verifica preferiti…">
+                        <i class="fas fa-spinner fa-spin text-lg"></i>
                     </button>
                 </div>
                 <p id="prezzoMobile" class="lg:hidden text-3xl font-black text-slate-900 mt-3">${prezzoStr}</p>
@@ -440,8 +440,8 @@ module.exports = async function handler(req, res) {
     <button onclick="openWhatsApp()" class="flex-1 bg-emerald-500 text-white py-3 rounded-2xl font-black text-sm hover:bg-emerald-600 transition active:scale-[.98] flex items-center justify-center gap-2 shadow-lg shadow-emerald-100 whitespace-nowrap">
         <i class="fab fa-whatsapp text-lg"></i> WhatsApp
     </button>
-    <button id="saveBtnMobile" onclick="_saveCurrentListing()" class="w-12 border-2 border-slate-100 text-slate-700 py-3 rounded-2xl font-black text-sm hover:bg-slate-50 transition active:scale-[.98] flex items-center justify-center shrink-0" title="Salva nei preferiti" aria-label="Salva nei preferiti">
-        <i class="far fa-bookmark text-slate-400"></i>
+    <button id="saveBtnMobile" type="button" onclick="_saveCurrentListing()" disabled aria-busy="true" class="w-12 border-2 border-slate-100 text-slate-700 py-3 rounded-2xl font-black text-sm hover:bg-slate-50 transition active:scale-[.98] flex items-center justify-center shrink-0" title="Verifica preferiti…" aria-label="Verifica preferiti…">
+        <i class="fas fa-spinner fa-spin text-slate-400"></i>
     </button>
 </div>
 
@@ -451,11 +451,11 @@ module.exports = async function handler(req, res) {
 <script src="/js/supabase-config.js?v=3"></script>
 <script src="/js/page-view-tracker.js?v=4"></script>
 <script src="/js/image-urls.js?v=1"></script>
-<script src="/js/data.js?v=20"></script>
+<script src="/js/data.js?v=21"></script>
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/auth.js?v=22"></script>
 <script src="/js/listing-moderation.js?v=1"></script>
-<script src="/js/pages/annuncio-detail.js?v=22"></script>
+<script src="/js/pages/annuncio-detail.js?v=23"></script>
 </body>
 </html>`);
 };

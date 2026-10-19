@@ -276,7 +276,7 @@ window._BANDO_REGIONE = ${safeJson(regione)};
 <script src="/js/supabase-config.js?v=2"></script>
 <script src="/js/page-view-tracker.js?v=4"></script>
 <script src="/js/image-urls.js?v=1"></script>
-<script src="/js/data.js?v=20"></script>
+<script src="/js/data.js?v=21"></script>
 <script src="/js/ui-components.js?v=12"></script>
 <script src="/js/auth.js?v=22"></script>
 <script src="/js/bando-alerts.js?v=2"></script>

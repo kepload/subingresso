@@ -1,5 +1,25 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, preferiti reattivi richiesti: stato condiviso tra anteprime,
+dettaglio desktop/mobile e dashboard, ripristino dalla sessione dello stesso
+utente verificato e controllo API in background. Nessun falso non-salvato:
+stato ignoto con indicatore, evento al posto dei timer1,5/4s. Risposta visiva
+sincrona, un'operazione per annuncio e protezione500ms dai doppi clic;
+richieste15s, errori visibili e ripristino della cache. Navigazione prima
+della conferma mantiene icona e blocco fino alla verifica, avvisa se diversa.
+Letture vecchie non annullano clic recenti; logout/cambio account invalidano
+cache e risposte pendenti. Dashboard aggiorna la cache anche se vuota.
+JS data21/dettaglio23, riferimenti completi inclusi SSR; DB/auth invariati.
+Suite scripts/test-saved-listings.cjs: Chromium1440/320 eWebKit390,
+58 controlli per caso; profili280 passati. Prove e integrazione con HTML/SDK
+reali in Documents/verifica-preferiti-20261019; nessuna scrittura reale.
+Regressione immagini: guardia preesistente errata su contatti/fiere/privacy/
+termini (helper non usato da quelle pagine), esclusa solo nel runner esterno;
+resto suite server/browser e sintassi passati, test versionato conservato.
+Backup tag e branch remoti validi, consueto errore cleanup PowerShell;
+checkout isolato, file estranei conservati. Pubblicazione da verificare.
+
+
 19/10/2026, conversione fiere richiesta: registrazione/accesso obbligatori
 per «Consulta la fonte» e link documentali equivalenti, anche sulle pagine
 autonome da Google. Invito gratuito e vantaggi prima delle schede; filtri e

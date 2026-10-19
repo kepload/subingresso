@@ -1257,7 +1257,7 @@
 <script src="js/supabase-config.js?v=3"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=20"></script>
+<script src="js/data.js?v=21"></script>
 <script src="js/valuation.js?v=7"></script>
 <script src="js/vetrina-account.js?v=2"></script>
 <script src="js/auth.js?v=22"></script>
@@ -3147,6 +3147,7 @@ function _highlightFreshValutazione() {
 // ── Preferiti ────────────────────────────────────────────
 let _savedLoaded = false;
 async function loadMySaved() {
+    const savedVersion = _savedVersion;
     const grid = document.getElementById('mySavedGrid');
     if (!grid) return;
     if (!_currentUser) {
@@ -3154,11 +3155,13 @@ async function loadMySaved() {
         return;
     }
 
+    const savedUserId = _currentUser.id;
     const { data: saved, error: errSaved } = await _supabase
         .from('saved_listings')
         .select('annuncio_id, created_at')
-        .eq('user_id', _currentUser.id)
+        .eq('user_id', savedUserId)
         .order('created_at', { ascending: false });
+    if (_currentUser?.id !== savedUserId) return;
 
     if (errSaved) {
         grid.innerHTML = `<p class="text-center text-red-500 py-8 col-span-full">Errore: ${escapeHTML(errSaved.message)}</p>`;
@@ -3166,6 +3169,7 @@ async function loadMySaved() {
     }
 
     const ids = (saved || []).map(r => r.annuncio_id);
+    setSavedListingsCache(ids, savedUserId, savedVersion);
     if (!ids.length) {
         grid.innerHTML = `
             <div class="text-center py-16 bg-white rounded-2xl border border-slate-100 col-span-full">
@@ -3186,16 +3190,11 @@ async function loadMySaved() {
         .select('id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, featured, featured_until, featured_tier, featured_since, video_url')
         .in('id', ids)
         .eq('status', 'active');
+    if (_currentUser?.id !== savedUserId) return;
 
     if (errLst) {
         grid.innerHTML = `<p class="text-center text-red-500 py-8 col-span-full">Errore: ${escapeHTML(errLst.message)}</p>`;
         return;
-    }
-
-    // Riempi la cache SAVED_IDS in modo che il cuoricino sia rosso
-    if (typeof SAVED_IDS !== 'undefined') {
-        SAVED_IDS.clear();
-        ids.forEach(id => SAVED_IDS.add(id));
     }
 
     // Fetch profili per le card

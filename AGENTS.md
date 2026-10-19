@@ -8,7 +8,7 @@
 
 ## Qualità dati (8 ottobre 2026)
 
-Controlli form + DB e riepilogo admin: `DATA_QUALITY_AUDIT_20261008.md`, `PATCH_DATA_QUALITY_20261008.sql`. Anagrafica in schema privato `data_quality`, seed `scripts/seed-data-locations.cjs`. Non rimuovere i trigger e non correggere dati storici per ipotesi. Telefoni: `get_my_profile` per il proprietario, `admin_user_details` per admin; colonne esplicite nelle letture pubbliche profiles. Edit annunci torna pending. Test qualità `scripts/test-data-quality.*`, browser `test-admin-control-room.cjs`. Cache: data 20, auth 22, annunci 13, vendi-support 2, valuation 2, blog-tracker 2. Auth richiede data.js anche nelle pagine di servizio.
+Controlli form + DB e riepilogo admin: `DATA_QUALITY_AUDIT_20261008.md`, `PATCH_DATA_QUALITY_20261008.sql`. Anagrafica in schema privato `data_quality`, seed `scripts/seed-data-locations.cjs`. Non rimuovere i trigger e non correggere dati storici per ipotesi. Telefoni: `get_my_profile` per il proprietario, `admin_user_details` per admin; colonne esplicite nelle letture pubbliche profiles. Edit annunci torna pending. Test qualità `scripts/test-data-quality.*`, browser `test-admin-control-room.cjs`. Cache: data 21, auth 22, annunci 13, vendi-support 2, valuation 2, blog-tracker 2. Auth richiede data.js anche nelle pagine di servizio.
 
 ## 0) Cosa fare PRIMA di toccare qualsiasi file
 
@@ -141,12 +141,12 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 ## 9) Cache buster correnti (aggiornare a ogni modifica)
 
 - `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
-- `data.js?v=20`
+- `data.js?v=21`
 - `auth.js?v=22`
 - `ui-components.js?v=12`
 - `js/pages/annunci.js?v=13`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
 - `comune-picker.js?v=7`, `location-search.js?v=8`, `location-search-worker.js?v=3`: comuni e 55.288 località da `data/localita.json`; refusi in background, fallback a blocchi. Il worker importa la stessa versione di `location-search.js`: aggiornare entrambi i riferimenti e il cache buster del worker quando cambia il motore. Dettaglio/fonti in `data/LOCALITA.md`.
-- `js/pages/annuncio-detail.js?v=22` (anche in `annuncio.html` + `api/annuncio.js`)
+- `js/pages/annuncio-detail.js?v=23` (anche in `annuncio.html` + `api/annuncio.js`)
 - `css/tailwind.css?v=4`
 - `page-view-tracker.js?v=4`
 - `js/valuation.js?v=7`, `js/pages/valutatore.js?v=8` (v2.5: sotto € 100/giorno cessione fissa € 1.000; affitto minimo fisso € 500/anno, anche con margine nullo o durata breve. Ancore 200/giorno → € 8.000 e 400/giorno → € 27.000 a 52 giornate; dettagli in `istruzioni.md`)
@@ -407,3 +407,5 @@ Apri la dashboard admin → guarda il pannello "AI Scout Bandi":
 - Prossima priorità: far crescere annunci veri in Lombardia (50-100 target) via lead magnet email su hub Bolkestein
 
 Dettagli completi e TODO aperti → `istruzioni.md`.
+
+Preferiti (19 ottobre 2026): stato unico card/dettaglio, cache sessionStorage limitata all'utente verificato, evento savedListingsChanged; niente timer 1,5/4 secondi. UI immediata, blocco per annuncio durante richiesta e minimo 500 ms, timeout 15 s, rollback con avviso, risposte vecchie ignorate. Modifiche non confermate prima della navigazione protette fino alla verifica; logout/cambio account puliscono la cache. Dashboard usa setSavedListingsCache, non mutare SAVED_IDS direttamente. Cache data 21, annuncio-detail 23; suite scripts/test-saved-listings.cjs (SAVED_USE_PUBLISHED, SAVED_QA_DIR, PLAYWRIGHT_MODULE).
