@@ -17,7 +17,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
     <link rel="stylesheet" href="/css/tailwind.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/fiere.css?v=29">
+    <link rel="stylesheet" href="/css/fiere.css?v=30">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -39,10 +39,6 @@
             <select id="province-filter" aria-label="Regione o provincia" disabled><option value="">Tutta Italia</option></select>
         </div>
         <div class="fiere-place">
-            <label for="sector-filter"><i class="fa-solid fa-store" aria-hidden="true"></i> Cosa vendi</label>
-            <select id="sector-filter" disabled><option value="">Tutti i settori</option><option value="alimentare">Alimentare</option><option value="non-alimentare">Non alimentare</option><option value="antiquariato">Antiquariato e vintage</option><option value="artigianato">Artigianato</option></select>
-        </div>
-        <div class="fiere-place">
             <span id="article-filter-label" class="fiere-place-label"><i class="fa-solid fa-tags" aria-hidden="true"></i> Tipologia di articolo</span>
             <details id="article-filter" class="fiere-article-filter">
                 <summary id="article-summary" aria-labelledby="article-filter-label article-summary-text"><span id="article-summary-text">Tutte le tipologie</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
@@ -53,13 +49,13 @@
             </details>
             <div id="selected-articles" class="fiere-selected-articles" aria-label="Tipologie selezionate" hidden></div>
         </div>
-        <div class="fiere-place">
-            <label for="type-filter"><i class="fa-solid fa-list" aria-hidden="true"></i> Tipo di evento</label>
-            <select id="type-filter"><option value="">Tutti gli eventi</option><option value="tradizionale">Fiere tradizionali</option><option value="artigianato">Artigianato e mostre mercato</option><option value="sagra">Sagre e feste</option><option value="espositiva">Fiere espositive</option><option value="mercatino">Mercatini</option></select>
-        </div>
         </div>
         <details id="extra-filters" class="fiere-extra-filters">
             <summary><span><i class="fa-solid fa-sliders" aria-hidden="true"></i> Altri filtri <span id="extra-filter-count" class="fiere-filter-count" hidden></span></span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></summary>
+            <div class="fiere-filter-row">
+                <label for="sector-filter">Cosa vendi<select id="sector-filter" disabled><option value="">Tutti i settori</option><option value="alimentare">Alimentare</option><option value="non-alimentare">Non alimentare</option><option value="antiquariato">Antiquariato e vintage</option><option value="artigianato">Artigianato</option></select></label>
+                <label for="type-filter">Tipo di evento<select id="type-filter"><option value="">Tutti gli eventi</option><option value="tradizionale">Fiere tradizionali</option><option value="artigianato">Artigianato e mostre mercato</option><option value="sagra">Sagre e feste</option><option value="espositiva">Fiere espositive</option><option value="mercatino">Mercatini</option></select></label>
+            </div>
             <div class="fiere-filter-row">
                 <label for="fair-search">Nome o comune<input id="fair-search" type="search" placeholder="Es. San Martino, Brescia" autocomplete="off" maxlength="100"></label>
                 <div class="fiere-interval"><label for="month-from">Dal mese<select id="month-from" aria-label="Mese iniziale"><option value="">—</option></select></label><label for="month-to">Al mese<select id="month-to" aria-label="Mese finale"><option value="">—</option></select></label></div>
@@ -117,6 +113,6 @@
 <script src="/js/data.js?v=20"></script>
 <script src="/js/auth.js?v=22"></script>
 <script src="/js/event-data.js?v=1"></script>
-<script src="/js/pages/fiere.js?v=84"></script>
+<script src="/js/pages/fiere.js?v=85"></script>
 </body>
 </html>

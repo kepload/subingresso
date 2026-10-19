@@ -12,6 +12,8 @@ const catalog = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere.json'), '
 const events = catalog.events;
 const classify = sectors => api.articleTypes({ sectors });
 assert.equal(Object.keys(api.ARTICLE_TYPES).length, 35);
+assert.equal(api.ARTICLE_OPTIONS.length, 24);
+assert.deepEqual(api.ARTICLE_OPTIONS.flatMap(option => option.types).sort(), Object.keys(api.ARTICLE_TYPES).sort(), 'Every precise type stays available exactly once');
 assert.deepEqual(classify('Abbigliamento, calzature, borse e pelletteria, intimo e calze'), ['abbigliamento', 'intimo', 'calzature', 'pelletteria']);
 assert.deepEqual(classify('Biancheria per la casa; casalinghi; profumeria; detersivi'), ['casalinghi', 'biancheria-casa', 'cosmetici', 'detergenti']);
 assert.deepEqual(classify('Bigiotteria artigianale, borse, ceramica, lavorazioni in legno e ricamo'), ['pelletteria', 'bigiotteria', 'ceramica', 'legno', 'tessili', 'gioielli-artigianali']);
@@ -28,6 +30,8 @@ assert.deepEqual(classify('Alimentari (ad esclusione di ambulanti con autorizzaz
 assert.deepEqual(classify('Produttori esclusivamente alimentari; formaggi'), ['salumi-formaggi']);
 const state = { months: [], query: '', articles: ['calzature', 'dolciumi'] };
 const union = events.filter(e => api.articleTypes(e).some(type => state.articles.includes(type)));
+const compactArticles = ['calzature', 'dolciumi', 'cioccolato'];
+const compactUnion = events.filter(e => api.articleTypes(e).some(type => compactArticles.includes(type)));
 assert(union.length > api.filterEvents(events, { ...state, articles: ['calzature'] }).length);
 assert.deepEqual(api.filterEvents(events, state), union);
 assert.deepEqual(api.filterEvents(events, { ...state, region: 'Lombardia', months: [10], category: 'tradizionale' }), union.filter(e => e.region === 'Lombardia' && e.months.includes(10) && e.category === 'tradizionale'));
@@ -61,6 +65,9 @@ async function run(engine, engineName, width, height, base) {
         page.on('pageerror', error => errors.push(error.message));
         const count = async expected => page.waitForFunction(expected => document.querySelector('#list-count').textContent === String(expected), expected);
         const checkbox = type => page.locator('#article-options input[value="' + type + '"]');
+        async function openExtras() {
+            if (!await page.locator('#extra-filters').evaluate(element => element.open)) await page.locator('#extra-filters > summary').click();
+        }
         async function verify(expected, months = false) {
             await count(expected.length);
             assert.deepEqual(await page.locator('.fiere-card').evaluateAll(cards => cards.map(c => c.dataset.eventId)), api.sortEvents(expected).slice(0, 12).map(e => e.id));
@@ -69,22 +76,32 @@ async function run(engine, engineName, width, height, base) {
         }
         await page.goto(base + '/fiere');
         await verify(events);
+        assert.equal(await page.locator('.fiere-main-fields > .fiere-place').count(), 2);
+        assert(!await page.locator('#sector-filter').isVisible());
+        assert(!await page.locator('#type-filter').isVisible());
+        assert.equal(await page.locator('#extra-filters #sector-filter, #extra-filters #type-filter').count(), 2);
         await page.locator('#article-summary').click();
-        assert.equal(await page.locator('#article-options input').count(), 35);
+        assert.equal(await page.locator('#article-options input').count(), 24);
+        const sweetsCount = events.filter(event => api.articleTypes(event).some(type => ['dolciumi', 'cioccolato'].includes(type))).length;
+        assert.equal(await checkbox('dolciumi').locator('..').locator('.fiere-article-count').innerText(), String(sweetsCount), 'Grouped counts do not count one fair twice');
         for (const type of ['calzature', 'dolciumi']) await checkbox(type).check();
-        await verify(union);
+        await verify(compactUnion);
         assert.equal(await page.locator('#selected-articles button').count(), 2);
         assert.equal(await page.locator('#article-summary-text').innerText(), '2 tipologie selezionate');
-        assert.deepEqual(new URL(page.url()).searchParams.get('articoli').split(',').sort(), ['calzature', 'dolciumi']);
+        assert.deepEqual(new URL(page.url()).searchParams.get('articoli').split(',').sort(), compactArticles.slice().sort());
         assert(await checkbox('calzature').isChecked());
         await page.locator('#article-summary').focus();
         await page.keyboard.press('Escape');
         assert.equal(await page.locator('#article-filter').getAttribute('open'), null);
         await page.locator('[data-month="10"]').click();
         await page.selectOption('#province-filter', 'regione:Lombardia');
+        await openExtras();
         await page.selectOption('#type-filter', 'tradizionale');
-        const combined = union.filter(e => e.months.includes(10) && e.region === 'Lombardia' && e.category === 'tradizionale');
+        const combined = compactUnion.filter(e => e.months.includes(10) && e.region === 'Lombardia' && e.category === 'tradizionale');
         await verify(combined, true);
+        assert.equal(await page.locator('#extra-filter-count').innerText(), '1');
+        await page.locator('#extra-filters > summary').click();
+        assert(await page.locator('#extra-filter-count').isVisible());
         await page.reload();
         await verify(combined, true);
         assert.equal(await page.locator('#selected-articles button').count(), 2);
@@ -95,13 +112,15 @@ async function run(engine, engineName, width, height, base) {
         // A broad sector narrows the choices and clears incompatible selections.
         await page.goto(base + '/fiere?articoli=calzature,dolciumi');
         await verify(union);
+        await openExtras();
         await page.selectOption('#sector-filter', 'alimentare');
         const food = api.filterEvents(events, { months: [], query: '', sector: 'alimentare', articles: ['dolciumi'] });
         await verify(food);
         assert.equal(await page.locator('#selected-articles button').count(), 1);
         await page.locator('#article-summary').click();
         assert.equal(await checkbox('calzature').isVisible(), false);
-        assert(await checkbox('dolciumi').isChecked());
+        assert(await checkbox('dolciumi').evaluate(input => input.indeterminate), 'A saved precise choice stays precise inside its compact option');
+        assert(await page.locator('#clear-articles').evaluate(element => element.getBoundingClientRect().top >= document.querySelector('header').getBoundingClientRect().bottom), 'The menu toolbar stays below the fixed header');
         await page.locator('#clear-articles').click();
         await verify(events.filter(e => e.merchandiseSectors.includes('alimentare')));
         await page.locator('#article-summary').focus();
@@ -122,7 +141,12 @@ async function run(engine, engineName, width, height, base) {
         await page.locator('#article-summary').click();
         await checkbox('dolciumi').focus();
         await page.keyboard.press('Space');
+        await verify(events.filter(event => api.articleTypes(event).some(type => ['dolciumi', 'cioccolato'].includes(type))));
+        await page.locator('#article-summary').focus();
+        await page.keyboard.press('Escape');
+        await page.getByRole('button', { name: 'Rimuovi Dolci e cioccolato', exact: true }).click();
         await verify(events);
+        await page.locator('#article-summary').click();
         await checkbox('detergenti').check();
         await verify([]);
         assert(await page.locator('#empty-results').isVisible());
@@ -130,6 +154,21 @@ async function run(engine, engineName, width, height, base) {
         await page.keyboard.press('Escape');
         await page.locator('#empty-reset').click();
         await verify(events);
+        // A specific old URL is never broadened to the whole new option.
+        await page.goto(base + '/fiere?articoli=cioccolato&settore=alimentare&tipo=sagra');
+        await verify(api.filterEvents(events, { months: [], query: '', articles: ['cioccolato'], sector: 'alimentare', category: 'sagra' }));
+        assert.equal(new URL(page.url()).searchParams.get('articoli'), 'cioccolato');
+        assert.equal(await page.locator('#article-summary-text').innerText(), 'Cioccolato e cacao');
+        assert.equal(await page.locator('#extra-filter-count').innerText(), '2');
+        await page.locator('#article-summary').click();
+        assert(await checkbox('dolciumi').evaluate(input => input.indeterminate));
+        await checkbox('dolciumi').check();
+        assert.deepEqual(new URL(page.url()).searchParams.get('articoli').split(',').sort(), ['cioccolato', 'dolciumi']);
+        await page.locator('#article-summary').focus();
+        await page.keyboard.press('Escape');
+        await page.locator('#reset-filters').click();
+        await verify(events);
+        assert(!await page.locator('#extra-filter-count').isVisible());
         // Detail dialog and the standalone page share the same source-backed types.
         const shoes = api.sortEvents(events.filter(e => api.articleTypes(e).includes('calzature')))[0];
         await page.goto(base + '/fiere?articoli=calzature');

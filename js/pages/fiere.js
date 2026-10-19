@@ -43,6 +43,36 @@
         'abbigliamento-vintage': { label: 'Abbigliamento vintage', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:abbigliamento|vestiti|capi) (?:vintage|d epoca)\b/ },
         'libri-antichi': { label: 'Libri antichi e da collezione', group: 5, sectors: ['non-alimentare', 'antiquariato'], pattern: /\b(?:libri (?:antichi|d epoca|da collezione)|editoria antiquaria|antiquariato librario)\b/ }
     };
+    // Compact choices keep the precise source types for saved URLs and affinity evidence.
+    const ARTICLE_OPTIONS = [
+        ['abbigliamento', 'Abbigliamento e intimo', ['abbigliamento', 'intimo']],
+        ['calzature'], ['pelletteria'],
+        ['bigiotteria', 'Gioielli e bigiotteria', ['bigiotteria', 'gioielli-artigianali']],
+        ['casalinghi', 'Casa e biancheria', ['casalinghi', 'biancheria-casa']],
+        ['cosmetici'], ['detergenti'], ['giocattoli'],
+        ['libri', 'Libri e fumetti', ['libri', 'libri-antichi']],
+        ['elettronica', 'Elettronica e telefonia'], ['piante'], ['animali'],
+        ['salumi-formaggi'], ['forno'],
+        ['dolciumi', 'Dolci e cioccolato', ['dolciumi', 'cioccolato']],
+        ['agricoli', 'Prodotti agricoli e olio', ['agricoli', 'olio']],
+        ['tipici'], ['bevande'], ['street-food'],
+        ['ceramica', 'Artigianato e decorazioni', ['ceramica', 'legno', 'tessili', 'decorazioni']],
+        ['antiquariato', 'Antiquariato e modernariato', ['antiquariato', 'modernariato']],
+        ['vintage', 'Vintage', ['vintage', 'abbigliamento-vintage']],
+        ['usato'], ['collezionismo']
+    ].map(([key, label, types]) => ({ key, label: label || ARTICLE_TYPES[key].label, types: types || [key], group: ARTICLE_TYPES[key].group }));
+    function optionTypes(option, sector = '') {
+        return option.types.filter(key => !sector || ARTICLE_TYPES[key].sectors.includes(sector));
+    }
+    function articleSelections(articles, sector = '') {
+        return ARTICLE_OPTIONS.flatMap(option => {
+            const available = optionTypes(option, sector);
+            const selected = available.filter(key => articles.includes(key));
+            if (!selected.length) return [];
+            return selected.length === available.length ? [{ label: option.label, types: selected }]
+                : selected.map(key => ({ label: ARTICLE_TYPES[key].label, types: [key] }));
+        });
+    }
     const articleCache = new WeakMap();
     const researchCache = new WeakMap();
     function articleResearch(event, today = todayInRome()) {
@@ -353,7 +383,7 @@
             || a.event.name.localeCompare(b.event.name, 'it') || a.event.city.localeCompare(b.event.city, 'it'));
         return ranked.map(item => item.event);
     }
-    const api = { MONTHS, CATEGORIES, SECTORS, ARTICLE_GROUPS, ARTICLE_TYPES, articleResearch, articleTypes, articleAffinity, articleAffinitySummary, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
+    const api = { MONTHS, CATEGORIES, SECTORS, ARTICLE_GROUPS, ARTICLE_TYPES, ARTICLE_OPTIONS, articleResearch, articleTypes, articleAffinity, articleAffinitySummary, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
@@ -468,7 +498,8 @@
     function positionArticleMenu() {
         if (!$('article-filter').open) return;
         const rect = $('article-summary').getBoundingClientRect();
-        const below = innerHeight - rect.bottom - 12, above = rect.top - 12;
+        const headerBottom = Math.max(0, document.querySelector('header')?.getBoundingClientRect().bottom || 0);
+        const below = innerHeight - rect.bottom - 12, above = rect.top - Math.max(12, headerBottom + 8);
         const openAbove = below < Math.min(280, above);
         $('article-filter').classList.toggle('opens-above', openAbove);
         $('article-filter').querySelector('.fiere-article-menu').style.maxHeight = Math.max(100, Math.min(360, openAbove ? above : below)) + 'px';
@@ -477,16 +508,17 @@
         for (let group = 0; group < ARTICLE_GROUPS.length; group++) {
             const fieldset = node('fieldset', 'fiere-article-group');
             fieldset.append(node('legend', '', ARTICLE_GROUPS[group]));
-            for (const [key, type] of Object.entries(ARTICLE_TYPES)) {
+            for (const type of ARTICLE_OPTIONS) {
                 if (type.group !== group) continue;
                 const label = node('label', 'fiere-article-option');
                 const input = node('input');
-                input.type = 'checkbox'; input.value = key; input.name = 'articoli'; input.disabled = true;
+                input.type = 'checkbox'; input.value = type.key; input.name = 'articoli'; input.disabled = true;
                 const count = node('span', 'fiere-article-count');
                 count.setAttribute('aria-hidden', 'true');
                 label.append(input, node('span', '', type.label), count);
                 input.addEventListener('change', () => {
-                    state.articles = input.checked ? [...state.articles, key] : state.articles.filter(value => value !== key);
+                    const types = optionTypes(type, state.sector);
+                    state.articles = input.checked ? [...new Set([...state.articles, ...types])] : state.articles.filter(value => !types.includes(value));
                     changed(false);
                 });
                 fieldset.append(label);
@@ -507,29 +539,36 @@
         });
     }
     function renderArticles() {
-        const counts = Object.fromEntries(Object.keys(ARTICLE_TYPES).map(key => [key, 0]));
+        const counts = Object.fromEntries(ARTICLE_OPTIONS.map(option => [option.key, 0]));
         for (const event of filterEvents(state.events, { ...state, articles: [] })) {
-            for (const key of articleTypes(event)) counts[key]++;
+            const documented = articleTypes(event);
+            for (const option of ARTICLE_OPTIONS) {
+                if (optionTypes(option, state.sector).some(key => documented.includes(key))) counts[option.key]++;
+            }
         }
         for (const input of $('article-options').querySelectorAll('input')) {
-            const type = ARTICLE_TYPES[input.value];
+            const type = ARTICLE_OPTIONS.find(option => option.key === input.value);
+            const available = optionTypes(type, state.sector);
+            const selected = available.filter(key => state.articles.includes(key));
             input.disabled = !state.ready;
-            input.checked = state.articles.includes(input.value);
-            input.parentElement.hidden = Boolean(state.sector && !type.sectors.includes(state.sector));
+            input.checked = Boolean(available.length && selected.length === available.length);
+            input.indeterminate = selected.length > 0 && selected.length < available.length;
+            input.parentElement.hidden = !available.length;
             input.parentElement.querySelector('.fiere-article-count').textContent = String(counts[input.value]);
         }
         for (const group of $('article-options').children) group.hidden = ![...group.querySelectorAll('label')].some(label => !label.hidden);
-        $('article-summary-text').textContent = !state.articles.length ? 'Tutte le tipologie' : state.articles.length === 1 ? ARTICLE_TYPES[state.articles[0]].label : state.articles.length + ' tipologie selezionate';
+        const selections = articleSelections(state.articles, state.sector);
+        $('article-summary-text').textContent = !selections.length ? 'Tutte le tipologie' : selections.length === 1 ? selections[0].label : selections.length + ' tipologie selezionate';
         $('clear-articles').disabled = !state.articles.length;
         const chips = document.createDocumentFragment();
-        for (const key of state.articles) {
+        for (const selection of selections) {
             const button = node('button', 'fiere-article-chip');
             button.type = 'button';
-            button.setAttribute('aria-label', 'Rimuovi ' + ARTICLE_TYPES[key].label);
+            button.setAttribute('aria-label', 'Rimuovi ' + selection.label);
             const cross = node('span', '', '×'); cross.setAttribute('aria-hidden', 'true');
-            button.append(node('span', '', ARTICLE_TYPES[key].label), cross);
+            button.append(node('span', '', selection.label), cross);
             button.addEventListener('click', () => {
-                state.articles = state.articles.filter(value => value !== key);
+                state.articles = state.articles.filter(value => !selection.types.includes(value));
                 changed(false); $('article-summary').focus();
             });
             chips.append(button);
@@ -810,8 +849,9 @@
     function render() {
         const events = sortEvents(filterEvents(state.events, state));
         renderMonths(); renderArticles(); renderList(events); renderMap(events);
-        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (state.articles.length ? ' · ' + state.articles.length + (state.articles.length === 1 ? ' tipologia' : ' tipologie') : '');
-        const extraCount = Number(Boolean(state.query));
+        const articleCount = articleSelections(state.articles, state.sector).length;
+        $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (articleCount ? ' · ' + articleCount + (articleCount === 1 ? ' tipologia' : ' tipologie') : '');
+        const extraCount = Number(Boolean(state.query)) + Number(Boolean(state.sector)) + Number(Boolean(state.category));
         $('extra-filter-count').textContent = String(extraCount);
         $('extra-filter-count').hidden = !extraCount;
         $('extra-filters').querySelector('summary').setAttribute('aria-label', 'Altri filtri' + (extraCount ? ', ' + extraCount + ' attivi' : ''));

@@ -830,12 +830,12 @@ async function run(engine,name,viewport,base) {
         assert.equal(await page.locator('#reset-filters').count(),1);
         assert.equal(await page.locator('.fiere-period-heading #reset-filters').textContent(),'Azzera filtri');
         assert.equal(await page.locator('#extra-filters').getAttribute('open'),null);
-        assert.equal(await page.locator('#type-filter').isVisible(),true);
-        assert.equal(await page.locator('#extra-filters #type-filter').count(),0);
+        assert.equal(await page.locator('#type-filter').isVisible(),false);
+        assert.equal(await page.locator('#extra-filters #type-filter').count(),1);
         assert.equal(await page.locator('#fair-search').isVisible(),false);
         assert.equal(await page.locator('#month-from').isVisible(),false);
         assert.equal(await page.locator('#province-filter').isVisible(),true);
-        assert.equal(await page.locator('#sector-filter').isVisible(),true);
+        assert.equal(await page.locator('#sector-filter').isVisible(),false);
         assert.equal(await page.locator('#sector-filter option').count(),5);
         assert.equal(await page.locator('#province-filter option').count(),131);
         assert.equal(await page.locator('#region-filter').count(),0);
@@ -865,6 +865,7 @@ async function run(engine,name,viewport,base) {
         }
         await matches(events);
         for (const sector of Object.keys(api.SECTORS)) {
+            await page.locator('#extra-filters').evaluate(element => { element.open = true; });
             await page.selectOption('#sector-filter',sector);
             await matches(bySector(sector));
             assert.equal(new URL(page.url()).searchParams.get('settore'),sector);
@@ -874,12 +875,12 @@ async function run(engine,name,viewport,base) {
             assert.equal(await page.locator('#sector-filter').inputValue(),sector);
         }
         await page.selectOption('#province-filter','Lodi');
+        await page.locator('#extra-filters').evaluate(element => { element.open = true; });
         await page.selectOption('#sector-filter','antiquariato');
         await page.locator('[data-month="10"]').click();
         const antiqueLodi = events.filter(e => e.province === 'Lodi' && e.months.includes(10) && e.merchandiseSectors.includes('antiquariato'));
         await matches(antiqueLodi);
         assert(antiqueLodi.length > 0);
-        await page.locator('#extra-filters > summary').click();
         await page.selectOption('#type-filter','mercatino');
         await page.locator('#fair-search').fill('Codogno');
         await matches(antiqueLodi.filter(e => e.category === 'mercatino' && e.city === 'Codogno'));
@@ -1008,12 +1009,12 @@ async function run(engine,name,viewport,base) {
         await page.locator('#extra-filters > summary').click();
         await page.selectOption('#type-filter','tradizionale');
         await matches(events.filter(e => e.category === 'tradizionale' && e.months.some(m => [11,12,1,2].includes(m))));
-        assert.equal(await page.locator('#extra-filter-count').textContent(),'0');
+        assert.equal(await page.locator('#extra-filter-count').textContent(),'1');
         await page.locator('#extra-filters > summary').click();
-        assert.equal(await page.locator('#extra-filter-count').isVisible(),false);
+        assert.equal(await page.locator('#extra-filter-count').isVisible(),true);
         await page.reload();
         await matches(events.filter(e => e.category === 'tradizionale' && e.months.some(m => [11,12,1,2].includes(m))));
-        assert.equal(await page.locator('#extra-filter-count').isVisible(),false);
+        assert.equal(await page.locator('#extra-filter-count').isVisible(),true);
         await page.locator('#reset-filters').click();
         assert.equal(await page.locator('#extra-filter-count').isVisible(),false);
         await page.locator('#extra-filters > summary').click();

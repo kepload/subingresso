@@ -4,6 +4,18 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 19 ottobre 2026
 
+- **Fiere, filtri semplificati 19/10:** principali Quando, Dove e Tipologia
+  di articolo. Cosa vendi e Tipo di evento spostati in Altri filtri, con
+  indicatore dei filtri attivi anche a pannello chiuso. Menu ridotto da35
+  a24 scelte accorpando prodotti vicini;35 tipi documentali, fonti e voti
+  preservati. Selezione multipla, contatori senza duplicati, rimozione per
+  famiglia; vecchi URL precisi conservati. Menu allineato ai campi e sotto
+  l’header fisso. JS85/CSS30, dati invariati. Suite articoli locale passata
+  Chromium1440/820/320 e WebKit390; generale cinque formati, ricerca35
+  articoli su4.923 schede, settori e font/icone reali quattro casi passati.
+  Backup remoto preventivo verificato, noto errore cleanup PowerShell. Prove
+  `Documents/verifica-filtri-semplici-fiere-20261019/`; dettagli `data/FIERE.md`.
+
 - **Pisa conclusa e verificata online,19/10:**144 manifestazioni/36 comuni,
   copertura37; prima due. Catalogo4.923, due ID e altre4.779 schede preservati.
   Audit `data/fiere-pisa.json`, fonti/limiti `data/FIERE.md`, originali/prove
