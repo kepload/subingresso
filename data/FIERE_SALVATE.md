@@ -45,7 +45,7 @@ esecuzione e dry-run richiedono il bearer interno. Cron orario al minuto15:
 gli avvisi del giorno diventano dovuti dalle09 Europe/Rome; ritenti in coda
 per limiti/indisponibilità. Nessun nuovo annuncio attiva un promemoria.
 
-Prima dell'invio ricontrolla il catalogo/evento pubblicato. Una data ufficiale
+Prima dell'invio ricontrolla il catalogo/evento pubblicato. Una data pubblicata
 non più presente viene sospesa; le date pubblicate degli eventi organizzatore
 vengono riallineate conservando l'identità dell'evento e senza secondi invii.
 Le date personali restano dichiaratamente indicative.
@@ -74,7 +74,27 @@ e file estranei conservati. Backend applicato, worker fair-reminders ed
 email-unsubscribe distribuiti; cron attivo, credenziale soltanto in Vault,
 inaccessibile ad anon/authenticated. Esecuzione reale200 con zero destinatari
 e invii, chiamata senza credenziale401. SQL reale ripassato dopo applicazione,
-sempre ROLLBACK. Pubblicazione frontend da verificare.
+sempre ROLLBACK.
+
+Pubblicato `4dc4a2b`, Vercel READY `dpl_2nGPHs2oB52xC5ojs6QDeWLCrun8`.
+Otto asset online identici: calendario, dashboard, privacy, JS calendario,
+accesso e salvataggi, modello .mjs e CSS dedicato; MIME del modulo corretto.
+API reale saved-fairs senza sessione/invalida401, metodo405 e conferma
+disiscrizione200 senza modifiche. Tre prove anonime reali Chromium1440/320
+e WebKit390, font/icone, accesso/registrazione, annullo e fonti passate.
+Percorso completo sui file pubblicati passato Chromium1440/820/320 e
+WebKit390, account/SDK/backend simulati: inclusa registrazione reale come
+interfaccia, nessun salvataggio o avviso attivato automaticamente.
+Corretto soltanto il MIME HTML della fixture evento per WebKit online.
+Tracciamento Node File Trace verificato: modello e catalogo inclusi nella
+funzione, nessun warning; normalizzati separatori Windows nel controllo.
+Scansioni segreti superate; nessun account/evento/email reale di prova.
+Le email sono verificate con provider simulato; il worker reale è stato
+eseguito senza destinatari, non è stata inviata una mail di collaudo.
+
+Cache: JS calendario87, accesso2; saved-fairs JS/CSS1 e modello1. CSS
+calendario30, JSON59, data21 e preferiti annunci invariati. Registro e
+prova finale aggiornati dopo le verifiche online.
 
 Riferimenti: [Supabase, cron e Vault](https://supabase.com/docs/guides/functions/schedule-functions);
 [Resend, idempotenza24ore](https://resend.com/docs/dashboard/emails/idempotency-keys).

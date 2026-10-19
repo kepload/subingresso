@@ -11,10 +11,17 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   distinte, nessuna edizione futura inventata; anticipi passati respinti.
   Un invio per edizione, annullo e protezione cambio account/duplicati.
   Dettagli `data/FIERE_SALVATE.md`, prove
-  `Documents/verifica-fiere-promemoria-20261019/`. Backend/pubblicazione
-  in verifica. Backend applicato: worker e cron attivi, prova reale200 con
+  `Documents/verifica-fiere-promemoria-20261019/`. Pubblicato `4dc4a2b`,
+  Vercel READY `dpl_2nGPHs2oB52xC5ojs6QDeWLCrun8`, otto asset identici.
+  Backend applicato: worker e cron attivi, prova reale200 con
   zero destinatari/invii e401 anonimo; SQL ROLLBACK passato anche dopo.
-  Nessun account/evento o email reale di prova.
+  Percorso locale/online quattro formati passato con backend simulato,
+  inclusi registrazione, errori, profilo ed eventi organizzatore; tre prove
+  anonime reali passate. API401/405, moduli e bundle verificati; regressioni
+  fonti,4.923 pagine, profili280, eventi e calendario320 passate.
+  JS87/accesso2, saved-fairs/modello1. Nessun account/evento/email reale di
+  prova. Preferiti annunci e dati conservati, segreti verificati; backup
+  remoto valido con noto errore cleanup. Dettagli/limite prova email nella guida.
 
 - **Conversione fiere,19/10:** richiesta permanente: «Consulta la fonte»
   richiede registrazione/accesso; stesso percorso per date, tariffe,

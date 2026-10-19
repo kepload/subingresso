@@ -8,7 +8,12 @@ per edizione, retry/dedup e annullo, isolamento account. Nuova API saved-fairs,
 RPC e worker fair-reminders; dettagli data/FIERE_SALVATE.md, prove
 Documents/verifica-fiere-promemoria-20261019. Backend applicato, worker/cron
 attivi e verifica reale200 con0destinatari/invii; anonimo401 e SQL ROLLBACK
-passati. Pubblicazione frontend in verifica.
+passati. Pubblicato4dc4a2b, Vercel READY dpl_2nGPHs2oB52xC5ojs6QDeWLCrun8,
+otto asset identici. Percorso completo locale/online4formati con backend
+simulato, tre prove anonime reali e API401/405 passati; fonti,4.923pagine,
+profili280, eventi e calendario320 passati. Modello/catalogo inclusi nel
+bundle, MIME verificati, segreti passati; nessuna email reale di collaudo.
+JS87/accesso2, saved-fairs JS/CSS1/modello1; data21 e catalogo invariati.
 
 19/10/2026, preferiti reattivi richiesti: stato condiviso tra anteprime,
 dettaglio desktop/mobile e dashboard, ripristino dalla sessione dello stesso

@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded',()=>{document.getElementById('loadi
 </script></body>`);
 }
 async function invoke(handler, req) {
-    const result = { headers: {}, setHeader(k, v) { this.headers[k] = v; }, status(code) { this.code = code; return this; }, json(data) { this.body = JSON.stringify(data); this.headers['Content-Type'] = 'application/json'; }, send(body) { this.body = body; } };
+    const result = { headers: {}, setHeader(k, v) { this.headers[k] = v; }, status(code) { this.code = code; return this; }, json(data) { this.body = JSON.stringify(data); this.headers['Content-Type'] = 'application/json'; }, send(body) { this.body = body; if (!this.headers['Content-Type']) this.headers['Content-Type'] = 'text/html; charset=utf-8'; } };
     await handler(req, result); return result;
 }
 const server = http.createServer(async (req, res) => {
@@ -76,6 +76,7 @@ async function run(engine, name, width, height, base) {
         await context.route('**/*', async route => {
             const url = new URL(route.request().url());
             if (url.hostname === 'cdn.jsdelivr.net') return route.fulfill({ contentType: 'application/javascript', body: sdk });
+            if (url.pathname.endsWith('/functions/v1/register-bypass')) return route.fulfill({ json: { ok: true } });
             if (url.pathname.includes('/rest/v1/')) return route.fulfill({ json: url.pathname.endsWith('/published_organizer_events') ? [managed] : [] });
             if (url.origin === new URL(base).origin && url.pathname === '/dashboard') return route.fulfill({ contentType: 'text/html; charset=utf-8', body: dashboardFixture() });
             if (process.env.SAVED_FAIRS_BASE_URL && url.origin === new URL(base).origin && (url.pathname === '/api/saved-fairs' || url.pathname === '/evento')) {
@@ -161,6 +162,13 @@ async function run(engine, name, width, height, base) {
         stage = 'logout'; await page.evaluate(() => qaIdentity(null));
         await page.waitForFunction(() => document.querySelector('[data-saved-fairs-list]').textContent.includes('Accedi'));
         assert.equal(await page.locator('.sf-card').count(), 0); assert.equal(state.writes.length, before);
+        stage = 'registration'; await page.goto(base + '/fiere/' + sample.id);
+        await page.locator('[data-save-fair]').click(); await page.locator('#registerForm').waitFor({ state: 'visible' });
+        await page.locator('#regNome').fill('Prova'); await page.locator('#regCognome').fill('Promemoria');
+        await page.locator('#regEmail').fill('qa@example.invalid'); await page.locator('#regPassword').fill('fixture-password');
+        await page.locator('#registerBtn').click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
+        assert.equal(state.writes.length, before, 'Registration resumes the chosen fair without saving or subscribing automatically');
+        await page.keyboard.press('Escape');
         assert.deepEqual(errors, []);
         console.log(name + ' ' + width + ': real auth/resume/cancel, save without email, 5/12 months, past dates, personal dates, duplicate clicks, retry, profile persistence, organizer page/calendar, account isolation, disable/remove/logout and overflow passed');
         await context.close();
