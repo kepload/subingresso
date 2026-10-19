@@ -42,7 +42,7 @@ const server=http.createServer((req,res)=>{
     }
     const file=path.join(root,url.pathname==='/fiere'?'fiere.html':url.pathname);
     if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end();}
-    fs.readFile(file,(error,data)=>{if(error){res.writeHead(404);return res.end();}res.setHeader('Content-Type',file.endsWith('.css')?'text/css':file.endsWith('.js')?'application/javascript':file.endsWith('.json')?'application/json':'text/html');res.end(data);});
+    fs.readFile(file,(error,data)=>{if(error){res.writeHead(404);return res.end();}res.setHeader('Content-Type',file.endsWith('.css')?'text/css':(file.endsWith('.js')||file.endsWith('.mjs'))?'application/javascript':file.endsWith('.json')?'application/json':'text/html');res.end(data);});
 });
 (async()=>{
     const oldFetch=global.fetch;

@@ -788,7 +788,7 @@ const server = http.createServer((req,res) => {
     if (!path.extname(file)) file += '.html';
     const full = path.resolve(root,file);
     if (!full.startsWith(root + path.sep)) return res.writeHead(403).end();
-    res.setHeader('Content-Type', ({'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json'})[path.extname(full)] || 'text/plain');
+    res.setHeader('Content-Type', ({'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json'})[path.extname(full)] || 'text/plain');
     if (['js/supabase-config.js','js/page-view-tracker.js','js/auth.js'].includes(file)) return res.end('');
     fs.readFile(full, (error,data) => error ? res.writeHead(404).end() : res.end(data));
 });

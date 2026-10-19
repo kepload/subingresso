@@ -59,13 +59,14 @@
             activeAuth = null;
             restore();
             session().then(refresh).catch(() => {});
-            if (request) openSource(request, trigger);
+            if (request?.callback) request.callback();
+            else if (request) openSource(request, trigger);
         };
         activeAuth = { callback, restore };
         window.__onLoginSuccess = callback;
-        window.openAuthModal(tab, request
+        window.openAuthModal(tab, request?.context || (request
             ? 'Registrati gratis o accedi per consultare la fonte e verificare come partecipare. Dopo l’accesso apriamo la fonte che hai scelto.'
-            : 'Crea il tuo account gratuito: consulta le fonti delle fiere e, dal profilo, attiva gli avvisi per bandi e posteggi nella tua zona.', 'direct');
+            : 'Crea il tuo account gratuito: consulta le fonti delle fiere e, dal profilo, attiva gli avvisi per bandi e posteggi nella tua zona.'), 'direct');
         // The site's auth modal is outside the native fair dialog's top layer.
         const overlay = document.getElementById('authOverlay');
         overlay.setAttribute('role', 'dialog');
@@ -151,7 +152,7 @@
         const query = new URLSearchParams(location.search);
         if (query.has('iscrizione')) signup('register', null, document.querySelector('[data-fiere-register]'));
     }
-    window.FiereAccess = { prepare, fallback, resume(event) {
+    window.FiereAccess = { prepare, fallback, authenticate(callback, trigger, context) { signup('register', { callback, context }, trigger); }, resume(event) {
         const query = new URLSearchParams(location.search), url = query.get('fonte');
         if (query.get('fiera') !== event.id || !url || !/^https:\/\//i.test(url)) return;
         query.delete('fiera'); query.delete('fonte');

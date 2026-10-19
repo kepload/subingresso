@@ -118,6 +118,7 @@
     </style>
     <link rel="stylesheet" href="css/vetrina-account.css?v=1">
     <link rel="stylesheet" href="css/profile-switch.css?v=3">
+    <link rel="stylesheet" href="css/saved-fairs.css?v=1">
     <link rel="stylesheet" href="css/vetrina-conversion.css?v=2">
     <link rel="stylesheet" href="css/eventi.css?v=4">
 </head>
@@ -761,6 +762,7 @@
                     <span class="dashboard-tab-description">Annunci salvati</span>
                 </span>
             </button>
+            <button id="tabFiere" type="button" class="dashboard-tab" data-tab="fiere" onclick="showTab('fiere')" role="tab" aria-selected="false" aria-controls="sectionFiere" tabindex="-1"><span class="dashboard-tab-icon" aria-hidden="true"><i class="fas fa-calendar-alt"></i></span><span class="dashboard-tab-copy"><span class="dashboard-tab-title">Le mie fiere <span id="savedFairsBadge" class="dashboard-tab-count hidden"></span></span><span class="dashboard-tab-description">Salvati e promemoria</span></span></button>
             <button id="tabValutazioni" type="button" class="dashboard-tab" data-tab="valutazioni" onclick="showTab('valutazioni')"
                 role="tab" aria-selected="false" aria-controls="sectionValutazioni" tabindex="-1">
                 <span class="dashboard-tab-icon" aria-hidden="true"><i class="fas fa-calculator"></i></span>
@@ -858,6 +860,8 @@
             </div>
         </div>
 
+
+        <div id="sectionFiere" class="dashboard-panel hidden" role="tabpanel" aria-labelledby="tabFiere" tabindex="0"><div class="dashboard-panel-header"><div><h2 class="dashboard-panel-title">Le mie fiere</h2><p class="dashboard-panel-description">Le fiere che hai scelto e i tuoi promemoria per controllare l’iscrizione.</p></div><a class="dashboard-panel-action" href="/fiere">Esplora le fiere →</a></div><div class="sf-list" data-saved-fairs-list aria-live="polite"><p class="sf-empty">Caricamento delle fiere salvate…</p></div></div>
 
         <!-- ── TAB: Alert ── -->
         <div id="sectionAlert" class="dashboard-panel hidden" role="tabpanel" aria-labelledby="tabAlert" tabindex="0">
@@ -1261,6 +1265,8 @@
 <script src="js/valuation.js?v=7"></script>
 <script src="js/vetrina-account.js?v=2"></script>
 <script src="js/auth.js?v=22"></script>
+<script src="js/fiere-access.js?v=2"></script>
+<script type="module" src="js/saved-fairs.js?v=1"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <link rel="stylesheet" href="css/admin-control-room.css?v=2">
 <script src="js/admin-control-room.js?v=2"></script>
@@ -1352,6 +1358,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     document.getElementById('userEmailDisplay').textContent = user.email;
     VetrinaAccount.fillProfile(user);
+    window.SavedFairs?.start(user);
     ProfileSwitcher.setBaseline();
     ProfileSwitcher.startDashboard(user);
     if (new URLSearchParams(location.search).get('profilo') === '1') {
@@ -1369,7 +1376,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Auto-tab da hash URL (es. dashboard.html#valutazioni dopo signup dal valutatore)
     const tabFromHash = (location.hash || '').replace('#', '');
-    if (['preferiti', 'valutazioni', 'alert', 'pagamenti', 'statistiche', 'stats'].includes(tabFromHash)) {
+    if (['preferiti', 'fiere', 'valutazioni', 'alert', 'pagamenti', 'statistiche', 'stats'].includes(tabFromHash)) {
         if (tabFromHash === 'statistiche' || tabFromHash === 'stats') {
             document.getElementById('sellerAnalyticsPanel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -2994,7 +3001,7 @@ let _alertsLoaded = false;
 let _sellerAnalyticsLoaded = false;
 
 function showTab(tab) {
-    const sectionMap = { annunci: 'sectionAnnunci', preferiti: 'sectionPreferiti', valutazioni: 'sectionValutazioni', alert: 'sectionAlert', pagamenti: 'sectionPagamenti' };
+    const sectionMap = { annunci: 'sectionAnnunci', preferiti: 'sectionPreferiti', fiere: 'sectionFiere', valutazioni: 'sectionValutazioni', alert: 'sectionAlert', pagamenti: 'sectionPagamenti' };
     if (!Object.prototype.hasOwnProperty.call(sectionMap, tab)) return;
     Object.entries(sectionMap).forEach(([t, id]) => {
         const section = document.getElementById(id);
@@ -3008,6 +3015,7 @@ function showTab(tab) {
     });
 
     if (tab === 'pagamenti') VetrinaAccount.load();
+    if (tab === 'fiere') { window.SavedFairs?.render(); window.SavedFairs?.load(); }
     if (tab === 'alert' && !_alertsLoaded) {
         _alertsLoaded = true;
         loadMyAlerts();

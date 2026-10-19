@@ -4,6 +4,18 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 19 ottobre 2026
 
+- **Fiere salvate/promemoria,19/10:** approvato sviluppo della sola fiera
+  scelta, con mesi personalizzati anche5/12; supera la proposta di ricerche
+  e riepiloghi su molte fiere. Salva senza email oppure avviso esplicito,
+  gestione «Le mie fiere» nella dashboard. Date pubblicate/personali
+  distinte, nessuna edizione futura inventata; anticipi passati respinti.
+  Un invio per edizione, annullo e protezione cambio account/duplicati.
+  Dettagli `data/FIERE_SALVATE.md`, prove
+  `Documents/verifica-fiere-promemoria-20261019/`. Backend/pubblicazione
+  in verifica. Backend applicato: worker e cron attivi, prova reale200 con
+  zero destinatari/invii e401 anonimo; SQL ROLLBACK passato anche dopo.
+  Nessun account/evento o email reale di prova.
+
 - **Conversione fiere,19/10:** richiesta permanente: «Consulta la fonte»
   richiede registrazione/accesso; stesso percorso per date, tariffe,
   partecipazione e altre fonti. Invito gratuito prima delle schede e nelle

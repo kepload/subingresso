@@ -68,6 +68,13 @@ Deno.serve(async (req) => {
       });
     }
 
+    if (type === 'all') {
+      const stopped = await supabase.rpc('stop_fair_reminders', { p_user_id: data[0].id });
+      if (stopped.error) return new Response(JSON.stringify({ ok: false, error: 'Riprova per completare la disattivazione dei promemoria.' }), {
+        status: 503, headers: { ...CORS, 'Content-Type': 'application/json' }
+      });
+    }
+
     return new Response(JSON.stringify({ ok: true, type }), {
       status: 200, headers: { ...CORS, 'Content-Type': 'application/json' }
     });

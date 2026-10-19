@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/css/fiere.css?v=30">
     <link rel="stylesheet" href="/css/fiere-access.css?v=1">
+    <link rel="stylesheet" href="/css/saved-fairs.css?v=1">
 </head>
 <body class="text-slate-900">
 <a class="fiere-skip" href="#calendario">Vai al calendario</a>
@@ -82,7 +83,7 @@
             <p class="fiere-map-credit">Puntini sul comune, non sull’ingresso della fiera. Confini: <a href="https://github.com/guglielmo/geojson-italy" target="_blank" rel="noopener noreferrer">ISTAT / geojson-italy</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>, semplificati.</p></details>
         </section>
         <section class="fiere-list-panel" aria-labelledby="list-title"><div class="fiere-panel-heading"><h2 id="list-title">Fiere</h2><span id="list-count" class="fiere-count">…</span></div><section class="fiere-access" data-fiere-guest aria-labelledby="fiere-access-title">
-        <div class="fiere-access-copy"><span class="fiere-access-kicker">Gratis per gli ambulanti</span><h2 id="fiere-access-title">La prossima fiera può diventare il tuo prossimo incasso.</h2><p>Prima di partire con il banco, controlla date, costi indicati e come partecipare. Registrati gratis per aprire le fonti raccolte.</p><ul><li>Fonti di Comuni e organizzatori</li><li>Avvisi per bandi e posteggi da attivare nel profilo</li><li>Un solo account per fiere e annunci</li></ul></div>
+        <div class="fiere-access-copy"><span class="fiere-access-kicker">Gratis per gli ambulanti</span><h2 id="fiere-access-title">La prossima fiera può diventare il tuo prossimo incasso.</h2><p>Prima di partire con il banco, controlla date, costi indicati e come partecipare. Registrati gratis per aprire le fonti raccolte.</p><ul><li>Fonti di Comuni e organizzatori</li><li>Avvisi per bandi e posteggi da attivare nel profilo</li><li>Salva le fiere e scegli quando ricevere un promemoria</li></ul></div>
         <div class="fiere-access-actions"><a href="/fiere?iscrizione=1" class="fiere-access-register" data-fiere-register>Registrati gratis e consulta le fonti</a><a href="/fiere?iscrizione=1" class="fiere-access-login" data-fiere-login>Hai già un account? Accedi</a><small>Nessun abbonamento.</small></div>
     </section><div id="fair-list" class="fiere-list" aria-busy="true"></div><div id="empty-results" class="fiere-empty" hidden><span aria-hidden="true">⌕</span><h3>Nessuna fiera trovata</h3><p>Prova un altro settore, mese o zona.</p><button id="empty-reset" type="button" class="fiere-button">Azzera filtri</button></div><button id="load-more" type="button" class="fiere-more" hidden>Mostra altre fiere</button></section>
     </div>
@@ -94,6 +95,7 @@
 <dialog id="fair-dialog" class="fiere-dialog" aria-labelledby="detail-title">
     <div class="fiere-dialog-top"><span id="detail-category" class="fiere-tag"></span><button id="close-detail" type="button" aria-label="Chiudi la scheda">×</button></div>
     <h2 id="detail-title"></h2><p id="detail-location"></p><p><a id="detail-page-link">Apri la pagina della fiera →</a></p><p id="detail-description" hidden></p>
+    <button id="detail-save-fair" type="button" class="saved-fair-button" data-save-fair>☆ Salva questa fiera</button>
     <section id="detail-attendance" class="fiere-detail-info" hidden></section>
     <section class="fiere-detail-info"><h3>Date delle edizioni</h3><div id="detail-editions" class="fiere-editions"></div><p id="detail-editions-empty">La prossima edizione non ha ancora una data pubblicata in questa scheda. Consulta la fonte o contatta l’organizzatore.</p></section>
     <div class="fiere-detail-period"><span>MESI DI RIFERIMENTO</span><strong id="detail-months"></strong><p id="detail-frequency"></p></div>
@@ -119,7 +121,8 @@
 <script src="/js/data.js?v=21"></script>
 <script src="/js/auth.js?v=22"></script>
 <script src="/js/event-data.js?v=1"></script>
-<script src="/js/fiere-access.js?v=1"></script>
-<script src="/js/pages/fiere.js?v=86"></script>
+<script src="/js/fiere-access.js?v=2"></script>
+<script src="/js/pages/fiere.js?v=87"></script>
+<script type="module" src="/js/saved-fairs.js?v=1"></script>
 </body>
 </html>

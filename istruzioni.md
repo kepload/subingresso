@@ -1,5 +1,15 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, richiesta approvata fiere salvate: singola fiera e promemoria
+personale a mesi scelti, inclusi5/12, al posto di ricerche/digest su molte
+fiere. Salvataggio senza email o avviso esplicito; dashboard «Le mie fiere».
+Date pubblicate/personali distinte, anticipi passati respinti; singolo invio
+per edizione, retry/dedup e annullo, isolamento account. Nuova API saved-fairs,
+RPC e worker fair-reminders; dettagli data/FIERE_SALVATE.md, prove
+Documents/verifica-fiere-promemoria-20261019. Backend applicato, worker/cron
+attivi e verifica reale200 con0destinatari/invii; anonimo401 e SQL ROLLBACK
+passati. Pubblicazione frontend in verifica.
+
 19/10/2026, preferiti reattivi richiesti: stato condiviso tra anteprime,
 dettaglio desktop/mobile e dashboard, ripristino dalla sessione dello stesso
 utente verificato e controllo API in background. Nessun falso non-salvato:

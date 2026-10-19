@@ -802,6 +802,10 @@
         $('detail-category').dataset.category = event.category;
         $('detail-title').textContent = event.name;
         $('detail-page-link').href = event.managedEventId ? '/evento?id=' + encodeURIComponent(event.managedEventId) : '/fiere/' + encodeURIComponent(event.id);
+        const saveFair = $('detail-save-fair');
+        saveFair.dataset.fairKind = event.managedEventId ? 'organizer' : 'catalog';
+        saveFair.dataset.fairId = event.managedEventId || event.id;
+        global.SavedFairs?.setFair(saveFair, saveFair.dataset.fairKind, saveFair.dataset.fairId);
         $('detail-location').textContent = event.city + ' · ' + event.province;
         $('detail-months').textContent = periodLabel(event);
         $('detail-frequency').textContent = event.frequencyNote || '';

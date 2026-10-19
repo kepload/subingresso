@@ -40,7 +40,7 @@ const server=http.createServer(async(req,res)=>{try{const url=new URL(req.url,'h
  if(url.pathname==='/evento'){return eventHandler({query:{id:url.searchParams.get('id')}},{setHeader:(k,v)=>res.setHeader(k,v),status(code){res.statusCode=code;return this;},send(body){res.end(body);}});}
  let file=url.pathname.replace(/^\//,'');if(file==='organizzatore'||file==='fiere')file+='.html';
  const target=path.resolve(root,file);if(!target.startsWith(root+path.sep)){res.statusCode=403;return res.end('Forbidden');}if(!fs.existsSync(target)){res.statusCode=404;return res.end('missing');}
- res.setHeader('Content-Type',file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':file.endsWith('.json')?'application/json':file.endsWith('.svg')?'image/svg+xml':'text/html; charset=utf-8');res.end(publishedAssets?.get(file)||fs.readFileSync(target));
+ res.setHeader('Content-Type',(file.endsWith('.js')||file.endsWith('.mjs'))?'text/javascript':file.endsWith('.css')?'text/css':file.endsWith('.json')?'application/json':file.endsWith('.svg')?'image/svg+xml':'text/html; charset=utf-8');res.end(publishedAssets?.get(file)||fs.readFileSync(target));
  }catch(error){res.statusCode=500;res.end(error.message);}});
 const field=(page,form,name)=>page.locator('#'+form+' [name="'+name+'"]');
 const noOverflow=async(page,label)=>assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,label);
