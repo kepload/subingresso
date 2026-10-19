@@ -4,6 +4,22 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 19 ottobre 2026
 
+- **Pistoia conclusa e verificata online,19/10:**117 manifestazioni/19 comuni,
+  copertura20; prima zero e nessun audit precedente. Catalogo5.040, altre4.923
+  schede identiche. Audit `data/fiere-pistoia.json`, fonti/limiti `data/FIERE.md`;
+  331 ricevute,23 esclusioni,112 date puntuali, due periodi, tre ricorrenze,
+  dieci schede solo2025, cinque costi e cinque termini documentati.
+  Pubblicato `2f3c578`, Vercel READY `dpl_GBbP1kUHzxgUKdHHgchiRUzM2Ubn`:
+  quattro asset identici,117 pagine HTTP200 H1/canonical, suite provinciale
+  locale/online Chromium1440/320 e WebKit390 passata; generale cinque
+  formati, settori e5.040 pagine/2.103 sitemap passati. JS88/JSON60.
+  Originali/prove `Documents/ricerca-fiere-pistoia-20261019`; copia
+  `ricerche-fiere-20261019-200640`:37.540 file SHA256 verificati, zero errori,
+  manifest controllato e supplemento finale. Limiti Montale/Monsummano,
+  Chiesina senza data certa e storici natalizi espliciti; futuro distinto.
+  Nuovi commit fiere salvate e file estranei preservati, nessun contatto a terzi.
+  TO DO spuntata dopo esito verificato:39 concluse/71 da fare.
+
 - **Fiere salvate/promemoria,19/10:** approvato sviluppo della sola fiera
   scelta, con mesi personalizzati anche5/12; supera la proposta di ricerche
   e riepiloghi su molte fiere. Salva senza email oppure avviso esplicito,
@@ -972,7 +988,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 38 province completate, 72 da fare su 110**, aggiornate il 19 ottobre dopo Pisa. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 39 province completate, 71 da fare su 110**, aggiornate il 19 ottobre dopo Pistoia. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -1059,7 +1075,28 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
   originali Pomarance/Castello in Fiore se tornano accessibili, conferme dei
   giorni di banco e nuove edizioni. Manutenzione futura distinta dalla ricerca
   attuale chiusa con limiti; non richiede attesa di nuovi atti o altre province.
-- [ ] **32. Pistoia** — Toscana
+- [x] **32. Pistoia** — Toscana; ricerca documentale corrente conclusa e verificata online il 19 ottobre 2026.
+  117 manifestazioni in19 comuni, copertura nominativa20; prima zero.
+  Catalogo5.040, altre4.923 schede identiche. Audit `data/fiere-pistoia.json`
+  e `data/FIERE.md`:331 ricevute originali,23 gruppi di esclusioni, limiti
+  espliciti e manutenzione futura separata.112 date puntuali, due periodi,
+  tre ricorrenze, dieci schede solo2025; cinque costi e cinque termini.
+  Pistoia ammesse/calendario distinte da autorizzazioni; Chiesina nessun
+  giorno certo, Montale allegati piano non disponibili anche nel browser,
+  albo Monsummano500: nessun dato inventato né garanzia di censimento.
+  Pubblicato `2f3c578`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/GBbP1kUHzxgUKdHHgchiRUzM2Ubn);
+  quattro asset identici e117 pagine HTTP200 H1/canonical. Suite Pistoia
+  locale/online con PLAYWRIGHT_MODULE Chromium1440/320 e WebKit390;
+  generale cinque formati, settori,5.040 pagine/2.103 sitemap passati.
+  Originali/prove `Documents/ricerca-fiere-pistoia-20261019`; copia
+  `ricerche-fiere-20261019-200640`,37.540 file SHA256, zero errori,
+  manifest controllato e supplemento finale. JS88/JSON60, segreti verificati.
+  Nessun contatto a terzi; file estranei e nuovi commit fiere salvate preservati.
+- [ ] **Pistoia — verifiche periodiche**: nuove edizioni, Natale2026 dove ancora
+  non pubblicato, bandi/quote e disponibilità reali; eventuali nuovi allegati
+  Montale, ripristino albo Monsummano, autorizzazioni/riserve Pistoia e
+  affidamento Frittella di Riso Chiesina. Manutenzione futura distinta
+  dalla ricerca corrente conclusa; non richiede attesa di nuovi atti.
 - [ ] **33. Genova** — Liguria
 - [ ] **34. Alessandria** — Piemonte
 - [ ] **35. Asti** — Piemonte

@@ -1,5 +1,23 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, Pistoia conclusa e verificata:117 manifestazioni/19 comuni,
+copertura20; prima zero e nessun audit. Catalogo5.040, altre4.923 schede
+identiche. Audit data/fiere-pistoia.json e data/FIERE.md:331 ricevute,
+23 esclusioni,112 date puntuali, due periodi, tre ricorrenze, dieci schede
+solo2025, cinque costi e cinque termini. Ammissione calendario Pistoia non
+autorizzazione; riserve senza conferma escluse. Chiesina senza data certa;
+Montale piano2026 votato ma allegati non accessibili anche nel browser,
+albo Monsummano500; limiti e futuro distinti. Originali e prove fuori repo
+Documents/ricerca-fiere-pistoia-20261019; copia ricerche-fiere-20261019-200640
+con37.540 file SHA256 verificati, zero errori, manifest e supplemento finale.
+Pubblicato2f3c578, Vercel READY dpl_GBbP1kUHzxgUKdHHgchiRUzM2Ubn:
+quattro asset identici,117 pagine HTTP200 H1/canonical. Test provinciale
+locale/online Chromium1440/320 e WebKit390, generale cinque formati,
+settori e5.040 pagine/2.103 sitemap passati. JS88/JSON60; PLAYWRIGHT_MODULE
+e FIERE_PT_BASE_URL/FIERE_PT_OUT nel test dedicato. Nuovi commit fiere
+salvate preservati, estranei esclusi; nessun contatto a terzi. TO DO spuntata
+dopo verifica:39 province concluse/71 rimanenti.
+
 19/10/2026, richiesta approvata fiere salvate: singola fiera e promemoria
 personale a mesi scelti, inclusi5/12, al posto di ricerche/digest su molte
 fiere. Salvataggio senza email o avviso esplicito; dashboard «Le mie fiere».

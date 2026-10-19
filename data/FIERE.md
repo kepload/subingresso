@@ -1,9 +1,9 @@
 # Calendario fiere — fonti e aggiornamento
 
-## Pistoia — ricerca documentale corrente, 19 ottobre 2026
+## Pistoia — ricerca documentale conclusa e verificata online, 19 ottobre 2026
 
-Ricerca chiusa con limiti espliciti; pubblicazione e verifica online ancora
-da registrare. **117 manifestazioni in 19 comuni**, copertura nominativa
+Ricerca chiusa con limiti espliciti, pubblicata e verificata in
+[/fiere?provincia=Pistoia](https://subingresso.it/fiere?provincia=Pistoia). **117 manifestazioni in 19 comuni**, copertura nominativa
 di tutti i **20 comuni**. Al checkpoint `80031bb` non erano presenti né
 audit provinciale né schede Pistoia: ripresa dal catalogo corrente e da
 questo registro, senza rifare ricerche provinciali già concluse.
@@ -103,6 +103,25 @@ Cache calendario **JS88/JSON60**. Test dedicato
 `FIERE_PT_BASE_URL` e salva esiti con `FIERE_PT_OUT`: preservazione altre
 province, eccezioni documentali, elenco/mappa117,13 dialog date/costi/fonti,
 tre formati Chromium1440/320 e WebKit390, pagine senza JavaScript.
+
+Pubblicato **`2f3c578`**, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/GBbP1kUHzxgUKdHHgchiRUzM2Ubn),
+`dpl_GBbP1kUHzxgUKdHHgchiRUzM2Ubn`, dominio `subingresso.it`.
+Quattro asset identici ai blob del commit; **117 pagine HTTP200**, H1 e
+canonical corretti. Suite provinciale **locale e online** passata
+Chromium1440/320 e WebKit390: elenco/mappa117,13 dialog per caso,
+costi/fonti e quattro pagine senza JavaScript per caso, nessun overflow.
+Build, settori, **5.040 pagine/2.103 sitemap** e suite generale cinque
+formati passati;331 originali/ricevute verificati SHA256, nessun errore.
+Scansioni gitleaks standalone e pre-commit passate. Nessuna scrittura di
+prova, account o invio email. File estranei conservati ed esclusi dai commit.
+Backup preventivo remoto `backup/session-20261019-213732-fiere-pistoia`
+e branch `backup/pre-pistoia-20261019` verificati; noto errore del cleanup
+PowerShell non impedisce la creazione del checkpoint remoto.
+Copia `ricerche-fiere-20261019-200640`: **37,540 file**,
+**6,739,558,521 byte**, impronte SHA256 verificate, **zero errori**;
+manifest e sua impronta ricontrollati. Supplemento finale Pistoia conservato
+separatamente con documenti e prove aggiornati, senza alterare lo snapshot.
+TO DO aggiornata soltanto dopo verifica positiva: **39 concluse,71 da fare**.
 
 ## Iscrizione e consultazione delle fonti — 19 ottobre 2026
 
