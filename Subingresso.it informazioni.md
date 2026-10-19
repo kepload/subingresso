@@ -4,6 +4,19 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 19 ottobre 2026
 
+- **Pisa conclusa e verificata online,19/10:**144 manifestazioni/36 comuni,
+  copertura37; prima due. Catalogo4.923, due ID e altre4.779 schede preservati.
+  Audit `data/fiere-pisa.json`, fonti/limiti `data/FIERE.md`, originali/prove
+  `Documents/ricerca-fiere-pisa-20261019`.458 ricevute,22 gruppi di esclusioni,
+  128 date puntuali, sei periodi, dieci ricorrenze;20 schede solo2025, quattro
+  costi originali/condizionati. Limiti documentali espliciti, futuro distinto.
+  Pubblicato `3d597fb`, Vercel riuscito: quattro asset identici e144 pagine
+  HTTP200 H1/canonical; suite Pisa locale/online Chromium1440/320 e WebKit390,
+  generale cinque formati, settori e4.923 pagine/2.237 sitemap passati.
+  JS84/JSON59; copia `ricerche-fiere-20261019-121306` con35,700 file
+  SHA256 verificati, zero errori e supplemento finale. Nessun contatto a terzi.
+  TO DO spuntata soltanto dopo verifica:38 concluse/72 da fare.
+
 - **Profili, correzione preferita 19/10:** nome pubblico **Ambulante** al
   posto di «Normale», anche nel modal e nei messaggi. Switch nella dashboard
   sotto il blocco avatar/saluto/email/modifica profilo e prima di Performance
@@ -906,7 +919,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 37 province completate, 73 da fare su 110**, aggiornate il 19 ottobre dopo Lucca. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 38 province completate, 72 da fare su 110**, aggiornate il 19 ottobre dopo Pisa. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -972,7 +985,27 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [ ] **Lucca — verifiche periodiche**: nuovi bandi, tariffe e disponibilità,
   calendari natalizi e conferme annuali, recupero futuro degli allegati
   oggi non accessibili. Manutenzione distinta dalla ricerca attuale conclusa.
-- [ ] **31. Pisa** — Toscana
+- [x] **31. Pisa** — Toscana; ricerca documentale corrente conclusa e verificata online il 19 ottobre 2026.
+  144 manifestazioni in 36 comuni, ricognizione di tutti i 37; prima due: +142.
+  Catalogo4.923, due ID e altre4.779 schede preservati. Audit
+  `data/fiere-pisa.json` e `data/FIERE.md`:458 ricevute,22 gruppi di esclusioni,
+  limiti espliciti e verifiche future separate.128 date puntuali, sei periodi,
+  dieci ricorrenze;20 schede soltanto2025. Quattro costi originali/condizionati.
+  Santa Maria a Monte: mercatino sospeso, nessuna ripresa presunta.
+  Pubblicato `3d597fb`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/GPr8axtneQmwZcBDNbLDkf22Bt1Q): quattro asset identici,
+  144 pagineHTTP200 H1/canonical. Suite Pisa locale/online con PLAYWRIGHT_MODULE
+  Chromium1440/320 e WebKit390; generale cinque formati, settori e
+  4.923 pagine/2.237 sitemap passati. Un timeout nazionale320 ripetuto con esito
+  positivo; nessuna modifica a logica o dati di altre province. JS84/JSON59.
+  Fonti/prove `Documents/ricerca-fiere-pisa-20261019`; nessun contatto a terzi.
+  Copia `ricerche-fiere-20261019-121306`: 35,700 file,
+  6,540,512,148 byte verificatiSHA256, zero errori; manifest controllato.
+  Supplemento finale con fonti e prove aggiornate conservato e verificato.
+- [ ] **Pisa — verifiche periodiche**: nuovi bandi, disponibilità, quote e Natale2026;
+  eventuale ripresa Pulci Santa Maria a Monte e avvio riuso Pontedera;
+  originali Pomarance/Castello in Fiore se tornano accessibili, conferme dei
+  giorni di banco e nuove edizioni. Manutenzione futura distinta dalla ricerca
+  attuale chiusa con limiti; non richiede attesa di nuovi atti o altre province.
 - [ ] **32. Pistoia** — Toscana
 - [ ] **33. Genova** — Liguria
 - [ ] **34. Alessandria** — Piemonte

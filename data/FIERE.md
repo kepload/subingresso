@@ -1,6 +1,6 @@
 # Calendario fiere — fonti e aggiornamento
 
-## Pisa — ricerca documentale corrente conclusa, pubblicazione in verifica, 19 ottobre 2026
+## Pisa — ricerca documentale conclusa e verificata online, 19 ottobre 2026
 
 144 manifestazioni in 36 comuni, prima due: 142 aggiunte. Catalogo nazionale
 4.923; entrambi gli ID precedenti e le altre 4.779 schede conservati identici
@@ -77,9 +77,25 @@ qualificante esclusi. Condizioni e disponibilità mancanti dichiarate.
 Piste documentali attuali chiuse con questi limiti; nuovi bandi, nuove edizioni,
 tariffe, eventuale ripresa Santa Maria a Monte e conferme dei programmi natalizi
 sono manutenzione futura distinta. Non occorre attendere nuovi documenti.
-Cache JS84/JSON59. TO DO e conteggio restano da aggiornare soltanto dopo la
-verifica della pubblicazione e del catalogo online. Copia completa delle ricerche
-avviata con `python scripts/backup-fiere-research.py`; esito da registrare.
+Cache JS84/JSON59. Build, settori,4.923 pagine/2.237 sitemap passati;
+suite Pisa locale e online Chromium1440/320 e WebKit390 con elenco/mappa,
+12 dialog date/costi/fonti e pagine senza JavaScript. Generale cinque formati
+passata; un timeout al passaggio mouse su Trento nel caso320 ripetuto positivo
+con lo stesso controllo, senza modifiche ai test o alla logica applicativa.
+Pubblicato `3d597fb`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/GPr8axtneQmwZcBDNbLDkf22Bt1Q): quattro asset
+identiciUTF8 e tutte le144 pagine HTTP200 con H1/canonical corretti.
+Prove `online-assets.json`, `online-pages.json`, `online-browser.json`,
+`general-regression.json`, `deployment-status.json` e `publication.json`.
+Controllo segreti passato senza bypass; file estranei preservati, commit con
+percorsi espliciti. TO DO spuntata dopo questi riscontri:38 concluse/72 da fare.
+
+Copia di conservazione completata con `python scripts/backup-fiere-research.py`:
+`Documents/backup-subingresso/ricerche-fiere-20261019-121306`,
+35,700 file, 6,540,512,148 byte, tutti verificatiSHA256,
+zero errori; manifest verificato `d7b9a72579d119db06b4f015f3a55d66fd3c4c1680440eb6b8eff40bf766235a`.
+Supplemento finale nuovo e verificato con fonti recuperate dopo l’avvio della
+copia, prove online e registrazione. Materiali disponibili sullo stesso
+computer: non copia remota; nessun archivio precedente sovrascritto o eliminato.
 
 ## Lucca — ricerca documentale conclusa e verificata online, 19 ottobre 2026
 

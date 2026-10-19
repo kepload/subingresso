@@ -1,5 +1,19 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, Pisa: ricerca documentale corrente conclusa e verificata online.
+144 manifestazioni/36 comuni, ricognizione37; prima2, catalogo4.923.
+Due ID e altre4.779 schede preservati. Audit data/fiere-pisa.json e data/FIERE.md:
+458 ricevute,22 gruppi esclusioni; limiti Pomarance/CastelloFiore espliciti,
+Volterra programma recuperato in browser e visionato.128 date,6periodi,
+10ricorrenze;20schede solo2025 e4costi condizionati/originali. Futuro separato.
+Pubblicato 3d597fb, Vercel riuscito;4asset identici e144 pagineHTTP200 con
+H1/canonical. Pisa locale/online Chromium1440/320 eWebKit390; generale5formati
+(timeout320 ripetuto positivo), settori e4.923 pagine/2.237 sitemap passati.
+JS84/JSON59;38province concluse/72da fare, spunta dopo verifica.
+Originali/prove Documents/ricerca-fiere-pisa-20261019; nessun contatto a terzi.
+Copia ricerche-fiere-20261019-121306: 35,700file,
+6,540,512,148byteSHA256 verificati, zero errori; supplemento finale.
+
 19/10/2026, correzione richiesta dei profili: nome pubblico Ambulante al
 posto di Normale. Switch sotto avatar/saluto/email/modifica profilo e prima
 di Performance posteggi, senza fissarlo alla pagina: scompare scorrendo.
