@@ -34,7 +34,18 @@ WebKit390 con font/icone reali;67 controlli320 sulla versione finale con
 contrasto/logo corretti. Percorso completo eventi passato Chromium1440/320
 e WebKit390, nessuna scrittura reale. HEAD SDK/API reale200 con conteggio
 esatto e filtro scadenza/NULL; workspace proprietario senza sessione401.
-Pubblicazione in corso. Backup remoto preventivo verificato;
+Pubblicato `880981b`, Vercel READY `dpl_99A1Gje1rLK7A3S9FBWfavmh2vyg`
+([deploy](https://vercel.com/kycykuardit-9234s-projects/subingresso/99A1Gje1rLK7A3S9FBWfavmh2vyg)).
+Quattro asset pubblicati identici byte per byte ai blob Git.268/268 controlli
+online (67×4) passati con backend simulato, inclusi ingresso automatico nelle
+dashboard, ritorno esplicito, link diretti, interazioni prima/durante l'attesa,
+modal e salvaguardie precedenti. Tre browser/formati con rete reale:
+Chromium1440/320 e WebKit390, colori scuri, logo scuro su header chiaro,
+font/logo coerenti con pagina standard, switch fisso fino al fondo pagina,
+registrazione standard e nessuna scrittura eseguita. Prove `asset-online.json`,
+`online/profili-online.json`, `anonimo-online.json`, schermate e API nella
+cartella indicata. Scansione segreti superata senza bypass.
+Backup remoto preventivo verificato;
 il cleanup locale del vecchio script ha il noto errore PowerShell.
 
 Preferenza dell’utente: utenza normale prevalente, registrazione semplice come prima; organizzatore scelto separatamente e sottoposto a controllo. «Il mio profilo» ora contiene un selettore di due schede (massimo360px,54px in altezza), Normale a sinistra e predefinito a ogni apertura, Organizzatore a destra, indicatore scorrevole. Clic, frecce/Home/End e swipe orizzontale sul selettore; scorrimento verticale non cambia modalità. Selettore fisso sopra il contenuto, pulsanti44px, focus nel dialogo/Escape/ritorno all’apertura, animazione disattivata con movimento ridotto. CSS e JS dedicati v1, nessuna modifica ad auth/registrazione o ruoli.

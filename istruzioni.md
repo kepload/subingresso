@@ -14,7 +14,10 @@ Anche l'ingresso ordinario /dashboard applica il confronto e apre direttamente
 altre query rispettati; interazione dell'utente annulla un rinvio tardivo.
 CSS/JS profile-switch2; profili264 controlli (66x4) nei quattro formati,
 controllo finale colori/logo320 con67 esiti e percorso eventi nei tre casi
-passati. API HEAD200/workspace anonimo401. Pubblicazione in corso; prove
+passati. API HEAD200/workspace anonimo401. Pubblicato880981b, Vercel READY
+dpl_99A1Gje1rLK7A3S9FBWfavmh2vyg; quattro asset identici ai blob e268/268
+controlli online (67x4) con backend simulato passati. Tre prove anonime reali
+colori/logo/font, switch e registrazione standard passate senza scritture; prove
 Documents/verifica-profili-default-colori-20261019.
 
 19/10/2026, Lucca: ricerca documentale conclusa e verificata online.

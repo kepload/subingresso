@@ -20,7 +20,11 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   CSS/JS selettore2. Controlli profili passati Chromium1440/820/320 e
   WebKit390, font/icone reali e contrasto finale320; percorso eventi passato
   Chromium1440/320 e WebKit390. API HEAD200 e workspace anonimo401 verificati.
-  Pubblicazione in corso. Prove
+  Pubblicato `880981b`, Vercel READY `dpl_99A1Gje1rLK7A3S9FBWfavmh2vyg`.
+  Quattro asset online identici ai blob;268/268 controlli sugli asset
+  pubblicati passati (67×4), backend simulato. Tre prove anonime reali su
+  desktop/telefono, colori/logo/font, switch fisso e registrazione passate;
+  nessuna scrittura o account/evento reale di prova. Prove
   `Documents/verifica-profili-default-colori-20261019/`.
 
 - **Lucca conclusa e verificata online, 19/10:** 127 manifestazioni/33 comuni,
