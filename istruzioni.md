@@ -11,8 +11,10 @@ CSS/JS profile-switch3, organizzatori6 in tutti i riferimenti. Lavoro nel
 checkout isolato Documents/subingresso-profili-ambulante-20261019 per non
 toccare la ricerca Pisa concorrente. Prove Documents/verifica-profili-ambulante-layout-20261019;
 280 controlli profili locali passati nei quattro casi, font/icone reali;
-flusso completo eventi passato Chromium1440/320 e WebKit390. Pubblicazione
-in corso. Checkpoint e branch preventivi remoti validi;
+flusso completo eventi passato Chromium1440/320 e WebKit390. Pubblicato
+a424f8a, Vercel READY dpl_8kpHtbcTy2XwpJGXWbPnAkJ2anWY; sei asset identici
+ai blob,70 controlli online320 e tre prove anonime reali Chromium1440/320 e
+WebKit390 passati senza scritture. Checkpoint e branch preventivi remoti validi;
 consueto errore cleanup PowerShell.
 
 19/10/2026, aggiornamento profili: predefinito ricalcolato all'apertura da

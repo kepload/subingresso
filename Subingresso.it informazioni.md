@@ -14,7 +14,10 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   conservati. Questa preferenza sostituisce nome e posizione fissa sotto.
   CSS/JS selettore3, organizzatori6.280 controlli profili locali passati
   Chromium1440/820/320 e WebKit390, con font/icone reali; flusso completo
-  eventi passato Chromium1440/320 e WebKit390. Pubblicazione in corso.
+  eventi passato Chromium1440/320 e WebKit390. Pubblicato `a424f8a`,
+  Vercel READY `dpl_8kpHtbcTy2XwpJGXWbPnAkJ2anWY`: sei asset identici
+  ai blob,70 controlli sull’HTML/JS pubblicato320 e tre prove anonime reali
+  Chromium1440/320 e WebKit390 passati. Nessuna scrittura reale.
   Checkout isolato `Documents/subingresso-profili-ambulante-20261019`, prove
   `Documents/verifica-profili-ambulante-layout-20261019/`; ricerca Pisa
   concorrente preservata. Tag e branch preventivi remoti creati, noto errore

@@ -20,8 +20,16 @@ locali passati (70×4, Chromium1440/820/320 e WebKit390), con font/icone reali.
 Verificata posizione tra saluto e Performance, scomparsa scorrendo nelle
 due dashboard, nome, assenza pulsanti duplicati e ritorno dal solo switch;
 predefiniti, modal e salvataggi conservati. Flusso completo eventi passato
-Chromium1440/320 e WebKit390. Pubblicazione in corso, nessuna scrittura reale
-o modifica ai dati della ricerca Pisa concorrente.
+Chromium1440/320 e WebKit390. Pubblicato `a424f8a`, Vercel READY
+`dpl_8kpHtbcTy2XwpJGXWbPnAkJ2anWY`: sei asset pubblicati identici byte per
+byte ai blob Git,70 controlli passati anche su HTML/JS/CSS pubblicati320,
+backend simulato. Tre prove anonime su rete reale Chromium1440/320 e
+WebKit390: nome Ambulante, link dello switch, scorrimento nel documento,
+assenza dei due pulsanti, colori/font/logo e registrazione standard passati.
+Nessun errore JS/overflow o scrittura reale, dati Pisa concorrenti conservati.
+Prove `asset-online.json`, `pubblicazione.json`, `online/profili-online.json`,
+`anonimo-online.json`, risultati locali e schermate. Scansioni segreti
+superate senza bypass; checkpoint e branch remoto validi.
 
 **Aggiornamento corrente del 19/10, prevale sulla descrizione iniziale sotto:**
 Normale mantiene i colori chiari; Organizzatore usa blu notte, testi chiari
