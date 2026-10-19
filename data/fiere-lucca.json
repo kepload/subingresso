@@ -3719,7 +3719,7 @@
       "Originali, testi, ricerche web e tentativi tecnici conservati esternamente; le ricevute pubbliche selezionano documenti pertinenti. I download automatici includono navigazione non usata, non sono conteggio di fonti lette integralmente."
     ],
     "openLeads": [],
-    "closureCriteria": "Piste nominate riesaminate con originali o alternative effettivamente tentate; nessun dato mancante inventato, ricorrenze e storici distinti dalle date annuali. Restano limiti documentali dichiarati, non attività correnti sospese in attesa di futuri bandi. Pubblicazione da verificare separatamente prima della spunta TO DO.",
+    "closureCriteria": "Piste nominate riesaminate con originali o alternative effettivamente tentate; nessun dato mancante inventato, ricorrenze e storici distinti dalle date annuali. Restano limiti documentali dichiarati, non attività correnti sospese in attesa di futuri bandi. Pubblicazione e verifiche online concluse; spunta TO DO successiva all’esito positivo registrato.",
     "futurePeriodicChecks": [
       "Nuovi calendari natalizi e conferme annuali delle ricorrenze",
       "Nuovi bandi, graduatorie, disponibilità e tariffe del singolo espositore",
@@ -3732,6 +3732,21 @@
       "withExactDates": 74,
       "withEditionInformation": 77,
       "withDocumentedPrices": 4
+    },
+    "publication": {
+      "dataCommit": "f0dc8ce904687303ebfa160460e25c76825b8ec4",
+      "deploymentId": "dpl_AKTR6nSusVUNyHD8PWWSfwpNpa6i",
+      "deploymentStatus": "READY",
+      "verifiedAt": "2026-10-19T02:44:42.386359+00:00",
+      "assetsIdentical": 4,
+      "pagesHTTP200WithCorrectH1Canonical": 127,
+      "browser": "Chromium1440/320 and WebKit390;127 cards/map,12 dialogs and no-JS pages passed",
+      "researchSnapshot": "C:\\Users\\utente\\Documents\\backup-subingresso\\ricerche-fiere-20261019-022950",
+      "snapshotFiles": 34729,
+      "snapshotBytes": 6398564547,
+      "manifestSHA256": "fb6724b386a6890d45fc79e31e96bd670431e6bd93e1ea18e7749291b33ee022",
+      "scope": "Lucca only; no changes to other provincial event rows; no third-party communications",
+      "limits": "Research closed with explicit documentary limits; future periodic checks separate."
     }
   },
   "events": [

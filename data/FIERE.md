@@ -1,6 +1,6 @@
 # Calendario fiere — fonti e aggiornamento
 
-## Lucca — ricerca documentale integrata, 19 ottobre 2026
+## Lucca — ricerca documentale conclusa e verificata online, 19 ottobre 2026
 
 127 manifestazioni in 33 comuni, prima due: 125 aggiunte. Catalogo nazionale
 4.781; conservati entrambi gli ID e le altre 4.654 schede identiche al
@@ -59,8 +59,21 @@ future, senza necessità di attendere nuovi atti.
 
 Build, settori e 4.781 pagine/2.093 voci sitemap passati; suite Lucca
 Chromium1440/320 e WebKit390: elenco, mappa, 12 dialog costi/date/fonti e
-pagine senza JavaScript. Cache JS83/JSON58. Pubblicazione ancora da verificare:
-casella Lucca e riepilogo 36/74 invariati fino all’esito online positivo.
+pagine senza JavaScript. Cache JS83/JSON58. Suite generale cinque formati
+passata. Pubblicato `f0dc8ce`, Vercel READY `dpl_AKTR6nSusVUNyHD8PWWSfwpNpa6i`:
+quattro asset identici, tutte le 127 pagine HTTP200 con H1/canonical corretti;
+suite Lucca passata anche online Chromium1440/320 e WebKit390.
+Prove `online-assets.json`, `online-pages.json`, `online-browser.json` e
+`publication.json` nell’archivio. Scansione segreti passata senza bypass;
+rimossi soltanto campi ridondanti di hash URL segnalati come falsi positivi.
+TO DO spuntata solo dopo questi riscontri: 37 province concluse, 73 da fare.
+
+Copia di conservazione completata: `Documents/backup-subingresso/
+ricerche-fiere-20261019-022950`, 34,729 file, 6,398,564,547 byte,
+tutti verificati SHA256 e zero errori. Manifest verificato `fb6724b386a6890d45fc79e31e96bd670431e6bd93e1ea18e7749291b33ee022`.
+Copertura dei materiali locali disponibili, stesso computer: non copia remota.
+Prove online e registrazione finale aggiunte con manifest supplementare verificato;
+nessun originale eliminato e nessun nuovo backup di sessione ripetuto.
 
 ## Ferrara — ricerca documentale conclusa e verificata online, 18 ottobre 2026
 

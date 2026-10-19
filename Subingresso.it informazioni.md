@@ -4,16 +4,20 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 19 ottobre 2026
 
-- **Lucca, integrazione in verifica:** 127 manifestazioni/33 comuni, prima due;
-  catalogo4.781, due ID e altre4.654 schede conservati. Audit
-  `data/fiere-lucca.json`, fonti/limiti `data/FIERE.md`, originali e prove
-  `Documents/ricerca-fiere-lucca-20261019`. 74 schede con date puntuali,
-  comprese cinque solo2025; tre periodi/edizioni e50 ricorrenze non annualizzate.
-  Quattro listini originali,85 ricevute selezionate,16 esclusioni. Nessun
-  contatto a terzi; limiti Altopascio/Pietrasanta/DOC PIC espliciti e future
-  verifiche separate. Test Lucca locale Chromium1440/320 e WebKit390 passati,
-  settori e4.781 pagine/2.093 sitemap verificati. JS83/JSON58; pubblicazione
-  da verificare, casella Lucca e riepilogo36/74 ancora invariati.
+- **Lucca conclusa e verificata online, 19/10:** 127 manifestazioni/33 comuni,
+  prima due; catalogo4.781, due ID e altre4.654 schede preservati. Audit
+  `data/fiere-lucca.json`, fonti/limiti `data/FIERE.md`, originali/prove
+  `Documents/ricerca-fiere-lucca-20261019`. 74 date puntuali, cinque solo2025;
+  tre periodi/edizioni,50 ricorrenze e quattro costi originali. 85 ricevute
+  selezionate,16 esclusioni; limiti di accesso espliciti, future verifiche
+  separate. Pubblicato `f0dc8ce`, Vercel READY `dpl_AKTR6nSusVUNyHD8PWWSfwpNpa6i`,
+  quattro asset identici e127 pagine HTTP200 H1/canonical. Suite Lucca locale
+  e online Chromium1440/320 e WebKit390, settori,4.781 pagine/2.093 sitemap
+  e generale cinque formati passati. JS83/JSON58; segreti verificati senza
+  bypass. Copia `ricerche-fiere-20261019-022950`: 34,729 file,
+  6,398,564,547 byte SHA256 verificati, zero errori e manifest controllato;
+  supplemento finale per prove online. Nessun contatto a terzi.
+  TO DO e riepilogo aggiornati soltanto dopo verifica:37 concluse/73 da fare.
 
 - **Qualità organizzatori, 18–19/10:** audit mirato con rete lenta, aggiornamenti fuori ordine, uscita/cambio account e bozze. Riprodotti sette problemi/punti deboli: modifiche durante il salvataggio poi perse, feedback distante, ritiro di altro evento che scartava modifiche, risposta admin vecchia che sostituiva la nuova, dialog e dati rimasti dopo logout, indicazione invio generica. Corretti: blocco temporaneo dei campi e ritorno del focus, messaggi nella sezione usata, conferma sulle modifiche, aggiornamento admin più recente e pulizia su cambio identità, indicazione dinamica di ciò che manca/«Pronto per l’invio». Scorrimento con titoli fuori dall’header fisso. JS organizzatori5/CSS eventi4. Backend/schema/pagamenti invariati, nessuna pubblicazione automatica del test reale. Audit ripetibile `scripts/test-organizer-experience.cjs`, prima/dopo e prove `Documents/verifica-qualita-organizzatori-20261018/`; Audit finale68/68 esiti (17 controlli in quattro combinazioni), percorso completo Chromium1440/320 e WebKit390 e SQL reale/ROLLBACK passati. Pubblicato `2f7d024`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/DDkRQ2Y39XanUqarGyS9tvzztSWT); cinque asset/pagine online identici, evento404 con CSS4. Percorso completo e font reale/coerenza accesso-modulo passati anche online Chromium1440/320 e WebKit390. Resoconto `risultati.md` nella cartella prove. Backup tag/branch remoti verificati, consueto errore cleanup PowerShell; scansione segreti superata con binario principale.
 
@@ -43,7 +47,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Avvisi bandi: account obbligatorio.** Su richiesta, blog e pagine bando aprono la registrazione standard; chi ha un account accede. Attivazione dopo autenticazione, email ricavata dal server. Invii e Scout limitati agli indirizzi con account esistente tramite vista privata `registered_bando_alerts`; inserimenti diretti pubblici revocati. DB prima/dopo: 32 iscrizioni conservate, 12 con account e 20 escluse dagli invii finché non si registrano; nessun account creato automaticamente. Patch e quattro funzioni pubblicate; codice `effb12b`/`35da1fd`, cache avvisi2, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Fs4xUe5bYZu4E8fMvwXYg17TCKd9). Sintassi, qualità dati, acquisizione e test dedicati Chromium 1440/320×568 + WebKit390 passati; sei percorsi su HTML online, account/email simulati, nessun invio reale. Endpoint live senza account/chiave pubblica: 401; vista destinatari non pubblica. Modulo scorrevole su telefoni bassi; JS online identico. Prove in `Documents/verifica-avvisi-bandi-20261017.{cjs,json}`; overflow circoscritto a form/modal, testi lunghi preesistenti dell'articolo fuori perimetro. Backup tag/branch remoti validi; cleanup tag con errore PowerShell noto.
 - **Dashboard:** eliminato su richiesta il riquadro superiore “Il tuo annuncio”, con carousel, totali e domanda regionale. Preferenza: non riproporlo; statistiche nel pannello Performance posteggi e gestione nell'elenco annunci.
 - **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Preferenza corrente: grafico sopra i quattro riquadri, etichette e numeri senza sottotitoli; spiegazioni/storico solo nella voce apribile. Messaggi ricevuti distinti dai click telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
-- **Fiere:** 4.656 schede; ricerca approfondita conclusa e verificata online per 36 province, 74 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Fiere:** 4.781 schede; ricerca approfondita conclusa e verificata online per 37 province, 73 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -860,7 +864,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 36 province completate, 74 da fare su 110**, aggiornate il 18 ottobre dopo Ferrara. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 37 province completate, 73 da fare su 110**, aggiornate il 19 ottobre dopo Lucca. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -919,7 +923,13 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
   Goro/Paninfesta/Mezzogoro, programmi Migliarino/Tamara e per le esclusioni.
   Manutenzione futura distinta dalla ricerca corrente conclusa, senza
   promessa di censimento esaustivo o attesa di futuri bandi.
-- [ ] **30. Lucca** — Toscana
+- [x] **30. Lucca** — Toscana: ricerca documentale conclusa e verificata online (19 ottobre 2026).
+  127 manifestazioni/33 comuni, quattro costi originali; limiti espliciti
+  in data/fiere-lucca.json e data/FIERE.md. Pubblicato f0dc8ce, Vercel READY;
+  127 pagine e suite browser online verificate prima della spunta.
+- [ ] **Lucca — verifiche periodiche**: nuovi bandi, tariffe e disponibilità,
+  calendari natalizi e conferme annuali, recupero futuro degli allegati
+  oggi non accessibili. Manutenzione distinta dalla ricerca attuale conclusa.
 - [ ] **31. Pisa** — Toscana
 - [ ] **32. Pistoia** — Toscana
 - [ ] **33. Genova** — Liguria
