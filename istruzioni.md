@@ -1,5 +1,19 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, Lucca: ricerca integrata, pubblicazione da verificare.
+127 manifestazioni/33 comuni, prima2; 74 date puntuali (cinque storici2025),
+tre periodi/edizioni,50 ricorrenze non annualizzate e quattro costi originali.
+Catalogo4.781; due ID e altre4.654 schede preservati. Audit
+data/fiere-lucca.json e data/FIERE.md:85 ricevute selezionate,16 esclusioni,
+limiti documentali e manutenzione futura distinta. Originali/prove
+Documents/ricerca-fiere-lucca-20261019, ripresa senza ripetere checkpoint.
+Piano Lucca aggiornato, Natale selezione gestore, mirror Halley Seravezza,
+listini Murabilia/VerdeMura/Orto/Desco, inVersilia2026 e ordinanza Montecarlo.
+Altopascio/Pietrasanta con limiti di accesso; DOC PIC non estratto. Nessun dato
+inventato o contatto a terzi. Suite Lucca tre formati/browser, settori e
+4.781 pagine/2.093 sitemap passati. JS83/JSON58; TO DO ancora aperta,
+riepilogo36/74 invariato fino alla verifica online.
+
 19/10/2026, selettore profili richiesto: nel modal «Il mio profilo» due
 schede compatte Normale/Organizzatore, indicatore scorrevole e Normale a ogni
 apertura. Registrazione standard invariata. Organizzatore caricato soltanto

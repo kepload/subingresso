@@ -4,6 +4,17 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 19 ottobre 2026
 
+- **Lucca, integrazione in verifica:** 127 manifestazioni/33 comuni, prima due;
+  catalogo4.781, due ID e altre4.654 schede conservati. Audit
+  `data/fiere-lucca.json`, fonti/limiti `data/FIERE.md`, originali e prove
+  `Documents/ricerca-fiere-lucca-20261019`. 74 schede con date puntuali,
+  comprese cinque solo2025; tre periodi/edizioni e50 ricorrenze non annualizzate.
+  Quattro listini originali,85 ricevute selezionate,16 esclusioni. Nessun
+  contatto a terzi; limiti Altopascio/Pietrasanta/DOC PIC espliciti e future
+  verifiche separate. Test Lucca locale Chromium1440/320 e WebKit390 passati,
+  settori e4.781 pagine/2.093 sitemap verificati. JS83/JSON58; pubblicazione
+  da verificare, casella Lucca e riepilogo36/74 ancora invariati.
+
 - **Qualità organizzatori, 18–19/10:** audit mirato con rete lenta, aggiornamenti fuori ordine, uscita/cambio account e bozze. Riprodotti sette problemi/punti deboli: modifiche durante il salvataggio poi perse, feedback distante, ritiro di altro evento che scartava modifiche, risposta admin vecchia che sostituiva la nuova, dialog e dati rimasti dopo logout, indicazione invio generica. Corretti: blocco temporaneo dei campi e ritorno del focus, messaggi nella sezione usata, conferma sulle modifiche, aggiornamento admin più recente e pulizia su cambio identità, indicazione dinamica di ciò che manca/«Pronto per l’invio». Scorrimento con titoli fuori dall’header fisso. JS organizzatori5/CSS eventi4. Backend/schema/pagamenti invariati, nessuna pubblicazione automatica del test reale. Audit ripetibile `scripts/test-organizer-experience.cjs`, prima/dopo e prove `Documents/verifica-qualita-organizzatori-20261018/`; Audit finale68/68 esiti (17 controlli in quattro combinazioni), percorso completo Chromium1440/320 e WebKit390 e SQL reale/ROLLBACK passati. Pubblicato `2f7d024`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/DDkRQ2Y39XanUqarGyS9tvzztSWT); cinque asset/pagine online identici, evento404 con CSS4. Percorso completo e font reale/coerenza accesso-modulo passati anche online Chromium1440/320 e WebKit390. Resoconto `risultati.md` nella cartella prove. Backup tag/branch remoti verificati, consueto errore cleanup PowerShell; scansione segreti superata con binario principale.
 
 - **Invio e approvazione eventi, 18/10:** verifica API in sola lettura sul test dell’utente: profilo approvato, evento in bozza con posteggio attivo e condizioni complete, mai inviato (`submitted_at` nullo), quindi correttamente assente dal calendario. Resi visibili anche gli eventi in bozza nel pannello admin, con conteggio e motivo della mancata approvabilità; revisione spiega il passaggio mancante. Link alla propria area organizzatore; scheda proprietario «Completa e invia», avviso bozza non inviata e pulsante di invio sopra i posteggi. Nessun invio/approvazione/pubblicazione automatica del test reale. JS organizzatori4; prove `Documents/verifica-invio-eventi-admin-20261018/`. Suite completa con bozze e invio/approvazione passata Chromium1440/320×568 e WebKit390. Pubblicato `f934ec7`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/CgSoNPYLQ4AixM4oFmjM2i3pUdS9); quattro pagine/asset online identici. Dati fiere concorrenti preservati; scansione segreti superata e backup remoto verificato, consueto errore cleanup PowerShell.
