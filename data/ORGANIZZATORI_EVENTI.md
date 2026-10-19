@@ -2,6 +2,41 @@
 
 ## Selettore profili — 19 ottobre 2026
 
+**Aggiornamento corrente del 19/10, prevale sulla descrizione iniziale sotto:**
+Normale mantiene i colori chiari; Organizzatore usa blu notte, testi chiari
+e azioni azzurre sia nel modal sia nell'area di gestione. Titolo, icone e
+selezione distinguono la modalità, senza affidarsi al solo colore. Selettore
+sempre disponibile: fuori dallo scorrimento del modal e fisso sotto l'header
+nella pagina organizzatore; campi/editor con margine di scorrimento adeguato.
+
+A ogni apertura ordinaria si verificano identità e dati correnti in sola
+lettura: HEAD con conteggio esatto degli annunci propri `status=active` e
+`expires_at` futuro/NULL, in parallelo alla RPC proprietario
+`organizer_workspace`. Con profilo organizzatore esistente, eventi propri
+non annullati (comprese bozze/in revisione) più numerosi degli annunci apre
+Organizzatore. Parità, zero contenuti o errore apre Normale. Nessun uso del
+numero di posteggi interni agli eventi. Attesa breve senza mostrare campi
+destinati a sparire, timeout10s; switch già disponibile durante l'attesa.
+Scelta manuale, chiusura e cambio identità invalidano la risposta pendente.
+Ritorno esplicito da Organizzatore via `/dashboard?profilo=1` forza Normale
+e consuma il parametro. Nessun cambio automatico dopo aver iniziato a usare
+il profilo; ricalcolo alla prossima apertura. Nessun dato salvato nel browser,
+registrazione standard e approvazione esistenti conservate, backend invariato.
+CSS/JS selettore v2, prove `Documents/verifica-profili-default-colori-20261019/`;
+anche l'ingresso ordinario `/dashboard` applica lo stesso confronto e porta
+direttamente a `/organizzatore` quando prevalgono gli eventi. Switch fisso
+presente in entrambe le dashboard. `?area=normale` forza quella normale;
+link con hash/query espliciti mantengono la destinazione. Qualunque uso della
+pagina durante l'attesa annulla il rinvio automatico per non interrompere
+l'utente. Nessuna modifica ad auth.js o al percorso dei link esistenti.
+Verifiche locali:264 controlli funzionali (66×4) Chromium1440/820/320 e
+WebKit390 con font/icone reali;67 controlli320 sulla versione finale con
+contrasto/logo corretti. Percorso completo eventi passato Chromium1440/320
+e WebKit390, nessuna scrittura reale. HEAD SDK/API reale200 con conteggio
+esatto e filtro scadenza/NULL; workspace proprietario senza sessione401.
+Pubblicazione in corso. Backup remoto preventivo verificato;
+il cleanup locale del vecchio script ha il noto errore PowerShell.
+
 Preferenza dell’utente: utenza normale prevalente, registrazione semplice come prima; organizzatore scelto separatamente e sottoposto a controllo. «Il mio profilo» ora contiene un selettore di due schede (massimo360px,54px in altezza), Normale a sinistra e predefinito a ogni apertura, Organizzatore a destra, indicatore scorrevole. Clic, frecce/Home/End e swipe orizzontale sul selettore; scorrimento verticale non cambia modalità. Selettore fisso sopra il contenuto, pulsanti44px, focus nel dialogo/Escape/ritorno all’apertura, animazione disattivata con movimento ridotto. CSS e JS dedicati v1, nessuna modifica ad auth/registrazione o ruoli.
 
 Scheda normale conserva tutti i campi, avatar, preferenze, sicurezza e acquisti; rimossi il riquadro promozionale organizzatore e il pulsante superiore duplicato. La scheda organizzatore legge solo alla selezione la RPC proprietario esistente, verifica l’identità e mostra nome/stato/note con collegamento al modulo completo e agli eventi. Nessun profilo attivato al clic, nessun contatto privato incluso nel riepilogo; link pubblico solo per approvati. Nuovi organizzatori usano lo stesso account e completano i dati aggiuntivi nel percorso esistente. Nell’area organizzatore il selettore indica la modalità attuale e Normale torna al modal già aperto, consumando il parametro URL.

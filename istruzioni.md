@@ -1,5 +1,22 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, aggiornamento profili: predefinito ricalcolato all'apertura da
+annunci propri attivi/non scaduti (NULL legacy valido) ed eventi propri non
+annullati incluse bozze. Organizzatore solo con piu eventi; parita/zero/errori
+Normale. Sostituisce la precedente apertura sempre Normale. Switch sempre
+disponibile; colori chiari Normale e scuri su riepilogo/area Organizzatore,
+icone, titolo e selettore fisso nella gestione. Ritorno /dashboard?profilo=1
+forza Normale; scelta manuale non sovrascritta da risposte tardive. Nessuna
+cache persistente, scrittura o cambio ruolo automatico, revisione invariata.
+Anche l'ingresso ordinario /dashboard applica il confronto e apre direttamente
+/organizzatore quando prevalgono eventi; switch fisso nelle due dashboard.
+?area=normale forza la dashboard normale e viene consumato. Link con hash o
+altre query rispettati; interazione dell'utente annulla un rinvio tardivo.
+CSS/JS profile-switch2; profili264 controlli (66x4) nei quattro formati,
+controllo finale colori/logo320 con67 esiti e percorso eventi nei tre casi
+passati. API HEAD200/workspace anonimo401. Pubblicazione in corso; prove
+Documents/verifica-profili-default-colori-20261019.
+
 19/10/2026, Lucca: ricerca documentale conclusa e verificata online.
 127 manifestazioni/33 comuni, prima2; 74 date puntuali (cinque storici2025),
 tre periodi/edizioni,50 ricorrenze non annualizzate e quattro costi originali.

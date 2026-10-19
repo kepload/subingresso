@@ -7,14 +7,59 @@
     const panels = { normal: document.getElementById('profileNormalPanel'), organizer: document.getElementById('profileOrganizerPanel') };
     const content = document.getElementById('profileOrganizerContent');
     const scroller = modal.querySelector('.profile-panels');
+    const defaultStatus = document.getElementById('profileDefaultStatus');
     let userId = null, request = 0, returnFocus = null, baseline = null, gesture = null, suppressClickUntil = 0;
     const snapshot = () => JSON.stringify([...document.getElementById('profileForm').elements].filter(el => el.tagName === 'INPUT').map(el => el.type === 'checkbox' ? el.checked : el.value));
     const isOpen = () => !modal.classList.contains('hidden');
     const esc = value => EventData.esc(value);
+    let dashboardUsed = false;
+    const markDashboardUsed = () => { dashboardUsed = true; };
+    document.addEventListener('pointerdown', markDashboardUsed, { once: true, capture: true });
+    document.addEventListener('keydown', markDashboardUsed, { once: true, capture: true });
 
-    function select(mode, focus = false) {
+    async function activity(ownerId, signal) {
+        const { data: { user }, error: authError } = await _supabase.auth.getUser();
+        if (authError || !ownerId || user?.id !== ownerId) throw Error('Accesso richiesto');
+        const [listings, workspace] = await Promise.all([
+            _supabase.from('annunci').select('id', { count: 'exact', head: true })
+                .eq('user_id', ownerId).eq('status', 'active')
+                .or('expires_at.is.null,expires_at.gte.' + new Date().toISOString()).abortSignal(signal),
+            _supabase.rpc('organizer_workspace').abortSignal(signal)
+        ]);
+        if (listings.error || !Number.isInteger(listings.count) || workspace.error || !Array.isArray(workspace.data?.events)) throw Error('Dati non disponibili');
+        const events = workspace.data.events.filter(event => event.status !== 'cancelled').length;
+        return { mode: workspace.data.profile && events > listings.count ? 'organizer' : 'normal', workspace: workspace.data };
+    }
+
+    async function startDashboard(user) {
+        userId = user?.id || null;
+        const url = new URL(location.href);
+        if (url.searchParams.get('area') === 'normale') {
+            url.searchParams.delete('area');
+            history.replaceState(null, '', url.pathname + url.search + url.hash);
+            return;
+        }
+        // Link a pagamenti, statistiche o profilo conservano la destinazione esplicita.
+        if (url.search || url.hash || isOpen() || dashboardUsed) return;
+        const current = ++request, ownerId = userId;
+        const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 10000);
+        try {
+            const result = await activity(ownerId, controller.signal);
+            if (current === request && userId === ownerId && !isOpen() && !dashboardUsed && result.mode === 'organizer') location.replace('/organizzatore');
+        } catch (_) {
+            // La dashboard normale resta utilizzabile anche senza il conteggio.
+        } finally {
+            clearTimeout(timer);
+        }
+    }
+
+    function select(mode, focus = false, workspace = null) {
         const changed = track.dataset.selected !== mode;
         track.dataset.selected = mode;
+        modal.dataset.profile = mode;
+        document.getElementById('profileDialogTitle').textContent = mode === 'organizer' ? 'Profilo organizzatore' : 'Il mio profilo';
+        defaultStatus.hidden = true;
+        track.removeAttribute('aria-busy');
         tabs.forEach(tab => {
             const selected = tab.dataset.profile === mode;
             tab.setAttribute('aria-selected', String(selected));
@@ -24,10 +69,27 @@
         Object.entries(panels).forEach(([key, panel]) => { panel.hidden = key !== mode; });
         if (changed) scroller.scrollTop = 0;
         ++request;
-        if (mode === 'organizer') loadOrganizer();
+        if (mode === 'organizer') loadOrganizer(workspace);
     }
 
-    async function loadOrganizer() {
+    async function chooseDefault() {
+        const current = ++request, ownerId = userId;
+        const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 10000);
+        defaultStatus.hidden = false;
+        panels.normal.hidden = true;
+        track.setAttribute('aria-busy', 'true');
+        try {
+            const result = await activity(ownerId, controller.signal);
+            if (current !== request || userId !== ownerId || !isOpen()) return;
+            select(result.mode, track.contains(document.activeElement), result.workspace);
+        } catch (_) {
+            if (current === request && userId === ownerId && isOpen()) select('normal', track.contains(document.activeElement));
+        } finally {
+            clearTimeout(timer);
+        }
+    }
+
+    async function loadOrganizer(workspace = null) {
         const current = ++request, ownerId = userId, restoreFocus = content.contains(document.activeElement);
         const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 15000);
         content.setAttribute('aria-busy', 'true');
@@ -37,9 +99,13 @@
             const { data: { user }, error: authError } = await _supabase.auth.getUser();
             if (current !== request || !isOpen()) return;
             if (authError || user?.id !== ownerId) throw Error('Accesso richiesto');
-            let query = _supabase.rpc('organizer_workspace');
-            if (typeof query.abortSignal === 'function') query = query.abortSignal(controller.signal);
-            const { data, error } = await query;
+            let result = { data: workspace };
+            if (!workspace) {
+                let query = _supabase.rpc('organizer_workspace');
+                if (typeof query.abortSignal === 'function') query = query.abortSignal(controller.signal);
+                result = await query;
+            }
+            const { data, error } = result;
             if (current !== request || userId !== ownerId || !isOpen()) return;
             if (error || !data || !Array.isArray(data.events)) throw Error('Profilo non disponibile');
             const profile = data.profile;
@@ -115,13 +181,15 @@
         userId = null;
     });
     window.ProfileSwitcher = {
-        open(user) {
+        startDashboard,
+        open(user, mode = null) {
             userId = user?.id || null;
             const opener = document.activeElement;
             returnFocus = opener && opener !== document.body && opener !== document.documentElement && !modal.contains(opener) ? opener : document.querySelector('.dashboard-user button');
-            select('normal');
+            select(mode === 'organizer' ? 'organizer' : 'normal');
             scroller.scrollTop = 0;
-            tabs[0].focus();
+            tabs[mode === 'organizer' ? 1 : 0].focus();
+            if (!mode) chooseDefault();
         },
         close() {
             ++request;

@@ -11,16 +11,16 @@ function fixture() {
     const modalFunctions = html.slice(html.indexOf('let _profilePhoneBound = false;'), html.indexOf('function showDeleteAccountConfirm()'));
     const saveFunction = html.slice(html.indexOf('async function saveProfile(e)'), html.indexOf('// ── Custom Confirm Dialog'));
     const returnToProfile = html.slice(html.indexOf('    ProfileSwitcher.setBaseline();'), html.indexOf('    loadOnboardingWidget(user, profile);'));
-    assert(modalFunctions.includes('ProfileSwitcher.open(_currentUser)'));
+    assert(modalFunctions.includes('ProfileSwitcher.open(_currentUser,'));
     assert(saveFunction.includes('ProfileSwitcher.setBaseline(profileSnapshot)'));
     return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace('</body>', `<script>
 window.qaUser={id:'${H.owner}',email:'qa@example.invalid',created_at:'2026-01-01',email_confirmed_at:'2026-01-01',app_metadata:{provider:'email'}};
-let _currentUser=qaUser,_profileReady=true;window.qaListeners=[];window.qaWrites=[];window.qaFailSave=false;window.qaSaveDelay=0;
+let _currentUser=qaUser,_profileReady=true;const user=qaUser;window.qaListeners=[];window.qaWrites=[];window.qaFailSave=false;window.qaSaveDelay=0;
 const _supabase={auth:{getUser:async()=>({data:{user:qaUser}}),onAuthStateChange:fn=>{qaListeners.push(fn);return{data:{subscription:{unsubscribe(){}}}}},resetPasswordForEmail:async()=>({})},
-rpc:async(name,args)=>{const r=await fetch('/qa/rpc',{method:'POST',headers:{'X-QA-User':qaUser?.id||''},body:JSON.stringify({name,args})});return r.json();},
-from:table=>({upsert(value){qaWrites.push({table,value});return this;},select(){return this;},single:async()=>{await new Promise(resolve=>setTimeout(resolve,qaSaveDelay));return qaFailSave?{error:{message:'offline'}}:{data:{id:qaUser.id}};}})};
+rpc(name,args){const promise=fetch('/qa/rpc',{method:'POST',headers:{'X-QA-User':qaUser?.id||''},body:JSON.stringify({name,args})}).then(r=>r.json());promise.abortSignal=()=>promise;return promise;},
+from:table=>({filters:[],upsert(value){qaWrites.push({table,value});return this;},select(columns,options){this.columns=columns;this.options=options;return this;},eq(key,value){this.filters.push([key,value]);return this;},or(filter){this.orFilter=filter;return this;},abortSignal(signal){return fetch('/qa/listing-count',{signal,method:'POST',body:JSON.stringify({table,columns:this.columns,options:this.options,filters:this.filters,or:this.orFilter})}).then(r=>r.json());},single:async()=>{await new Promise(resolve=>setTimeout(resolve,qaSaveDelay));return qaFailSave?{error:{message:'offline'}}:{data:{id:qaUser.id}};}})};
 window.updateAuthNav=()=>{};window.signOut=()=>{};
-</script><script src="/js/data.js?v=20"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/profile-switch.js?v=1"></script><script>
+</script><script src="/js/data.js?v=20"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/profile-switch.js?v=2"></script><script>
 ${modalFunctions}
 ${saveFunction}
 loadingState.classList.add('hidden');dashContent.classList.remove('hidden');
@@ -29,7 +29,7 @@ VetrinaAccount.fillProfile(_currentUser);
 ${returnToProfile}
 </script></body>`);
 }
-const state = () => ({profile:null,events:[],calls:[],failRPC:false,calendarFail:false,publicFail:false});
+const state = () => ({profile:null,events:[],listings:[],calls:[],failRPC:false,calendarFail:false,publicFail:false,failCount:false});
 const profile = status => ({user_id:H.owner,organization_name:'Mercatini QA',status,review_note:'',private_phone:'PRIVATO NON MOSTRARE',contact_name:'REFERENTE PRIVATO NON MOSTRARE',revision:1});
 const waitFor = async predicate => { for(let i=0;i<150;i++){if(predicate())return;await new Promise(resolve=>setTimeout(resolve,20));}throw Error('Risposta simulata mancante'); };
 async function run(engine,name,width,height,base) {
@@ -46,6 +46,14 @@ async function run(engine,name,width,height,base) {
         if(url.pathname==='/organizzatore')return route.fulfill({contentType:'text/html',body:assets.get('organizzatore.html')});
         if(url.pathname==='/js/data.js')return route.fulfill({contentType:'text/javascript',body:fs.readFileSync(path.join(root,'js/data.js'),'utf8')});
         if(assets.has(url.pathname.slice(1)))return route.fulfill({contentType:url.pathname.endsWith('.css')?'text/css':'text/javascript',body:assets.get(url.pathname.slice(1))});
+        if(url.pathname==='/qa/listing-count'){
+            const query=route.request().postDataJSON();
+            assert.equal(query.table,'annunci');assert.equal(query.columns,'id');assert.deepEqual(query.options,{count:'exact',head:true});
+            assert.deepEqual(query.filters,[['user_id',H.owner],['status','active']]);assert.match(query.or,/^expires_at.is.null,expires_at.gte.\d{4}-/);
+            const db=H.getDB(),now=Date.parse(query.or.split('gte.')[1]);
+            const count=db.listings.filter(l=>l.user_id===H.owner&&l.status==='active'&&(!l.expires_at||Date.parse(l.expires_at)>=now)).length;
+            return route.fulfill({json:db.failCount?{error:{message:'offline'},count:null}:{count,error:null}});
+        }
         if(url.pathname==='/qa/rpc' && route.request().postDataJSON().name==='organizer_workspace' && hold){
             const response=await route.fetch();await new Promise(release=>pending.push(release));return route.fulfill({response});
         }
@@ -58,7 +66,10 @@ async function run(engine,name,width,height,base) {
     try {
         await page.goto(base+'/dashboard');await open();
         check(await normal.getAttribute('aria-selected')==='true' && !await page.locator('#profileOrganizerPanel').isVisible(),'Normale predefinito');
-        check(H.getDB().calls.length===0,'Nessuna richiesta organizzatore o nuova registrazione per il profilo normale');
+        check(H.getDB().calls.length>=1 && H.getDB().calls.every(call=>call.name==='organizer_workspace') && await page.evaluate(()=>qaWrites.length===0),'Scelta iniziale dai dati attuali in sola lettura');
+        check(await page.locator('.profile-dialog').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(255, 255, 255)','Profilo normale con colori chiari');
+        await page.evaluate(()=>ProfileSwitcher.startDashboard(qaUser));
+        check(await page.locator('#profileNormalPanel').isVisible(),'Inizializzazione tardiva della dashboard rispetta il profilo gia aperto');
         const geometry=await page.locator('#profileSwitch').evaluate(el=>({width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height,buttons:[...el.querySelectorAll('button')].map(b=>b.getBoundingClientRect().height)}));
         check(geometry.width<=360 && geometry.height<=56 && geometry.buttons.every(height=>height>=44),'Selettore compatto con pulsanti comodi da toccare');
         check(await normal.evaluate(el=>getComputedStyle(el).fontFamily===getComputedStyle(document.body).fontFamily),'Font coerente con il sito');
@@ -68,6 +79,7 @@ async function run(engine,name,width,height,base) {
         await page.locator('.profile-panels').evaluate(el=>el.scrollTop=0);
         await page.locator('#pNome').fill('Nome modificato QA');await page.locator('#pEmailDigest').uncheck();
         await organizer.click();await ready();
+        check(await page.locator('.profile-dialog').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(15, 23, 42)' && await page.locator('#profileDialogTitle').innerText()==='Profilo organizzatore','Colori scuri e titolo distinguono la modalita organizzatore');
         check(await page.getByRole('link',{name:'Crea profilo organizzatore'}).isVisible(),'Nuovo organizzatore: attivazione separata con lo stesso account');
         check(H.getDB().calls.every(call=>call.name==='organizer_workspace') && await page.evaluate(()=>qaWrites.length===0),'Cambio scheda in sola lettura');
         await normal.click();
@@ -96,6 +108,10 @@ async function run(engine,name,width,height,base) {
         await page.getByRole('link',{name:'Crea profilo organizzatore'}).click();
         await page.locator('#organizerProfileForm').waitFor({state:'visible'});
         check(await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Organizzatore','Area organizzatore e modulo completo raggiungibili');
+        check(await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(11, 18, 32)','Area di gestione organizzatore con colori scuri');
+        check(await page.locator('header a[href="/"] > span').evaluate(el=>getComputedStyle(el).color)==='rgb(15, 23, 42)','Logo leggibile sull intestazione chiara anche in modalita organizzatore');
+        await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));
+        check(await page.locator('.profile-switch-page').evaluate(el=>{const r=el.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}),'Selettore visibile anche scorrendo la gestione eventi');
         await page.locator('.profile-switch-page a').first().click();
         await page.locator('#profileNormalPanel').waitFor({state:'visible'});
         check(await normal.getAttribute('aria-selected')==='true' && !new URL(page.url()).searchParams.has('profilo'),'Ritorno al profilo normale aperto, parametro consumato');
@@ -118,7 +134,7 @@ async function run(engine,name,width,height,base) {
         await page.keyboard.press('Escape');await page.locator('#profiloModal').waitFor({state:'hidden'});
         check(await page.locator('#profileOrganizerContent').innerText()==='','Chiusura elimina riepilogo privato');
         check(await page.locator('.dashboard-user button').evaluate(el=>el===document.activeElement),'Chiusura restituisce focus al pulsante di apertura');
-        await open();check(await normal.getAttribute('aria-selected')==='true','Ogni riapertura parte da Normale');
+        await open();check(await normal.getAttribute('aria-selected')==='true','Senza eventi prevalenti la riapertura parte da Normale');
         await page.evaluate(()=>qaSaveDelay=250);await page.locator('#profileForm button[type=submit]').click();
         await organizer.click();await ready();await page.waitForTimeout(1100);
         check(await page.locator('#profileOrganizerPanel').isVisible(),'Salvataggio normale in corso non chiude la scheda organizzatore appena aperta');
@@ -128,23 +144,64 @@ async function run(engine,name,width,height,base) {
         if(artifacts){await page.locator('.profile-panels').evaluate(el=>el.scrollTop=0);await page.locator('.profile-dialog').screenshot({path:path.join(artifacts,`${name}-${width}-normale.png`)});}
         await page.emulateMedia({reducedMotion:'reduce'});
         check(await page.locator('#profileSwitch').evaluate(el=>getComputedStyle(el,'::before').transitionDuration)==='0s','Animazione disattivata con movimento ridotto');
+        const listing=(status='active',expires_at=null,user_id=H.owner)=>({status,expires_at,user_id});
+        const event=status=>({id:'44444444-4444-4444-8444-444444444444',status,title:'Mercatino QA',city:'Milano',start_date:'2027-11-06',end_date:'2027-11-06',places:[]});
+        const reopen=async()=>{await page.keyboard.press('Escape');await page.locator('.dashboard-user button').click();await page.waitForFunction(()=>!document.querySelector('#profileSwitch').hasAttribute('aria-busy'));};
+        H.getDB().profile=profile('approved');H.getDB().listings=[listing(),listing()];H.getDB().events=[event('draft')];
+        await reopen();check(await normal.getAttribute('aria-selected')==='true','Piu posteggi in vendita: profilo normale');
+        H.getDB().events=[event('draft'),event('pending')];
+        await reopen();check(await normal.getAttribute('aria-selected')==='true','Parita eventi e posteggi: profilo normale');
+        H.getDB().events.push(event('published'));
+        await reopen();await ready();check(await organizer.getAttribute('aria-selected')==='true','Piu eventi: profilo organizzatore predefinito');
+        await normal.click();check(await page.locator('#pNome').inputValue()==='Nome QA' && await normal.getAttribute('aria-selected')==='true','Ritorno manuale alla modalita normale sempre disponibile');
+        await reopen();await ready();check(await organizer.getAttribute('aria-selected')==='true','Riapertura ricalcola i contenuti invece di ricordare la scelta manuale');
+        H.getDB().events=[event('draft'),event('cancelled'),event('cancelled')];
+        await reopen();check(await normal.getAttribute('aria-selected')==='true','Eventi annullati esclusi dalla scelta');
+        H.getDB().listings=[listing('sold'),listing('pending'),listing('rejected'),listing('active','2000-01-01T00:00:00Z'),listing('active',null,H.other)];
+        await reopen();await ready();check(await organizer.getAttribute('aria-selected')==='true','Venduti, scaduti, non attivi e annunci altrui esclusi; una bozza evento conta');
+        await page.keyboard.press('Escape');await page.goto(base+'/dashboard?profilo=1');await page.locator('#profileNormalPanel').waitFor({state:'visible'});
+        check(await normal.getAttribute('aria-selected')==='true' && !new URL(page.url()).searchParams.has('profilo'),'Ritorno esplicito a Normale rispettato anche con piu eventi');
+        H.getDB().failCount=true;await reopen();check(await normal.getAttribute('aria-selected')==='true','Errore nel conteggio: apertura normale con switch disponibile');H.getDB().failCount=false;
+        H.getDB().failRPC=true;await reopen();check(await normal.getAttribute('aria-selected')==='true','Errore eventi: apertura normale con switch disponibile');
+        hold=true;await page.keyboard.press('Escape');await page.locator('.dashboard-user button').click();await waitFor(()=>pending.length===1);
+        check(await page.locator('#profileDefaultStatus').isVisible() && !await page.locator('#profileNormalPanel').isVisible(),'Attesa iniziale senza mostrare campi destinati a sparire');
+        await normal.click();pending.shift()();hold=false;await page.waitForTimeout(120);
+        check(await normal.getAttribute('aria-selected')==='true' && await page.locator('#profileNormalPanel').isVisible(),'Scelta manuale prevale sulla risposta automatica tardiva');
+        if(artifacts){await organizer.click();await ready();await page.locator('.profile-dialog').screenshot({path:path.join(artifacts,`${name}-${width}-organizzatore-scuro.png`)});await normal.click();}
         await organizer.click();await ready();
         hold=true;await organizer.click();await waitFor(()=>pending.length===1);
         await page.evaluate(()=>{qaUser=null;qaListeners.forEach(fn=>fn('SIGNED_OUT',null));});
-        pending.shift()();await page.waitForTimeout(120);
+        pending.shift()();await page.locator('#profiloModal').waitFor({state:'hidden'});
         check(!await page.locator('#profiloModal').isVisible() && await page.locator('#profileOrganizerContent').innerText()==='','Logout chiude il profilo e invalida la risposta in volo');
         await page.evaluate(id=>{qaUser=_currentUser={id,email:'qa@example.invalid'};qaListeners.forEach(fn=>fn('SIGNED_IN',{user:qaUser}));},H.owner);
-        await open();hold=true;await organizer.click();await waitFor(()=>pending.length===1);
+        H.getDB().events=[];hold=false;await open();hold=true;await organizer.click();await waitFor(()=>pending.length===1);
         await page.evaluate(id=>{qaUser={id};qaListeners.forEach(fn=>fn('SIGNED_IN',{user:qaUser}));},H.other);
-        pending.shift()();await page.waitForTimeout(120);
+        pending.shift()();await page.locator('#profiloModal').waitFor({state:'hidden'});
         check(!await page.locator('#profiloModal').isVisible() && await page.locator('#profileOrganizerContent').innerText()==='','Cambio account invalida il vecchio profilo');
+        hold=false;H.getDB().events=[event('draft')];H.getDB().profile=profile('approved');
+        await page.goto(base+'/dashboard');await page.waitForURL(base+'/organizzatore');
+        check(await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Organizzatore','Ingresso area personale apre la dashboard organizzatore quando prevalgono gli eventi');
+        await page.goto(base+'/dashboard?area=normale');await page.locator('#dashContent').waitFor({state:'visible'});
+        check(new URL(page.url()).pathname==='/dashboard' && !new URL(page.url()).searchParams.has('area') && await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Normale','Ritorno esplicito alla dashboard normale senza reindirizzamento');
+        await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));
+        check(await page.locator('.profile-switch-page').evaluate(el=>{const r=el.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}),'Switch sempre visibile anche nella dashboard normale');
+        await page.goto(base+'/dashboard#pagamenti');await page.locator('#dashContent').waitFor({state:'visible'});
+        check(new URL(page.url()).pathname==='/dashboard' && new URL(page.url()).hash==='#pagamenti','Link diretti alle funzioni normali conservati');
+        await page.goto(base+'/dashboard?qa=inizio');await page.keyboard.press('Tab');
+        await page.evaluate(()=>{history.replaceState(null,'','/dashboard');return ProfileSwitcher.startDashboard(qaUser);});
+        check(new URL(page.url()).pathname==='/dashboard','Interazione prima della fine del caricamento impedisce un rinvio successivo');
+        await page.goto(base+'/dashboard?qa=attesa');hold=true;
+        await page.evaluate(()=>{history.replaceState(null,'','/dashboard');ProfileSwitcher.startDashboard(qaUser);});await waitFor(()=>pending.length>0);
+        await page.locator('.dashboard-user button').click();await normal.click();pending.shift()();hold=false;
+        await page.waitForTimeout(120);
+        check(new URL(page.url()).pathname==='/dashboard' && await normal.getAttribute('aria-selected')==='true','Apertura manuale del profilo impedisce il reindirizzamento tardivo della dashboard');
         check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Nessun contenuto fuori dallo schermo');
         check(errors.length===0,'Nessun errore JavaScript: '+errors.join('; '));
         console.log(`OK: ${name} ${width}x${height}, ${result.checks.length} verifiche profili.`);
         return result;
     } catch(error) {
         if(artifacts)await page.screenshot({path:path.join(artifacts,`errore-${name}-${width}.png`),fullPage:true});
-        console.error('Ultime chiamate',H.getDB().calls.slice(-3).map(call=>call.name));console.error(await page.evaluate(()=>({qaUser,_currentUser,message:profileOrganizerContent.textContent,errors:window.qaErrors})));throw error;
+        console.error('Ultime chiamate',H.getDB().calls.slice(-3).map(call=>call.name));console.error('Errore originale',error);console.error(await page.evaluate(()=>({url:location.href,user:window.qaUser,message:document.getElementById('profileOrganizerContent')?.textContent,errors:window.qaErrors})));throw error;
     } finally {pending.forEach(release=>release());await browser.close();}
 }
 (async()=>{

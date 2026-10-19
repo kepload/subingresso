@@ -4,6 +4,25 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 19 ottobre 2026
 
+- **Profili, nuova preferenza 19/10:** stesso account, modalità Normale chiara
+  e Organizzatore scura sia nel profilo sia nella gestione eventi. Switch con
+  icone sempre visibile, anche durante lo scorrimento. A ogni apertura del
+  profilo confronto aggiornato tra annunci propri attivi/non scaduti e
+  propri eventi non annullati, incluse bozze: più eventi apre Organizzatore;
+  parità, nessun contenuto o errore apre Normale. Sostituisce «Normale sempre
+  all’apertura». Stessa regola sull’ingresso ordinario `/dashboard`: se
+  prevalgono eventi apre direttamente la gestione organizzatore. Switch
+  fisso anche nella dashboard normale. `?area=normale` forza la dashboard
+  normale, `?profilo=1` il suo modal; parametri consumati. Link con hash o
+  altre destinazioni esplicite conservati. Un’interazione blocca il rinvio
+  automatico tardivo. Scelta manuale e ritorno a Normale prevalgono sulle
+  risposte tardive; nessuna preferenza persistente o attivazione automatica.
+  CSS/JS selettore2. Controlli profili passati Chromium1440/820/320 e
+  WebKit390, font/icone reali e contrasto finale320; percorso eventi passato
+  Chromium1440/320 e WebKit390. API HEAD200 e workspace anonimo401 verificati.
+  Pubblicazione in corso. Prove
+  `Documents/verifica-profili-default-colori-20261019/`.
+
 - **Lucca conclusa e verificata online, 19/10:** 127 manifestazioni/33 comuni,
   prima due; catalogo4.781, due ID e altre4.654 schede preservati. Audit
   `data/fiere-lucca.json`, fonti/limiti `data/FIERE.md`, originali/prove
