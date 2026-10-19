@@ -17,7 +17,13 @@ Regressione immagini: guardia preesistente errata su contatti/fiere/privacy/
 termini (helper non usato da quelle pagine), esclusa solo nel runner esterno;
 resto suite server/browser e sintassi passati, test versionato conservato.
 Backup tag e branch remoti validi, consueto errore cleanup PowerShell;
-checkout isolato, file estranei conservati. Pubblicazione da verificare.
+checkout isolato, file estranei conservati. Pubblicato56a75f5, Vercel READY
+dpl_3rcZi5EaHaDk3YucfsPoBMw15WhN; quattro asset online identici ai file.
+Suite preferiti174/174 passata anche sugli asset pubblicati, backend simulato;
+tre prove anonime reali Chromium1440/320 eWebKit390 passate senza scritture,
+errori o overflow. Integrazione HTML/SDK reali passata negli stessi tre casi,
+inclusi navigazione, tastiera e doppio clic. Esiti in risultato.json nella
+directory prove; nessun annuncio/account reale modificato dai test.
 
 
 19/10/2026, conversione fiere richiesta: registrazione/accesso obbligatori
