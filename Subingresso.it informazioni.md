@@ -12,7 +12,14 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Modulo scorrevole su telefoni piccoli; API verifica sessione e URL
   della fiera, errori senza apertura esterna. Catalogo/DB/email invariati.
   JS86, accesso JS/CSS1; prove `Documents/verifica-fiere-iscrizione-20261019/`,
-  dettagli `data/FIERE.md`. Pubblicazione e verifiche finali in corso.
+  dettagli `data/FIERE.md`. Pubblicato `e479808`, Vercel READY
+  `dpl_JAY2p4gGogJTRMoAxT111FJbQX2k`; quattro asset identici online.
+  Percorso completo locale/online Chromium1440/820/320 e WebKit390 passato,
+  backend simulato; tre prove anonime reali online e API401/405 passate.
+  Calendario cinque formati, articoli/affinità/ricerche quattro,
+  affluenza/pagine tre,4.923 schede e settori validati. Nessun account/email
+  o scrittura reale di prova; segreti verificati. Checkpoint remoto valido,
+  noto errore cleanup. Checkout isolato `Documents/subingresso-fiere-iscrizione-20261019`.
 
 - **Fiere, filtri semplificati 19/10:** principali Quando, Dove e Tipologia
   di articolo. Cosa vendi e Tipo di evento spostati in Altri filtri, con

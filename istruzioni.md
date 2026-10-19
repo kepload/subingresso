@@ -7,7 +7,14 @@ mappa conservati. Fiera/fonte riprese dopo accesso o annullo; modulo auth
 comune scorrevole su telefono. API fiere-source verifica sessione Supabase
 e URL associato, no-store; catalogo/DB/email invariati. JS86 e accesso JS/CSS1.
 Nuova suite test-fiere-access.cjs; prove Documents/verifica-fiere-iscrizione-20261019,
-dettagli data/FIERE.md. Pubblicazione/verifiche finali in corso.
+dettagli data/FIERE.md. Pubblicato e479808, Vercel READY
+dpl_JAY2p4gGogJTRMoAxT111FJbQX2k; quattro asset identici online.
+Percorso locale/online quattro formati con backend simulato, tre prove
+anonime reali e API401/405 passati; calendario5formati, articoli/affinità/
+ricerche4, affluenza/pagine3,4.923 pagine e settori validati. Nessun
+account/email/scrittura reale di prova. Segreti e checkpoint remoto validi,
+noto errore cleanup. Produzione Vercel sul progetto subingresso
+prj_QsyHcCh5m4DGRTclNKR6z8MtaRnm; .vercel/project.json locale obsoleto.
 
 19/10/2026, richiesta filtri fiere: in primo piano Quando, Dove e Tipologia
 di articolo; Cosa vendi e Tipo di evento dentro Altri filtri, con indicatore
