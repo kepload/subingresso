@@ -105,7 +105,7 @@ async function run(engine, name, width, height, base) {
         }
         await page.goto(base+'/fiere/umbria-perugia-eurochocolate');
         assert((await page.locator('main').innerText()).includes('Articoli verificati'));
-        assert(await page.locator('main a[href="https://www.eurochocolate.com/perugia2026/"]').count()>0);
+        assert(await page.locator('main a[data-fiere-source="https://www.eurochocolate.com/perugia2026/"]').count()>0);
         await page.goto(base+'/fiere?articoli=abbigliamento,abbigliamento-vintage&q='+encodeURIComponent('la moda che vive due volte'));
         await page.waitForSelector('.fiere-fit-badge[data-score="9"]');
         await page.locator('.fiere-fit-badge').first().click();

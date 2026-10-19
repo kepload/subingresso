@@ -44,7 +44,7 @@ assert.deepEqual(mixed.items.map(item => item.score), [6, 2, null]);
 assert.equal(mixed.items.length, 3);
 assert.equal(mixed.best.article, 'calzature');
 const cento = catalog.events.find(e => e.id === 'emilia-romagna-cento-fiera-di-natale');
-assert.equal(api.articleAffinity(cento, 'dolciumi', today).score, 2);
+assert.equal(api.articleAffinity(cento, 'dolciumi', cento.source.checkedAt).score, 2, 'Assess the updated catalogue evidence on its checked date');
 const cavour = catalog.events.find(e => e.id === 'piemonte-cavour-tuttomele');
 assert.equal(api.articleAffinity(cavour, 'dolciumi', today).score, null, 'Hobby-area restrictions cannot reject food traders');
 const prato = catalog.events.find(e => e.id === 'piemonte-prato-sesia-mercatino-d-autunno-sagra-della-castagna');
@@ -86,7 +86,7 @@ async function run(engine, label, width, height, base) {
         const page = await context.newPage(), errors = [];
         page.on('pageerror', error => errors.push(error.message));
         await page.goto(base + '/fiere');
-        await page.waitForFunction(() => document.querySelector('#list-count').textContent === '4322');
+        await page.waitForFunction(count => document.querySelector('#list-count').textContent === String(count), catalog.events.length);
         assert.equal(await page.locator('.fiere-fit-badge').count(), 0);
         assert.equal(await page.getByText('Scegli articolo', { exact: true }).count(), 0);
         await page.locator('#article-summary').click();
@@ -106,7 +106,7 @@ async function run(engine, label, width, height, base) {
         assert.equal(await page.locator('#fit-items li').count(), 1);
         assert((await page.locator('#fit-description').innerText()).includes('Non misura vendite'));
         await page.locator('.fiere-fit-criteria summary').click();
-        assert.equal(await page.locator('#fit-source').getAttribute('href'), expected[0].source.url);
+        assert.equal(await page.locator('#fit-source').getAttribute('data-fiere-source'), expected[0].source.url);
         assert.equal(await page.locator('#fit-source-text').innerText(), expected[0].sectors);
         assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
         await page.keyboard.press('Escape');
@@ -114,12 +114,12 @@ async function run(engine, label, width, height, base) {
         assert(await first.evaluate(element => element === document.activeElement));
         await page.locator('#article-summary').click();
         await page.locator('#article-options input[value="calzature"]').uncheck();
-        await page.waitForFunction(() => document.querySelector('#list-count').textContent === '4322');
+        await page.waitForFunction(count => document.querySelector('#list-count').textContent === String(count), catalog.events.length);
         assert.equal(await page.locator('.fiere-fit-badge').count(), 0, 'Removing the last article leaves no affinity control');
         await page.locator('#article-options input[value="calzature"]').check();
         await page.waitForSelector('.fiere-fit-badge');
         await page.locator('#clear-articles').click();
-        await page.waitForFunction(() => document.querySelector('#list-count').textContent === '4322');
+        await page.waitForFunction(count => document.querySelector('#list-count').textContent === String(count), catalog.events.length);
         assert.equal(await page.locator('.fiere-fit-badge').count(), 0, 'Clear all removes the affinity control');
         await page.goto(base + '/fiere?articoli=calzature,dolciumi,intimo');
         await page.waitForSelector('.fiere-fit-badge[data-score]');
@@ -131,13 +131,13 @@ async function run(engine, label, width, height, base) {
         await page.waitForSelector('.fiere-fit-badge[data-score]');
         assert.equal(new URL(page.url()).searchParams.get('articoli'), 'calzature,dolciumi,intimo');
         await page.locator('#reset-filters').click();
-        await page.waitForFunction(() => document.querySelector('#list-count').textContent === '4322');
+        await page.waitForFunction(count => document.querySelector('#list-count').textContent === String(count), catalog.events.length);
         assert.equal(await page.locator('.fiere-fit-badge').count(), 0);
         await page.locator('#load-more').click();
         assert.equal(await page.locator('.fiere-card').count(), 62);
         assert.equal(await page.locator('.fiere-fit-badge').count(), 0);
         await page.reload();
-        await page.waitForFunction(() => document.querySelector('#list-count').textContent === '4322');
+        await page.waitForFunction(count => document.querySelector('#list-count').textContent === String(count), catalog.events.length);
         assert.equal(await page.locator('.fiere-fit-badge').count(), 0);
         if (process.env.FIERE_AFFINITY_OUTPUT) {
             fs.mkdirSync(process.env.FIERE_AFFINITY_OUTPUT, { recursive: true });

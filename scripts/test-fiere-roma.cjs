@@ -99,7 +99,7 @@ async function browserTest(engine,label,viewport,base){
       await page.locator('.fiere-card[data-event-id="'+e.id+'"] .fiere-card-button').click();
       assert.equal(await page.locator('#detail-title').textContent(),name);
       assert.equal(await page.locator('#detail-location').textContent(),e.city+' · Roma');
-      assert.equal(await page.locator('#detail-source').getAttribute('href'),e.source.url);
+      assert.equal(await page.locator('#detail-source').getAttribute('data-fiere-source'),e.source.url);
       assert.equal(await page.locator('#detail-editions .fiere-edition').count(),e.editions.length);
       if(e.pricing)assert.equal(await page.locator('#detail-costs').textContent(),e.pricing.details);
       if(e.participation.deadline)assert((await page.locator('#detail-deadline').textContent()).length>0);

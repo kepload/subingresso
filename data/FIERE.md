@@ -1,5 +1,30 @@
 # Calendario fiere — fonti e aggiornamento
 
+## Iscrizione e consultazione delle fonti — 19 ottobre 2026
+
+Preferenza richiesta: «Consulta la fonte» richiede registrazione o accesso.
+Invito gratuito con motivi concreti nel calendario, prima delle schede, e
+nelle pagine autonome raggiunte da Google. Filtri e mappa conservano la
+posizione precedente. Avvisi per bandi/posteggi presentati come da attivare
+nel profilo, senza iscrizioni automatiche o promesse di posti/incassi.
+
+Stesso controllo su fonti delle date, tariffe, partecipazione, affluenza e
+articoli. `js/fiere-access.js` conserva fonte/fiera durante accesso e annullo;
+chiude temporaneamente il dialog nativo per mostrare il modulo comune,
+ripristina focus e scheda e rende il modulo scorrevole nei telefoni piccoli.
+Fallback interni anche senza il nuovo script, nessun link diretto esterno
+nelle pagine senza JS. `/api/fiere-source` verifica la sessione con Supabase
+e accetta solo URL documentali associati alla fiera; risposte private/no-store.
+Il catalogo e le fonti pubbliche non diventano dati riservati: è un requisito
+di accesso alla consultazione dal sito. Nessuna modifica a dati, DB o email.
+
+Cache: calendario JS86, accesso JS/CSS1; CSS calendario30 e JSON59 invariati.
+Nuovo test `scripts/test-fiere-access.cjs`: percorso completo con UI auth
+reale e backend simulato, annullo/errori/logout, fallback e script assente.
+Aggiornate le asserzioni dei test ai link protetti; eliminati conteggi fissi
+e data anteriore alla fonte aggiornata nella vecchia suite affinità.
+Prove `Documents/verifica-fiere-iscrizione-20261019/`. Pubblicazione da verificare.
+
 ## Filtri semplificati — 19 ottobre 2026
 
 Richiesta corrente: in primo piano Quando, Dove e Tipologia di articolo;

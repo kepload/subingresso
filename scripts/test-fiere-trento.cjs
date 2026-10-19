@@ -93,7 +93,7 @@ async function run(engine, label, viewport, base) {
             await card.locator('.fiere-card-button').click();
             assert.equal(await page.locator('#detail-title').textContent(), e.name);
             assert.equal(await page.locator('#detail-location').textContent(), e.city + ' · Trento');
-            assert.equal(await page.locator('#detail-source').getAttribute('href'), e.source.url);
+            assert.equal(await page.locator('#detail-source').getAttribute('data-fiere-source'), e.source.url);
             assert.equal(await page.locator('#detail-editions .fiere-edition').count(), e.editions.length);
             if (e.pricing) assert.equal(await page.locator('#detail-costs').textContent(), e.pricing.details);
             assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));

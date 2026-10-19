@@ -4,6 +4,16 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 19 ottobre 2026
 
+- **Conversione fiere,19/10:** richiesta permanente: «Consulta la fonte»
+  richiede registrazione/accesso; stesso percorso per date, tariffe,
+  partecipazione e altre fonti. Invito gratuito prima delle schede e nelle
+  pagine da Google, vantaggi concreti e avvisi da attivare nel profilo.
+  Filtri/mappa conservati; fonte e fiera riprese dopo accesso/annullo.
+  Modulo scorrevole su telefoni piccoli; API verifica sessione e URL
+  della fiera, errori senza apertura esterna. Catalogo/DB/email invariati.
+  JS86, accesso JS/CSS1; prove `Documents/verifica-fiere-iscrizione-20261019/`,
+  dettagli `data/FIERE.md`. Pubblicazione e verifiche finali in corso.
+
 - **Fiere, filtri semplificati 19/10:** principali Quando, Dove e Tipologia
   di articolo. Cosa vendi e Tipo di evento spostati in Altri filtri, con
   indicatore dei filtri attivi anche a pannello chiuso. Menu ridotto da35

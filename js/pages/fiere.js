@@ -615,6 +615,7 @@
         $('fit-source').href = event.source.url;
         $('fit-source').textContent = event.source.label + ' ↗';
         $('fit-source-date').textContent = event.source.checkedAt ? 'Fonte consultata il ' + dateLabel(event.source.checkedAt) : '';
+        prepareSources($('article-fit-dialog'), event);
         $('article-fit-dialog').showModal();
     }
     function articleAffinityBadge(event) {
@@ -785,6 +786,15 @@
         $('map-popup').hidden = false;
         $('close-popup').focus({ preventScroll: true });
     }
+    function prepareSources(dialog, event) {
+        if (global.FiereAccess) { global.FiereAccess.prepare(dialog, event.id); return; }
+        // Missing access script must never expose a direct external source link.
+        dialog.querySelectorAll('a[href^="https://"]').forEach(link => {
+            if (new URL(link.href).origin === 'https://subingresso.it') return;
+            link.href = '/fiere?fiera=' + encodeURIComponent(event.id);
+            link.removeAttribute('target');
+        });
+    }
     function openDetail(event) {
         state.selected = event.id;
         renderMap(filterEvents(state.events, state));
@@ -844,6 +854,7 @@
         $('detail-calendar-source').hidden = !event.calendarSource || event.calendarSource.url === event.source.url;
         if (event.calendarSource) { $('detail-calendar-source').href = event.calendarSource.url; $('detail-calendar-source').textContent = event.calendarSource.label + ' ↗'; }
         $('detail-annunci').href = '/annunci?regione=' + encodeURIComponent(event.region);
+        prepareSources($('fair-dialog'), event);
         $('fair-dialog').showModal();
     }
     function render() {
@@ -935,6 +946,8 @@
             }
             if (!state.ready) readURL(); else $('province-filter').value = previous;
             state.ready = true; $('province-filter').disabled = false; $('sector-filter').disabled = false; fitProvince(); render();
+            const requested = state.events.find(event => event.id === new URLSearchParams(location.search).get('fiera'));
+            if (requested && global.FiereAccess) { openDetail(requested); global.FiereAccess.resume(requested); }
             loadManagedEvents();
         } catch (error) {
             $('catalog-error').hidden = false;

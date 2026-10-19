@@ -1,5 +1,14 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, conversione fiere richiesta: registrazione/accesso obbligatori
+per «Consulta la fonte» e link documentali equivalenti, anche sulle pagine
+autonome da Google. Invito gratuito e vantaggi prima delle schede; filtri e
+mappa conservati. Fiera/fonte riprese dopo accesso o annullo; modulo auth
+comune scorrevole su telefono. API fiere-source verifica sessione Supabase
+e URL associato, no-store; catalogo/DB/email invariati. JS86 e accesso JS/CSS1.
+Nuova suite test-fiere-access.cjs; prove Documents/verifica-fiere-iscrizione-20261019,
+dettagli data/FIERE.md. Pubblicazione/verifiche finali in corso.
+
 19/10/2026, richiesta filtri fiere: in primo piano Quando, Dove e Tipologia
 di articolo; Cosa vendi e Tipo di evento dentro Altri filtri, con indicatore
 degli attivi visibile da chiuso.24 opzioni invece di35, raggruppando voci

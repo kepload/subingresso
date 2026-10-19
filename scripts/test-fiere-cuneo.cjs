@@ -113,9 +113,9 @@ const server = http.createServer((req,res) => {
                     await page.locator('[data-event-id="' + e.id + '"] button').click();
                     await page.locator('#fair-dialog').waitFor({state:'visible'});
                     assert.equal(await page.locator('#detail-title').textContent(), e.name);
-                    assert.equal(await page.locator('#detail-source').getAttribute('href'), e.source.url);
+                    assert.equal(await page.locator('#detail-source').getAttribute('data-fiere-source'), e.source.url);
                     assert.equal(await page.locator('#detail-participation-note').textContent(), e.participation.note);
-                    if (e.participation.url) assert.equal(await page.locator('#detail-participation-link').getAttribute('href'), e.participation.url);
+                    if (e.participation.url) assert.equal(await page.locator('#detail-participation-link').getAttribute('data-fiere-source'), e.participation.url);
                     if (e.participation.costs) assert.equal(await page.locator('#detail-costs').textContent(), e.participation.costs);
                     if (e.participation.deadline) assert.match(await page.locator('#detail-deadline').textContent(), /[0-9]/);
                     assert.equal(await page.locator('#detail-editions > div').count(), e.editions.length);

@@ -88,7 +88,7 @@ const server=http.createServer((req,res)=>{
     }
     const button=card.locator(hasBadge?'.fiere-attendance':'.fiere-card-button');await button.focus();await page.keyboard.press('Enter');
     await page.waitForSelector('#fair-dialog[open]');assert.equal(await page.locator('#detail-attendance').isVisible(),Boolean(a));
-    if(a){assert((await page.locator('#detail-attendance').textContent()).includes(a.total));await page.locator('#detail-attendance summary').click();assert.equal(await page.locator('#detail-attendance a').first().getAttribute('href'),a.record.source.url);}
+    if(a){assert((await page.locator('#detail-attendance').textContent()).includes(a.total));await page.locator('#detail-attendance summary').click();assert.equal(await page.locator('#detail-attendance a').first().getAttribute('data-fiere-source'),a.record.source.url);}
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
     await page.keyboard.press('Escape');
     if(hasBadge){
