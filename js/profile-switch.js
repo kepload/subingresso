@@ -57,7 +57,7 @@
         const changed = track.dataset.selected !== mode;
         track.dataset.selected = mode;
         modal.dataset.profile = mode;
-        document.getElementById('profileDialogTitle').textContent = mode === 'organizer' ? 'Profilo organizzatore' : 'Il mio profilo';
+        document.getElementById('profileDialogTitle').textContent = mode === 'organizer' ? 'Profilo organizzatore' : 'Profilo ambulante';
         defaultStatus.hidden = true;
         track.removeAttribute('aria-busy');
         tabs.forEach(tab => {
@@ -162,7 +162,7 @@
     });
     content.addEventListener('click', event => {
         if (event.target.closest('[data-profile-retry]')) loadOrganizer();
-        if (event.target.closest('a') && baseline !== null && baseline !== snapshot() && !window.confirm('Hai modifiche al profilo normale non salvate. Vuoi uscire senza salvarle?')) event.preventDefault();
+        if (event.target.closest('a') && baseline !== null && baseline !== snapshot() && !window.confirm('Hai modifiche al profilo ambulante non salvate. Vuoi uscire senza salvarle?')) event.preventDefault();
     });
     modal.addEventListener('keydown', event => {
         if (!isOpen()) return;

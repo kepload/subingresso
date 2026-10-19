@@ -1,4 +1,4 @@
-/* Due aree dello stesso account, con selettore sempre disponibile. */
+/* Due aree dello stesso account; il selettore segue lo scorrimento della pagina. */
 .profile-dialog { height:min(720px,92dvh); max-height:92dvh; min-height:0; }
 .profile-close { width:44px; height:44px; flex-shrink:0; }
 .profile-switch-wrap { padding:16px 24px 0; flex-shrink:0; }
@@ -9,8 +9,7 @@
 .profile-switch button,.profile-switch a { display:flex; align-items:center; justify-content:center; gap:7px; min-height:44px; min-width:0; padding:8px 6px; border:0; border-radius:10px; background:transparent; color:#475569; font-family:inherit; font-size:13px; font-weight:700; line-height:1.4; text-decoration:none; cursor:pointer; -webkit-tap-highlight-color:transparent; }
 .profile-switch [aria-selected="true"],.profile-switch [aria-current="page"] { color:#1d4ed8; }
 .profile-switch button:focus-visible,.profile-switch a:focus-visible,.profile-close:focus-visible { outline:2px solid #2563eb; outline-offset:2px; }
-.profile-switch-page { position:fixed; top:88px; left:50%; transform:translateX(-50%); z-index:40; width:calc(100% - 28px); box-shadow:0 4px 18px #02061755; }
-.dashboard-main.profile-dashboard-main { padding-top:96px; }
+.profile-switch-page { margin:0 auto 24px; }
 .profile-panels { flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; }
 .profile-panel[hidden] { display:none!important; }
 .profile-default-status { padding:24px; color:#64748b; font-size:13px; }
@@ -50,9 +49,7 @@
 
 body.organizer-theme { background:#0b1220; color:#f1f5f9; }
 .organizer-theme > header { color:#0f172a; }
-.organizer-theme .ev-main { padding-top:96px; }
 .organizer-theme .ev { --ev-ink:#f1f5f9; --ev-muted:#cbd5e1; color-scheme:dark; }
-.organizer-theme .ev input,.organizer-theme .ev select,.organizer-theme .ev textarea,.organizer-theme .ev fieldset,.organizer-theme .ev-notice,.organizer-theme #eventEditor,.organizer-theme #eventPlacesEditor { scroll-margin-top:160px; }
 .organizer-theme .ev-panel,.organizer-theme .ev-card { background:#152033; border-color:#334155; }
 .organizer-theme .ev a,.organizer-theme .ev .ev-eyebrow { color:#93c5fd; }
 .organizer-theme .ev button,.organizer-theme .ev .ev-button { background:#25334a; color:#f1f5f9; border-color:#64748b; }

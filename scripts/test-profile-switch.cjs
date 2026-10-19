@@ -4,7 +4,7 @@ const nativeFetch = global.fetch;
 const { chromium, webkit } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const H = require('./test-organizer-events.cjs');
 const root = path.resolve(__dirname, '..'), artifacts = process.env.PROFILE_QA_DIR;
-const files = ['dashboard.html', 'organizzatore.html', 'css/profile-switch.css', 'js/profile-switch.js'];
+const files = ['dashboard.html', 'organizzatore.html', 'profilo.html', 'css/profile-switch.css', 'js/profile-switch.js', 'js/organizzatori.js'];
 let assets = new Map(files.map(file => [file, fs.readFileSync(path.join(root, file), 'utf8')]));
 function fixture() {
     const html = assets.get('dashboard.html');
@@ -20,7 +20,7 @@ const _supabase={auth:{getUser:async()=>({data:{user:qaUser}}),onAuthStateChange
 rpc(name,args){const promise=fetch('/qa/rpc',{method:'POST',headers:{'X-QA-User':qaUser?.id||''},body:JSON.stringify({name,args})}).then(r=>r.json());promise.abortSignal=()=>promise;return promise;},
 from:table=>({filters:[],upsert(value){qaWrites.push({table,value});return this;},select(columns,options){this.columns=columns;this.options=options;return this;},eq(key,value){this.filters.push([key,value]);return this;},or(filter){this.orFilter=filter;return this;},abortSignal(signal){return fetch('/qa/listing-count',{signal,method:'POST',body:JSON.stringify({table,columns:this.columns,options:this.options,filters:this.filters,or:this.orFilter})}).then(r=>r.json());},single:async()=>{await new Promise(resolve=>setTimeout(resolve,qaSaveDelay));return qaFailSave?{error:{message:'offline'}}:{data:{id:qaUser.id}};}})};
 window.updateAuthNav=()=>{};window.signOut=()=>{};
-</script><script src="/js/data.js?v=20"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/profile-switch.js?v=2"></script><script>
+</script><script src="/js/data.js?v=20"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/profile-switch.js?v=3"></script><script>
 ${modalFunctions}
 ${saveFunction}
 loadingState.classList.add('hidden');dashContent.classList.remove('hidden');
@@ -66,6 +66,7 @@ async function run(engine,name,width,height,base) {
     try {
         await page.goto(base+'/dashboard');await open();
         check(await normal.getAttribute('aria-selected')==='true' && !await page.locator('#profileOrganizerPanel').isVisible(),'Normale predefinito');
+        check(await normal.innerText()==='Ambulante' && await page.locator('#profileDialogTitle').innerText()==='Profilo ambulante','Nome Ambulante nel profilo e nello switch');
         check(H.getDB().calls.length>=1 && H.getDB().calls.every(call=>call.name==='organizer_workspace') && await page.evaluate(()=>qaWrites.length===0),'Scelta iniziale dai dati attuali in sola lettura');
         check(await page.locator('.profile-dialog').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(255, 255, 255)','Profilo normale con colori chiari');
         await page.evaluate(()=>ProfileSwitcher.startDashboard(qaUser));
@@ -110,11 +111,14 @@ async function run(engine,name,width,height,base) {
         check(await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Organizzatore','Area organizzatore e modulo completo raggiungibili');
         check(await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(11, 18, 32)','Area di gestione organizzatore con colori scuri');
         check(await page.locator('header a[href="/"] > span').evaluate(el=>getComputedStyle(el).color)==='rgb(15, 23, 42)','Logo leggibile sull intestazione chiara anche in modalita organizzatore');
+        check(await page.locator('#organizerRefresh').count()===0 && await page.getByRole('link',{name:'Dashboard normale',exact:true}).count()===0,'Area organizzatore senza pulsanti Aggiorna e dashboard duplicata');
         await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));
-        check(await page.locator('.profile-switch-page').evaluate(el=>{const r=el.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}),'Selettore visibile anche scorrendo la gestione eventi');
+        check(await page.locator('.profile-switch-page').evaluate(el=>el.getBoundingClientRect().bottom<=0),'Selettore organizzatore scorre fuori dalla vista');
+        await page.evaluate(()=>scrollTo(0,0));
         await page.locator('.profile-switch-page a').first().click();
-        await page.locator('#profileNormalPanel').waitFor({state:'visible'});
-        check(await normal.getAttribute('aria-selected')==='true' && !new URL(page.url()).searchParams.has('profilo'),'Ritorno al profilo normale aperto, parametro consumato');
+        await page.locator('#dashContent').waitFor({state:'visible'});
+        check(await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Ambulante' && !await page.locator('#profiloModal').isVisible() && !new URL(page.url()).searchParams.has('area'),'Switch organizzatore torna alla dashboard ambulante senza aprire la modifica profilo');
+        await open();
         for(const status of ['pending','approved','rejected','suspended']){
             H.getDB().profile={...profile(status),review_note:status==='rejected'?'<img src=x onerror="window.qaXSS=1"> Controlla i dati':''};
             await organizer.click();await ready();
@@ -182,9 +186,13 @@ async function run(engine,name,width,height,base) {
         await page.goto(base+'/dashboard');await page.waitForURL(base+'/organizzatore');
         check(await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Organizzatore','Ingresso area personale apre la dashboard organizzatore quando prevalgono gli eventi');
         await page.goto(base+'/dashboard?area=normale');await page.locator('#dashContent').waitFor({state:'visible'});
-        check(new URL(page.url()).pathname==='/dashboard' && !new URL(page.url()).searchParams.has('area') && await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Normale','Ritorno esplicito alla dashboard normale senza reindirizzamento');
+        check(new URL(page.url()).pathname==='/dashboard' && !new URL(page.url()).searchParams.has('area') && await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Ambulante','Ritorno esplicito alla dashboard ambulante senza reindirizzamento');
+        await page.locator('#sellerAnalyticsPanel').evaluate(el=>el.classList.remove('hidden'));
+        const layout=await page.evaluate(()=>{const welcome=document.querySelector('.dashboard-user').getBoundingClientRect(),nav=document.querySelector('.profile-switch-page').getBoundingClientRect(),performance=document.querySelector('#sellerAnalyticsPanel').getBoundingClientRect();return{welcomeBottom:welcome.bottom,navTop:nav.top,navBottom:nav.bottom,performanceTop:performance.top,position:getComputedStyle(document.querySelector('.profile-switch-page')).position};});
+        check(layout.navTop>=layout.welcomeBottom && layout.navBottom<=layout.performanceTop && !['fixed','sticky'].includes(layout.position),'Switch tra saluto del profilo e Performance posteggi, nel normale scorrimento');
+        if(artifacts)await page.screenshot({path:path.join(artifacts,`${name}-${width}-dashboard-ambulante.png`)});
         await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));
-        check(await page.locator('.profile-switch-page').evaluate(el=>{const r=el.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight;}),'Switch sempre visibile anche nella dashboard normale');
+        check(await page.locator('.profile-switch-page').evaluate(el=>el.getBoundingClientRect().bottom<=0),'Switch ambulante scorre fuori dalla vista');
         await page.goto(base+'/dashboard#pagamenti');await page.locator('#dashContent').waitFor({state:'visible'});
         check(new URL(page.url()).pathname==='/dashboard' && new URL(page.url()).hash==='#pagamenti','Link diretti alle funzioni normali conservati');
         await page.goto(base+'/dashboard?qa=inizio');await page.keyboard.press('Tab');

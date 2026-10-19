@@ -4,6 +4,22 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 19 ottobre 2026
 
+- **Profili, correzione preferita 19/10:** nome pubblico **Ambulante** al
+  posto di «Normale», anche nel modal e nei messaggi. Switch nella dashboard
+  sotto il blocco avatar/saluto/email/modifica profilo e prima di Performance
+  posteggi, nel normale flusso: scorrendo esce dalla vista. Anche nell’area
+  organizzatore niente switch fisso. Eliminati «Dashboard normale» e
+  «Aggiorna»: dati caricati già all’apertura; ritorno alla dashboard Ambulante
+  soltanto dallo switch, senza aprire il modal. Colori e scelta automatica
+  conservati. Questa preferenza sostituisce nome e posizione fissa sotto.
+  CSS/JS selettore3, organizzatori6.280 controlli profili locali passati
+  Chromium1440/820/320 e WebKit390, con font/icone reali; flusso completo
+  eventi passato Chromium1440/320 e WebKit390. Pubblicazione in corso.
+  Checkout isolato `Documents/subingresso-profili-ambulante-20261019`, prove
+  `Documents/verifica-profili-ambulante-layout-20261019/`; ricerca Pisa
+  concorrente preservata. Tag e branch preventivi remoti creati, noto errore
+  del cleanup locale PowerShell.
+
 - **Profili, nuova preferenza 19/10:** stesso account, modalità Normale chiara
   e Organizzatore scura sia nel profilo sia nella gestione eventi. Switch con
   icone sempre visibile, anche durante lo scorrimento. A ogni apertura del

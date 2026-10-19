@@ -129,7 +129,6 @@
  async function initOwner(){
   for(const id of ['organizerProfileForm','organizerEventForm','eventPlaceForm'])bindValidation($(id));
   try{sessionStorage.setItem('_vp','1');}catch(_){}
-  $('organizerRefresh').addEventListener('click',event=>{if((state.dirty||state.placeDirty||state.profileDirty)&&!window.confirm('Ricaricare i dati e abbandonare le modifiche non salvate?'))return;state.dirty=false;state.placeDirty=false;state.profileDirty=false;action(event.target,loadWorkspace);});
   $('organizerSignIn').addEventListener('click',()=>openAuthModal('login','Accedi o registrati per creare il tuo profilo organizzatore.','nav_accedi'));
   $('newOrganizerEvent').addEventListener('click',()=>{if(!mayLeave())return;state.selected=null;fillEvent(null);$('eventEditorTitle').focus();$('eventEditor').scrollIntoView({block:'start',behavior:'smooth'});});
   $('closeEventEditor').addEventListener('click',()=>{if(!mayLeave())return;state.selected=null;state.dirty=false;state.placeDirty=false;$('eventEditor').hidden=true;});

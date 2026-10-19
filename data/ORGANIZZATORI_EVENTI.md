@@ -2,6 +2,27 @@
 
 ## Selettore profili — 19 ottobre 2026
 
+**Correzione corrente successiva, richiesta dall’utente:** nome visibile
+Ambulante, anziché Normale, nelle due dashboard e nel modal, titolo e avviso
+modifiche compresi. Nella dashboard lo switch è tra blocco avatar/saluto/
+email/modifica profilo e Performance posteggi; nessun ancoraggio allo schermo.
+Nella pagina organizzatore resta in alto ma scorre con il contenuto. Tolti
+i pulsanti aggiuntivi «Dashboard normale» e «Aggiorna», compreso l’ascoltatore
+JS del comando rimosso. I dati continuano a caricarsi all’ingresso e dopo i
+salvataggi tramite il percorso esistente. Lo switch Ambulante torna alla
+dashboard senza aprire il modal; `?profilo=1` resta compatibile per gli altri
+accessi diretti al profilo. Colori, scelta iniziale e backend conservati.
+Cache CSS/JS selettore3 e organizzatori6 nei tre consumatori. La posizione
+fissa e il nome Normale registrati sotto sono superati da questa richiesta.
+Checkout isolato `Documents/subingresso-profili-ambulante-20261019` e prove
+`Documents/verifica-profili-ambulante-layout-20261019/`;280 controlli profili
+locali passati (70×4, Chromium1440/820/320 e WebKit390), con font/icone reali.
+Verificata posizione tra saluto e Performance, scomparsa scorrendo nelle
+due dashboard, nome, assenza pulsanti duplicati e ritorno dal solo switch;
+predefiniti, modal e salvataggi conservati. Flusso completo eventi passato
+Chromium1440/320 e WebKit390. Pubblicazione in corso, nessuna scrittura reale
+o modifica ai dati della ricerca Pisa concorrente.
+
 **Aggiornamento corrente del 19/10, prevale sulla descrizione iniziale sotto:**
 Normale mantiene i colori chiari; Organizzatore usa blu notte, testi chiari
 e azioni azzurre sia nel modal sia nell'area di gestione. Titolo, icone e

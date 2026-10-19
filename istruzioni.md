@@ -1,5 +1,20 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+19/10/2026, correzione richiesta dei profili: nome pubblico Ambulante al
+posto di Normale. Switch sotto avatar/saluto/email/modifica profilo e prima
+di Performance posteggi, senza fissarlo alla pagina: scompare scorrendo.
+Anche lo switch organizzatore segue la pagina. Rimossi pulsanti Dashboard
+normale e Aggiorna; dati gia caricati all'apertura, ritorno alla dashboard
+Ambulante dal solo switch, senza modal. Colori e regola del predefinito
+invariati. Supera le preferenze di nome/posizione nei registri precedenti.
+CSS/JS profile-switch3, organizzatori6 in tutti i riferimenti. Lavoro nel
+checkout isolato Documents/subingresso-profili-ambulante-20261019 per non
+toccare la ricerca Pisa concorrente. Prove Documents/verifica-profili-ambulante-layout-20261019;
+280 controlli profili locali passati nei quattro casi, font/icone reali;
+flusso completo eventi passato Chromium1440/320 e WebKit390. Pubblicazione
+in corso. Checkpoint e branch preventivi remoti validi;
+consueto errore cleanup PowerShell.
+
 19/10/2026, aggiornamento profili: predefinito ricalcolato all'apertura da
 annunci propri attivi/non scaduti (NULL legacy valido) ed eventi propri non
 annullati incluse bozze. Organizzatore solo con piu eventi; parita/zero/errori
