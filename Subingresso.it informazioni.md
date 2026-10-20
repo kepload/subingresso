@@ -4,6 +4,16 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Fiere, invito senza lampeggio20/10:** nascosto nel primo HTML e visibile
+  solo dopo conferma di sessione assente; accesso lento/errori/script assente
+  e risposta iniziale tardiva protetti. Testo semplice «Trova le fiere per
+  il tuo banco», pulsante «Registrati gratis»; calendario/dialog/pagine
+  autonome allineati. AccessoJS3, catalogo/DB invariati. Suite locale/online quattro
+  formati e5.292pagine/2.169sitemap passate. Pubblicato `dcb3d57`, Vercel
+  AKW5yFwtTHtJftdecQo76oydo9W5 riuscito; HTML/JS/pagina generata identici.
+  Prove `Documents/verifica-fiere-accesso-20261020/`, guida `data/FIERE.md`.
+  Nessuna scrittura/email reale; backup remoto valido, noto errore cleanup.
+
 - **Fiere, nuova preferenza20/10:** Salva/Avvisami solo icone in alto a
   destra; affinità senza voto omessa, voto piccolo centrato a destra.
   Modulo essenziale: mesi, data automatica, giorno email e conferma;

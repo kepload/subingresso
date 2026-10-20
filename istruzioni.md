@@ -1,5 +1,15 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+20/10/2026, fiere: invito registrazione nascosto nel primo HTML, mostrato
+solo dopo conferma anonima; nessun lampeggio con accesso lento/errore/script
+assente, lettura iniziale protetta da eventi auth successivi. Testo semplice
+«Trova le fiere per il tuo banco», CTA «Registrati gratis», pagine autonome
+allineate. AccessoJS3, catalogo/DB invariati. Suite locale/online quattro formati,
+5.292pagine/2.169sitemap passate; prove Documents/verifica-fiere-accesso-20261020.
+Pubblicato dcb3d57, Vercel AKW5yFwtTHtJftdecQo76oydo9W5 riuscito;
+HTML/JS/pagina generata identici. Nessuna scrittura/account/email reale.
+Backup remoto valido; noto errore cleanup. Dettagli data/FIERE.md.
+
 20/10/2026, preferenza successiva fiere: Salva/campanella solo icone in alto
 a destra delle anteprime; niente affinità ignota né spazio vuoto, voto piccolo
 centrato a destra con motivi apribili. Avvisami essenziale: mesi, data pronta,
