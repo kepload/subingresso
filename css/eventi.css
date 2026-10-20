@@ -69,3 +69,10 @@ body { font-family:'Plus Jakarta Sans',sans-serif; }
 .ev-mini { font-size:.8rem; }
 .ev-profile-link { margin-top:12px; display:inline-block; }
 @media(max-width:600px) { .ev-main { padding:24px 14px 44px; } .ev-panel { padding:18px; border-radius:16px; } .ev-grid { grid-template-columns:minmax(0,1fr); } .ev-card { padding:16px; } .ev-card-head { flex-direction:column; gap:5px; } .ev-dialog-body { padding:18px; } .ev-dialog-top { padding:12px 18px; } .ev-facts { grid-template-columns:minmax(0,1fr); gap:2px; } .ev-facts dd { margin-bottom:9px; } .ev-actions>* { flex-grow:1; } }
+
+.ev-availability { color:#047857; font-weight:800; margin:10px 0; overflow-wrap:anywhere; }
+.ev-availability[data-sold-out=true] { color:#b91c1c; }
+.organizer-theme .ev-availability { color:#6ee7b7; }
+.organizer-theme .ev-availability[data-sold-out=true] { color:#fda4af; }
+#eventCapacity { margin-top:28px; }
+#eventCapacity h4 { font-weight:800; margin-bottom:8px; }

@@ -1,7 +1,7 @@
 (function(){
  'use strict';
  const D=window.EventData, $=id=>document.getElementById(id);
- const state={userId:null,data:null,selected:null,placeId:null,picker:null,dirty:false,eventSnapshot:'',placeDirty:false,profileDirty:false,busy:false,restoring:false,locationRequest:0,epoch:0,feedbackId:null,returnFocus:null};
+ const state={userId:null,data:null,selected:null,placeId:null,picker:null,dirty:false,eventSnapshot:'',placeDirty:false,profileDirty:false,capacityDrafts:{},busy:false,restoring:false,locationRequest:0,epoch:0,feedbackId:null,returnFocus:null};
  let adminData=null, adminSelection=null, adminBusy=false, adminActive=false, adminIdentity=null, adminEpoch=0, adminSession=0;
  const adminView={kind:'event',search:'',status:'all',page:0};
  const adminPageSize=6;
@@ -86,7 +86,7 @@
   if(!event.places.some(place=>place.active))missing.push('almeno una tipologia di posteggio attiva');
   hint.textContent=missing.length?'Da completare: '+missing.join(' · ')+'.':'Pronto per l’invio. Premi «Invia evento in revisione»: sarà pubblico dopo l’approvazione.';
  }
- function mayLeave(){return !(state.dirty||state.placeDirty)||window.confirm('Ci sono modifiche non salvate. Vuoi uscire senza salvarle?');}
+ function mayLeave(){if(!(state.dirty||state.placeDirty||Object.keys(state.capacityDrafts).length))return true;if(!window.confirm('Ci sono modifiche non salvate. Vuoi uscire senza salvarle?'))return false;state.capacityDrafts={};return true;}
  function restoreActionFocus(){
   const target=state.returnFocus;if(!target)return;
   if(target.userId!==state.userId||!target.button.isConnected||document.activeElement!==document.body){state.returnFocus=null;return;}
@@ -94,12 +94,12 @@
  }
  async function action(button,fn){
   if(state.busy)return;state.busy=true;
-  const workspace=$('organizerWorkspace'),wasInert=workspace.inert,previousFeedback=state.feedbackId,hadFocus=button===document.activeElement,userId=state.userId;
-  state.feedbackId=button?.closest('#organizerProfileForm')?'organizerProfileMessage':button?.closest('#eventPlaceForm')||button?.id==='submitOrganizerEvent'?'eventPlacesMessage':button?.closest('#organizerEventForm')?'organizerEventMessage':'organizerMessage';
+  const workspace=$('organizerWorkspace'),wasInert=workspace.inert,previousFeedback=state.feedbackId,hadFocus=button===document.activeElement,userId=state.userId,capacityPlace=button?.closest('[data-capacity-place]')?.dataset.capacityPlace;
+  state.feedbackId=capacityPlace?'eventCapacityMessage':button?.closest('#organizerProfileForm')?'organizerProfileMessage':button?.closest('#eventPlaceForm')||button?.id==='submitOrganizerEvent'?'eventPlacesMessage':button?.closest('#organizerEventForm')?'organizerEventMessage':'organizerMessage';
   const buttons=[...$('organizerApp').querySelectorAll('button')].map(el=>[el,el.disabled]);buttons.forEach(([el])=>el.disabled=true);
-  workspace.inert=true;$('organizerApp').setAttribute('aria-busy','true');const old=button?.textContent;if(button)button.textContent='Attendi…';for(const id of ['organizerMessage','organizerProfileMessage','organizerEventMessage','eventPlacesMessage'])message('',false,id);
+  workspace.inert=true;$('organizerApp').setAttribute('aria-busy','true');const old=button?.textContent;if(button)button.textContent='Attendi…';for(const id of ['organizerMessage','organizerProfileMessage','organizerEventMessage','eventPlacesMessage','eventCapacityMessage'])message('',false,id);
   try{await fn();}catch(error){message(failure(error),true);$(state.feedbackId)?.scrollIntoView({block:'nearest'});}
-  finally{state.busy=false;workspace.inert=wasInert;$('organizerApp').setAttribute('aria-busy','false');buttons.forEach(([el,disabled])=>{if(el.isConnected)el.disabled=disabled;});$('organizerEventForm').querySelector('button[type=submit]').disabled=state.restoring;$('organizerProfileForm').querySelector('button[type=submit]').disabled=state.data?.profile?.status==='suspended';if(button?.isConnected){button.textContent=old;if(hadFocus){state.returnFocus={button,userId};restoreActionFocus();}}state.feedbackId=previousFeedback;renderReadiness();}
+  finally{state.busy=false;workspace.inert=wasInert;$('organizerApp').setAttribute('aria-busy','false');buttons.forEach(([el,disabled])=>{if(el.isConnected)el.disabled=disabled;});$('organizerEventForm').querySelector('button[type=submit]').disabled=state.restoring;$('organizerProfileForm').querySelector('button[type=submit]').disabled=state.data?.profile?.status==='suspended';if(capacityPlace&&!button?.isConnected&&userId===state.userId)button=[...document.querySelectorAll('[data-capacity-place]')].find(form=>form.dataset.capacityPlace===capacityPlace)?.querySelector('button[type=submit]');if(button?.isConnected){button.textContent=old;if(hadFocus){state.returnFocus={button,userId};restoreActionFocus();}}state.feedbackId=previousFeedback;renderReadiness();}
  }
  function renderWorkspace(){const p=state.data.profile, approved=p?.status==='approved';
   $('organizerStatus').innerHTML=p?D.badge(p.status):'<span class="ev-status">Da richiedere</span>';
@@ -113,7 +113,7 @@
   if(state.selected&&approved){const e=selectedEvent();if(e)fillEvent(e);else $('eventEditor').hidden=true;}else $('eventEditor').hidden=true;
  }
  async function loadWorkspace(){const epoch=++state.epoch;const {data:{user},error}=await _supabase.auth.getUser();if(error&&error.name!=='AuthSessionMissingError')throw Error('Impossibile verificare l’accesso. Riprova.');if(epoch!==state.epoch)return;
-  if(state.userId!==user?.id){state.data=null;state.selected=null;state.dirty=false;state.placeDirty=false;state.profileDirty=false;}
+   if(state.userId!==user?.id){state.data=null;state.selected=null;state.dirty=false;state.placeDirty=false;state.profileDirty=false;state.capacityDrafts={};}
   state.userId=user?.id||null;$('organizerLoading').hidden=true;$('organizerLogin').hidden=!!user;$('organizerWorkspace').hidden=true;if(!user)return;
   const data=await rpc('organizer_workspace');if(epoch!==state.epoch||state.userId!==user.id)return;state.data=data;renderWorkspace();$('organizerWorkspace').hidden=false;
  }
@@ -123,12 +123,20 @@
   const request=++state.locationRequest,form=$('organizerEventForm'),save=form.querySelector('button[type=submit]');state.restoring=true;save.disabled=true;form.setAttribute('aria-busy','true');
   state.picker.setValue(e?.city||'',e?.region||'').catch(()=>{}).finally(()=>{if(request!==state.locationRequest)return;state.restoring=false;markEventDirty();form.setAttribute('aria-busy','false');save.disabled=state.busy;restoreActionFocus();});
   $('eventEditorTitle').textContent=e?'Gestisci: '+e.title:'Nuovo evento';$('eventEditor').hidden=false;$('eventPlacesEditor').hidden=!e;state.dirty=false;resetPlace();
-  $('eventPublicationNotice').hidden=!e||!['published','pending'].includes(e.status);
+  $('eventPublicationNotice').hidden=!e||!['published','pending'].includes(e.status);renderCapacity(e);
   renderReadiness();
   if(e){$('eventPlacesList').innerHTML=e.places.length?e.places.map(p=>'<article class="ev-card"><div class="ev-card-head"><h3>'+D.esc(p.label)+'</h3>'+(!p.active?'<span class="ev-status">Non attivo</span>':'')+'</div><p>'+p.quantity+' posteggi · '+D.esc(D.money(p.price_cents))+' ciascuno / intero evento</p><button type="button" data-place-edit="'+D.esc(p.id)+'">Modifica tipologia</button></article>').join(''):'<p class="ev-empty">Aggiungi almeno una tipologia di posteggio.</p>';$('submitOrganizerEvent').hidden=!['draft','rejected'].includes(e.status);}
  }
  function resetPlace(){state.placeId=null;state.placeDirty=false;$('eventPlaceForm').reset();clearErrors($('eventPlaceForm'));$('placeFormTitle').textContent='Aggiungi una tipologia di posteggio';$('placeDetails').open=false;renderReadiness();}
+ function renderCapacity(e){
+  const root=$('eventCapacity');if(!root)return;root.hidden=!e;
+  if(!e)return;
+  $('eventCapacitySummary').innerHTML=D.availabilityHTML(e.places);
+  $('eventCapacityForms').innerHTML=e.places.filter(p=>p.active).map(p=>{const draft=state.capacityDrafts[p.id];return '<form class="ev-card" data-capacity-place="'+D.esc(p.id)+'" data-revision="'+D.esc(draft?.revision??p.capacity_revision??1)+'"><h4>'+D.esc(p.label)+'</h4>'+D.availabilityHTML([p])+'<p class="ev-muted">'+D.esc(p.confirmed??0)+' prenotati sul sito · '+D.esc(p.held??0)+' in pagamento</p><div class="ev-grid"><label>Numero massimo di posti<input name="capacity" type="number" min="1" max="10000" step="1" required value="'+D.esc(draft?.capacity??p.quantity)+'"></label><label>Posti assegnati fuori dal sito<input name="external_reserved" type="number" min="0" max="'+D.esc(draft?.capacity??p.quantity)+'" step="1" required value="'+D.esc(draft?.external_reserved??p.external_reserved??0)+'"></label></div><div class="ev-actions"><button type="submit">Aggiorna disponibilità</button></div></form>';}).join('');
+ }
  async function initOwner(){
+   $('eventCapacityForms')?.addEventListener('input',event=>{const form=event.target.form;if(!form)return;if(event.target.name==='capacity')form.elements.external_reserved.max=event.target.value;state.capacityDrafts[form.dataset.capacityPlace]={capacity:form.elements.capacity.value,external_reserved:form.elements.external_reserved.value,revision:Number(form.dataset.revision)};});
+   $('eventCapacityForms')?.addEventListener('submit',event=>{event.preventDefault();const form=event.target;if(!form.reportValidity())return;if(state.dirty||state.placeDirty){message('Salva prima le modifiche dell’evento e dei posteggi.',true,'eventCapacityMessage');return;}action(event.submitter,async()=>{try{await rpc('set_event_capacity',{p_place_id:form.dataset.capacityPlace,p_quantity:Number(form.elements.capacity.value),p_external_reserved:Number(form.elements.external_reserved.value),p_revision:Number(form.dataset.revision)});delete state.capacityDrafts[form.dataset.capacityPlace];await loadWorkspace();message('Disponibilità aggiornata. Il sito mostra subito i posti liberi e Sold out quando sono esauriti.',false,'eventCapacityMessage');}catch(error){message(failure(error),true,'eventCapacityMessage');}});});
   for(const id of ['organizerProfileForm','organizerEventForm','eventPlaceForm'])bindValidation($(id));
   try{sessionStorage.setItem('_vp','1');}catch(_){}
   $('organizerSignIn').addEventListener('click',()=>openAuthModal('login','Accedi o registrati per creare il tuo profilo organizzatore.','nav_accedi'));
@@ -143,7 +151,7 @@
   $('resetPlaceForm').addEventListener('click',()=>{if(state.placeDirty&&!window.confirm('Abbandonare le modifiche alla tipologia?'))return;resetPlace();$('placeDetails').open=true;});
   $('submitOrganizerEvent').addEventListener('click',event=>{if(state.dirty||state.placeDirty){message('Salva le modifiche prima di inviare l’evento.',true,'eventPlacesMessage');return;}const form=$('organizerEventForm'),today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());if(!validateForm(form))return;if(form.elements.start_date.value<today){fieldError(form.elements.start_date,'La data di inizio è già passata. Scegli una data da oggi in poi.');form.elements.start_date.focus();return;}if([...form.elements.participation_rules.value.trim()].length<20){fieldError(form.elements.participation_rules,'Descrivi come partecipare in almeno 20 caratteri, poi salva la bozza.');form.elements.participation_rules.focus();return;}if(!selectedEvent().places.some(place=>place.active)){message('Aggiungi almeno una tipologia di posteggio prima di inviare.',true,'eventPlacesMessage');$('placeDetails').open=true;$('eventPlaceForm').elements.label.focus();return;}action(event.target,async()=>{await rpc('submit_organizer_event',{p_id:state.selected,p_revision:selectedEvent().revision});await loadWorkspace();message('Evento inviato. Sarà visibile nel calendario dopo l’approvazione dell’amministratore.');});});
   $('organizerApp').addEventListener('click',event=>{const edit=event.target.closest('[data-event-edit]'),cancel=event.target.closest('[data-event-cancel]'),place=event.target.closest('[data-place-edit]');if(edit){if(!mayLeave())return;state.selected=edit.dataset.eventEdit;fillEvent(selectedEvent());$('eventEditorTitle').focus();$('eventEditor').scrollIntoView({block:'start',behavior:'smooth'});}if(cancel){if(!mayLeave())return;if(!window.confirm('Ritirare l’evento? Non sarà più visibile al pubblico e resterà conservato nella tua area.'))return;action(cancel,async()=>{const e=state.data.events.find(e=>e.id===cancel.dataset.eventCancel);await rpc('cancel_organizer_event',{p_id:e.id,p_revision:e.revision});state.dirty=false;state.placeDirty=false;await loadWorkspace();message('Evento ritirato. Puoi modificarlo e inviarlo nuovamente in revisione.');});}if(place){if(state.placeDirty&&!window.confirm('Abbandonare le modifiche alla tipologia?'))return;const p=selectedEvent().places.find(p=>p.id===place.dataset.placeEdit);state.placeId=p.id;fill($('eventPlaceForm'),{...p,price:(p.price_cents/100).toFixed(2)});$('placeFormTitle').textContent='Modifica: '+p.label;$('placeDetails').open=true;state.placeDirty=false;$('placeDetails').scrollIntoView({block:'nearest',behavior:'smooth'});}});
-  window.addEventListener('beforeunload',event=>{if(state.dirty||state.placeDirty||state.profileDirty){event.preventDefault();event.returnValue='';}});
+  window.addEventListener('beforeunload',event=>{if(state.dirty||state.placeDirty||state.profileDirty||Object.keys(state.capacityDrafts).length){event.preventDefault();event.returnValue='';}});
   _supabase.auth.onAuthStateChange((_event,session)=>{if(session?.user?.id!==state.userId){++state.epoch;state.data=null;$('organizerWorkspace').hidden=true;setTimeout(()=>loadWorkspace().catch(error=>message(failure(error),true)),0);}});
   try{await loadWorkspace();}catch(error){$('organizerLoading').hidden=true;message(failure(error),true);const retry=document.createElement('button');retry.type='button';retry.textContent='Riprova';retry.addEventListener('click',()=>action(retry,loadWorkspace));$('organizerLoading').after(retry);}
  }

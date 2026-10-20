@@ -668,6 +668,12 @@
             const content = node('div', 'fiere-card-content');
             const side = node('div', 'fiere-card-side');
             content.append(head);
+            if (event.managedAvailability) {
+                const count = event.managedAvailability;
+                const available = node('p', 'fiere-availability', count.available === 0 ? 'Sold out · Posti esauriti' : count.available + (count.available === 1 ? ' posto disponibile' : ' posti disponibili') + ' su ' + count.capacity);
+                available.dataset.soldOut = String(count.available === 0);
+                content.append(available);
+            }
             const attendance = attendanceBadge(event, true);
             if (attendance) { const wrap = node('div', 'fiere-card-attendance'); wrap.append(attendance); side.append(wrap); }
             const affinity = articleAffinityBadge(event);
@@ -821,6 +827,10 @@
         $('detail-months').textContent = periodLabel(event);
         $('detail-frequency').textContent = event.frequencyNote || '';
         $('detail-frequency').hidden = !event.frequencyNote;
+        let availability = $('detail-availability');
+        if (!availability) { availability = node('p', 'fiere-availability'); availability.id = 'detail-availability'; $('detail-title').after(availability); }
+        availability.hidden = !event.managedAvailability;
+        if (event.managedAvailability) { const count = event.managedAvailability; availability.textContent = count.available === 0 ? 'Sold out · Posti esauriti' : count.available + (count.available === 1 ? ' posto disponibile' : ' posti disponibili') + ' su ' + count.capacity; availability.dataset.soldOut = String(count.available === 0); }
         $('detail-description').textContent = event.summary || '';
         $('detail-description').hidden = !event.summary;
         renderAttendanceDetail(event);
@@ -906,7 +916,7 @@
             return await response.json();
         } finally { clearTimeout(timer); }
     }
-    let editorialEvents = [], managedRequest = 0;
+    let editorialEvents = [], managedRequest = 0, managedSnapshot = '';
     async function loadManagedEvents() {
         if (!global.EventData || typeof SUPABASE_URL === 'undefined') return;
         const request = ++managedRequest;
@@ -918,10 +928,20 @@
             if (!Array.isArray(data)) throw new Error('Dati evento non validi');
             const managed = data.map(global.EventData.toCalendar);
             if (request !== managedRequest) return;
+            const snapshot = JSON.stringify(data);
+            $('organizer-catalog-error').hidden = true;
+            if (snapshot === managedSnapshot) return;
+            managedSnapshot = snapshot;
             state.events = editorialEvents.concat(managed);
             $('organizer-catalog-error').hidden = true;
             $('catalog-count').textContent = String(state.events.length);
             render();
+            if ($('fair-dialog').open && state.selected?.startsWith('organizzatore-')) {
+                const current = managed.find(event => event.id === state.selected);
+                const availability = $('detail-availability');
+                if (current?.managedAvailability && availability) { const count = current.managedAvailability; availability.textContent = count.available === 0 ? 'Sold out · Posti esauriti' : count.available + (count.available === 1 ? ' posto disponibile' : ' posti disponibili') + ' su ' + count.capacity; availability.dataset.soldOut = String(count.available === 0); }
+                if (!current && availability) { availability.hidden = false; availability.textContent = 'Evento non più disponibile. Ricarica la pagina.'; }
+            }
         } catch (_) { if (request === managedRequest) $('organizer-catalog-error').hidden = false; }
         finally { clearTimeout(timer); }
     }
@@ -1093,6 +1113,9 @@
         } });
         $('retry-catalog').addEventListener('click', loadCatalog);
         $('retry-organizer-catalog')?.addEventListener('click', loadManagedEvents);
+        setInterval(() => { if (!document.hidden && state.ready) loadManagedEvents(); }, 30000);
+        window.addEventListener('focus', () => { if (state.ready) loadManagedEvents(); });
+        document.addEventListener('visibilitychange', () => { if (!document.hidden && state.ready) loadManagedEvents(); });
         $('retry-map').addEventListener('click', loadMap);
         let resizeTimer;
         window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (state.ready) renderMap(filterEvents(state.events, state)); }, 100); });

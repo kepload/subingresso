@@ -1,5 +1,48 @@
 # Organizzatori, eventi e prenotazioni future — 18 ottobre 2026
 
+## Posti disponibili e sold out — 20 ottobre 2026
+
+Richiesta: verificare i pagamenti e rendere visibili massimo, posti liberi e
+Sold out. Audit aggiornato: pagamenti eventi disattivati, nessun account Connect
+collegato e nessuna prenotazione. Il checkout Vetrina resta distinto. Chiesta
+la preferenza sul pagamento online facoltativo con l'8% già previsto; nessuna
+attivazione economica dedotta dall'assenza di risposta.
+
+Massimo per tipologia e totale fiera come somma delle tipologie attive. Nuova
+gestione «Posti disponibili» nell'editor: massimo e posti assegnati fuori dal
+sito; contatori separati per confermati online e blocchi di pagamento. Il DB
+calcola liberi = massimo - esterni - confermati - blocchi non scaduti. Sold out
+a zero, riapertura automatica quando tornano posti; rimborso parziale conserva
+il posto, rimborso totale lo libera. Gli eventi del catalogo documentale non
+ricevono disponibilità inventate.
+
+Aggiornamenti dei posti senza ritirare l'evento o alterare l'approvazione;
+revisione dedicata, audit, isolamento del proprietario e lock sull'evento
+coordinato con la primitiva prenotazioni. Impossibile abbassare il massimo
+sotto i posti occupati, disattivare una tipologia occupata o ignorare gli
+assegnati esterni nella prenotazione futura. Bozze delle diverse tipologie
+conservate durante un aggiornamento; feedback vicino al comando, errori con
+riprova e ritorno del focus. Riepilogo pubblico su evento, profilo, anteprima
+calendario e dialog; pagina e calendario aggiornano ogni30s e al ritorno nella
+scheda. Errore di aggiornamento segnalato, evento ritirato non prenotabile.
+La disponibilità dipende anche dagli aggiornamenti dell'organizzatore sulle
+assegnazioni esterne: non è una garanzia di ammissione.
+
+Patch additiva/idempotente `PATCH_EVENTI_DISPONIBILITA_20261020.sql` applicata
+due volte e verificata via API. Prima/dopo invariati:116 profili,129 annunci,
+19 pagamenti Vetrina,un organizzatore/un evento,zero prenotazioni,flag pagamenti
+false e un posto totale. Nessun account/evento/email/acquisto reale di prova.
+Suite `scripts/test-event-capacity-db.cjs` su SQL reale/ROLLBACK: massimo,
+esterni, revisioni, privacy, pagati/hold/scadenze/rimborsi e sovraprenotazioni.
+`scripts/test-event-capacity.cjs`: Chromium1440/320 e WebKit390, interfacce
+reali/backend simulato; sold out/riapertura, aggiornamenti pagina/calendario/
+dialog, errori/riprova, bozze multiple, ritiro e overflow passati. Percorso
+organizzatori nei tre formati, audit usabilità68 e prezzi/Stripe passati.
+Prove `Documents/verifica-fiere-posti-20261020/`; primo errore nella prova
+di rete risolto correggendo la fixture, senza scritture reali. Cache
+event-data2/organizzatori8/eventi5/calendario92/fiere CSS31/availability1.
+Backup tag/branch remoti verificati; noto errore cleanup dello script backup.
+
 ## Verifica pubblicazione e fatturazione — 20 ottobre 2026
 
 Ricontrollo API in sola lettura: un organizzatore approvato e un evento

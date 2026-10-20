@@ -4,6 +4,20 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Posti fiere,20/10:** massimo per tipologia e totale fiera; gestione
+  assegnati fuori dal sito senza riapprovazione. Liberi sottraggono esterni,
+  confermati e blocchi pagamento validi; zero mostra Sold out in evento,
+  profilo/calendario/dialog, aggiornamenti30s/ritorno alla scheda. Lock,
+  revisioni, errori/riprova e bozze multiple protetti. Catalogo documentale
+  senza disponibilità inventate. Patch additiva/idempotente applicata/API200,
+  SQL reale ROLLBACK e browser Chromium1440/320+WebKit390 passati; percorso
+  organizzatori,usabilità68 e Stripe passati.116profili/129annunci/19pagamenti,
+  un organizzatore/evento,prenotazioni0 invariati; nessun conto Connect.
+  Pagamenti fiere ancora disattivati: chiesta scelta online facoltativo8%,
+  nessuna attivazione dedotta dal silenzio. Dettagli `data/ORGANIZZATORI_EVENTI.md`,
+  prove `Documents/verifica-fiere-posti-20261020/`. Backup remoti validi,
+  noto errore cleanup. Pubblicazione e verifica online in corso.
+
 - **Salva/campanella e controllo eventi,20/10:** richiesta corrente: Salva
   immediato come gli annunci e campanella separata con scelta da2mesi in su,
   anche personalizzata; email solo dopo conferma. Anteprime, dettaglio,

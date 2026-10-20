@@ -1,5 +1,17 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+20/10/2026, disponibilità fiere: massimo per tipologia, totale come somma
+delle tipologie attive; assegnati esterni gestibili senza riapprovazione.
+Liberi sottraggono esterni, pagati e hold validi; Sold out a zero, rimborsi
+parziali conservano il posto/totali lo liberano. Revisioni e lock coordinati
+con prenotazioni; contatori pubblici senza dati privati in evento/profilo/
+calendario/dialog, refresh30s/focus e errori espliciti. Catalogo documentale
+distinto. Patch EVENTI_DISPONIBILITA applicata/idempotente, SQL ROLLBACK e
+browser3 passati; nessuna prenotazione/acquisto/account reale. Pagamenti
+fiere restano disattivati, zero Connect collegati; scelta facoltativo8%
+chiesta all'utente, nessuna attivazione per silenzio. Dettagli e prove:
+data/ORGANIZZATORI_EVENTI.md, Documents/verifica-fiere-posti-20261020.
+
 20/10/2026, preferenza fiere salvate: segnalibro «Salva» immediato, senza
 email; campanella separata con mesi visibili subito, minimo2/massimo120 e
 scelta libera. Conferma esplicita attiva avviso e salva fiera. Stessi comandi
