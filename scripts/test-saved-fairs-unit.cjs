@@ -17,6 +17,18 @@ const nativeFetch = global.fetch;
     assert.equal(model.validateReminder({ reminder_enabled: true, reference_date: '2028-02-15', months_before: 2 }, '2026-10-19'), null);
     assert.match(model.validateReminder({ reminder_enabled: true, reference_date: '2027-02-15', months_before: 12 }, '2026-10-19'), /già passata/);
     assert.equal(model.validateReminder({ reminder_enabled: true, reference_date: '2028-02-15', months_before: 12 }, '2026-10-19'), null);
+    const historical = model.fairMetadata({ id: 'historical', name: 'Fiera', months: [2], editions: [{ year: 2025, start: '2025-02-15' }] }, 'catalog', '2026-10-20');
+    assert.deepEqual(historical.dates, [], 'Estimates never become published dates');
+    assert.deepEqual(model.suggestFairDate(historical, 2, '2026-10-20'), { date: '2027-02-15', estimated: true, sourceYear: 2025 });
+    assert.equal(model.suggestFairDate(historical, 12, '2026-10-20').date, '2028-02-15', 'Allow the requested lead time automatically');
+    assert.equal(model.suggestFairDate({ ...historical, estimateFrom: '2024-02-29' }, 2, '2026-10-20').date, '2027-02-28');
+    assert.deepEqual(model.suggestFairDate({ ...historical, dates: ['2027-02-20'] }, 2, '2026-10-20'), { date: '2027-02-20', estimated: false, sourceYear: null });
+    assert.equal(model.suggestFairDate({ ...historical, kind: 'organizer' }, 2, '2026-10-20'), null, 'One-off organizer events are never projected');
+    assert.equal(model.suggestFairDate({ ...historical, estimateFrom: null }, 2, '2026-10-20'), null);
+    assert.equal(model.suggestFairDate(historical, 1, '2026-10-20'), null);
+    const period = model.fairMetadata({ id: 'period', months: [11], editions: [{ year: 2025, label: 'Novembre' }] }, 'catalog', '2026-10-20');
+    assert.equal(model.suggestFairDate(period, 2, '2026-10-20').date, '2027-11-01');
+    assert.equal(period.dates.length, 0);
 
     const sample = events.find(event => event.editions.some(edition => edition.start > model.todayInRome()));
     const response = (data, status = 200) => ({ ok: status < 400, status, json: async () => data });

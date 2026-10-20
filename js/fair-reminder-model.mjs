@@ -22,12 +22,29 @@ export function fairPath(kind, id) {
 }
 export function fairMetadata(event, kind = 'catalog', today = todayInRome()) {
     const dates = kind === 'organizer' ? [event.start_date] : (event.editions || []).filter(item => !item.periodOnly).map(item => item.start);
+    const editions = kind === 'catalog' ? (event.editions || []).slice().sort((a, b) => b.year - a.year || (b.start || '').localeCompare(a.start || '')) : [];
+    const latest = editions[0];
+    const estimateFrom = latest && (validDate(latest.start) ? latest.start : Number.isInteger(latest.year) && event.months?.length ? latest.year + '-' + String(Math.min(...event.months)).padStart(2, '0') + '-01' : null);
     return {
         kind, id: event.id, name: kind === 'organizer' ? event.title : event.name,
         city: event.city, region: kind === 'organizer' ? event.region : event.region,
         dates: [...new Set(dates.filter(date => validDate(date) && date > today))].sort(),
+        estimateFrom: validDate(estimateFrom) ? estimateFrom : null,
         path: fairPath(kind, event.id)
     };
+}
+export function suggestFairDate(fair, months = MIN_MONTHS, today = todayInRome()) {
+    if (!Number.isInteger(months) || months < MIN_MONTHS || months > MAX_MONTHS) return null;
+    const published = fair.dates.find(date => date > today && reminderDate(date, months) >= today);
+    if (published) return { date: published, estimated: false, sourceYear: null };
+    if (fair.kind !== 'catalog' || !validDate(fair.estimateFrom)) return null;
+    const sourceYear = Number(fair.estimateFrom.slice(0, 4)), month = Number(fair.estimateFrom.slice(5, 7)), day = Number(fair.estimateFrom.slice(8, 10));
+    for (let year = Math.max(sourceYear, Number(today.slice(0, 4))); year <= Number(today.slice(0, 4)) + 10; year++) {
+        const last = new Date(Date.UTC(year, month, 0)).getUTCDate();
+        const date = year + '-' + String(month).padStart(2, '0') + '-' + String(Math.min(day, last)).padStart(2, '0');
+        if (date > today && reminderDate(date, months) >= today && date <= String(Number(today.slice(0, 4)) + 10) + today.slice(4)) return { date, estimated: true, sourceYear };
+    }
+    return null;
 }
 export function validateReminder(input, today = todayInRome()) {
     const reference = input.reference_date || null;

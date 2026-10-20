@@ -653,23 +653,15 @@
     }
     function articleAffinityBadge(event) {
         const assessment = articleAffinitySummary(event, state.articles);
-        if (!assessment.items.length) return null;
+        if (assessment.score === null) return null;
         const button = node('button', 'fiere-fit-badge');
         button.type = 'button';
-        button.append(node('span', 'fiere-fit-caption', 'Affinità articolo'));
-        if (assessment.score !== null) {
-            button.dataset.score = String(assessment.score);
-            const value = node('strong', 'fiere-fit-number', String(assessment.score));
-            value.append(node('span', '', '/10'));
-            button.append(value, node('span', 'fiere-fit-article', assessment.best.label));
-            if (assessment.best.condition) button.append(node('span', 'fiere-fit-condition', assessment.best.condition));
-            if (assessment.items.length > 1) button.append(node('span', 'fiere-fit-more', 'Migliore su ' + assessment.items.length));
-            button.setAttribute('aria-label', 'Affinità ' + assessment.best.label + ': ' + assessment.score + ' su 10. ' + (assessment.items.length > 1 ? 'Voto migliore tra ' + assessment.items.length + ' articoli. ' : '') + 'Vedi motivi per ' + event.name);
-        } else {
-            button.append(node('strong', 'fiere-fit-pending', 'Da valutare'));
-            button.setAttribute('aria-label', 'Affinità da valutare. Vedi motivi per ' + event.name);
-        }
-        button.append(node('span', 'fiere-fit-more', 'Vedi motivi'));
+        button.dataset.score = String(assessment.score);
+        const value = node('strong', 'fiere-fit-number', String(assessment.score));
+        value.append(node('span', '', '/10'));
+        button.append(value);
+        button.setAttribute('aria-label', 'Affinità ' + assessment.best.label + ': ' + assessment.score + ' su 10. ' + (assessment.items.length > 1 ? 'Voto migliore tra ' + assessment.items.length + ' articoli. ' : '') + 'Vedi motivi per ' + event.name);
+        button.title = button.getAttribute('aria-label');
         button.addEventListener('click', () => openArticleAffinity(event));
         return button;
     }
@@ -700,7 +692,6 @@
             const body = node('div', 'fiere-card-body');
             const content = node('div', 'fiere-card-content');
             const side = node('div', 'fiere-card-side');
-            content.append(head);
             if (event.managedAvailability) {
                 const count = event.managedAvailability;
                 const available = node('p', 'fiere-availability', count.available === 0 ? 'Sold out · Posti esauriti' : count.available + (count.available === 1 ? ' posto disponibile' : ' posti disponibili') + ' su ' + count.capacity);
@@ -718,15 +709,19 @@
                 cost.dataset.known = 'true';
                 content.append(cost);
             }
-            body.append(content, side);
-            card.append(body, foot);
+            body.append(content);
+            if (side.childElementCount) { body.append(side); body.classList.add('fiere-card-body-rated'); }
             const actions = node('div', 'sf-fair-actions');
             for (const action of ['saveFair', 'remindFair']) {
                 const control = node('button', 'saved-fair-button'); control.type = 'button'; control.dataset[action] = '';
                 control.dataset.fairKind = event.managedEventId ? 'organizer' : 'catalog'; control.dataset.fairId = event.managedEventId || event.id;
-                control.textContent = action === 'saveFair' ? 'Salva' : 'Avvisami'; actions.append(control);
+                control.setAttribute('aria-label', action === 'saveFair' ? 'Salva la fiera' : 'Avvisami');
+                control.title = action === 'saveFair' ? 'Salva' : 'Avvisami';
+                const icon = node('i', action === 'saveFair' ? 'far fa-bookmark' : 'far fa-bell'); icon.setAttribute('aria-hidden', 'true');
+                control.append(icon); actions.append(control);
             }
-            card.append(actions);
+            head.append(actions);
+            card.append(head, body, foot);
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);

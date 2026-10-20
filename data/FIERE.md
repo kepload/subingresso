@@ -1,5 +1,17 @@
 # Calendario fiere — fonti e aggiornamento
 
+## Schede compatte — 20 ottobre 2026
+
+Preferenza successiva: Salva e Avvisami soltanto icone in alto a destra;
+affinità assente se il voto manca, senza colonna vuota. Voto disponibile
+in un piccolo bollino a destra centrato sul corpo; motivi/fonti/condizioni
+restano apribili con tastiera o clic. Nessun voto o filtro riscritto.
+Modulo Avvisami essenziale con data proposta automaticamente e provenienza
+della stima; dettagli in `FIERE_SALVATE.md`. Cache fiere JS95/CSS32,
+saved-fairs JS/CSS3 e modello3. Catalogo5.292 immutato. Suite affinità,
+articoli/ricerca quattro formati, salvataggi quattro formati e5.292 pagine
+passati; prove `Documents/verifica-fiere-icone-avvisi-20261020/`.
+
 ## Articoli incompleti e ordine del periodo — 20 ottobre 2026
 
 Preferenza esplicita: scegliendo una tipologia, conservare anche le fiere

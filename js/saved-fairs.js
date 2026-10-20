@@ -1,4 +1,4 @@
-import { dateLabel, fairPath, reminderDate, todayInRome, validateReminder } from './fair-reminder-model.mjs?v=2';
+import { dateLabel, fairPath, reminderDate, suggestFairDate, todayInRome, validateReminder } from './fair-reminder-model.mjs?v=3';
 
 let userId = null, epoch = 0, rows = new Map(), loaded = false, loading = null, dialog, current = null, opening = 0, busy = false;
 let parents = [], returnTo = null;
@@ -52,7 +52,8 @@ function refreshButtons() {
         const id = key(button.dataset.fairKind, button.dataset.fairId), operation = pending.get(id);
         const saved = operation ? operation.saved : rows.has(id);
         button.dataset.saved = String(saved);
-        button.innerHTML = '<i class="' + (saved ? 'fas' : 'far') + ' fa-bookmark" aria-hidden="true"></i><span>' + (saved ? 'Salvata' : 'Salva') + '</span>';
+        button.innerHTML = '<i class="' + (saved ? 'fas' : 'far') + ' fa-bookmark" aria-hidden="true"></i>';
+        button.title = saved ? 'Rimuovi dai salvati' : 'Salva';
         button.setAttribute('aria-pressed', String(saved));
         button.setAttribute('aria-label', saved ? 'Rimuovi la fiera dai salvati' : 'Salva la fiera');
         button.setAttribute('aria-busy', String(Boolean(operation)));
@@ -62,8 +63,9 @@ function refreshButtons() {
     document.querySelectorAll('[data-remind-fair]').forEach(button => {
         const id = key(button.dataset.fairKind, button.dataset.fairId), enabled = Boolean(rows.get(id)?.reminder_enabled);
         button.dataset.enabled = String(enabled);
-        button.innerHTML = '<i class="' + (enabled ? 'fas' : 'far') + ' fa-bell" aria-hidden="true"></i><span>' + (enabled ? 'Avviso attivo' : 'Avvisami') + '</span>';
-        button.setAttribute('aria-label', enabled ? 'Modifica il promemoria della fiera' : 'Scegli quanti mesi prima ricevere un avviso per la fiera');
+        button.innerHTML = '<i class="' + (enabled ? 'fas' : 'far') + ' fa-bell" aria-hidden="true"></i>';
+        button.title = enabled ? 'Modifica avviso' : 'Avvisami';
+        button.setAttribute('aria-label', button.title);
         button.setAttribute('aria-haspopup', 'dialog');
         button.disabled = pending.has(id);
     });
@@ -104,7 +106,7 @@ function render(error) {
     for (const row of rows.values()) {
         const card = element('article', 'sf-card'), heading = element('h3'), link = element('a', '', row.fair_name);
         link.href = fairPath(row.fair_kind, row.fair_id); heading.append(link); card.append(heading, element('small', '', row.city));
-        if (row.reference_date) card.append(element('p', '', 'Data di riferimento: ' + dateLabel(row.reference_date)), element('small', '', row.date_origin === 'personal' ? 'Data indicativa scelta da te.' : 'Data riportata nella scheda.'));
+        if (row.reference_date) card.append(element('p', '', dateLabel(row.reference_date)), element('small', '', row.date_origin === 'personal' ? 'Data indicativa' : 'Data pubblicata'));
         let text = 'Salvata senza promemoria email.';
         if (row.sent_at) text = 'Promemoria inviato il ' + dateLabel(row.sent_at.slice(0, 10)) + '.';
         else if (row.reminder_enabled) {
@@ -126,14 +128,26 @@ function render(error) {
 function initDialog() {
     if (dialog) return;
     dialog = element('dialog', 'sf-dialog'); dialog.id = 'saved-fair-dialog'; dialog.setAttribute('aria-labelledby', 'sf-title');
-    dialog.innerHTML = `<header><h2 id="sf-title">Promemoria della fiera</h2><button type="button" id="sf-close" class="sf-close" aria-label="Chiudi promemoria fiera">×</button></header><div id="sf-loading" class="sf-dialog-body" role="status">Caricamento della fiera…</div><form id="sf-form" novalidate hidden><p id="sf-name" class="sf-name"></p><label class="sf-check"><input id="sf-enabled" type="checkbox"><span>Ricevi un promemoria via email</span></label><div id="sf-reminder-fields"><label class="sf-field" for="sf-months">Quanti mesi prima della fiera?<input id="sf-months" type="number" min="2" max="120" step="1" inputmode="numeric" value="2"></label><div class="sf-presets" aria-label="Anticipo del promemoria"><button type="button" data-sf-months="2">2 mesi</button><button type="button" data-sf-months="3">3 mesi</button><button type="button" data-sf-months="5">5 mesi</button><button type="button" data-sf-months="6">6 mesi</button><button type="button" data-sf-months="12">12 mesi · 1 anno</button></div><label class="sf-field" for="sf-date">Data della fiera<input id="sf-date" type="date" name="reference_date"></label><label id="sf-date-options-label" class="sf-field" for="sf-date-options" hidden>Date presenti nella scheda<select id="sf-date-options"><option value="">Scegli una data</option></select></label><p id="sf-date-help" class="sf-help"></p></div><p id="sf-preview" class="sf-preview" role="status" aria-live="polite"></p><p class="sf-help">Da 2 mesi in su, anche un numero a tua scelta. Un solo avviso per l’edizione scelta, all’email del tuo account, per ricordarti di controllare come partecipare.</p><p id="sf-error" class="sf-error" role="alert" hidden></p><div class="sf-actions"><button id="sf-submit" type="submit" class="sf-button sf-button-primary">Attiva promemoria</button><button id="sf-remove" type="button" class="sf-button sf-button-danger" hidden>Rimuovi dai salvati</button><button id="sf-cancel" type="button" class="sf-button">Annulla</button></div><p><a class="sf-link" href="/dashboard?area=normale#fiere">Vai alle mie fiere →</a></p></form>`;
+    dialog.innerHTML = `<header><h2 id="sf-title">Avvisami</h2><button type="button" id="sf-close" class="sf-close" aria-label="Chiudi">×</button></header>
+<div id="sf-loading" class="sf-dialog-body" role="status">Caricamento…</div>
+<form id="sf-form" novalidate hidden>
+<p id="sf-name" class="sf-name"></p><input id="sf-enabled" type="checkbox" hidden>
+<div id="sf-reminder-fields">
+<label class="sf-field sf-months-field" for="sf-months">Mesi prima<input id="sf-months" type="number" min="2" max="120" step="1" inputmode="numeric" value="2"></label>
+<div class="sf-presets" aria-label="Mesi di anticipo"><button type="button" data-sf-months="2">2</button><button type="button" data-sf-months="3">3</button><button type="button" data-sf-months="5">5</button><button type="button" data-sf-months="6">6</button><button type="button" data-sf-months="12">12</button></div>
+<div class="sf-date-summary"><strong id="sf-date-label"></strong><span id="sf-date-help" class="sf-help"></span></div>
+<details id="sf-date-edit"><summary>Modifica data</summary><label class="sf-field" for="sf-date">Data della fiera<input id="sf-date" type="date" name="reference_date"></label><label id="sf-date-options-label" class="sf-field" for="sf-date-options" hidden>Altre date pubblicate<select id="sf-date-options"><option value="">Scegli una data</option></select></label></details>
+</div><p id="sf-preview" class="sf-preview" role="status" aria-live="polite"></p><p id="sf-error" class="sf-error" role="alert" hidden></p>
+<div class="sf-actions"><button id="sf-submit" type="submit" class="sf-button sf-button-primary">Attiva avviso email</button><button id="sf-cancel" type="button" class="sf-button">Annulla</button><button id="sf-disable" type="button" class="sf-disable" hidden>Disattiva avviso</button></div></form>`;
     document.body.append(dialog);
     $('sf-close').addEventListener('click', () => close()); $('sf-cancel').addEventListener('click', () => close());
     dialog.addEventListener('cancel', event => { event.preventDefault(); if (!busy) close(); });
     dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if (!busy && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) close(); } });
-    $('sf-form').addEventListener('submit', save); $('sf-remove').addEventListener('click', remove);
-    for (const id of ['sf-date', 'sf-months', 'sf-enabled']) $(id).addEventListener('input', preview);
-    $('sf-date-options').addEventListener('change', () => { if ($('sf-date-options').value) $('sf-date').value = $('sf-date-options').value; preview(); });
+    $('sf-form').addEventListener('submit', save);
+    $('sf-disable').addEventListener('click', event => { $('sf-enabled').checked = false; save(event); });
+    $('sf-months').addEventListener('input', preview);
+    $('sf-date').addEventListener('input', () => { if (current) current.automaticDate = false; preview(); });
+    $('sf-date-options').addEventListener('change', () => { if ($('sf-date-options').value) { $('sf-date').value = $('sf-date-options').value; current.automaticDate = false; } preview(); });
     dialog.querySelectorAll('[data-sf-months]').forEach(button => button.addEventListener('click', () => { $('sf-months').value = button.dataset.sfMonths; preview(); }));
 }
 function close(force = false) {
@@ -146,13 +160,19 @@ function close(force = false) {
 function formData() { return { reference_date: $('sf-date').value || null, reminder_enabled: $('sf-enabled').checked, months_before: Number($('sf-months').value) }; }
 function preview() {
     if (!current) return;
+    if (current.automaticDate) {
+        current.suggestion = suggestFairDate(current.fair, Number($('sf-months').value));
+        $('sf-date').value = current.suggestion?.date || current.fair.dates[0] || '';
+    }
     const input = formData(), known = current.fair.dates.includes(input.reference_date);
-    $('sf-date-help').textContent = !current.fair.available ? 'Questa fiera non è più pubblicata. Puoi conservarla senza avviso o rimuoverla.' : known ? 'Data riportata nella scheda. Verifica sempre eventuali aggiornamenti.' : input.reference_date ? 'Data indicativa scelta da te: non è una conferma della prossima edizione.' : 'La prossima data non è pubblicata. Puoi salvare la fiera e, per il promemoria, scegliere una data indicativa.';
+    $('sf-date-label').textContent = input.reference_date ? dateLabel(input.reference_date) : 'Scegli la data della fiera';
+    $('sf-date-help').textContent = !current.fair.available ? 'Fiera non più disponibile' : known ? 'Data pubblicata' : current.suggestion?.estimated && current.suggestion.date === input.reference_date ? 'Stimata dall’edizione ' + current.suggestion.sourceYear : input.reference_date ? 'Data indicativa' : '';
     $('sf-reminder-fields').hidden = !input.reminder_enabled;
     const error = validateReminder(input), target = reminderDate(input.reference_date, input.months_before);
     $('sf-preview').classList.toggle('sf-error', Boolean(error));
-    $('sf-preview').textContent = !input.reminder_enabled ? 'La fiera sarà salvata senza inviare email.' : error || (current.saved?.sent_at && (input.reference_date === current.saved.reference_date || current.fair.kind === 'organizer') ? 'Il promemoria per questa edizione è già stato inviato. Non verrà ripetuto.' : 'Ti ricorderemo di controllare l’iscrizione il ' + dateLabel(target) + '.');
-    $('sf-submit').textContent = input.reminder_enabled ? current.saved?.reminder_enabled ? 'Aggiorna promemoria' : 'Attiva promemoria' : current.saved?.reminder_enabled ? 'Disattiva promemoria' : 'Salva senza avviso';
+    $('sf-preview').textContent = !input.reminder_enabled ? 'Avviso email disattivato.' : error || (current.saved?.sent_at && (input.reference_date === current.saved.reference_date || current.fair.kind === 'organizer') ? 'Avviso già inviato per questa edizione.' : 'Email il ' + dateLabel(target));
+    $('sf-submit').textContent = input.reminder_enabled ? current.saved?.reminder_enabled ? 'Aggiorna avviso' : 'Attiva avviso email' : 'Disattiva avviso';
+    dialog.querySelectorAll('[data-sf-months]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.sfMonths) === input.months_before)));
 }
 async function open(kind, id, trigger) {
     let attempt, version;
@@ -174,15 +194,19 @@ async function open(kind, id, trigger) {
         else rows.delete(key(kind, id));
         refreshButtons(); render();
         $('sf-name').textContent = result.fair.name + ' · ' + result.fair.city;
-        $('sf-date').value = result.saved?.reference_date || result.fair.dates[0] || '';
         $('sf-months').value = String(Math.max(2, result.saved?.months_before || 2));
+        current.suggestion = suggestFairDate(current.fair, Number($('sf-months').value));
+        current.automaticDate = !result.saved?.reminder_enabled;
+        $('sf-date').value = result.saved?.reference_date || result.fair.dates[0] || '';
         $('sf-enabled').checked = Boolean(result.fair.available);
         $('sf-enabled').disabled = !result.fair.available;
-        $('sf-remove').hidden = !result.saved;
+        $('sf-disable').hidden = !result.saved?.reminder_enabled;
         $('sf-date-options').replaceChildren(new Option('Scegli una data', ''));
         result.fair.dates.forEach(date => $('sf-date-options').append(new Option(dateLabel(date), date)));
         $('sf-date-options-label').hidden = result.fair.dates.length < 2;
-        $('sf-loading').hidden = true; $('sf-form').hidden = false; preview(); $('sf-months').focus();
+        $('sf-loading').hidden = true; $('sf-form').hidden = false; preview();
+        $('sf-date-edit').open = !$('sf-date').value;
+        $('sf-months').focus();
     } catch (error) {
         if (attempt !== undefined && (attempt !== opening || version !== epoch)) return;
         if (error.status === 401 && window.FiereAccess?.authenticate) {
@@ -202,7 +226,7 @@ function locked(value) {
 async function save(event) {
     event.preventDefault(); if (busy || !current) return;
     const input = formData(), error = validateReminder(input);
-    if (error) { $('sf-error').textContent = error; $('sf-error').hidden = false; $('sf-error').scrollIntoView({ block: 'nearest' }); (input.reference_date ? $('sf-months') : $('sf-date')).focus(); return; }
+    if (error) { $('sf-error').textContent = error; $('sf-error').hidden = false; $('sf-error').scrollIntoView({ block: 'nearest' }); if (!input.reference_date) $('sf-date-edit').open = true; (input.reference_date ? $('sf-months') : $('sf-date')).focus(); return; }
     const version = epoch, source = current; locked(true); $('sf-error').hidden = true; $('sf-submit').textContent = 'Salvataggio…';
     try {
         const result = await api('', { action: 'save', kind: source.fair.kind, fair_id: source.fair.id, revision: source.saved?.revision || 0, ...input });
@@ -211,18 +235,9 @@ async function save(event) {
         locked(false); close(); announce(input.reminder_enabled ? 'Fiera salvata. Promemoria impostato per il ' + dateLabel(result.saved.remind_on) + '.' : 'Fiera salvata senza promemoria email.');
     } catch (failure) {
         if (version !== epoch) return;
+        $('sf-enabled').checked = Boolean(source.fair.available);
         $('sf-error').textContent = failure.message; $('sf-error').hidden = false;
     } finally { if (version === epoch) { locked(false); if (current) preview(); } else busy = false; }
-}
-async function remove() {
-    if (busy || !current?.saved) return;
-    const source = current, version = epoch; locked(true); $('sf-error').hidden = true;
-    try {
-        await api('', { action: 'remove', id: source.saved.id, revision: source.saved.revision });
-        if (version !== epoch) return;
-        changes++; rows.delete(key(source.fair.kind, source.fair.id)); refreshButtons(); render(); locked(false); close(); announce('Fiera rimossa. Il suo promemoria è stato disattivato.');
-    } catch (error) { if (version === epoch) { $('sf-error').textContent = error.message; $('sf-error').hidden = false; } }
-    finally { if (version === epoch) locked(false); else busy = false; }
 }
 async function toggle(kind, id, trigger) {
     const idKey = key(kind, id), started = Date.now();

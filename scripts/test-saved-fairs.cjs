@@ -44,7 +44,7 @@ function dashboardFixture() {
     const html = fs.readFileSync(path.join(root, 'dashboard.html'), 'utf8');
     const start = html.indexOf('function showTab(tab)'), end = html.indexOf("document.getElementById('dashboardTabs')", start);
     const tabs = html.slice(start, end);
-    return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace('</body>', `<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=21"></script><script src="/js/auth.js?v=22"></script><script src="/js/fiere-access.js?v=2"></script><script type="module" src="/js/saved-fairs.js?v=2"></script><script>
+    return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace('</body>', `<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=21"></script><script src="/js/auth.js?v=22"></script><script src="/js/fiere-access.js?v=2"></script><script type="module" src="/js/saved-fairs.js?v=3"></script><script>
 let _alertsLoaded=false,_savedLoaded=false,_valutazioniLoaded=false;const VetrinaAccount={load(){}};${tabs}
 document.addEventListener('DOMContentLoaded',()=>{document.getElementById('loadingState').classList.add('hidden');document.getElementById('dashContent').classList.remove('hidden');showTab('fiere');});
 </script></body>`);
@@ -106,11 +106,15 @@ async function run(engine, name, width, height, base) {
         assert(await page.locator('#fair-dialog').isVisible());
         stage = 'standalone'; await page.goto(base + '/fiere/' + sample.id);
         await page.waitForFunction(() => document.querySelector('[data-save-fair]').dataset.saved === 'true');
-        assert.equal(await page.locator('[data-save-fair]').innerText(), 'Salvata');
-        assert.equal(await page.locator('[data-remind-fair]').innerText(), 'Avvisami');
+        assert.equal(await page.locator('[data-save-fair]').innerText(), ''); assert.match(await page.locator('[data-save-fair]').getAttribute('aria-label'), /Rimuovi/);
+        assert.equal(await page.locator('[data-remind-fair]').innerText(), ''); assert.equal(await page.locator('[data-remind-fair]').getAttribute('aria-label'), 'Avvisami');
         await open(); assert.equal(await page.locator('#sf-enabled').isChecked(), true);
         assert.equal(await page.locator('#sf-months').inputValue(), '2');
         assert(await page.locator('#sf-months').isVisible(), 'Bell immediately shows the month choice');
+        assert((await page.locator('#sf-date').inputValue()) > new Date().toISOString().slice(0, 10), 'Date is prefilled automatically');
+        assert.equal(await page.locator('#sf-date-help').innerText(), 'Data pubblicata');
+        assert.equal(await page.locator('#sf-date-edit').getAttribute('open'), null);
+        await page.locator('#sf-date-edit summary').click();
         await page.locator('#sf-date').fill(future); await page.locator('#sf-months').fill('1'); await page.locator('#sf-submit').click();
         assert((await page.locator('#sf-error').innerText()).includes('2 a 120')); assert.equal(state.writes.length, 1);
         await page.locator('[data-sf-months="5"]').click();
@@ -135,7 +139,7 @@ async function run(engine, name, width, height, base) {
         assert.equal(await page.locator('#sf-months').inputValue(), '6'); assert.equal(state.rows.values().next().value.months_before, 12);
         state.failSave = false;
         const writesBefore = state.writes.length;
-        await page.locator('#sf-date').fill('2020-01-01'); await page.locator('#sf-submit').click();
+        await page.locator('#sf-date-edit summary').click(); await page.locator('#sf-date').fill('2020-01-01'); await page.locator('#sf-submit').click();
         assert.equal(state.writes.length, writesBefore); assert(await page.locator('#sf-error').isVisible());
         await page.locator('#sf-date').fill(future); await save();
         await page.locator('.sf-card [data-remind-fair]').click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
@@ -144,7 +148,7 @@ async function run(engine, name, width, height, base) {
         await page.keyboard.press('Escape');
         stage = 'organizer'; await page.goto(base + '/evento?id=' + managed.id); await open();
         assert.equal(await page.locator('#sf-date').inputValue(), future);
-        await page.locator('#sf-enabled').check(); await page.locator('[data-sf-months="12"]').click(); await save();
+        await page.locator('[data-sf-months="12"]').click(); await save();
         assert(state.rows.has('A:organizer:' + managed.id));
         await page.goto(base + '/fiere?q=' + encodeURIComponent('QA Mercatino organizzato'));
         await page.locator('.fiere-card[data-event-id="organizzatore-' + managed.id + '"] .fiere-card-button').click();
@@ -154,7 +158,7 @@ async function run(engine, name, width, height, base) {
         await page.locator('#saved-fair-dialog').waitFor({ state: 'hidden' });
         await page.waitForFunction(() => document.querySelector('#detail-save-fair').dataset.saved === 'false');
         assert(await page.locator('#fair-dialog').isVisible());
-        await open(); assert.equal(await page.locator('#sf-enabled').isChecked(), true); assert.equal(await page.locator('#sf-remove').isVisible(), false);
+        await open(); assert.equal(await page.locator('#sf-enabled').isChecked(), true); assert.equal(await page.locator('#sf-disable').isVisible(), false);
         assert.equal(state.writes.filter(row => row.user_id === 'B').length, 0, 'Opening the bell does not subscribe');
         await page.keyboard.press('Escape');
         stage = 'account A'; await page.evaluate(() => qaIdentity('A'));
@@ -163,7 +167,7 @@ async function run(engine, name, width, height, base) {
         await overflow();
         if (process.env.SAVED_FAIRS_QA_DIR) await page.screenshot({ path: path.join(process.env.SAVED_FAIRS_QA_DIR, name + '-' + width + '-mie-fiere.png'), fullPage: true });
         await page.locator('.sf-card [data-remind-fair]').first().click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
-        await page.locator('#sf-enabled').uncheck(); await save();
+        await page.locator('#sf-disable').click(); await page.locator('#saved-fair-dialog').waitFor({ state: 'hidden' });
         assert((await page.locator('.sf-card').first().innerText()).includes('senza promemoria'));
         await page.locator('.sf-card [data-save-fair]').first().click();
         await page.waitForFunction(() => document.querySelectorAll('.sf-card').length === 1);
@@ -202,16 +206,36 @@ async function run(engine, name, width, height, base) {
         await page.waitForFunction(() => document.querySelector('[data-save-fair]').dataset.saved === 'false' && !document.querySelector('[data-save-fair]').disabled);
         stage = 'card actions'; await page.goto(base + '/fiere?q=Faustino');
         const card = page.locator('.fiere-card[data-event-id="' + sample.id + '"]');
+        const layout = await card.evaluate(card => { const actions = card.querySelector('.sf-fair-actions').getBoundingClientRect(), title = card.querySelector('h3').getBoundingClientRect(); return { right: actions.x >= title.right, top: Math.abs(actions.y - title.y) < 2, labels: [...card.querySelectorAll('.saved-fair-button')].map(button => button.textContent.trim()) }; });
+        assert(layout.right && layout.top); assert.deepEqual(layout.labels, ['', '']);
         await card.locator('[data-save-fair]').click();
         await page.waitForFunction(id => document.querySelector('[data-event-id="' + id + '"] [data-save-fair]').dataset.saved === 'true' && !document.querySelector('[data-event-id="' + id + '"] [data-save-fair]').disabled, sample.id);
         await card.locator('[data-remind-fair]').click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
-        await page.locator('#sf-date').fill(future); await page.locator('[data-sf-months="2"]').click(); await save();
+        assert((await page.locator('#sf-date').inputValue()) > new Date().toISOString().slice(0, 10)); await page.locator('[data-sf-months="2"]').click(); await save();
         assert.equal(state.rows.get('A:catalog:' + sample.id).months_before, 2);
         await card.locator('.fiere-card-button').click();
         assert.equal(await page.locator('#detail-save-fair').getAttribute('data-saved'), 'true');
         assert.equal(await page.locator('#fair-dialog [data-remind-fair]').getAttribute('data-enabled'), 'true');
         await overflow();
         if (process.env.SAVED_FAIRS_QA_DIR) await page.screenshot({ path: path.join(process.env.SAVED_FAIRS_QA_DIR, name + '-' + width + '-salva-campanella.png') });
+        stage = 'automatic estimate';
+        const historical = events.find(event => event.name.startsWith('Antica Fiera di Arsego'));
+        const fair = model.fairMetadata(historical), suggested = model.suggestFairDate(fair, 2);
+        assert(suggested.estimated);
+        await page.goto(base + '/fiere/' + historical.id); const beforeEstimate = state.writes.length;
+        await open();
+        assert.equal(state.writes.length, beforeEstimate, 'Opening an estimated date does not activate email');
+        assert.equal(await page.locator('#sf-date').inputValue(), suggested.date);
+        assert((await page.locator('#sf-date-help').innerText()).includes(String(suggested.sourceYear)));
+        assert.equal(await page.locator('#sf-date-edit').getAttribute('open'), null);
+        await page.locator('#sf-months').fill('7');
+        assert.equal(await page.locator('#sf-date').inputValue(), model.suggestFairDate(fair, 7).date);
+        await overflow();
+        if (process.env.SAVED_FAIRS_QA_DIR) await page.screenshot({ path: path.join(process.env.SAVED_FAIRS_QA_DIR, name + '-' + width + '-avviso-stimato.png') });
+        await save();
+        assert.equal(state.writes.at(-1).date_origin, 'personal', 'An estimate is never stored as a published date');
+        await open(); assert((await page.locator('#sf-date-help').innerText()).includes('Stimata'));
+        await page.keyboard.press('Escape');
         assert.deepEqual(errors, []);
         console.log(name + ' ' + width + ': one-click save, visible bell, minimum 2 months, 5/12 months, separate consent, auth/resume/cancel, past/personal dates, double click/rollback/retry, dashboard, organizer event, card/detail sync, account isolation/logout and overflow passed');
         await context.close();

@@ -1,5 +1,18 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+20/10/2026, preferenza successiva fiere: Salva/campanella solo icone in alto
+a destra delle anteprime; niente affinità ignota né spazio vuoto, voto piccolo
+centrato a destra con motivi apribili. Avvisami essenziale: mesi, data pronta,
+giorno email e conferma; modifica data nei dettagli. Nuova autorizzazione
+alle stime personali automatiche dall'ultima edizione nota, anno origine
+visibile e anticipo rispettato; pubblicate prioritarie, eventi singoli non
+proiettati, dati salvati esistenti conservati. Stime `personal`, DB/catalogo/
+worker invariati. JS95/CSS32, saved-fairs JS-CSS3/modello3. Guide data/FIERE.md
+e data/FIERE_SALVATE.md; prove Documents/verifica-fiere-icone-avvisi-20261020.
+Percorso salvataggi/affinità/articoli/ricerca quattro formati, unità e5.292
+pagine passati; nessuna scrittura/email reale. Backup tag e branch remoti
+verificati; noto errore cleanup nello script preventivo.
+
 20/10/2026, preferenza fiere: il filtro articolo conserva categorie mancanti
 o parziali; soltanto esclusioni esplicite/attuali con fonte eliminano la scheda.
 matchesArticles condiviso con contatori; articleTypes/affinità non riscritti,

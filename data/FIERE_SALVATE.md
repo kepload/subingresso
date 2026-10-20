@@ -1,5 +1,27 @@
 # Fiere salvate e promemoria personali — 19 ottobre 2026
 
+## Icone e avviso essenziale — 20 ottobre 2026
+
+Nuova preferenza esplicita: Salva/campanella soltanto icone, accessibili con
+nome e tooltip; nelle anteprime in alto a destra. Avvisami: mesi2–120,
+scorciatoie2/3/5/6/12, data pronta, giorno dell'email e conferma. Nessun
+testo didattico o doppia richiesta di consenso; l'apertura non attiva nulla.
+Disattivazione separata per gli avvisi esistenti, modifica data nei dettagli.
+
+La data del promemoria usa prima una data pubblicata con anticipo sufficiente;
+in mancanza propone automaticamente la prossima ricorrenza annuale dall'ultima
+edizione nota, dichiarando «Stimata dall’edizione YYYY». Se manca il giorno,
+il primo giorno del periodo noto è soltanto indicativo. Cambio mesi ricalcola
+la proposta; modifica manuale e avvisi già salvati conservano la loro data.
+Nessuna proiezione per gli eventi singoli degli organizzatori. Stime salvate
+come `personal`, mai come date pubblicate; catalogo, worker e DB invariati.
+Supera il precedente divieto di proporre automaticamente stime personali.
+Cache calendario95, saved-fairs JS/CSS3, modello3; CSS calendario32.
+Prove `Documents/verifica-fiere-icone-avvisi-20261020/`: percorso completo
+Chromium1440/820/320 e WebKit390, compresa Arsego stimata, provenienza, consenso,
+mesi liberi, errori/riprova, disattivazione e isolamento account. API e invii
+collaudati con dati simulati; nessuna scrittura o email reale di prova.
+
 ## Preferenza corrente — 20 ottobre 2026
 
 «Salva» con segnalibro, come gli annunci, aggiunge/rimuove la singola fiera

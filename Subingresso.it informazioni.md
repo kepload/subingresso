@@ -4,6 +4,19 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Fiere, nuova preferenza20/10:** Salva/Avvisami solo icone in alto a
+  destra; affinità senza voto omessa, voto piccolo centrato a destra.
+  Modulo essenziale: mesi, data automatica, giorno email e conferma;
+  modifica data apribile. Stima personale dalla più recente edizione nota
+  con anno origine visibile e anticipo rispettato; date pubblicate prima,
+  eventi singoli non proiettati. Supera il divieto di proposte automatiche
+  personali; nessuna stima trasformata in data pubblicata. Catalogo5.292,
+  DB/worker invariati. JS95/CSS32, saved-fairs JS/CSS3/modello3. Percorso
+  salvataggi, affinità e articoli/ricerca quattro formati, unità e5.292 pagine
+  passati; prove `Documents/verifica-fiere-icone-avvisi-20261020/` e guide
+  `data/FIERE.md`, `data/FIERE_SALVATE.md`. Nessuna email/scrittura reale.
+  Backup tag/branch remoti validi; noto errore cleanup del preventivo.
+
 - **Asti conclusa e verificata online, 20/10:** 100 manifestazioni in 49 comuni,
   ricognizione dei 118 luoghi dell’anagrafica; prima 28, 72 aggiunte e tutti gli ID
   conservati. Catalogo 5.292, altre 5.192 schede identiche. Audit

@@ -97,8 +97,8 @@ async function run(engine, name, width, height, base) {
             await page.goto(base+'/fiere?articoli='+article+'&q='+encodeURIComponent(query));
             const card=page.locator('.fiere-card[data-event-id="'+id+'"]'),badge=card.locator('.fiere-fit-badge');
             await badge.waitFor(); assert.equal(await badge.getAttribute('data-score'),score);
-            if(condition)assert.equal(await badge.locator('.fiere-fit-condition').innerText(),condition);
             await badge.click(); assert(await page.locator('#article-fit-dialog').isVisible());
+            if(condition)assert((await page.locator('#fit-items').innerText()).includes(condition));
             assert((await page.locator('#fit-items').innerText()).includes('fonti dell’organizzatore'));
             assert.equal(await page.locator('#fit-items .fiere-fit-sources a').count(), get(id).articleResearch.sources.length);
             await page.keyboard.press('Escape'); assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
