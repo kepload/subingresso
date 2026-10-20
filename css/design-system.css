@@ -19,20 +19,23 @@ button:not(:disabled), a[class*="bg-"] {
 }
 @media (max-width:1023px) {
     .site-header .site-nav { display: none; }
+    .site-header #authNav > a, .site-header .site-publish {
+        width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px;
+    }
+    .site-header #authNav > a > i, .site-header .site-publish > i { font-size: 16px; }
 }
 @media (max-width:639px) {
-    .site-header > .site-header-inner { height: 74px; padding-inline: 12px; gap: 8px; }
-    .site-wordmark { font-size: 18px; line-height: 28px; }
+    .site-header > .site-header-inner { height: 74px; padding-inline: 18px; gap: 8px; }
+    .site-wordmark { font-size: 20px; line-height: 28px; }
     .site-header > div > div:last-child, .site-header #authNav { gap: 6px; }
     .site-header #authNav > button { padding: 9px 10px; font-size: 12px; }
-    .site-header #authNav > a, .site-header .site-publish { width: 34px; height: 36px; }
 }
 @media (max-width:379px) {
-    .site-header > .site-header-inner { height: 72px; padding-inline: 10px; gap: 6px; }
-    .site-wordmark { font-size: 16px; line-height: 24px; }
+    .site-header > .site-header-inner { height: 72px; padding-inline: 14px; gap: 6px; }
+    .site-wordmark { font-size: 18px; line-height: 28px; }
     .site-header > div > div:last-child, .site-header #authNav { gap: 5px; }
     .site-header #authNav > button { padding: 8px; font-size: 11px; }
-    .site-header #authNav > a, .site-header .site-publish { width: 30px; height: 34px; }
+    .site-header #authNav > a, .site-header .site-publish { width: 40px; height: 40px; }
 }
 .site-header :focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; transition: none; }
 .organizer-theme .site-header :focus-visible { outline-color: #93c5fd; }

@@ -1,5 +1,11 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+21/10/2026, intestazione mobile: scritta leggermente più grande e interna
+(20/18px, margini18/14px); tre icone quadrate uniformi44px,40 sotto380,
+ordine +, messaggi, profilo nel markup condiviso e dashboard. Nessuna
+etichetta aggiunta su mobile; colori conservati. UI17/design-system5.
+Prove e pubblicazione Documents/verifica-header-mobile-uniforme-20261021/.
+
 21/10/2026, preferenza logo aggiornata: scritta precedente Subingresso.it,
 senza icona/quadrato iniziale; il PNG e il suo fondo bianco sono superati.
 Menu mobile sempre assente. UI16/CSS4; prove e pubblicazione
@@ -1624,7 +1630,7 @@ Pubblicazione verificata `effb12b` + `35da1fd`, Vercel riuscito `Fs4xUe5bYZu4E8f
 
 - Layout: `flex justify-between` <lg, `grid grid-cols-3` da lg.
 - Ordine: **Calcolatore | Annunci | Blog**.
-- Bottoni: messaggi/profilo `w-9/w-10 rounded-lg/xl bg-slate-100`. Icona `fa-user`.
+- Bottoni: ordine +, messaggi, profilo anche nel DOM; mobile tre quadrati44px (40 sotto380), angoli12px e icone16px. Colori originali e icona `fa-user`.
 - `dashboard.html` ha header hardcoded ma **markup allineato 1:1 a `UI.header`** di `ui-components.js` (logo responsive 36→44px, bottone "+" sempre visibile come icona su mobile). Se modifichi `ui-components.js` aggiornare a mano anche dashboard.html.
 
 ## 📅 Scadenza Post

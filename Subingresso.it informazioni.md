@@ -4,6 +4,17 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Intestazione smartphone,21/10:** scritta20/18px e margini18/14px,
+  leggermente più grande/spostata a destra. Pulsanti quadrati44px,
+  40 sotto380, angoli12 e icone16; ordine +, messaggi, profilo,
+  senza testi mobile. Header condiviso/dashboard allineati; UI17/CSS5.
+  Locale Chromium1440/820/320/375/430 e WebKit390 passato, profili364
+  passati; WebKit isolato dopo errore transitorio della fixture. Nessuna
+  scrittura reale; Tab verificato Chromium, ordine DOM anche WebKit.
+  Backup remoto tag/branch pre-header-mobile-uniforme verificati;
+  noto errore cleanup helper dopo il push valido. Prove e pubblicazione
+  `Documents/verifica-header-mobile-uniforme-20261021/`.
+
 - **Solo scritta,21/10, preferenza corrente:** ripristinato il logo
   testuale precedente Subingresso.it, senza quadrato/icona iniziale;
   supera il PNG precedente. Menu mobile resta rimosso. UI16/CSS4.

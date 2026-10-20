@@ -16,11 +16,11 @@ const UI = {
             <a href="/blog"      tabindex="0" class="nav-link-blog hover:text-slate-900 transition">Blog</a>
         </nav>
         <div class="flex items-center justify-end gap-2 sm:gap-3">
-            <div id="authNav" class="flex items-center gap-2 sm:gap-3"></div>
             <a href="/vendi" aria-label="Inserisci annuncio" class="site-publish bg-slate-900 text-white w-9 h-9 sm:w-10 sm:h-10 lg:w-auto lg:px-7 lg:py-3 rounded-lg sm:rounded-xl lg:rounded-[16px] text-xs sm:text-sm font-bold hover:bg-blue-600 transition-all duration-300 shadow-sm flex items-center justify-center gap-2">
                 <i class="fas fa-plus text-[10px] sm:text-xs"></i>
                 <span class="hidden lg:inline">Inserisci annuncio</span>
             </a>
+            <div id="authNav" class="flex items-center gap-2 sm:gap-3"></div>
         </div>
     </div>`,
 
