@@ -2235,3 +2235,21 @@ verificato e supplemento finale. Backup remoto session-20261020-103054 e
 ramo pre-fiere-alessandria creati prima delle modifiche. TO DO spuntata
 solo dopo verifica:41province concluse/69rimanenti. Nessun contatto a terzi;
 modifiche estranee preservate,nessun lavoro su altre province.
+
+
+Asti (20 ottobre 2026): ricerca corrente conclusa con limiti espliciti e verificata
+online. 100 manifestazioni/49 comuni, ricognizione118; prima28,72aggiunte,
+tutti28ID e altre5.192schede identici. Audit data/fiere-asti.json:484ricevute,
+94righe regionali,32schede originali tentate,14esclusioni/13limiti in data/FIERE.md.
+95date puntuali,due periodi,tre ricorrenze,due storici2025,otto costi. Date di
+mercato distinte da feste/anteprime, tariffe parziali e fonti secondarie esplicite.
+Pubblicato f1229ea:quattro asset identici,100pagine HTTP200/H1/canonical.
+PLAYWRIGHT_MODULE: suite Asti locale/online Chromium1440/320 e WebKit390,
+generale cinque formati,build/settori e5.292pagine/2.169sitemap passati;JS93/JSON63.
+Originali/prove Documents/ricerca-fiere-asti-20261020;copia ricerca
+ricerche-fiere-20261020-172445:44.735file SHA256,zero errori,manifest/checksum
+verificati e supplemento finale. Backup remoto session-20261020-185452-fiere-asti
+e ramo pre-fiere-asti-20261020 prima delle modifiche; noto errore cleanup dopo
+push del tag riuscito. TO DO spuntata dopo verifica:42concluse/68rimanenti.
+Nuovi bandi/programmi distinti dalla chiusura attuale; nessun contatto a terzi,
+nessuna altra provincia, modifiche estranee preservate ed escluse dai commit.

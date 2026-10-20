@@ -1,6 +1,6 @@
 # Calendario fiere — fonti e aggiornamento
 
-## Asti — ricerca documentale conclusa, pubblicazione in verifica (20 ottobre 2026)
+## Asti — ricerca documentale conclusa e verificata online (20 ottobre 2026)
 
 **100 manifestazioni in 49 comuni**, prima **28**: **72 aggiunte**. Ricognizione dei
 **118 luoghi dell’anagrafica** (Moransengo e Tonengo oggi hanno portale unico;
@@ -89,8 +89,16 @@ di censimento esaustivo o posteggi liberi, nessun contatto a terzi.
 Backup remoto `backup/session-20261020-185452-fiere-asti` e ramo preventivo
 `backup/pre-fiere-asti-20261020`; noto errore cleanup dopo il push del tag riuscito.
 Integrazione: catalogo **5.292**, altre **5.192 schede identiche** e tutti28ID
-preesistenti conservati; cache JS93/JSON63. Controlli e pubblicazione sotto,
-TO DO provinciale invariata fino alla verifica online.
+preesistenti conservati; cache JS93/JSON63. Pubblicato `f1229ea`: quattro asset
+online identici, tutte le **100 pagine HTTP200/H1/canonical**. PLAYWRIGHT_MODULE:
+suite Asti locale/online Chromium1440/320 e WebKit390, generale cinque formati,
+build/settori e **5.292 pagine/2.169 sitemap** passati. Prove `deploy-assets.json`,
+`online-pages.json`, `test-locale.json` e `test-online.json` nell’archivio esterno.
+Backup ricerca `ricerche-fiere-20261020-172445`: **44.735 file SHA256**, zero errori,
+manifest/checksum verificati; supplemento finale con fonti/prove aggiornate.
+TO DO spuntata dopo la verifica: **42 province concluse /68 da fare**.
+Ricerca attuale chiusa con i limiti sopra; nuovi atti e programmi restano
+verifiche periodiche future. Nessun contatto a terzi; file estranei esclusi.
 
 ## Alessandria — ricerca documentale conclusa e verificata online (20 ottobre 2026)
 

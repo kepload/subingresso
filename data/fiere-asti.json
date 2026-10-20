@@ -7799,20 +7799,38 @@
     },
     "futureMaintenance": "Nuovi calendari, bandi, rinvii, disponibilità e tariffe; programmi dettagliati Cocconato e Asti/SanDamianoTartufo, conferme delle ricorrenzeBubbio/Vesime/Moncalvo e nuove edizioni dei due storici2025. Verifiche periodiche future distinte dalla chiusura documentale attuale; non occorre attendere futuri documenti.",
     "publication": {
-      "status": "pending-verification"
+      "status": "verified-online",
+      "commit": "f1229ea",
+      "checkedAt": "2026-10-20T17:45:48.854257+00:00",
+      "catalogueEvents": 5292,
+      "provinceEvents": 100,
+      "assetsProof": "deploy-assets.json",
+      "pagesProof": "online-pages.json",
+      "browserProof": "test-online.json",
+      "catalogueSHA256": "18900905bb012180582888eed5aa6589220f8b0aad7fb50a95a7566bacf7adbb",
+      "futureMaintenanceSeparate": true
     },
     "backups": {
       "sessionTag": "backup/session-20261020-185452-fiere-asti",
       "branch": "backup/pre-fiere-asti-20261020",
-      "note": "Tag e branch remoti creati prima delle modifiche; noto errore di cleanup nello script dopo il push riuscito."
+      "note": "Tag e branch remoti creati prima delle modifiche; noto errore di cleanup nello script dopo il push riuscito.",
+      "researchCopy": {
+        "directory": "C:\\Users\\utente\\Documents\\backup-subingresso\\ricerche-fiere-20261020-172445",
+        "verifiedFiles": 44735,
+        "bytes": 7703944964,
+        "errors": [],
+        "manifestSHA256": "50a302c3d6743e545c5923d21e1bfb9590d0587e26ca88bb045639dd6b560d32",
+        "finalSupplement": "supplemento-asti-finale: copia SHA256 delle fonti/prove e documenti finali, eseguita a registrazione conclusa."
+      }
     },
     "validation": {
       "data": "Build5292; 5192 altre schede identiche,28 ID precedenti conservati;100 pagine SSR locali HTTP200.",
       "browser": "PLAYWRIGHT_MODULE; suite Asti locale Chromium1440/320 e WebKit390 passata, mappa,100 schede,13 dialoghi e quattro pagine senzaJS per formato.",
       "pages": "Suite pagine5292/2169sitemap e browser tre formati passata.",
       "sectors": "python scripts/test-fiere-sectors.py passato.",
-      "general": "in esecuzione",
-      "noRealWrites": true
+      "general": "Suite generale passata: Chromium1440/820/390/320 e WebKit390, tutte le province, filtri, elenco/mappa, dettagli, tastiera, recupero errori e overflow.",
+      "noRealWrites": true,
+      "online": "PLAYWRIGHT_MODULE: suite Asti online passata Chromium1440/320 e WebKit390; 100 pagine pubbliche HTTP200/H1/canonical, quattro asset identici al commit pubblicato."
     }
   },
   "events": [
