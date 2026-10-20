@@ -1,5 +1,10 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+21/10/2026, preferenza logo aggiornata: scritta precedente Subingresso.it,
+senza icona/quadrato iniziale; il PNG e il suo fondo bianco sono superati.
+Menu mobile sempre assente. UI16/CSS4; prove e pubblicazione
+Documents/verifica-logo-solo-scritta-20261021/.
+
 21/10/2026, logo/menu: PNG originale utente nelle intestazioni, inquadrato
 con SVG senza deformazioni; dimensioni responsive e fondo bianco sul tema
 organizzatore. Tolti pulsante/tendina/logica menu mobile Blog/Calcolatore:

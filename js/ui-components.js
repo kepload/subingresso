@@ -7,7 +7,7 @@ const UI = {
     header: `
     <div class="site-header-inner max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between lg:grid lg:grid-cols-3">
         <a href="/" aria-label="Subingresso.it, pagina iniziale" class="site-brand flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            <svg class="site-logo" width="244" height="45" viewBox="0 206 2172 402" aria-hidden="true"><image href="/logo-subingresso.png" width="2172" height="724" /></svg>
+            <span class="site-wordmark">Subingresso<span>.it</span></span>
         </a>
         <nav id="siteNavigation" aria-label="Navigazione principale" class="site-nav hidden lg:flex justify-center gap-6 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
             <a href="/valutatore" tabindex="0" class="nav-link-valutatore hover:text-slate-900 transition">Calcolatore</a>

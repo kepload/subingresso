@@ -182,7 +182,7 @@ module.exports = async function handler(req, res) {
 .cta-box { transition: transform .15s ease; }
 .cta-box:hover { transform: translateY(-2px); }
 </style>
-    <link rel="stylesheet" href="/css/design-system.css?v=3">
+    <link rel="stylesheet" href="/css/design-system.css?v=4">
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
 <div id="header"></div>
@@ -278,7 +278,7 @@ window._BANDO_REGIONE = ${safeJson(regione)};
 <script src="/js/page-view-tracker.js?v=4"></script>
 <script src="/js/image-urls.js?v=1"></script>
 <script src="/js/data.js?v=21"></script>
-<script src="/js/ui-components.js?v=15"></script>
+<script src="/js/ui-components.js?v=16"></script>
 <script src="/js/auth.js?v=22"></script>
 <script src="/js/bando-alerts.js?v=2"></script>
 <script>
@@ -296,7 +296,7 @@ function notFoundPage(reason) {
     return `<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="robots" content="noindex">
 <title>Bando non trovato — Subingresso.it</title>
 <link rel="stylesheet" href="/css/tailwind.css?v=4">
-    <link rel="stylesheet" href="/css/design-system.css?v=3">
+    <link rel="stylesheet" href="/css/design-system.css?v=4">
 </head><body class="bg-slate-50 min-h-screen flex items-center justify-center p-6 text-center font-sans">
 <div class="max-w-md bg-white rounded-3xl shadow-sm border border-slate-200 p-10">
 <div class="text-6xl mb-4">📭</div>

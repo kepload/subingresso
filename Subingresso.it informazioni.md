@@ -4,6 +4,13 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Solo scritta,21/10, preferenza corrente:** ripristinare il logo
+  testuale precedente Subingresso.it, senza quadrato/icona iniziale;
+  supera il PNG precedente. Menu mobile resta rimosso. UI16/CSS4.
+  Locale Chromium1440/320 e WebKit390 e profili364 passati; nessuna
+  scrittura reale di prova. Pubblicazione in corso; prove
+  Documents/verifica-logo-solo-scritta-20261021/.
+
 - **Logo e menu telefono,21/10:** PNG originale utente nelle intestazioni,
   colori/proporzioni conservati e inquadratura SVG; mobile210/180px,
   desktop244px, fondo bianco sul tema organizzatore. Eliminati pulsante,
