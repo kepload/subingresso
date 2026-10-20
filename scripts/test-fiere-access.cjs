@@ -26,11 +26,14 @@ async function call(body, authorization, method = 'POST') {
 const sample = events.find(event => event.pricing && event.participation.url && event.editions.length);
 const request = { id: sample.id, url: sample.source.url };
 const sdk = `
-window.qaListeners=[]; window.qaSession=null; window.qaLoginFails=false;
+window.qaListeners=[]; window.qaSession=window.qaInitialSession||null; window.qaLoginFails=false;
+window.qaPendingSessions=[];
+window.qaReleaseSessions=()=>{window.qaHoldSessions=false;qaPendingSessions.splice(0).forEach(resolve=>resolve());};
+window.qaGetSession=async()=>{const session=qaSession;if(window.qaHoldSessions)await new Promise(resolve=>qaPendingSessions.push(resolve));return window.qaSessionError?{data:{session:null},error:{message:'offline'}}:{data:{session}};};
 window.qaSetSession=value=>{qaSession=value;qaListeners.forEach(fn=>fn(value?'SIGNED_IN':'SIGNED_OUT',value));};
 window.qaLogin=()=>qaSetSession({access_token:'qa-session',user:{id:'qa-user',email:'qa@example.invalid',user_metadata:{nome:'Prova'}}});
 const qaQuery={select(){return this},eq(){return this},neq(){return this},or(){return this},in(){return this},limit(){return this},insert(){return this},upsert(){return this},single:async()=>({data:{nome:'Prova'}}),then(resolve){return Promise.resolve({data:[],count:0}).then(resolve)}};
-const qaClient={auth:{getSession:async()=>({data:{session:qaSession}}),getUser:async()=>({data:{user:qaSession?.user||null}}),onAuthStateChange:fn=>{qaListeners.push(fn);return{data:{subscription:{unsubscribe(){}}}}},signInWithPassword:async()=>{if(qaLoginFails)return{error:{message:'invalid'}};qaLogin();return{data:{session:qaSession}}},signOut:async()=>{qaSetSession(null);return{}},resetPasswordForEmail:async()=>({})},from:()=>Object.create(qaQuery),rpc:async()=>({data:[]})};
+const qaClient={auth:{getSession:qaGetSession,getUser:async()=>({data:{user:qaSession?.user||null}}),onAuthStateChange:fn=>{qaListeners.push(fn);return{data:{subscription:{unsubscribe(){}}}}},signInWithPassword:async()=>{if(qaLoginFails)return{error:{message:'invalid'}};qaLogin();return{data:{session:qaSession}}},signOut:async()=>{qaSetSession(null);return{}},resetPasswordForEmail:async()=>({})},from:()=>Object.create(qaQuery),rpc:async()=>({data:[]})};
 window.supabase={createClient:()=>qaClient};`;
 const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, 'http://localhost');
@@ -48,6 +51,54 @@ const server = http.createServer(async (req, res) => {
     res.setHeader('Content-Type', ({ '.html': 'text/html; charset=utf-8', '.js': 'application/javascript; charset=utf-8', '.mjs': 'application/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json' })[path.extname(file)] || 'text/plain');
     fs.readFile(file, (error, data) => error ? res.writeHead(404).end() : res.end(data));
 });
+async function initialSessionChecks(context, base, width) {
+    for (const route of ['/fiere', '/fiere/' + sample.id]) {
+        for (const state of ['signed-in', 'guest', ...(width === 1440 ? ['error', 'late-read'] : [])]) {
+            const page = await context.newPage();
+            await page.addInitScript(state => {
+                window.qaHoldSessions = true;
+                window.qaInitialSession = state === 'signed-in' ? { access_token: 'qa-session', user: { id: 'qa-user', email: 'qa@example.invalid', user_metadata: { nome: 'Prova' } } } : null;
+                window.qaSessionError = state === 'error';
+                window.qaGuestFrames = [];
+                const sampleFrame = () => {
+                    if ([...document.querySelectorAll('[data-fiere-guest]')].some(element => element.getClientRects().length)) window.qaGuestFrames.push(performance.now());
+                    requestAnimationFrame(sampleFrame);
+                };
+                requestAnimationFrame(sampleFrame);
+            }, state);
+            await page.goto(base + route);
+            await page.waitForFunction(() => window.FiereAccess && qaPendingSessions.length);
+            const frames = () => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(() => requestAnimationFrame(resolve)))));
+            await frames();
+            assert.equal(await page.locator('[data-fiere-guest]:not([hidden])').count(), 0, state + ': invitation hidden while session is pending');
+            assert.deepEqual(await page.evaluate(() => qaGuestFrames), [], state + ': no guest frame before authentication');
+            if (route === '/fiere') await page.waitForSelector('.fiere-card-button');
+            const content = page.locator(route === '/fiere' ? '.fiere-card-button' : 'main > section:not(.fiere-access)').first();
+            const before = await content.boundingBox();
+            if (state === 'late-read') await page.evaluate(() => qaLogin());
+            await page.evaluate(() => qaReleaseSessions());
+            if (state === 'guest') {
+                await page.locator('.fiere-access').waitFor({ state: 'visible' });
+                assert.equal(await page.locator('.fiere-access-register').innerText(), 'Registrati gratis');
+                assert.equal(await page.locator('#fiere-access-title').innerText(), 'Trova le fiere per il tuo banco');
+                await page.evaluate(() => qaLogin());
+                assert.equal(await page.locator('.fiere-access').isVisible(), false);
+                await page.evaluate(() => qaSetSession(null));
+                assert(await page.locator('.fiere-access').isVisible(), 'Logout restores the invitation');
+            } else {
+                await frames();
+                assert.deepEqual(await page.evaluate(() => qaGuestFrames), [], state + ': invitation never appears');
+                const after = await content.boundingBox();
+                assert.equal(after.y, before.y, state + ': content does not jump when authentication settles');
+            }
+            if (process.env.FIERE_ACCESS_QA_DIR) {
+                fs.mkdirSync(process.env.FIERE_ACCESS_QA_DIR, { recursive: true });
+                await page.screenshot({ path: path.join(process.env.FIERE_ACCESS_QA_DIR, (route === '/fiere' ? 'calendario' : 'scheda') + '-' + width + '-' + state + '.png'), fullPage: true });
+            }
+            await page.close();
+        }
+    }
+}
 async function run(engine, name, width, height, base) {
     const browser = await engine.launch({ headless: true });
     try {
@@ -67,6 +118,7 @@ async function run(engine, name, width, height, base) {
             if (url.pathname.includes('/rest/')) return route.fulfill({ contentType: 'application/json', body: '[]' });
             return route.abort();
         });
+        await initialSessionChecks(context, base, width);
         const page = await context.newPage();
         page.setDefaultTimeout(15000);
         const overflow = async () => assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), name + width + ' overflow');
@@ -154,6 +206,7 @@ async function run(engine, name, width, height, base) {
         await context.close();
         const nojs = await browser.newContext({ javaScriptEnabled: false, viewport: { width, height } });
         const staticPage = await nojs.newPage(); await staticPage.goto(base + '/fiere/' + sample.id);
+        assert.equal(await staticPage.locator('.fiere-access').isVisible(), false, 'HTML starts with invitation hidden even without JavaScript');
         assert.equal(await staticPage.locator('main a[href^="https://"]').count(), 0);
         assert.equal(await staticPage.locator('h1').innerText(), sample.name);
         const unavailable = await browser.newContext({ viewport: { width, height } });
@@ -163,10 +216,11 @@ async function run(engine, name, width, height, base) {
         });
         const partial = await unavailable.newPage();
         await partial.goto(base + '/fiere'); await partial.locator('.fiere-card-button').first().click();
+        assert.equal(await partial.locator('.fiere-access').isVisible(), false, 'Unavailable auth does not show a misleading invitation');
         assert.equal(await partial.locator('#fair-dialog a[href^="https://"]').count(), 0, 'Unavailable access script fails closed');
         await unavailable.close();
         assert.equal(errors.length, 0, errors.join('\n'));
-        console.log(name + ' ' + width + ': calendar, Google page, signup/login, cancellation, exact source, auth errors, logout, fallback, no-JS and overflow passed');
+        console.log(name + ' ' + width + ': no invitation flash or layout jump, delayed session, guest/login/logout, calendar, Google page, signup/login, cancellation, exact source, auth errors, fallback, no-JS and overflow passed');
     } finally { authMode = 'valid'; await browser.close(); }
 }
 (async () => {

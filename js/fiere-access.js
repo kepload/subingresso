@@ -1,7 +1,7 @@
 // Shared by the calendar dialogs and the fair pages reached from search engines.
 (function () {
     'use strict';
-    let signedIn = false, account = null, operation = 0, activeAuth = null;
+    let signedIn = false, account = null, operation = 0, activeAuth = null, authRevision = 0;
     const fallback = (id, url) => '/fiere?fiera=' + encodeURIComponent(id) + '&fonte=' + encodeURIComponent(url);
     const session = async () => {
         if (typeof _supabase === 'undefined') throw new Error('Accesso non disponibile. Ricarica la pagina e riprova.');
@@ -10,6 +10,7 @@
         return result.data?.session;
     };
     function refresh(value) {
+        authRevision++;
         if (account && account !== value?.user?.id) operation++;
         account = value?.user?.id || null;
         signedIn = Boolean(value?.user);
@@ -66,7 +67,7 @@
         window.__onLoginSuccess = callback;
         window.openAuthModal(tab, request?.context || (request
             ? 'Registrati gratis o accedi per consultare la fonte e verificare come partecipare. Dopo l’accesso apriamo la fonte che hai scelto.'
-            : 'Crea il tuo account gratuito: consulta le fonti delle fiere e, dal profilo, attiva gli avvisi per bandi e posteggi nella tua zona.'), 'direct');
+            : 'Registrati gratis per vedere come partecipare alle fiere. Puoi anche salvarle e scegliere un promemoria via email.'), 'direct');
         // The site's auth modal is outside the native fair dialog's top layer.
         const overlay = document.getElementById('authOverlay');
         overlay.setAttribute('role', 'dialog');
@@ -142,7 +143,10 @@
         }
     });
     function init() {
-        session().then(refresh).catch(() => {});
+        // Guest invitations start hidden in the HTML, including while auth is loading.
+        // A late initial read must not undo a newer login/logout event.
+        const revision = authRevision;
+        session().then(value => { if (revision === authRevision) refresh(value); }).catch(() => {});
         try {
             _supabase.auth.onAuthStateChange((_event, value) => {
                 // A pending response must never open a source after logout/account change.
