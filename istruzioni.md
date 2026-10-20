@@ -1,7 +1,7 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
 20/10/2026, Ancona: ricerca documentale corrente conclusa con limiti espliciti;
-pubblicazione/verifica ancora da registrare.104manifestazioni/40comuni,
+pubblicata e verificata online.104manifestazioni/40comuni,
 ricognizione47;prima44,+60,tuttiID e altre5334schede preservati;catalogo5438.
 Audit data/fiere-ancona.json e FIERE.md:65righeAN,35gruppi ricerca,587ricevute,
 16esclusioni,13limiti,66date puntuali/38testuali,sei costi ancheparziali.
@@ -9,7 +9,11 @@ BandoSanCiriaco2026 completo:375stalli,tariffeA/B e spunta9:30;Agugliano12aprile
 SantAgostino27–30agosto,Colombaccio12–13settembre. Cinque fontisecondarie esplicite,
 vecchi2005/2016 e conflitti non trasformati in date certe;futuro distinto.
 Prove/originali Documents/ricerca-fiere-ancona-20261020;backup remoto valido,
-notoerrorecleanup. Nessun contattoaterzi;TO DO ancoraaperta fino alla verifica.
+notoerrorecleanup. Nessun contattoaterzi;TO DO44/110,restano66.
+Pubblicazione d04ddc6,deploy riuscito:4asset identici,104pagine200;
+browser locale/online Chromium1440/320 e WebKit390 passati, generale5,
+settori e5438pagine/2316sitemap. Primo tentativo durante deploy scaduto,
+ripetizione post-deploy riuscita;ricerca chiusa,futura manutenzione distinta.
 CacheJS97/JSON65,PLAYWRIGHT_MODULE;fileestranei preservati.
 
 20/10/2026, preferenza profilo organizzatore: area personale e finestra

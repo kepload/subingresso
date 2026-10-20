@@ -7589,7 +7589,34 @@
     ],
     "openLeads": [],
     "publication": {
-      "status": "pending-online-verification"
+      "status": "verified",
+      "commit": "d04ddc63fe4f31c34b6e5d7f531b1023026bb727",
+      "checkedAt": "2026-10-20T21:56:00.862862+00:00",
+      "catalogEvents": 5438,
+      "provinceEvents": 104,
+      "unchangedOtherEvents": 5334,
+      "assetsVerified": 4,
+      "pagesVerified": 104,
+      "onlineBrowserCases": 3,
+      "localChecks": "Suite provinciale Chromium1440/320 e WebKit390; suite generale cinque casi; settori;5438pagine/2316sitemap;build ripetibile. PLAYWRIGHT_MODULE utilizzato.",
+      "deployment": {
+        "state": "success",
+        "statuses": [
+          {
+            "context": "Vercel",
+            "state": "success",
+            "target_url": "https://vercel.com/kycykuardit-9234s-projects/subingresso/9U81aq8dzuKjjhbZk5DxDhqT3Cto"
+          }
+        ]
+      },
+      "evidenceArchive": "C:\\Users\\utente\\Documents\\ricerca-fiere-ancona-20261020",
+      "evidenceFiles": [
+        "publication-catalog.json",
+        "test-local.json",
+        "test-online.json"
+      ],
+      "initialOnlineAttempt": "Attesa104schede scaduta durante il deploy; ripetizione dopo verifica degli asset pubblicati: tre casi passati.",
+      "researchClosure": "Ricerca attuale conclusa con limiti espliciti; nuove uscite e controlli periodici distinti."
     },
     "backup": {
       "tag": "backup/session-20261020-233059-fiere-ancona",

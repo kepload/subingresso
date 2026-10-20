@@ -2,9 +2,9 @@
 
 ## Ancona — ricerca documentale del 20 ottobre 2026
 
-Ricerca attuale conclusa con limiti espliciti; pubblicazione e verifica online
-ancora da registrare. TO DO lasciata aperta fino alla verifica. Nessun contatto,
-messaggio, email o candidatura a terzi; nessun’altra provincia lavorata.
+Ricerca attuale conclusa con limiti espliciti, pubblicata e verificata online.
+TO DO spuntata solo dopo i controlli: **44 province concluse, 66 da fare su110**.
+Nessun contatto, messaggio, email o candidatura a terzi; nessun’altra provincia lavorata.
 
 **104 manifestazioni in 40 comuni**, prima **44**: **60 aggiunte**, tutti i
 44 ID conservati. Ricognizione nominale dei **47 comuni**, **65 righe AN**
@@ -104,6 +104,16 @@ senza modificare lo script del progetto. Copia `Documents/backup-subingresso/ric
 file verificati SHA256, 9.112.892.322 byte, zero errori**; manifest controllato.
 Supplemento finale separato per originali/verifiche acquisiti dopo la copia.
 File estranei preservati.
+
+Pubblicazione `d04ddc6`, deploy riuscito ([Vercel](https://vercel.com/kycykuardit-9234s-projects/subingresso/9U81aq8dzuKjjhbZk5DxDhqT3Cto)). Quattro asset
+HTML/JS/catalogo/audit identici al commit, **104/104 pagine HTTP200**, titolo
+e canonical corretti. Browser online Chromium1440/320 e WebKit390 passati:
+elenco e mappa104ID, dettagli/costi/fonti, pagine senzaJS e nessun overflow.
+Primo tentativo browser avviato durante deploy scaduto; ripetizione sugli asset
+verificati riuscita. Locale: stessa suite, generale cinque formati/browser,
+settori, **5.438 pagine/2.316 sitemap**, build ripetibile. Prove
+`publication-catalog.json`, `test-local.json`, `test-online.json` nell’archivio
+provinciale. Nessuna scrittura account o email reale; test con PLAYWRIGHT_MODULE.
 
 ## Pesaro e Urbino — ricerca documentale del 20 ottobre 2026
 
