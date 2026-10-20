@@ -8,8 +8,23 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   e risposta annunci inesistenti; contatori animati della home mantenuti per
   preferenza esplicita. Autorizzati alleggerimento blog conservando esperienza
   e modulo per la disiscrizione del punto6 (email), motivo facoltativo e
-  conferma. Account e altri punti invariati. Dettagli/prove
-  `data/BLOG_LOADING_UNSUBSCRIBE.md`; verifica pubblicazione in corso.
+  conferma. Account e altri punti invariati.
+
+- **Blog/disiscrizione completati e verificati online,20/10:** articolo
+  singolo e indice con sole anteprime, testo nel primo HTML;90 articoli con
+  testo/tabelle/titoli/canonical preservati e hash DB identico. Anteprime
+  40.992byte contro507.329 della query precedente; nessun refetch del corpo.
+  Modulo email con motivo facoltativo, conferma, annullo e retry; niente SDK
+  superfluo, errore createClient e CORS corretti. Feedback categoriale senza
+  email/account/token, RLS solo servizio; errore feedback non blocca uscita.
+  Backend applicato/verificato, tabella vuota; OPTIONS200 e token finto404.
+  Pubblicato `a25f96b`, Vercel riuscito: sei asset identici;15 casi browser
+  pubblicati Chromium1440/320 e WebKit390 passati, inclusi vecchie API assenti
+  e lettura senza JS. Regressioni annunci/promo fiere32+28 casi passate.
+  Nessuna disiscrizione/account/email reale di prova; dati fiere invariati.
+  Incompatibilità iniziale di jsdom27 risolta con26.1, dopo ripristino e
+  verifica isolata; dettagli/errori `data/BLOG_LOADING_UNSUBSCRIBE.md`, prove
+  `Documents/verifica-blog-disisc-20261020/`. Markup2/promo3/disiscrizione2.
 
 - **Genova conclusa e verificata online,20/10:**274 manifestazioni/47comuni,
   copertura67; prima211,64nuove e un doppione Campomorone unificato.
@@ -1200,7 +1215,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 
 ## ⚡ Velocità e visibilità su Google
 
-- [ ] 🔴 Velocizzare il blog — rendere subito disponibile l'articolo in HTML e caricare solo le anteprime nell'elenco.
+- [x] 🔴 Velocizzare il blog — rendere subito disponibile l'articolo in HTML e caricare solo le anteprime nell'elenco.
 - [ ] 🟠 Alleggerire il sito e rendere più fluida la navigazione — cache dei file versionati, coordinate e librerie della dashboard caricate quando servono, icone leggere; ridurre gli spostamenti della pagina e ottimizzare paginazione e query degli annunci.
 - [ ] 🔴 Sistemare indirizzi e indicizzazione — allineare sitemap e pagine definitive, correggere i 404 e migliorare blog e pagine locali verificando indicizzazione e risultati in Search Console. Prima i problemi che impediscono di trovare o aprire le pagine utili.
 - [ ] 🟢 Creare pagine regionali — quando ci sono abbastanza annunci attivi; anticiparle solo nelle regioni con offerta concreta e domanda osservata.
