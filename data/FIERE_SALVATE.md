@@ -21,6 +21,21 @@ API/browser e RPC controllano il nuovo minimo; patch additiva
 Cache calendario91, saved-fairs JS/CSS2 e modello2; catalogo invariato.
 Verifiche e limiti in `Documents/verifica-fiere-campanella-20261020/`.
 
+Pubblicato `8b152f4`, Vercel READY `dpl_89wotv1DJ6kwWGHNqB8xkBtoFNdH`.
+Sei asset identici; pagine catalogo/evento200 e API401/405 verificate.
+Percorso completo sugli asset pubblicati passato Chromium1440/820/320 e
+WebKit390: Salva immediato senza email, campanella/consenso,2/5/12mesi,
+date, doppio clic, errori/riprova, scheda/dettaglio, dashboard, cambio account
+e stato modificato da un'altra scheda del browser. Tre prove anonime reali
+online con SDK/font/icone reali, accesso/annullo e nessun overflow/errore.
+SQL reale ROLLBACK passato prima/dopo l'applicazione del minimo2 e con
+migrazione completa; patch idempotente. Worker reale dry-run200/dovuti0,
+cron attivo e ultime tre esecuzioni riuscite. Email ancora collaudate con
+provider simulato: nessuna email reale di prova. Nessun account/evento/
+acquisto/fiera salvata di prova rimasto nel DB. Regressioni fonti4,
+calendario5, profili304 ed eventi3 passate; segreti verificati e ricerca
+Alessandria concorrente preservata.
+
 Richiesta approvata: salvare la singola fiera e scegliere liberamente i mesi
 di anticipo, inclusi5 e12. Sostituisce la precedente proposta di ricerche
 salvate e riepiloghi su molte fiere: nessun nuovo avviso su altre opportunità.

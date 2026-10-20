@@ -17,6 +17,12 @@ dell'attivazione; nessun flusso fiscale aggiunto o promessa di copertura.
 La ricevuta Vetrina è un servizio distinto, non una fattura delle fiere.
 Prove `Documents/verifica-fiere-campanella-20261020/`.
 
+Correzione preferiti pubblicata `8b152f4`, Vercel READY; anche la pagina
+evento mostra Salva e campanella sotto il titolo. API pubblica reale200 e
+percorso salvataggi organizzatore verificati sui file pubblicati, quattro
+formati/browser; profili304 controlli passati. Pagamenti, profili ed eventi
+reali invariati, nessun invio o approvazione automatica del test dell'utente.
+
 ## Admin e pannello compatto — 20 ottobre 2026
 
 Admin escluso dal default Organizzatore nei due percorsi: controllo is_admin

@@ -13,7 +13,12 @@ pagamenti eventi disattivati/prenotazioni0; pubblicazione soggetta a doppia
 approvazione. Nessuna fattura automatica fiere: rapporto diretto con gestore;
 fatturazione del futuro incasso piattaforma ancora da definire.
 Guide data/FIERE_SALVATE.md e data/ORGANIZZATORI_EVENTI.md, prove
-Documents/verifica-fiere-campanella-20261020. Pubblicazione da completare.
+Documents/verifica-fiere-campanella-20261020. Pubblicato8b152f4, Vercel READY
+dpl_89wotv1DJ6kwWGHNqB8xkBtoFNdH; sei asset identici, tre prove anonime reali,
+percorso salvataggi online quattro formati, profili304, eventi3, fonti4,
+calendario5 e SQL ROLLBACK passati. Minimo2 applicato/idempotente; worker
+dry-run200/dovuti0 e cron attivo, nessuna email reale di collaudo. Ricerca
+Alessandria7695c98 conservata durante rebase; backup remoti e segreti validi.
 
 20/10/2026, preferenza admin: esclusione dal passaggio automatico a
 Organizzatore, sia ingresso dashboard sia apertura del profilo, anche con

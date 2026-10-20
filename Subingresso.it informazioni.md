@@ -15,9 +15,15 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   e pagamenti eventi disattivati. Nessuna fatturazione automatica fiere:
   oggi la richiesta va gestita nel contatto diretto con l'organizzatore.
   Dettagli `data/FIERE_SALVATE.md`, `data/ORGANIZZATORI_EVENTI.md`; prove
-  `Documents/verifica-fiere-campanella-20261020/`. Verifica finale e
-  pubblicazione ancora da completare; nessun invio/account/acquisto reale
-  di prova. Backup tag/branch remoti verificati, noto errore cleanup.
+  `Documents/verifica-fiere-campanella-20261020/`. Pubblicato `8b152f4`, Vercel
+  READY `dpl_89wotv1DJ6kwWGHNqB8xkBtoFNdH`: sei asset identici, pagine/API
+  reali e icone/font/accesso verificati online in tre formati. Percorso
+  salvataggi pubblicato passato in quattro formati, profili304/eventi3,
+  fonti4/calendario5 e SQL ROLLBACK passati. Minimo2 applicato e idempotente;
+  worker reale dry-run200/dovuti0, cron attivo. Nessun account/evento/email/
+  acquisto reale di prova. Alessandria7695c98 preservata risolvendo il solo
+  conflitto del registro; backup remoti validi, noto errore cleanup. Limite:
+  consegna email provata con provider simulato, non con un invio reale.
 
 - **Alessandria conclusa e verificata online,20/10:**158 manifestazioni/75comuni,
   ricognizione187; prima41,117aggiunte,41ID e altre5.062schede preservati.
