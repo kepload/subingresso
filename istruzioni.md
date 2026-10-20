@@ -3,7 +3,8 @@
 21/10/2026, preferenza logo aggiornata: scritta precedente Subingresso.it,
 senza icona/quadrato iniziale; il PNG e il suo fondo bianco sono superati.
 Menu mobile sempre assente. UI16/CSS4; prove e pubblicazione
-Documents/verifica-logo-solo-scritta-20261021/.
+Documents/verifica-logo-solo-scritta-20261021/. Pubblicato40651a2,
+Vercel riuscito;15asset,4SSR e home online3 verificati, profili364 locali.
 
 21/10/2026, logo/menu: PNG originale utente nelle intestazioni, inquadrato
 con SVG senza deformazioni; dimensioni responsive e fondo bianco sul tema
