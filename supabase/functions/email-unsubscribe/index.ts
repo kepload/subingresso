@@ -13,14 +13,32 @@ const SB_SECRET_KEY             = Deno.env.get('SB_SECRET_KEY') ?? SUPABASE_SERV
 const CORS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'content-type',
+  'Access-Control-Allow-Headers': 'content-type, apikey, authorization',
 };
+
+const REASONS = new Set(['too_many', 'not_relevant', 'not_using', 'already_found', 'other']);
+
+async function completed(supabase: any, type: string, reason: unknown, extra: Record<string, unknown> = {}) {
+  let feedbackSaved = false;
+  // Optional feedback must never prevent an otherwise successful unsubscribe.
+  if (typeof reason === 'string' && REASONS.has(reason)) {
+    try {
+      const saved = await supabase.from('email_unsubscribe_feedback').insert({ email_type: type, reason });
+      feedbackSaved = !saved.error;
+      if (saved.error) console.warn('Optional unsubscribe feedback not saved');
+    } catch (_) { console.warn('Optional unsubscribe feedback unavailable'); }
+  }
+  return new Response(JSON.stringify({ ok: true, type, ...extra, feedback_saved: feedbackSaved }), {
+    status: 200, headers: { ...CORS, 'Content-Type': 'application/json' }
+  });
+}
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response(null, { headers: CORS });
+  if (req.method !== 'POST') return new Response(null, {status: 405, headers: {...CORS, Allow: 'POST, OPTIONS'}});
 
   try {
-    const { token, type } = await req.json();
+    const { token, type, reason } = await req.json();
     if (!token || typeof token !== 'string') {
       return new Response(JSON.stringify({ ok: false, error: 'Token mancante' }), {
         status: 400, headers: { ...CORS, 'Content-Type': 'application/json' }
@@ -46,9 +64,7 @@ Deno.serve(async (req) => {
           status: 404, headers: { ...CORS, 'Content-Type': 'application/json' }
         });
       }
-      return new Response(JSON.stringify({ ok: true, type, regione: data[0].regione }), {
-        status: 200, headers: { ...CORS, 'Content-Type': 'application/json' }
-      });
+      return completed(supabase, type, reason, {regione: data[0].regione});
     }
 
     // digest/stats/all: token vive su profiles, flip flag email_*.
@@ -75,9 +91,7 @@ Deno.serve(async (req) => {
       });
     }
 
-    return new Response(JSON.stringify({ ok: true, type }), {
-      status: 200, headers: { ...CORS, 'Content-Type': 'application/json' }
-    });
+    return completed(supabase, type, reason);
   } catch (e) {
     console.error('email-unsubscribe error:', e);
     return new Response(JSON.stringify({ ok: false, error: 'Errore interno' }), {

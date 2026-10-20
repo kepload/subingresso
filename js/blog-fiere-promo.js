@@ -55,10 +55,12 @@
             article.insertAdjacentHTML('afterend', card(post, 'end', regionMap));
         }
     }
-    document.addEventListener('click', event => {
+    if (typeof document !== 'undefined') document.addEventListener('click', event => {
         const link = event.target.closest && event.target.closest('[data-fiere-cta]');
         const slug = new URLSearchParams(location.search).get('post');
         if (link && slug && window.trackBlogConversion) window.trackBlogConversion('cta_fiere_click', slug, link.dataset.regione || null);
     });
-    window.BlogFierePromo = {card, mount, context};
+    const api = {card, mount, context};
+    if (typeof module !== 'undefined' && module.exports) module.exports = api;
+    else window.BlogFierePromo = api;
 })();

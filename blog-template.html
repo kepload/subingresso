@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/tailwind.css?v=4">
     <link rel="stylesheet" href="css/blog-fiere-promo.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.4.17/purify.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; animation: fadeIn 0.5s ease-in-out; }
@@ -97,7 +97,8 @@
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/blog-tracker.js?v=3"></script>
-<script src="js/blog-fiere-promo.js?v=2"></script>
+<script src="js/blog-fiere-promo.js?v=3"></script>
+<script src="js/blog-markup.js?v=1"></script>
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=21"></script>
 <script src="js/ui-components.js?v=12"></script>
@@ -121,20 +122,11 @@ if (!slug) {
 }
 
 // ── Mappa slug articoli "bandi-*" → regione esatta (deve matchare js/data.js per il filtro CTA) ──
-const SLUG_TO_REGIONE = {
-    'lombardia': 'Lombardia', 'piemonte': 'Piemonte', 'lazio': 'Lazio', 'veneto': 'Veneto',
-    'emilia-romagna': 'Emilia-Romagna', 'toscana': 'Toscana', 'campania': 'Campania', 'puglia': 'Puglia',
-    'sicilia': 'Sicilia', 'liguria': 'Liguria', 'marche': 'Marche', 'trentino-alto-adige': 'Trentino-Alto Adige',
-    'sardegna': 'Sardegna', 'friuli-venezia-giulia': 'Friuli-Venezia Giulia', 'valle-d-aosta': "Valle d'Aosta",
-    'umbria': 'Umbria', 'abruzzo': 'Abruzzo', 'molise': 'Molise', 'basilicata': 'Basilicata', 'calabria': 'Calabria'
-};
+const SLUG_TO_REGIONE = BlogMarkup.regions;
 const BANDI_PREFIX = 'bandi-posteggi-mercatali-';
-function _regioneFromSlug(s) {
-    if (!s || s.indexOf(BANDI_PREFIX) !== 0) return null;
-    return SLUG_TO_REGIONE[s.slice(BANDI_PREFIX.length)] || null;
-}
+function _regioneFromSlug(s) {return BlogMarkup.regionFromSlug(s);}
 const _BLOG_REGIONE = _regioneFromSlug(slug);
-const _IS_BANDI    = !!_BLOG_REGIONE;
+const _IS_BANDI = !!_BLOG_REGIONE;
 
 // Hub Bolkestein: slug singolo, FAQ JSON-LD dedicate (rich result Google su query "ultime notizie").
 const _BOLKESTEIN_HUB_SLUG = 'bolkestein-ambulanti-ultime-notizie-2026';
@@ -162,23 +154,7 @@ document.addEventListener('click', function (e) {
 });
 
 // ── Form Avvisi: HTML + bind handler ──
-function _bandoAlertFormHtml(regione) {
-    var reg = escapeHTML(regione);
-    return '<div class="bando-alert not-prose my-8 rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white p-5 md:p-6">'
-      + '<div class="flex items-start gap-3 mb-1">'
-      +   '<div class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-bell"></i></div>'
-      +   '<div class="min-w-0 flex-1">'
-      +     '<h3 class="font-black text-slate-900 text-base md:text-lg leading-tight">Avvisi per bandi e posteggi in ' + reg + '</h3>'
-      +     '<p class="text-xs text-slate-500 font-semibold mt-1 leading-relaxed">Registrati gratis al sito per ricevere i nuovi bandi pubblici e gli annunci di posteggi in zona. Se hai già un account, accedi e attiva gli avvisi.</p>'
-      +   '</div>'
-      + '</div>'
-      + '<form id="bandoAlertForm" class="flex flex-col sm:flex-row gap-2 mt-4">'
-      +   '<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-black text-sm px-6 py-3 rounded-xl transition shadow-sm">Registrati e attiva avvisi</button>'
-      + '</form>'
-      + '<p id="bandoAlertMsg" role="status" class="hidden mt-3 text-xs font-bold"></p>'
-      + '<p class="mt-3 text-[10px] text-slate-400 leading-relaxed">Annulli l\'iscrizione in un click dal link in ogni email. <a href="/privacy" class="underline hover:text-slate-600">Privacy</a>.</p>'
-      + '</div>';
-}
+function _bandoAlertFormHtml(regione) {return BlogMarkup.alertForm(regione);}
 
 function _bindBandoAlertForm(regione, postSlug) {
     window.bindBandoAlertForm('bandoAlertForm', 'bandoAlertMsg', regione, postSlug);
@@ -486,74 +462,61 @@ let _allPosts = [];
 
 async function loadBlog() {
     try {
-        const { data: posts, error } = await _supabase
-            .from('blog_posts')
-            .select('*')
-            .order('published_at', { ascending: false });
+        const initial = document.getElementById('blogBootstrap');
+        const bootstrap = initial ? JSON.parse(initial.textContent) : null;
+        if (bootstrap?.mode === 'not-found') return;
+        if (bootstrap?.mode === 'list' && !slug) return;
+        if (bootstrap?.mode === 'post' && bootstrap.post?.slug === slug) {
+            _allPosts = bootstrap.related || [];
+            renderPost(bootstrap.post, {hydrate: true});
+            return;
+        }
 
-        if (error) throw error;
-        _allPosts = posts || [];
-
-        loading.classList.add('hidden');
-        container.classList.remove('hidden');
-
+        // Fallback for the static template or a temporary server-side failure.
+        // Never download article bodies to render the index or related cards.
         if (slug) {
-            const post = posts.find(p => p.slug === slug);
+            const {data: posts, error} = await _supabase.from('blog_posts')
+                .select(BlogMarkup.postColumns).eq('slug', slug).limit(1);
+            if (error) throw error;
+            const post = (posts || []).find(p => p.slug === slug);
+            loading.classList.add('hidden');
+            container.classList.remove('hidden');
             if (post) {
                 renderPost(post);
+                if (_IS_BANDI) {
+                    const {data: related, error: relatedError} = await _supabase.from('blog_posts')
+                        .select(BlogMarkup.previewColumns).like('slug', BANDI_PREFIX + '%');
+                    if (!relatedError) {
+                        _allPosts = related || [];
+                        _renderRelatedBandi(_BLOG_REGIONE, _allPosts);
+                    }
+                }
             } else {
                 container.innerHTML = `<div class="text-center">Post non trovato. <a href="/blog" class="text-blue-600 underline">Torna all'indice</a></div>`;
             }
         } else {
-            renderList(posts);
+            const {data: posts, error} = await _supabase.from('blog_posts')
+                .select(BlogMarkup.previewColumns).order('published_at', {ascending: false});
+            if (error) throw error;
+            _allPosts = posts || [];
+            renderList(_allPosts);
+            loading.classList.add('hidden');
+            container.classList.remove('hidden');
         }
     } catch (err) {
         console.error(err);
-        loading.innerHTML = `<p class="text-red-500">Errore nel caricamento del blog. Verifica la connessione.</p>`;
+        // Existing readable server content stays visible even if an enhancement fails.
+        if (!container.querySelector('#blogPostContent')) {
+            loading.classList.remove('hidden');
+            loading.innerHTML = `<p class="text-red-500">Errore nel caricamento del blog. <a href="" class="underline">Riprova</a></p>`;
+        }
     }
 }
 
-let _inlineBoxInjected = false;
+function _pexelsUrl(base, w, h) {return BlogMarkup.pexelsUrl(base, w, h);}
 
-function _insertBlogPromo(html) {
-    // Inietta dopo il 3° paragrafo (picco di tensione: la gente non legge fino in fondo).
-    // Se l'articolo è troppo corto (<3 <p>) non inserisce nulla → fallback box in coda.
-    _inlineBoxInjected = false;
-    let count = 0, splitAt = -1, idx = 0;
-    while (idx < html.length) {
-        const found = html.indexOf('</p>', idx);
-        if (found === -1) break;
-        idx = found + 4;
-        if (++count === 3) { splitAt = idx; break; }
-    }
-    if (splitAt === -1) return html;
-
-    // Sui post "bandi-*" il visitor è acquirente: form Avvisi (lead magnet intent-aligned).
-    // Sugli altri (incl. hub Bolkestein) il vecchio banner "Vetrina gratis" era off-intent
-    // e a 0 conversioni (TODO 13): lo sostituiamo col box live dei posteggi, QUI al picco
-    // di tensione invece che in fondo all'articolo (dove quasi nessuno arrivava).
-    let promo;
-    if (_IS_BANDI) {
-        promo = _bandoAlertFormHtml(_BLOG_REGIONE);
-    } else {
-        promo = `<div id="bandoListingsBox" class="not-prose blog-listings-slot"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`;
-        _inlineBoxInjected = true;
-    }
-    return html.slice(0, splitAt) + promo + html.slice(splitAt);
-}
-
-// Helper: builds Pexels CDN URL with on-the-fly resize (auto WebP/AVIF, lossy compression).
-// Saves bandwidth: a 1200x675 hero is ~80-150KB instead of the full 4MB original.
-function _pexelsUrl(base, w, h) {
-    if (!base) return '';
-    const sep = base.includes('?') ? '&' : '?';
-    return base + sep + 'auto=compress&cs=tinysrgb&w=' + w + (h ? '&h=' + h : '') + '&fit=crop';
-}
-
-function renderPost(post) {
-    const date = new Date(post.published_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
-    const safeTitle = escapeHTML(post.title);
-    const safeContent = DOMPurify.sanitize(post.content);
+function renderPost(post, options = {}) {
+    const safeContent = options.hydrate ? null : DOMPurify.sanitize(post.content);
 
     // Aggiorna meta tag dinamicamente per ogni post
     document.title = `${post.title} — Subingresso.it`;
@@ -597,42 +560,8 @@ function renderPost(post) {
     if (!_ldEl) { _ldEl = document.createElement('script'); _ldEl.id = '_ldBlog'; _ldEl.type = 'application/ld+json'; document.head.appendChild(_ldEl); }
     _ldEl.textContent = JSON.stringify(_ld);
 
-    // Hero image markup. Eager + fetchpriority=high perché è above the fold.
-    const heroHtml = cover ? `
-        <img src="${escapeHTML(_pexelsUrl(cover, 1200, 675))}"
-             srcset="${escapeHTML(_pexelsUrl(cover, 600, 338))} 600w, ${escapeHTML(_pexelsUrl(cover, 900, 506))} 900w, ${escapeHTML(_pexelsUrl(cover, 1200, 675))} 1200w, ${escapeHTML(_pexelsUrl(cover, 1600, 900))} 1600w"
-             sizes="(max-width: 768px) 100vw, 768px"
-             alt="${safeTitle}"
-             loading="eager" fetchpriority="high" decoding="async"
-             class="w-full aspect-[16/9] object-cover rounded-3xl mb-8 bg-slate-100">
-    ` : '';
-
-    // 2.1 — Banner valutatore off-intent sui bandi: nasconderlo prima del render testo.
-    if (_IS_BANDI) {
-        const banner = document.getElementById('bannerValutatore');
-        if (banner) banner.classList.add('hidden');
-    }
-
-    // 2.4 / 3.1 — Box "Posteggi disponibili": sui non-bandi _insertBlogPromo lo inietta
-    // INLINE al 3° paragrafo (picco di tensione) e setta _inlineBoxInjected → niente
-    // doppione in coda. Resta in fondo solo per i bandi (flusso loro: Avvisi a metà,
-    // box in coda) o se l'articolo è troppo corto per l'inline (fallback anti-sparizione).
-    const _bodyHtml = _insertBlogPromo(safeContent);
-    const finalCtaBlock = (_IS_BANDI || !_inlineBoxInjected)
-        ? `<div id="bandoListingsBox" class="not-prose blog-listings-slot"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`
-        : '';
-
-    container.innerHTML = `
-        ${heroHtml}
-        <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
-        <h1 class="text-4xl font-black tracking-tight text-slate-900 mb-10 leading-tight text-left">${safeTitle}</h1>
-        <div id="blogPostContent" class="prose font-medium text-left">${_bodyHtml}</div>
-        ${finalCtaBlock}
-        <div id="relatedBandi"></div>
-        <div class="mt-12 pt-10 border-t border-slate-100 text-left">
-            <a href="/blog" class="text-sm font-bold text-slate-400 hover:text-blue-600 transition">← Torna all'indice degli articoli</a>
-        </div>
-    `;
+    if (_IS_BANDI) document.getElementById('bannerValutatore')?.classList.add('hidden');
+    if (!options.hydrate) container.innerHTML = BlogMarkup.articleMarkup(post, safeContent);
     // Nascondi la promo Vetrina agli utenti già loggati (NON il form Avvisi: vale anche per loggati).
     _supabase.auth.getSession().then(({ data: { session } }) => {
         if (session) document.querySelectorAll('.blog-promo').forEach(el => el.remove());
@@ -670,118 +599,7 @@ function renderPost(post) {
 }
 
 function renderList(posts) {
-    if (posts.length === 0) {
-        container.innerHTML = `<p class="text-slate-400 text-center py-12">Nessun articolo presente al momento.</p>`;
-        return;
-    }
-
-    const _date = (iso) => new Date(iso).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
-
-    const _badge = (category) => {
-        if (!category) return '';
-        const cat = String(category);
-        const isBandi = cat.toLowerCase() === 'bandi';
-        const cls = isBandi
-            ? 'bg-blue-600 text-white'
-            : 'bg-slate-900 text-white';
-        return `<span class="inline-block ${cls} text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md">${escapeHTML(cat)}</span>`;
-    };
-
-    const _heroCard = (p) => {
-        const safeSlug = encodeURIComponent(p.slug);
-        const safeTitle = escapeHTML(p.title);
-        const safeExcerpt = escapeHTML(p.excerpt || 'Guida tecnica completa con riferimenti normativi e consigli pratici.');
-        const cover = p.cover_image_url || '';
-        const thumbHtml = cover ? `
-            <img src="${escapeHTML(_pexelsUrl(cover, 1200, 675))}"
-                 srcset="${escapeHTML(_pexelsUrl(cover, 600, 338))} 600w, ${escapeHTML(_pexelsUrl(cover, 1200, 675))} 1200w, ${escapeHTML(_pexelsUrl(cover, 1600, 900))} 1600w"
-                 sizes="(max-width: 1024px) 100vw, 720px"
-                 alt="${safeTitle}"
-                 loading="eager" fetchpriority="high" decoding="async"
-                 class="w-full aspect-[16/9] object-cover bg-slate-100 group-hover:scale-105 transition-transform duration-500">
-        ` : '<div class="w-full aspect-[16/9] bg-slate-100"></div>';
-        return `
-        <a href="/blog?post=${safeSlug}" class="group block bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full">
-            <div class="relative overflow-hidden">
-                ${thumbHtml}
-                <div class="absolute top-4 left-4">${_badge(p.category)}</div>
-            </div>
-            <div class="p-6 md:p-8">
-                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3">${_date(p.published_at)}</p>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-tight mb-3">${safeTitle}</h2>
-                <p class="text-slate-500 text-sm md:text-base font-medium leading-relaxed line-clamp-3">${safeExcerpt}</p>
-                <p class="text-blue-600 text-xs font-black uppercase tracking-widest mt-5 inline-flex items-center gap-1.5">Leggi <i class="fas fa-arrow-right text-[10px]"></i></p>
-            </div>
-        </a>`;
-    };
-
-    const _sideCard = (p) => {
-        const safeSlug = encodeURIComponent(p.slug);
-        const safeTitle = escapeHTML(p.title);
-        const cover = p.cover_image_url || '';
-        // Layout grid 96px + 1fr inline: garantisce orizzontale a prescindere da Tailwind/cache.
-        // Specificita' style inline (1,0,0,0) batte qualsiasi class.
-        const thumb = cover
-            ? `<img src="${escapeHTML(_pexelsUrl(cover, 240, 240))}"
-                    alt="${safeTitle}"
-                    width="96" height="96"
-                    loading="lazy" decoding="async"
-                    style="width:96px;height:96px;object-fit:cover;border-radius:12px;background:#f1f5f9"
-                    class="bg-slate-100">`
-            : '<div style="width:96px;height:96px;border-radius:12px;background:#f1f5f9"></div>';
-        return `
-        <a href="/blog?post=${safeSlug}" style="display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center" class="group bg-white rounded-2xl p-3 border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
-            ${thumb}
-            <div style="min-width:0">
-                ${_badge(p.category)}
-                <h3 style="margin-top:8px" class="text-sm font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-snug line-clamp-3">${safeTitle}</h3>
-                <p style="margin-top:6px" class="text-[10px] font-bold text-slate-400 uppercase">${_date(p.published_at)}</p>
-            </div>
-        </a>`;
-    };
-
-    const _gridCard = (p) => {
-        const safeSlug = encodeURIComponent(p.slug);
-        const safeTitle = escapeHTML(p.title);
-        const safeExcerpt = escapeHTML(p.excerpt || 'Guida pratica con riferimenti normativi.');
-        const cover = p.cover_image_url || '';
-        const thumb = cover
-            ? `<img src="${escapeHTML(_pexelsUrl(cover, 600, 338))}"
-                    srcset="${escapeHTML(_pexelsUrl(cover, 400, 225))} 400w, ${escapeHTML(_pexelsUrl(cover, 600, 338))} 600w, ${escapeHTML(_pexelsUrl(cover, 900, 506))} 900w"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    alt="${safeTitle}"
-                    loading="lazy" decoding="async"
-                    class="w-full aspect-[16/9] object-cover bg-slate-100 group-hover:scale-105 transition-transform duration-500">`
-            : '<div class="w-full aspect-[16/9] bg-slate-100"></div>';
-        return `
-        <a href="/blog?post=${safeSlug}" class="group block bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-blue-200 hover:shadow-md transition-all duration-300">
-            <div class="overflow-hidden">${thumb}</div>
-            <div class="p-5">
-                ${_badge(p.category)}
-                <h3 class="text-base lg:text-lg font-black text-slate-900 group-hover:text-blue-600 transition tracking-tight leading-snug mt-2.5 line-clamp-2">${safeTitle}</h3>
-                <p class="text-slate-500 text-xs font-medium leading-relaxed mt-2 line-clamp-2">${safeExcerpt}</p>
-                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-3">${_date(p.published_at)}</p>
-            </div>
-        </a>`;
-    };
-
-    const [hero, ...rest] = posts;
-    const sideStack = rest.slice(0, 4);
-    const gridRest  = rest.slice(4);
-
-    container.innerHTML = `
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
-            <div class="lg:col-span-2">${_heroCard(hero)}</div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 lg:gap-3">
-                ${sideStack.map(_sideCard).join('')}
-            </div>
-        </div>
-        ${BlogFierePromo.card({slug:'',title:''}, 'index', SLUG_TO_REGIONE)}
-        ${gridRest.length ? `
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
-            ${gridRest.map(_gridCard).join('')}
-        </div>` : ''}
-    `;
+    container.innerHTML = BlogMarkup.listMarkup(posts, BlogFierePromo.card({slug:'',title:''}, 'index', SLUG_TO_REGIONE));
 }
 
 document.addEventListener('DOMContentLoaded', loadBlog);

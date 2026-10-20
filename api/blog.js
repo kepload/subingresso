@@ -1,14 +1,18 @@
 // ============================================================
 //  Subingresso.it — SSR Blog Post (Vercel Serverless)
-//  Serve /blog?post=<slug> con title/description/canonical/og/JSON-LD
-//  pre-renderizzati server-side. Senza ?post= il rewrite non scatta
-//  e il fallback cleanUrls serve blog.html statico.
-//  Il body del template resta blog.html (single source of truth):
-//  riusiamo lo stesso file e sostituiamo solo i meta tag dell'head.
+//  Index previews and the selected article are readable before JavaScript.
+//  The same markup functions serve the browser fallback and server rendering.
 // ============================================================
 
 const fs   = require('fs');
 const path = require('path');
+const { JSDOM } = require('jsdom');
+const createDOMPurify = require('dompurify');
+const BlogMarkup = require('../js/blog-markup');
+const BlogFierePromo = require('../js/blog-fiere-promo');
+// No scripts or external resources are enabled in this server-side DOM.
+const sanitizerWindow = new JSDOM('').window;
+const DOMPurify = createDOMPurify(sanitizerWindow);
 
 const SUPABASE_URL      = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
@@ -24,7 +28,28 @@ function esc(str) {
 }
 
 function safeJson(obj) {
-    return JSON.stringify(obj).replace(/<\//g, '<\\/');
+    return JSON.stringify(obj).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
+}
+
+async function readPosts(search) {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/blog_posts?${search}`, {
+        headers: {'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`},
+        signal: AbortSignal.timeout(8000)
+    });
+    if (!response.ok) throw new Error('Blog temporarily unavailable');
+    const rows = await response.json();
+    if (!Array.isArray(rows)) throw new Error('Unexpected blog response');
+    return rows;
+}
+
+function renderBody(html, content, bootstrap) {
+    return html.replace('<div id="loading" class="text-center py-20">', '<div id="loading" class="hidden text-center py-20">')
+        .replace('<div id="blogContainer" class="hidden"></div>', () => `<div id="blogContainer">${content}</div>`)
+        .replace('</main>', () => `</main><script type="application/json" id="blogBootstrap">${safeJson(bootstrap)}</script>`);
+}
+
+function hideBanner(html) {
+    return html.replace('id="bannerValutatore" class="', 'id="bannerValutatore" class="hidden ');
 }
 
 function pexelsUrl(base, w, h) {
@@ -48,23 +73,31 @@ function getBlogTemplate() {
 module.exports = async function handler(req, res) {
     const slug = (req.query && req.query.post) ? String(req.query.post).trim() : '';
 
-    let post = null;
+    let post = null, related = [], unavailable = false;
     if (slug) {
         try {
-            const r = await fetch(
-                `${SUPABASE_URL}/rest/v1/blog_posts?slug=eq.${encodeURIComponent(slug)}&select=slug,title,excerpt,published_at,cover_image_url,author,category`,
-                { headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` } }
-            );
-            if (r.ok) {
-                const arr = await r.json();
-                if (Array.isArray(arr) && arr.length > 0) post = arr[0];
+            const rows = await readPosts(`slug=eq.${encodeURIComponent(slug)}&select=${BlogMarkup.postColumns}&limit=1`);
+            post = rows[0] || null;
+            // Failure of optional related cards never prevents reading the article.
+            if (post && BlogMarkup.regionFromSlug(slug)) {
+                try { related = await readPosts(`slug=like.bandi-posteggi-mercatali-*&select=${BlogMarkup.previewColumns}`); } catch (_) {}
             }
-        } catch (_) {}
+        } catch (_) { unavailable = true; }
     }
 
     let html = getBlogTemplate();
 
     if (post) {
+        const safeContent = DOMPurify.sanitize(post.content || '');
+        let content = BlogMarkup.articleMarkup(post, safeContent);
+        // Promotions have the same positions before and after hydration.
+        const articleRoot = sanitizerWindow.document.createElement('div');
+        articleRoot.innerHTML = content;
+        BlogFierePromo.mount(articleRoot.querySelector('#blogPostContent'), post, BlogMarkup.regions);
+        content = articleRoot.innerHTML;
+        const {content: _body, ...metadata} = post;
+        html = renderBody(html, content, {mode: 'post', post: metadata, related});
+        if (BlogMarkup.regionFromSlug(slug)) html = hideBanner(html);
         const fullTitle = `${post.title} — Subingresso.it`;
         const desc      = post.excerpt || post.title;
         const canonical = `${SITE}/blog?post=${encodeURIComponent(post.slug)}`;
@@ -96,29 +129,29 @@ module.exports = async function handler(req, res) {
 
         html = html
             .replace(/<title>[\s\S]*?<\/title>/,
-                     `<title>${eTitle}</title>`)
+                     () => `<title>${eTitle}</title>`)
             .replace(/<meta name="description" id="metaBlogDesc"[^>]*>/,
-                     `<meta name="description" id="metaBlogDesc" content="${eDesc}">`)
+                     () => `<meta name="description" id="metaBlogDesc" content="${eDesc}">`)
             .replace(/<meta property="og:title" id="ogBlogTitle"[^>]*>/,
-                     `<meta property="og:title" id="ogBlogTitle" content="${eTitle}">`)
+                     () => `<meta property="og:title" id="ogBlogTitle" content="${eTitle}">`)
             .replace(/<meta property="og:description" id="ogBlogDesc"[^>]*>/,
-                     `<meta property="og:description" id="ogBlogDesc" content="${eDesc}">`)
+                     () => `<meta property="og:description" id="ogBlogDesc" content="${eDesc}">`)
             .replace(/<meta property="og:type"[^>]*>/,
-                     `<meta property="og:type" content="article">`)
+                     () => `<meta property="og:type" content="article">`)
             .replace(/<meta property="og:url" id="ogBlogUrl"[^>]*>/,
-                     `<meta property="og:url" id="ogBlogUrl" content="${eCan}">`)
+                     () => `<meta property="og:url" id="ogBlogUrl" content="${eCan}">`)
             .replace(/<meta property="og:image" id="ogBlogImage"[^>]*>/,
-                     `<meta property="og:image" id="ogBlogImage" content="${eImg}">`)
+                     () => `<meta property="og:image" id="ogBlogImage" content="${eImg}">`)
             .replace(/<meta name="twitter:image" id="twitterImage"[^>]*>/,
-                     `<meta name="twitter:image" id="twitterImage" content="${eImg}">`)
+                     () => `<meta name="twitter:image" id="twitterImage" content="${eImg}">`)
             .replace(/<link rel="canonical" id="canonicalBlog"[^>]*>/,
-                     `<link rel="canonical" id="canonicalBlog" href="${eCan}">`);
+                     () => `<link rel="canonical" id="canonicalBlog" href="${eCan}">`);
 
         const robotsAndLd =
             `<meta name="robots" content="index,follow,max-image-preview:large">\n` +
             `    <script type="application/ld+json" id="_ldBlog">${safeJson(jsonLd)}</script>\n`;
 
-        html = html.replace('</head>', `    ${robotsAndLd}</head>`);
+        html = html.replace('</head>', () => `    ${robotsAndLd}</head>`);
 
         res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=180, stale-while-revalidate=600, must-revalidate');
         res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -127,12 +160,20 @@ module.exports = async function handler(req, res) {
     }
 
     // Slug fornito ma non trovato: noindex per non indicizzare soft-404.
-    if (slug) {
+    if (slug && !unavailable) {
+        html = renderBody(html, '<p class="text-center">Post non trovato. <a href="/blog" class="text-blue-600 underline">Torna all’indice</a></p>', {mode: 'not-found'});
         html = html.replace('</head>',
             `    <meta name="robots" content="noindex,nofollow">\n</head>`);
         res.setHeader('Content-Type', 'text/html; charset=utf-8');
         res.status(404).send(html);
         return;
+    }
+
+    if (unavailable) {
+        html = html.replace('</head>', '<meta name="robots" content="noindex"></head>');
+        res.setHeader('Cache-Control', 'private, no-store');
+        res.setHeader('Content-Type', 'text/html; charset=utf-8');
+        return res.status(503).send(html.replace('<i class="fas fa-spinner fa-spin text-blue-600 text-3xl"></i>', '<p>Articolo temporaneamente non disponibile. <a href="" class="underline">Riprova</a></p>'));
     }
 
     // Nessun slug: pagina lista /blog. Meta SEO custom + intro testuale unica
@@ -186,6 +227,16 @@ module.exports = async function handler(req, res) {
         /<div id="loading"/,
         `${introHtml}\n    <div id="loading"`
     );
+
+    try {
+        const previews = await readPosts(`select=${BlogMarkup.previewColumns}&order=published_at.desc`);
+        html = renderBody(html, BlogMarkup.listMarkup(previews, BlogFierePromo.card({slug:'', title:''}, 'index', BlogMarkup.regions)), {mode: 'list'});
+        html = hideBanner(html).replace('id="blogMain" class="max-w-3xl', 'id="blogMain" class="max-w-7xl');
+    } catch (_) {
+        res.setHeader('Cache-Control', 'private, no-store');
+        res.setHeader('Content-Type', 'text/html; charset=utf-8');
+        return res.status(503).send(html.replace('<i class="fas fa-spinner fa-spin text-blue-600 text-3xl"></i>', '<p>Indice temporaneamente non disponibile. <a href="" class="underline">Riprova</a></p>'));
+    }
 
     res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=180, stale-while-revalidate=600, must-revalidate');
     res.setHeader('Content-Type', 'text/html; charset=utf-8');

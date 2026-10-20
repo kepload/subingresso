@@ -4,6 +4,13 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Audit, decisioni utente 20/10:** rinviati Scout bandi, pagine locali/sitemap
+  e risposta annunci inesistenti; contatori animati della home mantenuti per
+  preferenza esplicita. Autorizzati alleggerimento blog conservando esperienza
+  e modulo per la disiscrizione del punto6 (email), motivo facoltativo e
+  conferma. Account e altri punti invariati. Dettagli/prove
+  `data/BLOG_LOADING_UNSUBSCRIBE.md`; verifica pubblicazione in corso.
+
 - **Genova conclusa e verificata online,20/10:**274 manifestazioni/47comuni,
   copertura67; prima211,64nuove e un doppione Campomorone unificato.
   Catalogo5.103; altre4.829schede identiche. Audit `data/fiere-genova.json`,
