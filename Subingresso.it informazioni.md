@@ -4,6 +4,15 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Admin/fiere, richiesta20/10:** admin escluso dalla scelta automatica
+  Organizzatore in dashboard e profilo; scelta manuale disponibile. Pannello
+  «Fiere e organizzatori» chiuso con contatori, due schede, ricerca/stato,
+  sei righe/pagina e revisione nei dettagli. Preferenze conservate durante
+  aggiornamento; dati reali invariati. Cache selettore4/organizzatori7/CSS1.
+  Prove `Documents/verifica-admin-fiere-20261020/`: profili304, pannello87,
+  eventi tre formati e usabilità68; backup remoti verificati, noto errore
+  cleanup. Pubblicazione da verificare.
+
 - **Audit, decisioni utente 20/10:** rinviati Scout bandi, pagine locali/sitemap
   e risposta annunci inesistenti; contatori animati della home mantenuti per
   preferenza esplicita. Autorizzati alleggerimento blog conservando esperienza

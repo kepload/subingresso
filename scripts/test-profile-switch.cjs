@@ -15,12 +15,12 @@ function fixture() {
     assert(saveFunction.includes('ProfileSwitcher.setBaseline(profileSnapshot)'));
     return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace('</body>', `<script>
 window.qaUser={id:'${H.owner}',email:'qa@example.invalid',created_at:'2026-01-01',email_confirmed_at:'2026-01-01',app_metadata:{provider:'email'}};
-let _currentUser=qaUser,_profileReady=true;const user=qaUser;window.qaListeners=[];window.qaWrites=[];window.qaFailSave=false;window.qaSaveDelay=0;
+let _currentUser=qaUser,_profileReady=true;const user=qaUser;window.qaListeners=[];window.qaWrites=[];window.qaFailSave=false;window.qaSaveDelay=0;window.qaIsAdmin=new URLSearchParams(location.search).has('admin');
 const _supabase={auth:{getUser:async()=>({data:{user:qaUser}}),onAuthStateChange:fn=>{qaListeners.push(fn);return{data:{subscription:{unsubscribe(){}}}}},resetPasswordForEmail:async()=>({})},
 rpc(name,args){const promise=fetch('/qa/rpc',{method:'POST',headers:{'X-QA-User':qaUser?.id||''},body:JSON.stringify({name,args})}).then(r=>r.json());promise.abortSignal=()=>promise;return promise;},
-from:table=>({filters:[],upsert(value){qaWrites.push({table,value});return this;},select(columns,options){this.columns=columns;this.options=options;return this;},eq(key,value){this.filters.push([key,value]);return this;},or(filter){this.orFilter=filter;return this;},abortSignal(signal){return fetch('/qa/listing-count',{signal,method:'POST',body:JSON.stringify({table,columns:this.columns,options:this.options,filters:this.filters,or:this.orFilter})}).then(r=>r.json());},single:async()=>{await new Promise(resolve=>setTimeout(resolve,qaSaveDelay));return qaFailSave?{error:{message:'offline'}}:{data:{id:qaUser.id}};}})};
+from:table=>({filters:[],upsert(value){qaWrites.push({table,value});return this;},select(columns,options){this.columns=columns;this.options=options;return this;},eq(key,value){this.filters.push([key,value]);return this;},or(filter){this.orFilter=filter;return this;},abortSignal(signal){if(table==='profiles')return this;return fetch('/qa/listing-count',{signal,method:'POST',body:JSON.stringify({table,columns:this.columns,options:this.options,filters:this.filters,or:this.orFilter})}).then(r=>r.json());},single:async()=>{await new Promise(resolve=>setTimeout(resolve,qaSaveDelay));return qaFailSave?{error:{message:'offline'}}:{data:{id:qaUser.id,is_admin:qaIsAdmin}};}})};
 window.updateAuthNav=()=>{};window.signOut=()=>{};
-</script><script src="/js/data.js?v=21"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/profile-switch.js?v=3"></script><script>
+</script><script src="/js/data.js?v=21"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/profile-switch.js?v=4"></script><script>
 ${modalFunctions}
 ${saveFunction}
 loadingState.classList.add('hidden');dashContent.classList.remove('hidden');
@@ -203,6 +203,21 @@ async function run(engine,name,width,height,base) {
         await page.locator('.dashboard-user button').click();await normal.click();pending.shift()();hold=false;
         await page.waitForTimeout(120);
         check(new URL(page.url()).pathname==='/dashboard' && await normal.getAttribute('aria-selected')==='true','Apertura manuale del profilo impedisce il reindirizzamento tardivo della dashboard');
+        await page.goto(base+'/dashboard?admin=1');
+        const adminCalls=H.getDB().calls.length;
+        await page.evaluate(async()=>{history.replaceState(null,'','/dashboard');await ProfileSwitcher.startDashboard(qaUser);});
+        check(new URL(page.url()).pathname==='/dashboard','Admin escluso dal rinvio automatico anche con piu eventi');
+        check(H.getDB().calls.length===adminCalls,'Admin escluso prima di contare eventi e annunci');
+        await open();
+        check(await normal.getAttribute('aria-selected')==='true','Il profilo admin apre sempre la modalita ambulante');
+        await organizer.click();await ready();
+        check(await organizer.getAttribute('aria-selected')==='true','Admin puo scegliere manualmente il profilo organizzatore');
+        await reopen();
+        check(await normal.getAttribute('aria-selected')==='true','Riapertura admin resta normale dopo una scelta manuale');
+        await page.keyboard.press('Escape');
+        await page.goto(base+'/dashboard?qa=ruolo');
+        await page.evaluate(async()=>{qaFailSave=true;history.replaceState(null,'','/dashboard');await ProfileSwitcher.startDashboard(qaUser);});
+        check(new URL(page.url()).pathname==='/dashboard','Errore nel controllo del ruolo non causa un rinvio automatico');
         check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Nessun contenuto fuori dallo schermo');
         check(errors.length===0,'Nessun errore JavaScript: '+errors.join('; '));
         console.log(`OK: ${name} ${width}x${height}, ${result.checks.length} verifiche profili.`);

@@ -20,6 +20,9 @@
     async function activity(ownerId, signal) {
         const { data: { user }, error: authError } = await _supabase.auth.getUser();
         if (authError || !ownerId || user?.id !== ownerId) throw Error('Accesso richiesto');
+        const { data: profile, error: profileError } = await _supabase.from('profiles').select('is_admin').eq('id', ownerId).abortSignal(signal).single();
+        if (profileError || typeof profile?.is_admin !== 'boolean') throw Error('Profilo non disponibile');
+        if (profile.is_admin) return { mode: 'normal', workspace: null };
         const [listings, workspace] = await Promise.all([
             _supabase.from('annunci').select('id', { count: 'exact', head: true })
                 .eq('user_id', ownerId).eq('status', 'active')

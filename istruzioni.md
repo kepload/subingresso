@@ -1,5 +1,18 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+20/10/2026, preferenza admin: esclusione dal passaggio automatico a
+Organizzatore, sia ingresso dashboard sia apertura del profilo, anche con
+più eventi. Ruolo is_admin letto aggiornato; errore resta Ambulante, scelta
+manuale Organizzatore disponibile. Pannello admin «Fiere e organizzatori»
+chiuso all'ingresso con conteggio revisioni/bozze; due schede, ricerca per
+nome/luogo/organizzazione senza accenti, filtro stato, sei righe per pagina,
+richieste prima delle bozze e dettagli nel dialogo esistente. Aggiornamento
+conserva scelta, ricerca, pagina e apertura; logout pulisce. Nessuna modifica
+DB o agli eventi reali. Cache profile-switch4/organizzatori7/event-admin1.
+Prove Documents/verifica-admin-fiere-20261020; suite profili304, pannello87,
+percorso eventi tre formati e usabilità68. Tag e branch preventivi remoti
+verificati; noto errore cleanup PowerShell. Pubblicazione da verificare.
+
 19/10/2026, Pistoia conclusa e verificata:117 manifestazioni/19 comuni,
 copertura20; prima zero e nessun audit. Catalogo5.040, altre4.923 schede
 identiche. Audit data/fiere-pistoia.json e data/FIERE.md:331 ricevute,

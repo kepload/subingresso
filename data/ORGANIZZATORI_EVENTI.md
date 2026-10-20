@@ -1,5 +1,20 @@
 # Organizzatori, eventi e prenotazioni future — 18 ottobre 2026
 
+## Admin e pannello compatto — 20 ottobre 2026
+
+Admin escluso dal default Organizzatore nei due percorsi: controllo is_admin
+aggiornato e fallimento conservativo, scelta manuale conservata. Gestione
+admin chiusa all'ingresso con contatori visibili; schede Fiere ed eventi e
+Organizzatori, ricerca senza accenti, filtro stato, sei righe per pagina,
+pending prima di bozze e resto. Aggiornamento conserva filtri, scheda,
+pagina e apertura; cambio scheda azzera solo lo stato incompatibile.
+Dettagli e azioni nel dialogo, bozze non approvabili. Logout/cambio account
+e risposte fuori ordine conservano le protezioni. Backend, catalogo,
+eventi e account reali invariati. Cache organizzatori7, profile-switch4
+e nuovo css/event-admin1 limitato alla dashboard. Suite test-event-admin,
+profili ed eventi/experience; prove Documents/verifica-admin-fiere-20261020.
+Pubblicazione da verificare.
+
 ## Selettore profili — 19 ottobre 2026
 
 **Correzione corrente successiva, richiesta dall’utente:** nome visibile

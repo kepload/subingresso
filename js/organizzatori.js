@@ -3,6 +3,8 @@
  const D=window.EventData, $=id=>document.getElementById(id);
  const state={userId:null,data:null,selected:null,placeId:null,picker:null,dirty:false,eventSnapshot:'',placeDirty:false,profileDirty:false,busy:false,restoring:false,locationRequest:0,epoch:0,feedbackId:null,returnFocus:null};
  let adminData=null, adminSelection=null, adminBusy=false, adminActive=false, adminIdentity=null, adminEpoch=0, adminSession=0;
+ const adminView={kind:'event',search:'',status:'all',page:0};
+ const adminPageSize=6;
  async function rpc(name,args){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);try{let query=_supabase.rpc(name,args);if(typeof query.abortSignal==='function')query=query.abortSignal(controller.signal);const result=await query;if(result.error)throw Error(result.error.message||'Operazione non riuscita');return result.data;}finally{clearTimeout(timer);}}
  function message(text,error=false,id=state.feedbackId||'organizerMessage'){const el=$(id);if(!el)return;el.textContent=text;el.dataset.error=String(error);el.hidden=!text;}
  function failure(error){const text=error?.message||'Connessione non disponibile. Riprova.';if(/abort|timeout|timed out/i.test(text))return 'Connessione interrotta. Ricarica per verificare il salvataggio prima di riprovare.';return /check constraint|not-null|invalid input|value too long|out of range/i.test(text)?'Controlla i campi: formato, date, quantità e lunghezze devono essere validi.':text;}
@@ -151,13 +153,42 @@
   if(kind==='organizer')$('eventReviewBody').innerHTML=organizerReviewHTML(item);else{const p=adminData.organizers.find(p=>p.user_id===item.organizer_id);$('eventReviewBody').innerHTML=D.badge(item.status)+D.detailHTML({...item,organization_description:p?.description,...{website:p?.website,public_email:p?.public_email,public_phone:p?.public_phone}})+'<details><summary>Profilo e contatti del referente</summary>'+organizerReviewHTML(p)+'</details>';}
   if(kind==='event'&&item.status==='draft')$('eventReviewBody').insertAdjacentHTML('afterbegin','<p class="ev-notice">Questa è una bozza non ancora inviata. L’organizzatore deve aprirla nella propria area e premere «Invia evento in revisione». Solo dopo potrai approvarla.</p>');$('eventReviewNote').value='';message('',false,'eventReviewMessage');$('eventApprove').hidden=kind==='event'&&item.status!=='pending';$('eventApprove').disabled=kind==='event'&&item.organizer_status!=='approved';$('eventReject').hidden=kind==='organizer'&&item.status==='suspended';$('eventSuspend').hidden=kind!=='organizer'||item.status!=='approved';$('eventReviewDialog').showModal();
  }
- function adminCard(item,kind){const id=kind==='organizer'?item.user_id:item.id,draft=kind==='event'&&item.status==='draft';return '<article class="ev-card"><div class="ev-card-head"><h3>'+D.esc(kind==='organizer'?item.organization_name:item.title)+'</h3>'+D.badge(item.status)+'</div>'+(kind==='event'?'<p class="ev-muted">'+D.esc(D.dates(item))+' · '+D.esc(item.city)+' · '+D.esc(item.organization_name)+'</p>':'')+(draft?'<p class="ev-muted">Bozza non inviata dall’organizzatore: non è ancora approvabile né visibile nel calendario.</p>':'')+'<button type="button" data-admin-kind="'+kind+'" data-admin-id="'+D.esc(id)+'">'+(draft?'Vedi bozza':'Apri revisione')+'</button></article>';}
+ function adminCard(item,kind){const id=kind==='organizer'?item.user_id:item.id,draft=kind==='event'&&item.status==='draft';return '<article class="ea-row"><div><h3>'+D.esc(kind==='organizer'?item.organization_name:item.title)+'</h3>'+(kind==='event'?'<p>'+D.esc(D.dates(item))+' · '+D.esc(item.city)+' · '+D.esc(item.organization_name)+'</p>':'<p>'+D.esc(item.organization_type||'Organizzatore')+'</p>')+'</div>'+D.badge(item.status)+'<button type="button" data-admin-kind="'+kind+'" data-admin-id="'+D.esc(id)+'" aria-label="'+D.esc((draft?'Vedi bozza: ':'Apri revisione: ')+(kind==='organizer'?item.organization_name:item.title))+'">'+(draft?'Vedi bozza':'Apri revisione')+'</button></article>';}
+ const adminNormalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('it');
+ function renderAdmin(){
+  if(!adminData)return;
+  const organizer=adminView.kind==='organizer',query=adminNormalize(adminView.search).trim();
+  const rows=(organizer?adminData.organizers:adminData.events).filter(item=>(adminView.status==='all'||item.status===adminView.status)&&(!query||adminNormalize([item.title,item.organization_name,item.city,item.province,item.region].filter(Boolean).join(' ')).includes(query)));
+  const rank={pending:0,rejected:1,draft:2,published:3,approved:3,suspended:4,cancelled:5};
+  rows.sort((a,b)=>(rank[a.status]??6)-(rank[b.status]??6)||String(a.start_date||'').localeCompare(String(b.start_date||''))||String(a.organization_name||a.title).localeCompare(String(b.organization_name||b.title),'it'));
+  adminView.page=Math.min(adminView.page,Math.max(0,Math.ceil(rows.length/adminPageSize)-1));
+  const offset=adminView.page*adminPageSize;
+  for(const kind of ['event','organizer']){
+   const active=kind===adminView.kind,tab=$(kind==='event'?'adminEventTab':'adminOrganizerTab');
+   tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;
+   $(kind==='event'?'adminEventDetails':'adminOrganizerDetails').hidden=!active;
+   $(kind==='event'?'adminEventQueue':'adminOrganizerQueue').innerHTML=active?(rows.slice(offset,offset+adminPageSize).map(item=>adminCard(item,kind)).join('')||'<p class="ev-empty">'+(adminView.search||adminView.status!=='all'?'Nessun risultato. Prova a cambiare ricerca o stato.':organizer?'Nessun organizzatore.':'Nessun evento creato.')+'</p>'):'';
+  }
+  $('eventAdminPageInfo').textContent=rows.length?(offset+1)+'–'+Math.min(offset+adminPageSize,rows.length)+' di '+rows.length:'0 risultati';
+  $('eventAdminPrevious').disabled=offset===0;$('eventAdminNext').disabled=offset+adminPageSize>=rows.length;
+ }
+ function selectAdminTab(kind,focus=false){
+  adminView.kind=kind;adminView.page=0;
+  // Conserva la ricerca; azzera solo uno stato incompatibile con la nuova scheda.
+  const invalid=kind==='organizer'?['draft','published','cancelled']:['approved','suspended'];
+  if(invalid.includes(adminView.status))adminView.status='all';
+  for(const option of $('eventAdminFilter').options)option.hidden=invalid.includes(option.value);
+  $('eventAdminFilter').value=adminView.status;renderAdmin();
+  if(focus)$(kind==='event'?'adminEventTab':'adminOrganizerTab').focus();
+ }
  function stopAdmin(){
   adminActive=false;adminIdentity=null;adminEpoch++;adminSession++;adminData=null;adminSelection=null;adminBusy=false;
   const root=$('eventAdminPanel');if(root){root.hidden=true;delete root.dataset.started;root.setAttribute('aria-busy','false');}
-  for(const id of ['adminOrganizerQueue','adminEventQueue','eventReviewBody','eventAdminSummary'])$(id)?.replaceChildren();
+  for(const id of ['adminOrganizerQueue','adminEventQueue','eventReviewBody','eventAdminSummary','eventAdminPageInfo'])$(id)?.replaceChildren();
   for(const id of ['adminOrganizerCount','adminEventCount'])if($(id))$(id).textContent='0';
-  for(const id of ['adminOrganizerDetails','adminEventDetails'])if($(id))$(id).open=false;
+  Object.assign(adminView,{kind:'event',search:'',status:'all',page:0});
+  if($('eventAdminWorkspace'))$('eventAdminWorkspace').open=false;
+  if($('eventAdminSearch'))$('eventAdminSearch').value='';if($('eventAdminFilter'))$('eventAdminFilter').value='all';
   if($('eventReviewDialog')?.open)$('eventReviewDialog').close();if($('eventReviewNote'))$('eventReviewNote').value='';
   for(const button of $('eventReviewDialog')?.querySelectorAll('button')||[])button.disabled=false;
   message('',false,'eventAdminMessage');message('',false,'eventReviewMessage');
@@ -165,14 +196,14 @@
  async function loadAdmin(){
   if(!adminActive)return;const epoch=++adminEpoch,session=adminSession,root=$('eventAdminPanel');root.setAttribute('aria-busy','true');message('',false,'eventAdminMessage');
   try{
-   const data=await rpc('admin_event_workspace');if(!adminActive||epoch!==adminEpoch||session!==adminSession)return;adminData=data;
+   const data=await rpc('admin_event_workspace');if(!adminActive||epoch!==adminEpoch||session!==adminSession)return;
+   if(!Array.isArray(data?.organizers)||!Array.isArray(data?.events))throw Error('Dati non disponibili. Riprova.');
+   const firstLoad=!adminData;adminData=data;
    const pending=data.organizers.filter(p=>p.status==='pending').length,events=data.events.filter(e=>e.status==='pending').length,drafts=data.events.filter(e=>e.status==='draft').length;
-   $('eventAdminSummary').textContent=pending+' profili e '+events+' eventi in revisione'+(drafts?' · '+drafts+(drafts===1?' bozza non inviata':' bozze non inviate'):'');
+   $('eventAdminSummary').textContent=pending+(pending===1?' profilo e ':' profili e ')+events+(events===1?' evento in revisione':' eventi in revisione')+(drafts?' · '+drafts+(drafts===1?' bozza non inviata':' bozze non inviate'):'');
    $('adminOrganizerCount').textContent=String(data.organizers.length);$('adminEventCount').textContent=String(data.events.length);
-   $('adminOrganizerQueue').innerHTML=data.organizers.map(p=>adminCard(p,'organizer')).join('')||'<p class="ev-empty">Nessuna richiesta organizzatore.</p>';
-   $('adminEventQueue').innerHTML=data.events.map(e=>adminCard(e,'event')).join('')||'<p class="ev-empty">Nessun evento creato.</p>';
-   $('adminOrganizerDetails').open=pending>0;$('adminEventDetails').open=events>0||drafts>0;
-  }catch(error){if(adminActive&&epoch===adminEpoch&&session===adminSession)message(failure(error),true,'eventAdminMessage');}
+   if(firstLoad)selectAdminTab(pending&&!events?'organizer':'event');else renderAdmin();
+  }catch(error){if(adminActive&&epoch===adminEpoch&&session===adminSession){message(failure(error),true,'eventAdminMessage');if(!adminData)$('eventAdminSummary').textContent='Caricamento non riuscito · apri per riprovare';}}
   finally{if(epoch===adminEpoch&&session===adminSession)root.setAttribute('aria-busy','false');}
  }
  async function review(actionName,button){
@@ -187,6 +218,15 @@
   if(!root.dataset.bound){
    root.dataset.bound='true';$('eventAdminRefresh').addEventListener('click',()=>loadAdmin());
    root.addEventListener('click',event=>{const button=event.target.closest('[data-admin-id]');if(adminActive&&button)openReview(button.dataset.adminKind,button.dataset.adminId);});
+   root.addEventListener('click',event=>{const tab=event.target.closest('[data-admin-tab]');if(adminActive&&tab)selectAdminTab(tab.dataset.adminTab);});
+   root.querySelector('[role=tablist]').addEventListener('keydown',event=>{
+    if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();
+    selectAdminTab(event.key==='Home'?'event':event.key==='End'?'organizer':adminView.kind==='event'?'organizer':'event',true);
+   });
+   $('eventAdminSearch').addEventListener('input',event=>{adminView.search=event.target.value;adminView.page=0;renderAdmin();});
+   $('eventAdminFilter').addEventListener('change',event=>{adminView.status=event.target.value;adminView.page=0;renderAdmin();});
+   $('eventAdminPrevious').addEventListener('click',()=>{adminView.page--;renderAdmin();});
+   $('eventAdminNext').addEventListener('click',()=>{adminView.page++;renderAdmin();});
    $('eventReviewClose').addEventListener('click',closeReview);$('eventReviewDialog').addEventListener('cancel',event=>{event.preventDefault();closeReview();});
    $('eventApprove').addEventListener('click',event=>{if(adminSelection)review(adminSelection.kind==='organizer'?'approved':'published',event.target);});
    $('eventReject').addEventListener('click',event=>review('rejected',event.target));$('eventSuspend').addEventListener('click',event=>review('suspended',event.target));
