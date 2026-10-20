@@ -1,5 +1,15 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+20/10/2026, Pesaro e Urbino: ricerca documentale corrente conclusa con limiti
+espliciti, pubblicazione/verifica ancora da registrare. 136 schede/45 chiavi
+comunali, ricognizione 50 Comuni attuali più ex Monteciccardo; 119 righe
+regionali controllate, 114 provinciali. 87 nuove e un doppione San Nicola
+unificato; catalogo 5.378, altre 5.242 identiche. Originali Urbania/Fermignano/
+Mombaroccio e atti recuperati; date discordanti non inventate, 11 quote anche
+parziali. Audit data/fiere-pesaro-urbino.json, dettaglio/limiti data/FIERE.md,
+prove Documents/ricerca-fiere-pesaro-urbino-20261020. Backup iniziale già remoto;
+nessuna comunicazione a terzi. Non spuntare la provincia prima della verifica.
+
 20/10/2026, fiere: invito registrazione nascosto nel primo HTML, mostrato
 solo dopo conferma anonima; nessun lampeggio con accesso lento/errore/script
 assente, lettura iniziale protetta da eventi auth successivi. Testo semplice
