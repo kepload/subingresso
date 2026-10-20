@@ -77,7 +77,7 @@ const server = http.createServer((req, res) => {
     if (url.pathname.startsWith('/fiere/')) return handler({ query: { slug: decodeURIComponent(url.pathname.slice(7)) } }, { setHeader: (k,v) => res.setHeader(k,v), status(c) { res.statusCode=c; return this; }, send: text => res.end(text) });
     const file = path.resolve(root, (url.pathname === '/fiere' ? '/fiere.html' : url.pathname).slice(1));
     if (!file.startsWith(root + path.sep)) return res.writeHead(403).end();
-    res.setHeader('Content-Type', ({ '.html':'text/html;charset=utf-8', '.js':'application/javascript;charset=utf-8', '.css':'text/css', '.json':'application/json' })[path.extname(file)] || 'text/plain');
+    res.setHeader('Content-Type', ({ '.html':'text/html;charset=utf-8', '.js':'application/javascript;charset=utf-8', '.mjs':'application/javascript;charset=utf-8', '.css':'text/css', '.json':'application/json' })[path.extname(file)] || 'text/plain');
     fs.readFile(file, (error, data) => error ? res.writeHead(404).end() : res.end(data));
 });
 async function run(engine, name, width, height, base) {

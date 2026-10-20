@@ -63,7 +63,7 @@ const server = http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');
     const file = path.resolve(root, (url.pathname === '/fiere' ? '/fiere.html' : url.pathname).slice(1));
     if (!file.startsWith(root + path.sep)) return res.writeHead(403).end();
-    res.setHeader('Content-Type', ({ '.html': 'text/html; charset=utf-8', '.js': 'application/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json' })[path.extname(file)] || 'text/plain');
+    res.setHeader('Content-Type', ({ '.html': 'text/html; charset=utf-8', '.js': 'application/javascript; charset=utf-8', '.mjs': 'application/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json' })[path.extname(file)] || 'text/plain');
     fs.readFile(file, (error, data) => error ? res.writeHead(404).end() : res.end(data));
 });
 function contrast(foreground, background) {
@@ -95,7 +95,7 @@ async function run(engine, label, width, height, base) {
         await page.locator('#article-summary').focus(); await page.keyboard.press('Escape');
         const expected = api.sortEvents(api.filterEvents(catalog.events, { months: [], query: '', articles: ['calzature'] }));
         await page.waitForFunction(count => document.querySelector('#list-count').textContent === String(count), expected.length);
-        const badges = await page.locator('.fiere-card').evaluateAll(cards => cards.map(card => ({ id: card.dataset.eventId, score: Number(card.querySelector('.fiere-fit-badge').dataset.score) })));
+        const badges = await page.locator('.fiere-card').evaluateAll(cards => cards.map(card => ({ id: card.dataset.eventId, score: card.querySelector('.fiere-fit-badge').hasAttribute('data-score') ? Number(card.querySelector('.fiere-fit-badge').dataset.score) : null })));
         assert.deepEqual(badges, expected.slice(0, 12).map(event => ({ id: event.id, score: api.articleAffinity(event, 'calzature').score })));
         const first = page.locator('.fiere-fit-badge').first();
         const cardBox = await page.locator('.fiere-card-content').first().boundingBox(), badgeBox = await first.boundingBox();
@@ -122,13 +122,13 @@ async function run(engine, label, width, height, base) {
         await page.waitForFunction(count => document.querySelector('#list-count').textContent === String(count), catalog.events.length);
         assert.equal(await page.locator('.fiere-fit-badge').count(), 0, 'Clear all removes the affinity control');
         await page.goto(base + '/fiere?articoli=calzature,dolciumi,intimo');
-        await page.waitForSelector('.fiere-fit-badge[data-score]');
+        await page.waitForSelector('.fiere-fit-badge');
         await page.locator('.fiere-fit-badge').first().click();
         assert.equal(await page.locator('#fit-items li').count(), 3);
         assert(await page.locator('#fit-selection-note').isVisible());
         await page.locator('#close-article-fit').click();
         await page.reload();
-        await page.waitForSelector('.fiere-fit-badge[data-score]');
+        await page.waitForSelector('.fiere-fit-badge');
         assert.equal(new URL(page.url()).searchParams.get('articoli'), 'calzature,dolciumi,intimo');
         await page.locator('#reset-filters').click();
         await page.waitForFunction(count => document.querySelector('#list-count').textContent === String(count), catalog.events.length);
@@ -147,12 +147,12 @@ async function run(engine, label, width, height, base) {
         if (process.env.FIERE_AFFINITY_OUTPUT) {
             fs.mkdirSync(process.env.FIERE_AFFINITY_OUTPUT, { recursive: true });
             await page.goto(base + '/fiere?articoli=calzature');
-            await page.waitForSelector('.fiere-fit-badge[data-score]');
+            await page.waitForSelector('.fiere-fit-badge');
             await page.locator('.fiere-list-panel').scrollIntoViewIfNeeded();
             await page.screenshot({ path: path.join(process.env.FIERE_AFFINITY_OUTPUT, label + '-' + width + '-cards.png') });
         }
         // Isolated fixtures make low/unknown scores testable without changing
-        // the production catalogue or weakening its existing article filter.
+        // the production catalogue or inventing classifications for unknown goods.
         await context.route('**/data/fiere.json?*', route => {
             const current = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Rome' });
             const future = String(Number(current.slice(0, 4)) + 1) + '-12-01';

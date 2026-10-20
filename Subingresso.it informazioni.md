@@ -20,6 +20,17 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   futura separata. Nessun contatto a terzi; file estranei preservati ed esclusi.
   TO DO spuntata soltanto dopo verifica: **42 concluse /68 da fare**.
 
+- **Fiere, articoli e ordine date,20/10:** includere le schede con categorie
+  mancanti/parziali anche scegliendo un articolo; escludere soltanto divieti
+  espliciti documentati e attuali. Nessuna classificazione/voto inventato:
+  restano «Da valutare». Contatori, mappa e selezione multipla coerenti.
+  Con mesi selezionati ordine dal giorno1 del primo mese, inclusi giorni
+  trascorsi; edizione pertinente anche per ricorrenze e dicembre–gennaio.
+  Senza mesi resta il percorso precedente. Cache JS94, catalogo5.292 invariato.
+  Articoli/affinità/ricerca quattro formati, calendario320 e periodo tre casi
+  passati; prove `Documents/verifica-fiere-filtro-date-20261020/`.
+  Pubblicazione in verifica; backup remoto valido, noto errore cleanup.
+
 - **Posti fiere,20/10:** massimo per tipologia e totale fiera; gestione
   assegnati fuori dal sito senza riapprovazione. Liberi sottraggono esterni,
   confermati e blocchi pagamento validi; zero mostra Sold out in evento,

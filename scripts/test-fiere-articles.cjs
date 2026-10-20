@@ -1,4 +1,4 @@
-// Documented merchandise only; multi-selection is a union, combined with the other filters.
+// Keep incomplete classifications visible; only documented exclusions remove a result.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -10,6 +10,8 @@ require('../js/pages/fiere.js');
 const api = globalThis.FiereCalendar;
 const catalog = JSON.parse(fs.readFileSync(path.join(root, 'data/fiere.json'), 'utf8'));
 const events = catalog.events;
+const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+const eligible = (event, types) => types.some(type => api.articleAffinity(event, type, today).evidence !== 'excluded');
 const classify = sectors => api.articleTypes({ sectors });
 assert.equal(Object.keys(api.ARTICLE_TYPES).length, 35);
 assert.equal(api.ARTICLE_OPTIONS.length, 24);
@@ -29,10 +31,20 @@ assert.deepEqual(classify('Dolci e bevande confezionate; esclusa somministrazion
 assert.deepEqual(classify('Alimentari (ad esclusione di ambulanti con autorizzazioni per somministrazione alimenti e bevande) e non alimentari'), []);
 assert.deepEqual(classify('Produttori esclusivamente alimentari; formaggi'), ['salumi-formaggi']);
 const state = { months: [], query: '', articles: ['calzature', 'dolciumi'] };
-const union = events.filter(e => api.articleTypes(e).some(type => state.articles.includes(type)));
+const generic = { name: 'Fiera generica', sectors: 'Merci varie', source: { url: 'https://example.org', checkedAt: '2026-10-20' }, editions: [{ year: 2026, start: '2026-11-01', end: '2026-11-01' }] };
+assert(api.matchesArticles(generic, ['calzature'], '2026-10-20'));
+assert(api.matchesArticles({ ...generic, sectors: 'Borse e libri' }, ['calzature'], '2026-10-20'), 'Partial product lists must not exclude an undocumented product');
+assert(!api.matchesArticles({ ...generic, sectors: 'Non ammesse calzature; borse e libri' }, ['calzature'], '2026-10-20'));
+assert(api.matchesArticles({ ...generic, sectors: 'Non ammesse calzature; borse e libri' }, ['calzature', 'libri'], '2026-10-20'), 'Multi-selection keeps a fair if another selected article is not excluded');
+assert(api.matchesArticles({ ...generic, sectors: 'Non ammesse calzature', source: { url: 'https://example.org', checkedAt: '2025-01-01' } }, ['calzature'], '2026-10-20'), 'Stale exclusions remain unconfirmed');
+assert(api.matchesArticles({ ...generic, sectors: 'Solo alimentari', source: null }, ['calzature'], '2026-10-20'), 'An unsupported restriction is not verified evidence');
+assert.equal(api.articleAffinity(generic, 'calzature', '2026-10-20').score, null, 'Visibility must not invent an affinity score');
+assert.deepEqual(api.articleTypes(generic, '2026-10-20'), [], 'Visibility must not invent product classifications');
+assert(!api.matchesArticles(generic, ['inesistente'], '2026-10-20'));
+const union = events.filter(e => eligible(e, state.articles));
 const compactArticles = ['calzature', 'dolciumi', 'cioccolato'];
-const compactUnion = events.filter(e => api.articleTypes(e).some(type => compactArticles.includes(type)));
-assert(union.length > api.filterEvents(events, { ...state, articles: ['calzature'] }).length);
+const compactUnion = events.filter(e => eligible(e, compactArticles));
+assert(union.length >= api.filterEvents(events, { ...state, articles: ['calzature'] }).length);
 assert.deepEqual(api.filterEvents(events, state), union);
 assert.deepEqual(api.filterEvents(events, { ...state, region: 'Lombardia', months: [10], category: 'tradizionale' }), union.filter(e => e.region === 'Lombardia' && e.months.includes(10) && e.category === 'tradizionale'));
 assert.deepEqual(api.filterEvents(events, { months: [], query: '' }), events, 'Old URLs and callers keep their results');
@@ -48,7 +60,7 @@ const server = http.createServer((req, res) => {
     });
     const file = path.resolve(root, (url.pathname === '/fiere' ? '/fiere.html' : url.pathname).slice(1));
     if (!file.startsWith(root + path.sep)) return res.writeHead(403).end();
-    res.setHeader('Content-Type', ({ '.html': 'text/html; charset=utf-8', '.js': 'application/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json' })[path.extname(file)] || 'text/plain');
+    res.setHeader('Content-Type', ({ '.html': 'text/html; charset=utf-8', '.js': 'application/javascript; charset=utf-8', '.mjs': 'application/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json' })[path.extname(file)] || 'text/plain');
     fs.readFile(file, (error, data) => error ? res.writeHead(404).end() : res.end(data));
 });
 async function run(engine, engineName, width, height, base) {
@@ -70,7 +82,12 @@ async function run(engine, engineName, width, height, base) {
         }
         async function verify(expected, months = false) {
             await count(expected.length);
-            assert.deepEqual(await page.locator('.fiere-card').evaluateAll(cards => cards.map(c => c.dataset.eventId)), api.sortEvents(expected).slice(0, 12).map(e => e.id));
+            const selectedMonths = (new URL(page.url()).searchParams.get('mesi') || '').split(',').map(Number).filter(Boolean);
+            assert.deepEqual(await page.locator('.fiere-card').evaluateAll(cards => cards.map(c => c.dataset.eventId)), api.sortEvents(expected, undefined, selectedMonths).slice(0, 12).map(e => e.id));
+            assert.deepEqual(await page.locator('.fiere-card-period').evaluateAll(elements => elements.map(element => element.firstChild.textContent)), api.sortEvents(expected, undefined, selectedMonths).slice(0, 12).map(event => {
+                const edition = api.selectEdition(event, undefined, selectedMonths);
+                return edition ? api.editionLabel(edition) : event.months.length === 12 ? 'Tutto l’anno' : event.months.map(month => api.MONTHS[month - 1]).join(' / ');
+            }));
             assert.deepEqual(await page.locator('#map-markers > g').evaluateAll(markers => markers.flatMap(m => m.dataset.events.split(',')).sort()), months ? expected.map(e => e.id).sort() : []);
             assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
         }
@@ -82,7 +99,7 @@ async function run(engine, engineName, width, height, base) {
         assert.equal(await page.locator('#extra-filters #sector-filter, #extra-filters #type-filter').count(), 2);
         await page.locator('#article-summary').click();
         assert.equal(await page.locator('#article-options input').count(), 24);
-        const sweetsCount = events.filter(event => api.articleTypes(event).some(type => ['dolciumi', 'cioccolato'].includes(type))).length;
+        const sweetsCount = events.filter(event => eligible(event, ['dolciumi', 'cioccolato'])).length;
         assert.equal(await checkbox('dolciumi').locator('..').locator('.fiere-article-count').innerText(), String(sweetsCount), 'Grouped counts do not count one fair twice');
         for (const type of ['calzature', 'dolciumi']) await checkbox(type).check();
         await verify(compactUnion);
@@ -137,17 +154,22 @@ async function run(engine, engineName, width, height, base) {
         await page.goto(base + '/fiere?articoli=calzature,dolciumi');
         await verify(union);
         await page.getByRole('button', { name: 'Rimuovi Calzature', exact: true }).click();
-        await verify(events.filter(e => api.articleTypes(e).includes('dolciumi')));
+        await verify(events.filter(e => eligible(e, ['dolciumi'])));
         await page.locator('#article-summary').click();
         await checkbox('dolciumi').focus();
         await page.keyboard.press('Space');
-        await verify(events.filter(event => api.articleTypes(event).some(type => ['dolciumi', 'cioccolato'].includes(type))));
+        await verify(events.filter(event => eligible(event, ['dolciumi', 'cioccolato'])));
         await page.locator('#article-summary').focus();
         await page.keyboard.press('Escape');
         await page.getByRole('button', { name: 'Rimuovi Dolci e cioccolato', exact: true }).click();
         await verify(events);
         await page.locator('#article-summary').click();
         await checkbox('detergenti').check();
+        await verify(events.filter(event => eligible(event, ['detergenti'])));
+        await page.locator('#article-summary').focus();
+        await page.keyboard.press('Escape');
+        await openExtras();
+        await page.locator('#fair-search').fill('nessuna-fiera-con-questo-nome-inesistente');
         await verify([]);
         assert(await page.locator('#empty-results').isVisible());
         await page.locator('#article-summary').focus();
@@ -171,9 +193,9 @@ async function run(engine, engineName, width, height, base) {
         assert(!await page.locator('#extra-filter-count').isVisible());
         // Detail dialog and the standalone page share the same source-backed types.
         const shoes = api.sortEvents(events.filter(e => api.articleTypes(e).includes('calzature')))[0];
-        await page.goto(base + '/fiere?articoli=calzature');
-        await count(events.filter(e => api.articleTypes(e).includes('calzature')).length);
-        await page.locator('.fiere-card-button').first().click();
+        await page.goto(base + '/fiere?articoli=calzature&q=' + encodeURIComponent(shoes.name) + '&provincia=' + encodeURIComponent(shoes.province));
+        await count(api.filterEvents(events, { articles: ['calzature'], query: shoes.name, province: shoes.province, months: [] }).length);
+        await page.locator('.fiere-card[data-event-id="' + shoes.id + '"] .fiere-card-button').click();
         assert((await page.locator('#detail-facts').innerText()).includes('Calzature'));
         await page.locator('#detail-page-link').click();
         assert((await page.locator('main dl').innerText()).includes('Calzature'));

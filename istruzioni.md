@@ -1,5 +1,17 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+20/10/2026, preferenza fiere: il filtro articolo conserva categorie mancanti
+o parziali; soltanto esclusioni esplicite/attuali con fonte eliminano la scheda.
+matchesArticles condiviso con contatori; articleTypes/affinità non riscritti,
+ignoti «Da valutare». Mesi selezionati: ordine dal giorno1, non da oggi;
+selectEdition/sortEvents ricevono i mesi anche per schede/popup/caricamento.
+Ricorrenze fuori periodo escluse dalla scelta, anni reali e inverno conservati;
+senza mesi comportamento precedente. JS94, catalogo5.292 immutato. Suite
+articoli/affinità/ricerca quattro formati, calendario320 e periodo tre casi
+passati. Prove Documents/verifica-fiere-filtro-date-20261020; pubblicazione
+in verifica. Corretti MIME .mjs nei tre server di test; PLAYWRIGHT_MODULE
+esplicito. Backup remoto valido, noto errore cleanup dello script.
+
 20/10/2026, disponibilità fiere: massimo per tipologia, totale come somma
 delle tipologie attive; assegnati esterni gestibili senza riapprovazione.
 Liberi sottraggono esterni, pagati e hold validi; Sold out a zero, rimborsi

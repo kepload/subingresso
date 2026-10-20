@@ -75,6 +75,7 @@
     }
     const articleCache = new WeakMap();
     const researchCache = new WeakMap();
+    const articleFilterCache = new WeakMap();
     function articleResearch(event, today = todayInRome()) {
         const cached = researchCache.get(event);
         if (cached?.today === today) return cached.value;
@@ -290,11 +291,29 @@
         while (result[result.length - 1] !== to) result.push(result[result.length - 1] % 12 + 1);
         return result;
     }
+    function matchesArticles(event, articles, today = todayInRome()) {
+        if (!articles?.length) return true;
+        let cached = articleFilterCache.get(event);
+        if (cached?.today !== today) {
+            const text = normalize(event.sectors);
+            cached = { today, unrestricted: !/\b(?:esclus\w*|vietat\w*|non (?:sono )?ammess\w*|divieto di vendita|senza vendita|solo)\b/.test(text), matches: new Map() };
+            articleFilterCache.set(event, cached);
+        }
+        // Missing or partial classifications are not evidence of incompatibility.
+        // Keep the source-backed classification and affinity scores unchanged.
+        return articles.some(type => {
+            if (!Object.hasOwn(ARTICLE_TYPES, type)) return false;
+            if (cached.unrestricted) return true;
+            if (!cached.matches.has(type)) cached.matches.set(type, articleAffinity(event, type, today).evidence !== 'excluded');
+            return cached.matches.get(type);
+        });
+    }
     function filterEvents(events, state, ignoreMonths) {
         const words = normalize(state.query).split(' ').filter(Boolean);
+        const today = todayInRome();
         return events.filter(event => (!state.region || event.region === state.region) && (!state.province || event.province === state.province) && (!state.category || event.category === state.category)
             && (!state.sector || event.merchandiseSectors.includes(state.sector))
-            && (!state.articles?.length || state.articles.some(type => articleTypes(event).includes(type)))
+            && matchesArticles(event, state.articles, today)
             && (ignoreMonths || !state.months.length || event.months.some(month => state.months.includes(month)))
             && words.every(word => normalize([event.name, event.city, event.region, event.province, event.venue, event.sectors].join(' ')).includes(word)));
     }
@@ -336,13 +355,26 @@
         const withWeekday = daysBetween === 0 || daysBetween === 1;
         return edition.start === edition.end ? dateLabel(edition.start, withWeekday) : dateLabel(edition.start, withWeekday) + ' – ' + dateLabel(edition.end, withWeekday);
     }
-    function selectEdition(event, today = todayInRome()) {
-        const editions = event.editions || [];
-        const next = editions.filter(e => e.start && e.end >= today).sort((a, b) => a.start.localeCompare(b.start));
+    function editionMatchesMonths(edition, months) {
+        if (!edition.start) return true;
+        const cursor = new Date(edition.start.slice(0, 7) + '-01T12:00:00Z');
+        while (cursor.toISOString().slice(0, 10) <= edition.end) {
+            if (months.includes(cursor.getUTCMonth() + 1)) return true;
+            cursor.setUTCMonth(cursor.getUTCMonth() + 1);
+        }
+        return false;
+    }
+    function periodStart(today, months) {
+        return months.length ? today.slice(0, 4) + '-' + String(months[0]).padStart(2, '0') + '-01' : today;
+    }
+    function selectEdition(event, today = todayInRome(), months = []) {
+        const editions = (event.editions || []).filter(e => !months.length || editionMatchesMonths(e, months));
+        const reference = periodStart(today, months);
+        const next = editions.filter(e => e.start && e.end >= reference).sort((a, b) => a.start.localeCompare(b.start));
         if (next.length) return next[0];
         const undated = editions.filter(e => !e.start && e.year >= Number(today.slice(0, 4))).sort((a, b) => a.year - b.year);
         if (undated.length) return undated[0];
-        return editions.slice().sort((a, b) => b.year - a.year || (b.start || '').localeCompare(a.start || ''))[0] || null;
+        return editions.slice().sort((a, b) => b.year - a.year || (months.length ? (a.start || '').localeCompare(b.start || '') : (b.start || '').localeCompare(a.start || '')))[0] || null;
     }
     function editionStatus(edition, today = todayInRome()) {
         if (!edition) return 'Le date esatte sono da confermare con l’organizzatore.';
@@ -361,15 +393,16 @@
         if (event.pricing) return 'Costi' + (event.pricing.period ? ' ' + event.pricing.period : '') + ': ' + event.pricing.label;
         return '';
     }
-    function sortEvents(events, today = todayInRome()) {
+    function sortEvents(events, today = todayInRome(), months = []) {
+        const reference = periodStart(today, months);
         const ranked = events.map(event => {
-            const edition = selectEdition(event, today);
+            const edition = selectEdition(event, today, months);
             let group = 2, date = '';
             if (edition) {
-                if (edition.start && !edition.periodOnly && edition.end >= today) {
+                if (edition.start && !edition.periodOnly && edition.end >= reference) {
                     group = 0;
-                    date = edition.start < today ? today : edition.start;
-                } else if ((edition.periodOnly && edition.end >= today) || (!edition.start && edition.year >= Number(today.slice(0, 4)))) {
+                    date = edition.start < reference ? reference : edition.start;
+                } else if ((edition.periodOnly && edition.end >= reference) || (!edition.start && edition.year >= Number(today.slice(0, 4)))) {
                     group = 1;
                 } else {
                     group = 3;
@@ -379,11 +412,11 @@
             return { event, group, date };
         });
         ranked.sort((a, b) => a.group - b.group
-            || (a.group === 3 ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date))
+            || (a.group === 3 && !months.length ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date))
             || a.event.name.localeCompare(b.event.name, 'it') || a.event.city.localeCompare(b.event.city, 'it'));
         return ranked.map(item => item.event);
     }
-    const api = { MONTHS, CATEGORIES, SECTORS, ARTICLE_GROUPS, ARTICLE_TYPES, ARTICLE_OPTIONS, articleResearch, articleTypes, articleAffinity, articleAffinitySummary, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
+    const api = { MONTHS, CATEGORIES, SECTORS, ARTICLE_GROUPS, ARTICLE_TYPES, ARTICLE_OPTIONS, articleResearch, articleTypes, articleAffinity, articleAffinitySummary, matchesArticles, ATTENDANCE, attendanceInfo, attendanceCriteria, REPUTATIONS, reputationLevel, intervalMonths, filterEvents, project, clusterEvents, editionLabel, selectEdition, editionStatus, deadlineStatus, feeLabel, sortEvents };
     global.FiereCalendar = api;
     if (typeof document === 'undefined') return;
 
@@ -540,10 +573,10 @@
     }
     function renderArticles() {
         const counts = Object.fromEntries(ARTICLE_OPTIONS.map(option => [option.key, 0]));
+        const today = todayInRome();
         for (const event of filterEvents(state.events, { ...state, articles: [] })) {
-            const documented = articleTypes(event);
             for (const option of ARTICLE_OPTIONS) {
-                if (optionTypes(option, state.sector).some(key => documented.includes(key))) counts[option.key]++;
+                if (matchesArticles(event, optionTypes(option, state.sector), today)) counts[option.key]++;
             }
         }
         for (const input of $('article-options').querySelectorAll('input')) {
@@ -654,7 +687,7 @@
                 if (!card.contains(e.relatedTarget)) { focusedCard = null; updateMapHighlight(); }
             });
             const head = node('div', 'fiere-card-head');
-            const edition = selectEdition(event);
+            const edition = selectEdition(event, todayInRome(), state.months);
             head.append(node('h3', '', event.name));
             const category = node('span', 'fiere-tag', CATEGORIES[event.category]);
             category.dataset.category = event.category;
@@ -787,7 +820,7 @@
         const cities = [...new Set(group.events.map(event => event.city))];
         $('popup-title').textContent = cities.length === 1 ? cities[0] + ' · ' + group.events.length + ' eventi' : group.events.length + ' eventi nella zona';
         const fragment = document.createDocumentFragment();
-        for (const event of sortEvents(group.events)) {
+        for (const event of sortEvents(group.events, todayInRome(), state.months)) {
             const button = node('button', 'fiere-popup-event', event.name + ' ↗');
             button.type = 'button';
             button.append(node('span', '', event.city + ' · ' + periodLabel(event)));
@@ -883,7 +916,7 @@
         $('fair-dialog').showModal();
     }
     function render() {
-        const events = sortEvents(filterEvents(state.events, state));
+        const events = sortEvents(filterEvents(state.events, state), todayInRome(), state.months);
         renderMonths(); renderArticles(); renderList(events); renderMap(events);
         const articleCount = articleSelections(state.articles, state.sector).length;
         $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (articleCount ? ' · ' + articleCount + (articleCount === 1 ? ' tipologia' : ' tipologie') : '');
@@ -1095,7 +1128,7 @@
             clearTimeout(searchTimer); searchTimer = setTimeout(() => changed(false), 100);
         });
         for (const id of ['reset-filters', 'empty-reset']) $(id).addEventListener('click', reset);
-        $('load-more').addEventListener('click', () => { state.visible += 50; renderList(sortEvents(filterEvents(state.events, state))); });
+        $('load-more').addEventListener('click', () => { state.visible += 50; renderList(sortEvents(filterEvents(state.events, state), todayInRome(), state.months)); });
         $('close-popup').addEventListener('click', () => { $('map-popup').hidden = true; });
         $('map-zoom-in').addEventListener('click', () => zoom(0.7));
         $('map-zoom-out').addEventListener('click', () => zoom(1 / 0.7));

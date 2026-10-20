@@ -39,6 +39,15 @@ assert.match(events.find(e => e.id === 'piemonte-torino-balon-del-sabato').prici
     assert.deepEqual(api.sortEvents(fixtures, '2026-10-15').map(e => e.id), expected);
     assert.deepEqual(api.sortEvents(api.filterEvents(fixtures, {query:'',months:[10]}), '2026-10-15').map(e => e.id), expected);
     assert.deepEqual(fixtures.map(e => e.id), before);
+    const recurring = { ...event('recurring'), editions: [{ year: 2026, start: '2026-11-01', end: '2026-11-01' }, { year: 2026, start: '2026-10-01', end: '2026-10-01' }, { year: 2026, start: '2026-10-18', end: '2026-10-18' }] };
+    assert.equal(api.selectEdition(recurring, '2026-10-20', [10]).start, '2026-10-01', 'The selected month starts on day one, including past days');
+    assert.equal(api.selectEdition(recurring, '2026-10-20').start, '2026-11-01', 'Without a month the upcoming edition remains selected');
+    assert.deepEqual(api.sortEvents([event('late', '2026-10-31'), event('early', '2026-10-02'), recurring, event('middle', '2026-10-15'), event('undated')], '2026-10-20', [10]).map(e => e.id), ['recurring', 'early', 'middle', 'late', 'undated']);
+    assert.deepEqual(api.sortEvents([event('november', '2026-11-02'), event('october', '2026-10-03')], '2026-10-20', [10, 11]).map(e => e.id), ['october', 'november']);
+    const winter = { ...event('winter'), editions: [{ year: 2026, start: '2026-01-04', end: '2026-01-04' }, { year: 2027, start: '2027-01-03', end: '2027-01-03' }] };
+    assert.equal(api.selectEdition(winter, '2026-10-20', [12, 1]).start, '2027-01-03', 'Periods crossing New Year keep their actual year');
+    assert.deepEqual(api.sortEvents([winter, event('december', '2026-12-02')], '2026-10-20', [12, 1]).map(e => e.id), ['december', 'winter']);
+    assert.equal(api.selectEdition(recurring, '2026-10-20', [9]), null, 'A date outside the selected months is not substituted');
 }
 const regions = [...new Set(events.map(e => e.region))];
 assert(events.length > 200);
@@ -816,7 +825,8 @@ async function run(engine,name,viewport,base) {
                 const parts = new Intl.DateTimeFormat('en', {timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
                 return ['year','month','day'].map(type => parts.find(p => p.type === type).value).join('-');
             });
-            assert.deepEqual(list, api.sortEvents(expected, today).slice(0,12).map(e => e.id));
+            const selectedMonths = (new URL(page.url()).searchParams.get('mesi') || '').split(',').map(Number).filter(Boolean);
+            assert.deepEqual(list, api.sortEvents(expected, today, selectedMonths).slice(0,12).map(e => e.id));
             assert.equal(list.length, Math.min(12,expected.length));
         }
         await page.goto(base + '/fiere');
