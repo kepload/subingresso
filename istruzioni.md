@@ -1,5 +1,15 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+21/10/2026, statistiche organizzatori: richiesta di area ricca e curata,
+profilo diretto conservato. Periodi7/30/90, filtro evento, visite/clic con
+confronto, salvataggi/avvisi correnti, andamento, occupazione, contatti,
+provenienza/dispositivo, agenda, tabella e CSV sicuro. UTC, storico soltanto
+dalla rilevazione, log privati senza account/IP/recapiti, proprietario/admin
+esclusi e deduplica sessione/evento/giorno; conservazione190giorni limitata ai
+nuovi log. Backend additivo, pagamenti disattivati. Dettagli, cache, prove e
+stato pubblicazione in data/ORGANIZZATORI_EVENTI.md; checkout isolato
+Documents/subingresso-organizzatori-statistiche-20261020 e prove omonime.
+
 20/10/2026, Ancona: ricerca documentale corrente conclusa con limiti espliciti;
 pubblicata e verificata online.104manifestazioni/40comuni,
 ricognizione47;prima44,+60,tuttiID e altre5334schede preservati;catalogo5438.

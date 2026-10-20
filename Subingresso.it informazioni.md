@@ -4,6 +4,19 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Statistiche organizzatori,21/10:** richiesta di area più ricca e curata.
+  Aggiunti periodi7/30/90, filtro evento, visite/clic/confronto, salvataggi e
+  avvisi correnti, andamento, occupazione, contatti, provenienza/dispositivo,
+  agenda, risultati per evento e CSV. Dati storici mai inventati; aggregati
+  privati, sessione deduplicata e proprietario/admin esclusi. Nuovi log senza
+  account/IP/recapiti e conservazione190giorni; privacy allineata. Pagamenti
+  disattivati, catalogo invariato. Cache organizzatori10/analytics1/engagement1.
+  Guida `data/ORGANIZZATORI_EVENTI.md`, prove
+  `Documents/verifica-organizzatori-statistiche-20261020/`; SQL ROLLBACK e
+  browser dedicati passati, font/icone e regressioni profili364/eventi/capienza
+  passati. Backend applicato/idempotente, zero prove residue, dati esistenti
+  invariati. Pubblicazione ancora da verificare.
+
 - **Ancona conclusa e verificata online,20/10:** 104 manifestazioni/40comuni,
   ricognizione47; +60 rispetto alle44 iniziali. Catalogo5.438, altre5.334
   identiche; audit `data/fiere-ancona.json`, fonti/limiti `data/FIERE.md`.

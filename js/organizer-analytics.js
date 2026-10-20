@@ -1,0 +1,85 @@
+(function () {
+ 'use strict';
+ const root=document.getElementById('organizerAnalytics');if(!root)return;
+ const $=id=>document.getElementById(id),esc=window.EventData.esc;
+ const number=value=>new Intl.NumberFormat('it-IT').format(Number(value)||0);
+ const date=value=>new Intl.DateTimeFormat('it-IT',{day:'numeric',month:'short',timeZone:'UTC'}).format(new Date(value));
+ const sum=(rows,key)=>rows.reduce((total,row)=>total+(Number(row[key])||0),0);
+ const percent=(n,d)=>d?Math.round(n/d*100):0;
+ let owner=null,events=[],days=30,selected='',metric='views',sort='views',data=null,epoch=0,controller=null;
+ function reset(){++epoch;controller?.abort();owner=null;data=null;events=[];selected='';root.hidden=true;$('oaContent').hidden=true;$('oaContent').innerHTML='';$('oaMessage').hidden=true;}
+ function delta(value,previous,complete){
+  if(!complete)return '<span class="oa-delta">Storico in raccolta</span>';
+  if(!previous)return '<span class="oa-delta">'+(value?'Prime attività nel periodo':'Come il periodo precedente')+'</span>';
+  const change=Math.round((value-previous)/previous*100);
+  return '<span class="oa-delta" data-direction="'+(change>0?'up':change<0?'down':'equal')+'">'+(change>0?'↗ +':change<0?'↘ ':'')+change+'% <span>vs periodo precedente</span></span>';
+ }
+ function card(label,value,icon,detail='') {return '<article class="oa-stat"><div class="oa-stat-top"><span>'+label+'</span><i class="fas fa-'+icon+'" aria-hidden="true"></i></div><strong>'+value+'</strong>'+detail+'</article>';}
+ function chart(){
+  const rows=data.daily||[],total=sum(rows,metric),max=Math.max(1,...rows.map(row=>Number(row[metric])||0));
+  const start=data.started_at?data.started_at.slice(0,10):'',measured=rows.filter(row=>!start||row.day>=start);
+  const left=42,right=916,top=22,bottom=192,x=index=>left+index/Math.max(1,rows.length-1)*(right-left),y=value=>bottom-(Number(value)||0)/max*(bottom-top);
+  const points=measured.map(row=>[x(rows.indexOf(row)),y(row[metric])]),line=points.map((point,index)=>(index?'L':'M')+point.map(v=>v.toFixed(1)).join(',')).join(' ');
+  const area=points.length?line+' L'+points.at(-1)[0].toFixed(1)+','+bottom+' L'+points[0][0].toFixed(1)+','+bottom+' Z':'';
+  const grid=[0,.5,1].map(part=>'<line x1="'+left+'" y1="'+y(max*part)+'" x2="'+right+'" y2="'+y(max*part)+'" stroke="#304158" stroke-dasharray="3 6"/><text x="30" y="'+(y(max*part)+4)+'" text-anchor="end">'+number(Math.ceil(max*part))+'</text>').join('');
+  const labels=[0,Math.floor((rows.length-1)/2),rows.length-1].map((index,i)=>'<text x="'+x(index)+'" y="224" text-anchor="'+(i===0?'start':i===2?'end':'middle')+'">'+esc(date(rows[index].day+'T12:00:00Z'))+'</text>').join('');
+  return '<section class="oa-block oa-chart-block" aria-labelledby="oaChartTitle"><div class="oa-block-top"><div><h3 id="oaChartTitle">Andamento dell’interesse</h3><p>'+number(total)+' '+(metric==='views'?'visite agli eventi':'clic sui contatti')+'</p></div><div class="oa-segments" role="group" aria-label="Dato del grafico"><button type="button" data-oa-metric="views" aria-pressed="'+(metric==='views')+'">Visite</button><button type="button" data-oa-metric="contacts" aria-pressed="'+(metric==='contacts')+'">Contatti</button></div></div>'+(!total?'<p class="oa-chart-empty">'+(measured.length?'Nessuna attività rilevata nel periodo.':'La rilevazione inizia da oggi.')+'</p>':'')+'<svg class="oa-chart" viewBox="0 0 944 244" role="img" aria-label="'+(metric==='views'?'Visite':'Clic sui contatti')+' giornalieri: '+number(total)+' nel periodo"><defs><linearGradient id="oaChartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#67e8f9" stop-opacity=".25"/><stop offset="100%" stop-color="#67e8f9" stop-opacity="0"/></linearGradient></defs>'+grid+(area?'<path d="'+area+'" fill="url(#oaChartFill)"/><path d="'+line+'" fill="none" stroke="#67e8f9" stroke-width="3" stroke-linejoin="round"/>':'')+(points.length===1?'<circle cx="'+points[0][0]+'" cy="'+points[0][1]+'" r="4" fill="#67e8f9"/>':'')+labels+'</svg><details class="oa-chart-data"><summary>Valori giornalieri</summary><div class="oa-scroll" tabindex="0" role="region" aria-label="Dati giornalieri"><table><caption class="oa-sr">Visite e contatti per giorno</caption><thead><tr><th>Giorno</th><th>Visite</th><th>Contatti</th></tr></thead><tbody>'+rows.map(row=>'<tr><th scope="row">'+esc(date(row.day+'T12:00:00Z'))+'</th><td>'+(!start||row.day>=start?number(row.views):'—')+'</td><td>'+(!start||row.day>=start?number(row.contacts):'—')+'</td></tr>').join('')+'</tbody></table></div></details></section>';
+ }
+ function bars(items,total){return items.map(item=>'<div class="oa-bar-row"><div><span>'+esc(item.label)+'</span><strong>'+number(item.value)+'</strong></div><div class="oa-bar-track" aria-hidden="true"><span style="width:'+percent(item.value,total)+'%"></span></div></div>').join('');}
+ function inventory(){
+  const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Rome'}).format(new Date(data.to));
+  const rows=data.events.filter(row=>data.profile_status==='approved'&&row.status==='published'&&row.end_date>=today),capacity=sum(rows,'capacity'),external=sum(rows,'external_reserved'),confirmed=sum(rows,'confirmed'),held=sum(rows,'held'),available=sum(rows,'available'),occupied=external+confirmed;
+  return '<section class="oa-block"><div class="oa-block-top"><h3>Occupazione dei posti</h3><span class="oa-tag">Eventi attivi</span></div><div class="oa-occupancy"><div class="oa-ring" style="--oa-fill:'+percent(occupied,capacity)+'%"><div><strong>'+percent(occupied,capacity)+'<small>%</small></strong><span>assegnati</span></div></div><div class="oa-inventory"><p><span><i style="background:#67e8f9"></i>Assegnati fuori dal sito</span><strong>'+number(external)+'</strong></p><p><span><i style="background:#a5b4fc"></i>Confermati online</span><strong>'+number(confirmed)+'</strong></p><p><span><i style="background:#fcd34d"></i>In pagamento</span><strong>'+number(held)+'</strong></p><p><span><i style="background:#475569"></i>Posti liberi</span><strong>'+number(available)+'</strong></p></div></div><p class="oa-footnote">'+number(occupied)+' assegnati su '+number(capacity)+' posti'+(!capacity?' · Nessun evento attivo con posteggi':'')+'</p></section>';
+ }
+ function eventTable(){
+  const rows=[...data.events].sort((a,b)=>(Number(b[sort])||0)-(Number(a[sort])||0)||a.title.localeCompare(b.title,'it'));
+  if(!rows.length)return '<section class="oa-block"><h3>Risultati per evento</h3><p class="oa-footnote">I risultati compariranno qui quando avrai creato il primo evento.</p></section>';
+  return '<section class="oa-block oa-event-block"><div class="oa-block-top"><h3>Risultati per evento</h3><label class="oa-sort">Ordina per<select id="oaSort"><option value="views"'+(sort==='views'?' selected':'')+'>Visite</option><option value="contacts"'+(sort==='contacts'?' selected':'')+'>Contatti</option><option value="saved"'+(sort==='saved'?' selected':'')+'>Salvataggi</option></select></label></div><div class="oa-scroll" tabindex="0" role="region" aria-label="Risultati per evento, scorri per tutte le colonne"><table><caption class="oa-sr">Attività nel periodo e situazione attuale per evento</caption><thead><tr><th scope="col">Evento</th><th scope="col">Visite</th><th scope="col">Contatti</th><th scope="col">Salvati ora</th><th scope="col">Posti assegnati</th></tr></thead><tbody>'+rows.map(row=>'<tr><th scope="row"><button type="button" class="oa-event-link" data-oa-event="'+esc(row.id)+'">'+esc(row.title)+'</button><span>'+esc(row.city)+' · '+esc(window.EventData.date(row.start_date))+'</span>'+window.EventData.badge(row.status)+'</th><td>'+number(row.views)+'</td><td>'+number(row.contacts)+'</td><td>'+number(row.saved)+'</td><td><strong>'+number(Number(row.external_reserved)+Number(row.confirmed))+' / '+number(row.capacity)+'</strong><span>'+number(row.available)+' liberi</span></td></tr>').join('')+'</tbody></table></div></section>';
+ }
+ function agenda(){
+  const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Rome'}).format(new Date(data.to)),rows=data.events.filter(row=>data.profile_status==='approved'&&row.status==='published'&&row.end_date>=today).sort((a,b)=>a.start_date.localeCompare(b.start_date));
+  return '<section class="oa-block"><h3>Prossimi appuntamenti</h3><div class="oa-agenda">'+(rows.slice(0,4).map(row=>'<article><div class="oa-date-tile"><strong>'+esc(row.start_date.slice(8))+'</strong><span>'+esc(new Intl.DateTimeFormat('it-IT',{month:'short',timeZone:'UTC'}).format(new Date(row.start_date+'T12:00:00Z')))+'</span></div><div><a href="/evento?id='+esc(row.id)+'">'+esc(row.title)+'</a><p>'+esc(row.city)+' · '+(row.start_date<=today?'In corso':Math.round((new Date(row.start_date+'T12:00:00Z')-new Date(today+'T12:00:00Z'))/86400000)+' giorni')+'</p>'+(row.application_deadline?'<small>Domande '+(row.application_deadline<today?'chiuse il ':'entro il ')+esc(window.EventData.date(row.application_deadline))+'</small>':'')+'</div></article>').join('')||'<p class="oa-footnote">Nessun evento pubblicato in programma.</p>')+'</div></section>';
+ }
+ function render(){
+  if(!data)return;const t=data.totals,rows=data.events,saved=sum(rows,'saved'),reminders=sum(rows,'reminders');
+  const complete=new Date(data.started_at)<=new Date(data.previous_from);
+  $('oaRange').textContent=date(data.from)+' – '+date(data.to)+' '+new Date(data.to).getUTCFullYear();
+  $('oaContent').innerHTML='<div class="oa-kpis">'+card('Visite agli eventi',number(t.views),'eye',delta(t.views,t.previous_views,complete))+card('Clic sui contatti',number(t.contacts),'arrow-pointer',delta(t.contacts,t.previous_contacts,complete))+card('Salvataggi attuali',number(saved),'bookmark','<span class="oa-delta">Tutti i salvataggi ancora presenti</span>')+card('Avvisi richiesti',number(reminders),'bell','<span class="oa-delta">Tra i salvataggi attuali</span>')+'</div>'+chart()+'<div class="oa-two">'+inventory()+'<section class="oa-block"><div class="oa-block-top"><h3>Come ti contattano</h3><span class="oa-tag">'+number(t.contacts)+' clic</span></div>'+bars([{label:'Email',value:t.email},{label:'Telefono',value:t.phone},{label:'Sito web',value:t.website}],t.contacts)+'<p class="oa-footnote">'+(t.views?(t.contacts/t.views*100).toLocaleString('it-IT',{maximumFractionDigits:1})+' clic ogni 100 visite':'In attesa delle prime visite')+'</p></section></div><div class="oa-two"><section class="oa-block"><h3>Da dove arrivano le visite</h3>'+bars([{key:'calendar',label:'Calendario fiere'},{key:'profile',label:'Profilo organizzatore'},{key:'site',label:'Altre pagine del sito'},{key:'external',label:'Siti e motori di ricerca'},{key:'direct',label:'Accesso diretto'}].map(source=>({label:source.label,value:data.sources.find(row=>row.source===source.key)?.views||0})),t.views)+'<div class="oa-device-line"><span><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile <strong>'+number(data.devices.find(row=>row.device==='mobile')?.views)+'</strong></span><span><i class="fas fa-desktop" aria-hidden="true"></i> Computer <strong>'+number(data.devices.find(row=>row.device==='desktop')?.views)+'</strong></span></div></section>'+agenda()+'</div>'+eventTable()+'<details class="oa-definitions"><summary>Come leggere queste statistiche</summary><p>Visite e clic sono rilevati dal '+esc(window.EventData.date(data.started_at.slice(0,10)))+'. Una sessione può contare una visita e un clic per tipo di contatto, evento e giorno. Le tue visite e quelle dell’amministratore autenticato sono escluse. I clic non dimostrano l’invio di una domanda, una telefonata o una partecipazione.</p><p>Il periodo comprende oggi e i '+(days-1)+' giorni precedenti, in UTC. Il confronto usa gli stessi giorni e la stessa ora del periodo precedente; appare quando entrambi i periodi sono interamente misurati. I giorni precedenti alla rilevazione sono indicati con un trattino.</p><p>Salvataggi e avvisi sono conteggi attuali, al netto delle rimozioni. L’occupazione riguarda gli eventi pubblicati non conclusi: somma i posti assegnati fuori dal sito e quelli confermati online, esclude i blocchi di pagamento e le tipologie disattivate. La tabella include anche gli eventi conclusi o in bozza. La provenienza è la pagina precedente disponibile nel browser; il dispositivo è stimato dalla finestra al momento della visita.</p><p>Le prenotazioni e i pagamenti eventi sono ancora disattivati. Le assegnazioni esterne non indicano incassi verificati. Nessun dato personale dei visitatori è mostrato.</p></details>';
+  $('oaContent').hidden=false;$('oaExport').disabled=false;
+ }
+ async function refresh(){
+  if(!owner)return;const userId=owner,request=++epoch;controller?.abort();controller=new AbortController();const currentController=controller,timer=setTimeout(()=>currentController.abort(),15000);
+  data=null;root.setAttribute('aria-busy','true');$('oaContent').hidden=true;$('oaExport').disabled=true;$('oaRange').textContent='';$('oaMessage').hidden=false;$('oaMessage').dataset.error='false';$('oaMessage').textContent='Caricamento delle statistiche…';
+  try{
+   let query=_supabase.rpc('organizer_analytics',{p_days:days,p_event_id:selected||null});if(typeof query.abortSignal==='function')query=query.abortSignal(currentController.signal);
+   const response=await Promise.race([query,new Promise((_,reject)=>currentController.signal.addEventListener('abort',()=>reject(Error('timeout')),{once:true}))]);
+   if(request!==epoch||owner!==userId)return;if(response.error)throw response.error;
+   if(!response.data?.totals||!Array.isArray(response.data.events)||!response.data.daily?.length)throw Error('Dati non disponibili');
+   data=response.data;$('oaMessage').hidden=true;render();
+  }catch(error){if(request!==epoch||owner!==userId)return;data=null;$('oaContent').innerHTML='';$('oaRange').textContent='';$('oaMessage').dataset.error='true';$('oaMessage').innerHTML='Statistiche non disponibili. <button type="button" data-oa-retry>Riprova</button>';}
+  finally{clearTimeout(timer);if(request===epoch)root.setAttribute('aria-busy','false');}
+ }
+ function csv(){
+  if(!data)return;const safe=value=>'"'+String(value??'').replace(/^[\s]*[=+\-@]|^[\t\r\n]/,match=>"'"+match).replace(/"/g,'""')+'"';
+  const lines=[['Periodo',data.from,data.to],['Evento','Stato','Comune','Visite nel periodo','Clic nel periodo','Salvati ora','Avvisi richiesti ora','Capacità attuale','Assegnati esterni','Confermati online','In pagamento','Liberi ora'],...data.events.map(row=>[row.title,row.status,row.city,row.views,row.contacts,row.saved,row.reminders,row.capacity,row.external_reserved,row.confirmed,row.held,row.available]),[],['Giorno UTC','Visite','Clic'],...data.daily.map(row=>[row.day,row.day>=data.started_at.slice(0,10)?row.views:'',row.day>=data.started_at.slice(0,10)?row.contacts:''])];
+  const url=URL.createObjectURL(new Blob(['\uFEFF'+lines.map(row=>row.map(safe).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'})),link=document.createElement('a');link.href=url;link.download='statistiche-eventi-'+new Date(data.to).toISOString().slice(0,10)+'.csv';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ }
+ root.addEventListener('click',event=>{
+  const tab=event.target.closest('[data-oa-days]'),toggle=event.target.closest('[data-oa-metric]'),eventButton=event.target.closest('[data-oa-event]');
+  if(tab){days=Number(tab.dataset.oaDays);root.querySelectorAll('[data-oa-days]').forEach(button=>button.setAttribute('aria-pressed',String(button===tab)));refresh();}
+  if(toggle){metric=toggle.dataset.oaMetric;render();root.querySelector('[data-oa-metric="'+metric+'"]').focus({preventScroll:true});}
+  if(eventButton){selected=eventButton.dataset.oaEvent;$('oaEvent').value=selected;$('oaEvent').focus({preventScroll:true});refresh();root.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
+  if(event.target.closest('[data-oa-retry]'))refresh();
+ });
+ $('oaEvent').addEventListener('change',event=>{selected=event.target.value;refresh();});
+ root.addEventListener('change',event=>{if(event.target.id==='oaSort'){sort=event.target.value;render();$('oaSort').focus({preventScroll:true});}});
+ $('oaRefresh').addEventListener('click',refresh);$('oaExport').addEventListener('click',csv);
+ window.addEventListener('organizer-workspace',event=>{
+  const detail=event.detail;if(!detail?.userId){reset();return;}
+  if(owner!==detail.userId){reset();owner=detail.userId;days=30;metric='views';sort='views';root.querySelectorAll('[data-oa-days]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.oaDays==='30')));}
+  events=detail.events||[];if(selected&&!events.some(row=>row.id===selected))selected='';
+  $('oaEvent').innerHTML='<option value="">Tutti gli eventi</option>'+events.map(row=>'<option value="'+esc(row.id)+'">'+esc(row.title)+'</option>').join('');$('oaEvent').value=selected;root.hidden=!detail.profile;
+  if(detail.profile)refresh();
+ });
+ window.addEventListener('organizer-session-reset',reset);
+})();

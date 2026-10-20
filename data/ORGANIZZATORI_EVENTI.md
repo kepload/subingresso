@@ -1,5 +1,50 @@
 # Organizzatori, eventi e prenotazioni future — 18 ottobre 2026
 
+## Statistiche dell’organizzatore — 21 ottobre 2026
+
+Richiesta: area più ricca, molte statistiche utili e presentazione curata.
+Sezione sotto il profilo diretto, tema blu notte/ciano, periodi7/30/90 e
+singolo evento/tutti. Visite e clic con confronto, salvataggi e avvisi attuali,
+grafico giornaliero con dati apribili, occupazione degli eventi pubblicati
+non conclusi, ripartizione email/telefono/sito, provenienza/dispositivo,
+prossime date/scadenze e tabella per evento ordinabile. CSV protetto dalle
+formule; filtri conservati, risposte obsolete/errori/logout non mostrano
+dati precedenti. Nessuna cache persistente dei dati del proprietario.
+
+`organizer_analytics` restituisce solo aggregati dei propri eventi: finestre
+UTC comprendenti oggi, confronto agli stessi istanti precedenti, serie
+completa; confronto nascosto finché lo storico non copre entrambi i periodi.
+Giorni mai misurati con trattino, nessuna ricostruzione. Occupazione attuale:
+attivi soltanto, assegnati=esterni+confermati, hold separati; tabella anche
+bozze/conclusi. Salvataggi/avvisi sono la situazione corrente, non acquisizioni
+storiche. Clic ogni100 visite, non conversioni o partecipazioni certificate.
+
+Nuova rilevazione delle pagine evento e del dialog calendario: una visita e
+un clic per tipo/evento/sessione/giorno, deduplica DB anche dopo reload.
+JWT verificato dal server, proprietario e admin autenticati esclusi;
+bozze/sospesi e contatti inesistenti ignorati. Provenienza solo categoria,
+dispositivo dalla larghezza; codice sessione trasformato per evento/giorno,
+nessun account, IP, URL o recapito nei record. Organizzatori senza accesso ai
+log; conservazione190giorni con pulizia giornaliera della sola nuova tabella.
+Privacy aggiornata. Nessuna attivazione dei pagamenti e nessun incasso esterno
+dedotto dall’occupazione. Catalogo documentale invariato.
+
+Patch `PATCH_ORGANIZZATORI_STATISTICHE_20261021.sql` additiva/idempotente,
+cache organizzatori10, analyticsJS/CSS1, engagement1. Test dedicati:
+`test-organizer-analytics-db.cjs --with-migration` con ROLLBACK e regressioni
+profilo/eventi; `test-organizer-analytics.cjs` e `test-event-engagement.cjs`,
+Chromium1440/320 e WebKit390. Prove in
+`Documents/verifica-organizzatori-statistiche-20261020/`. Backup tag/branch
+remoti preventivi validi; lo script backup ha ripetuto il noto errore nel
+cleanup tag, senza compromettere il checkpoint. Errori iniziali della sola
+fixture SQL (CRLF, escape JS e ruolo ereditato) corretti; suite poi passata.
+Backend applicato e riapplicato: identica data iniziale, un solo job attivo,
+zero log di prova residui; API protetta e permessi privati verificati.
+116profili/129annunci/19pagamenti/un organizzatore/un evento invariati,
+prenotazioni0 e pagamenti disattivati. Suite analytics e engagement complete
+passate anche con font/icone reali; profili364 e percorso eventi/capienza
+Chromium1440/320 e WebKit390 passati. Pubblicazione ancora da verificare.
+
 ## Profilo diretto e testi essenziali — 20 ottobre 2026
 
 Preferenza corrente: l’area organizzatore è il profilo stesso, senza pagina

@@ -1,0 +1,21 @@
+// Interazioni browser reali, endpoint simulato: nessun evento analitico di prova sul sito.
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const script=fs.readFileSync(path.join(__dirname,'../js/event-engagement.js'),'utf8'),id='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',other='bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb';
+(async()=>{for(const [engine,name,width] of [[chromium,'Chromium',1440],[chromium,'Chromium',320],[webkit,'WebKit',390]]){
+ const browser=await engine.launch({headless:true});try{
+  const context=await browser.newContext({viewport:{width,height:800}}),calls=[],errors=[];let fail=false;
+  await context.addInitScript(()=>Object.defineProperty(navigator,'webdriver',{get:()=>false}));
+  await context.route('https://qa.invalid/**',route=>{const url=new URL(route.request().url());if(url.pathname==='/rest/v1/rpc/track_organizer_event'){calls.push({body:route.request().postDataJSON(),headers:route.request().headers()});return route.fulfill({status:fail?503:204,body:''});}
+   return route.fulfill({contentType:'text/html',body:'<!doctype html><main><section class="ev-panel" data-event-inventory="'+id+'"><div class="ev-actions"><a href="mailto:qa@example.invalid" id="email">Email</a><a href="tel:+390000000000" id="phone">Telefono</a><a href="https://external.invalid" target="_blank" id="website">Sito</a></div></section></main><a href="mailto:footer@example.invalid" id="footer">Footer</a><dialog id="fair-dialog"><button data-save-fair data-fair-kind="organizer" data-fair-id="'+other+'">Salva</button><div id="detail-contacts"><a href="mailto:calendar@example.invalid" id="calendarEmail">Email calendario</a></div></dialog><script>const SUPABASE_URL="https://qa.invalid",SUPABASE_ANON_KEY="publishable-test";let session=null;const _supabase={auth:{getSession:async()=>({data:{session},error:null}),onAuthStateChange:fn=>{window.authCallback=fn;}}};document.addEventListener("click",e=>e.target.closest("a")&&e.preventDefault());</script>'});});
+  const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));await page.goto('https://qa.invalid/evento?id='+id);await page.addScriptTag({content:script});await page.waitForFunction(()=>sessionStorage.getItem('_event_stats_session'));await page.waitForTimeout(50);
+  assert.equal(calls.length,1);assert.equal(calls[0].body.p_metric,'view');assert.equal(calls[0].body.p_device,width<=767?'mobile':'desktop');assert.equal(calls[0].body.p_source,'direct');assert.equal(calls[0].headers.authorization,'Bearer publishable-test');
+  for(const item of ['email','email','phone','website','footer'])await page.locator('#'+item).click();await page.waitForTimeout(50);assert.deepEqual(calls.map(call=>call.body.p_metric),['view','email','phone','website']);
+  const sessionId=calls[0].body.p_session;await page.reload();await page.addScriptTag({content:script});await page.waitForTimeout(50);assert.equal(calls.at(-1).body.p_session,sessionId,'Sessione conservata nel browser; deduplica sul server');
+  await page.evaluate(()=>document.getElementById('fair-dialog').showModal());await page.waitForTimeout(50);assert.equal(calls.at(-1).body.p_event_id,other);assert.equal(calls.at(-1).body.p_source,'calendar');await page.locator('#calendarEmail').click();await page.waitForTimeout(30);assert.equal(calls.at(-1).body.p_metric,'email');
+  await page.evaluate(()=>{document.getElementById('fair-dialog').close();session={access_token:'test-session-token'};window.authCallback('SIGNED_IN',{user:{id:'owner'}});});await page.waitForTimeout(50);assert.equal(calls.at(-1).headers.authorization,'Bearer test-session-token','La richiesta autenticata consente al server di escludere le proprie visite');
+  // Un errore di rete non blocca il contatto e permette un tentativo successivo.
+  fail=true;await page.locator('#email').click();await page.waitForTimeout(50);const count=calls.length;fail=false;await page.locator('#email').click();await page.waitForTimeout(50);assert.equal(calls.length,count+1);
+  assert.deepEqual(errors,[]);console.log('OK '+name+' '+width+': visita, contatti, dialog calendario, deduplica, sessione/JWT, footer escluso e retry.');
+ }finally{await browser.close();}
+}})().catch(error=>{console.error(error);process.exitCode=1;});
