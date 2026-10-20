@@ -11,6 +11,11 @@ browser3 passati; nessuna prenotazione/acquisto/account reale. Pagamenti
 fiere restano disattivati, zero Connect collegati; scelta facoltativo8%
 chiesta all'utente, nessuna attivazione per silenzio. Dettagli e prove:
 data/ORGANIZZATORI_EVENTI.md, Documents/verifica-fiere-posti-20261020.
+Pubblicato f6e7222, Vercel READY dpl_5ZFUMzJEkqW91NRwRc36nQ7CS8s7;
+otto asset identici, percorso pubblicato tre casi e anonimo/API reali tre
+casi passati. Evento/calendario/dialog/profilo/refresh verificati, zero
+scritture reali. Vercel corrente: progetto subingresso
+prj_QsyHcCh5m4DGRTclNKR6z8MtaRnm; .vercel locale indica il vecchio progetto.
 
 20/10/2026, preferenza fiere salvate: segnalibro «Salva» immediato, senza
 email; campanella separata con mesi visibili subito, minimo2/massimo120 e

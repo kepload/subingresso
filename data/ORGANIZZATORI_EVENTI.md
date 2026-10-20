@@ -43,6 +43,18 @@ di rete risolto correggendo la fixture, senza scritture reali. Cache
 event-data2/organizzatori8/eventi5/calendario92/fiere CSS31/availability1.
 Backup tag/branch remoti verificati; noto errore cleanup dello script backup.
 
+Pubblicato `f6e7222`, Vercel READY `dpl_5ZFUMzJEkqW91NRwRc36nQ7CS8s7`.
+Otto asset online identici al checkout; suite disponibilità passata anche
+sugli asset pubblicati Chromium1440/320 e WebKit390, backend simulato.
+Tre prove anonime con API/dati/font reali: evento200, refresh, calendario,
+dialog e profilo mostrano il posto disponibile su uno. Scritture bloccate,
+nessun errore JS/overflow o prenotazione/acquisto reale. Prove `online/`,
+`live.json`, `deployment.json`, schermate e `risultati.md`. Audit usabilità68
+ripetuto dopo l'ultima correzione del feedback, passato. Gitleaks superato.
+Per le verifiche Vercel usare il progetto GitHub `subingresso`
+(`prj_QsyHcCh5m4DGRTclNKR6z8MtaRnm`): il `.vercel/project.json` locale punta
+al precedente progetto `subingresso.it`, non al deploy corrente del dominio.
+
 ## Verifica pubblicazione e fatturazione — 20 ottobre 2026
 
 Ricontrollo API in sola lettura: un organizzatore approvato e un evento

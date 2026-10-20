@@ -16,7 +16,11 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Pagamenti fiere ancora disattivati: chiesta scelta online facoltativo8%,
   nessuna attivazione dedotta dal silenzio. Dettagli `data/ORGANIZZATORI_EVENTI.md`,
   prove `Documents/verifica-fiere-posti-20261020/`. Backup remoti validi,
-  noto errore cleanup. Pubblicazione e verifica online in corso.
+  noto errore cleanup. Pubblicato `f6e7222`, Vercel READY
+  `dpl_5ZFUMzJEkqW91NRwRc36nQ7CS8s7`: otto asset identici, suite completa
+  disponibilità passata anche sugli asset pubblicati nei tre browser/formati.
+  Tre prove anonime su dati/API reali: evento, calendario/dialog, profilo e
+  refresh passati; nessuna scrittura reale. Resoconto `risultati.md` nelle prove.
 
 - **Salva/campanella e controllo eventi,20/10:** richiesta corrente: Salva
   immediato come gli annunci e campanella separata con scelta da2mesi in su,
