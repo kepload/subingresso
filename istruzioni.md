@@ -5,6 +5,8 @@
 ordine +, messaggi, profilo nel markup condiviso e dashboard. Nessuna
 etichetta aggiunta su mobile; colori conservati. UI17/design-system5.
 Prove e pubblicazione Documents/verifica-header-mobile-uniforme-20261021/.
+Pubblicatoe133319, Vercel riuscito;15asset/2SSR e sei formati online
+verificati. Profili364 locali passati, nessuna scrittura reale.
 
 21/10/2026, preferenza logo aggiornata: scritta precedente Subingresso.it,
 senza icona/quadrato iniziale; il PNG e il suo fondo bianco sono superati.

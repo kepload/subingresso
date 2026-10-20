@@ -14,6 +14,8 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Backup remoto tag/branch pre-header-mobile-uniforme verificati;
   noto errore cleanup helper dopo il push valido. Prove e pubblicazione
   `Documents/verifica-header-mobile-uniforme-20261021/`.
+  Pubblicatoe133319, VercelFi5LKtAi3E4rAabKDkkKcCM6drJu riuscito:
+  15asset identici,2SSR aggiornati, home online nei sei formati passata.
 
 - **Solo scritta,21/10, preferenza corrente:** ripristinato il logo
   testuale precedente Subingresso.it, senza quadrato/icona iniziale;
