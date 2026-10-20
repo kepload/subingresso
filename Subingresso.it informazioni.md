@@ -11,7 +11,11 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   aggiornamento; dati reali invariati. Cache selettore4/organizzatori7/CSS1.
   Prove `Documents/verifica-admin-fiere-20261020/`: profili304, pannello87,
   eventi tre formati e usabilità68; backup remoti verificati, noto errore
-  cleanup. Pubblicazione da verificare.
+  cleanup. Pubblicato `62f1f32`, Vercel READY
+  `dpl_5Y9pX4g4MNEuDfbBL5CWsEWqD8so`: sei asset identici, profili304,
+  pannello87 ed eventi tre formati passati anche online con backend simulato;
+  tre prove anonime reali font/accesso passate. Timeout esterno del giro
+  visuale risolto nella suite; dettagli/errori nel resoconto delle prove.
 
 - **Audit, decisioni utente 20/10:** rinviati Scout bandi, pagine locali/sitemap
   e risposta annunci inesistenti; contatori animati della home mantenuti per

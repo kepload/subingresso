@@ -13,7 +13,12 @@ e risposte fuori ordine conservano le protezioni. Backend, catalogo,
 eventi e account reali invariati. Cache organizzatori7, profile-switch4
 e nuovo css/event-admin1 limitato alla dashboard. Suite test-event-admin,
 profili ed eventi/experience; prove Documents/verifica-admin-fiere-20261020.
-Pubblicazione da verificare.
+Pubblicato `62f1f32`, Vercel READY `dpl_5Y9pX4g4MNEuDfbBL5CWsEWqD8so`:
+sei asset identici. Profili304/pannello87 ed eventi tre formati passati
+localmente e sugli asset pubblicati; backend simulato. Audit usabilità68,
+controllo sito sei combinazioni e tre prove anonime reali font/accesso
+passati. Timeout di risorse esterne del giro visuale risolto nella suite;
+errori/limiti e prove in risultati.md nella cartella indicata sopra.
 
 ## Selettore profili — 19 ottobre 2026
 

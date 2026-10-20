@@ -11,7 +11,11 @@ conserva scelta, ricerca, pagina e apertura; logout pulisce. Nessuna modifica
 DB o agli eventi reali. Cache profile-switch4/organizzatori7/event-admin1.
 Prove Documents/verifica-admin-fiere-20261020; suite profili304, pannello87,
 percorso eventi tre formati e usabilità68. Tag e branch preventivi remoti
-verificati; noto errore cleanup PowerShell. Pubblicazione da verificare.
+verificati; noto errore cleanup PowerShell. Pubblicato62f1f32, Vercel READY
+dpl_5Y9pX4g4MNEuDfbBL5CWsEWqD8so: sei asset identici; profili304/pannello87
+ed eventi nei tre formati passati anche online con backend simulato.
+Tre prove anonime reali font/accesso passate. Timeout esterno del giro visuale
+risolto isolando le risorse nella suite; dettagli/errori in risultati.md.
 
 19/10/2026, Pistoia conclusa e verificata:117 manifestazioni/19 comuni,
 copertura20; prima zero e nessun audit. Catalogo5.040, altre4.923 schede
