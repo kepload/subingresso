@@ -4,15 +4,17 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
-- **Logo e menu telefono,21/10:** logo PNG originale fornito dall'utente
-  nell'intestazione, proporzioni responsive/colori conservati; SVG per
-  inquadrare la scritta senza margini vuoti. Tolti pulsante, tendina e
-  logica mobile Blog/Calcolatore, desktop conservato. Intestazioni
-  autonome allineate. Preferenza: nessun menu mobile sostitutivo.
-  UI15/CSS3; prove/pubblicazione Documents/verifica-logo-menu-mobile-20261021/.
-  Backup tag/branch pre-logo-menu-mobile verificati, noto errore cleanup
-  preventivo. Locale Chromium1440/320 e WebKit390 e profili364 passati;
-  pubblicazione in corso. Nessuna scrittura reale di prova.
+- **Logo e menu telefono,21/10:** PNG originale utente nelle intestazioni,
+  colori/proporzioni conservati e inquadratura SVG; mobile210/180px,
+  desktop244px, fondo bianco sul tema organizzatore. Eliminati pulsante,
+  tendina e logica Blog/Calcolatore mobile; nessun menu sostitutivo,
+  desktop conservato. Anche intestazioni autonome allineate. UI15/CSS3.
+  Pubblicato7adb31a+3543132, Vercel5KGe5hzPtGK7zPzhL3R5nad8Epuy riuscito:
+  15asset e PNG identici,6SSR aggiornati; home locale/online3 e fiere
+  online senzaJS3 passati. Profili364 e5438pagine/2316sitemap locali passati.
+  Primo controllo fiere: richiamo CSS mancante corretto e riverificato.
+  Nessuna scrittura reale. Backup tag/branch verificati, noto errore
+  cleanup; prove Documents/verifica-logo-menu-mobile-20261021/.
 
 - **Grafica precedente ripristinata,21/10:** nuova versione Emil rifiutata
   dall'utente: preferisce sito semplice e grafica originale. Home9ffd1c1,

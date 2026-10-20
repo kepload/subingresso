@@ -5,7 +5,9 @@ con SVG senza deformazioni; dimensioni responsive e fondo bianco sul tema
 organizzatore. Tolti pulsante/tendina/logica menu mobile Blog/Calcolatore:
 nessun menu sostitutivo, desktop conservato. UI15/CSS3. Prove e stato
 pubblicazione Documents/verifica-logo-menu-mobile-20261021/, registro
-Subingresso.it informazioni.md.
+Subingresso.it informazioni.md. Pubblicato7adb31a+3543132 e verificato
+online: home3,15asset,6SSR e fiere senzaJS3; locale profili364/pagine5438.
+Richiamo CSS autonomo corretto dopo il primo controllo online.
 
 21/10/2026, statistiche organizzatori: richiesta di area ricca e curata,
 profilo diretto conservato. Periodi7/30/90, filtro evento, visite/clic con
