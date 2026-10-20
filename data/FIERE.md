@@ -1,6 +1,6 @@
 # Calendario fiere — fonti e aggiornamento
 
-## Alessandria — ricerca documentale conclusa, pubblicazione da verificare (20 ottobre 2026)
+## Alessandria — ricerca documentale conclusa e verificata online (20 ottobre 2026)
 
 **158 manifestazioni in 75 comuni**, rispetto alle **41** già pubblicate: **117 aggiunte**,
 ricognizione nominativa di tutti i **187 comuni** del catalogo geografico. Al checkpoint
@@ -96,8 +96,22 @@ future conferme, bandi, quote e disponibilità sono manutenzione distinta.
 Riproduzione: `python scripts/build-fiere.py`; regressione provinciale
 `scripts/test-fiere-alessandria.cjs` con `PLAYWRIGHT_MODULE`,
 `FIERE_AL_BASE_URL` per online e `FIERE_AL_OUT` per risultati.
-Cache calendario **JS90/JSON62**. Pubblicazione, verifiche e copia conservativa
-saranno registrate qui dopo i controlli; TO DO e riepilogo restano non spuntati.
+Pubblicato `bea5cb9`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Et9jXzmd5CoWv7x3Zxu7Wmpq6RT3): catalogo, audit, HTML e JS
+identici al commit; **158 pagine HTTP200 con H1/canonical verificati**.
+Suite provinciale locale e online con `PLAYWRIGHT_MODULE`: Chromium1440/320 e
+WebKit390, elenco/mappa,14 dialog con costi/fonti e navigazione senza JS.
+Build, settori, suite generale cinque formati e **5.220 pagine/2.161 sitemap**
+passati; `git diff --check` e controllo segreti passati senza bypass.
+Cache calendario **JS90/JSON62**.
+
+Backup iniziale remoto `backup/session-20261020-103054-fiere-alessandria` e ramo
+`backup/pre-fiere-alessandria-20261020`; copia conservativa
+`Documents/backup-subingresso/ricerche-fiere-20261020-100545`:
+**42,090 file/7,438,150,554 byte verificati SHA256**, zero errori,
+manifest/checksum verificati. Prove finali e documentazione in supplemento
+separato, anch'esso verificato. Modifiche estranee preservate e non incluse.
+TO DO spuntata soltanto dopo l'esito online: **41 province concluse/69 da fare**.
+Chiusura della ricerca attuale distinta dalle future verifiche periodiche.
 
 ## Genova — ricerca documentale conclusa e verificata online, 20 ottobre 2026
 

@@ -2180,3 +2180,21 @@ ricerche-fiere-20261020-004207:40.214file SHA256, zero errori,
 manifest verificato e supplemento finale. TO DO spuntata dopo verifica:
 40concluse/70rimanenti. Nessuna comunicazione a terzi; modifiche estranee
 preservate. Bandi/calendari futuri separati dalla chiusura corrente.
+
+
+Alessandria (20 ottobre 2026): ricerca corrente conclusa con limiti espliciti,
+158manifestazioni/75comuni,ricognizione187;41prima,117aggiunte,tutti41ID e
+altre5.062schede identici. Audit data/fiere-alessandria.json,546ricevute,
+104righe regionali,64post Novese,26esclusioni/12limiti in data/FIERE.md.
+153date puntuali,un periodo,quattro testuali,sei storici2025,sette costi.
+Conflitti Molino/Castelletto, accesso/quote mancanti, refusi e scadenze
+espliciti; manutenzione futura distinta. Pubblicato `bea5cb9`, Vercel riuscito:
+quattro asset identici,158pagine HTTP200/H1/canonical;PLAYWRIGHT_MODULE,
+suite provinciale locale/online Chromium1440/320 e WebKit390,generale
+cinque formati,build/settori e5.220pagine/2.161sitemap passati. JS90/JSON62.
+Originali/prove Documents/ricerca-fiere-alessandria-20261020; copia
+ricerche-fiere-20261020-100545:42,090file SHA256,zero errori,manifest
+verificato e supplemento finale. Backup remoto session-20261020-103054 e
+ramo pre-fiere-alessandria creati prima delle modifiche. TO DO spuntata
+solo dopo verifica:41province concluse/69rimanenti. Nessun contatto a terzi;
+modifiche estranee preservate,nessun lavoro su altre province.

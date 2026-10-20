@@ -4,6 +4,22 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Alessandria conclusa e verificata online,20/10:**158 manifestazioni/75comuni,
+  ricognizione187; prima41,117aggiunte,41ID e altre5.062schede preservati.
+  Catalogo5.220; audit `data/fiere-alessandria.json`, fonti/esclusioni/limiti
+  `data/FIERE.md`:546ricevute,104righe regionali,64post Novese,26gruppi
+  esclusioni,12limiti;153date puntuali,un periodo,quattro testuali,sei solo2025,
+  sette costi. Pubblicato `bea5cb9`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Et9jXzmd5CoWv7x3Zxu7Wmpq6RT3): quattro asset
+  identici,158pagine HTTP200/H1/canonical; suite provinciale locale/online
+  Chromium1440/320 e WebKit390, generale cinque formati, build/settori e
+  5.220pagine/2.161sitemap passati. PLAYWRIGHT_MODULE, JS90/JSON62.
+  Originali/prove `Documents/ricerca-fiere-alessandria-20261020`; copia
+  `ricerche-fiere-20261020-100545`:42,090file SHA256,zero errori,
+  manifest verificato e supplemento finale. Conflitti Molino/Castelletto,
+  scadenze/quote mancanti, storici2025 e ricorrenze espliciti; futuro distinto.
+  Nessun contatto a terzi; modifiche estranee preservate. TO DO spuntata
+  dopo verifica: **41 concluse/69 da fare**.
+
 - **Admin/fiere, richiesta20/10:** admin escluso dalla scelta automatica
   Organizzatore in dashboard e profilo; scelta manuale disponibile. Pannello
   «Fiere e organizzatori» chiuso con contatori, due schede, ricerca/stato,
@@ -224,7 +240,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Avvisi bandi: account obbligatorio.** Su richiesta, blog e pagine bando aprono la registrazione standard; chi ha un account accede. Attivazione dopo autenticazione, email ricavata dal server. Invii e Scout limitati agli indirizzi con account esistente tramite vista privata `registered_bando_alerts`; inserimenti diretti pubblici revocati. DB prima/dopo: 32 iscrizioni conservate, 12 con account e 20 escluse dagli invii finché non si registrano; nessun account creato automaticamente. Patch e quattro funzioni pubblicate; codice `effb12b`/`35da1fd`, cache avvisi2, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Fs4xUe5bYZu4E8fMvwXYg17TCKd9). Sintassi, qualità dati, acquisizione e test dedicati Chromium 1440/320×568 + WebKit390 passati; sei percorsi su HTML online, account/email simulati, nessun invio reale. Endpoint live senza account/chiave pubblica: 401; vista destinatari non pubblica. Modulo scorrevole su telefoni bassi; JS online identico. Prove in `Documents/verifica-avvisi-bandi-20261017.{cjs,json}`; overflow circoscritto a form/modal, testi lunghi preesistenti dell'articolo fuori perimetro. Backup tag/branch remoti validi; cleanup tag con errore PowerShell noto.
 - **Dashboard:** eliminato su richiesta il riquadro superiore “Il tuo annuncio”, con carousel, totali e domanda regionale. Preferenza: non riproporlo; statistiche nel pannello Performance posteggi e gestione nell'elenco annunci.
 - **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Preferenza corrente: grafico sopra i quattro riquadri, etichette e numeri senza sottotitoli; spiegazioni/storico solo nella voce apribile. Messaggi ricevuti distinti dai click telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
-- **Fiere:** 5.103 schede; ricerca approfondita conclusa e verificata online per 40 province, 70 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Fiere:** 5.220 schede; ricerca approfondita conclusa e verificata online per 41 province, 69 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -1041,7 +1057,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 40 province completate, 70 da fare su 110**, aggiornate il 20 ottobre dopo Genova. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 41 province completate, 69 da fare su 110**, aggiornate il 20 ottobre dopo Alessandria. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -1155,7 +1171,15 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
   Audit `data/fiere-genova.json`, fonti e limiti `data/FIERE.md`.
   Ricerca corrente conclusa; nuovi bandi, allegati e calendari sono
   manutenzione futura, distinta dai limiti documentali già registrati.
-- [ ] **34. Alessandria** — Piemonte
+- [x] **34. Alessandria** — Piemonte; ricerca documentale corrente conclusa
+  con limiti espliciti e verificata online il 20 ottobre 2026: 158 manifestazioni
+  in 75 comuni, ricognizione di 187, 117 aggiunte. Audit `data/fiere-alessandria.json`,
+  fonti/esclusioni/limiti `data/FIERE.md`;158pagine e catalogo online verificati.
+- [ ] **Alessandria — verifiche periodiche**: nuovi bandi, quote/disponibilità,
+  allegati oggi inaccessibili, conflitto Molino dei Torti e termine Natale
+  Castelletto; coordinamento termini San Sebastiano e nuove edizioni.
+  Manutenzione futura distinta dalla ricerca corrente conclusa; nessuna
+  attesa di futuri atti né promessa di censimento esaustivo.
 - [ ] **35. Asti** — Piemonte
 - [ ] **36. Pesaro e Urbino** — Marche
 - [ ] **37. Ancona** — Marche
