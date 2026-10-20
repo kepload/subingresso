@@ -5528,9 +5528,91 @@
     ],
     "completionMeaning": "Ricerca documentale corrente conclusa con limiti espliciti nelle piste accessibili, senza promessa di censimento esaustivo e senza attendere futuri bandi. Le informazioni operative mancanti non sono state inventate. Pubblicazione e verifica online da registrare separatamente.",
     "publication": {
-      "status": "pending",
-      "expectedCatalogEvents": 5378,
-      "otherProvinceEventsUnchanged": 5242
+      "status": "verified",
+      "commit": "217a3a9fc8f3dca405566a9cae1a57a531c4b9e1",
+      "checkedAt": "2026-10-20T21:28:47.983558+00:00",
+      "catalogEvents": 5378,
+      "provinceEvents": 136,
+      "otherProvinceEventsUnchanged": 5242,
+      "onlinePages": {
+        "checked": 136,
+        "http200": 136,
+        "titlesAndCanonicalVerified": true
+      },
+      "browser": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "events": 136,
+          "dialogs": 13,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "events": 136,
+          "dialogs": 13,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "events": 136,
+          "dialogs": 13,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        }
+      ],
+      "localChecks": [
+        "Build riproducibile; 5242 eventi delle altre province identici al checkpoint 85bb41a.",
+        "Suite provinciale Chromium1440/320 e WebKit390: elenco, mappa, tredici dettagli, quote, fonti e pagine senza JS.",
+        "Suite generale calendario: cinque formati/browser, filtri, tastiera, errori/riprova e assenza overflow.",
+        "Settori e 5378 pagine generate, 2256 voci sitemap; sintassi e git diff --check."
+      ],
+      "deployment": {
+        "state": "success",
+        "statuses": [
+          {
+            "context": "Vercel",
+            "state": "success",
+            "target_url": "https://vercel.com/kycykuardit-9234s-projects/subingresso/4zkry5ksL9oAxUHmrL3EpQCbKqPV"
+          }
+        ]
+      },
+      "evidenceArchive": "C:\\Users\\utente\\Documents\\ricerca-fiere-pesaro-urbino-20261020",
+      "futureMaintenanceSeparate": true,
+      "assetsBeforeRegistration": [
+        {
+          "file": "data/fiere.json",
+          "status": 200,
+          "sha256": "c7f819bd96431e9518fde3630e3d5b72fcd6a98ac6d443f8c7e78e3b8938f75d",
+          "expected": "c7f819bd96431e9518fde3630e3d5b72fcd6a98ac6d443f8c7e78e3b8938f75d",
+          "passed": true
+        },
+        {
+          "file": "data/fiere-pesaro-urbino.json",
+          "status": 200,
+          "sha256": "e86d8432849b259ca239ee155f3420a270a77f764f5e377a1590679a222e8475",
+          "expected": "e86d8432849b259ca239ee155f3420a270a77f764f5e377a1590679a222e8475",
+          "passed": true
+        },
+        {
+          "file": "fiere.html",
+          "status": 200,
+          "sha256": "050513f1dbe464ff55a85caf3236c0b4e355e8df25f5aa2ea0b8481be4840a34",
+          "expected": "050513f1dbe464ff55a85caf3236c0b4e355e8df25f5aa2ea0b8481be4840a34",
+          "passed": true
+        },
+        {
+          "file": "js/pages/fiere.js",
+          "status": 200,
+          "sha256": "463244286e137fbb0ab9fdc37e992723077427ccf5e67b6e54dd3ec2f9197b69",
+          "expected": "463244286e137fbb0ab9fdc37e992723077427ccf5e67b6e54dd3ec2f9197b69",
+          "passed": true
+        }
+      ]
     }
   },
   "events": [

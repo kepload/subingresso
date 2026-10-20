@@ -2,8 +2,17 @@
 
 ## Pesaro e Urbino — ricerca documentale del 20 ottobre 2026
 
-Ricerca corrente conclusa con limiti espliciti; pubblicazione e verifica online
-ancora da registrare. Audit: `data/fiere-pesaro-urbino.json`; generatore e test
+Pubblicazione `217a3a9`, deploy riuscito ([Vercel](https://vercel.com/kycykuardit-9234s-projects/subingresso/4zkry5ksL9oAxUHmrL3EpQCbKqPV)). HTML/JS/catalogo/audit
+online identici; tutte le **136 pagine pubbliche HTTP200**, titolo e canonical
+verificati. Suite provinciale locale/online Chromium1440/320 e WebKit390
+passata: elenco, mappa, tredici dettagli, costi, fonti e pagine senza JS.
+Suite generale cinque formati/browser, settori e 5.378 pagine/2.256 sitemap
+passati. Cache JS96/JSON64. Prove `publication-catalog.json`, `test-local.json`
+e `test-online.json` nell’archivio provinciale; nessuna scrittura/account/email
+reale di prova. TO DO aggiornata solo dopo questi riscontri.
+
+Ricerca corrente conclusa con limiti espliciti, pubblicata e verificata online
+il 20 ottobre 2026. Audit: `data/fiere-pesaro-urbino.json`; generatore e test
 `scripts/test-fiere-pesaro-urbino.cjs`. Nessuna comunicazione a terzi.
 
 - **136 manifestazioni in 45 chiavi comunali**: 50 schede iniziali, 87 nuove,
