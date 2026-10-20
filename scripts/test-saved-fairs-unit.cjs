@@ -13,6 +13,8 @@ const nativeFetch = global.fetch;
     assert.equal(model.todayInRome(new Date('2026-10-24T22:30:00Z')), '2026-10-25');
     assert.equal(model.todayInRome(new Date('2026-10-25T23:30:00Z')), '2026-10-26');
     assert.equal(model.validateReminder({ reminder_enabled: false }), null);
+    assert.match(model.validateReminder({ reminder_enabled: true, reference_date: '2028-02-15', months_before: 1 }, '2026-10-19'), /2 a 120/);
+    assert.equal(model.validateReminder({ reminder_enabled: true, reference_date: '2028-02-15', months_before: 2 }, '2026-10-19'), null);
     assert.match(model.validateReminder({ reminder_enabled: true, reference_date: '2027-02-15', months_before: 12 }, '2026-10-19'), /già passata/);
     assert.equal(model.validateReminder({ reminder_enabled: true, reference_date: '2028-02-15', months_before: 12 }, '2026-10-19'), null);
 
@@ -44,6 +46,7 @@ const nativeFetch = global.fetch;
     assert.equal(lastSnapshot.p_data.fair_name, sample.name); assert.equal(lastSnapshot.p_data.user_id, undefined);
     assert.equal(lastSnapshot.p_data.date_origin, 'personal');
     assert.equal((await call('POST', { ...body, reminder_enabled: true, reference_date: '2020-01-01' })).code, 400);
+    assert.equal((await call('POST', { ...body, reminder_enabled: true, reference_date: String(new Date().getUTCFullYear() + 3) + '-06-30', months_before: 1 })).code, 400);
     assert.equal((await call('POST', { ...body, fair_id: 'missing' })).code, 404);
     assert.equal((await call('POST', { ...body, reminder_enabled: 'true' })).code, 400);
     const unsubscribe = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';

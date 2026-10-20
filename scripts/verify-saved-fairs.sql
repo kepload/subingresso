@@ -24,6 +24,7 @@ BEGIN
  IF (item->>'months_before')::integer<>12 OR NOT (item->>'reminder_enabled')::boolean THEN RAISE EXCEPTION 'Salvataggio 12 mesi fallito'; END IF;
  BEGIN PERFORM public.save_fair(data,0); RAISE EXCEPTION 'Conflitto ignorato'; EXCEPTION WHEN serialization_failure THEN NULL; END;
  BEGIN PERFORM public.save_fair(data||jsonb_build_object('months_before',121),1); RAISE EXCEPTION 'Mesi invalidi accettati'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
+ BEGIN PERFORM public.save_fair(data||jsonb_build_object('months_before',1),1); RAISE EXCEPTION 'Anticipo inferiore a due mesi accettato'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
  BEGIN PERFORM public.save_fair(data||jsonb_build_object('reference_date',current_date+5),1); RAISE EXCEPTION 'Promemoria passato accettato'; EXCEPTION WHEN invalid_parameter_value THEN NULL; END;
  BEGIN PERFORM public.claim_fair_reminders(); RAISE EXCEPTION 'Coda accessibile al browser'; EXCEPTION WHEN insufficient_privilege THEN NULL; END;
  EXECUTE 'RESET ROLE';

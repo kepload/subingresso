@@ -44,7 +44,7 @@ function dashboardFixture() {
     const html = fs.readFileSync(path.join(root, 'dashboard.html'), 'utf8');
     const start = html.indexOf('function showTab(tab)'), end = html.indexOf("document.getElementById('dashboardTabs')", start);
     const tabs = html.slice(start, end);
-    return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace('</body>', `<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=21"></script><script src="/js/auth.js?v=22"></script><script src="/js/fiere-access.js?v=2"></script><script type="module" src="/js/saved-fairs.js?v=1"></script><script>
+    return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace('</body>', `<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=21"></script><script src="/js/auth.js?v=22"></script><script src="/js/fiere-access.js?v=2"></script><script type="module" src="/js/saved-fairs.js?v=2"></script><script>
 let _alertsLoaded=false,_savedLoaded=false,_valutazioniLoaded=false;const VetrinaAccount={load(){}};${tabs}
 document.addEventListener('DOMContentLoaded',()=>{document.getElementById('loadingState').classList.add('hidden');document.getElementById('dashContent').classList.remove('hidden');showTab('fiere');});
 </script></body>`);
@@ -89,7 +89,7 @@ async function run(engine, name, width, height, base) {
         let stage = 'calendar';
         const page = await context.newPage(); page.setDefaultTimeout(16000); page.on('pageerror', error => { errors.push(error.message); console.error('Browser error [' + stage + '] at ' + page.url() + ': ' + error.stack); });
         if (process.env.SAVED_FAIRS_DEBUG) page.on('requestfailed', request => { if (request.url().includes('/api/saved-fairs')) console.error('Request failed [' + stage + ']: ' + request.method() + ' ' + request.failure()?.errorText); });
-        const open = async () => { await page.locator('[data-save-fair]').first().click(); await page.locator('#sf-form').waitFor({ state: 'visible' }); };
+        const open = async () => { await page.locator('[data-remind-fair]').last().click(); await page.locator('#sf-form').waitFor({ state: 'visible' }); };
         const save = async () => { await page.locator('#sf-submit').click(); await page.locator('#saved-fair-dialog').waitFor({ state: 'hidden' }); };
         const overflow = async () => assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), name + width + ' overflow');
         await page.goto(base + '/fiere?q=Faustino');
@@ -99,14 +99,21 @@ async function run(engine, name, width, height, base) {
         await page.keyboard.press('Escape'); await page.locator('#fair-dialog').waitFor({ state: 'visible' });
         await page.locator('#detail-save-fair').click(); await page.locator('#tabLogin').click();
         await page.locator('#loginEmail').fill('qa@example.invalid'); await page.locator('#loginPassword').fill('fixture-password'); await page.locator('#loginBtn').click();
-        await page.locator('#sf-form').waitFor({ state: 'visible' });
-        assert.equal(await page.locator('#sf-enabled').isChecked(), false); assert.equal(state.writes.length, 0);
-        await save(); assert.equal(state.writes.length, 1); assert.equal(state.writes[0].reminder_enabled, false);
+        await page.waitForFunction(() => document.querySelector('#detail-save-fair').dataset.saved === 'true' && !document.querySelector('#detail-save-fair').disabled);
+        assert.equal(state.writes.length, 1); assert.equal(state.writes[0].reminder_enabled, false);
+        assert.equal(await page.locator('#saved-fair-dialog').count(), 0, 'Save is one click without a settings dialog');
         assert.equal(await page.locator('#detail-save-fair').getAttribute('data-saved'), 'true');
         assert(await page.locator('#fair-dialog').isVisible());
         stage = 'standalone'; await page.goto(base + '/fiere/' + sample.id);
         await page.waitForFunction(() => document.querySelector('[data-save-fair]').dataset.saved === 'true');
-        await open(); await page.locator('#sf-date').fill(future); await page.locator('#sf-enabled').check(); await page.locator('[data-sf-months="5"]').click();
+        assert.equal(await page.locator('[data-save-fair]').innerText(), 'Salvata');
+        assert.equal(await page.locator('[data-remind-fair]').innerText(), 'Avvisami');
+        await open(); assert.equal(await page.locator('#sf-enabled').isChecked(), true);
+        assert.equal(await page.locator('#sf-months').inputValue(), '2');
+        assert(await page.locator('#sf-months').isVisible(), 'Bell immediately shows the month choice');
+        await page.locator('#sf-date').fill(future); await page.locator('#sf-months').fill('1'); await page.locator('#sf-submit').click();
+        assert((await page.locator('#sf-error').innerText()).includes('2 a 120')); assert.equal(state.writes.length, 1);
+        await page.locator('[data-sf-months="5"]').click();
         const model = await import('../js/fair-reminder-model.mjs');
         assert((await page.locator('#sf-preview').innerText()).includes(model.dateLabel(model.reminderDate(future, 5))));
         assert((await page.locator('#sf-date-help').innerText()).includes('indicativa'));
@@ -118,11 +125,11 @@ async function run(engine, name, width, height, base) {
         stage = 'profile'; await page.goto(base + '/dashboard?area=normale#fiere');
         await page.locator('.sf-card').waitFor(); assert.equal(await page.locator('#dashboardTabs [role="tab"]').count(), 6);
         assert((await page.locator('.sf-card').innerText()).includes(sample.name));
-        await page.locator('.sf-card button').first().click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
+        await page.locator('.sf-card [data-remind-fair]').click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
         await page.locator('[data-sf-months="12"]').click();
         assert.equal(await page.locator('#sf-months').inputValue(), '12'); await save();
         assert((await page.locator('.sf-card').innerText()).includes('12 mesi prima'));
-        await page.locator('.sf-card button').first().click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
+        await page.locator('.sf-card [data-remind-fair]').click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
         await page.locator('#sf-months').fill('6'); state.failSave = true;
         await page.locator('#sf-submit').click(); await page.locator('#sf-error').waitFor({ state: 'visible' });
         assert.equal(await page.locator('#sf-months').inputValue(), '6'); assert.equal(state.rows.values().next().value.months_before, 12);
@@ -131,7 +138,7 @@ async function run(engine, name, width, height, base) {
         await page.locator('#sf-date').fill('2020-01-01'); await page.locator('#sf-submit').click();
         assert.equal(state.writes.length, writesBefore); assert(await page.locator('#sf-error').isVisible());
         await page.locator('#sf-date').fill(future); await save();
-        await page.locator('.sf-card button').first().click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
+        await page.locator('.sf-card [data-remind-fair]').click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
         await overflow();
         if (process.env.SAVED_FAIRS_QA_DIR) { fs.mkdirSync(process.env.SAVED_FAIRS_QA_DIR, { recursive: true }); await page.screenshot({ path: path.join(process.env.SAVED_FAIRS_QA_DIR, name + '-' + width + '-promemoria.png') }); }
         await page.keyboard.press('Escape');
@@ -147,30 +154,66 @@ async function run(engine, name, width, height, base) {
         await page.locator('#saved-fair-dialog').waitFor({ state: 'hidden' });
         await page.waitForFunction(() => document.querySelector('#detail-save-fair').dataset.saved === 'false');
         assert(await page.locator('#fair-dialog').isVisible());
-        await open(); assert.equal(await page.locator('#sf-enabled').isChecked(), false); assert.equal(await page.locator('#sf-remove').isVisible(), false);
+        await open(); assert.equal(await page.locator('#sf-enabled').isChecked(), true); assert.equal(await page.locator('#sf-remove').isVisible(), false);
+        assert.equal(state.writes.filter(row => row.user_id === 'B').length, 0, 'Opening the bell does not subscribe');
         await page.keyboard.press('Escape');
         stage = 'account A'; await page.evaluate(() => qaIdentity('A'));
+        await page.waitForFunction(() => document.querySelector('#detail-save-fair').dataset.saved === 'true');
         await page.goto(base + '/dashboard?area=normale#fiere'); await page.waitForFunction(() => document.querySelectorAll('.sf-card').length === 2);
         await overflow();
         if (process.env.SAVED_FAIRS_QA_DIR) await page.screenshot({ path: path.join(process.env.SAVED_FAIRS_QA_DIR, name + '-' + width + '-mie-fiere.png'), fullPage: true });
-        await page.locator('.sf-card button').first().click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
+        await page.locator('.sf-card [data-remind-fair]').first().click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
         await page.locator('#sf-enabled').uncheck(); await save();
         assert((await page.locator('.sf-card').first().innerText()).includes('senza promemoria'));
-        await page.locator('.sf-card button').first().click(); await page.locator('#sf-form').waitFor({ state: 'visible' }); await page.locator('#sf-remove').click();
-        await page.locator('#saved-fair-dialog').waitFor({ state: 'hidden' }); assert.equal(await page.locator('.sf-card').count(), 1);
+        await page.locator('.sf-card [data-save-fair]').first().click();
+        await page.waitForFunction(() => document.querySelectorAll('.sf-card').length === 1);
         const before = state.writes.length;
         stage = 'logout'; await page.evaluate(() => qaIdentity(null));
         await page.waitForFunction(() => document.querySelector('[data-saved-fairs-list]').textContent.includes('Accedi'));
         assert.equal(await page.locator('.sf-card').count(), 0); assert.equal(state.writes.length, before);
         stage = 'registration'; await page.goto(base + '/fiere/' + sample.id);
-        await page.locator('[data-save-fair]').click(); await page.locator('#registerForm').waitFor({ state: 'visible' });
+        await page.locator('[data-remind-fair]').click(); await page.locator('#registerForm').waitFor({ state: 'visible' });
         await page.locator('#regNome').fill('Prova'); await page.locator('#regCognome').fill('Promemoria');
         await page.locator('#regEmail').fill('qa@example.invalid'); await page.locator('#regPassword').fill('fixture-password');
         await page.locator('#registerBtn').click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
         assert.equal(state.writes.length, before, 'Registration resumes the chosen fair without saving or subscribing automatically');
         await page.keyboard.press('Escape');
+        stage = 'toggle errors and duplicate clicks';
+        state.failSave = true;
+        await page.locator('[data-save-fair]').click();
+        await page.waitForFunction(() => !document.querySelector('[data-save-fair]').disabled);
+        assert.equal(await page.locator('[data-save-fair]').getAttribute('data-saved'), 'false', 'Failed save restores the icon');
+        assert.equal(state.writes.length, before);
+        state.failSave = false; state.delaySave = 250;
+        await page.locator('[data-save-fair]').evaluate(button => { button.click(); button.click(); });
+        await page.waitForFunction(() => document.querySelector('[data-save-fair]').dataset.saved === 'true' && !document.querySelector('[data-save-fair]').disabled);
+        assert.equal(state.writes.length, before + 1, 'Rapid double save creates one write');
+        assert.equal(state.writes.at(-1).reminder_enabled, false);
+        await page.locator('[data-save-fair]').click();
+        await page.waitForFunction(() => document.querySelector('[data-save-fair]').dataset.saved === 'false' && !document.querySelector('[data-save-fair]').disabled);
+        state.delaySave = 0;
+        const beforeOtherTab = state.writes.length;
+        state.rows.set('A:catalog:' + sample.id, state.writes.at(-1));
+        await page.locator('[data-save-fair]').click();
+        await page.waitForFunction(() => document.querySelector('[data-save-fair]').dataset.saved === 'true' && !document.querySelector('[data-save-fair]').disabled);
+        assert.equal(state.writes.length, beforeOtherTab, 'Save keeps an existing favorite from another tab instead of removing it');
+        assert(state.rows.has('A:catalog:' + sample.id));
+        await page.locator('[data-save-fair]').click();
+        await page.waitForFunction(() => document.querySelector('[data-save-fair]').dataset.saved === 'false' && !document.querySelector('[data-save-fair]').disabled);
+        stage = 'card actions'; await page.goto(base + '/fiere?q=Faustino');
+        const card = page.locator('.fiere-card[data-event-id="' + sample.id + '"]');
+        await card.locator('[data-save-fair]').click();
+        await page.waitForFunction(id => document.querySelector('[data-event-id="' + id + '"] [data-save-fair]').dataset.saved === 'true' && !document.querySelector('[data-event-id="' + id + '"] [data-save-fair]').disabled, sample.id);
+        await card.locator('[data-remind-fair]').click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
+        await page.locator('#sf-date').fill(future); await page.locator('[data-sf-months="2"]').click(); await save();
+        assert.equal(state.rows.get('A:catalog:' + sample.id).months_before, 2);
+        await card.locator('.fiere-card-button').click();
+        assert.equal(await page.locator('#detail-save-fair').getAttribute('data-saved'), 'true');
+        assert.equal(await page.locator('#fair-dialog [data-remind-fair]').getAttribute('data-enabled'), 'true');
+        await overflow();
+        if (process.env.SAVED_FAIRS_QA_DIR) await page.screenshot({ path: path.join(process.env.SAVED_FAIRS_QA_DIR, name + '-' + width + '-salva-campanella.png') });
         assert.deepEqual(errors, []);
-        console.log(name + ' ' + width + ': real auth/resume/cancel, save without email, 5/12 months, past dates, personal dates, duplicate clicks, retry, profile persistence, organizer page/calendar, account isolation, disable/remove/logout and overflow passed');
+        console.log(name + ' ' + width + ': one-click save, visible bell, minimum 2 months, 5/12 months, separate consent, auth/resume/cancel, past/personal dates, double click/rollback/retry, dashboard, organizer event, card/detail sync, account isolation/logout and overflow passed');
         await context.close();
     } finally { await browser.close(); }
 }
@@ -180,6 +223,7 @@ async function run(engine, name, width, height, base) {
     const base = process.env.SAVED_FAIRS_BASE_URL || 'http://127.0.0.1:' + server.address().port;
     for (const [name, width, height] of [['chromium', 1440, 1000], ['chromium', 820, 1000], ['chromium', 320, 568], ['webkit', 390, 844]]) {
         if (process.env.SAVED_FAIRS_TEST_ENGINE && process.env.SAVED_FAIRS_TEST_ENGINE !== name) continue;
+        if (process.env.SAVED_FAIRS_TEST_WIDTH && Number(process.env.SAVED_FAIRS_TEST_WIDTH) !== width) continue;
         await run(playwright[name], name, width, height, base);
     }
 })().catch(error => { console.error(error); process.exitCode = 1; }).finally(() => { global.fetch = nativeFetch; server.close(); });

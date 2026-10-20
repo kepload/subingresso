@@ -4,7 +4,10 @@ const fs = require('node:fs'), path = require('node:path'), assert = require('no
     const settingsPath = process.env.SAVED_FAIRS_SETTINGS || path.join(root, '.claude/settings.local.json');
     const token = process.env.SUPABASE_ACCESS_TOKEN || JSON.parse(fs.readFileSync(settingsPath, 'utf8')).env.SUPABASE_ACCESS_TOKEN;
     let sql = fs.readFileSync(path.join(__dirname, 'verify-saved-fairs.sql'), 'utf8');
-    if (process.argv.includes('--with-migration')) sql = fs.readFileSync(path.join(root, 'PATCH_FIERE_SALVATE_20261019.sql'), 'utf8').replace(/COMMIT;\s*$/, '') + sql.replace('BEGIN;', '');
+    const migrations = [];
+    if (process.argv.includes('--with-migration')) migrations.push('PATCH_FIERE_SALVATE_20261019.sql');
+    if (process.argv.includes('--with-minimum') || process.argv.includes('--with-migration')) migrations.push('PATCH_FIERE_MINIMO_MESI_20261020.sql');
+    if (migrations.length) sql = 'BEGIN;\n' + migrations.map(file => fs.readFileSync(path.join(root, file), 'utf8').replace('BEGIN;', '').replace(/COMMIT;\s*$/, '')).join('\n') + sql.replace('BEGIN;', '');
     const response = await fetch('https://api.supabase.com/v1/projects/mhfbtltgwibwmsudsuvf/database/query', {
         method: 'POST', headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' }, body: JSON.stringify({ query: sql }), signal: AbortSignal.timeout(60000)
     });

@@ -4,6 +4,21 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Salva/campanella e controllo eventi,20/10:** richiesta corrente: Salva
+  immediato come gli annunci e campanella separata con scelta da2mesi in su,
+  anche personalizzata; email solo dopo conferma. Anteprime, dettaglio,
+  pagine autonome/eventi e «Le mie fiere» allineati. «Gestisci fiera» era
+  l'etichetta provvisoria del salvataggio durante il caricamento, non un
+  diritto di modificare eventi altrui. Cache calendario91/salvati2/modello2;
+  catalogo invariato. Patch minimo2 additiva, scelte esistenti conservate.
+  Audit API: un organizzatore approvato/un evento pubblicato; prenotazioni0
+  e pagamenti eventi disattivati. Nessuna fatturazione automatica fiere:
+  oggi la richiesta va gestita nel contatto diretto con l'organizzatore.
+  Dettagli `data/FIERE_SALVATE.md`, `data/ORGANIZZATORI_EVENTI.md`; prove
+  `Documents/verifica-fiere-campanella-20261020/`. Verifica finale e
+  pubblicazione ancora da completare; nessun invio/account/acquisto reale
+  di prova. Backup tag/branch remoti verificati, noto errore cleanup.
+
 - **Alessandria conclusa e verificata online,20/10:**158 manifestazioni/75comuni,
   ricognizione187; prima41,117aggiunte,41ID e altre5.062schede preservati.
   Catalogo5.220; audit `data/fiere-alessandria.json`, fonti/esclusioni/limiti
@@ -19,6 +34,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   scadenze/quote mancanti, storici2025 e ricorrenze espliciti; futuro distinto.
   Nessun contatto a terzi; modifiche estranee preservate. TO DO spuntata
   dopo verifica: **41 concluse/69 da fare**.
+
 
 - **Admin/fiere, richiesta20/10:** admin escluso dalla scelta automatica
   Organizzatore in dashboard e profilo; scelta manuale disponibile. Pannello

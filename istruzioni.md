@@ -1,5 +1,20 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+20/10/2026, preferenza fiere salvate: segnalibro «Salva» immediato, senza
+email; campanella separata con mesi visibili subito, minimo2/massimo120 e
+scelta libera. Conferma esplicita attiva avviso e salva fiera. Stessi comandi
+su anteprime/dettaglio/pagine autonome/eventi/dashboard; doppio clic500ms,
+errori con ripristino e isolamento account. «Gestisci fiera» era una dicitura
+provvisoria dei preferiti, ora rimossa. API/browser/RPC allineati; patch
+additiva PATCH_FIERE_MINIMO_MESI_20261020.sql, nessuna preferenza riscritta.
+Cache calendario91/saved-fairs JS-CSS2/modello2; catalogo invariato.
+Controllo organizzatori: un profilo approvato e un evento pubblicato,
+pagamenti eventi disattivati/prenotazioni0; pubblicazione soggetta a doppia
+approvazione. Nessuna fattura automatica fiere: rapporto diretto con gestore;
+fatturazione del futuro incasso piattaforma ancora da definire.
+Guide data/FIERE_SALVATE.md e data/ORGANIZZATORI_EVENTI.md, prove
+Documents/verifica-fiere-campanella-20261020. Pubblicazione da completare.
+
 20/10/2026, preferenza admin: esclusione dal passaggio automatico a
 Organizzatore, sia ingresso dashboard sia apertura del profilo, anche con
 più eventi. Ruolo is_admin letto aggiornato; errore resta Ambulante, scelta

@@ -681,9 +681,17 @@
             }
             body.append(content, side);
             card.append(body, foot);
+            const actions = node('div', 'sf-fair-actions');
+            for (const action of ['saveFair', 'remindFair']) {
+                const control = node('button', 'saved-fair-button'); control.type = 'button'; control.dataset[action] = '';
+                control.dataset.fairKind = event.managedEventId ? 'organizer' : 'catalog'; control.dataset.fairId = event.managedEventId || event.id;
+                control.textContent = action === 'saveFair' ? 'Salva' : 'Avvisami'; actions.append(control);
+            }
+            card.append(actions);
             fragment.append(card);
         }
         $('fair-list').replaceChildren(fragment);
+        global.SavedFairs?.refresh();
         hoveredCard = null; focusedCard = null;
         updateMapHighlight();
         $('fair-list').setAttribute('aria-busy', 'false');
@@ -805,6 +813,9 @@
         const saveFair = $('detail-save-fair');
         saveFair.dataset.fairKind = event.managedEventId ? 'organizer' : 'catalog';
         saveFair.dataset.fairId = event.managedEventId || event.id;
+        saveFair.closest('.sf-fair-actions').querySelectorAll('[data-remind-fair]').forEach(button => {
+            button.dataset.fairKind = saveFair.dataset.fairKind; button.dataset.fairId = saveFair.dataset.fairId;
+        });
         global.SavedFairs?.setFair(saveFair, saveFair.dataset.fairKind, saveFair.dataset.fairId);
         $('detail-location').textContent = event.city + ' · ' + event.province;
         $('detail-months').textContent = periodLabel(event);

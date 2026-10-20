@@ -1,5 +1,22 @@
 # Organizzatori, eventi e prenotazioni future — 18 ottobre 2026
 
+## Verifica pubblicazione e fatturazione — 20 ottobre 2026
+
+Ricontrollo API in sola lettura: un organizzatore approvato e un evento
+pubblicato, zero prenotazioni, pagamenti eventi disattivati. Percorso completo
+di richiesta profilo, creazione evento/posteggi, invio e revisione verificato
+in Chromium1440/320 e WebKit390 con backend simulato; autorizzazioni, privacy,
+revisioni e pagamenti disattivati verificati su SQL reale in ROLLBACK.
+
+Il servizio attuale mette in contatto ambulante e organizzatore: nessun
+checkout o trasferimento per le fiere, nessuna raccolta di dati di fatturazione
+e nessuna fattura automatica. La richiesta di fattura per il posteggio viene
+quindi gestita direttamente con l'organizzatore, fuori dal sito. I dettagli
+fiscali dell'eventuale futuro incasso piattaforma vanno definiti prima
+dell'attivazione; nessun flusso fiscale aggiunto o promessa di copertura.
+La ricevuta Vetrina è un servizio distinto, non una fattura delle fiere.
+Prove `Documents/verifica-fiere-campanella-20261020/`.
+
 ## Admin e pannello compatto — 20 ottobre 2026
 
 Admin escluso dal default Organizzatore nei due percorsi: controllo is_admin

@@ -1,4 +1,5 @@
 export const MAX_MONTHS = 120;
+export const MIN_MONTHS = 2;
 export function validDate(value) {
     return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 }
@@ -34,7 +35,7 @@ export function validateReminder(input, today = todayInRome()) {
     if (reference && reference > String(Number(today.slice(0, 4)) + 10) + today.slice(4)) return 'Scegli una data entro i prossimi dieci anni.';
     if (!input.reminder_enabled) return null;
     if (!reference || reference <= today) return 'Scegli una data futura per la fiera.';
-    if (!Number.isInteger(input.months_before) || input.months_before < 1 || input.months_before > MAX_MONTHS) return 'Scegli da 1 a 120 mesi di anticipo.';
+    if (!Number.isInteger(input.months_before) || input.months_before < MIN_MONTHS || input.months_before > MAX_MONTHS) return 'Scegli da 2 a 120 mesi di anticipo.';
     const target = reminderDate(reference, input.months_before);
     if (!target || target < today) return 'La data del promemoria è già passata: riduci i mesi o scegli un’altra data per la fiera.';
     return null;

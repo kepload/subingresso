@@ -1,5 +1,26 @@
 # Fiere salvate e promemoria personali — 19 ottobre 2026
 
+## Preferenza corrente — 20 ottobre 2026
+
+«Salva» con segnalibro, come gli annunci, aggiunge/rimuove la singola fiera
+con un clic e senza attivare email. Campanella separata «Avvisami» apre
+subito la scelta dei mesi: minimo2, massimo120, numero libero e scorciatoie
+2/3/5/6/12. L'avviso si attiva soltanto alla conferma; attivandolo si salva
+anche la fiera. Stessi comandi nelle anteprime, nel dettaglio del calendario,
+nelle pagine autonome/eventi e nella dashboard. Stato condiviso nella pagina,
+blocco500ms/durante richiesta, ripristino su errore e isolamento account.
+
+Rimossa «Gestisci fiera»: era l'etichetta provvisoria dei preferiti mentre
+caricavano i dati, non un permesso di modifica dell'evento. Il salvataggio
+legge lo stato aggiornato prima di scrivere; letture precedenti non annullano
+le modifiche. Rimuovendo la fiera si disattiva anche il relativo avviso.
+
+Supera il minimo1 e il percorso unico descritti nello storico sotto.
+API/browser e RPC controllano il nuovo minimo; patch additiva
+`PATCH_FIERE_MINIMO_MESI_20261020.sql`, senza riscrivere scelte pregresse.
+Cache calendario91, saved-fairs JS/CSS2 e modello2; catalogo invariato.
+Verifiche e limiti in `Documents/verifica-fiere-campanella-20261020/`.
+
 Richiesta approvata: salvare la singola fiera e scegliere liberamente i mesi
 di anticipo, inclusi5 e12. Sostituisce la precedente proposta di ricerche
 salvate e riepiloghi su molte fiere: nessun nuovo avviso su altre opportunità.
