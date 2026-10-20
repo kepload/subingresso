@@ -748,13 +748,13 @@
       "review": "existing-curated-note"
     },
     "piemonte-casale-monferrato-mostra-nazionale-di-san-giuseppe": {
-      "label": "Iscrizione 250 € + stand 3×3 da 1.700 €",
+      "label": "Iscrizione 250 € + stand, oltre IVA 22%",
       "kind": "partial",
       "period": "2026",
-      "details": "Listino della 77ª edizione: iscrizione obbligatoria 250 €, stand preallestito senza moquette 3×3 m 1.700 € o 4×3 m 2.000 €. Area nuda per macchine agricole/arredo giardino/tempo libero 90 €/m²; autovetture 70 €/m². Angolo 250 €, corrente supplementare 70 €/kW e altri servizi separati. Confermare IVA e preventivo complessivo nel contratto.",
-      "sourceUrl": "https://www.mostrasangiuseppe.it/area-espositori/",
-      "checkedAt": "2026-10-15",
-      "review": "live-source-review"
+      "details": "Contratto 77ª edizione 2026: iscrizione obbligatoria 250 €; stand preallestito senza moquette 3×3 m 1.700 €, 4×3 m 2.000 €. Area nuda generale 90 €/m², autovetture 70 €/m²; angolo 250 €, corrente aggiuntiva 70 €/kW. Importi imponibili, da aggiungere IVA 22%; acconto 50%, servizi ulteriori separati. Non è il prezzo del biglietto visitatori.",
+      "sourceUrl": "https://www.mostrasangiuseppe.it/docs2026/contratto-mostra-di-s-giuseppe2026.pdf",
+      "checkedAt": "2026-10-20",
+      "review": "Alessandria: original-document-review"
     },
     "piemonte-casteldelfino-fiero-de-son-martin": {
       "label": "Partecipazione gratuita",
@@ -1384,6 +1384,60 @@
       "sourceUrl": "https://www.comune.firenze.it/system/files/attachments/avviso-pubblico-fiera-di-oltrarno-2026.pdf",
       "checkedAt": "2026-10-16",
       "period": "2026"
+    },
+    "piemonte-casale-monferrato-monferrato-green-farm": {
+      "label": "Quote per settore e stand + IVA 22%",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Contratti 2026, importi oltre IVA 22%. Generale: iscrizione 100 €, area nuda 25 €/m² o 10 €/m² per macchine agricole/animali, stand 4×4 m 500 €. Vivai: iscrizione 100 € + 6 €/m². Alimentari: iscrizione 100 € + stand 4×4 m 225 € retro sedute o 250 € fronte sedute. Casa sostenibile: iscrizione 700 €, area nuda 50 €/m² o stand 3×3 m 1.500 €. Accessori e servizi aggiuntivi esclusi; preventivo e accettazione necessari.",
+      "sourceUrl": "https://www.monferratogreenfarm.it/documenti2026/contratto-greenfarm-2026.pdf",
+      "checkedAt": "2026-10-20",
+      "review": "Alessandria: original-document-review"
+    },
+    "piemonte-cabella-ligure-mercatino-di-artigianato-antiquariato-hobbistica-e-non-solo": {
+      "label": "1 €/m²; minimo 9 m²",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Avviso comunale 2026: occupazione 1 €/m², superficie minima assegnata 9 m² (3×3), salvo richieste maggiori. Pagamento del canone con PagoPA per perfezionare la domanda. Professionisti: bollo 16 € distinto dal canone; hobbisti con tesserino. Termine 16 luglio ore 12 già trascorso; non una disponibilità attuale.",
+      "sourceUrl": "https://comune.cabellaligure.al.it/novita/modalita-di-partecipazione-al-mercatino-di-artigianato-antiquariato-hobbistica-e-non-solo/",
+      "checkedAt": "2026-10-20",
+      "review": "Alessandria: original-document-review"
+    },
+    "piemonte-odalengo-piccolo-fiera-tufo-tartufo": {
+      "label": "Alimentari 20 €; altri espositori 10 €",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Avviso comunale 2026: contributo 20 € per bancarelle alimentari, 10 € per gli altri espositori; avviso PagoPA dopo protocollazione della domanda. Assegnazione discrezionale, nessun gazebo fornito. Il 30 settembre è termine delle rinunce, non delle nuove domande; contributo non rimborsato. Edizione dell’11 ottobre già conclusa.",
+      "sourceUrl": "https://www.comune.odalengopiccolo.al.it/Dettaglionews?IDNews=402931",
+      "checkedAt": "2026-10-20",
+      "review": "Alessandria: original-document-review"
+    },
+    "piemonte-murisengo-fiera-internazionale-del-tartufo-bianco-trifola-d-or": {
+      "label": "Hobbisti e professionisti: quote distinte",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Lettere invito 2026: professionisti, gazebo proprio bianco 3×3 m, 135 € una domenica o 185 € entrambe; 3×4,5 m 175 €/280 €. Piazza Boario 4,5 m lineari coperti 200 €/300 €; area tartufo 2 m lineari coperti 200 €/300 €. Importi professionisti IVA compresa. Hobbisti: 3×3 m 80 €/130 €, 4,5×3 m 120 €/180 €, importi fatturati; bollo 16 € separato. Domande entro 20 agosto, già scaduto, conferma prima di pagare con PagoPA. Non applicare gli importi di una categoria alle altre.",
+      "sourceUrl": "https://www.fieradeltartufo.net/wp-content/uploads/2026/07/Lettera-invito-agli-espositori-2026.pdf",
+      "checkedAt": "2026-10-20",
+      "review": "Alessandria: original-document-review"
+    },
+    "piemonte-trisobbio-fiera-del-tartufo-tarsobi-tartufo-e-vino": {
+      "label": "Postazione 2×2 m 20 €; 3×3 m 30 €",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Modulo comunale 2026: postazione 2×2 m 20 €, 3×3 m 30 €; importo raddoppiato se si occupano due postazioni. Versamento dopo conferma dell’ammissione entro il 21 ottobre. Termine domande 10 ottobre già passato. Ingresso del pubblico 1 € separato. Nessuna tariffa IVA o disponibilità ulteriore dedotta dal modulo.",
+      "sourceUrl": "https://www.comune.trisobbio.al.it/portals/1979/SiscomArchivio/6/DomandaFieraTartufo2026.pdf",
+      "checkedAt": "2026-10-20",
+      "review": "Alessandria: original-document-review"
+    },
+    "piemonte-ovada-mostra-mercato-dell-antiquariato-e-dell-usato": {
+      "label": "Singola edizione 61 €; abbonamento 244 €",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Regole Pro Loco 2026, sia licenze sia occasionali: singola edizione 50 € + IVA (61 €), abbonamento alle sette edizioni 200 € + IVA (244 €), da versare entro il 6 marzo, già scaduto. Il pagamento non assicura posto senza domanda e accettazione; bollo 16 € per le domande con licenza distinto dalla quota. Esclusi generi artigianali e oggetti nuovi.",
+      "sourceUrl": "https://www.prolocoovada.it/wp-content/uploads/2026/08/LICENZE-MODALITA-2026.pdf",
+      "checkedAt": "2026-10-20",
+      "review": "Alessandria: original-document-review"
     }
   }
 }
