@@ -1,0 +1,92 @@
+/* Shared presentation. Business flows keep their own styles and behavior. */
+:root {
+    --si-ink: #17243b;
+    --si-blue: #2559dc;
+    --si-muted: #5f6d81;
+    --si-line: #e4e8ee;
+    --si-ease: cubic-bezier(.23, 1, .32, 1);
+}
+.site-header { color: var(--si-ink); }
+.site-header > .site-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 80px;
+}
+.site-brand { gap: 10px; }
+.site-brand > div { box-shadow: 0 3px 7px #2559dc14; border-radius: 13px; }
+.site-brand > span { font-size: 23px; letter-spacing: -.055em; }
+.site-nav { gap: 5px; font-size: 13px; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--si-muted); }
+.site-nav a { padding: 10px 15px; border-radius: 9px; color: inherit; transition: color 160ms ease, background-color 160ms ease; }
+.site-nav a[aria-current="page"] { background: #edf2ff; color: #2559dc; }
+.site-header .site-publish { border-radius: 11px; min-height: 42px; padding: 0 18px; transition: background-color 160ms ease, transform 140ms var(--si-ease); }
+.site-header #authNav > * { transition: color 160ms ease, background-color 160ms ease, transform 140ms var(--si-ease); }
+.site-header .site-menu-toggle { display: none; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid #e4e8ee; border-radius: 10px; background: transparent; color: inherit; }
+.site-header :focus-visible, .site-footer :focus-visible, [data-listing-id] :focus-visible {
+    outline: 3px solid #2559dc;
+    outline-offset: 4px;
+}
+.site-footer { background: #142137; }
+.site-footer h4 { color: #a3b2c8; font-size: 11px; letter-spacing: .09em; }
+.site-footer p, .site-footer ul { color: #b0bdd0; }
+.site-footer a { transition: color 160ms ease; }
+.site-footer .border-t { border-color: #304059; }
+.site-footer .border-t p { color: #a3b2c8; font-size: 12px; }
+.site-footer .border-t a { color: #a3b2c8; }
+/* Preserve sale/rental colors and the paid Vetrina treatment. */
+[data-listing-id] { transition-property: box-shadow, border-color; transition-duration: 180ms; transition-timing-function: ease; }
+[data-listing-id] > a:first-child img { transform: none; transition: none; }
+[data-listing-id] button[data-save-id] { transition: color 160ms ease, background-color 160ms ease, transform 140ms var(--si-ease); }
+[data-listing-id] button[data-save-id]:hover { transform: none; }
+[data-listing-id] a { transition-property: color, background-color; transition-duration: 160ms; }
+@media (hover:hover) and (pointer:fine) {
+    .site-nav a:hover { background: #f0f3f8; color: #17243b; }
+    .site-header .site-menu-toggle:hover { background: #f0f3f8; }
+    .site-header .site-publish:hover { background: #2559dc; }
+}
+@media (prefers-reduced-motion:no-preference) {
+    .site-header button:not(:disabled):not(:focus-visible):active, .site-header .site-publish:not(:focus-visible):active,
+    [data-listing-id] button[data-save-id]:not(:disabled):not(:focus-visible):active { transform: scale(.97); }
+}
+@media (max-width:1023px) {
+    .site-header > .site-header-inner { height: 68px; gap: 12px; }
+    .site-header .site-menu-toggle { display: flex; flex-shrink: 0; }
+    .site-header .site-publish { min-height: 38px; width: 38px; padding: 0; }
+    .site-header .site-nav {
+        display: none;
+        position: absolute;
+        inset: 100% 12px auto;
+        padding: 8px;
+        border: 1px solid #e4e8ee;
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 12px 28px #17243b14;
+        color: #5f6d81;
+    }
+    .site-header .site-nav[data-open="true"] { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .site-header .site-nav a { padding: 14px; }
+}
+@media (max-width:639px) {
+    .site-header > .site-header-inner { padding: 0 16px; }
+    .site-brand > span { font-size: 19px; }
+    .site-header #authNav > button { padding: 9px 11px; font-size: 12px; }
+}
+@media (max-width:379px) {
+    .site-header > .site-header-inner { padding: 0 10px; gap: 6px; height: 62px; }
+    .site-brand { gap: 6px; }
+    .site-brand > div { width: 28px; height: 28px; border-radius: 9px; }
+    .site-brand > span { font-size: 15px; }
+    .site-header > div > div:last-child, .site-header #authNav { gap: 5px; }
+    .site-header .site-menu-toggle, .site-header .site-publish, .site-header #authNav > a { width: 31px; height: 34px; min-height: 34px; }
+    .site-header #authNav > button { padding: 8px; font-size: 11px; }
+}
+/* Existing organizer palette remains the authority for its dark header. */
+.organizer-theme .site-nav a[aria-current="page"] { background: #25334a; color: #93c5fd; }
+.organizer-theme .site-header .site-menu-toggle { border-color: #475569; background: #25334a; color: #e2e8f0; }
+.organizer-theme .site-header .site-nav { color: #cbd5e1; }
+@media (max-width:1023px) { .organizer-theme .site-header .site-nav { background: #0f172a; border-color: #334155; } }
+@media (hover:hover) and (pointer:fine) { .organizer-theme .site-nav a:hover { background: #334155; color: #fff; } }
+@media (prefers-reduced-motion:reduce) {
+    .site-header *, .site-footer *, [data-listing-id], [data-listing-id] * { transition-duration: 0ms; }
+}

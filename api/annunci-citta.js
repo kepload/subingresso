@@ -230,6 +230,7 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
     details[open] summary i.fa-chevron-down { transform: rotate(180deg); }
     details summary i.fa-chevron-down { transition: transform .2s; }
   </style>
+    <link rel="stylesheet" href="/css/design-system.css?v=1">
 </head>
 <body>
 
@@ -307,7 +308,7 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
 
   <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
   <script src="/js/page-view-tracker.js?v=4"></script>
-  <script src="/js/ui-components.js?v=12"></script>
+  <script src="/js/ui-components.js?v=13"></script>
 
 </body>
 </html>`;
@@ -453,6 +454,7 @@ module.exports = async function handler(req, res) {
         res.status(404).setHeader('Content-Type', 'text/html; charset=utf-8').send(`<!DOCTYPE html>
 <html lang="it"><head><meta charset="UTF-8"><title>Nessun annuncio a ${esc(cityName)} — Subingresso.it</title>
 <meta name="robots" content="noindex"><link rel="canonical" href="${SITE}/annunci">
+    <link rel="stylesheet" href="/css/design-system.css?v=1">
 </head><body><h1>Nessun annuncio disponibile a ${esc(cityName)}</h1>
 <p><a href="/annunci">Cerca in tutta Italia →</a></p></body></html>`);
         return;
@@ -632,6 +634,7 @@ module.exports = async function handler(req, res) {
     .pulse-dot { animation: pulseDot 1.6s ease-in-out infinite; }
     @keyframes pulseDot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
   </style>
+    <link rel="stylesheet" href="/css/design-system.css?v=1">
 </head>
 <body>
 
@@ -729,7 +732,7 @@ module.exports = async function handler(req, res) {
 
   <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
   <script src="/js/page-view-tracker.js?v=4"></script>
-  <script src="/js/ui-components.js?v=12"></script>
+  <script src="/js/ui-components.js?v=13"></script>
 
 </body>
 </html>`;

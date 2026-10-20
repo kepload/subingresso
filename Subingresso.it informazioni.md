@@ -4,6 +4,19 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Versione grafica Emil,21/10:** richiesta prova grafica e pubblicazione
+  con backup. Home ridisegnata, ricerca centrale, piazza SVG originale,
+  richiami fiere/calcolatore, città e FAQ native. Header/footer coordinati,
+  menu telefono accessibile, feedback brevi e movimento ridotto; palette
+  organizzatore e contatori animati conservati. UI13, design-system/home1;
+  flussi/dati/DB invariati. Guida `data/EMIL_DESIGN.md`, prove
+  `Documents/verifica-emil-design-20261021/`. Backup remoto tag
+  `backup/session-20261021-005709-emil-design` e branch pre-emil validi;
+  ZIP locale `Documents/backup-subingresso/emil-design-20261021/`.
+  Ripristino con revert del commit grafico, preservando modifiche successive.
+  Locale Chromium1440/820/320 e WebKit390 passato, profili364 e tema scuro3
+  passati. Pubblicazione e verifiche online registrate nel resoconto prove.
+
 - **Intestazione organizzatore,21/10:** barra superiore scura come il profilo,
   logo chiaro, menu/icone/Accedi e pulsante annuncio coordinati, anche
   hover/focus. Supera l'header chiaro precedente; CSS selettore5, due richiami

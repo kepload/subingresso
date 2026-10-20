@@ -5,25 +5,26 @@
 
 const UI = {
     header: `
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between lg:grid lg:grid-cols-3">
-        <a href="/" class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+    <div class="site-header-inner max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between lg:grid lg:grid-cols-3">
+        <a href="/" aria-label="Subingresso.it, pagina iniziale" class="site-brand flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <div class="bg-blue-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
                 <i class="fas fa-exchange-alt text-sm sm:text-lg"></i>
             </div>
             <span class="text-lg sm:text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
         </a>
-        <nav class="hidden lg:flex justify-center gap-6 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
-            <a href="/valutatore" class="nav-link-valutatore hover:text-slate-900 transition">Calcolatore</a>
-            <a href="/annunci"   class="nav-link-annunci hover:text-slate-900 transition">Annunci</a>
-            <a href="/fiere"     class="nav-link-fiere hover:text-slate-900 transition">Fiere</a>
-            <a href="/blog"      class="nav-link-blog hover:text-slate-900 transition">Blog</a>
+        <nav id="siteNavigation" aria-label="Navigazione principale" class="site-nav hidden lg:flex justify-center gap-6 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
+            <a href="/valutatore" tabindex="0" class="nav-link-valutatore hover:text-slate-900 transition">Calcolatore</a>
+            <a href="/annunci"   tabindex="0" class="nav-link-annunci hover:text-slate-900 transition">Annunci</a>
+            <a href="/fiere"     tabindex="0" class="nav-link-fiere hover:text-slate-900 transition">Fiere</a>
+            <a href="/blog"      tabindex="0" class="nav-link-blog hover:text-slate-900 transition">Blog</a>
         </nav>
         <div class="flex items-center justify-end gap-2 sm:gap-3">
             <div id="authNav" class="flex items-center gap-2 sm:gap-3"></div>
-            <a href="/vendi" class="bg-slate-900 text-white w-9 h-9 sm:w-10 sm:h-10 lg:w-auto lg:px-7 lg:py-3 rounded-lg sm:rounded-xl lg:rounded-[16px] text-xs sm:text-sm font-bold hover:bg-blue-600 transition-all duration-300 shadow-sm flex items-center justify-center gap-2">
+            <a href="/vendi" aria-label="Inserisci annuncio" class="site-publish bg-slate-900 text-white w-9 h-9 sm:w-10 sm:h-10 lg:w-auto lg:px-7 lg:py-3 rounded-lg sm:rounded-xl lg:rounded-[16px] text-xs sm:text-sm font-bold hover:bg-blue-600 transition-all duration-300 shadow-sm flex items-center justify-center gap-2">
                 <i class="fas fa-plus text-[10px] sm:text-xs"></i>
                 <span class="hidden lg:inline">Inserisci annuncio</span>
             </a>
+            <button type="button" class="site-menu-toggle" aria-label="Apri menu" aria-controls="siteNavigation" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
         </div>
     </div>`,
 
@@ -77,7 +78,7 @@ function initUI() {
     const footerEl = document.querySelector('footer');
 
     if (headerEl) {
-        headerEl.className = "bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 relative";
+        headerEl.className = "site-header bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 relative";
         headerEl.innerHTML = UI.header;
         
         // Attiva link corrente
@@ -93,10 +94,39 @@ function initUI() {
             link?.classList.add('text-blue-600');
             link?.setAttribute('aria-current', 'page');
         }
+        const currentLink = headerEl.querySelector('.text-blue-600.nav-link-annunci, .text-blue-600.nav-link-blog, .text-blue-600.nav-link-valutatore');
+        currentLink?.setAttribute('aria-current', 'page');
+
+        const menuButton = headerEl.querySelector('.site-menu-toggle');
+        const navigation = headerEl.querySelector('#siteNavigation');
+        const setMenuOpen = (open, restoreFocus = false) => {
+            menuButton.setAttribute('aria-expanded', String(open));
+            menuButton.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu');
+            navigation.dataset.open = String(open);
+            menuButton.querySelector('i').className = open ? 'fas fa-times' : 'fas fa-bars';
+            if (restoreFocus) menuButton.focus();
+        };
+        menuButton.addEventListener('click', event => {
+            const open = menuButton.getAttribute('aria-expanded') !== 'true';
+            setMenuOpen(open);
+            if (open && event.detail === 0) navigation.querySelector('a').focus();
+        });
+        headerEl.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+                event.preventDefault();
+                setMenuOpen(false, true);
+            }
+        });
+        navigation.addEventListener('click', event => { if (event.target.closest('a')) setMenuOpen(false); });
+        document.addEventListener('click', event => { if (!headerEl.contains(event.target)) setMenuOpen(false); });
+        document.addEventListener('focusin', event => { if (!headerEl.contains(event.target)) setMenuOpen(false); });
+        window.matchMedia('(min-width: 1024px)').addEventListener('change', event => {
+            setMenuOpen(false, !event.matches && navigation.contains(document.activeElement));
+        });
     }
 
     if (footerEl) {
-        footerEl.className = "bg-slate-900 text-white py-14";
+        footerEl.className = "site-footer bg-slate-900 text-white py-14";
         footerEl.innerHTML = UI.footer;
     }
 }
