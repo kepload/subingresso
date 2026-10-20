@@ -1534,11 +1534,12 @@ Pubblicazione verificata `effb12b` + `35da1fd`, Vercel riuscito `Fs4xUe5bYZu4E8f
 
 ## 🏠 Home Page Sezioni
 
-- Versione grafica Emil 21/10/2026: `data/EMIL_DESIGN.md`; CSS home/design-system1,
-  UI13 e menu mobile accessibile. Backup9ffd1c1, ripristino con revert grafico.
-- Ordine: Hero/ricerca → contatori → Ultimi Annunci (12 card) → Fiere/calcolatore → 3 passi → città → FAQ native → pubblicazione.
+- Ripristino21/10: restyling Emil rifiutato, grafica9ffd1c1 e vecchio slogan
+  senza sottotitolo aggiuntivo. Preferire semplicità, niente copy decorativo.
+  UI14/design-system2: solo feedback pulsanti e barra smartphone74/72px con menu.
+- Ordine originale: Hero/ricerca/contatori → Ultimi Annunci (12 card) → banner mobile calcolatore → fiere → 3 passi → città → FAQ.
 - `loadRecentListings()` `.limit(12)`, `created_at DESC`, fallback `LISTINGS.slice(0,12)`.
-- Calcolatore e fiere ora in due riquadri visibili anche su computer.
+- Ripristinati banner e sezioni originali; dettagli/storico in `data/EMIL_DESIGN.md`.
 
 ## 🧮 Valutatore v2.5 (14 ottobre 2026)
 
@@ -2241,7 +2242,7 @@ Passando il mouse su una scheda dell’elenco, o portando il focus sul suo pulsa
 
 Ampliamento successivo: 1.728 manifestazioni (+892), 1.574 con edizioni e 1.331 con date esatte. Calendari ufficiali Liguria (settembre), Veneto (8 ottobre) e schede Emilia-Romagna (9 ottobre): import aggiuntivo ripetibile in scripts/import-fiere-extra.py, conservando gli altri snapshot. Liguria 632, Veneto 170, Emilia-Romagna 120; tutte le 836 schede precedenti conservate. Sagre incluse quando la fonte menziona attività commerciali/mercati; solo pasti e spettacoli esclusi. Varianti note raggruppate, date ambigue testuali, periodi lunghi liguri con giorni da verificare. Argenta: soli giorni commerciali indicativi, non tutto il programma natalizio; fonte contraddittoria di Castello d’Argile esclusa. Comuni non risolti o senza coordinate esclusi, email organizzative pubbliche, niente date/coordinate inventate. Fonti, conteggi e riproduzione in data/FIERE.md. Cache fiere.js v=8, fiere.json v=4; CSS invariato v=7.
 
-Pagina /fiere: 836 manifestazioni in 20 regioni, di cui 671 con informazioni sulle edizioni e 588 con date esatte pubblicate. Copertura ampliata con calendari ufficiali 2026 di Lombardia, Piemonte e Marche, senza quota fissa per regione. Edizioni ripetute raggruppate per manifestazione/comune; date pubblicate, date da calendario e mesi indicativi distinti. Schede con luogo, organizzatore, orari, settori, posteggi dichiarati (non disponibilità), contatti e procedure dove presenti nelle fonti; scadenze passate segnalate. Date separate per weekend/appuntamenti, nessuna proiezione automatica al prossimo anno. Senza filtro mesi, precedenza alle edizioni future/in corso. Ricerca anche per luogo/settori, mappa SVG con gruppi e URL dei filtri condivisibili. Fonti curate in data/fiere-fonti.json, import ufficiale normalizzato in data/fiere-importate.json tramite scripts/import-fiere.py; build offline python scripts/build-fiere.py. Provenienza, limiti e licenze in data/FIERE.md; test dati/browser scripts/test-fiere.cjs. Cache fiere.js v=7, fiere.json v=3, fiere.css v=7; navigazione condivisa ui-components.js?v=13.
+Pagina /fiere: 836 manifestazioni in 20 regioni, di cui 671 con informazioni sulle edizioni e 588 con date esatte pubblicate. Copertura ampliata con calendari ufficiali 2026 di Lombardia, Piemonte e Marche, senza quota fissa per regione. Edizioni ripetute raggruppate per manifestazione/comune; date pubblicate, date da calendario e mesi indicativi distinti. Schede con luogo, organizzatore, orari, settori, posteggi dichiarati (non disponibilità), contatti e procedure dove presenti nelle fonti; scadenze passate segnalate. Date separate per weekend/appuntamenti, nessuna proiezione automatica al prossimo anno. Senza filtro mesi, precedenza alle edizioni future/in corso. Ricerca anche per luogo/settori, mappa SVG con gruppi e URL dei filtri condivisibili. Fonti curate in data/fiere-fonti.json, import ufficiale normalizzato in data/fiere-importate.json tramite scripts/import-fiere.py; build offline python scripts/build-fiere.py. Provenienza, limiti e licenze in data/FIERE.md; test dati/browser scripts/test-fiere.cjs. Cache fiere.js v=7, fiere.json v=3, fiere.css v=7; navigazione condivisa ui-components.js?v=14.
 
 Interfaccia semplificata: mesi con nomi completi e regione sempre visibili; intervallo mesi, tipologia e ricerca per nome/comune nel menu Altri filtri, con contatore dei filtri secondari attivi anche su URL condivisi. Mappa a destra dei filtri e della lista su desktop, subito dopo i filtri su mobile. Legenda/fonti e informazioni sul calendario apribili. Test Chromium desktop/tablet/mobile e WebKit mobile: filtri, URL, elenco/puntini, schede, tastiera, retry e assenza di overflow.
 

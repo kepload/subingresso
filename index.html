@@ -62,7 +62,13 @@
         * { box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
 
-        /* Contatori animati conservati su richiesta dell'utente. */
+        /* ── misc ── */
+        .search-ring { box-shadow: 0 20px 50px -10px rgba(15,23,42,.10); }
+        .stat-pill { border: 1px solid #f1f5f9; transition: border-color .2s, box-shadow .2s; }
+        .stat-pill:hover { border-color: #dbeafe; box-shadow: 0 6px 18px rgba(37,99,235,.07); }
+        html { scroll-behavior: smooth; }
+
+        /* ── autocomplete ── */
         @keyframes stat-pulse {
             0% { transform: scale(1); color: #0f172a; }
             50% { transform: scale(1.1); color: #2563eb; }
@@ -70,88 +76,212 @@
         }
         .stat-update { animation: stat-pulse 0.6s ease-out; }
     </style>
-    <link rel="stylesheet" href="/css/home.css?v=1">
-    <link rel="stylesheet" href="/css/design-system.css?v=1">
+    <link rel="stylesheet" href="/css/design-system.css?v=2">
 </head>
-<body class="home min-h-screen flex flex-col bg-neutral-100 text-slate-900">
+<body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900">
 
 
 <!-- ══════════════ HEADER (Dinamico) ══════════════ -->
-<a class="home-skip" href="#contenuto">Vai al contenuto</a>
 <header></header>
 
+<!-- ══════════════ HERO ══════════════ -->
+<section class="bg-gradient-to-b from-slate-50 to-white pt-10 pb-16 lg:pt-14 lg:pb-24">
+    <div class="max-w-3xl mx-auto px-6 text-center space-y-8">
 
-<main id="contenuto">
-    <section class="home-hero" aria-labelledby="home-title">
-        <div class="home-shell home-hero-grid">
-            <div>
-                <p class="home-eyebrow"><span aria-hidden="true"></span> Il punto d'incontro degli ambulanti</p>
-                <h1 id="home-title">Il tuo prossimo<br>posteggio,<em>una nuova partenza.</em></h1>
-                <p class="home-intro">Compra, vendi o affitta un posteggio mercatale.<br>In tutta Italia, direttamente tra privati.</p>
-                <form class="home-search" id="searchWrapper" role="search" onsubmit="event.preventDefault(); doSearch()">
-                    <label for="searchInput">Dove cerchi il tuo prossimo posteggio?</label>
-                    <div class="home-search-field">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                        <input id="searchInput" name="q" type="text" autocomplete="off" placeholder="Comune, frazione o regione…">
-                        <button type="submit" class="home-button">Cerca <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-                    </div>
-                    <div id="autocompleteBox"></div>
-                </form>
-                <div class="home-quick"><span>Esplora:</span><a href="/annunci/milano">Milano</a><a href="/annunci/roma">Roma</a><a href="/annunci/torino">Torino</a><a href="/annunci">Tutta Italia</a></div>
-                <p class="home-sell-link">Hai un posteggio da vendere? <a href="/vendi">Pubblica gratis <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+        <div class="space-y-5">
+            <h1 class="text-5xl lg:text-[3.8rem] font-black leading-[1.06] tracking-tighter">
+                La tua licenza<br><em class="text-blue-600 not-italic">venduta in un click.</em>
+            </h1>
+
+        </div>
+
+        <!-- SEARCH (PRIMARY) -->
+        <div class="relative max-w-xl mx-auto pt-4" id="searchWrapper">
+            <div class="search-ring bg-white p-2 rounded-2xl border border-slate-100 flex gap-2">
+                <div class="flex-grow flex items-center px-5 gap-3">
+                    <i class="fas fa-search text-blue-500 text-sm"></i>
+                    <input id="searchInput" aria-label="Cerca comune, frazione o regione" type="text" autocomplete="off"
+                           placeholder="Cerca comune, frazione o regione…"
+                           class="w-full py-3.5 text-slate-800 outline-none font-semibold text-sm placeholder:text-slate-300 placeholder:font-normal bg-transparent">
+                </div>
+                <button onclick="doSearch()"
+                        class="bg-blue-600 text-white px-8 py-3.5 rounded-[14px] font-black hover:bg-blue-700 transition-all active:scale-95 duration-200 uppercase text-xs tracking-widest whitespace-nowrap">
+                    Cerca
+                </button>
             </div>
-            <figure class="market-scene">
-                <div class="market-scene-top"><span><i class="fas fa-circle" aria-hidden="true"></i> Storie di mercato, nuove possibilità</span><i class="fas fa-sun" aria-hidden="true"></i></div>
-                <img src="/og/market-square.svg" width="560" height="340" alt="Illustrazione di una piazza italiana con banchi del mercato" fetchpriority="high">
-                <figcaption><strong>Ogni mercato, una nuova opportunità.</strong><p>Un posto per chi comincia.<br>Una nuova strada per chi vuole cambiare.</p></figcaption>
-            </figure>
+            <!-- dropdown autocomplete -->
+            <div id="autocompleteBox"></div>
         </div>
-    </section>
-    <div class="home-shell home-stats" aria-label="Subingresso in numeri">
-        <p class="home-stats-label"><strong>Il mercato si incontra qui.</strong>Posteggi, persone, nuove possibilità.</p>
-        <div class="home-stat"><div id="statListings">1.420</div><div>Annunci</div></div>
-        <div class="home-stat"><div id="statValue">€ 4.3M</div><div>Valore vendite</div></div>
-        <div class="home-stat"><div id="statUsers">3.812</div><div>Utenti</div></div>
+
+        <!-- STATS -->
+        <div class="grid grid-cols-3 gap-3 md:gap-4 max-w-xl mx-auto px-2">
+            <div class="stat-pill rounded-2xl p-3 md:p-4 text-center">
+                <div id="statListings" class="text-lg md:text-2xl font-black text-slate-900">1.420</div>
+                <div class="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">Annunci</div>
+            </div>
+            <div class="stat-pill rounded-2xl p-3 md:p-4 text-center bg-blue-50/30 border-blue-100/50">
+                <div id="statValue" class="text-base md:text-2xl font-black text-blue-600">€ 4.3M</div>
+                <div class="text-[9px] md:text-[10px] text-blue-400 font-bold uppercase tracking-wider mt-1">Valore vendite</div>
+            </div>
+            <div class="stat-pill rounded-2xl p-3 md:p-4 text-center">
+                <div id="statUsers" class="text-lg md:text-2xl font-black text-slate-900">3.812</div>
+                <div class="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">Utenti</div>
+            </div>
+        </div>
+
     </div>
-    <section class="home-section home-listings" aria-labelledby="recent-title">
-        <div class="home-shell">
-            <div class="home-section-heading"><div><h2 id="recent-title">Un nuovo spazio per la tua attività.</h2><p>Gli ultimi posteggi inseriti, da scoprire e contattare.</p></div><a href="/annunci" class="home-text-link">Vedi tutti <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5" id="previewGrid" aria-label="Ultimi annunci"><div aria-hidden="true" class="bg-white rounded-2xl border border-slate-100 overflow-hidden animate-pulse"><div class="bg-slate-200 h-32"></div><div class="p-5 space-y-3"><div class="h-4 bg-slate-200 rounded-lg w-3/4"></div><div class="h-3 bg-slate-200 rounded-lg w-1/2"></div><div class="h-6 bg-slate-200 rounded-lg w-1/3"></div></div></div><div aria-hidden="true" class="bg-white rounded-2xl border border-slate-100 overflow-hidden animate-pulse"><div class="bg-slate-200 h-32"></div><div class="p-5 space-y-3"><div class="h-4 bg-slate-200 rounded-lg w-3/4"></div><div class="h-3 bg-slate-200 rounded-lg w-1/2"></div><div class="h-6 bg-slate-200 rounded-lg w-1/3"></div></div></div><div aria-hidden="true" class="bg-white rounded-2xl border border-slate-100 overflow-hidden animate-pulse"><div class="bg-slate-200 h-32"></div><div class="p-5 space-y-3"><div class="h-4 bg-slate-200 rounded-lg w-3/4"></div><div class="h-3 bg-slate-200 rounded-lg w-1/2"></div><div class="h-6 bg-slate-200 rounded-lg w-1/3"></div></div></div><div aria-hidden="true" class="bg-white rounded-2xl border border-slate-100 overflow-hidden animate-pulse"><div class="bg-slate-200 h-32"></div><div class="p-5 space-y-3"><div class="h-4 bg-slate-200 rounded-lg w-3/4"></div><div class="h-3 bg-slate-200 rounded-lg w-1/2"></div><div class="h-6 bg-slate-200 rounded-lg w-1/3"></div></div></div><div aria-hidden="true" class="bg-white rounded-2xl border border-slate-100 overflow-hidden animate-pulse"><div class="bg-slate-200 h-32"></div><div class="p-5 space-y-3"><div class="h-4 bg-slate-200 rounded-lg w-3/4"></div><div class="h-3 bg-slate-200 rounded-lg w-1/2"></div><div class="h-6 bg-slate-200 rounded-lg w-1/3"></div></div></div><div aria-hidden="true" class="bg-white rounded-2xl border border-slate-100 overflow-hidden animate-pulse"><div class="bg-slate-200 h-32"></div><div class="p-5 space-y-3"><div class="h-4 bg-slate-200 rounded-lg w-3/4"></div><div class="h-3 bg-slate-200 rounded-lg w-1/2"></div><div class="h-6 bg-slate-200 rounded-lg w-1/3"></div></div></div><div aria-hidden="true" class="bg-white rounded-2xl border border-slate-100 overflow-hidden animate-pulse"><div class="bg-slate-200 h-32"></div><div class="p-5 space-y-3"><div class="h-4 bg-slate-200 rounded-lg w-3/4"></div><div class="h-3 bg-slate-200 rounded-lg w-1/2"></div><div class="h-6 bg-slate-200 rounded-lg w-1/3"></div></div></div><div aria-hidden="true" class="bg-white rounded-2xl border border-slate-100 overflow-hidden animate-pulse"><div class="bg-slate-200 h-32"></div><div class="p-5 space-y-3"><div class="h-4 bg-slate-200 rounded-lg w-3/4"></div><div class="h-3 bg-slate-200 rounded-lg w-1/2"></div><div class="h-6 bg-slate-200 rounded-lg w-1/3"></div></div></div></div>
-            <div class="home-listings-bottom"><a href="/annunci" class="home-button home-button-light">Esplora tutti gli annunci <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+</section>
+
+<!-- ══════════════ ULTIMI ANNUNCI ══════════════ -->
+<section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+                <h2 class="text-3xl font-black tracking-tight">Ultimi annunci</h2>
+                <p class="text-slate-500 font-medium mt-1 text-sm">Posteggi inseriti di recente</p>
+            </div>
+            <a href="/annunci" class="text-blue-600 font-bold text-sm hover:underline flex items-center gap-2">
+                Vedi tutti <i class="fas fa-arrow-right text-xs"></i>
+            </a>
         </div>
-    </section>
-    <div class="home-shell home-tools">
-        <a href="/fiere" class="home-tool" aria-labelledby="fairs-title"><span class="home-tool-icon"><i class="far fa-calendar-alt" aria-hidden="true"></i></span><h2 id="fairs-title">Il prossimo appuntamento<br>con il tuo banco.</h2><p>Esplora le fiere per mese e regione. Date, fonti e informazioni per organizzare la tua stagione.</p><span class="home-text-link">Apri il calendario fiere <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
-        <a href="/valutatore" class="home-tool" aria-labelledby="valuation-title"><span class="home-tool-icon"><i class="fas fa-calculator" aria-hidden="true"></i></span><h2 id="valuation-title">Quanto vale<br>il tuo posteggio?</h2><p>Fatti un'idea prima di vendere o affittare. Una valutazione indicativa, gratuita e a portata di mano.</p><span class="home-text-link">Prova il calcolatore <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5" id="previewGrid"></div>
+        <script>
+        (function(){
+            var g = document.getElementById('previewGrid');
+            if (!g) return;
+            var skel = '<div class="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm animate-pulse">'
+                     +     '<div class="bg-slate-200 h-48"></div>'
+                     +     '<div class="p-5 space-y-3">'
+                     +         '<div class="h-4 bg-slate-200 rounded-lg w-3/4"></div>'
+                     +         '<div class="h-3 bg-slate-200 rounded-lg w-1/2"></div>'
+                     +         '<div class="flex items-center justify-between pt-3">'
+                     +             '<div class="h-3 bg-slate-200 rounded-lg w-1/4"></div>'
+                     +             '<div class="h-6 bg-slate-200 rounded-lg w-1/3"></div>'
+                     +         '</div>'
+                     +     '</div>'
+                     + '</div>';
+            var html = '';
+            for (var i = 0; i < 8; i++) html += skel;
+            g.innerHTML = html;
+        })();
+        </script>
+        <div class="text-center mt-10">
+            <a href="/annunci" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-sm hover:bg-blue-700 transition active:scale-[.98]">
+                Vedi tutti gli annunci <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+        </div>
     </div>
-    <section id="come-funziona" class="home-shell home-steps" aria-labelledby="steps-title">
-        <p class="home-eyebrow" style="margin-bottom:14px">Da un posteggio a una nuova partenza</p><h2 id="steps-title">Tre passi. Un contatto diretto.</h2><p class="home-steps-intro">Pubblica il tuo annuncio e parla con chi è interessato.</p>
-        <div class="home-step-grid">
-            <div class="home-step"><span class="home-step-number">01 /</span><h3>Crea il tuo annuncio</h3><p>Aggiungi foto, metratura e dettagli del tuo posteggio o della tua licenza ambulante.</p></div>
-            <div class="home-step"><span class="home-step-number">02 /</span><h3>Parla con gli interessati</h3><p>Ricevi contatti su WhatsApp, in chat o al telefono. Le domande e le trattative restano tra voi.</p></div>
-            <div class="home-step"><span class="home-step-number">03 /</span><h3>Concludi tra privati</h3><p>Accordati direttamente con l'acquirente. Nessuna provvigione di Subingresso.it sulla vendita.</p></div>
+</section>
+
+<!-- ══════════════ BANNER VALUTATORE (solo mobile) ══════════════ -->
+<div class="md:hidden px-4 pt-4 pb-2">
+    <a href="/valutatore" class="flex items-center gap-4 bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-2xl p-4 shadow-lg shadow-emerald-200 active:scale-[0.98] transition-transform">
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-coins text-white text-xl"></i>
         </div>
-    </section>
-    <section class="home-section home-cities" aria-labelledby="cities-title"><div class="home-shell">
-        <div class="home-section-heading"><div><h2 id="cities-title">Da quale città vuoi ripartire?</h2><p>Esplora posteggi e informazioni nelle principali città italiane.</p></div></div>
-        <div class="home-city-grid"><a href="/annunci/roma" class="home-city"><span><strong>Roma</strong><small>Lazio · RM</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-<a href="/annunci/milano" class="home-city"><span><strong>Milano</strong><small>Lombardia · MI</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-<a href="/annunci/napoli" class="home-city"><span><strong>Napoli</strong><small>Campania · NA</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-<a href="/annunci/torino" class="home-city"><span><strong>Torino</strong><small>Piemonte · TO</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-<a href="/annunci/palermo" class="home-city"><span><strong>Palermo</strong><small>Sicilia · PA</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-<a href="/annunci/genova" class="home-city"><span><strong>Genova</strong><small>Liguria · GE</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-<a href="/annunci/bologna" class="home-city"><span><strong>Bologna</strong><small>Emilia-Romagna · BO</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-<a href="/annunci/firenze" class="home-city"><span><strong>Firenze</strong><small>Toscana · FI</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-<a href="/annunci/bari" class="home-city"><span><strong>Bari</strong><small>Puglia · BA</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-<a href="/annunci/catania" class="home-city"><span><strong>Catania</strong><small>Sicilia · CT</small></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
-    </div></section>
-    <section id="faq" class="home-shell home-section home-faq" aria-labelledby="faq-title">
-        <div><p class="home-eyebrow" style="margin-bottom:14px">Facciamo chiarezza</p><h2 id="faq-title">Un passo nuovo,<br>qualche domanda.</h2><p class="home-faq-intro">Le informazioni da cui partire per comprare o vendere un posteggio mercatale.</p><a href="/blog" class="home-text-link">Leggi le guide <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-        <div><details name="home-faq"><summary>Cos'è una concessione mercatale e come si trasferisce?</summary><div class="home-faq-answer">
+        <div class="flex-1 min-w-0">
+            <p class="text-white font-black text-sm leading-tight">Sai quanto vale il tuo posteggio?</p>
+            <p class="text-emerald-100 text-xs font-semibold mt-0.5">Scoprilo gratis in 2 minuti →</p>
+        </div>
+        <i class="fas fa-chevron-right text-white/60 text-xs flex-shrink-0"></i>
+    </a>
+</div>
+
+<!-- ══════════════ CALENDARIO FIERE ══════════════ -->
+<section class="max-w-7xl mx-auto px-6 py-8" aria-label="Calendario fiere">
+    <a href="/fiere" class="flex items-center gap-4 bg-blue-50 border border-blue-100 rounded-2xl p-6 hover:bg-blue-100 transition">
+        <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marked-alt" aria-hidden="true"></i></div>
+        <div class="flex-1 min-w-0"><h2 class="font-black text-slate-900">Quali fiere ci sono nel tuo periodo?</h2><p class="text-sm text-slate-500 mt-1">Calendari ufficiali, date e informazioni per partecipare. Cerca sulla mappa per mese e regione.</p></div>
+        <i class="fas fa-arrow-right text-blue-600" aria-hidden="true"></i>
+    </a>
+</section>
+<!-- ══════════════ COME FUNZIONA ══════════════ -->
+<section id="come-funziona" class="py-20 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-black tracking-tight">Vendi in 3 semplici passi</h2>
+            <p class="text-slate-500 mt-3 font-medium">Semplice, veloce, senza intermediari.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="/vendi" class="rounded-3xl bg-slate-50 p-8 text-center hover:bg-blue-50 transition-all hover:scale-[1.02] group border border-transparent hover:border-blue-100">
+                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-blue-600 transition-colors">
+                    <i class="fas fa-camera text-blue-600 text-xl group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="text-lg font-black mb-2">1. Crea l'annuncio</h3>
+                <p class="text-slate-500 font-medium leading-relaxed text-sm">Inserisci foto, metratura e dettagli della tua licenza o posteggio. Bastano meno di 2 minuti.</p>
+            </a>
+            <div class="rounded-3xl bg-slate-50 p-8 text-center">
+                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                    <i class="fas fa-comments text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-lg font-black mb-2">2. Ricevi contatti</h3>
+                <p class="text-slate-500 font-medium leading-relaxed text-sm">Gli acquirenti interessati ti contatteranno direttamente su WhatsApp, chat o telefono senza filtri.</p>
+            </div>
+            <div class="rounded-3xl bg-slate-50 p-8 text-center">
+                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                    <i class="fas fa-euro-sign text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-lg font-black mb-2">3. Incassa il 100%</h3>
+                <p class="text-slate-500 font-medium leading-relaxed text-sm">Concludi l'affare privatamente. Subingresso.it non trattiene alcuna provvigione sulla tua vendita.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ SUBINGRESSO NELLE PRINCIPALI CITTÀ ══════════════ -->
+<!-- Internal linking verso le pagine /comune/[slug] info-first per authority transfer SEO -->
+<section class="py-16 bg-slate-50 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-black tracking-tight">Subingresso nelle principali città italiane</h2>
+            <p class="text-slate-500 mt-3 font-medium text-sm">Guide pratiche al subingresso di posteggi e licenze ambulanti per i 10 capoluoghi più grandi.</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+            <a href="/annunci/roma" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Roma</div><div class="text-xs text-slate-500 font-medium">Lazio · RM</div></a>
+            <a href="/annunci/milano" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Milano</div><div class="text-xs text-slate-500 font-medium">Lombardia · MI</div></a>
+            <a href="/annunci/napoli" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Napoli</div><div class="text-xs text-slate-500 font-medium">Campania · NA</div></a>
+            <a href="/annunci/torino" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Torino</div><div class="text-xs text-slate-500 font-medium">Piemonte · TO</div></a>
+            <a href="/annunci/palermo" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Palermo</div><div class="text-xs text-slate-500 font-medium">Sicilia · PA</div></a>
+            <a href="/annunci/genova" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Genova</div><div class="text-xs text-slate-500 font-medium">Liguria · GE</div></a>
+            <a href="/annunci/bologna" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Bologna</div><div class="text-xs text-slate-500 font-medium">Emilia-Romagna · BO</div></a>
+            <a href="/annunci/firenze" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Firenze</div><div class="text-xs text-slate-500 font-medium">Toscana · FI</div></a>
+            <a href="/annunci/bari" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Bari</div><div class="text-xs text-slate-500 font-medium">Puglia · BA</div></a>
+            <a href="/annunci/catania" class="bg-white rounded-2xl border border-slate-100 px-4 py-3 hover:border-blue-300 hover:shadow-md transition-all group"><div class="text-base font-black text-slate-900 group-hover:text-blue-700">Catania</div><div class="text-xs text-slate-500 font-medium">Sicilia · CT</div></a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ FAQ (DOMANDE FREQUENTI) ══════════════ -->
+<section id="faq" class="py-20 bg-white border-t border-slate-100">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-black tracking-tight">Guida e Domande Frequenti</h2>
+            <p class="text-slate-500 mt-3 font-medium text-sm">Tutto quello che devi sapere sulla compravendita di posteggi mercatali.</p>
+        </div>
+
+        <div class="space-y-3">
+            <!-- FAQ 1 -->
+            <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors focus:outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-slate-900 text-sm md:text-base">Cos'è una concessione mercatale e come si trasferisce?</span>
+                    <i class="fas fa-plus text-slate-300 text-xs transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="p-5 pt-0 text-sm text-slate-500 leading-relaxed space-y-3 font-medium border-t border-slate-50/50 mt-4 pt-4">
                         <p>La <strong>concessione mercatale</strong> è l'atto con cui il Comune assegna un'area pubblica a un operatore. Il trasferimento tra privati avviene solitamente tramite un <strong>atto notarile di cessione d'azienda</strong> o di ramo d'azienda.</p>
                         <p>Dopo l'atto, il subentrante deve presentare una pratica di <strong>subingresso al SUAP</strong> (Sportello Unico Attività Produttive) del Comune competente, allegando la copia dell'atto e i requisiti morali e professionali richiesti.</p>
-                    </div></details>
-<details name="home-faq"><summary>Quali documenti servono per vendere un posteggio?</summary><div class="home-faq-answer">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors focus:outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-slate-900 text-sm md:text-base">Quali documenti servono per vendere un posteggio?</span>
+                    <i class="fas fa-plus text-slate-300 text-xs transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="p-5 pt-0 text-sm text-slate-500 leading-relaxed space-y-3 font-medium border-t border-slate-50/50 mt-4 pt-4">
                         <p>Per vendere una licenza ambulante è necessario avere:</p>
                         <ul class="list-disc pl-5 space-y-1">
                             <li>Titolo autorizzativo (concessione) in corso di validità.</li>
@@ -159,16 +289,41 @@
                             <li>Visura Camerale aggiornata.</li>
                             <li>Carta d'Esercizio e Attestazione annuale (per alcune regioni).</li>
                         </ul>
-                    </div></details>
-<details name="home-faq"><summary>Differenza tra cessione definitiva e affitto d'azienda?</summary><div class="home-faq-answer">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors focus:outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-slate-900 text-sm md:text-base">Differenza tra cessione definitiva e affitto d'azienda?</span>
+                    <i class="fas fa-plus text-slate-300 text-xs transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="p-5 pt-0 text-sm text-slate-500 leading-relaxed space-y-3 font-medium border-t border-slate-50/50 mt-4 pt-4">
                         <p>La <strong>cessione</strong> è una vendita definitiva del ramo d'azienda (posteggio + avviamento). L'<strong>affitto d'azienda</strong> (reintegro) permette invece di "cedere" la gestione del posteggio per un periodo limitato. In entrambi i casi, è fondamentale registrare il contratto per evitare sanzioni e garantire la validità del subingresso temporaneo.</p>
-                    </div></details>
-<details name="home-faq"><summary>Cos'è la Direttiva Bolkestein e come influisce sui posteggi?</summary><div class="home-faq-answer">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300">
+                <button class="w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors focus:outline-none" onclick="toggleFaq(this)">
+                    <span class="font-bold text-slate-900 text-sm md:text-base">Cos'è la Direttiva Bolkestein e come influisce sui posteggi?</span>
+                    <i class="fas fa-plus text-slate-300 text-xs transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="p-5 pt-0 text-sm text-slate-500 leading-relaxed space-y-3 font-medium border-t border-slate-50/50 mt-4 pt-4">
                         <p>La Direttiva Bolkestein riguarda la liberalizzazione dei servizi. Per gli ambulanti, ha generato incertezza sui rinnovi automatici. Tuttavia, le attuali normative italiane prevedono procedure di rinnovo delle concessioni esistenti fino al 2032, a patto di essere in regola con i requisiti richiesti dai singoli Comuni.</p>
-                    </div></details></div>
-    </section>
-    <div class="home-shell"><section class="home-final" aria-labelledby="publish-title"><div><h2 id="publish-title">Il tuo posteggio, la loro prossima storia.</h2><p>Fai spazio a una nuova opportunità. Pubblica il tuo annuncio gratis.</p></div><a href="/vendi" class="home-button">Inserisci un annuncio <i class="fas fa-plus" aria-hidden="true"></i></a></section></div>
-</main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-10 text-center">
+            <p class="text-[11px] text-slate-400 font-bold uppercase tracking-widest">Informazioni tecniche per operatori su aree pubbliche</p>
+        </div>
+    </div>
+</section>
 
 <!-- ══════════════ FOOTER (Dinamico) ══════════════ -->
 <footer></footer>
@@ -180,7 +335,7 @@
 <script src="js/data.js?v=21"></script>
 <script src="js/comune-picker.js?v=7"></script>
 <script src="js/location-search.js?v=8"></script>
-<script src="js/ui-components.js?v=13"></script>
+<script src="js/ui-components.js?v=14"></script>
 <script src="js/auth.js?v=22"></script>
 <script>
 // ══════════════ AUTOCOMPLETE ══════════════
@@ -350,6 +505,33 @@ loadRecentListings();
     setTimeout(tick, 3000);
 })();
 
+// ══════════════ FAQ TOGGLE ══════════════
+function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const content = item.querySelector('.faq-content');
+    const icon = btn.querySelector('i');
+    const isOpen = item.classList.contains('faq-open');
+
+    // Chiudi gli altri
+    document.querySelectorAll('.faq-item').forEach(el => {
+        if (el !== item) {
+            el.classList.remove('faq-open');
+            el.querySelector('.faq-content').style.maxHeight = '0';
+            el.querySelector('i').classList.replace('fa-minus', 'fa-plus');
+            el.classList.remove('border-blue-100');
+        }
+    });
+
+    if (!isOpen) {
+        item.classList.add('faq-open', 'border-blue-100');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.classList.replace('fa-plus', 'fa-minus');
+    } else {
+        item.classList.remove('faq-open', 'border-blue-100');
+        content.style.maxHeight = '0';
+        icon.classList.replace('fa-minus', 'fa-plus');
+    }
+}
 </script>
 </body>
 </html>

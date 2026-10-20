@@ -4,6 +4,19 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Grafica precedente ripristinata,21/10:** nuova versione Emil rifiutata
+  dall'utente: preferisce sito semplice e grafica originale. Home9ffd1c1,
+  slogan «La tua licenza venduta in un click», senza sottotitolo aggiuntivo;
+  tolti piazza, nuovi testi/riquadri e modifiche visive a card/header/footer.
+  Conservati feedback brevi dei pulsanti, movimenti discreti e barra/menu
+  smartphone più grandi:74px,72px sotto380, tra versione originale80 e
+  prova68/62. Desktop80; menu accessibile conservato nella barra.
+  UI14/CSS2, niente CSS home o SVG. Dati/flussi/contatori invariati.
+  Preferenza stabile: non riproporre slogan/testi decorativi o restyling
+  estesi senza richiesta. Prove e pubblicazione
+  `Documents/verifica-ripristino-grafica-20261021/`; backup preventivo
+  `backup/session-20261021-012320-ripristino-grafica`/branch pre-ripristino.
+
 - **Versione grafica Emil,21/10:** richiesta prova grafica e pubblicazione
   con backup. Home ridisegnata, ricerca centrale, piazza SVG originale,
   richiami fiere/calcolatore, città e FAQ native. Header/footer coordinati,

@@ -1,5 +1,17 @@
 # Versione grafica Emil — 21 ottobre 2026
 
+**Superata dalla richiesta successiva dell'utente,21/10:** grafica estesa
+rifiutata. Ripristinata la home originale9ffd1c1 e lo slogan «La tua licenza
+venduta in un click», senza sottotitolo aggiuntivo. Rimossi illustrazione,
+copy decorativo, nuova disposizione delle sezioni e nuove scelte visive.
+Conservati soltanto pulsanti reattivi/movimenti discreti e barra smartphone
+con menu: altezza74px,72px sotto380, misura intermedia fra originale80 e
+prova68/62. Header desktop e footer tornano all'aspetto originale.
+CSS condiviso ora2, UI14; CSS home e SVG rimossi. Il testo sotto resta
+storico della prova precedente. Preferenza: sito semplice, niente nuove
+scritte o restyling estesi non richiesti. Prove e stato pubblicazione:
+`Documents/verifica-ripristino-grafica-20261021/`.
+
 Richiesta: provare una versione del sito con la skill emil-design-eng,
 pubblicarla e conservare un ritorno semplice alla versione precedente.
 
