@@ -14,6 +14,11 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   `Documents/verifica-organizzatore-profilo-20261020/`, guida
   `data/ORGANIZZATORI_EVENTI.md`. Nessuna scrittura reale; backup remoto
   valido/noto cleanup. Focus Riprova corretto dopo prima prova fallita.
+  Pubblicato `d1491e6`, Vercel `5aVu1B8WeYzSVZYMs8fhPBZhM1DJ` riuscito:
+  sei file identici, profili364/eventi3 passati anche sugli asset pubblicati;
+  WebKit isolato passato dopo errore fixture. Visuale font/icone3 e accesso
+  anonimo3 passati. API pubblica eventi200/zero record correnti; profilo
+  reale condizionale non provato. Status GitHub usato dopo API Vercel403.
 
 - **Fiere, invito senza lampeggio20/10:** nascosto nel primo HTML e visibile
   solo dopo conferma di sessione assente; accesso lento/errori/script assente

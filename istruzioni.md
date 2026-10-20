@@ -10,6 +10,11 @@ profile-switch JS5/CSS4. Profili364, eventi tre formati e usabilità68
 passati; prove Documents/verifica-organizzatore-profilo-20261020, guida
 data/ORGANIZZATORI_EVENTI.md. Nessuna scrittura reale; backup remoti
 validi, noto errore cleanup. Focus contatti rilevato/corretto nei test.
+Pubblicato d1491e6, Vercel5aVu1B8WeYzSVZYMs8fhPBZhM1DJ riuscito:
+sei asset identici, profili364/eventi3 online passati con backend simulato;
+WebKit isolato dopo errore fixture. Font/icone3 e anonimo3 passati. API
+pubblica eventi200/zero record: profilo reale condizionale non provato.
+Status GitHub dopo API Vercel403; limiti/errori nelle prove e nella guida.
 
 20/10/2026, Pesaro e Urbino: ricerca documentale corrente conclusa con limiti
 espliciti, pubblicata e verificata online. 136 schede/45 chiavi

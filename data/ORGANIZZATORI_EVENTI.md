@@ -22,6 +22,19 @@ Nessuna scrittura/account/evento/email reale di prova. Backup tag/branch
 remoti verificati; noto errore cleanup nello script preventivo. Prima prova
 Riprova ha rilevato il focus sul contatto: corretto e suite intera passata.
 
+Pubblicato `d1491e6`, Vercel riuscito
+`5aVu1B8WeYzSVZYMs8fhPBZhM1DJ`: sei pagine/asset identici al checkout;
+profili364 e percorso eventi tre formati passati sugli asset pubblicati,
+sessioni/backend simulati. Primo giro WebKit con errore access-control sui
+soli endpoint localhost della fixture; ripetizione WebKit isolata91/91
+passata. Font/icone reali e profilo nei tre formati verificati, nessun
+overflow/errore. Accesso anonimo reale tre formati passato. API pubblica
+eventi200 con zero record correnti: controllo profilo pubblico reale
+condizionale non eseguito, nessuna approvazione dedotta o modificata.
+API Vercel403 per token CLI locale invalido; pubblicazione verificata via
+status Vercel del commit GitHub e confronto asset. Riscontri/errori/limiti
+in `risultati.md` nella cartella prove; nessuna scrittura reale di prova.
+
 ## Posti disponibili e sold out — 20 ottobre 2026
 
 Richiesta: verificare i pagamenti e rendere visibili massimo, posti liberi e
