@@ -46,6 +46,14 @@ function getBlogTemplate() {
 }
 
 module.exports = async function handler(req, res) {
+    if (req.query?._verify_ssr === '20261020') {
+        res.setHeader('X-Robots-Tag', 'noindex');
+        try { return await require('../server/blog-rendered')(req, res); }
+        catch (error) {
+            res.setHeader('Cache-Control', 'private, no-store');
+            return res.status(503).json({code: error.code, name: error.name, message: error.message.slice(0, 500)});
+        }
+    }
     const slug = (req.query && req.query.post) ? String(req.query.post).trim() : '';
 
     let post = null;
