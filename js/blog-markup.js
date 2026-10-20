@@ -32,7 +32,7 @@ function _bandoAlertFormHtml(regione) {
       +   '<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-black text-sm px-6 py-3 rounded-xl transition shadow-sm">Registrati e attiva avvisi</button>'
       + '</form>'
       + '<p id="bandoAlertMsg" role="status" class="hidden mt-3 text-xs font-bold"></p>'
-      + '<p class="mt-3 text-[10px] text-slate-400 leading-relaxed">Annulli l\'iscrizione in un click dal link in ogni email. <a href="/privacy" class="underline hover:text-slate-600">Privacy</a>.</p>'
+      + '<p class="mt-3 text-[10px] text-slate-400 leading-relaxed">Puoi disiscriverti dal link in ogni email. <a href="/privacy" class="underline hover:text-slate-600">Privacy</a>.</p>'
       + '</div>';
 }
 

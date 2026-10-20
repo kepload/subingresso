@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {JSDOM}=require('jsdom');
 const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
-const root=path.resolve(__dirname,'..'),handler=require('../api/blog');
+const root=path.resolve(__dirname,'..'),handler=require(process.env.BLOG_RENDER_HANDLER||'../api/blog');
 const longBody=Array.from({length:10},(_,i)=>`<h2>Sezione ${i}</h2><p>${'Informazioni per scegliere la piazza e partecipare con il banco. '.repeat(15)}</p>`).join('')+'<table><tr><th>Prezzo</th></tr><tr><td>20 €</td></tr></table>';
 const posts=[
  {slug:'quanto-costa-un-posteggio-al-mercato',title:'Quanto costa un posteggio?',content:longBody},
