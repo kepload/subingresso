@@ -2147,3 +2147,19 @@ Backup ricerca ricerche-fiere-20261018-110518: 30,055 file/5,671,310,309 byte,
 tutti verificati SHA256, zero errori; manifest/checksum verificati. TO DO
 spuntata dopo verifica: 34 province concluse, 76 da fare; verifiche periodiche
 separate. Nessun contatto a terzi né lavoro su altre province; estranei preservati.
+
+
+Genova (20 ottobre 2026): ricerca corrente chiusa con limiti espliciti,
+274manifestazioni/47comuni, copertura67;211prima,64nuove e un doppione
+unificato, altre4.829schede identiche. Audit data/fiere-genova.json,
+655ricevute/384righe fiere/58mercati,18gruppi esclusioni e15limiti in
+data/FIERE.md;240schede datate,18costi(17precedenti), due storici2025.
+Pubblicato2ce007f, Vercel riuscito: quattro asset identici,274pagine
+HTTP200/H1/canonical; PLAYWRIGHT_MODULE, suite Genova locale/online
+Chromium1440/320 e WebKit390, generale cinque formati, build/settori e
+5.103pagine/2.148sitemap passati. Cache JS89/JSON61.
+Originali/prove Documents/ricerca-fiere-genova-20261019; copia
+ricerche-fiere-20261020-004207:40.214file SHA256, zero errori,
+manifest verificato e supplemento finale. TO DO spuntata dopo verifica:
+40concluse/70rimanenti. Nessuna comunicazione a terzi; modifiche estranee
+preservate. Bandi/calendari futuri separati dalla chiusura corrente.

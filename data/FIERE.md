@@ -1,6 +1,6 @@
 # Calendario fiere — fonti e aggiornamento
 
-## Genova — ricerca documentale conclusa, pubblicazione in verifica, 20 ottobre 2026
+## Genova — ricerca documentale conclusa e verificata online, 20 ottobre 2026
 
 Ripresa dal checkpoint `1ff71ed`, da questo registro e dalle **211 schede**
 già pubblicate: nessun audit provinciale Genova preesistente. Conservati
@@ -13,7 +13,8 @@ Audit: `data/fiere-genova.json`: **655 ricevute** con URL/esito/SHA256,
 **384 righe** fieristiche regionali confrontate, **58 righe** di mercati
 periodici esaminate (31 specialistiche incluse,27 ordinarie escluse),
 18 gruppi di esclusioni, copertura comunale e15 limiti dichiarati.
-**240 schede con almeno una data puntuale**, ricorrenze non espanse;
+**240 schede con edizioni datate**, compresi periodi complessivi;
+**225 con almeno un’edizione non marcata come periodo**. Ricorrenze non espanse;
 Lavagna Carmine e Zoagli Natale mantengono soltanto l’edizione **2025**.
 **18 sintesi costo**, di cui17 conservate dagli overlay precedenti e
 una nuova Campomorone; nessun biglietto visitatore scambiato per quota stand.
@@ -82,8 +83,17 @@ distinta dalle future verifiche periodiche di bandi, tariffe e calendari.
 Riproduzione: `python scripts/build-fiere.py`; test provinciale
 `scripts/test-fiere-genova.cjs` con `PLAYWRIGHT_MODULE` obbligatorio,
 `FIERE_GE_BASE_URL` per il sito pubblico e `FIERE_GE_OUT` per le prove.
-Cache calendario JS89/JSON61. Registrazione pubblicazione e TO DO pendenti
-fino alla verifica del deploy e del catalogo online.
+Cache calendario JS89/JSON61. Pubblicato **`2ce007f`**, Vercel
+[riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/976M76U7UWbNVZj21LjGjtuc5Fmu); quattro asset identici al commit,
+**274 pagine HTTP200 con H1/canonical corretti**, catalogo5.103.
+Suite Genova locale/online Chromium1440/320 e WebKit390 passata:274schede,
+mappa,26dialog e quattro pagine senza JavaScript per formato. Build, settori,
+5.103pagine/2.148sitemap e suite generale cinque formati passati.
+Originali/ricevute SHA256 verificati; copia conservativa
+`ricerche-fiere-20261020-004207`: **40.214 file**, zero errori,
+manifest SHA256 verificato; prove finali in supplemento separato.
+TO DO spuntata soltanto dopo verifica: **40 province concluse,70 da fare**.
+Ricerca corrente chiusa con i limiti sopra; manutenzione futura distinta.
 
 ## Pistoia — ricerca documentale conclusa e verificata online, 19 ottobre 2026
 

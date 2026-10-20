@@ -13773,12 +13773,29 @@
       "newRecords": 64,
       "retiredDuplicates": 1,
       "sourcesAttempted": 655,
-      "withExactDates": 240,
+      "withExactDates": 225,
       "withPricing": 18,
-      "regionalFairRows": 384
+      "regionalFairRows": 384,
+      "withDatedEditions": 240
     },
     "publication": {
-      "status": "pending-verification"
+      "status": "verified",
+      "verifiedAt": "2026-10-20T00:59:56.325475+00:00",
+      "dataCommit": "2ce007fa6d0c2023ef5633e539872a89bbefe07b",
+      "deploymentStatus": "success",
+      "deploymentUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/976M76U7UWbNVZj21LjGjtuc5Fmu",
+      "url": "https://subingresso.it/fiere?provincia=Genova",
+      "catalogEvents": 5103,
+      "provinceEvents": 274,
+      "municipalitiesWithEvents": 47,
+      "identicalOtherProvinceEvents": 4829,
+      "httpPagesVerified": 274,
+      "browserChecks": "Chromium1440/320 e WebKit390, locale e online; catalogo, mappa,26 dettagli e quattro pagine senza JavaScript per formato.",
+      "localChecks": "Build, settori,5.103 pagine/2.148 sitemap, suite generale cinque formati; suite Genova.",
+      "researchBackup": "C:\\Users\\utente\\Documents\\backup-subingresso\\ricerche-fiere-20261020-004207",
+      "backupVerifiedFiles": 40214,
+      "proofArchive": "C:\\Users\\utente\\Documents\\ricerca-fiere-genova-20261019",
+      "futureMaintenanceSeparate": true
     },
     "browserOriginalChecks": "browser-originals.json, rapallo-recovery.json, rapallo-documents.json conservano successi, blocchi iniziali, download e assenza di allegati; OPI e Maddalena letti anche nel browser."
   },
