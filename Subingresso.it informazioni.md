@@ -2,7 +2,17 @@
 
 Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Desktop\Ardit\subingresso.it`. Ricognizione tecnica: 6 ottobre 2026; unione documenti: 16 ottobre; snellimento: 17 ottobre. Le registrazioni mantengono le proprie date: questa revisione non verifica nuovamente sito o servizi live.
 
-## Stato recente e decisioni correnti — 20 ottobre 2026
+## Stato recente e decisioni correnti — 21 ottobre 2026
+
+- **Logo e menu telefono,21/10:** logo PNG originale fornito dall'utente
+  nell'intestazione, proporzioni responsive/colori conservati; SVG per
+  inquadrare la scritta senza margini vuoti. Tolti pulsante, tendina e
+  logica mobile Blog/Calcolatore, desktop conservato. Intestazioni
+  autonome allineate. Preferenza: nessun menu mobile sostitutivo.
+  UI15/CSS3; prove/pubblicazione Documents/verifica-logo-menu-mobile-20261021/.
+  Backup tag/branch pre-logo-menu-mobile verificati, noto errore cleanup
+  preventivo. Locale Chromium1440/320 e WebKit390 e profili364 passati;
+  pubblicazione in corso. Nessuna scrittura reale di prova.
 
 - **Grafica precedente ripristinata,21/10:** nuova versione Emil rifiutata
   dall'utente: preferisce sito semplice e grafica originale. Home9ffd1c1,

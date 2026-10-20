@@ -7,10 +7,7 @@ const UI = {
     header: `
     <div class="site-header-inner max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between lg:grid lg:grid-cols-3">
         <a href="/" aria-label="Subingresso.it, pagina iniziale" class="site-brand flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            <div class="bg-blue-600 text-white w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-blue-100">
-                <i class="fas fa-exchange-alt text-sm sm:text-lg"></i>
-            </div>
-            <span class="text-lg sm:text-2xl font-extrabold tracking-tight">Subingresso<span class="text-blue-600">.it</span></span>
+            <svg class="site-logo" width="244" height="45" viewBox="0 206 2172 402" aria-hidden="true"><image href="/logo-subingresso.png" width="2172" height="724" /></svg>
         </a>
         <nav id="siteNavigation" aria-label="Navigazione principale" class="site-nav hidden lg:flex justify-center gap-6 text-xs font-black text-slate-400 uppercase tracking-[.15em]">
             <a href="/valutatore" tabindex="0" class="nav-link-valutatore hover:text-slate-900 transition">Calcolatore</a>
@@ -24,7 +21,6 @@ const UI = {
                 <i class="fas fa-plus text-[10px] sm:text-xs"></i>
                 <span class="hidden lg:inline">Inserisci annuncio</span>
             </a>
-            <button type="button" class="site-menu-toggle" aria-label="Apri menu" aria-controls="siteNavigation" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
         </div>
     </div>`,
 
@@ -97,32 +93,6 @@ function initUI() {
         const currentLink = headerEl.querySelector('.text-blue-600.nav-link-annunci, .text-blue-600.nav-link-blog, .text-blue-600.nav-link-valutatore');
         currentLink?.setAttribute('aria-current', 'page');
 
-        const menuButton = headerEl.querySelector('.site-menu-toggle');
-        const navigation = headerEl.querySelector('#siteNavigation');
-        const setMenuOpen = (open, restoreFocus = false) => {
-            menuButton.setAttribute('aria-expanded', String(open));
-            menuButton.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu');
-            navigation.dataset.open = String(open);
-            menuButton.querySelector('i').className = open ? 'fas fa-times' : 'fas fa-bars';
-            if (restoreFocus) menuButton.focus();
-        };
-        menuButton.addEventListener('click', event => {
-            const open = menuButton.getAttribute('aria-expanded') !== 'true';
-            setMenuOpen(open);
-            if (open && event.detail === 0) navigation.querySelector('a').focus();
-        });
-        headerEl.addEventListener('keydown', event => {
-            if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
-                event.preventDefault();
-                setMenuOpen(false, true);
-            }
-        });
-        navigation.addEventListener('click', event => { if (event.target.closest('a')) setMenuOpen(false); });
-        document.addEventListener('click', event => { if (!headerEl.contains(event.target)) setMenuOpen(false); });
-        document.addEventListener('focusin', event => { if (!headerEl.contains(event.target)) setMenuOpen(false); });
-        window.matchMedia('(min-width: 1024px)').addEventListener('change', event => {
-            setMenuOpen(false, !event.matches && navigation.contains(document.activeElement));
-        });
     }
 
     if (footerEl) {
