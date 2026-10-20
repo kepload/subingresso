@@ -29,7 +29,10 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Senza mesi resta il percorso precedente. Cache JS94, catalogo5.292 invariato.
   Articoli/affinità/ricerca quattro formati, calendario320 e periodo tre casi
   passati; prove `Documents/verifica-fiere-filtro-date-20261020/`.
-  Pubblicazione in verifica; backup remoto valido, noto errore cleanup.
+  Pubblicato `6ddbb73`, Vercel riuscito `44FfaH9zJZdxz8tgutXsgwPhpX2K`:
+  HTML/JS identici, periodo sugli asset pubblicati e tre prove anonime/API
+  reali passati Chromium1440/320 e WebKit390. Backup remoto valido, noto
+  errore cleanup; conservato il registro Asti85bb41a nel rebase.
 
 - **Posti fiere,20/10:** massimo per tipologia e totale fiera; gestione
   assegnati fuori dal sito senza riapprovazione. Liberi sottraggono esterni,

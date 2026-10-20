@@ -28,7 +28,13 @@ Chromium1440/320 e WebKit390. Corretto MIME `.mjs` nei server delle tre suite;
 primi fallimenti limitati al runner/aspettative obsolete e risolti. Artefatti
 `Documents/verifica-fiere-filtro-date-20261020/`, checkout isolato
 `Documents/subingresso-fiere-filtro-date-20261020`. Backup remoto verificato,
-noto errore cleanup PowerShell. Pubblicazione e verifica online in corso.
+noto errore cleanup PowerShell. Pubblicato `6ddbb73`, Vercel
+[riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/44FfaH9zJZdxz8tgutXsgwPhpX2K).
+HTML/JS pubblicati identici al codice verificato; prova periodo ripetuta sugli
+asset pubblicati Chromium1440/320 e WebKit390 e tre prove anonime/API reali
+passate negli stessi casi. Brescia/ottobre parte dal3ottobre, prima data
+documentata disponibile, con schede non classificate visibili e «Da valutare».
+Nessuna scrittura reale. Registro Asti85bb41a preservato nel rebase.
 
 ## Asti — ricerca documentale conclusa e verificata online (20 ottobre 2026)
 
