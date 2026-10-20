@@ -112,19 +112,12 @@
             if (current !== request || userId !== ownerId || !isOpen()) return;
             if (error || !data || !Array.isArray(data.events)) throw Error('Profilo non disponibile');
             const profile = data.profile;
-            const icon = '<div class="profile-organizer-icon" aria-hidden="true"><i class="fas fa-calendar-alt"></i></div>';
             if (!profile) {
-                content.innerHTML = icon + '<h3>Organizzi fiere o mercatini?</h3><p>Usa lo stesso account: aggiungi i dati dell’organizzazione e i contatti per chi vuole partecipare.</p><p>Il profilo sarà controllato dall’amministratore. Dopo l’approvazione potrai creare i tuoi eventi.</p><a class="profile-organizer-primary" href="/organizzatore">Crea profilo organizzatore <span aria-hidden="true">→</span></a>';
+                content.innerHTML = EventOrganizers.profileHTML(null) + '<a class="profile-organizer-primary" href="/organizzatore">Crea profilo organizzatore <span aria-hidden="true">→</span></a>';
                 return;
             }
-            const statuses = {
-                approved: ['Approvato', 'Il tuo profilo è approvato. Puoi creare e gestire i tuoi eventi.'],
-                pending: ['In revisione', 'Il tuo profilo è stato inviato. Troverai l’esito qui e nell’area organizzatore.'],
-                rejected: ['Da correggere', 'Controlla le indicazioni dell’amministratore, aggiorna i dati e invia di nuovo il profilo.'],
-                suspended: ['Sospeso', 'Il profilo e gli eventi non sono pubblici. Consulta le indicazioni dell’amministratore.']
-            };
-            const [label, description] = statuses[profile.status] || ['Da verificare', 'Apri l’area organizzatore per controllare il tuo profilo.'];
-            content.innerHTML = icon + '<h3>' + esc(profile.organization_name) + '</h3><span class="profile-organizer-status" data-status="' + esc(profile.status) + '">' + label + '</span><p>' + description + '</p>' + (profile.review_note ? '<p class="profile-organizer-note">' + esc(profile.review_note) + '</p>' : '') + '<a class="profile-organizer-primary" href="/organizzatore">' + (profile.status === 'rejected' ? 'Correggi il profilo' : 'Gestisci profilo ed eventi') + ' <span aria-hidden="true">→</span></a>' + (profile.status === 'approved' ? '<a class="profile-organizer-secondary" href="/profilo?id=' + encodeURIComponent(ownerId) + '">Vedi il profilo pubblico</a>' : '');
+            const events = data.events.filter(event => event.status !== 'cancelled');
+            content.innerHTML = EventOrganizers.profileHTML(profile) + (profile.review_note ? '<p class="profile-organizer-note">' + esc(profile.review_note) + '</p>' : '') + '<a class="profile-organizer-primary" href="/organizzatore?modifica=1">Modifica profilo</a>' + '<section class="organizer-profile-events" aria-label="I tuoi eventi"><div class="organizer-profile-events-heading"><h4>Eventi <span>' + events.length + '</span></h4><a href="/organizzatore#organizerEvents">Gestisci eventi</a></div>' + (events.length ? events.slice(0, 3).map(event => '<article><h5>' + (event.status === 'published' && profile.status === 'approved' ? '<a href="/evento?id=' + encodeURIComponent(event.id) + '">' + esc(event.title) + '</a>' : esc(event.title)) + '</h5><p>' + esc(EventData.dates(event)) + (event.city ? ' · ' + esc(event.city) : '') + '</p>' + EventData.badge(event.status) + '</article>').join('') : '<p>Nessun evento.</p>') + '</section>';
         } catch (_) {
             if (current !== request || userId !== ownerId || !isOpen()) return;
             content.innerHTML = '<h3>Profilo non disponibile</h3><p>Non riesco a caricare le informazioni. Riprova tra poco.</p><button type="button" class="profile-organizer-primary" data-profile-retry>Riprova</button><a class="profile-organizer-secondary" href="/organizzatore">Apri l’area organizzatore</a>';
@@ -132,7 +125,7 @@
             clearTimeout(timer);
             if (current === request) {
                 content.setAttribute('aria-busy', 'false');
-                if (restoreFocus) content.querySelector('button,a')?.focus();
+                if (restoreFocus) content.querySelector('[data-profile-retry],.profile-organizer-primary')?.focus();
             }
         }
     }

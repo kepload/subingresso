@@ -4,6 +4,17 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Profilo organizzatore,20/10:** area e finestra profilo con nome,
+  descrizione, contatti pubblici ed eventi subito visibili. Rimossi pagina
+  intermedia/«Vedi il profilo pubblico», guida e spiegazioni ripetitive;
+  campi da Modifica profilo, note/revisione nel contesto. Preferenza stabile:
+  normale pagina profilo, testi essenziali. Contatti privati esclusi dalla
+  presentazione, diritti/backend invariati. Cache organizzatori9/switchJS5-
+  CSS4; profili364, percorso eventi3 e usabilità68 passati. Prove
+  `Documents/verifica-organizzatore-profilo-20261020/`, guida
+  `data/ORGANIZZATORI_EVENTI.md`. Nessuna scrittura reale; backup remoto
+  valido/noto cleanup. Focus Riprova corretto dopo prima prova fallita.
+
 - **Fiere, invito senza lampeggio20/10:** nascosto nel primo HTML e visibile
   solo dopo conferma di sessione assente; accesso lento/errori/script assente
   e risposta iniziale tardiva protetti. Testo semplice «Trova le fiere per

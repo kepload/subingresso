@@ -1,5 +1,27 @@
 # Organizzatori, eventi e prenotazioni future — 18 ottobre 2026
 
+## Profilo diretto e testi essenziali — 20 ottobre 2026
+
+Preferenza corrente: l’area organizzatore è il profilo stesso, senza pagina
+intermedia o «Vedi il profilo pubblico». Nome, iniziali, tipo, descrizione e
+contatti pubblici subito visibili; eventi sotto, modifica nei campi apribili.
+Nella finestra del profilo stessa presentazione, fino a tre eventi e comandi
+Modifica profilo/Gestisci eventi. Niente guida a passaggi, spiegazioni di stato
+ripetute o testi promozionali. Note di revisione e avviso sulla nuova
+approvazione restano nel contesto utile; referente/telefono privato solo
+nei campi proprietario, mai nella presentazione.
+
+`EventOrganizers.profileHTML` condiviso fra area e finestra; link
+`/organizzatore?modifica=1` apre i campi, porta il focus al nome e consuma
+il parametro. Riprova ripristina il focus sull’azione principale, non sui
+nuovi contatti. Controlli accesso, revisioni, bozze e backend conservati.
+Cache organizzatori9, profile-switch JS5/CSS4. Suite profili364 controlli
+su quattro formati/browser, percorso eventi Chromium1440/320 e WebKit390,
+usabilità68 passati. Prove `Documents/verifica-organizzatore-profilo-20261020/`.
+Nessuna scrittura/account/evento/email reale di prova. Backup tag/branch
+remoti verificati; noto errore cleanup nello script preventivo. Prima prova
+Riprova ha rilevato il focus sul contatto: corretto e suite intera passata.
+
 ## Posti disponibili e sold out — 20 ottobre 2026
 
 Richiesta: verificare i pagamenti e rendere visibili massimo, posti liberi e

@@ -20,7 +20,7 @@ const _supabase={auth:{getUser:async()=>({data:{user:qaUser}}),onAuthStateChange
 rpc(name,args){const promise=fetch('/qa/rpc',{method:'POST',headers:{'X-QA-User':qaUser?.id||''},body:JSON.stringify({name,args})}).then(r=>r.json());promise.abortSignal=()=>promise;return promise;},
 from:table=>({filters:[],upsert(value){qaWrites.push({table,value});return this;},select(columns,options){this.columns=columns;this.options=options;return this;},eq(key,value){this.filters.push([key,value]);return this;},or(filter){this.orFilter=filter;return this;},abortSignal(signal){if(table==='profiles')return this;return fetch('/qa/listing-count',{signal,method:'POST',body:JSON.stringify({table,columns:this.columns,options:this.options,filters:this.filters,or:this.orFilter})}).then(r=>r.json());},single:async()=>{await new Promise(resolve=>setTimeout(resolve,qaSaveDelay));return qaFailSave?{error:{message:'offline'}}:{data:{id:qaUser.id,is_admin:qaIsAdmin}};}})};
 window.updateAuthNav=()=>{};window.signOut=()=>{};
-</script><script src="/js/data.js?v=21"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/profile-switch.js?v=4"></script><script>
+</script><script src="/js/data.js?v=21"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/organizzatori.js?v=9"></script><script src="/js/profile-switch.js?v=5"></script><script>
 ${modalFunctions}
 ${saveFunction}
 loadingState.classList.add('hidden');dashContent.classList.remove('hidden');
@@ -30,7 +30,7 @@ ${returnToProfile}
 </script></body>`);
 }
 const state = () => ({profile:null,events:[],listings:[],calls:[],failRPC:false,calendarFail:false,publicFail:false,failCount:false});
-const profile = status => ({user_id:H.owner,organization_name:'Mercatini QA',status,review_note:'',private_phone:'PRIVATO NON MOSTRARE',contact_name:'REFERENTE PRIVATO NON MOSTRARE',revision:1});
+const profile = status => ({user_id:H.owner,organization_name:'Mercatini QA',organization_type:'associazione',description:'Organizziamo fiere di artigianato a Milano.',public_email:'eventi@example.invalid',public_phone:'+39 333 7654321',website:'https://example.invalid/eventi',status,review_note:'',private_phone:'PRIVATO NON MOSTRARE',contact_name:'REFERENTE PRIVATO NON MOSTRARE',revision:1});
 const waitFor = async predicate => { for(let i=0;i<150;i++){if(predicate())return;await new Promise(resolve=>setTimeout(resolve,20));}throw Error('Risposta simulata mancante'); };
 async function run(engine,name,width,height,base) {
     H.setDB(state());
@@ -123,10 +123,30 @@ async function run(engine,name,width,height,base) {
             H.getDB().profile={...profile(status),review_note:status==='rejected'?'<img src=x onerror="window.qaXSS=1"> Controlla i dati':''};
             await organizer.click();await ready();
             check(await page.locator('.profile-organizer-status').getAttribute('data-status')===status,'Stato organizzatore '+status);
-            check(await page.locator('.profile-organizer-secondary[href^="/profilo?id="]').isVisible()===(status==='approved'),'Profilo pubblico solo se approvato: '+status);
+            check(await page.locator('#profileOrganizerContent a[href^="/profilo?id="]').count()===0,'Profilo visibile subito senza pagina intermedia: '+status);
+            check((await page.locator('.organizer-profile-bio').innerText())===profile(status).description && await page.getByRole('link',{name:'eventi@example.invalid',exact:true}).isVisible(),'Descrizione e contatti reali nel profilo: '+status);
+            check(await page.getByRole('link',{name:'Modifica profilo',exact:true}).isVisible() && await page.locator('.organizer-profile-events').isVisible(),'Modifica ed eventi nel profilo: '+status);
             check(!/PRIVATO NON MOSTRARE/.test(await page.locator('#profileOrganizerContent').innerText()) && !await page.evaluate(()=>window.qaXSS),'Contatti privati esclusi e testo sicuro: '+status);
             if(artifacts && ['approved','pending'].includes(status))await page.locator('.profile-dialog').screenshot({path:path.join(artifacts,`${name}-${width}-${status}.png`)});
         }
+        const previousEvents=H.getDB().events;
+        H.getDB().profile=profile('approved');
+        H.getDB().events=[{id:'44444444-4444-4444-8444-444444444444',organizer_id:H.owner,title:'Mercatino di artigianato QA',status:'published',city:'Milano',start_date:'2027-11-06',end_date:'2027-11-07',places:[]}];
+        await organizer.click();await ready();
+        check(await page.getByRole('link',{name:'Mercatino di artigianato QA',exact:true}).isVisible(),'Eventi visibili direttamente nella finestra del profilo');
+        if(artifacts)await page.locator('.profile-dialog').screenshot({path:path.join(artifacts,`${name}-${width}-profilo-eventi.png`)});
+        const ownerPage=await context.newPage();ownerPage.on('pageerror',error=>errors.push(error.message));
+        await ownerPage.goto(base+'/organizzatore');await ownerPage.locator('#organizerWorkspace').waitFor({state:'visible'});
+        check(await ownerPage.getByRole('heading',{level:1,name:'Mercatini QA',exact:true}).isVisible() && await ownerPage.locator('.organizer-profile-bio').innerText()===profile('approved').description,'Area organizzatore apre subito il profilo completo');
+        check(await ownerPage.getByRole('link',{name:'eventi@example.invalid',exact:true}).isVisible() && await ownerPage.locator('#organizerEvents').innerText().then(text=>text.includes('Mercatino di artigianato QA')),'Contatti ed eventi visibili senza passaggi intermedi');
+        check(!await ownerPage.locator('#organizerProfileDetails').evaluate(el=>el.open) && !await ownerPage.locator('#organizerReview').isVisible() && await ownerPage.locator('.ev-steps,#organizerPublicLink').count()===0,'Profilo approvato senza modulo aperto, tutorial o rinvio al profilo pubblico');
+        check(!/PRIVATO NON MOSTRARE/.test(await ownerPage.locator('#organizerProfileView').innerText()) && await ownerPage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Profilo visibile senza contatti privati o scorrimento orizzontale');
+        if(artifacts)await ownerPage.screenshot({path:path.join(artifacts,`${name}-${width}-area-profilo.png`),fullPage:true});
+        await ownerPage.goto(base+await page.locator('.profile-organizer-primary').getAttribute('href'));await ownerPage.locator('#organizerWorkspace').waitFor({state:'visible'});
+        check(await ownerPage.locator('#organizerProfileDetails').evaluate(el=>el.open) && await ownerPage.locator('[name=organization_name]').evaluate(el=>el===document.activeElement) && !new URL(ownerPage.url()).searchParams.has('modifica'),'Modifica profilo apre i campi e porta il focus al nome');
+        H.getDB().profile=profile('pending');await ownerPage.reload();await ownerPage.locator('#organizerWorkspace').waitFor({state:'visible'});
+        check(await ownerPage.locator('.organizer-profile-bio').isVisible() && !await ownerPage.locator('#newOrganizerEvent').isVisible() && await ownerPage.locator('#organizerStatus').innerText()==='In revisione','Il proprietario vede il profilo in revisione senza nuovi diritti di pubblicazione');
+        await ownerPage.close();H.getDB().profile=profile('suspended');H.getDB().events=previousEvents;
         H.getDB().failRPC=true;await organizer.click();await ready();
         check(await page.getByRole('button',{name:'Riprova',exact:true}).isVisible(),'Errore di rete con possibilità di riprovare');
         await page.getByRole('button',{name:'Riprova',exact:true}).focus();await page.keyboard.press('Enter');await ready();

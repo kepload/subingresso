@@ -1,5 +1,16 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+20/10/2026, preferenza profilo organizzatore: area personale e finestra
+mostrano direttamente nome, descrizione, contatti pubblici ed eventi;
+niente rinvio al profilo pubblico o tutorial. Campi da Modifica profilo,
+note/avviso nuova approvazione nel contesto. Condivisione profileHTML,
+link ?modifica=1 con apertura/focus/consumo; Riprova torna all’azione
+principale. Privacy, bozze, accesso e backend invariati. Organizzatori9,
+profile-switch JS5/CSS4. Profili364, eventi tre formati e usabilità68
+passati; prove Documents/verifica-organizzatore-profilo-20261020, guida
+data/ORGANIZZATORI_EVENTI.md. Nessuna scrittura reale; backup remoti
+validi, noto errore cleanup. Focus contatti rilevato/corretto nei test.
+
 20/10/2026, Pesaro e Urbino: ricerca documentale corrente conclusa con limiti
 espliciti, pubblicata e verificata online. 136 schede/45 chiavi
 comunali, ricognizione 50 Comuni attuali più ex Monteciccardo; 119 righe

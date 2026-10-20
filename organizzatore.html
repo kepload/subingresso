@@ -1,28 +1,26 @@
 <!doctype html>
-<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Organizza fiere e mercatini — Subingresso.it</title><meta name="description" content="Crea il tuo profilo organizzatore e gestisci fiere, mercatini ed eventi su Subingresso.it. Pubblicazione dopo approvazione admin."><meta name="robots" content="noindex,follow"><link rel="icon" href="/favicon-v2.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/tailwind.css?v=4"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/eventi.css?v=5"><link rel="stylesheet" href="/css/comune-picker.css?v=1"><link rel="stylesheet" href="/css/profile-switch.css?v=3"></head>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Profilo organizzatore — Subingresso.it</title><meta name="description" content="Il tuo profilo organizzatore, i contatti e gli eventi su Subingresso.it."><meta name="robots" content="noindex,follow"><link rel="icon" href="/favicon-v2.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/tailwind.css?v=4"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/eventi.css?v=5"><link rel="stylesheet" href="/css/comune-picker.css?v=1"><link rel="stylesheet" href="/css/profile-switch.css?v=4"></head>
 <body class="organizer-theme min-h-screen flex flex-col bg-neutral-100 text-slate-900"><header></header>
 <main class="ev ev-main" id="organizerApp">
  <nav class="profile-switch profile-switch-page" aria-label="Tipo di profilo" data-selected="organizer"><a href="/dashboard?area=normale"><i class="fas fa-user" aria-hidden="true"></i> Ambulante</a><a href="/organizzatore" aria-current="page"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Organizzatore</a></nav>
- <div class="ev-intro"><div><p class="ev-eyebrow">Area organizzatore</p><h1>Le tue fiere. I tuoi mercatini.</h1><p class="ev-muted">Crea e gestisci gli eventi con il tuo account Subingresso. Profilo ed eventi diventano pubblici dopo l’approvazione dell’amministratore.</p></div></div>
- <ol class="ev-steps" aria-label="Come pubblicare un evento"><li id="stepProfile"><span>1</span> Profilo approvato</li><li id="stepEvent"><span>2</span> Evento e posteggi</li><li id="stepPublic"><span>3</span> Revisione e pubblicazione</li></ol>
  <p id="organizerMessage" class="ev-notice" role="status" aria-live="polite" hidden></p>
  <div id="organizerLoading" class="ev-panel" role="status">Caricamento della tua area…</div>
- <section id="organizerLogin" class="ev-panel" hidden><h2>Organizzi fiere, mercatini o altri eventi?</h2><p>Accedi con il tuo account o registrati gratis, poi richiedi il profilo organizzatore.</p><div class="ev-actions"><button type="button" class="ev-primary" id="organizerSignIn">Accedi / Registrati</button></div></section>
+ <section id="organizerLogin" class="ev-panel" hidden><h1>Profilo organizzatore</h1><p>Accedi per continuare.</p><div class="ev-actions"><button type="button" class="ev-primary" id="organizerSignIn">Accedi / Registrati</button></div></section>
  <div id="organizerWorkspace" hidden>
-  <section class="ev-panel"><div class="ev-card-head"><h2>Il tuo profilo organizzatore</h2><div id="organizerStatus"></div></div><p id="organizerReview" class="ev-notice" hidden></p><p id="organizerProfileMessage" class="ev-notice" role="status" aria-live="polite" hidden></p>
+  <section class="ev-panel organizer-profile-panel" aria-label="Profilo organizzatore"><div id="organizerProfileView"></div><p id="organizerReview" class="ev-notice" hidden></p><p id="organizerProfileMessage" class="ev-notice" role="status" aria-live="polite" hidden></p>
   <details id="organizerProfileDetails"><summary id="organizerProfileSummary">Compila il profilo</summary>
-   <form id="organizerProfileForm" novalidate><p class="ev-muted">I campi facoltativi sono indicati.</p><div class="ev-grid">
+   <form id="organizerProfileForm" novalidate><div class="ev-grid">
     <label>Nome dell’organizzazione<input name="organization_name" required minlength="3" maxlength="160" autocomplete="organization"></label>
     <label>Tipo di organizzazione<select name="organization_type" required><option value="impresa">Impresa</option><option value="associazione">Associazione / Pro Loco</option><option value="ente">Comune / Ente</option><option value="altro">Altro organizzatore</option></select></label>
-    <label class="ev-wide">Presentazione pubblica<textarea name="description" maxlength="4000" placeholder="Racconta quali eventi organizzi e in quale zona lavori."></textarea></label>
+    <label class="ev-wide">Descrizione<textarea name="description" maxlength="4000"></textarea></label>
     <label>Sito web pubblico (facoltativo)<input name="website" type="url" placeholder="https://…" maxlength="1000" autocomplete="url"></label>
     <label>Referente per la revisione<input name="contact_name" required minlength="3" maxlength="160" autocomplete="name"></label>
     <label>Telefono privato del referente<input name="private_phone" required type="tel" minlength="7" maxlength="25" autocomplete="tel" placeholder="Es. +39 333 1234567"></label>
-    <p class="ev-muted">Il referente e il telefono privato sono visibili solo a te e all’amministratore.</p>
+    <p class="ev-muted">Referente e telefono privato: visibili solo a te e all’amministratore.</p>
     <label>Email pubblica (facoltativa)<input name="public_email" type="email" maxlength="254" placeholder="Visibile ai visitatori" autocomplete="email"></label>
     <label>Telefono pubblico (facoltativo)<input name="public_phone" type="tel" maxlength="25" placeholder="Visibile ai visitatori" autocomplete="tel"></label>
-   </div><p class="ev-muted">Indica almeno un contatto pubblico o il sito web. Email e telefono pubblici saranno mostrati nel profilo e negli eventi. Se modifichi un profilo già approvato, profilo ed eventi resteranno nascosti fino alla nuova approvazione.</p><div class="ev-actions"><button type="submit" class="ev-primary">Invia profilo in revisione</button></div></form>
-  </details><a id="organizerPublicLink" class="ev-profile-link" hidden>Vedi il profilo pubblico →</a></section>
+   </div><p id="organizerProfileWarning" class="ev-muted" hidden>Le modifiche richiedono una nuova approvazione: nel frattempo profilo ed eventi saranno nascosti al pubblico.</p><div class="ev-actions"><button type="submit" class="ev-primary">Invia profilo in revisione</button></div></form>
+  </details></section>
   <section class="ev-panel"><div class="ev-card-head"><div><h2>I tuoi eventi</h2><p class="ev-muted" id="organizerEventsHint">Dopo l’approvazione del profilo potrai creare il primo evento.</p></div><button type="button" class="ev-primary" id="newOrganizerEvent" hidden>+ Crea evento</button></div><div id="organizerEvents" class="ev-list"></div></section>
   <section class="ev-panel" id="eventEditor" hidden aria-labelledby="eventEditorTitle"><div class="ev-card-head"><h2 id="eventEditorTitle" tabindex="-1">Nuovo evento</h2><button type="button" id="closeEventEditor">Chiudi</button></div><p class="ev-muted">Compila i dati e salva la bozza. Poi aggiungi i posteggi e invia l’evento in revisione. I campi facoltativi sono indicati.</p><p id="eventPublicationNotice" class="ev-notice" hidden>Le modifiche all’evento o ai posteggi lo riportano in bozza: servirà una nuova approvazione prima di renderlo pubblico.</p>
    <form id="organizerEventForm" novalidate><div class="ev-grid">
@@ -57,5 +55,5 @@
   </section>
  </div>
 </main><footer></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/page-view-tracker.js?v=4"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=21"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/auth.js?v=22"></script><script src="/js/comune-picker.js?v=7"></script><script src="/js/event-data.js?v=2"></script><script src="/js/organizzatori.js?v=8"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/page-view-tracker.js?v=4"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=21"></script><script src="/js/ui-components.js?v=12"></script><script src="/js/auth.js?v=22"></script><script src="/js/comune-picker.js?v=7"></script><script src="/js/event-data.js?v=2"></script><script src="/js/organizzatori.js?v=9"></script>
 </body></html>
