@@ -110,7 +110,7 @@ async function run(engine,name,width,height,base) {
         await page.locator('#organizerProfileForm').waitFor({state:'visible'});
         check(await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Organizzatore','Area organizzatore e modulo completo raggiungibili');
         check(await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(11, 18, 32)','Area di gestione organizzatore con colori scuri');
-        check(await page.locator('header a[href="/"] > span').evaluate(el=>getComputedStyle(el).color)==='rgb(15, 23, 42)','Logo leggibile sull intestazione chiara anche in modalita organizzatore');
+        check(await page.locator('header').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgba(15, 23, 42, 0.97)' && await page.locator('header a[href="/"] > span').evaluate(el=>getComputedStyle(el).color)==='rgb(241, 245, 249)','Intestazione scura e logo chiaro coerenti con il profilo organizzatore');
         check(await page.locator('#organizerRefresh').count()===0 && await page.getByRole('link',{name:'Dashboard normale',exact:true}).count()===0,'Area organizzatore senza pulsanti Aggiorna e dashboard duplicata');
         await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));
         check(await page.locator('.profile-switch-page').evaluate(el=>el.getBoundingClientRect().bottom<=0),'Selettore organizzatore scorre fuori dalla vista');

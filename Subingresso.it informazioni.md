@@ -4,6 +4,14 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 20 ottobre 2026
 
+- **Intestazione organizzatore,21/10:** barra superiore scura come il profilo,
+  logo chiaro, menu/icone/Accedi e pulsante annuncio coordinati, anche
+  hover/focus. Supera l'header chiaro precedente; CSS selettore5, due richiami
+  allineati. Profili364 e visuale con font/icone Chromium1440/320+WebKit390
+  passati, nessuna scrittura reale. Errori transitori fixture WebKit risolti
+  con esecuzione isolata. Guida `data/ORGANIZZATORI_EVENTI.md`; prove e stato
+  pubblicazione `Documents/verifica-organizzatore-header-scuro-20261021/risultati.md`.
+
 - **Statistiche organizzatori,21/10:** richiesta di area più ricca e curata.
   Aggiunti periodi7/30/90, filtro evento, visite/clic/confronto, salvataggi e
   avvisi correnti, andamento, occupazione, contatti, provenienza/dispositivo,

@@ -48,7 +48,19 @@
 .profile-switch[data-selected="organizer"] :focus-visible,.profile-organizer-panel a:focus-visible,.profile-organizer-panel button:focus-visible,#profiloModal[data-profile="organizer"] .profile-close:focus-visible { outline-color:#93c5fd; }
 
 body.organizer-theme { background:#0b1220; color:#f1f5f9; }
-.organizer-theme > header { color:#0f172a; }
+.organizer-theme > header { color:#f1f5f9; background:rgba(15,23,42,.97); border-color:#334155; color-scheme:dark; }
+.organizer-theme > header a[href="/"] > div { box-shadow:0 6px 18px #02061766; }
+.organizer-theme > header a[href="/"] > span > span { color:#93c5fd; }
+.organizer-theme > header nav { color:#cbd5e1; }
+.organizer-theme > header nav a:hover,.organizer-theme > header nav a:focus-visible { color:#fff; }
+.organizer-theme > header nav a[aria-current="page"] { color:#93c5fd; }
+.organizer-theme > header #authNav > a,.organizer-theme > header #authNav > button { color:#e2e8f0; background:#25334a; border-color:#475569; }
+.organizer-theme > header #authNav > button { color:#93c5fd; }
+.organizer-theme > header #authNav > a:hover,.organizer-theme > header #authNav > button:hover { color:#fff; background:#334155; }
+.organizer-theme > header #authNav > a > i { color:inherit; }
+.organizer-theme > header a[href="/vendi"] { color:#0f172a; background:#93c5fd; }
+.organizer-theme > header a[href="/vendi"]:hover { background:#bfdbfe; }
+.organizer-theme > header a:focus-visible,.organizer-theme > header button:focus-visible { outline:2px solid #93c5fd; outline-offset:3px; }
 .organizer-theme .ev { --ev-ink:#f1f5f9; --ev-muted:#cbd5e1; color-scheme:dark; }
 .organizer-theme .ev-panel,.organizer-theme .ev-card { background:#152033; border-color:#334155; }
 .organizer-theme .ev a,.organizer-theme .ev .ev-eyebrow { color:#93c5fd; }

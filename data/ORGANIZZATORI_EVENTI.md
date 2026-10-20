@@ -1,5 +1,20 @@
 # Organizzatori, eventi e prenotazioni future — 18 ottobre 2026
 
+## Intestazione scura — 21 ottobre 2026
+
+Su richiesta, la barra superiore di `/organizzatore` segue il tema scuro:
+fondo blu notte, logo chiaro, suffisso e azioni azzurri, menu e pulsanti
+Messaggi/Area personale/Accedi coordinati, compresi hover e focus tastiera.
+Regole limitate a `body.organizer-theme > header`; sostituiscono la scelta
+storica dell'intestazione chiara. CSS selettore5, riferimenti area/dashboard
+allineati; componenti condivisi, sessioni e dati invariati.
+Regressione profili364 verifiche locali nei quattro formati/browser,
+WebKit390 ripetuto isolatamente dopo errori transitori di accesso della
+fixture. Controllo visivo con font/icone e barra autenticata reale simulando
+la sola sessione: Chromium1440/320 e WebKit390, senza scritture reali.
+Esiti, schermate e stato della pubblicazione:
+`Documents/verifica-organizzatore-header-scuro-20261021/risultati.md`.
+
 ## Statistiche dell’organizzatore — 21 ottobre 2026
 
 Richiesta: area più ricca, molte statistiche utili e presentazione curata.
