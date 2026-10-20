@@ -30,7 +30,7 @@ Privacy aggiornata. Nessuna attivazione dei pagamenti e nessun incasso esterno
 dedotto dall’occupazione. Catalogo documentale invariato.
 
 Patch `PATCH_ORGANIZZATORI_STATISTICHE_20261021.sql` additiva/idempotente,
-cache organizzatori10, analyticsJS/CSS1, engagement1. Test dedicati:
+cache organizzatori10, analyticsJS2/CSS1, engagement1. Test dedicati:
 `test-organizer-analytics-db.cjs --with-migration` con ROLLBACK e regressioni
 profilo/eventi; `test-organizer-analytics.cjs` e `test-event-engagement.cjs`,
 Chromium1440/320 e WebKit390. Prove in
@@ -43,7 +43,15 @@ zero log di prova residui; API protetta e permessi privati verificati.
 116profili/129annunci/19pagamenti/un organizzatore/un evento invariati,
 prenotazioni0 e pagamenti disattivati. Suite analytics e engagement complete
 passate anche con font/icone reali; profili364 e percorso eventi/capienza
-Chromium1440/320 e WebKit390 passati. Pubblicazione ancora da verificare.
+Chromium1440/320 e WebKit390 passati. Pubblicato `b65e519`, Vercel riuscito
+`2H2ytE2cLsJ4jcDTL7iMbXQ4YV5o`: nove asset identici, SSR aggiornato, API
+statistiche anonima401 e pubblica eventi200. Suite analytics passata anche
+sugli asset pubblicati nei tre formati/browser; tre prove anonime con SDK/
+font/rete reali passate, senza errori/overflow/scritture. API con0eventi
+pubblici: nessuna sessione reale proprietario usata, copertura tramite SQL
+e fixture dichiarata. Scala finale del grafico con tacche intere esatte;
+suite ripassata dopo un errore transitorio di cattura schermata Chromium.
+Riscontri e limiti in `risultati.md` nella cartella prove.
 
 ## Profilo diretto e testi essenziali — 20 ottobre 2026
 

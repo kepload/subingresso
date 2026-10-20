@@ -16,7 +16,7 @@
  }
  function card(label,value,icon,detail='') {return '<article class="oa-stat"><div class="oa-stat-top"><span>'+label+'</span><i class="fas fa-'+icon+'" aria-hidden="true"></i></div><strong>'+value+'</strong>'+detail+'</article>';}
  function chart(){
-  const rows=data.daily||[],total=sum(rows,metric),max=Math.max(1,...rows.map(row=>Number(row[metric])||0));
+  const rows=data.daily||[],total=sum(rows,metric),max=Math.max(2,Math.ceil(Math.max(0,...rows.map(row=>Number(row[metric])||0))/2)*2);
   const start=data.started_at?data.started_at.slice(0,10):'',measured=rows.filter(row=>!start||row.day>=start);
   const left=42,right=916,top=22,bottom=192,x=index=>left+index/Math.max(1,rows.length-1)*(right-left),y=value=>bottom-(Number(value)||0)/max*(bottom-top);
   const points=measured.map(row=>[x(rows.indexOf(row)),y(row[metric])]),line=points.map((point,index)=>(index?'L':'M')+point.map(v=>v.toFixed(1)).join(',')).join(' ');

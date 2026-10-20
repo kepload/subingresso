@@ -9,6 +9,10 @@ esclusi e deduplica sessione/evento/giorno; conservazione190giorni limitata ai
 nuovi log. Backend additivo, pagamenti disattivati. Dettagli, cache, prove e
 stato pubblicazione in data/ORGANIZZATORI_EVENTI.md; checkout isolato
 Documents/subingresso-organizzatori-statistiche-20261020 e prove omonime.
+Pubblicato b65e519, Vercel2H2ytE2cLsJ4jcDTL7iMbXQ4YV5o riuscito;
+nove asset identici, API e tre formati/browser online passati. Nessuna
+sessione reale proprietario, SQL e fixture;0eventi pubblici correnti.
+Rifinitura tacche intere, analyticsJS2/CSS1/organizzatori10/engagement1.
 
 20/10/2026, Ancona: ricerca documentale corrente conclusa con limiti espliciti;
 pubblicata e verificata online.104manifestazioni/40comuni,

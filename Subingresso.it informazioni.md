@@ -10,12 +10,17 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   agenda, risultati per evento e CSV. Dati storici mai inventati; aggregati
   privati, sessione deduplicata e proprietario/admin esclusi. Nuovi log senza
   account/IP/recapiti e conservazione190giorni; privacy allineata. Pagamenti
-  disattivati, catalogo invariato. Cache organizzatori10/analytics1/engagement1.
+  disattivati, catalogo invariato. Cache organizzatori10/analyticsJS2-CSS1/engagement1.
   Guida `data/ORGANIZZATORI_EVENTI.md`, prove
   `Documents/verifica-organizzatori-statistiche-20261020/`; SQL ROLLBACK e
   browser dedicati passati, font/icone e regressioni profili364/eventi/capienza
   passati. Backend applicato/idempotente, zero prove residue, dati esistenti
-  invariati. Pubblicazione ancora da verificare.
+  invariati. Pubblicato `b65e519`, Vercel riuscito
+  `2H2ytE2cLsJ4jcDTL7iMbXQ4YV5o`: nove asset identici, SSR/API verificate,
+  analytics online tre browser/formati e anonimo reale3 passati. Nessuna
+  sessione reale proprietario; API pubblica0eventi, SQL/fixture dichiarati.
+  Scala grafico rifinita con tacche intere; suite finale passata dopo un
+  errore transitorio screenshot. Risultati/limiti nella cartella prove.
 
 - **Ancona conclusa e verificata online,20/10:** 104 manifestazioni/40comuni,
   ricognizione47; +60 rispetto alle44 iniziali. Catalogo5.438, altre5.334
