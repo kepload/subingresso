@@ -16,6 +16,10 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   passati; prove `Documents/verifica-fiere-icone-avvisi-20261020/` e guide
   `data/FIERE.md`, `data/FIERE_SALVATE.md`. Nessuna email/scrittura reale.
   Backup tag/branch remoti validi; noto errore cleanup del preventivo.
+  Pubblicato `b78f485`, Vercel riuscito `7PoyQBJeiHXg6MgKGhqZAmu7ZBh9`:
+  sette asset identici, percorso avvisi online quattro formati e tre prove
+  anonime con API/font/icone reali passati; bollino reale1440/320 verificato.
+  Calendario generale cinque formati passato; nessun errore o overflow.
 
 - **Asti conclusa e verificata online, 20/10:** 100 manifestazioni in 49 comuni,
   ricognizione dei 118 luoghi dell’anagrafica; prima 28, 72 aggiunte e tutti gli ID

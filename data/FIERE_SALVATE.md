@@ -21,6 +21,13 @@ Prove `Documents/verifica-fiere-icone-avvisi-20261020/`: percorso completo
 Chromium1440/820/320 e WebKit390, compresa Arsego stimata, provenienza, consenso,
 mesi liberi, errori/riprova, disattivazione e isolamento account. API e invii
 collaudati con dati simulati; nessuna scrittura o email reale di prova.
+Pubblicato `b78f485`, Vercel
+[riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/7PoyQBJeiHXg6MgKGhqZAmu7ZBh9).
+Sette asset pubblicati identici al codice locale; percorso completo ripetuto
+sui file pubblicati nei quattro formati, comprese stime e riapertura. Tre
+prove anonime separate con API/SDK/font/icone reali passate, nessun errore
+o overflow; nessuna operazione o email reale. Calendario generale cinque
+formati,5.292 pagine e2.169 voci sitemap passati.
 
 ## Preferenza corrente — 20 ottobre 2026
 

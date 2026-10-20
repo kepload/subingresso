@@ -12,6 +12,10 @@ e data/FIERE_SALVATE.md; prove Documents/verifica-fiere-icone-avvisi-20261020.
 Percorso salvataggi/affinità/articoli/ricerca quattro formati, unità e5.292
 pagine passati; nessuna scrittura/email reale. Backup tag e branch remoti
 verificati; noto errore cleanup nello script preventivo.
+Pubblicato b78f485, Vercel7PoyQBJeiHXg6MgKGhqZAmu7ZBh9 riuscito; sette
+asset identici e avvisi pubblicati quattro formati passati. Tre prove anonime
+API/font/icone reali e bollino reale1440/320 passati; generale cinque formati
+passato. Nessun errore/overflow o scrittura reale.
 
 20/10/2026, preferenza fiere: il filtro articolo conserva categorie mancanti
 o parziali; soltanto esclusioni esplicite/attuali con fonte eliminano la scheda.
