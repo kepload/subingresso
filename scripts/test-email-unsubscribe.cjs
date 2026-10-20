@@ -43,6 +43,9 @@ async function call(body,method='POST'){return handler(new Request('https://fixt
    fail=false;hold=true;const before=requests.length;await page.locator('#unsubscribeForm').evaluate(form=>{form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));});await page.locator('#success').waitFor({state:'visible'});assert.equal(requests.length,before+1,'double click sends one request');assert.equal(requests.at(-1).reason,'not_relevant');assert(await page.locator('#unsubscribeFeedbackThanks').isVisible());hold=false;
    await page.goto(url);const beforeCancel=requests.length;await page.locator('#unsubscribeCancel').click();assert.equal(requests.length,beforeCancel,'keeping emails does not send any unsubscribe request');
    await page.goto('https://subingresso.it/unsubscribe');assert(await page.locator('#error').isVisible());assert.equal(requests.length,beforeCancel);assert.deepEqual(errors,[]);
+   // Unsubscribe must also work without newer optional browser APIs.
+   await page.addInitScript(()=>{Object.hasOwn=undefined;window.AbortController=undefined;});
+   await page.goto(url);await page.locator('#unsubscribeSubmit').click();await page.locator('#success').waitFor({state:'visible'});assert.deepEqual(errors,[]);
    await context.close();console.log(label+' '+width+': optional reason, confirmation, cancel, retry, double click and invalid links passed; no SDK error.');
   }finally{await browser.close();}
  }

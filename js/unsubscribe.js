@@ -17,7 +17,7 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
         all: 'Disattiverai i riepiloghi settimanali, le statistiche degli annunci e i promemoria delle fiere.'
     };
     document.getElementById('loading').classList.add('hidden');
-    if (!token || !Object.hasOwn(descriptions, type)) {
+    if (!token || !Object.prototype.hasOwnProperty.call(descriptions, type)) {
         document.getElementById('error').classList.remove('hidden');
         document.getElementById('errorMsg').textContent = 'Link di disiscrizione non valido. Apri il collegamento presente nella tua email.';
         return;
@@ -33,11 +33,13 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
         button.textContent = 'Disiscrizione in corso…';
         cancel.style.display = 'none';
         submitError.classList.add('hidden');
+        const controller = typeof AbortController === 'function' ? new AbortController() : null;
+        const timeout = controller ? setTimeout(() => controller.abort(), 20000) : null;
         try {
             const response = await fetch(SUPABASE_URL + '/functions/v1/email-unsubscribe', {
                 method: 'POST', headers: {'Content-Type': 'application/json', apikey: SUPABASE_ANON_KEY},
                 body: JSON.stringify({token, type, reason: reason.value || undefined}),
-                signal: AbortSignal.timeout(20000)
+                signal: controller ? controller.signal : undefined
             });
             const data = await response.json();
             if (!response.ok || !data.ok) throw new Error(data.error || 'Non siamo riusciti a completare la disiscrizione. Riprova.');
@@ -49,11 +51,12 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
             document.getElementById('unsubscribeFeedbackThanks').classList.toggle('hidden', !data.feedback_saved);
             document.getElementById('unsubscribeSuccessTitle').focus();
         } catch (error) {
-            submitError.textContent = error.name === 'TimeoutError' || error instanceof TypeError
+            submitError.textContent = error.name === 'AbortError' || error instanceof TypeError
                 ? 'Non siamo riusciti a verificare la disiscrizione. Riprova per confermare.'
                 : error.message;
             submitError.classList.remove('hidden');
         } finally {
+            if (timeout !== null) clearTimeout(timeout);
             busy = false;
             button.disabled = reason.disabled = false;
             button.textContent = 'Conferma disiscrizione';
