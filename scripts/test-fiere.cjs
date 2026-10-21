@@ -630,7 +630,7 @@ assert(arEvent('Castiglion Fiorentino',/Fiera Campionaria/).editions.every(d => 
 assert.equal(arEvent('Castiglion Fiorentino',/Valdichiana Wine/).editions[0].end,'2026-05-03');
 assert.deepEqual(arEvent('Monte San Savino',/Gin in Porchetta/).months,[9]);
 assert.equal(arEvent('Monte San Savino',/Gin in Porchetta/).editions[0].start,'2026-09-11');
-const perugia = events.find(e => e.name === 'Fiera dei Morti');
+const perugia = events.find(e => e.city === 'Perugia' && e.name === 'Fiera dei Morti');
 assert(api.deadlineStatus(perugia.participation,'2026-10-09').startsWith('Termine scaduto:'));
 const cantu = events.find(e => e.name === 'Fiera del Crocifisso');
 assert.deepEqual(cantu.months,[10]);
