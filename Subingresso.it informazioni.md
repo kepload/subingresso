@@ -5,7 +5,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
 
-- **Home desktop,21/10:** nascosti frase e link Inserisci annuncio accanto al titolo da1024px; sezione vendita inferiore conservata. homeCSS10. Chromium1440/1024/1023/820/390 verificati; backup remoto session-20261021-155049 valido, errore cleanup helper noto. Pubblicazione avviata con push, verifica online a seguire.
+- **Home desktop,21/10:** nascosti frase e link Inserisci annuncio accanto al titolo da1024px; sezione vendita inferiore conservata. homeCSS10. Chromium1440/1024/1023/820/390 verificati; backup remoto session-20261021-155049 valido, errore cleanup helper noto. Pubblicato1c78460: HTML v10 e regola desktop verificati online.
 
 - **Spazi home desktop,21/10:** riferimento prima immagine utente:
   da1024px tolti64px sopra slogan, distanze città24→32px; quanti luoghi
