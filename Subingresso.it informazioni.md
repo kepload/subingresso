@@ -10,6 +10,9 @@
   pubblicazione Documents/verifica-statistiche-fiere-20261022/risultati.md.
   Dettagli/limiti in data/ORGANIZZATORI_EVENTI.md. Cache analyticsJS3/CSS2,
   organizer-charts1. Non reintrodurre il riepilogo admin rimosso.
+  Pubblicato eff3098, Vercel BzEJdCjth1bCRrDSVbMNokkjgLfF riuscito:
+  cinque file identici al commit; statistiche online quattro formati/browser,
+  rimozione admin e accesso pubblico Chrome1440/320 e Safari390 passati.
 
 Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Desktop\Ardit\subingresso.it`. Ricognizione tecnica: 6 ottobre 2026; unione documenti: 16 ottobre; snellimento: 17 ottobre. Le registrazioni mantengono le proprie date: questa revisione non verifica nuovamente sito o servizi live.
 
