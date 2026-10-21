@@ -8,9 +8,10 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   eliminato «Foto non disponibile». Stesso componente/stile home e annunci,
   spaziatura condivisa; foto presenti conservate, fallback anche se il file
   immagine non si carica. Cache data22/design-system9/homeCSS-JS3.
-  Locale Chromium1440/320 e WebKit390: confronto delle due pagine passato,
-  nomi/foto/link/preferiti presenti, zero errori JS o overflow. Pubblicazione
-  e riscontri in `Documents/verifica-anteprime-uniformi-20261021/`.
+  Pubblicato9f9fe46:21file identici e tre pagine generate aggiornate;
+  home/annunci Chromium1440/320 e WebKit390 locali/online passati,
+  nomi/foto/link verificati, zero errori JS o overflow; preferiti174 locali
+  passati. Riscontri `Documents/verifica-anteprime-uniformi-20261021/`.
   Backup tag e ramo pre-anteprime remoti verificati; errore cleanup noto.
 
 - **Napoli conclusa e verificata online, 21/10:** ricerca documentale corrente conclusa con limiti espliciti.
