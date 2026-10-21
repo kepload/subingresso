@@ -1,6 +1,6 @@
 const assert = require('node:assert/strict');
 const V = require('../js/valuation.js');
-const base = {baseIncasso:'giorno',incasso:500,giornate:52,frequenza:'settimanale',settore:'non_alimentare',zona:'interna',clientela:'residenti',passaggio:'medio',posizione:'linea',sole:'riparato',concessione:'stabile',utileGiorno:null};
+const base = {baseIncasso:'giorno',incasso:500,giornate:52,frequenza:'settimanale',settore:'non_alimentare',zona:'interna',clientela:'residenti',passaggio:'medio',posizione:'linea',sole:'non_so',concessione:'stabile',utileGiorno:null};
 const e = extra => V.estimate({...base,...extra});
 
 // Riferimenti espliciti dell'utente, non dati di compravendite.
@@ -10,7 +10,7 @@ assert.equal(e({incasso:400}).avg,27000);
 assert(e({incasso:150}).avg>1000 && e({incasso:150}).avg<4500,'Curva progressiva, non lineare');
 assert(e({incasso:500}).avg>27000,'Il raccordo alle fasce superiori cresce');
 assert.equal(e({incasso:2000}).avg,75140);
-assert(e({incasso:4000,sole:'frontale'}).avg>=140000);
+assert(V.estimate({...base,incasso:4000,sole:'frontale'},'2.5').avg>=140000);
 assert.equal(e({incasso:320}).rent,2297);
 assert.equal(e({incasso:50}).rent,500);
 assert.equal(e({incasso:50,utileGiorno:0}).rent,500);
@@ -19,6 +19,30 @@ assert.equal(e({utileGiorno:0}).avg,1000);
 assert.equal(e({utileGiorno:0}).rent,500);
 assert(e({utileGiorno:0}).notes.some(note=>note.includes('soglie commerciali')));
 assert.equal(e({concessione:'temporanea'}).status,'non_stimabile');
+
+// Nuova calibrazione commerciale: cambia una risposta del caso dell'utente.
+const reference={...base,baseIncasso:'anno',incasso:15000,giornate:50,sole:'variabile',concessione:'non_so'};
+for(const [patch,expected] of [[{},13548],[{passaggio:'alto'},16425],[{passaggio:'laterale'},10000],
+    [{posizione:'angolare'},15000],[{sole:'riparato'},14000],[{sole:'frontale'},12000]]) {
+    assert.equal(V.estimate({...reference,...patch}).avg,expected);
+}
+// Le altre simulazioni approvate restano identiche, comprese fasce e canoni.
+for(const patch of [{incasso:10000},{incasso:20000},{incasso:25000},{settore:'alimentare'},
+    {zona:'turistica',clientela:'mista'},{zona:'mare_lago'},{concessione:'stabile'},
+    {concessione:'breve',mesiResidui:24},{concessione:'breve',mesiResidui:12},
+    {utileGiorno:30},{utileGiorno:60},{utileGiorno:90},{giornate:25},{giornate:25,incasso:7500}]) {
+    const input={...reference,...patch},old=V.estimate(input,'2.5'),next=V.estimate(input);
+    for(const k of ['avg','min','max','rent'])assert.equal(next[k],old[k],k+' scenario approvato');
+}
+// I pesi si applicano a qualunque incasso; l'angolo mantiene il proprio premio
+// anche combinato con passaggio principale e turismo (nessun vecchio tetto).
+for(const incasso of [100,150,300,500,1100,2000,5000])for(const settore of V.choices.settore) {
+    const input={...base,incasso,settore,sole:'variabile',zona:'turistica',clientela:'mista'};
+    const regular=V.estimate(input),high=V.estimate({...input,passaggio:'alto'}),side=V.estimate({...input,passaggio:'laterale'});
+    const corner=V.estimate({...input,passaggio:'alto',posizione:'angolare'});
+    assert(side.avg<=regular.avg && regular.avg<=high.avg && high.avg<=corner.avg);
+    if(incasso>100)assert(corner.avg>high.avg,'Il premio angolo non viene annullato');
+}
 
 // Le vecchie versioni conservano la propria aritmetica e i propri minimi.
 const historical = [
@@ -29,6 +53,8 @@ const historical = [
     ['2.3',{incasso:50},2288,156],
     ['2.4',{incasso:50},2582,364],
     ['2.4',{incasso:320},14643,2297],
+    ['2.5',{incasso:200},8000,1456],
+    ['2.5',{incasso:400},27000,2386],
 ];
 for(const [version,input,avg,rent] of historical) {
     const r=V.estimate({...base,...input},version);

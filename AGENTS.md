@@ -149,7 +149,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 - `js/pages/annuncio-detail.js?v=26` (anche in `annuncio.html` + `api/annuncio.js`)
 - `css/tailwind.css?v=4`
 - `page-view-tracker.js?v=4`
-- `js/valuation.js?v=7`, `js/pages/valutatore.js?v=8` (v2.5: sotto € 100/giorno cessione fissa € 1.000; affitto minimo fisso € 500/anno, anche con margine nullo o durata breve. Ancore 200/giorno → € 8.000 e 400/giorno → € 27.000 a 52 giornate; dettagli in `istruzioni.md`)
+- `js/valuation.js?v=8`, `js/pages/valutatore.js?v=9` (v2.6: pesi passaggio/angolo/sole calibrati il 22 ottobre; minimi cessione 1.000 e affitto 500/anno conservati. Curva base 200/giorno -> 8.000 e 400/giorno -> 27.000 a 52 giornate, prima delle caratteristiche. RPC `save_valutazione_v26`; report 2.0-2.5 invariati; dettagli in `istruzioni.md`)
 
 ---
 

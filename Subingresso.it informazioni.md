@@ -2,7 +2,20 @@
 
 Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Desktop\Ardit\subingresso.it`. Ricognizione tecnica: 6 ottobre 2026; unione documenti: 16 ottobre; snellimento: 17 ottobre. Le registrazioni mantengono le proprie date: questa revisione non verifica nuovamente sito o servizi live.
 
-## Stato recente e decisioni correnti — 21 ottobre 2026
+## Stato recente e decisioni correnti — 22 ottobre 2026
+
+- **Valutatore v2.6,22/10:** calibrazione richiesta sul caso 15.000/anno,
+  50giornate: base13.548; principale16.425, laterale10.000, angolo15.000,
+  riparato14.000, frontale12.000. Pesi proporzionali sopra1.000, combinati
+  senza vecchio tetto30%; altri esempi approvati e report2.0-2.5 invariati.
+  Minimi1.000/500, margini/durata conservati. RPCv26 additiva, claim e
+  contatore aggiornati; valuation8/pagina9. 41.472scenariJS,11.520storici
+  identici e6.336confrontiSQL con ROLLBACK passati. Prove/browser/pubblicazione
+  Documents/verifica-valutatore-v26-20261022; dettagli in istruzioni.md.
+  Backup tag/ramo remoti validi; cleanup helper con errore noto. API413
+  risolta dividendo SQL in400casi; primo fileSQL con BOM rigenerato senza.
+  Pubblicazione da verificare.
+
 
 - **Livorno conclusa e verificata online21/10:**63manifestazioni/17comuni,
   ricognizione19; nessuna scheda o audit provinciale al checkpoint32452a0.

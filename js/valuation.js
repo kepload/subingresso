@@ -1,4 +1,4 @@
-/* Valutazione indicativa v2.5. Ipotesi di modello, NON prezzi di compravendite.
+/* Valutazione indicativa v2.6. Ipotesi di modello, NON prezzi di compravendite.
  * Importabile anche in Node per verificare i casi limite.
  */
 (function (root, factory) {
@@ -6,7 +6,7 @@
     else root.PosteggioValuation = factory();
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
-    const VERSION = '2.5';
+    const VERSION = '2.6';
     const choices = {
         baseIncasso: ['giorno', 'anno'], frequenza: ['settimanale', 'giornaliero', 'fiera'],
         zona: ['mare_lago', 'turistica', 'interna'], clientela: ['residenti', 'mista', 'turisti', 'non_so'],
@@ -80,11 +80,12 @@
         return 1000 + Math.max(0, value52 - 1000) * days / 52;
     }
     function estimate(input, version = VERSION) {
-        if (!['2.0', '2.1', '2.2', '2.3', '2.4', VERSION].includes(version)) throw new Error('Versione del modello non disponibile.');
+        if (!['2.0', '2.1', '2.2', '2.3', '2.4', '2.5', VERSION].includes(version)) throw new Error('Versione del modello non disponibile.');
         const d = validate(input);
-        const current = ['2.2', '2.3', '2.4', VERSION].includes(version);
-        const commercialCurve = version === VERSION;
-        const revisedNonFood = ['2.3', '2.4', VERSION].includes(version) && d.settore === 'non_alimentare';
+        const current = ['2.2', '2.3', '2.4', '2.5', VERSION].includes(version);
+        const commercialCurve = ['2.5', VERSION].includes(version);
+        const calibrated = version === VERSION;
+        const revisedNonFood = ['2.3', '2.4', '2.5', VERSION].includes(version) && d.settore === 'non_alimentare';
         const knownProfit = d.utileGiorno !== null;
         const surplus = knownProfit ? d.utileGiorno * d.giornate : d.fatturato * 0.20;
         const notes = ['Stima indicativa: coefficienti prudenziali ancora da calibrare su vendite concluse. Merce, furgone e attrezzature esclusi.'];
@@ -108,11 +109,22 @@
         // Frequenza, stagione e anzianità non moltiplicano ricavi già annualizzati.
         // Turismo da solo non garantisce acquisti.
         const tourism = d.zona !== 'interna' && d.clientela === 'mista' ? 1.05 : 1;
-        const flow = (current ? { alto: 1.03, medio: 1, laterale: 0.95, non_so: 1 }
+        // Riferimento approvato il 22/10/2026: 15.000 annui, 50 giornate,
+        // non alimentare, sole variabile e scadenza ignota. La sua parte sopra
+        // 1.000 resta invariata; i nuovi pesi sono percentuali, non somme fisse.
+        const referenceGoodwill = (commercialRevenueBase(300, 50, false) - 1000) * 0.85 * 0.98;
+        const flow = (calibrated ? { alto: 15425 / referenceGoodwill, medio: 1, laterale: 9000 / referenceGoodwill, non_so: 1 }
+            : current ? { alto: 1.03, medio: 1, laterale: 0.95, non_so: 1 }
             : { alto: 1.1, medio: 1, laterale: 0.85, non_so: 1 })[d.passaggio];
-        const frontage = d.posizione === 'angolare' ? (current ? 1.02 : 1.05) : 1;
-        const adjustment = Math.min(1.3, Math.max(0.7, tourism * flow * frontage));
-        const sun = (current
+        const frontage = d.posizione === 'angolare' ? (calibrated ? 14000 / referenceGoodwill : current ? 1.02 : 1.05) : 1;
+        // Il vecchio tetto al 30% annullerebbe parte del premio per l'angolo
+        // quando il passaggio è principale. In v2.6 i tre pesi si combinano.
+        const adjustment = calibrated ? tourism * flow * frontage : Math.min(1.3, Math.max(0.7, tourism * flow * frontage));
+        const sun = (calibrated
+            ? { riparato: 13000 * 0.98 / referenceGoodwill,
+                frontale: 11000 * 0.98 / referenceGoodwill * (food ? 0.98 / 0.95 : 1),
+                variabile: food ? 0.99 : 0.98, non_so: 1 }
+            : current
             ? { riparato: 1, frontale: food ? 0.98 : 0.95, variabile: food ? 0.99 : 0.98, non_so: 1 }
             : { riparato: 1, frontale: 0.9, variabile: 0.95, non_so: 1 })[d.sole];
         const certainty = d.concessione === 'non_so' ? 0.85 : 1;
@@ -149,9 +161,9 @@
         const max = Math.ceil(stable(Math.min(commercialCurve ? 1000 + (value - 1000) * (1 + uncertainty)
             : value * (1 + uncertainty), horizonCap)));
         const avg = Math.round(value);
-        const baseRent = Math.min((['2.4', VERSION].includes(version) ? operatingValue : value) * 0.18, surplus * 0.30);
+        const baseRent = Math.min((['2.4', '2.5', VERSION].includes(version) ? operatingValue : value) * 0.18, surplus * 0.30);
         let rentValue = baseRent;
-        if (['2.4', VERSION].includes(version) && baseRent > 0 && baseRent < 3000) {
+        if (['2.4', '2.5', VERSION].includes(version) && baseRent > 0 && baseRent < 3000) {
             // 500 euro iniziali, circa 2.300 su una base di 1.000; raccordo
             // crescente alla curva precedente a 3.000 euro annui.
             const supportedRent = baseRent <= 1000

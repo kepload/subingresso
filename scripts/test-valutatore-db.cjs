@@ -9,27 +9,38 @@ for(const sole of V.choices.sole) for(const concessione of ['stabile','non_so','
 const input={...base,settore,incasso:baseIncasso==='anno'?Math.round(incasso*base.giornate*100)/100:incasso,baseIncasso,sole,concessione,utileGiorno,mesiResidui:6};const r=V.estimate(input);
 scenarios.push({input:r.input,expected:{prezzo_min:r.min,prezzo_avg:r.avg,prezzo_max:r.max},rent:r.rent,token:crypto.randomBytes(32).toString('hex'),request:crypto.randomUUID()});
 }
+// Casi nuovi: tutte le combinazioni dei pesi e riferimenti esatti dell'utente.
+for(const settore of V.choices.settore) for(const incasso of [100,300,5000])
+for(const passaggio of ['medio','alto','laterale']) for(const posizione of V.choices.posizione)
+for(const sole of V.choices.sole) for(const concessione of ['stabile','non_so','breve'])
+for(const utileGiorno of [null,0,Math.round(incasso*.3*100)/100]) for(const baseIncasso of ['giorno','anno']) {
+ const input={...base,settore,baseIncasso,incasso:baseIncasso==='anno'?incasso*50:incasso,giornate:50,passaggio,posizione,sole,concessione,mesiResidui:12,utileGiorno};
+ const r=V.estimate(input);
+ scenarios.push({input:r.input,expected:{prezzo_min:r.min,prezzo_avg:r.avg,prezzo_max:r.max},rent:r.rent,token:crypto.randomBytes(32).toString('hex'),request:crypto.randomUUID()});
+}
 const q=s=>"'"+s.replaceAll("'","''")+"'";
-let sql=fs.readFileSync(root+'/PATCH_VALUTATORE_V25.sql','utf8').replace(/COMMIT;\s*$/,'');
+function buildSql(scenarios) {
+let sql=fs.readFileSync(root+'/PATCH_VALUTATORE_V26.sql','utf8').replace(/COMMIT;\s*$/,'');
 sql+='\nCREATE TEMP TABLE valuation_rent_checks(request_id uuid, expected numeric);\nGRANT INSERT ON valuation_rent_checks TO anon;\nSET LOCAL ROLE anon;\nDO $test$ DECLARE t jsonb; r jsonb; BEGIN\n';
 sql+='FOR t IN SELECT value FROM jsonb_array_elements('+q(JSON.stringify(scenarios))+'::jsonb) LOOP\n';
-sql+="r := public.save_valutazione_v25(t->'input',t->>'token',(t->>'request')::uuid);\n";
+sql+="r := public.save_valutazione_v26(t->'input',t->>'token',(t->>'request')::uuid);\n";
 sql+="IF r-'id' IS DISTINCT FROM t->'expected' THEN RAISE EXCEPTION 'Parità JS/SQL fallita: % / %',r,t->'expected'; END IF;\n";
 sql+="INSERT INTO pg_temp.valuation_rent_checks VALUES ((t->>'request')::uuid,(t->>'rent')::numeric);\n";
-sql+="IF public.save_valutazione_v25(t->'input',t->>'token',(t->>'request')::uuid) IS DISTINCT FROM r THEN RAISE EXCEPTION 'Idempotenza fallita'; END IF;\nEND LOOP;\n";
+sql+="IF public.save_valutazione_v26(t->'input',t->>'token',(t->>'request')::uuid) IS DISTINCT FROM r THEN RAISE EXCEPTION 'Idempotenza fallita'; END IF;\nEND LOOP;\n";
 for(const delta of [{incasso:'Infinity'},{incasso:-1},{incasso:0},{giornate:400},{giornate:54},{giornate:1.5},{utileGiorno:600},{sole:'<script>'},{concessione:'temporanea'},{concessione:'breve',mesiResidui:0},{baseIncasso:'anno',incasso:2000001}]) {
-sql+=`BEGIN PERFORM public.save_valutazione_v25(${q(JSON.stringify({...base,...delta}))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); RAISE EXCEPTION 'Input errato accettato'; EXCEPTION WHEN SQLSTATE '22023' THEN NULL; END;\n`;
+sql+=`BEGIN PERFORM public.save_valutazione_v26(${q(JSON.stringify({...base,...delta}))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); RAISE EXCEPTION 'Input errato accettato'; EXCEPTION WHEN SQLSTATE '22023' THEN NULL; END;\n`;
 }
 const rateToken=crypto.randomBytes(32).toString('hex');
-sql+=`FOR i IN 1..30 LOOP PERFORM public.save_valutazione_v25(${q(JSON.stringify(base))}::jsonb,'${rateToken}',gen_random_uuid()); END LOOP;\n`;
-sql+=`BEGIN PERFORM public.save_valutazione_v25(${q(JSON.stringify(base))}::jsonb,'${rateToken}',gen_random_uuid()); RAISE EXCEPTION 'Limite richieste fallito' USING ERRCODE='22023'; EXCEPTION WHEN SQLSTATE 'P0001' THEN NULL; END;\n`;
-sql+=`r:=public.save_valutazione_v25(${q(JSON.stringify({...base,user_id:crypto.randomUUID(),prezzo_avg:99999999,affitto_annuo:99999}))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); IF r->>'prezzo_avg'<>'${V.estimate(base).avg}' THEN RAISE EXCEPTION 'Risultato manomesso'; END IF;\n`;
+sql+=`FOR i IN 1..30 LOOP PERFORM public.save_valutazione_v26(${q(JSON.stringify(base))}::jsonb,'${rateToken}',gen_random_uuid()); END LOOP;\n`;
+sql+=`BEGIN PERFORM public.save_valutazione_v26(${q(JSON.stringify(base))}::jsonb,'${rateToken}',gen_random_uuid()); RAISE EXCEPTION 'Limite richieste fallito' USING ERRCODE='22023'; EXCEPTION WHEN SQLSTATE 'P0001' THEN NULL; END;\n`;
+sql+=`r:=public.save_valutazione_v26(${q(JSON.stringify({...base,user_id:crypto.randomUUID(),prezzo_avg:99999999,affitto_annuo:99999}))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); IF r->>'prezzo_avg'<>'${V.estimate(base).avg}' THEN RAISE EXCEPTION 'Risultato manomesso'; END IF;\n`;
 const legacyInput={...base,settore:'alimentare',incasso:2000},legacy=V.estimate(legacyInput,'2.0');
 sql+=`r:=public.save_valutazione_v2(${q(JSON.stringify(legacyInput))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); IF (r->>'prezzo_avg')::numeric<>${legacy.avg} THEN RAISE EXCEPTION 'Pagina v2.0 non compatibile'; END IF;\n`;
 sql+=`r:=public.save_valutazione_v21(${q(JSON.stringify(legacyInput))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); IF (r->>'prezzo_avg')::numeric<>${V.estimate(legacyInput,'2.1').avg} THEN RAISE EXCEPTION 'Pagina v2.1 non compatibile'; END IF;\n`;
 sql+=`r:=public.save_valutazione_v22(${q(JSON.stringify(legacyInput))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); IF (r->>'prezzo_avg')::numeric<>${V.estimate(legacyInput,'2.2').avg} THEN RAISE EXCEPTION 'Pagina v2.2 non compatibile'; END IF;\n`;
 sql+=`r:=public.save_valutazione_v23(${q(JSON.stringify(legacyInput))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); IF (r->>'prezzo_avg')::numeric<>${V.estimate(legacyInput,'2.3').avg} THEN RAISE EXCEPTION 'Pagina v2.3 non compatibile'; END IF;\n`;
 sql+=`r:=public.save_valutazione_v24(${q(JSON.stringify(legacyInput))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); IF (r->>'prezzo_avg')::numeric<>${V.estimate(legacyInput,'2.4').avg} THEN RAISE EXCEPTION 'Pagina v2.4 non compatibile'; END IF;\n`;
+sql+=`r:=public.save_valutazione_v25(${q(JSON.stringify(legacyInput))}::jsonb,'${crypto.randomBytes(32).toString('hex')}','${crypto.randomUUID()}'); IF (r->>'prezzo_avg')::numeric<>${V.estimate(legacyInput,'2.5').avg} THEN RAISE EXCEPTION 'Pagina v2.5 non compatibile'; END IF;\n`;
 sql+="IF has_table_privilege('anon','public.valutatore_logs','INSERT') OR has_table_privilege('anon','public.valutatore_logs','TRUNCATE') OR has_table_privilege('authenticated','public.valutatore_logs','UPDATE') THEN RAISE EXCEPTION 'Permessi eccessivi'; END IF;\n";
 sql+="IF has_function_privilege('anon','public.link_valutatore_to_user(text)','EXECUTE') THEN RAISE EXCEPTION 'Claim anonimo consentito'; END IF;\nEND; $test$;\n";
 sql+='RESET ROLE;\n';
@@ -40,9 +51,9 @@ SELECT id INTO u FROM auth.users ORDER BY created_at LIMIT 1;
 SELECT id INTO other_u FROM auth.users WHERE id<>u ORDER BY created_at LIMIT 1;
 IF u IS NULL OR other_u IS NULL THEN RAISE EXCEPTION 'Due identità necessarie per il test'; END IF;
 PERFORM set_config('request.jwt.claim.sub',u::text,true);
-r:=public.save_valutazione_v25(${q(JSON.stringify(base))}::jsonb,token,req);
+r:=public.save_valutazione_v26(${q(JSON.stringify(base))}::jsonb,token,req);
 IF (SELECT user_id FROM public.valutatore_logs WHERE request_id=req)<>u THEN RAISE EXCEPTION 'Owner non attribuito'; END IF;
-IF (SELECT algoritmo_version FROM public.valutatore_logs WHERE request_id=req)<>'2.5' THEN RAISE EXCEPTION 'Versione errata'; END IF;
+IF (SELECT algoritmo_version FROM public.valutatore_logs WHERE request_id=req)<>'2.6' THEN RAISE EXCEPTION 'Versione errata'; END IF;
 PERFORM set_config('request.jwt.claim.sub',other_u::text,true);
 IF public.link_valutatore_to_user(token)<>0 THEN RAISE EXCEPTION 'Owner riassegnato'; END IF;
 IF public.link_valutatore_to_user('vs_weak_old_token')<>0 THEN RAISE EXCEPTION 'Token debole accettato'; END IF;
@@ -57,10 +68,11 @@ EXECUTE 'RESET ROLE';
 END; $owner$;
 DO $claim$ DECLARE u uuid; token text; req uuid; r jsonb; v_version text; BEGIN
 SELECT id INTO u FROM auth.users ORDER BY created_at LIMIT 1;
-FOR v_version IN SELECT unnest(ARRAY['2.0','2.1','2.2','2.3','2.4','2.5']) LOOP
+FOR v_version IN SELECT unnest(ARRAY['2.0','2.1','2.2','2.3','2.4','2.5','2.6']) LOOP
     token:=encode(gen_random_bytes(32),'hex'); req:=gen_random_uuid();
     PERFORM set_config('request.jwt.claim.sub','',true);
-    IF v_version='2.5' THEN r:=public.save_valutazione_v25(${q(JSON.stringify(base))}::jsonb,token,req);
+    IF v_version='2.6' THEN r:=public.save_valutazione_v26(${q(JSON.stringify(base))}::jsonb,token,req);
+    ELSIF v_version='2.5' THEN r:=public.save_valutazione_v25(${q(JSON.stringify(base))}::jsonb,token,req);
     ELSIF v_version='2.4' THEN r:=public.save_valutazione_v24(${q(JSON.stringify(base))}::jsonb,token,req);
     ELSIF v_version='2.3' THEN r:=public.save_valutazione_v23(${q(JSON.stringify(base))}::jsonb,token,req);
     ELSIF v_version='2.2' THEN r:=public.save_valutazione_v22(${q(JSON.stringify(base))}::jsonb,token,req);
@@ -72,7 +84,17 @@ FOR v_version IN SELECT unnest(ARRAY['2.0','2.1','2.2','2.3','2.4','2.5']) LOOP
     IF public.link_valutatore_to_user(token)<>0 THEN RAISE EXCEPTION 'Claim ripetuto non idempotente'; END IF;
 END LOOP;
 END; $claim$;
-SELECT 'OK: ${scenarios.length} parità JS/SQL, soglie cessione/affitto, curve/sole, annuale/giornaliero, idempotenza, input ostili, limite 30/ora, permessi/RLS, claim e compatibilità v2.0/v2.1/v2.2/v2.3/v2.4; nessun dato test conservato' AS result;
+SELECT 'OK: ${scenarios.length} parità JS/SQL, soglie cessione/affitto, curve/sole, annuale/giornaliero, idempotenza, input ostili, limite 30/ora, permessi/RLS, claim e compatibilità v2.0/v2.1/v2.2/v2.3/v2.4/v2.5; nessun dato test conservato' AS result;
 ROLLBACK;`;
-fs.writeFileSync(path.join(process.env.TEMP,'subingresso-valutatore-db-test.sql'),sql);
-console.log('Test SQL pronto (transazione con ROLLBACK).');
+return sql;
+}
+// L'API SQL impone un limite al corpo: ogni blocco resta autonomo e usa ROLLBACK.
+const output=process.env.VAL_DB_QA_DIR||process.env.TEMP;
+const batches=[];
+for(let start=0;start<scenarios.length;start+=400) {
+ const file=path.join(output,'subingresso-valutatore-db-test-'+String(batches.length+1).padStart(2,'0')+'.sql');
+ const cases=scenarios.slice(start,start+400);
+ fs.writeFileSync(file,buildSql(cases));batches.push({file,scenarios:cases.length});
+}
+fs.writeFileSync(path.join(output,'subingresso-valutatore-db-manifest.json'),JSON.stringify({total:scenarios.length,batches},null,2));
+console.log('Test SQL pronti: '+scenarios.length+' confronti in '+batches.length+' transazioni con ROLLBACK.');

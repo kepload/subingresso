@@ -1683,7 +1683,15 @@ Pubblicazione verificata `effb12b` + `35da1fd`, Vercel riuscito `Fs4xUe5bYZu4E8f
 - `loadRecentListings()` `.limit(12)`, `created_at DESC`, fallback `LISTINGS.slice(0,12)`.
 - Ripristinati banner e sezioni originali; dettagli/storico in `data/EMIL_DESIGN.md`.
 
-## 🧮 Valutatore v2.5 (14 ottobre 2026)
+## Valutatore v2.6 (22 ottobre 2026)
+
+- Richiesta esplicita: caso non alimentare 15.000 annui/50 giornate, residenti, linea, passaggio regolare, sole parziale, scadenza ignota resta 13.548. Variando una sola risposta: principale 16.425 (almeno +2.500 sui precedenti 13.925), laterale 10.000, angolo 15.000, riparato 14.000, sole davanti 12.000. Gli altri esempi approvati restano identici.
+- Calibrazione proporzionale sulla parte sopra 1.000: riferimento G=(commercialRevenueBase(300,50,false)-1000)*0,85*0,98=12.548,3974358974. Principale 15.425/G (+22,9241%), laterale 9.000/G (-28,2777%), angolo 14.000/G (+11,5680%). Sole riparato 13.000*0,98/G (+1,5269%); frontale non alimentare 11.000*0,98/G (-14,0926%), alimentare mantiene il rapporto precedente 0,98/0,95 (-11,3798%). Sole parziale e non noto invariati; nessun premio per esposizione non nota.
+- Pesi moltiplicativi a ogni incasso; in v2.6 rimosso il vecchio limite cumulativo 0,7-1,3, che annullerebbe parte del premio angolo con passaggio principale. Curva base, turismo, margini, durata e minimi v2.5 conservati; i vincoli di durata continuano a prevalere sui premi. Non reintrodurre importi aggiuntivi fissi o modificare report storici.
+- `PATCH_VALUTATORE_V26.sql` aggiunge `save_valutazione_v26`; claim include 2.0-2.6 e contatore admin indica 2.6. Calcolatore, report e dashboard condividono valuation8; pagina valutatore9. Versioni 2.0-2.5 mantengono calcolo e report originali.
+- Verifiche: 41.472 scenari JS e continuita delle curve; 11.520 risultati storici completi identici alla v2.5 precedente; 6.336 confronti JS/SQL, input/permessi/RLS/claim/idempotenza in 16 transazioni ROLLBACK. Generatore `scripts/test-valutatore-db.cjs`: manifest e blocchi da 400 in VAL_DB_QA_DIR o TEMP, per rispettare limite API. Prove `Documents/verifica-valutatore-v26-20261022/`; script browser locale/online in TEMP/subingresso-valutatore-v26-browser.cjs. Pubblicazione e verifica finale registrate nel riepilogo.
+
+### Storico v2.5 (14 ottobre 2026; pesi passaggio/angolo/sole superati dalla v2.6)
 
 - Ultima decisione esplicita utente, prevale sulle eccezioni v2.4: **sotto € 100/giorno cessione sempre € 1.000**, anche fascia min/max; **affitto sempre almeno € 500/anno**. Valgono anche con margine dichiarato nullo o concessione breve; assegnazioni temporanee restano non stimabili. Sono soglie commerciali, non redditività dimostrata: chiarito nel calcolatore/report.
 - Ancore non alimentare, condizioni neutre, 52 giornate: 100/giorno → 1.000; 200 → 8.000; 400 → 27.000. Tra 100 e 400: parabola `1000 + (185/3) × (incasso−100) + (incasso−100)²/12`, pendenza crescente. Tra 400 e 1100: raccordo cubico crescente a 50.336, con pendenza finale 52×0,53 (non alimentare) o 52×0,25 (alimentare); poi precedenti quote 53%/71% o 25%/65%.
