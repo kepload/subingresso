@@ -4,6 +4,27 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Spazio Vercel,21/10:** avviso75% dei10GB Deployment Storage. Rilevate
+  326pubblicazioni READY nel progetto `subingresso`, tre nel vecchio
+  `subingresso.it`; dominio sul primo, CLI locale collegata al secondo:
+  usare ID espliciti. Preparati314candidati, protette ultime10produzioni
+  e tutte le copie con alias. Eliminazione in attesa di consenso esplicito:
+  comporta perdita dei link/ripristino immediato delle vecchie copie.
+  Tutti i commit candidati presenti nel backup. Prove/inventario/CSV:
+  `Documents/verifica-spazio-vercel-20261021/`; ZIP411file verificatiSHA256,
+  bundleGit completo43.201.858byte verificato. Backup tag160132 e ramo
+  pre-riduzione remoti validi; errore cleanup helper noto.140asset pubblici
+  identici a9350585, tre config404 attesi. Pubblicato62f7c6a: ignoreCommand
+  salta solo modifiche md/sql già escluse dal deploy, confronto con ultima
+  pubblicazione riuscita. Codice/dati/config, errori, cronologia mancante
+  e riavvii manuali pubblicano normalmente;25controlli passati. Nessuna
+  modifica a pagine/stile/funzionalità/dati. Vercel2t3qv4xac1VKMRLS83yxSFfBD6sQ
+  READY:140asset identici prima/dopo,11funzioni con artefatti identici;
+  22pagine/API con esiti attesi e sitemap2965URL. Salto reale del successivo
+  aggiornamento documentale da verificare nei log.
+  API consumi Hobby non disponibile:75% dalla mail; nessuno spazio liberato
+  ancora dichiarato. Nessuna conservazione automatica modificata.
+
 
 - **Home desktop,21/10:** nascosti frase e link Inserisci annuncio accanto al titolo da1024px; sezione vendita inferiore conservata. homeCSS10. Chromium1440/1024/1023/820/390 verificati; backup remoto session-20261021-155049 valido, errore cleanup helper noto. Pubblicato1c78460: HTML v10 e regola desktop verificati online.
 
