@@ -21,6 +21,17 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   creati prima delle modifiche. Manutenzione futura distinta dalla ricerca attuale;
   nessuna altra provincia avviata e modifiche estranee preservate fuori dai commit.
 
+- **Redesign Impeccable,21/10,richiesta esplicita:** home a catalogo,
+  ricerca blu, card/metadati leggibili, fiere/calcolatore, città e FAQ native;
+  finiture condivise e font Jakarta statici locali400–800 con licenza OFL.
+  Logo testuale, slogan e flussi conservati; CSS8, homeCSS/JS2.
+  Copia391file verificati SHA256 in `Documents/backup-subingresso/impeccable-20261021-092441/`,
+  collegamento Desktop; tag session-20261021-092441-impeccable-redesign e ramo
+  pre-impeccable-20261021-092441 verificati remoti; noto errore cleanup helper.
+  Locale5browser/formati, profili364 e preferiti174 passati; correzioni Safari
+  e sovrapposizione copertine giudicate risolte. Prove/limiti in
+  `Documents/verifica-impeccable-20261021/`; pubblicazione da verificare.
+
 - **Perugia conclusa e verificata online,21/10:**152manifestazioni/47comuni,
   ricognizione59comuni,120registrazioni originali e165ricevute.146schede datate,
   nove sintesi costo;dieciID conservati e altre5428schede identiche. Catalogo5580.

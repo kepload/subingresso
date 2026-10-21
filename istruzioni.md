@@ -2424,3 +2424,5 @@ e ramo pre-fiere-asti-20261020 prima delle modifiche; noto errore cleanup dopo
 push del tag riuscito. TO DO spuntata dopo verifica:42concluse/68rimanenti.
 Nuovi bandi/programmi distinti dalla chiusura attuale; nessun contatto a terzi,
 nessuna altra provincia, modifiche estranee preservate ed escluse dai commit.
+
+Redesign Impeccable (21 ottobre 2026): richiesta esplicita successiva al ripristino della grafica. Home a catalogo, ricerca subito disponibile, card e finiture condivise; font Jakarta statici locali via alias Subingresso Jakarta per WebKit, licenza in css/fonts/OFL.txt. DESIGN.md e .impeccable/design.json descrivono il sistema; CSS condiviso8, home CSS/JS2. Backup ZIP391file verificati e tag/ramo remoti in Documents/backup-subingresso/impeccable-20261021-092441, prove in Documents/verifica-impeccable-20261021. Per annullare usare il revert del solo commit grafico, preservando i lavori successivi. Dati, pagamenti e invii non modificati.

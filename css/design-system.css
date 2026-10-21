@@ -1,5 +1,60 @@
-/* Existing appearance, quick press feedback and a compact mobile header. */
-:root { --si-ease: cubic-bezier(.23, 1, .32, 1); }
+/* The existing Jakarta face, served as explicit static weights for every browser. */
+@font-face { font-family: 'Subingresso Jakarta'; font-style: normal; font-weight: 400; font-display: swap; src: url('./fonts/jakarta-400.woff') format('woff'); }
+@font-face { font-family: 'Subingresso Jakarta'; font-style: normal; font-weight: 500; font-display: swap; src: url('./fonts/jakarta-500.woff') format('woff'); }
+@font-face { font-family: 'Subingresso Jakarta'; font-style: normal; font-weight: 600; font-display: swap; src: url('./fonts/jakarta-600.woff') format('woff'); }
+@font-face { font-family: 'Subingresso Jakarta'; font-style: normal; font-weight: 700; font-display: swap; src: url('./fonts/jakarta-700.woff') format('woff'); }
+@font-face { font-family: 'Subingresso Jakarta'; font-style: normal; font-weight: 800; font-display: swap; src: url('./fonts/jakarta-800.woff') format('woff'); }
+body { font-family: 'Subingresso Jakarta', sans-serif; }
+:root {
+    --si-ease: cubic-bezier(.23, 1, .32, 1);
+    --si-ink: #102b52;
+    --si-blue: #2563eb;
+    --si-muted: #52637a;
+    --si-surface: #edf3fa;
+}
+::selection { background: #b9d2ff; color: #102b52; }
+html { scrollbar-color: #92a9c8 #edf3fa; }
+input, textarea { caret-color: #2563eb; }
+.site-header { background: #fff; backdrop-filter: none; border-bottom-width: 0; }
+.site-header .site-nav { font-size: 14px; letter-spacing: 0; text-transform: none; color: #52637a; }
+.site-header .site-nav a:hover { color: #102b52; }
+body:not(.organizer-theme) .site-footer { background: #102b52; }
+.site-footer h4, .site-footer a { font-size: 14px; text-transform: none; letter-spacing: 0; }
+.site-footer h4 { color: #fff; }
+.site-footer p, .site-footer ul, .site-footer a { color: #d3e0f3; }
+.site-footer p { font-size: 14px; }
+.site-footer > div > div:last-child { border-top-width: 0; }
+.site-footer > div > div:first-child > div:first-child > div:first-child > div { display: none; }
+.site-footer > div > div:first-child > div:first-child > div:first-child > span { font-size: 30px; letter-spacing: -.03em; }
+body:not(.organizer-theme) [data-listing-id] {
+    background: transparent; background-image: none; border: 0; border-radius: 12px;
+    box-shadow: none; color: #102b52; transition: transform 180ms var(--si-ease);
+}
+body:not(.organizer-theme) [data-listing-id]:hover { box-shadow: none; }
+[data-listing-id] > a:first-child { background: #dce6f3; }
+[data-listing-id] > a:first-child > div:first-child { color: #52637a; }
+[data-listing-id] > a:first-child > div[class*="top-3"] > span { text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 700; box-shadow: none; }
+[data-listing-id] > a:first-child > div[class*="top-3"] > span.bg-emerald-500 { background: #087b61; }
+[data-listing-id] > a:first-child > button { box-shadow: none; width: 36px; height: 36px; color: #52637a; }
+[data-listing-id] > div { background: transparent; }
+[data-listing-id] > div > div:first-child span { font-size: 12px; text-transform: none; letter-spacing: 0; }
+[data-listing-id] > div > div:first-child > span:first-child { background: transparent; color: #334b69; padding-left: 0; font-weight: 600; }
+[data-listing-id] h3 { color: #102b52; font-size: 17px; line-height: 1.4; letter-spacing: -.02em; }
+[data-listing-id] .text-slate-400 { color: #52637a; }
+[data-listing-id] > div > div:nth-child(3) { font-size: 13px; }
+[data-listing-id] > div > a.flex > span { font-size: 13px; }
+[data-listing-id] > div > div.mt-auto { border: 0; padding-top: 18px; }
+[data-listing-id] > div > div.mt-auto p:first-child { font-size: 12px; text-transform: none; letter-spacing: 0; color: #52637a; }
+[data-listing-id] > div > div.mt-auto p:nth-child(2) { font-size: 22px; color: #102b52; line-height: 1.2; }
+[data-listing-id] > div > div.mt-auto > div:last-child > a { background: #fff; color: #2563eb; box-shadow: none; }
+[data-listing-id] > div > div.mt-auto > div:last-child > span { background: transparent; }
+[data-listing-id] > div > div.mt-auto > div:last-child > span span { font-size: 12px; }
+[data-listing-id] > div > div:last-child[class*="from-amber"] { background: #fff1d7; background-image: none; border: 0; }
+[data-listing-id] > div > div:last-child[class*="from-amber"] span { color: #85520b; font-size: 12px; letter-spacing: 0; text-transform: none; }
+[data-listing-id] :focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+    body:not(.organizer-theme) [data-listing-id]:hover { transform: translateY(-3px); }
+}
 button:not(:disabled), a[class*="bg-"] {
     transition-property: background-color, color, border-color, box-shadow, opacity, transform;
     transition-duration: 160ms;
@@ -13,7 +68,7 @@ button:not(:disabled), a[class*="bg-"] {
 .site-wordmark > span { color: #2563eb; }
 .organizer-theme .site-wordmark { color: #f1f5f9; }
 .organizer-theme .site-wordmark > span { color: #93c5fd; }
-.site-header .site-publish { color: #64748b; background: #f1f5f9; box-shadow: none; }
+.site-header .site-publish { color: #52637a; background: #f1f5f9; box-shadow: none; }
 .site-header .site-publish:hover { color: #334155; background: #e2e8f0; }
 .organizer-theme > .site-header .site-publish { color: #e2e8f0; background: #25334a; }
 .organizer-theme > .site-header .site-publish:hover { color: #fff; background: #334155; }

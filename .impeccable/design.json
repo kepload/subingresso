@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T07:53:37Z",
+  "title": "Design System: Subingresso.it",
+  "extensions": {
+    "colorMeta": {
+      "blue": {
+        "role": "primary",
+        "displayName": "Blu azione",
+        "tonalRamp": [
+          "oklch(15% 0.2152 262.88)",
+          "oklch(26% 0.2152 262.88)",
+          "oklch(38% 0.2152 262.88)",
+          "oklch(49% 0.2152 262.88)",
+          "oklch(61% 0.2152 262.88)",
+          "oklch(72% 0.2152 262.88)",
+          "oklch(84% 0.2152 262.88)",
+          "oklch(95% 0.2152 262.88)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Inchiostro",
+        "tonalRamp": [
+          "oklch(15% 0.0784 257.93)",
+          "oklch(26% 0.0784 257.93)",
+          "oklch(38% 0.0784 257.93)",
+          "oklch(49% 0.0784 257.93)",
+          "oklch(61% 0.0784 257.93)",
+          "oklch(72% 0.0784 257.93)",
+          "oklch(84% 0.0784 257.93)",
+          "oklch(95% 0.0784 257.93)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Ardesia leggibile",
+        "tonalRamp": [
+          "oklch(15% 0.0425 256.06)",
+          "oklch(26% 0.0425 256.06)",
+          "oklch(38% 0.0425 256.06)",
+          "oklch(49% 0.0425 256.06)",
+          "oklch(61% 0.0425 256.06)",
+          "oklch(72% 0.0425 256.06)",
+          "oklch(84% 0.0425 256.06)",
+          "oklch(95% 0.0425 256.06)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Carta",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(38% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(72% 0.0000 0.00)",
+          "oklch(84% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Ghiaccio",
+        "tonalRamp": [
+          "oklch(15% 0.0114 252.09)",
+          "oklch(26% 0.0114 252.09)",
+          "oklch(38% 0.0114 252.09)",
+          "oklch(49% 0.0114 252.09)",
+          "oklch(61% 0.0114 252.09)",
+          "oklch(72% 0.0114 252.09)",
+          "oklch(84% 0.0114 252.09)",
+          "oklch(95% 0.0114 252.09)"
+        ]
+      },
+      "photo-well": {
+        "role": "neutral",
+        "displayName": "Copertina chiara",
+        "tonalRamp": [
+          "oklch(15% 0.0207 254.92)",
+          "oklch(26% 0.0207 254.92)",
+          "oklch(38% 0.0207 254.92)",
+          "oklch(49% 0.0207 254.92)",
+          "oklch(61% 0.0207 254.92)",
+          "oklch(72% 0.0207 254.92)",
+          "oklch(84% 0.0207 254.92)",
+          "oklch(95% 0.0207 254.92)"
+        ]
+      },
+      "ink-hover": {
+        "role": "neutral",
+        "displayName": "Inchiostro al passaggio",
+        "tonalRamp": [
+          "oklch(15% 0.1001 256.39)",
+          "oklch(26% 0.1001 256.39)",
+          "oklch(38% 0.1001 256.39)",
+          "oklch(49% 0.1001 256.39)",
+          "oklch(61% 0.1001 256.39)",
+          "oklch(72% 0.1001 256.39)",
+          "oklch(84% 0.1001 256.39)",
+          "oklch(95% 0.1001 256.39)"
+        ]
+      },
+      "focus-light": {
+        "role": "neutral",
+        "displayName": "Luce di focus",
+        "tonalRamp": [
+          "oklch(15% 0.0685 262.13)",
+          "oklch(26% 0.0685 262.13)",
+          "oklch(38% 0.0685 262.13)",
+          "oklch(49% 0.0685 262.13)",
+          "oklch(61% 0.0685 262.13)",
+          "oklch(72% 0.0685 262.13)",
+          "oklch(84% 0.0685 262.13)",
+          "oklch(95% 0.0685 262.13)"
+        ]
+      },
+      "inverse-muted": {
+        "role": "neutral",
+        "displayName": "Testo inverso attenuato",
+        "tonalRamp": [
+          "oklch(15% 0.0296 257.77)",
+          "oklch(26% 0.0296 257.77)",
+          "oklch(38% 0.0296 257.77)",
+          "oklch(49% 0.0296 257.77)",
+          "oklch(61% 0.0296 257.77)",
+          "oklch(72% 0.0296 257.77)",
+          "oklch(84% 0.0296 257.77)",
+          "oklch(95% 0.0296 257.77)"
+        ]
+      },
+      "sale": {
+        "role": "semantic",
+        "displayName": "Vendita",
+        "tonalRamp": [
+          "oklch(15% 0.1000 170.96)",
+          "oklch(26% 0.1000 170.96)",
+          "oklch(38% 0.1000 170.96)",
+          "oklch(49% 0.1000 170.96)",
+          "oklch(61% 0.1000 170.96)",
+          "oklch(72% 0.1000 170.96)",
+          "oklch(84% 0.1000 170.96)",
+          "oklch(95% 0.1000 170.96)"
+        ]
+      },
+      "promotion-surface": {
+        "role": "semantic",
+        "displayName": "Fondo promozione",
+        "tonalRamp": [
+          "oklch(15% 0.0373 83.03)",
+          "oklch(26% 0.0373 83.03)",
+          "oklch(38% 0.0373 83.03)",
+          "oklch(49% 0.0373 83.03)",
+          "oklch(61% 0.0373 83.03)",
+          "oklch(72% 0.0373 83.03)",
+          "oklch(84% 0.0373 83.03)",
+          "oklch(95% 0.0373 83.03)"
+        ]
+      },
+      "promotion-text": {
+        "role": "semantic",
+        "displayName": "Testo promozione",
+        "tonalRamp": [
+          "oklch(15% 0.1027 67.31)",
+          "oklch(26% 0.1027 67.31)",
+          "oklch(38% 0.1027 67.31)",
+          "oklch(49% 0.1027 67.31)",
+          "oklch(61% 0.1027 67.31)",
+          "oklch(72% 0.1027 67.31)",
+          "oklch(84% 0.1027 67.31)",
+          "oklch(95% 0.1027 67.31)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Slogan",
+        "purpose": "Titolo principale della home; scala mobile documentata in DESIGN.md."
+      },
+      "headline": {
+        "displayName": "Titolo di sezione",
+        "purpose": "Struttura le sezioni della home."
+      },
+      "title": {
+        "displayName": "Titolo operativo",
+        "purpose": "Titoli dei passaggi di vendita; le schede usano la propria scala compatta."
+      },
+      "body": {
+        "displayName": "Testo operativo",
+        "purpose": "Paragrafi e spiegazioni essenziali."
+      },
+      "label": {
+        "displayName": "Azione",
+        "purpose": "Pulsanti e link principali."
+      }
+    },
+    "shadows": [
+      {
+        "name": "catalog-flat",
+        "value": "none",
+        "purpose": "Schede del catalogo a riposo e al passaggio del puntatore."
+      }
+    ],
+    "motion": [
+      {
+        "name": "si-ease",
+        "value": "cubic-bezier(.23, 1, .32, 1)",
+        "purpose": "Curva condivisa dei piccoli spostamenti."
+      },
+      {
+        "name": "control-transition",
+        "value": "160ms",
+        "purpose": "Stati dei controlli."
+      },
+      {
+        "name": "home-arrive",
+        "value": "650ms",
+        "purpose": "Ingresso di titolo e ricerca, da translateY(18px), senza opacità."
+      },
+      {
+        "name": "search-arrive-delay",
+        "value": "90ms",
+        "purpose": "Ritardo della ricerca rispetto al titolo."
+      },
+      {
+        "name": "home-reveal",
+        "value": "480ms",
+        "purpose": "Spostamento singolo da 18px per contenuti già visibili, dopo l’ingresso nel viewport."
+      },
+      {
+        "name": "photo-hover",
+        "value": "450ms",
+        "purpose": "Ingrandimento foto a scale(1.035) dentro il ritaglio."
+      },
+      {
+        "name": "card-hover",
+        "value": "180ms",
+        "purpose": "Traslazione verticale di −3px della scheda."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "Home senza animazioni o transizioni con prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "home-small-title-max",
+        "value": "359px"
+      },
+      {
+        "name": "header-compact-max",
+        "value": "379px"
+      },
+      {
+        "name": "home-mobile-max",
+        "value": "599px"
+      },
+      {
+        "name": "header-mobile-max",
+        "value": "639px"
+      },
+      {
+        "name": "catalog-two-columns-min",
+        "value": "768px"
+      },
+      {
+        "name": "home-stacked-max",
+        "value": "900px"
+      },
+      {
+        "name": "header-hide-nav-max",
+        "value": "1023px"
+      },
+      {
+        "name": "home-tablet-max",
+        "value": "1099px"
+      },
+      {
+        "name": "catalog-four-columns-min",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Pulsante principale",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Azione principale estesa, come l’accesso al catalogo.",
+      "html": "<a class=\"ds-button\" href=\"/annunci\">Vedi tutti gli annunci <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-button{font-family:'Subingresso Jakarta',sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:20px;background:var(--si-ink,#102b52);color:#fff;border:0;border-radius:8px;min-height:52px;padding:14px 28px;font-size:16px;font-weight:700;text-decoration:none;transition:background-color 160ms,transform 160ms var(--si-ease,cubic-bezier(.23,1,.32,1));}.ds-button:hover{background:#21497e}.ds-button:focus-visible{outline:3px solid var(--si-blue,#2563eb);outline-offset:4px;}@media(prefers-reduced-motion:no-preference){.ds-button:active:not(:focus-visible){transform:scale(.97)}}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+    },
+    {
+      "name": "Link con freccia",
+      "kind": "custom",
+      "description": "Invito secondario nominato, senza contenitore.",
+      "html": "<a class=\"ds-link\" href=\"/vendi\">Inserisci annuncio <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-link{font-family:'Subingresso Jakarta',sans-serif;display:inline-flex;align-items:center;gap:12px;color:var(--si-ink,#102b52);font-size:16px;font-weight:700;text-decoration:none;text-decoration-thickness:2px;text-underline-offset:5px}.ds-link svg{transition:transform 160ms var(--si-ease,cubic-bezier(.23,1,.32,1))}.ds-link:hover{text-decoration-line:underline}.ds-link:focus-visible{outline:3px solid var(--si-blue,#2563eb);outline-offset:4px;}@media(prefers-reduced-motion:no-preference){.ds-link:hover svg{transform:translateX(3px)}}@media(prefers-reduced-motion:reduce){.ds-link svg{transition:none}}"
+    },
+    {
+      "name": "Ricerca geografica",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Campo con etichetta e azione dentro il pannello blu.",
+      "html": "<div class=\"ds-search\"><label class=\"ds-search-label\" for=\"ds-place\">Dove cerchi un posteggio?</label><div class=\"ds-search-field\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4.5 4.5\"/></svg><input class=\"ds-search-input\" id=\"ds-place\" placeholder=\"Comune, frazione o regione\" autocomplete=\"off\"><button class=\"ds-search-button\" type=\"button\">Cerca <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button></div></div>",
+      "css": ".ds-search{font-family:'Subingresso Jakarta',sans-serif;background:var(--si-blue,#2563eb);color:#fff;padding:28px 32px;border-radius:12px;display:grid;gap:18px}.ds-search-label{font-size:24px;font-weight:700;line-height:1.25;letter-spacing:-.025em}.ds-search-field{display:flex;align-items:center;gap:12px;padding:6px;background:#fff;border-radius:8px;color:var(--si-ink,#102b52)}.ds-search-field>svg{margin-left:14px;color:var(--si-blue,#2563eb);flex-shrink:0}.ds-search-field:focus-within{outline:3px solid #b9d2ff;outline-offset:4px}.ds-search-input{font-family:'Subingresso Jakarta',sans-serif;min-width:0;flex:1;width:100%;padding:13px 0;background:transparent;color:var(--si-ink,#102b52);border:0;outline:none;font-size:16px;caret-color:var(--si-blue,#2563eb)}.ds-search-input::placeholder{color:#52637a;opacity:1}.ds-search-button{font-family:'Subingresso Jakarta',sans-serif;display:inline-flex;align-items:center;gap:12px;flex-shrink:0;padding:14px 24px;border:0;border-radius:5px;background:var(--si-ink,#102b52);color:#fff;font-size:16px;font-weight:700;transition:background-color 160ms}.ds-search-button:hover{background:#21497e}.ds-search-button:focus-visible{outline:3px solid #b9d2ff;outline-offset:4px}@media(max-width:599px){.ds-search{padding:24px 18px 18px}.ds-search-label{font-size:20px}.ds-search-field{padding:4px;gap:9px}.ds-search-input{font-size:14px}.ds-search-button{font-size:14px;padding:13px 16px}.ds-search-button svg{display:none}}@media(prefers-reduced-motion:reduce){.ds-search-button{transition:none}}"
+    },
+    {
+      "name": "Navigazione desktop",
+      "kind": "nav",
+      "description": "Link essenziali dell’header; nascosti sotto 1024px nella pagina.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navigazione principale\"><a class=\"ds-nav-link\" href=\"/valutatore\">Calcolatore</a><a class=\"ds-nav-link\" href=\"/annunci\">Annunci</a><a class=\"ds-nav-link\" href=\"/fiere\">Fiere</a><a class=\"ds-nav-link\" href=\"/blog\">Blog</a></nav>",
+      "css": ".ds-nav{font-family:'Subingresso Jakarta',sans-serif;display:flex;align-items:center;gap:24px;font-size:14px;font-weight:900;letter-spacing:0;text-transform:none}.ds-nav-link{color:var(--si-muted,#52637a);text-decoration:none;transition:color 160ms}.ds-nav-link:hover{color:var(--si-ink,#102b52)}.ds-nav-link:focus-visible{outline:2px solid var(--si-blue,#2563eb);outline-offset:3px;transition:none}@media(prefers-reduced-motion:reduce){.ds-nav-link{transition:none}}"
+    },
+    {
+      "name": "Stato vendita",
+      "kind": "chip",
+      "refersTo": "status-sale",
+      "description": "Stato informativo della scheda; non è un controllo.",
+      "html": "<span class=\"ds-sale\">Vendita</span>",
+      "css": ".ds-sale{font-family:'Subingresso Jakarta',sans-serif;display:inline-flex;align-items:center;background:#087b61;color:#fff;font-size:13px;font-weight:700;line-height:1.5;letter-spacing:0;text-transform:none;padding:4px 10px;border-radius:8px}"
+    },
+    {
+      "name": "Offerta senza foto",
+      "kind": "card",
+      "refersTo": "listing-card",
+      "description": "Esempio strutturale senza dati commerciali inventati; il luogo lascia spazio ai controlli.",
+      "html": "<article class=\"ds-card\"><a class=\"ds-card-cover\" href=\"/annunci\" aria-label=\"Apri gli annunci della località\"><span class=\"ds-card-status\">Vendita</span><span class=\"ds-card-place\" aria-hidden=\"true\"><strong class=\"ds-card-city\">Località</strong><small class=\"ds-card-caption\">Foto non disponibile</small></span></a><div class=\"ds-card-body\"><span class=\"ds-card-type\">Mercato settimanale</span><a class=\"ds-card-title\" href=\"/annunci\">Titolo dell’annuncio</a><p class=\"ds-card-meta\">Comune, Regione</p></div></article>",
+      "css": ".ds-card{font-family:'Subingresso Jakarta',sans-serif;max-width:360px;background:transparent;color:var(--si-ink,#102b52);border:0;border-radius:12px;overflow:hidden;box-shadow:none}.ds-card-cover{position:relative;display:flex;height:148px;background:#dce6f3;color:var(--si-ink,#102b52);text-decoration:none;overflow:hidden}.ds-card-status{position:absolute;top:12px;left:12px;padding:4px 10px;border-radius:8px;background:#087b61;color:#fff;font-size:13px;font-weight:700;line-height:1.5}.ds-card-place{display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:52px 20px 16px;min-width:0;width:100%}.ds-card-city{font-size:22px;font-weight:700;letter-spacing:-.025em;line-height:1.15;overflow-wrap:anywhere;text-wrap:balance}.ds-card-caption{display:block;margin-top:6px;font-size:13px;font-weight:500;color:var(--si-muted,#52637a)}.ds-card-body{padding:20px 0}.ds-card-type{font-size:12px;font-weight:600;color:#334b69}.ds-card-title{display:block;margin-top:8px;color:var(--si-ink,#102b52);font-size:17px;line-height:1.4;letter-spacing:-.02em;font-weight:900;text-decoration:none;transition:color 160ms}.ds-card-title:hover{color:var(--si-blue,#2563eb)}.ds-card-meta{margin:6px 0 0;font-size:13px;color:var(--si-muted,#52637a)}.ds-card a:focus-visible{outline:3px solid var(--si-blue,#2563eb);outline-offset:3px}@media(prefers-reduced-motion:no-preference){.ds-card{transition:transform 180ms var(--si-ease,cubic-bezier(.23,1,.32,1))}.ds-card:hover{transform:translateY(-3px)}}@media(prefers-reduced-motion:reduce){.ds-card-title{transition:none}}"
+    },
+    {
+      "name": "FAQ nativa",
+      "kind": "custom",
+      "description": "Risposta espandibile su superficie ghiaccio.",
+      "html": "<details class=\"ds-faq\"><summary class=\"ds-faq-summary\">Come funziona il subingresso?</summary><div class=\"ds-faq-answer\">Consulta le informazioni dedicate e i dettagli dell’annuncio.</div></details>",
+      "css": ".ds-faq{font-family:'Subingresso Jakarta',sans-serif;background:var(--si-surface,#edf3fa);color:var(--si-ink,#102b52);border-radius:8px}.ds-faq-summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 24px;cursor:pointer;font-size:16px;font-weight:700;line-height:1.5;list-style:none}.ds-faq-summary::-webkit-details-marker{display:none}.ds-faq-summary::after{content:\"+\";font-size:23px;font-weight:500;color:var(--si-blue,#2563eb)}.ds-faq[open] .ds-faq-summary::after{content:\"−\"}.ds-faq-summary:focus-visible{outline:3px solid var(--si-blue,#2563eb);outline-offset:4px;}.ds-faq-answer{padding:0 24px 24px;font-size:16px;line-height:1.65}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Il catalogo italiano di oggetti",
+    "overview": "Un catalogo nitido di luoghi e opportunità: il blu esistente identifica le azioni, l’inchiostro dà peso ai titoli e le superfici chiare separano i compiti. La personalità nasce da proporzioni tipografiche precise, spaziatura regolare e dati leggibili.\n\nLe fotografie appartengono agli annunci reali. In loro assenza, il luogo e la dicitura «Foto non disponibile» diventano una copertina tipografica onesta. Logo testuale e slogan corrente restano i riferimenti del marchio.",
+    "keyCharacteristics": [
+      "Titoli compatti e decisi, testo operativo in italiano.",
+      "Superfici piatte e campi colore funzionali.",
+      "Fotografie reali oppure copertine di luogo esplicite."
+    ],
+    "rules": [
+      {
+        "name": "The Visible Content Rule",
+        "body": "Il contenuto è visibile per impostazione predefinita; il movimento accompagna l’ingresso senza nasconderlo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Catalog Rule",
+        "body": "Le schede restano prive di ombra anche al passaggio del puntatore; gerarchia, spazio e copertina ne definiscono i confini.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do mantenere nome e logo solo testuale, con il blu sul suffisso .it.",
+      "Do conservare stato, giorni, luogo, venditore, prezzo e preferiti leggibili nelle offerte.",
+      "Do indicare esplicitamente l’assenza di una foto, lasciando spazio libero sotto i badge.",
+      "Do mantenere il contenuto visibile e rispettare la preferenza di movimento ridotto."
+    ],
+    "donts": [
+      "Don’t sostituire le foto mancanti con immagini decorative o annunci inventati.",
+      "Don’t aggiungere ombre decorative alle schede del catalogo.",
+      "Don’t reintrodurre piccoli titoli maiuscoli tracciati nella home ridisegnata.",
+      "Don’t estendere queste finiture al tema organizzatori senza una verifica dedicata."
+    ]
+  }
+}

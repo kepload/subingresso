@@ -5,3 +5,8 @@ tailwind.config.js
 scripts/.bin/
 .claude/settings.local.json
 data/_*.json
+.taste-skill/
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/config.local.json
+.impeccable/live/
