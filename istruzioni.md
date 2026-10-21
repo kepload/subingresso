@@ -2533,3 +2533,24 @@ backup remoto preventivo già eseguito e copia SHA256 ricerche-fiere-20261021-19
 TO DO spuntata dopo verifica:49 complete/61 rimanenti. Futuri bandi/rettifiche
 sono manutenzione distinta. Nessun contatto a terzi o altra provincia lavorata;
 cambiamenti estranei preservati e non inclusi nei commit.
+
+
+## Livorno — calendario fiere, ricerca del 21 ottobre 2026
+
+Ricerca corrente conclusa con limiti espliciti, pubblicazione/verifica in corso:
+63manifestazioni/17comuni, ricognizione19; altre5908schede identiche a32452a0,
+catalogo5971, JS103/JSON71. Audit data/fiere-livorno.json e data/FIERE.md:
+231ricevute/34PDF,27esclusioni/20limiti,47schede datate e7costi, due solo2025.
+Suvereto10€/giorno/sera e scadenzaCinghiale15novembre vs8nelPDF; LibrExpo
+300€+IVA editori e posti self esauriti, orari discordanti. Fierone CUP
+29/40/53/64€; Apritiborgo250–450€. Caravanserraglio gratuito max9m².
+PianoLivorno recuperato nuovo bucket dai link attuali, vecchi URL410/403;
+allegato mercatini non professionisti non pubblicabile. Bibbona daily vsdomeniche
+e FieraOttobreCecina discordanti, nessun calendario generato per ipotesi.
+Originali/prove Documents/ricerca-fiere-livorno-20261021, backup remoto tag
+session-20261021-213553-fiere-livorno e ramo pre-fiere-livorno-20261021.
+Locale Chromium1440/320 e WebKit390 con PLAYWRIGHT_MODULE passati,
+conservazione altre province e build ripetibile confermate. Settori e5971pagine/2587sitemap
+passati. CopiaSHA256 ricerche-fiere-20261021-195618:60846file/10802537078byte,
+zeroerrori. Suite generale5formati passata; pubblicazione da verificare, TO DO49/61invariata.
+Nessun contatto a terzi; manutenzione futura distinta dalla ricerca attuale.
