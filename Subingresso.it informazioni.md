@@ -4,6 +4,24 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Livorno conclusa e verificata online21/10:**63manifestazioni/17comuni,
+  ricognizione19; nessuna scheda o audit provinciale al checkpoint32452a0.
+  Altre5908schede identiche, catalogo5971. Audit data/fiere-livorno.json e
+  FIERE.md:231ricevute/34PDF,27esclusioni/20limiti, sette costi e due soli2025.
+  Fonti originali e programmi discordanti conservati; Cinghiale15novembre
+  vs8nelPDF, Bibbona tutti i giorni vsdomeniche, FieraOttobreCecina e orari
+  LibrExpo espliciti. PianoLivorno recuperato dal nuovo archivio; calendario
+  non professionisti non pubblicabile. Nessun dato inventato o invio a terzi.
+  Pubblicatoa27c82d:quattro asset identici aGit,63pagine200/H1/canonical/contenuti,
+  Chromium1440/320 e WebKit390 locali/online passati con PLAYWRIGHT_MODULE;
+  generale5formati,settori,5971pagine/2587sitemap e build ripetibile passati.
+  TO DO50concluse/60da fare aggiornata dopo verifica. CacheJS103/JSON71.
+  Originali/prove Documents/ricerca-fiere-livorno-20261021;backup remoto
+  session-20261021-213553-fiere-livorno e ramo pre-fiere-livorno-20261021.
+  CopiaSHA256 ricerche-fiere-20261021-195618:60846file/10802537078byte,
+  zeroerrori; supplemento finale verificato. Manutenzione futura distinta.
+
+
 - **Spazio Vercel,21/10:** avviso75% dei10GB Deployment Storage. Inizialmente
   326pubblicazioni READY nel progetto `subingresso`, tre nel vecchio
   `subingresso.it`; dominio sul primo, CLI locale collegata al secondo:
@@ -681,7 +699,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Avvisi bandi: account obbligatorio.** Su richiesta, blog e pagine bando aprono la registrazione standard; chi ha un account accede. Attivazione dopo autenticazione, email ricavata dal server. Invii e Scout limitati agli indirizzi con account esistente tramite vista privata `registered_bando_alerts`; inserimenti diretti pubblici revocati. DB prima/dopo: 32 iscrizioni conservate, 12 con account e 20 escluse dagli invii finché non si registrano; nessun account creato automaticamente. Patch e quattro funzioni pubblicate; codice `effb12b`/`35da1fd`, cache avvisi2, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Fs4xUe5bYZu4E8fMvwXYg17TCKd9). Sintassi, qualità dati, acquisizione e test dedicati Chromium 1440/320×568 + WebKit390 passati; sei percorsi su HTML online, account/email simulati, nessun invio reale. Endpoint live senza account/chiave pubblica: 401; vista destinatari non pubblica. Modulo scorrevole su telefoni bassi; JS online identico. Prove in `Documents/verifica-avvisi-bandi-20261017.{cjs,json}`; overflow circoscritto a form/modal, testi lunghi preesistenti dell'articolo fuori perimetro. Backup tag/branch remoti validi; cleanup tag con errore PowerShell noto.
 - **Dashboard:** eliminato su richiesta il riquadro superiore “Il tuo annuncio”, con carousel, totali e domanda regionale. Preferenza: non riproporlo; statistiche nel pannello Performance posteggi e gestione nell'elenco annunci.
 - **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Preferenza corrente: grafico sopra i quattro riquadri, etichette e numeri senza sottotitoli; spiegazioni/storico solo nella voce apribile. Messaggi ricevuti distinti dai click telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
-- **Fiere:** 5.908 schede; ricerca approfondita conclusa e verificata online per 49 province, 61 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Fiere:** 5.971 schede; ricerca approfondita conclusa e verificata online per 50 province, 60 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -1498,7 +1516,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 49 province completate, 61 da fare su 110**, aggiornate il 21 ottobre dopo Siena. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 50 province completate, 60 da fare su 110**, aggiornate il 21 ottobre dopo Livorno. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -1695,7 +1713,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
   - [ ] Manutenzione periodica Siena: nuovi bandi/quote/posti, rettifica estate
     Siena, giorni Natale Montepulciano, nuovi originali Sarteano/Charta/Gallina,
     chiarimenti Trequanda/Sinalunga; distinta dalla ricerca attuale conclusa.
-- [ ] **43. Livorno** — Toscana
+- [x] **43. Livorno** — Toscana; ricerca corrente conclusa con limiti espliciti: 63 manifestazioni in 17 comuni, 19 esaminati; pubblicazione e verifica online concluse il 21 ottobre 2026. Audit `data/fiere-livorno.json` e `data/FIERE.md`; verifiche periodiche future distinte.
 - [ ] **44. Savona** — Liguria
 - [ ] **45. La Spezia** — Liguria
 - [ ] **46. Vercelli** — Piemonte

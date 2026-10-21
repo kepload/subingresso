@@ -3,7 +3,7 @@
   "checkedAt": "2026-10-21",
   "research": {
     "status": "documental-review-concluded-with-explicit-limits",
-    "publicationStatus": "pending-publication-and-verification",
+    "publicationStatus": "published-and-verified",
     "baselineCommit": "32452a0925a6dd8cecdc6801b2d238af5fc065dc",
     "previousCatalogEvents": 0,
     "municipalitiesReviewed": 19,
@@ -2966,7 +2966,26 @@
       "sitemapEntries": 2587,
       "nationalBrowser": "five formats passed",
       "provincialBrowser": "Chromium1440/320, WebKit390, list/map/31dialogs/noJS passed with PLAYWRIGHT_MODULE",
-      "online": "pending"
+      "online": "passed: four assets identical to Git, 63 pages, three browser formats"
+    },
+    "publication": {
+      "commit": "a27c82df7ffbda619e67f5778c8fc89a958caac2",
+      "checkedAt": "2026-10-21T20:02:16Z",
+      "url": "https://subingresso.it/fiere?provincia=Livorno",
+      "assetsIdentical": 4,
+      "pagesHttp200H1CanonicalAndOperationalContent": 63,
+      "browser": "Chromium1440/320 and WebKit390 online passed with PLAYWRIGHT_MODULE",
+      "vercelGithubStatus": {
+        "http": 200,
+        "state": "success",
+        "statuses": [
+          {
+            "context": "Vercel",
+            "state": "success",
+            "targetUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/7Fewv2GDzTpK1e49fz3WSJecbMK4"
+          }
+        ]
+      }
     }
   },
   "events": [

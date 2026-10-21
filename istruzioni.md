@@ -2537,7 +2537,7 @@ cambiamenti estranei preservati e non inclusi nei commit.
 
 ## Livorno — calendario fiere, ricerca del 21 ottobre 2026
 
-Ricerca corrente conclusa con limiti espliciti, pubblicazione/verifica in corso:
+Ricerca corrente conclusa con limiti espliciti, pubblicata/verificata online:
 63manifestazioni/17comuni, ricognizione19; altre5908schede identiche a32452a0,
 catalogo5971, JS103/JSON71. Audit data/fiere-livorno.json e data/FIERE.md:
 231ricevute/34PDF,27esclusioni/20limiti,47schede datate e7costi, due solo2025.
@@ -2552,5 +2552,7 @@ session-20261021-213553-fiere-livorno e ramo pre-fiere-livorno-20261021.
 Locale Chromium1440/320 e WebKit390 con PLAYWRIGHT_MODULE passati,
 conservazione altre province e build ripetibile confermate. Settori e5971pagine/2587sitemap
 passati. CopiaSHA256 ricerche-fiere-20261021-195618:60846file/10802537078byte,
-zeroerrori. Suite generale5formati passata; pubblicazione da verificare, TO DO49/61invariata.
+zeroerrori; supplemento finale verificato. Suite generale5formati passata.
+Pubblicatoa27c82d:4asset identici aGit,63pagine200/H1/canonical/contenuti e
+Chromium1440/320+WebKit390 online passati. TO DO50/60aggiornata dopo esito.
 Nessun contatto a terzi; manutenzione futura distinta dalla ricerca attuale.

@@ -2,8 +2,8 @@
 
 ## Livorno — ricerca documentale del 21 ottobre 2026
 
-Ricerca corrente conclusa con limiti espliciti; **pubblicazione e verifica online
-in corso**, TO DO ancora non spuntata. **63 manifestazioni in 17 comuni**,
+Ricerca corrente conclusa con limiti espliciti, **pubblicata e verificata online**.
+TO DO spuntata dopo esito positivo: **50 province concluse, 60 rimanenti**. **63 manifestazioni in 17 comuni**,
 ricognizione di tutti i **19 comuni**. Al checkpoint `32452a0` non esistevano
 schede Livorno, audit provinciale o sezione provinciale conclusa: nessuna ricerca
 completata ripetuta. Le altre **5.908 schede restano identiche**; catalogo **5.971**.
@@ -18,7 +18,7 @@ Originali, estrazioni, ricerche, errori, rendering delle scansioni e prove in
 pubblico. Backup preventivo remoto
 `backup/session-20261021-213553-fiere-livorno` e ramo
 `backup/pre-fiere-livorno-20261021` verificati; noto errore del cleanup dopo il
-push valido del tag. Copia SHA256 verificata in `Documents/backup-subingresso/ricerche-fiere-20261021-195618`: **60.846 file, 10.802.537.078 byte, zero errori**; supplemento finale previsto. Cache **JS103/JSON71**. Nessun contatto a terzi.
+push valido del tag. Copia SHA256 verificata in `Documents/backup-subingresso/ricerche-fiere-20261021-195618`: **60.846 file, 10.802.537.078 byte, zero errori**; supplemento finale dei dati e delle prove verificato separatamente nella stessa copia. Cache **JS103/JSON71**. Nessun contatto a terzi.
 
 Riscontri e cautele operative:
 
@@ -87,7 +87,10 @@ provenienza di ogni edizione; suite provinciale Chromium1440/320 e WebKit390
 con **PLAYWRIGHT_MODULE**, catalogo/mappa,31dialoghi per formato e pagine
 senzaJS passati. Settori e tutte le **5.971 pagine / 2.587 voci sitemap** passati; suite generale
 in cinque formati passata. Verifica pubblica
-ancora necessaria: non spuntare TO DO prima dell’esito.
+conclusa sul commit `a27c82d`: quattro asset identici ai byte Git, tutte le
+**63 pagine HTTP200 con H1, canonical e contenuto operativo/costi corretti**.
+Chromium1440/320 e WebKit390 online passati, catalogo/mappa,31dialoghi per
+formato e pagine senzaJS. Registro e riepilogo aggiornati solo dopo l’esito.
 
 Manutenzione futura distinta dalla ricerca attuale: nuove assegnazioni e quote,
 rettifiche delle date concorrenti, nuovi originali per schede secondarie e
