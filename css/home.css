@@ -29,15 +29,6 @@
 .home-section-title { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
 .home-page h2 { font-size: clamp(28px, 2.9vw, 40px); line-height: 1.15; letter-spacing: -.035em; font-weight: 800; }
 .home-section-title p { margin-top: 10px; font-size: 16px; color: var(--si-muted); }
-.home-page #previewGrid { gap: 24px; }
-.home-page [data-listing-id] > div { padding-inline: 0; }
-.home-card-place { flex-direction: column; padding: 52px 20px 16px; text-align: left; align-items: flex-start; color: var(--si-ink); }
-.home-card-place > div { width: 100%; }
-.home-card-place strong { display: block; font-size: 22px; font-weight: 700; letter-spacing: -.025em; line-height: 1.15; max-width: 100%; overflow-wrap: anywhere; text-wrap: balance; }
-.home-card-place small { display: block; font-size: 13px; font-weight: 500; margin-top: 6px; color: var(--si-muted); }
-.home-page [data-listing-id] > a:first-child:has(.home-card-place) { height: 148px; }
-.home-page [data-listing-id] > a:first-child:has(.home-card-place) > div[class*="top-3"] { top: 12px; }
-.home-page [data-listing-id] > a:first-child .home-card-place { justify-content: flex-end; padding-bottom: 16px; }
 .home-listing-bottom { display: flex; justify-content: center; margin-top: 36px; }
 .home-button { display: inline-flex; align-items: center; justify-content: center; gap: 20px; background: var(--si-ink); color: #fff; border-radius: 8px; min-height: 52px; padding: 14px 28px; font-size: 16px; font-weight: 700; }
 .home-button:hover { background: #21497e; }
@@ -168,8 +159,6 @@
     .home-hero h1 { animation: home-arrive 650ms var(--si-ease) both; }
     .home-search { animation: home-arrive 650ms 90ms var(--si-ease) both; }
     .home-reveal { transition: transform 480ms var(--si-ease); }
-    .home-page [data-listing-id] > a:first-child img { transition: transform 450ms var(--si-ease); }
-    .home-page [data-listing-id]:hover > a:first-child img { transform: scale(1.035); }
     @keyframes home-arrive { from { transform: translateY(18px); } to { transform: translateY(0); } }
 }
 @media (max-width: 359px) {

@@ -141,7 +141,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 ## 9) Cache buster correnti (aggiornare a ogni modifica)
 
 - `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
-- `data.js?v=21`
+- `data.js?v=22`
 - `auth.js?v=22`
 - `ui-components.js?v=17`
 - `js/pages/annunci.js?v=13`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)

@@ -4,6 +4,15 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Anteprime uniformi,21/10:** nome del luogo nei riquadri senza foto,
+  eliminato «Foto non disponibile». Stesso componente/stile home e annunci,
+  spaziatura condivisa; foto presenti conservate, fallback anche se il file
+  immagine non si carica. Cache data22/design-system9/homeCSS-JS3.
+  Locale Chromium1440/320 e WebKit390: confronto delle due pagine passato,
+  nomi/foto/link/preferiti presenti, zero errori JS o overflow. Pubblicazione
+  e riscontri in `Documents/verifica-anteprime-uniformi-20261021/`.
+  Backup tag e ramo pre-anteprime remoti verificati; errore cleanup noto.
+
 - **Napoli conclusa e verificata online, 21/10:** ricerca documentale corrente conclusa con limiti espliciti.
   76 manifestazioni in 28 comuni, ricognizione dei 92 comuni, 393 ricevute,
   125 record Mostra d’Oltremare confrontati, 36 gruppi di esclusioni e 17 limiti.

@@ -357,15 +357,16 @@ function buildCard(l, isSmall = false, distance = null) {
         }
 
         const src = getOptimizedImageUrl(img, featured ? 768 : 480);
-        return img ? `<img src="${escapeHTML(src)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">` : '';
+        return img ? `<img src="${escapeHTML(src)}" alt="${escapeHTML(l.titolo)}" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.classList.add('listing-card-cover--place')" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">` : '';
     })();
+    const coverName = String(l.comune || l.titolo || '').split(',')[0].trim();
 
     return `
-    <div data-listing-id="${escapeHTML(l.id)}" class="group ${expiredOpacity} ${featured ? 'bg-orange-100/50' : statoBg} rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full relative">
+    <div data-listing-id="${escapeHTML(l.id)}" data-ui class="group ${expiredOpacity} ${featured ? 'bg-orange-100/50' : statoBg} rounded-2xl sm:rounded-3xl ${featuredBorder} overflow-hidden hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full relative">
         <!-- cover -->
-        <a href="${annuncioUrl}" class="block relative h-20 sm:h-28 bg-slate-100 overflow-hidden flex-shrink-0">
-            <div class="absolute inset-0 flex items-center justify-center text-slate-300">
-                <i class="fas fa-store text-2xl sm:text-4xl"></i>
+        <a href="${annuncioUrl}" aria-label="Apri ${escapeHTML(l.titolo)}" class="listing-card-cover ${imgTag ? '' : 'listing-card-cover--place'} block relative h-20 sm:h-28 bg-slate-100 overflow-hidden flex-shrink-0">
+            <div class="listing-card-place" aria-hidden="true">
+                <strong>${escapeHTML(coverName)}</strong>
             </div>
             ${imgTag}
             <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">

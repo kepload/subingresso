@@ -32,11 +32,17 @@ body:not(.organizer-theme) [data-listing-id] {
 }
 body:not(.organizer-theme) [data-listing-id]:hover { box-shadow: none; }
 [data-listing-id] > a:first-child { background: #dce6f3; }
+#previewGrid, #resultsGrid { gap: 24px; }
+#previewGrid [data-listing-id], #resultsGrid [data-listing-id] { background: #fff; }
+[data-listing-id] > .listing-card-cover--place { height: auto; min-height: 148px; }
+.listing-card-place { display: none; }
+.listing-card-cover--place > .listing-card-place { display: flex; align-items: flex-end; min-height: 148px; padding: 64px 20px 16px; text-align: left; }
+.listing-card-place strong { display: block; font-size: 22px; font-weight: 700; letter-spacing: -.025em; line-height: 1.15; max-width: 100%; overflow-wrap: anywhere; text-wrap: balance; }
 [data-listing-id] > a:first-child > div:first-child { color: #52637a; }
 [data-listing-id] > a:first-child > div[class*="top-3"] > span { text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 700; box-shadow: none; }
 [data-listing-id] > a:first-child > div[class*="top-3"] > span.bg-emerald-500 { background: #087b61; }
 [data-listing-id] > a:first-child > button { box-shadow: none; width: 36px; height: 36px; color: #52637a; }
-[data-listing-id] > div { background: transparent; }
+[data-listing-id] > div { background: transparent; padding-inline: 0; }
 [data-listing-id] > div > div:first-child span { font-size: 12px; text-transform: none; letter-spacing: 0; }
 [data-listing-id] > div > div:first-child > span:first-child { background: transparent; color: #334b69; padding-left: 0; font-weight: 600; }
 [data-listing-id] h3 { color: #102b52; font-size: 17px; line-height: 1.4; letter-spacing: -.02em; }
@@ -62,6 +68,10 @@ button:not(:disabled), a[class*="bg-"] {
 }
 [data-listing-id] { transition: box-shadow 180ms ease, border-color 180ms ease; }
 [data-listing-id] > a:first-child img { transform: none; transition: none; }
+@media (prefers-reduced-motion: no-preference) {
+    [data-listing-id] > a:first-child img { transition: transform 450ms var(--si-ease); }
+    [data-listing-id]:hover > a:first-child img { transform: scale(1.035); }
+}
 [data-listing-id] button[data-save-id]:hover { transform: none; }
 [data-listing-id] a { transition-property: color, background-color; transition-duration: 160ms; }
 .site-wordmark { display: block; font-size: 24px; font-weight: 800; letter-spacing: -.025em; line-height: 32px; color: #0f172a; white-space: nowrap; }
