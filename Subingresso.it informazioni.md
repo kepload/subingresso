@@ -16,6 +16,12 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   conservati. Data24/CSS15/home7/scorciatoie2. Prove/pubblicazione:
   `Documents/verifica-ricerche-riga-blu-sfumature-20261021/risultati.md`.
   Backup tag/ramo remoti validi, errore cleanup noto; test dedicati passati.
+  Pubblicato7e556a1 e affinamento45aaaef, Vercel riuscito
+  ELQg1PHztbiSbqYT9JFkZFffxvb7:21asset identici e treSSR aggiornati.
+  Locale/online Chromium1440/768/320/375/430 e Safari390 passati;
+  home/Annunci/profilo/dettaglio/blog/fiere e tema organizzatore verificati.
+  Ultimo blu testato anche su grigio nei tre formati. Zero scritture
+  reali di prova; lavoro Salerno concorrente preservato fuori dai commit.
 
 - **Home ricerche/contatori,21/10:** numeri sotto ricerca e prima delle
   anteprime; valori iniziali forniti1591/€4.4M/4045, animazione esistente.

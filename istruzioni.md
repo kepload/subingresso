@@ -9,6 +9,10 @@ area vendita, sfondi pagine normali e introduzione Annunci senza bordo;
 nessun filtro sui testi. Data24/CSS15/home7/scorciatoie2, SQL aggregato
 esteso/verificato; nessun dato utente modificato. Prove e pubblicazione:
 Documents/verifica-ricerche-riga-blu-sfumature-20261021/risultati.md.
+Pubblicati7e556a1/45aaaef, Vercel riuscito;21asset identici/treSSR
+aggiornati, locale/online Chromium1440/768/320/375/430 e Safari390
+passati. Quattro blu verificati anche su grigio, nessuna scrittura reale
+di prova; modifiche Salerno concorrenti conservate fuori dai commit.
 
 Home,21ottobre2026: contatori spostati tra ricerca e anteprime; iniziali
 1591/€4.4M/4045 forniti dall'utente, animazione precedente conservata.
