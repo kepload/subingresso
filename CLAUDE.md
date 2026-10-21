@@ -1,6 +1,6 @@
 # Regole Claude — Subingresso.it
 
-- Tema personale admin22/10: `admin-theme.js?v=1`, `admin-theme.css?v=1`, tutti gli HTML/API. Si attiva solo dopo sessione convalidata e `is_admin === true`, senza cache ruolo. Rigenerare CSS con `node scripts/build-admin-theme.cjs` dopo cambi cromatici; base `css/admin-theme-base.css`. Registro/prove in Subingresso.it informazioni.md.
+- Tema personale admin22/10: `admin-theme.js?v=2`, `admin-theme.css?v=2`, tutti gli HTML/API. Si attiva solo dopo sessione convalidata e `is_admin === true`, senza cache ruolo. Rigenerare CSS con `node scripts/build-admin-theme.cjs` dopo cambi cromatici; base `css/admin-theme-base.css`. Registro/prove in Subingresso.it informazioni.md.
 
 - 🛡️ **BACKUP TAG OBBLIGATORIO (regola n.0)**: prima della prima modifica di OGNI nuova sessione, lancia `.\scripts\session-backup.ps1 -Reason "<descrizione-corta>"`. Crea un tag git su HEAD + push remoto. Ritorno garantito con `git reset --hard backup/session-YYYYMMDD-HHMMSS-...`.
 - ⚡ **STILE RISPOSTE (regola n.1)**: l'utente è un vibe coder, non un programmatore. Rispondi **corto e semplice**. Niente papiri, niente muri di testo, niente gergo tecnico (SSR, RPC, GRANT, cannibalizzazione...) senza spiegarlo in 2-3 parole. Dopo una modifica dì **cosa cambia per lui** in 1-2 frasi. Fai il lavoro, spiega poco. Vedi memoria [[feedback_stile_risposte]].

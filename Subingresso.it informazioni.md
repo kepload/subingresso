@@ -44,7 +44,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   `profiles.is_admin === true`; nessun ruolo/preferenza salvato nel browser.
   Uscita, cambio account, errori e risposte tardive protetti. Pagine statiche
   senza Auth riusano la sessione solo quando presente; anonimi invariati.
-- `js/admin-theme.js?v=1`, `css/admin-theme.css?v=1`; base e generatore
+- `js/admin-theme.js?v=2`, `css/admin-theme.css?v=2`; base e generatore
   `css/admin-theme-base.css`, `scripts/build-admin-theme.cjs`. Override
   cromatici circoscritti ai fogli/pagine originali; foto e dati invariati.
   Collegamento in20HTML e cinque template API, compresi errori/elenco fiere.
@@ -60,6 +60,8 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Nessuna scrittura reale. Aggiornamenti concorrenti calcolatore/statistiche
   integrati; CSS rigenerato e198controlli integrati passati. La sezione
   organizzatori conserva anche il nuovo stile True-black gia pubblicato.
+  Finitura finalev2:anche etichette viola/rosa e fondi semitrasparenti scuri;
+  altri198controlli locali passati, pubblicazione finale da verificare.
 - Backup remoto `session-20261022-011206-tema-dark-admin` e ramo
   `backup/pre-tema-dark-admin-20261022` creati prima delle modifiche;
   consueto errore cleanup helper, backup remoto riuscito. File estranei esclusi.

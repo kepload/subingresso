@@ -191,6 +191,8 @@ Ricerca e richiamo calendario `#17385c`, selezione testo `#235891`.
 Stati: successo `#6ee7b7` su `#103b32`, avviso `#fde68a` su `#493519`,
 errore `#fda4af` su `#4c1726`, informazioni `#93c5fd` su `#1e3a5f`.
 L'oro Vetrina `#fbbf24` e le foto conservano il loro significato.
+Le categorie viola/rosa gia presenti nel blog e nella dashboard usano
+testo `#d4bfff` su `#302442`, conservando il significato senza fondi chiari.
 
 Attivazione da `js/admin-theme.js` dopo verifica server di sessione e ruolo;
 nessuna preferenza o autorizzazione memorizzata nel browser. Il foglio dark

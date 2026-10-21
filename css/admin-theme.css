@@ -20,6 +20,8 @@ html.admin-dark {
     --ad-warning-bg: #493519;
     --ad-danger: #fda4af;
     --ad-danger-bg: #4c1726;
+    --ad-category: #d4bfff;
+    --ad-category-bg: #302442;
     --si-ink: var(--ad-ink);
     --si-blue: var(--ad-link);
     --si-muted: var(--ad-muted);
@@ -44,12 +46,14 @@ html.admin-dark :is(input[type=checkbox], input[type=radio], input[type=range]) 
 html.admin-dark option { background: var(--ad-field); color: var(--ad-ink); }
 
 /* Utility esistenti: stessi componenti e stati anche per contenuti dinamici. */
-html.admin-dark :is(.bg-white, .bg-white\/95, .bg-white\/90) { background-color: var(--ad-panel); }
+html.admin-dark :is(.bg-white, .bg-white\/95, .bg-white\/90, .bg-white\/80, .bg-white\/70, .bg-white\/50) { background-color: var(--ad-panel); }
 html.admin-dark :is(.bg-neutral-50, .bg-neutral-100, .bg-slate-50, .bg-gray-50, .bg-gray-100) { background-color: var(--ad-field); }
-html.admin-dark :is(.bg-slate-100, .bg-slate-200, .bg-gray-200) { background-color: var(--ad-raised); }
+html.admin-dark :is(.bg-slate-100, .bg-slate-200, .bg-slate-300, .bg-gray-200, .bg-gray-300) { background-color: var(--ad-raised); }
 html.admin-dark :is(.bg-blue-50, .bg-blue-100, .bg-indigo-50, .bg-indigo-100, .bg-sky-50) { background-color: var(--ad-info); }
 html.admin-dark :is(.bg-emerald-50, .bg-emerald-100, .bg-green-50, .bg-green-100, .bg-teal-50) { background-color: var(--ad-success-bg); }
-html.admin-dark :is(.bg-amber-50, .bg-amber-100, .bg-yellow-50, .bg-yellow-100, .bg-orange-50) { background-color: var(--ad-warning-bg); }
+html.admin-dark :is(.bg-amber-50, .bg-amber-100, .bg-yellow-50, .bg-yellow-100, .bg-orange-50, .bg-orange-100) { background-color: var(--ad-warning-bg); }
+html.admin-dark :is(.bg-violet-50, .bg-violet-100, .bg-purple-50, .bg-purple-100, .bg-pink-50, .bg-pink-100) { background-color: var(--ad-category-bg); }
+html.admin-dark :is(.text-violet-900, .text-violet-800, .text-violet-700, .text-violet-600, .text-violet-500, .text-purple-700, .text-purple-600, .text-pink-600, .text-pink-500) { color: var(--ad-category); }
 html.admin-dark :is(.bg-red-50, .bg-red-100, .bg-rose-50, .bg-rose-100) { background-color: var(--ad-danger-bg); }
 html.admin-dark :is(.text-slate-900, .text-slate-800, .text-slate-700, .text-gray-900, .text-gray-800, .text-black) { color: var(--ad-ink); }
 html.admin-dark :is(.text-slate-600, .text-slate-500, .text-gray-600, .text-gray-500) { color: var(--ad-muted); }

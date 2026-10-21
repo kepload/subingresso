@@ -10,7 +10,7 @@ prove/stato in Documents/verifica-statistiche-fiere-20261022/risultati.md.
 22ottobre2026, tema dark personale: attivazione automatica solo dopo
 sessione convalidata e is_admin booleano vero, palette organizzatori.
 Uscita/cambio account/errori ripristinano il tema ordinario; nessuna cache
-di ruolo. js/admin-theme.js1 e css/admin-theme.css1, tutti gli HTML/API.
+di ruolo. js/admin-theme.js2 e css/admin-theme.css2, tutti gli HTML/API.
 Rigenerare con node scripts/build-admin-theme.cjs dopo cambi cromatici;
 base css/admin-theme-base.css, override circoscritti ai fogli originali.
 198controlli tema e364profili locali passati, nessuna scrittura reale;

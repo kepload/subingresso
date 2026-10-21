@@ -140,7 +140,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 
 ## 9) Cache buster correnti (aggiornare a ogni modifica)
 
-- `admin-theme.js?v=1`, `admin-theme.css?v=1`: tema scuro personale verificato da sessione e `is_admin`, senza cache ruolo; rigenerare CSS con `node scripts/build-admin-theme.cjs` dopo modifiche cromatiche. Tutti gli HTML e template API, comprese pagine senza Auth.
+- `admin-theme.js?v=2`, `admin-theme.css?v=2`: tema scuro personale verificato da sessione e `is_admin`, senza cache ruolo; rigenerare CSS con `node scripts/build-admin-theme.cjs` dopo modifiche cromatiche. Tutti gli HTML e template API, comprese pagine senza Auth.
 
 - `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
 - `data.js?v=24`

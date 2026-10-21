@@ -19,7 +19,7 @@
         sheet = new Promise((resolve, reject) => {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = '/css/admin-theme.css?v=1';
+            link.href = '/css/admin-theme.css?v=2';
             link.onload = resolve;
             link.onerror = () => { link.remove(); sheet = null; reject(new Error('Tema non disponibile')); };
             document.head.append(link);
