@@ -4,6 +4,16 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Pulsanti smartphone, affinamento21/10:** richiesta misura intermedia:
+  quadrati40px,36 sotto380; icone14px. Il + ha gli stessi colori di
+  messaggi/profilo, anche hover e tema organizzatore. Supera44/40px e
+  il + scuro del passaggio precedente; scritta e ordine conservati.
+  Solo CSS e cache design-system6, UI17 invariato. Backup remoto
+  pre-header-mobile-intermedio; prove e pubblicazione
+  `Documents/verifica-header-mobile-intermedio-20261021/`.
+  Locale Chromium1440/320 e WebKit390 passato: misure, colori uguali,
+  hover chiaro, tema scuro, ingombri/ordine/accesso; zero scritture reali.
+
 - **Intestazione smartphone,21/10:** scritta20/18px e margini18/14px,
   leggermente più grande/spostata a destra. Pulsanti quadrati44px,
   40 sotto380, angoli12 e icone16; ordine +, messaggi, profilo,

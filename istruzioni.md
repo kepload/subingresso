@@ -1,5 +1,11 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+21/10/2026, affinamento pulsanti smartphone: misura intermedia40px,
+36 sotto380 e icone14px; + con gli stessi colori di messaggi/profilo,
+anche hover/tema organizzatore. Supera44/40px e + scuro precedenti.
+Scritta/ordine conservati, design-system6/UI17. Prove/pubblicazione
+Documents/verifica-header-mobile-intermedio-20261021/.
+
 21/10/2026, intestazione mobile: scritta leggermente più grande e interna
 (20/18px, margini18/14px); tre icone quadrate uniformi44px,40 sotto380,
 ordine +, messaggi, profilo nel markup condiviso e dashboard. Nessuna
@@ -1632,7 +1638,7 @@ Pubblicazione verificata `effb12b` + `35da1fd`, Vercel riuscito `Fs4xUe5bYZu4E8f
 
 - Layout: `flex justify-between` <lg, `grid grid-cols-3` da lg.
 - Ordine: **Calcolatore | Annunci | Blog**.
-- Bottoni: ordine +, messaggi, profilo anche nel DOM; mobile tre quadrati44px (40 sotto380), angoli12px e icone16px. Colori originali e icona `fa-user`.
+- Bottoni: ordine +, messaggi, profilo anche nel DOM; mobile tre quadrati40px (36 sotto380), angoli12px e icone14px. + con gli stessi colori di messaggi/profilo anche nel tema organizzatore; icona `fa-user`.
 - `dashboard.html` ha header hardcoded ma **markup allineato 1:1 a `UI.header`** di `ui-components.js` (logo responsive 36→44px, bottone "+" sempre visibile come icona su mobile). Se modifichi `ui-components.js` aggiornare a mano anche dashboard.html.
 
 ## 📅 Scadenza Post
