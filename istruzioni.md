@@ -1,5 +1,16 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Contatori home,21ottobre2026, decisione corrente: mantenere i numeri
+simulati visibili e gli incrementi finché l'utente chiederà il passaggio
+a dati reali sufficienti; nessun automatismo. Restano1591annunci/4045utenti.
+Valore iniziale15,1M (prima4,4M), coerente in HTML e JS: API reale111attivi
+non-demo/non-scaduti,99vendite/12affitti, richieste vendite1.052.800€.
+Proiezione con stessa composizione:1591×1.052.800/111=15.090.133,33€,
+arrotondata15,1M. Solo prezzi richiesti, nessuna vendita conclusa dimostrata;
+affitti esclusi dal valore, prezzi storici positivi non corretti per ipotesi.
+Importi su una riga; numeri20px sotto360px, homeCSS8. Backup remoto valido.
+Prove e stato pubblicazione:Documents/verifica-stima-contatori-home-20261021/.
+
 21ottobre2026, affinamento: smartphone con luoghi popolari in una sola
 riga, scelta adattiva tra12candidati reali, personale sempre prima;
 desktop tre. Resize/font ricalcolati, niente scorrimento o righe aggiuntive.

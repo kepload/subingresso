@@ -60,7 +60,7 @@
     <link rel="preload" href="/css/fonts/jakarta-400.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="/css/fonts/jakarta-800.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-    <link rel="stylesheet" href="/css/home.css?v=7">
+    <link rel="stylesheet" href="/css/home.css?v=8">
 </head>
 <body class="home-page min-h-screen flex flex-col text-slate-900">
 <header></header>
@@ -89,7 +89,7 @@
 <section class="home-stats-section" aria-label="Statistiche della piattaforma">
     <div class="home-stats home-shell">
         <div><strong id="statListings">1.591</strong><span>Annunci</span></div>
-        <div><strong id="statValue">€ 4.4M</strong><span>Valore vendite</span></div>
+        <div><strong id="statValue">€ 15.1M</strong><span>Valore vendite</span></div>
         <div><strong id="statUsers">4.045</strong><span>Utenti</span></div>
     </div>
 </section>
@@ -320,7 +320,10 @@ loadRecentListings();
 
 // ══════════════ STATS ANIMATE ══════════════
 (function() {
-    let listings = 1591, users = 4045, value = 4400000;
+    // Contatori simulati fino a nuova richiesta: non sostituirli con i totali reali.
+    // Stima 21/10/2026: 1.591 × € 1.052.800 / 111 annunci reali attivi ≈ € 15,1M.
+    // Solo prezzi richiesti dei 99 annunci in vendita; stessa quota vendita/affitto.
+    let listings = 1591, users = 4045, value = 15100000;
     function pulse(el) {
         el.classList.remove('stat-update');
         void el.offsetWidth;

@@ -54,7 +54,7 @@
 .home-step a:hover { text-decoration: underline; }
 .home-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding-block: 36px; }
 .home-stats > div { text-align: center; }
-.home-stats strong { font-size: 26px; font-weight: 800; letter-spacing: -.025em; font-variant-numeric: tabular-nums; }
+.home-stats strong { font-size: 26px; font-weight: 800; letter-spacing: -.025em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .home-stats span { display: block; margin-top: 5px; font-size: 14px; color: var(--si-muted); }
 @keyframes stat-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
 .home-stats .stat-update { animation: stat-pulse 600ms var(--si-ease); }
@@ -167,6 +167,7 @@
 }
 @media (max-width: 359px) {
     .home-page .home-section-title h2 { font-size: 24px; }
+    .home-stats strong { font-size: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
     .home-page *, .home-page *::before, .home-page *::after { animation: none; transition: none; scroll-behavior: auto; }

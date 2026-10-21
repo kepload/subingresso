@@ -4,6 +4,19 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Stima contatori home,21/10:** richiesta esplicita: mantenere i numeri
+  simulati in primo piano finché l'utente deciderà di sostituirli con dati
+  reali sufficienti; nessun cambio automatico. Restano1591annunci/4045utenti
+  e incrementi esistenti. Valore iniziale €4.4M→€15.1M, HTML e animazione.
+  API aggiornata:111attivi non-demo/non-scaduti,99vendite/12affitti;
+  prezzi richiesti vendite €1.052.800, media €10.634,34. Stessa composizione:
+  1591×1.052.800/111=€15.090.133,33, arrotondato15,1M. Affitti esclusi
+  dal valore; prezzi storici positivi conservati senza correzioni ipotetiche.
+  È una proiezione dei prezzi richiesti, non vendite concluse certificate.
+  Importi indivisibili, numeri20px sotto360px per mantenere €e cifra insieme;
+  homeCSS8. Backup remoto valido; errore cleanup helper già noto.
+  Dati/prove/pubblicazione: `Documents/verifica-stima-contatori-home-20261021/`.
+
 - **Ricerche in riga/blu/sfumature,21/10:** su smartphone una sola riga,
   tante località quante entrano, senza scorrimento; personale prima e
   desktop tre. API aggregata estesa a12candidati e verificata, log privati.

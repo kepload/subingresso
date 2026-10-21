@@ -20,7 +20,8 @@ const server=http.createServer((req,res)=>{const pathname=new URL(req.url,'http:
    assert.deepEqual(await names(),['Milano','Trento','Verona']);
    const layout=await page.evaluate(()=>{const search=document.querySelector('.home-search').getBoundingClientRect(),stats=document.querySelector('.home-stats').getBoundingClientRect(),list=document.querySelector('.home-listings').getBoundingClientRect();return{between:stats.top>=search.bottom&&stats.bottom<=list.top,gradient:getComputedStyle(document.querySelector('.home-stats-section')).backgroundImage,unique:['statListings','statValue','statUsers'].every(id=>document.querySelectorAll('#'+id).length===1),width:document.documentElement.scrollWidth};});
    assert(layout.between&&layout.unique&&layout.gradient.includes('linear-gradient'));assert(layout.width<=width);
-   assert.equal(await page.locator('#statListings').textContent(),'1.591');assert.equal(await page.locator('#statValue').textContent(),'€ 4.4M');assert.equal(await page.locator('#statUsers').textContent(),'4.045');
+   assert.equal(await page.locator('#statListings').textContent(),'1.591');assert.equal(await page.locator('#statValue').textContent(),'€ 15.1M');assert.equal(await page.locator('#statUsers').textContent(),'4.045');
+   assert(await page.locator('#statValue').evaluate(el=>{const range=document.createRange();range.selectNodeContents(el);return range.getClientRects().length===1&&range.getBoundingClientRect().width<=el.parentElement.clientWidth+.5;}),'Importo intero su una riga, anche a 320px');
    const href=await page.locator('#homeLocationShortcuts a').first().getAttribute('href');assert(href.includes('comune=015146')&&href.includes('q=Milano'));
    if(artifacts)await page.screenshot({path:path.join(artifacts,`${name}-${width}-anonimo.png`)});
    await page.evaluate(()=>LocationShortcuts.remember(qaPlaces[3]));assert.deepEqual(await names(),['Milano','Trento','Verona']);
