@@ -30,13 +30,13 @@ button:not(:disabled), a[class*="bg-"] {
 }
 @media (max-width:639px) {
     .site-header > .site-header-inner { height: 74px; padding-inline: 18px; gap: 8px; }
-    .site-wordmark { font-size: 20px; line-height: 28px; }
+    .site-wordmark { font-size: 23px; line-height: 28px; }
     .site-header > div > div:last-child, .site-header #authNav { gap: 6px; }
     .site-header #authNav > button { padding: 9px 10px; font-size: 12px; }
 }
 @media (max-width:379px) {
     .site-header > .site-header-inner { height: 72px; padding-inline: 14px; gap: 6px; }
-    .site-wordmark { font-size: 18px; line-height: 28px; }
+    .site-wordmark { font-size: 20.7px; line-height: 28px; }
     .site-header > div > div:last-child, .site-header #authNav { gap: 5px; }
     .site-header #authNav > button { padding: 8px; font-size: 11px; }
     .site-header #authNav > a, .site-header .site-publish { width: 36px; height: 36px; }

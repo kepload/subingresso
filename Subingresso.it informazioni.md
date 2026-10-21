@@ -4,6 +4,12 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Logo smartphone +15%,21/10:** scritta23px e20,7 sotto380;
+  barra invariata74/72px, pulsanti e desktop invariati. CSS7, UI17.
+  Locale Chromium1440/320/375/430 e WebKit390 passato, zero sovrapposizioni.
+  Backup remoto tag/branch verificati; cleanup helper con errore noto.
+  Prove/pubblicazione `Documents/verifica-logo-mobile-15percento-20261021/`.
+
 - **Pulsanti smartphone, affinamento21/10:** richiesta misura intermedia:
   quadrati40px,36 sotto380; icone14px. Il + ha gli stessi colori di
   messaggi/profilo, anche hover e tema organizzatore. Supera44/40px e

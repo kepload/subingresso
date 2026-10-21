@@ -182,7 +182,7 @@ module.exports = async function handler(req, res) {
 .cta-box { transition: transform .15s ease; }
 .cta-box:hover { transform: translateY(-2px); }
 </style>
-    <link rel="stylesheet" href="/css/design-system.css?v=6">
+    <link rel="stylesheet" href="/css/design-system.css?v=7">
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
 <div id="header"></div>
@@ -296,7 +296,7 @@ function notFoundPage(reason) {
     return `<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="robots" content="noindex">
 <title>Bando non trovato — Subingresso.it</title>
 <link rel="stylesheet" href="/css/tailwind.css?v=4">
-    <link rel="stylesheet" href="/css/design-system.css?v=6">
+    <link rel="stylesheet" href="/css/design-system.css?v=7">
 </head><body class="bg-slate-50 min-h-screen flex items-center justify-center p-6 text-center font-sans">
 <div class="max-w-md bg-white rounded-3xl shadow-sm border border-slate-200 p-10">
 <div class="text-6xl mb-4">📭</div>
