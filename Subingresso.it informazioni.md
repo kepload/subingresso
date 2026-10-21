@@ -4,6 +4,16 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Spazi home desktop,21/10:** riferimento prima immagine utente:
+  da1024px tolti64px sopra slogan, distanze città24→32px; quanti luoghi
+  entrano in una riga tra12candidati reali, personale prima. Supera limite
+  desktop tre; tablet600–1023 resta tre, telefono invariato. Contatori
+  avvicinati12px (padding superiore36→24), valori/animazione conservati.
+  HomeCSS9/scorciatoie3. Backup remoto verificato, cleanup helper con
+  errore noto. Locale Chromium1920/1440/1024/820/320 e WebKit390 passato;
+  classifica/account/logout/errori e cambio soglia1023/1024 verificati.
+  Prove/pubblicazione `Documents/verifica-home-spazi-desktop-20261021/`.
+
 - **Stima contatori home,21/10:** richiesta esplicita: mantenere i numeri
   simulati in primo piano finché l'utente deciderà di sostituirli con dati
   reali sufficienti; nessun cambio automatico. Restano1591annunci/4045utenti

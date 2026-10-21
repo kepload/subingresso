@@ -1,5 +1,14 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Home desktop,21ottobre2026: riferimento prima immagine utente. Da1024px
+padding sopra slogan64→0, distanza scorciatoie24→32; mostra tutte le
+località che entrano in una riga tra12candidati reali, personale prima.
+Supera desktop tre; tablet600–1023 resta tre, telefono invariato.
+Contatori12px più vicini (padding superiore36→24), valori/animazione
+conservati. HomeCSS9/scorciatoie3. Prove/stato pubblicazione:
+Documents/verifica-home-spazi-desktop-20261021/. Backup remoto valido;
+errore cleanup noto. Nessuna scrittura dati reali durante le prove.
+
 Contatori home,21ottobre2026, decisione corrente: mantenere i numeri
 simulati visibili e gli incrementi finché l'utente chiederà il passaggio
 a dati reali sufficienti; nessun automatismo. Restano1591annunci/4045utenti.

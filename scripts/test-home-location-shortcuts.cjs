@@ -16,7 +16,7 @@ const server=http.createServer((req,res)=>{const pathname=new URL(req.url,'http:
    const page=await browser.newPage({viewport:{width,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.goto(`http://127.0.0.1:${server.address().port}/fixture`);await page.locator('#homeLocationShortcuts a').first().waitFor();
    const names=()=>page.locator('#homeLocationShortcuts a:visible').allTextContents();
-   const personalA=width<600?['Brescia','Milano','Trento','Verona']:['Brescia','Milano','Trento'];
+   const personalA=width<600||width>=1024?['Brescia','Milano','Trento','Verona']:['Brescia','Milano','Trento'];
    assert.deepEqual(await names(),['Milano','Trento','Verona']);
    const layout=await page.evaluate(()=>{const search=document.querySelector('.home-search').getBoundingClientRect(),stats=document.querySelector('.home-stats').getBoundingClientRect(),list=document.querySelector('.home-listings').getBoundingClientRect();return{between:stats.top>=search.bottom&&stats.bottom<=list.top,gradient:getComputedStyle(document.querySelector('.home-stats-section')).backgroundImage,unique:['statListings','statValue','statUsers'].every(id=>document.querySelectorAll('#'+id).length===1),width:document.documentElement.scrollWidth};});
    assert(layout.between&&layout.unique&&layout.gradient.includes('linear-gradient'));assert(layout.width<=width);
@@ -39,7 +39,7 @@ const server=http.createServer((req,res)=>{const pathname=new URL(req.url,'http:
    await page.evaluate(()=>{qaPopular=[qaPlaces[4],qaPlaces[3],qaPlaces[0]];const original=Date.now;Date.now=()=>original()+301000;document.dispatchEvent(new Event('visibilitychange'));});
    await page.waitForFunction(()=>document.querySelector('#homeLocationShortcuts a').textContent==='Bergamo');assert.deepEqual(await names(),['Bergamo','Brescia','Milano']);
    await page.evaluate(async()=>{qaSwitch('account-A');const original=Storage.prototype.setItem;Storage.prototype.setItem=()=>{throw Error('bloccato');};await LocationShortcuts.remember(qaPlaces[4]);Storage.prototype.setItem=original;});assert.deepEqual(await names(),['Brescia','Bergamo','Milano']);
-   // Più candidati: riempie una riga senza alterare l'ordine relativo o il desktop.
+   // Più candidati: una riga su telefono e desktop; tablet conserva tre link.
    await page.evaluate(()=>{
     qaSwitch(null);
     qaPlaces.push(...[['Roma','058091'],['Pisa','050026'],['Como','013075'],['Bari','072006'],['Torino','001272'],['Genova','010025'],['Firenze','048017']].map(([nome,id])=>({nome,id,regione:'Prova',provincia:'Prova'})));
@@ -48,8 +48,14 @@ const server=http.createServer((req,res)=>{const pathname=new URL(req.url,'http:
    await page.waitForFunction(()=>document.querySelectorAll('#homeLocationShortcuts a').length===12);
    await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(50);
    const row=await page.locator('#homeLocationShortcuts').evaluate(el=>{const r=el.getBoundingClientRect(),links=[...el.querySelectorAll('a')].filter(a=>!a.hidden);return{height:r.height,count:links.length,inside:links.every(a=>{const b=a.getBoundingClientRect();return Math.abs(b.top-r.top)<1&&b.right<=r.right+.5;}),overflow:document.documentElement.scrollWidth>innerWidth};});
-   assert(row.inside&&!row.overflow&&row.height<=33);assert(width<600?row.count>3:row.count===3);
+   assert(row.inside&&!row.overflow&&row.height<=33);assert(width<600||width>=1024?row.count>3:row.count===3);
    if(artifacts)await page.screenshot({path:path.join(artifacts,`${name}-${width}-riga-completa.png`)});
+   if(width>=1024){
+    await page.setViewportSize({width:1023,height:1000});await page.waitForTimeout(80);assert.equal((await names()).length,3);
+    await page.setViewportSize({width:1024,height:1000});await page.waitForTimeout(80);assert((await names()).length>3);
+    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    await page.setViewportSize({width,height:1000});await page.waitForTimeout(80);
+   }
    if(width<600){
     await page.setViewportSize({width:430,height:1000});await page.waitForTimeout(80);const wide=(await names()).length;
     await page.setViewportSize({width:320,height:1000});await page.waitForTimeout(80);assert((await names()).length<=wide);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));

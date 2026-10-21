@@ -50,7 +50,7 @@
         if (!nav || nav.hidden) return;
         const links = [...nav.querySelectorAll('a')];
         links.forEach(link => { link.hidden = false; });
-        if (!matchMedia('(max-width: 599px)').matches) {
+        if (matchMedia('(min-width: 600px) and (max-width: 1023px)').matches) {
             links.slice(3).forEach(link => { link.hidden = true; });
             return;
         }
