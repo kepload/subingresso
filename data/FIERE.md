@@ -2,8 +2,8 @@
 
 ## Perugia — ricerca documentale del 21 ottobre 2026
 
-Ricerca attuale conclusa con limiti espliciti. Pubblicazione e verifica online
-in corso: la TO DO resta non spuntata fino al controllo della produzione.
+Ricerca attuale conclusa con limiti espliciti, pubblicata e verificata online.
+TO DO spuntata solo dopo i controlli: **45 province concluse, 65 da fare su110**.
 
 **152 manifestazioni in 47 comuni**, prima **10**: **142 aggiunte**, tutti i
 dieci ID precedenti conservati. Ricognizione nominale dei **59 comuni**, tre
@@ -97,6 +97,18 @@ Test `scripts/test-fiere-perugia.cjs` usa `PLAYWRIGHT_MODULE` e
 `FIERE_PERUGIA_BASE_URL`/`FIERE_PERUGIA_OUT`: confronta tutte le altre province,
 dieciID,59comuni,120righe,fonti,costi e correzioni; calendario/mappa completi,
 dettagli e pagine senzaJS su Chromium1440/320 e WebKit390.
+
+Pubblicazione **e4042b4**, Vercel **42G1HWcqo1E56noVgWqPaMNfY6LE** riuscito.
+I quattro asset online corrispondono ai byte del commit Git; differenze CRLF
+del checkout Windows riconosciute e non scambiate per mancato deploy.
+**152 pagine HTTP200 con H1/canonical corretti**, calendario e mappa completi,
+14dettagli operativi nei test Chromium1440/320 e WebKit390 **locali e online**
+superati, nessun erroreJavaScript/overflow. Suite generale nei cinque formati,
+settori,5580pagine/paginazione/escaping e build ripetibile passati. Gitleaks
+staged e hook superati, nessun segreto. Tutti i cambiamenti preesistenti estranei
+preservati e non inclusi nei commit. Prove `publication.json`, `test-local.json`,
+`test-online.json`, `checks.json`, `deploy-status.json` nell’archivio privato.
+Supplemento finaleSHA256: `ricerche-fiere-20261021-022524/supplements/perugia-final-20261021`.
 
 ## Ancona — ricerca documentale del 20 ottobre 2026
 

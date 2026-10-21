@@ -1,5 +1,25 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+21/10/2026, Perugia: ricerca documentale corrente conclusa con limiti espliciti,
+152 manifestazioni in47comuni/59esaminati,146con date e9sintesi costo. Catalogo5580,
+altre5428schede e10ID precedenti conservati. Audit data/fiere-perugia.json:
+120registrazioni regionali/comunali,165ricevute,29esclusioni/14limiti. DisfidaTodi
+10–11ottobre, Tulipano25–26aprile/1–2maggio, Gaite26–28giugno; SantUbaldo32/54€,
+TartufoGubbio quoteIVAincluse e FieraVerde23/47/70€ daiPDF recuperati via browser.
+SanGiustino eCuriosità da secondarie dichiarate, Scheggia/Cannara testuali;
+nessuna quota/data inventata e manutenzione futura separata. Nessun contatto a terzi.
+Pubblicatoe4042b4, Vercel42G1HWcqo1E56noVgWqPaMNfY6LEriuscito;4asset uguali
+ai byteGit (normalizzazioneCRLF locale distinta),152pagine200/H1/canonical;
+Chromium1440/320 eWebKit390 locali/online passati, generale5formati, settori,
+pagine e build ripetibile superati; PLAYWRIGHT_MODULE. TO DO spuntata dopo verifica:
+45province concluse/65da fare. CacheJS98/JSON66. Originali/prove
+Documents/ricerca-fiere-perugia-20261021; copiaSHA256 ricerche-fiere-20261021-022524,
+52732file/9411791702byte,zero errori; supplemento finale verificato.
+Backupremoto session-20261021-000041-fiere-perugia e ramo pre-fiere-perugia-20261021
+già eseguiti prima delle modifiche, non ripetuti alla ripresa. Alessandria già
+pubblicata e testata confermata senza rifare ricerca. Nessun’altra provincia avviata;
+proseguimento riservato al controller come richiesto dall’utente.
+
 21/10/2026, affinamento pulsanti smartphone: misura intermedia40px,
 36 sotto380 e icone14px; + con gli stessi colori di messaggi/profilo,
 anche hover/tema organizzatore. Supera44/40px e + scuro precedenti.
