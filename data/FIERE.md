@@ -2,7 +2,13 @@
 
 ## Siena — ricerca documentale del 21 ottobre 2026
 
-Ricerca corrente conclusa con limiti espliciti; pubblicazione in verifica.
+Ricerca corrente conclusa con limiti espliciti; pubblicazione e verifica online
+concluse. Commit `016bd57`: quattro asset identici ai file versionati e **85/85
+pagine HTTP200**, con H1, canonical e costi corretti. Browser locale/online
+Chromium 1440/320 e WebKit 390, anche senza JavaScript, superati; suite generale
+in cinque formati, settori, build deterministica e tutte le **5.908 pagine**
+con **2.570 voci sitemap** superati. TO DO e riepilogo aggiornati soltanto dopo
+verifica: **49 province complete, 61 rimanenti su 110**.
 **85 manifestazioni in 33 comuni**, ricognizione di tutti i **35 comuni**.
 Partenza dal checkpoint `793b2f3`: nessun audit provinciale precedente,
 una sola scheda del Primo Maggio di Montepulciano, identificativo conservato.
@@ -56,6 +62,11 @@ Manutenzione futura distinta dalla ricerca conclusa: nuovi bandi, disponibilità
 tariffe, rettifica estate Siena, giorni Natale Montepulciano, nuovi originali
 Sarteano/Charta/Gallina e chiarimenti Trequanda/Sinalunga. Non si attendono
 bandi futuri per chiudere la ricognizione attuale e non si promette esaustività.
+
+64 schede hanno almeno una data puntuale, 13 dichiarano una fonte secondaria;
+sei sintesi di costi/adempimenti e sette scadenze, anche passate. Test dedicato
+`scripts/test-fiere-siena.cjs`, prove HTTP e browser nell’archivio locale;
+il confronto usa i file Git pubblicati, non le terminazioni CRLF di Windows.
 
 ## Salerno — ricerca documentale del 21 ottobre 2026
 

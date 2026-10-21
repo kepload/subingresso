@@ -2514,3 +2514,22 @@ Chromium 1440/320, WebKit 390 con PLAYWRIGHT_MODULE; suite generale e pagine
 senza JS passate. Backup preventivo e supplemento SHA256 verificati, nessun
 contatto a terzi. TO DO spuntata dopo verifica: 48 complete/62 rimanenti su 110.
 Ricerca attuale chiusa con limiti; futuri bandi/edizioni sono manutenzione.
+
+## Siena — calendario fiere, chiusura ricerca del 21 ottobre 2026
+
+85 manifestazioni/33 comuni, tutti i 35 comuni esaminati; 84 aggiunte, ID
+Montepulciano conservato. Catalogo 5.908, altre 5.823 schede identiche al
+checkpoint 793b2f3; JS102/JSON70. Audit data/fiere-siena.json e data/FIERE.md:
+267 ricevute selezionate, 28 esclusioni, 15 limiti, sei sintesi costo e sette
+scadenze. Estate Siena: conflitto giugno/luglio non risolto per ipotesi;
+Natale Montepulciano non continuo, Chianciano storico 2025, Trequanda scadenza
+16 ottobre 2026 dal PDF. Bandi gestore e biglietti visitatori distinti dai banchi.
+Pubblicato 016bd57: quattro asset identici al commit, 85 pagine HTTP200/H1/
+canonical/costi; PLAYWRIGHT_MODULE per Siena locale/online Chromium1440/320,
+WebKit390, senza JS. Suite generale cinque formati, settori, build e 5.908
+pagine/2.570 sitemap passati. Originali/prove Documents/ricerca-fiere-siena-20261021;
+backup remoto preventivo già eseguito e copia SHA256 ricerche-fiere-20261021-192711:
+60.101 file, 10.722.742.108 byte, zero errori, più supplemento finale verificato.
+TO DO spuntata dopo verifica:49 complete/61 rimanenti. Futuri bandi/rettifiche
+sono manutenzione distinta. Nessun contatto a terzi o altra provincia lavorata;
+cambiamenti estranei preservati e non inclusi nei commit.

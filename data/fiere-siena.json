@@ -3,7 +3,7 @@
   "checkedAt": "2026-10-21",
   "research": {
     "status": "documental-review-concluded-with-explicit-limits",
-    "publicationStatus": "pending-verification",
+    "publicationStatus": "published-and-verified",
     "baselineCommit": "793b2f3e9cb3ffa6f86c2e0916103d4ab98ae3db",
     "previousCatalogEvents": 1,
     "municipalitiesReviewed": 35,
@@ -4270,7 +4270,32 @@
       "Rettifiche ufficiali estate Siena e giorni Natale Montepulciano",
       "Nuovi originali Charta/Gallina/Sarteano e Natale2026 dei Comuni senza calendario attuale",
       "Chiarimenti merceologici Trequanda e giornate mercato generale Sinalunga"
-    ]
+    ],
+    "publicationVerification": {
+      "checkedAt": "2026-10-21",
+      "dataCommit": "016bd57",
+      "baseUrl": "https://subingresso.it",
+      "assetsIdenticalToGit": 4,
+      "pagesPassed": 85,
+      "browsers": [
+        "chromium1440",
+        "chromium320",
+        "webkit390"
+      ],
+      "noJavaScript": true,
+      "generalCalendarCases": 5,
+      "allCatalogPagesPassed": 5908,
+      "sitemapEntries": 2570,
+      "localReports": [
+        "test-local.json",
+        "test-online.json",
+        "test-http-online.json",
+        "checks-local.json"
+      ],
+      "researchBackup": "Documents/backup-subingresso/ricerche-fiere-20261021-192711",
+      "verifiedBackupFiles": 60101,
+      "backupErrors": 0
+    }
   },
   "events": [
     {
