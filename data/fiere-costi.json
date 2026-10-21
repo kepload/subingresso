@@ -316,12 +316,12 @@
       "review": "live-source-review"
     },
     "liguria-laigueglia-fiera-di-san-matteo": {
-      "label": "Tre giorni: non food da 150 €; alimentari da 240 €",
-      "kind": "fee",
+      "label": "Diritti: non alimentari da 150 €; alimentari da 240 €",
+      "kind": "partial",
       "period": "2026",
-      "details": "Listino 2026 riportato dalla cronaca locale sull’avviso comunale: stand non alimentari 3×3 o 3×2 m 150 €, 6×3 m 300 €; alimentari 3×3 o 3×2 m 240 €, 6×3 m 360 €. Importi per l’edizione 25–27 settembre; IVA e servizi inclusi non specificati nell’articolo. Fonte giornalistica: confermare il preventivo con l’Ufficio Commercio.",
-      "sourceUrl": "https://www.liguria2000news.it/primo_piano/fiera-san-matteo-via-alle-domande-2026/",
-      "checkedAt": "2026-10-15",
+      "details": "Regolamento comunale 2026: diritti di istruttoria/concessione per stand 3×3 o 3×2 m non alimentare 150 €, 6×3 m non alimentare 300 €, 3×3 o 3×2 m alimentare 240 €, 6×3 m alimentare 360 €. Imposta di bollo aggiuntiva; canone di occupazione esonerato. Sono diritti per l’edizione 25–27 settembre, non una quota giornaliera; IVA non precisata nella tabella.",
+      "sourceUrl": "https://www.comune.laigueglia.sv.it/wp-content/uploads/2026/04/regolamento-e-criteri-fiera-2026.pdf",
+      "checkedAt": "2026-10-21",
       "review": "live-source-review"
     },
     "lombardia-barbariga-fiera-del-casoncello-de-co": {
@@ -1694,6 +1694,96 @@
       "sourceUrl": "https://pagani-api.municipiumapp.it/s3/4900/allegati/comunicati/2026/festivita_s-alfonso_2026_signed_signed.pdf",
       "period": "2026",
       "checkedAt": "2026-10-21"
+    },
+    "liguria-finale-ligure-fiera-di-san-giovanni-battista": {
+      "label": "50 € istruttoria + 16 € bollo; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Avviso fiere 2026: 50 € oneri SUAP tramite PagoPA e istanza in bollo da 16 €. Canone e altri oneri del posteggio non quantificati nell’avviso; 66 € non è il costo complessivo dello spazio.",
+      "sourceUrl": "https://finale-ligure-api.municipiumapp.it/s3/2788/allegati/avviso-fiere-anno-2026.pdf",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-finale-ligure-fiera-dell-assunta": {
+      "label": "50 € istruttoria + 16 € bollo; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Avviso fiere 2026: 50 € oneri SUAP tramite PagoPA e istanza in bollo da 16 €. Canone e altri oneri del posteggio non quantificati nell’avviso; 66 € non è il costo complessivo dello spazio.",
+      "sourceUrl": "https://finale-ligure-api.municipiumapp.it/s3/2788/allegati/avviso-fiere-anno-2026.pdf",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-finale-ligure-fiera-dell-immacolata-concezione": {
+      "label": "50 € istruttoria + 16 € bollo; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Avviso fiere 2026: 50 € oneri SUAP tramite PagoPA e istanza in bollo da 16 €. Canone e altri oneri del posteggio non quantificati nell’avviso; 66 € non è il costo complessivo dello spazio.",
+      "sourceUrl": "https://finale-ligure-api.municipiumapp.it/s3/2788/allegati/avviso-fiere-anno-2026.pdf",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-albenga-fiera-di-san-martino": {
+      "label": "Tre giorni: 100–250 € IVA compresa secondo stand",
+      "kind": "fee",
+      "period": "2026",
+      "details": "Modulo 2026: prodotti tipici 3×3 m 150 € o 6×3 m 200 €; somministrazione 3×3 m 180 € o 6×3 m 250 €; tensostruttura 3×3 m in Piazza San Michele 250 € (posti limitati); area dolci Piazza del Popolo 100 €. Importi IVA compresa per tutti e tre i giorni. Pagamento soltanto dopo accoglimento entro il 6 novembre; eventuali diritti sanitari aggiuntivi non quantificati.",
+      "sourceUrl": "https://api.wp.ai4smartcity.ai/rest/v1/storage/modulistica/modulo-documento/3097b14c-bc98-40ba-8528-08df20502de3?tenant=comune-albenga-sv-it",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-borghetto-santo-spirito-fiera-di-sant-antonio": {
+      "label": "16 € bollo domanda; posteggio da quantificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Modulo comunale per Sant’Antonio/San Matteo: imposta di bollo da 16 € sulla domanda. Non è una quota complessiva di esposizione: canone e ulteriori oneri non quantificati nel modulo.",
+      "sourceUrl": "https://comune.borghettosantospirito.sv.it/download-file/16618",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-borghetto-santo-spirito-fiera-di-san-matteo": {
+      "label": "16 € bollo domanda; posteggio da quantificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Modulo comunale per Sant’Antonio/San Matteo: imposta di bollo da 16 € sulla domanda. Non è una quota complessiva di esposizione: canone e ulteriori oneri non quantificati nel modulo.",
+      "sourceUrl": "https://comune.borghettosantospirito.sv.it/download-file/16618",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-millesimo-xxxiv-festa-nazionale-del-tartufo-della-val-bormida": {
+      "label": "Elettricità: 25 € per kW oltre il primo; quota a parte",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Modulo espositori 2026: 25 € per ogni kW aggiuntivo oltre il primo per postazione. La quota complessiva dello stand è stabilita annualmente dalla Giunta e non è indicata nel modulo; il regolamento comprende servizi, canone e fornitura base. Il supplemento non è il prezzo del posteggio.",
+      "sourceUrl": "https://www.festadeltartufodimillesimo.it/assets/moduli/Modulo%20iscrizione%20Tartufo%202026%20-%20ESPOSITORI.docx",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-albissola-marina-artigiani-nel-borgo": {
+      "label": "Espositori gratuiti · soltanto edizione 2025",
+      "kind": "free",
+      "period": "2025",
+      "details": "Regolamento originale 2025: partecipazione degli espositori gratuita ed esonero dal canone di occupazione. Restano selezione, requisiti, allestimento a carico dell’operatore e altri adempimenti applicabili; non è una gratuità confermata per il 2026.",
+      "sourceUrl": "https://trasparenza.comune.albissolamarina.sv.it/index.php/altri-contenuti/avvisi-1/4401-domanda-di-pre-adesione-per-il-mercato-artigiani-nel-borgo-del-22-giugno-2025/file",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-albissola-marina-artigiani-d-autunno": {
+      "label": "Espositori gratuiti · soltanto edizione 2025",
+      "kind": "free",
+      "period": "2025",
+      "details": "Regolamento originale 2025: partecipazione degli espositori gratuita ed esonero dal canone di occupazione. Restano selezione, requisiti, allestimento a carico dell’operatore e altri adempimenti applicabili; non è una gratuità confermata per il 2026.",
+      "sourceUrl": "https://trasparenza.comune.albissolamarina.sv.it/index.php/altri-contenuti/avvisi-1/4533-domanda-di-pre-adesione-per-il-mercato-artigiani-d-autunno-del-1-11-2025/file",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-albissola-marina-e-natale-ad-albissola": {
+      "label": "Espositori gratuiti · soltanto edizione 2025",
+      "kind": "free",
+      "period": "2025",
+      "details": "Regolamento originale 2025: partecipazione degli espositori gratuita ed esonero dal canone di occupazione. Restano selezione, requisiti, allestimento a carico dell’operatore e altri adempimenti applicabili; non è una gratuità confermata per il 2026.",
+      "sourceUrl": "https://www.comune.albissolamarina.sv.it/wp-content/uploads/2025/11/mercato-natale-20-dicembre-2025-Albissola-Marina.pdf",
+      "checkedAt": "2026-10-21",
+      "review": "live-source-review"
     }
   }
 }
