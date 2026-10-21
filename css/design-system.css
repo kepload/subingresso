@@ -9,9 +9,17 @@ body { font-family: 'Subingresso Jakarta', sans-serif; }
     --si-ease: cubic-bezier(.23, 1, .32, 1);
     --si-ink: #102b52;
     --si-blue: #2563eb;
+    --si-blue-deep: #1e40af;
+    --si-blue-strong: #1d4ed8;
+    --si-blue-bright: #146fda;
     --si-muted: #52637a;
     --si-surface: #edf3fa;
 }
+/* Passaggi tra l'intestazione bianca e le superfici chiare delle pagine. */
+body:not(.home-page):not(.organizer-theme):has(> header, > #nav-placeholder) {
+    background-image: linear-gradient(to bottom, #fff 80px, rgb(255 255 255 / 0) 200px);
+}
+.surface-fade-down { background-image: linear-gradient(to bottom, #fff, #f5f5f5); background-size: 100% 80px; background-position: bottom; background-repeat: no-repeat; border-bottom-width: 0; }
 ::selection { background: #b9d2ff; color: #102b52; }
 html { scrollbar-color: #92a9c8 #edf3fa; }
 input, textarea { caret-color: #2563eb; }
@@ -62,7 +70,10 @@ body:not(.organizer-theme) [data-listing-id]:hover { box-shadow: none; }
 [data-listing-id] > div > a.flex > span { font-size: 13px; }
 .seller-listing-count-slot { display: inline-flex; flex: none; vertical-align: middle; }
 .seller-listing-count-slot:empty, .profile-event-count:empty { display: none; }
-.seller-listing-count { display: inline-flex; align-items: center; gap: 5px; color: var(--si-muted); font-size: 12px; font-weight: 700; line-height: 1.5; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.seller-listing-count { display: inline-flex; align-items: center; gap: 5px; color: var(--si-blue-deep); font-size: 12px; font-weight: 700; line-height: 1.5; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.seller-listing-count[data-count-level="2"] { color: var(--si-blue-strong); }
+.seller-listing-count[data-count-level="3"] { color: var(--si-blue); }
+.seller-listing-count[data-count-level="4"] { color: var(--si-blue-bright); }
 .seller-listing-count > i { font-size: 12px; }
 .seller-identity-heading { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .seller-identity-heading > :first-child { min-width: 0; }

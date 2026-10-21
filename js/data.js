@@ -473,7 +473,8 @@ let _sellerCountTimer = null;
 function activeListingCountHtml(count) {
     if (!Number.isInteger(count) || count < 2) return '';
     const label = `${count} annunci attivi`;
-    return `<span class="seller-listing-count" role="img" aria-label="${label}" title="${label}"><i class="fas fa-store" aria-hidden="true"></i><span aria-hidden="true">${count > 10 ? '10+' : count}</span></span>`;
+    const level = count >= 11 ? 4 : count >= 7 ? 3 : count >= 4 ? 2 : 1;
+    return `<span class="seller-listing-count" data-count-level="${level}" role="img" aria-label="${label}" title="${label}"><i class="fas fa-store" aria-hidden="true"></i><span aria-hidden="true">${count > 10 ? '10+' : count}</span></span>`;
 }
 
 function sellerListingCountHtml(userId) {

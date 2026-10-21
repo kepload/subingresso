@@ -290,7 +290,7 @@ module.exports = async function handler(req, res) {
         @media (max-width: 1023px) { #mobileCta.visible { display: flex; } }
         #mainContent.has-cta { padding-bottom: 5.5rem; }
     </style>
-    <link rel="stylesheet" href="/css/design-system.css?v=13">
+    <link rel="stylesheet" href="/css/design-system.css?v=14">
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
 
@@ -453,7 +453,7 @@ module.exports = async function handler(req, res) {
 <script src="/js/supabase-config.js?v=3"></script>
 <script src="/js/page-view-tracker.js?v=4"></script>
 <script src="/js/image-urls.js?v=1"></script>
-<script src="/js/data.js?v=23"></script>
+<script src="/js/data.js?v=24"></script>
 <script src="/js/ui-components.js?v=17"></script>
 <script src="/js/auth.js?v=22"></script>
 <script src="/js/listing-moderation.js?v=1"></script>

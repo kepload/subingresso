@@ -8,6 +8,7 @@
     let authRevision = 0;
     let lastRefresh = 0;
     let loading = false;
+    let fitFrame = null;
     const key = place => JSON.stringify([place.nome, place.regione, place.provincia]);
     const valid = place => place && typeof place.id === 'string' && /^(\d{6}|geonames:\d+)$/.test(place.id)
         && ['nome', 'regione', 'provincia'].every(field => typeof place[field] === 'string' && place[field].length > 0 && place[field].length <= 200);
@@ -23,11 +24,13 @@
     function render() {
         if (!nav) return;
         const last = recent();
-        const places = [last, ...popular].filter(Boolean).filter((place, index, all) => all.findIndex(item => key(item) === key(place)) === index).slice(0, 3);
+        const places = [last, ...popular].filter(Boolean).filter((place, index, all) => all.findIndex(item => key(item) === key(place)) === index).slice(0, 12);
         const links = places.map(place => {
             const a = document.createElement('a');
             a.href = '/annunci?' + new URLSearchParams({ q: place.nome, comune: place.id });
-            a.textContent = place.nome;
+            const name = document.createElement('span');
+            name.className = 'home-shortcut-name'; name.textContent = place.nome;
+            a.append(name);
             a.title = `${place.nome} · ${place.provincia}`;
             if (place === last) {
                 a.title = 'La tua ultima ricerca: ' + a.title;
@@ -40,6 +43,32 @@
         });
         nav.replaceChildren(...links);
         nav.hidden = links.length === 0;
+        fitRow();
+    }
+
+    function fitRow() {
+        if (!nav || nav.hidden) return;
+        const links = [...nav.querySelectorAll('a')];
+        links.forEach(link => { link.hidden = false; });
+        if (!matchMedia('(max-width: 599px)').matches) {
+            links.slice(3).forEach(link => { link.hidden = true; });
+            return;
+        }
+        const available = nav.clientWidth;
+        const gap = parseFloat(getComputedStyle(nav).columnGap) || 0;
+        const widths = links.map(link => link.getBoundingClientRect().width);
+        let used = 0, visible = 0;
+        links.forEach((link, index) => {
+            const needed = widths[index] + (visible ? gap : 0);
+            // Nomi interi quando entrano; l'ultima ricerca resta sempre per prima.
+            link.hidden = visible > 0 && used + needed > available + .5;
+            if (!link.hidden) { used += needed; visible++; }
+        });
+    }
+
+    function scheduleFit() {
+        if (fitFrame !== null) return;
+        fitFrame = requestAnimationFrame(() => { fitFrame = null; fitRow(); });
     }
 
     async function remember(place) {
@@ -86,6 +115,9 @@
     } catch (_) {}
     if (nav) {
         refresh();
+        if ('ResizeObserver' in window) new ResizeObserver(scheduleFit).observe(nav);
+        window.addEventListener('resize', scheduleFit);
+        if (document.fonts) document.fonts.ready.then(scheduleFit);
         window.addEventListener('storage', event => { if (!event.key || event.key === prefix + userId) render(); });
         window.addEventListener('pageshow', render);
         document.addEventListener('visibilitychange', () => {

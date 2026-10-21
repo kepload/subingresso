@@ -1,5 +1,15 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+21ottobre2026, affinamento: smartphone con luoghi popolari in una sola
+riga, scelta adattiva tra12candidati reali, personale sempre prima;
+desktop tre. Resize/font ricalcolati, niente scorrimento o righe aggiuntive.
+Indicatore annunci blu crescente2-3/4-6/7-10/11+, colori leggibili4,87:1
+minimo. Preferenza stabile sfumature bianco->superficie chiara: home,
+area vendita, sfondi pagine normali e introduzione Annunci senza bordo;
+nessun filtro sui testi. Data24/CSS14/home7/scorciatoie2, SQL aggregato
+esteso/verificato; nessun dato utente modificato. Prove e pubblicazione:
+Documents/verifica-ricerche-riga-blu-sfumature-20261021/risultati.md.
+
 Home,21ottobre2026: contatori spostati tra ricerca e anteprime; iniziali
 1591/€4.4M/4045 forniti dall'utente, animazione precedente conservata.
 Vecchi tre link sostituiti dalla classifica reale30giorni, funzione pubblica

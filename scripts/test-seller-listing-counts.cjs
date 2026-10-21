@@ -41,6 +41,11 @@ const server = http.createServer((req, res) => {
                 assert.deepEqual(await page.locator('.seller-listing-count-slot').allTextContents(), ['', '2', '4', '10', '10+', '']);
                 assert.equal(await page.locator('[data-seller-listing-count="molti"] [aria-label="11 annunci attivi"]').count(), 1);
                 assert.equal(await page.locator('[data-seller-listing-count="solo"]').isVisible(), false);
+                const colors=await page.locator('.seller-listing-count').evaluateAll(nodes=>nodes.map(el=>({level:el.dataset.countLevel,rgb:getComputedStyle(el).color.match(/\d+/g).map(Number)})));
+                assert.deepEqual(colors.map(c=>c.level),['1','2','3','4']);
+                const luminance=colors.map(c=>{const linear=c.rgb.map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;});return linear[0]*.2126+linear[1]*.7152+linear[2]*.0722;});
+                assert(luminance.every((value,index)=>index===0||value>luminance[index-1]),'Blu progressivamente più luminoso');
+                assert(luminance.every(value=>1.05/(value+.05)>=4.5),'Numero sempre leggibile su bianco');
                 const requests = await page.evaluate(() => qaRequests);
                 assert.equal(requests.length, 1, 'Una sola richiesta per le card della pagina');
                 assert.equal(requests[0].columns, 'user_id');

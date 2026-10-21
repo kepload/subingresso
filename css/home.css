@@ -21,12 +21,13 @@
 .home-search button { flex-shrink: 0; padding: 14px 24px; border-radius: 5px; background: var(--si-ink); color: #fff; font-size: 16px; font-weight: 700; }
 .home-search button:hover { background: #21497e; }
 .home-search button i { margin-left: 12px; font-size: 13px; }
-.home-shortcuts { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin-top: 19px; font-size: 14px; color: var(--si-muted); }
-.home-shortcuts a { color: var(--si-blue); min-height: 32px; display: inline-flex; align-items: center; text-underline-offset: 4px; }
+.home-shortcuts { display: flex; align-items: center; flex-wrap: nowrap; gap: 24px; margin-top: 19px; font-size: 14px; color: var(--si-muted); }
+.home-shortcuts a { color: var(--si-blue); min-height: 32px; display: inline-flex; align-items: center; text-underline-offset: 4px; white-space: nowrap; flex: none; max-width: 100%; }
 .home-shortcuts a:hover { text-decoration: underline; }
-.home-shortcuts[hidden] { display: none; }
+.home-shortcuts[hidden], .home-shortcuts a[hidden] { display: none; }
 .home-shortcuts a { gap: 7px; }
-.home-shortcuts i { font-size: 12px; }
+.home-shortcut-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.home-shortcuts i { font-size: 12px; flex: none; }
 .home-stats-section { background: linear-gradient(to bottom, #fff, #f5f5f5); }
 .home-listings { padding: 40px 0 80px; background: #f5f5f5; }
 .home-section-title { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
@@ -42,7 +43,7 @@
 .home-tool p { max-width: 44ch; font-size: 16px; line-height: 1.6; margin: 18px 0 28px; }
 .home-tool:first-child p { color: #d3e0f3; }
 .home-tool .home-link { margin-top: auto; }
-.home-sell-section { background: var(--si-surface); padding: 72px 0; }
+.home-sell-section { background: linear-gradient(to bottom, #fff, var(--si-surface) 120px); padding: 72px 0; }
 .home-selling { display: grid; grid-template-columns: .85fr 1.4fr; gap: 72px; }
 .home-selling-intro p { margin: 20px 0 28px; font-size: 18px; line-height: 1.6; max-width: 30ch; }
 .home-steps { display: grid; gap: 28px; }
@@ -128,8 +129,7 @@
     .home-search input::placeholder { font-size: 14px; }
     .home-search button { padding: 13px 16px; font-size: 14px; }
     .home-search button i { display: none; }
-    .home-shortcuts { gap: 4px 18px; font-size: 14px; margin-top: 14px; }
-    .home-shortcuts > span { flex-basis: 100%; }
+    .home-shortcuts { gap: 16px; font-size: 14px; margin-top: 14px; }
     .home-listings { padding: 24px 0 52px; }
     .home-section-title { align-items: flex-start; gap: 16px; margin-bottom: 24px; }
     .home-page .home-section-title h2 { font-size: 27px; }

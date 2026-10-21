@@ -141,7 +141,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 ## 9) Cache buster correnti (aggiornare a ogni modifica)
 
 - `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
-- `data.js?v=23`
+- `data.js?v=24`
 - `auth.js?v=22`
 - `ui-components.js?v=17`
 - `js/pages/annunci.js?v=15`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
@@ -413,3 +413,5 @@ Preferiti (19 ottobre 2026): stato unico card/dettaglio, cache sessionStorage li
 Conteggio annunci venditore (21 ottobre 2026): icona banco + 2-10, 10+ oltre dieci, nascosto con zero/uno. Totale pubblico attivo e non scaduto, indipendente dai filtri; richieste condivise/paginate in data.js, nessun numero su errore. Presente nelle card, dettaglio e profilo; conteggio eventi organizzatore conservato. Cache data23/design-system13/dettaglio26; test scripts/test-seller-listing-counts.cjs.
 
 Home (21 ottobre 2026): contatori tra ricerca e anteprime, sfumatura bianco-grigio richiesta. Tre luoghi più cercati su 30 giorni da home_top_location_searches, accesso pubblico solo aggregato; ultima località prima per account sullo stesso browser (_si_last_location_v1:ID), nessuna adozione della cronologia anonima. Helper location-shortcuts1, homeCSS6, annunci15; test scripts/test-home-location-shortcuts.cjs.
+
+Affinamento successivo21/10: smartphone una sola riga con tutti i luoghi che entrano tra12candidati, desktop tre, personale prima. Indicatore quattro blu progressivamente luminosi2-3/4-6/7-10/11+. Preferenza stabile: sfumature nei passaggi bianco->sfondo chiaro, senza sfocare testi; tema organizzatore conservato. Cache correnti data24/design-system14/home7/location-shortcuts2. Test riga/resize/nomi lunghi, colori e contrasto nei due script dedicati.
