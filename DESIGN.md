@@ -90,7 +90,7 @@ components:
 
 Un catalogo nitido di luoghi e opportunità: il blu esistente identifica le azioni, l’inchiostro dà peso ai titoli e le superfici chiare separano i compiti. La personalità nasce da proporzioni tipografiche precise, spaziatura regolare e dati leggibili.
 
-Le fotografie appartengono agli annunci reali. In loro assenza, il luogo e la dicitura «Foto non disponibile» diventano una copertina tipografica onesta. Logo testuale e slogan corrente restano i riferimenti del marchio.
+Le fotografie appartengono agli annunci reali. Il luogo compare in basso nelle copertine, con testo bianco su una sfumatura scura quando c’è una foto e ardesia su azzurro quando manca. Logo testuale e slogan corrente restano i riferimenti del marchio.
 
 Riferimento estratto dalla home e dalle finiture condivise del 21 ottobre 2026, in `css/home.css` e `css/design-system.css`. Non descrive una revisione completa delle altre pagine; il tema organizzatori conserva le proprie eccezioni.
 
@@ -148,7 +148,7 @@ Angoli moderati: pannelli e schede usano `panel`; campi e FAQ `control`; il puls
 - **Pulsanti:** inchiostro su bianco, testo chiaro, peso 700; l’azione estesa ha altezza minima 52px. Hover con `ink-hover`, pressione breve quando il movimento è consentito, focus esplicito.
 - **Ricerca:** campo bianco dentro un pannello blu. Etichetta visibile, icona accessoria e pulsante nominato; focus del gruppo con contorno chiaro. Sul telefono dimensioni e padding si riducono mantenendo campo e azione utilizzabili.
 - **Link:** testo esplicito e freccia piccola; sottolineatura al passaggio del puntatore. Le scorciatoie restano testo, senza contenitori a pillola.
-- **Offerte:** fondo trasparente, titolo, giorni, luogo, venditore, prezzo, stato e preferiti conservati. Nella home il corpo non ha rientro laterale. Quando manca la foto, copertina alta 148px con luogo in basso, didascalia esplicita e spazio superiore per badge e preferito. Le foto esistenti conservano il ritaglio del catalogo.
+- **Offerte:** titolo, giorni, luogo, venditore, prezzo, stato e preferiti conservati. Il corpo ha 16px di rientro laterale; le foto restano a tutta larghezza. Copertina alta 148px, luogo in basso su massimo due righe e spazio superiore per badge e preferito. Senza foto resta soltanto il luogo, anche in caso di errore di caricamento. Il dettaglio usa lo stesso trattamento del luogo in un riquadro alto 224px da 768px, 160px sotto, con o senza foto; il richiamo alla galleria resta separato dal luogo.
 - **Stati e giorni:** piccoli cartigli leggibili, tondo normale; vendita verde e affitto blu. I colori dei giorni già presenti restano metadati operativi.
 - **Navigazione e footer:** logo soltanto testuale; header bianco, link discreti e azione pubblicazione attenuata; footer inchiostro con testo chiaro. Le eccezioni organizzatori restano circoscritte.
 - **FAQ:** elementi nativi `details/summary`, fondo ghiaccio, segno più/meno e una risposta aperta per volta.
@@ -160,7 +160,7 @@ Movimento contenuto: titolo e ricerca entrano di 18px in 650ms, con ritardo di 9
 ### Do:
 - Do mantenere nome e logo solo testuale, con il blu sul suffisso .it.
 - Do conservare stato, giorni, luogo, venditore, prezzo e preferiti leggibili nelle offerte.
-- Do indicare esplicitamente l’assenza di una foto, lasciando spazio libero sotto i badge.
+- Do mostrare il luogo con e senza foto, lasciando spazio libero sotto i badge e un rientro laterale per i testi.
 - Do mantenere il contenuto visibile e rispettare la preferenza di movimento ridotto.
 
 ### Don't:

@@ -4,6 +4,16 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Luoghi e spaziature posteggi,21/10:** luogo anche sulle foto, testo bianco
+  su sfumatura leggibile; senza foto resta ardesia su azzurro. Corpo delle
+  anteprime con rientro laterale16px, immagini sempre a tutta larghezza148px.
+  Dettaglio con luogo e altezza224px desktop/160mobile, SSR/client allineati;
+  nomi su massimo due righe, badge/preferiti/galleria accessibili. CSS11,
+  dettaglioJS24. Chromium1440/320 e WebKit390 locali passati, preferiti174 e
+  galleria Chrome/Safari passati; nessuna scrittura reale. Backup tag/ramo
+  remoti verificati, noto errore cleanup. Prove/limiti/pubblicazione
+  `Documents/verifica-luoghi-spaziature-20261021/`; pubblicazione da verificare.
+
 - **Ricerca/link/copertine,21/10:** rimossi i due contorni al clic nella
   ricerca; eliminato "Oppure esplora", tre link blu. Copertine foto/senza
   foto tutte148px, misura dei riquadri precedenti senza foto, home/annunci.

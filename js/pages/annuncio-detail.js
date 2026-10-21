@@ -372,11 +372,12 @@ async function initPage() {
     });
     _listingPhotos = showImgs;
     
-    if (coverContainer && showImgs.length > 0) {
+    if (coverContainer) {
+        coverContainer.classList.toggle('listing-detail-cover--place', showImgs.length === 0);
         let imgsHtml = '';
         if (showImgs.length === 1) {
-            imgsHtml = listingPhotoLink(showImgs[0], listing.titolo, 0, false) + '<span class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/40 text-white text-[10px] font-black px-3 py-1.5 rounded-full pointer-events-none">Tocca per ingrandire</span>';
-        } else {
+            imgsHtml = listingPhotoLink(showImgs[0], listing.titolo, 0, false) + '<span class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 bg-black/40 text-white text-[10px] font-black px-3 py-1.5 rounded-full pointer-events-none">Tocca per ingrandire</span>';
+        } else if (showImgs.length > 1) {
             imgsHtml = `
                 <div class="flex overflow-x-auto snap-x snap-mandatory h-full w-full no-scrollbar">
                     ${showImgs.map((img, index) => listingPhotoLink(img, listing.titolo, index, true)).join('')}
@@ -389,9 +390,10 @@ async function initPage() {
 
         coverContainer.innerHTML = `
             ${imgsHtml}
-            <span id="statoBadge" class="absolute top-6 left-6 z-10 text-white text-xs font-black px-4 py-2 rounded-xl shadow-lg uppercase tracking-widest ${listing.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'}">${escapeHTML(listing.stato)}</span>
+            <div class="listing-detail-place" aria-hidden="true"><strong>${escapeHTML(String(listing.comune || listing.titolo || '').split(',')[0].trim())}</strong></div>
+            <span id="statoBadge" class="absolute top-6 right-6 z-10 text-white text-xs font-black px-4 py-2 rounded-xl shadow-lg uppercase tracking-widest ${listing.stato === 'Vendita' ? 'bg-emerald-500' : 'bg-blue-600'}">${escapeHTML(listing.stato)}</span>
         `;
-        _setMeta('ogImage', showImgs[0]);
+        if (showImgs.length) _setMeta('ogImage', showImgs[0]);
     }
 
     // JSON-LD strutturato (Product + BreadcrumbList) — generato automaticamente per ogni annuncio
