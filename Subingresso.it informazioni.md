@@ -16,6 +16,10 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Importi indivisibili, numeri20px sotto360px per mantenere €e cifra insieme;
   homeCSS8. Backup remoto valido; errore cleanup helper già noto.
   Dati/prove/pubblicazione: `Documents/verifica-stima-contatori-home-20261021/`.
+  Pubblicatoc9ea361, Vercel riuscito52RE6nPjTTvacmxz8dR1M7yuWzds:
+  HTML/CSS online identici; locale Chromium1440/820/320 e WebKit390 passati,
+  online Chromium1440/320 e WebKit390 passati. Importo su una riga,
+  animazione/font confermati, nessun erroreJS/overflow o scrittura reale.
 
 - **Ricerche in riga/blu/sfumature,21/10:** su smartphone una sola riga,
   tante località quante entrano, senza scorrimento; personale prima e

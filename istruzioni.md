@@ -10,6 +10,9 @@ arrotondata15,1M. Solo prezzi richiesti, nessuna vendita conclusa dimostrata;
 affitti esclusi dal valore, prezzi storici positivi non corretti per ipotesi.
 Importi su una riga; numeri20px sotto360px, homeCSS8. Backup remoto valido.
 Prove e stato pubblicazione:Documents/verifica-stima-contatori-home-20261021/.
+Pubblicatoc9ea361, Vercel riuscito; HTML/CSS identici online, locale quattro
+formati/browser e online Chromium1440/320+WebKit390 passati. Importo intero,
+animazione conservata, nessun erroreJS/overflow o scrittura reale di prova.
 
 21ottobre2026, affinamento: smartphone con luoghi popolari in una sola
 riga, scelta adattiva tra12candidati reali, personale sempre prima;
