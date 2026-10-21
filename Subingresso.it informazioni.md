@@ -1,5 +1,16 @@
 # Subingresso.it — informazioni e TO DO
 
+- **Dashboard e statistiche fiere,22/10:** richiesta corrente: eliminare
+  «Il sito sotto controllo» e ridisegnare le statistiche organizzatori con
+  Desktop/Skill/taste-skill. Rimosso blocco/admin polling, altri pannelli
+  conservati. True-black flat, numeri condivisi, grafico adattivo, posti
+  liberi/assegnati, provenienza, contatti, agenda e risultati mobile.
+  Profili diretti, filtri7/30/90 e CSV conservati; nessuna scrittura DB.
+  Checkout Documents/subingresso-statistiche-fiere-20261022; prove e stato
+  pubblicazione Documents/verifica-statistiche-fiere-20261022/risultati.md.
+  Dettagli/limiti in data/ORGANIZZATORI_EVENTI.md. Cache analyticsJS3/CSS2,
+  organizer-charts1. Non reintrodurre il riepilogo admin rimosso.
+
 Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Desktop\Ardit\subingresso.it`. Ricognizione tecnica: 6 ottobre 2026; unione documenti: 16 ottobre; snellimento: 17 ottobre. Le registrazioni mantengono le proprie date: questa revisione non verifica nuovamente sito o servizi live.
 
 ## Stato recente e decisioni correnti — 22 ottobre 2026

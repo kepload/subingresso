@@ -1,5 +1,12 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+22/10/2026: rimossa su richiesta la sezione admin «Il sito sotto controllo»,
+insieme a caricamento e aggiornamento al minuto; gli altri pannelli restano.
+Statistiche organizzatori ridisegnate con taste-skill True-black flat,
+grafico adattivo, posteggi a unità, filtri e risultati per evento anche su
+telefono. Nessuna modifica DB/pagamenti. AnalyticsJS3/CSS2/charts1;
+prove/stato in Documents/verifica-statistiche-fiere-20261022/risultati.md.
+
 Home desktop,21ottobre2026: riferimento prima immagine utente. Da1024px
 padding sopra slogan64→0, distanza scorciatoie24→32; mostra tutte le
 località che entrano in una riga tra12candidati reali, personale prima.
