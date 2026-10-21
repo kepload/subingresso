@@ -2474,3 +2474,17 @@ Nuovi bandi/programmi distinti dalla chiusura attuale; nessun contatto a terzi,
 nessuna altra provincia, modifiche estranee preservate ed escluse dai commit.
 
 Redesign Impeccable (21 ottobre 2026): richiesta esplicita successiva al ripristino della grafica. Home a catalogo, ricerca subito disponibile, card e finiture condivise; font Jakarta statici locali via alias Subingresso Jakarta per WebKit, licenza in css/fonts/OFL.txt. DESIGN.md e .impeccable/design.json descrivono il sistema; CSS condiviso8, home CSS/JS2. Backup ZIP391file verificati e tag/ramo remoti in Documents/backup-subingresso/impeccable-20261021-092441, prove in Documents/verifica-impeccable-20261021. Per annullare usare il revert del solo commit grafico, preservando i lavori successivi. Dati, pagamenti e invii non modificati.
+
+## Salerno — calendario fiere, chiusura ricerca del 21 ottobre 2026
+
+85 manifestazioni in 49 comuni; ricognizione nominale dei 158 comuni, 84 aggiunte e ID
+iniziale conservato. Catalogo 5.824, altre 5.739 schede identiche; JS101/JSON69.
+Audit data/fiere-salerno.json e data/FIERE.md: originali, 36 esclusioni, 25 limiti,
+otto costi e otto scadenze. Natale Castellabate: domanda 26 ottobre ore 12;
+Frecagnola: mercato generale solo il 12 settembre; ExpoSele: 26 ottobre è rimborso,
+non candidatura. Ricorrenze/storico/date incerte distinti; niente proiezioni.
+Pubblicato `5742df9`: 85 pagine/catalogo verificati online e browser locale/online
+Chromium 1440/320, WebKit 390 con PLAYWRIGHT_MODULE; suite generale e pagine
+senza JS passate. Backup preventivo e supplemento SHA256 verificati, nessun
+contatto a terzi. TO DO spuntata dopo verifica: 48 complete/62 rimanenti su 110.
+Ricerca attuale chiusa con limiti; futuri bandi/edizioni sono manutenzione.

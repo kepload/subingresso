@@ -2,7 +2,12 @@
 
 ## Salerno — ricerca documentale del 21 ottobre 2026
 
-Ricognizione corrente conclusa con limiti espliciti; pubblicazione in verifica.
+Ricognizione corrente conclusa con limiti espliciti; pubblicazione e verifica
+online concluse. Commit di pubblicazione `5742df9`: catalogo, script e audit
+confrontati con i file versionati, **85 pagine su 85** HTTP200 con nome,
+contenuto operativo, prezzi e canonical corretti. Browser online
+Chromium 1440/320 e WebKit 390 passati, incluse pagine senza JavaScript.
+TO DO e riepilogo aggiornati soltanto dopo l’esito: **48 completate, 62 da fare**.
 **85 manifestazioni in 49 comuni**, dalla sola scheda iniziale del Crocifisso
 Ritrovato, il cui ID è conservato: **84 aggiunte**, catalogo **5.824**.
 Ricerca nominale dei **158 comuni**, approfondimenti su atti/SUAP, Regione,

@@ -2,7 +2,7 @@
   "province": "Salerno",
   "checkedAt": "2026-10-21",
   "research": {
-    "status": "Ricognizione documentale corrente conclusa con limiti espliciti; pubblicazione in verifica",
+    "status": "Ricognizione documentale corrente conclusa con limiti espliciti; pubblicazione verificata online",
     "baselineCommit": "5666ee1",
     "baselineEvents": 1,
     "method": "Ricerca nominale dei 158 comuni e approfondimento selettivo dei risultati pertinenti: atti e SUAP, programmi originali/PDF, Regione, CCIAA, organizzatori, download dinamici nel browser, fonti alternative e lettura visiva delle scansioni. Selezione editoriale: nessun risultato importato automaticamente come evento.",
@@ -7353,7 +7353,27 @@
         "file": "web34-originals.json",
         "result": "Pagina originale completa recuperata dal lettore web; richiesta diretta403"
       }
-    ]
+    ],
+    "verification": {
+      "checkedAt": "2026-10-21",
+      "publicationCommit": "5742df962e23e8c8241f0d7ff2ca5d3472661432",
+      "onlinePages": 85,
+      "onlineAssets": 3,
+      "browserCases": [
+        "Chromium1440",
+        "Chromium320",
+        "WebKit390"
+      ],
+      "unchangedOtherEvents": 5739,
+      "localEvidence": "qa-local.json",
+      "onlineEvidence": [
+        "online-catalog.json",
+        "qa-online.json",
+        "deploy-attempts.json"
+      ],
+      "supplement": "C:/Users/utente/Documents/backup-subingresso/salerno-supplemento-20261021",
+      "supplementErrors": 0
+    }
   },
   "events": [
     {
