@@ -13,6 +13,11 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   HomeCSS6, scorciatoieJS1, annunciJS15. Prove e stato pubblicazione:
   `Documents/verifica-home-ricerche-statistiche-20261021/risultati.md`.
   Backup tag/ramo remoti validi; helper cleanup con errore noto.
+  Pubblicatoac821e4, VercelGb14hiWicX88jBT4u7rXs4dBS5PM riuscito:
+  nove asset identici, dettaglio generato aggiornato; locale/online
+  Chromium1440/820/320 e WebKit390 passati, ricerche home/annunci comprese.
+  Regressione ricerca671casi e quattro browser/formati passati; nessuna
+  scrittura reale nei test, funzione pubblica verificata e log privati.
 
 - **Annunci del venditore,21/10:** pubblicato5666ee1; icona banco e numero
   accanto al nome nelle card/dettaglio/profilo:2-10, poi10+, zero/uno omessi.
@@ -21,6 +26,10 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Soglie/errori/account Chrome1440/320 e Safari390 e preferiti174 passati.
   Profili273 Chromium passati; errore fixture WebKit riprodotto anche
   sul commit precedente. Prove/limiti nella cartella verifica-conteggio-annunci.
+  Online dopoac821e4: home/annunci/dettaglio/profili multiplo e singolo
+  nei tre formati passati, API reali e conteggi indipendenti concordi;
+  nomi/icone/font confermati, nessun erroreJS. Dettaglio320: overflow
+  testuale425px già identico prima; indicatore entro schermo, non ampliato.
 
 - **Home/foto originali,21/10:** sezione anteprime home grigio#f5f5f5 a tutta
   larghezza come Annunci, schede bianche e margini conservati. Sfumatura

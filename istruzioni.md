@@ -10,8 +10,15 @@ dal picker, link con codice esatto; home/annunci chiamano LocationShortcuts.
 CSS home6, helperJS1, annunciJS15; sfumatura bianco-grigio richiesta.
 Test scripts/test-home-location-shortcuts.cjs e prove/stato pubblicazione
 Documents/verifica-home-ricerche-statistiche-20261021/risultati.md.
+Pubblicatoac821e4, Vercel riuscito; nove asset identici e dettaglioSSR
+aggiornato. Locale/online Chromium1440/820/320 e WebKit390 passati,
+home/annunci ricordano scelte del picker; ricerca671casi e quattro
+browser/formati passati. Nessuna scrittura reale di prova; cache peraccount
+solo stesso browser, permessi aggregato/log verificati.
 Indicatore venditore5666ee1: banco2-10/10+, assente0/1, conteggi pubblici
 attivi non scaduti e indipendenti dai filtri; data23/CSS13/dettaglio26.
+Home/annunci/dettaglio/profili online tre formati passati dopoac821e4;
+limite overflowtesto320 preesistente documentato, indicatore entro schermo.
 
 Bari,21ottobre2026: ricerca documentale corrente conclusa con limiti espliciti e verificata online.
 90manifestazioni/36comuni, ricognizione41;treID e altre5650schede conservati.
