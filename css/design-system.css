@@ -60,6 +60,14 @@ body:not(.organizer-theme) [data-listing-id]:hover { box-shadow: none; }
 [data-listing-id] .text-slate-400 { color: #52637a; }
 [data-listing-id] > div > div:nth-child(3) { font-size: 13px; }
 [data-listing-id] > div > a.flex > span { font-size: 13px; }
+.seller-listing-count-slot { display: inline-flex; flex: none; vertical-align: middle; }
+.seller-listing-count-slot:empty, .profile-event-count:empty { display: none; }
+.seller-listing-count { display: inline-flex; align-items: center; gap: 5px; color: var(--si-muted); font-size: 12px; font-weight: 700; line-height: 1.5; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.seller-listing-count > i { font-size: 12px; }
+.seller-identity-heading { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.seller-identity-heading > :first-child { min-width: 0; }
+.profile-identity-heading { justify-content: center; flex-wrap: wrap; }
+@media (min-width: 640px) { .profile-identity-heading { justify-content: flex-start; } }
 [data-listing-id] > div > div.mt-auto { border: 0; padding-top: 18px; }
 [data-listing-id] > div > div.mt-auto p:first-child { font-size: 12px; text-transform: none; letter-spacing: 0; color: #52637a; }
 [data-listing-id] > div > div.mt-auto p:nth-child(2) { font-size: 22px; color: #102b52; line-height: 1.2; }

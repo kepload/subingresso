@@ -453,6 +453,7 @@ async function initPage() {
             const [{ data: seller }, { count: sellerCount }] = await Promise.all([
                 _supabase.from('profiles').select('nome, cognome, avatar_url, created_at').eq('id', listing.user_id).single(),
                 _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('user_id', listing.user_id).eq('status', 'active')
+                    .or(`expires_at.gt.${new Date().toISOString()},expires_at.is.null`)
             ]);
 
             if (seller) {
@@ -470,6 +471,8 @@ async function initPage() {
                     avatarEl.textContent = (sellerFullName || 'U').charAt(0).toUpperCase();
                 }
                 nameEl.textContent  = sellerFullName || 'Utente';
+                if (Number.isInteger(sellerCount)) USER_ACTIVE_LISTING_COUNTS.set(listing.user_id, sellerCount);
+                nameEl.insertAdjacentHTML('afterend', sellerListingCountHtml(listing.user_id));
                 sinceEl.textContent = `Iscritto dal ${new Date(seller.created_at).toLocaleDateString('it-IT', { month: 'long', year: 'numeric' })}`;
                 if (badgeEl) badgeEl.innerHTML = getProfileBadges(seller.created_at, sellerCount || 0);
                 if (linkEl)  linkEl.href = `/profilo?id=${listing.user_id}`;

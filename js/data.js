@@ -419,7 +419,7 @@ function buildCard(l, isSmall = false, distance = null) {
                                     <i class="fas ${_sellerBadge.icon} text-[5px] text-white"></i>
                                 </div>
                             </div>
-                            ${nameHtml}
+                            ${nameHtml}${sellerListingCountHtml(l.user_id)}
                         </a>`;
                     } else {
                         return `<div class="flex items-center gap-1.5 mb-2 sm:mb-3">
@@ -462,6 +462,65 @@ const USER_AVATARS = {};
 
 // Cache nome attuale venditore — popolata da annunci.js dopo il fetch profiles
 const USER_NAMES = {};
+
+// Conteggi pubblici totali: indipendenti dai filtri e dal numero di card visibili.
+// Solo memoria della pagina; una richiesta condivisa per tutti i venditori renderizzati.
+const USER_ACTIVE_LISTING_COUNTS = new Map();
+const _sellerCountPending = new Set();
+const _sellerCountQueue = new Set();
+let _sellerCountTimer = null;
+
+function activeListingCountHtml(count) {
+    if (!Number.isInteger(count) || count < 2) return '';
+    const label = `${count} annunci attivi`;
+    return `<span class="seller-listing-count" role="img" aria-label="${label}" title="${label}"><i class="fas fa-store" aria-hidden="true"></i><span aria-hidden="true">${count > 10 ? '10+' : count}</span></span>`;
+}
+
+function sellerListingCountHtml(userId) {
+    if (!userId) return '';
+    if (!USER_ACTIVE_LISTING_COUNTS.has(userId) && !_sellerCountPending.has(userId)) {
+        _sellerCountQueue.add(userId);
+        if (_sellerCountTimer === null) _sellerCountTimer = setTimeout(loadSellerListingCounts, 0);
+    }
+    return `<span class="seller-listing-count-slot" data-seller-listing-count="${escapeHTML(userId)}">${activeListingCountHtml(USER_ACTIVE_LISTING_COUNTS.get(userId))}</span>`;
+}
+
+async function loadSellerListingCounts() {
+    _sellerCountTimer = null;
+    const userIds = [..._sellerCountQueue];
+    _sellerCountQueue.clear();
+    userIds.forEach(id => _sellerCountPending.add(id));
+    const activeAt = new Date().toISOString();
+    try {
+        // Blocchi e paginazione evitano URL lunghi e conteggi troncati dal limite API.
+        for (let start = 0; start < userIds.length; start += 80) {
+            const batch = userIds.slice(start, start + 80);
+            const counts = new Map(batch.map(id => [id, 0]));
+            for (let offset = 0; ; offset += 1000) {
+                const { data, error } = await _supabase.from('annunci')
+                    .select('user_id')
+                    .in('user_id', batch)
+                    .eq('status', 'active')
+                    .or(`expires_at.gt.${activeAt},expires_at.is.null`)
+                    .order('id', { ascending: true })
+                    .range(offset, offset + 999);
+                if (error || !Array.isArray(data)) throw error || new Error('Conteggio non disponibile');
+                data.forEach(row => {
+                    if (counts.has(row.user_id)) counts.set(row.user_id, counts.get(row.user_id) + 1);
+                });
+                if (data.length < 1000) break;
+            }
+            counts.forEach((count, id) => USER_ACTIVE_LISTING_COUNTS.set(id, count));
+        }
+    } catch (_) {
+        // Nessun numero stimato su errore: nomi, annunci e collegamenti restano utilizzabili.
+    } finally {
+        userIds.forEach(id => _sellerCountPending.delete(id));
+        document.querySelectorAll('[data-seller-listing-count]').forEach(el => {
+            el.innerHTML = activeListingCountHtml(USER_ACTIVE_LISTING_COUNTS.get(el.dataset.sellerListingCount));
+        });
+    }
+}
 
 // Stato condiviso tra card e dettaglio, ripristinato solo per la sessione corrente.
 const SAVED_IDS = new Set();

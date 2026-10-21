@@ -16,7 +16,7 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
         #profileName { overflow-wrap: anywhere; }
     </style>
-    <link rel="stylesheet" href="/css/design-system.css?v=12">
+    <link rel="stylesheet" href="/css/design-system.css?v=13">
 </head>
 <body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900">
 
@@ -49,14 +49,14 @@
             <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                 <div id="profileAvatar" class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-black text-3xl overflow-hidden flex-shrink-0 border-4 border-white shadow-md"></div>
                 <div class="text-center sm:text-left">
-                    <h1 id="profileName" class="text-3xl font-black tracking-tight text-slate-900"></h1>
+                    <div class="seller-identity-heading profile-identity-heading">
+                        <h1 id="profileName" class="text-3xl font-black tracking-tight text-slate-900"></h1>
+                    </div>
                     <div class="flex flex-col sm:flex-row items-center gap-3 mt-3">
                         <span id="profileSince" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-lg">
                             <i class="fas fa-calendar-check text-slate-400"></i>
                         </span>
-                        <span id="profileListingCount" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-lg">
-                            <i class="fas fa-store text-blue-400"></i>
-                        </span>
+                        <span id="profileListingCount" class="profile-event-count inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-lg"></span>
                     </div>
                     <div id="profileBadges" class="flex flex-wrap justify-center sm:justify-start gap-2 mt-3"></div>
                     <p class="text-xs text-slate-400 font-semibold mt-4 flex items-center justify-center sm:justify-start gap-1.5">
@@ -88,7 +88,7 @@
 <script src="js/supabase-config.js?v=3"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=22"></script>
+<script src="js/data.js?v=23"></script>
 <script src="js/ui-components.js?v=17"></script>
 <script src="js/auth.js?v=22"></script>
 <script src="js/event-data.js?v=2"></script>
@@ -139,12 +139,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     document.getElementById('profileName').textContent = nomeCompleto;
+    document.getElementById('profileName').insertAdjacentHTML('afterend', sellerListingCountHtml(userId));
 
     const joinDate = new Date(profile.created_at).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
     document.getElementById('profileSince').innerHTML = `<i class="fas fa-calendar-check text-slate-400"></i> Iscritto dal ${joinDate}`;
 
     const count = listings ? listings.length : 0;
-    document.getElementById('profileListingCount').innerHTML = `<i class="fas fa-store text-blue-400"></i> ${count} annunci attivi`;
     document.getElementById('profileBadges').innerHTML = getProfileBadges(profile.created_at, count);
 
     // Populate listings grid
