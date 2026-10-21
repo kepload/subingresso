@@ -12,7 +12,11 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   dettaglioJS24. Chromium1440/320 e WebKit390 locali passati, preferiti174 e
   galleria Chrome/Safari passati; nessuna scrittura reale. Backup tag/ramo
   remoti verificati, noto errore cleanup. Prove/limiti/pubblicazione
-  `Documents/verifica-luoghi-spaziature-20261021/`; pubblicazione da verificare.
+  `Documents/verifica-luoghi-spaziature-20261021/`. Pubblicato0983180,
+  Vercel51cDyuKX7wAdyyAVwd1mVfcV7Now riuscito:16asset identici,treSSR
+  aggiornati e stessi tre formati online passati; foto/senza foto anche
+  senzaJS locale/online. Primo controllo durante deploy vecchio, ripetuto
+  riuscito; limite preesistente suite immagini in risultati.md.
 
 - **Ricerca/link/copertine,21/10:** rimossi i due contorni al clic nella
   ricerca; eliminato "Oppure esplora", tre link blu. Copertine foto/senza
