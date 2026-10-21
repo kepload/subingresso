@@ -24,7 +24,9 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   4396691 non saltata:Vercel elimina.git prima dell'ignoreCommand. Corretto
   con confronto GitHub pubblico senza credenziali, solo storia in avanti
   e lista completa; errori/limiti/rename protetti. Simulazione senza.git
-  e confronto GitHub reale su4396691 passati. Nuova prova online da verificare.
+  e confronto GitHub reale su4396691 passati. Correzione04779a3 pubblicata,
+  VercelB2i1Q36JzKjSmE8vN13jJfJiAevw READY,11artefatti ancora identici
+  all'inizio;35controlli passati. Prova online su questo solo registro pendente.
   API consumi Hobby non disponibile:75% dalla mail; nessuno spazio liberato
   ancora dichiarato. Nessuna conservazione automatica modificata.
 
