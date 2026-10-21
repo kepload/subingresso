@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-16",
+  "checkedAt": "2026-10-21",
   "research": {
     "catalogEventsScreened": 3447,
     "catalogSourceRequests": 1870,
@@ -1628,6 +1628,70 @@
       "details": "Quote per tutta la manifestazione: produttori di taralli con sede a Palo del Colle e casetta 150 €; food con stand 3×3 m 300 €, senza stand 250 €; esposizione senza somministrazione con carretto 2×1 m 100 €. Associazioni e punti informativi esenti nei limiti degli spazi. IVA non precisata; dotazioni/utenze nell’assegnazione, non presunte comprese.",
       "kind": "conditional",
       "sourceUrl": "https://www.comune.palodelcolle.ba.it/halley//ht/eg724/AVVISO_PARTECIPAZIONE_OPERATORI_ECONOMICI_signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "campania-salerno-fiera-del-crocifisso": {
+      "label": "Pratica e bolli 52 € + canone",
+      "details": "Bollo domanda 16 €, diritti di segreteria 10 €, istruttoria 10 € e bollo autorizzazione 16 €: 52 € di componenti fisse previste dall’avviso. Si aggiunge il canone di occupazione calcolato dal Comune; non è il prezzo complessivo di un banco né un importo da moltiplicare automaticamente per quattro giornate.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.salerno.it/sites/default/files/2026-02/avviso%20pubblico_.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "campania-atena-lucana-fiera-di-san-francesco": {
+      "label": "Canone forfettario 8 €/giorno",
+      "details": "Per la fiera del 7 ottobre 2026 il Comune indica canone di occupazione del suolo pubblico di 8 € al giorno, da pagare con PagoPA e con ricevuta da esibire. L’avviso non certifica un prezzo comprensivo di ogni altro onere né l’assegnazione del posteggio.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.atenalucana.sa.it/it/novita/page/fiera-del-07-ottobre-2026-canone-di-occupazione-del-suolo-pubblico",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "campania-cannalonga-fiera-della-frecagnola": {
+      "label": "Occupazione 50 € o 100 € secondo area",
+      "details": "Delibera 91/2026: mercato ambulante del solo 12 settembre, fino alle 16, in via II Variante dal civico Valente: 50 € per unità di occupazione; via Fiera: 100 €, riservata ai precedenti occupanti. Piccoli stand di prodotti tipici/street food nel percorso 9–13 settembre: 100 € per unità. Condizioni e periodi diversi: non è un prezzo giornaliero unico né un totale comprensivo di ogni onere.",
+      "kind": "conditional",
+      "sourceUrl": "https://halleyweb.com/c065024/de/attachment.php?serialDocumento=0089F80202697",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "campania-capaccio-paestum-borsa-mediterranea-del-turismo-archeologico": {
+      "label": "Stand 6 m² 2.500/3.000 € + 500 € e IVA",
+      "details": "Scheda 2026: 6 m² area nuda 2.500 € oppure con allestimento base 3.000 €; iscrizione obbligatoria 500 € comprensiva di allaccio/consumo fino a 1 kW, Wi-Fi condiviso e pulizia. IVA 22% sul totale: modulo base 3.660 € area nuda o 4.270 € allestito, salvo servizi aggiuntivi. Pagamento completo prima della manifestazione; prenotazione vincolante.",
+      "kind": "fee",
+      "sourceUrl": "https://www.borsaturismoarcheologico.it/wp-content/uploads/2025/12/Scheda-stand_BMTA2026.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "campania-castellabate-mercatini-di-natale-al-borgo": {
+      "label": "Intero evento: banco 200 €, casette 400/600 €",
+      "details": "Disciplinare 2026, tutte le otto giornate: banco 200 €, casetta 2×2 m 400 €, casetta 4×2 m 600 € riservata al food con manipolazione. Riduzioni per le riserve ai pubblici esercizi locali: 12,5%, 25% e 8,33% secondo tipologia, non per tutti. Elettricità nelle casette; per i banchi sola illuminazione, decorazioni a carico dell’operatore. IVA e altri oneri non esplicitati.",
+      "kind": "conditional",
+      "sourceUrl": "https://www.comune.castellabate.sa.it/halley//ht/egt58/disciplinare.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "campania-cava-de-tirreni-mercatini-straordinari-delle-festivita-pasquali": {
+      "label": "Diritti 10 € + CUP e TARIG",
+      "details": "Bando triennio 2026–2028: diritti di segreteria 10 € per la domanda; prima di occupare il posto occorre pagare anche CUP e TARIG secondo regolamento e occupazione assegnata. Questi importi non sono quantificati nel bando, quindi 10 € non è il prezzo complessivo dello spazio.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.cavadetirreni.sa.it/amministrazione/documenti-e-dati/documenti-albo-pretorio/bandi-e-avvisi-pubblici/avviso-pubblico-assegnazione-ndeg4-posteggi-ad-esercenti-il-commercio-su-aree-pubbliche-festivita-pasquali-triennio-2026-2028/documenti/avviso/@@download/file/AVVISO.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "campania-pagani-fiera-della-madonna-delle-galline": {
+      "label": "Diritti 18 € + bolli 32 € e canone",
+      "details": "Avviso 2026: diritti SUAP 18 €, bollo domanda 16 € e bollo autorizzazione 16 €, oltre al canone di occupazione da quantificare per il posto assegnato. Sono 50 € di componenti indicate, non il costo complessivo della manifestazione. Pagamento entro 1 aprile distinto dal termine di candidatura.",
+      "kind": "partial",
+      "sourceUrl": "https://pagani-api.municipiumapp.it/s3/4900/allegati/allegati-notizie/posteggi_madonna_galline_2026/prot_9316_avviso_madonna_delle_galline_2026_signed_signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "campania-pagani-fiera-di-sant-alfonso-maria-de-liguori": {
+      "label": "Conferma precedenti titolari: bollo 16 €",
+      "details": "Per la conferma 2026 dei precedenti assegnatari della Madonna delle Galline, entro 6 luglio, l’avviso richiede una marca da bollo da 16 €. Non è tariffa complessiva dello stand e non è estesa automaticamente alle nuove domande SUAP; canone e ulteriori oneri da verificare.",
+      "kind": "conditional",
+      "sourceUrl": "https://pagani-api.municipiumapp.it/s3/4900/allegati/comunicati/2026/festivita_s-alfonso_2026_signed_signed.pdf",
       "period": "2026",
       "checkedAt": "2026-10-21"
     }
