@@ -16,6 +16,9 @@ base css/admin-theme-base.css, override circoscritti ai fogli originali.
 198controlli tema e364profili locali passati, nessuna scrittura reale;
 prove/stato in Documents/verifica-tema-dark-admin-20261022/ e registro
 Subingresso.it informazioni.md. Sessioni dei test simulate.
+Pubblicatoca9cf29, Vercelriuscito:21asset/pagine identici,13percorsiSSR;
+198controlli online passati, quattroSSR scuri e home anonima chiara in
+Chromium1440/320 e WebKit390. Nuovi calcolatore/statistiche integrati.
 
 Home desktop,21ottobre2026: riferimento prima immagine utente. Da1024px
 padding sopra slogan64→0, distanza scorciatoie24→32; mostra tutte le

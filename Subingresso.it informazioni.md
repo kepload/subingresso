@@ -52,7 +52,14 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   contrasto testi/campi almeno4,5:1, assenza pannelli bianchi e nuovi overflow;
   regressione profili364passata. Sessioni/ruoli e contenuti delle prove
   simulati, nessuna scrittura reale. Prove e limiti:
-  `Documents/verifica-tema-dark-admin-20261022/`. Pubblicazione da verificare.
+  `Documents/verifica-tema-dark-admin-20261022/`. Pubblicatoca9cf29,
+  Vercel4DXHo3LFjYrEbELaM7c77j9tUn5Jriuscito:21pagine/asset identici,
+  13percorsi pubblici/SSR con un solo collegamento tema;198controlli ripetuti
+  sugli asset pubblicati passati. Quattro SSR reali in treformati scuri e
+  home anonima reale chiara nei trecasi verificati; ruoli dark simulati.
+  Nessuna scrittura reale. Aggiornamenti concorrenti calcolatore/statistiche
+  integrati; CSS rigenerato e198controlli integrati passati. La sezione
+  organizzatori conserva anche il nuovo stile True-black gia pubblicato.
 - Backup remoto `session-20261022-011206-tema-dark-admin` e ramo
   `backup/pre-tema-dark-admin-20261022` creati prima delle modifiche;
   consueto errore cleanup helper, backup remoto riuscito. File estranei esclusi.
