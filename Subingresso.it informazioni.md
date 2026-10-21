@@ -17,11 +17,14 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   identici a9350585, tre config404 attesi. Pubblicato62f7c6a: ignoreCommand
   salta solo modifiche md/sql già escluse dal deploy, confronto con ultima
   pubblicazione riuscita. Codice/dati/config, errori, cronologia mancante
-  e riavvii manuali pubblicano normalmente;25controlli passati. Nessuna
+  e riavvii manuali pubblicano normalmente;35controlli passati. Nessuna
   modifica a pagine/stile/funzionalità/dati. Vercel2t3qv4xac1VKMRLS83yxSFfBD6sQ
   READY:140asset identici prima/dopo,11funzioni con artefatti identici;
-  22pagine/API con esiti attesi e sitemap2965URL. Salto reale del successivo
-  aggiornamento documentale da verificare nei log.
+  22pagine/API con esiti attesi e sitemap2965URL. Prima prova documentale
+  4396691 non saltata:Vercel elimina.git prima dell'ignoreCommand. Corretto
+  con confronto GitHub pubblico senza credenziali, solo storia in avanti
+  e lista completa; errori/limiti/rename protetti. Simulazione senza.git
+  e confronto GitHub reale su4396691 passati. Nuova prova online da verificare.
   API consumi Hobby non disponibile:75% dalla mail; nessuno spazio liberato
   ancora dichiarato. Nessuna conservazione automatica modificata.
 

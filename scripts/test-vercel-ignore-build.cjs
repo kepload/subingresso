@@ -22,27 +22,28 @@ const commit = () => {
     return git('rev-parse', 'HEAD');
 };
 let passed = 0;
-const check = (name, previous, expected) => {
-    const decision = shouldSkipBuild({ cwd, env: { VERCEL_GIT_PREVIOUS_SHA: previous } });
+const check = async (name, previous, expected) => {
+    const decision = await shouldSkipBuild({ cwd, env: { VERCEL_GIT_PREVIOUS_SHA: previous } });
     assert.equal(decision.skip, expected, name + ': ' + decision.reason);
     passed++;
 };
 
+async function main() {
 try {
     git('init', '-q');
     write('.vercelignore', '*.md\n*.sql\nannuncio.html\n');
     write('index.html', '<h1>Original site</h1>');
     write('data/fairs.json', '{"events":[]}');
     const initial = commit();
-    check('First deployment', undefined, false);
-    check('Invalid reference', '--help', false);
-    check('Zero reference', '0'.repeat(40), false);
-    check('Unavailable history', 'f'.repeat(40), false);
-    check('Manual redeploy without Git changes', initial, false);
+    await check('First deployment', undefined, false);
+    await check('Invalid reference', '--help', false);
+    await check('Zero reference', '0'.repeat(40), false);
+    await check('Unavailable history', 'f'.repeat(40), false);
+    await check('Manual redeploy without Git changes', initial, false);
 
     write('notes.md', 'Notes');
     const notes = commit();
-    check('Documentation only', initial, true);
+    await check('Documentation only', initial, true);
     const cli = spawnSync(process.execPath, [path.join(__dirname, 'vercel-ignore-build.cjs')], {
         cwd, env: { ...process.env, VERCEL_GIT_PREVIOUS_SHA: initial }, encoding: 'utf8'
     });
@@ -51,8 +52,8 @@ try {
     write('data/audit.md', 'All source references retained');
     write('patch.sql', 'SELECT 1;');
     const sql = commit();
-    check('Multiple documentation-only commits', initial, true);
-    check('SQL instructions only', notes, true);
+    await check('Multiple documentation-only commits', initial, true);
+    await check('SQL instructions only', notes, true);
 
     write('index.html', '<h1>Updated site</h1>');
     const site = commit();
@@ -63,47 +64,81 @@ try {
     passed++;
     write('notes.md', 'Documentation after code');
     const afterSite = commit();
-    check('Code followed by documentation still deploys', sql, false);
-    check('Only documentation since successful site deployment', site, true);
+    await check('Code followed by documentation still deploys', sql, false);
+    await check('Only documentation since successful site deployment', site, true);
 
     for (const file of ['data/fairs.json', 'api/site.js', 'style.css',
         'photo.png', 'vercel.json', 'scripts/build.js', 'package-lock.json']) {
         const previous = git('rev-parse', 'HEAD');
         write(file, 'Changed');
         commit();
-        check('Deploy changes to ' + file, previous, false);
+        await check('Deploy changes to ' + file, previous, false);
     }
 
     let previous = git('rev-parse', 'HEAD');
     git('mv', 'index.html', 'old-page.md');
     commit();
-    check('Renaming a deployed page to documentation still deploys', previous, false);
+    await check('Renaming a deployed page to documentation still deploys', previous, false);
     previous = git('rev-parse', 'HEAD');
     fs.unlinkSync(path.join(cwd, 'notes.md'));
     commit();
-    check('Deletion of excluded documentation', previous, true);
+    await check('Deletion of excluded documentation', previous, true);
     previous = git('rev-parse', 'HEAD');
     fs.unlinkSync(path.join(cwd, 'photo.png'));
     commit();
-    check('Deletion of a deployed asset', previous, false);
+    await check('Deletion of a deployed asset', previous, false);
 
     write('.vercelignore', '*.md\n*.sql\n!public.md\n');
     commit();
     previous = git('rev-parse', 'HEAD');
     write('public.md', 'Public document');
     commit();
-    check('Negated deployment exclusions', previous, false);
+    await check('Negated deployment exclusions', previous, false);
     write('.vercelignore', '*.sql\n');
     commit();
     previous = git('rev-parse', 'HEAD');
     write('new.md', 'Now a deployed document');
     commit();
-    check('Documentation no longer excluded', previous, false);
+    await check('Documentation no longer excluded', previous, false);
     fs.unlinkSync(path.join(cwd, '.vercelignore'));
-    check('Missing exclusions', previous, false);
+    await check('Missing exclusions', previous, false);
+
+    // Reproduce Vercel's actual environment: source files without .git.
+    write('.vercelignore', '*.md\n*.sql\n');
+    const noGitCwd = path.join(cwd, 'no-git');
+    fs.mkdirSync(noGitCwd);
+    write('no-git/.vercelignore', '*.md\n*.sql\n');
+    const base = 'a'.repeat(40), head = 'b'.repeat(40);
+    const comparison = { status: 'ahead', merge_base_commit: { sha: base },
+        files: [{ filename: 'notes.md', status: 'modified' }] };
+    const remote = async (name, payload, expected, ok = true) => {
+        const result = await shouldSkipBuild({ cwd: noGitCwd,
+            env: { VERCEL_GIT_PREVIOUS_SHA: base, VERCEL_GIT_COMMIT_SHA: head },
+            fetchImpl: async () => ({ ok, json: async () => payload }) });
+        assert.equal(result.skip, expected, name);
+        passed++;
+    };
+    await remote('Vercel without .git skips documentation', comparison, true);
+    await remote('Vercel without .git still deploys code', { ...comparison,
+        files: [{ filename: 'index.html', status: 'modified' }] }, false);
+    await remote('Remote rename retains original page path', { ...comparison,
+        files: [{ filename: 'old.md', previous_filename: 'index.html', status: 'renamed' }] }, false);
+    await remote('Missing original filename does not skip', { ...comparison,
+        files: [{ filename: 'old.md', status: 'renamed' }] }, false);
+    await remote('Diverged history does not skip', { ...comparison, status: 'diverged' }, false);
+    await remote('Unexpected merge base does not skip', { ...comparison,
+        merge_base_commit: { sha: head } }, false);
+    await remote('Truncated comparison does not skip', { ...comparison,
+        files: Array(300).fill(comparison.files[0]) }, false);
+    await remote('Rate limit does not skip deployment', {}, false, false);
+    await remote('Incomplete comparison does not skip', {}, false);
+    await remote('Identical remote commits allow explicit redeploy', { ...comparison,
+        status: 'identical', files: [] }, false);
     console.log(passed + ' deployment safety checks passed.');
 } finally {
     assert.equal(path.dirname(path.resolve(cwd)), path.resolve(os.tmpdir()));
     assert.ok(path.basename(cwd).startsWith('subingresso-vercel-ignore-'));
     fs.rmSync(cwd, { recursive: true, force: true });
 }
+}
+main().catch(error => { console.error(error); process.exitCode = 1; });
