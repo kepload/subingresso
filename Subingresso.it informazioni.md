@@ -8,8 +8,11 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   326pubblicazioni READY nel progetto `subingresso`, tre nel vecchio
   `subingresso.it`; dominio sul primo, CLI locale collegata al secondo:
   usare ID espliciti. Preparati314candidati, protette ultime10produzioni
-  e tutte le copie con alias. Eliminazione in attesa di consenso esplicito:
-  comporta perdita dei link/ripristino immediato delle vecchie copie.
+  e tutte le copie con alias. Eliminazione autorizzata esplicitamente21/10,
+  vincolo sito e dati utenti intatti.283rimosse/verificate;31restanti:
+  limite temporaneo Vercel now-rm, ripresa dopo16:45:27italiane21/10.
+  Alias e pubblicazione attuale invariati,15copie protette. Zero richieste
+  di scrittura DB/storage utenti; log dei parziali nella cartella prove.
   Tutti i commit candidati presenti nel backup. Prove/inventario/CSV:
   `Documents/verifica-spazio-vercel-20261021/`; ZIP411file verificatiSHA256,
   bundleGit completo43.201.858byte verificato. Backup tag160132 e ramo
@@ -29,8 +32,8 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   all'inizio;35controlli passati. Prova online riuscita:2ca7829 CANCELED
   prima del build per exit0. Alias dominio ancora su04779a3,home200 identica;
   targets.production include anche tentativi cancellati:verificare gli alias.
-  API consumi Hobby non disponibile:75% dalla mail; nessuno spazio liberato
-  ancora dichiarato. Nessuna conservazione automatica modificata.
+  API consumi Hobby non disponibile:75% dalla mail, nuova percentuale
+  non misurata. Nessuna conservazione automatica modificata.
 
 
 - **Home desktop,21/10:** nascosti frase e link Inserisci annuncio accanto al titolo da1024px; sezione vendita inferiore conservata. homeCSS10. Chromium1440/1024/1023/820/390 verificati; backup remoto session-20261021-155049 valido, errore cleanup helper noto. Pubblicato1c78460: HTML v10 e regola desktop verificati online.
