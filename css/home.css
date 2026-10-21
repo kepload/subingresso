@@ -18,12 +18,11 @@
 .home-search-field > i { margin-left: 14px; color: var(--si-blue); font-size: 17px; }
 .home-search input { min-width: 0; flex: 1; width: 100%; padding: 13px 0; font-size: 16px; background: transparent; outline: none; caret-color: var(--si-blue); }
 .home-search input::placeholder { color: #52637a; opacity: 1; }
-.home-search-field:focus-within { outline: 3px solid #b9d2ff; outline-offset: 4px; }
 .home-search button { flex-shrink: 0; padding: 14px 24px; border-radius: 5px; background: var(--si-ink); color: #fff; font-size: 16px; font-weight: 700; }
 .home-search button:hover { background: #21497e; }
 .home-search button i { margin-left: 12px; font-size: 13px; }
 .home-shortcuts { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin-top: 19px; font-size: 14px; color: var(--si-muted); }
-.home-shortcuts a { color: var(--si-ink); min-height: 32px; display: inline-flex; align-items: center; text-underline-offset: 4px; }
+.home-shortcuts a { color: var(--si-blue); min-height: 32px; display: inline-flex; align-items: center; text-underline-offset: 4px; }
 .home-shortcuts a:hover { text-decoration: underline; }
 .home-listings { padding: 72px 0 80px; }
 .home-section-title { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
@@ -79,6 +78,7 @@
 .home-loading span:first-child { height: 120px; }
 .home-page :focus-visible { outline: 3px solid var(--si-blue); outline-offset: 4px; }
 .home-page .home-search :focus-visible { outline-color: #b9d2ff; }
+.home-page .home-search input:focus { outline: none; box-shadow: none; }
 @media (min-width: 1100px) {
     .home-page #previewGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }

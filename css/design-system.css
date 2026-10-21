@@ -34,7 +34,7 @@ body:not(.organizer-theme) [data-listing-id]:hover { box-shadow: none; }
 [data-listing-id] > a:first-child { background: #dce6f3; }
 #previewGrid, #resultsGrid { gap: 24px; }
 #previewGrid [data-listing-id], #resultsGrid [data-listing-id] { background: #fff; }
-[data-listing-id] > .listing-card-cover--place { height: auto; min-height: 148px; }
+[data-listing-id] > .listing-card-cover { height: 148px; }
 .listing-card-place { display: none; }
 .listing-card-cover--place > .listing-card-place { display: flex; align-items: flex-end; min-height: 148px; padding: 64px 20px 16px; text-align: left; }
 .listing-card-place strong { display: block; font-size: 22px; font-weight: 700; letter-spacing: -.025em; line-height: 1.15; max-width: 100%; overflow-wrap: anywhere; text-wrap: balance; }
