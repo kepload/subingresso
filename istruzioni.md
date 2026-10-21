@@ -1,5 +1,16 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Bari,21ottobre2026: integrazione della ricerca documentale corrente, pubblicazione in verifica.
+90manifestazioni/36comuni, ricognizione41;treID e altre5650schede conservati.
+Catalogo5740,cacheJS100/JSON68;24sintesi costo,19esclusioni/17limiti in
+data/fiere-bari.json e FIERE.md. Originali/prove Documents/ricerca-fiere-bari-20261021.
+TerlizziPDF recuperato via browser,Gravina50€/m²+IVA coperto/15scoperto,
+PaloTarallo100/150/250/300€ per due giorni. ContraddizioniRutigliano,BariSanNicola,
+Mola eModugno preservate,nessun dato inventato. Backup tag/ramo remoti verificati.
+Nessun contatto a terzi;TO DO e riepilogo non aggiornati finché esito online non verificato.
+Manutenzione futura distinta dalla ricerca corrente,nessun’altra provincia avviata.
+
+
 Napoli, 21 ottobre 2026: ricerca documentale corrente conclusa con limiti espliciti.
 76 manifestazioni in 28 comuni, ricognizione dei 92 comuni, 393 ricevute,
 125 record Mostra d’Oltremare confrontati, 36 gruppi di esclusioni e 17 limiti.

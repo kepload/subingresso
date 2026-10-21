@@ -13,6 +13,12 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Prove/pubblicazione `Documents/verifica-ricerca-link-copertine-20261021/`.
   Backup tag/ramo remoti verificati; noto errore cleanup del helper.
 
+- **Bari, integrazione in verifica21/10:**90manifestazioni/36comuni,41esaminati,
+  treID e altre5650schede conservati;catalogo5740.24sintesi costo,
+  19esclusioni/17limiti in data/fiere-bari.json e FIERE.md.
+  Originali/prove Documents/ricerca-fiere-bari-20261021. TO DO non spuntata
+  e conteggio conclusioni invariato fino alla verifica online. Nessun contatto a terzi.
+
 - **Anteprime uniformi,21/10:** nome del luogo nei riquadri senza foto,
   eliminato «Foto non disponibile». Stesso componente/stile home e annunci,
   spaziatura condivisa; foto presenti conservate, fallback anche se il file

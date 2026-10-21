@@ -1438,6 +1438,198 @@
       "sourceUrl": "https://www.prolocoovada.it/wp-content/uploads/2026/08/LICENZE-MODALITA-2026.pdf",
       "checkedAt": "2026-10-20",
       "review": "Alessandria: original-document-review"
+    },
+    "puglia-gravina-in-puglia-fiera-di-san-giorgio": {
+      "label": "Coperto 50 €/m² + IVA; scoperto 15 €/m² + IVA",
+      "details": "Modulo originale 732ª edizione: stand coperto allestito base 3×4 m, 50 €/m² + IVA; area scoperta 15 €/m² + IVA. Per enti pubblici/associazioni 250 € ciascuno, IVA non precisata. Acconto 30%; corrente richiesta a parte nel modulo, costo allaccio non indicato. Non confondere la quota riservata con quella delle imprese.",
+      "kind": "unit",
+      "sourceUrl": "https://www.comune.gravina.ba.it/documents/20118/35487/Richiesta%20partecipazione.pdf/5f184cea-64f1-21c7-c2ca-8feb23445355?download=true",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-turi-fiera-di-santa-lucia": {
+      "label": "Pratica 10 € + bollo e canone",
+      "details": "10 € di procedimento per ciascun evento, bollo 16 € e canone da quantificare. Importi parziali, non prezzo complessivo del banco.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.turi.ba.it/wp-content/uploads/2026/02/avviso-pubblico_2026-signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-turi-fiera-di-sant-oronzo": {
+      "label": "Pratica 10 € + bollo e canone",
+      "details": "10 € di procedimento per ciascun evento, bollo 16 € e canone da quantificare. Importi parziali, non prezzo complessivo del banco.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.turi.ba.it/wp-content/uploads/2026/02/avviso-pubblico_2026-signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-turi-mercatini-della-madonna-del-carmine": {
+      "label": "Pratica 10 € + bollo e canone",
+      "details": "10 € di procedimento per ciascun evento, bollo 16 € e canone da quantificare. Importi parziali, non prezzo complessivo del banco.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.turi.ba.it/wp-content/uploads/2026/02/avviso-pubblico_2026-signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-turi-mercatini-di-sant-oronzo": {
+      "label": "Pratica 10 € + bollo e canone",
+      "details": "10 € di procedimento per ciascun evento, bollo 16 € e canone da quantificare. Importi parziali, non prezzo complessivo del banco.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.turi.ba.it/wp-content/uploads/2026/02/avviso-pubblico_2026-signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-capurso-festa-mercato-della-madonna-del-pozzo": {
+      "label": "Pratica 20 € + bollo e canone",
+      "details": "20 € diritti istruttoria, bollo 16 € per istanza; canone del singolo posteggio da quantificare. Stessa domanda possibile per entrambe le manifestazioni: non sommare automaticamente la pratica due volte.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.capurso.bari.it/wp-content/uploads/2026/05/avviso-FMP-e-FO-2026-signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-capurso-fiera-dell-ottava": {
+      "label": "Pratica 20 € + bollo e canone",
+      "details": "20 € diritti istruttoria, bollo 16 € per istanza; canone del singolo posteggio da quantificare. Stessa domanda possibile per entrambe le manifestazioni: non sommare automaticamente la pratica due volte.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.capurso.bari.it/wp-content/uploads/2026/05/avviso-FMP-e-FO-2026-signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-molfetta-fiera-della-madonna-dei-martiri": {
+      "label": "Bollo 16 € + canone",
+      "details": "Bollo 16 € per domanda; canone suolo da quantificare secondo superficie e giorni. Importo parziale, non quota complessiva di esposizione.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.molfetta.ba.it/ocmultibinary/download/68894/2086039/7/50326bc93da50743ff533b0b225bd65e.pdf/file/Bando_pubblico_FIERE_2026.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-molfetta-mercatino-di-san-nicola": {
+      "label": "Bollo 16 € + canone",
+      "details": "Bollo 16 € per domanda; canone suolo da quantificare secondo superficie e giorni. Importo parziale, non quota complessiva di esposizione.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.molfetta.ba.it/ocmultibinary/download/68894/2086039/7/50326bc93da50743ff533b0b225bd65e.pdf/file/Bando_pubblico_FIERE_2026.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-bitritto-fiera-della-madonna-di-costantinopoli": {
+      "label": "Suolo 18/20 € + pratica 30 € e bollo",
+      "details": "Suolo 18 € per 35 m² o 20 € per 40 m², più 30 € diritti di segreteria e bollo 16 € della domanda. Condizioni riferite esclusivamente all’edizione 2026.",
+      "kind": "partial",
+      "sourceUrl": "https://comune.bitritto.ba.it/wp-content/uploads/2025/10/Bando-Fiera-2026-DA-PUBBLICARE-ALBO-E-ALTRO-.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-terlizzi-fiera-della-madonna-di-costantinopoli": {
+      "label": "Pratica 25 € + bolli e canone",
+      "details": "25 € diritti di segreteria, bollo 16 € domanda e ulteriore bollo 16 € autorizzazione; CUP da quantificare. Il bando consente una domanda per più fiere: non moltiplicare automaticamente diritti e bolli.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.terlizzi.ba.it/novita/avvisi/novita_1737.html",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-terlizzi-fiera-della-madonna-dell-annunziata": {
+      "label": "Pratica 25 € + bolli e canone",
+      "details": "25 € diritti di segreteria, bollo 16 € domanda e ulteriore bollo 16 € autorizzazione; CUP da quantificare. Il bando consente una domanda per più fiere: non moltiplicare automaticamente diritti e bolli.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.terlizzi.ba.it/novita/avvisi/novita_1737.html",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-terlizzi-fiera-della-madonna-di-sovereto": {
+      "label": "Pratica 25 € + bolli e canone",
+      "details": "25 € diritti di segreteria, bollo 16 € domanda e ulteriore bollo 16 € autorizzazione; CUP da quantificare. Il bando consente una domanda per più fiere: non moltiplicare automaticamente diritti e bolli.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.terlizzi.ba.it/novita/avvisi/novita_1737.html",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-terlizzi-fiera-della-festa-patronale-del-carro": {
+      "label": "Pratica 25 € + bolli e canone",
+      "details": "25 € diritti di segreteria, bollo 16 € domanda e ulteriore bollo 16 € autorizzazione; CUP da quantificare. Il bando consente una domanda per più fiere: non moltiplicare automaticamente diritti e bolli.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.terlizzi.ba.it/novita/avvisi/novita_1737.html",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-terlizzi-fiera-della-madonna-del-rosario": {
+      "label": "Pratica 25 € + bolli e canone",
+      "details": "25 € diritti di segreteria, bollo 16 € domanda e ulteriore bollo 16 € autorizzazione; CUP da quantificare. Il bando consente una domanda per più fiere: non moltiplicare automaticamente diritti e bolli.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.terlizzi.ba.it/novita/avvisi/novita_1737.html",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-terlizzi-fiera-degli-animali-e-attrezzature-agricole": {
+      "label": "Pratica 25 € + bolli e canone",
+      "details": "25 € diritti di segreteria, bollo 16 € domanda e ulteriore bollo 16 € autorizzazione; CUP da quantificare. Il bando consente una domanda per più fiere: non moltiplicare automaticamente diritti e bolli.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.terlizzi.ba.it/novita/avvisi/novita_1737.html",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-terlizzi-fiera-di-san-nicola": {
+      "label": "Pratica 25 € + bolli e canone",
+      "details": "25 € diritti di segreteria, bollo 16 € domanda e ulteriore bollo 16 € autorizzazione; CUP da quantificare. Il bando consente una domanda per più fiere: non moltiplicare automaticamente diritti e bolli.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.terlizzi.ba.it/novita/avvisi/novita_1737.html",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-corato-fiera-di-maggio": {
+      "label": "Pratica 50,82 € condizionata + bolli/CUP",
+      "details": "Diritti 50, 82 €, salvo esonero per chi ha già partecipato nell’anno alle manifestazioni comunali indicate nel bando; bollo 16 € domanda e 16 € concessione, più CUP quantificato da S.I.x.T. Non costo complessivo fisso.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.corato.ba.it/sites/sito-comunecorato.cittadinopratico.it/files/2026-02/Avviso_pubblico_Maggio_Settembre_2026_signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-corato-fiera-di-settembre": {
+      "label": "Pratica 50,82 € condizionata + bolli/CUP",
+      "details": "Diritti 50, 82 €, salvo esonero per chi ha già partecipato nell’anno alle manifestazioni comunali indicate nel bando; bollo 16 € domanda e 16 € concessione, più CUP quantificato da S.I.x.T. Non costo complessivo fisso.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.corato.ba.it/sites/sito-comunecorato.cittadinopratico.it/files/2026-02/Avviso_pubblico_Maggio_Settembre_2026_signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-corato-fiera-di-san-cataldo-festa-patronale": {
+      "label": "Pratica 50,82 € condizionata + bolli/CUP",
+      "details": "Diritti 50, 82 € con esoneri previsti, due bolli da 16 € e CUP da quantificare per superficie e manifestazione. La possibilità di pagamento unico per due fiere non comporta posto gratuito.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.corato.ba.it/novita/manifestazioni-fieristiche-fiera-san-cataldo-2026-e-fiera-madonna-del-pozzo-2026",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-corato-fiera-della-madonna-del-pozzo": {
+      "label": "Pratica 50,82 € condizionata + bolli/CUP",
+      "details": "Diritti 50, 82 € con esoneri previsti, due bolli da 16 € e CUP da quantificare per superficie e manifestazione. La possibilità di pagamento unico per due fiere non comporta posto gratuito.",
+      "kind": "partial",
+      "sourceUrl": "https://www.comune.corato.ba.it/novita/manifestazioni-fieristiche-fiera-san-cataldo-2026-e-fiera-madonna-del-pozzo-2026",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-cellamare-fiera-di-sant-amatore": {
+      "label": "Due bolli 16 € + CUP",
+      "details": "Due marche da bollo da 16 € e Canone Unico Patrimoniale da quantificare. La quota complessiva del posteggio non è determinata nel bando.",
+      "kind": "partial",
+      "sourceUrl": "https://comune.cellamare.ba.it/novita/approvazione-avviso-pubblico-per-la-partecipazione-alle-manifestazioni-fieristiche-denominate-fiera-di-santamatore-e-fiera-di-san-raffaele-arcangelo-anno-2026/determina_num_229__allegato1_allegato-a-avviso-pubblico-fiere-2026/",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-cellamare-fiera-di-san-raffaele-arcangelo": {
+      "label": "Due bolli 16 € + CUP",
+      "details": "Due marche da bollo da 16 € e Canone Unico Patrimoniale da quantificare. La quota complessiva del posteggio non è determinata nel bando.",
+      "kind": "partial",
+      "sourceUrl": "https://comune.cellamare.ba.it/novita/approvazione-avviso-pubblico-per-la-partecipazione-alle-manifestazioni-fieristiche-denominate-fiera-di-santamatore-e-fiera-di-san-raffaele-arcangelo-anno-2026/determina_num_229__allegato1_allegato-a-avviso-pubblico-fiere-2026/",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
+    },
+    "puglia-palo-del-colle-sagra-del-tarallo": {
+      "label": "Taralli 150 €; food 250/300 €; carretto 100 €",
+      "details": "Quote per tutta la manifestazione: produttori di taralli con sede a Palo del Colle e casetta 150 €; food con stand 3×3 m 300 €, senza stand 250 €; esposizione senza somministrazione con carretto 2×1 m 100 €. Associazioni e punti informativi esenti nei limiti degli spazi. IVA non precisata; dotazioni/utenze nell’assegnazione, non presunte comprese.",
+      "kind": "conditional",
+      "sourceUrl": "https://www.comune.palodelcolle.ba.it/halley//ht/eg724/AVVISO_PARTECIPAZIONE_OPERATORI_ECONOMICI_signed.pdf",
+      "period": "2026",
+      "checkedAt": "2026-10-21"
     }
   }
 }
