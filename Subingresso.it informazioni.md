@@ -14,7 +14,13 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Documents/verifica-valutatore-v26-20261022; dettagli in istruzioni.md.
   Backup tag/ramo remoti validi; cleanup helper con errore noto. API413
   risolta dividendo SQL in400casi; primo fileSQL con BOM rigenerato senza.
-  Pubblicazione da verificare.
+  Pubblicatoe218570, Vercel5dtUg9JMerbXogWsY29ozfasqoJq riuscito:
+  cinqueHTML/script identici ai byteGit. Chromium/WebKit390/1280 locali e
+  Chromium/WebKit390 sugli asset pubblicati passati; sei casi online esatti,
+  salvataggio/riprova/report2.0-2.6 verificati con backend simulato, nessuna
+  scrittura reale di prova. RPC400/22023 senza salvataggio; vecchieRPC
+  identiche e claim/contatore/permessi verificati dopo applicazione. Ulteriore
+  controllo idempotente400casiSQL con ROLLBACK passato.
 
 
 - **Livorno conclusa e verificata online21/10:**63manifestazioni/17comuni,
