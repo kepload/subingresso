@@ -61,7 +61,10 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   integrati; CSS rigenerato e198controlli integrati passati. La sezione
   organizzatori conserva anche il nuovo stile True-black gia pubblicato.
   Finitura finalev2:anche etichette viola/rosa e fondi semitrasparenti scuri;
-  altri198controlli locali passati, pubblicazione finale da verificare.
+  altri198controlli locali passati. Pubblicato50a9392, Vercel
+  G7BPtUg4sytAEDCu2kZvtuCTe3S8riuscito:21pagine/asset identici,13percorsi
+  con collegamento v2 e198controlli sugli asset finali online passati;
+  ripetuti quattroSSR/treformati e home anonima3, comprese etichette basse.
 - Backup remoto `session-20261022-011206-tema-dark-admin` e ramo
   `backup/pre-tema-dark-admin-20261022` creati prima delle modifiche;
   consueto errore cleanup helper, backup remoto riuscito. File estranei esclusi.

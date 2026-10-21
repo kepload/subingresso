@@ -19,6 +19,8 @@ Subingresso.it informazioni.md. Sessioni dei test simulate.
 Pubblicatoca9cf29, Vercelriuscito:21asset/pagine identici,13percorsiSSR;
 198controlli online passati, quattroSSR scuri e home anonima chiara in
 Chromium1440/320 e WebKit390. Nuovi calcolatore/statistiche integrati.
+Finitura etichette/cachev2 pubblicata50a9392:21asset/pagine identici,
+13percorsi,198controlli finali online e quattroSSR/treformati passati.
 
 Home desktop,21ottobre2026: riferimento prima immagine utente. Da1024px
 padding sopra slogan64→0, distanza scorciatoie24→32; mostra tutte le
