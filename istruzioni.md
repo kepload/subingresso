@@ -1,13 +1,16 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
-Bari,21ottobre2026: integrazione della ricerca documentale corrente, pubblicazione in verifica.
+Bari,21ottobre2026: ricerca documentale corrente conclusa con limiti espliciti e verificata online.
 90manifestazioni/36comuni, ricognizione41;treID e altre5650schede conservati.
 Catalogo5740,cacheJS100/JSON68;24sintesi costo,19esclusioni/17limiti in
 data/fiere-bari.json e FIERE.md. Originali/prove Documents/ricerca-fiere-bari-20261021.
 TerlizziPDF recuperato via browser,Gravina50€/m²+IVA coperto/15scoperto,
 PaloTarallo100/150/250/300€ per due giorni. ContraddizioniRutigliano,BariSanNicola,
 Mola eModugno preservate,nessun dato inventato. Backup tag/ramo remoti verificati.
-Nessun contatto a terzi;TO DO e riepilogo non aggiornati finché esito online non verificato.
+Pubblicato6b5471f:quattro asset identici aGit,90pagine HTTP200/H1/canonical,
+Chromium1440/320 e WebKit390 locali/online passati con PLAYWRIGHT_MODULE.
+Suite generale5formati,settori,pagine e build ripetibile superati.
+Nessun contatto a terzi;TO DO spuntata dopo verifica:47province concluse,63da fare.
 Manutenzione futura distinta dalla ricerca corrente,nessun’altra provincia avviata.
 
 

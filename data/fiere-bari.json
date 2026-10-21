@@ -2,7 +2,7 @@
   "province": "Bari",
   "checkedAt": "2026-10-21",
   "research": {
-    "status": "Ricognizione documentale corrente conclusa con limiti espliciti; pubblicazione da verificare",
+    "status": "Ricognizione documentale corrente conclusa con limiti espliciti; pubblicazione verificata online",
     "baselineCommit": "15b0ae5",
     "baselineEvents": 3,
     "method": "Ricognizione41comuni, calendario regionale2026e archivio quartiereFieraDelLevante, atti comunali/SUAP e allegati originali; selezione editoriale, non importazione automatica dei risultati di ricerca.",
@@ -3064,7 +3064,48 @@
     "privateArchive": "C:\\Users\\utente\\Documents\\ricerca-fiere-bari-20261021"
   },
   "publication": {
-    "status": "DA_VERIFICARE"
+    "status": "VERIFICA_OK",
+    "commit": "6b5471f9060286a8f6f03387cfd5263f0a944fc6",
+    "verifiedAt": "2026-10-21T08:27:47Z",
+    "catalogueEvents": 5740,
+    "provinceEvents": 90,
+    "municipalitiesWithEvents": 36,
+    "municipalitiesReviewed": 41,
+    "assetsIdenticalToGit": 4,
+    "pagesHttp200H1Canonical": 90,
+    "browserTests": [
+      {
+        "engine": "chromium",
+        "width": 1440,
+        "events": 90,
+        "dialogs": 30,
+        "base": "https://subingresso.it",
+        "status": "passed"
+      },
+      {
+        "engine": "chromium",
+        "width": 320,
+        "events": 90,
+        "dialogs": 30,
+        "base": "https://subingresso.it",
+        "status": "passed"
+      },
+      {
+        "engine": "webkit",
+        "width": 390,
+        "events": 90,
+        "dialogs": 30,
+        "base": "https://subingresso.it",
+        "status": "passed"
+      }
+    ],
+    "proofs": [
+      "publication.json",
+      "test-online.json",
+      "test-local-final.json"
+    ],
+    "privateArchive": "C:\\Users\\utente\\Documents\\ricerca-fiere-bari-20261021",
+    "limits": "19 gruppi di esclusioni e 17 limiti espliciti; nessun censimento esaustivo garantito. Manutenzione futura distinta."
   },
   "events": [
     {

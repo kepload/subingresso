@@ -3,7 +3,7 @@
 ## Bari — ricerca documentale del 21 ottobre 2026
 
 Ricerca corrente conclusa con limiti espliciti; pubblicazione e verifiche online
-in corso. **90 manifestazioni in 36 comuni**, dalle tre schede iniziali:
+concluse. **90 manifestazioni in 36 comuni**, dalle tre schede iniziali:
 87 aggiunte, tutti gli ID conservati. Ricognizione nominale dei **41 comuni**,
 233 ricevute selezionate, **24 sintesi costo** anche parziali/condizionate,
 19 gruppi di esclusioni e 17 limiti in `data/fiere-bari.json`.
@@ -17,7 +17,7 @@ Originali, ricevute HTTP/hash, testi, tentativi, programmi, criteri e prove in
 Backup preventivo remoto `backup/session-20261021-100107-fiere-bari` e ramo
 `backup/pre-fiere-bari-20261021` verificati prima delle modifiche; errore noto
 nel cleanup dei vecchi tag, checkpoint remoto valido. Copia SHA256 `Documents/backup-subingresso/ricerche-fiere-20261021-081857`: **56.389 file, 10.070.854.125 byte, zero errori**; ogni file verificato.
-Supplemento finale separato conserverà aggiornamenti e prove successive.
+Supplemento finale SHA256 verificato in Documents/backup-subingresso/bari-supplemento-20261021/: 2.372 file, 506.951.260 byte, zero errori; aggiornamenti e prove successive conservati separatamente.
 
 Riscontri operativi e correzioni:
 
@@ -103,8 +103,14 @@ non azioni eseguite dalla ricerca.
 La ricerca documentale corrente può chiudersi con questi limiti dopo i
 tentativi registrati: non richiede attendere nuovi bandi e non garantisce
 censimento esaustivo. Nuove edizioni, rettifiche, calendari natalizi, quote e
-posti effettivi sono **manutenzione futura distinta**. TO DO non spuntata
-finché pubblicazione, browser e catalogo online non sono verificati.
+posti effettivi sono **manutenzione futura distinta**. TO DO spuntata dopo
+verifica: **47 province concluse,63 da fare su110**. Pubblicazione `6b5471f`:
+quattro asset identici ai byte Git,90pagine HTTP200/H1/canonical corretti.
+Chromium1440/320 e WebKit390 locali e online superati con PLAYWRIGHT_MODULE;
+suite generale cinque formati,settori,pagine e build ripetibile superati.
+Prove `publication.json`, `test-online.json`, `test-local-final.json`
+nell’archivio privato. Ultimo filtro avanzato albo Mola per atto269: nessun
+risultato restituito; limite originale conservato,nessuna data ricostruita.
 
 ## Napoli — ricerca documentale del 21 ottobre 2026
 
