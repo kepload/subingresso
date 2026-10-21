@@ -60,7 +60,7 @@
     <link rel="preload" href="/css/fonts/jakarta-400.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="/css/fonts/jakarta-800.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="/css/design-system.css?v=13">
-    <link rel="stylesheet" href="/css/home.css?v=5">
+    <link rel="stylesheet" href="/css/home.css?v=6">
 </head>
 <body class="home-page min-h-screen flex flex-col text-slate-900">
 <header></header>
@@ -84,11 +84,14 @@
             <div id="autocompleteBox"></div>
         </div>
     </div>
-    <nav class="home-shortcuts" aria-label="Esplora i posteggi e le fiere">
-        <a href="/annunci?stato=Vendita">Posteggi in vendita</a>
-        <a href="/annunci?stato=Affitto%20mensile">Posteggi in affitto</a>
-        <a href="/fiere">Calendario fiere</a>
-    </nav>
+    <nav id="homeLocationShortcuts" class="home-shortcuts" aria-label="Luoghi più cercati negli ultimi 30 giorni e ultima ricerca personale" hidden></nav>
+</section>
+<section class="home-stats-section" aria-label="Statistiche della piattaforma">
+    <div class="home-stats home-shell">
+        <div><strong id="statListings">1.591</strong><span>Annunci</span></div>
+        <div><strong id="statValue">€ 4.4M</strong><span>Valore vendite</span></div>
+        <div><strong id="statUsers">4.045</strong><span>Utenti</span></div>
+    </div>
 </section>
 <section class="home-listings" aria-labelledby="latest-title">
     <div class="home-shell">
@@ -131,11 +134,6 @@
                 <li class="home-step"><h3>Ricevi contatti</h3><p>Gli acquirenti interessati ti contatteranno direttamente su WhatsApp, chat o telefono senza filtri.</p></li>
                 <li class="home-step"><h3>Incassa il 100%</h3><p>Concludi l’affare privatamente. Subingresso.it non trattiene alcuna provvigione sulla tua vendita.</p></li>
             </ol>
-        </div>
-        <div class="home-stats" aria-label="Statistiche della piattaforma">
-            <div><strong id="statListings">1.420</strong><span>Annunci</span></div>
-            <div><strong id="statValue">€ 4.3M</strong><span>Valore vendite</span></div>
-            <div><strong id="statUsers">3.812</strong><span>Utenti</span></div>
         </div>
     </div>
 </section>
@@ -186,6 +184,7 @@
 <script src="js/location-search.js?v=8"></script>
 <script src="js/ui-components.js?v=17"></script>
 <script src="js/auth.js?v=22"></script>
+<script src="js/location-shortcuts.js?v=1"></script>
 <script>
 // ══════════════ AUTOCOMPLETE ══════════════
 const input = document.getElementById('searchInput');
@@ -208,6 +207,7 @@ async function doSearch() {
     const query = new URLSearchParams();
     if (q) query.set('q', q);
     if (locationSearch.selected) query.set('comune', locationSearch.selected.id);
+    await LocationShortcuts.remember(locationSearch.selected);
     window.location.href = '/annunci' + (query.size ? '?' + query.toString() : '');
 }
 
@@ -320,7 +320,7 @@ loadRecentListings();
 
 // ══════════════ STATS ANIMATE ══════════════
 (function() {
-    let listings = 1420, users = 3812, value = 4280000;
+    let listings = 1591, users = 4045, value = 4400000;
     function pulse(el) {
         el.classList.remove('stat-update');
         void el.offsetWidth;

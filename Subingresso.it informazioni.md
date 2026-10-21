@@ -4,6 +4,24 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Home ricerche/contatori,21/10:** numeri sotto ricerca e prima delle
+  anteprime; valori iniziali forniti1591/€4.4M/4045, animazione esistente.
+  Tre link sostituiti dai luoghi più cercati negli ultimi30giorni; classifica
+  pubblica aggregata applicata e verificata anonima, nessun registro esposto.
+  Ultima località dell'account prima, solo stesso browser, cache distinta
+  per utente; anonimi/cambio account protetti. Sfumatura bianco-grigio richiesta.
+  HomeCSS6, scorciatoieJS1, annunciJS15. Prove e stato pubblicazione:
+  `Documents/verifica-home-ricerche-statistiche-20261021/risultati.md`.
+  Backup tag/ramo remoti validi; helper cleanup con errore noto.
+
+- **Annunci del venditore,21/10:** pubblicato5666ee1; icona banco e numero
+  accanto al nome nelle card/dettaglio/profilo:2-10, poi10+, zero/uno omessi.
+  Totale pubblico attivo e non scaduto, indipendente dai filtri; batch e
+  paginazione, nessuna stima su errore. CSS13/data23/dettaglio26.
+  Soglie/errori/account Chrome1440/320 e Safari390 e preferiti174 passati.
+  Profili273 Chromium passati; errore fixture WebKit riprodotto anche
+  sul commit precedente. Prove/limiti nella cartella verifica-conteggio-annunci.
+
 - **Home/foto originali,21/10:** sezione anteprime home grigio#f5f5f5 a tutta
   larghezza come Annunci, schede bianche e margini conservati. Sfumatura
   dettaglio più lieve/bassa35/65% e opacità48/68%; anteprime invariate.

@@ -144,7 +144,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 - `data.js?v=23`
 - `auth.js?v=22`
 - `ui-components.js?v=17`
-- `js/pages/annunci.js?v=13`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
+- `js/pages/annunci.js?v=15`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
 - `comune-picker.js?v=7`, `location-search.js?v=8`, `location-search-worker.js?v=3`: comuni e 55.288 località da `data/localita.json`; refusi in background, fallback a blocchi. Il worker importa la stessa versione di `location-search.js`: aggiornare entrambi i riferimenti e il cache buster del worker quando cambia il motore. Dettaglio/fonti in `data/LOCALITA.md`.
 - `js/pages/annuncio-detail.js?v=26` (anche in `annuncio.html` + `api/annuncio.js`)
 - `css/tailwind.css?v=4`
@@ -411,3 +411,5 @@ Dettagli completi e TODO aperti → `istruzioni.md`.
 Preferiti (19 ottobre 2026): stato unico card/dettaglio, cache sessionStorage limitata all'utente verificato, evento savedListingsChanged; niente timer 1,5/4 secondi. UI immediata, blocco per annuncio durante richiesta e minimo 500 ms, timeout 15 s, rollback con avviso, risposte vecchie ignorate. Modifiche non confermate prima della navigazione protette fino alla verifica; logout/cambio account puliscono la cache. Dashboard usa setSavedListingsCache, non mutare SAVED_IDS direttamente. Cache data 21, annuncio-detail 25; suite scripts/test-saved-listings.cjs (SAVED_USE_PUBLISHED, SAVED_QA_DIR, PLAYWRIGHT_MODULE).
 
 Conteggio annunci venditore (21 ottobre 2026): icona banco + 2-10, 10+ oltre dieci, nascosto con zero/uno. Totale pubblico attivo e non scaduto, indipendente dai filtri; richieste condivise/paginate in data.js, nessun numero su errore. Presente nelle card, dettaglio e profilo; conteggio eventi organizzatore conservato. Cache data23/design-system13/dettaglio26; test scripts/test-seller-listing-counts.cjs.
+
+Home (21 ottobre 2026): contatori tra ricerca e anteprime, sfumatura bianco-grigio richiesta. Tre luoghi più cercati su 30 giorni da home_top_location_searches, accesso pubblico solo aggregato; ultima località prima per account sullo stesso browser (_si_last_location_v1:ID), nessuna adozione della cronologia anonima. Helper location-shortcuts1, homeCSS6, annunci15; test scripts/test-home-location-shortcuts.cjs.

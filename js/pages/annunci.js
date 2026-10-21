@@ -35,6 +35,7 @@ const SECTOR_KEYWORDS = [
 const SEARCH_HISTORY_KEY = '_sub_searches';
 // Solo località validate; nessun testo digitato liberamente o identificativo account.
 async function trackLocationSearch(place) {
+    if (place && window.LocationShortcuts) LocationShortcuts.remember(place);
     if (!place || navigator.webdriver === true) return;
     let key;
     try {

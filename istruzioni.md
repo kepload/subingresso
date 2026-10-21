@@ -1,5 +1,18 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Home,21ottobre2026: contatori spostati tra ricerca e anteprime; iniziali
+1591/€4.4M/4045 forniti dall'utente, animazione precedente conservata.
+Vecchi tre link sostituiti dalla classifica reale30giorni, funzione pubblica
+home_top_location_searches limitata a tre nomi/regioni/province, senza log.
+Ultima località salvata solo nel browser per account e proposta prima;
+anonimi, cambio account, errori/storage bloccato protetti. Record validati
+dal picker, link con codice esatto; home/annunci chiamano LocationShortcuts.
+CSS home6, helperJS1, annunciJS15; sfumatura bianco-grigio richiesta.
+Test scripts/test-home-location-shortcuts.cjs e prove/stato pubblicazione
+Documents/verifica-home-ricerche-statistiche-20261021/risultati.md.
+Indicatore venditore5666ee1: banco2-10/10+, assente0/1, conteggi pubblici
+attivi non scaduti e indipendenti dai filtri; data23/CSS13/dettaglio26.
+
 Bari,21ottobre2026: ricerca documentale corrente conclusa con limiti espliciti e verificata online.
 90manifestazioni/36comuni, ricognizione41;treID e altre5650schede conservati.
 Catalogo5740,cacheJS100/JSON68;24sintesi costo,19esclusioni/17limiti in
