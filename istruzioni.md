@@ -5,6 +5,8 @@
 anche hover/tema organizzatore. Supera44/40px e + scuro precedenti.
 Scritta/ordine conservati, design-system6/UI17. Prove/pubblicazione
 Documents/verifica-header-mobile-intermedio-20261021/.
+Pubblicato99bd576 e verificato direttamente:15asset,2SSR e home online3
+passati; stato GitHub non letto per timeout. Nessuna scrittura reale.
 
 21/10/2026, intestazione mobile: scritta leggermente più grande e interna
 (20/18px, margini18/14px); tre icone quadrate uniformi44px,40 sotto380,

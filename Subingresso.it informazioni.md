@@ -13,6 +13,9 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   `Documents/verifica-header-mobile-intermedio-20261021/`.
   Locale Chromium1440/320 e WebKit390 passato: misure, colori uguali,
   hover chiaro, tema scuro, ingombri/ordine/accesso; zero scritture reali.
+  Pubblicato99bd576:15asset identici,2SSR aggiornati e tre formati
+  online passati. Stato GitHub non letto per timeout; produzione
+  verificata direttamente, nessun errore JavaScript o overflow.
 
 - **Intestazione smartphone,21/10:** scritta20/18px e margini18/14px,
   leggermente più grande/spostata a destra. Pulsanti quadrati44px,
