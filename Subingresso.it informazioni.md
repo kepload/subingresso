@@ -8,11 +8,12 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   tante località quante entrano, senza scorrimento; personale prima e
   desktop tre. API aggregata estesa a12candidati e verificata, log privati.
   Ricalcolo su larghezza/font; nomi lunghi protetti. Indicatore annunci
-  in quattro blu crescenti per2-3/4-6/7-10/11+, contrasto minimo4,87:1.
+  in quattro blu crescenti per2-3/4-6/7-10/11+, contrasto4,94:1 bianco
+  e4,53:1 grigio; ultimo blu rifinito dopo verifica.
   Sfumature preferenza stabile per passaggi bianco-superfici chiare:
   fascia numeri conservata, area vendita home, pagine con header bianco
   e introduzione Annunci senza bordo. Sfondi di base e tema organizzatore
-  conservati. Data24/CSS14/home7/scorciatoie2. Prove/pubblicazione:
+  conservati. Data24/CSS15/home7/scorciatoie2. Prove/pubblicazione:
   `Documents/verifica-ricerche-riga-blu-sfumature-20261021/risultati.md`.
   Backup tag/ramo remoti validi, errore cleanup noto; test dedicati passati.
 

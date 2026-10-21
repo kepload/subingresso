@@ -46,6 +46,8 @@ const server = http.createServer((req, res) => {
                 const luminance=colors.map(c=>{const linear=c.rgb.map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;});return linear[0]*.2126+linear[1]*.7152+linear[2]*.0722;});
                 assert(luminance.every((value,index)=>index===0||value>luminance[index-1]),'Blu progressivamente più luminoso');
                 assert(luminance.every(value=>1.05/(value+.05)>=4.5),'Numero sempre leggibile su bianco');
+                const grayLuminance=((245/255+.055)/1.055)**2.4;
+                assert(luminance.every(value=>(grayLuminance+.05)/(value+.05)>=4.5),'Numero sempre leggibile anche sul grigio delle card profilo');
                 const requests = await page.evaluate(() => qaRequests);
                 assert.equal(requests.length, 1, 'Una sola richiesta per le card della pagina');
                 assert.equal(requests[0].columns, 'user_id');

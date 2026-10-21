@@ -5,7 +5,7 @@ colors:
   blue: "#2563eb"
   blue-deep: "#1e40af"
   blue-strong: "#1d4ed8"
-  blue-bright: "#146fda"
+  blue-bright: "#146ed8"
   ink: "#102b52"
   muted: "#52637a"
   paper: "#fff"
@@ -154,7 +154,7 @@ Angoli moderati: pannelli e schede usano `panel`; campi e FAQ `control`; il puls
 - **Ricerca:** campo bianco dentro un pannello blu. Etichetta visibile, icona accessoria e pulsante nominato; focus del gruppo con contorno chiaro. Sul telefono dimensioni e padding si riducono mantenendo campo e azione utilizzabili.
 - **Home, ricerca e contatori:** sotto la ricerca, tre link ai luoghi più cercati negli ultimi 30 giorni su desktop; su smartphone si aggiungono le località che entrano in un'unica riga, tra dodici candidati reali, con nomi interi quando possibile. Chi accede vede prima la propria ultima località salvata in questo browser, con piccola icona cronologia, senza duplicati. Il primo nome molto lungo si abbrevia visivamente mantenendo titolo e nome accessibile. Seguono i tre contatori su colonne uguali, con numero e didascalia; sono prima delle anteprime. La sfumatura continua dal bianco al grigio #f5f5f5 attraversa questa fascia. La preferenza esplicita si estende all'area vendita e ai passaggi dall'header bianco allo sfondo chiaro delle pagine, conservando il colore di fondo e senza sfocare testi. Introduzione Annunci senza bordo finale; tema organizzatore conservato.
 - **Link:** testo esplicito e freccia piccola; sottolineatura al passaggio del puntatore. Le scorciatoie restano testo, senza contenitori a pillola.
-- **Annunci del venditore:** accanto al nome, icona banco Font Awesome e numero a 12px, cifre tabulari. Blu progressivamente più luminosi: blue-deep per2-3, blue-strong per4-6, blue per7-10, blue-bright da11; contrasto su bianco almeno4,87:1. Visibile da due annunci pubblici attivi e non scaduti; numero esatto fino a dieci, poi «10+». Nessun riquadro o animazione, conteggio completo nel nome accessibile e al passaggio del puntatore; stesso link al profilo.
+- **Annunci del venditore:** accanto al nome, icona banco Font Awesome e numero a 12px, cifre tabulari. Blu progressivamente più luminosi: blue-deep per2-3, blue-strong per4-6, blue per7-10, blue-bright da11; contrasto almeno4,94:1 su bianco e4,53:1 su grigio #f5f5f5. Visibile da due annunci pubblici attivi e non scaduti; numero esatto fino a dieci, poi «10+». Nessun riquadro o animazione, conteggio completo nel nome accessibile e al passaggio del puntatore; stesso link al profilo.
 - **Offerte:** titolo, giorni, luogo, venditore, prezzo, stato e preferiti conservati. Il corpo ha 16px di rientro laterale; le foto restano a tutta larghezza. Copertina alta 148px, luogo in basso su massimo due righe e spazio superiore per badge e preferito. Senza foto resta soltanto il luogo, anche in caso di errore di caricamento. Il dettaglio usa lo stesso trattamento del luogo in un riquadro alto 224px da 768px, 160px sotto, con o senza foto; il richiamo alla galleria resta separato dal luogo.
 - **Stati e giorni:** piccoli cartigli leggibili, tondo normale; vendita verde e affitto blu. I colori dei giorni già presenti restano metadati operativi.
 - **Foto del dettaglio:** sfumatura più lieve e più bassa rispetto alle anteprime (trasparente fino al35%, scura48% al65%,68% in basso), con una lieve ombra sul nome. Il clic apre il file originale in una nuova scheda del browser, senza ridimensionamento; lo scorrimento delle foto nella copertina resta disponibile.

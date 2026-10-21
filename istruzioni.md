@@ -3,10 +3,10 @@
 21ottobre2026, affinamento: smartphone con luoghi popolari in una sola
 riga, scelta adattiva tra12candidati reali, personale sempre prima;
 desktop tre. Resize/font ricalcolati, niente scorrimento o righe aggiuntive.
-Indicatore annunci blu crescente2-3/4-6/7-10/11+, colori leggibili4,87:1
-minimo. Preferenza stabile sfumature bianco->superficie chiara: home,
+Indicatore annunci blu crescente2-3/4-6/7-10/11+, contrasto minimo4,94:1
+su bianco e4,53:1 su grigio. Preferenza stabile sfumature: home,
 area vendita, sfondi pagine normali e introduzione Annunci senza bordo;
-nessun filtro sui testi. Data24/CSS14/home7/scorciatoie2, SQL aggregato
+nessun filtro sui testi. Data24/CSS15/home7/scorciatoie2, SQL aggregato
 esteso/verificato; nessun dato utente modificato. Prove e pubblicazione:
 Documents/verifica-ricerche-riga-blu-sfumature-20261021/risultati.md.
 

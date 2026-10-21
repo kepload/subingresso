@@ -290,7 +290,7 @@ module.exports = async function handler(req, res) {
         @media (max-width: 1023px) { #mobileCta.visible { display: flex; } }
         #mainContent.has-cta { padding-bottom: 5.5rem; }
     </style>
-    <link rel="stylesheet" href="/css/design-system.css?v=14">
+    <link rel="stylesheet" href="/css/design-system.css?v=15">
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
 
