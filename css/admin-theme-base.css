@@ -1,0 +1,81 @@
+/* Palette della sezione organizzatori. Attiva soltanto dopo verifica admin. */
+html.admin-dark {
+    color-scheme: dark;
+    --ad-canvas: #0b1220;
+    --ad-panel: #152033;
+    --ad-field: #0f172a;
+    --ad-raised: #25334a;
+    --ad-hover: #334155;
+    --ad-line: #334155;
+    --ad-ink: #f1f5f9;
+    --ad-muted: #cbd5e1;
+    --ad-subtle: #a6b5ca;
+    --ad-link: #93c5fd;
+    --ad-link-hover: #bfdbfe;
+    --ad-info: #1e3a5f;
+    --ad-success: #6ee7b7;
+    --ad-success-bg: #103b32;
+    --ad-warning: #fde68a;
+    --ad-warning-bg: #493519;
+    --ad-danger: #fda4af;
+    --ad-danger-bg: #4c1726;
+    --si-ink: var(--ad-ink);
+    --si-blue: var(--ad-link);
+    --si-muted: var(--ad-muted);
+    --si-surface: var(--ad-panel);
+    --si-blue-deep: #7ab8f8;
+    --si-blue-strong: #93c5fd;
+    --si-blue-bright: #bfdbfe;
+    background: var(--ad-canvas);
+    color: var(--ad-ink);
+    scrollbar-color: #64748b var(--ad-canvas);
+}
+html.admin-dark body { background: var(--ad-canvas); background-image: none; color: var(--ad-ink); }
+html.admin-dark ::selection { color: #fff; background: #235891; }
+html.admin-dark :focus-visible { outline-color: var(--ad-link); }
+html.admin-dark :is(input, textarea) { caret-color: var(--ad-link); }
+html.admin-dark :is(input, textarea)::placeholder { color: var(--ad-subtle); opacity: 1; }
+html.admin-dark :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, textarea) {
+    background-color: var(--ad-field); color: var(--ad-ink); border-color: #64748b;
+}
+html.admin-dark :is(input, select, textarea):disabled { color: var(--ad-subtle); background-color: var(--ad-panel); }
+html.admin-dark :is(input[type=checkbox], input[type=radio], input[type=range]) { accent-color: var(--ad-link); }
+html.admin-dark option { background: var(--ad-field); color: var(--ad-ink); }
+
+/* Utility esistenti: stessi componenti e stati anche per contenuti dinamici. */
+html.admin-dark :is(.bg-white, .bg-white\/95, .bg-white\/90) { background-color: var(--ad-panel); }
+html.admin-dark :is(.bg-neutral-50, .bg-neutral-100, .bg-slate-50, .bg-gray-50, .bg-gray-100) { background-color: var(--ad-field); }
+html.admin-dark :is(.bg-slate-100, .bg-slate-200, .bg-gray-200) { background-color: var(--ad-raised); }
+html.admin-dark :is(.bg-blue-50, .bg-blue-100, .bg-indigo-50, .bg-indigo-100, .bg-sky-50) { background-color: var(--ad-info); }
+html.admin-dark :is(.bg-emerald-50, .bg-emerald-100, .bg-green-50, .bg-green-100, .bg-teal-50) { background-color: var(--ad-success-bg); }
+html.admin-dark :is(.bg-amber-50, .bg-amber-100, .bg-yellow-50, .bg-yellow-100, .bg-orange-50) { background-color: var(--ad-warning-bg); }
+html.admin-dark :is(.bg-red-50, .bg-red-100, .bg-rose-50, .bg-rose-100) { background-color: var(--ad-danger-bg); }
+html.admin-dark :is(.text-slate-900, .text-slate-800, .text-slate-700, .text-gray-900, .text-gray-800, .text-black) { color: var(--ad-ink); }
+html.admin-dark :is(.text-slate-600, .text-slate-500, .text-gray-600, .text-gray-500) { color: var(--ad-muted); }
+html.admin-dark :is(.text-slate-400, .text-slate-300, .text-gray-400) { color: var(--ad-subtle); }
+html.admin-dark :is(.text-blue-900, .text-blue-800, .text-blue-700, .text-blue-600, .text-blue-500, .text-indigo-700, .text-indigo-600, .text-sky-600) { color: var(--ad-link); }
+html.admin-dark :is(.text-emerald-800, .text-emerald-700, .text-emerald-600, .text-emerald-500, .text-green-800, .text-green-700, .text-green-600, .text-teal-600) { color: var(--ad-success); }
+html.admin-dark :is(.text-amber-900, .text-amber-800, .text-amber-700, .text-amber-600, .text-yellow-800, .text-orange-700, .text-orange-600) { color: var(--ad-warning); }
+html.admin-dark :is(.text-red-800, .text-red-700, .text-red-600, .text-red-500, .text-rose-700, .text-rose-600) { color: var(--ad-danger); }
+html.admin-dark :is(.border-slate-50, .border-slate-100, .border-slate-200, .border-slate-300, .border-gray-100, .border-gray-200) { border-color: var(--ad-line); }
+html.admin-dark :is(.border-blue-100, .border-blue-200, .border-emerald-100, .border-amber-100, .border-red-100) { border-color: #475569; }
+html.admin-dark :is(.divide-slate-100, .divide-slate-200) > :not([hidden]) ~ :not([hidden]) { border-color: var(--ad-line); }
+html.admin-dark :is(.hover\:bg-white, .hover\:bg-slate-50, .hover\:bg-slate-100, .hover\:bg-slate-200, .hover\:bg-blue-50):hover { background-color: var(--ad-hover); }
+html.admin-dark :is(.hover\:text-slate-900, .hover\:text-slate-800, .hover\:text-slate-700, .hover\:text-slate-600):hover { color: #fff; }
+html.admin-dark :is(.hover\:text-blue-600, .hover\:text-blue-700):hover { color: var(--ad-link-hover); }
+html.admin-dark .group:hover .group-hover\:text-slate-900 { color: #fff; }
+html.admin-dark .group:hover .group-hover\:text-blue-600 { color: var(--ad-link-hover); }
+html.admin-dark :is(.bg-gradient-to-r, .bg-gradient-to-b, .bg-gradient-to-br):not(.from-blue-600):not(.from-amber-400):not(.from-amber-500):not(.from-yellow-400) { background-image: none; background-color: var(--ad-panel); }
+
+/* Questi attributi sono prodotti dai renderer inline, percio richiedono precedenza. */
+html.admin-dark :is([style*="background:white" i], [style*="background: white" i], [style*="background:#fff;" i], [style*="background: #fff;" i], [style*="background:#ffffff" i], [style*="background: #ffffff" i], [style*="background: rgb(255, 255, 255)" i]) { background-color: var(--ad-panel) !important; }
+html.admin-dark :is([style*="background:#f8fafc" i], [style*="background:#f1f5f9" i], [style*="background:#f5f5f5" i]) { background-color: var(--ad-field) !important; }
+html.admin-dark [style*="background:#eff6ff" i] { background-color: var(--ad-info) !important; }
+html.admin-dark [style*="background:#ecfdf5" i] { background-color: var(--ad-success-bg) !important; }
+html.admin-dark :is([style*="color:#065f46" i], [style*="color:#047857" i], [style*="color:#059669" i]) { color: var(--ad-success) !important; }
+html.admin-dark :is([style*="color:#0f172a" i], [style*="color: #0f172a" i], [style*="color:#102b52" i]) { color: var(--ad-ink) !important; }
+html.admin-dark :is([style*="color:#475569" i], [style*="color:#64748b" i], [style*="color:#52637a" i]) { color: var(--ad-muted) !important; }
+html.admin-dark :is([style*="color:#2563eb" i], [style*="color: #2563eb" i], [style*="color:#1d4ed8" i]) { color: var(--ad-link) !important; }
+
+/* Foto, mappe e grafici conservano i colori originali. */
+html.admin-dark :is(img, video, canvas, .leaflet-tile) { filter: none; }

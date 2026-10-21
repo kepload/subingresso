@@ -7,6 +7,16 @@ grafico adattivo, posteggi a unità, filtri e risultati per evento anche su
 telefono. Nessuna modifica DB/pagamenti. AnalyticsJS3/CSS2/charts1;
 prove/stato in Documents/verifica-statistiche-fiere-20261022/risultati.md.
 
+22ottobre2026, tema dark personale: attivazione automatica solo dopo
+sessione convalidata e is_admin booleano vero, palette organizzatori.
+Uscita/cambio account/errori ripristinano il tema ordinario; nessuna cache
+di ruolo. js/admin-theme.js1 e css/admin-theme.css1, tutti gli HTML/API.
+Rigenerare con node scripts/build-admin-theme.cjs dopo cambi cromatici;
+base css/admin-theme-base.css, override circoscritti ai fogli originali.
+198controlli tema e364profili locali passati, nessuna scrittura reale;
+prove/stato in Documents/verifica-tema-dark-admin-20261022/ e registro
+Subingresso.it informazioni.md. Sessioni dei test simulate.
+
 Home desktop,21ottobre2026: riferimento prima immagine utente. Da1024px
 padding sopra slogan64→0, distanza scorciatoie24→32; mostra tutte le
 località che entrano in una riga tra12candidati reali, personale prima.

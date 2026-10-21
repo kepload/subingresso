@@ -178,3 +178,33 @@ Movimento contenuto: titolo e ricerca entrano di 18px in 650ms, con ritardo di 9
 - Don’t aggiungere ombre decorative alle schede del catalogo.
 - Don’t reintrodurre piccoli titoli maiuscoli tracciati nella home ridisegnata.
 - Don’t estendere queste finiture al tema organizzatori senza una verifica dedicata.
+
+## Variante dark personale admin — 22 ottobre 2026
+
+Estensione cromatica richiesta dall'utente, derivata dalla sezione organizzatori.
+Layout, font, contenuti e funzioni rimangono quelli delle pagine esistenti.
+Il solo tema admin usa canvas `#0b1220`, campi/header `#0f172a`, pannelli
+`#152033`, controlli `#25334a`, hover/bordi `#334155`; testo `#f1f5f9`,
+secondario `#cbd5e1`, attenuato `#a6b5ca`, link/focus `#93c5fd` e hover
+`#bfdbfe`. Bordi dei campi `#64748b`, separatori secondari `#475569`.
+Ricerca e richiamo calendario `#17385c`, selezione testo `#235891`.
+Stati: successo `#6ee7b7` su `#103b32`, avviso `#fde68a` su `#493519`,
+errore `#fda4af` su `#4c1726`, informazioni `#93c5fd` su `#1e3a5f`.
+L'oro Vetrina `#fbbf24` e le foto conservano il loro significato.
+
+Attivazione da `js/admin-theme.js` dopo verifica server di sessione e ruolo;
+nessuna preferenza o autorizzazione memorizzata nel browser. Il foglio dark
+si carica solo per l'admin; tutti gli override richiedono `html.admin-dark`
+e quelli dei componenti richiedono anche il foglio originale o la pagina
+corrispondente. Uscita/cambio account rimuovono subito la classe.
+Base `css/admin-theme-base.css`, generatore `scripts/build-admin-theme.cjs`:
+rigenerare dopo cambi ai colori esistenti. Nessuna inversione o filtro foto.
+Le sfumature sobrie tra sezioni conservano la preferenza esplicita del21/10.
+
+Verifica locale:198controlli tema Chromium1440/320 e WebKit390, contrasto
+dei campi/testi rappresentativi almeno4,5:1;364regressioni profili passate.
+Prove `Documents/verifica-tema-dark-admin-20261022/`, ruoli/sessioni simulati.
+Inspector prima/dopo conserva gerarchia e impaginazione; eccezione
+gradient richiesta dall'utente. Le segnalazioni su titolo grande, contenuti
+sotto la piega e accenti cromatici sono proprie della home esistente e
+della palette richiesta, fuori dall'estensione cromatica autorizzata.

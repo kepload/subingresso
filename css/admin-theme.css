@@ -1,0 +1,1325 @@
+/* Generato da scripts/build-admin-theme.cjs; modificare la base o il generatore. */
+/* Palette della sezione organizzatori. Attiva soltanto dopo verifica admin. */
+html.admin-dark {
+    color-scheme: dark;
+    --ad-canvas: #0b1220;
+    --ad-panel: #152033;
+    --ad-field: #0f172a;
+    --ad-raised: #25334a;
+    --ad-hover: #334155;
+    --ad-line: #334155;
+    --ad-ink: #f1f5f9;
+    --ad-muted: #cbd5e1;
+    --ad-subtle: #a6b5ca;
+    --ad-link: #93c5fd;
+    --ad-link-hover: #bfdbfe;
+    --ad-info: #1e3a5f;
+    --ad-success: #6ee7b7;
+    --ad-success-bg: #103b32;
+    --ad-warning: #fde68a;
+    --ad-warning-bg: #493519;
+    --ad-danger: #fda4af;
+    --ad-danger-bg: #4c1726;
+    --si-ink: var(--ad-ink);
+    --si-blue: var(--ad-link);
+    --si-muted: var(--ad-muted);
+    --si-surface: var(--ad-panel);
+    --si-blue-deep: #7ab8f8;
+    --si-blue-strong: #93c5fd;
+    --si-blue-bright: #bfdbfe;
+    background: var(--ad-canvas);
+    color: var(--ad-ink);
+    scrollbar-color: #64748b var(--ad-canvas);
+}
+html.admin-dark body { background: var(--ad-canvas); background-image: none; color: var(--ad-ink); }
+html.admin-dark ::selection { color: #fff; background: #235891; }
+html.admin-dark :focus-visible { outline-color: var(--ad-link); }
+html.admin-dark :is(input, textarea) { caret-color: var(--ad-link); }
+html.admin-dark :is(input, textarea)::placeholder { color: var(--ad-subtle); opacity: 1; }
+html.admin-dark :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, textarea) {
+    background-color: var(--ad-field); color: var(--ad-ink); border-color: #64748b;
+}
+html.admin-dark :is(input, select, textarea):disabled { color: var(--ad-subtle); background-color: var(--ad-panel); }
+html.admin-dark :is(input[type=checkbox], input[type=radio], input[type=range]) { accent-color: var(--ad-link); }
+html.admin-dark option { background: var(--ad-field); color: var(--ad-ink); }
+
+/* Utility esistenti: stessi componenti e stati anche per contenuti dinamici. */
+html.admin-dark :is(.bg-white, .bg-white\/95, .bg-white\/90) { background-color: var(--ad-panel); }
+html.admin-dark :is(.bg-neutral-50, .bg-neutral-100, .bg-slate-50, .bg-gray-50, .bg-gray-100) { background-color: var(--ad-field); }
+html.admin-dark :is(.bg-slate-100, .bg-slate-200, .bg-gray-200) { background-color: var(--ad-raised); }
+html.admin-dark :is(.bg-blue-50, .bg-blue-100, .bg-indigo-50, .bg-indigo-100, .bg-sky-50) { background-color: var(--ad-info); }
+html.admin-dark :is(.bg-emerald-50, .bg-emerald-100, .bg-green-50, .bg-green-100, .bg-teal-50) { background-color: var(--ad-success-bg); }
+html.admin-dark :is(.bg-amber-50, .bg-amber-100, .bg-yellow-50, .bg-yellow-100, .bg-orange-50) { background-color: var(--ad-warning-bg); }
+html.admin-dark :is(.bg-red-50, .bg-red-100, .bg-rose-50, .bg-rose-100) { background-color: var(--ad-danger-bg); }
+html.admin-dark :is(.text-slate-900, .text-slate-800, .text-slate-700, .text-gray-900, .text-gray-800, .text-black) { color: var(--ad-ink); }
+html.admin-dark :is(.text-slate-600, .text-slate-500, .text-gray-600, .text-gray-500) { color: var(--ad-muted); }
+html.admin-dark :is(.text-slate-400, .text-slate-300, .text-gray-400) { color: var(--ad-subtle); }
+html.admin-dark :is(.text-blue-900, .text-blue-800, .text-blue-700, .text-blue-600, .text-blue-500, .text-indigo-700, .text-indigo-600, .text-sky-600) { color: var(--ad-link); }
+html.admin-dark :is(.text-emerald-800, .text-emerald-700, .text-emerald-600, .text-emerald-500, .text-green-800, .text-green-700, .text-green-600, .text-teal-600) { color: var(--ad-success); }
+html.admin-dark :is(.text-amber-900, .text-amber-800, .text-amber-700, .text-amber-600, .text-yellow-800, .text-orange-700, .text-orange-600) { color: var(--ad-warning); }
+html.admin-dark :is(.text-red-800, .text-red-700, .text-red-600, .text-red-500, .text-rose-700, .text-rose-600) { color: var(--ad-danger); }
+html.admin-dark :is(.border-slate-50, .border-slate-100, .border-slate-200, .border-slate-300, .border-gray-100, .border-gray-200) { border-color: var(--ad-line); }
+html.admin-dark :is(.border-blue-100, .border-blue-200, .border-emerald-100, .border-amber-100, .border-red-100) { border-color: #475569; }
+html.admin-dark :is(.divide-slate-100, .divide-slate-200) > :not([hidden]) ~ :not([hidden]) { border-color: var(--ad-line); }
+html.admin-dark :is(.hover\:bg-white, .hover\:bg-slate-50, .hover\:bg-slate-100, .hover\:bg-slate-200, .hover\:bg-blue-50):hover { background-color: var(--ad-hover); }
+html.admin-dark :is(.hover\:text-slate-900, .hover\:text-slate-800, .hover\:text-slate-700, .hover\:text-slate-600):hover { color: #fff; }
+html.admin-dark :is(.hover\:text-blue-600, .hover\:text-blue-700):hover { color: var(--ad-link-hover); }
+html.admin-dark .group:hover .group-hover\:text-slate-900 { color: #fff; }
+html.admin-dark .group:hover .group-hover\:text-blue-600 { color: var(--ad-link-hover); }
+html.admin-dark :is(.bg-gradient-to-r, .bg-gradient-to-b, .bg-gradient-to-br):not(.from-blue-600):not(.from-amber-400):not(.from-amber-500):not(.from-yellow-400) { background-image: none; background-color: var(--ad-panel); }
+
+/* Questi attributi sono prodotti dai renderer inline, percio richiedono precedenza. */
+html.admin-dark :is([style*="background:white" i], [style*="background: white" i], [style*="background:#fff;" i], [style*="background: #fff;" i], [style*="background:#ffffff" i], [style*="background: #ffffff" i], [style*="background: rgb(255, 255, 255)" i]) { background-color: var(--ad-panel) !important; }
+html.admin-dark :is([style*="background:#f8fafc" i], [style*="background:#f1f5f9" i], [style*="background:#f5f5f5" i]) { background-color: var(--ad-field) !important; }
+html.admin-dark [style*="background:#eff6ff" i] { background-color: var(--ad-info) !important; }
+html.admin-dark [style*="background:#ecfdf5" i] { background-color: var(--ad-success-bg) !important; }
+html.admin-dark :is([style*="color:#065f46" i], [style*="color:#047857" i], [style*="color:#059669" i]) { color: var(--ad-success) !important; }
+html.admin-dark :is([style*="color:#0f172a" i], [style*="color: #0f172a" i], [style*="color:#102b52" i]) { color: var(--ad-ink) !important; }
+html.admin-dark :is([style*="color:#475569" i], [style*="color:#64748b" i], [style*="color:#52637a" i]) { color: var(--ad-muted) !important; }
+html.admin-dark :is([style*="color:#2563eb" i], [style*="color: #2563eb" i], [style*="color:#1d4ed8" i]) { color: var(--ad-link) !important; }
+
+/* Foto, mappe e grafici conservano i colori originali. */
+html.admin-dark :is(img, video, canvas, .leaflet-tile) { filter: none; }
+
+
+/* css/admin-control-room.css */
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr {background:var(--ad-panel);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-head p {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-refresh {background:var(--ad-success-bg);color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-head .acr-state[data-state=error] {background:var(--ad-warning-bg);color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-card {border:1px solid var(--ad-line);background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-card[data-tone=warning] {background:var(--ad-warning-bg);border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-card strong {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-card span {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-card small {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr h4 {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr h4 span {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-chart {border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-quality-chart {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-ring-value strong {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-ring-value span {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-legend>div {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-legend b {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-legend small {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-dot {background:var(--ad-success-bg)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-bar-row>div:first-child {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-bar-row b {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-bar-track {background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-tasks a {background:var(--ad-info);color:var(--ad-ink);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-tasks b {background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-tasks a[data-pending=true] b {background:var(--ad-warning-bg);color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-details {border-top:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-details>summary {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-job-summary {background:var(--ad-warning-bg);color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-job-summary[data-tone=ok] {background:var(--ad-success-bg);color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr a:focus-visible, html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr button:focus-visible, html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr summary:focus-visible, html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr select:focus-visible {outline:2px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-toolbar select {border:1px solid var(--ad-line);background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-toolbar button {border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-row {border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-row-title {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-row-meta {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-row a, html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-row button {color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-tags span {background:var(--ad-warning-bg);color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-row[data-severity=info] .acr-tags span {background:var(--ad-info);color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-page {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-page button {border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-note {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-job {border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-job time {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-job>span {color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-job[data-error=true] {background:var(--ad-warning-bg);border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-job[data-error=true]>span {color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-dialog {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/admin-control-room.css"])) .acr-dialog dt {color:var(--ad-muted)
+}
+
+/* css/blog-fiere-promo.css */
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .blog-fiere-promo {border:1px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .blog-fiere-promo::before {border:32px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .bfp-number {color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .blog-fiere-promo .bfp-button {border:1px solid var(--ad-line);background:linear-gradient(115deg,var(--ad-warning-bg),#fbbf24);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .blog-fiere-promo .bfp-button:hover {background:var(--ad-warning-bg);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .blog-fiere-promo a:focus-visible {outline:3px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .bfp-compact {background:linear-gradient(115deg,var(--ad-info),var(--ad-panel));border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .bfp-compact .bfp-eyebrow {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .bfp-compact .bfp-title {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .bfp-compact .bfp-description {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/blog-fiere-promo.css"])) .bfp-compact a:focus-visible {outline-color:var(--ad-link)
+}
+
+/* css/comune-picker.css */
+html.admin-dark:where(:has(link[href*="css/comune-picker.css"])) .comune-suggestions {
+    background: var(--ad-panel); border: 1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/comune-picker.css"])) .comune-option { border-bottom: 1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/comune-picker.css"])) .comune-option:hover, html.admin-dark:where(:has(link[href*="css/comune-picker.css"])) .comune-option[aria-selected="true"] { background: var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/comune-picker.css"])) .comune-option-name { color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/comune-picker.css"])) .comune-option-detail { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/comune-picker.css"])) .comune-retry { border: 1px solid var(--ad-line); color: var(--ad-link); background: var(--ad-info)
+}
+
+/* css/design-system.css */
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) {
+    --si-ink: var(--ad-ink);
+    --si-muted: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .surface-fade-down { background-image: linear-gradient(to bottom, var(--ad-panel), var(--ad-panel))
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) ::selection { background: var(--ad-info); color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) input, html.admin-dark:where(:has(link[href*="css/design-system.css"])) textarea { caret-color: var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .site-header { background: var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .site-header .site-nav { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .site-header .site-nav a:hover { color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] > a:first-child { background: var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) #previewGrid [data-listing-id], html.admin-dark:where(:has(link[href*="css/design-system.css"])) #resultsGrid [data-listing-id] { background: var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .listing-card-cover--place > .listing-card-place, html.admin-dark:where(:has(link[href*="css/design-system.css"])) .listing-detail-cover--place > .listing-detail-place { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .listing-detail-cover { background: var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] > a:first-child > button { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] > div > div:first-child > span:first-child { color: var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] h3 { color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] .text-slate-400 { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] > div > div.mt-auto p:first-child { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] > div > div.mt-auto p:nth-child(2) { color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] > div > div.mt-auto > div:last-child > a { background: var(--ad-panel); color: var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] > div > div:last-child[class*="from-amber"] { background: var(--ad-warning-bg)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] > div > div:last-child[class*="from-amber"] span { color: var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) [data-listing-id] :focus-visible { outline: 3px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .site-wordmark { color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .site-wordmark > span { color: var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .site-header .site-publish { color: var(--ad-muted); background: var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .site-header .site-publish:hover { color: var(--ad-ink); background: var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/design-system.css"])) .site-header :focus-visible { outline: 2px solid var(--ad-link)
+}
+
+/* css/event-admin.css */
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) .ea-expand { background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) #eventAdminWorkspace[open]>.ea-summary { border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) .ea-tabs { background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) #eventAdminPanel .ea-tabs button[aria-selected=true] { background:var(--ad-panel); color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) .ea-tabs span { background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) .ea-list { border-top:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) .ea-row { border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) .ea-row p { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) .ea-pagination { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) .ea-footer { border-top:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) .ea-footer a { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/event-admin.css"])) #eventAdminPanel :is(button,input,select,summary,a):focus-visible { outline:3px solid var(--ad-link)
+}
+
+/* css/eventi.css */
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev { --ev-ink:var(--ad-ink); --ev-muted:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev a { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev .ev-eyebrow { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-panel { background:var(--ad-panel); border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev button, html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev .ev-button { border:1px solid var(--ad-line); background:var(--ad-panel); color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev button:hover, html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev .ev-button:hover { background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev .ev-primary { color:#fff; border-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev .ev-danger { color:var(--ad-danger); border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev :focus-visible { outline:3px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev label, html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev legend { color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev input:not([type=checkbox]), html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev select, html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev textarea { border:1px solid var(--ad-line); background:var(--ad-panel); color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev input[readonly] { background:var(--ad-info); color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev .ev-help { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev .ev-field-error { color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev input[aria-invalid=true], html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev select[aria-invalid=true], html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev textarea[aria-invalid=true] { border-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev h3.ev-form-heading { border-top:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-checks input { accent-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-status { background:var(--ad-info); color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-status[data-status=pending] { background:var(--ad-warning-bg); color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-status[data-status=approved], html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-status[data-status=published] { background:var(--ad-success-bg); color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-status[data-status=rejected], html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-status[data-status=suspended] { background:var(--ad-danger-bg); color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-notice { background:var(--ad-info); border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-notice[data-error=true] { background:var(--ad-danger-bg); border-color:var(--ad-line); color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-card { border:1px solid var(--ad-line); background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-facts dt { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev summary::marker { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-dialog { background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-dialog-top { background:var(--ad-panel); border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-steps { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-steps span { border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-steps li[data-done=true] { color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-steps li[data-done=true] span { color:var(--ad-success); background:var(--ad-success-bg); border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-empty { color:var(--ad-muted); background:var(--ad-info); border:1px dashed var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-availability { color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/eventi.css"])) .ev-availability[data-sold-out=true] { color:var(--ad-danger)
+}
+
+/* css/fiera.css */
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) {color:var(--ad-success);background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) header {border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) a {color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) a:hover {color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) a:focus-visible, html.admin-dark:where(:has(link[href*="css/fiera.css"])) summary:focus-visible {outline:3px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) .eyebrow, html.admin-dark:where(:has(link[href*="css/fiera.css"])) .muted {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) section {background:var(--ad-panel);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) .notice {border-left:4px solid var(--ad-link);background:var(--ad-warning-bg)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) .badge {color:#fff
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) details {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) footer {border-top:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) .fiere-attendance[data-attendance=exceptional] {border:1px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiera.css"])) .fiere-attendance[data-attendance=exceptional]::after {background:linear-gradient(110deg,transparent 20%,var(--ad-panel) 48%,transparent 75%)
+}
+
+/* css/fiere-access.css */
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access {border:1px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access-kicker {color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access li::before {color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access .fiere-access-register {background:linear-gradient(110deg,var(--ad-warning-bg),var(--ad-warning-bg));border:1px solid var(--ad-line);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access .fiere-access-register:hover {background:var(--ad-warning-bg);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access a:focus-visible, html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access-note a:focus-visible {outline:3px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access-note {background:var(--ad-info);border:1px solid var(--ad-line);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access-note a {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) .fiere-access-feedback {color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/fiere-access.css"])) #authOverlay>div>div:first-child {background:var(--ad-panel)
+}
+
+/* css/fiere.css */
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) body {background:var(--ad-info);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) :focus-visible {outline:3px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-skip {background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-filters, html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-panel, html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-list-panel {background:var(--ad-panel);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-period-heading i, html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-place i {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-button {border:1px solid var(--ad-line);background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-button[aria-pressed=true] {background:var(--ad-info);color:var(--ad-link);border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-month {border:1px solid var(--ad-line);background:var(--ad-info);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-month:hover {border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-month[aria-pressed=true] {color:#fff;border-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-article-filter>summary {border:1px solid var(--ad-line);background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-article-menu {border:1px solid var(--ad-line);background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-article-toolbar {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-article-toolbar button {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-article-group legend {border-bottom:1px solid var(--ad-line);color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-article-option input {accent-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-article-count {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-article-chip {border:1px solid var(--ad-line);background:var(--ad-info);color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-reputation {border:1px solid var(--ad-line);background:var(--ad-info);color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-attendance-meta {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-attendance-evidence summary {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-reputation[data-reputation=rinomata] {border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-reputation[data-reputation=consolidata] {border-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-reputation[data-reputation=recente] {border-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-reputation {border:1px solid var(--ad-line);background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-reputation summary {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-reputation a {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-place select, html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-filter-row select, html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-filter-row input {border:1px solid var(--ad-line);background:var(--ad-panel);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-extra-filters {border-top:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-extra-filters>summary {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-filter-count {background:var(--ad-info);color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-filter-row label {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-reset {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-panel-heading {border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-panel-heading p {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-count {color:var(--ad-link);background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-stage {background:radial-gradient(ellipse at 55% 35%,var(--ad-info),var(--ad-info))
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-controls {border:1px solid var(--ad-line);background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-controls button {color:var(--ad-ink);background:var(--ad-panel);border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-controls button:hover {background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-sea {color:var(--ad-subtle)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-info>summary {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-info[open]>summary {border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-legend {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-credit {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-card {border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-card.is-preview {background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-card.is-preview h3 {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-badge {border:1px solid var(--ad-line);background:var(--ad-info);color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-item {border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-value {border:1px solid var(--ad-line);color:var(--ad-muted);background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-item p, html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-criteria {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-criteria>summary {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-criteria a {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-dialog #fit-event-name {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-card p {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-card .fiere-card-period {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-date-warning-button {background:var(--ad-warning-bg);color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-date-warning-button:hover, html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-date-warning-button[aria-expanded=true] {background:var(--ad-warning-bg)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-date-note {background:var(--ad-warning-bg);color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-tag {background:var(--ad-info);color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-tag[data-category=tradizionale] {background:var(--ad-info);color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-tag[data-category=artigianato] {background:var(--ad-warning-bg);color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-tag[data-category=sagra] {background:var(--ad-success-bg);color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-tag[data-category=espositiva] {background:var(--ad-info);color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-tag[data-category=mercatino] {background:var(--ad-info);color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-card-button {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-more {background:var(--ad-info);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-empty>span {color:var(--ad-subtle)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-empty p {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-note {background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-note>summary {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-note p {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-note a {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-popup {background:var(--ad-panel);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-popup-heading {border-bottom:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-popup-event {border-bottom:1px solid var(--ad-line);color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-popup-event>span:not(.fiere-reputation):not(.fiere-attendance) {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-map-message {background:var(--ad-panel);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-error {background:var(--ad-warning-bg);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-dialog {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-dialog-top button {background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-dialog>p {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-period {background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-period>span {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-period p {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-info p {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-primary {color:#fff
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-annunci {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-edition {background:var(--ad-info);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-edition a, html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-link, html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-contacts a {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-facts dt {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-info .fiere-participation-label {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-info .fiere-deadline {background:var(--ad-warning-bg);color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-card .fiere-card-cost {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-card .fiere-card-cost[data-known=true] {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-info.fiere-detail-cost-box {background:var(--ad-info);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-cost-box h3 {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-detail-cost-box #detail-costs-meta {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-attendance[data-attendance=exceptional] {border:1px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-attendance[data-attendance=exceptional]::after {background:linear-gradient(110deg,transparent 20%,var(--ad-panel) 48%,transparent 75%)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-item .fiere-fit-condition {color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-item .fiere-fit-provenance {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-fit-sources a {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-availability { color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/fiere.css"])) .fiere-availability[data-sold-out=true] { color:var(--ad-danger)
+}
+
+/* css/home.css */
+html.admin-dark:where(:has(link[href*="css/home.css"])) .home-page { background: var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/home.css"])) .home-search-field { background: var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/home.css"])) .home-search input::placeholder { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/home.css"])) .home-stats-section { background: linear-gradient(to bottom, var(--ad-panel), var(--ad-panel))
+}
+html.admin-dark:where(:has(link[href*="css/home.css"])) .home-listings { background: var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/home.css"])) .home-sell-section { background: linear-gradient(to bottom, var(--ad-panel), var(--si-surface) 120px)
+}
+html.admin-dark:where(:has(link[href*="css/home.css"])) .home-loading span { background: var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/home.css"])) .home-page .home-search :focus-visible { outline-color: var(--ad-line)
+}
+
+/* css/location-search.css */
+html.admin-dark:where(:has(link[href*="css/location-search.css"])) .location-suggestions {
+    background: var(--ad-panel); border: 1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/location-search.css"])) .location-option { border-bottom: 1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/location-search.css"])) .location-option:hover, html.admin-dark:where(:has(link[href*="css/location-search.css"])) .location-option[aria-selected="true"] { background: var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/location-search.css"])) .location-name { color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/location-search.css"])) .location-detail { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/location-search.css"])) .location-note { color: var(--ad-muted); background: var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/location-search.css"])) .location-retry { background: var(--ad-info); color: var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/location-search.css"])) .location-delete { color: var(--ad-muted)
+}
+
+/* css/organizer-analytics.css */
+html.admin-dark:where(:has(link[href*="css/organizer-analytics.css"])) .oa-capacity-track .oa-held {background:var(--ad-raised)
+}
+
+/* css/profile-switch.css */
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch { border:1px solid var(--ad-line); background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch::before { background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch button, html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch a { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch [aria-selected="true"], html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch [aria-current="page"] { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch button:focus-visible, html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch a:focus-visible, html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-close:focus-visible { outline:2px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-default-status { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-icon { color:var(--ad-link); background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel h3 { color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel p { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-status { color:var(--ad-muted); background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-status[data-status="approved"] { color:var(--ad-success); background:var(--ad-success-bg)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-status[data-status="pending"] { color:var(--ad-danger); background:var(--ad-warning-bg)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-status[data-status="rejected"], html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-status[data-status="suspended"] { color:var(--ad-danger); background:var(--ad-danger-bg)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel .profile-organizer-note { border:1px solid var(--ad-line); color:var(--ad-ink); background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-secondary { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel a:focus-visible, html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel button:focus-visible { outline:2px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch[data-selected="organizer"] { border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) #profiloModal[data-profile="organizer"] .profile-dialog-header { border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-icon { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel .profile-organizer-note { border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel .profile-organizer-primary { color:var(--ad-ink); background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel .profile-organizer-primary:hover { background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-secondary { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-switch[data-selected="organizer"] :focus-visible, html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel a:focus-visible, html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .profile-organizer-panel button:focus-visible, html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) #profiloModal[data-profile="organizer"] .profile-close:focus-visible { outline-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .organizer-profile-avatar { border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .organizer-profile-contacts a { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .ev .organizer-profile-panel details { border-top:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .ev .organizer-profile-panel summary { border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .organizer-profile-events { border-top:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .organizer-profile-events h4 span { color:var(--ad-subtle)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .organizer-profile-events-heading > a { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/profile-switch.css"])) .organizer-profile-events article { border-bottom:1px solid var(--ad-line)
+}
+
+/* css/saved-fairs.css */
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .saved-fair-button, html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-button {border:1px solid var(--ad-line);background:var(--ad-panel);color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .saved-fair-button[data-saved=true] {background:var(--ad-info);border-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-button-primary {border-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-button-danger {color:var(--ad-danger);border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-button:focus-visible, html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .saved-fair-button:focus-visible, html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-dialog input:focus-visible, html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-dialog select:focus-visible {outline:3px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-dialog {border:1px solid var(--ad-line);color:var(--ad-ink);background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-dialog header {border-bottom:1px solid var(--ad-line);background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-close {background:var(--ad-info);color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-name {color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-field input, html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-field select {background:var(--ad-panel);border:1px solid var(--ad-line);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-check {background:var(--ad-info);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-check input {accent-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-help {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-presets button {border:1px solid var(--ad-line);background:var(--ad-info);color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-preview {background:var(--ad-info);color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-error {color:var(--ad-danger)!important;background:var(--ad-danger-bg);border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-status {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-notice {background:var(--ad-success-bg);color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-card {border:1px solid var(--ad-line);background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-card a {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-card small {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-empty {color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-link {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .saved-fair-button[data-enabled=true] {background:var(--ad-warning-bg);border-color:var(--ad-link);color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-presets button[aria-pressed=true] {color:#fff;border-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-dialog details summary {color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-dialog .sf-disable {color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-disable:focus-visible {outline:3px solid var(--ad-link)
+}
+
+/* css/vetrina-account.css */
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-summary > div { background:var(--ad-panel); border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-summary span { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-summary strong { color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-premium { color:#fff
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-eyebrow { color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-primary { color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-secondary { border:1px solid var(--ad-line); color:var(--ad-ink); background:var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-primary:hover { background:var(--ad-warning-bg)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-secondary:hover { background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-benefits i { color:var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-toolbar h3 { color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-toolbar p, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-toolbar label, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-filter { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-toolbar select, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-filter select { border:1px solid var(--ad-line); background:var(--ad-panel); color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-campaign, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-order { background:var(--ad-panel); border:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-campaign h4, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-order h4 { color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-campaign p, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-order p { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-pill { background:var(--ad-info); color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-pill.active, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-pill.succeeded { background:var(--ad-success-bg); color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-pill.pending, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-pill.waiting { background:var(--ad-warning-bg); color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-pill.failed { background:var(--ad-danger-bg); color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-metrics > div { background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-metrics span { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-metrics strong { color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-actions button, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-actions a, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-support { color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-order dt { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-order dd { color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-order summary { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-order ol { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-note { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-empty { background:var(--ad-panel); border:1px dashed var(--ad-line); color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-pages { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-error { background:var(--ad-danger-bg); color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-profile-account { border-top:1px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-profile-account h3 { color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-profile-account dt, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-profile-account p { color:var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-profile-account button, html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-profile-account a { color:var(--ad-link)
+}
+
+/* css/vetrina-conversion.css */
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer { background: var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-head small { color: var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-close { background: var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-benefits { color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-benefits li::before { color: var(--ad-warning)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-hint { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-plan { border: 2px solid var(--ad-line); background: var(--ad-panel); color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-plan:hover { border-color: var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-plan[aria-pressed="true"] { background: linear-gradient(120deg, var(--ad-warning-bg), var(--ad-warning-bg)); border-color: var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-radio { border: 2px solid var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) [aria-pressed="true"] > .v-offer-radio { border: 5px solid var(--ad-link); background: var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-plan-copy small { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-price small { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-tag { color: var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-details { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-details summary { color: var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-footer { border-top: 1px solid var(--ad-line); background: var(--ad-panel)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) #vetrinaCheckoutButton { color: var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-offer-trust { color: var(--ad-muted)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) #vetrinaLoadingMsg { color: var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) #vetrinaModal button:focus-visible, html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) #vetrinaModal summary:focus-visible { outline: 3px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-payment-return { border: 1px solid var(--ad-link); background: var(--ad-warning-bg); color: var(--ad-danger)
+}
+
+/* annunci.html */
+html.admin-dark:where([data-admin-theme-page="annunci"]) .filter-label { color: var(--ad-subtle)
+}
+html.admin-dark:where([data-admin-theme-page="annunci"]) .filter-input { border: 1px solid var(--ad-line);
+            color: var(--ad-ink); background: var(--ad-panel)
+}
+html.admin-dark:where([data-admin-theme-page="annunci"]) .filter-input:focus { border-color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="annunci"]) .chip {
+            background: var(--ad-info); color: var(--ad-link);
+            border: 1px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="annunci"]) .chip:hover { background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="annunci"]) .day-chip {
+            border: 1px solid var(--ad-line);
+            background: var(--ad-panel);
+            color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="annunci"]) .day-chip:hover:not(.selected) { background: var(--ad-info); border-color: var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="annunci"]) .day-chip.selected { border-color: var(--ad-link); color: #fff
+}
+html.admin-dark:where([data-admin-theme-page="annunci"]) .search-active { border-color: var(--ad-link) !important
+}
+
+/* annuncio.html */
+html.admin-dark:where([data-admin-theme-page="annuncio"]) .detail-row { border-bottom: 1px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="annuncio"]) .detail-icon { color: var(--ad-subtle)
+}
+html.admin-dark:where([data-admin-theme-page="annuncio"]) .detail-label { color: var(--ad-subtle)
+}
+html.admin-dark:where([data-admin-theme-page="annuncio"]) .detail-val { color: var(--ad-ink)
+}
+
+/* blog-template.html */
+html.admin-dark:where([data-admin-theme-page="blog"]) .prose p { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .prose h2 { color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .prose strong { color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .prose th { background: var(--ad-info); border: 1px solid var(--ad-line); color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .prose td { border: 1px solid var(--ad-line); color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .prose a { color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .prose a:hover { color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .cta-button { color: #fff
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-listings { border: 1px solid var(--ad-line); background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-listings .blog-posteggio { border: 1px solid var(--ad-line); border-left: 3px solid var(--ad-link); background: var(--ad-panel); color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-listings .blog-posteggio:hover { border-color: var(--ad-line); background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-listings .blog-posteggio:focus-visible { outline: 2px solid var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-listings .blog-posteggio-rent { border-left-color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-listings .blog-posteggio-featured { border-color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-posteggio-thumb { background: var(--ad-info); color: var(--ad-subtle)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-posteggio-vetrina { background: var(--ad-warning-bg); color: var(--ad-danger)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-posteggio-location { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="blog"]) .blog-posteggio-price { color: var(--ad-ink)
+}
+
+/* dashboard.html */
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tabs {
+            border: 1px solid var(--ad-line);
+            background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tab {
+            color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tab:hover { background: var(--ad-info); color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tab[aria-selected="true"] {
+            background: var(--ad-panel);
+            border-color: var(--ad-line);
+            color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tab:focus-visible, html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-panel:focus-visible {
+            outline: 3px solid var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tab-icon {
+            background: var(--ad-info);
+            color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tab[aria-selected="true"] .dashboard-tab-icon { background: var(--ad-info); color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tab-count { background: var(--ad-info); color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tab[aria-selected="true"] .dashboard-tab-count { background: var(--ad-info); color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-panel-description { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-panel-action {
+            border: 1px solid var(--ad-line);
+            background: var(--ad-info);
+            color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-panel-action:hover { background: var(--ad-info)
+}
+@media (min-width: 768px) {
+            html.admin-dark:where([data-admin-theme-page="dashboard"]) .dashboard-tab-description { color: var(--ad-muted)
+            }
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .valutazione-highlight {
+            border-color: var(--ad-link) !important;
+            background: linear-gradient(180deg, var(--ad-success-bg) 0%, var(--ad-panel) 70%)
+}
+
+/* messaggi.html */
+html.admin-dark:where([data-admin-theme-page="messaggi"]) .msg-bubble-mine { color: #fff
+}
+html.admin-dark:where([data-admin-theme-page="messaggi"]) .msg-bubble-other { background: var(--ad-panel); color: var(--ad-ink); border: 1px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="messaggi"]) .conv-thumb, html.admin-dark:where([data-admin-theme-page="messaggi"]) .chat-thumb { background:var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="messaggi"]) .typing-dots span {
+            background:var(--ad-raised)
+}
+html.admin-dark:where([data-admin-theme-page="messaggi"]) .read-check.read { color:var(--ad-link)
+}
+
+/* modifica-annuncio.html */
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .field-label {
+            color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .field-input { border: 1.5px solid var(--ad-line);
+            color: var(--ad-ink); background: var(--ad-panel)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .field-input:focus { border-color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .section-card {
+            background: var(--ad-panel); border: 1px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .section-num {
+            background: var(--ad-info); color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .radio-card-inner {
+            border: 2px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .radio-card input:checked + .radio-card-inner {
+            border-color: var(--ad-link); background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .radio-icon { color: var(--ad-subtle)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .radio-card input:checked + .radio-card-inner .radio-icon { color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .radio-text { color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="modifica-annuncio"]) .radio-sub { color: var(--ad-subtle)
+}
+
+/* privacy.html */
+html.admin-dark:where([data-admin-theme-page="privacy"]) .privacy-intro { color:var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="privacy"]) .privacy-content h2 { color:var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="privacy"]) .privacy-content strong { color:var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="privacy"]) .privacy-content a { color:var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="privacy"]) .privacy-content a:focus-visible, html.admin-dark:where([data-admin-theme-page="privacy"]) .privacy-table-wrap:focus-visible { outline:2px solid var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="privacy"]) .privacy-content th, html.admin-dark:where([data-admin-theme-page="privacy"]) .privacy-content td { border:1px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="privacy"]) .privacy-content th { color:var(--ad-ink); background:var(--ad-info)
+}
+
+/* report.html */
+@media print {
+    html.admin-dark:where([data-admin-theme-page="report"]) body { background: var(--ad-panel) !important
+    }
+}
+@media print {
+    html.admin-dark:where([data-admin-theme-page="report"]) .bg-slate-50 { background: var(--ad-panel) !important
+    }
+}
+
+/* valutatore.html */
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .option-card {
+            border: 2px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .option-card:hover { border-color: var(--ad-line); background-color: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .option-card.selected {
+            border-color: var(--ad-link);
+            background-color: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) button.option-card { color:var(--ad-ink); background:var(--ad-panel)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .option-card small { color:var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .option-card:focus-visible, html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-next:focus-visible, html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-edit:focus-visible { outline:3px solid var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .question-help { color:var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) #incassoPeriod { color:var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-money { background:var(--ad-info); border:2px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-money:focus-within { border-color:var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-number { border:2px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-next { color:#fff
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-error { color:var(--ad-danger); background:var(--ad-danger-bg)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .profit-details summary { color:var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-price { color:var(--ad-success); background:var(--ad-success-bg)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-rent { color:var(--ad-link); background:var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-notes { color:var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-edit { color:var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-save { color:#fff
+}
+html.admin-dark:where([data-admin-theme-page="valutatore"]) .val-save button { background:var(--ad-panel); color:var(--ad-ink)
+}
+
+/* vendi.html */
+html.admin-dark:where([data-admin-theme-page="vendi"]) .field-label {
+            color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .field-input { border: 1.5px solid var(--ad-line);
+            color: var(--ad-ink); background: var(--ad-panel)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .field-input:focus { border-color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .tipo-card {
+            border: 2px solid var(--ad-line); background: var(--ad-panel)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .tipo-card.selected { border-color: var(--ad-link); background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-opt { border: 2px solid var(--ad-line); background: var(--ad-panel)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-opt:hover { border-color: var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-opt.selected { border-color: var(--ad-link); background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-opt:focus-visible, html.admin-dark:where([data-admin-theme-page="vendi"]) .faq-item summary:focus-visible { outline: 3px solid var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-free-title { color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-free-note { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-free-price { color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-premium { border: 1px solid var(--ad-line); background: var(--ad-warning-bg)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-premium-icon { color: var(--ad-warning)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-benefits li { color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-benefits svg { color: var(--ad-warning)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan-intro { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-discount { color: var(--ad-warning); background: var(--ad-warning-bg)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan { border-color: var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan:hover { border-color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan.selected { border-color: var(--ad-link); background: var(--ad-warning-bg)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan-title { color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan-tag { background: var(--ad-info); color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan-tag-best { background: var(--ad-warning-bg); color: var(--ad-warning)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan-price { color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan-price del { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan-daily { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-payment-note { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-radio {
+            border: 2px solid var(--ad-line); background: var(--ad-panel)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-opt.selected .pub-radio { border-color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-plan.selected .pub-radio { border-color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .faq-item { border: 1px solid var(--ad-line); background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .faq-item summary { color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .faq-item summary:hover { color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .faq-chev { color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .faq-item .faq-a { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-process-number { background: var(--ad-info); color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .pub-process li > div > strong { color: var(--ad-ink)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .tipo-btn {
+            border: 2px solid var(--ad-line); background: var(--ad-panel)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .tipo-btn.on { border-color: var(--ad-link); background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .day-pill {
+            border: 2px solid var(--ad-line);
+            color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .day-pill.on { border-color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .settore-pill { border: 2px solid var(--ad-line); background: var(--ad-panel)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .settore-pill.on { background: var(--ad-info); border-color: var(--ad-link); color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .draft-status { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .draft-status.warning { color: var(--ad-warning)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .photo-tile { background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .photo-remove { background: var(--ad-panel); color: var(--ad-danger); border: 1px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .photo-cover { background: var(--ad-panel); color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .photo-empty { border: 1.5px dashed var(--ad-line); color: var(--ad-muted); background: var(--ad-info)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .form-hint.photo-advice { color: var(--ad-danger)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .form-hint { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .form-link { color: var(--ad-link)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .review-row { border-bottom: 1px solid var(--ad-line)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .review-row strong { color: var(--ad-muted)
+}
+html.admin-dark:where([data-admin-theme-page="vendi"]) .field-input[aria-invalid="true"] { border-color: var(--ad-link)
+}
+
+html.admin-dark body, html.admin-dark body[class] { background: var(--ad-canvas); background-image: none; color: var(--ad-ink); }
+html.admin-dark body:not(.home-page):not(.organizer-theme):has(> header, > #nav-placeholder) { background-image: none; }
+html.admin-dark .home-page { --si-ink: var(--ad-ink); --si-muted: var(--ad-muted); --si-surface: var(--ad-panel); }
+html.admin-dark body.home-page { background: var(--ad-canvas); color: var(--ad-ink); }
+html.admin-dark :is(.home-button, .home-search button, .home-tool:first-child) { background: var(--ad-raised); color: var(--ad-ink); }
+html.admin-dark :is(.home-button, .home-search button):hover { background: var(--ad-hover); }
+html.admin-dark .home-search { background: #17385c; }
+html.admin-dark .home-search-field { background: var(--ad-field); color: var(--ad-ink); }
+html.admin-dark .home-search-field input { background: transparent; }
+html.admin-dark .home-shortcuts a, html.admin-dark .home-city i { color: var(--ad-link); }
+html.admin-dark :is(.home-stats-section, .home-sell-section) { background: linear-gradient(to bottom, var(--ad-canvas), var(--ad-panel)); }
+html.admin-dark .home-listings { background: var(--ad-panel); }
+html.admin-dark :is(#previewGrid, #resultsGrid) [data-listing-id] { background: var(--ad-field); }
+html.admin-dark .home-tool { background: var(--ad-panel); }
+html.admin-dark .home-tool:first-child { background: #17385c; }
+html.admin-dark :is(.site-header, body > header, .site-footer) { background: var(--ad-field); color: var(--ad-ink); border-color: var(--ad-line); }
+html.admin-dark :is(.site-wordmark, .site-header .site-nav) { color: var(--ad-ink); }
+html.admin-dark :is(.site-wordmark > span, .site-header nav a[aria-current=page]) { color: var(--ad-link); }
+html.admin-dark .site-header .site-nav a:hover { color: #fff; }
+html.admin-dark :is(.site-header .site-publish, #authNav > a) { background: var(--ad-raised); color: var(--ad-ink); }
+html.admin-dark :is(.site-header .site-publish, #authNav > a):hover { background: var(--ad-hover); color: #fff; }
+html.admin-dark #authNav > a > i { color: inherit; }
+html.admin-dark .site-footer :is(h4, a, p, ul) { color: var(--ad-muted); }
+html.admin-dark .site-footer a:hover { color: #fff; }
+html.admin-dark .seller-listing-count[data-count-level="3"] { color: #a8d1ff; }
+html.admin-dark .surface-fade-down { background-image: linear-gradient(to bottom, var(--ad-field), var(--ad-canvas)); }
+html.admin-dark :is(.listing-card-cover--place > .listing-card-place, .listing-detail-cover--place > .listing-detail-place) { color: var(--ad-muted); }
+html.admin-dark [data-listing-id] > a:first-child > div[class*="top-3"] > span.bg-emerald-500 { background: #087b61; color: #fff; }
+html.admin-dark :is(.sf-dialog, .ev-dialog, #authOverlay > div, .profile-dialog) { color-scheme: dark; background: var(--ad-panel); color: var(--ad-ink); }
+html.admin-dark :is(.sf-dialog header, .ev-dialog-top, #authOverlay > div > div:first-child) { background: var(--ad-panel); }
+html.admin-dark .ev { --ev-ink: var(--ad-ink); --ev-muted: var(--ad-muted); }
+html.admin-dark :is(.ev-primary, .profile-organizer-primary) { background: var(--ad-link); color: var(--ad-field); }
+html.admin-dark :is(.ev-primary, .profile-organizer-primary):hover { background: var(--ad-link-hover); }
+html.admin-dark .fiera-page :is(a, summary) { color: var(--ad-link); }
+html.admin-dark .fiera-page main > section { background: var(--ad-panel); border-color: var(--ad-line); }
+html.admin-dark .fiera-page :is(.muted, .eyebrow, details) { color: var(--ad-muted); }
+html.admin-dark .fiera-page .notice { background: var(--ad-warning-bg); color: var(--ad-warning); }
+html.admin-dark :is(.leaflet-popup-content-wrapper, .leaflet-popup-tip, .leaflet-control-layers) { background: var(--ad-panel); color: var(--ad-ink); }
+html.admin-dark .leaflet-container a { color: var(--ad-link); }
+html.admin-dark .leaflet-bar a { background: var(--ad-field); color: var(--ad-ink); border-color: var(--ad-line); }
+html.admin-dark .leaflet-control-attribution { background: var(--ad-field); color: var(--ad-muted); }
+html.admin-dark :is(.comune-suggestions, .comune-option, .comune-group, .comune-empty) { background-color: var(--ad-panel); color: var(--ad-ink); color-scheme: dark; }
+html.admin-dark .comune-option:is(:hover, .active, [aria-selected=true]) { background-color: var(--ad-raised); }
+html.admin-dark .comune-option mark { background: var(--ad-info); color: var(--ad-link); }
+html.admin-dark .sf-error { color: var(--ad-danger) !important; background: var(--ad-danger-bg); }
+

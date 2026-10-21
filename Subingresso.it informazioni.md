@@ -37,6 +37,28 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   controllo idempotente400casiSQL con ROLLBACK passato.
 
 
+## Tema dark personale admin — 22 ottobre 2026
+
+- Richiesta corrente: sito interamente scuro solo per l'admin, palette della
+  sezione organizzatori. Attivazione automatica dopo sessione convalidata e
+  `profiles.is_admin === true`; nessun ruolo/preferenza salvato nel browser.
+  Uscita, cambio account, errori e risposte tardive protetti. Pagine statiche
+  senza Auth riusano la sessione solo quando presente; anonimi invariati.
+- `js/admin-theme.js?v=1`, `css/admin-theme.css?v=1`; base e generatore
+  `css/admin-theme-base.css`, `scripts/build-admin-theme.cjs`. Override
+  cromatici circoscritti ai fogli/pagine originali; foto e dati invariati.
+  Collegamento in20HTML e cinque template API, compresi errori/elenco fiere.
+- Locale:198controlli tema nei tre casi Chromium1440/320 e WebKit390,
+  contrasto testi/campi almeno4,5:1, assenza pannelli bianchi e nuovi overflow;
+  regressione profili364passata. Sessioni/ruoli e contenuti delle prove
+  simulati, nessuna scrittura reale. Prove e limiti:
+  `Documents/verifica-tema-dark-admin-20261022/`. Pubblicazione da verificare.
+- Backup remoto `session-20261022-011206-tema-dark-admin` e ramo
+  `backup/pre-tema-dark-admin-20261022` creati prima delle modifiche;
+  consueto errore cleanup helper, backup remoto riuscito. File estranei esclusi.
+
+## Stato recente e decisioni correnti — 21 ottobre 2026
+
 - **Livorno conclusa e verificata online21/10:**63manifestazioni/17comuni,
   ricognizione19; nessuna scheda o audit provinciale al checkpoint32452a0.
   Altre5908schede identiche, catalogo5971. Audit data/fiere-livorno.json e
