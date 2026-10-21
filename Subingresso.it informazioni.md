@@ -4,15 +4,19 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
-- **Spazio Vercel,21/10:** avviso75% dei10GB Deployment Storage. Rilevate
+- **Spazio Vercel,21/10:** avviso75% dei10GB Deployment Storage. Inizialmente
   326pubblicazioni READY nel progetto `subingresso`, tre nel vecchio
   `subingresso.it`; dominio sul primo, CLI locale collegata al secondo:
   usare ID espliciti. Preparati314candidati, protette ultime10produzioni
-  e tutte le copie con alias. Eliminazione autorizzata esplicitamente21/10,
-  vincolo sito e dati utenti intatti.283rimosse/verificate;31restanti:
-  limite temporaneo Vercel now-rm, ripresa dopo16:45:27italiane21/10.
-  Alias e pubblicazione attuale invariati,15copie protette. Zero richieste
-  di scrittura DB/storage utenti; log dei parziali nella cartella prove.
+  e tutte le copie con alias. Eliminazione autorizzata esplicitamente21/10
+  e conclusa:314risposte DELETED e314ID assenti dall'inventario aggiornato;
+  rimaste15pubblicazioni READY, più tentativi cancellati senza build.
+  Alias e pubblicazione attuale invariati; vecchio progetto3READY intatto.
+  Verifica finale16:47:28:140file identici,11artefatti funzioni identici,
+  22pagine/API con esiti attesi, sitemap2965URL. Zero scritture DB/storage
+  utenti e nessuna modifica a pagine/funzioni/dati. Fonti e cronologia
+  conservate. Limite429 now-rm dopo283: atteso reset16:45:27 e concluse
+  le31restanti; log e verifiche finali nella cartella prove.
   Tutti i commit candidati presenti nel backup. Prove/inventario/CSV:
   `Documents/verifica-spazio-vercel-20261021/`; ZIP411file verificatiSHA256,
   bundleGit completo43.201.858byte verificato. Backup tag160132 e ramo
