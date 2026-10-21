@@ -4,6 +4,15 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Ricerca/link/copertine,21/10:** rimossi i due contorni al clic nella
+  ricerca; eliminato "Oppure esplora", tre link blu. Copertine foto/senza
+  foto tutte148px, misura dei riquadri precedenti senza foto, home/annunci.
+  CSS condiviso10/home4. Chromium1440/320 e WebKit390 locali/online
+  passati: ricerca, foto, allineamento e tastiera; zero errori JS/overflow.
+  Pubblicato0f3a2d3:15file identici e tre pagine generate aggiornate.
+  Prove/pubblicazione `Documents/verifica-ricerca-link-copertine-20261021/`.
+  Backup tag/ramo remoti verificati; noto errore cleanup del helper.
+
 - **Anteprime uniformi,21/10:** nome del luogo nei riquadri senza foto,
   eliminato «Foto non disponibile». Stesso componente/stile home e annunci,
   spaziatura condivisa; foto presenti conservate, fallback anche se il file
