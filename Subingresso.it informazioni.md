@@ -9,6 +9,9 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Locale Chromium1440/320/375/430 e WebKit390 passato, zero sovrapposizioni.
   Backup remoto tag/branch verificati; cleanup helper con errore noto.
   Prove/pubblicazione `Documents/verifica-logo-mobile-15percento-20261021/`.
+  Pubblicato ecc0353:15asset identici e2SSR aggiornati; stessi cinque
+  formati/browser online passati, altezza invariata e zero errori JS.
+  Prima lettura durante deploy ancora vecchia, ripetizione riuscita.
 
 - **Pulsanti smartphone, affinamento21/10:** richiesta misura intermedia:
   quadrati40px,36 sotto380; icone14px. Il + ha gli stessi colori di
