@@ -26,7 +26,9 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   e lista completa; errori/limiti/rename protetti. Simulazione senza.git
   e confronto GitHub reale su4396691 passati. Correzione04779a3 pubblicata,
   VercelB2i1Q36JzKjSmE8vN13jJfJiAevw READY,11artefatti ancora identici
-  all'inizio;35controlli passati. Prova online su questo solo registro pendente.
+  all'inizio;35controlli passati. Prova online riuscita:2ca7829 CANCELED
+  prima del build per exit0. Alias dominio ancora su04779a3,home200 identica;
+  targets.production include anche tentativi cancellati:verificare gli alias.
   API consumi Hobby non disponibile:75% dalla mail; nessuno spazio liberato
   ancora dichiarato. Nessuna conservazione automatica modificata.
 
