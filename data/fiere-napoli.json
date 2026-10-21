@@ -6530,7 +6530,53 @@
     }
   },
   "publication": {
-    "status": "pending-verification"
+    "status": "verified",
+    "dataCommit": "594abc88032867215fa3719ea859cb27b04bf102",
+    "verifiedAt": "2026-10-21T07:58:29Z",
+    "assetsVerified": 4,
+    "pagesVerified": 76,
+    "browserChecks": [
+      {
+        "engine": "chromium",
+        "width": 1440,
+        "events": 76,
+        "dialogs": 15,
+        "base": "https://subingresso.it",
+        "status": "passed"
+      },
+      {
+        "engine": "chromium",
+        "width": 320,
+        "events": 76,
+        "dialogs": 15,
+        "base": "https://subingresso.it",
+        "status": "passed"
+      },
+      {
+        "engine": "webkit",
+        "width": 390,
+        "events": 76,
+        "dialogs": 15,
+        "base": "https://subingresso.it",
+        "status": "passed"
+      }
+    ],
+    "evidenceArchive": "C:\\Users\\utente\\Documents\\ricerca-fiere-napoli-20261021",
+    "backup": {
+      "directory": "Documents/backup-subingresso/ricerche-fiere-20261021-074318",
+      "verifiedFiles": 54011,
+      "verifiedBytes": 9574647941,
+      "errors": 0,
+      "supplement": "supplemento-napoli-finale"
+    },
+    "completedProvinces": 46,
+    "remainingProvinces": 64,
+    "researchClosedWithExplicitLimits": true,
+    "periodicMaintenanceSeparate": true,
+    "deployment": {
+      "state": "success",
+      "url": "https://vercel.com/kycykuardit-9234s-projects/subingresso/F4vob7S2MiJviGPZX9YiPFBjRJDA"
+    }
   },
   "events": [
     {

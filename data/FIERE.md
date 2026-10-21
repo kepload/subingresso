@@ -2,9 +2,14 @@
 
 ## Napoli — ricerca documentale del 21 ottobre 2026
 
-Ricognizione documentale corrente conclusa con limiti espliciti. Pubblicazione e
-controlli online ancora da registrare: TO DO e riepilogo rimangono invariati finché
-non è verificato l’esito.
+Ricognizione documentale corrente conclusa con limiti espliciti, pubblicata
+`594abc8` e verificata online: quattro asset identici ai byte Git, 76 pagine
+200/H1/canonical; Chromium 1440/320 e WebKit 390 locali e online superati con
+PLAYWRIGHT_MODULE. Suite generale cinque formati, pagine, settori e build
+ripetibile superati. TO DO aggiornata solo dopo verifica: **46 province concluse,
+64 da fare su 110**. Prove publication.json e test-online.json nell’archivio privato.
+Backup SHA256 ricerche-fiere-20261021-074318: 54.011 file, 9.574.647.941 byte,
+zero errori; supplemento finale verificato con le prove successive.
 
 **76 manifestazioni in 28 comuni**, dalle tre schede iniziali: **73 aggiunte**,
 tutti i tre ID conservati. Ricognizione nominale dei **92 comuni**, passaggio sui

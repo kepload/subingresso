@@ -1,5 +1,22 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Napoli, 21 ottobre 2026: ricerca documentale corrente conclusa con limiti espliciti.
+76 manifestazioni in 28 comuni, ricognizione dei 92 comuni, 393 ricevute,
+125 record Mostra d’Oltremare confrontati, 36 gruppi di esclusioni e 17 limiti.
+Tre ID precedenti conservati; altre 5577 schede identiche a 5d405b9. Catalogo 5653.
+Dieci sintesi costo documentate, date discordanti mantenute testuali, nessun dato inventato.
+Pubblicato 594abc8: quattro asset identici ai byte Git, 76 pagine 200/H1/canonical,
+Chromium 1440/320 e WebKit 390 locali e online superati usando PLAYWRIGHT_MODULE;
+suite generale cinque formati, settori, pagine e build ripetibile superati.
+TO DO spuntata dopo verifica: 46 province concluse, 64 da fare su 110; cache JS99/JSON67.
+Audit data/fiere-napoli.json, fonti e limiti data/FIERE.md; nessun contatto a terzi.
+Originali/prove Documents/ricerca-fiere-napoli-20261021; backup SHA256
+Documents/backup-subingresso/ricerche-fiere-20261021-074318: 54011 file,
+9574647941 byte, zero errori; supplemento finale verificato nella stessa copia.
+Tag session-20261021-090816-fiere-napoli e ramo pre-fiere-napoli-20261021 remoti
+creati prima delle modifiche. Manutenzione futura distinta dalla ricerca attuale;
+nessuna altra provincia avviata e modifiche estranee preservate fuori dai commit.
+
 21/10/2026, Perugia: ricerca documentale corrente conclusa con limiti espliciti,
 152 manifestazioni in47comuni/59esaminati,146con date e9sintesi costo. Catalogo5580,
 altre5428schede e10ID precedenti conservati. Audit data/fiere-perugia.json:
