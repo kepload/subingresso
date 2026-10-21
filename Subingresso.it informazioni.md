@@ -13,7 +13,10 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   locali, foto singola/multipla e risoluzioni originali verificati; tastiera
   e caricamento solo al clic passati. Backup tag/ramo remoti validi;
   prove/limiti `Documents/verifica-home-foto-originali-20261021/`.
-  Pubblicazione da verificare.
+  Pubblicatof7ce294, VercelEPjDNXY5ocz6XaNduYzVVEWrbiMg riuscito:
+  17asset identici e treSSR aggiornati. Stessi tre formati online passati,
+  originali2048x1536 e4032x3024 confermati; Safari isolato dopo errori
+  transitori rete picker nella navigazione della prova. Nessuna scrittura reale.
 
 - **Luoghi e spaziature posteggi,21/10:** luogo anche sulle foto, testo bianco
   su sfumatura leggibile; senza foto resta ardesia su azzurro. Corpo delle
