@@ -13,6 +13,9 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   errore noto. Locale Chromium1920/1440/1024/820/320 e WebKit390 passato;
   classifica/account/logout/errori e cambio soglia1023/1024 verificati.
   Prove/pubblicazione `Documents/verifica-home-spazi-desktop-20261021/`.
+  Pubblicatob5e7a76, VercelFPsMTQe4Hji1ZzwJkBFmN25E4DXd riuscito:
+  quattro asset identici, stessi sei browser/formati online passati;
+  nessun erroreJS/overflow o scrittura reale. Lavoro Siena conservato.
 
 - **Stima contatori home,21/10:** richiesta esplicita: mantenere i numeri
   simulati in primo piano finché l'utente deciderà di sostituirli con dati

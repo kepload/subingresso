@@ -8,6 +8,9 @@ Contatori12px più vicini (padding superiore36→24), valori/animazione
 conservati. HomeCSS9/scorciatoie3. Prove/stato pubblicazione:
 Documents/verifica-home-spazi-desktop-20261021/. Backup remoto valido;
 errore cleanup noto. Nessuna scrittura dati reali durante le prove.
+Pubblicatob5e7a76, Vercel riuscito:quattro asset identici, Chromium
+1920/1440/1024/820/320 e WebKit390 online passati, zero errori/overflow.
+Lavoro concorrente Siena conservato ed escluso dai commit.
 
 Contatori home,21ottobre2026, decisione corrente: mantenere i numeri
 simulati visibili e gli incrementi finché l'utente chiederà il passaggio
