@@ -40,7 +40,8 @@ body:not(.organizer-theme) [data-listing-id]:hover { box-shadow: none; }
 .listing-card-place strong, .listing-detail-place strong { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 22px; font-weight: 700; letter-spacing: -.025em; line-height: 1.15; max-width: 100%; overflow-wrap: anywhere; text-wrap: balance; }
 .listing-card-cover > div[class*="top-3"], .listing-card-cover > button { z-index: 2; }
 .listing-detail-cover { height: 160px; background: #dce6f3; }
-.listing-detail-place { padding: 64px 20px 44px; }
+.listing-detail-place { padding: 64px 20px 44px; background: linear-gradient(transparent 35%, rgb(15 23 42 / .48) 65%, rgb(15 23 42 / .68)); }
+.listing-detail-cover:not(.listing-detail-cover--place) .listing-detail-place strong { text-shadow: 0 1px 3px rgb(15 23 42 / .7); }
 .listing-detail-place strong { font-size: 24px; }
 .listing-detail-cover--place > .listing-detail-place { padding-bottom: 20px; }
 @media (min-width:768px) {

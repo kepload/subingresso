@@ -290,7 +290,7 @@ module.exports = async function handler(req, res) {
         @media (max-width: 1023px) { #mobileCta.visible { display: flex; } }
         #mainContent.has-cta { padding-bottom: 5.5rem; }
     </style>
-    <link rel="stylesheet" href="/css/design-system.css?v=11">
+    <link rel="stylesheet" href="/css/design-system.css?v=12">
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
 
@@ -320,7 +320,7 @@ module.exports = async function handler(req, res) {
 
             <div id="coverDiv" class="listing-detail-cover ${img ? '' : 'listing-detail-cover--place'} rounded-3xl flex items-center justify-center relative overflow-hidden shadow-sm">
                 ${img
-                    ? `<a href="${esc(img)}" target="_blank" rel="noopener" aria-label="Apri foto nelle dimensioni originali" style="width:100%;height:100%;display:block;cursor:zoom-in"><img src="${esc(getOptimizedImageUrl(img, 1280))}" alt="${esc(listing ? listing.titolo : '')}" fetchpriority="high" decoding="async" class="w-full h-full object-cover"></a>`
+                    ? `<a href="${esc(img)}" target="_blank" rel="noopener" aria-label="Apri foto originale in una nuova scheda" style="width:100%;height:100%;display:block;cursor:zoom-in"><img src="${esc(getOptimizedImageUrl(img, 1280))}" alt="${esc(listing ? listing.titolo : '')}" fetchpriority="high" decoding="async" class="w-full h-full object-cover"></a>`
                     : ''
                 }
                 <div class="listing-detail-place" aria-hidden="true"><strong>${esc(String(listing ? listing.comune || listing.titolo || '' : '').split(',')[0].trim())}</strong></div>
@@ -457,7 +457,7 @@ module.exports = async function handler(req, res) {
 <script src="/js/ui-components.js?v=17"></script>
 <script src="/js/auth.js?v=22"></script>
 <script src="/js/listing-moderation.js?v=1"></script>
-<script src="/js/pages/annuncio-detail.js?v=24"></script>
+<script src="/js/pages/annuncio-detail.js?v=25"></script>
 </body>
 </html>`);
 };

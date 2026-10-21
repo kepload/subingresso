@@ -24,7 +24,7 @@
 .home-shortcuts { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin-top: 19px; font-size: 14px; color: var(--si-muted); }
 .home-shortcuts a { color: var(--si-blue); min-height: 32px; display: inline-flex; align-items: center; text-underline-offset: 4px; }
 .home-shortcuts a:hover { text-decoration: underline; }
-.home-listings { padding: 72px 0 80px; }
+.home-listings { padding: 72px 0 80px; background: #f5f5f5; }
 .home-section-title { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
 .home-page h2 { font-size: clamp(28px, 2.9vw, 40px); line-height: 1.15; letter-spacing: -.035em; font-weight: 800; }
 .home-section-title p { margin-top: 10px; font-size: 16px; color: var(--si-muted); }

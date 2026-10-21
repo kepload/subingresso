@@ -4,6 +4,17 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 21 ottobre 2026
 
+- **Home/foto originali,21/10:** sezione anteprime home grigio#f5f5f5 a tutta
+  larghezza come Annunci, schede bianche e margini conservati. Sfumatura
+  dettaglio più lieve/bassa35/65% e opacità48/68%; anteprime invariate.
+  Clic foto ora collegamento nativo al file originale in nuova scheda,
+  ingrandibile nel browser; eliminata finestra JS, scorrimento conservato.
+  CSS12/home5/dettaglioJS25, SSR allineato. Chromium1440/320 e WebKit390
+  locali, foto singola/multipla e risoluzioni originali verificati; tastiera
+  e caricamento solo al clic passati. Backup tag/ramo remoti validi;
+  prove/limiti `Documents/verifica-home-foto-originali-20261021/`.
+  Pubblicazione da verificare.
+
 - **Luoghi e spaziature posteggi,21/10:** luogo anche sulle foto, testo bianco
   su sfumatura leggibile; senza foto resta ardesia su azzurro. Corpo delle
   anteprime con rientro laterale16px, immagini sempre a tutta larghezza148px.

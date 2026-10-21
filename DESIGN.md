@@ -133,6 +133,8 @@ Contenitore home centrato: `min(100% - 64px, 1232px)`; entro 599px i margini lat
 
 Ricerca e gruppi a due colonne si impilano entro 900px; gli strumenti entro 599px. L’indice città passa da cinque a tre, poi due colonne. Il menu centrale sparisce sotto 1024px; restano logo e azioni dirette, senza menu mobile. Queste composizioni appartengono alla home; le scale e i componenti si riusano secondo il compito della pagina.
 
+La sezione «Ultimi annunci» della home ha fondo grigio #f5f5f5 a tutta larghezza, uguale alla pagina Annunci. Il contenitore interno mantiene i margini e la larghezza del resto della home, con schede bianche.
+
 ## Elevation & Depth
 
 La profondità è tonale: superfici piane, immagini ritagliate e contrasto tra bianco, ghiaccio e inchiostro. Le schede non hanno ombre a riposo o al passaggio del puntatore. Il focus usa un contorno blu (3px, scostamento 4px nella home; 2px, scostamento 3px nell’header).
@@ -150,6 +152,7 @@ Angoli moderati: pannelli e schede usano `panel`; campi e FAQ `control`; il puls
 - **Link:** testo esplicito e freccia piccola; sottolineatura al passaggio del puntatore. Le scorciatoie restano testo, senza contenitori a pillola.
 - **Offerte:** titolo, giorni, luogo, venditore, prezzo, stato e preferiti conservati. Il corpo ha 16px di rientro laterale; le foto restano a tutta larghezza. Copertina alta 148px, luogo in basso su massimo due righe e spazio superiore per badge e preferito. Senza foto resta soltanto il luogo, anche in caso di errore di caricamento. Il dettaglio usa lo stesso trattamento del luogo in un riquadro alto 224px da 768px, 160px sotto, con o senza foto; il richiamo alla galleria resta separato dal luogo.
 - **Stati e giorni:** piccoli cartigli leggibili, tondo normale; vendita verde e affitto blu. I colori dei giorni già presenti restano metadati operativi.
+- **Foto del dettaglio:** sfumatura più lieve e più bassa rispetto alle anteprime (trasparente fino al35%, scura48% al65%,68% in basso), con una lieve ombra sul nome. Il clic apre il file originale in una nuova scheda del browser, senza ridimensionamento; lo scorrimento delle foto nella copertina resta disponibile.
 - **Navigazione e footer:** logo soltanto testuale; header bianco, link discreti e azione pubblicazione attenuata; footer inchiostro con testo chiaro. Le eccezioni organizzatori restano circoscritte.
 - **FAQ:** elementi nativi `details/summary`, fondo ghiaccio, segno più/meno e una risposta aperta per volta.
 

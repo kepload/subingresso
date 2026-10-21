@@ -117,36 +117,30 @@ async function browserChecks() {
                 detail = detail.replace(/^document\.addEventListener\('DOMContentLoaded'.*$/gm,'');
                 await page.addScriptTag({content:detail});
                 await page.evaluate(({photo,avatar})=>{
-                    _listingPhotos=[photo,photo.replace('photo.jpg','second.jpg')];
-                    _currentListing={titolo:'Foto di prova'};
-                    document.getElementById('coverDiv').innerHTML=_listingPhotos.map((url,i)=>listingPhotoLink(url,'Foto di prova',i,true)).join('');
+                    const photos=[photo,photo.replace('photo.jpg','second.jpg')];
+                    document.getElementById('coverDiv').innerHTML=photos.map((url,i)=>listingPhotoLink(url,'Foto di prova',i,true)).join('');
                     USER_AVATARS['test-owner']=avatar;
                     document.getElementById('cards').innerHTML=buildCard({id:'test',user_id:'test-owner',titolo:'Prova',img_urls:[photo],stato:'Vendita',tipo:'Mercato',comune:'Brescia',regione:'Lombardia',prezzo:1000});
                 },{photo,avatar});
                 await page.waitForFunction(()=>document.querySelector('#coverDiv img').naturalWidth>0);
                 assert.equal(originals,0,'no original should download before clicking');
                 assert.match(await page.locator('#cards img').last().getAttribute('src'),/w=48/);
-                await page.locator('#coverDiv a').first().click();
-                await page.waitForFunction(()=>document.getElementById('listingPhotoStatus').textContent==='Foto originale');
-                assert.equal(originals,1);
-                assert.equal(await page.locator('#listingPhotoOriginal').getAttribute('src'),photo);
-                assert.equal(await page.locator('#listingPhotoCounter').textContent(),'1 / 2');
-                await page.locator('#listingPhotoNext').click();
-                await page.waitForFunction(()=>document.getElementById('listingPhotoStatus').textContent==='Foto originale');
+                for (const [index,url] of [[0,photo],[1,photo.replace('photo.jpg','second.jpg')]]) {
+                    const [originalPage] = await Promise.all([page.waitForEvent('popup'),page.locator('#coverDiv a').nth(index).click()]);
+                    await originalPage.waitForLoadState();
+                    assert.equal(originalPage.url(),url);
+                    await originalPage.waitForFunction(()=>document.querySelector('img')?.naturalWidth>0);
+                    assert.equal(await originalPage.locator('img').evaluate(el=>el.naturalWidth),1800);
+                    await originalPage.close();
+                }
                 assert.equal(originals,2);
-                await page.keyboard.press('Escape');
-                await page.waitForFunction(()=>!document.getElementById('listingPhotoDialog').open);
-                assert.equal(await page.locator('#listingPhotoDialog').evaluate(el=>el.open),false);
-                await page.waitForFunction(()=>!document.getElementById('listingPhotoOriginal').hasAttribute('src'));
-                assert.equal(await page.locator('#listingPhotoOriginal').getAttribute('src'),null);
-                assert.equal(await page.evaluate(()=>document.body.style.overflow),'');
                 await page.locator('#coverDiv a').first().focus();
-                await page.keyboard.press('Enter');
-                await page.waitForFunction(()=>document.getElementById('listingPhotoDialog').open);
-                assert(await page.locator('#listingPhotoDialog').evaluate(el=>el.open));
-                await page.getByRole('button',{name:'Chiudi foto'}).click();
+                const [keyboardPage] = await Promise.all([page.waitForEvent('popup'),page.keyboard.press('Enter')]);
+                await keyboardPage.waitForLoadState();
+                assert.equal(keyboardPage.url(),photo);
+                await keyboardPage.close();
                 assert.deepEqual(errors,[]);
-                console.log(`OK: ${name} ${mobile?'mobile':'desktop'}, lightweight cards/avatar, click-only originals, next photo, keyboard, closing and scroll restoration.`);
+                console.log(`OK: ${name} ${mobile?'mobile':'desktop'}, lightweight cards/avatar, click-only originals, both photos at full resolution in a new tab, keyboard.`);
             } finally { await browser.close(); }
         }
     } finally { await new Promise(resolve=>server.close(resolve)); }

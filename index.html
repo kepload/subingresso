@@ -59,8 +59,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preload" href="/css/fonts/jakarta-400.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="/css/fonts/jakarta-800.woff" as="font" type="font/woff" crossorigin>
-    <link rel="stylesheet" href="/css/design-system.css?v=11">
-    <link rel="stylesheet" href="/css/home.css?v=4">
+    <link rel="stylesheet" href="/css/design-system.css?v=12">
+    <link rel="stylesheet" href="/css/home.css?v=5">
 </head>
 <body class="home-page min-h-screen flex flex-col text-slate-900">
 <header></header>
@@ -90,7 +90,8 @@
         <a href="/fiere">Calendario fiere</a>
     </nav>
 </section>
-<section class="home-listings home-shell" aria-labelledby="latest-title">
+<section class="home-listings" aria-labelledby="latest-title">
+    <div class="home-shell">
     <div class="home-section-title">
         <div><h2 id="latest-title">Ultimi annunci</h2><p>Posteggi inseriti di recente</p></div>
         <a class="home-link" href="/annunci">Vedi tutti <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
@@ -103,6 +104,7 @@
     </div>
     <noscript><p>Per caricare gli annunci attiva JavaScript. Puoi consultare le guide alle città e le domande frequenti qui sotto.</p></noscript>
     <div class="home-listing-bottom"><a class="home-button" href="/annunci">Vedi tutti gli annunci <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
+    </div>
 </section>
 <section class="home-tools home-shell" aria-label="Strumenti per gli ambulanti">
     <article class="home-tool">
