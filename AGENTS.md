@@ -6,7 +6,7 @@ Listino condiviso js/vetrina-pricing.js; contratto/migrazione/verifiche in
 `data/VETRINE_PREMIUM.md`. Nessuno sconto pubblicazione o omaggio UI;
 blog solo Vetrine pagate, catalogo gratuito conservato. Trigger annunci
 invariati; ordini precedenti e sessioni aperte rispettati. Nuovi asset
-pricing1/premiumJS1-CSS2/account3. Non ripristinare i vecchi prezzi.
+pricing1/premiumJS2-CSS3/account3. Non ripristinare i vecchi prezzi.
 
 > File letto da Codex CLI (e qualsiasi altro agente AI) all'inizio di OGNI sessione.
 > Mantenere allineato con `CLAUDE.md` quando si modifica.

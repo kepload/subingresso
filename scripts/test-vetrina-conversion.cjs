@@ -54,6 +54,8 @@ async function run(engine,name,width,height,base){
   await page.locator('#tier90d').click();assert.match(await page.locator('#premiumTotal').innerText(),/1.992,00/);
   const bounds=await cta.boundingBox();assert(bounds.y>=0&&bounds.y+bounds.height<=height,'checkout always visible');
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+  assert.equal(await page.locator('.premium-duration strong').evaluateAll(elements=>elements.every(el=>{const range=document.createRange();range.selectNodeContents(el);const text=range.getBoundingClientRect(),box=el.getBoundingClientRect();return text.left>=box.left-1&&text.right<=box.right+1;})),true,'prices fit inside each duration option');
+
   await cta.click();await page.waitForFunction(()=>document.getElementById('vetrinaLoadingMsg').textContent.includes('Riprova'));
   const request=await page.evaluate(()=>requests.at(-1));assert.equal(request.body.expected_amount_cents,199200);assert.equal(request.body.annuncio_ids.length,10);assert.equal(request.headers.apikey,'public-test-key');
   await page.evaluate(()=>{delay=150;startCheckout();startCheckout();});await page.waitForTimeout(250);

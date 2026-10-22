@@ -13,10 +13,12 @@ window.VetrinaPremium = (() => {
         const q = VetrinaPricing.quote(tier,Math.max(1,count));
         ['10d','30d','90d'].forEach(key => {
             const p = VetrinaPricing.plans[key];
+            const planQuote = VetrinaPricing.quote(key,Math.max(1,count));
             $('tier'+key).setAttribute('aria-pressed',String(key===tier));
             $('tier'+key).disabled = busy;
-            $('premiumPrice'+key).textContent = money(VetrinaPricing.quote(key,Math.max(1,count)).unit);
-            $('premiumDaily'+key).textContent = money(VetrinaPricing.quote(key,Math.max(1,count)).unit/p.days)+' / giorno';
+            $('tier'+key).classList.toggle('has-cents',planQuote.unit%100!==0);
+            $('premiumPrice'+key).textContent = planQuote.unit%100 ? money(planQuote.unit) : money(planQuote.unit).replace(',00','');
+            $('premiumDaily'+key).textContent = money(planQuote.unit/p.days)+' / giorno';
         });
         $('premiumCount').textContent = count ? `${count} ${count===1?'annuncio selezionato':'annunci selezionati'}` : 'Seleziona i tuoi annunci';
         $('premiumTotal').textContent = money(count ? q.total : 0);

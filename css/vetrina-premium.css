@@ -59,3 +59,5 @@
 #vetrinaModal #vetrinaLoadingMsg{color:var(--premium-muted)}
 #vetrinaModal #vetrinaLoadingMsg.is-error{color:#a42b2b}
 .admin-dark #vetrinaModal #vetrinaLoadingMsg.is-error{color:#f1a4a4}
+@media(max-width:650px){.premium-duration.has-cents strong{font-size:19px}}
+@media(max-width:360px){.premium-duration.has-cents{padding-left:4px;padding-right:4px}.premium-duration.has-cents strong{font-size:17px}}
