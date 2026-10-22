@@ -3,7 +3,7 @@
   "checkedAt": "2026-10-21",
   "research": {
     "status": "documental-review-concluded-with-explicit-limits",
-    "publicationStatus": "pending-deploy-verification",
+    "publicationStatus": "published-and-verified",
     "baselineCommit": "0b219b174f3fa748fb22cd170a98f68ea7061c1d",
     "previousCatalogEvents": 221,
     "events": 293,
@@ -13260,7 +13260,57 @@
       "Nuovi originali per discordanza Borghetto e date tecniche Albisola; condizioni espositori oggi non pubblicate. Sassello e calendario Garlenda risolti nella ricerca attuale."
     ],
     "verification": {
-      "status": "pending"
+      "status": "passed",
+      "verifiedAt": "2026-10-22T02:25:57.829411+02:00",
+      "dataCommit": "beea083",
+      "verifiedProductionCommit": "660c3cf02f7ef392a99e9e45d340c3a521f828e4",
+      "production": "https://subingresso.it/fiere?provincia=Savona",
+      "assetsMatched": 5,
+      "detailPages": 293,
+      "detailStatusH1Canonical": "passed",
+      "browserResults": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "events": 293,
+          "dialogs": 31,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "events": 293,
+          "dialogs": 31,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "events": 293,
+          "dialogs": 31,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        }
+      ],
+      "localTests": [
+        "scripts/test-fiere-savona.cjs: Chromium1440/320, WebKit390 passed",
+        "scripts/test-fiere.cjs: five viewports passed",
+        "scripts/test-fiere-pages.cjs: 6043 pages, 2635 sitemap entries passed",
+        "scripts/test-fiere-sectors.py: passed",
+        "Build repeatability and 5750 other-province events unchanged: passed"
+      ],
+      "evidenceArchive": "C:\\Users\\utente\\Documents\\ricerca-fiere-savona-20261021",
+      "fullBackup": {
+        "path": "C:/Users/utente/Documents/backup-subingresso/ricerche-fiere-20261021-203019",
+        "files": 62542,
+        "bytes": 10955471966,
+        "sha256Verified": true,
+        "errors": 0,
+        "finalSupplement": "supplemento-savona-finale"
+      },
+      "limitations": "20 limiti e 10 gruppi di esclusioni, più decisioni per 385 righe regionali, conservati. Manutenzione futura distinta dalla ricerca documentale attuale conclusa."
     }
   },
   "events": [

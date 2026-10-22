@@ -5383,8 +5383,8 @@ Affluenza, 17 ottobre 2026 - preferenza corrente: eliminato "almeno" dai bollini
 
 ## Savona — ricerca documentale del 21 ottobre 2026
 
-Ricerca corrente conclusa con limiti espliciti; pubblicazione e verifica online
-ancora da registrare. **293 manifestazioni in 42 comuni**, prima 221: **72 aggiunte**.
+Ricerca corrente conclusa con limiti espliciti; **pubblicata e verificata online
+il 22 ottobre 2026**. **293 manifestazioni in 42 comuni**, prima 221: **72 aggiunte**.
 Ricognizione nominativa dei **69 comuni**, tre XLS regionali originali, 385 righe
 del calendario fiere provinciale riesaminate. Audit riproducibile in
 `data/fiere-savona.json`; originali, tentativi e prove fuori repository in
@@ -5470,7 +5470,16 @@ insufficiente prova operativa, senza nuovi posteggi ipotetici.
 Ricerca documentale corrente distinta dalla manutenzione futura di bandi,
 quote, disponibilità e nuovi calendari: non si attende la loro pubblicazione
 per chiudere le piste accessibili oggi, né si promette un censimento esaustivo.
-TO DO da spuntare **soltanto dopo verifica online**. Cache JS104/JSON72.
+TO DO spuntata dopo verifica online: **51 province concluse, 59 rimanenti**. Cache JS104/JSON72.
 Backup preventivi remoti: `backup/session-20261021-220637-fiere-savona` e
 `backup/pre-fiere-savona-20261021`. Controlli in `scripts/test-fiere-savona.cjs`,
-browser obbligatoriamente tramite `PLAYWRIGHT_MODULE`; esiti finali da registrare.
+browser tramite `PLAYWRIGHT_MODULE`: Chromium1440/320 e WebKit390 locali/online passati.
+Pubblicazione dati `beea083`, verifica produzione `660c3cf il 22/10: cinque asset
+identici ai blob Git, tutte le 293 pagine con HTTP200, H1 e canonical corretti.
+Suite generale su cinque formati, settori, 6043 pagine/2635 sitemap e build
+ripetibile passati; altre 5750 schede inalterate. 552 ricevute inventariate,
+20 limiti e 10 gruppi di esclusioni, oltre alle decisioni sulle 385 righe.
+Backup completo SHA256 `ricerche-fiere-20261021-203019`: 62542 file,
+10955471966 byte, zero errori; supplemento finale verificato.
+Prove `publish-deploy.json`, `online-details.json`, `qa-online.json` e schermate
+nell’archivio esterno. Nessun contatto a terzi. Manutenzione futura separata.

@@ -2586,3 +2586,19 @@ zeroerrori; supplemento finale verificato. Suite generale5formati passata.
 Pubblicatoa27c82d:4asset identici aGit,63pagine200/H1/canonical/contenuti e
 Chromium1440/320+WebKit390 online passati. TO DO50/60aggiornata dopo esito.
 Nessun contatto a terzi; manutenzione futura distinta dalla ricerca attuale.
+
+
+Savona, ricerca21/10 e pubblicazione verificata22/10/2026:293manifestazioni
+in42comuni, ricognizione69, +72; catalogo6043, altre5750schede identiche.
+Audit data/fiere-savona.json/FIERE.md:552ricevute,385righe regionali,
+20limiti/10gruppi esclusioni; nessun contatto a terzi o dato inventato.
+Sassello5–6settembre risolto con atti; BorghettoSanMatteo discordante,
+quattro edizioni solo2025, quote parziali e fonti bloccate espliciti.
+Dati beea083:5asset produzione identici ai blob Git,293pagine200/H1/canonical,
+Chromium1440/320 e WebKit390 online/locali con PLAYWRIGHT_MODULE passati;
+generale5formati,settori,6043pagine/2635sitemap e build ripetibile passati.
+TO DO51concluse/59da fare spuntata dopo verifica. Prove/originali Documents/
+ricerca-fiere-savona-20261021; backup remoto sessione220637 e ramo pre-fiere-savona.
+CopiaSHA256 ricerche-fiere-20261021-203019:62542file/10955471966byte,
+zeroerrori; supplemento finale verificato. CacheJS104/JSON72.
+Ripresa: nessuna ricerca o pubblicazione dati ripetuta; manutenzione futura separata.
