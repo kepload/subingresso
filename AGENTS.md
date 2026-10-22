@@ -6,7 +6,7 @@ nel periodo, anteprima Premium sfocata senza dati reali nascosti. Analisi
 complete permanenti per ogni annuncio con pagamento live riuscito,
 anche in bundle e dopo scadenza/rimborso; mai test, omaggi o soli featured.
 Gate server/RLS, grafico/tabella/CSV solo annunci sbloccati; dettagli in
-`data/SELLER_PREMIUM_ANALYTICS.md`. Cache sellerCSS1, premiumCSS4,
+`data/SELLER_PREMIUM_ANALYTICS.md`. Cache sellerCSS2, premiumCSS4,
 accountJS4, admin-themeJS/CSS3. Trigger annunci e dati storici invariati.
 
 Vetrine Premium22/10: 49/99/249 euro per10/30/90giorni; pacchetti

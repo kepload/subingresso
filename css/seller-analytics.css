@@ -1,6 +1,6 @@
 /* Two essential figures; detailed analysis stays attached to each paid listing. */
 #sellerAnalyticsPanel{--seller-ink:#152943;--seller-muted:#526074;--seller-line:#dce2ea;--seller-soft:#f3f5f8;--seller-ground:#fff;color:var(--seller-ink);font-variant-numeric:tabular-nums}
-#sellerAnalyticsSummary{gap:0;border:1px solid var(--seller-line);border-radius:12px;overflow:hidden;background:var(--seller-ground)}
+#sellerAnalyticsSummary{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--seller-line);border-radius:12px;overflow:hidden;background:var(--seller-ground)}
 #sellerAnalyticsSummary.seller-basic-only{grid-template-columns:repeat(2,minmax(0,1fr))}
 .seller-stat+.seller-stat{border-left:1px solid var(--seller-line)}
 .seller-premium-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin:26px 0 16px}
@@ -29,4 +29,4 @@
 #sellerAnalyticsPanel button[aria-pressed="false"]{color:var(--seller-muted)}
 .admin-dark #sellerAnalyticsPanel{--seller-ink:#f4f5f7;--seller-muted:#b9c0ca;--seller-line:#343b46;--seller-soft:#1d2128;--seller-ground:#101216}
 .admin-dark .seller-locked-action button{background:#f4f5f7;color:#152943}
-@media(max-width:650px){.seller-premium-heading{flex-wrap:wrap;gap:8px}.seller-locked-heading{padding:18px 16px 0}.seller-locked-action{padding:22px 16px}.seller-locked-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.seller-locked-preview{min-height:280px}#sellerAnalyticsSummary .seller-stat:nth-child(3){border-left:0}#sellerAnalyticsSummary .seller-stat:nth-child(n+3){border-top:1px solid var(--seller-line)}}
+@media(max-width:650px){.seller-premium-heading{flex-wrap:wrap;gap:8px}.seller-locked-heading{padding:18px 16px 0}.seller-locked-action{padding:22px 16px}.seller-locked-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.seller-locked-preview{min-height:280px}#sellerAnalyticsSummary{grid-template-columns:repeat(2,minmax(0,1fr))}#sellerAnalyticsSummary .seller-stat:nth-child(3){border-left:0}#sellerAnalyticsSummary .seller-stat:nth-child(n+3){border-top:1px solid var(--seller-line)}}

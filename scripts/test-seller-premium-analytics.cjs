@@ -51,6 +51,7 @@ async function run(engine,name,width,height,base){
   await page.keyboard.press('Escape');
  }
  await reload('single');assert.deepEqual(await values(),['12','2','3','4']);assert.equal(await page.locator('#sellerAnalyticsLocked').innerText(),'');
+ assert.equal(await page.locator('#sellerAnalyticsSummary').evaluate(e=>getComputedStyle(e).gridTemplateColumns.split(' ').length),width>650?4:2,'four metrics on desktop, two columns on phones');
  assert.match(await page.locator('#sellerAnalyticsScope').innerText(),/permanente.*scaduta/);
  assert.deepEqual(await page.evaluate(()=>_sellerAnalyticsChart.data.datasets.map(s=>s.data.reduce((a,b)=>a+b,0))),[12,2,8,5]);
  await reload('bundle');assert.deepEqual(await values(),['31','5','6','8']);assert.equal(await page.locator('#sellerAnalyticsTable tbody tr').count(),2);

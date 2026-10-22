@@ -9,7 +9,7 @@ CSV neutralizzate. `PATCH_SELLER_PREMIUM_ANALYTICS_20261022.sql` applicata,
 nessuna modifica a trigger annunci/ordini esistenti. Contratto/test/limiti
 in `data/SELLER_PREMIUM_ANALYTICS.md`; prove in
 `Documents/verifica-vetrina-statistiche-premium-20261022/`. Cache UI18,
-premiumCSS4, sellerCSS1, accountJS4, admin-themeJS/CSS3.
+premiumCSS4, sellerCSS2, accountJS4, admin-themeJS/CSS3.
 
 Vercelli,22/10/2026: ricerca documentale corrente conclusa e verificata online.
 102manifestazioni/42comuni,82esaminati,+90;12ID e6.117schede esterne identici,

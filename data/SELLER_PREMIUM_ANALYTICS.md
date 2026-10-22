@@ -17,4 +17,4 @@ Verifiche: `scripts/verify-seller-premium-analytics.sql` nello stesso transactio
 
 Browser: `scripts/test-seller-premium-analytics.cjs` con Chart.js reale, Chrome1440/320 e Safari390; shell/dialogo, tre ingressi alla Vetrina, gratuiti/singoli/bundle/misti/scaduti, totali, grafico/tabella/CSV, formule/XSS, tema scuro, errori, richieste fuori ordine e logout. `scripts/test-vetrina-conversion.cjs` ora include il footer del sito e verifica la regressione; acquisti, vecchie analisi e198controlli tema passati. `PLAYWRIGHT_MODULE` riusa il driver Python311 locale; `SELLER_PREMIUM_USE_PUBLISHED` ripete la nuova suite con gli asset pubblicati. Nessuna prova di addebito bancario reale. Esiti effettivi, inventari e stato pubblicazione in `Documents/verifica-vetrina-statistiche-premium-20261022/risultati.md`.
 
-Versioni: ui-components18, seller-analyticsCSS1, vetrina-premiumCSS4, vetrina-accountJS4, admin-themeJS/CSS3. Prezzi, Stripe, trigger annunci e schema email conservati.
+Versioni: ui-components18, seller-analyticsCSS2, vetrina-premiumCSS4, vetrina-accountJS4, admin-themeJS/CSS3. Prezzi, Stripe, trigger annunci e schema email conservati.
