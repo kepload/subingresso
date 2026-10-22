@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-21",
+  "checkedAt": "2026-10-22",
   "research": {
     "catalogEventsScreened": 3447,
     "catalogSourceRequests": 1870,
@@ -1783,6 +1783,33 @@
       "details": "Regolamento originale 2025: partecipazione degli espositori gratuita ed esonero dal canone di occupazione. Restano selezione, requisiti, allestimento a carico dell’operatore e altri adempimenti applicabili; non è una gratuità confermata per il 2026.",
       "sourceUrl": "https://www.comune.albissolamarina.sv.it/wp-content/uploads/2025/11/mercato-natale-20-dicembre-2025-Albissola-Marina.pdf",
       "checkedAt": "2026-10-21",
+      "review": "live-source-review"
+    },
+    "liguria-santo-stefano-di-magra-fiera-di-san-felice": {
+      "label": "16 € bollo; canone del banco da verificare",
+      "details": "Il modulo comunale per la domanda di spunta richiede marca da bollo da 16 €. Non è il costo complessivo della partecipazione: canone del posteggio e ulteriori oneri non sono quantificati nel modulo.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.santostefanodimagra.sp.it/halley//ht/eg651/Domanda_partecipazione_Fiera_San_Felice.pdf",
+      "checkedAt": "2026-10-22",
+      "review": "live-source-review"
+    },
+    "liguria-portovenere-fiera-della-madonna-delle-grazie": {
+      "label": "Ambulanti: 16 € bollo; quota OPI non indicata",
+      "details": "Il modulo ambulanti 2026 richiede bollo da 16 €. Canone e quota completa non quantificati; il modulo OPI precisa che l’importo sarà comunicato dopo delibera. Non trasferire il bollo automaticamente agli OPI né intendere il banco gratuito.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.portovenere.sp.it/halley//ht/eg797/TMPI421500.pdf",
+      "checkedAt": "2026-10-22",
+      "review": "live-source-review"
+    },
+    "liguria-la-spezia-la-spezia-fantasy": {
+      "label": "Creativi 3×3: 99 €; commerciale 3×3: 117 €",
+      "details": "Listino2026: creativi/OPI3×3 99€ (acconto49,50),6×3 180€; commerciale3×3 117€,6×3 216€; premium allestito3×3 235€,6×3 452€; food3×3 342€,6×3 630€,9×3 891€; Artist Alley50€. Prezzi dello spazio della fiera, non giornalieri; saldo1settembre2026. Per gli spazi nudi energia/arredi/gazebo sono extra; premium include gazebo e luce base. IVA non precisata. Gratuità no-profit solo nella specifica categoria e previa ammissione.",
+      "kind": "fee",
+      "period": "2026",
+      "sourceUrl": "https://www.laspeziafantasy.it/laspeziafantasy-shop/",
+      "checkedAt": "2026-10-22",
       "review": "live-source-review"
     }
   }
