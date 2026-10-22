@@ -49,3 +49,13 @@
 #premiumFooterSaving{font-weight:700;color:var(--premium-ink);margin-bottom:3px}
 
 #vetrinaLoadingMsg.is-error{color:#a42b2b}.admin-dark #vetrinaLoadingMsg.is-error{color:#f1a4a4}
+/* The former purchase dialog uses the same button ID. Keep its styles scoped out. */
+#vetrinaModal #vetrinaCheckoutButton{background:#152943;color:#fff;box-shadow:none;transform:none;width:auto;min-height:50px;padding:15px 22px;border-radius:9px;font-size:14px;font-weight:800;line-height:1.4}
+#vetrinaModal #vetrinaCheckoutButton:hover:not(:disabled){background:#223952;box-shadow:none}
+#vetrinaModal #vetrinaCheckoutButton:active:not(:disabled){transform:translateY(1px)}
+.admin-dark #vetrinaModal #vetrinaCheckoutButton{background:#f4f5f7;color:#152943;box-shadow:none}
+.admin-dark #vetrinaModal #vetrinaCheckoutButton:hover:not(:disabled){background:#e2e6ec}
+#vetrinaModal button:disabled{cursor:not-allowed}
+#vetrinaModal #vetrinaLoadingMsg{color:var(--premium-muted)}
+#vetrinaModal #vetrinaLoadingMsg.is-error{color:#a42b2b}
+.admin-dark #vetrinaModal #vetrinaLoadingMsg.is-error{color:#f1a4a4}

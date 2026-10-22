@@ -39,6 +39,8 @@ async function run(engine,name,width,height,base){
   await page.goto(base+'/dashboard');await page.locator('#open').click();
   const cta=page.locator('#vetrinaCheckoutButton');await page.waitForFunction(()=>document.querySelectorAll('#premiumListings input').length===12);
   assert.equal(await page.locator('#tier30d').getAttribute('aria-pressed'),'true');
+  assert.equal(await cta.evaluate(el=>getComputedStyle(el).backgroundImage),'none','legacy CSS must not override Premium');
+  assert.equal(await cta.evaluate(el=>getComputedStyle(el).boxShadow),'none');
   assert.match(await page.locator('#premiumTotal').innerText(),/99,00/);assert.equal(await page.evaluate(()=>requests.length),0);
   assert.equal(await page.locator('#premiumListings strong img').count(),0,'user title escaped');
   assert.equal(await page.evaluate(()=>window.xss),undefined);
@@ -67,6 +69,8 @@ async function run(engine,name,width,height,base){
   await page.evaluate(()=>{listError=false;rowCount=0;});await page.getByRole('button',{name:'Riprova',exact:true}).click();await page.getByText('Non hai annunci attivi da promuovere.').waitFor();assert(await cta.isDisabled());
   await page.keyboard.press('Escape');await page.evaluate(()=>{rowCount=12;delay=0;});await page.locator('#open').click();await page.waitForFunction(()=>document.querySelectorAll('#premiumListings input').length===12);
   await page.evaluate(()=>document.documentElement.classList.add('admin-dark'));
+  assert.equal(await cta.evaluate(el=>getComputedStyle(el).backgroundImage),'none');
+  assert.equal(await cta.evaluate(el=>getComputedStyle(el).color),'rgb(21, 41, 67)');
   if(out)await page.screenshot({path:path.join(out,`${name}-${width}-scuro.png`)});
   await cta.click();await page.waitForURL('https://checkout.stripe.com/**');assert.deepEqual(errors,[]);
   console.log(`OK ${name} ${width}: prezzi/bundle, selezione 0–10, limiti, XSS, errori/riprova, doppi clic, sessione, chiusura, redirect, mobile e scuro.`);
