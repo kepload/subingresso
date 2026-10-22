@@ -7,7 +7,11 @@
   server cifrata verificata; test API/concorrenza/riavvio e Chrome/Safari
   passati. Preparate594WebP/18.975.186byte per99originali invariati;
   12richieste da nuove istanze senza scaricare originali, due anteprime
-  identiche alla vecchia produzione. Pubblicazione in corso; stato/prove in
+  identiche alla vecchia produzione. Pubblicato2698da7, Vercel
+  FQhYt3zriBSnLhBKDbGV9s9NiTbZ READY:12risposte online da cache persistente,
+  HEAD/errori e quattro asset identici verificati; home/dettaglio Chrome
+  1280/320 e Safari390 passati, zero originali prima del clic/erroriJS.
+  Inventario99originali ancora identico dopo pubblicazione. Stato/prove in
   `Documents/verifica-anteprime-persistenti-20261022/`, contratto e test in
   `data/IMAGE_PREVIEWS.md`. Backup remoto session-20261022-104343 valido;
   errore cleanup noto. API Vercel401/403 risolta con refresh CLI; prime
