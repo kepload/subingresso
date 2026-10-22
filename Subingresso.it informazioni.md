@@ -12,7 +12,11 @@
   `Documents/verifica-vetrina-statistiche-premium-20261022/risultati.md`,
   contratto `data/SELLER_PREMIUM_ANALYTICS.md`. Backup session-20261022-230957
   e ramo pre-fix-vetrina-statistiche-20261022 remoti validi; cleanup helper
-  con errore noto. Backend attivo; pubblicazione frontend in verifica.
+  con errore noto. Pubblicato bc7e07c, Vercel6snZUmF2aJgp9UuvFXo8sD57YhyE
+  READY:27asset identici; nuova suite ripetuta sugli asset online nei tre
+  browser/formati, Vetrina nei quattro. Dashboard reale con auth isolata
+  e quattro pagine pubbliche nei treformati passate; inspector0FAIL/0WARN.
+  Inventari annunci/profili/ordini e trigger identici. Cache sellerCSS2.
 
 - **Vetrine Premium e pacchetti,22/10:** richiesta corrente: 49/99/249€ per
   10/30/90giorni; 2annunci -10%,3–4 -15%,5–10 -20%, stessa durata e
