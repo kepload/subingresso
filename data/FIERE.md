@@ -5491,7 +5491,7 @@ al checkpoint non esisteva un audit provinciale autonomo concluso. Ricognizione
 di **tutti i 32 comuni**; **164 manifestazioni in 26 comuni**, 87 aggiunte e
 una scheda annullata rimossa. Conservati gli altri 77 ID provinciali e tutte
 le **5.965 schede delle altre province**; catalogo **6.129**.
-Audit e decisioni: `data/fiere-la-spezia.json`, **482 ricevute**, 27 PDF,
+Audit e decisioni: `data/fiere-la-spezia.json`, **485 ricevute**, 27 PDF,
 118 righe fiere regionali, 37 righe mercati e due fiere professionali.
 Originali, estrazioni e prove restano fuori dal repository pubblico in
 `C:/Users/utente/Documents/ricerca-fiere-la-spezia-20261022/`.
@@ -5561,8 +5561,9 @@ DGC54 Sarzana: cinque varianti del collegamento e browser restituiscono 404;
 usati comunicato approvato e calendario estivo alternativo, senza attribuire
 contenuti all’allegato assente. RTF Vezzano: risposta 200 con **Errore5001,
 ComuneInforma non abilitato**, non documento letto. San Michele Vezzano:
-ricerca MICHELE/2026, Polizia Municipale e paginazione dell’albo senza originale
-risolutivo; pista secondaria automatica esclusa. Levanto27220 senza allegati
+ricerca MICHELE/2026 e senza anno, Polizia Municipale, AREA VIGILANZA,
+paginazione e determine senza originale risolutivo; trovata solo una determina
+cimiteriale omonima, pista secondaria automatica esclusa. Levanto27220 senza allegati
 nel browser e API turistica 404; usate altre pagine originali disponibili.
 
 Beverino, Carro, Carrodano, Follo, Framura e Riccò coperti senza schede nuove
@@ -5583,10 +5584,16 @@ Nessuna comunicazione, email o domanda a terzi.
 Backup preventivi remoti: `backup/session-20261022-214545-fiere-la-spezia`
 e `backup/pre-fiere-la-spezia-20261022`. Backup completo SHA256
 `Documents/backup-subingresso/ricerche-fiere-20261022-201254`:
-**64.565 file, 11.204.772.943 byte, zero errori**; prove finali da aggiungere
-nel supplemento al termine. Cache JS105/JSON73. Test provinciale
+**64.565 file, 11.204.772.943 byte, zero errori**; supplemento finale
+verificato SHA256, ricevuta `backup-supplement-result.json` nell’archivio esterno. Cache JS105/JSON73. Test provinciale
 `scripts/test-fiere-la-spezia.cjs`, browser tramite `PLAYWRIGHT_MODULE`.
 Controlli locali passati: elenco/mappa 164 schede, 42 dettagli su ciascuno
 dei tre formati Chromium1440/320 e WebKit390; generale cinque formati,
 settori, 6.129 pagine/2.651 voci sitemap, build identica byte per byte.
-Pubblicazione, verifica online e aggiornamento TO DO ancora da registrare.
+Dati pubblicati **973cb1e**, produzione verificata: **cinque asset identici
+ai blob Git**, tutte le **164 pagine HTTP200/H1/canonical** corretti.
+Chromium1440/320 e WebKit390 online passati, elenco/mappa e42dettagli ciascuno,
+pagine senza JavaScript e nessun overflow/erroriJS. Prove `publish-deploy.json`,
+`online-details.json`, `qa-online.json`, schermate nell’archivio esterno.
+TO DO spuntata soltanto dopo verifica: **52 province completate,58 rimanenti**.
+Ricerca attuale conclusa con i limiti sopra; future verifiche periodiche separate.

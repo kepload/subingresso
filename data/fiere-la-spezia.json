@@ -3,7 +3,7 @@
   "checkedAt": "2026-10-22",
   "research": {
     "status": "documental-review-concluded-with-explicit-limits",
-    "publicationStatus": "pending-publication-verification",
+    "publicationStatus": "published-and-verified",
     "baselineCommit": "e7b51e0aa6a7153d1e275b0317962559bd7a0eac",
     "previousCatalogEvents": 78,
     "events": 164,
@@ -3229,7 +3229,7 @@
         "outcome": "already-included"
       }
     ],
-    "sourceReceiptCount": 482,
+    "sourceReceiptCount": 485,
     "sourceReceipts": [
       {
         "url": "https://mytiliadelerici.com/mercato-dei-sapori/",
@@ -8005,6 +8005,36 @@
         "bytes": 74721,
         "file": "ff63e81738d95e93.html",
         "textFile": "ff63e81738d95e93.txt"
+      },
+      {
+        "url": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/ordinanze/index?anno=2026&unitaOrganizzativa=15&oggetto=MICHELE&ricerca=1",
+        "id": "8eb8c0b86f28d354",
+        "status": 200,
+        "finalUrl": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/ordinanze/index?anno=2026&unitaOrganizzativa=15&oggetto=MICHELE&ricerca=1",
+        "sha256": "700215019868ca5e9e222103c40fd9e85cded0a263df94dd02ad6a3c9c7f30f7",
+        "bytes": 73179,
+        "file": "8eb8c0b86f28d354.html",
+        "textFile": "8eb8c0b86f28d354.txt"
+      },
+      {
+        "url": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/ordinanze/index?oggetto=MICHELE&ricerca=1",
+        "id": "94255c0629598de9",
+        "status": 200,
+        "finalUrl": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/ordinanze/index?oggetto=MICHELE&ricerca=1",
+        "sha256": "9a385b576edc0a0d570c0b86b112719f3d3f84a78079340c378ba5f13d921969",
+        "bytes": 73179,
+        "file": "94255c0629598de9.html",
+        "textFile": "94255c0629598de9.txt"
+      },
+      {
+        "url": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/determine/index?anno=2026&oggetto=MICHELE&ricerca=1",
+        "id": "1aa9a27364aaf0d0",
+        "status": 200,
+        "finalUrl": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/determine/index?anno=2026&oggetto=MICHELE&ricerca=1",
+        "sha256": "bb66b79ae957519b899df350fc079df0bee4cf2b96fbb85561280620edfafd02",
+        "bytes": 143912,
+        "file": "1aa9a27364aaf0d0.html",
+        "textFile": "1aa9a27364aaf0d0.txt"
       }
     ],
     "exclusions": [
@@ -8082,7 +8112,7 @@
       },
       {
         "title": "Vezzano: San Michele27 settembre",
-        "reason": "Pista secondaria automatica non sufficiente. Consultate pagine di ordinanze, paginazione2/3, ricerca esplicita MICHELE/2026 e unità PoliziaMunicipale: nessun elemento estratto nelle ricerche, non un atto letto. Nessuna nuova scheda senza originale commerciale risolutivo.",
+        "reason": "Pista secondaria automatica non sufficiente. Consultate pagine di ordinanze, paginazione2/3, ricerca esplicita MICHELE/2026 e unità PoliziaMunicipale: nessun elemento estratto nelle ricerche, non un atto letto. Nessuna nuova scheda senza originale commerciale risolutivo. Verificati anche AREA VIGILANZA15, ordinanze MICHELE senza anno e determine2026: le prime due ricerche non estraggono atti, la determina trovata riguarda lavori cimiteriali con nome omonimo, non la fiera.",
         "sources": [
           {
             "url": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/ordinanze/index?anno=2026&oggetto=MICHELE&ricerca=1",
@@ -8107,6 +8137,24 @@
             "id": "520fcb3ec1455a1b",
             "status": 200,
             "sha256": "6addd968ea0ebc6eb567a3ca7b89bfd63fa66ab141def982c984c061461d15a6"
+          },
+          {
+            "url": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/ordinanze/index?anno=2026&unitaOrganizzativa=15&oggetto=MICHELE&ricerca=1",
+            "id": "8eb8c0b86f28d354",
+            "status": 200,
+            "sha256": "700215019868ca5e9e222103c40fd9e85cded0a263df94dd02ad6a3c9c7f30f7"
+          },
+          {
+            "url": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/ordinanze/index?oggetto=MICHELE&ricerca=1",
+            "id": "94255c0629598de9",
+            "status": 200,
+            "sha256": "9a385b576edc0a0d570c0b86b112719f3d3f84a78079340c378ba5f13d921969"
+          },
+          {
+            "url": "https://www.halleyweb.com/c011031/zf/index.php/atti-amministrativi/determine/index?anno=2026&oggetto=MICHELE&ricerca=1",
+            "id": "1aa9a27364aaf0d0",
+            "status": 200,
+            "sha256": "bb66b79ae957519b899df350fc079df0bee4cf2b96fbb85561280620edfafd02"
           }
         ]
       },
@@ -8324,7 +8372,155 @@
       "destination": "C:/Users/utente/Documents/backup-subingresso/ricerche-fiere-20261022-201254",
       "verifiedFiles": 64565,
       "bytes": 11204772943,
-      "errors": []
+      "errors": [],
+      "finalSupplementEvidence": "backup-supplement-result.json nell’archivio esterno; copia finale verificata SHA256 prima della registrazione conclusiva."
+    },
+    "publicationVerification": {
+      "checkedAt": "2026-10-22T20:25:43.551591+00:00",
+      "dataCommit": "973cb1e285e659342e17ec19fb88cd6f6c6d2abd",
+      "catalogEvents": 6129,
+      "provincialPages": 164,
+      "allPagesHTTP200H1Canonical": true,
+      "identicalGitBlobAssets": [
+        {
+          "path": "fiere.html",
+          "status": 200,
+          "sha256": "8c2592328a4b4627305e261fc3b5729cabec137381d8487e06809b90bb799021",
+          "expected": "8c2592328a4b4627305e261fc3b5729cabec137381d8487e06809b90bb799021",
+          "matches": true,
+          "vercelId": "fra1::gd7nj-1792700560398-b27b562e4463",
+          "cache": "MISS"
+        },
+        {
+          "path": "js/pages/fiere.js",
+          "status": 200,
+          "sha256": "4d38cbddd60924298f6bca39601b095b7945caa5572746044a0b555b7d8e1b06",
+          "expected": "4d38cbddd60924298f6bca39601b095b7945caa5572746044a0b555b7d8e1b06",
+          "matches": true,
+          "vercelId": "fra1::kkz6h-1792700560404-9209f664512e",
+          "cache": "MISS"
+        },
+        {
+          "path": "data/fiere.json",
+          "status": 200,
+          "sha256": "4702d746b2a7837ed6ec5cc31351f3cf577ac2971b1fb2582a1e1e2627f1ff7b",
+          "expected": "4702d746b2a7837ed6ec5cc31351f3cf577ac2971b1fb2582a1e1e2627f1ff7b",
+          "matches": true,
+          "vercelId": "fra1::z2f2m-1792700560386-c7b7abe10106",
+          "cache": "MISS"
+        },
+        {
+          "path": "data/fiere-costi.json",
+          "status": 200,
+          "sha256": "dfe054ca50ea1c242615058016781b542856f55c5c3781e1185fbce3d3f78571",
+          "expected": "dfe054ca50ea1c242615058016781b542856f55c5c3781e1185fbce3d3f78571",
+          "matches": true,
+          "vercelId": "fra1::swng7-1792700560405-6e6737081da3",
+          "cache": "MISS"
+        },
+        {
+          "path": "data/fiere-la-spezia.json",
+          "status": 200,
+          "sha256": "474dcf8eb5a42b371bb0d0d74bd7ba0c86584ab24aa35bbec90a1ac1373e51d3",
+          "expected": "474dcf8eb5a42b371bb0d0d74bd7ba0c86584ab24aa35bbec90a1ac1373e51d3",
+          "matches": true,
+          "vercelId": "fra1::qg8kw-1792700560409-71db69f8f9fb",
+          "cache": "MISS"
+        }
+      ],
+      "browserChecks": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "events": 164,
+          "dialogs": 42,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "events": 164,
+          "dialogs": 42,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "events": 164,
+          "dialogs": 42,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        }
+      ],
+      "localChecks": {
+        "date": "2026-10-22",
+        "browserModule": "PLAYWRIGHT_MODULE",
+        "provincialBrowsers": [
+          {
+            "engine": "chromium",
+            "width": 1440,
+            "events": 164,
+            "dialogs": 42,
+            "base": "http://127.0.0.1:50213",
+            "status": "passed"
+          },
+          {
+            "engine": "chromium",
+            "width": 320,
+            "events": 164,
+            "dialogs": 42,
+            "base": "http://127.0.0.1:50213",
+            "status": "passed"
+          },
+          {
+            "engine": "webkit",
+            "width": 390,
+            "events": 164,
+            "dialogs": 42,
+            "base": "http://127.0.0.1:50213",
+            "status": "passed"
+          }
+        ],
+        "sectors": {
+          "command": "python scripts/test-fiere-sectors.py",
+          "tests": 2,
+          "status": "passed"
+        },
+        "pages": {
+          "command": "node scripts/test-fiere-pages.cjs",
+          "pages": 6129,
+          "sitemapEntries": 2651,
+          "browsers": [
+            "chromium1440",
+            "chromium320",
+            "webkit390"
+          ],
+          "status": "passed"
+        },
+        "buildRepeatability": "identical-bytes",
+        "otherProvinceEvents": 5965,
+        "otherProvinceEventsUnchanged": true,
+        "general": {
+          "command": "node scripts/test-fiere.cjs",
+          "status": "passed",
+          "formats": [
+            "chromium1440",
+            "chromium820",
+            "chromium390",
+            "webkit390",
+            "chromium320"
+          ]
+        }
+      },
+      "evidenceFiles": [
+        "publish-deploy.json",
+        "online-details.json",
+        "qa-online.json",
+        "local-checks.json"
+      ],
+      "futureMaintenanceSeparate": true
     }
   },
   "events": [

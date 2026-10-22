@@ -2602,3 +2602,18 @@ ricerca-fiere-savona-20261021; backup remoto sessione220637 e ramo pre-fiere-sav
 CopiaSHA256 ricerche-fiere-20261021-203019:62542file/10955471966byte,
 zeroerrori; supplemento finale verificato. CacheJS104/JSON72.
 Ripresa: nessuna ricerca o pubblicazione dati ripetuta; manutenzione futura separata.
+
+
+La Spezia, ricerca provinciale22/10/2026:164manifestazioni/26comuni,
+32esaminati;87aggiunte,1annullata rimossa,77ID e5965schede esterne conservati.
+Audit data/fiere-la-spezia.json/FIERE.md:485ricevute,118righe fiere regionali,
+37mercati,28limiti/14gruppi esclusioni. NataleSarzana solo esplorativo escluso;
+atti404/403,RTFErrore5001 e ricorrenze incerte espliciti, nessun dato inventato.
+Dati973cb1e:5asset produzione identici aGit,164pagine200/H1/canonical;
+Chromium1440/320 eWebKit390 online/locali con PLAYWRIGHT_MODULE passati.
+Generale5formati,settori,6129pagine/2651sitemap ebuild ripetibile passati.
+TO DO52concluse/58da fare dopo verifica. Prove/originali Documents/
+ricerca-fiere-la-spezia-20261022;tag session-20261022-214545 e ramo pre-fiere-la-spezia.
+BackupSHA256 ricerche-fiere-20261022-201254:64565file/11204772943byte,
+zeroerrori e supplemento finale verificato. CacheJS105/JSON73.
+Nessun contatto a terzi; ricerca attuale chiusa con limiti, manutenzione futura separata.

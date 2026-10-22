@@ -36,6 +36,21 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 22 ottobre 2026
 
+- **La Spezia conclusa e verificata online22/10:**164manifestazioni in26comuni,
+  tutti32esaminati;87aggiunte e sola scheda annullata Bonassola rimossa,
+  altri77ID e5965schede esterne conservati, catalogo6129. Audit provinciale
+  eFIERE.md:485ricevute,118righe fiere,37mercati,28limiti/14gruppi esclusioni.
+  Originali comunali, albi/SUAP, organizzatori ePDF; NataleSarzana esplorativo
+  escluso, documenti404/403/RTFErrore5001 espliciti. Nessun contatto a terzi.
+  Dati973cb1e:5asset identici aGit,164pagine200/H1/canonical;Chrome1440/320
+  eSafari390 online/locali con PLAYWRIGHT_MODULE passati. Generale5formati,
+  settori,6129pagine/2651sitemap ebuild ripetibile passati. TO DO52/58.
+  Originali/prove Documents/ricerca-fiere-la-spezia-20261022; backup remoto
+  session-20261022-214545 epre-fiere-la-spezia-20261022. CopiaSHA256
+  ricerche-fiere-20261022-201254:64565file/11204772943byte,zeroerrori;
+  supplemento finale verificato. CacheJS105/JSON73. Manutenzione futura distinta.
+
+
 - **Savona conclusa e verificata online 22/10:** 293 manifestazioni in 42 comuni,
   tutti i 69 esaminati, 72 aggiunte; altre 5750 schede inalterate, catalogo6043.
   Ricerca del21/10 conservata: audit data/fiere-savona.json,552ricevute,
@@ -1616,7 +1631,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 51 province completate, 59 da fare su 110**, aggiornate il 22 ottobre dopo Savona. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 52 province completate, 58 da fare su 110**, aggiornate il 22 ottobre dopo La Spezia. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -1816,7 +1831,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **43. Livorno** — Toscana; ricerca corrente conclusa con limiti espliciti: 63 manifestazioni in 17 comuni, 19 esaminati; pubblicazione e verifica online concluse il 21 ottobre 2026. Audit `data/fiere-livorno.json` e `data/FIERE.md`; verifiche periodiche future distinte.
 - [x] **44. Savona** — Liguria; ricerca attuale conclusa con limiti espliciti: 293 manifestazioni in 42 comuni, tutti i 69 esaminati; pubblicazione e verifica online concluse il 22 ottobre 2026. Audit `data/fiere-savona.json` e `data/FIERE.md`.
   - [ ] Manutenzione periodica Savona: nuovi bandi, quote e disponibilità; discordanza San Matteo Borghetto, ricorrenze Albisola e fonti non accessibili. Distinta dalla ricerca documentale attuale conclusa.
-- [ ] **45. La Spezia** — Liguria
+- [x] **45. La Spezia** — Liguria;164 manifestazioni in26comuni,32esaminati. Ricerca documentale chiusa con limiti espliciti, pubblicazione e catalogo verificati22/10/2026; audit data/fiere-la-spezia.json e data/FIERE.md. Manutenzione futura separata.
 - [ ] **46. Vercelli** — Piemonte
 - [ ] **47. Biella** — Piemonte
 - [ ] **48. Sondrio** — Lombardia
