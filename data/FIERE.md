@@ -2,8 +2,9 @@
 
 ## Vercelli — ricerca documentale del 22 ottobre 2026
 
-Ricerca attuale conclusa con i limiti documentati; pubblicazione e verifica
-online in corso, **TO DO non ancora spuntata**. **102 manifestazioni in 42
+Ricerca attuale conclusa con i limiti documentati, **pubblicata e verificata
+online**. TO DO spuntata dopo esito positivo: **53 province concluse,57
+rimanenti**. **102 manifestazioni in 42
 comuni**, ricognizione di tutti gli **82 comuni**, **90 aggiunte** rispetto
 alle 12 schede del checkpoint `b108a9c`. Conservati tutti i 12 ID e le altre
 **6.117 schede identiche**; catalogo nazionale **6.219**, 6.016 con dati edizione.
@@ -108,8 +109,18 @@ Copia integrale SHA256 `Documents/backup-subingresso/ricerche-fiere-20261022-205
 **66.948 file,11.408.389.246 byte,zero errori**. Localmente passati test
 provinciale Chromium1440/320 e WebKit390 (102 schede elenco/mappa e19dettagli
 per formato), pagine senzaJavaScript, settori, tutte le **6.219 pagine/2.656
-voci sitemap** e build identica byte per byte. Suite generale e verifica
-pubblica saranno registrate dopo l’esito.
+voci sitemap** e build identica byte per byte. Suite generale su cinque formati
+passata. Dati pubblicati **3e0d6e7**; Vercel
+**4X9GH6h5fUTJyaHfWwKY8UGTjmW6 READY**, dominio di produzione verificato:
+**cinque asset identici ai blob Git**, tutte le **102 pagine HTTP200 con H1,
+canonical e note/costi corretti**. Chromium1440/320 e WebKit390 online passati:
+elenco/mappa102,19dettagli per formato e pagine senzaJavaScript. Controllo
+aggiuntivo mobile sulla pagina pubblica reale, senza intercettare richieste:
+102schede, nessun erroreJavaScript o overflow. Prove `publish-deploy.json`,
+`online-details.json`, `qa-online.json`, `public-real-mobile.json` e schermate
+nell’archivio esterno; supplemento finale delle ricerche/prove verificato SHA256
+nella stessa copia di sicurezza. Ricerca corrente conclusa con limiti sopra;
+future verifiche periodiche distinte. Nessuna comunicazione a terzi.
 
 ## Livorno — ricerca documentale del 21 ottobre 2026
 

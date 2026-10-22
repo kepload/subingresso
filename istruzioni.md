@@ -1,5 +1,20 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Vercelli,22/10/2026: ricerca documentale corrente conclusa e verificata online.
+102manifestazioni/42comuni,82esaminati,+90;12ID e6.117schede esterne identici,
+catalogo6.219. Audit data/fiere-vercelli.json/FIERE.md:594ricevute,50PDF,
+18righe regionali,415recordATL,18limiti/15gruppi esclusioni; nove solo2025,
+sei sintesi costo. Gattinara precedente conservata, sole piste aperte integrate.
+Dati3e0d6e7,Vercel4X9GH6h5fUTJyaHfWwKY8UGTjmW6 READY:5asset identici,
+102pagineHTTP200/H1/canonical/contenuti,Chromium1440/320+WebKit390 online
+e locale passati tramite PLAYWRIGHT_MODULE; generale5formati,settori,
+6.219pagine/2.656sitemap e build ripetibile. TO DO53/57 dopo verifica.
+CacheJS106/JSON74; originali/prove Documents/ricerca-fiere-vercelli-20261022.
+Backup tag session-20261022-222801 e ramo pre-fiere-vercelli; copiaSHA256
+ricerche-fiere-20261022-205859:66.948file/11.408.389.246byte,zeroerrori e
+supplemento finale verificato. Nessun contatto a terzi o altra provincia.
+Ricerca attuale chiusa con limiti espliciti; manutenzione futura distinta.
+
 22/10/2026, Vetrine Premium: listino49/99/249€ per10/30/90giorni;
 pacchetti2 -10%,3–4 -15%,5–10 -20%, stessa durata, pagamento unico.
 Nessun omaggio UI o sconto pubblicazione. Checkout congelato, quote per

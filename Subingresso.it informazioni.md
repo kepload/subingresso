@@ -54,6 +54,22 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 
 ## Stato recente e decisioni correnti — 22 ottobre 2026
 
+- **Vercelli conclusa e verificata online22/10:**102 manifestazioni in42comuni,
+  tutti82esaminati,90aggiunte;12ID e6.117schede esterne conservati,
+  catalogo6.219. Audit `data/fiere-vercelli.json` e `data/FIERE.md`:
+  594ricevute/50PDF,18righe regionali,415recordATL,18limiti/15esclusioni;
+  nove edizioni solo2025 e sei sintesi costo, nessuna data inventata.
+  TrinoDicembre5/12,Doccio25/10 e Tronzano8/11 corretti da originali;
+  Ruggine recuperato nel browser, LUVA gratuità soloETS. Pubblicato3e0d6e7,
+  Vercel4X9GH6h5fUTJyaHfWwKY8UGTjmW6 READY:5asset identici,102pagine
+  HTTP200/H1/canonical/contenuti e Chromium1440/320+WebKit390 online passati.
+  Locale: generale5formati,settori,6.219pagine/2.656sitemap e build ripetibile.
+  CacheJS106/JSON74; TO DO53/57 solo dopo verifica. Originali/prove in
+  `Documents/ricerca-fiere-vercelli-20261022`; copiaSHA256
+  `ricerche-fiere-20261022-205859`:66.948file/11.408.389.246byte,zeroerrori,
+  supplemento finale verificato. Nessun contatto a terzi; ricerca corrente
+  chiusa con limiti espliciti, manutenzione futura separata.
+
 - **La Spezia conclusa e verificata online22/10:**164manifestazioni in26comuni,
   tutti32esaminati;87aggiunte e sola scheda annullata Bonassola rimossa,
   altri77ID e5965schede esterne conservati, catalogo6129. Audit provinciale
@@ -832,7 +848,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Avvisi bandi: account obbligatorio.** Su richiesta, blog e pagine bando aprono la registrazione standard; chi ha un account accede. Attivazione dopo autenticazione, email ricavata dal server. Invii e Scout limitati agli indirizzi con account esistente tramite vista privata `registered_bando_alerts`; inserimenti diretti pubblici revocati. DB prima/dopo: 32 iscrizioni conservate, 12 con account e 20 escluse dagli invii finché non si registrano; nessun account creato automaticamente. Patch e quattro funzioni pubblicate; codice `effb12b`/`35da1fd`, cache avvisi2, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Fs4xUe5bYZu4E8fMvwXYg17TCKd9). Sintassi, qualità dati, acquisizione e test dedicati Chromium 1440/320×568 + WebKit390 passati; sei percorsi su HTML online, account/email simulati, nessun invio reale. Endpoint live senza account/chiave pubblica: 401; vista destinatari non pubblica. Modulo scorrevole su telefoni bassi; JS online identico. Prove in `Documents/verifica-avvisi-bandi-20261017.{cjs,json}`; overflow circoscritto a form/modal, testi lunghi preesistenti dell'articolo fuori perimetro. Backup tag/branch remoti validi; cleanup tag con errore PowerShell noto.
 - **Dashboard:** eliminato su richiesta il riquadro superiore “Il tuo annuncio”, con carousel, totali e domanda regionale. Preferenza: non riproporlo; statistiche nel pannello Performance posteggi e gestione nell'elenco annunci.
 - **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Preferenza corrente: grafico sopra i quattro riquadri, etichette e numeri senza sottotitoli; spiegazioni/storico solo nella voce apribile. Messaggi ricevuti distinti dai click telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
-- **Fiere:** 6.043 schede; ricerca approfondita conclusa e verificata online per 51 province, 59 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Fiere:** 6.219 schede; ricerca approfondita conclusa e verificata online per 53 province, 57 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -1078,8 +1094,9 @@ Riferimenti: [Google: JavaScript e indicizzazione](https://developers.google.com
 **13 ottobre — prova ibrida sul solo comune di Gattinara:** tre schede per
 San Martino, Rosa e Rosso di Maggio e LUVA. Codex dirige ricerca, verifica e
 pubblicazione; Qwen individua prove e prepara brevi note. Audit in
-`data/fiere-comuni.json` e `data/FIERE.md`. **Vercelli resta da approfondire**:
-questa prova non completa la provincia. Il catalogo Padova è ora verificato online.
+`data/fiere-comuni.json` e `data/FIERE.md`. Questa prova non completava Vercelli:
+la successiva ricerca provinciale del22ottobre è conclusa e verificata online,
+come registrato sopra; la prova precedente resta conservata. Il catalogo Padova è verificato online.
 
 - [x] **Brescia — ricerca approfondita completata**: 206 manifestazioni in 86 comuni
   pubblicate in [/fiere](https://subingresso.it/fiere?provincia=Brescia). Esaminate 1.031
@@ -1649,7 +1666,7 @@ questa prova non completa la provincia. Il catalogo Padova è ora verificato onl
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 52 province completate, 58 da fare su 110**, aggiornate il 22 ottobre dopo La Spezia. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 53 province completate, 57 da fare su 110**, aggiornate il 22 ottobre dopo Vercelli. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -1850,7 +1867,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **44. Savona** — Liguria; ricerca attuale conclusa con limiti espliciti: 293 manifestazioni in 42 comuni, tutti i 69 esaminati; pubblicazione e verifica online concluse il 22 ottobre 2026. Audit `data/fiere-savona.json` e `data/FIERE.md`.
   - [ ] Manutenzione periodica Savona: nuovi bandi, quote e disponibilità; discordanza San Matteo Borghetto, ricorrenze Albisola e fonti non accessibili. Distinta dalla ricerca documentale attuale conclusa.
 - [x] **45. La Spezia** — Liguria;164 manifestazioni in26comuni,32esaminati. Ricerca documentale chiusa con limiti espliciti, pubblicazione e catalogo verificati22/10/2026; audit data/fiere-la-spezia.json e data/FIERE.md. Manutenzione futura separata.
-- [ ] **46. Vercelli** — Piemonte
+- [x] **46. Vercelli** — Piemonte;102manifestazioni in42comuni,82esaminati. Ricerca documentale corrente conclusa con limiti espliciti, pubblicazione e catalogo verificati22/10/2026; audit `data/fiere-vercelli.json` e `data/FIERE.md`. Manutenzione futura separata.
 - [ ] **47. Biella** — Piemonte
 - [ ] **48. Sondrio** — Lombardia
 - [ ] **49. Belluno** — Veneto
