@@ -10,7 +10,7 @@ const html = fs.readFileSync(source, 'utf8');
 const panel = html.slice(html.indexOf('<div id="sellerAnalyticsPanel"'), html.indexOf('<!-- Onboarding widget'));
 const code = html.slice(html.indexOf('// Seller analytics'), html.indexOf('async function loadMyListings()'));
 const fixture = `<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/css/tailwind.css"><script src="/chart.js"></script>
+<link rel="stylesheet" href="/css/tailwind.css"><link rel="stylesheet" href="/css/seller-analytics.css"><script src="/chart.js"></script>
 <body><main style="max-width:1024px;margin:auto;padding:16px">${panel}</main><script>
 function escapeHTML(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function isListingFeatured(){return false;} function isListingExpired(){return false;}
@@ -22,7 +22,7 @@ const _supabase={rpc:async(name,args)=>{
   const cutoff=new Date(Date.UTC(2026,9,18-days)).toISOString().slice(0,10);
   const daily=[{day:'2026-10-17',views:4,messages:0,call_clicks:1,whatsapp_clicks:2,chat_clicks:3,saves:5},
     {day:'2026-10-07',views:6,messages:2}, {day:'2026-08-17',messages:3}].filter(r=>r.day>=cutoff);
-  const base={photo_count:1,description_length:300,prezzo:1000,views_total:900,msg_total:20,tel_clicks_total:50,saved_total:60};
+  const base={premium_analytics:true,photo_count:1,description_length:300,prezzo:1000,views_total:900,msg_total:20,tel_clicks_total:50,saved_total:60};
   return {data:{days,start_day:cutoff,end_day:'2026-10-17',tracking_since:'2026-10-06',listings:[
     {...base,id:'first',titolo:'Posteggio mercato Brescia',daily},
     {...base,id:'second',titolo:'Posteggio Verona',daily:[{day:'2026-10-17',views:10,messages:1}]},
@@ -38,6 +38,7 @@ async function main() {
     const chart = await chartResponse.text();
     const server = http.createServer((req, res) => {
         if (req.url === '/chart.js') { res.setHeader('Content-Type', 'text/javascript'); return res.end(chart); }
+        if (req.url === '/css/seller-analytics.css') { res.setHeader('Content-Type', 'text/css'); return res.end(fs.readFileSync(path.join(root,'css/seller-analytics.css'))); }
         if (req.url === '/css/tailwind.css') { res.setHeader('Content-Type', 'text/css'); return res.end(fs.readFileSync(path.join(root, 'css/tailwind.css'))); }
         res.setHeader('Content-Type', 'text/html; charset=utf-8'); res.end(fixture);
     });

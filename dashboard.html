@@ -120,10 +120,11 @@
     <link rel="stylesheet" href="css/profile-switch.css?v=5">
     <link rel="stylesheet" href="css/saved-fairs.css?v=3">
     <link rel="stylesheet" href="css/vetrina-conversion.css?v=2">
-    <link rel="stylesheet" href="css/vetrina-premium.css?v=3">
+    <link rel="stylesheet" href="css/vetrina-premium.css?v=4">
+    <link rel="stylesheet" href="css/seller-analytics.css?v=1">
     <link rel="stylesheet" href="css/eventi.css?v=5">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<script src="/js/admin-theme.js?v=2" defer></script>
+<script src="/js/admin-theme.js?v=3" defer></script>
 </head>
 <body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900">
 
@@ -683,25 +684,29 @@
                 </div>
 
                 <p id="sellerAnalyticsPeriod" class="text-xs text-slate-500 font-bold mb-3" aria-live="polite"></p>
-                <div id="sellerAnalyticsChartWrap" class="relative w-full hidden mb-5" style="height:280px">
-                    <canvas id="sellerAnalyticsChart"></canvas>
-                </div>
-
                 <div id="sellerAnalyticsSummary" class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 mb-3" aria-live="polite">
                     <div class="text-center py-8 text-slate-300 col-span-full"><i class="fas fa-spinner fa-spin text-xl"></i></div>
                 </div>
 
+                <div id="sellerPremiumAnalytics" class="hidden">
+                <div class="seller-premium-heading"><div><h4>Analisi Premium</h4><p id="sellerAnalyticsScope"></p></div><button type="button" onclick="exportSellerAnalytics()">Esporta CSV</button></div>
+                <div id="sellerAnalyticsChartWrap" class="relative w-full hidden mb-5" style="height:260px">
+                    <canvas id="sellerAnalyticsChart" role="img" aria-label="Andamento giornaliero degli annunci con statistiche Premium"></canvas>
+                </div>
                 <div id="sellerAnalyticsActions" class="hidden text-xs text-slate-500 font-semibold mb-3" aria-live="polite"></div>
+                <div id="sellerAnalyticsTable" class="seller-analytics-table"></div>
 
                 <details class="text-xs text-slate-500 font-semibold mt-3">
                     <summary class="cursor-pointer font-bold">Come leggere i numeri</summary>
-                    <p class="mt-2">Visualizzazioni: anteprime e aperture, anche ripetute. Messaggi: ricevuti nella chat del sito. Click e aperture chat non confermano invii. Preferiti: nuove aggiunte. Vetrina: attività durante la promozione, dall'8 ottobre 2026.</p>
+                    <p class="mt-2">Stesso periodo e giorni UTC per riepilogo, grafico, tabella ed esportazione. Visualizzazioni: anteprime e aperture, anche ripetute. Messaggi: ricevuti nella chat del sito. Clic e aperture chat non confermano invii o persone uniche. Preferiti: nuove aggiunte. Il riquadro Vetrina misura solo la promozione; le altre analisi continuano anche dopo la scadenza.</p>
                     <p id="sellerAnalyticsHistoryNote" class="hidden mt-2"></p>
                 </details>
 
                 <div id="sellerVetrinaResults" class="mt-5" aria-live="polite"></div>
 
                 <div id="sellerAnalyticsAdvice" class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-3"></div>
+                </div>
+                <div id="sellerAnalyticsLocked" aria-live="polite"></div>
             </div>
         </div>
 
@@ -784,7 +789,7 @@
             </div>
             <div class="v-account-toolbar"><h3>Le tue Vetrine</h3><label>Periodo <select id="vetrinaAccountDays" onchange="VetrinaAccount.setDays(this.value)"><option value="7">Ultimi 7 giorni</option><option value="30" selected>Ultimi 30 giorni</option><option value="90">Ultimi 90 giorni</option></select></label></div>
             <div id="vetrinaAccountCampaigns" aria-live="polite"></div>
-            <p class="v-account-note">Statistiche per annuncio nel periodo selezionato, solo durante la Vetrina. Rilevazione dall’8 ottobre 2026; le tue visite sono escluse. Le azioni possono ripetersi e non indicano persone uniche o vendite concluse. I rinnovi dello stesso annuncio condividono queste statistiche.</p>
+            <p class="v-account-note">Attività durante la promozione nel periodo selezionato. Le analisi Premium complete continuano anche dopo la scadenza nel pannello Performance posteggi. Rilevazione dall’8 ottobre 2026; le tue visite sono escluse. Le azioni possono ripetersi e non indicano persone uniche o vendite concluse. I rinnovi dello stesso annuncio condividono queste statistiche.</p>
             <div class="v-account-toolbar"><div><h3>Storico ordini</h3><p>Ogni acquisto resta consultabile anche se rimuovi l’annuncio.</p></div><button type="button" id="vetrinaExport" class="v-account-secondary" onclick="VetrinaAccount.exportOrders(this)"><i class="fas fa-download" aria-hidden="true"></i> Esporta CSV</button></div>
             <label class="v-account-filter">Stato del pagamento <select id="vetrinaAccountStatus" onchange="VetrinaAccount.setStatus(this.value)"><option value="all">Tutti gli ordini</option><option value="succeeded">Pagati</option><option value="pending">In attesa</option><option value="failed">Non completati</option><option value="refunded">Rimborsati</option></select></label>
             <div id="vetrinaAccountOrders" aria-live="polite"></div><div id="vetrinaAccountPages" class="v-account-pages"></div>
@@ -895,7 +900,7 @@
                 <div id="premiumTotal" class="premium-total">0 €</div><div id="premiumSaving">Nessuno sconto applicato</div>
                 <dl><div><dt>Prezzo senza pacchetto</dt><dd id="premiumSubtotal">0 €</dd></div></dl>
                 <p id="premiumNext">Scegli gli annunci da promuovere insieme.</p>
-                <ul class="premium-includes"><li>Priorità nelle ricerche pertinenti</li><li>Presenza negli spazi promozionali del blog</li><li>Apparizioni, visite e contatti misurati</li><li>Un pagamento, risultati per ogni annuncio</li></ul>
+                <ul class="premium-includes"><li>Priorità nelle ricerche pertinenti</li><li>Presenza negli spazi promozionali del blog</li><li>Statistiche Premium permanenti per ogni annuncio promosso, anche in pacchetto</li><li>Un pagamento, risultati per ogni annuncio</li></ul>
             </aside>
         </div>
         <footer class="premium-footer"><button type="button" id="vetrinaCheckoutButton" onclick="startCheckout()" disabled>Seleziona almeno un annuncio</button><div><p id="premiumFooterSaving"></p><p>Pagamento unico con Stripe.<br>Nessun rinnovo automatico.</p><p id="vetrinaLoadingMsg" role="status" aria-live="polite"></p></div></footer>
@@ -1198,8 +1203,8 @@
 <script src="js/valuation.js?v=8"></script>
 <script src="js/vetrina-pricing.js?v=1"></script>
 <script src="js/vetrina-premium.js?v=2"></script>
-<script src="js/vetrina-account.js?v=3"></script>
-<script src="js/ui-components.js?v=17"></script>
+<script src="js/vetrina-account.js?v=4"></script>
+<script src="js/ui-components.js?v=18"></script>
 <script src="js/auth.js?v=22"></script>
 <script src="js/fiere-access.js?v=2"></script>
 <script type="module" src="js/saved-fairs.js?v=3"></script>
@@ -3269,11 +3274,20 @@ async function loadSellerAnalytics(days) {
     if (!summary) return;
 
     const request = ++_sellerAnalyticsRequest;
+    const owner = typeof _currentUser !== 'undefined' ? _currentUser?.id : null;
+    _sellerAnalyticsState.owner = owner;
+    const valid = () => request === _sellerAnalyticsRequest && owner === (typeof _currentUser !== 'undefined' ? _currentUser?.id : null);
     _sellerAnalyticsLoaded = true;
     const nextDays = days || _sellerAnalyticsState.days || 30;
     _sellerAnalyticsState.days = nextDays;
     _sellerAnalyticsState.loading = true;
     _sellerAnalyticsState.error = false;
+    document.getElementById('sellerPremiumAnalytics')?.classList.add('hidden');
+    const locked = document.getElementById('sellerAnalyticsLocked');
+    if (locked) locked.innerHTML = '';
+    const table = document.getElementById('sellerAnalyticsTable');
+    if (table) table.innerHTML = '';
+    if (_sellerAnalyticsChart) { _sellerAnalyticsChart.destroy(); _sellerAnalyticsChart = null; }
     if (panel) panel.classList.remove('hidden');
     summary.innerHTML = '<div class="text-center py-8 text-slate-300 col-span-full"><i class="fas fa-spinner fa-spin text-xl"></i></div>';
     if (advice) advice.innerHTML = '';
@@ -3288,7 +3302,7 @@ async function loadSellerAnalytics(days) {
 
     try {
         const { data, error } = await _supabase.rpc('dashboard_seller_analytics', { p_days: nextDays });
-        if (request !== _sellerAnalyticsRequest) return;
+        if (!valid()) return;
         if (error) throw error;
         if (!data || data.error) throw new Error(data?.error || 'Statistiche non disponibili');
 
@@ -3298,18 +3312,18 @@ async function loadSellerAnalytics(days) {
         _sellerAnalyticsState.trackingSince = data.tracking_since || '2026-10-06';
         try {
             const vetrina = await _supabase.rpc('dashboard_vetrina_stats', { p_days: nextDays });
-            if (request !== _sellerAnalyticsRequest) return;
+            if (!valid()) return;
             if (vetrina.error || !vetrina.data || vetrina.data.error) throw new Error('Vetrina stats unavailable');
             _sellerVetrinaStats = { listings: vetrina.data.listings || [], error: false };
         } catch (_) {
-            if (request !== _sellerAnalyticsRequest) return;
+            if (!valid()) return;
             _sellerVetrinaStats = { listings: [], error: true };
         }
         _populateSellerAnalyticsSelect();
         _sellerAnalyticsState.loading = false;
         renderSellerAnalytics();
     } catch (e) {
-        if (request !== _sellerAnalyticsRequest) return;
+        if (!valid()) return;
         _sellerAnalyticsState.listings = [];
         _sellerAnalyticsState.loading = false;
         _sellerAnalyticsState.error = true;
@@ -3393,6 +3407,10 @@ function renderSellerAnalytics() {
     const periodLabel = document.getElementById('sellerAnalyticsPeriod');
 
     const listings = _selectedSellerListings();
+    const premium = listings.filter(l => l.premium_analytics === true);
+    const free = listings.filter(l => l.premium_analytics !== true);
+    document.getElementById('sellerPremiumAnalytics')?.classList.toggle('hidden', !premium.length);
+    _renderSellerAnalyticsLocked(free);
     if (!listings.length) {
         if (chartWrap) chartWrap.classList.add('hidden');
         if (historyNote) historyNote.classList.add('hidden');
@@ -3417,7 +3435,7 @@ function renderSellerAnalytics() {
 
     const buckets = _sellerDailyBuckets(_sellerAnalyticsState.days || 30);
     const byDay = new Map(buckets.map(b => [b.key, b]));
-    listings.forEach(l => {
+    premium.forEach(l => {
         (l.daily || []).forEach(r => {
             const key = String(r.day || '').slice(0, 10);
             const b = byDay.get(key);
@@ -3434,12 +3452,27 @@ function renderSellerAnalytics() {
     const sum = key => buckets.reduce((total, b) => total + b[key], 0);
     if (periodLabel) periodLabel.textContent = `${_sellerDate(buckets[0].key)} – ${_sellerDate(buckets[buckets.length - 1].key)}`;
 
+    const basic = (listing, key, dailyKey) => Number(listing[key] ?? (listing.premium_analytics === true
+        ? (listing.daily || []).filter(r => byDay.has(String(r.day).slice(0,10))).reduce((n,r) => n + Number(r[dailyKey] || 0),0) : 0));
+    const basicViews = listings.reduce((n,l) => n + basic(l,'period_views','views'),0);
+    const basicMessages = listings.reduce((n,l) => n + basic(l,'period_messages','messages'),0);
+    summary.classList.toggle('seller-basic-only', !premium.length);
     summary.innerHTML = [
-        _sellerStatCard('Visualizzazioni', _sellerNum(sum('views')), 'fa-eye', 'blue'),
-        _sellerStatCard('Messaggi ricevuti', _sellerNum(sum('messages')), 'fa-comments', 'emerald'),
-        _sellerStatCard('Click telefono', _sellerNum(sum('calls')), 'fa-phone', 'amber'),
-        _sellerStatCard('Click WhatsApp', _sellerNum(sum('whatsapp')), 'fa-comment', 'violet')
+        _sellerStatCard('Visualizzazioni', _sellerNum(basicViews)),
+        _sellerStatCard('Messaggi ricevuti', _sellerNum(basicMessages)),
+        ...(premium.length ? [_sellerStatCard('Click telefono', _sellerNum(sum('calls'))),
+            _sellerStatCard('Click WhatsApp', _sellerNum(sum('whatsapp')))] : [])
     ].join('');
+    if (!premium.length) {
+        if (chartWrap) chartWrap.classList.add('hidden');
+        if (actions) actions.classList.add('hidden');
+        if (advice) advice.innerHTML = '';
+        if (_sellerAnalyticsChart) { _sellerAnalyticsChart.destroy(); _sellerAnalyticsChart = null; }
+        _renderSellerVetrinaResults([]);
+        return;
+    }
+    const scope = document.getElementById('sellerAnalyticsScope');
+    if (scope) scope.textContent = `${premium.length} ${premium.length === 1 ? 'annuncio sbloccato' : 'annunci sbloccati'} · accesso permanente, anche a Vetrina scaduta.${free.length ? ' Clic, grafico e tabella riguardano solo questi annunci; visualizzazioni e messaggi in alto includono tutti gli annunci selezionati.' : ''}`;
     if (actions) {
         actions.textContent = `Chat aperte: ${_sellerNum(sum('chats'))} · Nuovi preferiti: ${_sellerNum(sum('saves'))}`;
         actions.classList.remove('hidden');
@@ -3454,9 +3487,65 @@ function renderSellerAnalytics() {
         historyNote.classList.toggle('hidden', !partial);
     }
     _renderSellerAnalyticsChart(canvas, buckets);
-    if (advice) advice.innerHTML = _buildSellerAdvice(listings);
-    _renderSellerVetrinaResults(listings);
+    if (advice) advice.innerHTML = _buildSellerAdvice(premium);
+    _renderSellerVetrinaResults(premium);
+    _renderSellerAnalyticsTable(premium);
 }
+
+function _renderSellerAnalyticsLocked(listings) {
+    const el = document.getElementById('sellerAnalyticsLocked');
+    if (!el) return;
+    el.innerHTML = '';
+    if (!listings.length) return;
+    const candidate = listings.find(l => l.status === 'active' && !isListingExpired(l));
+    el.innerHTML = `<section class="seller-locked"><div class="seller-locked-heading"><h4>Scopri di più sui tuoi posteggi</h4><p>${listings.length === 1 ? 'Questo annuncio ha le statistiche essenziali.' : `${listings.length} annunci hanno le statistiche essenziali.`} Con una Vetrina a pagamento sblocchi le analisi complete per gli annunci promossi, anche in un pacchetto.</p></div>
+        <div class="seller-locked-preview"><div class="seller-locked-data" aria-hidden="true" inert><div class="seller-locked-metrics">${['Telefono e WhatsApp','Chat e preferiti','Andamento giornaliero','Esportazione CSV'].map(t => `<div><span>${t}</span><strong>— —</strong></div>`).join('')}</div><div class="seller-locked-bars">${[28,45,36,60,48,75,64,84,70,96,80,90].map(h => `<span style="height:${h}%"></span>`).join('')}</div></div>
+        <div class="seller-locked-action"><i class="fas fa-lock" aria-hidden="true"></i><strong>Statistiche Premium</strong><p>Le sblocchi una volta. Restano attive per quell’annuncio anche dopo la Vetrina.</p><button type="button" ${candidate ? `data-premium-listing="${escapeHTML(candidate.id)}" onclick="openVetrinaFromAnalytics(this.dataset.premiumListing)"` : 'onclick="VetrinaPremium.open()"'}>Sblocca con una Vetrina · da 49 €</button></div></div></section>`;
+}
+
+function _sellerAnalyticsRows(listings) {
+    const days = new Set(_sellerDailyBuckets(_sellerAnalyticsState.days).map(b => b.key));
+    return listings.filter(l => l.premium_analytics === true).map(l => {
+        const sum = (key) => (l.daily || []).filter(r => days.has(String(r.day).slice(0,10))).reduce((n,r) => n + Number(r[key] || 0),0);
+        return [l.titolo || 'Annuncio',sum('views'),sum('messages'),sum('call_clicks'),sum('whatsapp_clicks'),sum('chat_clicks'),sum('saves')];
+    });
+}
+
+function _renderSellerAnalyticsTable(listings) {
+    const el = document.getElementById('sellerAnalyticsTable');
+    if (!el) return;
+    const rows = _sellerAnalyticsRows(listings);
+    const labels = ['Annuncio','Visualizzazioni','Messaggi','Telefono','WhatsApp','Chat aperte','Nuovi preferiti'];
+    el.innerHTML = `<table><caption>Risultati per annuncio nel periodo</caption><thead><tr>${labels.map(l => `<th scope="col">${l}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr>${row.map((v,i) => `<${i ? 'td' : 'th scope="row"'}>${i ? _sellerNum(v) : escapeHTML(v)}</${i ? 'td' : 'th'}>`).join('')}</tr>`).join('')}</tbody></table>`;
+}
+
+function exportSellerAnalytics() {
+    if (_sellerAnalyticsState.loading || _sellerAnalyticsState.error) return;
+    const rows = _sellerAnalyticsRows(_selectedSellerListings());
+    if (!rows.length) return;
+    const days = _sellerDailyBuckets(_sellerAnalyticsState.days);
+    const cell = v => '"' + String(v).replace(/^[\s\uFEFF]*([=+@-])/, "'$1").replace(/"/g,'""') + '"';
+    const data = [['Dal (UTC)','Al (UTC)','Annuncio','Visualizzazioni','Messaggi ricevuti','Clic telefono','Clic WhatsApp','Chat aperte','Nuovi preferiti'],
+        ...rows.map(r => [days[0].key,days.at(-1).key,...r])];
+    const url = URL.createObjectURL(new Blob(['\uFEFF' + data.map(r => r.map(cell).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'}));
+    const link = document.createElement('a'); link.href = url; link.download = `statistiche-posteggi-${days.at(-1).key}.csv`;link.click();
+    setTimeout(() => URL.revokeObjectURL(url),1000);
+}
+
+document.addEventListener?.('DOMContentLoaded', () => {
+    _supabase.auth?.onAuthStateChange((_event, session) => {
+        if (!_sellerAnalyticsState.owner || session?.user?.id === _sellerAnalyticsState.owner) return;
+        ++_sellerAnalyticsRequest;
+        _sellerAnalyticsState = { days:30, listings:[], loading:false, error:false };
+        _sellerVetrinaStats = { listings:[], error:false };
+        _sellerAnalyticsLoaded = false;
+        if (_sellerAnalyticsChart) { _sellerAnalyticsChart.destroy(); _sellerAnalyticsChart = null; }
+        ['sellerAnalyticsSummary','sellerAnalyticsLocked','sellerAnalyticsAdvice','sellerVetrinaResults','sellerAnalyticsTable'].forEach(id => {
+            const el = document.getElementById(id); if (el) el.innerHTML = '';
+        });
+        document.getElementById('sellerAnalyticsPanel')?.classList.add('hidden');
+    });
+});
 
 function openVetrinaFromAnalytics(id) {
     const listing = _sellerAnalyticsState.listings.find(l => l.id === id);
@@ -3507,17 +3596,11 @@ function _renderSellerVetrinaResults(listings) {
     }
 }
 
-function _sellerStatCard(label, value, icon, color) {
-    const palette = {
-        blue: 'bg-blue-50 text-blue-600',
-        emerald: 'bg-emerald-50 text-emerald-600',
-        amber: 'bg-amber-50 text-amber-600',
-        violet: 'bg-violet-50 text-violet-600'
-    }[color] || 'bg-slate-50 text-slate-600';
+function _sellerStatCard(label, value) {
     return `
-        <div class="bg-slate-50 rounded-2xl p-3 md:p-4 min-w-0">
+        <div class="seller-stat p-3 md:p-4 min-w-0">
             <div class="text-xs font-black text-slate-500">
-                <span class="${palette} mr-1"><i class="fas ${icon} text-xs"></i></span>${label}
+                ${label}
             </div>
             <div class="text-2xl md:text-3xl font-black text-slate-900 leading-none mt-3 truncate">${value}</div>
         </div>`;
@@ -3525,6 +3608,8 @@ function _sellerStatCard(label, value, icon, color) {
 
 function _renderSellerAnalyticsChart(canvas, buckets) {
     if (typeof Chart === 'undefined') return;
+    const dark = document.documentElement?.classList.contains('admin-dark');
+    const ink = dark ? '#b9c0ca' : '#526074';
     const chartData = {
         labels: buckets.map(b => b.label),
         datasets: [
@@ -3533,16 +3618,16 @@ function _renderSellerAnalyticsChart(canvas, buckets) {
                 data: buckets.map(b => b.key < _sellerAnalyticsState.trackingSince ? null : b.views),
                 borderColor: '#2563eb',
                 backgroundColor: 'rgba(37, 99, 235, .08)',
-                borderWidth: 3,
+                borderWidth: 2,
                 tension: 0,
-                fill: true,
+                fill: false,
                 pointRadius: 0,
                 pointHoverRadius: 4
             },
             {
                 label: 'Messaggi ricevuti',
                 data: buckets.map(b => b.messages),
-                borderColor: '#10b981',
+                borderColor: dark ? '#e0e4ea' : '#152943',
                 backgroundColor: 'rgba(16, 185, 129, .08)',
                 borderWidth: 2,
                 tension: 0,
@@ -3553,7 +3638,8 @@ function _renderSellerAnalyticsChart(canvas, buckets) {
             {
                 label: 'Click contatti',
                 data: buckets.map(b => b.key < _sellerAnalyticsState.trackingSince ? null : b.calls + b.whatsapp + b.chats),
-                borderColor: '#8b5cf6',
+                borderColor: '#8193a8',
+                borderDash: [5, 3],
                 borderWidth: 2,
                 tension: 0,
                 pointRadius: 0,
@@ -3562,7 +3648,8 @@ function _renderSellerAnalyticsChart(canvas, buckets) {
             {
                 label: 'Nuovi preferiti',
                 data: buckets.map(b => b.key < _sellerAnalyticsState.trackingSince ? null : b.saves),
-                borderColor: '#f59e0b',
+                borderColor: dark ? '#b9c0ca' : '#526074',
+                borderDash: [2, 3],
                 backgroundColor: 'rgba(245, 158, 11, .08)',
                 borderWidth: 2,
                 tension: 0,
@@ -3588,7 +3675,7 @@ function _renderSellerAnalyticsChart(canvas, buckets) {
             interaction: { mode: 'index', intersect: false },
             plugins: {
                 legend: {
-                    labels: { usePointStyle: true, boxWidth: 8, font: { size: 11, weight: '700' } }
+                    labels: { color: ink, usePointStyle: true, boxWidth: 8, font: { size: 11, weight: '600' } }
                 },
                 tooltip: {
                     backgroundColor: '#0f172a',
@@ -3598,8 +3685,8 @@ function _renderSellerAnalyticsChart(canvas, buckets) {
                 }
             },
             scales: {
-                x: { grid: { display: false }, ticks: { maxTicksLimit: 8, font: { size: 10, weight: '700' } } },
-                y: { beginAtZero: true, ticks: { precision: 0, font: { size: 10, weight: '700' } }, grid: { color: '#f1f5f9' } }
+                x: { grid: { display: false }, ticks: { color: ink, maxTicksLimit: 8, font: { size: 11, weight: '500' } } },
+                y: { beginAtZero: true, ticks: { color: ink, precision: 0, maxTicksLimit: 5, font: { size: 11, weight: '500' } }, grid: { color: dark ? '#292e36' : '#edf0f4' } }
             }
         }
     });

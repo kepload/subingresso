@@ -46,7 +46,7 @@ const context = vm.createContext({
 vm.runInContext(html.slice(html.indexOf('// Seller analytics'), html.indexOf('async function loadMyListings()')), context);
 const evaluate = code => vm.runInContext(code, context);
 const listing = {
-    id: 'first', titolo: '<img src=x onerror=alert(1)>', views_total: 20,
+    premium_analytics: true, id: 'first', titolo: '<img src=x onerror=alert(1)>', views_total: 20,
     saved_total: 333, tel_clicks_total: 222, msg_total: 111, photo_count: 1,
     description_length: 300, prezzo: 1000,
     daily: [{ day: '2026-10-17', views: 4, call_clicks: 1, whatsapp_clicks: 2, chat_clicks: 3, saves: 5, messages: 7 },
@@ -131,7 +131,7 @@ async function main() {
     assert.match(node('sellerVetrinaResults').innerHTML, /Riprova/);
     assert.doesNotMatch(node('sellerVetrinaResults').innerHTML, /card mostrate/);
     // Il filtro annuncio usa solo il giornaliero di quello selezionato.
-    evaluate("_sellerAnalyticsState.listings.push({id:'second', daily:[{day:'2026-10-17', views:12, messages:1}]});");
+    evaluate("_sellerAnalyticsState.listings.push({id:'second', premium_analytics:true, daily:[{day:'2026-10-17', views:12, messages:1}]});");
     node('sellerAnalyticsListingSelect').value = 'second';
     evaluate('renderSellerAnalytics()');
     assert.deepEqual(values(), ['12', '1', '0', '0']);

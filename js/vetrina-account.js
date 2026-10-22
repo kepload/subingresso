@@ -51,6 +51,7 @@ window.VetrinaAccount = (() => {
                 <div class="v-account-metrics">${[['Apparizioni',c.impressions],['Visite',c.detail_views],['Azioni di contatto',c.contact_actions]].map(([l,v]) => `<div><span>${l}</span><strong>${number(v)}</strong></div>`).join('')}</div>
                 ${(c.daily || []).length ? `<div class="v-account-chart"><canvas id="vetrina-chart-${index}" role="img" aria-label="Andamento giornaliero delle apparizioni, visite e azioni di contatto"></canvas></div>` : '<p>Nessun evento rilevato nel periodo selezionato.</p>'}
                 <div class="v-account-actions">${c.available ? `<a href="/annuncio?id=${encodeURIComponent(c.id)}">Vedi annuncio</a>` : '<span class="v-account-note">Annuncio rimosso: acquisti conservati.</span>'}
+                ${c.available && c.premium_analytics === true ? '<a href="#sellerAnalyticsPanel">Analisi Premium permanenti</a>' : ''}
                 ${c.available && c.status === 'active' ? `<button type="button" data-listing="${esc(c.id)}" onclick="VetrinaAccount.promote(this.dataset.listing)">${c.active ? 'Estendi la Vetrina' : 'Riattiva la Vetrina'}</button>` : ''}</div></article>`;
         }).join('') : empty('Non hai ancora acquistato una Vetrina. Promuovi un annuncio e segui qui i suoi risultati Premium.');
         el('vetrinaAccountOrders').innerHTML = data.orders.length ? data.orders.map(p => {

@@ -70,8 +70,9 @@ const UI = {
 };
 
 function initUI() {
-    const headerEl = document.querySelector('header');
-    const footerEl = document.querySelector('footer');
+    // Only the page shell: dialogs and articles may have their own header/footer.
+    const headerEl = document.querySelector('body > header');
+    const footerEl = document.querySelector('body > footer');
 
     if (headerEl) {
         headerEl.className = "site-header bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 relative";

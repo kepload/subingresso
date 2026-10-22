@@ -231,7 +231,7 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
     details summary i.fa-chevron-down { transition: transform .2s; }
   </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<script src="/js/admin-theme.js?v=2" defer></script>
+<script src="/js/admin-theme.js?v=3" defer></script>
 </head>
 <body>
 
@@ -309,7 +309,7 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
 
   <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
   <script src="/js/page-view-tracker.js?v=4"></script>
-  <script src="/js/ui-components.js?v=17"></script>
+  <script src="/js/ui-components.js?v=18"></script>
 
 </body>
 </html>`;
@@ -456,7 +456,7 @@ module.exports = async function handler(req, res) {
 <html lang="it"><head><meta charset="UTF-8"><title>Nessun annuncio a ${esc(cityName)} — Subingresso.it</title>
 <meta name="robots" content="noindex"><link rel="canonical" href="${SITE}/annunci">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<script src="/js/admin-theme.js?v=2" defer></script>
+<script src="/js/admin-theme.js?v=3" defer></script>
 </head><body><h1>Nessun annuncio disponibile a ${esc(cityName)}</h1>
 <p><a href="/annunci">Cerca in tutta Italia →</a></p></body></html>`);
         return;
@@ -637,7 +637,7 @@ module.exports = async function handler(req, res) {
     @keyframes pulseDot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
   </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<script src="/js/admin-theme.js?v=2" defer></script>
+<script src="/js/admin-theme.js?v=3" defer></script>
 </head>
 <body>
 
@@ -735,7 +735,7 @@ module.exports = async function handler(req, res) {
 
   <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
   <script src="/js/page-view-tracker.js?v=4"></script>
-  <script src="/js/ui-components.js?v=17"></script>
+  <script src="/js/ui-components.js?v=18"></script>
 
 </body>
 </html>`;

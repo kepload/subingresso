@@ -1,5 +1,19 @@
 # Subingresso.it — informazioni e TO DO
 
+- **Vetrina/statistiche22/10:** riparato footer condiviso che sovrascriveva
+  la finestra Premium; “Vetrina/Promuovi” verificati insieme alla shell reale.
+  Gratuiti: visualizzazioni/messaggi e anteprima Premium sfocata. Analisi
+  permanenti per ciascun annuncio acquistato, singolo/bundle, anche dopo
+  scadenza; test/omaggi/falliti esclusi. Gate server/RLS, UTC, tabella eCSV,
+  isolamento account/risposte tardive. Migrazione applicata e testata due
+  volte in ROLLBACK; tutti i profili/periodi verificati. Browser Chrome/Safari
+  desktop/mobile, acquisti e198controlli tema passati. Trigger/dati esistenti
+  conservati; nessun addebito reale. Prove e pubblicazione in
+  `Documents/verifica-vetrina-statistiche-premium-20261022/risultati.md`,
+  contratto `data/SELLER_PREMIUM_ANALYTICS.md`. Backup session-20261022-230957
+  e ramo pre-fix-vetrina-statistiche-20261022 remoti validi; cleanup helper
+  con errore noto. Backend attivo; pubblicazione frontend in verifica.
+
 - **Vetrine Premium e pacchetti,22/10:** richiesta corrente: 49/99/249€ per
   10/30/90giorni; 2annunci -10%,3–4 -15%,5–10 -20%, stessa durata e
   pagamento unico. Scelta multipla integrata in annunci/acquisti, totale e

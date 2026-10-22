@@ -806,6 +806,14 @@ html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-dialog .sf-di
 html.admin-dark:where(:has(link[href*="css/saved-fairs.css"])) .sf-disable:focus-visible {outline:3px solid var(--ad-link)
 }
 
+/* css/seller-analytics.css */
+html.admin-dark:where(:has(link[href*="css/seller-analytics.css"])) .seller-locked-bars span {background:var(--ad-info)
+}
+html.admin-dark:where(:has(link[href*="css/seller-analytics.css"])) #sellerAnalyticsPanel :is(button,select):focus-visible {outline:3px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/seller-analytics.css"])) .admin-dark .seller-locked-action button {background:var(--ad-panel);color:var(--ad-ink)
+}
+
 /* css/vetrina-account.css */
 html.admin-dark:where(:has(link[href*="css/vetrina-account.css"])) .v-account-summary > div { background:var(--ad-panel); border:1px solid var(--ad-line)
 }
@@ -924,6 +932,38 @@ html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) #vetrinaLo
 html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) #vetrinaModal button:focus-visible, html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) #vetrinaModal summary:focus-visible { outline: 3px solid var(--ad-link)
 }
 html.admin-dark:where(:has(link[href*="css/vetrina-conversion.css"])) .v-payment-return { border: 1px solid var(--ad-link); background: var(--ad-warning-bg); color: var(--ad-danger)
+}
+
+/* css/vetrina-premium.css */
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .premium-duration[aria-pressed=true] {border-color:var(--ad-link);background:var(--ad-warning-bg)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .premium-listing:has(input:checked) {border-color:var(--ad-line)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .premium-listing input {accent-color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) #premiumSaving.has-saving {color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .premium-dialog :is(button,input,a,summary):focus-visible {outline:3px solid var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .premium-bundle-order {background:var(--ad-panel);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .admin-dark .premium-duration[aria-pressed=true] {border-color:var(--ad-link)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .admin-dark #premiumSaving.has-saving {color:var(--ad-success)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .admin-dark .premium-footer>button {background:var(--ad-panel);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) #vetrinaLoadingMsg.is-error {color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .admin-dark #vetrinaLoadingMsg.is-error {color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .admin-dark #vetrinaModal #vetrinaCheckoutButton {background:var(--ad-panel);color:var(--ad-ink)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .admin-dark #vetrinaModal #vetrinaCheckoutButton:hover:not(:disabled) {background:var(--ad-field)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) #vetrinaModal #vetrinaLoadingMsg.is-error {color:var(--ad-danger)
+}
+html.admin-dark:where(:has(link[href*="css/vetrina-premium.css"])) .admin-dark #vetrinaModal #vetrinaLoadingMsg.is-error {color:var(--ad-danger)
 }
 
 /* annunci.html */

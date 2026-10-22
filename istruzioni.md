@@ -1,5 +1,16 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Vetrina/statistiche22/10: corretto initUI che sostituiva il footer del dialogo
+Premium con quello del sito; shell limitata ai figli diretti del body.
+Gratuiti: due metriche nel periodo e anteprima sfocata; Premium permanenti
+per ogni annuncio acquistato, anche in bundle/dopo scadenza. Gate server/RLS,
+totali UTC condivisi da grafico/tabella/CSV, account misti isolati, formule
+CSV neutralizzate. `PATCH_SELLER_PREMIUM_ANALYTICS_20261022.sql` applicata,
+nessuna modifica a trigger annunci/ordini esistenti. Contratto/test/limiti
+in `data/SELLER_PREMIUM_ANALYTICS.md`; prove in
+`Documents/verifica-vetrina-statistiche-premium-20261022/`. Cache UI18,
+premiumCSS4, sellerCSS1, accountJS4, admin-themeJS/CSS3.
+
 Vercelli,22/10/2026: ricerca documentale corrente conclusa e verificata online.
 102manifestazioni/42comuni,82esaminati,+90;12ID e6.117schede esterne identici,
 catalogo6.219. Audit data/fiere-vercelli.json/FIERE.md:594ricevute,50PDF,

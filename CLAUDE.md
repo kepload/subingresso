@@ -1,5 +1,14 @@
 # Regole Claude — Subingresso.it
 
+Vetrina/statistiche22/10: shell UI solo `body > header/footer`, mai quelli
+dei dialoghi; ui-components18. Annunci gratuiti: visualizzazioni e messaggi
+nel periodo, anteprima Premium sfocata senza dati reali nascosti. Analisi
+complete permanenti per ogni annuncio con pagamento live riuscito,
+anche in bundle e dopo scadenza/rimborso; mai test, omaggi o soli featured.
+Gate server/RLS, grafico/tabella/CSV solo annunci sbloccati; dettagli in
+`data/SELLER_PREMIUM_ANALYTICS.md`. Cache sellerCSS1, premiumCSS4,
+accountJS4, admin-themeJS/CSS3. Trigger annunci e dati storici invariati.
+
 Vetrine Premium22/10: 49/99/249 euro per10/30/90giorni; pacchetti
 2annunci -10%,3–4 -15%,5–10 -20%, stessa durata e pagamento unico.
 Listino condiviso js/vetrina-pricing.js; contratto/migrazione/verifiche in
