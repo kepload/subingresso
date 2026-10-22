@@ -1,5 +1,13 @@
 # Regole Claude — Subingresso.it
 
+Vetrine Premium22/10: 49/99/249 euro per10/30/90giorni; pacchetti
+2annunci -10%,3–4 -15%,5–10 -20%, stessa durata e pagamento unico.
+Listino condiviso js/vetrina-pricing.js; contratto/migrazione/verifiche in
+`data/VETRINE_PREMIUM.md`. Nessuno sconto pubblicazione o omaggio UI;
+blog solo Vetrine pagate, catalogo gratuito conservato. Trigger annunci
+invariati; ordini precedenti e sessioni aperte rispettati. Nuovi asset
+pricing1/premiumJS1-CSS1/account3. Non ripristinare i vecchi prezzi.
+
 Anteprime22/10: `api/image.js`/`lib/image-preview-cache.cjs` riusano WebP nel
 bucket `image-previews` anche dopo i deploy; un originale per sei dimensioni.
 Secret solo in environment cifrato Vercel, originali mai modificati.

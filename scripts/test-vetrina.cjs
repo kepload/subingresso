@@ -12,13 +12,14 @@ const secret = 'webhook-test-secret';
 
 function load(name, client, fetcher) {
     const source = fs.readFileSync(path.join(root, 'supabase/functions', name, 'index.ts'), 'utf8')
-        .replace(/^import \{ createClient \} from [^\n]+\n/m, '');
+        .replace(/^import[^\n]+\n/gm, '');
     let handler;
     const context = vm.createContext({
         Deno: { env: { get: () => secret }, serve: fn => { handler = fn; } },
         createClient: () => client, fetch: fetcher, Request, Response, URLSearchParams,
-        TextEncoder, crypto: webcrypto, console: { log() {}, error() {} }
+        TextEncoder, AbortSignal, crypto: webcrypto, console: { log() {}, error() {} }
     });
+    new vm.Script(fs.readFileSync(path.join(root,'js/vetrina-pricing.js'),'utf8')).runInContext(context);
     new vm.Script(stripTypeScriptTypes(source), {filename:name}).runInContext(context);
     return handler;
 }
@@ -28,60 +29,43 @@ async function main() {
             if (!/\bsrc\s*=|application\/ld\+json/i.test(attrs)) new vm.Script(code, {filename:file});
         }
     }
-    let listing = { id, user_id: owner, status: 'active', titolo: 'Test', created_at: new Date().toISOString(),
-        expires_at: new Date(Date.now() + 200 * 86400000).toISOString(), featured_since: null };
-    let charge;
-    let logged;
-    let orderError = false, expired = false;
+    const Pricing = require('../js/vetrina-pricing.js');
+    const ids = Array.from({length:11},(_,i)=>`22222222-2222-2222-2222-${String(i+1).padStart(12,'0')}`);
+    let listings = [], charge, logged, orderError=false,expired=false;
     const client = {
-        auth: {getUser: async token => ({data: token === 'valid' ? {user:{id:owner,email:'test@example.invalid'}} : null, error:null})},
-        from: table => {
-            const query = { select() {return this;}, eq() {return this;}, single: async () => ({data:listing}),
-                upsert: async (row, options) => {logged = {row, options}; return {error:orderError ? {message:'offline'} : null};} };
-            assert(['annunci','payments'].includes(table));
-            return query;
-        }
+        auth:{getUser:async token=>({data:token==='valid'?{user:{id:owner,email:'test@example.invalid'}}:null,error:null})},
+        from:table=>{assert.equal(table,'annunci');return{select(){return this;},in:async()=>({data:listings,error:null})};},
+        rpc:async(name,args)=>{assert.equal(name,'register_vetrina_checkout');logged=args;return{error:orderError?{message:'offline'}:null};}
     };
-    const checkout = load('create-checkout-session', client, async (url, options) => {
-        if (url.endsWith('/expire')) { expired = true; return Response.json({}); }
-        assert.equal(url, 'https://api.stripe.com/v1/checkout/sessions');
-        charge = new URLSearchParams(options.body);
+    const checkout = load('create-checkout-session',client,async(url,options)=>{
+        if(url.endsWith('/expire')){expired=true;return Response.json({});}
+        assert.equal(url,'https://api.stripe.com/v1/checkout/sessions');charge=new URLSearchParams(options.body);
         return Response.json({id:'cs_test_checkout',url:'https://checkout.stripe.com/test'});
     });
-    const request = body => new Request('https://example.invalid/checkout', {method:'POST',
-        headers:{Authorization:'Bearer valid','Content-Type':'application/json'},body:JSON.stringify(body)});
-    for (const [tier, normal, discounted] of [['10d',2490,2241],['30d',4990,4491],['90d',9990,8991]]) {
-        for (const creation of [false,true]) {
-            listing.status = creation ? 'pending' : 'active';
-            const res = await checkout(request({annuncio_id:id,tier,source:creation?'vendi_creation':'dashboard',amount:1,
-                expected_amount_cents:creation?discounted:normal}));
-            assert.equal(res.status,200);
-            assert.equal(Number(charge.get('line_items[0][price_data][unit_amount]')),creation?discounted:normal);
-            assert.equal(logged.row.amount_cents,creation?discounted:normal);
-            assert.equal(logged.options.ignoreDuplicates,true);
-            const display = (creation?discounted:normal)/100;
-            const file = fs.readFileSync(path.join(root,creation?'vendi.html':'dashboard.html'),'utf8');
-            assert(file.includes(display.toFixed(2).replace('.',',')));
-        }
+    const request=body=>new Request('https://example.invalid/checkout',{method:'POST',headers:{Authorization:'Bearer valid','Content-Type':'application/json'},body:JSON.stringify(body)});
+    const setListings=n=>{listings=ids.slice(0,n).map(id=>({id,user_id:owner,status:'active',titolo:'Mercato di Brescia',expires_at:new Date(Date.now()+86400000).toISOString()}));};
+    for(const [tier,base] of [['10d',4900],['30d',9900],['90d',24900]]) for(let n=1;n<=10;n++){
+        setListings(n);const discount=n>=5?20:n>=3?15:n===2?10:0,unit=base*(100-discount)/100;
+        assert.deepEqual(JSON.parse(JSON.stringify(Pricing.quote(tier,n))),{tier,days:{'10d':10,'30d':30,'90d':90}[tier],count:n,discount,unit,total:unit*n,listTotal:base*n,savings:(base-unit)*n});
+        const response=await checkout(request({annuncio_ids:ids.slice(0,n),tier,expected_amount_cents:unit*n,amount:1,discount:99}));
+        assert.equal(response.status,200);assert.equal(logged.p_expected_amount,unit*n);assert.equal(logged.p_listing_ids.length,n);
+        let sum=0;for(let i=0;i<n;i++){assert.equal(Number(charge.get(`line_items[${i}][price_data][unit_amount]`)),unit);sum+=unit;}
+        assert.equal(sum,unit*n);assert.equal(charge.has('allow_promotion_codes'),false);assert.equal(charge.get('metadata[checkout_version]'),'premium_v1');
     }
-    // Sorgente manipolata non basta per ottenere lo sconto su un annuncio vecchio.
-    listing.status = 'active'; listing.created_at = new Date(Date.now()-86400000).toISOString();
-    assert.equal((await checkout(request({annuncio_id:id,tier:'30d',source:'vendi_creation',expected_amount_cents:4990}))).status,200);
-    assert.equal(charge.get('line_items[0][price_data][unit_amount]'),'4990');
-    assert.equal((await checkout(request({annuncio_id:id,tier:'30d',expected_amount_cents:3990}))).status,409);
-    assert.equal((await checkout(request({annuncio_id:id,tier:'30d'}))).status,409);
-    listing.status = 'pending';
-    assert.equal((await checkout(request({annuncio_id:id,tier:'30d'}))).status,400);
-    listing.status = 'active'; listing.user_id = 'someone-else';
-    assert.equal((await checkout(request({annuncio_id:id,tier:'30d'}))).status,403);
-    listing.user_id = owner; listing.expires_at = new Date(Date.now()-86400000).toISOString();
-    assert.equal((await checkout(request({annuncio_id:id,tier:'30d'}))).status,400);
-    assert.equal((await checkout(request({annuncio_id:id,tier:'999d'}))).status,400);
-
-    listing.status = 'active'; listing.expires_at = new Date(Date.now()+86400000).toISOString();
-    orderError = true;
-    assert.equal((await checkout(request({annuncio_id:id,tier:'30d',expected_amount_cents:4990}))).status,503);
-    assert.equal(expired,true,'Unregistered checkout must be expired');
+    setListings(1);listings[0].status='pending';
+    assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d',source:'vendi_creation',expected_amount_cents:9900}))).status,200);
+    assert.equal(charge.get('line_items[0][price_data][unit_amount]'),'9900','no creation discount');
+    assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d',expected_amount_cents:9900}))).status,400);
+    setListings(2);listings[1].status='pending';
+    assert.equal((await checkout(request({annuncio_ids:ids.slice(0,2),tier:'30d',source:'vendi_creation',expected_amount_cents:17820}))).status,400);
+    setListings(1);listings[0].user_id='other';assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d',expected_amount_cents:9900}))).status,403);
+    setListings(1);listings[0].expires_at=new Date(0).toISOString();assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d',expected_amount_cents:9900}))).status,400);
+    setListings(1);
+    for(const bad of [{annuncio_ids:[ids[0],ids[0]],tier:'30d'},{annuncio_ids:ids,tier:'30d'},{annuncio_ids:['bad'],tier:'30d'},{annuncio_ids:ids.slice(0,1),tier:'__proto__'},{annuncio_ids:'bad',tier:'30d'}]) assert.equal((await checkout(request(bad))).status,400);
+    assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d',expected_amount_cents:4990}))).status,409);
+    assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d'}))).status,409);
+    orderError=true;assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d',expected_amount_cents:9900}))).status,409);assert(expired);
+    assert.equal((await checkout(new Request('https://example.invalid',{method:'POST',body:'{}'}))).status,401);
 
     let calls = [];
     let dbError = false;
@@ -89,10 +73,10 @@ async function main() {
         rpc: async (name,args) => {calls.push({name,args});return dbError?{error:{message:'db unavailable'}}:{data:{waiting_approval:true}};},
         from: () => ({update: () => {const q={eq: () => q,then: resolve => Promise.resolve({error:null}).then(resolve)};return q;}})
     });
-    async function event(type, paid=true, valid=true) {
+    async function event(type, paid=true, valid=true, premium=false) {
         const body = JSON.stringify({id:'evt_test',type,data:{object:{id:'cs_test_signed',payment_status:paid?'paid':'unpaid',
             amount_total:2241,amount_refunded:1000,currency:'eur',payment_intent:'pi_test',
-            metadata:{annuncio_id:id,user_id:owner,tier:'10d'}}}});
+            metadata:{annuncio_id:id,user_id:owner,tier:'10d',checkout_version:premium?'premium_v1':undefined}}}});
         const t = Math.floor(Date.now()/1000);
         const key = await webcrypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
         const signature = Buffer.from(await webcrypto.subtle.sign('HMAC',key,new TextEncoder().encode(`${t}.${body}`))).toString('hex');
@@ -109,8 +93,10 @@ async function main() {
     assert.equal((await event('charge.refunded')).status,200);
     assert.equal(calls.at(-1).name,'record_vetrina_refund');
     assert.equal(calls.at(-1).args.p_refunded_cents,1000);
+    assert.equal((await event('checkout.session.completed',true,true,true)).status,200);
+    assert.equal(calls.at(-1).name,'apply_vetrina_checkout');
     dbError = true;
     assert.equal((await event('checkout.session.completed')).status,500);
-    console.log('OK: script HTML, sei prezzi/sconti, gate sconto, proprietario, scadenza, firma Stripe, pagamento incompleto e retry DB.');
+    console.log('OK: HTML, 30 combinazioni prezzo/bundle, nessuno sconto automatico, autorizzazioni, prezzi vecchi, checkout non registrato, firma e flusso Stripe precedente.');
 }
 main().catch(error => {console.error(error);process.exitCode=1;});

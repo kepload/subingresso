@@ -1,5 +1,20 @@
 # Subingresso.it — informazioni e TO DO
 
+- **Vetrine Premium e pacchetti,22/10:** richiesta corrente: 49/99/249€ per
+  10/30/90giorni; 2annunci -10%,3–4 -15%,5–10 -20%, stessa durata e
+  pagamento unico. Scelta multipla integrata in annunci/acquisti, totale e
+  risparmio immediati; ordini, ricevute e CSV distinguono le quote. Rimossi
+  sconto pubblicazione e omaggi UI; blog solo Vetrine pagate pertinenti,
+  catalogo gratuito conservato. Trigger annunci e vecchi acquisti invariati.
+  Backend applicato e verificato: checkout16/webhook14; nessun addebito o
+  dato di prova persistente. Inventari annunci/profili/ordini e trigger
+  identici prima/dopo. Test prezzi/SQL/Chrome-Safari/form/acquisti/blog
+  passati, inspector0FAIL. Frontend in pubblicazione; esiti e limiti in
+  `Documents/vetrine-premium-bundle-20261022/risultati.md`, contratto in
+  `data/VETRINE_PREMIUM.md`. Backup remoto session-20261022-220338 e ramo
+  pre-vetrine-premium-bundle validi; cleanup helper con errore già noto.
+
+
 - **Banda Supabase,22/10:** avviso cached egress, grazia fino21/11/2026.
   Autorizzata correzione: anteprime WebP persistenti `image-previews`, un
   originale per sei dimensioni; riuso dopo deploy e richieste simultanee.

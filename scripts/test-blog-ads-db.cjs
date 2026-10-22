@@ -6,9 +6,10 @@ const root = path.resolve(__dirname, '..');
 const patch = fs.readFileSync(path.join(root, 'PATCH_BLOG_LISTING_ADS_20261018.sql'), 'utf8');
 const helperStart = patch.indexOf('CREATE OR REPLACE FUNCTION data_quality.blog_ads_text');
 const helper = patch.slice(helperStart, patch.indexOf('$$;', helperStart) + 3);
-const functionStart = patch.indexOf('CREATE OR REPLACE FUNCTION public.blog_listing_ads');
-const production = patch.slice(functionStart, patch.indexOf('END $$;', functionStart) + 7);
-assert(helper.includes('IMMUTABLE') && production.endsWith('END $$;'));
+const premium = fs.readFileSync(path.join(root,'PATCH_VETRINE_PREMIUM_20261022.sql'),'utf8');
+const functionStart = premium.indexOf('CREATE OR REPLACE FUNCTION public.blog_listing_ads');
+const production = premium.slice(functionStart,premium.indexOf('COMMENT ON FUNCTION public.blog_listing_ads',functionStart)).trim();
+assert(helper.includes('IMMUTABLE') && production.includes('a.featured IS TRUE'));
 const fixtureFunction = production.replace('FUNCTION public.blog_listing_ads', 'FUNCTION pg_temp.blog_listing_ads')
     .replaceAll('public.blog_posts', 'pg_temp.blog_ads_posts').replaceAll('public.annunci', 'pg_temp.blog_ads_listings')
     .replaceAll('data_quality.locations', 'pg_temp.blog_ads_locations');
@@ -21,7 +22,7 @@ CREATE TEMP TABLE blog_ads_listings(id text,user_id text DEFAULT 'owner',titolo 
  stato text DEFAULT 'Vendita',prezzo numeric DEFAULT 10000,contatto text DEFAULT 'Telefono',
  img_urls text[] DEFAULT '{}',dettagli_extra jsonb DEFAULT '{"images":["https://example.invalid/photo.jpg"],"tel":"private","email":"private"}',
  expires_at timestamptz DEFAULT now()+interval '1 year',featured boolean DEFAULT false,
- featured_until timestamptz,settore text DEFAULT 'Abbigliamento e accessori',is_demo boolean DEFAULT false,
+ featured_until timestamptz,featured_tier text DEFAULT '30d',settore text DEFAULT 'Abbigliamento e accessori',is_demo boolean DEFAULT false,
  created_at timestamptz DEFAULT now());
 INSERT INTO blog_ads_locations VALUES ('Gattinara','Piemonte'),('Roma','Lazio'),('Firenze','Toscana'),
  ('Licenza','Lazio'),('San Martino','Lombardia'),('San Martino','Veneto'),('Noto','Sicilia');
@@ -54,6 +55,7 @@ INSERT INTO blog_ads_listings(id,featured,featured_until,status,expires_at,is_de
  ('rejected',true,now()+interval '1 year','rejected',now()+interval '1 year',false),
  ('demo',true,now()+interval '1 year','active',now()+interval '1 year',true),
  ('ended',true,now()-interval '1 day','active',NULL,false);
+INSERT INTO blog_ads_listings(id,featured,featured_until,featured_tier) VALUES ('admin-free',true,now()+interval '1 year','admin_free');
 ${fixtureFunction}
 DO $$ DECLARE r jsonb; item jsonb; counts jsonb:='{}'; k text; n integer; BEGIN
  r:=pg_temp.blog_listing_ads('generico');
@@ -78,7 +80,7 @@ DO $$ DECLARE r jsonb; item jsonb; counts jsonb:='{}'; k text; n integer; BEGIN
  r:=pg_temp.blog_listing_ads('licenza');
  IF r->'regions'<>'[]'::jsonb THEN RAISE EXCEPTION 'False positive: Licenza municipality'; END IF;
  r:=pg_temp.blog_listing_ads('sardegna');
- IF jsonb_array_length(r->'listings')<>2 OR EXISTS(SELECT 1 FROM jsonb_array_elements(r->'listings') x WHERE x->>'regione'<>'Sardegna' OR (x->>'featured')::boolean) THEN RAISE EXCEPTION 'Local free beats unrelated paid'; END IF;
+ IF jsonb_array_length(r->'listings')<>0 THEN RAISE EXCEPTION 'Free or unrelated ads in Sardinia'; END IF;
  r:=pg_temp.blog_listing_ads('alimentare');
  IF EXISTS(SELECT 1 FROM jsonb_array_elements(r->'listings') x WHERE (substring(x->>'id' FROM 10)::integer)%10<>0) THEN RAISE EXCEPTION 'Food relevance'; END IF;
  r:=pg_temp.blog_listing_ads('non-alimentare');
@@ -102,16 +104,16 @@ DO $$ DECLARE r jsonb; item jsonb; counts jsonb:='{}'; k text; n integer; BEGIN
  END LOOP;
  IF (SELECT count(*) FROM jsonb_each(counts))<>60 OR (SELECT min(value::integer) FROM jsonb_each_text(counts))<5
  OR (SELECT max(value::integer) FROM jsonb_each_text(counts))>100 THEN RAISE EXCEPTION 'Rotation coverage/bias: %',counts; END IF;
- -- Testa il riempimento: una Vetrina locale, poi gratuiti locali; zero Vetrine -> tutti gratuiti.
+ -- Uno spazio pagato: un solo annuncio. Zero Vetrine: zero pubblicità.
  UPDATE blog_ads_listings SET featured=false WHERE id NOT IN ('featured-0','ended');
  r:=pg_temp.blog_listing_ads('lombardia');
- IF r->'listings'->0->>'id'<>'featured-0' OR jsonb_array_length(r->'listings')<>3 THEN RAISE EXCEPTION 'Mixed slots'; END IF;
+ IF r->'listings'->0->>'id'<>'featured-0' OR jsonb_array_length(r->'listings')<>1 THEN RAISE EXCEPTION 'Mixed slots'; END IF;
  UPDATE blog_ads_listings SET featured=false WHERE id='featured-0';
  r:=pg_temp.blog_listing_ads('generico');
- IF EXISTS(SELECT 1 FROM jsonb_array_elements(r->'listings') x WHERE (x->>'featured')::boolean OR x->>'id' IN ('expired','pending','rejected','demo')) THEN RAISE EXCEPTION 'No paid fallback/expired flags'; END IF;
+ IF jsonb_array_length(r->'listings')<>0 THEN RAISE EXCEPTION 'Free fallback'; END IF;
  DELETE FROM blog_ads_listings WHERE id<>'ended';
  r:=pg_temp.blog_listing_ads('generico');
- IF jsonb_array_length(r->'listings')<>1 OR (r->'listings'->0->>'featured')::boolean THEN RAISE EXCEPTION 'Ended promotion is free'; END IF;
+ IF jsonb_array_length(r->'listings')<>0 THEN RAISE EXCEPTION 'Ended promotion is advertised'; END IF;
  DELETE FROM blog_ads_listings;
  IF pg_temp.blog_listing_ads('generico')->'listings'<>'[]'::jsonb THEN RAISE EXCEPTION 'No inventory'; END IF;
  RAISE NOTICE 'OK: 60 simultaneous Vetrine, 800 rotations, geography, topics, eligibility, privacy and all fallbacks';

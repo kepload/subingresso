@@ -80,7 +80,11 @@ Deno.serve(async (req) => {
 
         // Pagamento e giorni sono registrati nella stessa transazione.
         // Su pending attende l'approvazione; i replay Stripe non aggiungono giorni.
-        const { data: activation, error: activationErr } = await admin.rpc('apply_vetrina_payment', {
+        const premium = metadata.checkout_version === 'premium_v1';
+        const { data: activation, error: activationErr } = await admin.rpc(premium ? 'apply_vetrina_checkout' : 'apply_vetrina_payment', premium ? {
+          p_session_id: session.id, p_user_id: userId, p_amount_cents: session.amount_total,
+          p_currency: session.currency, p_payment_intent: session.payment_intent,
+        } : {
           p_session_id: session.id,
           p_annuncio_id: annuncioId,
           p_user_id: userId,
@@ -103,7 +107,7 @@ Deno.serve(async (req) => {
         const session = event.data.object;
         const { error } = await admin.from('payments')
           .update({ status: 'failed' })
-          .eq('stripe_session_id', session.id)
+          .eq(session.metadata?.checkout_version === 'premium_v1' ? 'checkout_session_id' : 'stripe_session_id', session.id)
           .eq('status', 'pending');
         if (error) return new Response('DB error', { status: 500 });
         return new Response('OK', { status: 200 });

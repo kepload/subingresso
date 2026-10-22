@@ -38,7 +38,7 @@
                 <i class="fas fa-spinner fa-spin text-blue-500 text-3xl"></i>
             </div>
             <h1 class="text-2xl md:text-3xl font-black tracking-tight mb-3">Verifichiamo il tuo pagamento…</h1>
-            <p class="text-slate-500 font-medium">Un attimo, stiamo attivando la vetrina sul tuo annuncio.</p>
+            <p class="text-slate-500 font-medium">Un attimo, stiamo verificando le tue Vetrine Premium.</p>
         </div>
 
         <!-- Stato: successo -->
@@ -76,7 +76,7 @@
             <h1 class="text-2xl md:text-3xl font-black tracking-tight mb-3">Stiamo elaborando il pagamento</h1>
             <p class="text-slate-500 font-medium mb-6">
                 L'attivazione della vetrina può richiedere qualche minuto.<br>
-                Riceverai una notifica non appena sarà attiva.
+                Controlla lo stato nella tua area personale.
             </p>
             <a href="/dashboard" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-blue-700 transition inline-flex items-center gap-2">
                 Vai alla Dashboard <i class="fas fa-arrow-right"></i>
@@ -131,60 +131,35 @@
         return;
     }
 
-    // Polling: controlla il pagamento in DB ogni 2s per max 20s
+    if (!/^cs_(?:live|test)_[A-Za-z0-9_]+$/.test(sessionId)) { showState('stateError'); return; }
     const MAX_ATTEMPTS = 10;
     let attempts = 0;
-
     const poll = async () => {
         attempts++;
-        const { data: payment, error } = await _supabase
-            .from('payments')
-            .select('status, annuncio_id, tier, activated_at')
-            .eq('stripe_session_id', sessionId)
-            .maybeSingle();
-
-        if (error) {
-            console.error('polling error:', error);
-        }
-
-        if (payment && payment.status === 'succeeded') {
-            // Attivato! Recupera dettagli annuncio
-            const { data: ann } = await _supabase
-                .from('annunci')
-                .select('id, titolo, status, featured_until')
-                .eq('id', payment.annuncio_id)
-                .maybeSingle();
-
-            const tierLabel = { '10d': '10 giorni', '30d': '30 giorni', '90d': '90 giorni' }[payment.tier] || '';
-            const waitingApproval = !payment.activated_at;
-            const untilStr  = ann?.featured_until
-                ? new Date(ann.featured_until).toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' })
-                : null;
-
-            document.getElementById('successDetails').textContent =
-                (waitingApproval ? `Vetrina ${tierLabel} · tutti i giorni acquistati sono conservati`
-                    : untilStr ? `Vetrina ${tierLabel} · attiva fino al ${untilStr}` : `Vetrina ${tierLabel} attivata`);
-            if (waitingApproval) {
-                document.getElementById('successTitle').textContent = 'La tua Vetrina è acquistata!';
-                document.getElementById('successDescription').textContent = 'La promozione partirà quando il tuo annuncio sarà approvato. Durante l’attesa non perdi giorni.';
-                document.getElementById('viewAnnuncioBtn').classList.add('hidden');
+        try {
+            const {data:payments,error} = await _supabase.from('payments')
+                .select('status,annuncio_id,tier,activated_at,bundle_size')
+                .or(`stripe_session_id.eq.${sessionId},checkout_session_id.eq.${sessionId}`).limit(10);
+            if (error) throw error;
+            const count = payments?.[0]?.bundle_size || 1;
+            if (payments?.length===count && payments.every(p=>['succeeded','refunded'].includes(p.status))) {
+                const waiting=payments.filter(p=>!p.activated_at).length;
+                document.getElementById('successTitle').textContent = count>1 ? `${count} Vetrine Premium acquistate` : waiting ? 'La tua Vetrina è acquistata!' : 'La tua Vetrina Premium è attiva';
+                document.getElementById('successDescription').textContent = waiting
+                    ? `${waiting} ${waiting===1?'annuncio attende':'annunci attendono'} l’approvazione o la riattivazione. I giorni acquistati restano conservati; trovi tutti i dettagli nella tua area personale.`
+                    : count>1 ? 'Un solo pagamento, una promozione per ogni annuncio. Trovi durate e risultati nella tua area personale.' : 'Il tuo annuncio ha priorità nelle ricerche pertinenti e negli spazi promozionali del blog.';
+                const days={'10d':10,'30d':30,'90d':90}[payments[0].tier];
+                document.getElementById('successDetails').textContent = `${days || ''} giorni per ${count>1?'ciascun annuncio':'il tuo annuncio'} · nessun rinnovo automatico`;
+                const button=document.getElementById('viewAnnuncioBtn');
+                if (count>1) { button.href='/dashboard?tab=pagamenti';button.textContent='Vedi le tue Vetrine'; }
+                else if (waiting || !payments[0].annuncio_id) button.classList.add('hidden');
+                else button.href='/annuncio?id='+encodeURIComponent(payments[0].annuncio_id);
+                showState('stateSuccess'); return;
             }
-
-            if (ann?.id) {
-                document.getElementById('viewAnnuncioBtn').href = `/annuncio?id=${ann.id}`;
-            }
-
-            showState('stateSuccess');
-            return;
-        }
-
-        if (attempts >= MAX_ATTEMPTS) {
-            // Il webhook non è arrivato (o ritardo): mostriamo stato "slow"
-            showState('stateSlow');
-            return;
-        }
-
-        setTimeout(poll, 2000);
+            if (payments?.length && payments.every(p=>p.status==='failed')) { showState('stateError');return; }
+        } catch (_) { /* transient errors remain retryable without claiming payment success */ }
+        if (attempts>=MAX_ATTEMPTS) { showState('stateSlow');return; }
+        setTimeout(poll,2000);
     };
 
     poll();

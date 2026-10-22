@@ -63,8 +63,9 @@ window.VetrinaAccount = (() => {
                 : p.promotion_starts_at && new Date(p.promotion_starts_at) > new Date() ? 'Rinnovo programmato dopo la Vetrina in corso.'
                 : p.promotion_ends_at && new Date(p.promotion_ends_at) <= new Date() ? 'Periodo acquistato concluso.'
                 : p.promotion_ends_at ? 'Periodo acquistato in corso.' : 'Acquisto precedente: date del periodo non disponibili.';
-            return `<article class="v-account-order"><div class="v-account-order-header"><div><p class="v-account-order-id">Ordine ${esc(p.id)}</p><h4>${esc(p.listing_title || 'Annuncio non più disponibile')}</h4></div><span class="v-account-pill ${esc(p.status)}">${esc(labels[p.status] || 'In verifica')}${p.is_test ? ' · TEST' : ''}</span></div>
-                <dl>${field('Vetrina',duration ? `${duration} giorni` : p.tier)}${field('Importo',money(p.amount_cents,p.currency))}${field('Ordine creato',date(p.created_at))}${field('Pagamento confermato',date(p.paid_at))}
+            const bundle = p.bundle_size>1 ? `<p class="premium-bundle-order">Pacchetto di ${number(p.bundle_size)} annunci · sconto ${number(p.bundle_discount)}% · un unico pagamento. Qui trovi la quota e i risultati di questo annuncio.</p>` : '';
+            return `<article class="v-account-order">${bundle}<div class="v-account-order-header"><div><p class="v-account-order-id">Ordine ${esc(p.id)}</p><h4>${esc(p.listing_title || 'Annuncio non più disponibile')}</h4></div><span class="v-account-pill ${esc(p.status)}">${esc(labels[p.status] || 'In verifica')}${p.is_test ? ' · TEST' : ''}</span></div>
+                <dl>${field('Vetrina',duration ? `${duration} giorni` : p.tier)}${field(p.bundle_size>1?'Quota per questo annuncio':'Importo',money(p.amount_cents,p.currency))}${field('Ordine creato',date(p.created_at))}${field('Pagamento confermato',date(p.paid_at))}
                     ${field('Inizio promozione',date(p.promotion_starts_at))}${field('Fine promozione',date(p.promotion_ends_at))}${p.refunded_cents ? field('Importo rimborsato',money(p.refunded_cents,p.currency)) : ''}</dl>
                 <p>${delivery}</p>${p.is_test ? '<p>Transazione di prova, esclusa dai totali economici.</p>' : ''}
                 <div class="v-account-actions">${p.has_receipt ? `<button type="button" data-order="${esc(p.id)}" onclick="VetrinaAccount.receipt(this.dataset.order,this)"><i class="fas fa-receipt" aria-hidden="true"></i> Ricevuta Stripe</button>` : ''}
@@ -97,22 +98,7 @@ window.VetrinaAccount = (() => {
             openVetrinaModal(result.data);
         } catch { showToast('Annuncio non disponibile. Riprova tra poco.','error'); }
     }
-    async function chooseListing() {
-        if (!_currentUser) return;
-        const userId = _currentUser.id;
-        try {
-            const result = await _supabase.from('annunci').select('id,titolo,status,expires_at').eq('user_id',userId).eq('status','active').order('created_at',{ascending:false});
-            if (_currentUser?.id !== userId) return;
-            if (result.error) throw new Error('query');
-            listings = (result.data || []).filter(l => !isListingExpired(l));
-            // Con un solo annuncio idoneo, passa direttamente alla durata.
-            if (listings.length === 1) { el('vetrinaAccountChooser')?.remove(); return promote(listings[0].id); }
-            let chooser = el('vetrinaAccountChooser');
-            if (!chooser) { chooser = document.createElement('div'); chooser.id = 'vetrinaAccountChooser'; el('vetrinaAccountSummary').after(chooser); }
-            chooser.innerHTML = `<div class="v-account-campaign"><h4>Scegli l’annuncio da promuovere</h4>${listings.length ? listings.map(l => `<div class="v-account-actions"><button type="button" data-listing="${esc(l.id)}" onclick="VetrinaAccount.promote(this.dataset.listing)">${esc(l.titolo || 'Annuncio')}</button></div>`).join('') : '<p>Pubblica o riattiva un annuncio per acquistare una Vetrina.</p><a class="v-account-secondary" href="/vendi">Pubblica un annuncio</a>'}<button type="button" class="v-account-secondary" onclick="document.getElementById('vetrinaAccountChooser').remove()">Chiudi</button></div>`;
-            chooser.scrollIntoView({behavior:'smooth',block:'center'});
-        } catch { showToast('Non siamo riusciti a caricare gli annunci. Riprova.','error'); }
-    }
+    async function chooseListing() { return VetrinaPremium.open(); }
 
     async function receipt(id, button) {
         const userId = _currentUser?.id;
@@ -151,7 +137,7 @@ window.VetrinaAccount = (() => {
                 orders.push(...result.data.orders);
                 if (start + 50 >= result.data.total || !result.data.orders.length) break;
             }
-            const rows = [['Ordine','Annuncio','Giorni','Importo','Valuta','Stato','Rimborso','Creato','Pagato','Inizio','Fine','Test'],...orders.map(p => [p.id,p.listing_title,{'10d':10,'30d':30,'90d':90}[p.tier],(p.amount_cents/100).toFixed(2),p.currency,labels[p.status] || p.status,(p.refunded_cents/100).toFixed(2),p.created_at,p.paid_at,p.promotion_starts_at,p.promotion_ends_at,p.is_test?'Si':'No'])];
+            const rows = [['Ordine','Annuncio','Giorni','Importo','Valuta','Stato','Rimborso','Creato','Pagato','Inizio','Fine','Test','Annunci nel pacchetto','Sconto pacchetto %','Listino per annuncio'],...orders.map(p => [p.id,p.listing_title,{'10d':10,'30d':30,'90d':90}[p.tier],(p.amount_cents/100).toFixed(2),p.currency,labels[p.status] || p.status,(p.refunded_cents/100).toFixed(2),p.created_at,p.paid_at,p.promotion_starts_at,p.promotion_ends_at,p.is_test?'Si':'No',p.bundle_size||1,p.bundle_discount||0,p.list_price_cents==null?'':(p.list_price_cents/100).toFixed(2)])];
             const url = URL.createObjectURL(new Blob(['\uFEFF' + rows.map(row => row.map(csv).join(';')).join('\r\n')],{type:'text/csv;charset=utf-8'}));
             const link = document.createElement('a'); link.href = url; link.download = 'subingresso-ordini-vetrine.csv'; document.body.appendChild(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url),1000);
         } catch { showToast('Esportazione non riuscita. Riprova.','error'); }

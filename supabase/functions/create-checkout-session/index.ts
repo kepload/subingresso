@@ -1,213 +1,80 @@
-// ============================================================
-//  Subingresso.it — Edge Function: create-checkout-session
-//  Crea una sessione Stripe Checkout per attivare la Vetrina.
-//  Verifica JWT utente, proprietà annuncio, stato active.
-// ============================================================
-
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import '../../../js/vetrina-pricing.js';
 
-const STRIPE_SECRET_KEY         = Deno.env.get('STRIPE_SECRET_KEY')!;
-const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!;
-const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-const SB_SECRET_KEY             = Deno.env.get('SB_SECRET_KEY') ?? SUPABASE_SERVICE_ROLE_KEY;
-const SITE_URL                  = 'https://subingresso.it';
+const Pricing = (globalThis as any).VetrinaPricing;
+const SITE_URL = 'https://subingresso.it';
+const CORS = { 'Access-Control-Allow-Origin':'*', 'Access-Control-Allow-Methods':'POST, OPTIONS',
+    'Access-Control-Allow-Headers':'authorization, x-client-info, apikey, content-type' };
+const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers:{...CORS,'Content-Type':'application/json'} });
 
-// Prezzi (centesimi) — fonte di verità server-side, non fidarsi del client
-const TIERS: Record<string, { amount: number; days: number; label: string }> = {
-  '10d': { amount: 2490, days: 10, label: 'Vetrina 10 giorni' },
-  '30d': { amount: 4990, days: 30, label: 'Vetrina 30 giorni' },
-  '90d': { amount: 9990, days: 90, label: 'Vetrina 90 giorni' },
-};
-
-// Sconto -10% riservato esclusivamente al momento della pubblicazione
-// (step finale del wizard vendi.html). NON disponibile altrove: il gate
-// è server-side e non falsificabile dal client perché verifica lo stato
-// reale della riga annunci (creato adesso + mai stato in vetrina).
-const CREATION_SOURCE   = 'vendi_creation';
-const CREATION_DISCOUNT = 0.90;                 // -10%
-const CREATION_WINDOW_MS = 60 * 60 * 1000;      // annuncio creato < 60 min fa
-
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin':  '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
-
-Deno.serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: CORS_HEADERS });
-  }
-  if (req.method !== 'POST') {
-    return new Response('Method not allowed', { status: 405, headers: CORS_HEADERS });
-  }
-
-  try {
-    // 1. Verifica autenticazione utente via JWT nell'header
-    const authHeader = req.headers.get('Authorization');
-    if (!authHeader) {
-      return json({ error: 'Non autenticato' }, 401);
+Deno.serve(async req => {
+    if (req.method === 'OPTIONS') return new Response('ok', {headers:CORS});
+    if (req.method !== 'POST') return json({error:'Metodo non consentito'},405);
+    try {
+        const auth = req.headers.get('Authorization');
+        if (!auth?.startsWith('Bearer ')) return json({error:'Accedi per acquistare una Vetrina.'},401);
+        const admin = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SB_SECRET_KEY') ?? Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);
+        const {data:identity,error:authError} = await admin.auth.getUser(auth.slice(7));
+        if (authError || !identity?.user) return json({error:'Sessione scaduta. Accedi di nuovo.'},401);
+        const user = identity.user;
+        const body = await req.json().catch(() => null);
+        if (!body || typeof body !== 'object') return json({error:'Richiesta non valida.'},400);
+        const ids = body.annuncio_ids ?? (body.annuncio_id ? [body.annuncio_id] : []);
+        if (!Array.isArray(ids) || !ids.length || ids.length > 10 || new Set(ids).size !== ids.length
+            || ids.some(id => typeof id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id))) {
+            return json({error:'Seleziona da 1 a 10 annunci diversi.'},400);
+        }
+        let quote;
+        try { quote = Pricing.quote(body.tier,ids.length); } catch { return json({error:'Durata non valida.'},400); }
+        if (!Number.isInteger(body.expected_amount_cents) || body.expected_amount_cents !== quote.total) {
+            return json({error:'Il prezzo è cambiato. Ricarica la pagina e controlla il totale prima di pagare.'},409);
+        }
+        const creation = body.source === 'vendi_creation' && ids.length === 1;
+        const {data:listings,error:listError} = await admin.from('annunci')
+            .select('id,user_id,status,titolo,expires_at').in('id',ids);
+        if (listError || !listings || listings.length !== ids.length) return json({error:'Uno degli annunci non è disponibile.'},404);
+        if (listings.some(a => a.user_id !== user.id)) return json({error:'Puoi promuovere soltanto i tuoi annunci.'},403);
+        if (listings.some(a => (a.status !== 'active' && !(creation && a.status === 'pending'))
+            || (a.expires_at && Date.parse(a.expires_at) <= Date.now()))) {
+            return json({error:'Seleziona annunci attivi e non scaduti. Un nuovo annuncio può attendere l’approvazione.'},400);
+        }
+        const params = new URLSearchParams({ mode:'payment','payment_method_types[]':'card',locale:'it',
+            success_url:SITE_URL+'/grazie?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url:SITE_URL+'/dashboard?'+(creation?'pubblicato=1&':'')+'vetrina=annullata',
+            customer_email:user.email ?? '', 'metadata[user_id]':user.id,
+            'metadata[tier]':body.tier,'metadata[checkout_version]':'premium_v1',
+            'metadata[annuncio_id]':ids[0], 'metadata[listing_count]':String(ids.length),
+            'payment_intent_data[metadata][user_id]':user.id,
+            'payment_intent_data[metadata][listing_count]':String(ids.length) });
+        listings.sort((a,b) => ids.indexOf(a.id)-ids.indexOf(b.id)).forEach((a,i) => {
+            const prefix = `line_items[${i}]`;
+            params.set(prefix+'[quantity]','1');
+            params.set(prefix+'[price_data][currency]','eur');
+            params.set(prefix+'[price_data][unit_amount]',String(quote.unit));
+            params.set(prefix+'[price_data][product_data][name]',Pricing.plans[body.tier].label);
+            params.set(prefix+'[price_data][product_data][description]',
+                String(a.titolo || 'Annuncio').slice(0,140)+(quote.discount ? ` · Pacchetto ${ids.length} annunci: −${quote.discount}%` : ''));
+        });
+        const stripeKey = Deno.env.get('STRIPE_SECRET_KEY')!;
+        const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
+            method:'POST',headers:{Authorization:'Bearer '+stripeKey,'Content-Type':'application/x-www-form-urlencoded'},
+            body:params.toString(),signal:AbortSignal.timeout(15000)
+        });
+        const session = await response.json();
+        if (!response.ok || !session.id || !session.url) return json({error:'Pagamento non disponibile. Riprova tra poco.'},502);
+        const {error:registrationError} = await admin.rpc('register_vetrina_checkout', {
+            p_session_id:session.id,p_user_id:user.id,p_listing_ids:ids,p_tier:body.tier,
+            p_creation:creation,p_expected_amount:quote.total
+        });
+        if (registrationError) {
+            await fetch(`https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(session.id)}/expire`, {
+                method:'POST',headers:{Authorization:'Bearer '+stripeKey},signal:AbortSignal.timeout(10000)
+            });
+            return json({error:'Gli annunci sono cambiati o l’ordine non è disponibile. Ricarica prima di riprovare.'},409);
+        }
+        return json({url:session.url,session_id:session.id,amount_cents:quote.total,listing_count:ids.length});
+    } catch (error) {
+        console.error('Premium checkout unavailable:',error instanceof Error ? error.name : 'unknown');
+        return json({error:'Non siamo riusciti ad aprire il pagamento. Riprova tra poco.'},503);
     }
-    const token = authHeader.replace('Bearer ', '');
-
-    // Client con service_role per operazioni privilegiate
-    const admin = createClient(SUPABASE_URL, SB_SECRET_KEY);
-
-    // Recupera utente dal token
-    const { data: userRes, error: userErr } = await admin.auth.getUser(token);
-    if (userErr || !userRes?.user) {
-      return json({ error: 'Token non valido' }, 401);
-    }
-    const user = userRes.user;
-
-    // 2. Parsing input
-    const body = await req.json().catch(() => null);
-    if (!body || typeof body !== 'object') {
-      return json({ error: 'Body mancante' }, 400);
-    }
-    const annuncioId = String(body.annuncio_id || '').trim();
-    const tier       = String(body.tier || '').trim();
-    const source     = String(body.source || '').trim();
-    const isCreationFlow = source === CREATION_SOURCE;
-
-    if (!annuncioId) return json({ error: 'annuncio_id mancante' }, 400);
-    if (!TIERS[tier]) return json({ error: 'tier non valido' }, 400);
-
-    const tierCfg = TIERS[tier];
-
-    // 3. Verifica che l'annuncio appartenga all'utente
-    const { data: annuncio, error: annErr } = await admin
-      .from('annunci')
-      .select('id, user_id, status, titolo, featured, featured_until, featured_since, created_at, expires_at')
-      .eq('id', annuncioId)
-      .single();
-
-    if (annErr || !annuncio) {
-      return json({ error: 'Annuncio non trovato' }, 404);
-    }
-    if (annuncio.user_id !== user.id) {
-      return json({ error: 'Non sei il proprietario di questo annuncio' }, 403);
-    }
-    // Lo status valido è 'active'. In fase di pubblicazione (creation flow)
-    // l'annuncio è appena stato inserito ed è ancora 'pending' (trigger di
-    // moderazione enforce_annunci_status): lo accettiamo, la vetrina verrà
-    // applicata dal webhook e diventerà visibile appena l'annuncio è approvato.
-    if (annuncio.status === 'deleted') {
-      return json({ error: 'Annuncio non disponibile.' }, 400);
-    }
-    if (annuncio.status !== 'active' && !(isCreationFlow && annuncio.status === 'pending')) {
-      return json({ error: 'Puoi attivare la vetrina solo su annunci già pubblicati (status active).' }, 400);
-    }
-    if (annuncio.expires_at && new Date(annuncio.expires_at).getTime() <= Date.now()) {
-      return json({ error: 'Riattiva il tuo annuncio prima di acquistare la Vetrina.' }, 400);
-    }
-
-    // 3b. Sconto -10% SOLO al momento della pubblicazione, e solo se l'annuncio
-    //     è genuinamente appena creato e non è mai stato in vetrina. Questo
-    //     rende lo sconto non sfruttabile dalla dashboard o su annunci vecchi.
-    let amount = tierCfg.amount;
-    let discounted = false;
-    const createdMsAgo = annuncio.created_at
-      ? (Date.now() - new Date(annuncio.created_at).getTime())
-      : Number.MAX_SAFE_INTEGER;
-    if (isCreationFlow
-        && !annuncio.featured_since
-        && createdMsAgo >= 0
-        && createdMsAgo < CREATION_WINDOW_MS) {
-      amount     = Math.round(tierCfg.amount * CREATION_DISCOUNT);
-      discounted = true;
-    }
-    const productName = discounted
-      ? `${tierCfg.label} · sconto pubblicazione -10%`
-      : tierCfg.label;
-
-    // Chi ha una pagina aperta con il vecchio listino deve aggiornare prima di pagare.
-    // Il client conferma solo l'importo mostrato; il prezzo resta deciso dal server.
-    if (!Number.isInteger(body.expected_amount_cents) || body.expected_amount_cents !== amount) {
-      return json({ error: 'Il listino è stato aggiornato. Ricarica la pagina per vedere il prezzo attuale prima di pagare.' }, 409);
-    }
-
-    // 4. Crea sessione Stripe via API diretta (no SDK per alleggerire la function)
-    const params = new URLSearchParams();
-    params.set('mode', 'payment');
-    params.set('payment_method_types[]', 'card');
-    params.set('success_url', `${SITE_URL}/grazie.html?session_id={CHECKOUT_SESSION_ID}`);
-    // In creation flow l'annuncio è già stato pubblicato: se l'utente annulla
-    // il pagamento lo mandiamo in dashboard a vedere il suo annuncio, non a
-    // una pagina "annullata" che farebbe pensare di aver perso l'annuncio.
-    params.set('cancel_url', isCreationFlow
-      ? `${SITE_URL}/dashboard.html?pubblicato=1&vetrina=annullata`
-      : `${SITE_URL}/dashboard.html?vetrina=annullata`);
-    params.set('customer_email', user.email ?? '');
-    params.set('locale', 'it');
-    params.set('allow_promotion_codes', 'true');
-
-    // Line item (price_data inline — evita la gestione manuale dei Price su Stripe Dashboard)
-    params.set('line_items[0][quantity]', '1');
-    params.set('line_items[0][price_data][currency]', 'eur');
-    params.set('line_items[0][price_data][unit_amount]', String(amount));
-    params.set('line_items[0][price_data][product_data][name]', productName);
-    params.set('line_items[0][price_data][product_data][description]',
-      `Vetrina in evidenza su Subingresso.it per ${tierCfg.days} giorni · Annuncio: ${(annuncio.titolo || '').slice(0, 80)}`
-    );
-
-    // Metadata (chiave per attivare la vetrina nel webhook)
-    params.set('metadata[user_id]',     user.id);
-    params.set('metadata[annuncio_id]', annuncioId);
-    params.set('metadata[tier]',        tier);
-    params.set('metadata[source]',      source || 'dashboard');
-    params.set('metadata[discount]',    discounted ? 'vendi_launch10' : '');
-    params.set('payment_intent_data[metadata][user_id]',     user.id);
-    params.set('payment_intent_data[metadata][annuncio_id]', annuncioId);
-    params.set('payment_intent_data[metadata][tier]',        tier);
-
-    // Richiesta Stripe
-    const stripeRes = await fetch('https://api.stripe.com/v1/checkout/sessions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${STRIPE_SECRET_KEY}`,
-        'Content-Type':  'application/x-www-form-urlencoded',
-      },
-      body: params.toString(),
-    });
-
-    const stripeData = await stripeRes.json();
-    if (!stripeRes.ok) {
-      console.error('Stripe error:', stripeData);
-      return json({ error: stripeData.error?.message || 'Errore Stripe' }, 500);
-    }
-
-    // 5. Log pending payment (idempotente: upsert su stripe_session_id)
-    const { error: orderError } = await admin.from('payments').upsert({
-      user_id:           user.id,
-      annuncio_id:       annuncioId,
-      amount_cents:      amount,
-      currency:          'eur',
-      tier,
-      status:            'pending',
-      stripe_session_id: stripeData.id,
-      customer_email:    user.email ?? null,
-    }, { onConflict: 'stripe_session_id', ignoreDuplicates: true });
-
-    // Nessun redirect verso un pagamento che non abbiamo registrato.
-    if (orderError) {
-      console.error('Order registration failed:', orderError);
-      await fetch(`https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(stripeData.id)}/expire`, {
-        method: 'POST', headers: { Authorization: `Bearer ${STRIPE_SECRET_KEY}` },
-      });
-      return json({ error: 'Non siamo riusciti a registrare l’ordine. Riprova tra poco.' }, 503);
-    }
-
-    return json({ url: stripeData.url, session_id: stripeData.id });
-
-  } catch (e) {
-    console.error('create-checkout-session error:', e);
-    return json({ error: 'Errore interno' }, 500);
-  }
 });
-
-function json(payload: unknown, status = 200) {
-  return new Response(JSON.stringify(payload), {
-    status,
-    headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
-  });
-}

@@ -54,8 +54,8 @@ async function run(engine,name,width,height) {
                 if(url.pathname.endsWith('/rpc/blog_listing_ads')) {
                     const body=req.postDataJSON();requests.push(body);
                     if(fail)return route.fulfill({status:503,json:{message:'unavailable'}});
-                    if(body.p_slug==='slow-fixture') { await new Promise(r=>setTimeout(r,200));return route.fulfill({json:{regions:[],listings:[listing(99)]}}); }
-                    if(body.p_slug==='fast-fixture')return route.fulfill({json:{regions:[],listings:[listing(98)]}});
+                    if(body.p_slug==='slow-fixture') { await new Promise(r=>setTimeout(r,200));return route.fulfill({json:{regions:[],listings:[listing(99,'Lombardia',true)]}}); }
+                    if(body.p_slug==='fast-fixture')return route.fulfill({json:{regions:[],listings:[listing(98,'Lombardia',true)]}});
                     return route.fulfill({json:{regions:fixture.regions,listings:fixture.rows}});
                 }
                 if(req.method()!=='GET') { events.push(req.postDataJSON());return route.fulfill({json:[]}); }
@@ -68,11 +68,11 @@ async function run(engine,name,width,height) {
             await page.waitForFunction(()=>!document.querySelector('#bandoListingsBox .fa-spinner'));
             assert.equal(requests[0].p_slug,post.slug);assert.equal(requests[0].p_limit,3);
             assert.equal(await page.locator('#bandoListingsBox').count(),1,'un solo riquadro');
-            assert.equal(await page.locator('.blog-posteggio').count(),fixture.rows.length);
+            assert.equal(await page.locator('.blog-posteggio').count(),fixture.paid);
             assert.equal(await page.locator('.blog-posteggio-vetrina').count(),fixture.paid);
             assert.equal(await page.evaluate(()=>!!window.xss),false);
             assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-            if(fixture.rows.length) {
+            if(fixture.paid) {
                 const seeAll=page.locator('.blog-listings-all');
                 const region=fixture.regions.length===1?fixture.regions[0]:null;
                 assert.equal(await seeAll.getAttribute('href'),region?'/annunci?regione='+encodeURIComponent(region):'/annunci');
@@ -88,11 +88,7 @@ async function run(engine,name,width,height) {
                 if(out&&['regional-paid','generic-free','garda'].includes(fixture.name)) {
                     fs.mkdirSync(out,{recursive:true});await page.screenshot({path:path.join(out,`${name}-${width}-${fixture.name}.png`)});
                 }
-            } else if(fixture.name==='empty-regional') {
-                assert.equal(await page.locator('#bandoListingsBox a').getAttribute('href'),'/annunci?regione=Lombardia');
-            } else if(fixture.name==='empty-bandi') {
-                assert.equal(await page.locator('#bandoListingsBox a').getAttribute('href'),'#bandoAlertForm');
-            } else assert.equal(await page.locator('#bandoListingsBox').innerText(),'');
+            } else assert.equal(await page.locator('#bandoListingsBox').innerText(),'','nessuna pubblicità gratuita o messaggio inventato');
 
             if(fixture.name==='regional-paid') {
                 // Un risultato tardivo non può sostituire la selezione della pagina corrente.
@@ -109,7 +105,7 @@ async function run(engine,name,width,height) {
             assert.deepEqual(errors,[]);
             await page.close();
         }
-        console.log(`OK: ${name} ${width}x${height}, 8 casi; geografia, badge, fallback, link/click, layout compatto, errori/ripresa e risposte tardive.`);
+        console.log(`OK: ${name} ${width}x${height}, 8 casi; geografia, badge, solo paganti, link/click, layout compatto, errori/ripresa e risposte tardive.`);
     } finally { await browser.close(); }
 }
 (async()=>{for(const[engine,name,width,height]of[[chromium,'chromium',1440,900],[chromium,'chromium',768,1024],[chromium,'chromium',320,568],[webkit,'webkit',390,844]])await run(engine,name,width,height);})().catch(error=>{console.error(error);process.exitCode=1;});

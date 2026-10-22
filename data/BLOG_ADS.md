@@ -1,5 +1,13 @@
 # Annunci negli articoli del blog
 
+22 ottobre2026: preferenza corrente applicata con Vetrine Premium. I riquadri
+pubblicitari mostrano solo Vetrine attive con tier pagato10d/30d/90d, massimo
+tre e sempre pertinenti. Nessun riempimento con annunci gratuiti o admin_free;
+se mancano promozioni, nessun riquadro e nessuna falsa indicazione sul catalogo.
+Ricerche, catalogo gratuito e consigliati organici conservati. Migrazione e
+contratto correnti: `PATCH_VETRINE_PREMIUM_20261022.sql`, `VETRINE_PREMIUM.md`.
+Le note sottostanti descrivono la versione precedente, quando prevedevano gratuiti.
+
 18 ottobre 2026. Preferenza utente: mostrare le Vetrine agli utenti che leggono gli articoli pertinenti, con rotazione fra più annunci e ripiego sui gratuiti quando mancano promozioni.
 
 ## Ordine della selezione

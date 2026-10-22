@@ -195,7 +195,7 @@ const server = http.createServer((req, res) => {
         await page.locator('#toStep6Btn').click();
         await active(page,6);
         assert.equal(await page.locator('#pubFree').getAttribute('aria-pressed'),'true');
-        for (const [tier,price] of [['10d','22,41'],['30d','44,91'],['90d','89,91']]) {
+        for (const [tier,price] of [['10d','49'],['30d','99'],['90d','249']]) {
             await page.locator('#pub'+tier).click();
             assert.match(await page.locator('#submitBtn').innerText(),new RegExp(price));
             assert.match(await page.locator('#pubFootNote').innerText(),/approvazione.*senza rinnovo automatico/);

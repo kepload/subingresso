@@ -1,5 +1,13 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+22/10/2026, Vetrine Premium: listino49/99/249€ per10/30/90giorni;
+pacchetti2 -10%,3–4 -15%,5–10 -20%, stessa durata, pagamento unico.
+Nessun omaggio UI o sconto pubblicazione. Checkout congelato, quote per
+annuncio, somme/recupero giorni/replay/rimborsi protetti; vecchi acquisti
+conservati e trigger annunci invariati. Blog solo Vetrine pagate, nessun
+riempimento gratuito. Contratto e prove in data/VETRINE_PREMIUM.md e
+Documents/vetrine-premium-bundle-20261022/. Stato pubblicazione nel registro.
+
 22/10/2026: rimossa su richiesta la sezione admin «Il sito sotto controllo»,
 insieme a caricamento e aggiornamento al minuto; gli altri pannelli restano.
 Statistiche organizzatori ridisegnate con taste-skill True-black flat,
@@ -1471,7 +1479,7 @@ L'utente non loggato compila tutti i 5 step SENZA vedere mai il banner "devi reg
 - **Secrets:** `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
 - **CRITICO fetch Edge Functions dal browser:** sempre `'apikey': SUPABASE_ANON_KEY` negli headers oltre ad `Authorization: Bearer <token>`. Senza apikey → 401.
 - **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): chi compra/riceve vetrina mantiene il default 270gg post. Vetrina = solo featured/posizione/visibilità. Stripe-webhook + adminGrantVetrina ripuliti, edge function re-deployata.
-- **Admin Vetrina gratuita**: `adminGrantVetrina(30|90)` scrive `featured_tier='admin_free'`. `adminRevokeVetrina(id)` azzera.
+- **Admin Vetrine,22/10:** attivazione gratuita rimossa dall’interfaccia; resta `adminRevokeVetrina(id)` per correzioni. Acquisti e giorni già concessi non vengono revocati automaticamente.
 - **Card featured redesign**: glow box-shadow aureo, sfondo gradient amber-50/50→white, barra top 3px, badge crown + animate-pulse, footer "Annuncio in Vetrina ★★★★★".
 - **Modal pricing layout** (6 mag 2026): totale grande (`€ 59,90`) + giornaliero leggibile sotto (`€ 0,67 / giorno` text-xs). Niente più "una tantum" sui bottoni — la rassicurazione anti-rinnovo è nel footer del modal accanto al lock Stripe (`pagamento unico, no abbonamento`). Sottotitoli a sinistra puliti dal duplicato del giornaliero. Benefit grid ridotta a 3 colonne: `+ Visualizzazioni / Vendi prima / In cima` (rimosso "Post più lungo" perché vetrina non estende più `expires_at`).
 - **Box admin "Guadagno Vetrine"** (sostituisce "In Vetrina"): RPC `admin_revenue_stats()` SECURITY DEFINER bypassa RLS owner-only di `payments`. Filtra `status='succeeded' AND stripe_session_id LIKE 'cs_live_%'` (esclude test mode + admin_free + welcome_lottery che non passano da payments). Box vira al verde quando `today_cents > 0` con pill `+ €X oggi` sotto. Layout: label, totale grande, pill verde animata se vendita oggi. Patch in `PATCH_ADMIN_REVENUE_20260506.sql` (idempotente).
@@ -1482,7 +1490,7 @@ L'utente non loggato compila tutti i 5 step SENZA vedere mai il banner "devi reg
 
 ## ❌ Lotteria Welcome Vetrina — RIMOSSA (23 mag 2026)
 
-Sistema mai installato in prod (RPC `try_welcome_lottery` + colonne `welcome_lottery_*` inesistenti). Rimosso tutto il codice vivo che lo cercava: popup "ruota della fortuna" in `auth.js`, scrittura colonna in `register-bypass` (redeployata), e la copy "vinci 30 giorni di Vetrina" dal popup visitatori. **Niente più promesse-lotteria sul sito.** Resti orfani innocui da pulire quando si vuole: edge function `grant-welcome-vetrina` ancora chiamata da `vendi.html` (ritorna sempre `granted:false`), banner "HAI VINTO" mai mostrato in `vendi.html`, enum `welcome_popup`, colonna `vetrina_welcome_days`. Vetrina gratis ora SOLO via admin manuale (`adminGrantVetrina`). Vedi memoria `project_welcome_lottery_orphan.md`.
+Sistema mai installato in prod (RPC `try_welcome_lottery` + colonne `welcome_lottery_*` inesistenti). Rimosso tutto il codice vivo che lo cercava: popup "ruota della fortuna" in `auth.js`, scrittura colonna in `register-bypass` (redeployata), e la copy "vinci 30 giorni di Vetrina" dal popup visitatori. **Niente più promesse-lotteria sul sito.** Resti orfani innocui da pulire quando si vuole: edge function `grant-welcome-vetrina` ancora chiamata da `vendi.html` (ritorna sempre `granted:false`), banner "HAI VINTO" mai mostrato in `vendi.html`, enum `welcome_popup`, colonna `vetrina_welcome_days`. Dal22/10 rimossi anche i resti del wizard e l’attivazione gratuita dalla UI admin; nessun nuovo omaggio. Vedi memoria `project_welcome_lottery_orphan.md`.
 
 ## 📬 Email — Sistema Completo (Resend)
 

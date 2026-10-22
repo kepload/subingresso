@@ -40,6 +40,7 @@ window.toasts=[];function showToast(message){toasts.push(message);}
 function escapeHTML(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function isListingExpired(l){return !!l.expires_at && new Date(l.expires_at)<new Date();}
 function openVetrinaModal(l){window.promoted=l.id;}
+window.VetrinaPremium={open:()=>{window.bulkOpened=(window.bulkOpened||0)+1;}};
 function goToProfilo(){document.getElementById('profiloModal').classList.remove('hidden');}
 function closeProfiloModal(){document.getElementById('profiloModal').classList.add('hidden');}
 window.charts=[];class Chart{constructor(canvas,config){this.config=config;charts.push(this);}destroy(){this.destroyed=true;}}
@@ -96,25 +97,14 @@ async function browser(engine,name,width,base) {
         await page.evaluate(()=>window.fail=false);await page.locator('.v-account-error button').click();
         await page.locator('.v-account-order').waitFor();
         await page.locator('.v-account-primary').click();
-        await page.waitForFunction(()=>!!window.promoted);
-        assert.equal(await page.locator('#vetrinaAccountChooser').count(),0,'un solo annuncio: nessuna scelta intermedia');
-        assert.equal(await page.evaluate(()=>window.promoted),listing);
-        await page.evaluate(()=>{window.availableListings=[];window.promoted=null;});
-        await page.locator('.v-account-primary').click();
-        await page.locator('#vetrinaAccountChooser a[href="/vendi"]').waitFor();
-        assert.equal(await page.evaluate(()=>window.promoted),null,'nessun annuncio idoneo: nessun pagamento');
-        await page.evaluate(id=>{window.availableListings=[{id,titolo:'Posteggio mercato Brescia',status:'active'},{id:'altro',titolo:'Secondo annuncio',status:'active'}];},listing);
-        await page.locator('.v-account-primary').click();
-        await page.waitForFunction(()=>document.querySelectorAll('#vetrinaAccountChooser button[data-listing]').length===2);
-        await page.locator('#vetrinaAccountChooser button[data-listing]').first().click();
-        assert.equal(await page.evaluate(()=>window.promoted),listing);
+        assert.equal(await page.evaluate(()=>window.bulkOpened),1,'acquisti apre il selettore Premium condiviso');
         await page.evaluate(()=>goToProfilo());
         assert.equal(await page.locator('#profileEmailStatus').innerText(),'Confermata');
         assert.equal(await page.locator('#profilePublicLink').getAttribute('href'),'/profilo?id='+owner);
         await page.evaluate(()=>closeProfiloModal());
         if(process.env.ACCOUNT_SCREENSHOT && name==='chromium' && width===390) {
             await page.selectOption('#vetrinaAccountStatus','all');await page.locator('.v-account-order').first().waitFor();
-            await page.locator('#vetrinaAccountChooser').evaluate(node=>node.remove());
+            await page.locator('#vetrinaAccountChooser').evaluateAll(nodes=>nodes.forEach(node=>node.remove()));
             await page.locator('#dashboardTabs').scrollIntoViewIfNeeded();
             await page.screenshot({path:process.env.ACCOUNT_SCREENSHOT});
         }

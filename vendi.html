@@ -511,7 +511,7 @@
                     </p>
                 </div>
 
-                <!-- ── STEP 6: scelta pubblicazione (gratis o Vetrina scontata) ── -->
+                <!-- ── STEP 6: scelta pubblicazione (gratis o Vetrina Premium) ── -->
                 <div id="step6" class="step-panel">
                     <button type="button" onclick="prevStep()" class="flex items-center gap-1.5 text-slate-400 hover:text-slate-700 text-sm font-bold mb-6 transition">
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
@@ -569,7 +569,7 @@
 
                                 <div class="pub-plan-intro">
                                     <span>Scegli la durata</span>
-                                    <span class="pub-discount">-10% alla pubblicazione</span>
+                                    <span class="pub-discount">Pagamento unico</span>
                                 </div>
                                 <p style="font-size:12px;color:#475569;margin:0 0 12px;line-height:1.5">Stessi vantaggi per 10, 30 o 90 giorni. La promozione parte dall’approvazione.</p>
                                 <div class="pub-plans">
@@ -579,8 +579,8 @@
                                         <span class="pub-plan-copy">
                                             <span class="pub-plan-title">10 giorni</span>
                                             <span class="pub-plan-daily">Per una promozione breve</span>
-                                            <span class="pub-plan-price">€ 22,41 <del>€ 24,90</del></span>
-                                            <span class="pub-plan-daily">€ 2,24 al giorno · risparmi € 2,49</span>
+                                            <span class="pub-plan-price">49 €</span>
+                                            <span class="pub-plan-daily">4,90 € al giorno</span>
                                         </span>
                                     </button>
                                     <button type="button" id="pub30d" onclick="_selectPubChoice('30d')" aria-pressed="false"
@@ -589,8 +589,8 @@
                                         <span class="pub-plan-copy">
                                             <span class="pub-plan-title">30 giorni <span class="pub-plan-tag">Consigliato</span></span>
                                             <span class="pub-plan-daily">Un mese di visibilità</span>
-                                            <span class="pub-plan-price">€ 44,91 <del>€ 49,90</del></span>
-                                            <span class="pub-plan-daily">€ 1,50 al giorno · risparmi € 4,99</span>
+                                            <span class="pub-plan-price">99 €</span>
+                                            <span class="pub-plan-daily">3,30 € al giorno</span>
                                         </span>
                                     </button>
                                     <button type="button" id="pub90d" onclick="_selectPubChoice('90d')" aria-pressed="false"
@@ -599,8 +599,8 @@
                                         <span class="pub-plan-copy">
                                             <span class="pub-plan-title">90 giorni <span class="pub-plan-tag pub-plan-tag-best">Più conveniente</span></span>
                                             <span class="pub-plan-daily">Tre mesi per la tua trattativa</span>
-                                            <span class="pub-plan-price">€ 89,91 <del>€ 99,90</del></span>
-                                            <span class="pub-plan-daily">€ 1,00 al giorno · risparmi € 9,99</span>
+                                            <span class="pub-plan-price">249 €</span>
+                                            <span class="pub-plan-daily">2,77 € al giorno</span>
                                         </span>
                                     </button>
                                 </div>
@@ -629,7 +629,7 @@
                         </details>
                         <details class="faq-item">
                             <summary>Posso attivarla anche dopo? <svg class="faq-chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></summary>
-                            <p class="faq-a">Sì, dalla tua area personale. Lo sconto del 10% è disponibile solo durante la prima pubblicazione.</p>
+                            <p class="faq-a">Sì, dalla tua area personale. Dalla dashboard puoi anche scegliere più annunci e acquistare un pacchetto con sconto fino al 20%.</p>
                         </details>
                     </div>
                 </div>
@@ -650,6 +650,7 @@
 <script src="js/ui-components.js?v=17"></script>
 <script src="js/auth.js?v=22"></script>
 <script src="js/pages/vendi-support.js?v=2"></script>
+<script src="js/vetrina-pricing.js?v=1"></script>
 <script>
 
 // ── Step Management ───────────────────────────────────────
@@ -671,15 +672,15 @@ let _comunePicker = null;
 
 // ── Step 6: scelta pubblicazione ──────────────────────────
 // _pubChoice: 'free' | '10d' | '30d' | '90d'. Default 'free' (preselezionato).
-// Lo sconto -10% è applicato e validato SERVER-SIDE in create-checkout-session
+// Il listino Premium è condiviso con il checkout e confermato sul server.
 // (gate: source=vendi_creation + annuncio appena creato + mai featured). Qui i
 // prezzi sono solo display: la fonte di verità resta la edge function.
 let _pubChoice = 'free';
 const _PUB_OPTIONS = {
     'free': { btnLabel: 'Pubblica gratis' },
-    '10d':  { btnLabel: 'Attiva Vetrina · € 22,41', amountCents: 2241 },
-    '30d':  { btnLabel: 'Attiva Vetrina · € 44,91', amountCents: 4491 },
-    '90d':  { btnLabel: 'Attiva Vetrina · € 89,91', amountCents: 8991 },
+    '10d':  { btnLabel: 'Attiva Premium · 49 €', amountCents: VetrinaPricing.plans['10d'].cents },
+    '30d':  { btnLabel: 'Attiva Premium · 99 €', amountCents: VetrinaPricing.plans['30d'].cents },
+    '90d':  { btnLabel: 'Attiva Premium · 249 €', amountCents: VetrinaPricing.plans['90d'].cents },
 };
 
 function _selectPubChoice(choice) {
@@ -1594,30 +1595,6 @@ function removeFile(btn) {
     _persistDraftPhotos();
 }
 
-// ── Lotteria vetrina welcome (0,1% → 30 giorni, entro 30gg iscrizione) ─────
-async function _tryGrantWelcomeVetrina(userId, annuncioId) {
-    try {
-        if (localStorage.getItem('_welcome_vetrina_won_' + userId) !== '1') return false;
-        const { data: { session } } = await _supabase.auth.getSession();
-        if (!session?.access_token) return false;
-
-        const res = await fetch(`${SUPABASE_URL}/functions/v1/grant-welcome-vetrina`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'apikey': SUPABASE_ANON_KEY,
-                'Authorization': `Bearer ${session.access_token}`,
-            },
-            body: JSON.stringify({ annuncio_id: annuncioId }),
-        });
-        const result = await res.json().catch(() => ({}));
-        if (res.ok && result.granted === true) {
-            localStorage.removeItem('_welcome_vetrina_won_' + userId);
-        }
-        return res.ok && result.granted === true;
-    } catch (_) { return false; }
-}
-
 // ── Submit ────────────────────────────────────────────────
 function _withTimeout(promise, ms, label) {
     return Promise.race([
@@ -1974,25 +1951,13 @@ async function submitAnnuncio() {
                 .then(() => {}).catch(() => {});
         }
 
-        const vetranaGranted = await _withTimeout(
-            _tryGrantWelcomeVetrina(user.id, inserted.id),
-            5000,
-            'Vetrina welcome scaduta'
-        ).catch(() => false);
-
-        // ── Scelta Vetrina al momento della pubblicazione ──────────
-        // L'annuncio è già stato inserito (resta 'pending' per la moderazione):
-        // se l'utente ha scelto una Vetrina lo portiamo su Stripe con lo sconto
-        // -10% (prezzo e idoneità validati SERVER-SIDE in create-checkout-session
-        // con source=vendi_creation). Se annulla o il checkout fallisce
-        // l'annuncio resta comunque pubblicato: nessun dato perso. Se ha appena
-        // vinto la Vetrina gratuita della lotteria non lo facciamo pagare.
-        if (_pubChoice !== 'free' && inserted?.id && !vetranaGranted) {
+        // Acquisto Premium facoltativo. Nessuno sconto di pubblicazione o omaggio automatico.
+        if (_pubChoice !== 'free' && inserted?.id) {
             try {
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Apertura pagamento sicuro…';
                 // Ri-deriva un token fresco: durante l'INSERT può essere
                 // scattato un refresh JWT e _currentSession resterebbe stale,
-                // facendo fallire il checkout (e perdere lo sconto -10%).
+                // facendo fallire il checkout.
                 let _tok = null;
                 try { _tok = (await _getSessionForSubmit())?.access_token || null; } catch (_) {}
                 if (!_tok) _tok = _currentSession?.access_token || null;
@@ -2008,7 +1973,9 @@ async function submitAnnuncio() {
                 }), 15000, 'Timeout checkout');
                 const coData = await coRes.json().catch(() => ({}));
                 if (coRes.ok && coData.url) {
-                    window.location.href = coData.url; // si lascia la pagina: niente successMsg
+                    const paymentUrl = new URL(coData.url);
+                    if (paymentUrl.protocol !== 'https:' || paymentUrl.hostname !== 'checkout.stripe.com') throw new Error('Pagamento non disponibile');
+                    window.location.href = paymentUrl.href;
                     return;
                 }
                 throw new Error(coData.error || 'Checkout non disponibile');
@@ -2026,12 +1993,6 @@ async function submitAnnuncio() {
         const successEl = document.getElementById('successMsg');
         successEl.classList.remove('hidden');
 
-        if (vetranaGranted) {
-            const vetrinaBanner = document.createElement('div');
-            vetrinaBanner.className = 'mt-4 bg-gradient-to-r from-amber-400 to-yellow-300 border-2 border-amber-500 rounded-xl p-5 text-center shadow-lg';
-            vetrinaBanner.innerHTML = '<div class="text-3xl mb-1">🏆</div><p class="text-amber-900 font-black text-base">HAI VINTO!</p><p class="text-amber-800 font-bold text-sm mt-1">Il tuo annuncio è in Vetrina gratis per 30 giorni!</p><p class="text-amber-700 text-xs mt-1">Apparirà in cima a tutti i risultati.</p>';
-            successEl.appendChild(vetrinaBanner);
-        }
 
     } catch (err) {
         console.error('Pubblicazione fallita:', err);

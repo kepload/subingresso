@@ -201,31 +201,16 @@ async function _loadBandoListingsBox(regione, postSlug) {
         if (!selection || !Array.isArray(selection.listings) || !Array.isArray(selection.regions)) throw new Error('Ads unavailable');
         const regions = selection.regions.filter(r => Object.values(SLUG_TO_REGIONE).includes(r));
         const localRegion = regions.length === 1 ? regions[0] : null;
-        const data = selection.listings.filter(l => l && l.id && l.status === 'active' && !isListingExpired(l)
+        const data = selection.listings.filter(l => l && l.id && l.status === 'active' && isListingFeatured(l) && !isListingExpired(l)
             && (!regions.length || regions.includes(l.regione))).filter((l,index,all) => all.findIndex(other => other.id === l.id) === index).slice(0,3);
 
-        if (!data || data.length === 0) {
-            if (localRegion) {
-                // FALLBACK 2.5: regione conosciuta + 0 risultati → CTA avvisi.
-                target.innerHTML = '<div class="not-prose mt-12 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100">'
-                    + '<h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Ancora pochi posteggi in ' + escapeHTML(localRegion) + '</h3>'
-                    + '<p class="text-sm text-slate-600 mb-2 leading-relaxed">Nessun annuncio attivo nella zona in questo momento.</p>'
-                    + (document.getElementById('bandoAlertForm')
-                        ? '<a href="#bandoAlertForm" class="inline-block mt-2 text-sm font-black text-blue-600 hover:underline">Attiva gli avvisi sui bandi della regione</a>'
-                        : '<a href="/annunci?regione=' + encodeURIComponent(localRegion) + '" class="inline-block mt-2 text-sm font-black text-blue-600 hover:underline">Cerca posteggi nella regione →</a>')
-                    + '</div>';
-            } else {
-                // Articolo generico + 0 annunci attivi (caso raro su tutto il sito) → niente box.
-                target.innerHTML = '';
-            }
-            return;
-        }
+        if (!data || data.length === 0) { target.innerHTML = ''; return; }
 
         const cards = data.map(_blogListingPreview).join('');
-        const heading = localRegion ? 'Posteggi disponibili adesso in ' + escapeHTML(localRegion)
-            : regions.length ? 'Posteggi nelle zone dell’articolo' : 'Posteggi disponibili adesso';
+        const heading = localRegion ? 'Vetrine Premium in ' + escapeHTML(localRegion)
+            : regions.length ? 'Vetrine Premium nelle zone dell’articolo' : 'Posteggi in Vetrina Premium';
         const seeAllUrl = localRegion ? '/annunci?regione=' + encodeURIComponent(localRegion) : '/annunci';
-        target.innerHTML = '<section class="not-prose blog-listings" aria-label="Posteggi disponibili" data-box-listings' + (localRegion ? ' data-regione="' + escapeHTML(localRegion) + '"' : '') + '>'
+        target.innerHTML = '<section class="not-prose blog-listings" aria-label="Annunci sponsorizzati" data-box-listings' + (localRegion ? ' data-regione="' + escapeHTML(localRegion) + '"' : '') + '>'
             + '<div class="blog-listings-header">'
             +   '<h3>' + heading + '</h3>'
             +   '<a href="' + seeAllUrl + '" class="blog-listings-all">Vedi tutti →</a>'
