@@ -151,7 +151,7 @@
                 const days={'10d':10,'30d':30,'90d':90}[payments[0].tier];
                 document.getElementById('successDetails').textContent = `${days || ''} giorni per ${count>1?'ciascun annuncio':'il tuo annuncio'} · nessun rinnovo automatico`;
                 const button=document.getElementById('viewAnnuncioBtn');
-                if (count>1) { button.href='/dashboard?tab=pagamenti';button.textContent='Vedi le tue Vetrine'; }
+                if (count>1) { button.href='/dashboard#pagamenti';button.textContent='Vedi le tue Vetrine'; }
                 else if (waiting || !payments[0].annuncio_id) button.classList.add('hidden');
                 else button.href='/annuncio?id='+encodeURIComponent(payments[0].annuncio_id);
                 showState('stateSuccess'); return;
@@ -162,7 +162,7 @@
         setTimeout(poll,2000);
     };
 
-    poll();
+    await poll();
 })();
 </script>
 </body>

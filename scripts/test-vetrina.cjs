@@ -29,6 +29,32 @@ async function main() {
             if (!/\bsrc\s*=|application\/ld\+json/i.test(attrs)) new vm.Script(code, {filename:file});
         }
     }
+    // Payment return: all items must be confirmed before showing success.
+    const thanks=fs.readFileSync(path.join(root,'grazie.html'),'utf8');
+    const returnScript=[...thanks.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)].map(m=>m[2]).find(code=>code.includes('const sessionId'));
+    for(const [rows,expected,link] of [
+        [[{status:'succeeded',annuncio_id:id,tier:'30d',activated_at:'2026-10-22',bundle_size:1}],'stateSuccess','/annuncio?id='+id],
+        [Array.from({length:3},()=>({status:'succeeded',annuncio_id:id,tier:'30d',activated_at:'2026-10-22',bundle_size:3})),'stateSuccess','/dashboard#pagamenti'],
+        [[{status:'succeeded',annuncio_id:id,tier:'30d',activated_at:null,bundle_size:1}],'stateSuccess',null],
+        [[{status:'pending',bundle_size:1}],'stateChecking',null],
+        [[{status:'failed',bundle_size:1}],'stateError',null],
+        [[{status:'succeeded',bundle_size:2}],'stateChecking',null]
+    ]){
+        const nodes=new Map(),scheduled=[];
+        const el=name=>{
+            if(!nodes.has(name)){const classes=new Set(name==='stateChecking'?[]:['hidden']);nodes.set(name,{textContent:'',href:'',classList:{toggle:(c,on)=>on?classes.add(c):classes.delete(c),add:c=>classes.add(c),contains:c=>classes.has(c)}});}
+            return nodes.get(name);
+        };
+        const context=vm.createContext({location:{search:'?session_id=cs_test_return'},URLSearchParams,
+            document:{getElementById:el},setTimeout:fn=>scheduled.push(fn),console,
+            _supabase:{from:table=>{assert.equal(table,'payments');return{select(){return this},or(value){assert(value.includes('checkout_session_id'));return this},limit:async()=>({data:rows,error:null})};}}
+        });
+        await new vm.Script(returnScript).runInContext(context);
+        assert.equal(el(expected).classList.contains('hidden'),false);
+        if(expected!=='stateSuccess')assert(el('stateSuccess').classList.contains('hidden'));
+        if(link)assert.equal(el('viewAnnuncioBtn').href,link);
+        if(expected==='stateSuccess'&&rows[0].activated_at===null)assert(el('viewAnnuncioBtn').classList.contains('hidden'));
+    }
     const Pricing = require('../js/vetrina-pricing.js');
     const ids = Array.from({length:11},(_,i)=>`22222222-2222-2222-2222-${String(i+1).padStart(12,'0')}`);
     let listings = [], charge, logged, orderError=false,expired=false;
