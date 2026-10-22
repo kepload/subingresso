@@ -9,8 +9,8 @@
   Backend applicato e verificato: checkout16/webhook14; nessun addebito o
   dato di prova persistente. Inventari annunci/profili/ordini e trigger
   identici prima/dopo. Test prezzi/SQL/Chrome-Safari/form/acquisti/blog
-  passati, inspector0FAIL. Pubblicato001cd38, Vercel
-  3gQ439spfmtDNzbynKHp8c2eVL2u READY:8asset identici al commit; quattro
+  passati, inspector0FAIL. Pubblicato079e441, Vercel
+  6tckdNVNTCUXSCMpLiTbyAD46ovx READY:8asset identici al commit; quattro
   browser/formati ripetuti sugli asset pubblicati e sei casi di conferma
   singola/pacchetto passati. Dati e trigger ancora identici. Esiti e limiti in
   `Documents/vetrine-premium-bundle-20261022/risultati.md`, contratto in
