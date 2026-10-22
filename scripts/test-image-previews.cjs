@@ -6,7 +6,8 @@ const path = require('node:path');
 const vm = require('node:vm');
 const sharp = require('sharp');
 const { getOptimizedImageUrl, origin, marker } = require('../js/image-urls.js');
-const handler = require('../api/image.js');
+const { createHandler, bucket } = require('../lib/image-preview-cache.cjs');
+const handler = createHandler({ storageKey: () => 'fixture-storage-key' });
 const originalFetch = global.fetch;
 const root = path.resolve(__dirname, '..');
 const storedPath = 'listings/test-owner/photo.jpg';
@@ -38,6 +39,10 @@ async function serverChecks() {
     const source = await sharp({create:{width:1800,height:1200,channels:3,background:'#6d8b43'}}).jpeg().withMetadata({orientation:6}).toBuffer();
     global.fetch = async (url, options) => {
         fetched.push([url, options]);
+        if (url.includes('/' + bucket + '/')) {
+            if (options?.method === 'POST') return Response.json({ Key: 'fixture' });
+            return new Response(null, { status:404 });
+        }
         return new Response(source, { headers:{'Content-Type':'image/jpeg','Content-Length':String(source.length)} });
     };
     const preview = await request(query());
@@ -49,8 +54,8 @@ async function serverChecks() {
     assert.equal(meta.height,480);
     assert.equal(meta.exif,undefined);
     assert.equal(meta.orientation,undefined);
-    assert.equal(fetched[0][0],photo);
-    assert.equal(fetched[0][1].redirect,'error');
+    assert.equal(fetched[1][0],photo);
+    assert.equal(fetched[1][1].redirect,'error');
     const tinyAvatar = await request(query('avatars/test-owner/avatar.jpg','48'));
     const avatarMeta = await sharp(tinyAvatar.body).metadata();
     assert.equal(avatarMeta.width,48);
@@ -65,7 +70,7 @@ async function serverChecks() {
         [new Response(source,{headers:{'Content-Type':'image/jpeg','Content-Length':String(21*1024*1024)}}),413],
         [new Response('invalid image',{headers:{'Content-Type':'image/jpeg'}}),502]
     ]) {
-        global.fetch = async () => response;
+        global.fetch = async url => url.includes('/' + bucket + '/') ? new Response(null,{status:404}) : response;
         const result = await request(query());
         assert.equal(result.status,expected);
         assert.equal(result.headers['Cache-Control'],'no-store');
@@ -76,7 +81,8 @@ async function serverChecks() {
 
     for (const file of fs.readdirSync(root).filter(f=>f.endsWith('.html'))) {
         const html = fs.readFileSync(path.join(root,file),'utf8');
-        if (html.includes('js/data.js?')) assert(html.indexOf('js/image-urls.js?') < html.indexOf('js/data.js?') && html.includes('js/image-urls.js?'),file);
+        // These text/calendar pages use auth/data without rendering listing images.
+        if (html.includes('js/data.js?') && !['contatti.html','fiere.html','privacy.html','termini.html'].includes(file)) assert(html.indexOf('js/image-urls.js?') < html.indexOf('js/data.js?') && html.includes('js/image-urls.js?'),file);
         for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
             if (!/\bsrc\s*=|application\/ld\+json/i.test(match[1])) new vm.Script(match[2],{filename:file});
         }

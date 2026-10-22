@@ -1,5 +1,10 @@
 # Regole Claude — Subingresso.it
 
+Anteprime22/10: `api/image.js`/`lib/image-preview-cache.cjs` riusano WebP nel
+bucket `image-previews` anche dopo i deploy; un originale per sei dimensioni.
+Secret solo in environment cifrato Vercel, originali mai modificati.
+Contratto, errori e verifiche in `data/IMAGE_PREVIEWS.md`; nessun piano attivato.
+
 - Tema personale admin22/10: `admin-theme.js?v=2`, `admin-theme.css?v=2`, tutti gli HTML/API. Si attiva solo dopo sessione convalidata e `is_admin === true`, senza cache ruolo. Rigenerare CSS con `node scripts/build-admin-theme.cjs` dopo cambi cromatici; base `css/admin-theme-base.css`. Registro/prove in Subingresso.it informazioni.md.
 
 - 🛡️ **BACKUP TAG OBBLIGATORIO (regola n.0)**: prima della prima modifica di OGNI nuova sessione, lancia `.\scripts\session-backup.ps1 -Reason "<descrizione-corta>"`. Crea un tag git su HEAD + push remoto. Ritorno garantito con `git reset --hard backup/session-YYYYMMDD-HHMMSS-...`.

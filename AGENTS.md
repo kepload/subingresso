@@ -4,6 +4,11 @@
 > Mantenere allineato con `CLAUDE.md` quando si modifica.
 > Per la mappa tecnica completa del progetto: leggi `istruzioni.md` (812 righe, sezione 0).
 
+Anteprime22/10: `api/image.js`/`lib/image-preview-cache.cjs` riusano WebP nel
+bucket `image-previews` anche dopo i deploy; un originale per sei dimensioni.
+Secret solo in environment cifrato Vercel, originali mai modificati.
+Contratto, errori e verifiche in `data/IMAGE_PREVIEWS.md`; nessun piano attivato.
+
 ---
 
 ## Qualità dati (8 ottobre 2026)

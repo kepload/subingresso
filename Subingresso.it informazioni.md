@@ -1,5 +1,19 @@
 # Subingresso.it — informazioni e TO DO
 
+- **Banda Supabase,22/10:** avviso cached egress, grazia fino21/11/2026.
+  Autorizzata correzione: anteprime WebP persistenti `image-previews`, un
+  originale per sei dimensioni; riuso dopo deploy e richieste simultanee.
+  Nessun piano attivato; originali/qualità/URL conservati. Configurazione
+  server cifrata verificata; test API/concorrenza/riavvio e Chrome/Safari
+  passati. Preparate594WebP/18.975.186byte per99originali invariati;
+  12richieste da nuove istanze senza scaricare originali, due anteprime
+  identiche alla vecchia produzione. Pubblicazione in corso; stato/prove in
+  `Documents/verifica-anteprime-persistenti-20261022/`, contratto e test in
+  `data/IMAGE_PREVIEWS.md`. Backup remoto session-20261022-104343 valido;
+  errore cleanup noto. API Vercel401/403 risolta con refresh CLI; prime
+  chiavi mascherate/legacy rifiutate, risolto recuperando il secret per ID.
+  Configurazione creata, primo resoconto parziale corretto senza duplicati.
+
 - **Dashboard e statistiche fiere,22/10:** richiesta corrente: eliminare
   «Il sito sotto controllo» e ridisegnare le statistiche organizzatori con
   Desktop/Skill/taste-skill. Rimosso blocco/admin polling, altri pannelli
