@@ -16,3 +16,5 @@ Richiesta: 30 giorni a 99 €, listino premium coerente per 10/90 giorni e pacch
 Migrazione: `PATCH_VETRINE_PREMIUM_20261022.sql`. Deploy in ordine: migrazione, stripe-webhook compatibile, create-checkout-session, frontend. Nessun segreto nei file versionati.
 
 Verifiche: `scripts/test-vetrina.cjs`, `scripts/verify-vetrina-premium.sql` nello stesso transaction della migrazione e ROLLBACK, `scripts/test-vetrina-conversion.cjs`, `scripts/test-vetrina-account.cjs`, `scripts/test-vendi.cjs`, `scripts/test-blog-ads*.cjs`. Nessun addebito reale; prove e limiti in `Documents/vetrine-premium-bundle-20261022/`. Consultare il resoconto per gli esiti effettivamente eseguiti e la pubblicazione.
+
+Pubblicato001cd38, Vercel3gQ439spfmtDNzbynKHp8c2eVL2u READY: otto asset identici, flussi del componente ripetuti con i sorgenti pubblicati nei quattro browser/formati, sei casi di conferma pagamento verificati senza addebito. Inventari dati utenti/ordini e trigger ancora identici a prima della migrazione. Prove esatte in pubblicazione-finale.json e risultati.md della cartella esterna.
