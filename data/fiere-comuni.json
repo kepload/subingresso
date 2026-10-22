@@ -4,7 +4,7 @@
       "city": "Gattinara",
       "region": "Piemonte",
       "province": "Vercelli",
-      "checkedAt": "2026-10-13",
+      "checkedAt": "2026-10-22",
       "approval": "codex-reviewed",
       "research": {
         "scope": "Ricerca documentale per il solo comune, non per tutta la provincia di Vercelli.",
@@ -46,11 +46,15 @@
           }
         ],
         "unresolved": [
-          "Nessuna edizione natalizia 2026 documentata nelle fonti selezionate; non inferire assenza di altri eventi.",
-          "LUVA: giornate delle singole bancarelle, quote, termine e categorie ancora da documentare.",
-          "Calendario regionale PDF 2026 non recuperato integralmente: la ricerca comunale non è esaustiva."
+          "Natale2026:nuoveedizioniecondizioninonpubblicatenellefontiaccessibiliconsultate,manutenzionefuturadistintadallaricercacorrenteconclusa.",
+          "LUVA:nessunatariffageneralepercommerciantiinfonteCTV;gratuitàlimitataassociazioni/ETS."
         ],
-        "publicationRules": "Nessuna iscrizione inviata, nessun posteggio o ammissione garantiti. Fonti 2026 passate restano esplicitamente storiche."
+        "publicationRules": "Nessuna iscrizione inviata, nessun posteggio o ammissione garantiti. Fonti 2026 passate restano esplicitamente storiche.",
+        "supplement20261022": {
+          "scope": "Sole piste già aperte,non ripetizione ricerca13ottobre",
+          "source": "https://www.centroterritorialevolontariato.org/mercatino-di-luva-2026-festa-delluva-di-gattinara/",
+          "result": "LUVA4–6settembre,termine14agosto,gratuitàperuna postazioneETS3×3,senzacorrente. Nataleoriginale2025conservatocome storico;nessun2026inventato. Auditprovinciale indata/fiere-vercelli.json."
+        }
       },
       "events": [
         {
@@ -92,7 +96,10 @@
             "email": "ufficio.commercio@comune.gattinara.vc.it",
             "pec": "suapgattinara@pec.it"
           },
-          "contactsSourceUrl": "https://www.comune.gattinara.vc.it/Uffici?IDUfficio=28138"
+          "contactsSourceUrl": "https://www.comune.gattinara.vc.it/Uffici?IDUfficio=28138",
+          "sourceRecordIds": [
+            "https://comune.gattinara.vc.it/Dettaglionews?IDNews=416044"
+          ]
         },
         {
           "region": "Piemonte",
@@ -132,7 +139,10 @@
             "phone": "0163824394",
             "email": "protocollo@comune.gattinara.vc.it"
           },
-          "contactsSourceUrl": "https://visitgattinara.it/notizie/iscrizione-mercatinini-rosa-rosso-maggio-2026"
+          "contactsSourceUrl": "https://visitgattinara.it/notizie/iscrizione-mercatinini-rosa-rosso-maggio-2026",
+          "sourceRecordIds": [
+            "https://visitgattinara.it/notizie/iscrizione-mercatinini-rosa-rosso-maggio-2026"
+          ]
         },
         {
           "region": "Piemonte",
@@ -145,7 +155,7 @@
           "sectors": "Bancarelle e degustazioni; categorie degli espositori da verificare con la Pro Loco",
           "venue": "Centro di Gattinara",
           "organizer": "Comune di Gattinara e Pro Loco di Gattinara",
-          "summary": "Le date indicano il periodo della festa. Le giornate e gli orari delle singole bancarelle non sono specificati nell’avviso consultato.",
+          "summary": "Mercatino durante LUVA il 4, 5 e 6 settembre 2026. Per associazioni ed enti del Terzo Settore è gratuita una postazione da 3×3 m, previa iscrizione entro il 14 agosto. Questa gratuità non è estesa ai commercianti.",
           "source": {
             "url": "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte",
             "label": "Visit Gattinara · portale del Comune",
@@ -163,15 +173,64 @@
           ],
           "participation": {
             "type": "check",
-            "note": "Iscrizione tramite Pro Loco. L'edizione è conclusa: chiedi all'organizzatore le nuove condizioni.",
+            "note": "Iscrizione esclusivamente online entro il 14 agosto, con possibile chiusura anticipata per esaurimento spazi. Per associazioni ed ETS una postazione da 3×3 m è gratuita. Gazebo e attrezzature sono a carico del partecipante; niente allaccio elettrico o vigilanza notturna. La comunicazione CTV sugli orari di scarico e apertura è poco chiara: gli orari dei singoli banchi vanno verificati. Nessuna tariffa generale dei venditori professionali documentata.",
             "url": "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte",
-            "costs": "La fonte non indica tariffe o scadenza della domanda. Non trasferire al prossimo anno le condizioni della vecchia edizione."
+            "costs": "Una postazione gratuita per associazioni ed enti del Terzo Settore, previa iscrizione. Misura standard 3×3 m; gazebo e attrezzature a carico del partecipante, senza elettricità. Non è una tariffa generale per commercianti.",
+            "deadline": "2026-08-14"
           },
           "contacts": {
             "phone": "0163824316",
             "email": "protocollo@comune.gattinara.vc.it"
           },
-          "contactsSourceUrl": "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte"
+          "contactsSourceUrl": "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte",
+          "sourceRecordIds": [
+            "https://visitgattinara.it/notizie/luva-gattinara-2026",
+            "https://www.centroterritorialevolontariato.org/mercatino-di-luva-2026-festa-delluva-di-gattinara/",
+            "https://visitgattinara.it/notizie/luva-2026-iscrizioni-aperte"
+          ],
+          "pricing": {
+            "kind": "conditional",
+            "label": "Una postazione gratuita per associazioni/ETS",
+            "details": "Una postazione gratuita per associazioni ed enti del Terzo Settore, previa iscrizione. Misura standard 3×3 m; gazebo e attrezzature a carico del partecipante, senza elettricità. Non è una tariffa generale per commercianti.",
+            "sourceUrl": "https://www.centroterritorialevolontariato.org/mercatino-di-luva-2026-festa-delluva-di-gattinara/",
+            "checkedAt": "2026-10-22",
+            "period": "2026"
+          }
+        },
+        {
+          "region": "Piemonte",
+          "city": "Gattinara",
+          "name": "Mercatino di Natale",
+          "category": "mercatino",
+          "months": [
+            12
+          ],
+          "sectors": "Artigianato, hobbistica e idee regalo",
+          "summary": "Edizione documentata dell’8 dicembre 2025, conclusa. Nessun calendario 2026 dedotto dalla ricorrenza.",
+          "venue": "Centro storico",
+          "organizer": "Visit Gattinara / organizzazione locale",
+          "source": {
+            "url": "https://visitvalsesiavercelli.it/partecipa/eventi-e-news/eventi/mercatino-di-natale-a-gattinara/",
+            "label": "ATL Terre dell’Alto Piemonte",
+            "checkedAt": "2026-10-22"
+          },
+          "editions": [
+            {
+              "year": 2025,
+              "start": "2025-12-08",
+              "end": "2025-12-08",
+              "dateType": "confirmed",
+              "sourceUrl": "https://visitvalsesiavercelli.it/partecipa/eventi-e-news/eventi/mercatino-di-natale-a-gattinara/"
+            }
+          ],
+          "participation": {
+            "type": "check",
+            "note": "Le iscrizioni per il 2025 erano online entro il 22 novembre 2025. Non è una domanda aperta per il 2026: verificare nuove edizioni e condizioni con l’organizzatore. Nessuna disponibilità o assegnazione garantita."
+          },
+          "sourceRecordIds": [
+            "https://visitvalsesiavercelli.it/partecipa/eventi-e-news/eventi/mercatino-di-natale-a-gattinara/"
+          ],
+          "hours": "10:00–18:00 nell’edizione 2025"
         }
       ]
     }
