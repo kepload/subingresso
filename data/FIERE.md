@@ -9,7 +9,8 @@ sono identiche** al checkpoint `f41265a`. Catalogo nazionale **6.343 schede**,
 **6.140 con dati edizione**. Ripartenza dal calendario pubblicato e da questo
 registro: al checkpoint non risultava un audit provinciale Sondrio separato.
 Nessun'altra provincia lavorata, nessuna comunicazione o candidatura inviata.
-Pubblicazione e verifica online in corso: TO DO lasciata invariata fino all'esito.
+**Pubblicata e verificata online**; TO DO e riepiloghi aggiornati dopo esito
+positivo: **55 province concluse, 55 rimanenti**.
 
 ### Copertura e originali
 
@@ -141,8 +142,21 @@ registrata separatamente. Test locali passati. Generali settori e6.343pagine/
 `20552caea6273c15a8005544ab929e0304c91f409d03916c2f327b5660b53d8b`.
 Backup integrale SHA256 `ricerche-fiere-20261023-111309`: **72.640 file**,
 **11.872.974.938 byte**, zero errori; supplemento finale separato per prove
-prodotte dopo lo snapshot. Esito cinque formati generali, commit, deploy,
-prove online e chiusura TO DO registrati dopo conferma effettiva.
+prodotte dopo lo snapshot.
+
+Pubblicazione `4fe8b8c`, [deploy Vercel riuscito](https://subingresso-22ygkhq3h-kycykuardit-9234s-projects.vercel.app), stato confermato
+dall'API GitHub. Quattro asset pubblici identici SHA256 ai blob Git (audit,
+catalogo, script e pagina calendario); **tutte le90pagine HTTP200 con H1,
+canonical, istruzioni e costi corretti**. Test provinciale passato anche online:
+Chromium1440/320 e WebKit390, tutti90dialoghi ciascuno, mappa/elenco e pagine
+senza JS. Sito reale senza intercettazioni nei medesimi tre formati:90schede,
+zero errori JavaScript e nessun overflow. Suite generale cinque formati passata,
+oltre ai controlli settori/pagine/sitemap e build ripetibile sopra. Prove locali
+e online nella cartella ricerca: `test-results.json`, `test-local.json`,
+`test-online.json`, `publish-deploy.json`, `github-deploy-status.json`,
+`online-pages.json`, `real-site.json` e schermate. TO DO spuntata soltanto dopo
+queste conferme. Aggiornamenti di bandi, quote, rinvii e disponibilità future
+restano manutenzione periodica distinta dalla ricerca documentale conclusa.
 
 
 ## Biella — ricerca documentale del 23 ottobre 2026
