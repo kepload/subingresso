@@ -96,7 +96,7 @@ copiata nel repo.
 Pubblicazione `1dee01b`, deploy Vercel con stato GitHub
 **success**, cinque asset online identici byte per byte al commit, comprese
 le versioni JS112/JSON80. Catalogo SHA256
-`afc741205e2bbf6f55e02c54d9fb2867c3d9bf75ffca6629d0671299cf10e9e0`.
+`fab4bb74603b5b240abe8c2c0bfcd818893feaea05000c035317647732affc19`.
 Tutte le **88 pagine online** HTTP200, titolo, canonical, note e costi
 verificati. Browser locale e online `PLAYWRIGHT_MODULE`: Chromium1440/320 e
 WebKit390, **88 dialoghi e otto pagine senza JS per formato**, senza errori
