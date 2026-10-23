@@ -15,7 +15,9 @@
   un contatto escluso per problemi provider;nessuno dei20contattato nelle72ore.
   Test novevarianti/invio simulato/limiti SQL ROLLBACK e disiscrizione nei tre
   browser/formati passati. Dettagli data/VETRINA_EMAIL.md;prove e lista privata
-  Documents/campagna-vetrine-20261023/. Pubblicazione pagina uscita da verificare.
+  Documents/campagna-vetrine-20261023/. Pubblicato3908a16:pagina uscita eJS3
+  identici ai blobGit online;API invio senza auth401,promo/digest token finto404.
+  Verifica finale:zero consensi e zero invii;nomi/email WhatsApp ancora attesi.
   Backup tag/ramo remoti validi;helper interrotto dopo push per stderr noto.
 
 - Preferenza: poche email brevi e umane, varianti pertinenti, visualizzazioni

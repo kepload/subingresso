@@ -1582,6 +1582,9 @@ Nessun nuovo cron;runner privato15secondi fra invii,solo su lista confermata.
 Migrazione/quattro Edge applicate;zero consensi registrati/zero invii mentre
 si attendono nomi. Test simulati/SQL ROLLBACK/browser passati. Contratto,
 pubblicazione e limiti in data/VETRINA_EMAIL.md;prove/cartella privata sopra.
+Pubblicato3908a16:uscita/JS3 identici ai blobGit online;API anonima401,
+token finti promo/digest404. Zero consensi/invii al controllo finale;lista
+nominativa ancora richiesta. File concorrenti delle fiere conservati.
 
 ### Edge Functions email (7+ totali)
 - **Transazionali:** `send-auth-email` (5 tipi auth), `notify-seller` (3 tipi), `notify-alert` (1), `notify-message` (1), `welcome-email` (1).

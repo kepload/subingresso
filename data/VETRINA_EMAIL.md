@@ -4,7 +4,7 @@ L'utente autorizza il primo giro e chiede una frequenza moderata. Riferisce cons
 
 ## Stato corrente
 
-Migrazione applicata e quattro Edge pubblicate: `vetrina-campaign`, `email-unsubscribe`, `weekly-seller-stats`, `weekly-buyer-digest`. Zero permessi positivi registrati, zero proposte inviate, nessun nuovo cron. Pagina/JS uscita aggiornati localmente; pubblicazione frontend da verificare. Resend interrogato in sola lettura: storico completo del periodo necessario, 12 email totali oggi, 20 account controllati; un account escluso per problemi del provider e nessun contatto recente nelle ultime 72 ore fra i venti. Questi numeri fotografano il controllo, non sono quote permanenti o prove di consegna di una nuova campagna.
+Migrazione applicata e quattro Edge pubblicate: `vetrina-campaign`, `email-unsubscribe`, `weekly-seller-stats`, `weekly-buyer-digest`. Zero permessi positivi registrati, zero proposte inviate, nessun nuovo cron. Frontend pubblicato3908a16: pagina uscita e JS3 identici byte per byte ai blob Git online, entrambe HTTP200. Invio senza chiave401; token finti promo/digest404; nessuna revoca reale di prova. La prima verifica confrontava i terminatori locali CRLF dello script: confronto corretto sui byte Git/produzione LF e passato. Resend interrogato in sola lettura: storico completo del periodo necessario, 12 email totali oggi, 20 account controllati; un account escluso per problemi del provider e nessun contatto recente nelle ultime 72 ore fra i venti. Questi numeri fotografano il controllo, non sono quote permanenti o prove di consegna di una nuova campagna.
 
 ## Limiti applicati
 
