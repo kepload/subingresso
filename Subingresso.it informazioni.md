@@ -5,10 +5,15 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Riferimenti nei documenti — 23 ottobre 2026
+
+- Rimossi richiami a strumenti esterni da regole, storico e commenti;
+  guida grafica rinominata, contenuti e comportamento del sito conservati.
+  Originali nel backup locale `Documents/backup-subingresso/riferimenti-documenti-20261023-190446`.
+
 ## Regole comuni e pulizia documentale — 23 ottobre 2026
 
-- Fonte unica `AGENTS.md`, `CLAUDE.md` ridotto all'import; skill solo se richieste
-  nel prompt e letture mirate. Limiti imposti dall'app distinti dalle regole locali.
+- Fonte unica `AGENTS.md`, `CLAUDE.md` ridotto all'import e letture mirate.
 - Tolti riepiloghi duplicati e descrizioni superate (prezzi/sconti, Scout v1,
   cache congelate, snapshot di maggio); mantenuti formule dei report storici,
   checklist, criteri provinciali, contratti e prove. Verifica finale sui rimandi,
@@ -146,7 +151,7 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## Finiture modalità scura — 23 ottobre 2026
 
-- Richiesta: bordi e pulsanti più puliti con Impeccable, struttura conservata.
+- Richiesta: bordi e pulsanti più puliti, struttura conservata.
   Convertiti bordi chiari indigo/ciano e gialli; statistiche con etichette12px,
   cifre tabulari e schede economiche estese su telefono. Pulsanti admin
   piatti,36/44px, focus/stati coerenti; niente invii o scritture account reali.
@@ -267,7 +272,7 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 - **Dashboard e statistiche fiere,22/10:** richiesta corrente: eliminare
   «Il sito sotto controllo» e ridisegnare le statistiche organizzatori con
-  Desktop/Skill/taste-skill. Rimosso blocco/admin polling, altri pannelli
+  un riferimento grafico dedicato. Rimosso blocco/admin polling, altri pannelli
   conservati. True-black flat, numeri condivisi, grafico adattivo, posti
   liberi/assegnati, provenienza, contatti, agenda e risultati mobile.
   Profili diretti, filtri7/30/90 e CSV conservati; nessuna scrittura DB.
@@ -586,16 +591,16 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   creati prima delle modifiche. Manutenzione futura distinta dalla ricerca attuale;
   nessuna altra provincia avviata e modifiche estranee preservate fuori dai commit.
 
-- **Redesign Impeccable,21/10,richiesta esplicita:** home a catalogo,
+- **Ridisegno grafico,21/10,richiesta esplicita:** home a catalogo,
   ricerca blu, card/metadati leggibili, fiere/calcolatore, città e FAQ native;
   finiture condivise e font Jakarta statici locali400–800 con licenza OFL.
   Logo testuale, slogan e flussi conservati; CSS8, homeCSS/JS2.
-  Copia391file verificati SHA256 in `Documents/backup-subingresso/impeccable-20261021-092441/`,
-  collegamento Desktop; tag session-20261021-092441-impeccable-redesign e ramo
-  pre-impeccable-20261021-092441 verificati remoti; noto errore cleanup helper.
+  Copia391file verificati SHA256 e collegamento Desktop; tag e ramo preventivi
+  verificati remoti, noto errore cleanup helper. Percorsi originali dei backup
+  conservati nella versione Git precedente (`777c1e6`).
   Locale5browser/formati, profili364 e preferiti174 passati; correzioni Safari
   e sovrapposizione copertine giudicate risolte. Prove/limiti in
-  `Documents/verifica-impeccable-20261021/`; pubblicazione da verificare.
+  dossier originale del ridisegno21/10 (percorso in Git `777c1e6`); pubblicazione da verificare.
 
 - **Perugia conclusa e verificata online,21/10:**152manifestazioni/47comuni,
   ricognizione59comuni,120registrazioni originali e165ricevute.146schede datate,
@@ -664,7 +669,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   Nessuna scrittura reale. Backup tag/branch verificati, noto errore
   cleanup; prove Documents/verifica-logo-menu-mobile-20261021/.
 
-- **Grafica precedente ripristinata,21/10:** nuova versione Emil rifiutata
+- **Grafica precedente ripristinata,21/10:** nuova versione rifiutata
   dall'utente: preferisce sito semplice e grafica originale. Home9ffd1c1,
   slogan «La tua licenza venduta in un click», senza sottotitolo aggiuntivo;
   tolti piazza, nuovi testi/riquadri e modifiche visive a card/header/footer.
@@ -677,15 +682,14 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
   `Documents/verifica-ripristino-grafica-20261021/`; backup preventivo
   `backup/session-20261021-012320-ripristino-grafica`/branch pre-ripristino.
 
-- **Versione grafica Emil,21/10:** richiesta prova grafica e pubblicazione
+- **Prova grafica,21/10:** richiesta prova grafica e pubblicazione
   con backup. Home ridisegnata, ricerca centrale, piazza SVG originale,
   richiami fiere/calcolatore, città e FAQ native. Header/footer coordinati,
   menu telefono accessibile, feedback brevi e movimento ridotto; palette
   organizzatore e contatori animati conservati. UI13, design-system/home1;
-  flussi/dati/DB invariati. Guida `data/EMIL_DESIGN.md`, prove
-  `Documents/verifica-emil-design-20261021/`. Backup remoto tag
-  `backup/session-20261021-005709-emil-design` e branch pre-emil validi;
-  ZIP locale `Documents/backup-subingresso/emil-design-20261021/`.
+  flussi/dati/DB invariati. Guida `data/STORICO_GRAFICA_20261021.md`; prove,
+  tag/ramo remoti verificati e ZIP locale nei percorsi originali conservati
+  nella versione Git precedente (`777c1e6`).
   Ripristino con revert del commit grafico, preservando modifiche successive.
   Locale Chromium1440/820/320 e WebKit390 passato, profili364 e tema scuro3
   passati. Pubblicazione e verifiche online registrate nel resoconto prove.
@@ -1154,7 +1158,7 @@ Repo locale `C:\Users\utente\Desktop\Ardit\subingresso.it` (il vecchio `Desktop\
 
 Avvio, backup, Git, sicurezza e stile delle risposte: seguire la fonte comune
 `AGENTS.md`, importata da `CLAUDE.md`. Letture mirate al tema, senza obbligo di
-leggere tutto; skill soltanto su richiesta esplicita nel prompt.
+leggere tutto.
 `supabase/.temp/cli-latest` era già modificato alla ricognizione: preservarlo
 come le altre modifiche estranee al lavoro corrente.
 

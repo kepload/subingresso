@@ -18,22 +18,9 @@ Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
   L'eccezione richiesta per i contatori dimostrativi della home è documentata
   nel registro: non convertirli né presentarli come dati reali di propria iniziativa.
 
-## Skill: solo su richiesta esplicita
-
-- Consultare e usare una skill soltanto se l'utente lo chiede nel prompt
-  corrente, indicandola o chiedendo esplicitamente l'uso di skill.
-- Una richiesta generica di grafica, codice, analisi o verifica non è una
-  richiesta di skill. Non aprire `SKILL.md`, relativi riferimenti o script
-  per iniziativa autonoma, né caricare altre skill suggerite da una skill.
-- Una precedente autorizzazione non si estende a nuovi lavori. Quando una
-  skill è richiesta, leggere solo il materiale necessario a quel lavoro.
-- Questa regola governa il progetto; non può disattivare obblighi di priorità
-  superiore imposti dall'applicazione. Segnalare tale limite se pertinente,
-  senza promettere una disattivazione che i file del progetto non garantiscono.
-
 ## Letture mirate e memoria
 
-Non leggere integralmente manuale, registro, dossier fiere o cataloghi di skill
+Non leggere integralmente manuale, registro o dossier fiere
 all'avvio di ogni attività. Dopo queste regole, cercare con `rg` il tema e
 leggere soltanto codice, sezioni e contratti pertinenti.
 
@@ -47,7 +34,7 @@ leggere soltanto codice, sezioni e contratti pertinenti.
 | Offerte email, consensi e misura | `data/VETRINA_EMAIL.md`, `data/EMAIL_CONVERSION_ANALYTICS.md` |
 | Tema, immagini, luoghi e fiere salvate | Rispettivi contratti `data/THEME_PREFERENCES.md`, `data/IMAGE_PREVIEWS.md`, `data/LOCALITA.md`, `data/FIERE_SALVATE.md` |
 | Annunci preferiti | Sezione «Saved Listings» del manuale e helper in `js/data.js` |
-| Interfaccia e prodotto | `DESIGN.md`, `PRODUCT.md`; sono documenti del progetto, non skill |
+| Interfaccia e prodotto | `DESIGN.md`, `PRODUCT.md` |
 
 Codice e configurazioni effettive descrivono l'implementazione. Schema e servizi
 live vanno verificati prima di interventi che li coinvolgono. Date, numeri e

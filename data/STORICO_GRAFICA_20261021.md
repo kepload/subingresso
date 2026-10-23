@@ -1,4 +1,4 @@
-# Versione grafica Emil — 21 ottobre 2026
+# Prova grafica — 21 ottobre 2026
 
 **Superata dalla richiesta successiva dell'utente,21/10:** grafica estesa
 rifiutata. Ripristinata la home originale9ffd1c1 e lo slogan «La tua licenza
@@ -12,7 +12,7 @@ storico della prova precedente. Preferenza: sito semplice, niente nuove
 scritte o restyling estesi non richiesti. Prove e stato pubblicazione:
 `Documents/verifica-ripristino-grafica-20261021/`.
 
-Richiesta: provare una versione del sito con la skill emil-design-eng,
+Richiesta: provare una nuova versione grafica del sito,
 pubblicarla e conservare un ritorno semplice alla versione precedente.
 
 | Before | After | Why |
@@ -41,10 +41,9 @@ Il titolo SEO, canonical e dati strutturati della home sono conservati.
 ## Backup e ritorno
 
 Versione prima dell'intervento: `9ffd1c1d526b28f2e2a3119945f0acfe4b6094e7`.
-Tag remoto verificato: `backup/session-20261021-005709-emil-design`.
-Branch remoto: `backup/pre-emil-design-20261021`.
-Copia locale: `Documents/backup-subingresso/emil-design-20261021/sito-prima.zip`.
-Istruzioni e verifica archivio nella stessa cartella. Nessuna modifica DB
+Tag e branch remoti verificati, copia locale precedente conservata.
+Percorsi originali, istruzioni e verifica archivio nella versione Git
+precedente (`777c1e6`). Nessuna modifica DB
 da annullare. Per tornare indietro usare il revert del commit grafico e
 push, conservando i lavori successivi e le modifiche locali; evitare reset
 hard del checkout condiviso. Il consueto errore del cleanup tag nello
@@ -52,8 +51,8 @@ script preventivo non ha impedito il push del checkpoint, verificato a parte.
 
 ## Verifiche
 
-Prove, screenshot prima/dopo e runner in
-`Documents/verifica-emil-design-20261021/`. Home e percorsi reali:
+Prove, screenshot prima/dopo e runner nel dossier originale del 21 ottobre
+(percorso nella versione Git precedente `777c1e6`). Home e percorsi reali:
 Chromium1440/820/320 e WebKit390, ricerca, menu/clic esterno/Escape,
 FAQ/tastiera, accesso, calendario, illustrazione, movimento ridotto e
 assenza di overflow/errori. Letture API reali; tutte le scritture intercettate.

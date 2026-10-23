@@ -77,8 +77,7 @@ avviato dalla mail. Nessuna promessa di vendita garantita, acquirente già
 trovato, scarsità o tempo medio inventato. Preferenza permanente: semplice,
 umano e leggibile, vantaggio/prezzo/azione immediati; evitare oggetti da report.
 Questa revisione non autorizza reinvii o nuove campagne. Anteprime e verifiche
-in `Documents/email-vetrine-design-20261023/`, contratto di superficie in
-`.impeccable/surfaces/vetrina-email.md`. Screenshot browser, nessuna consegna
+in `Documents/email-vetrine-design-20261023/`. Screenshot browser, nessuna consegna
 di prova a caselle reali e nessuna attestazione di test in Outlook/Gmail nativi.
 
 Pubblicazione della revisione: committed `ed33799`, `vetrina-campaign` versione4

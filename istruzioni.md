@@ -723,12 +723,12 @@ Pubblicazione verificata `effb12b` + `35da1fd`, Vercel riuscito `Fs4xUe5bYZu4E8f
 
 ## 🏠 Home Page Sezioni
 
-- Ripristino21/10: restyling Emil rifiutato, grafica9ffd1c1 e vecchio slogan
+- Ripristino21/10: restyling esteso rifiutato, grafica9ffd1c1 e vecchio slogan
   senza sottotitolo aggiuntivo. Preferire semplicità, niente copy decorativo.
   UI14/design-system2: solo feedback pulsanti e barra smartphone74/72px con menu.
 - Ordine originale: Hero/ricerca/contatori → Ultimi Annunci (12 card) → banner mobile calcolatore → fiere → 3 passi → città → FAQ.
 - `loadRecentListings()` `.limit(12)`, `created_at DESC`, fallback `LISTINGS.slice(0,12)`.
-- Ripristinati banner e sezioni originali; dettagli/storico in `data/EMIL_DESIGN.md`.
+- Ripristinati banner e sezioni originali; dettagli/storico in `data/STORICO_GRAFICA_20261021.md`.
 
 ## Valutatore v2.6 (22 ottobre 2026)
 

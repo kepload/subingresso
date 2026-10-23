@@ -1,7 +1,5 @@
 # Subingresso.it
 
-<!-- impeccable:product-schema 1 -->
-
 ## Platform
 
 web
