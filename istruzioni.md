@@ -11,14 +11,16 @@ specifica quando totale superiore. Nessuna modifica DB o invii.
 admin-theme byte-identica. Prove/stato pubblicazione:
 Documents/verifica-dashboard-statistiche-20261023/risultati.md.
 
-Tema personale23/10: Profilo > Impostazioni > Aspetto, chiaro iniziale per
-tutti, admin e organizzatori compresi. Scelta automatica nell’account
-auth.user_metadata.site_theme, mai derivata dal ruolo o dal sistema.
-GET verificato/PUT con token dell’identità iniziale; logout, cambio account,
-risposte tardive ed errori protetti. JSadmin-theme4/CSS3, theme-preferences1.
-Variante chiara anche per profilo e statistiche organizzatori; dati invariati.
-Contratto data/THEME_PREFERENCES.md; prove e pubblicazione
-Documents/verifica-tema-profilo-20261023/risultati.md.
+Tema personale23/10, correzione flash: pulsante Modalità scura direttamente
+nella pagina profilo/dashboard e nell’area organizzatore, fuori da impostazioni
+e moduli. Chiaro iniziale per tutti; preferenza auth.user_metadata.site_theme.
+Script sincrono all’inizio del head e CSS bloccante prima del body, anche SSR.
+Copia locale _si_theme_preference_v1 limitata a ID/tema confermato, usata solo
+con la stessa sessione. Prima lettura senza copia: attesa su fondo scuro.
+GET riconcilia; errore temporaneo conserva aspetto, 401/403/logout/cambio
+identità invalidano. PUT sempre con token iniziale; nessun ruolo in cache.
+JSadmin-theme5/CSS4, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
+prove/stato Documents/verifica-tema-senza-flash-20261023/risultati.md.
 
 
 Vetrina/statistiche22/10: corretto initUI che sostituiva il footer del dialogo

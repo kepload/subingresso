@@ -1,12 +1,18 @@
 <!doctype html>
-<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Profilo organizzatore — Subingresso.it</title><meta name="description" content="Il tuo profilo organizzatore, i contatti e gli eventi su Subingresso.it."><meta name="robots" content="noindex,follow"><link rel="icon" href="/favicon-v2.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/tailwind.css?v=4"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/eventi.css?v=5"><link rel="stylesheet" href="/css/comune-picker.css?v=1"><link rel="stylesheet" href="/css/profile-switch.css?v=5">    <link rel="stylesheet" href="/css/design-system.css?v=15">
-<link rel="stylesheet" href="/css/organizer-analytics.css?v=2"><link rel="stylesheet" href="/css/theme-preferences.css?v=1"><script src="/js/admin-theme.js?v=4" defer></script></head>
+<html lang="it"><head><meta charset="utf-8"><script src="/js/admin-theme.js?v=5"></script><meta name="viewport" content="width=device-width,initial-scale=1"><title>Profilo organizzatore — Subingresso.it</title><meta name="description" content="Il tuo profilo organizzatore, i contatti e gli eventi su Subingresso.it."><meta name="robots" content="noindex,follow"><link rel="icon" href="/favicon-v2.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/tailwind.css?v=4"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/eventi.css?v=5"><link rel="stylesheet" href="/css/comune-picker.css?v=1"><link rel="stylesheet" href="/css/profile-switch.css?v=5">    <link rel="stylesheet" href="/css/design-system.css?v=15">
+<link rel="stylesheet" href="/css/organizer-analytics.css?v=2"><link rel="stylesheet" href="/css/theme-preferences.css?v=2"><link rel="stylesheet" href="/css/admin-theme.css?v=4"></head>
 <body class="organizer-theme min-h-screen flex flex-col bg-neutral-100 text-slate-900"><header></header>
 <main class="ev ev-main" id="organizerApp">
  <nav class="profile-switch profile-switch-page" aria-label="Tipo di profilo" data-selected="organizer"><a href="/dashboard?area=normale"><i class="fas fa-user" aria-hidden="true"></i> Ambulante</a><a href="/organizzatore" aria-current="page"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Organizzatore</a></nav>
  <p id="organizerMessage" class="ev-notice" role="status" aria-live="polite" hidden></p>
  <div id="organizerLoading" class="ev-panel" role="status">Caricamento della tua area…</div>
  <div id="organizerWorkspace" hidden>
+  <section class="profile-theme-settings profile-theme-actions" aria-label="Aspetto del sito">
+                    <button type="button" id="profileThemePreference" aria-pressed="false" aria-describedby="profileThemeStatus" disabled>
+                        <i class="fas fa-moon" aria-hidden="true"></i><span>Modalità scura</span><span data-theme-state>Disattivata</span>
+                    </button>
+                    <p id="profileThemeStatus" role="status" aria-live="polite"></p>
+                </section>
   <section class="ev-panel organizer-profile-panel" aria-label="Profilo organizzatore"><div id="organizerProfileView"></div><p id="organizerReview" class="ev-notice" hidden></p><p id="organizerProfileMessage" class="ev-notice" role="status" aria-live="polite" hidden></p>
 
   <details id="organizerProfileDetails"><summary id="organizerProfileSummary">Compila il profilo</summary>
@@ -22,11 +28,6 @@
     <label>Telefono pubblico (facoltativo)<input name="public_phone" type="tel" maxlength="25" placeholder="Visibile ai visitatori" autocomplete="tel"></label>
    </div><p id="organizerProfileWarning" class="ev-muted" hidden>Le modifiche richiedono una nuova approvazione: nel frattempo profilo ed eventi saranno nascosti al pubblico.</p><div class="ev-actions"><button type="submit" class="ev-primary">Invia profilo in revisione</button></div></form>
   </details>
-  <section class="profile-theme-settings" aria-labelledby="profileSettingsTitle">
-   <h3 id="profileSettingsTitle">Impostazioni</h3><label for="profileThemePreference">Aspetto</label>
-   <select id="profileThemePreference" aria-describedby="profileThemeHelp profileThemeStatus" disabled><option value="light" selected>Chiaro</option><option value="dark">Scuro</option></select>
-   <p id="profileThemeHelp">La scelta si salva automaticamente nel tuo account.</p><p id="profileThemeStatus" role="status" aria-live="polite"></p>
-  </section>
   </section>
   <section class="oa" id="organizerAnalytics" hidden aria-labelledby="oaTitle" aria-busy="false">
    <div class="oa-header"><div><h2 id="oaTitle">Statistiche degli eventi</h2><p id="oaRange"></p></div><div class="oa-actions"><button type="button" id="oaRefresh">Aggiorna</button><button type="button" id="oaExport" disabled>Esporta CSV</button></div></div>

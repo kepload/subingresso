@@ -194,11 +194,15 @@ L'oro Vetrina `#fbbf24` e le foto conservano il loro significato.
 Le categorie viola/rosa gia presenti nel blog e nella dashboard usano
 testo `#d4bfff` su `#302442`, conservando il significato senza fondi chiari.
 
-Chiaro iniziale per tutti. Attivazione da js/admin-theme.js solo dopo verifica
-server della preferenza user_metadata.site_theme dell’account; nessun ruolo
-seleziona il tema. Il foglio scuro si carica soltanto con scelta esplicita.
-Gli override richiedono html.admin-dark e il foglio o la pagina originale.
-Uscita/cambio account rimuovono subito la classe.
+Chiaro iniziale per tutti. Pulsante «Modalità scura» direttamente nel profilo,
+vicino alle azioni principali della dashboard e sopra il profilo organizzatore.
+Etichetta stabile con stato Attiva/Disattivata, aria-pressed, altezza44px,
+focus visibile; salvataggio automatico e stato locale fuori dai moduli.
+Script sincrono nel head: copia di ID/tema confermato, vincolata alla sessione
+locale, per il primo disegno. CSS completo bloccante; prima lettura senza
+copia su fondo scuro finché arriva la preferenza. Il server riconcilia la scelta;
+ruolo e sistema operativo non selezionano il tema. Uscita/cambio account lo
+invalidano; errori temporanei conservano l’ultimo aspetto disponibile.
 Base `css/admin-theme-base.css`, generatore `scripts/build-admin-theme.cjs`:
 rigenerare dopo cambi ai colori esistenti. Nessuna inversione o filtro foto.
 Le sfumature sobrie tra sezioni conservano la preferenza esplicita del21/10.
@@ -211,8 +215,9 @@ gradient richiesta dall'utente. Le segnalazioni su titolo grande, contenuti
 sotto la piega e accenti cromatici sono proprie della home esistente e
 della palette richiesta, fuori dall'estensione cromatica autorizzata.
 
-Impostazioni23/10: selettore nativo Chiaro/Scuro con salvataggio automatico,
-etichetta e stato vicino al controllo, altezza44px e focus visibile. Base chiara
+Profilo23/10: pulsante diretto Chiaro/Scuro, fuori dalle impostazioni.
+La forma precedente con selettore è superata dalla correzione dei flash.
+Base chiara
 anche per gli organizzatori: fondo#f5f5f5, pannelli#fff, testo#0f172a,
 secondario#475569, bordi#64748b e accento#1d4ed8. Grafici e indicatori usano
 le stesse variabili nei due temi; layout e valori conservati. Contratto in

@@ -1,14 +1,14 @@
-/* Impostazioni condivise da ambulanti e organizzatori. */
-.profile-theme-settings { --tp-ink:#0f172a; --tp-muted:#475569; --tp-surface:#fff; --tp-line:#64748b; --tp-rule:#e2e8f0; --tp-focus:#2563eb; display:grid; grid-template-columns:1fr auto; gap:8px 16px; margin:20px 24px 0; padding-bottom:20px; border-bottom:1px solid var(--tp-rule); color:var(--tp-ink); color-scheme:light; }
-.profile-theme-settings h3 { grid-column:1/-1; margin:0 0 4px; font-size:15px; font-weight:700; }
-.profile-theme-settings label { align-self:center; font-size:14px; font-weight:600; }
-.profile-theme-settings select { min-height:44px; min-width:112px; padding:8px 12px; border:1px solid var(--tp-line); border-radius:8px; color:var(--tp-ink); background:var(--tp-surface); font:inherit; font-size:14px; cursor:pointer; }
-.profile-theme-settings select:focus-visible { outline:2px solid var(--tp-focus); outline-offset:3px; }
-.profile-theme-settings select:disabled { opacity:.65; cursor:wait; }
-.profile-theme-settings p { grid-column:1/-1; margin:0; color:var(--tp-muted); font-size:12px; line-height:1.6; }
+/* Comando diretto nel profilo, condiviso da ambulanti e organizzatori. */
+.profile-theme-actions { --tp-ink:#0f172a; --tp-muted:#475569; --tp-surface:#fff; --tp-line:#64748b; --tp-focus:#2563eb; display:grid; gap:8px; max-width:100%; color:var(--tp-ink); color-scheme:light; }
+.profile-theme-actions button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:10px 12px; border:1px solid var(--tp-line); border-radius:8px; color:var(--tp-ink); background:var(--tp-surface); font:inherit; font-size:13px; font-weight:600; cursor:pointer; }
+.profile-theme-actions button:hover:not(:disabled) { border-color:var(--tp-ink); }
+.profile-theme-actions button:focus-visible { outline:2px solid var(--tp-focus); outline-offset:3px; }
+.profile-theme-actions button:disabled { cursor:wait; }
+.profile-theme-actions [data-theme-state] { color:var(--tp-muted); font-size:12px; font-weight:400; }
+.profile-theme-actions p { margin:0; max-width:32ch; color:var(--tp-muted); font-size:12px; line-height:1.6; }
 .profile-theme-settings #profileThemeStatus:empty { display:none; }
-.organizer-profile-panel > .profile-theme-settings { grid-column:1/-1; margin:24px 0 0; }
-html.admin-dark .profile-theme-settings { --tp-ink:#f1f5f9; --tp-muted:#cbd5e1; --tp-surface:#0f172a; --tp-line:#64748b; --tp-rule:#334155; --tp-focus:#93c5fd; color-scheme:dark; }
+#organizerWorkspace > .profile-theme-actions { justify-items:start; margin-bottom:20px; }
+html.admin-dark .profile-theme-actions { --tp-ink:#f1f5f9; --tp-muted:#cbd5e1; --tp-surface:#0f172a; --tp-line:#64748b; --tp-focus:#93c5fd; color-scheme:dark; }
 
 /* Anche l'area organizzatore segue la scelta chiaro/scuro dell'account. */
 html:not(.admin-dark) body.organizer-theme:has(#organizerAnalytics) { background:#f5f5f5; color:#0f172a; }

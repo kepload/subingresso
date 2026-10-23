@@ -1,5 +1,18 @@
 # Subingresso.it — informazioni e TO DO
 
+## Modalità scura senza flash — 23 ottobre 2026
+
+- Richiesta corrente: niente comparsa chiara prima dello scuro; pulsante
+  direttamente nella pagina personale, fuori dalle impostazioni. Supera
+  la posizione Profilo → Impostazioni → Aspetto del primo intervento23/10.
+  Pulsante in dashboard e area organizzatore, con stato e salvataggio account.
+  Avvio nel head/CSS bloccante, copia locale ID/tema confermato vincolata
+  alla sessione; prima lettura senza copia su fondo scuro. Nessuna cache
+  di ruolo/token aggiuntiva. Chiaro iniziale e protezioni account conservati.
+  JS5/CSS4, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
+  prove/stato Documents/verifica-tema-senza-flash-20261023/risultati.md.
+  Pubblicazione in corso: esito definitivo da registrare dopo verifica online.
+
 ## Dashboard admin compatta — 23 ottobre 2026
 
 - Crescita: metrica selezionabile, griglia tenue e colori adatti a chiaro/scuro;

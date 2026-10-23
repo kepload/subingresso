@@ -28,7 +28,7 @@ function fixture(file, before = false) {
     }
     if (file === 'dashboard.html') content += `<script>document.getElementById('loadingState').classList.add('hidden');document.getElementById('dashContent').classList.remove('hidden');document.getElementById('welcomeTitle').textContent='Admin';</script>`;
     const auth = file === 'fallback' ? bootstrap.replace('const _supabase=', 'window.qaClient=').replace('</script>', "window.qaCreated=0;window.supabase={createClient:()=>{qaCreated++;return qaClient;}};</script>") : bootstrap;
-    if (!file || ['fallback','settings'].includes(file)) html = html.replace('</main>', read('dashboard.html').match(/<section class="profile-theme-settings"[\s\S]*?<\/section>/)[0] + '</main>').replace('</head>','<link rel="stylesheet" href="/css/theme-preferences.css"></head>');
+    if (!file || ['fallback','settings'].includes(file)) html = html.replace('</main>', read('dashboard.html').match(/<section class="profile-theme-settings profile-theme-actions"[\s\S]*?<\/section>/)[0] + '</main>').replace('</head>','<link rel="stylesheet" href="/css/theme-preferences.css"></head>');
     return html.replace('</body>', auth + `<script src="/js/image-urls.js"></script><script src="/js/data.js"></script><script src="/js/ui-components.js"></script>` + content + (before ? '' : `<script src="/js/admin-theme.js"></script>`) + '</body>');
 }
 const server = http.createServer((req, res) => {
@@ -109,34 +109,35 @@ async function run(engine, name, width) {
         await page.goto(base + '/qa/components'); await waitDark(page);
         await page.evaluate(() => qaChange('nuovo-admin', true)); await waitLight(page);
         await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
-        check(await page.locator('#profileThemePreference').inputValue() === 'light', 'Chiaro predefinito anche per admin e sistema operativo scuro');
+        check(await page.locator('#profileThemePreference').getAttribute('aria-pressed') === 'false', 'Chiaro predefinito anche per admin e sistema operativo scuro');
         await page.evaluate(() => { qaTheme('nuovo-admin','system'); qaRefresh(); });
         await page.waitForTimeout(80);
         check(!await dark(page), 'Preferenze mancanti o non valide non attivano lo scuro');
-        await page.locator('#profileThemePreference').selectOption('dark'); await waitDark(page);
+        await page.locator('#profileThemePreference').click(); await waitDark(page);
         await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
         check(await page.evaluate(() => qaWrites.at(-1).id === 'nuovo-admin' && Object.keys(qaWrites.at(-1).body.data).join() === 'site_theme'), 'Salvata soltanto la preferenza del proprio account');
+        check(await page.evaluate(() => { const cache=JSON.parse(localStorage.getItem('_si_theme_preference_v1')); return cache.id==='nuovo-admin'&&cache.theme==='dark'&&Object.keys(cache).sort().join()==='id,theme'; }), 'Copia locale limitata a identita e aspetto confermato');
         await page.reload(); await waitDark(page);
-        check(await page.locator('#profileThemePreference').inputValue() === 'dark', 'Scelta conservata dopo ricaricamento senza cache del tema');
+        check(await page.locator('#profileThemePreference').getAttribute('aria-pressed') === 'true', 'Scelta conservata dopo ricaricamento');
         await page.evaluate(() => qaChange('ambulante', false)); await waitLight(page);
         await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
         const second = await context.newPage();
         await second.goto(base + '/qa/components'); await waitLight(second);
-        await page.locator('#profileThemePreference').selectOption('dark'); await waitDark(page); await waitDark(second);
+        await page.locator('#profileThemePreference').click(); await waitDark(page); await waitDark(second);
         check(await dark(second), 'Scelta disponibile agli utenti normali e aggiornata nelle altre schede');
         await second.close();
         await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
         await page.evaluate(() => { qaSaveFailure=true; });
-        await page.locator('#profileThemePreference').selectOption('light');
+        await page.locator('#profileThemePreference').click();
         await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
-        check(await dark(page) && await page.locator('#profileThemePreference').inputValue() === 'dark', 'Errore salvataggio: scelta precedente mantenuta e controllo ripristinato');
+        check(await dark(page) && await page.locator('#profileThemePreference').getAttribute('aria-pressed') === 'true', 'Errore salvataggio: scelta precedente mantenuta e controllo ripristinato');
         check((await page.locator('#profileThemeStatus').innerText()).includes('Riprova'), 'Errore comunicato vicino al controllo');
         await page.evaluate(() => { qaSaveFailure=false; });
-        await page.locator('#profileThemePreference').selectOption('light'); await waitLight(page);
+        await page.locator('#profileThemePreference').click(); await waitLight(page);
         await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
         const double = await page.evaluate(() => Promise.all([SiteTheme.setPreference('dark'),SiteTheme.setPreference('light')]));
         check(double[0] && !double[1] && await dark(page), 'Richieste ripetute bloccate durante il salvataggio');
-        await page.locator('#profileThemePreference').selectOption('light'); await waitLight(page);
+        await page.locator('#profileThemePreference').click(); await waitLight(page);
         await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
         await page.evaluate(() => { qaSaveDelay=250; window.pendingTheme=SiteTheme.setPreference('dark'); });
         await page.waitForFunction(() => qaWrites.at(-1)?.body.data.site_theme === 'dark');
@@ -147,26 +148,26 @@ async function run(engine, name, width) {
         await page.route('**/css/admin-theme.css*', route => route.abort());
         await page.reload(); await waitLight(page);
         await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
-        await page.locator('#profileThemePreference').selectOption('dark');
+        await page.locator('#profileThemePreference').click();
         await page.waitForFunction(() => document.getElementById('profileThemeStatus').textContent.includes('Riprova'));
-        check(!await dark(page) && await page.locator('#profileThemePreference').inputValue() === 'light', 'CSS non disponibile: nessun tema salvato e riprova possibile');
+        check(!await dark(page) && await page.locator('#profileThemePreference').getAttribute('aria-pressed') === 'false', 'CSS non disponibile: nessun tema salvato e riprova possibile');
         await page.unroute('**/css/admin-theme.css*');
-        await page.locator('#profileThemePreference').selectOption('dark'); await waitDark(page);
+        await page.locator('#profileThemePreference').click(); await waitDark(page);
         await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
         await page.evaluate(() => { qaTheme('altro-utente','light'); window.dispatchEvent(new StorageEvent('storage',{key:'_si_theme_changed'})); }); await waitLight(page);
         check(!await dark(page), 'Preferenza modificata da altra sessione riletta dal server');
         for (const file of ['dashboard.html','organizzatore.html']) {
             await page.goto(base + '/' + file + '?qa'); await waitLight(page);
             await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
-            if(file==='dashboard.html') await page.evaluate(() => { document.getElementById('profiloModal').classList.remove('hidden'); document.body.style.overflow='hidden'; });
+            if(file==='dashboard.html') check(await page.locator('#profiloModal').evaluate(el=>el.classList.contains('hidden')), 'Pulsante disponibile senza aprire le impostazioni');
             else await page.evaluate(() => { document.getElementById('organizerLoading').hidden=true; document.getElementById('organizerWorkspace').hidden=false; });
             check(await page.locator('#profileThemePreference').isVisible(), file+': impostazioni nel profilo visibili');
             check(await page.locator('#profileThemePreference').evaluate(el => getComputedStyle(el).colorScheme)==='light', file+': controllo nativo chiaro');
             if(file==='organizzatore.html') {
                 check(await page.locator('body').evaluate(el => getComputedStyle(el).backgroundColor)==='rgb(245, 245, 245)', 'Area organizzatore chiara quando selezionata');
                 check(await page.locator('.organizer-profile-panel').evaluate(el => getComputedStyle(el).backgroundColor)==='rgb(255, 255, 255)', 'Profilo organizzatore su superficie chiara');
-                check(await page.locator('#profileSettingsTitle').evaluate(el => getComputedStyle(el).color)==='rgb(15, 23, 42)', 'Titolo impostazioni leggibile nell’area organizzatore chiara');
-                check(await page.locator('label[for="profileThemePreference"]').evaluate(el => getComputedStyle(el).color)==='rgb(15, 23, 42)', 'Etichetta aspetto leggibile nell’area organizzatore chiara');
+                check(await page.locator('#profileThemePreference').evaluate(el => getComputedStyle(el).color)==='rgb(15, 23, 42)', 'Pulsante leggibile nell’area organizzatore chiara');
+                check(await page.locator('#profileThemePreference').evaluate(el=>el.closest('details,form')===null), 'Pulsante organizzatore fuori dai moduli e dalle impostazioni');
                 check(await page.locator('#organizerAnalytics').evaluate(el => getComputedStyle(el).getPropertyValue('--oa-text').trim())==='#0f172a', 'Statistiche e grafici organizzatore con palette chiara');
             }
             if(out)await page.screenshot({path:path.join(out,`settings-light-${file}-${name}-${width}.png`),fullPage:true});
@@ -174,10 +175,10 @@ async function run(engine, name, width) {
                 await page.evaluate(() => { const modal=document.getElementById('profiloModal'); modal.dataset.profile='organizer'; document.getElementById('profileNormalPanel').hidden=true; document.getElementById('profileOrganizerPanel').hidden=false; });
                 check(await page.locator('#profileThemePreference').isVisible(), 'Impostazioni comuni anche alla scheda organizzatore');
             }
-            await page.locator('#profileThemePreference').selectOption('dark'); await waitDark(page);
+            await page.locator('#profileThemePreference').click(); await waitDark(page);
             await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
             if(out)await page.screenshot({path:path.join(out,`settings-dark-${file}-${name}-${width}.png`),fullPage:true});
-            await page.locator('#profileThemePreference').selectOption('light'); await waitLight(page);
+            await page.locator('#profileThemePreference').click(); await waitLight(page);
             await page.waitForFunction(() => !document.getElementById('profileThemePreference').disabled);
         }
         await page.evaluate(() => { qaTheme('admin-qa','dark'); qaChange('admin-qa',true); }); await waitDark(page);

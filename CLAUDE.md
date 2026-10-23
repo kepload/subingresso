@@ -1,13 +1,15 @@
 # Regole Claude — Subingresso.it
 
-Tema personale23/10: Profilo > Impostazioni > Aspetto, chiaro iniziale per
-tutti, admin e organizzatori compresi. Scelta automatica nell’account
-auth.user_metadata.site_theme, mai derivata dal ruolo o dal sistema.
-GET verificato/PUT con token dell’identità iniziale; logout, cambio account,
-risposte tardive ed errori protetti. JSadmin-theme4/CSS3, theme-preferences1.
-Variante chiara anche per profilo e statistiche organizzatori; dati invariati.
-Contratto data/THEME_PREFERENCES.md; prove e pubblicazione
-Documents/verifica-tema-profilo-20261023/risultati.md.
+Tema personale23/10, correzione flash: pulsante Modalità scura direttamente
+nella pagina profilo/dashboard e nell’area organizzatore, fuori da impostazioni
+e moduli. Chiaro iniziale per tutti; preferenza auth.user_metadata.site_theme.
+Script sincrono all’inizio del head e CSS bloccante prima del body, anche SSR.
+Copia locale _si_theme_preference_v1 limitata a ID/tema confermato, usata solo
+con la stessa sessione. Prima lettura senza copia: attesa su fondo scuro.
+GET riconcilia; errore temporaneo conserva aspetto, 401/403/logout/cambio
+identità invalidano. PUT sempre con token iniziale; nessun ruolo in cache.
+JSadmin-theme5/CSS4, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
+prove/stato Documents/verifica-tema-senza-flash-20261023/risultati.md.
 
 
 Vetrina/statistiche22/10: shell UI solo `body > header/footer`, mai quelli
@@ -32,7 +34,7 @@ bucket `image-previews` anche dopo i deploy; un originale per sei dimensioni.
 Secret solo in environment cifrato Vercel, originali mai modificati.
 Contratto, errori e verifiche in `data/IMAGE_PREVIEWS.md`; nessun piano attivato.
 
-- `admin-theme.js?v=4`, `admin-theme.css?v=3`, `theme-preferences.css?v=1`: preferenza di ogni account, chiaro iniziale. Tutti gli HTML/API; generatore CSS esclude il foglio delle preferenze. Contratto data/THEME_PREFERENCES.md.
+- `admin-theme.js?v=5`, `admin-theme.css?v=4`, `theme-preferences.css?v=2`: avvio senza flash, pulsante diretto nel profilo, chiaro iniziale. Tutti gli HTML/API; generatore CSS esclude il foglio delle preferenze. Contratto data/THEME_PREFERENCES.md.
 
 - 🛡️ **BACKUP TAG OBBLIGATORIO (regola n.0)**: prima della prima modifica di OGNI nuova sessione, lancia `.\scripts\session-backup.ps1 -Reason "<descrizione-corta>"`. Crea un tag git su HEAD + push remoto. Ritorno garantito con `git reset --hard backup/session-YYYYMMDD-HHMMSS-...`.
 - ⚡ **STILE RISPOSTE (regola n.1)**: l'utente è un vibe coder, non un programmatore. Rispondi **corto e semplice**. Niente papiri, niente muri di testo, niente gergo tecnico (SSR, RPC, GRANT, cannibalizzazione...) senza spiegarlo in 2-3 parole. Dopo una modifica dì **cosa cambia per lui** in 1-2 frasi. Fai il lavoro, spiega poco. Vedi memoria [[feedback_stile_risposte]].

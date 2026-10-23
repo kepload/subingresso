@@ -1,4 +1,8 @@
-/* Palette della sezione organizzatori. Attiva soltanto dopo verifica admin. */
+/* Primo accesso con una sessione precedente: nessun contenuto chiaro mentre
+   viene recuperata la scelta. Il CSS nel head blocca il primo disegno. */
+html.theme-pending { background: #0b1220 !important; color-scheme: dark; }
+html.theme-pending body { visibility: hidden; }
+/* Palette personale, indipendente dal ruolo. */
 html.admin-dark {
     color-scheme: dark;
     --ad-canvas: #0b1220;

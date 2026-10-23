@@ -207,7 +207,7 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
     return `<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"><script src="/js/admin-theme.js?v=5"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
   <title>${esc(title)}</title>
@@ -231,7 +231,7 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
     details summary i.fa-chevron-down { transition: transform .2s; }
   </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<script src="/js/admin-theme.js?v=4" defer></script>
+<link rel="stylesheet" href="/css/admin-theme.css?v=4">
 </head>
 <body>
 
@@ -453,10 +453,10 @@ module.exports = async function handler(req, res) {
             return;
         }
         res.status(404).setHeader('Content-Type', 'text/html; charset=utf-8').send(`<!DOCTYPE html>
-<html lang="it"><head><meta charset="UTF-8"><title>Nessun annuncio a ${esc(cityName)} — Subingresso.it</title>
+<html lang="it"><head><meta charset="UTF-8"><script src="/js/admin-theme.js?v=5"></script><title>Nessun annuncio a ${esc(cityName)} — Subingresso.it</title>
 <meta name="robots" content="noindex"><link rel="canonical" href="${SITE}/annunci">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<script src="/js/admin-theme.js?v=4" defer></script>
+<link rel="stylesheet" href="/css/admin-theme.css?v=4">
 </head><body><h1>Nessun annuncio disponibile a ${esc(cityName)}</h1>
 <p><a href="/annunci">Cerca in tutta Italia →</a></p></body></html>`);
         return;
@@ -607,7 +607,7 @@ module.exports = async function handler(req, res) {
     const html = `<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"><script src="/js/admin-theme.js?v=5"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
   <title>${esc(title)}</title>
@@ -637,7 +637,7 @@ module.exports = async function handler(req, res) {
     @keyframes pulseDot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
   </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<script src="/js/admin-theme.js?v=4" defer></script>
+<link rel="stylesheet" href="/css/admin-theme.css?v=4">
 </head>
 <body>
 
