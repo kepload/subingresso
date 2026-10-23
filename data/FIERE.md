@@ -7,8 +7,8 @@ in 37 comuni**, ricognizione dei **74 comuni**. **86 aggiunte**, entrambi gli
 ID preesistenti conservati; **6.565 schede esterne identiche** al checkpoint
 `5c94b20`. Catalogo nazionale **6.653 schede**, **6.447 con dati edizione**.
 Ripartenza dalle due schede pubblicate Formazza/Omegna e da questo dossier;
-nessun audit provinciale approfondito precedente presente. **Pubblicazione e
-verifica ancora da eseguire: checklist e riepilogo province non aggiornati.**
+nessun audit provinciale approfondito precedente presente. **Pubblicata e verificata online**; checklist spuntata e riepiloghi aggiornati
+solo dopo esito positivo: **59 province concluse, 51 rimanenti su 110**.
 Nessun'altra provincia lavorata; nessun contatto, domanda o invio a terzi.
 
 Audit `data/fiere-verbano-cusio-ossola.json`: otto righe dei registri regionali
@@ -89,8 +89,20 @@ Cache JS112/JSON80. Backup preventivo remoto tag
 `Documents/backup-subingresso/ricerche-fiere-20261023-234636`: **86.188 file,
 13.722.932.788 byte, zero errori**, manifest SHA256
 `f5943eaebd11b07bd66973c79c6b7eb295497418b7284f65dfe0ae4a7a4b375e`.
-Supplemento finale di prove, documenti e registrazione da eseguire dopo
-la verifica pubblicazione. Nessuna fonte originale di terzi copiata nel repo.
+Esiti finali, originali e documenti conservati con verifica SHA256 nel
+supplemento provinciale dello snapshot. Nessuna fonte originale di terzi
+copiata nel repo.
+
+Pubblicazione `1dee01b`, deploy Vercel con stato GitHub
+**success**, cinque asset online identici byte per byte al commit, comprese
+le versioni JS112/JSON80. Catalogo SHA256
+`afc741205e2bbf6f55e02c54d9fb2867c3d9bf75ffca6629d0671299cf10e9e0`.
+Tutte le **88 pagine online** HTTP200, titolo, canonical, note e costi
+verificati. Browser locale e online `PLAYWRIGHT_MODULE`: Chromium1440/320 e
+WebKit390, **88 dialoghi e otto pagine senza JS per formato**, senza errori
+o overflow. Sito reale nei tre formati verificato **senza intercettazioni**.
+Registro aggiornato soltanto dopo queste prove. Modifiche concorrenti chat,
+SQL e file privati preservati ed esclusi dai commit provinciali.
 
 ## Rovigo — ricerca documentale del 23 ottobre 2026
 

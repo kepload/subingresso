@@ -2,7 +2,7 @@
   "province": "Verbano-Cusio-Ossola",
   "checkedAt": "2026-10-24",
   "research": {
-    "status": "documental-research-complete-with-explicit-limits",
+    "status": "complete-verified",
     "baselineCommit": "5c94b20aff000127f5a3e29a11d6d6ece63cf189",
     "baselineAudit": "Ripartenza dal catalogo pubblicato (due schede Formazza/Omegna), data/FIERE.md e registro: nessun audit provinciale VCO approfondito precedente reperito. Conservati entrambi gli ID e tutte le province estranee.",
     "archive": "C:\\Users\\utente\\Documents\\ricerca-fiere-verbano-cusio-ossola-20261024",
@@ -24830,7 +24830,31 @@
         "remaining": "Solo manutenzione periodica o acquisizione futura di documenti non oggi pubblicati/accessibili; nessuna attesa necessaria per la chiusura della ricerca attuale."
       }
     ],
-    "openLeads": []
+    "openLeads": [],
+    "documentalStatus": "documental-research-complete-with-explicit-limits",
+    "publication": {
+      "commit": "1dee01b8b17a403c3adcb6f226d55ae51af3eaf9",
+      "deploymentState": "success",
+      "assetsVerified": 5,
+      "pagesVerified": 88,
+      "deploySeconds": 35,
+      "catalogSha256": "afc741205e2bbf6f55e02c54d9fb2867c3d9bf75ffca6629d0671299cf10e9e0"
+    },
+    "verification": {
+      "todoUpdated": true,
+      "completedProvinces": 59,
+      "remainingProvinces": 51,
+      "generalBrowserFormats": 5,
+      "provincialBrowserFormats": 3,
+      "dialogsPerFormat": 88,
+      "noJsPagesPerFormat": 8,
+      "productionWithoutInterception": true,
+      "externalEventsPreserved": 6565,
+      "backupSnapshot": "ricerche-fiere-20261023-234636",
+      "backupFilesVerified": 86188,
+      "backupErrors": 0,
+      "noThirdPartyContacts": true
+    }
   },
   "events": [
     {
