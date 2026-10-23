@@ -139,7 +139,7 @@ const modalHTML = `
       <div>
         <label for="regTermsAccepted" class="flex items-center gap-3 text-sm font-semibold text-slate-700 cursor-pointer" style="min-height:44px">
           <input id="regTermsAccepted" name="terms_accepted" type="checkbox" required checked autocomplete="off" class="rounded accent-blue-600 cursor-pointer" style="width:28px;height:28px;flex-shrink:0;margin:0">
-          <span>Accetto i <a href="/termini" target="_blank" rel="noopener" class="text-blue-600 underline">termini e condizioni</a> *</span>
+          <span>Accetto i <a href="/termini" target="_blank" rel="noopener" class="text-blue-600 underline">termini e condizioni</a>&nbsp;*</span>
         </label>
       </div>
       <div>
