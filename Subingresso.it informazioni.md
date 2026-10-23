@@ -12,7 +12,11 @@
   nessun account reale modificato. Contratto data/THEME_PREFERENCES.md,
   prove/stato Documents/verifica-tema-profilo-20261023/risultati.md.
   Backup session-20261023-075225 e ramo pre-tema-profilo-tutti-utenti validi;
-  errore cleanup helper noto. Pubblicazione in corso.
+  errore cleanup helper noto. Pubblicato7e360bd, Vercel
+  DWpq4kMAcCxGVMPm3zAMkvZ3LcUn READY:22asset/pagine identici,
+  13percorsi pubblici/SSR con tema4. Ripetuti online261controlli tema,
+  364profili e statistiche4formati; quattroSSR scuri e home anonima
+  chiara in Chrome1440/320 e Safari390 passati, nessuna scrittura account reale.
 
 
 - **Vetrina/statistiche22/10:** riparato footer condiviso che sovrascriveva

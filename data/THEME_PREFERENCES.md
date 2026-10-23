@@ -36,3 +36,8 @@ browser/formati. Identità, sessioni e risposte di salvataggio sono simulate;
 nessun account reale modificato durante le prove. Inspector impostazioni
 1440/768/390 senza rilievi. Rigenerazione CSS identica ai byte precedenti.
 Prove e stato pubblicazione: Documents/verifica-tema-profilo-20261023/risultati.md.
+
+Pubblicato7e360bd, Vercel dpl_DWpq4kMAcCxGVMPm3zAMkvZ3LcUn READY.
+22asset/pagine identici e13percorsi con script4; suite tema/profili/statistiche
+ripetute sugli asset online. Quattro SSR scuri e home anonima chiara nei tre
+browser/formati verificati; identità dei casi scuri simulate.
