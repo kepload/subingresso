@@ -291,7 +291,7 @@ module.exports = async function handler(req, res) {
         #mainContent.has-cta { padding-bottom: 5.5rem; }
     </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<script src="/js/admin-theme.js?v=3" defer></script>
+<script src="/js/admin-theme.js?v=4" defer></script>
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
 

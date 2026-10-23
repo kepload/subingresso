@@ -1,0 +1,64 @@
+/* Impostazioni condivise da ambulanti e organizzatori. */
+.profile-theme-settings { --tp-ink:#0f172a; --tp-muted:#475569; --tp-surface:#fff; --tp-line:#64748b; --tp-rule:#e2e8f0; --tp-focus:#2563eb; display:grid; grid-template-columns:1fr auto; gap:8px 16px; margin:20px 24px 0; padding-bottom:20px; border-bottom:1px solid var(--tp-rule); color:var(--tp-ink); color-scheme:light; }
+.profile-theme-settings h3 { grid-column:1/-1; margin:0 0 4px; font-size:15px; font-weight:700; }
+.profile-theme-settings label { align-self:center; font-size:14px; font-weight:600; }
+.profile-theme-settings select { min-height:44px; min-width:112px; padding:8px 12px; border:1px solid var(--tp-line); border-radius:8px; color:var(--tp-ink); background:var(--tp-surface); font:inherit; font-size:14px; cursor:pointer; }
+.profile-theme-settings select:focus-visible { outline:2px solid var(--tp-focus); outline-offset:3px; }
+.profile-theme-settings select:disabled { opacity:.65; cursor:wait; }
+.profile-theme-settings p { grid-column:1/-1; margin:0; color:var(--tp-muted); font-size:12px; line-height:1.6; }
+.profile-theme-settings #profileThemeStatus:empty { display:none; }
+.organizer-profile-panel > .profile-theme-settings { grid-column:1/-1; margin:24px 0 0; }
+html.admin-dark .profile-theme-settings { --tp-ink:#f1f5f9; --tp-muted:#cbd5e1; --tp-surface:#0f172a; --tp-line:#64748b; --tp-rule:#334155; --tp-focus:#93c5fd; color-scheme:dark; }
+
+/* Anche l'area organizzatore segue la scelta chiaro/scuro dell'account. */
+html:not(.admin-dark) body.organizer-theme:has(#organizerAnalytics) { background:#f5f5f5; color:#0f172a; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev { --ev-ink:#0f172a; --ev-muted:#475569; color-scheme:light; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) > header { background:#fff; color:#0f172a; border-color:#e2e8f0; color-scheme:light; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) > header :is(nav,.site-nav) { color:#475569; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) > header :is(nav a:hover,nav a:focus-visible) { color:#0f172a; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) > header :is(nav a[aria-current="page"],a[href="/"] > span > span) { color:#2563eb; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) > header :is(#authNav > a,#authNav > button,a[href="/vendi"]) { background:#f1f5f9; color:#1d4ed8; border-color:#cbd5e1; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) > footer { background:#102b52; color:#fff; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) :is(.ev-panel,.ev-card) { background:#fff; border-color:#e2e8f0; }
+html:not(.admin-dark) :is(.organizer-theme,#profiloModal[data-profile="organizer"]) .profile-switch[data-selected="organizer"] { background:#f1f5f9; border-color:#e2e8f0; }
+html:not(.admin-dark) :is(.organizer-theme,#profiloModal[data-profile="organizer"]) .profile-switch[data-selected="organizer"]::before { background:#fff; box-shadow:none; }
+html:not(.admin-dark) :is(.organizer-theme,#profiloModal[data-profile="organizer"]) .profile-switch[data-selected="organizer"] :is(button,a) { color:#475569; }
+html:not(.admin-dark) :is(.organizer-theme,#profiloModal[data-profile="organizer"]) .profile-switch[data-selected="organizer"] :is([aria-selected="true"],[aria-current="page"]) { color:#1d4ed8; }
+html:not(.admin-dark) #profiloModal[data-profile="organizer"] .profile-dialog { background:#fff; color:#0f172a; color-scheme:light; }
+html:not(.admin-dark) #profiloModal[data-profile="organizer"] :is(.profile-dialog-header,.organizer-profile-events,.organizer-profile-events article) { border-color:#e2e8f0; }
+html:not(.admin-dark) #profiloModal[data-profile="organizer"] :is(#profileDialogTitle,.profile-close,.profile-organizer-panel h3,.organizer-profile-events h5) { color:#0f172a; }
+html:not(.admin-dark) #profiloModal[data-profile="organizer"] .profile-close:hover { background:#f1f5f9; }
+html:not(.admin-dark) .profile-organizer-panel :is(p,.organizer-profile-type),html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .organizer-profile-type { color:#475569; }
+html:not(.admin-dark) :is(.profile-organizer-panel,.organizer-theme .ev) .organizer-profile-bio { color:#334155; }
+html:not(.admin-dark) :is(.organizer-theme,#profiloModal) :is(.organizer-profile-contacts a,.organizer-profile-events-heading > a,.profile-organizer-secondary) { color:#1d4ed8; }
+html:not(.admin-dark) :is(.organizer-theme,#profiloModal) .organizer-profile-avatar { background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe; }
+html:not(.admin-dark) .profile-organizer-panel :is(.profile-organizer-note,.profile-organizer-icon) { background:#f1f5f9; color:#334155; border-color:#cbd5e1; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(button,.ev-button) { background:#f1f5f9; color:#0f172a; border-color:#64748b; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(button:hover,.ev-button:hover,summary:hover) { background:#e2e8f0; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(.ev-primary,.ev-primary:hover),html:not(.admin-dark) .profile-organizer-panel :is(.profile-organizer-primary,.profile-organizer-primary:hover) { background:#1d4ed8; color:#fff; border-color:#1d4ed8; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(a,.ev-eyebrow) { color:#1d4ed8; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(input,textarea,select) { background:#fff; color:#0f172a; border-color:#64748b; color-scheme:light; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(input,textarea)::placeholder { color:#475569; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(details,.organizer-profile-panel details) { border-color:#e2e8f0; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(summary,.organizer-profile-panel summary) { background:transparent; color:#0f172a; border-color:#64748b; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(summary::marker,details[open] > summary) { color:#1d4ed8; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .oa {
+    --oa-ground:#f5f5f5; --oa-surface:#fff; --oa-raised:#f1f5f9; --oa-rule:#cbd5e1; --oa-control:#64748b;
+    --oa-text:#0f172a; --oa-muted:#475569; --oa-faint:#526178; --oa-accent:#1d4ed8;
+}
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .oa :is(button,select) { color:var(--oa-text); border-color:var(--oa-control); background:transparent; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .oa :is(button:hover,select:hover) { background:var(--oa-raised); }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .oa #oaExport { background:var(--oa-text); color:var(--oa-ground); }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .oa #oaExport:disabled { background:var(--oa-raised); color:var(--oa-muted); }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .oa .oa-held { background:#64748b; }
+
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) > header .site-wordmark { color:#0f172a; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(label,legend) { color:#0f172a; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev :is(.ev-help,.ev-facts dt,.ev-steps) { color:#475569; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev input[readonly] { color:#475569; background:#f1f5f9; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .ev-field-error { color:#b91c1c; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .ev-steps li[data-done="true"] { color:#047857; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev h3.ev-form-heading { border-color:#e2e8f0; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .ev-empty { color:#475569; background:#f8fafc; border-color:#64748b; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .ev-notice:not([data-error="true"]) { color:#1e40af; background:#eff6ff; border-color:#bfdbfe; }
+html:not(.admin-dark) .organizer-theme:has(#organizerAnalytics) .ev .ev-notice[data-error="true"] { color:#991b1b; background:#fef2f2; border-color:#fecaca; }

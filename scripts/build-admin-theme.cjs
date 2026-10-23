@@ -63,7 +63,8 @@ function convert(css, label) {
 }
 
 for (const file of fs.readdirSync(path.join(root, 'css')).sort()) {
-    if (!file.endsWith('.css') || /^(admin-theme|tailwind)/.test(file)) continue;
+    // Preferenze contiene gia entrambe le varianti, compresa la base chiara organizzatori.
+    if (!file.endsWith('.css') || /^(admin-theme|tailwind|theme-preferences)/.test(file)) continue;
     convert(fs.readFileSync(path.join(root, 'css', file), 'utf8'), 'css/' + file);
 }
 for (const file of fs.readdirSync(root).filter(file => file.endsWith('.html')).sort()) {

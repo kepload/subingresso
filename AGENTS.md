@@ -1,5 +1,15 @@
 # AGENTS.md — Subingresso.it
 
+Tema personale23/10: Profilo > Impostazioni > Aspetto, chiaro iniziale per
+tutti, admin e organizzatori compresi. Scelta automatica nell’account
+auth.user_metadata.site_theme, mai derivata dal ruolo o dal sistema.
+GET verificato/PUT con token dell’identità iniziale; logout, cambio account,
+risposte tardive ed errori protetti. JSadmin-theme4/CSS3, theme-preferences1.
+Variante chiara anche per profilo e statistiche organizzatori; dati invariati.
+Contratto data/THEME_PREFERENCES.md; prove e pubblicazione
+Documents/verifica-tema-profilo-20261023/risultati.md.
+
+
 Vetrina/statistiche22/10: shell UI solo `body > header/footer`, mai quelli
 dei dialoghi; ui-components18. Annunci gratuiti: visualizzazioni e messaggi
 nel periodo, anteprima Premium sfocata senza dati reali nascosti. Analisi
@@ -7,7 +17,7 @@ complete permanenti per ogni annuncio con pagamento live riuscito,
 anche in bundle e dopo scadenza/rimborso; mai test, omaggi o soli featured.
 Gate server/RLS, grafico/tabella/CSV solo annunci sbloccati; dettagli in
 `data/SELLER_PREMIUM_ANALYTICS.md`. Cache sellerCSS2, premiumCSS4,
-accountJS4, admin-themeJS/CSS3. Trigger annunci e dati storici invariati.
+accountJS4, admin-themeJS4/CSS3. Trigger annunci e dati storici invariati.
 
 Vetrine Premium22/10: 49/99/249 euro per10/30/90giorni; pacchetti
 2annunci -10%,3–4 -15%,5–10 -20%, stessa durata e pagamento unico.
@@ -162,7 +172,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 
 ## 9) Cache buster correnti (aggiornare a ogni modifica)
 
-- `admin-theme.js?v=2`, `admin-theme.css?v=2`: tema scuro personale verificato da sessione e `is_admin`, senza cache ruolo; rigenerare CSS con `node scripts/build-admin-theme.cjs` dopo modifiche cromatiche. Tutti gli HTML e template API, comprese pagine senza Auth.
+- `admin-theme.js?v=4`, `admin-theme.css?v=3`, `theme-preferences.css?v=1`: preferenza di ogni account, chiaro iniziale. Tutti gli HTML/API; generatore CSS esclude il foglio delle preferenze. Contratto data/THEME_PREFERENCES.md.
 
 - `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
 - `data.js?v=24`

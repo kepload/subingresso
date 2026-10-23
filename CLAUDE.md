@@ -1,5 +1,15 @@
 # Regole Claude — Subingresso.it
 
+Tema personale23/10: Profilo > Impostazioni > Aspetto, chiaro iniziale per
+tutti, admin e organizzatori compresi. Scelta automatica nell’account
+auth.user_metadata.site_theme, mai derivata dal ruolo o dal sistema.
+GET verificato/PUT con token dell’identità iniziale; logout, cambio account,
+risposte tardive ed errori protetti. JSadmin-theme4/CSS3, theme-preferences1.
+Variante chiara anche per profilo e statistiche organizzatori; dati invariati.
+Contratto data/THEME_PREFERENCES.md; prove e pubblicazione
+Documents/verifica-tema-profilo-20261023/risultati.md.
+
+
 Vetrina/statistiche22/10: shell UI solo `body > header/footer`, mai quelli
 dei dialoghi; ui-components18. Annunci gratuiti: visualizzazioni e messaggi
 nel periodo, anteprima Premium sfocata senza dati reali nascosti. Analisi
@@ -7,7 +17,7 @@ complete permanenti per ogni annuncio con pagamento live riuscito,
 anche in bundle e dopo scadenza/rimborso; mai test, omaggi o soli featured.
 Gate server/RLS, grafico/tabella/CSV solo annunci sbloccati; dettagli in
 `data/SELLER_PREMIUM_ANALYTICS.md`. Cache sellerCSS2, premiumCSS4,
-accountJS4, admin-themeJS/CSS3. Trigger annunci e dati storici invariati.
+accountJS4, admin-themeJS4/CSS3. Trigger annunci e dati storici invariati.
 
 Vetrine Premium22/10: 49/99/249 euro per10/30/90giorni; pacchetti
 2annunci -10%,3–4 -15%,5–10 -20%, stessa durata e pagamento unico.
@@ -22,7 +32,7 @@ bucket `image-previews` anche dopo i deploy; un originale per sei dimensioni.
 Secret solo in environment cifrato Vercel, originali mai modificati.
 Contratto, errori e verifiche in `data/IMAGE_PREVIEWS.md`; nessun piano attivato.
 
-- Tema personale admin22/10: `admin-theme.js?v=2`, `admin-theme.css?v=2`, tutti gli HTML/API. Si attiva solo dopo sessione convalidata e `is_admin === true`, senza cache ruolo. Rigenerare CSS con `node scripts/build-admin-theme.cjs` dopo cambi cromatici; base `css/admin-theme-base.css`. Registro/prove in Subingresso.it informazioni.md.
+- `admin-theme.js?v=4`, `admin-theme.css?v=3`, `theme-preferences.css?v=1`: preferenza di ogni account, chiaro iniziale. Tutti gli HTML/API; generatore CSS esclude il foglio delle preferenze. Contratto data/THEME_PREFERENCES.md.
 
 - 🛡️ **BACKUP TAG OBBLIGATORIO (regola n.0)**: prima della prima modifica di OGNI nuova sessione, lancia `.\scripts\session-backup.ps1 -Reason "<descrizione-corta>"`. Crea un tag git su HEAD + push remoto. Ritorno garantito con `git reset --hard backup/session-YYYYMMDD-HHMMSS-...`.
 - ⚡ **STILE RISPOSTE (regola n.1)**: l'utente è un vibe coder, non un programmatore. Rispondi **corto e semplice**. Niente papiri, niente muri di testo, niente gergo tecnico (SSR, RPC, GRANT, cannibalizzazione...) senza spiegarlo in 2-3 parole. Dopo una modifica dì **cosa cambia per lui** in 1-2 frasi. Fai il lavoro, spiega poco. Vedi memoria [[feedback_stile_risposte]].

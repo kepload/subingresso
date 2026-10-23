@@ -4,7 +4,7 @@ const nativeFetch = global.fetch;
 const { chromium, webkit } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const H = require('./test-organizer-events.cjs');
 const root = path.resolve(__dirname, '..'), artifacts = process.env.PROFILE_QA_DIR;
-const files = ['dashboard.html', 'organizzatore.html', 'profilo.html', 'css/profile-switch.css', 'js/profile-switch.js', 'js/organizzatori.js'];
+const files = ['dashboard.html', 'organizzatore.html', 'profilo.html', 'css/profile-switch.css', 'css/theme-preferences.css', 'js/profile-switch.js', 'js/organizzatori.js'];
 let assets = new Map(files.map(file => [file, fs.readFileSync(path.join(root, file), 'utf8')]));
 function fixture() {
     const html = assets.get('dashboard.html');
@@ -80,7 +80,7 @@ async function run(engine,name,width,height,base) {
         await page.locator('.profile-panels').evaluate(el=>el.scrollTop=0);
         await page.locator('#pNome').fill('Nome modificato QA');await page.locator('#pEmailDigest').uncheck();
         await organizer.click();await ready();
-        check(await page.locator('.profile-dialog').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(15, 23, 42)' && await page.locator('#profileDialogTitle').innerText()==='Profilo organizzatore','Colori scuri e titolo distinguono la modalita organizzatore');
+        check(await page.locator('.profile-dialog').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(255, 255, 255)' && await page.locator('#profileDialogTitle').innerText()==='Profilo organizzatore','Profilo organizzatore chiaro per impostazione iniziale, titolo conservato');
         check(await page.getByRole('link',{name:'Crea profilo organizzatore'}).isVisible(),'Nuovo organizzatore: attivazione separata con lo stesso account');
         check(H.getDB().calls.every(call=>call.name==='organizer_workspace') && await page.evaluate(()=>qaWrites.length===0),'Cambio scheda in sola lettura');
         await normal.click();
@@ -109,8 +109,8 @@ async function run(engine,name,width,height,base) {
         await page.getByRole('link',{name:'Crea profilo organizzatore'}).click();
         await page.locator('#organizerProfileForm').waitFor({state:'visible'});
         check(await page.locator('.profile-switch-page [aria-current=page]').innerText()==='Organizzatore','Area organizzatore e modulo completo raggiungibili');
-        check(await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(11, 18, 32)','Area di gestione organizzatore con colori scuri');
-        check(await page.locator('header').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgba(15, 23, 42, 0.97)' && await page.locator('header .site-wordmark').evaluate(el=>getComputedStyle(el).color)==='rgb(241, 245, 249)','Intestazione scura e scritta chiara del logo');
+        check(await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(245, 245, 245)','Area di gestione organizzatore chiara per impostazione iniziale');
+        check(await page.locator('header').evaluate(el=>getComputedStyle(el).backgroundColor)==='rgb(255, 255, 255)' && await page.locator('header .site-wordmark').evaluate(el=>getComputedStyle(el).color)==='rgb(15, 23, 42)','Intestazione chiara e logo leggibile');
         check(await page.locator('#organizerRefresh').count()===0 && await page.getByRole('link',{name:'Dashboard normale',exact:true}).count()===0,'Area organizzatore senza pulsanti Aggiorna e dashboard duplicata');
         await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));
         check(await page.locator('.profile-switch-page').evaluate(el=>el.getBoundingClientRect().bottom<=0),'Selettore organizzatore scorre fuori dalla vista');

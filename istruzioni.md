@@ -1,5 +1,15 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Tema personale23/10: Profilo > Impostazioni > Aspetto, chiaro iniziale per
+tutti, admin e organizzatori compresi. Scelta automatica nell’account
+auth.user_metadata.site_theme, mai derivata dal ruolo o dal sistema.
+GET verificato/PUT con token dell’identità iniziale; logout, cambio account,
+risposte tardive ed errori protetti. JSadmin-theme4/CSS3, theme-preferences1.
+Variante chiara anche per profilo e statistiche organizzatori; dati invariati.
+Contratto data/THEME_PREFERENCES.md; prove e pubblicazione
+Documents/verifica-tema-profilo-20261023/risultati.md.
+
+
 Vetrina/statistiche22/10: corretto initUI che sostituiva il footer del dialogo
 Premium con quello del sito; shell limitata ai figli diretti del body.
 Gratuiti: due metriche nel periodo e anteprima sfocata; Premium permanenti
@@ -41,7 +51,7 @@ grafico adattivo, posteggi a unità, filtri e risultati per evento anche su
 telefono. Nessuna modifica DB/pagamenti. AnalyticsJS3/CSS2/charts1;
 prove/stato in Documents/verifica-statistiche-fiere-20261022/risultati.md.
 
-22ottobre2026, tema dark personale: attivazione automatica solo dopo
+Storico22/10, superato dalla preferenza per tutti del23/10: attivazione automatica solo dopo
 sessione convalidata e is_admin booleano vero, palette organizzatori.
 Uscita/cambio account/errori ripristinano il tema ordinario; nessuna cache
 di ruolo. js/admin-theme.js2 e css/admin-theme.css2, tutti gli HTML/API.

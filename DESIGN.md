@@ -179,11 +179,11 @@ Movimento contenuto: titolo e ricerca entrano di 18px in 650ms, con ritardo di 9
 - Don’t reintrodurre piccoli titoli maiuscoli tracciati nella home ridisegnata.
 - Don’t estendere queste finiture al tema organizzatori senza una verifica dedicata.
 
-## Variante dark personale admin — 22 ottobre 2026
+## Aspetto personale — 23 ottobre 2026
 
 Estensione cromatica richiesta dall'utente, derivata dalla sezione organizzatori.
 Layout, font, contenuti e funzioni rimangono quelli delle pagine esistenti.
-Il solo tema admin usa canvas `#0b1220`, campi/header `#0f172a`, pannelli
+Il tema scuro scelto dall’utente usa canvas `#0b1220`, campi/header `#0f172a`, pannelli
 `#152033`, controlli `#25334a`, hover/bordi `#334155`; testo `#f1f5f9`,
 secondario `#cbd5e1`, attenuato `#a6b5ca`, link/focus `#93c5fd` e hover
 `#bfdbfe`. Bordi dei campi `#64748b`, separatori secondari `#475569`.
@@ -194,11 +194,11 @@ L'oro Vetrina `#fbbf24` e le foto conservano il loro significato.
 Le categorie viola/rosa gia presenti nel blog e nella dashboard usano
 testo `#d4bfff` su `#302442`, conservando il significato senza fondi chiari.
 
-Attivazione da `js/admin-theme.js` dopo verifica server di sessione e ruolo;
-nessuna preferenza o autorizzazione memorizzata nel browser. Il foglio dark
-si carica solo per l'admin; tutti gli override richiedono `html.admin-dark`
-e quelli dei componenti richiedono anche il foglio originale o la pagina
-corrispondente. Uscita/cambio account rimuovono subito la classe.
+Chiaro iniziale per tutti. Attivazione da js/admin-theme.js solo dopo verifica
+server della preferenza user_metadata.site_theme dell’account; nessun ruolo
+seleziona il tema. Il foglio scuro si carica soltanto con scelta esplicita.
+Gli override richiedono html.admin-dark e il foglio o la pagina originale.
+Uscita/cambio account rimuovono subito la classe.
 Base `css/admin-theme-base.css`, generatore `scripts/build-admin-theme.cjs`:
 rigenerare dopo cambi ai colori esistenti. Nessuna inversione o filtro foto.
 Le sfumature sobrie tra sezioni conservano la preferenza esplicita del21/10.
@@ -210,3 +210,10 @@ Inspector prima/dopo conserva gerarchia e impaginazione; eccezione
 gradient richiesta dall'utente. Le segnalazioni su titolo grande, contenuti
 sotto la piega e accenti cromatici sono proprie della home esistente e
 della palette richiesta, fuori dall'estensione cromatica autorizzata.
+
+Impostazioni23/10: selettore nativo Chiaro/Scuro con salvataggio automatico,
+etichetta e stato vicino al controllo, altezza44px e focus visibile. Base chiara
+anche per gli organizzatori: fondo#f5f5f5, pannelli#fff, testo#0f172a,
+secondario#475569, bordi#64748b e accento#1d4ed8. Grafici e indicatori usano
+le stesse variabili nei due temi; layout e valori conservati. Contratto in
+data/THEME_PREFERENCES.md, foglio css/theme-preferences.css.

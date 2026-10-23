@@ -1,5 +1,20 @@
 # Subingresso.it — informazioni e TO DO
 
+## Aspetto per tutti — 23 ottobre 2026
+
+- Profilo → Impostazioni → Aspetto: Chiaro/Scuro, salvataggio automatico
+  nell’account. Chiaro iniziale anche per admin e organizzatori; supera
+  l’attivazione automatica admin del22/10. Variante chiara anche statistiche.
+  JSadmin-theme4/CSS3, theme-preferences1; nessuna migrazione o invio.
+  Token legato all’identità iniziale, logout/cambi/errori protetti.
+  Locale261controlli tema,364profili e statistiche nei quattroformati passati;
+  inspector impostazioni0rilievi. Prove con sessioni/salvataggi simulati,
+  nessun account reale modificato. Contratto data/THEME_PREFERENCES.md,
+  prove/stato Documents/verifica-tema-profilo-20261023/risultati.md.
+  Backup session-20261023-075225 e ramo pre-tema-profilo-tutti-utenti validi;
+  errore cleanup helper noto. Pubblicazione in corso.
+
+
 - **Vetrina/statistiche22/10:** riparato footer condiviso che sovrascriveva
   la finestra Premium; “Vetrina/Promuovi” verificati insieme alla shell reale.
   Gratuiti: visualizzazioni/messaggi e anteprima Premium sfocata. Analisi
