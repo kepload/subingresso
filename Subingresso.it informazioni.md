@@ -1,5 +1,23 @@
 # Subingresso.it — informazioni e TO DO
 
+Regole comuni per Claude e Codex: `AGENTS.md`. Questo documento raccoglie
+decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
+senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
+fonti e audit fiere completi: `data/FIERE.md`.
+
+## Regole comuni e pulizia documentale — 23 ottobre 2026
+
+- Fonte unica `AGENTS.md`, `CLAUDE.md` ridotto all'import; skill solo se richieste
+  nel prompt e letture mirate. Limiti imposti dall'app distinti dalle regole locali.
+- Tolti riepiloghi duplicati e descrizioni superate (prezzi/sconti, Scout v1,
+  cache congelate, snapshot di maggio); mantenuti formule dei report storici,
+  checklist, criteri provinciali, contratti e prove. Verifica finale sui rimandi,
+  contenuti protetti e diff dei soli quattro Markdown.
+- Originali: commit `da20655`, tag remoto
+  `backup/session-20261023-184642-unifica-istruzioni-claude-codex` e copia locale
+  `Documents/backup-subingresso/documentazione-20261023-184705` con SHA256.
+  Backup remoto verificato; errore noto del solo cleanup dell'helper.
+
 ## Email Vetrina, testi e grafica — 23 ottobre 2026
 
 - Seguito esplicito: inviate9anteprime al solo indirizzo personale indicato,
@@ -22,45 +40,20 @@
   Dossier Documents/email-vetrine-design-20261023; backup remoto valido,
   helper con errore cleanup noto dopo push riuscito.
 
-## Registrazione senza esempi telefono — 23 ottobre 2026
+## Registrazione — stato finale verificato, 23 ottobre 2026
 
-- Nascosta la riga «Es.347…» del telefono vuoto nel solo form registrazione;
-  feedback/validazione conservati. Auth28/19sorgenti;cinque formati reali
-  Chrome1440/768/490/320 e Safari390 passati,CTA subito visibile.
-  Prove Documents/verifica-registrazione-esempi-20261023;backup remoto valido.
-  Consultazione Resend:messaggio errore UI richiesto,nessuna nuova email.
-  Pubblicatocda881e,Vercel riuscito;Auth28 identico online,cinque formati
-  reali passati:esempi invisibili e CTA subito visibile,zero registrazioni.
-
-## Registrazione compatta, correzione — 23 ottobre 2026
-
-- Testo esatto richiesto:«Acconsento a ricevere offerte personalizzate».
-  Spunte18px e testo13px,righe32px unite;spazi campi/intestazione ridotti,
-  adattamento alle finestre basse. Altezza672→536px,490x580:512px;
-  CTA subito visibile anche320x568,senza ridurre campi/pulsante sotto44px.
-  Termini/telefono obbligatori,spunte iniziali e versione solo offerte
-  conservati. Auth27/19sorgenti;prove Chrome1440/768/490/320 e Safari390,
-  zero account/email reali. Stato/prove:
-  Documents/verifica-registrazione-compatta-20261023/risultati.md.
-  Backup tag/ramo preventivi remoti verificati.
-  Pubblicatoe66a84a,Vercel riuscito:16asset/pagine identici;cinque formati
-  online passati,CTA visibile senza scroll,nessun account/email reale.
-
-## Registrazione, termini e caselle — 23 ottobre 2026
-
-- Richiesta successiva:due caselle28px preselezionate,termini obbligatori
-  con link /termini in nuova scheda e sola *,telefono * obbligatorio.
-  Offerte facoltative:«acconsento a ricevere offerte sulla mail»,nessun
-  testo aggiuntivo. Scelta/reset/errori nei due percorsi allineati;
-  versione solo offerte vetrina-email-20261023,nessun consenso alla misura.
-  Auth26 su19sorgenti. Chrome1440/320 e Safari390 passati con rete/account
-  simulati,zero nuove iscrizioni/email reali. Prove e stato pubblicazione:
-  Documents/verifica-registrazione-termini-20261023/risultati.md.
-  Backup tag/ramo remoti verificati; noto errore cleanup helper.
-  Pubblicato75efe35,Vercel riuscito:16asset/pagine identici ai blobGit;
-  Chrome1440/320 e Safari390 online passati,link termini apribile senza
-  cambiare spunta,nessuna registrazione/email reale. Inspector componente
-  treformati0FAIL/0WARN con eccezioni motivate per lo stile preesistente.
+- Telefono obbligatorio; esempi sotto il campo nascosti quando è vuoto,
+  validazione conservata. Termini obbligatori con link `/termini` in nuova
+  scheda e offerte facoltative: «Acconsento a ricevere offerte personalizzate».
+- Due caselle 18 px preselezionate, testo 13 px e righe 32 px; modulo compatto
+  e adattato in altezza, CTA visibile anche a 320×568 e 490×580, controlli 44 px.
+  Versione del testo solo offerte `vetrina-email-20261023`: nessun consenso alla
+  misura individuale delle email. Le vecchie caselle 28 px e diciture sono superate.
+- Stato finale Auth28 su 19 sorgenti, commit `cda881e`, Vercel riuscito e
+  verifiche Chrome/Safari nei cinque formati passate, nessun account/email
+  reale creato nelle prove. Dossier `Documents/verifica-registrazione-esempi-20261023`
+  e `Documents/verifica-registrazione-compatta-20261023/risultati.md`.
+  Passaggi precedenti in Git, senza ripeterne qui l'intero resoconto.
 
 ## Statistiche email e conversioni — 23 ottobre 2026, completate
 
@@ -1159,12 +1152,11 @@ Marketplace italiano di **subingresso e compravendita di posteggi mercatali/lice
 
 Repo locale `C:\Users\utente\Desktop\Ardit\subingresso.it` (il vecchio `Desktop\subingresso.it` è superato dal percorso rilevato il 6 ottobre); GitHub pubblico `https://github.com/kepload/subingresso`; produzione `https://subingresso.it`. HTML statico, JS vanilla, Tailwind precompilato; Vercel con deploy automatico al push, Supabase `mhfbtltgwibwmsudsuvf` per DB/backend, Resend via Edge Functions, Stripe per Vetrina.
 
-1. Leggere `AGENTS.md` (fonte operativa Codex), `istruzioni.md` (manuale, bug, sistemi/TODO), `CLAUDE.md` (riepilogo parallelo; se diverge prevale AGENTS).
-2. Controllare `git status --short`, diff e ultimi commit; conservare le modifiche estranee. `supabase/.temp/cli-latest` risultava già modificato alla ricognizione: non sovrascriverlo/committarlo automaticamente.
-3. Prima della prima modifica, dalla root: `.\scripts\session-backup.ps1 -Reason "descrizione-corta"`. Crea/pusha tag `backup/session-...`; non serve per sola analisi.
-4. Leggere i file coinvolti e cercare tutti i riferimenti con `rg`; patch puntuali, verifica sintassi/flusso, aggiornamenti cache/documentazione/schema quando necessari; commit/push secondo AGENTS.
-
-Risposte italiane, semplici e brevi. PowerShell 5.1: comandi separati e controllo `$?`, niente `&&`/`||`; commit complessi con `git commit -F file-temporaneo`.
+Avvio, backup, Git, sicurezza e stile delle risposte: seguire la fonte comune
+`AGENTS.md`, importata da `CLAUDE.md`. Letture mirate al tema, senza obbligo di
+leggere tutto; skill soltanto su richiesta esplicita nel prompt.
+`supabase/.temp/cli-latest` era già modificato alla ricognizione: preservarlo
+come le altre modifiche estranee al lavoro corrente.
 
 ## Mappa di file e pagine
 
@@ -1229,21 +1221,15 @@ Deploy singola funzione: `npx.cmd supabase functions deploy NOME --project-ref m
 
 ## Sicurezza, CSS/cache e bug da evitare
 
-- Repo pubblico: mai secret, JWT service role, `sb_secret_*`, chiavi Stripe/Resend/Gemini o password nei file versionati. Chiave pubblicabile frontend pubblica per design; privilegiate solo environment secret. Non aggirare alla leggera gitleaks/pre-commit/push protection.
-- `annunci`/`profiles`: tel/email column-restricted, `select('*')` autenticato può fallire `42501`; colonne esplicite senza PII. Nuove colonne possono richiedere `GRANT SELECT (col)` per `anon`, `authenticated`.
-- Niente join PostgREST `profiles(...)` da annunci/conversazioni: fetch separati + merge JS. `_supabase.rpc(...).catch(...)` non valido in Supabase JS v2: `await` + `try/catch`.
-- Testo utente nel DOM con `escapeHTML()`, HTML articoli con DOMPurify. Cache sempre per utente: già avvenuta contaminazione di nome/telefono su dispositivi condivisi.
-- Mai eliminare utenti/annunci, anche soft delete, senza consenso esplicito; non toccare trigger annunci, schema email o vendi se il task non lo richiede chiaramente.
-- Tailwind precompilato: verificare le classi; nuove utility/arbitrary values come `pl-[4.5rem]` falliscono senza rebuild: `npx.cmd tailwindcss -i tailwind.input.css -o css/tailwind.css --minify`.
-- Dopo rebuild aggiornare `tailwind.css?v=N` in tutti gli HTML. Per modifiche a data/auth/ui-components/page-view-tracker/pages JS, incrementare ogni riferimento, inclusi template SSR inline. Cercare versioni reali con `rg`: alla ricognizione auth HTML v20 contro documenti v18.
-- `<style>` dopo Tailwind può sovrascrivere utility: controllare specificità/ordine; `!important` non prima soluzione.
-- Regex multiline ampie hanno cancellato funzioni: edit puntuali. Unicode invisibili rompono confronti/replace. Enum/whitelist JS e `CHECK` DB devono restare allineati. Duplicazione statico/SSR causa disallineamenti SEO/cache: cercare tutti i punti.
+Regole comuni in `AGENTS.md`, sezioni «Segreti e isolamento dei dati» e
+«Implementazione e verifiche»; spiegazioni e casi tecnici in `istruzioni.md`.
+Non mantenere qui una seconda copia delle stesse regole o delle versioni cache.
 
 ## Attendibilità, priorità storiche e fonti
 
-Snapshot fine maggio in AGENTS/manuale (34 annunci reali, 32 utenti, Scout attivo, blog regionale completato) **non attuale senza verifica live**. Orientamenti ancora utili: inventario reale inizialmente Lombardia, monitorare Scout, privacy/data audit, conversioni blog/landing regionali con inventario sufficiente, reminder scadenze, aggiornare Bolkestein. Prima di riprendere TODO storici controllare commit, dashboard e servizi.
+Gli snapshot di maggio (utenti, annunci, Scout e blog) sono storici, recuperabili in Git e **non attuali senza verifica live**. Orientamenti ancora utili: inventario reale inizialmente Lombardia, monitorare Scout, privacy/data audit, conversioni blog/landing regionali con inventario sufficiente, reminder scadenze, aggiornare Bolkestein. Prima di riprendere TODO storici controllare commit, dashboard e servizi.
 
-Ordine delle fonti: codice/config repo → schema/config live verificati Supabase/Vercel/Stripe/Resend → AGENTS per operatività/sicurezza → istruzioni per architettura/motivazioni/storico → questo riepilogo. Numeri utenti/annunci/iscritti, versioni e TODO vanno verificati quando pertinenti al task.
+Le istruzioni correnti dell’utente e le regole comuni in AGENTS governano il lavoro. Per verificare l’implementazione: codice/config repo e schema/config live verificati; poi manuale per architettura/motivazioni e questo registro per decisioni e storico. Numeri utenti/annunci/iscritti, versioni e TODO vanno verificati quando pertinenti al task.
 
 <a id="parte-b"></a>
 

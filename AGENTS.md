@@ -1,504 +1,117 @@
-# AGENTS.md — Subingresso.it
-
-Email Vetrina23/10, revisione testi/grafica: nove varianti brevi e umane,
-oggetti sul vantaggio/vendita, mai un semplice report visite. Blu/oro del
-marchio, prezzo/durata e pulsante chiari; nessun titolo annuncio lungo.
-HTML a tabelle/stili inline, Arial per email; nessuna immagine necessaria.
-Template condiviso vetrina-email.mjs per campagna e copia admin. Listino,
-misura facoltativa, uscite e limiti invariati; revisione senza nuovi invii.
-Dettagli data/VETRINA_EMAIL.md; prove Documents/email-vetrine-design-20261023.
-
-Registrazione23/10, correzione finale: due caselle18px preselezionate,
-termini obbligatori con link /termini in nuova scheda e sola *, offerte
-facoltative:«Acconsento a ricevere offerte personalizzate»,testo13px.
-Consensi in un gruppo32px/riga,modulo con spazi ridotti e adattato in altezza;
-CTA visibile senza scorrere anche490x580/320x568,controlli44px conservati.
-Telefono * obbligatorio; controlli anche nel submit JS. Testo breve usa
-vetrina-email-20261023, solo offerte: mai abilitare la misura email con esso.
-Auth28 su19sorgenti; esempi sotto il telefono nascosti quando il campo è vuoto,
-feedback di validazione conservato. Supera i default vuoti nello storico sotto.
-Prove Documents/verifica-registrazione-compatta-20261023. Nessun invio/test reale.
-
-Statistiche email/Vetrine23/10: pannello admin #email-vetrine, coorti7/30/90/tutto;
-consegne provider, aperture/clic solo con scelta informata nuova, attribuzione7g,
-checkout/pagamenti/annulli reali distinti, bundle un solo ordine. Vecchie12email
-consegnate ma aperture/clic non disponibili;50consensi WhatsApp non ampliati.
-Versione nuova vetrina-email-analytics-20261023, facoltativa/vuota, revoca misura
-separata da offerte. RLS/admin server, niente replay/IP/UA/nuovi ID persistenti.
-Copia solo all'admin richiedente, max1/24ore, is_test esclusa dai risultati.
-Nessun nuovo cron. Contratto data/EMAIL_CONVERSION_ANALYTICS.md; cache auth24,
-premiumJS3,unsubscribeJS4,journey/adminanalyticsJS-CSS1. Prove private in
-Documents/statistiche-mail-vetrine-20261023.
-
-
-Consensi/offerte23/10:primo giro12email/12delivered nella coorte privata dei
-50iscritti reali più recenti confermati dall'utente;più anziani esclusi.
-Nuovi iscritti:casella separata,facoltativa e vuota,booleano vero/versione
-vetrina-email-analytics-20261023. Trigger solo INSERT profiles registra consenso;
-mai reconsenso da UPDATE metadata/profilo. Bypass e fallback Auth allineati.
-Limiti20/campagna-24ore,30giorni/persona,72ore da periodiche;salta settimanali
-per7giorni. Uscita promo separata,nessun nuovo cron. Dettagli data/VETRINA_EMAIL.md.
-
-Campi/mappa dark23/10: input/select/textarea a riposo con bordo#334155,
-senza alone; focus tastiera2px blu. Mappa SVG: mare#0f172a, terre#25334a,
-confini#475569; hover/selezione/preview e marker conservati. Chiaro invariato.
-Cache admin-themeJS7/CSS6; prove Documents/verifica-dark-campi-mappa-20261023.
-
-Finiture dark23/10: bordi chiari indigo/ciano e gialli convertiti in linee
-discrete; statistiche admin con etichette12px e cifre tabulari, due schede
-economiche a tutta larghezza su telefono. Pulsanti admin piatti, stati/focus
-coerenti,44px su mobile. Struttura e funzioni conservate; niente invii reali.
-Cache corrente admin-themeJS7/CSS6; prove/stato pubblicazione in
-Documents/verifica-dark-finiture-20261023/risultati.md.
-
-Tema personale23/10, correzione flash: pulsante Modalità scura direttamente
-nella pagina profilo/dashboard e nell’area organizzatore, fuori da impostazioni
-e moduli. Chiaro iniziale per tutti; preferenza auth.user_metadata.site_theme.
-Script sincrono all’inizio del head e CSS bloccante prima del body, anche SSR.
-Copia locale _si_theme_preference_v1 limitata a ID/tema confermato, usata solo
-con la stessa sessione. Prima lettura senza copia: attesa su fondo scuro.
-GET riconcilia; errore temporaneo conserva aspetto, 401/403/logout/cambio
-identità invalidano. PUT sempre con token iniziale; nessun ruolo in cache.
-JSadmin-theme7/CSS6, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
-prove/stato Documents/verifica-tema-senza-flash-20261023/risultati.md.
-
-
-Vetrina/statistiche22/10: shell UI solo `body > header/footer`, mai quelli
-dei dialoghi; ui-components18. Annunci gratuiti: visualizzazioni e messaggi
-nel periodo, anteprima Premium sfocata senza dati reali nascosti. Analisi
-complete permanenti per ogni annuncio con pagamento live riuscito,
-anche in bundle e dopo scadenza/rimborso; mai test, omaggi o soli featured.
-Gate server/RLS, grafico/tabella/CSV solo annunci sbloccati; dettagli in
-`data/SELLER_PREMIUM_ANALYTICS.md`. Cache sellerCSS2, premiumCSS4,
-accountJS4, admin-themeJS4/CSS3. Trigger annunci e dati storici invariati.
-
-Vetrine Premium22/10: 49/99/249 euro per10/30/90giorni; pacchetti
-2annunci -10%,3–4 -15%,5–10 -20%, stessa durata e pagamento unico.
-Listino condiviso js/vetrina-pricing.js; contratto/migrazione/verifiche in
-`data/VETRINE_PREMIUM.md`. Nessuno sconto pubblicazione o omaggio UI;
-blog solo Vetrine pagate, catalogo gratuito conservato. Trigger annunci
-invariati; ordini precedenti e sessioni aperte rispettati. Nuovi asset
-pricing1/premiumJS2-CSS3/account3. Non ripristinare i vecchi prezzi.
-
-> File letto da Codex CLI (e qualsiasi altro agente AI) all'inizio di OGNI sessione.
-> Mantenere allineato con `CLAUDE.md` quando si modifica.
-> Per la mappa tecnica completa del progetto: leggi `istruzioni.md` (812 righe, sezione 0).
-
-Anteprime22/10: `api/image.js`/`lib/image-preview-cache.cjs` riusano WebP nel
-bucket `image-previews` anche dopo i deploy; un originale per sei dimensioni.
-Secret solo in environment cifrato Vercel, originali mai modificati.
-Contratto, errori e verifiche in `data/IMAGE_PREVIEWS.md`; nessun piano attivato.
-
----
-
-## Qualità dati (8 ottobre 2026)
-
-Controlli form + DB e riepilogo admin: `DATA_QUALITY_AUDIT_20261008.md`, `PATCH_DATA_QUALITY_20261008.sql`. Anagrafica in schema privato `data_quality`, seed `scripts/seed-data-locations.cjs`. Non rimuovere i trigger e non correggere dati storici per ipotesi. Telefoni: `get_my_profile` per il proprietario, `admin_user_details` per admin; colonne esplicite nelle letture pubbliche profiles. Edit annunci torna pending. Test qualità `scripts/test-data-quality.*`, browser `test-admin-control-room.cjs`. Cache: data 21, auth 22, annunci 13, vendi-support 2, valuation 2, blog-tracker 2. Auth richiede data.js anche nelle pagine di servizio.
-
-## 0) Cosa fare PRIMA di toccare qualsiasi file
-
-**OBBLIGATORIO ad ogni nuova sessione, prima della prima modifica:**
-
-```powershell
-.\scripts\session-backup.ps1 -Reason "<descrizione-corta>"
-```
-
-Crea un tag git `backup/session-YYYYMMDD-HHMMSS-<reason>` e lo pusha su GitHub. Punto di ritorno sicuro se le modifiche della sessione vanno male.
-
-**Per tornare indietro in caso di disastro:**
-```powershell
-git tag -l "backup/session-*"                              # lista i checkpoint
-git reset --hard backup/session-YYYYMMDD-HHMMSS-<reason>   # ripristina
-```
-
-Snapshot full del repo (escluso `node_modules`) anche in:
-`C:\Users\utente\Documents\backup-subingresso\snapshot-2026-05-27-codex-handoff\`
-
----
-
-## 1) Stile risposte (regola d'oro)
-
-L'utente è un **vibe coder**, non un programmatore. Risposte **corte, semplici, italiane, zero gergo**. Niente papiri tecnici, niente muri di testo. Dopo una modifica spiega in 1-2 frasi **cosa cambia per lui**. Fai il lavoro, spiega poco.
-
-Dashboard admin: pochi numeri e grafici utili. Spiegazioni e dettagli nei pannelli apribili, senza muri di testo (preferenza utente, 8 ottobre 2026).
-
-- ❌ "Ho ridefinito la RPC `admin_x()` con `SECURITY DEFINER` e propagato i grants…"
-- ✅ "Aggiunto pannello Avvisi. Apri dashboard, lo vedi sopra Performance blog."
-
----
-
-## 2) Sicurezza segreti (post-incidente 4 mag 2026)
-
-**MAI hardcodare segreti** in file versionati (`.sql`, `.md`, `.ts`, `.js`, `.json`). Il repo è pubblico su GitHub.
-
-Segreti = `sb_secret_*`, JWT `eyJ...service_role`, Stripe keys, Resend keys, password DB.
-
-**Per PATCH SQL che richiedono una chiave**: file template con `:'service_jwt'` + `psql -v service_jwt="$KEY"`, oppure file in `/tmp/` (fuori repo), applica, elimina.
-
-**MAI** recuperare una chiave via query DB e iniettarla in un Write/Edit verso un path dentro il repo.
-
-**Pre-commit hook gitleaks attivo** in `.git/hooks/pre-commit`. **Push protection GitHub attiva**. Non bypassare `--no-verify` se non sei certo al 100%.
-
----
-
-## 3) Workflow git
-
-- Dopo **OGNI** modifica ai file: `git add . && git commit -m "..." && git push`. Sempre. Senza aspettare richiesta.
-- Su modifiche grosse (≥10 file o config core): prima crea branch `backup/pre-X` su GitHub.
-- Commit message con virgolette o multilinea → usa `git commit -F file` (tempfile), NON `-m "..."` (PowerShell rompe).
-
----
-
-## 4) Ambiente
-
-- **OS**: Windows 11. Shell di default: **PowerShell 5.1** (Windows PowerShell, NON Core).
-- **Working dir**: `C:\Users\utente\Desktop\subingresso.it`
-- **Repo GitHub**: https://github.com/kepload/subingresso (pubblico)
-- **Deploy**: Vercel auto on push, ~30s
-- **DB**: Supabase project `mhfbtltgwibwmsudsuvf`. CLI in `scripts\.bin\supabase.exe`. Token in `.claude\settings.local.json` env `SUPABASE_ACCESS_TOKEN`.
-
-### Quirks PowerShell 5.1 (verificati con sangue)
-- `&&` e `||` NON funzionano → usa `; if ($?) { ... }`
-- Niente em-dash `—` in stringhe `"..."` con encoding misto → usa `--`
-- `2>&1` su exe nativi (git, npm) wrappa stderr come `NativeCommandError` e setta `$?=$false` anche con exit 0 → NON redirigere stderr di nativi
-- `git commit -m "msg con virgolette"` rompe il parser → `git commit -F tempfile.txt`
-- Default encoding `Out-File` è UTF-16 LE → passa `-Encoding utf8` se altri tool devono leggere
-
----
-
-## 5) Stack progetto
-
-HTML statico + JS vanilla + Tailwind precompilato + Supabase (Postgres + Edge Functions + Storage + Auth) + Vercel SSR per `/blog`, `/annuncio`, `/api/*`.
-
-Struttura `/js`:
-- `data.js` = "il cervello" (MERCI, REGIONI, helpers, `buildCard`, `escapeHTML`, `formatPrice`, `showToast`)
-- `auth.js` = sessioni, modal auth, popup visitor/welcome, tracking modal_opens
-- `ui-components.js` = header/footer dinamici
-- `pages/*.js` = logica delle pagine specifiche
-
-**Non toccare senza leggere `istruzioni.md`**:
-- Trigger DB su `annunci` (3 attivi)
-- Sistema vetrina Stripe
-- Email Resend (8 edge functions)
-- RLS column-level su `annunci.tel/email`
-- `api/annuncio.js` SSR (template inline)
-- `api/blog.js` SSR (legge `blog-template.html`)
-
----
-
-## 6) Tailwind — solo classi precompilate
-
-Il CSS è `css/tailwind.css` precompilato (~50KB). **NON usare arbitrary values** come `pl-[4.5rem]`: non sono nel build, falliscono silenziosamente.
-
-Per classi nuove → `npx tailwindcss -i tailwind.input.css -o css/tailwind.css --minify` + bump `?v=N` su tutti gli HTML che caricano `tailwind.css?v=` (21 file).
-
-Prima di aggiungere una classe responsive (`lg:`/`md:`), verifica che esista nel build con grep su `css/tailwind.css`.
-
-`<style>` inline DOPO `<link tailwind.css>` sovrascrive le utility a parità di specificità → usa `style=""` inline su elementi singoli.
-
----
-
-## 7) Database — colonne column-restricted
-
-Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `authenticated`. Quindi:
-
-- `select('*')` su `annunci` da authenticated → errore `42501`. **Sempre select esplicito** senza tel/email.
-- Ogni nuova colonna su `annunci`/`profiles` → richiede `GRANT SELECT (col) ON annunci TO anon, authenticated;` esplicito.
-- Per leggere tel/email del proprio annuncio: RPC `get_listing_contact()` (owner-bypass + admin-bypass + rate limit).
-
-**Niente join `profiles(...)` in select di `annunci`/`conversazioni`** → rompe PostgREST. Fetch separato + merge manuale.
-
-`_supabase.rpc().catch()` **NON esiste** in Supabase JS v2. Usa `async/await + try/catch`.
-
----
-
-## 8) Bug pattern noti (NON ripetere)
-
-- Regex Python multi-line `[\s\S]*?` per riscrivere codice → ha già cancellato funzioni intere. Edit puntuale > regex.
-- Caratteri Unicode invisibili (U+200A, U+0300, 0x01) iniettati da editor rompono replace silenziosamente.
-- Whitelist enum lato JS deve restare allineata col CHECK constraint DB. Dopo `ALTER TABLE` con nuovo enum → grep il valore in tutto il codice.
-- Bucket key timezone: client e DB devono usare lo stesso (entrambi UTC o entrambi local).
-- Refactor che migra funzioni a `data.js` o `ui-components.js` → grep `<funzione>(` su tutti gli HTML e verifica che lo script tag esista.
-- Cache buster `?v=N`: bumpalo quando modifichi `data.js`, `auth.js`, `ui-components.js`, `pages/*.js`, `tailwind.css`.
-
----
-
-## 9) Cache buster correnti (aggiornare a ogni modifica)
-
-- `admin-theme.js?v=7`, `admin-theme.css?v=6`, `theme-preferences.css?v=2`: avvio senza flash, finiture dark e contorni tenui dei campi/mappa; pulsante diretto nel profilo, chiaro iniziale. Tutti gli HTML/API; generatore CSS esclude il foglio delle preferenze. Contratto data/THEME_PREFERENCES.md.
-
-- `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
-- `data.js?v=24`
-- `auth.js?v=28`
-- `ui-components.js?v=17`
-- `js/pages/annunci.js?v=15`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
-- `comune-picker.js?v=7`, `location-search.js?v=8`, `location-search-worker.js?v=3`: comuni e 55.288 località da `data/localita.json`; refusi in background, fallback a blocchi. Il worker importa la stessa versione di `location-search.js`: aggiornare entrambi i riferimenti e il cache buster del worker quando cambia il motore. Dettaglio/fonti in `data/LOCALITA.md`.
-- `js/pages/annuncio-detail.js?v=26` (anche in `annuncio.html` + `api/annuncio.js`)
-- `css/tailwind.css?v=4`
-- `page-view-tracker.js?v=4`
-- `js/valuation.js?v=8`, `js/pages/valutatore.js?v=9` (v2.6: pesi passaggio/angolo/sole calibrati il 22 ottobre; minimi cessione 1.000 e affitto 500/anno conservati. Curva base 200/giorno -> 8.000 e 400/giorno -> 27.000 a 52 giornate, prima delle caratteristiche. RPC `save_valutazione_v26`; report 2.0-2.5 invariati; dettagli in `istruzioni.md`)
-
----
-
-Caricamento località (9 ottobre 2026): normalizzazione e indici iniziali a blocchi di circa 8 ms con pause del browser, per mantenere attivi clic e digitazione durante la preparazione dei 63.182 luoghi. Dati, alias, coordinate, ordine e gestione errori conservati. Minuscolo Unicode standard equivalente all’italiano, verificato su nomi e alias; orologio controllato ogni 16 record per limitare il costo delle pause. Cache comune-picker 7, location-search 8, worker 3; tutti i riferimenti, inclusi form e import del worker, aggiornati. Regressione sul caricamento iniziale in scripts/test-location-background.cjs (Chromium/WebKit).
-
-## 10) Memoria di progetto persistente
-
-`istruzioni.md` (812 righe) = manuale completo. Leggere all'inizio della sessione per task non banali. Aggiornarlo:
-- Ogni ~5 modifiche significative (regola "feedback_istruzioni_update")
-- Quando l'utente dice "chiudo / fine sessione / sto per chiudere" → riassumere le info utili emerse e aggiungerle (no duplicati, super sintetico)
-
-`CLAUDE.md` = stesse regole, formato Claude. Tienili allineati o, se diverge, AGENTS.md è la fonte di verità per Codex.
-
----
-
-## 11) Cosa NON fare mai senza ok esplicito utente
-
-- Eliminare annunci o utenti dal DB (anche soft delete) — chiedere prima
-- Modificare `vendi.html` wizard se non strettamente necessario (è critico)
-- Toccare trigger DB di `annunci`
-- Cambiare schema email/Resend (rate limit free 100/giorno)
-- Push su `main` con file > 50MB o segreti
-- Modifiche estese (>10 file) senza prima creare un branch backup
-
----
-
-## 12) 🚨 PLAYBOOK AI SCOUT BANDI — Cosa fare se si rompe
-
-Il sistema AI Scout è autonomo: gira ogni mattina alle 08:00 UTC via cron pg_cron, chiama Gemini, scopre bandi, manda mail di briefing throttled (1 ogni 3 giorni). Funziona senza interventi finché Google non cambia regole.
-
-### File chiave del sistema
-- `supabase/functions/scout-bandi/index.ts` — pipeline multi-step (Gemini + HTTP validation)
-- `supabase/functions/bando-action/index.ts` — endpoint approve/reject + invio mail
-- `api/bandi/[slug].js` — landing page SSR sul sito
-- `dashboard.html` — pannello admin "AI Scout Bandi"
-- Cron: `cron.job WHERE jobname = 'scout-bandi-daily'`
-- Tabelle: `bando_scouting_log`, `admin_briefing_state`, `bando_alerts`
-
-### 🔴 Diagnostica veloce (in che stato è il sistema?)
-
-```bash
-# Da Bash, dalla root del repo:
-cd "C:/Users/utente/Desktop/subingresso.it"
-export SUPABASE_ACCESS_TOKEN="$(cat .claude/settings.local.json | grep -oE 'sbp_[a-zA-Z0-9]+')"
-cat > /tmp/health.sql << 'EOF'
--- 1. Cron attivo?
-SELECT jobid, jobname, schedule, active FROM cron.job WHERE jobname = 'scout-bandi-daily';
--- 2. Quando l'ultimo scout ha girato?
-SELECT MAX(discovered_at) AS last_scout FROM bando_scouting_log;
--- 3. Status counters
-SELECT status, COUNT(*) FROM bando_scouting_log GROUP BY status;
--- 4. Ultima mail briefing
-SELECT last_briefing_at, last_briefing_items_count FROM admin_briefing_state;
--- 5. Iscritti per regione
-SELECT regione, COUNT(*) FROM bando_alerts GROUP BY regione ORDER BY COUNT(*) DESC;
-EOF
-./scripts/.bin/supabase.exe db query --linked --file /tmp/health.sql --output json
-```
-
-### 🟡 PROBLEMA 1: Scout ritorna 0 risultati per giorni
-
-**Sintomo**: `bando_scouting_log` non riceve nuovi insert da 3+ giorni nonostante il cron giri.
-
-**Causa più probabile**: Gemini modello deprecato o cambio API. Verifica con curl diretto:
-```bash
-curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=$GEMINI_KEY" -H "Content-Type: application/json" -d '{"contents":[{"parts":[{"text":"test"}]}]}'
-```
-Se vedi `404 NOT_FOUND` o `429 RESOURCE_EXHAUSTED`, cambia modello.
-
-**Fix — cambia modello Gemini** (1 riga di codice):
-1. Apri `supabase/functions/scout-bandi/index.ts`
-2. Cerca `const GEMINI_MODEL = 'gemini-2.5-flash';`
-3. Sostituisci con uno dei fallback in ordine di preferenza:
-   - `gemini-flash-latest` (alias che punta sempre al più recente flash)
-   - `gemini-2.5-flash-lite` (free tier più generoso)
-   - `gemini-flash-lite-latest`
-   - Se Google annuncia un `gemini-3-flash` GA: usalo
-4. Re-deploy:
-   ```bash
-   npx supabase functions deploy scout-bandi --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt
-   ```
-5. Trigger manuale e verifica (vedi sezione "Test manuale").
-
-### 🟡 PROBLEMA 2: Errore 429 RESOURCE_EXHAUSTED
-
-**Sintomo**: nei log Supabase Functions vedi "Gemini 429" ripetuti.
-
-**Causa**: quota free esaurita o limite RPM superato.
-
-**Fix opzionali (in ordine di sforzo crescente)**:
-- A) **Aspetta 24h** se è limite giornaliero (250 RPD per `gemini-2.5-flash`)
-- B) **Aumenta sleep tra chiamate** in `scout-bandi/index.ts`: cerca `GEMINI_SLEEP_MS = 2500;` → portalo a `5000`
-- C) **Cambia modello** a uno con quota più alta (`gemini-2.5-flash-lite` ha 1000 RPD)
-- D) **Rigenera la GEMINI_API_KEY** se sospetti che la chiave sia stata abusata:
-  1. Vai su https://aistudio.google.com → API key → Delete vecchia + Create nuova
-  2. `npx supabase secrets set GEMINI_API_KEY=<nuova> --project-ref mhfbtltgwibwmsudsuvf`
-
-### 🟡 PROBLEMA 3: Briefing non arriva mai (o arriva troppo)
-
-**Sintomo**: mail di briefing non parte anche se ci sono pending. Oppure parte ogni giorno (non rispetta il 3-giorni).
-
-**Diagnostica**:
-```sql
-SELECT * FROM admin_briefing_state WHERE id = 1;
-SELECT COUNT(*) FROM bando_scouting_log WHERE status = 'pending';
-```
-
-**Fix**:
-- Se `last_briefing_at` è NULL → la prossima mail parte alla prima esecuzione scout. Ok.
-- Se vuoi **forzare invio adesso** (es. dopo lungo silenzio):
-  ```sql
-  UPDATE admin_briefing_state SET last_briefing_at = now() - interval '4 days' WHERE id = 1;
-  ```
-  Poi trigger manuale scout (vedi sezione test).
-- Se vuoi **cambiare intervallo** (default 72h → es. ogni 7 giorni):
-  In `scout-bandi/index.ts`, cerca `BRIEFING_GAP_HOURS = 72` → cambia a `168` per settimanale.
-
-### 🟡 PROBLEMA 4: Landing page `/bandi/<slug>` torna 404
-
-**Sintomo**: l'utente clicca il link dalla mail e vede "Bando non disponibile".
-
-**Diagnostica**:
-```sql
-SELECT id, regione, status, published_slug, published_at
-FROM bando_scouting_log
-WHERE published_slug IS NOT NULL
-ORDER BY published_at DESC LIMIT 10;
-```
-
-**Possibili cause**:
-- Slug nella URL non corrisponde a un record (typo)
-- Record esiste ma `status != 'approved'/'sent'` (la RPC `get_published_bando` filtra solo questi)
-- RPC non grants → verifica `\df get_published_bando` ha `EXECUTE TO anon`
-
-**Fix**: ri-grant la RPC se persa:
-```sql
-GRANT EXECUTE ON FUNCTION public.get_published_bando(text) TO anon, authenticated;
-```
-
-### 🟢 Test manuale dello scout (forzare un giro fuori dal cron)
-
-```bash
-cd "C:/Users/utente/Desktop/subingresso.it"
-export SUPABASE_ACCESS_TOKEN="$(cat .claude/settings.local.json | grep -oE 'sbp_[a-zA-Z0-9]+')"
-cat > /tmp/trigger.sql << 'EOF'
-SELECT net.http_post(
-  url := 'https://mhfbtltgwibwmsudsuvf.supabase.co/functions/v1/scout-bandi',
-  headers := jsonb_build_object(
-    'Content-Type','application/json',
-    'Authorization', 'Bearer ' || (regexp_match(
-      pg_get_functiondef('public.notify_bando_subscribers_on_annunci'::regproc),
-      'Bearer\s+(sb_secret_[A-Za-z0-9_-]+)'
-    ))[1]
-  ),
-  body := jsonb_build_object('source','manual'),
-  timeout_milliseconds := 300000
-) AS rid;
-EOF
-./scripts/.bin/supabase.exe db query --linked --file /tmp/trigger.sql --output json
-# Aspetta 3-4 min, poi:
-cat > /tmp/result.sql << 'EOF'
-SELECT status_code, content::text FROM net._http_response ORDER BY id DESC LIMIT 1;
-EOF
-./scripts/.bin/supabase.exe db query --linked --file /tmp/result.sql --output json
-```
-
-### 🔧 Manutenzione regolare (raccomandata ogni 1-2 mesi)
-
-**Pulizia rejected anziani** (mantieni DB snello):
-```sql
-DELETE FROM bando_scouting_log
-WHERE status = 'rejected' AND reviewed_at < now() - interval '90 days';
-```
-
-**Pulizia sent anziani** (le pagine landing restano comunque indicizzate, ma il record si può alleggerire):
-```sql
-DELETE FROM bando_scouting_log
-WHERE status = 'sent' AND sent_at < now() - interval '180 days';
-```
-
-**Verifica tag di backup remoti** (così sai a che punto puoi tornare):
-```bash
-git ls-remote --tags origin "backup/session-*" | head -20
-```
-
-### 📝 Modifiche tipiche
-
-**Aggiungere una nuova regione alla whitelist** (es. se cresce iscritti):
-1. Apri `supabase/functions/scout-bandi/index.ts`
-2. Cerca `const REGIONE_SOURCES`
-3. Aggiungi entry con stesso pattern:
-   ```ts
-   'NuovaRegione': { domini: ['regione.xxx.it', 'comune.capoluogo.it', ...], calendario: '...' },
-   ```
-4. Re-deploy: `npx supabase functions deploy scout-bandi --project-ref mhfbtltgwibwmsudsuvf --no-verify-jwt`
-
-**Cambiare il "tono" del prompt** (es. se Gemini sbaglia troppo):
-1. In `scout-bandi/index.ts`, sezione `buildPrompt` (Step 1) o `step3_extractStructured` o `step4_verify`
-2. Modifica testo prompt (mantieni la richiesta di OUTPUT JSON)
-3. Re-deploy.
-
-**Disattivare temporaneamente il cron** (es. durante manutenzione):
-```sql
-UPDATE cron.job SET active = false WHERE jobname = 'scout-bandi-daily';
--- Per riattivare: SET active = true
-```
-
-**Pubblicare un bando A MANO** (senza Gemini, es. trovato tu su Facebook):
-```sql
-INSERT INTO bando_scouting_log (regione, titolo, link, fonte, ai_summary, content_hash, status, published_slug, published_at)
-VALUES (
-  'Lombardia',
-  'Bando posteggi mercato Brescia 2026',
-  'https://www.comune.brescia.it/bandi/...',
-  'manuale',
-  'Tot. 5 posteggi nel mercato del lunedì in piazza...',
-  encode(sha256(('Lombardia|manuale-' || gen_random_uuid()::text)::bytea), 'hex'),
-  'approved',
-  'bando-posteggi-brescia-2026-lombardia',
-  now()
-);
--- Poi forza l'invio chiamando bando-action con l'approve_token del record (lo vedi dal SELECT).
-```
-
-### 📊 Monitoraggio salute (ogni settimana, 30 sec)
-
-Apri la dashboard admin → guarda il pannello "AI Scout Bandi":
-- **Pending > 0** = bandi in attesa di tua revisione, da gestire
-- **Sent > 0 con destinatari tot crescente** = sistema funziona, mail partono
-- **Tutto a 0 da settimane** = qualcosa non gira, attiva diagnostica veloce
-
-### 💰 Quote e costi (stato 27 mag 2026)
-
-- **Gemini Flash gratis**: 250 RPD `gemini-2.5-flash`, 1000 RPD `gemini-2.5-flash-lite`. Usiamo ~16-80 RPD → margine larghissimo.
-- **Resend gratis**: 100 mail/giorno, 3000/mese. Briefing throttled a 1 ogni 3gg → ~10/mese. Mail iscritti: variabile col volume.
-- **Supabase free**: 500MB DB, 2GB transfer, 50K MAU. Nulla cambia.
-- **Vercel free**: 100GB bandwidth, 100GB-hours serverless. Le pagine /bandi cache CDN 10 min → ~zero costo.
-
-**Quando upgradare**: solo Resend potrebbe servire se acquisisci 1000+ iscritti agli avvisi. Soglia ~30 mail/giorno con un bando approvato. Allora $20/mese (Resend) o Brevo free 300/giorno.
-
----
-
-## 13) Stato attuale (27 mag 2026 sera, post handoff Codex)
-
-- 34 annunci reali attivi, 32 utenti veri
-- Demo eliminati 22 mag, lotteria welcome rimossa 23 mag
-- Vetrina Stripe attiva, sconto -10% alla pubblicazione
-- Blog: 20/20 regioni bandi + 5/5 mercati ambulanti + hub Bolkestein (formato v2)
-- **Pannello admin "Avvisi Bandi"** live (`admin_bando_alerts_stats`)
-- **AI Scout Bandi v4 multi-step**: Gemini 2.5 Flash con whitelist domini + HTTP validation + structured extraction + verification. Cron 08:00 UTC daily. 3 bandi reali già pending in DB (Grottammare, Catanzaro, Crotone)
-- **Briefing email throttled** 1 ogni 3 giorni (urgent override se ≥10 pending) — protegge quota Resend
-- **Landing page `/bandi/<slug>`** SSR su Vercel: cross-sell annunci regione + valutatore + form iscrizione. Le mail agli iscritti linkano la NOSTRA pagina, non il PDF Comune. Aggiunge SEO long-tail. Test live: https://subingresso.it/bandi/bando-fiera-mariana-2026-crotone-calabria
-- Iscritti `bando_alerts` (4): Piemonte, Campania, Marche, Calabria
-- 1 bando già **pubblicato** (Crotone) — manualmente, senza ancora aver inviato la mail. Quando admin approverà via pannello/mail, parte la prima vera mail
-- Prossima priorità: far crescere annunci veri in Lombardia (50-100 target) via lead magnet email su hub Bolkestein
-
-Dettagli completi e TODO aperti → `istruzioni.md`.
-
-Preferiti (19 ottobre 2026): stato unico card/dettaglio, cache sessionStorage limitata all'utente verificato, evento savedListingsChanged; niente timer 1,5/4 secondi. UI immediata, blocco per annuncio durante richiesta e minimo 500 ms, timeout 15 s, rollback con avviso, risposte vecchie ignorate. Modifiche non confermate prima della navigazione protette fino alla verifica; logout/cambio account puliscono la cache. Dashboard usa setSavedListingsCache, non mutare SAVED_IDS direttamente. Cache data 21, annuncio-detail 25; suite scripts/test-saved-listings.cjs (SAVED_USE_PUBLISHED, SAVED_QA_DIR, PLAYWRIGHT_MODULE).
-
-Conteggio annunci venditore (21 ottobre 2026): icona banco + 2-10, 10+ oltre dieci, nascosto con zero/uno. Totale pubblico attivo e non scaduto, indipendente dai filtri; richieste condivise/paginate in data.js, nessun numero su errore. Presente nelle card, dettaglio e profilo; conteggio eventi organizzatore conservato. Cache data23/design-system13/dettaglio26; test scripts/test-seller-listing-counts.cjs.
-
-Home (21 ottobre 2026): contatori tra ricerca e anteprime, sfumatura bianco-grigio richiesta. Tre luoghi più cercati su 30 giorni da home_top_location_searches, accesso pubblico solo aggregato; ultima località prima per account sullo stesso browser (_si_last_location_v1:ID), nessuna adozione della cronologia anonima. Helper location-shortcuts1, homeCSS6, annunci15; test scripts/test-home-location-shortcuts.cjs.
-
-Affinamento successivo21/10: smartphone una sola riga con tutti i luoghi che entrano tra12candidati, desktop tre, personale prima. Indicatore quattro blu progressivamente luminosi2-3/4-6/7-10/11+. Preferenza stabile: sfumature nei passaggi bianco->sfondo chiaro, senza sfocare testi; tema organizzatore conservato. Cache correnti data24/design-system15/home7/location-shortcuts2. Test riga/resize/nomi lunghi, colori e contrasto nei due script dedicati.
+# Regole comuni — Subingresso.it (Claude e Codex)
+
+Questa è l'unica fonte delle regole operative del progetto. `CLAUDE.md` importa
+questo file per compatibilità con Claude; non mantenere un secondo riepilogo.
+Le richieste correnti dell'utente prevalgono sulle preferenze storiche.
+
+## Comunicazione e ambito
+
+- Risposte italiane, brevi e semplici; spiegare il risultato per l'utente.
+  Dashboard con pochi numeri utili e dettagli apribili.
+- Agire nel perimetro richiesto. Vecchi TODO, cron e autorizzazioni di altre
+  attività non autorizzano nuovi interventi, invii o contatti a terzi.
+- Annunci, utenti e relativi dati non si eliminano, neppure con soft delete,
+  senza richiesta esplicita. Wizard `vendi.html`, trigger annunci e schema
+  email/Resend si modificano solo se necessari al lavoro autorizzato.
+- Dati e statistiche devono essere veri e descritti correttamente: non
+  inventare consensi, date, vendite, copertura, consegne o promesse commerciali.
+  L'eccezione richiesta per i contatori dimostrativi della home è documentata
+  nel registro: non convertirli né presentarli come dati reali di propria iniziativa.
+
+## Skill: solo su richiesta esplicita
+
+- Consultare e usare una skill soltanto se l'utente lo chiede nel prompt
+  corrente, indicandola o chiedendo esplicitamente l'uso di skill.
+- Una richiesta generica di grafica, codice, analisi o verifica non è una
+  richiesta di skill. Non aprire `SKILL.md`, relativi riferimenti o script
+  per iniziativa autonoma, né caricare altre skill suggerite da una skill.
+- Una precedente autorizzazione non si estende a nuovi lavori. Quando una
+  skill è richiesta, leggere solo il materiale necessario a quel lavoro.
+- Questa regola governa il progetto; non può disattivare obblighi di priorità
+  superiore imposti dall'applicazione. Segnalare tale limite se pertinente,
+  senza promettere una disattivazione che i file del progetto non garantiscono.
+
+## Letture mirate e memoria
+
+Non leggere integralmente manuale, registro, dossier fiere o cataloghi di skill
+all'avvio di ogni attività. Dopo queste regole, cercare con `rg` il tema e
+leggere soltanto codice, sezioni e contratti pertinenti.
+
+| Serve capire | Fonte da consultare quando pertinente |
+|---|---|
+| Architettura, flussi, bug e motivazioni tecniche | `istruzioni.md` |
+| Decisioni dell'utente, attività aperte e pubblicazioni | `Subingresso.it informazioni.md` |
+| Fiere, fonti, copertura e limiti provinciali | `data/FIERE.md`, audit `data/fiere-*.json` e checklist nel registro |
+| Organizzatori ed eventi | `data/ORGANIZZATORI_EVENTI.md` |
+| Vetrine e pacchetti | `data/VETRINE_PREMIUM.md`, `data/SELLER_PREMIUM_ANALYTICS.md` |
+| Offerte email, consensi e misura | `data/VETRINA_EMAIL.md`, `data/EMAIL_CONVERSION_ANALYTICS.md` |
+| Tema, immagini, luoghi e fiere salvate | Rispettivi contratti `data/THEME_PREFERENCES.md`, `data/IMAGE_PREVIEWS.md`, `data/LOCALITA.md`, `data/FIERE_SALVATE.md` |
+| Annunci preferiti | Sezione «Saved Listings» del manuale e helper in `js/data.js` |
+| Interfaccia e prodotto | `DESIGN.md`, `PRODUCT.md`; sono documenti del progetto, non skill |
+
+Codice e configurazioni effettive descrivono l'implementazione. Schema e servizi
+live vanno verificati prima di interventi che li coinvolgono. Date, numeri e
+versioni nei registri sono snapshot, non prova dello stato corrente.
+Aggiornare il documento interessato quando cambiano una regola o un contratto;
+registrare gli esiti significativi in poche righe, senza copiarli in tutti i file.
+A fine sessione, se l'utente chiede di salvare/chiudere, conservare solo novità
+utili e non duplicate. Le regole comuni si aggiornano soltanto qui.
+
+## Prima di modificare e workflow Git
+
+- Root attuale: `C:\Users\utente\Desktop\Ardit\subingresso.it`.
+  Repo pubblico `https://github.com/kepload/subingresso`, sito `https://subingresso.it`.
+  Controllare stato, diff e ultimi commit; preservare modifiche e checkout altrui.
+- Prima della prima modifica della sessione eseguire dalla root
+  `.\scripts\session-backup.ps1 -Reason "descrizione-corta"` e verificare il tag
+  su origin. Non serve per sola analisi. L'helper può fallire nella pulizia dei
+  vecchi tag dopo un push riuscito: distinguere errore cleanup e backup remoto.
+- Prima di modifiche estese (almeno 10 file) o configurazioni centrali creare
+  anche un ramo remoto `backup/pre-...`. Non ripristinare né cancellare lavoro
+  corrente automaticamente per risolvere conflitti.
+- Dopo il lavoro autorizzato: verifiche pertinenti, commit e push su origin;
+  includere solo i file dell'intervento. Mai `git add .` con modifiche estranee.
+  Su Vercel il push avvia il deploy: dichiarare pubblicato soltanto dopo verifica.
+- Non aggiungere segreti o file oltre 50 MB, non bypassare gitleaks/pre-commit
+  o push protection. Non riscrivere la history o fare force push senza richiesta.
+
+## Segreti e isolamento dei dati
+
+- Nessuna credenziale in file versionati, output o report. Secret Supabase,
+  Stripe, Resend, Gemini e password restano negli environment o archivi privati.
+  Leggere `.claude/settings.local.json` solo quando serve davvero una credenziale;
+  non stamparla. La chiave frontend pubblicabile è pubblica per design.
+- SQL con credenziali: template `:'service_jwt'` e variabile psql, oppure file
+  temporaneo fuori repo. Mai recuperare una chiave per scriverla in un file del repo.
+  In caso di esposizione, sanitizzare e segnalare la rotazione necessaria.
+- `annunci`/`profiles`: colonne esplicite; telefono/email sono protetti, niente
+  `select('*')` autenticato né join PostgREST `profiles(...)` da annunci/chat.
+  Recapiti propri tramite RPC previste (`get_listing_contact`, `get_my_profile`);
+  accessi admin tramite RPC autorizzate. Nuove colonne richiedono grant coerenti.
+- Cache di nome, telefono, preferiti e bozze legate all'utente verificato;
+  logout/cambio identità puliscono lo stato. Ignorare risposte tardive di altri utenti.
+- Testo utente nel DOM con `escapeHTML()`; contenuto blog con DOMPurify.
+  Verificare RLS e permessi quando cambiano query o schema; non alterare dati
+  storici per ipotesi e non eseguire test che inviano email o creano dati reali.
+
+## Implementazione e verifiche
+
+- Stack: HTML, JavaScript vanilla, Tailwind precompilato, API Vercel e Supabase.
+  Cercare tutti i consumatori, inclusi template SSR, prima di cambiare helper o asset.
+- Windows PowerShell 5.1: comandi separati, controllo degli exit code, niente
+  `&&`/`||`. Evitare `2>&1` sui programmi nativi; scrivere UTF-8 esplicito.
+  Commit con testi complessi: file temporaneo e `git commit -F`.
+- Tailwind: controllare che la classe esista; nuove utility richiedono rebuild
+  con `npx.cmd tailwindcss -i tailwind.input.css -o css/tailwind.css --minify`.
+  Controllare ordine e specificità degli stili. Dopo modifiche aggiornare tutti
+  i riferimenti `?v=`, anche in SSR e import dei worker. Le versioni effettive
+  sono nei sorgenti: non mantenere elenchi congelati delle versioni "correnti".
+- Patch puntuali: evitare riscritture regex ampie e caratteri invisibili.
+  Enum JS e vincoli DB allineati; date/aggregazioni con confini UTC coerenti.
+  Supabase JS: RPC con `await` e `try/catch`, non `.rpc(...).catch(...)`.
+- Prima di toccare pubblicazione, trigger, pagamenti, email o SSR leggere la
+  relativa sezione del manuale e il contratto aggiornato. Conservare giorni già
+  acquistati, compatibilità dei report storici, deduplica, consensi e isolamento.
+- Eseguire verifiche proporzionate al cambiamento; per UI controllare i formati
+  pertinenti e per SQL preferire fixture in transazione con ROLLBACK. Per soli
+  documenti verificare contenuti, rimandi e diff senza lanciare test del sito.

@@ -1,1121 +1,41 @@
-# 🗺️ Mappa Strategica Subingresso.it
-
-Statistiche email/Vetrine23/10: pannello admin #email-vetrine, coorti7/30/90/tutto;
-consegne provider, aperture/clic solo con scelta informata nuova, attribuzione7g,
-checkout/pagamenti/annulli reali distinti, bundle un solo ordine. Vecchie12email
-consegnate ma aperture/clic non disponibili;50consensi WhatsApp non ampliati.
-Versione nuova vetrina-email-analytics-20261023, facoltativa/vuota, revoca misura
-separata da offerte. RLS/admin server, niente replay/IP/UA/nuovi ID persistenti.
-Copia solo all'admin richiedente, max1/24ore, is_test esclusa dai risultati.
-Nessun nuovo cron. Contratto data/EMAIL_CONVERSION_ANALYTICS.md; cache auth24,
-premiumJS3,unsubscribeJS4,journey/adminanalyticsJS-CSS1. Prove private in
-Documents/statistiche-mail-vetrine-20261023.
-
-
-Campi/mappa dark23/10: superati i bordi#64748b dei campi, ora#334155 e
-nessun alone. Focus tastiera2px blu conservato. Mappa SVG scura con
-terre#25334a/mare#0f172a/confini#475569, selezione/preview/marker distinti.
-JS7/CSS6, chiaro invariato.100controlli dedicati in quattroformati/browser
-e267tema locali passati. Prove/stato in
-Documents/verifica-dark-campi-mappa-20261023/risultati.md.
-
-Finiture dark23/10: bordi indigo/ciano e gialli convertiti nella base condivisa;
-statistiche admin con etichette12px, cifre tabulari e schede economiche estese
-su telefono. Pulsanti admin piatti,36/44px, focus/stati coerenti. Stessi dati,
-funzioni e palette chiara; rimosse solo spunte/croci testuali nei due comandi
-Scout. Cache admin-themeJS6/CSS5. Locale48controlli dedicati,267tema e
-33scenari primo disegno passati. Prove/stato pubblicazione:
-Documents/verifica-dark-finiture-20261023/risultati.md.
-
-Dashboard admin23/10: crescita con una metrica selezionabile alla volta,
-totali nel periodo, quattro filtri conservati; linea senza riempimenti,
-griglia tenue e colori/font aggiornati al cambio tema. Provenienza: tre
-numeri e tre pagine principali; statistiche complete, canali, metodo e
-link fiera nei pannelli apribili. Avvisi Bandi: prime5iscrizioni, altre al
-clic, regioni/aiuto chiusi. API attuale restituisce le ultime20; UI lo
-specifica quando totale superiore. Nessuna modifica DB o invii.
-`css/dashboard-statistics.css?v=1` gestisce entrambe le varianti; generazione
-admin-theme byte-identica. Prove/stato pubblicazione:
-Documents/verifica-dashboard-statistiche-20261023/risultati.md.
-
-Tema personale23/10, correzione flash: pulsante Modalità scura direttamente
-nella pagina profilo/dashboard e nell’area organizzatore, fuori da impostazioni
-e moduli. Chiaro iniziale per tutti; preferenza auth.user_metadata.site_theme.
-Script sincrono all’inizio del head e CSS bloccante prima del body, anche SSR.
-Copia locale _si_theme_preference_v1 limitata a ID/tema confermato, usata solo
-con la stessa sessione. Prima lettura senza copia: attesa su fondo scuro.
-GET riconcilia; errore temporaneo conserva aspetto, 401/403/logout/cambio
-identità invalidano. PUT sempre con token iniziale; nessun ruolo in cache.
-JSadmin-theme5/CSS4, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
-prove/stato Documents/verifica-tema-senza-flash-20261023/risultati.md.
-
-
-Vetrina/statistiche22/10: corretto initUI che sostituiva il footer del dialogo
-Premium con quello del sito; shell limitata ai figli diretti del body.
-Gratuiti: due metriche nel periodo e anteprima sfocata; Premium permanenti
-per ogni annuncio acquistato, anche in bundle/dopo scadenza. Gate server/RLS,
-totali UTC condivisi da grafico/tabella/CSV, account misti isolati, formule
-CSV neutralizzate. `PATCH_SELLER_PREMIUM_ANALYTICS_20261022.sql` applicata,
-nessuna modifica a trigger annunci/ordini esistenti. Contratto/test/limiti
-in `data/SELLER_PREMIUM_ANALYTICS.md`; prove in
-`Documents/verifica-vetrina-statistiche-premium-20261022/`. Cache UI18,
-premiumCSS4, sellerCSS2, accountJS4, admin-themeJS/CSS3.
-
-Vercelli,22/10/2026: ricerca documentale corrente conclusa e verificata online.
-102manifestazioni/42comuni,82esaminati,+90;12ID e6.117schede esterne identici,
-catalogo6.219. Audit data/fiere-vercelli.json/FIERE.md:594ricevute,50PDF,
-18righe regionali,415recordATL,18limiti/15gruppi esclusioni; nove solo2025,
-sei sintesi costo. Gattinara precedente conservata, sole piste aperte integrate.
-Dati3e0d6e7,Vercel4X9GH6h5fUTJyaHfWwKY8UGTjmW6 READY:5asset identici,
-102pagineHTTP200/H1/canonical/contenuti,Chromium1440/320+WebKit390 online
-e locale passati tramite PLAYWRIGHT_MODULE; generale5formati,settori,
-6.219pagine/2.656sitemap e build ripetibile. TO DO53/57 dopo verifica.
-CacheJS106/JSON74; originali/prove Documents/ricerca-fiere-vercelli-20261022.
-Backup tag session-20261022-222801 e ramo pre-fiere-vercelli; copiaSHA256
-ricerche-fiere-20261022-205859:66.948file/11.408.389.246byte,zeroerrori e
-supplemento finale verificato. Nessun contatto a terzi o altra provincia.
-Ricerca attuale chiusa con limiti espliciti; manutenzione futura distinta.
-
-22/10/2026, Vetrine Premium: listino49/99/249€ per10/30/90giorni;
-pacchetti2 -10%,3–4 -15%,5–10 -20%, stessa durata, pagamento unico.
-Nessun omaggio UI o sconto pubblicazione. Checkout congelato, quote per
-annuncio, somme/recupero giorni/replay/rimborsi protetti; vecchi acquisti
-conservati e trigger annunci invariati. Blog solo Vetrine pagate, nessun
-riempimento gratuito. Contratto e prove in data/VETRINE_PREMIUM.md e
-Documents/vetrine-premium-bundle-20261022/. Stato pubblicazione nel registro.
-
-22/10/2026: rimossa su richiesta la sezione admin «Il sito sotto controllo»,
-insieme a caricamento e aggiornamento al minuto; gli altri pannelli restano.
-Statistiche organizzatori ridisegnate con taste-skill True-black flat,
-grafico adattivo, posteggi a unità, filtri e risultati per evento anche su
-telefono. Nessuna modifica DB/pagamenti. AnalyticsJS3/CSS2/charts1;
-prove/stato in Documents/verifica-statistiche-fiere-20261022/risultati.md.
-
-Storico22/10, superato dalla preferenza per tutti del23/10: attivazione automatica solo dopo
-sessione convalidata e is_admin booleano vero, palette organizzatori.
-Uscita/cambio account/errori ripristinano il tema ordinario; nessuna cache
-di ruolo. js/admin-theme.js2 e css/admin-theme.css2, tutti gli HTML/API.
-Rigenerare con node scripts/build-admin-theme.cjs dopo cambi cromatici;
-base css/admin-theme-base.css, override circoscritti ai fogli originali.
-198controlli tema e364profili locali passati, nessuna scrittura reale;
-prove/stato in Documents/verifica-tema-dark-admin-20261022/ e registro
-Subingresso.it informazioni.md. Sessioni dei test simulate.
-Pubblicatoca9cf29, Vercelriuscito:21asset/pagine identici,13percorsiSSR;
-198controlli online passati, quattroSSR scuri e home anonima chiara in
-Chromium1440/320 e WebKit390. Nuovi calcolatore/statistiche integrati.
-Finitura etichette/cachev2 pubblicata50a9392:21asset/pagine identici,
-13percorsi,198controlli finali online e quattroSSR/treformati passati.
-
-Home desktop,21ottobre2026: riferimento prima immagine utente. Da1024px
-padding sopra slogan64→0, distanza scorciatoie24→32; mostra tutte le
-località che entrano in una riga tra12candidati reali, personale prima.
-Supera desktop tre; tablet600–1023 resta tre, telefono invariato.
-Contatori12px più vicini (padding superiore36→24), valori/animazione
-conservati. HomeCSS9/scorciatoie3. Prove/stato pubblicazione:
-Documents/verifica-home-spazi-desktop-20261021/. Backup remoto valido;
-errore cleanup noto. Nessuna scrittura dati reali durante le prove.
-Pubblicatob5e7a76, Vercel riuscito:quattro asset identici, Chromium
-1920/1440/1024/820/320 e WebKit390 online passati, zero errori/overflow.
-Lavoro concorrente Siena conservato ed escluso dai commit.
-
-Contatori home,21ottobre2026, decisione corrente: mantenere i numeri
-simulati visibili e gli incrementi finché l'utente chiederà il passaggio
-a dati reali sufficienti; nessun automatismo. Restano1591annunci/4045utenti.
-Valore iniziale15,1M (prima4,4M), coerente in HTML e JS: API reale111attivi
-non-demo/non-scaduti,99vendite/12affitti, richieste vendite1.052.800€.
-Proiezione con stessa composizione:1591×1.052.800/111=15.090.133,33€,
-arrotondata15,1M. Solo prezzi richiesti, nessuna vendita conclusa dimostrata;
-affitti esclusi dal valore, prezzi storici positivi non corretti per ipotesi.
-Importi su una riga; numeri20px sotto360px, homeCSS8. Backup remoto valido.
-Prove e stato pubblicazione:Documents/verifica-stima-contatori-home-20261021/.
-Pubblicatoc9ea361, Vercel riuscito; HTML/CSS identici online, locale quattro
-formati/browser e online Chromium1440/320+WebKit390 passati. Importo intero,
-animazione conservata, nessun erroreJS/overflow o scrittura reale di prova.
-
-21ottobre2026, affinamento: smartphone con luoghi popolari in una sola
-riga, scelta adattiva tra12candidati reali, personale sempre prima;
-desktop tre. Resize/font ricalcolati, niente scorrimento o righe aggiuntive.
-Indicatore annunci blu crescente2-3/4-6/7-10/11+, contrasto minimo4,94:1
-su bianco e4,53:1 su grigio. Preferenza stabile sfumature: home,
-area vendita, sfondi pagine normali e introduzione Annunci senza bordo;
-nessun filtro sui testi. Data24/CSS15/home7/scorciatoie2, SQL aggregato
-esteso/verificato; nessun dato utente modificato. Prove e pubblicazione:
-Documents/verifica-ricerche-riga-blu-sfumature-20261021/risultati.md.
-Pubblicati7e556a1/45aaaef, Vercel riuscito;21asset identici/treSSR
-aggiornati, locale/online Chromium1440/768/320/375/430 e Safari390
-passati. Quattro blu verificati anche su grigio, nessuna scrittura reale
-di prova; modifiche Salerno concorrenti conservate fuori dai commit.
-
-Home,21ottobre2026: contatori spostati tra ricerca e anteprime; iniziali
-1591/€4.4M/4045 forniti dall'utente, animazione precedente conservata.
-Vecchi tre link sostituiti dalla classifica reale30giorni, funzione pubblica
-home_top_location_searches limitata a tre nomi/regioni/province, senza log.
-Ultima località salvata solo nel browser per account e proposta prima;
-anonimi, cambio account, errori/storage bloccato protetti. Record validati
-dal picker, link con codice esatto; home/annunci chiamano LocationShortcuts.
-CSS home6, helperJS1, annunciJS15; sfumatura bianco-grigio richiesta.
-Test scripts/test-home-location-shortcuts.cjs e prove/stato pubblicazione
-Documents/verifica-home-ricerche-statistiche-20261021/risultati.md.
-Pubblicatoac821e4, Vercel riuscito; nove asset identici e dettaglioSSR
-aggiornato. Locale/online Chromium1440/820/320 e WebKit390 passati,
-home/annunci ricordano scelte del picker; ricerca671casi e quattro
-browser/formati passati. Nessuna scrittura reale di prova; cache peraccount
-solo stesso browser, permessi aggregato/log verificati.
-Indicatore venditore5666ee1: banco2-10/10+, assente0/1, conteggi pubblici
-attivi non scaduti e indipendenti dai filtri; data23/CSS13/dettaglio26.
-Home/annunci/dettaglio/profili online tre formati passati dopoac821e4;
-limite overflowtesto320 preesistente documentato, indicatore entro schermo.
-
-Bari,21ottobre2026: ricerca documentale corrente conclusa con limiti espliciti e verificata online.
-90manifestazioni/36comuni, ricognizione41;treID e altre5650schede conservati.
-Catalogo5740,cacheJS100/JSON68;24sintesi costo,19esclusioni/17limiti in
-data/fiere-bari.json e FIERE.md. Originali/prove Documents/ricerca-fiere-bari-20261021.
-TerlizziPDF recuperato via browser,Gravina50€/m²+IVA coperto/15scoperto,
-PaloTarallo100/150/250/300€ per due giorni. ContraddizioniRutigliano,BariSanNicola,
-Mola eModugno preservate,nessun dato inventato. Backup tag/ramo remoti verificati.
-Pubblicato6b5471f:quattro asset identici aGit,90pagine HTTP200/H1/canonical,
-Chromium1440/320 e WebKit390 locali/online passati con PLAYWRIGHT_MODULE.
-Suite generale5formati,settori,pagine e build ripetibile superati.
-Nessun contatto a terzi;TO DO spuntata dopo verifica:47province concluse,63da fare.
-Manutenzione futura distinta dalla ricerca corrente,nessun’altra provincia avviata.
-
-
-Napoli, 21 ottobre 2026: ricerca documentale corrente conclusa con limiti espliciti.
-76 manifestazioni in 28 comuni, ricognizione dei 92 comuni, 393 ricevute,
-125 record Mostra d’Oltremare confrontati, 36 gruppi di esclusioni e 17 limiti.
-Tre ID precedenti conservati; altre 5577 schede identiche a 5d405b9. Catalogo 5653.
-Dieci sintesi costo documentate, date discordanti mantenute testuali, nessun dato inventato.
-Pubblicato 594abc8: quattro asset identici ai byte Git, 76 pagine 200/H1/canonical,
-Chromium 1440/320 e WebKit 390 locali e online superati usando PLAYWRIGHT_MODULE;
-suite generale cinque formati, settori, pagine e build ripetibile superati.
-TO DO spuntata dopo verifica: 46 province concluse, 64 da fare su 110; cache JS99/JSON67.
-Audit data/fiere-napoli.json, fonti e limiti data/FIERE.md; nessun contatto a terzi.
-Originali/prove Documents/ricerca-fiere-napoli-20261021; backup SHA256
-Documents/backup-subingresso/ricerche-fiere-20261021-074318: 54011 file,
-9574647941 byte, zero errori; supplemento finale verificato nella stessa copia.
-Tag session-20261021-090816-fiere-napoli e ramo pre-fiere-napoli-20261021 remoti
-creati prima delle modifiche. Manutenzione futura distinta dalla ricerca attuale;
-nessuna altra provincia avviata e modifiche estranee preservate fuori dai commit.
-
-21/10/2026, Perugia: ricerca documentale corrente conclusa con limiti espliciti,
-152 manifestazioni in47comuni/59esaminati,146con date e9sintesi costo. Catalogo5580,
-altre5428schede e10ID precedenti conservati. Audit data/fiere-perugia.json:
-120registrazioni regionali/comunali,165ricevute,29esclusioni/14limiti. DisfidaTodi
-10–11ottobre, Tulipano25–26aprile/1–2maggio, Gaite26–28giugno; SantUbaldo32/54€,
-TartufoGubbio quoteIVAincluse e FieraVerde23/47/70€ daiPDF recuperati via browser.
-SanGiustino eCuriosità da secondarie dichiarate, Scheggia/Cannara testuali;
-nessuna quota/data inventata e manutenzione futura separata. Nessun contatto a terzi.
-Pubblicatoe4042b4, Vercel42G1HWcqo1E56noVgWqPaMNfY6LEriuscito;4asset uguali
-ai byteGit (normalizzazioneCRLF locale distinta),152pagine200/H1/canonical;
-Chromium1440/320 eWebKit390 locali/online passati, generale5formati, settori,
-pagine e build ripetibile superati; PLAYWRIGHT_MODULE. TO DO spuntata dopo verifica:
-45province concluse/65da fare. CacheJS98/JSON66. Originali/prove
-Documents/ricerca-fiere-perugia-20261021; copiaSHA256 ricerche-fiere-20261021-022524,
-52732file/9411791702byte,zero errori; supplemento finale verificato.
-Backupremoto session-20261021-000041-fiere-perugia e ramo pre-fiere-perugia-20261021
-già eseguiti prima delle modifiche, non ripetuti alla ripresa. Alessandria già
-pubblicata e testata confermata senza rifare ricerca. Nessun’altra provincia avviata;
-proseguimento riservato al controller come richiesto dall’utente.
-
-21/10/2026, affinamento pulsanti smartphone: misura intermedia40px,
-36 sotto380 e icone14px; + con gli stessi colori di messaggi/profilo,
-anche hover/tema organizzatore. Supera44/40px e + scuro precedenti.
-Scritta/ordine conservati, design-system6/UI17. Prove/pubblicazione
-Documents/verifica-header-mobile-intermedio-20261021/.
-Pubblicato99bd576 e verificato direttamente:15asset,2SSR e home online3
-passati; stato GitHub non letto per timeout. Nessuna scrittura reale.
-
-21/10/2026, intestazione mobile: scritta leggermente più grande e interna
-(20/18px, margini18/14px); tre icone quadrate uniformi44px,40 sotto380,
-ordine +, messaggi, profilo nel markup condiviso e dashboard. Nessuna
-etichetta aggiunta su mobile; colori conservati. UI17/design-system5.
-Prove e pubblicazione Documents/verifica-header-mobile-uniforme-20261021/.
-Pubblicatoe133319, Vercel riuscito;15asset/2SSR e sei formati online
-verificati. Profili364 locali passati, nessuna scrittura reale.
-
-21/10/2026, preferenza logo aggiornata: scritta precedente Subingresso.it,
-senza icona/quadrato iniziale; il PNG e il suo fondo bianco sono superati.
-Menu mobile sempre assente. UI16/CSS4; prove e pubblicazione
-Documents/verifica-logo-solo-scritta-20261021/. Pubblicato40651a2,
-Vercel riuscito;15asset,4SSR e home online3 verificati, profili364 locali.
-
-21/10/2026, logo/menu: PNG originale utente nelle intestazioni, inquadrato
-con SVG senza deformazioni; dimensioni responsive e fondo bianco sul tema
-organizzatore. Tolti pulsante/tendina/logica menu mobile Blog/Calcolatore:
-nessun menu sostitutivo, desktop conservato. UI15/CSS3. Prove e stato
-pubblicazione Documents/verifica-logo-menu-mobile-20261021/, registro
-Subingresso.it informazioni.md. Pubblicato7adb31a+3543132 e verificato
-online: home3,15asset,6SSR e fiere senzaJS3; locale profili364/pagine5438.
-Richiamo CSS autonomo corretto dopo il primo controllo online.
-
-21/10/2026, statistiche organizzatori: richiesta di area ricca e curata,
-profilo diretto conservato. Periodi7/30/90, filtro evento, visite/clic con
-confronto, salvataggi/avvisi correnti, andamento, occupazione, contatti,
-provenienza/dispositivo, agenda, tabella e CSV sicuro. UTC, storico soltanto
-dalla rilevazione, log privati senza account/IP/recapiti, proprietario/admin
-esclusi e deduplica sessione/evento/giorno; conservazione190giorni limitata ai
-nuovi log. Backend additivo, pagamenti disattivati. Dettagli, cache, prove e
-stato pubblicazione in data/ORGANIZZATORI_EVENTI.md; checkout isolato
-Documents/subingresso-organizzatori-statistiche-20261020 e prove omonime.
-Pubblicato b65e519, Vercel2H2ytE2cLsJ4jcDTL7iMbXQ4YV5o riuscito;
-nove asset identici, API e tre formati/browser online passati. Nessuna
-sessione reale proprietario, SQL e fixture;0eventi pubblici correnti.
-Rifinitura tacche intere, analyticsJS2/CSS1/organizzatori10/engagement1.
-
-20/10/2026, Ancona: ricerca documentale corrente conclusa con limiti espliciti;
-pubblicata e verificata online.104manifestazioni/40comuni,
-ricognizione47;prima44,+60,tuttiID e altre5334schede preservati;catalogo5438.
-Audit data/fiere-ancona.json e FIERE.md:65righeAN,35gruppi ricerca,587ricevute,
-16esclusioni,13limiti,66date puntuali/38testuali,sei costi ancheparziali.
-BandoSanCiriaco2026 completo:375stalli,tariffeA/B e spunta9:30;Agugliano12aprile,
-SantAgostino27–30agosto,Colombaccio12–13settembre. Cinque fontisecondarie esplicite,
-vecchi2005/2016 e conflitti non trasformati in date certe;futuro distinto.
-Prove/originali Documents/ricerca-fiere-ancona-20261020;backup remoto valido,
-notoerrorecleanup. Nessun contattoaterzi;TO DO44/110,restano66.
-Pubblicazione d04ddc6,deploy riuscito:4asset identici,104pagine200;
-browser locale/online Chromium1440/320 e WebKit390 passati, generale5,
-settori e5438pagine/2316sitemap. Primo tentativo durante deploy scaduto,
-ripetizione post-deploy riuscita;ricerca chiusa,futura manutenzione distinta.
-CacheJS97/JSON65,PLAYWRIGHT_MODULE;fileestranei preservati.
-
-20/10/2026, preferenza profilo organizzatore: area personale e finestra
-mostrano direttamente nome, descrizione, contatti pubblici ed eventi;
-niente rinvio al profilo pubblico o tutorial. Campi da Modifica profilo,
-note/avviso nuova approvazione nel contesto. Condivisione profileHTML,
-link ?modifica=1 con apertura/focus/consumo; Riprova torna all’azione
-principale. Privacy, bozze, accesso e backend invariati. Organizzatori9,
-profile-switch JS5/CSS4. Profili364, eventi tre formati e usabilità68
-passati; prove Documents/verifica-organizzatore-profilo-20261020, guida
-data/ORGANIZZATORI_EVENTI.md. Nessuna scrittura reale; backup remoti
-validi, noto errore cleanup. Focus contatti rilevato/corretto nei test.
-Pubblicato d1491e6, Vercel5aVu1B8WeYzSVZYMs8fhPBZhM1DJ riuscito:
-sei asset identici, profili364/eventi3 online passati con backend simulato;
-WebKit isolato dopo errore fixture. Font/icone3 e anonimo3 passati. API
-pubblica eventi200/zero record: profilo reale condizionale non provato.
-Status GitHub dopo API Vercel403; limiti/errori nelle prove e nella guida.
-
-20/10/2026, Pesaro e Urbino: ricerca documentale corrente conclusa con limiti
-espliciti, pubblicata e verificata online. 136 schede/45 chiavi
-comunali, ricognizione 50 Comuni attuali più ex Monteciccardo; 119 righe
-regionali controllate, 114 provinciali. 87 nuove e un doppione San Nicola
-unificato; catalogo 5.378, altre 5.242 identiche. Originali Urbania/Fermignano/
-Mombaroccio e atti recuperati; date discordanti non inventate, 11 quote anche
-parziali. Audit data/fiere-pesaro-urbino.json, dettaglio/limiti data/FIERE.md,
-prove Documents/ricerca-fiere-pesaro-urbino-20261020. Backup iniziale già remoto;
-nessuna comunicazione a terzi. Verificati 136 HTTP200, asset identici e suite
-locale/online Chromium1440/320 e WebKit390; generale cinque formati, settori
-e 5.378 pagine/2.256 sitemap passati. TO DO43/110, restano67; JS96/JSON64.
-Pubblicazione 217a3a9, deploy riuscito; manutenzione futura distinta.
-
-20/10/2026, fiere: invito registrazione nascosto nel primo HTML, mostrato
-solo dopo conferma anonima; nessun lampeggio con accesso lento/errore/script
-assente, lettura iniziale protetta da eventi auth successivi. Testo semplice
-«Trova le fiere per il tuo banco», CTA «Registrati gratis», pagine autonome
-allineate. AccessoJS3, catalogo/DB invariati. Suite locale/online quattro formati,
-5.292pagine/2.169sitemap passate; prove Documents/verifica-fiere-accesso-20261020.
-Pubblicato dcb3d57, Vercel AKW5yFwtTHtJftdecQo76oydo9W5 riuscito;
-HTML/JS/pagina generata identici. Nessuna scrittura/account/email reale.
-Backup remoto valido; noto errore cleanup. Dettagli data/FIERE.md.
-
-20/10/2026, preferenza successiva fiere: Salva/campanella solo icone in alto
-a destra delle anteprime; niente affinità ignota né spazio vuoto, voto piccolo
-centrato a destra con motivi apribili. Avvisami essenziale: mesi, data pronta,
-giorno email e conferma; modifica data nei dettagli. Nuova autorizzazione
-alle stime personali automatiche dall'ultima edizione nota, anno origine
-visibile e anticipo rispettato; pubblicate prioritarie, eventi singoli non
-proiettati, dati salvati esistenti conservati. Stime `personal`, DB/catalogo/
-worker invariati. JS95/CSS32, saved-fairs JS-CSS3/modello3. Guide data/FIERE.md
-e data/FIERE_SALVATE.md; prove Documents/verifica-fiere-icone-avvisi-20261020.
-Percorso salvataggi/affinità/articoli/ricerca quattro formati, unità e5.292
-pagine passati; nessuna scrittura/email reale. Backup tag e branch remoti
-verificati; noto errore cleanup nello script preventivo.
-Pubblicato b78f485, Vercel7PoyQBJeiHXg6MgKGhqZAmu7ZBh9 riuscito; sette
-asset identici e avvisi pubblicati quattro formati passati. Tre prove anonime
-API/font/icone reali e bollino reale1440/320 passati; generale cinque formati
-passato. Nessun errore/overflow o scrittura reale.
-
-20/10/2026, preferenza fiere: il filtro articolo conserva categorie mancanti
-o parziali; soltanto esclusioni esplicite/attuali con fonte eliminano la scheda.
-matchesArticles condiviso con contatori; articleTypes/affinità non riscritti,
-ignoti «Da valutare». Mesi selezionati: ordine dal giorno1, non da oggi;
-selectEdition/sortEvents ricevono i mesi anche per schede/popup/caricamento.
-Ricorrenze fuori periodo escluse dalla scelta, anni reali e inverno conservati;
-senza mesi comportamento precedente. JS94, catalogo5.292 immutato. Suite
-articoli/affinità/ricerca quattro formati, calendario320 e periodo tre casi
-passati. Prove Documents/verifica-fiere-filtro-date-20261020. Pubblicato6ddbb73,
-Vercel44FfaH9zJZdxz8tgutXsgwPhpX2K riuscito; HTML/JS identici, periodo
-pubblicato e prove anonime/API reali passati Chromium1440/320 e WebKit390.
-Corretti MIME .mjs nei tre server di test; PLAYWRIGHT_MODULE
-esplicito. Backup remoto valido, noto errore cleanup dello script.
-
-20/10/2026, disponibilità fiere: massimo per tipologia, totale come somma
-delle tipologie attive; assegnati esterni gestibili senza riapprovazione.
-Liberi sottraggono esterni, pagati e hold validi; Sold out a zero, rimborsi
-parziali conservano il posto/totali lo liberano. Revisioni e lock coordinati
-con prenotazioni; contatori pubblici senza dati privati in evento/profilo/
-calendario/dialog, refresh30s/focus e errori espliciti. Catalogo documentale
-distinto. Patch EVENTI_DISPONIBILITA applicata/idempotente, SQL ROLLBACK e
-browser3 passati; nessuna prenotazione/acquisto/account reale. Pagamenti
-fiere restano disattivati, zero Connect collegati; scelta facoltativo8%
-chiesta all'utente, nessuna attivazione per silenzio. Dettagli e prove:
-data/ORGANIZZATORI_EVENTI.md, Documents/verifica-fiere-posti-20261020.
-Pubblicato f6e7222, Vercel READY dpl_5ZFUMzJEkqW91NRwRc36nQ7CS8s7;
-otto asset identici, percorso pubblicato tre casi e anonimo/API reali tre
-casi passati. Evento/calendario/dialog/profilo/refresh verificati, zero
-scritture reali. Vercel corrente: progetto subingresso
-prj_QsyHcCh5m4DGRTclNKR6z8MtaRnm; .vercel locale indica il vecchio progetto.
-
-20/10/2026, preferenza fiere salvate: segnalibro «Salva» immediato, senza
-email; campanella separata con mesi visibili subito, minimo2/massimo120 e
-scelta libera. Conferma esplicita attiva avviso e salva fiera. Stessi comandi
-su anteprime/dettaglio/pagine autonome/eventi/dashboard; doppio clic500ms,
-errori con ripristino e isolamento account. «Gestisci fiera» era una dicitura
-provvisoria dei preferiti, ora rimossa. API/browser/RPC allineati; patch
-additiva PATCH_FIERE_MINIMO_MESI_20261020.sql, nessuna preferenza riscritta.
-Cache calendario91/saved-fairs JS-CSS2/modello2; catalogo invariato.
-Controllo organizzatori: un profilo approvato e un evento pubblicato,
-pagamenti eventi disattivati/prenotazioni0; pubblicazione soggetta a doppia
-approvazione. Nessuna fattura automatica fiere: rapporto diretto con gestore;
-fatturazione del futuro incasso piattaforma ancora da definire.
-Guide data/FIERE_SALVATE.md e data/ORGANIZZATORI_EVENTI.md, prove
-Documents/verifica-fiere-campanella-20261020. Pubblicato8b152f4, Vercel READY
-dpl_89wotv1DJ6kwWGHNqB8xkBtoFNdH; sei asset identici, tre prove anonime reali,
-percorso salvataggi online quattro formati, profili304, eventi3, fonti4,
-calendario5 e SQL ROLLBACK passati. Minimo2 applicato/idempotente; worker
-dry-run200/dovuti0 e cron attivo, nessuna email reale di collaudo. Ricerca
-Alessandria7695c98 conservata durante rebase; backup remoti e segreti validi.
-
-20/10/2026, preferenza admin: esclusione dal passaggio automatico a
-Organizzatore, sia ingresso dashboard sia apertura del profilo, anche con
-più eventi. Ruolo is_admin letto aggiornato; errore resta Ambulante, scelta
-manuale Organizzatore disponibile. Pannello admin «Fiere e organizzatori»
-chiuso all'ingresso con conteggio revisioni/bozze; due schede, ricerca per
-nome/luogo/organizzazione senza accenti, filtro stato, sei righe per pagina,
-richieste prima delle bozze e dettagli nel dialogo esistente. Aggiornamento
-conserva scelta, ricerca, pagina e apertura; logout pulisce. Nessuna modifica
-DB o agli eventi reali. Cache profile-switch4/organizzatori7/event-admin1.
-Prove Documents/verifica-admin-fiere-20261020; suite profili304, pannello87,
-percorso eventi tre formati e usabilità68. Tag e branch preventivi remoti
-verificati; noto errore cleanup PowerShell. Pubblicato62f1f32, Vercel READY
-dpl_5Y9pX4g4MNEuDfbBL5CWsEWqD8so: sei asset identici; profili304/pannello87
-ed eventi nei tre formati passati anche online con backend simulato.
-Tre prove anonime reali font/accesso passate. Timeout esterno del giro visuale
-risolto isolando le risorse nella suite; dettagli/errori in risultati.md.
-
-19/10/2026, Pistoia conclusa e verificata:117 manifestazioni/19 comuni,
-copertura20; prima zero e nessun audit. Catalogo5.040, altre4.923 schede
-identiche. Audit data/fiere-pistoia.json e data/FIERE.md:331 ricevute,
-23 esclusioni,112 date puntuali, due periodi, tre ricorrenze, dieci schede
-solo2025, cinque costi e cinque termini. Ammissione calendario Pistoia non
-autorizzazione; riserve senza conferma escluse. Chiesina senza data certa;
-Montale piano2026 votato ma allegati non accessibili anche nel browser,
-albo Monsummano500; limiti e futuro distinti. Originali e prove fuori repo
-Documents/ricerca-fiere-pistoia-20261019; copia ricerche-fiere-20261019-200640
-con37.540 file SHA256 verificati, zero errori, manifest e supplemento finale.
-Pubblicato2f3c578, Vercel READY dpl_GBbP1kUHzxgUKdHHgchiRUzM2Ubn:
-quattro asset identici,117 pagine HTTP200 H1/canonical. Test provinciale
-locale/online Chromium1440/320 e WebKit390, generale cinque formati,
-settori e5.040 pagine/2.103 sitemap passati. JS88/JSON60; PLAYWRIGHT_MODULE
-e FIERE_PT_BASE_URL/FIERE_PT_OUT nel test dedicato. Nuovi commit fiere
-salvate preservati, estranei esclusi; nessun contatto a terzi. TO DO spuntata
-dopo verifica:39 province concluse/71 rimanenti.
-
-19/10/2026, richiesta approvata fiere salvate: singola fiera e promemoria
-personale a mesi scelti, inclusi5/12, al posto di ricerche/digest su molte
-fiere. Salvataggio senza email o avviso esplicito; dashboard «Le mie fiere».
-Date pubblicate/personali distinte, anticipi passati respinti; singolo invio
-per edizione, retry/dedup e annullo, isolamento account. Nuova API saved-fairs,
-RPC e worker fair-reminders; dettagli data/FIERE_SALVATE.md, prove
-Documents/verifica-fiere-promemoria-20261019. Backend applicato, worker/cron
-attivi e verifica reale200 con0destinatari/invii; anonimo401 e SQL ROLLBACK
-passati. Pubblicato4dc4a2b, Vercel READY dpl_2nGPHs2oB52xC5ojs6QDeWLCrun8,
-otto asset identici. Percorso completo locale/online4formati con backend
-simulato, tre prove anonime reali e API401/405 passati; fonti,4.923pagine,
-profili280, eventi e calendario320 passati. Modello/catalogo inclusi nel
-bundle, MIME verificati, segreti passati; nessuna email reale di collaudo.
-JS87/accesso2, saved-fairs JS/CSS1/modello1; data21 e catalogo invariati.
-
-19/10/2026, preferiti reattivi richiesti: stato condiviso tra anteprime,
-dettaglio desktop/mobile e dashboard, ripristino dalla sessione dello stesso
-utente verificato e controllo API in background. Nessun falso non-salvato:
-stato ignoto con indicatore, evento al posto dei timer1,5/4s. Risposta visiva
-sincrona, un'operazione per annuncio e protezione500ms dai doppi clic;
-richieste15s, errori visibili e ripristino della cache. Navigazione prima
-della conferma mantiene icona e blocco fino alla verifica, avvisa se diversa.
-Letture vecchie non annullano clic recenti; logout/cambio account invalidano
-cache e risposte pendenti. Dashboard aggiorna la cache anche se vuota.
-JS data21/dettaglio23, riferimenti completi inclusi SSR; DB/auth invariati.
-Suite scripts/test-saved-listings.cjs: Chromium1440/320 eWebKit390,
-58 controlli per caso; profili280 passati. Prove e integrazione con HTML/SDK
-reali in Documents/verifica-preferiti-20261019; nessuna scrittura reale.
-Regressione immagini: guardia preesistente errata su contatti/fiere/privacy/
-termini (helper non usato da quelle pagine), esclusa solo nel runner esterno;
-resto suite server/browser e sintassi passati, test versionato conservato.
-Backup tag e branch remoti validi, consueto errore cleanup PowerShell;
-checkout isolato, file estranei conservati. Pubblicato56a75f5, Vercel READY
-dpl_3rcZi5EaHaDk3YucfsPoBMw15WhN; quattro asset online identici ai file.
-Suite preferiti174/174 passata anche sugli asset pubblicati, backend simulato;
-tre prove anonime reali Chromium1440/320 eWebKit390 passate senza scritture,
-errori o overflow. Integrazione HTML/SDK reali passata negli stessi tre casi,
-inclusi navigazione, tastiera e doppio clic. Esiti in risultato.json nella
-directory prove; nessun annuncio/account reale modificato dai test.
-
-
-19/10/2026, conversione fiere richiesta: registrazione/accesso obbligatori
-per «Consulta la fonte» e link documentali equivalenti, anche sulle pagine
-autonome da Google. Invito gratuito e vantaggi prima delle schede; filtri e
-mappa conservati. Fiera/fonte riprese dopo accesso o annullo; modulo auth
-comune scorrevole su telefono. API fiere-source verifica sessione Supabase
-e URL associato, no-store; catalogo/DB/email invariati. JS86 e accesso JS/CSS1.
-Nuova suite test-fiere-access.cjs; prove Documents/verifica-fiere-iscrizione-20261019,
-dettagli data/FIERE.md. Pubblicato e479808, Vercel READY
-dpl_JAY2p4gGogJTRMoAxT111FJbQX2k; quattro asset identici online.
-Percorso locale/online quattro formati con backend simulato, tre prove
-anonime reali e API401/405 passati; calendario5formati, articoli/affinità/
-ricerche4, affluenza/pagine3,4.923 pagine e settori validati. Nessun
-account/email/scrittura reale di prova. Segreti e checkpoint remoto validi,
-noto errore cleanup. Produzione Vercel sul progetto subingresso
-prj_QsyHcCh5m4DGRTclNKR6z8MtaRnm; .vercel/project.json locale obsoleto.
-
-19/10/2026, richiesta filtri fiere: in primo piano Quando, Dove e Tipologia
-di articolo; Cosa vendi e Tipo di evento dentro Altri filtri, con indicatore
-degli attivi visibile da chiuso.24 opzioni invece di35, raggruppando voci
-vicine;35 tipi documentali e relativi voti/fonti conservati, catalogo identico.
-Selezione multipla OR, contatori unici, rimozione per famiglia; vecchi URL
-precisi conservati con checkbox parziali. Menu entro il gruppo campi e sotto
-l’header fisso. JS85/CSS30, JSON59 invariato. Prove
-Documents/verifica-filtri-semplici-fiere-20261019, dettaglio data/FIERE.md.
-Suite articoli locale Chromium1440/820/320 eWebKit390 passata; calendario
-generale cinque formati, ricerca35articoli/4.923schede, settori e font/icone
-reali quattro casi passati. Checkpoint remoto valido, noto errore cleanup.
-Pubblicato fbeeb4b, Vercel READY dpl_DzNfy6G58NFSK7uVNcubJrM6scP3;
-quattro asset identici e prove online Chromium1440/697/320 eWebKit390 con
-font/icone reali, selezioni, settore, contatore, deseleziona/reset passate.
-Backend escluso nelle prove d’interazione; nessuna scrittura di prova.
-Scansione segreti superata; file estranei conservati ed esclusi dai commit.
-
-19/10/2026, Pisa: ricerca documentale corrente conclusa e verificata online.
-144 manifestazioni/36 comuni, ricognizione37; prima2, catalogo4.923.
-Due ID e altre4.779 schede preservati. Audit data/fiere-pisa.json e data/FIERE.md:
-458 ricevute,22 gruppi esclusioni; limiti Pomarance/CastelloFiore espliciti,
-Volterra programma recuperato in browser e visionato.128 date,6periodi,
-10ricorrenze;20schede solo2025 e4costi condizionati/originali. Futuro separato.
-Pubblicato 3d597fb, Vercel riuscito;4asset identici e144 pagineHTTP200 con
-H1/canonical. Pisa locale/online Chromium1440/320 eWebKit390; generale5formati
-(timeout320 ripetuto positivo), settori e4.923 pagine/2.237 sitemap passati.
-JS84/JSON59;38province concluse/72da fare, spunta dopo verifica.
-Originali/prove Documents/ricerca-fiere-pisa-20261019; nessun contatto a terzi.
-Copia ricerche-fiere-20261019-121306: 35,700file,
-6,540,512,148byteSHA256 verificati, zero errori; supplemento finale.
-
-19/10/2026, correzione richiesta dei profili: nome pubblico Ambulante al
-posto di Normale. Switch sotto avatar/saluto/email/modifica profilo e prima
-di Performance posteggi, senza fissarlo alla pagina: scompare scorrendo.
-Anche lo switch organizzatore segue la pagina. Rimossi pulsanti Dashboard
-normale e Aggiorna; dati gia caricati all'apertura, ritorno alla dashboard
-Ambulante dal solo switch, senza modal. Colori e regola del predefinito
-invariati. Supera le preferenze di nome/posizione nei registri precedenti.
-CSS/JS profile-switch3, organizzatori6 in tutti i riferimenti. Lavoro nel
-checkout isolato Documents/subingresso-profili-ambulante-20261019 per non
-toccare la ricerca Pisa concorrente. Prove Documents/verifica-profili-ambulante-layout-20261019;
-280 controlli profili locali passati nei quattro casi, font/icone reali;
-flusso completo eventi passato Chromium1440/320 e WebKit390. Pubblicato
-a424f8a, Vercel READY dpl_8kpHtbcTy2XwpJGXWbPnAkJ2anWY; sei asset identici
-ai blob,70 controlli online320 e tre prove anonime reali Chromium1440/320 e
-WebKit390 passati senza scritture. Checkpoint e branch preventivi remoti validi;
-consueto errore cleanup PowerShell.
-
-19/10/2026, aggiornamento profili: predefinito ricalcolato all'apertura da
-annunci propri attivi/non scaduti (NULL legacy valido) ed eventi propri non
-annullati incluse bozze. Organizzatore solo con piu eventi; parita/zero/errori
-Normale. Sostituisce la precedente apertura sempre Normale. Switch sempre
-disponibile; colori chiari Normale e scuri su riepilogo/area Organizzatore,
-icone, titolo e selettore fisso nella gestione. Ritorno /dashboard?profilo=1
-forza Normale; scelta manuale non sovrascritta da risposte tardive. Nessuna
-cache persistente, scrittura o cambio ruolo automatico, revisione invariata.
-Anche l'ingresso ordinario /dashboard applica il confronto e apre direttamente
-/organizzatore quando prevalgono eventi; switch fisso nelle due dashboard.
-?area=normale forza la dashboard normale e viene consumato. Link con hash o
-altre query rispettati; interazione dell'utente annulla un rinvio tardivo.
-CSS/JS profile-switch2; profili264 controlli (66x4) nei quattro formati,
-controllo finale colori/logo320 con67 esiti e percorso eventi nei tre casi
-passati. API HEAD200/workspace anonimo401. Pubblicato880981b, Vercel READY
-dpl_99A1Gje1rLK7A3S9FBWfavmh2vyg; quattro asset identici ai blob e268/268
-controlli online (67x4) con backend simulato passati. Tre prove anonime reali
-colori/logo/font, switch e registrazione standard passate senza scritture; prove
-Documents/verifica-profili-default-colori-20261019.
-
-19/10/2026, Lucca: ricerca documentale conclusa e verificata online.
-127 manifestazioni/33 comuni, prima2; 74 date puntuali (cinque storici2025),
-tre periodi/edizioni,50 ricorrenze non annualizzate e quattro costi originali.
-Catalogo4.781; due ID e altre4.654 schede preservati. Audit
-data/fiere-lucca.json e data/FIERE.md:85 ricevute selezionate,16 esclusioni,
-limiti documentali e manutenzione futura distinta. Originali/prove
-Documents/ricerca-fiere-lucca-20261019. Piano Lucca aggiornato, Natale gestore,
-mirror Seravezza, listini originali, inVersilia2026 e ordinanza Montecarlo.
-Limiti Altopascio/Pietrasanta/DOC PIC espliciti; nessun contatto a terzi.
-Pubblicato f0dc8ce, Vercel READY dpl_AKTR6nSusVUNyHD8PWWSfwpNpa6i, quattro asset
-identici e127 pagine HTTP200 H1/canonical. Suite Lucca locale/online
-Chromium1440/320 e WebKit390; settori,4.781 pagine/2.093 sitemap e generale
-cinque formati passati. Segreti verificati senza bypass. JS83/JSON58;
-TO DO spuntata dopo verifica:37 concluse/73 da fare.
-Copia ricerche-fiere-20261019-022950: 34,729 file,
-6,398,564,547 byte SHA256 verificati, zero errori; manifest controllato e
-supplemento finale per prove online. Checkpoint già esistente, non ripetuto.
-
-19/10/2026, selettore profili richiesto: nel modal «Il mio profilo» due
-schede compatte Normale/Organizzatore, indicatore scorrevole e Normale a ogni
-apertura. Registrazione standard invariata. Organizzatore caricato soltanto
-su scelta, riepilogo/stato/note e accesso alla richiesta o gestione completa;
-stesso account, dati aggiuntivi e approvazione esistenti. Rimossi i richiami
-organizzatore dal percorso normale. Nell’area dedicata selettore con ritorno
-al modal normale via /dashboard?profilo=1, consumato dopo apertura.
-Nuovi css/profile-switch.css e js/profile-switch.js v1; campi normali
-conservati tra schede, avviso prima di uscire con modifiche, risposte vecchie
-invalidate e pulizia su logout/cambio account. Tastiera, swipe sul selettore,
-focus e movimento ridotto. Salvataggio normale non chiude una nuova vista.
-172 verifiche (43×4) Chromium1440/820/320 e WebKit390; regressioni eventi,
-usabilità68, account/acquisti6 e admin6 passate. Backend/auth invariati;
-prove Documents/verifica-selettore-profili-20261019, suite
-scripts/test-profile-switch.cjs (PROFILE_USE_PUBLISHED per asset online).
-Pubblicato3c70f4b, Vercel riuscito FxD33Ev9aESEvqzazXhwT6u1XhBs: quattro
-asset identici ai blob,172 test online passati con backend simulato. Tre
-prove anonime reali logo/font/registrazione standard riuscite senza scritture.
-
-19/10/2026, qualità organizzatori: segnali precisi di cosa manca/pronto
-all’invio, feedback vicino ai form, campi bloccati durante salvataggio e
-focus ripristinato dopo il comune. Modifiche conservate prima del ritiro di
-altro evento. Admin: solo ultima risposta, pulizia su logout/cambio account
-e risposte vecchie invalidate. JS organizzatori5/CSS eventi4. Audit nuovo
-`scripts/test-organizer-experience.cjs`, prove prima/dopo in
-Documents/verifica-qualita-organizzatori-20261018; backend/pagamenti invariati.
-
-18/10/2026, Ferrara: ricerca documentale conclusa e verificata online.
-115 manifestazioni/21 comuni, prima13 (+102), 79 con date puntuali e8 costi.
-Catalogo4.656; 13 ID conservati, altre4.541 schede identiche. Audit
-`data/fiere-ferrara.json`, dettaglio `data/FIERE.md`, originali e prove
-`Documents/ricerca-fiere-ferrara-20261018`. 479 ricevute,25 esclusioni;
-registro regionale non integralmente accessibile, conflitti testuali e
-storici2025 espliciti, niente giorni/quote/posti inventati o contatti a terzi.
-Ostellato riuso11/18/25ottobre; Poggio13–14giugno non festa12; Mirabello
-banchi24–25 e streetfood23–25; Renazzo espositori18–20luglio non apertura17.
-Quote originali per categoria/IVA/anno, LEI2027 non applicata al2026.
-Pubblicato `5be1d21`, Vercel riuscito;4 asset identici online,
-115 pagine HTTP200 H1/canonical; suite Ferrara locale/online Chromium1440/320
-e WebKit390 passata,13 dialog e pagine senza JS. Build/settori,4.656 pagine,
-1.966 sitemap e generale5 formati passati; segreti verificati senza bypass.
-TO DO aggiornata dopo verifica:36 concluse/74 da fare. Cache JS82/JSON57;
-modifiche organizzatori/eventi concorrenti e file estranei preservati.
-Copia `ricerche-fiere-20261018-213227`: 33,390 file,
-6,241,295,331 byte SHA256 verificati, zero errori; manifest controllato.
-Aggiornamenti periodici futuri distinti dalla chiusura della ricerca attuale.
-
-18/10/2026, invio eventi: le bozze non inviate sono visibili e spiegate nel
-pannello admin, ma approvabili solo dopo invio in revisione. Proprietario:
-«Completa e invia», avviso e pulsante sopra i posteggi; JS organizzatori4.
-Intervento sulla UI: nessun evento reale inviato o approvato dall’agente.
-
-18/10/2026, modulo organizzatori: controlli vicino ai campi e date collegate,
-fine proposta uguale all’inizio, calendario/validazione manuale coerenti anche
-senza date native. Scadenza entro inizio, massimo366 giorni; condizioni min20
-e data non passata prima dell’invio, bozza consentita senza condizioni.
-Campi facoltativi, recapiti e costo intero evento più chiari. Salvataggi
-eventi preservano il profilo non salvato. JS organizzatori3/CSS eventi3;
-DB/pagamenti invariati. Test browser e SQL negativo/ROLLBACK estesi;
-dettagli `data/ORGANIZZATORI_EVENTI.md`, prove Documents/verifica-modulo-eventi-20261018.
-
-18/10/2026, preferenza organizzatori: contatto privato come percorso principale.
-Pagamenti futuri sul sito facoltativi, 8% solo su quelli gestiti dalla
-piattaforma; condizioni nel percorso di attivazione, niente pubblicità di
-commissioni nei moduli/pagine generali. Rimosso riquadro 8%/92%; CSS eventi2
-applica Plus Jakarta Sans anche al body per logo/menu/footer/accesso coerenti
-nelle pagine organizzatore/evento. Backend e pagamenti invariati.
-
-18/10/2026, organizzatori ed eventi: stesso account, profilo
-organizzatore e singoli eventi con approvazione admin separata. Modifiche da
-riapprovare; posteggi con quantità/prezzi; eventi approvati in fiere/profilo.
-Prenotazioni future: incasso piattaforma, commissione8%, quota organizzatore92%;
-flag server disattivati, nessun checkout/trasferimento attivato. Dettagli,
-RPC e verifiche in `data/ORGANIZZATORI_EVENTI.md`; DB applicato e SQL con
-ROLLBACK passato, flusso completo Chromium1440/320 e WebKit390 passato.
-Pubblicato b63ca32+7984e1a, Vercel READY EaHy6LQm835h6QJzdMAuTJnUYq5p.
-Otto asset online identici; accesso anonimo/modulo auth e calendario con RPC
-reali passati online negli stessi tre formati. AuthSessionMissingError è
-assenza di sessione prevista, non errore di connessione. JS organizzatori2.
-Pagamenti da integrare/attivare in una fase futura; nessuna prova reale di
-acquisto/email/account. Prove `Documents/verifica-organizzatori-20261018/`.
-
-18/10/2026, Pordenone: ricerca documentale conclusa con limiti espliciti,
-86 manifestazioni in29 comuni/50 esaminati,78 date puntuali/14 sintesi costo.
-Catalogo4554, altre4468 schede identiche, due ID precedenti conservati.
-Audit `data/fiere-pordenone.json`, dettaglio `data/FIERE.md`, originali/prove
-`Documents/ricerca-fiere-pordenone-20261018`. Cinque fonti secondarie dichiarate,
-22 esclusioni motivate; ricorrenze/date provvisorie testuali e documenti
-non accessibili espliciti. Verifiche periodiche separate, nessun invio a terzi.
-Pubblicato0119e58, Vercel riuscito FnWF2C2K9n74CubB6oEv6Ze4A9pj; asset identici,
-86 pagine HTTP200/H1/canonical, browser locale/online Chromium1440/320 e
-WebKit390 passati, suite generale cinque formati, build/settori/pagine passati.
-TO DO aggiornata dopo verifica:35 concluse/75 da fare. Cache JS79/JSON55.
-Copia ricerche `ricerche-fiere-20261018-165002`: 31,525 file,
-5,899,371,433 byte SHA256 verificati, zero errori; dettagli/manifest in FIERE.md.
-
-18/10/2026, fiere: senza articoli selezionati area affinità vuota, nessun
-«Scegli articolo»; voto/motivi soltanto dopo la selezione. Cache JS76.
-Conservare tutti i materiali delle nostre ricerche, inclusi errori e limiti:
-dati/audit nel Git, originali fuori dal repo pubblico. Dopo nuove ricerche
-eseguire `python scripts/backup-fiere-research.py` e registrarne il manifest
-verificato in `Documents/backup-subingresso/ricerche-fiere-<UTC>`.
-Nessuna esecuzione periodica aggiunta. Pubblicato9add5cf, Vercel riuscito;
-affinità locale/online quattro formati e ricerca articoli locale passate.
-Copia `Documents/backup-subingresso/ricerche-fiere-20261017-234704`:26.827 file,
-5.250.439.854 byte verificati SHA256, zero errori; incluse guide regionali/Temp.
-Prove `Documents/verifica-affinita-vuota-fiere-20261018`; dettagli in FIERE.md
-e nel file informazioni. Copia locale sullo stesso computer, non esterna.
-
-Revisione affinità articoli,17/10: questa nota aggiorna la prima scala sotto.
-35 tipologie, incluse abbigliamento vintage/libri antichi/cioccolato/olio.
-18 fiere con profili da fonti primarie in data/fiere-affinita.json, copertura
-parziale, revisione entro17/04/2027. 9 centrale e vendita documentata,8 tema
-coerente e articolo documentato,7 complementare,6 generico o condizionato;
-niente6 automatico da famiglia vicina. Condizioni visibili («Vintage o remake»,
-«Solo elettronica»), provenienza/fonti nei voti apribili e schede autonome.
-Incertezza senza voto; negativi soltanto per esclusioni esplicite recenti
-globali, mantenendo tutte le cautele precedenti. 151.270 coppie controllate,
-test dedicato quattro formati passato; regressioni articoli/affinità/affluenza,
-pagine4322/sitemap1625, calendario320, settori e sintassi passati localmente.
-4322 ID e dati precedenti conservati salvo aggiunte verificate su18 schede
-e relativi macrosettori. Cache JS75/CSS29/JSON52, pagina autonoma CSS2.
-Archivio Documents/ricerca-affinita-fiere-20261017; Olio Capitale403 diretto,
-contenuto primario letto via web.
-Pubblicato `35d27cf`, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/DJxc2iwEKCpp9BjEw9DWo7qJ9Sti); HTML/JS/CSS/catalogo/profili online identici. Test ricerca e affinità passati anche online su Chromium1440/820/320 e WebKit390, incluse varianti6/9, condizioni, fonti, selezione multipla e colori. Prove in `Documents/ricerca-affinita-fiere-20261017/online` e `pubblicazione.json`.
-Filtri compatti già online a98f526, Vercel BWxv1zQ4PJY93gWFshv1v9ocgswA:
-HTML/CSS identici e suite articoli online quattro formati passata. Conclusi.
-
-Spazi filtri fiere,17/10: quattro campi in griglia2×2 quando c’è spazio;
-sotto520px e nei pannelli tablet stretti etichetta96px accanto al campo.
-Margini/etichette/padding compatti, controlli e mesi ≥44px, popup articoli
-larga quanto il gruppo. Altezza prima/dopo:1440 593→379,820 585→429,
-697 613→395,390 613→445,320 519→495; WebKit390613→445. Test articoli
-quattro formati passati e confronto sette casi senza overflow. Cache CSS28,
-JS74/JSON51 invariati; prove Documents/verifica-spazi-fiere-20261017.
-Prima fase dedicata agli spazi; revisione dei voti pubblicata successivamente,
-con esiti registrati sopra.
-
-Affinità articolo fiere, 17 ottobre 2026: voto nella colonna destra delle
-anteprime, colori rosso→verde, motivi e fonte apribili. Senza articolo si apre
-la selezione; con più articoli il riquadro mostra il migliore e il dialog
-tutti i voti. Stima tematica prudente, nessuna previsione di incassi o posti.
-8 citato/offerta mirata; 7 citato/merci diverse; 6 famiglia vicina; dati
-insufficienti Da valutare. 2 solo con esclusione esplicita globale, fonte
-entro180 giorni ed edizione attuale/futura; nessun negativo per assenza,
-nome, sagra/espositiva, regole per operatori/aree, vecchie edizioni o solo
-divieto di somministrazione. Filtri e catalogo invariati. Cache JS73/CSS26.
-Test scripts/test-fiere-affinity.cjs: 133.982 coppie, casi limite e browser
-Chromium1440/820/320×568 + WebKit390 passati; regressioni articoli e affluenza
-passate, suite generale320 passata. Unica fiera con voti2 oggi: Natale Cento,
-sette articoli alimentari; fonte regionale HTTP200 riconfermata il17/10.
-Prove Documents/verifica-affinita-fiere-20261017, dettaglio data/FIERE.md.
-Pubblicato bf960e2, Vercel riuscito 4Dd19MfhDceoL3Br6qebWVKzbb73;
-HTML/JS/CSS/catalogo online identici. Stesso test dedicato passato online
-sui quattro formati/browser, incluse fixture isolate per rosso e incertezza;
-nessuna modifica al catalogo per ottenere quei casi. Nessun invio reale.
-
-Filtri articoli fiere, 17 ottobre 2026: aggiunto «Tipologia di articolo» tra
-Cosa vendi e Tipo di evento. 31 checkbox in sei gruppi, OR tra selezioni e
-AND con gli altri filtri; contatori, rimozioni singole, deseleziona tutte,
-URL articoli=id,id e reset. Macrosettore limita le opzioni e scarta quelle
-incompatibili. Classificazione browser/SSR solo dai settori documentati,
-esclusioni rispettate: 1.512/4.322 schede, nessuna deduzione da merci varie
-o nomi. Catalogo invariato. Menu scorrevole sopra/sotto secondo lo spazio,
-target44 px; dettaglio dialog/pagina allineato. Cache JS72/CSS25, JSON51.
-Test dedicato scripts/test-fiere-articles.cjs Chromium1440/820/320×568 e
-WebKit390 passato; suite calendario cinque formati/browser, pagine4322/
-sitemap1625 e settori passati. Dettagli FIERE.md,
-schermate Documents/verifica-filtri-articoli-20261017. Pubblicato 663df3f,
-Vercel riuscito 8NTFyGveCu85Amu589Fu5YYDZGem; HTML/JS/CSS/catalogo identici.
-Stesso test dedicato passato online sui quattro formati/browser; riga
-Tipologie di articolo verificata anche sulla pagina autonoma pubblica.
-
-Affluenza, 17 ottobre 2026: criterio richiesto soltanto pubblico; quattro
-fasce editoriali su ingressi/presenze medi per giornata, soglie 1k/5k/20k.
-Fonti e cifre originali con anno, periodo, unità, stato dichiarato/stimato;
-visite ripetute distinte da persone uniche, pubblico della festa non
-trasferito ai banchi. Primi 20 casi: 13 resoconti, quattro bollini e sette
-esclusioni; copertura parziale, nessun livello basso da assenza di prove.
-Archivio `data/fiere-affluenza.json`, controlli nel build e helper condivisi
-in fiere.js per browser/SSR. Niente nuovi filtri. Dettaglio in data/FIERE.md;
-originali in Documents/ricerca-affluenza-fiere-20261017. Cache JS68/JSON48,
-CSS24 e fiera CSS2. Build, settori, suite generale cinque formati/browser,
-prove dedicate Chromium/WebKit e pagine passate. Pubblicato d3d36e2,
-Vercel READY dpl_7yVZ4YRacJNdyDuBU3gY69TLw8MF; asset/catalogo identici,
-13 pagine e test dedicati online Chromium 1440/320 e WebKit 390 passati.
-
-Ravenna, 17 ottobre 2026: ricerca corrente chiusa nei 18 comuni, 131 schede
-in 17 comuni (+112), audit `data/fiere-ravenna.json` e `data/FIERE.md`.
-115 con giornate, cinque periodi, undici testuali; 56 recapiti, sette termini,
-undici sintesi di costo. Registro, calendari e moduli originali, 221 tentativi
-regionali con errori espliciti; Bagnara esclusioni documentate, non assenza.
-Originali fuori repo in Documents/ricerca-fiere-ravenna-20261017. Quote per
-categoria/periodo e IVA; giorni dei banchi distinti dalle feste, nessun inventato.
-Conservati 19 ID e 4.083 eventi esterni identici; totale 4.214, cache JS67/JSON47.
-Pubblicazione `6e9e899`, Vercel READY, catalogo/HTML/JS identici; 131 pagine
-pubbliche e suite provinciale Chromium/WebKit locale/online passate tramite
-PLAYWRIGHT_MODULE. Build, settori, pagine e suite generale passati; 320 ripetuto
-dopo timeout senza modifiche al prodotto. TO DO dopo verifica: 31 concluse,
-79 rimanenti; future verifiche distinte. Nessun contatto o candidatura a terzi.
-
-Rimini, 17 ottobre 2026: ricerca documentale dei 27 comuni attuali, 115 schede
-in 25 comuni (+102), fonte data/fiere-rimini.json e audit data/FIERE.md.
-Calendari Rimini 2026/2027; Natale separato in alberi/generi vari/casette,
-Pasqua sospesa. Sant’Agata Natale include 7 dicembre, quote per categoria;
-MotoGP 61/55 euro al metro più oneri, Cattolica OPI 30 euro più canone.
-Montecopiolo/Sassofeltrio corretti solo nel build, anagrafica condivisa intatta.
-3.987 eventi esterni identici; catalogo 4.102, cache JS64/JSON46.
-Originali in Documents/ricerca-fiere-rimini-20261017; fonti fallite, esclusioni
-ed estremi incerti espliciti, nessuna comunicazione a terzi.
-Pubblicazione Rimini verificata online (commit 3af5098): catalogo identico al Git,
-115 schede e dettagli testati live con Chromium/WebKit tramite PLAYWRIGHT_MODULE.
-TO DO spuntata dopo verifica: 30 province concluse, 80 rimanenti; revisioni future distinte.
-
-
-Fiere, 17 ottobre 2026: Azzera filtri accanto a Quando sostituisce lo switch
-Tutto l’anno; rimosso il duplicato sotto i filtri. renderMap genera puntini
-solo con almeno un mese selezionato, anche durante zoom/resize/caricamenti.
-Azzeramento o ultimo mese deselezionato svuotano la mappa e chiudono il popup;
-URL con mesi restano condivisibili. Elenco senza mesi ancora consultabile,
-riepilogo Nessun mese selezionato. Cache JS63/CSS23; catalogo invariato.
-Suite calendario cinque formati/browser e test valutazioni Chromium/WebKit
-locali passati: mappa iniziale vuota, altri filtri senza mesi, primo/ultimo
-mese, reset, URL, zoom e schede. Backup remoto prima delle modifiche.
-Pubblicato 3d4d479, Vercel READY dpl_Eg5Wdjgf3trQJXGAtuujxsCn1SXM;
-HTML/JS/CSS online identici al commit. Test online Chromium computer/telefono
-e WebKit passati con fixture del commit: il primo confronto usava 4.099
-schede locali (Rimini in lavorazione) contro le 4.000 pubblicate. Modifiche
-concorrenti a catalogo/build e file Rimini preservate e non committate.
-
-Filtri fiere, 17 ottobre 2026: eliminate le note sotto Cosa vendi e Quanto è
-conosciuta, compresa la legenda dei bollini. Mesi abbreviati in due righe da
-sei; sotto 360 px tre righe da quattro per conservare pulsanti di almeno
-44 px. Nomi completi in etichette accessibili e tooltip, intervalli con nomi
-interi. Cache JS62/CSS22; catalogo invariato. Backup remoto creato; cleanup
-dei tag con il noto errore PowerShell, checkpoint valido.
-Sintassi, suite calendario su cinque formati/browser e test valutazioni
-Chromium computer/telefono e WebKit passati localmente.
-Pubblicato 30c4955, Vercel READY dpl_8Aztctw3oDCKzs58ZFVE6nvvgTUh;
-HTML/JS/CSS online identici al commit (checkout Windows con CRLF).
-Test valutazioni online passato sui tre formati/browser.
-
-Roma, chiusura documentale 16 ottobre 2026: supera gli stati parziali storici sotto.
-127 manifestazioni in 48 comuni, 11 aggiunte rispetto a 116/46; 4.000 nazionali,
-3.989 precedenti identiche. Audit data/fiere-roma.json, closure20261016 e FIERE.md.
-Vicovaro atti originali: 1–2 agosto, domanda 28 luglio ore 11, spunta 14:30;
-tariffa ambigua oraria/giornaliera, nessun totale. Befana/III/V solo finestre
-commerciali da atti, non aperture quotidiane; San Felice/Tor Sapienza da atti 2026.
-Lariano delibera 129 e convenzione: circa 23 gazebo e operatori terzi Pro Loco,
-11–14 settembre dopo rinvio/proroga, quota ignota; esenzione suolo solo locali.
-Velletri Colle Rosso 3–20 settembre distinta. TolfArte artigiani 37 nominativi,
-solo agosto senza giorni dedotti; TTS Food invariato 8–9. Cave 23–25 ottobre,
-atti Urbi letti ma settore esterno non provato; XIV scansione non leggibile,
-fonti/ tentativi/ esclusioni espliciti. Ricerca corrente chiusa, manutenzione
-periodica distinta, nessuna garanzia esaustiva o posti, nessun invio a terzi.
-Commit dati 4ef29d1, Vercel riuscito in 47 secondi; HTML/JS/catalogo identici.
-Test Roma locale/online Chromium computer/telefono e WebKit: 127/mappa/40 dettagli;
-11 pagine autonome e tre senza JS nei tre formati. Build, settori, pagine4000/
-sitemap1298 e suite generale cinque formati passati. Cache JS61/catalogo45.
-TO DO spuntata dopo esito online nel documento unificato: 29 concluse, 81 rimaste.
-Modifiche estranee e note concorrenti preservate; backup remoto prima degli edit.
-
-Pagine fiere, 16 ottobre 2026: `/fiere/<id-stabile>` servite in HTML da
-api/fiera.js, archivio condiviso data/fiere.json; `/fiere/elenco` paginato
-100 schede con link navigabili senza JavaScript. Calendario conserva dialog
-rapido, aggiunto link pagina nel dettaglio e archivio sotto il calendario.
-Schede parziali accessibili noindex,follow: sitemap include automaticamente
-solo fonte + partecipazione diversa da check con nota e date/descrizione/luogo
-documentati (1.292 su 3.972 iniziali). Non è garanzia di indicizzazione.
-Nessuna data/costo inventato, ID senza anno, 404 reali; CSS dedicato leggero,
-nessuna query al database per le schede. Cache fiere.js 59.
-Test scripts/test-fiere-pages.cjs: tutte le schede, sitemap, archivio, escaping,
-browser Chromium desktop/320 px e WebKit 390 px, senza JS e dialog rapido.
-Pubblicato 50160c9, Vercel READY dpl_BmDkYWKAMdvJjpm7aJbTsqP4qmpD.
-Test pagine locale/online passati sui tre browser/formati; suite calendario
-cinque formati/browser passata. Sitemap online: 1.292 schede + archivio.
-Verificati HTTP 200, canonical, paginazione e 404 della fiera inesistente.
-
-Fiere, preferenze correnti 16 ottobre 2026: anteprime con costo solo se
-disponibile e nessun bollino per valutazioni mancanti. Nomi Molto conosciuta,
-Storica, Nuova; scala verde → giallo oliva → arancione scuro quasi rosso.
-Bollini pieni con testo e simboli bianchi, alti 24 px, testo 11 px, margini
-ridotti e nessuna sottolineatura. Criteri e dati invariati. Cache JS55/CSS19.
-
-Valutazioni fiere, 16 ottobre 2026: 400 su 3.972 (17 molto conosciute,
-380 di lunga tradizione, 3 nuove), prima 41. Restano 3.572 da valutare:
-ricerca nazionale non conclusa. Registro Lombardia con edizioni esplicite,
-calendario Piemonte 2014 confrontato per identità/comune e verifiche mirate.
-Fonti e motivi in fiere-rinomatezza.json, riscontri/esclusioni/impronte in
-fiere-rinomatezza-audit.json. Documenti esterni in Documents/ricerca-valutazioni-fiere-20261016.
-Martinengo e dieci schede mensili dell'Antico Seriate: Di lunga tradizione.
-Scheda pubblica con solo bollino e dicitura, senza titolo, motivo, fonti
-apribili e avvertenze. Prove conservate nei dati. Cache JS53/catalogo42.
-Preferenza corrente supera la precedente richiesta di spiegazioni in scheda.
-Pubblicato 23627c1, Vercel READY dpl_8UikWgaKQ5a5SB3zUzAVETkg3R63.
-HTML/JS/catalogo online identici. Build, settori, suite generale cinque
-schermi/browser e test dedicato locale/online Chromium/WebKit passati.
-
-Testi fiere, 16 ottobre 2026: titolo pubblico «Quanto è conosciuta»; bollini
-Molto conosciuta / Di lunga tradizione / Nuova / Da valutare. Restano gli ID
-interni e il parametro URL rinomatezza per compatibilità. Niente righe «Da
-calendario», «Date pubblicate», «Edizione conclusa» o suffissi di stato nelle
-date. Solo un piccolo ! apribile accanto alle date da riconfermare, ai soli
-periodi/ricorrenze e alle edizioni passate, con motivo nascosto inizialmente.
-Pulsante accessibile da tastiera e tocco, anche nel dettaglio. Date precise
-confermate e attuali senza simbolo; giorno settimanale per 1/2 giorni conservato.
-Cache JS52/CSS15; nessuna modifica ai dati delle fiere.
-Controlli locali: sintassi, suite generale a 320 px e verifica dedicata su
-Chromium computer/320 px e WebKit telefono passati. Provati date certe,
-da calendario, sole ricorrenze, periodi, edizioni passate e dati assenti;
-apertura/chiusura del ! con click e tastiera, senza spostamenti al cambio focus.
-Pubblicato b9aac0b, Vercel READY dpl_B7ygU2AQyLimyVbHjnQFk8NQcxze.
-HTML/JS/CSS online identici al commit. Stessi sei casi provati in produzione
-su Chromium 1440/320 px e WebKit 390 px; nessun errore o overflow rilevato.
-Verifica ripetibile in Documents/verifica-testi-date-fiere-20261016.cjs.
-
-Date fiere, 16 ottobre 2026: giorno della settimana con iniziale maiuscola
-nelle date puntuali di uno o due giorni, in elenco e dettaglio. Intervalli
-di almeno tre giorni, soli periodi indicativi, scadenze e date delle fonti
-conservano il formato precedente. Durata calcolata su date ISO in UTC per
-evitare errori al cambio dell'ora. `editionLabel()` condivisa, cache JS51.
-Commit 8e13acc pubblicato, Vercel READY; HTML/JS online identici al commit.
-Verificate date 1/2/3+ giorni nell'elenco e dettaglio su Chromium computer e
-telefono e WebKit telefono; confini di mese/anno, ora legale, periodi indicativi
-e scadenze controllati. Verifica locale in Documents/verifica-giorni-fiere-20261016.cjs.
-
-Rinomatezza fiere, 16 ottobre 2026: bollini editoriali Rinomata / Consolidata /
-Recente; senza prove sufficienti o revisione scaduta, Da valutare. Archivio per
-ID stabile `data/fiere-rinomatezza.json`, applicato e validato da build-fiere.py
-dopo gli audit provinciali. Rinomata richiede prova esplicita di richiamo ampio
-o sovralocale; Consolidata almeno 10 edizioni o 10 anni documentati; Recente
-prime tre edizioni, con anno e revisione breve. Nessuna deduzione dal nome,
-categoria, città, prezzo, numero di fonti o dati assenti. Copertura iniziale
-parziale: 41 valutazioni (13 rinomate, 25 consolidate, 3 recenti) su 3.972 eventi.
-Card, popup mappa e dettaglio mostrano il livello; nel dettaglio motivo e fonti
-apribili. Filtro visibile, combinabile e condivisibile via `rinomatezza` in URL.
-Scadenza editoriale verificata anche nel browser; non promette incassi né
-compatibilità con la merce. Test `scripts/test-fiere-reputation.cjs`, con
-PLAYWRIGHT_MODULE e FIERE_TEST_BASE_URL opzionale. Cache JS50/catalogo41/CSS14.
-Build, settori, conservazione integrale dei campi precedenti, suite generale
-su cinque formati/browser e test dedicato Chromium/WebKit passati localmente.
-Schermi da 320 px: filtri compatti per mantenere la mappa nella prima schermata.
-Pubblicato con commit 93fbcc1; Vercel READY dpl_GrgvRv34HYtETDxRRTAz1rMczAep.
-HTML/JS/CSS/catalogo online identici al commit. Test dedicato passato anche
-in produzione sui tre formati/browser: filtro, mappa, fonti, URL, tastiera,
-azzeramento e assenza di overflow. Test online senza autenticazione/tracking.
-
-Roma, 16 ottobre 2026: ricerca PARZIALE, da non spuntare. 99 schede in 43 comuni
-(prima tre), ricerca nominale nei 121 comuni e confronto delle 31 righe Lazio.
-Audit/esclusioni/limiti `data/fiere-roma.json` e `data/FIERE.md`; archivio esterno
-`Documents/ricerca-fiere-roma-20261016`. Restano calendari commerciali Municipi
-Roma/Befana, atti Vicovaro, formule Lariano, programmi Tolfa/Cave e piste in audit.
-Castel San Pietro Natale domanda 15 novembre, 50/70 euro al giorno; Segni
-domanda scaduta 9 ottobre, fiera 24–25 distinta dalla sagra 22–25. Bajocco 130
-euro + IVA per tre giorni, 1 settembre saldo e non domanda. Grottaferrata A
-9 m² nuovi 1.334 euro + IVA inclusa iscrizione. Montelibretti spunta 80 euro,
-prenotazioni distinte; Maker Faire 23–25 ottobre, Landriana 28–29 marzo.
-Tre ID e altre 3.873 schede conservati, totale 3.972. Cache JS49/catalogo40.
-Build, settori, suite generale cinque formati/browser e test Roma locali/online
-con PLAYWRIGHT_MODULE superati: 99 risultati, mappa e 12 dettagli su Chromium
-computer/telefono e WebKit telefono. Commit dati 1429fa3, Vercel riuscito,
-catalogo/JS/pagina online identici ai file del commit. Verifica entro dieci minuti.
-TO DO dopo verifica nel documento unificato Subingresso.it informazioni.md:
-Roma non spuntata, 28 completate e 82 rimaste. Preservata unificazione concorrente
-c69b400; vecchio TO DO solo rinvio. Nessun invio a terzi o file estraneo committato.
-
-Firenze, 16 ottobre 2026: ricerca documentale nei 41 comuni, 113 schede in
-40 comuni (prima tre), pubblicate e verificate online. Fonti e
-limiti data/fiere-firenze.json e data/FIERE.md; archivio Documents/ricerca-fiere-firenze-20261016.
-Firenze Natale domanda 23 ottobre (23 posteggi; 46 € oneri, non banco),
-Rionalissima 16 ottobre, Prim.OLIO 26 ottobre (300 € salvo Onlus),
-Empolissima novembre domanda 30 ottobre. Cèramica A canone esente da FAQ,
-B 25 €/giorno; candidatura 12 ottobre distinta dal tesserino 2 novembre.
-92 date puntuali, sei periodi e 15 testi; 42 contatti e 28
-sintesi costi (nove schede con termine). Tre ID e altre 3.763 schede conservati, totale 3.876.
-Tavarnelle coordinate GeoNames 6534685 da data/localita.json (CC BY 4.0):
-anagrafica comuni invariata. Cache JS48/catalogo39. Nessun invio a terzi.
-Commit dati 8975717, Vercel riuscito e catalogo/JS/pagina online identici.
-113 risultati, mappa e 12 dettagli verificati su Chromium computer/telefono
-e WebKit. Build, settori e suite generale cinque formati/browser passati;
-WebKit ripetuto dopo un timeout hover su La Spezia, asserzioni invariate.
-TO DO aggiornata dopo verifica: 28 completate, 82 mancanti su 110.
-
-
-Calendario Bolzano/Bozen, 16 ottobre 2026: ricerca nominale nei 116 comuni,
-207 schede in 73 comuni (prima cinque), pubblicate e verificate online.
-HDS/FIVA 2026 letto integralmente/visivamente: 338 righe, 123 annuali,
-31 fiere nominative da calendari locali, 184 righe ordinarie escluse.
-196 date puntuali/11 periodi, 69 recapiti, cinque termini scaduti; quattro
-nuove sintesi prezzi + due conservate. Merano/Bressanone gare pluriennali
-già scadute; Brunico domanda 30 aprile. IVA/cauzioni e ingressi distinti.
-Ortisei 25 dicembre solo gastronomia, Renon 20 giornate, Fiè storico 2025/26.
-Audit/fonti/limiti in data/fiere-bolzano.json e data/FIERE.md; archivio
-Documents/ricerca-fiere-bolzano-20261016. Cinque ID e altre 3.559 schede
-identici, totale 3.766; cache JS47/catalogo38. Commit dati e4f98e2,
-Vercel riuscito e hash catalogo/script/pagina conformi; 207 risultati,
-mappa e 14 dettagli verificati online su Chromium desktop/mobile e WebKit.
-Build, settori e suite generale cinque schermi/browser passati; test
-dedicato scripts/test-fiere-bolzano.cjs usa PLAYWRIGHT_MODULE. TO DO spuntata
-dopo verifica: 27 province completate, 83 rimaste. Nessun contatto a terzi,
-nessun'altra provincia; file estranei preesistenti non committati.
-
-
-Calendario Trento, 16 ottobre 2026: ricerca nominale nei 166 comuni, 122 schede
-in 62 comuni (prima cinque), pubblicate e verificate online. ANVA 2026 letto
-integralmente/visivamente; Comuni, APT e organizzatori, AEFI Riva B2B distinto
-dai posteggi. 115 date puntuali, cinque periodi, due testi; 95 recapiti e 13
-termini. Fonti/esclusioni/limiti in data/fiere-trento.json e data/FIERE.md;
-evidenze Documents/ricerca-fiere-trento-20261016. Ala Natale domanda 20 ottobre
-da allegati, non scadenza notizia 21; Ossana saldo 27 ottobre distinto dalla
-domanda 27 settembre. IVA, durata e cauzioni distinte; nessun posto garantito.
-Cinque ID e altre 3.442 schede/costi conservati; acquisito aggiornamento remoto
-dei filtri regionali. Cache JS46/catalogo37, totale 3.564. Build, settori,
-suite generale e test-fiere-trento.cjs locali/online con PLAYWRIGHT_MODULE
-superati. Vercel riuscito, catalogo/script conformi al commit 3c80a59.
-TO DO aggiornata solo dopo verifica: 26 province completate, 84 rimanenti.
-Nessun contatto a terzi; file estranei preesistenti non committati.
-
-
-Pisogne costi, 16 ottobre 2026: recuperato regolamento XXVIII Mostra Mercato
-12–16 agosto dal link Google Drive nel modulo e nel sito Canva renderizzato.
-Era sfuggito al controllo delle sole ancore HTML; per siti Canva/dinamici e
-moduli iscrizione seguire anche link nei dati incorporati o nel contenuto
-renderizzato. Etichetta modulo XXVII errata, PDF attuale XXVIII/2026 verificato.
-Artigiani/hobbisti esterno 250 base -> 275 ricevuta / 305 fattura; interno
-350 -> 385/427. Alimentari senza somministrazione 300+IVA22%=366 con fattura.
-Quota intere cinque serate, esterno3×3 e 1kW compresi, allestimento proprio.
-Overlay aggiornato: 127 sintesi/147 note, cache JS44/catalogo36; altri dati
-conservati. Fonte, condizioni e limiti in data/FIERE.md, evidenze in
-Documents/ricerca-costi-pisogne-20261016. Nessun invio o contatto a terzi.
-
-Costi fiere, 15 ottobre 2026: archivio editoriale data/fiere-costi.json,
-applicato da build-fiere.py dopo gli audit provinciali. 126 sintesi con
-fonte/periodo/data e tipo di costo; 40 nuove note, totale note 146 su 3.447.
-Mostrare prezzo nell'elenco e sezione costi nel dettaglio; conservare anno,
-categoria, superficie, durata, IVA ed extra. Oneri domanda e canone parziale
-non sono preventivi completi; suolo esente non significa ogni servizio gratis.
-Importo non verificato non diventa zero. Note ereditate conservano la data
-del loro audit; tariffe nuove non proiettate su altre edizioni. Fonte senza
-anno esplicito dichiarata; Klimahouse prezzi 2027, Genova discordanza seconda
-categoria nel listino speciale dichiarata. Fonte secondaria segnalata per
-Laigueglia/Amantea; nessun contatto a terzi. Fonti e limiti in data/FIERE.md,
-evidenze Documents/ricerca-costi-fiere-20261015. Cache JS43/catalogo35/CSS13.
-Per aggiornare un prezzo già presente modificare l'overlay, che prevale sulle
-note provinciali. Build, settori e suite calendario Chromium/WebKit passati.
-
-Calendario fiere, 15 ottobre 2026: ordine per data anche con filtri mesi,
-provincia e settore. Prima edizioni in corso (pari data odierna), poi future
-crescenti; seguono date non definite e infine concluse dalla pi? recente.
-Stesso ordine in elenco, caricamento successivo e gruppi della mappa.
-Cache fiere.js 42; catalogo invariato. Regressioni ordine in test-fiere.cjs.
-
-Calendario fiere, 15 ottobre 2026: Cuneo completata e verificata online,
-173 schede in 93 comuni (prima 55); ricerca nominale nei 247 comuni,
-160 righe dei due registri Piemonte e 82 record distinti Visit Cuneese.
-Audit/fonti/esclusioni/limiti in data/fiere-cuneo.json e data/FIERE.md;
-archivio Documents/ricerca-fiere-cuneo-20261015. 117 con giornate precise,
-54 con periodi e due senza date; 165 recapiti, dieci termini documentati.
-Distinti i mercati straordinari del Marrone dalla fiera; Gusta Cherasco
-domanda 16 ottobre, Natura 31 ottobre nel canale Cascine Piemontesi.
-Venasca mercato 18 ottobre, Dula Paroldo 31 maggio; Govone 14 giornate,
-portale espositori letto tramite web dopo HTTP 403. BEE Villanova ATL
-20–22 novembre contro registro 14–15, periodo da confermare. Modulo Fossano
-collegato ancora al 2025 segnalato, regolamento e quote 2026 verificati.
-Cheese pagina 503: scheda biennale conservata senza inventare edizioni.
-55 ID conservati e altre 3.274 schede identiche, totale 3.447; cache pagina
-41/catalogo 34. Build, settori, suite generale Chromium/WebKit e test Cuneo
-passati; commit dati 17e2ee0, Vercel riuscito, hash dei file pubblici uguali
-ai blob Git, 173 risultati/mappa e dodici dettagli verificati online,
-anche pagina reale senza intercettare richieste. TO DO spuntata dopo
-verifica: 25 completate, 85 rimaste. Nessuna comunicazione a terzi o altra
-provincia lavorata; aggiornamenti periodici e limiti rimangono nell’audit.
-
-Calendario fiere, 15 ottobre 2026: Novara completata e verificata online,
-71 schede in 36 comuni (prima 13); ricerca nominale negli 87 comuni, 25 righe
-Piemonte e vaglio completo delle tre categorie ATL (261 dettagli distinti).
-Audit/fonti/limiti in data/fiere-novara.json e data/FIERE.md; archivio locale
-Documents/ricerca-fiere-novara-20261015. 45 contatti, sei termini; Cureggio
-mercato annullato escluso, nuove aree Novara, Lesa 22 agosto, Fiorissimo
-2–4 aprile 2027 esplicito. Gattico-Veruno usa il punto della mappa ATL con
-coordinateSource; anagrafica invariata. Build/settori e suite Chromium/WebKit
-passati; altre 3.258 schede identiche e 13 ID Novara conservati. Catalogo 3.329,
-cache fiere.js 40/catalogo 33. Commit dati e92ded2, Vercel riuscito, hash Git e
-file pubblici uguali; 71 risultati/mappa e dieci dettagli verificati online,
-anche pagina reale senza simulazioni. TO DO dopo verifica: 24 completate,
-86 rimaste. Nessuna comunicazione a terzi né altra provincia avviata.
-
-Calendario Venezia, 14 ottobre 2026: sessione ripresa e conclusa sulle fonti
-reperibili; 84 schede in 26 comuni, prima 16. Ricerca nei 44 comuni e 132 righe
-Veneto, 40 appuntamenti Caorle raggruppati in sette rassegne. Audit/fonti/hash,
-esclusioni e limiti in data/fiere-venezia.json e data/FIERE.md; archivio locale
-Documents/ricerca-fiere-venezia-20261014. 56 giornate precise, 21 periodi,
-sette testi/ricorrenze; 17 contatti e un termine assoluto. Sant’Andrea ambulanti
-28–29 novembre, modulo C entro 30 ottobre, quote +IVA22% e CUP; 22 per altre
-categorie. Noale in Fiore 12 aprile, Primavera Portogruaro 11–12, Bisi 31 maggio;
-Ocaria 7–8 novembre. Natale Jesolo/Caorle periodi 2026–2027, Mira provvisorio.
-Caorle OPI/Officine e Corbolone: categorie distinte; termini dei gestori o del
-2025 non applicati agli espositori. San Donà sito non disponibile, ACTV 403
-con estratto datato dichiarato: limiti espliciti. Moduli B/D Portogruaro con
-refusi, listino C e categorie Caorle verificati anche visivamente.
-Conservati tutti i 16 ID e altre 3.187 schede, incluse Mantova e Cremona;
-totale 3.271, cache fiere.js 39/catalogo 32. Commit dati 765cb5e: Vercel riuscito,
-catalogo/script pubblici identici al commit e 84 risultati/dodici dettagli
-verificati online in Chromium computer/telefono e WebKit telefono; controlli
-dati, settori e cinque browser/schermi passati con PLAYWRIGHT_MODULE.
-TO DO spuntata dopo verifica: 23 completate, 87 rimaste. Le note precedenti
-di Venezia sospesa sono superate; nessun’altra provincia lavorata da questa
-sessione, nessun contatto a terzi. Nel formato del calendario usare contacts
-come oggetto (phone/email/pec) e participation.url per il pulsante del modulo.
-
-Calendario Cremona, 14 ottobre 2026: 71 schede in 31 comuni, prima nove;
-113 comuni confrontati e 71 programmi regionali recuperati, cinque grafici
-verificati visivamente. Audit/fonti/limiti in data/fiere-cremona.json e FIERE.md.
-Buongusto domanda 19 ottobre, listino +IVA22%; Natale Idee Regalo 16 novembre,
-quote IVA inclusa. Ostiano banchi 25 ottobre, Ratatuia 25 solo su invito.
-San Carlo/Sant’Apollonia e Natale provinciale hanno periodi da confermare;
-termini 2025 o dei gestori non trasferiti. 9 ID e altre 3.132 schede preservati;
-catalogo 3.203, cache fiere.js 38/catalogo 31. Vercel riuscito e catalogo online
-conforme al commit dati 7f05e52; 13 dettagli verificati su computer/telefono
-Chromium e WebKit, build e regressioni passati. 22 province fatte, 88 rimaste.
-Checkout isolato, Venezia resta alla sessione sospesa: riprendere da origin/main
-conservando Mantova e Cremona. Nessun’altra provincia avviata.
-
-Calendario Torino, 14 ottobre 2026: ricerca nei 312 comuni e 240 righe dei
-due registri Piemonte; 241 schede in 115 comuni, prima 108. Fonti, moduli,
-copertura, esclusioni e limiti in `data/fiere-torino.json`/`data/FIERE.md`.
-Tuttomele banchi due weekend, Chieri mercatoni 8/10 novembre, Rivoli istanza
-preventiva anche per spunta, Settimo termine Vetrina distinto; Cuorgnè domanda
-15 ottobre, Almese Natale 29 novembre, Villafranca Immacolata 13 dicembre.
-Coordinate mancanti Val di Chy/Valchiusa solo nelle schede con fonte comunale;
-anagrafica e altre 2.828 schede identiche, tutti i 108 ID preservati. Build,
-settori e cinque browser/schermi passati; online catalogo conforme al commit
-e 12 dettagli su Chromium desktop/telefono e WebKit. Cache catalogo 29,
-pagina fiere 36; 20 province completate, 90 rimaste. Nessun'altra provincia
-avviata; comunicazioni a terzi non inviate. Limiti e rinnovi periodici nell'audit.
-
-Calendario fiere, 14 ottobre 2026: completata Como, 83 schede in 31 comuni; audit 147 comuni attuali e 65 programmi regionali, dati e limiti in `data/fiere-como.json` e `data/FIERE.md`. Ricerca completata in 19 province, 91 rimaste. Cache catalogo v28, pagina fiere v35. Nessun’altra provincia avviata.
-
-Ricerca Modena (14 ottobre 2026): 74 manifestazioni in 33 comuni, prima 10;
-47 comuni cercati, 120 documenti tentati, dieci scadenze. Override
-`data/fiere-modena.json`; fonti/esclusioni/limiti in `data/FIERE.md`, archivio locale
-`Documents/ricerca-fiere-modena-20261014`. Calendario regionale integrale non
-recuperato; snapshot regionali conservati, senza fingere verifica delle righe.
-Castelfranco casette termine 17 ottobre; Pievepelago Castagna 27 ottobre ore 12;
-Castelvetro Natale 16 novembre, 48 € per P.IVA 3×3 m. Concordia 31 ottobre/1 novembre;
-fiere Modena 17/31 gennaio 2027 da avviso esplicito. Catalogo 2.647 eventi, altre
-2.573 schede identiche. Cache fiere.js 31, catalogo 24; TO DO 15 province fatte,
-95 mancanti. Commit 11dd0e4 pubblicato e catalogo online identico; build, sintassi,
-settori e browser Chromium/WebKit passati; sette dettagli operativi verificati
-anche in produzione su desktop e telefono, senza errori o overflow.
-
-
-Manuale operativo per le sessioni AI. Contiene solo informazioni "evergreen": regole, pattern, stato sistema, bug ricorrenti.
+# Manuale tecnico — Subingresso.it
+
+Consultazione mirata per argomento, non lettura integrale a ogni sessione.
+Le regole comuni di Claude e Codex sono solo in `AGENTS.md`; `CLAUDE.md` le importa.
+Decisioni, TODO e registro delle pubblicazioni sono in `Subingresso.it informazioni.md`.
+Fonti e ricerche provinciali complete sono in `data/FIERE.md` e negli audit JSON.
+
+## Decisioni correnti e contratti — 23 ottobre 2026
+
+- Registrazione: telefono obbligatorio; termini obbligatori e offerte facoltative,
+  due caselle da 18 px preselezionate nell'interfaccia richiesta dall'utente.
+  Testo offerte: «Acconsento a ricevere offerte personalizzate». Questo testo
+  riguarda soltanto le offerte, non autorizza pixel o misura individuale email.
+  Auth28: esempi telefono nascosti a campo vuoto, validazione conservata e invio
+  visibile anche su finestre basse. Sorgente: `js/auth.js`; prove nel registro.
+- Tema personale: scelta chiaro/scuro in profilo e area organizzatore, chiaro
+  iniziale per tutti, preferenza `auth.user_metadata.site_theme`. Avvio senza
+  flash; copia locale confermata legata alla stessa sessione, nessun ruolo in
+  cache. Errori, logout e cambio identità protetti. Contratto `data/THEME_PREFERENCES.md`.
+- UI: sfumature nei passaggi fra bianco e fondi chiari, testi nitidi; dashboard
+  con pochi numeri e dettagli apribili. Home: desktop mostra i luoghi che entrano
+  in una riga fra 12 candidati; tablet tre; personale prima. I contatori demo
+  visibili restano una scelta esplicita dell'utente, non dati reali da riutilizzare
+  nelle statistiche o nelle email. Dettagli e prove nel registro.
+- Anteprime: WebP persistenti nel bucket `image-previews`, un originale per sei
+  dimensioni, riuso dopo deploy e richieste simultanee; originali invariati e
+  caricati al clic. Upload conserva il file originale fino a 20 MB. Contratto
+  `data/IMAGE_PREVIEWS.md`, codice `api/image.js` e `lib/image-preview-cache.cjs`.
+- Luoghi: elaborazione in background senza bloccare l'interfaccia; motore e worker
+  con riferimenti coerenti. Non attribuire coordinate tramite refusi o omonimi
+  ambigui. Contratto `data/LOCALITA.md`, test `scripts/test-location-background.cjs`.
+- Preferiti: stato unico card/dettaglio, cache per utente verificato, rollback
+  su errore e risposte tardive ignorate. Nessuna mutazione diretta di `SAVED_IDS`;
+  usare gli helper. Contatore venditore solo con almeno due annunci pubblici
+  attivi/non scaduti, indipendente dai filtri e senza numeri inventati su errore.
+  Test `scripts/test-saved-listings.cjs` e `scripts/test-seller-listing-counts.cjs`.
+- Gli esiti di pubblicazione, gli ID e i dossier delle prove stanno nel registro;
+  i valori datati nelle sezioni seguenti non attestano lo stato live odierno.
 
 ## Qualità dati e profilo admin — 8 ottobre 2026
 
@@ -1153,32 +73,23 @@ Pannello aggiuntivo Località più cercate, ultimi 30 giorni, sotto Top comuni. 
 ## 🔐 Sicurezza Repository
 
 - **MAI committare `node_modules/`** — già in `.gitignore`. Se GitHub segnala secret esposti, controllare prima `node_modules`.
-- **`.gitignore` minimo:** `.vercel`, `node_modules/`, `package-lock.json`, `package.json`
+- **Ignore e dipendenze:** rispettare il `.gitignore` effettivo; `package.json` e `package-lock.json` sono versionati. Non ignorarli o rimuoverli seguendo vecchi elenchi.
 - **Chiavi API/secret** mai in JS committati. Solo env var Supabase (Dashboard → Edge Functions → Secrets).
 - **`SUPABASE_ANON_KEY`** in `supabase-config.js` è in realtà la nuova `sb_publishable_*` (la vecchia anon JWT è disabilitata e revocata). Pubblica per design.
 - **`SB_SECRET_KEY`** env var nelle Edge Functions = `sb_secret_*`. Sostituisce la vecchia `SUPABASE_SERVICE_ROLE_KEY` JWT (legacy disabilitata + revocata 4 mag 2026 dopo leak su GitHub commit 24079e60).
 - **`SB_PUBLISHABLE_KEY`** env var nelle Edge Functions = `sb_publishable_*`. Usata da `send-auth-email` per costruire link verify (param `apikey`).
 - **MAI committare chiavi**: nemmeno PATCH SQL temporanei. Applicare via psql `-v` o file in `/tmp` non versionato.
 
-## 🚨 Anti-Leak Segreti (post-incidente 4 mag 2026)
+## Segreti
 
-**Cosa successe**: ho recuperato la `service_role` JWT con `db query`, l'ho iniettata hardcoded in `PATCH_CRON_AUTH_20260504.sql`, ho committato + pushato. GitHub secret scanning l'ha rilevata in <5 min. Sito pubblico → repo pubblico → bot scraper.
+Regole comuni in `AGENTS.md`, sezione «Segreti e isolamento dei dati».
+Non duplicarle qui e non riscrivere la history senza richiesta esplicita.
 
-**Difese ora attive**:
-1. **`.gitleaks.toml`** + **`.git/hooks/pre-commit`**: gitleaks scansiona ogni commit, blocca se trova `sb_secret_*` o JWT service_role. Binario `scripts/.bin/gitleaks.exe` (gitignored). Custom rules per pattern Supabase nuovi. Allowlist per FAKE/EXAMPLE/`<REVOKED-...>`.
-2. **GitHub Push Protection** (Repo Settings → Code security): blocca push lato server.
-3. **Regole CLAUDE.md** anti-leak.
+## Pubblicazione e modifiche
 
-**Regole operative**:
-- **MAI** hardcodare segreti in `.sql`, `.md`, `.ts`, `.js`, `.json`, ecc.
-- **PATCH SQL con chiave** → file template con `:'service_jwt'` + `psql -v service_jwt="$KEY"`. OPPURE file in `/tmp/` (fuori repo), apply, delete.
-- **MAI** fare `db query` per ottenere una chiave e poi `Write/Edit` quel valore in un file dentro il repo.
-- Bypass `git commit --no-verify` SOLO se 100% sicuro che il diff è pulito.
-- Se chiave esposta: 1) rotala su Supabase Dashboard, 2) sanitizza HEAD, 3) `git filter-branch` + force-push, 4) elimina backup branch remoto.
-
-## 🚀 Workflow Pubblicazione (REGOLA D'ORO)
-
-Dopo **OGNI** modifica ai file: `git add . && git commit -m "..." && git push`. Sempre. Senza aspettare richiesta utente.
+Backup, preservazione del lavoro altrui, commit/push e verifica del deploy:
+seguire `AGENTS.md`. Le sezioni tecniche seguenti descrivono i contratti da
+conservare, senza autorizzare interventi o invii di propria iniziativa.
 
 ## 📍 Inserimento comuni nei form (7 ottobre 2026)
 
@@ -1538,94 +449,67 @@ L'utente non loggato compila tutti i 5 step SENZA vedere mai il banner "devi reg
 
 ## 💎 Sistema Vetrina a Pagamento
 
-- **Presentazione 18 ottobre 2026:** in dashboard dialog compatto con durate selezionabili (30d consigliata), conferma esplicita col totale e pagamento unico sempre visibili; CSS `vetrina-conversion.css?v=1`. `startCheckout()` usa la scelta corrente, blocca doppi clic, timeout20s, errori inline, controlli sessione/risposte tardive e URL Stripe. Mobile: comando «Promuovi» leggibile44px; ritorno Stripe con invito; `vetrina-account.js?v=2` salta il selettore con un solo annuncio idoneo. Wizard: soltanto presentazione step6, statistiche/risparmi/partenza approvazione, gratuito predefinito e prezzi invariati. Fonti/riscontri/limiti `data/CONVERSIONI_VETRINA_20261018.md`; test nuovo `scripts/test-vetrina-conversion.cjs` via PLAYWRIGHT_MODULE e VETRINA_QA_DIR; VETRINA_DASHBOARD_FILE consente verifica dell’HTML pubblicato. Storico17 checkout live failed, nessun acquisto reale confermato; non misura la causa o l’efficacia della nuova proposta. Pubblicato27db5ad, Vercel riuscito F4Sjefz7vfDLuTnLYEu4CyjPniab; quattro asset online identici, prezzi/wizard/account/statistiche passati. Dialog sull’HTML online con backend simulato passato Chromium1440/820/320 e WebKit390/320 (font reale WebKit); nessun pagamento/email/annuncio reale. Prove `Documents/conversioni-subingresso-20261018/`.
-
-- **Listino corrente22ottobre2026:** 10d49€,30d99€,90d249€. Pacchetti2annunci −10%,3–4 −15%,5–10 −20%; niente sconto pubblicazione o codici cumulabili. Fonte condivisa js/vetrina-pricing.js e controllo SQL in PATCH_VETRINE_PREMIUM_20261022.sql. expected_amount_cents deve coincidere con il totale del pacchetto, altrimenti409 prima del pagamento. Contratto: data/VETRINE_PREMIUM.md.
-- **Attivazione aggiornata:** `PATCH_VETRINA_20261008.sql` + webhook usano `apply_vetrina_payment` (solo service_role): registrazione pagamento e giorni in una transazione con lock sull'annuncio. Su pending il pagamento è succeeded e activated_at NULL; il nuovo trigger `zz_start_paid_vetrina_on_approval` attiva tutti i giorni alla transizione ad active, dopo enforce_annunci_status. Replay ignorati e rinnovi dalla scadenza attuale; expires_at invariato. Prezzi di sessioni Stripe già aperte rispettati. `grazie.html` distingue attesa/attivazione e tutti e tre i tier.
-- **Risultati Vetrina:** tabella privata `vetrina_stats_daily` + RPC proprietario `dashboard_vetrina_stats(7/30/90)`. Dal 2026-10-08 conta separatamente card almeno al 50% nel viewport, aperture dettaglio e azioni telefono/WhatsApp/chat mentre la Vetrina è attiva; esclude azioni del proprietario. Nessuna ricostruzione dello storico o promessa di incremento. `track_listing_view` sostituisce i vecchi incrementi frontend; visita dettaglio sempre +1. Disattivato tramite cron.alter_job il vecchio cron casuale increment-featured-views; totali storici conservati.
-- **Proposta dashboard:** benefici ricerca/consigliati/blog a rotazione, anteprima del proprio annuncio, descrizione delle durate e invito accanto alle statistiche dopo almeno 7 giorni online (nessuna email aggiuntiva). Verifiche: `node --disable-warning=ExperimentalWarning scripts/test-vetrina.cjs`, `node scripts/verify-seller-analytics.js`, `scripts/verify-vetrina.sql` con ROLLBACK.
-- **Schema DB:** `annunci.featured bool`, `featured_until timestamptz`, `featured_tier text`, `featured_since timestamptz`. Tabella `payments` con RLS.
-- **Trigger `enforce_annunci_status` esteso:** blocca anche modifiche manuali a `featured*` da non-admin/non-service_role. Solo webhook può promuovere.
-- **Edge Functions:**
-  - `create-checkout-session` — **Verify JWT = ON**, deployata con `--no-verify-jwt` (gateway 401 con sb_publishable_*). Token validato manualmente dentro la function.
-  - `stripe-webhook` — **Verify JWT = OFF** (Stripe non manda JWT). Verifica firma HMAC-SHA256 con tolleranza 5min anti-replay. Estende `featured_until` se già in vetrina.
-- **Frontend:** `dashboard.html` modal vetrina mobile-friendly (bottom sheet su mobile). `data.js` helper `isListingFeatured(l)`. `annunci.js` ordinamento featured-first. `annuncio-detail.js` banner gradient amber-orange.
-- **Idempotenza:** la RPC atomica ignora sessioni già succeeded/refunded; l'upsert pending del checkout usa ignoreDuplicates. Una notifica di scadenza non sovrascrive pagamenti già riusciti.
-- **Cron `unfeature-expired-daily`:** `'0 3 * * *'` chiama `unfeature_expired()`.
-- **Secrets:** `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
-- **CRITICO fetch Edge Functions dal browser:** sempre `'apikey': SUPABASE_ANON_KEY` negli headers oltre ad `Authorization: Bearer <token>`. Senza apikey → 401.
-- **Vetrina NON estende `expires_at`** (rimosso 6 mag 2026): chi compra/riceve vetrina mantiene il default 270gg post. Vetrina = solo featured/posizione/visibilità. Stripe-webhook + adminGrantVetrina ripuliti, edge function re-deployata.
-- **Admin Vetrine,22/10:** attivazione gratuita rimossa dall’interfaccia; resta `adminRevokeVetrina(id)` per correzioni. Acquisti e giorni già concessi non vengono revocati automaticamente.
-- **Card featured redesign**: glow box-shadow aureo, sfondo gradient amber-50/50→white, barra top 3px, badge crown + animate-pulse, footer "Annuncio in Vetrina ★★★★★".
-- **Modal pricing layout** (6 mag 2026): totale grande (`€ 59,90`) + giornaliero leggibile sotto (`€ 0,67 / giorno` text-xs). Niente più "una tantum" sui bottoni — la rassicurazione anti-rinnovo è nel footer del modal accanto al lock Stripe (`pagamento unico, no abbonamento`). Sottotitoli a sinistra puliti dal duplicato del giornaliero. Benefit grid ridotta a 3 colonne: `+ Visualizzazioni / Vendi prima / In cima` (rimosso "Post più lungo" perché vetrina non estende più `expires_at`).
-- **Box admin "Guadagno Vetrine"** (sostituisce "In Vetrina"): RPC `admin_revenue_stats()` SECURITY DEFINER bypassa RLS owner-only di `payments`. Filtra `status='succeeded' AND stripe_session_id LIKE 'cs_live_%'` (esclude test mode + admin_free + welcome_lottery che non passano da payments). Box vira al verde quando `today_cents > 0` con pill `+ €X oggi` sotto. Layout: label, totale grande, pill verde animata se vendita oggi. Patch in `PATCH_ADMIN_REVENUE_20260506.sql` (idempotente).
-- **Storico16/17maggio, superato dal contratto Premium22ottobre. Vetrina nel wizard `vendi.html` — Step 6 (16 mag 2026)**: il wizard è ora **6 step** (`_TOTAL_STEPS`). Lo step 5 (titolo/descrizione/foto/contatti + preview) termina con un bottone "Avanti" (`_goToPublishStep()` → valida step5 → `goToStep(6)`); lo step 6 è il chooser di monetizzazione finale, mostrato DOPO che tutto è compilato (massimo sunk cost). 4 opzioni radio (`_pubChoice`, default `'free'` preselezionato): Gratis €0 / Vetrina 10g / 30g / 90g con **prezzi scontati -10%** (€17,91 / €35,91 / €53,91). **Copy/layout snelli (17 mag 2026, redesign mobile)**: RIMOSSO il box ambra "Solo ora… Vetrina scontata del 10%…" (disordinava e sprecava spazio su mobile). Lo sconto ora è comunicato SOLO da un **bollino `-10%` in `position:absolute` (top:-8px;right:14px, inline-style anti-Tailwind-precompilato, zero spazio occupato)** nell'angolo delle 3 card a pagamento. Card ristrutturate per non andare a capo su smartphone: la riga del titolo NON contiene più il prezzo (era un `flex justify-between` che strozzava il titolo → "Vetrina/30/giorni" a capo). Ora: titolo `whitespace-nowrap` (+ chip Popolare/Miglior valore inline solo 30/90), e su riga separata sotto `prezzo-scontato (font-black) + prezzo-barrato + · €X/g`. Bottoni accorciati: `Pubblica gratis` / `Attiva Vetrina · € N` (prima "Pubblica e attiva la Vetrina · …" andava a capo). I benefici restano nella FAQ Vetrina in fondo (3 `<details>` zero-JS chiusi). I benefici sono ora in una **FAQ Vetrina** in fondo (3 `<details>` nativi zero-JS, chiusa di default, non invadente: dove viene spinto / quanto dura / si può attivare dopo). Le 3 note impilate sotto il bottone → 1 sola riga `#pubFootNote` dinamica (gratis: "controllato prima della pubblicazione" · pagamento: "Stripe, una tantum, nessun abbonamento, pubblicato comunque") + `#signupNote` breve solo per anonimi. `_selectPubChoice()` aggiorna stile `.pub-opt.selected` + label `#submitBtn` + testo `#pubFootNote` (via `_refreshPublishChoiceUI`; il vecchio `#pubPayNote` non esiste più). `submitAnnuncio()`: dopo l'INSERT (annuncio creato sempre, resta `pending` per moderazione) se `_pubChoice!=='free'` e NON ha appena vinto la lotteria → chiama `create-checkout-session` con `source:'vendi_creation'` e redirige a Stripe; se annulla/fallisce l'annuncio **resta pubblicato** (nessun dato perso) + toast. STEP_NAMES/progressBar/resetForm aggiornati a `_TOTAL_STEPS`.
-- **Sconto -10% "solo alla pubblicazione" — gate SERVER-SIDE (16 mag 2026)**: in `create-checkout-session/index.ts`. Il client manda solo `source`; lo sconto NON è falsificabile perché la edge function lo applica solo se: `source==='vendi_creation'` **E** annuncio dell'utente **E** `featured_since IS NULL` (mai stato in vetrina) **E** `created_at` < 60 min fa. `amount = round(tier*0.90)`, product name suffisso "· sconto pubblicazione -10%", metadata `source`+`discount=vendi_launch10`, `payments.amount_cents` = importo scontato (revenue RPC `cs_live_%` resta corretta, importi solo più bassi). Lo status check è rilassato: in creation flow accetta anche `pending` (l'annuncio appena creato è sempre pending per `trg_enforce_annunci_status`); il webhook (service_role, bypassa il trigger) setta `featured*` anche su pending → la vetrina diventa visibile appena l'admin approva. `cancel_url` creation flow → `dashboard.html?pubblicato=1&vetrina=annullata`. **Tradeoff accettato**: il countdown vetrina parte all'acquisto anche se l'annuncio è ancora in moderazione (la moderazione admin è rapida; rifiuto raro, già filtrato da `checkContent()`). Webhook e `stripe-webhook` NON modificati (lo sconto tocca solo il prezzo, non i giorni).
-- **Priorità visibilità annunci in Vetrina nei box "consigliati" (16 mag 2026)**: chi paga ha priorità. Helper `_featuredFirst(list, n)` (replicato in `js/pages/annuncio-detail.js` e `blog-template.html`, usa `isListingFeatured` da data.js): partiziona featured-attivi vs resto, **mescola i featured** (rotazione equa, non sempre gli stessi 3), concatena, taglia a n. Applicato a: (a) correlati client `annuncio-detail.js` (fetch pool 24 ordinato created_at desc → `_featuredFirst(pool,3)`), (b) box live blog `_loadBandoListingsBox` (limit 24 → `_featuredFirst(pool,3)`, fallback 0-risultati invariato). SSR `api/annuncio.js` correlati: 2 fetch REST — prima `featured=eq.true&featured_until=gt.<now>` ordinato `featured_since.desc` limit 3, poi riempie con `created_at.desc` (ordine deterministico, no random, perché pagina cacheata a CDN). La griglia `/annunci` (`annunci.js`) era **già** featured-first (sort stabile dopo il sort utente, righe ~209/244) — non toccata. `annuncio-detail.js` bumpato `?v=18`→`?v=19` in `annuncio.html` + `api/annuncio.js`.
-- **Box admin "Valore totale richiesto"** (corretto 6 ott 2026): somma esattamente i prezzi degli annunci reali attivi, senza minimo artificiale. Vendite = `SUM(prezzo)`; affitti = `SUM(prezzo)` una sola volta, perché nel wizard il prezzo è già il canone annuale. Il box mostra totale, quota vendite e quota affitti/anno. RPC aggiornata da `PATCH_ADMIN_TOTAL_VALUE_ANNUAL_RENT_20261006.sql`.
-
-## ❌ Lotteria Welcome Vetrina — RIMOSSA (23 mag 2026)
-
-Sistema mai installato in prod (RPC `try_welcome_lottery` + colonne `welcome_lottery_*` inesistenti). Rimosso tutto il codice vivo che lo cercava: popup "ruota della fortuna" in `auth.js`, scrittura colonna in `register-bypass` (redeployata), e la copy "vinci 30 giorni di Vetrina" dal popup visitatori. **Niente più promesse-lotteria sul sito.** Resti orfani innocui da pulire quando si vuole: edge function `grant-welcome-vetrina` ancora chiamata da `vendi.html` (ritorna sempre `granted:false`), banner "HAI VINTO" mai mostrato in `vendi.html`, enum `welcome_popup`, colonna `vetrina_welcome_days`. Dal22/10 rimossi anche i resti del wizard e l’attivazione gratuita dalla UI admin; nessun nuovo omaggio. Vedi memoria `project_welcome_lottery_orphan.md`.
+- Fonte del listino: `js/vetrina-pricing.js` e controllo server. 10/30/90 giorni
+  a 49/99/249 euro; pacchetti di 2 annunci −10%, 3–4 −15%, 5–10 −20%, stessa
+  durata e pagamento unico. Nessuno sconto pubblicazione, omaggio o lotteria UI.
+  Contratto completo: `data/VETRINE_PREMIUM.md`; patch del 22 ottobre.
+- Checkout: `expected_amount_cents` coincide con il totale server, altrimenti
+  409 prima del pagamento. Conservare sessioni già aperte, quote per annuncio,
+  giorni acquistati, replay, rimborsi e compatibilità dei vecchi acquisti.
+- Attivazione atomica con lock: `apply_vetrina_payment` / contratto pacchetti,
+  solo servizio. Su annuncio pending il pagamento può essere riuscito senza
+  attivazione; `zz_start_paid_vetrina_on_approval` avvia i giorni all'approvazione.
+  Rinnovo dalla scadenza corrente; nessuna estensione di `expires_at` (270 giorni).
+- Campi `annunci.featured*` protetti da `enforce_annunci_status`; ordini in
+  `payments` con RLS. `create-checkout-session` valida il token utente;
+  `stripe-webhook` valida firma, tempo e idempotenza. Il flag gateway JWT non
+  sostituisce l'autenticazione applicativa. Dal browser servono `apikey` e Bearer.
+- UI: prevenire doppi clic, conservare scelta e stato su errore/timeout,
+  accettare soltanto URL Stripe previsti; pagamento singolo o pacchetto chiaro.
+  Header/footer condivisi solo sui figli diretti del body, non sui dialoghi.
+- Statistiche gratuite: visualizzazioni e messaggi nel periodo, anteprima
+  Premium sfocata senza dati riservati nascosti nel client. Analisi complete
+  permanenti per ogni annuncio con pagamento live riuscito, anche in bundle
+  e dopo scadenza/rimborso; esclusi test, omaggi e semplice stato featured.
+  Gate server/RLS, UTC e totali coerenti fra grafico, tabella e CSV. Contratto
+  `data/SELLER_PREMIUM_ANALYTICS.md`.
+- Misure Vetrina da eventi reali, azioni del proprietario escluse, niente
+  ricostruzione retroattiva. Il cron casuale `increment-featured-views` è stato
+  disattivato l'8 ottobre; non riattivarlo dai vecchi elenchi.
+- Blog: soltanto Vetrine pagate pertinenti; catalogo annunci gratuito conservato.
+  Geografia/rotazione e distinzione dai correlati: `data/BLOG_ADS.md`.
+- Ricavi admin: distinguere pagamenti live riusciti da test/omaggi e conteggiare
+  il bundle una volta. Valore richiesto dagli annunci distinto dai ricavi:
+  affitti già annuali, nessuna moltiplicazione aggiuntiva e nessun minimo fittizio.
+- Verifiche di riferimento: `scripts/test-vetrina.cjs`,
+  `scripts/verify-seller-analytics.js`, `scripts/verify-vetrina.sql` (ROLLBACK)
+  e test indicati nei contratti. Vecchio sconto/lotteria/layout di maggio sono
+  superati; dettagli recuperabili dalla versione precedente in Git.
 
 ## 📬 Email — Sistema Completo (Resend)
 
-**Revisione grafica/copy23ottobre2026:** richiesta email semplici e invoglianti,
-non oggetti da report. Template condiviso `vetrina-email.mjs`,9varianti:
-blu/oro marchio, titolo breve, dato reale, prezzo/durata separati, pulsante
-«Metti in Vetrina»/«Scegli le tue Vetrine»; niente lungo titolo annuncio.
-Email a tabelle inline/Arial, leggibili senza immagini; testo alternativo
-coerente. Listino/consensi/misura/uscite/limiti invariati. Pubblicatoed33799,
-Edgecampagna4/adminanalytics3 ACTIVE e sorgenti riscaricate identiche.
-Test campagna/analytics/27casi browser passati, review indipendente ship.
-Registro12reali+1test identico, nessun reinvio. Dossier privato
-Documents/email-vetrine-design-20261023; contratto data/VETRINA_EMAIL.md.
-
-**Campagna Vetrine23ottobre2026:** preferenza per poche email umane e brevi,
-varianti in base a visualizzazioni reali e più annunci. Preparazione soltanto:
-20bozze private per20account (8pacchetti/8metriche/4visibilità),9varianti;
-nessun invio,cron o schema modificato. API READ ONLY:70venditori attivi,
-53adatti ai testi Vendita/17pacchetti coi criteri finali;consenso marketing
-non documentato,flag digest/stats true di default,zero acquisti live riusciti.
-Richiesti eventuali consensi esterni:non usare i flag come prova di consenso.
-Prima di inviare completare uscita dalle offerte e coordinare con riepiloghi;
-69snapshot19/10 non provano consegna. Piano/testi/fonti/verifiche in
-data/EMAIL_VETRINE_20261023.md;file privati in
-Documents/campagna-vetrine-20261023/. Nessun seguito automatico avviato.
-
-**Chiarimento successivo23/10:**utente conferma tutti gli ultimi50iscritti
-reali;coorte congelata11:31UTC,01/09–23/10. Registrati50consensi con fonte
-WhatsApp/attestazione,nessuna data originaria inventata;più anziani esclusi.
-13venditori idonei,uno escluso provider;**12invii/12delivered**,4pacchetti e
-8proposte con visite,zero duplicati/fuori coorte. Ricevute/ID e prove private
-nella cartella sopra. Nessun nuovo cron o re-invio automatico.
-Nuovi iscritti:casella promozionale separata/facoltativa/vuota (Garante8981258,
-preselezione richiesta non valida). Versione vetrina-email-20261023 e booleano
-esatto;metadati bypass/fallback,trigger solo INSERT profiles salva consenso
-con data/evidenza. Update/duplicati/revoche non riattivano. Migrazione
-PATCH_SIGNUP_PROMO_OPTIN_20261023.sql applicata,register-bypass pubblicata;
-test scripts/test-signup-promo.cjs e verify-signup-promo.sql ROLLBACK passati.
-Auth23 nei20HTML/API,privacy aggiornata;esito pubblicazione in data/VETRINA_EMAIL.md.
-Pubblicatoe463617:16asset/pagine identici ai blobGit,quattroSSR conAuth23;
-modulo online Chrome320/Safari390 passato con scritture bloccate e nessun
-account creato. Inspector del componente0FAIL/0WARN (senza titolo/hero da
-pagina intera);prove e ricevute nella cartella privata,nessun nuovo invio.
-
-**Seguito23/10, richiesta primo invio:**utente riferisce consensi WhatsApp a
-molti iscritti;chiesti nominativi per abbinarli,nessun opt-in generalizzato.
-`PATCH_VETRINA_EMAIL_20261023.sql`:registro consensi/log RLS solo servizio,
-20offerte/campagna e24ore,30giorni/persona,72ore dopo altre email periodiche.
-`vetrina-campaign` interno,manuale,preview predefinita,audit storico provider,
-nessun retry ambiguo;template condiviso novevarianti e listino unico.
-Opt-out `promo` revoca solo offerte;JSunsubscribe3 e testo dedicato. Snapshot
-venditori conservati,invio digest/statistiche saltato nei7giorni dopo offerta.
-Nessun nuovo cron;runner privato15secondi fra invii,solo su lista confermata.
-Migrazione/quattro Edge applicate;zero consensi registrati/zero invii mentre
-si attendono nomi. Test simulati/SQL ROLLBACK/browser passati. Contratto,
-pubblicazione e limiti in data/VETRINA_EMAIL.md;prove/cartella privata sopra.
-Pubblicato3908a16:uscita/JS3 identici ai blobGit online;API anonima401,
-token finti promo/digest404. Zero consensi/invii al controllo finale;lista
-nominativa ancora richiesta. File concorrenti delle fiere conservati.
+- Contratti correnti: `data/VETRINA_EMAIL.md` e `data/EMAIL_CONVERSION_ANALYTICS.md`.
+  I testi preparatori di `data/EMAIL_VETRINE_20261023.md` non sono ricevute d'invio.
+- Campagna del 23 ottobre: 12 offerte reali consegnate nella coorte privata dei
+  50 iscritti confermati dall'utente; uno escluso dal provider. Nessuna estensione
+  ad altri contatti o nuovo cron. Copia test all'admin e nove anteprime personali
+  richieste separatamente restano escluse dalle statistiche reali. ID nei dossier
+  privati indicati nel registro; nessun reinvio derivato da questo riepilogo.
+- Promozioni: massimo 20 per campagna/24 ore, 30 giorni per persona, almeno
+  72 ore dopo altre periodiche; saltare digest/statistiche per 7 giorni dopo
+  l'offerta. Deduplica e blocco degli esiti ambigui; niente retry automatici.
+- Il consenso alle offerte non autorizza la misura individuale. Aperture/clic
+  richiedono scelta informata nuova, versione distinta e revoca separata; i
+  vecchi 50 consensi WhatsApp non sono ampliati. Trigger consenso solo INSERT,
+  mai riattivarlo da UPDATE profilo/metadati. Le 12 email pregresse non hanno
+  aperture/clic recuperabili. Attribuzione 7 giorni, ordini reali e bundle unico.
+- Modulo corrente: vedere `js/auth.js` e il riepilogo registrazione sopra;
+  le vecchie descrizioni delle caselle vuote non descrivono più l'interfaccia.
+  L'uscita `promo` revoca solo offerte; mantenere le altre preferenze.
+- Template condiviso `supabase/functions/_shared/vetrina-email.mjs`: nove
+  varianti brevi e umane, oggetto sul vantaggio, blu/oro, prezzo/durata e
+  pulsante chiari. Tabelle/stili inline e Arial, leggibilità senza immagini.
+  Nessuna promessa di vendita o metrica inventata.
 
 ### Edge Functions email (7+ totali)
 - **Transazionali:** `send-auth-email` (5 tipi auth), `notify-seller` (3 tipi), `notify-alert` (1), `notify-message` (1), `welcome-email` (1).
@@ -1971,55 +855,28 @@ Sistema semi-automatico per scoprire bandi pubblici reali e inviarli agli iscrit
 }
 ```
 
-## 🔍 AI Scout Bandi v1 (sostituito) — note storiche
+### Diagnostica Scout Bandi
 
-V1-v3 (single-call Gemini) sostituito da v4 multi-step il 27 mag 2026 sera. V1 aveva qualità bassa: Gemini con prompt ambiguo proponeva link generici (subito.it, blog) anche con whitelist nel prompt. La pipeline v4 fa decisioni più piccole e focalizzate, drop a ogni step, qualità ×3.
+Il vecchio Scout v1 è sostituito dalla pipeline sopra. File principali:
+`supabase/functions/scout-bandi/index.ts`, `bando-action/index.ts`,
+`api/bandi/[slug].js`, pannello in `dashboard.html`.
 
-**Flusso:**
-1. Cron `scout-bandi-daily` (`0 8 * * *` UTC = 10:00 Roma estate) chiama edge function `scout-bandi`.
-2. Per ogni regione con iscritti attivi in `bando_alerts`, chiama Gemini 2.0 Flash via `generativelanguage.googleapis.com` con `google_search` grounding e prompt strutturato. Modello target: `gemini-2.0-flash` (free tier ~1500 req/giorno).
-3. Filtra dominio non-istituzionale (esclude subingresso.it, subito, immobiliare, kijiji, annunciambulanti). Parsing JSON array dall'output Gemini.
-4. Dedup via `bando_scouting_log.content_hash` (SHA-256 di `regione|link`) + UNIQUE (regione, content_hash). Stesso bando già visto = skip silenzioso (23505).
-5. Se ci sono novità → 1 mail HTML riassuntiva a tutti gli admin con per ogni bando: titolo, comune, scadenza, riassunto, link originale, 2 bottoni "✓ Invia agli iscritti" (verde) e "✗ Scarta" (grigio). I bottoni puntano a `bando-action?t=<token>&a=approve|reject`.
-6. Click "approve" → edge function `bando-action`: marca status='approved', carica `bando_alerts WHERE regione=X`, manda mail individuale via Resend a ogni iscritto, marca status='sent' con `sent_count`. Idempotente: secondo click mostra "Già inviato".
-7. Click "reject" → status='rejected', stop.
+Prima di intervenire, leggere stato cron `scout-bandi-daily`, ultimo
+`discovered_at`, conteggi per `status`, `admin_briefing_state` e iscrizioni
+effettive. Errori/quota Gemini: verificare risposta e disponibilità del modello
+prima di cambiare `GEMINI_MODEL` o `GEMINI_SLEEP_MS`; quote e prezzi di maggio
+non sono un riferimento corrente. Briefing: controllare pending e gap 72 ore;
+landing 404: slug, stato approved/sent e permessi di `get_published_bando`.
 
-**Schema scouting (`PATCH_BANDO_SCOUTING_20260527.sql`):**
-- `bando_scouting_log(id, regione, titolo, link, fonte, ai_summary, status, discovered_at, reviewed_at, reviewed_by, sent_at, sent_count, approve_token uuid UNIQUE, reject_token uuid UNIQUE, content_hash)` UNIQUE(regione, content_hash). RLS bloccata, accesso solo via service_role o RPC SECURITY DEFINER.
-- RPC `admin_bando_scouting_list(p_status, p_limit)` SECURITY DEFINER + is_admin gate.
-- RPC `admin_bando_scouting_decide(p_id, p_action)` SECURITY DEFINER per reject (l'approve passa per `bando-action` perché deve fare il broadcast email).
+Non forzare invii, pubblicare bandi, cambiare cron o cancellare log per una
+semplice diagnosi. Non estrarre secret dalle definizioni SQL per stamparli.
+Test manuali con effetti reali e pulizie richiedono ambito autorizzato.
 
-**Edge functions:**
-- `scout-bandi` (`--no-verify-jwt`, auth via Bearer SB_SECRET_KEY): cron + Gemini + briefing admin.
-- `bando-action` (`--no-verify-jwt`, no auth, accesso via token unguessable nel link): gestisce click approve/reject. Pagina HTML di conferma con bottone "Apri dashboard".
+## Backup e memoria comune
 
-**Frontend:**
-- Pannello `#bandoScouting` in `dashboard.html` sopra "Avvisi Bandi". 3 badge (Pending, Inviati, Destinatari tot). Lista cards bandi pending con bottoni inline.
-- Click "Invia agli iscritti" da pannello → richiama l'edge `bando-action` con approve_token recuperato via RPC. Stesso meccanismo del bottone email.
-
-**Secrets richiesti:**
-- `GEMINI_API_KEY` — creare gratis su https://aistudio.google.com → Supabase Dashboard → Edge Functions → Manage Secrets → Add. Senza la chiave, scout-bandi gira ma non trova nulla (skip silenzioso, log warning).
-- `RESEND_API_KEY` — già presente.
-- `SB_SECRET_KEY` — già presente.
-
-**Cron PATCH (`PATCH_CRON_SCOUT_BANDI_20260527.sql`):** template con `:'service_jwt'`. Applicato via DO block PL/pgSQL che estrae la chiave da `pg_get_functiondef('notify_bando_subscribers_on_annunci')` e crea il `cron.schedule` con `format(...)` — la chiave non esce mai dal DB.
-
-**Tradeoff e limiti noti:**
-- Gemini può allucinare link inesistenti (raro ma succede): per quello c'è l'approvazione umana. Lo scout = scoperta, l'umano = filtro qualità.
-- Solo regioni con iscritti attivi vengono scansionate (4 al 27 mag: Piemonte/Campania/Marche/Calabria). Risparmio quota Gemini.
-- Free tier Gemini Flash: ~1500 req/giorno. A regime con 20 regioni iscritte = 20 req/giorno → margine abbondante.
-- Falsi positivi attesi: gestiti via reject button. Reject di un bando memorizza il content_hash → non ri-proposto.
-
-## 🛡️ Backup Sessione & Handoff Agente (27 mag 2026)
-
-Passaggio Claude Code → Codex CLI per riduzione costi. Sistemi di sicurezza messi in piedi:
-
-- **`AGENTS.md`** (nuovo): file letto da Codex (e qualsiasi agente AI) all'inizio di ogni sessione. Contiene tutte le regole operative + puntatore a questo file. **Tienilo allineato con `CLAUDE.md`** quando modifichi una delle due fonti.
-- **`scripts/session-backup.ps1`**: script PowerShell da lanciare PRIMA della prima modifica di ogni sessione. Crea un tag git `backup/session-YYYYMMDD-HHMMSS[-reason]` su HEAD e lo pusha su origin. Cleanup automatico dei tag locali oltre i 30 (i remoti restano per sempre).
-  - Uso: `.\scripts\session-backup.ps1 -Reason "codex-feature-X"`
-  - Ripristino: `git tag -l "backup/session-*"` per listare, poi `git reset --hard backup/session-…`.
-- **Snapshot full repo** in `C:\Users\utente\Documents\backup-subingresso\snapshot-2026-05-27-codex-handoff\` (106 MB, 135 file, escluso `node_modules`/`.vercel`/`.git`). Contiene `_SNAPSHOT_README.md` con stato del progetto, ultimi 10 commit, istruzioni di ripristino.
-- **Regola PowerShell evergreen**: non usare `2>&1` su exe nativi (git, npm) — wrappa stderr come `NativeCommandError` e setta `$?=$false` anche con exit 0. Per silenziare output: `| Out-Null` senza redirect stderr. Già documentato in `feedback_git_commit_quotes_powershell.md` per `git commit` ma vale per tutti i nativi.
+Regole e comandi in `AGENTS.md`. `CLAUDE.md` contiene solo `@AGENTS.md`,
+compatibile anche con la versione Claude Code installata al 23 ottobre
+(2.1.156). Non ricreare riepiloghi paralleli né letture integrali obbligatorie.
 
 ## ⚠️ Deploy & Troubleshooting Supabase
 
@@ -2049,28 +906,19 @@ Passaggio Claude Code → Codex CLI per riduzione costi. Sistemi di sicurezza me
 - `trg_check_listing_milestones` (AFTER UPDATE, scatta milestone views/saved se OLD<N AND NEW>=N — vedi sezione "Hero Dashboard Venditore").
 - `trg_check_message_milestone` (AFTER INSERT su `messaggi`, scatta `first_message`/`msgs_5` per messaggi acquirente→venditore).
 
-### Cron pg_cron attivi
+### Cron pg_cron — elenco documentale da verificare live
 - `unfeature-expired-daily` 03:00 — cleanup vetrine scadute.
-- `increment-featured-views` ogni 6h.
+- `increment-featured-views`: disattivato l'8 ottobre 2026; elenco storico, non riattivare.
 - `weekly-buyer-digest` Lun 09:00 (TODO: spalmare).
 - `weekly-seller-stats` Lun 09:00 (TODO: spalmare).
 - `admin-anomaly-check` 09:00 daily.
 - `engagement-reminders` 10:00 daily.
 
-## 🌐 Cache Versions Correnti
+## Versioni degli asset
 
-- `data.js?v=17` (6 mag 2026 — `toggleSaveListing` passa source `salva_preferito` a `openAuthModal`).
-- `auth.js?v=18` (9 mag 2026 — fix `_AMO_VALID_SOURCES`: aggiunti `chat_click,whatsapp_click,call_click` (mancavano dal 6 mag, venivano filtrati a `'direct'` falsando il funnel)).
-- `js/pages/annunci.js?v=6` (6 mag 2026 — formatFullName per USER_NAMES).
-- `js/pages/annuncio-detail.js?v=19` (16 mag 2026 — correlati con `_featuredFirst()`: annunci in Vetrina prima, mescolati per rotazione equa; fetch pool 24 invece di limit 3. Allineato in `annuncio.html` + `api/annuncio.js`. Storico v=17: `call_click`/`chat_click`/`whatsapp_click`, `#savedCount`).
-- `annuncio-detail.js?v=14` (5 mag 2026 — banner "Annuncio scaduto" + blocco contatti via `_blockIfExpired()` su startChat/makeCall/openWhatsApp).
-- `ui-components.js?v=11` (5 mag 2026 — voce "Supporto" nel footer).
-- `annunci.js?v=5` (5 mag 2026 — `_normalizeDayName` NFD + select include `giorni` + layout pannello compatto).
-- `css/tailwind.css?v=4` (10 mag 2026 — rebuild dopo aggiunta classi nuove hero seller dashboard: md:w-44, md:flex-row, md:p-4, md:gap-5, md:text-5xl, md:text-xl, md:p-8, group-hover:scale-105, lg:grid-cols-1, lg:text-6xl, lg:text-lg).
-- `page-view-tracker.js?v=3` (9 mag 2026 — slug sanitization: `match(/^[a-z0-9-]{1,120}/)` invece di `replace+slice(80)` per stoppare al primo char invalido. Era un bug che produceva slug malformati tipo `aprire-attivita-...avvihttpssubingressoitblo` quando la URL conteneva concatenazioni post-sanitize. Limit alzato 80→120 per slug bandi lunghi.).
-- **Bumpare `?v=` quando modifichi un file caricato con cache busting.** Le HTML invece NON hanno cache buster — il browser può servirle stale fino a Ctrl+Shift+R.
-- **Regola evergreen (16 mag 2026)**: i link nel corpo articolo (`<a>` dentro `#blogPostContent.prose`) erano INVISIBILI — Tailwind preflight azzera `a { color/text-decoration: inherit }` e `.prose` non li stilava. Fix: regola `.prose a` (blu #2563eb + bold + underline) nello `<style>` inline di `blog-template.html`. Vale per TUTTI gli articoli + le città auto-linkate. NON rimuovere. I box CTA (`.not-prose`) hanno classi proprie, non toccati.
-- **`blog-template.html` (7 mag 2026)**: ex `blog.html`, rinominato per non confliggere col rewrite SSR `/blog -> /api/blog`. Contiene tutto il JS client del blog: modificarlo qui (NON in `api/blog.js` che è solo SSR head). I `?v=` interni di data.js/auth.js/ui-components.js restano allineati al resto del sito.
+Leggere i riferimenti effettivi nei sorgenti con `rg`. Un elenco manuale
+congelato diventa obsoleto: aggiornare tutti i consumatori dell'asset modificato,
+inclusi HTML, template SSR e import dei worker, secondo `AGENTS.md`.
 
 ## 📰 Articoli "Bandi" — Pattern Replica
 
@@ -2128,36 +976,16 @@ Calabria 8866, Basilicata 7898, Abruzzo 7371, Molise 7276, Umbria 6403, Valle d'
 
 ## ⏳ TODO Aperti
 
-### 🎯 STATO + PROSSIMI PASSI (leggere per primo)
+### Attività da rivalidare
 
-> Questo file è il **manuale** del progetto (cosa fare + come funziona), NON un diario: il "cosa è stato fatto" sta nei commit git. Tenere solo ciò che serve alle prossime sessioni.
-> ⚡ STILE: l'utente è un vibe coder → risposte CORTE e SEMPLICI, zero gergo. Vedi CLAUDE.md regola n.1.
+Le priorità correnti sono nel documento informazioni. Le proposte seguenti
+provengono dal backlog storico: verificare prima codice, commit e stato live;
+non sono incarichi automatici né prova che una funzione manchi ancora.
+Numeri utenti/annunci, bandi pending, funnel e scadenze di maggio/giugno non
+sono più presentati come stato attuale. L'eventuale rotazione della chiave Gemini
+segnalata nel maggio 2026 va verificata senza ristampare o riutilizzare il valore.
 
-**Dove siamo (28 mag 2026):**
-- **34 annunci reali** attivi, 32 utenti veri. Collo di bottiglia n.1 invariato: crescita annunci (target 50-100 in Lombardia).
-- **AI Scout Bandi LIVE**: pipeline multi-step Gemini 2.5 Flash + briefing throttle 3gg + landing page `/bandi/<slug>` con cross-sell. 3 bandi pending reali (Grottammare, Catanzaro, Crotone). Iscritti `bando_alerts`: 4 (Piemonte, Campania, Marche, Calabria).
-- **Pannelli admin nuovi**: "Avvisi Bandi" (mostra iscritti email) + "AI Scout Bandi" (pending con approva/scarta 1-click).
-- **Handoff a Codex CLI preparato**: `AGENTS.md` (regole + playbook sez.12), `CLAUDE.md` aggiornato, `scripts/session-backup.ps1` (tag git pre-modifica), snapshot full in `Documents/backup-subingresso/snapshot-2026-05-27-codex-handoff/`.
-- **SEO**: Step 1 transazionale fatto; Bolkestein in crescita; traffico ~263 impr/mese. Competitor: annunciambulanti.it.
-- **Blog**: 20/20 regioni bandi + 5/5 "mercati ambulanti [regione]" + hub Bolkestein, tutti v2.
-- **Vetrina** Stripe attiva. Niente lotteria. Vetrina gratis solo via admin.
-- **Funnel iscrizioni** (90gg, analisi 27 mag): 100% conv vendi_submit (5/5), 20% popup_vetrina (2/10), 11% nav_accedi (5/44). Click annunci (whatsapp/salva/tel): **0 signup su 6 aperture**. Il blog non risulta tracciabile a signup (page_views non ha user_id).
-- **API key Gemini esposta in chat 27 mag**: `[REDATTA — vedi alert GitHub commit 450ecd06]` — rigenerare su AI Studio appena possibile + `npx supabase secrets set GEMINI_API_KEY=<nuova>`.
-
-Ordine consigliato prossima sessione:
-1. **Rigenerare GEMINI_API_KEY** + update secret (chiave attuale esposta in chat).
-2. **Approvare i 3 bandi pending** dalla dashboard se reali → testa flusso end-to-end mail + landing page.
-3. **Monitorare AI Scout 7-14 giorni**: vedere ratio bandi reali/falsi positivi → se rejection rate alto, ottimizzare prompt step 4 (verifica).
-4. **SC indicizzazione**: coda in `C:\Users\utente\Desktop\indicizzazione-prioritari.txt`, 10/giorno. Aggiungere `/annunci`, `/vendi`, `mercati-ambulanti-lazio`, ri-submit `bandi-posteggi-mercatali-trentino-alto-adige`, e quando arrivano landing `/bandi/<slug>` submit anche quelle.
-5. **Inventario reale beachhead** (priorità n.1): far crescere gli annunci (ora 34) → 50-100 in Lombardia. Lead magnet email sull'hub Bolkestein. Vedi `project_compete_annunciambulanti.md`.
-6. **Step 2 SEO — `api/annunci.js` per landing regionali SSR**: title/meta/H1 per `?regione=X`. Solo dopo ≥5 annunci attivi per regione.
-7. **Fase 5 piano blog conversion**: sbloccata (tracking ok). Pannello "Performance blog" admin, dopo 7-14gg di dati.
-8. **Nuovi articoli**: serie "Mercati settimanali [città]" + 6 Tier 2 + 3 Tier 3 Bolkestein.
-- **Decisioni utente in sospeso** (non toccare senza ok): Data audit (richiesto esplicitamente) · welcome_popup (costruire o rimuovere). Privacy: il 7 ottobre 2026 l'utente ha chiesto la pubblicazione usando solo Subingresso.it; identità legale e conformità rimangono da completare.
-- **Promemoria temporizzato**: maintenance mensile hub Bolkestein dovuta **~metà giugno 2026** (RPC `admin_bump_post_freshness` + ri-datare top + nuovo bullet cronologia) o decade dalle SERP "ultime notizie 2026".
-- **Stato filone regionale**: **5/5 chiuso** (Lombardia/Veneto/Emilia-Romagna/Toscana/Lazio, tutti v2).
-
-**Backlog aperti (task vere ancora da fare):**
+**Proposte storiche, stato da verificare prima di riprenderle:**
 - **Lead magnet email** sull'hub Bolkestein → porta annunci veri (priorità n.1). Outreach anche via gruppi FB / mercati di persona / associazioni FIVA-ANVA (vedi `project_compete_annunciambulanti.md`).
 - **Step 2 SEO landing regionali SSR** (`api/annunci.js`, modello `api/blog.js`): title/meta/H1 per `?regione=X`. Solo dopo ≥5 annunci attivi per regione.
 - **Fase 5 blog conversion**: pannello "Performance blog" admin + RPC `admin_blog_stats(p_days)`, dopo 7-14gg di dati → migliorare copy/CTA degli articoli con CR% basso e tante views. Tracking in `blog_conversions`.
@@ -2174,16 +1002,9 @@ Ordine consigliato prossima sessione:
 - **JSON-LD `author` → Person + pagina `/autori/<slug>`** (E-E-A-T per Google Discover; eligibility realistica 3-6 mesi).
 - **Cleanup conv vuote** (opzionale): `DELETE FROM conversazioni c WHERE NOT EXISTS (SELECT 1 FROM messaggi m WHERE m.conversazione_id = c.id);` — già nascoste lato client.
 
-### ✅ Già fatto (sintesi — dettagli completi nei commit git)
-- **SEO tech**: blog e annunci in SSR (`api/blog.js`, `api/annuncio.js`), Step 1 title/H1 transazionali su /annunci e /vendi, correlati + ordinamento featured-first, sitemap dinamica.
-- **Contenuti blog**: 20/20 regioni bandi + 5/5 "mercati ambulanti [regione]" + hub Bolkestein (+1 Tier 2) + guide costo/valore — tutti formato v2 scansionabile.
-- **Funnel/tracking**: `auth_modal_opens` (12 sorgenti) + pannello funnel admin, `blog_conversions`, `saved_count`, click chat/whatsapp/call tracciati.
-- **Vendi/UX**: wizard 6 step con preview e riepilogo, foto facoltative con un solo slot iniziale e altre foto mostrate dopo il primo caricamento, 5 foto anche gratis, titoli casuali, bozze locali con foto e recupero silenzioso.
-- **Vetrina**: pagamento unico Stripe, listino Premium e pacchetti multi annuncio dal22ottobre; nessun omaggio o sconto pubblicazione. Scadenza annuncio invariata. Contratto in data/VETRINE_PREMIUM.md.
-- **Lifecycle**: annunci 270gg, scaduti con badge + contatti bloccati + bottone riattiva.
-- **Pulizie 22-23 mag**: demo eliminati (restano 34 annunci veri) + lotteria welcome rimossa ovunque.
-- **27 mag (sessione handoff Codex)**: pannello admin "Avvisi Bandi" + AI Scout Bandi v4 multi-step (Gemini 2.5 Flash, 4 step focalizzati: discovery → HTTP validation → extraction → verifica) + briefing throttled 3gg + landing page SSR `/bandi/<slug>` con cross-sell annunci regionali (le mail agli iscritti ora linkano nostre pagine, NON PDF Comuni) + `AGENTS.md` con playbook completo (sezione 12 = troubleshooting Gemini/Resend/landing) + `scripts/session-backup.ps1` (tag git automatici per ogni sessione) + snapshot full repo in Documents.
-- Le **lezioni evergreen** sui bug stanno nella sezione "Bug Storici Generalizzabili" (non qui).
+### Lavori già conclusi
+
+Esiti nel registro e nei commit; evitare di replicarli in questo manuale.
 
 ### Bug minori segnalati ma non urgenti
 - `moderation.js` non incluso in HTML (mitigato da trigger DB).
@@ -2191,19 +1012,21 @@ Ordine consigliato prossima sessione:
 - UPDATE policy senza `WITH CHECK` (Postgres riusa USING).
 - Rimozione foto in `modifica-annuncio.html` corretta il 7 ottobre 2026 con WeakMap File→preview.
 
-## 🚨 SECURITY Open Vectors
+## Stato delle verifiche di sicurezza
 
-- `profiles.telefono` accessibile a `authenticated` per non rompere altre query (vendi.html prefill, dashboard own profile). Vector secondario scrape telefoni profili senza context annuncio.
-- Dump completo schema (`supabase db dump --linked --schema public`) per allineare repo a prod (manca: featured*, expires_at, visualizzazioni, page_views, valutatore_logs, saved_listings, alerts).
+Le vecchie note sul telefono pubblico di `profiles` sono superate dalle
+restrizioni di colonna e RPC documentate sopra e in `DATA_QUALITY_AUDIT_20261008.md`.
+Un vecchio dump SQL non dimostra lo schema live: verificarlo quando serve,
+senza cambiare permessi o cancellare dati per allineare il repository.
 
-## 💡 Strategia Monetizzazione
+## 💡 Strategia Monetizzazione — proposte storiche, non funzioni attive
 
 - **NON puntare al volume annunci** ma **lead gen finanziaria verticale**.
 - **Tier 1**: microcredito (PerMicro, Banca Etica).
 - **Tier 2**: prestiti consumer (Cofidis/Findomestic/Compass/Younited).
 - **Tier 3**: broker creditizi OAM (Auxilia, Credipass, BPIfutura) — ingresso più rapido.
 - Modelli CPL EUR 15-50 o CPA 1-5%.
-- **Lead capture progressive**: mai chiedere telefono al primo contatto. Email+password al signup. Nome/telefono solo quando serve (pubblicazione, alert SMS, finanziamento).
+- **Ipotesi storica di raccolta progressiva dei contatti**: superata per la registrazione dalla richiesta del 23 ottobre (telefono obbligatorio). Non rimuovere il campo per applicare questa vecchia proposta.
 - **Espansione futura** a edicole, autoscuole, compro oro (TAM affine, no leader verticale).
 - **Plateau utenti realistico**: 10-20k registrati, 2.500-6.000 MAU.
 - **Costi infra a regime**: anno 1 €0-20/mese (free), anno 2-3 €20-40/mese (Resend Pro), plateau €30-50/mese.
@@ -2269,499 +1092,23 @@ Regola per fascia valore: sotto EUR 7.500 tutela max EUR 249-399; EUR 7.500-20.0
 - **"mercati ambulanti [regione]"** — Piemonte CTR 40% confermato. Replicare per Lombardia, Veneto, Emilia-Romagna, Toscana, Lazio. Intent diverso dai bandi-* (informational vs concorso pubblico).
 
 
-### Calendario fiere (9 ottobre 2026)
+## Calendario fiere — fonti e manutenzione
 
-14 ottobre 2026 — Mantova: 84 schede in 33 comuni, prima 12; confronto dei
-64 comuni e 195 registrazioni Lombardia, tutti i programmi scaricati. Fonti,
-hash, decisioni e limiti in `data/fiere-mantova.json` e `data/FIERE.md`; archivio
-`Documents/ricerca-fiere-mantova-20261014`. 50 schede con contatti, due termini
-documentati (15 maggio, scaduti). Natale Mantova 19 aperture; San Fortunato
-18 ottobre, Madonnina 6 settembre, San Gallo 18 ottobre; Sermide market
-26–28 giugno. Grazie 97 posteggi previsti, incongruenza validità fino al 17
-agosto dichiarata; Viadana 70 €/giorno somministrazione e hobbisti gratuiti.
-Gonzaga centro 11 date distinto dalle tre fiere nazionali; programmi grafici
-letti visivamente. Postumia con date discordanti resta testuale; tartufo/riso
-senza commercio esterno documentato nell’audit. Coordinate per comuni fusi
-da registro/mappa ufficiale, anagrafica conservata. 12 ID precedenti mantenuti,
-altre 3.057 schede identiche; catalogo 3.141. Cache fiere.js 37, JSON 30.
-Sessione manuale in checkout isolato, Venezia resta alla sessione sospesa;
-commit dati `d6a96b0`, Vercel riuscito, hash catalogo online identico. Verificati
-84 risultati e 13 dettagli/filtri su computer e telefono senza errori. Test
-generali Chromium/WebKit, settori, controlli provinciali e gitleaks superati.
-TO DO spuntata dopo verifica: 21 province completate, 89 mancanti. Alla ripresa
-rileggere main e preservare Mantova nel build/cache; modifiche preesistenti
-conservate. Nessuna candidatura o comunicazione a terzi.
+- Ricerca e prove provinciali complete: `data/FIERE.md`, audit
+  `data/fiere-*.json` e dossier privati `Documents/ricerca-fiere-*`.
+  Checklist e decisioni dell'utente: `Subingresso.it informazioni.md`.
+  Non replicare qui i resoconti di ogni provincia o conteggi/versioni di cataloghi passati.
+- Ripartire dai dati e dall'ultimo commit effettivi; preservare ID, fonti,
+  province estranee e modifiche concorrenti. Non rigenerare da snapshot vecchi.
+- Build `scripts/build-fiere.py`, catalogo `data/fiere-fonti.json` e test pertinenti
+  indicati nel dossier. Verificare build ripetibile, fonti, semantica delle date,
+  filtri, dettaglio e stato online prima di dichiarare conclusa una ricerca.
+- Date confermate, periodi indicativi, storico e annullamenti restano distinti;
+  non inventare disponibilità, costi, contatti o condizioni per gli espositori.
+  Ricerca provinciale conclusa con limiti espliciti e manutenzione futura sono
+  stati differenti. Non contattare organizzatori o inviare domande senza richiesta.
+- Pagine autonome, affinità, affluenza e filtri sono descritti nel contratto
+  fiere; organizzatori e offerte commerciali in `data/ORGANIZZATORI_EVENTI.md`.
 
-14 ottobre 2026 — Como: 83 schede in 31 comuni (prima 16), ricerca nominale
-nei 147 comuni attuali e lettura di tutti i 65 programmi Lombardia CO/2026.
-Anagrafica 148 chiavi: Ronago/Uggiate-Trevano accorpati nell’audit a Uggiate
-con Ronago, coordinate nazionali conservate. Override `data/fiere-como.json`,
-fonti/hash, esclusioni e limiti in `data/FIERE.md`; archivio locale
-`Documents/ricerca-fiere-como-20261014`. 32 contatti, 11 termini assoluti;
-Uggiate 13 dicembre, termine 27 novembre, hobbisti 10 € e P.IVA 20 €, refusi
-del modulo dichiarati. Cantù Crocifisso 18 ottobre, termine 19 agosto e spunta;
-Santi 30 ottobre–2 novembre, termine 30 settembre per un posteggio dolciumi.
-Anzano banchi solo 27 settembre; MOMA due appuntamenti separati; Griante
-lunedì 16 novembre. Domaso 20 agosto annullato; Menaggio date discordanti
-testuali. Natale 2025 esplicito in nove schede, Como casette 2026 non dedotto
-dall’opzione del bando. Bandi Cantù recuperati dal browser, Masigott grafico
-letto visivamente; presenza agricoltori solo domenica 18. Tutti i 16 ID Como
-preservati e altre 2.853 schede identiche. Commit `68c72cd`: Vercel riuscito,
-catalogo online identico al commit; 83 schede e dieci dettagli su computer e
-telefono, filtri settori e assenza di errori verificati. Build/settori, regressioni
-dati e calendario Chromium/WebKit passati, usando `PLAYWRIGHT_MODULE`.
-Cache fiere.js 35, JSON 28; TO DO 19 completate, 91 mancanti su 110,
-spuntata dopo verifica. Nessuna candidatura o comunicazione a terzi;
-nessun altro intervento o provincia avviati.
-
-14 ottobre 2026 — Parma: 81 schede in 30 comuni (prima 9), ricerca nominale
-nei 44 comuni e 242 dettagli regionali candidati, 42 validi. Registro annuale
-completo non recuperato; fonti/hash, esclusioni e conflitti in fiere-parma.json
-e data/FIERE.md; archivio Documents/ricerca-fiere-parma-20261014. 76 schede con
-date precise, 2 periodi, 1 testuale, 2 ricorrenze; 14 contatti, 6 termini
-assoluti/relativi. November Porc mercati solo sabato/domenica; Fragno quattro
-domeniche, Natale Ghiaia sei date. Borgo Val di Taro 2027: modulo esplicito,
-domanda almeno 60 giorni prima. San Giuseppe quote distinte per categoria;
-Fidenza PAC26 e conflitto termine 6/7 settembre dichiarati, entrambi trascorsi.
-Rocca e Natura Natale, Fontanellato 8 dicembre, Varsi e Bardi senza correzioni
-ipotetiche; moduli 2021/2022/2025 non estesi al 2026. Nove ID Parma conservati,
-altre 2.638 schede identiche. Cache fiere.js 32, catalogo 25; TO DO 16 province
-completate, 94 mancanti. Commit dff6cc9: Vercel riuscito, catalogo online identico
-al file nel commit; 81 schede e otto dettagli verificati su desktop/telefono,
-senza errori. Build/settori e calendario completo Chromium/WebKit passati.
-Nessun modello locale né nuovo intervento automatico autorizzato.
-
-13 ottobre 2026 — Vicenza: 117 schede in 49 comuni (prima 59), ricerca nominale
-nei 114 comuni e confronto con 549 programmi Veneto; audit in fiere-vicenza.json
-e data/FIERE.md. 55 giornate precise, 20 periodi, 42 testuali; 48 contatti, 6 scadenze.
-Sarcedo 8 dicembre: domanda 3 dicembre 23:59, suolo gratuito, tipo B e alimentari
-con SCIA; Barbarano 22/25 novembre con tariffe e moduli distinti, termini passati.
-Asiago Santi 2 novembre, occupazione 7:30; 30 giorni solo per ditte in P.tta Poste.
-Coordinate tre comuni unificati da GeoNames/localita.json; altre 2.466 schede
-identiche. Scartato nonholeta.it con contenuti estranei; Bassano/Malo e programmi
-Nove da approfondire, scansioni residue non verificate. Nessun modello locale.
-Cache fiere.js 30, catalogo 23; TO DO 14 completate, 96 mancanti su 110.
-Commit b7f1e13 pubblicato: Vercel riuscito, hash catalogo online uguale al commit;
-117 schede e sei dettagli operativi verificati su desktop/telefono, filtri senza
-errori. Build, settori e calendario completo Chromium/WebKit passati.
-Nessun nuovo intervento automatico autorizzato.
-
-13 ottobre 2026 — Treviso: ricerca nei 94 comuni, 337 righe regionali e tre
-calendari Veneto; catalogo pubblicato e verificato con 79 schede in 39 comuni, prima 48.
-Override `data/fiere-treviso.json`, audit di fonti/comuni/esclusioni e limiti.
-42 ID conservati, 37 nuovi; sei falsi positivi rimossi, altre 2.446 schede identiche.
-Stelle a Natale aggiunge 7 dicembre; San Gregorio commerciale 7–9 marzo,
-street food/luna park 6–10. Santa Lucia domanda 30 settembre passato; Nervesa
-24 aprile passato. Tariffe e moduli distinti per operatori; date ambigue testuali.
-Qwen su otto microtask, 4.782 token locali, 288 s; quattro note usate dopo
-revisione Codex (una intatta, due correzioni semantiche e una formulazione).
-Worker senza web/pubblicazione; operation treviso-fiere-micro-v1-20261013 conclusa,
-non ripetere. Risparmio netto non misurato. Cache fiere.js 29, catalogo 22.
-Pubblicazione verificata: `2056461`, Vercel riuscito e hash live identico.
-Suite Chromium/WebKit e controlli pubblici desktop/telefono, sei dettagli e
-filtri settore superati. TODO: 13 province completate, 97 ancora da fare;
-prossima Vicenza, senza autorizzazione a iniziarla automaticamente.
-
-
-13 ottobre 2026 — prova ibrida per il solo comune di Gattinara: tre nuove schede
-in `data/fiere-comuni.json`, applicate dal build solo al comune approvato.
-Codex sceglie fonti, controlla date/costi/ammissioni e pubblica; Qwen trova ID
-delle prove e scrive note brevi. Sei microtask validi, circa 250 secondi;
-due note intatte, una piccola correzione. San Martino 10 novembre, domanda
-16 ottobre e niente spunta; Rosa e Rosso 30–31 maggio con quote per categorie;
-LUVA 4–6 settembre come solo periodo della festa. Moduli Pro Loco storici 404,
-nuove edizioni non inferite. Audit e limiti in `data/FIERE.md`.
-Invio locale parametrico autenticato installato, niente cloud per singolo avvio.
-La precedente pubblicazione Padova è stata verificata live: 95 schede e
-deployment GitHub/Vercel riusciti; la nota pendente del 12 ottobre è storico.
-Cache fiere.js 28, catalogo 21; ricerca del resto di Vercelli ancora da svolgere.
-
-Aggiornamento 12 ottobre 2026 — Padova: 95 schede in 41 comuni, prima 11.
-Ricerca nei 101 comuni attuali (102 chiavi geo più Santa Caterina d’Este),
-167 righe Veneto, quattro calendari ufficiali e fonti comunali/organizzatori.
-Override `data/fiere-padova.json`, audit fonti/comuni/esclusioni e limiti;
-43 contatti, nove termini. Piove sei giorni di banchi; Arsego mercato 17–20;
-Baone Bisi 16–17 maggio; Rustega 3 maggio; Saonara mercato 10 maggio;
-Gazzo 11 ottobre; San Lorenzo Vo’ 8–10 agosto; Bartolomeo Battaglia 22 agosto.
-Bertipaglia termine 16 ottobre solo ragazzi, Cittadella 30 settembre solo
-esposizione senza vendita; antiquariato Cittadella con procedura sospesa da chiarire.
-Folpo periodo 22–27 ottobre, giorni banchi da verificare; Natale solo storico.
-Catalogo 2.491 eventi, 2.336 con edizioni, 1.961 con date pubblicate; altre province
-identiche. Cache fiere.js v=27, JSON v=20. TO DO: 12 completate, 98 mancanti;
-prossima Treviso. Fonti e limiti in data/FIERE.md, nessun invio di domande.
-Pubblicazione Padova in attesa: push `61503dc` riuscito, ma nessun check/deployment
-Vercel apparso e live ancora a 11 schede. CLI non autenticata; vecchio progetto
-locale `subingresso.it` diverso dal `subingresso` nel precedente stato GitHub.
-Non fare deploy su quel collegamento senza verifica. Ricerca e test completati;
-riattivare/verificare integrazione e controllare live 95 schede/hash catalogo.
-
-Aggiornamento 11 ottobre 2026 — Verona: 75 schede (prima 20), 36 comuni con
-manifestazioni, ricerca nei 98 comuni; 277 segnalazioni regionali e sei documenti
-scaricati. Override `data/fiere-verona.json`, audit comuni/fonti/esclusioni e dubbi.
-Tregnago solo 8/11 novembre con termine 25 ottobre; Garda termine 15 ottobre
-con testo incoerente segnalato; San Zeno sette giorni di mercato; Sommacampagna
-aprile solo il 19. Sagre stagionali distinte dalle giornate commerciali; saloni
-con ammissione espositiva. Catalogo 2.407 eventi, 2.250 con edizioni, 1.917 con
-date pubblicate; altre province identiche. Cache fiere.js v=26, JSON v=19.
-TO DO: 11 province completate, 99 mancanti; prossime Padova, Treviso.
-Nessuna autorizzazione automatica a nuovi interventi; limiti in data/FIERE.md.
-
-Aggiornamento 11 ottobre 2026 — Bergamo: 80 schede (prima 33), 42 comuni con
-eventi, ricerca nominale nei 243 comuni e 261 programmi regionali scaricati.
-Override `data/fiere-bergamo.json`, audit fonti, esclusioni e incongruenze;
-40 contatti e cinque scadenze. Albino solo 9/11 ottobre, Palosco tre domeniche,
-Clusone Natale 28 giornate con termine 11 ottobre; nessun posteggio garantito.
-Catalogo 2.352 eventi, 2.192 con edizioni; altre province preservate.
-Cache fiere.js v=25, fiere.json v=18. TO DO: 10 province completate, 100 mancanti.
-Prossime priorità Verona, Padova, Treviso; nessuna autorizzazione automatica.
-Limiti delle scansioni, fonti indicizzate e segnalazioni in data/FIERE.md.
-
-Aggiornamento 11 ottobre 2026 — Milano: 83 schede (prima 15), 47 comuni con
-eventi, ricerca nei 133 comuni. Override `data/fiere-milano.json`, 140 programmi
-regionali scaricati e audit fonti/comuni/esclusioni. Nove fiere comunali con
-scadenze; corretti giorni commerciali Paderno, Assago, Melegnano e Motta.
-Catalogo 2.305 eventi, 2.145 con edizioni, 1.842 con date pubblicate.
-Cache fiere.js v=24, fiere.json v=17. TO DO: 9 province completate, 101 mancanti.
-Prossime priorità Bergamo, Verona, Padova, Treviso; nessuna autorizzazione a
-nuovi interventi automatici. Limiti e segnalazioni da approfondire in data/FIERE.md.
-
-Aggiornamento 11 ottobre 2026 — Bologna: 65 schede (prima 15), 39 comuni con eventi,
-55 comuni controllati; `data/fiere-bologna.json`, override nel build. Catalogo
-2.237 eventi, 2076 con edizioni, 1784 con date. Santa Lucia 6 novembre–27 dicembre;
-Tartòfla quattro weekend, Crevalcore riuso 22 novembre, Alberino 8 dicembre;
-consolidata Tartufesta Sasso. Limiti e fonti in data/FIERE.md.
-Cache fiere.js v=23, fiere.json v=16. TO DO: 8 province completate e 102 mancanti,
-in ordine globale di priorità commerciale. Preferenza utente: Nord, zone
-ricche e fiere richieste; stima per ambulanti, non volumi Google misurati.
-Prossime: Milano, Bergamo, Verona, Padova, Treviso. L’ordine non costituisce
-autorizzazione a nuove ricerche/interventi automatici.
-
-
-Ricerca Prato (11 ottobre 2026): tutti i sette comuni, 38 manifestazioni aggiunte.
-Override riproducibile in `data/fiere-prato.json`; fonti, esclusioni e limiti in
-`data/FIERE.md`. Settima provincia approfondita, 103 restanti. Carmignano:
-13 concessioni, domande 6–31 ottobre; Bigonge ottobre spostata al 19 settembre.
-Poggiole Natale provvisorio; ricorrenze testuali e conflitti conservati.
-Cache fiere.js 22, fiere.json 15. Non proiettare programmi storici sul 2026
-né considerare automaticamente ammessi ambulanti professionali.
-
-Ricerca Trieste (11 ottobre 2026): sei comuni controllati, 24 manifestazioni in
-quattro comuni (+23), 22 con edizioni 2026 e due con storico 2025. Dati e audit
-in `data/fiere-trieste.json`; 45 fonti, pagine comunali renderizzate in browser,
-PDF operativi e calendario regionale (due fiere espositive). Barbacan dicembre:
-80 euro, produttori diretti, candidatura 30 ottobre–8 novembre. Antiquariato
-Trieste 2027: 13 giornate approvate, domanda SUO 19 ottobre–18 novembre 2026. San Nicolò: PEC per
-eventuali posti residui, senza disponibilità garantita. Corte dei Miracoli Muggia
-esclusa per fonti discordanti; avviso gestione 23 ottobre ore 12 riguarda il gestore.
-San Martino/Natale restano storici; mercatino Madonna d’Agosto solo 15 agosto.
-Altre province identiche; totale 2.149 eventi, 1.988 con edizioni, 1.715 con date
-precise. Sesta provincia ricercata, 104 da approfondire. Cache fiere.js 21,
-fiere.json 14. Build, settori, regressioni catalogo e browser Chromium/WebKit
-verificati; dettagli Trieste ricontrollati dopo le date 2027.
-Limiti e aggiornamenti in data/FIERE.md e TODO.
-
-10 ottobre: filtro principale “Cosa vendi” con quattro macro categorie
-(alimentare, non alimentare, antiquariato e vintage, artigianato/hobbistica).
-Campo `merchandiseSectors` generato da build-fiere.py usando settori della fonte
-o temi espliciti nel nome quando i settori mancano/sono generici. Fiere miste
-multi categoria; antiquariato/artigianato inclusi anche nel non alimentare;
-indicazioni insufficienti solo in Tutti i settori. Non dedurre alimentari da
-“non alimentare”, “misto”, “merci varie” o dal tipo sagra. URL `settore`, elenco,
-mappa, mesi, reset e dettaglio allineati; test test-fiere-sectors.py/test-fiere.cjs.
-Cache fiere.js 20, fiere.json 13; dettagli in data/FIERE.md.
-
-Ricerca Arezzo (11 ottobre 2026): scelta casuale tra province incomplete; 36 comuni
-cercati, 89 manifestazioni in 31 comuni (+88). `data/fiere-arezzo.json` conserva
-fonti, copertura comunale, esclusioni/dubbi, hash di 79 HTML e sette PDF; 15
-download HTTP/TLS falliti registrati, diverse fonti lette via web. Programma
-CASENTINO2000 96 pagine: testo estratto e passaggi commerciali consultati;
-planimetria Natale solo testo, grafica non verificata. 77 schede con giornate
-precise, tre periodi, sei edizioni testuali, tre con mesi/ricorrenze; 24 con
-contatti, cinque scadenze. Arezzo Natale domanda PEC 31 ottobre; Castiglion
-Fiorentino 16 ottobre, dieci giornate natalizie separate. Ranco/Mostra Chianina
-consolidata a Sestino (28–29 settembre), Nirvana in Passioni in Fiera; mercatini
-dei privati/hobbisti e beneficenza esclusi, Soci solo street food esterno.
-Cavriglia fiera 1 agosto/mercato 2; Raggiolo mercatino 1 novembre. Date non
-dedotte dalle delibere o dalle ricorrenze, bandi scaduti/non generalisti distinti.
-Laterina usa coordinate documentate della località (coordinateSource), comune
-unificato privo di coordinate. Build conserva identiche le altre 2.037 schede
-e ID Antiquaria. Totale 2.126 eventi, 1.965 con edizioni, 1.692 con date; quinta
-provincia ricercata, 105 ancora da approfondire. Cache fiere.js 20, fiere.json 13;
-regressioni provinciali/browser in scripts/test-fiere.cjs, dettagli in data/FIERE.md.
-
-Ricerca Monza e della Brianza (10 ottobre 2026): `data/fiere-monza-brianza.json`,
-55 comuni cercati, 86 manifestazioni in 29 comuni (+72), 199 righe regionali e
-199 programmi scaricati, 176 con testo estraibile; audit di righe, comuni,
-hash, nove allegati letti visivamente, esclusioni e dubbi. 82 schede con giorni
-precisi, un periodo natalizio, tre edizioni testuali; 26 con contatti, sei
-scadenze. Lissone Natale: tre domeniche separate; Epifania 5 gennaio 2027,
-35 concessioni, domande entro 6 novembre 2026 via SUAP. Brocante Monza:
-15 giornate, senza agosto. Biassono e Pro Loco in Fiore restano testuali per
-giorni non confermati/discordanti; sagre senza prova di commercio esterno
-escluse. Build sostituisce solo MB: 1.952 schede esterne identiche, 14 id
-precedenti conservati. Totale 2.038 eventi, 1.879 con edizioni, 1.615 con date.
-TODO: quarta provincia ricercata, 106 ancora da approfondire. Cache fiere.js
-19, fiere.json 12; regressioni provinciali in scripts/test-fiere.cjs.
-
-Lecco (10 ottobre 2026): ricerca negli 84 comuni, 46 manifestazioni in 23 comuni;
-40 schede con date precise, 3 periodi ricorrenti e 3 date testuali. Fonte curata
-`data/fiere-lecco.json`: audit delle 160 righe regionali, 160 programmi scaricati,
-122 con testo; controllo visivo di tre programmi Galbiate, scansioni residue da
-verificare. Build sostituisce solo Lecco e conserva le altre 1.920 schede identiche.
-Totali attuali 1.966 eventi, 1.807 con edizioni, 1.546 con date; 107 province da
-approfondire. Viganò 52 posteggi: domanda 7 dicembre 2026, fiera 7 febbraio 2027;
-nessuna proiezione 2028/2029. Sant'Andrea Oggiono commercio 25–26 ottobre, San Gaetano
-Casatenovo ambulanti solo 2 agosto e distinta fiera zootecnica 30 luglio–3 agosto.
-Merate Street Food/Cioccolato e Premana: date testuali perché discordanti/non
-verificate. Galbiate Natale hobbisti rimossa, Valmadrera solo privati esclusa,
-Burolla 2026 annullata. TO DO spuntata con voce separata per verifiche periodiche.
-Cache fiere.js 18, fiere.json 11; test provinciali e browser in test-fiere.cjs.
-
-Lodi (10 ottobre 2026): ricerca nei 60 comuni, 43 manifestazioni in 26 comuni;
-35 con date 2026 e 8 con storico 2025 da riconfermare. Fonte `data/fiere-lodi.json`
-con hash delle 3 righe regionali, audit per comune, esclusioni e dubbi. Build applica
-Brescia e Lodi senza cambiare le altre schede. Totali 1.927 eventi, 1.768 con edizioni,
-1.513 con date; 108 province ancora da approfondire. Mercato San Bernardino 10 maggio,
-Brembio 15 marzo, Cavenago 22 marzo; Codogno vintage luglio/agosto sospesi. Casaletto
-usa modulo/PDF 11/18/25 ottobre; Secugnago usa modulo 2026 (8 dicembre, domanda
-20 novembre, gratuito) rispetto all’avviso rimasto al 2025. Spunta Codogno 23 settembre
-distinta dalla concessione bar 16 ottobre. Fonte rimossa o sola sagra non prova posteggi
-liberi: verifiche residue nell’audit. Cache fiere.js 16, fiere.json 9; test provinciali
-e browser in scripts/test-fiere.cjs. Cavacurta usa coordinate della località con
-coordinateSource (Castelgerundo privo di coordinate in comuni.json); build le valida.
-Dettagli e limiti in data/FIERE.md.
-
-Ricerca provinciale approfondita di Brescia completata e pubblicata: 206 manifestazioni
-in 86 comuni (prima 50 schede; +156 nette dopo quattro duplicati consolidati). Esaminate
-1.031 righe regionali 2026 e fonti comunali/turistiche/organizzatori. Fonte curata autonoma
-`data/fiere-brescia.json`, applicata dal build dopo gli snapshot: sostituisce solo Brescia,
-preserva le altre province e gli identificativi regionali già presenti. Catalogo nazionale
-ora 1.884 manifestazioni, 1.725 con edizioni e 1.470 con date esatte. La to do list segna
-Brescia completata e contiene tutte le altre 109 province da ricercare, raggruppate per regione.
-Completamento documentale al 9 ottobre: aggiornamenti successivi ancora necessari.
-Correzioni chiave: Crocifissa Brescia 13 dicembre/spunta 14 ottobre; Natale Ponte di Legno
-domanda 11 ottobre, sei intervalli/29 giorni obbligatori e tariffe esterni/locali; Casoncello
-solo espositori 25–27 settembre, esclusi casoncelli/pasta fresca; Quarantì mercatino gratuito
-29–30 agosto senza somministrazione. Ambiguità Ghedi/Coccaglio senza date inventate;
-edizioni 2025 restano storico. Fonti, limiti e riproduzione in `data/FIERE.md`.
-Ultimo incrocio: Pisogne Fungo e Castagna 25–27 settembre 2026 e Bienno Natale nel Borgo
-5–8 dicembre 2026 dai programmi comunali, conservando le edizioni 2025 come storico.
-Test catalogo/browser includono le regressioni provinciali. Cache fiere.js v=14 e
-fiere.json v=8; CSS v=10 e confini v=1 invariati.
-
-Filtro Dove e mappa passano alle province: tutte le 110 unità territoriali, incluso elenco vuoto dove non ci sono fiere. Asset `data/italia-province.json` da geojson-italy 2026.2 (ISTAT), confini semplificati e assegnazioni ufficiali dei comuni sardi: calendario Olbia in Gallura Nord-Est Sardegna, Muravera in Cagliari; anagrafica condivisa invariata. Build offline ripetibile, fonti/licenza in data/FIERE.md. URL `provincia`, vecchi parametri regione ignorati/rimossi. Schede e dettaglio mostrano comune/provincia; passaggio sulle schede evidenzia provincia in Tutta Italia o puntino con filtro attivo. Test su tutte le province, comprese quelle vuote, filtri combinati, URL, reset, tastiera, gesti e retry. Cache fiere.js 14, fiere.css 10, fiere.json 8, italia-province.json 1.
-
-Passando il mouse su una scheda dell’elenco, o portando il focus sul suo pulsante: in Tutta Italia la regione si evidenzia in azzurro; con filtro regionale si illumina il puntino (o gruppo contenente la fiera) con un anello blu e il nome del comune sopra la mappa. Anteprima temporanea separata dal filtro, senza cambiare zoom o URL; rimossa all’uscita o al rinnovo dell’elenco, riapplicata al ridisegno dei gruppi. Test browser su tutte le regioni, passaggio tra schede, tastiera, zoom e ripristino della selezione. Cache fiere.js v=10, fiere.css v=9.
-
-Ampliamento successivo: 1.728 manifestazioni (+892), 1.574 con edizioni e 1.331 con date esatte. Calendari ufficiali Liguria (settembre), Veneto (8 ottobre) e schede Emilia-Romagna (9 ottobre): import aggiuntivo ripetibile in scripts/import-fiere-extra.py, conservando gli altri snapshot. Liguria 632, Veneto 170, Emilia-Romagna 120; tutte le 836 schede precedenti conservate. Sagre incluse quando la fonte menziona attività commerciali/mercati; solo pasti e spettacoli esclusi. Varianti note raggruppate, date ambigue testuali, periodi lunghi liguri con giorni da verificare. Argenta: soli giorni commerciali indicativi, non tutto il programma natalizio; fonte contraddittoria di Castello d’Argile esclusa. Comuni non risolti o senza coordinate esclusi, email organizzative pubbliche, niente date/coordinate inventate. Fonti, conteggi e riproduzione in data/FIERE.md. Cache fiere.js v=8, fiere.json v=4; CSS invariato v=7.
-
-Pagina /fiere: 836 manifestazioni in 20 regioni, di cui 671 con informazioni sulle edizioni e 588 con date esatte pubblicate. Copertura ampliata con calendari ufficiali 2026 di Lombardia, Piemonte e Marche, senza quota fissa per regione. Edizioni ripetute raggruppate per manifestazione/comune; date pubblicate, date da calendario e mesi indicativi distinti. Schede con luogo, organizzatore, orari, settori, posteggi dichiarati (non disponibilità), contatti e procedure dove presenti nelle fonti; scadenze passate segnalate. Date separate per weekend/appuntamenti, nessuna proiezione automatica al prossimo anno. Senza filtro mesi, precedenza alle edizioni future/in corso. Ricerca anche per luogo/settori, mappa SVG con gruppi e URL dei filtri condivisibili. Fonti curate in data/fiere-fonti.json, import ufficiale normalizzato in data/fiere-importate.json tramite scripts/import-fiere.py; build offline python scripts/build-fiere.py. Provenienza, limiti e licenze in data/FIERE.md; test dati/browser scripts/test-fiere.cjs. Cache fiere.js v=7, fiere.json v=3, fiere.css v=7; navigazione condivisa ui-components.js?v=14.
-
-Interfaccia semplificata: mesi con nomi completi e regione sempre visibili; intervallo mesi, tipologia e ricerca per nome/comune nel menu Altri filtri, con contatore dei filtri secondari attivi anche su URL condivisi. Mappa a destra dei filtri e della lista su desktop, subito dopo i filtri su mobile. Legenda/fonti e informazioni sul calendario apribili. Test Chromium desktop/tablet/mobile e WebKit mobile: filtri, URL, elenco/puntini, schede, tastiera, retry e assenza di overflow.
-
-Tutto l’anno: testo e switch senza riquadro né ON/OFF, stato accessibile con aria-checked. Mappa: raggruppamento entro 28 pixel, coordinate degli eventi riutilizzate e puntini senza filtro ombra. Il trascinamento aggiorna solo la vista SVG; rotella e pinch ricalcolano i gruppi dopo 120 ms di pausa. I test verificano anche che il trascinamento non ricrei i puntini.
-
-
-Filtro regioni fiere (16 ottobre 2026): nel menu Dove le 20 regioni sono selezionabili in grassetto, con le 110 province rientrate sotto la rispettiva regione. URL `regione` o `provincia` (una provincia valida prevale), filtri combinati, mappa e reset coerenti; confini regionali ottenuti raggruppando quelli provinciali, incluse province senza eventi. Cache fiere.js 45; catalogo e ricerche provinciali invariati. Lavoro isolato in `Documents/subingresso-regioni-20261016` per preservare la ricerca Pavia dell?altra sessione.
-
-
-Forlì-Cesena (17 ottobre 2026): ricerca documentale corrente: 88 manifestazioni in 30 comuni, 65 aggiunte, 14 sintesi costo. Audit data/fiere-forli-cesena.json, limiti ed esclusioni in data/FIERE.md; altre 4.191 schede invariate, 23 ID conservati. Cache fiere.js70/catalogo50. Test dedicato scripts/test-fiere-forli-cesena.cjs usa PLAYWRIGHT_MODULE e FIERE_FC_BASE_URL per verifica pubblica. Pubblicato 567a1f5, Vercel riuscito; catalogo/audit/HTML/JS online identici, 88 pagine HTTP200 e test provinciale Chromium1440/390 e WebKit390 online passati. Build, settori, 4.279 pagine e suite generale cinque formati passati. TO DO spuntata dopo verifica: 32 province completate, 78 rimanenti. Nessun contatto a terzi, modifiche estranee escluse.
-
-
-Piacenza, 17 ottobre 2026: integrazione parziale di 47 manifestazioni in 24
-comuni (+43), audit data/fiere-piacenza.json applicato dal build. Quattro ID
-conservati e 4.275 schede esterne identiche. 17 allegati originali pubblici
-Pianello/Bobbio recuperati, regolamenti Piacenza/Cortemaggiore letti; date
-commerciali distinte dalle feste. Ricerca provinciale non conclusa: residui
-comunali/SUAP, Mercanti di Qualità, Paderna/Pontenure, Natale ed Expo nell’audit;
-TO DO non spuntata, riepilogo invariato 32 concluse/78 da fare, catalogo 4.322.
-Commit 8b962c2, Vercel riuscito, catalogo/audit/HTML/JS corrispondenti online;
-47 pagine HTTP200/H1/canonical e test provinciale Chromium1440/320/WebKit390
-locale e online tramite PLAYWRIGHT_MODULE passati. Build, settori e pagine
-4.322/sitemap1.625 passati. Cache JS71/JSON51; nessun contatto a terzi.
-
-
-Affluenza, 17 ottobre 2026 - preferenza corrente: eliminato "almeno" dai bollini. Sei fasce di ingressi/presenze medi al giorno: molto bassa <500; bassa 500-999; media 1.000-4.999; alta 5.000-19.999; molto alta 20.000-99.999; altissima da 100.000. Altissima riservata a volumi eccezionali, senza certificare primati storici: bollino dorato con luce e riflesso, movimento disattivato con prefers-reduced-motion. Fonti, stime e limiti "oltre" nei dettagli; catalogo invariato. Supera le quattro fasce precedenti. Cache fiere JS74/CSS27, fiera CSS3. Test affluenza Chromium1440/320 e WebKit390 passati, incluse nuove soglie, luce e movimento ridotto; 4.322 pagine e 1.625 voci sitemap, navigazione senza JS e dialog verificati. Pubblicato 91d4408; Vercel READY dpl_G1ypKP3vSAnYX6LXCj5Wh66eAPQX. Test dedicato passato anche online Chromium1440/320 e WebKit390; JS/CSS identici al commit e pagina San Faustino con altissima verificata.
-
-
-Piacenza, 18 ottobre 2026: conclusa e verificata la continuazione documentale
-delle 47 schede: 111 manifestazioni in 37 comuni (+64), 46 comuni ricogniti.
-Audit data/fiere-piacenza.json, fonti/esclusioni/limiti in data/FIERE.md;
-originali Documents/ricerca-fiere-piacenza-20261018. Pontenure 10€ hobbisti
-distinto da 147€ gestore; Paderna 2026/2027, Mercanti comunali, Natale e 23 righe
-AEFI 2026 con Expo corrente. Limiti accesso/storico dichiarati; ricerca attuale
-chiusa, aggiornamenti periodici separati. Commit dati 3ab39be, Vercel riuscito,
-111 pagine HTTP 200/H1/canonical, catalogo/audit/HTML/JS identici; PLAYWRIGHT_MODULE
-locale/online Chromium 1440/320/WebKit 390 passati. Build/settori/pagine 4386 e
-suite generale cinque formati passati. Conservati 47 ID e 4275 schede esterne.
-JS77/JSON53; TODO spuntata dopo verifica, 33 province concluse/77 rimanenti.
-Backup ricerca verificato manifest/SHA256 in
-Documents/backup-subingresso/ricerche-fiere-20261018-061412. Nessun contatto
-a terzi; modifiche estranee escluse. Supera soltanto lo stato parziale Piacenza
-del 17 ottobre, conservato come storia.
-
-
-Udine, 18 ottobre 2026 — ricerca corrente conclusa con limiti e verificata online.
-89 manifestazioni in 48 comuni (+84), ricognizione nominativa 134 comuni;
-66 con date puntuali e sei sintesi costo. Audit data/fiere-udine.json e FIERE.md,
-originali/prove Documents/ricerca-fiere-udine-20261018. Conservati cinque ID e
-altre 4.381 schede identiche; catalogo 4.470, cache JS78/JSON54. Date banchi
-distinte dalle feste, annullamento Venzone, refuso gennaio Lignano, quote per
-categoria, fonti secondarie e albi inaccessibili espliciti. Quattro schede
-Sappada con centro abitato OSM documentato, anagrafica condivisa invariata.
-Pubblicato 65b6b38, Vercel riuscito; asset/catalogo/audit identici, 89 pagine
-HTTP200/H1/canonical. PLAYWRIGHT_MODULE: test-fiere-udine.cjs locale/online
-Chromium1440/320, WebKit390; FIERE_UD_BASE_URL per prova pubblica. Build,
-settori, 4.470 pagine/1.778 sitemap, suite generale cinque formati passati.
-Backup ricerca ricerche-fiere-20261018-110518: 30,055 file/5,671,310,309 byte,
-tutti verificati SHA256, zero errori; manifest/checksum verificati. TO DO
-spuntata dopo verifica: 34 province concluse, 76 da fare; verifiche periodiche
-separate. Nessun contatto a terzi né lavoro su altre province; estranei preservati.
-
-
-Genova (20 ottobre 2026): ricerca corrente chiusa con limiti espliciti,
-274manifestazioni/47comuni, copertura67;211prima,64nuove e un doppione
-unificato, altre4.829schede identiche. Audit data/fiere-genova.json,
-655ricevute/384righe fiere/58mercati,18gruppi esclusioni e15limiti in
-data/FIERE.md;240schede datate,18costi(17precedenti), due storici2025.
-Pubblicato2ce007f, Vercel riuscito: quattro asset identici,274pagine
-HTTP200/H1/canonical; PLAYWRIGHT_MODULE, suite Genova locale/online
-Chromium1440/320 e WebKit390, generale cinque formati, build/settori e
-5.103pagine/2.148sitemap passati. Cache JS89/JSON61.
-Originali/prove Documents/ricerca-fiere-genova-20261019; copia
-ricerche-fiere-20261020-004207:40.214file SHA256, zero errori,
-manifest verificato e supplemento finale. TO DO spuntata dopo verifica:
-40concluse/70rimanenti. Nessuna comunicazione a terzi; modifiche estranee
-preservate. Bandi/calendari futuri separati dalla chiusura corrente.
-
-
-Alessandria (20 ottobre 2026): ricerca corrente conclusa con limiti espliciti,
-158manifestazioni/75comuni,ricognizione187;41prima,117aggiunte,tutti41ID e
-altre5.062schede identici. Audit data/fiere-alessandria.json,546ricevute,
-104righe regionali,64post Novese,26esclusioni/12limiti in data/FIERE.md.
-153date puntuali,un periodo,quattro testuali,sei storici2025,sette costi.
-Conflitti Molino/Castelletto, accesso/quote mancanti, refusi e scadenze
-espliciti; manutenzione futura distinta. Pubblicato `bea5cb9`, Vercel riuscito:
-quattro asset identici,158pagine HTTP200/H1/canonical;PLAYWRIGHT_MODULE,
-suite provinciale locale/online Chromium1440/320 e WebKit390,generale
-cinque formati,build/settori e5.220pagine/2.161sitemap passati. JS90/JSON62.
-Originali/prove Documents/ricerca-fiere-alessandria-20261020; copia
-ricerche-fiere-20261020-100545:42,090file SHA256,zero errori,manifest
-verificato e supplemento finale. Backup remoto session-20261020-103054 e
-ramo pre-fiere-alessandria creati prima delle modifiche. TO DO spuntata
-solo dopo verifica:41province concluse/69rimanenti. Nessun contatto a terzi;
-modifiche estranee preservate,nessun lavoro su altre province.
-
-
-Asti (20 ottobre 2026): ricerca corrente conclusa con limiti espliciti e verificata
-online. 100 manifestazioni/49 comuni, ricognizione118; prima28,72aggiunte,
-tutti28ID e altre5.192schede identici. Audit data/fiere-asti.json:484ricevute,
-94righe regionali,32schede originali tentate,14esclusioni/13limiti in data/FIERE.md.
-95date puntuali,due periodi,tre ricorrenze,due storici2025,otto costi. Date di
-mercato distinte da feste/anteprime, tariffe parziali e fonti secondarie esplicite.
-Pubblicato f1229ea:quattro asset identici,100pagine HTTP200/H1/canonical.
-PLAYWRIGHT_MODULE: suite Asti locale/online Chromium1440/320 e WebKit390,
-generale cinque formati,build/settori e5.292pagine/2.169sitemap passati;JS93/JSON63.
-Originali/prove Documents/ricerca-fiere-asti-20261020;copia ricerca
-ricerche-fiere-20261020-172445:44.735file SHA256,zero errori,manifest/checksum
-verificati e supplemento finale. Backup remoto session-20261020-185452-fiere-asti
-e ramo pre-fiere-asti-20261020 prima delle modifiche; noto errore cleanup dopo
-push del tag riuscito. TO DO spuntata dopo verifica:42concluse/68rimanenti.
-Nuovi bandi/programmi distinti dalla chiusura attuale; nessun contatto a terzi,
-nessuna altra provincia, modifiche estranee preservate ed escluse dai commit.
-
-Redesign Impeccable (21 ottobre 2026): richiesta esplicita successiva al ripristino della grafica. Home a catalogo, ricerca subito disponibile, card e finiture condivise; font Jakarta statici locali via alias Subingresso Jakarta per WebKit, licenza in css/fonts/OFL.txt. DESIGN.md e .impeccable/design.json descrivono il sistema; CSS condiviso8, home CSS/JS2. Backup ZIP391file verificati e tag/ramo remoti in Documents/backup-subingresso/impeccable-20261021-092441, prove in Documents/verifica-impeccable-20261021. Per annullare usare il revert del solo commit grafico, preservando i lavori successivi. Dati, pagamenti e invii non modificati.
-
-## Salerno — calendario fiere, chiusura ricerca del 21 ottobre 2026
-
-85 manifestazioni in 49 comuni; ricognizione nominale dei 158 comuni, 84 aggiunte e ID
-iniziale conservato. Catalogo 5.824, altre 5.739 schede identiche; JS101/JSON69.
-Audit data/fiere-salerno.json e data/FIERE.md: originali, 36 esclusioni, 25 limiti,
-otto costi e otto scadenze. Natale Castellabate: domanda 26 ottobre ore 12;
-Frecagnola: mercato generale solo il 12 settembre; ExpoSele: 26 ottobre è rimborso,
-non candidatura. Ricorrenze/storico/date incerte distinti; niente proiezioni.
-Pubblicato `5742df9`: 85 pagine/catalogo verificati online e browser locale/online
-Chromium 1440/320, WebKit 390 con PLAYWRIGHT_MODULE; suite generale e pagine
-senza JS passate. Backup preventivo e supplemento SHA256 verificati, nessun
-contatto a terzi. TO DO spuntata dopo verifica: 48 complete/62 rimanenti su 110.
-Ricerca attuale chiusa con limiti; futuri bandi/edizioni sono manutenzione.
-
-## Siena — calendario fiere, chiusura ricerca del 21 ottobre 2026
-
-85 manifestazioni/33 comuni, tutti i 35 comuni esaminati; 84 aggiunte, ID
-Montepulciano conservato. Catalogo 5.908, altre 5.823 schede identiche al
-checkpoint 793b2f3; JS102/JSON70. Audit data/fiere-siena.json e data/FIERE.md:
-267 ricevute selezionate, 28 esclusioni, 15 limiti, sei sintesi costo e sette
-scadenze. Estate Siena: conflitto giugno/luglio non risolto per ipotesi;
-Natale Montepulciano non continuo, Chianciano storico 2025, Trequanda scadenza
-16 ottobre 2026 dal PDF. Bandi gestore e biglietti visitatori distinti dai banchi.
-Pubblicato 016bd57: quattro asset identici al commit, 85 pagine HTTP200/H1/
-canonical/costi; PLAYWRIGHT_MODULE per Siena locale/online Chromium1440/320,
-WebKit390, senza JS. Suite generale cinque formati, settori, build e 5.908
-pagine/2.570 sitemap passati. Originali/prove Documents/ricerca-fiere-siena-20261021;
-backup remoto preventivo già eseguito e copia SHA256 ricerche-fiere-20261021-192711:
-60.101 file, 10.722.742.108 byte, zero errori, più supplemento finale verificato.
-TO DO spuntata dopo verifica:49 complete/61 rimanenti. Futuri bandi/rettifiche
-sono manutenzione distinta. Nessun contatto a terzi o altra provincia lavorata;
-cambiamenti estranei preservati e non inclusi nei commit.
-
-
-## Livorno — calendario fiere, ricerca del 21 ottobre 2026
-
-Ricerca corrente conclusa con limiti espliciti, pubblicata/verificata online:
-63manifestazioni/17comuni, ricognizione19; altre5908schede identiche a32452a0,
-catalogo5971, JS103/JSON71. Audit data/fiere-livorno.json e data/FIERE.md:
-231ricevute/34PDF,27esclusioni/20limiti,47schede datate e7costi, due solo2025.
-Suvereto10€/giorno/sera e scadenzaCinghiale15novembre vs8nelPDF; LibrExpo
-300€+IVA editori e posti self esauriti, orari discordanti. Fierone CUP
-29/40/53/64€; Apritiborgo250–450€. Caravanserraglio gratuito max9m².
-PianoLivorno recuperato nuovo bucket dai link attuali, vecchi URL410/403;
-allegato mercatini non professionisti non pubblicabile. Bibbona daily vsdomeniche
-e FieraOttobreCecina discordanti, nessun calendario generato per ipotesi.
-Originali/prove Documents/ricerca-fiere-livorno-20261021, backup remoto tag
-session-20261021-213553-fiere-livorno e ramo pre-fiere-livorno-20261021.
-Locale Chromium1440/320 e WebKit390 con PLAYWRIGHT_MODULE passati,
-conservazione altre province e build ripetibile confermate. Settori e5971pagine/2587sitemap
-passati. CopiaSHA256 ricerche-fiere-20261021-195618:60846file/10802537078byte,
-zeroerrori; supplemento finale verificato. Suite generale5formati passata.
-Pubblicatoa27c82d:4asset identici aGit,63pagine200/H1/canonical/contenuti e
-Chromium1440/320+WebKit390 online passati. TO DO50/60aggiornata dopo esito.
-Nessun contatto a terzi; manutenzione futura distinta dalla ricerca attuale.
-
-
-Savona, ricerca21/10 e pubblicazione verificata22/10/2026:293manifestazioni
-in42comuni, ricognizione69, +72; catalogo6043, altre5750schede identiche.
-Audit data/fiere-savona.json/FIERE.md:552ricevute,385righe regionali,
-20limiti/10gruppi esclusioni; nessun contatto a terzi o dato inventato.
-Sassello5–6settembre risolto con atti; BorghettoSanMatteo discordante,
-quattro edizioni solo2025, quote parziali e fonti bloccate espliciti.
-Dati beea083:5asset produzione identici ai blob Git,293pagine200/H1/canonical,
-Chromium1440/320 e WebKit390 online/locali con PLAYWRIGHT_MODULE passati;
-generale5formati,settori,6043pagine/2635sitemap e build ripetibile passati.
-TO DO51concluse/59da fare spuntata dopo verifica. Prove/originali Documents/
-ricerca-fiere-savona-20261021; backup remoto sessione220637 e ramo pre-fiere-savona.
-CopiaSHA256 ricerche-fiere-20261021-203019:62542file/10955471966byte,
-zeroerrori; supplemento finale verificato. CacheJS104/JSON72.
-Ripresa: nessuna ricerca o pubblicazione dati ripetuta; manutenzione futura separata.
-
-
-La Spezia, ricerca provinciale22/10/2026:164manifestazioni/26comuni,
-32esaminati;87aggiunte,1annullata rimossa,77ID e5965schede esterne conservati.
-Audit data/fiere-la-spezia.json/FIERE.md:485ricevute,118righe fiere regionali,
-37mercati,28limiti/14gruppi esclusioni. NataleSarzana solo esplorativo escluso;
-atti404/403,RTFErrore5001 e ricorrenze incerte espliciti, nessun dato inventato.
-Dati973cb1e:5asset produzione identici aGit,164pagine200/H1/canonical;
-Chromium1440/320 eWebKit390 online/locali con PLAYWRIGHT_MODULE passati.
-Generale5formati,settori,6129pagine/2651sitemap ebuild ripetibile passati.
-TO DO52concluse/58da fare dopo verifica. Prove/originali Documents/
-ricerca-fiere-la-spezia-20261022;tag session-20261022-214545 e ramo pre-fiere-la-spezia.
-BackupSHA256 ricerche-fiere-20261022-201254:64565file/11204772943byte,
-zeroerrori e supplemento finale verificato. CacheJS105/JSON73.
-Nessun contatto a terzi; ricerca attuale chiusa con limiti, manutenzione futura separata.
-
-
-Biella, calendario23/10/2026:61manifestazioni/26comuni,74esaminati,+59;2ID e6.217schede esterne conservati, catalogo6.278. Audit data/fiere-biella.json/FIERE.md:644ricevute,27righe regionali,17esclusioni/24limiti, cinque sintesi costo e otto edizioni storiche2025. Refusi Borriana/Graglia/Masserano, Beltane ridotto e fonti inaccessibili espliciti; nessun contatto a terzi o altra provincia lavorata. Dati509021b, Vercel riuscito EQQK66qY8xeHqBetcv3kamYRKFUE: cinque asset identici,61pagine200/H1/canonical/contenuti, locale/online Chromium1440/320+WebKit390 con PLAYWRIGHT_MODULE; sito reale1440/320 senza errori/overflow. Generale5formati,settori,6.278pagine/2.656sitemap e build ripetibile passati. TO DO54/56 solo dopo verifica. CacheJS107/JSON75. Prove/originali Documents/ricerca-fiere-biella-20261023; backupSHA256 ricerche-fiere-20261023-061927:69.563file/11.534.742.972byte,zeroerrori e supplemento finale. Ricerca corrente conclusa con limiti, futuri bandi/quote/disponibilità come manutenzione distinta.
-
-Sondrio,23ottobre2026: ricerca attuale conclusa con limiti espliciti,90manifestazioni/38comuni,tutti77esaminati,+65;25ID e6.253schede esterne conservati. Catalogo6.343,6.140con dati edizione; audit data/fiere-sondrio.json/FIERE.md:532righe regionali,531PDF,99OCR unici,832record turistici,1.455ricevute incluse API/errori/duplicati,18esclusioni/19limiti,nessuna pista accessibile aperta. Sette sintesi costo; date puntuali distinte da periodi annunciati e storico2025. Dati4fe8b8c,Vercel riuscito: quattro asset identici,90pagine200/H1/canonical/note/costi,locale/online Chromium1440/320+WebKit390 con PLAYWRIGHT_MODULE,tutti90dialoghi; sito reale tre formati senza errori/overflow. Generale5formati,settori,6.343pagine/2.656sitemap e build ripetibile passati. TO DO55/55 solo dopo verifica; cacheJS108/JSON76. Originali/prove Documents/ricerca-fiere-sondrio-20261023; backupSHA256 ricerche-fiere-20261023-111309:72.640file/11.872.974.938byte,zeroerrori,supplemento finale separato. Nessuna altra provincia lavorata,nessuna comunicazione a terzi; nuovi bandi/quote/posti sono manutenzione futura distinta.
-
-Belluno,23ottobre2026: ricerca attuale conclusa con limiti espliciti,134manifestazioni/43comuni,tutti60comuni attuali esaminati,+121;13ID e6.330schede esterne conservati. Catalogo6.464,6.261con dati edizione; audit data/fiere-belluno.json/FIERE.md:94righe sagre,32voci fieristiche più Lendinara fuori provincia esclusa,5antiquariato,254URL DMO e429record API (non eventi unici né archivio storico completo),518ricevute,53archivi web,21pagine OCR Trichiana,20esclusioni/24limiti,nessuna pista accessibile aperta. Dieci sintesi costo,otto schede solo storiche; conflitti testuali e periodi distinti da date confermate. Dati a31001a,Vercel riuscito: quattro asset identici,134pagine200/H1/canonical/note/costi; locale/online Chromium1440/320+WebKit390 via PLAYWRIGHT_MODULE,tutti134dialoghi e quattro pagine senza JS per formato,sito reale tre formati senza errori/overflow. Settori,6.464pagine/2.790sitemap,cinque formati generali e build ripetibile passati. TO DO56/54 solo dopo verifica; cacheJS109/JSON77. Originali/prove Documents/ricerca-fiere-belluno-20261023; tag/ramo backup già validi non ripetuti alla ripresa,nuovi materiali e prove conservati in supplementi SHA256 dello snapshot ricerche-fiere-20261023-123225. Coordinate solo calendario: Setteville su Quero,BorgoValbelluna centroMel da DMO; dati geografici condivisi invariati. Nessuna altra provincia lavorata,nessuna comunicazione a terzi; nuovi bandi/quote/posti e conferme annuali sono manutenzione futura distinta.
+Le descrizioni tecniche superate sono recuperabili nella versione Git
+precedente alla pulizia documentale del 23 ottobre (commit `da20655`).
