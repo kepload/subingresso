@@ -2,12 +2,14 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8"><script src="/js/admin-theme.js?v=7"></script>
+    <script src="/js/vetrina-journey.js?v=1"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="favicon-v2.svg">
     <title>Dashboard — Subingresso.it</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="css/tailwind.css?v=4">
     <link rel="stylesheet" href="css/dashboard-statistics.css?v=1">
+    <link rel="stylesheet" href="css/admin-email-analytics.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <style>
@@ -295,6 +297,19 @@
                     <div id="admStatAvgHint" class="text-[9px] font-bold text-slate-500 mt-1">Solo annunci attivi con prezzo</div>
                 </div>
             </div>
+
+            <section id="email-vetrine" hidden aria-labelledby="mailAnalyticsTitle">
+                <div class="mail-heading"><h3 id="mailAnalyticsTitle">Email e Vetrine</h3><div class="mail-controls">
+                    <select aria-label="Periodo email e conversioni" onchange="AdminEmailAnalytics.setDays(this.value)"><option value="7">Ultimi 7 giorni</option><option value="30" selected>Ultimi 30 giorni</option><option value="90">Ultimi 90 giorni</option><option value="0">Tutto lo storico</option></select>
+                    <button id="mailRefresh" type="button" onclick="AdminEmailAnalytics.refresh()">Aggiorna</button><button id="mailSendSample" type="button" onclick="AdminEmailAnalytics.sample()">Inviami una copia</button>
+                </div></div>
+                <p id="mailAnalyticsStatus" class="mail-status" role="status">Caricamento statistiche…</p>
+                <dl id="mailAnalyticsMetrics" class="mail-metrics"></dl><p id="mailMeasurementNote" class="mail-status"></p>
+                <div class="mail-columns"><div><h4>Percorso sul sito</h4><ol id="mailSiteFunnel" class="mail-funnel"></ol><div id="mailSiteSecondary" class="mail-secondary"></div><p id="mailTierChoices" class="mail-status"></p><p id="mailTrackingSince" class="mail-status"></p></div>
+                    <div><h4>Risultati per variante email</h4><p class="mail-table-hint">Scorri la tabella per vedere clic, acquisti e incassi.</p><div class="mail-table-wrap" tabindex="0" role="region" aria-label="Risultati email, tabella scorrevole"><table class="mail-table"><thead><tr><th scope="col">Variante</th><th scope="col">Consegnate</th><th scope="col">Aperte</th><th scope="col">Clic</th><th scope="col">Acquisti</th><th scope="col">Incassi</th></tr></thead><tbody id="mailVariantRows"></tbody></table></div></div></div>
+                <details class="mail-details"><summary>Azioni recenti e storico pagamenti</summary><ul id="mailRecentEvents" class="mail-activity"></ul><p id="mailLegacyHistory" class="mail-status"></p></details>
+                <details class="mail-details"><summary>Come leggere i numeri e verificare la tua copia</summary><p>Aperture e clic riguardano email distinte, possono risentire dei sistemi automatici e non provano una lettura. Gli acquisti da email richiedono l’arrivo autenticato dal collegamento e un checkout entro 7 giorni. I pacchetti contano come un ordine, con l’importo complessivo. I ritorni da Annulla sono distinti dai checkout scaduti o non completati. Il percorso sul sito conta utenti con account; gli acquisti contano ordini. Le vecchie aperture mancanti restano non disponibili.</p><p id="mailSampleStatus" class="mail-status"></p><p id="mailAnalyticsUpdated" class="mail-status"></p></details>
+            </section>
 
             <!-- Pending Review List (PRIMA cosa visibile, scompare quando vuoto) -->
             <div id="pendingReviewSection" class="hidden bg-amber-50 border-2 border-amber-300 rounded-3xl p-6 shadow-md">
@@ -1213,10 +1228,11 @@
 <script src="js/data.js?v=24"></script>
 <script src="js/valuation.js?v=8"></script>
 <script src="js/vetrina-pricing.js?v=1"></script>
-<script src="js/vetrina-premium.js?v=2"></script>
+<script src="js/vetrina-premium.js?v=3"></script>
+<script src="js/admin-email-analytics.js?v=1"></script>
 <script src="js/vetrina-account.js?v=4"></script>
 <script src="js/ui-components.js?v=18"></script>
-<script src="js/auth.js?v=23"></script>
+<script src="js/auth.js?v=24"></script>
 <script src="js/fiere-access.js?v=2"></script>
 <script type="module" src="js/saved-fairs.js?v=3"></script>
 <script src="js/blog-generator.js?v=3"></script>
@@ -1248,7 +1264,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('loadingState').classList.add('hidden');
         document.getElementById('dashContent').innerHTML = ''; // Sicurezza: svuota tutto
         document.getElementById('notLoggedIn').classList.remove('hidden');
-        location.href = '/'; // Reindirizza subito
+        if(window.VetrinaJourney?.hasIntent()) {
+            window.__onLoginSuccess=()=>VetrinaJourney.reloadWithIntent();
+            openAuthModal('login');
+        } else location.href = '/';
         return;
     }
 
@@ -1269,6 +1288,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('adminPanel').classList.remove('hidden');
         EventOrganizers.startAdmin(user.id);
         loadAdminStats();
+        window.AdminEmailAnalytics?.start(user);
         loadAdminGrowthChart();
         loadAdminFunnelStats();
         loadAdminSignupSources();
@@ -1307,6 +1327,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     document.getElementById('userEmailDisplay').textContent = user.email;
     VetrinaAccount.fillProfile(user);
+    window.VetrinaJourney?.start(user);
     window.SavedFairs?.start(user);
     ProfileSwitcher.setBaseline();
     ProfileSwitcher.startDashboard(user);

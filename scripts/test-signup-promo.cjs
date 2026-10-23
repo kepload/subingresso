@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
 const {stripTypeScriptTypes}=require('node:module');
 const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
-const VERSION='vetrina-email-20261023';
+const VERSION='vetrina-email-analytics-20261023';
 async function backend(){
  const shared={};vm.runInNewContext(stripTypeScriptTypes(read('supabase/functions/_shared/input.ts')).replace(/export /g,''),shared);
  let handler,creates=[],profiles=[],existing=false;

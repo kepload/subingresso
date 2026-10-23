@@ -11,6 +11,10 @@ const root=path.resolve(__dirname,'..');
   assert(!result.payload.html.includes('<img'));assert(result.payload.html.includes('&lt;img')||family==='visibility'&&variant===2||family==='bundle');assert(!/[\r\n]/.test(result.payload.subject));assert.equal(result.payload.reply_to,'info@subingresso.it');assert(result.payload.text.includes('type=promo'));assert(!result.payload.headers['List-Unsubscribe-Post']);
   if(family==='bundle'){assert.equal(result.quote.total,variant===1?17820:8820);assert.equal(result.listing_ids.length,2);}else assert.equal(result.listing_ids.length,1);
  }
+ const plain=vetrinaEmailPayload(base,'fixture@example.invalid').payload;
+ assert(!plain.html.includes('kind=open'));assert(!plain.html.includes('kind=click'));assert(plain.html.includes('promuovi='));
+ const measured=vetrinaEmailPayload({...base,tracking_enabled:true,tracking_token:'22222222-2222-2222-2222-222222222222'},'fixture@example.invalid').payload;
+ assert(measured.html.includes('kind=open'));assert(measured.html.includes('kind=click'));assert(measured.html.includes('type=tracking'));assert(!measured.text.includes('kind=open'));
  assert.throws(()=>vetrinaEmailPayload({...base,variant:99},'fixture@example.invalid'));
  assert.equal(vetrinaEmailPayload({...base,listings:[{...base.listings[0],views_14d:0}]},'fixture@example.invalid').family,'visibility');
  let handler,writes=[],posts=0,claimCount=0,mode='success',permitted=true,revoked=false,claimed=false;

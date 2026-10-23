@@ -1,5 +1,17 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Statistiche email/Vetrine23/10: pannello admin #email-vetrine, coorti7/30/90/tutto;
+consegne provider, aperture/clic solo con scelta informata nuova, attribuzione7g,
+checkout/pagamenti/annulli reali distinti, bundle un solo ordine. Vecchie12email
+consegnate ma aperture/clic non disponibili;50consensi WhatsApp non ampliati.
+Versione nuova vetrina-email-analytics-20261023, facoltativa/vuota, revoca misura
+separata da offerte. RLS/admin server, niente replay/IP/UA/nuovi ID persistenti.
+Copia solo all'admin richiedente, max1/24ore, is_test esclusa dai risultati.
+Nessun nuovo cron. Contratto data/EMAIL_CONVERSION_ANALYTICS.md; cache auth24,
+premiumJS3,unsubscribeJS4,journey/adminanalyticsJS-CSS1. Prove private in
+Documents/statistiche-mail-vetrine-20261023.
+
+
 Campi/mappa dark23/10: superati i bordi#64748b dei campi, ora#334155 e
 nessun alone. Focus tastiera2px blu conservato. Mappa SVG scura con
 terre#25334a/mare#0f172a/confini#475569, selezione/preview/marker distinti.

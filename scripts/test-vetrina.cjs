@@ -17,7 +17,7 @@ function load(name, client, fetcher) {
     const context = vm.createContext({
         Deno: { env: { get: () => secret }, serve: fn => { handler = fn; } },
         createClient: () => client, fetch: fetcher, Request, Response, URLSearchParams,
-        TextEncoder, AbortSignal, crypto: webcrypto, console: { log() {}, error() {} }
+        TextEncoder, AbortSignal, crypto: webcrypto, console: { log() {}, error() {}, warn() {} }
     });
     new vm.Script(fs.readFileSync(path.join(root,'js/vetrina-pricing.js'),'utf8')).runInContext(context);
     new vm.Script(stripTypeScriptTypes(source), {filename:name}).runInContext(context);
@@ -61,7 +61,7 @@ async function main() {
     const client = {
         auth:{getUser:async token=>({data:token==='valid'?{user:{id:owner,email:'test@example.invalid'}}:null,error:null})},
         from:table=>{assert.equal(table,'annunci');return{select(){return this;},in:async()=>({data:listings,error:null})};},
-        rpc:async(name,args)=>{assert.equal(name,'register_vetrina_checkout');logged=args;return{error:orderError?{message:'offline'}:null};}
+        rpc:async(name,args)=>{if(name==='register_vetrina_checkout_analytics'){assert.equal(args.p_user,owner);assert.match(args.p_flow,/^[a-f0-9-]{36}$/);return{error:{message:'analytics offline'}};}assert.equal(name,'register_vetrina_checkout');logged=args;return{error:orderError?{message:'offline'}:null};}
     };
     const checkout = load('create-checkout-session',client,async(url,options)=>{
         if(url.endsWith('/expire')){expired=true;return Response.json({});}

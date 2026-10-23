@@ -33,7 +33,7 @@ Deno.serve(async req=>{
   const body=await req.json();const action=body.action||'preview';
   if(!['preview','audit','send','verify'].includes(action))return json({error:'Invalid action'},400);
   if(action==='verify') {
-   const {data,error}=await db.from('vetrina_email_log').select('id,provider_id,status').eq('campaign',body.campaign).eq('status','sent');
+   const {data,error}=await db.from('vetrina_email_log').select('id,provider_id,status,delivery_confirmed').eq('campaign',body.campaign).eq('status','sent');
    if(error)throw Error('delivery_log_unavailable');
    const outcomes=[];
    for(const row of data||[]) {
@@ -41,7 +41,7 @@ Deno.serve(async req=>{
     const response=await fetch('https://api.resend.com/emails/'+encodeURIComponent(row.provider_id),{headers:{Authorization:'Bearer '+resend},signal:AbortSignal.timeout(15000)});
     if(!response.ok)throw Error('provider_verify_http_'+response.status);
     const info=await response.json();const event=String(info.last_event||'unknown');
-    const stored=await db.from('vetrina_email_log').update({provider_event:event}).eq('id',row.id);
+    const stored=await db.from('vetrina_email_log').update({provider_event:event,delivery_confirmed:row.delivery_confirmed||['delivered','opened','clicked'].includes(event)}).eq('id',row.id);
     if(stored.error)throw Error('delivery_update_failed');
     outcomes.push({delivery_id:row.id,event});
    }
@@ -87,7 +87,7 @@ Deno.serve(async req=>{
   if(permission.error||profile.error||permission.data?.revoked_at||!profile.data?.email_digest||!profile.data?.email_stats){await finish('cancelled',{error_code:'preferences_changed'});return json({sent:false,reason:'preferences_changed'});}
   let message;
   try{message=vetrinaEmailPayload(item,email,body.family);}catch{await finish('failed',{error_code:'render_failed'});return json({sent:false,reason:'render_failed'},500);}
-  const stored=await db.from('vetrina_email_log').update({subject:message.payload.subject,listing_ids:message.listing_ids}).eq('id',delivery).eq('status','reserved');
+  const stored=await db.from('vetrina_email_log').update({subject:message.payload.subject,listing_ids:message.listing_ids,offered_tier:message.quote.tier,template_family:message.family}).eq('id',delivery).eq('status','reserved');
   if(stored.error)throw Error('delivery_prepare_failed');
   // Do not retry ambiguous network outcomes. Reserved/unknown remain protected for 30d.
   let response;

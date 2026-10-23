@@ -38,9 +38,10 @@ Deno.serve(async req => {
             || (a.expires_at && Date.parse(a.expires_at) <= Date.now()))) {
             return json({error:'Seleziona annunci attivi e non scaduti. Un nuovo annuncio può attendere l’approvazione.'},400);
         }
+        const flowId=crypto.randomUUID();
         const params = new URLSearchParams({ mode:'payment','payment_method_types[]':'card',locale:'it',
             success_url:SITE_URL+'/grazie?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url:SITE_URL+'/dashboard?'+(creation?'pubblicato=1&':'')+'vetrina=annullata',
+            cancel_url:SITE_URL+'/dashboard?'+(creation?'pubblicato=1&':'')+'vetrina=annullata&vf='+flowId,
             customer_email:user.email ?? '', 'metadata[user_id]':user.id,
             'metadata[tier]':body.tier,'metadata[checkout_version]':'premium_v1',
             'metadata[annuncio_id]':ids[0], 'metadata[listing_count]':String(ids.length),
@@ -72,6 +73,11 @@ Deno.serve(async req => {
             });
             return json({error:'Gli annunci sono cambiati o l’ordine non è disponibile. Ricarica prima di riprovare.'},409);
         }
+        // Analytics must never prevent a valid purchase or change its amount.
+        try {
+            const tracked=await admin.rpc('register_vetrina_checkout_analytics',{p_session:session.id,p_flow:flowId,p_user:user.id,p_source:creation?'vendi_creation':'dashboard',p_tier:body.tier,p_count:ids.length,p_amount:quote.total});
+            if(tracked.error)console.warn('Checkout analytics unavailable');
+        } catch { console.warn('Checkout analytics unavailable'); }
         return json({url:session.url,session_id:session.id,amount_cents:quote.total,listing_count:ids.length});
     } catch (error) {
         console.error('Premium checkout unavailable:',error instanceof Error ? error.name : 'unknown');

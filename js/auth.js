@@ -8,7 +8,7 @@
 // Il tracker condiviso cattura la provenienza prima degli script auth.
 
 let _profileCache = null; // { id, nome } — evita query ripetute sulla navbar
-const PROMO_CONSENT_VERSION = 'vetrina-email-20261023';
+const PROMO_CONSENT_VERSION = 'vetrina-email-analytics-20261023';
 
 // ── Inject modal HTML ──────────────────────────────────────
 const modalHTML = `
@@ -138,9 +138,9 @@ const modalHTML = `
       <div>
         <label for="regPromoOptIn" class="flex items-start gap-3 text-sm font-semibold text-slate-700 cursor-pointer" style="min-height:44px;padding-top:6px">
           <input id="regPromoOptIn" name="promotional_email_opt_in" type="checkbox" autocomplete="off" aria-describedby="regPromoHint" class="w-5 h-5 rounded accent-blue-600 cursor-pointer" style="flex-shrink:0;margin-top:2px">
-          <span>Voglio ricevere offerte via email sulle Vetrine.</span>
+          <span>Voglio ricevere offerte via email sulle Vetrine, con misurazione di aperture e clic.</span>
         </label>
-        <p id="regPromoHint" class="text-sm text-slate-600 leading-relaxed" style="margin-left:32px">Facoltativo. Al massimo una proposta ogni 30 giorni. Puoi disiscriverti da ogni email. <a href="/privacy" target="_blank" rel="noopener" class="text-blue-600 underline" style="white-space:nowrap">Informativa privacy</a></p>
+        <p id="regPromoHint" class="text-sm text-slate-600 leading-relaxed" style="margin-left:32px">Facoltativo. Al massimo una proposta ogni 30 giorni. Da ogni email puoi disattivare solo la misurazione oppure tutte le offerte. <a href="/privacy" target="_blank" rel="noopener" class="text-blue-600 underline" style="white-space:nowrap">Informativa privacy</a></p>
       </div>
       <button type="submit" id="registerBtn"
         class="w-full bg-blue-600 text-white py-3.5 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-2">

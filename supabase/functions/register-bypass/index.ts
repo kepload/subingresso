@@ -26,10 +26,10 @@ Deno.serve(async (req) => {
     if (!body || Array.isArray(body) || typeof body !== 'object') return json({ error: 'Body mancante' }, 400);
 
     const { email, password, nome, cognome, telefono, website } = body;
-    const promoVersion = 'vetrina-email-20261023';
+    const promoVersion = body.promotional_email_consent_version || 'vetrina-email-analytics-20261023';
     if (body.promotional_email_opt_in !== undefined && typeof body.promotional_email_opt_in !== 'boolean') return json({error:'Preferenza email non valida'},400);
     const promoOptIn = body.promotional_email_opt_in === true;
-    if (promoOptIn && body.promotional_email_consent_version !== promoVersion) return json({error:'Ricarica la pagina e conferma la preferenza email.'},400);
+    if (promoOptIn && !['vetrina-email-20261023','vetrina-email-analytics-20261023'].includes(body.promotional_email_consent_version)) return json({error:'Ricarica la pagina e conferma la preferenza email.'},400);
     const cleanEmail = validEmail(email);
     const cleanPassword = typeof password === 'string' ? password : '';
     const cleanName = text(nome, 1, 100);

@@ -1,5 +1,22 @@
 # Subingresso.it — informazioni e TO DO
 
+## Statistiche email e conversioni — 23 ottobre 2026, in corso
+
+- Richiesti pannello admin aperture/clic/acquisti e percorso Vetrina/annulli,
+  una copia email all'admin e consigli finali. API:12delivered,tracking Resend
+  aperto/clic disattivato,nessun webhook;storico aperture/clic non recuperabile.
+  Un solo admin con email disponibile,nessun suo annuncio attivo:la copia userà
+  un annuncio pubblico d'esempio,mai riattivare quello cancellato. Prove private
+  Documents/statistiche-mail-vetrine-20261023. Misura individuale nuova solo
+  con consenso informato/versione aggiornata e revoca separata;vecchi50consensi
+  alle offerte non estesi ai pixel. Funnel autenticato essenziale,nessun replay
+  o nuovo identificativo persistente. Test/copia separati dai risultati reali.
+  Backup tag/ramo remoti preventivi validi. SQL con fixture ROLLBACK e test
+  API/Edge/Chrome1440-768-320/Safari390,chiaro-scuro,checkout/consensi/uscite
+  passati;inspector componente0FAIL/0WARN. Schema e cinque Edge applicate.
+  Frontend e invio copia ancora da pubblicare/verificare. Contratto
+  data/EMAIL_CONVERSION_ANALYTICS.md;cacheAuth24,premiumJS3,unsubscribe4.
+
 ## Email per vendere Vetrine — 23 ottobre 2026
 
 - Chiarimento successivo:consenso promozionale confermato per gli ultimi50

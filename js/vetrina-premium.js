@@ -5,6 +5,8 @@ window.VetrinaPremium = (() => {
     const esc = text => escapeHTML(String(text ?? ''));
     let selected = new Set(), listings = [], tier = '30d', sequence = 0, busy = false, loaded = false;
     let owner = null, returnFocus = null, oldOverflow = '', target = null, lastTrigger = null;
+    let source = 'dashboard', offerOptions = {};
+    const track = (kind, extra = {}) => window.VetrinaJourney?.record(kind,{source,tier,count:selected.size,...extra});
     const current = () => typeof _currentUser !== 'undefined' ? _currentUser?.id : null;
     const valid = seq => seq === sequence && owner === current() && !$('vetrinaModal').classList.contains('hidden');
 
@@ -39,9 +41,10 @@ window.VetrinaPremium = (() => {
     function selectTier(value) {
         if (!Object.hasOwn(VetrinaPricing.plans,value) || busy) return;
         tier = value; $('vetrinaLoadingMsg').textContent = ''; update();
+        track('tier_select');
     }
 
-    async function open(listing) {
+    async function open(listing, options = {}) {
         if (!current()) { showToast('Accedi per promuovere i tuoi annunci.','info'); return; }
         if (!$('vetrinaModal').classList.contains('hidden')) close();
         returnFocus = document.activeElement;
@@ -49,13 +52,15 @@ window.VetrinaPremium = (() => {
         if (returnFocus === document.body && lastTrigger?.isConnected) returnFocus = lastTrigger;
         oldOverflow = document.body.style.overflow;
         owner = current(); target = listing?.id || null; listings = []; selected = new Set();
-        tier = '30d'; busy = false; loaded = false;
+        offerOptions=options;source=['dashboard','email','account','analytics'].includes(options.source)?options.source:'dashboard';
+        tier = Object.hasOwn(VetrinaPricing.plans,options.tier)?options.tier:'30d'; busy = false; loaded = false;
         $('vetrinaModal').classList.remove('hidden'); document.body.style.overflow = 'hidden';
         $('premiumListings').innerHTML = '<p class="premium-state" role="status">Caricamento dei tuoi annunci…</p>';
         $('vetrinaLoadingMsg').textContent = ''; $('vetrinaLoadingMsg').classList.remove('is-error');
         $('vetrinaModal').querySelector('[role="dialog"]').focus();
         $('vetrinaModal').querySelector('.premium-body').scrollTop = 0;
         update(); const seq = ++sequence;
+        track('offer_open');
         try {
             const columns = 'id,user_id,titolo,status,comune,regione,img_urls,featured,featured_until,expires_at';
             let rows = [], offset = 0;
@@ -70,6 +75,7 @@ window.VetrinaPremium = (() => {
             }
             listings = rows.filter(a => a.user_id===owner && a.status==='active' && (!a.expires_at || Date.parse(a.expires_at)>Date.now()));
             if (target && listings.some(a => a.id===target)) selected.add(target);
+            if(Array.isArray(options.listingIds))for(const id of options.listingIds){if(selected.size<10&&listings.some(a=>a.id===id))selected.add(id);}
             if (!target && listings.length===1) selected.add(listings[0].id);
             if (target && !selected.size) $('vetrinaLoadingMsg').textContent = 'L’annuncio scelto non è più attivo. Seleziona un altro annuncio.';
             loaded = true;
@@ -88,6 +94,7 @@ window.VetrinaPremium = (() => {
     }
 
     function close() {
+        if(!$('vetrinaModal').classList.contains('hidden'))track('offer_close');
         sequence++; busy = false; loaded = false; selected.clear(); listings=[];
         $('vetrinaModal').classList.add('hidden'); document.body.style.overflow = oldOverflow;
         if (returnFocus?.isConnected) returnFocus.focus();
@@ -98,6 +105,7 @@ window.VetrinaPremium = (() => {
         const seq = sequence, userId = owner, ids = [...selected], q = VetrinaPricing.quote(tier,ids.length);
         busy = true; update(); $('vetrinaLoadingMsg').classList.remove('is-error'); $('vetrinaLoadingMsg').textContent = 'Preparazione del pagamento sicuro…';
         let redirecting = false;
+        track('checkout_attempt');
         try {
             const {data:{session}} = await _supabase.auth.getSession();
             if (!valid(seq)) return;
@@ -114,6 +122,7 @@ window.VetrinaPremium = (() => {
             redirecting = true; window.location.assign(url.href);
         } catch(error) {
             if (!valid(seq)) return;
+            track('checkout_error');
             $('vetrinaLoadingMsg').classList.add('is-error');
             $('vetrinaLoadingMsg').textContent = error.name==='TimeoutError' ? 'Il pagamento tarda ad aprirsi. Riprova tra poco.' : error.message || 'Pagamento non disponibile. Riprova.';
         } finally {
@@ -131,6 +140,7 @@ window.VetrinaPremium = (() => {
         if (input.checked && selected.size<10) selected.add(input.value);
         else { selected.delete(input.value); input.checked=false; }
         $('vetrinaLoadingMsg').textContent=''; update();
+        track('listing_select');
     });
     document.addEventListener('keydown',event => {
         const modal=$('vetrinaModal'); if (!modal || modal.classList.contains('hidden')) return;
@@ -146,5 +156,5 @@ window.VetrinaPremium = (() => {
             if (owner && session?.user?.id!==owner && !$('vetrinaModal').classList.contains('hidden')) close();
         });
     });
-    return {open,close,checkout,selectTier,retry:()=>open(target?{id:target}:null)};
+    return {open,close,checkout,selectTier,retry:()=>open(target?{id:target}:null,offerOptions)};
 })();
