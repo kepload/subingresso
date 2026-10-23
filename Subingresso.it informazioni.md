@@ -10,6 +10,10 @@
   dedicati,267tema e33scenari primo disegno passati. Inspector treformati:
   0FAIL, un avviso sulle etichette12px, mantenute per densità. Prove/stato
   pubblicazione Documents/verifica-dark-finiture-20261023/risultati.md.
+  Pubblicato12eb209, VercelA9M59oRDQqoNRvzM9XBV3vVNSR4Q READY;
+  22pagine/asset identici, settepercorsiSSR aggiornati. Online267controlli
+  tema e33scenari primo disegno passati, zero flash nei casi scuri.
+  Contrasto dedicato minimo7,40:1; backup remoto e file estranei conservati.
 
 ## Modalità scura senza flash — 23 ottobre 2026
 
