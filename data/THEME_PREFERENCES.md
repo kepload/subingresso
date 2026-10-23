@@ -20,8 +20,8 @@ Contratto verificato il23/10 sul [codice Auth ufficiale](https://github.com/supa
 e sulla [fusione dei metadati](https://github.com/supabase/auth/blob/master/internal/models/user.go).
 
 La preferenza viene riletta alla navigazione/ritorno in pagina e fra schede.
-Per evitare il flash, js/admin-theme.js5 è sincrono subito dopo charset nel
-head; css/admin-theme.css4 è un foglio bloccante prima del body. Stesso schema
+Per evitare il flash, js/admin-theme.js6 è sincrono subito dopo charset nel
+head; css/admin-theme.css5 è un foglio bloccante prima del body. Stesso schema
 per tutti gli HTML e le pagine SSR. Nessuna attesa di Auth per il tema già noto.
 Il browser conserva _si_theme_preference_v1: soltanto {id,theme}, scritto dopo
 GET/PUT confermato. La copia si applica solo se l’ID coincide con quello della

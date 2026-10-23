@@ -222,3 +222,19 @@ anche per gli organizzatori: fondo#f5f5f5, pannelli#fff, testo#0f172a,
 secondario#475569, bordi#64748b e accento#1d4ed8. Grafici e indicatori usano
 le stesse variabili nei due temi; layout e valori conservati. Contratto in
 data/THEME_PREFERENCES.md, foglio css/theme-preferences.css.
+
+### Finiture dark della dashboard — 23 ottobre 2026
+
+Conservare la palette personale e l'impaginazione attuali. Anche i bordi
+indigo/ciano e bianchi delle utility devono usare `--ad-line`; quelli di
+avviso usano `--ad-warning-line` (`#594a34`), senza cornici gialle luminose.
+Le schede economiche usano un salto di tono per i valori interni e occupano
+tutta la riga fino a640px per mantenere gli importi leggibili. Etichette12px,
+valori principali24px/600, valori secondari14px e cifre tabulari.
+
+Controlli admin: angoli8px, peso600, altezza minima36px e44px entro640px.
+Blu attenuato `#2b4d75`, hover `#365e8b`; approvazione verde `#194e42`,
+hover `#216251`, testo `#c0edda`. Errori con i token semantici esistenti,
+hover `#612238`. Nei bandi ambra `#e7ca90` su `#352e24`, riservata allo stato.
+Focus2px con offset3px, disabled al50%, transizioni150ms solo sui colori,
+disattivate con movimento ridotto. Preferenza, caricamento e dati conservati.

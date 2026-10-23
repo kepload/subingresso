@@ -12,6 +12,9 @@ html.admin-dark {
     --ad-raised: #25334a;
     --ad-hover: #334155;
     --ad-line: #334155;
+    --ad-warning-line: #594a34;
+    --ad-control-primary: #2b4d75;
+    --ad-control-primary-hover: #365e8b;
     --ad-ink: #f1f5f9;
     --ad-muted: #cbd5e1;
     --ad-subtle: #a6b5ca;
@@ -66,8 +69,9 @@ html.admin-dark :is(.text-blue-900, .text-blue-800, .text-blue-700, .text-blue-6
 html.admin-dark :is(.text-emerald-800, .text-emerald-700, .text-emerald-600, .text-emerald-500, .text-green-800, .text-green-700, .text-green-600, .text-teal-600) { color: var(--ad-success); }
 html.admin-dark :is(.text-amber-900, .text-amber-800, .text-amber-700, .text-amber-600, .text-yellow-800, .text-orange-700, .text-orange-600) { color: var(--ad-warning); }
 html.admin-dark :is(.text-red-800, .text-red-700, .text-red-600, .text-red-500, .text-rose-700, .text-rose-600) { color: var(--ad-danger); }
-html.admin-dark :is(.border-slate-50, .border-slate-100, .border-slate-200, .border-slate-300, .border-gray-100, .border-gray-200) { border-color: var(--ad-line); }
-html.admin-dark :is(.border-blue-100, .border-blue-200, .border-emerald-100, .border-amber-100, .border-red-100) { border-color: #475569; }
+html.admin-dark :is(.border-slate-50, .border-slate-100, .border-slate-200, .border-slate-300, .border-gray-100, .border-gray-200, .border-indigo-100, .border-cyan-100, .border-sky-100, .border-violet-100, .border-purple-100, .border-pink-100, .border-white) { border-color: var(--ad-line); }
+html.admin-dark :is(.border-blue-100, .border-blue-200, .border-blue-300, .border-emerald-100, .border-emerald-200, .border-red-100, .border-red-200) { border-color: var(--ad-line); }
+html.admin-dark :is(.border-amber-100, .border-amber-200, .border-amber-300, .border-yellow-100, .border-yellow-200, .border-orange-100, .border-orange-200) { border-color: var(--ad-warning-line); }
 html.admin-dark :is(.divide-slate-100, .divide-slate-200) > :not([hidden]) ~ :not([hidden]) { border-color: var(--ad-line); }
 html.admin-dark :is(.hover\:bg-white, .hover\:bg-slate-50, .hover\:bg-slate-100, .hover\:bg-slate-200, .hover\:bg-blue-50):hover { background-color: var(--ad-hover); }
 html.admin-dark :is(.hover\:text-slate-900, .hover\:text-slate-800, .hover\:text-slate-700, .hover\:text-slate-600):hover { color: #fff; }
@@ -88,6 +92,62 @@ html.admin-dark :is([style*="color:#2563eb" i], [style*="color: #2563eb" i], [st
 
 /* Foto, mappe e grafici conservano i colori originali. */
 html.admin-dark :is(img, video, canvas, .leaflet-tile) { filter: none; }
+
+/* Finiture della dashboard: stessa struttura, superfici e controlli discreti. */
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .admin-summary-grid > div {
+    background: var(--ad-panel); border-color: var(--ad-line); box-shadow: none;
+    font-variant-numeric: tabular-nums;
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .admin-summary-grid .uppercase {
+    color: var(--ad-subtle); font-size: 12px; font-weight: 600;
+    letter-spacing: 0; text-transform: none; line-height: 1.5;
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .admin-summary-grid .text-xl {
+    color: var(--ad-ink); font-size: 24px; font-weight: 600; line-height: 1.4;
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .admin-summary-grid :is(#admStatTotalValueHint, #admStatAvgHint) {
+    color: var(--ad-subtle); font-size: 12px; font-weight: 400; line-height: 1.5;
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .admin-summary-grid :is(#admStatSaleValue, #admStatRentValue, #admStatAvgFiere) {
+    font-size: 14px; font-weight: 600; line-height: 1.5;
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) .admin-summary-grid :is(.bg-white\/80, .bg-white\/70) {
+    background: var(--ad-field); border-color: transparent;
+}
+html.admin-dark:where([data-admin-theme-page="dashboard"]) #bandoScouting {
+    border-color: var(--ad-line); border-radius: 16px; box-shadow: none;
+}
+html.admin-dark #scoutBandiBody > .border {
+    background: var(--ad-field); border-color: var(--ad-line);
+}
+html.admin-dark #bandoScouting :is(.text-amber-500, .text-amber-600, .text-amber-700, .text-amber-800) { color: #e7ca90; }
+html.admin-dark #bandoScouting :is(.bg-amber-50, .bg-amber-100) { background: #352e24; }
+html.admin-dark #bandoScouting :is(.uppercase, h4) { letter-spacing: 0; text-transform: none; font-weight: 600; }
+html.admin-dark #bandoScouting .uppercase { font-size: 12px; }
+html.admin-dark #bandoScouting > p:last-child { font-size: 12px; line-height: 1.6; }
+html.admin-dark #scoutBandiBody :is(a, .whitespace-nowrap) { font-size: 12px; }
+html.admin-dark #adminPanel :is(button, a[class*="bg-"]) {
+    min-height: 36px; border-radius: 8px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0; text-transform: none; box-shadow: none;
+    transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+html.admin-dark #adminPanel :is(button, a):is(.bg-blue-600, .bg-blue-700) {
+    background: var(--ad-control-primary); color: #f1f5f9;
+}
+html.admin-dark #adminPanel :is(button, a):is(.bg-blue-600, .bg-blue-700):hover:not(:disabled) { background: var(--ad-control-primary-hover); }
+html.admin-dark #adminPanel :is(button, a):is(.bg-emerald-600, .bg-emerald-700) { background: #194e42; color: #c0edda; }
+html.admin-dark #adminPanel :is(button, a):is(.bg-emerald-600, .bg-emerald-700):hover:not(:disabled) { background: #216251; }
+html.admin-dark #adminPanel :is(button, a):is(.bg-red-600, .bg-red-700) { background: var(--ad-danger-bg); color: var(--ad-danger); }
+html.admin-dark #adminPanel :is(button, a):is(.bg-red-600, .bg-red-700):hover:not(:disabled) { background: #612238; }
+html.admin-dark #adminPanel :is(button, a):focus-visible { outline: 2px solid var(--ad-link); outline-offset: 3px; }
+html.admin-dark #adminPanel button:disabled { opacity: .5; cursor: not-allowed; }
+@media (max-width: 640px) {
+    html.admin-dark:where([data-admin-theme-page="dashboard"]) .admin-summary-grid > div:nth-last-child(-n+2) { grid-column: 1 / -1; text-align: left; }
+    html.admin-dark #adminPanel :is(button, a[class*="bg-"]) { min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html.admin-dark #adminPanel :is(button, a[class*="bg-"]) { transition: none; }
+}
 
 
 /* css/admin-control-room.css */

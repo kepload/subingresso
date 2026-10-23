@@ -1,5 +1,16 @@
 # Subingresso.it — informazioni e TO DO
 
+## Finiture modalità scura — 23 ottobre 2026
+
+- Richiesta: bordi e pulsanti più puliti con Impeccable, struttura conservata.
+  Convertiti bordi chiari indigo/ciano e gialli; statistiche con etichette12px,
+  cifre tabulari e schede economiche estese su telefono. Pulsanti admin
+  piatti,36/44px, focus/stati coerenti; niente invii o scritture account reali.
+  Cache admin-themeJS6/CSS5; palette chiara conservata. Locale48controlli
+  dedicati,267tema e33scenari primo disegno passati. Inspector treformati:
+  0FAIL, un avviso sulle etichette12px, mantenute per densità. Prove/stato
+  pubblicazione Documents/verifica-dark-finiture-20261023/risultati.md.
+
 ## Modalità scura senza flash — 23 ottobre 2026
 
 - Richiesta corrente: niente comparsa chiara prima dello scuro; pulsante

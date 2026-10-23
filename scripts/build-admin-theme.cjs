@@ -50,7 +50,7 @@ function convert(css, label) {
             if (rule.selector.includes('body:not(.home-page)') && decl.prop.startsWith('background')) return;
             if (!/^(?:color|background(?:-color|-image)?|border(?:-(?:top|bottom|left|right))?(?:-color)?|outline(?:-color)?|caret-color|accent-color|--ev-(?:ink|muted)|--si-(?:ink|muted|surface))$/.test(decl.prop)) return;
             let value = decl.value.replace(/#[\da-f]{3,8}\b/gi, hex => role(hex, decl.prop));
-            value = value.replace(/\bwhite\b/g, decl.prop.startsWith('background') ? 'var(--ad-panel)' : '#fff');
+            value = value.replace(/\bwhite\b/g, decl.prop.startsWith('background') ? 'var(--ad-panel)' : decl.prop.includes('border') ? 'var(--ad-line)' : decl.prop.includes('outline') ? 'var(--ad-link)' : '#fff');
             if (value !== decl.value) declarations.push(decl.clone({ value }));
         });
         if (!declarations.length) return;

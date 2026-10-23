@@ -1,5 +1,12 @@
 # AGENTS.md — Subingresso.it
 
+Finiture dark23/10: bordi chiari indigo/ciano e gialli convertiti in linee
+discrete; statistiche admin con etichette12px e cifre tabulari, due schede
+economiche a tutta larghezza su telefono. Pulsanti admin piatti, stati/focus
+coerenti,44px su mobile. Struttura e funzioni conservate; niente invii reali.
+Cache corrente admin-themeJS6/CSS5; prove/stato pubblicazione in
+Documents/verifica-dark-finiture-20261023/risultati.md.
+
 Tema personale23/10, correzione flash: pulsante Modalità scura direttamente
 nella pagina profilo/dashboard e nell’area organizzatore, fuori da impostazioni
 e moduli. Chiaro iniziale per tutti; preferenza auth.user_metadata.site_theme.
@@ -8,7 +15,7 @@ Copia locale _si_theme_preference_v1 limitata a ID/tema confermato, usata solo
 con la stessa sessione. Prima lettura senza copia: attesa su fondo scuro.
 GET riconcilia; errore temporaneo conserva aspetto, 401/403/logout/cambio
 identità invalidano. PUT sempre con token iniziale; nessun ruolo in cache.
-JSadmin-theme5/CSS4, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
+JSadmin-theme6/CSS5, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
 prove/stato Documents/verifica-tema-senza-flash-20261023/risultati.md.
 
 
@@ -174,7 +181,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 
 ## 9) Cache buster correnti (aggiornare a ogni modifica)
 
-- `admin-theme.js?v=5`, `admin-theme.css?v=4`, `theme-preferences.css?v=2`: avvio senza flash, pulsante diretto nel profilo, chiaro iniziale. Tutti gli HTML/API; generatore CSS esclude il foglio delle preferenze. Contratto data/THEME_PREFERENCES.md.
+- `admin-theme.js?v=6`, `admin-theme.css?v=5`, `theme-preferences.css?v=2`: avvio senza flash e finiture dark, pulsante diretto nel profilo, chiaro iniziale. Tutti gli HTML/API; generatore CSS esclude il foglio delle preferenze. Contratto data/THEME_PREFERENCES.md.
 
 - `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
 - `data.js?v=24`

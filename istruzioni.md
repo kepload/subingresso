@@ -1,5 +1,13 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Finiture dark23/10: bordi indigo/ciano e gialli convertiti nella base condivisa;
+statistiche admin con etichette12px, cifre tabulari e schede economiche estese
+su telefono. Pulsanti admin piatti,36/44px, focus/stati coerenti. Stessi dati,
+funzioni e palette chiara; rimosse solo spunte/croci testuali nei due comandi
+Scout. Cache admin-themeJS6/CSS5. Locale48controlli dedicati,267tema e
+33scenari primo disegno passati. Prove/stato pubblicazione:
+Documents/verifica-dark-finiture-20261023/risultati.md.
+
 Dashboard admin23/10: crescita con una metrica selezionabile alla volta,
 totali nel periodo, quattro filtri conservati; linea senza riempimenti,
 griglia tenue e colori/font aggiornati al cambio tema. Provenienza: tre
