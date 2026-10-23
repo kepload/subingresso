@@ -2,6 +2,8 @@
 
 Richiesta: iniziare a vendere Vetrine con poche email brevi e umane, varianti pertinenti, visualizzazioni effettive e pacchetti per chi ha più annunci. La finalità è aiutare a trovare prima un acquirente attraverso maggiore visibilità. Nessun tempo medio di vendita dimostrato: non presentare come statistica il confronto con le case, non garantire una vendita o un incremento di visite.
 
+**Seguito del 23 ottobre:** autorizzato il primo giro e un limite umano. L'utente riferisce consensi richiesti via WhatsApp a molti iscritti; sono stati chiesti i nominativi per abbinarli. Nessuna iscrizione generalizzata presunta. Implementati registro, limiti e uscita dalle sole offerte: stato corrente in [VETRINA_EMAIL.md](VETRINA_EMAIL.md). Le sezioni seguenti descrivono la preparazione iniziale; i segnaposti vengono risolti dal nuovo invio dopo la verifica nominativa, senza inviare le vecchie bozze come sono.
+
 ## Stato effettivo
 
 Letture API in transazione READ ONLY il 23 ottobre 2026: 119 profili, 112 annunci reali attivi, 70 venditori attivi esclusi admin/demo. Zero acquisti Vetrina live riusciti. Nel sistema nessun campo/registro di consenso promozionale; `email_digest` e `email_stats` risultano true per tutti i 119 profili e hanno default true. Nemmeno i metadata Auth documentano un consenso. Il solo interruttore di riepiloghi/statistiche non viene trattato come consenso alle offerte.

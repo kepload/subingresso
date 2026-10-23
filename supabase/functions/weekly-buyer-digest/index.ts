@@ -7,6 +7,7 @@
 // ============================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { recentVetrinaRecipients } from '../_shared/email-frequency.mjs';
 
 const RESEND_API_KEY            = Deno.env.get('RESEND_API_KEY')!;
 const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!;
@@ -80,6 +81,7 @@ Deno.serve(async (req) => {
     }
     const supabase = createClient(SUPABASE_URL, SB_SECRET_KEY);
     const weekStart = getWeekStart();
+    const recentOffers = await recentVetrinaRecipients(supabase);
     const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
 
     // Annunci nuovi della settimana (active, creati ultimi 7gg)
@@ -125,6 +127,7 @@ Deno.serve(async (req) => {
       const pref = prefMap.get(uid);
       if (!pref || pref.email_digest === false) continue;
       if (sentSet.has(uid)) continue;
+      if (recentOffers.has(uid)) continue;
 
       const userAlert = alerts.find(a => a.user_id === uid)!;
 

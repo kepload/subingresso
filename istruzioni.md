@@ -1570,6 +1570,19 @@ Prima di inviare completare uscita dalle offerte e coordinare con riepiloghi;
 data/EMAIL_VETRINE_20261023.md;file privati in
 Documents/campagna-vetrine-20261023/. Nessun seguito automatico avviato.
 
+**Seguito23/10, richiesta primo invio:**utente riferisce consensi WhatsApp a
+molti iscritti;chiesti nominativi per abbinarli,nessun opt-in generalizzato.
+`PATCH_VETRINA_EMAIL_20261023.sql`:registro consensi/log RLS solo servizio,
+20offerte/campagna e24ore,30giorni/persona,72ore dopo altre email periodiche.
+`vetrina-campaign` interno,manuale,preview predefinita,audit storico provider,
+nessun retry ambiguo;template condiviso novevarianti e listino unico.
+Opt-out `promo` revoca solo offerte;JSunsubscribe3 e testo dedicato. Snapshot
+venditori conservati,invio digest/statistiche saltato nei7giorni dopo offerta.
+Nessun nuovo cron;runner privato15secondi fra invii,solo su lista confermata.
+Migrazione/quattro Edge applicate;zero consensi registrati/zero invii mentre
+si attendono nomi. Test simulati/SQL ROLLBACK/browser passati. Contratto,
+pubblicazione e limiti in data/VETRINA_EMAIL.md;prove/cartella privata sopra.
+
 ### Edge Functions email (7+ totali)
 - **Transazionali:** `send-auth-email` (5 tipi auth), `notify-seller` (3 tipi), `notify-alert` (1), `notify-message` (1), `welcome-email` (1).
 - **Cron settimanali:** `weekly-buyer-digest` (lun: top annunci in zona), `weekly-seller-stats` (lun: views/delta).

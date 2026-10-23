@@ -13,6 +13,7 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
     const descriptions = {
         digest: 'Non riceverai più il riepilogo settimanale degli annunci.',
         stats: 'Non riceverai più le statistiche settimanali dei tuoi annunci.',
+        promo: 'Non riceverai più le offerte per le Vetrine. Le statistiche e gli avvisi che hai richiesto restano attivi.',
         bando_alert: 'Disattiverai gli avvisi su bandi e annunci della regione collegata a questa email.',
         all: 'Disattiverai i riepiloghi settimanali, le statistiche degli annunci e i promemoria delle fiere.'
     };
@@ -48,6 +49,7 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
             document.getElementById('successMsg').textContent = type === 'bando_alert'
                 ? (data.regione ? 'Non riceverai più gli avvisi su bandi e annunci per ' + data.regione + '.' : 'Non riceverai più questi avvisi su bandi e annunci.')
                 : descriptions[type];
+            if(type === 'promo') document.getElementById('unsubscribeReactivate').hidden = true;
             document.getElementById('unsubscribeFeedbackThanks').classList.toggle('hidden', !data.feedback_saved);
             document.getElementById('unsubscribeSuccessTitle').focus();
         } catch (error) {

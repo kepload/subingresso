@@ -2,6 +2,22 @@
 
 ## Email per vendere Vetrine — 23 ottobre 2026
 
+- Seguito autorizzato:utente riferisce consensi chiesti su WhatsApp a molti
+  iscritti e chiede primo giro/limite umano. Per abbinarli chiesti nomi/email,
+  senza estendere l'attestazione a tutti. Registro consensi inizialmente vuoto;
+  fonte/nota/data registrazione separata dalla data originaria,mai inventata.
+  Preparati limiti effettivi:20/campagna e24ore,30giorni/persona,72ore dopo
+  altre periodiche;Vetrina sostituisce digest/statistiche nei7giorni seguenti.
+  Invio manuale distanziato15secondi,nessun nuovo cron. Uscita solo offerte
+  `unsubscribe?type=promo`,altre preferenze conservate. Duplicati/esiti ambigui
+  bloccati,ID provider registrati. Migrazione e quattro Edge pubblicate;
+  zero permessi concessi e zero invii. Audit Resend20account:12email oggi,
+  un contatto escluso per problemi provider;nessuno dei20contattato nelle72ore.
+  Test novevarianti/invio simulato/limiti SQL ROLLBACK e disiscrizione nei tre
+  browser/formati passati. Dettagli data/VETRINA_EMAIL.md;prove e lista privata
+  Documents/campagna-vetrine-20261023/. Pubblicazione pagina uscita da verificare.
+  Backup tag/ramo remoti validi;helper interrotto dopo push per stderr noto.
+
 - Preferenza: poche email brevi e umane, varianti pertinenti, visualizzazioni
   reali e pacchetti per più annunci; obiettivo trovare prima un acquirente,
   nessuna promessa/tempo medio inventato. API READ ONLY:70venditori attivi,

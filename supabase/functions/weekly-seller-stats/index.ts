@@ -6,6 +6,7 @@
 // ============================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { recentVetrinaRecipients } from '../_shared/email-frequency.mjs';
 
 const RESEND_API_KEY            = Deno.env.get('RESEND_API_KEY')!;
 const SUPABASE_URL              = Deno.env.get('SUPABASE_URL')!;
@@ -33,6 +34,7 @@ Deno.serve(async (req) => {
     }
     const supabase = createClient(SUPABASE_URL, SB_SECRET_KEY);
     const weekStart = getWeekStart();
+    const recentOffers = await recentVetrinaRecipients(supabase);
 
     // Tutti gli annunci active raggruppati per user_id
     const { data: listings } = await supabase
@@ -102,6 +104,9 @@ Deno.serve(async (req) => {
         total_views: stats.totalViews,
         active_listings: stats.count,
       });
+
+      // Keep the snapshot but let the recent offer replace this week's email.
+      if (recentOffers.has(uid)) continue;
 
       // Se nessuna view questa settimana, skip (email inutile)
       if (weekViews <= 0) continue;

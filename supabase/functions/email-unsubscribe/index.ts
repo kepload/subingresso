@@ -44,13 +44,20 @@ Deno.serve(async (req) => {
         status: 400, headers: { ...CORS, 'Content-Type': 'application/json' }
       });
     }
-    if (!['digest', 'stats', 'all', 'bando_alert'].includes(type)) {
+    if (!['digest', 'stats', 'all', 'bando_alert', 'promo'].includes(type)) {
       return new Response(JSON.stringify({ ok: false, error: 'Type non valido' }), {
         status: 400, headers: { ...CORS, 'Content-Type': 'application/json' }
       });
     }
 
     const supabase = createClient(SUPABASE_URL, SB_SECRET_KEY);
+
+    if (type === 'promo') {
+      const stopped = await supabase.rpc('stop_vetrina_offers', {p_token:token});
+      if (stopped.error) return new Response(JSON.stringify({ok:false,error:'Riprova per completare la disiscrizione.'}), {status:503,headers:{...CORS,'Content-Type':'application/json'}});
+      if (stopped.data !== true) return new Response(JSON.stringify({ok:false,error:'Token non valido'}), {status:404,headers:{...CORS,'Content-Type':'application/json'}});
+      return completed(supabase,type,reason);
+    }
 
     // bando_alert: token vive su bando_alerts, l'unsub e' un DELETE della singola riga.
     if (type === 'bando_alert') {
