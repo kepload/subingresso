@@ -1570,6 +1570,17 @@ Sistema mai installato in prod (RPC `try_welcome_lottery` + colonne `welcome_lot
 
 ## 📬 Email — Sistema Completo (Resend)
 
+**Revisione grafica/copy23ottobre2026:** richiesta email semplici e invoglianti,
+non oggetti da report. Template condiviso `vetrina-email.mjs`,9varianti:
+blu/oro marchio, titolo breve, dato reale, prezzo/durata separati, pulsante
+«Metti in Vetrina»/«Scegli le tue Vetrine»; niente lungo titolo annuncio.
+Email a tabelle inline/Arial, leggibili senza immagini; testo alternativo
+coerente. Listino/consensi/misura/uscite/limiti invariati. Pubblicatoed33799,
+Edgecampagna4/adminanalytics3 ACTIVE e sorgenti riscaricate identiche.
+Test campagna/analytics/27casi browser passati, review indipendente ship.
+Registro12reali+1test identico, nessun reinvio. Dossier privato
+Documents/email-vetrine-design-20261023; contratto data/VETRINA_EMAIL.md.
+
 **Campagna Vetrine23ottobre2026:** preferenza per poche email umane e brevi,
 varianti in base a visualizzazioni reali e più annunci. Preparazione soltanto:
 20bozze private per20account (8pacchetti/8metriche/4visibilità),9varianti;

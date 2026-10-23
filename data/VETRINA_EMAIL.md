@@ -71,6 +71,15 @@ in `Documents/email-vetrine-design-20261023/`, contratto di superficie in
 `.impeccable/surfaces/vetrina-email.md`. Screenshot browser, nessuna consegna
 di prova a caselle reali e nessuna attestazione di test in Outlook/Gmail nativi.
 
+Pubblicazione della revisione: committed `ed33799`, `vetrina-campaign` versione4
+e `admin-email-analytics` versione3 ACTIVE. Riscaricate quattro sorgenti
+(due entrypoint, template e listino): identiche ai file revisionati. Entrambi
+gli endpoint senza autenticazione rispondono401. Registro invii identico:
+12messaggi clienti e1copia test già esistenti; nessun nuovo invio o reinvio.
+Suite campagna e regressione conversioni passate; nove modelli verificati
+su Chrome860/320 eSafari390, fallback inline compreso. Review indipendente
+`ship`; font/misure email motivati, nessuna nuova identità grafica.
+
 L'uscita è `/unsubscribe?t=...&type=promo`: apre il modulo esistente e attende conferma, poi revoca soltanto le offerte. Digest, statistiche e avvisi restano invariati. Feedback facoltativo compatibile con il nuovo tipo. L'header `List-Unsubscribe` punta al modulo; non viene dichiarato un supporto One-Click POST che non esiste. Le uscite generali `all` conservano le proprie funzionalità; i flag periodici disattivati impediscono comunque nuove offerte.
 
 ## Verifiche e conservazione

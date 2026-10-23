@@ -8,7 +8,11 @@
   Listino, metriche vere, consensi, uscite e limiti conservati.
   Test campagna/analytics e27casi browser Chrome860/320-Safari390 passati;
   fallback solo inline leggibile, nessuna immagine necessaria/nuovo invio.
-  Dossier Documents/email-vetrine-design-20261023; pubblicazione da verificare.
+  Pubblicatoed33799; Edge campagna4/copiaadmin3 ACTIVE, quattrosorgenti
+  riscaricati identici, accesso anonimo401. Registro ancora12invii reali+1test,
+  nessun reinvio. Review indipendente ship; brand esistente conservato.
+  Dossier Documents/email-vetrine-design-20261023; backup remoto valido,
+  helper con errore cleanup noto dopo push riuscito.
 
 ## Registrazione senza esempi telefono — 23 ottobre 2026
 
