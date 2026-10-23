@@ -7,6 +7,8 @@
   Chrome1440/768/490/320 e Safari390 passati,CTA subito visibile.
   Prove Documents/verifica-registrazione-esempi-20261023;backup remoto valido.
   Consultazione Resend:messaggio errore UI richiesto,nessuna nuova email.
+  Pubblicatocda881e,Vercel riuscito;Auth28 identico online,cinque formati
+  reali passati:esempi invisibili e CTA subito visibile,zero registrazioni.
 
 ## Registrazione compatta, correzione — 23 ottobre 2026
 
