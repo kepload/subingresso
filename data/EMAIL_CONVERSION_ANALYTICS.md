@@ -1,6 +1,6 @@
 # Email e conversioni Vetrina — 23 ottobre 2026
 
-Aggiornamento successivo del form: Auth25 mostra il solo testo breve sulle
+Aggiornamento successivo del form: Auth26 mostra il solo testo breve sulle
 offerte e trasmette `vetrina-email-20261023`, senza consenso alla misurazione.
 Le due caselle grandi partono selezionate su richiesta dell'utente; termini e
 telefono obbligatori. Il testo esteso/versione analytics descritto sotto è lo

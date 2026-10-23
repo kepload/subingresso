@@ -7,7 +7,7 @@
   Offerte facoltative:«acconsento a ricevere offerte sulla mail»,nessun
   testo aggiuntivo. Scelta/reset/errori nei due percorsi allineati;
   versione solo offerte vetrina-email-20261023,nessun consenso alla misura.
-  Auth25 su19sorgenti. Chrome1440/320 e Safari390 passati con rete/account
+  Auth26 su19sorgenti. Chrome1440/320 e Safari390 passati con rete/account
   simulati,zero nuove iscrizioni/email reali. Prove e stato pubblicazione:
   Documents/verifica-registrazione-termini-20261023/risultati.md.
   Backup tag/ramo remoti verificati; noto errore cleanup helper.

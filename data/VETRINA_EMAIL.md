@@ -13,7 +13,7 @@ Migrazioni campagne e scelta alla registrazione applicate; cinque Edge pubblicat
 Aggiornamento successivo23/10: richiesta esplicita di due caselle28px
 preselezionate; termini obbligatori con link /termini e *, telefono obbligatorio.
 Offerte facoltative con testo esatto «acconsento a ricevere offerte sulla mail».
-Auth25 ripristina questi default anche alla chiusura; versione solo offerte
+Auth26 ripristina questi default anche alla chiusura; versione solo offerte
 `vetrina-email-20261023`, mai consenso alla misura. Il paragrafo seguente
 documenta la scelta precedente, superata dalla richiesta corrente.
 
