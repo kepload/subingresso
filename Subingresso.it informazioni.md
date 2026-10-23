@@ -30,7 +30,12 @@ fonti e audit fiere completi: `data/FIERE.md`.
   email con4numeri e2grafici; percorso sito/pagamenti/varianti/attività/copia
   sotto «Statistiche complete». Mancanti distinti dagli zeri, acquisti email
   separati da tutti quelli sul sito. Backend e invii conservati.
-  Verifiche e pubblicazione: `Documents/statistiche-email-semplici-20261023`.
+  Pubblicato6c60d6a, VercelEtdmjGpNdLKwJc7NFux9rPNAcaGN READY:
+  dashboard/JS/CSS identici online, suite API/browser ripetuta con asset
+  pubblicati e snapshot reale, Chrome1440/768/320 e Safari390 chiaro/scuro.
+  Tema267controlli passati; inspector0FAIL,vuoto sotto fixture intenzionale.
+  Registro invariato12invii+1copia, nessun nuovo invio o cambio backend.
+  Prove `Documents/statistiche-email-semplici-20261023`.
 
 ## Email Vetrina, testi e grafica — 23 ottobre 2026
 
