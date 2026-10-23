@@ -36,6 +36,9 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Dossier Documents/email-vetrine-testi-approvati-20261023.
   Avatar mittente ancora da attivare:DNSBIMI assente,DMARCp=none;Gmail richiede
   certificatoCMC/VMC. AssetSbluSVG/PNG pronti,nessun acquisto/cambioDNS.
+  Pubblicato8bb7450,VercelCzvboiUxzgatopwwr86RmMb1A8DQ READY:SVG/PNG
+  pubblici identici ai blobGit,tipi corretti,PNG512×512,home200.
+  Backup remoto session-20261023-221356 verificato;cleanup helper con errore noto.
 
 - Seguito esplicito: inviate9anteprime al solo indirizzo personale indicato,
   **9/9delivered verificati**, numerate1–9; dati esempio, niente pixel/acquisti

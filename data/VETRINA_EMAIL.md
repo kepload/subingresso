@@ -122,6 +122,9 @@ Revisione attuale pubblicata e verificata: `vetrina-campaign` versione5 e
 (due entrypoint, template e listino): identiche ai file revisionati; richieste
 anonime401. Registro invariato:12offerte clienti+1copia test preesistenti.
 Nessun invio reale usato per questa verifica.
+Commit `8bb7450` pubblicato; Vercel `dpl_CzvboiUxzgatopwwr86RmMb1A8DQ`
+READY. SVG/PNG accessibili in HTTPS, identici ai blob Git con tipi immagine
+corretti; PNG512×512 e home HTTP200. Ricevute tecniche nel dossier locale.
 
 Pubblicazione precedente: commit `ed33799`, `vetrina-campaign` versione4
 e `admin-email-analytics` versione3 ACTIVE. Riscaricate quattro sorgenti
