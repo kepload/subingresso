@@ -1,5 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { vetrinaEmailPayload } from '../_shared/vetrina-email.mjs';
+import { vetrinaEmailPayload, vetrinaEmailCopy } from '../_shared/vetrina-email.mjs';
 const key=Deno.env.get('SB_SECRET_KEY')??Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const resend=Deno.env.get('RESEND_API_KEY');
 const json=(value:unknown,status=200)=>new Response(JSON.stringify(value),{status,headers:{'Content-Type':'application/json'}});
@@ -32,6 +32,10 @@ Deno.serve(async req=>{
  try {
   const body=await req.json();const action=body.action||'preview';
   if(!['preview','audit','send','verify'].includes(action))return json({error:'Invalid action'},400);
+  if(action==='preview'||action==='send') {
+   if(!Number.isInteger(body.variant??0)||(body.variant??0)<0||(body.variant??0)>2)return json({error:'Invalid variant'},400);
+   if(body.copy_id!==undefined){try{vetrinaEmailCopy(body.copy_id);}catch{return json({error:'Invalid copy'},400);}}
+  }
   if(action==='verify') {
    const {data,error}=await db.from('vetrina_email_log').select('id,provider_id,status,delivery_confirmed').eq('campaign',body.campaign).eq('status','sent');
    if(error)throw Error('delivery_log_unavailable');
@@ -64,12 +68,18 @@ Deno.serve(async req=>{
    if(candidate.error)throw Error('eligibility_check_failed');
    if(!candidate.data)return json({eligible:false});
    // No address or unsubscribe token escapes the service.
-   const email=vetrinaEmailPayload({...candidate.data,variant:body.variant??0},'preview@example.invalid',body.family);
-   return json({eligible:true,family:email.family,quote:email.quote,subject:email.payload.subject,listing_ids:email.listing_ids});
+   let email;
+   try{email=vetrinaEmailPayload({...candidate.data,variant:body.variant??0},'preview@example.invalid',body.family,body.copy_id);}catch{return json({error:'Copy not suitable for these listings'},400);}
+   return json({eligible:true,family:email.family,copy_id:email.copy_id,quote:email.quote,subject:email.payload.subject,listing_ids:email.listing_ids});
   }
   if(!resend)throw Error('provider_not_configured');
   const identity=await db.auth.admin.getUserById(body.user_id);const email=identity.data?.user?.email;
   if(identity.error||!email)return json({sent:false,reason:'recipient_unavailable'});
+  // Validate copy/listing compatibility before reserving a delivery or contacting Resend.
+  const candidate=await db.rpc('vetrina_email_candidate',{p_user_id:body.user_id});
+  if(candidate.error)throw Error('eligibility_check_failed');
+  if(!candidate.data)return json({sent:false,reason:'not_eligible'});
+  try{vetrinaEmailPayload({...candidate.data,variant:body.variant??0},email,body.family,body.copy_id);}catch{return json({error:'Copy not suitable for these listings'},400);}
   const history=await providerHistory();const checks=historyFor(history,email);
   if(checks.bad||checks.recent)return json({sent:false,reason:checks.bad?'provider_suppression':'recent_email'});
   // Leave at least 20 of the known 100/day allowance for service messages.
@@ -86,7 +96,7 @@ Deno.serve(async req=>{
   const profile=await db.from('profiles').select('email_digest,email_stats').eq('id',body.user_id).single();
   if(permission.error||profile.error||permission.data?.revoked_at||!profile.data?.email_digest||!profile.data?.email_stats){await finish('cancelled',{error_code:'preferences_changed'});return json({sent:false,reason:'preferences_changed'});}
   let message;
-  try{message=vetrinaEmailPayload(item,email,body.family);}catch{await finish('failed',{error_code:'render_failed'});return json({sent:false,reason:'render_failed'},500);}
+  try{message=vetrinaEmailPayload(item,email,body.family,body.copy_id);}catch{await finish('failed',{error_code:'render_failed'});return json({sent:false,reason:'render_failed'},500);}
   const stored=await db.from('vetrina_email_log').update({subject:message.payload.subject,listing_ids:message.listing_ids,offered_tier:message.quote.tier,template_family:message.family}).eq('id',delivery).eq('status','reserved');
   if(stored.error)throw Error('delivery_prepare_failed');
   // Do not retry ambiguous network outcomes. Reserved/unknown remain protected for 30d.
@@ -97,6 +107,6 @@ Deno.serve(async req=>{
   const result=await response.json().catch(()=>null);
   if(!result?.id){await finish('unknown',{error_code:'provider_response_unknown'});return json({sent:false,reason:'outcome_unknown',delivery_id:delivery});}
   await finish('sent',{provider_id:result.id,sent_at:new Date().toISOString(),provider_event:'accepted'});
-  return json({sent:true,delivery_id:delivery,provider_id:result.id,family:message.family,quote:message.quote});
+  return json({sent:true,delivery_id:delivery,provider_id:result.id,family:message.family,copy_id:message.copy_id,quote:message.quote});
  }catch(error){console.error('vetrina-campaign',String((error as Error).message));return json({error:String((error as Error).message)},500);}
 });

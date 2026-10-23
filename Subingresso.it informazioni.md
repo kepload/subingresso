@@ -25,6 +25,18 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## Email Vetrina, testi e grafica — 23 ottobre 2026
 
+- Nuova preferenza e sostituzione richiesta:10testi approvati con correzioni
+  letterali+2versioni brevi della6;beneficio/spiegazione prima del prezzo.
+  Nessun totale/sconto;solo «A partire da solo49euro!» nei2/10. Grafica pulita,
+  una CTAblu evidente,Sblu testuale;Giacomo senza tempi/cifre/Vetrina attribuita.
+  «90%» e oggetto plateatico forniti esplicitamente dall'utente,non dati misurati.
+  Verifiche locali12testi×3browser/formati e regressione analytics passate.
+  Edgecampagna5/adminanalytics4 ACTIVE,quattrosorgenti riscaricati identici,
+  anonimo401;registro12offerte+1test invariato,nessun nuovo invio.
+  Dossier Documents/email-vetrine-testi-approvati-20261023.
+  Avatar mittente ancora da attivare:DNSBIMI assente,DMARCp=none;Gmail richiede
+  certificatoCMC/VMC. AssetSbluSVG/PNG pronti,nessun acquisto/cambioDNS.
+
 - Seguito esplicito: inviate9anteprime al solo indirizzo personale indicato,
   **9/9delivered verificati**, numerate1–9; dati esempio, niente pixel/acquisti
   o campagne clienti. Invio una tantum separato dalle statistiche reali;

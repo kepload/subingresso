@@ -506,10 +506,11 @@ L'utente non loggato compila tutti i 5 step SENZA vedere mai il banner "devi reg
 - Modulo corrente: vedere `js/auth.js` e il riepilogo registrazione sopra;
   le vecchie descrizioni delle caselle vuote non descrivono più l'interfaccia.
   L'uscita `promo` revoca solo offerte; mantenere le altre preferenze.
-- Template condiviso `supabase/functions/_shared/vetrina-email.mjs`: nove
-  varianti brevi e umane, oggetto sul vantaggio, blu/oro, prezzo/durata e
-  pulsante chiari. Tabelle/stili inline e Arial, leggibilità senza immagini.
-  Nessuna promessa di vendita o metrica inventata.
+- Template condiviso `supabase/functions/_shared/vetrina-email.mjs`: dodici
+  testi approvati, con beneficio per il venditore e spiegazione della Vetrina.
+  Nessun totale/sconto; unica dicitura economica ammessa «A partire da solo
+  49 euro!». Un pulsante blu evidente, S blu testuale, tabelle/stili inline e
+  Arial. Selezione `copy_id` e stato logo mittente in `data/VETRINA_EMAIL.md`.
 
 ### Edge Functions email (7+ totali)
 - **Transazionali:** `send-auth-email` (5 tipi auth), `notify-seller` (3 tipi), `notify-alert` (1), `notify-message` (1), `welcome-email` (1).

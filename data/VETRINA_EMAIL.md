@@ -61,26 +61,69 @@ Il server ricontrolla: account non admin/demo, email confermata, preferenze peri
 
 `vetrina-campaign` accetta solo POST con Bearer interno. Azione predefinita `preview`, non invio. `audit` controlla al massimo venti ID, lo storico Resend e le esclusioni. `send` prende una prenotazione atomica, ricontrolla le revoche/preferenze, invia un solo messaggio con chiave di idempotenza stabile e registra l'ID provider. `verify` legge l'esito dal provider; accettato e consegnato restano distinti. In caso di timeout/esito ambiguo nessun retry automatico: stato `unknown` o prenotazione conservata, verifica manuale prima di qualsiasi altra azione.
 
-Template `supabase/functions/_shared/vetrina-email.mjs`, rifatto il23/10 su richiesta
-dell'utente: nove varianti con oggetti orientati alla vendita e al vantaggio,
-testi brevi, nessun titolo annuncio lungo nel corpo. Logo testuale, fascia blu
-con titolo/oro Vetrina, prezzo separato e pulsante pieno «Metti in Vetrina»
-o «Scegli le tue Vetrine». Un'anteprima inbox anticipa durata/prezzo e assenza
-di abbonamento. HTML email a tabelle con stili inline, larghezza600px e
-adattamento320px, font Arial/Helvetica; grafica completa senza immagini remote.
-L'eventuale pixel resta soltanto nel percorso di misura autorizzata.
-Testo alternativo allineato; saluto vero e reply-to info@subingresso.it.
-Pacchetto quando ci sono più annunci idonei, listino condiviso
-`js/vetrina-pricing.js`: totale, risparmio e durata devono corrispondere
-al link proposto. Il pulsante apre la scelta in dashboard; nessun addebito
-avviato dalla mail. Nessuna promessa di vendita garantita, acquirente già
-trovato, scarsità o tempo medio inventato. Preferenza permanente: semplice,
-umano e leggibile, vantaggio/prezzo/azione immediati; evitare oggetti da report.
-Questa revisione non autorizza reinvii o nuove campagne. Anteprime e verifiche
-in `Documents/email-vetrine-design-20261023/`. Screenshot browser, nessuna consegna
-di prova a caselle reali e nessuna attestazione di test in Outlook/Gmail nativi.
+### Testi approvati e due varianti brevi — 23 ottobre 2026
 
-Pubblicazione della revisione: committed `ed33799`, `vetrina-campaign` versione4
+Template `supabase/functions/_shared/vetrina-email.mjs`: sostituiti i vecchi
+testi con i dieci esempi approvati dall'utente, applicando le sue correzioni
+letterali, e due versioni più brevi della mail 6 (ID11–12). Si parte dal motivo
+per vendere: cambiare mercato, liberare un giorno, farsi trovare nelle ricerche
+o nel blog. Linguaggio semplice; la Vetrina viene spiegata nel corpo.
+La mail5 racconta la vendita di Giacomo a Milano riferita dall'utente, senza
+inventare sue citazioni, tempi, cifre o acquisto della Vetrina. La frase «Il90%
+degli ambulanti…» e l'oggetto sul plateatico sono testi espressamente forniti
+e approvati dall'utente, non metriche o scadenze misurate dalla piattaforma.
+
+Nessun totale, sconto o risparmio nelle email, compresa l'anteprima inbox e la
+versione testuale. Solo nei testi2/10 compare «A partire da solo49euro!»,
+con spazi normali nel messaggio. Prezzi reali e durate restano nel preventivo
+condiviso `js/vetrina-pricing.js` e nella scelta aperta dal pulsante: nessuna
+modifica al listino, ai pagamenti o ai dati. Una sola azione commerciale
+ampia e blu, sfondo bianco, titolo su fascia blu, nessun riquadro prezzo.
+Tabelle/stili inline, Arial/Helvetica, larghezza600px e adattamento320px.
+S blu e logo testuali leggibili anche con immagini disabilitate. Nessuna
+nuova immagine remota; pixel solo nel percorso di misura già autorizzato.
+Saluto vero, reply-to info@subingresso.it, uscita offerte e misura conservati.
+
+Il renderer esporta i dodici testi e accetta `copy_id` numerico1–12 nelle
+azioni interne `preview`/`send`. La variante DB resta0–2: nessuna migrazione.
+Senza scelta esplicita: stats usa6/11/12; visibility seleziona stabilmente
+1/2/3/4/5/7/8/10 in base all'account e alla variante; bundle usa9.
+Il testo9 richiede più annunci. ID errato o testo incompatibile viene respinto
+prima di prenotare un invio o contattare Resend. Oggetto esatto nel registro,
+`copy_id` nella risposta e tag provider `copy=approved-N`; gruppi analytics e
+preventivi storici compatibili. Il pulsante apre la dashboard prima di pagare.
+Nessun nuovo invio, reinvio o cron autorizzato da questa revisione.
+
+Anteprime locali dei12testi, screenshot Chrome860/320 e Safari390 e controlli
+in `Documents/email-vetrine-testi-approvati-20261023/`. Pulsante interamente
+nella prima schermata nei36casi, nessun overflow; fallback inline leggibile.
+Tab verificato in Chrome; focus diretto in WebKit, che nella configurazione
+locale non include i link nel giro di Tab predefinito. Nessun test in client
+Gmail/Outlook nativi né invio reale di prova.
+
+### Logo accanto al mittente
+
+Controllo DNS23/10: `_dmarc.subingresso.it` pubblica `p=none`; record
+`default._bimi.subingresso.it` assente. Resend invia da noreply@subingresso.it,
+mentre la casella info@ è il reply-to: la grafica HTML e la foto della casella
+di risposta non impostano l'avatar del mittente ricevuto.
+Predisposti `email-brand-s.svg` (SVG Tiny P/S, glifo del font di marca esistente)
+ed `email-brand-s.png`512×512: S blu su bianco. Nessun logo del sito sostituito.
+Per mostrare il marchio tramite BIMI in Gmail servono DMARC in enforcement,
+certificato CMC/VMC emesso da terzi e DNSBIMI con i relativi URL. I soli asset
+pubblicati o una diversa intestazione non bastano. Nessun certificato acquistato
+né modifica di DNS/SPF/MX/DMARC: configurazione da completare dopo verifica
+delle sorgenti legittime e disponibilità del certificato/accesso DNS.
+Fonti: [Resend BIMI](https://resend.com/docs/dashboard/domains/bimi) e
+[Google BIMI](https://support.google.com/a/answer/10911320?hl=en).
+
+Revisione attuale pubblicata e verificata: `vetrina-campaign` versione5 e
+`admin-email-analytics` versione4 ACTIVE. Riscaricate quattro sorgenti
+(due entrypoint, template e listino): identiche ai file revisionati; richieste
+anonime401. Registro invariato:12offerte clienti+1copia test preesistenti.
+Nessun invio reale usato per questa verifica.
+
+Pubblicazione precedente: commit `ed33799`, `vetrina-campaign` versione4
 e `admin-email-analytics` versione3 ACTIVE. Riscaricate quattro sorgenti
 (due entrypoint, template e listino): identiche ai file revisionati. Entrambi
 gli endpoint senza autenticazione rispondono401. Registro invii identico:
@@ -93,7 +136,7 @@ L'uscita è `/unsubscribe?t=...&type=promo`: apre il modulo esistente e attende 
 
 ## Verifiche e conservazione
 
-`scripts/test-vetrina-email.cjs`: nove varianti, somme pacchetti, escaping, autenticazione interna, assenza consenso, revoca durante preparazione, errori/bounce/recenza provider, timeout senza retry, registrazione e duplicati simulati, sostituzione dei settimanali conservando snapshot, frequenza che si blocca se il registro non è leggibile. Nessun invio reale nei test.
+`scripts/test-vetrina-email.cjs`: dodici testi, scelta esplicita e compatibilità prima della prenotazione, due varianti più brevi, nessun totale in mail, somme interne dei pacchetti, escaping, autenticazione interna, assenza consenso, revoca durante preparazione, errori/bounce/recenza provider, timeout senza retry, registrazione e duplicati simulati, sostituzione dei settimanali conservando snapshot, frequenza che si blocca se il registro non è leggibile. Nessun invio reale nei test.
 
 `scripts/verify-vetrina-email.sql` eseguito nella stessa transazione della migrazione e **ROLLBACK**: separazione consensi, periodo UTC, blocco duplicati, riapertura dopo 30 giorni, tetti 24 ore/campagna, opt-out idempotente senza toccare altre preferenze, permessi solo servizio. Fixture temporanee annullate. `scripts/test-email-unsubscribe.cjs` aggiornato: Chrome1440/320 e Safari390, nessuna disiscrizione reale.
 

@@ -2,7 +2,7 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),asse
 const {stripTypeScriptTypes}=require('node:module');
 const root=path.resolve(__dirname,'..');
 (async()=>{
- const {vetrinaEmailPayload}=await import('../supabase/functions/_shared/vetrina-email.mjs');
+ const {vetrinaEmailPayload,vetrinaEmailCopy,VETRINA_EMAIL_COPIES}=await import('../supabase/functions/_shared/vetrina-email.mjs');
  const {recentVetrinaRecipients}=await import('../supabase/functions/_shared/email-frequency.mjs');
  const base={user_id:'fixture-user',delivery_id:'fixture-delivery',variant:0,nome:'Ada',unsub_token:'fixture-unsubscribe-token',active_count:1,period_start:'2026-10-09',period_end:'2026-10-22',listings:[{id:'fixture-listing',title:'<img src=x onerror=alert(1)>',comune:'Milano\r\nBcc:evil',views_14d:118}]};
  for(const family of ['stats','visibility','bundle'])for(const variant of [0,1,2]){
@@ -11,12 +11,37 @@ const root=path.resolve(__dirname,'..');
   assert(!result.payload.html.includes('<img'));assert(!result.payload.html.includes('onerror='));assert(!/[\r\n]/.test(result.payload.subject));assert.equal(result.payload.reply_to,'info@subingresso.it');assert(result.payload.text.includes('type=promo'));assert(!result.payload.headers['List-Unsubscribe-Post']);
   assert(Buffer.byteLength(result.payload.html)<12000);assert(result.payload.html.includes('name="viewport"'));assert(result.payload.html.includes('role="presentation"'));assert(result.payload.text.includes('Pagamento unico. Nessun abbonamento.'));assert(result.payload.html.includes('bgcolor="#1d4ed8"'));
   assert(result.payload.text.includes(new URL(result.payload.html.match(/href="([^"]*promuovi=[^"]*)"/)[1].replace(/&amp;/g,'&')).href));
-  assert(result.payload.html.includes(`Vetrina Premium · ${result.quote.days} giorni`)||result.payload.html.includes(`${result.quote.count} annunci · ${result.quote.days} giorni`));
+  assert(!/Risparmi|Invece di|\d+[,.]\d{2}\s*€/.test(result.payload.text));
+  assert.equal(result.payload.tags.find(t=>t.name==='copy').value,`approved-${result.copy_id}`);
   if(family==='bundle'){assert.equal(result.quote.total,variant===1?17820:8820);assert.equal(result.listing_ids.length,2);}else assert.equal(result.listing_ids.length,1);
  }
  const plain=vetrinaEmailPayload(base,'fixture@example.invalid').payload;
- const hostile=vetrinaEmailPayload({...base,listings:[{...base.listings[0],comune:'<svg onload=alert(1)>'}]},'fixture@example.invalid').payload;
- assert(hostile.html.includes('&lt;svg'));assert(!hostile.html.includes('<svg'));assert(hostile.subject.includes('<svg'),'subject stays plain text');
+ const hostile=vetrinaEmailPayload({...base,nome:'<svg onload=alert(1)>',unsub_token:'\"<svg>',listings:[{...base.listings[0],id:'\"<svg>',comune:'<svg onload=alert(1)>'}]},'fixture@example.invalid').payload;
+ assert(!hostile.html.includes('<svg'));assert(!hostile.html.includes('onload='));assert(hostile.text.startsWith('Ciao,\n'));assert(hostile.html.includes('%22%3Csvg%3E'));assert(!hostile.subject.includes('<svg'),'fixed subject never includes listing input');
+ assert.equal(VETRINA_EMAIL_COPIES.length,12);
+ for(const copy of VETRINA_EMAIL_COPIES)for(const variant of [0,1,2]){
+  const listings=copy.bundleOnly?[...base.listings,{...base.listings[0],id:'second'}]:base.listings;
+  const result=vetrinaEmailPayload({...base,variant,listings},'fixture@example.invalid','stats',copy.id);
+  assert.equal(result.payload.subject,copy.subject);assert.equal(result.copy_id,copy.id);
+  assert.equal((result.payload.html.match(/data-email-cta/g)||[]).length,1);
+  assert(!/\d+\s*€|\d+[,.]\d{2}\s*(?:euro|€)|totale|risparmi|invece di/i.test(result.payload.text));
+  assert.equal(result.payload.text.includes('A partire da solo 49 euro!'),!!copy.price);
+  for(const format of [result.payload.text,result.payload.html])assert.deepEqual(format.match(/\b\d+(?:[.,]\d{2})?\s*(?:euro\b|€)/g)||[],copy.price?['49 euro']:[],'only approved starting price in either email format');
+  if(!copy.price)assert(!/\d+\s*euro/.test(result.payload.text));
+  assert.equal(result.quote.total,copy.bundleOnly?(variant===1?17820:8820):(variant===2?9900:4900));
+ }
+ assert.equal(vetrinaEmailCopy(1).subject,'Il plateatico sta per scadere! Vendi il posteggio!');
+ assert(!vetrinaEmailCopy(1).paragraphs.join(' ').includes('su Subingresso.it'));
+ assert(vetrinaEmailCopy(2).paragraphs.join(' ').includes('vendi il vecchio posteggio'));
+ assert(vetrinaEmailCopy(3).subject.endsWith('lista!'));
+ assert.equal(vetrinaEmailCopy(4).subject,'Chi compra è nel nostro blog!!');
+ assert(vetrinaEmailCopy(4).paragraphs[0].startsWith('Il 90%'));
+ assert(!/mese|Vetrina/.test(vetrinaEmailCopy(5).paragraphs[0]));
+ for(const id of [11,12])assert(vetrinaEmailCopy(id).paragraphs.join(' ').length<vetrinaEmailCopy(6).paragraphs.join(' ').length);
+ assert.throws(()=>vetrinaEmailPayload(base,'fixture@example.invalid','stats',9));
+ assert.throws(()=>vetrinaEmailPayload(base,'fixture@example.invalid','stats',99));
+ const seen=new Set();for(let i=0;i<100;i++)for(const variant of [0,1,2])seen.add(vetrinaEmailPayload({...base,user_id:'fixture-'+i,variant},'fixture@example.invalid','visibility').copy_id);
+ for(const id of [1,2,3,4,5,7,8,10])assert(seen.has(id),'all visibility copies reachable');
  assert(!plain.html.includes('kind=open'));assert(!plain.html.includes('kind=click'));assert(plain.html.includes('promuovi='));
  const measured=vetrinaEmailPayload({...base,tracking_enabled:true,tracking_token:'22222222-2222-2222-2222-222222222222'},'fixture@example.invalid').payload;
  assert(measured.html.includes('kind=open'));assert(measured.html.includes('kind=click'));assert(measured.html.includes('type=tracking'));assert(!measured.text.includes('kind=open'));
@@ -33,9 +58,11 @@ const root=path.resolve(__dirname,'..');
   return new Response(JSON.stringify({has_more:false,data:[{id:'earlier',to:['fixture@example.invalid'],subject:'Le statistiche',created_at,last_event:event}]}));
  };
  const source=fs.readFileSync(path.join(root,'supabase/functions/vetrina-campaign/index.ts'),'utf8').replace(/^import .*\n/gm,'');
- new vm.Script(stripTypeScriptTypes(source)).runInNewContext({Deno:{env:{get:n=>n==='RESEND_API_KEY'?'fixture-provider':'fixture-internal'},serve:h=>handler=h},createClient:()=>db,vetrinaEmailPayload,fetch:mockFetch,Request,Response,AbortSignal,Date,Promise,JSON,Array,Error,console:{error(){}},setTimeout:fn=>{fn();return 0;}});
- const call=async(action='send',auth='fixture-internal')=>{const r=await handler(new Request('https://fixture.invalid/campaign',{method:'POST',headers:{Authorization:'Bearer '+auth,'Content-Type':'application/json'},body:JSON.stringify({action,user_id:'fixture-user',campaign:'fixture-campaign',variant:0})}));return {status:r.status,body:await r.json()};};
+ new vm.Script(stripTypeScriptTypes(source)).runInNewContext({Deno:{env:{get:n=>n==='RESEND_API_KEY'?'fixture-provider':'fixture-internal'},serve:h=>handler=h},createClient:()=>db,vetrinaEmailPayload,vetrinaEmailCopy,fetch:mockFetch,Request,Response,AbortSignal,Date,Promise,JSON,Array,Error,console:{error(){}},setTimeout:fn=>{fn();return 0;}});
+ const call=async(action='send',auth='fixture-internal',extra={})=>{const r=await handler(new Request('https://fixture.invalid/campaign',{method:'POST',headers:{Authorization:'Bearer '+auth,'Content-Type':'application/json'},body:JSON.stringify({action,user_id:'fixture-user',campaign:'fixture-campaign',variant:0,...extra})}));return {status:r.status,body:await r.json()};};
  assert.equal((await call('send','invalid')).status,401);assert.equal(posts,0);assert.equal(claimCount,0);
+ for(const extra of [{copy_id:99},{copy_id:'6'},{copy_id:9},{variant:3},{variant:null,copy_id:null}]){assert.equal((await call('send','fixture-internal',extra)).status,400);assert.equal(posts,0);assert.equal(claimCount,0);}
+ assert.equal((await call('preview','fixture-internal',{copy_id:12})).body.copy_id,12);assert.equal(posts,0);
  permitted=false;assert.equal((await call('preview')).body.eligible,false);assert.equal(posts,0);permitted=true;
  for(const state of ['bounced','recent','history403']){mode=state;const r=await call();if(state==='history403')assert.equal(r.status,500);else assert.equal(r.body.sent,false);assert.equal(posts,0);assert.equal(claimCount,0);}
  mode='success';revoked=true;await call();assert.equal(posts,0);assert(writes.some(w=>w.value.status==='cancelled'));revoked=false;
@@ -53,5 +80,5 @@ const root=path.resolve(__dirname,'..');
   const response=await weeklyHandler(new Request('https://fixture.invalid/weekly',{method:'POST',headers:{Authorization:'Bearer fixture-internal'}}));
   assert.equal(response.status,200);assert.equal(weeklyPosts,0);if(kind==='weekly-seller-stats')assert.equal(snapshots,1,'weekly snapshot retained while promotional email replaces delivery');
  }
- console.log('PASS: nine short variants; exact bundle totals; escaping; separate opt-out; internal auth; missing consent; provider bounce/recent/history errors; revoked consent; no retry on timeout; failure logging; delivery/duplicate protection; weekly suppression with retained stats; fail-closed frequency checks. No real email sent.');
+ console.log('PASS: 12 approved copies; 2 shorter price variants; no totals in HTML/plain text; all copies reachable; exact internal quotes; explicit selection before claim; escaping; opt-out; auth/consent/provider errors; no retry; duplicate protection; weekly suppression. No real email sent.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
