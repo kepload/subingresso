@@ -642,6 +642,17 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 - `formatPrice()` in `data.js`: affitto → `€ X /anno`, vendita → `€ X`.
 - **`#prezzoMobile`** in `annuncio.html`: elemento `lg:hidden` sotto il titolo, aggiornato da `annuncio-detail.js`.
 
+## Esito degli annunci — 24 ottobre 2026
+
+«Venduto o affittato?» richiede il mini modulo: esito, importo facoltativo,
+canale. Nessuna delle due lascia l'annuncio disponibile. Prezzi e canali
+restano privati, dichiarati e non certificati; canoni annui distinti dai
+prezzi totali. Controlli client/server e filtro degli importi anomali,
+proprietà verificata e chiusura atomica/idempotente tramite RPC obbligatoria.
+Lo stato tecnico `sold` indica concluso; il nuovo esito distingue venduto e
+affittato. Nessun esito ricostruito per lo storico. Contratto e soglie:
+`data/LISTING_OUTCOMES.md`; migrazione `PATCH_LISTING_OUTCOMES_20261024.sql`.
+
 ## 🗑️ Eliminazione Annunci & Account
 
 - **Annunci**: `status='deleted'` (soft delete). NON DELETE fisico.
@@ -995,7 +1006,7 @@ segnalata nel maggio 2026 va verificata senza ristampare o riutilizzare il valor
 - **Privacy policy (pubblicazione 7 ottobre 2026, conformità ancora aperta)**: `privacy.html` pubblicata su richiesta esplicita usando solo Subingresso.it e `info@subingresso.it`, senza nome/indirizzo/P.IVA. Identificazione legale del titolare ancora incompleta ai fini GDPR. Testo adattato al funzionamento attuale: nessun pannello consenso inesistente o TTL visitor ID inventato. Restano da allineare consenso analytics, email promozionali e gestione scadenze: `PRIVACY_DATA_AUDIT_20261007.md`. Bozza completa futura in `PRIVACY_POLICY_BOZZA_20261007.md`. Per sviluppo del sito: dati pertinenti entro limiti definiti, storico lungo solo con anonimizzazione effettiva. Nessuna cancellazione applicata.
 - **Step 3 lifecycle annunci scaduti**: edge function + cron daily, 2 email (7gg prima + giorno scadenza), tabella `expiry_notification_log` UNIQUE per dedup. Mai fatto.
 - **welcome_popup**: dichiarato nell'enum `_AMO_VALID_SOURCES` ma morto → costruirlo (CTA completa profilo/avatar) o rimuoverlo.
-- **Data audit** (richiesto dall'utente): cosa salviamo vs buchi — annunci eliminati (solo soft-delete), esito venduti/affittati non tracciato, log modifiche, eventi conversione. Outcome data = gold per stats stile Idealista. Discutere prima.
+- **Data audit**: annunci eliminati conservati secondo le regole correnti; dal 24 ottobre gli esiti venduto/affittato e i prezzi dichiarati hanno il mini modulo privato (`data/LISTING_OUTCOMES.md`), senza ricostruzione dello storico. Restano da valutare log modifiche e ulteriori eventi di conversione.
 - **Spalmare i 2 cron settimanali** su giorni diversi (allunga la quota free Resend).
 - **og:image `/annunci` e `/blog`** on-brand (ora frutta/verdura Pexels).
 - **Trust whitelist modifiche annuncio**: auto-approvazione dopo N annunci approvati (meno re-revisioni admin).

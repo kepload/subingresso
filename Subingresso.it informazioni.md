@@ -5,6 +5,27 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Esito venduto/affittato — 24 ottobre 2026
+
+- Richiesto mini modulo obbligatorio, massimo3passaggi: esito, prezzo
+  facoltativo, canale. Nessuna delle due termina subito e lascia disponibile.
+  Subingresso/Facebook/altro sito/passaparola/altro; canoni annui.
+  Client/server: vendita100–500.000€, affitto120–120.000€/anno; fuori limiti
+  rifiutati, rapporti<20%/>300% e riferimenti mancanti/incompatibili separati
+  dalle analisi. Dati dichiarati, mai certificati; timestamp della risposta,
+  nessuna data d'atto inventata. Contratto `data/LISTING_OUTCOMES.md`.
+- Locale:120controlli Chrome1440/768/320 e Safari390 chiaro/scuro passati;
+  regressione Vetrina/statistiche e SQL ROLLBACK passati, inventari/trigger
+  precedenti invariati. Prezzi privati, proprietà/RLS, blocco bypass e retry.
+  Revisione indipendente senza problemi bloccanti. Schema applicato e verificato:
+  zero esiti/prezzi di prova persistenti, guardia attiva, accessi diretti negati.
+  Pubblicazione frontend da verificare.
+  Prove `Documents/esiti-annunci-20261024`.
+- Errore di sessione: chiave interna Supabase esposta nell'output tecnico;
+  copia locale sanitizzata, nessun segreto nei file versionati. Rotazione
+  necessaria e segnalata, non eseguita. Backup remoto preventivo verificato;
+  errore cleanup helper noto, separato dal push riuscito.
+
 ## Statistiche admin, ritorno allo stile precedente — 23 ottobre 2026
 
 - Preferenza: stile di «Funnel utenti»/«Comuni più visitati» su tutti i pannelli

@@ -1244,6 +1244,34 @@
 <script src="js/vetrina-account.js?v=4"></script>
 <script src="js/ui-components.js?v=18"></script>
 <script src="js/auth.js?v=28"></script>
+<link rel="stylesheet" href="css/listing-outcome.css?v=1">
+<dialog id="listingOutcomeDialog" class="listing-outcome" aria-labelledby="listingOutcomeTitle" aria-describedby="listingOutcomeListing">
+    <div class="listing-outcome__top"><h2 id="listingOutcomeTitle">Come è andata?</h2><button type="button" id="listingOutcomeClose" class="listing-outcome__close">Chiudi</button></div>
+    <p id="listingOutcomeListing" class="listing-outcome__listing"></p>
+    <p id="listingOutcomeProgress" class="listing-outcome__progress" aria-live="polite">Passo 1 di 3</p>
+    <form id="listingOutcomeForm" novalidate>
+        <fieldset data-outcome-step="1"><legend>Hai concluso la trattativa?</legend><div class="listing-outcome__choices">
+            <label class="listing-outcome__choice"><input type="radio" name="listingOutcome" value="sold">Venduto</label>
+            <label class="listing-outcome__choice"><input type="radio" name="listingOutcome" value="rented">Affittato</label>
+            <label class="listing-outcome__choice"><input type="radio" name="listingOutcome" value="neither">Nessuna delle due</label>
+        </div><p id="listingOutcomeNeitherNote" class="listing-outcome__hint" hidden>L’annuncio resterà disponibile.</p></fieldset>
+        <div data-outcome-step="2" hidden>
+            <label for="listingOutcomePrice" id="listingOutcomePriceLabel" class="listing-outcome__label">Prezzo finale di vendita</label>
+            <div class="listing-outcome__amount"><input id="listingOutcomePrice" type="text" inputmode="decimal" autocomplete="off" maxlength="12" placeholder="Es. 15000" aria-describedby="listingOutcomePriceHint listingOutcomeError"><span id="listingOutcomePriceUnit">€</span></div>
+            <p id="listingOutcomePriceHint" class="listing-outcome__hint">Facoltativo. Puoi lasciare vuoto. L’importo resta riservato e ci aiuta a capire i prezzi dei posteggi.</p>
+        </div>
+        <fieldset data-outcome-step="3" hidden><legend id="listingOutcomeSourceTitle">Dove hai trovato l’acquirente?</legend><div class="listing-outcome__choices">
+            <label class="listing-outcome__choice"><input type="radio" name="listingOutcomeSource" value="subingresso">Subingresso.it</label>
+            <label class="listing-outcome__choice"><input type="radio" name="listingOutcomeSource" value="facebook">Facebook</label>
+            <label class="listing-outcome__choice"><input type="radio" name="listingOutcomeSource" value="other_site">Un altro sito di annunci</label>
+            <label class="listing-outcome__choice"><input type="radio" name="listingOutcomeSource" value="word_of_mouth">Passaparola</label>
+            <label class="listing-outcome__choice"><input type="radio" name="listingOutcomeSource" value="other">Altro</label>
+        </div></fieldset>
+        <p id="listingOutcomeError" class="listing-outcome__error" role="alert" tabindex="-1" hidden></p>
+        <div class="listing-outcome__actions"><button id="listingOutcomeBack" type="button" hidden>Indietro</button><button id="listingOutcomeNext" type="submit">Continua</button></div>
+    </form>
+</dialog>
+<script src="js/listing-outcome.js?v=1"></script>
 <script src="js/fiere-access.js?v=2"></script>
 <script type="module" src="js/saved-fairs.js?v=3"></script>
 <script src="js/blog-generator.js?v=3"></script>
@@ -1257,6 +1285,8 @@
 let _currentUser = null;
 let _isAdmin = false;
 let _profileReady = false;
+let _myListingsVersion = 0;
+let _listingOutcomeRows = new Map();
 
 // ── Toast "vetrina annullata" da querystring ─────────────
 (() => {
@@ -3769,13 +3799,27 @@ function _buildSellerAdvice(listings) {
 
 async function loadMyListings() {
     const grid = document.getElementById('myListingsGrid');
+    const actor = _currentUser?.id, requestVersion = ++_myListingsVersion;
+    _listingOutcomeRows.clear();
+    if (!actor) return;
     // NB: select esplicito senza tel/email (REVOKE per authenticated dal 3 mag 2026).
     const { data, error } = await _supabase
         .from('annunci')
         .select('id, user_id, titolo, descrizione, stato, categoria, tipo, settore, dettagli_extra, regione, provincia, comune, superficie, giorni, prezzo, contatto, data, status, created_at, img_urls, expires_at, visualizzazioni, saved_count, featured, featured_until, featured_tier, featured_since, video_url')
-        .eq('user_id', _currentUser.id)
+        .eq('user_id', actor)
         .neq('status', 'deleted')
         .order('created_at', { ascending: false });
+
+    if (_currentUser?.id !== actor || requestVersion !== _myListingsVersion) return;
+    const outcomes = new Map();
+    if (data?.some(l => l.status === 'sold')) {
+        try {
+            const result = await _supabase.rpc('get_my_listing_outcomes');
+            if (!result.error && Array.isArray(result.data)) for (const row of result.data) outcomes.set(row.listing_id, row.outcome);
+        } catch (_) { /* Esiti mancanti non diventano vendite dedotte. */ }
+    }
+    if (_currentUser?.id !== actor || requestVersion !== _myListingsVersion) return;
+    _listingOutcomeRows = new Map((data || []).map(l => [l.id, l]));
 
     if (error || !data || data.length === 0) {
         grid.innerHTML = `
@@ -3802,7 +3846,7 @@ async function loadMyListings() {
                             l.status === 'active' ? 'Attivo' :
                             l.status === 'pending' ? 'In Revisione' :
                             l.status === 'rejected' ? 'Rifiutato' :
-                            l.status === 'sold' ? 'Venduto' : 'Eliminato';
+                            l.status === 'sold' ? (outcomes.get(l.id) === 'rented' ? 'Affittato' : outcomes.get(l.id) === 'sold' ? 'Venduto' : 'Concluso') : 'Eliminato';
 
         // Stato vetrina
         const isFeatured = l.featured === true && l.featured_until && new Date(l.featured_until) > new Date();
@@ -3874,7 +3918,7 @@ async function loadMyListings() {
                     ${l.status === 'active' ? `
                     <button onclick="markAsSold('${l.id}')"
                         class="text-[11px] font-black px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-lg hover:bg-amber-500 hover:border-amber-500 hover:text-white transition text-amber-700 inline-flex items-center gap-1.5">
-                        <i class="fas fa-tag text-[10px]"></i> Venduto
+                        <i class="fas fa-tag text-[10px]"></i> Venduto o affittato?
                     </button>` : ''}
                     <div class="relative inline-flex">
                         <button type="button" onclick="toggleListingOptions(event, '${l.id}')"
@@ -4413,7 +4457,7 @@ async function rifiutaAnnuncio(id) {
 let _allAdminListings = [];
 
 const _listingStatusColors = { active: 'bg-emerald-100 text-emerald-700', pending: 'bg-amber-100 text-amber-700', rejected: 'bg-red-100 text-red-700', sold: 'bg-slate-100 text-slate-500' };
-const _listingStatusLabels = { active: 'Attivo', pending: 'In attesa', rejected: 'Rifiutato', sold: 'Venduto' };
+const _listingStatusLabels = { active: 'Attivo', pending: 'In attesa', rejected: 'Rifiutato', sold: 'Concluso' };
 
 function _buildListingRow(l) {
     const sc = _listingStatusColors[l.status] || 'bg-slate-100 text-slate-500';
@@ -4763,16 +4807,9 @@ async function renewListing(id) {
 }
 
 async function markAsSold(id) {
-    const ok = await showConfirm({
-        title:    'Segna come venduto?',
-        message:  'L\'annuncio sarà marcato come venduto e sparirà dalle ricerche. Potrai riaprirlo in futuro dalla lista annunci.',
-        okLabel:  'Sì, è venduto',
-        variant:  'warning',
-    });
-    if (!ok) return;
-    await _supabase.from('annunci').update({ status: 'sold' }).eq('id', id);
-    loadMyListings();
-    if (_sellerAnalyticsLoaded) loadSellerAnalytics();
+    const listing = _listingOutcomeRows.get(id);
+    if (!listing || listing.user_id !== _currentUser?.id) return;
+    window.ListingOutcome?.open(listing);
 }
 
 async function deleteListing(id) {
