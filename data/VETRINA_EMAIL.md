@@ -6,7 +6,7 @@ L'utente autorizza il primo giro e chiede una frequenza moderata. Riferisce cons
 
 ## Stato corrente
 
-Migrazioni campagne e scelta alla registrazione applicate; cinque Edge pubblicate, compresa `register-bypass`. Cinquanta permessi WhatsApp, dodici proposte inviate e consegnate, nessun nuovo cron. Uscita pubblicata3908a16: pagina eJS3 identici ai blob Git online, HTTP200; invio anonimo401, token finti404. Nuovo modulo Auth23/20sorgenti e informativa pronti, pubblicazione frontend da verificare. I precedenti audit con zero permessi/invii e12o16email totali nel giorno sono fotografie della preparazione, superate dall'esito sopra. Nessuna disiscrizione reale o account di prova persistente.
+Migrazioni campagne e scelta alla registrazione applicate; cinque Edge pubblicate, compresa `register-bypass`. Cinquanta permessi WhatsApp, dodici proposte inviate e consegnate, nessun nuovo cron. Uscita pubblicata3908a16: pagina eJS3 identici ai blob Git online, HTTP200; invio anonimo401, token finti404. Nuovo modulo Auth23/20sorgenti e informativa pubblicati e463617:16asset/pagine identici ai blobGit,quattroSSR conAuth23. Modulo reale online Chrome320/Safari390 passato;nessuna registrazione inviata, scritture di sfondo intercettate nel browser di prova. Backend rifiuta400 un tipo di consenso errato prima di creare account. I precedenti audit con zero permessi/invii e12o16email totali nel giorno sono fotografie della preparazione, superate dall'esito sopra. Nessuna disiscrizione reale o account di prova persistente.
 
 ## Nuove iscrizioni e consenso esplicito
 
@@ -17,6 +17,8 @@ L'utente ha chiesto la casella preselezionata. È stata spiegata e implementata 
 `PATCH_SIGNUP_PROMO_OPTIN_20261023.sql` aggiunge solo un AFTER INSERT su profiles, senza cambiare trigger annunci o auth esistenti. Legge i metadati della nuova iscrizione; solo booleano JSON true e versione corrente registrano fonte explicit_site_optin, testo/versione e timestamp server. Nessun backfill, nessuna riattivazione da UPDATE o riscrittura di revoche. Se il salvataggio del consenso fallisce, il marketing resta disabilitato e l'account gratuito continua a funzionare.
 
 Test nuovi: booleano vero/falso/assente/stringa, versione, registrazione di account già esistente, revoca e isolamento; nuove Auth/profile fixture in transazione ROLLBACK, nessun account persistente. Chrome1440/320 e Safari390: entrambe le scelte nei due percorsi, invio in corso, errore, reset, scorrimento e pulsante raggiungibile. Regressione bandi passata nei treformati: aggiornata solo la fixture obsoleta, che non caricava BlogMarkup e cercava un commento rimosso. Dati/avvisi bandi reali invariati.
+
+Inspector del campo effettivo estratto dal modulo, stesso CSS e font,1440/320/390:0FAIL/0WARN. Esclusi soltanto no-title/hero-void perché è l'anteprima di un singolo campo, non una schermata completa. Prima prova helper12px segnalata;portata a14px e ripetuti controlli/screenshot. Il primo helper di anteprima aveva un confronto path Windows non normalizzato:risolto,nessun difetto corrispondente in produzione. Screenshot dell'intero modulo Chrome/Safari esaminati;collegamento Informativa privacy mantenuto intero. Backup tag remoto `backup/session-20261023-133102-consensi-ultimi50` e ramo `backup/pre-consensi-nuovi-20261023` verificati prima delle modifiche.
 
 ## Limiti applicati
 

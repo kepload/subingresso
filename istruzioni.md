@@ -1583,6 +1583,10 @@ con data/evidenza. Update/duplicati/revoche non riattivano. Migrazione
 PATCH_SIGNUP_PROMO_OPTIN_20261023.sql applicata,register-bypass pubblicata;
 test scripts/test-signup-promo.cjs e verify-signup-promo.sql ROLLBACK passati.
 Auth23 nei20HTML/API,privacy aggiornata;esito pubblicazione in data/VETRINA_EMAIL.md.
+Pubblicatoe463617:16asset/pagine identici ai blobGit,quattroSSR conAuth23;
+modulo online Chrome320/Safari390 passato con scritture bloccate e nessun
+account creato. Inspector del componente0FAIL/0WARN (senza titolo/hero da
+pagina intera);prove e ricevute nella cartella privata,nessun nuovo invio.
 
 **Seguito23/10, richiesta primo invio:**utente riferisce consensi WhatsApp a
 molti iscritti;chiesti nominativi per abbinarli,nessun opt-in generalizzato.

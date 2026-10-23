@@ -14,7 +14,10 @@
   su20HTML/API,modulo scorrevole su telefoni bassi,privacy aggiornata. Test
   registro/mancato consenso/versione/revoca in ROLLBACK e trebrowser/formati
   passati;avvisi bandi ancora compatibili,fixture test aggiornata a BlogMarkup.
-  Backend applicato,pubblicazione frontend da verificare. Prove e coorte private nella
+  Backend applicato e frontend pubblicatoe463617:16asset/pagine identici aGit,
+  quattroSSR conAuth23;modulo reale Chrome320/Safari390 passato,nessuna nuova
+  registrazione o scrittura reale di prova. Inspector componente0FAIL/0WARN,
+  esclusi titolo/vuoto perché singolo campo. Prove e coorte private nella
   stessa cartella. Nessun altro consenso retroattivo o cron autorizzato.
 
 - Seguito autorizzato:utente riferisce consensi chiesti su WhatsApp a molti
