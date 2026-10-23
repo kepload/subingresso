@@ -51,7 +51,25 @@ Il server ricontrolla: account non admin/demo, email confermata, preferenze peri
 
 `vetrina-campaign` accetta solo POST con Bearer interno. Azione predefinita `preview`, non invio. `audit` controlla al massimo venti ID, lo storico Resend e le esclusioni. `send` prende una prenotazione atomica, ricontrolla le revoche/preferenze, invia un solo messaggio con chiave di idempotenza stabile e registra l'ID provider. `verify` legge l'esito dal provider; accettato e consegnato restano distinti. In caso di timeout/esito ambiguo nessun retry automatico: stato `unknown` o prenotazione conservata, verifica manuale prima di qualsiasi altra azione.
 
-Template `supabase/functions/_shared/vetrina-email.mjs`: nove varianti basate sui testi preparati, HTML semplice e testo, saluto senza falso mittente personale; reply-to info@subingresso.it. Pacchetto quando ci sono più annunci idonei, listino condiviso `js/vetrina-pricing.js`; nessun addebito avviato dalla mail, link commerciale alla dashboard e istruzione Promuovi. Nessuna promessa di vendita garantita o tempo medio non dimostrato.
+Template `supabase/functions/_shared/vetrina-email.mjs`, rifatto il23/10 su richiesta
+dell'utente: nove varianti con oggetti orientati alla vendita e al vantaggio,
+testi brevi, nessun titolo annuncio lungo nel corpo. Logo testuale, fascia blu
+con titolo/oro Vetrina, prezzo separato e pulsante pieno «Metti in Vetrina»
+o «Scegli le tue Vetrine». Un'anteprima inbox anticipa durata/prezzo e assenza
+di abbonamento. HTML email a tabelle con stili inline, larghezza600px e
+adattamento320px, font Arial/Helvetica; grafica completa senza immagini remote.
+L'eventuale pixel resta soltanto nel percorso di misura autorizzata.
+Testo alternativo allineato; saluto vero e reply-to info@subingresso.it.
+Pacchetto quando ci sono più annunci idonei, listino condiviso
+`js/vetrina-pricing.js`: totale, risparmio e durata devono corrispondere
+al link proposto. Il pulsante apre la scelta in dashboard; nessun addebito
+avviato dalla mail. Nessuna promessa di vendita garantita, acquirente già
+trovato, scarsità o tempo medio inventato. Preferenza permanente: semplice,
+umano e leggibile, vantaggio/prezzo/azione immediati; evitare oggetti da report.
+Questa revisione non autorizza reinvii o nuove campagne. Anteprime e verifiche
+in `Documents/email-vetrine-design-20261023/`, contratto di superficie in
+`.impeccable/surfaces/vetrina-email.md`. Screenshot browser, nessuna consegna
+di prova a caselle reali e nessuna attestazione di test in Outlook/Gmail nativi.
 
 L'uscita è `/unsubscribe?t=...&type=promo`: apre il modulo esistente e attende conferma, poi revoca soltanto le offerte. Digest, statistiche e avvisi restano invariati. Feedback facoltativo compatibile con il nuovo tipo. L'header `List-Unsubscribe` punta al modulo; non viene dichiarato un supporto One-Click POST che non esiste. Le uscite generali `all` conservano le proprie funzionalità; i flag periodici disattivati impediscono comunque nuove offerte.
 

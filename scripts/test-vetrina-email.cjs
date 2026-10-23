@@ -8,10 +8,15 @@ const root=path.resolve(__dirname,'..');
  for(const family of ['stats','visibility','bundle'])for(const variant of [0,1,2]){
   const item={...base,variant,listings:family==='bundle'?[...base.listings,{...base.listings[0],id:'fixture-second'}]:base.listings,active_count:family==='bundle'?2:1};
   const result=vetrinaEmailPayload(item,'fixture@example.invalid',family);
-  assert(!result.payload.html.includes('<img'));assert(result.payload.html.includes('&lt;img')||family==='visibility'&&variant===2||family==='bundle');assert(!/[\r\n]/.test(result.payload.subject));assert.equal(result.payload.reply_to,'info@subingresso.it');assert(result.payload.text.includes('type=promo'));assert(!result.payload.headers['List-Unsubscribe-Post']);
+  assert(!result.payload.html.includes('<img'));assert(!result.payload.html.includes('onerror='));assert(!/[\r\n]/.test(result.payload.subject));assert.equal(result.payload.reply_to,'info@subingresso.it');assert(result.payload.text.includes('type=promo'));assert(!result.payload.headers['List-Unsubscribe-Post']);
+  assert(Buffer.byteLength(result.payload.html)<12000);assert(result.payload.html.includes('name="viewport"'));assert(result.payload.html.includes('role="presentation"'));assert(result.payload.text.includes('Pagamento unico. Nessun abbonamento.'));assert(result.payload.html.includes('bgcolor="#1d4ed8"'));
+  assert(result.payload.text.includes(new URL(result.payload.html.match(/href="([^"]*promuovi=[^"]*)"/)[1].replace(/&amp;/g,'&')).href));
+  assert(result.payload.html.includes(`Vetrina Premium · ${result.quote.days} giorni`)||result.payload.html.includes(`${result.quote.count} annunci · ${result.quote.days} giorni`));
   if(family==='bundle'){assert.equal(result.quote.total,variant===1?17820:8820);assert.equal(result.listing_ids.length,2);}else assert.equal(result.listing_ids.length,1);
  }
  const plain=vetrinaEmailPayload(base,'fixture@example.invalid').payload;
+ const hostile=vetrinaEmailPayload({...base,listings:[{...base.listings[0],comune:'<svg onload=alert(1)>'}]},'fixture@example.invalid').payload;
+ assert(hostile.html.includes('&lt;svg'));assert(!hostile.html.includes('<svg'));assert(hostile.subject.includes('<svg'),'subject stays plain text');
  assert(!plain.html.includes('kind=open'));assert(!plain.html.includes('kind=click'));assert(plain.html.includes('promuovi='));
  const measured=vetrinaEmailPayload({...base,tracking_enabled:true,tracking_token:'22222222-2222-2222-2222-222222222222'},'fixture@example.invalid').payload;
  assert(measured.html.includes('kind=open'));assert(measured.html.includes('kind=click'));assert(measured.html.includes('type=tracking'));assert(!measured.text.includes('kind=open'));

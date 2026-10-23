@@ -1,5 +1,13 @@
 # AGENTS.md — Subingresso.it
 
+Email Vetrina23/10, revisione testi/grafica: nove varianti brevi e umane,
+oggetti sul vantaggio/vendita, mai un semplice report visite. Blu/oro del
+marchio, prezzo/durata e pulsante chiari; nessun titolo annuncio lungo.
+HTML a tabelle/stili inline, Arial per email; nessuna immagine necessaria.
+Template condiviso vetrina-email.mjs per campagna e copia admin. Listino,
+misura facoltativa, uscite e limiti invariati; revisione senza nuovi invii.
+Dettagli data/VETRINA_EMAIL.md; prove Documents/email-vetrine-design-20261023.
+
 Registrazione23/10, correzione finale: due caselle18px preselezionate,
 termini obbligatori con link /termini in nuova scheda e sola *, offerte
 facoltative:«Acconsento a ricevere offerte personalizzate»,testo13px.

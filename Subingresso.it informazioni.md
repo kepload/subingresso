@@ -1,5 +1,15 @@
 # Subingresso.it — informazioni e TO DO
 
+## Email Vetrina, testi e grafica — 23 ottobre 2026
+
+- Richiesta: email semplici, umane e accattivanti; oggetti che invogliano,
+  non report visite. Rifatte9varianti, singole/pacchetti, con grafica blu/oro,
+  prezzo/durata chiari e pulsante; eliminato il lungo titolo annuncio.
+  Listino, metriche vere, consensi, uscite e limiti conservati.
+  Test campagna/analytics e27casi browser Chrome860/320-Safari390 passati;
+  fallback solo inline leggibile, nessuna immagine necessaria/nuovo invio.
+  Dossier Documents/email-vetrine-design-20261023; pubblicazione da verificare.
+
 ## Registrazione senza esempi telefono — 23 ottobre 2026
 
 - Nascosta la riga «Es.347…» del telefono vuoto nel solo form registrazione;
