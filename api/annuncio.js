@@ -260,7 +260,7 @@ module.exports = async function handler(req, res) {
     res.status(200).send(`<!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8"><script src="/js/admin-theme.js?v=6"></script>
+    <meta charset="UTF-8"><script src="/js/admin-theme.js?v=7"></script>
     ${moderationPreview ? '<meta name="robots" content="noindex, nofollow">' : ''}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon-v2.svg">
@@ -291,7 +291,7 @@ module.exports = async function handler(req, res) {
         #mainContent.has-cta { padding-bottom: 5.5rem; }
     </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<link rel="stylesheet" href="/css/admin-theme.css?v=5">
+<link rel="stylesheet" href="/css/admin-theme.css?v=6">
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
 

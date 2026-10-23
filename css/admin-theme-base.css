@@ -45,7 +45,11 @@ html.admin-dark :focus-visible { outline-color: var(--ad-link); }
 html.admin-dark :is(input, textarea) { caret-color: var(--ad-link); }
 html.admin-dark :is(input, textarea)::placeholder { color: var(--ad-subtle); opacity: 1; }
 html.admin-dark :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, textarea) {
-    background-color: var(--ad-field); color: var(--ad-ink); border-color: #64748b;
+    background-color: var(--ad-field); color: var(--ad-ink); border-color: var(--ad-line);
+    outline: none; box-shadow: none;
+}
+html.admin-dark :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]), select, textarea):focus-visible {
+    outline: 2px solid var(--ad-link); outline-offset: 2px; box-shadow: none;
 }
 html.admin-dark :is(input, select, textarea):disabled { color: var(--ad-subtle); background-color: var(--ad-panel); }
 html.admin-dark :is(input[type=checkbox], input[type=radio], input[type=range]) { accent-color: var(--ad-link); }
@@ -91,6 +95,17 @@ html.admin-dark :is([style*="color:#2563eb" i], [style*="color: #2563eb" i], [st
 
 /* Foto, mappe e grafici conservano i colori originali. */
 html.admin-dark :is(img, video, canvas, .leaflet-tile) { filter: none; }
+
+/* La cartografia SVG ha colori propri: nel dark evita terre e confini bianchi. */
+html.admin-dark .fiere-map-panel .fiere-map-stage { background: var(--ad-field); }
+html.admin-dark .fiere-province { fill: var(--ad-raised); stroke: #475569; }
+html.admin-dark .fiere-province:hover { fill: var(--ad-hover); }
+html.admin-dark .fiere-province.is-selected { fill: var(--ad-info); stroke: var(--ad-link); }
+html.admin-dark .fiere-province.is-preview { fill: var(--ad-control-primary); stroke: var(--ad-link); }
+html.admin-dark .fiere-province:focus-visible { fill: var(--ad-hover); stroke: var(--ad-link); stroke-width: 2; }
+html.admin-dark .fiere-marker .pin { stroke: var(--ad-field); }
+html.admin-dark .fiere-marker :is(.selection-ring, .preview-ring) { stroke: var(--ad-link); }
+html.admin-dark .fiere-marker:is(:hover, :focus-visible, .is-preview) .pin { stroke: var(--ad-link); }
 
 /* Finiture della dashboard: stessa struttura, superfici e controlli discreti. */
 html.admin-dark:where([data-admin-theme-page="dashboard"]) .admin-summary-grid > div {

@@ -186,7 +186,7 @@ Layout, font, contenuti e funzioni rimangono quelli delle pagine esistenti.
 Il tema scuro scelto dall’utente usa canvas `#0b1220`, campi/header `#0f172a`, pannelli
 `#152033`, controlli `#25334a`, hover/bordi `#334155`; testo `#f1f5f9`,
 secondario `#cbd5e1`, attenuato `#a6b5ca`, link/focus `#93c5fd` e hover
-`#bfdbfe`. Bordi dei campi `#64748b`, separatori secondari `#475569`.
+`#bfdbfe`. Bordi dei campi `#334155`, separatori secondari `#475569`.
 Ricerca e richiamo calendario `#17385c`, selezione testo `#235891`.
 Stati: successo `#6ee7b7` su `#103b32`, avviso `#fde68a` su `#493519`,
 errore `#fda4af` su `#4c1726`, informazioni `#93c5fd` su `#1e3a5f`.
@@ -238,3 +238,11 @@ hover `#216251`, testo `#c0edda`. Errori con i token semantici esistenti,
 hover `#612238`. Nei bandi ambra `#e7ca90` su `#352e24`, riservata allo stato.
 Focus2px con offset3px, disabled al50%, transizioni150ms solo sui colori,
 disattivate con movimento ridotto. Preferenza, caricamento e dati conservati.
+
+Campi e mappa, secondo passaggio23/10: tutti gli input, select e textarea
+scuri hanno bordo `--ad-line` e nessuna ombra ad alone a riposo. Focus
+visibile2px con offset2px in `--ad-link`. Anche la cartografia SVG segue il
+tema: mare `--ad-field`, terre `--ad-raised`, confini sottili `#475569`.
+Province selezionate `--ad-info`, anteprima `--ad-control-primary`; contorno
+blu negli stati attivi. Marker e significato delle categorie conservati.
+Queste regole sono circoscritte a html.admin-dark, la variante chiara resta.

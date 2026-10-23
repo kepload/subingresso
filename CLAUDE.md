@@ -1,10 +1,15 @@
 # Regole Claude — Subingresso.it
 
+Campi/mappa dark23/10: input/select/textarea a riposo con bordo#334155,
+senza alone; focus tastiera2px blu. Mappa SVG: mare#0f172a, terre#25334a,
+confini#475569; hover/selezione/preview e marker conservati. Chiaro invariato.
+Cache admin-themeJS7/CSS6; prove Documents/verifica-dark-campi-mappa-20261023.
+
 Finiture dark23/10: bordi chiari indigo/ciano e gialli convertiti in linee
 discrete; statistiche admin con etichette12px e cifre tabulari, due schede
 economiche a tutta larghezza su telefono. Pulsanti admin piatti, stati/focus
 coerenti,44px su mobile. Struttura e funzioni conservate; niente invii reali.
-Cache corrente admin-themeJS6/CSS5; prove/stato pubblicazione in
+Cache corrente admin-themeJS7/CSS6; prove/stato pubblicazione in
 Documents/verifica-dark-finiture-20261023/risultati.md.
 
 Tema personale23/10, correzione flash: pulsante Modalità scura direttamente
@@ -15,7 +20,7 @@ Copia locale _si_theme_preference_v1 limitata a ID/tema confermato, usata solo
 con la stessa sessione. Prima lettura senza copia: attesa su fondo scuro.
 GET riconcilia; errore temporaneo conserva aspetto, 401/403/logout/cambio
 identità invalidano. PUT sempre con token iniziale; nessun ruolo in cache.
-JSadmin-theme6/CSS5, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
+JSadmin-theme7/CSS6, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
 prove/stato Documents/verifica-tema-senza-flash-20261023/risultati.md.
 
 
@@ -41,7 +46,7 @@ bucket `image-previews` anche dopo i deploy; un originale per sei dimensioni.
 Secret solo in environment cifrato Vercel, originali mai modificati.
 Contratto, errori e verifiche in `data/IMAGE_PREVIEWS.md`; nessun piano attivato.
 
-- `admin-theme.js?v=6`, `admin-theme.css?v=5`, `theme-preferences.css?v=2`: avvio senza flash e finiture dark, pulsante diretto nel profilo, chiaro iniziale. Tutti gli HTML/API; generatore CSS esclude il foglio delle preferenze. Contratto data/THEME_PREFERENCES.md.
+- `admin-theme.js?v=7`, `admin-theme.css?v=6`, `theme-preferences.css?v=2`: avvio senza flash, finiture dark e contorni tenui dei campi/mappa; pulsante diretto nel profilo, chiaro iniziale. Tutti gli HTML/API; generatore CSS esclude il foglio delle preferenze. Contratto data/THEME_PREFERENCES.md.
 
 - 🛡️ **BACKUP TAG OBBLIGATORIO (regola n.0)**: prima della prima modifica di OGNI nuova sessione, lancia `.\scripts\session-backup.ps1 -Reason "<descrizione-corta>"`. Crea un tag git su HEAD + push remoto. Ritorno garantito con `git reset --hard backup/session-YYYYMMDD-HHMMSS-...`.
 - ⚡ **STILE RISPOSTE (regola n.1)**: l'utente è un vibe coder, non un programmatore. Rispondi **corto e semplice**. Niente papiri, niente muri di testo, niente gergo tecnico (SSR, RPC, GRANT, cannibalizzazione...) senza spiegarlo in 2-3 parole. Dopo una modifica dì **cosa cambia per lui** in 1-2 frasi. Fai il lavoro, spiega poco. Vedi memoria [[feedback_stile_risposte]].

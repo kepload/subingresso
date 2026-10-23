@@ -1,5 +1,12 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Campi/mappa dark23/10: superati i bordi#64748b dei campi, ora#334155 e
+nessun alone. Focus tastiera2px blu conservato. Mappa SVG scura con
+terre#25334a/mare#0f172a/confini#475569, selezione/preview/marker distinti.
+JS7/CSS6, chiaro invariato.100controlli dedicati in quattroformati/browser
+e267tema locali passati. Prove/stato in
+Documents/verifica-dark-campi-mappa-20261023/risultati.md.
+
 Finiture dark23/10: bordi indigo/ciano e gialli convertiti nella base condivisa;
 statistiche admin con etichette12px, cifre tabulari e schede economiche estese
 su telefono. Pulsanti admin piatti,36/44px, focus/stati coerenti. Stessi dati,

@@ -157,7 +157,7 @@ module.exports = async function handler(req, res) {
     const html = `<!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8"><script src="/js/admin-theme.js?v=6"></script>
+<meta charset="UTF-8"><script src="/js/admin-theme.js?v=7"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${esc(pageTitle)}</title>
 <meta name="description" content="${esc(pageDesc)}">
@@ -183,7 +183,7 @@ module.exports = async function handler(req, res) {
 .cta-box:hover { transform: translateY(-2px); }
 </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<link rel="stylesheet" href="/css/admin-theme.css?v=5">
+<link rel="stylesheet" href="/css/admin-theme.css?v=6">
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
 <div id="header"></div>
@@ -294,11 +294,11 @@ bindBandoAlertForm('quickSubBandoAlert', 'qsMsg', window._BANDO_REGIONE, 'bando_
 };
 
 function notFoundPage(reason) {
-    return `<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><script src="/js/admin-theme.js?v=6"></script><meta name="robots" content="noindex">
+    return `<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><script src="/js/admin-theme.js?v=7"></script><meta name="robots" content="noindex">
 <title>Bando non trovato — Subingresso.it</title>
 <link rel="stylesheet" href="/css/tailwind.css?v=4">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
-<link rel="stylesheet" href="/css/admin-theme.css?v=5">
+<link rel="stylesheet" href="/css/admin-theme.css?v=6">
 </head><body class="bg-slate-50 min-h-screen flex items-center justify-center p-6 text-center font-sans">
 <div class="max-w-md bg-white rounded-3xl shadow-sm border border-slate-200 p-10">
 <div class="text-6xl mb-4">📭</div>

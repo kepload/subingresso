@@ -1,5 +1,14 @@
 # Subingresso.it — informazioni e TO DO
 
+## Contorni campi e mappa scuri — 23 ottobre 2026
+
+- Correzione richiesta negli altri punti del sito: bordo campi/menu#334155
+  e nessun alone, focus tastiera2px blu conservato. Mappa SVG adattata:
+  mare#0f172a, terre#25334a, confini#475569; stati e marker conservati.
+  JS7/CSS6, chiaro invariato; nessun dato/account reale modificato.
+  Locale100controlli campi/filtri/zoom/chiaro e267tema passati.
+  Prove/stato Documents/verifica-dark-campi-mappa-20261023/risultati.md.
+
 ## Finiture modalità scura — 23 ottobre 2026
 
 - Richiesta: bordi e pulsanti più puliti con Impeccable, struttura conservata.
