@@ -2,9 +2,9 @@
 
 ## Biella — ricerca documentale del 23 ottobre 2026
 
-Ricerca corrente conclusa con i limiti espliciti sotto; integrazione in corso
-di pubblicazione e verifica. **TO DO e conteggio delle province ancora invariati**
-fino all'esito online. **61 manifestazioni in 26 comuni**, ricognizione di tutti
+Ricerca corrente conclusa con i limiti espliciti sotto, **pubblicata e verificata
+online**. TO DO e riepiloghi aggiornati solo dopo esito positivo:
+**54 province concluse,56 rimanenti**. **61 manifestazioni in 26 comuni**, ricognizione di tutti
 i **74 comuni**; **59 aggiunte** alle due schede iniziali Cossato/Pray, entrambi
 gli ID conservati. **6.217 schede delle altre province identiche** al checkpoint
 `601cadf`; catalogo nazionale **6.278**, **6.075 con dati edizione**.
@@ -106,6 +106,10 @@ quote mancanti e disponibilità. Nessun monitoraggio automatico attivato.
 Test dedicato `scripts/test-fiere-biella.cjs`, con `PLAYWRIGHT_MODULE`:
 isolamento provinciale, due ID, date/refusi/tariffe, elenco/mappa/dialog e pagine
 senza JS su Chromium1440/320 e WebKit390. Cache JS107/JSON75.
+
+Pubblicazione `509021b`, [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/EQQK66qY8xeHqBetcv3kamYRKFUE): cinque asset online identici ai blob Git dopo35secondi; tutte61pagine HTTP200, titolo, canonical, note e costi corretti. Test dedicato passato anche online nei tre casi; sito reale senza intercettazioni1440/320, zero errori JS e nessun overflow. Generale cinque formati, settori,6.278pagine/2.656voci sitemap e build ripetibile passati. Prove `publish-deploy.json`, `online-details.json`, `github-deploy-status.json`, `local/` e `online/` nella cartella ricerca. Prima esecuzione generale interferita dalla correzione del nome Siunere durante il test; ripetuta sul catalogo definitivo e passata, nessuna regressione residua.
+
+Backup di sessione remoto `backup/session-20261023-074627-fiere-biella` e ramo `backup/pre-fiere-biella-20261023` verificati; scansioni segreti passate senza bypass. Copia completa con `python scripts/backup-fiere-research.py`: `Documents/backup-subingresso/ricerche-fiere-20261023-061927`, **69.563 file,11.534.742.972byte, tutti verificati SHA256, zero errori**; manifest e propria impronta controllati, ricevuta `backup-verified.json`. Supplemento `supplement-biella-final` conserva versioni definitive e prove online, senza modificare il manifest della prima copia. File estranei preservati e non inclusi nei commit Biella.
 
 ## Vercelli — ricerca documentale del 22 ottobre 2026
 

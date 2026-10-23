@@ -2661,3 +2661,6 @@ ricerca-fiere-la-spezia-20261022;tag session-20261022-214545 e ramo pre-fiere-la
 BackupSHA256 ricerche-fiere-20261022-201254:64565file/11204772943byte,
 zeroerrori e supplemento finale verificato. CacheJS105/JSON73.
 Nessun contatto a terzi; ricerca attuale chiusa con limiti, manutenzione futura separata.
+
+
+Biella, calendario23/10/2026:61manifestazioni/26comuni,74esaminati,+59;2ID e6.217schede esterne conservati, catalogo6.278. Audit data/fiere-biella.json/FIERE.md:644ricevute,27righe regionali,17esclusioni/24limiti, cinque sintesi costo e otto edizioni storiche2025. Refusi Borriana/Graglia/Masserano, Beltane ridotto e fonti inaccessibili espliciti; nessun contatto a terzi o altra provincia lavorata. Dati509021b, Vercel riuscito EQQK66qY8xeHqBetcv3kamYRKFUE: cinque asset identici,61pagine200/H1/canonical/contenuti, locale/online Chromium1440/320+WebKit390 con PLAYWRIGHT_MODULE; sito reale1440/320 senza errori/overflow. Generale5formati,settori,6.278pagine/2.656sitemap e build ripetibile passati. TO DO54/56 solo dopo verifica. CacheJS107/JSON75. Prove/originali Documents/ricerca-fiere-biella-20261023; backupSHA256 ricerche-fiere-20261023-061927:69.563file/11.534.742.972byte,zeroerrori e supplemento finale. Ricerca corrente conclusa con limiti, futuri bandi/quote/disponibilità come manutenzione distinta.
