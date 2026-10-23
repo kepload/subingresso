@@ -11,7 +11,12 @@
   di ruolo/token aggiuntiva. Chiaro iniziale e protezioni account conservati.
   JS5/CSS4, theme-preferences2. Contratto data/THEME_PREFERENCES.md;
   prove/stato Documents/verifica-tema-senza-flash-20261023/risultati.md.
-  Pubblicazione in corso: esito definitivo da registrare dopo verifica online.
+  Pubblicatoa772847, Vercel9HeTF5BKnLUkepVg9oyrfmU5xhCu READY:
+  22asset/pagine identici,13percorsi pubblici/SSR aggiornati. Online267controlli
+  tema e33scenari di caricamento passati; quattroSSR×treformati/browser
+  scuri dal primo fotogramma, zero pannelli chiari. Profili Chromium273controlli
+  passati; suite WebKit con errore locale riprodotto anche su696f9f5, limite
+  documentato. Nessuna scrittura reale; inspector del controllo0rilievi.
 
 ## Dashboard admin compatta — 23 ottobre 2026
 

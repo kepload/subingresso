@@ -22,7 +22,7 @@ e sulla [fusione dei metadati](https://github.com/supabase/auth/blob/master/inte
 La preferenza viene riletta alla navigazione/ritorno in pagina e fra schede.
 Per evitare il flash, js/admin-theme.js5 è sincrono subito dopo charset nel
 head; css/admin-theme.css4 è un foglio bloccante prima del body. Stesso schema
-per tutti gli HTML e le pagine SSR. Nessun attesa di Auth per il tema già noto.
+per tutti gli HTML e le pagine SSR. Nessuna attesa di Auth per il tema già noto.
 Il browser conserva _si_theme_preference_v1: soltanto {id,theme}, scritto dopo
 GET/PUT confermato. La copia si applica solo se l’ID coincide con quello della
 sessione Supabase locale con access/refresh token presenti. È solo aspetto:
@@ -62,6 +62,13 @@ corrotta/altro account, home/organizzatore, chiaro/anonimo/storage bloccato,
 cronologia e logout fra schede. Scripts/test-admin-theme.cjs verifica anche
 il pulsante diretto e l’isolamento di GET/PUT. Nessun account reale modificato.
 Prove/stato corrente: Documents/verifica-tema-senza-flash-20261023/risultati.md.
+
+Correzione pubblicataa772847, Vercel dpl_9HeTF5BKnLUkepVg9oyrfmU5xhCu READY.
+22pagine/asset identici online,13percorsi aggiornati;267controlli tema e33scenari
+primo disegno passati anche sugli asset pubblicati. QuattroSSR nei treformati
+scuri dal primo fotogramma e senza pannelli bianchi. Profili Chromium273
+controlli passati; suite WebKit390 con errore nelle richieste locali /qa,
+riprodotto anche su696f9f5 precedente alla modifica: limite registrato nelle prove.
 
 Pubblicazione originale7e360bd, Vercel dpl_DWpq4kMAcCxGVMPm3zAMkvZ3LcUn READY.
 22asset/pagine identici e13percorsi con script4; suite tema/profili/statistiche
