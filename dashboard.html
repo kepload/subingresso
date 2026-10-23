@@ -7,6 +7,7 @@
     <title>Dashboard — Subingresso.it</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="css/tailwind.css?v=4">
+    <link rel="stylesheet" href="css/dashboard-statistics.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <style>
@@ -390,34 +391,31 @@
             </div>
 
             <!-- Growth Chart -->
-            <div class="bg-white border border-slate-100 rounded-3xl p-6">
-                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
-                    <div class="flex flex-wrap items-center gap-3">
+            <div id="growthPanel" class="admin-statistics-panel">
+                <div class="statistics-heading">
+                    <div>
                         <h3 class="font-black text-slate-900 flex items-center gap-2">
-                            <i class="fas fa-chart-line text-blue-500"></i> Crescita del sito
-                            <span id="chartSubtitle" class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(nuovi per mese)</span>
+                            Crescita del sito
                         </h3>
-                        <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest">
-                            <span class="bg-violet-50 text-violet-700 border border-violet-100 px-2.5 py-1 rounded-lg">Visite oggi: <span id="statViewsToday" class="text-violet-900">—</span></span>
-                            <span class="bg-violet-50 text-violet-700 border border-violet-100 px-2.5 py-1 rounded-lg">Totali: <span id="statViewsTotal" class="text-violet-900">—</span></span>
-                        </div>
+                        <p class="statistics-meta"><span id="chartSubtitle">Ultimi 12 mesi</span> · Visite oggi: <strong id="statViewsToday">—</strong> · Totali: <strong id="statViewsTotal">—</strong></p>
                     </div>
-                    <div class="flex gap-1.5">
-                        <button id="chartBtnGiorno"  onclick="setChartPeriod('giorno')"  class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">30gg</button>
-                        <button id="chartBtnMese"    onclick="setChartPeriod('mese')"    class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-blue-600 text-white">Mese</button>
-                        <button id="chartBtnAnno"    onclick="setChartPeriod('anno')"    class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">Anno</button>
-                        <button id="chartBtnStorico" onclick="setChartPeriod('storico')" class="text-[11px] font-black px-3 py-1.5 rounded-lg transition bg-slate-100 text-slate-500 hover:bg-slate-200">Storico</button>
+                    <div class="statistics-periods" role="group" aria-label="Periodo crescita">
+                        <button id="chartBtnGiorno" onclick="setChartPeriod('giorno')" aria-pressed="false">30gg</button>
+                        <button id="chartBtnMese" onclick="setChartPeriod('mese')" aria-pressed="true">Mese</button>
+                        <button id="chartBtnAnno" onclick="setChartPeriod('anno')" aria-pressed="false">Anno</button>
+                        <button id="chartBtnStorico" onclick="setChartPeriod('storico')" aria-pressed="false">Storico</button>
                     </div>
                 </div>
-                <div class="relative h-56">
-                    <canvas id="growthChart"></canvas>
+                <div id="growthMetrics" class="growth-metrics" role="group" aria-label="Metrica del grafico">
+                    <button onclick="setGrowthMetric(0)" aria-pressed="true"><span>Iscritti</span><strong id="growthTotal0">—</strong></button>
+                    <button onclick="setGrowthMetric(1)" aria-pressed="false"><span>Annunci</span><strong id="growthTotal1">—</strong></button>
+                    <button onclick="setGrowthMetric(2)" aria-pressed="false" aria-label="Vetrine acquistate"><span>Vetrine</span><strong id="growthTotal2">—</strong></button>
+                    <button onclick="setGrowthMetric(3)" aria-pressed="false"><span>Visite</span><strong id="growthTotal3">—</strong></button>
                 </div>
-                <div class="mt-4 flex flex-wrap gap-4 text-xs font-bold text-slate-500">
-                    <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-blue-500"></span>Iscritti</span>
-                    <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-emerald-500"></span>Annunci</span>
-                    <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-amber-400"></span>Vetrine acquistate</span>
-                    <span class="flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-full bg-violet-500"></span>Visite <span class="text-violet-500 font-black">→ scala dx</span></span>
+                <div class="growth-chart-frame">
+                    <canvas id="growthChart" role="img" aria-label="Nuovi iscritti per mese"></canvas>
                 </div>
+                <p id="growthStatus" class="statistics-meta" role="status"></p>
             </div>
 
             <!-- Funnel utenti -->
@@ -506,23 +504,29 @@
             </div>
 
             <!-- Provenienza: pagina di ingresso e nuove iscrizioni -->
-            <div id="acquisitionPanel" class="bg-white border border-slate-100 rounded-3xl p-6">
-                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+            <div id="acquisitionPanel" class="admin-statistics-panel">
+                <div class="statistics-heading">
                     <h3 class="font-black text-slate-900 flex items-center gap-2">
-                        <i class="fas fa-route text-blue-500"></i> Da dove arrivano gli utenti
+                        Da dove arrivano gli utenti
                     </h3>
-                    <div class="flex gap-1.5" aria-label="Periodo provenienze">
-                        <button id="acqBtn30" onclick="setAcquisitionPeriod(30)" class="text-xs font-black px-3 py-1.5 rounded-lg bg-blue-600 text-white" aria-pressed="true">30g</button>
-                        <button id="acqBtn90" onclick="setAcquisitionPeriod(90)" class="text-xs font-black px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500" aria-pressed="false">90g</button>
-                        <button id="acqBtn365" onclick="setAcquisitionPeriod(365)" class="text-xs font-black px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500" aria-pressed="false">1 anno</button>
+                    <div class="statistics-periods" role="group" aria-label="Periodo provenienze">
+                        <button id="acqBtn30" onclick="setAcquisitionPeriod(30)" aria-pressed="true">30g</button>
+                        <button id="acqBtn90" onclick="setAcquisitionPeriod(90)" aria-pressed="false">90g</button>
+                        <button id="acqBtn365" onclick="setAcquisitionPeriod(365)" aria-pressed="false">1 anno</button>
                     </div>
                 </div>
-                <p id="acquisitionSummary" class="text-sm font-bold text-slate-600 mb-4"></p>
-                <div id="acquisitionBody" aria-live="polite"><p class="text-xs text-slate-400 font-bold">Caricamento…</p></div>
+                <div id="acquisitionSummary" class="acquisition-totals" aria-live="polite"></div>
+                <div id="acquisitionBody" aria-live="polite"><p class="statistics-meta">Caricamento…</p></div>
+                <details id="acquisitionDetails" class="statistics-disclosure">
+                    <summary><span class="disclosure-closed">Statistiche complete</span><span class="disclosure-open">Chiudi statistiche complete</span><svg class="disclosure-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></summary>
+                    <div id="acquisitionFullBody"></div>
+                    <div id="acquisitionChannels" class="mt-5"></div>
+                    <details class="statistics-help">
+                    <summary>Come vengono contati i dati</summary>
                 <p id="acquisitionCoverage" class="text-xs text-slate-500 mt-4 leading-relaxed"></p>
                 <p class="text-xs text-slate-400 mt-3 leading-relaxed">Gli ingressi contano la prima pagina rilevata in ogni sessione. I visitatori sono browser distinti e possono comparire in più provenienze. Bandi e fiere sono separati dagli altri articoli del blog. Altro comprende annunci e pagine di servizio.</p>
                 <p class="text-xs text-slate-400 mt-2 leading-relaxed">Le visite alle landing dei bandi, ai dettagli degli annunci e alle pagine città vengono rilevate dal 7 ottobre 2026; lo storico di queste pagine è incompleto.</p>
-                <div id="acquisitionChannels" class="mt-5"></div>
+                    </details>
                 <details class="mt-5 border-t border-slate-100 pt-4">
                     <summary class="text-xs font-black text-blue-600 cursor-pointer">Crea un link per una fiera</summary>
                     <label for="acquisitionFairName" class="block text-xs font-bold text-slate-500 mt-4 mb-2">Nome della fiera (es. san-faustino-brescia-2027)</label>
@@ -530,6 +534,7 @@
                     <label for="acquisitionFairLink" class="block text-xs font-bold text-slate-500 mt-3 mb-2">Link da usare per il QR o i messaggi della fiera</label>
                     <input id="acquisitionFairLink" type="text" readonly class="w-full border border-slate-200 rounded-xl px-3 py-2 text-xs" value="https://subingresso.it/?utm_source=fiere&amp;utm_medium=qr">
                     <button id="acquisitionCopyBtn" onclick="copyAcquisitionFairLink()" class="mt-3 px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-black">Copia link</button>
+                </details>
                 </details>
             </div>
 
@@ -580,24 +585,24 @@
             </div>
 
             <!-- Iscritti Avvisi Bandi (lead magnet email blog) -->
-            <div class="bg-white border border-slate-100 rounded-3xl p-6">
+            <div id="bandoAlertsPanel" class="admin-statistics-panel">
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <h3 class="font-black text-slate-900 flex items-center gap-2">
-                        <i class="fas fa-envelope-open-text text-amber-500"></i> Avvisi Bandi
-                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">(email lead)</span>
+                        Avvisi Bandi
+                        <span class="statistics-meta">(email lead)</span>
                     </h3>
-                    <div id="bandoAlertsBadges" class="flex flex-wrap gap-1.5 text-[10px] font-black uppercase tracking-widest">
-                        <span class="bg-amber-50 text-amber-700 px-2.5 py-1 rounded-lg">Totale: <span id="bandoAlertsTotal">—</span></span>
-                        <span class="bg-blue-50 text-blue-600 px-2.5 py-1 rounded-lg">7g: <span id="bandoAlerts7d">—</span></span>
-                        <span class="bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-lg">30g: <span id="bandoAlerts30d">—</span></span>
+                    <div id="bandoAlertsBadges" class="bando-alert-totals">
+                        <span>Totale: <strong id="bandoAlertsTotal">—</strong></span>
+                        <span>7g: <strong id="bandoAlerts7d">—</strong></span>
+                        <span>30g: <strong id="bandoAlerts30d">—</strong></span>
                     </div>
                 </div>
                 <div id="bandoAlertsBody" class="space-y-3">
                     <p class="text-xs text-slate-400 font-bold">Caricamento…</p>
                 </div>
-                <p class="mt-4 text-[10px] text-slate-400 leading-relaxed">
+                <details class="statistics-help"><summary>Informazioni sugli avvisi</summary><p>
                     Email lasciate nel form "Avvisi" dentro gli articoli del blog (bandi-posteggi-mercatali-*). Ricevono notifica quando esce un bando o un annuncio nuovo nella loro regione.
-                </p>
+                </p></details>
             </div>
 
             <!-- Performance Blog (views + CTA click + CR%) -->
@@ -1577,8 +1582,53 @@ async function loadAdminListingsByRegione() {
 let _growthChart = null;
 let _rawGrowthData = null;
 let _chartMode = 'mese';
+let _growthMetric = 0;
+let _growthSeries = [];
+let _growthRequest = 0;
+
+function growthChartOptions() {
+    const style = getComputedStyle(document.documentElement);
+    const color = name => style.getPropertyValue(name).trim();
+    const font = { family: getComputedStyle(document.body).fontFamily, size: 11 };
+    return {
+        responsive: true, maintainAspectRatio: false, animation: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                backgroundColor: color('--ds-selection'), titleColor: color('--ds-selected-ink'), bodyColor: color('--ds-selected-ink'),
+                titleFont: font, bodyFont: font,
+                padding: 12, cornerRadius: 8, displayColors: false,
+                callbacks: { label: item => `${item.dataset.label}: ${item.parsed.y.toLocaleString('it-IT')}` }
+            }
+        },
+        scales: {
+            x: { grid: { display: false }, border: { display: false }, ticks: { color: color('--ds-muted'), autoSkip: false, maxRotation: 0, font, callback: function(value, index, ticks) { const limit = matchMedia('(max-width: 639px)').matches ? 4 : 12; const step = Math.max(1, Math.ceil((ticks.length - 1) / (limit - 1))); return index % step === 0 || index === ticks.length - 1 ? this.getLabelForValue(value) : null; } } },
+            y: { beginAtZero: true, grid: { color: color('--ds-grid'), drawTicks: false }, border: { display: false }, ticks: { color: color('--ds-muted'), precision: 0, maxTicksLimit: 5, padding: 10, font, callback: value => value.toLocaleString('it-IT') } }
+        }
+    };
+}
+
+function setGrowthMetric(index) {
+    if (![0, 1, 2, 3].includes(index)) return;
+    _growthMetric = index;
+    document.querySelectorAll('#growthMetrics button').forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+    if (!_growthChart || !_growthSeries.length) return;
+    const series = _growthSeries[index];
+    const color = getComputedStyle(document.documentElement).getPropertyValue('--ds-accent').trim();
+    _growthChart.data.datasets = [{ label: series.label, data: index === 3 && !_rawGrowthData.views ? series.data.map(() => null) : series.data, borderColor: color, backgroundColor: color, borderWidth: 2, pointRadius: series.data.filter(value => value > 0).length === 1 ? 3 : 0, pointHoverRadius: 5, pointHitRadius: 16, tension: 0, fill: false }];
+    _growthChart.options = growthChartOptions();
+    _growthChart.update('none');
+    const total = index === 3 && !_rawGrowthData.views ? 'non disponibile' : series.data.reduce((sum, value) => sum + (value || 0), 0).toLocaleString('it-IT');
+    document.getElementById('growthChart').setAttribute('aria-label', `${series.label}: ${document.getElementById('chartSubtitle').textContent.toLowerCase()}. Totale nel periodo: ${total}`);
+    document.getElementById('growthStatus').textContent = index === 3 && !_rawGrowthData.views ? 'Visite non disponibili.' : '';
+}
+
+new MutationObserver(() => setGrowthMetric(_growthMetric)).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+window.addEventListener('resize', () => { if (_growthChart) setGrowthMetric(_growthMetric); });
 
 async function loadAdminGrowthChart(mode = 'mese') {
+    const request = ++_growthRequest;
     _chartMode = mode;
     const canvas = document.getElementById('growthChart');
     if (!canvas) return;
@@ -1600,17 +1650,12 @@ async function loadAdminGrowthChart(mode = 'mese') {
                 : (ftRes.data || []).map(r => r.featured_since),
             views: (viewsRes && !viewsRes.error) ? viewsRes : null,
         };
-        // popola badge "Visite oggi/totali"
-        const elT = document.getElementById('statViewsToday');
-        const elTot = document.getElementById('statViewsTotal');
-        if (_rawGrowthData.views) {
-            if (elT)   elT.textContent   = (_rawGrowthData.views.today ?? 0).toLocaleString('it-IT');
-            if (elTot) elTot.textContent = (_rawGrowthData.views.total ?? 0).toLocaleString('it-IT');
-        } else {
-            if (elT)   elT.textContent   = '0';
-            if (elTot) elTot.textContent = '0';
-        }
     }
+
+    await document.fonts.ready;
+    if (request !== _growthRequest) return;
+    document.getElementById('statViewsToday').textContent = _rawGrowthData.views ? (_rawGrowthData.views.today ?? 0).toLocaleString('it-IT') : '—';
+    document.getElementById('statViewsTotal').textContent = _rawGrowthData.views ? (_rawGrowthData.views.total ?? 0).toLocaleString('it-IT') : '—';
 
     const now = new Date();
     const labels = [], pData = [], aData = [], vData = [], viewsData = [];
@@ -1677,8 +1722,9 @@ async function loadAdminGrowthChart(mode = 'mese') {
     } else {
         // storico: tutti i mesi dal primo record ad oggi
         const allDates = [..._rawGrowthData.profiles, ..._rawGrowthData.annunci, ..._rawGrowthData.vetrine].filter(Boolean);
-        if (allDates.length === 0) return;
-        const earliest = new Date(allDates.reduce((a, b) => a < b ? a : b));
+        const firstViews = (_rawGrowthData.views?.all_monthly || []).map(row => row.bucket).filter(Boolean);
+        allDates.push(...firstViews);
+        const earliest = allDates.length ? new Date(allDates.reduce((a, b) => a < b ? a : b)) : now;
         let cur = new Date(earliest.getFullYear(), earliest.getMonth(), 1);
         const endMonth = new Date(now.getFullYear(), now.getMonth(), 1);
         while (cur <= endMonth) {
@@ -1693,93 +1739,13 @@ async function loadAdminGrowthChart(mode = 'mese') {
         }
     }
 
-    const ds = (label, color, data, axis = 'y') => ({
-        label, data,
-        yAxisID: axis,
-        borderColor: color,
-        backgroundColor: color + '18',
-        borderWidth: 2.5,
-        pointRadius: 4,
-        pointHoverRadius: 6,
-        pointBackgroundColor: '#fff',
-        pointBorderColor: color,
-        pointBorderWidth: 2,
-        tension: 0.4,
-        fill: true,
+    _growthSeries = [{ label: 'Iscritti', data: pData }, { label: 'Annunci', data: aData }, { label: 'Vetrine acquistate', data: vData }, { label: 'Visite', data: viewsData }];
+    _growthSeries.forEach((series, i) => {
+        document.getElementById('growthTotal' + i).textContent = i === 3 && !_rawGrowthData.views ? '—' : series.data.reduce((sum, value) => sum + value, 0).toLocaleString('it-IT');
     });
-
-    const chartData = {
-        labels,
-        datasets: [
-            ds('Iscritti',  '#3b82f6', pData,     'y'),
-            ds('Annunci',   '#10b981', aData,     'y'),
-            ds('Vetrine',   '#f59e0b', vData,     'y'),
-            ds('Visite',    '#8b5cf6', viewsData, 'y1'),
-        ],
-    };
-
-    if (_growthChart) {
-        _growthChart.data = chartData;
-        _growthChart.update('active');
-        return;
-    }
-
-    _growthChart = new Chart(canvas.getContext('2d'), {
-        type: 'line',
-        data: chartData,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: { mode: 'index', intersect: false },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    backgroundColor: '#0f172a',
-                    titleColor: '#94a3b8',
-                    bodyColor: '#f8fafc',
-                    titleFont: { family: 'Plus Jakarta Sans', weight: '800', size: 11 },
-                    bodyFont:  { family: 'Plus Jakarta Sans', weight: '600', size: 12 },
-                    padding: 12, cornerRadius: 12, boxPadding: 4,
-                    callbacks: {
-                        title: (items) => _chartMode === 'anno' ? `Anno ${items[0].label}`
-                                       : _chartMode === 'giorno' ? `${items[0].label}`
-                                       : `Mese: ${items[0].label}`,
-                        label: (item) => ` ${item.dataset.label}: ${item.parsed.y}`,
-                    },
-                },
-            },
-            scales: {
-                x: {
-                    grid: { color: '#f1f5f9' },
-                    border: { display: false },
-                    ticks: { font: { family: 'Plus Jakarta Sans', weight: '700', size: 10 }, color: '#94a3b8' },
-                },
-                y: {
-                    position: 'left',
-                    grid: { color: '#f1f5f9' },
-                    border: { display: false },
-                    beginAtZero: true,
-                    ticks: {
-                        font: { family: 'Plus Jakarta Sans', weight: '700', size: 10 },
-                        color: '#94a3b8',
-                        precision: 0,
-                    },
-                },
-                y1: {
-                    position: 'right',
-                    grid: { drawOnChartArea: false },
-                    border: { display: false },
-                    beginAtZero: true,
-                    ticks: {
-                        font: { family: 'Plus Jakarta Sans', weight: '700', size: 10 },
-                        color: '#8b5cf6',
-                        precision: 0,
-                        callback: (v) => v >= 1000 ? (v / 1000).toFixed(v % 1000 === 0 ? 0 : 1) + 'k' : v,
-                    },
-                },
-            },
-        },
-    });
+    if (!_growthChart) _growthChart = new Chart(canvas.getContext('2d'), { type: 'line', data: { labels, datasets: [] }, options: growthChartOptions() });
+    else _growthChart.data.labels = labels;
+    setGrowthMetric(_growthMetric);
 }
 
 // ── Onboarding widget (utente) ─────────────────────────────
@@ -1996,10 +1962,11 @@ function setFunnelPeriod(p) {
 }
 
 function setChartPeriod(mode) {
-    const subtitles = { giorno: '(ultimi 30 giorni)', mese: '(nuovi per mese)', anno: '(nuovi per anno)', storico: '(storico completo)' };
+    if (!['giorno', 'mese', 'anno', 'storico'].includes(mode)) return;
+    const subtitles = { giorno: 'Ultimi 30 giorni', mese: 'Ultimi 12 mesi', anno: 'Per anno', storico: 'Storico completo' };
     ['Giorno', 'Mese', 'Anno', 'Storico'].forEach(m => {
         const btn = document.getElementById(`chartBtn${m}`);
-        if (btn) btn.className = `text-[11px] font-black px-3 py-1.5 rounded-lg transition ${mode === m.toLowerCase() ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`;
+        if (btn) btn.setAttribute('aria-pressed', String(mode === m.toLowerCase()));
     });
     const sub = document.getElementById('chartSubtitle');
     if (sub) sub.textContent = subtitles[mode] || '';
@@ -2010,19 +1977,21 @@ function setChartPeriod(mode) {
 let _acquisitionPeriod = 30;
 let _acquisitionRequest = 0;
 const _ACQUISITION_LABELS = {
-    blog: { label: 'Blog', icon: 'fa-blog', color: '#2563eb' },
-    bandi: { label: 'Bandi', icon: 'fa-file-alt', color: '#d97706' },
-    valutatore: { label: 'Valutatore', icon: 'fa-calculator', color: '#059669' },
-    homepage: { label: 'Homepage', icon: 'fa-home', color: '#7c3aed' },
-    fiere: { label: 'Fiere', icon: 'fa-calendar-alt', color: '#db2777' },
-    altro: { label: 'Altro', icon: 'fa-link', color: '#64748b' }
+    blog: { label: 'Blog' },
+    bandi: { label: 'Bandi' },
+    valutatore: { label: 'Valutatore' },
+    homepage: { label: 'Homepage' },
+    fiere: { label: 'Fiere' },
+    altro: { label: 'Altro' }
 };
 async function loadAdminAcquisition() {
     const body = document.getElementById('acquisitionBody');
     if (!body) return;
     const request = ++_acquisitionRequest;
     body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Caricamento…</p>';
-    ['acquisitionSummary', 'acquisitionCoverage', 'acquisitionChannels'].forEach(id => { document.getElementById(id).textContent = ''; });
+    ['acquisitionSummary', 'acquisitionFullBody', 'acquisitionCoverage', 'acquisitionChannels'].forEach(id => { document.getElementById(id).textContent = ''; });
+    document.getElementById('acquisitionDetails').hidden = true;
+    document.getElementById('acquisitionDetails').open = false;
     try {
         const { data, error } = await _supabase.rpc('admin_acquisition_stats', { p_days: _acquisitionPeriod });
         if (request !== _acquisitionRequest) return;
@@ -2034,28 +2003,30 @@ async function loadAdminAcquisition() {
 }
 function renderAdminAcquisition(data) {
     const num = value => Math.max(0, Number(value) || 0).toLocaleString('it-IT');
-    document.getElementById('acquisitionSummary').textContent = `${num(data.total_sessions)} ingressi · ${num(data.total_visitors)} visitatori · ${num(data.total_signups)} nuovi iscritti`;
-    const rows = Array.isArray(data.rows) ? data.rows : [];
-    document.getElementById('acquisitionBody').innerHTML = '<div class="text-xs font-bold text-slate-400 mb-3" style="display:grid;grid-template-columns:minmax(0,1fr) 60px 60px;gap:8px"><span>Provenienza</span><span class="text-right">Ingressi</span><span class="text-right">Iscritti</span></div>' + rows.map(row => {
+    document.getElementById('acquisitionDetails').hidden = false;
+    document.getElementById('acquisitionSummary').innerHTML = [['Ingressi', data.total_sessions], ['Visitatori', data.total_visitors], ['Nuovi iscritti', data.total_signups]].map(([label, value]) => `<div><span>${label}</span><strong>${num(value)}</strong></div>`).join('');
+    const rows = (Array.isArray(data.rows) ? data.rows : []).slice().sort((a, b) => (Number(b.sessions) || 0) - (Number(a.sessions) || 0));
+    const top = rows.filter(row => Number(row.sessions) > 0).slice(0, 3);
+    document.getElementById('acquisitionBody').innerHTML = top.length ? '<h4>Prime pagine visitate</h4>' + top.map(row => {
         const meta = _ACQUISITION_LABELS[row.source] || _ACQUISITION_LABELS.altro;
         const pct = Math.min(100, Math.max(0, Number(row.share_pct) || 0));
-        return `<div class="py-3 border-t border-slate-100" style="display:grid;grid-template-columns:minmax(0,1fr) 60px 60px;gap:8px;align-items:center">
-            <div class="min-w-0"><div class="text-sm font-black text-slate-900"><i class="fas ${meta.icon} mr-2" style="color:${meta.color}" aria-hidden="true"></i>${meta.label}</div>
-            <div class="text-xs text-slate-400 mt-1">${num(row.visitors)} visitatori · ${pct.toLocaleString('it-IT')}%</div>
-            <div class="h-1 bg-slate-100 rounded-full mt-2 overflow-hidden"><div class="h-full rounded-full" style="width:${pct}%;background:${meta.color}"></div></div></div>
-            <span class="text-sm font-black text-slate-900 text-right">${num(row.sessions)}</span><span class="text-sm font-black text-emerald-600 text-right">${num(row.signups)}</span></div>`;
-    }).join('');
+        return `<div class="acquisition-preview-row"><span class="acquisition-preview-label" style="--share:${pct}%">${meta.label}</span><strong>${num(row.sessions)}</strong><span>${pct.toLocaleString('it-IT', { maximumFractionDigits: 1 })}%</span></div>`;
+    }).join('') : '<p class="statistics-meta">Nessun ingresso registrato nel periodo.</p>';
+    document.getElementById('acquisitionFullBody').innerHTML = '<h4>Tutte le pagine di ingresso</h4><table class="acquisition-table"><thead><tr><th scope="col">Pagina</th><th scope="col">Ingressi</th><th scope="col">Iscritti</th></tr></thead><tbody>' + rows.map(row => {
+        const meta = _ACQUISITION_LABELS[row.source] || _ACQUISITION_LABELS.altro;
+        const pct = Math.min(100, Math.max(0, Number(row.share_pct) || 0));
+        return `<tr><td>${meta.label}<small>${num(row.visitors)} visitatori · ${pct.toLocaleString('it-IT')}%</small></td><td>${num(row.sessions)}</td><td>${num(row.signups)}</td></tr>`;
+    }).join('') + '</tbody></table>';
     const since = data.attribution_since ? new Date(data.attribution_since).toLocaleDateString('it-IT') : '7/10/2026';
     document.getElementById('acquisitionCoverage').textContent = `Iscrizioni attribuite: ${num(data.attributed_signups)} su ${num(data.total_signups)}. Senza provenienza ricostruibile: ${num(data.unattributed_signups)}. La provenienza delle nuove iscrizioni viene salvata dal ${since}; le vecchie iscrizioni non vengono assegnate per ipotesi.`;
     const channels = Array.isArray(data.channels) ? data.channels : [];
-    document.getElementById('acquisitionChannels').innerHTML = '<h4 class="text-xs font-black text-slate-700 mb-2">Canali di arrivo</h4><p class="text-xs text-slate-400 mb-3">Campagna del link oppure sito di provenienza. Diretto / sconosciuto comprende i casi senza un riferimento disponibile.</p>' + channels.map(channel => `<div class="flex items-center justify-between gap-3 py-1 text-xs"><span class="text-slate-500 truncate">${escapeHTML(channel.channel === 'diretto_sconosciuto' ? 'Diretto / sconosciuto' : channel.channel)}</span><span class="font-black text-slate-700">${num(channel.sessions)}</span></div>`).join('');
+    document.getElementById('acquisitionChannels').innerHTML = '<h4>Canali di arrivo</h4><p class="statistics-meta">Siti di provenienza e campagne dei link.</p>' + (channels.length ? '<table class="acquisition-table"><thead><tr><th scope="col">Canale</th><th scope="col">Ingressi</th></tr></thead><tbody>' + channels.map(channel => `<tr><td>${escapeHTML(channel.channel === 'diretto_sconosciuto' ? 'Diretto / sconosciuto' : channel.channel)}</td><td>${num(channel.sessions)}</td></tr>`).join('') + '</tbody></table>' : '<p class="statistics-meta">Nessun canale rilevato nel periodo.</p>');
 }
 function setAcquisitionPeriod(days) {
     if (![30, 90, 365].includes(days)) return;
     _acquisitionPeriod = days;
     [30, 90, 365].forEach(period => {
         const button = document.getElementById('acqBtn' + period);
-        button.className = `text-xs font-black px-3 py-1.5 rounded-lg ${period === days ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500'}`;
         button.setAttribute('aria-pressed', String(period === days));
     });
     loadAdminAcquisition();
@@ -2408,24 +2379,26 @@ async function loadAdminBandoAlerts() {
         const byReg = Array.isArray(data.by_regione) ? data.by_regione : [];
         const recent = Array.isArray(data.recent) ? data.recent : [];
 
-        const regChips = byReg.map(r => `<span class="bg-slate-50 border border-slate-200 text-slate-700 text-[11px] font-black px-2.5 py-1 rounded-lg">${escapeHTML(r.regione || '?')} <span class="text-amber-600">${r.iscritti}</span></span>`).join('');
+        const regChips = byReg.map(r => `<span>${escapeHTML(r.regione || '?')} <strong>${Math.max(0, Number(r.iscritti) || 0).toLocaleString('it-IT')}</strong></span>`).join('');
 
         const recentRows = recent.map(r => {
             const dt = r.created_at ? new Date(r.created_at) : null;
             const dtStr = dt ? dt.toLocaleDateString('it-IT', { day: '2-digit', month: 'short' }) + ' ' + dt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }) : '—';
             return `
-            <div class="flex items-center justify-between gap-3 px-3 py-2 rounded-xl border border-slate-100 hover:bg-slate-50 transition">
-                <div class="min-w-0 flex-1">
-                    <div class="text-sm font-black text-slate-900 truncate" title="${escapeHTML(r.email || '')}">${escapeHTML(r.email || '—')}</div>
-                    <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">${escapeHTML(r.regione || '?')} · ${escapeHTML(r.source || 'unknown')}</div>
+            <div class="bando-recent-row">
+                <div class="bando-recent-identity">
+                    <div class="bando-recent-email" title="${escapeHTML(r.email || '')}">${escapeHTML(r.email || '—')}</div>
+                    <div class="bando-recent-meta">${escapeHTML(r.regione || '?')} · ${escapeHTML(r.source || 'unknown')}</div>
                 </div>
-                <div class="text-[10px] text-slate-400 font-bold whitespace-nowrap">${dtStr}</div>
+                <time>${dtStr}</time>
             </div>`;
-        }).join('');
+        });
 
         body.innerHTML = `
-            ${regChips ? `<div class="flex flex-wrap gap-1.5 mb-2">${regChips}</div>` : ''}
-            <div class="space-y-1.5">${recentRows}</div>
+            <div>${recentRows.slice(0, 5).join('')}</div>
+            ${recentRows.length > 5 ? `<details id="bandoAlertsMore" class="statistics-disclosure"><summary><span class="disclosure-closed">Mostra altre ${recentRows.length - 5} iscrizioni</span><span class="disclosure-open">Mostra meno</span><svg class="disclosure-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.5"/></svg></summary>${recentRows.slice(5).join('')}</details>` : ''}
+            ${regChips ? `<details class="statistics-help"><summary>Iscritti per regione</summary><div class="bando-region-totals">${regChips}</div></details>` : ''}
+            ${total > recent.length ? `<p class="bando-recent-note">Ultime ${recent.length} iscrizioni su ${Number(total).toLocaleString('it-IT')} totali.</p>` : ''}
         `;
     } catch (_) {
         body.innerHTML = '<p class="text-xs text-slate-400 font-bold">Errore caricamento.</p>';

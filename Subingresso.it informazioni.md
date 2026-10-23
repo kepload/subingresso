@@ -1,5 +1,16 @@
 # Subingresso.it — informazioni e TO DO
 
+## Dashboard admin compatta — 23 ottobre 2026
+
+- Crescita: metrica selezionabile, griglia tenue e colori adatti a chiaro/scuro;
+  totali e quattro periodi conservati. Provenienza: tre numeri e tre pagine,
+  resto in «Statistiche complete». Avvisi Bandi:5iscrizioni visibili, altre
+  al clic; regioni e spiegazioni chiuse. API conserva limite20recenti,
+  indicato se totale superiore. CSSdashboard-statistics1, nessun cambio DB/invii.
+  Locale208controlli interazione in quattro browser/formati e261tema passati,
+  inspector0FAIL; dati/sessioni simulati. Prove e stato pubblicazione:
+  Documents/verifica-dashboard-statistiche-20261023/risultati.md.
+
 ## Aspetto per tutti — 23 ottobre 2026
 
 - Profilo → Impostazioni → Aspetto: Chiaro/Scuro, salvataggio automatico

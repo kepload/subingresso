@@ -1,5 +1,16 @@
 # 🗺️ Mappa Strategica Subingresso.it
 
+Dashboard admin23/10: crescita con una metrica selezionabile alla volta,
+totali nel periodo, quattro filtri conservati; linea senza riempimenti,
+griglia tenue e colori/font aggiornati al cambio tema. Provenienza: tre
+numeri e tre pagine principali; statistiche complete, canali, metodo e
+link fiera nei pannelli apribili. Avvisi Bandi: prime5iscrizioni, altre al
+clic, regioni/aiuto chiusi. API attuale restituisce le ultime20; UI lo
+specifica quando totale superiore. Nessuna modifica DB o invii.
+`css/dashboard-statistics.css?v=1` gestisce entrambe le varianti; generazione
+admin-theme byte-identica. Prove/stato pubblicazione:
+Documents/verifica-dashboard-statistiche-20261023/risultati.md.
+
 Tema personale23/10: Profilo > Impostazioni > Aspetto, chiaro iniziale per
 tutti, admin e organizzatori compresi. Scelta automatica nell’account
 auth.user_metadata.site_theme, mai derivata dal ruolo o dal sistema.

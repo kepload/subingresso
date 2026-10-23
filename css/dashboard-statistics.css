@@ -1,0 +1,108 @@
+/* These panels own both themes; the rest of the dashboard keeps its existing shell. */
+:root {
+    --ds-surface: #fff;
+    --ds-raised: #f5f6f8;
+    --ds-line: #e5e7eb;
+    --ds-grid: #e8ebef;
+    --ds-ink: #18212f;
+    --ds-muted: #586474;
+    --ds-accent: #2563eb;
+    --ds-selection: #18212f;
+    --ds-selected-ink: #fff;
+}
+html.admin-dark {
+    --ds-surface: #15171a;
+    --ds-raised: #202328;
+    --ds-line: #30343b;
+    --ds-grid: #2c3036;
+    --ds-ink: #f2f4f7;
+    --ds-muted: #a9b2bf;
+    --ds-accent: #79b8ff;
+    --ds-selection: #e9edf2;
+    --ds-selected-ink: #17191d;
+}
+#growthPanel, #acquisitionPanel, #bandoAlertsPanel {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--ds-line);
+    border-radius: 16px;
+    background: var(--ds-surface);
+    color: var(--ds-ink);
+    font-variant-numeric: tabular-nums;
+}
+#growthPanel h3, #acquisitionPanel h3, #bandoAlertsPanel h3 { color: var(--ds-ink); font-size: 16px; line-height: 1.5; }
+.statistics-heading { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+#growthPanel .statistics-meta, #acquisitionPanel .statistics-meta, #bandoAlertsPanel .statistics-meta { margin-top: 5px; color: var(--ds-muted); font-size: 12px; line-height: 1.6; }
+.statistics-meta strong { font-weight: 600; }
+.statistics-periods { display: flex; flex-wrap: wrap; gap: 4px; }
+:is(#growthPanel, #acquisitionPanel) .statistics-periods button {
+    min-height: 36px; padding: 6px 12px; border-radius: 6px;
+    background: transparent; color: var(--ds-muted); font-size: 12px; font-weight: 600;
+}
+:is(#growthPanel, #acquisitionPanel) .statistics-periods button:hover { background: var(--ds-raised); color: var(--ds-ink); }
+:is(#growthPanel, #acquisitionPanel) .statistics-periods button[aria-pressed="true"] { background: var(--ds-selection); color: var(--ds-selected-ink); }
+.growth-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 24px; }
+#growthMetrics button { min-width: 0; padding: 12px 16px; border: 1px solid transparent; border-radius: 8px; background: transparent; text-align: left; color: var(--ds-ink); }
+#growthMetrics button:hover { background: var(--ds-raised); }
+#growthMetrics button[aria-pressed="true"] { background: var(--ds-raised); border-color: var(--ds-line); }
+#growthMetrics button span { display: block; color: var(--ds-muted); font-size: 12px; }
+#growthMetrics button strong { display: block; margin-top: 6px; font-size: 24px; font-weight: 600; line-height: 1.25; }
+#growthMetrics button[aria-pressed="true"] strong { color: var(--ds-accent); }
+.growth-chart-frame { position: relative; height: 220px; }
+#growthStatus:empty { display: none; }
+/* Inner columns share the panel's edges: 3 equal metrics, then one full-width ranking. */
+.acquisition-totals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 20px; }
+.acquisition-totals > div + div { border-left: 1px solid var(--ds-line); padding-left: 20px; }
+.acquisition-totals span { display: block; color: var(--ds-muted); font-size: 12px; }
+.acquisition-totals strong { display: block; margin-top: 4px; color: var(--ds-ink); font-size: 24px; font-weight: 600; }
+#acquisitionPanel h4 { color: var(--ds-muted); font-size: 12px; font-weight: 600; margin-bottom: 12px; }
+.acquisition-preview-row { display: grid; grid-template-columns: minmax(0, 1fr) auto 44px; align-items: center; gap: 12px; min-height: 42px; font-size: 13px; }
+.acquisition-preview-row > span:last-child { color: var(--ds-muted); text-align: right; font-size: 12px; }
+.acquisition-preview-label { position: relative; padding-bottom: 8px; }
+.acquisition-preview-label::after { content: ''; position: absolute; left: 0; bottom: 0; width: var(--share); height: 2px; background: var(--ds-accent); }
+.statistics-disclosure { margin-top: 20px; border-top: 1px solid var(--ds-line); }
+.statistics-disclosure > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0 0; min-height: 44px; font-size: 13px; font-weight: 600; cursor: pointer; list-style: none; }
+.statistics-disclosure > summary::-webkit-details-marker { display: none; }
+.statistics-disclosure > summary .disclosure-chevron { flex-shrink: 0; }
+.statistics-disclosure[open] > summary { padding-bottom: 20px; }
+.statistics-disclosure[open] > summary .disclosure-chevron { transform: rotate(180deg); }
+.statistics-disclosure > summary .disclosure-open, .statistics-disclosure[open] > summary .disclosure-closed { display: none; }
+.statistics-disclosure[open] > summary .disclosure-open { display: inline; }
+.acquisition-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 12px; }
+.acquisition-table th { color: var(--ds-muted); font-weight: 500; padding: 0 0 12px; }
+.acquisition-table td { padding: 12px 0; border-top: 1px solid var(--ds-line); }
+.acquisition-table :is(th, td) { text-align: right; font-variant-numeric: tabular-nums; }
+.acquisition-table :is(th, td):first-child { text-align: left; padding-right: 12px; }
+.acquisition-table th:first-child { width: 52%; }
+.acquisition-table td:first-child { overflow-wrap: anywhere; }
+.acquisition-table td small { display: block; margin-top: 4px; color: var(--ds-muted); font-size: 11px; }
+.statistics-help { margin-top: 20px; font-size: 12px; color: var(--ds-muted); }
+.statistics-help summary { cursor: pointer; min-height: 36px; padding: 8px 0; }
+#bandoAlertsBody { font-variant-numeric: tabular-nums; }
+.bando-alert-totals { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--ds-muted); font-size: 12px; }
+.bando-alert-totals strong { color: var(--ds-ink); font-weight: 600; }
+.bando-recent-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--ds-line); }
+.bando-recent-identity { min-width: 0; flex: 1; }
+.bando-recent-email { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ds-ink); font-size: 13px; font-weight: 600; }
+.bando-recent-meta, .bando-recent-row time { color: var(--ds-muted); font-size: 12px; line-height: 1.6; }
+.bando-recent-meta { overflow-wrap: anywhere; }
+.bando-recent-row time { flex-shrink: 0; text-align: right; }
+.bando-region-totals { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 12px; color: var(--ds-muted); font-size: 12px; }
+.bando-region-totals strong { color: var(--ds-ink); }
+#bandoAlertsBody .statistics-disclosure { margin-top: 8px; border-top: 0; }
+.bando-recent-note { color: var(--ds-muted); font-size: 12px; margin-top: 12px; }
+:is(#growthPanel, #acquisitionPanel, #bandoAlertsBody) :is(button, summary, input):focus-visible { outline: 2px solid var(--ds-accent); outline-offset: 4px; }
+@media (max-width: 639px) {
+    #growthPanel, #acquisitionPanel, #bandoAlertsPanel { padding: 18px 16px; }
+    .statistics-heading { gap: 12px; margin-bottom: 16px; }
+    :is(#growthPanel, #acquisitionPanel) .statistics-periods button { min-height: 44px; }
+    .growth-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; margin-bottom: 16px; }
+    #growthMetrics button { padding: 10px 12px; }
+    #growthMetrics button strong, .acquisition-totals strong { font-size: 22px; }
+    .growth-chart-frame { height: 180px; }
+    .acquisition-totals > div + div { padding-left: 10px; }
+    .acquisition-totals span { font-size: 11px; }
+    .acquisition-preview-row { gap: 8px; grid-template-columns: minmax(0, 1fr) auto 40px; }
+    .bando-recent-row { align-items: flex-start; gap: 8px; }
+    .bando-recent-row time { font-size: 11px; }
+}
