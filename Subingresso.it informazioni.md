@@ -1,11 +1,11 @@
 # Subingresso.it — informazioni e TO DO
 
-## Statistiche email e conversioni — 23 ottobre 2026, in corso
+## Statistiche email e conversioni — 23 ottobre 2026, completate
 
 - Richiesti pannello admin aperture/clic/acquisti e percorso Vetrina/annulli,
   una copia email all'admin e consigli finali. API:12delivered,tracking Resend
   aperto/clic disattivato,nessun webhook;storico aperture/clic non recuperabile.
-  Un solo admin con email disponibile,nessun suo annuncio attivo:la copia userà
+  Un solo admin con email disponibile,nessun suo annuncio attivo:la copia usa
   un annuncio pubblico d'esempio,mai riattivare quello cancellato. Prove private
   Documents/statistiche-mail-vetrine-20261023. Misura individuale nuova solo
   con consenso informato/versione aggiornata e revoca separata;vecchi50consensi
@@ -14,7 +14,14 @@
   Backup tag/ramo remoti preventivi validi. SQL con fixture ROLLBACK e test
   API/Edge/Chrome1440-768-320/Safari390,chiaro-scuro,checkout/consensi/uscite
   passati;inspector componente0FAIL/0WARN. Schema e cinque Edge applicate.
-  Frontend e invio copia ancora da pubblicare/verificare. Contratto
+  Frontend dfea605 online:13asset/pagine identici ai blob Git;HEAD pixel200 e
+  clic303 senza registrare aperture/clic. Copia admin inviata UNA volta,
+  Resenddelivered verificato;sync13/13,12offerte reali ancora12delivered,
+  misurabili0 e vecchi consensi ampliati0. Ricevuta/ID solo nel dossier privato.
+  Storico30g normalizzato:2checkout clienti,0pagati,1non completato,1in attesa;
+  nessun annullo dedotto. Produzione Chrome320/Safari390:link email anonimo
+  apre login,token rimosso,ritorno proposta conservato,consenso vuoto e nuovo
+  testo presenti,nessun account/ordine/email cliente creato nei test. Contratto
   data/EMAIL_CONVERSION_ANALYTICS.md;cacheAuth24,premiumJS3,unsubscribe4.
 
 ## Email per vendere Vetrine — 23 ottobre 2026

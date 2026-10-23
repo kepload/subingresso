@@ -86,5 +86,14 @@ pubblico reale, perché l'admin non ne ha attivi propri: nessuna riattivazione.
   di un destinatario versionato. Cache auth24, premiumJS3, unsubscribeJS4;
   nuovi journey/adminJS/adminCSS1.
 
+Pubblicazione verificata: frontend `dfea605`, 13 asset/pagine corrispondenti
+ai blob Git; cinque Edge e schema attivi. Una sola copia admin inviata,
+consegna provider confermata; sync 13/13 senza errori, invii reali clienti
+sempre 12, tutti consegnati. Storico cliente 30g: 2 checkout, 0 pagati,
+1 non completato, 1 pending. HEAD pixel 200 e click 303 senza conteggiare hit.
+Browser live Chrome 320/Safari 390: arrivo anonimo da email apre login e
+conserva la proposta per il ritorno; consenso nuovo visibile e non selezionato.
+Ricevuta e identificativi della copia restano nel dossier privato.
+
 Riferimenti: [Garante, tracking pixel](https://www.garanteprivacy.it/temi/tracking-pixel),
 [Resend, tracking](https://resend.com/docs/dashboard/domains/tracking).
