@@ -1,5 +1,15 @@
 # Invio Vetrine e frequenza — 23 ottobre 2026
 
+Seguito alla revisione grafica: l'utente chiede esplicitamente l'invio delle
+nove anteprime al proprio indirizzo personale. Eseguito un solo giro numerato
+1–9, **9/9consegnate** verificate tramite ID provider e destinatario esatto.
+Anteprime con dati esempio dichiarati, senza pixel, acquisti o iscrizioni;
+pulsante alla dashboard, nessuna disiscrizione fittizia. Invii esclusi dai
+risultati clienti, nessun contatto ai venditori o nuova campagna. Helper
+temporaneo interno con destinatario fisso e idempotenza rimosso e verificato;
+campagna4/adminanalytics3 ACTIVE invariati. Ricevute private in
+`Documents/email-vetrine-design-20261023/owner-preview-*.json`.
+
 L'utente autorizza il primo giro e chiede una frequenza moderata. Riferisce consensi chiesti via WhatsApp a molti degli iscritti che ha portato sul sito. È stata chiesta l'identificazione dei destinatari consenzienti: «molti» non viene registrato come consenso di tutti gli account o dei venti selezionati. Il materiale privato contiene una lista leggibile di nomi/email per facilitare l'abbinamento.
 
 **Chiarimento conclusivo del 23 ottobre:** l'utente conferma che tutti gli ultimi cinquanta iscritti hanno acconsentito alle promozioni, mentre contatterà separatamente quelli più anziani. Coorte congelata alle11:31:13UTC sui cinquanta profili reali non admin/demo più recenti, ordinati per created_at e ID; prima iscrizione01/09, ultima23/10. Registrati50consensi con questa attestazione, data originaria sconosciuta. Trovati13venditori idonei;uno escluso per problemi nel provider. **Inviate12email, tutte12delivered verificati su Resend:4pacchetti e8testi con visualizzazioni.** Zero duplicati, consensi o invii fuori coorte; nessun nuovo cron. ID e ricevute soltanto nei registri privati.

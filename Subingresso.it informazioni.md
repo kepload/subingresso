@@ -2,6 +2,14 @@
 
 ## Email Vetrina, testi e grafica — 23 ottobre 2026
 
+- Seguito esplicito: inviate9anteprime al solo indirizzo personale indicato,
+  **9/9delivered verificati**, numerate1–9; dati esempio, niente pixel/acquisti
+  o campagne clienti. Invio una tantum separato dalle statistiche reali;
+  helper temporaneo rimosso e assenza verificata, Edge stabili4/3 ACTIVE.
+  Ricevute/ID privati nel dossier sotto. Posta dominio verificata DNS Aruba;
+  accesso supporto info@subingresso.it da Webmail, app con IMAP se attivo.
+  Esistenza/password della singola casella non verificate, nessun cambio Aruba.
+
 - Richiesta: email semplici, umane e accattivanti; oggetti che invogliano,
   non report visite. Rifatte9varianti, singole/pacchetti, con grafica blu/oro,
   prezzo/durata chiari e pulsante; eliminato il lungo titolo annuncio.
