@@ -9,8 +9,8 @@ provincia identiche** al checkpoint `20dabc2`. Catalogo nazionale **6.464
 schede**, **6.261 con dati edizione**. Ripartenza dal catalogo pubblicato e
 da questo registro; nessun audit Belluno approfondito separato già concluso
 al checkpoint. Nessuna altra provincia lavorata e nessuna comunicazione,
-domanda o candidatura inviata. Pubblicazione e verifiche in corso: TO DO
-provinciale e conteggi non ancora aggiornati.
+domanda o candidatura inviata. **Pubblicata e verificata online**. TO DO spuntata e riepiloghi aggiornati
+soltanto dopo esito positivo: **56 province concluse, 54 rimanenti**.
 
 ### Copertura, originali e decisioni
 
@@ -133,7 +133,18 @@ passati; build ripetuta identica (SHA256 del catalogo
 `015e6841bcfb4add9c145358247944746f73d893b2fa5251884b6715da007c67`).
 Suite generale **passata nei cinque formati** (Chromium1440/820/390/320 e
 WebKit390): filtri, tutte le province, coerenza lista/mappa, dettagli,
-tastiera, riprova degli errori e assenza di overflow. Verifica online pendente.
+tastiera, riprova degli errori e assenza di overflow. Pubblicazione dati `a31001a`, deploy Vercel riuscito e quattro asset identici
+al commit (audit, catalogo, JS e pagina); aggiornamento dominio verificato in
+34,4 secondi, entro il limite di dieci minuti. **134/134 pagine online**
+HTTP200 con titolo, canonical, note e costi verificati; prova provinciale
+online passata sui tre formati con tutti134dialoghi per formato e quattro
+pagine senza JavaScript per formato. Anche sito reale senza intercettazioni
+passato su Chromium1440/320 e WebKit390, senza errori o overflow; screenshot
+esaminati. Prove: `publish-deploy.json`, `online-pages.json`, `test-online.json`,
+`real-site.json` e immagini nel fascicolo esterno Belluno. Prima navigazione
+WebKit senza JS interrotta per errore HTTP2: ripetuta la sola prova WebKit,
+conclusa positivamente. Il test limita a tre tentativi i soli errori di
+trasporto, senza ripetere le prove Chromium gi? passate.
 Supplemento SHA256 dei nuovi materiali `supplement-belluno-prepublication`
 nel precedente snapshot: **1.671 file / 319.138.326 byte, zero errori**.
 

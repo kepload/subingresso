@@ -51,6 +51,12 @@ assert.equal(events.filter(e=>e.pricing).length,10);
 assert.equal(event('Longarone','MIG').editions[0].dateType,'calendar');
 assert.equal(event('Longarone','Agrimont').editions.length,10);
 const handler=require('../api/fiera');
+async function navigate(page,url){
+ for(let attempt=0;;attempt++){
+  try{return await page.goto(url,{waitUntil:'domcontentloaded'});}
+  catch(error){if(attempt>=2||!/HTTP2|ERR_HTTP2|ECONNRESET|NS_ERROR_NET_RESET|ERR_CONNECTION_RESET/i.test(error.message))throw error;}
+ }
+}
 for(const e of events){const r={setHeader(){},status(n){this.code=n;return this;},send(s){this.body=s;}};handler({query:{slug:e.id}},r);assert.equal(r.code,200);assert(r.body.includes(e.id));assert(!r.body.includes('undefined'));}
 const server=http.createServer((req,res)=>{
  const u=new URL(req.url,'http://localhost');
@@ -62,11 +68,12 @@ const server=http.createServer((req,res)=>{
  assert(process.env.PLAYWRIGHT_MODULE,'PLAYWRIGHT_MODULE richiesto');const pw=require(process.env.PLAYWRIGHT_MODULE),results=[];
  await new Promise(r=>server.listen(0,'127.0.0.1',r));const base=process.env.FIERE_BL_BASE_URL||'http://127.0.0.1:'+server.address().port;
  try{for(const [engine,width]of [['chromium',1440],['chromium',320],['webkit',390]]){
+  if(process.env.FIERE_BL_ENGINE&&process.env.FIERE_BL_ENGINE!==engine)continue;
   const browser=await pw[engine].launch();try{
    const context=await browser.newContext({viewport:{width,height:900}});
    await context.route('**/*',route=>{const u=new URL(route.request().url());if(['/js/supabase-config.js','/js/auth.js','/js/ui-components.js'].includes(u.pathname))return route.fulfill({contentType:'application/javascript',body:''});return u.origin===new URL(base).origin?route.continue():route.abort();});
    const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
-   await page.goto(base+'/fiere?provincia=Belluno&mesi=1,2,3,4,5,6,7,8,9,10,11,12');await page.waitForFunction(()=>document.querySelector('#list-count').textContent==='134');
+   await navigate(page,base+'/fiere?provincia=Belluno&mesi=1,2,3,4,5,6,7,8,9,10,11,12');await page.waitForFunction(()=>document.querySelector('#list-count').textContent==='134');
    while(await page.locator('#load-more').isVisible())await page.locator('#load-more').click();
    assert.deepEqual(await page.locator('.fiere-card').evaluateAll(es=>es.map(e=>e.dataset.eventId).sort()),events.map(e=>e.id).sort());
    await page.waitForFunction(()=>document.querySelector('#map-markers').children.length>0);
@@ -75,7 +82,7 @@ const server=http.createServer((req,res)=>{
    for(const e of events){await page.locator('.fiere-card[data-event-id="'+e.id+'"] .fiere-card-button').click();await page.waitForFunction(()=>document.querySelector('#fair-dialog').open);const dialog=page.locator('#fair-dialog');assert((await dialog.innerText()).replace(/\s+/g,' ').includes(e.name.replace(/\s+/g,' ')),e.id);assert(await dialog.locator('a[data-fiere-source]').count());if(e.pricing)assert.equal(await page.locator('#detail-costs').innerText(),e.pricing.details);assert(await dialog.evaluate(d=>d.scrollWidth<=d.clientWidth+1),e.id+' '+width);await page.locator('#close-detail').click();}
    assert.deepEqual(errors,[]);if(process.env.FIERE_BL_QA_DIR){fs.mkdirSync(process.env.FIERE_BL_QA_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.FIERE_BL_QA_DIR,engine+'-'+width+'.png')});}await context.close();
    const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width,height:900}}),q=await nojs.newPage();
-   for(const e of [event('Limana','17^ FESTA'),event('Borgo Valbelluna','Era Ora'),event('Santo Stefano di Cadore','Santi'),event('Lozzo di Cadore','Rosario')]){const response=await q.goto(base+'/fiere/'+e.id);assert.equal(response.status(),200);assert((await q.locator('h1').innerText()).replace(/\s+/g,' ').includes(e.name.replace(/\s+/g,' ')));assert(await q.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
+   for(const e of [event('Limana','17^ FESTA'),event('Borgo Valbelluna','Era Ora'),event('Santo Stefano di Cadore','Santi'),event('Lozzo di Cadore','Rosario')]){const response=await navigate(q,base+'/fiere/'+e.id);assert.equal(response.status(),200);assert((await q.locator('h1').innerText()).replace(/\s+/g,' ').includes(e.name.replace(/\s+/g,' ')));assert(await q.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));}
    await nojs.close();results.push({engine,width,events:events.length,dialogs:events.length,base,status:'passed'});console.log(engine,width,'Belluno: catalogo, mappa, 134 dettagli e pagine senza JS OK');
   }finally{await browser.close();}
  }}finally{server.close();if(process.env.FIERE_BL_OUT)fs.writeFileSync(process.env.FIERE_BL_OUT,JSON.stringify(results,null,2));}
