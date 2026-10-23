@@ -10,6 +10,10 @@
   Locale208controlli interazione in quattro browser/formati e261tema passati,
   inspector0FAIL; dati/sessioni simulati. Prove e stato pubblicazione:
   Documents/verifica-dashboard-statistiche-20261023/risultati.md.
+  Pubblicato61c77a6, Vercel5DThy5t5keuSXgsEdJXiZ2k1gC2w READY e dominio
+  verificato:HTML/CSS identici,208controlli ripetuti sugli asset online passati.
+  Contrasto minimo5,56:1; registro/sintassi admin online passati. Backup remoto
+  session-20261023-082015 valido; cleanup helper interrotto per errore noto.
 
 ## Aspetto per tutti — 23 ottobre 2026
 
