@@ -19,7 +19,10 @@ fonti e audit fiere completi: `data/FIERE.md`.
   precedenti invariati. Prezzi privati, proprietà/RLS, blocco bypass e retry.
   Revisione indipendente senza problemi bloccanti. Schema applicato e verificato:
   zero esiti/prezzi di prova persistenti, guardia attiva, accessi diretti negati.
-  Pubblicazione frontend da verificare.
+  Pubblicatoc626514, Vercel9mKykoXgAtAoNksc2U6x7QpUBoC5 READY, dominio
+  corretto verificato: dashboard/JS/CSS/privacy identici ai blobGit. Ripetuti
+  online120controlli e regressione Vetrina/statistiche nei trebrowser/formati,
+  tutti passati; zero esiti/prezzi persistenti, inventari/guardie invariati.
   Prove `Documents/esiti-annunci-20261024`.
 - Errore di sessione: chiave interna Supabase esposta nell'output tecnico;
   copia locale sanitizzata, nessun segreto nei file versionati. Rotazione
@@ -2301,7 +2304,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 
 - [ ] 🔴 Migliorare scadenze e rinnovi — avvisi prima della scadenza e rinnovo rapido, per conservare l'offerta reale senza dover acquisire nuovamente gli stessi inserzionisti.
 - [ ] 🟠 Migliorare gli alert — filtri per zona, settore, giorno e prezzo.
-- [ ] 🟢 Registrare vendite e affitti conclusi — data, tempi e prezzo facoltativo; utile per analisi future, con beneficio immediato meno diretto rispetto ad acquisizione e rinnovi.
+- [x] 🟢 Registrare vendite e affitti conclusi — mini modulo privato del24/10: esito, prezzo facoltativo filtrato e canale. Massimo trepassaggi su richiesta corrente, data della dichiarazione registrata automaticamente; nessuna data dell'atto o durata reale della trattativa dedotta. Contratto `data/LISTING_OUTCOMES.md`.
 - [ ] 🟠 Salvare il telefono nel profilo — riutilizzare quello inserito nel primo annuncio; intervento circoscritto per facilitare le pubblicazioni successive, riusando la gestione dei contatti già esistente.
 
 ## 📊 Statistiche e provenienza degli utenti

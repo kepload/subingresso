@@ -27,7 +27,13 @@ const server=http.createServer((req,res)=>{
 async function shots(page,name){if(out)await page.screenshot({path:path.join(out,name+'.png'),fullPage:true});}
 (async()=>{
  if(out)fs.mkdirSync(out,{recursive:true});
- if(process.env.OUTCOMES_USE_PUBLISHED==='1')for(const f of ['dashboard.html','js/listing-outcome.js','css/listing-outcome.css']){const r=await fetch('https://subingresso.it/'+f);assert(r.ok);const text=await r.text();assert.equal(text,fs.readFileSync(path.join(root,f),'utf8'),'Published '+f);cache.set(f,text);}
+ if(process.env.OUTCOMES_USE_PUBLISHED==='1')for(const f of ['dashboard.html','js/listing-outcome.js','css/listing-outcome.css']){
+  const r=await fetch('https://subingresso.it/'+f);assert(r.ok);const text=await r.text();
+  // Il deploy usa i blob Git LF, il checkout Windows può avere CRLF.
+  const committed=require('node:child_process').execFileSync('git',['show','HEAD:'+f],{cwd:root,encoding:'utf8'});
+  const hash=s=>require('node:crypto').createHash('sha256').update(s).digest('hex');
+  assert.equal(hash(text),hash(committed),'Published Git blob '+f);cache.set(f,text);
+ }
  const dashboard=read('dashboard.html');for(const m of dashboard.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)){if(m[1].trim())new vm.Script(m[1]);}
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));let cases=0;
  if(process.env.OUTCOMES_PREVIEW==='1'){console.log('Preview http://127.0.0.1:'+server.address().port+'/fixture?preview=source');return;}
