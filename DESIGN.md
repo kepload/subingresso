@@ -246,3 +246,13 @@ tema: mare `--ad-field`, terre `--ad-raised`, confini sottili `#475569`.
 Province selezionate `--ad-info`, anteprima `--ad-control-primary`; contorno
 blu negli stati attivi. Marker e significato delle categorie conservati.
 Queste regole sono circoscritte a html.admin-dark, la variante chiara resta.
+
+### Stile delle statistiche admin — 23 ottobre 2026
+
+Preferenza esplicita: usare lo stile precedente di «Funnel utenti» e «Comuni
+più visitati» anche per Crescita, Provenienza, Avvisi Bandi ed Email Vetrina.
+Pannelli con angoli24px, padding24px, bordo slate100 e fondo bianco;
+titoli16px/900 con icona, controlli arrotondati8px e selezione blu.
+Riquadri interni slate50, angoli12px, numeri24px marcati. Nel tema scuro
+riusare i token personali `--ad-*`, senza superfici nere o selezioni bianche
+separate. Grafici, filtri, conteggi e dettagli chiusi all'apertura conservati.

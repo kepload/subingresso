@@ -8,8 +8,8 @@
     <title>Dashboard — Subingresso.it</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="css/tailwind.css?v=4">
-    <link rel="stylesheet" href="css/dashboard-statistics.css?v=1">
-    <link rel="stylesheet" href="css/admin-email-analytics.css?v=2">
+    <link rel="stylesheet" href="css/dashboard-statistics.css?v=2">
+    <link rel="stylesheet" href="css/admin-email-analytics.css?v=3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <style>
@@ -299,7 +299,7 @@
             </div>
 
             <section id="email-vetrine" hidden aria-labelledby="mailAnalyticsTitle">
-                <div class="mail-heading"><h3 id="mailAnalyticsTitle">Email Vetrina</h3><div class="mail-controls">
+                <div class="mail-heading"><h3 id="mailAnalyticsTitle"><i class="fas fa-envelope text-blue-500" aria-hidden="true"></i> Email Vetrina</h3><div class="mail-controls">
                     <select aria-label="Periodo email e conversioni" onchange="AdminEmailAnalytics.setDays(this.value)"><option value="7">Ultimi 7 giorni</option><option value="30" selected>Ultimi 30 giorni</option><option value="90">Ultimi 90 giorni</option><option value="0">Tutto lo storico</option></select>
                     <button id="mailRefresh" type="button" onclick="AdminEmailAnalytics.refresh()">Aggiorna</button>
                 </div></div>
@@ -427,7 +427,7 @@
                 <div class="statistics-heading">
                     <div>
                         <h3 class="font-black text-slate-900 flex items-center gap-2">
-                            Crescita del sito
+                            <i class="fas fa-chart-line text-blue-500" aria-hidden="true"></i> Crescita del sito
                         </h3>
                         <p class="statistics-meta"><span id="chartSubtitle">Ultimi 12 mesi</span> · Visite oggi: <strong id="statViewsToday">—</strong> · Totali: <strong id="statViewsTotal">—</strong></p>
                     </div>
@@ -539,7 +539,7 @@
             <div id="acquisitionPanel" class="admin-statistics-panel">
                 <div class="statistics-heading">
                     <h3 class="font-black text-slate-900 flex items-center gap-2">
-                        Da dove arrivano gli utenti
+                        <i class="fas fa-sign-in-alt text-blue-500" aria-hidden="true"></i> Da dove arrivano gli utenti
                     </h3>
                     <div class="statistics-periods" role="group" aria-label="Periodo provenienze">
                         <button id="acqBtn30" onclick="setAcquisitionPeriod(30)" aria-pressed="true">30g</button>
@@ -620,7 +620,7 @@
             <div id="bandoAlertsPanel" class="admin-statistics-panel">
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
                     <h3 class="font-black text-slate-900 flex items-center gap-2">
-                        Avvisi Bandi
+                        <i class="fas fa-bell text-blue-500" aria-hidden="true"></i> Avvisi Bandi
                         <span class="statistics-meta">(email lead)</span>
                     </h3>
                     <div id="bandoAlertsBadges" class="bando-alert-totals">

@@ -67,7 +67,7 @@ async function browserTest(engine,name,width,height,base){
   assert(await page.locator('#mailAdvanced').isVisible(),'period refresh preserves deliberate expansion');
   if(out)await page.screenshot({path:path.join(out,`${name}-${width}-completo.png`),fullPage:true});
   await page.locator('#mailDetailsToggle').click();assert(await page.locator('#mailAdvanced').isHidden());
-  await page.evaluate(()=>document.documentElement.classList.add('admin-dark'));assert.equal(await page.locator('#email-vetrine').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(21, 23, 26)');
+  await page.evaluate(()=>document.documentElement.classList.add('admin-dark'));assert.equal(await page.locator('#email-vetrine').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(21, 32, 51)');
   if(out)await page.screenshot({path:path.join(out,`${name}-${width}-scuro.png`),fullPage:true});
   await page.evaluate(()=>{Object.assign(baseline.email,{sent:0,delivered:0,measured:0,unmeasured:0,opened:0,clicked:0,paid:0,revenue_cents:0});baseline.variants=[];AdminEmailAnalytics.setDays(0);});await page.waitForFunction(()=>document.querySelector('.mail-metrics dd').textContent==='0');
   assert((await page.locator('#mailDeliveryChart').innerText()).includes('Nessun invio'));assert.equal(await page.locator('#mailDeliveryChart .mail-chart-fill').evaluate(el=>el.style.width),'0%');

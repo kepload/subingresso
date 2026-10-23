@@ -5,6 +5,16 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Statistiche admin, ritorno allo stile precedente — 23 ottobre 2026
+
+- Preferenza: stile di «Funnel utenti»/«Comuni più visitati» su tutti i pannelli
+  statistici. Uniformati Crescita, Provenienza, Avvisi Bandi ed Email Vetrina:
+  fondi, angoli24px, titoli con icona, pulsanti blu e riquadri interni; scuro
+  con palette personale. Dati, grafici, filtri e dettagli apribili conservati.
+  Locale256controlli dashboard e suite email Chrome1440/768/320-Safari390
+  passati, chiaro/scuro; nessun invio o dato reale modificato.
+  Prove `Documents/verifica-stile-statistiche-admin-20261023`.
+
 ## Riferimenti nei documenti — 23 ottobre 2026
 
 - Rimossi richiami a strumenti esterni da regole, storico e commenti;
