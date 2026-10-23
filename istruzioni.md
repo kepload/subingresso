@@ -1570,6 +1570,20 @@ Prima di inviare completare uscita dalle offerte e coordinare con riepiloghi;
 data/EMAIL_VETRINE_20261023.md;file privati in
 Documents/campagna-vetrine-20261023/. Nessun seguito automatico avviato.
 
+**Chiarimento successivo23/10:**utente conferma tutti gli ultimi50iscritti
+reali;coorte congelata11:31UTC,01/09–23/10. Registrati50consensi con fonte
+WhatsApp/attestazione,nessuna data originaria inventata;più anziani esclusi.
+13venditori idonei,uno escluso provider;**12invii/12delivered**,4pacchetti e
+8proposte con visite,zero duplicati/fuori coorte. Ricevute/ID e prove private
+nella cartella sopra. Nessun nuovo cron o re-invio automatico.
+Nuovi iscritti:casella promozionale separata/facoltativa/vuota (Garante8981258,
+preselezione richiesta non valida). Versione vetrina-email-20261023 e booleano
+esatto;metadati bypass/fallback,trigger solo INSERT profiles salva consenso
+con data/evidenza. Update/duplicati/revoche non riattivano. Migrazione
+PATCH_SIGNUP_PROMO_OPTIN_20261023.sql applicata,register-bypass pubblicata;
+test scripts/test-signup-promo.cjs e verify-signup-promo.sql ROLLBACK passati.
+Auth23 nei20HTML/API,privacy aggiornata;esito pubblicazione in data/VETRINA_EMAIL.md.
+
 **Seguito23/10, richiesta primo invio:**utente riferisce consensi WhatsApp a
 molti iscritti;chiesti nominativi per abbinarli,nessun opt-in generalizzato.
 `PATCH_VETRINA_EMAIL_20261023.sql`:registro consensi/log RLS solo servizio,

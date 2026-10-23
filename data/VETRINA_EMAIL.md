@@ -2,9 +2,21 @@
 
 L'utente autorizza il primo giro e chiede una frequenza moderata. Riferisce consensi chiesti via WhatsApp a molti degli iscritti che ha portato sul sito. È stata chiesta l'identificazione dei destinatari consenzienti: «molti» non viene registrato come consenso di tutti gli account o dei venti selezionati. Il materiale privato contiene una lista leggibile di nomi/email per facilitare l'abbinamento.
 
+**Chiarimento conclusivo del 23 ottobre:** l'utente conferma che tutti gli ultimi cinquanta iscritti hanno acconsentito alle promozioni, mentre contatterà separatamente quelli più anziani. Coorte congelata alle11:31:13UTC sui cinquanta profili reali non admin/demo più recenti, ordinati per created_at e ID; prima iscrizione01/09, ultima23/10. Registrati50consensi con questa attestazione, data originaria sconosciuta. Trovati13venditori idonei;uno escluso per problemi nel provider. **Inviate12email, tutte12delivered verificati su Resend:4pacchetti e8testi con visualizzazioni.** Zero duplicati, consensi o invii fuori coorte; nessun nuovo cron. ID e ricevute soltanto nei registri privati.
+
 ## Stato corrente
 
-Migrazione applicata e quattro Edge pubblicate: `vetrina-campaign`, `email-unsubscribe`, `weekly-seller-stats`, `weekly-buyer-digest`. Zero permessi positivi registrati, zero proposte inviate, nessun nuovo cron. Frontend pubblicato3908a16: pagina uscita e JS3 identici byte per byte ai blob Git online, entrambe HTTP200. Invio senza chiave401; token finti promo/digest404; nessuna revoca reale di prova. La prima verifica confrontava i terminatori locali CRLF dello script: confronto corretto sui byte Git/produzione LF e passato. Resend interrogato in sola lettura: storico completo del periodo necessario, 12 email totali oggi, 20 account controllati; un account escluso per problemi del provider e nessun contatto recente nelle ultime 72 ore fra i venti. Questi numeri fotografano il controllo, non sono quote permanenti o prove di consegna di una nuova campagna.
+Migrazioni campagne e scelta alla registrazione applicate; cinque Edge pubblicate, compresa `register-bypass`. Cinquanta permessi WhatsApp, dodici proposte inviate e consegnate, nessun nuovo cron. Uscita pubblicata3908a16: pagina eJS3 identici ai blob Git online, HTTP200; invio anonimo401, token finti404. Nuovo modulo Auth23/20sorgenti e informativa pronti, pubblicazione frontend da verificare. I precedenti audit con zero permessi/invii e12o16email totali nel giorno sono fotografie della preparazione, superate dall'esito sopra. Nessuna disiscrizione reale o account di prova persistente.
+
+## Nuove iscrizioni e consenso esplicito
+
+L'utente ha chiesto la casella preselezionata. È stata spiegata e implementata la scelta separata, facoltativa e **inizialmente vuota**: una casella già spuntata non dimostra consenso. Fonte verificata: [Garante, consenso e caselle già spuntate](https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/8981258). Nessun blocco all'account per chi rifiuta.
+
+`regPromoOptIn` riguarda soltanto offerte via email sulle Vetrine, massimo una proposta ogni30giorni, con link privacy e uscita da ogni email. Bypass e fallback Auth trasmettono la scelta effettiva e `vetrina-email-20261023`. Il server rifiuta tipi diversi dal booleano e versioni mancanti/errate quando la scelta è positiva; i client precedenti che non inviano il campo creano account senza consenso. Chiusura del modulo azzera la scelta; durante l'invio è bloccata, su errore viene conservata. Modulo scorrevole entro l'altezza del telefono, senza modificare il resto della pagina.
+
+`PATCH_SIGNUP_PROMO_OPTIN_20261023.sql` aggiunge solo un AFTER INSERT su profiles, senza cambiare trigger annunci o auth esistenti. Legge i metadati della nuova iscrizione; solo booleano JSON true e versione corrente registrano fonte explicit_site_optin, testo/versione e timestamp server. Nessun backfill, nessuna riattivazione da UPDATE o riscrittura di revoche. Se il salvataggio del consenso fallisce, il marketing resta disabilitato e l'account gratuito continua a funzionare.
+
+Test nuovi: booleano vero/falso/assente/stringa, versione, registrazione di account già esistente, revoca e isolamento; nuove Auth/profile fixture in transazione ROLLBACK, nessun account persistente. Chrome1440/320 e Safari390: entrambe le scelte nei due percorsi, invio in corso, errore, reset, scorrimento e pulsante raggiungibile. Regressione bandi passata nei treformati: aggiornata solo la fixture obsoleta, che non caricava BlogMarkup e cercava un commento rimosso. Dati/avvisi bandi reali invariati.
 
 ## Limiti applicati
 
@@ -41,6 +53,6 @@ L'uscita è `/unsubscribe?t=...&type=promo`: apre il modulo esistente e attende 
 
 Applicazione: 119 profili, 133 annunci, 21 quote pagamento; nessuna scrittura su queste tabelle, nessun trigger annunci cambiato. Nuove tabelle inizialmente vuote. Copia remota `backup/session-20261023-125704-invio-email-vetrine` e ramo `backup/pre-invio-email-vetrine-20261023` verificati; helper interrotto dopo push riuscito per stderr PowerShell, errore noto.
 
-File privati in `Documents/campagna-vetrine-20261023/`: lista proposte e storico provider, script manuale `invio-operativo.py`, conferme nominative in `consensi-confermati.json` inizialmente `[]`, ricevute solo dopo invio. Nessuna credenziale esportata o salvata in questi artefatti; nessuna PII nei file versionati. Il vecchio `verifica.json` fotografa la preparazione iniziale, non sostituisce i registri operativi.
+File privati in `Documents/campagna-vetrine-20261023/`: coorte cinquanta, tredici candidati, storico provider, runner `invio-operativo.py`, lista confermata, ricevute e consegne. Nessuna credenziale esportata o salvata in questi artefatti; nessuna PII nei file versionati. I vecchi documenti con zero invii fotografano la preparazione iniziale; il controllo finale è `verifica-coorte-e-invii-finale.json` e il resoconto `risultati-invio.md`.
 
 L'uso futuro resta limitato alle persone con presupposto valido e alle autorizzazioni di invio effettivamente date. Non aggiungere cron, importare contatti o trasformare la segnalazione generica WhatsApp in un opt-in di massa.

@@ -2,6 +2,21 @@
 
 ## Email per vendere Vetrine — 23 ottobre 2026
 
+- Chiarimento successivo:consenso promozionale confermato per gli ultimi50
+  iscritti reali;coorte congelata23/10 11:31UTC,01/09–23/10,50permessi WhatsApp
+  registrati senza inventare date originarie;più anziani esclusi.13venditori
+  idonei,5pacchetti;un contatto escluso dal provider. Primo giro concluso:
+  **12invii,12delivered verificati su Resend**,ricevute/ID nella cartella privata;
+  nessuno fuori coorte,tetto20 e limiti precedenti. Richiesto consenso preselezionato sui nuovi:
+  casella separata facoltativa vuota,poiché preselezionata non vale consenso
+  (Garante8981258). Scelta vera/versione via bypass e fallback Auth;trigger solo
+  INSERT profiles registra data/evidenza,mai UPDATE o retroconsenso. Auth23
+  su20HTML/API,modulo scorrevole su telefoni bassi,privacy aggiornata. Test
+  registro/mancato consenso/versione/revoca in ROLLBACK e trebrowser/formati
+  passati;avvisi bandi ancora compatibili,fixture test aggiornata a BlogMarkup.
+  Backend applicato,pubblicazione frontend da verificare. Prove e coorte private nella
+  stessa cartella. Nessun altro consenso retroattivo o cron autorizzato.
+
 - Seguito autorizzato:utente riferisce consensi chiesti su WhatsApp a molti
   iscritti e chiede primo giro/limite umano. Per abbinarli chiesti nomi/email,
   senza estendere l'attestazione a tutti. Registro consensi inizialmente vuoto;

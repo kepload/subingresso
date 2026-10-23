@@ -1,5 +1,13 @@
 # AGENTS.md — Subingresso.it
 
+Consensi/offerte23/10:primo giro12email/12delivered nella coorte privata dei
+50iscritti reali più recenti confermati dall'utente;più anziani esclusi.
+Nuovi iscritti:casella separata,facoltativa e vuota,booleano vero/versione
+vetrina-email-20261023. Trigger solo INSERT profiles registra consenso;
+mai reconsenso da UPDATE metadata/profilo. Bypass e fallback Auth allineati.
+Limiti20/campagna-24ore,30giorni/persona,72ore da periodiche;salta settimanali
+per7giorni. Uscita promo separata,nessun nuovo cron. Dettagli data/VETRINA_EMAIL.md.
+
 Campi/mappa dark23/10: input/select/textarea a riposo con bordo#334155,
 senza alone; focus tastiera2px blu. Mappa SVG: mare#0f172a, terre#25334a,
 confini#475569; hover/selezione/preview e marker conservati. Chiaro invariato.
@@ -190,7 +198,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 
 - `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
 - `data.js?v=24`
-- `auth.js?v=22`
+- `auth.js?v=23`
 - `ui-components.js?v=17`
 - `js/pages/annunci.js?v=15`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
 - `comune-picker.js?v=7`, `location-search.js?v=8`, `location-search-worker.js?v=3`: comuni e 55.288 località da `data/localita.json`; refusi in background, fallback a blocchi. Il worker importa la stessa versione di `location-search.js`: aggiornare entrambi i riferimenti e il cache buster del worker quando cambia il motore. Dettaglio/fonti in `data/LOCALITA.md`.

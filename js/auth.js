@@ -8,11 +8,12 @@
 // Il tracker condiviso cattura la provenienza prima degli script auth.
 
 let _profileCache = null; // { id, nome } — evita query ripetute sulla navbar
+const PROMO_CONSENT_VERSION = 'vetrina-email-20261023';
 
 // ── Inject modal HTML ──────────────────────────────────────
 const modalHTML = `
 <div id="authOverlay" class="fixed inset-0 z-[999] flex items-center justify-center p-4 hidden" style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)">
-  <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+  <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden" style="max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain" onclick="event.stopPropagation()">
 
     <!-- Tabs header -->
     <div class="flex border-b border-slate-100">
@@ -134,6 +135,13 @@ const modalHTML = `
           </button>
         </div>
       </div>
+      <div>
+        <label for="regPromoOptIn" class="flex items-start gap-3 text-sm font-semibold text-slate-700 cursor-pointer" style="min-height:44px;padding-top:6px">
+          <input id="regPromoOptIn" name="promotional_email_opt_in" type="checkbox" autocomplete="off" aria-describedby="regPromoHint" class="w-5 h-5 rounded accent-blue-600 cursor-pointer" style="flex-shrink:0;margin-top:2px">
+          <span>Voglio ricevere offerte via email sulle Vetrine.</span>
+        </label>
+        <p id="regPromoHint" class="text-sm text-slate-600 leading-relaxed" style="margin-left:32px">Facoltativo. Al massimo una proposta ogni 30 giorni. Puoi disiscriverti da ogni email. <a href="/privacy" target="_blank" rel="noopener" class="text-blue-600 underline" style="white-space:nowrap">Informativa privacy</a></p>
+      </div>
       <button type="submit" id="registerBtn"
         class="w-full bg-blue-600 text-white py-3.5 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-2">
         <i class="fas fa-user-plus"></i> Crea account
@@ -241,6 +249,8 @@ window.closeAuthModal = function () {
     document.body.style.overflow = '';
     ['loginEmail','loginPassword','regNome','regCognome','regEmail','regTelefono','regPassword','forgotEmail']
         .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+    const promo = document.getElementById('regPromoOptIn');
+    if (promo) promo.checked = false;
     const ctxBanner = document.getElementById('authContextBanner');
     if (ctxBanner) ctxBanner.classList.add('hidden');
     _hideAuthFeedback();
@@ -274,6 +284,10 @@ function _setBtnLoading(btnId, loading, defaultHTML) {
     if (!btn) return;
     btn.disabled = loading;
     btn.innerHTML = loading ? '<i class="fas fa-spinner fa-spin"></i> Attendi…' : defaultHTML;
+    if (btnId === 'registerBtn') {
+        const promo = document.getElementById('regPromoOptIn');
+        if (promo) promo.disabled = loading;
+    }
 }
 
 // ── Popup visitatori (non loggati) ───────────────────────
@@ -485,6 +499,7 @@ window.handleRegister = async function (e) {
     const email    = document.getElementById('regEmail').value.trim();
     const telRaw   = document.getElementById('regTelefono').value.trim();
     const password = document.getElementById('regPassword').value;
+    const promoOptIn = document.getElementById('regPromoOptIn')?.checked === true;
     if (!isValidFormText(nome,1,100) || !isValidFormText(cognome,0,100) || !isValidFormEmail(email) || password.length<6 || password.length>128) {
         _showAuthError('Controlla nome (massimo 100 caratteri), email e password (da 6 a 128 caratteri).');
         _setBtnLoading('registerBtn',false,'<i class="fas fa-user-plus"></i> Crea account');
@@ -515,7 +530,7 @@ window.handleRegister = async function (e) {
         // Retro-compat: accetta anche il vecchio valore 'popup' nel caso fosse residuo in sessione.
         const _regSrc = sessionStorage.getItem('_reg_src');
         const _showWelcome = _regSrc === 'popup_vetrina' || _regSrc === 'blog_promo' || _regSrc === 'popup';
-        await _registerBypass(email, password, nome, cognome, telefono, _showWelcome);
+        await _registerBypass(email, password, nome, cognome, telefono, _showWelcome, promoOptIn);
     } catch (err) {
         _showAuthError('Errore durante la registrazione.');
     } finally {
@@ -581,7 +596,7 @@ async function _afterRegisterSuccess(nome, showWelcome = false) {
     }, 1500);
 }
 
-async function _registerBypass(email, password, nome, cognome, telefono, showWelcome = false) {
+async function _registerBypass(email, password, nome, cognome, telefono, showWelcome = false, promoOptIn = false) {
     try {
         const cleanEmail = email.trim().toLowerCase();
         const res = await fetch(`${SUPABASE_URL}/functions/v1/register-bypass`, {
@@ -591,7 +606,7 @@ async function _registerBypass(email, password, nome, cognome, telefono, showWel
                 'apikey': SUPABASE_ANON_KEY,
                 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
             },
-            body: JSON.stringify({ email: cleanEmail, password, nome, cognome, telefono, website: '' }),
+            body: JSON.stringify({ email: cleanEmail, password, nome, cognome, telefono, website: '', promotional_email_opt_in: promoOptIn === true, promotional_email_consent_version: PROMO_CONSENT_VERSION }),
         });
         const result = await res.json().catch(() => ({}));
         if (!res.ok) {
@@ -603,7 +618,7 @@ async function _registerBypass(email, password, nome, cognome, telefono, showWel
                     return;
                 }
                 if (res.status >= 500) {
-                    const recovered = await _registerWithSupabaseAuth(cleanEmail, password, nome, cognome, telefono, showWelcome);
+                    const recovered = await _registerWithSupabaseAuth(cleanEmail, password, nome, cognome, telefono, showWelcome, promoOptIn);
                     if (recovered) return;
                     _showAuthError('Registrazione temporaneamente non disponibile. Riprova tra poco o accedi se hai già creato l\'account.');
                     return;
@@ -626,13 +641,13 @@ async function _registerBypass(email, password, nome, cognome, telefono, showWel
     }
 }
 
-async function _registerWithSupabaseAuth(email, password, nome, cognome, telefono, showWelcome = false) {
+async function _registerWithSupabaseAuth(email, password, nome, cognome, telefono, showWelcome = false, promoOptIn = false) {
     try {
         const { data, error } = await _supabase.auth.signUp({
             email,
             password,
             options: {
-                data: { nome: nome || '', cognome: cognome || '', telefono: telefono || '' }
+                data: { nome: nome || '', cognome: cognome || '', telefono: telefono || '', promotional_email_opt_in: promoOptIn === true, promotional_email_consent_version: PROMO_CONSENT_VERSION }
             }
         });
         if (error) return false;

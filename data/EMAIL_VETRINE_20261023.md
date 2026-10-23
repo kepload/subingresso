@@ -4,6 +4,8 @@ Richiesta: iniziare a vendere Vetrine con poche email brevi e umane, varianti pe
 
 **Seguito del 23 ottobre:** autorizzato il primo giro e un limite umano. L'utente riferisce consensi richiesti via WhatsApp a molti iscritti; sono stati chiesti i nominativi per abbinarli. Nessuna iscrizione generalizzata presunta. Implementati registro, limiti e uscita dalle sole offerte: stato corrente in [VETRINA_EMAIL.md](VETRINA_EMAIL.md). Le sezioni seguenti descrivono la preparazione iniziale; i segnaposti vengono risolti dal nuovo invio dopo la verifica nominativa, senza inviare le vecchie bozze come sono.
 
+**Esito successivo:** confermati dall'utente gli ultimi50iscritti reali, registrata la coorte senza includere i più anziani.13venditori idonei,uno escluso provider;12email effettivamente inviate e12consegne verificate,4pacchetti/8visualizzazioni. Nuovi iscritti con scelta separata facoltativa e vuota;casella preselezionata non valida come consenso, fonte Garante nel contratto. I conteggi zero e le venti bozze sotto restano lo storico preparatorio, non il registro del primo giro.
+
 ## Stato effettivo
 
 Letture API in transazione READ ONLY il 23 ottobre 2026: 119 profili, 112 annunci reali attivi, 70 venditori attivi esclusi admin/demo. Zero acquisti Vetrina live riusciti. Nel sistema nessun campo/registro di consenso promozionale; `email_digest` e `email_stats` risultano true per tutti i 119 profili e hanno default true. Nemmeno i metadata Auth documentano un consenso. Il solo interruttore di riepiloghi/statistiche non viene trattato come consenso alle offerte.

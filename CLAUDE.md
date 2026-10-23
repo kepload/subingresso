@@ -1,5 +1,13 @@
 # Regole Claude — Subingresso.it
 
+Consensi/offerte23/10:primo giro12email/12delivered nella coorte privata dei
+50iscritti reali più recenti confermati dall'utente;più anziani esclusi.
+Nuovi iscritti:casella separata,facoltativa e vuota,booleano vero/versione
+vetrina-email-20261023. Trigger solo INSERT profiles registra consenso;
+mai reconsenso da UPDATE metadata/profilo. Bypass e fallback Auth allineati.
+Limiti20/campagna-24ore,30giorni/persona,72ore da periodiche;salta settimanali
+per7giorni. Uscita promo separata,nessun nuovo cron. Dettagli data/VETRINA_EMAIL.md.
+
 Campi/mappa dark23/10: input/select/textarea a riposo con bordo#334155,
 senza alone; focus tastiera2px blu. Mappa SVG: mare#0f172a, terre#25334a,
 confini#475569; hover/selezione/preview e marker conservati. Chiaro invariato.

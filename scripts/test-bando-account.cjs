@@ -6,7 +6,7 @@ const { chromium, webkit } = require(process.env.PLAYWRIGHT_MODULE || 'playwrigh
 const root = path.resolve(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const blog = read('blog-template.html');
-const formCode = blog.slice(blog.indexOf('function _bandoAlertFormHtml('), blog.indexOf('// Annunci in Vetrina'));
+const formCode = blog.slice(blog.indexOf('function _bandoAlertFormHtml('), blog.indexOf('function _blogListingPreview('));
 const shared = {};
 vm.runInNewContext(stripTypeScriptTypes(read('supabase/functions/_shared/input.ts')).replace(/export /g, ''), shared);
 
@@ -64,7 +64,7 @@ const data = read('js/data.js');
 const validators = data.slice(data.indexOf('function italianPhoneDigits'), data.indexOf('// UX helper:'));
 const escapeCode = `function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}`;
 function scripts(binding) {
-    return `<script>${fixture}${validators}</script><script src="/js/auth.js"></script><script src="/js/bando-alerts.js"></script><script>${binding}</script>`;
+    return `<script>${fixture}${validators}</script><script src="/js/blog-markup.js"></script><script src="/js/auth.js"></script><script src="/js/bando-alerts.js"></script><script>${binding}</script>`;
 }
 async function renderBando(regione) {
     const context = { module: { exports: {} }, require: file => require(path.join(root, 'api/bandi', file)),
