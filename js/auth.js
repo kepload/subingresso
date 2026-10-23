@@ -13,6 +13,18 @@ const PROMO_CONSENT_VERSION = 'vetrina-email-20261023';
 
 // ── Inject modal HTML ──────────────────────────────────────
 const modalHTML = `
+<style id="authRegistrationStyles">
+  #registerForm:not(.hidden) { display:grid; gap:8px; padding:16px 20px; }
+  #registerForm label.block { margin-bottom:4px; }
+  #registerForm input:not([type="checkbox"]) { min-height:44px; padding-top:10px; padding-bottom:10px; }
+  #registerForm .auth-consent { min-height:32px; gap:8px; font-size:13px; line-height:18px; }
+  #registerForm .auth-consent input { width:18px; height:18px; flex-shrink:0; margin:0; }
+  #authOverlay:has(#registerForm:not(.hidden)) #tabLogin,
+  #authOverlay:has(#registerForm:not(.hidden)) #tabRegister { padding-top:12px; padding-bottom:12px; }
+  @media (max-height:650px) {
+    #registerForm:not(.hidden) { gap:6px; padding-top:10px; padding-bottom:10px; }
+  }
+</style>
 <div id="authOverlay" class="fixed inset-0 z-[999] flex items-center justify-center p-4 hidden" style="background:rgba(15,23,42,0.65);backdrop-filter:blur(4px)">
   <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden" style="max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain" onclick="event.stopPropagation()">
 
@@ -99,7 +111,7 @@ const modalHTML = `
     </form>
 
     <!-- ── Register Form ── -->
-    <form id="registerForm" class="p-6 space-y-4 hidden" onsubmit="handleRegister(event)">
+    <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">
       <div class="grid grid-cols-2 gap-3">
         <div>
           <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Nome *</label>
@@ -137,15 +149,13 @@ const modalHTML = `
         </div>
       </div>
       <div>
-        <label for="regTermsAccepted" class="flex items-center gap-3 text-sm font-semibold text-slate-700 cursor-pointer" style="min-height:44px">
-          <input id="regTermsAccepted" name="terms_accepted" type="checkbox" required checked autocomplete="off" class="rounded accent-blue-600 cursor-pointer" style="width:28px;height:28px;flex-shrink:0;margin:0">
+        <label for="regTermsAccepted" class="auth-consent flex items-center font-semibold text-slate-700 cursor-pointer">
+          <input id="regTermsAccepted" name="terms_accepted" type="checkbox" required checked autocomplete="off" class="rounded accent-blue-600 cursor-pointer">
           <span>Accetto i <a href="/termini" target="_blank" rel="noopener" class="text-blue-600 underline">termini e condizioni</a>&nbsp;*</span>
         </label>
-      </div>
-      <div>
-        <label for="regPromoOptIn" class="flex items-center gap-3 text-sm font-semibold text-slate-700 cursor-pointer" style="min-height:44px">
-          <input id="regPromoOptIn" name="promotional_email_opt_in" type="checkbox" checked autocomplete="off" class="rounded accent-blue-600 cursor-pointer" style="width:28px;height:28px;flex-shrink:0;margin:0">
-          <span>acconsento a ricevere offerte sulla mail</span>
+        <label for="regPromoOptIn" class="auth-consent flex items-center font-semibold text-slate-700 cursor-pointer">
+          <input id="regPromoOptIn" name="promotional_email_opt_in" type="checkbox" checked autocomplete="off" class="rounded accent-blue-600 cursor-pointer">
+          <span>Acconsento a ricevere offerte personalizzate</span>
         </label>
       </div>
       <button type="submit" id="registerBtn"

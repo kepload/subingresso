@@ -10,10 +10,11 @@ Migrazioni campagne e scelta alla registrazione applicate; cinque Edge pubblicat
 
 ## Nuove iscrizioni e consenso esplicito
 
-Aggiornamento successivo23/10: richiesta esplicita di due caselle28px
+Aggiornamento successivo23/10: richiesta esplicita di due caselle18px
 preselezionate; termini obbligatori con link /termini e *, telefono obbligatorio.
-Offerte facoltative con testo esatto «acconsento a ricevere offerte sulla mail».
-Auth26 ripristina questi default anche alla chiusura; versione solo offerte
+Offerte facoltative:«Acconsento a ricevere offerte personalizzate»,testo13px.
+Spazi del modulo ridotti,CTA subito visibile anche490x580/320x568.
+Auth27 ripristina questi default anche alla chiusura; versione solo offerte
 `vetrina-email-20261023`, mai consenso alla misura. Il paragrafo seguente
 documenta la scelta precedente, superata dalla richiesta corrente.
 

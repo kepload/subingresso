@@ -1,5 +1,17 @@
 # Subingresso.it — informazioni e TO DO
 
+## Registrazione compatta, correzione — 23 ottobre 2026
+
+- Testo esatto richiesto:«Acconsento a ricevere offerte personalizzate».
+  Spunte18px e testo13px,righe32px unite;spazi campi/intestazione ridotti,
+  adattamento alle finestre basse. Altezza672→536px,490x580:512px;
+  CTA subito visibile anche320x568,senza ridurre campi/pulsante sotto44px.
+  Termini/telefono obbligatori,spunte iniziali e versione solo offerte
+  conservati. Auth27/19sorgenti;prove Chrome1440/768/490/320 e Safari390,
+  zero account/email reali. Stato/prove:
+  Documents/verifica-registrazione-compatta-20261023/risultati.md.
+  Backup tag/ramo preventivi remoti verificati.
+
 ## Registrazione, termini e caselle — 23 ottobre 2026
 
 - Richiesta successiva:due caselle28px preselezionate,termini obbligatori

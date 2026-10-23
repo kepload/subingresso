@@ -1,8 +1,10 @@
 # Email e conversioni Vetrina — 23 ottobre 2026
 
-Aggiornamento successivo del form: Auth26 mostra il solo testo breve sulle
+Aggiornamento successivo del form: Auth27 mostra il solo testo breve sulle
 offerte e trasmette `vetrina-email-20261023`, senza consenso alla misurazione.
-Le due caselle grandi partono selezionate su richiesta dell'utente; termini e
+Testo finale:«Acconsento a ricevere offerte personalizzate». Caselle18px,
+testo13px e spazi compatti,CTA visibile nelle finestre basse.
+Le due caselle partono selezionate su richiesta dell'utente; termini e
 telefono obbligatori. Il testo esteso/versione analytics descritto sotto è lo
 stato precedente. Nessuna modifica ai consensi storici o agli invii.
 
