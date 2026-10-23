@@ -12,6 +12,17 @@ Dashboard admin: `#email-vetrine`, periodi 7/30/90 giorni e tutto lo storico.
 Consegne aggiornate dal provider tramite «Aggiorna»; aperture e clic arrivano
 direttamente agli endpoint dedicati. Nessun nuovo invio periodico o cron.
 
+Vista semplificata richiesta il 23/10: quattro numeri (inviate, aperte, clic,
+incassi con acquisti) e due grafici di consegna/interazioni. «Statistiche
+complete», chiuse all'ingresso, apre percorso sul sito, grafico pagamenti,
+varianti, attività, spiegazioni e copia di prova. Periodo e aggiornamento
+restano subito accessibili. Dati mancanti «—», zeri veri «0»; percentuali di
+aperture/clic sulle sole email misurabili. Lo storico di tutti i pagamenti
+Vetrina è distinto dagli incassi attribuiti alle email e dal percorso rilevato
+dal 23/10; utenti e ordini hanno unità esplicite, senza conversioni dedotte.
+Aggiornamenti e cambi periodo conservano l'apertura scelta; logout/cambio
+account svuotano i dati e richiudono i dettagli. JS/CSS email versione2.
+
 ## Misure e limiti
 
 - Le 12 offerte precedenti sono consegnate, ma senza misurazione: aperture e

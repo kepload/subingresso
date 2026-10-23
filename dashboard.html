@@ -9,7 +9,7 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="css/tailwind.css?v=4">
     <link rel="stylesheet" href="css/dashboard-statistics.css?v=1">
-    <link rel="stylesheet" href="css/admin-email-analytics.css?v=1">
+    <link rel="stylesheet" href="css/admin-email-analytics.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <style>
@@ -299,16 +299,27 @@
             </div>
 
             <section id="email-vetrine" hidden aria-labelledby="mailAnalyticsTitle">
-                <div class="mail-heading"><h3 id="mailAnalyticsTitle">Email e Vetrine</h3><div class="mail-controls">
+                <div class="mail-heading"><h3 id="mailAnalyticsTitle">Email Vetrina</h3><div class="mail-controls">
                     <select aria-label="Periodo email e conversioni" onchange="AdminEmailAnalytics.setDays(this.value)"><option value="7">Ultimi 7 giorni</option><option value="30" selected>Ultimi 30 giorni</option><option value="90">Ultimi 90 giorni</option><option value="0">Tutto lo storico</option></select>
-                    <button id="mailRefresh" type="button" onclick="AdminEmailAnalytics.refresh()">Aggiorna</button><button id="mailSendSample" type="button" onclick="AdminEmailAnalytics.sample()">Inviami una copia</button>
+                    <button id="mailRefresh" type="button" onclick="AdminEmailAnalytics.refresh()">Aggiorna</button>
                 </div></div>
                 <p id="mailAnalyticsStatus" class="mail-status" role="status">Caricamento statistiche…</p>
-                <dl id="mailAnalyticsMetrics" class="mail-metrics"></dl><p id="mailMeasurementNote" class="mail-status"></p>
-                <div class="mail-columns"><div><h4>Percorso sul sito</h4><ol id="mailSiteFunnel" class="mail-funnel"></ol><div id="mailSiteSecondary" class="mail-secondary"></div><p id="mailTierChoices" class="mail-status"></p><p id="mailTrackingSince" class="mail-status"></p></div>
-                    <div><h4>Risultati per variante email</h4><p class="mail-table-hint">Scorri la tabella per vedere clic, acquisti e incassi.</p><div class="mail-table-wrap" tabindex="0" role="region" aria-label="Risultati email, tabella scorrevole"><table class="mail-table"><thead><tr><th scope="col">Variante</th><th scope="col">Consegnate</th><th scope="col">Aperte</th><th scope="col">Clic</th><th scope="col">Acquisti</th><th scope="col">Incassi</th></tr></thead><tbody id="mailVariantRows"></tbody></table></div></div></div>
-                <details class="mail-details"><summary>Azioni recenti e storico pagamenti</summary><ul id="mailRecentEvents" class="mail-activity"></ul><p id="mailLegacyHistory" class="mail-status"></p></details>
-                <details class="mail-details"><summary>Come leggere i numeri e verificare la tua copia</summary><p>Aperture e clic riguardano email distinte, possono risentire dei sistemi automatici e non provano una lettura. Gli acquisti da email richiedono l’arrivo autenticato dal collegamento e un checkout entro 7 giorni. I pacchetti contano come un ordine, con l’importo complessivo. I ritorni da Annulla sono distinti dai checkout scaduti o non completati. Il percorso sul sito conta utenti con account; gli acquisti contano ordini. Le vecchie aperture mancanti restano non disponibili.</p><p id="mailSampleStatus" class="mail-status"></p><p id="mailAnalyticsUpdated" class="mail-status"></p></details>
+                <dl id="mailAnalyticsMetrics" class="mail-metrics"></dl>
+                <div class="mail-overview-charts">
+                    <figure class="mail-chart"><figcaption>Consegna</figcaption><div id="mailDeliveryChart"></div></figure>
+                    <figure class="mail-chart"><figcaption>Aperture e clic</figcaption><div id="mailEngagementChart"></div></figure>
+                </div>
+                <div class="mail-overview-footer"><button id="mailDetailsToggle" type="button" aria-expanded="false" aria-controls="mailAdvanced" onclick="AdminEmailAnalytics.toggleDetails()">Statistiche complete <span aria-hidden="true">+</span></button><p id="mailAnalyticsUpdated" class="mail-status"></p></div>
+                <div id="mailAdvanced" class="mail-advanced" hidden>
+                    <div class="mail-columns">
+                        <section aria-labelledby="mailSiteTitle"><h4 id="mailSiteTitle">Vetrine sul sito</h4><p class="mail-caption">Tutti i clienti, anche senza passare dalle email.</p><ol id="mailSiteFunnel" class="mail-funnel"></ol><div id="mailSiteSecondary" class="mail-secondary"></div><p id="mailTierChoices" class="mail-status"></p><p id="mailTrackingSince" class="mail-status"></p></section>
+                        <section aria-labelledby="mailPaymentsTitle"><h4 id="mailPaymentsTitle">Pagamenti Vetrina</h4><p class="mail-caption">Storico completo nel periodo selezionato.</p><div id="mailPaymentChart"></div><p id="mailLegacyHistory" class="mail-status"></p></section>
+                    </div>
+                    <section class="mail-variants" aria-labelledby="mailVariantsTitle"><h4 id="mailVariantsTitle">Risultati per email</h4><p class="mail-table-hint">Scorri per vedere tutte le colonne.</p><div class="mail-table-wrap" tabindex="0" role="region" aria-label="Risultati email, tabella scorrevole"><table class="mail-table"><thead><tr><th scope="col">Variante</th><th scope="col">Inviate</th><th scope="col">Consegnate</th><th scope="col">Aperte</th><th scope="col">Clic</th><th scope="col">Acquisti</th><th scope="col">Incassi</th></tr></thead><tbody id="mailVariantRows"></tbody></table></div></section>
+                    <details class="mail-details"><summary>Azioni recenti</summary><ul id="mailRecentEvents" class="mail-activity"></ul></details>
+                    <details class="mail-details"><summary>Attendibilità dei dati</summary><p id="mailMeasurementNote" class="mail-status"></p><p>Consegnata significa accettata dal server del destinatario: non indica se la mail è in Principale, Aggiornamenti o Spam. Aperture e clic contano email distinte e possono includere sistemi automatici.</p><p>Gli incassi sono lordi, da pagamenti confermati attribuiti all’arrivo dall’email entro 7 giorni. I pacchetti contano come un ordine. Il percorso sul sito conta utenti, mentre pagamenti e acquisti contano ordini. Periodi in UTC; account di prova e copie esclusi.</p><p id="mailRefunds" class="mail-status"></p></details>
+                    <details class="mail-details"><summary>Copia di prova</summary><p id="mailSampleStatus" class="mail-status"></p><button id="mailSendSample" type="button" onclick="AdminEmailAnalytics.sample()">Inviami una copia</button></details>
+                </div>
             </section>
 
             <!-- Pending Review List (PRIMA cosa visibile, scompare quando vuoto) -->
@@ -1229,7 +1240,7 @@
 <script src="js/valuation.js?v=8"></script>
 <script src="js/vetrina-pricing.js?v=1"></script>
 <script src="js/vetrina-premium.js?v=3"></script>
-<script src="js/admin-email-analytics.js?v=1"></script>
+<script src="js/admin-email-analytics.js?v=2"></script>
 <script src="js/vetrina-account.js?v=4"></script>
 <script src="js/ui-components.js?v=18"></script>
 <script src="js/auth.js?v=28"></script>

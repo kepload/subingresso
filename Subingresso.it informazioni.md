@@ -23,6 +23,15 @@ fonti e audit fiere completi: `data/FIERE.md`.
   `Documents/backup-subingresso/documentazione-20261023-184705` con SHA256.
   Backup remoto verificato; errore noto del solo cleanup dell'helper.
 
+## Statistiche email semplificate — 23 ottobre 2026
+
+- Preferenza esplicita: pochi numeri principali e grafici leggibili subito;
+  statistiche complete solo al clic, mai aperte automaticamente. Riepilogo
+  email con4numeri e2grafici; percorso sito/pagamenti/varianti/attività/copia
+  sotto «Statistiche complete». Mancanti distinti dagli zeri, acquisti email
+  separati da tutti quelli sul sito. Backend e invii conservati.
+  Verifiche e pubblicazione: `Documents/statistiche-email-semplici-20261023`.
+
 ## Email Vetrina, testi e grafica — 23 ottobre 2026
 
 - Nuova preferenza e sostituzione richiesta:10testi approvati con correzioni
