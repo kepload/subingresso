@@ -8,6 +8,9 @@
   JS7/CSS6, chiaro invariato; nessun dato/account reale modificato.
   Locale100controlli campi/filtri/zoom/chiaro e267tema passati.
   Prove/stato Documents/verifica-dark-campi-mappa-20261023/risultati.md.
+  Pubblicato774baf4, Vercel3KTX3wCb2eZctxQNfaztChxvSY67 READY:
+  22asset/pagine identici e setteSSR aggiornati. Ripetuti online100controlli
+  dedicati e267tema passati; nessuna scrittura reale. Backup remoto valido.
 
 ## Finiture modalità scura — 23 ottobre 2026
 
