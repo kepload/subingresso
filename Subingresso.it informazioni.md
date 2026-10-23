@@ -13,6 +13,9 @@ fonti e audit fiere completi: `data/FIERE.md`.
   con palette personale. Dati, grafici, filtri e dettagli apribili conservati.
   Locale256controlli dashboard e suite email Chrome1440/768/320-Safari390
   passati, chiaro/scuro; nessun invio o dato reale modificato.
+  Pubblicatoe1ab05b, Vercel5t7jKesxSDjjksRsNk9QE8gaGSaZ READY:
+  dashboard, dueCSS eJS email identici online; ripetute entrambe le suite
+  sugli asset pubblicati, tutte passate. Inspector0FAIL sui pannelli modificati.
   Prove `Documents/verifica-stile-statistiche-admin-20261023`.
 
 ## Riferimenti nei documenti — 23 ottobre 2026
