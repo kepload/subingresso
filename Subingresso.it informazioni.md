@@ -11,6 +11,10 @@
   simulati,zero nuove iscrizioni/email reali. Prove e stato pubblicazione:
   Documents/verifica-registrazione-termini-20261023/risultati.md.
   Backup tag/ramo remoti verificati; noto errore cleanup helper.
+  Pubblicato75efe35,Vercel riuscito:16asset/pagine identici ai blobGit;
+  Chrome1440/320 e Safari390 online passati,link termini apribile senza
+  cambiare spunta,nessuna registrazione/email reale. Inspector componente
+  treformati0FAIL/0WARN con eccezioni motivate per lo stile preesistente.
 
 ## Statistiche email e conversioni — 23 ottobre 2026, completate
 
