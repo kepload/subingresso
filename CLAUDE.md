@@ -7,7 +7,8 @@ Consensi in un gruppo32px/riga,modulo con spazi ridotti e adattato in altezza;
 CTA visibile senza scorrere anche490x580/320x568,controlli44px conservati.
 Telefono * obbligatorio; controlli anche nel submit JS. Testo breve usa
 vetrina-email-20261023, solo offerte: mai abilitare la misura email con esso.
-Auth27 su19sorgenti; supera i default vuoti descritti nello storico sotto.
+Auth28 su19sorgenti; esempi sotto il telefono nascosti quando il campo è vuoto,
+feedback di validazione conservato. Supera i default vuoti nello storico sotto.
 Prove Documents/verifica-registrazione-compatta-20261023. Nessun invio/test reale.
 
 Statistiche email/Vetrine23/10: pannello admin #email-vetrine, coorti7/30/90/tutto;

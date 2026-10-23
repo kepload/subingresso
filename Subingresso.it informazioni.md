@@ -1,5 +1,13 @@
 # Subingresso.it — informazioni e TO DO
 
+## Registrazione senza esempi telefono — 23 ottobre 2026
+
+- Nascosta la riga «Es.347…» del telefono vuoto nel solo form registrazione;
+  feedback/validazione conservati. Auth28/19sorgenti;cinque formati reali
+  Chrome1440/768/490/320 e Safari390 passati,CTA subito visibile.
+  Prove Documents/verifica-registrazione-esempi-20261023;backup remoto valido.
+  Consultazione Resend:messaggio errore UI richiesto,nessuna nuova email.
+
 ## Registrazione compatta, correzione — 23 ottobre 2026
 
 - Testo esatto richiesto:«Acconsento a ricevere offerte personalizzate».

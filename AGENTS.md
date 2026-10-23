@@ -7,7 +7,8 @@ Consensi in un gruppo32px/riga,modulo con spazi ridotti e adattato in altezza;
 CTA visibile senza scorrere anche490x580/320x568,controlli44px conservati.
 Telefono * obbligatorio; controlli anche nel submit JS. Testo breve usa
 vetrina-email-20261023, solo offerte: mai abilitare la misura email con esso.
-Auth27 su19sorgenti; supera i default vuoti descritti nello storico sotto.
+Auth28 su19sorgenti; esempi sotto il telefono nascosti quando il campo è vuoto,
+feedback di validazione conservato. Supera i default vuoti nello storico sotto.
 Prove Documents/verifica-registrazione-compatta-20261023. Nessun invio/test reale.
 
 Statistiche email/Vetrine23/10: pannello admin #email-vetrine, coorti7/30/90/tutto;
@@ -220,7 +221,7 @@ Su `annunci` e `profiles`, `tel` e `email` sono in REVOKE column-level per `auth
 
 - `image-urls.js?v=1` (prima di `data.js`, helper condiviso con SSR)
 - `data.js?v=24`
-- `auth.js?v=27`
+- `auth.js?v=28`
 - `ui-components.js?v=17`
 - `js/pages/annunci.js?v=15`, `listing-search.js?v=1` (luoghi entro 100 km per distanza, parole e refusi)
 - `comune-picker.js?v=7`, `location-search.js?v=8`, `location-search-worker.js?v=3`: comuni e 55.288 località da `data/localita.json`; refusi in background, fallback a blocchi. Il worker importa la stessa versione di `location-search.js`: aggiornare entrambi i riferimenti e il cache buster del worker quando cambia il motore. Dettaglio/fonti in `data/LOCALITA.md`.

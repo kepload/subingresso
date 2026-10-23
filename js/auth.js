@@ -16,6 +16,7 @@ const modalHTML = `
 <style id="authRegistrationStyles">
   #registerForm:not(.hidden) { display:grid; gap:8px; padding:16px 20px; }
   #registerForm label.block { margin-bottom:4px; }
+  #registerForm #regTelefonoHint.text-slate-400 { display:none; }
   #registerForm input:not([type="checkbox"]) { min-height:44px; padding-top:10px; padding-bottom:10px; }
   #registerForm .auth-consent { min-height:32px; gap:8px; font-size:13px; line-height:18px; }
   #registerForm .auth-consent input { width:18px; height:18px; flex-shrink:0; margin:0; }
