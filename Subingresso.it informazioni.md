@@ -1,5 +1,17 @@
 # Subingresso.it — informazioni e TO DO
 
+## Registrazione, termini e caselle — 23 ottobre 2026
+
+- Richiesta successiva:due caselle28px preselezionate,termini obbligatori
+  con link /termini in nuova scheda e sola *,telefono * obbligatorio.
+  Offerte facoltative:«acconsento a ricevere offerte sulla mail»,nessun
+  testo aggiuntivo. Scelta/reset/errori nei due percorsi allineati;
+  versione solo offerte vetrina-email-20261023,nessun consenso alla misura.
+  Auth25 su19sorgenti. Chrome1440/320 e Safari390 passati con rete/account
+  simulati,zero nuove iscrizioni/email reali. Prove e stato pubblicazione:
+  Documents/verifica-registrazione-termini-20261023/risultati.md.
+  Backup tag/ramo remoti verificati; noto errore cleanup helper.
+
 ## Statistiche email e conversioni — 23 ottobre 2026, completate
 
 - Richiesti pannello admin aperture/clic/acquisti e percorso Vetrina/annulli,

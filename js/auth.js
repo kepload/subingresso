@@ -8,7 +8,8 @@
 // Il tracker condiviso cattura la provenienza prima degli script auth.
 
 let _profileCache = null; // { id, nome } — evita query ripetute sulla navbar
-const PROMO_CONSENT_VERSION = 'vetrina-email-analytics-20261023';
+// Il testo breve riguarda solo le offerte, senza consenso alla misurazione email.
+const PROMO_CONSENT_VERSION = 'vetrina-email-20261023';
 
 // ── Inject modal HTML ──────────────────────────────────────
 const modalHTML = `
@@ -117,8 +118,8 @@ const modalHTML = `
           class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
       </div>
       <div>
-        <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Telefono</label>
-        <input id="regTelefono" name="tel" type="tel" placeholder="347 1234567" autocomplete="tel"
+        <label for="regTelefono" class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-1.5">Telefono *</label>
+        <input id="regTelefono" name="tel" type="tel" placeholder="347 1234567" required autocomplete="tel"
           class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition">
       </div>
       <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none">
@@ -136,11 +137,16 @@ const modalHTML = `
         </div>
       </div>
       <div>
-        <label for="regPromoOptIn" class="flex items-start gap-3 text-sm font-semibold text-slate-700 cursor-pointer" style="min-height:44px;padding-top:6px">
-          <input id="regPromoOptIn" name="promotional_email_opt_in" type="checkbox" autocomplete="off" aria-describedby="regPromoHint" class="w-5 h-5 rounded accent-blue-600 cursor-pointer" style="flex-shrink:0;margin-top:2px">
-          <span>Voglio ricevere offerte via email sulle Vetrine, con misurazione di aperture e clic.</span>
+        <label for="regTermsAccepted" class="flex items-center gap-3 text-sm font-semibold text-slate-700 cursor-pointer" style="min-height:44px">
+          <input id="regTermsAccepted" name="terms_accepted" type="checkbox" required checked autocomplete="off" class="rounded accent-blue-600 cursor-pointer" style="width:28px;height:28px;flex-shrink:0;margin:0">
+          <span>Accetto i <a href="/termini" target="_blank" rel="noopener" class="text-blue-600 underline">termini e condizioni</a> *</span>
         </label>
-        <p id="regPromoHint" class="text-sm text-slate-600 leading-relaxed" style="margin-left:32px">Facoltativo. Al massimo una proposta ogni 30 giorni. Da ogni email puoi disattivare solo la misurazione oppure tutte le offerte. <a href="/privacy" target="_blank" rel="noopener" class="text-blue-600 underline" style="white-space:nowrap">Informativa privacy</a></p>
+      </div>
+      <div>
+        <label for="regPromoOptIn" class="flex items-center gap-3 text-sm font-semibold text-slate-700 cursor-pointer" style="min-height:44px">
+          <input id="regPromoOptIn" name="promotional_email_opt_in" type="checkbox" checked autocomplete="off" class="rounded accent-blue-600 cursor-pointer" style="width:28px;height:28px;flex-shrink:0;margin:0">
+          <span>acconsento a ricevere offerte sulla mail</span>
+        </label>
       </div>
       <button type="submit" id="registerBtn"
         class="w-full bg-blue-600 text-white py-3.5 rounded-xl font-black text-sm hover:bg-blue-700 transition active:scale-[.98] flex items-center justify-center gap-2">
@@ -249,8 +255,10 @@ window.closeAuthModal = function () {
     document.body.style.overflow = '';
     ['loginEmail','loginPassword','regNome','regCognome','regEmail','regTelefono','regPassword','forgotEmail']
         .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
-    const promo = document.getElementById('regPromoOptIn');
-    if (promo) promo.checked = false;
+    ['regTermsAccepted', 'regPromoOptIn'].forEach(id => {
+        const input = document.getElementById(id);
+        if (input) input.checked = true;
+    });
     const ctxBanner = document.getElementById('authContextBanner');
     if (ctxBanner) ctxBanner.classList.add('hidden');
     _hideAuthFeedback();
@@ -285,8 +293,10 @@ function _setBtnLoading(btnId, loading, defaultHTML) {
     btn.disabled = loading;
     btn.innerHTML = loading ? '<i class="fas fa-spinner fa-spin"></i> Attendi…' : defaultHTML;
     if (btnId === 'registerBtn') {
-        const promo = document.getElementById('regPromoOptIn');
-        if (promo) promo.disabled = loading;
+        ['regTermsAccepted', 'regPromoOptIn'].forEach(id => {
+            const input = document.getElementById(id);
+            if (input) input.disabled = loading;
+        });
     }
 }
 
@@ -500,6 +510,12 @@ window.handleRegister = async function (e) {
     const telRaw   = document.getElementById('regTelefono').value.trim();
     const password = document.getElementById('regPassword').value;
     const promoOptIn = document.getElementById('regPromoOptIn')?.checked === true;
+    if (document.getElementById('regTermsAccepted')?.checked !== true) {
+        _showAuthError('Accetta i termini e condizioni per creare un account.');
+        _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
+        document.getElementById('regTermsAccepted')?.focus();
+        return;
+    }
     if (!isValidFormText(nome,1,100) || !isValidFormText(cognome,0,100) || !isValidFormEmail(email) || password.length<6 || password.length>128) {
         _showAuthError('Controlla nome (massimo 100 caratteri), email e password (da 6 a 128 caratteri).');
         _setBtnLoading('registerBtn',false,'<i class="fas fa-user-plus"></i> Crea account');
@@ -517,13 +533,14 @@ window.handleRegister = async function (e) {
         }
     }
 
-    // Telefono opzionale, ma se compilato deve essere valido
-    if (telRaw && !isValidItalianPhone(telRaw)) {
-        _showAuthError('Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567');
+    // Il telefono è obbligatorio anche quando il submit viene chiamato direttamente.
+    if (!isValidItalianPhone(telRaw)) {
+        _showAuthError(telRaw ? 'Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567' : 'Inserisci il numero di telefono.');
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
+        document.getElementById('regTelefono')?.focus();
         return;
     }
-    const telefono = telRaw ? normalizePhone(telRaw) : '';
+    const telefono = normalizePhone(telRaw);
 
     try {
         // Popup di benvenuto: mostrato solo per le sorgenti popup/promo.

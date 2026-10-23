@@ -1,5 +1,11 @@
 # Email e conversioni Vetrina — 23 ottobre 2026
 
+Aggiornamento successivo del form: Auth25 mostra il solo testo breve sulle
+offerte e trasmette `vetrina-email-20261023`, senza consenso alla misurazione.
+Le due caselle grandi partono selezionate su richiesta dell'utente; termini e
+telefono obbligatori. Il testo esteso/versione analytics descritto sotto è lo
+stato precedente. Nessuna modifica ai consensi storici o agli invii.
+
 Dashboard admin: `#email-vetrine`, periodi 7/30/90 giorni e tutto lo storico.
 Consegne aggiornate dal provider tramite «Aggiorna»; aperture e clic arrivano
 direttamente agli endpoint dedicati. Nessun nuovo invio periodico o cron.

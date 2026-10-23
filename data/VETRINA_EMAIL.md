@@ -10,6 +10,13 @@ Migrazioni campagne e scelta alla registrazione applicate; cinque Edge pubblicat
 
 ## Nuove iscrizioni e consenso esplicito
 
+Aggiornamento successivo23/10: richiesta esplicita di due caselle28px
+preselezionate; termini obbligatori con link /termini e *, telefono obbligatorio.
+Offerte facoltative con testo esatto «acconsento a ricevere offerte sulla mail».
+Auth25 ripristina questi default anche alla chiusura; versione solo offerte
+`vetrina-email-20261023`, mai consenso alla misura. Il paragrafo seguente
+documenta la scelta precedente, superata dalla richiesta corrente.
+
 L'utente ha chiesto la casella preselezionata. È stata spiegata e implementata la scelta separata, facoltativa e **inizialmente vuota**: una casella già spuntata non dimostra consenso. Fonte verificata: [Garante, consenso e caselle già spuntate](https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/8981258). Nessun blocco all'account per chi rifiuta.
 
 `regPromoOptIn` riguarda soltanto offerte via email sulle Vetrine, massimo una proposta ogni30giorni, con link privacy e uscita da ogni email. Bypass e fallback Auth trasmettono la scelta effettiva e `vetrina-email-20261023`. Il server rifiuta tipi diversi dal booleano e versioni mancanti/errate quando la scelta è positiva; i client precedenti che non inviano il campo creano account senza consenso. Chiusura del modulo azzera la scelta; durante l'invio è bloccata, su errore viene conservata. Modulo scorrevole entro l'altezza del telefono, senza modificare il resto della pagina.

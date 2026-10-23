@@ -1,5 +1,13 @@
 # Regole Claude — Subingresso.it
 
+Registrazione23/10, richiesta successiva: due caselle28px preselezionate,
+termini obbligatori con link /termini in nuova scheda e sola *, offerte
+facoltative con testo «acconsento a ricevere offerte sulla mail».
+Telefono * obbligatorio; controlli anche nel submit JS. Testo breve usa
+vetrina-email-20261023, solo offerte: mai abilitare la misura email con esso.
+Auth25 su19sorgenti; supera i default vuoti descritti nello storico sotto.
+Prove Documents/verifica-registrazione-termini-20261023. Nessun invio/test reale.
+
 Statistiche email/Vetrine23/10: pannello admin #email-vetrine, coorti7/30/90/tutto;
 consegne provider, aperture/clic solo con scelta informata nuova, attribuzione7g,
 checkout/pagamenti/annulli reali distinti, bundle un solo ordine. Vecchie12email
