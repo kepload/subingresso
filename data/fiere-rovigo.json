@@ -6,7 +6,7 @@
     "previousCatalogEvents": 3,
     "method": "Ripartenza dai tre record regionali già pubblicati e da data/FIERE.md: nessun precedente audit provinciale Rovigo approfondito presente. Ricognizione nominativa 50 comuni, calendari regionali originali, API comunali GET, albi/SUAP, organizzatori e UNPLI, PDF e locandine originali, fonti alternative e tentativi reali. Nessuna comunicazione a terzi.",
     "scopeLimit": "Chiusura della ricerca documentale oggi accessibile con esclusioni e limiti espliciti, senza censimento assoluto né attesa di futuri bandi. Edizioni future, nuove quote, rinvii e disponibilità sono manutenzione periodica distinta.",
-    "status": "research-closed-publication-pending",
+    "status": "complete-verified",
     "municipalitiesReviewed": 50,
     "municipalities": [
       {
@@ -19363,9 +19363,9 @@
     ],
     "localArchive": "C:/Users/utente/Documents/ricerca-fiere-rovigo-20261023",
     "verification": {
-      "publication": "pending",
-      "todoUpdated": false,
-      "notes": "TO DO e conteggi aggiornabili soltanto dopo deploy e catalogo online verificati.",
+      "publication": "verified",
+      "todoUpdated": true,
+      "notes": "TO DO e conteggi aggiornati soltanto dopo deploy, asset, pagine e browser online verificati.",
       "local": {
         "provinceBrowserCases": 3,
         "provinceDialogsPerCase": 63,
@@ -19386,7 +19386,21 @@
       "bytes": 13180069453,
       "errors": 0,
       "manifestSha256": "6070ffd42ae00878de54c6a486e0ee6d08868118f9ce8afd534706e967155cdf",
-      "cleanupLimit": "Errore PowerShell nel cleanup di vecchi tag dopo push riuscito; tag e ramo remoto verificati."
+      "cleanupLimit": "Errore PowerShell nel cleanup di vecchi tag dopo push riuscito; tag e ramo remoto verificati.",
+      "finalSupplement": "Supplemento Rovigo conclusivo con manifest e verifica SHA256, separato dal manifest originale; include audit, registro e prove online."
+    },
+    "publication": {
+      "dataCommit": "fbc0f86c09bd3ae22d916eecf6b7283a2ec7b019",
+      "verifiedAt": "2026-10-23T20:42:38.303998+00:00",
+      "deploymentId": "dpl_Gos3TgwNjkKECZ9E5mwRRXXTeZ5e",
+      "deploymentUrl": "https://subingresso-g0nk7ipyc-kycykuardit-9234s-projects.vercel.app",
+      "publicUrl": "https://subingresso.it/fiere?provincia=Rovigo",
+      "assetHashesVerified": 4,
+      "pagesVerified": 63,
+      "browserCasesLocal": 3,
+      "browserCasesOnline": 3,
+      "realSiteCases": 3,
+      "todo": "58 province concluse, 52 rimanenti su 110"
     }
   },
   "events": [

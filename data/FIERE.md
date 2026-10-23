@@ -8,8 +8,8 @@ in 32 comuni**, ricognizione nominativa dei **50 comuni**. **60 aggiunte**, i
 checkpoint `15ba41d`. Catalogo nazionale **6.567 schede**, **6.366 con dati
 edizione**. Ripartenza dal catalogo pubblicato e da questo registro; nessun
 precedente audit provinciale Rovigo approfondito presente al checkpoint.
-Integrazione predisposta; pubblicazione e verifiche online da completare.
-TO DO e conteggi delle province invariati fino alla verifica positiva.
+**Pubblicata e verificata online**; TO DO spuntata e riepiloghi aggiornati
+soltanto dopo esito positivo: **58 province concluse, 52 rimanenti su 110**.
 Nessun'altra provincia lavorata, nessun contatto o invio a terzi.
 
 ### Copertura e originali
@@ -130,15 +130,24 @@ Backup preventivi remoti verificati:
 distinto dal push riuscito. File estranei e commit concorrente delle offerte
 Vetrina conservati. Cache **JS111/catalogo79**; test provinciale
 `scripts/test-fiere-rovigo.cjs`, browser tramite `PLAYWRIGHT_MODULE`.
-Controlli locali passati: Chromium1440/320 e WebKit390. elenco/mappa.
-63dialoghi e quattro pagine senza JavaScript per formato; generale cinque
-formati. settori. **6.567pagine/2.835sitemap**. build ripetibile e scansione
+Controlli locali passati: Chromium 1440/320 e WebKit 390, elenco/mappa,
+63 dialoghi e quattro pagine senza JavaScript per formato; generale cinque
+formati, settori, **6.567 pagine/2.835 voci sitemap**, build ripetibile e scansione
 segreti senza bypass. Nuova copia integrale
 `Documents/backup-subingresso/ricerche-fiere-20261023-203424`:
-**80.501file/13.180.069.453byte**. tutti verificati SHA256.
+**80.501 file/13.180.069.453 byte**, tutti verificati SHA256,
 zero errori; manifest e propria checksum verificati. Supplemento conclusivo
 per prove online e versioni finali separato dallo snapshot iniziale.
-Pubblicazione e verifica online ancora da completare.
+Pubblicato **fbc0f86**, Vercel **dpl_Gos3TgwNjkKECZ9E5mwRRXXTeZ5e READY**, stato
+GitHub/Vercel positivo; quattro asset online identici ai blob Git. Tutte le
+**63 pagine HTTP200**, H1, canonical, note e costi verificati. Test provinciale
+anche online: Chromium1440/320 e WebKit390, tutte le 63 schede in elenco/mappa,
+63 dialoghi e quattro pagine senza JavaScript per formato. Sito reale senza
+intercettazioni nei tre formati, senza errori JS né overflow. Prove in
+`publish-deploy.json`, `deployment.json`, `online-pages.json`, `local-test.json`,
+`online-test.json`, `real-site.json` e `local-checks.json` nell'archivio ricerca.
+Conservazione finale in supplemento SHA256 separato e verifica conclusiva
+anche del commit di registrazione. Nessun file estraneo incluso nei commit.
 
 ## Gorizia — ricerca documentale del 23 ottobre 2026
 
