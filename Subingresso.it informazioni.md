@@ -1,5 +1,22 @@
 # Subingresso.it — informazioni e TO DO
 
+## Email per vendere Vetrine — 23 ottobre 2026
+
+- Preferenza: poche email brevi e umane, varianti pertinenti, visualizzazioni
+  reali e pacchetti per più annunci; obiettivo trovare prima un acquirente,
+  nessuna promessa/tempo medio inventato. API READ ONLY:70venditori attivi,
+  53adatti ai testi Vendita e17ai pacchetti con criteri finali. Preparate
+  20bozze/20account:8pacchetti,8visite,4visibilità;9varianti, prezzi online
+  identici al listino. Piano/testi pubblici data/EMAIL_VETRINE_20261023.md;
+  bozze/dati privati Documents/campagna-vetrine-20261023/.
+  **Zero invii, nessuna automazione/modifica DB.** Consenso marketing non
+  documentato nel sistema:statistiche/digest true di default,zero acquisti
+  live riusciti. Chiesti eventuali consensi esterni; prima di spedire servono
+  verifica,uscita offerte funzionante e coordinamento con riepiloghi.
+  69snapshot19/10 non provano consegna, trattati come contatti recenti.
+  Proposto primo gruppo massimo20;30giorni fra future offerte,nessun seguito
+  automatico autorizzato/attivato. Backup remoto valido;cleanup helper noto.
+
 ## Contorni campi e mappa scuri — 23 ottobre 2026
 
 - Correzione richiesta negli altri punti del sito: bordo campi/menu#334155

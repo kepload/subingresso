@@ -1558,6 +1558,18 @@ Sistema mai installato in prod (RPC `try_welcome_lottery` + colonne `welcome_lot
 
 ## 📬 Email — Sistema Completo (Resend)
 
+**Campagna Vetrine23ottobre2026:** preferenza per poche email umane e brevi,
+varianti in base a visualizzazioni reali e più annunci. Preparazione soltanto:
+20bozze private per20account (8pacchetti/8metriche/4visibilità),9varianti;
+nessun invio,cron o schema modificato. API READ ONLY:70venditori attivi,
+53adatti ai testi Vendita/17pacchetti coi criteri finali;consenso marketing
+non documentato,flag digest/stats true di default,zero acquisti live riusciti.
+Richiesti eventuali consensi esterni:non usare i flag come prova di consenso.
+Prima di inviare completare uscita dalle offerte e coordinare con riepiloghi;
+69snapshot19/10 non provano consegna. Piano/testi/fonti/verifiche in
+data/EMAIL_VETRINE_20261023.md;file privati in
+Documents/campagna-vetrine-20261023/. Nessun seguito automatico avviato.
+
 ### Edge Functions email (7+ totali)
 - **Transazionali:** `send-auth-email` (5 tipi auth), `notify-seller` (3 tipi), `notify-alert` (1), `notify-message` (1), `welcome-email` (1).
 - **Cron settimanali:** `weekly-buyer-digest` (lun: top annunci in zona), `weekly-seller-stats` (lun: views/delta).
