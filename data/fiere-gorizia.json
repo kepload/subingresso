@@ -6,7 +6,7 @@
     "previousCatalogEvents": 2,
     "method": "Ricognizione comunale nominativa, elenchi eventi e notizie a testo pieno, albi/SUAP e originali, UNPLI/TurismoFVG, organizzatori, programmi e locandine; conservazione tentativi e alternative. Nessun contatto o invio a terzi.",
     "scopeLimit": "Ricerca documentale accessibile attuale; non censimento assoluto né garanzia di apertura o posteggio. Nuovi bandi ed edizioni sono manutenzione futura distinta.",
-    "status": "research-closed-with-explicit-limits-publication-pending",
+    "status": "complete-verified",
     "municipalitiesReviewed": 25,
     "municipalities": [
       {
@@ -6712,10 +6712,12 @@
     "backup": {
       "sessionTag": "backup/session-20261023-183507-fiere-gorizia",
       "branch": "backup/pre-fiere-gorizia-20261023",
-      "researchSnapshot": "C:/Users/utente/Documents/backup-subingresso/ricerche-fiere-20261023-163753",
-      "verifiedFiles": 74496,
-      "bytes": 12208070103,
-      "errors": 0
+      "researchSnapshot": "C:/Users/utente/Documents/backup-subingresso/ricerche-fiere-20261023-171940",
+      "verifiedFiles": 76031,
+      "bytes": 12455312441,
+      "errors": 0,
+      "initialResearchSnapshot": "C:/Users/utente/Documents/backup-subingresso/ricerche-fiere-20261023-163753",
+      "finalSupplement": "supplemento-gorizia-pubblicazione: copia conclusiva con manifest e SHA256, verificata prima della chiusura della sessione"
     },
     "municipalRowAudit": [
       {
@@ -7432,7 +7434,20 @@
         "eventIds": [],
         "reason": "Cedole scolastiche e acquisto dei libri di testo: servizio amministrativo, non mercatino o fiera."
       }
-    ]
+    ],
+    "publication": {
+      "dataCommit": "0573e549290307c10e714ca22ef9412076b5cddd",
+      "verifiedAt": "2026-10-23T17:27:44.618315+00:00",
+      "deploymentId": "dpl_HyCJspw7JncZ3NMVy83ENJ6mi76t",
+      "deploymentUrl": "https://subingresso-5q68hwzna-kycykuardit-9234s-projects.vercel.app",
+      "publicUrl": "https://subingresso.it/fiere?provincia=Gorizia",
+      "assetHashesVerified": 4,
+      "pagesVerified": 45,
+      "browserCasesLocal": 3,
+      "browserCasesOnline": 3,
+      "realSiteCases": 3,
+      "todo": "57 province concluse, 53 rimanenti su 110"
+    }
   },
   "events": [
     {

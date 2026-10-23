@@ -8,8 +8,8 @@ precedenti conservati**, le **6.462 schede delle altre province identiche** al
 checkpoint `da20655`. Catalogo nazionale **6.507 schede**, **6.306 con dati
 edizione**. Ripartenza dal catalogo pubblicato, dal listino Gusti già raccolto
 e da questo registro: nessun audit provinciale Gorizia approfondito precedente
-presente al checkpoint. Pubblicazione e verifica online ancora da eseguire;
-TO DO e conteggi delle province restano invariati fino all'esito positivo.
+presente al checkpoint. **Pubblicata e verificata online**; TO DO spuntata e riepiloghi aggiornati
+soltanto dopo esito positivo: **57 province concluse, 53 rimanenti su 110**.
 Nessun'altra provincia lavorata, nessuna comunicazione o domanda inviata.
 
 ### Copertura, originali e decisioni
@@ -129,12 +129,21 @@ conferme di ricorrenze/storici, allegati oggi scaduti e programmi in formazione.
 
 Tag remoto `backup/session-20261023-183507-fiere-gorizia` e ramo
 `backup/pre-fiere-gorizia-20261023` creati prima delle modifiche. Copia locale
-`Documents/backup-subingresso/ricerche-fiere-20261023-163753`:
-**74.496 file, 12.208.070.103 byte, SHA256 verificati, zero errori**;
+`Documents/backup-subingresso/ricerche-fiere-20261023-171940`:
+**76.031 file, 12.455.312.441 byte, SHA256 verificati, zero errori**;
 nuovi materiali e prove conservati anche con supplemento finale verificato.
 Test dedicato `scripts/test-fiere-gorizia.cjs`, browser tramite
-`PLAYWRIGHT_MODULE`; cache **JS110/catalogo78**. Esiti di pubblicazione e
-controlli finali registrati dopo la verifica online.
+`PLAYWRIGHT_MODULE`; cache **JS110/catalogo78**. Pubblicato **0573e54**,
+Vercel **dpl_HyCJspw7JncZ3NMVy83ENJ6mi76t READY**, stato GitHub/Vercel positivo. Quattro
+asset pubblici identici al commit; tutte le **45 pagine HTTP 200** con H1,
+canonical, note e costi corretti. Suite provinciale locale e online: Chromium
+1440/320 e WebKit390, elenco/mappa e **45 dialoghi per formato**, più quattro
+pagine senza JavaScript per formato; anche sito reale senza intercettazioni
+nei tre casi, senza errori o overflow. Settori, **6.507 pagine / 2.823 sitemap**,
+generale cinque formati e build ripetibile passati. Controllo segreti passato
+senza esclusioni: i prefissi locali dei nomi archivio ora si chiamano
+`archiveStem`, così non vengono confusi con credenziali. File estranei e
+modifiche documentali concorrenti conservati; nessuna comunicazione a terzi.
 
 ## Belluno — ricerca documentale del 23 ottobre 2026
 
