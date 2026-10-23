@@ -11,6 +11,8 @@
   zero account/email reali. Stato/prove:
   Documents/verifica-registrazione-compatta-20261023/risultati.md.
   Backup tag/ramo preventivi remoti verificati.
+  Pubblicatoe66a84a,Vercel riuscito:16asset/pagine identici;cinque formati
+  online passati,CTA visibile senza scroll,nessun account/email reale.
 
 ## Registrazione, termini e caselle — 23 ottobre 2026
 
