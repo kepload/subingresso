@@ -17,7 +17,10 @@ fonti e audit fiere completi: `data/FIERE.md`.
   trigger/policy invariati. Nessun messaggio/email reale di prova.
   Contratto `data/CHAT_RELIABILITY.md`; prove `Documents/chat-affidabili-20261024`.
   Backup remoto tag/ramo verificato; helper con errore cleanup già noto.
-  Pubblicazione frontend in verifica.
+  Pubblicato9f8cb2e: pagina/JS/CSS online identici ai blobGit; ripetuti100scenari
+  sugli asset pubblicati, tutti passati. Accesso reale Chrome320/API anonime
+  verificati senza scritture;19messaggi/8chat invariati. Inspector0FAIL sullo
+  snapshot, con limite esplicito del titolo mobile statico; tema/stile conservati.
 
 ## Esito venduto/affittato — 24 ottobre 2026
 
