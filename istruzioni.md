@@ -214,15 +214,19 @@ Correzione storica del 6 ottobre:
 
 ## 💬 Chat / Conversazioni (`messaggi.html`)
 
-- Lista mostra **titolo posteggio** (primario) + **nome venditore** (secondario blu).
-- Mobile: due pannelli (`convPanel` + `chatPanel`), si alterna visibilità. `backToConversations()` torna alla lista. NON fondere i div.
-- **Join profiles in `conversazioni` rompe PostgREST** (stesso bug di annunci). 3 fetch separati: (1) conv+annuncio, (2) profiles `.in('id', userIds)`, (3) lastMessage per conv. Merge manuale.
-- **Header chat**: thumb annuncio cliccabile (cover img_urls[0]) + titolo + "Venditore · Prezzo" + chevron, va a `/annuncio?id=`. Lato admin chat supporto: thumb life-ring + nome utente.
-- **Avatar reali in lista**: foto profilo dell'interlocutore (controparte). Fallback iniziale su sfondo blue-600. `<img loading="lazy" decoding="async">`, anteprime locali da 96 px; thumb annuncio da 192 px.
-- **Doppia spunta mie bolle**: `fa-check` grigio = inviato, `fa-check-double` blu (`text-blue-500`) = letto. Realtime UPDATE listener su `messaggi.letto` aggiorna in tempo reale quando l'altro apre la chat.
-- **"Sta scrivendo…"**: broadcast Supabase su `_realtimeChannel` (`channel.send({type:'broadcast', event:'typing', payload:{u}})`) con throttle 1.5s emit, auto-hide 2.5s ricezione, hide all'arrivo INSERT. Zero scritture DB.
-- **Lazy conv create**: niente più creazione conv al click "Contatta". `startChat()` in `annuncio-detail.js` se non esiste conv passa `?annuncio=<id>` (deep-link draft). `messaggi.html` apre in `_draftAnnuncio` mode (header + thumb annuncio + empty state, senza riga DB). `sendMessage` crea conv on-the-fly al primo INSERT. `loadConversations` filtra `c.lastMessage || c.is_support` come safety net per conv vuote già esistenti.
-- **Chat di Supporto** (PATCH_SUPPORT_CHAT_20260504.sql): `conversazioni.is_support bool` + `annuncio_id` ora nullable + unique partial index `(acquirente_id) WHERE is_support`. RPC `support_admin_id()` SECURITY DEFINER. Lato non-admin: pseudo-conv `SUPPORT_DRAFT_ID='__support_draft__'` sempre **in fondo** (non in cima — l'utente vuole low-key) anche senza messaggi. Avatar/thumb = logo Subingresso (`fa-exchange-alt` su bg-blue-600). Empty state copy: "Ciao! Raccontaci come possiamo aiutarti…". Deep link `/messaggi?support=1` apre direttamente. Footer ha voce "Supporto". Lato admin: titolo conv = nome utente + badge "Supporto".
+Contratto corrente: `data/CHAT_RELIABILITY.md`. Controller esterno
+`js/pages/messaggi.js`, stili `css/messaggi.css`; il vecchio script inline è superato.
+Due pannelli distinti (`convPanel`/`chatPanel`), uno alla volta sul telefono.
+Inbox via RPC riservata `get_chat_inbox`: ultimo/non letti per ciascuna chat,
+senza join PostgREST su profiles o recupero globale di tutti i messaggi.
+Stato isolato per utente/conversazione, destinatario e token fissati all'operazione,
+merge per ID, coda e retry con lo stesso UUID per evitare duplicati.
+Ultimi50/storico paginato, recupero completo dei messaggi persi, realtime anche
+sulle chat non aperte e polling di sicurezza. Letture solo con chat visibile/focus;
+logout/cambio account cancellano tutto, login nella pagina riprende il flusso.
+Supporto sempre in fondo anche a inbox vuota, riga creata solo al primo invio;
+URL `/messaggi?conv=`, `?annuncio=` e `?support=1` conservati. Nessun nuovo cron,
+trigger email o testo messaggi in storage. Test browser100scenari e SQL ROLLBACK.
 
 ## 🚩 Segnalazioni Conversazioni (DSA compliance)
 

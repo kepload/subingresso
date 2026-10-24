@@ -5,6 +5,20 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Chat affidabili — 24 ottobre 2026
+
+- Richiesta: sistemare bene le chat; altri difetti dell'audit rimandati.
+  Stato separato per account/conversazione, invii immediati con conferma vera,
+  coda/retry stessoUUID, bozze separate, recupero completo e storico paginato.
+  Login/logout, chat non aperte, supporto, letture, scorrimento e telefono corretti.
+  Locale100scenari Chrome1440/768/320-Safari390 chiaro/scuro passati;
+  SQL1.207messaggi temporanei in ROLLBACK e letture reali passati.
+  Schema applicato: solaRPCinbox/indice;19messaggi/8chat e impronte di dati,
+  trigger/policy invariati. Nessun messaggio/email reale di prova.
+  Contratto `data/CHAT_RELIABILITY.md`; prove `Documents/chat-affidabili-20261024`.
+  Backup remoto tag/ramo verificato; helper con errore cleanup già noto.
+  Pubblicazione frontend in verifica.
+
 ## Esito venduto/affittato — 24 ottobre 2026
 
 - Richiesto mini modulo obbligatorio, massimo3passaggi: esito, prezzo
