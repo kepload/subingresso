@@ -19642,8 +19642,56 @@
     ],
     "maintenance": "Solo future verifiche periodiche: nuovi programmi/atti, quote, scadenze, cancellazioni e disponibilità. Distinte dai limiti documentali chiusi con tentativi e fonti.",
     "publication": {
-      "status": "pending-verification",
-      "todoCompleted": false
+      "status": "verified-online",
+      "todoCompleted": true,
+      "dataCommit": "44799c53b5c2dbf73c862c31a0d5004476a7dd9f",
+      "checkedAt": "2026-10-24T13:02:18.242854+00:00",
+      "vercel": {
+        "context": "Vercel",
+        "state": "success",
+        "target_url": "https://vercel.com/kycykuardit-9234s-projects/subingresso/GdrxmtDUyRjrbBQp37kFCp7JmgKd",
+        "updated_at": "2026-10-24T12:58:22Z"
+      },
+      "assetsVerified": 6,
+      "pagesVerified": 117,
+      "localBrowserFormats": [
+        "Chromium1440",
+        "Chromium320",
+        "WebKit390"
+      ],
+      "onlineBrowserFormats": [
+        "Chromium1440",
+        "Chromium320",
+        "WebKit390"
+      ],
+      "realBrowserWithoutInterceptions": true,
+      "reports": [
+        "publication-deploy.json",
+        "publication-pages.json",
+        "qa-local.json",
+        "qa-online.json",
+        "qa-real.json"
+      ]
+    },
+    "completedAt": "2026-10-24T13:02:18.242854+00:00",
+    "backup": {
+      "snapshot": {
+        "createdAt": "2026-10-24T12:56:39.728543+00:00",
+        "destination": "C:\\Users\\utente\\Documents\\backup-subingresso\\ricerche-fiere-20261024-125217",
+        "expectedFiles": 97867,
+        "verifiedFiles": 97867,
+        "bytes": 14924262958,
+        "errors": [],
+        "manifestSha256": "ea7d70af6f2426106f05754c13b69bcf939059ea864cd051d2145b515af9e79d"
+      },
+      "provincialSupplement": {
+        "checkedAt": "2026-10-24T13:01:24.417921+00:00",
+        "destination": "C:\\Users\\utente\\Documents\\backup-subingresso\\ricerche-fiere-20261024-125217\\supplemento-massa-carrara-verifica-online",
+        "verifiedFiles": 6366,
+        "bytes": 464193853,
+        "errors": [],
+        "manifestSha256": "2597a8d28abf898636c5bdb7b4eebba89661503f3b2561b636bc52d50aae9d51"
+      }
     }
   },
   "events": [

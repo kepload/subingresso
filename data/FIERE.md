@@ -17,8 +17,11 @@ testuale: non sono 677 programmi letti integralmente a mano. Originali,
 locandine, estrazioni, tentativi e prove restano fuori dal repository pubblico:
 `C:/Users/utente/Documents/ricerca-fiere-massa-carrara-20261024`.
 
-Pubblicazione e verifica online ancora da registrare; **TO DO e conteggio delle
-province non aggiornati fino all’esito verificato**.
+**Pubblicato e verificato online** il commit dati `44799c5`, deploy Vercel
+riuscito `GdrxmtDUyRjrbBQp37kFCp7JmgKd`: sei file identici al commit e
+**117 pagine HTTP 200**, titoli/canonical, note e costi verificati. TO DO
+spuntata e riepiloghi aggiornati soltanto dopo l’esito positivo:
+**61 province concluse, 49 rimanenti su 110**.
 
 ### Riscontri e condizioni degli espositori
 
@@ -140,8 +143,14 @@ tutti i 117 dialoghi, elenco, mappa e pagine senza JavaScript passati in
 Chromium 1440/320 e WebKit 390. Suite generale nei cinque formati, settori,
 6.845 pagine e 2.880 voci sitemap passati; build ripetibile. Cache JS114/JSON82.
 Backup integrale SHA256 `ricerche-fiere-20261024-125217`: **97.867 file**,
-**14.924.262.958 byte**, zero errori. Esito della pubblicazione da registrare
-dopo la verifica online; TO DO ancora invariata.
+**14.924.262.958 byte**, zero errori. Supplemento provinciale `verifica-online`:
+**6.366 file**, **464.193.853 byte**, zero errori, manifest SHA256 verificato.
+Browser provinciale passato anche online nei tre formati, tutti i 117 dialoghi
+per formato; sito reale senza intercettazioni Chromium 1440/320 e WebKit 390
+senza errori o overflow. Prove `publication-deploy.json`,
+`publication-pages.json`, `qa-online.json` e `qa-real.json` nel dossier esterno.
+Manutenzione futura separata dalla ricerca attuale conclusa; lavoro estraneo
+preservato ed escluso dai commit.
 
 ## Imperia — ricerca documentale del 24 ottobre 2026
 
