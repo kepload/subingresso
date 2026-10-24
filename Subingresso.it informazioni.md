@@ -32,6 +32,9 @@ fonti e audit fiere completi: `data/FIERE.md`.
   nessuna sovrapposizione fra160varianti, resize, copia/ZIP/CSV, errori e logout.
   Feedback sopra il dialog verificato; revisione ship. Prove
   `Documents/ads-mosaico-20261024`; backup remoto preventivo verificato.
+  Pubblicato `cf4f903`, Vercel `DJGTFkKgaEGrNgoRCMSsKnq1nmjm` success:
+  pagina/JS/CSS identici online ai blobGit, API anonima401, accesso/login
+  reali Chrome1440/320 e WebKit390 passati, scritture di prova intercettate.
 
 - Raccolta admin `/le-mie-ads`: 20 messaggi (7 vendita, 7 acquisto, 6 fiere),
   8 misure, 160 varianti PNG/SVG; quattro riprendono banner del blog.
