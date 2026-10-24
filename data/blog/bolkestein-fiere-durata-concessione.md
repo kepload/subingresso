@@ -41,4 +41,22 @@ Resta [Controllo URL → Richiedi indicizzazione](https://developers.google.com/
 Backup remoto preventivo verificato:
 `backup/session-20261024-210433-articolo-bolkestein-fiere-durata`;
 helper con errore noto durante il cleanup dei tag, distinto dal push riuscito.
-Pubblicazione e verifica online da registrare dopo il riscontro effettivo.
+
+## Pubblicazione verificata
+
+Commit `8d0e2bc`, Vercel `8snxf7VEBy8PbxnpYgxAfMjqygBd` success.
+Inserito soltanto l’articolo `1c15be85-3bb7-44ca-b13d-48d845652bcc`, pubblicato
+il 24 ottobre 2026 alle 19:09:10UTC. 96 articoli totali, i precedenti95 identici;
+backup completo precedente nel dossier privato. Nessun trigger su blog_posts.
+
+URL: `https://subingresso.it/blog?post=bolkestein-fiere-durata-concessione`.
+Copertina pubblica identica SHA256 al file locale. Titolo, description,
+canonical, robots e NewsArticle corretti; articolo presente nell’indice blog
+e nella sitemap. Pubblicazione distinta dalla richiesta di indicizzazione.
+
+Prove ripetute sul dominio in Chromium1440/768/320, WebKit390 e senzaJS:
+passate, due soli banner e sei sezioni. Entrambi i pulsanti aprono le vere
+destinazioni fiere/annunci; nessun overflow o erroreJavaScript. Tracking di
+prova intercettato e clic pubblicitari in modalità preview, nessun invio,
+account o evento reale di prova. Risposte Vetrine live0, non riempite con
+annunci gratuiti. Ricevute e screenshot nel dossier indicato sopra.

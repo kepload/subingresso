@@ -7,12 +7,16 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## Articolo Bolkestein e fiere — 24 ottobre 2026
 
-- Preparato «Bolkestein e fiere: perché la concessione non dura sempre dieci
-  anni», slug `bolkestein-fiere-durata-concessione`:507 parole,sei sezioni,
+- Pubblicato «Bolkestein e fiere: perché la concessione non dura sempre dieci
+  anni», slug `bolkestein-fiere-durata-concessione`, ID
+  `1c15be85-3bb7-44ca-b13d-48d845652bcc`:507 parole,sei sezioni,
   fonti GU2023/2026,MIMIT e Stato-città; limite massimo distinto dalla durata
   garantita, investimenti e titoli esistenti chiariti. Due banner fiere/acquisto,
-  copertina originale IA WebP1600×900. Anteprima Chrome1440/768/320,
-  WebKit390 e senzaJS passata; prove/prompt nel dossier omonimo in
+  copertina originale IA WebP1600×900. Commit `8d0e2bc`, Vercel
+  `8snxf7VEBy8PbxnpYgxAfMjqygBd` success; copertina identicaSHA256,
+  indice/sitemap/SEO e prove online Chrome1440/768/320,WebKit390 e senzaJS
+  passati, due CTA reali verificate senza eventi di prova. Precedenti95articoli
+  identici,96totali. Prove/prompt nel dossier omonimo in
   `Documents/articoli-subingresso/`, sorgenti `data/blog/`.
 - Search Console non inviata: loginGoogle richiesto e nessuna sessione debug
   disponibile; integrazione trovata in sola lettura. Resta Controllo URL →
