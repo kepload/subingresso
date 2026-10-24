@@ -5,11 +5,19 @@ con gli ambulanti, con ironia lieve sulla burocrazia. Testo HTML omonimo:
 587 parole, sei sezioni brevi, risposta iniziale e calcolo concreto.
 Due richiami: calendario fiere a metà e inserimento annuncio in chiusura.
 
-I due blockquote marcati `data-fiere-promo` costituiscono i richiami editoriali.
+I due aside marcati `data-fiere-promo` costituiscono i richiami editoriali.
 Il renderer li riconosce e sopprime per questa pagina riquadri automatici e
 banner del calcolatore, prima e dopo JavaScript. Gli articoli già pubblicati
 non contenevano questi marcatori alla verifica iniziale: restano invariati.
 Nessuna modifica ai criteri, ai pagamenti o alla durata delle Vetrine.
+
+Seguito del 24 ottobre: i richiami iniziali erano semplici blockquote con link,
+troppo simili ai paragrafi per essere riconosciuti come pubblicità. Sostituiti
+con due banner blu e pulsanti oro usando il componente esistente
+`blog-fiere-promo`: «Trova la prossima fiera» a metà, «Pubblica il tuo annuncio»
+in chiusura. Nessuna modifica a font, CSS, testo informativo, data o metadati.
+Il contenuto fuori dai due richiami resta identico. Prove e confronto in
+`Documents/articoli-subingresso/anzianita-ambulanti-nuovi-bandi/pubblicita-visibili`.
 
 ## Fonti verificate
 
