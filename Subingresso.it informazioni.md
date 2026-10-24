@@ -5,6 +5,24 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo giovani al mercato — 24 ottobre 2026
+
+- Pubblicato «Aprire un banco da giovani: che possibilità hai contro chi lavora
+  già al mercato?», slug `aprire-banco-giovani-mercato`, ID
+  `7d1b5462-e768-4287-81cf-791a955dc3d7`. Sei sezioni, fonte GU2026,
+  vantaggi degli esperti e accesso giovani distinti; due banner fiere/acquisto,
+  copertina originale IA WebP1600×900. Commit `86e3c7b`, Vercel
+  `9ZTF1vRarHS5LnHbAFyQZhjwyQEW` success. Immagine identicaSHA256,
+  SEO/indice/sitemap e Chrome1440/768/320,WebKit390,senzaJS passati;
+  destinazioni CTA verificate senza scritture di prova. Precedenti96articoli
+  identici,97totali. Prove/prompt in `Documents/articoli-subingresso/aprire-banco-giovani-mercato`.
+- Search Console NON inviata: loginGoogle richiesto, nessuna sessione o
+  credenziale pertinente; plugin disponibile per GSC soltanto in lettura.
+  Resta Controllo URL → Richiedi indicizzazione; sitemap distinta dall'invio.
+  Backup remoto preventivo verificato; cleanup helper con errore noto.
+  Anteprima iniziale rilanciata dalla root corretta; primo inserimento bloccato
+  dalla guardia copertina404 durante deploy, riuscito dopo disponibilità asset.
+
 ## Articolo Bolkestein e fiere — 24 ottobre 2026
 
 - Pubblicato «Bolkestein e fiere: perché la concessione non dura sempre dieci
@@ -41,6 +59,15 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Backup remoto verificato; helper con errori nel cleanup. Primo smokeWebKit
   abortiva caricamenti al cambio pagina; attesa del catalogo corretta, ripetuto
   senza errori. Nessun dato reale di prova persistito.
+
+## Grosseto — ricerca fiere, 24 ottobre 2026
+
+- Ricerca documentale attuale conclusa con limiti:86schede in24comuni,
+  ricognizione dei28comuni,85aggiunte e IDMadonnino conservato;6.844schede
+  esterne identiche.49con date,37con periodi,4storiche2025,4sintesi costo.
+- Originali, tentativi e limiti in `data/fiere-grosseto.json` e `data/FIERE.md`;
+  dossier `Documents/ricerca-fiere-grosseto-20261024`. Nessun contatto a terzi.
+- Pubblicazione/verifiche in corso: spunta e riepilogo nazionale ancora invariati.
 
 ## Articolo spunta e posteggio — 24 ottobre 2026
 
