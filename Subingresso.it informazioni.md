@@ -15,8 +15,15 @@ fonti e audit fiere completi: `data/FIERE.md`.
 - Sorgenti e prompt `data/blog/bolkestein-scossa-mercati.*`; prove/originale
   `Documents/articoli-subingresso/bolkestein-scossa-mercati`. Anteprima
   Chromium1440/320 e WebKit390, più lettura senza JS, passata: link, immagine,
-  meta/canonical e nessun overflow/errore. Pubblicazione da completare.
-  Backup remoto preventivo verificato; errore cleanup helper già noto.
+  meta/canonical e nessun overflow/errore. Backup remoto preventivo
+  verificato; errore cleanup helper già noto.
+- Pubblicato `039882e`, Vercel `ENaxHQmNgWjuubYhYtW7ZPy2M7RQ` riuscito:
+  copertina online identica SHA256. Inserito solo articolo
+  `171930a0-9ab6-4b15-bceb-a8b132dd501b`; 91 totali, precedenti90 identici.
+  HTML/meta/canonical, indice/sitemap e prove browser online nei medesimi
+  formati passati, inclusa apertura catalogo da CTA. RPC Vetrine live0:
+  nessun annuncio gratuito forzato negli spazi pagati. Zero invii/account,
+  scritture di tracking intercettate nelle prove. Ricevute nel dossier.
 
 ## Contatti telefonici riprovabili — 24 ottobre 2026
 

@@ -36,3 +36,12 @@ Backup preventivo: tag remoto
 `backup/session-20261024-150937-articolo-bolkestein-opportunita`, verificato su
 origin a `c0787f0`; helper con errore noto nel solo cleanup dei tag locali.
 Verifiche e ricevuta della pubblicazione nel dossier privato omonimo.
+
+## Pubblicazione verificata
+
+- [Articolo online](https://subingresso.it/blog?post=bolkestein-scossa-mercati), ID `171930a0-9ab6-4b15-bceb-a8b132dd501b`, 24 ottobre 2026 ore 13:17 UTC. Un solo nuovo articolo; precedenti 90 identici dopo l'inserimento, totale 91.
+- Asset e sorgenti nel commit `039882e`; [deploy Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/ENaxHQmNgWjuubYhYtW7ZPy2M7RQ). Copertina pubblica HTTP200 image/webp e identica SHA256 al file locale.
+- Anteprima e sito pubblicato: Chromium1440/320, WebKit390, più lettura senza JavaScript; testo, sei sezioni, due CTA, immagine decodificata, meta/canonical, assenza di overflow ed errori pagina. In produzione provata anche l'apertura del catalogo dalle CTA. Articolo presente nell'indice SSR e nella sitemap.
+- RPC pubblica Vetrine: zero promozioni attive per il nuovo articolo, nessun riempimento forzato con annunci gratuiti. Due inviti commerciali al catalogo nel testo; richiami fiere esistenti conservati.
+- Nessun invio/account o annuncio reale di prova. Richieste di scrittura di tracking intercettate; accessi, acquisti e contatti non simulati su dati reali. Browser mobili emulati, nessun dispositivo Safari fisico.
+- Verifica iniziale della copertina corretta nel solo script QA: la larghezza intrinseca con srcset può differire dai pixel del file; decodifica verificata nel browser e dimensioni1600×900 verificate sul file. Screenshot acquisiti dopo la fine della transizione di opacità esistente. Nessuna modifica al sito per questi rilievi di prova.
