@@ -21,7 +21,13 @@ fonti e audit fiere completi: `data/FIERE.md`.
   nessun dispositivo Safari fisico); regressione foto passata. Clic/tocchi reali,
   quota/assenza, timeout e risposte tardive anche senza abort verificati.
   Detector: soli rilievi preesistenti su tipografia/palette, fuori ambito.
-  Pubblicazione e ripetizione sugli asset online in corso.
+  Pubblicato `e811d76`, Vercel `D66oDTmLBo5b33QXLis8T4MkwLnY` riuscito:
+  dominio con JSv27 corrispondente al commit; ripetuti88scenari su HTML/asset/SDK
+  scaricati dalla produzione, tutti passati. Sul dominio reale: anonimo senza
+  recapiti e accesso richiesto verificati Chrome1440/320 e WebKit390, scritture
+  bloccate. Primo smoke mobile interferito da popup visitatori e titolo storico
+  senza spazi che allarga il viewport; ripetuto con popup già chiuso e titolo
+  breve. Anomalia di impaginazione preesistente annotata, fuori dal recupero.
 
 ## Chat affidabili — 24 ottobre 2026
 
