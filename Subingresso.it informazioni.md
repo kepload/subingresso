@@ -5,6 +5,23 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo spunta e posteggio — 24 ottobre 2026
+
+- Pubblicato «Fare la spunta oggi può aiutarti a ottenere un posteggio domani?»,
+  slug `spunta-oggi-posteggio-domani`, ID `825222dc-20f1-460c-920f-e47308eb13ff`.
+  659 parole, sei sezioni; presenze/giorni lavorati distinti, massimo5punti,
+  vuoto normativo sui50giorni dichiarato e priorità residuale condizionata.
+  Copertina originale IA WebP1600×900; due banner fiere/acquisto.
+- Commit `62398ce`, Vercel `93SSadyW4DM54ohGQGLu4ZiBQHd7` success:
+  copertina identicaSHA256, indice/sitemap/SEO e browser Chromium1440/768/320,
+  WebKit390 e senzaJS passati; CTA reali verificate senza eventi di prova.
+  Precedenti93articoli identici,94totali. Sorgenti/fonti `data/blog/spunta-oggi-posteggio-domani.*`;
+  prove e prompt `Documents/articoli-subingresso/spunta-oggi-posteggio-domani`.
+- Search Console NON inviata: accesso verificato fino al loginGoogle, nessuna
+  sessione/credenziale pertinente; plugin trovato in sola lettura. Resta
+  Controllo URL → Richiedi indicizzazione. Sitemap distinta dall'invio.
+  Backup remoto preventivo valido; errore noto del cleanup helper.
+
 ## ADS personali — 24 ottobre 2026
 
 - Raccolta admin `/le-mie-ads`: 20 messaggi (7 vendita, 7 acquisto, 6 fiere),

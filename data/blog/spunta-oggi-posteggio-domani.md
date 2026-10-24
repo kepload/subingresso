@@ -41,3 +41,15 @@ Dopo pubblicazione resta Controllo URL → Richiedi indicizzazione per
 `https://subingresso.it/blog?post=spunta-oggi-posteggio-domani`, come da
 [istruzioni Google](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl?hl=it).
 La sitemap è distinta dalla richiesta e dall'effettiva indicizzazione.
+
+## Pubblicazione verificata
+
+Commit `62398ce`, Vercel `93SSadyW4DM54ohGQGLu4ZiBQHd7` success.
+Riga `825222dc-20f1-460c-920f-e47308eb13ff`; 94 articoli totali, i precedenti
+93 identici. Nessun trigger su blog_posts. Copertina pubblica identica SHA256.
+Indice e sitemap presenti; meta, canonical e NewsArticle verificati.
+Ripetute online le verifiche Chromium1440/768/320, WebKit390 e senza JS:
+due banner, navigazione fiere/annunci, immagine e leggibilità corretti,
+nessun overflow o errore JavaScript. Clic fiere con preview=1, scritture
+Supabase di tracking intercettate. Nessun invio o account reale di prova.
+Backup remoto preventivo verificato; errore noto del cleanup dell'helper.
