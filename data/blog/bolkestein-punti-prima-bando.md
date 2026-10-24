@@ -19,7 +19,8 @@ criteri nazionali. Nessun attestato, mezzo, investimento o semplice titolarità
 ## Copertina
 
 Strumento integrato imagegen; soggetto e scena inventati, dichiarazione IA
-nel testo. File pubblico `images/blog/bolkestein-punti-prima-bando.webp`.
+nel testo. File pubblico `images/blog/bolkestein-punti-prima-bando.webp`,
+1600×900, 176.010 byte. Testo completo: 627 parole, inclusi i due banner.
 Originale, prompt integrale, prove e ricevute:
 `C:/Users/utente/Documents/articoli-subingresso/bolkestein-punti-prima-bando/`.
 Prompt: fotografia editoriale realistica di un’ambulante che prepara i
@@ -28,5 +29,21 @@ ferma e naturale, senza testo, marchi o simboli politici.
 
 ## Pubblicazione e Google
 
-Stato e verifiche aggiornati al completamento nel registro del progetto.
+Pubblicato con commit `fae0c9f`, Vercel `2e2LhyfGsVNvVKxRGT9G9U7jTjSK`
+success. Riga `1fc2d477-a064-49f1-85d7-5ec271dac717`; 92 articoli precedenti
+identici, 93 totali. Copertina pubblica identica SHA256; indice/sitemap presenti,
+canonical, NewsArticle e direttive index/follow verificati. Anteprima e pagina
+online controllate Chromium1440/768/320, WebKit390 e senza JavaScript:
+immagine, titolo, sei sezioni, due banner visibili, navigazione fiere/vendi,
+nessun overflow o errore JavaScript. Scritture di tracking intercettate.
+
+Nessuna richiesta di indicizzazione inviata: l'apertura di Search Console
+arriva alla pagina Google di accesso, senza sessione autenticata disponibile.
+Nessuna credenziale Google/GSC negli environment pertinenti; nessuna sessione
+browser con debug disponibile. Plugin trovato Windsor.ai non connesso, con
+Search Console in sola lettura, quindi non adatto all'invio richiesto.
+Ricevuta `search-console.json` e schermata nella cartella prove.
+
 La presenza nella sitemap non equivale alla richiesta in Search Console.
+Resta Controllo URL → Richiedi indicizzazione per l'indirizzo dell'articolo,
+come da [istruzioni ufficiali Google](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl?hl=it).

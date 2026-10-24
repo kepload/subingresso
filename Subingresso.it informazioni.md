@@ -5,6 +5,24 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo punti prima del bando — 24 ottobre 2026
+
+- Pubblicato «Bolkestein: quali punti puoi prepararti a ottenere prima del
+  bando?», slug `bolkestein-punti-prima-bando`, ID
+  `1fc2d477-a064-49f1-85d7-5ec271dac717`. 627 parole, sei sezioni semplici,
+  tono pro ambulanti; fonti MIMIT/GU2026, criteri e impegni distinti dalle
+  garanzie. Copertina originale IA WebP1600×900; due banner fiere/vendi.
+- Commit `fae0c9f`, Vercel `2e2LhyfGsVNvVKxRGT9G9U7jTjSK` success:
+  copertina identica SHA256, indice/sitemap e browser online Chromium
+  1440/768/320, WebKit390 e senzaJS passati; CTA funzionanti. Precedenti92
+  articoli identici,93totali. Sorgenti `data/blog/bolkestein-punti-prima-bando.*`;
+  prove/prompt `Documents/articoli-subingresso/bolkestein-punti-prima-bando`.
+- Search Console NON inviata: verificato accesso fino alla schermata Google,
+  nessuna sessione autenticata/credenziale pertinente; plugin trovato in sola
+  lettura. Resta Controllo URL → Richiedi indicizzazione. Sitemap verificata,
+  senza confonderla con invio o indicizzazione. Backup remoto preventivo valido;
+  helper con consueto errore cleanup.
+
 ## Articolo anzianità nei bandi — 24 ottobre 2026
 
 - Seguito: richiami testuali poco visibili sostituiti con due banner blu/oro
