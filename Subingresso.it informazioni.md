@@ -5,6 +5,25 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo concessioni decennali e acquisto — 24 ottobre 2026
+
+- Pubblicato «Concessioni di dieci anni: cosa cambia per chi vuole comprare
+  un banco?», slug `concessioni-dieci-anni-comprare-banco`, ID
+  `35d207d2-613c-4926-820e-2a937f9addf5`. 607 parole, sei sezioni;
+  durata residua distinta dalla nuova assegnazione, esempio30.000/6,
+  fonti GU2023/2026 e Mantova. Copertina IA WebP1600×900; due banner acquisto.
+- Commit `670c4c4`, Vercel `6DoQ5hvetdSDU2LoD53yGEAxvyuu` success:
+  immagine identicaSHA256, indice/sitemap/SEO e Chrome1440/768/320,
+  WebKit390 e senzaJS passati; entrambi i pulsanti verificati. Precedenti94
+  articoli identici,95totali. Fonti `data/blog/concessioni-dieci-anni-comprare-banco.*`;
+  prove/prompt `Documents/articoli-subingresso/concessioni-dieci-anni-comprare-banco`.
+- Search Console NON inviata: loginGoogle richiesto, nessuna sessione debug
+  collegabile/credenzialeGoogle; integrazione trovata solo in lettura. Resta
+  Controllo URL → Richiedi indicizzazione. Sitemap distinta dall'invio.
+  Backup remoto verificato; helper con errori nel cleanup. Primo smokeWebKit
+  abortiva caricamenti al cambio pagina; attesa del catalogo corretta, ripetuto
+  senza errori. Nessun dato reale di prova persistito.
+
 ## Articolo spunta e posteggio — 24 ottobre 2026
 
 - Pubblicato «Fare la spunta oggi può aiutarti a ottenere un posteggio domani?»,

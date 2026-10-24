@@ -46,3 +46,23 @@ distinte dall'invio a Search Console e dall'indicizzazione effettiva.
 URL: `https://subingresso.it/blog?post=concessioni-dieci-anni-comprare-banco`.
 Per l'invio manuale: Controllo URL → Richiedi indicizzazione, come da
 [documentazione Google](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl?hl=it).
+
+## Pubblicazione verificata
+
+Commit `670c4c4`, Vercel `6DoQ5hvetdSDU2LoD53yGEAxvyuu` success;
+copertina pubblica identica SHA256. Inserita soltanto la riga
+`35d207d2-613c-4926-820e-2a937f9addf5`, con pubblicazione
+`2026-10-24T18:59:49Z`: 95 articoli, i precedenti 94 identici.
+Nessun trigger su `blog_posts`; backup completo precedente nel dossier privato.
+Indice, sitemap, meta, canonical e NewsArticle verificati sul dominio.
+
+Ripetute online le prove Chromium1440/768/320, WebKit390 e senza JS:
+sei sezioni, due soli banner, liste con pallini e spazi, copertina corretta,
+nessun overflow o errore JavaScript; entrambi i pulsanti aprono il catalogo.
+Primo smoke WebKit interrompeva i caricamenti della pagina annunci durante
+la seconda navigazione: ripetuto attendendo il catalogo, senza errori.
+Nessun dato/account/invio reale di prova; scritture di tracking intercettate.
+
+Backup remoto preventivo `backup/session-20261024-205421-articolo-concessioni-dieci-anni`
+verificato; il cleanup dell'helper ha prodotto gli errori già noti dopo il push
+riuscito del tag. Modifiche estranee conservate.
