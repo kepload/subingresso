@@ -1,0 +1,64 @@
+.pa-gallery-page main{max-width:none;padding:24px 16px 32px}
+.pa-gallery-page .pa-title-row{margin-bottom:22px;align-items:center}
+.pa-heading-actions{display:flex;gap:8px;flex-shrink:0}
+.pa-gallery-page .pa-library{padding:0;border:0;border-radius:0;background:transparent}
+.pa-gallery-toolbar{position:sticky;top:0;z-index:10;padding:14px 0 12px;background:var(--pa-ground)}
+.pa-gallery-heading,.pa-gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.pa-gallery-heading{margin-bottom:12px}
+.pa-scale{font-size:12px;color:var(--pa-muted);white-space:nowrap}
+.pa-gallery-controls{justify-content:start;flex-wrap:wrap}
+.pa-gallery-controls .pa-filters{margin:0;flex-wrap:wrap;gap:6px}
+.pa-gallery-size,.pa-gallery-controls .pa-search{display:flex;align-items:center;gap:8px}
+.pa-gallery-size{margin-left:auto}
+.pa-gallery-size select{width:242px}
+.pa-gallery-controls .pa-search input{width:220px;margin:0}
+#paCanvasHint{margin:0 0 12px}
+.pa-gallery-scroll{max-width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-color:var(--pa-field) var(--pa-ground);scrollbar-width:auto;overscroll-behavior-x:contain;padding:4px 0 12px}
+.pa-mosaic-board{position:relative;width:100%;min-height:0}
+.pa-tile{position:absolute;margin:0;min-width:0;contain:layout style}
+.pa-tile-button{display:block;width:100%;height:100%;min-height:0;padding:0;border:0;border-radius:0;background:transparent;text-align:left}
+.pa-tile-button:hover{background:transparent}
+.pa-tile-button:focus-visible{outline:3px solid var(--pa-focus);outline-offset:3px}
+.pa-tile img{display:block;max-width:none;max-height:none;object-fit:fill;border-radius:0}
+.pa-tile-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px;padding:0 4px;font-size:12px;font-weight:400;background:var(--pa-surface);color:var(--pa-muted)}
+.pa-tile-caption strong{font-weight:600;color:var(--pa-text)}
+.pa-tile-caption>span:last-child{color:var(--pa-accent);font-weight:600}
+.pa-empty{padding:32px 0;color:var(--pa-muted)}
+.pa-stats-disclosure{margin-top:28px}
+.pa-stats-disclosure>summary{font-size:14px}
+.pa-stats-disclosure .pa-results{margin:12px 0 0}
+.pa-details{width:min(960px,calc(100vw - 32px));max-width:960px;max-height:calc(100dvh - 32px);padding:24px;border:1px solid var(--pa-border);border-radius:16px;background:var(--pa-surface);color:var(--pa-text);overflow:auto;overscroll-behavior:contain;scrollbar-color:var(--pa-field) var(--pa-surface)}
+.pa-details::backdrop{background:rgb(5 12 24 / .62)}
+.pa-dialog-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:20px;color:var(--pa-muted);font-size:12px}
+.pa-dialog-top>button{min-width:76px}
+.pa-details .pa-editor-head{padding-top:0}
+.pa-details .pa-preview img{max-width:100%;height:auto;max-height:390px}
+.pa-details .pa-editor-head>button{font-size:12px}
+html:has(#paDetails[open]){overflow:hidden}
+@media(max-width:1100px){
+ .pa-gallery-page .pa-title-row{align-items:start}
+ .pa-gallery-size{margin-left:0}
+ .pa-gallery-controls .pa-search{display:flex}
+ .pa-gallery-controls .pa-search input{width:210px}
+}
+@media(max-width:700px){
+ .pa-gallery-page main{padding:18px 16px 28px}
+ .pa-gallery-page .pa-title-row{margin-bottom:8px}
+ .pa-heading-actions{display:grid;grid-template-columns:auto 1fr;gap:8px}
+ .pa-heading-actions button{padding:9px 10px;font-size:12px}
+ .pa-gallery-toolbar{padding:12px 0 10px}
+ .pa-gallery-heading{align-items:baseline;gap:8px;margin-bottom:10px}
+ .pa-gallery-heading h2{font-size:16px}
+ .pa-gallery-heading #paCount{display:block;margin:2px 0 0}
+ .pa-scale{font-size:12px}
+ .pa-gallery-controls{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+ .pa-gallery-controls .pa-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .pa-gallery-controls .pa-filters button{font-size:12px}
+ .pa-gallery-size,.pa-gallery-controls .pa-search{margin:0;display:grid;grid-template-columns:45px minmax(0,1fr);gap:8px}
+ .pa-gallery-size select,.pa-gallery-controls .pa-search input{width:100%;min-width:0}
+ .pa-gallery-scroll{padding-top:4px;margin-inline:-6px;width:calc(100% + 12px);max-width:calc(100% + 12px)}
+ .pa-details{width:calc(100vw - 16px);max-height:calc(100dvh - 16px);padding:16px;border-radius:12px}
+ .pa-dialog-top{padding-bottom:16px}
+ .pa-details .pa-editor-head>button{width:100%}
+ .pa-tile-caption{font-size:12px;padding-inline:6px}
+}

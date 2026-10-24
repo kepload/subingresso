@@ -3,6 +3,19 @@
 Richiesta: raccolta privata admin con circa20 ADS delle sezioni redditizie,
 più misure, riuso di alcuni banner blog e confronto dei risultati.
 
+Seguito grafico: la pagina principale è una galleria a mosaico delle20ADS,
+non una lista di miniature con editor fisso. Ogni immagine usa le dimensioni
+originali in CSSpixel1:1, senza ridimensionamenti o ritagli; didascalia con
+codice/misura. I rettangoli vengono incastrati con12px di distanza e44px di
+didascalia. Vista iniziale20messaggi in misure miste da blog, filtro per
+obiettivo/testo/misura; «Tutte le misure» mostra160varianti. Nessuna ADS
+viene esclusa o duplicata nella vista iniziale. Sui piccoli schermi la sola
+galleria scorre orizzontalmente per i formati larghi; nessun overflow pagina.
+Al clic si apre il pannello della creatività/misura selezionata, con gli
+stessi strumenti di riuso e i dati reali. Statistiche in un blocco apribile
+dopo la galleria, scorciatoia nell’intestazione. Accesso admin conservato;
+logout/cambio account chiudono anche il dialog e rimuovono la galleria.
+
 `/le-mie-ads` è un guscio senza catalogo/statistiche incorporati. L’API
 `/api/personal-ads` restituisce la raccolta e le metriche solo dopo controllo
 server `admin_personal_ads` sul ruolo corrente. Cambio account e logout
@@ -87,3 +100,11 @@ filtri,misure,copia,ZIP,CSV,errore/retry,cambioaccount con risposta tardiva,
 tracker anon/login/logout/admin. Browser simulati;nessun Safari fisico.
 Prove private:`Documents/ads-personali-20261024`;ZIP verificati anche con
 Python zipfile/CRC. RegressoSSRblog e banner esistenti verificato a parte.
+
+Prove mosaico:`Documents/ads-mosaico-20261024`, stessi browser/temi;
+rettangoli reali confrontati con gli attributi originali, tutte160varianti,
+assenza sovrapposizioni, resize/filtri, dialog/focus/Escape, feedback live
+sopra il livello modale per copia e ZIP (anche errore), ripristino al body,
+logout e risposta tardiva. Nessun cambiamento a backend, misurazione o asset.
+Inspector: testi pagina a16px dai bordi; eccezione edge-text per didascalia
+parzialmente visibile nel canvas panoramico1:1, nessun overflow pagina.

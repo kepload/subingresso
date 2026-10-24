@@ -39,28 +39,48 @@ async function browserTests(engine,name,width,height,base){
  const browser=await engine.launch({headless:true});try{
   const context=await browser.newContext({viewport:{width,height},acceptDownloads:true,reducedMotion:'reduce'});await context.route('https://**/*',route=>route.abort());
   const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(base+'/qa');await page.locator('#paApp').waitFor({state:'visible'});
-  assert.equal(await page.locator('.pa-choice').count(),20);assert.deepEqual(await page.locator('#paTotals dd').allTextContents(),['0','0','0','0,00 €']);
+  assert.equal(await page.locator('.pa-tile').count(),20);assert.deepEqual(await page.locator('#paTotals dd').allTextContents(),['0','0','0','0,00 €']);assert(await page.locator('#paDetails').isHidden());assert.equal(await page.locator('#paResultsPanel').getAttribute('open'),null);
   assert.equal(await page.locator('#paStatsDetails').getAttribute('open'),null);
   // Carica anche le miniature fuori dalla piega prima della cattura completa.
   // Cambia solo il momento del fetch, senza alterare immagini o geometria.
-  await page.evaluate(async()=>{await document.fonts.ready;document.querySelectorAll('img[loading="lazy"]').forEach(img=>img.loading='eager');await Promise.all(Array.from(document.images).map(img=>img.decode()));document.getElementById('paList').scrollTop=0;window.scrollTo(0,0);});
+  await page.evaluate(async()=>{await document.fonts.ready;document.querySelectorAll('img[loading="lazy"]').forEach(img=>img.loading='eager');await Promise.all(Array.from(document.images).map(img=>img.decode()));document.getElementById('paGalleryScroll').scrollLeft=0;window.scrollTo(0,0);});
   for(const theme of ['light','dark']){await page.evaluate(theme=>document.documentElement.classList.toggle('admin-dark',theme==='dark'),theme);await page.screenshot({path:path.join(out,`${name}-${width}-${theme}.png`),fullPage:true});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'overflow '+name+width+theme);}
   await page.evaluate(()=>document.documentElement.classList.remove('admin-dark'));
-  for(const [goal,count]of [['fiere',6],['vendi',7],['compra',7],['all',20]]){await page.locator('[data-goal="'+goal+'"]').click();assert.equal(await page.locator('.pa-choice').count(),count);}
-  await page.locator('#paSearch').fill('non-esiste');assert.equal(await page.locator('.pa-choice').count(),0);assert(await page.locator('#paEditor').isHidden());await page.locator('#paSearch').fill('');
+  for(const [goal,count]of [['fiere',6],['vendi',7],['compra',7],['all',20]]){await page.locator('[data-goal="'+goal+'"]').click();assert.equal(await page.locator('.pa-tile').count(),count);}
+  await page.locator('#paSearch').fill('non-esiste');assert.equal(await page.locator('.pa-tile').count(),0);assert(await page.locator('#paEmpty').isVisible());await page.locator('#paSearch').fill('');
+  async function checkMosaic(count){
+   await page.waitForFunction(count=>{const tiles=[...document.querySelectorAll('.pa-tile')];return tiles.length===count&&tiles.every(t=>t.style.left!==''&&t.style.top!=='');},count);
+   const result=await page.evaluate(()=>{const items=[...document.querySelectorAll('.pa-tile')].map(tile=>{const image=tile.querySelector('img'),r=image.getBoundingClientRect(),box=tile.getBoundingClientRect(),button=tile.querySelector('button');return {id:button.dataset.ad,format:button.dataset.format,w:r.width,h:r.height,expectedW:Number(image.getAttribute('width')),expectedH:Number(image.getAttribute('height')),x:box.x,y:box.y,right:box.right,bottom:box.bottom};});return{items,overflow:document.documentElement.scrollWidth>innerWidth};});
+   assert.equal(result.items.length,count);assert(!result.overflow);
+   for(const item of result.items){assert.equal(item.w,item.expectedW,'larghezza reale '+item.id);assert.equal(item.h,item.expectedH,'altezza reale '+item.id);}
+   for(let i=0;i<count;i++)for(let j=i+1;j<count;j++){const a=result.items[i],b=result.items[j];assert(!(a.x<b.right-.1&&a.right>b.x+.1&&a.y<b.bottom-.1&&a.bottom>b.y+.1),'sovrapposizione '+a.id+' '+b.id);}
+   assert.equal(new Set(result.items.map(i=>i.id+'|'+i.format)).size,count);
+  }
+  await checkMosaic(20);await page.locator('#paGalleryMode').selectOption('all');await checkMosaic(160);
+  await page.locator('#paGalleryMode').selectOption('300x250');await checkMosaic(20);
+  await page.setViewportSize({width:width===1440?1100:1440,height});await checkMosaic(20);await page.setViewportSize({width,height});await checkMosaic(20);
+  await page.locator('#paGalleryMode').selectOption('mixed');await checkMosaic(20);
+  await page.locator('[data-ad="vendi-01"]').click({position:{x:30,y:30}});assert(await page.locator('#paDetails').isVisible());assert.equal(await page.locator('#paFormat').inputValue(),'970x250');
+  assert.equal(await page.locator('#paCloseDetails').evaluate(el=>document.activeElement===el),true);
   for(const format of catalog.formats){await page.locator('#paFormat').selectOption(format.id);await page.waitForFunction(()=>{const img=document.getElementById('paPreview');return img.complete&&img.naturalWidth>0;});assert.equal(await page.locator('#paPreview').evaluate(img=>img.naturalWidth),format.width);}
   await page.locator('#paPlacement').fill('articolo_bandi_centro');await page.locator('#paCopyHtml').click();assert((await page.evaluate(()=>qaClipboard)).includes('data-pa-placement="articolo_bandi_centro"'));
+  async function statusPaints(inDialog){assert.equal(await page.locator('#paStatus').evaluate((node,inDialog)=>node.parentElement===(inDialog?document.getElementById('paDetails'):document.body),inDialog),true);assert.equal(await page.locator('#paStatus').evaluate(node=>{const r=node.getBoundingClientRect(),hit=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);return hit===node||node.contains(hit);}),true,'feedback visibile sopra il dialog');}
+  await statusPaints(true);
   await page.locator('#paCopyLink').click();assert.equal(new URL(await page.evaluate(()=>qaClipboard)).searchParams.get('placement'),'articolo_bandi_centro');
   await page.locator('#paPlacement').fill('email@example.com');assert(await page.locator('#paCopyHtml').isDisabled());await page.locator('#paPlacement').fill('articolo_bandi_centro');
+  await page.screenshot({path:path.join(out,`${name}-${width}-details.png`)});await page.keyboard.press('Escape');assert(await page.locator('#paDetails').isHidden());await page.locator('#paShowStats').click();assert(await page.locator('#paResultsPanel').evaluate(el=>el.open));
   await page.evaluate(()=>{qaBaseline.stats.rows=[{ad_id:'vendi-01',format:'300x250',placement:'articolo_bandi_centro',impressions:10,clicks:4,measured_clicks:3,converted_clicks:1,signups:1,listings:1,contacts:0,fairs:0,paid_orders:1,revenue_cents:4900,refunded_cents:0}];});await page.locator('#paRefresh').click();await page.waitForFunction(()=>document.querySelector('#paTotals dd').textContent==='10');assert.deepEqual(await page.locator('#paTotals dd').allTextContents(),['10','4','1','49,00 €']);
   await page.evaluate(()=>qaMode='offline');await page.locator('#paRefresh').click();await page.waitForFunction(()=>document.getElementById('paStatus').textContent.includes('ultimo aggiornamento'));assert.equal(await page.locator('#paTotals dd').first().textContent(),'10');await page.evaluate(()=>qaMode='normal');
+  await statusPaints(false);
   if(name==='Chromium'&&width===1440){
    await page.locator('#paStatsDetails').evaluate(el=>el.open=true);const csv=page.waitForEvent('download');await page.locator('#paExport').click();const csvFile=path.join(out,'risultati.csv');await(await csv).saveAs(csvFile);assert(fs.readFileSync(csvFile,'utf8').includes('"vendi-01"'));await page.locator('#paStatsDetails').evaluate(el=>el.open=false);
-   await page.locator('#paFormat').selectOption('300x250');const single=page.waitForEvent('download');await page.locator('#paPack').click();await(await single).saveAs(path.join(out,'vendi-01-8-formati.zip'));
+   await page.locator('[data-ad="vendi-01"]').click({position:{x:30,y:30}});await page.locator('#paFormat').selectOption('300x250');const single=page.waitForEvent('download');await page.locator('#paPack').click();await statusPaints(true);await(await single).saveAs(path.join(out,'vendi-01-8-formati.zip'));await page.keyboard.press('Escape');
+   await page.locator('[data-ad="vendi-01"]').click({position:{x:30,y:30}});await page.route('**/images/personal-ads/**',route=>route.fulfill({status:503,body:'unavailable'}));await page.locator('#paPack').click();await page.waitForFunction(()=>document.getElementById('paStatus').textContent.includes('non è disponibile'));await statusPaints(true);await page.unroute('**/images/personal-ads/**');await page.keyboard.press('Escape');
    const all=page.waitForEvent('download');await page.locator('#paDownloadAll').click();await(await all).saveAs(path.join(out,'subingresso-20-ads.zip'));
    await page.goto(base+'/sheet');await page.screenshot({path:path.join(out,'20-creativita.png'),fullPage:true});await page.goto(base+'/qa');await page.locator('#paApp').waitFor({state:'visible'});
   }
-  await page.evaluate(()=>{qaDelay=200;document.getElementById('paRefresh').click();setTimeout(()=>{qaUser={id:'00000000-0000-4000-8000-000000000099'};qaMode='denied';qaCallbacks.forEach(fn=>fn('SIGNED_IN',{user:qaUser}));},20);});await page.waitForTimeout(450);assert(await page.locator('#paApp').isHidden());assert.equal(await page.locator('.pa-choice').count(),0);assert.equal(await page.locator('#paCode').inputValue(),'');
+  await page.locator('[data-ad="vendi-01"]').click({position:{x:30,y:30}});
+  await page.evaluate(()=>{qaDelay=200;document.getElementById('paRefresh').click();setTimeout(()=>{qaUser={id:'00000000-0000-4000-8000-000000000099'};qaMode='denied';qaCallbacks.forEach(fn=>fn('SIGNED_IN',{user:qaUser}));},20);});await page.waitForTimeout(450);assert(await page.locator('#paApp').isHidden());assert(await page.locator('#paDetails').isHidden());assert.equal(await page.locator('.pa-tile').count(),0);assert.equal(await page.locator('#paCode').inputValue(),'');
   await page.evaluate(()=>{qaUser=null;qaCallbacks.forEach(fn=>fn('SIGNED_OUT',null));});await page.locator('#paLogin').waitFor({state:'visible'});assert(await page.locator('#paApp').isHidden());assert.deepEqual(errors,[]);
   return {browser:name,width,passed:true};
  }finally{await browser.close();}

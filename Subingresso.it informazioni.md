@@ -24,6 +24,15 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## ADS personali — 24 ottobre 2026
 
+- Preferenza grafica aggiornata: galleria principale a mosaico, tutte20ADS
+  in formati misti e dimensioni originali1:1; filtro per tutte160varianti.
+  Codice/misure visibili, canvas panoramico sugli schermi stretti, statistiche
+  chiuse sotto; strumenti al clic nel dialog. Asset, dati e accesso conservati.
+  Chrome1440/768/320 e WebKit390 chiaro/scuro passati: misure reali,
+  nessuna sovrapposizione fra160varianti, resize, copia/ZIP/CSV, errori e logout.
+  Feedback sopra il dialog verificato; revisione ship. Prove
+  `Documents/ads-mosaico-20261024`; backup remoto preventivo verificato.
+
 - Raccolta admin `/le-mie-ads`: 20 messaggi (7 vendita, 7 acquisto, 6 fiere),
   8 misure, 160 varianti PNG/SVG; quattro riprendono banner del blog.
   Copia codice/link, ZIP singolo/completo, filtri e risultati per posizione.
