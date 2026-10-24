@@ -13777,8 +13777,148 @@
       }
     ],
     "validation": {
-      "status": "pending",
-      "note": "TO DO non spuntata e conteggi non incrementati finché pubblicazione e verifica online non sono concluse."
+      "status": "passed",
+      "checkedAt": "2026-10-24T19:30:39.840460+00:00",
+      "dataCommit": "8ddcf9795bb25c4e22c9e83a69cb4c4586c5b70f",
+      "deployment": [
+        {
+          "context": "Vercel",
+          "state": "success",
+          "target_url": "https://vercel.com/kycykuardit-9234s-projects/subingresso/ActtqfnaYG46dtcMCjNSUetwxn2N",
+          "updated_at": "2026-10-24T19:28:44Z"
+        }
+      ],
+      "onlineAssets": [
+        {
+          "path": "data/fiere.json",
+          "status": 200,
+          "sha256": "6ec91d212ba982f4498c06bed0d389b37ce407c71b9bfe5c0ff5ffebbd8cf36b",
+          "match": true
+        },
+        {
+          "path": "data/fiere-grosseto.json",
+          "status": 200,
+          "sha256": "ec4b0155637ec9f11daf3e2f5d81e1de83c53700ab34789088d028aa0a7ac1f6",
+          "match": true
+        },
+        {
+          "path": "fiere.html",
+          "status": 200,
+          "sha256": "60598adb0f0c892fe6d8b2796f95e9cbcb9452c5cbee49c051ca9b27e9cac76c",
+          "match": true
+        },
+        {
+          "path": "js/pages/fiere.js",
+          "status": 200,
+          "sha256": "ddb83d501af2943a8502d63b4df4cd3325ec22468b84a65d995bef56eb52343c",
+          "match": true
+        }
+      ],
+      "onlinePages": 86,
+      "browserFormats": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "events": 86,
+          "dialogs": 86,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "events": 86,
+          "dialogs": 86,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "events": 86,
+          "dialogs": 86,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        }
+      ],
+      "realSiteFormats": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "events": 86,
+          "status": "passed",
+          "blockedWrites": 1
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "events": 86,
+          "status": "passed",
+          "blockedWrites": 1
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "events": 86,
+          "status": "passed",
+          "blockedWrites": 1
+        }
+      ],
+      "localChecks": {
+        "checkedAt": "2026-10-24",
+        "playwrightModule": "PLAYWRIGHT_MODULE",
+        "provinceSuite": {
+          "status": "passed",
+          "events": 86,
+          "dialogsPerFormat": 86,
+          "formats": [
+            "Chromium 1440",
+            "Chromium 320",
+            "WebKit 390"
+          ],
+          "sourceAndDateContracts": "passed",
+          "unchangedExternalEvents": 6844
+        },
+        "generalSuite": {
+          "status": "passed",
+          "formats": [
+            "Chromium 1440",
+            "Chromium 820",
+            "Chromium 390",
+            "WebKit 390",
+            "Chromium 320"
+          ]
+        },
+        "pagesSuite": {
+          "status": "passed",
+          "pages": 6930,
+          "sitemapEntries": 2891,
+          "browserFormats": [
+            "Chromium 1440",
+            "Chromium 320",
+            "WebKit 390"
+          ]
+        },
+        "sectors": "passed: 2 tests",
+        "reproducibleBuild": true,
+        "gitDiffCheck": "passed"
+      },
+      "proofArchive": "C:\\Users\\utente\\Documents\\ricerca-fiere-grosseto-20261024",
+      "proofFiles": [
+        "publication-deploy.json",
+        "publication-pages.json",
+        "qa-online.json",
+        "qa-real.json",
+        "qa-local.json"
+      ],
+      "researchBackup": {
+        "path": "C:\\Users\\utente\\Documents\\backup-subingresso\\ricerche-fiere-20261024-191535",
+        "files": 101321,
+        "bytes": 15445599735,
+        "errors": 0,
+        "manifestSha256": "dfd57d3ef57b81823fa9cca5b0c9abdee5c842671a34c13891c21c6e8450ec1d"
+      },
+      "note": "Ricerca documentale accessibile conclusa con limiti espliciti; pubblicazione e verifiche positive precedono la spunta. Manutenzione futura distinta."
     }
   }
 }

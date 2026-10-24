@@ -13,13 +13,15 @@ Audit `data/fiere-grosseto.json`: tre righe provinciali del BURT, dieci righe
 del calendario regionale delle rievocazioni, 28 ricognizioni comunali, Piani
 del commercio, albi/SUAP sulle piste emerse, organizzatori, programmi e moduli.
 **967 ricevute tecniche**, 859 HTTP200: sono acquisizioni e tentativi, non
-968 programmi letti integralmente. Screening tecnico della sitemap Qui
+967 programmi letti integralmente. Screening tecnico della sitemap Qui
 Maremma distinto dalla lettura degli originali pertinenti. Dossier esterno
 `C:/Users/utente/Documents/ricerca-fiere-grosseto-20261024` con originali,
 testi, DOCX estratti, locandine, ricevute/hash e recuperi Chromium.
 
-**Pubblicazione e verifiche online in corso**: TO DO e riepilogo generale
-restano invariati fino all’esito verificato.
+**Pubblicata e verificata online**: commit dati `8ddcf97`, Vercel riuscito
+e quattro asset identici agli SHA256 del commit. **86 pagine HTTP200**, titoli,
+canonical, note e quote corretti. TO DO spuntata: **62 province concluse,
+48 da fare su 110**. Limiti documentali e manutenzione futura restano distinti.
 
 ### Date, condizioni e quote documentate
 
@@ -126,6 +128,20 @@ Backup remoto preventivo verificato:
 `backup/pre-fiere-grosseto-20261024`; errore noto del solo cleanup helper.
 Test dedicato `scripts/test-fiere-grosseto.cjs` tramite `PLAYWRIGHT_MODULE`;
 cache JS115/JSON83. Lavoro estraneo preservato ed escluso dai commit.
+
+Verifiche locali: build ripetibile, settori, suite calendario generale (cinque
+formati), 6.930 pagine SSR e 2.891 voci sitemap, escaping e isolamento delle
+6.844 schede esterne. Suite Grosseto locale e online: **86 dialoghi per formato**,
+lista/mappa e pagine senza JS, Chromium1440/320 e WebKit390. Sito reale con
+script completi nei tre formati, senza errori JS o overflow; nessuna scrittura
+reale nei test. Ricevute e screenshot nel dossier esterno.
+
+Backup integrale `Documents/backup-subingresso/ricerche-fiere-20261024-191535`:
+**101.321 file**, **15.445.599.735 byte**, zero errori; manifest SHA256
+`dfd57d3ef57b81823fa9cca5b0c9abdee5c842671a34c13891c21c6e8450ec1d` verificato. Le quattro segnalazioni
+gitleaks erano lo stesso album fotografico pubblico estraneo alle prove:
+riferimento rimosso, controllo normale passato, nessun bypass o segreto
+applicativo pubblicato. Aggiornamenti concorrenti del blog preservati.
 
 
 ## Massa-Carrara — ricerca documentale del 24 ottobre 2026
