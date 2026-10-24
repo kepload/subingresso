@@ -39,6 +39,11 @@ per verificare conservazione degli altri articoli, hydration e pagine di errore.
 
 ## Google Search Console
 
+Pubblicato con commit `fc08dcc`, Vercel `51C72LTGaxda1s2WhYXpmFBTPkXw`
+success e asset pubblici identici ai blob Git. Inserita solo la riga
+`ec5d37f1-cdf8-45d5-9269-6e3282ab913b`; 91 articoli precedenti conservati
+identici, 92 totali. Browser online nei quattro casi e indice/sitemap passati.
+
 Nessuna richiesta di indicizzazione inviata. Apertura del browser verso Search
 Console respinta dal controllo automatico con messaggio `blocked by policy`;
 nessuna motivazione ulteriore fornita. Nessuna credenziale Google/GSC

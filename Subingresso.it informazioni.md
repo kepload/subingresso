@@ -5,6 +5,25 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo anzianità nei bandi — 24 ottobre 2026
+
+- Pubblicato «Lavoro qui da trent’anni»: quanto conta davvero l’anzianità
+  nei nuovi bandi?, slug `anzianita-ambulanti-nuovi-bandi`, ID
+  `ec5d37f1-cdf8-45d5-9269-6e3282ab913b`. 587 parole, sei sezioni brevi,
+  fonti MIMIT/GU2026, esempio30/40×35 e15punti fissi; tono pro ambulanti.
+  Copertina originale IA WebP1600×900; due soli richiami fiere/vendi.
+- Commit `fc08dcc`, Vercel `51C72LTGaxda1s2WhYXpmFBTPkXw` success:
+  asset identici ai blobGit, indice/sitemap e browser Chrome1440/320,
+  WebKit390 più senzaJS passati. 91articoli precedenti identici,92totali.
+  I marcatori editoriali sopprimono riquadri automatici e banner calcolatore
+  soltanto nelle pagine con richiami già posizionati; precedenti senza marker.
+  Prove/prompt `Documents/articoli-subingresso/anzianita-ambulanti-nuovi-bandi`;
+  sorgenti/fonti `data/blog/anzianita-ambulanti-nuovi-bandi.*`.
+- Search Console NON inviata: apertura browser respinta dal controllo
+  automatico «blocked by policy», nessun accesso alternativo per scrivere.
+  Resta Controllo URL → Richiedi indicizzazione; sitemap non equivale a invio.
+  Backup remoto preventivo verificato; consueto errore cleanup helper.
+
 ## Articolo Bolkestein ottimista — 24 ottobre 2026
 
 - Richiesto articolo nuovo, umano/incisivo, ottimista e semplice, con immagine
