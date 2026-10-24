@@ -5,6 +5,19 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo Bolkestein ottimista — 24 ottobre 2026
+
+- Richiesto articolo nuovo, umano/incisivo, ottimista e semplice, con immagine
+  e richiami all'acquisto. Pronto «Bolkestein: e se fosse la scossa che serve
+  ai mercati?», slug `bolkestein-scossa-mercati`: 531 parole, sei sezioni,
+  due CTA al catalogo; fonti UE/Gazzetta e opinioni distinte dai fatti,
+  nessuna promessa di incassi/rinnovi. Copertina originale IA, WebP1600×900.
+- Sorgenti e prompt `data/blog/bolkestein-scossa-mercati.*`; prove/originale
+  `Documents/articoli-subingresso/bolkestein-scossa-mercati`. Anteprima
+  Chromium1440/320 e WebKit390, più lettura senza JS, passata: link, immagine,
+  meta/canonical e nessun overflow/errore. Pubblicazione da completare.
+  Backup remoto preventivo verificato; errore cleanup helper già noto.
+
 ## Contatti telefonici riprovabili — 24 ottobre 2026
 
 - Bug confermato sul codice precedente: errore RPC memorizzato come definitivo,
