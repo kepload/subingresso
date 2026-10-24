@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo cinque domande al Comune — 24 ottobre 2026
+
+- Pubblicato «Bolkestein: cinque domande da fare al Comune prima di comprare un posteggio», slug `bolkestein-cinque-domande-comune-comprare-posteggio`, ID `d582d6dd-e742-456a-af39-8d66b54f4298`. Cinque domande e chiusura; fonti GU2026/Mantova, nessuna promessa di rinnovo. Due banner acquisto, copertina IA WebP1600×900.
+- Commit `eb9f186`/`5daeb3b`, Vercel `8jahHwfLvLvUVdH4JRkV4Vt4JYRd` Ready e dominio verificato. Copertina identica SHA256; SEO e browser online Chromium1440/768/320,WebKit390,senzaJS passati, entrambi i pulsanti verificati senza scritture di prova. Prove/prompt nel dossier omonimo `Documents/articoli-subingresso/`.
+- Search Console NON inviata: verifica corrente richiede loginGoogle, nessuna credenziale pertinente. Resta Controllo URL → Richiedi indicizzazione; sitemap distinta dall'invio. Backup remoto preventivo verificato; cleanup helper con errore noto. Anteprima rilanciata dalla root corretta; codifica iniziale corretta prima dell'inserimento, linkGU corretto e riverificato.
+
 ## Articolo giovani al mercato — 24 ottobre 2026
 
 - Pubblicato «Aprire un banco da giovani: che possibilità hai contro chi lavora
