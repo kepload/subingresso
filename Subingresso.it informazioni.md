@@ -24,6 +24,12 @@ fonti e audit fiere completi: `data/FIERE.md`.
 - Primo deploy `9abdcee` respinto: limite12 funzioni del pianoHobby.
   Gestore ADS accorpato al runtime blog con rewrite del medesimoURL;
   controlli admin/no-store conservati, nessun cambio piano.
+- Pubblicato `47713ef`, Vercel `Bp1QTWHxipzxDUjmS3wuwgR6Abm4` READY.
+  Sul dominio: 331 file identici ai blobGit, API anonima401/ruolo pubblico403,
+  20 destinazioni verificate in anteprima senza eventi; blog/testi conservati.
+  Accesso negato e apertura login reali Chrome1440/320 e WebKit390 passati;
+  scritture statistiche delle prove intercettate, nessun account/ordine creato.
+  Ultima revisione routing/auth/cache: ship. Aspetto precedente conservato.
 
 ## Articolo punti prima del bando — 24 ottobre 2026
 
