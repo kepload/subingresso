@@ -29,6 +29,8 @@ fonti e audit fiere completi: `data/FIERE.md`.
   verifica del ruolo; altezza44px, stesso collegamento `/le-mie-ads`.
   Controllati ruolo iniziale, clic/tastiera e layout Chrome1440/320 e WebKit390,
   chiaro/scuro; prove `Documents/ads-pulsante-dashboard-20261024`.
+  Pubblicato `f813884`, Vercel `9brYXCDrPBTrYxUu7tki5TzAqAgN` success:
+  dashboard online identica al blobGit, raccolta di destinazione200.
 
 - Preferenza grafica aggiornata: galleria principale a mosaico, tutte20ADS
   in formati misti e dimensioni originali1:1; filtro per tutte160varianti.
