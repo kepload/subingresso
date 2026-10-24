@@ -458,7 +458,7 @@ module.exports = async function handler(req, res) {
 <script src="/js/ui-components.js?v=18"></script>
 <script src="/js/auth.js?v=28"></script>
 <script src="/js/listing-moderation.js?v=1"></script>
-<script src="/js/pages/annuncio-detail.js?v=26"></script>
+<script src="/js/pages/annuncio-detail.js?v=27"></script>
 </body>
 </html>`);
 };

@@ -4,7 +4,10 @@
 // ============================================================
 
 let _currentListing = null;
-let _contactFetched = false; // true dopo che initPage ha fetchato tel per utente loggato
+let _contactUserId = null;
+let _contactVersion = 0;
+let _contactRequest = null;
+let _contactAction = null;
 const _moderationPreview = new URLSearchParams(location.search).get('anteprima') === 'moderazione';
 
 function listingPhotoLink(url, title, index, gallery) {
@@ -31,36 +34,115 @@ function _featuredFirst(list, n) {
 // Anti-scraping: la RPC è SECURITY DEFINER e applica rate limit silenzioso
 // (50 contatti unique/ora) + log su contact_reveals. Owner e admin sono in
 // bypass — vedono sempre tutto senza consumo quota.
-async function fetchContactInfo(listing) {
+function _clearContactInfo(listing) {
     if (!listing) return;
-    let finalTel   = null;
-    let finalEmail = null;
+    listing.tel = null;
+    listing.email = null;
+    listing.telFetched = false;
+}
 
-    try {
-        if (listing.id) {
-            const { data, error } = await _supabase.rpc('get_listing_contact', { p_annuncio_id: listing.id });
-            if (error) {
-                if (error.code === '42501') {
-                    console.warn('Contatto non disponibile:', error.message);
-                } else {
-                    console.error('Errore RPC contatto:', error.message);
-                }
-            } else if (Array.isArray(data) && data.length > 0) {
-                const row = data[0];
-                finalTel   = row.tel || row.seller_telefono || null;
-                finalEmail = row.email || null;
-            }
-        }
-    } catch (e) {
-        console.error("Errore fetch contatto annuncio:", e);
-    }
+function _setContactUser(userId) {
+    if (_contactUserId === userId) return false;
+    _contactUserId = userId;
+    _contactVersion++;
+    _contactRequest?.controller.abort();
+    _contactRequest = null;
+    _contactAction = null;
+    _clearContactInfo(_currentListing);
+    _renderPhoneContactUI('idle');
+    return true;
+}
 
-    listing.tel        = finalTel;
-    listing.email      = finalEmail;
-    listing.telFetched = true;
-
+function _renderPhoneContactUI(state, message) {
+    const loading = state === 'loading';
+    const retry = state === 'error';
+    const text = message || (loading ? 'Recupero del numero in corso…'
+        : state === 'empty' ? 'Numero di telefono non disponibile per questo annuncio.' : '');
     const telEl = document.getElementById('cTel');
-    if (telEl) telEl.textContent = finalTel || 'Contatto riservato';
+    if (telEl) telEl.textContent = _currentListing?.tel || text || 'Contatto riservato';
+
+    document.querySelectorAll('[onclick="makeCall()"], [onclick="openWhatsApp()"]').forEach(button => {
+        const whatsapp = button.getAttribute('onclick') === 'openWhatsApp()';
+        const mobile = !!button.closest('#mobileCta');
+        const actionLabel = retry ? (whatsapp ? 'Riprova WhatsApp' : 'Riprova chiamata')
+            : !_contactUserId ? (whatsapp ? 'Accedi per WhatsApp' : 'Accedi per chiamare')
+            : whatsapp ? 'WhatsApp' : 'Chiama Ora';
+        const label = loading ? (mobile ? 'Attendi…' : 'Recupero numero…')
+            : mobile ? (retry ? 'Riprova' : 'WhatsApp') : actionLabel;
+        const icon = whatsapp ? 'fab fa-whatsapp' : 'fas fa-phone-alt';
+        button.innerHTML = `<i class="${icon}" aria-hidden="true"></i><span>${label}</span>`;
+        button.disabled = loading;
+        button.setAttribute('aria-busy', String(loading));
+        button.setAttribute('aria-label', loading ? 'Recupero numero in corso' : actionLabel);
+        button.setAttribute('aria-describedby', mobile ? 'phoneContactStatusMobile' : 'phoneContactStatus');
+    });
+
+    // Stato persistente vicino ai pulsanti, anche nella barra fissa su telefono.
+    const desktop = document.getElementById('contactBtn')?.parentElement;
+    const mobile = document.getElementById('mobileCta');
+    [desktop, mobile].forEach((container, index) => {
+        if (!container) return;
+        const id = index ? 'phoneContactStatusMobile' : 'phoneContactStatus';
+        let status = document.getElementById(id);
+        if (!status) {
+            status = document.createElement('p');
+            status.id = id;
+            status.className = 'text-sm font-bold text-slate-600';
+            status.setAttribute('role', 'status');
+            status.setAttribute('aria-live', 'polite');
+            status.setAttribute('aria-atomic', 'true');
+            if (index) {
+                Object.assign(status.style, { position: 'absolute', bottom: '100%', left: '0', right: '0',
+                    padding: '12px 16px 0', backgroundColor: 'inherit' });
+                container.prepend(status);
+            } else container.appendChild(status);
+        }
+        status.textContent = text;
+        status.hidden = !text;
+    });
+}
+
+// Solo risposte valide sono definitive; errori e timeout liberano la richiesta.
+// Il contesto include l'identità e la sua versione per ignorare risposte tardive.
+function fetchContactInfo(listing, userId) {
+    if (!listing?.id || !userId || userId !== _contactUserId) return Promise.resolve(false);
+    if (listing.telFetched) return Promise.resolve(true);
+    if (_contactRequest?.listing === listing) return _contactRequest.promise;
+
+    const request = { listing, userId, version: _contactVersion, controller: new AbortController() };
+    const isCurrent = () => _contactRequest === request && _currentListing === listing
+        && _contactUserId === userId && _contactVersion === request.version;
+    _contactRequest = request;
+    _renderPhoneContactUI('loading');
+    request.promise = (async () => {
+        const timeout = setTimeout(() => request.controller.abort(), 12000);
+        try {
+            const { data, error } = await _supabase.rpc('get_listing_contact', { p_annuncio_id: listing.id })
+                .abortSignal(request.controller.signal);
+            if (!isCurrent()) return false;
+            if (error) throw error;
+            if (!Array.isArray(data) || (data.length && (!data[0] || typeof data[0] !== 'object'
+                || !('tel' in data[0] || 'seller_telefono' in data[0])))) throw new Error('Invalid contact response');
+            const row = data[0];
+            listing.tel = row?.tel || row?.seller_telefono || null;
+            listing.email = row?.email || null;
+            listing.telFetched = true;
+            _renderPhoneContactUI(listing.tel ? 'ready' : 'empty');
+            return true;
+        } catch (error) {
+            if (isCurrent()) {
+                _clearContactInfo(listing);
+                _renderPhoneContactUI('error', error.code === '42501'
+                    ? 'Contatto riservato o limite di richieste raggiunto. Riprova più tardi.'
+                    : 'Impossibile recuperare il numero. Tocca Chiama o WhatsApp per riprovare.');
+            }
+            return false;
+        } finally {
+            clearTimeout(timeout);
+            if (_contactRequest === request) _contactRequest = null;
+        }
+    })();
+    return request.promise;
 }
 
 async function loadListing() {
@@ -112,6 +194,8 @@ async function initPage() {
     }
     const listing = await loadListing();
     _currentListing = listing;
+    _clearContactInfo(listing);
+    _renderPhoneContactUI('idle');
     _refreshLocalSaveButtons();
 
     const notFoundEl = document.getElementById('notFound');
@@ -483,14 +567,16 @@ async function initPage() {
 
     // Check proprietario (UI Speciale per il possessore)
     try {
-        const { data: _authData } = await _supabase.auth.getUser();
+        const contactVersion = _contactVersion;
+        const { data: _authData, error: authError } = await _supabase.auth.getUser();
+        if (contactVersion !== _contactVersion || authError) return;
         const user = _authData?.user ?? null;
+        _setContactUser(user?.id || null);
 
         if (user) {
-            _contactFetched = true; // loggato — settato subito, prima di qualsiasi fetch
-
             // Fetch tel/email solo per utenti autenticati (mai esposto a utenti anonimi)
-            await fetchContactInfo(_currentListing);
+            await fetchContactInfo(listing, user.id);
+            if (_contactUserId !== user.id) return;
         }
 
         if (user && listing.user_id && String(listing.user_id).trim() === String(user.id).trim()) {
@@ -596,21 +682,37 @@ function executeCall(listing) {
 }
 
 function makeCall() {
-    const listing = _currentListing;
-    if (!listing) return;
-    if (_blockIfExpired(listing)) return;
+    _requestPhoneAction(executeCall, 'call_click');
+}
 
-    if (_contactFetched) {
-        executeCall(listing);
-        return;
+function _blockPhoneContact(listing) {
+    if (_blockIfExpired(listing)) return true;
+    if (_moderationPreview || (listing.status && listing.status !== 'active')) {
+        showToast('Contatti non disponibili per questo annuncio.', 'warning');
+        return true;
     }
+    return false;
+}
 
-    requireAuth(async function () {
-        if (!listing.telFetched) {
-            await fetchContactInfo(listing);
+function _requestPhoneAction(execute, source) {
+    const listing = _currentListing;
+    if (!listing || _blockPhoneContact(listing)) return;
+    const contactVersion = _contactVersion;
+    requireAuth(async function (user) {
+        if (!user || listing !== _currentListing || _blockPhoneContact(listing)) return;
+        if (contactVersion !== _contactVersion && user.id !== _contactUserId) return;
+        _setContactUser(user.id);
+        // Un solo intento durante il recupero, anche fra Chiama e WhatsApp.
+        if (_contactAction) return;
+        const action = { version: _contactVersion };
+        _contactAction = action;
+        try {
+            if (await fetchContactInfo(listing, user.id) && _contactAction === action
+                && _contactVersion === action.version && !_blockPhoneContact(listing)) execute(listing);
+        } finally {
+            if (_contactAction === action) _contactAction = null;
         }
-        executeCall(listing);
-    }, 'call_click');
+    }, source);
 }
 
 async function startChat() {
@@ -671,21 +773,7 @@ function executeWhatsApp(listing) {
 }
 
 function openWhatsApp() {
-    const listing = _currentListing;
-    if (!listing) return;
-    if (_blockIfExpired(listing)) return;
-
-    if (_contactFetched) {
-        executeWhatsApp(listing);
-        return;
-    }
-
-    requireAuth(async function () {
-        if (!listing.telFetched) {
-            await fetchContactInfo(listing);
-        }
-        executeWhatsApp(listing);
-    }, 'whatsapp_click');
+    _requestPhoneAction(executeWhatsApp, 'whatsapp_click');
 }
 
 // Censura parziale numeri di telefono italiani.
@@ -728,14 +816,18 @@ function censorPhonesHTML(text) {
 
 // Ripristina pulsanti e descrizione dopo il login
 async function restoreContactUI() {
+    const contactVersion = _contactVersion;
+    let user;
+    try {
+        const { data, error } = await _supabase.auth.getUser();
+        if (error || contactVersion !== _contactVersion || !data?.user) return;
+        user = data.user;
+    } catch (_) { return; }
+    _setContactUser(user.id);
     document.getElementById('loginContactBanner')?.remove();
 
     const chatBtn = document.getElementById('chatBtn');
-    const waBtn   = document.getElementById('whatsappBtn');
-    const callBtn = document.getElementById('contactBtn');
-    if (chatBtn) chatBtn.innerHTML = '<i class="fas fa-comment-alt"></i> Invia Messaggio';
-    if (waBtn)   waBtn.innerHTML   = '<i class="fab fa-whatsapp text-xl"></i> WhatsApp';
-    if (callBtn) callBtn.innerHTML = '<i class="fas fa-phone-alt text-slate-400"></i> Chiama Ora';
+    if (chatBtn && _currentListing?.user_id !== user.id) chatBtn.innerHTML = '<i class="fas fa-comment-alt"></i> Invia Messaggio';
 
     // Ripristina descrizione originale (senza mascheratura)
     const descrEl = document.getElementById('descrizione');
@@ -744,9 +836,8 @@ async function restoreContactUI() {
     }
 
     // Fetch tel/email ora che l'utente è autenticato
-    _contactFetched = true; // loggato — settato subito, prima del fetch
     if (_currentListing?.id) {
-        await fetchContactInfo(_currentListing);
+        await fetchContactInfo(_currentListing, user.id);
     }
 }
 
@@ -755,8 +846,11 @@ document.addEventListener('DOMContentLoaded', initPage);
 
 // Quando l'utente effettua il login, aggiorna l'UI senza ricaricare la pagina
 try {
-    _supabase.auth.onAuthStateChange((event) => {
-        if (event === 'SIGNED_IN') restoreContactUI();
+    _supabase.auth.onAuthStateChange((event, session) => {
+        const userId = event === 'SIGNED_OUT' ? null : session?.user?.id || null;
+        const changed = _setContactUser(userId);
+        // Neanche getUser/RPC dentro il lock del callback di Supabase Auth.
+        if (event === 'SIGNED_IN' && changed) setTimeout(restoreContactUI, 0);
     });
 } catch (e) {}
 

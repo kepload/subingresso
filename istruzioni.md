@@ -681,7 +681,23 @@ affittato. Nessun esito ricostruito per lo storico. Contratto e soglie:
 - **`normalizePhone(raw)`**: ritorna formato display locale `347 1234567` per UI/storage.
 - **`setupPhoneInput(inputEl, opts)`**: widget UX hint live (grigio vuoto / verde valido + preview / rosso invalido). Normalize on blur.
 - Wirate in: `auth.js` `regTelefono`, `vendi.html` `fTel`, `modifica-annuncio.html` `fTel`, `dashboard.html` `pTelefono`.
-- Bottone "Chiama" usa `phoneToTelLink()` → `tel:+39...`. WhatsApp non toccato.
+- Bottone "Chiama" usa `phoneToTelLink()` → `tel:+39...`. Formato del link WhatsApp invariato.
+
+### Recupero contatti nel dettaglio — 24 ottobre 2026
+
+`js/pages/annuncio-detail.js`: `telFetched` indica soltanto una risposta RPC
+valida, anche senza numero; errori, payload malformati e timeout di 12 secondi
+restano riprovabili al clic. Richiesta condivisa fra prefetch, Chiama e WhatsApp;
+un solo intento durante l'attesa. Stati persistenti e accessibili anche mobile.
+Ogni azione passa da `requireAuth`; cache e richieste sono legate all'identità
+verificata. Logout/cambio account svuotano tel/email e invalidano risposte e
+azioni tardive, anche rientrando nello stesso account. Nessun fallback fuori da
+`get_listing_contact`, nessun cambio di quota/RLS. Azioni telefoniche bloccate
+per annunci scaduti/non attivi e anteprima moderazione.
+Regressione `scripts/test-phone-contacts.cjs`: Chrome e WebKit desktop/mobile,
+rete lenta, errore/riprova, timeout, deduplica, assenza e isolamento; API/sessioni
+simulate e navigazioni tel/WhatsApp intercettate. `PHONE_PUBLISHED_DIR` ripete
+le prove sugli asset scaricati dal sito, `PLAYWRIGHT_MODULE` riusa il driver locale.
 
 ## ⚡ Performance
 

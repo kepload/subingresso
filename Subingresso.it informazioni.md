@@ -5,6 +5,24 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Contatti telefonici riprovabili — 24 ottobre 2026
+
+- Bug confermato sul codice precedente: errore RPC memorizzato come definitivo,
+  Chiama/WhatsApp non riprovavano. Correzione circoscritta al dettaglio:
+  cache solo su risposta valida, Promise condivisa, timeout12s e riprova al clic;
+  attesa/errore/assenza visibili anche mobile. Identità verificata a ogni azione,
+  svuotamento al logout/cambio account e risposte tardive ignorate; RPC e quote
+  conservate. Riferimenti JS aggiornati anche nel template SSR.
+- Backup remoto `backup/session-20261024-103131-retry-contatti-telefonici`
+  verificato; helper: errore cleanup dei vecchi tag dopo push riuscito.
+  Prove `Documents/contatti-telefonici-20261024`; API/sessioni simulate,
+  navigazioni telefoniche intercettate, nessuna chiamata/messaggio reale.
+  Locale88scenari Chrome1440/320 e WebKit1440/390 passati (mobile emulato,
+  nessun dispositivo Safari fisico); regressione foto passata. Clic/tocchi reali,
+  quota/assenza, timeout e risposte tardive anche senza abort verificati.
+  Detector: soli rilievi preesistenti su tipografia/palette, fuori ambito.
+  Pubblicazione e ripetizione sugli asset online in corso.
+
 ## Chat affidabili — 24 ottobre 2026
 
 - Richiesta: sistemare bene le chat; altri difetti dell'audit rimandati.
