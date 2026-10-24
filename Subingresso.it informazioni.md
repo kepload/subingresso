@@ -24,6 +24,12 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## ADS personali — 24 ottobre 2026
 
+- Accesso rapido richiesto: pulsante «Le mie ADS» nella barra delle informazioni
+  principali della dashboard, accanto al badge Admin. Rivelato soltanto dopo
+  verifica del ruolo; altezza44px, stesso collegamento `/le-mie-ads`.
+  Controllati ruolo iniziale, clic/tastiera e layout Chrome1440/320 e WebKit390,
+  chiaro/scuro; prove `Documents/ads-pulsante-dashboard-20261024`.
+
 - Preferenza grafica aggiornata: galleria principale a mosaico, tutte20ADS
   in formati misti e dimensioni originali1:1; filtro per tutte160varianti.
   Codice/misure visibili, canvas panoramico sugli schermi stretti, statistiche
