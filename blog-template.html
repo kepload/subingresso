@@ -101,7 +101,7 @@
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="js/blog-tracker.js?v=3"></script>
 <script src="js/blog-fiere-promo.js?v=3"></script>
-<script src="js/blog-markup.js?v=2"></script>
+<script src="js/blog-markup.js?v=3"></script>
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=24"></script>
 <script src="js/ui-components.js?v=18"></script>
@@ -548,7 +548,7 @@ function renderPost(post, options = {}) {
     if (!_ldEl) { _ldEl = document.createElement('script'); _ldEl.id = '_ldBlog'; _ldEl.type = 'application/ld+json'; document.head.appendChild(_ldEl); }
     _ldEl.textContent = JSON.stringify(_ld);
 
-    if (_IS_BANDI) document.getElementById('bannerValutatore')?.classList.add('hidden');
+    if (_IS_BANDI || BlogMarkup.hasEditorialPromos(safeContent)) document.getElementById('bannerValutatore')?.classList.add('hidden');
     if (!options.hydrate) container.innerHTML = BlogMarkup.articleMarkup(post, safeContent);
     // Nascondi la promo Vetrina agli utenti già loggati (NON il form Avvisi: vale anche per loggati).
     _supabase.auth.getSession().then(({ data: { session } }) => {

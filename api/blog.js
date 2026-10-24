@@ -97,7 +97,7 @@ module.exports = async function handler(req, res) {
         content = articleRoot.innerHTML;
         const {content: _body, ...metadata} = post;
         html = renderBody(html, content, {mode: 'post', post: metadata, related});
-        if (BlogMarkup.regionFromSlug(slug)) html = hideBanner(html);
+        if (BlogMarkup.regionFromSlug(slug) || BlogMarkup.hasEditorialPromos(safeContent)) html = hideBanner(html);
         const fullTitle = `${post.title} — Subingresso.it`;
         const desc      = post.excerpt || post.title;
         const canonical = `${SITE}/blog?post=${encodeURIComponent(post.slug)}`;

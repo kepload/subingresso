@@ -39,7 +39,13 @@ function _bandoAlertFormHtml(regione) {
 
 
 
+function hasEditorialPromos(html) {
+    return /<(?:aside|blockquote)\b[^>]*\bdata-fiere-promo\s*=/i.test(html);
+}
+
 function insertPromo(html, region) {
+    // I richiami editoriali già posizionati sostituiscono i riquadri automatici.
+    if (hasEditorialPromos(html)) return {html, inline: true};
     const _IS_BANDI = !!region, _BLOG_REGIONE = region;
     let _inlineBoxInjected = false;
     // Inietta dopo il 3° paragrafo (picco di tensione: la gente non legge fino in fondo).
@@ -222,7 +228,7 @@ function listMarkup(posts, promoHtml) {
 }
 
 
-const api = {articleMarkup, listMarkup, insertPromo, alertForm: _bandoAlertFormHtml, pexelsUrl: _pexelsUrl, regionFromSlug: _regioneFromSlug, regions: SLUG_TO_REGIONE, previewColumns, postColumns};
+const api = {articleMarkup, listMarkup, insertPromo, hasEditorialPromos, alertForm: _bandoAlertFormHtml, pexelsUrl: _pexelsUrl, regionFromSlug: _regioneFromSlug, regions: SLUG_TO_REGIONE, previewColumns, postColumns};
 if (typeof module !== 'undefined' && module.exports) module.exports = api;
 else root.BlogMarkup = api;
 })(typeof window !== 'undefined' ? window : globalThis);
