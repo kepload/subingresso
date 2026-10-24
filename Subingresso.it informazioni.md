@@ -1164,7 +1164,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Avvisi bandi: account obbligatorio.** Su richiesta, blog e pagine bando aprono la registrazione standard; chi ha un account accede. Attivazione dopo autenticazione, email ricavata dal server. Invii e Scout limitati agli indirizzi con account esistente tramite vista privata `registered_bando_alerts`; inserimenti diretti pubblici revocati. DB prima/dopo: 32 iscrizioni conservate, 12 con account e 20 escluse dagli invii finché non si registrano; nessun account creato automaticamente. Patch e quattro funzioni pubblicate; codice `effb12b`/`35da1fd`, cache avvisi2, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Fs4xUe5bYZu4E8fMvwXYg17TCKd9). Sintassi, qualità dati, acquisizione e test dedicati Chromium 1440/320×568 + WebKit390 passati; sei percorsi su HTML online, account/email simulati, nessun invio reale. Endpoint live senza account/chiave pubblica: 401; vista destinatari non pubblica. Modulo scorrevole su telefoni bassi; JS online identico. Prove in `Documents/verifica-avvisi-bandi-20261017.{cjs,json}`; overflow circoscritto a form/modal, testi lunghi preesistenti dell'articolo fuori perimetro. Backup tag/branch remoti validi; cleanup tag con errore PowerShell noto.
 - **Dashboard:** eliminato su richiesta il riquadro superiore “Il tuo annuncio”, con carousel, totali e domanda regionale. Preferenza: non riproporlo; statistiche nel pannello Performance posteggi e gestione nell'elenco annunci.
 - **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Preferenza corrente: grafico sopra i quattro riquadri, etichette e numeri senza sottotitoli; spiegazioni/storico solo nella voce apribile. Messaggi ricevuti distinti dai click telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
-- **Fiere:** 6.653 schede; ricerca approfondita conclusa e verificata online per 59 province, 51 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Fiere:** 6.728 schede; ricerca approfondita conclusa e verificata online per 60 province, 50 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -1975,7 +1975,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 59 province completate, 51 da fare su 110**, aggiornate il 24 ottobre dopo Verbano-Cusio-Ossola. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 60 province completate, 50 da fare su 110**, aggiornate il 24 ottobre dopo Imperia. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -2290,7 +2290,19 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
     disponibilità, conferme delle ricorrenze e documenti oggi non accessibili.
     Attività futura distinta dalla ricerca attuale conclusa, senza attesa
     di futuri bandi né garanzia di censimento esaustivo.
-- [ ] **53. Imperia** — Liguria
+- [x] **53. Imperia** — Liguria
+  Ricerca accessibile attuale conclusa con limiti espliciti e verificata online:
+  **197 schede in 35 comuni**, ricognizione dei **66 comuni**; 120 ID conservati,
+  77 aggiunti, due esclusi con motivazione, 6.531 schede esterne identiche.
+  Fonti, copertura, esclusioni e piste chiuse in `data/fiere-imperia.json` e
+  `data/FIERE.md`. Pubblicazione `67becd8`, Vercel success, cinque asset e
+  197 pagine verificati; test locali e online Chromium/WebKit passati.
+  Backup remoti e copia integrale SHA256 (91.484 file, zero errori), supplemento
+  finale verificato. Lavoro estraneo preservato, nessun contatto o invio a terzi.
+  - [ ] Manutenzione periodica Imperia: nuove edizioni, rinvii e cadenze,
+    quote/posteggi e moduli, Cargo/Perinaldo/antiquariato discordanti, documenti
+    oggi non pubblicati o accessibili. Attività futura distinta dalla ricerca
+    attuale conclusa, senza attendere bandi futuri né garantire esaustività.
 - [ ] **54. Massa-Carrara** — Toscana
 - [ ] **55. Grosseto** — Toscana
 - [ ] **56. Valle d'Aosta/Vallée d'Aoste** — Valle d'Aosta

@@ -2,7 +2,7 @@
   "province": "Imperia",
   "checkedAt": "2026-10-24",
   "research": {
-    "status": "documental-research-closed-with-explicit-limits",
+    "status": "completed-with-explicit-limits",
     "baselineCommit": "a0326b082fdacf4efd2e8d036923529759616b2b",
     "baselineAudit": "122 schede pubblicate; nessun dossier provinciale approfondito presente al checkpoint; ripartenza da FIERE.md e fonti già pubblicate, senza rifare altre province.",
     "archive": "C:\\Users\\utente\\Documents\\ricerca-fiere-imperia-20261024",
@@ -32284,10 +32284,68 @@
       "Pubblicazione di allegati oggi assenti/inaccessibili"
     ],
     "publication": {
-      "status": "pending-verification"
+      "status": "verified",
+      "releaseCommit": "67becd81ec171cce9e8048589dcafae555484451",
+      "checkedAt": "2026-10-24T06:16:33.474054+00:00",
+      "url": "https://subingresso.it/fiere?provincia=Imperia",
+      "githubVercelState": "success",
+      "deploymentIds": [
+        7294932337
+      ],
+      "deploymentWaitSeconds": 20,
+      "catalogSha256": "0ca3c46ffb2d3afa6819edeaaa6a544f45f515b48b88517370f437683ab41462",
+      "assets": [
+        {
+          "path": "data/fiere.json",
+          "status": 200,
+          "sha256": "0ca3c46ffb2d3afa6819edeaaa6a544f45f515b48b88517370f437683ab41462",
+          "expected": "0ca3c46ffb2d3afa6819edeaaa6a544f45f515b48b88517370f437683ab41462",
+          "match": true,
+          "vercelId": "fra1::fjb4f-1792822300592-bbefe4283cbc",
+          "cache": "MISS"
+        },
+        {
+          "path": "data/fiere-imperia.json",
+          "status": 200,
+          "sha256": "ff0a865041eea4892640a29e61bc811a4000f3a0e93f0f4e2989bcad974ef2e8",
+          "expected": "ff0a865041eea4892640a29e61bc811a4000f3a0e93f0f4e2989bcad974ef2e8",
+          "match": true,
+          "vercelId": "fra1::lhcf8-1792822299666-9cc3920951d3",
+          "cache": "MISS"
+        },
+        {
+          "path": "data/fiere-comuni.json",
+          "status": 200,
+          "sha256": "9c364cec9a369b02892236ec32c1c32ceece3a8d92855db792f2ab86bcab3689",
+          "expected": "9c364cec9a369b02892236ec32c1c32ceece3a8d92855db792f2ab86bcab3689",
+          "match": true,
+          "vercelId": "fra1::2bdhc-1792822299661-9a968dfab163",
+          "cache": "MISS"
+        },
+        {
+          "path": "fiere.html",
+          "status": 200,
+          "sha256": "86d7df5bb308303e7196472384f301532908bebb7e27c6aa5127753268299517",
+          "expected": "86d7df5bb308303e7196472384f301532908bebb7e27c6aa5127753268299517",
+          "match": true,
+          "vercelId": "fra1::vvzts-1792822299931-28925b4c0e09",
+          "cache": "MISS"
+        },
+        {
+          "path": "js/pages/fiere.js",
+          "status": 200,
+          "sha256": "4b3ecac9d55e33fe55c45f825a4df14fc935b0670d09a54d26aff3c8cda1001e",
+          "expected": "4b3ecac9d55e33fe55c45f825a4df14fc935b0670d09a54d26aff3c8cda1001e",
+          "match": true,
+          "vercelId": "fra1::ddwb5-1792822300591-99c61f6e7601",
+          "cache": "MISS"
+        }
+      ],
+      "onlinePages": 197,
+      "excludedPages404": 2
     },
     "verification": {
-      "status": "local-passed-production-pending",
+      "status": "passed-local-and-production",
       "repeatableBuild": true,
       "unchangedExternalEvents": 6531,
       "nationalPagesValidated": 6728,
@@ -32370,7 +32428,75 @@
         "bytes": 14470285392,
         "errors": [],
         "manifestSha256": "46599602dba5092ece4a14c8455f26745fc7ff796054b0bb44742232c9597eac"
-      }
+      },
+      "onlineBrowser": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "events": 197,
+          "dialogs": 197,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "events": 197,
+          "dialogs": 197,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "events": 197,
+          "dialogs": 197,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        }
+      ],
+      "realProductionBrowser": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "count": 197,
+          "errors": [],
+          "overflow": false,
+          "interception": false,
+          "status": "passed"
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "count": 197,
+          "errors": [],
+          "overflow": false,
+          "interception": false,
+          "status": "passed"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "count": 197,
+          "errors": [],
+          "overflow": false,
+          "interception": false,
+          "status": "passed"
+        }
+      ],
+      "onlineDetails": {
+        "pages": 197,
+        "excludedPages404": 2,
+        "checks": [
+          "HTTP200",
+          "H1",
+          "canonical",
+          "participation notes",
+          "pricing details"
+        ],
+        "passed": true
+      },
+      "finalSupplement": "supplement-imperia-final: originali, versioni definitive e prove online, con manifest SHA256 separato dalla prima copia."
     }
   },
   "events": [

@@ -12,8 +12,8 @@ negozianti della via. **6.531 schede esterne identiche**; catalogo nazionale
 **6.728 schede**, **6.523 con dati edizione**. Le schede non sono tutte
 manifestazioni indipendenti: Ineja/Mercantineja e le due componenti della
 Fiera delle Anime restano collegate e dichiarate nelle note.
-Pubblicazione e verifica finale in corso; checklist e conteggi provinciali
-restano invariati fino all’esito online positivo. Nessun'altra provincia
+**Pubblicata e verificata online**. Checklist spuntata e riepiloghi aggiornati
+soltanto dopo l’esito positivo: **60 province concluse, 50 rimanenti su 110**. Nessun'altra provincia
 lavorata, nessun contatto, messaggio o candidatura a terzi.
 
 Audit `data/fiere-imperia.json`: **196 righe** del foglio regionale fiere
@@ -127,7 +127,18 @@ sitemap. Test provinciale con `PLAYWRIGHT_MODULE`: Chromium 1440/320 e
 WebKit390, **197 schede e dialoghi per formato**, mappa, costi, fonti e otto
 pagine senza JS per formato, senza errori o overflow. Suite generale sui
 cinque formati superata: filtri, province, elenco/mappa, dettagli, tastiera,
-ripristino errori e overflow. Verifica di produzione ancora da eseguire.
+ripristino errori e overflow.
+
+Pubblicazione `67becd8`, deploy Vercel **success** verificato tramite
+GitHub e cinque asset pubblici identici byte per byte al commit (normalizzazione
+Git LF), comprese le versioni JS113/JSON81. Catalogo SHA256
+`0ca3c46ffb2d3afa6819edeaaa6a544f45f515b48b88517370f437683ab41462`.
+Tutte le **197 pagine online** HTTP200, titolo, canonical, note e costi verificati;
+le due schede escluse restituiscono 404. Browser online con `PLAYWRIGHT_MODULE`:
+Chromium1440/320 e WebKit390, **197 dialoghi e otto pagine senza JS per formato**,
+senza errori o overflow. Sito reale verificato negli stessi tre formati **senza
+intercettazioni**. Registro e conteggio aggiornati dopo queste prove; copie
+definitive e ricevute conservate nel supplemento provinciale verificato.
 
 ## Verbano-Cusio-Ossola — ricerca documentale del 24 ottobre 2026
 
