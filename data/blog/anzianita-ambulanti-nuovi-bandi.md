@@ -2,7 +2,7 @@
 
 Richiesta del 24 ottobre 2026: articolo semplice, professionale e schierato
 con gli ambulanti, con ironia lieve sulla burocrazia. Testo HTML omonimo:
-587 parole, sei sezioni brevi, risposta iniziale e calcolo concreto.
+Versione iniziale: 587 parole, sei sezioni brevi, risposta iniziale e calcolo concreto.
 Due richiami: calendario fiere a metà e inserimento annuncio in chiusura.
 
 I due aside marcati `data-fiere-promo` costituiscono i richiami editoriali.

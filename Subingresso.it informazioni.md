@@ -7,6 +7,13 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## Articolo anzianità nei bandi — 24 ottobre 2026
 
+- Seguito: richiami testuali poco visibili sostituiti con due banner blu/oro
+  e pulsanti fiere/vendi, componente del blog esistente. Pubblicato `54ce40e`,
+  Vercel `5m7nbbr9YgWCt6G7eMFSjRGPWk22` success; verifica online
+  Chrome1440/768/320,WebKit390 e senzaJS passata, clic/focus/overflow corretti.
+  Solo i due richiami modificati: testo informativo e91altri articoli identici.
+  Prove nella sottocartella `pubblicita-visibili` del dossier; prima verifica
+  intercettava vecchia cacheCDN180s, risolta e ripetuta dopo pubblicazione.
 - Pubblicato «Lavoro qui da trent’anni»: quanto conta davvero l’anzianità
   nei nuovi bandi?, slug `anzianita-ambulanti-nuovi-bandi`, ID
   `ec5d37f1-cdf8-45d5-9269-6e3282ab913b`. 587 parole, sei sezioni brevi,
