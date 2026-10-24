@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="it">
+<head>
+ <meta charset="utf-8"><script src="/js/admin-theme.js?v=7"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="robots" content="noindex, nofollow, noarchive">
+ <title>Le mie ADS — Subingresso.it</title>
+ <link rel="icon" href="/favicon-v2.svg" type="image/svg+xml">
+ <link rel="stylesheet" href="/css/tailwind.css?v=4">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link rel="stylesheet" href="/css/personal-ads.css?v=1">
+</head>
+<body>
+ <header class="pa-header"><a class="pa-brand" href="/">Subingresso<span>.it</span></a><a href="/dashboard">Torna alla dashboard</a></header>
+ <div id="paGate" class="pa-gate" role="status"><h2>Le mie ADS</h2><p id="paGateText">Verifica dell’accesso amministratore…</p><button id="paLogin" type="button" hidden>Accedi</button><button id="paRetryGate" type="button" hidden>Riprova</button></div>
+ <main id="paApp" hidden>
+  <div class="pa-title-row"><div><h1>Le mie ADS</h1><p>La tua raccolta privata. Scegli un messaggio, prendi il formato e riutilizzalo.</p></div><button id="paDownloadAll" type="button">Scarica tutta la raccolta</button></div>
+  <section class="pa-results" aria-labelledby="paResultsTitle">
+   <div class="pa-section-head"><h2 id="paResultsTitle">Come stanno andando</h2><div class="pa-period"><label for="paDays">Clic degli ultimi</label><select id="paDays"><option value="7">7 giorni</option><option value="30" selected>30 giorni</option><option value="90">90 giorni</option><option value="365">365 giorni</option></select><button id="paRefresh" type="button">Aggiorna</button></div></div>
+   <dl id="paTotals" class="pa-metrics"></dl>
+   <p id="paFinding" class="pa-muted"></p>
+   <details id="paStatsDetails"><summary>Statistiche complete e criteri di misura</summary>
+    <p>Impressione: almeno metà banner visibile per un secondo nel blog, una volta per sessione, creatività, misura e posizione. Il CTR usa solo i clic con un’impressione misurata. I link condivisi fuori dal blog misurano i clic; le immagini scaricate da sole non misurano le visualizzazioni.</p>
+    <p>Conversione: un clic che porta all’azione prevista. Vendita → invio di un annuncio; acquisto → consultazione di un recapito; fiere → salvataggio di una fiera. Non certifica una compravendita. Iscrizioni, acquisti Vetrina e incassi netti dei rimborsi sono separati. Attribuzione all’ultima ADS cliccata nei 7 giorni precedenti, per utenti riconosciuti dopo l’accesso; ogni azione appartiene a una sola ADS. Il periodo seleziona i clic e le loro conversioni osservate fino a oggi.</p>
+    <p>Le anteprime admin e le automazioni riconosciute sono escluse. I risultati precedenti all’attivazione non sono ricostruibili. I dati recenti possono maturare per 7 giorni; con pochi clic evita conclusioni premature.</p>
+    <button id="paExport" type="button">Esporta risultati CSV</button>
+    <div class="pa-table-scroll"><table><caption>Risultati per ADS, misura e posizione</caption><thead><tr><th>ADS / posizione</th><th>Misura</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th><th>Iscrizioni</th><th>Annunci</th><th>Recapiti</th><th>Fiere salvate</th><th>Acquisti Vetrina</th><th>Incassi netti</th></tr></thead><tbody id="paStatsRows"></tbody></table></div>
+   </details>
+  </section>
+  <section class="pa-library" aria-labelledby="paLibraryTitle">
+   <div class="pa-section-head"><h2 id="paLibraryTitle">Scegli la tua ADS <span id="paCount"></span></h2><label class="pa-search">Cerca un messaggio<input id="paSearch" type="search" placeholder="Es. banco, piazza, calendario"></label></div>
+   <div id="paFilters" class="pa-filters" role="group" aria-label="Obiettivo ADS"><button type="button" data-goal="all" aria-pressed="true">Tutte</button><button type="button" data-goal="vendi" aria-pressed="false">Vendi posteggi</button><button type="button" data-goal="compra" aria-pressed="false">Compra posteggi</button><button type="button" data-goal="fiere" aria-pressed="false">Calendario fiere</button></div>
+   <div class="pa-workspace"><div id="paList" class="pa-list" aria-label="Creatività disponibili"></div>
+    <article id="paEditor" class="pa-editor" aria-labelledby="paAdTitle">
+     <div class="pa-editor-head"><div><h3 id="paAdTitle"></h3><p id="paAdOrigin" class="pa-muted"></p></div><button id="paCopyHtml" class="pa-primary" type="button">Copia codice per il blog</button></div>
+     <div class="pa-preview-controls"><label for="paFormat">Misura<select id="paFormat"></select></label><span id="paDimensions" class="pa-muted"></span></div>
+     <div class="pa-preview" id="paPreviewFrame"></div>
+     <p id="paAdNote" class="pa-note" hidden></p>
+     <dl id="paAdMetrics" class="pa-ad-metrics"></dl>
+     <div class="pa-placement"><label for="paPlacement">Nome della posizione<input id="paPlacement" type="text" value="blog" pattern="[a-z0-9_-]{1,80}" maxlength="80" aria-describedby="paPlacementHint"></label><p id="paPlacementHint" class="pa-muted">Es. articolo-bandi-centro. Usa nomi diversi per confrontare i punti in cui inserisci il banner.</p></div>
+     <div class="pa-actions"><button id="paCopyLink" type="button">Copia link tracciato</button><a id="paPng" download>Scarica PNG</a><a id="paSvg" download>Scarica SVG</a><button id="paPack" type="button">Pacchetto di questa ADS</button><a id="paDestination" target="_blank" rel="noopener">Apri destinazione</a></div>
+     <details><summary>Come usarla nel blog</summary><p>Copia il codice e incollalo nella modalità HTML dell’articolo. Il banner punta già alla sezione corretta e mantiene il proprio codice di tracciamento. La misura scelta resta nel codice: per uno spazio stretto usa il rettangolo o il banner mobile.</p><p>Il pacchetto contiene le 8 misure in PNG e SVG, i link e il codice pronto. Se carichi l’immagine altrove, usa anche il suo link tracciato; il solo file immagine non permette di attribuire clic e conversioni.</p><label for="paCode">Codice pronto<textarea id="paCode" readonly rows="5" spellcheck="false"></textarea></label></details>
+    </article>
+   </div>
+  </section>
+  <p id="paUpdated" class="pa-muted"></p>
+ </main>
+ <div id="paStatus" class="pa-status" role="status" aria-live="polite" hidden></div>
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+ <script src="/js/supabase-config.js?v=3"></script>
+ <script src="/js/data.js?v=24"></script>
+ <script src="/js/auth.js?v=28"></script>
+ <script src="/js/personal-ads-admin.js?v=1"></script>
+</body>
+</html>

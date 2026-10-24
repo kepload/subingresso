@@ -5,6 +5,22 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## ADS personali — 24 ottobre 2026
+
+- Raccolta admin `/le-mie-ads`: 20 messaggi (7 vendita, 7 acquisto, 6 fiere),
+  8 misure, 160 varianti PNG/SVG; quattro riprendono banner del blog.
+  Copia codice/link, ZIP singolo/completo, filtri e risultati per posizione.
+- Statistiche vere: impressione 50%/1s, clic deduplicati, ultima ADS/7 giorni;
+  conversioni distinte da vendite, incassi Vetrina netti e CSV. Invii conservati
+  dopo vendita; ricevute minime dei salvataggi fiere conservate alla rimozione.
+  Nessun nuovo ID persistente, nessuno storico inventato o nuovo invio.
+- Schema applicato: tabelle private/RPC admin e trigger ricevute verificati;
+  eventi/ricevute 0, impronte utenti/annunci/articoli/pagamenti identiche.
+  Test SQL ROLLBACK, API, Chrome1440/768/320 e WebKit390 chiaro/scuro,
+  ZIP/CSV e regressione blog passati; revisione: tre correzioni risolte.
+  Contratto `data/PERSONAL_ADS.md`, prove `Documents/ads-personali-20261024`.
+  Backup remoto tag/ramo verificato; cleanup helper con errore noto.
+
 ## Articolo punti prima del bando — 24 ottobre 2026
 
 - Pubblicato «Bolkestein: quali punti puoi prepararti a ottenere prima del

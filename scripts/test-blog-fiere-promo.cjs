@@ -51,7 +51,11 @@ async function run(engine, name, width, height) {
                 assert(await cards.count()<=2);
                 if(post){
                     const region=post.slug.includes('veneto')?'Veneto':post.slug.includes('lombardia')?'Lombardia':null;
-                    assert.equal(await page.locator('[data-fiere-cta]').first().getAttribute('href'),region?'/fiere?regione='+region:'/fiere');
+                    const href=await page.locator('[data-fiere-cta]').first().getAttribute('href');
+                    const tracked=new URL(href,'https://subingresso.it');
+                    if(tracked.pathname==='/api/personal-ads'){
+                        assert.equal(tracked.origin,'https://subingresso.it');assert.equal(tracked.searchParams.get('action'),'click');assert.equal(tracked.searchParams.get('ad'),'fiere-01');assert.equal(tracked.searchParams.get('format'),'editoriale');assert.equal(tracked.searchParams.get('region'),region);
+                    }else assert.equal(href,region?'/fiere?regione='+region:'/fiere');
                     const before=await cards.count();
                     await page.evaluate(p=>BlogFierePromo.mount(document.querySelector('#blogPostContent'),p,SLUG_TO_REGIONE),post);
                     assert.equal(await cards.count(),before,'mount ripetuto non duplica');
