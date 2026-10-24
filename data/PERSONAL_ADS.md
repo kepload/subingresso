@@ -11,6 +11,11 @@ Nessun link pubblico alla raccolta; accesso dall’admin della dashboard,
 noindex/noarchive e risposte private/no-store. Le singole immagini sono
 pubbliche perché devono poter apparire negli articoli.
 
+Hosting: `/api/personal-ads` è riscritto su `/api/blog?personal_ads=1`;
+il dispatch iniziale usa `lib/personal-ads-handler.cjs` e termina prima
+dei normali header/cache del blog. Si riusa la funzione esistente per
+restare nel limite12 del pianoHobby, conservando i percorsi pubblici.
+
 ## Materiali e riuso
 
 20messaggi:7vendita,7acquisto,6fiere. Catalogo `lib/personal-ads.cjs`.

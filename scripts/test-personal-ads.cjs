@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
 const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
-const root=path.resolve(__dirname,'..'),catalog=require('../lib/personal-ads.cjs'),handler=require('../api/personal-ads.js');
+const root=path.resolve(__dirname,'..'),catalog=require('../lib/personal-ads.cjs'),handler=require('../lib/personal-ads-handler.cjs');
 const out=process.env.PERSONAL_ADS_TEST_OUT||path.join(root,'.taste-skill/personal-ads-qa');fs.mkdirSync(out,{recursive:true});
 const uid='00000000-0000-4000-8000-000000000001',clickId='00000000-0000-4000-8000-000000000010';
 const baseline={ads:catalog.ads,formats:catalog.formats,stats:{updated_at:'2026-10-24T17:30:00Z',started_at:null,rows:[]}};
@@ -11,6 +11,10 @@ async function apiTests(){
  async function run(query={},headers={},method='GET'){const result={code:200,headers:{},setHeader(k,v){this.headers[k]=v;},status(c){this.code=c;return this;},json(body){this.body=body;return this;},end(){return this;}};await handler({query,headers,method},result);return result;}
  try{
   let r=await run();assert.equal(r.code,401);assert(!r.body.ads);assert.equal(calls.length,0);
+  const dispatched={code:200,headers:{},setHeader(k,v){this.headers[k]=v;},status(code){this.code=code;return this;},json(body){this.body=body;return this;},end(){}};
+  await require('../api/blog.js')({query:{personal_ads:'1'},headers:{},method:'GET'},dispatched);
+  assert.equal(dispatched.code,401);assert.match(dispatched.headers['Cache-Control'],/no-store/);assert(!dispatched.body.ads);assert.equal(calls.length,0);
+  const rewrite=JSON.parse(fs.readFileSync(path.join(root,'vercel.json'),'utf8')).rewrites.find(row=>row.source==='/api/personal-ads');assert.equal(rewrite.destination,'/api/blog?personal_ads=1');
   mode='denied';r=await run({},{authorization:'Bearer user-token'});assert.equal(r.code,403);assert(!r.body.ads);
   mode='normal';r=await run({days:'90'},{authorization:'Bearer admin-token'});assert.equal(r.code,200);assert.equal(r.body.ads.length,20);assert.equal(r.body.formats.length,8);assert.equal(calls.at(-1).args.p_days,90);assert.equal(r.headers['Cache-Control'],'private, no-store');
   r=await run({action:'click',ad:'bad',format:'300x250'});assert.equal(r.code,404);

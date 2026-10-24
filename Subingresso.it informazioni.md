@@ -21,6 +21,10 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Contratto `data/PERSONAL_ADS.md`, prove `Documents/ads-personali-20261024`.
   Backup remoto tag/ramo verificato; cleanup helper con errore noto.
 
+- Primo deploy `9abdcee` respinto: limite12 funzioni del pianoHobby.
+  Gestore ADS accorpato al runtime blog con rewrite del medesimoURL;
+  controlli admin/no-store conservati, nessun cambio piano.
+
 ## Articolo punti prima del bando — 24 ottobre 2026
 
 - Pubblicato «Bolkestein: quali punti puoi prepararti a ottenere prima del

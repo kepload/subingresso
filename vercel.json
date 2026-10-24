@@ -11,6 +11,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/api/personal-ads",     "destination": "/api/blog?personal_ads=1" },
     { "source": "/evento",             "destination": "/api/evento" },
     { "source": "/fiere/:slug",         "destination": "/api/fiera?slug=:slug" },
     { "source": "/sitemap.xml",        "destination": "/api/sitemap" },

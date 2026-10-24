@@ -71,6 +71,9 @@ function getBlogTemplate() {
 }
 
 module.exports = async function handler(req, res) {
+    // Servizio ADS nello stesso runtime: conserva le 12 funzioni del piano.
+    // Il gestore imposta no-store e controlla il ruolo prima di ogni lettura.
+    if (req.query?.personal_ads === '1') return require('../lib/personal-ads-handler.cjs')(req, res);
     const slug = (req.query && req.query.post) ? String(req.query.post).trim() : '';
 
     let post = null, related = [], unavailable = false;
