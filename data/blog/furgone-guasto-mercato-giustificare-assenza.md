@@ -1,10 +1,7 @@
 # Furgone guasto e assenza al mercato: fonti e limiti
 
-Verifica 25 ottobre 2026. Il messaggio conteneva un frammento sul rifiuto del
-posto alla spunta, già trattato nell'articolo pubblicato
-`spunta-rifiuto-posteggio-presenza`. Chiesta chiarificazione facoltativa;
-in assenza di correzioni comunicata la scelta del titolo completo sul guasto.
-Nessun secondo articolo sul rifiuto creato o modificato.
+Verifica 25 ottobre 2026. Articolo originale sul guasto del mezzo e sulla
+giustificazione delle assenze, distinto da `spunta-rifiuto-posteggio-presenza`.
 
 ## Fonti ufficiali
 - Verbania, regolamento aree mercatali modificato DCC11/2021, art.31 commi5 e6,
