@@ -5,6 +5,13 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Cedere un solo posteggio: pubblicazione verificata — 25 ottobre 2026
+
+- Pubblicato «Posso vendere un solo posteggio e tenere gli altri mercati della mia licenza?», slug `vendere-un-solo-posteggio-tenere-altri-mercati`, ID `aa7a9621-839e-4209-bb46-a0447bf0b359`. Articolo e copertina su subingresso.it HTTP200; 625 parole, sei sezioni brevi, due soli banner vendita. Nessun doppione: 110 articoli precedenti invariati, totale111.
+- Fonti primarie tutte200: MIMIT236368/2016 pagina2 (chiarimento storico sulla cessione del singolo ramo, originale e pagina verificati), Lombardia l.r.6/2010 art.25 vigente e servizioSUAP Brescia. Ambito lombardo esplicito, nessuna promessa di separazione automatica di vecchi titoli. Fonti/testo in `data/blog/vendere-un-solo-posteggio-tenere-altri-mercati.*`; dossier, prompt e originale imagegen integrato in `Documents/articoli-subingresso/vendere-un-solo-posteggio-tenere-altri-mercati/`.
+- Materiali `e9af19b`, Vercel riuscito `CfDAhnuE6ZX8zJ4mQVNNzXLfANzd`; copertina WebP1600×900 identica per SHA256. Verificati SEO SSR/NewsArticle/canonical, indice e sitemap; Chromium1440/768/320 e WebKit390, anche senzaJS: nessun overflow/errori finali, entrambi i banner raggiungono `/vendi`200. Solo anteprime dei clic, nessun dato reale di prova. Backup remoto preventivo verificato, noto errore cleanuphelper; gitleaks senza rilievi. Prove iniziali corrette per trackerCTA e attesa delle richieste prima di rinavigare; dettagli nel dossier, componenti invariati e lavoro estraneo preservato.
+- Search Console NON inviata: accesso effettivo al loginGoogle, nessuna sessione debug/credenziale pertinente; integrazione trovata solo in lettura. Resta Controllo URL → Richiedi indicizzazione per `https://subingresso.it/blog?post=vendere-un-solo-posteggio-tenere-altri-mercati`, distinto dalla presenza in sitemap.
+
 ## San Faustino Brescia: pubblicazione sospesa — 25 ottobre 2026
 
 - Preparata, NON pubblicata, la bozza «Fiera di San Faustino a Brescia: mappa dei posteggi, numeri e accessi per i furgoni», slug `fiera-san-faustino-brescia-posteggi-accessi-furgoni`, ID nessuno. Blocco richiesto dall'utente: pagina e planimetria comunali2026 HTTP410; nuova pagina documenti senza mappa. Notizia comunale15/10, aggiornata23/10, conferma nuova ZTL da gennaio2027: impossibile riciclare i percorsi2026 come accessi2027. Confermati soltanto organico602/5agricoli e informazioni generali della schedaSUAP; nessuna dimensione, tariffa o disponibilità inventata.
