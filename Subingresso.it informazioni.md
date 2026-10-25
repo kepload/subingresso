@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo assenze del vecchio titolare — 25 ottobre 2026
+
+- Pubblicato «Compro una licenza ambulante: le assenze del vecchio titolare passano a me?», slug `compro-licenza-ambulante-assenze-vecchio-titolare`, ID `7bb8736c-89be-4cae-ae45-dec41e2f2d02`. 527 parole editoriali, sei sezioni; fonti Siena2026/Zocca, passaggio assenze distinto dal mancato cumulo con limite proporzionale ed eccezione contributiva. Esempio15+3=18 limitato a Siena; nessun azzeramento nazionale promesso. Due banner acquisto, copertina originale IA WebP1600×900.
+- Commit `dcdd944`, Vercel `EvV1DMzNd1SWAYzYwffHxg7ZPmNm` success: copertina identicaSHA256, SEO/indice/sitemap e browser online Chromium1440/768/320,WebKit390,senzaJS passati; entrambi i pulsanti verificati senza scritture di prova. Precedenti100articoli identici,101totali. Sorgenti `data/blog/`; prompt, originali e prove `Documents/articoli-subingresso/compro-licenza-ambulante-assenze-vecchio-titolare`.
+- Search Console NON inviata: loginGoogle richiesto, nessuna sessione debug/credenziale pertinente; integrazione trovata solo in lettura. Resta Controllo URL → Richiedi indicizzazione; sitemap distinta dall’invio. Checkout isolato, lavoro estraneo preservato; backup remoto preventivo verificato, cleanup helper con errore noto. Hook iniziale senza binario nel checkout: collegato quello esistente e scansione reale commit senza rilievi; hook ripristinato. ScreenshotPDF web indisponibili, entrambi gli originali scaricati200 e testi ufficiali verificati.
+
 ## Articolo affittuario moroso e posteggio — 25 ottobre 2026
 
 - Pubblicato «Ho affittato il banco e l’affittuario non paga il Comune: chi rischia il posteggio?», slug `affittuario-non-paga-comune-rischio-posteggio`, ID `e8a45208-da76-4459-a4f9-bc26dd12993a`. Sei sezioni semplici, debito e rischio concessione distinti; esempio Milano DD1902/2023 non generalizzato, fonte CCM Firenze. Due banner vendita, copertina originale IA WebP1600×900.
