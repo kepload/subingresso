@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo canone mercatale e TARI — 25 ottobre 2026
+
+- Pubblicato «Pago già il canone mercatale: devo pagare anche la TARI del banco?», slug `canone-mercatale-tari-banco`, ID `c585fa3a-16e2-4b37-b374-55ec94e2f5e1`. 556 parole editoriali, sei sezioni; legge160/2019 commi838/842, occupazioni temporanee/permanenti e rata annuale distinte. Sentenza Piemonte412/2026 esplicitamente circoscritta a Volvera/TARIG2024 e tariffa unica dal2025; nessuna esenzione o vittoria garantita. Due banner fiere/acquisto, copertina originale IA WebP1600×900.
+- Commit `29cc711`, Vercel `HzkYf6h9q93h27ZpLDA8WKTAxqDN` success: copertina identicaSHA256, SEO/indice/sitemap e Chromium1440/768/320,WebKit390,senzaJS passati; due pulsanti verificati senza scritture di prova. Precedenti107articoli identici,108totali al controllo. Sorgenti/fonti `data/blog/`; prompt, originali e prove `Documents/articoli-subingresso/canone-mercatale-tari-banco`.
+- Search Console NON inviata: loginGoogle richiesto, nessuna sessione debug/credenziale pertinente; integrazione trovata in sola lettura. Resta Controllo URL → Richiedi indicizzazione, distinto dalla sitemap. Backup remoto preventivo verificato; cleanup helper con errore noto. Sentenza originale scaricata200, testo integrale e pagina4 verificati localmente. Lavoro concorrente conservato; gitleaks senza rilievi.
+
 ## Articolo rettifica presenze fiera — 25 ottobre 2026
 
 - Pubblicato «Nella graduatoria della fiera mancano le mie presenze: come chiedo la correzione?», slug `graduatoria-fiera-presenze-mancanti-correzione`, ID `4c61042a-ff92-4adb-9b83-2d4be729ff7c`. 576 parole editoriali, sei sezioni e modello da copiare; Cavriago art.18 dieci giorni solo locali, prove/registri/accesso documentale e riesame distinti. Due banner fiere/acquisto, copertina originale IA WebP1600×900.
