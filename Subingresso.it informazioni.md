@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo moglie al mercato — 25 ottobre 2026
+
+- Pubblicato «Può andare mia moglie al mercato al posto mio? Delega, requisiti e documenti», slug `moglie-mercato-delega-requisiti-documenti`, ID `308e7762-2c00-4612-acef-5447b552dfb8`. 556 parole editoriali, sei sezioni brevi; coadiutrice abituale e aiuto occasionale distinti, INPS/INL e regole commerciali separati. Cavallermaggiore art.12bis/Torino citati come esempi locali, requisiti alimentari senza SAB imposto a ogni addetto. Due banner fiere/acquisto, copertina originale IA WebP1600×900.
+- Commit `4416750`, Vercel `5bNGGK6cg9D3ZQsZnKPYYoUGDnnF` success: copertina identicaSHA256, SEO/indice/sitemap e Chromium1440/768/320,WebKit390,senzaJS passati; due pulsanti verificati senza scritture di prova. Precedenti105articoli identici,106totali al controllo. Sorgenti/fonti `data/blog/`; prompt, originali e prove `Documents/articoli-subingresso/moglie-mercato-delega-requisiti-documenti`.
+- Search Console NON inviata: loginGoogle richiesto, nessuna sessione debug/credenziale pertinente; integrazione trovata in sola lettura. Resta Controllo URL → Richiedi indicizzazione, distinto dalla sitemap. Backup remoto preventivo verificato, cleanup helper con errore noto; PDF Cavallermaggiore scaricato200 e pagina32 letta localmente dopo errore del lettoreweb. Aggiornamenti remoti acquisiti senza sovrascrivere il lavoro altrui; gitleaks senza rilievi.
+
 ## Articolo rifiuto alla spunta e presenza — 25 ottobre 2026
 
 - Pubblicato «Alla spunta rifiuto il posto assegnato: mi contano comunque la presenza?», slug `spunta-rifiuto-posteggio-presenza`, ID `83436de3-12dd-4da2-a343-de67efe47c50`. 530 parole editoriali, sei sezioni; fonti Cavezzo art.14/Bisceglie art.13, mancata assegnazione distinta dal rifiuto, adeguatezza e forza maggiore senza presenza garantita o generalizzazioni nazionali. Due banner fiere/acquisto, copertina originale IA WebP1600×900.
