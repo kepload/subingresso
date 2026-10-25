@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo rettifica presenze fiera — 25 ottobre 2026
+
+- Pubblicato «Nella graduatoria della fiera mancano le mie presenze: come chiedo la correzione?», slug `graduatoria-fiera-presenze-mancanti-correzione`, ID `4c61042a-ff92-4adb-9b83-2d4be729ff7c`. 576 parole editoriali, sei sezioni e modello da copiare; Cavriago art.18 dieci giorni solo locali, prove/registri/accesso documentale e riesame distinti. Due banner fiere/acquisto, copertina originale IA WebP1600×900.
+- Commit `45b110c`, Vercel `3hh1Hn2WztP1Pwv11uHseC7Rt8oA` success: immagine identicaSHA256, SEO/indice/sitemap e Chromium1440/768/320,WebKit390,senzaJS passati; due pulsanti reali verificati senza scritture di prova. Precedenti106articoli identici,107totali. Sorgenti/fonti `data/blog/`; prompt, originali e prove `Documents/articoli-subingresso/graduatoria-fiera-presenze-mancanti-correzione`.
+- Search Console NON inviata: verifica corrente al loginGoogle, nessuna sessione debug o credenziale pertinente; integrazione trovata solo in lettura. Resta Controllo URL → Richiedi indicizzazione, distinto dalla sitemap. Backup remoto verificato, cleanup helper con errore noto; collegamentoPDF iniziale incompleto404 corretto, originale200 e pagina10 letta localmente dopo errore del lettoreweb. Checkout isolato, lavoro estraneo conservato; gitleaks senza rilievi.
+
 ## Articolo moglie al mercato — 25 ottobre 2026
 
 - Pubblicato «Può andare mia moglie al mercato al posto mio? Delega, requisiti e documenti», slug `moglie-mercato-delega-requisiti-documenti`, ID `308e7762-2c00-4612-acef-5447b552dfb8`. 556 parole editoriali, sei sezioni brevi; coadiutrice abituale e aiuto occasionale distinti, INPS/INL e regole commerciali separati. Cavallermaggiore art.12bis/Torino citati come esempi locali, requisiti alimentari senza SAB imposto a ogni addetto. Due banner fiere/acquisto, copertina originale IA WebP1600×900.
