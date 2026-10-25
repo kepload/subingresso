@@ -21,9 +21,20 @@ Non dichiarata lettura integrale degli albi storici né assenza di eventi nei
 quattro comuni senza schede. Nuovi bandi e conferme annuali sono manutenzione
 futura, distinta dalla ricerca corrente conclusa.
 
-**Pubblicazione e verifica online in corso.** TO DO e riepilogo restano invariati
-fino all’esito online. Cache JS119/JSON87; test provinciale con
-`PLAYWRIGHT_MODULE`, Chromium 1440/320 e WebKit 390, tutte le 98 schede e pagine SSR.
+**Pubblicata e verificata online:** dati `977a65d`, cinque asset identici ai
+blob Git e **98 pagine HTTP200** con H1, canonical, note e costi corretti;
+verifica completata in **19 secondi**. Test provinciale passato online
+nei tre formati con tutti i 98 dialoghi; sito reale con script e icone attivi,
+metodi di scrittura bloccati, passato nei tre formati. TO DO spuntata e riepilogo
+aggiornato solo dopo queste verifiche: **66 province concluse, 44 rimanenti su 110**.
+Nessun altro lavoro avviato. Cache JS119/JSON87.
+
+Verifiche locali passate: isolamento dei 39 ID e delle 7.151 schede esterne,
+generazione riproducibile, 443 hash degli originali/ricevute, settori,
+**7.249 pagine/3.185 voci sitemap** e suite generale nei cinque formati.
+Test provinciale con `PLAYWRIGHT_MODULE`: Chromium 1440/320 e WebKit 390,
+elenco/mappa e tutti i 98 dialoghi per formato, otto pagine senza JavaScript
+per formato. Gitleaks passato senza bypass.
 
 Elementi operativi e limiti principali:
 
@@ -95,8 +106,12 @@ wrapper privato: snapshot `Documents/backup-subingresso/ricerche-fiere-20261025-
 Per lo spazio disponibile, 110.389 file identici del precedente archivio
 condividono hard link NTFS, con distacco prima di qualsiasi copia aggiornata;
 archivi precedenti preservati. Dossier Ascoli attivo e repository copiati
-indipendentemente. Originali finali Roccafluvione e prove online successive
-saranno inclusi anche nella copia di chiusura del solo dossier provinciale.
+indipendentemente. Originali finali Roccafluvione e prove online inclusi anche nella copia
+indipendente di chiusura `Documents/backup-subingresso/ascoli-piceno-chiusura-20261025-195051`:
+**2.670 file / 258.471.875 byte**, zero errori, SHA256 verificati.
+Manifest `dc67855c53b94d18dc270a6ea771e7878c740b2bf66980d26a77eaae2efd1290`; ricevuta `closing-backup.json` nel dossier.
+Prove e documenti della registrazione finale conservati separatamente con
+propria ricevuta, senza sovrascrivere gli archivi precedenti.
 
 ## Fermo — ricerca documentale del 25 ottobre 2026
 
