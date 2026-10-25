@@ -11,7 +11,13 @@ fonti e audit fiere completi: `data/FIERE.md`.
   piccolo subito sotto, esplicito per fiere/posteggi/vendita e coerente col
   link, anche nei banner90/100px. Importi ed esclamativi conservati; niente
   paragrafi giganti. Scene IA del blog nei verticali/social per occupare lo
-  spazio restante. Assetv4; pubblicazione del seguito in verifica.
+  spazio restante. Assetv4, pubblicato `c397e6a`, Vercel
+  `GJ1K2WZuniyuYwrKh7f79zXYz1da` success:320immagini identiche online,
+  20linkpreview corretti e API anonima401. Build160varianti verifica anche
+  frase numerica intera e contesto vicino; pannello/tracker e ZIP finali
+  passati Chrome1440/768/320 e WebKit390, SVG con immagini verificati in
+  entrambi i browser. Inspector0FAIL, otto tavole controllate. Prove nella
+  stessa cartella `ads-copy-layout-20261025`; backup remoto dedicato valido.
 - Correzione esplicita dell’utente: punti esclamativi, con «5.000 € in
   2 giorni!!!» e «5.000 € al giorno!!!»; chiusure dei titoli esclamative
   in tutte le misure, assetv3. Questa preferenza prevale sull’interrogativa
