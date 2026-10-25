@@ -730,13 +730,13 @@
       "review": "existing-curated-note"
     },
     "marche-grottammare-fiera-di-san-martino": {
-      "label": "Base 3×3 m: 90 € per due giorni; altre tariffe distinte",
+      "label": "Base 3×3 m: 90 € per due giorni; categorie e vie distinte",
       "kind": "fee",
       "period": "2026",
-      "details": "Listino comunale per il 10–11 novembre: tariffa base 3×3 m 90 €, 4×3 96 €, 5×3 102 €, 6×3 117 €, fino a 10×3 160 € complessivi per due giorni. Nelle vie a maggiore potenzialità 3×3 109 €, fino a 10×3 200 €. Somministrazione: 6×3 185 € nelle vie ordinarie o 270 € nelle vie di maggiore potenzialità; superfici maggiori hanno quote diverse. Artigiani ed espositori hanno tariffe proprie: consultare la tabella e la planimetria.",
+      "details": "Tariffe 2026 per due giorni: base 3×3 m 90 €, 4×3 96 €, 5×3 102 €, 6×3 117 €, fino a 10×3 160 €. Vie di maggiore potenzialità: 3×3 109 €, fino a 10×3 200 €. Somministrazione 6×3: 185 € nelle vie ordinarie o 270 € in quelle maggiori, con altre quote per superfici diverse. Espositori 100 €; artigiani fino a 4 metri lineari 100 €, da 5 a 6 metri 110 €, oltre 6 metri 130 €. Consultare tabella e planimetria: nessuna tariffa universale.",
       "sourceUrl": "https://www.comune.grottammare.ap.it/wp-content/uploads/2026/05/TARIFFE-2026.pdf",
-      "checkedAt": "2026-10-15",
-      "review": "live-source-review"
+      "checkedAt": "2026-10-25",
+      "review": "original-document-and-visual-review"
     },
     "piemonte-alpignano-fiera-autunnale-o-di-san-martino": {
       "label": "Bollo 16 € + canone secondo superficie",
