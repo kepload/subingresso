@@ -4,6 +4,9 @@
  if(window.SubingressoAdMotion){window.SubingressoAdMotion.scan();return;}
  const states=new Map(),cache=new Map(),bound=new WeakSet();
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ // The owner's gallery explicitly requests automatic previews, including when
+ // the browser prefers reduced motion. Public embeds keep that preference.
+ const autoplay=document.documentElement.hasAttribute('data-pa-motion-autoplay');
  let paused=false,forced=false,queued=false;
  const styles=document.createElement('style');styles.textContent='[data-pa-motion-host]{display:block;position:absolute;pointer-events:none;line-height:0;overflow:hidden}[data-pa-player]{display:inline-block;max-width:100%;vertical-align:top}[data-pa-player]>a{display:block;line-height:0}[data-pa-pause]{display:block;margin:4px 0 0 auto;border:0;background:transparent;color:#123b7a;font:600 12px/1.4 system-ui,sans-serif;padding:6px 4px;min-height:32px;cursor:pointer}[data-pa-pause][hidden]{display:none}[data-pa-pause]:focus-visible{outline:2px solid #123b7a;outline-offset:2px}';document.head.append(styles);
  function address(img){
@@ -30,7 +33,7 @@
   }).catch(error=>{cache.delete(url);throw error;});
   cache.set(url,promise);if(cache.size>12)cache.delete(cache.keys().next().value);return promise;
  }
- function motionReduced(state){return reduced.matches&&!forced&&!state?.forced;}
+ function motionReduced(state){return reduced.matches&&!autoplay&&!forced&&!state?.forced;}
  function blocked(state){const dialog=document.querySelector('dialog[open]');return paused||state.paused||motionReduced(state)||document.hidden||!state.visible||!state.img.isConnected||(dialog&&!dialog.contains(state.img));}
  function position(state){
   if(!state.host)return;const image=state.img.getBoundingClientRect(),parent=state.parent.getBoundingClientRect();
@@ -65,9 +68,9 @@
    if(generation!==state.generation||blocked(state))return;
    const host=document.createElement('span');host.dataset.paMotionHost='';host.setAttribute('aria-hidden','true');
    const shadow=host.attachShadow({mode:'open'}),svg=document.importNode(original,true);
-   // Explicit Play overrides the preference for this preview only; automatic
-   // playback still honours reduced motion. Cached/exported SVGs stay intact.
-   if(reduced.matches&&(forced||state.forced))for(const style of svg.querySelectorAll('style'))style.textContent=style.textContent.replace('@media(prefers-reduced-motion:no-preference)','@media all');
+   // Gallery autoplay and explicit Play apply only to this preview instance.
+   // Public embeds and standalone SVGs retain their reduced-motion fallback.
+   if(reduced.matches&&(autoplay||forced||state.forced))for(const style of svg.querySelectorAll('style'))style.textContent=style.textContent.replace('@media(prefers-reduced-motion:no-preference)','@media all');
    svg.classList.add('pa-repeat');svg.setAttribute('width','100%');svg.setAttribute('height','100%');
    svg.style.cssText='display:block;width:100%;height:100%';svg.setAttribute('aria-hidden','true');
    shadow.append(svg);state.host=host;state.parent.append(host);position(state);

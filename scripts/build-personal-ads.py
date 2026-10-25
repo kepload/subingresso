@@ -197,7 +197,22 @@ def animate_svg(svg, letters):
     """Readable finished frame; three 6.4s cycles in the standalone export.
     The viewport player opts into repeat only while visible, with pause controls.
     """
+    background = re.search(r'<rect width="(\d+)" height="(\d+)" fill="([^"]+)"/>', svg)
+    w, h = map(int, background.group(1, 2))
+    gold = background.group(3) == '#ffcc32'
+    light, shade = ('#fff2af', '#b37b09') if gold else ('#5b9fe3', '#06172f')
+    # Broad, transparent washes sit behind every glyph and the photographs.
+    # Their transform/opacity loop continues through the title's reading pause.
+    ambient = (f'<defs><radialGradient id="pa-light"><stop stop-color="{light}" stop-opacity=".42"/><stop offset="1" stop-color="{light}" stop-opacity="0"/></radialGradient>'
+               f'<radialGradient id="pa-shade"><stop stop-color="{shade}" stop-opacity="{.12 if gold else .32}"/><stop offset="1" stop-color="{shade}" stop-opacity="0"/></radialGradient></defs>'
+               f'<g class="pa-ambient" aria-hidden="true"><ellipse class="pa-wash pa-wash-light" cx="{w * .18:.2f}" cy="{h * .18:.2f}" rx="{w * .72:.2f}" ry="{h * .92:.2f}" fill="url(#pa-light)"/>'
+               f'<ellipse class="pa-wash pa-wash-shade" cx="{w * .84:.2f}" cy="{h * .78:.2f}" rx="{w * .65:.2f}" ry="{h * .85:.2f}" fill="url(#pa-shade)"/></g>')
+    svg = svg.replace(background.group(0), background.group(0) + ambient, 1)
     css = ['@media(prefers-reduced-motion:no-preference){',
+           '.pa-wash{transform-box:view-box;transform-origin:center;animation:pa-drift 19.2s ease-in-out 1 both}',
+           '.pa-wash-shade{animation-direction:reverse}',
+           '.pa-repeat .pa-wash{animation-iteration-count:infinite}',
+           '@keyframes pa-drift{0%,100%{transform:translate(-8%,4%) scale(1);opacity:.65}50%{transform:translate(16%,-9%) scale(1.12);opacity:1}}',
            '.pa-letter{animation-duration:6.4s;animation-timing-function:step-end;animation-fill-mode:both;animation-iteration-count:3}',
            '.pa-action{transform-box:fill-box;transform-origin:center;animation:pa-action 6.4s cubic-bezier(.22,1,.36,1) 3 both}',
            '.pa-repeat .pa-letter,.pa-repeat .pa-action{animation-iteration-count:infinite}',

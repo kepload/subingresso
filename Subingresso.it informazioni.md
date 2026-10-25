@@ -7,6 +7,17 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## ADS: messaggi e spazio — 25 ottobre 2026
 
+- Richiesta attuale: nella raccolta avvio automatico anche con riduci movimento,
+  senza clic su «Riproduci»; testi conservati, sfumature blu/oro lente19,2s
+  dietro la grafica in tutte160varianti animate, anche durante la lettura.
+  Pausa e stop fuori campo/scheda nascosta conservati; inserimenti pubblici
+  rispettano ancora riduci movimento. Assetv6/player3/admin6. Prove movimento
+  Chromium1440/320 e WebKit390, pannello/API/tracker e blogSSR passate;
+  inspector0FAIL con eccezioni gradiente richiesto e mosaico1:1 preesistente.
+  Prove `Documents/ads-autoplay-sfondo-20261025`; pubblicazione da verificare.
+  Backup tag/ramo remoti verificati, noto errore cleanuphelper. Primo test
+  blog senza envPlaywright e soglia decimale19,2s corretti nelle prove;
+  scanGitleaks con configurazione progetto senza rilievi.
 - Segnalazione «non si animano»: Chrome155 isolato con pagina/asset pubblicati
   e dati fittizi conferma avvio normale; con riduci movimento il comando era
   disabilitato. Corretto: statico automatico, «Riproduci animazioni» consente

@@ -6,7 +6,7 @@ al pulsante e ripetizione, conservando blu/oro, stile e messaggi approvati.
 Consultati i riferimenti primari seguenti. Non dimostrano un miglioramento
 di CTR per questeADS: nessun risultato commerciale è stato inventato.
 
-- [AdRoll, Animated HTML5 Guidelines](https://help.adroll.com/hc/en-us/articles/360030386192-Animated-HTML5-Web-Ads-Format-Guidelines): consiglia messaggio breve, marchio coerente, immagini pertinenti, CTA chiara, animazioni misurate e tempo per leggere. Scelti due soli gesti in sequenza, senza effetti decorativi aggiuntivi.
+- [AdRoll, Animated HTML5 Guidelines](https://help.adroll.com/hc/en-us/articles/360030386192-Animated-HTML5-Web-Ads-Format-Guidelines): consiglia messaggio breve, marchio coerente, immagini pertinenti, CTA chiara, animazioni misurate e tempo per leggere. Scrittura e richiamo CTA conservati; sfumature lente aggiunte su richiesta esplicita.
 - [web.dev, High-performance CSS animations](https://web.dev/articles/animations-guide): opacity/transform per contenere il costo di layout e pittura. Scelta tecnica CSS, nessuna libreria o timer continuo per animare.
 - [W3C, Pause Stop Hide](https://www.w3.org/WAI/WCAG20/Understanding/pause-stop-hide.html): controllo del movimento persistente. Pausa visibile, statico completo e preferenza riduci movimento.
 - [Google, Image ad requirements](https://support.google.com/adspolicy/answer/176108?hl=en-GB): le animazioni per quella piattaforma devono terminare entro30s. EsportazioneSVG autonoma19,2s con ultimo fotogramma leggibile. Non si dichiara che SVG o HTML esportati siano direttamente accettati da Google/AdRoll: restano formati per sito/blog e riuso web, con specifiche di rete da applicare separatamente.
@@ -18,9 +18,19 @@ dopo il titolo, scala1,022; resto del ciclo per leggere. Sono decisioni di
 design, non tempi ottimali provati dalle fonti. Il sottotitolo e la CTA
 rimangono sempre leggibili e cliccabili. Nel player sul sito il loop resta
 continuo, con pausa; negliSVG autonomi3cicli e stato finale completo.
-La preferenza riduci movimento disabilita soltanto l’avvio automatico:
-il pulsante «Riproduci animazioni» consente una prova richiesta dall’utente,
-senza salvare la scelta. Un errore di caricamento espone «Riprova animazioni».
+Nella raccolta `/le-mie-ads` il movimento parte automaticamente anche con
+preferenza riduci movimento, su richiesta esplicita del proprietario:
+`data-pa-motion-autoplay` abilita questa sola pagina, senza scelta salvata.
+Il comando iniziale è «Pausa animazioni». Nel blog, negli inserimenti esterni
+e negli SVG autonomi resta il fallback riduci movimento; la riproduzione
+manuale degli inserimenti è sempre possibile. Errori: «Riprova animazioni».
+
+Due ampie sfumature trasparenti, nei colori blu/oro di ciascuna creatività,
+si spostano lentamente dietro testi e fotografie con transform/opacity.
+Ciclo19,2s continuo nel player, anche durante la lettura del titolo; stessa
+pausa/visibilità del testo. Negli SVG autonomi un solo ciclo19,2s, poi fermo.
+PNG e SVG statici conservano la grafica precedente. Nessun filtro o timer.
+Gli ID dei gradienti sono isolati nello shadow DOM di ciascun player.
 
 Revisione con la skill emil-design-eng:
 
@@ -29,7 +39,7 @@ Revisione con la skill emil-design-eng:
 | Banner statico | Scrittura discreta + impulsoCTA | Porta lo sguardo dal messaggio all’azione |
 | PNG con palette256, dimensione1× | PNG a colori pieni e2× web, SVG in pagina | Riduce scalettature e perdita di dettaglio |
 | JPEG1080/84 incorporato | Originale1600, JPEG94/4:4:4 | Evita un ridimensionamento e riduce la compressione aggiunta |
-| Nessun controllo del movimento | Pausa e statico su riduci movimento | Conserva lettura e controllo |
+| Nessun controllo del movimento | Pausa e fallback ridotto negli inserimenti | Conserva lettura e controllo |
 | Potenziale animazione fuori schermo | SVG vivo solo in vista | Contiene lavoro e memoria |
 
 Nessun cambiamento a identificativi, posizioni, destinazioni, tracciamento,

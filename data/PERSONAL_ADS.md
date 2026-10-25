@@ -184,7 +184,8 @@ e didascalie12px del mosaico; accesso admin e statistiche conservati.
 
 Movimento: `scripts/test-personal-ads-motion.cjs`, Chromium1440/320 e
 WebKit390; fotogrammi, progressione, CTA, ripetizione, ingresso/uscita,
-pausa, scheda nascosta, riduzione movimento e avvio manuale, dialog, formato tardivo e
+pausa, scheda nascosta, avvio automatico della raccolta anche con movimento
+ridotto, sfumature continue e fallback ridotto negli inserimenti, dialog, formato tardivo e
 logout; riuso cross-origin con pausa senza clic, fallback offline/riprova e fine
 delloSVG autonomo. Tutti160PNG controllati per dimensioni e colori pieni.
 `test-blog-loading.cjs` include un inserimentoSSR sanificato e funzionante.
