@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo spunta nei mercati di Milano — 25 ottobre 2026
+
+- Pubblicato «Spunta nei mercati di Milano: orari, dove presentarsi e documenti, mercato per mercato», slug `spunta-mercati-milano-orari-documenti`, ID `661a881d-82ed-4281-8c3c-e25814d83166`. 714 parole visibili, sei sezioni, sette elenchi apribili con tutti93appuntamenti del report21/10/2026; orari vendita/spunta distinti, iscrizione7gennaio–finefebbraio ed esitoSUAP, CUPentro10, ruolino e mercati non presidiati. Due banner fiere/acquisto e copertina originale IA WebP1600×900.
+- Commit `20cf647`, Vercel `ietVbbQNKXFQyqmw9HTFXe5oMaK9` success: immagine identicaSHA256, indice/sitemap/SEO e Chromium1440/768/320,WebKit390,senzaJS passati;93righe e7aperture per formato, due CTA reali verificate senza scritture di prova. Precedenti108articoli identici,109totali. Sorgenti/fonti `data/blog/`, prove/prompt/originali `Documents/articoli-subingresso/spunta-mercati-milano-orari-documenti`.
+- Search Console NON inviata: loginGoogle richiesto, nessuna sessione debug/credenziale pertinente; integrazione disponibile solo in lettura. Resta Controllo URL → Richiedi indicizzazione. Backup remoto preventivo verificato, cleanuphelper con errore noto; push iniziale non-fast-forward risolto con rebase in checkout isolato, lavoro estraneo preservato. Fonti403 con fetch diretto, tutte200 via Chromium; originaliPDF e pagine renderizzate controllati. Toponimi estesi e linkreport relativo corretti prima del deploy; gitleaks senza rilievi.
+
 ## Articolo canone mercatale e TARI — 25 ottobre 2026
 
 - Pubblicato «Pago già il canone mercatale: devo pagare anche la TARI del banco?», slug `canone-mercatale-tari-banco`, ID `c585fa3a-16e2-4b37-b374-55ec94e2f5e1`. 556 parole editoriali, sei sezioni; legge160/2019 commi838/842, occupazioni temporanee/permanenti e rata annuale distinte. Sentenza Piemonte412/2026 esplicitamente circoscritta a Volvera/TARIG2024 e tariffa unica dal2025; nessuna esenzione o vittoria garantita. Due banner fiere/acquisto, copertina originale IA WebP1600×900.
