@@ -5,6 +5,13 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Il Comune sposta il mercato: pubblicazione verificata — 25 ottobre 2026
+
+- Pubblicato «Il Comune sposta il mercato: come vengono riassegnati i posteggi?», slug `comune-sposta-mercato-riassegnazione-posteggi`, ID `0837dbef-fc5c-40b1-b43e-7349314dba42`. Articolo e copertina HTTPS su subingresso.it HTTP200; 538 parole editoriali, sei sezioni brevi e due soli banner: ricerca posteggi al centro, vendita in chiusura. Nessun doppione; 117 articoli precedenti invariati, totale118.
+- Fonti primarie HTTP200: Lombardia DGR4054/2020 allegatoA punto8 comma4 e quadro normativo aggiornato9/10/2026; Lazio LR22/2019 art52 comma6, testo coordinato vigente. Criteri esclusivamente regionali; atti, graduatoria e tempi da controllare nel singolo Comune. Nessuna posizione o anzianità del cedente garantite ovunque. PDF Lombardia pagina17 verificata localmente e visivamente dopo errore screenshotweb; collegamento storicoWCM404 sostituito con attuale content/dam200. Sorgenti/fonti in `data/blog/`; originale, prompt completo imagegen integrato e prove in `Documents/articoli-subingresso/comune-sposta-mercato-riassegnazione-posteggi/`.
+- Materiali `d1c74c4`, Vercel riuscito `GLiYkaSxCVD7Fcdt2VLMcH1aMPCk`; copertina WebP1600×900 identica SHA256. Verificati SEO SSR/NewsArticle/canonical, indice/sitemap, Chromium1440/768/320 e WebKit390, anche senzaJS; nessun overflow/errore. Due CTA raggiungono `/annunci` e `/vendi`200, senza dati reali di prova. Backup remoto `backup/session-20261025-153449-articolo-comune-sposta-mercato` verificato; noto errore cleanuphelper non ripetuto. Gitleaks senza rilievi; checkout principale e lavori altrui preservati.
+- Search Console NON inviata: accesso effettivo fermo al loginGoogle, nessuna credenziale pertinente o sessione debug collegabile; integrazione trovata solo in lettura GSC. Resta Controllo URL → Richiedi indicizzazione per `https://subingresso.it/blog?post=comune-sposta-mercato-riassegnazione-posteggi`, distinto dalla sitemap e dall’indicizzazione effettiva.
+
 ## Fiera annullata per maltempo e rimborso: pubblicazione verificata — 25 ottobre 2026
 
 - Pubblicato «Fiera annullata per maltempo: come verificare se ti spetta il rimborso del posteggio», slug `fiera-annullata-maltempo-rimborso-posteggio`, ID `a6b4aeab-d38d-4924-a084-51b61c7e77fa`. Articolo e copertina HTTPS su subingresso.it HTTP200; 686 parole editoriali, sei sezioni brevi, modello di richiesta e due soli banner fiere. Nessun doppione; 116 articoli precedenti invariati, totale117.
