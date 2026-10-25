@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo fiere lombarde con domande aperte — 25 ottobre 2026
+
+- Pubblicato «Fiere in Lombardia con domande ancora aperte: scadenze, costi e merce ammessa», slug `fiere-lombardia-domande-aperte`, ID `35ce3ec9-7c47-4fb1-8b13-0fab72ac87fb`. Selezione di due casi comunali verificati: San Giulio/Castellanza 31/01/2027, domanda entro 30/11/2026; Natale d’Incanto/Ponte San Pietro 13/12/2026, adesione entro 02/12/2026. Bollo 16 euro distinto dal costo del posteggio non pubblicato a Castellanza; Ponte gratuito, cauzione 20 euro e gazebo facoltativo 70 euro. Merci tipiche a Castellanza, elenco preciso non pubblicato a Ponte. Nessuna disponibilità garantita; Merate scaduta e Lodi priva di riscontro primario escluse.
+- Pubblicazione verificata, commit `56e3ec0`, Vercel `AUezNAY5qSp3uAzos3hqMuRjmzTf` success. 600 parole editoriali, sei sezioni, due banner fiere/acquisto; copertina originale IA WebP1600×900 su subingresso.it identica SHA256. Cinque link esterni HTTP200, SEO/indice/sitemap e Chromium1440/768/320, WebKit390, senza JS passati; CTA reali verificate senza scritture di prova. Precedenti109articoli identici,110totali. Sorgenti/fonti `data/blog/`; prompt, originali e prove `Documents/articoli-subingresso/fiere-lombardia-domande-aperte`.
+- Search Console NON inviata: accesso corrente fermo al loginGoogle, nessuna sessione debug o credenziale pertinente; integrazione trovata solo in lettura. Resta Controllo URL → Richiedi indicizzazione per `https://subingresso.it/blog?post=fiere-lombardia-domande-aperte`, distinto dalla sitemap. Backup remoto preventivo verificato; errore noto cleanuphelper, backup riuscito non ripetuto. ScreenshotPDF web falliti, originali scaricati200 e due pagine per documento controllate localmente. Checkout isolato, lavoro estraneo preservato; gitleaks senza rilievi.
+
 ## Articolo spunta nei mercati di Milano — 25 ottobre 2026
 
 - Pubblicato «Spunta nei mercati di Milano: orari, dove presentarsi e documenti, mercato per mercato», slug `spunta-mercati-milano-orari-documenti`, ID `661a881d-82ed-4281-8c3c-e25814d83166`. 714 parole visibili, sei sezioni, sette elenchi apribili con tutti93appuntamenti del report21/10/2026; orari vendita/spunta distinti, iscrizione7gennaio–finefebbraio ed esitoSUAP, CUPentro10, ruolino e mercati non presidiati. Due banner fiere/acquisto e copertina originale IA WebP1600×900.
