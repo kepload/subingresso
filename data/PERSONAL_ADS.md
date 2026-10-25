@@ -32,14 +32,28 @@ restare nel limite12 del pianoHobby, conservando i percorsi pubblici.
 ## Materiali e riuso
 
 20messaggi:7vendita,7acquisto,6fiere. Catalogo `lib/personal-ads.cjs`.
-Quattro riprendono titoli esistenti: vendi07 e fiere01/02/03. Il richiamo
-«5.000€in2giorni?» è la domanda pubblicitaria già nel blog, non un dato
-misurato né una promessa; nota esplicita nel catalogo.
+Revisione25/10: titoli brevi e incisivi, una sola frase di supporto e una
+CTA; nessun paragrafo esplicativo. Esempi: «5.000 € in 2 giorni?» per le
+fiere e «5.000 € al giorno?» per i posteggi; obiettivi pubblicitari in forma
+interrogativa, non incassi misurati o garantiti. Note nel catalogo, nessun
+risultato attribuito a San Faustino/Lazise senza dati verificabili.
+Quattro creatività rielaborano gli spunti del blog, i cui banner editoriali
+restano autonomi. La richiesta riguarda la raccolta `/le-mie-ads`.
 
 Otto dimensioni:300×250,336×280,728×90,970×250,320×100,300×600,
 1080×1080,1080×1920.160varianti,320file PNG/SVG in `images/personal-ads`.
 Grafica tipografica originale con font Jakarta già presente, SIL OFL:
-tracciati SVG, raster PNG identico; nessuna foto o cifra dimostrativa.
+tracciati SVG, raster PNG identico; nessuna foto o statistica dimostrativa.
+Composizioni dedicate ai formati: titoli maiuscoli molto più grandi,
+cifra dominante, domande conservate anche nei banner mobili, testo che
+occupa i verticali e i social, azioni leggibili con freccia. Blu/bianco per
+vendita, inchiostro/oro per acquisto, blu/oro alternati per fiere.
+Il build verifica i limiti effettivi dei glifi, compresi accenti e discendenti,
+e blocca testi fuori immagine o sovrapposti. Audit opzionale in percorso
+privato tramite `PERSONAL_ADS_BUILD_AUDIT`. Asset `?v=2` nel pannello,
+nei link immagini e nei codici copiati; archivioZIP con nomi puliti.
+IDcreatività, misure, posizioni e attribuzione restano invariati: i dati
+prima/dopo il25/10 condividono lo stesso ID, non costituiscono un testA/B.
 Build: `node scripts/build-personal-ads.cjs`, richiede Python fontTools
 e sharp già disponibili nell’ambiente di sviluppo; nessun requisito runtime.
 
@@ -108,3 +122,9 @@ sopra il livello modale per copia e ZIP (anche errore), ripristino al body,
 logout e risposta tardiva. Nessun cambiamento a backend, misurazione o asset.
 Inspector: testi pagina a16px dai bordi; eccezione edge-text per didascalia
 parzialmente visibile nel canvas panoramico1:1, nessun overflow pagina.
+
+Revisione copy/layout25/10: prove e tavole di tutte160varianti in
+`Documents/ads-copy-layout-20261025`; geometria dei glifi, PNG/SVG e ZIP,
+regressioneAPI/tracker/pannello in Chromium1440/768/320 e WebKit390.
+Inspector app1440/768/390: avvisi motivati per colore delle creatività
+e didascalie12px del mosaico; accesso admin e statistiche conservati.

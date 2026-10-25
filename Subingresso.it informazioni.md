@@ -5,6 +5,15 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## ADS: messaggi e spazio — 25 ottobre 2026
+
+- Preferenza: un aggancio breve, forte e convincente; numeri in evidenza,
+  niente paragrafi, sfruttare i box con composizioni dedicate alle misure.
+  Riscritte20ADS, rigenerate160varianti PNG/SVG; «5.000 € in 2 giorni?»
+  e «5.000 € al giorno?» come obiettivi, senza garanzie d’incasso.
+- Conservati ID, tracking, statistiche, mosaico1:1 e strumenti; assetv2.
+  Prove `Documents/ads-copy-layout-20261025`. Pubblicazione in verifica.
+
 ## Miglioria in fiera e vecchio posteggio: pubblicazione verificata — 25 ottobre 2026
 
 - Pubblicato «Chiedo la miglioria in fiera: rischio di perdere il mio vecchio posteggio?», slug `miglioria-fiera-perdere-vecchio-posteggio`, ID `999151cf-128f-40c7-bf04-0e4102e51f1e`. Articolo e copertina HTTPS su subingresso.it verificati HTTP200; 579 parole editoriali, sei sezioni brevi e due soli banner: calendario fiere al centro, annunci in chiusura. Nessun doppione; 118 articoli precedenti invariati, totale 119.
