@@ -12,7 +12,15 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Riscritte20ADS, rigenerate160varianti PNG/SVG; «5.000 € in 2 giorni?»
   e «5.000 € al giorno?» come obiettivi, senza garanzie d’incasso.
 - Conservati ID, tracking, statistiche, mosaico1:1 e strumenti; assetv2.
-  Prove `Documents/ads-copy-layout-20261025`. Pubblicazione in verifica.
+  Pubblicato `3d33413`/merge `4a320a0`, Vercel
+  `8p7XzVGPiiaVqyi5moVBCGdwGEaB` success:320immagini e pagina/JS
+  identici online, API anonima401 e20destinazioni inpreview corrette.
+- Chromium1440/768/320 e WebKit390 chiaro/scuro, copia/ZIP/CSV,
+  filtri160, logout/accesso e tracker passati. Tutti i glifi dentro i box
+  e senza sovrapposizioni; inspector0FAIL, otto tavole controllate.
+  Login reale online verificato senza scritture; nessun dato cliente di prova.
+  Prove `Documents/ads-copy-layout-20261025`; backup remoto tag/ramo
+  verificati, noto errore cleanuphelper. Integrato Ascoli senza alterarlo.
 
 ## Miglioria in fiera e vecchio posteggio: pubblicazione verificata — 25 ottobre 2026
 
