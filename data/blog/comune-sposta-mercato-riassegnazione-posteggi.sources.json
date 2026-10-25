@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-25",
+  "title": "Il Comune sposta il mercato: come vengono riassegnati i posteggi?",
+  "scope": "Guida pratica al controllo degli atti del Comune; esempi esclusivamente regionali di Lombardia e Lazio. Nessuna graduatoria, priorità, durata, tariffa, metratura o diritto alla posizione preferita presentati come nazionali.",
+  "sources": [
+    {
+      "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/01-commercio/03-commercio-ambulante-mercati-e-sagre/red-quadro-normativo-commercio-ambulante/allegati-quadro-normativo-ambulanti/Dgr%204054%20ambulanti%20%2B%20allegati.pdf#page=17",
+      "authority": "Regione Lombardia",
+      "reference": "DGR XI/4054 del 14 dicembre 2020, allegato A punto 8 comma 4, pagina PDF 17",
+      "supports": "Trasferimento anche provvisorio di parte o dell'intero mercato: riassegnazione agli operatori già titolari considerando anzianità sul posteggio, nel mercato e di iscrizione al Registro imprese, dimensioni e caratteristiche dei posti, merci e attrezzature.",
+      "http_status": 200
+    },
+    {
+      "url": "https://www.regione.lombardia.it/attivita-produttive-imprese/commercio/commercio-ambulante-mercati-e-sagre/quadro-normativo-su-commercio-ambulante",
+      "authority": "Regione Lombardia",
+      "reference": "Quadro normativo su commercio ambulante, pagina aggiornata il 9 ottobre 2026",
+      "supports": "Richiamo attuale a DGR4054/2020 e DGR6110/2022 per le modifiche dei mercati. La seconda sostituisce i paragrafi 9,10,11 dell'allegatoA, non il punto8. Nuove assegnazioni e relative linee guida ministeriali del 2026 distinte dalla ricollocazione dei concessionari.",
+      "http_status": 200
+    },
+    {
+      "url": "https://consiglio.regione.lazio.it/consiglio-regionale/?id=9373&sv=vigente&vw=leggiregionalidettaglio",
+      "authority": "Consiglio regionale del Lazio",
+      "reference": "Legge regionale 6 novembre 2019 n.22, testo coordinato vigente, articolo52 comma6",
+      "supports": "In caso di spostamento definitivo, oppure soppressione parziale con creazione di un secondo mercato, conservazione dell'anzianità e riassegnazione dei posteggi ove possibile sulla base delle scelte effettuate. Non è garanzia del posto preferito.",
+      "http_status": 200
+    }
+  ],
+  "research_notes": "Nessun doppione nei 117 articoli pubblicati controllati prima dell'inserimento. Fonti primarie originali scaricate HTTP200 e testi verificati; PDF Lombardia pagina17 renderizzata e controllata visivamente dopo errore screenshot del lettoreweb. Collegamento storico WCM Lombardia restituisce404 al servizio screenshot: usato e verificato200 il collegamento attuale content/dam. Richiesta documenti, foto, controlli pratici e frase esemplificativa presentati come consigli, non modulo obbligatorio. Nessuna promessa di rinnovo, nuove concessioni, rimborso o posizione identica. Dossier e prove fuori repo in Documents/articoli-subingresso/comune-sposta-mercato-riassegnazione-posteggi/.",
+  "cover": {
+    "tool": "image_gen integrato, skill imagegen",
+    "path": "images/blog/comune-sposta-mercato-riassegnazione-posteggi.webp",
+    "dimensions": "1600x900",
+    "prompt_summary": "Fotografia illustrativa originale: due ambulanti consultano una pianta del mercato accanto al proprio banco, piazza italiana con stalli vuoti segnati, furgoni e banchi sullo sfondo, luce naturale, nessun marchio o scritta.",
+    "full_prompt": "Documents/articoli-subingresso/comune-sposta-mercato-riassegnazione-posteggi/prompt-copertina.txt",
+    "disclosure": "Copertina creata con IA: scena illustrativa."
+  }
+}
