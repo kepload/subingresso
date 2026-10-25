@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo Milano, debiti e subingresso — 25 ottobre 2026
+
+- Pubblicato «Compro un posteggio a Milano: possono bloccare il subingresso per debiti del venditore su altri mercati?», slug `milano-subingresso-debiti-venditore-altri-mercati`, ID `815ef417-ad36-4386-9d60-ac9e421d404a`. Circa590parole, cinque sezioni; fonti ComuneMilano/DD11337, canoni milanesi complessivi e limiti rateazioni2013-2019 espliciti. Blocco amministrativo distinto dalla responsabilità debitoria. Due banner acquisto, copertina originale IA WebP1600×900.
+- Commit `c938044`, Vercel `7t2n2LcsMZBsLAPYZu4ct1HiR3CM` success: copertina identicaSHA256, SEO/indice/sitemap e browser online Chromium1440/768/320,WebKit390,senzaJS passati; due CTA reali verificate senza scritture di prova. Precedenti98articoli identici,99totali. Sorgenti `data/blog/`; prompt/prove `Documents/articoli-subingresso/milano-subingresso-debiti-venditore-altri-mercati`.
+- Search Console NON inviata: verifica corrente richiede loginGoogle, nessuna sessione debug/credenziale pertinente; plugin trovato solo in lettura. Resta Controllo URL → Richiedi indicizzazione, distinto dalla sitemap. Backup remoto preventivo verificato; cleanup helper con errore noto. Prima prova WebKit interrompeva richiesta catalogo durante navigazione: attesa completamento corretta, ripetuta senza errori. Limite screenshot catalogo e quoting helper privato risolti; note nel dossier. Checkout isolato per preservare fiere concorrenti; gitleaks finale senza rilievi.
+
 ## Articolo cinque domande al Comune — 24 ottobre 2026
 
 - Pubblicato «Bolkestein: cinque domande da fare al Comune prima di comprare un posteggio», slug `bolkestein-cinque-domande-comune-comprare-posteggio`, ID `d582d6dd-e742-456a-af39-8d66b54f4298`. Cinque domande e chiusura; fonti GU2026/Mantova, nessuna promessa di rinnovo. Due banner acquisto, copertina IA WebP1600×900.
