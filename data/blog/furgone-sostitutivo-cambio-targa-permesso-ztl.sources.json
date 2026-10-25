@@ -1,0 +1,26 @@
+{
+  "researched_at": "2026-10-25",
+  "scope": "Guida pratica generale; condizioni e procedure degli esempi esclusivamente comunali. Nessuna autorizzazione automatica, tariffa o scadenza nazionale dichiarata.",
+  "sources": [
+    {
+      "url": "https://www.trentinomobilita.it/servizi/comune/trento/rilascio-permessi-trento/altre-pratiche/",
+      "authority": "Trentino Mobilità, gestore del servizio per il Comune di Trento",
+      "evidence": "Pagina aggiornata il 13 aprile 2026. Elenca separatamente cambio targa e permesso temporaneo per veicolo sostitutivo.",
+      "attachment": "https://www.trentinomobilita.it/wp-content/uploads/2025/02/Auto-sostitutiva-TM_UP19_E.pdf",
+      "attachment_evidence": "Modulo TM_UP19 REV2, una pagina: permesso, targa originaria, periodo dal/al, nuova targa, marca/modello e documento di identità. Originale scaricato HTTP200 e verificato localmente; lettore web non disponibile."
+    },
+    {
+      "url": "https://ztl.comune.aosta.it/?a=index&c=site&p=_documentazione",
+      "authority": "Portale ZTL del Comune di Aosta",
+      "evidence": "FAQ: SPID/CIE, Storico, Azioni, Cambia targa; documentazione di indisponibilità e affidamento da proprietario diverso legittimato alla dazione in comodato di auto sostitutive. Accesso consentito dalla conferma email di permesso attivo."
+    },
+    {
+      "url": "https://romamobilita.it/servizi-al-pubblico/cambio-targa-temporaneo/",
+      "authority": "Roma Servizi per la Mobilità",
+      "evidence": "Scheda attuale online: stessa immatricolazione autocarro/autocarro, categoria emissiva pari o più recente, dichiarazione autofficina con targa e periodo anche presunto, esclusi carnet, accreditamento online o appuntamento.",
+      "editorial_limit": "Non riportate durate: la pagina indica 15 giorni e due rinnovi entro45, mentre il modulo collegato rev.18082022 usa la formula ambigua 'rinnovabile per un massimo di3occasioni consecutive'. Nessuna durata o costo necessario alla promessa del titolo; verificare il permesso effettivamente rilasciato."
+    }
+  ],
+  "verification": "Tutte e tre le pagine e il modulo Trento scaricati HTTP200. Dossier fuori repository: C:/Users/utente/Documents/articoli-subingresso/furgone-sostitutivo-cambio-targa-permesso-ztl.",
+  "cover": "Originale generato tramite imagegen integrato; scena illustrativa dichiarata nell'articolo, nessun luogo o evento reale attribuito."
+}
