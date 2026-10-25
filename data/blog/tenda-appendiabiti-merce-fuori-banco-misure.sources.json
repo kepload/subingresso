@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-25",
+  "title": "Tenda, appendiabiti e merce fuori dal banco: quali misure devo rispettare?",
+  "scope": "Competenze comunali nel quadro regionale; esempi esclusivamente comunali di Torino (Piemonte) e Genova (Liguria). Nessuna altezza, sporgenza o tolleranza locale presentata come nazionale. Consigli di misurazione distinti dai requisiti normativi.",
+  "sources": [
+    {
+      "url": "https://def.giustiziatributaria.gov.it/DocTribFrontend/executePrintArticolo.do?articolo=Articolo+28&codiceOrdinamento=0000000000000280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&id=%7B44599D2A-9AD4-4BD9-B42E-57B2FB9EE655%7D",
+      "authority": "Ministero dell'Economia e delle Finanze, banca dati normativa",
+      "reference": "D.lgs. 114/1998, articolo 28 commi 8 e 15, stampa vigente pagine 1-2",
+      "supports": "Il Comune stabilisce la superficie dei posteggi sulla base delle disposizioni regionali; per gli alimentari valgono le norme igienico-sanitarie specifiche.",
+      "http_status": 200
+    },
+    {
+      "url": "https://www.comune.torino.it/media/2450#page=22",
+      "authority": "Città di Torino, Piemonte",
+      "reference": "Regolamento n. 305, articolo 35 commi 1, 2, 4 e 5, pagina PDF 22; articolo 34 comma 2",
+      "supports": "Copertura ad almeno 2,20 metri; sporgenza massima 1 metro subordinata a sicurezza, circolazione e rispetto delle tende vicine; divieto di appendere merci alla copertura oltre il perimetro del posteggio; passaggi comuni liberi. Regole solo comunali.",
+      "current_reference_page": "https://www.comune.torino.it/amministrazione/documenti-dati/documenti/n-305-regolamento-per-disciplina-commercio-area-pubblica",
+      "http_status": 200
+    },
+    {
+      "url": "https://www.comune.genova.it/novita/avvisi/fiera-di-ss-cosma-e-damiano-2026-avviso-agli-operatori-commerciali-e-graduatoria",
+      "authority": "Comune di Genova, Liguria",
+      "reference": "Richiamo espresso del regolamento comunale vigente, articoli 26 lettera g, 29 e 30; avviso istituzionale aggiornato 24 settembre 2026",
+      "supports": "Coperture a 2 metri dal punto più basso sul fronte di vendita; sporgenza massima 50 cm dove possibile. Attrezzature e merci nell'area assegnata; merci esposte verticalmente o appese con estremità inferiore ad almeno 1,80 metri. Esposizione a terra limitata alle categorie previste e senza contatto diretto con il suolo. Tutela passaggi e accessibilità. Regole solo comunali; nessuna opportunità di partecipazione alla fiera passata promossa.",
+      "http_status": 200
+    }
+  ],
+  "research_notes": "Originali scaricati HTTP200. PDF MEF e Torino letti integralmente nelle pagine pertinenti e controllati anche come immagini locali. Screenshot web Torino fallito per cache miss: originale scaricato e pagina 22 verificata localmente. Pagina istituzionale Torino attuale e richiamo Genova del settembre 2026 verificati online. Nessuna scadenza, costo o tolleranza presunta. Nessun doppione fra i 114 articoli pubblici prima dell'inserimento; guida sul furgone e ampliamento distinta per oggetto. Dossier e prove fuori repo in Documents/articoli-subingresso/tenda-appendiabiti-merce-fuori-banco-misure/.",
+  "cover": {
+    "tool": "image_gen integrato, skill imagegen",
+    "path": "images/blog/tenda-appendiabiti-merce-fuori-banco-misure.webp",
+    "dimensions": "1600x900",
+    "prompt_summary": "Fotografia editoriale illustrativa di ambulante che misura il banco di abbigliamento sotto la tenda, appendiabiti carico accanto al banco e passaggio libero, piazza italiana autunnale; nessuna scritta, marchio o misura normativa disegnata.",
+    "full_prompt": "Documents/articoli-subingresso/tenda-appendiabiti-merce-fuori-banco-misure/prompt-copertina.txt",
+    "disclosure": "Copertina creata con IA: scena illustrativa."
+  }
+}
