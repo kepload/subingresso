@@ -10805,8 +10805,18 @@
       "externalEventsPreserved": 6920
     },
     "publication": {
-      "status": "da-verificare",
-      "note": "TO DO e conteggio da aggiornare soltanto dopo deploy e controlli online."
+      "status": "pubblicata-e-verificata",
+      "dataCommit": "42e72ef40550eec140ddad8f85ec883f9d22b648",
+      "verifiedAt": "2026-10-25T02:30:52.357445+00:00",
+      "deployment": "https://vercel.com/kycykuardit-9234s-projects/subingresso/G5EwB9RAE4XYoWW1EFuoaoZCjAoK",
+      "deploymentState": "success",
+      "assetsIdenticalToGitCommit": 5,
+      "SSRPagesVerified": 91,
+      "browserTests": "Locale e online Chromium1440/320 e WebKit390:91dialoghi/formato, elenco/mappa, costi, assenzaoverflow/errori e pagine senzaJS. Sito reale stessi tre formati passato.",
+      "catalogEvents": 7011,
+      "catalogEventsWithEditions": 6813,
+      "sitemapEntries": 2978,
+      "checklist": "63 province concluse,47rimaste su110; aggiornata solo dopo verifica."
     },
     "periodicMaintenance": "Edizioni future, bandi, quote, eventuali annullamenti e disponibilità; non verifiche documentali accessibili lasciate aperte.",
     "regionalRowAudit": [
@@ -10915,6 +10925,20 @@
         "eventId": "valle-d-aosta-pont-saint-martin-fiera-di-san-martino-di-ritorno",
         "outcome": "Integrata, date e scostamenti nelle schede; non sommate occorrenze come nuove manifestazioni."
       }
-    ]
+    ],
+    "researchBackup": {
+      "path": "C:/Users/utente/Documents/backup-subingresso/ricerche-fiere-20261025-021416",
+      "verifiedFiles": 105167,
+      "bytes": 15764885523,
+      "errors": 0,
+      "manifestSha256": "dc29341999d3d20fdafd671ae72557edb21726dbfee9c8b355806630e6f8ce25",
+      "note": "Snapshot completo dei materiali presenti; supplemento finale separato per nuovi originali,QA e registrazioni.",
+      "finalSupplement": {
+        "path": "C:/Users/utente/Documents/backup-subingresso/ricerche-fiere-20261025-021416/supplement-valle-aosta-final-20261025-023122",
+        "verifiedFiles": 3801,
+        "manifestSha256": "186f663bbae37e0cdf540436b712dd14c8563bd6529c27709a4469cc83fb1953",
+        "errors": 0
+      }
+    }
   }
 }

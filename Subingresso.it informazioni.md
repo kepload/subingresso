@@ -1401,7 +1401,7 @@ Mappa per avviare le sessioni. Percorsi relativi al repo `C:\Users\utente\Deskto
 - **Avvisi bandi: account obbligatorio.** Su richiesta, blog e pagine bando aprono la registrazione standard; chi ha un account accede. Attivazione dopo autenticazione, email ricavata dal server. Invii e Scout limitati agli indirizzi con account esistente tramite vista privata `registered_bando_alerts`; inserimenti diretti pubblici revocati. DB prima/dopo: 32 iscrizioni conservate, 12 con account e 20 escluse dagli invii finché non si registrano; nessun account creato automaticamente. Patch e quattro funzioni pubblicate; codice `effb12b`/`35da1fd`, cache avvisi2, Vercel [riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Fs4xUe5bYZu4E8fMvwXYg17TCKd9). Sintassi, qualità dati, acquisizione e test dedicati Chromium 1440/320×568 + WebKit390 passati; sei percorsi su HTML online, account/email simulati, nessun invio reale. Endpoint live senza account/chiave pubblica: 401; vista destinatari non pubblica. Modulo scorrevole su telefoni bassi; JS online identico. Prove in `Documents/verifica-avvisi-bandi-20261017.{cjs,json}`; overflow circoscritto a form/modal, testi lunghi preesistenti dell'articolo fuori perimetro. Backup tag/branch remoti validi; cleanup tag con errore PowerShell noto.
 - **Dashboard:** eliminato su richiesta il riquadro superiore “Il tuo annuncio”, con carousel, totali e domanda regionale. Preferenza: non riproporlo; statistiche nel pannello Performance posteggi e gestione nell'elenco annunci.
 - **Statistiche posteggi:** riepilogo/grafico solo nel periodo 7/30/90 e annuncio selezionati. Preferenza corrente: grafico sopra i quattro riquadri, etichette e numeri senza sottotitoli; spiegazioni/storico solo nella voce apribile. Messaggi ricevuti distinti dai click telefono/WhatsApp e aperture chat; visualizzazioni = anteprime + aperture, non persone uniche. Patch DB applicata e verificata su 112 profili; dettagli/test in `istruzioni.md`. Email settimanali ancora da correggere.
-- **Fiere:** 6.930 schede; ricerca approfondita conclusa e verificata online per 62 province, 48 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
+- **Fiere:** 7.011 schede; ricerca approfondita conclusa e verificata online per 63 province, 47 da fare su 110. Manutenzione periodica distinta dalla ricerca conclusa; schede importate non equivalgono a ricerca approfondita.
 - **Affluenza:** valutare soltanto il pubblico, senza giudizi su vendite, redditività, fama o anzianità. Fasce editoriali sulla media giornaliera di ingressi/presenze: bassa <1.000; media 1.000–<5.000; alta 5.000–<20.000; molto alta ≥20.000. Fonti, unità, anno/periodo, stime/dichiarazioni e criteri apribili. Non convertire persone uniche, passaggi, celle telefoniche o pubblico dell'intera festa in affluenza dei banchi; dati insufficienti senza fascia, mai bassa/media per assenza di prove.
 - **Copertura affluenza:** 40 ID verificati in due gruppi da 20; 21 resoconti e 19 esclusioni motivate, cinque bollini (tre alta, due molto alta), 16 senza fascia. Copertura parziale. Archivio `data/fiere-affluenza.json`; originali/limiti in `Documents/ricerca-affluenza-fiere-20261017`, secondo gruppo in `sessione-02/`; dettaglio `data/FIERE.md`. Merate: refuso ottobre risolto col programma di dicembre. Ortogiardino–Cucinare, Natale cittadino, dati parziali e stima Bolzano controversa senza bollino. Pro Cantù HTTP 200 al ricontrollo; alternative e altri limiti registrati.
 - **«Quanto è conosciuta» sospeso:** rimossi filtro e bollini da anteprime, popup, dialog e pagine autonome. Il parametro storico `rinomatezza` non filtra; gli altri filtri funzionano. Valutazioni e prove conservate per eventuale ripristino; sospendere nuove assegnazioni. Le preferenze del 16 ottobre sotto sono storiche.
@@ -2212,7 +2212,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 62 province completate, 48 da fare su 110**, aggiornate il 24 ottobre dopo Grosseto. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 63 province completate, 47 da fare su 110**, aggiornate il 25 ottobre dopo Valle d’Aosta/Vallée d’Aoste. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -2568,7 +2568,15 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
     originali oggi inaccessibili, conflitti di programma e calendari futuri.
     Attività distinta dalla ricerca accessibile conclusa; non attenderli per
     la chiusura attuale e non presumere ammissioni o disponibilità.
-- [ ] **56. Valle d'Aosta/Vallée d'Aoste** — Valle d'Aosta
+- [x] **56. Valle d'Aosta/Vallée d'Aoste** — Valle d'Aosta: ricerca accessibile attuale conclusa con limiti espliciti, pubblicata e verificata il 25 ottobre 2026.
+  91 manifestazioni in 38 comuni, ricognizione di 74 comuni; dieci ID e 6.920 schede esterne
+  conservati. Audit `data/fiere-valle-aosta.json` e `data/FIERE.md`: 15 righe
+  regionali, 558 ricevute tecniche, 24 piste chiuse, 30 limiti, 17 gruppi di esclusioni.
+  Dati `42e72ef`, Vercel riuscito; cinque asset identici, 91 pagine e browser
+  locale/online Chromium 1440/320 e WebKit 390 verificati.
+  - [ ] Manutenzione periodica Valle d'Aosta: nuove edizioni, bandi, quote,
+    disponibilità, documenti non pubblicati/inaccessibili e programmi futuri.
+    Attività distinta dalla ricerca conclusa; non attenderli per la chiusura.
 - [ ] **57. Macerata** — Marche
 - [ ] **58. Fermo** — Marche
 - [ ] **59. Ascoli Piceno** — Marche
@@ -2859,3 +2867,14 @@ Biella, 23 ottobre 2026: ricerca attuale conclusa con limiti espliciti, 61manife
 Sondrio,23ottobre2026: ricerca attuale conclusa con limiti espliciti,90manifestazioni/38comuni,tutti77esaminati,+65;25ID e6.253schede esterne conservati. Catalogo6.343,6.140con dati edizione; audit data/fiere-sondrio.json/FIERE.md:532righe regionali,531PDF,99OCR unici,832record turistici,1.455ricevute incluse API/errori/duplicati,18esclusioni/19limiti,nessuna pista accessibile aperta. Sette sintesi costo; date puntuali distinte da periodi annunciati e storico2025. Dati4fe8b8c,Vercel riuscito: quattro asset identici,90pagine200/H1/canonical/note/costi,locale/online Chromium1440/320+WebKit390 con PLAYWRIGHT_MODULE,tutti90dialoghi; sito reale tre formati senza errori/overflow. Generale5formati,settori,6.343pagine/2.656sitemap e build ripetibile passati. TO DO55/55 solo dopo verifica; cacheJS108/JSON76. Originali/prove Documents/ricerca-fiere-sondrio-20261023; backupSHA256 ricerche-fiere-20261023-111309:72.640file/11.872.974.938byte,zeroerrori,supplemento finale separato. Nessuna altra provincia lavorata,nessuna comunicazione a terzi; nuovi bandi/quote/posti sono manutenzione futura distinta.
 
 Belluno,23ottobre2026: ricerca attuale conclusa con limiti espliciti,134manifestazioni/43comuni,tutti60comuni attuali esaminati,+121;13ID e6.330schede esterne conservati. Catalogo6.464,6.261con dati edizione; audit data/fiere-belluno.json/FIERE.md:94righe sagre,32voci fieristiche più Lendinara fuori provincia esclusa,5antiquariato,254URL DMO e429record API (non eventi unici né archivio storico completo),518ricevute,53archivi web,21pagine OCR Trichiana,20esclusioni/24limiti,nessuna pista accessibile aperta. Dieci sintesi costo,otto schede solo storiche; conflitti testuali e periodi distinti da date confermate. Dati a31001a,Vercel riuscito: quattro asset identici,134pagine200/H1/canonical/note/costi; locale/online Chromium1440/320+WebKit390 via PLAYWRIGHT_MODULE,tutti134dialoghi e quattro pagine senza JS per formato,sito reale tre formati senza errori/overflow. Settori,6.464pagine/2.790sitemap,cinque formati generali e build ripetibile passati. TO DO56/54 solo dopo verifica; cacheJS109/JSON77. Originali/prove Documents/ricerca-fiere-belluno-20261023; tag/ramo backup già validi non ripetuti alla ripresa,nuovi materiali e prove conservati in supplementi SHA256 dello snapshot ricerche-fiere-20261023-123225. Coordinate solo calendario: Setteville su Quero,BorgoValbelluna centroMel da DMO; dati geografici condivisi invariati. Nessuna altra provincia lavorata,nessuna comunicazione a terzi; nuovi bandi/quote/posti e conferme annuali sono manutenzione futura distinta.
+
+
+Valle d’Aosta/Vallée d’Aoste, 25 ottobre 2026: ricerca corrente conclusa con limiti,
+91 schede in 38 comuni, ricognizione di 74 comuni, +81; dieci ID e 6.920 eventi
+esterni invariati. Catalogo 7.011, 6.813 con edizioni, sei sintesi costo.
+Dati `42e72ef` e deploy Vercel verificati: cinque asset identici, 91 pagine e tutti
+i dettagli nei tre formati browser, locale/online e sito reale. TO DO 63/47
+aggiornata dopo verifica. Originali/prove in Documents/ricerca-fiere-valle-aosta-20261025;
+snapshot 105.167 file SHA256 senza errori, manifest e supplemento in FIERE.md.
+Cache JS116/JSON84; lavoro estraneo e articoli concorrenti preservati, nessun
+invio a terzi e nessuna altra provincia avviata.

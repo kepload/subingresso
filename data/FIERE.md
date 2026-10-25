@@ -20,8 +20,10 @@ degli originali commerciali; nessuna pretesa di lettura integrale degli albi.
 Originali, estrazioni, OCR, programmi visualizzati e prove nel dossier privato
 `C:/Users/utente/Documents/ricerca-fiere-valle-aosta-20261025`.
 
-**Pubblicazione da verificare**: TO DO e conteggio delle province restano
-invariati fino a deploy riuscito e controllo del catalogo online.
+**Pubblicata e verificata online**: commit dati `42e72ef`, Vercel riuscito,
+cinque asset identici ai blob Git e **91 pagine HTTP200** con H1, canonical,
+note e costi corretti. TO DO spuntata dopo verifica: **63 province concluse,
+47 rimaste su 110**. Limiti e manutenzione futura restano distinti.
 
 ### Date e condizioni risolte sugli originali
 
@@ -122,7 +124,22 @@ Backup preventivo remoto verificato: tag
 `backup/pre-fiere-valle-aosta-20261025`. Helper: push riuscito, errore del solo
 cleanup vecchi tag. Lavoro estraneo preservato. Test dedicato
 `scripts/test-fiere-valle-aosta.cjs` tramite `PLAYWRIGHT_MODULE`;
-cache JS116/JSON84. Esiti di pubblicazione e backup ricerche da registrare dopo verifica.
+cache JS116/JSON84.
+
+Verifiche: build ripetibile, settori, isolamento delle 6.920 schede esterne,
+dieci ID, 7.011 pagine SSR e 2.978 voci sitemap, escaping e indicizzazione.
+Suite generale cinque formati passata prima dell’ultima aggiunta storica Morgex;
+catalogo finale ricontrollato con tutte le 7.011 pagine e suite provinciale.
+Locale e online: Chromium 1440/320 e WebKit 390, tutti i 91 dialoghi per formato,
+elenco/mappa, costi e pagine senza JavaScript. Sito reale nei tre formati
+senza errori o overflow.
+Backup completo `ricerche-fiere-20261025-021416`: **105.167 file**,
+**15.764.885.523 byte**, zero errori, manifest SHA256
+`dc29341999d3d20fdafd671ae72557edb21726dbfee9c8b355806630e6f8ce25`.
+Supplemento finale `supplement-valle-aosta-final-20261025-023122`: **3801 file**
+verificati SHA256, zero errori; manifest
+`186f663bbae37e0cdf540436b712dd14c8563bd6529c27709a4469cc83fb1953`.
+I file che registrano il manifest stesso restano protetti anche dai commit Git.
 
 ## Grosseto — ricerca documentale del 24 ottobre 2026
 
