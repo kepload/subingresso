@@ -7,6 +7,10 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## ADS: messaggi e spazio — 25 ottobre 2026
 
+- Correzione esplicita dell’utente: punti esclamativi, con «5.000 € in
+  2 giorni!!!» e «5.000 € al giorno!!!»; chiusure dei titoli esclamative
+  in tutte le misure, assetv3. Questa preferenza prevale sull’interrogativa
+  del primo intervento. Pubblicazione del seguito in verifica.
 - Preferenza: un aggancio breve, forte e convincente; numeri in evidenza,
   niente paragrafi, sfruttare i box con composizioni dedicate alle misure.
   Riscritte20ADS, rigenerate160varianti PNG/SVG; «5.000 € in 2 giorni?»

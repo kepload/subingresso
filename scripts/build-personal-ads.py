@@ -115,7 +115,7 @@ def render(ad, fmt):
 
     def stacked(lines, box):
         # Short numeric hooks become full-height poster type; each line has its
-        # own optical size, keeping the euro figure and the question intact.
+        # own optical size, keeping the euro figure and the hook intact.
         x, y, boxw, boxh = box
         # The amount stays the main hook; short prepositions never become
         # larger than the figure just to fill the available height.
