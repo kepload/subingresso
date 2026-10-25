@@ -5,6 +5,13 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Furgone sostitutivo e targa ZTL: pubblicazione verificata — 25 ottobre 2026
+
+- Pubblicato «Furgone sostitutivo per andare al mercato: come cambiare la targa sul permesso ZTL», slug `furgone-sostitutivo-cambio-targa-permesso-ztl`, ID `143a87df-8f42-4bfe-b277-1012fdb8b0f3`. Articolo e copertina HTTPS su subingresso.it HTTP200; 613 parole editoriali, sei sezioni brevi e due soli banner fiere. Nessun doppione; 115 articoli precedenti invariati, totale116.
+- Fonti primarie HTTP200: Trentino Mobilità, portale ZTL Aosta e Roma Mobilità; modulo Trento originale200 letto e controllato visivamente dopo errore del lettoreweb. Condizioni esclusivamente comunali, ambiti regionali espliciti, nessuna tariffa o durata generalizzata. Omesse le durate romane per formulazione non allineata tra scheda e modulo allegato. Testo, metadati e fonti in `data/blog/`; originale imagegen e prove in `Documents/articoli-subingresso/furgone-sostitutivo-cambio-targa-permesso-ztl/`.
+- Materiali `f095d34`, Vercel riuscito `HQsVmhixFTuyioX4aRiRmxMgc53a`; copertina WebP1600×900 identica SHA256. Verificati SEO SSR/NewsArticle/canonical, indice e sitemap; Chromium1440/768/320 e WebKit390, anche senzaJS, nessun overflow/errore finale. Entrambe le CTA raggiungono `/fiere`200, senza dati reali di prova. Backup remoto `backup/session-20261025-151201-articolo-furgone-sostitutivo-ztl` verificato; noto errore cleanuphelper, non ripetuto. Primo controlloUnicode nel test privato corretto e ripetuto; gitleaks senza rilievi. Checkout principale e lavori altrui preservati.
+- Search Console NON inviata: accesso effettivo fermo al loginGoogle, nessuna credenziale pertinente o sessione browser debug collegabile; integrazione trovata solo in lettura GSC. Resta Controllo URL → Richiedi indicizzazione per `https://subingresso.it/blog?post=furgone-sostitutivo-cambio-targa-permesso-ztl`, distinto dalla presenza in sitemap e dall’indicizzazione effettiva.
+
 ## Tenda, appendiabiti e merce fuori dal banco: pubblicazione verificata — 25 ottobre 2026
 
 - Pubblicato «Tenda, appendiabiti e merce fuori dal banco: quali misure devo rispettare?», slug `tenda-appendiabiti-merce-fuori-banco-misure`, ID `0594b319-d6b5-4428-ab08-1618ff480ad8`. Articolo e copertina HTTPS su subingresso.it HTTP200; 532 parole editoriali, sei sezioni brevi, due soli banner: acquisto al centro e vendita in chiusura. Nessun doppione; 114 articoli precedenti invariati, totale115.
