@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-25",
+  "title": "Compro un banco di abbigliamento: posso usarlo per vendere casalinghi?",
+  "scope": "Quadro nazionale con esempi regionali e comunali esplicitamente lombardi. Nessuna tariffa, dimensione o scadenza generalizzata.",
+  "sources": [
+    {
+      "url": "https://www.parlamento.it/parlam/leggi/deleghe/98114dl.htm",
+      "authority": "Parlamento italiano",
+      "reference": "D.lgs. 114/1998, articolo 5 comma 1, testo originario",
+      "supports": "Distinzione di base alimentare/non alimentare, riscontrata anche nell'articolo 21 comma 7 della legge lombarda vigente. Non usato per durate, procedure o requisiti successivamente modificati.",
+      "http_status": 200
+    },
+    {
+      "url": "https://def.giustiziatributaria.gov.it/DocTribFrontend/executePrintArticolo.do?articolo=Articolo+28&codiceOrdinamento=0000000000000280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&id=%7B44599D2A-9AD4-4BD9-B42E-57B2FB9EE655%7D",
+      "authority": "Ministero dell'Economia e delle Finanze, banca dati normativa",
+      "reference": "D.lgs. 114/1998, articolo 28 comma 15, stampa vigente pagina 2",
+      "supports": "Facoltà dei Comuni di determinare le tipologie merceologiche dei posteggi nei mercati e nelle fiere.",
+      "http_status": 200
+    },
+    {
+      "url": "https://normelombardia.consiglio.regione.lombardia.it/normelombardia/accessibile/main.aspx?iddoc=lr002010020200006&view=showdoc",
+      "authority": "Consiglio regionale della Lombardia",
+      "reference": "L.r. 6/2010, articolo 21 commi 7 e 7-ter; articolo 25 commi 1 e 2, testo vigente",
+      "supports": "Settori, tipologie comunali all'interno dei settori, trasferimento di autorizzazione e concessione con cessione effettiva di azienda o ramo e requisiti. Il subentro non comporta una liberalizzazione automatica della merce.",
+      "http_status": 200
+    },
+    {
+      "url": "https://comune.segrate.mi.it/doc/Regolamenti/Regolamento_dei_mercati_e_del_commercio_su_aree_pubbliche.pdf#page=28",
+      "authority": "Comune di Segrate",
+      "reference": "Regolamento dei mercati e del commercio su aree pubbliche, articolo 40 commi 1 e 2, pagina 28",
+      "supports": "Rispetto dei vincoli e comunicazione scritta del tipo esatto di merce all'assegnazione/subentro e ogni volta che varia. Esempio esclusivamente comunale.",
+      "http_status": 200
+    }
+  ],
+  "research_notes": "Normattiva e sommario MEF non leggibili dal lettore web. Consultata stampa ufficiale MEF vigente. Screenshot web Segrate non riuscito: originale PDF scaricato HTTP200 e pagina 28 verificata localmente. Prove e originali fuori repo in Documents/articoli-subingresso/comprare-banco-abbigliamento-vendere-casalinghi/.",
+  "cover": {
+    "tool": "image_gen integrato, skill imagegen",
+    "path": "images/blog/comprare-banco-abbigliamento-vendere-casalinghi.webp",
+    "dimensions": "1600x900",
+    "prompt_summary": "Fotografia illustrativa orizzontale di ambulante italiano che dispone pentole e casalinghi, con abbigliamento ancora visibile nello stesso banco; luce naturale, nessuna scritta o marchio.",
+    "full_prompt": "Documents/articoli-subingresso/comprare-banco-abbigliamento-vendere-casalinghi/prompt-copertina.txt",
+    "disclosure": "Copertina creata con IA: scena illustrativa."
+  }
+}
