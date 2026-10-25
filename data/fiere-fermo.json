@@ -8778,7 +8778,9 @@
       {
         "name": "Mercati ordinari e posteggi isolati",
         "reason": "60 righe regionali analizzate, attività ordinaria mista/stagionale distinta dalle fiere e dai mercatini tematici; nessuna creazione di eventi dalla sola frequenza mensile.",
-        "sources": []
+        "sources": [
+          "https://www.regione.marche.it/portals/0/Commercio/mercati%20e%20fiere/Calendario%20MERCATI%202026_aggiornamento.pdf"
+        ]
       },
       {
         "name": "Mercatini dei bambini, LibriRiù e Soffitte",
@@ -8793,7 +8795,10 @@
       {
         "name": "Fermhamente, biblioteca e mostre senza mercato",
         "reason": "Festival scientifico, laboratori e mostre culturali senza prova di vendita per operatori esterni; categoria turistica non prova un posteggio.",
-        "sources": []
+        "sources": [
+          "https://www.visitfermo.it/wp-content/uploads/2026/03/Fermo-primavera-2026.pdf",
+          "https://www.visitfermo.it/wp-content/uploads/2026/10/pieghevole-autunno-2026.pdf"
+        ]
       },
       {
         "name": "BeOpen",
@@ -8845,32 +8850,59 @@
       {
         "name": "Natale 2026 Francavilla e altri paesi",
         "reason": "Francavilla pagina originale 2023, Monte Urano 2024, Altidona/Monte Giberto/Porto San Giorgio programmi 2025 o programmazione 2026 non ancora definita. Non trasferiti automaticamente a dicembre 2026.",
-        "sources": []
+        "sources": [
+          "https://comune.altidona.fm.it/notizie/2339999/mengone-doni-babbo-natale",
+          "https://comune.altidona.fm.it/notizie/2340001/tombolata-natale",
+          "https://comune.altidona.fm.it/notizie/3505761/natale-insieme-2025",
+          "https://comune.francavilladete.fm.it/eventi/2315258/aspettiamo-natale-insieme",
+          "https://comune.monteurano.fm.it/eventi/3190274/natale-piu-bella-storia",
+          "https://comune.montevidoncorrado.fm.it/luoghi/2000173/casa-natale-osvaldo-licini",
+          "https://falerone-api.municipiumapp.it/s3/2693/allegati/mercatini-di-natale.pdf",
+          "https://turismo.comune.portosangiorgio.fm.it/wp-json/wp/v2/search?search=natale&per_page=100",
+          "https://www.comune.monsampietromorico.fm.it/wp-json/wp/v2/search?search=natale&per_page=100",
+          "https://www.comune.montefalconeappennino.fm.it/wp-json/wp/v2/search?search=natale&per_page=100",
+          "https://www.visitfermo.it/it/eventi/mercatini-di-natale-4",
+          "https://www.visitfermo.it/wp-content/uploads/2025/12/Fermo-Magica-e-il-Natale-della-Roccia-Incantata-2025.pdf",
+          "https://comune.francavilladete.fm.it/eventi"
+        ]
       },
       {
         "name": "Monte Rinaldo sabato 17 ottobre",
         "reason": "Programma completo recuperato sulla stampa locale, con locandina originale riprodotta: il 17 ristorazione e cultura, mostra mercato solo domenica 18. Escluso il sabato commerciale, inclusa la domenica.",
-        "sources": []
+        "sources": [
+          "https://www.cronachefermane.it/2026/10/13/monte-rinaldo-il-17-e-18-ottobre-la-festa-dautunno-tipicita-archeologia-in-centro-due-giorni-di-sapori-musica-tradizioni-e-memoria/790145/",
+          "https://www.cronachefermane.it/wp-content/uploads/2026/10/locandina-3.jpeg"
+        ]
       },
       {
         "name": "Braciere, Vino Cotto, Baccalà e altre sagre",
         "reason": "Moresco, Lapedona, Grottazzolina e altre piste dimostrano ristorazione o tradizioni ma non un mercato esterno verificabile; non dedotti banchi da chiusure stradali, menu o ingresso libero.",
-        "sources": []
+        "sources": [
+          "https://liguria.centroitaliaevents.it/marche/fermo/grottazzolina/sagra-del-baccala-di-grottazzolina.html",
+          "https://www.marcafermana.it/it/evento/33-festa-del-braciere/"
+        ]
       },
       {
         "name": "Extender automatici degli aggregatori",
         "reason": "Salotto Calzatura esteso fino a ottobre e Shopping Passeggiando ricorrente senza calendario originale: non usati per allungare le rassegne estive.",
-        "sources": []
+        "sources": [
+          "https://comune.monteurano.fm.it/eventi/3190249/mercatino-calzatura-produttori-monturanesi"
+        ]
       },
       {
         "name": "Beneficenza e raccolte fondi",
         "reason": "Telethon, stand solidali e mercatini sociali non trattati come posteggi commerciali per operatori esterni.",
-        "sources": []
+        "sources": [
+          "https://www.visitfermo.it/wp-content/uploads/2025/12/Fermo-Magica-e-il-Natale-della-Roccia-Incantata-2025.pdf"
+        ]
       },
       {
         "name": "Haru e sottoeventi",
         "reason": "Manifestazione ombrello 1–3 maggio da locandina, Botteghe Creative il 3 maggio integrato; nessuna seconda copia della stessa area artigiana.",
-        "sources": []
+        "sources": [
+          "https://www.marcafermana.it/it/evento/bottega-delle-donne/",
+          "https://www.marcafermana.it/wp-content/uploads/2026/04/PHOTO-2026-03-26-09-50-38-1.jpg"
+        ]
       }
     ],
     "limits": [
@@ -16654,13 +16686,119 @@
         "file": "ce6d09db9552b577.html"
       }
     ],
-    "publicationStatus": "pending-online-verification",
+    "publicationStatus": "published-verified",
     "backup": {
       "tag": "backup/session-20261025-151108-fiere-fermo",
       "remoteTagVerified": true,
       "branch": "backup/pre-fiere-fermo-20261025",
       "remoteBranchVerified": true,
-      "helperCleanup": "Push del tag riuscito; cleanup locale produce errore noto unknown switch E, distinto dal backup remoto riuscito."
+      "helperCleanup": "Push del tag riuscito; cleanup locale produce errore noto unknown switch E, distinto dal backup remoto riuscito.",
+      "researchArchive": {
+        "destination": "C:\\Users\\utente\\Documents\\backup-subingresso\\fermo-20261025-151338",
+        "files": 2964,
+        "bytes": 261336412,
+        "manifestSHA256": "f2397ffea0d4dc97cfc518051ff141bc4c4d8be676b68de007aa59e1872b3655",
+        "errors": 0,
+        "verifiedAt": "2026-10-25T15:13:46.625597+00:00"
+      }
+    },
+    "publication": {
+      "dataCommit": "cef401b",
+      "deploymentCommit": "21f5dffda586049c359b8313ab5bbe9872a2e5c4",
+      "verifiedAt": "2026-10-25T15:14:37.422613+00:00",
+      "deploymentState": "success",
+      "deploymentUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/B8sFd6uF1UZM1pzt6GDJDmSGhm8W",
+      "verificationSeconds": 33,
+      "assetsVerified": 5,
+      "ssrPagesVerified": 86,
+      "ssrChecks": [
+        "HTTP200",
+        "H1",
+        "canonical",
+        "participation note",
+        "pricing when present"
+      ],
+      "browserOnline": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "events": 86,
+          "dialogs": 86,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "events": 86,
+          "dialogs": 86,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "events": 86,
+          "dialogs": 86,
+          "base": "https://subingresso.it",
+          "status": "passed"
+        }
+      ],
+      "realSite": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "status": "passed",
+          "cards": 86,
+          "errors": [],
+          "popupClosed": 0,
+          "networkInterception": "Only write methods blocked; real scripts, icons and read requests enabled"
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "status": "passed",
+          "cards": 86,
+          "errors": [],
+          "popupClosed": 0,
+          "networkInterception": "Only write methods blocked; real scripts, icons and read requests enabled"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "status": "passed",
+          "cards": 86,
+          "errors": [],
+          "popupClosed": 0,
+          "networkInterception": "Only write methods blocked; real scripts, icons and read requests enabled"
+        }
+      ],
+      "localVerification": {
+        "buildRepeatable": true,
+        "unchangedOutsideProvinceEvents": 7104,
+        "preservedIds": 23,
+        "allPages": 7190,
+        "sitemapEntries": 3124,
+        "generalBrowserFormats": 5,
+        "provincialBrowserFormats": 3,
+        "allProvincialDialogsPerFormat": 86,
+        "noJavaScriptPagesPerFormat": 8,
+        "playwrightModule": "PLAYWRIGHT_MODULE",
+        "gitleaks": "passed without bypass"
+      },
+      "checklist": {
+        "completed": 65,
+        "remaining": 45,
+        "total": 110,
+        "updatedOnlyAfterOnlineVerification": true
+      },
+      "reports": [
+        "deploy-verification.json",
+        "browser-local.json",
+        "browser-online.json",
+        "qa-real-site.json"
+      ],
+      "futureMaintenance": "Nuove edizioni/documenti e verifiche periodiche distinte dalla ricerca attuale conclusa; limiti documentati, nessuna attesa di futuri bandi."
     }
   },
   "events": [

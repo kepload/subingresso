@@ -6,7 +6,7 @@ Ricerca documentale accessibile attuale conclusa con limiti espliciti: **86
 manifestazioni in 31 comuni**, ricognizione nominale dei **40 comuni provinciali**.
 Riprese le 23 schede pubblicate, senza audit autonomo al checkpoint `2fb6934`:
 **23 ID conservati, 63 aggiunte, 7.104 schede esterne identiche**. Catalogo
-risultante **7.190 schede**. Nessun’altra provincia lavorata; nessun contatto,
+risultante **7.190 schede**, **6.989 con dati edizione**. Nessun’altra provincia lavorata; nessun contatto,
 invio o candidatura a terzi.
 
 Audit `data/fiere-fermo.json`: **45 righe** regionali fiere riconciliate in 44
@@ -20,7 +20,13 @@ Nove comuni senza scheda non sono dichiarati privi di eventi. Non dichiarata
 lettura integrale degli albi storici. Nuove edizioni e documenti non pubblicati
 restano manutenzione futura distinta dalla ricerca corrente conclusa.
 
-**Pubblicazione e verifica online in corso:** TO DO ancora aperta fino all’esito.
+**Pubblicata e verificata online:** dati `cef401b`, deploy `21f5dff`, Vercel
+riuscito. Cinque asset identici ai blob Git e **86 pagine HTTP200** con H1,
+canonical, note e costi corretti, verifica completata in **33 secondi**. Test
+provinciale passato anche online nei tre formati con tutti gli 86 dialoghi;
+sito reale con script/icone attivi, metodo di scrittura bloccato per evitare
+dati di prova, verificato nei tre formati. TO DO spuntata dopo queste verifiche:
+**65 province concluse, 45 rimanenti su 110**. Nessun altro lavoro avviato.
 
 Verifiche locali passate sul catalogo finale: isolamento dei 23 ID e delle 7.104
 schede esterne, settori, **7.190 pagine/3.124 voci sitemap**, suite generale in
@@ -82,6 +88,12 @@ e ramo `backup/pre-fiere-fermo-20261025`. Errore cleanup del helper successivo
 al push distinto dal backup remoto riuscito. Originali e prove nel dossier privato
 `Documents/ricerca-fiere-fermo-20261025`; nessun allegato nominativo di operatori
 o credenziale copiato nel repository pubblico.
+Backup separato del solo dossier Fermo, originali e prove, verificato SHA256:
+`Documents/backup-subingresso/fermo-20261025-151338`, **2.964 file,
+261.336.412 byte**, zero errori. Manifest
+`f2397ffea0d4dc97cfc518051ff141bc4c4d8be676b68de007aa59e1872b3655`;
+ricevuta `backup-verified.json` nel dossier privato. Nessun nuovo backup o
+intervento sulle altre province.
 
 ## Macerata — ricerca documentale del 25 ottobre 2026
 
