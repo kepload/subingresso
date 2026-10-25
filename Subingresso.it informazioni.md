@@ -5,6 +5,13 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Da abbigliamento a casalinghi: pubblicazione verificata — 25 ottobre 2026
+
+- Pubblicato «Compro un banco di abbigliamento: posso usarlo per vendere casalinghi?», slug `comprare-banco-abbigliamento-vendere-casalinghi`, ID `f05b4e4a-7efb-4b57-9b0e-bbb6ff52f101`. Articolo e copertina HTTPS su subingresso.it HTTP200; 600 parole, sei sezioni brevi, due soli banner: ricerca al centro e vendita in chiusura. Nessun doppione; 112 articoli precedenti invariati, totale113.
+- Quattro fonti primarie HTTP200: Parlamento art.5 per la distinzione di base, stampa vigente MEF art.28 comma15 pagina2, Lombardia l.r.6/2010 artt.21/25 e Segrate art.40 pagina28. Chiari i vincoli del singolo posteggio e gli ambiti locali; nessuna promessa di cambio automatico. Fonti/testo/metadati in `data/blog/comprare-banco-abbigliamento-vendere-casalinghi.*`; dossier, prompt completo imagegen integrato e originali in `Documents/articoli-subingresso/comprare-banco-abbigliamento-vendere-casalinghi/`.
+- Materiali `9751233`, deploy Vercel riuscito `FK6KaAkhfNorfyz5xvHQzXCc1gEg`; copertina WebP1600×900 identica per SHA256. Verificati SEO SSR/NewsArticle/canonical, indice/sitemap, Chromium1440/768/320, WebKit390 e leggibilità senzaJS; nessun overflow/errore finale. CTA provate fino a `/annunci` e `/vendi`200, nessun dato reale di prova. Backup remoto preventivo verificato, noto errore cleanuphelper; gitleaks reale senza rilievi. Normattiva/sommario MEF non leggibili dal toolweb, verificata stampa ufficiale; screenshotweb Segrate fallito, originale200 e pagina28 controllati localmente. Vecchia asserzione del test riusato corretta nel dossier prima delle prove riuscite. Checkout principale e lavoro altrui preservati.
+- Search Console NON inviata: accesso effettivo al loginGoogle, nessuna credenziale pertinente o browser debug collegabile; ricerca integrazioni restituisce GSC in sola lettura. Resta Controllo URL → Richiedi indicizzazione per `https://subingresso.it/blog?post=comprare-banco-abbigliamento-vendere-casalinghi`, distinto dalla presenza in sitemap.
+
 ## Scambio del posteggio: pubblicazione verificata — 25 ottobre 2026
 
 - Pubblicato «Scambiare il posteggio con un altro ambulante: domanda, documenti e autorizzazioni», slug `scambiare-posteggio-altro-ambulante`, ID `ed6392f2-1d02-4563-a92c-a6eb85549fea`. Articolo e copertina HTTPS su subingresso.it HTTP200; 577 parole, sei sezioni brevi e due banner, ricerca annunci al centro e vendita in chiusura. Nessun doppione; 111 articoli precedenti invariati, totale112.
