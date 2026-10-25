@@ -7,6 +7,11 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## ADS: messaggi e spazio — 25 ottobre 2026
 
+- Seguito da screenshot: cifra/frase ravvicinate, mai «AL» isolato; contesto
+  piccolo subito sotto, esplicito per fiere/posteggi/vendita e coerente col
+  link, anche nei banner90/100px. Importi ed esclamativi conservati; niente
+  paragrafi giganti. Scene IA del blog nei verticali/social per occupare lo
+  spazio restante. Assetv4; pubblicazione del seguito in verifica.
 - Correzione esplicita dell’utente: punti esclamativi, con «5.000 € in
   2 giorni!!!» e «5.000 € al giorno!!!»; chiusure dei titoli esclamative
   in tutte le misure, assetv3. Questa preferenza prevale sull’interrogativa

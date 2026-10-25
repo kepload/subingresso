@@ -15,6 +15,16 @@ audit = []
 
 
 @lru_cache(maxsize=None)
+def photo_data(goal):
+    # Existing original AI illustrations from the site's blog, reused as scene
+    # setting. They do not document earnings or a particular available pitch.
+    name = 'fiere-lombardia-domande-aperte' if goal == 'fiere' else 'aprire-banco-giovani-mercato'
+    # JPEG data is supported by browsers and the librsvg PNG renderer alike.
+    script = "require('sharp')(process.argv[1]).resize({width:1080,withoutEnlargement:true}).jpeg({quality:84}).toBuffer().then(b=>process.stdout.write(b.toString('base64')))"
+    return subprocess.check_output(['node', '-e', script, str(ROOT / f'images/blog/{name}.webp')], cwd=ROOT, text=True, encoding='ascii')
+
+
+@lru_cache(maxsize=None)
 def vertical_metrics(text, weight):
     font = fonts[weight]
     glyphs, cmap, boxes = font.getGlyphSet(), font.getBestCmap(), []
@@ -34,7 +44,7 @@ def width(text, size, weight=800, tracking=-.035):
 
 
 def wrap(text, size, limit, weight=800, tracking=-.035):
-    words = re.findall(r'[\d.]+\s*€|[^\s]+', text)
+    words = re.findall(r'[\d.]+\s*€|AL GIORNO!!!|IN 2 GIORNI!!!|[^\s]+', text)
     lines = ['']
     for word in words:
         trial = (lines[-1] + ' ' + word).strip()
@@ -91,13 +101,8 @@ def render(ad, fmt):
         button = '#ffcc32'
         if ad['id'] in ('fiere-02', 'fiere-04', 'fiere-06'):
             bg, ink, button, buttonink = '#ffcc32', '#102238', '#102238', '#ffffff'
-    numeric_poster = tall and ad['title'].startswith('5.000 €')
-    if numeric_poster:
-        button, buttonink = '#102238', '#ffffff'
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc"><title id="title">{html.escape(ad["title"])}</title><desc id="desc">{html.escape(ad["description"] + " " + ad["cta"] + ". Subingresso.it")}</desc><rect width="{w}" height="{h}" fill="{bg}"/>']
     regions = []
-    if numeric_poster:
-        out.append(f'<rect y="{h * .53}" width="{w}" height="{h * .47}" fill="#ffcc32"/>')
 
     def line(text, x, baseline, size, color=ink, weight=800, tracking=-.035, role='headline'):
         markup, bounds = text_paths(text, x, baseline, size, color, weight, tracking)
@@ -112,58 +117,47 @@ def render(ad, fmt):
             ascent, descent = vertical_metrics(textline, weight)
             line(textline, x, y + size * ascent, size, color=color, weight=weight, tracking=tracking, role=role)
             y += size * (ascent + descent + .14)
-
-    def stacked(lines, box):
-        # Short numeric hooks become full-height poster type; each line has its
-        # own optical size, keeping the euro figure and the hook intact.
-        x, y, boxw, boxh = box
-        # The amount stays the main hook; short prepositions never become
-        # larger than the figure just to fill the available height.
-        sizes = [min(boxw * .245, boxw / width(text, 1)) for text in lines]
-        gap = min(sizes) * .16
-        total = sum(size * sum(vertical_metrics(text, 800)) for text, size in zip(lines, sizes)) + gap * (len(lines) - 1)
-        scale = min(1, boxh / total)
-        for text, size in zip(lines, sizes):
-            size *= scale
-            ascent, descent = vertical_metrics(text, 800)
-            line(text, x, y + size * ascent, size)
-            y += size * (ascent + descent) + gap * scale
+        return y - size * .14
 
     brand = 11 if tiny else (13 if w < 400 else (18 if wide else 30))
     line('Subingresso.it', p, p + brand * .78, brand, weight=700, tracking=-.02, role='brand')
     if tiny:
         if w > 500:
             bx, by, bw, bh = w - p - 174, p, 174, h - 2 * p
-            block(ad['shortTitle'].upper(), (p, 35, bx - p - 22, h - 43), 31, 1)
+            bottom = block(ad['shortTitle'].upper(), (p, 34, bx - p - 22, 27), 31, 1)
+            block(ad['description'], (p, bottom + 6, bx - p - 22, 15), 13, 1, 600, -.01, 'support')
         else:
             bx, by, bw, bh = p, h - 27, w - 2 * p, 20
-            block(ad['shortTitle'].upper(), (p, 31, w - 2 * p, 36), 25, 2)
+            bottom = block(ad['shortTitle'].upper(), (p, 30, w - 2 * p, 30), 23, 2)
+            block(ad['description'], (p, bottom + 5, w - 2 * p, 13), 11, 1, 600, -.01, 'support')
     elif wide:
         bx, by, bw, bh = w - p - 224, 90, 224, 70
-        block(ad['title'].upper(), (p, 63, bx - p - 30, 132), 66, 2)
-        block(ad['description'], (p, 203, bx - p - 24, 25), 19, 1, 600, -.02, 'support')
+        bottom = block(ad['title'].upper(), (p, 63, bx - p - 30, 128), 66, 2)
+        block(ad['description'], (p, bottom + 13, bx - p - 24, 25), 19, 1, 600, -.01, 'support')
     else:
         bw, bh = w - 2 * p, (48 if w < 400 else 116)
         bx, by = p, h - p - bh
-        body_size = (60 if tall else 15) if w < 400 else (216 if tall else 58)
-        bodyh = h * .27 if tall else body_size * 1.65
-        bodyy = by - bodyh - (22 if w < 400 else 54)
+        illustrated = tall or w >= 1000
+        body_size = (17 if tall else 15) if w < 400 else 46
+        bodyh = body_size * 2
         titley = p + brand + (28 if tall and w < 400 else (15 if w < 400 else 70))
-        titleh = bodyy - titley - (20 if w < 400 else 44)
-        max_size = (96 if tall else 57) if w < 400 else (310 if tall else 180)
+        gap = 12 if w < 400 else 32
+        titleh = min(h * .43, w * 1.05) if illustrated else by - titley - bodyh - gap - 12
+        max_size = (76 if tall else 57) if w < 400 else 240
         if ad['title'].startswith('5.000 €'):
-            numeric_h = min(titleh * .57, bw * .30)
-            block('5.000 €', (p, titley, bw, numeric_h), bw * .31, 1)
+            numeric_h = min(titleh * .62, bw * .29)
+            bottom = block('5.000 €', (p, titley, bw, numeric_h), bw * .31, 1)
             qualifier = ad['title'][len('5.000 €'):].strip().upper()
-            qualifierbox = (p, titley + numeric_h + 6, bw, titleh - numeric_h - 6)
-            if tall:
-                parts = re.match(r'^(IN 2|AL) (.+)$', qualifier)
-                stacked([parts[1], parts[2]], qualifierbox)
-            else:
-                block(qualifier, qualifierbox, max_size, 1)
+            # A qualifier is one phrase: never isolate AL or IN 2 on a line.
+            bottom = block(qualifier, (p, bottom + 8 if w < 400 else bottom + 24, bw, bw * .13), bw * .13, 1)
         else:
-            block(ad['title'].upper(), (p, titley, bw, titleh), max_size, 5 if tall else 3)
-        block(ad['description'], (p, bodyy, bw, bodyh), body_size, 4 if tall else 2, 600, -.02, 'support', '#102238' if numeric_poster else ink)
+            bottom = block(ad['title'].upper(), (p, titley, bw, titleh), max_size, 5 if tall else 3)
+        bottom = block(ad['description'], (p, bottom + gap, bw, bodyh), body_size, 2, 600, -.01, 'support')
+        if illustrated:
+            photo_y = bottom + (24 if w < 400 else 56)
+            photo_h = h - photo_y
+            source = photo_data(ad['goal'])
+            out.append(f'<svg x="0" y="{photo_y}" width="{w}" height="{photo_h}" overflow="hidden"><image width="{w}" height="{photo_h}" preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,{source}"/></svg>')
     if tiny and w <= 500:
         line(ad['cta'] + ' →', bx, by + 15, 13, weight=700, tracking=-.02, role='cta')
     else:
@@ -179,6 +173,14 @@ def render(ad, fmt):
             x0, y0, x1, y1 = a['bounds']
             u0, v0, u1, v1 = b['bounds']
             assert not (x0 < u1 and x1 > u0 and y0 < v1 and y1 > v0), (ad['id'], fmt['id'], a, b)
+    headline = [r for r in regions if r['role'] == 'headline']
+    support = [r for r in regions if r['role'] == 'support']
+    assert support, (ad['id'], fmt['id'], 'Contesto mancante')
+    gap = min(r['bounds'][1] for r in support) - max(r['bounds'][3] for r in headline)
+    assert 0 <= gap <= 34, (ad['id'], fmt['id'], 'Contesto lontano dal titolo', gap)
+    if ad['title'].startswith('5.000 €'):
+        qualifier = ad['title'].split('€', 1)[1].strip().upper()
+        assert any(qualifier in r['text'] for r in headline), (ad['id'], fmt['id'], 'Frase numerica spezzata')
     audit.append({'id': ad['id'], 'format': fmt['id'], 'width': w, 'height': h, 'regions': regions})
     out.append('</svg>')
     return ''.join(out)

@@ -42,15 +42,25 @@ restano autonomi. La richiesta riguarda la raccolta `/le-mie-ads`.
 
 Otto dimensioni:300×250,336×280,728×90,970×250,320×100,300×600,
 1080×1080,1080×1920.160varianti,320file PNG/SVG in `images/personal-ads`.
-Grafica tipografica originale con font Jakarta già presente, SIL OFL:
-tracciati SVG, raster PNG identico; nessuna foto o statistica dimostrativa.
+Grafica originale con font Jakarta già presente, SIL OFL: titoli in
+tracciati SVG e raster PNG con lo stesso contenuto e la stessa geometria.
+Le varianti300×600 e social riusano due scene IA originali già nel blog:
+`aprire-banco-giovani-mercato.webp` e `fiere-lombardia-domande-aperte.webp`.
+Provenienza nei rispettivi dossier `data/blog/`; immagini illustrative,
+non prove di posteggi disponibili o incassi. JPEG incorporato negli SVG
+per identica compatibilità browser/librsvg, nessuna dipendenza esterna.
 Composizioni dedicate ai formati: titoli maiuscoli molto più grandi,
-cifra dominante, agganci conservati anche nei banner mobili, testo che
-occupa i verticali e i social, azioni leggibili con freccia. Blu/bianco per
+cifra dominante, agganci conservati anche nei banner mobili, azioni leggibili
+con freccia. Importo, frase e contesto compatti, nessun «AL» isolato: «AL
+GIORNO!!!» e «IN 2 GIORNI!!!» restano interi. Una riga piccola immediatamente
+sotto dice «Scegli la fiera giusta per te», «Trova il posteggio giusto per te»
+o «Metti in vendita il tuo posteggio», anche nei banner90/100px. Niente
+paragrafi ingranditi e distanziati per riempire le altezze; immagini nella
+parte rimanente dei formati più alti. Blu/bianco per
 vendita, inchiostro/oro per acquisto, blu/oro alternati per fiere.
 Il build verifica i limiti effettivi dei glifi, compresi accenti e discendenti,
 e blocca testi fuori immagine o sovrapposti. Audit opzionale in percorso
-privato tramite `PERSONAL_ADS_BUILD_AUDIT`. Asset `?v=3` nel pannello,
+privato tramite `PERSONAL_ADS_BUILD_AUDIT`. Asset `?v=4` nel pannello,
 nei link immagini e nei codici copiati; archivioZIP con nomi puliti.
 IDcreatività, misure, posizioni e attribuzione restano invariati: i dati
 prima/dopo il25/10 condividono lo stesso ID, non costituiscono un testA/B.
