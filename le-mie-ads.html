@@ -9,13 +9,13 @@
  <link rel="stylesheet" href="/css/tailwind.css?v=4">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  <link rel="stylesheet" href="/css/personal-ads.css?v=1">
- <link rel="stylesheet" href="/css/personal-ads-gallery.css?v=1">
+ <link rel="stylesheet" href="/css/personal-ads-gallery.css?v=2">
 </head>
 <body class="pa-gallery-page">
  <header class="pa-header"><a class="pa-brand" href="/">Subingresso<span>.it</span></a><a href="/dashboard">Torna alla dashboard</a></header>
  <div id="paGate" class="pa-gate" role="status"><h2>Le mie ADS</h2><p id="paGateText">Verifica dell’accesso amministratore…</p><button id="paLogin" type="button" hidden>Accedi</button><button id="paRetryGate" type="button" hidden>Riprova</button></div>
  <main id="paApp" hidden>
-  <div class="pa-title-row"><div><h1>Le mie ADS</h1><p>Sfoglia le ADS nelle loro dimensioni reali. Clicca su un banner per copiarlo o scaricarlo.</p></div><div class="pa-heading-actions"><button id="paShowStats" type="button">Statistiche</button><button id="paDownloadAll" type="button">Scarica tutta la raccolta</button></div></div>
+  <div class="pa-title-row"><div><h1>Le mie ADS</h1><p>Sfoglia le ADS nelle loro dimensioni reali. Clicca su un banner per copiarlo o scaricarlo.</p></div><div class="pa-heading-actions"><button id="paMotionToggle" data-pa-motion-toggle type="button" aria-pressed="false">Pausa animazioni</button><button id="paShowStats" type="button">Statistiche</button><button id="paDownloadAll" type="button">Scarica tutta la raccolta</button></div></div>
   <section class="pa-library" aria-labelledby="paLibraryTitle">
    <div class="pa-gallery-toolbar">
     <div class="pa-gallery-heading"><h2 id="paLibraryTitle">Tutte le tue ADS <span id="paCount" aria-live="polite"></span></h2><span class="pa-scale">Dimensioni reali · 1:1</span></div>
@@ -25,7 +25,7 @@
    <div id="paGalleryScroll" class="pa-gallery-scroll" tabindex="0" aria-label="Galleria ADS in dimensioni reali" aria-describedby="paCanvasHint"><div id="paList" class="pa-mosaic-board" role="list" aria-label="Creatività disponibili"></div></div>
    <p id="paEmpty" class="pa-empty" hidden>Nessuna ADS corrisponde alla ricerca. Prova un’altra parola o scegli Tutte.</p>
   </section>
-  <dialog id="paDetails" class="pa-details" aria-labelledby="paAdTitle"><div class="pa-dialog-top"><span>Codice, download e risultati</span><button id="paCloseDetails" type="button" autofocus>Chiudi</button></div>
+  <dialog id="paDetails" class="pa-details" aria-labelledby="paAdTitle"><div class="pa-dialog-top"><span>Codice, download e risultati</span><div class="pa-dialog-actions"><button data-pa-motion-toggle type="button" aria-pressed="false">Pausa animazioni</button><button id="paCloseDetails" type="button" autofocus>Chiudi</button></div></div>
     <article id="paEditor" class="pa-editor" aria-labelledby="paAdTitle">
      <div class="pa-editor-head"><div><h3 id="paAdTitle"></h3><p id="paAdOrigin" class="pa-muted"></p></div><button id="paCopyHtml" class="pa-primary" type="button">Copia codice per il blog</button></div>
      <div class="pa-preview-controls"><label for="paFormat">Misura<select id="paFormat"></select></label><span id="paDimensions" class="pa-muted"></span></div>
@@ -33,8 +33,8 @@
      <p id="paAdNote" class="pa-note" hidden></p>
      <dl id="paAdMetrics" class="pa-ad-metrics"></dl>
      <div class="pa-placement"><label for="paPlacement">Nome della posizione<input id="paPlacement" type="text" value="blog" pattern="[a-z0-9_-]{1,80}" maxlength="80" aria-describedby="paPlacementHint"></label><p id="paPlacementHint" class="pa-muted">Es. articolo-bandi-centro. Usa nomi diversi per confrontare i punti in cui inserisci il banner.</p></div>
-     <div class="pa-actions"><button id="paCopyLink" type="button">Copia link tracciato</button><a id="paPng" download>Scarica PNG</a><a id="paSvg" download>Scarica SVG</a><button id="paPack" type="button">Pacchetto di questa ADS</button><a id="paDestination" target="_blank" rel="noopener">Apri destinazione</a></div>
-     <details><summary>Come usarla nel blog</summary><p>Copia il codice e incollalo nella modalità HTML dell’articolo. Il banner punta già alla sezione corretta e mantiene il proprio codice di tracciamento. La misura scelta resta nel codice: per uno spazio stretto usa il rettangolo o il banner mobile.</p><p>Il pacchetto contiene le 8 misure in PNG e SVG, i link e il codice pronto. Se carichi l’immagine altrove, usa anche il suo link tracciato; il solo file immagine non permette di attribuire clic e conversioni.</p><label for="paCode">Codice pronto<textarea id="paCode" readonly rows="5" spellcheck="false"></textarea></label></details>
+     <div class="pa-actions"><button id="paCopyLink" type="button">Copia link tracciato</button><a id="paPng" download>Scarica PNG HD</a><a id="paSvg" download>Scarica SVG</a><a id="paAnimated" download>SVG animato</a><button id="paPack" type="button">Pacchetto di questa ADS</button><a id="paDestination" target="_blank" rel="noopener">Apri destinazione</a></div>
+     <details><summary>Come usarla nel blog</summary><p>Copia il codice e incollalo nella modalità HTML dell’articolo. Il banner punta già alla sezione corretta e mantiene il proprio codice di tracciamento. La misura scelta resta nel codice: per uno spazio stretto usa il rettangolo o il banner mobile.</p><p>Il pacchetto contiene le 8 misure in PNG HD, SVG statico e animato, gli HTML, i link e il codice pronto. L’animazione parte quando il banner entra in vista; puoi metterla in pausa. Se carichi l’immagine altrove, usa anche il suo link tracciato; il solo file immagine non permette di attribuire clic e conversioni.</p><label for="paCode">Codice pronto<textarea id="paCode" readonly rows="5" spellcheck="false"></textarea></label></details>
     </article>
   </dialog>
   <details id="paResultsPanel" class="pa-stats-disclosure"><summary>Statistiche della raccolta</summary>
@@ -58,6 +58,7 @@
  <script src="/js/supabase-config.js?v=3"></script>
  <script src="/js/data.js?v=24"></script>
  <script src="/js/auth.js?v=28"></script>
- <script src="/js/personal-ads-admin.js?v=3"></script>
+ <script src="/js/personal-ads-motion.js?v=1"></script>
+ <script src="/js/personal-ads-admin.js?v=4"></script>
 </body>
 </html>

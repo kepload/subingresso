@@ -20,7 +20,7 @@ def photo_data(goal):
     # setting. They do not document earnings or a particular available pitch.
     name = 'fiere-lombardia-domande-aperte' if goal == 'fiere' else 'aprire-banco-giovani-mercato'
     # JPEG data is supported by browsers and the librsvg PNG renderer alike.
-    script = "require('sharp')(process.argv[1]).resize({width:1080,withoutEnlargement:true}).jpeg({quality:84}).toBuffer().then(b=>process.stdout.write(b.toString('base64')))"
+    script = "require('sharp')(process.argv[1]).jpeg({quality:94,chromaSubsampling:'4:4:4'}).toBuffer().then(b=>process.stdout.write(b.toString('base64')))"
     return subprocess.check_output(['node', '-e', script, str(ROOT / f'images/blog/{name}.webp')], cwd=ROOT, text=True, encoding='ascii')
 
 
@@ -69,11 +69,11 @@ def fit(text, box, max_size, max_lines, weight=800, tracking=-.035):
     return lo, wrap(text, lo, boxw, weight, tracking)
 
 
-def text_paths(text, x, y, size, color, weight=800, tracking=-.035):
+def text_paths(text, x, y, size, color, weight=800, tracking=-.035, letter_start=None):
     font = fonts[weight]
     glyphs, cmap = font.getGlyphSet(), font.getBestCmap()
     scale, result, bounds = size / font['head'].unitsPerEm, [], []
-    for char in text:
+    for index, char in enumerate(text):
         name = cmap.get(ord(char), '.notdef')
         if name == '.notdef':
             raise ValueError(f'Glifo mancante: {char!r}')
@@ -81,7 +81,8 @@ def text_paths(text, x, y, size, color, weight=800, tracking=-.035):
         glyphs[name].draw(pen)
         glyphs[name].draw(bp)
         if pen.getCommands():
-            result.append(f'<path d="{pen.getCommands()}" transform="translate({x:.4f} {y:.4f}) scale({scale:.8f} {-scale:.8f})"/>')
+            marker = f' class="pa-letter pa-letter-{letter_start + index}"' if letter_start is not None else ''
+            result.append(f'<path{marker} d="{pen.getCommands()}" transform="translate({x:.4f} {y:.4f}) scale({scale:.8f} {-scale:.8f})"/>')
         if bp.bounds:
             x0, y0, x1, y1 = bp.bounds
             bounds.append((x + x0 * scale, y - y1 * scale, x + x1 * scale, y - y0 * scale))
@@ -103,9 +104,13 @@ def render(ad, fmt):
             bg, ink, button, buttonink = '#ffcc32', '#102238', '#102238', '#ffffff'
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc"><title id="title">{html.escape(ad["title"])}</title><desc id="desc">{html.escape(ad["description"] + " " + ad["cta"] + ". Subingresso.it")}</desc><rect width="{w}" height="{h}" fill="{bg}"/>']
     regions = []
+    letter_count = 0
 
     def line(text, x, baseline, size, color=ink, weight=800, tracking=-.035, role='headline'):
-        markup, bounds = text_paths(text, x, baseline, size, color, weight, tracking)
+        nonlocal letter_count
+        markup, bounds = text_paths(text, x, baseline, size, color, weight, tracking, letter_count if role == 'headline' else None)
+        if role == 'headline':
+            letter_count += len(text)
         out.append(markup)
         assert bounds[0] >= p - .5 and bounds[1] >= 0 and bounds[2] <= w - p + .5 and bounds[3] <= h, (ad['id'], fmt['id'], text, bounds)
         regions.append({'role': role, 'text': text, 'size': round(size, 2), 'bounds': bounds})
@@ -158,6 +163,7 @@ def render(ad, fmt):
             photo_h = h - photo_y
             source = photo_data(ad['goal'])
             out.append(f'<svg x="0" y="{photo_y}" width="{w}" height="{photo_h}" overflow="hidden"><image width="{w}" height="{photo_h}" preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,{source}"/></svg>')
+    out.append('<g class="pa-action">')
     if tiny and w <= 500:
         line(ad['cta'] + ' →', bx, by + 15, 13, weight=700, tracking=-.02, role='cta')
     else:
@@ -168,6 +174,7 @@ def render(ad, fmt):
         line(ad['cta'], bx + 16 if w < 400 or wide else bx + 36, by + bh / 2 + bsize * .35, bsize, buttonink, tracking=-.02, role='cta')
         ax, ay, ar = bx + bw - (20 if w < 400 or wide else 44), by + bh / 2, (5 if w < 400 or wide else 12)
         out.append(f'<path d="M{ax-ar*1.6} {ay}h{ar*2}m{-ar} {-ar} {ar} {ar} {-ar} {ar}" fill="none" stroke="{buttonink}" stroke-width="{2 if w < 400 or wide else 4}" stroke-linecap="round" stroke-linejoin="round"/>')
+    out.append('</g>')
     for i, a in enumerate(regions):
         for b in regions[i + 1:]:
             x0, y0, x1, y1 = a['bounds']
@@ -181,9 +188,25 @@ def render(ad, fmt):
     if ad['title'].startswith('5.000 €'):
         qualifier = ad['title'].split('€', 1)[1].strip().upper()
         assert any(qualifier in r['text'] for r in headline), (ad['id'], fmt['id'], 'Frase numerica spezzata')
-    audit.append({'id': ad['id'], 'format': fmt['id'], 'width': w, 'height': h, 'regions': regions})
+    audit.append({'id': ad['id'], 'format': fmt['id'], 'width': w, 'height': h, 'letters': letter_count, 'regions': regions})
     out.append('</svg>')
     return ''.join(out)
+
+
+def animate_svg(svg, letters):
+    """Readable finished frame; three 6.4s cycles in the standalone export.
+    The viewport player opts into repeat only while visible, with pause controls.
+    """
+    css = ['@media(prefers-reduced-motion:no-preference){',
+           '.pa-letter{animation-duration:6.4s;animation-timing-function:step-end;animation-fill-mode:both;animation-iteration-count:3}',
+           '.pa-action{transform-box:fill-box;transform-origin:center;animation:pa-action 6.4s cubic-bezier(.22,1,.36,1) 3 both}',
+           '.pa-repeat .pa-letter,.pa-repeat .pa-action{animation-iteration-count:infinite}',
+           '@keyframes pa-action{0%,27%,46%,100%{transform:scale(1)}32%,41%{transform:scale(1.022)}}']
+    for index in range(letters):
+        at = 2 + 23 * (index + 1) / max(letters, 1)
+        css.append(f'.pa-letter-{index}{{animation-name:pa-type-{index}}}@keyframes pa-type-{index}{{0%,{at - .02:.3f}%{{opacity:0}}{at:.3f}%,100%{{opacity:1}}}}')
+    css.append('}')
+    return svg.replace('</desc>', '</desc><style>' + ''.join(css) + '</style>', 1)
 
 
 if __name__ == '__main__':
@@ -191,7 +214,9 @@ if __name__ == '__main__':
     folder.mkdir(parents=True, exist_ok=True)
     for ad in catalog['ads']:
         for fmt in catalog['formats']:
-            (folder / f'{ad["id"]}-{fmt["id"]}.svg').write_text(render(ad, fmt), encoding='utf8')
+            svg = render(ad, fmt)
+            (folder / f'{ad["id"]}-{fmt["id"]}.svg').write_text(svg, encoding='utf8')
+            (folder / f'{ad["id"]}-{fmt["id"]}.animated.svg').write_text(animate_svg(svg, audit[-1]['letters']), encoding='utf8')
     if os.environ.get('PERSONAL_ADS_BUILD_AUDIT'):
         Path(os.environ['PERSONAL_ADS_BUILD_AUDIT']).write_text(json.dumps(audit, ensure_ascii=False, indent=2), encoding='utf8')
     print(f'{len(audit)} SVG verificati: glifi nei box, nessun testo sovrapposto.')

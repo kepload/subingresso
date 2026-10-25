@@ -41,7 +41,11 @@ Quattro creatività rielaborano gli spunti del blog, i cui banner editoriali
 restano autonomi. La richiesta riguarda la raccolta `/le-mie-ads`.
 
 Otto dimensioni:300×250,336×280,728×90,970×250,320×100,300×600,
-1080×1080,1080×1920.160varianti,320file PNG/SVG in `images/personal-ads`.
+1080×1080,1080×1920.160varianti,480file PNG/SVG statico/animato in
+`images/personal-ads`. Formati web PNG2×, social1080 nativi; anteprime e
+inserimenti in SVG per testo nitido a qualsiasi densità. PNG a colori pieni,
+senza la precedente palette256; scene dal WebP1600 originale, JPEG94/4:4:4
+incorporato invece della precedente copia1080/JPEG84.
 Grafica originale con font Jakarta già presente, SIL OFL: titoli in
 tracciati SVG e raster PNG con lo stesso contenuto e la stessa geometria.
 Le varianti300×600 e social riusano due scene IA originali già nel blog:
@@ -60,18 +64,53 @@ parte rimanente dei formati più alti. Blu/bianco per
 vendita, inchiostro/oro per acquisto, blu/oro alternati per fiere.
 Il build verifica i limiti effettivi dei glifi, compresi accenti e discendenti,
 e blocca testi fuori immagine o sovrapposti. Audit opzionale in percorso
-privato tramite `PERSONAL_ADS_BUILD_AUDIT`. Asset `?v=4` nel pannello,
+privato tramite `PERSONAL_ADS_BUILD_AUDIT`. Asset `?v=5` nel pannello,
 nei link immagini e nei codici copiati; archivioZIP con nomi puliti.
 IDcreatività, misure, posizioni e attribuzione restano invariati: i dati
 prima/dopo il25/10 condividono lo stesso ID, non costituiscono un testA/B.
 Build: `node scripts/build-personal-ads.cjs`, richiede Python fontTools
 e sharp già disponibili nell’ambiente di sviluppo; nessun requisito runtime.
 
-Per misura:codice HTML,link tracciato,PNG/SVG. ZIP per ADS o raccolta intera,
-con tutte le misure,istruzioni,codici e link. Il nome posizione è un codice
+Per misura:codice HTML,link tracciato,PNG HD/SVG statico/SVG animato. ZIP per
+ADS o raccolta intera, con tutte le misure, HTML pronti, istruzioni,codici e
+link. Il nome posizione è un codice
 `[a-z0-9_-]{1,80}`,mai dati personali. Immagini sole/off-site non misurano
 impressioni:fuori dal blog usare almeno il link tracciato. Un banner largo
 ridotto sul telefono diventa piccolo:lo strumento consiglia il formato mobile.
+
+## Movimento e nitidezza — 25 ottobre 2026
+
+Il titolo compare lettera per lettera nei primi1,6secondi di un ciclo6,4s.
+Segue un doppio richiamo del pulsante, scala1,022; poi tempo di lettura.
+Contesto, marchio e CTA restano disponibili durante la scrittura. Nessun
+lampeggio, sfocatura, cambio di impaginazione o blocco del clic.
+
+`js/personal-ads-motion.js` avvia gli SVG solo quando entrano in vista con
+IntersectionObserver. Fuori campo, scheda nascosta, dialog aperto davanti
+alla galleria e logout rimuovono il movimento. Nel sito il ciclo continua
+finché visibile; pausa nella raccolta/dialog, oppure accanto a ciascun
+inserimento pubblico. La pausa mostra la versione completa. La preferenza
+riduci movimento conserva lo statico, senza scaricare la variante animata.
+
+Scrittura/CTA usano opacity e transform CSS; niente timer per fotogramma o
+librerie aggiunte. SVG isolato nello shadowDOM, fonte ammessa solo nella
+directory pubblica delleADS su dominio locale o subingresso.it, nessuno
+script/eventhandler/link o riferimento esterno nel markup importato. Risposte
+tardive, cambio formato e rimozione invalidano il player; cache limitata12.
+Il player non legge account, storage, sessioni o statistiche.
+
+Codici blog con posterSVG, dati del player e inizializzatore. Il template
+blog carica già il player: funziona anche dopo la rimozione degli script
+dal contenuto tramite DOMPurify. Gli inserimenti precedenti con immagini
+personali vengono riconosciuti. Pubblico CORS* solo su `/images/personal-ads`;
+API privata e altri endpoint invariati. Senza JS/rete/feature, rimane il
+poster cliccabile. Fuori dal blog il player richiede il codiceHTML, non il
+solo filePNG. Nessuna compatibilità universale con reti pubblicitarie dichiarata.
+
+Gli SVG `.animated.svg` autonomi fanno3cicli/19,2secondi e restano completi;
+gli HTML usano il player con avvio in vista e pausa. ZIP24immagini+8HTML per
+ADS, oltre codici/link; raccolta480immagini+160HTML. Non sono fileGIF.
+Ricerca, decisioni e limiti: `data/PERSONAL_ADS_MOTION.md`.
 
 ## Misura
 
@@ -138,3 +177,11 @@ Revisione copy/layout25/10: prove e tavole di tutte160varianti in
 regressioneAPI/tracker/pannello in Chromium1440/768/320 e WebKit390.
 Inspector app1440/768/390: avvisi motivati per colore delle creatività
 e didascalie12px del mosaico; accesso admin e statistiche conservati.
+
+Movimento: `scripts/test-personal-ads-motion.cjs`, Chromium1440/320 e
+WebKit390; fotogrammi, progressione, CTA, ripetizione, ingresso/uscita,
+pausa, scheda nascosta, riduzione movimento, dialog, formato tardivo e
+logout; riuso cross-origin con pausa senza clic, fallback offline e fine
+delloSVG autonomo. Tutti160PNG controllati per dimensioni e colori pieni.
+`test-blog-loading.cjs` include un inserimentoSSR sanificato e funzionante.
+Prove `Documents/ads-movimento-hd-20261025`.

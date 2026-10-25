@@ -1,6 +1,7 @@
 .pa-gallery-page main{max-width:none;padding:24px 16px 32px}
 .pa-gallery-page .pa-title-row{margin-bottom:22px;align-items:center}
-.pa-heading-actions{display:flex;gap:8px;flex-shrink:0}
+.pa-heading-actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
+.pa-dialog-actions{display:flex;gap:8px;align-items:center}
 .pa-gallery-page .pa-library{padding:0;border:0;border-radius:0;background:transparent}
 .pa-gallery-toolbar{position:sticky;top:0;z-index:10;padding:14px 0 12px;background:var(--pa-ground)}
 .pa-gallery-heading,.pa-gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -45,6 +46,9 @@ html:has(#paDetails[open]){overflow:hidden}
  .pa-gallery-page main{padding:18px 16px 28px}
  .pa-gallery-page .pa-title-row{margin-bottom:8px}
  .pa-heading-actions{display:grid;grid-template-columns:auto 1fr;gap:8px}
+ .pa-heading-actions [data-pa-motion-toggle]{grid-column:1/-1}
+ .pa-dialog-top{align-items:flex-start;gap:8px;flex-wrap:wrap}
+ .pa-dialog-actions{margin-left:auto}
  .pa-heading-actions button{padding:9px 10px;font-size:12px}
  .pa-gallery-toolbar{padding:12px 0 10px}
  .pa-gallery-heading{align-items:baseline;gap:8px;margin-bottom:10px}
