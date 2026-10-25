@@ -17,8 +17,32 @@ Il feed turistico di 2.022 record è uno snapshot; screening di 126 pagine temat
 homepage e ricerche dei 55 Comuni, accessi SUAP/albi e approfondimento degli atti
 pertinenti emersi. Non dichiarata lettura integrale degli albi storici.
 
-**Pubblicazione ancora da verificare:** TO DO e riepilogo provinciale restano
-invariati fino ai riscontri sul deploy e sul catalogo pubblico.
+**Pubblicata e verificata online:** commit dati `1eddab3`, Vercel riuscito
+in 34 secondi. Cinque asset identici ai blob Git e **177 pagine HTTP200** con
+H1, canonical, note e costi corretti. TO DO spuntata dopo verifica: **64 province
+concluse, 46 rimanenti su 110**. Ricerca attuale chiusa con i limiti sotto;
+nuove edizioni e documenti non pubblicati sono manutenzione futura distinta.
+
+Verifiche: build finale ripetibile, isolamento dei 61 ID e delle 6.950 schede
+esterne, settori, suite generale cinque formati e **7.127 pagine/3.094 voci sitemap**.
+Test provinciale tramite `PLAYWRIGHT_MODULE`, locale e online: Chromium 1440/320
+e WebKit 390, tutte le 177 schede in elenco/mappa e tutti i 177 dialoghi per
+formato, otto pagine senza JavaScript per formato. Anche sito reale senza
+intercettazioni verificato nei tre formati, con dettaglio Epicomics e costi.
+Lettura finale degli ulteriori regolamenti coperta dai controlli dati/SSR e dalle
+prove online; gitleaks passato senza bypass. Cache JS117/JSON85.
+
+Backup completo degli originali con `scripts/backup-fiere-research.py`:
+`Documents/backup-subingresso/ricerche-fiere-20261025-095902`, **110.529 file,
+16.341.867.281 byte**, tutti verificati SHA256, zero errori.
+Manifest `6a4a9f269519e007717fc1bf527a75f2a389dccadc66c7760f8fbc74e7b7d00e`, ricevuta `backup-verified.json` nel dossier privato.
+Prima copia interrotta per disco pieno; recuperati 10.000.429.133 byte collegando
+3.236 duplicati SHA256 soltanto tra backup, senza collegamenti agli originali.
+Ripresa del helper in copia privata con sostituzione atomica dei file cambiati:
+backup precedente preservato, nuova verifica completa senza errori. Tentativi e
+recupero registrati nel dossier; nessun originale o altro lavoro eliminato.
+Supplemento finale `supplement-macerata-final` separato, senza modificare il
+manifest iniziale, conserva versioni definitive e prove successive.
 
 ### Date e condizioni verificate sugli originali
 

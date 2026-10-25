@@ -22699,11 +22699,36 @@
         "pages": 3
       }
     ],
-    "publicationStatus": "pending-deploy-and-public-verification",
+    "publicationStatus": "published-and-verified",
     "backup": {
       "sessionTag": "backup/session-20261025-095833-fiere-macerata",
       "remoteBranch": "backup/pre-fiere-macerata-20261025",
-      "verified": true
+      "verified": true,
+      "researchSnapshot": {
+        "destination": "C:/Users/utente/Documents/backup-subingresso/ricerche-fiere-20261025-095902",
+        "verifiedFiles": 110529,
+        "bytes": 16341867281,
+        "errors": 0,
+        "manifestSha256": "6a4a9f269519e007717fc1bf527a75f2a389dccadc66c7760f8fbc74e7b7d00e",
+        "finalSupplement": "supplement-macerata-final: originali e prove successive al manifest,con propria verifica SHA256."
+      },
+      "recovery": {
+        "initialAttempt": "ENOSPC durante la copia globale; manifest incompleto conservato. Nessun originale cancellato.",
+        "deduplication": "3.236 copie uguali SHA256 collegate solo tra backup, liberati 10.000.429.133 byte; nessun hardlink agli originali.",
+        "resume": "Copia privata del helper con sostituzione atomica dei file cambiati, per non sovrascrivere le copie collegate del backup precedente; verifica completa terminata senza errori."
+      }
+    },
+    "publication": {
+      "status": "published-and-verified",
+      "dataCommit": "1eddab366d19550503701275dd847ea6bb136bc5",
+      "verifiedAt": "2026-10-25",
+      "catalogUrl": "https://subingresso.it/fiere?provincia=Macerata",
+      "vercel": "https://vercel.com/kycykuardit-9234s-projects/subingresso/C2WXdEnzhrudZ9ohZNVxXkQTm1mR",
+      "assetsMatched": 5,
+      "publicPagesVerified": 177,
+      "browser": "Locale e online: Chromium1440/320 e WebKit390,177dialoghi per formato,più sito reale senza intercettazioni negli stessi3formati.",
+      "isolation": "61ID precedenti e6.950schede esterne conservati;177schede in47comuni,ricognizione55comuni.",
+      "periodicMaintenance": "Distinta dalla ricerca corrente conclusa;non attesa di documenti futuri."
     }
   },
   "events": [
