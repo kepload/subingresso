@@ -20,10 +20,17 @@ visivi dei documenti decisivi. Gli albi non sono stati letti integralmente:
 esportazioni che ignorano le date, atti scaduti, HTTP 502/404 e pagine prive
 di corpo restano limiti espliciti, senza conclusioni sull'assenza di fiere.
 
-**Pubblicazione da verificare:** TO DO provinciale e riepilogo invariati fino
-ai controlli del deploy e del catalogo online. La chiusura della ricerca
-accessibile non certifica esaustività, accettazione di domande o disponibilità
-effettiva dei posteggi. Nuovi bandi e conferme sono manutenzione futura.
+**Pubblicazione verificata:** commit dati `207e1be`, Vercel riuscito; cinque
+asset identici ai blob Git online. Tutte le **49 pagine**
+HTTP 200 con nome, canonical, istruzioni e costi verificati. Browser locale e
+online: elenco, mappa, tutti i 49 dettagli e pagine senza JavaScript in Chromium
+1440/320 e WebKit 390. Anche sito reale con script attivi nei tre formati,
+senza errori o overflow. Build, settori, suite generale in cinque formati e
+7.295 pagine/3.212 voci sitemap passati. Prove nel dossier privato.
+TO DO e riepilogo aggiornati **dopo** questi controlli: **67 province concluse,
+43 rimanenti**. La chiusura documentale non certifica esaustività, accettazione
+di domande o disponibilità effettiva dei posteggi; nuovi bandi e conferme sono
+manutenzione futura distinta.
 
 Precisazioni operative:
 
