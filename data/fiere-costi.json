@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-22",
+  "checkedAt": "2026-10-25",
   "research": {
     "catalogEventsScreened": 3447,
     "catalogSourceRequests": 1870,
@@ -1811,6 +1811,46 @@
       "sourceUrl": "https://www.laspeziafantasy.it/laspeziafantasy-shop/",
       "checkedAt": "2026-10-22",
       "review": "live-source-review"
+    },
+    "valle-d-aosta-fenis-castello-in-fiera": {
+      "kind": "fee",
+      "label": "2026: 80 € espositori; 120 € somministrazione",
+      "details": "Edizione 11–12 aprile 2026: 80 € per artigiani/produttori, 120 € per operatori di somministrazione. IVA non precisata. Quota dell’intera manifestazione, non giornaliera; gazebo 3×3 m, tavolo con juta, illuminazione e sorveglianza notturna inclusi. Bevande riservate all’organizzatore. Hobbisti esclusi; iscrizioni e pagamento scaduti.",
+      "sourceUrl": "https://www.acoteduchateau.com/area-espositori",
+      "checkedAt": "2026-10-25",
+      "period": "2026"
+    },
+    "valle-d-aosta-aosta-padiglione-enogastronomico-di-sant-orso": {
+      "kind": "fee",
+      "label": "2027: 300 € + IVA per modulo",
+      "details": "Solo padiglione enogastronomico 28–31 gennaio 2027: quota 300 € + IVA per modulo, non tariffa della fiera su strada o dell’Atelier. Domande entro 13 novembre 2026, pagamento entro 15 gennaio 2027 secondo regolamento. Categoria e accettazione necessarie; nessuna disponibilità presunta.",
+      "sourceUrl": "https://www.regione.vda.it/allegato.aspx?pk=130589",
+      "checkedAt": "2026-10-25",
+      "period": "2027"
+    },
+    "valle-d-aosta-ayas-marche-de-l-immaculee": {
+      "kind": "fee",
+      "label": "2026: chalet 400 € singolo / 550 € condiviso",
+      "details": "5–8 dicembre 2026: chalet 3,50×2,30 m, 400 € in partecipazione singola o 550 € complessivi in partecipazione condivisa, non a persona né al giorno. IVA non precisata. Nolo chalet, suolo e allaccio elettrico inclusi; arredi a cura degli espositori. Due bolli da 16 € per domanda e autorizzazione, salvo esenzioni. Domanda PEC entro 30 ottobre ore 24, saldo 15 novembre dopo accettazione.",
+      "sourceUrl": "https://www.comune.ayas.ao.it/it-it/download/regolamento-485691-4-1329-db7b71434ef81ae44fc47a4e573aa063",
+      "checkedAt": "2026-10-25",
+      "period": "2026"
+    },
+    "valle-d-aosta-chatillon-sagra-del-miele-e-dei-suoi-derivati": {
+      "kind": "fee",
+      "label": "2026: 20 / 40 / 70 € secondo categoria",
+      "details": "25 ottobre 2026: 20 € artigiani/hobbisti, 40 € commercianti e agricoli, 70 € street food. Corrente gratuita, senza bollo; IVA non precisata. Associazioni: modulo senza quota numerica; negozi di Châtillon: partecipazione gratuita riservata. Prezzi per l’evento, non al giorno. Domanda almeno dieci giorni prima e pagamento secondo il modulo entro sette giorni dalla data dell’evento; non trasferiti prezzi di cene/degustazioni.",
+      "sourceUrl": "https://www.comune.chatillon.ao.it/wp-content/uploads/2026/09/Modulistica-SDM-Artigiani-e-hobbisti.pdf",
+      "checkedAt": "2026-10-25",
+      "period": "2026"
+    },
+    "valle-d-aosta-chatillon-le-petit-marche-du-bourg": {
+      "kind": "fee",
+      "label": "2026: 20 / 30 / 40 € secondo categoria",
+      "details": "29 novembre 2026: 20 € artigiani/hobbisti, 30 € commercianti e agricoli, 40 € street food. Corrente gratuita, senza bollo; IVA non precisata. Associazioni: modulo senza quota numerica; negozi di Châtillon: partecipazione gratuita riservata. Prezzi per l’evento, non al giorno. Domanda almeno dieci giorni prima e pagamento secondo il modulo entro sette giorni dalla data dell’evento; conferma organizzatore necessaria.",
+      "sourceUrl": "https://www.comune.chatillon.ao.it/wp-content/uploads/2026/09/Modulistica-SDM-Artigiani-e-hobbisti.pdf",
+      "checkedAt": "2026-10-25",
+      "period": "2026"
     }
   }
 }
