@@ -5,6 +5,13 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Fiera annullata per maltempo e rimborso: pubblicazione verificata — 25 ottobre 2026
+
+- Pubblicato «Fiera annullata per maltempo: come verificare se ti spetta il rimborso del posteggio», slug `fiera-annullata-maltempo-rimborso-posteggio`, ID `a6b4aeab-d38d-4924-a084-51b61c7e77fa`. Articolo e copertina HTTPS su subingresso.it HTTP200; 686 parole editoriali, sei sezioni brevi, modello di richiesta e due soli banner fiere. Nessun doppione; 116 articoli precedenti invariati, totale117.
+- Fonti primarie HTTP200: regolamento Trento attualmente collegato dalla scheda comunale2026, artt.45/64/66, e Fiera di Primavera Paderno Dugnano, regolamento edizione2026 artt.4/9. Annullamento/rinvio/rinuncia e canone/quota organizzatore distinti; esempi esclusivamente locali, nessun rimborso o termine nazionale inventato. PDF ufficiale200, pagine25/37/38 lette e verificate visivamente dopo errore screenshotweb. Sorgenti/fonti `data/blog/`; prompt imagegen, originale e prove `Documents/articoli-subingresso/fiera-annullata-maltempo-rimborso-posteggio/`.
+- Materiali `7b90a29`, Vercel riuscito `DEUe1rP8WSUcwaF9sYEEpqdQyTX6`; copertina originale imagegen integrato WebP1600×900 identica SHA256. SEO SSR/NewsArticle/canonical, indice/sitemap e Chromium1440/768/320, WebKit390, senzaJS verificati: nessun overflow/errore, entrambe le CTA raggiungono `/fiere`200, nessun dato reale di prova. Backup remoto `backup/session-20261025-152355-articolo-fiera-annullata-rimborso` verificato; noto errore cleanuphelper, non ripetuto. Gitleaks senza rilievi; checkout principale e lavoro altrui preservati.
+- Search Console NON inviata: accesso effettivo fermo al loginGoogle, nessuna credenziale pertinente o sessione browser debug collegabile; integrazione trovata solo in lettura GSC. Resta Controllo URL → Richiedi indicizzazione per `https://subingresso.it/blog?post=fiera-annullata-maltempo-rimborso-posteggio`, distinto dalla presenza in sitemap e dall’indicizzazione effettiva.
+
 ## Furgone sostitutivo e targa ZTL: pubblicazione verificata — 25 ottobre 2026
 
 - Pubblicato «Furgone sostitutivo per andare al mercato: come cambiare la targa sul permesso ZTL», slug `furgone-sostitutivo-cambio-targa-permesso-ztl`, ID `143a87df-8f42-4bfe-b277-1012fdb8b0f3`. Articolo e copertina HTTPS su subingresso.it HTTP200; 613 parole editoriali, sei sezioni brevi e due soli banner fiere. Nessun doppione; 115 articoli precedenti invariati, totale116.
