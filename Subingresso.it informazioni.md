@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo affittuario moroso e posteggio — 25 ottobre 2026
+
+- Pubblicato «Ho affittato il banco e l’affittuario non paga il Comune: chi rischia il posteggio?», slug `affittuario-non-paga-comune-rischio-posteggio`, ID `e8a45208-da76-4459-a4f9-bc26dd12993a`. Sei sezioni semplici, debito e rischio concessione distinti; esempio Milano DD1902/2023 non generalizzato, fonte CCM Firenze. Due banner vendita, copertina originale IA WebP1600×900.
+- Commit `d64e934`, Vercel `2b7ZQxq912rqpeRA8wqezaUcc2xe` success: immagine identicaSHA256, SEO/indice/sitemap e Chromium1440/768/320,WebKit390,senzaJS passati; entrambe CTA `/vendi` verificate senza scritture di prova. Precedenti99articoli identici,100totali. Sorgenti `data/blog/`; prove/prompt `Documents/articoli-subingresso/affittuario-non-paga-comune-rischio-posteggio`.
+- Search Console NON inviata: loginGoogle richiesto, nessuna sessione debug o credenziale pertinente; plugin trovato GSC sola lettura. Resta Controllo URL → Richiedi indicizzazione; sitemap distinta dall’invio. Backup remoto preventivo verificato, cleanup helper con errore noto. DD1902 download403 e alias404: contenuto verificato nell’indice della fonte ufficiale, richiamo comunale attuale e integrazioneDD1829/2025 controllati. Prima anteprima corretta per la trasformazione esistente dei link vendita da parte del tracker; nessuna modifica al sito necessaria. Lavoro estraneo preservato.
+
 ## Articolo Milano, debiti e subingresso — 25 ottobre 2026
 
 - Pubblicato «Compro un posteggio a Milano: possono bloccare il subingresso per debiti del venditore su altri mercati?», slug `milano-subingresso-debiti-venditore-altri-mercati`, ID `815ef417-ad36-4386-9d60-ac9e421d404a`. Circa590parole, cinque sezioni; fonti ComuneMilano/DD11337, canoni milanesi complessivi e limiti rateazioni2013-2019 espliciti. Blocco amministrativo distinto dalla responsabilità debitoria. Due banner acquisto, copertina originale IA WebP1600×900.
