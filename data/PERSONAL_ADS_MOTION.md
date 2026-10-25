@@ -18,6 +18,9 @@ dopo il titolo, scala1,022; resto del ciclo per leggere. Sono decisioni di
 design, non tempi ottimali provati dalle fonti. Il sottotitolo e la CTA
 rimangono sempre leggibili e cliccabili. Nel player sul sito il loop resta
 continuo, con pausa; negliSVG autonomi3cicli e stato finale completo.
+La preferenza riduci movimento disabilita soltanto l’avvio automatico:
+il pulsante «Riproduci animazioni» consente una prova richiesta dall’utente,
+senza salvare la scelta. Un errore di caricamento espone «Riprova animazioni».
 
 Revisione con la skill emil-design-eng:
 

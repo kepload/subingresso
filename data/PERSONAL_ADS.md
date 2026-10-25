@@ -90,7 +90,11 @@ IntersectionObserver. Fuori campo, scheda nascosta, dialog aperto davanti
 alla galleria e logout rimuovono il movimento. Nel sito il ciclo continua
 finché visibile; pausa nella raccolta/dialog, oppure accanto a ciascun
 inserimento pubblico. La pausa mostra la versione completa. La preferenza
-riduci movimento conserva lo statico, senza scaricare la variante animata.
+riduci movimento conserva lo statico, senza scaricare automaticamente la
+variante animata. «Riproduci animazioni» permette una prova esplicita anche
+con tale preferenza; un successivo cambio della preferenza azzera la scelta.
+Se il caricamento fallisce, il pulsante permette di riprovare mantenendo
+nel frattempo il poster completo.
 
 Scrittura/CTA usano opacity e transform CSS; niente timer per fotogramma o
 librerie aggiunte. SVG isolato nello shadowDOM, fonte ammessa solo nella
@@ -180,8 +184,8 @@ e didascalie12px del mosaico; accesso admin e statistiche conservati.
 
 Movimento: `scripts/test-personal-ads-motion.cjs`, Chromium1440/320 e
 WebKit390; fotogrammi, progressione, CTA, ripetizione, ingresso/uscita,
-pausa, scheda nascosta, riduzione movimento, dialog, formato tardivo e
-logout; riuso cross-origin con pausa senza clic, fallback offline e fine
+pausa, scheda nascosta, riduzione movimento e avvio manuale, dialog, formato tardivo e
+logout; riuso cross-origin con pausa senza clic, fallback offline/riprova e fine
 delloSVG autonomo. Tutti160PNG controllati per dimensioni e colori pieni.
 `test-blog-loading.cjs` include un inserimentoSSR sanificato e funzionante.
 Prove `Documents/ads-movimento-hd-20261025`.

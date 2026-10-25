@@ -7,6 +7,15 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## ADS: messaggi e spazio — 25 ottobre 2026
 
+- Segnalazione «non si animano»: Chrome155 isolato con pagina/asset pubblicati
+  e dati fittizi conferma avvio normale; con riduci movimento il comando era
+  disabilitato. Corretto: statico automatico, «Riproduci animazioni» consente
+  prova manuale; errori caricamento riprovabili. Riferimenti player/admin
+  aggiornati per cache. Nessun accesso alla sessione utente o scrittura dati.
+  Prove movimento Chromium1440/320 e WebKit390 passate, incluso avvio
+  esplicito con riduzione attiva e retry raccolta/inserimento esterno.
+  Regressioni pannello/API/tracker e blogSSR passate nei formati previsti.
+  Pubblicazione e verifica online da completare.
 - Movimento/HD richiesti: scrittura in vista, poi due piccoli impulsiCTA e
   loop6,4s con tempo di lettura. Pausa, fuori campo/scheda nascosta e riduci
   movimento mostrano lo statico completo. Palette e messaggi conservati;
