@@ -5,6 +5,13 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Scambio del posteggio: pubblicazione verificata — 25 ottobre 2026
+
+- Pubblicato «Scambiare il posteggio con un altro ambulante: domanda, documenti e autorizzazioni», slug `scambiare-posteggio-altro-ambulante`, ID `ed6392f2-1d02-4563-a92c-a6eb85549fea`. Articolo e copertina HTTPS su subingresso.it HTTP200; 577 parole, sei sezioni brevi e due banner, ricerca annunci al centro e vendita in chiusura. Nessun doppione; 111 articoli precedenti invariati, totale112.
+- Sei fonti primarie HTTP200: servizi/moduli Gallarate, Brescia e Asti, regolamento Segrate art.42 pagina30. Ambiti comunali espliciti, nessuna tariffa o scadenza generalizzata. Testo/metadati/fonti in `data/blog/scambiare-posteggio-altro-ambulante.*`; originali, prompt imagegen integrato e prove in `Documents/articoli-subingresso/scambiare-posteggio-altro-ambulante/`. PDF non leggibili dal toolweb verificati dagli originali locali.
+- Materiali `c775325`, deploy Vercel riuscito `EK3zYRBAFxjKZusSnmVwmrXoSpU5`; copertina WebP1600×900 identica per SHA256. Verificati SEO SSR/NewsArticle/canonical, indice/sitemap, Chromium1440/768/320 e WebKit390, anche senzaJS. Due CTA raggiungono `/annunci` e `/vendi`200; articolo senza overflow/errori finali. Nessun dato reale di prova. Backup remoto preventivo verificato, noto errore cleanuphelper; gitleaks senza rilievi. Asserzioni del test riusato corrette e clic isolati in schede distinte dopo una lettura catalogo interrotta dalla navigazione; nessuna modifica ai componenti. Checkout principale e lavoro concorrente preservati.
+- Search Console NON inviata: accesso effettivo fermo al loginGoogle, nessuna sessione debug o credenziale pertinente; ricerca integrazioni trova solo lettura GSC. Resta Controllo URL → Richiedi indicizzazione per `https://subingresso.it/blog?post=scambiare-posteggio-altro-ambulante`, distinto dalla presenza in sitemap.
+
 ## Cedere un solo posteggio: pubblicazione verificata — 25 ottobre 2026
 
 - Pubblicato «Posso vendere un solo posteggio e tenere gli altri mercati della mia licenza?», slug `vendere-un-solo-posteggio-tenere-altri-mercati`, ID `aa7a9621-839e-4209-bb46-a0447bf0b359`. Articolo e copertina su subingresso.it HTTP200; 625 parole, sei sezioni brevi, due soli banner vendita. Nessun doppione: 110 articoli precedenti invariati, totale111.
