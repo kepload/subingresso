@@ -15,7 +15,11 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Prove movimento Chromium1440/320 e WebKit390 passate, incluso avvio
   esplicito con riduzione attiva e retry raccolta/inserimento esterno.
   Regressioni pannello/API/tracker e blogSSR passate nei formati previsti.
-  Pubblicazione e verifica online da completare.
+  Pubblicato `2f95ff4`, Vercel `7VLk3fEbZvHTpyxgyThF46HJVNHD` success:
+  4sorgenti identici online, API401, blogSSR con player aggiornato. Chrome155
+  con pagina/asset pubblicati e account fittizio: scrittura e pausa passano
+  sia con avvio normale sia manuale su movimento ridotto, zero errori o
+  scritture. Prove `Documents/ads-movimento-hd-20261025/avvio-fix`.
 - Movimento/HD richiesti: scrittura in vista, poi due piccoli impulsiCTA e
   loop6,4s con tempo di lettura. Pausa, fuori campo/scheda nascosta e riduci
   movimento mostrano lo statico completo. Palette e messaggi conservati;
