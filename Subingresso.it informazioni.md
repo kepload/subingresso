@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo rifiuto alla spunta e presenza — 25 ottobre 2026
+
+- Pubblicato «Alla spunta rifiuto il posto assegnato: mi contano comunque la presenza?», slug `spunta-rifiuto-posteggio-presenza`, ID `83436de3-12dd-4da2-a343-de67efe47c50`. 530 parole editoriali, sei sezioni; fonti Cavezzo art.14/Bisceglie art.13, mancata assegnazione distinta dal rifiuto, adeguatezza e forza maggiore senza presenza garantita o generalizzazioni nazionali. Due banner fiere/acquisto, copertina originale IA WebP1600×900.
+- Commit `9527f68`, Vercel `Ef7u6z1zS22kkNeWzUjirk1ikTBS` success: copertina identicaSHA256, SEO/indice/sitemap e Chromium1440/768/320,WebKit390,senzaJS passati; entrambi i pulsanti verificati senza scritture di prova. Precedenti102articoli identici,103totali. Sorgenti `data/blog/`; prompt, originali e prove `Documents/articoli-subingresso/spunta-rifiuto-posteggio-presenza`.
+- Search Console NON inviata: accesso corrente richiede loginGoogle, nessuna sessione debug/credenziale pertinente; integrazione trovata solo in lettura. Resta Controllo URL → Richiedi indicizzazione; sitemap distinta dall’invio. Backup remoto preventivo verificato, cleanup helper con errore noto. ScreenshotPDF web indisponibili: originali scaricati200, testi e pagine renderizzate controllati localmente; prima stampaPDF con errore codifica corretta. Lavoro estraneo preservato; gitleaks reale senza rilievi.
+
 ## Articolo fine affitto e reintestazione — 25 ottobre 2026
 
 - Pubblicato «È finito l’affitto del posteggio: entro quando devo reintestarmi la licenza?», slug `fine-affitto-posteggio-reintestazione-licenza`, ID `943f86a5-75c7-43ae-b95e-f9c30228e470`. 638 parole editoriali, sei sezioni; fonti Segrate art.24/Rimini, nessun termine nazionale inventato, sei mesi con avvio e riaffitto contestuale circoscritti a Segrate. Due banner vendita, copertina originale IA WebP1600×900.
