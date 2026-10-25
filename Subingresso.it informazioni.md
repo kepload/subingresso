@@ -18,7 +18,14 @@ fonti e audit fiere completi: `data/FIERE.md`.
 - Audit120articoli:119coperti, eredi escluso come prima, testo/tabelle
   conservati; fiere/bandi pertinenti. Prove Chromium1440/768/320 eWebKit390,
   regressioni caricamentoSSR, annunci reali nel blog e raccolta/API/tracker
-  passate. Pubblicazione ancora da verificare. Nessuna modifica DB o pagamento.
+  passate. Pubblicato `a7e7daf`, Vercel `BQeNrmriHcaQ8uyQvVyb8NF7svw3`
+  READY:120articoli200,119conADS, testo editoriale conservato, selezioni
+  pertinenti/distinte,4sorgenti identici ai byteGit e APIprivata401.
+  Nove prove sui contenuti/asset pubblicati Chromium1440/320 eWebKit390:
+  fiere/vendita/acquisto, formati/animazione/pausa passati; servizi intercettati,
+  zero scritture reali. Inspector componente0FAIL; avvisi pagina intera
+  dovuti al popup accesso preesistente. Gitleaks senza rilievi.
+  Nessuna modifica DB o pagamento.
   Backup tag/ramo remoti verificati; helper fermato da output Git su stderr
   dopo push tag riuscito. Affinato match per «comprare banco e vendere merci».
 
