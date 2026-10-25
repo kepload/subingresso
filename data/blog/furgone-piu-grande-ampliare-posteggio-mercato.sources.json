@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-10-25",
+  "title": "Ho comprato un furgone più grande: posso ampliare il posteggio al mercato?",
+  "scope": "Quadro nazionale sulle competenze comunali; tutela regionale lombarda distinta dal semplice trasporto merci; esempi esclusivamente comunali di Segrate e Pavia. Nessun metraggio, costo, termine o ampliamento automatico generalizzato.",
+  "sources": [
+    {
+      "url": "https://def.giustiziatributaria.gov.it/DocTribFrontend/executePrintArticolo.do?articolo=Articolo+28&codiceOrdinamento=0000000000000280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&id=%7B44599D2A-9AD4-4BD9-B42E-57B2FB9EE655%7D",
+      "authority": "Ministero dell'Economia e delle Finanze, banca dati normativa",
+      "reference": "D.lgs. 114/1998, articolo 28 comma 15, stampa vigente pagina 2",
+      "supports": "Il Comune, sulla base delle disposizioni regionali, stabilisce la superficie dei posteggi. Il solo acquisto del furgone non modifica la concessione.",
+      "http_status": 200
+    },
+    {
+      "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/11-attivita-produttive-imprese/01-commercio/03-commercio-ambulante-mercati-e-sagre/red-quadro-normativo-commercio-ambulante/allegati-quadro-normativo-ambulanti/Dgr%204054%20ambulanti%20%2B%20allegati.pdf#page=10",
+      "authority": "Regione Lombardia",
+      "reference": "DGR XI/4054 del 14 dicembre 2020, allegato A punto 3.2 comma 4, pagina PDF 10",
+      "supports": "Diritto all'ampliamento o, se impossibile, ad altro posteggio per autoveicoli attrezzati come punti vendita con superficie insufficiente; restano prescrizioni urbanistiche e tutele dei luoghi. Non esteso ai semplici furgoni da carico o a tutta Italia.",
+      "current_reference_page": "https://www.regione.lombardia.it/attivita-produttive-imprese/commercio/commercio-ambulante-mercati-e-sagre/quadro-normativo-su-commercio-ambulante",
+      "http_status": 200
+    },
+    {
+      "url": "https://comune.segrate.mi.it/doc/Regolamenti/Regolamento_dei_mercati_e_del_commercio_su_aree_pubbliche.pdf#page=26",
+      "authority": "Comune di Segrate, Lombardia",
+      "reference": "Regolamento dei mercati e del commercio su aree pubbliche, articoli 34 comma 3, 38 comma 1 e 40 comma 3, pagine PDF 26-29",
+      "supports": "Tutela per autoveicoli attrezzati e disponibilità dell'alternativa; veicoli da trasporto entro il posteggio o nei luoghi consentiti; rispetto dei confini e dei passaggi. Esempio esclusivamente comunale.",
+      "current_reference_page": "https://comune.segrate.mi.it/regolamenti/regolamenti/",
+      "http_status": 200
+    },
+    {
+      "url": "https://www.comune.pavia.it/media/174#page=24",
+      "authority": "Comune di Pavia, Lombardia",
+      "reference": "Regolamento comunale per la disciplina del commercio su aree pubbliche, articolo 31 comma 1, pagine PDF 24-25; articolo 29 comma 14 lettera o",
+      "supports": "Richiesta scritta preventiva per sostituzione attrezzature di vendita con altre più ingombranti; adeguamento di superficie, concessione e canone se accolta; valutazione di posto vacante idoneo nello stesso settore per autoveicoli attrezzati. Divieto di occupare oltre lo spazio assegnato.",
+      "current_reference_page": "https://www.comune.pavia.it/amministrazione/documenti-dati/documenti/regolamento-generale-per-disciplina-commercio-aree-pubbliche-comunali",
+      "http_status": 200
+    }
+  ],
+  "research_notes": "Fonti originali scaricate HTTP200, testo e pagine pertinenti verificati localmente dopo errore cache miss del servizio screenshot PDF. Pagine istituzionali attuali controllate per Regione Lombardia, Segrate e Pavia. Checklist documenti presentata come consiglio pratico, non come requisito nazionale. Dossier e prove fuori repo sotto Documents/articoli-subingresso/furgone-piu-grande-ampliare-posteggio-mercato/.",
+  "cover": {
+    "tool": "image_gen integrato, skill imagegen",
+    "path": "images/blog/furgone-piu-grande-ampliare-posteggio-mercato.webp",
+    "dimensions": "1600x900",
+    "prompt_summary": "Fotografia illustrativa di ambulante che misura il posteggio accanto a un furgone commerciale bianco a passo lungo, mercato italiano al mattino, nessuna scritta o marchio.",
+    "full_prompt": "Documents/articoli-subingresso/furgone-piu-grande-ampliare-posteggio-mercato/prompt-copertina.txt",
+    "disclosure": "Copertina creata con IA: scena illustrativa."
+  }
+}
