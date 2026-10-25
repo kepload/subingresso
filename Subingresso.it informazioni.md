@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo fine affitto e reintestazione — 25 ottobre 2026
+
+- Pubblicato «È finito l’affitto del posteggio: entro quando devo reintestarmi la licenza?», slug `fine-affitto-posteggio-reintestazione-licenza`, ID `943f86a5-75c7-43ae-b95e-f9c30228e470`. 638 parole editoriali, sei sezioni; fonti Segrate art.24/Rimini, nessun termine nazionale inventato, sei mesi con avvio e riaffitto contestuale circoscritti a Segrate. Due banner vendita, copertina originale IA WebP1600×900.
+- Commit `5b3260e`, Vercel `EqbaDR2HDqiGq8FpFKpyicv929DS` success: copertina identicaSHA256, SEO/indice/sitemap e browser online Chromium1440/768/320,WebKit390,senzaJS passati; entrambi i pulsanti verificati senza scritture di prova. Precedenti101articoli identici,102totali. Sorgenti `data/blog/`; prompt, originali e prove `Documents/articoli-subingresso/fine-affitto-posteggio-reintestazione-licenza`.
+- Search Console NON inviata: accesso attuale richiede loginGoogle, nessuna sessione debug o credenziale pertinente; plugin trovato solo in lettura. Resta Controllo URL → Richiedi indicizzazione; sitemap distinta dall’invio. Backup remoto preventivo verificato, cleanup helper con errore noto; primo comando commit fermato dal parser e corretto con fileUTF8. Gitleaks reale positivo; lavoro estraneo preservato. ScreenshotPDF web indisponibile, originale scaricato200 e testo ufficiale verificato.
+
 ## Articolo assenze del vecchio titolare — 25 ottobre 2026
 
 - Pubblicato «Compro una licenza ambulante: le assenze del vecchio titolare passano a me?», slug `compro-licenza-ambulante-assenze-vecchio-titolare`, ID `7bb8736c-89be-4cae-ae45-dec41e2f2d02`. 527 parole editoriali, sei sezioni; fonti Siena2026/Zocca, passaggio assenze distinto dal mancato cumulo con limite proporzionale ed eccezione contributiva. Esempio15+3=18 limitato a Siena; nessun azzeramento nazionale promesso. Due banner acquisto, copertina originale IA WebP1600×900.
