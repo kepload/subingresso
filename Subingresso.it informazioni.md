@@ -7,6 +7,13 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## ADS: messaggi e spazio — 25 ottobre 2026
 
+- Movimento/HD richiesti: scrittura in vista, poi due piccoli impulsiCTA e
+  loop6,4s con tempo di lettura. Pausa, fuori campo/scheda nascosta e riduci
+  movimento mostrano lo statico completo. Palette e messaggi conservati;
+  SVG in pagina, PNG web2×/social1080 a colori pieni, immagini originali1600
+  JPEG94. Assetv5; SVG animati/HTML aggiunti ai pacchetti. Ricerca primaria e
+  scelte `data/PERSONAL_ADS_MOTION.md`; prove `Documents/ads-movimento-hd-20261025`.
+  Pubblicazione del seguito in verifica.
 - Seguito da screenshot: cifra/frase ravvicinate, mai «AL» isolato; contesto
   piccolo subito sotto, esplicito per fiere/posteggi/vendita e coerente col
   link, anche nei banner90/100px. Importi ed esclamativi conservati; niente
