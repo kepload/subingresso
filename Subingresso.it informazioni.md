@@ -13,7 +13,14 @@ fonti e audit fiere completi: `data/FIERE.md`.
   SVG in pagina, PNG web2×/social1080 a colori pieni, immagini originali1600
   JPEG94. Assetv5; SVG animati/HTML aggiunti ai pacchetti. Ricerca primaria e
   scelte `data/PERSONAL_ADS_MOTION.md`; prove `Documents/ads-movimento-hd-20261025`.
-  Pubblicazione del seguito in verifica.
+  Pubblicato `4f3914c`/merge `01a41fa`, Vercel
+  `EDWq3rnCTpUSREBesvzA1ymQaM4q` success:480asset e5file identici online,
+  CORS pubblico immagini verificato, API401/20destinazioni inpreview e
+  inizializzatore nel blogSSR200. Animazione/pausa da pagina esterna reale
+  con asset pubblicati passate Chrome1440/320 e WebKit390 aDPR2, senza
+  scritture. Regressioni pannello/tracker/blog, movimento e ZIP passati;
+  lint/inspector0FAIL, gitleaks senza rilievi. Backup remoto dedicato
+  verificato; aggiornamento Pescara integrato e conservato.
 - Seguito da screenshot: cifra/frase ravvicinate, mai «AL» isolato; contesto
   piccolo subito sotto, esplicito per fiere/posteggi/vendita e coerente col
   link, anche nei banner90/100px. Importi ed esclamativi conservati; niente
