@@ -1,5 +1,9 @@
 # Annunci negli articoli del blog
 
+Le ADS grafiche proprie usano il motore keyword/formati descritto in
+`data/CONTEXTUAL_ADS.md`. Questo documento riguarda invece i riquadri degli
+annunci reali: selezione geografica e priorità delle Vetrine conservate.
+
 22 ottobre2026: preferenza corrente applicata con Vetrine Premium. I riquadri
 pubblicitari mostrano solo Vetrine attive con tier pagato10d/30d/90d, massimo
 tre e sempre pertinenti. Nessun riempimento con annunci gratuiti o admin_free;

@@ -10,6 +10,7 @@ const { JSDOM } = require('jsdom');
 const createDOMPurify = require('dompurify');
 const BlogMarkup = require('../js/blog-markup');
 const BlogFierePromo = require('../js/blog-fiere-promo');
+const ContextualAds = require('../js/contextual-ads');
 // No scripts or external resources are enabled in this server-side DOM.
 const sanitizerWindow = new JSDOM('').window;
 const DOMPurify = createDOMPurify(sanitizerWindow);
@@ -96,7 +97,7 @@ module.exports = async function handler(req, res) {
         // Promotions have the same positions before and after hydration.
         const articleRoot = sanitizerWindow.document.createElement('div');
         articleRoot.innerHTML = content;
-        BlogFierePromo.mount(articleRoot.querySelector('#blogPostContent'), post, BlogMarkup.regions);
+        ContextualAds.mount(articleRoot.querySelector('#blogPostContent'), post, BlogMarkup.regions);
         content = articleRoot.innerHTML;
         const {content: _body, ...metadata} = post;
         html = renderBody(html, content, {mode: 'post', post: metadata, related});

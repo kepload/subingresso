@@ -1,5 +1,9 @@
 # ADS personali — 24 ottobre 2026
 
+Selezione automatica nel blog per keyword, slot e formati:
+`data/CONTEXTUAL_ADS.md`. Catalogo pubblico delle sole creatività proprie;
+raccolta e statistiche restano protette dal ruolo admin.
+
 Richiesta: raccolta privata admin con circa20 ADS delle sezioni redditizie,
 più misure, riuso di alcuni banner blog e confronto dei risultati.
 

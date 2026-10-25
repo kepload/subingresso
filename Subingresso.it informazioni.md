@@ -5,6 +5,23 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## ADS contestuali: keyword e formati — 25 ottobre 2026
+
+- Richiesta: abbinare slot/articoli e ADS per keyword e formato, sorteggiando
+  fra quelle pertinenti; solo nostreADS. Clienti paganti futuri esclusi ora.
+  Motore condiviso SSR/browser, dizionario sinonimi, priorità titolo/slug,
+  esclusione testi pubblicitari e distinzione vendita merci/licenze.
+  Due slot, formati728×90/336×280/300×250, niente doppioID se alternative,
+  nuovo sorteggio al caricamento e formato adattato senza cambiare creatività.
+  Catalogo pubblico20ADS senza statistiche; API raccolta ancora admin.
+  Contratto `data/CONTEXTUAL_ADS.md`; prove `Documents/ads-keywords-20261025`.
+- Audit120articoli:119coperti, eredi escluso come prima, testo/tabelle
+  conservati; fiere/bandi pertinenti. Prove Chromium1440/768/320 eWebKit390,
+  regressioni caricamentoSSR, annunci reali nel blog e raccolta/API/tracker
+  passate. Pubblicazione ancora da verificare. Nessuna modifica DB o pagamento.
+  Backup tag/ramo remoti verificati; helper fermato da output Git su stderr
+  dopo push tag riuscito. Affinato match per «comprare banco e vendere merci».
+
 ## ADS: messaggi e spazio — 25 ottobre 2026
 
 - Richiesta attuale: nella raccolta avvio automatico anche con riduci movimento,

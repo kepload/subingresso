@@ -1,0 +1,7 @@
+.contextual-ad{margin:32px 0;max-width:100%;text-align:center;overflow-wrap:anywhere}
+.contextual-ad-label{margin:0 0 8px!important;color:#475569;font:500 12px/1.5 system-ui,sans-serif}
+.contextual-ad [data-pa-player]{max-width:100%}
+.contextual-ad a{display:block;line-height:0;max-width:100%}
+.contextual-ad a:focus-visible{outline:3px solid #1d4ed8;outline-offset:4px}
+.contextual-ad img{display:block;max-width:100%;height:auto;margin:0 auto!important}
+html.admin-dark .contextual-ad-label{color:#cbd5e1}

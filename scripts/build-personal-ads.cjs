@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),sharp=require('sharp');
 const {execFileSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..'),folder=path.join(root,'images/personal-ads');
 (async()=>{
+ execFileSync(process.execPath,[path.join(__dirname,'build-contextual-ads.cjs')],{cwd:root,stdio:'inherit'});
  execFileSync('python',[path.join(__dirname,'build-personal-ads.py')],{cwd:root,stdio:'inherit'});
  for(const file of fs.readdirSync(folder).filter(file=>file.endsWith('.svg')&&!file.endsWith('.animated.svg'))){
   const scale=file.includes('-1080x')?1:2;
