@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-25",
+  "checkedAt": "2026-10-26",
   "research": {
     "catalogEventsScreened": 3447,
     "catalogSourceRequests": 1870,
@@ -1851,6 +1851,105 @@
       "sourceUrl": "https://www.comune.chatillon.ao.it/wp-content/uploads/2026/09/Modulistica-SDM-Artigiani-e-hobbisti.pdf",
       "checkedAt": "2026-10-25",
       "period": "2026"
+    },
+    "lazio-aprilia-mercatino-dell-usato-dell-artigianato-del-collezionismo-e-dell-hobbistica": {
+      "kind": "partial",
+      "label": "Rimborso spese fino a 15 € + canone",
+      "details": "Il servizio comunale prevede una quota organizzativa a rimborso spese di massimo 15 €, più Canone Unico per la singola giornata mediante “Barra e Occupa”. Il limite di 15 € non è il prezzo totale del posteggio. Importo del canone e requisiti della categoria da verificare.",
+      "period": null,
+      "sourceUrl": "https://comune.aprilia.lt.it/servizi/partecipazione-al-mercatino-dellusato-dellartigianato-del-collezionismo-e-dellhobbistica",
+      "sourceLabel": "comune.aprilia.lt.it",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-latina-posteggi-del-carnevale-in-piazza-del-popolo": {
+      "kind": "conditional",
+      "label": "Canone da 47 € + TARIG e bollo",
+      "details": "Bando 2026: canone 125 € per 6×4 m o 47 € per 3×3 m; TARIG 15 € per 6×4 m, 6 € per 3×3 m alimentare. Bollo da 16 € al rilascio. I valori sono quelli della tabella del bando, non una tariffa unica giornaliera; verificare la tipologia assegnata e gli ulteriori adempimenti.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.latina.it/dam/jcr:17349800-db24-4eb6-9b2d-f8b289cc0315/Avviso%20Pubblico%20Carnevale%202026_signed-signed.pdf",
+      "sourceLabel": "www.comune.latina.it",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-sezze-fiera-della-croce": {
+      "kind": "conditional",
+      "label": "Suolo 28–70 € + istruttoria 30 €",
+      "details": "Tabella comunale 2026: occupazione 28 € per 4×5 m; 35 € per 5×5 m; 56 € per 8×5 m; 70 € per 10×5 m; 34 € per 6×4 m. Si aggiungono 30 € di istruttoria. Importo legato al posto assegnato, non una quota unica né prova di disponibilità.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sezze.lt.it/dam/jcr%3A0f137cd6-8e18-4224-95c5-d515abbb615e/AVVISO%20PUBBLICO%20BANDO%20ALLEGATO%20A.pdf",
+      "sourceLabel": "www.comune.sezze.lt.it",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-sezze-fiera-di-san-luca": {
+      "kind": "conditional",
+      "label": "Suolo 28–70 € + istruttoria 30 €",
+      "details": "Tabella comunale 2026: occupazione 28 € per 4×5 m; 35 € per 5×5 m; 56 € per 8×5 m; 70 € per 10×5 m; 34 € per 6×4 m. Si aggiungono 30 € di istruttoria. Importo legato al posto assegnato, non una quota unica né prova di disponibilità.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sezze.lt.it/dam/jcr:7d2c2775-3c59-4370-92ff-858eba14d60c/AVVISO%20PUBBLICO%20BANDO%20ALLEGATO%20A-3.pdf",
+      "sourceLabel": "www.comune.sezze.lt.it",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-sezze-sagra-del-carciofo": {
+      "kind": "conditional",
+      "label": "Quote diverse per categoria",
+      "details": "Hobbisti/artigianato nelle aree indicate: 80 €, dopo autorizzazione entro il 30 marzo 2026. Stand gastronomico base 50 m²: 350 € per due giorni; il bando richiede anche 80 € di istruttoria e 20 € ASL negli adempimenti della categoria. Associazioni RUNTS esenti dal CUP nei casi previsti; possibili gazebo gratuiti ai produttori locali di carciofi. Pubblicità da 250/500/1.500 € separata dal banco; nessuna gratuità generale.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sezze.lt.it/dam/jcr%3Abcabf645-1fd2-4d60-a490-71d92150a3d0/AVVISO%20PUBBLICO%20SAGRA%20DEL%20CARCIOFO%202026.pdf",
+      "sourceLabel": "www.comune.sezze.lt.it",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-priverno-fiera-nostra": {
+      "kind": "free",
+      "label": "Posteggio gratuito nel bando 2026",
+      "details": "L’articolo 5 rende totalmente gratuiti i posteggi nelle aree Fiera e Food dell’edizione 2026. La gratuità impegna alla partecipazione e non elimina selezione, titoli o allestimento a cura del titolare. La fonte non garantisce posti residui.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.priverno.latina.it/notizie/L-ASSEGNAZIONE-DI-POSTEGGI-PER-LA-VENDITA-TEMPORANEA-SU-SUOLO-PUBBLICO-IN-OCCASIONE-DELLA-TRADIZIONALE-FIERA-NOSTRA-.html",
+      "sourceLabel": "www.comune.priverno.latina.it",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-priverno-festa-medievale-di-fossanova": {
+      "kind": "conditional",
+      "label": "Da 50 €, secondo categoria",
+      "details": "Bando 2026: hobbisti/no profit spazio non attrezzato 50 € non riducibili; artigianato non alimentare 200 €; prodotti artigianali alimentari 300 €; dolciumi 800 €; somministrazione ai tavoli 2.200 €. Per asporto il PDF scrive “1.6000,00 €”: importo ambiguo, non corretto per ipotesi. Riduzione 20% per attività con sede a Priverno, esclusi i 50 €. Bollo domanda 16 € separato. Dotazioni e potenza elettrica dipendono dalla categoria; IVA non precisata.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.priverno.latina.it/dam/jcr:182ce6bd-3d98-49f6-a501-134cc24e1312/avviso%20pubblico%20per%20l%60assegnazione%20posteggi%20vendita%20temporanea%20festa%20medievale%202026%20(1).pdf",
+      "sourceLabel": "www.comune.priverno.latina.it",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-itri-fiera-della-madonna-della-civita": {
+      "kind": "partial",
+      "label": "Istruttoria 100 € + tributi",
+      "details": "Delibera e comunicato 2026: diritti di istruttoria 100 €, oltre ai tributi comunali per l’occupazione del suolo negli importi applicabili. I 100 € non sono il costo totale del posteggio; organico e assegnazione non provano disponibilità.",
+      "period": "2026",
+      "sourceUrl": "https://comune.itri.lt.it/wp-content/uploads/2026/07/DELIBERA-GIUNTA-COMUNALE-N.-130-DEL-30.06.2026-1.pdf",
+      "sourceLabel": "comune.itri.lt.it",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-minturno-fiera-di-santa-lucia": {
+      "kind": "conditional",
+      "label": "CUP 1,13/2,27 €/m² + oneri (2025)",
+      "details": "Bando 2025: bollo domanda 16 €, oneri SUAP 10 €, ulteriore bollo 16 € al rilascio. CUP 1,13 €/m² per titolare temporaneo o 2,27 €/m² per spuntista. Il documento precisa versamento per il solo sabato 13 dicembre 2025. Non applicare automaticamente questi importi alla nuova edizione; nessuna quota totale uguale per tutti.",
+      "period": "2025",
+      "sourceUrl": "https://comune.minturno.lt.it/wp-content/uploads/2025/11/BANDO-ASSEGNAZIONE-POSTEGGI-FIERA-SANTA-LUCIA-ANNO-2025-VALIDITA-5-2025-2026-2027-2028-2029-2030__signed.pdf",
+      "sourceLabel": "comune.minturno.lt.it",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-norma-sagra-delle-castagne": {
+      "kind": "conditional",
+      "label": "Esenzioni riservate; quota non pubblicata",
+      "details": "Il regolamento 2026 esenta dal contributo le baracche tipiche e gli stand delle associazioni di Norma senza scopo di lucro. Per gli altri la quota va versata entro tre giorni dall’accettazione, ma l’importo non è indicato. Non è una manifestazione gratuita per tutti gli espositori.",
+      "period": "2026",
+      "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5329439/Regolamento.pdf",
+      "sourceLabel": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-26"
+    },
+    "lazio-sperlonga-torre-truglia-village": {
+      "kind": "conditional",
+      "label": "Casetta non food: da 135 € per weekend",
+      "details": "Listino 2026 esclusivamente casetta non food 3×2 m: 165 € per 24–26 aprile; 220 € per 30 aprile–3 maggio; 135 € per weekend venerdì–domenica dall’8 maggio al 28 giugno. Formula “luglio/agosto 1/31” 1.250 €: periodo contrattuale da precisare, senza attribuire il prezzo a due mesi. Pagamento anticipato alla firma. IVA e tariffa alimentare non specificate; nessuna quota unica valida per tutte le categorie.",
+      "period": "2026",
+      "sourceUrl": "https://www.sperlongaturismo.it/it/non-categorizzato/torre-truglia-village-2026-richiesta-manifestazione-di-interesse/",
+      "sourceLabel": "www.sperlongaturismo.it",
+      "checkedAt": "2026-10-26"
     }
   }
 }
