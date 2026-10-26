@@ -1950,6 +1950,69 @@
       "sourceUrl": "https://www.sperlongaturismo.it/it/non-categorizzato/torre-truglia-village-2026-richiesta-manifestazione-di-interesse/",
       "sourceLabel": "www.sperlongaturismo.it",
       "checkedAt": "2026-10-26"
+    },
+    "lazio-bolsena-fiera-di-santa-cristina": {
+      "label": "Istruttoria 50 € + due bolli da 16 €",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il bando 2026 richiede 50 € di istruttoria e due marche da bollo da 16 €. Questi oneri di domanda non sono il costo complessivo del posteggio; canone e ulteriori condizioni da verificare.",
+      "sourceUrl": "https://www.comune.bolsena.vt.it/dam/jcr:f94cdf8a-0fb6-41ba-9c3a-2f35b05a6825/BANDO%20FIERA%20%202026%20s.cristina.pdf",
+      "checkedAt": "2026-10-26",
+      "review": "live-source-review"
+    },
+    "lazio-civita-castellana-fiera-dei-santi-patroni-giovanni-e-marciano": {
+      "label": "Canone temporaneo 1,05 €/m²/giorno",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Il bando 2026 indica il canone di occupazione di 1,05 € al metro quadrato per giorno. Il totale dipende dalla superficie e dagli eventuali altri oneri; non è una tariffa fissa per banco.",
+      "sourceUrl": "https://comune.civitacastellana.vt.it/wp-content/uploads/2026/07/AVVISO-Assegnazione-posteggi-fiera-Santi-patroni-2026.pdf",
+      "checkedAt": "2026-10-26",
+      "review": "live-source-review"
+    },
+    "lazio-civita-castellana-fiera-di-ognissanti": {
+      "label": "Tipo B e hobbisti: canone 1,05 €/m²/giorno",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Il PDF 2026 applica espressamente 1,05 €/m²/giorno ai titolari di autorizzazione B e a hobbisti/espositori. Non si attribuisce automaticamente lo stesso pagamento ai titolari A; superficie e ulteriori oneri determinano il totale.",
+      "sourceUrl": "https://comune.civitacastellana.vt.it/wp-content/uploads/2026/10/AVVISO_PUBBLICO_ANNO_2026_1_novembre.pdf",
+      "checkedAt": "2026-10-26",
+      "review": "live-source-review"
+    },
+    "lazio-fabrica-di-roma-mercatino-di-natale": {
+      "label": "Spazio e corrente gratuiti; gazebo proprio",
+      "kind": "free",
+      "period": "2026",
+      "details": "La pagina comunale dichiara gratuiti spazio e corrente per il mercatino 2026. Gazebo 3×3 e tavolini sono a carico dell’espositore; restano necessari domanda e ammissione per prodotti natalizi. Non si promettono altri servizi gratuiti.",
+      "sourceUrl": "https://www.comune.fabricadiroma.vt.it/notizie/Mercatino-di-Natale-2026.html",
+      "checkedAt": "2026-10-26",
+      "review": "live-source-review"
+    },
+    "lazio-montalto-di-castro-mercatino-di-via-dei-coralli": {
+      "label": "Organizzazione: massimo 22 €/giorno + canone",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il bando 2026 fissa un tetto di 22 € IVA compresa per posteggio/giorno per istruttoria, pubblicità e organizzazione, soggetto al ribasso della gara del gestore. Si aggiunge la quota del canone unico mercatale; il tetto non è un prezzo finale né prova dell’importo effettivamente richiesto.",
+      "sourceUrl": "https://comune.montaltodicastro.vt.it/wp-content/uploads/2026/05/Allegato_1_Avviso_Pubblico_Mercatino_via_dei_Coralli_2026.pdf",
+      "checkedAt": "2026-10-26",
+      "review": "live-source-review"
+    },
+    "lazio-montalto-di-castro-montalto-tra-le-mura-mercatino": {
+      "label": "Organizzazione: 45 € per periodo + canone",
+      "kind": "partial",
+      "period": "2026",
+      "details": "La determina 1560 del 4 agosto 2026 aggiudica l’offerta con ribasso del 10%: 45 € IVA compresa per il posteggio 3×3 per l’intero mercato 21–22 agosto. Rimane aggiuntiva la quota del canone unico mercatale prevista dal bando; non è un totale onnicomprensivo.",
+      "sourceUrl": "https://comune.montaltodicastro.vt.it/wp-content/uploads/2026/08/Determina-aggiudicazione-n.-1560-del-04-08-2026-Montalto-tra-le-Mura-anno-2026.pdf",
+      "checkedAt": "2026-10-26",
+      "review": "live-source-review"
+    },
+    "lazio-tessennano-mercatino-della-sagra-della-pasta-e-fagioli": {
+      "label": "Organizzazione: massimo 40 € per periodo + canone",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il bando 2026 limita a 40 € IVA compresa per l’intero mercato l’importo di istruttoria e organizzazione, soggetto a ribasso nella selezione del gestore. Canone unico mercatale, comprensivo della quota rifiuti prevista dal Comune, aggiuntivo; il tetto non è il totale finale.",
+      "sourceUrl": "https://comune.tessennano.vt.it/wp-content/uploads/2026/07/AVVISO-ALLEGATO-A-1.pdf",
+      "checkedAt": "2026-10-26",
+      "review": "live-source-review"
     }
   }
 }
