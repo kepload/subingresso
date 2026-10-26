@@ -4,7 +4,7 @@ const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..'),out=process.env.BLOG_VETRINE_QA_DIR||path.join(root,'.taste-skill/blog-vetrine');fs.mkdirSync(out,{recursive:true});
 const handler=require('../lib/personal-ads-handler.cjs'),catalog=require('../lib/personal-ads.cjs'),markup=require('../js/blog-markup.js');
 const uid='00000000-0000-4000-8000-000000000001',id='00000000-0000-4000-8000-000000000010';
-const post={slug:'posteggi-lombardia',title:'Posteggi in Lombardia',content:'<p>Uno.</p><p>Due.</p><p>Tre.</p>',published_at:'2026-10-01'};
+const post={slug:'posteggi-lombardia',title:'Chiedo la miglioria in fiera: rischio di perdere il mio vecchio posteggio in Lombardia?',content:'<p>Uno.</p><p>Due.</p><p>Tre.</p>',published_at:'2026-10-01'};
 const listing={id,user_id:'00000000-0000-4000-8000-000000000002',titolo:'Posteggio <img src=x onerror=window.xss=true>',comune:'Milano',regione:'Lombardia',img_urls:[],active:true};
 const stats={listings:[listing],rows:[{listing_id:id,post_slug:post.slug,placement:'blog_inline',impressions:10,clicks:2,measured_clicks:1}],updated_at:'2026-10-26T10:00:00Z'};
 async function apiTests(){

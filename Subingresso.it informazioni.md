@@ -18,7 +18,11 @@ fonti e audit fiere completi: `data/FIERE.md`.
   passati; regressioni blogSSR,60Vetrine/800sorteggi, raccolta/tracker e
   abbinamenti admin passati. Inspector prima/dopo0FAIL; avviso sui banner
   colorati esistenti. Contratto `data/BLOG_VETRINE_ADS.md`, prove private
-  `Documents/blog-vetrine-ads-20261026`. Pubblicazione ancora da verificare.
+  `Documents/blog-vetrine-ads-20261026`. Pubblicato `4e4293c`, Vercel
+  `6q6muwHP5YxsUpLoEE2uXMcgJKjr` riuscito:6sorgenti identici,120articoli200
+  con spazio unico/testo conservato,119conADS proprie eAPIadmin401.
+  Controllo pubblicato ha rilevato overflow del select nativo WebKit con
+  titoli lunghi: contenimento e focus interno aggiunti, test esteso eCSSv2.
 - Backup tag/ramo remoti verificati. Cleanuphelper ha prodotto errori dopo
   push riuscito; corretto label pubblicità che allungava il box320 e prima
   invocazione SQL privata con quoting PowerShell. Nessun acquisto, email o
