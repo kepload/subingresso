@@ -1,0 +1,113 @@
+/* Finiture locali: caricare dopo il tema condiviso. Il chiaro resta invariato.
+   I fogli admin-theme-* hanno gia il proprio tema e sono esclusi dal generatore. */
+html.admin-dark[data-admin-theme-page="valutatore"] {
+    --ad-canvas: #111214;
+    --ad-panel: #1a1c20;
+    --ad-field: #14161a;
+    --ad-raised: #25282e;
+    --ad-hover: #292d34;
+    --ad-line: #393f49;
+    --ad-info: #202d40;
+    --ad-ink: #f3f4f6;
+    --ad-muted: #b6beca;
+    --ad-subtle: #a0acbd;
+    --val-control-line: #626d7e;
+    --val-selected: #202a38;
+}
+
+html.admin-dark .val-brand-mark,
+html.admin-dark #calculatorForm {
+    box-shadow: none;
+}
+
+html.admin-dark #calculatorForm {
+    border-color: var(--ad-raised);
+}
+
+html.admin-dark #calculatorForm .option-card {
+    background: var(--ad-field);
+    border-color: var(--val-control-line);
+    border-width: 1px;
+    border-radius: 12px;
+    color: var(--ad-ink);
+    gap: 12px;
+    transition: background-color .16s ease, border-color .16s ease;
+}
+
+html.admin-dark #calculatorForm .option-card > span:last-child {
+    min-width: 0;
+}
+
+html.admin-dark #calculatorForm .option-card::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin-left: auto;
+    border: 1px solid var(--val-control-line);
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+}
+
+html.admin-dark #calculatorForm .option-card:hover {
+    background-color: var(--ad-raised);
+    border-color: var(--ad-subtle);
+}
+
+html.admin-dark #calculatorForm .option-card.selected {
+    background-color: var(--val-selected);
+    border-color: var(--ad-link);
+}
+
+html.admin-dark #calculatorForm .option-card.selected::after {
+    background-color: var(--ad-link);
+    border-color: var(--ad-link);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m3 8 3 3 7-7' stroke='%2314161a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+html.admin-dark #calculatorForm .option-card > span[aria-hidden="true"] {
+    background: transparent;
+    color: var(--ad-muted);
+}
+
+html.admin-dark #calculatorForm .option-card.selected > span[aria-hidden="true"] {
+    color: var(--ad-link);
+}
+
+html.admin-dark #calculatorForm .val-tabs .option-card {
+    min-height: 48px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+html.admin-dark #calculatorForm :is(.val-money, .val-number) {
+    background: var(--ad-field);
+    border-color: var(--val-control-line);
+    border-width: 1px;
+    border-radius: 12px;
+    color: var(--ad-ink);
+}
+
+html.admin-dark #calculatorForm .val-money input {
+    background: transparent;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Il focus appartiene all'intero campo, compreso il simbolo euro. */
+html.admin-dark #calculatorForm .val-money input:focus-visible {
+    outline: none;
+}
+
+html.admin-dark #calculatorForm :is(.val-money:focus-within, .val-number:focus-visible) {
+    border-color: var(--ad-link);
+    outline: 2px solid var(--ad-link);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.admin-dark #calculatorForm .option-card {
+        transition: none;
+    }
+}
