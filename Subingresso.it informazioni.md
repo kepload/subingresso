@@ -17,7 +17,10 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Inspector/detector: rilievi preesistenti fuori ambito; scorciatoia isolata
   senza h1 per sua natura. Fixture canvas senza runtime corretta dopo falso
   overflow; backup remoto verificato, consueto errore cleanup helper.
-  Pubblicazione in verifica.
+  Pubblicato `cb155d6`, Vercel `7oRVCHAiAswfS7ZzgkGAdDtq3tcU` riuscito:
+  quattro sorgenti identici ai byte Git e 112 controlli ripassati sui sorgenti
+  pubblicati con sessioni/letture simulate. Gitleaks senza rilievi;
+  conservati commit concorrente proposte blog e file estranei.
 
 ## Vetrine del blog nella raccolta ADS — 26 ottobre 2026
 
