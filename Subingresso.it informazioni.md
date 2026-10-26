@@ -7,14 +7,9 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## Piano editoriale futuro — 26 ottobre 2026
 
-- Creato `Articoli blog da sviluppare.md`: 10 titoli con priorità 🔴/🟠/🟢,
-  pallini per crescita/ricavi/motivo di clic, materiali necessari e fonti.
-  Obiettivi correnti: prima crescita rapida pertinente, poi ricavi; puntare
-  su valore utilizzabile anche con AI Overview, senza garanzie SEO.
-- Verificati 120 titoli/slug live via API, sette guide vicine e campione web;
-  concorrenza non misurata economicamente, dati/strumenti futuri espliciti.
-  Nessuna pubblicazione blog o modifica al sito. Backup remoto dedicato
-  verificato; helper con noto errore cleanup dei tag, backup riuscito.
+- `Articoli blog da sviluppare.md`: breve descrizione e 10 titoli con priorità
+  🔴/🟠/🟢; obiettivi crescita rapida, poi ricavi. Verificati 120 articoli e campione web.
+- Preferenza esplicita: comunicazioni e documenti essenziali, senza spiegare ogni passaggio.
 
 ## ADS contestuali: keyword e formati — 25 ottobre 2026
 
