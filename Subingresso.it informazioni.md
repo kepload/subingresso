@@ -26,6 +26,19 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Backup tag/ramo remoti verificati; consueto errore cleanuphelper; corretta
   fixture riapertura con contesto browser esplicito. Pubblicazione da verificare.
 
+## Vercel: chiave anteprime protetta come Secret — 26 ottobre 2026
+
+- Su richiesta, `IMAGE_PREVIEW_STORAGE_KEY` ID`EmKPiCKdPIvC1XHr` convertita
+  con PATCH del solo tipo: `sensitive`/`visibility=secret`, Production/Preview
+  invariati. Valore non letto né reinviato; chiave Supabase conservata.
+  API lettura200 con `decrypted=false` e valore nascosto verificata.
+- Dodici anteprime online da cache persistente identiche SHA256; HEAD,
+  rifiuto percorso privato e home/annunci/fiere verificati. Nessuna scrittura
+  a DB/immagini, nessun cambio al codice del sito o ripristino della produzione.
+  Backup remoto `backup/pre-image-preview-secret-20261026` verificato;
+  prove private `Documents/vercel-image-preview-secret-20261026`, contratto
+  `data/IMAGE_PREVIEWS.md`. Lavori e pubblicazioni concorrenti conservati.
+
 ## Spazio Vercel: pulizia confermata — 26 ottobre 2026
 
 - Avviso100% dei10GB Hobby. Su conferma corrente eliminati i123ID approvati

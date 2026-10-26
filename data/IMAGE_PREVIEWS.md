@@ -21,12 +21,18 @@ nuova versione della chiave; lo stesso vale cambiando le trasformazioni.
 
 Il bucket accetta soltanto WebP fino a 4 MiB. Nessuna nuova policy consente
 scritture da anonimi o utenti: il server usa `IMAGE_PREVIEW_STORAGE_KEY`,
-variabile cifrata Vercel nei contesti production/preview. Il valore proviene
+variabile Vercel di tipo **Secret** nei contesti production/preview. Il valore proviene
 dalla chiave server Supabase esistente e non va copiato in Git, output o
 file di prova. GET pubblici privi di credenziali; upload solo al bucket
 derivato, `upsert=false`, mai agli originali. I secret nelle liste Management
 possono essere mascherati: recuperare il singolo ID con `?reveal=true`,
 soltanto in memoria. Non usare i vecchi JWT legacy non più validi.
+
+Dal 26 ottobre 2026: protezione aggiornata tramite PATCH del solo
+`type=sensitive`, con `visibility=secret` verificata. ID, valore e contesti
+conservati; valore non letto né reinviato. L'API di lettura restituisce
+`decrypted=false` senza valore. Cambiare questa protezione non richiede
+di ruotare la chiave Supabase condivisa.
 
 Errori del cache storage, secret mancante o salvataggi falliti non causano
 un fallback indiscriminato agli originali; risposta non memorizzabile
