@@ -458,10 +458,12 @@
                     if (!saved || saved.id !== message.id || saved.conversazione_id !== id || saved.mittente_id !== ctx.owner) throw Object.assign(Error('Invio da verificare.'), { uncertain: true });
                     if (!current(ctx)) return;
                     mergeMessage(thread, saved); updateConversation(saved, false);
+                    window.SiteAnalytics?.track('message_sent', {success:true}, thread.listing?.id);
                     renderMessages(thread); renderInbox();
                 } catch (error) {
                     if (!current(ctx)) return;
                     message.status = 'failed'; message.uncertain = error.uncertain === true;
+                    window.SiteAnalytics?.track('technical_error', {error_code: window.SiteAnalytics.errorCode(error)});
                     for (const queued of thread.outbox.values()) if (queued.serial > message.serial) { queued.status = 'failed'; queued.uncertain = false; }
                     renderMessages(thread); $('chatAnnouncer').textContent = 'Invio non completato. Puoi riprovare dal messaggio.';
                     if (error.status === 401) notice(error.message, true);

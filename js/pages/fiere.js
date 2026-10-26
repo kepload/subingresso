@@ -838,6 +838,7 @@
         });
     }
     function openDetail(event) {
+        global.SiteAnalytics?.track('fair_open', {region: event.region || '', province: event.province || ''}, event.managedEventId || event.id);
         state.selected = event.id;
         renderMap(filterEvents(state.events, state));
         $('detail-category').textContent = CATEGORIES[event.category];
@@ -912,6 +913,7 @@
     }
     function render() {
         const events = sortEvents(filterEvents(state.events, state), todayInRome(), state.months);
+        global.SiteAnalytics?.track('fair_search', {results: events.length, empty: events.length === 0, has_query: !!state.query, region: state.region || '', province: state.province || '', month_from: state.months[0] || 0, month_to: state.months[state.months.length-1] || 0, category: state.sector || state.category || 'all'});
         renderMonths(); renderArticles(); renderList(events); renderMap(events);
         const articleCount = articleSelections(state.articles, state.sector).length;
         $('results-summary').textContent = events.length + (events.length === 1 ? ' evento' : ' eventi') + ' · ' + (state.province || state.region || 'Tutta Italia') + ' · ' + selectedMonthsLabel() + (state.sector ? ' · ' + SECTORS[state.sector] : '') + (articleCount ? ' · ' + articleCount + (articleCount === 1 ? ' tipologia' : ' tipologie') : '');

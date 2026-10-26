@@ -296,6 +296,11 @@ async function applyFilters() {
         else                   sub.textContent = 'Tutti i posteggi disponibili';
     }
 
+    window.SiteAnalytics?.track('search_results', { results: results.length, empty: results.length === 0, has_query: qRaw.length > 0,
+        place: searchRecord?.nome || '', region: searchRecord?.regione || regione || '', province: searchRecord?.provincia || '',
+        radius, offer: stato === 'Vendita' ? 'sale' : stato ? 'rent' : 'all', market: tipo === 'Fiera' ? 'fair' : tipo ? 'weekly' : 'all',
+        price_min_band: window.SiteAnalytics.bucket(prezzoMin, 5000), price_max_band: window.SiteAnalytics.bucket(prezzoMax, 5000), area_band: window.SiteAnalytics.bucket(supMin, 10),
+        days_mask: selectedDays.reduce((mask,day)=>{ const n=['lunedi','martedi','mercoledi','giovedi','venerdi','sabato','domenica'].indexOf(normalizeText(day)); return n<0?mask:mask|(1<<n); },0) });
     renderChips(regione, tipo, stato, q, prezzoMin, prezzoMax, supMin, selectedDays);
     _injectItemListLd(results, regione, tipo, q);
 }

@@ -11,6 +11,7 @@
  function setOwner(id){if(id!==owner){epoch++;owner=id;mail=null;}}
  async function record(kind,options={}){
   if(!owner||typeof _supabase==='undefined')return null;
+  if(['offer_open','offer_close','tier_select','checkout_attempt','checkout_error','checkout_cancel'].includes(kind))window.SiteAnalytics?.track('vetrina_action',{action:kind,tier:options.tier||'free'});
   const expected=owner,version=epoch;
   try{
    const {data:{session}}=await _supabase.auth.getSession();

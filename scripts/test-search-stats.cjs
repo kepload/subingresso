@@ -9,6 +9,7 @@ const read = file => fs.readFileSync(path.join(root, file), 'utf8');
     const storage = new Map();
     let calls = 0, error = null;
     const context = {
+        window: {},
         navigator: { webdriver: false }, crypto: require('node:crypto'),
         sessionStorage: { getItem: k => storage.get(k), setItem: (k,v) => storage.set(k,v), removeItem: k => storage.delete(k) },
         _supabase: { rpc: async (name,args) => {

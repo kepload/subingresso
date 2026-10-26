@@ -352,6 +352,7 @@ async function initPage() {
     (async () => {
         if (_moderationPreview) return;
         try {
+            window.SiteAnalytics?.track('listing_open', {}, listing.id);
             await _supabase.rpc('track_listing_view', { listing_id: listing.id, view_type: 'detail' });
             const { data: vd } = await _supabase
                 .from('annunci').select('visualizzazioni').eq('id', listing.id).maybeSingle();
@@ -651,6 +652,7 @@ function _blockIfExpired(listing) {
 
 async function trackListingContactEvent(listing, eventType) {
     if (!listing || typeof listing.id === 'number') return;
+    window.SiteAnalytics?.track('listing_contact', {action: eventType}, listing.id);
     try {
         const { error } = await _supabase.rpc('track_listing_event', {
             listing_id: listing.id,

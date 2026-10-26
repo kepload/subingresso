@@ -276,11 +276,11 @@ window._BANDO_REGIONE = ${safeJson(regione)};
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/supabase-config.js?v=2"></script>
-<script src="/js/page-view-tracker.js?v=4"></script>
+<script src="/js/page-view-tracker.js?v=4"></script><script src="/js/site-analytics.js?v=1"></script>
 <script src="/js/image-urls.js?v=1"></script>
-<script src="/js/data.js?v=24"></script>
+<script src="/js/data.js?v=25"></script>
 <script src="/js/ui-components.js?v=18"></script>
-<script src="/js/auth.js?v=23"></script>
+<script src="/js/auth.js?v=29"></script>
 <script src="/js/bando-alerts.js?v=2"></script>
 <script>
 bindBandoAlertForm('quickSubBandoAlert', 'qsMsg', window._BANDO_REGIONE, 'bando_page');

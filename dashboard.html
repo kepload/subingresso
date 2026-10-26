@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8"><script src="/js/admin-theme.js?v=7"></script>
-    <script src="/js/vetrina-journey.js?v=1"></script>
+    <script src="/js/vetrina-journey.js?v=2"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="favicon-v2.svg">
     <title>Dashboard — Subingresso.it</title>
@@ -149,6 +149,7 @@
     <link rel="stylesheet" href="css/eventi.css?v=5">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
 <link rel="stylesheet" href="/css/theme-preferences.css?v=2"><link rel="stylesheet" href="/css/admin-theme.css?v=6">
+<link rel="stylesheet" href="/css/site-analytics.css?v=1">
 </head>
 <body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900">
 
@@ -464,6 +465,18 @@
                 </div>
                 <p id="growthStatus" class="statistics-meta" role="status"></p>
             </div>
+
+            <details id="siteAnalyticsPanel" class="admin-statistics-panel">
+                <summary>Utilizzo del sito</summary>
+                <div class="sa-body">
+                    <p class="sa-note">Ricerche, pubblicazione, accesso, fiere, blog, contatti ed errori.</p>
+                    <div class="sa-controls"><label>Periodo <select id="saDays"><option value="7">7 giorni</option><option value="30" selected>30 giorni</option><option value="90">90 giorni</option><option value="190">190 giorni</option></select></label><label>Dispositivo <select id="saDevice"><option value="">Tutti</option><option value="mobile">Telefono</option><option value="tablet">Tablet</option><option value="desktop">Computer</option></select></label><button type="button" id="saRefresh">Aggiorna</button><button type="button" id="saExport" disabled>Esporta CSV completo</button></div>
+                    <p id="saState" role="status" class="sa-note"></p><div id="saKpis" class="sa-kpis"></div><p id="saCoverage" class="sa-note"></p>
+                    <details><summary>Azioni e passaggi</summary><div class="sa-controls"><label>Mostra <select id="saKind"><option value="">Tutte le azioni</option><option value="search_">Ricerche annunci</option><option value="publish_">Pubblicazione</option><option value="photo_">Foto</option><option value="auth_">Accesso</option><option value="signup_">Iscrizioni</option><option value="valuation_">Calcolatore</option><option value="fair_">Fiere</option><option value="blog_">Lettura blog</option><option value="cta_">Collegamenti</option><option value="listing_">Annunci e contatti</option><option value="message_">Messaggi</option><option value="vetrina_">Vetrine</option><option value="technical_">Errori tecnici</option></select></label></div><div class="sa-scroll" tabindex="0" role="region" aria-label="Azioni del sito"><table class="sa-table"><thead><tr><th>Azione</th><th>Contesto</th><th>Eventi</th><th>Sessioni</th></tr></thead><tbody id="saGroups"></tbody></table></div><p id="saGroupNote" class="sa-note"></p></details>
+                    <details><summary>Registro degli eventi</summary><div class="sa-scroll" tabindex="0" role="region" aria-label="Registro utilizzo sito"><table class="sa-table"><thead><tr><th>Quando</th><th>Azione</th><th>Contesto</th></tr></thead><tbody id="saRows"></tbody></table></div><div class="sa-pagination"><button type="button" id="saPrev" disabled>Precedenti</button><span id="saPage" class="sa-note"></span><button type="button" id="saNext" disabled>Successivi</button></div></details>
+                    <details><summary>Come leggere questi dati</summary><p class="sa-note">Una sessione identifica la navigazione nello stesso browser, non una persona verificata. Ricerche mostrate conta le combinazioni di filtri e risultati visualizzate. L'ultimo passo raggiunto non dimostra un abbandono definitivo. Tempo in vista e scorrimento non certificano una lettura. Clic su telefono, WhatsApp o chat non dimostrano una telefonata, un messaggio o una vendita; i messaggi inviati hanno un evento separato dopo la conferma del server. I pagamenti confermati restano nelle statistiche Vetrina. I test automatici e gli account admin o dimostrativi autenticati sono esclusi. Dati mancanti prima dell'avvio e sessioni non rilevabili non diventano zeri.</p><p class="sa-note">Il registro conserva fino a 190 giorni di eventi. CSV e pannello escludono codici di sessione e account, testi dei moduli, chat, recapiti e URL completi. Le fasce di prezzo sono intervalli di 5.000 euro, la superficie di 10 m².</p></details>
+                </div>
+            </details>
 
             <!-- Funnel utenti -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6">
@@ -1249,17 +1262,17 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=3"></script>
-<script src="js/page-view-tracker.js?v=4"></script>
+<script src="js/page-view-tracker.js?v=4"></script><script src="/js/site-analytics.js?v=1"></script>
 <script src="/js/personal-ads-tracker.js?v=3"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=24"></script>
+<script src="js/data.js?v=25"></script>
 <script src="js/valuation.js?v=8"></script>
 <script src="js/vetrina-pricing.js?v=1"></script>
 <script src="js/vetrina-premium.js?v=3"></script>
 <script src="js/admin-email-analytics.js?v=2"></script>
 <script src="js/vetrina-account.js?v=4"></script>
 <script src="js/ui-components.js?v=18"></script>
-<script src="js/auth.js?v=28"></script>
+<script src="js/auth.js?v=29"></script>
 <link rel="stylesheet" href="css/listing-outcome.css?v=1">
 <dialog id="listingOutcomeDialog" class="listing-outcome" aria-labelledby="listingOutcomeTitle" aria-describedby="listingOutcomeListing">
     <div class="listing-outcome__top"><h2 id="listingOutcomeTitle">Come è andata?</h2><button type="button" id="listingOutcomeClose" class="listing-outcome__close">Chiudi</button></div>
@@ -1288,8 +1301,8 @@
     </form>
 </dialog>
 <script src="js/listing-outcome.js?v=1"></script>
-<script src="js/fiere-access.js?v=2"></script>
-<script type="module" src="js/saved-fairs.js?v=3"></script>
+<script src="js/fiere-access.js?v=4"></script>
+<script type="module" src="js/saved-fairs.js?v=4"></script>
 <script src="js/blog-generator.js?v=3"></script>
 <script src="js/event-data.js?v=2"></script>
 <script src="js/organizzatori.js?v=12"></script>
@@ -5025,5 +5038,6 @@ window.filterValutatore        = filterValutatore;
     </div>
 </div>
 
+<script src="/js/admin-site-analytics.js?v=1"></script>
 </body>
 </html>

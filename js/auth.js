@@ -186,6 +186,7 @@ function initAuthModal() {
 
 // ── Tab switching ─────────────────────────────────────────
 window.switchAuthTab = function (tab) {
+    window.SiteAnalytics?.track('auth_tab', {action: ['login','register','forgot'].includes(tab) ? tab : 'unknown'});
     const isLogin    = tab === 'login';
     const isRegister = tab === 'register';
     const isForgot   = tab === 'forgot';
@@ -239,6 +240,7 @@ async function _trackModalOpen(source) {
 
 // ── Open / Close ─────────────────────────────────────────
 window.openAuthModal = function (tab, contextMsg, source) {
+    window.SiteAnalytics?.track('auth_open', {action: tab === 'register' ? 'register' : 'login'});
     initAuthModal();
     switchAuthTab(tab || 'login');
     const overlay = document.getElementById('authOverlay');
@@ -276,7 +278,9 @@ window.closeAuthModal = function () {
 };
 
 // ── Feedback helpers ─────────────────────────────────────
-function _showAuthError(msg) {
+function _showAuthError(msg, category = 'unknown', field = 'form') {
+    const mode = document.getElementById('registerForm')?.classList.contains('hidden') === false ? 'register' : 'login';
+    window.SiteAnalytics?.track('auth_error', {action:mode,error_code:category,field});
     const el = document.getElementById('authErrorMsg');
     const box = document.getElementById('authError');
     const succ = document.getElementById('authSuccess');
@@ -451,6 +455,7 @@ async function _storePasswordCredential(email, password, name = '') {
 }
 
 window.handleLogin = async function (e) {
+    window.SiteAnalytics?.track('auth_attempt', {action:'login'});
     e.preventDefault();
     _hideAuthFeedback();
     _setBtnLoading('loginBtn', true, '<i class="fas fa-sign-in-alt"></i> Accedi');
@@ -470,10 +475,11 @@ window.handleLogin = async function (e) {
         _setBtnLoading('loginBtn', false, '<i class="fas fa-sign-in-alt"></i> Accedi');
 
         if (error) {
-            _showAuthError('Email o password non corretti. Riprova.');
+            _showAuthError('Email o password non corretti. Riprova.', window.SiteAnalytics?.errorCode(error) || 'unknown');
             return;
         }
 
+        window.SiteAnalytics?.track('auth_success', {action:'login',success:true});
         await _storePasswordCredential(email, password, email);
         await _linkValutatoreSession();
         if (typeof window.processPendingSaveListing === 'function') {
@@ -499,6 +505,7 @@ window.handleLogin = async function (e) {
 
 // ── Register ─────────────────────────────────────────────
 window.handleRegister = async function (e) {
+    window.SiteAnalytics?.track('auth_attempt', {action:'register'});
     e.preventDefault();
     const registerBtn = document.getElementById('registerBtn');
     if (registerBtn?.disabled) return;
@@ -522,13 +529,14 @@ window.handleRegister = async function (e) {
     const password = document.getElementById('regPassword').value;
     const promoOptIn = document.getElementById('regPromoOptIn')?.checked === true;
     if (document.getElementById('regTermsAccepted')?.checked !== true) {
-        _showAuthError('Accetta i termini e condizioni per creare un account.');
+        _showAuthError('Accetta i termini e condizioni per creare un account.', 'validation', 'regTermsAccepted');
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
         document.getElementById('regTermsAccepted')?.focus();
         return;
     }
     if (!isValidFormText(nome,1,100) || !isValidFormText(cognome,0,100) || !isValidFormEmail(email) || password.length<6 || password.length>128) {
-        _showAuthError('Controlla nome (massimo 100 caratteri), email e password (da 6 a 128 caratteri).');
+        _showAuthError('Controlla nome (massimo 100 caratteri), email e password (da 6 a 128 caratteri).', 'validation',
+            !isValidFormText(nome,1,100) ? 'regNome' : !isValidFormText(cognome,0,100) ? 'regCognome' : !isValidFormEmail(email) ? 'regEmail' : 'regPassword');
         _setBtnLoading('registerBtn',false,'<i class="fas fa-user-plus"></i> Crea account');
         return;
     }
@@ -546,7 +554,7 @@ window.handleRegister = async function (e) {
 
     // Il telefono è obbligatorio anche quando il submit viene chiamato direttamente.
     if (!isValidItalianPhone(telRaw)) {
-        _showAuthError(telRaw ? 'Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567' : 'Inserisci il numero di telefono.');
+        _showAuthError(telRaw ? 'Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567' : 'Inserisci il numero di telefono.', 'validation', 'regTelefono');
         _setBtnLoading('registerBtn', false, '<i class="fas fa-user-plus"></i> Crea account');
         document.getElementById('regTelefono')?.focus();
         return;
@@ -594,6 +602,7 @@ function _checkPostAuthIntent() {
 }
 
 async function _afterRegisterSuccess(nome, showWelcome = false) {
+    window.SiteAnalytics?.track('signup_success', {success:true});
     _suppressVisitorPopup();
     // Aspetta il link valutatore prima di un eventuale redirect al report
     await _linkValutatoreSession();
@@ -703,6 +712,7 @@ async function _registerWithSupabaseAuth(email, password, nome, cognome, telefon
         }
 
         await _storePasswordCredential(email, password, `${nome || ''} ${cognome || ''}`.trim() || email);
+        window.SiteAnalytics?.track('auth_confirmation', {needs_confirmation: !data?.user?.email_confirmed_at});
         _showAuthSuccess('Account creato! Accedi con le tue credenziali.');
         setTimeout(() => switchAuthTab('login'), 2500);
         return true;

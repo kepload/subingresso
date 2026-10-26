@@ -665,6 +665,7 @@ async function toggleSaveListing(annuncioId, btnEl) {
         }
         if (epoch !== _savedEpoch) return false;
         _savedEdits.set(annuncioId, { version: ++_savedVersion, saved: !wasSaved });
+        window.SiteAnalytics?.track('listing_save', {saved: !wasSaved}, annuncioId);
         _pendingSavedWrites.delete(annuncioId);
         _persistSavedListings();
         return true;

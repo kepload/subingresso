@@ -232,6 +232,7 @@ async function save(event) {
         const result = await api('', { action: 'save', kind: source.fair.kind, fair_id: source.fair.id, revision: source.saved?.revision || 0, ...input });
         if (version !== epoch) return;
         changes++; rows.set(key(source.fair.kind, source.fair.id), result.saved); refreshButtons(); render();
+        window.SiteAnalytics?.track('fair_reminder', {reminder: !!input.reminder_enabled, saved:true}, source.fair.id);
         locked(false); close(); announce(input.reminder_enabled ? 'Fiera salvata. Promemoria impostato per il ' + dateLabel(result.saved.remind_on) + '.' : 'Fiera salvata senza promemoria email.');
     } catch (failure) {
         if (version !== epoch) return;
@@ -270,6 +271,7 @@ async function toggle(kind, id, trigger) {
             changes++; rows.set(idKey, result.saved);
             announce('Fiera salvata. Per ricevere un avviso, clicca sulla campanella.');
         } else announce('Fiera già salvata. Per il promemoria usa la campanella.');
+        window.SiteAnalytics?.track('fair_save', {saved: desiredSaved}, id);
     } catch (error) {
         if (version === undefined || version === epoch) {
             if (error.status === 401 && window.FiereAccess?.authenticate) {

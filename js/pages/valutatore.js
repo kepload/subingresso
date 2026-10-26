@@ -23,6 +23,7 @@
         el.textContent = message || ''; el.hidden = !message;
     }
     function showStep() {
+        window.SiteAnalytics?.track('valuation_step', {step: step + 1});
         form.querySelectorAll('.step-card').forEach(el => el.classList.toggle('active', el.dataset.step === steps[step]));
         document.getElementById('valResults').hidden = true;
         document.body.classList.remove('is-result');
@@ -56,13 +57,15 @@
             if (data.utileGiorno !== null && data.utileGiorno > annual / data.giornate) throw new Error('Dopo le spese non può restare più dell’incasso. Torna indietro e controlla.');
         } else if (!data[steps[step]]) throw new Error('Tocca una delle risposte.');
     }
+    let measureStarted = false;
     function next() {
+        if (!measureStarted) { measureStarted = true; window.SiteAnalytics?.track('valuation_start'); }
         if (busy) return;
         try {
             validateStep();
             if (step < steps.length - 1) { step++; showStep(); }
             else { readMarket(); result = model.estimate(data); render(); }
-        } catch (e) { error(e.message); }
+        } catch (e) { window.SiteAnalytics?.track('valuation_error', {step: step + 1, error_code: 'validation'}); error(e.message); }
     }
     form.addEventListener('click', function (event) {
         const btn = event.target.closest('button[data-key]');
@@ -88,6 +91,7 @@
     document.getElementById('backBtn').addEventListener('click', () => { if (step > 0) { step--; showStep(); } });
     document.getElementById('editAnswers').addEventListener('click', () => { if (!busy) { step = 0; showStep(); } });
     function render() {
+        window.SiteAnalytics?.track('valuation_result', {success: result.status === 'ok'});
         form.querySelectorAll('.step-card').forEach(el => el.classList.remove('active'));
         document.getElementById('valResults').hidden = false;
         document.body.classList.add('is-result');
@@ -128,8 +132,10 @@
             // Gli importi salvati vengono ricalcolati sul server.
             if (Number(log.prezzo_avg) !== result.avg || Number(log.prezzo_min) !== result.min || Number(log.prezzo_max) !== result.max) throw new Error('Modello da aggiornare: ricarica la pagina');
             saved = true;
+            window.SiteAnalytics?.track('valuation_save', {action:'save',success:true});
             await updateSaveCard();
         } catch (e) {
+            window.SiteAnalytics?.track('valuation_error', {error_code: window.SiteAnalytics.errorCode(e)});
             saved = false;
             document.getElementById('valSaveBtn').textContent = 'Riprova a salvare';
             document.getElementById('valSaveDesc').textContent = 'La stima è visibile, ma il salvataggio del report non è confermato.';

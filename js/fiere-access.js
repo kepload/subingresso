@@ -112,6 +112,7 @@
             if (!response.ok || result.url !== request.url || !/^https:\/\//i.test(result.url)) {
                 throw new Error(result.error || 'Fonte non disponibile. Riprova tra poco.');
             }
+            window.SiteAnalytics?.track('fair_source', {success: true}, request.id);
             if (popup && !popup.closed) popup.location.replace(result.url);
             else location.assign(result.url);
         } catch (error) {

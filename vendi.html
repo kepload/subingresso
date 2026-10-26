@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8"><script src="/js/admin-theme.js?v=7"></script>
-    <script src="/js/vetrina-journey.js?v=1"></script>
+    <script src="/js/vetrina-journey.js?v=2"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="favicon-v2.svg">
     <title>Vendere Licenza Ambulante o Posteggio Mercatale — Subingresso.it</title>
@@ -169,7 +169,11 @@
         .review-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-size: .8125rem; }
         .review-row:last-child { border-bottom: 0; }
         .review-row strong { display: block; margin-bottom: 3px; color: #64748b; font-size: .7rem; }
-        .field-input[aria-invalid="true"] { border-color: #ef4444; }
+        .field-input[aria-invalid="true"] { border-color: #b91c1c; border-width: 2px; }
+        .field-error { display: flex; align-items: flex-start; gap: 7px; margin: 8px 0 0; color: #b91c1c; font-size: 14px; font-weight: 600; line-height: 1.5; scroll-margin-block: 100px; }
+        .field-error svg { flex: 0 0 18px; margin-top: 2px; }
+        html.admin-dark .field-error { color: #fda4af; }
+        html.admin-dark .field-input[aria-invalid="true"] { border-color: #fda4af; }
         @media (prefers-reduced-motion: reduce) { .step-panel.active { animation: none; } }
     </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
@@ -644,13 +648,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase-config.js?v=2"></script>
-<script src="js/page-view-tracker.js?v=4"></script>
+<script src="js/page-view-tracker.js?v=4"></script><script src="/js/site-analytics.js?v=1"></script>
 <script src="/js/personal-ads-tracker.js?v=3"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=24"></script>
+<script src="js/data.js?v=25"></script>
 <script src="js/comune-picker.js?v=7"></script>
 <script src="js/ui-components.js?v=18"></script>
-<script src="js/auth.js?v=28"></script>
+<script src="js/auth.js?v=29"></script>
 <script src="js/pages/vendi-support.js?v=2"></script>
 <script src="js/vetrina-pricing.js?v=1"></script>
 <script>
@@ -730,7 +734,7 @@ function _goToPublishStep() {
 window._selectPubChoice = _selectPubChoice;
 window._goToPublishStep = _goToPublishStep;
 
-function goToStep(n) {
+function goToStep(n, scroll = true) {
     n = Math.max(1, Math.min(_TOTAL_STEPS, Math.floor(Number(n)) || 1));
     document.getElementById('step' + _step).classList.remove('active');
     _step = n;
@@ -739,7 +743,8 @@ function goToStep(n) {
     document.getElementById('stepLabel').textContent = 'Passo ' + _step + ' di ' + _TOTAL_STEPS;
     document.getElementById('stepName').textContent  = STEP_NAMES[_step];
     document.getElementById('progressBar').style.width = (_step / _TOTAL_STEPS * 100) + '%';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (scroll) window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    window.SiteAnalytics?.track('publish_step', { step: n });
     if (_step === 1) {
         const isAffitto = document.getElementById('statoAffitto').checked;
         document.querySelectorAll('.tipo-card').forEach((c, i) => c.classList.toggle('selected', i === (isAffitto ? 1 : 0)));
@@ -894,6 +899,7 @@ function _persistDraftPhotos() {
 }
 
 async function _applyPendingDraft(d) {
+    window.SiteAnalytics?.track('publish_resume', {step: Number(d.step) || 1, resumed: true});
     _draftReady = false;
     if (d.stato === 'Affitto mensile') document.getElementById('statoAffitto').checked = true;
     else document.getElementById('statoVendita').checked = true;
@@ -1063,21 +1069,24 @@ function _validateStep(n) {
     if (n === 5) {
         if (!isValidFormText(document.getElementById('fTitolo').value, 3, 110))
             return _fieldError('fTitolo', 'Scrivi un titolo da 3 a 110 caratteri.');
-        if (!isValidFormText(document.getElementById('fDescrizione').value, 40, 10000, true))
-            return _fieldError('fDescrizione', 'Descrivi cosa cedi e dove si trova, da 40 a 10.000 caratteri.');
+        const description = document.getElementById('fDescrizione').value;
+        if (!isValidFormText(description, 40, 10000, true))
+            return _fieldError('fDescrizione', description.trim().length < 40
+                ? `La descrizione è troppo breve: scrivi almeno 40 caratteri. Ora sono ${description.trim().length}.`
+                : 'Controlla la descrizione: usa testo leggibile, fino a 10.000 caratteri.');
         if (!isValidFormText(document.getElementById('fNome').value, 1, 100)) {
             setTimeout(() => { try { document.getElementById('fNome').focus(); } catch (_) {} }, 400);
-            return _err('Inserisci il nome di contatto, massimo 100 caratteri.');
+            return _fieldError('fNome', 'Inserisci il nome di contatto, massimo 100 caratteri.');
         }
         const _telRaw = document.getElementById('fTel').value;
         if (!_telRaw.trim()) {
             _checkMissingPhoneBanner();
             setTimeout(() => { try { document.getElementById('fTel').focus(); } catch (_) {} }, 400);
-            return _err('Il numero di telefono è obbligatorio. Inseriscilo per pubblicare l\'annuncio.');
+            return _fieldError('fTel', 'Il numero di telefono è obbligatorio. Inseriscilo per pubblicare l\'annuncio.');
         }
         if (!isValidItalianPhone(_telRaw)) {
             setTimeout(() => { try { document.getElementById('fTel').focus(); } catch (_) {} }, 400);
-            return _err('Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567');
+            return _fieldError('fTel', 'Numero non valido. Esempi: 347 1234567 · +39 347 1234567 · 06 1234567');
         }
         const _tel = normalizePhone(_telRaw);
         document.getElementById('fTel').value = _tel;
@@ -1089,25 +1098,63 @@ function _err(msg) {
     document.getElementById('stepErrorMsg').textContent = msg;
     const el = document.getElementById('stepError');
     el.classList.add('show');
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.setAttribute('tabindex', '-1');
+    el.focus({ preventScroll: true });
+    el.scrollIntoView({ behavior: 'instant', block: 'center' });
+    window.SiteAnalytics?.track('publish_error', { step: _step, error_code: 'validation', field: 'form' });
     return false;
 }
 
 function _fieldError(id, message) {
-    _err(message);
     const field = document.getElementById(id);
+    if (!field) return _err(message);
+    document.getElementById('stepErrorMsg').textContent = message;
+    document.getElementById('stepError').classList.remove('show');
+    const errorId = id + '-error';
+    let note = document.getElementById(errorId);
+    if (!note) {
+        note = document.createElement('p');
+        note.id = errorId;
+        note.className = 'field-error';
+        note.setAttribute('role', 'alert');
+        field.insertAdjacentElement('afterend', note);
+    }
+    note.replaceChildren();
+    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    icon.setAttribute('viewBox', '0 0 20 20'); icon.setAttribute('width', '18'); icon.setAttribute('height', '18'); icon.setAttribute('aria-hidden', 'true');
+    icon.innerHTML = '<circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 5.5v5M10 14v.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>';
+    const text = document.createElement('span'); text.textContent = message;
+    note.append(icon, text);
     field.setAttribute('aria-invalid', 'true');
+    field.setAttribute('aria-describedby', [...new Set((field.getAttribute('aria-describedby') || '').split(' ').filter(Boolean).concat(errorId))].join(' '));
+    window.SiteAnalytics?.track('publish_error', { step: Number(field.closest('.step-panel')?.id.replace('step', '')) || _step, error_code: 'validation', field: id });
+    if (!field.closest('.step-panel.active')) return false;
     field.focus({ preventScroll: true });
-    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    field.scrollIntoView({ behavior: 'instant', block: 'center' });
+    requestAnimationFrame(() => { if (note.getBoundingClientRect().bottom > innerHeight - 24) note.scrollIntoView({ behavior: 'instant', block: 'center' }); });
     return false;
 }
 
 function clearStepError() {
     document.getElementById('stepError').classList.remove('show');
+    document.querySelectorAll('.field-error').forEach(note => {
+        const field = document.getElementById(note.id.replace(/-error$/, ''));
+        if (field) { field.removeAttribute('aria-invalid'); const ids = (field.getAttribute('aria-describedby') || '').split(' ').filter(id => id && id !== note.id); if (ids.length) field.setAttribute('aria-describedby', ids.join(' ')); else field.removeAttribute('aria-describedby'); }
+        note.remove();
+    });
 }
+document.getElementById('annuncioForm').addEventListener('input', event => {
+    const note = document.getElementById(event.target.id + '-error');
+    if (!note) return;
+    event.target.removeAttribute('aria-invalid');
+    const ids = (event.target.getAttribute('aria-describedby') || '').split(' ').filter(id => id && id !== note.id);
+    if (ids.length) event.target.setAttribute('aria-describedby', ids.join(' ')); else event.target.removeAttribute('aria-describedby');
+    note.remove();
+});
 
 // ── Step 1: Tipo annuncio (auto-advance) ──────────────────
 function selectStato(val) {
+    window.SiteAnalytics?.track('publish_start', {offer: val === 'Vendita' ? 'sale' : 'rent'});
     _draftStarted = true;
     document.getElementById(val === 'Vendita' ? 'statoVendita' : 'statoAffitto').checked = true;
     goToStep(2);
@@ -1524,6 +1571,7 @@ dropzone.addEventListener('drop', e => {
 });
 
 function _handleFiles(files) {
+    window.SiteAnalytics?.track('photo_select', {photos: Math.min(files.length,5)});
     clearStepError();
     let added = false;
     for (let f of files) {
@@ -1735,6 +1783,7 @@ const _uploadedPhotos = new WeakMap();
 async function submitAnnuncio() {
     const btn = document.getElementById('submitBtn');
     if (btn.disabled) return;
+    window.SiteAnalytics?.track('publish_attempt', {step: _step});
     const orig = btn.dataset.origHtml || btn.innerHTML;
     btn.dataset.origHtml = orig;
 
@@ -1778,7 +1827,7 @@ async function submitAnnuncio() {
         if (_validateStep(step)) continue;
         const message = document.getElementById('stepErrorMsg').textContent;
         const invalid = document.querySelector('[aria-invalid="true"]');
-        goToStep(step);
+        goToStep(step, false);
         _resetBtn();
         if (invalid && invalid.closest('#step' + step)) _fieldError(invalid.id, message);
         else _err(message);
@@ -1924,6 +1973,7 @@ async function submitAnnuncio() {
 
         // Collega eventuale valutazione precedente a questo annuncio (fire-and-forget)
         if (inserted?.id) {
+            window.SiteAnalytics?.track('publish_success', {success: true, photos: imageUrls.length}, inserted.id);
             _supabase.rpc('link_valutatore_to_annuncio', { p_annuncio_id: inserted.id })
                 .then(() => {}).catch(() => {});
         }
@@ -2001,6 +2051,7 @@ async function submitAnnuncio() {
 
 
     } catch (err) {
+        window.SiteAnalytics?.track(err?.code === 'PHOTO_UPLOAD' ? 'photo_error' : 'publish_error', {step: _step, error_code: window.SiteAnalytics.errorCode(err), field: err?.code === 'PHOTO_UPLOAD' ? 'fileInput' : 'form'});
         console.error('Pubblicazione fallita:', err);
         try { localStorage.removeItem(lastPostKey); } catch (_) {}
         const code = err?.code ? ` [${err.code}]` : '';

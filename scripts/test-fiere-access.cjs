@@ -195,6 +195,8 @@ async function run(engine, name, width, height, base) {
         await page.locator('#regNome').fill('Prova');
         await page.locator('#regCognome').fill('Iscrizione');
         await page.locator('#regEmail').fill('qa@example.invalid');
+        await page.locator('#regTelefono').fill('3471234567');
+        await page.locator('#regTermsAccepted').check();
         await page.locator('#regPassword').fill('qa-password');
         await page.locator('#registerForm button[type="submit"]').click();
         await page.waitForURL(sample.pricing.sourceUrl);
