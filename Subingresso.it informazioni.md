@@ -5,6 +5,21 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Spazio Vercel: pulizia confermata — 26 ottobre 2026
+
+- Avviso100% dei10GB Hobby. Su conferma corrente eliminati i123ID approvati
+  del21–25ottobre:123risposte DELETED e tutti assenti dal nuovo inventario.
+  Restano14READY nel progetto `subingresso`; vecchio `subingresso.it`3READY intatto.
+- Conservate ultime10produzioni riuscite, tutte quelle odierne e ogni alias;
+  nuove pubblicazioni escluse dall'elenco. Dominio ancora su
+  `411ZsjxU4AKwQX4FEUxocB7in2bP`:12artefatti funzioni e11asset statici
+  identici prima/dopo;14pagine/API con esiti attesi. Retention invariata,
+  nessuna scrittura DB/storage utenti o modifica al sito e ai lavori altrui.
+- Percentuale residua non misurabile: API consumi Hobby404. Non promettere GB
+  recuperati o avviso risolto. Backup tag remoto e bundleGit completo verificati;
+  consueto errore cleanuphelper. Prove `Documents/verifica-spazio-vercel-20261026`.
+  Conferma limitata ai123ID, senza autorizzazione a future pulizie automatiche.
+
 ## Calcolatore: finiture scure — 26 ottobre 2026
 
 - Su richiesta, fondi antracite, logo senza alone, importi su superficie unica,
