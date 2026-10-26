@@ -37,6 +37,12 @@ sorteggio. Ogni ADS ha frasi prioritarie ed escluse specifiche in
 rendono idonea una ADS di un argomento diverso. Peso di estrazione:
 `1 + min(8, 3×priorità nel titolo/slug + priorità in intro/corpo)`; parole
 ripetute non moltiplicano il peso. Ogni candidata conserva una possibilità.
+Nel browser la scelta avviene fra le candidate mostrate meno volte nello
+stesso articolo, evitando la coppia della visita precedente quando possibile;
+le priorità ordinano per sorteggio pesato le candidate con pari turni.
+Tutte partecipano: nessuna può essere saltata indefinitamente per il peso.
+Con almeno4candidate compatibili entrambi i banner cambiano; con2o3 alcune
+ripetizioni sono necessarie; con1 la stessa creatività occupa i due slot.
 Secondo slot senza ripetere ID se esistono alternative. Nessun match: niente
 banner. Guide agli eredi/successione/decesso: esclusione preesistente.
 
@@ -45,7 +51,9 @@ banner. Guide agli eredi/successione/decesso: esclusione preesistente.
 Massimo due slot `inline`/`closing`. I richiami editoriali esistenti vengono
 sostituiti nella stessa posizione; altrimenti prima di una nuova sezione,
 dopo6paragrafi/1000caratteri ed entro il70% del testo, più chiusura.
-Articoli brevi: sola chiusura. Tabelle, avvisi bandi e annunci reali conservati.
+Anche articoli brevi o con un solo richiamo ricevono entrambi gli slot:
+quello interno usa una separazione fra i blocchi più vicina al centro quando
+non esiste la soglia lunga. Tabelle, avvisi bandi e annunci reali conservati.
 
 Larghezza utile almeno640px →728×90; almeno336px →336×280; altrimenti300×250.
 Riduzione proporzionale quando serve; nessun ingrandimento o ritaglio.
@@ -57,8 +65,14 @@ HTML server già pertinente e leggibile senza JS, con regole salvate incluse
 nel bootstrap. Il browser legge una volta le regole correnti da
 `/api/blog?contextual_rules=1` senza cache: correzioni applicate anche con
 HTML CDN precedente, senza rileggere il corpo dell'articolo. Su errore usa
-il bootstrap server. Nuovo sorteggio al caricamento, nessuna rotazione a
-timer. Senza JS resta la scelta del documento nella cache blog ordinaria
+il bootstrap server. Nuovo turno al caricamento, riapertura e ripristino
+`pageshow.persisted`, nessuna rotazione a timer. Memoria locale per articolo
+`_pa_rotation_v1`, massimo60articoli: soli IDcreatività, contatori di turni,
+ultima coppia e momento del turno, senza identificatore utente. Si conserva
+fra schede/aperture nello stesso browser; se la memoria è bloccata resta
+un fallback in RAM e la riapertura completa torna al sorteggio. Il server
+non legge né conserva turni e continua a sorteggiare HTML pertinente.
+Resize non consuma un turno. Senza JS resta la scelta nella cache blog ordinaria
 (180s più il possibile stale-while-revalidate600s): non si promette una
 correzione istantanea per quel caso.
 Player esistente: animazioni, pausa, visibilità e fallback riduci movimento.
@@ -71,6 +85,9 @@ testi pubblicati, destinazioni, versioni e targeting. Niente statistiche,
 note interne o account. `--check` rileva disallineamenti; il build delle
 immagini lo aggiorna. L'API privata conserva il controllo admin.
 Link/tracker esistenti, formato reale, posizioni `blog_inline`/`blog_closing`.
+Al cambio ID/formato/posizione nello stesso elemento il tracker azzera il
+timer e richiede nuovamente metà banner visibile per1secondo; deduplica
+storica della sessione invariata. I turni non sono impressioni misurate.
 Regione solo se univoca in titolo/slug; Garda nazionale. Statistiche e
 conteggi storici invariati; metadati delle correzioni separati, descritti sotto.
 

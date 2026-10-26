@@ -76,14 +76,34 @@
  function candidates(context,slot,format,pool=catalog.ads){
   return explain(context,slot,format,pool).filter(row=>row.eligible).map(row=>row.ad);
  }
- function select(context,slot,width=300,used=[],random=Math.random,pool=catalog.ads){
+ function select(context,slot,width=300,used=[],random=Math.random,pool=catalog.ads,rotation=null){
   if(!Object.hasOwn(slots,slot))return null;
   const preferred=width>=640?['728x90','336x280','300x250']:width>=336?['336x280','300x250']:['300x250'];
   for(const id of preferred){
-   const eligible=candidates(context,slot,id,pool),fresh=eligible.filter(ad=>!used.includes(ad.id)),choices=fresh.length?fresh:eligible;
+   const eligible=candidates(context,slot,id,pool),fresh=eligible.filter(ad=>!used.includes(ad.id));let choices=fresh.length?fresh:eligible;
+   if(rotation&&choices.length){
+    // Keep the previous visit out when alternatives exist, then give every eligible ADS a turn.
+    const different=choices.filter(ad=>!rotation.last.includes(ad.id));if(different.length)choices=different;
+    const least=Math.min(...choices.map(ad=>rotation.counts[ad.id]||0));choices=choices.filter(ad=>(rotation.counts[ad.id]||0)===least);
+   }
    if(choices.length){const ranked=explain(context,slot,id,choices),total=ranked.reduce((sum,row)=>sum+row.weight,0);let roll=Math.max(0,Math.min(.999999999,Number(random())||0))*total;let winner=ranked.at(-1);for(const row of ranked){roll-=row.weight;if(roll<0){winner=row;break;}}return {ad:winner.ad,format:catalog.formats.find(f=>f.id===id)};}
   }
   return null;
+ }
+ const rotationKey='_pa_rotation_v1',rotationMemory=new Map();
+ function readRotation(view,slug){
+  let saved;try{saved=JSON.parse(view.localStorage.getItem(rotationKey))?.[slug];}catch(_){}
+  saved=saved||rotationMemory.get(slug);const counts=Object.create(null);
+  for(const ad of catalog.ads){const n=saved?.counts?.[ad.id];if(Number.isSafeInteger(n)&&n>=0&&n<=1000000)counts[ad.id]=n;}
+  return {counts,last:Array.isArray(saved?.last)?saved.last.filter(id=>catalog.ads.some(ad=>ad.id===id)).slice(0,2):[],at:Date.now()};
+ }
+ function saveRotation(view,slug,rotation){
+  rotationMemory.delete(slug);rotationMemory.set(slug,rotation);if(rotationMemory.size>60)rotationMemory.delete(rotationMemory.keys().next().value);
+  try{
+   const parsed=JSON.parse(view.localStorage.getItem(rotationKey)||'{}'),all=parsed&&typeof parsed==='object'&&!Array.isArray(parsed)?parsed:{};
+   all[slug]=rotation;const recent=Object.entries(all).filter(([key,value])=>/^[a-z0-9-]{1,200}$/.test(key)&&value&&typeof value==='object').sort((a,b)=>(Number(b[1].at)||0)-(Number(a[1].at)||0)).slice(0,60);
+   view.localStorage.setItem(rotationKey,JSON.stringify(Object.fromEntries(recent)));
+  }catch(_){}
  }
  function editorialText(article){
   const clone=article.cloneNode(true);
@@ -130,17 +150,27 @@
    if(!host.hasAttribute('data-contextual-ad-slot')){const fresh=doc.createElement('aside');host.replaceWith(fresh);host=fresh;}
    host.dataset.contextualAdSlot=position;return host;
   });
-  if(!hosts.length){
+  if(!hosts.some(host=>host.dataset.contextualAdSlot==='inline')){
    const ordinary=[...article.children].filter(el=>!el.matches('.not-prose')&&!el.querySelector('[data-box-listings],#bandoAlertForm'));
    const length=ordinary.reduce((n,el)=>n+el.textContent.length,0);let chars=0,paragraphs=0,anchor=null;
    for(const el of ordinary){if(/^H[23]$/.test(el.tagName)&&paragraphs>=6&&chars>=1000&&chars<=length*.7){anchor=el;break;}chars+=el.textContent.length;if(el.tagName==='P')paragraphs++;}
+   anchor=anchor||ordinary[Math.floor(ordinary.length/2)];
    if(anchor){const inline=doc.createElement('aside');inline.dataset.contextualAdSlot='inline';anchor.before(inline);hosts.push(inline);}
-   const closing=doc.createElement('aside');closing.dataset.contextualAdSlot='closing';article.after(closing);hosts.push(closing);
   }
+  if(!hosts.some(host=>host.dataset.contextualAdSlot==='closing')){const closing=doc.createElement('aside');closing.dataset.contextualAdSlot='closing';article.after(closing);hosts.push(closing);}
+  hosts.sort((a,b)=>Number(a.dataset.contextualAdSlot==='closing')-Number(b.dataset.contextualAdSlot==='closing'));
   const state={context,slots:hosts,selections:[],observer:null},region=regionFor(post,regions);
   mounted.set(article,state);
   const width=()=>article.getBoundingClientRect().width||300;
-  for(const host of hosts){const selection=select(context,host.dataset.contextualAdSlot,width(),state.selections.filter(Boolean).map(s=>s.ad.id),Math.random,pool);if(selection){state.selections.push(selection);paint(host,selection,post,region,context);}else{state.selections.push(null);host.remove();}}
+  // Server HTML stays stateless. Only the visitor's browser remembers turns for this article.
+  const browser=typeof window!=='undefined'&&view===window;
+  const rotate=()=>{
+   const rotation=browser?readRotation(view,post.slug):null;state.selections=[];
+   for(const host of hosts){const selection=select(context,host.dataset.contextualAdSlot,width(),state.selections.filter(Boolean).map(s=>s.ad.id),Math.random,pool,rotation);if(selection){state.selections.push(selection);if(rotation)rotation.counts[selection.ad.id]=(rotation.counts[selection.ad.id]||0)+1;paint(host,selection,post,region,context);}else{state.selections.push(null);host.remove();}}
+   if(rotation){rotation.last=state.selections.filter(Boolean).map(s=>s.ad.id);saveRotation(view,post.slug,rotation);}
+  };
+  rotate();
+  if(browser){const restored=event=>{if(!article.isConnected){view.removeEventListener('pageshow',restored);return;}if(event.persisted)rotate();};view.addEventListener('pageshow',restored);}
   // A resize changes only the format of the same creative, preserving manual pause.
   if(typeof view?.ResizeObserver==='function'){
    state.observer=new view.ResizeObserver(()=>{

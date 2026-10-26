@@ -453,7 +453,7 @@ module.exports = async function handler(req, res) {
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/supabase-config.js?v=3"></script>
 <script src="/js/page-view-tracker.js?v=4"></script>
-<script src="/js/personal-ads-tracker.js?v=1"></script>
+<script src="/js/personal-ads-tracker.js?v=2"></script>
 <script src="/js/image-urls.js?v=1"></script>
 <script src="/js/data.js?v=24"></script>
 <script src="/js/ui-components.js?v=18"></script>

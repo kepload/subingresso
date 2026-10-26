@@ -4,6 +4,16 @@ Dal 26 ottobre la raccolta comprende anche una sezione distinta per gli
 spazi Vetrina del blog, con anteprima, clic/impressioni e CSV per articolo.
 Contratto `BLOG_VETRINE_ADS.md`; non sommare queste serie ai banner propri.
 
+Dal26ottobre «Come stanno andando» mostra anche il confronto delle20ADS:
+titolo, miniatura, codice, impressioni/clic/CTR misurato/conversioni sommati
+su misure e posizioni nel periodo. Tutte incluse anche con zero righe;
+filtri con clic/mostrate senza clic/mai mostrate e ordine clic/impressioni/CTR.
+Un clic senza impressione misurata resta «Con clic», CTRsenza denominatore
+assente. CSVconfronto completo con zero e CSVdettagliato separato; clic sulla
+ADS apre la misura con più clic/impressioni disponibili. Su errore periodo
+si conserva la finestra dei dati riusciti; logout/risposte tardive puliscono
+anche il confronto. Nessun dato storico o significato delle conversioni cambia.
+
 Selezione automatica nel blog per keyword, slot e formati:
 `data/CONTEXTUAL_ADS.md`. Catalogo pubblico delle sole creatività proprie;
 raccolta e statistiche restano protette dal ruolo admin.

@@ -3,7 +3,7 @@
  'use strict';
  if(window.__personalAdsTracker||typeof _supabase==='undefined')return;
  window.__personalAdsTracker=true;
- const automated=navigator.webdriver===true,seen=new Set(),timers=new Map(),bound=new WeakSet(),observedAnchors=new WeakMap();
+ const automated=navigator.webdriver===true,seen=new Set(),timers=new Map(),bound=new WeakSet(),observedAnchors=new WeakMap(),observedKeys=new WeakMap();
  let owner=null,revision=0,admin=false,authReady=false;
  const storage='_pa_last_click_v1',uuid=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
  function read(){try{const value=JSON.parse(sessionStorage.getItem(storage));return value&&uuid.test(value.id)&&Date.now()-value.at<7*86400000?value:null;}catch(_){return null;}}
@@ -20,9 +20,10 @@
   if(!bound.has(anchor)){
    const target=new URL(anchor.href,location.origin),wrapped=target.pathname==='/api/personal-ads'&&target.searchParams.get('action')==='click';
    if(!wrapped){const dest={vendi:'/vendi',compra:'/annunci',fiere:'/fiere'}[anchor.dataset.personalAd.split('-')[0]];if(target.origin!==location.origin||target.pathname!==dest)return;const tracked=new URL('/api/personal-ads',location.origin);tracked.search=new URLSearchParams({action:'click',ad:anchor.dataset.personalAd,format:anchor.dataset.paFormat||'editoriale',placement:placement(anchor)});if(target.searchParams.has('regione'))tracked.searchParams.set('region',target.searchParams.get('regione'));anchor.href=tracked.href;}
-   bound.add(anchor);const measured=measurementTarget(anchor);observedAnchors.set(measured,anchor);observer?.observe(measured);
+   bound.add(anchor);
    for(const eventName of ['pointerdown','focus','click','auxclick'])anchor.addEventListener(eventName,()=>{const href=new URL(anchor.href),sid=sessionId();if(admin||automated)href.searchParams.set('preview','1');else{href.searchParams.delete('preview');if(sid)href.searchParams.set('sid',sid);}anchor.href=href.toString();});
   }
+  const current=key(anchor);if(observedKeys.get(anchor)!==current){clearTimeout(timers.get(anchor));timers.delete(anchor);observedKeys.set(anchor,current);const measured=measurementTarget(anchor);observedAnchors.set(measured,anchor);observer?.unobserve(measured);observer?.observe(measured);}
  }
  async function impression(anchor){
   const id=key(anchor),sid=sessionId();if(automated||admin||!authReady||document.hidden||seen.has(id)||!sid)return;
@@ -56,6 +57,6 @@
  }
  _supabase.auth.onAuthStateChange((event,session)=>{const next=session?.user?.id||null;if(event==='SIGNED_OUT'||(owner&&next!==owner)){save(null);owner=null;admin=false;seen.clear();}++revision;authReady=false;setTimeout(identity,0);});
  document.addEventListener('visibilitychange',()=>{if(document.hidden){timers.forEach(clearTimeout);timers.clear();}else identity();});
- function start(){scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});identity();}
+ function start(){scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['data-personal-ad','data-pa-format','data-pa-placement']});identity();}
  document.readyState==='loading'?document.addEventListener('DOMContentLoaded',start,{once:true}):start();
 })();

@@ -5,6 +5,27 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## ADS: confronto e alternanza nel blog — 26 ottobre 2026
+
+- Su richiesta, confronto visibile delle20ADS per titolo/miniatura/codice,
+  impressioni/clic/CTRmisurato/conversioni; anche zero, filtri con clic/
+  mostrate senza clic/mai mostrate, ordine eCSVcompleto. Misure/posizioni
+  sommate; dettaglio precedente conservato. Periodi falliti e logout protetti.
+- Rotazione per articolo nello stesso browser: prima le candidate pertinenti
+  meno mostrate, evitando la coppia precedente; con almeno4 cambiano entrambe,
+  con meno alcune ripetizioni necessarie. Nessun timer; riapertura e ritorno
+  indietro inclusi, resize senza turno. Keyword/esclusioni conservate; memoria
+  locale limitata60articoli, senzaIDutente, fallback RAM se bloccata.
+- Dati pubblici riletti:120articoli,119con due slot (prima27ne avevano uno),
+  eredi escluso; testo/tabelle conservati. Test rotazione1–14candidate,
+  riapertura/storage bloccato, confronto/API/tracker/admin e regressioni
+  blogSSR/annunci passati Chromium1440/768/320+WebKit390. Cambio creatività
+  riavvia misura1secondo; deduplica/storico invariati, nessuna modificaDB.
+  Inspector componente0FAIL, avviso metadata12px motivato; galleria esistente
+  fuori ambito. Prove/limiti `Documents/ads-risultati-rotazione-20261026`.
+  Backup tag/ramo remoti verificati; consueto errore cleanuphelper; corretta
+  fixture riapertura con contesto browser esplicito. Pubblicazione da verificare.
+
 ## Spazio Vercel: pulizia confermata — 26 ottobre 2026
 
 - Avviso100% dei10GB Hobby. Su conferma corrente eliminati i123ID approvati

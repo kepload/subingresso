@@ -43,6 +43,7 @@ async function audit(){
  for(const post of all){const doc=new JSDOM(markup.articleMarkup(post,post.content)).window.document,article=doc.querySelector('#blogPostContent'),before=engine.editorialText(article),tables=article.querySelectorAll('table').length,state=engine.mount(article,post,markup.regions);
   assert.equal(engine.editorialText(article),before,post.slug);assert.equal(article.querySelectorAll('table').length,tables);const slots=[...doc.querySelectorAll('[data-contextual-ad-slot]')];assert(slots.length<=2,post.slug);for(const host of slots){const ad=catalog.ads.find(a=>a.id===host.dataset.adId);assert(ad&&ad.keywords.some(k=>state.context.topics.includes(k)),post.slug);}
   engine.mount(article,post,markup.regions);assert.equal(doc.querySelectorAll('[data-contextual-ad-slot]').length,slots.length,'idempotent');
+  if(state.context.topics.length)assert.equal(slots.length,2,'two contextual slots '+post.slug);
   if(/\bfier[ae]\b/i.test(post.title))assert(state.context.topics.includes('fiere'),post.slug);
   if(post.slug.startsWith('bandi-posteggi-'))assert(state.context.topics.includes('acquisto'),post.slug);
   results.push({slug:post.slug,topics:state.context.topics,keywords:state.context.keywords,slots:slots.length,ids:slots.map(h=>h.dataset.adId)});
@@ -62,6 +63,7 @@ async function browsers(base){
     await p.goto(base+'/qa?post='+post.slug);await p.locator('#blogPostContent').waitFor();
     const cards=p.locator('[data-contextual-ad-slot]');assert.equal(await cards.count(),post.goal?2:0,post.slug);
     if(post.goal){await p.waitForFunction(()=>document.querySelector('[data-contextual-ad-slot]')?.dataset.adFormat===((document.querySelector('#blogPostContent').getBoundingClientRect().width>=640)?'728x90':document.querySelector('#blogPostContent').getBoundingClientRect().width>=336?'336x280':'300x250'));
+     await p.waitForFunction(slug=>JSON.parse(localStorage.getItem('_pa_rotation_v1')||'{}')[slug]?.last.length===2,post.slug);
      const ids=await cards.evaluateAll(els=>els.map(el=>el.dataset.adId));assert(ids.every(id=>id.startsWith(post.goal+'-')));assert.notEqual(ids[0],ids[1]);
      for(const card of await cards.all()){await card.scrollIntoViewIfNeeded();const geom=await card.locator('img').evaluate(img=>{const r=img.getBoundingClientRect();return {left:r.left,right:r.right,width:r.width,height:r.height,ratio:img.width/img.height};});assert(geom.left>=0&&geom.right<=width,JSON.stringify(geom));assert(Math.abs(geom.width/geom.height-geom.ratio)<.01);}
      const first=cards.first(),img=first.locator('img');await img.scrollIntoViewIfNeeded();await p.waitForFunction(()=>document.querySelector('[data-contextual-ad-slot] img').dataset.paPlaying==='true');
@@ -74,15 +76,41 @@ async function browsers(base){
       await first.screenshot({path:path.join(out,`${name}-${width}-fairs.png`)});
       if(width===1440){await p.addInitScript(()=>{Math.random=()=>.999;});await p.reload();await p.waitForFunction(()=>document.querySelector('[data-contextual-ad-slot]')?.dataset.adFormat==='728x90');assert.notEqual(await p.locator('[data-contextual-ad-slot]').first().getAttribute('data-ad-id'),ids[0],'fresh browser selection despite server HTML');}
      }
+     let previous=await cards.evaluateAll(els=>els.map(el=>el.dataset.adId)),seen=new Set(ids);
+     for(let visit=0;visit<(width===1440?5:2);visit++){
+      const oldAt=await p.evaluate(slug=>JSON.parse(localStorage.getItem('_pa_rotation_v1'))[slug].at,post.slug);await p.reload();
+      await p.waitForFunction(({slug,oldAt})=>JSON.parse(localStorage.getItem('_pa_rotation_v1')||'{}')[slug]?.at>oldAt,{slug:post.slug,oldAt});
+      const current=await cards.evaluateAll(els=>els.map(el=>el.dataset.adId));assert(current.every(id=>id.startsWith(post.goal+'-')&&!previous.includes(id)),'no preceding pair on reload '+post.slug);current.forEach(id=>seen.add(id));previous=current;
+     }
+     if(width===1440)assert.equal(seen.size,catalog.ads.filter(a=>a.goal===post.goal).length,'every relevant creative gets a turn');
+     await p.evaluate(()=>window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true})));
+     await p.waitForFunction(last=>[...document.querySelectorAll('[data-contextual-ad-slot]')].every(el=>!last.includes(el.dataset.adId)),previous);
+     assert.equal(new Set(await cards.evaluateAll(els=>els.map(el=>el.dataset.adId))).size,2,'restore keeps distinct creatives');
     }
     assert.deepEqual(errors,[]);assert.equal(await p.locator('#blogPostContent table').count(),post.goal||post.slug.includes('eredita')?1:0);results.push({name,width,slug:post.slug,slots:await cards.count(),errors,writes_intercepted:writes.length});await p.close();
    }
-   const p=await b.newPage({viewport:{width,height:900},reducedMotion:'reduce'});await p.route('https://mhfbtltgwibwmsudsuvf.supabase.co/**',r=>r.fulfill({json:[]}));await p.goto(base+'/qa?post=fiere-lombardia');await p.locator('[data-contextual-ad-slot]').first().scrollIntoViewIfNeeded();await p.waitForTimeout(100);assert.equal(await p.locator('[data-pa-motion-host]').count(),0);await p.close();
+   const context=await b.newContext({viewport:{width,height:900},reducedMotion:'reduce'}),p=await context.newPage();await context.route('https://mhfbtltgwibwmsudsuvf.supabase.co/**',r=>r.fulfill({json:[]}));await p.goto(base+'/qa?post=fiere-lombardia');await p.locator('[data-contextual-ad-slot]').first().scrollIntoViewIfNeeded();await p.waitForTimeout(100);assert.equal(await p.locator('[data-pa-motion-host]').count(),0);
+   await p.waitForFunction(()=>JSON.parse(localStorage.getItem('_pa_rotation_v1')||'{}')['fiere-lombardia']?.last.length===2);const previous=await p.locator('[data-contextual-ad-slot]').evaluateAll(els=>els.map(el=>el.dataset.adId));await p.close();
+   const reopened=await context.newPage();await reopened.goto(base+'/qa?post=fiere-lombardia');await reopened.waitForFunction(last=>[...document.querySelectorAll('[data-contextual-ad-slot]')].length===2&&[...document.querySelectorAll('[data-contextual-ad-slot]')].every(el=>!last.includes(el.dataset.adId)),previous);await reopened.close();await context.close();
+   const blocked=await b.newPage({viewport:{width,height:900}});await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Disabled','SecurityError');}});});await blocked.goto(base+'/slots');const before=await blocked.locator('[data-contextual-ad-slot]').evaluateAll(els=>els.map(el=>el.dataset.adId));await blocked.evaluate(()=>window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true})));assert((await blocked.locator('[data-contextual-ad-slot]').evaluateAll(els=>els.map(el=>el.dataset.adId))).every(id=>!before.includes(id)),'memory fallback when storage unavailable');await blocked.close();
   }finally{await b.close();}
  }
  return results;
 }
-(async()=>{unitTests();const coverage=await audit();await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
+function rotationTests(){
+ const context=engine.analyze({title:'Mercati e posteggi',slug:'mercati-posteggi'},''),eligible=catalog.ads.filter(ad=>ad.goal!=='fiere');
+ for(let size=1;size<=eligible.length;size++){
+  const pool=eligible.slice(0,size),rotation={counts:{},last:[]},seen=new Set();
+  for(let visit=0;visit<30;visit++){
+   const current=[];for(const slot of ['inline','closing']){const s=engine.select(context,slot,700,current,()=>0,pool,rotation);assert(s);current.push(s.ad.id);rotation.counts[s.ad.id]=(rotation.counts[s.ad.id]||0)+1;seen.add(s.ad.id);}
+   if(size>=2)assert.notEqual(current[0],current[1]);if(size>=4)assert(current.every(id=>!rotation.last.includes(id)));
+   if(visit===Math.ceil(size/2)-1)assert.equal(seen.size,size,'complete first round '+size);
+   rotation.last=current;
+  }
+  assert.equal(seen.size,size);assert(Math.max(...Object.values(rotation.counts))-Math.min(...Object.values(rotation.counts))<=1,'balanced turns '+size);
+ }
+}
+(async()=>{unitTests();rotationTests();const coverage=await audit();await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
  if(process.argv.includes('--serve')){console.log(base+'/qa?post=fiere-lombardia');return;}
  try{const results=await browsers(base);fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify({coverage,results},null,2));console.log(JSON.stringify({unit:true,coverage,browser_cases:results.length,formats:true,house_only:true,random:true,content_preserved:true}));}finally{server.close();}
 })().catch(e=>{console.error(e.stack);server.close();process.exitCode=1;});

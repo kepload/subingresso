@@ -10,6 +10,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  <link rel="stylesheet" href="/css/personal-ads.css?v=1">
  <link rel="stylesheet" href="/css/personal-ads-gallery.css?v=2">
+ <link rel="stylesheet" href="/css/personal-ads-results.css?v=1">
  <link rel="stylesheet" href="/css/contextual-ads-admin.css?v=1">
  <link rel="stylesheet" href="/css/blog-listing-ads-admin.css?v=2">
 </head>
@@ -40,7 +41,7 @@
      <p id="paContextBasis" class="pa-muted"></p>
      <div id="paContextPreview" class="pa-context-preview"></div>
      <p id="paContextChosen"></p>
-     <details><summary>Parole riconosciute e motivi di scelta</summary><p id="paContextKeywords"></p><p>La scelta è casuale fra le ADS disponibili. Le parole prioritarie aumentano le possibilità di essere scelte.</p><div class="pa-table-scroll"><table class="pa-context-table"><thead><tr><th>ADS</th><th>Esito e motivo</th><th>Escludi da questo articolo</th></tr></thead><tbody id="paContextRows"></tbody></table></div></details>
+     <details><summary>Parole riconosciute e motivi di scelta</summary><p id="paContextKeywords"></p><p>Questa anteprima è casuale. Nel blog le ADS pertinenti si alternano a ogni apertura dell’articolo: tutte ricevono un turno. Le parole prioritarie guidano la scelta fra quelle mostrate meno volte. Con almeno quattro candidate, i due banner cambiano entrambi; con meno candidate alcune ripetizioni sono necessarie.</p><div class="pa-table-scroll"><table class="pa-context-table"><thead><tr><th>ADS</th><th>Esito e motivo</th><th>Escludi da questo articolo</th></tr></thead><tbody id="paContextRows"></tbody></table></div></details>
      <div class="pa-context-correction"><label>Argomento dell’articolo<select id="paContextTopic"><option value="auto">Automatico</option><option id="paContextTopicCustom" value="custom" hidden>Argomenti salvati</option><option value="fiere">Fiere</option><option value="vendita">Vendita posteggi</option><option value="acquisto">Acquisto posteggi</option><option value="mercati">Mercati in generale</option><option value="none">Nessuna ADS</option></select></label><button id="paContextSavePost" type="button">Salva correzione articolo</button><button id="paContextResetPost" type="button">Ripristina automatico</button></div>
      <p id="paContextDraft" class="pa-muted"></p>
     </div>
@@ -73,6 +74,10 @@
    <div class="pa-section-head"><h2 id="paResultsTitle">Come stanno andando</h2><div class="pa-period"><label for="paDays">Clic degli ultimi</label><select id="paDays"><option value="7">7 giorni</option><option value="30" selected>30 giorni</option><option value="90">90 giorni</option><option value="365">365 giorni</option></select><button id="paRefresh" type="button">Aggiorna</button></div></div>
    <dl id="paTotals" class="pa-metrics"></dl>
    <p id="paFinding" class="pa-muted"></p>
+   <div class="pa-comparison-head"><h3 id="paComparisonTitle">Risultati per annuncio</h3><button id="paSummaryExport" type="button">Esporta confronto CSV</button></div>
+   <div class="pa-comparison-controls"><label>Mostra<select id="paResultFilter"><option value="all">Tutte le ADS</option><option value="clicked">Con clic</option><option value="unclicked">Mostrate senza clic</option><option value="unseen">Mai mostrate nel periodo</option></select></label><label>Ordina per<select id="paResultSort"><option value="clicks">Più clic</option><option value="impressions">Più impressioni</option><option value="ctr">CTR misurato</option></select></label><span id="paComparisonCount" class="pa-muted" role="status"></span></div>
+   <div class="pa-comparison"><table aria-labelledby="paComparisonTitle"><thead><tr><th>Annuncio</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th></tr></thead><tbody id="paSummaryRows"></tbody></table></div>
+   <p class="pa-comparison-note pa-muted">Tutte le misure e posizioni sommate per ADS. «Mai mostrata» indica zero impressioni misurate nel periodo. Il CTR usa solo i clic preceduti da un’impressione misurata.</p>
    <details id="paStatsDetails"><summary>Statistiche complete e criteri di misura</summary>
     <p>Impressione: almeno metà banner visibile per un secondo nel blog, una volta per sessione, creatività, misura e posizione. Il CTR usa solo i clic con un’impressione misurata. I link condivisi fuori dal blog misurano i clic; le immagini scaricate da sole non misurano le visualizzazioni.</p>
     <p>Conversione: un clic che porta all’azione prevista. Vendita → invio di un annuncio; acquisto → consultazione di un recapito; fiere → salvataggio di una fiera. Non certifica una compravendita. Iscrizioni, acquisti Vetrina e incassi netti dei rimborsi sono separati. Attribuzione all’ultima ADS cliccata nei 7 giorni precedenti, per utenti riconosciuti dopo l’accesso; ogni azione appartiene a una sola ADS. Il periodo seleziona i clic e le loro conversioni osservate fino a oggi.</p>
@@ -91,9 +96,9 @@
  <script src="/js/auth.js?v=28"></script>
  <script src="/js/personal-ads-motion.js?v=3"></script>
  <script src="/js/house-ads-catalog.js?v=2"></script>
- <script src="/js/contextual-ads.js?v=2"></script>
+ <script src="/js/contextual-ads.js?v=3"></script>
  <script src="/js/contextual-ads-admin.js?v=1"></script>
  <script src="/js/blog-listing-ads-admin.js?v=1"></script>
- <script src="/js/personal-ads-admin.js?v=7"></script>
+ <script src="/js/personal-ads-admin.js?v=8"></script>
 </body>
 </html>
