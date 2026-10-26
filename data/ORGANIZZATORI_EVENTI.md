@@ -7,7 +7,14 @@ raggiungibile dal selettore di destra; rimossi dalla dashboard Ambulante.
 Pannello inizialmente nascosto: lettura del solo `profiles.is_admin` per
 l’identità autenticata, poi RPC admin esistente. Errori riprovabili;
 logout/cambio identità svuotano il pannello e invalidano le risposte pendenti.
-Riepilogo chiuso, ricerca, filtri, paginazione e revisioni conservati.
+Gestione sempre aperta, senza comando per richiuderla. Quattro contatori
+cliccabili: profili pending, eventi pending, eventi published, eventi draft;
+calcolati dalla stessa risposta RPC. Il clic seleziona scheda/stato e azzera
+la ricerca; un secondo clic torna a tutti gli stati. Zero distinto da lettura
+non riuscita (trattino); logout pulisce anche i contatori. Elenchi, ricerca,
+paginazione e revisioni conservati; frecce nascoste se basta una pagina.
+Superficie unica con contatori su quattro colonne, due al telefono; tema
+scuro neutro locale, senza modificare il profilo o le statistiche personali.
 Statistiche personali degli eventi separate e invariate. Nessuna modifica DB.
 
 ## Intestazione scura — 21 ottobre 2026

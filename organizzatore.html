@@ -1,16 +1,22 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><script src="/js/admin-theme.js?v=7"></script><meta name="viewport" content="width=device-width,initial-scale=1"><title>Profilo organizzatore — Subingresso.it</title><meta name="description" content="Il tuo profilo organizzatore, i contatti e gli eventi su Subingresso.it."><meta name="robots" content="noindex,follow"><link rel="icon" href="/favicon-v2.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/tailwind.css?v=4"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/eventi.css?v=5"><link rel="stylesheet" href="/css/comune-picker.css?v=1"><link rel="stylesheet" href="/css/profile-switch.css?v=5">    <link rel="stylesheet" href="/css/design-system.css?v=15">
-<link rel="stylesheet" href="/css/organizer-analytics.css?v=2"><link rel="stylesheet" href="/css/event-admin.css?v=1"><link rel="stylesheet" href="/css/theme-preferences.css?v=2"><link rel="stylesheet" href="/css/admin-theme.css?v=6"></head>
+<link rel="stylesheet" href="/css/organizer-analytics.css?v=2"><link rel="stylesheet" href="/css/theme-preferences.css?v=2"><link rel="stylesheet" href="/css/admin-theme.css?v=6"><link rel="stylesheet" href="/css/event-admin.css?v=2"></head>
 <body class="organizer-theme min-h-screen flex flex-col bg-neutral-100 text-slate-900"><header></header>
 <main class="ev ev-main" id="organizerApp">
  <nav class="profile-switch profile-switch-page" aria-label="Tipo di profilo" data-selected="organizer"><a href="/dashboard?area=normale"><i class="fas fa-user" aria-hidden="true"></i> Ambulante</a><a href="/organizzatore" aria-current="page"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Organizzatore</a></nav>
  <p id="organizerMessage" class="ev-notice" role="status" aria-live="polite" hidden></p>
  <div id="organizerLoading" class="ev-panel" role="status">Caricamento della tua area…</div>
  <section class="ev ev-panel" id="eventAdminPanel" aria-labelledby="eventAdminTitle" hidden>
-  <details id="eventAdminWorkspace">
-   <summary class="ea-summary"><div><h2 id="eventAdminTitle">Fiere e organizzatori</h2><span id="eventAdminSummary" class="ev-muted" role="status">Caricamento…</span></div><span class="ea-expand" aria-hidden="true">⌄</span></summary>
+  <div id="eventAdminWorkspace">
+   <div class="ea-heading"><div><h2 id="eventAdminTitle">Fiere e organizzatori</h2><span id="eventAdminSummary" class="ev-muted" role="status">Caricamento…</span></div><button type="button" id="eventAdminRefresh">Aggiorna</button></div>
+   <div class="ea-metrics" role="group" aria-label="Riepilogo e filtri rapidi">
+    <button type="button" data-admin-metric="organizer:pending" aria-pressed="false" disabled><span>Profili in revisione</span><strong>—</strong></button>
+    <button type="button" data-admin-metric="event:pending" aria-pressed="false" disabled><span>Eventi in revisione</span><strong>—</strong></button>
+    <button type="button" data-admin-metric="event:published" aria-pressed="false" disabled><span>Eventi pubblicati</span><strong>—</strong></button>
+    <button type="button" data-admin-metric="event:draft" aria-pressed="false" disabled><span>Bozze non inviate</span><strong>—</strong></button>
+   </div>
    <div class="ea-workspace">
-    <div class="ea-toolbar"><div class="ea-tabs" role="tablist" aria-label="Gestione fiere e organizzatori"><button type="button" id="adminEventTab" role="tab" aria-selected="true" aria-controls="adminEventDetails" data-admin-tab="event">Fiere ed eventi <span id="adminEventCount">0</span></button><button type="button" id="adminOrganizerTab" role="tab" aria-selected="false" aria-controls="adminOrganizerDetails" tabindex="-1" data-admin-tab="organizer">Organizzatori <span id="adminOrganizerCount">0</span></button></div><button type="button" id="eventAdminRefresh">Aggiorna</button></div>
+    <div class="ea-toolbar"><div class="ea-tabs" role="tablist" aria-label="Gestione fiere e organizzatori"><button type="button" id="adminEventTab" role="tab" aria-selected="true" aria-controls="adminEventDetails" data-admin-tab="event">Fiere ed eventi <span id="adminEventCount">0</span></button><button type="button" id="adminOrganizerTab" role="tab" aria-selected="false" aria-controls="adminOrganizerDetails" tabindex="-1" data-admin-tab="organizer">Organizzatori <span id="adminOrganizerCount">0</span></button></div></div>
     <div class="ea-filters"><label for="eventAdminSearch">Cerca<input type="search" id="eventAdminSearch" placeholder="Nome, luogo o organizzatore" maxlength="160"></label><label for="eventAdminFilter">Stato<select id="eventAdminFilter"><option value="all">Tutti gli stati</option><option value="pending">In revisione</option><option value="draft">Bozze non inviate</option><option value="published">Pubblicati</option><option value="approved">Organizzatori approvati</option><option value="rejected">Da correggere</option><option value="suspended">Organizzatori sospesi</option><option value="cancelled">Ritirati</option></select></label></div>
     <p id="eventAdminMessage" class="ev-notice" role="status" hidden></p>
     <div id="adminEventDetails" role="tabpanel" aria-labelledby="adminEventTab"><div id="adminEventQueue" class="ea-list"></div></div>
@@ -18,7 +24,7 @@
     <div class="ea-pagination"><span id="eventAdminPageInfo" role="status"></span><div><button type="button" id="eventAdminPrevious" disabled aria-label="Pagina precedente">←</button><button type="button" id="eventAdminNext" disabled aria-label="Pagina successiva">→</button></div></div>
     <div class="ea-footer"><details><summary>Prenotazioni e commissioni</summary><p class="ev-muted">Prenotazioni e pagamenti eventi ancora disattivati. Ripartizione predisposta: 8% Subingresso, 92% organizzatore. Esempio su 100 €: 8 € e 92 €. I pagamenti Vetrina restano separati.</p></details></div>
    </div>
-  </details>
+  </div>
  </section>
  <div id="organizerWorkspace" hidden>
   <section class="profile-theme-settings profile-theme-actions" aria-label="Aspetto del sito">
@@ -84,5 +90,5 @@
  <section id="organizerLogin" class="ev-panel" hidden><h1>Profilo organizzatore</h1><p>Accedi per continuare.</p><div class="ev-actions"><button type="button" class="ev-primary" id="organizerSignIn">Accedi / Registrati</button></div></section>
 </main><footer></footer>
 <dialog id="eventReviewDialog" class="ev ev-dialog" aria-labelledby="eventReviewTitle"><div class="ev-dialog-top"><h2 id="eventReviewTitle">Revisione</h2><button type="button" id="eventReviewClose">Chiudi</button></div><div class="ev-dialog-body"><div id="eventReviewBody"></div><label for="eventReviewNote">Nota per l’organizzatore (obbligatoria per rifiuto o sospensione)</label><textarea id="eventReviewNote" maxlength="2000"></textarea><p id="eventReviewMessage" class="ev-notice" role="status" hidden></p><div class="ev-actions"><button type="button" class="ev-primary" id="eventApprove">Approva</button><button type="button" class="ev-danger" id="eventReject">Richiedi correzioni / Ritira</button><button type="button" class="ev-danger" id="eventSuspend" hidden>Sospendi organizzatore</button></div></div></dialog>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/page-view-tracker.js?v=4"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=24"></script><script src="/js/ui-components.js?v=18"></script><script src="/js/auth.js?v=28"></script><script src="/js/comune-picker.js?v=7"></script><script src="/js/event-data.js?v=2"></script><script src="/js/organizer-charts.js?v=1"></script><script src="/js/organizer-analytics.js?v=3"></script><script src="/js/organizzatori.js?v=11"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/page-view-tracker.js?v=4"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=24"></script><script src="/js/ui-components.js?v=18"></script><script src="/js/auth.js?v=28"></script><script src="/js/comune-picker.js?v=7"></script><script src="/js/event-data.js?v=2"></script><script src="/js/organizer-charts.js?v=1"></script><script src="/js/organizer-analytics.js?v=3"></script><script src="/js/organizzatori.js?v=12"></script>
 </body></html>

@@ -39,7 +39,7 @@ async function run(engine,name,width,height,base){
   await title.fill('MODIFICA DA CONSERVARE');await page.locator('[data-event-cancel="'+secondId+'"]').click();
   result.unsavedChangesPreservedOnOtherWithdrawal=await title.inputValue()==='MODIFICA DA CONSERVARE'&&H.getDB().events.find(e=>e.id===secondId).status==='draft';
   await page.reload();
-  const admin=await context.newPage();admin.on('pageerror',error=>errors.push(error.message));await admin.goto(base+'/qa/admin');await admin.locator('#eventAdminWorkspace > summary').click();await admin.locator('[data-admin-kind=event]').first().waitFor();
+  const admin=await context.newPage();admin.on('pageerror',error=>errors.push(error.message));await admin.goto(base+'/qa/admin');await admin.locator('[data-admin-kind=event]').first().waitFor();
   H.getDB().events[0].title='Risposta precedente';holdAdmin=true;await admin.locator('#eventAdminRefresh').click();await poll(()=>pending.filter(p=>p.name==='admin_event_workspace').length===1);
   H.getDB().events[0].title='Risposta più recente';await admin.locator('#eventAdminRefresh').click();await poll(()=>pending.filter(p=>p.name==='admin_event_workspace').length===2);
   pending.filter(p=>p.name==='admin_event_workspace')[1].release();await admin.getByRole('heading',{name:'Risposta più recente',exact:true}).waitFor();
@@ -55,7 +55,7 @@ async function run(engine,name,width,height,base){
   pending.filter(p=>p.name==='admin_event_workspace')[2].release();await admin.waitForTimeout(80);
   result.signOutClosesReview=await admin.locator('#eventReviewDialog').evaluate(el=>!el.open);
   result.signOutClearsPrivateData=!(await admin.locator('#eventReviewBody').textContent()).includes('REFERENTE PRIVATO QA')&&await admin.locator('[data-admin-id]').count()===0;
-  holdAdmin=false;await admin.evaluate(id=>{window.qaUser={id};EventOrganizers.startAdmin(id);},H.admin);await admin.locator('#eventAdminWorkspace > summary').click();await admin.locator('#adminOrganizerTab').click();await admin.locator('[data-admin-kind=organizer]').waitFor({state:'attached'});
+  holdAdmin=false;await admin.evaluate(id=>{window.qaUser={id};EventOrganizers.startAdmin(id);},H.admin);await admin.locator('#adminOrganizerTab').click();await admin.locator('[data-admin-kind=organizer]').waitFor({state:'attached'});
   const beforeRefresh=H.getDB().calls.filter(call=>call.name==='admin_event_workspace').length;await admin.locator('#eventAdminRefresh').click();await admin.locator('#eventAdminPanel[aria-busy=false]').waitFor();
   result.adminCanRestartWithoutDuplicateActions=H.getDB().calls.filter(call=>call.name==='admin_event_workspace').length===beforeRefresh+1;
   await admin.locator('#adminOrganizerTab').click();await admin.locator('[data-admin-kind=organizer]').click();

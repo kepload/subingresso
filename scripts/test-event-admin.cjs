@@ -19,11 +19,11 @@ async function run(engine,name,width,base){
  const refresh=async()=>{await page.locator('#eventAdminRefresh').click();await loaded();};
  try{
   await page.goto(base+'/qa/admin');await loaded();
-  check(!await page.locator('#eventAdminWorkspace').evaluate(el=>el.open),'Elenco chiuso all’ingresso');
-  check(await page.locator('#eventAdminPanel').evaluate(el=>el.getBoundingClientRect().height<140),'Riepilogo compatto sotto 140px');
-  check((await page.locator('#eventAdminSummary').innerText()).includes('1 profilo e 3 eventi in revisione'),'Richieste visibili nel riepilogo chiuso');
-  if(out)await page.locator('#eventAdminPanel').screenshot({path:path.join(out,`${name}-${width}-chiuso.png`)});
-  await page.locator('#eventAdminWorkspace>summary').click();
+  check(await page.locator('#eventAdminSearch').isVisible(),'Elenco visibile all’ingresso, senza apertura');
+  check(await page.locator('#eventAdminWorkspace>summary').count()===0,'Pannello senza comando per nascondere la gestione');
+  check((await page.locator('#eventAdminSummary').innerText()).includes('1 profilo e 3 eventi in revisione'),'Richieste visibili nel riepilogo');
+  check(JSON.stringify(await page.locator('[data-admin-metric] strong').allTextContents())===JSON.stringify(['1','3','11','5']),'Contatori derivati dai rispettivi stati');
+  if(out)await page.locator('#eventAdminPanel').screenshot({path:path.join(out,`${name}-${width}-ingresso.png`)});
   check(await page.locator('.ea-row').count()===6,'Massimo sei righe per pagina');
   check(await page.locator('#eventAdminPageInfo').innerText()==='1–6 di 19','Totale e intervallo visibili');
   check(await page.locator('#eventAdminPanel img').count()===0 && !await page.evaluate(()=>window.qaXSS),'Titoli trattati come testo');
@@ -58,20 +58,31 @@ async function run(engine,name,width,base){
   fail=false;await refresh();
   check(!await page.locator('#eventAdminMessage').isVisible() && await page.locator('#eventAdminFilter').inputValue()==='published','Ripresa conserva filtro');
   if(out)await page.locator('#eventAdminPanel').screenshot({path:path.join(out,`${name}-${width}-aperto.png`)});
-  await page.locator('#eventAdminWorkspace>summary').click();await page.evaluate(()=>EventOrganizers.startAdmin());
-  check(!await page.locator('#eventAdminWorkspace').evaluate(el=>el.open),'Riepilogo rimane chiuso');
-  await page.locator('#eventAdminWorkspace>summary').click();
+  await page.evaluate(()=>EventOrganizers.startAdmin());
+  check(await page.locator('#eventAdminSearch').isVisible(),'Pannello resta visibile dopo nuova inizializzazione');
+  await page.locator('[data-admin-metric="organizer:pending"]').click();
+  check(await page.locator('.ea-row').count()===1 && await page.locator('#adminOrganizerTab').getAttribute('aria-selected')==='true','Contatore profili apre le revisioni organizzatori');
+  await page.locator('#eventAdminSearch').fill('nessuna corrispondenza');
+  await page.locator('[data-admin-metric="event:pending"]').click();
+  check(await page.locator('.ea-row').count()===3 && await page.locator('#eventAdminSearch').inputValue()==='' && await page.locator('#eventAdminFilter').inputValue()==='pending','Contatore eventi azzera ricerca e apre il filtro corretto');
+  await page.locator('[data-admin-metric="event:pending"]').click();
+  check(await page.locator('#eventAdminFilter').inputValue()==='all','Secondo clic rimuove il filtro rapido');
+  await page.locator('[data-admin-metric="event:draft"]').focus();await page.keyboard.press('Enter');
+  check(await page.locator('.ea-row').count()===5 && await page.locator('[data-admin-metric="event:draft"]').getAttribute('aria-pressed')==='true','Bozze accessibili da tastiera e selezione annunciata');
   data.events=[];await refresh();
+  check(await page.locator('[data-admin-metric="event:draft"] strong').innerText()==='0' && (await page.locator('#adminEventQueue').innerText()).includes('Nessuna bozza'),'Zero reale e stato vuoto specifico');
   check(await page.locator('#eventAdminNext').isDisabled() && await page.locator('#eventAdminPrevious').isDisabled(),'Dati ridotti riallineano la pagina');
   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Nessun overflow');
   const ids=await page.locator('[id]').evaluateAll(els=>els.map(el=>el.id));check(new Set(ids).size===ids.length,'ID univoci');
   fail=true;await page.reload();await loaded();
-  check((await page.locator('#eventAdminSummary').innerText()).includes('Caricamento non riuscito'),'Errore iniziale riconoscibile anche a pannello chiuso');
-  await page.locator('#eventAdminWorkspace>summary').click();fail=false;await refresh();
+  check((await page.locator('#eventAdminSummary').innerText()).includes('Caricamento non riuscito'),'Errore iniziale visibile con comando di riprova');
+  check((await page.locator('[data-admin-metric] strong').allTextContents()).every(value=>value==='—'),'Lettura fallita non presentata come zero');
+  fail=false;await refresh();
   check(await page.locator('#adminOrganizerTab').getAttribute('aria-selected')==='true','Riprova ripristina dati e scheda con richieste');
   await page.locator('#adminOrganizerTab').click();await page.locator('[data-admin-id]').first().click();
   await page.evaluate(()=>{qaUser=null;qaAuth('SIGNED_OUT',null);});
   check(await page.locator('[data-admin-id]').count()===0 && await page.locator('#eventReviewBody').innerText()==='' && !await page.locator('#eventReviewDialog').isVisible(),'Logout pulisce liste e revisione');
+  check((await page.locator('[data-admin-metric] strong').allTextContents()).every(value=>value==='—'),'Logout svuota anche i contatori');
   check(errors.length===0,'Nessun errore JavaScript: '+errors.join('; '));
   console.log(`OK: ${name} ${width}px, ${checks.length} controlli pannello fiere (${calls} letture simulate)`);
   return {name,width,checks};
@@ -84,7 +95,7 @@ async function run(engine,name,width,base){
   assert.equal((await response.text()).replace(/\r\n/g,'\n'),fs.readFileSync(path.join(__dirname,'..',file),'utf8').replace(/\r\n/g,'\n'),file+' pubblicato diverso');
  }
  await new Promise(resolve=>H.server.listen(0,'127.0.0.1',resolve));const base='http://127.0.0.1:'+H.server.address().port,results=[];
- try{for(const [engine,name,width] of [[chromium,'Chromium',1440],[chromium,'Chromium',320],[webkit,'WebKit',390]])results.push(await run(engine,name,width,base));}
+ try{for(const [engine,name,width] of [[chromium,'Chromium',1440],[chromium,'Chromium',768],[chromium,'Chromium',320],[webkit,'WebKit',390]])results.push(await run(engine,name,width,base));}
  finally{await new Promise(resolve=>H.server.close(resolve));}
  if(out)fs.writeFileSync(path.join(out,'pannello.json'),JSON.stringify({at:new Date().toISOString(),results},null,2));
 })().catch(error=>{console.error(error);H.server.close();process.exitCode=1;});

@@ -175,8 +175,19 @@
  }
  function adminCard(item,kind){const id=kind==='organizer'?item.user_id:item.id,draft=kind==='event'&&item.status==='draft';return '<article class="ea-row"><div><h3>'+D.esc(kind==='organizer'?item.organization_name:item.title)+'</h3>'+(kind==='event'?'<p>'+D.esc(D.dates(item))+' · '+D.esc(item.city)+' · '+D.esc(item.organization_name)+'</p>':'<p>'+D.esc(item.organization_type||'Organizzatore')+'</p>')+'</div>'+D.badge(item.status)+'<button type="button" data-admin-kind="'+kind+'" data-admin-id="'+D.esc(id)+'" aria-label="'+D.esc((draft?'Vedi bozza: ':'Apri revisione: ')+(kind==='organizer'?item.organization_name:item.title))+'">'+(draft?'Vedi bozza':'Apri revisione')+'</button></article>';}
  const adminNormalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('it');
+ function renderAdminMetrics(){
+  for(const button of $('eventAdminPanel').querySelectorAll('[data-admin-metric]')){
+   const [kind,status]=button.dataset.adminMetric.split(':'),items=kind==='organizer'?adminData?.organizers:adminData?.events;
+   const count=items?.filter(item=>item.status===status).length;
+   button.querySelector('strong').textContent=count===undefined?'—':count.toLocaleString('it-IT');
+   button.disabled=!adminData;
+   button.dataset.attention=String(status==='pending'&&count>0);
+   button.setAttribute('aria-pressed',String(!!adminData&&adminView.kind===kind&&adminView.status===status&&!adminView.search));
+  }
+ }
  function renderAdmin(){
   if(!adminData)return;
+  renderAdminMetrics();
   const organizer=adminView.kind==='organizer',query=adminNormalize(adminView.search).trim();
   const rows=(organizer?adminData.organizers:adminData.events).filter(item=>(adminView.status==='all'||item.status===adminView.status)&&(!query||adminNormalize([item.title,item.organization_name,item.city,item.province,item.region].filter(Boolean).join(' ')).includes(query)));
   const rank={pending:0,rejected:1,draft:2,published:3,approved:3,suspended:4,cancelled:5};
@@ -187,10 +198,11 @@
    const active=kind===adminView.kind,tab=$(kind==='event'?'adminEventTab':'adminOrganizerTab');
    tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;
    $(kind==='event'?'adminEventDetails':'adminOrganizerDetails').hidden=!active;
-   $(kind==='event'?'adminEventQueue':'adminOrganizerQueue').innerHTML=active?(rows.slice(offset,offset+adminPageSize).map(item=>adminCard(item,kind)).join('')||'<p class="ev-empty">'+(adminView.search||adminView.status!=='all'?'Nessun risultato. Prova a cambiare ricerca o stato.':organizer?'Nessun organizzatore.':'Nessun evento creato.')+'</p>'):'';
+   $(kind==='event'?'adminEventQueue':'adminOrganizerQueue').innerHTML=active?(rows.slice(offset,offset+adminPageSize).map(item=>adminCard(item,kind)).join('')||'<p class="ev-empty">'+(query?'Nessun risultato. Prova a cambiare ricerca o stato.':adminView.status==='pending'?(organizer?'Nessun profilo in revisione.':'Nessun evento in revisione.'):adminView.status==='draft'?'Nessuna bozza non inviata.':adminView.status==='published'?'Nessun evento pubblicato.':adminView.status!=='all'?'Nessun risultato. Prova a cambiare ricerca o stato.':organizer?'Nessun organizzatore.':'Nessun evento creato.')+'</p>'):'';
   }
   $('eventAdminPageInfo').textContent=rows.length?(offset+1)+'–'+Math.min(offset+adminPageSize,rows.length)+' di '+rows.length:'0 risultati';
   $('eventAdminPrevious').disabled=offset===0;$('eventAdminNext').disabled=offset+adminPageSize>=rows.length;
+  $('eventAdminNext').parentElement.hidden=rows.length<=adminPageSize;
  }
  function selectAdminTab(kind,focus=false){
   adminView.kind=kind;adminView.page=0;
@@ -207,7 +219,7 @@
   for(const id of ['adminOrganizerQueue','adminEventQueue','eventReviewBody','eventAdminSummary','eventAdminPageInfo'])$(id)?.replaceChildren();
   for(const id of ['adminOrganizerCount','adminEventCount'])if($(id))$(id).textContent='0';
   Object.assign(adminView,{kind:'event',search:'',status:'all',page:0});
-  if($('eventAdminWorkspace'))$('eventAdminWorkspace').open=false;
+  if(root)renderAdminMetrics();
   if($('eventAdminSearch'))$('eventAdminSearch').value='';if($('eventAdminFilter'))$('eventAdminFilter').value='all';
   if($('eventReviewDialog')?.open)$('eventReviewDialog').close();if($('eventReviewNote'))$('eventReviewNote').value='';
   for(const button of $('eventReviewDialog')?.querySelectorAll('button')||[])button.disabled=false;
@@ -223,7 +235,7 @@
    $('eventAdminSummary').textContent=pending+(pending===1?' profilo e ':' profili e ')+events+(events===1?' evento in revisione':' eventi in revisione')+(drafts?' · '+drafts+(drafts===1?' bozza non inviata':' bozze non inviate'):'');
    $('adminOrganizerCount').textContent=String(data.organizers.length);$('adminEventCount').textContent=String(data.events.length);
    if(firstLoad)selectAdminTab(pending&&!events?'organizer':'event');else renderAdmin();
-  }catch(error){if(adminActive&&epoch===adminEpoch&&session===adminSession){message(failure(error),true,'eventAdminMessage');if(!adminData)$('eventAdminSummary').textContent='Caricamento non riuscito · apri per riprovare';}}
+  }catch(error){if(adminActive&&epoch===adminEpoch&&session===adminSession){message(failure(error),true,'eventAdminMessage');if(!adminData)$('eventAdminSummary').textContent='Caricamento non riuscito · premi Aggiorna';}}
   finally{if(epoch===adminEpoch&&session===adminSession)root.setAttribute('aria-busy','false');}
  }
  async function review(actionName,button){
@@ -239,6 +251,7 @@
    root.dataset.bound='true';$('eventAdminRefresh').addEventListener('click',()=>loadAdmin());
    root.addEventListener('click',event=>{const button=event.target.closest('[data-admin-id]');if(adminActive&&button)openReview(button.dataset.adminKind,button.dataset.adminId);});
    root.addEventListener('click',event=>{const tab=event.target.closest('[data-admin-tab]');if(adminActive&&tab)selectAdminTab(tab.dataset.adminTab);});
+   root.addEventListener('click',event=>{const metric=event.target.closest('[data-admin-metric]');if(!adminActive||!adminData||!metric)return;const [kind,status]=metric.dataset.adminMetric.split(':');adminView.search='';$('eventAdminSearch').value='';adminView.status=metric.getAttribute('aria-pressed')==='true'?'all':status;selectAdminTab(kind);});
    root.querySelector('[role=tablist]').addEventListener('keydown',event=>{
     if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();
     selectAdminTab(event.key==='Home'?'event':event.key==='End'?'organizer':adminView.kind==='event'?'organizer':'event',true);
