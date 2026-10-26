@@ -5,6 +5,20 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Calcolatore: finiture scure — 26 ottobre 2026
+
+- Su richiesta, fondi antracite, logo senza alone, importi su superficie unica,
+  scelte compatte con bordo/spunta e icone sobrie; focus visibile. Foglio locale
+  `admin-theme-valutatore.css` dopo il tema comune, escluso dal generatore.
+  Chiaro identico nei cinque confronti screenshot; calcolo invariato.
+- Pubblicato `713f71d`, Vercel `411ZsjxU4AKwQX4FEUxocB7in2bP` READY:
+  sette sorgenti identici ai byte Git. Percorso completo Chromium1440/768/390/320
+  e WebKit390:125 controlli locali e125 sugli asset pubblicati; preferenza reale
+  con identità simulata verificata online nei tre formati. Nessuna scrittura reale.
+  41.472 scenari modello passati; inspector0FAIL, etichette preesistenti segnalate.
+  Prove/limiti/errori fixture: `Documents/calcolatore-scuro-20261026`.
+  Backup remoto verificato; consueto errore cleanup helper, lavori altrui conservati.
+
 ## Dashboard: fiere nell’area organizzatore e accesso ADS — 26 ottobre 2026
 
 - Su richiesta, «Fiere e organizzatori» con revisione solo in `/organizzatore`,
