@@ -22,3 +22,13 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 18. 🟠 Fiere per abbigliamento, casalinghi e alimentari in Lombardia: dove la tua merce è ammessa e dove è esclusa
 19. 🟠 Fine fiera: torno l'anno prossimo? Il registro scaricabile di vendite, invenduto e ore lavorate
 20. 🟢 Posteggio d'angolo o centrale: confronto sul campo tra passaggi, soste e acquisti, con scheda di rilevazione
+21. 🔴 Comprare un posteggio a rate o pagare subito? Il simulatore di anticipo, interessi e costo totale
+22. 🔴 Quanto costa lo stesso banco in Comuni diversi? Canoni mercatali lombardi a confronto, con calcolatore
+23. 🔴 Autonegozio usato incluso nella vendita: checklist di impianti, portata e documenti da controllare prima di firmare
+24. 🟠 Compro un banco con dipendenti: stipendi, ferie e TFR nella scheda da verificare con il consulente
+25. 🟠 Banco in un market privato o posteggio comunale: costi, durata e possibilità di cessione a confronto
+26. 🟠 Fiera trovata sui social: verifica organizzatore e pagamento con la checklist e i registri ufficiali
+27. 🟠 Registratore telematico per fiere e mercatini: acquisto o noleggio? Il simulatore del costo annuo per chi lavora pochi giorni
+28. 🟠 Organizzo un mercatino: quanti espositori servono per coprire i costi? Il budget compilabile
+29. 🟠 Cerco espositori per un mercatino: portali, gruppi social e annunci a pagamento a confronto, con tabella per misurare le iscrizioni
+30. 🟢 Corrente per il banco: allaccio, batteria o generatore? Calcola autonomia e costo per giornata
