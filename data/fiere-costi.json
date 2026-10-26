@@ -2013,6 +2013,38 @@
       "sourceUrl": "https://comune.tessennano.vt.it/wp-content/uploads/2026/07/AVVISO-ALLEGATO-A-1.pdf",
       "checkedAt": "2026-10-26",
       "review": "live-source-review"
+    },
+    "lazio-campoli-appennino-festa-del-tartufo": {
+      "kind": "conditional",
+      "label": "Vendita 200/400 €; somministrazione 350/700 €",
+      "details": "Modulo 2026: gazebo 4 × 4 m, vendita 200€ per un weekend o 400€ entrambi; somministrazione 350/700€. Modulo aggiuntivo 150€. IVA inclusa/esclusa non selezionata: da precisare. PDF include 1 kW e indica 10€/giorno per kW aggiuntivo; pagina web 3 kW e 25€+IVA per kW: condizioni discordanti, richiedere conferma scritta prima del pagamento. Non è un costo complessivo garantito.",
+      "sourceUrl": "https://www.tartufodicampoliappennino.it/wp-content/uploads/2026/10/Adesione_espositori_Festa_Tartufo_2026_aggiornata.pdf",
+      "checkedAt": "2026-10-26",
+      "period": "2026"
+    },
+    "lazio-picinisco-pastorizia-in-festival-edizione-estiva": {
+      "kind": "conditional",
+      "label": "Contributo stand 250/350/450 €",
+      "details": "Regolamento 2026: spazio gratuito ma contributo minimo di sponsorizzazione obbligatorio per entrambe le serate: 350€ ristoratori/associazioni locali, 450€ fuori sede, 250€ categorie specifiche (antipasti, bruschette, fritti, dolci, pecora al cotturo e assimilate). Oneri autorizzativi e allestimento propri; 5 gratuità per serata e ulteriori pasti alle condizioni del regolamento. Eventuale pranzo 100€ più 5 gratuità per le due giornate; 3 kW solo se concessi. Non è partecipazione integralmente gratuita.",
+      "sourceUrl": "https://www.pastoriziainfestival.it/storage/files/1/regolamento_stand_gastronomici_2026_revisionato_corretto.pdf",
+      "checkedAt": "2026-10-26",
+      "period": "2026"
+    },
+    "lazio-terelle-sagra-della-castagna": {
+      "kind": "fee",
+      "label": "Prodotti tipici/gastronomia 100 €; artigianato 50 €",
+      "details": "Modulo 2026: 100€ posteggio 3 × 3 per vendita prodotti tipici/gastronomia; 50€ stand artigianato. Preparazioni gastronomiche soggette ad autorizzazione dell’organizzazione. Quota richiesta con domanda entro 3 novembre ore 12; l’ammissione non è automatica. Trattamento IVA non specificato.",
+      "sourceUrl": "https://comune.terelle.fr.it/wp-content/uploads/2026/10/modulo-richiesta-autorizzazione-sagra-delle-castagne-2026.pdf",
+      "checkedAt": "2026-10-26",
+      "period": "2026"
+    },
+    "lazio-cassino-mercatino-dell-antiquariato-e-del-vintage": {
+      "kind": "conditional",
+      "label": "CUP 32/16/8 € per modulo, secondo riduzioni",
+      "details": "Avviso ottobre 2026–2027, art.4: CUP per modulo 3 × 4 m(12 m²), fascia 8–21: 32€ senza riduzione, 16€ con riduzione per venditori ambulanti o occupazioni ricorrenti, 8€ con riduzione per occupazioni ricorrenti di venditori ambulanti. Applicabilità da Ufficio Tributi; moltiplicare per moduli adiacenti. Canone, non prezzo di ingresso o tariffa unica per ogni operatore. Ricevuta del canone dell’edizione precedente richiesta per partecipare.",
+      "sourceUrl": "https://www.comune.cassino.fr.it/it-it/download/avviso-pubblico-mercatino-dell-antiquariato-e-del-collezionismo-174979-9-1687-6f6ac011fcabccc140e5e957cc98c477",
+      "checkedAt": "2026-10-26",
+      "period": "2026/2027"
     }
   }
 }
