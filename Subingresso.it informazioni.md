@@ -2659,7 +2659,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 71 province completate, 39 da fare su 110**, aggiornate il 26 ottobre dopo Viterbo. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 72 province completate, 38 da fare su 110**, aggiornate il 26 ottobre dopo Frosinone. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3160,7 +3160,26 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
     disponibilità e singole giornate, programmi natalizi futuri e annualità 2027,
     nuovi originali per fonti secondarie/esclusioni e albi non accessibili.
     Attività futura distinta dalla ricerca documentale corrente conclusa.
-- [ ] **65. Frosinone** — Lazio
+- [x] **65. Frosinone** — Lazio
+  Ricerca documentale accessibile conclusa con limiti e verificata online il
+  26 ottobre 2026: **77 manifestazioni in 42 comuni**, ricognizione dei **91 comuni**,
+  **76 aggiunte**, ID precedente e **7.598 schede esterne invariati**. Audit
+  `data/fiere-frosinone.json`, 2.335 ricevute, quattro sintesi costo; ricorrenze,
+  periodi e storico distinti dalle date confermate. Fonti omonime fuori provincia
+  escluse e assegnazioni comunali corrette. Limiti/esclusioni in FIERE.md.
+  Pubblicato `2350235`, Vercel riuscito: cinque asset identici, **77/77 pagine
+  HTTP200/H1/canonical/note/costi/fonti**; tutti i dialoghi locale/online in
+  Chromium1440/320 e WebKit390 e sito reale nei tre formati, scritture bloccate.
+  Generale cinque formati, settori, 7.675 pagine/3.414 sitemap, build ripetibile
+  e gitleaks passati. Catalogo **7.675**, riepilogo **72 concluse / 38 rimanenti**
+  aggiornati dopo verifica. Backup completo SHA256 **146.605 file**, zero errori,
+  manifest verificato e supplemento finale; dossier privato Frosinone e FIERE.md.
+  Ripresa solo questa provincia; ciclo Codex2 in attesa fermato per il passaggio
+  alla sessione corrente, nessuna nuova provincia avviata o comunicazione a terzi.
+  - [ ] Manutenzione periodica Frosinone: nuovi bandi, quote, graduatorie, canoni,
+    disponibilità e singole giornate, programmi Natale 2026 e annualità successive,
+    originali sostitutivi delle fonti storiche/secondarie e archivi non accessibili.
+    Attività futura distinta dalla ricerca documentale attuale conclusa.
 - [ ] **66. Terni** — Umbria
 - [ ] **67. Caserta** — Campania
 - [ ] **68. Lecce** — Puglia
