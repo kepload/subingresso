@@ -42,3 +42,13 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 38. 🟠 Gazebo per mercatini: comprare o noleggiare? Il calcolatore con trasporto, zavorre e giorni di utilizzo
 39. 🟠 Organizzo un mercatino: il file per gestire posteggi, conferme e lista d'attesa degli espositori
 40. 🟢 POS per ambulanti: batteria e connessione a confronto nella prova sul campo durante una giornata di mercato
+41. 🔴 Fiere lombarde: quante domande arrivano per ogni posteggio? I dati degli esiti ufficiali a confronto
+42. 🔴 Vendo il banco: quanto mi resta dopo imposte e spese? Il prospetto da compilare con il commercialista
+43. 🔴 Domande respinte alle fiere: gli errori negli esiti comunali, con checklist prima dell'invio
+44. 🟠 Vendere il posteggio da soli o con un intermediario: costi, servizi e vincoli degli incarichi a confronto
+45. 🟠 Attrezzature per ambulanti all'asta o usate da un privato: calcola il costo finale con commissioni, ritiro e riparazioni
+46. 🟠 Quanta merce porto in fiera? Il foglio per pianificare scorte e riassortimenti per prodotto e taglia
+47. 🟠 Sconto percentuale o 3×2 al banco: il simulatore per confrontare margine e pezzi da vendere
+48. 🟠 Street food in fiera: quante porzioni puoi servire in un'ora? La prova cronometrata con scheda per cottura, cassa e consegna
+49. 🟠 Organizzo un mercatino: come trovo sponsor tra i negozi locali? Modello di proposta e scheda per misurare i risultati
+50. 🟢 Comprare un banco in due: il foglio per confrontare capitale investito, ore lavorate e ripartizione degli utili
