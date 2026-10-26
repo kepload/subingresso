@@ -5,6 +5,17 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Piano editoriale futuro — 26 ottobre 2026
+
+- Creato `Articoli blog da sviluppare.md`: 10 titoli con priorità 🔴/🟠/🟢,
+  pallini per crescita/ricavi/motivo di clic, materiali necessari e fonti.
+  Obiettivi correnti: prima crescita rapida pertinente, poi ricavi; puntare
+  su valore utilizzabile anche con AI Overview, senza garanzie SEO.
+- Verificati 120 titoli/slug live via API, sette guide vicine e campione web;
+  concorrenza non misurata economicamente, dati/strumenti futuri espliciti.
+  Nessuna pubblicazione blog o modifica al sito. Backup remoto dedicato
+  verificato; helper con noto errore cleanup dei tag, backup riuscito.
+
 ## ADS contestuali: keyword e formati — 25 ottobre 2026
 
 - Richiesta: abbinare slot/articoli e ADS per keyword e formato, sorteggiando
