@@ -1,5 +1,15 @@
 # Organizzatori, eventi e prenotazioni future — 18 ottobre 2026
 
+## Gestione admin nell’area organizzatore — 26 ottobre 2026
+
+«Fiere e organizzatori» e il dialog di revisione sono in `/organizzatore`,
+raggiungibile dal selettore di destra; rimossi dalla dashboard Ambulante.
+Pannello inizialmente nascosto: lettura del solo `profiles.is_admin` per
+l’identità autenticata, poi RPC admin esistente. Errori riprovabili;
+logout/cambio identità svuotano il pannello e invalidano le risposte pendenti.
+Riepilogo chiuso, ricerca, filtri, paginazione e revisioni conservati.
+Statistiche personali degli eventi separate e invariate. Nessuna modifica DB.
+
 ## Intestazione scura — 21 ottobre 2026
 
 Su richiesta, la barra superiore di `/organizzatore` segue il tema scuro:

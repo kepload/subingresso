@@ -5,6 +5,20 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Dashboard: fiere nell’area organizzatore e accesso ADS — 26 ottobre 2026
+
+- Su richiesta, «Fiere e organizzatori» con revisione solo in `/organizzatore`,
+  dal selettore destro. Permessi admin verificati, logout e risposte tardive
+  protetti; gestione e statistiche personali conservate. Accesso «Le mie ADS»
+  più compatto, descrizione breve e freccia a destra, nei due temi.
+- Locali: 112 controlli area/permessi/ADS, 87 pannello, 364 profili e percorso
+  eventi Chromium1440/320+WebKit390 passati; anche tablet768. Prove private
+  `Documents/dashboard-organizzatore-ads-20261026`. Nessuna scrittura reale.
+  Inspector/detector: rilievi preesistenti fuori ambito; scorciatoia isolata
+  senza h1 per sua natura. Fixture canvas senza runtime corretta dopo falso
+  overflow; backup remoto verificato, consueto errore cleanup helper.
+  Pubblicazione in verifica.
+
 ## Vetrine del blog nella raccolta ADS — 26 ottobre 2026
 
 - Richiesta: collegare vecchi/nuovi articoli al sistema ADS e misurare i

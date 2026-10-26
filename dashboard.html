@@ -94,6 +94,27 @@
             font-weight: 800;
         }
         .dashboard-panel-action:hover { background: #dbeafe; }
+        .dashboard-ads-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 76px;
+            padding: 16px 20px;
+            border: 1px solid var(--ad-line, #e2e8f0);
+            border-radius: 12px;
+            background: var(--ad-panel, #fff);
+            color: var(--ad-link, #1d4ed8);
+            text-decoration: none;
+            transition: background-color .15s, border-color .15s;
+        }
+        .dashboard-ads-copy { min-width: 0; }
+        .dashboard-ads-title { display: block; font-size: 16px; font-weight: 700; line-height: 1.5; }
+        .dashboard-ads-description { display: block; margin-top: 2px; color: var(--ad-muted, #475569); font-size: 13px; line-height: 1.5; }
+        .dashboard-ads-link > i { flex-shrink: 0; font-size: 16px; }
+        .dashboard-ads-link:hover { background: var(--ad-raised, #f8fafc); border-color: var(--ad-link, #2563eb); }
+        .dashboard-ads-link:focus-visible { outline: 2px solid var(--ad-link, #2563eb); outline-offset: 3px; }
+        @media (prefers-reduced-motion: reduce) { .dashboard-ads-link { transition: none; } }
         @media (min-width: 640px) {
             .dashboard-main { padding: 36px 24px; }
             .dashboard-user h1 { font-size: 1.875rem; }
@@ -232,20 +253,10 @@
 
         <!-- ── ADMIN PANEL (Exclusive) ── -->
         <div id="adminPanel" class="hidden space-y-6">
-            <a href="/le-mie-ads" class="block bg-white p-6 rounded-2xl border border-slate-100 text-blue-700 font-bold">Le mie ADS <span class="text-slate-500 font-normal">— 20 messaggi, 8 formati, pacchetti e risultati</span> →</a>
-            <section class="ev ev-panel" id="eventAdminPanel" aria-labelledby="eventAdminTitle">
-                <details id="eventAdminWorkspace">
-                <summary class="ea-summary"><div><h2 id="eventAdminTitle">Fiere e organizzatori</h2><span id="eventAdminSummary" class="ev-muted" role="status">Caricamento…</span></div><span class="ea-expand" aria-hidden="true">⌄</span></summary>
-                <div class="ea-workspace">
-                <div class="ea-toolbar"><div class="ea-tabs" role="tablist" aria-label="Gestione fiere e organizzatori"><button type="button" id="adminEventTab" role="tab" aria-selected="true" aria-controls="adminEventDetails" data-admin-tab="event">Fiere ed eventi <span id="adminEventCount">0</span></button><button type="button" id="adminOrganizerTab" role="tab" aria-selected="false" aria-controls="adminOrganizerDetails" tabindex="-1" data-admin-tab="organizer">Organizzatori <span id="adminOrganizerCount">0</span></button></div><button type="button" id="eventAdminRefresh">Aggiorna</button></div>
-                <div class="ea-filters"><label for="eventAdminSearch">Cerca<input type="search" id="eventAdminSearch" placeholder="Nome, luogo o organizzatore" maxlength="160"></label><label for="eventAdminFilter">Stato<select id="eventAdminFilter"><option value="all">Tutti gli stati</option><option value="pending">In revisione</option><option value="draft">Bozze non inviate</option><option value="published">Pubblicati</option><option value="approved">Organizzatori approvati</option><option value="rejected">Da correggere</option><option value="suspended">Organizzatori sospesi</option><option value="cancelled">Ritirati</option></select></label></div>
-                <p id="eventAdminMessage" class="ev-notice" role="status" hidden></p>
-                <div id="adminEventDetails" role="tabpanel" aria-labelledby="adminEventTab"><div id="adminEventQueue" class="ea-list"></div></div>
-                <div id="adminOrganizerDetails" role="tabpanel" aria-labelledby="adminOrganizerTab" hidden><div id="adminOrganizerQueue" class="ea-list"></div></div>
-                <div class="ea-pagination"><span id="eventAdminPageInfo" role="status"></span><div><button type="button" id="eventAdminPrevious" disabled aria-label="Pagina precedente">←</button><button type="button" id="eventAdminNext" disabled aria-label="Pagina successiva">→</button></div></div>
-                <div class="ea-footer"><a href="/organizzatore">La tua area organizzatore →</a><details><summary>Prenotazioni e commissioni</summary><p class="ev-muted">Prenotazioni e pagamenti eventi ancora disattivati. Ripartizione predisposta: 8% Subingresso, 92% organizzatore. Esempio su 100 €: 8 € e 92 €. I pagamenti Vetrina restano separati.</p></details></div>
-                </div></details>
-            </section>
+            <a href="/le-mie-ads" class="dashboard-ads-link">
+                <span class="dashboard-ads-copy"><span class="dashboard-ads-title">Le mie ADS</span><span class="dashboard-ads-description">Creatività, formati e risultati</span></span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
             <!-- Stats Cards -->
             <div class="admin-summary-grid grid grid-cols-2 md:grid-cols-6 gap-3">
                 <div class="bg-white p-3 md:p-4 rounded-xl border border-slate-100 shadow-sm text-center md:text-left">
@@ -1280,11 +1291,9 @@
 <script src="js/fiere-access.js?v=2"></script>
 <script type="module" src="js/saved-fairs.js?v=3"></script>
 <script src="js/blog-generator.js?v=3"></script>
-<link rel="stylesheet" href="css/event-admin.css?v=1">
 <script src="js/event-data.js?v=2"></script>
-<script src="js/organizzatori.js?v=10"></script>
+<script src="js/organizzatori.js?v=11"></script>
 <script src="js/profile-switch.js?v=5"></script>
-<dialog id="eventReviewDialog" class="ev ev-dialog" aria-labelledby="eventReviewTitle"><div class="ev-dialog-top"><h2 id="eventReviewTitle">Revisione</h2><button type="button" id="eventReviewClose">Chiudi</button></div><div class="ev-dialog-body"><div id="eventReviewBody"></div><label for="eventReviewNote">Nota per l’organizzatore (obbligatoria per rifiuto o sospensione)</label><textarea id="eventReviewNote" maxlength="2000"></textarea><p id="eventReviewMessage" class="ev-notice" role="status" hidden></p><div class="ev-actions"><button type="button" class="ev-primary" id="eventApprove">Approva</button><button type="button" class="ev-danger" id="eventReject">Richiedi correzioni / Ritira</button><button type="button" class="ev-danger" id="eventSuspend" hidden>Sospendi organizzatore</button></div></div></dialog>
 <script>
 
 let _currentUser = null;
@@ -1333,7 +1342,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('adminAdsShortcut').classList.remove('hidden');
         document.getElementById('adminLogout').classList.remove('hidden');
         document.getElementById('adminPanel').classList.remove('hidden');
-        EventOrganizers.startAdmin(user.id);
         loadAdminStats();
         window.AdminEmailAnalytics?.start(user);
         loadAdminGrowthChart();

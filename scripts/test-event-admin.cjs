@@ -79,7 +79,7 @@ async function run(engine,name,width,base){
 }
 (async()=>{
  if(out)fs.mkdirSync(out,{recursive:true});
- if(process.env.EVENT_ADMIN_USE_PUBLISHED)for(const file of ['dashboard.html','css/event-admin.css','js/organizzatori.js','js/profile-switch.js']){
+ if(process.env.EVENT_ADMIN_USE_PUBLISHED)for(const file of ['organizzatore.html','css/event-admin.css','js/organizzatori.js','js/profile-switch.js']){
   const response=await fetch('https://subingresso.it/'+file.replace(/\.html$/,''),{cache:'no-store'});assert.equal(response.status,200);
   assert.equal((await response.text()).replace(/\r\n/g,'\n'),fs.readFileSync(path.join(__dirname,'..',file),'utf8').replace(/\r\n/g,'\n'),file+' pubblicato diverso');
  }
