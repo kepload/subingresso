@@ -24,7 +24,14 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Inspector componente0FAIL, avviso metadata12px motivato; galleria esistente
   fuori ambito. Prove/limiti `Documents/ads-risultati-rotazione-20261026`.
   Backup tag/ramo remoti verificati; consueto errore cleanuphelper; corretta
-  fixture riapertura con contesto browser esplicito. Pubblicazione da verificare.
+  fixture riapertura con contesto browser esplicito. Pubblicato `f95711b`,
+  Vercel `FCFZcvDasxcQFnPfLP6rGHX5UJaz` READY; integrazione Latina conservata,
+  produzione `GHG3ecaBvtX3LwFZMhZNg3f4yvmA` READY verificata:11sorgenti identici
+  ai byteGit,120articoli200/119con dueADS, testo/tabelle eAPIprivata401.
+  Quindici prove sugli asset pubblicati Chromium1440/320+WebKit390 passate:
+  keyword/esclusioni, turni completi, riapertura/ripristino e confronto.
+  Backend intercettato, nessuna statistica reale di prova. Corretto il test
+  online: annullamento ha3candidate, quindi una ripetizione necessaria.
 
 ## Vercel: chiave anteprime protetta come Secret — 26 ottobre 2026
 
