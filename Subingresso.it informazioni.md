@@ -11,6 +11,26 @@ fonti e audit fiere completi: `data/FIERE.md`.
   🔴/🟠/🟢; obiettivi crescita rapida, poi ricavi. Verificati 120 articoli e campione web.
 - Preferenza esplicita: comunicazioni e documenti essenziali, senza spiegare ogni passaggio.
 
+## ADS: intenzione, parole e correzioni admin — 26 ottobre 2026
+
+- Approvati punti1/2/4: frase/intenzione prima delle parole isolate, keyword
+  prioritarie/escluse specifiche per20ADS, anteprima motivata e correzioni
+  persistenti in «Abbinamenti nel blog». «Prima di comprarlo» →acquisto;
+  negazioni esplicite e vendita merci distinte. Solo ADS proprie.
+- Bozze senza scritture, salvataggio esplicito, ripristino automatico,
+  esclusioni per articolo e parole perADS. Regole correnti lette una volta
+  dal browser, anche con HTML precedente; nessun nuovo fetch del corpo.
+  Tabella metadati/RPC `PATCH_CONTEXTUAL_AD_RULES_20261026.sql` applicata:
+  RLS/privilegi/revisioni verificati,0regole reali iniziali, anon save401.
+  TestDB inROLLBACK e API/UI Chromium1440/768/320 +WebKit390 passati,
+  inclusi conflitti, logout/risposte tardive e aggiornamento HTML precedente.
+- Audit120/119ADS e regressioni SSR, raccolta/API/tracker e annunci nel blog
+  passati; inspector0FAIL, banda SVG live motivata. Prove e contratto:
+  `Documents/ads-intento-admin-20261026`, `data/CONTEXTUAL_ADS.md`.
+  Backup tag/ramo remoti verificati; helper stderr dopo tag riuscito.
+  Corrette prove: attributo misura invece del ridimensionamento CSS e
+  fixture script con/senza slash. Pubblicazione ancora da verificare.
+
 ## ADS contestuali: keyword e formati — 25 ottobre 2026
 
 - Richiesta: abbinare slot/articoli e ADS per keyword e formato, sorteggiando

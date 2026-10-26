@@ -75,6 +75,12 @@ module.exports = async function handler(req, res) {
     // Servizio ADS nello stesso runtime: conserva le 12 funzioni del piano.
     // Il gestore imposta no-store e controlla il ruolo prima di ogni lettura.
     if (req.query?.personal_ads === '1') return require('../lib/personal-ads-handler.cjs')(req, res);
+    if (req.query?.contextual_rules === '1') {
+        res.setHeader('Cache-Control','private, no-store');
+        if (!['GET','HEAD'].includes(req.method)) return res.status(405).end();
+        try { return res.status(200).json(await require('../lib/contextual-ad-rules.cjs').readRules()); }
+        catch (_) { return res.status(503).json({error:'Regole temporaneamente non disponibili.'}); }
+    }
     const slug = (req.query && req.query.post) ? String(req.query.post).trim() : '';
 
     let post = null, related = [], unavailable = false;
@@ -92,15 +98,17 @@ module.exports = async function handler(req, res) {
     let html = getBlogTemplate();
 
     if (post) {
+        let contextualRules={ads:{},posts:{}};
+        try { contextualRules=await require('../lib/contextual-ad-rules.cjs').readRules(); } catch (_) {}
         const safeContent = DOMPurify.sanitize(post.content || '');
         let content = BlogMarkup.articleMarkup(post, safeContent);
         // Promotions have the same positions before and after hydration.
         const articleRoot = sanitizerWindow.document.createElement('div');
         articleRoot.innerHTML = content;
-        ContextualAds.mount(articleRoot.querySelector('#blogPostContent'), post, BlogMarkup.regions);
+        ContextualAds.mount(articleRoot.querySelector('#blogPostContent'), post, BlogMarkup.regions, contextualRules);
         content = articleRoot.innerHTML;
         const {content: _body, ...metadata} = post;
-        html = renderBody(html, content, {mode: 'post', post: metadata, related});
+        html = renderBody(html, content, {mode: 'post', post: metadata, related, contextualRules});
         if (BlogMarkup.regionFromSlug(slug) || BlogMarkup.hasEditorialPromos(safeContent)) html = hideBanner(html);
         const fullTitle = `${post.title} — Subingresso.it`;
         const desc      = post.excerpt || post.title;

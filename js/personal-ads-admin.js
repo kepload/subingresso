@@ -11,7 +11,7 @@
  const mixedFormats=['970x250','300x600','336x280','300x250','728x90','320x100'];
  const sum=rows=>rows.reduce((a,r)=>{keys.forEach(k=>a[k]+=Number(r[k]||0));return a;},Object.fromEntries(keys.map(k=>[k,0])));
  function status(message,sticky=false){clearTimeout(toastTimer);const host=$('paDetails').open?$('paDetails'):document.body;if($('paStatus').parentElement!==host)host.append($('paStatus'));$('paStatus').textContent=message;$('paStatus').hidden=false;if(!sticky)toastTimer=setTimeout(()=>$('paStatus').hidden=true,5000);}
- function clear(message){++revision;++request;owner=null;data=null;selected=null;mosaicItems=[];mosaicWidth=0;cancelAnimationFrame(mosaicFrame);if($('paDetails').open)$('paDetails').close();downloadController?.abort();downloadBusy=false;$('paApp').hidden=true;$('paGate').hidden=false;$('paGateText').textContent=message;$('paLogin').hidden=true;$('paRetryGate').hidden=true;['paTotals','paList','paStatsRows','paAdMetrics','paPreviewFrame'].forEach(id=>$(id).replaceChildren());$('paList').style.height='0px';$('paCode').value='';$('paStatus').hidden=true;}
+ function clear(message){window.dispatchEvent(new Event('personal-ads:clear'));++revision;++request;owner=null;data=null;selected=null;mosaicItems=[];mosaicWidth=0;cancelAnimationFrame(mosaicFrame);if($('paDetails').open)$('paDetails').close();downloadController?.abort();downloadBusy=false;$('paApp').hidden=true;$('paGate').hidden=false;$('paGateText').textContent=message;$('paLogin').hidden=true;$('paRetryGate').hidden=true;['paTotals','paList','paStatsRows','paAdMetrics','paPreviewFrame'].forEach(id=>$(id).replaceChildren());$('paList').style.height='0px';$('paCode').value='';$('paStatus').hidden=true;}
  function asset(ad,format,type){return '/images/personal-ads/'+ad.id+'-'+format.id+'.'+type+'?v='+(ad.assetVersion||1);}
  function placement(){const value=$('paPlacement').value.trim();return /^[a-z0-9_-]{1,80}$/.test(value)?value:null;}
  function clickUrl(ad,format,position){return site+'/api/personal-ads?'+new URLSearchParams({action:'click',ad:ad.id,format:format.id,placement:position}).toString();}
@@ -99,7 +99,7 @@
    owner=user.id;data=result;selected=selected||data.ads[0]?.id;
    const current=$('paFormat').value;$('paFormat').innerHTML=data.formats.map(f=>'<option value="'+f.id+'">'+f.id+' · '+esc(f.label)+'</option>').join('');if(data.formats.some(f=>f.id===current))$('paFormat').value=current;
    const galleryMode=$('paGalleryMode').value||'mixed';$('paGalleryMode').innerHTML='<option value="mixed">Miste da blog</option><option value="all">Tutte le misure</option>'+data.formats.map(f=>'<option value="'+f.id+'">'+f.width+' × '+f.height+' · '+esc(f.label)+'</option>').join('');$('paGalleryMode').value=galleryMode;
-   $('paApp').hidden=false;$('paGate').hidden=true;renderMetrics();renderList();
+   $('paApp').hidden=false;$('paGate').hidden=true;renderMetrics();renderList();window.dispatchEvent(new CustomEvent('personal-ads:ready',{detail:{owner,ads:data.ads}}));
   }catch(error){if(seq!==request||rev!==revision)return;if(data)status(error.message+' I dati visualizzati restano quelli dell’ultimo aggiornamento.',true);else{$('paGateText').textContent=error.message;$('paRetryGate').hidden=false;}}
   finally{if(seq===request)$('paRefresh').disabled=false;}
  }

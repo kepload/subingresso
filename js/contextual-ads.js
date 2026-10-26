@@ -14,45 +14,74 @@
  const mounted=new WeakMap();
  const normalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
  function hits(text,terms){const padded=' '+normalize(text)+' ';return terms.filter(term=>padded.includes(' '+term+' '));}
- function intentHits(text,topic){
-  const normalized=normalize(text),result=hits(text,rules[topic]);
-  if(topic!=='vendita'&&topic!=='acquisto')return result;
-  const verb=topic==='vendita'?'vendere|vendo|vendi|vendita|cedere|cedo|cessione':'comprare|compro|compra|acquistare|acquisto';
-  const object='posteggio|posteggi|licenza|licenze|banco|attivita';
-  const forward=new RegExp('\\b(?:'+verb+')(?: [a-z0-9]+){0,4} (?:'+object+')\\b','g');
-  const reverse=new RegExp('\\b(?:'+object+')(?: [a-z0-9]+){0,3} (?:'+verb+')\\b','g');
-  for(const [pattern,isReverse]of [[forward,false],[reverse,true]])for(const match of normalized.matchAll(pattern)){
-   // Selling goods at a stall is not selling the stall or its licence.
-   const checked=match[0]+(isReverse?' '+normalized.slice(match.index+match[0].length).trim().split(' ').slice(0,3).join(' '):'');
-   if(!/\b(prodotti|merce|merci|casalinghi|abbigliamento|alimentari|frutta|verdura|pesce)\b/.test(checked))result.push(match[0]);
+ function languageSignals(text){
+  const value=normalize(text),signals=[],negated=[];
+  const object='posteggi[oi]|licenz[ae]|banco|attivita';
+  const goods=/\b(prodotti|merce|merci|casalinghi|abbigliamento|alimentari|frutta|verdura|pesce)\b/;
+  const verbs={vendita:'vend(?:ere|o|i|ita|uto|uta|erlo|erla)|ced(?:ere|o|uto|uta)|cessione',acquisto:'compr(?:are|o|i|a|ato|ata|arlo|arla|arli|arle)|acquist(?:are|o|i|a|ato|ata|arlo|arla)|quanto costa|quanto costano'};
+  for(const topic of ['fiere','vendita','acquisto','mercati'])for(const phrase of hits(value,rules[topic]))signals.push({topic,phrase,strength:topic==='fiere'?3:1});
+  for(const [topic,verb]of Object.entries(verbs)){
+   const negative=new RegExp('\\b(?:(?:non (?:voglio|vuoi|vuole|intendo|devo|posso)|senza|evitare di) (?:'+verb+'))\\b','g');
+   const negativeMatches=[...value.matchAll(negative)];if(negativeMatches.length)negated.push(topic);
+   const patterns=[new RegExp('\\b(?:'+verb+')(?: [a-z0-9]+){0,4} (?:'+object+')\\b','g'),new RegExp('\\b(?:'+object+')(?: [a-z0-9]+){0,3} (?:'+verb+')\\b','g')];
+   for(const [index,pattern]of patterns.entries())for(const match of value.matchAll(pattern)){
+    const tail=index===1?' '+value.slice(match.index+match[0].length).trim().split(' ').slice(0,3).join(' '):'';
+    if(goods.test(match[0]+tail)||negativeMatches.some(n=>n.index<=match.index+match[0].length&&n.index+n[0].length>=match.index))continue;
+    signals.push({topic,phrase:match[0],strength:4});
+   }
+   const pronoun=topic==='acquisto'?/\b(?:prima di |per )?(?:comprarl[oaie]|acquistarl[oaie])\b/g:/\b(?:prima di |per )?(?:venderl[oaie]|cederl[oaie])\b/g;
+   if(new RegExp('\\b(?:'+object+')\\b').test(value))for(const match of value.matchAll(pronoun))if(!negativeMatches.length)signals.push({topic,phrase:match[0],strength:5});
   }
-  return [...new Set(result)];
+  const unique=new Map();for(const signal of signals)if(!negated.includes(signal.topic)){const key=signal.topic+'|'+signal.phrase,previous=unique.get(key);if(!previous||previous.strength<signal.strength)unique.set(key,signal);}
+  return {signals:[...unique.values()],negated};
  }
- function analyze(post,body){
-  const title=(post.title||'')+' '+(post.slug||''),excerpt=(post.excerpt||'')+' '+(post.category||'');
-  const scores={},keywords=new Set(),titleTopics=[];
-  for(const [topic,terms]of Object.entries(rules)){
-   const head=intentHits(title,topic),intro=intentHits(excerpt,topic),text=intentHits(body,topic);
-   [...head,...intro,...text].forEach(word=>keywords.add(word));
-   scores[topic]=head.length*8+intro.length*3+Math.min(text.length,5);
-   if(topic!=='mercati'&&head.length)titleTopics.push(topic);
+ function analyze(post,body,override={}){
+  const fields={title:normalize(post.title),slug:normalize(post.slug),intro:normalize((post.excerpt||'')+' '+(post.category||'')),body:normalize(body)};
+  const evidence=[],scores={fiere:0,vendita:0,acquisto:0,mercati:0},keywords=new Set();let topics=[],basis='none',negatedTopics=[];
+  for(const [source,text]of Object.entries(fields)){
+   const found=languageSignals(text);if(source==='title')negatedTopics=found.negated;
+   const counted=source==='body'?Object.keys(rules).flatMap(topic=>found.signals.filter(s=>s.topic===topic).sort((a,b)=>b.strength-a.strength).slice(0,5)):found.signals;
+   for(const signal of counted){keywords.add(signal.phrase);evidence.push({...signal,source});scores[signal.topic]+=signal.strength*(source==='title'?8:source==='slug'?5:source==='intro'?3:1);}
+   if(topics.length||source==='body')continue;
+   const specific=found.signals.filter(s=>s.topic!=='mercati'&&!negatedTopics.includes(s.topic)),best=Math.max(0,...specific.map(s=>s.strength));
+   if(best){topics=[...new Set(specific.filter(s=>s.strength>=best*.7).map(s=>s.topic))];basis=source;}
+   else if(source==='title'&&found.signals.some(s=>s.topic==='mercati')){topics=['mercati'];basis='title';}
   }
-  const specific=Object.keys(rules).filter(k=>k!=='mercati'),max=Math.max(...specific.map(k=>scores[k]));
-  const topics=titleTopics.length?titleTopics:hits(title,rules.mercati).length?['mercati']:max>0?specific.filter(k=>scores[k]>=max*.8):scores.mercati?['mercati']:[];
-  const sensitive=/\b(eredit[a-z]*|succession[a-z]*|muore|decesso)\b/.test(normalize(title));
-  return {topics:sensitive?[]:topics,keywords:[...keywords],scores,sensitive};
+  if(!topics.length){const max=Math.max(0,...Object.keys(scores).filter(k=>k!=='mercati'&&!negatedTopics.includes(k)).map(k=>scores[k]));topics=max?Object.keys(scores).filter(k=>k!=='mercati'&&!negatedTopics.includes(k)&&scores[k]>=max*.8):scores.mercati?['mercati']:[];if(topics.length)basis='body';}
+  const sensitive=/\b(eredit[a-z]*|succession[a-z]*|muore|decesso)\b/.test(fields.title+' '+fields.slug);
+  if(Array.isArray(override.topics)){topics=override.topics.filter(t=>Object.hasOwn(rules,t));basis='manual';negatedTopics=negatedTopics.filter(t=>!topics.includes(t));}
+  return {topics:sensitive?[]:topics,automaticTopics:sensitive?[]:(basis==='manual'?analyze(post,body).topics:topics),keywords:[...keywords],scores,sensitive,basis,evidence,fields,negatedTopics,excludedAds:override.excludedAds||[]};
+ }
+ function effectiveAds(settings={}){
+  return catalog.ads.map(ad=>{const rule=settings.ads?.[ad.id]?.rule;return rule?{...ad,priorityKeywords:rule.priorityKeywords||[],excludedKeywords:rule.excludedKeywords||[]}:ad;});
+ }
+ function explain(context,slot,format,pool=catalog.ads){
+  return pool.map(ad=>{
+   const fields=context.fields||{},head=(fields.title||'')+' '+(fields.slug||''),rest=(fields.intro||'')+' '+(fields.body||'');
+   const priorityMatches=hits(head+' '+rest,ad.priorityKeywords||[]),excludedMatches=hits(head+' '+rest,ad.excludedKeywords||[]);
+   let reason='Argomento corrispondente';
+   if(!Object.hasOwn(slots,slot)||!slots[slot].formats.includes(format))reason='Formato non previsto per questo slot';
+   else if(ad.kind!=='house')reason='Campagna esterna non attiva';
+   else if(ad.active!==true)reason='ADS non attiva';
+   else if(context.sensitive)reason='Articolo escluso dalla pubblicità';
+   else if(context.excludedAds?.includes(ad.id))reason='Esclusa manualmente da questo articolo';
+   else if(context.negatedTopics?.includes(ad.goal==='vendi'?'vendita':ad.goal==='compra'?'acquisto':ad.goal))reason='Intenzione negata nel titolo';
+   else if(!ad.formats?.includes(format))reason='Variante grafica non disponibile';
+   else if(!ad.keywords?.some(k=>context.topics.includes(k)))reason='Argomento diverso';
+   else if(excludedMatches.length)reason='Parola esclusa: '+excludedMatches.join(', ');
+   const eligible=reason==='Argomento corrispondente',weight=1+Math.min(8,hits(head,ad.priorityKeywords||[]).length*3+hits(rest,ad.priorityKeywords||[]).length);
+   return {ad,eligible,reason:eligible&&priorityMatches.length?'Più pertinente: '+priorityMatches.join(', '):reason,priorityMatches,excludedMatches,weight:eligible?weight:0};
+  });
  }
  function candidates(context,slot,format,pool=catalog.ads){
-  if(!slots[slot]||!slots[slot].formats.includes(format))return [];
-  // Paid/user campaigns remain ineligible until a separate serving policy exists.
-  return pool.filter(ad=>ad.kind==='house'&&ad.active===true&&ad.formats?.includes(format)&&ad.keywords?.some(k=>context.topics.includes(k)));
+  return explain(context,slot,format,pool).filter(row=>row.eligible).map(row=>row.ad);
  }
  function select(context,slot,width=300,used=[],random=Math.random,pool=catalog.ads){
-  if(!slots[slot])return null;
+  if(!Object.hasOwn(slots,slot))return null;
   const preferred=width>=640?['728x90','336x280','300x250']:width>=336?['336x280','300x250']:['300x250'];
   for(const id of preferred){
    const eligible=candidates(context,slot,id,pool),fresh=eligible.filter(ad=>!used.includes(ad.id)),choices=fresh.length?fresh:eligible;
-   if(choices.length){const roll=Math.max(0,Math.min(.999999999,Number(random())||0));return {ad:choices[Math.floor(roll*choices.length)],format:catalog.formats.find(f=>f.id===id)};}
+   if(choices.length){const ranked=explain(context,slot,id,choices),total=ranked.reduce((sum,row)=>sum+row.weight,0);let roll=Math.max(0,Math.min(.999999999,Number(random())||0))*total;let winner=ranked.at(-1);for(const row of ranked){roll-=row.weight;if(roll<0){winner=row;break;}}return {ad:winner.ad,format:catalog.formats.find(f=>f.id===id)};}
   }
   return null;
  }
@@ -89,9 +118,9 @@
   img.alt=ad.title+' '+ad.description+' '+ad.cta+'. Subingresso.it';img.width=format.width;img.height=format.height;img.loading='lazy';img.decoding='async';
   host.dataset.adFormat=format.id;host.dataset.adId=ad.id;
  }
- function mount(article,post,regions){
+ function mount(article,post,regions,settings={}){
   if(!article||mounted.has(article))return mounted.get(article)||null;
-  const context=analyze(post,editorialText(article)),doc=article.ownerDocument,view=doc.defaultView;
+  const context=analyze(post,editorialText(article),settings.posts?.[post.slug]?.rule),pool=effectiveAds(settings),doc=article.ownerDocument,view=doc.defaultView;
   let hosts=[...article.querySelectorAll('[data-contextual-ad-slot],[data-fiere-promo]')];
   if(article.nextElementSibling?.matches('[data-contextual-ad-slot],[data-fiere-promo]'))hosts.push(article.nextElementSibling);
   if(!context.topics.length){hosts.forEach(h=>h.remove());return {context,slots:[]};}
@@ -111,7 +140,7 @@
   const state={context,slots:hosts,selections:[],observer:null},region=regionFor(post,regions);
   mounted.set(article,state);
   const width=()=>article.getBoundingClientRect().width||300;
-  for(const host of hosts){const selection=select(context,host.dataset.contextualAdSlot,width(),state.selections.map(s=>s.ad.id));if(selection){state.selections.push(selection);paint(host,selection,post,region,context);}else host.remove();}
+  for(const host of hosts){const selection=select(context,host.dataset.contextualAdSlot,width(),state.selections.filter(Boolean).map(s=>s.ad.id),Math.random,pool);if(selection){state.selections.push(selection);paint(host,selection,post,region,context);}else{state.selections.push(null);host.remove();}}
   // A resize changes only the format of the same creative, preserving manual pause.
   if(typeof view?.ResizeObserver==='function'){
    state.observer=new view.ResizeObserver(()=>{
@@ -121,5 +150,10 @@
   }
   return state;
  }
- return {analyze,candidates,select,mount,editorialText,regionFor,slots};
+ let freshSettings;
+ async function mountFresh(article,post,regions,fallback={}){
+  if(!freshSettings)freshSettings=fetch('/api/blog?contextual_rules=1',{cache:'no-store',signal:AbortSignal.timeout(2000)}).then(r=>{if(!r.ok)throw Error('Rules unavailable');return r.json();}).then(data=>data&&data.ads&&data.posts?data:fallback).catch(()=>fallback);
+  const settings=await freshSettings;if(!article?.isConnected)return null;return mount(article,post,regions,settings);
+ }
+ return {analyze,candidates,select,mount,mountFresh,editorialText,regionFor,slots,explain,effectiveAds,normalize};
 });

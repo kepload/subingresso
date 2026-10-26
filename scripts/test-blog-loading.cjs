@@ -16,7 +16,7 @@ const posts=[
 const queries=[];
 function rowsFor(url){const u=new URL(url);queries.push(u);let rows=posts;if(u.searchParams.has('slug')) {const filter=u.searchParams.get('slug');if(filter.startsWith('eq.'))rows=posts.filter(p=>p.slug===filter.slice(3));else if(filter.startsWith('like.'))rows=posts.filter(p=>p.slug.startsWith('bandi-posteggi-mercatali-'));}const cols=u.searchParams.get('select').split(',');return rows.map(p=>Object.fromEntries(cols.map(c=>[c,p[c]])));}
 let failPost=false,failRelated=false;
-global.fetch=async(url)=>{const u=new URL(url);if(failPost||failRelated&&u.searchParams.get('slug')?.startsWith('like.'))return new Response('{}',{status:503});return new Response(JSON.stringify(rowsFor(url)),{headers:{'Content-Type':'application/json'}});};
+global.fetch=async(url)=>{const u=new URL(url);if(u.pathname.endsWith('/contextual_ad_rules'))return new Response(JSON.stringify({ads:{},posts:{}}));if(failPost||failRelated&&u.searchParams.get('slug')?.startsWith('like.'))return new Response('{}',{status:503});return new Response(JSON.stringify(rowsFor(url)),{headers:{'Content-Type':'application/json'}});};
 async function render(slug){const out={headers:{},setHeader(k,v){this.headers[k]=v;},status(n){this.statusCode=n;return this;},send(s){this.html=s;return this;}};await handler({query:slug===undefined?{}:{post:slug}},out);return out;}
 const results={};
 (async()=>{

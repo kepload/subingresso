@@ -15,6 +15,12 @@ const posts=[
 global.fetch=async raw=>{const u=new URL(raw),slug=u.searchParams.get('slug')?.replace(/^eq\./,'');return new Response(JSON.stringify(slug?posts.filter(p=>p.slug===slug):posts));};
 async function render(post){const res={headers:{},setHeader(k,v){this.headers[k]=v;},status(n){this.statusCode=n;return this;},send(s){this.body=s;return this;}};await handler({query:{post}},res);assert.equal(res.statusCode,200);return res.body;}
 function unitTests(){
+ for(const title of ['Come valutare un posteggio mercatale prima di comprarlo','Prima di acquistarlo: valuta il posteggio','Ho comprato una licenza ambulante','Quanto costa un posteggio al mercato?'])assert.deepEqual(engine.analyze({title,slug:'valutare-posteggio'},'').topics,['acquisto'],title);
+ assert.deepEqual(engine.analyze({title:'Quanto vale il mio posteggio?'},'').topics,['vendita']);
+ const negated=engine.analyze({title:'Non voglio vendere il mio posteggio'},'');assert(!engine.candidates(negated,'inline','300x250').some(ad=>ad.goal==='vendi'));
+ const manual=engine.analyze({title:'Quanto vale il banco?'},'',{topics:['acquisto'],excludedAds:['compra-01']});assert.deepEqual(manual.topics,['acquisto']);assert(!engine.candidates(manual,'inline','300x250').some(ad=>ad.id==='compra-01'));
+ const cancelled=engine.analyze({title:'Fiera annullata per maltempo'},'');assert(!engine.candidates(cancelled,'inline','300x250').some(ad=>ad.id==='fiere-01'));
+ const presence=engine.analyze({title:'Presenze e graduatoria della fiera'},'');assert(engine.explain(presence,'inline','300x250').find(r=>r.ad.id==='fiere-03').weight>engine.explain(presence,'inline','300x250').find(r=>r.ad.id==='fiere-04').weight);
  const context=engine.analyze({title:'Fiere e mercatini',slug:'fiere'},'Vendere posteggi comprare licenze');assert.deepEqual(context.topics,['fiere']);
  assert.deepEqual(engine.analyze({title:'Le inferiere lavorano',slug:''},'').topics,[],'whole words only');
  assert.deepEqual(engine.analyze({title:'Vendere prodotti fatti da te al mercato'},'').topics,['mercati'],'retail is not selling a licence');

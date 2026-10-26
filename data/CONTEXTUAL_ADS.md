@@ -1,27 +1,39 @@
-# ADS contestuali del blog — 25 ottobre 2026
+# ADS contestuali del blog — 26 ottobre 2026
 
 Solo creatività proprie pubblicate e attive. Nessuna campagna di clienti,
 pagamento, budget o nuova raccolta di dati personali viene attivata.
 
 ## Selezione
 
-`lib/personal-ads.cjs`: `targeting.kind`, `active`, `keywords`, `formats` per
+`lib/personal-ads.cjs`: `targeting.kind`, `active`, `keywords`, `formats`,
+`priorityKeywords`, `excludedKeywords` per
 creatività. Temi canonici: fiere →6ADS calendario; vendita →7ADS vendita;
 acquisto →7ADS ricerca; mercati →14ADS vendita/ricerca. Il dizionario in
 `js/contextual-ads.js` riconosce parole, sinonimi e frasi, con normalizzazione
 di accenti/punteggiatura e confini di parola. Vendere merci non significa
 vendere la licenza: i verbi commerciali richiedono un oggetto pertinente.
 
-Titolo/slug determinano prima il tema specifico. Se parlano solo di
-mercati/posteggi si usa il tema generale; altrimenti estratto, categoria e
-testo. Pesi8/3/1, termini distinti e corpo limitato a5segnali per tema;
-temi secondari entro il20% del migliore. Sono scelte editoriali, senza
-attribuire risultati commerciali o capacità semantiche di un modello IA.
+Il titolo viene prima dello slug. La frase completa distingue valutazione
+generica, acquisto e vendita: «prima di comprarlo/acquistarlo» prevale sulla
+parola «valutare», «quanto costa» è acquisto, «quanto vale» è vendita.
+Negazioni esplicite come «non voglio vendere» escludono il relativo obiettivo.
+Forza dei segnali:5pronomi riferiti al bene,4transazione,3fiere,1valutazione
+o tema generale. Nel primo campo utile restano i temi entro il30% del
+segnale più forte; un titolo solo generale resta mercati. Fallback da
+estratto/categoria/corpo con pesi8/5/3/1 per titolo/slug/intro/corpo e temi
+entro il20% del migliore. Segnali distinti, massimo5per tema nel corpo.
+Sono regole editoriali verificabili, senza dichiarare comprensione IA.
 
 Si legge solo il contenuto editoriale: pubblicità, player, `.not-prose`,
 script e navigazione esclusi dalla copia di analisi. Keyword negli attributi
 degli slot, nessuna profilazione e nessuna richiesta aggiuntiva dell'articolo.
-Filtri tema + campagna propria attiva + formato PRIMA del sorteggio uniforme.
+Filtri tema + campagna propria attiva + formato + esclusioni PRIMA del
+sorteggio. Ogni ADS ha frasi prioritarie ed escluse specifiche in
+`lib/personal-ad-targeting.cjs`; per esempio il richiamo «5.000 € in2giorni»
+è escluso dagli articoli su annullamento/maltempo/rimborsi. Le priorità non
+rendono idonea una ADS di un argomento diverso. Peso di estrazione:
+`1 + min(8, 3×priorità nel titolo/slug + priorità in intro/corpo)`; parole
+ripetute non moltiplicano il peso. Ogni candidata conserva una possibilità.
 Secondo slot senza ripetere ID se esistono alternative. Nessun match: niente
 banner. Guide agli eredi/successione/decesso: esclusione preesistente.
 
@@ -38,9 +50,14 @@ Il candidato deve avere quella variante; se manca si prova una misura
 ammessa più piccola. Verticali/social esclusi dai due slot attuali.
 Resize senza cambiare creatività o perdere la pausa manuale.
 
-HTML server già pertinente e leggibile senza JS. A ogni caricamento con JS
-nuovo sorteggio locale indipendente dalla cache CDN; nessuna rotazione a
-timer durante la lettura. Senza JS resta la scelta del documento in cache.
+HTML server già pertinente e leggibile senza JS, con regole salvate incluse
+nel bootstrap. Il browser legge una volta le regole correnti da
+`/api/blog?contextual_rules=1` senza cache: correzioni applicate anche con
+HTML CDN precedente, senza rileggere il corpo dell'articolo. Su errore usa
+il bootstrap server. Nuovo sorteggio al caricamento, nessuna rotazione a
+timer. Senza JS resta la scelta del documento nella cache blog ordinaria
+(180s più il possibile stale-while-revalidate600s): non si promette una
+correzione istantanea per quel caso.
 Player esistente: animazioni, pausa, visibilità e fallback riduci movimento.
 Etichetta visibile «Pubblicità · Subingresso.it».
 
@@ -52,7 +69,36 @@ note interne o account. `--check` rileva disallineamenti; il build delle
 immagini lo aggiorna. L'API privata conserva il controllo admin.
 Link/tracker esistenti, formato reale, posizioni `blog_inline`/`blog_closing`.
 Regione solo se univoca in titolo/slug; Garda nazionale. Statistiche e
-conteggi storici invariati; nessuna nuova tabella o migrazione.
+conteggi storici invariati; metadati delle correzioni separati, descritti sotto.
+
+## Correzioni e anteprima admin
+
+In `/le-mie-ads`, aprire «Abbinamenti nel blog»: articolo, slot, formato,
+esempio casuale, parole riconosciute, candidate e motivi di esclusione.
+Le modifiche all'argomento o alle ADS escluse producono soltanto anteprime;
+«Salva correzione articolo» applica la regola. «Ripristina automatico» salva
+la configurazione automatica con esclusioni vuote. «Nessuna ADS» è esplicito.
+L'esclusione delle guide agli eredi resta prioritaria anche sulle correzioni.
+Le parole della singola ADS hanno un salvataggio distinto, valido su tutti
+gli articoli: massimo20frasi per campo, normalizzate, da2a80caratteri.
+
+`PATCH_CONTEXTUAL_AD_RULES_20261026.sql`: tabella metadati
+`contextual_ad_rules` (`scope`, `key`, `rule`, `revision`, `updated_at`),
+RLS attiva, nessun accesso diretto anon/authenticated. RPC pubblica di sola
+lettura `contextual_ad_rules()` espone soltanto regole e revisioni, senza
+dati account. `admin_contextual_ad_rules()` e
+`admin_save_contextual_ad_rule(...)` verificano ogni volta `auth.uid()` e
+`profiles.is_admin`. Revisioni confrontate atomicamente: conflitto40001,
+API409, nessuna sovrascrittura silenziosa. Validazione SQL e API per campi,
+ID, articolo esistente, temi, parole e dimensioni; nessun cambio tipo paid.
+
+Endpoint admin nello stesso runtime `/api/personal-ads`:
+GET `context-options`/`context-preview`, POST `context-preview` (bozza,
+nessuna scrittura) e POST `context-save`. Tutto `no-store`, token admin
+verificato prima di leggere. Sessione/identità riconfermate; logout e
+risposte tardive puliscono i dati. Anteprime senza link di tracciamento.
+La migrazione viene applicata separatamente dal push, prima del deploy;
+non cambia annunci, statistiche, pagamenti o invii.
 
 ## Campagne future
 
@@ -71,3 +117,11 @@ ridotto. Chromium1440/768/320 e WebKit390; servizi/scritture simulati.
 `CONTEXTUAL_ADS_POSTS` accetta copia degli articoli pubblici; artefatti in
 `CONTEXTUAL_ADS_QA_DIR`. Regressioni SSR/caricamento e annunci correlati nei
 test blog esistenti. Nessuna scrittura di prova nel database pubblicato.
+
+Estensione26/10: `test-contextual-ads-admin.cjs` verifica API/permessi,
+bozze senza salvataggio, persistenza, keyword, conflitti, ripristino,
+risposte tardive/logout e aggiornamento di un HTML server precedente con
+regole fresche. Browser Chromium1440/768/320 e WebKit390 chiaro/scuro;
+servizi simulati. `test-contextual-ad-rules-db.cjs` verifica funzioni reali,
+RLS, validazione e revisioni in ROLLBACK con identità/tabelle sintetiche.
+Prove `Documents/ads-intento-admin-20261026`; nessuna campagna pagante attivata.
