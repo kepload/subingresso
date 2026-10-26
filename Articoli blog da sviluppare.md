@@ -52,3 +52,13 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 48. 🟠 Street food in fiera: quante porzioni puoi servire in un'ora? La prova cronometrata con scheda per cottura, cassa e consegna
 49. 🟠 Organizzo un mercatino: come trovo sponsor tra i negozi locali? Modello di proposta e scheda per misurare i risultati
 50. 🟢 Comprare un banco in due: il foglio per confrontare capitale investito, ore lavorate e ripartizione degli utili
+51. 🔴 Compro un banco in un mercato che si svuota? Posteggi assegnati e liberi in dieci mercati lombardi a confronto
+52. 🔴 Compro un'attività ambulante: quali debiti fiscali rischio? Certificati e controlli nella scheda per il commercialista
+53. 🔴 Compro un banco ancora affittato: quando posso usarlo? Scadenze e condizioni nella scheda da verificare col notaio
+54. 🟠 Rinuncio a una fiera già prenotata: quanto perdo? Termini e penali nei regolamenti lombardi a confronto
+55. 🟠 Rifornire il banco: consegna del grossista o ritiro in magazzino? Il foglio per confrontare minimi d'ordine, trasporto e ore
+56. 🟠 Assumere un aiuto al banco per le fiere conviene? Calcola le vendite aggiuntive necessarie con il costo verificato dal consulente del lavoro
+57. 🟠 Affittare un deposito vicino ai mercati conviene? Calcola canone, chilometri e ore risparmiate
+58. 🟠 Fiera di più giorni: tornare a casa o dormire fuori? Il calcolatore di viaggio, pernottamento e parcheggio del furgone
+59. 🟠 Organizzo un mercatino: troppi banchi con gli stessi prodotti? La griglia per confrontare le proposte e motivare le selezioni
+60. 🟢 Street food senza allaccio idrico: quanta acqua serve davvero? La scheda per misurare consumi e autonomia durante il servizio
