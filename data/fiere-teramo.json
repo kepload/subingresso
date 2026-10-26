@@ -8,7 +8,7 @@
     "baselineAudit": "Al checkpoint non esisteva un audit provinciale autonomo. Riprese le due schede pubblicate e gli audit trasversali, senza rifare altre province.",
     "scope": "Solo Teramo. Nessun contatto, email, domanda o messaggio a terzi.",
     "privateArchive": "Dossier originale esterno al repository, ricerca-fiere-teramo-20261026; nessun PDF con nominativi incluso nel repository.",
-    "method": "Ricognizione nominale dei 47 comuni, portali municipali e SUAP/albi pubblici, 125 schede UNPLI, archivio FIVA completo, originali PDF e locandine; browser Playwright per 14 portali JavaScript. Ricevute tecniche non equivalgono a documenti letti integralmente.",
+    "method": "Ricognizione nominale dei 47 comuni, portali municipali e SUAP/albi pubblici, 125 schede UNPLI, 56 voci dell’archivio FIVA e storico pertinente, originali PDF e locandine; browser Playwright per 14 portali JavaScript. Ricevute tecniche non equivalgono a documenti letti integralmente.",
     "statistics": {
       "events": 80,
       "municipalitiesWithEvents": 32,
@@ -19,7 +19,8 @@
       "unpliSheets": 125,
       "fivaArchiveEntries": 56,
       "municipalitiesCovered": 47,
-      "regionalRowsRead": 9
+      "regionalRowsRead": 9,
+      "originalFilesHashVerified": 941
     },
     "municipalities": [
       {
@@ -13015,7 +13016,32 @@
       }
     ],
     "publication": {
-      "status": "in-attesa-di-verifica-produzione"
+      "status": "pubblicato-e-verificato",
+      "commit": "0b7cd5010a9b49834bcda15b57620802715c23d0",
+      "verifiedAt": "2026-10-26T08:02:22.750573+00:00",
+      "catalogUrl": "https://subingresso.it/fiere?provincia=Teramo",
+      "assetsMatchedGitBlobs": 4,
+      "pagesHttpH1Canonical": 80,
+      "vercelStatus": "success",
+      "browserFormats": [
+        "Chromium1440",
+        "Chromium320",
+        "WebKit390"
+      ],
+      "localAndOnlineDialogsPerFormat": 80,
+      "realSiteWithoutScriptReplacement": "passed",
+      "evidence": "Dossier esterno: publish-deploy.json, github-deploy-status.json, online-details.json, qa-local.json, qa-online.json, real-online.json e schermate."
+    },
+    "validation": {
+      "build": "riproducibile byte per byte prima del commit",
+      "sectors": "passed",
+      "general": "passed nei cinque formati previsti",
+      "ssrPages": 7373,
+      "sitemapEntries": 3219,
+      "provincial": "passed locale e online nei tre formati",
+      "otherProvinceEventsIdentical": 7293,
+      "baselineIdsPreserved": 2,
+      "originalFilesSha256Verified": 941
     }
   },
   "events": [

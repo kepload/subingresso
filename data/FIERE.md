@@ -7630,4 +7630,13 @@ Nessun contatto, invio, email o candidatura a terzi.
 Backup remoti verificati: `backup/session-20261026-081654-fiere-teramo` e
 `backup/pre-fiere-teramo-20261026`. Cache JS121/JSON89. Test provinciale
 `scripts/test-fiere-teramo.cjs`, browser tramite `PLAYWRIGHT_MODULE`.
-Pubblicazione e checklist da registrare soltanto dopo verifica in produzione.
+Dati pubblicati nel commit `0b7cd50`, Vercel riuscito. Quattro asset online
+identici ai blob Git; tutte le 80 pagine HTTP200, H1 e canonical verificati.
+Build riproducibile, settori, suite generale nei cinque formati, 7.373 pagine
+SSR e 3.219 voci sitemap passati. Test provinciale locale e online: elenco,
+mappa, tutti gli 80 dettagli e pagine senza JavaScript nei tre formati.
+Sito reale senza sostituzione degli script verificato negli stessi formati;
+nessun errore JavaScript o overflow. Verificati SHA256 di 941 originali.
+Prove e schermate nel dossier esterno citato. TO DO spuntata dopo questi
+controlli: **68 province concluse / 42 rimanenti**. Nuove edizioni e bandi
+restano manutenzione futura, distinta dalla ricerca attuale conclusa.
