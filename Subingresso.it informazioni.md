@@ -23,6 +23,9 @@ fonti e audit fiere completi: `data/FIERE.md`.
   con spazio unico/testo conservato,119conADS proprie eAPIadmin401.
   Controllo pubblicato ha rilevato overflow del select nativo WebKit con
   titoli lunghi: contenimento e focus interno aggiunti, test esteso eCSSv2.
+  Fix `3e833f0`, Vercel `E9JUbyVLyEDcSowPVW3CDxTqRAQt` riuscito:
+  6sorgenti identici e prove pubblicate Chromium1440/320+WebKit390 passate,
+  anteprima/dati admin simulati e selettore blog reale; zero scritture.
 - Backup tag/ramo remoti verificati. Cleanuphelper ha prodotto errori dopo
   push riuscito; corretto label pubblicità che allungava il box320 e prima
   invocazione SQL privata con quoting PowerShell. Nessun acquisto, email o
