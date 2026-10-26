@@ -77,8 +77,24 @@ e quote non pubblicate sono limiti, non prova di assenza di fiere. Ricerca attua
 conclusa con tali limiti; bandi e conferme futuri sono manutenzione periodica
 distinta, senza garanzia di censimento esaustivo.
 
-**Pubblicazione in verifica:** TO DO e riepilogo restano invariati fino al
-controllo del deploy e del catalogo online. Cache JS122/catalogo90.
+**Pubblicata e verificata online:** dati `b6d1bab`; quattro asset identici
+ai blob Git, tutte le **82 pagine HTTP200**, H1/canonical, note, fonti e costi
+verificati. Attesa e verifica deploy: **16.0 secondi**.
+Browser con `PLAYWRIGHT_MODULE`, locale e online: Chromium 1440/320 e WebKit 390,
+elenco/mappa e tutti gli 82 dettagli per formato, pagine senza JavaScript;
+anche sito reale con script attivi, metodi di scrittura bloccati, senza errori
+o overflow. Build riproducibile, settori, suite generale nei cinque formati,
+**7.451 pagine / 3.267 voci sitemap** passati; gitleaks senza bypass.
+TO DO spuntata e riepilogo aggiornato solo dopo questi controlli: **69 province
+concluse / 41 rimanenti su 110**. Cache JS122/catalogo90.
+
+Backup completo delle ricerche tramite `scripts/backup-fiere-research.py`:
+`Documents/backup-subingresso/ricerche-fiere-20261026-121756`,
+**131.123 file verificati SHA256**, zero errori.
+Anche tutti i **2.837 originali acquisiti nel dossier Chieti** verificati senza
+discordanza; ricevute non equivalgono a letture integrali. Prove online e
+registrazione finale nel supplemento privato separato.
+
 Backup remoto preventivo `backup/session-20261026-090433-fiere-chieti` e ramo
 `backup/pre-fiere-chieti-20261026` verificati; errore del cleanup dei vecchi tag
 successivo al push distinto dalla riuscita del backup. File estranei preservati.

@@ -30035,8 +30035,30 @@
       }
     ],
     "publication": {
-      "status": "da-verificare",
-      "note": "TO DO non spuntata: richiede deploy e verifica del catalogo online."
+      "status": "pubblicata-e-verificata",
+      "dataCommit": "b6d1babff0e3dd65e8487320ee6789105864d84d",
+      "verifiedAt": "2026-10-26T12:31:21.575321+00:00",
+      "url": "https://subingresso.it/fiere?provincia=Chieti",
+      "assetsMatched": [
+        "data/fiere.json",
+        "data/fiere-chieti.json",
+        "js/pages/fiere.js",
+        "fiere.html"
+      ],
+      "detailsVerified": 82,
+      "checks": "HTTP200, H1, canonical, note di partecipazione, fonte e costi su tutte le 82 pagine. Elenco/mappa e tutti gli 82 dialoghi Chromium 1440/320 e WebKit 390 locale e online; pagine senza JavaScript e sito reale con script attivi, senza scritture.",
+      "evidence": "Dossier privato: publish-deploy.json, online-details.json, test-local.json, test-online.json, real-online.json e screenshot.",
+      "elapsedSeconds": 16.0
+    },
+    "backup": {
+      "remoteTag": "backup/session-20261026-090433-fiere-chieti",
+      "remoteBranch": "backup/pre-fiere-chieti-20261026",
+      "fullResearchSnapshot": "ricerche-fiere-20261026-121756",
+      "verifiedFiles": 131123,
+      "expectedFiles": 131123,
+      "errors": 0,
+      "allAcquiredOriginalsVerified": 2837,
+      "note": "Snapshot completo verificato SHA256; prove online e registrazione finale conservate anche in supplemento separato, senza sovrascrivere backup precedenti."
     }
   },
   "events": [
