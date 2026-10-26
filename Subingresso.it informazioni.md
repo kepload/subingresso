@@ -5,6 +5,29 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## ADS: dati completi per articolo e contesto — 26 ottobre 2026
+
+- Preferenza esplicita permanente: completezza e qualità dei dati utili sono
+  prioritarie; considerarne la misura fin dall'inizio degli interventi.
+- Ora evento/ADS/versione/formato/posizione, articolo/titolo/revisione/regione
+  pubblici, fascia dispositivo/provenienza, keyword/priorità/regole/candidate,
+  tempi di visibilità/caricamento e avanzamento pagina. Filtro articolo su
+  numeri eCSV; confronto articoli, dispositivi/fonti/giorni/versioni apribili;
+  registro completo paginatoCSVadmin, senza sessione/account negli esportati.
+- `PATCH_PERSONAL_AD_CONTEXT_20261026.sql` applicata:19eventi precedenti con
+  valori identici, RLS/privilegi verificati, zeroeventi di prova. Deduplica ora
+  anche per articolo/versione: niente fusione di post diversi. VecchiaRPC e
+  storico ignoto conservati; CTR richiede impressione nello stesso periodo.
+  Conversioni7giorni/bundle/rimborsi conservati. Privacy aggiornata, nessun
+  nuovoIDpersistente/IP/UA/URLcompleto. Contratto `data/PERSONAL_AD_CONTEXT.md`.
+- TestSQL inROLLBACK con identità/tabelle sintetiche e238metadata/120articoli
+  validati; API/tracker/filtri/CSV/paginazione/logout Chromium1440/768/320 e
+  WebKit390 passati, con regressioni raccolta/admin/rotazione/blogSSR/annunci.
+  Inspector0FAIL; metadata12px motivati, caption mobile corretta. Prove private
+  `Documents/ads-dati-contesto-20261026`. Backup tag/ramo remoti verificati;
+  helper fermato da stderr dopo push riuscito, erroriSQLfixture e latenza
+  cacheREST404→400 corretti senza scritture reali. Pubblicazione da verificare.
+
 ## ADS: confronto e alternanza nel blog — 26 ottobre 2026
 
 - Su richiesta, confronto visibile delle20ADS per titolo/miniatura/codice,

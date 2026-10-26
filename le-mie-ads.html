@@ -10,7 +10,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  <link rel="stylesheet" href="/css/personal-ads.css?v=1">
  <link rel="stylesheet" href="/css/personal-ads-gallery.css?v=2">
- <link rel="stylesheet" href="/css/personal-ads-results.css?v=1">
+ <link rel="stylesheet" href="/css/personal-ads-results.css?v=2">
  <link rel="stylesheet" href="/css/contextual-ads-admin.css?v=1">
  <link rel="stylesheet" href="/css/blog-listing-ads-admin.css?v=2">
 </head>
@@ -72,18 +72,22 @@
   <details id="paResultsPanel" class="pa-stats-disclosure"><summary>Statistiche della raccolta</summary>
   <section class="pa-results" aria-labelledby="paResultsTitle">
    <div class="pa-section-head"><h2 id="paResultsTitle">Come stanno andando</h2><div class="pa-period"><label for="paDays">Clic degli ultimi</label><select id="paDays"><option value="7">7 giorni</option><option value="30" selected>30 giorni</option><option value="90">90 giorni</option><option value="365">365 giorni</option></select><button id="paRefresh" type="button">Aggiorna</button></div></div>
+   <label class="pa-article-scope" for="paArticleFilter">Articolo dei risultati<select id="paArticleFilter"><option value="all">Tutti gli articoli e le altre provenienze</option></select></label>
    <dl id="paTotals" class="pa-metrics"></dl>
    <p id="paFinding" class="pa-muted"></p>
    <div class="pa-comparison-head"><h3 id="paComparisonTitle">Risultati per annuncio</h3><button id="paSummaryExport" type="button">Esporta confronto CSV</button></div>
    <div class="pa-comparison-controls"><label>Mostra<select id="paResultFilter"><option value="all">Tutte le ADS</option><option value="clicked">Con clic</option><option value="unclicked">Mostrate senza clic</option><option value="unseen">Mai mostrate nel periodo</option></select></label><label>Ordina per<select id="paResultSort"><option value="clicks">Più clic</option><option value="impressions">Più impressioni</option><option value="ctr">CTR misurato</option></select></label><span id="paComparisonCount" class="pa-muted" role="status"></span></div>
    <div class="pa-comparison"><table aria-labelledby="paComparisonTitle"><thead><tr><th>Annuncio</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th></tr></thead><tbody id="paSummaryRows"></tbody></table></div>
    <p class="pa-comparison-note pa-muted">Tutte le misure e posizioni sommate per ADS. «Mai mostrata» indica zero impressioni misurate nel periodo. Il CTR usa solo i clic preceduti da un’impressione misurata.</p>
+   <div class="pa-context-results"><h3>Da quali articoli arrivano i risultati</h3><p id="paContextCoverage" class="pa-muted"></p><div class="pa-table-scroll"><table><caption>Articolo e ADS nel periodo scelto</caption><thead><tr><th>Articolo / ADS</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th></tr></thead><tbody id="paArticleRows"></tbody></table></div></div>
+   <details><summary>Dispositivi, provenienza, giorni e versioni</summary><div id="paContextBreakdowns"></div></details>
+   <details><summary>Registro completo degli eventi</summary><p>Scarica ogni impressione e clic registrato: data e ora UTC, articolo, ADS, versione, posizione, dispositivo, provenienza, parole dell’abbinamento e tempi di visibilità disponibili. L’esportazione comprende tutto il periodo, anche le righe senza articolo. I dati non raccolti nello storico restano vuoti.</p><button id="paEventsExport" type="button">Esporta tutti gli eventi CSV</button></details>
    <details id="paStatsDetails"><summary>Statistiche complete e criteri di misura</summary>
-    <p>Impressione: almeno metà banner visibile per un secondo nel blog, una volta per sessione, creatività, misura e posizione. Il CTR usa solo i clic con un’impressione misurata. I link condivisi fuori dal blog misurano i clic; le immagini scaricate da sole non misurano le visualizzazioni.</p>
+    <p>Impressione: almeno metà banner visibile per un secondo nel blog, una volta per sessione, articolo, creatività, versione, misura e posizione. Il CTR collega clic e impressione nello stesso articolo e nella stessa versione. Lo storico usa la precedente deduplica senza articolo. I link condivisi fuori dal blog misurano i clic; le immagini scaricate da sole non misurano le visualizzazioni.</p>
     <p>Conversione: un clic che porta all’azione prevista. Vendita → invio di un annuncio; acquisto → consultazione di un recapito; fiere → salvataggio di una fiera. Non certifica una compravendita. Iscrizioni, acquisti Vetrina e incassi netti dei rimborsi sono separati. Attribuzione all’ultima ADS cliccata nei 7 giorni precedenti, per utenti riconosciuti dopo l’accesso; ogni azione appartiene a una sola ADS. Il periodo seleziona i clic e le loro conversioni osservate fino a oggi.</p>
     <p>Le anteprime admin e le automazioni riconosciute sono escluse. I risultati precedenti all’attivazione non sono ricostruibili. I dati recenti possono maturare per 7 giorni; con pochi clic evita conclusioni premature.</p>
     <button id="paExport" type="button">Esporta risultati CSV</button>
-    <div class="pa-table-scroll"><table><caption>Risultati per ADS, misura e posizione</caption><thead><tr><th>ADS / posizione</th><th>Misura</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th><th>Iscrizioni</th><th>Annunci</th><th>Recapiti</th><th>Fiere salvate</th><th>Acquisti Vetrina</th><th>Incassi netti</th></tr></thead><tbody id="paStatsRows"></tbody></table></div>
+    <div class="pa-table-scroll"><table><caption>Dettaglio ADS, articolo e contesto — giorni UTC</caption><thead><tr><th>ADS / articolo / contesto</th><th>Misura</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th><th>Iscrizioni</th><th>Annunci</th><th>Recapiti</th><th>Fiere salvate</th><th>Acquisti Vetrina</th><th>Incassi netti</th></tr></thead><tbody id="paStatsRows"></tbody></table></div>
    </details>
   </section>
   </details>
@@ -96,9 +100,9 @@
  <script src="/js/auth.js?v=28"></script>
  <script src="/js/personal-ads-motion.js?v=3"></script>
  <script src="/js/house-ads-catalog.js?v=2"></script>
- <script src="/js/contextual-ads.js?v=3"></script>
+ <script src="/js/contextual-ads.js?v=4"></script>
  <script src="/js/contextual-ads-admin.js?v=1"></script>
  <script src="/js/blog-listing-ads-admin.js?v=1"></script>
- <script src="/js/personal-ads-admin.js?v=8"></script>
+ <script src="/js/personal-ads-admin.js?v=9"></script>
 </body>
 </html>

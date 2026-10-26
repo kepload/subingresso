@@ -136,10 +136,16 @@ Ricerca, decisioni e limiti: `data/PERSONAL_ADS_MOTION.md`.
 
 ## Misura
 
+Estensione26ottobre: articolo e titolo, versione creatività/regole, dispositivo,
+provenienza, giorno/ora e metadati di visibilità/abbinamento; filtri articolo e
+CSVcompleto eventi admin. Contratto e limiti: `PERSONAL_AD_CONTEXT.md`.
+Storico privo di articolo esplicitamente separato, non ricostruito.
+
 `personal_ad_events`:impression/click,IDcreatività,formato,posizione,sessione
 già esistente ed eventuale account verificato al claim. Nessun IP/email/UA
 salvato. RLS senza accessi diretti anon/auth; soleRPC validate e autorizzate.
-Dedup server per(sessione,ADS,formato,posizione,tipo),limite250eventi/ora
+Dedup server per(sessione,articolo,ADS,versione,formato,posizione,tipo),
+prima dell'estensione senza articolo/versione; limite250eventi/ora
 per sessione. Clic esterni senza sessione contati per richiesta,mai chiamati
 visitatori unici. Crawler/prefetch/HEAD/anteprime riconosciuti esclusi.
 
@@ -152,7 +158,8 @@ rimosso subito dal browser e conservato in sessionStorage,massimo7giorni.
 Claim solo con accountverificato,immutabile fra account;logout/cambio
 identità lo rimuovono. Admin/demo e navigator.webdriver esclusi daltracker.
 
-CTR= clic con precedente impressione misurata / impressioni;clic non
+CTR= clic con precedente impressione misurata nello stesso periodo,
+articolo e versione / impressioni;clic non
 misurati restano nei clic totali,senza gonfiare ilCTR. Conversione=un clic
 con almeno un’azione dell’obiettivo:vendi→annuncioinviato,
 compra→recapito consultato,fiere→fiera salvata. Non sono compravendite.

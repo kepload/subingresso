@@ -87,7 +87,10 @@ immagini lo aggiorna. L'API privata conserva il controllo admin.
 Link/tracker esistenti, formato reale, posizioni `blog_inline`/`blog_closing`.
 Al cambio ID/formato/posizione nello stesso elemento il tracker azzera il
 timer e richiede nuovamente metà banner visibile per1secondo; deduplica
-storica della sessione invariata. I turni non sono impressioni misurate.
+per articolo/versione, conservando il gruppo storico senza questi dati.
+I turni non sono impressioni misurate. Contesto della scelta e misure estese
+sono descritti in `PERSONAL_AD_CONTEXT.md`: linkSSR con articolo, versione,
+temi/parole, priorità e revisioni; informazioni runtime aggiunte dal tracker.
 Regione solo se univoca in titolo/slug; Garda nazionale. Statistiche e
 conteggi storici invariati; metadati delle correzioni separati, descritti sotto.
 

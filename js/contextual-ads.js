@@ -115,7 +115,7 @@
   const found=Object.values(regions||{}).filter(r=>title.includes(' '+normalize(r)+' '));
   return !/\bgarda\b/.test(title)&&found.length===1?found[0]:null;
  }
- function paint(host,selection,post,region,context){
+ function paint(host,selection,post,region,context,settings={},pool=catalog.ads){
   const {ad,format}=selection,doc=host.ownerDocument;
   host.className='contextual-ad not-prose';host.dataset.contextualAdSlot=host.dataset.contextualAdSlot||'closing';
   host.dataset.adKeywords=JSON.stringify(context.keywords);host.dataset.adTopics=context.topics.join(' ');
@@ -126,9 +126,13 @@
    link.append(image);player.append(link);host.append(label,player);
   }
   const link=host.querySelector('a'),img=link.querySelector('img'),placement='blog_'+host.dataset.contextualAdSlot;
-  const query=new URLSearchParams({action:'click',ad:ad.id,format:format.id,placement});
+  const reason=explain(context,host.dataset.contextualAdSlot,format.id,[ad])[0];
+  const metadata={article_slug:post.slug,creative_version:ad.assetVersion,source:'blog',topics:context.topics,keywords:context.keywords.filter(k=>k.length<=80).slice(0,20),priority_matches:reason.priorityMatches.slice(0,20),selection_weight:reason.weight,match_basis:context.basis,engine_version:4,candidate_count:candidates(context,host.dataset.contextualAdSlot,format.id,pool).length,post_rule_revision:settings.posts?.[post.slug]?.revision||0,ad_rule_revision:settings.ads?.[ad.id]?.revision||0};
+  if(post.published_at&&Number.isFinite(Date.parse(post.published_at)))metadata.article_published_at=new Date(post.published_at).toISOString();
+  if(region)metadata.article_region=region;
+  const query=new URLSearchParams({action:'click',ad:ad.id,format:format.id,placement,ctx:JSON.stringify(metadata)});
   if(region)query.set('region',region);
-  link.href='/api/personal-ads?'+query;link.dataset.personalAd=ad.id;link.dataset.paFormat=format.id;link.dataset.paPlacement=placement;
+  link.href='/api/personal-ads?'+query;link.dataset.personalAd=ad.id;link.dataset.paFormat=format.id;link.dataset.paPlacement=placement;link.dataset.paContext=JSON.stringify(metadata);
   link.setAttribute('aria-label',ad.title+' '+ad.description+' '+ad.cta);
   if(ad.goal==='fiere'){link.dataset.fiereCta='';link.dataset.regione=region||'';}else{delete link.dataset.fiereCta;delete link.dataset.regione;}
   const asset='/images/personal-ads/'+ad.id+'-'+format.id;
@@ -166,7 +170,7 @@
   const browser=typeof window!=='undefined'&&view===window;
   const rotate=()=>{
    const rotation=browser?readRotation(view,post.slug):null;state.selections=[];
-   for(const host of hosts){const selection=select(context,host.dataset.contextualAdSlot,width(),state.selections.filter(Boolean).map(s=>s.ad.id),Math.random,pool,rotation);if(selection){state.selections.push(selection);if(rotation)rotation.counts[selection.ad.id]=(rotation.counts[selection.ad.id]||0)+1;paint(host,selection,post,region,context);}else{state.selections.push(null);host.remove();}}
+   for(const host of hosts){const selection=select(context,host.dataset.contextualAdSlot,width(),state.selections.filter(Boolean).map(s=>s.ad.id),Math.random,pool,rotation);if(selection){state.selections.push(selection);if(rotation)rotation.counts[selection.ad.id]=(rotation.counts[selection.ad.id]||0)+1;paint(host,selection,post,region,context,settings,pool);}else{state.selections.push(null);host.remove();}}
    if(rotation){rotation.last=state.selections.filter(Boolean).map(s=>s.ad.id);saveRotation(view,post.slug,rotation);}
   };
   rotate();
@@ -175,7 +179,7 @@
   if(typeof view?.ResizeObserver==='function'){
    state.observer=new view.ResizeObserver(()=>{
     if(!article.isConnected){state.observer.disconnect();return;}
-    hosts.forEach((host,i)=>{const current=state.selections[i];if(!current)return;const resized=select(context,host.dataset.contextualAdSlot,width(),[],()=>0,[current.ad]);if(resized&&resized.format.id!==current.format.id){state.selections[i]=resized;paint(host,resized,post,region,context);}});
+    hosts.forEach((host,i)=>{const current=state.selections[i];if(!current)return;const resized=select(context,host.dataset.contextualAdSlot,width(),[],()=>0,[current.ad]);if(resized&&resized.format.id!==current.format.id){state.selections[i]=resized;paint(host,resized,post,region,context,settings,pool);}});
    });state.observer.observe(article);
   }
   return state;
