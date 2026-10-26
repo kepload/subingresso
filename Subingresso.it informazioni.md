@@ -5,6 +5,20 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Fiere e organizzatori sempre aperti - 26 ottobre 2026
+
+- Completato il lavoro interrotto: pannello sempre visibile, quattro contatori
+  reali cliccabili per revisioni, pubblicati e bozze; filtri e temi verificati.
+- Test pannello: 148 controlli Chromium1440/768/320 e WebKit390 passati;
+  flussi organizzatore/eventi passati su tre formati. Test esperienza:
+  comportamento corretto, salvo pulsanti desktop sotto 44 px nell'editor
+  organizzatore preesistente e invariato; mobile passa. Nessun dato reale scritto.
+- Pubblicato `d3f4e5c`, Vercel `4GJKM6goYdX2RyYz6zibw48PoG2e` Ready.
+  Cinque sorgenti online identici; 148 controlli pannello e 120 controlli
+  area/permessi/temi passati anche sugli asset pubblicati, zero scritture reali.
+  Backup remoto verificato; helper interrotto nel cleanup successivo fallito.
+  Prove: `Documents/fiere-admin-aperto-20261026`.
+
 ## ADS: dati completi per articolo e contesto — 26 ottobre 2026
 
 - Preferenza esplicita permanente: completezza e qualità dei dati utili sono
