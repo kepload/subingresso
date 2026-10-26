@@ -7,8 +7,10 @@ fonti e audit fiere completi: `data/FIERE.md`.
 
 ## Piano editoriale futuro — 26 ottobre 2026
 
-- `Articoli blog da sviluppare.md`: breve descrizione e 10 titoli con priorità
-  🔴/🟠/🟢; obiettivi crescita rapida, poi ricavi. Verificati 120 articoli e campione web.
+- `Articoli blog da sviluppare.md`: breve descrizione e 20 titoli con priorità
+  🔴/🟠/🟢; obiettivi crescita rapida, poi ricavi. Aggiunti 11–20 dopo confronto
+  con 120 articoli live, 10 proposte esistenti e campione web (Annunci Ambulanti,
+  Ambulanti Online, MercaWeb, Eventi e Sagre); solo titoli, senza pubblicare articoli.
 - Preferenza esplicita: comunicazioni e documenti essenziali, senza spiegare ogni passaggio.
 
 ## ADS: intenzione, parole e correzioni admin — 26 ottobre 2026

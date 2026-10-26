@@ -12,3 +12,13 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 8. 🟠 Partecipare a una fiera conviene? Calcola l'incasso minimo prima di pagare il posteggio
 9. 🟢 Il tuo furgone può raggiungere il posteggio che vuoi comprare a Milano? Area B, Area C e accessi al mercato
 10. 🟢 Quanto tempo serve per vendere un posteggio? I tempi dei casi seguiti da Subingresso
+11. 🔴 Il venditore dichiara 1.000 euro al giorno: come verificare gli incassi del banco, con una tabella di riscontro
+12. 🔴 Compro il banco con tutta la merce: inventario scaricabile per separare scorte, attrezzature e avviamento
+13. 🔴 Fiere in Lombardia con corrente, acqua e parcheggio per il furgone: servizi e supplementi a confronto
+14. 🔴 Quali posteggi cercano gli acquirenti? Ricerche e annunci disponibili su Subingresso a confronto per zona e settore
+15. 🟠 Ho comprato il posteggio: quanta liquidità mi serve nei primi 90 giorni? Il piano di cassa compilabile
+16. 🟠 Due fiere nello stesso fine settimana: la scheda per scegliere in base a pubblico, concorrenti e logistica
+17. 🟠 «Migliaia di visitatori»: quali dati chiedere all'organizzatore prima di prenotare una fiera, con un modello di email
+18. 🟠 Fiere per abbigliamento, casalinghi e alimentari in Lombardia: dove la tua merce è ammessa e dove è esclusa
+19. 🟠 Fine fiera: torno l'anno prossimo? Il registro scaricabile di vendite, invenduto e ore lavorate
+20. 🟢 Posteggio d'angolo o centrale: confronto sul campo tra passaggi, soste e acquisti, con scheda di rilevazione
