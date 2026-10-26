@@ -31,7 +31,12 @@ fonti e audit fiere completi: `data/FIERE.md`.
   `Documents/ads-intento-admin-20261026`, `data/CONTEXTUAL_ADS.md`.
   Backup tag/ramo remoti verificati; helper stderr dopo tag riuscito.
   Corrette prove: attributo misura invece del ridimensionamento CSS e
-  fixture script con/senza slash. Pubblicazione ancora da verificare.
+  fixture script con/senza slash. Pubblicato `50579b8`, Vercel
+  `APYCpVQZiVfUYfwUPexV3QnEAKiW` READY:8sorgenti identici ai byteGit,
+  120articoli200/119conADS e testo conservato. Dodici casi pubblicati
+  Chromium1440/320 eWebKit390: acquisto/fiere/annullamento/vendita, formati,
+  animazione/pausa passati, servizi intercettati. Regole pubbliche200/no-store,
+  opzioni/salvataggio admin anonimi401; nessuna regola reale di prova.
 
 ## ADS contestuali: keyword e formati — 25 ottobre 2026
 
