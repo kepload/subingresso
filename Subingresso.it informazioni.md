@@ -26,7 +26,12 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Inspector0FAIL; metadata12px motivati, caption mobile corretta. Prove private
   `Documents/ads-dati-contesto-20261026`. Backup tag/ramo remoti verificati;
   helper fermato da stderr dopo push riuscito, erroriSQLfixture e latenza
-  cacheREST404→400 corretti senza scritture reali. Pubblicazione da verificare.
+  cacheREST404→400 corretti senza scritture reali. Pubblicato `09f9958`, Vercel
+  `6huRxFEd9MgE9dRokwi4kmTri5X8` READY:12sorgenti identici ai byteGit,
+  120articoli200/119con metadati corretti e testo/tabelle conservati;
+  esportazione anonima401. Dodici casi blog sul tracker pubblicato e quattro
+  percorsi UI sugli asset pubblicati passati: articolo/contesto reali delDOM,
+  filtri/CSV/pagine/logout; servizi intercettati, nessun evento reale di prova.
 
 ## ADS: confronto e alternanza nel blog — 26 ottobre 2026
 
