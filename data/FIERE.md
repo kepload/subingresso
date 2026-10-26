@@ -91,8 +91,28 @@ Le Fischie Maenza ha scheda ordinanza senza allegato recuperabile. Quote,
 disponibilità, orari e ammissione non documentati restano da verificare, senza
 dichiarare assenza di fiere nei sei comuni senza schede aggiunte.
 
-**Pubblicazione da verificare:** checklist e riepilogo restano invariati fino
-a commit/push, deploy e controllo del catalogo online. Cache JS123/JSON91.
+**Pubblicazione verificata:** dati `ee2e8ea`, integrazione `1fe00f7`; verifica
+`cb31fc0`, Vercel riuscito
+[7AC1VHsyFXrH88AwcB9uCgspvLNv](https://vercel.com/kycykuardit-9234s-projects/subingresso/7AC1VHsyFXrH88AwcB9uCgspvLNv).
+Cinque asset pubblici (catalogo, audit, costi, HTML e JS) identici ai blob Git;
+tutte le **77 pagine HTTP200/H1/canonical**, note, fonti e costi verificati in
+**14 secondi**. Cache JS123/JSON91. Build ripetibile, settori, **7.527 pagine /
+3.313 sitemap** e suite generale cinque formati passati. Test provinciale
+locale e online mediante PLAYWRIGHT_MODULE: Chromium1440/320 e WebKit390,
+elenco, mappa, **77 dialog per formato**, costi, overflow e pagine senza JS.
+Sito reale nei tre formati, tutti i 77 dettagli senza sostituire script;
+sole richieste GET/HEAD, nessun dato creato o inviato. Invito visitatore chiuso
+tramite pulsante prima dei dettagli, correggendo il solo test automatizzato.
+Checklist e riepiloghi aggiornati dopo questi esiti: **70 concluse / 40 da fare**.
+
+Backup iniziale remoto verificato: tag
+`backup/session-20261026-133537-fiere-latina`, ramo `backup/pre-fiere-latina-20261026`.
+Il successivo errore di pulizia vecchi tag dell’helper non annulla il push
+riuscito. Copia privata circoscritta `latina-20261026-142715`: **1.801 file,
+174.024.527 byte**, verificati SHA256 senza errori, non backup globale di tutte
+le ricerche. Commit isolato in worktree per evitare aggiornamenti concorrenti
+durante il controllo completo gitleaks, passato senza segreti; integrazione
+ordinaria senza riscrivere la cronologia o includere file estranei nel diff.
 Manutenzione futura distinta: nuovi bandi, canoni, graduatorie, disponibilità,
 Natali e nuovi originali per esclusioni/documenti non accessibili. Non serve
 attendere pubblicazioni future per chiudere la ricerca documentale attuale.

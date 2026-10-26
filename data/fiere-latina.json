@@ -2,7 +2,7 @@
   "province": "Latina",
   "checkedAt": "2026-10-26",
   "research": {
-    "status": "ricerca-documentale-conclusa-pubblicazione-da-verificare",
+    "status": "ricerca-documentale-conclusa-con-limiti",
     "checkedAt": "2026-10-26",
     "baselineCommit": "4c3fb691401710e29db9b5005e3b12fb6b049f65",
     "baselineAudit": "Al checkpoint nessun audit provinciale autonomo: ripresa l’unica scheda pubblicata San Michele di Sermoneta e data/FIERE.md. Nessuna ricerca di altre province ripetuta.",
@@ -8416,8 +8416,125 @@
       }
     ],
     "publication": {
-      "status": "da-verificare",
-      "required": "Commit/push, deploy e catalogo online; checklist e riepilogo invariati fino a esito verificato."
+      "status": "verified",
+      "dataCommit": "ee2e8ea60e63bdd0b63587464228fcf78f9b342f",
+      "integrationCommit": "1fe00f77d7d2caa587a5f513c3d4490a9699a4a2",
+      "verifiedCommit": "cb31fc0b4008f497ea18ee7ba9b9e06bd8db7262",
+      "checkedAt": "2026-10-26T13:38:44Z",
+      "elapsedSeconds": 13.97,
+      "assetsVerified": [
+        {
+          "path": "data/fiere.json",
+          "sha256": "435b0fd881975056decd7c579d4b7b505fbf2d5499c7bd11a8ba9579056d6177"
+        },
+        {
+          "path": "data/fiere-latina.json",
+          "sha256": "9cef31de69f23d1934e22c9b0f626b1061d3ac4f9b829c3fbd756c5aa0466675"
+        },
+        {
+          "path": "js/pages/fiere.js",
+          "sha256": "38739ab17efd2eb4a4be1ec82f156fcdbac81819065f817e7c7a0954ae92de92"
+        },
+        {
+          "path": "fiere.html",
+          "sha256": "a4502cd787360912fa51dbd3377127b8ab48ae0687a1f82fe98b3f734b2dc3af"
+        },
+        {
+          "path": "data/fiere-costi.json",
+          "sha256": "6806d62c347d304fe74f479daffc9afd56467dcbd6a3e0644f6d1db3f5328620"
+        }
+      ],
+      "vercel": {
+        "context": "Vercel",
+        "state": "success",
+        "targetUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/7AC1VHsyFXrH88AwcB9uCgspvLNv"
+      },
+      "detailsChecked": 77,
+      "detailsPassed": 77,
+      "detailChecks": [
+        "HTTP200",
+        "H1",
+        "canonical",
+        "note",
+        "fonte originale",
+        "costi quando documentati"
+      ],
+      "browser": {
+        "local": [
+          {
+            "engine": "chromium",
+            "width": 1440,
+            "events": 77,
+            "dialogs": 77,
+            "base": "http://127.0.0.1:64755",
+            "status": "passed"
+          },
+          {
+            "engine": "chromium",
+            "width": 320,
+            "events": 77,
+            "dialogs": 77,
+            "base": "http://127.0.0.1:64755",
+            "status": "passed"
+          },
+          {
+            "engine": "webkit",
+            "width": 390,
+            "events": 77,
+            "dialogs": 77,
+            "base": "http://127.0.0.1:64755",
+            "status": "passed"
+          }
+        ],
+        "online": [
+          {
+            "engine": "chromium",
+            "width": 1440,
+            "events": 77,
+            "dialogs": 77,
+            "base": "https://subingresso.it",
+            "status": "passed"
+          },
+          {
+            "engine": "chromium",
+            "width": 320,
+            "events": 77,
+            "dialogs": 77,
+            "base": "https://subingresso.it",
+            "status": "passed"
+          },
+          {
+            "engine": "webkit",
+            "width": 390,
+            "events": 77,
+            "dialogs": 77,
+            "base": "https://subingresso.it",
+            "status": "passed"
+          }
+        ],
+        "realScripts": [
+          {
+            "engine": "chromium",
+            "width": 1440,
+            "status": "passed",
+            "cards": 77
+          },
+          {
+            "engine": "chromium",
+            "width": 320,
+            "status": "passed",
+            "cards": 77
+          },
+          {
+            "engine": "webkit",
+            "width": 390,
+            "status": "passed",
+            "cards": 77
+          }
+        ],
+        "requestPolicy": "Browser reali: sole richieste GET/HEAD, scritture bloccate; invito visitatore chiuso mediante pulsante prima dei dettagli, senza alterare script del sito."
+      },
+      "registration": "Checklist Latina e riepiloghi aggiornati dopo il deploy e i controlli verificati. Manutenzione periodica separata."
     },
     "periodicMaintenance": [
       "Nuovi bandi, quote, canoni, graduatorie e disponibilità effettive dei singoli posteggi.",
