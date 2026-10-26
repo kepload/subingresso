@@ -62,3 +62,14 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 58. 🟠 Fiera di più giorni: tornare a casa o dormire fuori? Il calcolatore di viaggio, pernottamento e parcheggio del furgone
 59. 🟠 Organizzo un mercatino: troppi banchi con gli stessi prodotti? La griglia per confrontare le proposte e motivare le selezioni
 60. 🟢 Street food senza allaccio idrico: quanta acqua serve davvero? La scheda per misurare consumi e autonomia durante il servizio
+
+61. 🔴 Riconsegno un banco preso in affitto: il verbale compilabile per confrontare attrezzature, scorte e danni con l'inventario iniziale
+62. 🔴 Vendo il banco: quali documenti mostrare e a chi? Il dossier per acquirenti con dati da oscurare e registro delle condivisioni
+63. 🔴 Compro il banco ma il venditore riapre nello stesso mercato: la scheda su concorrenza e accordi da verificare con il professionista
+64. 🟠 Banco refrigerato per il mercato: confronta costo d'acquisto e consumi misurati durante una giornata di lavoro
+65. 🟠 Street food: quanto incidono vaschette, bicchieri e posate su ogni ordine? Il calcolatore con preventivi e quantità minime a confronto
+66. 🟠 Caricare e montare il banco: carrelli, rampe e sistemi estraibili a confronto, con prova cronometrata e calcolo del tempo risparmiato
+67. 🟠 Cartelli prezzo al banco: quale formato aiuta a vendere? La scheda per confrontare due allestimenti in giornate comparabili
+68. 🟠 Organizzo un mercatino: le quote arrivano dopo gli anticipi ai fornitori? Il calendario di cassa per calcolare il fabbisogno massimo
+69. 🟠 Street food a fine giornata: sconto al banco o app antispreco? Confronta ricavo netto, commissioni e tempi di ritiro
+70. 🟢 Compro stock firmato per il banco: la checklist di provenienza, documenti e controlli sul lotto prima di pagare
