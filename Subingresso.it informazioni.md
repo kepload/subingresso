@@ -5,6 +5,25 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Vetrine del blog nella raccolta ADS — 26 ottobre 2026
+
+- Richiesta: collegare vecchi/nuovi articoli al sistema ADS e misurare i
+  posteggi sponsorizzati in `/le-mie-ads`. Audit120articoli:91spazi esistenti,
+  29ripristinati in chiusura, un solo spazio per articolo, testo conservato.
+  Selettore geografico Premium invariato; zeroVetrine idonee reali rilevate.
+- Nuova sezione con inventario, anteprima casuale per articolo, clic,
+  impressioni, CTR/periodo eCSV; misure separate dalle20ADS proprie.
+  `PATCH_BLOG_VETRINE_ADS_20261026.sql` applicata: RLS/privilegi verificati,
+  zeroeventi reali. TestSQL inROLLBACK e Chromium1440/768/320+WebKit390
+  passati; regressioni blogSSR,60Vetrine/800sorteggi, raccolta/tracker e
+  abbinamenti admin passati. Inspector prima/dopo0FAIL; avviso sui banner
+  colorati esistenti. Contratto `data/BLOG_VETRINE_ADS.md`, prove private
+  `Documents/blog-vetrine-ads-20261026`. Pubblicazione ancora da verificare.
+- Backup tag/ramo remoti verificati. Cleanuphelper ha prodotto errori dopo
+  push riuscito; corretto label pubblicità che allungava il box320 e prima
+  invocazione SQL privata con quoting PowerShell. Nessun acquisto, email o
+  statistica cliente di prova; file estranei conservati.
+
 ## Piano editoriale futuro — 26 ottobre 2026
 
 - `Articoli blog da sviluppare.md`: breve descrizione e 20 titoli con priorità

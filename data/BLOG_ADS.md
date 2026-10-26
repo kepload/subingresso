@@ -1,5 +1,10 @@
 # Annunci negli articoli del blog
 
+26 ottobre 2026: spazi anche nei 29 articoli con banner editoriali che ne
+erano privi; tutti i 120 articoli hanno un singolo spazio Vetrina. Raccolta
+admin, anteprima e misura dedicata per posteggio/articolo/posizione:
+`BLOG_VETRINE_ADS.md`. Geografia e selettore Premium invariati.
+
 Le ADS grafiche proprie usano il motore keyword/formati descritto in
 `data/CONTEXTUAL_ADS.md`. Questo documento riguarda invece i riquadri degli
 annunci reali: selezione geografica e priorità delle Vetrine conservate.

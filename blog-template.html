@@ -101,12 +101,13 @@
 <script src="js/supabase-config.js"></script>
 <script src="js/page-view-tracker.js?v=4"></script>
 <script src="/js/personal-ads-tracker.js?v=1"></script>
+<script src="/js/blog-listing-ads-tracker.js?v=1"></script>
 <script src="/js/personal-ads-motion.js?v=3" defer></script>
 <script src="js/blog-tracker.js?v=3"></script>
 <script src="js/blog-fiere-promo.js?v=3"></script>
 <script src="/js/house-ads-catalog.js?v=2"></script>
 <script src="/js/contextual-ads.js?v=2"></script>
-<script src="js/blog-markup.js?v=3"></script>
+<script src="js/blog-markup.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=24"></script>
 <script src="js/ui-components.js?v=18"></script>
@@ -177,7 +178,7 @@ function _blogListingPreview(listing) {
     const image = images.length ? images[featured ? Math.floor(Math.random() * images.length) : 0] : null;
     const location = [listing.comune, listing.regione].filter(Boolean).join(', ');
     const rent = listing.stato === 'Affitto mensile';
-    return '<a href="/annuncio?id=' + encodeURIComponent(listing.id) + '" data-listing-id="' + escapeHTML(listing.id) + '"'
+    return '<a href="/annuncio?id=' + encodeURIComponent(listing.id) + '" data-listing-id="' + escapeHTML(listing.id) + '" data-blog-listing-ad="' + escapeHTML(listing.id) + '" data-blog-listing-owner="' + escapeHTML(listing.user_id || '') + '"'
         + ' class="blog-posteggio' + (rent ? ' blog-posteggio-rent' : '') + (featured ? ' blog-posteggio-featured' : '') + '">'
         + '<span class="blog-posteggio-thumb" aria-hidden="true"><i class="fas fa-store"></i>'
         + (image ? '<img src="' + escapeHTML(getOptimizedImageUrl(image, 192)) + '" alt="" width="56" height="56" loading="lazy" decoding="async" onerror="this.hidden=true">' : '')
@@ -212,8 +213,8 @@ async function _loadBandoListingsBox(regione, postSlug) {
         if (!data || data.length === 0) { target.innerHTML = ''; return; }
 
         const cards = data.map(_blogListingPreview).join('');
-        const heading = localRegion ? 'Vetrine Premium in ' + escapeHTML(localRegion)
-            : regions.length ? 'Vetrine Premium nelle zone dell’articolo' : 'Posteggi in Vetrina Premium';
+        const heading = localRegion ? 'Pubblicità in ' + escapeHTML(localRegion)
+            : regions.length ? 'Pubblicità nelle zone dell’articolo' : 'Posteggi sponsorizzati';
         const seeAllUrl = localRegion ? '/annunci?regione=' + encodeURIComponent(localRegion) : '/annunci';
         target.innerHTML = '<section class="not-prose blog-listings" aria-label="Annunci sponsorizzati" data-box-listings' + (localRegion ? ' data-regione="' + escapeHTML(localRegion) + '"' : '') + '>'
             + '<div class="blog-listings-header">'

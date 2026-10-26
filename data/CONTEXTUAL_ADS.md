@@ -2,6 +2,9 @@
 
 Solo creatività proprie pubblicate e attive. Nessuna campagna di clienti,
 pagamento, budget o nuova raccolta di dati personali viene attivata.
+Gli spazi dei posteggi in Vetrina usano il selettore geografico separato;
+dal 26 ottobre compaiono nella stessa raccolta admin con misure distinte:
+`BLOG_VETRINE_ADS.md`. Non sono candidate del motore delle 20 creatività.
 
 ## Selezione
 

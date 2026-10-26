@@ -1,5 +1,9 @@
 # ADS personali — 24 ottobre 2026
 
+Dal 26 ottobre la raccolta comprende anche una sezione distinta per gli
+spazi Vetrina del blog, con anteprima, clic/impressioni e CSV per articolo.
+Contratto `BLOG_VETRINE_ADS.md`; non sommare queste serie ai banner propri.
+
 Selezione automatica nel blog per keyword, slot e formati:
 `data/CONTEXTUAL_ADS.md`. Catalogo pubblico delle sole creatività proprie;
 raccolta e statistiche restano protette dal ruolo admin.

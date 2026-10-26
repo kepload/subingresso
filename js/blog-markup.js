@@ -4,7 +4,7 @@
 function escapeHTML(value) {return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
 const previewColumns = 'slug,title,excerpt,published_at,cover_image_url,category';
 const postColumns = previewColumns + ',content,author';
-const listingSlot = '<div id="bandoListingsBox" class="not-prose blog-listings-slot"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>';
+const listingSlot = position => '<div id="bandoListingsBox" data-blog-listing-placement="blog_' + position + '" class="not-prose blog-listings-slot"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>';
 const SLUG_TO_REGIONE = {
     'lombardia': 'Lombardia', 'piemonte': 'Piemonte', 'lazio': 'Lazio', 'veneto': 'Veneto',
     'emilia-romagna': 'Emilia-Romagna', 'toscana': 'Toscana', 'campania': 'Campania', 'puglia': 'Puglia',
@@ -68,7 +68,7 @@ function insertPromo(html, region) {
     if (_IS_BANDI) {
         promo = _bandoAlertFormHtml(_BLOG_REGIONE);
     } else {
-        promo = `<div id="bandoListingsBox" class="not-prose blog-listings-slot"><div class="text-center text-slate-300 py-8"><i class="fas fa-spinner fa-spin"></i></div></div>`;
+        promo = listingSlot('inline');
         _inlineBoxInjected = true;
     }
     return {html: html.slice(0, splitAt) + promo + html.slice(splitAt), inline: _inlineBoxInjected};
@@ -99,7 +99,7 @@ function articleMarkup(post, safeContent) {
 
     const region = _regioneFromSlug(post.slug), promo = insertPromo(safeContent, region);
     const _bodyHtml = promo.html;
-    const finalCtaBlock = region || !promo.inline ? listingSlot : '';
+    const finalCtaBlock = region || !promo.inline || hasEditorialPromos(safeContent) ? listingSlot('closing') : '';
     return `
         ${heroHtml}
         <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 text-left">${date}</p>
