@@ -5,6 +5,32 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+
+## Raccolta del sito ed errori visibili - 26 ottobre 2026
+
+- Autorizzati e aggiunti eventi per ricerca/zero risultati, pubblicazione,
+  accesso, annunci/contatti/messaggi, fiere, blog, calcolatore, Vetrine/errori.
+  Dashboard admin: «Utilizzo del sito», dettagli e CSV completo paginato.
+  Contratto `data/SITE_ANALYTICS.md`; nessun testo privato o nuovo ID persistente.
+- DB applicato: tabelle private/RPC validate, admin/demo esclusi, deduplica,
+  limiti e conservazione190giorni attiva. Annunci147/profili124/pagamenti21
+  identici prima/dopo; proveSQL inROLLBACK, nessun dato cliente di prova.
+- Preferenza: errore vicino al campo con segnale evidente. Wizard corretto:
+  icona/testo/bordo, ARIA, focus/scorrimento unico e pulizia alla correzione;
+  descrizione breve indica minimo40 e caratteri presenti, nei due temi.
+- Passati108 controlli raccolta/admin e180 modulo locali;108 modulo online,
+  Chromium1440/768/320/390 eWebKit390. Regressioni ricerca/accesso/blog,
+  Vetrine/chat/eventi/calcolatore passate; fixture obsolete aggiornate e
+  flake inboxSafari superato ripetendo i25scenari. Zero scritture reali.
+- Pubblicato `46ebeb3`, Vercel `6tCoHbpBecBp9PzuF1YCU8zTu781` READY:
+  32sorgenti statici identiciGit,11pagine/SSR con raccoglitore unico e stati
+  attesi; APIadmin/tabella anonime401, raccolta vuota200. Registro dal rilascio,
+  nessuna ricostruzione precedente. Prove `Documents/raccolta-sito-errori-20261026`.
+- Backup remoto tag/ramo verificato; noto errore cleanuphelper. Gitleaks
+  staged pulito; scan completo solo credenziali locali ignorate e segnaposto.
+  Inspector: rilievi legacy fuori ambito e font del solo snapshot; browser
+  reale verificato. Conservati commit concorrenti Viterbo e file estranei.
+
 ## Fiere e organizzatori sempre aperti - 26 ottobre 2026
 
 - Completato il lavoro interrotto: pannello sempre visibile, quattro contatori
