@@ -21,9 +21,11 @@ continuo, con pausa; negliSVG autonomi3cicli e stato finale completo.
 Nella raccolta `/le-mie-ads` il movimento parte automaticamente anche con
 preferenza riduci movimento, su richiesta esplicita del proprietario:
 `data-pa-motion-autoplay` abilita questa sola pagina, senza scelta salvata.
-Il comando iniziale è «Pausa animazioni». Nel blog, negli inserimenti esterni
+Dal27ottobre i comandi pausa/riprova sono rimossi dalla raccolta su richiesta
+del proprietario: fallimenti mantengono il poster e si riprova ricaricando.
+Nel blog, negli inserimenti esterni
 e negli SVG autonomi resta il fallback riduci movimento; la riproduzione
-manuale degli inserimenti è sempre possibile. Errori: «Riprova animazioni».
+manuale degli inserimenti è sempre possibile, con pausa e riprova locali.
 
 Due ampie sfumature trasparenti, nei colori blu/oro di ciascuna creatività,
 si spostano lentamente dietro testi e fotografie con transform/opacity.

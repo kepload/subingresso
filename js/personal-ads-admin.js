@@ -48,7 +48,7 @@
   $('paFinding').textContent=converting.length?'Più conversioni rilevate: '+converting[0].id+' · '+num(converting[0].converted_clicks)+'. Confronta il dettaglio prima di scegliere.':clicking.length?'Più clic rilevati: '+clicking[0].id+' · '+num(clicking[0].clicks)+'. Nessuna conversione rilevata nel periodo.':'Le prime statistiche compariranno quando i banner verranno visti e cliccati. Le anteprime qui non producono eventi.';
   $('paStatsRows').innerHTML=raw.length?raw.map(r=>'<tr><td>'+esc(r.ad_id)+'<br><span class="pa-muted">'+esc(articleLabel(r))+'<br>'+esc([r.placement,r.event_day,r.device_class,r.creative_version?'v'+r.creative_version:''].filter(Boolean).join(' · '))+'</span></td><td>'+esc(r.format)+'</td>'+[num(r.impressions),num(r.clicks),percent(r.measured_clicks,r.impressions),num(r.converted_clicks),num(r.signups),num(r.listings),num(r.contacts),num(r.fairs),num(r.paid_orders),money(r.revenue_cents)].map(v=>'<td>'+v+'</td>').join('')+'</tr>').join(''):'<tr><td colspan="12">Nessun dato raccolto per questo periodo. Nessun risultato storico è stato inventato.</td></tr>';
   $('paUpdated').textContent='Aggiornato '+new Date(data.stats.updated_at).toLocaleString('it-IT')+'. '+(data.stats.started_at?'Primi dati: '+new Date(data.stats.started_at).toLocaleDateString('it-IT')+'.':'Misurazione pronta; nessun evento ancora raccolto.');
-  renderComparison();renderContext();
+  renderComparison();renderContext();window.PersonalAdInsights.overview(data.stats,loadedDays);
  }
  function visibleAds(){const query=$('paSearch').value.trim().toLocaleLowerCase('it');return data.ads.filter(ad=>(goal==='all'||ad.goal===goal)&&(!query||(ad.title+' '+ad.description+' '+ad.id).toLocaleLowerCase('it').includes(query)));}
  // Rettangoli liberi: si riempiono anche gli spazi sotto i banner più bassi.
@@ -87,7 +87,7 @@
   for(const ad of rows){const formats=mode==='all'?data.formats:mode==='mixed'?[data.formats.find(f=>f.id===mixedFormats[data.ads.findIndex(a=>a.id===ad.id)%mixedFormats.length])]:data.formats.filter(f=>f.id===mode);for(const format of formats)if(format)items.push({ad,format,index:items.length});}
   $('paCount').textContent=rows.length+' di '+data.ads.length+' ADS · '+items.length+' varianti';
   $('paEmpty').hidden=items.length>0;
-  $('paList').innerHTML=items.map(({ad,format})=>'<article class="pa-tile" role="listitem"><button class="pa-tile-button" type="button" data-ad="'+ad.id+'" data-format="'+format.id+'" aria-label="'+esc(ad.title)+' · '+format.width+' per '+format.height+' pixel. Codice, download e risultati"><img src="'+asset(ad,format,'svg')+'" data-pa-motion="'+asset(ad,format,'animated.svg')+'" alt="'+esc(ad.title+' '+ad.description)+'" width="'+format.width+'" height="'+format.height+'" loading="lazy" decoding="async"><span class="pa-tile-caption"><span><strong>'+esc(ad.id)+'</strong> · '+format.width+' × '+format.height+'</span><span>Usa ADS →</span></span></button></article>').join('');
+  $('paList').innerHTML=items.map(({ad,format})=>'<article class="pa-tile" role="listitem"><button class="pa-tile-button" type="button" data-ad="'+ad.id+'" data-format="'+format.id+'" aria-label="'+esc(ad.title)+'. Visualizzazioni, risultati e abbinamenti"><img src="'+asset(ad,format,'svg')+'" data-pa-motion="'+asset(ad,format,'animated.svg')+'" alt="'+esc(ad.title+' '+ad.description)+'" width="'+format.width+'" height="'+format.height+'" loading="lazy" decoding="async"><span class="pa-tile-caption"><span><strong>'+esc(ad.id)+'</strong> · '+format.width+' × '+format.height+'</span><span>Statistiche →</span></span></button></article>').join('');
   mosaicItems=items.map((item,index)=>({...item,node:$('paList').children[index]}));
   if(items.length)queueMosaic();else{$('paList').style.height='0px';$('paList').style.width='100%';}
   if($('paDetails').open)renderEditor();
@@ -100,8 +100,7 @@
   $('paPreview').width=format.width;$('paPreview').height=format.height;
   $('paDimensions').textContent=format.width+' × '+format.height+' px · anteprima adattata allo spazio';
   $('paAdNote').hidden=!ad.note;$('paAdNote').textContent=ad.note||'';
-  const metrics=sum(scopedRows().filter(r=>r.ad_id===ad.id&&r.format===format.id));
-  $('paAdMetrics').innerHTML=[['Clic · questa misura',num(metrics.clicks)],['CTR misurato',percent(metrics.measured_clicks,metrics.impressions)],['Conversioni / clic',percent(metrics.converted_clicks,metrics.clicks)],[ad.action,num(metrics[{vendi:'listings',compra:'contacts',fiere:'fairs'}[ad.goal]])]].map(([label,value])=>'<div><dt>'+esc(label)+'</dt><dd>'+value+'</dd></div>').join('');
+  window.PersonalAdInsights.adDetails(data,ad,format,loadedDays);
   for(const [type,id]of [['png','paPng'],['svg','paSvg'],['animated.svg','paAnimated']]){const link=$(id);link.href=asset(ad,format,type);link.download=ad.id+'-'+format.id+'.'+type;}
   const position=placement();$('paCode').value=position?embed(ad,format,position):'Usa un nome posizione composto da lettere minuscole, numeri, trattini o underscore.';
   $('paCopyHtml').disabled=!position;$('paCopyLink').disabled=!position;
@@ -171,10 +170,10 @@
   const end=record(22,[[0,0x06054b50,4],[8,files.length,2],[10,files.length,2],[12,centralSize,4],[16,offset,4]]);
   return new Blob([...body,...central,end],{type:'application/zip'});
  }
- async function pack(all){
+ async function pack(){
   if(downloadBusy||!data)return;const position=placement();if(!position)return status('Correggi il nome della posizione prima di scaricare il pacchetto.');
-  const rev=revision,ads=all?data.ads:[selectedAd()],formats=data.formats,files=[],jobs=[];downloadController=new AbortController();downloadBusy=true;
-  $('paDownloadAll').disabled=true;$('paPack').disabled=true;let completed=0;
+  const rev=revision,ads=[selectedAd()],formats=data.formats,files=[],jobs=[];downloadController=new AbortController();downloadBusy=true;
+  $('paPack').disabled=true;let completed=0;
   for(const ad of ads)for(const format of formats)for(const type of ['png','svg','animated.svg'])jobs.push({ad,format,type});
   status('Preparo il pacchetto: 0 / '+jobs.length+' file…',true);
   try{
@@ -182,26 +181,25 @@
    await Promise.all([worker(),worker(),worker(),worker()]);if(rev!==revision)return;
    for(const ad of ads){files.push({name:ad.id+'/codici-blog.txt',body:formats.map(f=>f.id+'\n'+embed(ad,f,position)).join('\n\n')});files.push({name:ad.id+'/link-tracciati.txt',body:formats.map(f=>f.id+'\n'+clickUrl(ad,f,position)).join('\n\n')});for(const format of formats)files.push({name:ad.id+'/'+ad.id+'-'+format.id+'.html',body:'<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(ad.title)+'</title><body style="margin:0">'+embed(ad,format,position)+'</body></html>'});}
    files.push({name:'LEGGIMI.txt',body:'Subingresso.it — ADS personali\n'+ads.length+' messaggi, '+formats.length+' misure, PNG HD + SVG statico/animato + HTML.\nPosizione: '+position+'\nIncolla codici-blog.txt nella modalità HTML di un articolo. Il player avvia la scrittura quando il banner entra in vista, poi richiama il pulsante; pausa e riduzione movimento conservano la versione leggibile. Gli HTML richiedono connessione al sito per il player. Gli SVG animati autonomi eseguono 3 cicli (19,2 secondi), poi restano completi. PNG web a risoluzione doppia; social1080 nativi.\nIl tracciamento delle impressioni funziona nel blog di Subingresso.it. Altrove usa i link tracciati: i soli file scaricati non misurano le visualizzazioni.\nLe conversioni misurano azioni sul sito, non la compravendita di un posteggio.\n'});
-   download(zip(files),all?'subingresso-20-ads.zip':ads[0].id+'-8-formati.zip');status('Pacchetto pronto: '+ads.length+' ADS in '+formats.length+' formati, PNG HD, SVG e HTML.');
+   download(zip(files),ads[0].id+'-8-formati.zip');status('Pacchetto pronto: '+ads.length+' ADS in '+formats.length+' formati, PNG HD, SVG e HTML.');
   }catch(error){downloadController?.abort();if(rev===revision)status(error.name==='AbortError'?'Download interrotto. Riprova.':error.message,true);}
-  finally{if(rev===revision){downloadBusy=false;$('paDownloadAll').disabled=false;$('paPack').disabled=false;}}
+  finally{if(rev===revision){downloadBusy=false;$('paPack').disabled=false;}}
  }
  $('paFilters').addEventListener('click',event=>{const button=event.target.closest('[data-goal]');if(!button||!data)return;goal=button.dataset.goal;document.querySelectorAll('[data-goal]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));renderList();});
- $('paList').addEventListener('click',event=>{const button=event.target.closest('[data-ad]');if(!button||!data)return;selected=button.dataset.ad;$('paFormat').value=button.dataset.format;renderEditor();if(!$('paDetails').open)$('paDetails').showModal();$('paCloseDetails').focus();});
+ $('paList').addEventListener('click',event=>{const button=event.target.closest('[data-ad]');if(!button||!data)return;selected=button.dataset.ad;$('paFormat').value=button.dataset.format;$('paTechnical').open=false;renderEditor();if(!$('paDetails').open)$('paDetails').showModal();$('paDetails').scrollTop=0;$('paCloseDetails').focus();});
  $('paGalleryMode').addEventListener('change',()=>{if(data){$('paGalleryScroll').scrollLeft=0;renderList();}});
  $('paCloseDetails').addEventListener('click',()=>$('paDetails').close());
  $('paDetails').addEventListener('close',()=>{$('paStatus').hidden=true;document.body.append($('paStatus'));});
  $('paDetails').addEventListener('click',event=>{if(event.target!==$('paDetails'))return;const r=event.target.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)event.target.close();});
- $('paShowStats').addEventListener('click',()=>{$('paResultsPanel').open=true;$('paResultsPanel').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
  $('paResultFilter').addEventListener('change',()=>{if(data)renderComparison();});$('paResultSort').addEventListener('change',()=>{if(data)renderComparison();});$('paSummaryExport').addEventListener('click',exportSummary);
  $('paArticleFilter').addEventListener('change',()=>{if(data){renderMetrics();if($('paDetails').open)renderEditor();}});$('paEventsExport').addEventListener('click',exportEvents);
- $('paSummaryRows').addEventListener('click',event=>{const button=event.target.closest('[data-result-ad]');if(!button||!data)return;selected=button.dataset.resultAd;const rows=scopedRows().filter(r=>r.ad_id===selected),best=data.formats.map(f=>({id:f.id,...sum(rows.filter(r=>r.format===f.id))})).sort((a,b)=>b.clicks-a.clicks||b.impressions-a.impressions)[0];$('paFormat').value=best?.id||'300x250';renderEditor();$('paDetails').showModal();$('paCloseDetails').focus();});
+ $('paSummaryRows').addEventListener('click',event=>{const button=event.target.closest('[data-result-ad]');if(!button||!data)return;selected=button.dataset.resultAd;const rows=scopedRows().filter(r=>r.ad_id===selected),best=data.formats.map(f=>({id:f.id,...sum(rows.filter(r=>r.format===f.id))})).sort((a,b)=>b.clicks-a.clicks||b.impressions-a.impressions)[0];$('paFormat').value=best?.id||'300x250';$('paTechnical').open=false;renderEditor();$('paDetails').showModal();$('paDetails').scrollTop=0;$('paCloseDetails').focus();});
  if(typeof ResizeObserver==='function')new ResizeObserver(()=>{cancelAnimationFrame(mosaicFrame);mosaicFrame=requestAnimationFrame(layoutMosaic);}).observe($('paGalleryScroll'));else window.addEventListener('resize',queueMosaic);
  $('paSearch').addEventListener('input',()=>{if(data)renderList();});$('paFormat').addEventListener('change',renderEditor);$('paPlacement').addEventListener('input',()=>{if(data)renderEditor();});
  $('paDays').addEventListener('change',changePeriod);$('paRetryGate').addEventListener('click',load);
  $('paLogin').addEventListener('click',()=>{window.__onLoginSuccess=load;window.openAuthModal('login');});
  $('paCopyHtml').addEventListener('click',()=>copy($('paCode').value));$('paCopyLink').addEventListener('click',()=>{const p=placement();if(p)copy(clickUrl(selectedAd(),selectedFormat(),p));});
- $('paPack').addEventListener('click',()=>pack(false));$('paDownloadAll').addEventListener('click',()=>pack(true));$('paExport').addEventListener('click',exportCsv);
+ $('paPack').addEventListener('click',pack);$('paExport').addEventListener('click',exportCsv);
  _supabase.auth.onAuthStateChange((event,session)=>{const next=session?.user?.id||null;if(data&&next===owner&&event!=='SIGNED_OUT')return;if(event!=='TOKEN_REFRESHED'||(owner&&next!==owner)){clear(event==='SIGNED_OUT'?'Accedi con il tuo account amministratore.':'Verifica dell’accesso amministratore…');$('paLogin').hidden=!!next;setTimeout(load,0);}});
  window.addEventListener('pagehide',()=>{downloadController?.abort();eventsController?.abort();});load();
 })();

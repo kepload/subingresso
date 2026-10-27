@@ -4,6 +4,35 @@ Dal 26 ottobre la raccolta comprende anche una sezione distinta per gli
 spazi Vetrina del blog, con anteprima, clic/impressioni e CSV per articolo.
 Contratto `BLOG_VETRINE_ADS.md`; non sommare queste serie ai banner propri.
 
+## Interfaccia del 27 ottobre 2026
+
+Prima il grafico giornaliero delle visualizzazioni delle sole ADS proprie,
+con totale, clic, tasso misurato e azioni sul sito. Un solo periodo generale;
+le finestre si leggono all'apertura e si filtrano localmente. La serie usa
+`event_day` UTC, zero nei giorni senza eventi dall'inizio della misurazione;
+primo/ultimo giorno parziali. Righe senza data contribuiscono al totale ma
+non sono collocate arbitrariamente nel grafico, con quantità esplicita.
+
+Seguono «Statistiche dettagliate», chiuse all'apertura, e subito il mosaico
+preesistente. Confronti, CSV, contesti numerici, Vetrine e correzioni degli
+abbinamenti sono dentro il blocco chiuso. Il filtro articolo riguarda solo
+il report: grafico generale e scheda della ADS mantengono i propri totali.
+
+Il mosaico apre «Statistiche»: visualizzazioni/clic/CTR/azioni della ADS
+sommati su tutti i formati e articoli, parole prioritarie ed esclusioni
+effettivamente salvate, argomenti e quattro articoli con più visualizzazioni
+misurate. Le regole descrivono gli abbinamenti attuali; gli articoli sono
+riscontri storici del periodo. Cambiare anteprima mostra i numeri di quella
+misura separatamente, conservando i totali della ADS. Regole non disponibili
+segnalate senza presentare i valori iniziali come aggiornati; nessuna
+modifica alle regole, alla rotazione o ai dati durante questa revisione.
+
+Rimossi «Pausa animazioni», «Scarica raccolta», scorciatoia Statistiche e
+«Usa ADS». Codici, link e download della singola ADS sono nei soli «Strumenti
+tecnici», chiusi a ogni apertura della scheda. Autoplay privato conservato;
+controlli pubblici invariati. Stati e richieste tardive delle nuove sezioni
+sono invalidati all'uscita o al cambio account; nessuna cache persistente.
+
 Dal26ottobre «Come stanno andando» mostra anche il confronto delle20ADS:
 titolo, miniatura, codice, impressioni/clic/CTR misurato/conversioni sommati
 su misure e posizioni nel periodo. Tutte incluse anche con zero righe;
@@ -31,9 +60,9 @@ obiettivo/testo/misura; «Tutte le misure» mostra160varianti. Nessuna ADS
 viene esclusa o duplicata nella vista iniziale. Nessuno scorrimento orizzontale
 della galleria, anche per tutte160varianti e al resize. Su smartphone filtri
 in una riga, misura/ricerca affiancate e barra non fissa durante lo scorrimento.
-Al clic si apre il pannello della creatività/misura selezionata, con gli
-stessi strumenti di riuso e i dati reali. Statistiche in un blocco apribile
-dopo la galleria, scorciatoia nell’intestazione. Accesso admin conservato;
+Al clic si apre il pannello della creatività/misura selezionata, con i dati
+reali e gli strumenti tecnici chiusi. Le statistiche dettagliate sono in un
+blocco apribile prima della galleria. Accesso admin conservato;
 logout/cambio account chiudono anche il dialog e rimuovono la galleria.
 
 `/le-mie-ads` è un guscio senza catalogo/statistiche incorporati. L’API
@@ -91,8 +120,8 @@ prima/dopo il25/10 condividono lo stesso ID, non costituiscono un testA/B.
 Build: `node scripts/build-personal-ads.cjs`, richiede Python fontTools
 e sharp già disponibili nell’ambiente di sviluppo; nessun requisito runtime.
 
-Per misura:codice HTML,link tracciato,PNG HD/SVG statico/SVG animato. ZIP per
-ADS o raccolta intera, con tutte le misure, HTML pronti, istruzioni,codici e
+Negli strumenti tecnici per misura:codice HTML,link tracciato,PNG HD/SVG
+statico/SVG animato. ZIP per singola ADS, con tutte le misure, HTML pronti, istruzioni,codici e
 link. Il nome posizione è un codice
 `[a-z0-9_-]{1,80}`,mai dati personali. Immagini sole/off-site non misurano
 impressioni:fuori dal blog usare almeno il link tracciato. Un banner largo
@@ -108,8 +137,8 @@ lampeggio, sfocatura, cambio di impaginazione o blocco del clic.
 `js/personal-ads-motion.js` avvia gli SVG solo quando entrano in vista con
 IntersectionObserver. Fuori campo, scheda nascosta, dialog aperto davanti
 alla galleria e logout rimuovono il movimento. Nel sito il ciclo continua
-finché visibile; pausa nella raccolta/dialog, oppure accanto a ciascun
-inserimento pubblico. La pausa mostra la versione completa. La preferenza
+finché visibile; nella raccolta non ci sono più comandi pausa. Il controllo
+accanto a ciascun inserimento pubblico mostra la versione completa. La preferenza
 riduci movimento conserva lo statico, senza scaricare automaticamente la
 variante animata. «Riproduci animazioni» permette una prova esplicita anche
 con tale preferenza; un successivo cambio della preferenza azzera la scelta.

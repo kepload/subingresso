@@ -10,7 +10,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  <link rel="stylesheet" href="/css/personal-ads.css?v=1">
  <link rel="stylesheet" href="/css/personal-ads-gallery.css?v=3">
- <link rel="stylesheet" href="/css/personal-ads-results.css?v=2">
+ <link rel="stylesheet" href="/css/personal-ads-results.css?v=3">
  <link rel="stylesheet" href="/css/contextual-ads-admin.css?v=1">
  <link rel="stylesheet" href="/css/blog-listing-ads-admin.css?v=2">
 </head>
@@ -18,7 +18,34 @@
  <header class="pa-header"><a class="pa-brand" href="/">Subingresso<span>.it</span></a><a href="/dashboard">Torna alla dashboard</a></header>
  <div id="paGate" class="pa-gate" role="status"><h2>Le mie ADS</h2><p id="paGateText">Verifica dell’accesso amministratore…</p><button id="paLogin" type="button" hidden>Accedi</button><button id="paRetryGate" type="button" hidden>Riprova</button></div>
  <main id="paApp" hidden>
-  <div class="pa-title-row"><div><h1>Le mie ADS</h1><p>Scegli un banner per copiarlo o scaricarlo.</p></div><div class="pa-heading-actions"><button id="paMotionToggle" data-pa-motion-toggle type="button" aria-pressed="false">Pausa animazioni</button><button id="paShowStats" type="button">Statistiche</button><button id="paDownloadAll" type="button">Scarica raccolta</button></div></div>
+  <div class="pa-title-row"><div><h1>Le mie ADS</h1><p>L’andamento dei tuoi banner, a colpo d’occhio.</p></div><div class="pa-period"><label for="paDays">Periodo</label><select id="paDays"><option value="7">7 giorni</option><option value="30" selected>30 giorni</option><option value="90">90 giorni</option><option value="365">365 giorni</option></select></div></div>
+  <section class="pa-overview" aria-labelledby="paOverviewTitle">
+   <div class="pa-overview-main"><div class="pa-overview-heading"><div><h2 id="paOverviewTitle">Visualizzazioni delle ADS</h2><p id="paOverviewRange" class="pa-muted"></p></div><strong id="paOverviewViews" class="pa-overview-value">—</strong></div>
+    <div id="paViewsChart" class="pa-views-chart"></div><p id="paChartNote" class="pa-muted"></p>
+   </div>
+   <div class="pa-overview-side"><dl id="paOverviewMetrics"></dl><p id="paOverviewFinding" class="pa-muted" role="status"></p></div>
+  </section>
+  <details id="paResultsPanel" class="pa-stats-disclosure"><summary>Statistiche dettagliate<span class="pa-disclosure-hint">Confronti, articoli e dati completi</span></summary>
+  <section class="pa-results" aria-labelledby="paResultsTitle">
+   <div class="pa-section-head"><h2 id="paResultsTitle">I numeri delle tue ADS</h2></div>
+   <label class="pa-article-scope" for="paArticleFilter">Articolo dei risultati<select id="paArticleFilter"><option value="all">Tutti gli articoli e le altre provenienze</option></select></label>
+   <dl id="paTotals" class="pa-metrics"></dl>
+   <p id="paFinding" class="pa-muted"></p>
+   <div class="pa-comparison-head"><h3 id="paComparisonTitle">Risultati per annuncio</h3><button id="paSummaryExport" type="button">Esporta confronto CSV</button></div>
+   <div class="pa-comparison-controls"><label>Mostra<select id="paResultFilter"><option value="all">Tutte le ADS</option><option value="clicked">Con clic</option><option value="unclicked">Mostrate senza clic</option><option value="unseen">Mai mostrate nel periodo</option></select></label><label>Ordina per<select id="paResultSort"><option value="clicks">Più clic</option><option value="impressions">Più impressioni</option><option value="ctr">CTR misurato</option></select></label><span id="paComparisonCount" class="pa-muted" role="status"></span></div>
+   <div class="pa-comparison"><table aria-labelledby="paComparisonTitle"><thead><tr><th>Annuncio</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th></tr></thead><tbody id="paSummaryRows"></tbody></table></div>
+   <p class="pa-comparison-note pa-muted">Tutte le misure e posizioni sommate per ADS. «Mai mostrata» indica zero impressioni misurate nel periodo. Il CTR usa solo i clic preceduti da un’impressione misurata.</p>
+   <div class="pa-context-results"><h3>Da quali articoli arrivano i risultati</h3><p id="paContextCoverage" class="pa-muted"></p><div class="pa-table-scroll"><table><caption>Articolo e ADS nel periodo scelto</caption><thead><tr><th>Articolo / ADS</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th></tr></thead><tbody id="paArticleRows"></tbody></table></div></div>
+   <details><summary>Dispositivi, provenienza, giorni e versioni</summary><div id="paContextBreakdowns"></div></details>
+   <details><summary>Registro completo degli eventi</summary><p>Scarica ogni impressione e clic registrato: data e ora UTC, articolo, ADS, versione, posizione, dispositivo, provenienza, parole dell’abbinamento e tempi di visibilità disponibili. L’esportazione comprende tutto il periodo, anche le righe senza articolo. I dati non raccolti nello storico restano vuoti.</p><button id="paEventsExport" type="button">Esporta tutti gli eventi CSV</button></details>
+   <details id="paStatsDetails"><summary>Statistiche complete e criteri di misura</summary>
+    <p>Impressione: almeno metà banner visibile per un secondo nel blog, una volta per sessione, articolo, creatività, versione, misura e posizione. Il CTR collega clic e impressione nello stesso articolo e nella stessa versione. Lo storico usa la precedente deduplica senza articolo. I link condivisi fuori dal blog misurano i clic; le immagini scaricate da sole non misurano le visualizzazioni.</p>
+    <p>Conversione: un clic che porta all’azione prevista. Vendita → invio di un annuncio; acquisto → consultazione di un recapito; fiere → salvataggio di una fiera. Non certifica una compravendita. Iscrizioni, acquisti Vetrina e incassi netti dei rimborsi sono separati. Attribuzione all’ultima ADS cliccata nei 7 giorni precedenti, per utenti riconosciuti dopo l’accesso; ogni azione appartiene a una sola ADS. Il periodo seleziona i clic e le loro conversioni osservate fino a oggi.</p>
+    <p>Le anteprime admin e le automazioni riconosciute sono escluse. I risultati precedenti all’attivazione non sono ricostruibili. I dati recenti possono maturare per 7 giorni; con pochi clic evita conclusioni premature.</p>
+    <button id="paExport" type="button">Esporta risultati CSV</button>
+    <div class="pa-table-scroll"><table><caption>Dettaglio ADS, articolo e contesto — giorni UTC</caption><thead><tr><th>ADS / articolo / contesto</th><th>Misura</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th><th>Iscrizioni</th><th>Annunci</th><th>Recapiti</th><th>Fiere salvate</th><th>Acquisti Vetrina</th><th>Incassi netti</th></tr></thead><tbody id="paStatsRows"></tbody></table></div>
+   </details>
+  </section>
   <section id="paListingPanel" class="pa-listing-panel" aria-labelledby="paListingTitle">
    <div class="pa-section-head"><div><h2 id="paListingTitle">Posteggi in Vetrina nel blog <span id="paListingCount"></span></h2><p class="pa-muted">Spazi pubblicitari mirati alla zona dell’articolo, con rotazione tra Vetrine pertinenti.</p></div></div>
    <p id="paListingStatus" role="status" aria-live="polite">Caricamento delle Vetrine…</p>
@@ -48,48 +75,37 @@
     <details id="paContextAdPanel"><summary>Parole della singola ADS</summary><div class="pa-context-ad-fields"><label>ADS<select id="paContextAd"></select></label><label>Parole o frasi prioritarie<textarea id="paContextPriority" rows="3" placeholder="Una frase per riga, oppure separate da virgole"></textarea></label><label>Escludi negli articoli che contengono<textarea id="paContextExcluded" rows="3" placeholder="Una frase per riga, oppure separate da virgole"></textarea></label></div><div class="pa-context-actions"><button id="paContextSaveAd" type="button">Salva parole ADS</button><button id="paContextReloadAd" type="button">Ricarica parole salvate</button><button id="paContextResetAd" type="button">Carica parole iniziali</button></div><p class="pa-muted">Le parole della ADS valgono su tutti gli articoli. La modifica si applica dopo il salvataggio.</p></details>
    </div>
   </details>
+  </details>
   <section class="pa-library" aria-labelledby="paLibraryTitle">
    <div class="pa-gallery-toolbar">
     <div class="pa-gallery-heading"><h2 id="paLibraryTitle">Tutte le tue ADS <span id="paCount" aria-live="polite"></span></h2><span id="paScale" class="pa-scale">Dimensioni reali · 1:1</span></div>
-    <div class="pa-gallery-controls"><div id="paFilters" class="pa-filters" role="group" aria-label="Obiettivo ADS"><button type="button" data-goal="all" aria-pressed="true">Tutte</button><button type="button" data-goal="vendi" aria-pressed="false">Vendi</button><button type="button" data-goal="compra" aria-pressed="false">Compra</button><button type="button" data-goal="fiere" aria-pressed="false">Fiere</button></div><label class="pa-gallery-size" for="paGalleryMode">Misure<select id="paGalleryMode"><option value="mixed">Miste da blog · 20 ADS</option><option value="all">Tutte le misure · 160 varianti</option></select></label><label class="pa-search" for="paSearch">Cerca<input id="paSearch" type="search" placeholder="Messaggio o codice ADS"></label></div>
+    <div class="pa-gallery-controls"><div id="paFilters" class="pa-filters" role="group" aria-label="Obiettivo ADS"><button type="button" data-goal="all" aria-pressed="true">Tutte</button><button type="button" data-goal="vendi" aria-pressed="false">Vendi</button><button type="button" data-goal="compra" aria-pressed="false">Compra</button><button type="button" data-goal="fiere" aria-pressed="false">Fiere</button></div><label class="pa-gallery-size" for="paGalleryMode">Misure<select id="paGalleryMode"><option value="mixed">Miste da blog · 20 ADS</option><option value="all">Tutte le misure · 160 varianti</option></select></label><label class="pa-search" for="paSearch">Cerca<input id="paSearch" type="search" placeholder="Cerca un messaggio"></label></div>
    </div>
    <div id="paGalleryScroll" class="pa-gallery-scroll" aria-label="Galleria ADS"><div id="paList" class="pa-mosaic-board" role="list" aria-label="Creatività disponibili"></div></div>
    <p id="paEmpty" class="pa-empty" hidden>Nessuna ADS corrisponde alla ricerca. Prova un’altra parola o scegli Tutte.</p>
   </section>
-  <dialog id="paDetails" class="pa-details" aria-labelledby="paAdTitle"><div class="pa-dialog-top"><span>Codice, download e risultati</span><div class="pa-dialog-actions"><button data-pa-motion-toggle type="button" aria-pressed="false">Pausa animazioni</button><button id="paCloseDetails" type="button" autofocus>Chiudi</button></div></div>
+  <dialog id="paDetails" class="pa-details" aria-labelledby="paAdTitle"><div class="pa-dialog-top"><span>Risultati della ADS</span><div class="pa-dialog-actions"><button id="paCloseDetails" type="button" autofocus>Chiudi</button></div></div>
     <article id="paEditor" class="pa-editor" aria-labelledby="paAdTitle">
-     <div class="pa-editor-head"><div><h3 id="paAdTitle"></h3><p id="paAdOrigin" class="pa-muted"></p></div><button id="paCopyHtml" class="pa-primary" type="button">Copia codice per il blog</button></div>
+     <div class="pa-editor-head"><div><h3 id="paAdTitle"></h3><p id="paAdOrigin" class="pa-muted"></p></div></div>
+     <p id="paAdDescription" class="pa-ad-description"></p>
+     <p id="paAdPeriod" class="pa-muted"></p>
+     <dl id="paAdMetrics" class="pa-ad-metrics"></dl>
+     <section class="pa-ad-targeting" aria-labelledby="paAdTargetingTitle"><h4 id="paAdTargetingTitle">Abbinamenti con il blog</h4><div id="paAdTargeting" aria-live="polite"></div></section>
+     <section class="pa-ad-articles" aria-labelledby="paAdArticlesTitle"><h4 id="paAdArticlesTitle">Articoli in cui è stata vista</h4><div id="paAdArticles"></div></section>
      <div class="pa-preview-controls"><label for="paFormat">Misura<select id="paFormat"></select></label><span id="paDimensions" class="pa-muted"></span></div>
      <div class="pa-preview" id="paPreviewFrame"></div>
      <p id="paAdNote" class="pa-note" hidden></p>
-     <dl id="paAdMetrics" class="pa-ad-metrics"></dl>
+     <p id="paAdFormatMetrics" class="pa-muted"></p>
+     <a id="paDestination" class="pa-ad-destination" target="_blank" rel="noopener">Apri la pagina di destinazione</a>
+     <details id="paTechnical" class="pa-technical"><summary>Strumenti tecnici</summary>
+     <p>Codici e file per chi inserisce i banner nel sito.</p>
+     <button id="paCopyHtml" type="button">Copia codice per il blog</button>
      <div class="pa-placement"><label for="paPlacement">Nome della posizione<input id="paPlacement" type="text" value="blog" pattern="[a-z0-9_-]{1,80}" maxlength="80" aria-describedby="paPlacementHint"></label><p id="paPlacementHint" class="pa-muted">Es. articolo-bandi-centro. Usa nomi diversi per confrontare i punti in cui inserisci il banner.</p></div>
-     <div class="pa-actions"><button id="paCopyLink" type="button">Copia link tracciato</button><a id="paPng" download>Scarica PNG HD</a><a id="paSvg" download>Scarica SVG</a><a id="paAnimated" download>SVG animato</a><button id="paPack" type="button">Pacchetto di questa ADS</button><a id="paDestination" target="_blank" rel="noopener">Apri destinazione</a></div>
+     <div class="pa-actions"><button id="paCopyLink" type="button">Copia link tracciato</button><a id="paPng" download>Scarica PNG HD</a><a id="paSvg" download>Scarica SVG</a><a id="paAnimated" download>SVG animato</a><button id="paPack" type="button">Pacchetto di questa ADS</button></div>
      <details><summary>Come usarla nel blog</summary><p>Copia il codice e incollalo nella modalità HTML dell’articolo. Il banner punta già alla sezione corretta e mantiene il proprio codice di tracciamento. La misura scelta resta nel codice: per uno spazio stretto usa il rettangolo o il banner mobile.</p><p>Il pacchetto contiene le 8 misure in PNG HD, SVG statico e animato, gli HTML, i link e il codice pronto. L’animazione parte quando il banner entra in vista; puoi metterla in pausa. Se carichi l’immagine altrove, usa anche il suo link tracciato; il solo file immagine non permette di attribuire clic e conversioni.</p><label for="paCode">Codice pronto<textarea id="paCode" readonly rows="5" spellcheck="false"></textarea></label></details>
+     </details>
     </article>
   </dialog>
-  <details id="paResultsPanel" class="pa-stats-disclosure"><summary>Statistiche della raccolta</summary>
-  <section class="pa-results" aria-labelledby="paResultsTitle">
-   <div class="pa-section-head"><h2 id="paResultsTitle">Come stanno andando</h2><div class="pa-period"><label for="paDays">Clic degli ultimi</label><select id="paDays"><option value="7">7 giorni</option><option value="30" selected>30 giorni</option><option value="90">90 giorni</option><option value="365">365 giorni</option></select></div></div>
-   <label class="pa-article-scope" for="paArticleFilter">Articolo dei risultati<select id="paArticleFilter"><option value="all">Tutti gli articoli e le altre provenienze</option></select></label>
-   <dl id="paTotals" class="pa-metrics"></dl>
-   <p id="paFinding" class="pa-muted"></p>
-   <div class="pa-comparison-head"><h3 id="paComparisonTitle">Risultati per annuncio</h3><button id="paSummaryExport" type="button">Esporta confronto CSV</button></div>
-   <div class="pa-comparison-controls"><label>Mostra<select id="paResultFilter"><option value="all">Tutte le ADS</option><option value="clicked">Con clic</option><option value="unclicked">Mostrate senza clic</option><option value="unseen">Mai mostrate nel periodo</option></select></label><label>Ordina per<select id="paResultSort"><option value="clicks">Più clic</option><option value="impressions">Più impressioni</option><option value="ctr">CTR misurato</option></select></label><span id="paComparisonCount" class="pa-muted" role="status"></span></div>
-   <div class="pa-comparison"><table aria-labelledby="paComparisonTitle"><thead><tr><th>Annuncio</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th></tr></thead><tbody id="paSummaryRows"></tbody></table></div>
-   <p class="pa-comparison-note pa-muted">Tutte le misure e posizioni sommate per ADS. «Mai mostrata» indica zero impressioni misurate nel periodo. Il CTR usa solo i clic preceduti da un’impressione misurata.</p>
-   <div class="pa-context-results"><h3>Da quali articoli arrivano i risultati</h3><p id="paContextCoverage" class="pa-muted"></p><div class="pa-table-scroll"><table><caption>Articolo e ADS nel periodo scelto</caption><thead><tr><th>Articolo / ADS</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th></tr></thead><tbody id="paArticleRows"></tbody></table></div></div>
-   <details><summary>Dispositivi, provenienza, giorni e versioni</summary><div id="paContextBreakdowns"></div></details>
-   <details><summary>Registro completo degli eventi</summary><p>Scarica ogni impressione e clic registrato: data e ora UTC, articolo, ADS, versione, posizione, dispositivo, provenienza, parole dell’abbinamento e tempi di visibilità disponibili. L’esportazione comprende tutto il periodo, anche le righe senza articolo. I dati non raccolti nello storico restano vuoti.</p><button id="paEventsExport" type="button">Esporta tutti gli eventi CSV</button></details>
-   <details id="paStatsDetails"><summary>Statistiche complete e criteri di misura</summary>
-    <p>Impressione: almeno metà banner visibile per un secondo nel blog, una volta per sessione, articolo, creatività, versione, misura e posizione. Il CTR collega clic e impressione nello stesso articolo e nella stessa versione. Lo storico usa la precedente deduplica senza articolo. I link condivisi fuori dal blog misurano i clic; le immagini scaricate da sole non misurano le visualizzazioni.</p>
-    <p>Conversione: un clic che porta all’azione prevista. Vendita → invio di un annuncio; acquisto → consultazione di un recapito; fiere → salvataggio di una fiera. Non certifica una compravendita. Iscrizioni, acquisti Vetrina e incassi netti dei rimborsi sono separati. Attribuzione all’ultima ADS cliccata nei 7 giorni precedenti, per utenti riconosciuti dopo l’accesso; ogni azione appartiene a una sola ADS. Il periodo seleziona i clic e le loro conversioni osservate fino a oggi.</p>
-    <p>Le anteprime admin e le automazioni riconosciute sono escluse. I risultati precedenti all’attivazione non sono ricostruibili. I dati recenti possono maturare per 7 giorni; con pochi clic evita conclusioni premature.</p>
-    <button id="paExport" type="button">Esporta risultati CSV</button>
-    <div class="pa-table-scroll"><table><caption>Dettaglio ADS, articolo e contesto — giorni UTC</caption><thead><tr><th>ADS / articolo / contesto</th><th>Misura</th><th>Impressioni</th><th>Clic</th><th>CTR misurato</th><th>Conversioni</th><th>Iscrizioni</th><th>Annunci</th><th>Recapiti</th><th>Fiere salvate</th><th>Acquisti Vetrina</th><th>Incassi netti</th></tr></thead><tbody id="paStatsRows"></tbody></table></div>
-   </details>
-  </section>
-  </details>
   <p id="paUpdated" class="pa-muted"></p>
  </main>
  <div id="paStatus" class="pa-status" role="status" aria-live="polite" hidden></div>
@@ -100,8 +116,9 @@
  <script src="/js/personal-ads-motion.js?v=3"></script>
  <script src="/js/house-ads-catalog.js?v=2"></script>
  <script src="/js/contextual-ads.js?v=4"></script>
- <script src="/js/contextual-ads-admin.js?v=1"></script>
+ <script src="/js/contextual-ads-admin.js?v=2"></script>
  <script src="/js/blog-listing-ads-admin.js?v=2"></script>
- <script src="/js/personal-ads-admin.js?v=10"></script>
+ <script src="/js/personal-ads-insights.js?v=1"></script>
+ <script src="/js/personal-ads-admin.js?v=11"></script>
 </body>
 </html>

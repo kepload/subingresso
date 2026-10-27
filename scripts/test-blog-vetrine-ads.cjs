@@ -35,9 +35,9 @@ const server=http.createServer((req,res)=>{const url=new URL(req.url,'http://loc
 async function browserTests(type,name,width,base){
  const b=await type.launch({headless:true});try{
   const p=await b.newPage({viewport:{width,height:900},reducedMotion:'reduce'}),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.route('https://**/*',r=>r.abort());
-  await p.goto(base+'/qa');await p.waitForFunction(()=>document.querySelector('#paListingCount').textContent.includes('1 attive'));
+  await p.goto(base+'/qa');await p.waitForFunction(()=>document.querySelector('#paListingCount').textContent.includes('1 attive'));await p.locator('#paResultsPanel').evaluate(el=>el.open=true);
   assert.equal(await p.evaluate(()=>!!window.xss),false);assert.equal(await p.locator('#paListingInventory .pa-listing-row').count(),1);assert.match(await p.locator('#paListingStatus').innerText(),/2 clic · 10 impressioni/);
-  await p.locator('#paListingPanel summary').click();await p.locator('#paListingPost').selectOption(post.slug);await p.locator('#paListingPreviewButton').click();await p.waitForFunction(()=>document.querySelector('#paListingPreview').children.length===1);assert.match(await p.locator('#paListingPreviewStatus').innerText(),/Nel testo · Lombardia/);assert.equal(await p.locator('[data-blog-listing-ad]').count(),0);
+  await p.locator('#paResultsPanel').evaluate(el=>el.open=true);await p.locator('#paListingPanel summary').click();await p.locator('#paListingPost').selectOption(post.slug);await p.locator('#paListingPreviewButton').click();await p.waitForFunction(()=>document.querySelector('#paListingPreview').children.length===1);assert.match(await p.locator('#paListingPreviewStatus').innerText(),/Nel testo · Lombardia/);assert.equal(await p.locator('[data-blog-listing-ad]').count(),0);
   assert.match(await p.locator('#paListingRows').innerText(),/10%/);
   const download=p.waitForEvent('download');await p.locator('#paListingExport').click();assert.match((await download).suggestedFilename(),/vetrine-blog-30/);
   for(const theme of ['light','dark']){await p.evaluate(t=>document.documentElement.classList.toggle('admin-dark',t==='dark'),theme);await p.screenshot({path:path.join(out,name+'-'+width+'-'+theme+'.png'),fullPage:true});assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'overflow');}

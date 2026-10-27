@@ -6,6 +6,7 @@
  let owner=null,ads=[],settings={ads:{},posts:{}},postRecord=null,current=null,revision=0,request=0,adRevision=0,postDirty=false,loaded=false,busy=false;
  const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  function status(message,error=false){$('paContextStatus').textContent=message;$('paContextStatus').dataset.error=String(error);}
+ function publishRules(){window.dispatchEvent(new CustomEvent('personal-ads:rules',{detail:{owner,settings}}));}
  function clear(){revision++;request++;owner=null;ads=[];settings={ads:{},posts:{}};postRecord=null;current=null;adRevision=0;postDirty=false;loaded=false;busy=false;$('paContextResult').hidden=true;$('paContextPreview').replaceChildren();$('paContextRows').replaceChildren();for(const id of ['paContextKeywords','paContextFinding','paContextBasis','paContextChosen','paContextDraft'])$(id).textContent='';for(const id of ['paContextSavePost','paContextResetPost','paContextSaveAd'])$(id).disabled=false;$('paContextArticle').removeAttribute('href');$('paContextPost').innerHTML='<option value="">Scegli un articolo</option>';$('paContextAd').replaceChildren();$('paContextPriority').value='';$('paContextExcluded').value='';$('paContextPanel').open=false;$('paContextAdPanel').open=false;status('');}
  async function call(action,params={},body){
   const rev=revision,expected=owner,checked=await _supabase.auth.getUser();if(rev!==revision||!expected||checked.data?.user?.id!==expected)throw Error('Accesso cambiato. Riapri la raccolta.');
@@ -16,12 +17,12 @@
  function adFields(){const ad=ads.find(a=>a.id===$('paContextAd').value);if(!ad)return;const record=settings.ads?.[ad.id],rule=record?.rule||ad.targeting;adRevision=record?.revision||0;$('paContextPriority').value=(rule.priorityKeywords||[]).join('\n');$('paContextExcluded').value=(rule.excludedKeywords||[]).join('\n');}
  async function options(){
   const rev=revision;status('Caricamento articoli e regole…');const result=await call('context-options');if(rev!==revision)return;
-  settings=result.settings;const selected=$('paContextPost').value;$('paContextPost').innerHTML='<option value="">Scegli un articolo</option>'+result.posts.map(p=>'<option value="'+esc(p.slug)+'">'+esc(p.title)+'</option>').join('');if(result.posts.some(p=>p.slug===selected))$('paContextPost').value=selected;
+  settings=result.settings;publishRules();const selected=$('paContextPost').value;$('paContextPost').innerHTML='<option value="">Scegli un articolo</option>'+result.posts.map(p=>'<option value="'+esc(p.slug)+'">'+esc(p.title)+'</option>').join('');if(result.posts.some(p=>p.slug===selected))$('paContextPost').value=selected;
   $('paContextAd').innerHTML=ads.map(ad=>'<option value="'+ad.id+'">'+ad.id+' · '+esc(ad.title)+'</option>').join('');adFields();loaded=true;status('Scegli un articolo per vedere gli abbinamenti.');
  }
  function draft(){const value=$('paContextTopic').value;return {topics:value==='auto'?null:value==='none'?[]:value==='custom'?postRecord.rule.topics:[value],excludedAds:[...$('paContextRows').querySelectorAll('input:checked')].map(el=>el.value)};}
  function render(result,keepDraft){
-  current=result;settings=result.settings;if(!keepDraft){postDirty=false;postRecord=result.postRule;const topics=postRecord.rule.topics,multiple=Array.isArray(topics)&&topics.length>1;$('paContextTopicCustom').hidden=!multiple;$('paContextTopicCustom').textContent=multiple?topics.map(t=>labels[t]).join(' / '):'Argomenti salvati';$('paContextTopic').value=topics===null?'auto':!topics.length?'none':topics.length===1?topics[0]:'custom';}
+  current=result;settings=result.settings;publishRules();if(!keepDraft){postDirty=false;postRecord=result.postRule;const topics=postRecord.rule.topics,multiple=Array.isArray(topics)&&topics.length>1;$('paContextTopicCustom').hidden=!multiple;$('paContextTopicCustom').textContent=multiple?topics.map(t=>labels[t]).join(' / '):'Argomenti salvati';$('paContextTopic').value=topics===null?'auto':!topics.length?'none':topics.length===1?topics[0]:'custom';}
   const eligible=result.rows.filter(r=>r.eligible);$('paContextResult').hidden=false;
   $('paContextFinding').textContent=(result.context.topics.map(t=>labels[t]).join(' / ')||'Nessuna ADS')+' · '+eligible.length+' disponibili';
   const basis={title:'Riconosciuto nel titolo',slug:'Riconosciuto nello slug',intro:'Riconosciuto nell’introduzione',body:'Riconosciuto nel testo',manual:'Correzione manuale',none:'Nessun argomento riconosciuto'};
@@ -52,7 +53,7 @@
    busy=true;request++;for(const id of ['paContextSavePost','paContextResetPost','paContextSaveAd'])$(id).disabled=true;
    status('Salvataggio…');const result=await call('context-save',{}, {scope,key,rule,revision:version});if(rev!==revision)return;
    if(scope==='ad'){settings.ads[key]=result.saved;if($('paContextAd').value===key)adRevision=result.saved.revision;}else{settings.posts[key]=result.saved;if(current?.post.slug===key)postRecord=result.saved;}
-   if($('paContextPost').value)await preview();status(scope==='ad'?'Parole ADS salvate per tutti gli articoli.':'Correzione salvata. I nuovi caricamenti usano la regola.');$('paContextDraft').textContent='';
+   publishRules();if($('paContextPost').value)await preview();status(scope==='ad'?'Parole ADS salvate per tutti gli articoli.':'Correzione salvata. I nuovi caricamenti usano la regola.');$('paContextDraft').textContent='';
   }catch(error){if(rev===revision)status(error.message,true);}
   finally{if(rev===revision){busy=false;for(const id of ['paContextSavePost','paContextResetPost','paContextSaveAd'])$(id).disabled=false;}}
  }
@@ -64,5 +65,5 @@
  $('paContextTopic').addEventListener('change',()=>{postDirty=true;preview(true);});$('paContextRows').addEventListener('change',()=>{postDirty=true;preview(true);});
  $('paContextSavePost').addEventListener('click',()=>save('post'));$('paContextResetPost').addEventListener('click',()=>save('post',true));$('paContextSaveAd').addEventListener('click',()=>save('ad'));
  $('paContextAd').addEventListener('change',adFields);$('paContextResetAd').addEventListener('click',()=>{const ad=ads.find(a=>a.id===$('paContextAd').value);if(ad){$('paContextPriority').value=(ad.targeting.priorityKeywords||[]).join('\n');$('paContextExcluded').value=(ad.targeting.excludedKeywords||[]).join('\n');status('Parole iniziali caricate nei campi. Salva per applicarle.');}});
- $('paContextReloadAd').addEventListener('click',async()=>{const rev=revision,key=$('paContextAd').value;try{const result=await call('context-options');if(rev!==revision||$('paContextAd').value!==key)return;settings=result.settings;adFields();status('Parole salvate ricaricate.');}catch(e){if(rev===revision)status(e.message,true);}});
+ $('paContextReloadAd').addEventListener('click',async()=>{const rev=revision,key=$('paContextAd').value;try{const result=await call('context-options');if(rev!==revision||$('paContextAd').value!==key)return;settings=result.settings;publishRules();adFields();status('Parole salvate ricaricate.');}catch(e){if(rev===revision)status(e.message,true);}});
 })();
