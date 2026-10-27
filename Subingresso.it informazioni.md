@@ -5,6 +5,21 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Lecce — ricerca in corso, checkpoint 27 ottobre 2026
+
+- Solo Lecce, checklist 68 aperta: nessuna conclusione provinciale e nessuna
+  modifica al catalogo. Audit riprendibile `data/fiere-lecce.json`, con 96 comuni
+  da chiudere, 20 riscontri documentali circoscritti e piste ancora aperte.
+  Originali e checkpoint privati in `Documents/ricerca-fiere-lecce-20261027`;
+  dettagli e discordie documentali in `data/FIERE.md`.
+- Backup remoto preventivo `backup/session-20261027-023007-fiere-lecce`
+  verificato; cleanup successivo fallito, senza ripetere il backup riuscito.
+  Prima di integrare: completare copertura comunale, originali e organizzatori;
+  poi controlli, commit/push e verifica del catalogo pubblicato. Non spuntare
+  la provincia in base alla sola acquisizione o a questo checkpoint.
+- Tre ID precedenti e altre province invariati; Pavia riservata. Nessun agente,
+  invio o contatto a terzi; controller, account, quote e processi non modificati.
+
 ## Articolo annunci senza contatti pubblicato — 27 ottobre 2026
 
 - Su richiesta pubblicato il titolo1, slug `vendo-posteggio-nessun-contatto-correzioni-annuncio`,

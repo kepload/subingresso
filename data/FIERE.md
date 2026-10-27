@@ -1,5 +1,56 @@
 # Calendario fiere — fonti e aggiornamento
 
+## Lecce — checkpoint della ricerca, 27 ottobre 2026
+
+**Ricerca in corso, provincia non completata.** Checklist 68 ancora aperta;
+catalogo e tre ID precedenti invariati. Audit riprendibile
+`data/fiere-lecce.json`, originali e ricevute nel dossier privato
+`Documents/ricerca-fiere-lecce-20261027`. Backup remoto preventivo
+`backup/session-20261027-023007-fiere-lecce` verificato; errore del cleanup
+successivo distinto dal push riuscito. Nessun agente o contatto a terzi;
+controller e altre province non modificati.
+
+Avviata la ricognizione dei 96 comuni; le acquisizioni non attestano una
+copertura comunale già conclusa. Salvati 20 riscontri documentali circoscritti,
+con URL, file privato e SHA256. Calendario regionale iniziale letto anche
+visivamente, API CKAN con annualità distinte, contributi II/III quadrimestre
+e calendario storico BURP 171/2010: quest'ultimo serve come elenco di piste,
+senza trasformare le sue ricorrenze e capienze in conferme attuali.
+
+Riscontri utili da conservare nella prosecuzione:
+
+- Sant'Oronzo: 23–26 agosto 2026; contributo 120 € oltre canone e bollo,
+  senza estensione al concerto del 27. Galatina Campionaria: sito e Comune
+  documentano ancora 27–30 giugno 2025, non una conferma 2026.
+- Fiera dei Pupi, già Santa Lucia: avviso 5–27 dicembre 2026 e domande entro
+  28 ottobre. Le norme intestate 2026 scrivono però «dicembre 2027» al punto 1;
+  mantenere la discordanza. Quote 150 € esterno/120 € interno indicative e
+  modificabili, non preventivi definitivi. Preservare l'ID Santa Lucia.
+- Palmariggi: originale scansionato, fiera soltanto la mattina dell'11 ottobre;
+  Trepuzzi: programma originale, fiere soltanto 25 ottobre ore 7–14.
+- Salice: ordinanza originale, mercato fieristico 1–3 luglio ore 6–14,
+  distinto dai festeggiamenti 27 giugno–4 luglio. Campi Salentina:
+  18–19 ottobre, 10 € istruttoria più 10,20 €/metro lineare richiesto.
+- Otranto Antiqua: avviso con periodi aprile–ottobre/aprile–dicembre discordanti,
+  doppio orario settembre e novembre assente dall'elenco orario. Non espandere
+  automaticamente date e orari. Sannicola: modulo libero ingegno con
+  «costo/cauzione» 8 € e causale 2025, da non generalizzare agli ambulanti.
+- Salvestate: programma scansionato letto, compresa la pagina mercatini;
+  Art-Fest Torre Pali 22 luglio e street food/mercatini Pescoluse 13–16 agosto.
+  Aradeo: 31 luglio–2 agosto, area gastronomica selezionata in esclusiva,
+  esenzione dal canone per hobbisti distinta dagli oneri del gestore.
+- Gallipoli: proroga Santa Cristina al 26 luglio e sospensione delle edizioni
+  ottobre–dicembre del mercatino da approfondire negli originali finali.
+  Fiera estiva: 20 posteggi riservati e sei comunali, avvio effettivo dal
+  rilascio dell'autorizzazione, oneri parziali distinti dal costo totale.
+
+Restano le piste comunali e gli originali indicati in `research.openLeads`,
+il primo quadrimestre regionale e gli incroci con gli organizzatori.
+Non tutti i documenti scaricati sono già stati letti: ripartire dai riscontri
+e dall'indice del dossier, senza ripetere acquisizioni riuscite. Seguono ancora
+integrazione, controlli, pubblicazione e verifica con `PLAYWRIGHT_MODULE`;
+nessuna nuova scheda o ricerca provinciale conclusa pubblicata da questo checkpoint.
+
 ## Terni — ricerca documentale, 27 ottobre 2026
 
 Riprese checklist e audit pubblicati: al checkpoint `d815750` nessun audit
