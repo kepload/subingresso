@@ -5,6 +5,22 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## ADS mobile e aggiornamento pagina — 27 ottobre 2026
+
+- Preferenza esplicita: niente pulsanti Aggiorna; numeri nuovi solo ricaricando
+  la pagina. Quattro periodi letti all'apertura, filtri locali; cache svuotata
+  al logout/cambio account. Vale anche per le Vetrine.
+- Galleria senza barra orizzontale: 160 varianti adattate in proporzione,
+  formati originali nei download/codici. Smartphone: filtri compatti e non
+  fissi, Vetrine e azioni superiori ridotte. Contratto `data/PERSONAL_ADS.md`.
+- Pubblicato `c1831ed`: quattro sorgenti online identici a Git, API privata401
+  e anteprima HEAD303. Test raccolta/Vetrine passati anche sui file pubblicati
+  Chromium1440/768/320 e WebKit390; contesto e animazioni verificati in locale.
+  Inspector0FAIL; prove `Documents/ads-mobile-compatto-20261027`, zero eventi reali.
+- Backup remoto verificato, successivo cleanup helper fallito. API gestione
+  Vercel403: pubblicazione verificata direttamente sul dominio. Fixture resize
+  e animazioni aggiornate alla nuova disposizione; file estranei conservati.
+
 ## Caserta — pubblicata e verificata, 27 ottobre 2026
 
 - Ricerca attuale conclusa con limiti espliciti: **83 manifestazioni/48 comuni**,
