@@ -8,14 +8,17 @@ fonti e audit fiere completi: `data/FIERE.md`.
 ## Promozione a fine pubblicazione — 27 ottobre 2026
 
 - Richiesta permanente: «Vendi più in fretta il tuo posteggio», niente acquisto
-  “Premium” nel wizard, descrizioni superflue tolte e spiegazione con tre grafici.
+  “Premium” nel wizard, descrizioni superflue tolte e spiegazione con tre illustrazioni.
   Solo90giorni −10%:249→224,10€,2,49€/giorno;10/30giorni49/99€, gratis predefinito.
 - Offerta solo alla creazione e primo checkout entro10minuti; server/RPC privata
   controllano proprietà, annuncio mai promosso e nessun ordine precedente.
   SQL applicato, Edge18 attiva;152annunci/127profili/21pagamenti identici.
   Test pagamenti/wizard/pacchetti eSQL conROLLBACK passati; zero addebiti reali.
-- Frontend in pubblicazione. Prove `.local/verifiche/pubblicazione-promozione-20261027`;
-  inspector finale0FAIL, quattro formati e due temi verificati. Backup remoto
+- Pubblicato `0ee0479`, Vercel `3bmiERaxsapNSF1qExV21bdDND5f` success:
+  quattro asset online identici a Git, due sorgenti Edge identiciSHA256.
+  Wizard ripetuto sugli asset pubblicati, quattro formati e due temi passati;
+  inspector0FAIL. Prove `.local/verifiche/pubblicazione-promozione-20261027`.
+  Primo controllo durante deploy404, successivo200. Backup remoto
   tag215346 e ramo pre-pubblicazione-promozione verificati; helper fermato nel
   consueto cleanup fallito. Fixture corretta per dati storici/località e chiusa
   la pagina modifica prima del suo redirect; lavoro estraneo preservato.
