@@ -5,6 +5,13 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo incasso minimo del banco — pubblicato e verificato, 27 ottobre 2026
+
+- Titolo rosso n.3 sviluppato su richiesta: [Quanto deve incassare un banco per convenire? I conti prima di comprarlo](https://subingresso.it/blog?post=quanto-deve-incassare-banco-convenire), ID `f8655378-42f1-4d40-9d22-79753980d968`. Testo semplice, sei sezioni, 661 parole incluse fonti; margine distinto da ricarico, IVA, imposte/contributi stimati, rate e liquidità iniziale espliciti. Esempio inventato: margine40%, 3.400€/mese da coprire,20giornate→425€/giornata;16giornate→531,25€. Nessuna media di settore o reddito garantito.
+- Foglio gratuito `/downloads/conti-incasso-banco.xlsx`, due schede, celle input e formule, validazioni e valori iniziali verificati; download reale dal blog identicoSHA256, nessuna macro o raccolta dati. Fonti primarie SNI Unioncamere e INPS scaricate200 ed esaminate (guida PDF p.9 verificata visivamente); copertina originale imagegen WebP1600×900 con dicituraIA.
+- Due slot ADS contestuali inline/closing, entrambe ricerca posteggi con destinazione `/annunci`; rotazione e pertinenza verificate. Materiali `78d0256`, Vercel `3i7pVmFqz7Yr6rRvQdPx33CS1cCK` success. Copertina e foglio online identici; SEO SSR/NewsArticle/canonical, indice/sitemap, Chromium1440/768/320, WebKit390 e senzaJS passati; nessun overflow o errore e nessuna scrittura di prova. Precedenti121articoli identici,122totali.
+- Sorgenti/fonti `data/blog/quanto-deve-incassare-banco-convenire.*`; prompt, originale, helper e prove `Documents/articoli-subingresso/quanto-deve-incassare-banco-convenire`. Checkout isolato `Documents/subingresso-articolo-incasso-20261027`, lavoro altrui preservato. Backup remoto `backup/session-20261027-095010-articolo-incasso-minimo-banco` verificato; cleanuphelper con errore noto successivo, backup valido. Gitleaks sul commit materiali senza rilievi. Titolo nel piano segnato pubblicato dopo verifica.
+
 ## ADS mobile e aggiornamento pagina — 27 ottobre 2026
 
 - Preferenza esplicita: niente pulsanti Aggiorna; numeri nuovi solo ricaricando

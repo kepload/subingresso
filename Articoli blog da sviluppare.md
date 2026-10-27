@@ -4,7 +4,7 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 
 1. 🔴 Vendo il posteggio ma nessuno mi contatta: 7 correzioni dell'annuncio, con esempi prima e dopo — [pubblicato il 27/10/2026](https://subingresso.it/blog?post=vendo-posteggio-nessun-contatto-correzioni-annuncio); [testo sorgente](data/blog/vendo-posteggio-nessun-contatto-correzioni-annuncio.bozza.md).
 2. 🔴 Mercatini di Natale in Lombardia per ambulanti: domande, costi e merce ammessa a confronto
-3. 🔴 Quanto deve incassare un banco per convenire? Il foglio per fare i conti prima di comprare
+3. 🔴 Quanto deve incassare un banco per convenire? Il foglio per fare i conti prima di comprare — [pubblicato il 27/10/2026](https://subingresso.it/blog?post=quanto-deve-incassare-banco-convenire); [testo](data/blog/quanto-deve-incassare-banco-convenire.html) e [foglio scaricabile](downloads/conti-incasso-banco.xlsx).
 4. 🔴 Posteggi in vendita a Milano e provincia: prezzi richiesti e condizioni a confronto
 5. 🟠 Vendo un giro di mercati: annuncio unico o posteggi separati? Tre esempi pratici
 6. 🟠 Affittare un posteggio al mercato: quanto canone puoi permetterti? Fai i conti con il tuo margine
