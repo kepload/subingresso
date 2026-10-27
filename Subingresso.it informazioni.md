@@ -5,6 +5,12 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo vendita del giro di mercati — 27 ottobre 2026
+
+- Piano n.5: [Vendo un posteggio o tutto il giro? Tre esempi per l'annuncio](https://subingresso.it/blog?post=vendere-giro-mercati-annuncio-unico-separati), ID `0d81986d-ab56-46a8-a4bd-b1afdae8e1fd`. Sei sezioni, 454 parole, tre casi inventati; pacchetto/singoli e beni distinti. Fonte lombarda art.25 e modulo live verificati; nessuna funzione pacchetti inventata.
+- Due ADS vendita distinte e alternate, destinazioni `/vendi`; spazio Vetrine conservato. Copertina originale imagegen WebP1600×900 dichiarataIA, online identicaSHA256. Materiali `acc4c1d`, Vercel `ApLcKyahyFcWnjqGSFMZpH1GNbBs` success; SEO/indice/sitemap e Chromium1440/768/320, WebKit390 e senzaJS passati. Precedenti125articoli identici,126totali; tracking di prova intercettato.
+- Sorgenti/fonti/prompt `data/blog/vendere-giro-mercati-annuncio-unico-separati.*`; originali/helper/prove `.local/lavori/articoli/vendere-giro-mercati-annuncio-unico-separati`, checkout `.local/worktrees/articolo-vendere-giro-mercati-20261027`. Piano segnato dopo verifica. Backup remoto `backup/session-20261027-230428-articolo-vendere-giro-mercati` verificato; helper interrotto nel consueto cleanup fallito. Prima selezione ADS generica corretta precisando il titolo; primo404 copertina durante deploy risolto prima dell'inserimento. Gitleaks manuale pulito, file estranei conservati.
+
 ## Ombre del tema scuro — 27 ottobre 2026
 
 - Corretti gli aloni quasi bianchi: otto colori d'ombra Tailwind ora neutri

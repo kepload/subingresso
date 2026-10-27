@@ -6,7 +6,7 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 2. 🔴 Mercatini di Natale in Lombardia per ambulanti: domande, costi e merce ammessa a confronto
 3. 🔴 Quanto deve incassare un banco per convenire? Il foglio per fare i conti prima di comprare — [pubblicato il 27/10/2026](https://subingresso.it/blog?post=quanto-deve-incassare-banco-convenire); [testo](data/blog/quanto-deve-incassare-banco-convenire.html) e [foglio scaricabile](downloads/conti-incasso-banco.xlsx).
 4. 🔴 Posteggi in vendita a Milano e provincia: prezzi richiesti e condizioni a confronto — [pubblicato il 27/10/2026](https://subingresso.it/blog?post=posteggi-vendita-milano-prezzi-confronto); [testo](data/blog/posteggi-vendita-milano-prezzi-confronto.html) e [fonti](data/blog/posteggi-vendita-milano-prezzi-confronto.fonti.md).
-5. 🟠 Vendo un giro di mercati: annuncio unico o posteggi separati? Tre esempi pratici
+5. 🟠 Vendo un giro di mercati: annuncio unico o posteggi separati? Tre esempi pratici — [pubblicato il 27/10/2026](https://subingresso.it/blog?post=vendere-giro-mercati-annuncio-unico-separati); [testo](data/blog/vendere-giro-mercati-annuncio-unico-separati.html) e [fonti](data/blog/vendere-giro-mercati-annuncio-unico-separati.fonti.md).
 6. 🟠 Affittare un posteggio al mercato: quanto canone puoi permetterti? Fai i conti con il tuo margine
 7. 🟠 Comprare un giro di mercati: confronta margini, ore e chilometri di ogni giornata
 8. 🟠 Partecipare a una fiera conviene? Calcola l'incasso minimo prima di pagare il posteggio
