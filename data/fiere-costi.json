@@ -928,12 +928,12 @@
       "review": "existing-curated-note"
     },
     "sardegna-sestu-fiera-di-san-gemiliano": {
-      "label": "Bollo domanda 16 €; costo banco da verificare",
+      "label": "Due bolli da 16 €; tassa suolo aggiuntiva",
       "kind": "partial",
       "period": "2026",
-      "details": "Il modulo per il 4–6 settembre 2026 richiede una marca da bollo da 16 €. Questa è soltanto un’imposta sulla domanda e non la quota di partecipazione o il canone dello spazio: importi ulteriori da chiedere all’Ufficio Commercio.",
-      "sourceUrl": "https://comune.sestu.ca.it/wp-content/uploads/2026/08/Modulo-di-domanda_SGM2026.pdf",
-      "checkedAt": "2026-10-15",
+      "details": "Bando 2026: bollo da 16 € sulla domanda e ulteriore bollo da 16 € per il rilascio della concessione; totale imposte 32 €, salvo eventuali esenzioni applicabili. Prima della presa di possesso va inoltre pagata la tassa di concessione del suolo pubblico, il cui importo non è quantificato nel bando. I 32 € non sono il costo totale del banco.",
+      "sourceUrl": "https://comune.sestu.ca.it/wp-content/uploads/2026/08/Bando-pubblico-posteggi-San-Gemiliano.pdf",
+      "checkedAt": "2026-10-27",
       "review": "live-source-review"
     },
     "toscana-laterina-pergine-valdarno-laterina-medievale-banchi-di-vendita": {
@@ -2069,6 +2069,150 @@
       "sourceUrl": "https://www.etruriaservizi.com/pdf/sangemini/regolamento%20canone%20unico%20san%20gemini.pdf",
       "checkedAt": "2026-10-27",
       "period": null
+    },
+    "sardegna-cagliari-sagra-di-sant-efisio": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-cagliari-festa-della-madonna-di-bonaria": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-cagliari-festa-di-santa-maria-chiara": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-cagliari-festa-di-sant-ignazio": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-cagliari-festa-del-beato-nicola-da-gesturi": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-cagliari-festa-di-san-francesco": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-cagliari-posteggi-della-commemorazione-dei-defunti": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-cagliari-posteggi-del-presepe-dei-cappuccini": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-cagliari-posteggi-di-capodanno": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-cagliari-festa-di-santa-lucia": {
+      "label": "Due bolli da 16 €; canone da verificare",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Il servizio comunale delle manifestazioni calendarizzate indica 16 € per la domanda e 16 € per il ritiro della concessione. Sono imposte, non il prezzo del posteggio; canone e condizioni specifiche vanno verificati nell’atto dell’evento. Non estendere la voce agli stand interni delle fiere.",
+      "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-muravera-sagra-degli-agrumi": {
+      "label": "12,25–37,50 € per gli spazi indicati; bollo aggiuntivo",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Avviso del 13 aprile 2026: via Montessori, street food 50 m² 37,50 €, agroalimentare/pasticceria 35 m² 26,25 €; via Giardini, non alimentare 35 m² 12,25 €. Importi relativi alle aree e categorie autorizzate per il solo 19 aprile, non prezzi universali. Il bando richiede inoltre bollo domanda da 16 €; ulteriori adempimenti o servizi non sono compresi per deduzione.",
+      "sourceUrl": "https://servizionline.comunedimuravera.it/portale/trasparenza/getfile.aspx?ref=4702",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-guasila-saboris-antigus": {
+      "label": "10 € residenti; 20 € non residenti",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Contributo di partecipazione indicato nell’avviso 2026: 10 € per espositori residenti, 20 € per non residenti, con ricevuta PagoPA obbligatoria allegata alla domanda entro 15 novembre. Importi condizionati all’ammissione e alla categoria; gli adempimenti amministrativi e sanitari restano separati.",
+      "sourceUrl": "https://comune.guasila.su.it/download/3eb3225401ec49d78fca7802b672abad/pubblico%20avviso.pdf?19ddce8402a04593b011b320a61e963f",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-sinnai-calici-d-autunno": {
+      "label": "Artigiani/hobbisti: esenti da CUP e bollo",
+      "kind": "partial",
+      "period": "2026",
+      "details": "Per i posteggi di artigiani e hobbisti di Calici d’Autunno 2026 il Comune prevede esenzione dal canone di occupazione e dall’imposta di bollo. Gazebo, bancarella e illuminazione sono propri; non si estende l’esenzione a una diversa concessione per somministrazione.",
+      "sourceUrl": "https://www.comune.sinnai.ca.it/download/f71a17a576f14481a7f1a9976794f124/Bando%20Calici%20Autunno%202026.pdf?bfad6c2d91eb3118c81edfe8b71cd58e",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-serdiana-serdiana-wine-festival-intrecci-di-vite": {
+      "label": "Partecipazione gratuita; allestimento proprio",
+      "kind": "free",
+      "period": "2026",
+      "details": "L’avviso aggiornato 2026 prevede partecipazione gratuita e nessun canone suolo per gli ammessi. Restano a carico dell’espositore gazebo bianco, tavoli, illuminazione, trasporto e autorizzazioni della propria attività; nessun rimborso spese e nessuna fornitura elettrica garantita.",
+      "sourceUrl": "https://www.comune.serdiana.su.it/wp-content/uploads/2026/10/avviso-1.pdf",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-decimomannu-sagra-di-santa-greca": {
+      "label": "Quote per categoria; cauzione 250 € dove prevista",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Tabella settembre 2026 per aree ordinarie: artigianato tipico/non alimentari elencati e fiori/piante 300 € (3 giorni) o 400 € (5); agroalimentare/pasticceria 200 € (3) o 330 € (5); arrosti 500 €; chioschi/autobar 500 o 600 € secondo stallo; locande 1.100 €. Cauzione 250 € per queste categorie. Hobby/artigianato creativo e associazioni indicate esenti: non esenzione generale. La tabella non è un preventivo individuale e non prova posti liberi.",
+      "sourceUrl": "https://comune.decimomannu.ca.it/.galleries/doc-documenti/CommercioSettembre2026/quota-di-partecipazione.pdf",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "sardegna-castiadas-festa-della-ss-assunta": {
+      "label": "CUP 0,75 €/m²; condizioni nell’avviso",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Avviso operatori 2026: rilascio subordinato a pagamento PagoPA del CUP pari a 0,75 €/m², con ricevuta da esibire alla Polizia Locale all’assegnazione. L’avviso non consente di dedurre un totale per banco, durata della tariffa o servizi inclusi.",
+      "sourceUrl": "https://www.comune.castiadas.su.it/it/news/2030551",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
     }
   }
 }

@@ -2683,17 +2683,6 @@
   },
   {
     "region": "Sardegna",
-    "name": "Fiera di San Gemiliano",
-    "city": "Sestu",
-    "months": "9",
-    "category": "tradizionale",
-    "source": {
-      "url": "https://comune.sestu.ca.it/novita/bando-pubblico-assegnazione-posteggi-in-localita-san-gemiliano-2026/",
-      "label": "comune.sestu.ca.it"
-    }
-  },
-  {
-    "region": "Sardegna",
     "name": "Sagra del Redentore",
     "city": "Nuoro",
     "months": "8",
@@ -2705,17 +2694,6 @@
   },
   {
     "region": "Sardegna",
-    "name": "Sagra di Sant'Efisio",
-    "city": "Cagliari",
-    "months": "5",
-    "category": "sagra",
-    "source": {
-      "url": "https://cagliariturismo.comune.cagliari.it/index.php/it/events/370a-festa-di-santefisio",
-      "label": "cagliariturismo.comune.cagliari.it"
-    }
-  },
-  {
-    "region": "Sardegna",
     "name": "Sagra del Carciofo",
     "city": "Uri",
     "months": "3",
@@ -2723,17 +2701,6 @@
     "source": {
       "url": "https://comune.uri.ss.it/luoghi/3413056/attivita-prevalenti",
       "label": "comune.uri.ss.it"
-    }
-  },
-  {
-    "region": "Sardegna",
-    "name": "Sagra degli Agrumi",
-    "city": "Muravera",
-    "months": "4",
-    "category": "sagra",
-    "source": {
-      "url": "https://www.sardegnaturismo.it/it/eventi/sagra-degli-agrumi",
-      "label": "sardegnaturismo.it"
     }
   },
   {
@@ -2768,5 +2735,2727 @@
       "url": "https://comune.tonara.nu.it/it/eventi/tonara-06-aprile-45-sagra-del-torrone-edizione-2026",
       "label": "comune.tonara.nu.it"
     }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sestu",
+    "name": "Fiera di San Gemiliano",
+    "months": [
+      9
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://comune.sestu.ca.it/novita/bando-pubblico-assegnazione-posteggi-in-localita-san-gemiliano-2026/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://comune.sestu.ca.it/novita/bando-pubblico-assegnazione-posteggi-in-localita-san-gemiliano-2026/",
+      "https://comune.sestu.ca.it/wp-content/uploads/2026/08/Bando-pubblico-posteggi-San-Gemiliano.pdf",
+      "https://comune.sestu.ca.it/wp-content/uploads/2026/08/Modulo-di-domanda_SGM2026.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-04",
+        "end": "2026-09-06",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.sestu.ca.it/novita/bando-pubblico-assegnazione-posteggi-in-localita-san-gemiliano-2026/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Località San Gemiliano, 4–6 settembre 2026. Bando e quattro pagine dell’originale esaminati anche visivamente: operatori del commercio su area pubblica, produttori agricoli e somministrazione. Domande 13–24 agosto, PEC protocollo.sestu@pec.it o consegna al Protocollo; graduatorie distinte e scelta pubblica il 28 agosto alle 11. Le date sono storiche e non autorizzano accesso a edizioni successive."
+    },
+    "id": "sardegna-sestu-fiera-di-san-gemiliano"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Sagra di Sant'Efisio",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_st_patricks_village_2026?contentId=DOC252164",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_st_patricks_village_2026?contentId=DOC252164",
+      "https://www.comune.cagliari.it/portale/protected/254392/0/def/ref/DOC252164/",
+      "https://www.comune.cagliari.it/portale/protected/255234/0/def/ref/DOC252164/",
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-01",
+        "end": "2026-05-01",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_st_patricks_village_2026?contentId=DOC252164"
+      },
+      {
+        "year": 2026,
+        "start": "2026-05-04",
+        "end": "2026-05-04",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_st_patricks_village_2026?contentId=DOC252164"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Posteggi comunali per il 1° e il 4 maggio 2026, distinti dall’intera festa 1–4 maggio. Originale: via Roma il 1° maggio mattina/primo pomeriggio; piazza del Carmine la sera del 1° e del 4. Una sola data e un solo sito per istanza, nei limiti previsti; anzianità e sorteggio. Per una nuova edizione seguire il servizio delle manifestazioni calendarizzate: domanda telematica tra 120 e 60 giorni prima, non candidatura libera al momento della festa."
+    },
+    "id": "sardegna-cagliari-sagra-di-sant-efisio"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Festa della Madonna di Bonaria",
+    "months": [
+      4,
+      7
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica alimentare e non alimentare",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_madonna_di_bonaria__aprile_2026?contentId=DOC253414",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_madonna_di_bonaria__aprile_2026?contentId=DOC253414",
+      "https://www.comune.cagliari.it/portale/protected/254267/0/def/ref/DOC253414/",
+      "https://www.comune.cagliari.it/portale/protected/259681/0/def/ref/DOC258955/",
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-24",
+        "end": "2026-04-24",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_madonna_di_bonaria__aprile_2026?contentId=DOC253414"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-05",
+        "end": "2026-07-05",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_madonna_di_bonaria__aprile_2026?contentId=DOC253414"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Viale Bonaria; l’oggetto della pagina di aprile contiene un testo copiato da Orienta Sardegna: prevale la graduatoria originale del 24 aprile. La ricorrenza estiva è il 5 luglio. Procedura comunale per manifestazioni calendarizzate, con titolo abilitativo e selezione; le graduatorie 2026 non si trasferiscono automaticamente a un nuovo anno."
+    },
+    "id": "sardegna-cagliari-festa-della-madonna-di-bonaria"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Festa di Santa Maria Chiara",
+    "months": [
+      4
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica alimentare e non alimentare",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_di_santa_maria_chiara_2026?contentId=DOC251300",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_di_santa_maria_chiara_2026?contentId=DOC251300",
+      "https://www.comune.cagliari.it/portale/protected/254003/0/def/ref/DOC251300/",
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-05",
+        "end": "2026-04-11",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_di_santa_maria_chiara_2026?contentId=DOC251300"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Via Italia, Pirri. Le giornate sono articolate nelle due pagine della graduatoria, non una conferma di apertura continua degli stand. Procedura comunale per manifestazioni calendarizzate, con titolo abilitativo e selezione; le graduatorie 2026 non si trasferiscono automaticamente a un nuovo anno."
+    },
+    "id": "sardegna-cagliari-festa-di-santa-maria-chiara"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Festa di Sant'Ignazio",
+    "months": [
+      5
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica alimentare e non alimentare",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__festa_di_santignazio_2026?contentId=DOC255795",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__festa_di_santignazio_2026?contentId=DOC255795",
+      "https://www.comune.cagliari.it/portale/protected/256726/0/def/ref/DOC255795/",
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-10",
+        "end": "2026-05-11",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__festa_di_santignazio_2026?contentId=DOC255795"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Viale Sant’Ignazio da Laconi; graduatoria per bancarelle, nelle giornate e nei turni autorizzati. Procedura comunale per manifestazioni calendarizzate, con titolo abilitativo e selezione; le graduatorie 2026 non si trasferiscono automaticamente a un nuovo anno."
+    },
+    "id": "sardegna-cagliari-festa-di-sant-ignazio"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Festa del Beato Nicola da Gesturi",
+    "months": [
+      6
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica alimentare e non alimentare",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__festa_beato_nicola_da_gesturi_2026?contentId=DOC257892",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__festa_beato_nicola_da_gesturi_2026?contentId=DOC257892",
+      "https://www.comune.cagliari.it/portale/protected/258804/0/def/ref/DOC257892/",
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-08",
+        "end": "2026-06-08",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__festa_beato_nicola_da_gesturi_2026?contentId=DOC257892"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Viale Fra’ Ignazio; graduatoria per bancarelle, distinta da una disponibilità attuale di spazio. Procedura comunale per manifestazioni calendarizzate, con titolo abilitativo e selezione; le graduatorie 2026 non si trasferiscono automaticamente a un nuovo anno."
+    },
+    "id": "sardegna-cagliari-festa-del-beato-nicola-da-gesturi"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Festa di San Francesco",
+    "months": [
+      10
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica alimentare e non alimentare",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_di_san_francesco_2026?contentId=DOC263230",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_di_san_francesco_2026?contentId=DOC263230",
+      "https://www.comune.cagliari.it/portale/protected/263941/0/def/ref/DOC263230/",
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-04",
+        "end": "2026-10-04",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_festa_di_san_francesco_2026?contentId=DOC263230"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Via Piemonte, lato chiesa. Due operatori nella graduatoria definitiva: il dato descrive gli ammessi, non posti liberi. Procedura comunale per manifestazioni calendarizzate, con titolo abilitativo e selezione; le graduatorie 2026 non si trasferiscono automaticamente a un nuovo anno."
+    },
+    "id": "sardegna-cagliari-festa-di-san-francesco"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Posteggi della Commemorazione dei defunti",
+    "months": [
+      10,
+      11
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza compresa espressamente nell’elenco comunale delle manifestazioni calendarizzate. La scheda riguarda il commercio temporaneo autorizzato, non gli ingressi allo spettacolo o al luogo di culto. Periodo usuale, senza date 2026/2027 confermate da un bando specifico. Domanda telematica tra 120 e 60 giorni prima; requisiti e graduatoria necessari."
+    },
+    "id": "sardegna-cagliari-posteggi-della-commemorazione-dei-defunti"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Posteggi del Presepe dei Cappuccini",
+    "months": [
+      12,
+      1
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza compresa espressamente nell’elenco comunale delle manifestazioni calendarizzate. La scheda riguarda il commercio temporaneo autorizzato, non gli ingressi allo spettacolo o al luogo di culto. Periodo usuale, senza date 2026/2027 confermate da un bando specifico. Domanda telematica tra 120 e 60 giorni prima; requisiti e graduatoria necessari."
+    },
+    "id": "sardegna-cagliari-posteggi-del-presepe-dei-cappuccini"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Posteggi di Capodanno",
+    "months": [
+      12
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza compresa espressamente nell’elenco comunale delle manifestazioni calendarizzate. La scheda riguarda il commercio temporaneo autorizzato, non gli ingressi allo spettacolo o al luogo di culto. Periodo usuale, senza date 2026/2027 confermate da un bando specifico. Domanda telematica tra 120 e 60 giorni prima; requisiti e graduatoria necessari."
+    },
+    "id": "sardegna-cagliari-posteggi-di-capodanno"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Festa di Santa Lucia",
+    "months": [
+      12
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/manifestazioni_calendarizzate?contentId=SRV98255"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza compresa espressamente nell’elenco comunale delle manifestazioni calendarizzate. La scheda riguarda il commercio temporaneo autorizzato, non gli ingressi allo spettacolo o al luogo di culto. Periodo usuale, senza date 2026/2027 confermate da un bando specifico. Domanda telematica tra 120 e 60 giorni prima; requisiti e graduatoria necessari."
+    },
+    "id": "sardegna-cagliari-festa-di-santa-lucia"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "GioCoMix",
+    "months": [
+      3
+    ],
+    "category": "espositiva",
+    "sectors": "somministrazione alimenti e bevande; esposizione specializzata dove prevista",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti_evento_giocomix_2026?contentId=DOC252437",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti_evento_giocomix_2026?contentId=DOC252437",
+      "https://www.comune.cagliari.it/portale/protected/253410/0/def/ref/DOC252437/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-28",
+        "end": "2026-03-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti_evento_giocomix_2026?contentId=DOC252437"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Fumetti, giochi e cultura pop. I posteggi autobar in piazza Marco Polo seguono la graduatoria comunale; uno stand interno richiede un rapporto distinto con l’organizzatore. Originale della graduatoria consultato; presenze e disponibilità restano soggette all’atto di concessione. Nessun costo dello stand o nuova disponibilità dedotti dal biglietto visitatore."
+    },
+    "id": "sardegna-cagliari-giocomix"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Cartoon Play",
+    "months": [
+      4
+    ],
+    "category": "espositiva",
+    "sectors": "somministrazione alimenti e bevande; esposizione specializzata dove prevista",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_cartoon_play_2026?contentId=DOC253507",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_cartoon_play_2026?contentId=DOC253507",
+      "https://www.comune.cagliari.it/portale/protected/254336/0/def/ref/DOC253507/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-11",
+        "end": "2026-04-12",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_cartoon_play_2026?contentId=DOC253507"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza Marco Polo: concessioni autobar a servizio dell’evento, non autorizzazione generale a vendere dentro il quartiere fieristico. Originale della graduatoria consultato; presenze e disponibilità restano soggette all’atto di concessione. Nessun costo dello stand o nuova disponibilità dedotti dal biglietto visitatore."
+    },
+    "id": "sardegna-cagliari-cartoon-play"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Cagliari Tattoo Convention",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "sectors": "somministrazione alimenti e bevande; esposizione specializzata dove prevista",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_cagliari_tattoo_convention_2026?contentId=DOC263653",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_cagliari_tattoo_convention_2026?contentId=DOC263653",
+      "https://www.comune.cagliari.it/portale/protected/264192/0/def/ref/DOC263653/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-11",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_cagliari_tattoo_convention_2026?contentId=DOC263653"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Expo di tatuaggio, arte e artigianato. Distinguere le adesioni espositive interne dalle concessioni autobar in piazza Marco Polo. Originale della graduatoria consultato; presenze e disponibilità restano soggette all’atto di concessione. Nessun costo dello stand o nuova disponibilità dedotti dal biglietto visitatore."
+    },
+    "id": "sardegna-cagliari-cagliari-tattoo-convention"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Wine Not",
+    "months": [
+      10
+    ],
+    "category": "tradizionale",
+    "sectors": "somministrazione alimenti e bevande; esposizione specializzata dove prevista",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_oktober_fest_2026?contentId=DOC264151",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_oktober_fest_2026?contentId=DOC264151",
+      "https://www.comune.cagliari.it/portale/protected/267865/0/def/ref/DOC264151/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-24",
+        "end": "2026-10-24",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_oktober_fest_2026?contentId=DOC264151"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Graduatoria definitiva per autobar in piazza Marco Polo la sera del 24 ottobre: il nome tecnico dell’URL rimanda erroneamente a Oktober Fest. Originale della graduatoria consultato; presenze e disponibilità restano soggette all’atto di concessione. Nessun costo dello stand o nuova disponibilità dedotti dal biglietto visitatore."
+    },
+    "id": "sardegna-cagliari-wine-not"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Oktober Fest",
+    "months": [
+      10
+    ],
+    "category": "tradizionale",
+    "sectors": "somministrazione alimenti e bevande; esposizione specializzata dove prevista",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_wine_not_2026?contentId=DOC264158",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_wine_not_2026?contentId=DOC264158",
+      "https://www.comune.cagliari.it/portale/protected/267859/0/def/ref/DOC264158/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-17",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_wine_not_2026?contentId=DOC264158"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Graduatoria definitiva per autobar in piazza Marco Polo la sera del 17 ottobre: il nome tecnico dell’URL rimanda erroneamente a Wine Not. Originale della graduatoria consultato; presenze e disponibilità restano soggette all’atto di concessione. Nessun costo dello stand o nuova disponibilità dedotti dal biglietto visitatore."
+    },
+    "id": "sardegna-cagliari-oktober-fest"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Posteggi di Halloween Sardinia Festival",
+    "months": [
+      10
+    ],
+    "category": "tradizionale",
+    "sectors": "somministrazione alimenti e bevande; esposizione specializzata dove prevista",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_halloween_sardinia_festival_2026?contentId=DOC267886",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_halloween_sardinia_festival_2026?contentId=DOC267886",
+      "https://www.comune.cagliari.it/portale/protected/268276/0/def/ref/DOC267886/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-30",
+        "end": "2026-10-31",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/ambulanti__evento_halloween_sardinia_festival_2026?contentId=DOC267886"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza Marco Polo, autobar serali. La graduatoria definitiva è stata pubblicata il 26 ottobre; domande ordinarie 31 agosto–30 settembre. I due giorni sono distinti nella graduatoria; non si tratta di posti ancora prenotabili. Originale della graduatoria consultato; presenze e disponibilità restano soggette all’atto di concessione. Nessun costo dello stand o nuova disponibilità dedotti dal biglietto visitatore."
+    },
+    "id": "sardegna-cagliari-posteggi-di-halloween-sardinia-festival"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Mercatini di Natale - Piazza del Carmine",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/il_villaggio_di_natale_in_piazza_del_carmine_sara_la_novita_delle_festivita_2026?contentId=NVT267365",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/il_villaggio_di_natale_in_piazza_del_carmine_sara_la_novita_delle_festivita_2026?contentId=NVT267365",
+      "https://www.comune.cagliari.it/portale/page/it/bando_mercatini_di_natale_siti_in_piazze_del_carmine__2026?contentId=DOC256370",
+      "https://www.comune.cagliari.it/portale/protected/256372/0/def/ref/DOC256370/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-01",
+        "end": "2027-01-06",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/il_villaggio_di_natale_in_piazza_del_carmine_sara_la_novita_delle_festivita_2026?contentId=NVT267365"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Il Comune annuncia 1 dicembre 2026–6 gennaio 2027 e affidamento al CCN Corso Vittorio Emanuele II e Piazza Yenne. Il bando triennale riguarda il gestore, non l’assegnazione diretta delle singole casette: scadenza gestore 20 maggio. Il bando definiva il periodo indicativo; l’annuncio del 5 ottobre conferma il calendario generale. Per esporre serve ammissione del gestore; riduzione comunale del canone al gestore e ingresso gratuito dei visitatori non costituiscono una tariffa per l’espositore."
+    },
+    "id": "sardegna-cagliari-mercatini-di-natale-piazza-del-carmine"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Mercatini di Natale - Piazza Yenne e Corso Vittorio Emanuele",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/il_villaggio_di_natale_in_piazza_del_carmine_sara_la_novita_delle_festivita_2026?contentId=NVT267365",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/il_villaggio_di_natale_in_piazza_del_carmine_sara_la_novita_delle_festivita_2026?contentId=NVT267365",
+      "https://www.comune.cagliari.it/portale/page/it/bando_mercatini_di_natale_siti_in_piazza_yenne_e_corso_vittorio_emanuele__triennio_2026__2028?contentId=DOC256384",
+      "https://www.comune.cagliari.it/portale/protected/256385/0/def/ref/DOC256384/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-01",
+        "end": "2027-01-06",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/il_villaggio_di_natale_in_piazza_del_carmine_sara_la_novita_delle_festivita_2026?contentId=NVT267365"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Il Comune annuncia 1 dicembre 2026–6 gennaio 2027 e affidamento al CCN Corso Vittorio Emanuele II e Piazza Yenne. Il bando triennale riguarda il gestore, non l’assegnazione diretta delle singole casette: scadenza gestore 20 maggio. Il bando definiva il periodo indicativo; l’annuncio del 5 ottobre conferma il calendario generale. Per esporre serve ammissione del gestore; riduzione comunale del canone al gestore e ingresso gratuito dei visitatori non costituiscono una tariffa per l’espositore."
+    },
+    "id": "sardegna-cagliari-mercatini-di-natale-piazza-yenne-e-corso-vittorio-emanuele"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Fiera Natale",
+    "months": [
+      12,
+      1
+    ],
+    "category": "espositiva",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/il_villaggio_di_natale_in_piazza_del_carmine_sara_la_novita_delle_festivita_2026?contentId=NVT267365",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/il_villaggio_di_natale_in_piazza_del_carmine_sara_la_novita_delle_festivita_2026?contentId=NVT267365"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La comunicazione comunale del 5 ottobre 2026 annuncia la 44ª Fiera Natale al quartiere fieristico fino all’Epifania, con promozione dei territori e accesso pubblico gratuito. Non applicare automaticamente il 1 dicembre indicato per i mercatini del centro: il documento non precisa l’inizio autonomo della Fiera. Adesione espositiva presso l’Ente Fiera, categorie, giornate e costi da verificare."
+    },
+    "id": "sardegna-cagliari-fiera-natale"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Fiera Mercato del Vintage",
+    "months": [
+      12
+    ],
+    "category": "mercatino",
+    "sectors": "abbigliamento vintage, antiquariato, collezionismo e artigianato",
+    "source": {
+      "url": "https://www.mercatinodelvintage.it/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.mercatinodelvintage.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-06",
+        "end": "2026-12-08",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.mercatinodelvintage.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-12-12",
+        "end": "2026-12-13",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.mercatinodelvintage.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Padiglione G, 6–8 e 12–13 dicembre 2026, ore 10–20 nel programma in testa al sito. Abbigliamento, vinili, arredamento e oggettistica vintage; candidatura espositore con l’organizzatore. Il sito conserva blocchi di edizioni precedenti e numerazioni discordanti: usati i due weekend espliciti del programma 2026, non il vecchio flyer 2025; nessun prezzo stand pubblicato verificato."
+    },
+    "id": "sardegna-cagliari-fiera-mercato-del-vintage"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Ristoamare",
+    "months": [
+      3
+    ],
+    "category": "espositiva",
+    "sectors": "alimentari, bevande, attrezzature e servizi professionali",
+    "source": {
+      "url": "https://www.ristoamare.it/fiera-ristoamare-2026-post-evento/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.ristoamare.it/fiera-ristoamare-2026-post-evento/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-08",
+        "end": "2026-03-10",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.ristoamare.it/fiera-ristoamare-2026-post-evento/"
+      },
+      {
+        "year": 2027,
+        "start": "2027-03-21",
+        "end": "2027-03-23",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.ristoamare.it/fiera-ristoamare-2026-post-evento/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Fiera B2B food service, non mercato generalista: food & beverage, attrezzature, tecnologie e servizi. Organizzatore La Rosa dei Venti. Edizione 2026 8–10 marzo; la stessa pagina annuncia 21–23 marzo 2027. Stand e condizioni contrattuali da concordare con l’organizzatore, senza dedurre quote dal biglietto del visitatore."
+    },
+    "id": "sardegna-cagliari-ristoamare"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Creative Corner Market",
+    "months": [
+      10
+    ],
+    "category": "artigianato",
+    "sectors": "artigianato creativo, illustrazione",
+    "source": {
+      "url": "https://www.lazzarettodicagliari.it/event/%F0%9F%8D%82il-creative-corner-market-leaves-edition-al-lazzaretto-di-cagliari-il-17-e-18-ottobre-2026%F0%9F%8D%82/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.lazzarettodicagliari.it/event/%F0%9F%8D%82il-creative-corner-market-leaves-edition-al-lazzaretto-di-cagliari-il-17-e-18-ottobre-2026%F0%9F%8D%82/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.lazzarettodicagliari.it/event/%F0%9F%8D%82il-creative-corner-market-leaves-edition-al-lazzaretto-di-cagliari-il-17-e-18-ottobre-2026%F0%9F%8D%82/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Lazzaretto, 17–18 ottobre 2026, dalle 11 alle 20. L’ente ospitante descrive esposizione e vendita di creazioni di artigiani, handmakers e illustratori, organizzate da Amazing Us; candidature all’organizzatore indicato nella fonte. L’ingresso visitatore gratuito non è una quota espositiva e non attesta ammissione."
+    },
+    "id": "sardegna-cagliari-creative-corner-market"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Cagliari",
+    "name": "Sagra del Pesce di Giorgino",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.cagliari.it/portale/page/it/a_giorgino_torna_la_sagra_del_pesce_tradizione_musica_e_la_novita_della_pasta_al_cartoccio_delle_donne_del_borgo?contentId=NVT262860",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cagliari.it/portale/page/it/a_giorgino_torna_la_sagra_del_pesce_tradizione_musica_e_la_novita_della_pasta_al_cartoccio_delle_donne_del_borgo?contentId=NVT262860"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cagliari.it/portale/page/it/a_giorgino_torna_la_sagra_del_pesce_tradizione_musica_e_la_novita_della_pasta_al_cartoccio_delle_donne_del_borgo?contentId=NVT262860"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Villaggio Pescatori, 5 e 6 settembre 2026. Il Comune presenta la sagra organizzata dal Comitato di quartiere con cucina e volontari. Non è stato verificato un bando aperto a venditori esterni: partecipazione commerciale, eventuale somministrazione e costi necessitano di specifica autorizzazione, non si deducono dall’accesso pubblico."
+    },
+    "id": "sardegna-cagliari-sagra-del-pesce-di-giorgino"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Muravera",
+    "name": "Sagra degli Agrumi",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comunedimuravera.it/ente/avvisi/433",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comunedimuravera.it/ente/avvisi/433",
+      "https://servizionline.comunedimuravera.it/portale/trasparenza/getfile.aspx?ref=4583",
+      "https://servizionline.comunedimuravera.it/portale/trasparenza/getfile.aspx?ref=4702",
+      "https://www.comunedimuravera.it/ente/avvisi/440",
+      "https://www.sardegnaturismo.it/it/eventi/sagra-degli-agrumi"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-19",
+        "end": "2026-04-19",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comunedimuravera.it/ente/avvisi/433"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "52ª edizione: programma turistico 16–19 e 24–25 aprile, ma il bando posteggi qui verificato riguarda soltanto domenica 19 aprile 2026, vie Giardini e Montessori. Domande 17–26 marzo entro le 12, modulo e requisiti; graduatoria definitiva 13 aprile. Allestimento entro le 8 e permanenza fino alle 22; pagamento entro le 9 del 17 aprile. Non estendere la concessione agli altri giorni del programma turistico."
+    },
+    "id": "sardegna-muravera-sagra-degli-agrumi"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Muravera",
+    "name": "Festa di Sant'Agostino",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://servizionline.comunedimuravera.it/portale/trasparenza/trasparenzaamministrativadettaglio.aspx?R=1&CP=144&CDOC=1245",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://servizionline.comunedimuravera.it/portale/trasparenza/trasparenzaamministrativadettaglio.aspx?R=1&CP=144&CDOC=1245"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-27",
+        "end": "2025-08-30",
+        "dateType": "calendar",
+        "sourceUrl": "https://servizionline.comunedimuravera.it/portale/trasparenza/trasparenzaamministrativadettaglio.aspx?R=1&CP=144&CDOC=1245"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Bando comunale per artigianato, commercio e somministrazione nell’edizione 27–30 agosto 2025; istanze 24 luglio–4 agosto 2025, ore 12. La graduatoria pubblicata successivamente non conferma un’edizione 2026 né posti liberi. Le date sono conservate come storico, senza rinnovo automatico."
+    },
+    "id": "sardegna-muravera-festa-di-sant-agostino"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Gergei",
+    "name": "Saboris Antigus",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-25",
+        "end": "2026-10-25",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Domus, produzioni locali e antichi mestieri; un avviso di contributi alle associazioni organizzatrici non è un bando per singoli venditori. Calendario della rassegna distinto dalle condizioni di ammissione degli espositori; eventuali variazioni restano di competenza dell’organizzazione."
+    },
+    "id": "sardegna-gergei-saboris-antigus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Selegas",
+    "name": "Saboris Antigus",
+    "months": [
+      10,
+      11
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "https://www.comune.selegas.su.it/novita/saboris-antigus-informazioni-per-espositori/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-31",
+        "end": "2026-11-01",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso del 19 ottobre: adesioni tramite i referenti pubblicati dal Comune, comunicando nome, prodotto, spazio e una o due giornate di partecipazione. Quote e accettazione da definire con l’organizzazione. Calendario della rassegna distinto dalle condizioni di ammissione degli espositori; eventuali variazioni restano di competenza dell’organizzazione."
+    },
+    "id": "sardegna-selegas-saboris-antigus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Serri",
+    "name": "Saboris Antigus",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "https://www.comune.serri.su.it/novita/saboris-antigus-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-08",
+        "end": "2026-11-08",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Modulistica comunale distinta per spazio espositivo e somministrazione; non confondere con le fiere di Santa Lucia. Calendario della rassegna distinto dalle condizioni di ammissione degli espositori; eventuali variazioni restano di competenza dell’organizzazione."
+    },
+    "id": "sardegna-serri-saboris-antigus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Siurgus Donigala",
+    "name": "Saboris Antigus",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "https://www.comune.siurgusdonigala.su.it/novita/saboris-antigus-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-15",
+        "end": "2026-11-15",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Domanda comunale entro l’11 novembre; moduli separati per suolo e punto ristoro. Chi non ha autorizzazione alla vendita deve seguire le indicazioni SCIA/SUAP della fonte; non costituisce un’esenzione generalizzata. Calendario della rassegna distinto dalle condizioni di ammissione degli espositori; eventuali variazioni restano di competenza dell’organizzazione."
+    },
+    "id": "sardegna-siurgus-donigala-saboris-antigus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Gesico",
+    "name": "Saboris Antigus",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-22",
+        "end": "2026-11-22",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Calendario 2026 verificato; l’elenco espositori e l’obbligo di presenza 7:30–20 reperiti riguardano il 2025 e non vengono trasferiti al nuovo anno. Calendario della rassegna distinto dalle condizioni di ammissione degli espositori; eventuali variazioni restano di competenza dell’organizzazione."
+    },
+    "id": "sardegna-gesico-saboris-antigus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Suelli",
+    "name": "Saboris Antigus",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-29",
+        "end": "2026-11-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario nazionale conferma la tappa 2026. Il modulo adesione comunale individuato è intestato 2025: non usarlo come nuova apertura delle domande. Calendario della rassegna distinto dalle condizioni di ammissione degli espositori; eventuali variazioni restano di competenza dell’organizzazione."
+    },
+    "id": "sardegna-suelli-saboris-antigus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Guasila",
+    "name": "Saboris Antigus",
+    "months": [
+      12
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "https://comune.guasila.su.it/it/novita/page/saboris-antigus-6-dicembre-2026-modulistica",
+      "https://comune.guasila.su.it/download/3eb3225401ec49d78fca7802b672abad/pubblico%20avviso.pdf?19ddce8402a04593b011b320a61e963f"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-06",
+        "end": "2026-12-06",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso e moduli: domande entro 15 novembre con modello A e foto delle merci. Priorità espositori locali, poi protocollo; massimo 60 hobbisti/non alimentari e 10 autobar in piazza Gramsci, attinenza al tema anche per alimentari. Adempimenti distinti per titolari di partita IVA, opere dell’ingegno e somministrazione. Calendario della rassegna distinto dalle condizioni di ammissione degli espositori; eventuali variazioni restano di competenza dell’organizzazione."
+    },
+    "id": "sardegna-guasila-saboris-antigus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Nurri",
+    "name": "Saboris Antigus",
+    "months": [
+      12
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-13",
+        "end": "2026-12-13",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Tappa nel calendario ufficiale 2026. Programma operativo e adesione commerciale richiedono la procedura del Comune/organizzatore, non una prenotazione automatica. Calendario della rassegna distinto dalle condizioni di ammissione degli espositori; eventuali variazioni restano di competenza dell’organizzazione."
+    },
+    "id": "sardegna-nurri-saboris-antigus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Mandas",
+    "name": "Saboris Antigus",
+    "months": [
+      12
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-20",
+        "end": "2026-12-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.italia.it/it/sardegna/cosa-fare/evento-saboris-antigus-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Tappa conclusiva nel calendario ufficiale 2026. Le pagine comunali di edizioni precedenti attestano la ricorrenza, senza confermare categorie, quota o disponibilità 2026. Calendario della rassegna distinto dalle condizioni di ammissione degli espositori; eventuali variazioni restano di competenza dell’organizzazione."
+    },
+    "id": "sardegna-mandas-saboris-antigus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sinnai",
+    "name": "Calici d'Autunno",
+    "months": [
+      11
+    ],
+    "category": "mercatino",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.sinnai.ca.it/it/novita/page/titolo-calici-d-autunno-2026-aperte-le-domande-per-i-posteggi-riservati-ad-artigiani-e-hobbisti",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sinnai.ca.it/it/novita/page/titolo-calici-d-autunno-2026-aperte-le-domande-per-i-posteggi-riservati-ad-artigiani-e-hobbisti",
+      "https://www.comune.sinnai.ca.it/download/f71a17a576f14481a7f1a9976794f124/Bando%20Calici%20Autunno%202026.pdf?bfad6c2d91eb3118c81edfe8b71cd58e"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-07",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.sinnai.ca.it/it/novita/page/titolo-calici-d-autunno-2026-aperte-le-domande-per-i-posteggi-riservati-ad-artigiani-e-hobbisti"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza Sant’Isidoro, 7 novembre 2026. Istanze 21 ottobre–5 novembre via PEC o Protocollo: artigiani in sede fissa e hobbisti/operatori dell’ingegno per proprie produzioni, con requisiti/registro indicati dal bando. Somministrazione esclusa da questo avviso: posteggi esterni alla piazza attinti dalla graduatoria quinquennale 2023. Attrezzature e illuminazione a carico del partecipante."
+    },
+    "id": "sardegna-sinnai-calici-d-autunno"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Serdiana",
+    "name": "Serdiana Wine Festival - Intrecci di vite",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.serdiana.su.it/wp-content/uploads/2026/10/avviso-1.pdf",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.serdiana.su.it/wp-content/uploads/2026/10/avviso-1.pdf",
+      "https://www.comune.serdiana.su.it/novita/manifestazione-di-interesse-rivolta-a-produttori-artigiani-e-hobbisti-locali-serdiana-wine-festival-intrecci-di-vite-2026-avviso-e-modulo-di-adesione/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-17",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.serdiana.su.it/wp-content/uploads/2026/10/avviso-1.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "17 ottobre 2026, ore 17–24. L’avviso aggiornato del 14 ottobre supera la sola riserva ai residenti del precedente testo: priorità a produttori/artigiani/hobbisti residenti, poi non residenti se residuano spazi. Termine 16 ottobre alle 12, successivi ingressi solo con residui e compatibilità organizzativa. Gazebo bianco, allestimento proprio e nessuna energia garantita; domanda non equivale ad assegnazione."
+    },
+    "id": "sardegna-serdiana-serdiana-wine-festival-intrecci-di-vite"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Decimomannu",
+    "name": "Sagra di Santa Greca",
+    "months": [
+      9
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://comune.decimomannu.ca.it/it/amministrazione/documenti-dati/documento-pubblico/Assegnazione-di-n.-2-posteggi-per-la-sola-vendita-di-bevande-nellarea-concerti-in-occasione-della-festa-di-Santa-Greca/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://comune.decimomannu.ca.it/it/amministrazione/documenti-dati/documento-pubblico/Assegnazione-di-n.-2-posteggi-per-la-sola-vendita-di-bevande-nellarea-concerti-in-occasione-della-festa-di-Santa-Greca/",
+      "https://comune.decimomannu.ca.it/.galleries/doc-documenti/CommercioSettembre2026/quota-di-partecipazione.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-25",
+        "end": "2026-09-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.decimomannu.ca.it/it/amministrazione/documenti-dati/documento-pubblico/Assegnazione-di-n.-2-posteggi-per-la-sola-vendita-di-bevande-nellarea-concerti-in-occasione-della-festa-di-Santa-Greca/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "25–29 settembre 2026. L’avviso qui collegato per due posteggi nell’area concerti è riservato alle associazioni iscritte all’albo comunale, sola vendita bevande: non è un bando libero per ambulanti. Per le aree commerciali ordinarie valgono regolamento e quote differenziate; la tabella originale 2026 è stata esaminata visivamente. Titolo, domanda e concessione restano necessari."
+    },
+    "id": "sardegna-decimomannu-sagra-di-santa-greca"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Serri",
+    "name": "Fiera di Santa Lucia",
+    "months": [
+      5,
+      9
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.serri.su.it/wp-content/uploads/2026/07/modulo-iscrizione-2026.pdf",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.serri.su.it/wp-content/uploads/2026/07/modulo-iscrizione-2026.pdf",
+      "https://www.comune.serri.su.it/wp-content/uploads/2026/04/modulo-iscrizione-2026.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-17",
+        "end": "2026-05-17",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.serri.su.it/wp-content/uploads/2026/07/modulo-iscrizione-2026.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-09-20",
+        "end": "2026-09-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.serri.su.it/wp-content/uploads/2026/07/modulo-iscrizione-2026.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Due edizioni: 17 maggio e 20 settembre 2026. Moduli originali distinti: domanda entro 12 maggio e 15 settembre esclusivamente a cultura.comuneserri@gmail.com, non a indirizzi alternativi. Spazio assegnato dall’organizzazione; accesso mezzi 7:30–8:30, uscita dopo le 20 salvo disposizioni, veicoli fuori area eccetto autorizzati. Nessuna tariffa banco verificata nei moduli."
+    },
+    "id": "sardegna-serri-fiera-di-santa-lucia"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Monastir",
+    "name": "Sagra della Patata",
+    "months": [
+      3
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.monastir.su.it/vivere-il-comune/eventi/sagra-della-patata-2026/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.monastir.su.it/vivere-il-comune/eventi/sagra-della-patata-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-21",
+        "end": "2026-03-22",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.monastir.su.it/vivere-il-comune/eventi/sagra-della-patata-2026/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Il contenitore comunale decorre dal 17 marzo per iniziative preparatorie: stand prodotti locali, artigianato e hobbisti soltanto il 21 e 22 marzo 2026, con degustazioni e laboratori. Per esporre occorre accordo e ammissione dell’organizzazione, non basta il patrocinio gratuito del Comune."
+    },
+    "id": "sardegna-monastir-sagra-della-patata"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Monastir",
+    "name": "Festa dei Santi Pietro e Paolo",
+    "months": [
+      6
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.monastir.su.it/novita/festeggiamenti-dei-santi-pietro-e-paolo-2026-aperto-il-bando-per-lassegnazione-temporanea-dei-posteggi/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.monastir.su.it/novita/festeggiamenti-dei-santi-pietro-e-paolo-2026-aperto-il-bando-per-lassegnazione-temporanea-dei-posteggi/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-29",
+        "end": "2026-06-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.monastir.su.it/novita/festeggiamenti-dei-santi-pietro-e-paolo-2026-aperto-il-bando-per-lassegnazione-temporanea-dei-posteggi/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "29 giugno 2026; avviso per 13 posteggi nelle vie del Tramonto e Michelangelo. Domanda sul servizio online entro le 13 del 18 giugno con documento; priorità presenze effettive degli ultimi due anni e tributi versati. Tredici è la consistenza del bando storico, non disponibilità attuale."
+    },
+    "id": "sardegna-monastir-festa-dei-santi-pietro-e-paolo"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Monastir",
+    "name": "Festa di Sant'Antonio Abate",
+    "months": [
+      1
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica",
+    "source": {
+      "url": "https://www.comune.monastir.su.it/novita/avviso-assegnazione-posteggio-festeggiamenti-in-onore-di-santantonio-abate-17-01-2026/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.monastir.su.it/novita/avviso-assegnazione-posteggio-festeggiamenti-in-onore-di-santantonio-abate-17-01-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-01-17",
+        "end": "2026-01-17",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.monastir.su.it/novita/avviso-assegnazione-posteggio-festeggiamenti-in-onore-di-santantonio-abate-17-01-2026/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale per concessione temporanea di posteggio in piazza Sant’Antonio il 17 gennaio 2026. Procedura scaduta, con atto e condizioni specifiche; non è una concessione automaticamente valida per il nuovo anno."
+    },
+    "id": "sardegna-monastir-festa-di-sant-antonio-abate"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Monastir",
+    "name": "Festa di San Sebastiano",
+    "months": [
+      1
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica",
+    "source": {
+      "url": "https://www.comune.monastir.su.it/novita/avviso-pubblico-partecipazione-concessione-posteggi-via-oristano-festeggiamenti-san-sebastiano-2026/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.monastir.su.it/novita/avviso-pubblico-partecipazione-concessione-posteggi-via-oristano-festeggiamenti-san-sebastiano-2026/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale di gennaio 2026 per posteggi in via Oristano; non si usa la scadenza della pagina come data della festa. Consultare l’avviso completo per giornate, requisiti e selezione. Non verificato un nuovo calendario operativo."
+    },
+    "id": "sardegna-monastir-festa-di-san-sebastiano"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Castiadas",
+    "name": "Festa della SS. Assunta",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica",
+    "source": {
+      "url": "https://www.comune.castiadas.su.it/it/news/2030551",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.castiadas.su.it/it/news/2030551"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Avviso operatori 10 agosto 2026: richieste entro 13 agosto e assegnazione il 14 agosto alle 8:30 in Marina di San Pietro, previo CUP. Il 14 è data di assegnazione: non viene trasformato nella data della festa. Il mese di agosto descrive la ricorrenza; nessun intervallo di vendita dedotto."
+    },
+    "id": "sardegna-castiadas-festa-della-ss-assunta"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Domus de Maria",
+    "name": "Sagra della Vitella",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.domusdemaria.su.it/it/news/2031268",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.domusdemaria.su.it/it/news/2031268"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-13",
+        "end": "2026-08-13",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.domusdemaria.su.it/it/news/2031268"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza Is Argiolas, 13 agosto 2026 dalle 20, a cura della Pro Loco Domus de Maria–Chia. Sagra gastronomica con organizzazione locale: nessun bando verificato per operatori esterni, quote e concessione commerciale da verificare senza confondere costo della cena e costo dello spazio."
+    },
+    "id": "sardegna-domus-de-maria-sagra-della-vitella"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Gesico",
+    "name": "Sagra della Lumaca e festa di Sant’Amatore",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.gesico.su.it/novita/manifestazioni-ottobrine-edizione-2026-festa-santamatore-e-34-sagra-della-lumaca-2/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.gesico.su.it/novita/manifestazioni-ottobrine-edizione-2026-festa-santamatore-e-34-sagra-della-lumaca-2/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.gesico.su.it/novita/manifestazioni-ottobrine-edizione-2026-festa-santamatore-e-34-sagra-della-lumaca-2/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Assegnazione comunale di suolo nelle giornate 17–18 ottobre 2026; graduatoria provvisoria 7 ottobre e definitiva 16 ottobre. L’avviso del 6 ottobre segnalava residui ma è scaduto e non descrive disponibilità odierna. Non estendere automaticamente le giornate del bando a tutte le celebrazioni religiose."
+    },
+    "id": "sardegna-gesico-sagra-della-lumaca-e-festa-di-santamatore"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Guamaggiore",
+    "name": "Mestieri e tradizioni in sa idda de Tziu Paddori",
+    "months": [
+      10
+    ],
+    "category": "artigianato",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.atproloco-guamaggiore.it/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.atproloco-guamaggiore.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-03",
+        "end": "2026-10-04",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.atproloco-guamaggiore.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Pro Loco, ventesima edizione 3–4 ottobre 2026: serata inaugurale il 3, espositori e attività tradizionali il 4. Per le proprie merci occorre ammissione dell’organizzatore: non è verificata una tariffa banco né una domanda comunale generalizzata."
+    },
+    "id": "sardegna-guamaggiore-mestieri-e-tradizioni-in-sa-idda-de-tziu-paddori"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Guamaggiore",
+    "name": "Sagra delle Leguminose",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.atproloco-guamaggiore.it/26-sagra-delle-leguminose-2026/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.atproloco-guamaggiore.it/26-sagra-delle-leguminose-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-05",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.atproloco-guamaggiore.it/26-sagra-delle-leguminose-2026/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La Pro Loco annuncia il 5 settembre 2026 sul colle di Santa Maria Maddalena. Ristorazione organizzata e prodotti locali; non è verificata ammissione libera di venditori esterni. L’eventuale prezzo degustazione non è una quota per lo spazio."
+    },
+    "id": "sardegna-guamaggiore-sagra-delle-leguminose"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Barrali",
+    "name": "Sagra del Pane",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://servizi.comune.barrali.ca.it/barrali/de/attachment.php?serialDocumento=00DYNK020267K",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://servizi.comune.barrali.ca.it/barrali/de/attachment.php?serialDocumento=00DYNK020267K"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-25",
+        "dateType": "calendar",
+        "sourceUrl": "https://servizi.comune.barrali.ca.it/barrali/de/attachment.php?serialDocumento=00DYNK020267K"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Originale della delibera comunale 2026 esaminato: concessione di piazza del Popolo all’associazione organizzatrice. Per il Pane la data originaria 11 luglio è sostituita dal 25 luglio; per Ortaggi l’uso di Casa Mascia il 27–29 agosto include preparativi, mentre la piazza è concessa il 29. Gratuità del suolo all’associazione non significa spazio gratuito o ammissione automatica per ogni ambulante."
+    },
+    "id": "sardegna-barrali-sagra-del-pane"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Barrali",
+    "name": "Sagra degli Ortaggi",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://servizi.comune.barrali.ca.it/barrali/de/attachment.php?serialDocumento=00E19B020268A",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://servizi.comune.barrali.ca.it/barrali/de/attachment.php?serialDocumento=00E19B020268A"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-29",
+        "end": "2026-08-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://servizi.comune.barrali.ca.it/barrali/de/attachment.php?serialDocumento=00E19B020268A"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Originale della delibera comunale 2026 esaminato: concessione di piazza del Popolo all’associazione organizzatrice. Per il Pane la data originaria 11 luglio è sostituita dal 25 luglio; per Ortaggi l’uso di Casa Mascia il 27–29 agosto include preparativi, mentre la piazza è concessa il 29. Gratuità del suolo all’associazione non significa spazio gratuito o ammissione automatica per ogni ambulante."
+    },
+    "id": "sardegna-barrali-sagra-degli-ortaggi"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Pimentel",
+    "name": "Sagra de Su Gattou",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.pimentel.ca.it/index.php/tzente/articoli/1017",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.pimentel.ca.it/index.php/tzente/articoli/1017"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-19",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.pimentel.ca.it/index.php/tzente/articoli/1017"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ordinanze comunali per il 18–19 settembre 2026. La disciplina della viabilità conferma le giornate della manifestazione, non un bando per singoli banchi: settori, concessione e corrispettivi da verificare con l’organizzazione."
+    },
+    "id": "sardegna-pimentel-sagra-de-su-gattou"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Pula",
+    "name": "Festa di Sant'Efisio a Pula e Nora",
+    "months": [
+      5
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.pula.ca.it/Novita/Avvisi/370a-Festa-di-Sant-Efisio-Programma",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.pula.ca.it/Novita/Avvisi/370a-Festa-di-Sant-Efisio-Programma"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-01",
+        "end": "2026-05-04",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.pula.ca.it/Novita/Avvisi/370a-Festa-di-Sant-Efisio-Programma"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Programma comunale 1–4 maggio 2026. Le graduatorie per bancarelle rintracciate sono del 2025: documentano la procedura per Pula e Nora ma non disponibilità attuale né identica articolazione 2026. L’accesso al percorso religioso non autorizza il commercio."
+    },
+    "id": "sardegna-pula-festa-di-sant-efisio-a-pula-e-nora"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Pula",
+    "name": "Festa di Santa Margherita",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica",
+    "source": {
+      "url": "https://www.comune.pula.ca.it/ocmultibinary/download/3968/83892/1/68af5819a306c1edc7192ad8f6869dc9.pdf/file/20260871D%2B%25281%2529.pdf",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.pula.ca.it/ocmultibinary/download/3968/83892/1/68af5819a306c1edc7192ad8f6869dc9.pdf/file/20260871D%2B%25281%2529.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-21",
+        "end": "2026-08-23",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.pula.ca.it/ocmultibinary/download/3968/83892/1/68af5819a306c1edc7192ad8f6869dc9.pdf/file/20260871D%2B%25281%2529.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Determina 871/2026: bancarelle per il 21–23 agosto in località Santa Margherita; posteggi ridotti a tre con DGC 166/2026, domande almeno 60 giorni prima, anzianità negli ultimi cinque anni. La graduatoria pubblicata è l’esito storico di una selezione, non tre posti disponibili."
+    },
+    "id": "sardegna-pula-festa-di-santa-margherita"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Pula",
+    "name": "Festa della Vergine Assunta",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "commercio su area pubblica",
+    "source": {
+      "url": "https://www.comune.pula.ca.it/Novita/Avvisi/Approvazione-graduatoria-per-l-assegnazione-dei-posteggi-in-occasione-della-Festa-della-Vergine-Assunta-2026",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.pula.ca.it/Novita/Avvisi/Approvazione-graduatoria-per-l-assegnazione-dei-posteggi-in-occasione-della-Festa-della-Vergine-Assunta-2026"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-15",
+        "end": "2026-08-15",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.pula.ca.it/Novita/Avvisi/Approvazione-graduatoria-per-l-assegnazione-dei-posteggi-in-occasione-della-Festa-della-Vergine-Assunta-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso del 23 luglio e determina 833/2026: concessioni di suolo per bancarelle nella festa del 15 agosto 2026. La graduatoria non vale come ammissione per anni successivi; vanno rispettate le condizioni e le aree della concessione."
+    },
+    "id": "sardegna-pula-festa-della-vergine-assunta"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Pula",
+    "name": "Mercatino dell'artigianato e della creatività",
+    "months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "category": "artigianato",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.pula.ca.it/Novita/Avvisi/Approvazione-graduatoria-per-l-assegnazione-dei-posteggi-Mercatino-dell-artigianato-e-della-creativita",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.pula.ca.it/Novita/Avvisi/Approvazione-graduatoria-per-l-assegnazione-dei-posteggi-Mercatino-dell-artigianato-e-della-creativita"
+    ],
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-06-15",
+        "end": "2024-09-30",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.pula.ca.it/Novita/Avvisi/Approvazione-graduatoria-per-l-assegnazione-dei-posteggi-Mercatino-dell-artigianato-e-della-creativita",
+        "periodOnly": true
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Fonte comunale relativa al 2024: bancarelle artistiche e settore alimentare autorizzato nel centro urbano, tutti i giorni 15 giugno–30 settembre. Periodo dell’edizione storica, non nuova conferma 2026; requisito della graduatoria e concessione, non semplice presenza sul posto."
+    },
+    "id": "sardegna-pula-mercatino-dell-artigianato-e-della-creativita"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Villasimius",
+    "name": "Mercatini tematici di via Umberto I e via del Mare",
+    "months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "category": "artigianato",
+    "sectors": "artigianato, opere dell’ingegno e hobbistica",
+    "source": {
+      "url": "https://www.comune.villasimius.ca.it/wp-content/uploads/2026/05/mercati-tematici-2026-avviso.pdf",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.villasimius.ca.it/wp-content/uploads/2026/05/mercati-tematici-2026-avviso.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-12",
+        "end": "2026-09-30",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.villasimius.ca.it/wp-content/uploads/2026/05/mercati-tematici-2026-avviso.pdf",
+        "periodOnly": true
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Bando 2026 rivolto al gestore/aggregatore dell’intero mercato, non ai singoli posteggi; domande entro 2 giugno alle 23:59. Via Umberto I per hobbisti, via del Mare per artisti/artigiani; periodo orientativo 12 giugno–30 settembre e permanenza ZTL. Esclusi alimentari, agricoli e merci generaliste secondo il bando. Quota del singolo espositore stabilita nel progetto del gestore, non ricavabile dal CUP comunale."
+    },
+    "id": "sardegna-villasimius-mercatini-tematici-di-via-umberto-i-e-via-del-mare"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Selargius",
+    "name": "Salone dell'Artigianato Artistico della Sardegna",
+    "months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "category": "artigianato",
+    "sectors": "ceramica, tessitura, legno, metalli, gioielli, sartoria e design",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/en/node/289571",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/en/node/289571"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-26",
+        "end": "2026-09-05",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.sardegnaturismo.it/en/node/289571",
+        "periodOnly": true
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Casa Cara e Si ’e Boi, dal 26 giugno al 5 settembre 2026: percorso di artigianato artistico con esposizioni, dimostrazioni e laboratori. L’intervallo descrive il salone, non presenze giornaliere di ogni impresa. Selezione e contratto con il gestore; nessuna tariffa stand verificata."
+    },
+    "id": "sardegna-selargius-salone-dell-artigianato-artistico-della-sardegna"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Selargius",
+    "name": "Villaggio del Gusto e Antico Sposalizio Selargino",
+    "months": [
+      9
+    ],
+    "category": "mercatino",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.prolocoselargius.it/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.prolocoselargius.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.prolocoselargius.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Il programma complessivo va dal 10 al 20 settembre, ma il Villaggio del Gusto con prodotti, hobbistica e artigianato a Si ’e Boi è annunciato dal 18 al 20 settembre 2026. Mostra artigianale dal 17; mostra mercato del pane e del dolce il 20. Le giornate in calendario riguardano il Villaggio; ammissione e quota con Pro Loco/organizzazione, non con l’iscrizione al corteo."
+    },
+    "id": "sardegna-selargius-villaggio-del-gusto-e-antico-sposalizio-selargino"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Vallermosa",
+    "name": "Sapori d'Autunno - Domus e Pratzas",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.saporidautunnovallermosa.it/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.saporidautunnovallermosa.it/",
+      "https://www.saporidautunnovallermosa.it/domus-e-pratzas-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.saporidautunnovallermosa.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Organizzatore: 17–18 ottobre 2026, case e cortili con enogastronomia, artigianato e antichi mestieri. Il sito rinvia alle domande comunali, ma il relativo collegamento restituisce 410: ammissione, scadenza e tariffa non ricostruite da ipotesi. Sagre di morettus e pardulas interne alla rassegna non diventano manifestazioni duplicate."
+    },
+    "id": "sardegna-vallermosa-sapori-d-autunno-domus-e-pratzas"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Villanova Tulo",
+    "name": "Festa di San Giuliano e Sagra delle Ciliegie",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.villanovatulo.ca.it/vivere-il-comune/eventi/festa-di-san-giuliano-e-sagra-delle-ciliegie/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.villanovatulo.ca.it/vivere-il-comune/eventi/festa-di-san-giuliano-e-sagra-delle-ciliegie/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-12",
+        "end": "2026-06-14",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.villanovatulo.ca.it/vivere-il-comune/eventi/festa-di-san-giuliano-e-sagra-delle-ciliegie/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Calendario comunale 12–14 giugno 2026, festa e valorizzazione delle ciliegie. La scheda descrive eventi religiosi, civili e gastronomici; non presenta un bando per ambulanti esterni o un prezzo banco."
+    },
+    "id": "sardegna-villanova-tulo-festa-di-san-giuliano-e-sagra-delle-ciliegie"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Villanova Tulo",
+    "name": "Sagra della Salsiccia",
+    "months": [
+      12
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.villanovatulo.ca.it/vivere-il-comune/eventi/sagra-della-salsiccia/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.villanovatulo.ca.it/vivere-il-comune/eventi/sagra-della-salsiccia/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-06",
+        "end": "2026-12-06",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.villanovatulo.ca.it/vivere-il-comune/eventi/sagra-della-salsiccia/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Scheda comunale: 6 dicembre 2026, 10–23, salsiccia Biddanoesa, gastronomia e artigianato locale. Gratuità riportata per il pubblico non significa concessione gratuita dello spazio commerciale; requisiti e ammissione espositori non dettagliati."
+    },
+    "id": "sardegna-villanova-tulo-sagra-della-salsiccia"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Siliqua",
+    "name": "Fiera del Dolce",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.siliqua.ca.it/it/eventi/fiera-del-dolce",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.siliqua.ca.it/it/eventi/fiera-del-dolce"
+    ],
+    "editions": [
+      {
+        "year": 2023,
+        "start": "2023-04-23",
+        "end": "2023-04-23",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.siliqua.ca.it/it/eventi/fiera-del-dolce"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazzale parrocchiale, iniziativa CIF del 23 aprile 2023 ore 9–13. La pagina è stata aggiornata nel 2026 ma la data evento è esplicitamente 2023: conservata come storico, nessuna edizione 2026 dedotta dall’ultimo aggiornamento."
+    },
+    "id": "sardegna-siliqua-fiera-del-dolce"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sestu",
+    "name": "Sagra della Pecora",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://comune.sestu.ca.it/evento/2a-edizione-della-sagra-della-pecora/",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://comune.sestu.ca.it/evento/2a-edizione-della-sagra-della-pecora/"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-09-20",
+        "end": "2025-09-21",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.sestu.ca.it/evento/2a-edizione-della-sagra-della-pecora/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "San Gemiliano, 20–21 settembre 2025, organizzazione FRIENDS APS con patrocinio comunale. Nessuna edizione 2026 confermata dalla fonte; il costo degustazione non rappresenta una tariffa per un banco e non è verificata candidatura aperta ad operatori esterni."
+    },
+    "id": "sardegna-sestu-sagra-della-pecora"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Esterzili",
+    "name": "Sagra de Is Cocoeddas",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://comune.esterzili.su.it/eventi/2914374/xv-edizione-sagra-de-is-cocoeddas-12-agosto",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://comune.esterzili.su.it/eventi/2914374/xv-edizione-sagra-de-is-cocoeddas-12-agosto"
+    ],
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-08-12",
+        "end": "2024-08-12",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.esterzili.su.it/eventi/2914374/xv-edizione-sagra-de-is-cocoeddas-12-agosto"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Programma comunale della XV edizione, 12 agosto 2024: degustazioni di prodotti tipici, musica e stand. La data iniziale 9 agosto nel contenitore informatico non è il giorno della sagra; l’evento nominato è il 12. Nessuna data 2026 dedotta da pagine secondarie; ammissione commerciale e costi non specificati."
+    },
+    "id": "sardegna-esterzili-sagra-de-is-cocoeddas"
+  },
+  {
+    "region": "Sardegna",
+    "city": "San Vito",
+    "name": "Sagra de sa Pratzira e de sa Petza e Craba",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.sanvito.su.it/it/events/618514",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sanvito.su.it/it/events/618514"
+    ],
+    "editions": [
+      {
+        "year": 2023,
+        "start": "2023-07-28",
+        "end": "2023-07-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.sanvito.su.it/it/events/618514"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Sagra gastronomica organizzata da Pro Loco e Comitato Santa Maria; fonte comunale relativa al 28–29 luglio 2023. Le date sono storiche: non attestano una nuova edizione né possibilità per singoli ambulanti; autorizzazione commerciale e quota da verificare con l’organizzazione."
+    },
+    "id": "sardegna-san-vito-sagra-de-sa-pratzira-e-de-sa-petza-e-craba"
+  },
+  {
+    "region": "Sardegna",
+    "city": "San Vito",
+    "name": "Sagra della pecora in umido e del formaggio sanvitese",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.sanvito.su.it/it/events/618193",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sanvito.su.it/it/events/618193"
+    ],
+    "editions": [
+      {
+        "year": 2023,
+        "start": "2023-07-21",
+        "end": "2023-07-21",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.sanvito.su.it/it/events/618193"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Fonte comunale relativa alla prima edizione del 21 luglio 2023, piazza Funtana Iri, organizzata da GS Calcio San Vito. Evento gastronomico storico, non nuova conferma del 2026; nessun bando per venditori esterni o costo posteggio verificato."
+    },
+    "id": "sardegna-san-vito-sagra-della-pecora-in-umido-e-del-formaggio-sanvitese"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Burcei",
+    "name": "Sagra delle Ciliegie",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "sectors": "ciliegie e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/burcei",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/burcei"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. La fonte indica giugno e la produzione locale; il vecchio avviso comunale Cerexia Fest 2022 non è un bando 2026. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-burcei-sagra-delle-ciliegie"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Burcei",
+    "name": "Sagra de sa Pezza de Craba",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "carne e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/burcei",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/burcei"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. La fonte descrive degustazioni della carne di capra ad agosto. Non trasferire i giorni della distinta Festa del Pastore del 2026. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-burcei-sagra-de-sa-pezza-de-craba"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Escalaplano",
+    "name": "Sagra dell'olio di lentischio e del formaggio",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "sectors": "olio di lentischio e formaggi",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/escalaplano",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/escalaplano"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. La pagina regionale colloca la sagra gastronomica a giugno; non quantifica spazi o quote. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-escalaplano-sagra-dell-olio-di-lentischio-e-del-formaggio"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Mandas",
+    "name": "Sagra del Formaggio",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "formaggi e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/mandas",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/mandas"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. La fonte associa la sagra alle celebrazioni del patrono a fine luglio. Per venditori esterni resta da verificare una procedura specifica. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-mandas-sagra-del-formaggio"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Monserrato",
+    "name": "Sagra della Vendemmia",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "vino e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/monserrato",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/monserrato"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. La ricorrenza vitivinicola è descritta a fine settembre; il mercato settimanale è un servizio diverso. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-monserrato-sagra-della-vendemmia"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Nuragus",
+    "name": "Mostra degli ovini di razza sarda",
+    "months": [
+      4
+    ],
+    "category": "espositiva",
+    "sectors": "zootecnia e prodotti agricoli",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/nuragus",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/nuragus"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. Mostra zootecnica a fine aprile: partecipazione di allevatori soggetta al regolamento dell’organizzazione, non mercato generalista. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-nuragus-mostra-degli-ovini-di-razza-sarda"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Nuragus",
+    "name": "Nuragus a Nuragus",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "sectors": "vino e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/nuragus",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/nuragus"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. Rassegna enogastronomica di maggio descritta insieme alle tradizioni locali. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-nuragus-nuragus-a-nuragus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Nuragus",
+    "name": "Sagra de Is Tallarinus",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "sectors": "pasta e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/nuragus",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/nuragus"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. Rassegna gastronomica di maggio nella descrizione regionale; non viene trasferito al 2026 un giorno da calendari aggregatori. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-nuragus-sagra-de-is-tallarinus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Nuragus",
+    "name": "Sagra de Su Turroni de Cixiri",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "sectors": "dolci e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/nuragus",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/nuragus"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. Ricorrenza di novembre dedicata al torrone di ceci; nessun avviso 2026 verificato. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-nuragus-sagra-de-su-turroni-de-cixiri"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Nurallao",
+    "name": "Sagra de Is Tallarinus Nuraddesusu",
+    "months": [
+      3,
+      4
+    ],
+    "category": "sagra",
+    "sectors": "pasta e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/nurallao",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/nurallao"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. Parco Funtana Is Arinus a Pasquetta: ricorrenza mobile, marzo/aprile sono una finestra e non un calendario confermato. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-nurallao-sagra-de-is-tallarinus-nuraddesusu"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Nurallao",
+    "name": "Sagra della Pecora",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "sectors": "carni e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/nurallao",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/nurallao"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. In maggio con Sant’Isidoro, distinta dalla sagra di Pasquetta. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-nurallao-sagra-della-pecora"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Suelli",
+    "name": "Sagra del Chicco d'Oro",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "cereali e prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/suelli",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/suelli"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. Tradizione agricola descritta ad agosto; non equivale ad autorizzazione a esporre liberamente. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-suelli-sagra-del-chicco-d-oro"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Uta",
+    "name": "Fiera delle Attività produttive del territorio",
+    "months": [
+      12
+    ],
+    "category": "espositiva",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/uta",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/uta"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. La fonte regionale indica metà dicembre nel parco di piazza S’Olivariu, con produzioni del territorio. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-uta-fiera-delle-attivita-produttive-del-territorio"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Villasalto",
+    "name": "Sagra della Capra",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "carni e formaggi",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/villasalto",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/villasalto"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. La fonte associa la sagra alla ricorrenza di Santa Barbara del 10 luglio; non è un giorno 2026 confermato. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-villasalto-sagra-della-capra"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Siurgus Donigala",
+    "name": "Sagra de Is Bagadius",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/siurgus-donigala",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/siurgus-donigala"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive una ricorrenza tradizionale, senza calendario di una nuova edizione. Ricorrenza descritta a metà ottobre; distinta da Saboris Antigus di novembre. Il periodo è indicativo: non attesta svolgimento nel 2026, apertura delle domande o posti disponibili."
+    },
+    "id": "sardegna-siurgus-donigala-sagra-de-is-bagadius"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Assemini",
+    "name": "Sagra del Pesce di Sant’Andrea",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.assemini.ca.it/vivere-il-comune/sagre-e-feste.html",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.assemini.ca.it/vivere-il-comune/sagre-e-feste.html"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il Comune descrive questa sagra associata alla ricorrenza religiosa, con distribuzione gastronomica. La pagina storica non conferma un’edizione 2026 né ammissione di venditori esterni; il mese è usuale, non un giorno di mercato autorizzato."
+    },
+    "id": "sardegna-assemini-sagra-del-pesce-di-santandrea"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Assemini",
+    "name": "Sagra del Dolce di San Cristoforo",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.assemini.ca.it/vivere-il-comune/sagre-e-feste.html",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.assemini.ca.it/vivere-il-comune/sagre-e-feste.html"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il Comune descrive questa sagra associata alla ricorrenza religiosa, con distribuzione gastronomica. La pagina storica non conferma un’edizione 2026 né ammissione di venditori esterni; il mese è usuale, non un giorno di mercato autorizzato."
+    },
+    "id": "sardegna-assemini-sagra-del-dolce-di-san-cristoforo"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Assemini",
+    "name": "Sagra della Pecora di San Giovanni",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://www.comune.assemini.ca.it/vivere-il-comune/sagre-e-feste.html",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.assemini.ca.it/vivere-il-comune/sagre-e-feste.html"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il Comune descrive questa sagra associata alla ricorrenza religiosa, con distribuzione gastronomica. La pagina storica non conferma un’edizione 2026 né ammissione di venditori esterni; il mese è usuale, non un giorno di mercato autorizzato."
+    },
+    "id": "sardegna-assemini-sagra-della-pecora-di-san-giovanni"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Villaputzu",
+    "name": "Mostra Mercato dei prodotti artigianali del Sarrabus-Gerrei",
+    "months": [
+      8
+    ],
+    "category": "artigianato",
+    "sectors": "artigianato locale",
+    "source": {
+      "url": "https://www.comune.villaputzu.ca.it/modules.php?cid=52&name=Pagine&pa=list_pages_categories",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.villaputzu.ca.it/modules.php?cid=52&name=Pagine&pa=list_pages_categories"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Calendario tradizionale comunale: mostra mercato 16–20 agosto, senza anno d’edizione. Periodo usuale distinto da conferma 2026. Artigianato locale e ammissione secondo la procedura vigente; nessuna disponibilità o quota dedotta dal vecchio regolamento."
+    },
+    "id": "sardegna-villaputzu-mostra-mercato-dei-prodotti-artigianali-del-sarrabus-gerrei"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Villaputzu",
+    "name": "Festa della Madonna del Mare",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "alimentari, non alimentari e hobbistica",
+    "source": {
+      "url": "https://www.comune.villaputzu.ca.it/modules.php?cid=52&name=Pagine&pa=list_pages_categories",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.villaputzu.ca.it/modules.php?cid=52&name=Pagine&pa=list_pages_categories"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza al porto di Porto Corallo, tradizionalmente il 16 agosto, con organizzazione Pro Loco. Il regolamento storico prevede posteggi per la festa ma numero e condizioni vanno verificati nell’avviso dell’edizione; non si dichiara una disponibilità 2026."
+    },
+    "id": "sardegna-villaputzu-festa-della-madonna-del-mare"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Villaputzu",
+    "name": "Festival delle Launeddas - posteggi della manifestazione",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "alimentari, non alimentari e hobbistica",
+    "source": {
+      "url": "https://www.comune.villaputzu.ca.it/modules.php?MediaName=Regolamentocomunalespazipubblicifeste.pdf&MediaNum=2&MediaOp=get&idMediaAss=s905&name=IndyNews",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.villaputzu.ca.it/modules.php?MediaName=Regolamentocomunalespazipubblicifeste.pdf&MediaNum=2&MediaOp=get&idMediaAss=s905&name=IndyNews",
+      "https://www.comune.villaputzu.ca.it/modules.php?cid=52&name=Pagine&pa=list_pages_categories"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il regolamento comunale storico disciplina posteggi di commercio e hobbistica per il Festival delle Launeddas, ricorrenza descritta il 7 agosto nel calendario comunale. La scheda riguarda l’area commerciale accessoria, non l’accesso al concerto; nessuna assegnazione 2026 o quota ricavata dal regolamento storico."
+    },
+    "id": "sardegna-villaputzu-festival-delle-launeddas-posteggi-della-manifestazione"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Isili",
+    "name": "Artis e Ortus",
+    "months": [
+      9
+    ],
+    "category": "artigianato",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://servizi.comune.isili.ca.it/de/attachment.php?serialDocumento=00W0GU020269O",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://servizi.comune.isili.ca.it/de/attachment.php?serialDocumento=00W0GU020269O",
+      "https://servizi.comune.isili.ca.it/isili/de/attachment.php?serialDocumento=00VTWZ020269G&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-20",
+        "end": "2026-09-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://servizi.comune.isili.ca.it/de/attachment.php?serialDocumento=00W0GU020269O"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Delibera 67/2026 e programma originale della Pro Loco: 20 settembre 2026, percorso nel centro storico con agroalimentare, artigianato artistico, mostre e degustazioni. Il contributo comunale alla Pro Loco e l’uso gratuito delle aree per l’organizzazione non sono una tariffa o una garanzia di posto per l’espositore; adesione e requisiti da concordare con l’organizzazione."
+    },
+    "id": "sardegna-isili-artis-e-ortus"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sarroch",
+    "name": "Mercatini del Borgo - Calici d'Estate",
+    "months": [
+      9
+    ],
+    "category": "mercatino",
+    "sectors": "prodotti alimentari e artigianato",
+    "source": {
+      "url": "https://comune.sarroch.ca.it/eventi/3640299/mercatini-borgo-calici-d-estate",
+      "label": "Fonte originale: Comune, Regione o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://comune.sarroch.ca.it/eventi/3640299/mercatini-borgo-calici-d-estate"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-03",
+        "end": "2026-09-03",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.sarroch.ca.it/eventi/3640299/mercatini-borgo-calici-d-estate"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ultimo appuntamento 2026 il 3 settembre al Parco Urbano di Porto Columbu, dalle 20. Rassegna promossa dal Comune e organizzata dal CCN S’Arrocca tra Porto Columbu e Perd’e Sali. La data qui riportata riguarda il solo appuntamento finale documentato; non viene ricostruito l’intero calendario estivo. Ammissione e costo stand non dedotti dall’ingresso gratuito del pubblico."
+    },
+    "id": "sardegna-sarroch-mercatini-del-borgo-calici-d-estate"
   }
 ]

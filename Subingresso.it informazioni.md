@@ -5,6 +5,19 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Cagliari — ricerca conclusa, pubblicazione da verificare, 27 ottobre 2026
+
+- Audit `data/fiere-cagliari.json`: 89 manifestazioni/40 comuni, ricognizione
+  nominativa di tutti i 70 comuni attuali. Tre ID preesistenti conservati; 86 aggiunte.
+- Originali e prove in `Documents/ricerca-fiere-cagliari-20261027`; date commerciali,
+  requisiti e 17 sintesi costi verificati con limiti. Dossier `data/FIERE.md`.
+- Backup remoto verificato, cleanup successivo fallito. Nessun intervento a controller,
+  altre province o agenti; nessun contatto a terzi. Pavia riservata.
+- Build ripetibile, settori, 7.830 pagine/3.414 sitemap e test provinciale
+  Chromium1440/320 + WebKit390 passati; 7.741 schede esterne identiche.
+- **Casella ancora aperta:** restano commit/push e verifica online con
+  `PLAYWRIGHT_MODULE`. La ricerca documentale non equivale a pubblicazione riuscita.
+
 ## Lecce — ricerca in corso, checkpoint 27 ottobre 2026
 
 - Solo Lecce, checklist 68 aperta: nessuna conclusione provinciale e nessuna
