@@ -5,18 +5,22 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
-## Cagliari — ricerca conclusa, pubblicazione da verificare, 27 ottobre 2026
+## Cagliari — pubblicata e verificata, 27 ottobre 2026
 
-- Audit `data/fiere-cagliari.json`: 89 manifestazioni/40 comuni, ricognizione
-  nominativa di tutti i 70 comuni attuali. Tre ID preesistenti conservati; 86 aggiunte.
-- Originali e prove in `Documents/ricerca-fiere-cagliari-20261027`; date commerciali,
-  requisiti e 17 sintesi costi verificati con limiti. Dossier `data/FIERE.md`.
-- Backup remoto verificato, cleanup successivo fallito. Nessun intervento a controller,
-  altre province o agenti; nessun contatto a terzi. Pavia riservata.
-- Build ripetibile, settori, 7.830 pagine/3.414 sitemap e test provinciale
-  Chromium1440/320 + WebKit390 passati; 7.741 schede esterne identiche.
-- **Casella ancora aperta:** restano commit/push e verifica online con
-  `PLAYWRIGHT_MODULE`. La ricerca documentale non equivale a pubblicazione riuscita.
+- Ricerca attuale conclusa con limiti espliciti: **89 manifestazioni/40 comuni**,
+  ricognizione di tutti i **70 comuni**; 86 aggiunte, tre ID conservati e 7.741
+  schede esterne identiche. Audit `data/fiere-cagliari.json`, dossier `data/FIERE.md`.
+- 54 schede con edizione 2026, sette soltanto storiche e 28 con periodo usuale;
+  17 sintesi costi. Originali/prove `Documents/ricerca-fiere-cagliari-20261027`.
+- Dati `12d640c`, Vercel riuscito `J1j5uUoKv9TxguzLYdTR6ApMsMEs`: cinque asset
+  identici, 89 pagine HTTP200/H1/canonical/fonti/note/costi; `PLAYWRIGHT_MODULE` locale
+  e online Chromium 1440/320 + WebKit 390, tutti i 89 dettagli per formato e senzaJS.
+  Sito reale tre formati senza errori/overflow. Build ripetibile, settori e
+  7.830 pagine/3.414 sitemap passati; catalogo 7.830, con dati edizione 7.552.
+- TO DO 69 spuntata **dopo** verifica; riepilogo 74 concluse/36 da fare su 110.
+  Cache JS128/JSON95. Backup remoto verificato; solo cleanup successivo fallito.
+  Nessun intervento a controller, altre province o agenti, nessun contatto a terzi;
+  Pavia riservata. Bandi futuri e nuove edizioni restano manutenzione distinta.
 
 ## Lecce — ricerca in corso, checkpoint 27 ottobre 2026
 
@@ -2714,7 +2718,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 73 province completate, 37 da fare su 110**, aggiornate il 27 ottobre dopo Terni. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 74 province completate, 36 da fare su 110**, aggiornate il 27 ottobre dopo Cagliari. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3254,7 +3258,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
     e archivi riaperti; attività distinta dalla ricerca attuale conclusa.
 - [ ] **67. Caserta** — Campania
 - [ ] **68. Lecce** — Puglia
-- [ ] **69. Cagliari** — Sardegna
+- [x] **69. Cagliari** — Sardegna — ricerca attuale conclusa con limiti; 89 manifestazioni/40 comuni, 70 comuni ricogniti; pubblicata e verificata il 27 ottobre 2026. Audit e prove nel dossier.
 - [ ] **70. Sassari** — Sardegna
 - [ ] **71. Gallura Nord-Est Sardegna** — Sardegna
 - [ ] **72. Palermo** — Sicilia

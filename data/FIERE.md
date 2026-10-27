@@ -2,8 +2,8 @@
 
 ## Cagliari — ricerca documentale del 27 ottobre 2026
 
-Ricerca attuale conclusa con limiti documentali espliciti; **pubblicazione ancora
-da verificare**. Checklist aperta fino alle prove online. Audit
+**Ricerca attuale conclusa con limiti documentali espliciti, pubblicata e
+verificata online.** Checklist aggiornata soltanto dopo le prove di pubblicazione. Audit
 `data/fiere-cagliari.json`: **89 manifestazioni in 40 comuni**, ricognizione
 nominale di **tutti i 70 comuni** della circoscrizione attuale. Riprese e conservate
 le tre schede/ID al commit `1ebd846`, nessun audit provinciale precedente concluso.
@@ -96,8 +96,14 @@ con periodo usuale**; tutte le **7.741 schede esterne identiche**. Catalogo 7.83
 7.552 con dati edizione. Build ripetibile, settori, 7.830 pagine/3.414 sitemap e
 test provinciale con `PLAYWRIGHT_MODULE` passati: Chromium 1440/320 e WebKit 390,
 89 dialoghi per formato, mappa/elenco e sei pagine senza JS per formato.
-Cache JS128/catalogo95. Restano commit/push e verifica deploy/catalogo online
-(attesa massima 10 minuti). Checklist ancora aperta.
+Cache JS128/catalogo95. Dati pubblicati al commit **12d640c**, Vercel riuscito
+`J1j5uUoKv9TxguzLYdTR6ApMsMEs` in 29,2 secondi: cinque asset identici ai byte Git,
+**tutte le 89 pagine HTTP200/H1/canonical/fonti/note/costi verificate**. Browser online
+con `PLAYWRIGHT_MODULE`: Chromium1440/320 e WebKit390, 89 dialoghi per formato,
+mappa/elenco e sei pagine senza JS per formato. Sito reale negli stessi tre formati
+senza errori pagina o overflow, dettaglio e conteggio 89 corretti; richieste non
+GET/HEAD bloccate. Prove nel dossier privato. Checklist spuntata e riepilogo
+**74 province concluse / 36 da fare su 110** soltanto dopo queste verifiche.
 
 ## Lecce — checkpoint della ricerca, 27 ottobre 2026
 

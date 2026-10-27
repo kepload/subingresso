@@ -21577,7 +21577,7 @@
     ],
     "openLeads": [],
     "publication": {
-      "status": "verifiche-locali-superate-in-attesa-di-push-e-prove-online",
+      "status": "pubblicato-e-verificato",
       "backupTag": "backup/session-20261027-025405-fiere-cagliari",
       "backupRemoteVerified": true,
       "cleanupErrorAfterSuccessfulPush": true,
@@ -21589,6 +21589,20 @@
         "externalEventsUnchanged": 7741,
         "catalogSha256": "bb8dd401a464df918deed534a7b1c099ee4e9f820da0684e54acd79d8ac03275",
         "proofs": "Documents/ricerca-fiere-cagliari-20261027/browser-local.json, qa-local; helper privato test-cagliari.cjs riusato dal test provinciale Terni"
+      },
+      "dataCommit": "12d640c712922c7ad9863435670f9b88cbbc4e59",
+      "verifiedAt": "2026-10-27T02:41:11.739629+00:00",
+      "deployment": {
+        "state": "success",
+        "targetUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/J1j5uUoKv9TxguzLYdTR6ApMsMEs",
+        "waitSeconds": 29.2
+      },
+      "onlineVerification": {
+        "assetsIdentical": 5,
+        "pagesHttp200H1CanonicalParticipationAndCosts": 89,
+        "browser": "PLAYWRIGHT_MODULE: Chromium1440/320 e WebKit390; 89 dialoghi per formato e pagine senza JS",
+        "realSite": "Tre formati, asset reali, conteggio 89, apertura dettaglio, zero errori pagina e overflow; bloccate richieste non GET/HEAD",
+        "proofs": "Documents/ricerca-fiere-cagliari-20261027/deployment-verified.json, publication-verified.json, browser-online.json, browser-real.json, qa-online, qa-real"
       }
     }
   },
