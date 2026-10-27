@@ -5,6 +5,22 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo annunci senza contatti pubblicato — 27 ottobre 2026
+
+- Su richiesta pubblicato il titolo1, slug `vendo-posteggio-nessun-contatto-correzioni-annuncio`,
+  ID `c73d463c-5a3e-4c02-b1a7-8a8416227587`: sette esempi prima/dopo, modello
+  completo e copertina IA WebP1600×900. Due slot vendita distinti, nel testo
+  e in chiusura, con selezione/rotazione contestuale esistente; spazio Vetrine conservato.
+- Commit `9c2753f`, Vercel `4LZM2q2PufnEz1LcZXNKCZHoALbQ` riuscito;
+  immagine online identicaSHA256, SEO/indice/sitemap verificati. Anteprima e online
+  passati Chromium1440/768/320, WebKit390 e senzaJS; alternanza e destinazioni
+  `/vendi` verificate, tracking intercettato/HEADpreview, nessuna statistica di prova.
+  Precedenti120articoli identici,121totali. Sorgenti/prompt `data/blog/`, prove
+  `Documents/articoli-subingresso/vendo-posteggio-nessun-contatto-correzioni-annuncio`.
+- Backup remoto preventivo su `d815750` verificato; helper fermato da stderr dopo
+  push riuscito. Fixture corrette: preview applicata all'interazione, attesa della
+  rotazione browser prima del confronto. Gitleaks senza rilievi; file estranei conservati.
+
 ## Bozza dal piano editoriale — 27 ottobre 2026
 
 - Sviluppato il titolo1, «Vendo il posteggio ma nessuno mi contatta»:
@@ -12,7 +28,7 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Testo e metadati in `data/blog/vendo-posteggio-nessun-contatto-correzioni-annuncio.bozza.md`;
   piano collegato. Verificati 7 esempi prima/dopo, rimandi e campi live;
   1.111 parole, nessun duplicato fra i 120 articoli.
-  Stato bozza; nessuna scritturaDB o pubblicazione dell'articolo.
+  Prima fase conclusa come bozza; pubblicazione successiva registrata sopra.
 - Backup remoto `backup/session-20261027-011310-articolo-annuncio-senza-contatti`
   verificato su `65ad785`; consueti errori del cleanuphelper successivo.
 

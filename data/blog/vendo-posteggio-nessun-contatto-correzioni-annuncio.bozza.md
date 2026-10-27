@@ -116,7 +116,7 @@ Se tutti chiedono informazioni già presenti, prova a renderle più visibili. Se
 
 *Nota di lavorazione, esclusa dal testo da pubblicare.*
 
-- Stato: bozza sviluppata il 27 ottobre 2026.
+- Stato: [pubblicato il 27 ottobre 2026](https://subingresso.it/blog?post=vendo-posteggio-nessun-contatto-correzioni-annuncio). Questo file conserva il testo sorgente della bozza.
 - Titolo n. 1 del piano editoriale, priorità alta.
 - Slug proposto: `vendo-posteggio-nessun-contatto-correzioni-annuncio`.
 - Categoria proposta: Guide.
@@ -124,4 +124,4 @@ Se tutti chiedono informazioni già presenti, prova a renderle più visibili. Se
 - Meta description: «Vendi un posteggio ma non ricevi contatti? Sette correzioni a titolo, foto, prezzo e descrizione, con esempi prima e dopo e un annuncio da adattare.»
 - Funzioni e campi del sito verificati il 27 ottobre 2026 sulla [pagina di inserimento](https://subingresso.it/vendi) e sulla [ricerca annunci](https://subingresso.it/annunci). Il corpo dell'articolo distingue consigli editoriali, esempi inventati e funzioni del servizio.
 - Verifica duplicati: letti titoli e slug dei 120 articoli pubblicati; presente una guida generale alla vendita, assente questo approfondimento sulle correzioni dell'annuncio.
-- Prima della pubblicazione: preparare la copertina e inserire il testo nel sistema blog. Nessuna nuova pubblicazione richiesta in questa lavorazione.
+- Pubblicazione autorizzata e verificata: ID `c73d463c-5a3e-4c02-b1a7-8a8416227587`; copertina IA originale, due slot correlati alla vendita (`inline` e `closing`), indice e sitemap aggiornati. HTML e metadati nei file omonimi `.html` e `.json`; copertina e prompt nel file `.copertina.md`.
