@@ -195,11 +195,15 @@ const server = http.createServer((req, res) => {
         await page.locator('#toStep6Btn').click();
         await active(page,6);
         assert.equal(await page.locator('#pubFree').getAttribute('aria-pressed'),'true');
-        for (const [tier,price] of [['10d','49'],['30d','99'],['90d','249']]) {
+        for (const [tier,price] of [['10d','49'],['30d','99'],['90d','224,10']]) {
             await page.locator('#pub'+tier).click();
             assert.match(await page.locator('#submitBtn').innerText(),new RegExp(price));
             assert.match(await page.locator('#pubFootNote').innerText(),/approvazione.*senza rinnovo automatico/);
         }
+        assert.match(await page.locator('#pubPremiumTitle').innerText(),/Vendi più in fretta/);
+        assert.match(await page.locator('#pub90d del').innerText(),/249/);
+        assert.equal(await page.locator('#pub10d del, #pub30d del').count(),0);
+        assert.equal(await page.locator('#pubPromotionDetails .pub-process-graphic').count(),3);
         await page.setViewportSize({width:320,height:568});
         assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'scelta Vetrina senza overflow a 320px');
         if (process.env.FORM_SCREENSHOT_DIR) await page.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR,'vetrina-pubblicazione-320.png'),fullPage:true});
@@ -436,6 +440,23 @@ const server = http.createServer((req, res) => {
         console.log('OK: aggiunta e rimozione di più foto anche su annunci gratuiti esistenti.');
         console.log('OK: comune abbreviato e recupero del selettore offline anche in modifica annuncio.');
 
+        await edit.context().close();
+        for (const [tier,cents] of [['10d',4900],['30d',9900],['90d',22410]]) {
+            const paid=await newPage(ownerA,true),checkoutRequests=[];
+            await paid.context().route('**/functions/v1/create-checkout-session',route=>{
+                checkoutRequests.push(route.request().postDataJSON());
+                return route.fulfill({contentType:'application/json',body:JSON.stringify({url:'https://checkout.stripe.com/c/pay/isolated-test'})});
+            });
+            await paid.context().route('https://checkout.stripe.com/**',route=>route.fulfill({body:'Pagamento simulato'}));
+            await fillWizard(paid);await paid.locator('#toStep6Btn').click();await active(paid,6);
+            await paid.locator('#pub'+tier).click();assert.equal(checkoutRequests.length,0,'selection never starts payment');
+            await paid.locator('#submitBtn').click();await paid.waitForURL('https://checkout.stripe.com/**');
+            assert.equal(checkoutRequests.length,1);assert.equal(checkoutRequests[0].expected_amount_cents,cents);
+            assert.equal(checkoutRequests[0].source,'vendi_creation');assert.equal(checkoutRequests[0].tier,tier);
+            assert.equal(checkoutRequests[0].offer,tier==='90d'?'publication_90d_v1':undefined);
+            await paid.context().close();
+        }
+        console.log('OK: tre scelte a pagamento inviano importi esatti; offerta solo sui 90 giorni, nessun pagamento alla selezione.');
         assert.deepEqual(errors,[],'uncaught browser errors');
         console.log(`OK: ${variants} varianti di titolo, numeri italiani e sintassi dei due form.`);
     } finally {

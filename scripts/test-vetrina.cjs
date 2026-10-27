@@ -61,7 +61,7 @@ async function main() {
     const client = {
         auth:{getUser:async token=>({data:token==='valid'?{user:{id:owner,email:'test@example.invalid'}}:null,error:null})},
         from:table=>{assert.equal(table,'annunci');return{select(){return this;},in:async()=>({data:listings,error:null})};},
-        rpc:async(name,args)=>{if(name==='register_vetrina_checkout_analytics'){assert.equal(args.p_user,owner);assert.match(args.p_flow,/^[a-f0-9-]{36}$/);return{error:{message:'analytics offline'}};}assert.equal(name,'register_vetrina_checkout');logged=args;return{error:orderError?{message:'offline'}:null};}
+        rpc:async(name,args)=>{if(name==='register_vetrina_checkout_analytics'){assert.equal(args.p_user,owner);assert.match(args.p_flow,/^[a-f0-9-]{36}$/);return{error:{message:'analytics offline'}};}assert(['register_vetrina_checkout','register_vetrina_publication_checkout'].includes(name));logged={...args,rpc:name};return{error:orderError?{message:'offline'}:null};}
     };
     const checkout = load('create-checkout-session',client,async(url,options)=>{
         if(url.endsWith('/expire')){expired=true;return Response.json({});}
@@ -81,6 +81,25 @@ async function main() {
     setListings(1);listings[0].status='pending';
     assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d',source:'vendi_creation',expected_amount_cents:9900}))).status,200);
     assert.equal(charge.get('line_items[0][price_data][unit_amount]'),'9900','no creation discount');
+    assert.equal(Pricing.quotePublication('10d').total,4900);
+    assert.equal(Pricing.quotePublication('30d').total,9900);
+    assert.equal(Pricing.quotePublication('90d').total,22410);
+    const offer={annuncio_id:ids[0],tier:'90d',source:'vendi_creation',offer:Pricing.publicationOffer.id,expected_amount_cents:22410};
+    listings[0].created_at=new Date(Date.now()-1000).toISOString();
+    assert.equal((await checkout(request(offer))).status,200);
+    assert.equal(logged.rpc,'register_vetrina_publication_checkout');assert.equal(logged.p_listing_id,ids[0]);assert.equal(logged.p_expected_amount,22410);
+    assert.equal(charge.get('line_items[0][price_data][unit_amount]'),'22410');
+    assert.match(charge.get('line_items[0][price_data][product_data][description]'),/Offerta pubblicazione/);
+    for(const patch of [{source:'dashboard'},{tier:'30d'},{annuncio_ids:ids.slice(0,2)},{offer:'invented'}]) assert.equal((await checkout(request({...offer,...patch}))).status,400);
+    for(const patch of [{created_at:new Date(Date.now()-11*60000).toISOString()},{created_at:new Date(Date.now()+60000).toISOString()},{created_at:'invalid'},{created_at:null},{featured:true},{featured_since:new Date().toISOString()}]) {
+        const saved={...listings[0]};Object.assign(listings[0],patch);assert.equal((await checkout(request(offer))).status,409);listings[0]=saved;
+    }
+    assert.equal((await checkout(request({...offer,expected_amount_cents:24900}))).status,409);
+    orderError=true;expired=false;assert.equal((await checkout(request(offer))).status,409);assert(expired);orderError=false;
+    listings[0].status='active';
+    assert.equal((await checkout(request({annuncio_id:ids[0],tier:'90d',source:'vendi_creation',expected_amount_cents:24900}))).status,200,'old wizard price preserved without offer marker');
+    assert.equal(charge.get('line_items[0][price_data][unit_amount]'),'24900');
+    listings[0].status='pending';
     assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d',expected_amount_cents:9900}))).status,400);
     setListings(2);listings[1].status='pending';
     assert.equal((await checkout(request({annuncio_ids:ids.slice(0,2),tier:'30d',source:'vendi_creation',expected_amount_cents:17820}))).status,400);
@@ -123,6 +142,6 @@ async function main() {
     assert.equal(calls.at(-1).name,'apply_vetrina_checkout');
     dbError = true;
     assert.equal((await event('checkout.session.completed')).status,500);
-    console.log('OK: HTML, 30 combinazioni prezzo/bundle, nessuno sconto automatico, autorizzazioni, prezzi vecchi, checkout non registrato, firma e flusso Stripe precedente.');
+    console.log('OK: HTML, 30 combinazioni prezzo/bundle, offerta pubblicazione 90 giorni con vincoli, vecchi checkout, autorizzazioni, ordine non registrato, firma e flusso Stripe precedente.');
 }
 main().catch(error => {console.error(error);process.exitCode=1;});

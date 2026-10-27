@@ -1,0 +1,21 @@
+/* Final publication step: readable offer and three small visual explanations. */
+#step6 > button:first-child, #step6 #pubFootNote { color: var(--ad-muted, #52637a); }
+#step6 .text-slate-500, #step6 .pub-free-note { color: var(--ad-muted, #52637a); }
+#step6 .pub-premium, #step6 .pub-opt.selected, #step6 #submitBtn { box-shadow: none; }
+#step6 .pub-premium-head { background: var(--ad-field, #152943); }
+#step6 .pub-premium-head h2 { font-size: 1.25rem; line-height: 1.3; text-wrap: balance; }
+#step6 .pub-plan-tag { font-size: .6875rem; }
+#step6 .pub-offer-note { margin-top: 10px; color: var(--ad-muted, #64748b); font-size: .75rem; line-height: 1.5; }
+#pubPromotionDetails .pub-process { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 2px 0 14px; padding: 0; }
+#pubPromotionDetails .pub-process li { display: block; min-width: 0; text-align: center; }
+#pubPromotionDetails .pub-process-graphic { display: block; width: 100%; height: 60px; margin-bottom: 10px; color: var(--ad-link, #1d4ed8); }
+#pubPromotionDetails .pub-process-graphic .promotion-fill { fill: var(--ad-warning-bg, #f7edd6); stroke: var(--ad-warning, #a47422); }
+#pubPromotionDetails .pub-process-graphic .promotion-line { stroke: var(--ad-subtle, #64748b); }
+#pubPromotionDetails .pub-process strong { display: block; margin-bottom: 4px; color: var(--ad-ink, #152943); font-size: .8125rem; line-height: 1.4; }
+#pubPromotionDetails .pub-process p { color: var(--ad-muted, #475569); font-size: .75rem; line-height: 1.5; }
+#pubPromotionDetails .pub-process-note { color: var(--ad-muted, #475569); font-size: .75rem; line-height: 1.5; }
+@media (max-width: 400px) {
+    #pubPromotionDetails .pub-process { grid-template-columns: 1fr; gap: 14px; }
+    #pubPromotionDetails .pub-process li { display: flex; align-items: center; gap: 14px; text-align: left; }
+    #pubPromotionDetails .pub-process-graphic { width: 72px; height: 52px; margin: 0; flex-shrink: 0; }
+}

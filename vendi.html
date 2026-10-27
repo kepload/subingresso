@@ -178,6 +178,7 @@
     </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
 <link rel="stylesheet" href="/css/admin-theme.css?v=6">
+<link rel="stylesheet" href="/css/publication-promotion.css?v=1">
 </head>
 <body class="min-h-screen flex flex-col bg-neutral-100 text-slate-900">
 
@@ -522,7 +523,6 @@
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
                     <div class="text-center mb-6">
-                        <div class="text-3xl mb-2">🎉</div>
                         <h1 class="text-2xl font-black mb-1">Il tuo annuncio è pronto</h1>
                         <p class="text-slate-500 font-medium text-sm">Scegli come pubblicarlo.</p>
                     </div>
@@ -542,17 +542,17 @@
 
                         <section class="pub-premium" aria-labelledby="pubPremiumTitle">
                             <div class="pub-premium-head">
-                                <span class="pub-premium-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l5 4 5-7 5 7 5-4-2 13H4L2 6Z"/><path d="M5 22h14"/></svg></span>
+                                <span class="pub-premium-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 17 6-6 4 4 6-10M13 5h7v7"/></svg></span>
                                 <div>
-                                    <h2 id="pubPremiumTitle">Vetrina Premium</h2>
-                                    <p>Fai notare il tuo posteggio a chi sta cercando.</p>
+                                    <h2 id="pubPremiumTitle">Vendi più in fretta il tuo posteggio</h2>
+                                    <p>Fatti notare da chi cerca nella tua zona.</p>
                                 </div>
                             </div>
                             <div class="pub-premium-body">
                                 <ul class="pub-benefits">
                                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg> In alto nei risultati di ricerca</li>
                                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h4m3 0h3M7 16h4m3 0h3"/></svg> Negli spazi promozionali del blog</li>
-                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10m8 10V4m8 16v-7"/></svg> Statistiche di apparizioni, visite e azioni di contatto</li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20V10m8 10V4m8 16v-7"/></svg> Vedi le visite e i clic sui contatti</li>
                                 </ul>
 
                                 <details id="pubPromotionDetails" class="faq-item">
@@ -560,15 +560,19 @@
                                     <div class="faq-a">
                                         <ol class="pub-process">
                                             <li>
-                                                <span class="pub-process-number" aria-hidden="true">1</span>
-                                                <div><strong>Priorità nelle ricerche pertinenti</strong><p>Il tuo annuncio ha priorità nella ricerca e tra i consigliati, rispettando filtri e ordinamento per distanza. Una corona e il bordo dorato lo rendono riconoscibile.</p></div>
+                                                <svg class="pub-process-graphic" viewBox="0 0 96 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="13" y="3" width="70" height="58" rx="5"/><path class="promotion-line" d="M22 12h43"/><rect class="promotion-fill" x="21" y="21" width="54" height="12" rx="3"/><path d="M28 27h29"/><path class="promotion-line" d="M24 42h45M24 51h35"/></svg>
+                                                <div><strong>Più in vista</strong><p>Nelle ricerche della tua zona.</p></div>
                                             </li>
                                             <li>
-                                                <span class="pub-process-number" aria-hidden="true">2</span>
-                                                <div><strong>Negli spazi promozionali del blog</strong><p>Il tuo annuncio può comparire nei nostri articoli, a rotazione con gli altri annunci in Vetrina e secondo la zona cercata. Dalla tua area personale segui le attività rilevate durante la promozione, senza confonderle con vendite o contatti aggiuntivi garantiti.</p></div>
+                                                <svg class="pub-process-graphic" viewBox="0 0 96 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="13" y="3" width="70" height="58" rx="5"/><path class="promotion-line" d="M23 13h50M23 21h39"/><rect class="promotion-fill" x="23" y="30" width="50" height="17" rx="3"/><path d="M31 38h25"/><path class="promotion-line" d="M23 54h44"/></svg>
+                                                <div><strong>Anche nel blog</strong><p>Il tuo annuncio tra gli articoli.</p></div>
+                                            </li>
+                                            <li>
+                                                <svg class="pub-process-graphic" viewBox="0 0 96 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 15s11-11 23-11 23 11 23 11-11 11-23 11S15 15 15 15Z"/><circle cx="38" cy="15" r="5"/><path class="promotion-line" d="M19 37v20h18V43m8 14V36h14v21"/><path d="M69 34h12m-5-5 5 5-5 5M68 48h13m-5-5 5 5-5 5"/></svg>
+                                                <div><strong>Segui i risultati</strong><p>Visite e clic nella tua area.</p></div>
                                             </li>
                                         </ol>
-                                        <p>I giorni di promozione iniziano quando l'annuncio viene approvato. Se è già online, iniziano dal pagamento.</p>
+                                        <p class="pub-process-note">Visibilità secondo zona e filtri, a rotazione con gli altri annunci.</p>
                                     </div>
                                 </details>
 
@@ -576,14 +580,12 @@
                                     <span>Scegli la durata</span>
                                     <span class="pub-discount">Pagamento unico</span>
                                 </div>
-                                <p style="font-size:12px;color:#475569;margin:0 0 12px;line-height:1.5">Stessi vantaggi per 10, 30 o 90 giorni. La promozione parte dall’approvazione.</p>
                                 <div class="pub-plans">
                                     <button type="button" id="pub10d" onclick="_selectPubChoice('10d')" aria-pressed="false"
                                         class="pub-opt pub-plan">
                                         <span class="pub-radio" aria-hidden="true"></span>
                                         <span class="pub-plan-copy">
                                             <span class="pub-plan-title">10 giorni</span>
-                                            <span class="pub-plan-daily">Per una promozione breve</span>
                                             <span class="pub-plan-price">49 €</span>
                                             <span class="pub-plan-daily">4,90 € al giorno</span>
                                         </span>
@@ -593,7 +595,6 @@
                                         <span class="pub-radio" aria-hidden="true"></span>
                                         <span class="pub-plan-copy">
                                             <span class="pub-plan-title">30 giorni <span class="pub-plan-tag">Consigliato</span></span>
-                                            <span class="pub-plan-daily">Un mese di visibilità</span>
                                             <span class="pub-plan-price">99 €</span>
                                             <span class="pub-plan-daily">3,30 € al giorno</span>
                                         </span>
@@ -602,13 +603,13 @@
                                         class="pub-opt pub-plan">
                                         <span class="pub-radio" aria-hidden="true"></span>
                                         <span class="pub-plan-copy">
-                                            <span class="pub-plan-title">90 giorni <span class="pub-plan-tag pub-plan-tag-best">Più conveniente</span></span>
-                                            <span class="pub-plan-daily">Tre mesi per la tua trattativa</span>
-                                            <span class="pub-plan-price">249 €</span>
-                                            <span class="pub-plan-daily">2,77 € al giorno</span>
+                                            <span class="pub-plan-title">90 giorni <span class="pub-plan-tag pub-plan-tag-best">Solo ora −10%</span></span>
+                                            <span class="pub-plan-price"><del>249 €</del> 224,10 €</span>
+                                            <span class="pub-plan-daily">2,49 € al giorno</span>
                                         </span>
                                     </button>
                                 </div>
+                                <p class="pub-offer-note">Sconto sui 90 giorni solo se li scegli ora, alla pubblicazione.</p>
                                 <p class="pub-payment-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></svg> Pagamento unico. Nessun abbonamento.</p>
                             </div>
                         </section>
@@ -634,7 +635,7 @@
                         </details>
                         <details class="faq-item">
                             <summary>Posso attivarla anche dopo? <svg class="faq-chev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></summary>
-                            <p class="faq-a">Sì, dalla tua area personale. Dalla dashboard puoi anche scegliere più annunci e acquistare un pacchetto con sconto fino al 20%.</p>
+                            <p class="faq-a">Sì, dalla tua area personale, al prezzo di listino: 49, 99 o 249 €. Lo sconto del 10% sui 90 giorni vale solo ora. Dalla dashboard puoi anche promuovere più annunci insieme con i pacchetti dedicati.</p>
                         </details>
                     </div>
                 </div>
@@ -656,7 +657,7 @@
 <script src="js/ui-components.js?v=18"></script>
 <script src="js/auth.js?v=29"></script>
 <script src="js/pages/vendi-support.js?v=2"></script>
-<script src="js/vetrina-pricing.js?v=1"></script>
+<script src="js/vetrina-pricing.js?v=2"></script>
 <script>
 
 // ── Step Management ───────────────────────────────────────
@@ -678,15 +679,15 @@ let _comunePicker = null;
 
 // ── Step 6: scelta pubblicazione ──────────────────────────
 // _pubChoice: 'free' | '10d' | '30d' | '90d'. Default 'free' (preselezionato).
-// Il listino Premium è condiviso con il checkout e confermato sul server.
-// (gate: source=vendi_creation + annuncio appena creato + mai featured). Qui i
+// Il listino è condiviso con il checkout e confermato sul server.
+// Offerta 90 giorni solo alla creazione: nuovo annuncio, mai promosso. Qui i
 // prezzi sono solo display: la fonte di verità resta la edge function.
 let _pubChoice = 'free';
 const _PUB_OPTIONS = {
     'free': { btnLabel: 'Pubblica gratis' },
-    '10d':  { btnLabel: 'Attiva Premium · 49 €', amountCents: VetrinaPricing.plans['10d'].cents },
-    '30d':  { btnLabel: 'Attiva Premium · 99 €', amountCents: VetrinaPricing.plans['30d'].cents },
-    '90d':  { btnLabel: 'Attiva Premium · 249 €', amountCents: VetrinaPricing.plans['90d'].cents },
+    '10d':  { btnLabel: 'Pubblica e promuovi · 49 €', amountCents: VetrinaPricing.quotePublication('10d').total },
+    '30d':  { btnLabel: 'Pubblica e promuovi · 99 €', amountCents: VetrinaPricing.quotePublication('30d').total },
+    '90d':  { btnLabel: 'Pubblica e promuovi · 224,10 €', amountCents: VetrinaPricing.quotePublication('90d').total },
 };
 
 function _selectPubChoice(choice, userAction = true) {
@@ -2005,7 +2006,7 @@ async function submitAnnuncio() {
                 .then(() => {}).catch(() => {});
         }
 
-        // Acquisto Premium facoltativo. Nessuno sconto di pubblicazione o omaggio automatico.
+        // Promozione facoltativa, offerta 90 giorni riservata alla pubblicazione.
         if (_pubChoice !== 'free' && inserted?.id) {
             window.VetrinaJourney?.record('checkout_attempt', {source:'vendi',tier:_pubChoice,count:1});
             try {
@@ -2024,7 +2025,8 @@ async function submitAnnuncio() {
                         'Authorization': `Bearer ${_tok}`,
                         'apikey':        SUPABASE_ANON_KEY,
                     },
-                    body: JSON.stringify({ annuncio_id: inserted.id, tier: _pubChoice, source: 'vendi_creation', expected_amount_cents: _PUB_OPTIONS[_pubChoice].amountCents }),
+                    body: JSON.stringify({ annuncio_id: inserted.id, tier: _pubChoice, source: 'vendi_creation', expected_amount_cents: _PUB_OPTIONS[_pubChoice].amountCents,
+                        ...(_pubChoice === VetrinaPricing.publicationOffer.tier ? { offer: VetrinaPricing.publicationOffer.id } : {}) }),
                 }), 15000, 'Timeout checkout');
                 const coData = await coRes.json().catch(() => ({}));
                 if (coRes.ok && coData.url) {

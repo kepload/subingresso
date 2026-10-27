@@ -455,7 +455,8 @@ L'utente non loggato compila tutti i 5 step SENZA vedere mai il banner "devi reg
 
 - Fonte del listino: `js/vetrina-pricing.js` e controllo server. 10/30/90 giorni
   a 49/99/249 euro; pacchetti di 2 annunci −10%, 3–4 −15%, 5–10 −20%, stessa
-  durata e pagamento unico. Nessuno sconto pubblicazione, omaggio o lotteria UI.
+  durata e pagamento unico. Solo nel wizard,90giorni −10% a224,10€ dal27ottobre;
+  offerta singola non cumulabile, validata dal server sul nuovo annuncio.
   Contratto completo: `data/VETRINE_PREMIUM.md`; patch del 22 ottobre.
 - Checkout: `expected_amount_cents` coincide con il totale server, altrimenti
   409 prima del pagamento. Conservare sessioni già aperte, quote per annuncio,
@@ -613,7 +614,7 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
 ## 🧙 Form `vendi.html` — Wizard 6 Step (aggiornato 7 ottobre 2026)
 
 - 6 step: vendita/affitto, posizione, dettagli, prezzo, foto/contenuto/contatti, riepilogo e pubblicazione gratis/Vetrina. `fTipo`, `fMerce`, `fGiorni` sono hidden aggiornati via JS. `stato` radio hidden via `selectStato()`.
-- Step6 corrente22ottobre: pubblicazione gratuita preselezionata e Vetrina Premium49/99/249€ per10/30/90giorni, senza sconto di pubblicazione. Benefici e limiti visibili; da pending la durata parte dall’approvazione. I pacchetti multi annuncio si scelgono dalla dashboard, con totale e risparmio esatti prima di Stripe.
+- Step6 corrente27ottobre: gratis preselezionato; «Vendi più in fretta il tuo posteggio»,10/30giorni49/99€,90giorni224,10€ anziché249€ (−10% solo alla pubblicazione). CTA «Pubblica e promuovi», descrizioni dei piani eliminate, spiegazione grafica breve. Offerta esplicita e primo ordine su annuncio creato da non oltre10minuti, mai promosso; controlli server/RPC privata. Da pending tutti i giorni partono dall’approvazione. Dashboard a listino e pacchetti invariati; contratto `data/VETRINE_PREMIUM.md`.
 - Step 1 auto-avanza al click. `js/pages/vendi-support.js` genera centinaia di varianti di titolo da dati reali (vendita/affitto, mercato/fiera, comune, nome fiera, giorni, settore, superficie), senza qualità inventate. Selezione casuale con memoria degli ultimi 20 suggerimenti nella sessione. Titolo stabile tornando indietro; aggiorna un titolo automatico quando cambiano i dettagli, preserva quello scritto dall'utente. Pulsante per cambiare suggerimento; conferma prima di sostituire un titolo manuale.
 - Prezzo: 101-400.000€, **input via `style=""` inline**. `VendiSupport.parseNumber()` legge importi italiani e decimali senza troncamenti o perdita dei centesimi; rifiuta testo, esponenti e valori non finiti. Superficie decimale con esempio larghezza × profondità. Errori sul campo interessato e controllo di tutti i passi prima dell'INSERT.
 - Foto: **facoltative**, fino a **5 per tutti, anche gratis**, anche in `modifica-annuncio.html`. Nel wizard inizialmente un solo slot con invito rosso sulle visite; dopo la prima foto, copertina grande e tre slot piccoli per altre foto, chiaramente facoltativi. Nessun avviso intermedio su Avanti, anche senza foto. Selezione multipla, copertina modificabile e rimozione visibile da telefono. Accetta JPG/PNG/WebP/AVIF fino a 20 MB; conserva gli originali e serve anteprime WebP separate.
