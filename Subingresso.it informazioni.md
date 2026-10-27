@@ -1,5 +1,23 @@
 # Subingresso.it — informazioni e TO DO
 
+## ADS: grafico e schede semplici — 27 ottobre 2026
+
+- Preferenza: grafico generale delle visualizzazioni e pochi indicatori,
+  dettagli numerici chiusi, poi subito il mosaico esistente. Rimossi pausa,
+  scarica raccolta e «Usa ADS»; codici/download singoli nei tecnici chiusi.
+- Clic sulla ADS: totali su tutti i formati, CTR, clic con risultato,
+  argomenti/parole/esclusioni attuali e articoli con visualizzazioni misurate.
+  Nessuna modifica a regole, rotazione o dati; contratti `data/PERSONAL_ADS.md`
+  e `data/PERSONAL_ADS_MOTION.md`. Periodi locali e accesso admin conservati.
+- Pubblicato `56e87dd` + `4a1b19b`: pagina e17asset identici online SHA256,
+  API privata401 e HEADanteprima303. Raccolta e nuova analisi ripetute sugli
+  asset pubblicati Chromium1440/768/320 e WebKit390, senza eventi reali;
+  Vetrine, correzioni, contesto/CSV e animazioni passati anche in locale.
+- Inspector0FAIL; prove `.local/verifiche/ads-grafico-dettagli`. Fixture e
+  attese browser adeguate ai controlli rimossi/chiusi e agli SVG responsivi.
+  Backup remoto tag232915 e ramo pre-ads-grafico-dettagli verificati; cleanup
+  helper con errori noti. Gitleaks pulito; file estranei conservati.
+
 Regole comuni per Claude e Codex: `AGENTS.md`. Questo documento raccoglie
 decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
