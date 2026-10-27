@@ -5,6 +5,15 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+
+## Articolo acquisto banco con merce — pubblicato e verificato, 27 ottobre 2026
+
+- Titolo rosso12: [Compro il banco con tutta la merce: cosa controllare prima di pagare](https://subingresso.it/blog?post=comprare-banco-merce-inventario), ID `8160f937-b735-4ad3-a72c-1c9f2ae7d47b`. Sei sezioni, 600 parole incluse fonti; lingua semplice, esempio inventato80×4=320, merce/attrezzature/avviamento distinti, nessuna stima garantita.
+- Inventario gratuito `/downloads/inventario-acquisto-banco.xlsx`, cinque schede: incompleti/zeri, esclusioni e quantità incoerenti distinti. Formule eseguite con motore formulas, sei scenari per entrambe le schede, esempio totale1.400; nessuna macro/connessione. Download reale WebKit390 identicoSHA256. Tre fonti primarie200 conservate e pagina29 della guida inventario esaminata; copertina originale imagegen WebP1600×900 dichiarataIA.
+- Due ADS acquisto inline/closing pertinenti, distinte e alternate; destinazioni `/annunci`, spazioVetrine conservato. Materiali `13fd12f`/`42fb689`, Vercel `T9ofnD6ZC6bxRrGpBGkpUJnUeffw` success; copertina e download identici online. SEO/SSR/indice/sitemap, Chromium1440/768/320, WebKit390 e senzaJS passati; nessun overflow/errore e tracking di prova intercettato. Precedenti123articoli identici, 124totali. Piano spuntato solo dopo verifica.
+- Sorgenti `data/blog/comprare-banco-merce-inventario.*`; prompt/originale/helper/fonti/prove `Documents/articoli-subingresso/comprare-banco-merce-inventario`, checkout isolato `Documents/subingresso-articolo-inventario-20261027`. Backup remoto `backup/session-20261027-132428-articolo-inventario-banco` verificato; consueto errore cleanuphelper. Gitleaks manuale pulito; corretti cwd e parametri dei range nella fixture formule, nessun difetto delle formule. Lavoro estraneo conservato.
+
+
 ## Articolo verifica incassi banco — pubblicato e verificato, 27 ottobre 2026
 
 - Titolo rosso11: [1.000 euro al giorno? Verifica gli incassi del banco prima di comprarlo](https://subingresso.it/blog?post=verificare-incassi-banco-prima-comprare), ID `45539053-7634-47e7-8ba9-969c1fe8dbc0`. Sei sezioni, 644 parole incluse fonti, linguaggio semplice; dichiarato/documentato/POS distinti, esempio inventato 2.100÷3=700 senza previsioni o certificazioni.
