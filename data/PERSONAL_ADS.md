@@ -7,7 +7,8 @@ Contratto `BLOG_VETRINE_ADS.md`; non sommare queste serie ai banner propri.
 ## Interfaccia del 27 ottobre 2026
 
 Prima il grafico giornaliero delle visualizzazioni delle sole ADS proprie,
-con totale, clic, tasso misurato e azioni sul sito. Un solo periodo generale;
+con totale, clic, tasso misurato e clic con risultato (almeno una delle
+azioni previste, conteggiato una sola volta per clic). Un solo periodo generale;
 le finestre si leggono all'apertura e si filtrano localmente. La serie usa
 `event_day` UTC, zero nei giorni senza eventi dall'inizio della misurazione;
 primo/ultimo giorno parziali. Righe senza data contribuiscono al totale ma

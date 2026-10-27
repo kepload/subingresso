@@ -48,7 +48,7 @@
  function overview(stats,days){
   chart={stats,days};const rows=stats.rows,views=total(rows,'impressions'),clicks=total(rows,'clicks'),actions=total(rows,'converted_clicks');
   $('paOverviewViews').textContent=num(views);$('paOverviewRange').textContent='Tutti i banner · ultimi '+days+' giorni';
-  $('paOverviewMetrics').innerHTML=[['Clic',num(clicks),'Tasso di clic: '+pct(total(rows,'measured_clicks'),views)],['Azioni sul sito',num(actions),'Annunci inviati, recapiti consultati o fiere salvate']].map(([name,value,note])=>'<div><dt>'+name+'</dt><dd>'+value+'</dd><small>'+note+'</small></div>').join('');
+  $('paOverviewMetrics').innerHTML=[['Clic',num(clicks),'Tasso di clic: '+pct(total(rows,'measured_clicks'),views)],['Clic con risultato',num(actions),'Un annuncio, un recapito o una fiera salvata']].map(([name,value,note])=>'<div><dt>'+name+'</dt><dd>'+value+'</dd><small>'+note+'</small></div>').join('');
   const ranked=new Map();for(const row of rows)ranked.set(row.ad_id,(ranked.get(row.ad_id)||0)+Number(row.clicks||0));const best=[...ranked].sort((a,b)=>b[1]-a[1])[0];
   $('paOverviewFinding').textContent=!views&&!clicks?'Le prime visualizzazioni compariranno quando i banner saranno visti nel blog.':best?.[1]?'Più clic: '+best[0]+' · '+num(best[1])+'.':'I banner stanno comparendo nel blog. Ancora nessun clic nel periodo.';
   $('paOverviewFinding').hidden=!clicks;
@@ -75,7 +75,7 @@
  function adDetails(data,ad,format,days){
   active={ad};const rows=data.stats.rows.filter(row=>row.ad_id===ad.id),views=total(rows,'impressions'),clicks=total(rows,'clicks'),formatRows=rows.filter(row=>row.format===format.id);
   $('paAdDescription').textContent=ad.description;$('paAdPeriod').textContent='Ultimi '+days+' giorni · tutte le misure e tutti gli articoli';
-  $('paAdMetrics').innerHTML=[['Visualizzazioni',num(views)],['Clic',num(clicks)],['Tasso di clic',pct(total(rows,'measured_clicks'),views)],['Azioni sul sito',num(total(rows,'converted_clicks'))]].map(([name,value])=>'<div><dt>'+name+'</dt><dd>'+value+'</dd></div>').join('');
+  $('paAdMetrics').innerHTML=[['Visualizzazioni',num(views)],['Clic',num(clicks)],['Tasso di clic',pct(total(rows,'measured_clicks'),views)],['Clic con risultato',num(total(rows,'converted_clicks'))]].map(([name,value])=>'<div><dt>'+name+'</dt><dd>'+value+'</dd></div>').join('');
   $('paAdFormatMetrics').textContent='Questa misura: '+num(total(formatRows,'impressions'))+' visualizzazioni · '+num(total(formatRows,'clicks'))+' clic. Destinazione: '+ad.label+'.';
   const posts=new Map();for(const row of rows){if(!row.article_slug||!Number(row.impressions))continue;const current=posts.get(row.article_slug)||{slug:row.article_slug,title:row.article_title||row.article_slug,views:0,clicks:0};current.views+=Number(row.impressions||0);current.clicks+=Number(row.clicks||0);posts.set(row.article_slug,current);}
   const ordered=[...posts.values()].sort((a,b)=>b.views-a.views||b.clicks-a.clicks);
