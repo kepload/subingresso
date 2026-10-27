@@ -5,6 +5,27 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## File di lavoro e pulizia — 27 ottobre 2026
+
+- Nuove regole permanenti in `AGENTS.md`: tutti i nuovi materiali Subingresso
+  nella cartella del progetto; privati in `.local/`, esclusa da Git/deploy.
+  Pulizia proposta mensilmente, sempre con conferma prima delle eliminazioni.
+- Ultima revisione pulizia: **27 ottobre 2026**. Prossima proposta al primo
+  lavoro utile dal **27 novembre**, se rinviata entro **27 dicembre**;
+  nessun task, cancellazione o riavvio automatico autorizzato.
+- Sei elementi indicati rimossi dal Desktop: due lanciatori, due cartelle log
+  e un collegamento nel Cestino (484 file, 168.272.422 byte); conservati 57 esiti
+  provinciali, un risultato non JSON e 11 esiti articoli in
+  `.local/archivio/loop-20261027`. Loop ritirati su richiesta, 75 province concluse
+  e 35 aperte; Lecce resta parziale, 124 bozze nel dossier preesistente.
+- Backup Impeccable spostato in `.local/backup/impeccable-20261021-092441`:
+  tre file identici SHA256, tutti i 391 originali nello ZIP verificati.
+  Ripristino avvio Windows conservato in `Documents/Manutenzione-Windows/`:
+  14 file trasferiti identici, poi script reso relativo per Tailscale e nota aggiornata.
+- Prove `.local/verifiche/pulizia-desktop-20261027`. Backup Git remoto verificato;
+  helper con consueti errori cleanup. Cancellazione diretta respinta dal controllo
+  di esecuzione, completata in modo reversibile tramite Cestino. Altri file invariati.
+
 
 
 ## Articolo confronto prezzi Milano - pubblicato e verificato, 27 ottobre 2026

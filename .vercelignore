@@ -5,6 +5,7 @@ SETUP.md
 setup-database.sql
 .git
 .gitignore
+/.local/
 .claude
 .vercel
 node_modules

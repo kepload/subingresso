@@ -1,4 +1,5 @@
 .vercel
+/.local/
 node_modules/
 tailwind.input.css
 tailwind.config.js

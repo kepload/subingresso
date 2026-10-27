@@ -44,6 +44,26 @@ registrare gli esiti significativi in poche righe, senza copiarli in tutti i fil
 A fine sessione, se l'utente chiede di salvare/chiudere, conservare solo novità
 utili e non duplicate. Le regole comuni si aggiornano soltanto qui.
 
+## File di lavoro e pulizia
+
+- Tutti i nuovi file per Subingresso devono stare nella root del progetto o
+  nelle sue sottocartelle. Niente file, cartelle, loop, log o collegamenti
+  sparsi sul Desktop o in Documents; eccezioni solo su richiesta dell'utente.
+- Sorgenti e risorse del sito restano nelle cartelle previste. Usare `.local/`
+  per materiali privati: `lavori/`, `ricerche/`, `verifiche/`, `backup/`,
+  `archivio/`, `tmp/` e `worktrees/` secondo necessità. `.local/` è esclusa
+  sia da Git sia dal deploy; non aggiungerla forzatamente al repository.
+  Non spostare vecchi worktree senza verificarne stato e riferimenti Git.
+- Alla chiusura di lavori occasionali controllare i residui: mantenere solo
+  ciò che serve per ripresa, fonti, verifiche o ripristino. Prima di eliminare
+  presentare elenco, motivo e spazio recuperabile e chiedere conferma esplicita.
+  Una conferma già ricevuta vale per gli elementi indicati, non per altri file.
+- Proporre una revisione della pulizia ogni mese, al primo lavoro utile sul
+  progetto; se rinviata, riproporla entro due mesi dall'ultima revisione.
+  Consultare la data nel registro, senza ripetere la domanda a ogni sessione.
+  Niente cancellazioni, nuovi loop, task pianificati o riattivazioni automatiche.
+  Backup, fonti, dati e lavoro altrui richiedono sempre una valutazione specifica.
+
 ## Prima di modificare e workflow Git
 
 - Root attuale: `C:\Users\utente\Desktop\Ardit\subingresso.it`.
