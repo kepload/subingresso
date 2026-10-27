@@ -6,6 +6,15 @@ senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
 
+
+## Articolo confronto prezzi Milano - pubblicato e verificato, 27 ottobre 2026
+
+- Titolo rosso4: [Comprare un posteggio a Milano e provincia: prezzi a confronto](https://subingresso.it/blog?post=posteggi-vendita-milano-prezzi-confronto), ID `8bda514f-7314-4e2d-8cea-a4e9be06510e`. Sei annunci API ricontrollati attivi/non-demo/vendita, sei sezioni e circa650parole; prezzi richiesti distinti da conclusi, campione non rappresentativo, condizioni attribuite ai venditori, esempio economico inventato e link alle fonti.
+- Due ADS acquisto inline/closing distinte e alternate; Vetrine conservate. Copertina originale imagegen WebP1600x900 dichiarataIA, online identicaSHA256. Materiali `0bb959f`, Vercel `PpREKK3RKUnBgJK6dLStmYGW5Cg3` success. Articolo/indice/sitemap/SEO, Chromium1440/768/320 e WebKit390, senzaJS passati;124precedenti identici,125totali, scritture di prova intercettate.
+- Tabella passata da tre a due colonne dopo controllo visivo: prezzi visibili senza scorrimento laterale a320px (272/272); aggiornato soltanto content, ID/data conservati. Titolo precisato per chi compra dopo primo abbinamentoADS vendita. Fixture header corretta per encoding PowerShell; nessun difetto del sito.
+- Sorgenti/fonti `data/blog/posteggi-vendita-milano-prezzi-confronto.*`; prompt/originale/snapshot/helper/prove `Documents/articoli-subingresso/posteggi-vendita-milano-prezzi-confronto`, checkout isolato `Documents/subingresso-articolo-prezzi-milano-20261027`. Backup remoto `backup/session-20261027-134501-articolo-prezzi-milano` verificato, cleanuphelper con errori noti. Gitleaks manuale pulito; file estranei conservati. Piano segnato dopo verifica online.
+
+
 ## Articolo acquisto banco con merce — pubblicato e verificato, 27 ottobre 2026
 
 - Titolo rosso12: [Compro il banco con tutta la merce: cosa controllare prima di pagare](https://subingresso.it/blog?post=comprare-banco-merce-inventario), ID `8160f937-b735-4ad3-a72c-1c9f2ae7d47b`. Sei sezioni, 600 parole incluse fonti; lingua semplice, esempio inventato80×4=320, merce/attrezzature/avviamento distinti, nessuna stima garantita.
