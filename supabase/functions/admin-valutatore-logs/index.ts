@@ -44,14 +44,20 @@ Deno.serve(async (req) => {
       return json({ error: 'Forbidden' }, 403);
     }
 
+    const excluded = await admin.rpc('analytics_excluded_account_ids');
+    if (excluded.error) return json({ error: 'Statistiche non disponibili' }, 503);
+    const excludedIds = (excluded.data || []).filter((id: unknown) => typeof id === 'string' && /^[a-f0-9-]{36}$/i.test(id));
+    const measuredLogs = (columns: string, options?: { count?: 'exact'; head?: boolean }) => {
+      const selected = admin.from('valutatore_logs').select(columns, options);
+      return excludedIds.length ? selected.or('user_id.is.null,user_id.not.in.(' + excludedIds.join(',') + ')') : selected;
+    };
+
     // Limit configurabile via querystring (default 500, max 2000)
     const url = new URL(req.url);
     const limitRaw = parseInt(url.searchParams.get('limit') || '500', 10);
     const limit = Number.isFinite(limitRaw) ? Math.min(Math.max(limitRaw, 1), 2000) : 500;
 
-    const { data: logs, error: logsErr } = await admin
-      .from('valutatore_logs')
-      .select(`
+    const { data: logs, error: logsErr } = await measuredLogs(`
         id, created_at, session_token, user_id, annuncio_id,
         fatturato, frequenza, durata_fiera, stagionalita, zona, settore, posizione, anzianita,
         prezzo_min, prezzo_avg, prezzo_max, affitto_annuo, affitto_mensile,
@@ -89,10 +95,10 @@ Deno.serve(async (req) => {
     // Funnel aggregato (last 30 days)
     const since30 = new Date(Date.now() - 30 * 24 * 3600 * 1000).toISOString();
     const [allCount, recentCount, linkedCount, listingCount] = await Promise.all([
-      admin.from('valutatore_logs').select('id',{count:'exact',head:true}),
-      admin.from('valutatore_logs').select('id',{count:'exact',head:true}).gte('created_at',since30),
-      admin.from('valutatore_logs').select('id',{count:'exact',head:true}).gte('created_at',since30).not('user_id','is',null),
-      admin.from('valutatore_logs').select('id',{count:'exact',head:true}).gte('created_at',since30).not('annuncio_id','is',null)
+      measuredLogs('id',{count:'exact',head:true}),
+      measuredLogs('id',{count:'exact',head:true}).gte('created_at',since30),
+      measuredLogs('id',{count:'exact',head:true}).gte('created_at',since30).not('user_id','is',null),
+      measuredLogs('id',{count:'exact',head:true}).gte('created_at',since30).not('annuncio_id','is',null)
     ]);
     if ([allCount,recentCount,linkedCount,listingCount].some(r=>r.error)) return json({error:'Conteggi valutazioni non disponibili'},500);
     const stats = {

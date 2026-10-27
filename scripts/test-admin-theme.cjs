@@ -29,7 +29,7 @@ function fixture(file, before = false) {
     if (file === 'dashboard.html') content += `<script>document.getElementById('loadingState').classList.add('hidden');document.getElementById('dashContent').classList.remove('hidden');document.getElementById('welcomeTitle').textContent='Admin';</script>`;
     const auth = file === 'fallback' ? bootstrap.replace('const _supabase=', 'window.qaClient=').replace('</script>', "window.qaCreated=0;window.supabase={createClient:()=>{qaCreated++;return qaClient;}};</script>") : bootstrap;
     if (!file || ['fallback','settings'].includes(file)) html = html.replace('</main>', read('dashboard.html').match(/<section class="profile-theme-settings profile-theme-actions"[\s\S]*?<\/section>/)[0] + '</main>').replace('</head>','<link rel="stylesheet" href="/css/theme-preferences.css"></head>');
-    return html.replace('</body>', auth + `<script src="/js/image-urls.js"></script><script src="/js/data.js"></script><script src="/js/ui-components.js"></script>` + content + (before ? '' : `<script src="/js/admin-theme.js"></script>`) + '</body>');
+    return html.replace('</body>', auth + `<script src="/js/image-urls.js"></script><script src="/js/data.js?v=26"></script><script src="/js/ui-components.js"></script>` + content + (before ? '' : `<script src="/js/admin-theme.js"></script>`) + '</body>');
 }
 const server = http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');

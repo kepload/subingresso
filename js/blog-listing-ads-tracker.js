@@ -39,6 +39,7 @@
    const user=checked.data?.user;if(user&&session.data.session.user?.id!==user.id)return;
    owner=user?.id||null;excluded=false;
    if(user){const profile=await _supabase.from('profiles').select('is_admin,is_demo').eq('id',user.id).single();if(rev!==revision||profile.error)return;excluded=profile.data?.is_admin===true||profile.data?.is_demo===true;token=session.data.session.access_token;}
+   if(window.AnalyticsIdentity){const measurement=await window.AnalyticsIdentity.context();if(rev!==revision)return;excluded=excluded||!measurement.allowed;}
    if(rev!==revision)return;ready=true;scan();visible.forEach(schedule);
   }catch(_){}
  }

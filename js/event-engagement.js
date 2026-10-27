@@ -11,6 +11,7 @@
   if(!uuid.test(id)||navigator.webdriver===true||typeof _supabase==='undefined')return;
   const key=identity+':'+id+':'+new Date().toISOString().slice(0,10)+':'+metric;if(sent.has(key)||pending.has(key))return;pending.add(key);const current=identity;
   try{
+   if(window.AnalyticsIdentity&&!(await window.AnalyticsIdentity.context()).allowed)return;
    // Sessione locale: il server verifica il JWT ed esclude proprietario/amministratore.
    // La stessa lettura serve visita e clic, senza richieste auth durante l’uscita.
    if(!credentials)credentials=_supabase.auth.getSession();

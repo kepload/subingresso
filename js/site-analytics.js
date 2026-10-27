@@ -67,6 +67,12 @@
     async function flush(exiting = false) {
         clearTimeout(timer); timer = null;
         if (sending && !exiting || !ready || !queue.length) return;
+        const beforeIdentity = epoch;
+        const identity = window.AnalyticsIdentity ? await window.AnalyticsIdentity.context() : null;
+        if (beforeIdentity !== epoch) return;
+        if (identity && !identity.allowed) { queue = []; retryCount.clear(); return; }
+        if (identity) token = identity.token || '';
+        if (sending && !exiting || !queue.length) return;
         const batch = queue.splice(0, 20), current = epoch;
         sending++;
         try {

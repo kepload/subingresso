@@ -1,4 +1,4 @@
-﻿const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http'),cp=require('node:child_process');
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http'),cp=require('node:child_process');
 const root=path.resolve(__dirname,'..'),read=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8'));
 const data=read('data/fiere.json'),audit=read('data/fiere-piacenza.json'),events=data.events.filter(e=>e.province==='Piacenza');
 const baseline=JSON.parse(cp.execFileSync('git',['show','29ff4aed:data/fiere.json'],{cwd:root,maxBuffer:20*1024*1024}));

@@ -13,10 +13,12 @@
         return { v: v, s: s };
     }
 
-    window.trackBlogConversion = function (kind, slug, regione) {
+    window.trackBlogConversion = async function (kind, slug, regione) {
         try {
             if (!['cta_annunci_click','box_listing_click','cta_fiere_click'].includes(kind) || !/^[a-z0-9-]{1,120}$/.test(slug || '')) return;
             if (navigator && navigator.webdriver === true) return;
+            var identity = window.AnalyticsIdentity ? await window.AnalyticsIdentity.context() : null;
+            if (identity && !identity.allowed) return;
             var ids = _ids();
             if (!ids.v || !ids.s) return;
             var body = JSON.stringify({
@@ -31,7 +33,7 @@
                 headers: {
                     'Content-Type':  'application/json',
                     'apikey':        SUPABASE_ANON_KEY,
-                    'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+                    'Authorization': 'Bearer ' + (identity?.token || SUPABASE_ANON_KEY),
                     'Prefer':        'return=minimal'
                 },
                 body: body,

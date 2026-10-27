@@ -20,7 +20,7 @@ const _supabase={auth:{getUser:async()=>({data:{user:qaUser}}),onAuthStateChange
 rpc(name,args){const promise=fetch('/qa/rpc',{method:'POST',headers:{'X-QA-User':qaUser?.id||''},body:JSON.stringify({name,args})}).then(r=>r.json());promise.abortSignal=()=>promise;return promise;},
 from:table=>({filters:[],upsert(value){qaWrites.push({table,value});return this;},select(columns,options){this.columns=columns;this.options=options;return this;},eq(key,value){this.filters.push([key,value]);return this;},or(filter){this.orFilter=filter;return this;},abortSignal(signal){if(table==='profiles')return this;return fetch('/qa/listing-count',{signal,method:'POST',body:JSON.stringify({table,columns:this.columns,options:this.options,filters:this.filters,or:this.orFilter})}).then(r=>r.json());},single:async()=>{await new Promise(resolve=>setTimeout(resolve,qaSaveDelay));return qaFailSave?{error:{message:'offline'}}:{data:{id:qaUser.id,is_admin:qaIsAdmin}};}})};
 window.updateAuthNav=()=>{};window.signOut=()=>{};
-</script><script src="/js/data.js?v=21"></script><script src="/js/ui-components.js?v=17"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/organizzatori.js?v=9"></script><script src="/js/profile-switch.js?v=5"></script><script>
+</script><script src="/js/data.js?v=26"></script><script src="/js/ui-components.js?v=17"></script><script src="/js/event-data.js?v=1"></script><script src="/js/vetrina-account.js?v=2"></script><script src="/js/organizzatori.js?v=9"></script><script src="/js/profile-switch.js?v=5"></script><script>
 ${modalFunctions}
 ${saveFunction}
 loadingState.classList.add('hidden');dashContent.classList.remove('hidden');

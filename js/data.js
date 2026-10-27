@@ -792,6 +792,7 @@ function observeCardViews() {
         if (r.height > 0 && visibleHeight >= r.height / 2 && r.right > 0 && r.left < window.innerWidth) {
             _viewedPreviews.add(id);
             (async () => {
+                if (window.AnalyticsIdentity && !(await window.AnalyticsIdentity.context()).allowed) return;
                 const { error } = await _supabase.rpc('track_listing_view', { listing_id: id, view_type: 'impression' });
                 if (error) console.warn('[views +1]', error);
             })();

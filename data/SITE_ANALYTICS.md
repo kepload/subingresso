@@ -4,6 +4,10 @@ Richiesta: estendere la misura a ricerca, pubblicazione, accesso, annunci,
 fiere, blog, calcolatore, Vetrine ed errori. Correggere anche gli errori del
 wizard: messaggio sotto il campo, icona, bordo, focus e scorrimento coordinati.
 
+Dal 27 ottobre anche i due account interni configurati sono esclusi dalla
+raccolta e dai report commerciali, senza limitarne le funzioni personali.
+Regole comuni e limiti dello storico: `ANALYTICS_EXCLUSIONS.md`.
+
 ## Raccolta e significato
 
 `js/site-analytics.js` è caricato in modo sincrono dopo il tracker visite,

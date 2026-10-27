@@ -221,6 +221,7 @@ const _AMO_VALID_SOURCES = ['popup_vetrina','blog_promo','vendi_submit','nav_acc
 
 async function _trackModalOpen(source) {
     try {
+        if (window.AnalyticsIdentity && !(await window.AnalyticsIdentity.context()).allowed) return;
         if (!_AMO_VALID_SOURCES.includes(source)) source = 'direct';
         const anonSession = _getAnonSession();
         if (!anonSession) return;

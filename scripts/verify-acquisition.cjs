@@ -74,7 +74,8 @@ async function page(url, { session = storage(), local = storage(), referrer = ''
     const newRequest = vm.runInContext('loadAdminAcquisition()',mock);
     pending[1]({data:mock.payload}); await newRequest;
     pending[0]({data:{...mock.payload,total_sessions:999}}); await oldRequest;
-    assert.ok(element('acquisitionSummary').textContent.startsWith('4 ingressi'));
+    assert.ok(element('acquisitionSummary').innerHTML.includes('<strong>4</strong>'));
+    assert.ok(!element('acquisitionSummary').innerHTML.includes('<strong>999</strong>'));
     mock._supabase.rpc = async () => ({ error: new Error('offline') });
     await vm.runInContext('loadAdminAcquisition()',mock);
     assert.ok(element('acquisitionBody').innerHTML.includes('Riprova'));

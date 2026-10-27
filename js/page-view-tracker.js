@@ -58,9 +58,11 @@
     };
     window.getAcquisitionContext();
 
-    function _track() {
+    async function _track() {
         try {
             if (navigator && navigator.webdriver === true) return;
+            var identity = window.AnalyticsIdentity ? await window.AnalyticsIdentity.context() : null;
+            if (identity && !identity.allowed) return;
             var path = cleanPath(location.href);
             var acquisition = window.getAcquisitionContext();
 
@@ -97,7 +99,7 @@
                 headers: {
                     'Content-Type': 'application/json',
                     'apikey': SUPABASE_ANON_KEY,
-                    'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+                    'Authorization': 'Bearer ' + (identity?.token || SUPABASE_ANON_KEY),
                     'Prefer': 'return=minimal'
                 },
                 body: body,
@@ -110,6 +112,9 @@
         } catch (_) {}
     }
 
+    if (typeof _supabase !== 'undefined') {
+        _supabase.auth.onAuthStateChange(() => setTimeout(_track, 0));
+    }
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         setTimeout(_track, 0);
     } else {

@@ -20,7 +20,7 @@ const _supabase={auth:{getSession:async()=>({data:{session:qaUser?{user:{id:qaUs
     const query={op:'read',filters:{},select(){return this;},insert(value){this.op='insert';this.value=value;return this;},delete(){this.op='delete';return this;},eq(k,v){this.filters[k]=v;return this;},abortSignal(signal){this.signal=signal;return this;},then(resolve,reject){return fetch('/qa/saved',{method:'POST',signal:this.signal,body:JSON.stringify({op:this.op,filters:this.filters,value:this.value})}).then(r=>r.json()).then(resolve,reject);}};return query;
 }};
 window.openAuthModal=(...args)=>qaAuth.push(args);
-</script><script src="/js/image-urls.js"></script><script src="/js/data.js"></script><script>
+</script><script src="/js/image-urls.js"></script><script src="/js/data.js?v=26"></script><script>
 showToast=(...args)=>qaToasts.push(args);
 let _currentListing=${JSON.stringify(listing)};
 ${detailSource.slice(detailSource.indexOf('// ── Salva preferito (annuncio corrente)'))}

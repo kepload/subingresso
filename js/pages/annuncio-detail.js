@@ -353,7 +353,9 @@ async function initPage() {
         if (_moderationPreview) return;
         try {
             window.SiteAnalytics?.track('listing_open', {}, listing.id);
-            await _supabase.rpc('track_listing_view', { listing_id: listing.id, view_type: 'detail' });
+            if (!window.AnalyticsIdentity || (await window.AnalyticsIdentity.context()).allowed) {
+                await _supabase.rpc('track_listing_view', { listing_id: listing.id, view_type: 'detail' });
+            }
             const { data: vd } = await _supabase
                 .from('annunci').select('visualizzazioni').eq('id', listing.id).maybeSingle();
             const vcEl = document.getElementById('viewCount');
@@ -654,6 +656,7 @@ async function trackListingContactEvent(listing, eventType) {
     if (!listing || typeof listing.id === 'number') return;
     window.SiteAnalytics?.track('listing_contact', {action: eventType}, listing.id);
     try {
+        if (window.AnalyticsIdentity && !(await window.AnalyticsIdentity.context()).allowed) return;
         const { error } = await _supabase.rpc('track_listing_event', {
             listing_id: listing.id,
             event_type: eventType,

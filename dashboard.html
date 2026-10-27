@@ -1261,18 +1261,18 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase-config.js?v=3"></script>
-<script src="js/page-view-tracker.js?v=4"></script><script src="/js/site-analytics.js?v=1"></script>
-<script src="/js/personal-ads-tracker.js?v=3"></script>
+<script src="js/supabase-config.js?v=4"></script>
+<script src="js/page-view-tracker.js?v=5"></script><script src="/js/site-analytics.js?v=2"></script>
+<script src="/js/personal-ads-tracker.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
-<script src="js/data.js?v=25"></script>
+<script src="js/data.js?v=26"></script>
 <script src="js/valuation.js?v=8"></script>
 <script src="js/vetrina-pricing.js?v=2"></script>
 <script src="js/vetrina-premium.js?v=3"></script>
 <script src="js/admin-email-analytics.js?v=2"></script>
 <script src="js/vetrina-account.js?v=4"></script>
 <script src="js/ui-components.js?v=18"></script>
-<script src="js/auth.js?v=29"></script>
+<script src="js/auth.js?v=30"></script>
 <link rel="stylesheet" href="css/listing-outcome.css?v=1">
 <dialog id="listingOutcomeDialog" class="listing-outcome" aria-labelledby="listingOutcomeTitle" aria-describedby="listingOutcomeListing">
     <div class="listing-outcome__top"><h2 id="listingOutcomeTitle">Come è andata?</h2><button type="button" id="listingOutcomeClose" class="listing-outcome__close">Chiudi</button></div>
@@ -1424,13 +1424,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // ── Admin Logic ──────────────────────────────────────────
 async function loadAdminStats() {
-    // NB: select('id') invece di select('*') — il revoke colonna su tel/email
-    // farebbe fallire l'espansione di * a livello PostgREST.
-    const counts = await Promise.all([
-        _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('is_demo', false),
-        _supabase.from('annunci').select('id', { count: 'exact', head: true }).eq('status', 'active').eq('is_demo', false).or('expires_at.is.null,expires_at.gt.'+new Date().toISOString()),
-        _supabase.from('profiles').select('id', { count: 'exact', head: true }).eq('is_demo', false)
-    ]);
+    const business = await _supabase.rpc('admin_business_stats');
+    const counts = ['total_listings','active_listings','total_users'].map(key => ({ error: business.error, count: business.data?.[key] }));
     ['admStatAnnunci','admStatAttivi','admStatUtenti'].forEach((id,i)=>{
         document.getElementById(id).textContent=counts[i].error||counts[i].count==null?'—':counts[i].count;
     });
@@ -1719,20 +1714,16 @@ async function loadAdminGrowthChart(mode = 'mese') {
     if (!canvas) return;
 
     if (!_rawGrowthData) {
-        const [prRes, anRes, pmRes, ftRes, viewsRes] = await Promise.all([
-            _supabase.from('profiles').select('created_at').eq('is_demo', false),
-            _supabase.from('annunci').select('created_at').neq('status', 'deleted').eq('is_demo', false),
-            _supabase.from('payments').select('created_at'),
-            _supabase.from('annunci').select('featured_since').not('featured_since', 'is', null).eq('is_demo', false),
+        const [business, viewsRes] = await Promise.all([
+            _supabase.rpc('admin_business_stats'),
             _supabase.rpc('admin_page_views_stats').then(r => r.data || null).catch(() => null),
         ]);
-        const usePayments = !pmRes.error && Array.isArray(pmRes.data) && pmRes.data.length > 0;
+        if (business.error || !business.data?.growth) return;
+        const growth = business.error ? {} : business.data?.growth || {};
         _rawGrowthData = {
-            profiles: (prRes.data || []).map(r => r.created_at),
-            annunci:  (anRes.data  || []).map(r => r.created_at),
-            vetrine:  usePayments
-                ? (pmRes.data).map(r => r.created_at)
-                : (ftRes.data || []).map(r => r.featured_since),
+            profiles: growth.profiles || [],
+            annunci: growth.annunci || [],
+            vetrine: growth.vetrine || [],
             views: (viewsRes && !viewsRes.error) ? viewsRes : null,
         };
     }

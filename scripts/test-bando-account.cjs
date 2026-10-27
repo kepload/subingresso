@@ -64,7 +64,7 @@ const data = read('js/data.js');
 const validators = data.slice(data.indexOf('function italianPhoneDigits'), data.indexOf('// UX helper:'));
 const escapeCode = `function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}`;
 function scripts(binding) {
-    return `<script>${fixture}${validators}</script><script src="/js/blog-markup.js"></script><script src="/js/auth.js"></script><script src="/js/bando-alerts.js"></script><script>${binding}</script>`;
+    return `<script>${fixture}${validators}</script><script src="/js/blog-markup.js"></script><script src="/js/auth.js?v=30"></script><script src="/js/bando-alerts.js"></script><script>${binding}</script>`;
 }
 async function renderBando(regione) {
     const context = { module: { exports: {} }, require: file => require(path.join(root, 'api/bandi', file)),

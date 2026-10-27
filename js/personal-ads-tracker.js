@@ -34,7 +34,7 @@
    const target=new URL(anchor.href,location.origin),wrapped=target.pathname==='/api/personal-ads'&&target.searchParams.get('action')==='click';
    if(!wrapped){const dest={vendi:'/vendi',compra:'/annunci',fiere:'/fiere'}[anchor.dataset.personalAd.split('-')[0]];if(target.origin!==location.origin||target.pathname!==dest)return;const tracked=new URL('/api/personal-ads',location.origin);tracked.search=new URLSearchParams({action:'click',ad:anchor.dataset.personalAd,format:anchor.dataset.paFormat||'editoriale',placement:placement(anchor)});if(target.searchParams.has('regione'))tracked.searchParams.set('region',target.searchParams.get('regione'));anchor.href=tracked.href;}
    bound.add(anchor);
-   for(const eventName of ['pointerdown','focus','click','auxclick'])anchor.addEventListener(eventName,()=>{const href=new URL(anchor.href),sid=sessionId();href.searchParams.set('ctx',JSON.stringify(context(anchor)));if(admin||automated)href.searchParams.set('preview','1');else{href.searchParams.delete('preview');if(sid)href.searchParams.set('sid',sid);}anchor.href=href.toString();});
+   for(const eventName of ['pointerdown','focus','click','auxclick'])anchor.addEventListener(eventName,()=>{const href=new URL(anchor.href),sid=sessionId();href.searchParams.set('ctx',JSON.stringify(context(anchor)));if(admin||automated||!authReady||window.AnalyticsIdentity?.preview())href.searchParams.set('preview','1');else{href.searchParams.delete('preview');if(sid)href.searchParams.set('sid',sid);}anchor.href=href.toString();});
   }
   const current=key(anchor);if(observedKeys.get(anchor)!==current){clearTimeout(timers.get(anchor));timers.delete(anchor);visibility.delete(anchor);observedKeys.set(anchor,current);const measured=measurementTarget(anchor);observedAnchors.set(measured,anchor);observer?.unobserve(measured);observer?.observe(measured);}
  }
@@ -63,6 +63,7 @@
    if(checked.error){authReady=false;return;}
    const next=user?.id||null;if(owner&&owner!==next){save(null);seen.clear();}owner=next;admin=false;
    if(user){const profile=await _supabase.from('profiles').select('is_admin,is_demo').eq('id',user.id).single();if(rev!==revision)return;if(profile.error){authReady=false;return;}admin=profile.data?.is_admin===true||profile.data?.is_demo===true;}
+   if(window.AnalyticsIdentity){const measurement=await window.AnalyticsIdentity.context();if(rev!==revision)return;admin=admin||!measurement.allowed;}
    if(rev!==revision)return;authReady=true;
    const last=read();if(last&&user&&!admin&&!automated){if(last.owner&&last.owner!==user.id){save(null);return;}const claimed=await _supabase.rpc('personal_ad_claim',{p_click:last.id});if(rev!==revision)return;if(!claimed.error&&claimed.data)save({...last,owner:user.id});}
    scan();if(observer)document.querySelectorAll('a[data-personal-ad]').forEach(anchor=>{const target=measurementTarget(anchor);observedAnchors.set(target,anchor);observer.unobserve(target);observer.observe(target);});

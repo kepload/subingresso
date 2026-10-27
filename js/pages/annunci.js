@@ -39,6 +39,7 @@ async function trackLocationSearch(place) {
     if (!place || navigator.webdriver === true) return;
     let key;
     try {
+        if (window.AnalyticsIdentity && !(await window.AnalyticsIdentity.context()).allowed) return;
         key = '_search_event_' + JSON.stringify([place.nome, place.regione, place.provincia]);
         if (sessionStorage.getItem(key)) return;
         let session = sessionStorage.getItem('_location_search_session');

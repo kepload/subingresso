@@ -44,7 +44,7 @@ function dashboardFixture() {
     const html = fs.readFileSync(path.join(root, 'dashboard.html'), 'utf8');
     const start = html.indexOf('function showTab(tab)'), end = html.indexOf("document.getElementById('dashboardTabs')", start);
     const tabs = html.slice(start, end);
-    return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace('</body>', `<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=3"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=21"></script><script src="/js/auth.js?v=22"></script><script src="/js/fiere-access.js?v=2"></script><script type="module" src="/js/saved-fairs.js?v=3"></script><script>
+    return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace('</body>', `<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="/js/supabase-config.js?v=4"></script><script src="/js/image-urls.js?v=1"></script><script src="/js/data.js?v=26"></script><script src="/js/auth.js?v=30"></script><script src="/js/fiere-access.js?v=2"></script><script type="module" src="/js/saved-fairs.js?v=3"></script><script>
 let _alertsLoaded=false,_savedLoaded=false,_valutazioniLoaded=false;const VetrinaAccount={load(){}};${tabs}
 document.addEventListener('DOMContentLoaded',()=>{document.getElementById('loadingState').classList.add('hidden');document.getElementById('dashContent').classList.remove('hidden');showTab('fiere');});
 </script></body>`);
