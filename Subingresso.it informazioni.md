@@ -5,6 +5,22 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Ombre del tema scuro — 27 ottobre 2026
+
+- Corretti gli aloni quasi bianchi: otto colori d'ombra Tailwind ora neutri
+  scuri, anche hover, contenuti dinamici e contatti mobili. Chiaro, focus e
+  geometria conservati; altre regole CSS identiche. Generatore aggiornato,
+  modalità `--shadows-only` ripetibile; contratto `data/THEME_PREFERENCES.md`.
+- Pubblicato `32788fe`: 23 pagine/asset identici online, tre CSS e template SSR
+  confrontati; cinque percorsi SSR con riferimenti CSS7/JS8 e stati attesi.
+  Prove ombre Chromium1440/768/320 e WebKit390 e267controlli tema ripetuti
+  online, senza scritture reali. Prove `.local/verifiche/ombre-dark-20261027`.
+- Fixture calcolatore aggiornata alla palette già esistente dopo riproduzione
+  dello stesso errore su69fb6ef; fixture SSR completa di griglia/stato caricato.
+  Inspector: difetti tipografici/contrasto preesistenti registrati fuori ambito.
+  Backup remoto tag220823 e ramo pre-ombre-dark verificati; solo cleanup helper
+  fallito. File estranei conservati; deploy verificato direttamente sul dominio.
+
 ## Promozione a fine pubblicazione — 27 ottobre 2026
 
 - Richiesta permanente: «Vendi più in fretta il tuo posteggio», niente acquisto

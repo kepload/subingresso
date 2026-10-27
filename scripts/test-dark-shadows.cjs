@@ -17,6 +17,8 @@ function fixture() {
     doc.documentElement.className = 'admin-dark';
     doc.documentElement.dataset.adminThemePage = 'annuncio';
     doc.querySelector('#detailLayout').classList.remove('hidden');
+    doc.querySelector('#detailLayout').classList.add('grid');
+    doc.querySelector('#notFound').classList.add('hidden');
     doc.querySelector('#mobileCta').classList.add('visible');
     doc.querySelector('main').classList.add('has-cta');
     doc.querySelector('#titolo').textContent = 'Posteggio mercato settimanale';
@@ -26,6 +28,7 @@ function fixture() {
     doc.querySelector('#coverDiv strong').textContent = 'Milano';
     doc.querySelector('#bcRegione').textContent = 'Lombardia';
     doc.querySelector('#badgeTipo').textContent = 'Vendita';
+    doc.querySelector('#statoBadge').textContent = 'Vendita';
     doc.querySelectorAll('[onclick]').forEach(el => el.removeAttribute('onclick'));
     doc.querySelectorAll('link[rel="stylesheet"]').forEach(el => el.setAttribute('href', '/' + el.getAttribute('href').replace(/^\//, '')));
     const samples = doc.createElement('section');
