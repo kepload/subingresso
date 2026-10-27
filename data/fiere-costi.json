@@ -2213,6 +2213,78 @@
       "sourceUrl": "https://www.comune.castiadas.su.it/it/news/2030551",
       "checkedAt": "2026-10-27",
       "review": "live-source-review"
+    },
+    "campania-francolise-fiera-del-2-luglio": {
+      "label": "0,90 €/mq",
+      "kind": "unit",
+      "period": "2026",
+      "details": "Ordinanza 9/2026: CUP 0,90 €/mq per la fiera del 2 luglio 2026. Domanda 26 maggio–26 giugno con ricevuta del versamento; profondità massima 5 metri e arrivo entro le 7. Importo unitario, non prezzo fisso del banco né tariffa 2027.",
+      "sourceUrl": "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00EN67020265P&mosdoc=0",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "campania-roccamonfina-maxi-sagra-della-castagna-igp-e-del-fungo-porcino": {
+      "label": "1.000–4.000 € secondo area",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Avviso stand 2026: 4.000 € casetta in Piazza Nicola Amore; 2.000 € area Caldarrostai, con servizi indicati inclusi; 1.000 € Centro Storico, casetta e servizi esclusi. Domanda entro 31 agosto ore 24. Vincoli merceologici e professionali, divieto di subconcessione; assegnazioni già approvate il 2 ottobre, nessun posto libero attestato. Importi distinti dalle sponsorizzazioni e dal Mercato Castanicolo, il cui CUP non è quantificato.",
+      "sourceUrl": "https://www.halleyweb.com/c061070/de/attachment.php?serialDocumento=00TIPT0202687&mosdoc=0",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "campania-cellole-agricoltura-in-fiera": {
+      "label": "Banco gratuito",
+      "kind": "free",
+      "period": "2026",
+      "details": "Avviso comunale 7–8 novembre 2026: chioschetto espositivo gratuito, 185x80 cm, altezza 205 cm; allestimento e materiali a cura dell’espositore. Operatori professionali e non con prodotti/servizi territoriali, previa ammissione; la gratuità non assicura disponibilità residua.",
+      "sourceUrl": "https://www.comune.cellole.ce.it/it/news/agricoltura-in-fiera-6a-edizione-cellole-il-7-e-8-novembre-2026",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "campania-san-potito-sannitico-solstizio-di-natale-il-mercatino-di-san-potito": {
+      "label": "Spazio gratuito; allestimento proprio",
+      "kind": "free",
+      "period": "2025",
+      "details": "Avviso 20–21 dicembre 2025: spazio gratuito, attrezzature, allestimento e autorizzazioni a carico degli espositori. Domanda entro 12 dicembre 2025 ore 12, priorità attività territoriali e residenti. Condizioni storiche, nessun rinnovo automatico 2026.",
+      "sourceUrl": "https://www.comune.sanpotitosannitico.ce.it/novita/avvisi/novita_162.html",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "campania-pastorano-mercatini-di-natale": {
+      "label": "50 € di contributo",
+      "kind": "fee",
+      "period": "2024",
+      "details": "Vademecum Pastorano 2024: contributo 50 € alla domanda entro 11 novembre; mercatini 29 novembre–1 dicembre 2024, spazio 3x3 o 4x4 con luce. Nessun rimborso per assenza o maltempo. Importo storico, non tariffa 2026; ingresso gratuito del pubblico distinto dal contributo espositore.",
+      "sourceUrl": "https://comune.pastorano.ce.it/vivere-il-comune/eventi/mercatini-di-natale-2024/",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "campania-san-marco-evangelista-truck-in-sud": {
+      "label": "Iscrizione 200 € + spazio",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Contratto 18–20 settembre 2026: iscrizione obbligatoria 200 €; area esterna nuda 30 €/mq + IVA, oppure gazebo 4x4 a 2.000 € + IVA con dotazioni indicate. Il rigo iscrizione non specifica separatamente l’IVA: verificare il totale contrattuale. Anticipo 50%, domanda e saldo entro 11 settembre 2026; nessun rinnovo futuro automatico.",
+      "sourceUrl": "https://www.truckinsud.it/download/contratto%20raduno.pdf",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "campania-san-marco-evangelista-sed-salone-dell-edilizia": {
+      "label": "500 € + spazio + 15 €/mq + IVA",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Modulo SED 22–24 maggio 2026: iscrizione obbligatoria 500 € + IVA; area interna nuda 90 €/mq + IVA; settore macchine 50 €/mq interno o 40 €/mq esterno + IVA. Stand standard 16 mq 1.884 € + IVA, Prestige 2.432 € + IVA; servizi forfettari obbligatori ulteriori 15 €/mq + IVA. Standard 16 mq: 2.624 € + IVA complessivi per queste tre voci, prima di eventuali extra. Quota alla firma, 50% entro 20 marzo e saldo 17 aprile 2026.",
+      "sourceUrl": "https://www.sededilizia.com/wp-content/uploads/2025/10/Domanda-di-partecipazione-e-regolamento-SED-2026.pdf",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
+    },
+    "campania-san-marco-evangelista-fiera-agricola": {
+      "label": "Iscrizione 200 € + spazio + IVA",
+      "kind": "conditional",
+      "period": "2026",
+      "details": "Contratto 6–8 marzo 2026: iscrizione obbligatoria 200 € + IVA; area interna nuda 60 €/mq + IVA (minimo 32 mq), preallestita 80 €/mq + IVA; esterna nuda 25 €/mq + IVA (minimo 64 mq), gazebo esterno 4x4 a 800 € + IVA. Supplementi per lati aperti e aziende ospiti; anticipo 30%, saldo entro 28 febbraio 2026. Non preventivo per marzo 2027.",
+      "sourceUrl": "https://www.fieraagricola.org/download/contratto.pdf",
+      "checkedAt": "2026-10-27",
+      "review": "live-source-review"
     }
   }
 }

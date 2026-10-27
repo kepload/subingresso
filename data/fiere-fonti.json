@@ -2054,17 +2054,6 @@
   },
   {
     "region": "Campania",
-    "name": "Fiera Agricola",
-    "city": "San Marco Evangelista",
-    "months": "3",
-    "category": "espositiva",
-    "source": {
-      "url": "https://www.fieraagricola.org/",
-      "label": "fieraagricola.org"
-    }
-  },
-  {
-    "region": "Campania",
     "name": "Fiera Vesuviana",
     "city": "San Gennaro Vesuviano",
     "months": "9",
@@ -5457,5 +5446,2554 @@
       "note": "Ultimo appuntamento 2026 il 3 settembre al Parco Urbano di Porto Columbu, dalle 20. Rassegna promossa dal Comune e organizzata dal CCN S’Arrocca tra Porto Columbu e Perd’e Sali. La data qui riportata riguarda il solo appuntamento finale documentato; non viene ricostruito l’intero calendario estivo. Ammissione e costo stand non dedotti dall’ingresso gratuito del pubblico."
     },
     "id": "sardegna-sarroch-mercatini-del-borgo-calici-d-estate"
+  },
+  {
+    "region": "Campania",
+    "city": "Marzano Appio",
+    "name": "Sagra della Castagna Primitiva",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://marzanoappio.halleyweb.it/de/attachment.php?serialDocumento=00D3ET020269J&mosdoc=0",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://marzanoappio.halleyweb.it/de/attachment.php?serialDocumento=00D3ET020269J&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://marzanoappio.halleyweb.it/de/attachment.php?serialDocumento=00D3ET020269J&mosdoc=0"
+      },
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-27",
+        "dateType": "calendar",
+        "sourceUrl": "https://marzanoappio.halleyweb.it/de/attachment.php?serialDocumento=00D3ET020269J&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza Mercato, villa comunale e via Annunziata. Ordinanza 8 e rettifica 10 del 19 settembre 2026 lette: due fine settimana, non apertura quotidiana 19–27. La delibera organizzativa dà priorità a produttori locali e prodotti tipici; stand gestiti dalla Pro Loco, autorizzazioni e tariffe comunali. Nessuna quota stand quantificata."
+    },
+    "id": "campania-marzano-appio-sagra-della-castagna-primitiva"
+  },
+  {
+    "region": "Campania",
+    "city": "Marzano Appio",
+    "name": "Rievocazione storica e Fiera di San Giacomo",
+    "months": [
+      7
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://marzanoappio.halleyweb.it/de/attachment.php?serialDocumento=00D8NJ02026A8",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://marzanoappio.halleyweb.it/de/attachment.php?serialDocumento=00D8NJ02026A8"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-25",
+        "dateType": "calendar",
+        "sourceUrl": "https://marzanoappio.halleyweb.it/de/attachment.php?serialDocumento=00D8NJ02026A8"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Delibera 85 del 1 ottobre 2026, originale letto: evento svolto 25 luglio con stand di artigianato, antiquariato e prodotti enogastronomici. Il contributo comunale alla Pro Loco non è il prezzo del banco. Non risulta documentata una candidatura commerciale attualmente aperta."
+    },
+    "id": "campania-marzano-appio-rievocazione-storica-e-fiera-di-san-giacomo"
+  },
+  {
+    "region": "Campania",
+    "city": "Vairano Patenora",
+    "name": "Fiera di Sant'Anna",
+    "months": [
+      7
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.vairano-patenora.ce.it/de/attachment.php?serialDocumento=01F5ID020267M&mosdoc=0",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.vairano-patenora.ce.it/de/attachment.php?serialDocumento=01F5ID020267M&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-26",
+        "end": "2026-07-26",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.vairano-patenora.ce.it/de/attachment.php?serialDocumento=01F5ID020267M&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Centro urbano di Vairano Patenora,26 luglio 2026. Ordinanza 11/22 luglio sospende il mercato domenicale di Vairano Scalo per consentire la fiera: le due attività non sono duplicate. L'originale non stabilisce quota stand o termine per nuove candidature."
+    },
+    "id": "campania-vairano-patenora-fiera-di-sant-anna"
+  },
+  {
+    "region": "Campania",
+    "city": "Vairano Patenora",
+    "name": "Fiera dell'Ascensione",
+    "months": [
+      5
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.vairano-patenora.ce.it/de/attachment.php?serialDocumento=01DPV4020265C&mosdoc=0",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.vairano-patenora.ce.it/de/attachment.php?serialDocumento=01DPV4020265C&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-17",
+        "end": "2026-05-17",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.vairano-patenora.ce.it/de/attachment.php?serialDocumento=01DPV4020265C&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ordinanza 4/12 maggio 2026: fiera spostata alla domenica 17 maggio rispetto alla ricorrenza 14 maggio; sospeso il mercato di Vairano Scalo. L'altra ordinanza contiene refusi Sant'Anna/registro 2025, non usati per cambiare nome o giorno della fiera. Condizioni di concessione e importi non precisati."
+    },
+    "id": "campania-vairano-patenora-fiera-dell-ascensione"
+  },
+  {
+    "region": "Campania",
+    "city": "Vairano Patenora",
+    "name": "Fiera di antiquariato, vintage, arte e artigianato",
+    "months": [
+      9
+    ],
+    "category": "mercatino",
+    "sectors": "antiquariato vintage arte artigianato",
+    "source": {
+      "url": "https://www.halleyweb.com/c061095/de/attachment.php?serialDocumento=01GF38020269S",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.halleyweb.com/c061095/de/attachment.php?serialDocumento=01GF38020269S"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-27",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.halleyweb.com/c061095/de/attachment.php?serialDocumento=01GF38020269S"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Villa comunale di Vairano Scalo,26–27 settembre 2026; delibera comunale letta. Patrocinio gratuito all'organizzatore e autorizzazione suolo non equivalgono a gratuità del banco. Ammissione presso l'organizzazione, senza quote o posti residui verificati."
+    },
+    "id": "campania-vairano-patenora-fiera-di-antiquariato-vintage-arte-e-artigianato"
+  },
+  {
+    "region": "Campania",
+    "city": "Calvi Risorta",
+    "name": "Sagra della Pizzonta Calena",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia",
+    "source": {
+      "url": "https://www.comune.calvirisorta.ce.it/de/attachment.php?serialDocumento=00NDLD020266F",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.calvirisorta.ce.it/de/attachment.php?serialDocumento=00NDLD020266F"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-26",
+        "end": "2026-06-28",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.calvirisorta.ce.it/de/attachment.php?serialDocumento=00NDLD020266F"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Rione San Nicola; delibera 32/15 giugno e ordinanza 12/25 giugno 2026 esaminate. Organizzazione Cales Young ODV. Il patrocinio e la chiusura strade non sono un bando per ambulanti esterni; ammissione commerciale e costo spazio non specificati."
+    },
+    "id": "campania-calvi-risorta-sagra-della-pizzonta-calena"
+  },
+  {
+    "region": "Campania",
+    "city": "Ruviano",
+    "name": "Sagra del Cuzzetiello",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia",
+    "source": {
+      "url": "https://www.halleyweb.com/c061073/de/attachment.php?serialDocumento=00B4HD020267R&p7m=1",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.halleyweb.com/c061073/de/attachment.php?serialDocumento=00B4HD020267R&p7m=1"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-22",
+        "end": "2026-07-26",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.halleyweb.com/c061073/de/attachment.php?serialDocumento=00B4HD020267R&p7m=1"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza Del Buono,22–26 luglio 2026, Partenope Eventi. Delibera 52/22 luglio autorizza l'occupazione all'organizzatore; non assegna posteggi individuali. Non sono esposte quote di adesione per venditori esterni."
+    },
+    "id": "campania-ruviano-sagra-del-cuzzetiello"
+  },
+  {
+    "region": "Campania",
+    "city": "Ruviano",
+    "name": "Sagra della Pizza Fritta e Festa della Musica",
+    "months": [
+      5,
+      6
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia",
+    "source": {
+      "url": "https://www.halleyweb.com/c061073/de/attachment.php?serialDocumento=00ARNY020265P&p7m=1",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.halleyweb.com/c061073/de/attachment.php?serialDocumento=00ARNY020265P&p7m=1"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-29",
+        "end": "2026-06-02",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.halleyweb.com/c061073/de/attachment.php?serialDocumento=00ARNY020265P&p7m=1"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza Nuova,29 maggio–2 giugno 2026, ARCI A Sudd. Originale delibera 35/22 maggio letto; l'assenza di contributo comunale riguarda l'organizzatore e non dimostra gratuità degli stand. Titoli, ammissione e quote espositori non specificati."
+    },
+    "id": "campania-ruviano-sagra-della-pizza-fritta-e-festa-della-musica"
+  },
+  {
+    "region": "Campania",
+    "city": "Pratella",
+    "name": "Sagra della Pannocchia di Mastrati",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti agricoli",
+    "source": {
+      "url": "https://www.halleyweb.com/c061064/de/attachment.php?serialDocumento=00DR5K020268L&mosdoc=0",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.halleyweb.com/c061064/de/attachment.php?serialDocumento=00DR5K020268L&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-21",
+        "end": "2026-08-22",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.halleyweb.com/c061064/de/attachment.php?serialDocumento=00DR5K020268L&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza Mastrati,21–22 agosto 2026, Circolo ANSPI Sant'Anna. Originale ordinanza 9/20 agosto letto. Le fasce di divieto di sosta non sono automaticamente orari di vendita; nessun bando o prezzo posteggio verificato."
+    },
+    "id": "campania-pratella-sagra-della-pannocchia-di-mastrati"
+  },
+  {
+    "region": "Campania",
+    "city": "Galluccio",
+    "name": "Sagra dell'Uva",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "vino prodotti tipici",
+    "source": {
+      "url": "https://galluccio.halleyweb.it/de/attachment.php?serialDocumento=00KNCM020269F",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://galluccio.halleyweb.it/de/attachment.php?serialDocumento=00KNCM020269F"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://galluccio.halleyweb.it/de/attachment.php?serialDocumento=00KNCM020269F"
+      },
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-27",
+        "dateType": "calendar",
+        "sourceUrl": "https://galluccio.halleyweb.it/de/attachment.php?serialDocumento=00KNCM020269F"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Delibera 74/15 settembre 2026 originale: quattro giornate 19,20,26,27 settembre, non periodo continuo. Produzioni vitivinicole del territorio. Finanziamento del progetto non è costo di partecipazione degli espositori; accesso commerciale e quote non precisati."
+    },
+    "id": "campania-galluccio-sagra-dell-uva"
+  },
+  {
+    "region": "Campania",
+    "city": "Galluccio",
+    "name": "Fiera di artigianato e street food",
+    "months": [
+      7
+    ],
+    "category": "tradizionale",
+    "sectors": "artigianato street food",
+    "source": {
+      "url": "https://galluccio.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRne9URPT0-F",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://galluccio.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRne9URPT0-F"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-12",
+        "end": "2026-07-12",
+        "dateType": "calendar",
+        "sourceUrl": "https://galluccio.halleyweb.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTkRne9URPT0-F"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Scheda ufficiale dell'ordinanza del 7 luglio 2026 letta: spostamento del mercato per la fiera Pro Loco del 12 luglio. È verificata la sola giornata citata, non l'intero programma; allegato non esposto nel dettaglio pubblico. Condizioni commerciali e quote non ricostruite."
+    },
+    "id": "campania-galluccio-fiera-di-artigianato-e-street-food"
+  },
+  {
+    "region": "Campania",
+    "city": "Pastorano",
+    "name": "Sagra degli Gnocchi di Pantuliano",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia",
+    "source": {
+      "url": "https://www.halleyweb.com/c061055/de/attachment.php?serialDocumento=00CVPA020266J&mosdoc=0",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.halleyweb.com/c061055/de/attachment.php?serialDocumento=00CVPA020266J&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-19",
+        "end": "2026-06-21",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.halleyweb.com/c061055/de/attachment.php?serialDocumento=00CVPA020266J&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazzale Centro sportivo Caricchia a Pantuliano,19–21 giugno 2026. Ordinanza originale letta; refuso relativo all'istanza 2025 non cambia l'anno dell'autorizzazione 2026. Nessun bando per venditori esterni o costo posteggio documentato."
+    },
+    "id": "campania-pastorano-sagra-degli-gnocchi-di-pantuliano"
+  },
+  {
+    "region": "Campania",
+    "city": "Pignataro Maggiore",
+    "name": "Sagra degli Antichi Sapori",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia",
+    "source": {
+      "url": "https://www.halleyweb.com/c061055/de/attachment.php?serialDocumento=00CX7C020266O",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.halleyweb.com/c061055/de/attachment.php?serialDocumento=00CX7C020266O"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-02",
+        "end": "2026-07-06",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.halleyweb.com/c061055/de/attachment.php?serialDocumento=00CX7C020266O"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Evento dell'Associazione Insieme per l'Unità dei Popoli ONLUS a Pignataro Maggiore,2–6 luglio 2026. La fonte è il patrocinio del Comune di Pastorano: non si attribuisce a Pastorano la sede dell'evento. Organizzazione solidale; nessuna candidatura libera o quota banco verificata."
+    },
+    "id": "campania-pignataro-maggiore-sagra-degli-antichi-sapori"
+  },
+  {
+    "region": "Campania",
+    "city": "Roccaromana",
+    "name": "Sagra Tagliariegli e Ciceri",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia",
+    "source": {
+      "url": "https://roccaromana.halleyweb.it/de/attachment.php?serialDocumento=009RZX020267T&mosdoc=0",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://roccaromana.halleyweb.it/de/attachment.php?serialDocumento=009RZX020267T&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-02",
+        "dateType": "calendar",
+        "sourceUrl": "https://roccaromana.halleyweb.it/de/attachment.php?serialDocumento=009RZX020267T&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza San Cataldo e vie limitrofe,1–2 agosto 2026. Originale ordinanza 11/29 luglio letto. La richiesta Pro Loco riguarda suolo e tavoli della sagra, non unéofferta generalizzata di posteggi per ambulanti; quota e domanda esterna non documentate."
+    },
+    "id": "campania-roccaromana-sagra-tagliariegli-e-ciceri"
+  },
+  {
+    "region": "Campania",
+    "city": "Francolise",
+    "name": "Fiera del 2 luglio",
+    "months": [
+      7
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00EN67020265P&mosdoc=0",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00EN67020265P&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-02",
+        "end": "2026-07-02",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00EN67020265P&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Fiera antimeridiana ambulanti solo 2 luglio 2026,8–13, via Chiesa Vecchia, Sant'Andrea del Pizzone; cornice festiva 30 giugno–2 luglio. Ordinanza 9/21 maggio originale letta: domande 26 maggio–26 giugno, autorizzazione e identità, ricevuta CUP; priorità assegnatari mercati comunali in regola con CUP, profonditàmax 5 m, arrivo entro 7. Termini trascorsi, non rinnovo per 2027."
+    },
+    "id": "campania-francolise-fiera-del-2-luglio"
+  },
+  {
+    "region": "Campania",
+    "city": "Pontelatone",
+    "name": "Sagra della Castagna Ufarella e della P'ttera Trebulana",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "sectors": "castagne gastronomia prodotti tipici",
+    "source": {
+      "url": "https://pontelatone.halleyweb.it/c061061/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5XpNNUTBPT0-A",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://pontelatone.halleyweb.it/c061061/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5XpNNUTBPT0-A"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-02",
+        "end": "2026-10-04",
+        "dateType": "calendar",
+        "sourceUrl": "https://pontelatone.halleyweb.it/c061061/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5XpNNUTBPT0-A"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-11",
+        "dateType": "calendar",
+        "sourceUrl": "https://pontelatone.halleyweb.it/c061061/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5XpNNUTBPT0-A"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://pontelatone.halleyweb.it/c061061/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5XpNNUTBPT0-A"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Treglia. Scheda istituzionale delibera 52/18 settembre 2026:2,3,4,10,11,17,18 ottobre; molti aggregatori omettono 2 ottobre. Allegato non esposto nella scheda pubblica e pagina Facebook organizzatore senza programma leggibile. Non inventati orari, quote o disponibilità stand."
+    },
+    "id": "campania-pontelatone-sagra-della-castagna-ufarella-e-della-p-ttera-trebulana"
+  },
+  {
+    "region": "Campania",
+    "city": "Carinola",
+    "name": "Fiera di San Pietro Apostolo",
+    "months": [
+      6
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://carinola.halleyweb.it/c061017/de/attachment.php?serialDocumento=DT51ZJ020266P&mosdoc=0",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://carinola.halleyweb.it/c061017/de/attachment.php?serialDocumento=DT51ZJ020266P&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-26",
+        "end": "2026-06-26",
+        "dateType": "calendar",
+        "sourceUrl": "https://carinola.halleyweb.it/c061017/de/attachment.php?serialDocumento=DT51ZJ020266P&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Piazza Maggiore De Rosa, Casanova di Carinola. Originale ordinanza 47/25 giugno 2026 letto: fiera del 26 giugno. Fascia 7–14 indicata per divieto di sosta, non riportata come orario commerciale. Quote e assegnazione posteggi non specificate."
+    },
+    "id": "campania-carinola-fiera-di-san-pietro-apostolo"
+  },
+  {
+    "region": "Campania",
+    "city": "Carinola",
+    "name": "Sagra del Cinghiale di Casanova",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia",
+    "source": {
+      "url": "https://carinola.halleyweb.it/c061017/de/attachment.php?serialDocumento=DT5N3G0202685&mosdoc=0",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://carinola.halleyweb.it/c061017/de/attachment.php?serialDocumento=DT5N3G0202685&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-08",
+        "dateType": "calendar",
+        "sourceUrl": "https://carinola.halleyweb.it/c061017/de/attachment.php?serialDocumento=DT5N3G0202685&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Villa comunale di Casanova. Ordinanza 62/5 agosto 2026 e richiamo autorizzazione SUAP 9948:7–8 agosto. Il documento disciplina viabilità, non una selezione aperta di venditori esterni; requisiti e quote posteggio non precisati."
+    },
+    "id": "campania-carinola-sagra-del-cinghiale-di-casanova"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Halloween Tattoo Expò",
+    "months": [
+      10,
+      11
+    ],
+    "category": "espositiva",
+    "sectors": "tatuaggi arte area food",
+    "source": {
+      "url": "https://www.a1expo.com/press/prossimi-eventi/44-caserta-tattoo-convention-3",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.a1expo.com/press/prossimi-eventi/44-caserta-tattoo-convention-3"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-30",
+        "end": "2026-11-01",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.a1expo.com/press/prossimi-eventi/44-caserta-tattoo-convention-3"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Scheda calendario originale A 1 Expo letta: 2026-10-30–2026-11-01. Polo fieristico in viale delle Industrie 10, San Marco Evangelista, non nel comune di Caserta. Partecipazione settoriale tramite organizzatore; nessuna tariffa stand o disponibilità residua esposta nella pagina. Il calendario non dimostra apertura continua in tutti i giorni intermedi."
+    },
+    "id": "campania-san-marco-evangelista-halloween-tattoo-expo"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Fiera del Vintage",
+    "months": [
+      11
+    ],
+    "category": "espositiva",
+    "sectors": "vintage collezionismo",
+    "source": {
+      "url": "https://www.a1expo.com/press/prossimi-eventi/40-fiera-del-vintage-5",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.a1expo.com/press/prossimi-eventi/40-fiera-del-vintage-5"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-21",
+        "end": "2026-11-22",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.a1expo.com/press/prossimi-eventi/40-fiera-del-vintage-5"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Scheda calendario originale A 1 Expo letta: 2026-11-21–2026-11-22. Polo fieristico in viale delle Industrie 10, San Marco Evangelista, non nel comune di Caserta. Partecipazione settoriale tramite organizzatore; nessuna tariffa stand o disponibilità residua esposta nella pagina. Il calendario non dimostra apertura continua in tutti i giorni intermedi."
+    },
+    "id": "campania-san-marco-evangelista-fiera-del-vintage"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Natale Village",
+    "months": [
+      12
+    ],
+    "category": "espositiva",
+    "sectors": "artigianato stand street food",
+    "source": {
+      "url": "https://www.a1expo.com/press/prossimi-eventi/42-natale-village-3",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.a1expo.com/press/prossimi-eventi/42-natale-village-3"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-04",
+        "end": "2026-12-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.a1expo.com/press/prossimi-eventi/42-natale-village-3"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Scheda calendario originale A 1 Expo letta: 2026-12-04–2026-12-20. Polo fieristico in viale delle Industrie 10, San Marco Evangelista, non nel comune di Caserta. Partecipazione settoriale tramite organizzatore; nessuna tariffa stand o disponibilità residua esposta nella pagina. Il calendario non dimostra apertura continua in tutti i giorni intermedi. La fonte indica 4 dicembre, non 5 riportato da aggregatori; verificare le singole aperture del villaggio."
+    },
+    "id": "campania-san-marco-evangelista-natale-village"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Mostra Scambio Caserta",
+    "months": [
+      1
+    ],
+    "category": "espositiva",
+    "sectors": "ricambi auto moto d'epoca collezionismo",
+    "source": {
+      "url": "https://www.a1expo.com/press/prossimi-eventi/49-mostra-scambio-caserta-2",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.a1expo.com/press/prossimi-eventi/49-mostra-scambio-caserta-2"
+    ],
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-01-23",
+        "end": "2027-01-24",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.a1expo.com/press/prossimi-eventi/49-mostra-scambio-caserta-2"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Scheda calendario originale A 1 Expo letta: 2027-01-23–2027-01-24. Polo fieristico in viale delle Industrie 10, San Marco Evangelista, non nel comune di Caserta. Partecipazione settoriale tramite organizzatore; nessuna tariffa stand o disponibilità residua esposta nella pagina. Il calendario non dimostra apertura continua in tutti i giorni intermedi."
+    },
+    "id": "campania-san-marco-evangelista-mostra-scambio-caserta"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Fiera Agricola",
+    "months": [
+      3
+    ],
+    "category": "espositiva",
+    "sectors": "macchine e attrezzature agricole, prodotti agricoli e zootecnia",
+    "source": {
+      "url": "https://www.a1expo.com/press/prossimi-eventi/50-fiera-agricola-caserta",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.a1expo.com/press/prossimi-eventi/50-fiera-agricola-caserta",
+      "https://www.fieraagricola.org/download/contratto.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-03-05",
+        "end": "2027-03-07",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.a1expo.com/press/prossimi-eventi/50-fiera-agricola-caserta"
+      },
+      {
+        "year": 2026,
+        "start": "2026-03-06",
+        "end": "2026-03-08",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.fieraagricola.org/download/contratto.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "A1Expò, San Marco Evangelista. Contratto originale 2026: 6–8 marzo, contro 7–9 nel calendario nazionale di giugno; domanda e saldo entro 28 febbraio 2026, anticipo 30% e minimo pari alla quota iscrizione. Ammessi produttori, fornitori e distributori dei settori agricoli documentati, previa accettazione e progetto stand. Le tariffe 2026 non sono un preventivo per il 5–7 marzo 2027 annunciato da A1Expò; listino 2020 collegato dal sito oggi non recuperabile, non usato per prezzi correnti."
+    },
+    "id": "campania-san-marco-evangelista-fiera-agricola"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Traspo Day - Fiera del Trasporto e della Logistica",
+    "months": [
+      5
+    ],
+    "category": "espositiva",
+    "sectors": "trasporti logistica veicoli",
+    "source": {
+      "url": "https://www.a1expo.com/press/prossimi-eventi/51-traspo-day-fiera-del-trasporto-e-della-logistica",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.a1expo.com/press/prossimi-eventi/51-traspo-day-fiera-del-trasporto-e-della-logistica"
+    ],
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-05-07",
+        "end": "2027-05-09",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.a1expo.com/press/prossimi-eventi/51-traspo-day-fiera-del-trasporto-e-della-logistica"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Scheda calendario originale A 1 Expo letta: 2027-05-07–2027-05-09. Polo fieristico in viale delle Industrie 10, San Marco Evangelista, non nel comune di Caserta. Partecipazione settoriale tramite organizzatore; nessuna tariffa stand o disponibilità residua esposta nella pagina. Il calendario non dimostra apertura continua in tutti i giorni intermedi."
+    },
+    "id": "campania-san-marco-evangelista-traspo-day-fiera-del-trasporto-e-della-logistica"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "SIC - Salone Industria Casearia",
+    "months": [
+      3,
+      10
+    ],
+    "category": "espositiva",
+    "sectors": "industria casearia tecnologie attrezzature",
+    "source": {
+      "url": "https://www.a1expo.com/press/prossimi-eventi/52-sic-salone-industria-casearia-2",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.a1expo.com/press/prossimi-eventi/52-sic-salone-industria-casearia-2",
+      "https://www.saloneindustriacasearia.it/post/pubblicato-il-programma-della-xv-edizione-del-salone-industria-casearia-e-conserviera"
+    ],
+    "editions": [
+      {
+        "year": 2028,
+        "start": "2028-10-27",
+        "end": "2028-10-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.a1expo.com/press/prossimi-eventi/52-sic-salone-industria-casearia-2"
+      },
+      {
+        "year": 2026,
+        "start": "2026-03-20",
+        "end": "2026-03-22",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.saloneindustriacasearia.it/post/pubblicato-il-programma-della-xv-edizione-del-salone-industria-casearia-e-conserviera"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Salone professionale di macchinari e tecnologie per industria casearia e conserviera. Programma originale organizzatore: 20–22 marzo 2026; A1Expò annuncia la prossima edizione 27–29 ottobre 2028. La planimetria 2026 rimasta nel menu non rinnova le date. Adesione riservata a imprese settoriali tramite organizzatore, non mercato ambulante generalista; nessun prezzo stand pubblico verificato."
+    },
+    "id": "campania-san-marco-evangelista-sic-salone-industria-casearia"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Mia Sposa",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "sectors": "matrimonio cerimonia moda servizi",
+    "source": {
+      "url": "https://miasposa.it/la-fiera/",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://miasposa.it/la-fiera/"
+    ],
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-10-02",
+        "end": "2027-10-03",
+        "dateType": "calendar",
+        "sourceUrl": "https://miasposa.it/la-fiera/"
+      },
+      {
+        "year": 2027,
+        "start": "2027-10-09",
+        "end": "2027-10-10",
+        "dateType": "calendar",
+        "sourceUrl": "https://miasposa.it/la-fiera/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Pagina fiera e homepage organizzatore: edizione 2027 in due weekend 2–3 e 9–10 ottobre, A 1 Expo San Marco Evangelista. La sede uffici a Teverola non è la sede dell'evento. Il regolamento concorso 2026 documenta 3,4,10,11 ottobre, ma il sito presenta anche sfilata 5 ottobre: non ricostruito un calendario 2026 completo da dati discordanti. Adesione per professionisti wedding; tariffa non esposta."
+    },
+    "id": "campania-san-marco-evangelista-mia-sposa"
+  },
+  {
+    "region": "Campania",
+    "city": "Marcianise",
+    "name": "OPEN Il Tarì",
+    "months": [
+      4,
+      10
+    ],
+    "category": "espositiva",
+    "sectors": "gioielleria oreficeria orologi tecnologie",
+    "source": {
+      "url": "https://tari.it/perche-esporre/",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://tari.it/perche-esporre/",
+      "https://www.ce.camcom.it/sites/default/files/contenuto_redazione/Promozione/news_2026-06-22_calendario-fieristico-nazionale-2026-vers_22.06.2026.xlsx"
+    ],
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-04-16",
+        "end": "2027-04-19",
+        "dateType": "calendar",
+        "sourceUrl": "https://tari.it/perche-esporre/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-04-17",
+        "end": "2026-04-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.ce.camcom.it/sites/default/files/contenuto_redazione/Promozione/news_2026-06-22_calendario-fieristico-nazionale-2026-vers_22.06.2026.xlsx"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-12",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.ce.camcom.it/sites/default/files/contenuto_redazione/Promozione/news_2026-06-22_calendario-fieristico-nazionale-2026-vers_22.06.2026.xlsx"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Pagina espositori organizzatore: prossima OPEN 16–19 aprile 2027. Il calendario regionale originale 2026 riporta 17–20 aprile e 9–12 ottobre, mantenuti come riscontro storico separato. Fiera professionale del settore orafo, non mercato ambulante generalista; prezzi spazio su offerta, nessun importo pubblico verificato."
+    },
+    "id": "campania-marcianise-open-il-tari"
+  },
+  {
+    "region": "Campania",
+    "city": "Aversa",
+    "name": "Normanni Wine & Food Fest",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "sectors": "vino gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.normanniwinefoodfest.it/",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.normanniwinefoodfest.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-05",
+        "end": "2026-06-07",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.normanniwinefoodfest.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Programma originale organizzatore 5–7 giugno 2026 al Parco Balsamo. Annuncio ritorno giugno 2027 senza giorni confermati, non convertito in date. Banchi di produttori e degustazioni;15 euro per masterclass visitatori non è quota stand. Ammissione e prezzo per esporre non pubblicati."
+    },
+    "id": "campania-aversa-normanni-wine-food-fest"
+  },
+  {
+    "region": "Campania",
+    "city": "Cellole",
+    "name": "Agricoltura in Fiera",
+    "months": [
+      11
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.cellole.ce.it/it/news/agricoltura-in-fiera-6a-edizione-cellole-il-7-e-8-novembre-2026",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.cellole.ce.it/it/news/agricoltura-in-fiera-6a-edizione-cellole-il-7-e-8-novembre-2026"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-08",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.cellole.ce.it/it/news/agricoltura-in-fiera-6a-edizione-cellole-il-7-e-8-novembre-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale aggiornato 21 ottobre 2026 e originali:7–8 novembre, Piazza Aldo Moro. Banco espositivo gratuito; chioschetto 185 x 80 cm, altezza 205 cm. Modulo per operatori professionali e non, prodotti/servizi locali; vietata vendita estranea alle finalità territoriali. Allestimento a cura espositore. Nessuna scadenza nel modulo; disponibilità effettiva subordinata all'ammissione."
+    },
+    "id": "campania-cellole-agricoltura-in-fiera"
+  },
+  {
+    "region": "Campania",
+    "city": "Caiazzo",
+    "name": "Antica Fiera della Maddalena",
+    "months": [
+      7
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://caiazzo-api.municipiumapp.it/s3/1045/allegati/lamaddalena_fiera.jpg",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://caiazzo-api.municipiumapp.it/s3/1045/allegati/lamaddalena_fiera.jpg"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-24",
+        "end": "2026-07-26",
+        "dateType": "calendar",
+        "sourceUrl": "https://caiazzo-api.municipiumapp.it/s3/1045/allegati/lamaddalena_fiera.jpg"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Locandina comunale originale conservata e verificata visivamente:24,25,26 luglio 2026 dalle 19, Piazza Porta Vetere, agricoltura/artigianato/arte/gastronomia. Pagina comunale precedente 404/410: la prova è l'allegato originale, non lo snippet. Nessuna quota o domanda espositore precisata nella locandina."
+    },
+    "id": "campania-caiazzo-antica-fiera-della-maddalena"
+  },
+  {
+    "region": "Campania",
+    "city": "Mondragone",
+    "name": "Fiera di San Bartolomeo",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.mondragone.ce.it/moduli/downloadFile.php?file=oggetto_notizie/261691639260O__OComunicazione+homepage.pdf",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.mondragone.ce.it/moduli/downloadFile.php?file=oggetto_notizie/261691639260O__OComunicazione+homepage.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-24",
+        "end": "2026-08-26",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.mondragone.ce.it/moduli/downloadFile.php?file=oggetto_notizie/261691639260O__OComunicazione+homepage.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Comunicazione originale AreaVI letta:24–25–26 agosto 2026, via Fiumara. Le indicazioni 22–24 agosto nelle guide e nella vecchia pagina tradizioni non prevalgono sul documento edizione. Non risultano nel PDF quota banco, termine domande o disponibilità residua."
+    },
+    "id": "campania-mondragone-fiera-di-san-bartolomeo"
+  },
+  {
+    "region": "Campania",
+    "city": "Casaluce",
+    "name": "Festa dell'Uva Fragola",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "uva vino gastronomia",
+    "source": {
+      "url": "https://www.joyfreepress.com/2026/09/13/493774-tutto-pronto-per-l11-edizione-della-festa-delluva-fragola-a-casaluce/",
+      "label": "Comunicato Pro Loco riprodotto da JOY FreePress",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.joyfreepress.com/2026/09/13/493774-tutto-pronto-per-l11-edizione-della-festa-delluva-fragola-a-casaluce/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-19",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.joyfreepress.com/2026/09/13/493774-tutto-pronto-per-l11-edizione-della-festa-delluva-fragola-a-casaluce/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Comunicato originale firmato Pro Loco Casaluci APS pubblicato 13 settembre 2026:18–19 settembre, Piazza Falcone. La scheda comunale Decima Festa 12–13 settembre è di altra edizione, non conferma alternativa 2026. Stand organizzati dalla Pro Loco; nessuna offerta di posteggi aperta a tutti o quota stand documentata."
+    },
+    "id": "campania-casaluce-festa-dell-uva-fragola"
+  },
+  {
+    "region": "Campania",
+    "city": "Fontegreca",
+    "name": "Fiera della Madonna dei Cipressi",
+    "months": [
+      9
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.fontegreca.ce.it/vivere-il-comune/eventi/fiera-della-madonna-dei-cipresssi/",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.fontegreca.ce.it/vivere-il-comune/eventi/fiera-della-madonna-dei-cipresssi/"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-09-05",
+        "end": "2025-09-05",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.fontegreca.ce.it/vivere-il-comune/eventi/fiera-della-madonna-dei-cipresssi/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale originale riferita al 5 settembre 2025,6–12. Il calendario del Parco descrive la ricorrenza a inizio settembre; nessuna edizione 2026 dedotta. Concessioni, categorie, costi e termini da verificare nel nuovo atto, senza estendere la data storica."
+    },
+    "id": "campania-fontegreca-fiera-della-madonna-dei-cipressi"
+  },
+  {
+    "region": "Campania",
+    "city": "Fontegreca",
+    "name": "Fiera mercato di San Giuseppe",
+    "months": [
+      3
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.fontegreca.ce.it/vivere-il-comune/eventi/",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.fontegreca.ce.it/vivere-il-comune/eventi/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Elenco eventi del Comune:19 marzo, SanGiuseppe con serate musicali e fiera mercato. è una ricorrenza senza anno annuale verificato in questa pagina; nessuna conferma 2026 né quota banco ricostruita. Ammissione alla vendita soggetta a specifico atto comunale."
+    },
+    "id": "campania-fontegreca-fiera-mercato-di-san-giuseppe"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marcellino",
+    "name": "Sagra delle Noci e del Vino Asprinio",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "noci vino prodotti tipici",
+    "source": {
+      "url": "https://www.prolocosanmarcellinoaps.it/la-storia-della-nostra-festa-patronale/",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.prolocosanmarcellinoaps.it/la-storia-della-nostra-festa-patronale/"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-09-06",
+        "end": "2025-09-07",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.prolocosanmarcellinoaps.it/la-storia-della-nostra-festa-patronale/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Originale organizzatore letto:6–7 settembre 2025, zona VillettaSpierto/traversaViaCapua. Il titolo di navigazione Festa 2026 non aggiorna la sagra 2025. Date 12–13 settembre 2026 emerse da aggregatori non elevate a conferma senza originale programma recuperato. Quote e candidature esterne non pubblicate."
+    },
+    "id": "campania-san-marcellino-sagra-delle-noci-e-del-vino-asprinio"
+  },
+  {
+    "region": "Campania",
+    "city": "Sant'Arpino",
+    "name": "Sagra del Casatiello",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti da forno",
+    "source": {
+      "url": "https://prolocosantarpino.it/",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://prolocosantarpino.it/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Homepage Pro Loco indicaXXVIII edizione 17–19 giugno senza anno e galleria del 2021; non si attribuiscono quei giorni al 2026. Le date 12–14 giugno 2026 di altri portali restano non confermate dall'originale recuperato. Gestione Pro Loco e prodotti tipici; nessuna tariffa o ammissione libera espositore documentata."
+    },
+    "id": "campania-sant-arpino-sagra-del-casatiello"
+  },
+  {
+    "region": "Campania",
+    "city": "Piana di Monte Verna",
+    "name": "Festa della Pizzonta",
+    "months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia",
+    "source": {
+      "url": "https://prolocopianese.it/portfolio/la-festa-della-pizzonta/",
+      "label": "Comune, ente territoriale o organizzatore originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://prolocopianese.it/portfolio/la-festa-della-pizzonta/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Organizzatore ProLocoPianese: ricorrenza annuale descritta come intrattenimento estivo, cucine proprie. I mesi rappresentano solo la stagione estiva e non un calendario di aperture. Non adottate le date 12–13 settembre 2026 degli aggregatori come conferma originale. Nessuna candidatura ambulanti o tariffa banco pubblicata."
+    },
+    "id": "campania-piana-di-monte-verna-festa-della-pizzonta"
+  },
+  {
+    "region": "Campania",
+    "city": "Ailano",
+    "name": "Sagra dell'Uva",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-ailano-sagra-dell-uva"
+  },
+  {
+    "region": "Campania",
+    "city": "Alife",
+    "name": "Fiera di San Sisto",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-alife-fiera-di-san-sisto"
+  },
+  {
+    "region": "Campania",
+    "city": "Alife",
+    "name": "Festa della Cipolla",
+    "months": [
+      8,
+      9
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-alife-festa-della-cipolla"
+  },
+  {
+    "region": "Campania",
+    "city": "Gallo Matese",
+    "name": "Fiera locale di giugno",
+    "months": [
+      6
+    ],
+    "category": "tradizionale",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-gallo-matese-fiera-locale-di-giugno"
+  },
+  {
+    "region": "Campania",
+    "city": "Gioia Sannitica",
+    "name": "Sagra degli Antichi Sapori",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-gioia-sannitica-sagra-degli-antichi-sapori"
+  },
+  {
+    "region": "Campania",
+    "city": "Letino",
+    "name": "Sagra del Formaggio",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-letino-sagra-del-formaggio"
+  },
+  {
+    "region": "Campania",
+    "city": "Piedimonte Matese",
+    "name": "Fiera di San Bartolomeo",
+    "months": [
+      9
+    ],
+    "category": "tradizionale",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-piedimonte-matese-fiera-di-san-bartolomeo"
+  },
+  {
+    "region": "Campania",
+    "city": "Piedimonte Matese",
+    "name": "Fiera di San Martino",
+    "months": [
+      11
+    ],
+    "category": "tradizionale",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-piedimonte-matese-fiera-di-san-martino"
+  },
+  {
+    "region": "Campania",
+    "city": "Piedimonte Matese",
+    "name": "Sagra dello Spinacardo",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parks.it/parco.matese/man1.html",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parks.it/parco.matese/man1.html"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-piedimonte-matese-sagra-dello-spinacardo"
+  },
+  {
+    "region": "Campania",
+    "city": "Prata Sannita",
+    "name": "Fiera di San Biagio",
+    "months": [
+      2
+    ],
+    "category": "tradizionale",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-prata-sannita-fiera-di-san-biagio"
+  },
+  {
+    "region": "Campania",
+    "city": "Prata Sannita",
+    "name": "Fiera locale di agosto",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-prata-sannita-fiera-locale-di-agosto"
+  },
+  {
+    "region": "Campania",
+    "city": "Raviscanina",
+    "name": "Sagra della Pannocchia",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-raviscanina-sagra-della-pannocchia"
+  },
+  {
+    "region": "Campania",
+    "city": "Sant'Angelo d'Alife",
+    "name": "Sagra del Ferragosto",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-sant-angelo-d-alife-sagra-del-ferragosto"
+  },
+  {
+    "region": "Campania",
+    "city": "San Potito Sannitico",
+    "name": "Sagra dell'Uva",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-san-potito-sannitico-sagra-dell-uva"
+  },
+  {
+    "region": "Campania",
+    "city": "Valle Agricola",
+    "name": "Ferragosto Valligiano",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-valle-agricola-ferragosto-valligiano"
+  },
+  {
+    "region": "Campania",
+    "city": "Castello del Matese",
+    "name": "Sagra del Ferragosto Castellano",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-castello-del-matese-sagra-del-ferragosto-castellano"
+  },
+  {
+    "region": "Campania",
+    "city": "Capriati a Volturno",
+    "name": "Sagra del Vino",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia prodotti tipici",
+    "source": {
+      "url": "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/",
+      "label": "Parco Regionale del Matese: calendario di ricorrenze",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.parcoregionaledelmatese.it/turismo-sostenibile/sagra-fiere-e-feste/"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il calendario del Parco descrive la ricorrenza, senza anno di edizione. I mesi sono indicativi: non sono giorni confermati del 2026. Nessun bando per espositori, costo banco o disponibilità residua verificati in questa fonte; le sagre organizzate con cucine locali non implicano candidatura libera per ambulanti."
+    },
+    "id": "campania-capriati-a-volturno-sagra-del-vino"
+  },
+  {
+    "region": "Campania",
+    "city": "Ciorlano",
+    "name": "Fiera primaverile",
+    "months": [
+      5
+    ],
+    "category": "tradizionale",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.comune.ciorlano.ce.it/zf/index.php/storia-comune",
+      "label": "Fonte comunale originale: ricorrenza senza edizione confermata",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.ciorlano.ce.it/zf/index.php/storia-comune"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Storia del Comune: ricorrenza 1 maggio, distinta dalla festa patronale. Pagina priva di calendario annuale; nessuna conferma 2026 o tariffa banco dedotta. Titoli e assegnazione commerciale richiedono lo specifico atto comunale."
+    },
+    "id": "campania-ciorlano-fiera-primaverile"
+  },
+  {
+    "region": "Campania",
+    "city": "Ciorlano",
+    "name": "Fiera autunnale",
+    "months": [
+      10
+    ],
+    "category": "tradizionale",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.comune.ciorlano.ce.it/zf/index.php/storia-comune",
+      "label": "Fonte comunale originale: ricorrenza senza edizione confermata",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.ciorlano.ce.it/zf/index.php/storia-comune"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Storia del Comune: ricorrenza 22 ottobre, distinta dalle feste religiose citate nella stessa pagina. Nessuna nuova edizione 2026 confermata; quote, scadenze e disponibilità posteggi non precisate dalla fonte."
+    },
+    "id": "campania-ciorlano-fiera-autunnale"
+  },
+  {
+    "region": "Campania",
+    "city": "Castel Morrone",
+    "name": "Sagra della Fresella",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.comune.castelmorrone.ce.it/c061026/zf/index.php/servizi-aggiuntivi/index/index/idtesto/10",
+      "label": "Fonte comunale originale: ricorrenza senza edizione confermata",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.castelmorrone.ce.it/c061026/zf/index.php/servizi-aggiuntivi/index/index/idtesto/10"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale Le Sagre: seconda decade di agosto, stand gastronomici. Testo storico non aggiornato all'edizione 2026: nessun giorno o termine domande calcolato. L'organizzazione della sagra non implica posti commerciali disponibili per operatori esterni."
+    },
+    "id": "campania-castel-morrone-sagra-della-fresella"
+  },
+  {
+    "region": "Campania",
+    "city": "Castel Morrone",
+    "name": "Sagra del Fico d'India",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.comune.castelmorrone.ce.it/c061026/zf/index.php/servizi-aggiuntivi/index/index/idtesto/10",
+      "label": "Fonte comunale originale: ricorrenza senza edizione confermata",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.castelmorrone.ce.it/c061026/zf/index.php/servizi-aggiuntivi/index/index/idtesto/10"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale Le Sagre: prima decade di settembre. Testo dice 25 anni dal 1976, quindi è una descrizione storica: non conferma le diverse date 2026 circolanti su portali privati. Non esposti bando, domanda o costo banco."
+    },
+    "id": "campania-castel-morrone-sagra-del-fico-d-india"
+  },
+  {
+    "region": "Campania",
+    "city": "Sparanise",
+    "name": "Fiera della Madonna del Carmelo",
+    "months": [
+      7
+    ],
+    "category": "tradizionale",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.comunedisparanise.it/gov1/attachments/article/230/REGOLAMENTO%20COMMERCIO%20SU%20AREE%20PUBBLICHE.FIERE%20E%20FESTE%20PATRONALI.pdf",
+      "label": "Fonte comunale originale: ricorrenza senza edizione confermata",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comunedisparanise.it/gov1/attachments/article/230/REGOLAMENTO%20COMMERCIO%20SU%20AREE%20PUBBLICHE.FIERE%20E%20FESTE%20PATRONALI.pdf"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale storico, articoli 11–23 esaminati: ricorrenza 16 luglio. Nessun giorno 2026 calcolato dal vecchio regolamento. Assegnazioni con graduatoria/presenze, tributo non quantificato; disposizioni storiche non presentate come nuovo bando o disponibilità attuale."
+    },
+    "id": "campania-sparanise-fiera-della-madonna-del-carmelo"
+  },
+  {
+    "region": "Campania",
+    "city": "Sparanise",
+    "name": "Festa della Madonna del Torello - commercio su aree pubbliche",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.comunedisparanise.it/gov1/attachments/article/230/REGOLAMENTO%20COMMERCIO%20SU%20AREE%20PUBBLICHE.FIERE%20E%20FESTE%20PATRONALI.pdf",
+      "label": "Fonte comunale originale: ricorrenza senza edizione confermata",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comunedisparanise.it/gov1/attachments/article/230/REGOLAMENTO%20COMMERCIO%20SU%20AREE%20PUBBLICHE.FIERE%20E%20FESTE%20PATRONALI.pdf"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale storico, articoli 11–23 esaminati: ricorrenza ultima domenica di maggio. Nessun giorno 2026 calcolato dal vecchio regolamento. Assegnazioni con graduatoria/presenze, tributo non quantificato; disposizioni storiche non presentate come nuovo bando o disponibilità attuale."
+    },
+    "id": "campania-sparanise-festa-della-madonna-del-torello-commercio-su-aree-pubbliche"
+  },
+  {
+    "region": "Campania",
+    "city": "Sparanise",
+    "name": "Festa di San Vitaliano - commercio su aree pubbliche",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "merci varie prodotti tipici",
+    "source": {
+      "url": "https://www.comunedisparanise.it/gov1/attachments/article/230/REGOLAMENTO%20COMMERCIO%20SU%20AREE%20PUBBLICHE.FIERE%20E%20FESTE%20PATRONALI.pdf",
+      "label": "Fonte comunale originale: ricorrenza senza edizione confermata",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comunedisparanise.it/gov1/attachments/article/230/REGOLAMENTO%20COMMERCIO%20SU%20AREE%20PUBBLICHE.FIERE%20E%20FESTE%20PATRONALI.pdf"
+    ],
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Regolamento comunale storico, articoli 11–23 esaminati: ricorrenza ultima domenica di agosto. Nessun giorno 2026 calcolato dal vecchio regolamento. Assegnazioni con graduatoria/presenze, tributo non quantificato; disposizioni storiche non presentate come nuovo bando o disponibilità attuale."
+    },
+    "id": "campania-sparanise-festa-di-san-vitaliano-commercio-su-aree-pubbliche"
+  },
+  {
+    "region": "Campania",
+    "city": "Roccamonfina",
+    "name": "Maxi Sagra della Castagna IGP e del Fungo Porcino",
+    "months": [
+      10,
+      11
+    ],
+    "category": "sagra",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://maxisagraroccamonfina.it/",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://maxisagraroccamonfina.it/",
+      "https://www.halleyweb.com/c061070/de/attachment.php?serialDocumento=00TIPT0202687&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-03",
+        "end": "2026-10-04",
+        "dateType": "calendar",
+        "sourceUrl": "https://maxisagraroccamonfina.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-11",
+        "dateType": "calendar",
+        "sourceUrl": "https://maxisagraroccamonfina.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://maxisagraroccamonfina.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-24",
+        "end": "2026-10-25",
+        "dateType": "calendar",
+        "sourceUrl": "https://maxisagraroccamonfina.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-31",
+        "end": "2026-11-01",
+        "dateType": "calendar",
+        "sourceUrl": "https://maxisagraroccamonfina.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Cinque fine settimana dal 3 ottobre al 1 novembre 2026. Avviso stand e modulo originali letti: domanda entro 31 agosto ore 24, requisiti professionali e regolarità contributiva/tributaria, prodotti tipici locali e divieto di subconcessione. Determina 656 del 2 ottobre approva già le assegnazioni: nessuna disponibilità residua attestata. Mercato Castanicolo distinto: prodotti locali non cucinati, massimo 10 mq, domanda entro 21 settembre ore 12; CUP non quantificato."
+    },
+    "id": "campania-roccamonfina-maxi-sagra-della-castagna-igp-e-del-fungo-porcino"
+  },
+  {
+    "region": "Campania",
+    "city": "Castello del Matese",
+    "name": "La Giostra - festa medievale",
+    "months": [
+      7,
+      8
+    ],
+    "category": "tradizionale",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.lagiostracastellomatese.it/",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.lagiostracastellomatese.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-31",
+        "end": "2026-08-02",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.lagiostracastellomatese.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Programma originale organizzatore: 31 luglio, 1 e 2 agosto 2026. La sezione Vivi La Giostra documenta il mercatino Vita Antiqua e artigiani del tempo antico. Non è stata documentata una candidatura aperta a tutti gli ambulanti: categorie, allestimenti e quote da specifica ammissione organizzativa."
+    },
+    "id": "campania-castello-del-matese-la-giostra-festa-medievale"
+  },
+  {
+    "region": "Campania",
+    "city": "Capriati a Volturno",
+    "name": "Festa della Birra",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "birra gastronomia",
+    "source": {
+      "url": "https://www.comune.capriatiavolturno.ce.it/vivere_il_comune/eventi/evento_2.html",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.capriatiavolturno.ce.it/vivere_il_comune/eventi/evento_2.html"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-06",
+        "end": "2026-08-09",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.capriatiavolturno.ce.it/vivere_il_comune/eventi/evento_2.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale originale esaminata tramite strumento web: 6–9 agosto 2026, stand gastronomici e birra. Il download diretto e il browser locale vanno in timeout, prova web conservata separatamente. Accesso pubblico gratuito non significa quota stand gratuita; nessuna procedura di adesione degli operatori esterni documentata."
+    },
+    "id": "campania-capriati-a-volturno-festa-della-birra"
+  },
+  {
+    "region": "Campania",
+    "city": "San Potito Sannitico",
+    "name": "Solstizio di Natale - Il Mercatino di San Potito",
+    "months": [
+      12
+    ],
+    "category": "mercatino",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.sanpotitosannitico.ce.it/novita/avvisi/novita_162.html",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sanpotitosannitico.ce.it/novita/avvisi/novita_162.html"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-20",
+        "end": "2025-12-21",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.sanpotitosannitico.ce.it/novita/avvisi/novita_162.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso e tre allegati originali recuperati tramite browser: 20–21 dicembre 2025, non rinnovo 2026. Domande entro 12 dicembre 2025 ore 12; prodotti tipici locali, manufatti e somministrazione; priorità attività del territorio e residenti, poi protocollo. Spazio gratuito, ma attrezzature, autorizzazioni e allestimento a cura dell'espositore."
+    },
+    "id": "campania-san-potito-sannitico-solstizio-di-natale-il-mercatino-di-san-potito"
+  },
+  {
+    "region": "Campania",
+    "city": "Alvignano",
+    "name": "Natale Alvignanese",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.alvignano.ce.it/vivere-il-comune/eventi/natale-alvignanese/",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.alvignano.ce.it/vivere-il-comune/eventi/natale-alvignanese/"
+    ],
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-12-14",
+        "end": "2025-01-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.alvignano.ce.it/vivere-il-comune/eventi/natale-alvignanese/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Scheda originale comunale: contenitore natalizio 14 dicembre 2024–18 gennaio 2025 con mercatini, non conferma di apertura commerciale quotidiana. Aggiornamento informatico 2025 non rinnova l'edizione. Nessun programma 2026 o tariffa espositore verificati; gratuità indicata per il pubblico."
+    },
+    "id": "campania-alvignano-natale-alvignanese"
+  },
+  {
+    "region": "Campania",
+    "city": "Alvignano",
+    "name": "Vini Novelli Alvignanesi",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "sectors": "vino gastronomia",
+    "source": {
+      "url": "https://www.comune.alvignano.ce.it/vivere-il-comune/eventi/vini-novelli-alvignanesi/",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.alvignano.ce.it/vivere-il-comune/eventi/vini-novelli-alvignanesi/"
+    ],
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-11-23",
+        "end": "2024-11-23",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.alvignano.ce.it/vivere-il-comune/eventi/vini-novelli-alvignanesi/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Originale comunale: 23 novembre 2024 con stand e degustazioni di vino e prodotti tipici. Pagina aggiornata luglio 2025 ma evento storico; nessuna conferma 2026 ricavata dal copyright. Accesso del visitatore non è costo del banco, condizioni per esterni non pubblicate."
+    },
+    "id": "campania-alvignano-vini-novelli-alvignanesi"
+  },
+  {
+    "region": "Campania",
+    "city": "Camigliano",
+    "name": "Camigliano Experience",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "gastronomia",
+    "source": {
+      "url": "https://comune.camigliano.ce.it/vivere-il-comune/eventi",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://comune.camigliano.ce.it/vivere-il-comune/eventi"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-26",
+        "end": "2025-07-27",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.camigliano.ce.it/vivere-il-comune/eventi"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Elenco eventi comunale: edizione 2025 nei giorni 26–27 luglio. Il testo sbaglia i giorni della settimana, quindi non vengono ripetuti. L'evento gastronomico resta storico, senza rinnovo 2026 dedotto. Nessuna quota banco o procedura commerciale per operatori esterni verificata."
+    },
+    "id": "campania-camigliano-camigliano-experience"
+  },
+  {
+    "region": "Campania",
+    "city": "Pastorano",
+    "name": "Mercatini di Natale",
+    "months": [
+      11,
+      12
+    ],
+    "category": "mercatino",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://comune.pastorano.ce.it/vivere-il-comune/eventi/mercatini-di-natale-2024/",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://comune.pastorano.ce.it/vivere-il-comune/eventi/mercatini-di-natale-2024/"
+    ],
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-11-29",
+        "end": "2024-12-01",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.pastorano.ce.it/vivere-il-comune/eventi/mercatini-di-natale-2024/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Originale vademecum di sei pagine: 29–30 novembre e 1 dicembre 2024, Corso Italia, 15–22. Domanda entro 11 novembre 2024 con contributo 50 euro; professionisti, artigiani, produttori e associazioni, collezionisti solo scambio. Spazi 3 x 3 o 4 x 4 con luce; no rimborso per assenza/maltempo. La gratuità della pagina evento non annulla il contributo stand previsto nell'allegato storico. Nessuna edizione 2026 confermata."
+    },
+    "id": "campania-pastorano-mercatini-di-natale"
+  },
+  {
+    "region": "Campania",
+    "city": "Teverola",
+    "name": "Mercatini di Natale",
+    "months": [
+      12
+    ],
+    "category": "mercatino",
+    "sectors": "prodotti tipici e artigianato",
+    "source": {
+      "url": "https://www.comune.teverola.ce.it/c061092/de/attachment.php?serialDocumento=00QL2S02025CF&mosdoc=0",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.teverola.ce.it/c061092/de/attachment.php?serialDocumento=00QL2S02025CF&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-20",
+        "end": "2025-12-21",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.teverola.ce.it/c061092/de/attachment.php?serialDocumento=00QL2S02025CF&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ordinanza originale 64 del 15 dicembre 2025: mercatini 20–21 dicembre in via Cavour. L'intervallo di divieto di traffico non viene interpretato come apertura commerciale ininterrotta. Nessuna conferma 2026, quota banco o ammissione di nuovi operatori ricostruita."
+    },
+    "id": "campania-teverola-mercatini-di-natale"
+  },
+  {
+    "region": "Campania",
+    "city": "Villa Literno",
+    "name": "Oro Rosso Summer Festival",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "prodotti agroalimentari",
+    "source": {
+      "url": "https://www.regione.campania.it/sites/default/files/2026-09/Calendario%20sagra%20Sicignano%20%2010_09_2026.pdf",
+      "label": "Fonte originale del Comune o organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.regione.campania.it/sites/default/files/2026-09/Calendario%20sagra%20Sicignano%20%2010_09_2026.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-07-05",
+        "end": "2024-07-07",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.regione.campania.it/sites/default/files/2026-09/Calendario%20sagra%20Sicignano%20%2010_09_2026.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Registro regionale originale revisionato settembre 2026, annualità miste: la riga Villa Literno riguarda 5–7 luglio 2024. Non trasformata in edizione 2026. Manifestazione enogastronomica storica; domande, costi e posteggi di nuove edizioni non dedotti dalla presenza nel registro."
+    },
+    "id": "campania-villa-literno-oro-rosso-summer-festival"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Truck in Sud",
+    "months": [
+      9
+    ],
+    "category": "espositiva",
+    "sectors": "veicoli industriali, ricambi e accessori",
+    "source": {
+      "url": "https://www.truckinsud.it/truck-sud-2026-ti-aspetta-18-19-20-settembre/",
+      "label": "Sito originale organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.truckinsud.it/truck-sud-2026-ti-aspetta-18-19-20-settembre/",
+      "https://www.truckinsud.it/download/contratto%20raduno.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-20",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.truckinsud.it/truck-sud-2026-ti-aspetta-18-19-20-settembre/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Originale organizzatore e contratto: 18–20 settembre 2026, non 11–13 del calendario nazionale precedente. A1Expò. Operatori di veicoli industriali, accessori e servizi: richiesta soggetta ad accettazione, non posteggio ambulante generalista. Domanda e saldo entro 11 settembre 2026, anticipo 50%; nessuna disponibilità residua attestata. Quote riferite solo a questa edizione."
+    },
+    "id": "campania-san-marco-evangelista-truck-in-sud"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "SED - Salone dell'Edilizia",
+    "months": [
+      5
+    ],
+    "category": "espositiva",
+    "sectors": "macchinari, attrezzature e materiali per edilizia",
+    "source": {
+      "url": "https://www.sededilizia.com/wp-content/uploads/2025/10/Domanda-di-partecipazione-e-regolamento-SED-2026.pdf",
+      "label": "Sito originale organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.sededilizia.com/wp-content/uploads/2025/10/Domanda-di-partecipazione-e-regolamento-SED-2026.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-22",
+        "end": "2026-05-24",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.sededilizia.com/wp-content/uploads/2025/10/Domanda-di-partecipazione-e-regolamento-SED-2026.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Originale domanda e regolamento, dieci pagine: 22–24 maggio 2026 ad A1Expò, contro 21–23 nel calendario camerale. Il regolamento sbaglia alcuni giorni della settimana, ma frontespizio, modulo, orari visitatori e programma concordano sulle date numeriche. Riservato a imprese dell’edilizia, impianti e servizi ammessi; domanda entro 30 aprile, quota iscrizione alla firma, 50% entro 20 marzo e saldo 17 aprile 2026. Progetto e documentazione stand obbligatori; nessuna assegnazione automatica o quota 2027 dedotta."
+    },
+    "id": "campania-san-marco-evangelista-sed-salone-dell-edilizia"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "IPVP - La Fiera della Fotografia",
+    "months": [
+      4
+    ],
+    "category": "espositiva",
+    "sectors": "attrezzature fotografiche, accessori e usato",
+    "source": {
+      "url": "https://ipvp.it/diventa-espositore",
+      "label": "Sito originale organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://ipvp.it/diventa-espositore"
+    ],
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-04-02",
+        "end": "2027-04-04",
+        "dateType": "calendar",
+        "sourceUrl": "https://ipvp.it/diventa-espositore"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Sito originale organizzatore: 2–4 aprile 2027 ad A1Expò. Il vecchio dominio della Fiera della Fotografia rimanda a IPVP. Spazio libero con 3 kW oppure preallestito da 16 o 64 mq; kit e preventivo richiedono una richiesta, che non è stata inviata. Nessun importo pubblico verificato; date 20–22 febbraio 2026 del calendario camerale non usate come programma attuale. Manifestazione professionale e mercato fotografico specializzato."
+    },
+    "id": "campania-san-marco-evangelista-ipvp-la-fiera-della-fotografia"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Caserta Tattoo Convention",
+    "months": [
+      4
+    ],
+    "category": "espositiva",
+    "sectors": "tatuaggi, attrezzature e accessori",
+    "source": {
+      "url": "https://www.casertatattooconvention.it/",
+      "label": "Sito originale organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.casertatattooconvention.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-10",
+        "end": "2026-04-12",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.casertatattooconvention.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Sito originale della decima edizione: 10–12 aprile 2026, A1Expò San Marco Evangelista. Evento distinto da Halloween Tattoo Expò di ottobre, non duplicazione delle stesse giornate. Selezione di tatuatori e operatori del settore; nessuna tariffa o possibilità di accesso generalista per ambulanti pubblicata nella pagina esaminata."
+    },
+    "id": "campania-san-marco-evangelista-caserta-tattoo-convention"
+  },
+  {
+    "region": "Campania",
+    "city": "San Marco Evangelista",
+    "name": "Bufala Village",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "sectors": "prodotti tipici, formaggi e gastronomia",
+    "source": {
+      "url": "https://bufalavillage.it/chi-siamo-2/",
+      "label": "Sito originale organizzatore",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://bufalavillage.it/chi-siamo-2/"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-09-19",
+        "end": "2025-09-21",
+        "dateType": "calendar",
+        "sourceUrl": "https://bufalavillage.it/chi-siamo-2/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Organizzatore: pagina Chi siamo identifica espressamente l’edizione 2025, 19–21 settembre. Programma e giorni della settimana concordano con il 2025; la homepage non espone l’anno. Il calendario nazionale 2026 ripete 19–21 settembre, in sovrapposizione a Truck in Sud: non assunto come conferma del rinnovo. Spazi e cucina gestiti secondo selezione organizzativa, nessuna quota stand o candidatura esterna aperta documentata."
+    },
+    "id": "campania-san-marco-evangelista-bufala-village"
+  },
+  {
+    "region": "Campania",
+    "city": "Caserta",
+    "name": "Pizza Expo Caserta",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "pizza, prodotti tipici e street food",
+    "source": {
+      "url": "https://www.goldwebtv.it/caserta-pizza-expo-via-all-edizione-2026-domani-c-tony-tammaro.html",
+      "label": "Comunicato organizzatore riprodotto da GoldwebTV",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.goldwebtv.it/caserta-pizza-expo-via-all-edizione-2026-domani-c-tony-tammaro.html"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-26",
+        "end": "2026-08-29",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.goldwebtv.it/caserta-pizza-expo-via-all-edizione-2026-domani-c-tony-tammaro.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Comunicato originale degli organizzatori riprodotto dalla testata: 26–29 agosto 2026 al Parco della Musica Maria Carolina, con pizzerie, food truck ed esposizioni. Fonte riprodotta, non pagina istituzionale. Non risultano domanda, quota banco o assegnazione libera a operatori esterni; ingresso e consumazioni visitatori non sono prezzo dello stand."
+    },
+    "id": "campania-caserta-pizza-expo-caserta"
+  },
+  {
+    "region": "Campania",
+    "city": "Valle di Maddaloni",
+    "name": "Festa della Mela",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "sectors": "prodotti tipici, mele e gastronomia",
+    "source": {
+      "url": "https://www.casertamusica.com/rubriche/articoli/2026-D/261017_festa_mela_annurca_32.asp",
+      "label": "Comunicato organizzatore riprodotto da CasertaMusica",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.casertamusica.com/rubriche/articoli/2026-D/261017_festa_mela_annurca_32.asp"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-18",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.casertamusica.com/rubriche/articoli/2026-D/261017_festa_mela_annurca_32.asp"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Comunicato originale della manifestazione riprodotto dalla testata: 17–18 ottobre 2026; conferenza del 15 ottobre distinta dai giorni della festa. Originale esaminato tramite strumento web e conservato nel dossier; download diretto risponde 999, non dichiarato riuscito. Gestione Pro Loco; concorso di pasticceria gratuito non significa gratuità del banco. Nessun bando o prezzo stand esterni verificato."
+    },
+    "id": "campania-valle-di-maddaloni-festa-della-mela"
+  },
+  {
+    "region": "Campania",
+    "city": "Cancello ed Arnone",
+    "name": "White Fest - Festa della Mozzarella",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "sectors": "prodotti tipici, mozzarella e gastronomia",
+    "source": {
+      "url": "https://www.goldwebtv.it/cancello-ed-arnone-il-7-8-e-9-agosto-le-date-della-48esima-edizione-del-white-fest-festival-dell-oro-bianco.html",
+      "label": "Comunicato Comune e Pro Loco riprodotto da GoldwebTV",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.goldwebtv.it/cancello-ed-arnone-il-7-8-e-9-agosto-le-date-della-48esima-edizione-del-white-fest-festival-dell-oro-bianco.html"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-09",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.goldwebtv.it/cancello-ed-arnone-il-7-8-e-9-agosto-le-date-della-48esima-edizione-del-white-fest-festival-dell-oro-bianco.html"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Comunicato originale riprodotto, con dichiarazioni del Comune e della Pro Loco: 7–9 agosto 2026, Area Eventi Prezioso Casa, quarantottesima edizione. La componente gastronomica distingue il festival dai singoli concerti, che non sono schede autonome. Operatori e caseifici selezionati; nessuna tariffa banco, modulo ambulanti o disponibilità residua documentata."
+    },
+    "id": "campania-cancello-ed-arnone-white-fest-festa-della-mozzarella"
+  },
+  {
+    "region": "Campania",
+    "city": "Caserta",
+    "name": "Beer Park - From Village",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "sectors": "birra, bevande e street food",
+    "source": {
+      "url": "https://www.belvederenews.net/beer-park-dal-2-al-4-ottobre-il-from-village-si-trasforma-in-un-parco-dedicato-a-birra-cibo-musica-e-convivialita-ad-ingresso-gratuito/",
+      "label": "Comunicato stampa riprodotto da BelvedereNews",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.belvederenews.net/beer-park-dal-2-al-4-ottobre-il-from-village-si-trasforma-in-un-parco-dedicato-a-birra-cibo-musica-e-convivialita-ad-ingresso-gratuito/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-02",
+        "end": "2026-10-04",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.belvederenews.net/beer-park-dal-2-al-4-ottobre-il-from-village-si-trasforma-in-un-parco-dedicato-a-birra-cibo-musica-e-convivialita-ad-ingresso-gratuito/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Comunicato stampa originale riprodotto dalla testata il 1 ottobre 2026: 2–4 ottobre, From Village, via Unità Italiana, Campo Laudato Si’. Area con birrifici, pub e street food selezionati; ingresso pubblico gratuito, nessuna quota stand pubblicata. Evento a Caserta distinto da Birra Village previsto ad A1Expò nel calendario nazionale: non si assume che siano la stessa organizzazione o lo stesso luogo."
+    },
+    "id": "campania-caserta-beer-park-from-village"
+  },
+  {
+    "region": "Campania",
+    "city": "Sessa Aurunca",
+    "name": "Il Castello del Gusto - Fiera del Tartufo",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "tartufo, prodotti tipici e gastronomia",
+    "source": {
+      "url": "https://www.paesenews.it/?p=308309",
+      "label": "Comunicato organizzatore riprodotto da PaeseNews",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.paesenews.it/?p=308309"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-24",
+        "end": "2026-07-26",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.paesenews.it/?p=308309"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Comunicato originale della quinta edizione riprodotto da PaeseNews il 19 luglio 2026, organizzazione Associazione Micologica Aurunca: 24–26 luglio nel centro storico. Il laboratorio per bambini del 23 luglio è anteprima distinta dai giorni della fiera, non un quarto giorno commerciale dedotto. Stand enogastronomici e promozione del tartufo; nessuna tariffa banco, scadenza o adesione libera per ambulanti esterni verificata."
+    },
+    "id": "campania-sessa-aurunca-il-castello-del-gusto-fiera-del-tartufo"
+  },
+  {
+    "id": "campania-francolise-sagra-nel-cuore-del-borgo-di-montanaro",
+    "region": "Campania",
+    "city": "Francolise",
+    "name": "Sagra nel Cuore del Borgo di Montanaro",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "sectors": "prodotti tipici e gastronomia",
+    "source": {
+      "url": "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00FC1X020267N&p7m=1&mosdoc=0",
+      "label": "Comune di Francolise, ordinanza originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00FC1X020267N&p7m=1&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-25",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00FC1X020267N&p7m=1&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ordinanza originale 29 del 22 luglio 2026 esaminata: sagra del 25 luglio in frazione Montanaro, Piazza e via De Renzis, associazione Arcangelo Michele. L’atto disciplina la viabilità e richiama la SCIA dell’organizzatore; non costituisce assegnazione di banchi individuali. Nessuna quota o candidatura libera per venditori esterni documentata."
+    }
+  },
+  {
+    "id": "campania-francolise-sagra-di-san-felice",
+    "region": "Campania",
+    "city": "Francolise",
+    "name": "Sagra di San Felice",
+    "months": [
+      5,
+      6
+    ],
+    "category": "sagra",
+    "sectors": "prodotti tipici e gastronomia",
+    "source": {
+      "url": "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00ENLQ020265Q&p7m=1&mosdoc=0",
+      "label": "Comune di Francolise, ordinanza originale",
+      "checkedAt": "2026-10-27"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00ENLQ020265Q&p7m=1&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-31",
+        "end": "2026-06-01",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.francolise.ce.it/c061036/de/attachment.php?serialDocumento=00ENLQ020265Q&p7m=1&mosdoc=0"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Ordinanza originale 14 del 26 maggio 2026 esaminata: 31 maggio e 1 giugno, area adiacente alla chiesa Maria Santissima delle Grazie in via Roma, Francolise. Le fasce di chiusura stradale non diventano orari commerciali; richiamata occupazione del soggetto organizzatore, non una graduatoria di ambulanti. Nessuna tariffa o adesione esterna libera verificata."
+    }
   }
 ]

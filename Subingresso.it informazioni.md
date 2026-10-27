@@ -5,6 +5,22 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Caserta — ricerca conclusa, pubblicazione da verificare, 27 ottobre 2026
+
+- Audit `data/fiere-caserta.json`: **83 manifestazioni/48 comuni**, copertura
+  documentale nominale e piste dei **104 comuni**; 82 aggiunte e un aggiornamento,
+  ID Fiera Agricola conservato. Baseline effettiva `607564b`.
+- Otto sintesi costi, originali/PDF e calendari riconciliati; limiti ed esclusioni
+  nel dossier `data/FIERE.md`, prove private `Documents/ricerca-fiere-caserta-20261027`.
+  Cioccolateano 2026 annullato; fonti storiche e periodi usuali distinti dalle edizioni.
+- Backup remoto precedente verificato, non ripetuto. Solo Codex2, nessun altro agente,
+  contatto o intervento al controller; Pavia riservata.
+- Build7.912/dati edizione7.608; settori, 7.912pagine/3.414sitemap e browser locale
+  Chromium1440/320 + WebKit390 passati, tutti83dettagli e sei pagine senzaJS;
+  7.829schede esterne identiche. CacheJS129/JSON96.
+- **Casella ancora aperta:** restano commit/push e pubblicazione verificata online
+  con `PLAYWRIGHT_MODULE` (attesa deploy massima dieci minuti).
+
 ## Cagliari — pubblicata e verificata, 27 ottobre 2026
 
 - Ricerca attuale conclusa con limiti espliciti: **89 manifestazioni/40 comuni**,
