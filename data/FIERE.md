@@ -77,7 +77,20 @@ calendario commerciale. Nessuna tariffa derivata da biglietti per visitatori.
 Ricerca documentale attuale chiusa con questi limiti, senza garanzia di
 esaustività, posti liberi o ammissione. Nuovi bandi, programmi futuri, quote,
 graduatorie e archivi riaperti sono manutenzione periodica distinta.
-Pubblicazione e checklist: in attesa della verifica del deploy.
+Pubblicato e verificato `f8ed365`: [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Ba2BGkm4rcpiUBgSAB78iXysre2N).
+Cinque asset pubblici identici ai blob Git, **69/69 pagine HTTP 200** con H1,
+canonical, note, costi e fonti; ricevuta UTC `2026-10-27T01:01:55.163333+00:00`.
+Provincia locale e online con PLAYWRIGHT_MODULE: Chromium 1440/320 e WebKit 390,
+tutti i 69 dialoghi, elenco/mappa e campione senza JS. Sito reale nei tre formati
+con script di produzione e scritture bloccate, nessun errore o overflow;
+controllo visivo del dialogo Agricollina a 320 px riuscito.
+Suite generale cinque formati, settori, **7.744 pagine / 3.414 sitemap**,
+build ripetibile, diff e gitleaks passati. Audit: **390 ricevute tecniche**,
+**388 con file corrente verificato SHA256**, non altrettanti originali distinti.
+Checklist spuntata soltanto dopo i riscontri: **73 concluse / 37 rimaste**.
+Backup remoto `backup/session-20261027-012435-fiere-terni` e ramo
+`backup/pre-fiere-terni-20261027` verificati; errore cleanup dell’helper distinto
+dal backup riuscito. Originali e ricevute rimangono nel dossier privato.
 
 ## Frosinone — completamento della ricerca documentale, 26 ottobre 2026
 

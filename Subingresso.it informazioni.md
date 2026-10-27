@@ -2686,7 +2686,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 72 province completate, 38 da fare su 110**, aggiornate il 26 ottobre dopo Frosinone. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 73 province completate, 37 da fare su 110**, aggiornate il 27 ottobre dopo Terni. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3207,7 +3207,23 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
     disponibilità e singole giornate, programmi Natale 2026 e annualità successive,
     originali sostitutivi delle fonti storiche/secondarie e archivi non accessibili.
     Attività futura distinta dalla ricerca documentale attuale conclusa.
-- [ ] **66. Terni** — Umbria
+- [x] **66. Terni** — Umbria. Ricerca documentale corrente conclusa con limiti
+  espliciti e verificata online il 27 ottobre 2026: **69 manifestazioni in 24 comuni**,
+  tutti i **33 comuni** esaminati; nessuna scheda precedente Terni, altre 7.675
+  identiche. Audit `data/fiere-terni.json` e `data/FIERE.md`: 390 ricevute tecniche,
+  388 file correnti verificati SHA256, tre sintesi costo; 55 schede con dati edizione,
+  14 ricorrenze senza anno, nove schede solo storiche. Allegati scaduti e metadati
+  distinti dagli originali, date discordanti non trasformate in conferme.
+  Pubblicato `f8ed365`, Vercel riuscito: cinque asset identici, 69 pagine HTTP 200
+  con H1/canonical/note/costi/fonti; locale e online Chromium 1440/320 e WebKit390
+  con PLAYWRIGHT_MODULE, tutti i dialoghi; sito reale tre formati senza errori
+  o overflow. Build ripetibile, generale cinque formati, settori, 7.744 pagine /
+  3.414 sitemap e gitleaks passati. Cache JS127/JSON94; catalogo 7.744,
+  7.491 con dati edizione. Nessun contatto a terzi o lavoro su altre province;
+  file estranei preservati. Dossier `Documents/ricerca-fiere-terni-20261027`.
+  - [ ] Manutenzione periodica Terni: nuove edizioni, bandi, quote e canoni,
+    disponibilità/graduatorie, giornate dei periodi annunciati, calendari futuri
+    e archivi riaperti; attività distinta dalla ricerca attuale conclusa.
 - [ ] **67. Caserta** — Campania
 - [ ] **68. Lecce** — Puglia
 - [ ] **69. Cagliari** — Sardegna
