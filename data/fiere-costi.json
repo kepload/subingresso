@@ -2045,6 +2045,30 @@
       "sourceUrl": "https://www.comune.cassino.fr.it/it-it/download/avviso-pubblico-mercatino-dell-antiquariato-e-del-collezionismo-174979-9-1687-6f6ac011fcabccc140e5e957cc98c477",
       "checkedAt": "2026-10-26",
       "period": "2026/2027"
+    },
+    "umbria-montecastrilli-agricollina": {
+      "kind": "partial",
+      "label": "Quote per categoria: da 15 €/metro per hobbisti; base espositori 170 € + area",
+      "details": "Regolamento originale 2026: quota fissa 170 € più area 2,50 €/m² scoperta non pavimentata, 5,50 €/m² coperta, 3,50 €/m² scoperta depolverizzata/viale della Resistenza. Hobbisti con creazioni proprie 15 €/metro di fronte tutto compreso; commercianti frutta secca/altre attività 270 € + IVA, ristorazione mobile 370 € + IVA tutto compreso, previa assegnazione. Gazebo 4×4 facoltativo 300 €, allacci 500/1000 W 30/50 €. Il testo indica anche una quota ridotta del 50% pari a 87,50 €, incongruente con la base di 170 €: non normalizzata, da chiarire prima di pagare. Superficie, servizi e categoria determinano il totale; domanda entro 10 marzo 2026 già trascorso.",
+      "sourceUrl": "https://www.agricollinamontecastrilli.it/wp-content/uploads/2025/12/Regolamento-Agricollina-2026.docx",
+      "checkedAt": "2026-10-27",
+      "period": "2026"
+    },
+    "umbria-lugnano-in-teverina-olea-mundi-day-olea-dulcis-pop": {
+      "kind": "conditional",
+      "label": "Senza quota; obblighi di presenza, POS e assaggi",
+      "details": "Avviso 2026: partecipazione senza quota e senza rimborsi, previa selezione fino a 20 adesioni. Produttori agricoli presenti 5 e 6 dicembre, pasticcieri solo 6 dicembre; POS e assaggi gratuiti obbligatori. Requisiti sui dolci EVO e lievitato tradizionale, prodotti e allestimento a carico dell’espositore; non significa assenza di costi propri. Adesioni entro 27 novembre ore 12.",
+      "sourceUrl": "https://www.comune.lugnanointeverina.tr.it/novita/avvisi/novita_943.html",
+      "checkedAt": "2026-10-27",
+      "period": "2026"
+    },
+    "umbria-san-gemini-fiera-annuale-del-10-ottobre": {
+      "kind": "conditional",
+      "label": "Canone regolamentare 20 € a posteggio; aggiornamento da verificare",
+      "details": "Il regolamento comunale del canone recuperato indica 20 € a posteggio per la fiera annuale del 10 ottobre. È un importo regolamentare storico, non un preventivo completo né una tariffa annuale 2026 verificata: controllare eventuali aggiornamenti, altri oneri e assegnazione prima del pagamento.",
+      "sourceUrl": "https://www.etruriaservizi.com/pdf/sangemini/regolamento%20canone%20unico%20san%20gemini.pdf",
+      "checkedAt": "2026-10-27",
+      "period": null
     }
   }
 }
