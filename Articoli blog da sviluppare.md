@@ -12,7 +12,7 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 8. 🟠 Partecipare a una fiera conviene? Calcola l'incasso minimo prima di pagare il posteggio
 9. 🟢 Il tuo furgone può raggiungere il posteggio che vuoi comprare a Milano? Area B, Area C e accessi al mercato
 10. 🟢 Quanto tempo serve per vendere un posteggio? I tempi dei casi seguiti da Subingresso
-11. 🔴 Il venditore dichiara 1.000 euro al giorno: come verificare gli incassi del banco, con una tabella di riscontro
+11. 🔴 Il venditore dichiara 1.000 euro al giorno: come verificare gli incassi del banco, con una tabella di riscontro — [pubblicato il 27/10/2026](https://subingresso.it/blog?post=verificare-incassi-banco-prima-comprare); [testo](data/blog/verificare-incassi-banco-prima-comprare.html) e [tabella scaricabile](downloads/riscontro-incassi-banco.xlsx).
 12. 🔴 Compro il banco con tutta la merce: inventario scaricabile per separare scorte, attrezzature e avviamento
 13. 🔴 Fiere in Lombardia con corrente, acqua e parcheggio per il furgone: servizi e supplementi a confronto
 14. 🔴 Quali posteggi cercano gli acquirenti? Ricerche e annunci disponibili su Subingresso a confronto per zona e settore

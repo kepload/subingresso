@@ -5,6 +5,13 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Articolo verifica incassi banco — pubblicato e verificato, 27 ottobre 2026
+
+- Titolo rosso11: [1.000 euro al giorno? Verifica gli incassi del banco prima di comprarlo](https://subingresso.it/blog?post=verificare-incassi-banco-prima-comprare), ID `45539053-7634-47e7-8ba9-969c1fe8dbc0`. Sei sezioni, 644 parole incluse fonti, linguaggio semplice; dichiarato/documentato/POS distinti, esempio inventato 2.100÷3=700 senza previsioni o certificazioni.
+- Tabella gratuita `/downloads/riscontro-incassi-banco.xlsx`, istruzioni/modello40righe/esempio; formule con dati mancanti distinti dagli zeri, validazioni, nessuna macro/connessione. Download reale WebKit390 identicoSHA256. Copertina originale imagegen WebP1600×900 dichiarataIA; fonti primarie AdE/Unioncamere consultate e originali200 conservati.
+- Due ADS acquisto inline/closing, distinte e pertinenti, rotazione e destinazioni `/annunci` verificate; spazio Vetrine conservato. Materiali `b825915`, Vercel `3zpAnn6GxmjvLYXSmEmtBBJk7hZY` success. Pagina/indice/sitemap/SEO, Chromium1440/768/320, WebKit390 e senzaJS passati; nessun overflow/errore, tracking di prova intercettato. Precedenti122articoli identici,123totali.
+- Sorgenti/fonti `data/blog/verificare-incassi-banco-prima-comprare.*`; originale/prompt/helper/prove `Documents/articoli-subingresso/verificare-incassi-banco-prima-comprare`. Checkout isolato `Documents/subingresso-articolo-verifica-incassi-20261027`; piano segnato dopo verifica. Backup remoto `backup/session-20261027-113059-articolo-verifica-incassi` verificato, cleanuphelper con errore noto successivo. Fixture corrette per cwd e testo download; titolo reso esplicito sull'acquisto dopo primo abbinamento generico. Gitleaks manuale sul commit pulito (binario assente nel worktree); lavoro estraneo conservato.
+
 ## Articolo incasso minimo del banco — pubblicato e verificato, 27 ottobre 2026
 
 - Titolo rosso n.3 sviluppato su richiesta: [Quanto deve incassare un banco per convenire? I conti prima di comprarlo](https://subingresso.it/blog?post=quanto-deve-incassare-banco-convenire), ID `f8655378-42f1-4d40-9d22-79753980d968`. Testo semplice, sei sezioni, 661 parole incluse fonti; margine distinto da ricarico, IVA, imposte/contributi stimati, rate e liquidità iniziale espliciti. Esempio inventato: margine40%, 3.400€/mese da coprire,20giornate→425€/giornata;16giornate→531,25€. Nessuna media di settore o reddito garantito.
