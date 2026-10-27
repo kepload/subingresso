@@ -5,6 +5,17 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
+## Bozza dal piano editoriale — 27 ottobre 2026
+
+- Sviluppato il titolo1, «Vendo il posteggio ma nessuno mi contatta»:
+  sette correzioni prima/dopo e annuncio completo, esempi dichiarati inventati.
+  Testo e metadati in `data/blog/vendo-posteggio-nessun-contatto-correzioni-annuncio.bozza.md`;
+  piano collegato. Verificati 7 esempi prima/dopo, rimandi e campi live;
+  1.111 parole, nessun duplicato fra i 120 articoli.
+  Stato bozza; nessuna scritturaDB o pubblicazione dell'articolo.
+- Backup remoto `backup/session-20261027-011310-articolo-annuncio-senza-contatti`
+  verificato su `65ad785`; consueti errori del cleanuphelper successivo.
+
 
 ## Raccolta del sito ed errori visibili - 26 ottobre 2026
 

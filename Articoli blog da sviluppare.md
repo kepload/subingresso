@@ -2,7 +2,7 @@
 
 Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in presenza di AI Overview. Priorità: 🔴 alta · 🟠 media · 🟢 bassa.
 
-1. 🔴 Vendo il posteggio ma nessuno mi contatta: 7 correzioni dell'annuncio, con esempi prima e dopo
+1. 🔴 Vendo il posteggio ma nessuno mi contatta: 7 correzioni dell'annuncio, con esempi prima e dopo — [bozza sviluppata il 27/10/2026](data/blog/vendo-posteggio-nessun-contatto-correzioni-annuncio.bozza.md).
 2. 🔴 Mercatini di Natale in Lombardia per ambulanti: domande, costi e merce ammessa a confronto
 3. 🔴 Quanto deve incassare un banco per convenire? Il foglio per fare i conti prima di comprare
 4. 🔴 Posteggi in vendita a Milano e provincia: prezzi richiesti e condizioni a confronto
