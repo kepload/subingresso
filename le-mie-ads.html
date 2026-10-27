@@ -9,7 +9,7 @@
  <link rel="stylesheet" href="/css/tailwind.css?v=4">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  <link rel="stylesheet" href="/css/personal-ads.css?v=1">
- <link rel="stylesheet" href="/css/personal-ads-gallery.css?v=2">
+ <link rel="stylesheet" href="/css/personal-ads-gallery.css?v=3">
  <link rel="stylesheet" href="/css/personal-ads-results.css?v=2">
  <link rel="stylesheet" href="/css/contextual-ads-admin.css?v=1">
  <link rel="stylesheet" href="/css/blog-listing-ads-admin.css?v=2">
@@ -18,9 +18,9 @@
  <header class="pa-header"><a class="pa-brand" href="/">Subingresso<span>.it</span></a><a href="/dashboard">Torna alla dashboard</a></header>
  <div id="paGate" class="pa-gate" role="status"><h2>Le mie ADS</h2><p id="paGateText">Verifica dell’accesso amministratore…</p><button id="paLogin" type="button" hidden>Accedi</button><button id="paRetryGate" type="button" hidden>Riprova</button></div>
  <main id="paApp" hidden>
-  <div class="pa-title-row"><div><h1>Le mie ADS</h1><p>Sfoglia le ADS nelle loro dimensioni reali. Clicca su un banner per copiarlo o scaricarlo.</p></div><div class="pa-heading-actions"><button id="paMotionToggle" data-pa-motion-toggle type="button" aria-pressed="false">Pausa animazioni</button><button id="paShowStats" type="button">Statistiche</button><button id="paDownloadAll" type="button">Scarica tutta la raccolta</button></div></div>
+  <div class="pa-title-row"><div><h1>Le mie ADS</h1><p>Scegli un banner per copiarlo o scaricarlo.</p></div><div class="pa-heading-actions"><button id="paMotionToggle" data-pa-motion-toggle type="button" aria-pressed="false">Pausa animazioni</button><button id="paShowStats" type="button">Statistiche</button><button id="paDownloadAll" type="button">Scarica raccolta</button></div></div>
   <section id="paListingPanel" class="pa-listing-panel" aria-labelledby="paListingTitle">
-   <div class="pa-section-head"><div><h2 id="paListingTitle">Posteggi in Vetrina nel blog <span id="paListingCount"></span></h2><p class="pa-muted">Spazi pubblicitari mirati alla zona dell’articolo, con rotazione tra Vetrine pertinenti.</p></div><button id="paListingRefresh" type="button">Aggiorna Vetrine</button></div>
+   <div class="pa-section-head"><div><h2 id="paListingTitle">Posteggi in Vetrina nel blog <span id="paListingCount"></span></h2><p class="pa-muted">Spazi pubblicitari mirati alla zona dell’articolo, con rotazione tra Vetrine pertinenti.</p></div></div>
    <p id="paListingStatus" role="status" aria-live="polite">Caricamento delle Vetrine…</p>
    <div id="paListingInventory" class="pa-listing-inventory"></div>
    <details><summary>Anteprima negli articoli e risultati</summary>
@@ -50,11 +50,10 @@
   </details>
   <section class="pa-library" aria-labelledby="paLibraryTitle">
    <div class="pa-gallery-toolbar">
-    <div class="pa-gallery-heading"><h2 id="paLibraryTitle">Tutte le tue ADS <span id="paCount" aria-live="polite"></span></h2><span class="pa-scale">Dimensioni reali · 1:1</span></div>
-    <div class="pa-gallery-controls"><div id="paFilters" class="pa-filters" role="group" aria-label="Obiettivo ADS"><button type="button" data-goal="all" aria-pressed="true">Tutte</button><button type="button" data-goal="vendi" aria-pressed="false">Vendi posteggi</button><button type="button" data-goal="compra" aria-pressed="false">Compra posteggi</button><button type="button" data-goal="fiere" aria-pressed="false">Calendario fiere</button></div><label class="pa-gallery-size" for="paGalleryMode">Misure<select id="paGalleryMode"><option value="mixed">Miste da blog · 20 ADS</option><option value="all">Tutte le misure · 160 varianti</option></select></label><label class="pa-search" for="paSearch">Cerca<input id="paSearch" type="search" placeholder="Messaggio o codice ADS"></label></div>
+    <div class="pa-gallery-heading"><h2 id="paLibraryTitle">Tutte le tue ADS <span id="paCount" aria-live="polite"></span></h2><span id="paScale" class="pa-scale">Dimensioni reali · 1:1</span></div>
+    <div class="pa-gallery-controls"><div id="paFilters" class="pa-filters" role="group" aria-label="Obiettivo ADS"><button type="button" data-goal="all" aria-pressed="true">Tutte</button><button type="button" data-goal="vendi" aria-pressed="false">Vendi</button><button type="button" data-goal="compra" aria-pressed="false">Compra</button><button type="button" data-goal="fiere" aria-pressed="false">Fiere</button></div><label class="pa-gallery-size" for="paGalleryMode">Misure<select id="paGalleryMode"><option value="mixed">Miste da blog · 20 ADS</option><option value="all">Tutte le misure · 160 varianti</option></select></label><label class="pa-search" for="paSearch">Cerca<input id="paSearch" type="search" placeholder="Messaggio o codice ADS"></label></div>
    </div>
-   <p id="paCanvasHint" class="pa-muted" hidden>Le dimensioni restano reali. Scorri la galleria anche in orizzontale per vedere i banner più larghi.</p>
-   <div id="paGalleryScroll" class="pa-gallery-scroll" tabindex="0" aria-label="Galleria ADS in dimensioni reali" aria-describedby="paCanvasHint"><div id="paList" class="pa-mosaic-board" role="list" aria-label="Creatività disponibili"></div></div>
+   <div id="paGalleryScroll" class="pa-gallery-scroll" aria-label="Galleria ADS"><div id="paList" class="pa-mosaic-board" role="list" aria-label="Creatività disponibili"></div></div>
    <p id="paEmpty" class="pa-empty" hidden>Nessuna ADS corrisponde alla ricerca. Prova un’altra parola o scegli Tutte.</p>
   </section>
   <dialog id="paDetails" class="pa-details" aria-labelledby="paAdTitle"><div class="pa-dialog-top"><span>Codice, download e risultati</span><div class="pa-dialog-actions"><button data-pa-motion-toggle type="button" aria-pressed="false">Pausa animazioni</button><button id="paCloseDetails" type="button" autofocus>Chiudi</button></div></div>
@@ -71,7 +70,7 @@
   </dialog>
   <details id="paResultsPanel" class="pa-stats-disclosure"><summary>Statistiche della raccolta</summary>
   <section class="pa-results" aria-labelledby="paResultsTitle">
-   <div class="pa-section-head"><h2 id="paResultsTitle">Come stanno andando</h2><div class="pa-period"><label for="paDays">Clic degli ultimi</label><select id="paDays"><option value="7">7 giorni</option><option value="30" selected>30 giorni</option><option value="90">90 giorni</option><option value="365">365 giorni</option></select><button id="paRefresh" type="button">Aggiorna</button></div></div>
+   <div class="pa-section-head"><h2 id="paResultsTitle">Come stanno andando</h2><div class="pa-period"><label for="paDays">Clic degli ultimi</label><select id="paDays"><option value="7">7 giorni</option><option value="30" selected>30 giorni</option><option value="90">90 giorni</option><option value="365">365 giorni</option></select></div></div>
    <label class="pa-article-scope" for="paArticleFilter">Articolo dei risultati<select id="paArticleFilter"><option value="all">Tutti gli articoli e le altre provenienze</option></select></label>
    <dl id="paTotals" class="pa-metrics"></dl>
    <p id="paFinding" class="pa-muted"></p>
@@ -102,7 +101,7 @@
  <script src="/js/house-ads-catalog.js?v=2"></script>
  <script src="/js/contextual-ads.js?v=4"></script>
  <script src="/js/contextual-ads-admin.js?v=1"></script>
- <script src="/js/blog-listing-ads-admin.js?v=1"></script>
- <script src="/js/personal-ads-admin.js?v=9"></script>
+ <script src="/js/blog-listing-ads-admin.js?v=2"></script>
+ <script src="/js/personal-ads-admin.js?v=10"></script>
 </body>
 </html>

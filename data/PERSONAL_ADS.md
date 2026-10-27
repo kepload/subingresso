@@ -22,13 +22,15 @@ Richiesta: raccolta privata admin con circa20 ADS delle sezioni redditizie,
 più misure, riuso di alcuni banner blog e confronto dei risultati.
 
 Seguito grafico: la pagina principale è una galleria a mosaico delle20ADS,
-non una lista di miniature con editor fisso. Ogni immagine usa le dimensioni
-originali in CSSpixel1:1, senza ridimensionamenti o ritagli; didascalia con
+non una lista di miniature con editor fisso. Dal27ottobre ogni immagine usa le dimensioni
+originali in CSSpixel1:1 quando entrano nello spazio; i formati più larghi
+si riducono in proporzione, senza ritagli. Didascalia con
 codice/misura. I rettangoli vengono incastrati con12px di distanza e44px di
 didascalia. Vista iniziale20messaggi in misure miste da blog, filtro per
 obiettivo/testo/misura; «Tutte le misure» mostra160varianti. Nessuna ADS
-viene esclusa o duplicata nella vista iniziale. Sui piccoli schermi la sola
-galleria scorre orizzontalmente per i formati larghi; nessun overflow pagina.
+viene esclusa o duplicata nella vista iniziale. Nessuno scorrimento orizzontale
+della galleria, anche per tutte160varianti e al resize. Su smartphone filtri
+in una riga, misura/ricerca affiancate e barra non fissa durante lo scorrimento.
 Al clic si apre il pannello della creatività/misura selezionata, con gli
 stessi strumenti di riuso e i dati reali. Statistiche in un blocco apribile
 dopo la galleria, scorciatoia nell’intestazione. Accesso admin conservato;
@@ -179,7 +181,14 @@ i7giornipiùrecenti possono ancora maturare. Senza accesso alcuni percorsi
 non sono attribuibili;nessuna ricostruzione dello storico precedente.
 
 Statistiche aggregate perADS/misura/posizione,periodi7/30/90/365giorni,
-CSV,dettagli chiusi inizialmente. Zeri reali distinti da rapporti mancanti;
+CSV,dettagli chiusi inizialmente. Dal27ottobre niente pulsanti Aggiorna,
+anche nelle Vetrine: i quattro periodi vengono letti all'apertura e conservati
+solo in memoria per l'account. Cambiare periodo usa la fotografia già caricata;
+focus, visibilità e autenticazione ripetuta dello stesso account non rileggono
+i numeri. Per nuovi dati ricaricare la pagina. Logout/cambio account svuotano
+anche queste fotografie e invalidano le letture pendenti. Un periodo fallito
+non diventa zero e conserva la selezione riuscita, con invito a ricaricare.
+Zeri reali distinti da rapporti mancanti;
 errore mantiene gli ultimi dati con avviso,mai trasformato inzero.
 
 ## Verifiche
@@ -194,7 +203,7 @@ Prove private:`Documents/ads-personali-20261024`;ZIP verificati anche con
 Python zipfile/CRC. RegressoSSRblog e banner esistenti verificato a parte.
 
 Prove mosaico:`Documents/ads-mosaico-20261024`, stessi browser/temi;
-rettangoli reali confrontati con gli attributi originali, tutte160varianti,
+rettangoli confrontati con dimensioni originali/proporzioni adattate, tutte160varianti,
 assenza sovrapposizioni, resize/filtri, dialog/focus/Escape, feedback live
 sopra il livello modale per copia e ZIP (anche errore), ripristino al body,
 logout e risposta tardiva. Nessun cambiamento a backend, misurazione o asset.

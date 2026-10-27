@@ -8,11 +8,11 @@
  const csvQuote=value=>{let cell=Array.isArray(value)?value.join(' | '):value??'';if(typeof cell==='string'&&/^[=+\-@\t\r]/.test(cell))cell="'"+cell;return '"'+String(cell).replaceAll('"','""')+'"';};
  const keys=['impressions','clicks','measured_clicks','converted_clicks','signups','listings','contacts','fairs','paid_orders','revenue_cents','refunded_cents'];
  let owner=null,revision=0,request=0,data=null,selected=null,goal='all',loadedDays=30,toastTimer,downloadController=null,downloadBusy=false,eventsController=null;
- let mosaicItems=[],mosaicWidth=0,mosaicFrame=0;
+ let mosaicItems=[],mosaicWidth=0,mosaicFrame=0,periodSnapshots=new Map();
  const mixedFormats=['970x250','300x600','336x280','300x250','728x90','320x100'];
  const sum=rows=>rows.reduce((a,r)=>{keys.forEach(k=>a[k]+=Number(r[k]||0));return a;},Object.fromEntries(keys.map(k=>[k,0])));
  function status(message,sticky=false){clearTimeout(toastTimer);const host=$('paDetails').open?$('paDetails'):document.body;if($('paStatus').parentElement!==host)host.append($('paStatus'));$('paStatus').textContent=message;$('paStatus').hidden=false;if(!sticky)toastTimer=setTimeout(()=>$('paStatus').hidden=true,5000);}
- function clear(message){window.dispatchEvent(new Event('personal-ads:clear'));++revision;++request;owner=null;data=null;selected=null;mosaicItems=[];mosaicWidth=0;cancelAnimationFrame(mosaicFrame);if($('paDetails').open)$('paDetails').close();downloadController?.abort();eventsController?.abort();eventsController=null;$('paEventsExport').disabled=false;downloadBusy=false;$('paApp').hidden=true;$('paGate').hidden=false;$('paGateText').textContent=message;$('paLogin').hidden=true;$('paRetryGate').hidden=true;['paTotals','paList','paStatsRows','paSummaryRows','paArticleRows','paContextCoverage','paContextBreakdowns','paAdMetrics','paPreviewFrame','paFinding','paComparisonCount','paUpdated'].forEach(id=>$(id).replaceChildren());$('paArticleFilter').replaceChildren();$('paList').style.height='0px';$('paCode').value='';$('paStatus').hidden=true;}
+ function clear(message){window.dispatchEvent(new Event('personal-ads:clear'));++revision;++request;owner=null;data=null;periodSnapshots.clear();selected=null;mosaicItems=[];mosaicWidth=0;cancelAnimationFrame(mosaicFrame);if($('paDetails').open)$('paDetails').close();downloadController?.abort();eventsController?.abort();eventsController=null;$('paEventsExport').disabled=false;downloadBusy=false;$('paApp').hidden=true;$('paGate').hidden=false;$('paGateText').textContent=message;$('paLogin').hidden=true;$('paRetryGate').hidden=true;['paTotals','paList','paStatsRows','paSummaryRows','paArticleRows','paContextCoverage','paContextBreakdowns','paAdMetrics','paPreviewFrame','paFinding','paComparisonCount','paUpdated'].forEach(id=>$(id).replaceChildren());$('paArticleFilter').replaceChildren();$('paList').style.height='0px';$('paCode').value='';$('paStatus').hidden=true;}
  function asset(ad,format,type){return '/images/personal-ads/'+ad.id+'-'+format.id+'.'+type+'?v='+(ad.assetVersion||1);}
  function placement(){const value=$('paPlacement').value.trim();return /^[a-z0-9_-]{1,80}$/.test(value)?value:null;}
  function clickUrl(ad,format,position){return site+'/api/personal-ads?'+new URLSearchParams({action:'click',ad:ad.id,format:format.id,placement:position,ctx:JSON.stringify({creative_version:ad.assetVersion||0,source:'external'})}).toString();}
@@ -52,17 +52,17 @@
  }
  function visibleAds(){const query=$('paSearch').value.trim().toLocaleLowerCase('it');return data.ads.filter(ad=>(goal==='all'||ad.goal===goal)&&(!query||(ad.title+' '+ad.description+' '+ad.id).toLocaleLowerCase('it').includes(query)));}
  // Rettangoli liberi: si riempiono anche gli spazi sotto i banner più bassi.
- // Le misure delle immagini non vengono mai adattate alla griglia.
+ // Si riducono solo i formati più larghi dello spazio, conservando le proporzioni.
  function layoutMosaic(){
   if(!data||!mosaicItems.length)return;
   const available=Math.floor($('paGalleryScroll').clientWidth);if(!available)return;
-  const width=Math.max(available,...mosaicItems.map(item=>item.format.width));
+  const width=available;
   if(width===mosaicWidth)return;mosaicWidth=width;
   const gap=12,caption=44;let free=[{x:0,y:0,w:width+gap,h:1000000}],height=0;
-  const ordered=[...mosaicItems].sort((a,b)=>b.format.width*(b.format.height+caption)-a.format.width*(a.format.height+caption)||a.index-b.index);
+  const ordered=mosaicItems.map(item=>{const displayWidth=Math.min(width,item.format.width);return {...item,displayWidth,displayHeight:item.format.height*displayWidth/item.format.width};}).sort((a,b)=>b.displayWidth*(b.displayHeight+caption)-a.displayWidth*(a.displayHeight+caption)||a.index-b.index);
   const placed=[];
   for(const item of ordered){
-   const w=item.format.width+gap,h=item.format.height+caption+gap;
+   const w=item.displayWidth+gap,h=item.displayHeight+caption+gap;
    const fit=free.filter(r=>r.w>=w&&r.h>=h).sort((a,b)=>a.y-b.y||a.x-b.x||a.w*a.h-b.w*b.h)[0];
    const used={x:fit.x,y:fit.y,w,h},next=[];
    for(const r of free){
@@ -73,13 +73,13 @@
     if(used.y+used.h<r.y+r.h)next.push({x:r.x,y:used.y+used.h,w:r.w,h:r.y+r.h-used.y-used.h});
    }
    free=next.filter((r,i)=>r.w>0&&r.h>0&&!next.some((other,j)=>i!==j&&other.x<=r.x&&other.y<=r.y&&other.x+other.w>=r.x+r.w&&other.y+other.h>=r.y+r.h&&(other.w*other.h>r.w*r.h||j<i)));
-   item.node.style.cssText='left:'+used.x+'px;top:'+used.y+'px;width:'+item.format.width+'px;height:'+(item.format.height+caption)+'px';
-   placed.push({...item,x:used.x,y:used.y});height=Math.max(height,used.y+item.format.height+caption);
+   item.node.style.cssText='left:'+used.x+'px;top:'+used.y+'px;width:'+item.displayWidth+'px;height:'+(item.displayHeight+caption)+'px';
+   placed.push({...item,x:used.x,y:used.y});height=Math.max(height,used.y+item.displayHeight+caption);
   }
   const board=$('paList');board.style.width=width+'px';board.style.height=height+'px';
   // Lo scorrimento con Tab segue lo stesso ordine visivo delle righe.
   const fragment=document.createDocumentFragment();placed.sort((a,b)=>a.y-b.y||a.x-b.x).forEach(item=>fragment.append(item.node));board.append(fragment);
-  $('paCanvasHint').hidden=width<=available;
+  $('paScale').textContent=ordered.some(item=>item.displayWidth<item.format.width)?'Anteprime adattate':'Dimensioni reali · 1:1';
  }
  function queueMosaic(){mosaicWidth=0;cancelAnimationFrame(mosaicFrame);mosaicFrame=requestAnimationFrame(layoutMosaic);}
  function renderList(){
@@ -87,9 +87,9 @@
   for(const ad of rows){const formats=mode==='all'?data.formats:mode==='mixed'?[data.formats.find(f=>f.id===mixedFormats[data.ads.findIndex(a=>a.id===ad.id)%mixedFormats.length])]:data.formats.filter(f=>f.id===mode);for(const format of formats)if(format)items.push({ad,format,index:items.length});}
   $('paCount').textContent=rows.length+' di '+data.ads.length+' ADS · '+items.length+' varianti';
   $('paEmpty').hidden=items.length>0;
-  $('paList').innerHTML=items.map(({ad,format})=>'<article class="pa-tile" role="listitem"><button class="pa-tile-button" type="button" data-ad="'+ad.id+'" data-format="'+format.id+'" aria-label="'+esc(ad.title)+' · '+format.width+' per '+format.height+' pixel. Codice, download e risultati"><img src="'+asset(ad,format,'svg')+'" data-pa-motion="'+asset(ad,format,'animated.svg')+'" alt="'+esc(ad.title+' '+ad.description)+'" width="'+format.width+'" height="'+format.height+'" loading="lazy" decoding="async" style="width:'+format.width+'px;height:'+format.height+'px"><span class="pa-tile-caption"><span><strong>'+esc(ad.id)+'</strong> · '+format.width+' × '+format.height+'</span><span>Usa ADS →</span></span></button></article>').join('');
+  $('paList').innerHTML=items.map(({ad,format})=>'<article class="pa-tile" role="listitem"><button class="pa-tile-button" type="button" data-ad="'+ad.id+'" data-format="'+format.id+'" aria-label="'+esc(ad.title)+' · '+format.width+' per '+format.height+' pixel. Codice, download e risultati"><img src="'+asset(ad,format,'svg')+'" data-pa-motion="'+asset(ad,format,'animated.svg')+'" alt="'+esc(ad.title+' '+ad.description)+'" width="'+format.width+'" height="'+format.height+'" loading="lazy" decoding="async"><span class="pa-tile-caption"><span><strong>'+esc(ad.id)+'</strong> · '+format.width+' × '+format.height+'</span><span>Usa ADS →</span></span></button></article>').join('');
   mosaicItems=items.map((item,index)=>({...item,node:$('paList').children[index]}));
-  if(items.length)queueMosaic();else{$('paList').style.height='0px';$('paList').style.width='100%';$('paCanvasHint').hidden=true;}
+  if(items.length)queueMosaic();else{$('paList').style.height='0px';$('paList').style.width='100%';}
   if($('paDetails').open)renderEditor();
  }
  function renderEditor(){
@@ -107,23 +107,33 @@
   $('paCopyHtml').disabled=!position;$('paCopyLink').disabled=!position;
   $('paDestination').href=ad.destination;
  }
+ function changePeriod(){
+  const days=Number($('paDays').value),snapshot=periodSnapshots.get(days);
+  if(!snapshot){$('paDays').value=String(loadedDays);status('Questo periodo non è disponibile. Ricarica la pagina per riprovare.',true);return;}
+  data=snapshot;loadedDays=days;articleOptions();renderMetrics();if($('paDetails').open)renderEditor();
+ }
  async function load(){
-  const seq=++request,rev=revision,days=$('paDays').value;$('paRefresh').disabled=true;$('paRetryGate').hidden=true;
+  const seq=++request,rev=revision,days=Number($('paDays').value);$('paDays').disabled=true;$('paRetryGate').hidden=true;
   try{
    const checked=await _supabase.auth.getUser();if(seq!==request||rev!==revision)return;
    const user=checked.data?.user;
    if(!user){clear(checked.error?'Accesso da verificare. Accedi o riprova.':'Accedi con il tuo account amministratore per aprire la raccolta.');$('paLogin').hidden=false;$('paRetryGate').hidden=false;return;}
    const session=await _supabase.auth.getSession();if(seq!==request||rev!==revision)return;
    if(session.data?.session?.user?.id!==user.id)throw Error('La sessione è cambiata. Riprova.');
-   const response=await fetch('/api/personal-ads?days='+days,{headers:{Authorization:'Bearer '+session.data.session.access_token},cache:'no-store'});
-   const result=await response.json();if(seq!==request||rev!==revision)return;
-   if(!response.ok){if(response.status===401||response.status===403){clear(result.error);$('paLogin').hidden=response.status!==401;return;}throw Error(result.error||'Raccolta non disponibile. Riprova.');}
-   owner=user.id;data=result;loadedDays=Number(result.stats.period_days||days);selected=selected||data.ads[0]?.id;
+   // Tutti i periodi sono fotografie dell'apertura: cambiare filtro non rilegge i numeri.
+   const periods=[7,30,90,365],responses=await Promise.allSettled(periods.map(async period=>{const response=await fetch('/api/personal-ads?days='+period,{headers:{Authorization:'Bearer '+session.data.session.access_token},cache:'no-store'});return {response,result:await response.json()};}));
+   if(seq!==request||rev!==revision)return;
+   const denied=responses.find(r=>r.status==='fulfilled'&&[401,403].includes(r.value.response.status));
+   if(denied){clear(denied.value.result.error);$('paLogin').hidden=denied.value.response.status!==401;return;}
+   const currentResponse=responses[periods.indexOf(days)];if(currentResponse.status==='rejected')throw Error('Raccolta non disponibile. Ricarica la pagina per riprovare.');
+   const {response,result}=currentResponse.value;if(!response.ok)throw Error(result.error||'Raccolta non disponibile. Riprova.');
+   periodSnapshots=new Map(responses.flatMap((r,i)=>r.status==='fulfilled'&&r.value.response.ok?[[periods[i],r.value.result]]:[]));
+   owner=user.id;data=result;loadedDays=days;selected=selected||data.ads[0]?.id;
    const current=$('paFormat').value;$('paFormat').innerHTML=data.formats.map(f=>'<option value="'+f.id+'">'+f.id+' · '+esc(f.label)+'</option>').join('');if(data.formats.some(f=>f.id===current))$('paFormat').value=current;
    const galleryMode=$('paGalleryMode').value||'mixed';$('paGalleryMode').innerHTML='<option value="mixed">Miste da blog</option><option value="all">Tutte le misure</option>'+data.formats.map(f=>'<option value="'+f.id+'">'+f.width+' × '+f.height+' · '+esc(f.label)+'</option>').join('');$('paGalleryMode').value=galleryMode;
    $('paApp').hidden=false;$('paGate').hidden=true;articleOptions();renderMetrics();renderList();window.dispatchEvent(new CustomEvent('personal-ads:ready',{detail:{owner,ads:data.ads}}));
   }catch(error){if(seq!==request||rev!==revision)return;if(data){$('paDays').value=String(loadedDays);status(error.message+' I dati visualizzati restano quelli dell’ultimo aggiornamento.',true);}else{$('paGateText').textContent=error.message;$('paRetryGate').hidden=false;}}
-  finally{if(seq===request)$('paRefresh').disabled=false;}
+  finally{if(seq===request)$('paDays').disabled=false;}
  }
  async function copy(value){try{await navigator.clipboard.writeText(value);status('Copiato.');}catch(_){$('paCode').value=value;const details=$('paCode').closest('details');details.open=true;$('paCode').focus();$('paCode').select();status('Selezione pronta: copia il testo con il comando del dispositivo.');}}
  function download(blob,name){const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),1500);}
@@ -188,10 +198,10 @@
  $('paSummaryRows').addEventListener('click',event=>{const button=event.target.closest('[data-result-ad]');if(!button||!data)return;selected=button.dataset.resultAd;const rows=scopedRows().filter(r=>r.ad_id===selected),best=data.formats.map(f=>({id:f.id,...sum(rows.filter(r=>r.format===f.id))})).sort((a,b)=>b.clicks-a.clicks||b.impressions-a.impressions)[0];$('paFormat').value=best?.id||'300x250';renderEditor();$('paDetails').showModal();$('paCloseDetails').focus();});
  if(typeof ResizeObserver==='function')new ResizeObserver(()=>{cancelAnimationFrame(mosaicFrame);mosaicFrame=requestAnimationFrame(layoutMosaic);}).observe($('paGalleryScroll'));else window.addEventListener('resize',queueMosaic);
  $('paSearch').addEventListener('input',()=>{if(data)renderList();});$('paFormat').addEventListener('change',renderEditor);$('paPlacement').addEventListener('input',()=>{if(data)renderEditor();});
- $('paRefresh').addEventListener('click',load);$('paDays').addEventListener('change',load);$('paRetryGate').addEventListener('click',load);
+ $('paDays').addEventListener('change',changePeriod);$('paRetryGate').addEventListener('click',load);
  $('paLogin').addEventListener('click',()=>{window.__onLoginSuccess=load;window.openAuthModal('login');});
  $('paCopyHtml').addEventListener('click',()=>copy($('paCode').value));$('paCopyLink').addEventListener('click',()=>{const p=placement();if(p)copy(clickUrl(selectedAd(),selectedFormat(),p));});
  $('paPack').addEventListener('click',()=>pack(false));$('paDownloadAll').addEventListener('click',()=>pack(true));$('paExport').addEventListener('click',exportCsv);
- _supabase.auth.onAuthStateChange((event,session)=>{const next=session?.user?.id||null;if(event!=='TOKEN_REFRESHED'||(owner&&next!==owner)){clear(event==='SIGNED_OUT'?'Accedi con il tuo account amministratore.':'Verifica dell’accesso amministratore…');$('paLogin').hidden=!!next;setTimeout(load,0);}});
+ _supabase.auth.onAuthStateChange((event,session)=>{const next=session?.user?.id||null;if(data&&next===owner&&event!=='SIGNED_OUT')return;if(event!=='TOKEN_REFRESHED'||(owner&&next!==owner)){clear(event==='SIGNED_OUT'?'Accedi con il tuo account amministratore.':'Verifica dell’accesso amministratore…');$('paLogin').hidden=!!next;setTimeout(load,0);}});
  window.addEventListener('pagehide',()=>{downloadController?.abort();eventsController?.abort();});load();
 })();

@@ -3,8 +3,8 @@
  'use strict';
  const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const number=n=>Number(n||0).toLocaleString('it-IT'),ratio=(n,d)=>d?new Intl.NumberFormat('it-IT',{style:'percent',maximumFractionDigits:1}).format(n/d):'—';
- let owner=null,revision=0,request=0,previewRequest=0,data=null;
- function clear(){owner=null;++revision;++request;++previewRequest;data=null;for(const id of ['paListingInventory','paListingRows','paListingPreview'])$(id).replaceChildren();$('paListingPost').innerHTML='<option value="">Scegli un articolo</option>';$('paListingStatus').textContent='';$('paListingPreviewStatus').textContent='';$('paListingCount').textContent='';$('paListingExport').disabled=true;}
+ let owner=null,revision=0,request=0,previewRequest=0,data=null,periodSnapshots=new Map();
+ function clear(){owner=null;++revision;++request;++previewRequest;data=null;periodSnapshots.clear();for(const id of ['paListingInventory','paListingRows','paListingPreview'])$(id).replaceChildren();$('paListingPost').innerHTML='<option value="">Scegli un articolo</option>';$('paListingStatus').textContent='';$('paListingPreviewStatus').textContent='';$('paListingCount').textContent='';$('paListingExport').disabled=true;}
  async function api(action,extra,rev){
   const checked=await _supabase.auth.getUser();if(rev!==revision||checked.error||checked.data?.user?.id!==owner){if(rev===revision)clear();throw Error('La sessione è cambiata. Accedi di nuovo.');}
   const session=await _supabase.auth.getSession();if(rev!==revision||session.error||session.data?.session?.user?.id!==owner){if(rev===revision)clear();throw Error('Accesso da verificare. Riprova.');}
@@ -20,7 +20,7 @@
   const stats=data.stats,totals=stats.rows.reduce((a,r)=>({clicks:a.clicks+Number(r.clicks),impressions:a.impressions+Number(r.impressions)}),{clicks:0,impressions:0});
   const active=stats.listings.filter(a=>a.active).length;
   $('paListingCount').textContent='· '+number(active)+' attive';
-  $('paListingStatus').textContent=(active?number(active)+' Vetrine attive. ':'Nessuna Vetrina Premium attiva: gli spazi restano nascosti nel blog. ')+number(totals.clicks)+' clic · '+number(totals.impressions)+' impressioni negli ultimi '+data.days+' giorni.';
+  $('paListingStatus').textContent=(active?number(active)+' Vetrine attive. ':'Nessuna Vetrina Premium attiva. ')+number(totals.clicks)+' clic · '+number(totals.impressions)+' impressioni negli ultimi '+data.days+' giorni.';
   const all=[...stats.listings];for(const r of stats.rows)if(!all.some(a=>a.id===r.listing_id))all.push({id:r.listing_id,active:false});
   $('paListingInventory').innerHTML=all.map(ad=>row(ad,stats.rows.filter(r=>r.listing_id===ad.id).reduce((a,r)=>({clicks:a.clicks+Number(r.clicks),impressions:a.impressions+Number(r.impressions)}),{clicks:0,impressions:0}))).join('');
   $('paListingRows').innerHTML=stats.rows.length?stats.rows.map(r=>{const ad=all.find(a=>a.id===r.listing_id),post=data.posts.find(p=>p.slug===r.post_slug);return '<tr><td>'+esc(ad?.titolo||'Posteggio non più disponibile')+'<br><a href="/blog?post='+encodeURIComponent(r.post_slug)+'" target="_blank" rel="noopener">'+esc(post?.title||r.post_slug)+'</a></td><td>'+(r.placement==='blog_closing'?'In chiusura':'Nel testo')+'</td><td>'+number(r.impressions)+'</td><td>'+number(r.clicks)+'</td><td>'+ratio(r.measured_clicks,r.impressions)+'</td></tr>';}).join(''):'<tr><td colspan="5">Nessun evento misurato nel periodo.</td></tr>';
@@ -28,11 +28,11 @@
   $('paListingExport').disabled=false;
  }
  async function load(){
-  if(!owner)return;const seq=++request,rev=revision;$('paListingRefresh').disabled=true;$('paListingStatus').textContent='Aggiornamento delle Vetrine…';
+  if(!owner)return;const seq=++request,rev=revision;$('paListingDays').disabled=true;$('paListingStatus').textContent='Caricamento delle Vetrine…';
   const days=$('paListingDays').value;
-  try{const result=await api('listing-stats',{days},rev);if(rev!==revision||seq!==request)return;if(!Array.isArray(result.stats?.listings)||!Array.isArray(result.stats?.rows)||!Array.isArray(result.posts))throw Error('Risposta Vetrine non valida. Riprova.');data={...result,days};render();}
+  try{const periods=['7','30','90','365'],responses=await Promise.allSettled(periods.map(async period=>{const result=await api('listing-stats',{days:period},rev);if(!Array.isArray(result.stats?.listings)||!Array.isArray(result.stats?.rows)||!Array.isArray(result.posts))throw Error('Risposta Vetrine non valida. Riprova.');return {...result,days:period};}));if(rev!==revision||seq!==request)return;const current=responses[periods.indexOf(days)];if(current.status==='rejected')throw current.reason;periodSnapshots=new Map(responses.flatMap((r,i)=>r.status==='fulfilled'?[[periods[i],r.value]]:[]));data=current.value;render();}
   catch(e){if(rev===revision&&seq===request)$('paListingStatus').textContent=e.message+(data?' I risultati mostrati sono quelli dell’ultimo aggiornamento.':'');}
-  finally{if(seq===request)$('paListingRefresh').disabled=false;}
+  finally{if(seq===request)$('paListingDays').disabled=false;}
  }
  async function preview(){
   const post=$('paListingPost').value,seq=++previewRequest,rev=revision;$('paListingPreview').replaceChildren();
@@ -45,6 +45,6 @@
   }catch(e){if(rev===revision&&seq===previewRequest)$('paListingPreviewStatus').textContent=e.message;}
  }
  function csv(){if(!data)return;const cols=['listing_id','post_slug','placement','impressions','clicks','measured_clicks'],quote=v=>'"'+String(v??'').replaceAll('"','""')+'"',blob=new Blob(['\ufeff'+[cols.join(';'),...data.stats.rows.map(r=>cols.map(c=>quote(r[c])).join(';'))].join('\r\n')],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='vetrine-blog-'+data.days+'-giorni.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);}
- window.addEventListener('personal-ads:ready',e=>{if(owner!==e.detail.owner){clear();owner=e.detail.owner;}load();});window.addEventListener('personal-ads:clear',clear);
- $('paListingRefresh').addEventListener('click',load);$('paListingDays').addEventListener('change',load);$('paListingPreviewButton').addEventListener('click',preview);$('paListingPost').addEventListener('change',()=>{++previewRequest;$('paListingPreview').replaceChildren();$('paListingPreviewStatus').textContent='';});$('paListingExport').addEventListener('click',csv);
+ window.addEventListener('personal-ads:ready',e=>{if(owner===e.detail.owner&&data)return;if(owner!==e.detail.owner){clear();owner=e.detail.owner;}load();});window.addEventListener('personal-ads:clear',clear);
+ $('paListingDays').addEventListener('change',()=>{const snapshot=periodSnapshots.get($('paListingDays').value);if(snapshot){data=snapshot;render();}else{if(data)$('paListingDays').value=data.days;$('paListingStatus').textContent='Questo periodo non è disponibile. Ricarica la pagina per riprovare.';}});$('paListingPreviewButton').addEventListener('click',preview);$('paListingPost').addEventListener('change',()=>{++previewRequest;$('paListingPreview').replaceChildren();$('paListingPreviewStatus').textContent='';});$('paListingExport').addEventListener('click',csv);
 })();
