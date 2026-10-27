@@ -2,8 +2,8 @@
 
 ## Caserta — ricerca documentale del 27 ottobre 2026
 
-Ricerca attuale conclusa con limiti espliciti; **pubblicazione ancora da verificare**.
-Checklist aperta. Audit `data/fiere-caserta.json`: **83 manifestazioni in 48 comuni**,
+**Ricerca attuale conclusa con limiti espliciti, pubblicata e verificata online.**
+Checklist spuntata soltanto dopo le prove di pubblicazione. Audit `data/fiere-caserta.json`: **83 manifestazioni in 48 comuni**,
 ricognizione nominale e approfondimento delle piste dei **104 comuni** provinciali.
 **82 aggiunte e un aggiornamento**: conservati nome e ID della Fiera Agricola
 preesistente a San Marco Evangelista. Baseline effettiva `607564b`; la nota iniziale
@@ -108,8 +108,16 @@ Build: **7.912 eventi, 7.608 con dati edizione**. Verifiche passate: settori (du
 `PLAYWRIGHT_MODULE`: Chromium1440/320 e WebKit390, tutti83dettagli per formato,
 elenco/mappa e sei pagine senza JS. **7.829 schede esterne identiche** alla baseline,
 otto costi provinciali e ID preesistente conservato. Prove `validation-local.json`
-e `browser-local.json` nel dossier. Restano commit/push e verifica online,
-attesa deploy massima dieci minuti. Checklist aperta.
+e `browser-local.json` nel dossier. Dati pubblicati al commit **b904759**; Vercel
+riuscito `57zCMWptHDXJd21fEG3g8MfdwKHA` in **35,8 secondi**. Cinque asset identici
+ai byte Git, **tutte le 83 pagine HTTP200/H1/canonical/fonti/note/costi verificate**.
+Browser online con `PLAYWRIGHT_MODULE`: Chromium1440/320 e WebKit390, tutti83dettagli
+per formato, elenco/mappa e sei pagine senzaJS. Sito reale negli stessi tre formati:
+asset reali, conteggio83, dettaglio e fonti corretti, zero errori pagina o overflow;
+richieste non GET/HEAD bloccate. Screenshot mobile esaminato. Prove nel dossier.
+Casella67 spuntata e riepilogo **75 province concluse / 35 da fare su110** aggiornati
+soltanto dopo tutte le verifiche. Nessuna nuova ricerca/build o test del catalogo
+necessari per il successivo commit dei soli documenti di chiusura.
 
 ## Cagliari — ricerca documentale del 27 ottobre 2026
 

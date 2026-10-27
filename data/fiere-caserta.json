@@ -19758,7 +19758,7 @@
     ],
     "openLeads": [],
     "publication": {
-      "status": "in-attesa-di-build-test-push-verifica-online",
+      "status": "pubblicato-e-verificato",
       "backupTag": "backup/session-20261027-020531-fiere-caserta",
       "backupRemoteObject": "1915b05819e08106f20677778bcb739f59f1c902",
       "backupRemoteVerified": true,
@@ -19791,6 +19791,20 @@
         ],
         "browserProof": "browser-local.json",
         "screenshots": "qa-local"
+      },
+      "dataCommit": "b9047592cefd225aea0a0d627120550c5a15150c",
+      "verifiedAt": "2026-10-27T07:35:26.965948+00:00",
+      "deployment": {
+        "state": "success",
+        "targetUrl": "https://vercel.com/kycykuardit-9234s-projects/subingresso/57zCMWptHDXJd21fEG3g8MfdwKHA",
+        "waitSeconds": 35.8
+      },
+      "onlineVerification": {
+        "assetsIdentical": 5,
+        "pagesHttp200H1CanonicalParticipationCostsAndSource": 83,
+        "browser": "PLAYWRIGHT_MODULE: Chromium1440/320 e WebKit390; tutti83dialoghi, elenco/mappa e sei pagine senza JavaScript per formato.",
+        "realSite": "Tre formati con asset reali, conteggio83, dettaglio e fonti; zero errori pagina e overflow. Richieste non GET/HEAD bloccate.",
+        "proofs": "Documents/ricerca-fiere-caserta-20261027: deployment-verified.json, publication-verified.json, browser-online.json, browser-real.json, qa-online e qa-real; screenshot mobile esaminato."
       }
     }
   },

@@ -5,21 +5,26 @@ decisioni, attività e storico: cercare il tema e leggere le parti pertinenti,
 senza caricarlo tutto a ogni richiesta. Manuale tecnico: `istruzioni.md`;
 fonti e audit fiere completi: `data/FIERE.md`.
 
-## Caserta — ricerca conclusa, pubblicazione da verificare, 27 ottobre 2026
+## Caserta — pubblicata e verificata, 27 ottobre 2026
 
-- Audit `data/fiere-caserta.json`: **83 manifestazioni/48 comuni**, copertura
-  documentale nominale e piste dei **104 comuni**; 82 aggiunte e un aggiornamento,
-  ID Fiera Agricola conservato. Baseline effettiva `607564b`.
-- Otto sintesi costi, originali/PDF e calendari riconciliati; limiti ed esclusioni
-  nel dossier `data/FIERE.md`, prove private `Documents/ricerca-fiere-caserta-20261027`.
-  Cioccolateano 2026 annullato; fonti storiche e periodi usuali distinti dalle edizioni.
-- Backup remoto precedente verificato, non ripetuto. Solo Codex2, nessun altro agente,
-  contatto o intervento al controller; Pavia riservata.
-- Build7.912/dati edizione7.608; settori, 7.912pagine/3.414sitemap e browser locale
-  Chromium1440/320 + WebKit390 passati, tutti83dettagli e sei pagine senzaJS;
-  7.829schede esterne identiche. CacheJS129/JSON96.
-- **Casella ancora aperta:** restano commit/push e pubblicazione verificata online
-  con `PLAYWRIGHT_MODULE` (attesa deploy massima dieci minuti).
+- Ricerca attuale conclusa con limiti espliciti: **83 manifestazioni/48 comuni**,
+  ricognizione e piste dei **104 comuni**. **82 aggiunte e un aggiornamento**,
+  ID Fiera Agricola conservato e **7.829 schede esterne identiche** alla baseline.
+  Audit `data/fiere-caserta.json`, dossier `data/FIERE.md`.
+- 42 schede con edizione2026, dieci soltanto storiche, quattro soltanto future e
+  27con periodo usuale; otto sintesi costo con anno/IVA/servizi e limiti distinti.
+  Cioccolateano2026 annullato, nessuna data automatica pubblicata. Prove e originali
+  `Documents/ricerca-fiere-caserta-20261027`, checkpoint `RIPRESA-CODEX2.md`.
+- Dati **b904759**, Vercel **57zCMWptHDXJd21fEG3g8MfdwKHA** riuscito in35,8secondi:
+  cinque asset identici, tutte83pagine200/H1/canonical/fonti/note/costi verificate;
+  `PLAYWRIGHT_MODULE` locale e online Chromium1440/320 + WebKit390, tutti83dettagli
+  per formato, mappa/elenco e sei pagine senzaJS. Sito reale tre formati senza errori
+  o overflow, screenshot mobile esaminato; richieste non GET/HEAD bloccate.
+- Build7.912/dati edizione7.608; settori2test e 7.912pagine/3.414sitemap passati.
+  CacheJS129/JSON96. **TO DO67 spuntata dopo verifica**, riepilogo75concluse/35da fare
+  su110. Backup remoto precedente verificato, non ripetuto; solo cleanup fallito.
+  Esclusivamente Codex2, nessun agente, contatto, altra provincia o intervento a
+  controller/account/quote. Pavia riservata; futuri bandi sono manutenzione distinta.
 
 ## Cagliari — pubblicata e verificata, 27 ottobre 2026
 
@@ -2734,7 +2739,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 74 province completate, 36 da fare su 110**, aggiornate il 27 ottobre dopo Cagliari. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 75 province completate, 35 da fare su 110**, aggiornate il 27 ottobre dopo Caserta. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3272,7 +3277,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
   - [ ] Manutenzione periodica Terni: nuove edizioni, bandi, quote e canoni,
     disponibilità/graduatorie, giornate dei periodi annunciati, calendari futuri
     e archivi riaperti; attività distinta dalla ricerca attuale conclusa.
-- [ ] **67. Caserta** — Campania
+- [x] **67. Caserta** — Campania — ricerca attuale conclusa con limiti; 83 manifestazioni/48 comuni, 104 comuni ricogniti; pubblicata e verificata il 27 ottobre 2026. Audit e prove nel dossier.
 - [ ] **68. Lecce** — Puglia
 - [x] **69. Cagliari** — Sardegna — ricerca attuale conclusa con limiti; 89 manifestazioni/40 comuni, 70 comuni ricogniti; pubblicata e verificata il 27 ottobre 2026. Audit e prove nel dossier.
 - [ ] **70. Sassari** — Sardegna
