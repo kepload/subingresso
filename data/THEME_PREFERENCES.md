@@ -1,5 +1,16 @@
 # Aspetto personale — 23 ottobre 2026
 
+Ombre, 27 ottobre 2026: tutte le utility Tailwind con colore d'ombra usano
+`--ad-shadow-color: rgb(0 0 0 / .28)` in scuro, compresi hover e contenuti
+dinamici. Profondità, focus e tema chiaro conservati; niente aloni pastello.
+Il generatore include le ombre anche nella build completa; usare
+`node scripts/build-admin-theme.cjs --shadows-only` per aggiornare soltanto
+questa parte senza rigenerare i colori di altre funzionalità. CSS7/JS8 nei
+template, SSR e fallback. Verifica: `scripts/test-dark-shadows.cjs`, otto
+colori, sei profondità, quattro formati/browser, contatti desktop/mobile,
+chiaro identico al CSS originale, hover/dinamico/focus. Prove private in
+`.local/verifiche/ombre-dark-20261027`. Nessun account o dato reale modificato.
+
 Chiaro iniziale per tutti, amministratori e organizzatori compresi.
 Il sistema operativo e il ruolo non scelgono il tema. Ogni utente può scegliere
 Chiaro/Scuro con il pulsante «Modalità scura» direttamente nella pagina

@@ -12,6 +12,7 @@ html.admin-dark {
     --ad-hover: #334155;
     --ad-line: #334155;
     --ad-warning-line: #594a34;
+    --ad-shadow-color: rgb(0 0 0 / .28);
     --ad-control-primary: #2b4d75;
     --ad-control-primary-hover: #365e8b;
     --ad-ink: #f1f5f9;

@@ -29,7 +29,7 @@ function role(hex, property) {
     return hex;
 }
 
-function convert(css, label) {
+function convert(css, label, shadowUtilitiesOnly = false) {
     const ast = postcss.parse(css, { from: label });
     const result = postcss.root();
     // Ogni override vale solo dove il foglio originale e effettivamente caricato.
@@ -47,6 +47,12 @@ function convert(css, label) {
         }
         const declarations = [];
         rule.nodes.filter(node => node.type === 'decl').forEach(decl => {
+            // Le ombre pastello Tailwind diventano aloni bianchi sul fondo scuro.
+            // Cambia solo il pigmento: profondità, hover e focus restano quelli originali.
+            if (shadowUtilitiesOnly) {
+                if (decl.prop === '--tw-shadow-color') declarations.push(decl.clone({ value: 'var(--ad-shadow-color)' }));
+                return;
+            }
             if (rule.selector.includes('body:not(.home-page)') && decl.prop.startsWith('background')) return;
             if (!/^(?:color|background(?:-color|-image)?|border(?:-(?:top|bottom|left|right))?(?:-color)?|outline(?:-color)?|caret-color|accent-color|--ev-(?:ink|muted)|--si-(?:ink|muted|surface))$/.test(decl.prop)) return;
             let value = decl.value.replace(/#[\da-f]{3,8}\b/gi, hex => role(hex, decl.prop));
@@ -64,8 +70,8 @@ function convert(css, label) {
 
 for (const file of fs.readdirSync(path.join(root, 'css')).sort()) {
     // Preferenze contiene gia entrambe le varianti, compresa la base chiara organizzatori.
-    if (!file.endsWith('.css') || /^(admin-theme|tailwind|theme-preferences)/.test(file)) continue;
-    convert(fs.readFileSync(path.join(root, 'css', file), 'utf8'), 'css/' + file);
+    if (!file.endsWith('.css') || /^(admin-theme|theme-preferences)/.test(file)) continue;
+    convert(fs.readFileSync(path.join(root, 'css', file), 'utf8'), 'css/' + file, file === 'tailwind.css');
 }
 for (const file of fs.readdirSync(root).filter(file => file.endsWith('.html')).sort()) {
     const html = fs.readFileSync(path.join(root, file), 'utf8');
@@ -119,5 +125,26 @@ html.admin-dark .comune-option:is(:hover, .active, [aria-selected=true]) { backg
 html.admin-dark .comune-option mark { background: var(--ad-info); color: var(--ad-link); }
 html.admin-dark .sf-error { color: var(--ad-danger) !important; background: var(--ad-danger-bg); }
 `);
-fs.writeFileSync(path.join(root, 'css/admin-theme.css'), '/* Generato da scripts/build-admin-theme.cjs; modificare la base o il generatore. */\n' + output.join('\n') + '\n');
-console.log('Tema admin generato: ' + Buffer.byteLength(output.join('\n')) + ' byte.');
+const destination = path.join(root, 'css/admin-theme.css');
+let generated = '/* Generato da scripts/build-admin-theme.cjs; modificare la base o il generatore. */\n' + output.join('\n') + '\n';
+// Una correzione alle sole ombre non deve rigenerare colori di altre funzionalità.
+if (process.argv.includes('--shadows-only')) {
+    const previous = postcss.parse(fs.readFileSync(destination, 'utf8'));
+    const palette = previous.nodes.find(node => node.type === 'rule' && node.selector === 'html.admin-dark');
+    const token = postcss.parse(base).nodes.find(node => node.type === 'rule' && node.selector === 'html.admin-dark').nodes.find(node => node.prop === '--ad-shadow-color');
+    const existing = palette.nodes.find(node => node.prop === token.prop);
+    if (existing) existing.value = token.value;
+    else palette.append(token.clone());
+    previous.walkRules(rule => {
+        if (!rule.selector.startsWith('html.admin-dark:where(:has(link[href*="css/tailwind.css"]))')) return;
+        let parent = rule.parent;
+        rule.remove();
+        while (parent.type === 'atrule' && !parent.nodes.length) { const next = parent.parent; parent.remove(); parent = next; }
+    });
+    previous.walkComments(comment => { if (comment.text === 'css/tailwind.css') comment.remove(); });
+    const shadows = output.find(part => part.startsWith('\n/* css/tailwind.css */'));
+    if (shadows) previous.append(postcss.parse(shadows));
+    generated = previous.toString();
+}
+fs.writeFileSync(destination, generated);
+console.log('Tema admin generato: ' + Buffer.byteLength(generated) + ' byte.');

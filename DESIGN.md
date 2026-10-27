@@ -146,6 +146,11 @@ La profondità è tonale: superfici piane, immagini ritagliate e contrasto tra b
 
 **The Flat Catalog Rule.** Le schede restano prive di ombra anche al passaggio del puntatore; gerarchia, spazio e copertina ne definiscono i confini.
 
+In modalità scura le ombre colorate delle utility esistenti usano il token
+neutro `--ad-shadow-color` (`rgb(0 0 0 / .28)`), anche in hover e nei contenuti
+dinamici. Non ereditano i colori pastello del tema chiaro. La correzione
+conserva geometria, focus, ombre assenti e variante chiara.
+
 ## Shapes
 
 Angoli moderati: pannelli e schede usano `panel`; campi e FAQ `control`; il pulsante interno alla ricerca `control-tight`. I preferiti restano circolari. Le immagini sono ritagliate nel contenitore, senza cornici o sfondi aggiunti alle fotografie.

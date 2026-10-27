@@ -190,7 +190,8 @@ async function run(engine, name, width) {
             await page.goto(base + '/' + file + '?qa'); await waitDark(page);
             await page.evaluate(() => document.fonts.ready);
             const after = await page.evaluate(() => ({width:document.documentElement.scrollWidth,bg:getComputedStyle(document.body).backgroundColor,image:getComputedStyle(document.body).backgroundImage}));
-            check(after.bg === (file === 'organizzatore.html' ? 'rgb(8, 8, 8)' : 'rgb(11, 18, 32)'), file + ': fondo scuro uniforme, tema organizzatore conservato');
+            const expectedBackground = file === 'organizzatore.html' ? 'rgb(8, 8, 8)' : file === 'valutatore.html' ? 'rgb(17, 18, 20)' : 'rgb(11, 18, 32)';
+            check(after.bg === expectedBackground, file + ': fondo scuro uniforme, palette della pagina conservata');
             check(after.image === 'none', file + ': nessuna sfumatura bianca residua');
             const lightPanels = await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(el=>{
                 const r=el.getBoundingClientRect(),s=getComputedStyle(el);if(r.width<80||r.height<35||!el.checkVisibility())return false;

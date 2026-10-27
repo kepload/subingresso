@@ -39,6 +39,7 @@ html.admin-dark {
     background: var(--ad-canvas);
     color: var(--ad-ink);
     scrollbar-color: #64748b var(--ad-canvas);
+    --ad-shadow-color: rgb(0 0 0 / .28);
 }
 html.admin-dark body { background: var(--ad-canvas); background-image: none; color: var(--ad-ink); }
 html.admin-dark ::selection { color: #fff; background: #235891; }
@@ -1445,4 +1446,21 @@ html.admin-dark :is(.comune-suggestions, .comune-option, .comune-group, .comune-
 html.admin-dark .comune-option:is(:hover, .active, [aria-selected=true]) { background-color: var(--ad-raised); }
 html.admin-dark .comune-option mark { background: var(--ad-info); color: var(--ad-link); }
 html.admin-dark .sf-error { color: var(--ad-danger) !important; background: var(--ad-danger-bg); }
+/* css/tailwind.css */
+html.admin-dark:where(:has(link[href*="css/tailwind.css"])) .shadow-amber-100 {--tw-shadow-color:var(--ad-shadow-color)
+}
+html.admin-dark:where(:has(link[href*="css/tailwind.css"])) .shadow-blue-100 {--tw-shadow-color:var(--ad-shadow-color)
+}
+html.admin-dark:where(:has(link[href*="css/tailwind.css"])) .shadow-emerald-100 {--tw-shadow-color:var(--ad-shadow-color)
+}
+html.admin-dark:where(:has(link[href*="css/tailwind.css"])) .shadow-emerald-100\/40 {--tw-shadow-color:var(--ad-shadow-color)
+}
+html.admin-dark:where(:has(link[href*="css/tailwind.css"])) .shadow-emerald-200 {--tw-shadow-color:var(--ad-shadow-color)
+}
+html.admin-dark:where(:has(link[href*="css/tailwind.css"])) .shadow-slate-200\/50 {--tw-shadow-color:var(--ad-shadow-color)
+}
+html.admin-dark:where(:has(link[href*="css/tailwind.css"])) .shadow-slate-300\/40 {--tw-shadow-color:var(--ad-shadow-color)
+}
+html.admin-dark:where(:has(link[href*="css/tailwind.css"])) .hover\:shadow-blue-900\/5:hover {--tw-shadow-color:var(--ad-shadow-color)
+}
 
