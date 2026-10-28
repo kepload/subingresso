@@ -2285,6 +2285,123 @@
       "sourceUrl": "https://www.fieraagricola.org/download/contratto.pdf",
       "checkedAt": "2026-10-27",
       "review": "live-source-review"
+    },
+    "puglia-lecce-fiera-di-santa-lucia": {
+      "kind": "conditional",
+      "label": "Indicativi: 120 € interno / 150 € esterno",
+      "details": "Avviso Pupi 2026: contributo organizzativo indicativo di 120 € per banchi interni e 150 € per banchi esterni, salvo diverse disposizioni della Giunta. Versamento soltanto dopo l’ammissione; non rimborsato in caso di rinuncia. Non è una quota definitiva garantita.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.lecce.it/docs/default-source/notizie/avvisopupi2026.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-lecce-fiera-di-sant-oronzo": {
+      "kind": "partial",
+      "label": "120 € contributo + canone e bollo",
+      "details": "Avviso 2026: contributo organizzativo di 120 € oltre al canone di occupazione; marca da bollo 16 € per la domanda. Il canone e l’eventuale totale completo non sono quantificati in questa sintesi. Nessuna disponibilità di posteggio garantita dal pagamento.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.lecce.it/docs/default-source/notizie/avviso_pubblico_s_oronzo_2026_pub.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-campi-salentina-fiera-della-madonna-della-mercede": {
+      "kind": "unit",
+      "label": "10 € SUAP + 10,20 € per metro lineare",
+      "details": "Bando della fiera 18–19 ottobre 2026: 10 € di diritti SUAP e 10,20 € per metro lineare richiesto. L’importo unitario non viene moltiplicato automaticamente per le due giornate. Restano da verificare il totale della concessione e gli eventuali ulteriori oneri; il bando esclude il rimborso nelle ipotesi indicate.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.campi-salentina.le.it/ocmultibinary/download/2640/62324/4/7bfc3f8dd602a82fc021b3c51a2d2b17.pdf/file/Bando%2B%25284%2529.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-caprarica-di-lecce-fiera-di-san-marco": {
+      "kind": "partial",
+      "label": "Canone 20 € fino a 12 metri lineari",
+      "details": "Delibera 32 del 13 aprile 2026: 20 € di canone per occupazioni fino a 12 metri lineari di operatori commerciali, espositori e artigiani del proprio ingegno. Nessuna estensione dell’importo alle metrature maggiori. Pagamento previsto entro il 22 aprile, con riscossione anche il giorno della fiera da parte degli agenti.",
+      "period": "2026",
+      "sourceUrl": "https://trasparenza.parsec326.it/repo/docs/B690/2000/4009988_ATT_000280807_40455.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-carpignano-salentino-fiera-di-ognissanti-e-sagra-del-maiale": {
+      "kind": "partial",
+      "label": "Basi 100–1.600 € per lotto, oltre canone e rifiuti",
+      "details": "Catalogo 2026 della Sagra del Maiale: basi d’offerta dei 25 lotti da 100 € a 1.600 €, con merceologie, dimensioni e servizi distinti. Sono minimi di una procedura comparativa, non un prezzo unico né posti ancora liberi. Il bando richiede acconto del 50% del minimo del lotto; l’avviso dei residui distingue inoltre canone patrimoniale e rifiuti. Il totale può superare la base offerta.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.carpignanosalentino.le.it/ocmultibinary/download/1530/34846/5/ae3364c0df136b40d7660918ce81f9e8.pdf/file/ALLEGATO%2BA-CATALOGO%2BPOSTEGGI.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-gallipoli-fiera-promozionale-estiva-del-centro-storico": {
+      "kind": "partial",
+      "label": "16 € bollo + 50 € SUAP, oltre canone",
+      "details": "Avviso 2026: marca da bollo 16 € e diritti SUAP 50 €, oltre al canone di occupazione e agli altri oneri previsti. Non è verificato un costo completo di 66 €. Le riserve associative e i sei posteggi della procedura pubblica hanno condizioni di ammissione da rispettare.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.gallipoli.le.it/documenti/notizie/ALLEGATO_A_2026.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-sannicola-fiera-di-san-simone": {
+      "kind": "conditional",
+      "label": "Artigiani del libero ingegno: 8 € costo/cauzione",
+      "details": "Modulo 2026 dedicato agli artigiani del libero ingegno: 8 € indicati come costo/cauzione per spazio da 1 a 3 metri. L’importo non è trasferibile alle altre categorie e non viene presentato come deposito sicuramente rimborsabile. La causale nel modulo riporta 2025: il refuso va chiarito con l’ufficio prima del pagamento.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sannicola.le.it/wp-content/uploads/2026/09/ARTIGIANTO-DEL-LIBERO-INGEGNO-2026.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-lecce-nautigo-salone-nautico-del-salento": {
+      "kind": "unit",
+      "label": "Iscrizione 200 € + area da 25 €/m², IVA esclusa",
+      "details": "Domanda espositori 2026: iscrizione 200 €; esterno 25 €/m², minimo 25 m²; interno preallestito laterale 120 €/m², minimo 9 m²; centrale preallestito 75 €/m² o nudo 45 €/m². Per entrambe le aree centrali il modulo stampa «stand minimo 50mq/72mq», senza distinguere i due valori: metratura da chiarire nel contratto. Tutti gli importi IVA esclusa, IVA indicata 22%; stampe e servizi extra distinti, acconto 30%. Art. 4: escluso il commercio al dettaglio su aree pubbliche. Saldo 27 febbraio nel modulo, 20 febbraio nell’art. 7: discordanza conservata, non scadenza certa per un comune banco ambulante.",
+      "period": "2026",
+      "sourceUrl": "https://www.nautigo.it/wp-content/uploads/2025/10/domanda_partecipazione_nautigo_2026_singole_editabile.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-aradeo-sagra-te-lu-pummitoru-schiattarisciatu": {
+      "kind": "conditional",
+      "label": "Esenzione canone per hobbisti; altre categorie distinte",
+      "details": "Avviso 2026: esenzione del canone per gli hobbisti in possesso dei requisiti indicati. La gratuità non si estende al gestore dell’area gastronomica né automaticamente agli stand di vendita di prodotti locali confezionati, per i quali sono previsti oneri di occupazione. Nessun costo complessivo numerico verificato per queste altre categorie.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.aradeo.le.it/wp-content/uploads/2026/07/AVVISO-PUBBLICO-2026.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-tricase-tricase-vintage-vicoli-in-festa": {
+      "kind": "conditional",
+      "label": "Iscrizione gratuita; spese proprie escluse",
+      "details": "Art. 10 dell’avviso 2026: nessun costo di iscrizione. Merce, attrezzature, trasporto e altre spese di attività restano al partecipante; allestimento generale a cura del Comune, con allacci ove previsti. Gratuità dell’avviso distinta da costo totale e ammissione, che non è automatica.",
+      "period": "2026",
+      "sourceUrl": "https://tricase-api.municipiumapp.it/s3/7454/allegati/avviso_tricase_vintage_2026.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-copertino-fiera-di-san-giuseppe-da-copertino": {
+      "kind": "partial",
+      "label": "5 € istruttoria + bollo e canone",
+      "details": "Avviso 2026, artt. 5, 7 e 10: 5 € per istruttoria, domanda in bollo da 16 € e canone di occupazione da determinare con il concessionario della riscossione. Lo schema bolli prevede due campi senza fissarne i valori: non si deduce un totale certo né una seconda imposta da 16 €. Pagamento e assegnazione restano condizioni separate.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.copertino.le.it/wp-content/uploads/2026/09/All.-4-AVVISO-PUBBLICO.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-miggiano-expo-2000-industria-artigianato-agricoltura-del-salento": {
+      "kind": "unit",
+      "label": "Pagode da 400 €; spazio libero 25 €/m², IVA esclusa",
+      "details": "Modulo Expo 2000 2026: pagoda 3x3 m 400 €, 4x4 m 600 €, 5x5 m commerciale 650 € o agroalimentare 750 € (energia fino a 3 kW); box permanente 21 m² 840 € e stallo 15 m² 600 €. Spazio libero 25 €/m²; tariffa riservata macchine agricole/concessionari auto 5 €/m² e spazio creperie 300 €. Preallestito 40 €/m² o 45 €/m² angolo; ulteriori padiglioni/box a tariffa distinta. IVA 22% nel totale. Disponibilità, ulteriori servizi e costo effettivo da contratto, non dal prezzo minimo di una struttura.",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.miggiano.le.it/wp-content/uploads/2024/09/domanda-partecipazione-expo-2026.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
+    },
+    "puglia-lecce-externa": {
+      "kind": "unit",
+      "label": "200 € iscrizione + area da 40 €/m², IVA esclusa",
+      "details": "Contratto Externa Lecce 2026: iscrizione 200 €, area esterna 40 €/m², interna nuda centrale 90 €/m² minimo 24 m² o preallestita laterale 120 €/m² minimo 9 m². IVA esclusa, indicata al 22%; stampe e servizi extra distinti. Acconto 30%, saldo 28 febbraio 2026. Articolo 4: esclusi gli esercenti commercio al dettaglio su aree pubbliche, quindi queste quote non sono un’offerta per un comune banco ambulante.",
+      "period": "2026",
+      "sourceUrl": "https://lecce.externaexpo.it/wp-content/uploads/2025/09/domanda_partecipazione_externa_2026_A4_EDITABILE.pdf",
+      "checkedAt": "2026-10-28",
+      "review": "provincial-original-document-review"
     }
   }
 }
