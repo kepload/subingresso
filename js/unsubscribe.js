@@ -1,8 +1,8 @@
 // Public configuration only. This page needs fetch, not the Supabase SDK.
-const SUPABASE_URL = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 (function () {
     'use strict';
+    const SUPABASE_URL = 'https://mhfbtltgwibwmsudsuvf.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
     const params = new URLSearchParams(location.search);
     const token = params.get('t'), type = params.get('type') || 'all';
     const form = document.getElementById('unsubscribeForm');
