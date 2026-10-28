@@ -307,7 +307,8 @@ function renderEmptyCityPage(cityName, citySlug, regione, canonicalUrl) {
 
   <div id="footer-placeholder"></div>
 
-  <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/supabase-config.js?v=4"></script>
   <script src="/js/page-view-tracker.js?v=5"></script><script src="/js/site-analytics.js?v=2"></script>
   <script src="/js/ui-components.js?v=18"></script>
 
@@ -733,7 +734,8 @@ module.exports = async function handler(req, res) {
 
   <div id="footer-placeholder"></div>
 
-  <script>window.SUPABASE_URL = '${SUPABASE_URL}'; window.SUPABASE_ANON_KEY = '${SUPABASE_ANON_KEY}';</script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/supabase-config.js?v=4"></script>
   <script src="/js/page-view-tracker.js?v=5"></script><script src="/js/site-analytics.js?v=2"></script>
   <script src="/js/ui-components.js?v=18"></script>
 

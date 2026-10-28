@@ -10,7 +10,7 @@ window.qaSwitch=mode=>{qaMode=mode;for(const fn of qaCallbacks)fn(mode==='anonym
 window.supabase={createClient:()=>({auth:{getSession:async()=>({data:{session:session()}}),getUser:async()=>({data:{user:session()?.user||null}}),onAuthStateChange:fn=>{qaCallbacks.push(fn);return{data:{subscription:{unsubscribe(){}}}};}},from:()=>({select:()=>({eq:()=>({single:async()=>({data:{is_admin:qaMode==='owner',is_demo:false}})})})}),rpc:async(name,args)=>{qaCalls.push({name,args});const captured=qaMode,wait=qaDelay;await new Promise(r=>setTimeout(r,wait));return{data:name==='analytics_tracking_context'?{user_id:ids[captured]||null,excluded:['owner','second'].includes(captured)}:null};}})};
 `;
 const server=http.createServer((req,res)=>{
- if(req.url.startsWith('/js/')){res.setHeader('Content-Type','text/javascript');return res.end(fs.readFileSync(path.join(root,req.url.split('?')[0])));}
+ if(req.url.startsWith('/js/')){res.setHeader('Content-Type','text/javascript');return res.end(fs.readFileSync(path.join(process.env.ANALYTICS_PUBLISHED_ASSETS||root,req.url.split('?')[0])));}
  res.setHeader('Content-Type','text/html');res.end(`<!doctype html><html><body><h1>Fixture</h1><a href='/annunci'>Annunci</a><a id='banner' href='/vendi' data-personal-ad='vendi-01' data-pa-format='editoriale'>Pubblica</a><script>${setup}</script><script src='/js/supabase-config.js'></script><script src='/js/page-view-tracker.js'></script><script src='/js/blog-tracker.js'></script><script src='/js/site-analytics.js'></script><script src='/js/personal-ads-tracker.js'></script></body></html>`);
 });
 async function testHandler(){
