@@ -282,20 +282,19 @@ fonti e audit fiere completi: `data/FIERE.md`.
   Nessun intervento a controller, altre province o agenti, nessun contatto a terzi;
   Pavia riservata. Bandi futuri e nuove edizioni restano manutenzione distinta.
 
-## Lecce — ricerca in corso, checkpoint 27 ottobre 2026
+## Lecce — pubblicata e verificata, 28 ottobre 2026
 
-- Solo Lecce, checklist 68 aperta: nessuna conclusione provinciale e nessuna
-  modifica al catalogo. Audit riprendibile `data/fiere-lecce.json`, con 96 comuni
-  da chiudere, 20 riscontri documentali circoscritti e piste ancora aperte.
-  Originali e checkpoint privati in `Documents/ricerca-fiere-lecce-20261027`;
-  dettagli e discordie documentali in `data/FIERE.md`.
-- Backup remoto preventivo `backup/session-20261027-023007-fiere-lecce`
-  verificato; cleanup successivo fallito, senza ripetere il backup riuscito.
-  Prima di integrare: completare copertura comunale, originali e organizzatori;
-  poi controlli, commit/push e verifica del catalogo pubblicato. Non spuntare
-  la provincia in base alla sola acquisizione o a questo checkpoint.
-- Tre ID precedenti e altre province invariati; Pavia riservata. Nessun agente,
-  invio o contatto a terzi; controller, account, quote e processi non modificati.
+- Ricerca attuale conclusa con limiti: 179 schede/77 comuni, 96 comuni ricogniti, 13 costi;
+  tre ID e 7.909 schede esterne conservati. Esclusioni e limiti per i 19 comuni senza
+  scheda nell’audit; fonti, date discordanti e condizioni in `data/FIERE.md`.
+- Dati `63209ff`: sei asset identici online e tutte le 179 pagine verificate;
+  Chromium 1440/320 e WebKit 390 locali/online, 179 dettagli per formato, elenco/mappa,
+  senza JS e sito reale passati; scritture intercettate. Build ripetibile e 8.088 SSR
+  verificati. Originali/helper/prove `.local/ricerche/fiere-lecce-20261028`, vecchi
+  originali Documents mai modificati. Backup remoti verificati; controller invariato.
+- Checklist 68 spuntata soltanto dopo prove live; riepilogo 76 concluse/34 aperte su 110,
+  ottenuto contando le caselle provinciali. Pavia resta riservata.
+
 
 ## Articolo annunci senza contatti pubblicato — 27 ottobre 2026
 
@@ -2978,7 +2977,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 75 province completate, 35 da fare su 110**, aggiornate il 27 ottobre dopo Caserta. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 76 province completate, 34 da fare su 110**, aggiornate il 28 ottobre dopo Lecce. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3517,7 +3516,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
     disponibilità/graduatorie, giornate dei periodi annunciati, calendari futuri
     e archivi riaperti; attività distinta dalla ricerca attuale conclusa.
 - [x] **67. Caserta** — Campania — ricerca attuale conclusa con limiti; 83 manifestazioni/48 comuni, 104 comuni ricogniti; pubblicata e verificata il 27 ottobre 2026. Audit e prove nel dossier.
-- [ ] **68. Lecce** — Puglia
+- [x] **68. Lecce** — Puglia — ricerca attuale conclusa con limiti; 179 manifestazioni/77 comuni, 96 comuni ricogniti; pubblicata e verificata il 28 ottobre 2026. Audit e prove nel dossier.
 - [x] **69. Cagliari** — Sardegna — ricerca attuale conclusa con limiti; 89 manifestazioni/40 comuni, 70 comuni ricogniti; pubblicata e verificata il 27 ottobre 2026. Audit e prove nel dossier.
 - [ ] **70. Sassari** — Sardegna
 - [ ] **71. Gallura Nord-Est Sardegna** — Sardegna

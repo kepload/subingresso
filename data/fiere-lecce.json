@@ -5667,14 +5667,16 @@
           "https://www.comune.castrignanodegreci.le.it/?s=fiera",
           "https://comune.castrignanodeigreci.le.it/risultati-ricerca?search_api_fulltext=fiera",
           "https://comune.castrignanodeigreci.le.it/risultati-ricerca?search_api_fulltext=sagra",
-          "https://comune.castrignanodeigreci.le.it/risultati-ricerca?search_api_fulltext=mercatino"
+          "https://comune.castrignanodeigreci.le.it/risultati-ricerca?search_api_fulltext=mercatino",
+          "https://comune.castrignanodeigreci.le.it/"
         ],
         "sourceReceipts": [
           428,
           429,
           1091,
           1092,
-          1093
+          1093,
+          388
         ],
         "result": "nessuna-scheda-sufficientemente-documentata",
         "limit": "Corretto il dominio inizialmente ipotizzato con comune.castrignanodeigreci.le.it. San Leonardo 6–8 novembre2026 compare nei portali, ma non è stato recuperato programma o avviso originale; non confermate le date commerciali. Ricerche native vuote, pagine generiche e fonti inaccessibili non dimostrano l’assenza di eventi."
@@ -29526,9 +29528,9 @@
     ],
     "openLeads": [],
     "publication": {
-      "status": "verifiche-locali-passate-pubblicazione-da-verificare",
-      "checklistChecked": false,
-      "publicationVerified": false,
+      "status": "pubblicata-e-verificata",
+      "checklistChecked": true,
+      "publicationVerified": true,
       "localVerification": {
         "catalogEvents": 8088,
         "provinceEvents": 179,
@@ -29542,6 +29544,33 @@
         "ssrPages": 8088,
         "sitemapEntries": 3489,
         "buildRepeatable": true
+      },
+      "commit": "63209ff25e710afd00dbc0d16ee3b33016065ee3",
+      "url": "https://subingresso.it/fiere?provincia=Lecce",
+      "verifiedAt": "2026-10-28T17:19:02.186294+00:00",
+      "assetCount": 6,
+      "pagesVerified": 179,
+      "browserVerification": "Chromium1440/320 eWebKit390:179dettagli per formato, elenco/mappa,6SSR senzaJS e sito reale; richieste nonGET/HEAD intercettate.",
+      "privateEvidence": [
+        "validation-local.json",
+        "browser-local.json",
+        "publication-live.json",
+        "browser-online.json",
+        "browser-real.json"
+      ],
+      "monthCorrectionVerification": {
+        "events": 2,
+        "onlyField": "months",
+        "period": [
+          4,
+          5
+        ],
+        "verifiedOnCurrentCommit": true,
+        "evidence": [
+          "month-correction.json",
+          "browser-month-delta.json",
+          "publication-live.json"
+        ]
       }
     }
   }

@@ -224,56 +224,45 @@ senza errori pagina o overflow, dettaglio e conteggio 89 corretti; richieste non
 GET/HEAD bloccate. Prove nel dossier privato. Checklist spuntata e riepilogo
 **74 province concluse / 36 da fare su 110** soltanto dopo queste verifiche.
 
-## Lecce — checkpoint della ricerca, 27 ottobre 2026
+## Lecce — ricerca documentale e pubblicazione, 28 ottobre 2026
 
-**Ricerca in corso, provincia non completata.** Checklist 68 ancora aperta;
-catalogo e tre ID precedenti invariati. Audit riprendibile
-`data/fiere-lecce.json`, originali e ricevute nel dossier privato
-`Documents/ricerca-fiere-lecce-20261027`. Backup remoto preventivo
-`backup/session-20261027-023007-fiere-lecce` verificato; errore del cleanup
-successivo distinto dal push riuscito. Nessun agente o contatto a terzi;
-controller e altre province non modificati.
+Ricerca accessibile attuale conclusa con limiti: **179 schede in 77 comuni**, copertura
+nominale **96/96 comuni**, **13 sintesi costi** e tre ID precedenti conservati. Negli
+altri 19 comuni i riscontri non bastano per una scheda: motivi, esclusioni e limiti
+sono nell’audit `data/fiere-lecce.json`. Nessuna assenza di eventi dedotta da ricerche
+vuote, home generiche, albi senza allegati o fonti non accessibili.
 
-Avviata la ricognizione dei 96 comuni; le acquisizioni non attestano una
-copertura comunale già conclusa. Salvati 20 riscontri documentali circoscritti,
-con URL, file privato e SHA256. Calendario regionale iniziale letto anche
-visivamente, API CKAN con annualità distinte, contributi II/III quadrimestre
-e calendario storico BURP 171/2010: quest'ultimo serve come elenco di piste,
-senza trasformare le sue ricorrenze e capienze in conferme attuali.
+Originali Documents mantenuti in sola lettura e riusati dalla copia
+`.local/ricerche/fiere-lecce-20261028/acquisito-20261027`; nuove fonti, helper,
+checkpoint e prove nello stesso dossier di progetto. Riconciliate 168 schede della
+ripresa, senza assumere validate le 124 bozze iniziali. 1.304 ricevute con hash e stato;
+le acquisizioni soltanto sono distinte dalle parti effettivamente utilizzate.
 
-Riscontri utili da conservare nella prosecuzione:
+Riscontri operativi: Spiritosa a San Cesario 26–28 settembre, Birra e Sound a Galatina 1–9 agosto,
+Gusto a Maglie 1–7 agosto. Pupi 5–27 dicembre conserva il refuso 2027 delle norme e quote
+indicative 120/150 €. Sant’Oronzo 23–26 agosto: 120 € oltre canone/bollo. Miggiano ha
+tariffe stampate (pagode da 400 €, box 21 m² 840 €, spazio libero 25 €/m², IVA distinta);
+Nautigo ed Externa escludono il commercio al dettaglio su aree pubbliche. Conservate
+discordie Otranto/Nautigo/Sannicola/Cannole e sospensioni del mercatino Gallipoli.
+Tricase VINtage 7 novembre: domanda scaduta l’11 ottobre, iscrizione gratuita ma spese proprie.
+Lu Panieri FAI 25–26 aprile a Lecce è distinto da Lu Paniere di novembre del regolamento.
 
-- Sant'Oronzo: 23–26 agosto 2026; contributo 120 € oltre canone e bollo,
-  senza estensione al concerto del 27. Galatina Campionaria: sito e Comune
-  documentano ancora 27–30 giugno 2025, non una conferma 2026.
-- Fiera dei Pupi, già Santa Lucia: avviso 5–27 dicembre 2026 e domande entro
-  28 ottobre. Le norme intestate 2026 scrivono però «dicembre 2027» al punto 1;
-  mantenere la discordanza. Quote 150 € esterno/120 € interno indicative e
-  modificabili, non preventivi definitivi. Preservare l'ID Santa Lucia.
-- Palmariggi: originale scansionato, fiera soltanto la mattina dell'11 ottobre;
-  Trepuzzi: programma originale, fiere soltanto 25 ottobre ore 7–14.
-- Salice: ordinanza originale, mercato fieristico 1–3 luglio ore 6–14,
-  distinto dai festeggiamenti 27 giugno–4 luglio. Campi Salentina:
-  18–19 ottobre, 10 € istruttoria più 10,20 €/metro lineare richiesto.
-- Otranto Antiqua: avviso con periodi aprile–ottobre/aprile–dicembre discordanti,
-  doppio orario settembre e novembre assente dall'elenco orario. Non espandere
-  automaticamente date e orari. Sannicola: modulo libero ingegno con
-  «costo/cauzione» 8 € e causale 2025, da non generalizzare agli ambulanti.
-- Salvestate: programma scansionato letto, compresa la pagina mercatini;
-  Art-Fest Torre Pali 22 luglio e street food/mercatini Pescoluse 13–16 agosto.
-  Aradeo: 31 luglio–2 agosto, area gastronomica selezionata in esclusiva,
-  esenzione dal canone per hobbisti distinta dagli oneri del gestore.
-- Gallipoli: proroga Santa Cristina al 26 luglio e sospensione delle edizioni
-  ottobre–dicembre del mercatino da approfondire negli originali finali.
-  Fiera estiva: 20 posteggi riservati e sei comunali, avvio effettivo dal
-  rilascio dell'autorizzazione, oneri parziali distinti dal costo totale.
+Date confermate, programmazioni regionali, storico e periodi usuali restano distinti;
+contributi agli organizzatori non sono bandi per ambulanti. Nessuna disponibilità o
+ammissione garantita. La graduatoria del I quadrimestre agroalimentare non è stata
+recuperata; i risultati accessibili non autorizzano ricostruzioni. Presicce-Acquarica:
+solo override del centro comunale indicativo Wikidata Q63851952 nelle sette schede,
+senza modificare l’anagrafica o dedurre sedi esatte. Manutenzione futura separata.
 
-Restano le piste comunali e gli originali indicati in `research.openLeads`,
-il primo quadrimestre regionale e gli incroci con gli organizzatori.
-Non tutti i documenti scaricati sono già stati letti: ripartire dai riscontri
-e dall'indice del dossier, senza ripetere acquisizioni riuscite. Seguono ancora
-integrazione, controlli, pubblicazione e verifica con `PLAYWRIGHT_MODULE`;
-nessuna nuova scheda o ricerca provinciale conclusa pubblicata da questo checkpoint.
+Pubblicazione dati **63209ff**, sei asset identici al commit e tutte le 179 pagine
+HTTP200/H1/canonical/fonti/note/costi verificate. Browserlocale eonline con
+`PLAYWRIGHT_MODULE`: Chromium 1440/320 e WebKit 390, 179 dettagli per formato,
+elenco/mappa e 6 pagine senza JS; sito reale negli stessi formati, scritture intercettate.
+Build ripetibile: 8.088 schede/7.700 con edizione, 7.909 esterne identiche; 8.088 SSR,
+3.489 sitemap, elenco/escaping, settori e filtri verificati. Cache JS131/JSON98;
+nel build cambia soltanto la data catalogo. Backup remoti preventivi verificati;
+nessun agente, controller o altra provincia modificati. Checklist 68 chiusa dopo prove live.
+
 
 ## Terni — ricerca documentale, 27 ottobre 2026
 
