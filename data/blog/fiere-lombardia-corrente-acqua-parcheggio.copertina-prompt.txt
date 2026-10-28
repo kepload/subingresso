@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: clean editorial cover for an Italian street-market business blog, landscape 16:9 composition.
+Primary request: an uncluttered, realistic illustrative scene about preparing a market stall and checking electrical service and van access before a fair.
+Scene: a quiet northern Italian town square at early morning, soft pale stone paving, an orderly cream market canopy with a small table displaying a few neatly arranged handmade ceramic bowls; a plain white commercial van parked in a designated loading bay behind the stall, not blocking pedestrian access. A single compact, unbranded blue industrial electricity connection box is mounted discreetly beside the stall, with one neatly routed protected cable away from walkways. No water equipment or food preparation.
+Style: natural premium editorial photography, believable proportions, restrained warm neutrals, soft daylight, clear focal subject and gently receding background. Wide composition that crops cleanly to 1600 by 900, keep important objects inside central safe area.
+Constraints: zero text, zero lettering, no logos, no visible vehicle license plate characters, no watermarks, no collage, no charts, no floating icons, no graphics, no promotional badges, no borders, no crowded scene, no people posing, no spark or unsafe exposed wiring. This is a generic illustrative fair, not a depiction of any named event.
+
+Tool: imagegen integrato. Copertina originale, generata il 28 ottobre 2026.
+Output pubblico: images/blog/fiere-lombardia-corrente-acqua-parcheggio.webp (1600×900).
+Originale conservato in .local/lavori/articoli/fiere-lombardia-corrente-acqua-parcheggio/copertina-originale.png.
