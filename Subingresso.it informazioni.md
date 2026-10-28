@@ -1,5 +1,28 @@
 # Subingresso.it — informazioni e TO DO
 
+## Tutte le località verificate e controllo al passo 2 — 28 ottobre 2026
+
+- Richiesta: nessuna località del selettore rifiutata soltanto a fine wizard.
+  Audit completo tramite loader effettivo e DB: **7.894 comuni + 55.288 località
+  = 63.182**, zero rifiuti su baseline, candidato con ROLLBACK e versione live.
+  Anagrafiche online semanticamente identiche; una sola newline diversa nel JSON.
+- RPC pubblica boolean `validate_listing_location` e inserimento finale usano la
+  stessa regola privata. Avanti verifica al passo 2; retry dopo rete/timeout,
+  doppio clic e risposte tardive gestiti. Bozze già al 6 verificate prima delle
+  foto; eventuale rifiuto finale torna al campo. Campi e foto conservati.
+- Pubblicato `94e2511`: HTML online identico SHA256; sito reale Chromium1440/320
+  e WebKit390, 26 verifiche per formato su tutte20regioni passate, nessuna
+  scrittura annunci. Errori/retry ripetuti sull'HTML pubblicato; locale anche768.
+  Suite wizard/foto completa Chromium e SQL generale con ROLLBACK passati.
+- Dati e permessi conservati: hash152annunci/127profili/63.182località identici,
+  21pagamenti invariati. Contratto `data/LOCALITA.md`, prove e ripristino
+  `.local/verifiche/localita-pubblicazione-20261028`. Backup remoto tag090539
+  e ramo `backup/pre-verifica-tutte-localita-20261028` verificati; helper fermo
+  sullo stderr dopo push riuscito. Primo404 RPC risolto ricaricando schema;
+  API Vercel403, produzione verificata direttamente. Suite completa WebKit
+  fermata sulla persistenza foto della fixture; casi località senza foto passati.
+  Gitleaks pulito e lavoro estraneo conservato.
+
 ## Errore località nella pubblicazione — 28 ottobre 2026
 
 - Corretto online il rifiuto `23514: localita`: il selettore invia Trentino-Alto
