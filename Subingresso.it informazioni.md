@@ -1,5 +1,29 @@
 # Subingresso.it — informazioni e TO DO
 
+## Account interni esclusi dalle statistiche — 28 ottobre 2026
+
+- I due account del gestore sono configurati per UUID in tabella privata;
+  admin/demo e permessi invariati. Visite, clic, ricerche, banner, fiere,
+  messaggi e risultati commerciali li escludono. Preferiti, contatti,
+  valutazioni, acquisti e ricevute restano operativi; 132 preferiti conservati
+  alla verifica, record funzionali identici durante la migrazione.
+- Corretti 120 contatori pubblici (132 salvataggi interni) e 54 giornalieri,
+  con snapshot e applicazione idempotente. Checkout dei due account esclusi
+  anche dallo storico: i due di ottobre erano del gestore, non clienti.
+  Storico anonimo/aggregato senza autore non ricostruito per ipotesi.
+- Pubblicato `1672502`, completamenti `1048e3d`/`2fe4337`; SQL applicato,
+  sorgente Edge valutazioni identica SHA256 dopo download. Trenta asset
+  della prima pubblicazione identici online; 65 controlli Chromium/WebKit
+  sugli asset pubblicati e SDK reale con rete simulata passati. Preferiti174,
+  raccolta108, acquisti sei formati, ADS/Vetrine e SQL ROLLBACK passati.
+  Pagine città e disiscrizione verificate online; ultimi due asset identici,
+  disiscrizione Chromium1440/320 e WebKit390 passata senza invii reali.
+- Contratto `data/ANALYTICS_EXCLUSIONS.md`; prove e configurazione private
+  `.local/lavori/analytics-exclusions-20261027`. Backup remoto tag233749 e
+  ramo preventivo verificati; errore cleanup helper noto. Modifiche ADS
+  concorrenti conservate nel rebase; fixture provenienza aggiornata e vecchio
+  test control-room già incompatibile alla baseline, fuori ambito.
+
 ## ADS: grafico e schede semplici — 27 ottobre 2026
 
 - Preferenza: grafico generale delle visualizzazioni e pochi indicatori,
