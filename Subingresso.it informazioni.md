@@ -1,5 +1,28 @@
 # Subingresso.it — informazioni e TO DO
 
+## Province automatiche fino a quota0 e dopo i rinnovi — 28 ottobre 2026
+
+- Nuova richiesta permanente per questo lavoro: supera riserva35% e stop dopo
+  quota. Account Codex Secondo, province in sequenza fino a0 in una finestra;
+  attesa del rinnovo naturale e ripresa autonoma dal checkpoint, anche ai rinnovi
+  successivi. Nessun acquisto/reset manuale/cambio account. Pavia resta riservata;
+  stop quando sono concluse le province avviabili, senza rifare ricerche concluse.
+- Avvio verificato da Sassari;76concluse/34aperte,33avviabili. Controller nuovo,
+  stato e istruzioni in `.local/lavori/province-loop-20261028/LEGGIMI-AUTO.md`.
+  Task Windows `Subingresso Province Auto`: accesso utente e controllo ogni5minuti,
+  nessuna scadenza/durata massima. Recupero degli errori temporanei e parziali
+  della stessa provincia; nessun salto senza pubblicazione verificata.
+- Sedici prove offline passate; riavvio reale del controller recupera lo STESSO
+  worker Sassari12124. Corrette prima della verifica finale lettura del lock
+  Windows e formula del riepilogo110. Stop manuale persistente e ostacoli permanenti
+  non sono superati dal task; quattro parziali identici fermano i tentativi.
+- Schermo libero di spegnersi: richieste Windows SYSTEM+EXECUTION accettate,
+  alimentazione CA verificata. Modern Standby richiede corrente per continuità;
+  sessione Windows aperta e Internet, nessuna dipendenza dalla finestra Codex.
+  Sospensione/ibernazione automatiche già0; dopo riavvio riprende all'accesso.
+- Backup remoto tag234603 verificato; solo errori cleanup helper già noti.
+  Materiali privati esclusi da Git/deploy e lavoro estraneo conservato.
+
 ## Giorni Vetrina in primo piano — 28 ottobre 2026
 
 - Preferenza: giorni grandi e ben visibili; prezzi delle opzioni e totale a
