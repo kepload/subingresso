@@ -5,7 +5,7 @@
 - Nuova richiesta: province in sequenza sul profilo corrente Codex Secondo;
   al35% disponibile in una delle finestre, stop dei nuovi avvii e completamento
   della provincia già partita. Stop persistente anche dopo rinnovo quota;
-  nessun cambio account, acquisto o riavvio automatico. Pavia resta riservata.
+  nessun cambio account, acquisto o ripartenza dopo stop quota. Pavia riservata.
 - Ripresa da Lecce,124bozze da verificare e96comuni da chiudere nel checkpoint;
   **35 province aperte**, incluse Pavia. Controller/stato/esiti privati in
   `.local/lavori/province-loop-20261028`; controllo quota viaAPI ogni45secondi
@@ -14,6 +14,12 @@
   nessun worker interrotto o riavvio successivo. Backup remoto tag142204
   verificato; consueti errori nel solo cleanup helper, nessuna correzione fuori
   ambito. Nuovi materiali nel progetto, vecchi originali Lecce riusati.
+- Corretto l'arresto delle15:00: modello saturo durante compattazione con57%
+  disponibile, nessuna provincia conclusa. Recupero della stessa provincia da
+  checkpoint e168candidati/13voci costo salvati; errori temporanei ritentati
+  senza cambiare modello, nuovi avvii sempre bloccati al35%. Sette prove aggiuntive
+  passate, incluse ripresa sotto soglia della sola provincia corrente, rinnovo
+  quota e rifiuto errori permanenti. Backup remoto tag174437 verificato.
 
 ## Articolo servizi delle fiere lombarde — 28 ottobre 2026
 
