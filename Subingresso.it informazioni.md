@@ -1,5 +1,22 @@
 # Subingresso.it — informazioni e TO DO
 
+## Visite agli articoli e impressioni ADS — 28 ottobre 2026
+
+- Richiesta: statistiche chiare e oneste, grafica pulita. Due serie nello stesso
+  grafico/periodo UTC: visite agli articoli e impressioni ADS, mai sommate né
+  chiamate letture complete. Criteri chiusi, confronto per articolo e CSV;
+  inclusi gli articoli senza ADS, visite non duplicate fra banner o attribuite
+  alla singola ADS. Mancanti distinti da zero; storico non ricostruito.
+- Pubblicato `7fe34ac`, Vercel `EgW37sUT6vHpLaJZytTBdpGjB6AM` success;
+  quattro asset identici online SHA256, API privata401. RPC di sola lettura
+  applicata; 9.197 visite/51 eventi ADS invariati durante l'intervento SQL.
+  Stesso istante nei quattro periodi, esclusioni interne e tracking conservati.
+- SQL ROLLBACK, API/tracker e browser Chromium1440/768/320 e WebKit390 passati;
+  nuova interfaccia ripetuta sui file pubblicati. Inspector senza FAIL;
+  contratto `data/PERSONAL_ADS.md`, prove `.local/verifiche/ads-visite-blog-20261028`.
+  Encoding e marker mobile corretti prima della pubblicazione; gitleaks pulito.
+  Backup remoto verificato, consueti errori cleanup helper; file estranei conservati.
+
 ## Ripresa del ciclo province con riserva del35% — 28 ottobre 2026
 
 - Nuova richiesta: province in sequenza sul profilo corrente Codex Secondo;
