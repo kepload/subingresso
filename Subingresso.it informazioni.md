@@ -1,5 +1,27 @@
 # Subingresso.it — informazioni e TO DO
 
+## Vetrine progressive e selezione minimale — 28 ottobre 2026
+
+- Preferenza: aggiunte esplicite fino a10, sconto crescente a ogni posteggio,
+  poche parole e totale fisso. Singoli49/99/249€ conservati; percentuali per
+  1–10 annunci0/10/15/19/23/26/29/32/35/37%. Dieci:308,70/623,70/1.568,70€.
+  Offerta di pubblicazione −10% sui90giorni a224,10€ conservata e non cumulabile.
+- Pubblicato `6c07b94`, Vercel `2uZ9jUN7E1aUgQWJ5DeUMc2899SV` success:
+  cinque file online identiciSHA256. SQL cambia solo il calcolo della RPC;
+  privilegi, offerta e attivazione conservati. Edge19/6/5 attive, otto sorgenti
+  riscaricate identiche; nessun nuovo invio o addebito reale.
+- Prezzi/Stripe30combinazioni, SQL candidato/live conROLLBACK, ordini precedenti,
+  rimborsi/rinnovi, account6formati ed email simulate passati. UI locale/online
+  Chromium1440/768/320 e WebKit390 nei due temi, wizard anche conHTML pubblicato,
+  tutti passati; hash154annunci/128profili/21pagamenti identici prima/dopo.
+- Contratto `data/VETRINE_PREMIUM.md`; materiali e prove private in
+  `.local/lavori/vetrina-progressiva-20261028` e `.local/verifiche/vetrina-progressiva-20261028`.
+  Backup remoto tag205654 e ramo preventivo verificati; cleanuphelper noto
+  interrotto. Fixture SQL resa valida e regex import CRLF del test email corretta.
+  Inspector0FAIL con copertura sfondo intenzionale del dialogo; avvisi statici
+  della dashboard/rampa esistente fuori ambito. Gitleaks manuale pulito;
+  file estranei conservati.
+
 ## Visite agli articoli e impressioni ADS — 28 ottobre 2026
 
 - Richiesta: statistiche chiare e oneste, grafica pulita. Due serie nello stesso
