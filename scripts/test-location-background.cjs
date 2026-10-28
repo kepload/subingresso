@@ -6,7 +6,7 @@ const http = require('node:http');
 const { chromium, webkit } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const root = path.resolve(__dirname, '..');
 const fixture = `<!doctype html><input id="query"><div id="box"></div>
-<script src="/js/comune-picker.js?v=7"></script><script src="/js/location-search.js?v=8"></script>
+<script src="/js/comune-picker.js?v=8"></script><script src="/js/location-search.js?v=9"></script>
 <script>window.submissions=[];query.value=new URLSearchParams(location.search).get('q')||'';window.picker=LocationSearch.create({input:document.querySelector('#query'),box:document.querySelector('#box'),initialCode:new URLSearchParams(location.search).get('comune')||'',onSubmit:async()=>{if(await picker.prepare())submissions.push({value:query.value,id:picker.selected?.id})}});</script>`;
 const server = http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');

@@ -174,6 +174,11 @@
         .field-error svg { flex: 0 0 18px; margin-top: 2px; }
         html.admin-dark .field-error { color: #fda4af; }
         html.admin-dark .field-input[aria-invalid="true"] { border-color: #fda4af; }
+        html.admin-dark #priceAdvice { background: #202b3a; border-color: #3b4656; }
+        html.admin-dark #priceAdvice p { color: #d8e2ef; }
+        #comuneStatus:empty, #fTelHint:empty { display: none; }
+        #step2 .comune-suggestions { max-height: min(180px, 30vh); }
+        @media (max-width: 639px) { main.py-10 { padding-bottom: 8rem; } }
         @media (prefers-reduced-motion: reduce) { .step-panel.active { animation: none; } }
     </style>
     <link rel="stylesheet" href="/css/design-system.css?v=15">
@@ -276,8 +281,7 @@
                     <button type="button" onclick="prevStep()" class="flex items-center gap-1.5 text-slate-400 hover:text-slate-700 text-sm font-bold mb-6 transition">
                         <i class="fas fa-arrow-left text-xs"></i> Indietro
                     </button>
-                    <h1 class="text-2xl font-black mb-1">Dove si trova?</h1>
-                    <p class="text-slate-500 font-medium mb-8 text-sm">Scegli il comune o la frazione: regione e provincia le inseriamo noi.</p>
+                    <h1 class="text-2xl font-black mb-6">Dove si trova?</h1>
 
                     <div class="space-y-6">
                         <div>
@@ -286,7 +290,7 @@
                                 <input id="fComune" type="text" placeholder="Es. Moniga, Rivoltella, Monterusciello" class="field-input" autocomplete="off" spellcheck="false" autocorrect="off">
                                 <div id="comuniList" class="comune-suggestions" hidden></div>
                             </div>
-                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold">Scrivi almeno 2 lettere: comuni e frazioni compaiono qui sotto.</p>
+                            <p id="comuneStatus" class="text-xs text-slate-500 mt-2 font-semibold"></p>
                         </div>
                         <div class="grid grid-cols-2 gap-3">
                             <div>
@@ -301,8 +305,7 @@
                             </div>
                         </div>
                         <div>
-                            <label class="field-label">Il posteggio è in un mercato o in una fiera? *</label>
-                            <div class="grid grid-cols-2 gap-3 mt-1">
+                            <div class="grid grid-cols-2 gap-3 mt-1" role="group" aria-label="Tipo di posteggio">
                                 <button type="button" class="tipo-btn on" id="tipoBtn0" onclick="selectTipo('Mercato settimanale', 0)">
                                     <i class="fas fa-calendar-week text-blue-500 text-xl mb-2 block"></i>
                                     <div class="text-xs font-black">Settimanale</div>
@@ -312,7 +315,6 @@
                                     <div class="text-xs font-black">Fiera</div>
                                 </button>
                             </div>
-                            <p class="form-hint">Mercato: appuntamento ogni settimana. Fiera: evento in un periodo dell'anno.</p>
                         </div>
                     </div>
 
@@ -415,7 +417,7 @@
                         </div>
                         <span id="annoLabel" class="hidden whitespace-nowrap" style="font-size:1.5rem;font-weight:900;color:#2563eb">/ ANNO</span>
                     </div>
-                    <div class="mt-4 bg-amber-50/70 border border-amber-200/70 rounded-xl px-4 py-3 flex gap-3">
+                    <div id="priceAdvice" class="mt-4 bg-amber-50/70 border border-amber-200/70 rounded-xl px-4 py-3 flex gap-3">
                         <i class="fas fa-lightbulb text-amber-500 text-sm mt-0.5 shrink-0"></i>
                         <p class="text-xs text-slate-700 leading-relaxed">
                             <strong>Scrivi il prezzo che chiedi davvero.</strong> Se è trattabile, puoi specificarlo nella descrizione: chi ti contatta sa già cosa aspettarsi.
@@ -443,14 +445,12 @@
                                 <i class="fas fa-camera text-blue-500 text-3xl mb-2 block"></i>
                                 <span class="text-sm font-bold text-slate-600">Aggiungi una foto</span>
                             </button>
-                            <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/avif" multiple class="hidden">
+                            <input type="file" id="fileInput" accept="image/*,.heic,.heif,.tif,.tiff,.bmp,.dib,.jfif" multiple class="hidden">
                             <div id="coverPreview" hidden></div>
-                            <p class="form-hint">JPG, PNG, WebP o AVIF · max 20 MB.</p>
                             <div id="additionalPhotos" style="margin-top:16px" hidden>
                                 <p class="field-label">Altre foto · facoltative</p>
                                 <div id="previewContainer" class="photo-grid"></div>
                                 <button type="button" id="addPhotoButton" onclick="fileInput.click()" class="form-link" hidden>Aggiungi un'altra foto</button>
-                                <p id="photoProgress" class="form-hint" role="status"></p>
                             </div>
                         </div>
                         <div>
@@ -471,7 +471,6 @@
                                 </button>
                             </div>
                             <textarea id="fDescrizione" placeholder="Dove si trova esattamente? Cosa è incluso nel prezzo? Quanto costa il canone comunale?" class="field-input mt-1" maxlength="5000"></textarea>
-                            <p class="form-hint">Aggiungi ciò che sai: via o piazza, costi comunali e cosa cedi insieme al posteggio. Bastano poche frasi concrete.</p>
                             </div>
 
                         <!-- Banner: telefono mancante dal profilo (solo se vero) -->
@@ -491,7 +490,7 @@
                             <div>
                                 <label class="field-label">Telefono (WhatsApp) <span class="text-red-500">*</span></label>
                                 <input id="fTel" type="tel" inputmode="tel" autocomplete="tel"
-                                       placeholder="es. 347 1234567 (anche con +39)"
+                                       placeholder="Il tuo numero"
                                        class="field-input bg-blue-50/50" required>
                                 <!-- Hint live + validazione iniettati da setupPhoneInput() in data.js -->
                             </div>
@@ -653,10 +652,11 @@
 <script src="/js/personal-ads-tracker.js?v=4"></script>
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=26"></script>
-<script src="js/comune-picker.js?v=7"></script>
+<script src="js/comune-picker.js?v=8"></script>
 <script src="js/ui-components.js?v=18"></script>
 <script src="js/auth.js?v=30"></script>
 <script src="js/pages/vendi-support.js?v=2"></script>
+<script src="js/listing-photos.js?v=1"></script>
 <script src="js/vetrina-pricing.js?v=2"></script>
 <script>
 
@@ -730,6 +730,7 @@ function _refreshPublishChoiceUI() {
 // Step 5 → Step 6: valida i campi contenuto prima di mostrare il paywall,
 // così l'utente non arriva alla scelta e poi viene rimbalzato indietro.
 function _goToPublishStep() {
+    if (document.getElementById('dropzone').getAttribute('aria-busy') === 'true') return;
     if (!_validateStep(5)) return;
     goToStep(6);
 }
@@ -787,7 +788,7 @@ function _renderPreview() {
     let imgUrls = [];
     if (Array.isArray(_files) && _files[0]) {
         try {
-            _previewObjectURL = URL.createObjectURL(_files[0]);
+            _previewObjectURL = URL.createObjectURL(ListingPhotos.previewSource(_files[0]));
             imgUrls = [_previewObjectURL];
         } catch(_) {}
     }
@@ -1517,7 +1518,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Validazione live telefono (hint + check verde/rosso, normalize on blur)
     if (typeof setupPhoneInput === 'function') {
-        setupPhoneInput(document.getElementById('fTel'));
+        setupPhoneInput(document.getElementById('fTel'), { placeholderHint: ' ' });
     }
     // Banner "telefono mancante" si nasconde appena l'utente digita qualcosa
     const _telForBanner = document.getElementById('fTel');
@@ -1539,7 +1540,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         regioneSelect: sel,
         provinciaInput: document.getElementById('fProvincia'),
         suggestionsEl: document.getElementById('comuniList'),
-        statusEl: document.getElementById('comuneStatus')
+        statusEl: document.getElementById('comuneStatus'),
+        idleHint: ''
     });
 
     await _initDrafts();
@@ -1623,29 +1625,42 @@ dropzone.addEventListener('drop', e => {
     _handleFiles(e.dataTransfer.files);
 });
 
+let _photoSelection = Promise.resolve();
 function _handleFiles(files) {
-    window.SiteAnalytics?.track('photo_select', {photos: Math.min(files.length,5)});
-    clearStepError();
-    let added = false;
-    for (let f of files) {
-        if (_files.length >= 5) { _err('Puoi aggiungere fino a 5 foto. Rimuovine una per cambiarla.'); break; }
-        const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
-        if (!allowedTypes.includes(f.type)) {
-            _err('Carica solo immagini JPG, PNG, WebP o AVIF.');
-            continue;
+    const selected = Array.from(files);
+    const currentFiles = _files;
+    _photoSelection = _photoSelection.catch(() => {}).then(() => _addPhotoFiles(selected, currentFiles));
+    return _photoSelection;
+}
+async function _addPhotoFiles(files, currentFiles) {
+    if (_files !== currentFiles) return;
+    const nextButton = document.getElementById('toStep6Btn');
+    nextButton.disabled = true;
+    dropzone.setAttribute('aria-busy', 'true');
+    const label = dropzone.querySelector('span');
+    label.textContent = 'Apertura foto…';
+    try {
+        window.SiteAnalytics?.track('photo_select', {photos: Math.min(files.length,5)});
+        clearStepError();
+        let added = false;
+        for (let f of files) {
+            if (_files.length >= 5) { _err('Puoi aggiungere fino a 5 foto. Rimuovine una per cambiarla.'); break; }
+            if (_files.some(file => file.name === f.name && file.size === f.size && file.lastModified === f.lastModified)) continue;
+            try { f = await ListingPhotos.prepare(f); }
+            catch (error) { if (_files !== currentFiles) return; _err(error.message); continue; }
+            if (_files !== currentFiles) return;
+            _files.push(f);
+            added = true;
         }
-        if (f.size > 20 * 1024 * 1024) {
-            _err('Questa foto supera 20 MB. Scegli una versione più leggera.');
-            continue;
-        }
-        if (_files.some(file => file.name === f.name && file.size === f.size && file.lastModified === f.lastModified)) continue;
-        _files.push(f);
-        added = true;
+        if (!added) return;
+        _draftStarted = true;
+        _renderPhotos();
+        _persistDraftPhotos();
+    } finally {
+        nextButton.disabled = false;
+        dropzone.removeAttribute('aria-busy');
+        label.textContent = 'Aggiungi una foto';
     }
-    if (!added) return;
-    _draftStarted = true;
-    _renderPhotos();
-    _persistDraftPhotos();
 }
 
 let _photoURLs = [];
@@ -1658,14 +1673,22 @@ function _renderPhotos() {
     cover.hidden = !_files.length;
     dropzone.hidden = !!_files.length;
     document.getElementById('additionalPhotos').hidden = !_files.length;
+    document.getElementById('photoAdvice').hidden = !!_files.length;
     _files.forEach((file, index) => {
-        const url = URL.createObjectURL(file);
+        const url = URL.createObjectURL(ListingPhotos.previewSource(file));
         _photoURLs.push(url);
         const div = document.createElement('div');
         div.className = index === 0 ? 'photo-tile photo-primary' : 'photo-tile';
         div.innerHTML = `<img src="${escapeHTML(url)}" alt="Foto ${index + 1} del posteggio"><button type="button" class="photo-remove" aria-label="Rimuovi foto ${index + 1}" onclick="removeFile(this)"><i class="fas fa-times"></i></button><button type="button" class="photo-cover" onclick="_setCover(${index})">${index === 0 ? 'Copertina' : 'Usa come copertina'}</button>`;
         _fileMap.set(div, file);
         (index === 0 ? cover : preview).appendChild(div);
+        if (ListingPhotos.needsPreview(file) && ListingPhotos.previewSource(file) === file) {
+            ListingPhotos.prepare(file).then(() => {
+                if (_files.includes(file) && div.isConnected) _renderPhotos();
+            }).catch(() => {
+                if (div.isConnected) div.querySelector('img').alt = 'Foto salvata';
+            });
+        }
     });
     const fair = document.getElementById('fTipo').value === 'Fiera';
     const prompts = ['Il banco da vicino', 'Lo spazio', fair ? 'La fiera intorno' : 'Il mercato intorno'];
@@ -1678,7 +1701,6 @@ function _renderPhotos() {
         preview.appendChild(button);
     }
     document.getElementById('addPhotoButton').hidden = _files.length < 4 || _files.length >= 5;
-    document.getElementById('photoProgress').textContent = `${_files.length} di 5 foto · anche gratis`;
     _renderPreview();
 }
 
@@ -1709,7 +1731,7 @@ function _withTimeout(promise, ms, label) {
 }
 
 async function _prepareListingImage(file) {
-    if (file.size > 20 * 1024 * 1024) throw new Error('Ogni foto deve pesare al massimo 20 MB.');
+    if (file.size > ListingPhotos.MAX_BYTES) throw new Error('Ogni foto deve pesare al massimo 50 MB.');
     const ext = (file.name || 'foto.webp').split('.').pop();
     const path = `${Date.now()}-${Math.random().toString(36).substring(7)}.${ext}`;
     return { file, path };
@@ -1835,7 +1857,7 @@ async function _getSessionForSubmit() {
 const _uploadedPhotos = new WeakMap();
 async function submitAnnuncio() {
     const btn = document.getElementById('submitBtn');
-    if (btn.disabled) return;
+    if (btn.disabled || dropzone.getAttribute('aria-busy') === 'true') return;
     window.SiteAnalytics?.track('publish_attempt', {step: _step});
     const orig = btn.dataset.origHtml || btn.innerHTML;
     btn.dataset.origHtml = orig;
@@ -1963,7 +1985,7 @@ async function submitAnnuncio() {
                 const storagePath = `${user.id}/${prepared.path}`;
                 // Upload diretto (bypassa il client supabase-js per evitare lock interni)
                 const upCtrl = new AbortController();
-                const upTimer = setTimeout(() => upCtrl.abort(), 25000);
+                const upTimer = setTimeout(() => upCtrl.abort(), 120000);
                 let upRes;
                 try { upRes = await fetch(
                     `${SUPABASE_URL}/storage/v1/object/listings/${storagePath}`,

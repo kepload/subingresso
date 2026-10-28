@@ -23,7 +23,7 @@
     let workerFailed = false;
     let requestId = 0;
     const workerRequests = new Map();
-    const workerUrl = '/js/location-search-worker.js?v=3';
+    const workerUrl = '/js/location-search-worker.js?v=4';
 
     function load() {
         if (!readyPromise) {

@@ -136,7 +136,7 @@
         return a.length > b.length ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);
     }
 
-    function createComunePicker({ comuneInput, regioneSelect, provinciaInput, suggestionsEl, statusEl }) {
+    function createComunePicker({ comuneInput, regioneSelect, provinciaInput, suggestionsEl, statusEl, idleHint = 'Scrivi almeno 2 lettere: comuni e frazioni compaiono qui sotto.' }) {
         let comuni = [];
         let selected = null;
         let suggestions = [];
@@ -225,7 +225,7 @@
             if (loadFailed) { status('Comuni e frazioni non si sono caricati. Premi Riprova: quello che hai scritto resta qui.', 'red'); return; }
             const key = normalize(String(rawValue || '').replace(/\s*\([A-Z]{2}\)\s*$/i, ''));
             const siglaMatch = String(rawValue || '').match(/\(([A-Z]{2})\)\s*$/i);
-            if (key.length < 2) { status('Scrivi almeno 2 lettere: comuni e frazioni compaiono qui sotto.'); return; }
+            if (key.length < 2) { status(idleHint); return; }
             const words = key.split(' ').filter(Boolean);
             const candidates = siglaMatch ? comuni.filter(row => row.sigla.toLowerCase() === siglaMatch[1].toLowerCase()) : comuni;
             const exact = candidates.filter(row => row._keys.includes(key));

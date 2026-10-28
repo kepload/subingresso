@@ -13,7 +13,7 @@ const ownerB = '22222222-2222-2222-2222-222222222222';
 const draftKey = owner => 'subingresso_draft_v2_' + owner;
 const authKey = 'sb-test-auth-token';
 const session = owner => ({ user: { id: owner, email: 'test@example.invalid', user_metadata: {} }, access_token: 'test-token', refresh_token: 'test-refresh', expires_at: 9999999999 });
-const image = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aA1sAAAAASUVORK5CYII=', 'base64');
+const image = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAACXBIWXMAAAPoAAAD6AG1e1JrAAAAEUlEQVQImWNQyVyLFTEMLQkAikpOgV4lvm4AAAAASUVORK5CYII=', 'base64');
 const photos = n => Array.from({ length: n }, (_, i) => ({ name: `foto-${i}.png`, mimeType: 'image/png', buffer: image }));
 
 for (const file of ['vendi.html', 'modifica-annuncio.html']) {
@@ -71,7 +71,7 @@ const server = http.createServer((req, res) => {
     if (!full.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
     if (filename === 'vendi.html' && publishedHtml) { res.setHeader('Content-Type','text/html; charset=utf-8'); res.end(publishedHtml); return; }
     if (filename === 'js/auth.js') { res.setHeader('Content-Type', 'text/javascript'); res.end(authStub); return; }
-    if (['js/page-view-tracker.js', 'js/ui-components.js'].includes(filename)) { res.setHeader('Content-Type', 'text/javascript'); res.end(''); return; }
+    if (filename === 'js/page-view-tracker.js' || (filename === 'js/ui-components.js' && !process.env.FORM_TEST_SHELL)) { res.setHeader('Content-Type', 'text/javascript'); res.end(''); return; }
     fs.readFile(full, (error, data) => {
         if (error) { res.writeHead(404).end(); return; }
         res.setHeader('Content-Type', ({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json'})[path.extname(full)] || 'application/octet-stream');
@@ -95,6 +95,7 @@ const server = http.createServer((req, res) => {
         const context = await browser.newContext({ viewport: process.env.FORM_TEST_WIDTH ? {width:Number(process.env.FORM_TEST_WIDTH),height:900} : mobile ? {width:390,height:844} : {width:1280,height:900}, hasTouch:mobile, reducedMotion: 'reduce' });
         await context.route('https://cdn.jsdelivr.net/**', route => route.fulfill({ contentType:'text/javascript', body:clientStub }));
         await context.route('https://cdnjs.cloudflare.com/**', route => route.fulfill({ body:'' }));
+        if (process.env.FORM_TEST_SHELL) await context.route('https://cdnjs.cloudflare.com/**', route => route.continue());
         await context.route('https://fonts.googleapis.com/**', route => route.fulfill({ body:'' }));
         await context.route('https://*.supabase.co/**', async route => {
             const request = route.request();
@@ -136,6 +137,20 @@ const server = http.createServer((req, res) => {
         return page;
     }
     async function active(page, step) { await page.waitForFunction(n => document.getElementById('step'+n).classList.contains('active'), step); }
+    async function captureThemes(page, stem) {
+        if (!process.env.FORM_SCREENSHOT_DIR) return;
+        fs.mkdirSync(process.env.FORM_SCREENSHOT_DIR, {recursive:true});
+        for (const dark of [false, true]) {
+            await page.evaluate(dark => document.documentElement.classList.toggle('admin-dark', dark), dark);
+            await page.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR,stem + (dark ? '-dark' : '-light') + '.png'),fullPage:true});
+            let snapshot = (await page.content()).replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+            snapshot = snapshot.replace(/(href|src)="(?!https?:|data:|blob:|#|\/)([^"]+)"/g, '$1="/$2"');
+            // Keep only the active step in the standalone visual fixture.
+            snapshot = snapshot.replace(/<div id="step\d+" class="step-panel">[\s\S]*?(?=<div id="step\d+" class="step-panel|<\/form>)/g, '');
+            fs.writeFileSync(path.join(process.env.FORM_SCREENSHOT_DIR,stem + (dark ? '-dark' : '-light') + '.html'), snapshot);
+        }
+        await page.evaluate(() => document.documentElement.classList.remove('admin-dark'));
+    }
     async function next(page, step) { await page.locator('#step'+step).getByRole('button',{name:/^Avanti/}).click(); await active(page,step+1); }
     async function fillWizard(page, fair = false) {
         await page.locator('.tipo-card').first().click();
@@ -156,6 +171,39 @@ const server = http.createServer((req, res) => {
         await page.locator('#fTel').fill('3477654321');
     }
     try {
+        if (process.env.FORM_VISUAL_ONLY) {
+            const page = await newPage(ownerA, true);
+            assert.equal(await page.locator('main').evaluate(el => getComputedStyle(el).paddingBottom), page.viewportSize().width < 640 ? '128px' : '40px');
+            await captureThemes(page, 'tipo');
+            await page.locator('.tipo-card').first().click();
+            await page.locator('#fComune').fill('A');
+            await page.waitForFunction(() => document.getElementById('comuneStatus').textContent === '');
+            await captureThemes(page, 'posizione');
+            await page.locator('#fComune').fill('Brescia');
+            await page.waitForFunction(() => !!_comunePicker.getValue());
+            await next(page, 2);
+            await page.locator('[data-day="Sabato"]').click();
+            await page.locator('#macroNonAlim').click();
+            await page.getByRole('button',{name:'Abbigliamento e accessori',exact:true}).click();
+            await page.locator('#fSuperficie').fill('24');
+            await next(page, 3);
+            await page.locator('#fPrezzo').fill('15000');
+            await captureThemes(page, 'prezzo');
+            await next(page, 4);
+            await captureThemes(page, 'dettagli-vuoto');
+            assert(await page.locator('#photoAdvice').isVisible());
+            await page.locator('#fileInput').setInputFiles(photos(1));
+            await page.waitForFunction(() => _files.length === 1);
+            assert(await page.locator('#photoAdvice').isHidden());
+            await captureThemes(page, 'dettagli-foto');
+            await page.locator('#coverPreview .photo-remove').click();
+            assert(await page.locator('#photoAdvice').isVisible());
+            assert.equal(await page.locator('#photoProgress').count(), 0);
+            assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+            assert.deepEqual(errors, []);
+            console.log('OK: visual flow, both themes, real footer gap, idle text removed, red advice hides/reappears and no overflow; no remote writes.');
+            return;
+        }
         // Errori subito al passo 2, retry e risposte tardive senza perdere la bozza.
         const early = await newPage(ownerA,true);
         await early.locator('.tipo-card').first().click();
@@ -205,8 +253,15 @@ const server = http.createServer((req, res) => {
         await fillWizard(resumed);
         const resumedPhotos=process.env.FORM_LOCATION_ONLY==='1'?0:1;
         if(resumedPhotos){
+            await resumed.evaluate(() => {
+                const save = VendiSupport.savePhotos;
+                VendiSupport.savePhotos = (...args) => save(...args).catch(error => { window.__photoSaveError = error.name + ': ' + error.message; throw error; });
+            });
             await resumed.locator('#fileInput').setInputFiles(photos(1));
-            await resumed.waitForFunction(()=>_files.length===1 && !_photosUnsaved);
+            await resumed.waitForFunction(()=>_files.length===1 && !_photosUnsaved).catch(async error => {
+                console.log('Photo fixture state:', await resumed.evaluate(() => ({files:_files.length, unsaved:_photosUnsaved, failed:_photoWriteFailed, photoError:window.__photoSaveError})));
+                throw error;
+            });
             await resumed.evaluate(()=>_persistDraftPhotos());
         }
         await resumed.locator('#toStep6Btn').click();
@@ -270,9 +325,15 @@ const server = http.createServer((req, res) => {
         console.log('OK: Moniga abbreviato con Avanti, lista visibile, omonimi e bozza aggiornata dopo la scelta.');
 
         const page = await newPage(ownerA, true);
+        const width = page.viewportSize().width;
+        assert.equal(await page.locator('main').evaluate(el => getComputedStyle(el).paddingBottom), width < 640 ? '128px' : '40px');
+        const gap = await page.evaluate(() => document.querySelector('footer').getBoundingClientRect().top - document.querySelector('#step1 .grid').getBoundingClientRect().bottom);
+        assert(gap >= (process.env.FORM_TEST_WIDTH && Number(process.env.FORM_TEST_WIDTH) >= 640 ? 40 : 128), 'space between choices and footer');
+        await captureThemes(page, 'tipo-annuncio-mobile');
         await fillWizard(page);
         assert(await page.locator('#dropzone').isVisible());
         assert(await page.locator('#additionalPhotos').isHidden());
+        assert(await page.locator('#photoAdvice').isVisible());
         assert(await page.locator('#draftStatus').isHidden());
         assert.equal(await page.locator('h1:visible').count(), 1);
         assert(!(await page.locator('main').innerText()).includes('Vendi la tua licenza ambulante'));
@@ -288,6 +349,8 @@ const server = http.createServer((req, res) => {
         assert(await page.locator('#dropzone').isHidden());
         assert(await page.locator('#coverPreview img').isVisible());
         assert(await page.locator('#additionalPhotos').isVisible());
+        assert(await page.locator('#photoAdvice').isHidden());
+        assert.equal(await page.locator('#photoProgress').count(), 0);
         assert.equal(await page.locator('#previewContainer .photo-empty').count(), 3);
         for (const text of await page.locator('#previewContainer .photo-empty').allTextContents()) assert.match(text, /Facoltativa/);
         if (process.env.FORM_SCREENSHOT_DIR) await page.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR,'foto-aggiuntive-mobile.png'),fullPage:true});
@@ -330,6 +393,12 @@ const server = http.createServer((req, res) => {
         const changed = await page.locator('#fTitolo').inputValue();
         assert.notEqual(changed,title);
         await page.locator('#step5').getByRole('button',{name:'Indietro'}).click();
+        await active(page, 4);
+        await page.evaluate(() => document.documentElement.classList.add('admin-dark'));
+        const darkAdvice = await page.locator('#priceAdvice').evaluate(el => getComputedStyle(el).backgroundColor);
+        assert.equal(darkAdvice, 'rgb(32, 43, 58)', 'price advice uses a dark surface');
+        await captureThemes(page, 'prezzo-mobile');
+        await page.evaluate(() => document.documentElement.classList.remove('admin-dark'));
         await next(page,4);
         assert.equal(await page.locator('#fTitolo').inputValue(),changed);
         await page.locator('#fTitolo').fill('Il mio posteggio del sabato a Brescia');

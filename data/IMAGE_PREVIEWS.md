@@ -1,5 +1,11 @@
 # Anteprime persistenti — 22 ottobre 2026
 
+28 ottobre: il wizard vendita accetta originali fino a 50 MiB e nuovi formati
+HEIC/HEIF, TIFF, BMP e GIF. Anche il lettore server arriva a 50 MiB;
+`lib/listing-image-source.cjs` decodifica HEIF/BMP prima delle stesse sei WebP.
+Originali, chiavi cache e qualità esistenti conservati. Contratto e prove in
+`data/LISTING_PHOTOS.md`; nessun limite Storage o dato remoto modificato.
+
 `api/image.js` usa `lib/image-preview-cache.cjs`. Prima legge la WebP già
 salvata nel bucket pubblico `image-previews`; soltanto una vera assenza
 (404, anche incapsulato nel 400 di Storage) permette di leggere l'originale.
