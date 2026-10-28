@@ -57,3 +57,10 @@ Due ADS fiere distinte, alternate alla ricarica; HEAD303 verso calendario
 Lombardia e spazio Vetrine conservato. Scritture di prova intercettate.
 Prima tabella mobile scorreva per il nowrap del template: corretta soltanto
 nel contenuto dell'articolo, ora integralmente visibile a320/390/1440.
+
+Pubblicato e verificato: ID `8bb3d4f1-05ab-4058-a704-c852a795999d`,
+127 articoli precedenti identici,128 totali. Materiali commit `00665c9`,
+deploy Vercel `HvK5jTH6oaCzTDbSxYhdxg2DHpYJ` success. Immagine pubblicata
+identica SHA256; articolo, indice, sitemap, metadati e gli stessi cinque casi
+browser passati sull'HTML online. Nessun dato di prova scritto; piano aggiornato
+soltanto dopo questi riscontri. Gitleaks pre-commit pulito, file estranei conservati.

@@ -14,7 +14,7 @@ Idee per crescere rapidamente e generare ricavi, con contenuti utili anche in pr
 10. 🟢 Quanto tempo serve per vendere un posteggio? I tempi dei casi seguiti da Subingresso
 11. 🔴 Il venditore dichiara 1.000 euro al giorno: come verificare gli incassi del banco, con una tabella di riscontro — [pubblicato il 27/10/2026](https://subingresso.it/blog?post=verificare-incassi-banco-prima-comprare); [testo](data/blog/verificare-incassi-banco-prima-comprare.html) e [tabella scaricabile](downloads/riscontro-incassi-banco.xlsx).
 12. 🔴 Compro il banco con tutta la merce: inventario scaricabile per separare scorte, attrezzature e avviamento — [pubblicato il 27/10/2026](https://subingresso.it/blog?post=comprare-banco-merce-inventario); [testo](data/blog/comprare-banco-merce-inventario.html) e [inventario gratuito](downloads/inventario-acquisto-banco.xlsx).
-13. 🔴 Fiere in Lombardia con corrente, acqua e parcheggio per il furgone: servizi e supplementi a confronto
+13. 🔴 Fiere in Lombardia con corrente, acqua e parcheggio per il furgone: servizi e supplementi a confronto — [pubblicato il 28/10/2026](https://subingresso.it/blog?post=fiere-lombardia-corrente-acqua-parcheggio); [testo](data/blog/fiere-lombardia-corrente-acqua-parcheggio.html) e [fonti](data/blog/fiere-lombardia-corrente-acqua-parcheggio.fonti.md). Servizi non indicati distinti da inclusi; Erba esplicitamente come esempio concluso.
 14. 🔴 Quali posteggi cercano gli acquirenti? Ricerche e annunci disponibili su Subingresso a confronto per zona e settore
 15. 🟠 Ho comprato il posteggio: quanta liquidità mi serve nei primi 90 giorni? Il piano di cassa compilabile
 16. 🟠 Due fiere nello stesso fine settimana: la scheda per scegliere in base a pubblico, concorrenti e logistica

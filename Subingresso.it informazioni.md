@@ -1,5 +1,11 @@
 # Subingresso.it — informazioni e TO DO
 
+## Articolo servizi delle fiere lombarde — 28 ottobre 2026
+
+- Priorità13 pubblicata: [Fiere in Lombardia: corrente, acqua e parcheggio, cosa è incluso?](https://subingresso.it/blog?post=fiere-lombardia-corrente-acqua-parcheggio), ID `8bb3d4f1-05ab-4058-a704-c852a795999d`. 500 parole, sei sezioni, tre casi Codevilla/Galliate/Erba. Erba dichiarata conclusa; acqua, potenza e sosta non garantite in assenza di indicazioni. Fonti organizzatori HTTP200 conservate.
+- Due ADS fiere distinte e alternate, destinazioni Lombardia HEAD303; Vetrine conservate. Copertina originale imagegen WebP1600×900 senza scritte, dichiarataIA, identica onlineSHA256. Materiali `00665c9`, Vercel `HvK5jTH6oaCzTDbSxYhdxg2DHpYJ` success; SEO/indice/sitemap e Chromium1440/768/320, WebKit390 e senzaJS passati. 127 articoli precedenti identici,128totali; tracking di prova intercettato.
+- Sorgenti/fonti/prompt `data/blog/fiere-lombardia-corrente-acqua-parcheggio.*`; originali/helper/prove `.local/lavori/articoli/fiere-lombardia-corrente-acqua-parcheggio`. Prima tabella mobile scorrevole per nowrap del template corretta nel solo articolo, tre formati ripetuti passati. Piano segnato dopo verifica; backup remoto tag131954 verificato, helper con errori cleanup noti. Gitleaks pulito, file estranei conservati.
+
 ## Articolo mercatini di Natale lombardi — 28 ottobre 2026
 
 - Priorità2 pubblicata: [Mercatini di Natale in Lombardia: costi e domande2026](https://subingresso.it/blog?post=mercatini-natale-lombardia-domande-costi-merce-2026), ID `08d7cd43-284f-4333-a5d7-57850a7491f4`. Sei sezioni, tre casi Molteno/Uggiate/Galliate, quote0–40€, merce, dotazioni e maltempo; fonti primarie conservate. Scadenza Galliate non pubblicata e incoerenza dichiarazione Uggiate segnalate, nessuna ammissione promessa.
