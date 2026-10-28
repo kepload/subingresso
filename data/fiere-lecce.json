@@ -2336,8 +2336,7 @@
       "name": "Fiera-mercato della Madonna della Luce",
       "months": [
         4,
-        5,
-        6
+        5
       ],
       "category": "tradizionale",
       "sectors": "alimentare e non alimentare",
@@ -4290,8 +4289,7 @@
       "name": "Festa dei Santi Cosma e Damiano - area commerciale",
       "months": [
         4,
-        5,
-        6
+        5
       ],
       "category": "tradizionale",
       "sectors": "alimentare e non alimentare",
@@ -5111,7 +5109,8 @@
       "Ripresa delle168schede aggiornate e13costi;124bozze iniziali non assunte validate.",
       "Ricerca comunale/albi e organizzatori, originali locali e regionali, parti pertinenti dei piani commerciali, tabelle e locandine controllate visivamente come da checkpoint.",
       "96comuni coperti nominalmente: le acquisizioni non sono letture integrali. Ricevute separano fonti usate nelle schede e acquisizioni/ricerche soltanto.",
-      "Calendarizzazione, periodo usuale, storico, bando, tariffe parziali e ammissione restano distinti. I portali di eventi sono piste, non conferme annuali generaliste."
+      "Calendarizzazione, periodo usuale, storico, bando, tariffe parziali e ammissione restano distinti. I portali di eventi sono piste, non conferme annuali generaliste.",
+      "Due periodi usuali mobili corretti ad aprile-maggio: quarto giovedì dopo Pasqua, senza dedurre date annuali confermate."
     ],
     "statistics": {
       "municipalities": 96,
