@@ -1,5 +1,22 @@
 # Subingresso.it — informazioni e TO DO
 
+## Modulo vendita più pulito da smartphone — 28 ottobre 2026
+
+- Spazio prima del footer mobile128px; tolti i testi indicati su località,
+  mercato/fiera, descrizione e telefono. Riquadro prezzo corretto in scuro.
+  Invito rosso solo senza foto; niente elenco formati o contatore «anche gratis».
+- Foto fino50MiB, ancheHEIC/HEIF, GIF, BMP eTIFF; originali intatti e decoder
+  caricati solo quando servono. Storage già50MiB, nessuna modifica remota.
+  Contratto `data/LISTING_PHOTOS.md`; modifica annunci esistenti conserva20MiB.
+- Pubblicato `0c3d3a2`, Vercel `DJTWVbMST3oXCzXVcveydNeoHtP9` success:
+  18pagine/asset identiciSHA256 e anteprima reale200. Wizard completo Chromium,
+  formati/soglie Chromium-WebKit, UI due temi320/390/768/1440 passati; ripetuti
+  sull'HTML online wizard e mobile320/WebKit390. Zero annunci/pagamenti di prova.
+- Limiti fixture già noti: IDBfoto WebKit Windows e clic omonimo con tocco;
+  nessuna modifica all'archivio bozze. Inspector0FAIL, gitleaks pulito; prove
+  `.local/verifiche/form-vendita-mobile-20261028`. Backup tag114006 e ramo
+  pre-form-vendita-mobile verificati; cleanuphelper fallito, file estranei conservati.
+
 ## Tutte le località verificate e controllo al passo 2 — 28 ottobre 2026
 
 - Richiesta: nessuna località del selettore rifiutata soltanto a fine wizard.
