@@ -144,7 +144,7 @@
     <link rel="stylesheet" href="css/profile-switch.css?v=5">
     <link rel="stylesheet" href="css/saved-fairs.css?v=3">
     <link rel="stylesheet" href="css/vetrina-conversion.css?v=2">
-    <link rel="stylesheet" href="css/vetrina-premium.css?v=4">
+    <link rel="stylesheet" href="css/vetrina-premium.css?v=5">
     <link rel="stylesheet" href="css/seller-analytics.css?v=2">
     <link rel="stylesheet" href="css/eventi.css?v=5">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
@@ -946,29 +946,22 @@
 <!-- Vetrina Premium: individuale o pacchetto, un solo pagamento. -->
 <div id="vetrinaModal" class="hidden fixed inset-0 flex justify-center" onclick="closeVetrinaModal()">
     <div class="premium-dialog" role="dialog" aria-modal="true" aria-labelledby="vetrinaOfferTitle" tabindex="-1" onclick="event.stopPropagation()">
-        <header class="premium-header"><h2 id="vetrinaOfferTitle">Vetrina Premium</h2><p>Più visibilità per i tuoi posteggi, nelle ricerche e negli articoli pertinenti.</p><button type="button" class="premium-close" onclick="closeVetrinaModal()" aria-label="Chiudi Vetrina Premium">×</button></header>
+        <header class="premium-header"><h2 id="vetrinaOfferTitle">In vetrina</h2><button type="button" class="premium-close" onclick="closeVetrinaModal()" aria-label="Chiudi Vetrina Premium">×</button></header>
         <div class="premium-body">
             <div class="premium-options">
-                <h3>Scegli la durata</h3>
+                <h3>Durata <span class="premium-label-note">· per posteggio</span></h3>
                 <div class="premium-durations" role="group" aria-label="Durata per ogni annuncio">
-                    <button type="button" id="tier10d" class="premium-duration" aria-pressed="false" onclick="selectVetrinaTier('10d')"><span>10 giorni</span><strong id="premiumPrice10d">49 €</strong><small id="premiumDaily10d">4,90 € / giorno</small><small>Per annuncio</small></button>
-                    <button type="button" id="tier30d" class="premium-duration" aria-pressed="true" onclick="selectVetrinaTier('30d')"><span>30 giorni</span><strong id="premiumPrice30d">99 €</strong><small id="premiumDaily30d">3,30 € / giorno</small><small>Per annuncio</small></button>
-                    <button type="button" id="tier90d" class="premium-duration" aria-pressed="false" onclick="selectVetrinaTier('90d')"><span>90 giorni</span><strong id="premiumPrice90d">249 €</strong><small id="premiumDaily90d">2,77 € / giorno</small><small>Per annuncio</small></button>
+                    <button type="button" id="tier10d" class="premium-duration" aria-pressed="false" onclick="selectVetrinaTier('10d')"><span>10 giorni</span><strong id="premiumPrice10d">49 €</strong></button>
+                    <button type="button" id="tier30d" class="premium-duration" aria-pressed="true" onclick="selectVetrinaTier('30d')"><span>30 giorni</span><strong id="premiumPrice30d">99 €</strong></button>
+                    <button type="button" id="tier90d" class="premium-duration" aria-pressed="false" onclick="selectVetrinaTier('90d')"><span>90 giorni</span><strong id="premiumPrice90d">249 €</strong></button>
                 </div>
-                <div class="premium-section-head"><h3>I tuoi annunci</h3><span>Fino a 10 insieme</span></div>
+                <div class="premium-section-head"><h3>Posteggi</h3><span id="premiumCount" role="status">0/10</span></div>
                 <div id="premiumListings" class="premium-listings"></div>
-                <p class="premium-bundle-rule">2 annunci −10% · 3–4 annunci −15% · da 5 a 10 annunci −20%</p>
-                <details class="premium-details"><summary>Come funziona la promozione?</summary><p>Ogni annuncio riceve tutti i giorni scelti. Se è già in Vetrina, aggiungiamo la nuova durata alla scadenza attuale. Un nuovo annuncio in revisione parte dall’approvazione, senza perdere giorni.</p><p>Le posizioni sono condivise a rotazione con le altre Vetrine. Nella ricerca rispettiamo filtri e distanza; nel blog la pertinenza dell’articolo. Le statistiche mostrano attività rilevate, senza garantire vendite o contatti aggiuntivi.</p><p>La scadenza dell’annuncio resta invariata. Acquisti e ricevute restano nella tua area personale.</p></details>
+                <button type="button" id="premiumAdd" class="premium-add" onclick="VetrinaPremium.togglePicker()" aria-controls="premiumListings" aria-expanded="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span id="premiumAddLabel">Aggiungi un posteggio</span><strong id="premiumNext">−10%</strong></button>
+                <details class="premium-details"><summary>Dettagli</summary><ul><li>Priorità nelle ricerche pertinenti e negli spazi promozionali del blog.</li><li>Statistiche Premium permanenti per ogni annuncio promosso.</li></ul><p>Ogni annuncio riceve tutti i giorni scelti. Se è già in Vetrina, aggiungiamo la nuova durata alla scadenza attuale. Un nuovo annuncio in revisione parte dall’approvazione, senza perdere giorni.</p><p>Le posizioni sono condivise a rotazione con le altre Vetrine. Nella ricerca rispettiamo filtri e distanza; nel blog la pertinenza dell’articolo. Le statistiche mostrano attività rilevate, senza garantire vendite o contatti aggiuntivi.</p><p>La scadenza dell’annuncio resta invariata. Acquisti e ricevute restano nella tua area personale.</p></details>
             </div>
-            <aside class="premium-summary" aria-label="Riepilogo del pagamento" aria-live="polite" aria-atomic="true">
-                <h3 id="premiumCount">Seleziona i tuoi annunci</h3><p id="premiumPerListing">Stessa durata per tutti gli annunci</p>
-                <div id="premiumTotal" class="premium-total">0 €</div><div id="premiumSaving">Nessuno sconto applicato</div>
-                <dl><div><dt>Prezzo senza pacchetto</dt><dd id="premiumSubtotal">0 €</dd></div></dl>
-                <p id="premiumNext">Scegli gli annunci da promuovere insieme.</p>
-                <ul class="premium-includes"><li>Priorità nelle ricerche pertinenti</li><li>Presenza negli spazi promozionali del blog</li><li>Statistiche Premium permanenti per ogni annuncio promosso, anche in pacchetto</li><li>Un pagamento, risultati per ogni annuncio</li></ul>
-            </aside>
         </div>
-        <footer class="premium-footer"><button type="button" id="vetrinaCheckoutButton" onclick="startCheckout()" disabled>Seleziona almeno un annuncio</button><div><p id="premiumFooterSaving"></p><p>Pagamento unico con Stripe.<br>Nessun rinnovo automatico.</p><p id="vetrinaLoadingMsg" role="status" aria-live="polite"></p></div></footer>
+        <footer class="premium-footer"><div class="premium-summary" aria-label="Riepilogo del pagamento" aria-live="polite" aria-atomic="true"><p id="premiumPerListing">Totale</p><div class="premium-amounts"><del id="premiumSubtotal" hidden>0 €</del><strong id="premiumTotal" class="premium-total">0 €</strong></div><p id="premiumSaving" hidden></p></div><button type="button" id="vetrinaCheckoutButton" onclick="startCheckout()" disabled>Vai al pagamento</button><p class="premium-payment-note">Pagamento unico · Nessun rinnovo automatico</p><p id="vetrinaLoadingMsg" role="status" aria-live="polite"></p></footer>
     </div>
 </div>
 
@@ -1267,8 +1260,8 @@
 <script src="js/image-urls.js?v=1"></script>
 <script src="js/data.js?v=26"></script>
 <script src="js/valuation.js?v=8"></script>
-<script src="js/vetrina-pricing.js?v=2"></script>
-<script src="js/vetrina-premium.js?v=3"></script>
+<script src="js/vetrina-pricing.js?v=3"></script>
+<script src="js/vetrina-premium.js?v=4"></script>
 <script src="js/admin-email-analytics.js?v=2"></script>
 <script src="js/vetrina-account.js?v=4"></script>
 <script src="js/ui-components.js?v=18"></script>

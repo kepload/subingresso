@@ -71,13 +71,15 @@ async function main() {
     const request=body=>new Request('https://example.invalid/checkout',{method:'POST',headers:{Authorization:'Bearer valid','Content-Type':'application/json'},body:JSON.stringify(body)});
     const setListings=n=>{listings=ids.slice(0,n).map(id=>({id,user_id:owner,status:'active',titolo:'Mercato di Brescia',expires_at:new Date(Date.now()+86400000).toISOString()}));};
     for(const [tier,base] of [['10d',4900],['30d',9900],['90d',24900]]) for(let n=1;n<=10;n++){
-        setListings(n);const discount=n>=5?20:n>=3?15:n===2?10:0,unit=base*(100-discount)/100;
+        setListings(n);const discount=[0,10,15,19,23,26,29,32,35,37][n-1],unit=Math.round(base*(100-discount)/100);
         assert.deepEqual(JSON.parse(JSON.stringify(Pricing.quote(tier,n))),{tier,days:{'10d':10,'30d':30,'90d':90}[tier],count:n,discount,unit,total:unit*n,listTotal:base*n,savings:(base-unit)*n});
         const response=await checkout(request({annuncio_ids:ids.slice(0,n),tier,expected_amount_cents:unit*n,amount:1,discount:99}));
         assert.equal(response.status,200);assert.equal(logged.p_expected_amount,unit*n);assert.equal(logged.p_listing_ids.length,n);
         let sum=0;for(let i=0;i<n;i++){assert.equal(Number(charge.get(`line_items[${i}][price_data][unit_amount]`)),unit);sum+=unit;}
         assert.equal(sum,unit*n);assert.equal(charge.has('allow_promotion_codes'),false);assert.equal(charge.get('metadata[checkout_version]'),'premium_v1');
+        if(n>1){const previous=Pricing.quote(tier,n-1);assert(unit*n>previous.total,'adding a listing always increases total');assert(discount>previous.discount,'every extra listing improves percentage');assert(unit<previous.unit,'unit cost decreases');}
     }
+    assert.deepEqual(['10d','30d','90d'].map(tier=>Pricing.quote(tier,10).total),[30870,62370,156870]);
     setListings(1);listings[0].status='pending';
     assert.equal((await checkout(request({annuncio_id:ids[0],tier:'30d',source:'vendi_creation',expected_amount_cents:9900}))).status,200);
     assert.equal(charge.get('line_items[0][price_data][unit_amount]'),'9900','no creation discount');

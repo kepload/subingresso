@@ -43,8 +43,8 @@ BEGIN
     IF (SELECT sum(refunded_cents) FROM public.payments WHERE checkout_session_id=sid)<>5000 THEN RAISE EXCEPTION 'Partial refund totals/replay'; END IF;
     PERFORM public.record_vetrina_refund('pi_premium_test',25245);
     IF (SELECT count(*) FROM public.payments WHERE checkout_session_id=sid AND status='refunded')<>3 THEN RAISE EXCEPTION 'Full refund'; END IF;
-    PERFORM public.register_vetrina_checkout(sid||'_five',owner_id,ids,'90d',false,99600);
-    IF (SELECT sum(amount_cents) FROM public.payments WHERE checkout_session_id=sid||'_five')<>99600 THEN RAISE EXCEPTION 'Five discount'; END IF;
+    PERFORM public.register_vetrina_checkout(sid||'_five',owner_id,ids,'90d',false,95865);
+    IF (SELECT sum(amount_cents) FROM public.payments WHERE checkout_session_id=sid||'_five')<>95865 THEN RAISE EXCEPTION 'Five discount'; END IF;
     BEGIN
         PERFORM public.register_vetrina_checkout(sid||'_dup',owner_id,ARRAY[ids[1],ids[1]],'30d',false,17820);
         RAISE EXCEPTION 'duplicate listing accepted';

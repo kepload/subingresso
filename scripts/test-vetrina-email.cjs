@@ -57,7 +57,7 @@ const root=path.resolve(__dirname,'..');
   const event=mode==='bounced'?'bounced':'delivered',created_at=mode==='recent'?new Date().toISOString():new Date(Date.now()-4*86400000).toISOString();
   return new Response(JSON.stringify({has_more:false,data:[{id:'earlier',to:['fixture@example.invalid'],subject:'Le statistiche',created_at,last_event:event}]}));
  };
- const source=fs.readFileSync(path.join(root,'supabase/functions/vetrina-campaign/index.ts'),'utf8').replace(/^import .*\n/gm,'');
+ const source=fs.readFileSync(path.join(root,'supabase/functions/vetrina-campaign/index.ts'),'utf8').replace(/^import[^\r\n]*\r?\n/gm,'');
  new vm.Script(stripTypeScriptTypes(source)).runInNewContext({Deno:{env:{get:n=>n==='RESEND_API_KEY'?'fixture-provider':'fixture-internal'},serve:h=>handler=h},createClient:()=>db,vetrinaEmailPayload,vetrinaEmailCopy,fetch:mockFetch,Request,Response,AbortSignal,Date,Promise,JSON,Array,Error,console:{error(){}},setTimeout:fn=>{fn();return 0;}});
  const call=async(action='send',auth='fixture-internal',extra={})=>{const r=await handler(new Request('https://fixture.invalid/campaign',{method:'POST',headers:{Authorization:'Bearer '+auth,'Content-Type':'application/json'},body:JSON.stringify({action,user_id:'fixture-user',campaign:'fixture-campaign',variant:0,...extra})}));return {status:r.status,body:await r.json()};};
  assert.equal((await call('send','invalid')).status,401);assert.equal(posts,0);assert.equal(claimCount,0);
@@ -75,7 +75,7 @@ const root=path.resolve(__dirname,'..');
  for(const kind of ['weekly-seller-stats','weekly-buyer-digest']){
   let weeklyHandler,weeklyPosts=0,snapshots=0;
   const weeklyDb={auth:{admin:{getUserById:async()=>{throw Error('Suppressed weekly email attempted address lookup');}}},from(table){return {select(){return this;},eq(){return this;},in(){return this;},neq(){return this;},order(){return this;},gte(){return this;},async upsert(){snapshots++;return {error:null};},then(resolve){const data=table==='annunci'?(kind==='weekly-seller-stats'?[{id:'fixture-listing',user_id:'fixture-user',titolo:'Posteggio',visualizzazioni:10}]:Array.from({length:3},(_,i)=>({id:'listing-'+i,user_id:'other',titolo:'Posteggio'}))):table==='profiles'?[{id:'fixture-user',email_stats:true,email_digest:true,unsub_token:'fixture-token'}]:table==='alerts'?[{user_id:'fixture-user'}]:[];return Promise.resolve({data}).then(resolve);}};}};
-  const weeklySource=fs.readFileSync(path.join(root,'supabase/functions',kind,'index.ts'),'utf8').replace(/^import .*\n/gm,'');
+  const weeklySource=fs.readFileSync(path.join(root,'supabase/functions',kind,'index.ts'),'utf8').replace(/^import[^\r\n]*\r?\n/gm,'');
   new vm.Script(stripTypeScriptTypes(weeklySource)).runInNewContext({Deno:{env:{get:()=> 'fixture-internal'},serve:h=>weeklyHandler=h},createClient:()=>weeklyDb,recentVetrinaRecipients:async()=>new Set(['fixture-user']),fetch:async()=>{weeklyPosts++;return new Response('{}');},Request,Response,Date,Map,Set,Array,JSON,Intl,console});
   const response=await weeklyHandler(new Request('https://fixture.invalid/weekly',{method:'POST',headers:{Authorization:'Bearer fixture-internal'}}));
   assert.equal(response.status,200);assert.equal(weeklyPosts,0);if(kind==='weekly-seller-stats')assert.equal(snapshots,1,'weekly snapshot retained while promotional email replaces delivery');

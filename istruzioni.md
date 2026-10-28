@@ -454,7 +454,7 @@ L'utente non loggato compila tutti i 5 step SENZA vedere mai il banner "devi reg
 ## 💎 Sistema Vetrina a Pagamento
 
 - Fonte del listino: `js/vetrina-pricing.js` e controllo server. 10/30/90 giorni
-  a 49/99/249 euro; pacchetti di 2 annunci −10%, 3–4 −15%, 5–10 −20%, stessa
+  a 49/99/249 euro; da 1 a 10 annunci sconti 0/10/15/19/23/26/29/32/35/37%, stessa
   durata e pagamento unico. Solo nel wizard,90giorni −10% a224,10€ dal27ottobre;
   offerta singola non cumulabile, validata dal server sul nuovo annuncio.
   Contratto completo: `data/VETRINE_PREMIUM.md`; patch del 22 ottobre.

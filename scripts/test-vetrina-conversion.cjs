@@ -44,22 +44,30 @@ async function run(engine,name,width,height,base){
   assert.equal(await cta.evaluate(el=>getComputedStyle(el).backgroundImage),'none','legacy CSS must not override Premium');
   assert.equal(await cta.evaluate(el=>getComputedStyle(el).boxShadow),'none');
   assert.match(await page.locator('#premiumTotal').innerText(),/99,00/);assert.equal(await page.evaluate(()=>requests.length),0);
+  if(out)await page.screenshot({path:path.join(out,`${name}-${width}-singolo.png`)});
   assert.equal(await page.locator('#premiumListings strong img').count(),0,'user title escaped');
   assert.equal(await page.evaluate(()=>window.xss),undefined);
   const check=page.locator('#premiumListings input');
-  for(const [index,total,discount] of [[1,'178,20','10%'],[2,'252,45','15%'],[3,'336,60','15%'],[4,'396,00','20%']]){
-   await check.nth(index).check();assert.match(await page.locator('#premiumTotal').innerText(),new RegExp(total));assert((await page.locator('#premiumSaving').innerText()).includes(discount));
+  assert.equal(await page.locator('.premium-listing:visible').count(),1,'only the chosen listing is initially visible');
+  for(const [index,total,discount] of [[1,'178,20','10%'],[2,'252,45','15%'],[3,'320,76','19%'],[4,'381,15','23%']]){
+   assert.equal((await page.locator('#premiumNext').innerText()).includes(discount),true,'next discount matches new selection');
+   await page.locator('#premiumAdd').click();await check.nth(index).check();assert.match(await page.locator('#premiumTotal').innerText(),new RegExp(total));assert((await page.locator('#premiumSaving').innerText()).includes(discount));
+   assert.equal(await page.locator('.premium-listing:visible').count(),index+1,'picker closes after adding');
   }
   if(out)await page.screenshot({path:path.join(out,`${name}-${width}-pacchetto.png`)});
-  for(let i=5;i<10;i++)await check.nth(i).check();assert(await check.nth(10).isDisabled());
-  assert.match(await page.locator('#premiumTotal').innerText(),/792,00/);
-  await page.locator('#tier90d').click();assert.match(await page.locator('#premiumTotal').innerText(),/1.992,00/);
+  for(let i=5;i<10;i++){await page.locator('#premiumAdd').click();await check.nth(i).check();}assert(await check.nth(10).isDisabled());
+  assert.match(await page.locator('#premiumTotal').innerText(),/623,70/);assert(await page.locator('#premiumAdd').isHidden());
+  if(out)await page.screenshot({path:path.join(out,`${name}-${width}-dieci.png`)});
+  await check.nth(9).uncheck();assert.equal(await page.locator('#premiumNext').innerText(),'−37%');
+  await page.locator('#premiumAdd').click();await check.nth(9).check();
+  await page.locator('#tier10d').click();assert.match(await page.locator('#premiumTotal').innerText(),/308,70/);
+  await page.locator('#tier90d').click();assert.match(await page.locator('#premiumTotal').innerText(),/1.568,70/);
   const bounds=await cta.boundingBox();assert(bounds.y>=0&&bounds.y+bounds.height<=height,'checkout always visible');
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   assert.equal(await page.locator('.premium-duration strong').evaluateAll(elements=>elements.every(el=>{const range=document.createRange();range.selectNodeContents(el);const text=range.getBoundingClientRect(),box=el.getBoundingClientRect();return text.left>=box.left-1&&text.right<=box.right+1;})),true,'prices fit inside each duration option');
 
   await cta.click();await page.waitForFunction(()=>document.getElementById('vetrinaLoadingMsg').textContent.includes('Riprova'));
-  const request=await page.evaluate(()=>requests.at(-1));assert.equal(request.body.expected_amount_cents,199200);assert.equal(request.body.annuncio_ids.length,10);assert.equal(request.headers.apikey,'public-test-key');
+  const request=await page.evaluate(()=>requests.at(-1));assert.equal(request.body.expected_amount_cents,156870);assert.equal(request.body.annuncio_ids.length,10);assert.equal(request.headers.apikey,'public-test-key');
   await page.evaluate(()=>{delay=150;startCheckout();startCheckout();});await page.waitForTimeout(250);
   assert.equal(await page.evaluate(()=>requests.length),2,'one request on double click');
   await page.keyboard.press('Escape');assert.equal(await page.evaluate(()=>document.activeElement.id),'open');
