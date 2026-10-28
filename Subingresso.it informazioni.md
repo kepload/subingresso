@@ -1,5 +1,20 @@
 # Subingresso.it — informazioni e TO DO
 
+## Ripresa del ciclo province con riserva del35% — 28 ottobre 2026
+
+- Nuova richiesta: province in sequenza sul profilo corrente Codex Secondo;
+  al35% disponibile in una delle finestre, stop dei nuovi avvii e completamento
+  della provincia già partita. Stop persistente anche dopo rinnovo quota;
+  nessun cambio account, acquisto o riavvio automatico. Pavia resta riservata.
+- Ripresa da Lecce,124bozze da verificare e96comuni da chiudere nel checkpoint;
+  **35 province aperte**, incluse Pavia. Controller/stato/esiti privati in
+  `.local/lavori/province-loop-20261028`; controllo quota viaAPI ogni45secondi
+  e prima di ogni avvio. Parziali o quota illeggibile fermano nuovi avvii.
+- Sei scenari simulati passati, incluso35% durante il lavoro e rinnovo quota:
+  nessun worker interrotto o riavvio successivo. Backup remoto tag142204
+  verificato; consueti errori nel solo cleanup helper, nessuna correzione fuori
+  ambito. Nuovi materiali nel progetto, vecchi originali Lecce riusati.
+
 ## Articolo servizi delle fiere lombarde — 28 ottobre 2026
 
 - Priorità13 pubblicata: [Fiere in Lombardia: corrente, acqua e parcheggio, cosa è incluso?](https://subingresso.it/blog?post=fiere-lombardia-corrente-acqua-parcheggio), ID `8bb3d4f1-05ab-4058-a704-c852a795999d`. 500 parole, sei sezioni, tre casi Codevilla/Galliate/Erba. Erba dichiarata conclusa; acqua, potenza e sosta non garantite in assenza di indicazioni. Fonti organizzatori HTTP200 conservate.
