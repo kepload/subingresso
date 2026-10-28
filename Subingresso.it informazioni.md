@@ -1,5 +1,20 @@
 # Subingresso.it — informazioni e TO DO
 
+## Errore località nella pubblicazione — 28 ottobre 2026
+
+- Corretto online il rifiuto `23514: localita`: il selettore invia Trentino-Alto
+  Adige/Valle d'Aosta, mentre l'anagrafica usa i nomi bilingui. Il controllo
+  accetta entrambe le forme, conservando i vincoli su comune e provincia.
+- Riprodotto prima della correzione; prove candidate e live con ROLLBACK:
+  2.761 località, 13 inserimenti e quattro combinazioni errate rifiutate.
+  Identici hash di 152 annunci, 127 profili e 63.182 località; 21 pagamenti
+  conservati e permessi funzione invariati. Nessun annuncio inserito per l'utente.
+  Passati anche sintassi/validazione e regressione SQL generale con ROLLBACK.
+- Patch `PATCH_LISTING_LOCATION_REGIONS_20261028.sql`, contratto `data/LOCALITA.md`;
+  prove e ripristino privati `.local/verifiche/localita-pubblicazione-20261028`.
+  Backup remoto `backup/session-20261028-085558-correzione-localita-pubblicazione`
+  verificato; consueto errore successivo di cleanup del helper.
+
 ## Account interni esclusi dalle statistiche — 28 ottobre 2026
 
 - I due account del gestore sono configurati per UUID in tabella privata;

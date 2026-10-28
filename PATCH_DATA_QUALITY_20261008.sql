@@ -113,7 +113,12 @@ BEGIN
     IF a->>'tipo'='Mercato settimanale' AND (coalesce(a->>'giorni','') !~ '^(Lunedì|Martedì|Mercoledì|Giovedì|Venerdì|Sabato|Domenica)(, (Lunedì|Martedì|Mercoledì|Giovedì|Venerdì|Sabato|Domenica))*$'
       OR (SELECT count(*)<>count(DISTINCT d) FROM unnest(string_to_array(a->>'giorni',', ')) d)) THEN issues:=array_append(issues,'giorni'); END IF;
     IF a->>'tipo'='Fiera' AND NOT data_quality.valid_text(a->>'giorni',1,500,true) THEN issues:=array_append(issues,'giorni'); END IF;
-    IF NOT EXISTS(SELECT 1 FROM data_quality.locations l WHERE l.name=a->>'comune' AND l.regione=a->>'regione' AND l.provincia=a->>'provincia') THEN issues:=array_append(issues,'localita'); END IF;
+    IF NOT EXISTS(SELECT 1 FROM data_quality.locations l WHERE l.name=a->>'comune'
+      AND l.regione=CASE a->>'regione'
+        WHEN 'Trentino-Alto Adige' THEN 'Trentino-Alto Adige/Südtirol'
+        WHEN 'Valle d''Aosta' THEN 'Valle d''Aosta/Vallée d''Aoste'
+        ELSE a->>'regione' END
+      AND l.provincia=a->>'provincia') THEN issues:=array_append(issues,'localita'); END IF;
     e:=a->'dettagli_extra';
     IF e IS NOT NULL AND e<>'null'::jsonb AND jsonb_typeof(e)<>'object' THEN issues:=array_append(issues,'dettagli'); END IF;
     IF octet_length(coalesce(e::text,''))>50000 THEN issues:=array_append(issues,'dettagli'); END IF;

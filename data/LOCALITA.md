@@ -33,3 +33,11 @@ aliases?]`. Il loader recupera provincia e regione dal comune ufficiale.
 La selezione usa `geonames:ID`; nei dati dell'annuncio si conserva
 `Località (Comune)` nel campo `comune` esistente, per distinguere gli omonimi
 anche nella stessa provincia e recuperare bozze e annunci senza cambiare schema.
+
+Il selettore restituisce le regioni `Trentino-Alto Adige` e `Valle d'Aosta`.
+La validazione server degli annunci riconosce anche questi nomi brevi rispetto
+alle denominazioni bilingui dell'anagrafica privata; comune e provincia devono
+comunque corrispondere esattamente. Sono accettati anche i nomi bilingui storici,
+senza riscrivere dati o duplicare località. Patch riapplicabile
+`PATCH_LISTING_LOCATION_REGIONS_20261028.sql`; regressione server
+`node scripts/test-listing-location-regions.cjs` (transazione con ROLLBACK).
