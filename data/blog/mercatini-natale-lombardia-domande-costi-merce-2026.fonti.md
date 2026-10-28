@@ -44,3 +44,14 @@ Sei sezioni brevi, confronto tabellare scorrevole da tastiera, due slot ADS fier
 inline/closing del sistema attuale, riquadro Vetrine conservato. Nessun cambio
 a selettore, regole salvate o creatività; verificare contesto e rotazione.
 Copertina originale imagegen integrato, WebP1600×900, senza scritte e dichiarata IA.
+
+Pubblicazione verificata: ID `08d7cd43-284f-4333-a5d7-57850a7491f4`,
+126 articoli precedenti identici, 127 totali. Nessun trigger blog presente.
+Copertina online identica SHA256; SEO/NewsArticle/canonical, indice e sitemap
+passati; Chromium1440/768/320 e WebKit390, anche senza JavaScript. Due ADS
+fiere distinte e alternate, HEAD303 con regione Lombardia; nessuna statistica
+di prova scritta. Tabella verificata nei tre formati anche da tastiera, date
+intere e intestazioni associate. Prima fixture file:// senza CSS non valida,
+corretta usando la pagina con i suoi asset; nessuna modifica ai componenti.
+Backup remoto `backup/session-20261028-125808-articolo-mercatini-natale-lombardia`
+verificato su `86258ca`; cleanup helper con errori noti dopo push riuscito.

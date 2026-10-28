@@ -1,5 +1,11 @@
 # Subingresso.it — informazioni e TO DO
 
+## Articolo mercatini di Natale lombardi — 28 ottobre 2026
+
+- Priorità2 pubblicata: [Mercatini di Natale in Lombardia: costi e domande2026](https://subingresso.it/blog?post=mercatini-natale-lombardia-domande-costi-merce-2026), ID `08d7cd43-284f-4333-a5d7-57850a7491f4`. Sei sezioni, tre casi Molteno/Uggiate/Galliate, quote0–40€, merce, dotazioni e maltempo; fonti primarie conservate. Scadenza Galliate non pubblicata e incoerenza dichiarazione Uggiate segnalate, nessuna ammissione promessa.
+- Due ADS fiere distinte e alternate, destinazioni Lombardia verificate HEAD303; Vetrine conservate. Copertina originale imagegen WebP1600×900 senza scritte, dichiarataIA e identica onlineSHA256. Materiali `791f3db`, Vercel `ETirtm4LpZowKsweunP4komUbGTj` success; SEO/indice/sitemap, Chromium1440/768/320 e WebKit390, senzaJS passati. Tabella scorrevole da tastiera verificata;126articoli precedenti identici,127totali, tracking di prova intercettato.
+- Testo/fonti/prompt `data/blog/mercatini-natale-lombardia-domande-costi-merce-2026.*`; originali/helper/prove `.local/lavori/articoli/mercatini-natale-lombardia-domande-costi-merce-2026`. Piano segnato dopo verifica. Backup remoto tag125808 verificato; cleanuphelper con errori noti. Prime stampePDF fallite per encoding e prima fixture tabella file:// senzaCSS: corretti, prove ripetute passate; date tabella rese indivisibili. Gitleaks pulito, file estranei conservati.
+
 ## Modulo vendita più pulito da smartphone — 28 ottobre 2026
 
 - Spazio prima del footer mobile128px; tolti i testi indicati su località,
