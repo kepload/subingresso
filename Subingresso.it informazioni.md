@@ -1,5 +1,16 @@
 # Subingresso.it — informazioni e TO DO
 
+## Giorni Vetrina in primo piano — 28 ottobre 2026
+
+- Preferenza: giorni grandi e ben visibili; prezzi delle opzioni e totale a
+  peso normale400. Riepilogo durata più leggibile; solo tipografia del riquadro.
+- Pubblicato `5fb5989`, Vercel `DpsQ3HYwfTirrcPg2rFVKnZky9Pb` success:
+  HTML/CSS online identiciSHA256. Chromium1440/768/320 e WebKit390 passati
+  anche sui file pubblicati; due temi e24stati tipografici verificati.
+- Contratto `data/VETRINE_PREMIUM.md`; prove `.local/verifiche/vetrina-giorni-prezzi-20261028`.
+  Inspector0FAIL (copertura sfondo dialogo intenzionale), gitleaks pulito;
+  backup remoto tag213941 verificato, solo cleanuphelper noto interrotto.
+
 ## Vetrine progressive e selezione minimale — 28 ottobre 2026
 
 - Preferenza: aggiunte esplicite fino a10, sconto crescente a ogni posteggio,
