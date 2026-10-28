@@ -5,8 +5,9 @@ const fs = require('node:fs');
 const http = require('node:http');
 const path = require('node:path');
 const vm = require('node:vm');
-const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const playwright = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const root = path.resolve(__dirname, '..');
+const publishedHtml = process.env.FORM_TEST_HTML ? fs.readFileSync(process.env.FORM_TEST_HTML,'utf8') : null;
 const ownerA = '11111111-1111-1111-1111-111111111111';
 const ownerB = '22222222-2222-2222-2222-222222222222';
 const draftKey = owner => 'subingresso_draft_v2_' + owner;
@@ -68,6 +69,7 @@ const server = http.createServer((req, res) => {
     if (!path.extname(filename)) filename += '.html';
     const full = path.resolve(root, filename);
     if (!full.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
+    if (filename === 'vendi.html' && publishedHtml) { res.setHeader('Content-Type','text/html; charset=utf-8'); res.end(publishedHtml); return; }
     if (filename === 'js/auth.js') { res.setHeader('Content-Type', 'text/javascript'); res.end(authStub); return; }
     if (['js/page-view-tracker.js', 'js/ui-components.js'].includes(filename)) { res.setHeader('Content-Type', 'text/javascript'); res.end(''); return; }
     fs.readFile(full, (error, data) => {
@@ -80,19 +82,35 @@ const server = http.createServer((req, res) => {
 (async () => {
     await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
     const base = `http://127.0.0.1:${server.address().port}`;
-    const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE } : {}) });
+    const browser = await playwright[process.env.FORM_TEST_BROWSER || 'chromium'].launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE } : {}) });
     const errors = [];
     const inserts = [];
     let uploads = 0;
     let failUpload = false;
+    let locationReply = true;
+    let locationDelay = 0;
+    let locationCalls = 0;
+    let rejectLocationInsert = false;
     async function newPage(owner = null, mobile = false) {
-        const context = await browser.newContext({ viewport: mobile ? {width:390,height:844} : {width:1280,height:900}, reducedMotion: 'reduce' });
+        const context = await browser.newContext({ viewport: process.env.FORM_TEST_WIDTH ? {width:Number(process.env.FORM_TEST_WIDTH),height:900} : mobile ? {width:390,height:844} : {width:1280,height:900}, hasTouch:mobile, reducedMotion: 'reduce' });
         await context.route('https://cdn.jsdelivr.net/**', route => route.fulfill({ contentType:'text/javascript', body:clientStub }));
         await context.route('https://cdnjs.cloudflare.com/**', route => route.fulfill({ body:'' }));
         await context.route('https://fonts.googleapis.com/**', route => route.fulfill({ body:'' }));
-        await context.route('https://*.supabase.co/**', route => {
+        await context.route('https://*.supabase.co/**', async route => {
             const request = route.request();
             const url = request.url();
+            if (url.includes('/rpc/validate_listing_location')) {
+                locationCalls++;
+                const reply=locationReply, delay=locationDelay;
+                if(reply==='timeout') {
+                    await new Promise(resolve=>setTimeout(resolve,8500));
+                    return route.fulfill({contentType:'application/json',body:'true'}).catch(()=>{});
+                }
+                if(delay) await new Promise(resolve=>setTimeout(resolve,delay));
+                if(reply==='offline') return route.abort('failed');
+                if(reply==='http') return route.fulfill({status:503,contentType:'application/json',body:'{}'});
+                return route.fulfill({contentType:'application/json',body:JSON.stringify(reply)});
+            }
             if (url.includes('/storage/')) {
                 uploads++;
                 const failed = failUpload;
@@ -100,6 +118,7 @@ const server = http.createServer((req, res) => {
                 return route.fulfill({status:failed?500:200,contentType:'application/json',body:'{}'});
             }
             if (url.includes('/annunci') && request.method() === 'POST') {
+                if(rejectLocationInsert) { rejectLocationInsert=false; return route.fulfill({status:400,contentType:'application/json',body:JSON.stringify({code:'23514',message:'Controlla i dati dell’annuncio: localita'})}); }
                 inserts.push(request.postDataJSON());
                 return route.fulfill({contentType:'application/json',body:JSON.stringify({id:'test-listing-id'})});
             }
@@ -137,6 +156,86 @@ const server = http.createServer((req, res) => {
         await page.locator('#fTel').fill('3477654321');
     }
     try {
+        // Errori subito al passo 2, retry e risposte tardive senza perdere la bozza.
+        const early = await newPage(ownerA,true);
+        await early.locator('.tipo-card').first().click();
+        await early.evaluate(()=>_comunePicker.setValue('Trento','Trentino-Alto Adige'));
+        const earlyNext=early.locator('#locationNextBtn');
+        for(const reply of [false,'http',{},'offline','timeout']) {
+            locationReply=reply;
+            const calls=locationCalls;
+            await earlyNext.click();
+            await early.waitForFunction(()=>!_nextStepPending && !!document.getElementById('fComune-error'));
+            assert.equal(locationCalls,calls+1);
+            await active(early,2);
+            assert.equal(await early.locator('#fComune').inputValue(),'Trento');
+            assert.equal(await earlyNext.isEnabled(),true);
+            assert.match(await early.locator('#fComune-error').innerText(),reply===false?/Sceglila di nuovo/:/Premi di nuovo Avanti/);
+            assert.equal(await early.evaluate(key=>JSON.parse(localStorage.getItem(key)).comune,draftKey(ownerA)),'Trento');
+            assert.equal(uploads,0);assert.equal(inserts.length,0);
+        }
+        if(process.env.FORM_SCREENSHOT_DIR){
+            fs.mkdirSync(process.env.FORM_SCREENSHOT_DIR,{recursive:true});
+            await early.screenshot({path:path.join(process.env.FORM_SCREENSHOT_DIR,'localita-errore-passo2.png'),fullPage:true});
+        }
+        locationReply=true;locationDelay=300;
+        await earlyNext.click();
+        await early.waitForFunction(()=>_nextStepPending);
+        assert.equal(await earlyNext.isDisabled(),true);
+        await early.evaluate(()=>_comunePicker.setValue('Aosta',"Valle d'Aosta"));
+        await early.waitForFunction(()=>!_nextStepPending);
+        await active(early,2);
+        assert.equal(await early.locator('#fComune').inputValue(),'Aosta');
+        assert.equal(await early.locator('#fComune-error').count(),0);
+        const calls=locationCalls;
+        await early.evaluate(()=>{nextStep();nextStep();});
+        await active(early,3);
+        assert.equal(locationCalls,calls+1,'doppio clic: una sola verifica');
+        await early.locator('#step3').getByRole('button',{name:'Indietro'}).click();
+        await earlyNext.click();
+        await early.waitForFunction(()=>_nextStepPending);
+        await early.locator('#step2').getByRole('button',{name:'Indietro'}).click();
+        await early.waitForFunction(()=>!_nextStepPending);
+        await active(early,1);
+        locationDelay=0;
+        await early.context().close();
+
+        // Bozza già al passo 6: il controllo precede le foto e torna al campo.
+        const resumed=await newPage(ownerA,true);
+        await fillWizard(resumed);
+        const resumedPhotos=process.env.FORM_LOCATION_ONLY==='1'?0:1;
+        if(resumedPhotos){
+            await resumed.locator('#fileInput').setInputFiles(photos(1));
+            await resumed.waitForFunction(()=>_files.length===1 && !_photosUnsaved);
+            await resumed.evaluate(()=>_persistDraftPhotos());
+        }
+        await resumed.locator('#toStep6Btn').click();
+        await active(resumed,6);
+        await resumed.reload();
+        await active(resumed,6);
+        const oldUploads=uploads,oldInserts=inserts.length;
+        locationReply=false;
+        await resumed.locator('#submitBtn').click();
+        await active(resumed,2);
+        await resumed.locator('#fComune-error').waitFor();
+        assert.equal(uploads,oldUploads);assert.equal(inserts.length,oldInserts);
+        assert.equal(await resumed.evaluate(()=>_files.length),resumedPhotos);
+        assert.equal(await resumed.locator('#fPrezzo').inputValue(),'15000,5');
+        locationReply=true;
+        await next(resumed,2);
+        await resumed.evaluate(()=>goToStep(6));
+        rejectLocationInsert=true;
+        await resumed.locator('#submitBtn').click();
+        await active(resumed,2);
+        await resumed.locator('#fComune-error').waitFor();
+        assert.equal(await resumed.locator('#stepErrorMsg').isVisible(),false);
+        assert(!/23514|localita/.test(await resumed.locator('#fComune-error').innerText()));
+        assert.equal(await resumed.evaluate(()=>_files.length),resumedPhotos);
+        await resumed.context().close();
+        uploads=0;
+        console.log('OK: località al passo 2, errori rete/timeout, retry, doppio clic, risposte tardive e bozza ripresa al passo 6.');
+        if(process.env.FORM_LOCATION_ONLY==='1') return;
+
         const locationPage = await newPage(null, true);
         await locationPage.locator('.tipo-card').first().click();
         await locationPage.locator('#fComune').fill('Moniga');

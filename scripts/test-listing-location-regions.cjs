@@ -23,7 +23,7 @@ const payloads = samples.flatMap(row => [...new Set([row.regione, canonicalRegio
     comune: row.name, provincia: row.provincia, regione
 })));
 const literal = value => "'" + value.replaceAll("'", "''") + "'";
-const patch = fs.readFileSync(path.join(root, 'PATCH_LISTING_LOCATION_REGIONS_20261028.sql'), 'utf8')
+const patch = fs.readFileSync(path.join(root, 'PATCH_LISTING_LOCATION_PREFLIGHT_20261028.sql'), 'utf8')
     .replace(/^BEGIN;\r?$/m, '').replace(/^COMMIT;\r?$/m, '');
 const sql = `BEGIN;
 ${process.argv.includes('--candidate') ? patch : ''}
@@ -65,6 +65,22 @@ BEGIN
   END LOOP;
 END $$;
 RESET ROLE;
+SET LOCAL ROLE anon;
+DO $$ BEGIN
+  IF public.validate_listing_location('Trento','Trento','Trentino-Alto Adige') IS DISTINCT FROM true
+    OR public.validate_listing_location('Aosta','Valle d''Aosta/Vallée d''Aoste','Valle d''Aosta') IS DISTINCT FROM true
+    OR public.validate_listing_location('Trento','Trento','Veneto') IS DISTINCT FROM false
+    OR public.validate_listing_location(NULL,'Trento','Trentino-Alto Adige') IS DISTINCT FROM false
+    OR public.validate_listing_location('','Trento','Trentino-Alto Adige') IS DISTINCT FROM false
+    OR public.validate_listing_location(repeat('a',251),'Trento','Trentino-Alto Adige') IS DISTINCT FROM false THEN
+    RAISE EXCEPTION 'Verifica pubblica diversa dal controllo finale';
+  END IF;
+END $$;
+RESET ROLE;
+DO $$ BEGIN
+  IF has_table_privilege('anon','data_quality.locations','SELECT') OR has_function_privilege('anon','data_quality.listing_location_valid(text,text,text)','EXECUTE')
+    OR has_function_privilege('authenticated','data_quality.listing_location_valid(text,text,text)','EXECUTE') THEN RAISE EXCEPTION 'Anagrafica privata esposta'; END IF;
+END $$;
 SELECT jsonb_build_object('passed',true,'places_checked',(SELECT count(*) FROM qa_location_expected),'insertions_checked',(SELECT count(*) FROM qa_location_input),'invalid_combinations_rejected',4) result;
 ROLLBACK;`;
 (async () => {

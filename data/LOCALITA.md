@@ -41,3 +41,23 @@ comunque corrispondere esattamente. Sono accettati anche i nomi bilingui storici
 senza riscrivere dati o duplicare località. Patch riapplicabile
 `PATCH_LISTING_LOCATION_REGIONS_20261028.sql`; regressione server
 `node scripts/test-listing-location-regions.cjs` (transazione con ROLLBACK).
+
+Dal 28 ottobre 2026 il passo 2 conferma la scelta tramite la RPC pubblica di
+sola lettura `validate_listing_location(comune, provincia, regione)` (argomenti
+`p_comune`, `p_provincia`, `p_regione`). Restituisce solo un booleano e usa
+`data_quality.listing_location_valid`, la stessa regola privata chiamata dalla
+validazione finale. La tabella geografica resta privata. Non ci sono copie
+aggiuntive dell'anagrafica o valori accettati soltanto dal browser.
+
+Avanti attende la conferma; errori di rete/timeout restano al campo con retry e
+bozza conservata. Doppio invio, cambio località, account e navigazione non fanno
+avanzare con una risposta vecchia. Una bozza ripresa al passo 6 viene verificata
+prima degli upload; un rifiuto geografico finale torna al passo 2 con un messaggio
+leggibile. Patch `PATCH_LISTING_LOCATION_PREFLIGHT_20261028.sql`.
+
+Prima di pubblicare cambiamenti ad anagrafica, selettore o validazione eseguire
+`node scripts/audit-listing-locations.cjs`: legge tutte le voci attraverso il
+loader effettivo del selettore e confronta ogni combinazione con preflight e
+validazione completa del database, comprese le forme regionali storiche. Non
+inserisce annunci. Ultimo audit: 7.894 comuni + 55.288 località = 63.182,
+zero rifiuti; dati online semanticamente identici a quelli verificati.

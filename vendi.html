@@ -316,7 +316,7 @@
                         </div>
                     </div>
 
-                    <button type="button" onclick="nextStep()" class="w-full mt-8 bg-slate-900 text-white py-4 rounded-2xl font-black text-base hover:bg-blue-600 transition shadow-sm active:scale-[.98]">
+                    <button id="locationNextBtn" type="button" onclick="nextStep()" class="w-full mt-8 bg-slate-900 text-white py-4 rounded-2xl font-black text-base hover:bg-blue-600 transition shadow-sm active:scale-[.98]">
                         Avanti <i class="fas fa-arrow-right ml-2 text-sm"></i>
                     </button>
                 </div>
@@ -662,6 +662,7 @@
 
 // ── Step Management ───────────────────────────────────────
 let _step = 1;
+let _stepRevision = 0;
 const STEP_NAMES = ['', 'Tipo annuncio', 'Posizione', 'Il posteggio', 'Prezzo', 'Descrizione e foto', 'Pubblica'];
 const _TOTAL_STEPS = 6;
 const _DRAFT_PREFIX = 'subingresso_draft_v2_';
@@ -736,6 +737,7 @@ window._selectPubChoice = _selectPubChoice;
 window._goToPublishStep = _goToPublishStep;
 
 function goToStep(n, scroll = true) {
+    _stepRevision++;
     n = Math.max(1, Math.min(_TOTAL_STEPS, Math.floor(Number(n)) || 1));
     document.getElementById('step' + _step).classList.remove('active');
     _step = n;
@@ -1020,9 +1022,59 @@ async function _syncDraftOwner() {
     await _initDrafts();
 }
 
-function nextStep() {
+let _nextStepPending = false;
+const _locationKey = location => JSON.stringify(location);
+
+// Stessa regola privata usata dal trigger finale, accessibile anche prima del login.
+async function _confirmListingLocation(location) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 8000);
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/validate_listing_location`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` },
+            body: JSON.stringify({ p_comune: location.comune, p_provincia: location.provincia, p_regione: location.regione }),
+            signal: controller.signal
+        });
+        if (!response.ok) throw new Error('Verifica località non disponibile');
+        const valid = await response.json();
+        if (typeof valid !== 'boolean') throw new Error('Risposta località non valida');
+        return valid;
+    } finally { clearTimeout(timer); }
+}
+
+const _locationUnavailable = 'Non riusciamo a confermare questa località. Sceglila di nuovo dall’elenco; gli altri campi restano compilati.';
+const _locationNetworkError = 'Verifica della località non riuscita. Premi di nuovo Avanti: i campi restano compilati.';
+
+async function nextStep() {
+    if (_nextStepPending) return;
     if (!_validateStep(_step)) return;
-    goToStep(_step + 1);
+    const step = _step;
+    if (step !== 2) { goToStep(step + 1); return; }
+    const location = _comunePicker.getValue();
+    const owner = _draftOwner;
+    const navigation = _stepRevision;
+    const button = document.getElementById('locationNextBtn');
+    const original = button.innerHTML;
+    _nextStepPending = true;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    button.textContent = 'Verifica località…';
+    _saveDraft();
+    let valid = false;
+    let message = _locationUnavailable;
+    try { valid = await _confirmListingLocation(location); }
+    catch (_) { message = _locationNetworkError; }
+    finally {
+        _nextStepPending = false;
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        button.innerHTML = original;
+    }
+    // Un esito tardivo non sposta un altro passo/account o una nuova selezione.
+    if (_stepRevision !== navigation || _step !== step || _draftOwner !== owner || _currentDraftOwner() !== owner || _locationKey(_comunePicker.getValue()) !== _locationKey(location)) return;
+    if (!valid) { _fieldError('fComune', message); return; }
+    goToStep(step + 1);
 }
 
 function prevStep() {
@@ -1835,8 +1887,26 @@ async function submitAnnuncio() {
         return;
     }
 
-    _saveDraft();
+    // Copre anche le bozze riprese direttamente al passo 6, prima delle foto.
     document.getElementById('annuncioForm').inert = true;
+    const checkedLocation = _comunePicker.getValue();
+    const checkedOwner = _draftOwner;
+    let locationValid = false;
+    let locationMessage = _locationUnavailable;
+    try { locationValid = await _confirmListingLocation(checkedLocation); }
+    catch (_) { locationMessage = _locationNetworkError; }
+    if (checkedOwner !== _draftOwner || checkedOwner !== _currentDraftOwner() || _locationKey(checkedLocation) !== _locationKey(_comunePicker.getValue())) {
+        _resetBtn();
+        return;
+    }
+    if (!locationValid) {
+        goToStep(2, false);
+        _resetBtn();
+        _fieldError('fComune', locationMessage);
+        return;
+    }
+
+    _saveDraft();
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Pubblicazione in corso...';
 
     // Anti-spam
@@ -2061,6 +2131,9 @@ async function submitAnnuncio() {
         if (err?.code === 'PHOTO_UPLOAD') {
             goToStep(5);
             _err(err.message);
+        } else if (err?.code === '23514' && /\blocalita\b/i.test(detail)) {
+            goToStep(2);
+            _fieldError('fComune', _locationUnavailable);
         } else if (detail) {
             _err(`Errore${code}: ${detail}`);
         } else {

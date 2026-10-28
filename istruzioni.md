@@ -638,6 +638,7 @@ Difese invisibili a UX umana, bloccano bot dumb sul flusso `register-bypass`:
   - Anti-spam NaN: `parseInt(localStorage.getItem(lastPostKey)) || 0` (string coercion bug).
   - Rimozione foto: `WeakMap` `_fileMap` mappa div→File. Anche la modifica annuncio usa ora WeakMap per evitare errori con l'ordine asincrono dei FileReader.
 - **Verifica form**: `scripts/test-vendi.cjs` controlla sintassi e flussi browser con backend simulato, senza creare annunci reali. Richiede Playwright; `PLAYWRIGHT_MODULE` e `PLAYWRIGHT_CHROMIUM_EXECUTABLE` permettono di riusare un'installazione locale. Copre mercato/fiera, mobile, titoli, bozze/foto/contatti, isolamento account, migrazione v1, errori memoria/upload e retry, pubblicazione/reset e più foto in modifica.
+- **Località, verifica anticipata (28 ottobre 2026)**: Avanti al passo 2 chiama la RPC anonima di sola lettura `validate_listing_location`, con la stessa regola privata del controllo finale. Risposte tardive ignorate dopo cambio di selezione/account/passo; errori rete e timeout restano sul campo e consentono retry. Bozze già al passo 6 verificate prima degli upload; un rifiuto geografico finale torna al passo 2. Anagrafica privata e dati storici invariati. Contratto e audit completo di tutte le 63.182 voci in `data/LOCALITA.md`; regressioni `test-listing-location-regions.cjs`, `audit-listing-locations.cjs` e casi dedicati in `test-vendi.cjs`.
 
 ## 💶 Prezzi Affitto — Annuali
 

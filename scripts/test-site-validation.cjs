@@ -93,6 +93,7 @@ const server = http.createServer((req, res) => {
         await context.route('https://*.supabase.co/**', route => {
             const request = route.request();
             const url = request.url();
+            if (url.includes('/rpc/validate_listing_location')) return route.fulfill({contentType:'application/json',body:'true'});
             if (url.includes('/storage/')) {
                 uploads++;
                 const failed = failUpload;
