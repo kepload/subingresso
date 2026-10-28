@@ -5,10 +5,11 @@ const root=path.resolve(__dirname,'..'),catalog=require('../lib/personal-ads.cjs
 const published=process.env.PERSONAL_ADS_PUBLISHED_DIR||root;
 const out=process.env.PERSONAL_ADS_TEST_OUT||path.join(root,'.taste-skill/personal-ads-qa');fs.mkdirSync(out,{recursive:true});
 const uid='00000000-0000-4000-8000-000000000001',clickId='00000000-0000-4000-8000-000000000010';
-const baseline={ads:catalog.ads,formats:catalog.formats,stats:{updated_at:'2026-10-24T17:30:00Z',started_at:null,rows:[]}};
+const fixturePeriods=process.env.PERSONAL_ADS_PERIOD_SNAPSHOTS?JSON.parse(fs.readFileSync(process.env.PERSONAL_ADS_PERIOD_SNAPSHOTS,'utf8')):{};
+const baseline=fixturePeriods[30]||{ads:catalog.ads,formats:catalog.formats,stats:{updated_at:'2026-10-24T17:30:00Z',started_at:null,rows:[]}};
 async function apiTests(){
  const original=global.fetch,calls=[];let mode='normal';
- global.fetch=async(url,options)=>{calls.push({url,args:JSON.parse(options.body),auth:options.headers.Authorization});if(mode==='network')throw Error('offline');if(mode==='denied')return new Response(JSON.stringify({code:'42501'}),{status:403});return new Response(JSON.stringify(url.endsWith('admin_personal_ads')?baseline.stats:clickId));};
+ global.fetch=async(url,options)=>{const args=JSON.parse(options.body);calls.push({url,args,auth:options.headers.Authorization});if(mode==='network')throw Error('offline');if(mode==='denied')return new Response(JSON.stringify({code:'42501'}),{status:403});if(url.endsWith('admin_blog_ad_readership')){if(mode==='blog-network')throw Error('offline');return new Response(JSON.stringify({period_days:args.p_days,until:args.p_until,total_visits:mode==='blog-mismatch'?6:5,rows:[{article_slug:'articolo-a',visits:5}]}));}return new Response(JSON.stringify(url.endsWith('admin_personal_ads')?baseline.stats:clickId));};
  async function run(query={},headers={},method='GET'){const result={code:200,headers:{},setHeader(k,v){this.headers[k]=v;},status(c){this.code=c;return this;},json(body){this.body=body;return this;},end(){return this;}};await handler({query,headers,method},result);return result;}
  try{
   let r=await run();assert.equal(r.code,401);assert(!r.body.ads);assert.equal(calls.length,0);
@@ -18,6 +19,9 @@ async function apiTests(){
   const rewrite=JSON.parse(fs.readFileSync(path.join(root,'vercel.json'),'utf8')).rewrites.find(row=>row.source==='/api/personal-ads');assert.equal(rewrite.destination,'/api/blog?personal_ads=1');
   mode='denied';r=await run({},{authorization:'Bearer user-token'});assert.equal(r.code,403);assert(!r.body.ads);
   mode='normal';r=await run({days:'90'},{authorization:'Bearer admin-token'});assert.equal(r.code,200);assert.equal(r.body.ads.length,20);assert.equal(r.body.formats.length,8);assert.equal(calls.at(-1).args.p_days,90);assert.equal(r.headers['Cache-Control'],'private, no-store');
+  assert.equal(r.body.blog_stats.total_visits,5);assert.equal(calls.at(-1).args.p_until,r.body.stats.updated_at);assert.equal(calls.at(-1).auth,'Bearer admin-token');
+  mode='blog-network';r=await run({days:'30'},{authorization:'Bearer admin-token'});assert.equal(r.code,200);assert.equal(r.body.blog_stats,null);assert(r.body.stats);mode='normal';
+  mode='blog-mismatch';r=await run({days:'30'},{authorization:'Bearer admin-token'});assert.equal(r.code,200);assert.equal(r.body.blog_stats,null);mode='normal';
   r=await run({action:'click',ad:'bad',format:'300x250'});assert.equal(r.code,404);
   const q={action:'click',ad:'fiere-01',format:'300x250',placement:'articolo_centro',region:'Lombardia',sid:'synthetic-session'};
   r=await run(q);let location=new URL(r.headers.Location);assert.equal(r.code,303);assert.equal(location.pathname,'/fiere');assert.equal(location.searchParams.get('regione'),'Lombardia');assert.equal(location.searchParams.get('pa'),clickId);assert.equal(calls.at(-1).args.p_session,'synthetic-session');
@@ -26,7 +30,7 @@ async function apiTests(){
  }finally{global.fetch=original;}
 }
 const fixtureScript=`window.qaMode='normal';window.qaUser={id:'${uid}'};window.qaCallbacks=[];window.qaClipboard='';window.qaClaims=[];window.qaImpressions=[];window.qaBaseline=${JSON.stringify(baseline)};window.qaDelay=0;window.qaAdmin=false;
-window.qaBaseline=JSON.parse(sessionStorage.getItem('qa-baseline')||'null')||window.qaBaseline;window.qaPeriodBaselines=JSON.parse(sessionStorage.getItem('qa-periods')||'{}');window.qaStatsReads=0;
+window.qaBaseline=JSON.parse(sessionStorage.getItem('qa-baseline')||'null')||window.qaBaseline;window.qaPeriodBaselines=JSON.parse(sessionStorage.getItem('qa-periods')||'null')||${JSON.stringify(fixturePeriods)};window.qaStatsReads=0;
 Object.defineProperty(navigator,'clipboard',{value:{writeText:async value=>{window.qaClipboard=value;}}});
 window._supabase={auth:{getUser:async()=>({data:{user:window.qaUser}}),getSession:async()=>({data:{session:window.qaUser?{user:window.qaUser,access_token:window.qaUser.id}:null}}),onAuthStateChange:fn=>{window.qaCallbacks.push(fn);return{data:{subscription:{unsubscribe(){}}}};}},from:()=>({select:()=>({eq:()=>({single:async()=>({data:{is_admin:window.qaAdmin,is_demo:false}})})})}),rpc:async(name,args)=>{if(name==='personal_ad_claim')qaClaims.push(args);else qaImpressions.push(args);return{data:name==='personal_ad_claim'?true:'${clickId}'}}};
 const qaFetch=window.fetch.bind(window);window.fetch=async(url,options)=>{if(String(url).startsWith('/api/personal-ads?days=')){++qaStatsReads;const days=new URL(url,location.origin).searchParams.get('days'),wait=window.qaDelay,result=structuredClone(window.qaPeriodBaselines[days]||window.qaBaseline),mode=sessionStorage.getItem('qa-failed-period')===days?'offline':window.qaMode;await new Promise(r=>setTimeout(r,wait));return{ok:mode==='normal',status:mode==='denied'?403:mode==='normal'?200:503,json:async()=>mode==='normal'?result:{error:mode==='denied'?'Questa raccolta è riservata all’amministratore.':'Statistiche non disponibili. Riprova.'}};}if(String(url).startsWith('/api/personal-ads?action=listing-stats'))return{ok:true,status:200,json:async()=>({stats:{listings:[],rows:[]},posts:[]})};return qaFetch(url,options);};window.openAuthModal=()=>{window.qaLoginOpened=true;};`;

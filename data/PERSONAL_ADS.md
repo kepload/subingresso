@@ -4,6 +4,41 @@ Dal 26 ottobre la raccolta comprende anche una sezione distinta per gli
 spazi Vetrina del blog, con anteprima, clic/impressioni e CSV per articolo.
 Contratto `BLOG_VETRINE_ADS.md`; non sommare queste serie ai banner propri.
 
+## Visite agli articoli e impressioni — 28 ottobre 2026
+
+Il riepilogo confronta due serie giornaliere UTC sulla stessa scala, senza
+sommarle: visite agli articoli (tratteggio neutro) e impressioni ADS (blu).
+Due totali distinti, clic ADS e clic con risultato; criteri di misura in un
+blocco apribile. Le visite sono aperture registrate dal tracker esistente,
+una per articolo/sessione del browser: non persone né letture complete.
+Indice del blog e altre pagine esclusi. Nessun nuovo tracker o identificativo.
+
+`admin_blog_ad_readership(p_days,p_until)` è una RPC di sola lettura,
+riservata agli admin. Usa `data_quality.analytics_page_views` per conservare
+le esclusioni degli account interni; restituisce solo aggregati per articolo
+e giorno. La API la legge dopo `admin_personal_ads`, usando il suo `updated_at`
+come limite superiore: stessa finestra mobile di 7/30/90/365 giorni di 24 ore.
+Se fallisce, le visite sono assenti (`—`), le ADS restano disponibili. Zero
+indica nessuna visita registrata. Le serie non disegnano zeri prima del primo
+dato disponibile; eventuali impressioni senza data restano solo nel totale.
+Fotografie dei periodi in memoria all'apertura, senza nuove letture ai filtri;
+logout/cambio account eliminano anche visite, tabella e possibilità di export.
+
+Nei dettagli, una riga per articolo somma tutti i suoi banner senza ripetere
+le visite. Sono inclusi articoli con visite e zero impressioni; gli eventi
+senza articolo mantengono visite assenti. Il filtro articolo vale sulla
+tabella e sull'export CSV, senza cambiare il riepilogo generale. Prime sei
+righe e comando per tutte; sul telefono diventano righe con etichette.
+Anche la scheda della singola ADS affianca le visite dell'intero articolo,
+esplicitamente non attribuite al banner. Le Vetrine restano separate.
+Tempo visibile e scorrimento già raccolti rimangono consultabili in
+Dashboard → Utilizzo del sito, senza essere chiamati letture complete.
+
+Migrazione `PATCH_BLOG_AD_READERSHIP_20261028.sql`; prove SQL in ROLLBACK
+`scripts/test-blog-ad-readership-db.cjs` e prove browser/API nei due test
+`test-personal-ads-insights.cjs` / `test-personal-ads.cjs`. Nessuna modifica
+agli eventi, alle dedupliche, alle conversioni o allo storico esistente.
+
 ## Interfaccia del 27 ottobre 2026
 
 Prima il grafico giornaliero delle visualizzazioni delle sole ADS proprie,

@@ -10,7 +10,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  <link rel="stylesheet" href="/css/personal-ads.css?v=1">
  <link rel="stylesheet" href="/css/personal-ads-gallery.css?v=3">
- <link rel="stylesheet" href="/css/personal-ads-results.css?v=3">
+ <link rel="stylesheet" href="/css/personal-ads-results.css?v=4">
  <link rel="stylesheet" href="/css/contextual-ads-admin.css?v=1">
  <link rel="stylesheet" href="/css/blog-listing-ads-admin.css?v=2">
 </head>
@@ -20,15 +20,25 @@
  <main id="paApp" hidden>
   <div class="pa-title-row"><div><h1>Le mie ADS</h1><p>L’andamento dei tuoi banner, a colpo d’occhio.</p></div><div class="pa-period"><label for="paDays">Periodo</label><select id="paDays"><option value="7">7 giorni</option><option value="30" selected>30 giorni</option><option value="90">90 giorni</option><option value="365">365 giorni</option></select></div></div>
   <section class="pa-overview" aria-labelledby="paOverviewTitle">
-   <div class="pa-overview-main"><div class="pa-overview-heading"><div><h2 id="paOverviewTitle">Visualizzazioni delle ADS</h2><p id="paOverviewRange" class="pa-muted"></p></div><strong id="paOverviewViews" class="pa-overview-value">—</strong></div>
+   <div class="pa-overview-main"><div class="pa-overview-heading"><div><h2 id="paOverviewTitle">Visite agli articoli e ADS</h2><p id="paOverviewRange" class="pa-muted"></p></div></div>
+    <dl class="pa-overview-counts"><div><dt class="pa-series-visits">Visite agli articoli</dt><dd id="paOverviewVisits">—</dd></div><div><dt class="pa-series-ads">Impressioni ADS</dt><dd id="paOverviewViews">—</dd></div></dl>
     <div id="paViewsChart" class="pa-views-chart"></div><p id="paChartNote" class="pa-muted"></p>
+    <p id="paBlogStatus" class="pa-muted" role="status"></p>
    </div>
    <div class="pa-overview-side"><dl id="paOverviewMetrics"></dl><p id="paOverviewFinding" class="pa-muted" role="status"></p></div>
   </section>
+  <details class="pa-measure-help"><summary>Come vengono contati questi numeri</summary>
+   <p><strong>Visite agli articoli:</strong> aperture registrate, una per articolo e sessione del browser. Ricaricare lo stesso articolo nella stessa sessione non aggiunge visite. Sono esclusi l’indice del blog e le altre pagine del sito. Non sono persone uniche né letture complete.</p>
+   <p><strong>Impressioni ADS:</strong> almeno metà banner sullo schermo per un secondo continuo, con scheda attiva. Una volta per sessione, articolo, ADS, versione, formato e posizione. Una visita può generare zero, una o più impressioni: i due conteggi non si sommano. Il totale ADS comprende anche eventuali eventi senza articolo registrato, separati nei dettagli.</p>
+   <p><strong>Clic e risultati:</strong> clic deduplicati; il CTR usa solo quelli preceduti da un’impressione della stessa ADS, articolo, versione, formato e posizione nello stesso periodo. Un clic con risultato ha portato entro 7 giorni a un annuncio inviato, un recapito consultato o una fiera salvata, secondo l’obiettivo. Non certifica una vendita.</p>
+   <p>Admin, demo, i due account interni configurati e le automazioni riconosciute sono esclusi secondo le regole di raccolta. Un browser interno nuovo deve essere riconosciuto tramite accesso. Blocchi del browser, JavaScript disattivato o errori di rete possono impedire la rilevazione: nessuna visita mancante viene stimata. «—» indica un dato non disponibile; zero indica nessun evento registrato.</p>
+   <p>Tempo con scheda visibile e scorrimento sono consultabili in <a href="/dashboard#siteAnalyticsPanel">Dashboard → Utilizzo del sito</a>: aiutano a osservare la consultazione, senza provare che il testo sia stato letto tutto.</p>
+  </details>
   <details id="paResultsPanel" class="pa-stats-disclosure"><summary>Statistiche dettagliate<span class="pa-disclosure-hint">Confronti, articoli e dati completi</span></summary>
   <section class="pa-results" aria-labelledby="paResultsTitle">
    <div class="pa-section-head"><h2 id="paResultsTitle">I numeri delle tue ADS</h2></div>
    <label class="pa-article-scope" for="paArticleFilter">Articolo dei risultati<select id="paArticleFilter"><option value="all">Tutti gli articoli e le altre provenienze</option></select></label>
+   <section class="pa-blog-comparison" aria-labelledby="paBlogTitle"><div class="pa-comparison-head"><h3 id="paBlogTitle">Visite e ADS per articolo</h3><button id="paBlogExport" type="button" disabled>Esporta articoli CSV</button></div><p id="paBlogCoverage" class="pa-muted"></p><div class="pa-table-scroll"><table><caption>Visite all’articolo e risultati delle ADS proprie, nello stesso periodo</caption><thead><tr><th>Articolo</th><th>Visite</th><th>Impressioni ADS</th><th>Clic ADS</th></tr></thead><tbody id="paBlogRows"></tbody></table></div><button id="paBlogShowAll" type="button" hidden>Mostra tutti gli articoli</button><p class="pa-muted">Ogni articolo compare una volta. Le visite riguardano l’articolo intero; impressioni e clic sommano i suoi banner propri. Le Vetrine hanno statistiche separate.</p></section>
    <dl id="paTotals" class="pa-metrics"></dl>
    <p id="paFinding" class="pa-muted"></p>
    <div class="pa-comparison-head"><h3 id="paComparisonTitle">Risultati per annuncio</h3><button id="paSummaryExport" type="button">Esporta confronto CSV</button></div>
@@ -118,7 +128,7 @@
  <script src="/js/contextual-ads.js?v=4"></script>
  <script src="/js/contextual-ads-admin.js?v=2"></script>
  <script src="/js/blog-listing-ads-admin.js?v=2"></script>
- <script src="/js/personal-ads-insights.js?v=2"></script>
- <script src="/js/personal-ads-admin.js?v=11"></script>
+ <script src="/js/personal-ads-insights.js?v=3"></script>
+ <script src="/js/personal-ads-admin.js?v=12"></script>
 </body>
 </html>
