@@ -2659,6 +2659,366 @@
       "sourceUrl": "https://www.eco-med.it/catania-2030/regolamento-generale-2026.pdf",
       "checkedAt": "2026-10-29",
       "period": "2026"
+    },
+    "sicilia-antillo-sagra-della-castagna": {
+      "kind": "partial",
+      "label": "noleggio 30/50 € + suolo",
+      "details": "Avviso 2026: noleggio stand 30 € per residenti, 50 € per non residenti; occupazione suolo 1,20 €/m² al giorno, separata. IVA, dotazioni e ulteriori oneri non precisati; nessun totale calcolato su metrature non documentate. Termine di domanda 9 ottobre, trascorso; variazione delle date comunali al 31 ottobre–1° novembre.",
+      "sourceUrl": "https://comune.antillo.me.it/wp-content/uploads/2026/09/Avviso-Sagra-Castagna-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-cesaro-sagra-del-suino-nero-e-del-fungo-porcino-dei-nebrodi": {
+      "kind": "partial",
+      "label": "100–1.000 € secondo categoria + suolo",
+      "details": "Linee guida Cesarò 2026: operatori generici 1 stand 250 €, 2 stand 750 € complessivi; ristoratori 1 o 2 stand 250 € ciascuno, 3 stand 1.000 € complessivi. Agricoltori locali nelle condizioni previste 100 €; no profit e antichi mestieri 1 stand gratuito. Separato canone 3 €/m² per weekend. 3 kW per stand, extra da concordare; acqua al punto comunale e reflui a carico operatore. IVA e oneri ulteriori non precisati. Le quantità riservate non attestano disponibilità attuale.",
+      "sourceUrl": "https://www.comune.cesaro.me.it/wp-content/uploads/2026/10/Linee-guida-per-lorganizzazione-e-la-partecipazione-degli-espositori.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-fiumedinisi-capricci-d-autunno": {
+      "kind": "conditional",
+      "label": "100 €; altra quota discordante",
+      "details": "Avviso 2026: 100 € per aziende/operatori dell’ingegno che vendono esclusivamente artigianato senza stand. Per somministrazione, prodotti agricoli/alimentari o artigianato con stand il PDF scrive 500,00 € in cifre ma «trecento/00» in lettere: importo da chiarire, non una tariffa certa di 300 o 500 €. IVA, energia e altri servizi non precisati. Pagamento e domanda entro il 20 ottobre, già trascorso.",
+      "sourceUrl": "https://comune.fiumedinisi.me.it/wp-content/uploads/2026/10/avviso-capricci-dautunno-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-motta-camastra-festa-della-noce": {
+      "kind": "fee",
+      "label": "stand 300 € IVA compresa",
+      "details": "Stand allestito 2026: 300 € IVA compresa per ciascuno stand e per entrambe le coppie di giornate 3–4 e 10–11 ottobre. Alternative distinte: suolo pubblico 18 €/m² per l’intera manifestazione; Motta in Vetrina in spazi privati 20 € per produttori agricoli con tessera comunale e 60 € per altri servizi/spazi espositivi. Per queste alternative IVA non precisata; energia e altre dotazioni non quantificate negli avvisi. Non sommare opzioni alternative e non presumere servizi ulteriori.",
+      "sourceUrl": "https://comune.mottacamastra.me.it/wp-content/uploads/2026/09/albopretorio_000018314_001_scan.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-messinacon": {
+      "kind": "partial",
+      "label": "pass aggiuntivo 15 €, stand non quotato",
+      "details": "MessinaCon 2026: due pass inclusi nelle tipologie di stand, ogni ulteriore pass 15 €. È un costo accessorio, non il prezzo dello stand. Spazi 2×2 e 3×3 nudi o preallestiti; quota, IVA, dotazioni e servizi dello stand da contratto, non quantificati nella pagina. Nessun preventivo richiesto o disponibilità garantita.",
+      "sourceUrl": "https://www.messinacon.it/standisti/",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-taormina-taormina-food-expo": {
+      "kind": "partial",
+      "label": "iscrizione 400/800 € + IVA",
+      "details": "Articolo 4 regolamento 2026: quota d’iscrizione 400 € oltre IVA per imprese e 800 € oltre IVA per altri soggetti. Form aziende indica 488 € IVA compresa. Inclusi catalogo online, cartello, tessere, assistenza e sorveglianza generale; testo richiama servizi nel costo al m² senza quantificarlo, elettricità 220 V fino a 1,5 kW e quadro gratuito per aree preallestite, pulizia corridoi ed estintori. Spazio, dotazioni ed eventuali servizi ulteriori da confermare nel contratto: non è documentato un totale universale del banco.",
+      "sourceUrl": "https://taorminafoodexpo.it/regulation",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-san-fratello-martin-fest": {
+      "kind": "fee",
+      "label": "200 € per stand 3×3",
+      "details": "Avviso Martin Fest 2026: contributo 200 € per ciascuno stand, con stand 3×3 m, allaccio elettrico standard 3 kW, tavoli e panche nell’area assegnata. IVA e ulteriori oneri non precisati; esigenze tecniche aggiuntive da concordare. Domanda e ricevuta entro il 16 ottobre, termine trascorso. Birra vietata; 15 € della masterclass sono un biglietto pubblico separato.",
+      "sourceUrl": "https://www.prolocosanfratello.it/nuovo/wp-content/uploads/2026/10/Avviso-Attivita-Commerciali-Martin-Fest-2026-Prot.-000097-2026-U-del-22-09-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-san-valentino": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-festa-della-donna": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-festa-del-papa": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-festa-delle-palme": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-giovedi-santo-sepolcri": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-venerdi-santo-barette": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-della-mercede": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-pasqua": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-san-francesco-di-paola": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-san-silvano-e-madonna-di-trapani": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-festa-della-mamma": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-padre-annibale-di-francia": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-santa-rita": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-festa-della-repubblica": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-della-lettera-in-centro": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-corpus-domini": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-sant-antonio-di-padova": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-san-giovanni-a-castanea": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-santi-pietro-e-paolo-a-giampilieri-marina": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-santi-pietro-e-paolo-a-briga-marina": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-delle-grazie-a-giampilieri-superiore": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-santa-domenica-a-tremestieri": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-dei-miracoli": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-di-dinnammare": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-san-nicola-a-ganzirri": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-ferragosto-in-viale-giostra": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-assunta-in-centro": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-della-lettera-a-torre-faro": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-assunta-a-faro-superiore": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-del-buon-viaggio": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-madonna-delle-grazie-a-grotte-pace": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-per-commemorazione-dei-defunti": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-festa-di-primavera-posteggi-stagionali": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-sapori-d-estate-posteggi-stagionali": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-passeggiata-a-mare-posteggi-stagionali": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-sapori-d-autunno-posteggi-stagionali": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-tradizioni-natalizie-posteggi-stagionali": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-messina-posteggi-del-carnevale-a-villa-mazzini": {
+      "kind": "partial",
+      "label": "15 € + CUP e TARI",
+      "details": "Avviso comunale 2026: 15 € di istruttoria per ciascun evento; CUP commisurato ad area e durata, esempio 10 €/giorno per 2×8 m (16 m²), con minimo 10 € per richiesta di un solo giorno; TARI 1,50 €/giorno. Non è un prezzo comprensivo di gazebo, elettricità, acqua o altri servizi; IVA non precisata. Quietanze richieste nei termini, nessun totale calcolato senza area e giorni autorizzati.",
+      "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
     }
   }
 }
