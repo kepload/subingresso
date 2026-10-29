@@ -1,5 +1,23 @@
 # Subingresso.it — informazioni e TO DO
 
+## Sassari — ricerca pubblicata e verificata, 29 ottobre 2026
+
+- Conclusa la ricerca attuale con limiti: **82 schede in37comuni**, ricognizione
+  nominale dei **66 comuni attuali**, 81 aggiunte e ID Uri conservato; Gallura
+  distinta dai vecchi confini di Sassari. **12 sintesi di costo** documentate.
+  Audit/esclusioni in `data/fiere-sassari.json` e `data/FIERE.md`; dossier e prove
+  `.local/ricerche/fiere-sassari-20261028`, checkpoint aggiornato per la ripresa.
+- Pubblicato `57ed794`, Vercel `3mLmJbqDuYfUMAFckeVNJPTNEtxU` riuscito.
+  Quattro asset identici online; tutte82pagine HTTP200 con canonical e contenuti.
+  Chromium1440/320 e WebKit390 locali/live: elenco/mappa,82dettagli,12costi,
+  sei pagine senzaJS per formato; pagina reale con font/icone e POST intercettate.
+  Build ripetibile, settori,8.169pagine/3.507sitemap e gitleaks passati;
+  8.087schede di altre province identiche. Cache JS132/JSON99.
+- **Solo casella70 spuntata dopo le prove live**; conteggio caselle uniche:
+  **77concluse/33aperte su110**. I29comuni senza schede non sono privi di eventi;
+  fonti mancanti, storico e date discordanti espliciti. Manutenzione futura distinta.
+  Nessun contatto a terzi o altro agente; Pavia, controller e file estranei preservati.
+
 ## Province automatiche fino a quota0 e dopo i rinnovi — 28 ottobre 2026
 
 - Nuova richiesta permanente per questo lavoro: supera riserva35% e stop dopo
@@ -3050,7 +3068,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 76 province completate, 34 da fare su 110**, aggiornate il 28 ottobre dopo Lecce. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 77 province completate, 33 da fare su 110**, aggiornate il 29 ottobre dopo Sassari, contando le caselle provinciali uniche. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3591,7 +3609,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **67. Caserta** — Campania — ricerca attuale conclusa con limiti; 83 manifestazioni/48 comuni, 104 comuni ricogniti; pubblicata e verificata il 27 ottobre 2026. Audit e prove nel dossier.
 - [x] **68. Lecce** — Puglia — ricerca attuale conclusa con limiti; 179 manifestazioni/77 comuni, 96 comuni ricogniti; pubblicata e verificata il 28 ottobre 2026. Audit e prove nel dossier.
 - [x] **69. Cagliari** — Sardegna — ricerca attuale conclusa con limiti; 89 manifestazioni/40 comuni, 70 comuni ricogniti; pubblicata e verificata il 27 ottobre 2026. Audit e prove nel dossier.
-- [ ] **70. Sassari** — Sardegna
+- [x] **70. Sassari** — Sardegna
 - [ ] **71. Gallura Nord-Est Sardegna** — Sardegna
 - [ ] **72. Palermo** — Sicilia
 - [ ] **73. Catania** — Sicilia
