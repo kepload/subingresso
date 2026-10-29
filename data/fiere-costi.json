@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-26",
+  "checkedAt": "2026-10-29",
   "research": {
     "catalogEventsScreened": 3447,
     "catalogSourceRequests": 1870,
@@ -2402,6 +2402,114 @@
       "sourceUrl": "https://lecce.externaexpo.it/wp-content/uploads/2025/09/domanda_partecipazione_externa_2026_A4_EDITABILE.pdf",
       "checkedAt": "2026-10-28",
       "review": "provincial-original-document-review"
+    },
+    "sardegna-sassari-area-mercatale-della-cavalcata-sarda": {
+      "label": "Istruttoria 30 € + due bolli da 16 €; canone extra",
+      "details": "Bando Cavalcata 2026: 30 € di istruttoria e due marche da bollo da 16 €, salve esenzioni previste. Il canone per l’occupazione e gli ulteriori oneri dovuti sono separati: 62 € non è il costo completo del posteggio. Nessuna tariffa futura o IVA sugli altri oneri ricostruita.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sassari.it/.galleries/doc-documenti/avviso_suolo_pubblico_Cavalcata_2026.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-sassari-area-mercatale-dei-candelieri": {
+      "label": "Istruttoria 30 € + due bolli da 16 €; canone extra",
+      "details": "Bando Candelieri 2026: istruttoria 30 € e due bolli da 16 €, salve esenzioni. Restano separati canone per suolo pubblico e ulteriori oneri prescritti. I 62 € documentati non rappresentano il costo totale del banco; validità soltanto per l’edizione 2026.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sassari.it/.galleries/doc-documenti/avviso_area_mercatale_candelieri_2026.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-sassari-fiera-promo-autunno": {
+      "label": "2025: modulo 1.350–1.850 € + IVA; allaccio 150 €",
+      "details": "Contratto Promo Autunno 2025, modulo circa 3×3 m: singolo Platinum 1.850 €, Gold 1.550 €, Silver/Wedding/Food 1.350 €. Prezzo per modulo da 2 a 4: 1.750/1.450/1.250 €; oltre 4: 1.650/1.350/1.150 € rispettivamente. Allaccio elettrico una tantum 150 €. IVA 22% aggiuntiva. Allestimento con tralicci, moquette, fondale e cartello aziendale secondo settore. Caparra 50%, saldo indicato 1° settembre 2025. Sono condizioni storiche, non preventivo 2026.",
+      "kind": "fee",
+      "period": "2025",
+      "sourceUrl": "https://promoautunno.it/images/files/contratto-promo-autunno-2025.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-alghero-mercatini-di-natale": {
+      "label": "2026/27: 743,81 o 1.105,72 € IVA inclusa",
+      "details": "Avviso 2026/27: 4,65 €/m² calpestabile/giorno, IVA inclusa, applicati per 43 giorni. Casetta 3,72 m²: totale dichiarato 743,81 €; casetta 5,53 m²: 1.105,72 €. Il documento indica separatamente 49 giorni di apertura obbligatoria; non si sostituiscono i totali pubblicati con un ricalcolo. Impianto elettrico, luce e presa inclusi; niente acqua o fognatura. Arredi e dotazioni aggiuntive a carico dell’assegnatario. Acconto 30% entro 10 giorni dalla comunicazione di assegnazione; condizioni non trasferibili ad altre edizioni.",
+      "kind": "fee",
+      "period": "2026/2027",
+      "sourceUrl": "https://www.fondazionealghero.it/wp-content/uploads/2026/09/indagine-esplorativa-mercatini-natale-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-olmedo-suoni-sapori-olmedo-produce-e-assazos": {
+      "label": "2026: 40 € espositore, 60 € per Assazu; bibite 400 €",
+      "details": "Disciplinare Suoni & Sapori 2026: Olmedo Produce 40 € per espositore; Assazos 60 € per ciascun Assazu anche nello stesso stand; chioschi vendita bibite, massimo due, 400 €. Gazebo proprio e punto luce fornito dal Comune. Allestimento e pratica amministrativa a carico del partecipante. IVA non specificata: non si presume inclusa o esclusa. Quote dell’edizione 8–9 agosto 2026; i prezzi al pubblico di piatti e vino sono condizioni distinte.",
+      "kind": "fee",
+      "period": "2026",
+      "sourceUrl": "https://comunicacity.net/olmedo/wp-content/uploads/sites/228/2026/07/Disciplinare-SuoniSapori-2026-Assazos-e-Olmedo-Produce-signed-1.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-osilo-stalli-della-corsa-all-anello": {
+      "label": "2025: due bolli da 16 €; canone separato",
+      "details": "Bando Corsa all’Anello 2025: per la domanda ordinaria sono richieste due marche da bollo da 16 €. Il canone è rinviato alle tariffe comunali, senza totale del banco nel documento. Percorso SUAPE distinto per le categorie indicate. Le date procedurali contengono discordanza 28/31 luglio e refusi 2024: non sono termini correnti. Nessun prezzo 2026 dedotto.",
+      "kind": "partial",
+      "period": "2025",
+      "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/4663406/Bando.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-ozieri-fiera-zootecnica-e-agroalimentare": {
+      "label": "2026: esterni 200 €, camion bar 350 € fino a 20 m²",
+      "details": "Due avvisi 2026: stalli esterni per commercio e opere dell’ingegno 200 € fino a 20 m²; somministrazione con autonegozio 350 € fino a 20 m². In entrambi i casi, 2 € per ogni m² oltre i 20, secondo disponibilità degli spazi. IVA non precisata nei due avvisi; non si aggiungono servizi inclusi non dichiarati. Domande scadute il 23 marzo alle 13. Queste quote non confermano posti liberi e non sono un listino dell’eventuale fiera autunnale.",
+      "kind": "fee",
+      "period": "2026",
+      "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/4960565/avviso-ambulanti-fiera-aprile-2026_signed_signed.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-uri-mercatino-di-natale": {
+      "label": "2025: esenzione del suolo pubblico",
+      "details": "Avviso comunale Mercatino di Natale 2025: le attività partecipanti il 7 dicembre erano esenti dal pagamento del suolo pubblico. Non documentata gratuità di allestimento, servizi e altri adempimenti; nessuna estensione al Natale 2026. Domanda entro il 19 novembre 2025 ore 11:30.",
+      "kind": "conditional",
+      "period": "2025",
+      "sourceUrl": "https://comune.uri.ss.it/notizie/3490239/mercatino-natale-2025",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-sennori-stalli-della-festa-di-san-basilio-magno": {
+      "label": "2026: due bolli da 16 €; canone a parte",
+      "details": "Calendario comunale eventi 2026: bollo di 16 € sulla domanda e ulteriore bollo di 16 € per l’autorizzazione. Il canone dipende da spazio e giorni secondo tariffe comunali approvate con D.G. 181 del 13 novembre 2025, non quantificato nel documento. I 32 € di bolli non rappresentano il costo totale del banco; nessun servizio incluso presunto.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-sennori-stalli-della-festa-di-san-biagio": {
+      "label": "2026: due bolli da 16 €; canone a parte",
+      "details": "Calendario comunale eventi 2026: bollo di 16 € sulla domanda e ulteriore bollo di 16 € per l’autorizzazione. Il canone dipende da spazio e giorni secondo tariffe comunali approvate con D.G. 181 del 13 novembre 2025, non quantificato nel documento. I 32 € di bolli non rappresentano il costo totale del banco; nessun servizio incluso presunto.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-sennori-stalli-della-festa-di-madonna-degli-angeli": {
+      "label": "2026: due bolli da 16 €; canone a parte",
+      "details": "Calendario comunale eventi 2026: bollo di 16 € sulla domanda e ulteriore bollo di 16 € per l’autorizzazione. Il canone dipende da spazio e giorni secondo tariffe comunali approvate con D.G. 181 del 13 novembre 2025, non quantificato nel documento. I 32 € di bolli non rappresentano il costo totale del banco; nessun servizio incluso presunto.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-sennori-stalli-della-festa-di-santa-lucia": {
+      "label": "2026: due bolli da 16 €; canone a parte",
+      "details": "Calendario comunale eventi 2026: bollo di 16 € sulla domanda e ulteriore bollo di 16 € per l’autorizzazione. Il canone dipende da spazio e giorni secondo tariffe comunali approvate con D.G. 181 del 13 novembre 2025, non quantificato nel documento. I 32 € di bolli non rappresentano il costo totale del banco; nessun servizio incluso presunto.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
     }
   }
 }

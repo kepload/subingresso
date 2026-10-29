@@ -2650,17 +2650,6 @@
   },
   {
     "region": "Sardegna",
-    "name": "Sagra del Carciofo",
-    "city": "Uri",
-    "months": "3",
-    "category": "sagra",
-    "source": {
-      "url": "https://comune.uri.ss.it/luoghi/3413056/attivita-prevalenti",
-      "label": "comune.uri.ss.it"
-    }
-  },
-  {
-    "region": "Sardegna",
     "name": "Sagra della Castagna e della Nocciola",
     "city": "Aritzo",
     "months": "10",
@@ -13047,5 +13036,2781 @@
         "sourceUrl": "https://fondoambiente.it/eventi/antica-fiera-lu-panieri"
       }
     ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Area mercatale della Cavalcata Sarda",
+    "city": "Sassari",
+    "months": [
+      5
+    ],
+    "category": "tradizionale",
+    "summary": "Mercatino di merci, artigianato e aree separate per alimenti e bevande durante la Cavalcata Sarda.",
+    "source": {
+      "url": "https://www.comune.sassari.it/.galleries/doc-documenti/avviso_suolo_pubblico_Cavalcata_2026.pdf",
+      "label": "comune.sassari.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sassari.it/.galleries/doc-documenti/avviso_suolo_pubblico_Cavalcata_2026.pdf",
+      "https://www.comune.sassari.it/it/novita/notizia/Cavalcata-Sarda-aumentati-gli-stalli-dellarea-mercatale-per-soddisfare-tutte-le-richieste/",
+      "https://www.comune.sassari.it/.galleries/doc-documenti/AVVISO_CAVALCATA_2026__canone_suolo_pubblico.pdf"
+    ],
+    "sectors": "Alimentari, somministrazione, artigianato, merci non alimentari",
+    "participation": {
+      "type": "public",
+      "note": "Bando 2026: concessioni per il 16–17 maggio; 241 stalli inizialmente previsti, ampliamento annunciato dal Comune per accogliere 271 istanze. Vendita e somministrazione in aree distinte. Graduatoria e titolo temporaneo necessari; non è disponibilità attuale. Il successivo avviso fissava il pagamento entro l’11 maggio 2026. Oneri del posto separati da istruttoria e bolli.",
+      "costs": "Bando Cavalcata 2026: 30 € di istruttoria e due marche da bollo da 16 €, salve esenzioni previste. Il canone per l’occupazione e gli ulteriori oneri dovuti sono separati: 62 € non è il costo completo del posteggio. Nessuna tariffa futura o IVA sugli altri oneri ricostruita."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-16",
+        "end": "2026-05-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sassari.it/.galleries/doc-documenti/avviso_suolo_pubblico_Cavalcata_2026.pdf"
+      }
+    ],
+    "venue": "Piazza d’Armi, giardini e vie del centro",
+    "organizer": "Comune di Sassari"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Area mercatale dei Candelieri",
+    "city": "Sassari",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "summary": "Bancarelle e somministrazione in occasione della Discesa dei Candelieri.",
+    "source": {
+      "url": "https://www.comune.sassari.it/.galleries/doc-documenti/avviso_area_mercatale_candelieri_2026.pdf",
+      "label": "comune.sassari.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sassari.it/.galleries/doc-documenti/avviso_area_mercatale_candelieri_2026.pdf",
+      "https://www.comune.sassari.it/.galleries/doc-documenti/avviso_scadenza_pagamento_area_mercatale_candelieri_2026.pdf"
+    ],
+    "sectors": "Alimentari, somministrazione, artigianato, merci non alimentari",
+    "participation": {
+      "type": "public",
+      "note": "Bando 2026: 115 stalli previsti e occupazione il 14 agosto dalle 14:00 alle 04:00 del 15 agosto; non due giornate complete. Richiesti domanda, graduatoria e concessione secondo settore e ingombro. L’avviso successivo fissava il pagamento entro il 28 luglio; intestazione 2025 in contrasto con oggetto, testo e firma 2026, refuso mantenuto esplicito. I bolli e l’istruttoria non esauriscono il costo; nessun posto disponibile presunto.",
+      "costs": "Bando Candelieri 2026: istruttoria 30 € e due bolli da 16 €, salve esenzioni. Restano separati canone per suolo pubblico e ulteriori oneri prescritti. I 62 € documentati non rappresentano il costo totale del banco; validità soltanto per l’edizione 2026."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-14",
+        "end": "2026-08-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sassari.it/.galleries/doc-documenti/avviso_area_mercatale_candelieri_2026.pdf"
+      }
+    ],
+    "venue": "Aree individuate dal bando comunale",
+    "organizer": "Comune di Sassari"
+  },
+  {
+    "region": "Sardegna",
+    "name": "La Ciogghitta d’oro",
+    "city": "Sassari",
+    "months": [
+      7,
+      8
+    ],
+    "category": "sagra",
+    "summary": "Serate di gastronomia sassarese con stand tipici e gara tradizionale delle lumache.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/08/la-ciogghitta-doro-16a-edizione-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/08/la-ciogghitta-doro-16a-edizione-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Il programma camerale colloca gli stand in piazza del Mercato dal 28 luglio al 1° agosto 2026. Escluse dal calendario dei banchi le anteprime del 25–26 luglio sui traghetti, indicate in attesa di autorizzazione. Non è pubblicato un bando per venditori esterni, né una quota espositore."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-28",
+        "end": "2026-08-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/08/la-ciogghitta-doro-16a-edizione-2026/"
+      }
+    ],
+    "venue": "Piazza del Mercato"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Fiera Promo Autunno",
+    "city": "Sassari",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "summary": "Fiera commerciale di prodotti, artigianato, servizi, wedding e food presso Promocamera.",
+    "source": {
+      "url": "https://promoautunno.it/",
+      "label": "promoautunno.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://promoautunno.it/",
+      "https://promoautunno.it/images/files/contratto-promo-autunno-2025.pdf"
+    ],
+    "sectors": "Artigianato, commercio, alimentari, wedding, arredamento e servizi",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Sito e contratto disponibili riguardano il 17–20 ottobre 2025: non confermano un’edizione 2026. Il modulo espositore prevede selezione, caparra del 50% e autorizzazioni per la vendita alimentare. Il regolamento contiene anche un richiamo al 2024. Verificare un nuovo contratto prima di organizzare la partecipazione.",
+      "costs": "Contratto Promo Autunno 2025, modulo circa 3×3 m: singolo Platinum 1.850 €, Gold 1.550 €, Silver/Wedding/Food 1.350 €. Prezzo per modulo da 2 a 4: 1.750/1.450/1.250 €; oltre 4: 1.650/1.350/1.150 € rispettivamente. Allaccio elettrico una tantum 150 €. IVA 22% aggiuntiva. Allestimento con tralicci, moquette, fondale e cartello aziendale secondo settore. Caparra 50%, saldo indicato 1° settembre 2025. Sono condizioni storiche, non preventivo 2026."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-10-17",
+        "end": "2025-10-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://promoautunno.it/"
+      }
+    ],
+    "venue": "Palazzo Promocamera, Predda Niedda"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Mercatini di Natale in piazza d’Italia e piazza Castello",
+    "city": "Sassari",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "summary": "Casette natalizie nel centro di Sassari inserite nel programma Destinazione Natale.",
+    "source": {
+      "url": "https://www.comune.sassari.it/it/novita/notizia/Sassari-Destinazione-Natale-la-citta-si-accende-col-ricco-programma-di-fine-anno/",
+      "label": "comune.sassari.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sassari.it/it/novita/notizia/Sassari-Destinazione-Natale-la-citta-si-accende-col-ricco-programma-di-fine-anno/"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "check",
+      "note": "La pagina comunale aggiornata a gennaio 2026 descrive il Natale 2025/26 e 40 casette nelle due piazze. Non è un programma del Natale 2026/27. Gli orari delle singole iniziative e i servizi visitatori non diventano concessioni commerciali. Bando, canone e nuove date per espositori non verificati."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "label": "Natale 2025/26; nuova edizione non confermata",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.sassari.it/it/novita/notizia/Sassari-Destinazione-Natale-la-citta-si-accende-col-ricco-programma-di-fine-anno/"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Mercatini di Natale",
+    "city": "Alghero",
+    "months": [
+      11,
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "summary": "Casette per artigianato e produzioni locali nel centro storico di Alghero.",
+    "source": {
+      "url": "https://www.fondazionealghero.it/avvisi-bandi/avviso-pubblico-per-lassegnazione-di-postazioni-nellambito-dei-mercatini-di-natale-2026/",
+      "label": "fondazionealghero.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.fondazionealghero.it/avvisi-bandi/avviso-pubblico-per-lassegnazione-di-postazioni-nellambito-dei-mercatini-di-natale-2026/",
+      "https://www.fondazionealghero.it/wp-content/uploads/2026/09/indagine-esplorativa-mercatini-natale-2026.pdf"
+    ],
+    "sectors": "Artigianato, prodotti locali, alimentari preconfezionati",
+    "participation": {
+      "type": "selected",
+      "note": "Indagine 2026/27: periodo indicativo 20 novembre–10 gennaio; apertura obbligatoria dal 20 novembre al 6 gennaio, con chiusure il 25–26 dicembre e il 1° gennaio. Il documento dichiara 49 giorni di apertura e 43 tariffati: dati distinti, non riconciliati con ipotesi. Domanda scaduta il 9 ottobre alle 12. Non è assegnazione garantita. Casette con elettricità, senza acqua e scarico; alimenti preconfezionati, bevande calde entro il 10% previa autorizzazione.",
+      "deadline": "2026-10-09",
+      "costs": "Avviso 2026/27: 4,65 €/m² calpestabile/giorno, IVA inclusa, applicati per 43 giorni. Casetta 3,72 m²: totale dichiarato 743,81 €; casetta 5,53 m²: 1.105,72 €. Il documento indica separatamente 49 giorni di apertura obbligatoria; non si sostituiscono i totali pubblicati con un ricalcolo. Impianto elettrico, luce e presa inclusi; niente acqua o fognatura. Arredi e dotazioni aggiuntive a carico dell’assegnatario. Acconto 30% entro 10 giorni dalla comunicazione di assegnazione; condizioni non trasferibili ad altre edizioni."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "20 novembre 2026–10 gennaio 2027 indicativi; aperture secondo avviso",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.fondazionealghero.it/avvisi-bandi/avviso-pubblico-per-lassegnazione-di-postazioni-nellambito-dei-mercatini-di-natale-2026/"
+      }
+    ],
+    "organizer": "Fondazione Alghero"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Alguer Wine Week",
+    "city": "Alghero",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "summary": "Festival dei vini della Sardegna con cantine, degustazioni e percorso urbano tra Alghero e Fertilia.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/05/alguer-wine-week-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/05/alguer-wine-week-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma 8–14 giugno 2026: giornate in cantina e appuntamenti diffusi; Walking Wine in centro il 12–13 e chiusura a Fertilia il 14. Non tutti i sette giorni sono un mercato aperto a venditori generici. Adesione delle cantine e spazi commerciali da verificare con i promotori, senza quota documentata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-08",
+        "end": "2026-06-14",
+        "dateType": "calendar",
+        "sourceUrl": "https://saludetrigu.it/2026/05/alguer-wine-week-2026/",
+        "label": "Programma diffuso, non sette giorni di banchi",
+        "periodOnly": true
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Birralguer – Sardinian Craft Beer Festival",
+    "city": "Alghero",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "summary": "Birrifici artigianali, street food e musica sul porto di Alghero.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/06/birralguer-sardinian-craft-beer-festival-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/06/birralguer-sardinian-craft-beer-festival-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-25",
+        "end": "2026-06-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/06/birralguer-sardinian-craft-beer-festival-2026/"
+      }
+    ],
+    "venue": "Banchina Millelire"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Fragola di Sa Segada",
+    "city": "Alghero",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "summary": "Stand espositivi ed enogastronomici dedicati alla fragola nella borgata di Sa Segada.",
+    "source": {
+      "url": "https://algheroturismo.eu/event/sagra-della-fragola-x-edizione-sa-segada/",
+      "label": "algheroturismo.eu",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://algheroturismo.eu/event/sagra-della-fragola-x-edizione-sa-segada/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-09",
+        "end": "2026-05-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://algheroturismo.eu/event/sagra-della-fragola-x-edizione-sa-segada/"
+      }
+    ],
+    "venue": "Sa Segada"
+  },
+  {
+    "region": "Sardegna",
+    "name": "San Marco Fest di Fertilia",
+    "city": "Alghero",
+    "months": [
+      4
+    ],
+    "category": "tradizionale",
+    "summary": "Festa di borgata con mercatini artigianali, stand espositivi, street food e prodotti locali.",
+    "source": {
+      "url": "https://algheroturismo.eu/event/san-marco-fest-2026-music-food-family-fun/",
+      "label": "algheroturismo.eu",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://algheroturismo.eu/event/san-marco-fest-2026-music-food-family-fun/",
+      "https://saludetrigu.it/2026/08/festa-di-san-marco-2026/"
+    ],
+    "sectors": "Artigianato, street food e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "Il programma turistico conferma mercatini e stand per il 24–26 aprile 2026, distinti da processione e spettacoli. I servizi food esistenti non dimostrano l’apertura a nuovi operatori. Verificare selezione, adempimenti e costi con il comitato; nessuna quota banco pubblicata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-24",
+        "end": "2026-04-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://algheroturismo.eu/event/san-marco-fest-2026-music-food-family-fun/"
+      }
+    ],
+    "venue": "Fertilia"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Cipolla Dorata",
+    "city": "Banari",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Stand gastronomici, produzioni locali, mostre e dimostrazioni dedicate alla cipolla dorata.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/06/sagra-della-cipolla-dorata-di-banari-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/06/sagra-della-cipolla-dorata-di-banari-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-18",
+        "end": "2026-07-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/06/sagra-della-cipolla-dorata-di-banari-2026/"
+      }
+    ],
+    "venue": "Piazza Umberto I"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Carrelas in Festa",
+    "city": "Banari",
+    "months": [
+      12
+    ],
+    "category": "artigianato",
+    "summary": "Percorso nel borgo tra prodotti tipici, abiti tradizionali e antichi mestieri.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/banari",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/banari",
+      "https://comune.banari.ss.it/notizie/3484590/carrelas-festa-2025"
+    ],
+    "sectors": "Artigianato e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "La Regione descrive il periodo usuale di dicembre. L’avviso comunale 2025 riguarda una riunione organizzativa il 3 novembre, non la data della manifestazione. Nessun giorno 2026 confermato né procedura attuale di ammissione o tariffa ricostruita."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra de sos Ciciones e de sa Mendula Bellinda",
+    "city": "Bessude",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Preparazione e degustazione della pasta fatta a mano e del dolce tipico di Bessude.",
+    "source": {
+      "url": "https://www.lanuovasardegna.it/sassari/cronaca/2026/08/13/news/bessude-celebra-la-sagra-de-sos-ciciones-e-de-sa-mendula-belinda-1.100906075",
+      "label": "lanuovasardegna.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.lanuovasardegna.it/sassari/cronaca/2026/08/13/news/bessude-celebra-la-sagra-de-sos-ciciones-e-de-sa-mendula-belinda-1.100906075",
+      "https://www.sardegnaturismo.it/it/esplora/bessude"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Data 13 agosto 2026 dalla stampa locale, articolo letto tramite strumento web poiché il download locale mostrava solo la testata. Dimostrazione alle 19:30 e degustazioni dalle 20 a cura della Pro Loco. Non pubblicati bando o quote per ambulanti esterni."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-13",
+        "end": "2026-08-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.lanuovasardegna.it/sassari/cronaca/2026/08/13/news/bessude-celebra-la-sagra-de-sos-ciciones-e-de-sa-mendula-belinda-1.100906075"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Fiera delle Ciliegie",
+    "city": "Bonnanaro",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "summary": "Giornata fieristica con produttori di ciliegie e artigiani del territorio.",
+    "source": {
+      "url": "https://comune.bonnanaro.ss.it/eventi/3579946/34-fiera-ciliegie-bonnanaro-2-giugno-2026",
+      "label": "comune.bonnanaro.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.bonnanaro.ss.it/eventi/3579946/34-fiera-ciliegie-bonnanaro-2-giugno-2026",
+      "https://saludetrigu.it/2026/08/35a-fiera-delle-ciliegie-di-bonnanaro-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Stand il 2 giugno 2026; il 31 maggio e il 1° giugno sono appuntamenti preparatori, non ulteriori giornate di fiera. Comune e portale camerale riportano numeri di edizione diversi (34ª/35ª): non se ne deduce una diversa manifestazione. Ammissione e condizioni commerciali da verificare, senza quote pubblicate nella pagina."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-02",
+        "end": "2026-06-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.bonnanaro.ss.it/eventi/3579946/34-fiera-ciliegie-bonnanaro-2-giugno-2026"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Zichi",
+    "city": "Bonorva",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Degustazioni e preparazioni del pane zichi, prodotto tipico di Bonorva.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/07/sagra-del-zichi-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/07/sagra-del-zichi-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/07/sagra-del-zichi-2026/"
+      }
+    ],
+    "venue": "Piazza Santa Maria"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Foresta in Festa",
+    "city": "Burgos",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "summary": "Esperienze nella foresta e sagra del gusto con piatti tipici del Goceano.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/04/foresta-in-festa-2026-il-goceano-delle-origini-tra-natura-e-cultura-nuragica/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/04/foresta-in-festa-2026-il-goceano-delle-origini-tra-natura-e-cultura-nuragica/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma su tre giornate separate: 6, 24 e 25 aprile 2026; non intervallo quotidiano 6–25 aprile. Laboratori ed escursioni non sono concessioni per la vendita. Verificare con i promotori se gli spazi gastronomici siano riservati alla gestione dell’evento e quali operatori possano essere ammessi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-06",
+        "end": "2026-04-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/04/foresta-in-festa-2026-il-goceano-delle-origini-tra-natura-e-cultura-nuragica/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-04-24",
+        "end": "2026-04-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/04/foresta-in-festa-2026-il-goceano-delle-origini-tra-natura-e-cultura-nuragica/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-04-25",
+        "end": "2026-04-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/04/foresta-in-festa-2026-il-goceano-delle-origini-tra-natura-e-cultura-nuragica/"
+      }
+    ],
+    "venue": "Foresta di Burgos"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Prendas de Adelasia",
+    "city": "Burgos",
+    "months": [
+      12
+    ],
+    "category": "artigianato",
+    "summary": "Rievocazione medievale con botteghe artigiane nelle vie del borgo.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/08/prendas-de-adelasia-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/08/prendas-de-adelasia-2026/"
+    ],
+    "sectors": "Artigianato e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-04",
+        "end": "2026-12-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/08/prendas-de-adelasia-2026/"
+      }
+    ],
+    "venue": "Borgo e castello",
+    "organizer": "Associazione Prendas de Adelasia"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra de sa Mela Cotta",
+    "city": "Cargeghe",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "summary": "Percorso gastronomico dedicato alla mela, con piatti locali e musica.",
+    "source": {
+      "url": "https://visitanglonacoros.it/cosa-visitare/evento-sagra-de-sa-mela-cotta/",
+      "label": "visitanglonacoros.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitanglonacoros.it/cosa-visitare/evento-sagra-de-sa-mela-cotta/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La scheda GAL descrive una prima edizione il 28 settembre senza specificare l’anno. Settembre è soltanto un riferimento di periodo: non si pubblica il 28 settembre 2026 come confermato. Nessun avviso corrente per operatori esterni né costo dello stand individuato."
+    },
+    "editions": [],
+    "venue": "Piazza Grazia Deledda"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Binos de Idda",
+    "city": "Cheremule",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "summary": "Degustazioni dei vini locali e banchi d’assaggio nel centro del Meilogu.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/10/binos-de-idda-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/10/binos-de-idda-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Banchi d’assaggio ed esposizione il 28 novembre 2026. Gli incontri tecnici del 20 e del 27 novembre sono preparatori e non giornate commerciali aggiunte. Iniziativa dell’Associazione Tradizioni Popolari Cheremule APS; selezione degli espositori, costi e disponibilità non pubblicati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-28",
+        "end": "2026-11-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/10/binos-de-idda-2026/"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Cheremule in Festa",
+    "city": "Cheremule",
+    "months": [
+      3
+    ],
+    "category": "sagra",
+    "summary": "Cantine del centro storico con vini e piatti della tradizione.",
+    "source": {
+      "url": "https://www.sassarioggi.it/eventi-sassari/cheremule-in-festa-9edizione-18-marzo-2026/",
+      "label": "sassarioggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sassarioggi.it/eventi-sassari/cheremule-in-festa-9edizione-18-marzo-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma del 28 marzo 2026 ricostruito dalla stampa locale, non da un bando comunale. Il calice a pagamento è un servizio visitatori, non una quota espositore. Organizzazione del comitato di Sant’Antonio e della Pro Loco; non documentata l’ammissione di ambulanti esterni."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-28",
+        "end": "2026-03-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.sassarioggi.it/eventi-sassari/cheremule-in-festa-9edizione-18-marzo-2026/"
+      }
+    ],
+    "venue": "Centro storico"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Buffende in Carrela",
+    "city": "Chiaramonti",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "summary": "Vini e piatti tipici lungo le vie e le cantine del centro storico.",
+    "source": {
+      "url": "https://visitanglonacoros.it/eventi/x-edizione-buffende-in-carrela/",
+      "label": "visitanglonacoros.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitanglonacoros.it/eventi/x-edizione-buffende-in-carrela/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-18",
+        "end": "2026-04-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitanglonacoros.it/eventi/x-edizione-buffende-in-carrela/"
+      }
+    ],
+    "organizer": "Pro Loco Chiaramonti"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Festa della Santissima Trinità di Saccargia",
+    "city": "Codrongianos",
+    "months": [
+      5,
+      6
+    ],
+    "category": "tradizionale",
+    "summary": "Festa presso la basilica con mercatini e stand enogastronomici.",
+    "source": {
+      "url": "https://visitanglonacoros.it/cosa-visitare/evento-festa-della-santissima-trinita-di-saccargia/",
+      "label": "visitanglonacoros.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitanglonacoros.it/cosa-visitare/evento-festa-della-santissima-trinita-di-saccargia/",
+      "https://www.sardegnaturismo.it/it/esplora/codrongianos"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "check",
+      "note": "Il GAL descrive la ricorrenza di giugno, mentre la Regione la collega alla domenica successiva a Pentecoste. Il richiamo del GAL al weekend vicino al 14–15 giugno non è una data 2026 verificata. Pubblicato il solo periodo usuale; non dimostrati posti disponibili o canoni."
+    },
+    "editions": [],
+    "venue": "Basilica di Saccargia"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra de sos Ciccioneddos",
+    "city": "Codrongianos",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Degustazione della pasta tipica lavorata a mano presso Saccargia.",
+    "source": {
+      "url": "https://www.lanuovasardegna.it/sassari/cronaca/2026/08/08/news/a-cordongianos-e-il-giorno-de-sos-ciccioneddos-1.100904447",
+      "label": "lanuovasardegna.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.lanuovasardegna.it/sassari/cronaca/2026/08/08/news/a-cordongianos-e-il-giorno-de-sos-ciccioneddos-1.100904447"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Fonte giornalistica locale del giorno dell’evento, letta via web: 8 agosto 2026 dalle 20, area attigua alla basilica di Saccargia. Gestione Pro Loco; la preparazione dei volontari non attesta un mercato aperto ad ambulanti esterni. Nessuna quota banco documentata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.lanuovasardegna.it/sassari/cronaca/2026/08/08/news/a-cordongianos-e-il-giorno-de-sos-ciccioneddos-1.100904447"
+      }
+    ],
+    "venue": "Area della basilica di Saccargia"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Festa dei Santi Cosma, Damiano e Pantaleo",
+    "city": "Giave",
+    "months": [
+      9
+    ],
+    "category": "tradizionale",
+    "summary": "Festa del santuario di San Cosimo con bancarelle selezionate e momenti conviviali.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/07/festa-in-onore-dei-santi-cosma-damiano-e-pantaleo-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/07/festa-in-onore-dei-santi-cosma-damiano-e-pantaleo-2026/"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "selected",
+      "note": "Programma complessivo 17–28 settembre 2026, con giornate civili principali dal 25. La fonte menziona bancarelle selezionate nel piazzale ma non ne dà il calendario giornaliero: il periodo della festa non prova vendita per tutti i dodici giorni. Escluse come giorni di mercato le messe successive del 29 settembre e fino al 31 ottobre. Bando, spazi e costi da verificare."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-17",
+        "end": "2026-09-28",
+        "dateType": "calendar",
+        "sourceUrl": "https://saludetrigu.it/2026/07/festa-in-onore-dei-santi-cosma-damiano-e-pantaleo-2026/",
+        "label": "Periodo della festa; giorni delle bancarelle da verificare",
+        "periodOnly": true
+      }
+    ],
+    "venue": "Santuario e piazzale San Cosimo"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Prendas de Ittiri",
+    "city": "Ittiri",
+    "months": [
+      3,
+      4
+    ],
+    "category": "artigianato",
+    "summary": "Fiera dei prodotti artigianali e agroalimentari di Ittiri.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/ittiri",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/ittiri"
+    ],
+    "sectors": "Artigianato e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "La fonte turistica regionale descrive il periodo usuale tra fine marzo e inizio aprile. Non reperito un programma 2026 sufficiente a confermare giorni, selezione, canone o nuovi spazi. La pagina di contatto omonima non costituisce un bando attuale."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Divino",
+    "city": "Ittiri",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "summary": "Percorso enogastronomico con i vitivinicoltori ittiresi e prodotti locali.",
+    "source": {
+      "url": "https://visitanglonacoros.it/eventi/vii-edizione-divino/",
+      "label": "visitanglonacoros.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitanglonacoros.it/eventi/vii-edizione-divino/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "selected",
+      "note": "Stand e percorso pubblico il 25 aprile 2026 dalle 18 in corso Vittorio Emanuele, con 22 espositori aderenti all’associazione. L’incontro tecnico del 24 aprile è distinto e non aggiunto ai giorni commerciali. Non è una chiamata aperta a venditori generici; quote e disponibilità da verificare."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-25",
+        "end": "2026-04-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitanglonacoros.it/eventi/vii-edizione-divino/"
+      }
+    ],
+    "venue": "Corso Vittorio Emanuele",
+    "organizer": "Associazione Vitivinicoltori Ittiresi"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Chentinas de Laerru",
+    "city": "Laerru",
+    "months": [
+      1
+    ],
+    "category": "sagra",
+    "summary": "Itinerario enogastronomico e folkloristico tra le cantine del centro.",
+    "source": {
+      "url": "https://www.insardegnacondani.it/eventi/chentinas-de-laerru/",
+      "label": "insardegnacondani.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.insardegnacondani.it/eventi/chentinas-de-laerru/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma 31 gennaio 2026 dalle 19 ricostruito da portale editoriale; dopo mezzanotte iniziativa al Capannone. Il ticket degustazione riguarda il pubblico. Non acquisito un bando organizzatore che autorizzi nuovi banchi; spazi, requisiti e costi espositore da verificare."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-01-31",
+        "end": "2026-01-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.insardegnacondani.it/eventi/chentinas-de-laerru/"
+      }
+    ],
+    "venue": "Centro storico"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Festa dell’Emigrato",
+    "city": "Laerru",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Festa della comunità con folklore e punto ristoro di prodotti tipici.",
+    "source": {
+      "url": "https://terrecherigenerano.it/event/festa-dell-emigrato",
+      "label": "terrecherigenerano.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://terrecherigenerano.it/event/festa-dell-emigrato"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Portale GAL: 14 agosto 2026, organizzazione Pro Loco Rigorona. Il punto ristoro descritto non equivale a posteggi per venditori esterni. Verificare eventuali categorie ammesse e costi direttamente sui canali ufficiali prima di programmare la partecipazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-14",
+        "end": "2026-08-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://terrecherigenerano.it/event/festa-dell-emigrato"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Dae Magasinu in Magasinu",
+    "city": "Nughedu San Nicolò",
+    "months": [
+      1
+    ],
+    "category": "sagra",
+    "summary": "Cantine aperte e degustazioni di vini e prodotti del Monte Acuto.",
+    "source": {
+      "url": "https://www.eventiinsardegna.it/evento/dae-magasinu-in-magasinu-a-nughedu-san-nicolo/",
+      "label": "eventiinsardegna.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.eventiinsardegna.it/evento/dae-magasinu-in-magasinu-a-nughedu-san-nicolo/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Data del 10 gennaio 2026 dalle 18 da portale editoriale che indica Comune, Pro Loco e associazione cantinieri come promotori. Non è stato recuperato un avviso commerciale originale per esterni. Il kit visitatore non viene trasformato in costo del posteggio."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-01-10",
+        "end": "2026-01-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.eventiinsardegna.it/evento/dae-magasinu-in-magasinu-a-nughedu-san-nicolo/"
+      }
+    ],
+    "venue": "Centro storico"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra de sas Panafittas",
+    "city": "Nughedu San Nicolò",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "summary": "Sagra del pane in brodo condita con carne, pomodoro e formaggio durante la festa dei Santi Pietro e Paolo.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/nughedu-san-nicolo",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/nughedu-san-nicolo"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Periodo usuale di fine giugno dalla Regione; nessuna giornata della prossima edizione è confermata. La festa religiosa e la sagra non garantiscono posteggi esterni. Bando, canone e servizi non documentati nelle fonti consultabili."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Nule, idda ’e manos bonas",
+    "city": "Nule",
+    "months": [
+      4
+    ],
+    "category": "artigianato",
+    "summary": "Botteghe e produzioni tessili e agroalimentari nel paese dei tappeti.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/nule",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/nule"
+    ],
+    "sectors": "Artigianato e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale indica il periodo usuale di fine aprile. Altre guide collocano edizioni anche in agosto: divergenza non risolta e nessuna data 2026 confermata. La mostra Contami e Ballos de Austu sono appuntamenti distinti e non provano un nuovo bando commerciale. Non reperite tariffe né disponibilità attuali affidabili."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Suoni & Sapori – Olmedo Produce e Assazos",
+    "city": "Olmedo",
+    "months": [
+      8
+    ],
+    "category": "artigianato",
+    "summary": "Mostra del pane, produzioni artigianali e percorso gastronomico nel centro di Olmedo.",
+    "source": {
+      "url": "https://comune.olmedo.ss.it/novita/suoni-e-sapori/",
+      "label": "comune.olmedo.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.olmedo.ss.it/novita/suoni-e-sapori/",
+      "https://comunicacity.net/olmedo/wp-content/uploads/sites/228/2026/07/Disciplinare-SuoniSapori-2026-Assazos-e-Olmedo-Produce-signed-1.pdf"
+    ],
+    "sectors": "Artigianato e prodotti tipici",
+    "participation": {
+      "type": "selected",
+      "note": "Disciplinare comunale 8–9 agosto 2026, apertura 19:00–00:30. Due sezioni della stessa manifestazione, non eventi duplicati: Olmedo Produce e Assazos. Domande 7–16 luglio, selezione con priorità all’artigianato e alle proposte coerenti; gazebo proprio, spazio massimo circa 7×3 m, pratica amministrativa a carico del partecipante. Per alimenti e bevande prevista pratica SUAPE e notifica igienico-sanitaria. Ammesse categorie professionali e occasionali secondo disciplinare, senza garanzia di spazio.",
+      "deadline": "2026-07-16",
+      "costs": "Disciplinare Suoni & Sapori 2026: Olmedo Produce 40 € per espositore; Assazos 60 € per ciascun Assazu anche nello stesso stand; chioschi vendita bibite, massimo due, 400 €. Gazebo proprio e punto luce fornito dal Comune. Allestimento e pratica amministrativa a carico del partecipante. IVA non specificata: non si presume inclusa o esclusa. Quote dell’edizione 8–9 agosto 2026; i prezzi al pubblico di piatti e vino sono condizioni distinte."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.olmedo.ss.it/novita/suoni-e-sapori/"
+      }
+    ],
+    "venue": "Centro storico",
+    "organizer": "Comune di Olmedo e Pro Loco"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Stalli della Corsa all’Anello",
+    "city": "Osilo",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "summary": "Posteggi temporanei per commercio e somministrazione durante la Corsa all’Anello.",
+    "source": {
+      "url": "https://comune.osilo.ss.it/notizie/3442841/corsa-anello-2025-commercio-area-pubblica-bando",
+      "label": "comune.osilo.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.osilo.ss.it/notizie/3442841/corsa-anello-2025-commercio-area-pubblica-bando",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/4663406/Bando.pdf"
+    ],
+    "sectors": "Alimentari, dolciumi, somministrazione, bigiotteria, accessori e giocattoli",
+    "participation": {
+      "type": "public",
+      "note": "Bando storico 2025 per il 12 agosto dalle 14: 13 stalli fra camion bar, stand alimentari, torronai e non alimentare. Testo discordante sul termine (28 luglio, ma 31 per PEC) e refusi 2024 su graduatoria e pagamento: non utilizzabili come scadenze attuali. Titolo abilitativo, graduatoria e canone necessari; nessuna nuova disponibilità dedotta.",
+      "costs": "Bando Corsa all’Anello 2025: per la domanda ordinaria sono richieste due marche da bollo da 16 €. Il canone è rinviato alle tariffe comunali, senza totale del banco nel documento. Percorso SUAPE distinto per le categorie indicate. Le date procedurali contengono discordanza 28/31 luglio e refusi 2024: non sono termini correnti. Nessun prezzo 2026 dedotto."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-12",
+        "end": "2025-08-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.osilo.ss.it/notizie/3442841/corsa-anello-2025-commercio-area-pubblica-bando"
+      }
+    ],
+    "venue": "Via Abozzi, via Grazia Deledda e viale Sant’Antonio"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Assazzende e Buffende",
+    "city": "Ossi",
+    "months": [
+      2
+    ],
+    "category": "sagra",
+    "summary": "Cantine locali, vini e piatti del Coros nel centro storico.",
+    "source": {
+      "url": "https://visitanglonacoros.it/eventi/assazzende-e-buffende/",
+      "label": "visitanglonacoros.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitanglonacoros.it/eventi/assazzende-e-buffende/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-02-28",
+        "end": "2026-02-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitanglonacoros.it/eventi/assazzende-e-buffende/"
+      }
+    ],
+    "organizer": "Associazione Pastinum Ossi"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Lumaca",
+    "city": "Ossi",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Preparazioni tipiche a base di lumache e folklore in piazza.",
+    "source": {
+      "url": "https://www.comune.ossi.ss.it/it/events/719185",
+      "label": "comune.ossi.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.ossi.ss.it/it/events/719185"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-18",
+        "end": "2026-07-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ossi.ss.it/it/events/719185"
+      }
+    ],
+    "venue": "Piazza Sardegna",
+    "organizer": "Pro Loco Ossi e Comune"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Mercatino di Natale della Biblioteca",
+    "city": "Ossi",
+    "months": [
+      12
+    ],
+    "category": "mercatino",
+    "summary": "Oggetti artigianali delle volontarie a sostegno delle attività della biblioteca.",
+    "source": {
+      "url": "https://www.comune.ossi.ss.it/it/events/697011",
+      "label": "comune.ossi.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.ossi.ss.it/it/events/697011"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione documentata 3–5 dicembre 2025, 17:30–21:30. La vendita descritta è dell’associazione Amici tra le righe e il ricavato finanzia la biblioteca. Non presentato come mercato aperto ad ambulanti esterni né come conferma del 2026. La gratuità indicata per il pubblico non è un prezzo dello stand."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-03",
+        "end": "2025-12-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ossi.ss.it/it/events/697011"
+      }
+    ],
+    "venue": "Biblioteca E. Lussu, via Marconi 14"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Fiera zootecnica e agroalimentare",
+    "city": "Ozieri",
+    "months": [
+      4
+    ],
+    "category": "espositiva",
+    "summary": "Mostra regionale dei bovini con commercio esterno, opere dell’ingegno e somministrazione.",
+    "source": {
+      "url": "https://comune.ozieri.ss.it/notizie/3549122/mostra-regionale-bovini-avviso-assegnazione",
+      "label": "comune.ozieri.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.ozieri.ss.it/notizie/3549122/mostra-regionale-bovini-avviso-assegnazione",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/4960565/avviso-ambulanti-fiera-aprile-2026_signed_signed.pdf",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/4960561/bando-somministrazione-fiera-2026_signed_signed.pdf"
+    ],
+    "sectors": "Agroalimentare, zootecnia, macchine agricole, artigianato sardo e somministrazione nelle aree autorizzate",
+    "participation": {
+      "type": "public",
+      "note": "Avvisi 11–12 aprile 2026: domande esclusivamente via PEC dal 9 marzo al 23 marzo ore 13, usando il modulo della categoria. Per stalli esterni: titolari di autorizzazione ambulante e opere dell’ingegno; priorità alle categorie agroalimentare, zootecnica e artigianale sarda. Non prevista assegnazione per spunta dei posti esterni rimasti liberi. Camion bar: bando separato per 11 stalli. Richiesta conformità dell’eventuale generatore e documentazione prevista; vecchi stalli non garantiti.",
+      "deadline": "2026-03-23",
+      "costs": "Due avvisi 2026: stalli esterni per commercio e opere dell’ingegno 200 € fino a 20 m²; somministrazione con autonegozio 350 € fino a 20 m². In entrambi i casi, 2 € per ogni m² oltre i 20, secondo disponibilità degli spazi. IVA non precisata nei due avvisi; non si aggiungono servizi inclusi non dichiarati. Domande scadute il 23 marzo alle 13. Queste quote non confermano posti liberi e non sono un listino dell’eventuale fiera autunnale."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-11",
+        "end": "2026-04-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.ozieri.ss.it/notizie/3549122/mostra-regionale-bovini-avviso-assegnazione"
+      }
+    ],
+    "venue": "Quartiere fieristico di San Nicola"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Su Trinta e Sant’Andria",
+    "city": "Ozieri",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "summary": "Cantine aperte per la spillatura dei vini nuovi e degustazioni di prodotti locali.",
+    "source": {
+      "url": "https://comune.ozieri.ss.it/notizie/3650233/sabato-28-novembre-trinta-sant-andria-aperte",
+      "label": "comune.ozieri.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.ozieri.ss.it/notizie/3650233/sabato-28-novembre-trinta-sant-andria-aperte",
+      "https://saludetrigu.it/2026/08/su-trinta-e-santandria-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "selected",
+      "note": "Serata delle cantine il 28 novembre 2026. Adesioni delle cantine entro il 6 ottobre; nuove aperture soggette alle condizioni del regolamento e all’approvazione. La manifestazione teatrale del 27 novembre non è una seconda giornata di banchi. Calice visitatore e iscrizione di una cantina non sono una concessione ambulante.",
+      "deadline": "2026-10-06"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-28",
+        "end": "2026-11-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.ozieri.ss.it/notizie/3650233/sabato-28-novembre-trinta-sant-andria-aperte"
+      }
+    ],
+    "venue": "Centro storico"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Rassegna della Pro Loco e degli artigiani",
+    "city": "Pattada",
+    "months": [
+      8
+    ],
+    "category": "artigianato",
+    "summary": "Esposizione delle Pro Loco del circondario e degli artigiani locali.",
+    "source": {
+      "url": "https://coltelligiagu.it/pattada-capitale-italiana-del-coltello/",
+      "label": "coltelligiagu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://coltelligiagu.it/pattada-capitale-italiana-del-coltello/"
+    ],
+    "sectors": "Artigianato e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "Artigiano locale: rassegna indicata per il 9 agosto 2026. La fonte non è un bando dell’organizzatore, non specifica selezione, tariffa o partecipazione di ambulanti generalisti. L’apertura del museo del coltello e il Palio dell’8 agosto sono appuntamenti differenti e non duplicati come fiera."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-09",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://coltelligiagu.it/pattada-capitale-italiana-del-coltello/"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Chimbinu cun Binu",
+    "city": "Perfugas",
+    "months": [
+      3
+    ],
+    "category": "sagra",
+    "summary": "Cantine del centro storico con vini e specialità gastronomiche dell’Anglona.",
+    "source": {
+      "url": "https://visitanglonacoros.it/eventi/chimbinu-cun-binu/",
+      "label": "visitanglonacoros.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitanglonacoros.it/eventi/chimbinu-cun-binu/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-14",
+        "end": "2026-03-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitanglonacoros.it/eventi/chimbinu-cun-binu/"
+      }
+    ],
+    "organizer": "Associazione Chimbinu cun Binu"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Pecora",
+    "city": "Ploaghe",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Stand e piatti a base di pecora nel calendario del Ferragosto ploaghese.",
+    "source": {
+      "url": "https://www.comune.ploaghe.ss.it/it/news/126953/sagra-della-pecora-2025-9-agosto",
+      "label": "comune.ploaghe.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.ploaghe.ss.it/it/news/126953/sagra-della-pecora-2025-9-agosto",
+      "https://www.sardegnaturismo.it/it/esplora/ploaghe"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Ultima pagina comunale acquisita: sabato 9 agosto 2025. Il periodo usuale di Ferragosto non conferma una giornata del 2026. Cucine delle associazioni e dei comitati locali; non documentata una procedura per ambulanti esterni o una tariffa dello stand."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-09",
+        "end": "2025-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ploaghe.ss.it/it/news/126953/sagra-della-pecora-2025-9-agosto"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Fiera di San Gavino",
+    "city": "Porto Torres",
+    "months": [
+      5
+    ],
+    "category": "tradizionale",
+    "summary": "Mercatini degli ambulanti durante la Festha Manna nel centro di Porto Torres.",
+    "source": {
+      "url": "https://comune.porto-torres.ss.it/it/novita/notizia/Porto-Torres-rinnova-lantico-legame-con-i-Santi-Gavino-Proto-e-Gianuario/",
+      "label": "comune.porto-torres.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.porto-torres.ss.it/it/novita/notizia/Porto-Torres-rinnova-lantico-legame-con-i-Santi-Gavino-Proto-e-Gianuario/"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "check",
+      "note": "Il comunicato 2026 indica prima 22–25 maggio e poi, nel programma dettagliato, 23–25 maggio: inizio discordante mantenuto esplicito, senza scegliere un giorno non risolto. Non estendere la fiera a tutto il programma religioso 3 maggio–metà giugno. Concessioni, graduatoria, settori e canone da verificare; nessuna disponibilità documentata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "22/23–25 maggio 2026; giorno iniziale discordante nella fonte",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.porto-torres.ss.it/it/novita/notizia/Porto-Torres-rinnova-lantico-legame-con-i-Santi-Gavino-Proto-e-Gianuario/"
+      }
+    ],
+    "venue": "Centro storico"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Pesce",
+    "city": "Porto Torres",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "summary": "Sagra gastronomica turritana inserita negli appuntamenti della Festha Manna.",
+    "source": {
+      "url": "https://comune.porto-torres.ss.it/it/novita/notizia/Porto-Torres-rinnova-lantico-legame-con-i-Santi-Gavino-Proto-e-Gianuario/",
+      "label": "comune.porto-torres.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.porto-torres.ss.it/it/novita/notizia/Porto-Torres-rinnova-lantico-legame-con-i-Santi-Gavino-Proto-e-Gianuario/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma comunale: domenica 31 maggio 2026, distinta dalla Fiera di San Gavino e dai riti della Pentecoste. Il comunicato non pubblica una selezione attuale di operatori esterni né costi del banco. Verificare se la somministrazione sia gestita dalle associazioni organizzatrici."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-31",
+        "end": "2026-05-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.porto-torres.ss.it/it/novita/notizia/Porto-Torres-rinnova-lantico-legame-con-i-Santi-Gavino-Proto-e-Gianuario/"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Mostra Micologica del Capo di Sopra e Sagra Porcino Porcetto",
+    "city": "Putifigari",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "summary": "Mostra dei funghi e appuntamento gastronomico a cura della Pro Loco.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/08/ammentos-de-potufigari-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/08/ammentos-de-potufigari-2026/",
+      "https://visitanglonacoros.it/cosa-visitare/mostra-micologica-del-capo-di-sopra-e-la-sagra-del-porcino-e-del-porcetto/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Mostra il 7–8 novembre 2026 e Sagra Porcino Porcetto l’8 novembre alle 12. La cornice Ammentos de Putifigari 3–30 novembre comprende laboratori, gara ed escursioni e non diventa un mese di fiera quotidiana. Le attività a Monte Pisanu non sono attribuite al comune come nuovi mercati. Ammissione di esterni e quote non pubblicate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/08/ammentos-de-potufigari-2026/"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Pecora",
+    "city": "Putifigari",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Degustazioni e incontro con gli allevatori del territorio.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/putifigari",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/putifigari"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Periodo usuale luglio dalla Regione. Non è conferma di una nuova edizione né di posteggi esterni: verificare programma e gestione degli stand con l’organizzazione prima di programmare una trasferta. Costi e servizi non documentati."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Mirto",
+    "city": "Putifigari",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Prodotti locali e mostre etnografiche legate alla cultura agropastorale.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/putifigari",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/putifigari"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale indica agosto come periodo usuale. Non confondere con l’omonima sagra di Telti, oggi in Gallura e fuori da questa ricerca. Nessun giorno 2026 confermato o bando attuale per nuovi venditori; tariffe non ricostruite."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Carciofo",
+    "city": "Santa Maria Coghinas",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "summary": "Pranzo e preparazioni del carciofo spinoso della Bassa Valle del Coghinas.",
+    "source": {
+      "url": "https://www.insardegnacondani.it/eventi/sagra-carciofo-santa-maria-coghinas/",
+      "label": "insardegnacondani.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.insardegnacondani.it/eventi/sagra-carciofo-santa-maria-coghinas/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma 25 aprile 2026 da fonte editoriale con rimando ai promotori. La pagina regionale cercata risponde 404; non rivendicata una conferma comunale originale. Pranzo e panini sono servizi del pubblico, non costi stand. Non reperita una selezione per ambulanti esterni."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-25",
+        "end": "2026-04-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.insardegnacondani.it/eventi/sagra-carciofo-santa-maria-coghinas/"
+      }
+    ],
+    "venue": "Piazza Crimea",
+    "organizer": "Pro Loco Santa Maria Coghinas"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Feste in Cantina",
+    "city": "Sedini",
+    "months": [
+      12
+    ],
+    "category": "sagra",
+    "summary": "Cantine scavate nella roccia, vini e prodotti tipici dell’Anglona.",
+    "source": {
+      "url": "https://visitanglonacoros.it/cosa-visitare/evento-feste-in-cantina/",
+      "label": "visitanglonacoros.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitanglonacoros.it/cosa-visitare/evento-feste-in-cantina/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte GAL descrive il periodo usuale tra Natale e Capodanno. Non pubblicata una giornata 2026 confermata. Il documento cercato come AVVISO_2026 risponde 404: nessun allegato letto o quota desunta. Verificare organizzazione, accesso delle cantine e condizioni per eventuali venditori esterni."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Calici di Stelle",
+    "city": "Sennori",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Vini locali, gastronomia e mercatini artigianali nell’itinerario cittadino.",
+    "source": {
+      "url": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "label": "comune.sennori.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "https://sardegnawinefood.it/sennori-prevendite-aperte-per-calici-di-stelle-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Calendario comunale: 10 agosto 2026 e nessuno stallo da assegnare a cura della Polizia Locale, con rinvio all’organizzazione dell’evento. Il comunicato riprodotto dalla stampa enogastronomica descrive mercatini artigianali e degustazioni dalle 19:30. La pagina turistica comunale aggiornata nel 2025 non viene usata come data corrente. Ticket adulti e bambini sono servizi visitatori, non tariffe espositore."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-10",
+        "end": "2026-08-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/"
+      }
+    ],
+    "venue": "Centro storico e Centro Turistico Rosa Gambella"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Salsiccia e del Novello",
+    "city": "Siligo",
+    "months": [
+      12
+    ],
+    "category": "sagra",
+    "summary": "Salsiccia locale e vini nuovi in un appuntamento della tradizione di Siligo.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/siligo",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/siligo"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La Regione indica dicembre come periodo usuale. L’evento linguistico Raighinas de identidade del 14 dicembre 2025 è distinto e non prova la data della sagra. Nessun giorno 2026, bando per posteggi, quota o servizio dello stand confermato."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Calici di Stelle",
+    "city": "Sorso",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Percorso urbano tra cantine, stand gastronomici e mercatino delle Arti e dei Mestieri.",
+    "source": {
+      "url": "https://www.comune.sorso.ss.it/Novita/Notizie/Calici-di-Stelle-2026-a-Sorso",
+      "label": "comune.sorso.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sorso.ss.it/Novita/Notizie/Calici-di-Stelle-2026-a-Sorso",
+      "https://www.comune.sorso.ss.it/Novita/Notizie/Calici-di-Stelle-2026-Sorso-brinda-a-una-notte-da-ricordare"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma comunale: 8 agosto 2026 dalle 20. Cantine, produttori e artigiani partecipano al circuito; il carnet da 15 € è per le degustazioni del pubblico e non il costo di un banco. Non sono pubblicati in questa pagina domanda, quota o posti liberi per nuovi operatori."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sorso.ss.it/Novita/Notizie/Calici-di-Stelle-2026-a-Sorso"
+      }
+    ],
+    "venue": "Centro storico"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Melanzana",
+    "city": "Sorso",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Appuntamento gastronomico dedicato alla melanzana e alle produzioni orticole locali.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/sorso",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/sorso"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale descrive fine luglio come periodo usuale. La ricognizione del programma comunale 2026 non consente di assegnare una nuova data esatta alla sagra. Nessun bando per ambulanti esterni, tariffa stand o posto libero verificato."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Festival del Turismo Itinerante",
+    "city": "Stintino",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "summary": "Spazio espositivo, street food, degustazioni e attività nel territorio di Stintino.",
+    "source": {
+      "url": "https://festivaldelturismoitinerante.com/",
+      "label": "festivaldelturismoitinerante.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://festivaldelturismoitinerante.com/",
+      "https://comune.porto-torres.ss.it/it/vivere-il-comune/eventi/evento/Festival-del-turismo-itinerante/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Edizione 9–11 ottobre 2026 a Stintino. La scheda sul sito di Porto Torres riguarda la stessa manifestazione a Stintino: non duplicata né attribuita alla città che ospita la pagina. La homepage conserva anche una sezione attività etichettata 2025. Il pass del pubblico non è quota espositore; spazi e condizioni commerciali da verificare con APS Camperisti Torres."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://festivaldelturismoitinerante.com/"
+      }
+    ],
+    "venue": "Stintino, Piazza dei 45 e territorio",
+    "organizer": "APS Camperisti Torres"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra dell’Asparago Selvatico",
+    "city": "Tissi",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "summary": "Stand gastronomici e piatti a base di asparagi selvatici.",
+    "source": {
+      "url": "https://visitanglonacoros.it/eventi/sagra-dellasparago-selvatico/",
+      "label": "visitanglonacoros.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitanglonacoros.it/eventi/sagra-dellasparago-selvatico/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-19",
+        "end": "2026-04-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitanglonacoros.it/eventi/sagra-dellasparago-selvatico/"
+      }
+    ],
+    "venue": "Belvedere Pais e via Roma",
+    "organizer": "Pro Loco Tissi"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Carpa",
+    "city": "Tula",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Piatti di pesce e tradizioni gastronomiche sulle sponde del lago Coghinas.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/tula",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/tula"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte regionale colloca la sagra a inizio agosto, senza confermare una giornata 2026. La tradizione gastronomica non equivale a un mercato aperto a esterni; bando, disponibilità, canone e servizi del posto restano da verificare prima di programmare la partecipazione."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Carciofo",
+    "city": "Uri",
+    "months": [
+      3
+    ],
+    "category": "sagra",
+    "summary": "Sagra del Carciofo Spinoso Sardo DOP con aree commerciali e gastronomiche.",
+    "source": {
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/4924272/AVVISO_signed.pdf",
+      "label": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://mycity.s3.sbg.io.cloud.ovh.net/4924272/AVVISO_signed.pdf",
+      "https://visitanglonacoros.it/eventi/sagra-del-carciofo/",
+      "https://comune.uri.ss.it/notizie/3546039/avviso-fase-integrativa-assegnazione-posteggi",
+      "https://comune.uri.ss.it/notizie/3548606/sagra-carciofo-2026-approvazione-graduatoria"
+    ],
+    "sectors": "Alimentari, prodotti del territorio, artigianato, opere dell’ingegno e non alimentare nelle categorie del bando",
+    "participation": {
+      "type": "public",
+      "note": "La festa è presentata per il 7–8 marzo 2026, ma il bando dei posteggi riguarda esclusivamente l’8 marzo. Previsti 78 posti di tipologie diverse, dei quali 5 di spettacolo viaggiante: non sono 78 banchi merceologici. Domande ordinarie entro il 23 febbraio ore 24; fase residua entro il 5 marzo ore 10, poi graduatoria. Titoli, anzianità, concessione e Canone Unico necessari; l’elenco non prova posti ancora liberi.",
+      "deadline": "2026-03-05"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-08",
+        "end": "2026-03-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/4924272/AVVISO_signed.pdf"
+      }
+    ],
+    "venue": "Via Sassari e piazze indicate dal bando"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra Estiva del Carciofo",
+    "city": "Uri",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Laboratori, degustazioni e cene dedicate al carciofo e ai prodotti del territorio.",
+    "source": {
+      "url": "https://saludetrigu.it/2026/06/esperienze-tra-i-sapori-e-le-tradizioni-della-sagra-del-carciofo-estiva-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/06/esperienze-tra-i-sapori-e-le-tradizioni-della-sagra-del-carciofo-estiva-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma 6–8 agosto 2026 distinto dalla sagra primaverile e dal relativo bando dell’8 marzo. L’avviso di marzo non autorizza posteggi in agosto. La fonte descrive laboratori e cene organizzate, non una chiamata aperta a operatori esterni; verificare selezione, costi e servizi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-06",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/06/esperienze-tra-i-sapori-e-le-tradizioni-della-sagra-del-carciofo-estiva-2026/"
+      }
+    ],
+    "organizer": "Pro Loco Uri"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Mercatino di Natale",
+    "city": "Uri",
+    "months": [
+      12
+    ],
+    "category": "mercatino",
+    "summary": "Stand di hobbisti e associazioni nel Natale Urese.",
+    "source": {
+      "url": "https://comune.uri.ss.it/notizie/3503497/mercatino-natale",
+      "label": "comune.uri.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.uri.ss.it/notizie/3503497/mercatino-natale",
+      "https://comune.uri.ss.it/notizie/3490239/mercatino-natale-2025"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione documentata domenica 7 dicembre 2025 dalle 10 in piazza Alisa. Domande entro il 19 novembre 2025 alle 11:30. Esenzione del solo suolo pubblico per le attività partecipanti, non gratuità di ogni costo o nuova edizione 2026 confermata.",
+      "deadline": "2025-11-19",
+      "costs": "Avviso comunale Mercatino di Natale 2025: le attività partecipanti il 7 dicembre erano esenti dal pagamento del suolo pubblico. Non documentata gratuità di allestimento, servizi e altri adempimenti; nessuna estensione al Natale 2026. Domanda entro il 19 novembre 2025 ore 11:30."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-07",
+        "end": "2025-12-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.uri.ss.it/notizie/3503497/mercatino-natale"
+      }
+    ],
+    "venue": "Piazza Alisa"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Mercatino del Libro – Sa die ’e su liberu",
+    "city": "Uri",
+    "months": [
+      4
+    ],
+    "category": "mercatino",
+    "summary": "Sei spazi per gli operatori della filiera del libro durante la giornata dedicata alla lettura.",
+    "source": {
+      "url": "https://comune.uri.ss.it/notizie/3413265/manifestazione-interesse-rivolta-operatori",
+      "label": "comune.uri.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.uri.ss.it/notizie/3413265/manifestazione-interesse-rivolta-operatori"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso storico 23 aprile 2025: sei operatori iscritti alla Camera di Commercio per vendita di libri, codice ATECO 47.61. Domanda entro il 17 aprile ore 12:30 via PEC; priorità territoriale e ordine di protocollo. Vendita ammessa con autorizzazioni e obblighi fiscali propri. Non è conferma del 2026 né ammissione di altri settori.",
+      "deadline": "2025-04-17"
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-04-23",
+        "end": "2025-04-23",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.uri.ss.it/notizie/3413265/manifestazione-interesse-rivolta-operatori"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra degli Andarinos",
+    "city": "Usini",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Pasta fresca tipica, preparazioni locali e cultura del territorio.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/usini",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/usini"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La Regione indica luglio come periodo usuale. Non reperita una data 2026 da programma originale sufficiente a confermarla. Le altre manifestazioni enologiche di Usini e il folklore non sono nuovi giorni della sagra; bando, prezzi e accesso per ambulanti esterni non documentati."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Mercatini estivi di La Ciaccia",
+    "city": "Valledoria",
+    "months": [
+      7,
+      8,
+      9
+    ],
+    "category": "mercatino",
+    "summary": "Mercatini serali con musica nelle vie della frazione costiera di La Ciaccia.",
+    "source": {
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf",
+      "label": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "check",
+      "note": "Locandina comunale 2026 controllata visivamente: serate separate il 14,16,21,23,28,30 luglio; 4,6,11,13,18,20,25,27 agosto; 1 e 3 settembre, alle 21. Non un mercato quotidiano nell’intero intervallo. Il programma non specifica settori ammessi, procedura di assegnazione, canone o posti liberi."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-14",
+        "end": "2026-07-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-16",
+        "end": "2026-07-16",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-21",
+        "end": "2026-07-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-23",
+        "end": "2026-07-23",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-28",
+        "end": "2026-07-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-30",
+        "end": "2026-07-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-04",
+        "end": "2026-08-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-06",
+        "end": "2026-08-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-11",
+        "end": "2026-08-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-13",
+        "end": "2026-08-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-18",
+        "end": "2026-08-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-20",
+        "end": "2026-08-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-25",
+        "end": "2026-08-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-27",
+        "end": "2026-08-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-09-01",
+        "end": "2026-09-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      },
+      {
+        "year": 2026,
+        "start": "2026-09-03",
+        "end": "2026-09-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      }
+    ],
+    "venue": "La Ciaccia, via Cristoforo Colombo"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Vitellone",
+    "city": "Valledoria",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Appuntamento gastronomico dell’estate di Valledoria.",
+    "source": {
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf",
+      "label": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La locandina originale riporta martedì 28 luglio 2026 alle 20 in piazza Padre Pio: controllata visivamente, senza adottare l’errata lettura “sabato”. Sagra e mercatino di La Ciaccia della stessa sera sono luoghi e iniziative differenti. Non pubblicate condizioni di partecipazione di ambulanti esterni."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-28",
+        "end": "2026-07-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      }
+    ],
+    "venue": "Piazza Padre Pio"
+  },
+  {
+    "region": "Sardegna",
+    "name": "La Ciaccia Summer Fest",
+    "city": "Valledoria",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Tre serate di folklore, degustazioni e concerti sul lungomare.",
+    "source": {
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf",
+      "label": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-21",
+        "end": "2026-08-23",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      }
+    ],
+    "venue": "La Ciaccia, lungomare"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Quattro calici in Comune",
+    "city": "Valledoria",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Serata di degustazioni enogastronomiche nel programma estivo comunale.",
+    "source": {
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf",
+      "label": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-27",
+        "end": "2026-08-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      }
+    ],
+    "venue": "Piazza del Comune"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Oktober Fest di La Ciaccia",
+    "city": "Valledoria",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "summary": "Appuntamento gastronomico e musicale autunnale sul lungomare.",
+    "source": {
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf",
+      "label": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma comunale: 3–4 ottobre 2026 dalle 12, La Ciaccia. Il titolo Oktober Fest non basta a dedurre birrifici ammessi, prezzi degli stand o apertura delle iscrizioni. Non documentati disponibilità e condizioni per ambulanti esterni."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-03",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5201305/Manifesto del Programma estivo 2026 Valledoria.pdf"
+      }
+    ],
+    "venue": "La Ciaccia, lungomare"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Mostra mercato del Cavallo Anglo-Arabo-Sardo",
+    "city": "Villanova Monteleone",
+    "months": [
+      6
+    ],
+    "category": "espositiva",
+    "summary": "Rassegna e mercato del cavallo anglo-arabo-sardo.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/villanova-monteleone",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/villanova-monteleone"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "check",
+      "note": "La Regione indica inizio estate, riportato come periodo usuale e non come giorno di un’edizione 2026. Manifestazione specializzata: esposizione di cavalli e possibili spazi commerciali collaterali hanno requisiti diversi. Non documentati un bando attuale per ambulanti, quote o servizi inclusi."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Pecora",
+    "city": "Villanova Monteleone",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Degustazioni della tradizione pastorale e prodotti locali.",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/villanova-monteleone",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/villanova-monteleone"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La Regione colloca la sagra a inizio agosto. Nessuna data 2026 confermata o procedura attuale per banchi esterni reperita nelle fonti accessibili. Canoni, selezione e disponibilità da verificare con i promotori, senza assumere ingresso libero per gli operatori."
+    },
+    "editions": []
+  },
+  {
+    "region": "Sardegna",
+    "name": "Stalli della festa di San Basilio Magno",
+    "city": "Sennori",
+    "months": [
+      6
+    ],
+    "category": "tradizionale",
+    "summary": "Posteggi per vendita e somministrazione durante la festa civile di San Basilio Magno.",
+    "source": {
+      "url": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "label": "comune.sennori.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "https://www.comune.sennori.ss.it/wp-content/uploads/2026/05/MODELLO-domanda-stalli-occupazione-suolo-pubblico-per-eventi-1.pdf"
+    ],
+    "sectors": "Somministrazione itinerante, alimentari, dolciumi",
+    "participation": {
+      "type": "public",
+      "note": "Avviso 2026: previsti due camion bar e un dolciumi. Domande dalle 00:01 del 13 maggio alle 13 del 01/06/2026, via PEC o a mano al protocollo con il modulo comunale. Assegnazione per ordine di registrazione; il numero pubblicato a maggio non è disponibilità attuale. Validità oraria fissata nell’autorizzazione. Servono titolo commerciale, domanda, concessione, canone e due bolli; eventuali variazioni di calendario da verificare.",
+      "deadline": "2026-06-01",
+      "costs": "Calendario comunale eventi 2026: bollo di 16 € sulla domanda e ulteriore bollo di 16 € per l’autorizzazione. Il canone dipende da spazio e giorni secondo tariffe comunali approvate con D.G. 181 del 13 novembre 2025, non quantificato nel documento. I 32 € di bolli non rappresentano il costo totale del banco; nessun servizio incluso presunto."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-12",
+        "end": "2026-06-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Stalli della festa di San Biagio",
+    "city": "Sennori",
+    "months": [
+      7
+    ],
+    "category": "tradizionale",
+    "summary": "Posteggi per vendita e somministrazione durante la festa civile di San Biagio.",
+    "source": {
+      "url": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "label": "comune.sennori.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "https://www.comune.sennori.ss.it/wp-content/uploads/2026/05/MODELLO-domanda-stalli-occupazione-suolo-pubblico-per-eventi-1.pdf"
+    ],
+    "sectors": "Somministrazione itinerante, alimentari, dolciumi, commercio non alimentare",
+    "participation": {
+      "type": "public",
+      "note": "Avviso 2026: previsti quattro camion bar, uno dolciumi e due commercio al dettaglio su area pubblica. Domande dalle 00:01 del 17 giugno alle 13 del 07/07/2026, via PEC o a mano al protocollo con il modulo comunale. Assegnazione per ordine di registrazione; il numero pubblicato a maggio non è disponibilità attuale. Validità oraria fissata nell’autorizzazione. Servono titolo commerciale, domanda, concessione, canone e due bolli; eventuali variazioni di calendario da verificare.",
+      "deadline": "2026-07-07",
+      "costs": "Calendario comunale eventi 2026: bollo di 16 € sulla domanda e ulteriore bollo di 16 € per l’autorizzazione. Il canone dipende da spazio e giorni secondo tariffe comunali approvate con D.G. 181 del 13 novembre 2025, non quantificato nel documento. I 32 € di bolli non rappresentano il costo totale del banco; nessun servizio incluso presunto."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-17",
+        "end": "2026-07-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Stalli della festa di Madonna degli Angeli",
+    "city": "Sennori",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "summary": "Posteggi per vendita e somministrazione durante la festa civile di Madonna degli Angeli.",
+    "source": {
+      "url": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "label": "comune.sennori.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "https://www.comune.sennori.ss.it/wp-content/uploads/2026/05/MODELLO-domanda-stalli-occupazione-suolo-pubblico-per-eventi-1.pdf"
+    ],
+    "sectors": "Somministrazione itinerante, alimentari, dolciumi",
+    "participation": {
+      "type": "public",
+      "note": "Avviso 2026: previsti un camion bar e un dolciumi. Domande dalle 00:01 del 2 luglio alle 13 del 22/07/2026, via PEC o a mano al protocollo con il modulo comunale. Assegnazione per ordine di registrazione; il numero pubblicato a maggio non è disponibilità attuale. Validità oraria fissata nell’autorizzazione. Servono titolo commerciale, domanda, concessione, canone e due bolli; eventuali variazioni di calendario da verificare.",
+      "deadline": "2026-07-22",
+      "costs": "Calendario comunale eventi 2026: bollo di 16 € sulla domanda e ulteriore bollo di 16 € per l’autorizzazione. Il canone dipende da spazio e giorni secondo tariffe comunali approvate con D.G. 181 del 13 novembre 2025, non quantificato nel documento. I 32 € di bolli non rappresentano il costo totale del banco; nessun servizio incluso presunto."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Stalli della festa di Santa Lucia",
+    "city": "Sennori",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "summary": "Posteggi per vendita e somministrazione durante la festa civile di Santa Lucia.",
+    "source": {
+      "url": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "label": "comune.sennori.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
+      "https://www.comune.sennori.ss.it/wp-content/uploads/2026/05/MODELLO-domanda-stalli-occupazione-suolo-pubblico-per-eventi-1.pdf"
+    ],
+    "sectors": "Somministrazione itinerante, alimentari, dolciumi",
+    "participation": {
+      "type": "public",
+      "note": "Avviso 2026: previsti due camion bar e un dolciumi. Domande dalle 00:01 del 22 luglio alle 13 del 11/08/2026, via PEC o a mano al protocollo con il modulo comunale. Assegnazione per ordine di registrazione; il numero pubblicato a maggio non è disponibilità attuale. Validità oraria fissata nell’autorizzazione. Servono titolo commerciale, domanda, concessione, canone e due bolli; eventuali variazioni di calendario da verificare.",
+      "deadline": "2026-08-11",
+      "costs": "Calendario comunale eventi 2026: bollo di 16 € sulla domanda e ulteriore bollo di 16 € per l’autorizzazione. Il canone dipende da spazio e giorni secondo tariffe comunali approvate con D.G. 181 del 13 novembre 2025, non quantificato nel documento. I 32 € di bolli non rappresentano il costo totale del banco; nessun servizio incluso presunto."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-21",
+        "end": "2026-08-23",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/"
+      }
+    ]
+  },
+  {
+    "region": "Sardegna",
+    "name": "Manifestazione del Pecorino Arrosto",
+    "city": "Stintino",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "summary": "Degustazioni di pecorino arrosto e specialità della tradizione stintinese.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/manifestazione-enogastronomica-con-pecorino-arrosto-stintino-25-aprile/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/manifestazione-enogastronomica-con-pecorino-arrosto-stintino-25-aprile/",
+      "https://visitstintino.it/it/event/manifestazione-enogastronomica-con-pecorino-arrosto-e-altre-delizie/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "25 aprile 2026 dalle 12. Due pagine dello stesso portale indicano sedi differenti, Piazza dei 45 e piazzale Guardia Costiera: divergenza mantenuta, non due eventi. Verificare il luogo con l’ufficio turistico. Nessun bando, canone o ammissione di venditori esterni pubblicato."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-25",
+        "end": "2026-04-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/manifestazione-enogastronomica-con-pecorino-arrosto-stintino-25-aprile/"
+      }
+    ],
+    "venue": "Stintino; luogo discordante nelle due pagine"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Manifestazione enogastronomica di Sant’Isidoro",
+    "city": "Stintino",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "summary": "Gnocchi al ragù e pecora arrosto nella festa di Sant’Isidoro.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/10-maggio-manifestazione-enogastronomica-in-onore-di-santisidoro/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/10-maggio-manifestazione-enogastronomica-in-onore-di-santisidoro/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-10",
+        "end": "2026-05-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/10-maggio-manifestazione-enogastronomica-in-onore-di-santisidoro/"
+      }
+    ],
+    "venue": "Chiesa di Sant’Isidoro, località Ercoli"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Tonnara Fest – Villaggio della Tonnara",
+    "city": "Stintino",
+    "months": [
+      6
+    ],
+    "category": "artigianato",
+    "summary": "Stand enogastronomici e mercatini artigianali nella Festa della Tonnara.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/tonnara-fest-a-stintino-la-1a-edizione-della-festa-della-tonnara/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/tonnara-fest-a-stintino-la-1a-edizione-della-festa-della-tonnara/"
+    ],
+    "sectors": "Artigianato e prodotti tipici",
+    "participation": {
+      "type": "check",
+      "note": "Stand e mercatini il 27–28 giugno 2026 dalle 19 in Piazza dei 45. Il 26 giugno comprende presentazione, teatro e musica e non è aggiunto ai giorni dei banchi. La sede Museo della Tonnara nei metadati riguarda la cornice dell’evento. Le escursioni a pagamento sono servizi visitatori, non tariffe stand; nessuna procedura di ammissione esterni reperita."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-27",
+        "end": "2026-06-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/tonnara-fest-a-stintino-la-1a-edizione-della-festa-della-tonnara/"
+      }
+    ],
+    "venue": "Piazza dei 45"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Calici di Stelle – Stintino incontra Sennori",
+    "city": "Stintino",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Due serate di vini e prodotti tipici al Porto Vecchio.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/calici-di-stelle-2026-stintino-incontra-sennori/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/calici-di-stelle-2026-stintino-incontra-sennori/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "3 e 24 luglio 2026 dalle 19:30, serate separate. Le pagine del Raduno dei 45 e del Viaggio del Postale descrivono la stessa cornice e non generano nuove schede. Svolgimento a Stintino, distinto da Calici di Stelle del 10 agosto a Sennori. Nessuna quota espositore o disponibilità esterna documentata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-03",
+        "end": "2026-07-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/calici-di-stelle-2026-stintino-incontra-sennori/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-24",
+        "end": "2026-07-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/calici-di-stelle-2026-stintino-incontra-sennori/"
+      }
+    ],
+    "venue": "Porto Vecchio"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Pesce – Orate alla brace",
+    "city": "Stintino",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Orate alla brace nella conclusione degli appuntamenti di storia marinara.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/stintino-una-storia-da-raccontare-dal-3-al-5-luglio-2026/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/stintino-una-storia-da-raccontare-dal-3-al-5-luglio-2026/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Sagra del pesce il 5 luglio 2026 alle 20 in Piazza dei 45. Il raduno nautico del 3–5 luglio comprende altre attività e non significa tre giorni di sagra. Non pubblicata una procedura per nuovi operatori o un costo banco; verificare se la cucina sia riservata ai promotori."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-05",
+        "end": "2026-07-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/stintino-una-storia-da-raccontare-dal-3-al-5-luglio-2026/"
+      }
+    ],
+    "venue": "Piazza dei 45"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Viva Messico Festival",
+    "city": "Stintino",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Street food e specialità messicane con musica e attività per famiglie.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/viva-messico-festival-arriva-a-stintino/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/viva-messico-festival-arriva-a-stintino/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-09",
+        "end": "2026-07-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/viva-messico-festival-arriva-a-stintino/"
+      }
+    ],
+    "venue": "Largo Cala d’Oliva"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Festa del Gusto Internazionale",
+    "city": "Stintino",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "summary": "Specialità sarde, cucine internazionali e birrifici artigianali in piazza.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/festa-del-gusto-internazionale-2026-a-stintino-tre-serate-tra-sapori-musica-e-incontro-tra-culture/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/festa-del-gusto-internazionale-2026-a-stintino-tre-serate-tra-sapori-musica-e-incontro-tra-culture/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Programma 25–27 luglio 2026 dalle 18; non adottato l’orario 06:00 dei metadati in contrasto con il testo. Le presenze annunciate non sono un avviso per altri espositori. Verificare organizzazione, selezione delle cucine e tariffe; nessuna disponibilità attuale attestata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/festa-del-gusto-internazionale-2026-a-stintino-tre-serate-tra-sapori-musica-e-incontro-tra-culture/"
+      }
+    ],
+    "venue": "Piazza dei 45"
+  },
+  {
+    "region": "Sardegna",
+    "name": "TAIM – Tiny Amazing Market",
+    "city": "Stintino",
+    "months": [
+      8
+    ],
+    "category": "mercatino",
+    "summary": "Piccoli produttori, creativi e artigianato sul lungomare con musica.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/taim-tiny-amazing-market-ad-agosto-a-stintino-tornano-market-e-musica-sul-lungomare/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/taim-tiny-amazing-market-ad-agosto-a-stintino-tornano-market-e-musica-sul-lungomare/"
+    ],
+    "sectors": "Settori descritti nella fonte; ammissione da verificare",
+    "participation": {
+      "type": "check",
+      "note": "Quattro giovedì separati: 6,13,20,27 agosto 2026. Le pagine delle singole serate sono raggruppate nello stesso evento; non un mercato quotidiano nel mese. Non pubblicati criteri di ammissione, quote, servizi dello stand o posti ancora disponibili."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-06",
+        "end": "2026-08-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/taim-tiny-amazing-market-ad-agosto-a-stintino-tornano-market-e-musica-sul-lungomare/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-13",
+        "end": "2026-08-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/taim-tiny-amazing-market-ad-agosto-a-stintino-tornano-market-e-musica-sul-lungomare/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-20",
+        "end": "2026-08-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/taim-tiny-amazing-market-ad-agosto-a-stintino-tornano-market-e-musica-sul-lungomare/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-27",
+        "end": "2026-08-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/taim-tiny-amazing-market-ad-agosto-a-stintino-tornano-market-e-musica-sul-lungomare/"
+      }
+    ],
+    "venue": "Lungomare Cristoforo Colombo, area del Faro"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra del Maialetto Arrosto",
+    "city": "Stintino",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Piatti della tradizione pastorale sarda nella piazza del paese.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/sagra-del-maialetto-arrosto-a-stintino/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/sagra-del-maialetto-arrosto-a-stintino/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-17",
+        "end": "2026-08-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/sagra-del-maialetto-arrosto-a-stintino/"
+      }
+    ],
+    "venue": "Piazza dei 45"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Festa Sarda",
+    "city": "Stintino",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "summary": "Specialità gastronomiche, birra locale, musica e folklore.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/festa-sarda-a-stintino-tre-serate-tra-gusto-musica-e-tradizione/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/festa-sarda-a-stintino-tre-serate-tra-gusto-musica-e-tradizione/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le produzioni locali, senza pubblicare una procedura attuale per ambulanti esterni. Verifica con Comune o organizzatore categorie ammesse, domanda, canone e servizi; non risultano posti liberi documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-22",
+        "end": "2026-08-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/festa-sarda-a-stintino-tre-serate-tra-gusto-musica-e-tradizione/"
+      }
+    ],
+    "venue": "Piazza dei 45"
+  },
+  {
+    "region": "Sardegna",
+    "name": "Sagra della Pecora di Pozzo San Nicola",
+    "city": "Stintino",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "summary": "Sagra gastronomica organizzata dalla Pro Loco nella borgata di Pozzo San Nicola.",
+    "source": {
+      "url": "https://visitstintino.it/it/event/festeggiamenti-in-onore-di-san-nicola-a-pozzo-san-nicola/",
+      "label": "visitstintino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitstintino.it/it/event/festeggiamenti-in-onore-di-san-nicola-a-pozzo-san-nicola/"
+    ],
+    "sectors": "Prodotti tipici, enogastronomia",
+    "participation": {
+      "type": "check",
+      "note": "Sagra il 19 settembre 2026 dalle 19; la domenica 20 è dedicata a messa, processione e rinfresco e non diventa una seconda giornata di mercato. Somministrazione della Pro Loco, senza una procedura attuale per operatori esterni o quota dello stand documentata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitstintino.it/it/event/festeggiamenti-in-onore-di-san-nicola-a-pozzo-san-nicola/"
+      }
+    ],
+    "venue": "Pozzo San Nicola",
+    "organizer": "Pro Loco Stintinese"
   }
 ]
