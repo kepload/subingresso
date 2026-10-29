@@ -18259,5 +18259,2000 @@
       "type": "selected",
       "note": "Portale per espositori: appuntamento del 9 luglio 2026 dalle 19:30, attribuito al Comune. La candidatura sul portale non è un’ammissione. Non confondere con la Fiera serale di Isola Rossa, il cui bando oggi non è accessibile. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
     }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Alia",
+    "name": "SiciliAlleva — mostra mercato della biodiversità",
+    "months": [
+      11
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.comune.alia.pa.it/Novita/Notizie/Avviso-pubblico-Manifestazione-di-Interesse-finalizzato-alla-partecipazione2",
+      "label": "www.comune.alia.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.alia.pa.it/Novita/Notizie/Avviso-pubblico-Manifestazione-di-Interesse-finalizzato-alla-partecipazione2",
+      "https://www.comune.alia.pa.it/ocmultibinary/download/4409/61984/2/d0dc901120110fae0fd21d682fb2af6f.pdf/file/Avviso_Adesione_artigiani__commercianti__espositori.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-20",
+        "end": "2026-11-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.alia.pa.it/Novita/Notizie/Avviso-pubblico-Manifestazione-di-Interesse-finalizzato-alla-partecipazione2"
+      }
+    ],
+    "sectors": "Zootecnia, produzioni agroalimentari, artigianato e commercio",
+    "venue": "Area fieristica di Alia",
+    "summary": "Manifestazione dedicata a zootecnia, produzioni agroalimentari, artigianato e commercio.",
+    "participation": {
+      "type": "selected",
+      "note": "Invito preliminare 2026: preadesione entro il 28 ottobre, mediante scheda al Protocollo o PEC. Avviso per artigiani e commercianti letto anche in scansione: aree dedicate, allaccio elettrico, illuminazione comune e vigilanza passiva annunciati; nessuna tariffa quantificata. La preadesione serve alla pianificazione, non prova l’assegnazione. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio.",
+      "deadline": "2026-10-28"
+    },
+    "organizer": "Comune di Alia"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Alimena",
+    "name": "Sagra del Ficodindia e del Masticuttè",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.palermoviva.it/eventi/alimena-sulle-madonie-celebra-il-suo-oro-con-le-spine-con-la-sagra-del-ficondindia-e-del-masticutte/",
+      "label": "www.palermoviva.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.palermoviva.it/eventi/alimena-sulle-madonie-celebra-il-suo-oro-con-le-spine-con-la-sagra-del-ficondindia-e-del-masticutte/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-11",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.palermoviva.it/eventi/alimena-sulle-madonie-celebra-il-suo-oro-con-le-spine-con-la-sagra-del-ficondindia-e-del-masticutte/"
+      }
+    ],
+    "sectors": "Prodotti al ficodindia, gastronomia e artigianato a tema",
+    "venue": "Villa comunale",
+    "summary": "Manifestazione dedicata a prodotti al ficodindia, gastronomia e artigianato a tema.",
+    "participation": {
+      "type": "check",
+      "note": "Programma 2026 riportato da PalermoViva: stand gastronomici, artistici e artigianali dalle 10. Il ticket del menù riguarda i visitatori, non l’espositore. Non reperito un bando comunale corrente con quote o posti. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Pro Loco Alimena"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Balestrate",
+    "name": "Tropicalia — Le vie del mango",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.balestrate.pa.it/vivere-il-comune/eventi/tropicalia/",
+      "label": "www.comune.balestrate.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.balestrate.pa.it/vivere-il-comune/eventi/tropicalia/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-28",
+        "end": "2026-08-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.balestrate.pa.it/vivere-il-comune/eventi/tropicalia/"
+      }
+    ],
+    "sectors": "Mango, produzioni agricole e gastronomia",
+    "venue": "Village di Tropicalia",
+    "summary": "Manifestazione dedicata a mango, produzioni agricole e gastronomia.",
+    "participation": {
+      "type": "check",
+      "note": "Programma comunale 2026: village dal 28 agosto e stand il 29–30. Il 27 è dedicato alle visite nei campi, escluso dai giorni commerciali. Il ticket experience da 15 € è per visita e degustazione, non quota banco. Nessun avviso di ammissione generale verificato. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Terre delle Balestrate e Pro Loco, con il Comune"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Bagheria",
+    "name": "Sfincione Fest",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://sfincionefest.it/",
+      "label": "sfincionefest.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://sfincionefest.it/",
+      "https://www.visitsicily.info/evento-new/sfincione-fest-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-19",
+        "end": "2026-11-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://sfincionefest.it/"
+      }
+    ],
+    "sectors": "Sfincione, panificazione, street food e prodotti tipici",
+    "venue": "Corso Umberto I e aree del festival",
+    "summary": "Manifestazione dedicata a sfincione, panificazione, street food e prodotti tipici.",
+    "participation": {
+      "type": "check",
+      "note": "Date 2026 pubblicate dall’organizzazione e dal turismo regionale. Case dello sfincione e villaggio gastronomico sono aree selezionate; ingresso libero al pubblico non significa spazio gratuito. Non usati i numeri promozionali del sito come affluenza misurata; nessun listino espositore pubblico verificato. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Baucina",
+    "name": "Sagra del Grano — Baucina Food Fest",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.prolocobaucina.cloud/sagra-grano-baucina-2026-food-fest-programma/",
+      "label": "www.prolocobaucina.cloud",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.prolocobaucina.cloud/sagra-grano-baucina-2026-food-fest-programma/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-30",
+        "end": "2026-08-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.prolocobaucina.cloud/sagra-grano-baucina-2026-food-fest-programma/"
+      }
+    ],
+    "sectors": "Prodotti agricoli, agroalimentari, artigianato e street food",
+    "venue": "Corso e vie Umberto I",
+    "summary": "Manifestazione dedicata a prodotti agricoli, agroalimentari, artigianato e street food.",
+    "participation": {
+      "type": "check",
+      "note": "Programma Pro Loco: mercatini dalle 16, aperti anche ad aziende di altri Comuni. Il food fest dalle 18 è invece descritto con attività locali nominate. Le raccolte fondi 2025 non diventano tariffe stand 2026. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Pro Loco Baucina"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Bisacquino",
+    "name": "Festival delle Eccellenze",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://visitbisacquino.it/evento/festival-delle-eccellenze-bisacquino-2026-sapori-tradizioni-e-cultura-siciliana-2/",
+      "label": "visitbisacquino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitbisacquino.it/evento/festival-delle-eccellenze-bisacquino-2026-sapori-tradizioni-e-cultura-siciliana-2/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-13",
+        "end": "2026-06-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitbisacquino.it/evento/festival-delle-eccellenze-bisacquino-2026-sapori-tradizioni-e-cultura-siciliana-2/"
+      }
+    ],
+    "sectors": "Produzioni agroalimentari, vini e prodotti tipici",
+    "venue": "Museo civico e giardini",
+    "summary": "Manifestazione dedicata a produzioni agroalimentari, vini e prodotti tipici.",
+    "participation": {
+      "type": "check",
+      "note": "Programma turistico comunale: area produttori e inaugurazione degli stand alle 21:30. Le attività culturali della giornata non costituiscono un bando. Non pubblicati requisiti operativi, quote e disponibilità per nuovi espositori. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Bisacquino"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Bisacquino",
+    "name": "Fiera Agricola Bisacquinese",
+    "months": [
+      9
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.bisacquino.pa.it/bisacquino/de/attachment.php?serialDocumento=00N5JQ020269M&mosdoc=0",
+      "label": "www.comune.bisacquino.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.bisacquino.pa.it/bisacquino/de/attachment.php?serialDocumento=00N5JQ020269M&mosdoc=0"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-29",
+        "end": "2026-09-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.bisacquino.pa.it/bisacquino/de/attachment.php?serialDocumento=00N5JQ020269M&mosdoc=0"
+      }
+    ],
+    "sectors": "Prodotti agricoli e produzioni locali",
+    "venue": "Bisacquino",
+    "summary": "Manifestazione dedicata a prodotti agricoli e produzioni locali.",
+    "participation": {
+      "type": "check",
+      "note": "Proposta Pro Loco protocollata il 21 settembre 2026: fiera prevista il 29 settembre, casette per espositori agricoli e area food. Documento letto visivamente; il compenso complessivo per l’organizzazione non è un prezzo posteggio. L’atto non prova l’ammissione di un singolo operatore. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune e Pro Loco Bisacquino"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Bisacquino",
+    "name": "Festa della Cipolla e dell’Olio",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://visitbisacquino.it/evento/festa-della-cipolla-e-dellolio/",
+      "label": "visitbisacquino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://visitbisacquino.it/evento/festa-della-cipolla-e-dellolio/"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-19",
+        "end": "2025-08-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://visitbisacquino.it/evento/festa-della-cipolla-e-dellolio/"
+      }
+    ],
+    "sectors": "Cipolla busacchinara, olio, prodotti tipici e artigianato",
+    "venue": "Bisacquino",
+    "summary": "Manifestazione dedicata a cipolla busacchinara, olio, prodotti tipici e artigianato.",
+    "participation": {
+      "type": "check",
+      "note": "Il portale turistico mantiene l’edizione del 19 agosto 2025 con fiera mercato. È storico: nessun rinnovo delle date al 2026. Nuova edizione, domande, canoni e servizi non verificati. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Bisacquino"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Blufi",
+    "name": "Sagra del Finocchietto Selvatico",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.blufi.pa.it/it/eventi/10-sagra-del-finocchietto-selvatico",
+      "label": "www.comune.blufi.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.blufi.pa.it/it/eventi/10-sagra-del-finocchietto-selvatico",
+      "https://blufi-api.municipiumapp.it/s3/723/allegati/sagra-finocchietto/programma-10-sagra-finocchietto.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-09",
+        "end": "2026-05-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.blufi.pa.it/it/eventi/10-sagra-del-finocchietto-selvatico"
+      }
+    ],
+    "sectors": "Finocchietto, prodotti tipici, artigianato ed editoria del cibo",
+    "venue": "Via Risorgimento, via Indipendenza e corso Italia",
+    "summary": "Manifestazione dedicata a finocchietto, prodotti tipici, artigianato ed editoria del cibo.",
+    "participation": {
+      "type": "check",
+      "note": "Pagina comunale e locandina 2026: fiera dell’artigianato il sabato dalle 17 e domenica dalle 10:30. Indicati contatti espositori ma nessuna quota pubblica. Ticket gastronomico da pagare sul posto distinto dai costi di partecipazione. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Pro Loco Blufi e Comune"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Bolognetta",
+    "name": "Sagra della Salsiccia — Sport e Sagra",
+    "months": [
+      12
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/decreti-e-direttive/drs-n-6108-01102026-liquidaz-saldo-contributo-favore-comune-bolognetta",
+      "label": "www.regione.sicilia.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.regione.sicilia.it/istituzioni/servizi-informativi/decreti-e-direttive/drs-n-6108-01102026-liquidaz-saldo-contributo-favore-comune-bolognetta"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-27",
+        "end": "2025-12-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/decreti-e-direttive/drs-n-6108-01102026-liquidaz-saldo-contributo-favore-comune-bolognetta"
+      }
+    ],
+    "sectors": "Salsiccia e gastronomia locale",
+    "venue": "Bolognetta",
+    "summary": "Manifestazione dedicata a salsiccia e gastronomia locale.",
+    "participation": {
+      "type": "check",
+      "note": "Il decreto regionale 6108 del 1 ottobre 2026 liquida il contributo per l’evento svolto il 27 dicembre 2025. Anno dell’atto distinto dall’edizione: storico 2025, nessuna data 2026 o quota espositore dedotta dal finanziamento. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Bolognetta"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Caccamo",
+    "name": "Sagra della Salsiccia",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.caccamo.pa.it/novita/10-11-ottobre-2026-sagra-della-salsiccia-xvii-edizione-caccamo/",
+      "label": "comune.caccamo.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.caccamo.pa.it/novita/10-11-ottobre-2026-sagra-della-salsiccia-xvii-edizione-caccamo/",
+      "https://comune.caccamo.pa.it/wp-content/uploads/2026/09/Programma-Sagra.jpeg"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.caccamo.pa.it/novita/10-11-ottobre-2026-sagra-della-salsiccia-xvii-edizione-caccamo/"
+      }
+    ],
+    "sectors": "Salsiccia, prodotti tipici e gastronomia",
+    "venue": "Centro storico",
+    "summary": "Manifestazione dedicata a salsiccia, prodotti tipici e gastronomia.",
+    "participation": {
+      "type": "check",
+      "note": "Programma e locandina comunali 2026: sabato dalle 18 e domenica dalle 10. Degustazioni e show cooking non costituiscono ammissione per un banco esterno; quota, metratura e servizi espositore non pubblicati nelle fonti lette. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune e Pro Loco Caccamo"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Caltavuturo",
+    "name": "Fungo Ferla Fest",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.santiesagre.com/it/sicilia/caltavuturo/fungo-ferla-fest/",
+      "label": "www.santiesagre.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.santiesagre.com/it/sicilia/caltavuturo/fungo-ferla-fest/"
+    ],
+    "editions": [],
+    "sectors": "Funghi di ferla, produzioni agroalimentari e artigianato",
+    "venue": "Centro storico",
+    "summary": "Manifestazione dedicata a funghi di ferla, produzioni agroalimentari e artigianato.",
+    "participation": {
+      "type": "check",
+      "note": "Ricorrenza autunnale descritta da fonti editoriali. I portali riportano giorni 2026 discordanti e dichiarati indicativi: nessuna edizione datata confermata inserita. Sito e indici comunali controllati senza un programma attuale utilizzabile; non equivale ad annullamento o assenza di manifestazioni. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Camporeale",
+    "name": "Camporeale Days",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://camporealedays.it/programma-17-18-ottobre-2026/",
+      "label": "camporealedays.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://camporealedays.it/programma-17-18-ottobre-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://camporealedays.it/programma-17-18-ottobre-2026/"
+      }
+    ],
+    "sectors": "Vini e produzioni enogastronomiche",
+    "venue": "Atrio del Palazzo del Principe e centro",
+    "summary": "Manifestazione dedicata a vini e produzioni enogastronomiche.",
+    "participation": {
+      "type": "check",
+      "note": "Programma organizzatore: banco d’assaggio 17 ottobre 10–20:30 e 18 ottobre 11–20:30; gli spettacoli proseguono oltre la chiusura dei banchi. Attività esterne e visite in cantina non sono posteggi aggiuntivi. Non reperita una tariffa pubblica per l’espositore. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Camporeale",
+    "name": "Sciavata Fest",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.camporeale.pa.it/avviso-esplorativo-di-manifestazione-di-interesse-finalizzato-allindividuazione-di-operatore-per-la-gestione-della-manifestazione-denominata-sciavata-fest-2026-a-camporeale/",
+      "label": "www.comune.camporeale.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.camporeale.pa.it/avviso-esplorativo-di-manifestazione-di-interesse-finalizzato-allindividuazione-di-operatore-per-la-gestione-della-manifestazione-denominata-sciavata-fest-2026-a-camporeale/",
+      "https://www.comune.camporeale.pa.it/wp-content/uploads/2026/07/Avviso.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-10",
+        "end": "2026-08-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.camporeale.pa.it/avviso-esplorativo-di-manifestazione-di-interesse-finalizzato-allindividuazione-di-operatore-per-la-gestione-della-manifestazione-denominata-sciavata-fest-2026-a-camporeale/"
+      }
+    ],
+    "sectors": "Sciavata e gastronomia locale",
+    "venue": "Camporeale",
+    "summary": "Manifestazione dedicata a sciavata e gastronomia locale.",
+    "participation": {
+      "type": "check",
+      "note": "Avviso e scansione 2026: selezione del gestore dell’intera manifestazione tramite MePA, con termine 21 luglio ore 12. Non è un bando per singole bancarelle. L’importo dell’affidamento comprende l’organizzazione e non è quota di partecipazione. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Camporeale"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Capaci",
+    "name": "Sagra della Vastedda",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.vivasicilia.com/sagra-della-vastedda-capaci",
+      "label": "www.vivasicilia.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.vivasicilia.com/sagra-della-vastedda-capaci"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-01",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.vivasicilia.com/sagra-della-vastedda-capaci"
+      }
+    ],
+    "sectors": "Vastedda e gastronomia locale",
+    "venue": "Piazza Calogero Troia",
+    "summary": "Manifestazione dedicata a vastedda e gastronomia locale.",
+    "participation": {
+      "type": "check",
+      "note": "Fonte editoriale VivaSicilia: appuntamento 2026 il 1 novembre. Non reperito un bando corrente con ammissione esterna; la degustazione della focaccia non dimostra disponibilità per altre merceologie. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Carini",
+    "name": "Carini Storica — mercatino medievale",
+    "months": [
+      9
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://carinistorica.it/il-palio",
+      "label": "carinistorica.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://carinistorica.it/il-palio"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://carinistorica.it/il-palio"
+      }
+    ],
+    "sectors": "Artigianato e produzioni della rievocazione medievale",
+    "venue": "Borgo e area del Castello",
+    "summary": "Manifestazione dedicata a artigianato e produzioni della rievocazione medievale.",
+    "participation": {
+      "type": "check",
+      "note": "Sito dell’organizzatore letto tramite Chromium: terza edizione 26–27 settembre 2026 e presenza di mercanti e artigiani dietro i banchi. Partecipazione coerente con la rievocazione, non mercato generico; vendita esterna, quota e disponibilità non precisate. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Jonathan Livingston ODV"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Castelbuono",
+    "name": "Funghi Fest",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.funghifest.it/",
+      "label": "www.funghifest.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.funghifest.it/",
+      "https://www.funghifest.it/partecipa/",
+      "https://www.funghifest.it/wp-content/uploads/2026/10/10.jpeg"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-23",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.funghifest.it/"
+      }
+    ],
+    "sectors": "Funghi, prodotti tipici, street food e birre artigianali",
+    "venue": "Centro di Castelbuono",
+    "summary": "Manifestazione dedicata a funghi, prodotti tipici, street food e birre artigianali.",
+    "participation": {
+      "type": "check",
+      "note": "Date e locandina 2026 verificate sull’organizzatore. La sezione espositori descrive esposizione, degustazione e vendita diretta, ma non rende pubblica una tariffa. Il richiamo ai visitatori è promozionale e non è usato come misura di affluenza. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "PromoMadonie Sicilia"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Casteldaccia",
+    "name": "Sagra del Buccellato",
+    "months": [
+      11,
+      12
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.casteldaccia.pa.it/vivere-il-comune/eventi/sagra-del-buccellato/",
+      "label": "comune.casteldaccia.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.casteldaccia.pa.it/vivere-il-comune/eventi/sagra-del-buccellato/",
+      "https://comune.casteldaccia.pa.it/novita/sagra-del-buccellato-2024-il-programma/"
+    ],
+    "editions": [],
+    "sectors": "Buccellato, prodotti dolciari e artigianato locale",
+    "venue": "Casteldaccia",
+    "summary": "Manifestazione dedicata a buccellato, prodotti dolciari e artigianato locale.",
+    "participation": {
+      "type": "check",
+      "note": "Fonte comunale ancora riferita al 2024: scheda con metadato 22 novembre e testo 30 novembre–1 dicembre. Mantenuto solo il periodo usuale, senza date 2026 inventate. Gli aggregatori che trasformano lo storico in nuova edizione non costituiscono conferma. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Cefalà Diana",
+    "name": "Sagra dell’Olio Extravergine d’Oliva",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.youlovesicilia.it/sagra-olio-extravergine-oliva-cefala-diana-2026/",
+      "label": "www.youlovesicilia.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.youlovesicilia.it/sagra-olio-extravergine-oliva-cefala-diana-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-24",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.youlovesicilia.it/sagra-olio-extravergine-oliva-cefala-diana-2026/"
+      }
+    ],
+    "sectors": "Olio extravergine, produzioni agricole e gastronomia",
+    "venue": "Cefalà Diana",
+    "summary": "Manifestazione dedicata a olio extravergine, produzioni agricole e gastronomia.",
+    "participation": {
+      "type": "check",
+      "note": "Programma 2026 riportato da YouLoveSicilia con stand e degustazioni. Fonte editoriale dichiarata; non reperito un disciplinare per espositori o un prezzo banco verificabile. Prima edizione dichiarata dalla fonte, senza dedurre disponibilità. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Cefalù",
+    "name": "Mostra mercato del SS. Salvatore",
+    "months": [
+      8
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.cefalu.pa.it/wp-content/uploads/2026/07/AVVISO-PUBBLICO.pdf",
+      "label": "comune.cefalu.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.cefalu.pa.it/wp-content/uploads/2026/07/AVVISO-PUBBLICO.pdf",
+      "https://comune.cefalu.pa.it/novita/avviso-pubblico-per-la-partecipazione-alla-mostra-mercato-dei-prodotti-tipici-e-artigianali-di-richiamo-territoriale-dal-01-al-09-agosto-2026-in-occasione-dei-festeggiamenti-del-ss-salvatore/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.cefalu.pa.it/wp-content/uploads/2026/07/AVVISO-PUBBLICO.pdf"
+      }
+    ],
+    "sectors": "Dolciumi, salumi e formaggi, piante, giocattoli, artigianato e vintage",
+    "venue": "Lungomare Giardina; ferro e rame in via Falcone e Borsellino",
+    "summary": "Manifestazione dedicata a dolciumi, salumi e formaggi, piante, giocattoli, artigianato e vintage.",
+    "participation": {
+      "type": "selected",
+      "note": "Bando 2026: imprese con sede legale e operativa in Sicilia e produzioni realizzate o trasformate in Sicilia. Domanda entro 16 luglio ore 13, selezione per categoria e ordine di presentazione. Gazebo circa 3×2 m, con impianto elettrico ma senza tavoli e sedie. Il conteggio degli stand artigiani contiene un’incongruenza 5 stand/6 operatori: nessun posto residuo dedotto. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio.",
+      "deadline": "2026-07-16"
+    },
+    "organizer": "Comune di Cefalù"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Cerda",
+    "name": "Sagra del Carciofo — Cynara Festival",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.cerda.pa.it/sagra-del-carciofo/",
+      "label": "comune.cerda.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.cerda.pa.it/sagra-del-carciofo/",
+      "https://comune.cerda.pa.it/novita/cynara-festival-43a-sagra-del-carciofo/"
+    ],
+    "editions": [],
+    "sectors": "Carciofo spinoso e produzioni gastronomiche",
+    "venue": "Cerda",
+    "summary": "Manifestazione dedicata a carciofo spinoso e produzioni gastronomiche.",
+    "participation": {
+      "type": "check",
+      "note": "Il Comune indica la ricorrenza annuale del 25 aprile e richiama la 44ª edizione 2026, ma il programma dettagliato acquisito è ancora quello del 24–27 aprile 2025. Nessuna estensione automatica del calendario 2025 al 2026 o al 2027; quota e ammissione esterna non verificate. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Cerda"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Chiusa Sclafani",
+    "name": "Sagra delle Ciliegie",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.chiusasclafani.pa.it/wp-content/uploads/2026/05/Avviso-Sagra-delle-ciliegie-2026.pdf",
+      "label": "www.comune.chiusasclafani.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.chiusasclafani.pa.it/wp-content/uploads/2026/05/Avviso-Sagra-delle-ciliegie-2026.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-14",
+        "end": "2026-06-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.chiusasclafani.pa.it/wp-content/uploads/2026/05/Avviso-Sagra-delle-ciliegie-2026.pdf"
+      }
+    ],
+    "sectors": "Ciliegie, prodotti tipici alimentari e non, artigianato e hobbistica",
+    "venue": "Piazza Castello",
+    "summary": "Manifestazione dedicata a ciliegie, prodotti tipici alimentari e non, artigianato e hobbistica.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso 2026: domanda entro 10 giugno ore 14 con documento d’identità al Protocollo o per email/PEC. Ammessi produttori, commercianti, artigiani, hobbisti e associazioni; domande tardive non accolte. Le opzioni con stand comunale non costituiscono promessa di disponibilità attuale. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio.",
+      "deadline": "2026-06-10"
+    },
+    "organizer": "Comune di Chiusa Sclafani"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Collesano",
+    "name": "Collesano Cheese Festival — Sagra del Formaggio",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.collesano.pa.it/evento/collesano-cheese-festival-17a-sagra-del-formaggio/",
+      "label": "comune.collesano.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.collesano.pa.it/evento/collesano-cheese-festival-17a-sagra-del-formaggio/",
+      "https://comune.collesano.pa.it/wp-content/uploads/2025/11/Comunicato-stampa-Cheese.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-11-15",
+        "end": "2025-11-16",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.collesano.pa.it/evento/collesano-cheese-festival-17a-sagra-del-formaggio/"
+      }
+    ],
+    "sectors": "Formaggi, produzioni agroalimentari e artigianato",
+    "venue": "Centro storico",
+    "summary": "Manifestazione dedicata a formaggi, produzioni agroalimentari e artigianato.",
+    "participation": {
+      "type": "check",
+      "note": "Programma e comunicato ufficiale ancora riferiti al 15–16 novembre 2025. Lo storico non diventa conferma delle discordanti date 2026 degli aggregatori. Presenza di espositori documentata; nuove domande, costi e disponibilità non pubblicati. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune, Pro Loco e Consulta giovanile"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Contessa Entellina",
+    "name": "Terre Sicane Wine Fest",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://tswf.it/",
+      "label": "tswf.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://tswf.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://tswf.it/"
+      }
+    ],
+    "sectors": "Vini e gastronomia",
+    "venue": "Abbazia Santa Maria del Bosco",
+    "summary": "Manifestazione dedicata a vini e gastronomia.",
+    "participation": {
+      "type": "check",
+      "note": "Festival complessivo 24–26 luglio 2026 tra borgo e abbazia. La fonte colloca i banchi delle cantine e l’area food in abbazia il sabato 25: questa è la giornata commerciale inserita. Il carnet per degustazioni è del visitatore, non quota stand. Non è ammissione libera a nuovi banchi. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Organizzazione Terre Sicane Wine Fest"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Corleone",
+    "name": "Sagra del Pane e del Grano",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.corleone.pa.it/vivere-il-comune/eventi/sagra-del-pane-e-del-grano/",
+      "label": "comune.corleone.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.corleone.pa.it/vivere-il-comune/eventi/sagra-del-pane-e-del-grano/"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-09-13",
+        "end": "2025-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.corleone.pa.it/vivere-il-comune/eventi/sagra-del-pane-e-del-grano/"
+      }
+    ],
+    "sectors": "Pane, prodotti da forno e gastronomia locale",
+    "venue": "Centro di Corleone",
+    "summary": "Manifestazione dedicata a pane, prodotti da forno e gastronomia locale.",
+    "participation": {
+      "type": "check",
+      "note": "Programma comunale della XV edizione, 13 settembre 2025, associato alla Notte Bianca. È storico, non calendario 2026. Non pubblicati bando per operatori esterni, quote, metrature o nuova edizione. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune e Comitato SS. Crocifisso"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Corleone",
+    "name": "Fiera di Sant’Isidoro a Ficuzza",
+    "months": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.corleone.pa.it/wp-content/uploads/2024/08/AVVISO-FIERA-DI-S.ISIDORO.pdf",
+      "label": "comune.corleone.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.corleone.pa.it/wp-content/uploads/2024/08/AVVISO-FIERA-DI-S.ISIDORO.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2024,
+        "label": "Festivi e prefestivi da settembre a dicembre 2024; calendario storico",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.corleone.pa.it/wp-content/uploads/2024/08/AVVISO-FIERA-DI-S.ISIDORO.pdf"
+      }
+    ],
+    "sectors": "Produzioni agroalimentari e artigianato del Corleonese",
+    "venue": "Ficuzza, area ex scuderie di piazza Colonnello Russo",
+    "summary": "Manifestazione dedicata a produzioni agroalimentari e artigianato del Corleonese.",
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale 2024 letto integralmente: produttori agricoli, imprese, artigiani, artisti e hobbisti del territorio; priorità Corleone, domanda entro 21 agosto 2024. Solo ricostruzione storica, non concessione o ricorrenza confermata per il 2026. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Corleone"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Gangi",
+    "name": "Sagra della Spiga — Memorie e Tradizioni",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.prolocogangiaps.it/memorie-e-tradizioni-2026/",
+      "label": "www.prolocogangiaps.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.prolocogangiaps.it/memorie-e-tradizioni-2026/",
+      "https://www.prolocogangiaps.it/sagra-della-spiga-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.prolocogangiaps.it/memorie-e-tradizioni-2026/"
+      }
+    ],
+    "sectors": "Produzioni gastronomiche tradizionali e antichi mestieri",
+    "venue": "Centro storico",
+    "summary": "Manifestazione dedicata a produzioni gastronomiche tradizionali e antichi mestieri.",
+    "participation": {
+      "type": "check",
+      "note": "La Sagra della Spiga complessiva va dall’1 al 9 agosto 2026. Il percorso gastronomico Memorie e Tradizioni si tiene il 7–8 dalle 18:30 su prenotazione: inseriti questi giorni, senza duplicare i due programmi. È percorso curato, non prova di concessioni ad ambulanti esterni. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Pro Loco Gangi"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Geraci Siculo",
+    "name": "Festa della Transumanza — U Màrcatu",
+    "months": [
+      5
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.lemadonie.it/eventi/festa-della-transumanza-geraci-siculo/",
+      "label": "www.lemadonie.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.lemadonie.it/eventi/festa-della-transumanza-geraci-siculo/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-24",
+        "end": "2026-05-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.lemadonie.it/eventi/festa-della-transumanza-geraci-siculo/"
+      }
+    ],
+    "sectors": "Produzioni pastorali, formaggi e gastronomia",
+    "venue": "Bevaio della Santissima Trinità",
+    "summary": "Manifestazione dedicata a produzioni pastorali, formaggi e gastronomia.",
+    "participation": {
+      "type": "check",
+      "note": "Festival complessivo 22–24 maggio 2026; la giornata con U Màrcatu, caseificazione e degustazioni è domenica 24. Fonte editoriale dichiarata. L’avviso comunale per sette spazi è indicizzato ma ora restituisce 410: il PDF non è stato letto, nessuna quota o ammissione ricostruita dai soli metadati. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune e Pro Loco Geraci Siculo"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Gratteri",
+    "name": "Sagra della Purpietta C’Addauru",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.guidasicilia.it/evento/sagra-da-purpietta-c-addauru-a-gratteri-pa-belvedere-ganci-battaglia-a-gratteri/3027342",
+      "label": "www.guidasicilia.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.guidasicilia.it/evento/sagra-da-purpietta-c-addauru-a-gratteri-pa-belvedere-ganci-battaglia-a-gratteri/3027342"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-22",
+        "end": "2026-08-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.guidasicilia.it/evento/sagra-da-purpietta-c-addauru-a-gratteri-pa-belvedere-ganci-battaglia-a-gratteri/3027342"
+      }
+    ],
+    "sectors": "Polpette all’alloro e gastronomia locale",
+    "venue": "Belvedere Ganci Battaglia",
+    "summary": "Manifestazione dedicata a polpette all’alloro e gastronomia locale.",
+    "participation": {
+      "type": "check",
+      "note": "Programma 2026 pubblicato da GuidaSicilia: degustazioni dalle 18:30, in collaborazione con macellerie locali. Partecipazione esterna e costo banco non documentati; spettacoli e biglietti di altre attività non sono opportunità di vendita. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune e Pro Loco Gratteri"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Isnello",
+    "name": "Sapori d’Autunno",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.ilcefalino.it/isnello-si-prepara-a-vivere-sapori-dautunno-due-giorni-tra-tradizioni-gusto-e-partecipazione-giovanile/",
+      "label": "www.ilcefalino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.ilcefalino.it/isnello-si-prepara-a-vivere-sapori-dautunno-due-giorni-tra-tradizioni-gusto-e-partecipazione-giovanile/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ilcefalino.it/isnello-si-prepara-a-vivere-sapori-dautunno-due-giorni-tra-tradizioni-gusto-e-partecipazione-giovanile/"
+      }
+    ],
+    "sectors": "Produzioni enogastronomiche e prodotti tipici",
+    "venue": "Centro di Isnello",
+    "summary": "Manifestazione dedicata a produzioni enogastronomiche e prodotti tipici.",
+    "participation": {
+      "type": "check",
+      "note": "Fonte locale IlCefalino del 16 ottobre 2026: due giornate con mercatini delle eccellenze enogastronomiche. Non reperita una procedura di assegnazione o un listino espositori nelle sezioni comunali accessibili. Fonte editoriale distinta da bando. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Mezzojuso",
+    "name": "Sagra della Castagna",
+    "months": [
+      10,
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.blogsicilia.it/comunicati-stampa/a-mezzojuso-la-sagra-della-castagna-2026-tre-giorni-tra-gusto-cultura-natura-e-grandi-spettacoli/1318893/",
+      "label": "www.blogsicilia.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.blogsicilia.it/comunicati-stampa/a-mezzojuso-la-sagra-della-castagna-2026-tre-giorni-tra-gusto-cultura-natura-e-grandi-spettacoli/1318893/",
+      "https://comune.mezzojuso.pa.it/vivere-il-comune/eventi/sagra-della-castagna/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-30",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.blogsicilia.it/comunicati-stampa/a-mezzojuso-la-sagra-della-castagna-2026-tre-giorni-tra-gusto-cultura-natura-e-grandi-spettacoli/1318893/"
+      }
+    ],
+    "sectors": "Castagne, prodotti tipici e gastronomia",
+    "venue": "Centro e piazza Umberto I",
+    "summary": "Manifestazione dedicata a castagne, prodotti tipici e gastronomia.",
+    "participation": {
+      "type": "check",
+      "note": "Il comunicato stampa 23 ottobre 2026, letto via web, annuncia 30 ottobre–1 novembre e Villaggio delle Castagne. La scheda comunale resta al 24–26 ottobre 2025: annualità distinte, non copiata al 2026. Sito Pro Loco non accessibile al download; non verificati quota banco e ammissione esterna. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune e Pro Loco Mezzojuso"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Monreale",
+    "name": "Sagra della Moffoletta e Fiera dei Santi",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.monrealepress.it/2026/10/23/gastronomia-musica-folklore-e-spettacoli-ce-la-sagra-della-moffoletta-a-malpasso/",
+      "label": "www.monrealepress.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.monrealepress.it/2026/10/23/gastronomia-musica-folklore-e-spettacoli-ce-la-sagra-della-moffoletta-a-malpasso/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-01",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.monrealepress.it/2026/10/23/gastronomia-musica-folklore-e-spettacoli-ce-la-sagra-della-moffoletta-a-malpasso/"
+      }
+    ],
+    "sectors": "Moffoletta, prodotti del territorio e artigianato",
+    "venue": "Spazio parrocchiale San Giuseppe, Malpasso",
+    "summary": "Manifestazione dedicata a moffoletta, prodotti del territorio e artigianato.",
+    "participation": {
+      "type": "check",
+      "note": "Articolo locale del 23 ottobre 2026: stand per l’intera giornata del 1 novembre. Malpasso appartiene a Monreale, non a Palermo città. Non reperiti quote, numero stalli o bando; nessuna ammissione automatica. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "No Stop Animation APS con la parrocchia"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Montemaggiore Belsito",
+    "name": "Sagra dell’Olio e della Mandorla",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.palermoviva.it/eventi/sagra-dellolio-e-della-mandorla-a-montemaggiore-belsito/",
+      "label": "www.palermoviva.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.palermoviva.it/eventi/sagra-dellolio-e-della-mandorla-a-montemaggiore-belsito/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.palermoviva.it/eventi/sagra-dellolio-e-della-mandorla-a-montemaggiore-belsito/"
+      }
+    ],
+    "sectors": "Olio, mandorle, produzioni agroalimentari e artigianato",
+    "venue": "Piazza Roma e corso principale",
+    "summary": "Manifestazione dedicata a olio, mandorle, produzioni agroalimentari e artigianato.",
+    "participation": {
+      "type": "check",
+      "note": "PalermoViva riporta il 7–8 novembre 2026 e un percorso di stand. Portali che riportano 8–9 non sono usati come conferma alternativa. Fonte editoriale dichiarata; quota, servizi e disponibilità banco non pubblicati nelle fonti verificate. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "Fiera dei Morti",
+    "months": [
+      10,
+      11
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.palermo.it/novita/fiera-dei-morti-bando-assegnazione-spazi/",
+      "label": "www.comune.palermo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.palermo.it/novita/fiera-dei-morti-bando-assegnazione-spazi/",
+      "https://www.comune.palermo.it/wp-content/uploads/2026/10/a67bc2cb-1098-4c93-959f-0c00d3efd6a8.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-27",
+        "end": "2026-11-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.palermo.it/novita/fiera-dei-morti-bando-assegnazione-spazi/"
+      }
+    ],
+    "sectors": "Dolciumi, regali e merci della tradizione dei Morti",
+    "venue": "Ex Fiera del Mediterraneo",
+    "summary": "Manifestazione dedicata a dolciumi, regali e merci della tradizione dei Morti.",
+    "participation": {
+      "type": "check",
+      "note": "Bando 2026 rivolto al gestore dell’intera area di 3.500 m², con massimo 47 postazioni da 16 m². Termine per organizzatori 21 ottobre ore 12, distinto dalle domande dei singoli stand. Canone e diritti dell’organizzatore non sono prezzo banco; la quota espositore non è quantificata. Nessun posto residuo dedotto. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Palermo"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "Fiera mercato dei SS. Cosma e Damiano",
+    "months": [
+      9
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.palermo.it/novita/avviso-pubblico-per-la-concessione-temporanea-di-occupazione-di-suolo-pubblico-per-lo-svolgimento-della-fiera-mercato-dei-ss-cosma-e-damiano-24-28-settembre-2026/",
+      "label": "www.comune.palermo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.palermo.it/novita/avviso-pubblico-per-la-concessione-temporanea-di-occupazione-di-suolo-pubblico-per-lo-svolgimento-della-fiera-mercato-dei-ss-cosma-e-damiano-24-28-settembre-2026/",
+      "https://www.comune.palermo.it/wp-content/uploads/2026/09/9852ee89-ec24-4c65-a0cf-331c52c58ab0.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "label": "24–28 settembre nel titolo; 23–28 settembre nel testo dell’avviso",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.palermo.it/novita/avviso-pubblico-per-la-concessione-temporanea-di-occupazione-di-suolo-pubblico-per-lo-svolgimento-della-fiera-mercato-dei-ss-cosma-e-damiano-24-28-settembre-2026/"
+      }
+    ],
+    "sectors": "Merci della fiera tradizionale; dettaglio merceologico da verificare",
+    "venue": "Aree individuate dall’ordinanza 1582/2026",
+    "summary": "Manifestazione dedicata a merci della fiera tradizionale; dettaglio merceologico da verificare.",
+    "participation": {
+      "type": "selected",
+      "note": "Nuovo avviso del 23 settembre 2026: titolo 24–28 ma testo 23–28, conflitto non risolto con una data inventata. Massimo 11 stalli previsti, non posti residui. La graduatoria precedente è inefficace; serve nuova istanza entro 24 settembre ore 13 e titolo concessorio. CUP dovuto ove applicabile, importo non quantificato. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio.",
+      "deadline": "2026-09-24"
+    },
+    "organizer": "Comune di Palermo"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "Fiera Campionaria del Mediterraneo",
+    "months": [
+      5,
+      6
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://fieradelmediterraneo.eu/",
+      "label": "fieradelmediterraneo.eu",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://fieradelmediterraneo.eu/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-23",
+        "end": "2026-06-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://fieradelmediterraneo.eu/"
+      }
+    ],
+    "sectors": "Arredamento, artigianato, commercio, shopping, food e attrezzature",
+    "venue": "Polo Fiera del Mediterraneo, via Anwar Sadat",
+    "summary": "Manifestazione dedicata a arredamento, artigianato, commercio, shopping, food e attrezzature.",
+    "participation": {
+      "type": "check",
+      "note": "Organizzatore 2026: stand espositivi, villaggio shopping e area food. Partecipazione tramite selezione e preventivo dell’organizzatore; il biglietto visitatore da 2,50 € non è quota espositore. Nessun prezzo stand pubblicato nella pagina acquisita. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Mediexpo"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "Sherbeth — Festival del Gelato Artigianale",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.sherbethfestival.it/",
+      "label": "www.sherbethfestival.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sherbethfestival.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-13",
+        "end": "2026-11-16",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.sherbethfestival.it/"
+      }
+    ],
+    "sectors": "Gelato artigianale",
+    "venue": "Piazza Verdi e via Maqueda",
+    "summary": "Manifestazione dedicata a gelato artigianale.",
+    "participation": {
+      "type": "check",
+      "note": "Organizzatore 2026: banchi venerdì 16–24, sabato e domenica 10–24, lunedì 16–19, soggetti alle variazioni previste. Maestri e stand selezionati; i Tasty sono crediti degustazione del pubblico, non quote per un banco. Nessun listino espositori verificato. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "The Italian Way APS"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "Zagara d’Autunno",
+    "months": [
+      10
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://musei.unipa.it/it/eventi-e-news/zagara-dautunno-2026",
+      "label": "musei.unipa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://musei.unipa.it/it/eventi-e-news/zagara-dautunno-2026",
+      "https://ortobotanico.unipa.it/zagara/partecipazione_espositori.html",
+      "https://ortobotanico.unipa.it/zagara/espositori.html",
+      "https://drive.google.com/uc?export=download&id=1fPiCKp6Nq_vf40T5tRgGDv7ndJXQHODG"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-23",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://musei.unipa.it/it/eventi-e-news/zagara-dautunno-2026"
+      }
+    ],
+    "sectors": "Piante, florovivaismo, attrezzi da giardino e artigianato botanico",
+    "venue": "Orto Botanico, via Lincoln 2",
+    "summary": "Manifestazione dedicata a piante, florovivaismo, attrezzi da giardino e artigianato botanico.",
+    "participation": {
+      "type": "check",
+      "note": "UNIPA conferma il 23–25 ottobre 2026. Vivaisti selezionati per pregio delle collezioni; settori complementari limitati e su invito. Il regolamento scaricabile è ancora quello dell’autunno 2025: tariffa e scadenza storiche, senza conferma del costo 2026. La dicitura primavera nella home con date ottobre è un refuso, risolto tramite il comunicato museale. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Orto Botanico UNIPA e CoopCulture"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "Zero Market",
+    "months": [
+      3,
+      11
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://zeromarket.it/",
+      "label": "zeromarket.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://zeromarket.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Intestazione 7–8 marzo; dettaglio domenica 8 novembre discordante",
+        "dateType": "calendar",
+        "sourceUrl": "https://zeromarket.it/"
+      }
+    ],
+    "sectors": "Artigianato, vintage, second hand, vinili, design, editoria e food",
+    "venue": "Spazio Zero, Cantieri Culturali alla Zisa",
+    "summary": "Manifestazione dedicata a artigianato, vintage, second hand, vinili, design, editoria e food.",
+    "participation": {
+      "type": "check",
+      "note": "Il sito organizzatore pubblica 7–8 marzo 2026 ma nel dettaglio scrive domenica 8 novembre. Conflitto conservato testualmente, senza giornate certe calcolate. Candidatura tramite organizzazione; ingresso gratuito del pubblico distinto da quota espositore non pubblicata. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "ArtisticaMente — fiera di artigianato",
+    "months": [
+      10
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.palermoviva.it/eventi/artisticamente-fiera-di-artigianato-intrattenimento-degustazioni/?occurrence=2026-10-03&time=1791021600",
+      "label": "www.palermoviva.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.palermoviva.it/eventi/artisticamente-fiera-di-artigianato-intrattenimento-degustazioni/?occurrence=2026-10-03&time=1791021600"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-03",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.palermoviva.it/eventi/artisticamente-fiera-di-artigianato-intrattenimento-degustazioni/?occurrence=2026-10-03&time=1791021600"
+      }
+    ],
+    "sectors": "Gioielli, ceramiche, abbigliamento sartoriale, borse, design e vintage",
+    "venue": "Villa Airoldi Golf Club, piazza Leoni 9",
+    "summary": "Manifestazione dedicata a gioielli, ceramiche, abbigliamento sartoriale, borse, design e vintage.",
+    "participation": {
+      "type": "check",
+      "note": "Programma 2026 riportato da PalermoViva: 3–4 ottobre, 10–20. Accesso gratuito ai visitatori; selezione e tariffa banco da verificare. Non esteso automaticamente ad altre edizioni primaverili o natalizie. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Associazione ArtisticaMente"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "Expocook",
+    "months": [
+      3
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.expocook.org/",
+      "label": "www.expocook.org",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.expocook.org/"
+    ],
+    "editions": [
+      {
+        "year": 2027,
+        "label": "Marzo 2027, giorni non pubblicati",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.expocook.org/"
+      }
+    ],
+    "sectors": "Food, ristorazione, hotellerie e attrezzature professionali",
+    "venue": "Palermo",
+    "summary": "Manifestazione dedicata a food, ristorazione, hotellerie e attrezzature professionali.",
+    "participation": {
+      "type": "check",
+      "note": "Sito dell’organizzatore già rivolto a marzo 2027, senza giorni esatti. Salone professionale: partecipazione espositiva tramite preventivo, non mercato ambulante a ingresso libero. Il modulo di contatto non è stato inviato; nessuna quota pubblica verificata. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "Natale a Palermo — mercatini del centro",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.palermo.it/wp-content/uploads/2025/11/c2e28169-4da4-413c-ba99-2a9aab8f3d25.pdf",
+      "label": "www.comune.palermo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.palermo.it/wp-content/uploads/2025/11/c2e28169-4da4-413c-ba99-2a9aab8f3d25.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "label": "Periodo di concessione 1 dicembre 2025–10 gennaio 2026, non calendario quotidiano dei banchi",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.palermo.it/wp-content/uploads/2025/11/c2e28169-4da4-413c-ba99-2a9aab8f3d25.pdf"
+      }
+    ],
+    "sectors": "Artigianato, prodotti e commercio a tema natalizio",
+    "venue": "Sei aree del centro indicate dal bando",
+    "summary": "Manifestazione dedicata a artigianato, prodotti e commercio a tema natalizio.",
+    "participation": {
+      "type": "check",
+      "note": "Avviso storico per organizzatori e concessione di un’area: Ruggero Settimo, Castelnuovo, tratto via Maqueda, Andrea Camilleri, Ungheria e Magliocco. Non è prova di sei eventi effettivamente aperti ogni giorno. Istanza entro 24 novembre 2025 ore 12; CUP e autorizzazioni separati, nessuna quota banco 2026/27 verificata. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Palermo"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Palermo",
+    "name": "Beer Bubbles",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.ansa.it/canale_terraegusto/notizie/fiere_eventi/2026/06/09/torna-il-festival-della-birra-a-palermo-oltre-200-tipologie-da-degustare_ac80f64b-e57a-44ed-9de9-fc1821f5d558.html",
+      "label": "www.ansa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.ansa.it/canale_terraegusto/notizie/fiere_eventi/2026/06/09/torna-il-festival-della-birra-a-palermo-oltre-200-tipologie-da-degustare_ac80f64b-e57a-44ed-9de9-fc1821f5d558.html"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-11",
+        "end": "2026-06-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ansa.it/canale_terraegusto/notizie/fiere_eventi/2026/06/09/torna-il-festival-della-birra-a-palermo-oltre-200-tipologie-da-degustare_ac80f64b-e57a-44ed-9de9-fc1821f5d558.html"
+      }
+    ],
+    "sectors": "Birre artigianali, food e produzioni agroalimentari",
+    "venue": "Piazza Castelnuovo e piazza Ruggero Settimo",
+    "summary": "Manifestazione dedicata a birre artigianali, food e produzioni agroalimentari.",
+    "participation": {
+      "type": "check",
+      "note": "Notizia ANSA del 9 giugno 2026: festival 11–14 giugno con birrifici e punti food. Fonte giornalistica dichiarata; non reperito un listino stand o un bando per ambulanti. Numeri promozionali dei visitatori non convertiti in affluenza misurata. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Petralia Soprana",
+    "name": "Sagra del Sale a Raffo",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.petraliasoprana.pa.it/eventi/sagra-del-sale-a-raffo/",
+      "label": "comune.petraliasoprana.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.petraliasoprana.pa.it/eventi/sagra-del-sale-a-raffo/"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-08-30",
+        "end": "2025-08-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.petraliasoprana.pa.it/eventi/sagra-del-sale-a-raffo/"
+      }
+    ],
+    "sectors": "Sale e gastronomia locale",
+    "venue": "Frazione Raffo",
+    "summary": "Manifestazione dedicata a sale e gastronomia locale.",
+    "participation": {
+      "type": "check",
+      "note": "Scheda comunale della XXXI edizione 30–31 agosto 2025. È storico, non nuova edizione 2026. Gratuito si riferisce all’accesso del pubblico; ammissione di espositori esterni e prezzo banco non documentati. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Petralia Soprana"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Petralia Sottana",
+    "name": "Festa dei Sapori Madoniti d’Autunno",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.petraliasottana.pa.it/novita/festa-dei-sapori-madoniti-dautunno-2026/",
+      "label": "comune.petraliasottana.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.petraliasottana.pa.it/novita/festa-dei-sapori-madoniti-dautunno-2026/",
+      "https://www.festadeisaporimadoniti.com/wp-content/uploads/2026/09/Regolamento_Festa_dei_Sapori_Madoniti_2026.pdf",
+      "https://www.festadeisaporimadoniti.com/wp-content/uploads/2026/09/Domanda_di_partecipazione_Festa_dei_Sapori_Madoniti_2026.pdf",
+      "https://www.festadeisaporimadoniti.com/wp-content/uploads/2026/10/Programma-2026-Festa-dei-sapori-madoniti-dautunno.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-23",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.petraliasottana.pa.it/novita/festa-dei-sapori-madoniti-dautunno-2026/"
+      }
+    ],
+    "sectors": "Prodotti agroalimentari, gastronomia, artigianato, oggettistica e antiquariato",
+    "venue": "Centro storico e corso Paolo Agliata",
+    "summary": "Manifestazione dedicata a prodotti agroalimentari, gastronomia, artigianato, oggettistica e antiquariato.",
+    "participation": {
+      "type": "selected",
+      "note": "Regolamento 2026: domanda entro 10 ottobre, conferma entro 12; priorità territoriale e selezione. Hobbisti senza partita IVA solo non alimentare; associazioni con prescrizioni proprie. Termine pagamento 14 ottobre art.11, 16 per associazioni art.12 e nel modulo: differenza esplicita. Fornitura inclusa limitata a 200 W, non potenza per una cucina. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio.",
+      "deadline": "2026-10-10"
+    },
+    "organizer": "CCN Antonio Pepe"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Polizzi Generosa",
+    "name": "Sagra delle Nocciole",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.polizzi.pa.it/vivere-il-comune/eventi/69-sagra-delle-nocciole/",
+      "label": "www.comune.polizzi.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.polizzi.pa.it/vivere-il-comune/eventi/69-sagra-delle-nocciole/",
+      "https://www.comune.polizzi.pa.it/wp-content/uploads/2026/08/AVVISO-PUBBLICO-Sagra-delle-nocciole-2026.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-20",
+        "end": "2026-08-23",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.polizzi.pa.it/vivere-il-comune/eventi/69-sagra-delle-nocciole/"
+      }
+    ],
+    "sectors": "Nocciole, prodotti tipici locali e antichi mestieri",
+    "venue": "Piazza SS. Trinità e siti individuati dalla Pro Loco",
+    "summary": "Manifestazione dedicata a nocciole, prodotti tipici locali e antichi mestieri.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma comunale 20–23 agosto 2026. Avviso bancarelle: domanda entro 18 agosto ore 14, allestimento tradizionale con materiali e costumi prescritti; somministrazione limitata ai prodotti locali indicati. Non è ammissione al commercio generico; nessuna quota pubblicata. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio.",
+      "deadline": "2026-08-18"
+    },
+    "organizer": "Comune e organizzazione della Sagra"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Pollina",
+    "name": "Sagra dell’Ulivo di Finale",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.pollina.pa.it/novita/sagra-dellulivo-partecipazione-stand-e-promozione-menu-degustazioni/",
+      "label": "comune.pollina.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.pollina.pa.it/novita/sagra-dellulivo-partecipazione-stand-e-promozione-menu-degustazioni/",
+      "https://comune.pollina.pa.it/wp-content/uploads/2026/10/Prot_Par-0013993-del-19-10-2026-Documento-AVVISO-PUBBLICO-sagra-ulivo.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.pollina.pa.it/novita/sagra-dellulivo-partecipazione-stand-e-promozione-menu-degustazioni/"
+      }
+    ],
+    "sectors": "Olio e prodotti oleari, somministrazione e commercio pertinente",
+    "venue": "Parco urbano di Finale",
+    "summary": "Manifestazione dedicata a olio e prodotti oleari, somministrazione e commercio pertinente.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso comunale 19 ottobre 2026: intestazione 6–8 novembre, ma stand esplicitamente sabato 7 e domenica 8. Istanza entro giovedì 29 ottobre; titoli e SCIA a carico dell’operatore, energia da fornire autonomamente. Termine dei menù per ristoratori 26 ottobre distinto dalle domande stand. Quote non indicate. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio.",
+      "deadline": "2026-10-29"
+    },
+    "organizer": "Comune di Pollina"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Pollina",
+    "name": "Sagra della Manna",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.lemadonie.it/eventi/sagra-della-manna-pollina/",
+      "label": "www.lemadonie.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.lemadonie.it/eventi/sagra-della-manna-pollina/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-13",
+        "end": "2026-08-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.lemadonie.it/eventi/sagra-della-manna-pollina/"
+      }
+    ],
+    "sectors": "Manna e produzioni gastronomiche",
+    "venue": "Viale Alfredo Musotto e centro",
+    "summary": "Manifestazione dedicata a manna e produzioni gastronomiche.",
+    "participation": {
+      "type": "check",
+      "note": "Fonte editoriale locale: stand e degustazioni il 13 agosto 2026; visite ai frassineti 10–13 distinte dal giorno della sagra. Ticket menù del visitatore non quota banco; non reperito bando con canoni o ammissione esterna. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune e Circolo Cacciatori Pollina"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Prizzi",
+    "name": "Fiera di Settembre",
+    "months": [
+      9
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.prizzi.pa.it/novita/notizie/novita_270.html",
+      "label": "www.comune.prizzi.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.prizzi.pa.it/novita/notizie/novita_270.html"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-14",
+        "end": "2026-09-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.prizzi.pa.it/novita/notizie/novita_270.html"
+      }
+    ],
+    "sectors": "Merci della fiera tradizionale; merceologie specifiche da verificare",
+    "venue": "Prizzi",
+    "summary": "Manifestazione dedicata a merci della fiera tradizionale; merceologie specifiche da verificare.",
+    "participation": {
+      "type": "check",
+      "note": "Avviso comunale 2026 per il 14–15 settembre: incentivo sul canone unico, ulteriormente ridotto del 50% con delibera 106/2026. Non sono pubblicati nel testo un prezzo finale, la metratura applicabile o posti residui; chiarimenti presso SUAP. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Prizzi"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Roccapalumba",
+    "name": "Opuntia Ficus-Indica Fest",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://roccapalumba.comune.digital/social-news/i/61e8bd4025faa1fb3fc35c9d38288da6/xxvi-opuntia-ficus-indica-fest-roccapalumba-16-17-e-18-ottobre-2026-tre-giorni-dedicati-al-ficodindia-e-alle-ec",
+      "label": "roccapalumba.comune.digital",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://roccapalumba.comune.digital/social-news/i/61e8bd4025faa1fb3fc35c9d38288da6/xxvi-opuntia-ficus-indica-fest-roccapalumba-16-17-e-18-ottobre-2026-tre-giorni-dedicati-al-ficodindia-e-alle-ec",
+      "https://roccapalumba.comune.digital/social-news/i/d863f8c5af8cb28421cd971d5e888f23/la-xxvi-edizione-dellopuntia-ficus-indica-fest-si-prepara-regalare-roccapalumba-tre-serate-straordinarie-allinseg"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-16",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://roccapalumba.comune.digital/social-news/i/61e8bd4025faa1fb3fc35c9d38288da6/xxvi-opuntia-ficus-indica-fest-roccapalumba-16-17-e-18-ottobre-2026-tre-giorni-dedicati-al-ficodindia-e-alle-ec"
+      }
+    ],
+    "sectors": "Ficodindia e produzioni del territorio",
+    "venue": "Roccapalumba",
+    "summary": "Manifestazione dedicata a ficodindia e produzioni del territorio.",
+    "participation": {
+      "type": "check",
+      "note": "Comunicazione ufficiale comunale 2026: tre giorni con percorsi gastronomici, tradizioni e valorizzazione delle produzioni. Programma spettacoli distinto dalle condizioni dei banchi; non reperiti un prezzo espositore o una disponibilità attuale. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Roccapalumba"
+  },
+  {
+    "region": "Sicilia",
+    "city": "San Mauro Castelverde",
+    "name": "Sagra del Caciocavallo",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.guidasicilia.it/evento/la-xx-sagra-del-caciocavallo-a-san-mauro-castelverde-pa-corso-umberto-i-e-altri-luoghi-di-san-mauro-castelverde/3030575",
+      "label": "www.guidasicilia.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.guidasicilia.it/evento/la-xx-sagra-del-caciocavallo-a-san-mauro-castelverde-pa-corso-umberto-i-e-altri-luoghi-di-san-mauro-castelverde/3030575",
+      "https://www.siciliainfesta.com/sagre/sagra_del_caciocavallo_a_san_mauro_castelverde.htm",
+      "https://www.antichebotteghesanmauro.it/xx-sagra-del-caciocavallo-2026.html"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-06",
+        "end": "2026-06-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.guidasicilia.it/evento/la-xx-sagra-del-caciocavallo-a-san-mauro-castelverde-pa-corso-umberto-i-e-altri-luoghi-di-san-mauro-castelverde/3030575"
+      }
+    ],
+    "sectors": "Caciocavallo, produzioni gastronomiche e artigianato",
+    "venue": "Corso Umberto I",
+    "summary": "Manifestazione dedicata a caciocavallo, produzioni gastronomiche e artigianato.",
+    "participation": {
+      "type": "check",
+      "note": "Festival 5–7 giugno 2026; la fonte con programma colloca gli spazi espositivi il 6 dalle 15 e il 7 dalle 10. Il 5 è convegno e teatro, escluso dai giorni commerciali. Pagina delle Antiche Botteghe restituisce solo l’indice: non dichiarata lettura del programma su quel sito. Quote banco non verificate. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune e organizzazione locale"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Santa Flavia",
+    "name": "Porticello Fest — Sagra del Pesce Azzurro",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliafan.it/porticello-fest-tre-giorni-tra-gusto-intrattenimento-e-valorizzazione-del-territorio/",
+      "label": "www.siciliafan.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.siciliafan.it/porticello-fest-tre-giorni-tra-gusto-intrattenimento-e-valorizzazione-del-territorio/",
+      "https://www.comune.santaflavia.pa.it/avviso-pubblico-esplorativo-per-manifestazione-dinteresse-a-partecipare-allevento-porticello-fest-la-sagra-del-pesce-azzurro-tra-enogastronomia-cultura-e-tradizioni/",
+      "https://www.comune.santaflavia.pa.it/wp-content/uploads/2026/05/avviso-pubblico-1.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-19",
+        "end": "2026-06-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafan.it/porticello-fest-tre-giorni-tra-gusto-intrattenimento-e-valorizzazione-del-territorio/"
+      }
+    ],
+    "sectors": "Pescato locale, prodotti agroalimentari e street food",
+    "venue": "Piano Stenditore e baia di Porticello",
+    "summary": "Manifestazione dedicata a pescato locale, prodotti agroalimentari e street food.",
+    "participation": {
+      "type": "selected",
+      "note": "Comunicato 2026: Food Village 19–21 giugno, 18–24. Avviso comunale letto visivamente: manifestazione d’interesse entro 28 maggio per esercenti registrati al SUAP e con sede a Santa Flavia, con SCIA e oneri a proprio carico. Non è un invito generalizzato a operatori esterni; quota non quantificata. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio.",
+      "deadline": "2026-05-28"
+    },
+    "organizer": "Comune di Santa Flavia"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Sciara",
+    "name": "Street Food Fest",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.vivasicilia.com/street-food-fest-sciara/",
+      "label": "www.vivasicilia.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.vivasicilia.com/street-food-fest-sciara/"
+    ],
+    "editions": [],
+    "sectors": "Cibo di strada e prodotti gastronomici siciliani",
+    "venue": "Centro di Sciara",
+    "summary": "Manifestazione dedicata a cibo di strada e prodotti gastronomici siciliani.",
+    "participation": {
+      "type": "check",
+      "note": "Pagina editoriale già intitolata 2027 ma con metadati 22–23 agosto 2026 e nuovo programma annunciato come non disponibile. Mantenuto soltanto il periodo estivo, senza confermare una nuova data. Non reperito disciplinare espositore corrente. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Associazione Giovanile Sciarese"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Scillato",
+    "name": "Sagra dell’Arancia",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.direttasicilia.it/comunicati-stampa/scillato-xxviii-sagra-dellarancia-viaggio-tra-tradizione-e-gusto-dal-9-al-10-maggio-2026/",
+      "label": "www.direttasicilia.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.direttasicilia.it/comunicati-stampa/scillato-xxviii-sagra-dellarancia-viaggio-tra-tradizione-e-gusto-dal-9-al-10-maggio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-09",
+        "end": "2026-05-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.direttasicilia.it/comunicati-stampa/scillato-xxviii-sagra-dellarancia-viaggio-tra-tradizione-e-gusto-dal-9-al-10-maggio-2026/"
+      }
+    ],
+    "sectors": "Arance, olio, formaggi, miele, conserve, pane, dolci e artigianato",
+    "venue": "Scillato",
+    "summary": "Manifestazione dedicata a arance, olio, formaggi, miele, conserve, pane, dolci e artigianato.",
+    "participation": {
+      "type": "check",
+      "note": "Comunicato del 4 maggio 2026 con programma e mostra mercato di prodotti tipici e artigianato. La degustazione domenicale non è un bando per bancarelle; prezzo, servizi e disponibilità espositore non quantificati. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Scillato"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Sclafani Bagni",
+    "name": "Sclafani Wine & Food Festival",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.sclafaniwinefood.com/programma/",
+      "label": "www.sclafaniwinefood.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sclafaniwinefood.com/programma/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-30",
+        "end": "2026-08-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.sclafaniwinefood.com/programma/"
+      }
+    ],
+    "sectors": "Vini e produzioni enogastronomiche",
+    "venue": "Piazza Madonna di Fatima e Porta Soprana",
+    "summary": "Manifestazione dedicata a vini e produzioni enogastronomiche.",
+    "participation": {
+      "type": "check",
+      "note": "Programma ufficiale domenica 30 agosto 2026: stand enogastronomici dalle 12 e produttori di vini 17–20. Abbonamenti alle degustazioni e ai singoli incontri sono biglietti del pubblico, non quote espositori; ammissione esterna e tariffe stand non pubblicate. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sicilia",
+    "city": "Trabia",
+    "name": "Sagra delle Nespole e degli Spaghetti",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://prolocotrabiasannicola.it/blog-detail/post/606006/xxvii-sagra-delle-nespole-e-degli-spaghetti---richiesta-partecipazione-espositori",
+      "label": "prolocotrabiasannicola.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://prolocotrabiasannicola.it/blog-detail/post/606006/xxvii-sagra-delle-nespole-e-degli-spaghetti---richiesta-partecipazione-espositori"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-23",
+        "end": "2026-05-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://prolocotrabiasannicola.it/blog-detail/post/606006/xxvii-sagra-delle-nespole-e-degli-spaghetti---richiesta-partecipazione-espositori"
+      }
+    ],
+    "sectors": "Nespole, gastronomia, street food, artigianato e hobbistica",
+    "venue": "Trabia",
+    "summary": "Manifestazione dedicata a nespole, gastronomia, street food, artigianato e hobbistica.",
+    "participation": {
+      "type": "check",
+      "note": "Avviso Pro Loco 19 aprile 2026 letto nell’indicizzazione web: candidatura con modulo al Protocollo e recapito telefonico, valutata per coerenza e spazi. Download e browser restituiscono solo intestazione, non il modulo; nessuna quota o lettura dell’allegato inventata. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Pro Loco Trabia–San Nicola"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Valledolmo",
+    "name": "Giornate dell’Agricoltura",
+    "months": [
+      4,
+      5
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliaagricoltura.it/2026/04/26/a-valledolmo-la-xxvi-edizione-delle-giornate-dellagricoltura-dal-30-aprile-al-3-maggio-2026-quattro-giorni-dedicati-a-tradizione-innovazione-e-sviluppo-del-territorio/",
+      "label": "www.siciliaagricoltura.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.siciliaagricoltura.it/2026/04/26/a-valledolmo-la-xxvi-edizione-delle-giornate-dellagricoltura-dal-30-aprile-al-3-maggio-2026-quattro-giorni-dedicati-a-tradizione-innovazione-e-sviluppo-del-territorio/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-30",
+        "end": "2026-05-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliaagricoltura.it/2026/04/26/a-valledolmo-la-xxvi-edizione-delle-giornate-dellagricoltura-dal-30-aprile-al-3-maggio-2026-quattro-giorni-dedicati-a-tradizione-innovazione-e-sviluppo-del-territorio/"
+      }
+    ],
+    "sectors": "Agricoltura, zootecnia, macchinari, agroalimentare e artigianato",
+    "venue": "Area della manifestazione di Valledolmo",
+    "summary": "Manifestazione dedicata a agricoltura, zootecnia, macchinari, agroalimentare e artigianato.",
+    "participation": {
+      "type": "check",
+      "note": "Comunicato 2026 pubblicato da Sicilia Agricoltura: esposizioni 30 aprile–3 maggio. Fonte di settore dichiarata; contributi pubblici e compensi organizzativi non sono prezzi per un singolo espositore. Non reperiti listino e disponibilità attuali. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Valledolmo"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Vicari",
+    "name": "Sagra della Mandorla e del Passavolante",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.vicari.pa.it/feste-e-sagre/",
+      "label": "www.comune.vicari.pa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.vicari.pa.it/feste-e-sagre/"
+    ],
+    "editions": [],
+    "sectors": "Mandorle, passavolante e prodotti gastronomici locali",
+    "venue": "Vicari",
+    "summary": "Manifestazione dedicata a mandorle, passavolante e prodotti gastronomici locali.",
+    "participation": {
+      "type": "check",
+      "note": "La pagina comunale descrive la ricorrenza nell’ultima settimana di agosto, senza nuova edizione datata. Non usata la stima automatica 20 settembre 2026 di un altro portale. Canoni e condizioni per espositori esterni non pubblicati. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    },
+    "organizer": "Comune di Vicari"
+  },
+  {
+    "region": "Sicilia",
+    "city": "Piana degli Albanesi",
+    "name": "Cannolo Fest",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://cannolofest.it/",
+      "label": "cannolofest.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://cannolofest.it/",
+      "https://cannolofest.it/programma/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-16",
+        "end": "2026-05-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://cannolofest.it/"
+      }
+    ],
+    "sectors": "Cannoli, pasticceria siciliana e produzioni gastronomiche",
+    "venue": "Piazza Vittorio Emanuele e aree del festival",
+    "summary": "Manifestazione dedicata a cannoli, pasticceria siciliana e produzioni gastronomiche.",
+    "participation": {
+      "type": "check",
+      "note": "Sito e programma dell’organizzatore 2026: Cannolo Taste, Expo e Village il 16–17 maggio. Pasticcerie e operatori selezionati; ingresso libero del pubblico distinto dal prezzo banco, non pubblicato nelle fonti lette. Il modulo non è stato inviato e non si deducono disponibilità. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
+    }
   }
 ]

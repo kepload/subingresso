@@ -2555,6 +2555,54 @@
       "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5185783/BANDO-per-l'assegnazione-posteggi--Sagra-del-mirto-2026.pdf",
       "checkedAt": "2026-10-29",
       "review": "provincial-original-review"
+    },
+    "sicilia-cefalu-mostra-mercato-del-ss-salvatore": {
+      "kind": "partial",
+      "label": "2026: 10 € + 60,48 € e nolo gazebo",
+      "details": "Bando 2026: 10 € per logistica più 60,48 € di canone per ciascuno stand di 6 m²; nolo gazebo aggiuntivo da determinare, quindi non è un totale. IVA non precisata. Impianto elettrico predisposto con quadro comune ogni sei postazioni, tavoli e sedie esclusi; quota non rimborsabile. Pagamento prima dell’autorizzazione.",
+      "sourceUrl": "https://comune.cefalu.pa.it/wp-content/uploads/2026/07/AVVISO-PUBBLICO.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-chiusa-sclafani-sagra-delle-ciliegie": {
+      "kind": "fee",
+      "label": "2026: 10 / 30 / 40 € secondo servizi",
+      "details": "Avviso 57ª Sagra, 14 giugno 2026: 10 € solo suolo pubblico; 30 € stand del Comune e suolo; 40 € stand del Comune, suolo e punto luce. IVA, dimensioni e ulteriori servizi non precisati nel documento. Tariffe dell’edizione 2026, senza rinnovo implicito.",
+      "sourceUrl": "https://www.comune.chiusasclafani.pa.it/wp-content/uploads/2026/05/Avviso-Sagra-delle-ciliegie-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-corleone-fiera-di-sant-isidoro-a-ficuzza": {
+      "kind": "partial",
+      "label": "2024: sole aree comunali gratuite",
+      "details": "Avviso storico 2024: il Comune mette a disposizione unicamente le aree di propria competenza a titolo gratuito. Allestimenti, energia, IVA e altri servizi non sono inclusi né quantificati. Non è un’offerta gratuita corrente e non prova un rinnovo 2026.",
+      "sourceUrl": "https://comune.corleone.pa.it/wp-content/uploads/2024/08/AVVISO-FIERA-DI-S.ISIDORO.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2024"
+    },
+    "sicilia-palermo-zagara-d-autunno": {
+      "kind": "fee",
+      "label": "2025: 183 € a postazione; 2026 non verificato",
+      "details": "Regolamento Zagara d’autunno 2025, 29ª edizione: 150 € + IVA 22% = 183 € per postazione; sconto 50% per espositori provenienti dal centro-nord Italia. Sorveglianza notturna assicurata; cura e pulizia dello spazio a carico dell’espositore. Dimensioni ed energia non precisate. Versamento entro 1 ottobre 2025, termine scaduto. Non trasferire il prezzo all’edizione 2026.",
+      "sourceUrl": "https://drive.google.com/uc?export=download&id=1fPiCKp6Nq_vf40T5tRgGDv7ndJXQHODG",
+      "checkedAt": "2026-10-29",
+      "period": "2025"
+    },
+    "sicilia-petralia-sottana-festa-dei-sapori-madoniti-d-autunno": {
+      "kind": "fee",
+      "label": "2026: 100 € artigianato / 200 € gastronomia",
+      "details": "Regolamento 2026: postazione 3×3 m, 100 € per artigiani con partita IVA e per artigiani/artisti/hobbisti senza partita IVA; gastronomia 200 €. Metri lineari aggiuntivi: 30 € + IVA artigiani con partita IVA, 40 € + IVA gastronomia, 30 € per chi è senza partita IVA; IVA sulle basi non esplicitata. Associazioni gastronomiche: 200 € più 40 € per metro o frazione. Inclusi fino a 200 W; lampade e prolunga di almeno 25 m proprie. Postazioni gratuite per alcune associazioni art.5 non equivalgono a stand gastronomici gratuiti.",
+      "sourceUrl": "https://www.festadeisaporimadoniti.com/wp-content/uploads/2026/09/Regolamento_Festa_dei_Sapori_Madoniti_2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-prizzi-fiera-di-settembre": {
+      "kind": "partial",
+      "label": "2026: riduzione ulteriore del canone del 50%",
+      "details": "Avviso 2026: ulteriore riduzione del 50% sulla tariffa del Canone Unico per gli operatori della fiera del 14–15 settembre. Tariffa di partenza, metrature, IVA e servizi non quantificati nel testo: nessun importo finale ricavabile e nessuna gratuità.",
+      "sourceUrl": "https://www.comune.prizzi.pa.it/novita/notizie/novita_270.html",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
     }
   }
 }
