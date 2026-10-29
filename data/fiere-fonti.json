@@ -2458,17 +2458,6 @@
   },
   {
     "region": "Sicilia",
-    "name": "Fiera dello Jonio",
-    "city": "Acireale",
-    "months": "9",
-    "category": "artigianato",
-    "source": {
-      "url": "https://www.comune.acireale.ct.it/it/eventi/725419",
-      "label": "comune.acireale.ct.it"
-    }
-  },
-  {
-    "region": "Sicilia",
     "name": "Fiera di San Calogero",
     "city": "Agrigento",
     "months": "7",
@@ -2502,87 +2491,6 @@
   },
   {
     "region": "Sicilia",
-    "name": "Ottobrata Zafferanese",
-    "city": "Zafferana Etnea",
-    "months": "10",
-    "category": "sagra",
-    "source": {
-      "url": "https://www.ottobratazafferanese.it/",
-      "label": "ottobratazafferanese.it",
-      "checkedAt": "2026-10-09"
-    },
-    "editions": [
-      {
-        "year": 2026,
-        "start": "2026-10-04",
-        "end": "2026-10-04",
-        "dateType": "confirmed",
-        "sourceUrl": "https://www.ottobratazafferanese.it/"
-      },
-      {
-        "year": 2026,
-        "start": "2026-10-11",
-        "end": "2026-10-11",
-        "dateType": "confirmed",
-        "sourceUrl": "https://www.ottobratazafferanese.it/"
-      },
-      {
-        "year": 2026,
-        "start": "2026-10-18",
-        "end": "2026-10-18",
-        "dateType": "confirmed",
-        "sourceUrl": "https://www.ottobratazafferanese.it/"
-      },
-      {
-        "year": 2026,
-        "start": "2026-10-25",
-        "end": "2026-10-25",
-        "dateType": "confirmed",
-        "sourceUrl": "https://www.ottobratazafferanese.it/"
-      }
-    ],
-    "venue": "Zafferana Etnea",
-    "summary": "Appuntamenti domenicali dedicati alle produzioni del territorio, alla gastronomia e all’artigianato.",
-    "participation": {
-      "type": "selected",
-      "note": "Verifica con l’organizzazione le categorie degli stand e l’ammissione per le singole domeniche. La fiera non si svolge ogni giorno tra la prima e l’ultima data."
-    }
-  },
-  {
-    "region": "Sicilia",
-    "name": "Sagra del Pistacchio di Bronte",
-    "city": "Bronte",
-    "months": "9,10",
-    "category": "sagra",
-    "source": {
-      "url": "https://www.comune.bronte.ct.it/novita/xxxv-sagra-del-pistacchio-di-bronte-ufficiali-le-date-delledizione-2026/",
-      "label": "comune.bronte.ct.it",
-      "checkedAt": "2026-10-09"
-    },
-    "editions": [
-      {
-        "year": 2026,
-        "start": "2026-09-25",
-        "end": "2026-09-27",
-        "dateType": "confirmed",
-        "sourceUrl": "https://www.comune.bronte.ct.it/novita/xxxv-sagra-del-pistacchio-di-bronte-ufficiali-le-date-delledizione-2026/"
-      },
-      {
-        "year": 2026,
-        "start": "2026-10-02",
-        "end": "2026-10-04",
-        "dateType": "confirmed",
-        "sourceUrl": "https://www.comune.bronte.ct.it/novita/xxxv-sagra-del-pistacchio-di-bronte-ufficiali-le-date-delledizione-2026/"
-      }
-    ],
-    "summary": "Rassegna del pistacchio di Bronte organizzata in due fine settimana distinti. Non è un evento continuativo tra settembre e ottobre.",
-    "participation": {
-      "type": "selected",
-      "note": "Consulta gli avvisi del Comune e le regole per stand ed espositori dell’edizione. Le date riportate riguardano i due weekend del 2026."
-    }
-  },
-  {
-    "region": "Sicilia",
     "name": "Cous Cous Fest",
     "city": "San Vito Lo Capo",
     "months": "9",
@@ -2603,17 +2511,6 @@
       "label": "chocomodicaofficial.it"
     },
     "frequencyNote": "Il periodo varia tra le edizioni: verificare programma e aggiornamenti dell'organizzatore."
-  },
-  {
-    "region": "Sicilia",
-    "name": "Fiera Mediterranea del Cavallo",
-    "city": "Militello in Val di Catania",
-    "months": "5",
-    "category": "espositiva",
-    "source": {
-      "url": "https://cavallisicilia.it/30/news/115-fiera-mediterranea-del-cavallo-2026",
-      "label": "cavallisicilia.it"
-    }
   },
   {
     "region": "Sardegna",
@@ -20254,5 +20151,3345 @@
       "type": "check",
       "note": "Sito e programma dell’organizzatore 2026: Cannolo Taste, Expo e Village il 16–17 maggio. Pasticcerie e operatori selezionati; ingresso libero del pubblico distinto dal prezzo banco, non pubblicato nelle fonti lette. Il modulo non è stato inviato e non si deducono disponibilità. Verifica con l’organizzazione requisiti, costi e disponibilità: la scheda non assegna un posteggio."
     }
+  },
+  {
+    "region": "Sicilia",
+    "name": "Mercato straordinario di Santo Stefano",
+    "city": "Aci Bonaccorsi",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.acibonaccorsi.ct.it/novit/avvisi/avviso-pubblico-per-l-assegnazione-temporanea-di-posteggi-su-area-pubblica-in-occasione-del-mer.aspx",
+      "label": "comune.acibonaccorsi.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Frutta secca, giocattoli, alimentari, prodotti agricoli e non alimentari",
+    "summary": "Posteggi documentati il 2–3 agosto 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Posteggi documentati il 2–3 agosto 2026. Bando per titolari di autorizzazione su aree pubbliche: domanda entro il 1° luglio alle 9:00; tre settori con vincoli sui mezzi, vietati nella Villetta dei Pini. Gli stalli previsti non sono posti ancora liberi; costo non quantificato nell’avviso.",
+      "deadline": "2026-07-01"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-02",
+        "end": "2026-08-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.acibonaccorsi.ct.it/novit/avvisi/avviso-pubblico-per-l-assegnazione-temporanea-di-posteggi-su-area-pubblica-in-occasione-del-mer.aspx"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.acibonaccorsi.ct.it/novit/avvisi/avviso-pubblico-per-l-assegnazione-temporanea-di-posteggi-su-area-pubblica-in-occasione-del-mer.aspx",
+      "https://www.comune.acibonaccorsi.ct.it/contents/2026/6/15/Avviso-pubblico(28).pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra dell’Arancino di Ficarazzi",
+    "city": "Aci Castello",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://discover-acireale.it/it/eventi/estate-ad-acicastello-2026",
+      "label": "discover-acireale.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Arancini e prodotti gastronomici",
+    "summary": "Ficarazzi è la frazione di Aci Castello, distinta dall’omonimo comune palermitano.",
+    "participation": {
+      "type": "selected",
+      "note": "Ficarazzi è la frazione di Aci Castello, distinta dall’omonimo comune palermitano. Il programma estivo indica gli stand dal 10 al 13 settembre 2026; per esporre occorre accordo con l’organizzazione e verifica dei titoli. Nessun bando aperto, quota o disponibilità documentata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-10",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://discover-acireale.it/it/eventi/estate-ad-acicastello-2026"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://discover-acireale.it/it/eventi/estate-ad-acicastello-2026"
+    ],
+    "venue": "Piazza Giovanni XXIII, Ficarazzi"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Pesce Spada di Aci Trezza",
+    "city": "Aci Castello",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://discover-acireale.it/it/eventi/estate-ad-acicastello-2026",
+      "label": "discover-acireale.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pesce spada e gastronomia di mare",
+    "summary": "Il programma estivo documenta il 12–14 giugno 2026 allo Scalo di Alaggio di Aci Trezza.",
+    "participation": {
+      "type": "selected",
+      "note": "Il programma estivo documenta il 12–14 giugno 2026 allo Scalo di Alaggio di Aci Trezza. Non estese al 2026 le ulteriori date di luglio riportate con riserva da aggregatori. Ammissione degli operatori, servizi e quota da verificare con gli organizzatori."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-12",
+        "end": "2026-06-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://discover-acireale.it/it/eventi/estate-ad-acicastello-2026"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://discover-acireale.it/it/eventi/estate-ad-acicastello-2026"
+    ],
+    "venue": "Scalo di Alaggio, Aci Trezza"
+  },
+  {
+    "region": "Sicilia",
+    "name": "OktoBeer Fest di Aci Trezza",
+    "city": "Aci Castello",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/manifestazioni/beer_catania.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Birre artigianali e street food",
+    "summary": "La pagina editoriale intitolata BeerCatania colloca l’evento 25–27 settembre 2026 allo Scalo di Alaggio di Aci Trezza: attribuito ad Aci Castello, senza duplicarlo a Catania.",
+    "participation": {
+      "type": "selected",
+      "note": "La pagina editoriale intitolata BeerCatania colloca l’evento 25–27 settembre 2026 allo Scalo di Alaggio di Aci Trezza: attribuito ad Aci Castello, senza duplicarlo a Catania. Non è conferma comunale; condizioni e quote degli stand non pubblicate nella fonte."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-25",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/manifestazioni/beer_catania.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/manifestazioni/beer_catania.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "I Colori e i Sapori della Nostra Terra",
+    "city": "Aci Catena",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.acicatena.ct.it/novita/avviso-per-manifestazione-di-interesse-per-assegnazione-temporanea-di-gazebo-in-occasione-del-festival-i-colori-e-i-sapori-della-nostra-terra-che-si-svolgera-in-data-28-29/",
+      "label": "comune.acicatena.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti agricoli, agroalimentari, vini, artigianato e opere dell’ingegno",
+    "summary": "Avviso comunale per gazebo 3×3 chiusi su tre lati, con luce elettrica, il 28–30 agosto 2026 a Piano Umberto.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso comunale per gazebo 3×3 chiusi su tre lati, con luce elettrica, il 28–30 agosto 2026 a Piano Umberto. Domande entro il 20 agosto; priorità alle eccellenze e agli esercenti locali, poi protocollo. I 18 gazebo sono previsione del progetto, non disponibilità residua; nessuna quota numerica indicata.",
+      "deadline": "2026-08-20"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-28",
+        "end": "2026-08-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.acicatena.ct.it/novita/avviso-per-manifestazione-di-interesse-per-assegnazione-temporanea-di-gazebo-in-occasione-del-festival-i-colori-e-i-sapori-della-nostra-terra-che-si-svolgera-in-data-28-29/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.acicatena.ct.it/novita/avviso-per-manifestazione-di-interesse-per-assegnazione-temporanea-di-gazebo-in-occasione-del-festival-i-colori-e-i-sapori-della-nostra-terra-che-si-svolgera-in-data-28-29/",
+      "https://www.comune.acicatena.ct.it/wp-content/uploads/2026/07/AVVISO-GAZEBO.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera dello Jonio",
+    "city": "Acireale",
+    "months": [
+      9
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.fieradellojonio.it/",
+      "label": "fieradellojonio.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Artigianato siciliano e prodotti agroalimentari",
+    "summary": "Stand dal 4 al 13 settembre 2026, ore 18–23.",
+    "participation": {
+      "type": "selected",
+      "note": "Stand dal 4 al 13 settembre 2026, ore 18–23. Selezione comunale con priorità alle produzioni siciliane e dimostrazioni artigiane; regolarità commerciale e SCIA al SUAP richieste. Il bando allegato indicava il 15 giugno, la home il 20 luglio: termini passati, nessuna candidatura aperta o posto garantito."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-04",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.fieradellojonio.it/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.fieradellojonio.it/",
+      "https://www.fieradellojonio.it/wp-content/uploads/2026/07/Fiera_jonio_disciplinare_2026_signed.pdf",
+      "https://www.fieradellojonio.it/wp-content/uploads/2026/07/FieraJonio_avviso_pubblico_2026_signed.pdf",
+      "https://www.fieradellojonio.it/wp-content/uploads/2026/09/Programma-fiera.pdf"
+    ],
+    "venue": "Centro storico di Acireale"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Nivarata – Festival della Granita Siciliana",
+    "city": "Acireale",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.nivarata.it/",
+      "label": "nivarata.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Granita artigianale, gelateria e gastronomia",
+    "summary": "Edizione 2026 documentata dall’organizzatore il 22–24 maggio, in Piazza Duomo.",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione 2026 documentata dall’organizzatore il 22–24 maggio, in Piazza Duomo. Partecipazione professionale selezionata, con concorsi e stand gastronomici: verificare condizioni per granitieri ed espositori; i ticket di degustazione del pubblico non sono tariffe banco."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-22",
+        "end": "2026-05-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.nivarata.it/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.nivarata.it/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa del Contadino di Pennisi",
+    "city": "Acireale",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/feste/la_festa_del_contadino_a_pennisi_acireale.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti agricoli, gastronomia e artigianato locale",
+    "summary": "Fonte editoriale: due fine settimana, 19–20 e 26–27 settembre 2026, con stand di artigianato e prodotti contadini a Pennisi.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale: due fine settimana, 19–20 e 26–27 settembre 2026, con stand di artigianato e prodotti contadini a Pennisi. Non è apertura continua tra le date. Operatori e produttori devono verificare selezione e costi con l’organizzazione; nessun posto libero documentato."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/feste/la_festa_del_contadino_a_pennisi_acireale.htm"
+      },
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/feste/la_festa_del_contadino_a_pennisi_acireale.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/feste/la_festa_del_contadino_a_pennisi_acireale.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Rosso di Mare – Sagra del Pesce di Stazzo",
+    "city": "Acireale",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_del_pesce_spada_stazzo_acireale.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Tonno rosso, gastronomia, prodotti tipici e artigianato",
+    "summary": "La fonte editoriale aggiornata riporta 11–12 luglio e descrive Rosso di Mare con tonno rosso e stand artigianali, mentre lo slug conserva il pesce spada.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte editoriale aggiornata riporta 11–12 luglio e descrive Rosso di Mare con tonno rosso e stand artigianali, mentre lo slug conserva il pesce spada. L’anno dell’edizione non è esplicitato nel testo: mantenuto il solo periodo usuale, senza inventare date 2026. Condizioni per gli espositori da verificare."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_del_pesce_spada_stazzo_acireale.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Polpo di Pozzillo",
+    "city": "Acireale",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_del_polpo_a_pozzillo_acireale.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Polpo e gastronomia di mare",
+    "summary": "Riscontro editoriale esplicito del 19 luglio 2025 a Pozzillo; lo storico non conferma una nuova edizione 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Riscontro editoriale esplicito del 19 luglio 2025 a Pozzillo; lo storico non conferma una nuova edizione 2026. Si tratta di una degustazione organizzata, senza prova di assegnazione libera di banchi a terzi. Verificare ammissione e quota prima di programmare la partecipazione."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-07-19",
+        "end": "2025-07-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_del_polpo_a_pozzillo_acireale.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_del_polpo_a_pozzillo_acireale.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Pesce Spada di Pozzillo",
+    "city": "Acireale",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_del_pesce_spada_a_pozzillo_acireale.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pesce spada e gastronomia di mare",
+    "summary": "La fonte descrive il consueto ultimo fine settimana di luglio, distinto dalla Sagra del Polpo.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte descrive il consueto ultimo fine settimana di luglio, distinto dalla Sagra del Polpo. Non è disponibile una data puntuale confermata 2026 né un bando per operatori esterni; verificare con l’organizzazione categorie ammesse e condizioni, senza presumere posti disponibili."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_del_pesce_spada_a_pozzillo_acireale.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra dell’Olio",
+    "city": "Adrano",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.tvadrano.com/2026/06/15/adrano-al-comune-finanziamento-regionale-di-40mila-euro-per-la-sagra-dellolio/",
+      "label": "tvadrano.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Olive, olio e trasformati della filiera olearia",
+    "summary": "Annuncio 2026 di una fiera mercato dedicata all’olio nel mese di ottobre, con finanziamento regionale.",
+    "participation": {
+      "type": "selected",
+      "note": "Annuncio 2026 di una fiera mercato dedicata all’olio nel mese di ottobre, con finanziamento regionale. La notizia non documenta giorni effettivi né ammissione degli stand; il contributo pubblico non è quota espositore. Nessun giorno certo o disponibilità ricavato dal solo finanziamento."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Annunciata per ottobre 2026; giorni e programma commerciale non riscontrati",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.tvadrano.com/2026/06/15/adrano-al-comune-finanziamento-regionale-di-40mila-euro-per-la-sagra-dellolio/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.tvadrano.com/2026/06/15/adrano-al-comune-finanziamento-regionale-di-40mila-euro-per-la-sagra-dellolio/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Ficodindia dell’Etna DOP",
+    "city": "Belpasso",
+    "months": [
+      10,
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.belpasso.ct.it/it/news/2052924",
+      "label": "comune.belpasso.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ficodindia, prodotti agroalimentari locali e artigianato siciliano",
+    "summary": "30 ottobre–1° novembre 2026 nel centro storico secondo avviso e bando; il regolamento allegato conserva invece Villa Martoglio.",
+    "participation": {
+      "type": "selected",
+      "note": "30 ottobre–1° novembre 2026 nel centro storico secondo avviso e bando; il regolamento allegato conserva invece Villa Martoglio. Domande scadute il 26 ottobre, assegnazione/sorteggio il 27. Ammesse categorie tipiche; camion paninoteca esclusi, gastronomia ambulante limitata a crispelle, frutta secca e dolciumi, non pasti.",
+      "deadline": "2026-10-26"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-30",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.belpasso.ct.it/it/news/2052924"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.belpasso.ct.it/it/news/2052924",
+      "https://belpasso-api.municipiumapp.it/s3/618/allegati/avvisi/2026/1_settore/bando_sagra_del_ficodindia_2026.pdf",
+      "https://belpasso-api.municipiumapp.it/s3/618/allegati/avvisi/2026/1_settore/allegato_b_regolamento_sagra_ficodindia_2026.pdf"
+    ],
+    "venue": "Via Roma, Piazza Duomo e Piazza Umberto; difformità nel regolamento allegato"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Nzèmmula – Mercatino dei Sapori Nostrani",
+    "city": "Belpasso",
+    "months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.siciliainfesta.com/fiere_e_mercatini/san_martino_mercatino_dei_sapori_nostrani_belpasso.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti biologici e a km zero, agroalimentare, ceramiche e artigianato",
+    "summary": "Fonte editoriale del 2023: consueta prima domenica del mese, 8:30–13:30, Piazza Municipio.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale del 2023: consueta prima domenica del mese, 8:30–13:30, Piazza Municipio. È una ricorrenza documentata storicamente, non un calendario di domeniche 2026. Selezione di produttori e artigiani da verificare con Pro Loco/organizzazione; quota e continuità attuale non documentate."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/fiere_e_mercatini/san_martino_mercatino_dei_sapori_nostrani_belpasso.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Pistacchio di Bronte",
+    "city": "Bronte",
+    "months": [
+      9,
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.bronte.ct.it/novita/35a-sagra-del-pistacchio-di-bronte-bando-di-partecipazione-e-norme-per-gli-espositori/",
+      "label": "comune.bronte.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pistacchio DOP e siciliano, prodotti tipici, gastronomia e artigianato siciliano",
+    "summary": "Edizione 2026 su due fine settimana: 25–27 settembre e 2–4 ottobre.",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione 2026 su due fine settimana: 25–27 settembre e 2–4 ottobre. Domande entro il 21 agosto, quote entro il 4 settembre; priorità alle aziende locali. Prodotti al pistacchio non DOP solo con pistacchio siciliano; le altre categorie non possono venderlo. Dentro gli stand vietate bombole a gas, ammessi induzione e piastre elettriche.",
+      "deadline": "2026-08-21"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-25",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.bronte.ct.it/novita/35a-sagra-del-pistacchio-di-bronte-bando-di-partecipazione-e-norme-per-gli-espositori/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-02",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.bronte.ct.it/novita/35a-sagra-del-pistacchio-di-bronte-bando-di-partecipazione-e-norme-per-gli-espositori/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.bronte.ct.it/novita/35a-sagra-del-pistacchio-di-bronte-bando-di-partecipazione-e-norme-per-gli-espositori/",
+      "https://www.comune.bronte.ct.it/wp-content/uploads/2026/07/Bando-di-partecipazione.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra delle Nespole",
+    "city": "Calatabiano",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_nespola_calatabiano.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Nespole, prodotti agricoli e artigianato locale",
+    "summary": "La fonte descrive una mostra mercato di agricoltura e artigianato nel mese di maggio.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte descrive una mostra mercato di agricoltura e artigianato nel mese di maggio. Il 10 maggio compare senza anno esplicito: non trasformato in data confermata 2026. Programma annuale, bando, quote e requisiti per esporre restano da verificare presso il Comune."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_nespola_calatabiano.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Limone Zagara Bianca",
+    "city": "Calatabiano",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra-del-limone-zagara-bianca-a-calatabiano.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Limoni, prodotti locali e gastronomia",
+    "summary": "Manifestazione con stand di prodotti locali, laboratori e degustazioni nel consueto periodo di maggio.",
+    "participation": {
+      "type": "selected",
+      "note": "Manifestazione con stand di prodotti locali, laboratori e degustazioni nel consueto periodo di maggio. La pagina editoriale segnala possibile evento passato; il solo aggiornamento della pagina non conferma l’edizione 2026. Nessuna data certa né quota espositore documentata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra-del-limone-zagara-bianca-a-calatabiano.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Mercatini di Natale",
+    "city": "Caltagirone",
+    "months": [
+      11,
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.caltagirone.ct.it/it/novita/page/avviso-pubblico-per-l-individuazione-del-soggetto-organizzatore-e-gestore-dei-mercatini-di-natale-2026-2027",
+      "label": "comune.caltagirone.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti natalizi, agroalimentare e artigianato; ceramica natalizia di Caltagirone",
+    "summary": "Il bando al gestore prevede il periodo 29 novembre 2026–7 gennaio 2027, ore 10–21, in Piazza Umberto.",
+    "participation": {
+      "type": "selected",
+      "note": "Il bando al gestore prevede il periodo 29 novembre 2026–7 gennaio 2027, ore 10–21, in Piazza Umberto. Domande gestori entro il 6 novembre alle 12:00; non è domanda del singolo banco. Tariffa agli operatori da proporre in gara, quindi non ancora quantificata. Ceramiche ammesse soltanto di Caltagirone e a tema natalizio."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Periodo previsto dal bando: 29 novembre 2026–7 gennaio 2027; assegnazioni agli operatori da verificare",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.caltagirone.ct.it/it/novita/page/avviso-pubblico-per-l-individuazione-del-soggetto-organizzatore-e-gestore-dei-mercatini-di-natale-2026-2027"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.caltagirone.ct.it/it/novita/page/avviso-pubblico-per-l-individuazione-del-soggetto-organizzatore-e-gestore-dei-mercatini-di-natale-2026-2027",
+      "https://www.comune.caltagirone.ct.it/download/84252b57727648ce99e2af11e0198c59/1%20-Avviso%20Pubblico%20mercatini%20di%20Natale%202026.pdf?ccd9155b643d6589a5836e80f2256698"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Kalta Trova – Mercatino dell’Antiquariato",
+    "city": "Caltagirone",
+    "months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11,
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.cosedicasa.com/mercatini/caltagirone-centro-storico",
+      "label": "cosedicasa.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Antiquariato, ceramica, modernariato, vintage, vinili, libri e collezionismo",
+    "summary": "Fonte specialistica aggiornata nel 2026: ricorrenza della terza domenica, esclusi luglio e agosto, Piazza Falcone e Borsellino.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte specialistica aggiornata nel 2026: ricorrenza della terza domenica, esclusi luglio e agosto, Piazza Falcone e Borsellino. Non generato un calendario annuale di giornate certe. Operatori e collezionisti devono verificare svolgimento e condizioni; i numeri della pagina non attestano posti liberi."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.cosedicasa.com/mercatini/caltagirone-centro-storico"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Mostarda e del Ficodindia",
+    "city": "Camporotondo Etneo",
+    "months": [
+      9,
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra-del-ficodindia-e-della-mostarda-a-camporotondo-etneo.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Mostarda, ficodindia, gastronomia e prodotti locali",
+    "summary": "Fonte editoriale 2026: 26–27 settembre a Piano Tavola e 3–4 ottobre a Camporotondo, nel programma estivo comunale.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale 2026: 26–27 settembre a Piano Tavola e 3–4 ottobre a Camporotondo, nel programma estivo comunale. Due fine settimana, non periodo continuo. Assegnazione di eventuali spazi, categoria dell’operatore e costi da verificare con il Comune."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra-del-ficodindia-e-della-mostarda-a-camporotondo-etneo.htm"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-03",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra-del-ficodindia-e-della-mostarda-a-camporotondo-etneo.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra-del-ficodindia-e-della-mostarda-a-camporotondo-etneo.htm",
+      "https://www.cataniablog.it/r-estate-a-camporotondo-2-0-programma-2026.html"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Calici di Stelle",
+    "city": "Castiglione di Sicilia",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.castiglionedisicilia.ct.it/novita/vendita-on-line-ticket-per-degustazione-vini-a-calici-di-stelle-2026/",
+      "label": "comune.castiglionedisicilia.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vini e gastronomia",
+    "summary": "Il Comune documenta il 10 agosto 2026, con cantine selezionate e area food in via Regina Margherita.",
+    "participation": {
+      "type": "selected",
+      "note": "Il Comune documenta il 10 agosto 2026, con cantine selezionate e area food in via Regina Margherita. Il ticket da 15 € è per le degustazioni dei visitatori, non prezzo espositore. Produttori e operatori food devono verificare ammissione e preventivo; nessun posto libero dichiarato."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-10",
+        "end": "2026-08-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.castiglionedisicilia.ct.it/novita/vendita-on-line-ticket-per-degustazione-vini-a-calici-di-stelle-2026/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.castiglionedisicilia.ct.it/novita/vendita-on-line-ticket-per-degustazione-vini-a-calici-di-stelle-2026/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera dei Morti",
+    "city": "Catania",
+    "months": [
+      10,
+      11
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.amts.ct.it/fiera-dei-morti-accesso-al-parcheggio-da-via-forcile",
+      "label": "amts.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti artigianali, dolciumi, alimentari e merci varie",
+    "summary": "24 ottobre–2 novembre 2026 in via Amerigo Vespucci, San Giuseppe La Rena, secondo AMTS.",
+    "participation": {
+      "type": "selected",
+      "note": "24 ottobre–2 novembre 2026 in via Amerigo Vespucci, San Giuseppe La Rena, secondo AMTS. Il disciplinare di gara conserva il sito precedente di Nesima: superato dalla comunicazione attuale. La concessione al gestore non è un bando banco; ammissioni e condizioni economiche vanno verificate con il gestore."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-24",
+        "end": "2026-11-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.amts.ct.it/fiera-dei-morti-accesso-al-parcheggio-da-via-forcile"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.amts.ct.it/fiera-dei-morti-accesso-al-parcheggio-da-via-forcile"
+    ],
+    "venue": "Via Amerigo Vespucci, San Giuseppe La Rena"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Centriamo il Natale – Piazza Università",
+    "city": "Catania",
+    "months": [
+      11,
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.catania.it/novita/avvisi/procedura-negoziata-mediante-rdo-sul-mepa-manifestazione-centriamo-il-natale-2026.aspx",
+      "label": "comune.catania.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Artigianato e produzioni enogastronomiche natalizie",
+    "summary": "Il progetto comunale prevede 27 novembre–29 dicembre 2026 in Piazza Università, con casette espositive.",
+    "participation": {
+      "type": "selected",
+      "note": "Il progetto comunale prevede 27 novembre–29 dicembre 2026 in Piazza Università, con casette espositive. È documentazione di appalto per l’allestimento, non prova di assegnazione dei singoli stand o apertura quotidiana. Quote, settori ammessi e candidatura dei venditori non indicati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Progetto comunale 2026: periodo previsto 27 novembre–29 dicembre; assegnazioni da verificare",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.catania.it/novita/avvisi/procedura-negoziata-mediante-rdo-sul-mepa-manifestazione-centriamo-il-natale-2026.aspx"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.catania.it/novita/avvisi/procedura-negoziata-mediante-rdo-sul-mepa-manifestazione-centriamo-il-natale-2026.aspx"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Mercatini artigianali di Piazza Turi Ferro",
+    "city": "Catania",
+    "months": [
+      11,
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.catania.it/contents/2026/1/2/10/23/Avviso-mercatini-piazza-turi-ferro_2026.pdf",
+      "label": "comune.catania.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Artigianato, opere dell’ingegno, hobbisti e tipicità alimentari confezionate",
+    "summary": "Avviso al gestore, domande entro il 31 ottobre 2026 alle 12:00.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso al gestore, domande entro il 31 ottobre 2026 alle 12:00. Finestre presunte 9–19 novembre, 23 novembre–3 dicembre, 7–17 e 19–29 dicembre, 11–30 gennaio 2027; modificabili, non occupazione continua. Vendita in casette; vietata la somministrazione. I 90 € di istruttoria per periodo riguardano il gestore, non il prezzo del singolo banco."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Finestre presunte novembre–dicembre 2026 e gennaio 2027; giorni e assegnazioni da confermare",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.catania.it/contents/2026/1/2/10/23/Avviso-mercatini-piazza-turi-ferro_2026.pdf"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.catania.it/contents/2026/1/2/10/23/Avviso-mercatini-piazza-turi-ferro_2026.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Pasquettando – Mostra del Regalo Artigianale",
+    "city": "Catania",
+    "months": [
+      3
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.siciliainfesta.com/fiere_e_mercatini/pasquettando_mostra_del_regalo_artigianale_catania.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Manufatti artigianali e prodotti tipici",
+    "summary": "Fonte editoriale: mostra mercato di Eventi In a Palazzo Biscari dal 27 al 29 marzo 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale: mostra mercato di Eventi In a Palazzo Biscari dal 27 al 29 marzo 2026. Artigiani e produttori selezionati dall’organizzazione; ingresso del pubblico distinto dalla partecipazione professionale. Quote e spazi disponibili non pubblicati nella fonte."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-27",
+        "end": "2026-03-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/fiere_e_mercatini/pasquettando_mostra_del_regalo_artigianale_catania.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/fiere_e_mercatini/pasquettando_mostra_del_regalo_artigianale_catania.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Handmade Lovely Sicily al Palazzo Biscari",
+    "city": "Catania",
+    "months": [
+      10,
+      11
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.siciliainfesta.com/fiere_e_mercatini/handmade_sicily_al_biscari_catania.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Manufatti artigianali e prodotti tipici",
+    "summary": "Fonte editoriale dell’organizzatore Eventi In: mostra mercato dal 30 ottobre al 1° novembre 2026 a Palazzo Biscari.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale dell’organizzatore Eventi In: mostra mercato dal 30 ottobre al 1° novembre 2026 a Palazzo Biscari. Partecipazione degli artigiani tramite selezione; ingresso libero dei visitatori non significa banco gratuito. Preventivo e disponibilità non pubblicati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-30",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/fiere_e_mercatini/handmade_sicily_al_biscari_catania.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/fiere_e_mercatini/handmade_sicily_al_biscari_catania.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Magico Natale a Palazzo Biscari",
+    "city": "Catania",
+    "months": [
+      12
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.siciliainfesta.com/manifestazioni/magico-natale-a-catania.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Regalo artigianale, manufatti e prodotti tipici",
+    "summary": "La fonte editoriale aggiornata descrive il mercato di Eventi In nel periodo natalizio, ma avverte che può riferirsi a un evento passato.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte editoriale aggiornata descrive il mercato di Eventi In nel periodo natalizio, ma avverte che può riferirsi a un evento passato. Conservato soltanto dicembre come periodo usuale, senza inventare giorni 2026. Verificare selezione, preventivo e nuova programmazione con l’organizzazione."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/manifestazioni/magico-natale-a-catania.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Natale ai Minoriti",
+    "city": "Catania",
+    "months": [
+      12,
+      1
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.siciliainfesta.com/fiere_e_mercatini/natale_ai_minoriti_mostra_dell_artigianato_catania.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ceramiche, pietra lavica, mosaici, merletti, gioielli, tessili e presepi",
+    "summary": "Mostra vendita dell’artigianato artistico dell’associazione Delfare, nel Chiostro di Palazzo Minoriti.",
+    "participation": {
+      "type": "selected",
+      "note": "Mostra vendita dell’artigianato artistico dell’associazione Delfare, nel Chiostro di Palazzo Minoriti. La fonte descrive la ricorrenza natalizia e segnala possibile evento passato; non documenta giorni certi 2026. Ammissione riservata agli artigiani selezionati, condizioni economiche da verificare."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/fiere_e_mercatini/natale_ai_minoriti_mostra_dell_artigianato_catania.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Mango",
+    "city": "Fiumefreddo di Sicilia",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra-del-mango-a-fiumefreddo-di-sicilia.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Mango, prodotti tipici, street food e artigianato",
+    "summary": "La fonte editoriale aggiornata nel 2026 descrive il consueto periodo della seconda settimana di settembre, ma segnala possibile evento passato.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte editoriale aggiornata nel 2026 descrive il consueto periodo della seconda settimana di settembre, ma segnala possibile evento passato. Non ricavati giorni certi dall’aggiornamento della pagina. Operatori food e artigiani devono verificare ammissione, requisiti e quota con l’organizzazione."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra-del-mango-a-fiumefreddo-di-sicilia.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra delle Ciliegie e delle Rose di Macchia",
+    "city": "Giarre",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_delle_ciligie_e_delle_rose_giarre.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ciliegie, gastronomia, prodotti tipici e artigianato",
+    "summary": "La fonte editoriale parla dell’edizione 2026 a Macchia di Giarre con banchetti enogastronomici e fiera dei prodotti tipici.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte editoriale parla dell’edizione 2026 a Macchia di Giarre con banchetti enogastronomici e fiera dei prodotti tipici. Giorni non indicati: mantenuto il periodo usuale di raccolta, senza date certe. Per esporre verificare selezione, titoli e costi con Pro Loco/organizzazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Edizione 2026 citata dalla fonte; giorni non riscontrati",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_delle_ciligie_e_delle_rose_giarre.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_delle_ciligie_e_delle_rose_giarre.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Etna Chocolate Carnival",
+    "city": "Giarre",
+    "months": [
+      2
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/manifestazioni/etna-chocolate-a-giarre.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Cioccolato, dolciumi, food e artigianato",
+    "summary": "Manifestazione con stand del cioccolato e artigianato nel consueto periodo di carnevale.",
+    "participation": {
+      "type": "selected",
+      "note": "Manifestazione con stand del cioccolato e artigianato nel consueto periodo di carnevale. La fonte aggiornata segnala possibile evento passato: nessuna data confermata 2026 e nessuna tariffa documentata. Verificare che la nuova edizione preveda ammissione di espositori esterni."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/manifestazioni/etna-chocolate-a-giarre.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Salsiccia – Festa do Chianu",
+    "city": "Grammichele",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/decreti-e-direttive/ddg-n-2876-07102026",
+      "label": "regione.sicilia.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Salsiccia e gastronomia locale",
+    "summary": "Il decreto regionale del 2026 liquida l’iniziativa svoltasi il 6–9 settembre 2025.",
+    "participation": {
+      "type": "selected",
+      "note": "Il decreto regionale del 2026 liquida l’iniziativa svoltasi il 6–9 settembre 2025. È uno storico 2025, non conferma di un’edizione 2026; il contributo all’evento non è tariffa banco. Occorre verificare con organizzatore/Comune se e come sono ammessi operatori esterni."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-09-06",
+        "end": "2025-09-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.regione.sicilia.it/istituzioni/servizi-informativi/decreti-e-direttive/ddg-n-2876-07102026"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.regione.sicilia.it/istituzioni/servizi-informativi/decreti-e-direttive/ddg-n-2876-07102026"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa dell’Uva da Tavola e dei Prodotti Tipici",
+    "city": "Licodia Eubea",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_dell_uva_licodia_eubea.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Uva da tavola, prodotti tipici e artigianato",
+    "summary": "La fonte editoriale descrive degustazioni e produzioni locali; il 5–6 settembre appare senza anno esplicito nel testo.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte editoriale descrive degustazioni e produzioni locali; il 5–6 settembre appare senza anno esplicito nel testo. Conservato il solo periodo usuale, senza trasformarlo in conferma 2026. Sito comunale non accessibile alla prima acquisizione; quote e condizioni per esporre non documentate."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_dell_uva_licodia_eubea.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Piazze del Gusto",
+    "city": "Linguaglossa",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://servizionline.hspromilaprod.hypersicapp.net/cmslinguaglossa/portale/albopretorio/albopretorioconsultazione.aspx?P=400",
+      "label": "servizionline.hspromilaprod.hypersicapp.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vino, olio, nocciole, salsiccia al ceppo e prodotti del territorio",
+    "summary": "Albo comunale: atti e noleggio degli stand per il 23–25 ottobre 2026; ordinanza orari riferita ai soli giorni 23–24.",
+    "participation": {
+      "type": "selected",
+      "note": "Albo comunale: atti e noleggio degli stand per il 23–25 ottobre 2026; ordinanza orari riferita ai soli giorni 23–24. I metadati degli atti non sono lettura di ogni allegato né bando di ammissione; prezzi per operatori e disponibilità non documentati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-23",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://servizionline.hspromilaprod.hypersicapp.net/cmslinguaglossa/portale/albopretorio/albopretorioconsultazione.aspx?P=400"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://servizionline.hspromilaprod.hypersicapp.net/cmslinguaglossa/portale/albopretorio/albopretorioconsultazione.aspx?P=400"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Fragola",
+    "city": "Maletto",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_fragola_maletto.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Fragole, prodotti agricoli, lattiero-caseari, artigianato e gastronomia",
+    "summary": "Fonte editoriale: 39ª edizione il 24–26 luglio 2026, con stand di prodotti locali e gastronomia.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale: 39ª edizione il 24–26 luglio 2026, con stand di prodotti locali e gastronomia. Atto comunale di liquidazione riscontrato nell’indice, originale online con errore di certificato. Ammissione degli operatori, tariffa e requisiti da verificare; nessun posto disponibile attestato."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-24",
+        "end": "2026-07-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_della_fragola_maletto.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_fragola_maletto.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Ricotta e della Provola dei Nebrodi",
+    "city": "Maniace",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.maniace.ct.it/it/news/sagra-della-ricotta-e-della-provola-dei-nebrodi",
+      "label": "comune.maniace.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ricotta, provola, prodotti agroalimentari, gastronomia e artigianato",
+    "summary": "Regolamento comunale: 1–3 maggio 2026, domande entro il 15 aprile alle 14:00.",
+    "participation": {
+      "type": "selected",
+      "note": "Regolamento comunale: 1–3 maggio 2026, domande entro il 15 aprile alle 14:00. Richiesta residenza nei comuni dei Parchi Nebrodi/Etna/Alcantara, titoli commerciali e sanitari; priorità ai produttori locali. Sponsor e spazi aggiuntivi hanno condizioni separate, non prova di banco libero.",
+      "deadline": "2026-04-15"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-01",
+        "end": "2026-05-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.maniace.ct.it/it/news/sagra-della-ricotta-e-della-provola-dei-nebrodi"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.maniace.ct.it/it/news/sagra-della-ricotta-e-della-provola-dei-nebrodi",
+      "https://maniace-api.municipiumapp.it/s3/3817/allegati/regolamento-organizzazione-sagra-della-ricotta-2026.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Crudo, Cotto e Mangiato – Sagra del Pomodoro",
+    "city": "Maniace",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.maniace.ct.it/it/news/2034157",
+      "label": "comune.maniace.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pomodoro, prodotti tipici nebroidei, gastronomia e artigianato",
+    "summary": "Avviso, regolamento e programma comunali concordano sul 19–20 settembre 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso, regolamento e programma comunali concordano sul 19–20 settembre 2026. Domande entro il 1° settembre alle 18:00, residenza nei comuni dei Parchi e titoli richiesti; priorità ai produttori di pomodoro e alle produzioni locali. Non adottate le date discordanti 18–19 settembre di un aggregatore.",
+      "deadline": "2026-09-01"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.maniace.ct.it/it/news/2034157"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.maniace.ct.it/it/news/2034157",
+      "https://cloud.municipiumapp.it/s3/3817/allegati/sagra-pomodoro-2026/rregolamento-sagra-del-pomodoro-2026.pdf",
+      "https://cloud.municipiumapp.it/s3/3817/allegati/sagra-pomodoro-2026/programma.jpeg"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Mascali d’Autunno – La Contea della Cultura",
+    "city": "Mascali",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.mascalieventi.it/index.html",
+      "label": "mascalieventi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vini, prodotti tipici, artigianato e libri",
+    "summary": "Programma del progetto comunale: 9–11 e 16–18 ottobre 2026 in Piazza Dante, dalle 17:30.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma del progetto comunale: 9–11 e 16–18 ottobre 2026 in Piazza Dante, dalle 17:30. Due fine settimana con cantine, prodotti tipici e artigianato; non periodo continuo. Token e calici riguardano il pubblico, non il costo per esporre; selezione e quote degli operatori da verificare."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mascalieventi.it/index.html"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-16",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mascalieventi.it/index.html"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.mascalieventi.it/index.html"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festival Internazionale dell’Uva da Tavola IGP",
+    "city": "Mazzarrone",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/manifestazioni/festival_dell_uva_da_tavola_mazzarrone.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Uva da tavola, prodotti tipici, artigianato e attrezzature agricole",
+    "summary": "Fonte editoriale: 11–13 settembre 2026, con mostra mercato e rassegna espositiva agricola.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale: 11–13 settembre 2026, con mostra mercato e rassegna espositiva agricola. Programma commerciale e operatori selezionati; distribuzione gratuita di uva ai visitatori non significa banco gratuito. Costi, requisiti e disponibilità da verificare con Comune/organizzazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-11",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/manifestazioni/festival_dell_uva_da_tavola_mazzarrone.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/manifestazioni/festival_dell_uva_da_tavola_mazzarrone.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Mostarda e del Ficodindia",
+    "city": "Militello in Val di Catania",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.interbus.it/militello-modifica-fermate-09al18ottobre2026/",
+      "label": "interbus.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ficodindia, mostarda e gastronomia tipica",
+    "summary": "Fonte operativa Interbus e programma editoriale concordano su 9–11 e 16–18 ottobre 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte operativa Interbus e programma editoriale concordano su 9–11 e 16–18 ottobre 2026. Le giornate intermedie non diventano fiera continua. Per stand di produttori e gastronomia verificare bando, titoli, quote e allestimento presso il Comune o l’organizzazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.interbus.it/militello-modifica-fermate-09al18ottobre2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-16",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.interbus.it/militello-modifica-fermate-09al18ottobre2026/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.interbus.it/militello-modifica-fermate-09al18ottobre2026/",
+      "https://www.siciliainfesta.com/sagre/sagra_della_mostarda_e_del_ficodindia_militello_val_di_catania.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera Mediterranea del Cavallo",
+    "city": "Militello in Val di Catania",
+    "months": [
+      5
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://cavallisicilia.it/30/news/115-fiera-mediterranea-del-cavallo-2026",
+      "label": "cavallisicilia.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Equitazione, attrezzature e servizi del settore equestre",
+    "summary": "Fonte dell’Istituto Incremento Ippico: 15–17 maggio 2026 alla Tenuta Ambelia.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Fonte dell’Istituto Incremento Ippico: 15–17 maggio 2026 alla Tenuta Ambelia. Partecipazione tramite selezione e organizzatore; norme sanitarie per cavalli distinte dai requisiti commerciali degli stand. L’ingresso gratuito del pubblico e il parcheggio da 5 € non sono costi espositore."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-15",
+        "end": "2026-05-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://cavallisicilia.it/30/news/115-fiera-mediterranea-del-cavallo-2026"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://cavallisicilia.it/30/news/115-fiera-mediterranea-del-cavallo-2026"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "ViniMilo – Sagra dei Vini dell’Etna",
+    "city": "Milo",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.vinimilo.it/edizione-2026/sabato-5-settembre",
+      "label": "vinimilo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vini, street food, presidi Slow Food, prodotti tipici e artigianato",
+    "summary": "Il festival complessivo va dal 27 agosto al 13 settembre 2026; il Salotto del Gusto con mostra mercato è documentato il 5–6 e 12–13 settembre.",
+    "participation": {
+      "type": "selected",
+      "note": "Il festival complessivo va dal 27 agosto al 13 settembre 2026; il Salotto del Gusto con mostra mercato è documentato il 5–6 e 12–13 settembre. Non estesi gli stand a tutti i giorni degli incontri. I ticket delle degustazioni non sono quote banco; partecipazione professionale selezionata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.vinimilo.it/edizione-2026/sabato-5-settembre"
+      },
+      {
+        "year": 2026,
+        "start": "2026-09-12",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.vinimilo.it/edizione-2026/sabato-5-settembre"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.vinimilo.it/edizione-2026/sabato-5-settembre",
+      "https://www.vinimilo.it/edizione-2026/domenica-6-settembre",
+      "https://www.vinimilo.it/edizione-2026/sabato-12-settembre",
+      "https://www.vinimilo.it/edizione-2026/domenica-13-settembre"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa del Fungo Porcino dell’Etna a Fornazzo",
+    "city": "Milo",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_del_fungo_porcino_fornazzo_milo.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Funghi, gastronomia e artigianato locale",
+    "summary": "Fonte editoriale: due fine settimana 19–20 e 26–27 settembre 2026 a Fornazzo.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale: due fine settimana 19–20 e 26–27 settembre 2026 a Fornazzo. Stand gastronomici e mercatino artigianale, senza apertura continuativa tra i weekend. Verificare selezione di produttori e operatori, autorizzazioni, quota e nuova programmazione con l’organizzazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_del_fungo_porcino_fornazzo_milo.htm"
+      },
+      {
+        "year": 2026,
+        "start": "2026-09-26",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_del_fungo_porcino_fornazzo_milo.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_del_fungo_porcino_fornazzo_milo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Feste Medievali Casa Normanna",
+    "city": "Motta Sant'Anastasia",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/feste/feste_medievali_miti_e_leggende_motta_sant_anastasia.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Gastronomia e mercatino medievale",
+    "summary": "Fonte editoriale dell’associazione Casa Normanna: 7–9 agosto 2026 nel borgo medievale.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale dell’associazione Casa Normanna: 7–9 agosto 2026 nel borgo medievale. Le taverne e i banchi sono parte dell’organizzazione della rievocazione, senza prova di accesso libero degli ambulanti. Verificare disponibilità, coerenza dei prodotti e condizioni economiche con il Rione Vecchia Matrice."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/feste/feste_medievali_miti_e_leggende_motta_sant_anastasia.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/feste/feste_medievali_miti_e_leggende_motta_sant_anastasia.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Solstizio d’Estate",
+    "city": "Nicolosi",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.nicolosi.ct.it/vivere-il-comune/eventi/sagra-del-solstizio-destate/",
+      "label": "comune.nicolosi.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Produzioni e gastronomia locale",
+    "summary": "La scheda comunale reca un contenitore 19–22 giugno 2026, mentre testo e locandina indicano domenica 21 giugno al Museo della Civiltà Contadina.",
+    "participation": {
+      "type": "selected",
+      "note": "La scheda comunale reca un contenitore 19–22 giugno 2026, mentre testo e locandina indicano domenica 21 giugno al Museo della Civiltà Contadina. Conservata la giornata dell’iniziativa, non quattro giorni continuativi. Nessun avviso di ammissione di banchi esterni o quota documentata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-21",
+        "end": "2026-06-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.nicolosi.ct.it/vivere-il-comune/eventi/sagra-del-solstizio-destate/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.nicolosi.ct.it/vivere-il-comune/eventi/sagra-del-solstizio-destate/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Profumi e Sapori d’Autunno",
+    "city": "Nicolosi",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.nicolosi.ct.it/vivere-il-comune/eventi/profumi-e-sapori-dautunno-2026/",
+      "label": "comune.nicolosi.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti tipici agricoli, castagne, vino e artigianato",
+    "summary": "Il manifesto comunale documenta i mercatini dei produttori agricoli il 7–8, 11, 14–15 e 21–22 novembre 2026, in genere 9–20 e il giorno 11 dalle 16 alle 21.",
+    "participation": {
+      "type": "selected",
+      "note": "Il manifesto comunale documenta i mercatini dei produttori agricoli il 7–8, 11, 14–15 e 21–22 novembre 2026, in genere 9–20 e il giorno 11 dalle 16 alle 21. Il contenitore della pagina 20 ottobre–23 novembre non è apertura continuativa degli stand. Ammissione, quote e titoli degli espositori non specificati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.nicolosi.ct.it/vivere-il-comune/eventi/profumi-e-sapori-dautunno-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-11-11",
+        "end": "2026-11-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.nicolosi.ct.it/vivere-il-comune/eventi/profumi-e-sapori-dautunno-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-11-14",
+        "end": "2026-11-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.nicolosi.ct.it/vivere-il-comune/eventi/profumi-e-sapori-dautunno-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-11-21",
+        "end": "2026-11-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.nicolosi.ct.it/vivere-il-comune/eventi/profumi-e-sapori-dautunno-2026/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.nicolosi.ct.it/vivere-il-comune/eventi/profumi-e-sapori-dautunno-2026/",
+      "https://www.comune.nicolosi.ct.it/wp-content/uploads/2026/10/Manifesto-Profumi-e-Sapori-dAutunno-2026-WEb.jpg"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "AranciaFest – Sagra dell’Arancia Rossa",
+    "city": "Palagonia",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.palagonia.ct.it/eventi/2026-2.html",
+      "label": "comune.palagonia.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Arance, filiera agrumicola, prodotti tipici, servizi e attrezzature agricole",
+    "summary": "Il Comune documenta il 23–26 aprile 2026 e la partecipazione di aziende agricole e operatori della filiera.",
+    "participation": {
+      "type": "selected",
+      "note": "Il Comune documenta il 23–26 aprile 2026 e la partecipazione di aziende agricole e operatori della filiera. Promozione e rapporti professionali richiedono accordo con l’organizzazione; il campo pubblico “nessun costo” riguarda la visita e non documenta gratuità degli stand."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-23",
+        "end": "2026-04-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.palagonia.ct.it/eventi/2026-2.html"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.palagonia.ct.it/eventi/2026-2.html"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera di Belvedere",
+    "city": "Palagonia",
+    "months": [
+      10
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.palagonia.ct.it/eventi/2026-6.html",
+      "label": "comune.palagonia.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti agroalimentari, artigianato e produzioni del territorio",
+    "summary": "Programma comunale del 23–25 ottobre 2026, conosciuto anche come Fiera di Belverde o Fiera d’Ottobre.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma comunale del 23–25 ottobre 2026, conosciuto anche come Fiera di Belverde o Fiera d’Ottobre. Unica manifestazione, senza duplicare gli alias. Operatori devono verificare assegnazioni, titolo commerciale e quota; ingresso libero del pubblico non significa banco gratuito."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-23",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.palagonia.ct.it/eventi/2026-6.html"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.palagonia.ct.it/eventi/2026-6.html"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera Estiva di Pedara",
+    "city": "Pedara",
+    "months": [
+      8
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://etnaeventimanagement.it/author/Etna_Eventi/",
+      "label": "etnaeventimanagement.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti tipici, gastronomia, artigianato, casa e tempo libero",
+    "summary": "L’organizzatore documenta la 18ª Fiera Estiva dal 1° al 24 agosto 2026 al Parco Angelo D’Arrigo, ore 18–1.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "L’organizzatore documenta la 18ª Fiera Estiva dal 1° al 24 agosto 2026 al Parco Angelo D’Arrigo, ore 18–1. Spazi espositivi tramite richiesta e preventivo all’organizzazione; nessun listino per gli stand pubblicato. Le edizioni e date di vecchi aggregatori non prevalgono sull’annuncio attuale."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://etnaeventimanagement.it/author/Etna_Eventi/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://etnaeventimanagement.it/author/Etna_Eventi/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Fungo, delle Mele e delle Castagne dell’Etna",
+    "city": "Pedara",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://etnaeventimanagement.it/sagra-del-fungo-delle-mele-e-delle-castagne-delletna-2026/",
+      "label": "etnaeventimanagement.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Funghi, mele, castagne, gastronomia e artigianato",
+    "summary": "Organizzatore: 20–22 novembre 2026 in Piazza del Popolo, venerdì 17–24 e sabato/domenica 10–24.",
+    "participation": {
+      "type": "selected",
+      "note": "Organizzatore: 20–22 novembre 2026 in Piazza del Popolo, venerdì 17–24 e sabato/domenica 10–24. Richiedere preventivo e ammissione per gli spazi espositivi; nessuna tariffa pubblicata. Non usate le date 7–11 novembre di calendari non aggiornati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-20",
+        "end": "2026-11-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://etnaeventimanagement.it/sagra-del-fungo-delle-mele-e-delle-castagne-delletna-2026/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://etnaeventimanagement.it/sagra-del-fungo-delle-mele-e-delle-castagne-delletna-2026/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa della Vendemmia",
+    "city": "Piedimonte Etneo",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://etnaeventimanagement.it/festa-della-vendemmia-2026-piedimonte-2/",
+      "label": "etnaeventimanagement.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vino, prodotti tipici, gastronomia e artigianato",
+    "summary": "L’organizzatore documenta il 18–20 settembre 2026 e propone spazi espositivi su richiesta, con iniziative anche a Presa.",
+    "participation": {
+      "type": "selected",
+      "note": "L’organizzatore documenta il 18–20 settembre 2026 e propone spazi espositivi su richiesta, con iniziative anche a Presa. Programma di stand distinto dalle visite e dagli incontri culturali; ammissione e quote richiedono verifica, nessuna disponibilità garantita."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://etnaeventimanagement.it/festa-della-vendemmia-2026-piedimonte-2/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://etnaeventimanagement.it/festa-della-vendemmia-2026-piedimonte-2/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa del Grano",
+    "city": "Raddusa",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://etic.travelnostop.com/scheda_evento.php?evento=181",
+      "label": "etic.travelnostop.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti del grano, gastronomia e produzioni locali",
+    "summary": "Programma turistico territoriale e fonte editoriale: 30ª edizione l’11–13 settembre 2026 con prodotti tipici e rievocazione della pisatura.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma turistico territoriale e fonte editoriale: 30ª edizione l’11–13 settembre 2026 con prodotti tipici e rievocazione della pisatura. La ricognizione non documenta un bando aperto o una quota banco; occorre verificare ammissione degli operatori con l’organizzazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-11",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://etic.travelnostop.com/scheda_evento.php?evento=181"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://etic.travelnostop.com/scheda_evento.php?evento=181",
+      "https://www.siciliainfesta.com/sagre/festa_del_grano_raddusa.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "I Mercatini dell’Etna – Autunno Ragalnese",
+    "city": "Ragalna",
+    "months": [
+      10,
+      11,
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.ragalna.ct.it/vivere-il-comune/eventi/mercatini-delletna-2026/",
+      "label": "comune.ragalna.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti tipici, mele, pane, salsiccia, vino, olio e gastronomia",
+    "summary": "Manifesto comunale in Piazza Cisterna: appuntamenti il 25 ottobre, 1, 8, 15, 22 e 29 novembre, 6 dicembre 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Manifesto comunale in Piazza Cisterna: appuntamenti il 25 ottobre, 1, 8, 15, 22 e 29 novembre, 6 dicembre 2026. Una rassegna con temi diversi, non sette sagre duplicate né periodo continuo. Verificare assegnazione e quota con l’organizzazione; la locandina non attesta posteggi disponibili."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-25",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ragalna.ct.it/vivere-il-comune/eventi/mercatini-delletna-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-11-01",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ragalna.ct.it/vivere-il-comune/eventi/mercatini-delletna-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-11-08",
+        "end": "2026-11-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ragalna.ct.it/vivere-il-comune/eventi/mercatini-delletna-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-11-15",
+        "end": "2026-11-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ragalna.ct.it/vivere-il-comune/eventi/mercatini-delletna-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-11-22",
+        "end": "2026-11-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ragalna.ct.it/vivere-il-comune/eventi/mercatini-delletna-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-11-29",
+        "end": "2026-11-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ragalna.ct.it/vivere-il-comune/eventi/mercatini-delletna-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-12-06",
+        "end": "2026-12-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ragalna.ct.it/vivere-il-comune/eventi/mercatini-delletna-2026/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.ragalna.ct.it/vivere-il-comune/eventi/mercatini-delletna-2026/",
+      "https://www.comune.ragalna.ct.it/wp-content/uploads/2026/10/MERCATINI-DELLETNA-2026.jpeg"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Carciofo",
+    "city": "Ramacca",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.ramacca.ct.it/novita/xxxii-sagra-del-carciofo-2026/",
+      "label": "comune.ramacca.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Carciofi, agroalimentare siciliano e artigianato",
+    "summary": "Avviso comunale: 10–12 e 17–19 aprile 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso comunale: 10–12 e 17–19 aprile 2026. Procedura per affidare a un’associazione degustazione e gestione degli stand; non bando individuale del banco. Verificare ammissione con il soggetto organizzatore; il contributo pubblico e le spese di gestione non sono prezzi per l’espositore."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-10",
+        "end": "2026-04-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ramacca.ct.it/novita/xxxii-sagra-del-carciofo-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-04-17",
+        "end": "2026-04-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ramacca.ct.it/novita/xxxii-sagra-del-carciofo-2026/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.ramacca.ct.it/novita/xxxii-sagra-del-carciofo-2026/",
+      "https://www.comune.ramacca.ct.it/wp-content/uploads/2026/03/AVVISO-PUBBLICO-XXXIV-SAGRA-DEL-CARCIOFO_signed.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera d’Ottobre e Sagra del Pane",
+    "city": "Ramacca",
+    "months": [
+      10
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.lagazzettadelcalatino.it/2026/10/ramacca-a-ottobre-la-fiera-e-la-47a-sagra-del-pane",
+      "label": "lagazzettadelcalatino.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pane, gastronomia, prodotti tipici, artigianato e merci della fiera",
+    "summary": "Annuncio dell’amministrazione riportato dalla stampa locale: 16–18 ottobre 2026 con 47ª Sagra del Pane.",
+    "participation": {
+      "type": "selected",
+      "note": "Annuncio dell’amministrazione riportato dalla stampa locale: 16–18 ottobre 2026 con 47ª Sagra del Pane. Alcuni indici recano ancora 10–11 ottobre: non utilizzati come nuova conferma. Un solo appuntamento, senza duplicare la fiera e la sagra; condizioni di banco e disponibilità non documentate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-16",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.lagazzettadelcalatino.it/2026/10/ramacca-a-ottobre-la-fiera-e-la-47a-sagra-del-pane"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.lagazzettadelcalatino.it/2026/10/ramacca-a-ottobre-la-fiera-e-la-47a-sagra-del-pane"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Antica Fiera di San Giovanni",
+    "city": "Randazzo",
+    "months": [
+      6
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.siciliainfesta.com/fiere_e_mercatini/antica_fiera_di_san_giovanni_randazzo.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Bestiame, attrezzi agricoli, prodotti tipici e artigianato",
+    "summary": "La fonte editoriale storica descrive la fiera di giugno, con periodi differenti per bestiame, attrezzi e prodotti tipici.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte editoriale storica descrive la fiera di giugno, con periodi differenti per bestiame, attrezzi e prodotti tipici. Non ricostruite date 2026 dal solo calendario ricorrente. Operatori commerciali e del settore zootecnico devono verificare attivazione, requisiti sanitari, ammissione e canoni."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/fiere_e_mercatini/antica_fiera_di_san_giovanni_randazzo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa del Pesce di Torre Archirafi",
+    "city": "Riposto",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/festa_del_pesce_a_riposto_riposto.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pesce e gastronomia marinara",
+    "summary": "La fonte editoriale descrive la festa a Torre Archirafi e riporta il 17 agosto senza anno esplicito nel testo.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte editoriale descrive la festa a Torre Archirafi e riporta il 17 agosto senza anno esplicito nel testo. Conservato il periodo usuale di agosto, non confermata una giornata 2026. Nessun bando banco, costo o apertura agli operatori esterni documentato; verificare presso l’organizzazione."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/festa_del_pesce_a_riposto_riposto.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Ficodindia",
+    "city": "San Cono",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_del_ficodindia_san_cono.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ficodindia, prodotti agroalimentari e artigianato",
+    "summary": "Fonte editoriale: 2–4 ottobre 2026; delibera comunale n.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale: 2–4 ottobre 2026; delibera comunale n. 67 del 16 settembre riscontra la 40ª edizione. I metadati dell’atto non equivalgono alla lettura degli allegati del programma. Per esporre verificare con Comune/organizzazione criteri, titoli, quota e disponibilità."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-02",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_del_ficodindia_san_cono.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_del_ficodindia_san_cono.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa dei Sapori della Ganzaria – Estate di San Martino",
+    "city": "San Michele di Ganzaria",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/manifestazioni/estate-di-san-martino-della-ganzaria-san-michele-di-ganzaria.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti agroalimentari, macchine agricole, gastronomia e artigianato",
+    "summary": "Fonte editoriale aggiornata: 7–8 novembre 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale aggiornata: 7–8 novembre 2026. Il vecchio avviso comunale 2024 documenta categorie e priorità locali, non un bando aperto nel 2026 né quote attuali; per l’ammissione occorre verificare le nuove condizioni con il Comune."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/manifestazioni/estate-di-san-martino-della-ganzaria-san-michele-di-ganzaria.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/manifestazioni/estate-di-san-martino-della-ganzaria-san-michele-di-ganzaria.htm",
+      "https://comune.sanmichelediganzaria.ct.it/wp-content/uploads/2024/10/Avviso-stand-2024.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "La Ciliegia Gioiello dell’Etna",
+    "city": "Sant'Alfio",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_ciliegia_dell_etna_sant_alfio.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ciliegie, prodotti agricoli, gastronomia e artigianato",
+    "summary": "Fonte editoriale dell’ufficio turistico: 3–5 luglio 2026, con mostra mercato agricola e artigianale.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale dell’ufficio turistico: 3–5 luglio 2026, con mostra mercato agricola e artigianale. Sito comunale con certificato scaduto alla verifica tecnica: non presentato come fonte locale integralmente leggibile. Produttori ed espositori devono verificare condizioni, titoli e quota."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-03",
+        "end": "2026-07-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_della_ciliegia_dell_etna_sant_alfio.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_ciliegia_dell_etna_sant_alfio.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Terra Gourmet – Festival dell’Olio e dei Vini Etnei",
+    "city": "Santa Maria di Licodia",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra-dell-olio-d-oliva-a-santa-maria-di-licodia.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Olio, vino, tipicità locali e artigianato",
+    "summary": "La fonte descrive l’evento Terra Gourmet e segnala possibile edizione passata; l’affidamento 2026 riscontrato nell’indice non è bando per i singoli banchi.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte descrive l’evento Terra Gourmet e segnala possibile edizione passata; l’affidamento 2026 riscontrato nell’indice non è bando per i singoli banchi. Conservato settembre come periodo annunciato, senza una sequenza di giorni commerciali certi. Verificare ammissione e prezzi presso Comune/organizzazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Progetto 2026 riscontrato; giorni commerciali e condizioni degli stand da verificare",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra-dell-olio-d-oliva-a-santa-maria-di-licodia.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra-dell-olio-d-oliva-a-santa-maria-di-licodia.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "EnoEtna",
+    "city": "Santa Venerina",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://catania.dieci.media/evento/enoetna/",
+      "label": "catania.dieci.media",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vini, prodotti tipici, gastronomia e artigianato",
+    "summary": "Fonte editoriale: 25–27 settembre 2026 nel centro cittadino, con produttori e percorsi gastronomici.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale: 25–27 settembre 2026 nel centro cittadino, con produttori e percorsi gastronomici. Indicazioni di piazza non uniformi tra le fonti: verificare la planimetria annuale. Palio e spettacoli non sono ulteriori giornate di vendita; quote e ammissioni degli espositori non pubblicate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-25",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://catania.dieci.media/evento/enoetna/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://catania.dieci.media/evento/enoetna/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Le Eccellenze di Santa Venerina – Aspettando EnoEtna",
+    "city": "Santa Venerina",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.peripericatania.it/eventi-catania/le-eccellenze-di-santa-venerina-aspettando-enoetna/?pno=5",
+      "label": "peripericatania.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti tipici, vini e pasticceria",
+    "summary": "Programma editoriale: aree dei produttori il 5 e 7 giugno 2026 alla Casa del Vendemmiatore e il 6 a Linera, Piazza Marconi, dalle 18.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma editoriale: aree dei produttori il 5 e 7 giugno 2026 alla Casa del Vendemmiatore e il 6 a Linera, Piazza Marconi, dalle 18. Gli incontri e le degustazioni non sono listino di partecipazione professionale; verificare selezione, quota e logistica con il Comune."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-05",
+        "end": "2026-06-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.peripericatania.it/eventi-catania/le-eccellenze-di-santa-venerina-aspettando-enoetna/?pno=5"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.peripericatania.it/eventi-catania/le-eccellenze-di-santa-venerina-aspettando-enoetna/?pno=5"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festival dei Sapori e della Scacciata Scordiense",
+    "city": "Scordia",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://discover-acireale.it/it/eventi/festival-sapori-scacciata-scordiense-2026-scordia",
+      "label": "discover-acireale.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Scacciata, olio, formaggi, salsiccia e artigianato siciliano",
+    "summary": "Programma territoriale: stand il 19–21 giugno 2026 in Piazza San Rocco e nel centro storico.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma territoriale: stand il 19–21 giugno 2026 in Piazza San Rocco e nel centro storico. L’organizzazione seleziona produttori e artigiani; nessuna tariffa o disponibilità documentata. Il finanziamento regionale del progetto non costituisce un contributo al singolo espositore."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-19",
+        "end": "2026-06-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://discover-acireale.it/it/eventi/festival-sapori-scacciata-scordiense-2026-scordia"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://discover-acireale.it/it/eventi/festival-sapori-scacciata-scordiense-2026-scordia"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa del Castagno – Sapori d’Autunno",
+    "city": "Trecastagni",
+    "months": [
+      10,
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.trecastagni.ct.it/novita/avviso-pubblico-festa-del-castagno-sapori-dautunno-xxv-edizione/",
+      "label": "comune.trecastagni.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Castagne, prodotti tipici locali e artigianato",
+    "summary": "Avviso comunale 2026 per il gestore della XXV edizione, con stand tra Piazza Marconi e Piazza Aldo Moro.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso comunale 2026 per il gestore della XXV edizione, con stand tra Piazza Marconi e Piazza Aldo Moro. Importi del progetto per allestimento e spettacoli non sono quote banco. Gli espositori devono avere partita IVA; calendario editoriale e contenitori online discordanti, quindi nessun intervallo quotidiano confermato."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Edizione 2026: fine settimana d’ottobre, coda di novembre riportata da fonte editoriale; singole giornate da verificare",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.trecastagni.ct.it/novita/avviso-pubblico-festa-del-castagno-sapori-dautunno-xxv-edizione/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.trecastagni.ct.it/novita/avviso-pubblico-festa-del-castagno-sapori-dautunno-xxv-edizione/",
+      "https://comune.trecastagni.ct.it/wp-content/uploads/2026/09/AVVISO-PUBBLICO-Festa-Castagno-2026_signed.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa dell’Iris, dell’Arancino, del Vino e dell’Artigianato",
+    "city": "Tremestieri Etneo",
+    "months": [
+      10,
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_dell_iris_tremestieri_etneo.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Iris, arancini, vino e artigianato",
+    "summary": "La fonte descrive festa gastronomica, artigianato e mercatino dei morti; le pagine secondarie presentano date e stato di conferma discordanti.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte descrive festa gastronomica, artigianato e mercatino dei morti; le pagine secondarie presentano date e stato di conferma discordanti. Mantenuto il solo periodo usuale tra ottobre e novembre, senza giorni certi 2026. Ammissione, titoli e costo del banco da verificare con l’organizzazione."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_dell_iris_tremestieri_etneo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra dell’Acciuga",
+    "city": "Valverde",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_dell_acciuga_valverde.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Acciughe, prodotti tipici, street food e artigianato",
+    "summary": "Ricorrenza di agosto con stand gastronomici e artigianato in Piazza del Santuario.",
+    "participation": {
+      "type": "selected",
+      "note": "Ricorrenza di agosto con stand gastronomici e artigianato in Piazza del Santuario. La fonte riporta il 23 agosto senza anno esplicito nel testo; non generata una data 2026. Verificare selezione degli operatori, nuova programmazione, oneri e servizi con l’organizzazione."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_dell_acciuga_valverde.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa della Birra",
+    "city": "Valverde",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/festa_della_birra_a_valverde.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Birre artigianali, gastronomia e artigianato",
+    "summary": "Fonte editoriale: 5–6 settembre 2026 in Piazza del Santuario.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale: 5–6 settembre 2026 in Piazza del Santuario. Il testo conserva un richiamo generico a tre giorni di spettacoli: mantenute le due date esplicite, senza aggiungerne una terza. Per esporre verificare selezione di birrifici e food, quote e requisiti."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/festa_della_birra_a_valverde.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/festa_della_birra_a_valverde.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa della Pizza e della Schiacciata",
+    "city": "Valverde",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/festa_della_pizza_e_della_schiacciata_valverde.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pizza e schiacciata",
+    "summary": "Fonte editoriale della Misericordia: 19–20 settembre 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale della Misericordia: 19–20 settembre 2026. Preparazione affidata ai volontari e pizzaioli dell’iniziativa; l’obolo per il cibo sostiene l’associazione e non è quota banco. Nessuna prova di apertura a venditori esterni: verificarla prima di proporre una partecipazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/festa_della_pizza_e_della_schiacciata_valverde.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/festa_della_pizza_e_della_schiacciata_valverde.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "La Vendemmia e le Sue Tradizioni",
+    "city": "Viagrande",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://etnaeventimanagement.it/festa-della-vendemmia-2026-viagrande/",
+      "label": "etnaeventimanagement.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vino, prodotti tipici, gastronomia e artigianato",
+    "summary": "Organizzatore: 18–20 settembre 2026 al Parco Aniante, con spazi espositivi su richiesta.",
+    "participation": {
+      "type": "selected",
+      "note": "Organizzatore: 18–20 settembre 2026 al Parco Aniante, con spazi espositivi su richiesta. Mostra mercato e degustazioni distinte dalle rievocazioni della vendemmia. Preventivo, categorie ammesse e disponibilità degli stand non quantificati sul sito."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://etnaeventimanagement.it/festa-della-vendemmia-2026-viagrande/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://etnaeventimanagement.it/festa-della-vendemmia-2026-viagrande/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "San Martino in Festa",
+    "city": "Viagrande",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/san-martino-in-festa-a-viagrande.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vino, castagne, street food, prodotti tipici e artigianato",
+    "summary": "La fonte aggiornata descrive la rassegna nel periodo di San Martino al Parco Aniante, ma segnala possibile evento passato.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte aggiornata descrive la rassegna nel periodo di San Martino al Parco Aniante, ma segnala possibile evento passato. Nessuna data certa 2026: mantenuto il mese usuale di novembre. Per gli stand verificare nuova programmazione, ammissione e preventivo con l’organizzazione."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/san-martino-in-festa-a-viagrande.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Ricotta e del Formaggio – Festa dei Sapori e dei Saperi",
+    "city": "Vizzini",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_ricotta_e_del_formaggio_vizzini.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ricotta, formaggi, gastronomia e artigianato",
+    "summary": "Fonte editoriale con programma 24–26 aprile 2026, riscontro comunale della 49ª edizione.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale con programma 24–26 aprile 2026, riscontro comunale della 49ª edizione. Alcuni portali riportano soltanto 24–25: differenza conservata nelle fonti, non estesa a una nuova edizione. Ammissione e condizioni di banco da verificare presso il Comune/organizzazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-24",
+        "end": "2026-04-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_della_ricotta_e_del_formaggio_vizzini.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_ricotta_e_del_formaggio_vizzini.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Ottobrata Zafferanese",
+    "city": "Zafferana Etnea",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.ottobratazafferanese.it/",
+      "label": "ottobratazafferanese.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti agricoli e tipici dell’Etna, miele, funghi, dolci, gastronomia e artigianato siciliano",
+    "summary": "Edizione 2026 nelle sole domeniche 4, 11, 18 e 25 ottobre.",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione 2026 nelle sole domeniche 4, 11, 18 e 25 ottobre. Bando spazi espositivi: domande entro il 18 settembre alle 12:00, con priorità territoriali e selezione merceologica. Via Roma non attrezzata e senza cottura; area gastronomica soggetta a distinta procedura di gestione.",
+      "deadline": "2026-09-18"
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-04",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ottobratazafferanese.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-11",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ottobratazafferanese.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-18",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ottobratazafferanese.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-10-25",
+        "end": "2026-10-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ottobratazafferanese.it/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.ottobratazafferanese.it/",
+      "https://www.ottobratazafferanese.it/bandi/2026/bando-assegnazione-spazi-espositivi-2026.pdf",
+      "https://www.ottobratazafferanese.it/bandi/2026/allegato-b.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Pane Condito e dei Dolci Caserecci di Pisano",
+    "city": "Zafferana Etnea",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_del_pane_condito_pisano_zafferana_etnea.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pane, dolci caserecci, miele, vino e tipicità",
+    "summary": "Fonte editoriale: 5–6 settembre 2026 nella frazione Pisano Etneo.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale: 5–6 settembre 2026 nella frazione Pisano Etneo. Degustazioni e prodotti locali con organizzazione dedicata; non riscontrato un bando per gli ambulanti. Verificare ammissione di esterni, titoli, quota e nuova programmazione prima di partecipare."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_del_pane_condito_pisano_zafferana_etnea.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_del_pane_condito_pisano_zafferana_etnea.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Expo Pubblicità",
+    "city": "Misterbianco",
+    "months": [
+      3
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pubblicità, stampa, personalizzazione e servizi alle imprese",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-13",
+        "end": "2026-03-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "T2000 in Tour",
+    "city": "Misterbianco",
+    "months": [
+      3
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti e servizi per tabaccherie, commercio professionale",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-21",
+        "end": "2026-03-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.t2000intour.it/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Expopet",
+    "city": "Misterbianco",
+    "months": [
+      3
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti e servizi per animali da compagnia",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-27",
+        "end": "2026-03-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.expopet.it/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Expo Wild",
+    "city": "Misterbianco",
+    "months": [
+      4
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Caccia e pesca sostenibili, outdoor, pet e barbecue",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate. Il sito organizzatore annuncia già il 9–11 aprile 2027; preventivi da richiedere, senza candidature inviate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-10",
+        "end": "2026-04-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      },
+      {
+        "year": 2027,
+        "start": "2027-04-09",
+        "end": "2027-04-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://expowild.it/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://expowild.it/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "ECOMED – Green Expo del Mediterraneo",
+    "city": "Misterbianco",
+    "months": [
+      4
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ambiente, rifiuti, acqua, energia, impiantistica e rigenerazione urbana",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate. Il sito organizzatore annuncia il 21–23 aprile 2027; il regolamento scaricabile resta intitolato 2026."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-22",
+        "end": "2026-04-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      },
+      {
+        "year": 2027,
+        "start": "2027-04-21",
+        "end": "2027-04-23",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.eco-med.it/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.eco-med.it/",
+      "https://www.eco-med.it/catania-2030/regolamento-generale-2026.pdf"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "SAEM – Salone dell’Edilizia e dell’Innovazione",
+    "city": "Misterbianco",
+    "months": [
+      5
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Edilizia, materiali, macchinari, impianti e innovazione",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-15",
+        "end": "2026-05-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.saemsicilia.it/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "AutoserviceTec",
+    "city": "Misterbianco",
+    "months": [
+      5
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Attrezzature e servizi per officine e riparazione veicoli",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-29",
+        "end": "2026-05-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Wonder Festival",
+    "city": "Misterbianco",
+    "months": [
+      9
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Sport, turismo, benessere, mobilità, lifestyle e food",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://wonderfestival.it/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "HEYSUN – Expo della Transizione Energetica",
+    "city": "Misterbianco",
+    "months": [
+      9,
+      10
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Energia rinnovabile, accumulo e tecnologie della transizione energetica",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-30",
+        "end": "2026-10-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.heysun.it/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "PharmEvolution",
+    "city": "Misterbianco",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti, tecnologie e servizi della filiera farmaceutica",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-09",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.pharmevolution.it/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Expo Ottica Sud",
+    "city": "Misterbianco",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ottica, occhialeria e servizi professionali",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.expootticasud.it/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Gift Fair",
+    "city": "Misterbianco",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Regalo, bomboniere, decorazioni, packaging e balloon art",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate. La call 2026 esclude agenti di zona e distributori non nazionali (richiesta distribuzione in almeno cinque regioni). Priorità e sconto del 10% soltanto ai vecchi espositori entro il 30 aprile, termine passato; base economica non pubblicata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.giftfair.eu/",
+      "https://www.giftfair.eu/2026/03/31/aperte-le-candidature-per-esporre-nel-2026/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Beauty & Fitness Show",
+    "city": "Misterbianco",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Bellezza, estetica professionale, benessere e fitness",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-19",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "GEPI Expo",
+    "city": "Misterbianco",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pizza, pasticceria, gelateria, ristorazione, food truck e attrezzature Ho.Re.Ca.",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate. Il listino 2026 è esplicitamente riservato e su richiesta. Allestimento Easy opzionale rispetto all’area: modulo 12–16 m² con tavolo e tre sedie, moquette, due fari LED e presa 1 kW/220 V; nessun prezzo numerico pubblicato e nessuna richiesta inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-25",
+        "end": "2026-10-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.gepiexpo.it/",
+      "https://www.gepiexpo.it/esporre"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "SposinLove",
+    "city": "Misterbianco",
+    "months": [
+      11
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Abiti, cerimonia, accessori e servizi per il matrimonio",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-12",
+        "end": "2026-11-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://sposinlove.it/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Frutech – Mediterranean Fruit & Vegetable Expo",
+    "city": "Misterbianco",
+    "months": [
+      11
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliafiera.it/eventi_fiere/",
+      "label": "siciliafiera.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Agricoltura, ortofrutta, agroalimentare, tecnologie e food & beverage",
+    "summary": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Calendario ufficiale SiciliaFiera 2026, con ammissione professionale tramite organizzatore e selezione merceologica. La sede è a Misterbianco. Non è un mercato a partecipazione libera: verificare compatibilità commerciale, preventivo, servizi ed eventuale autorizzazione alla vendita o somministrazione. Nessuna quota numerica del singolo stand documentata nelle fonti qui citate. La pagina documenti espositori conserva allegati 2024: dotazioni e condizioni di quei file non trasferite al 2026."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-25",
+        "end": "2026-11-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliafiera.it/eventi_fiere/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.frutech.it/",
+      "https://www.frutech.it/documenti-espositore/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "NAUTA – Mediterranean Boat Show",
+    "city": "Misterbianco",
+    "months": [
+      2,
+      3
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://salonenauticomediterraneo.it/",
+      "label": "salonenauticomediterraneo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Imbarcazioni, motori marini, accessori e servizi nautici",
+    "summary": "Nel 2026 apertura in due periodi distinti, 27 febbraio–1 marzo e 5–8 marzo, precisati da Yamaha; non dieci giorni continuativi.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Nel 2026 apertura in due periodi distinti, 27 febbraio–1 marzo e 5–8 marzo, precisati da Yamaha; non dieci giorni continuativi. L’organizzatore annuncia la prossima edizione nei fine settimana 12–14 e 19–21 marzo 2027. Partecipazione delle aziende nautiche tramite selezione e preventivo; nessuna quota o spazio libero documentato."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-02-27",
+        "end": "2026-03-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.yamaha-motor.eu/it/it/news/2026/nauta-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-03-05",
+        "end": "2026-03-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.yamaha-motor.eu/it/it/news/2026/nauta-2026/"
+      },
+      {
+        "year": 2027,
+        "start": "2027-03-12",
+        "end": "2027-03-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://salonenauticomediterraneo.it/"
+      },
+      {
+        "year": 2027,
+        "start": "2027-03-19",
+        "end": "2027-03-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://salonenauticomediterraneo.it/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://salonenauticomediterraneo.it/",
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf",
+      "https://www.yamaha-motor.eu/it/it/news/2026/nauta-2026/"
+    ],
+    "venue": "SiciliaFiera, Misterbianco"
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sicilia Game Expo",
+    "city": "Misterbianco",
+    "months": [
+      11
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.siciliagameexpo.eu/",
+      "label": "siciliagameexpo.eu",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Videogiochi, giochi da tavolo, fumetti, carte collezionabili e Artist Alley",
+    "summary": "Il sito organizzatore annuncia 13–15 novembre 2026; calendario SiciliaFiera e PDF riportano 14–15.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Il sito organizzatore annuncia 13–15 novembre 2026; calendario SiciliaFiera e PDF riportano 14–15. Conservata la differenza senza attribuire certezza alla giornata aggiuntiva. Il sito conserva anche richiami alla precedente edizione 2025. Stand e Artist Alley tramite organizzazione, condizioni e quote da verificare."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Organizzatore: 13–15 novembre 2026; calendario SiciliaFiera: 14–15 novembre",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.siciliagameexpo.eu/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliagameexpo.eu/",
+      "https://www.siciliafiera.it/eventi_fiere/",
+      "https://www.siciliafiera.it/wp-content/uploads/2026/10/SiciliaFiera-Eventi26-A4-v4.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Etna Comics",
+    "city": "Catania",
+    "months": [
+      5,
+      6
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.etnacomics.com/home",
+      "label": "etnacomics.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Fumetti, giochi, videogiochi, collezionismo, artigianato e cultura pop",
+    "summary": "Il sito ufficiale renderizzato annuncia il 3–6 giugno 2027 a Catania.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Il sito ufficiale renderizzato annuncia il 3–6 giugno 2027 a Catania. La mappa delle Ciminiere e il regolamento disponibili sono del 2026: non provano la sistemazione degli stand 2027. Aziende e creatori devono verificare sede, selezione, contratto e preventivo con l’area commerciale; regole e biglietti del pubblico non sono quote stand."
+    },
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-06-03",
+        "end": "2027-06-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.etnacomics.com/home"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.etnacomics.com/home"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Etna Wine Forum",
+    "city": "Biancavilla",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.wineinsicily.com/etna-wine-forum-a-biancavilla-quattro-giorni-dedicati-ai-vini-del-versante-sud-ovest/",
+      "label": "wineinsicily.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vini dell’Etna e produzioni gastronomiche locali",
+    "summary": "La rassegna 2026 si svolge dall’8 all’11 ottobre, ma i banchi d’assaggio delle cantine sono documentati domenica 11, 10:30–20, a Villa delle Favare.",
+    "participation": {
+      "type": "selected",
+      "note": "La rassegna 2026 si svolge dall’8 all’11 ottobre, ma i banchi d’assaggio delle cantine sono documentati domenica 11, 10:30–20, a Villa delle Favare. Partecipazione selezionata delle aziende, non mercato libero per ambulanti. Il sito etnawineforum.it conserva il programma 2023; non usato come calendario 2026. L’appuntamento OFF di Roma è fuori provincia ed escluso."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-11",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.wineinsicily.com/etna-wine-forum-a-biancavilla-quattro-giorni-dedicati-ai-vini-del-versante-sud-ovest/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.wineinsicily.com/etna-wine-forum-a-biancavilla-quattro-giorni-dedicati-ai-vini-del-versante-sud-ovest/",
+      "https://www.etnawineforum.it/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Le Vie del Gusto Etneo",
+    "city": "Aci Sant'Antonio",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.acisantantonio.ct.it/novita/avvisi/novita_752.html",
+      "label": "comune.acisantantonio.ct.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti tipici etnei, gastronomia e artigianato",
+    "summary": "Il Comune pubblica il 18 giugno 2026 una proroga per la partecipazione; il programma editoriale colloca l’evento dal 26 al 28 giugno.",
+    "participation": {
+      "type": "selected",
+      "note": "Il Comune pubblica il 18 giugno 2026 una proroga per la partecipazione; il programma editoriale colloca l’evento dal 26 al 28 giugno. L’allegato dinamico Halley restituisce un errore della procedura, non un PDF leggibile. Certificato comunale scaduto: pagina pubblica letta anche in browser. Quote, requisiti e disponibilità non documentati nella pagina."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-26",
+        "end": "2026-06-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.acisantantonio.ct.it/novita/avvisi/novita_752.html"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.acisantantonio.ct.it/novita/avvisi/novita_752.html",
+      "https://www.cataniablog.it/le-vie-del-gusto-ad-aci-santantonio-dal-26-al-28-giugno-tre-sere-gratis.html"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa della Mostarda",
+    "city": "San Pietro Clarenza",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.vivasicilia.com/festa-della-mostarda-san-pietro-clarenza/",
+      "label": "vivasicilia.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Mostarda di fichidindia, prodotti tipici e artigianato",
+    "summary": "Il programma municipale ospitato dalla fonte editoriale e controllato visivamente indica apertura degli stand alle 18 il 18, 19 e 20 settembre 2026 in Piazza della Vittoria.",
+    "participation": {
+      "type": "selected",
+      "note": "Il programma municipale ospitato dalla fonte editoriale e controllato visivamente indica apertura degli stand alle 18 il 18, 19 e 20 settembre 2026 in Piazza della Vittoria. Non estesa al 21 sulla base del solo servizio di illuminazione descritto da un altro portale. Quote, requisiti e ammissione di ulteriori operatori non riscontrati."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.vivasicilia.com/festa-della-mostarda-san-pietro-clarenza/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.vivasicilia.com/festa-della-mostarda-san-pietro-clarenza/",
+      "https://www.vivasicilia.com/wp-content/uploads/2019/11/programma_sagra_mostarda_san_pietro_clarenza_2026.jpg"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Street Food Fest",
+    "city": "Sant'Agata li Battiati",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://santagatalibattiati.comune.digital/news-dal-sindaco",
+      "label": "santagatalibattiati.comune.digital",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Street food, artigianato e prodotti gastronomici",
+    "summary": "Comunicazione del sindaco del 9 luglio 2026: festa dal 9 al 12 luglio con food, artigianato e area giochi.",
+    "participation": {
+      "type": "selected",
+      "note": "Comunicazione del sindaco del 9 luglio 2026: festa dal 9 al 12 luglio con food, artigianato e area giochi. Testo letto tramite la versione indicizzata web; accesso diretto locale restituisce 404. Non documentati bando, quote e disponibilità degli spazi: partecipazione da verificare con l’organizzazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-09",
+        "end": "2026-07-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://santagatalibattiati.comune.digital/news-dal-sindaco"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://santagatalibattiati.comune.digital/news-dal-sindaco"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Battiati Beer & Biker",
+    "city": "Sant'Agata li Battiati",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://portaleventi.it/evento/battiati-beer-biker-a-santagata-li-battiati",
+      "label": "portaleventi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Birre e street food",
+    "summary": "Fonte editoriale letta via web: 24–27 settembre 2026, stand dalle 18:30 nel Parco Comunale di via Bellini.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale letta via web: 24–27 settembre 2026, stand dalle 18:30 nel Parco Comunale di via Bellini. Organizzazione HoReCa Catania Beverage. Ingresso pubblico gratuito, senza indicazione del costo per gli stand; accesso locale alla fonte 403. Nessuna ammissione libera degli ambulanti o disponibilità residua documentata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-24",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://portaleventi.it/evento/battiati-beer-biker-a-santagata-li-battiati"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://portaleventi.it/evento/battiati-beer-biker-a-santagata-li-battiati"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Cicerchia Fest – Sagra della Patacò",
+    "city": "Licodia Eubea",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/cicerchia-fest-a-licodia-eubea.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Cicerchia, patacò e prodotti tipici locali",
+    "summary": "Fonte editoriale con date 19–21 giugno 2026.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale con date 19–21 giugno 2026. È l’evoluzione del CicerchiaDay e della Sagra della Patacò: unica scheda per evitare duplicazioni. Degustazioni, show cooking e attività territoriali non attestano posti liberamente assegnabili agli ambulanti. Verificare ammissione, preventivo e allestimenti presso l’organizzazione."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-19",
+        "end": "2026-06-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/cicerchia-fest-a-licodia-eubea.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/cicerchia-fest-a-licodia-eubea.htm"
+    ]
   }
 ]

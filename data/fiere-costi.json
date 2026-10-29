@@ -2603,6 +2603,62 @@
       "sourceUrl": "https://www.comune.prizzi.pa.it/novita/notizie/novita_270.html",
       "checkedAt": "2026-10-29",
       "period": "2026"
+    },
+    "sicilia-acireale-fiera-dello-jonio": {
+      "kind": "fee",
+      "label": "2026: 250 / 350 / 550 € per stand",
+      "details": "Edizione 2026, intera fiera: casetta 3×1 m 250 €, 3×2 m 350 €, pagoda 4×4 m 550 €. Comprendono 150 € di diritti amministrativi e noleggio; IVA non precisata. Attacco elettrico, faretto LED e vigilanza notturna comunale; assicurazione dei prodotti, viaggio, vitto e alloggio a carico dell’espositore. Riduzione 50 € per richieste entro il 31 maggio, ormai scaduta. Pagamento entro sette giorni dall’accoglimento; nessun rimborso per rinuncia. Esenzioni specifiche per sponsor/associazioni non estese agli operatori ordinari.",
+      "sourceUrl": "https://www.fieradellojonio.it/wp-content/uploads/2026/07/Fiera_jonio_disciplinare_2026_signed.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-belpasso-sagra-del-ficodindia-dell-etna-dop": {
+      "kind": "fee",
+      "label": "2026: 65–255 € + cauzione ed eventuali extra",
+      "details": "2026, tre giornate: ficodindia/agroalimentare 120 €; artigianato/associazioni 65 €; food 255 €, ridotti a 180 € per aziende con sede a Belpasso; gastronomia ambulante e giochi 120 €. Importi comprensivi di iscrizione 10 € non rimborsabile, IVA non precisata. Cauzione aggiuntiva 100 € per i primi quattro settori, 250 € per food/gastronomia/giochi, rimborsabile dopo controlli. Stand e 1 kW per tipici/artigianato; food 3 kW; associazioni con stand proprio. Extra 10 €/kW; attivazione elettrica di gastronomia e giochi a carico dell’operatore. Tavoli, espositori e altre dotazioni esclusi. Per gastronomia ambulante spazio massimo 3×3 m, esclusi camion paninoteca e pasti.",
+      "sourceUrl": "https://belpasso-api.municipiumapp.it/s3/618/allegati/avvisi/2026/1_settore/bando_sagra_del_ficodindia_2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-bronte-sagra-del-pistacchio-di-bronte": {
+      "kind": "fee",
+      "label": "2026: stand 800 / 1.000 / 1.200 €",
+      "details": "2026: noleggio singolo stand 1.000 € per prodotti al Pistacchio Verde di Bronte DOP; 1.200 € per prodotti al pistacchio, tipici locali o gastronomia; 800 € per artigianato siciliano di qualità. IVA non precisata. Allaccio elettrico fino a 3 kW e vigilanza notturna; aumenti di potenza da concordare e pagare separatamente. Distinta occupazione con struttura propria: artigiani esterni al Corso Umberto 500 € più CUP; altre attività sul Corso 500–1.000 € più CUP secondo categoria. Gazebo propri bianchi, massimo 2×2 m. Locali propri 500 €, solo artigianato non alimentare/esposizione. Sponsorizzazione facoltativa almeno 1.000 € aggiuntivi, non quota base.",
+      "sourceUrl": "https://www.comune.bronte.ct.it/wp-content/uploads/2026/07/Bando-di-partecipazione.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-maniace-sagra-della-ricotta-e-della-provola-dei-nebrodi": {
+      "kind": "fee",
+      "label": "2026: 150 / 300 € per la manifestazione",
+      "details": "1–3 maggio 2026: 150 € per ambulanti con veicoli attrezzati per alimentari e articoli vari; 300 € per espositori di tipici, gastronomia e generi alimentari. Quota per l’intera manifestazione comprensiva di occupazione del suolo e allaccio elettrico fino a 3 kW; IVA non precisata. Ulteriore potenza e spazio per tavoli/sedie a carico dell’operatore, senza tariffa finale documentata. Strutture proprie solo con certificazioni accettate; acqua disponibile al punto di approvvigionamento, recipienti e reflui a cura dell’espositore. Sponsorizzazione 250 € distinta dalla quota banco; refuso 2025 nel termine dello sponsor non esteso alla domanda espositori 2026.",
+      "sourceUrl": "https://maniace-api.municipiumapp.it/s3/3817/allegati/regolamento-organizzazione-sagra-della-ricotta-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-maniace-crudo-cotto-e-mangiato-sagra-del-pomodoro": {
+      "kind": "fee",
+      "label": "2026: 200 / 550 €, servizi e limiti distinti",
+      "details": "19–20 settembre 2026, intera manifestazione: 200 € per ambulanti con veicoli attrezzati, suolo pubblico e punto luce fino a 3 kW; 550 € per espositori di tipici/gastronomia/alimentari, suolo fino a 16 m², punto elettrico fino a 3 kW e gazebo 3×3 o 4×4 m con quadro, prese e faretto. IVA non precisata. Aumenti di potenza e ulteriori spazi per tavoli/sedie richiedono accordo e oneri separati. Non è prezzo giornaliero, né ammissione automatica: valgono requisiti territoriali e selezione previsti dal regolamento.",
+      "sourceUrl": "https://cloud.municipiumapp.it/s3/3817/allegati/sagra-pomodoro-2026/rregolamento-sagra-del-pomodoro-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-zafferana-etnea-ottobrata-zafferanese": {
+      "kind": "fee",
+      "label": "2026: quote per quattro domeniche, IVA e TOSAP incluse",
+      "details": "Bando 2026, quattro domeniche: agroalimentare Piazza Umberto 4×4 m 4.300 €, 2×4 m 2.150 €; riduzione a 2.600/1.300 € per residenti o attività a Zafferana da almeno tre anni. Via Roma 3×2 m: agricoltura/funghi 450 €, miele 700 €, artigianato 500 €. ONLUS benefiche 2×3 m 250 €. IVA e TOSAP incluse. Piazza Umberto/Via dei Giardini/Villa Castorina: 1,5 kW; potenza aggiuntiva 50 €/kW previa istanza, IVA dell’extra non precisata. Spazi Via Roma non attrezzati. Quote di locali propri/esercizi fissi e gestione dell’area gastronomica seguono condizioni separate. Non sono prezzi per una sola domenica né ammissione garantita.",
+      "sourceUrl": "https://www.ottobratazafferanese.it/bandi/2026/bando-assegnazione-spazi-espositivi-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-misterbianco-ecomed-green-expo-del-mediterraneo": {
+      "kind": "partial",
+      "label": "2026: allaccio area nuda 200 € + IVA; totale stand non pubblicato",
+      "details": "Regolamento ECOMED edizione 2026, articolo 4: installazione quadro elettrico 220 V fino a 1,2 kW inclusa per spazi preallestiti, 200 € + IVA per aree nude. È una componente, non il prezzo complessivo del banco: canone di adesione e quota iscrizione rimandati alla domanda di partecipazione. Servizi generali e RC descritti nel regolamento; consumi forfettari, acqua, Wi-Fi, parcheggio e ulteriori servizi esclusi o a parte. Il documento presenta anche un termine saldo non coerente con il calendario: non riproposto come scadenza attuale. Importo non trasferito all’edizione 2027.",
+      "sourceUrl": "https://www.eco-med.it/catania-2030/regolamento-generale-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
     }
   }
 }
