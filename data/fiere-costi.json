@@ -3019,6 +3019,46 @@
       "sourceUrl": "https://messina-api.cloud.municipiumapp.it/s3/4037/allegati/notizie/avvisi/avvisoassegnazioneareeeserviziocommercio/avviso-pubblico-2-festivita-2026.pdf",
       "checkedAt": "2026-10-29",
       "period": "2026"
+    },
+    "sicilia-modica-scacciapensieri-food-village-della-scaccia-modicana": {
+      "kind": "free",
+      "label": "Postazione gratuita",
+      "details": "Regolamento 2026: nessuna quota per l’assegnazione della postazione. Allestimento secondo progetto dell’organizzazione; attrezzature non espressamente fornite e personale a carico dell’operatore. Presenza obbligatoria entrambe le serate; nessuna custodia notturna, merci e attrezzature da rimuovere il sabato. Non equivale a costo complessivo nullo né a disponibilità attuale.",
+      "sourceUrl": "https://www.medialivecomunicazione.com/wp-content/uploads/2026/09/bando-panifici-e-operatori-scaccia.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-monterosso-almo-sagra-della-pizza-al-taglio": {
+      "kind": "partial",
+      "label": "20 € di suolo per stand",
+      "details": "Avviso 2026: 20 € per singolo stand per l’intera manifestazione 11–12 luglio, IVA non precisata. Comune: stand 4×4 m, illuminazione ed energia anche da gruppo elettrogeno con prese a norma. Pizze preparate nei locali dell’attività, trasporto/conservazione in vetrine riscaldate e materiali biodegradabili; altre spese di gestione a carico dell’operatore. Potenza richiesta nel modulo, senza dotazione in kW garantita.",
+      "sourceUrl": "https://comune.monterossoalmo.rg.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-MANIFESTAZIONE-DI-INTERESSE-SAGRA-DELLA-PIZZA-AL-TAGLIO_2026.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-pozzallo-fiera-di-san-giovanni-battista": {
+      "kind": "partial",
+      "label": "Circa 59,28 € sicurezza + CUP",
+      "details": "Avviso 2026, art.6: circa 59,28 € IVA inclusa di quota sicurezza per ciascun posteggio, da riparto dei 3.260,52 € tra 55 assegnatari, più CUP secondo superficie e giorni. Domanda in bollo, importo non precisato qui; attrezzature, lampada d’emergenza, estintore e assicurazione dell’operatore. Non è il prezzo totale dello stand e non garantisce allacci luce o acqua.",
+      "sourceUrl": "https://portale5.halleysud.it/pozzallo/po/attachment_news.php?id=687",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-ragusa-formaggi-in-festa": {
+      "kind": "free",
+      "label": "Casetta assegnata gratuitamente",
+      "details": "Avviso Slow Food 2026: assegnazione gratuita delle casette 2,5×2,5 m, con selezione e possibile alternanza/condivisione. Orari obbligatori nei tre giorni: 10–13 e 16–21. Oneri della somministrazione a carico degli operatori, incassi e adempimenti propri, materiali compostabili; cottura sul posto e riscaldatori vietati. Nessuna potenza elettrica o dotazione idrica quantificata: gratuità dello spazio, non costo totale nullo.",
+      "sourceUrl": "https://drive.google.com/uc?export=download&id=1b-F29GDgjr8OI8aHa5sn6RUt_nwmVGXG",
+      "checkedAt": "2026-10-29",
+      "period": "2026"
+    },
+    "sicilia-ragusa-mercatini-di-natale-ai-giardini-iblei": {
+      "kind": "fee",
+      "label": "600/700/900 € + IVA, secondo settore",
+      "details": "Listino storico 2025/26: casetta 2,40×2,40 m, artigianato 600 €, commercio 700 €, food vendita/somministrazione 900 €, tutti + IVA; cauzione restituibile 100 € + IVA separata. Allestimenti/addobbi e 1 kW; vietati fuochi, bombole e riscaldatori, materiali compostabili. Acconto 50%; saldo: modulo 8 dicembre 2025, avviso 8 dicembre 2026, discordanza da verificare, non corretta arbitrariamente. Aperture solo nei giorni del calendario. Nessun prezzo 2026/27 attribuito.",
+      "sourceUrl": "https://www.ccnanticaibla.com/wp-content/uploads/2025/10/Avviso-mercatini-Manifestazione-dinteresse-MERCATINI-FOOD-E-NON-FOOD-ANTICA-IBLA-CCN.docx.pdf",
+      "checkedAt": "2026-10-29",
+      "period": "2025/2026"
     }
   }
 }

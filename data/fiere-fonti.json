@@ -2458,28 +2458,6 @@
   },
   {
     "region": "Sicilia",
-    "name": "Fiera di San Bartolomeo",
-    "city": "Giarratana",
-    "months": "8",
-    "category": "tradizionale",
-    "source": {
-      "url": "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_5.html",
-      "label": "comune.giarratana.rg.it"
-    }
-  },
-  {
-    "region": "Sicilia",
-    "name": "Fiera Agroalimentare Mediterranea",
-    "city": "Ragusa",
-    "months": "9",
-    "category": "espositiva",
-    "source": {
-      "url": "https://www.ragusawelcome.com/it/scopri-ragusa/eventi/2026/settembre-2026/fiera-agroalimentare-mediterranea-fam-51-ed",
-      "label": "ragusawelcome.com"
-    }
-  },
-  {
-    "region": "Sicilia",
     "name": "Cous Cous Fest",
     "city": "San Vito Lo Capo",
     "months": "9",
@@ -2488,18 +2466,6 @@
       "url": "https://couscousfest.it/",
       "label": "couscousfest.it"
     }
-  },
-  {
-    "region": "Sicilia",
-    "name": "Chocomodica",
-    "city": "Modica",
-    "months": "10,11,12",
-    "category": "sagra",
-    "source": {
-      "url": "https://www.chocomodicaofficial.it/",
-      "label": "chocomodicaofficial.it"
-    },
-    "frequencyNote": "Il periodo varia tra le edizioni: verificare programma e aggiornamenti dell'organizzatore."
   },
   {
     "region": "Sardegna",
@@ -27954,5 +27920,1683 @@
       "https://www.servizipubblicaamministrazione.it/servizi/saturnweb/DettaglioFile.aspx?Documento=33186-35069-trmvgltr1640",
       "https://www.servizipubblicaamministrazione.it/servizi/saturnweb/DettaglioFile.aspx?Documento=33184-35069-trmvgltr1640"
     ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Beerscari Fest",
+    "city": "Acate",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.acate.rg.it/it/eventi/729984",
+      "label": "comune.acate.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Birre artigianali e gastronomia",
+    "summary": "Prima edizione al Castello dei Principi di Biscari, 16–18 ottobre 2026, da pagina evento comunale. Il primo avviso per scegliere il gestore indicava 17–18 ottobre: non è un bando per i singoli birrifici né un listino banco.",
+    "participation": {
+      "type": "check",
+      "note": "Prima edizione al Castello dei Principi di Biscari, 16–18 ottobre 2026, da pagina evento comunale. Il primo avviso per scegliere il gestore indicava 17–18 ottobre: non è un bando per i singoli birrifici né un listino banco. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-16",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.acate.rg.it/it/eventi/729984"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.acate.rg.it/it/eventi/729984",
+      "https://comune.acate.rg.it/it/news/manifestazione-di-interesse-per-lindividuazione-di-unassociazione-cui-affidare-lorganizzazione-della-manifestazione-beerscari?type=3"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Salsiccia",
+    "city": "Chiaramonte Gulfi",
+    "months": [
+      2,
+      3
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.visitsicily.info/evento-new/carnevale-di-chiaramonte-gulfi-2026/",
+      "label": "visitsicily.info",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Salsiccia e prodotti alimentari",
+    "summary": "Sagra gastronomica del Carnevale: il portale regionale colloca il Carnevale 2026 al 15–17 febbraio e la sagra al lunedì di Carnevale. I tre giorni della festa non dimostrano tre giorni continuativi di vendita della sagra; nessuna data dei banchi dedotta.",
+    "participation": {
+      "type": "check",
+      "note": "Sagra gastronomica del Carnevale: il portale regionale colloca il Carnevale 2026 al 15–17 febbraio e la sagra al lunedì di Carnevale. I tre giorni della festa non dimostrano tre giorni continuativi di vendita della sagra; nessuna data dei banchi dedotta. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.visitsicily.info/evento-new/carnevale-di-chiaramonte-gulfi-2026/",
+      "https://www.comune.chiaramonte.rg.it/home/vivere/Territorio/Sagre.html"
+    ],
+    "frequencyNote": "Lunedì di Carnevale; verificare il programma operativo della sagra e le postazioni."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Gallo ai Sapori Chiaramontani",
+    "city": "Chiaramonte Gulfi",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.chiaramonte.rg.it/home/vivere/Territorio/Sagre.html",
+      "label": "comune.chiaramonte.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti alimentari e olio",
+    "summary": "La pagina comunale descrive in contrada Muti degustazioni, esposizione e vendita di prodotti tipici a cura dell’Associazione Muti. Riporta il 17 agosto; una vecchia scheda editoriale parla dell’11: mantenuta la ricorrenza testuale comunale, senza nuova edizione datata.",
+    "participation": {
+      "type": "check",
+      "note": "La pagina comunale descrive in contrada Muti degustazioni, esposizione e vendita di prodotti tipici a cura dell’Associazione Muti. Riporta il 17 agosto; una vecchia scheda editoriale parla dell’11: mantenuta la ricorrenza testuale comunale, senza nuova edizione datata. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.comune.chiaramonte.rg.it/home/vivere/Territorio/Sagre.html",
+      "https://www.siciliainfesta.com/sagre/sagra_del_gallo_ai_sapori_chiaramontani_chiaramonte_gulfi.htm"
+    ],
+    "frequencyNote": "Agosto; la pagina comunale indica il 17, senza conferma annuale 2026."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra dell'Uva di Roccazzo",
+    "city": "Chiaramonte Gulfi",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.chiaramonte.rg.it/home/vivere/Territorio/Sagre.html",
+      "label": "comune.chiaramonte.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Uva, mosto, prodotti alimentari",
+    "summary": "Sagra a cura dell’Associazione Giovanile Roccazzo. Fonte comunale: prima metà di settembre; la scheda editoriale descrive stand al mercato ortofrutticolo ma avverte che può riferirsi a un evento passato. Nessun calendario annuale o posteggio libero dedotto.",
+    "participation": {
+      "type": "check",
+      "note": "Sagra a cura dell’Associazione Giovanile Roccazzo. Fonte comunale: prima metà di settembre; la scheda editoriale descrive stand al mercato ortofrutticolo ma avverte che può riferirsi a un evento passato. Nessun calendario annuale o posteggio libero dedotto. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.comune.chiaramonte.rg.it/home/vivere/Territorio/Sagre.html",
+      "https://www.siciliainfesta.com/sagre/sagra_dell_uva_a_roccazzo_di_chiaramonte_gulfi.htm"
+    ],
+    "frequencyNote": "Prima metà di settembre, periodo usuale; sede e programma della prossima edizione da confermare."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra dell'Olio - Olio e nons'Olio",
+    "city": "Chiaramonte Gulfi",
+    "months": [
+      11,
+      12
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.chiaramonte.rg.it/home/vivere/Territorio/Sagre.html",
+      "label": "comune.chiaramonte.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Olio e prodotti alimentari",
+    "summary": "La fonte comunale descrive la sagra dell’olio DOP in Piazza Duomo tra fine novembre e inizio dicembre; Olio e nons’Olio è trattata nella stessa scheda per evitare duplicazioni della rassegna olivicola. La fonte editoriale non conferma un calendario 2026.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte comunale descrive la sagra dell’olio DOP in Piazza Duomo tra fine novembre e inizio dicembre; Olio e nons’Olio è trattata nella stessa scheda per evitare duplicazioni della rassegna olivicola. La fonte editoriale non conferma un calendario 2026. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.comune.chiaramonte.rg.it/home/vivere/Territorio/Sagre.html",
+      "https://www.siciliainfesta.com/rassegne/olio-e-non-s-olio-a-chiaramonte-gulfi.htm"
+    ],
+    "frequencyNote": "Fine novembre–inizio dicembre, periodo usuale senza giorni annuali confermati."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra dei Sapori Chiaramontani",
+    "city": "Chiaramonte Gulfi",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_dei_sapori_tradizionali_chiaramonte_gulfi.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti alimentari tipici",
+    "summary": "Villaggio in Festa, nel quartiere Villaggio Gulfi, a cura dell’associazione omonima. La fonte editoriale descrive la ricorrenza dell’11 agosto e le degustazioni di specialità locali, senza programma annuale con anno esplicito.",
+    "participation": {
+      "type": "check",
+      "note": "Villaggio in Festa, nel quartiere Villaggio Gulfi, a cura dell’associazione omonima. La fonte editoriale descrive la ricorrenza dell’11 agosto e le degustazioni di specialità locali, senza programma annuale con anno esplicito. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_dei_sapori_tradizionali_chiaramonte_gulfi.htm"
+    ],
+    "frequencyNote": "11 agosto come ricorrenza descritta; nessuna nuova edizione confermata."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera Mercato del Tartufo Siciliano",
+    "city": "Chiaramonte Gulfi",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/fiere_e_mercatini/fiera-mercato-del-tartufo-siciliano-di-chiaramonte-gulfi.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Tartufi e prodotti alimentari",
+    "summary": "Fiera mercato dedicata al tartufo degli Iblei, con degustazioni, escursioni e conferenze. La fonte editoriale indica giugno ma avverte che può riferirsi a un evento passato: nessun giorno o anno corrente attribuito.",
+    "participation": {
+      "type": "check",
+      "note": "Fiera mercato dedicata al tartufo degli Iblei, con degustazioni, escursioni e conferenze. La fonte editoriale indica giugno ma avverte che può riferirsi a un evento passato: nessun giorno o anno corrente attribuito. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/fiere_e_mercatini/fiera-mercato-del-tartufo-siciliano-di-chiaramonte-gulfi.htm"
+    ],
+    "frequencyNote": "Giugno come periodo riportato dalla fonte; nuova edizione non confermata."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Vendemmia di Pedalino",
+    "city": "Comiso",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.comiso.rg.it/vivere-il-comune/eventi/sagra-della-vendemmia-pedalino-2026/",
+      "label": "comune.comiso.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Uva, mosto, prodotti alimentari",
+    "summary": "Calendario comunale complessivo 24–27 settembre 2026. La locandina distingue il teatro del 24 dalle degustazioni del 25 e dall’area stand del 26–27: qui sono riportate le giornate gastronomiche 25–27. Pedalino è frazione di Comiso.",
+    "participation": {
+      "type": "check",
+      "note": "Calendario comunale complessivo 24–27 settembre 2026. La locandina distingue il teatro del 24 dalle degustazioni del 25 e dall’area stand del 26–27: qui sono riportate le giornate gastronomiche 25–27. Pedalino è frazione di Comiso. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-25",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.comiso.rg.it/vivere-il-comune/eventi/sagra-della-vendemmia-pedalino-2026/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.comiso.rg.it/vivere-il-comune/eventi/sagra-della-vendemmia-pedalino-2026/",
+      "https://www.comune.comiso.rg.it/wp-content/uploads/2026/09/11223.jpg",
+      "https://www.siciliainfesta.com/sagre/sagra_della_vendemmia_a_pedalino_comiso.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa del Pane Cunzatu",
+    "city": "Comiso",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.comiso.rg.it/vivere-il-comune/eventi/festa-del-pane-cunzatu/",
+      "label": "comune.comiso.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pane, prodotti alimentari, vini e birre",
+    "summary": "Evento comunale del 10–11 ottobre 2026, dalle 19, all’ex mercato Casmeneo in Piazza delle Erbe. Pane condito, vini, birre artigianali, olio e prodotti ortofrutticoli; l’ingresso libero per il pubblico non attesta gratuità per gli espositori.",
+    "participation": {
+      "type": "check",
+      "note": "Evento comunale del 10–11 ottobre 2026, dalle 19, all’ex mercato Casmeneo in Piazza delle Erbe. Pane condito, vini, birre artigianali, olio e prodotti ortofrutticoli; l’ingresso libero per il pubblico non attesta gratuità per gli espositori. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-10",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.comiso.rg.it/vivere-il-comune/eventi/festa-del-pane-cunzatu/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.comiso.rg.it/vivere-il-comune/eventi/festa-del-pane-cunzatu/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Mercatino di Natale di Piazza Fonte Diana",
+    "city": "Comiso",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.comiso.rg.it/novita/invito-a-partecipare-al-mercatino-di-natale-2025/",
+      "label": "comune.comiso.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Artigianato, oggettistica natalizia, giocattoli, libri e alimentari",
+    "summary": "Avviso storico 2025/26: Piazza Fonte Diana, dal 6 dicembre 2025 al 6 gennaio 2026, richieste entro il 28 novembre 2025 ore 14. Il modulo prevede l’indicazione dei giorni richiesti: periodo generale non equivale ad apertura continua né a nuova edizione 2026/27.",
+    "participation": {
+      "type": "public",
+      "note": "Avviso storico 2025/26: Piazza Fonte Diana, dal 6 dicembre 2025 al 6 gennaio 2026, richieste entro il 28 novembre 2025 ore 14. Il modulo prevede l’indicazione dei giorni richiesti: periodo generale non equivale ad apertura continua né a nuova edizione 2026/27. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "label": "6 dicembre 2025–6 gennaio 2026: periodo del mercatino storico; giorni di partecipazione su richiesta, senza apertura continua attestata.",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.comune.comiso.rg.it/novita/invito-a-partecipare-al-mercatino-di-natale-2025/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.comiso.rg.it/novita/invito-a-partecipare-al-mercatino-di-natale-2025/",
+      "https://www.comune.comiso.rg.it/wp-content/uploads/2025/11/Avviso_Mercatini_Natale_2025.pdf",
+      "https://www.comune.comiso.rg.it/wp-content/uploads/2025/11/Modulo-di-Partecipazione.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Innesto - Intrecci Urbani",
+    "city": "Comiso",
+    "months": [
+      5
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://innesto.net/",
+      "label": "innesto.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Piante, fiori e florovivaismo",
+    "summary": "Mostra mercato botanica nel centro storico, con Green Market nei cortili di Museo/Biblioteca e Fondazione Bufalino. Il programma originale è del 23–25 maggio 2025; il decreto liquidato nel 2026 riguarda il 2025. Date 2026 presenti in agende non confermate non sono trasferite a questa scheda.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Mostra mercato botanica nel centro storico, con Green Market nei cortili di Museo/Biblioteca e Fondazione Bufalino. Il programma originale è del 23–25 maggio 2025; il decreto liquidato nel 2026 riguarda il 2025. Date 2026 presenti in agende non confermate non sono trasferite a questa scheda. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-05-23",
+        "end": "2025-05-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://innesto.net/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://innesto.net/",
+      "https://www.innesto.net/wp-content/uploads/2025/05/programma_innesto.pdf",
+      "https://www.regione.sicilia.it/system/files/2026-02/Decreto%20liquidazione%20Comune%20di%20Comiso.pdf",
+      "https://www.comune.comiso.rg.it/novita/cs-di-lancio-innesto-15-maggio-2024/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera di San Bartolomeo",
+    "city": "Giarratana",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_5.html",
+      "label": "comune.giarratana.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti alimentari e artigianato",
+    "summary": "Fiera storica commerciale del 21 agosto 2026, da calendario del Comune: bancarelle, prodotti tipici e artigianato. Distinta dalla festa religiosa del 16–24 agosto; nome e identificativo della scheda precedente conservati.",
+    "participation": {
+      "type": "public",
+      "note": "Fiera storica commerciale del 21 agosto 2026, da calendario del Comune: bancarelle, prodotti tipici e artigianato. Distinta dalla festa religiosa del 16–24 agosto; nome e identificativo della scheda precedente conservati. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-21",
+        "end": "2026-08-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_5.html"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_5.html"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Cipolla",
+    "city": "Giarratana",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_2.html",
+      "label": "comune.giarratana.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Cipolle e prodotti alimentari",
+    "summary": "45ª Sagra della Cipolla: il Comune conferma 12–14 agosto 2026 con degustazioni ed eventi. La vecchia descrizione della sola giornata del 14 non restringe il calendario comunale aggiornato; non desunti automaticamente giorni 2027 dall’atto d’indirizzo al gestore.",
+    "participation": {
+      "type": "check",
+      "note": "45ª Sagra della Cipolla: il Comune conferma 12–14 agosto 2026 con degustazioni ed eventi. La vecchia descrizione della sola giornata del 14 non restringe il calendario comunale aggiornato; non desunti automaticamente giorni 2027 dall’atto d’indirizzo al gestore. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-12",
+        "end": "2026-08-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_2.html"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_2.html",
+      "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_giarratana.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "MeMuFest",
+    "city": "Giarratana",
+    "months": [
+      7
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_6.html",
+      "label": "comune.giarratana.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Artigianato e prodotti alimentari",
+    "summary": "Festival medievale al Parco dei Settimo, 17–18 luglio 2026, dal calendario comunale: mercatini artigianali e stand gastronomici, oltre a musica e rievocazioni. Non esiste in queste fonti una disponibilità verificata di postazioni per operatori esterni.",
+    "participation": {
+      "type": "check",
+      "note": "Festival medievale al Parco dei Settimo, 17–18 luglio 2026, dal calendario comunale: mercatini artigianali e stand gastronomici, oltre a musica e rievocazioni. Non esiste in queste fonti una disponibilità verificata di postazioni per operatori esterni. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-17",
+        "end": "2026-07-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_6.html"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.giarratana.rg.it/vivere_il_comune/eventi/evento_6.html"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra Ra Tunnina",
+    "city": "Ispica",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.itinerarinelgusto.it/sagre-e-feste/sagra-ra-tunnina-3926",
+      "label": "itinerarinelgusto.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Tonno e prodotti alimentari",
+    "summary": "21ª sagra della Parrocchia Madonna delle Grazie nel sagrato, 4–5 luglio 2026 secondo la fonte editoriale, con stand gastronomico e musica dalle 21. Nessun bando comunale o ammissione di venditori esterni verificati.",
+    "participation": {
+      "type": "check",
+      "note": "21ª sagra della Parrocchia Madonna delle Grazie nel sagrato, 4–5 luglio 2026 secondo la fonte editoriale, con stand gastronomico e musica dalle 21. Nessun bando comunale o ammissione di venditori esterni verificati. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-04",
+        "end": "2026-07-05",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.itinerarinelgusto.it/sagre-e-feste/sagra-ra-tunnina-3926"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.itinerarinelgusto.it/sagre-e-feste/sagra-ra-tunnina-3926",
+      "https://www.siciliainfesta.com/sagre/sagra-ra-tunnina-a-ispica.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra dell'Anguria",
+    "city": "Ispica",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.ispica.rg.it/it/eventi/programma-estate-ispicese-2026",
+      "label": "comune.ispica.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Anguria e prodotti alimentari",
+    "summary": "Prima Sagra dell’Anguria: la tavola 7 del programma comunale Estate Ispicese 2026 indica sabato 8 agosto alle 20:30 in Piazza SS. Annunziata. Sagra distinta dai concerti e dagli aperitivi presso singole attività.",
+    "participation": {
+      "type": "check",
+      "note": "Prima Sagra dell’Anguria: la tavola 7 del programma comunale Estate Ispicese 2026 indica sabato 8 agosto alle 20:30 in Piazza SS. Annunziata. Sagra distinta dai concerti e dagli aperitivi presso singole attività. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ispica.rg.it/it/eventi/programma-estate-ispicese-2026"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.ispica.rg.it/it/eventi/programma-estate-ispicese-2026",
+      "https://www.comune.ispica.rg.it/download/7c91c83a90484a0f995ba6b5b2e6fe3f/WhatsApp%20Image%202026-07-26%20at%2012.58.28.jpeg?b14a5aed1e6d3477e26ba69afd98ebd5"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Street Food Festival",
+    "city": "Ispica",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.ispica.rg.it/it/eventi/programma-estate-ispicese-2026",
+      "label": "comune.ispica.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Cibo di strada e prodotti alimentari",
+    "summary": "Il programma comunale Estate Ispicese 2026 riporta Street Food Festival in Piazza Unità d’Italia alle 20 il 20, 21 e 22 agosto, nelle tavole 9–10. Non riutilizzata come conferma la vecchia scheda Sicilian Food Fest priva di calendario.",
+    "participation": {
+      "type": "check",
+      "note": "Il programma comunale Estate Ispicese 2026 riporta Street Food Festival in Piazza Unità d’Italia alle 20 il 20, 21 e 22 agosto, nelle tavole 9–10. Non riutilizzata come conferma la vecchia scheda Sicilian Food Fest priva di calendario. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-20",
+        "end": "2026-08-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ispica.rg.it/it/eventi/programma-estate-ispicese-2026"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.ispica.rg.it/it/eventi/programma-estate-ispicese-2026",
+      "https://www.comune.ispica.rg.it/download/a95270a166274b1f82dbd51606ad0f53/WhatsApp%20Image%202026-07-25%20at%2018.47.20.jpeg?b14a5aed1e6d3477e26ba69afd98ebd5",
+      "https://www.comune.ispica.rg.it/download/71dcb18923114121bc772976b63b1652/PROGRAMMA%20ESTATE%20ISPICESE_social-11.jpg.jpeg?a4633cdc16a69bde592b5a6de45d952d",
+      "https://www.siciliainfesta.com/manifestazioni/sicilian-food-fest-a-ispica.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Vini e Stelle",
+    "city": "Ispica",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.ispica.rg.it/it/eventi/programma-estate-ispicese-2026",
+      "label": "comune.ispica.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vini e degustazioni",
+    "summary": "Appuntamento del programma comunale Estate Ispicese 2026: sabato 5 settembre ore 21, Piazza Stella, a cura di Ciao Mpà. Il programma prova l’evento enogastronomico, senza documentare selezione, tariffe o apertura a cantine e banchi esterni.",
+    "participation": {
+      "type": "check",
+      "note": "Appuntamento del programma comunale Estate Ispicese 2026: sabato 5 settembre ore 21, Piazza Stella, a cura di Ciao Mpà. Il programma prova l’evento enogastronomico, senza documentare selezione, tariffe o apertura a cantine e banchi esterni. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ispica.rg.it/it/eventi/programma-estate-ispicese-2026"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.ispica.rg.it/it/eventi/programma-estate-ispicese-2026",
+      "https://www.comune.ispica.rg.it/download/154d29215f7142febd862ed62e5cab49/PROGRAMMA%20ESTATE%20ISPICESE_social-13.jpg.jpeg?a4633cdc16a69bde592b5a6de45d952d"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Chocomodica",
+    "city": "Modica",
+    "months": [
+      10,
+      11,
+      12
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.chocomodicaofficial.it/",
+      "label": "chocomodicaofficial.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Cioccolato e prodotti alimentari",
+    "summary": "Evento rinviato a data da destinarsi nel sito ufficiale. La notizia del 13 ottobre 2026 riferisce lo stop del 2026 e l’intenzione di riproporlo nel 2027, senza calendario. Le date 30 ottobre–1 novembre ancora presenti in agende non sono presentate come edizione attiva.",
+    "participation": {
+      "type": "check",
+      "note": "Evento rinviato a data da destinarsi nel sito ufficiale. La notizia del 13 ottobre 2026 riferisce lo stop del 2026 e l’intenzione di riproporlo nel 2027, senza calendario. Le date 30 ottobre–1 novembre ancora presenti in agende non sono presentate come edizione attiva. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Edizione 2026 non svolta: rinvio annunciato; nessuna nuova data confermata.",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.chocomodicaofficial.it/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.chocomodicaofficial.it/",
+      "https://www.comunicaffe.it/chocomodica-2026-annullato-rinvio-2027/",
+      "https://www.stradamangiando.it/chocomodica-salta-il-2026-il-consorzio-del-cioccolato-punta-tutto-sul-2027/",
+      "https://www.siciliainfesta.com/rassegne/chocobarocco_modica.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Scacciapensieri - Food Village della Scaccia Modicana",
+    "city": "Modica",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.medialivecomunicazione.com/2026/09/11/scacciapensieri-2026-aperte-le-adesioni-al-food-village-panifici-e-operatori-possono-candidarsi/",
+      "label": "medialivecomunicazione.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Scacce e prodotti alimentari",
+    "summary": "Food Village in Piazza Matteotti il 19 settembre 2026 ore 18–24 e il 20 ore 18–23. Regolamento per panifici, produttori e operatori specializzati; candidatura entro il 15 settembre ore 12, varietà/storicità e ordine di arrivo tra i criteri. Otto postazioni previste, non posti oggi disponibili.",
+    "participation": {
+      "type": "selected",
+      "note": "Food Village in Piazza Matteotti il 19 settembre 2026 ore 18–24 e il 20 ore 18–23. Regolamento per panifici, produttori e operatori specializzati; candidatura entro il 15 settembre ore 12, varietà/storicità e ordine di arrivo tra i criteri. Otto postazioni previste, non posti oggi disponibili. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata.",
+      "costs": "Regolamento 2026: nessuna quota per l’assegnazione della postazione. Allestimento secondo progetto dell’organizzazione; attrezzature non espressamente fornite e personale a carico dell’operatore. Presenza obbligatoria entrambe le serate; nessuna custodia notturna, merci e attrezzature da rimuovere il sabato. Non equivale a costo complessivo nullo né a disponibilità attuale."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.medialivecomunicazione.com/2026/09/11/scacciapensieri-2026-aperte-le-adesioni-al-food-village-panifici-e-operatori-possono-candidarsi/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.medialivecomunicazione.com/2026/09/11/scacciapensieri-2026-aperte-le-adesioni-al-food-village-panifici-e-operatori-possono-candidarsi/",
+      "https://www.medialivecomunicazione.com/wp-content/uploads/2026/09/bando-panifici-e-operatori-scaccia.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera di San Pietro",
+    "city": "Modica",
+    "months": [
+      6
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.bigitalia.com/it/sicilia/ragusa/modica/eventi-e-sagre/festa-di-san-pietro-33/",
+      "label": "bigitalia.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Merci varie e prodotti alimentari",
+    "summary": "La fonte territoriale descrive la tradizionale fiera attorno alla festa di San Pietro del 29 giugno e conserva l’ultima edizione 2025. Le agende che indicano 27–29 giugno 2026 non sono qui trasformate in autorizzazione o giorni certi dei banchi.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte territoriale descrive la tradizionale fiera attorno alla festa di San Pietro del 29 giugno e conserva l’ultima edizione 2025. Le agende che indicano 27–29 giugno 2026 non sono qui trasformate in autorizzazione o giorni certi dei banchi. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.bigitalia.com/it/sicilia/ragusa/modica/eventi-e-sagre/festa-di-san-pietro-33/"
+    ],
+    "frequencyNote": "Fine giugno, attorno al 29; calendario dei banchi e nuova assegnazione da confermare."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Scaccia Modicana e del Pane di Quartarella",
+    "city": "Modica",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_scaccia_modicane_e_del_pane_a_modica.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Scacce, pane e prodotti alimentari",
+    "summary": "La fonte editoriale storica descrive la sagra di contrada Quartarella nell’ambito del SS. Redentore e cita la ricorrenza del 9 luglio. Pagina non aggiornata a una nuova edizione, distinta da Scacciapensieri in Piazza Matteotti.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte editoriale storica descrive la sagra di contrada Quartarella nell’ambito del SS. Redentore e cita la ricorrenza del 9 luglio. Pagina non aggiornata a una nuova edizione, distinta da Scacciapensieri in Piazza Matteotti. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_scaccia_modicane_e_del_pane_a_modica.htm"
+    ],
+    "frequencyNote": "Luglio, ricorrenza storicamente descritta del 9; nuova edizione non confermata."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Pizza al Taglio",
+    "city": "Monterosso Almo",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.monterossoalmo.rg.it/novita/manifestazione-di-interesse-per-la-partecipazione-alla-3%e1%b5%83-edizione-della-sagra-della-pizza-al-taglio/",
+      "label": "comune.monterossoalmo.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pizza e prodotti alimentari",
+    "summary": "3ª edizione all’interno di Alegria, Piazza San Giovanni, 11–12 luglio 2026 dalle 17. Avviso per panificazione e somministrazione: domande entro 30 giugno ore 12, CCIAA e requisiti sanitari/HACCP, selezione anche per ordine di protocollo. Quattro stand previsti, non disponibilità corrente.",
+    "participation": {
+      "type": "public",
+      "note": "3ª edizione all’interno di Alegria, Piazza San Giovanni, 11–12 luglio 2026 dalle 17. Avviso per panificazione e somministrazione: domande entro 30 giugno ore 12, CCIAA e requisiti sanitari/HACCP, selezione anche per ordine di protocollo. Quattro stand previsti, non disponibilità corrente. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata.",
+      "costs": "Avviso 2026: 20 € per singolo stand per l’intera manifestazione 11–12 luglio, IVA non precisata. Comune: stand 4×4 m, illuminazione ed energia anche da gruppo elettrogeno con prese a norma. Pizze preparate nei locali dell’attività, trasporto/conservazione in vetrine riscaldate e materiali biodegradabili; altre spese di gestione a carico dell’operatore. Potenza richiesta nel modulo, senza dotazione in kW garantita."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-11",
+        "end": "2026-07-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.monterossoalmo.rg.it/novita/manifestazione-di-interesse-per-la-partecipazione-alla-3%e1%b5%83-edizione-della-sagra-della-pizza-al-taglio/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.monterossoalmo.rg.it/novita/manifestazione-di-interesse-per-la-partecipazione-alla-3%e1%b5%83-edizione-della-sagra-della-pizza-al-taglio/",
+      "https://comune.monterossoalmo.rg.it/wp-content/uploads/2026/06/AVVISO-PUBBLICO-MANIFESTAZIONE-DI-INTERESSE-SAGRA-DELLA-PIZZA-AL-TAGLIO_2026.pdf",
+      "https://comune.monterossoalmo.rg.it/wp-content/uploads/2026/06/MODULO_RICHIESTA-PARTECIPAZIONE_SAGRA_PIZZA-AL-TAGLIO_2026.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Pane",
+    "city": "Monterosso Almo",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.monterossoalmo.rg.it/novita/eventi-estivi-di-fine-agosto/",
+      "label": "comune.monterossoalmo.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pane e prodotti alimentari",
+    "summary": "La locandina comunale degli eventi di fine agosto 2026 colloca la Sagra del Pane domenica 30 agosto in Piazza San Giovanni. Non estesa a tutta la rassegna Monterosso in Festa, né ai giorni di soli concerti.",
+    "participation": {
+      "type": "check",
+      "note": "La locandina comunale degli eventi di fine agosto 2026 colloca la Sagra del Pane domenica 30 agosto in Piazza San Giovanni. Non estesa a tutta la rassegna Monterosso in Festa, né ai giorni di soli concerti. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-30",
+        "end": "2026-08-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.monterossoalmo.rg.it/novita/eventi-estivi-di-fine-agosto/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.monterossoalmo.rg.it/novita/eventi-estivi-di-fine-agosto/",
+      "https://comune.monterossoalmo.rg.it/wp-content/uploads/2026/08/locandina-1-576x1024.jpg",
+      "https://www.siciliainfesta.com/sagre/sagra_del_pane_monterosso_almo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra dei Cavatieddi",
+    "city": "Monterosso Almo",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.guidasicilia.it/evento/sagra-dei-cavatieddi-a-monterosso-almo-rg-piazza-sant-antonio-a-monterosso-almo/3029945",
+      "label": "guidasicilia.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pasta, dolci e prodotti alimentari",
+    "summary": "La fonte editoriale 2026 indica domenica 19 aprile dalle 19 in Piazza Sant’Antonio, nell’ambito della Festa degli Angeli. La vecchia regola del terzo sabato dopo Pasqua non è usata per calcolare date sostitutive.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte editoriale 2026 indica domenica 19 aprile dalle 19 in Piazza Sant’Antonio, nell’ambito della Festa degli Angeli. La vecchia regola del terzo sabato dopo Pasqua non è usata per calcolare date sostitutive. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-19",
+        "end": "2026-04-19",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.guidasicilia.it/evento/sagra-dei-cavatieddi-a-monterosso-almo-rg-piazza-sant-antonio-a-monterosso-almo/3029945"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.guidasicilia.it/evento/sagra-dei-cavatieddi-a-monterosso-almo-rg-piazza-sant-antonio-a-monterosso-almo/3029945",
+      "https://www.siciliainfesta.com/sagre/sagra_dei_cavatieddi_a_monterosso_almo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa della Ciliegia",
+    "city": "Monterosso Almo",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/festa-della-ciliegia-a-monterosso-almo.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Ciliegie, prodotti alimentari e artigianato",
+    "summary": "La fonte descrive degustazioni, folklore ed esposizione di artigianato a Palazzo Cocuzza, ma avverte che l’evento può essere passato. Giugno è il periodo dell’indice territoriale, senza giorno e anno annuali verificati.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive degustazioni, folklore ed esposizione di artigianato a Palazzo Cocuzza, ma avverte che l’evento può essere passato. Giugno è il periodo dell’indice territoriale, senza giorno e anno annuali verificati. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/festa-della-ciliegia-a-monterosso-almo.htm",
+      "https://oplasicilia.it/festa-della-ciliegia-a-monterosso-almo"
+    ],
+    "frequencyNote": "Giugno, periodo indicativo senza edizione annuale confermata."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra dello Scaccione",
+    "city": "Monterosso Almo",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_dello_scaccione_a_monterosso_almo.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Scaccioni e prodotti alimentari",
+    "summary": "Descrizione storica di stand con forno a legna in Piazza Sant’Antonio, dedicati allo scaccione. Settembre è il periodo riportato dall’indice territoriale: assente un programma annuale attuale verificato; non confusa con la sagra del pane di agosto.",
+    "participation": {
+      "type": "check",
+      "note": "Descrizione storica di stand con forno a legna in Piazza Sant’Antonio, dedicati allo scaccione. Settembre è il periodo riportato dall’indice territoriale: assente un programma annuale attuale verificato; non confusa con la sagra del pane di agosto. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_dello_scaccione_a_monterosso_almo.htm",
+      "https://oplasicilia.it/sagra-dello-scaccione-a-monterosso-almo"
+    ],
+    "frequencyNote": "Settembre, periodo editoriale indicativo; nuova edizione non confermata."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera di San Giovanni Battista",
+    "city": "Pozzallo",
+    "months": [
+      6
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://portale5.halleysud.it/pozzallo/po/attachment_news.php?id=687",
+      "label": "portale5.halleysud.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Merci varie e prodotti alimentari",
+    "summary": "Avviso 2026: 21–24 giugno in Piazza delle Sirene, 55 stalli previsti (48 non alimentari, 6 alimentari da 12 m² e uno da 24 m² per mezzo ingombrante). Domande PEC entro 25 maggio ore 24, autorizzazione A/B, iscrizione ambulanti e requisiti sanitari; RCT minima 500.000 €. L’ordinanza 149 dell’8 giugno 2026, letta integralmente, localizza poi la fiera in Piazzetta della Capitaneria di Porto: sede successiva distinta da Piazza delle Sirene dell’avviso. Viabilità fino alle 2 del 25 per smontaggio, non quinto giorno di vendita.",
+    "participation": {
+      "type": "public",
+      "note": "Avviso 2026: 21–24 giugno in Piazza delle Sirene, 55 stalli previsti (48 non alimentari, 6 alimentari da 12 m² e uno da 24 m² per mezzo ingombrante). Domande PEC entro 25 maggio ore 24, autorizzazione A/B, iscrizione ambulanti e requisiti sanitari; RCT minima 500.000 €. L’ordinanza 149 dell’8 giugno 2026, letta integralmente, localizza poi la fiera in Piazzetta della Capitaneria di Porto: sede successiva distinta da Piazza delle Sirene dell’avviso. Viabilità fino alle 2 del 25 per smontaggio, non quinto giorno di vendita. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata.",
+      "costs": "Avviso 2026, art.6: circa 59,28 € IVA inclusa di quota sicurezza per ciascun posteggio, da riparto dei 3.260,52 € tra 55 assegnatari, più CUP secondo superficie e giorni. Domanda in bollo, importo non precisato qui; attrezzature, lampada d’emergenza, estintore e assicurazione dell’operatore. Non è il prezzo totale dello stand e non garantisce allacci luce o acqua."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-21",
+        "end": "2026-06-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://portale5.halleysud.it/pozzallo/po/attachment_news.php?id=687"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://portale5.halleysud.it/pozzallo/po/attachment_news.php?id=687",
+      "https://www.comune.pozzallo.rg.it/pozzallo/po/mostra_news.php?area=H&id=650",
+      "https://portale5.halleysud.it/pozzallo/po/attachment_news.php?id=688",
+      "https://portale5.halleysud.it/pozzallo/po/attachment_news.php?id=689",
+      "https://portale5.halleysud.it/pozzallo/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTlRRM0E9Zz0-H",
+      "https://portale5.halleysud.it/pozzallo/de/attachment.php?serialDocumento=018JVT0202668&mosdoc=0"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra del Pesce",
+    "city": "Pozzallo",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_del_pesce_pozzallo.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pesce e prodotti alimentari",
+    "summary": "La fonte editoriale riporta 21–23 agosto 2026 e descrive degustazioni, spettacoli e bancarelle. Il vecchio indice comunale è stato distinto dall’archivio attuale, dove alcuni ID rimandano a contenuti diversi: il calendario è attribuito alla fonte editoriale letta, non a un bando espositori.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte editoriale riporta 21–23 agosto 2026 e descrive degustazioni, spettacoli e bancarelle. Il vecchio indice comunale è stato distinto dall’archivio attuale, dove alcuni ID rimandano a contenuti diversi: il calendario è attribuito alla fonte editoriale letta, non a un bando espositori. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-21",
+        "end": "2026-08-23",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_del_pesce_pozzallo.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_del_pesce_pozzallo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Calici dei Cabrera - a mare il vino",
+    "city": "Pozzallo",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://portale5.halleysud.it/pozzallo/po/attachment_news.php?id=706",
+      "label": "portale5.halleysud.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vini e prodotti alimentari",
+    "summary": "Comunicato originale del Comune del 1 giugno 2026: quarta edizione alla Villa Comunale, 12–14 giugno, con banchi d’assaggio e specialità enogastronomiche nelle tre serate. Il 26 giugno presente nella proposta regionale di contributo è superato dal calendario comunale successivo.",
+    "participation": {
+      "type": "check",
+      "note": "Comunicato originale del Comune del 1 giugno 2026: quarta edizione alla Villa Comunale, 12–14 giugno, con banchi d’assaggio e specialità enogastronomiche nelle tre serate. Il 26 giugno presente nella proposta regionale di contributo è superato dal calendario comunale successivo. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-12",
+        "end": "2026-06-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://portale5.halleysud.it/pozzallo/po/attachment_news.php?id=706"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://portale5.halleysud.it/pozzallo/po/attachment_news.php?id=706",
+      "https://www.regione.sicilia.it/system/files/2026-02/allegato_e_seduta_1_0.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera Agroalimentare Mediterranea",
+    "city": "Ragusa",
+    "months": [
+      9
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://ragusawelcome.kumbe.it/it/scopri-ragusa/eventi/2026/settembre-2026/fiera-agroalimentare-mediterranea-fam-51-ed",
+      "label": "ragusawelcome.kumbe.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Agroalimentare, piante e macchinari agricoli",
+    "summary": "51ª FAM, 25–27 settembre 2026 in via Prof. Vincenzo Malfitano: zootecnia, meccanizzazione, agroalimentare e produzioni territoriali. Programma originale del portale turistico letto anche visivamente; il vecchio sito famragusa.it restituisce errore, nessuna quota espositori ricavata dai biglietti o dai numeri di pubblico atteso.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "51ª FAM, 25–27 settembre 2026 in via Prof. Vincenzo Malfitano: zootecnia, meccanizzazione, agroalimentare e produzioni territoriali. Programma originale del portale turistico letto anche visivamente; il vecchio sito famragusa.it restituisce errore, nessuna quota espositori ricavata dai biglietti o dai numeri di pubblico atteso. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-25",
+        "end": "2026-09-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://ragusawelcome.kumbe.it/it/scopri-ragusa/eventi/2026/settembre-2026/fiera-agroalimentare-mediterranea-fam-51-ed"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://ragusawelcome.kumbe.it/it/scopri-ragusa/eventi/2026/settembre-2026/fiera-agroalimentare-mediterranea-fam-51-ed",
+      "https://www.siciliainfesta.com/fiere_e_mercatini/fiera_agroalimentare_mediterranea_ragusa.htm",
+      "https://ragusawelcome.kumbe.it/ragusawelcome/eventi/settembre%202026/8489/image-thumb__8489__thumb1024/FAM%201.5f9412e6.jpg",
+      "https://ragusawelcome.kumbe.it/ragusawelcome/eventi/settembre%202026/8490/image-thumb__8490__thumb1024/FAM%202.c176a761.jpg",
+      "https://ragusawelcome.kumbe.it/ragusawelcome/eventi/settembre%202026/8491/image-thumb__8491__thumb1024/FAM%203.67860565.jpg",
+      "https://ragusawelcome.kumbe.it/ragusawelcome/eventi/settembre%202026/8492/image-thumb__8492__thumb1024/FAM%204.0ce36817.jpg",
+      "https://ragusawelcome.kumbe.it/ragusawelcome/eventi/settembre%202026/8493/image-thumb__8493__thumb1024/FAM%205.4ef2809e.jpg",
+      "https://ragusawelcome.kumbe.it/ragusawelcome/eventi/settembre%202026/8494/image-thumb__8494__thumb1024/FAM%206.8994d6f5.jpg"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Formaggi in Festa",
+    "city": "Ragusa",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.ragusawelcome.com/it/scopri-ragusa/eventi/2026/maggio-2026/formaggi-in-festa",
+      "label": "ragusawelcome.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Formaggi, prodotti alimentari, vini e birre",
+    "summary": "Evento in Piazza San Giovanni l’8–10 maggio 2026. Domande Slow Food entro il 24 aprile. Dodici casette 2,5×2,5 m previste, requisiti di produzioni coerenti e graduatoria; il progetto parla di almeno sei caseifici, la sezione criteri di cinque: discrepanza conservata senza dedurre posti liberi.",
+    "participation": {
+      "type": "selected",
+      "note": "Evento in Piazza San Giovanni l’8–10 maggio 2026. Domande Slow Food entro il 24 aprile. Dodici casette 2,5×2,5 m previste, requisiti di produzioni coerenti e graduatoria; il progetto parla di almeno sei caseifici, la sezione criteri di cinque: discrepanza conservata senza dedurre posti liberi. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata.",
+      "costs": "Avviso Slow Food 2026: assegnazione gratuita delle casette 2,5×2,5 m, con selezione e possibile alternanza/condivisione. Orari obbligatori nei tre giorni: 10–13 e 16–21. Oneri della somministrazione a carico degli operatori, incassi e adempimenti propri, materiali compostabili; cottura sul posto e riscaldatori vietati. Nessuna potenza elettrica o dotazione idrica quantificata: gratuità dello spazio, non costo totale nullo."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-08",
+        "end": "2026-05-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ragusawelcome.com/it/scopri-ragusa/eventi/2026/maggio-2026/formaggi-in-festa"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.ragusawelcome.com/it/scopri-ragusa/eventi/2026/maggio-2026/formaggi-in-festa",
+      "https://drive.google.com/uc?export=download&id=1Cw-uwnzDxEQqXkOGFkEp5v283HgYeuCf",
+      "https://drive.google.com/uc?export=download&id=1b-F29GDgjr8OI8aHa5sn6RUt_nwmVGXG"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "We Cheese - Il Ragusano DOP e i Formaggi Iblei",
+    "city": "Ragusa",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.ragusa.it/it/events/720371",
+      "label": "comune.ragusa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Formaggi e prodotti alimentari",
+    "summary": "Il Comune conferma il 23–26 luglio 2026 a Ragusa Ibla: percorso di degustazioni, lavorazioni, incontri e mercatini di prodotti tipici. Il testo introduttivo “tre giorni” contrasta con le quattro date esplicite, qui conservate; ingresso gratuito per il pubblico non equivale a stand gratuito.",
+    "participation": {
+      "type": "check",
+      "note": "Il Comune conferma il 23–26 luglio 2026 a Ragusa Ibla: percorso di degustazioni, lavorazioni, incontri e mercatini di prodotti tipici. Il testo introduttivo “tre giorni” contrasta con le quattro date esplicite, qui conservate; ingresso gratuito per il pubblico non equivale a stand gratuito. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-23",
+        "end": "2026-07-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.ragusa.it/it/events/720371"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.ragusa.it/it/events/720371"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Marina Gourmet - Banchetti degustazione",
+    "city": "Ragusa",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://marinagourmet.it/",
+      "label": "marinagourmet.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti alimentari e vini",
+    "summary": "Programma originale 2026: banchetti sul lungomare Andrea Doria il 19 settembre ore 19–23 e il 20 ore 18:30–23. La cornice Marina Gourmet prosegue il 21 con concorso e cena di gala in sedi diverse: non è un terzo giorno dei banchetti.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Programma originale 2026: banchetti sul lungomare Andrea Doria il 19 settembre ore 19–23 e il 20 ore 18:30–23. La cornice Marina Gourmet prosegue il 21 con concorso e cena di gala in sedi diverse: non è un terzo giorno dei banchetti. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://marinagourmet.it/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://marinagourmet.it/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Festa della Scaccia",
+    "city": "Ragusa",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/festa_della_scaccia_a_ragusa.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Scacce e prodotti alimentari",
+    "summary": "La fonte editoriale 2026 indica 27–28 giugno a Marina di Ragusa, con scacce, esposizioni e intrattenimento. Distinta da Scacciapensieri di Modica; nessuna tariffa o procedura di ammissione di banchi esterni pubblicata nelle sezioni lette.",
+    "participation": {
+      "type": "check",
+      "note": "La fonte editoriale 2026 indica 27–28 giugno a Marina di Ragusa, con scacce, esposizioni e intrattenimento. Distinta da Scacciapensieri di Modica; nessuna tariffa o procedura di ammissione di banchi esterni pubblicata nelle sezioni lette. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-27",
+        "end": "2026-06-28",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/festa_della_scaccia_a_ragusa.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/festa_della_scaccia_a_ragusa.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Mercatini di Natale ai Giardini Iblei",
+    "city": "Ragusa",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.ccnanticaibla.com/wp-content/uploads/2025/10/Avviso-mercatini-Manifestazione-dinteresse-MERCATINI-FOOD-E-NON-FOOD-ANTICA-IBLA-CCN.docx.pdf",
+      "label": "ccnanticaibla.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Artigianato, prodotti alimentari e oggettistica",
+    "summary": "Avviso storico 2025/26 del CCN Antica Ibla: 6–8, 13–14, 20–21 e 25–31 dicembre 2025, 1–6 gennaio 2026; il 6 dicembre inaugurazione alle 17. Il calendario contiene 20 giornate effettive, senza apertura continua per tutto il periodo. Domande entro 20 ottobre 2025, nessuna nuova edizione 2026/27 dedotta dal sito privo di anno.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso storico 2025/26 del CCN Antica Ibla: 6–8, 13–14, 20–21 e 25–31 dicembre 2025, 1–6 gennaio 2026; il 6 dicembre inaugurazione alle 17. Il calendario contiene 20 giornate effettive, senza apertura continua per tutto il periodo. Domande entro 20 ottobre 2025, nessuna nuova edizione 2026/27 dedotta dal sito privo di anno. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata.",
+      "costs": "Listino storico 2025/26: casetta 2,40×2,40 m, artigianato 600 €, commercio 700 €, food vendita/somministrazione 900 €, tutti + IVA; cauzione restituibile 100 € + IVA separata. Allestimenti/addobbi e 1 kW; vietati fuochi, bombole e riscaldatori, materiali compostabili. Acconto 50%; saldo: modulo 8 dicembre 2025, avviso 8 dicembre 2026, discordanza da verificare, non corretta arbitrariamente. Aperture solo nei giorni del calendario. Nessun prezzo 2026/27 attribuito."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-06",
+        "end": "2025-12-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ccnanticaibla.com/wp-content/uploads/2025/10/Avviso-mercatini-Manifestazione-dinteresse-MERCATINI-FOOD-E-NON-FOOD-ANTICA-IBLA-CCN.docx.pdf"
+      },
+      {
+        "year": 2025,
+        "start": "2025-12-13",
+        "end": "2025-12-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ccnanticaibla.com/wp-content/uploads/2025/10/Avviso-mercatini-Manifestazione-dinteresse-MERCATINI-FOOD-E-NON-FOOD-ANTICA-IBLA-CCN.docx.pdf"
+      },
+      {
+        "year": 2025,
+        "start": "2025-12-20",
+        "end": "2025-12-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ccnanticaibla.com/wp-content/uploads/2025/10/Avviso-mercatini-Manifestazione-dinteresse-MERCATINI-FOOD-E-NON-FOOD-ANTICA-IBLA-CCN.docx.pdf"
+      },
+      {
+        "year": 2025,
+        "start": "2025-12-25",
+        "end": "2026-01-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ccnanticaibla.com/wp-content/uploads/2025/10/Avviso-mercatini-Manifestazione-dinteresse-MERCATINI-FOOD-E-NON-FOOD-ANTICA-IBLA-CCN.docx.pdf"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.ccnanticaibla.com/wp-content/uploads/2025/10/Avviso-mercatini-Manifestazione-dinteresse-MERCATINI-FOOD-E-NON-FOOD-ANTICA-IBLA-CCN.docx.pdf",
+      "https://www.ccnanticaibla.com/wp-content/uploads/2025/10/Schema-adesione-manifestazione-dinteresse-MERCATINI-ANTICA-IBLA-CCN.docx-1.pdf",
+      "https://iblamagiadelnatale.it/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Mercatini del Mese dell Amore",
+    "city": "Ragusa",
+    "months": [
+      2
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.ragusa.it/it/news/1953023",
+      "label": "comune.ragusa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Artigianato e oggettistica",
+    "summary": "Comunicato comunale del 6 febbraio 2026: mercatini in Centro il 7–8 e 13–22 febbraio; a Ibla solo 7, 8, 14, 15, 21, 22. Una scheda per l’iniziativa cittadina, con sedi e giorni distinti, senza duplicarla in due eventi o garantire ammissione dei singoli espositori.",
+    "participation": {
+      "type": "check",
+      "note": "Comunicato comunale del 6 febbraio 2026: mercatini in Centro il 7–8 e 13–22 febbraio; a Ibla solo 7, 8, 14, 15, 21, 22. Una scheda per l’iniziativa cittadina, con sedi e giorni distinti, senza duplicarla in due eventi o garantire ammissione dei singoli espositori. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-02-07",
+        "end": "2026-02-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.ragusa.it/it/news/1953023"
+      },
+      {
+        "year": 2026,
+        "start": "2026-02-13",
+        "end": "2026-02-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.ragusa.it/it/news/1953023"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.ragusa.it/it/news/1953023"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Mercatino di Antiquariato e Usato di Via Roma",
+    "city": "Ragusa",
+    "months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.cosedicasa.com/mercatini/ragusa-via-roma",
+      "label": "cosedicasa.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Antiquariato, usato e modernariato",
+    "summary": "Fonte editoriale aggiornata nel 2025: Via Roma da Corso Italia lato Vescovado, prima e terza domenica dalle 8 alle 13; cita anche la quarta domenica nei mesi con cinque domeniche. Ricorrenza da verificare con l’Associazione Hereusium 2.0, non date 2026 calcolate automaticamente.",
+    "participation": {
+      "type": "check",
+      "note": "Fonte editoriale aggiornata nel 2025: Via Roma da Corso Italia lato Vescovado, prima e terza domenica dalle 8 alle 13; cita anche la quarta domenica nei mesi con cinque domeniche. Ricorrenza da verificare con l’Associazione Hereusium 2.0, non date 2026 calcolate automaticamente. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.cosedicasa.com/mercatini/ragusa-via-roma"
+    ],
+    "frequencyNote": "Prima e terza domenica; eventuali giornate aggiuntive e sospensioni da confermare."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Rassegna dei Sapori dell'Entroterra Ibleo",
+    "city": "Ragusa",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/rassegne/rassegna_dei_sapori_dell_entroterra_ibleo_ragusa.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti alimentari e artigianato",
+    "summary": "Rassegna a San Giacomo Bellocozzo, frazione di Ragusa, a cura dell’associazione Il Tellesimo. La fonte descrive la prima domenica di settembre con degustazioni e artigianato, ma non una nuova edizione annuale confermata.",
+    "participation": {
+      "type": "check",
+      "note": "Rassegna a San Giacomo Bellocozzo, frazione di Ragusa, a cura dell’associazione Il Tellesimo. La fonte descrive la prima domenica di settembre con degustazioni e artigianato, ma non una nuova edizione annuale confermata. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/rassegne/rassegna_dei_sapori_dell_entroterra_ibleo_ragusa.htm"
+    ],
+    "frequencyNote": "Prima domenica di settembre come ricorrenza; nessuna nuova data calcolata."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera di Santa Rosalia",
+    "city": "Santa Croce Camerina",
+    "months": [
+      10
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://comune.santa-croce-camerina.rg.it/novita/festa-di-santa-rosalia-manifestazione-dinteresse-per-imprese-artigiane/",
+      "label": "comune.santa-croce-camerina.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Artigianato e alimentari confezionati",
+    "summary": "Avviso e originale scansionato: fiera artigiana in Via Caucana il 3–4 ottobre 2026, distinta dalla festa religiosa 1–4 ottobre. Domande entro 30 settembre ore 12; manufatti tipici e alimentari tradizionali confezionati, selezione per aderenza, qualità/originalità e ordine cronologico.",
+    "participation": {
+      "type": "public",
+      "note": "Avviso e originale scansionato: fiera artigiana in Via Caucana il 3–4 ottobre 2026, distinta dalla festa religiosa 1–4 ottobre. Domande entro 30 settembre ore 12; manufatti tipici e alimentari tradizionali confezionati, selezione per aderenza, qualità/originalità e ordine cronologico. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-03",
+        "end": "2026-10-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.santa-croce-camerina.rg.it/novita/festa-di-santa-rosalia-manifestazione-dinteresse-per-imprese-artigiane/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.santa-croce-camerina.rg.it/novita/festa-di-santa-rosalia-manifestazione-dinteresse-per-imprese-artigiane/",
+      "https://comune.santa-croce-camerina.rg.it/wp-content/uploads/sites/186/2026/09/Manifestazione-interesse-Santa-Rosalia-2026.pdf",
+      "https://comune.santa-croce-camerina.rg.it/wp-content/uploads/sites/186/2026/09/Dichiarazione-sostitutiva-di-Atto-notorieta-hobbisti-1.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Il Mercatino del Sole di Punta Secca",
+    "city": "Santa Croce Camerina",
+    "months": [
+      7,
+      8
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.santa-croce-camerina.rg.it/novita/manifestazione-dinteresse-il-mercatino-del-sole/",
+      "label": "comune.santa-croce-camerina.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti locali e artigianato",
+    "summary": "Avviso 2026 per operatori commerciali del territorio, Piazza Concordia e Piazza Faro a Punta Secca. Periodo 5 luglio–30 agosto; sette strutture previste a carico dei richiedenti, non del Comune. Richieste entro 29 maggio ore 12 e ordine cronologico: periodo generale, senza aperture giornaliere o posti liberi attestati.",
+    "participation": {
+      "type": "public",
+      "note": "Avviso 2026 per operatori commerciali del territorio, Piazza Concordia e Piazza Faro a Punta Secca. Periodo 5 luglio–30 agosto; sette strutture previste a carico dei richiedenti, non del Comune. Richieste entro 29 maggio ore 12 e ordine cronologico: periodo generale, senza aperture giornaliere o posti liberi attestati. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "label": "5 luglio–30 agosto 2026: periodo della manifestazione, singoli giorni e orari non precisati nell’avviso.",
+        "dateType": "calendar",
+        "sourceUrl": "https://comune.santa-croce-camerina.rg.it/novita/manifestazione-dinteresse-il-mercatino-del-sole/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.santa-croce-camerina.rg.it/novita/manifestazione-dinteresse-il-mercatino-del-sole/",
+      "https://comune.santa-croce-camerina.rg.it/wp-content/uploads/sites/186/2026/05/Avviso-protocollato.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Faro in Festa - Piazza dei Sapori",
+    "city": "Santa Croce Camerina",
+    "months": [
+      5,
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.santa-croce-camerina.rg.it/eventi/faro-in-festa/",
+      "label": "comune.santa-croce-camerina.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Prodotti alimentari e artigianato",
+    "summary": "Programma comunale 30 maggio–2 giugno 2026 a Punta Secca: stand enogastronomici GLOCAL in Piazza Faro tutti i giorni ore 10–22. Il mercatino GAS Mazzarelli in Piazza Concordia è previsto solo il 1 giugno ore 17–21; qui parte della stessa manifestazione, non seconda fiera duplicata.",
+    "participation": {
+      "type": "check",
+      "note": "Programma comunale 30 maggio–2 giugno 2026 a Punta Secca: stand enogastronomici GLOCAL in Piazza Faro tutti i giorni ore 10–22. Il mercatino GAS Mazzarelli in Piazza Concordia è previsto solo il 1 giugno ore 17–21; qui parte della stessa manifestazione, non seconda fiera duplicata. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-30",
+        "end": "2026-06-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.santa-croce-camerina.rg.it/eventi/faro-in-festa/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.santa-croce-camerina.rg.it/eventi/faro-in-festa/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Pizza e Arancina",
+    "city": "Santa Croce Camerina",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.santa-croce-camerina.rg.it/eventi/sagra-della-pizza-e-arancina/",
+      "label": "comune.santa-croce-camerina.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pizza, arancine e prodotti alimentari",
+    "summary": "Evento comunale di chiusura estate a Punta Braccetto il 6 settembre 2026 ore 20:30–23:30. Il calendario indica gratuità dell’evento per il pubblico; non documenta la gratuità dei posteggi, gli allacci o la selezione di operatori esterni.",
+    "participation": {
+      "type": "check",
+      "note": "Evento comunale di chiusura estate a Punta Braccetto il 6 settembre 2026 ore 20:30–23:30. Il calendario indica gratuità dell’evento per il pubblico; non documenta la gratuità dei posteggi, gli allacci o la selezione di operatori esterni. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-06",
+        "end": "2026-09-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.santa-croce-camerina.rg.it/eventi/sagra-della-pizza-e-arancina/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.santa-croce-camerina.rg.it/eventi/sagra-della-pizza-e-arancina/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Salsiccia e del Dolce",
+    "city": "Santa Croce Camerina",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.santa-croce-camerina.rg.it/eventi/sagra-della-salsiccia-e-del-dolce/",
+      "label": "comune.santa-croce-camerina.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Salsiccia, dolci e prodotti alimentari",
+    "summary": "Calendario comunale: 2 agosto 2026 ore 21–23 presso l’Infopoint di Punta Braccetto, con animazione musicale. Collocazione amministrativa tratta dalla fonte del Comune, senza assegnare automaticamente ogni evento di Punta Braccetto a Ragusa.",
+    "participation": {
+      "type": "check",
+      "note": "Calendario comunale: 2 agosto 2026 ore 21–23 presso l’Infopoint di Punta Braccetto, con animazione musicale. Collocazione amministrativa tratta dalla fonte del Comune, senza assegnare automaticamente ogni evento di Punta Braccetto a Ragusa. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-02",
+        "end": "2026-08-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.santa-croce-camerina.rg.it/eventi/sagra-della-salsiccia-e-del-dolce/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://comune.santa-croce-camerina.rg.it/eventi/sagra-della-salsiccia-e-del-dolce/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra della Seppia di Donnalucata",
+    "city": "Scicli",
+    "months": [
+      3
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_seppia_di_donnalucata_scicli.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Pesce e prodotti alimentari",
+    "summary": "Fonte editoriale 2026: 6–8 marzo al porticciolo di Donnalucata, frazione di Scicli, con preparazioni di seppia. Gusto Mare Nero raccoglie l’eredità della stessa sagra: non creata una seconda scheda duplicata; partecipazione di banchi esterni non attestata.",
+    "participation": {
+      "type": "check",
+      "note": "Fonte editoriale 2026: 6–8 marzo al porticciolo di Donnalucata, frazione di Scicli, con preparazioni di seppia. Gusto Mare Nero raccoglie l’eredità della stessa sagra: non creata una seconda scheda duplicata; partecipazione di banchi esterni non attestata. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-06",
+        "end": "2026-03-08",
+        "dateType": "calendar",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_della_seppia_di_donnalucata_scicli.htm"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_seppia_di_donnalucata_scicli.htm",
+      "https://www.siciliainfesta.com/sagre/gusto_mare_nero_a_donnalucata_scicli.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Teruar - Fiera del Vino Etico",
+    "city": "Scicli",
+    "months": [
+      5
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.teruar.com/",
+      "label": "teruar.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Vini naturali e prodotti alimentari",
+    "summary": "Programma originale: Villa Penna, terrazza 04, il 17–18 maggio 2026. Produttori di vini naturali; accesso anticipato degli operatori accreditati non equivale ad ammissione come espositore. I 25 € pubblicati sono biglietto di degustazione, esclusi dai prezzi stand.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Programma originale: Villa Penna, terrazza 04, il 17–18 maggio 2026. Produttori di vini naturali; accesso anticipato degli operatori accreditati non equivale ad ammissione come espositore. I 25 € pubblicati sono biglietto di degustazione, esclusi dai prezzi stand. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-17",
+        "end": "2026-05-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.teruar.com/"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.teruar.com/",
+      "https://www.siciliainfesta.com/fiere_e_mercatini/teruar-la-fiera-del-vino-etico-scicli.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Sagra delle Teste di Turco",
+    "city": "Scicli",
+    "months": [
+      5,
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_delle_teste_di_turco_scicli.htm",
+      "label": "siciliainfesta.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Dolci e prodotti alimentari",
+    "summary": "Sagra dolciaria collegata alle Milizie, promossa da pasticcerie e CNA locale. Fonte editoriale senza calendario annuale verificato, con avvertenza di evento passato: maggio/giugno indicativi, non giorni 2026.",
+    "participation": {
+      "type": "check",
+      "note": "Sagra dolciaria collegata alle Milizie, promossa da pasticcerie e CNA locale. Fonte editoriale senza calendario annuale verificato, con avvertenza di evento passato: maggio/giugno indicativi, non giorni 2026. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_delle_teste_di_turco_scicli.htm"
+    ],
+    "frequencyNote": "Maggio/giugno in relazione alla festa delle Milizie, senza date annuali confermate."
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera d'Autunno - Nuova Emaia",
+    "city": "Vittoria",
+    "months": [
+      11
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.ilborghista.it/events/fiera-dautunno-2026-c-l-eventi-s-r-l",
+      "label": "ilborghista.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Merci varie, artigianato, alimentari, casa e macchinari",
+    "summary": "Locandina 2026 di C.L. Eventi, conservata e letta visivamente: 7–15 novembre al Polo Nuova Emaia Città. Il sito ufficiale conserva ancora l’edizione 2025 e il percorso 2026 è 404; il calendario qui è sostenuto dalla locandina riprodotta sulla fonte editoriale, senza tariffe espositori o ammissioni dedotte.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "Locandina 2026 di C.L. Eventi, conservata e letta visivamente: 7–15 novembre al Polo Nuova Emaia Città. Il sito ufficiale conserva ancora l’edizione 2025 e il percorso 2026 è 404; il calendario qui è sostenuto dalla locandina riprodotta sulla fonte editoriale, senza tariffe espositori o ammissioni dedotte. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-07",
+        "end": "2026-11-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ilborghista.it/events/fiera-dautunno-2026-c-l-eventi-s-r-l"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.ilborghista.it/events/fiera-dautunno-2026-c-l-eventi-s-r-l",
+      "https://www.siciliainfesta.com/fiere_e_mercatini/fiera_emaia_campionaria_nazionale_vittoria.htm",
+      "https://nuovaemaiacitta.it/fiera-autunno-2025/",
+      "https://glnbdtlftdlvofuhqmjo.supabase.co/storage/v1/render/image/public/il-borghista-backend/events/9d451c24-53d5-4d9b-a283-e2db40222d6c.webp?width=1920&quality=75&resize=contain"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera di San Martino",
+    "city": "Vittoria",
+    "months": [
+      11
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.ilborghista.it/events/fiera-dautunno-2026-c-l-eventi-s-r-l",
+      "label": "ilborghista.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Merci varie e prodotti alimentari",
+    "summary": "Appuntamento tradizionale distinto nella locandina Nuova Emaia 2026: 14–15 novembre, con bancarelle. La scheda Sicilia in Festa conserva 15–16, coerenti con il vecchio programma 2025: usati i giorni della locandina 2026, mantenendo esplicita la discordanza.",
+    "participation": {
+      "type": "check",
+      "note": "Appuntamento tradizionale distinto nella locandina Nuova Emaia 2026: 14–15 novembre, con bancarelle. La scheda Sicilia in Festa conserva 15–16, coerenti con il vecchio programma 2025: usati i giorni della locandina 2026, mantenendo esplicita la discordanza. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-14",
+        "end": "2026-11-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ilborghista.it/events/fiera-dautunno-2026-c-l-eventi-s-r-l"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.ilborghista.it/events/fiera-dautunno-2026-c-l-eventi-s-r-l",
+      "https://www.siciliainfesta.com/fiere_e_mercatini/fiera_emaia_campionaria_nazionale_vittoria.htm",
+      "https://nuovaemaiacitta.it/fiera-autunno-2025/",
+      "https://glnbdtlftdlvofuhqmjo.supabase.co/storage/v1/render/image/public/il-borghista-backend/events/9d451c24-53d5-4d9b-a283-e2db40222d6c.webp?width=1920&quality=75&resize=contain"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera del Cavallo Ipparino",
+    "city": "Vittoria",
+    "months": [
+      11
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.ilborghista.it/events/fiera-dautunno-2026-c-l-eventi-s-r-l",
+      "label": "ilborghista.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Equini e articoli per equitazione",
+    "summary": "La locandina Nuova Emaia 2026 indica l’8 novembre per la Fiera del Cavallo Ipparino; il 9 del sito organizzatore appartiene al 2025. Manifestazione specialistica ippica, non autorizzazione generica alla vendita ambulante.",
+    "participation": {
+      "type": "exhibitors",
+      "note": "La locandina Nuova Emaia 2026 indica l’8 novembre per la Fiera del Cavallo Ipparino; il 9 del sito organizzatore appartiene al 2025. Manifestazione specialistica ippica, non autorizzazione generica alla vendita ambulante. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-08",
+        "end": "2026-11-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.ilborghista.it/events/fiera-dautunno-2026-c-l-eventi-s-r-l"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.ilborghista.it/events/fiera-dautunno-2026-c-l-eventi-s-r-l",
+      "https://nuovaemaiacitta.it/fiera-autunno-2025/",
+      "https://glnbdtlftdlvofuhqmjo.supabase.co/storage/v1/render/image/public/il-borghista-backend/events/9d451c24-53d5-4d9b-a283-e2db40222d6c.webp?width=1920&quality=75&resize=contain"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera Mercato della Madonna delle Milizie",
+    "city": "Scicli",
+    "months": [
+      5,
+      6
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.scicli.rg.it/flex/FixedPages/IT/AttachDownload.php?ID=53463",
+      "label": "comune.scicli.rg.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Merci varie e prodotti alimentari",
+    "summary": "Determinazione comunale 812 del 27 maggio 2025: fiera mercato dal 30 maggio al 2 giugno 2025, settori alimentare e non alimentare, graduatoria e assegnazione temporanea. È documentazione storica: non prova la riapertura di termini o la disponibilità per il 2026. Distinta dalla sagra dolciaria delle Teste di Turco.",
+    "participation": {
+      "type": "public",
+      "note": "Determinazione comunale 812 del 27 maggio 2025: fiera mercato dal 30 maggio al 2 giugno 2025, settori alimentare e non alimentare, graduatoria e assegnazione temporanea. È documentazione storica: non prova la riapertura di termini o la disponibilità per il 2026. Distinta dalla sagra dolciaria delle Teste di Turco. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-05-30",
+        "end": "2025-06-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.scicli.rg.it/flex/FixedPages/IT/AttachDownload.php?ID=53463"
+      }
+    ],
+    "sourceRecordIds": [
+      "https://www.comune.scicli.rg.it/flex/FixedPages/IT/AttachDownload.php?ID=53463"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "name": "Fiera di San Giovanni",
+    "city": "Ragusa",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.ragusa.it/it/page/commercio-su-aree-pubbliche-su-posteggi-e-in-forma-",
+      "label": "comune.ragusa.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sectors": "Merci varie e prodotti alimentari",
+    "summary": "La pagina comunale del commercio descrive la procedura annuale per la Fiera di San Giovanni: domanda con modello B dal 1 gennaio al 31 marzo e bollo di 16 €. Pagina aggiornata nel 2022, da distinguere da un nuovo avviso annuale e dal canone complessivo; periodo della festa patronale a fine agosto, giorni e aree dei banchi da confermare.",
+    "participation": {
+      "type": "check",
+      "note": "La pagina comunale del commercio descrive la procedura annuale per la Fiera di San Giovanni: domanda con modello B dal 1 gennaio al 31 marzo e bollo di 16 €. Pagina aggiornata nel 2022, da distinguere da un nuovo avviso annuale e dal canone complessivo; periodo della festa patronale a fine agosto, giorni e aree dei banchi da confermare. Le indicazioni della fonte non garantiscono posti disponibili o ammissione: servono assegnazione e adempimenti specifici; nessuna domanda inviata."
+    },
+    "editions": [],
+    "sourceRecordIds": [
+      "https://www.comune.ragusa.it/it/page/commercio-su-aree-pubbliche-su-posteggi-e-in-forma-",
+      "https://www.ragusawelcome.com/en/discover-ragusa/events/2026/agosto-2026/27-29-festa-san-giovanni-battista"
+    ],
+    "frequencyNote": "Fine agosto in occasione di San Giovanni; giorni commerciali non dedotti dalla durata della festa."
   }
 ]
