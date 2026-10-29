@@ -2628,17 +2628,6 @@
   },
   {
     "region": "Sardegna",
-    "name": "Fiera di San Simplicio",
-    "city": "Olbia",
-    "months": "5",
-    "category": "tradizionale",
-    "source": {
-      "url": "https://www.comune.olbia.ot.it/it/news/fiera-san-simplicio-2026",
-      "label": "comune.olbia.ot.it"
-    }
-  },
-  {
-    "region": "Sardegna",
     "name": "Sagra del Redentore",
     "city": "Nuoro",
     "months": "8",
@@ -15812,5 +15801,2463 @@
     ],
     "venue": "Pozzo San Nicola",
     "organizer": "Pro Loco Stintinese"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Olbia",
+    "name": "Fiera di San Simplicio",
+    "months": [
+      5
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://olbia-api.municipiumapp.it/s3/4720/allegati/ordinanza-n-27_2026.pdf",
+      "label": "olbia-api.municipiumapp.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://olbia-api.municipiumapp.it/s3/4720/allegati/ordinanza-n-27_2026.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-12",
+        "end": "2026-05-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://olbia-api.municipiumapp.it/s3/4720/allegati/ordinanza-n-27_2026.pdf"
+      }
+    ],
+    "venue": "Parco Fausto Noce e aree della fiera",
+    "sectors": "Alimentari, non alimentari, somministrazione e opere dell’ingegno",
+    "summary": "Manifestazione dedicata a alimentari, non alimentari, somministrazione e opere dell’ingegno.",
+    "participation": {
+      "type": "selected",
+      "note": "Ordinanza 27/2026: vendita dal 12 al 17 maggio; presenza serale obbligatoria 18:00–23:00, mattina e prosecuzione fino alle 02:00 facoltative. Il 18 maggio è sgombero, non fiera. Accesso per assegnatari e registrazione delle presenze; vietata la vendita itinerante nell’area. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Comune di Olbia"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Olbia",
+    "name": "Mercatini di Natale – Città del Natale",
+    "months": [
+      11,
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.olbia.ot.it/index.php/it/news/olbia-presenta-citta-del-natale",
+      "label": "comune.olbia.ot.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.olbia.ot.it/index.php/it/news/olbia-presenta-citta-del-natale"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-28",
+        "end": "2027-01-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.olbia.ot.it/index.php/it/news/olbia-presenta-citta-del-natale",
+        "periodOnly": true
+      }
+    ],
+    "venue": "Centro cittadino",
+    "sectors": "Mercatini natalizi",
+    "summary": "Manifestazione dedicata a mercatini natalizi.",
+    "participation": {
+      "type": "selected",
+      "note": "Il comunicato comunale annuncia mercatini nel programma complessivo 28 novembre–6 gennaio. Non pubblica i singoli giorni e gli orari dei banchi né una procedura per gli espositori: intervallo indicativo, non apertura quotidiana verificata. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Comune di Olbia, Aspo ed Eva Eventi"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Olbia",
+    "name": "Benvenuto Vermentino",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://saludetrigu.it/2026/08/benvenuto-vermentino-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/08/benvenuto-vermentino-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-08",
+        "end": "2026-10-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/08/benvenuto-vermentino-2026/"
+      }
+    ],
+    "venue": "Museo Archeologico e centro cittadino",
+    "sectors": "Vino, artigianato artistico e produzioni locali",
+    "summary": "Manifestazione dedicata a vino, artigianato artistico e produzioni locali.",
+    "participation": {
+      "type": "selected",
+      "note": "Mostra artigianale 8–11 ottobre, Shopping Night il 9 e degustazione in centro il 10. Il 7 ottobre è dedicato a degustazioni tecniche, distinto dal percorso espositivo. Le attività e gli espositori sono selezionati; non è una spunta ambulante. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Camera di Commercio di Sassari e partner"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Olbia",
+    "name": "Fiera Nautica di Sardegna",
+    "months": [
+      5
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.mimit.gov.it/en/eventi-2026/fiera-nautica-di-sardegna-2026",
+      "label": "mimit.gov.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.mimit.gov.it/en/eventi-2026/fiera-nautica-di-sardegna-2026",
+      "https://www.fieranauticadisardegna.it/fiera/5th-edition/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-07",
+        "end": "2026-05-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mimit.gov.it/en/eventi-2026/fiera-nautica-di-sardegna-2026"
+      }
+    ],
+    "venue": "Marina di Porto Rotondo, via della Marina",
+    "sectors": "Nautica, imbarcazioni, servizi e filiera del mare",
+    "summary": "Manifestazione dedicata a nautica, imbarcazioni, servizi e filiera del mare.",
+    "participation": {
+      "type": "selected",
+      "note": "Manifestazione professionale specializzata a Porto Rotondo, frazione di Olbia. Richiede rapporto espositivo con l’organizzatore; la presenza di espositori nautici non prova ammissione di banchi generici o food truck. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "CIPNES Gallura e Regione Sardegna"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Olbia",
+    "name": "Festa del Gusto Internazionale",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraoggi.it/eventi-gallura/spettacolo-huntrix-olbia-per-la-festa-del-gusto-10-luglio-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/eventi-gallura/spettacolo-huntrix-olbia-per-la-festa-del-gusto-10-luglio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-09",
+        "end": "2026-07-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/eventi-gallura/spettacolo-huntrix-olbia-per-la-festa-del-gusto-10-luglio-2026/"
+      }
+    ],
+    "venue": "Parco Mario Cervo",
+    "sectors": "Street food e gastronomia internazionale",
+    "summary": "Manifestazione dedicata a street food e gastronomia internazionale.",
+    "participation": {
+      "type": "selected",
+      "note": "Date 9–12 luglio 2026 dalla cronaca locale della tappa. Il comunicato sullo spettacolo del 10 non limita la manifestazione a quella sola sera. Nessun bando ambulanti o tariffa espositiva documentati. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Aggius",
+    "name": "Pasquetta nel Borgo",
+    "months": [
+      4
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://saludetrigu.it/2026/04/pasqua-e-pasquetta-nel-borgo-ad-aggius/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/04/pasqua-e-pasquetta-nel-borgo-ad-aggius/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-04-06",
+        "end": "2026-04-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/04/pasqua-e-pasquetta-nel-borgo-ad-aggius/"
+      }
+    ],
+    "venue": "Centro storico",
+    "sectors": "Artigianato e street food",
+    "summary": "Manifestazione dedicata a artigianato e street food.",
+    "participation": {
+      "type": "selected",
+      "note": "Artigianato e street food riguardano la Pasquetta del 6 aprile. Processioni e riti della Settimana Santa dal 29 marzo al 5 aprile restano distinti dai giorni commerciali. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Aglientu",
+    "name": "Sagra del Pesce Arrosto",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "label": "aglientuturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135390/Aglientu-Estate-2026-Estate-09.pdf",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135408/Aglientu-Estate-2026-Estate-09-social_Tavola-disegno-1.png"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-04",
+        "end": "2026-07-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026"
+      }
+    ],
+    "venue": "Anfiteatro comunale",
+    "sectors": "Gastronomia tipica e degustazioni",
+    "summary": "Manifestazione dedicata a gastronomia tipica e degustazioni.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata documentata nella locandina comunale Estate 2026, verificata visivamente. Sagre curate dalla Pro Loco; non risulta un avviso pubblico per l’ammissione di venditori esterni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Associazione Pro Loco di Aglientu"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Aglientu",
+    "name": "Sagra del Maiale Arrosto",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "label": "aglientuturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135390/Aglientu-Estate-2026-Estate-09.pdf",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135408/Aglientu-Estate-2026-Estate-09-social_Tavola-disegno-1.png"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-18",
+        "end": "2026-07-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026"
+      }
+    ],
+    "venue": "Anfiteatro comunale",
+    "sectors": "Gastronomia tipica e degustazioni",
+    "summary": "Manifestazione dedicata a gastronomia tipica e degustazioni.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata documentata nella locandina comunale Estate 2026, verificata visivamente. Sagre curate dalla Pro Loco; non risulta un avviso pubblico per l’ammissione di venditori esterni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Associazione Pro Loco di Aglientu"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Aglientu",
+    "name": "Sagra di li Chjusoni",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "label": "aglientuturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135390/Aglientu-Estate-2026-Estate-09.pdf",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135408/Aglientu-Estate-2026-Estate-09-social_Tavola-disegno-1.png"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026"
+      }
+    ],
+    "venue": "Anfiteatro comunale",
+    "sectors": "Gastronomia tipica e degustazioni",
+    "summary": "Manifestazione dedicata a gastronomia tipica e degustazioni.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata documentata nella locandina comunale Estate 2026, verificata visivamente. Sagre curate dalla Pro Loco; non risulta un avviso pubblico per l’ammissione di venditori esterni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Associazione Pro Loco di Aglientu"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Aglientu",
+    "name": "Sagra delle Seadas",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "label": "aglientuturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135390/Aglientu-Estate-2026-Estate-09.pdf",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135408/Aglientu-Estate-2026-Estate-09-social_Tavola-disegno-1.png"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-06",
+        "end": "2026-08-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026"
+      }
+    ],
+    "venue": "Vignola Mare",
+    "sectors": "Gastronomia tipica e degustazioni",
+    "summary": "Manifestazione dedicata a gastronomia tipica e degustazioni.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata documentata nella locandina comunale Estate 2026, verificata visivamente. Sagre curate dalla Pro Loco; non risulta un avviso pubblico per l’ammissione di venditori esterni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Associazione Pro Loco di Aglientu"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Aglientu",
+    "name": "Festa del Turista – Salsiccia e Formaggio",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "label": "aglientuturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135390/Aglientu-Estate-2026-Estate-09.pdf",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135408/Aglientu-Estate-2026-Estate-09-social_Tavola-disegno-1.png"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-11",
+        "end": "2026-08-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026"
+      }
+    ],
+    "venue": "Anfiteatro comunale",
+    "sectors": "Gastronomia tipica e degustazioni",
+    "summary": "Manifestazione dedicata a gastronomia tipica e degustazioni.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata documentata nella locandina comunale Estate 2026, verificata visivamente. Sagre curate dalla Pro Loco; non risulta un avviso pubblico per l’ammissione di venditori esterni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Associazione Pro Loco di Aglientu"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Aglientu",
+    "name": "Sagra della Suppa illu Paghjolu",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "label": "aglientuturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135390/Aglientu-Estate-2026-Estate-09.pdf",
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5135408/Aglientu-Estate-2026-Estate-09-social_Tavola-disegno-1.png"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://aglientuturismo.com/contenuti/3595553/aglientu-estate2026"
+      }
+    ],
+    "venue": "Anfiteatro comunale",
+    "sectors": "Gastronomia tipica e degustazioni",
+    "summary": "Manifestazione dedicata a gastronomia tipica e degustazioni.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata documentata nella locandina comunale Estate 2026, verificata visivamente. Sagre curate dalla Pro Loco; non risulta un avviso pubblico per l’ammissione di venditori esterni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Associazione Pro Loco di Aglientu"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Alà dei Sardi",
+    "name": "Sagra del Prosciutto – Sant’Agostino",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.sardegnaturismo.it/it/esplora/ala-dei-sardi",
+      "label": "sardegnaturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sardegnaturismo.it/it/esplora/ala-dei-sardi"
+    ],
+    "editions": [],
+    "venue": "Centro cittadino",
+    "sectors": "Prosciutto e prodotti gastronomici locali",
+    "summary": "Manifestazione dedicata a prosciutto e prodotti gastronomici locali.",
+    "participation": {
+      "type": "selected",
+      "note": "La fonte regionale descrive la sagra associata alla festa di Sant’Agostino a fine agosto. È una ricorrenza usuale: nessun calendario commerciale annuale, posteggio o ammissione 2026 dedotto. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Arzachena",
+    "name": "MOME – Sardegna in Vetrina",
+    "months": [
+      7,
+      8
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.enjoymome.it/",
+      "label": "enjoymome.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.enjoymome.it/",
+      "https://arzachenaturismo.com/contenuti/1290405/mercati-mercatini-comune-arzachena"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-09",
+        "end": "2026-07-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.enjoymome.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-23",
+        "end": "2026-07-23",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.enjoymome.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-06",
+        "end": "2026-08-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.enjoymome.it/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-20",
+        "end": "2026-08-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.enjoymome.it/"
+      }
+    ],
+    "venue": "Centro storico",
+    "sectors": "Artigianato artistico, design, enogastronomia e vino",
+    "summary": "Manifestazione dedicata a artigianato artistico, design, enogastronomia e vino.",
+    "participation": {
+      "type": "selected",
+      "note": "Quattro serate distinte 9 e 23 luglio, 6 e 20 agosto 2026, 20:00–24:00. Esposizione curata e selezionata, non periodo continuo di mercato. Contatti dell’organizzatore nel sito ufficiale. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Enjoy Communication per il Comune di Arzachena"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Arzachena",
+    "name": "Notte Sarda – Sagra di li Chjusoni",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://arzachenaturismo.com/eventi/3598308/notte-sarda-sagra-gnocchi",
+      "label": "arzachenaturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://arzachenaturismo.com/eventi/3598308/notte-sarda-sagra-gnocchi",
+      "https://www.comune.arzachena.ss.it/novita/comunicato-stampa/una-nuova-stagione-di-eventi-per-la-destinazione-arzachena"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://arzachenaturismo.com/eventi/3598308/notte-sarda-sagra-gnocchi"
+      }
+    ],
+    "venue": "Centro storico",
+    "sectors": "Gnocchi e gastronomia gallurese",
+    "summary": "Manifestazione dedicata a gnocchi e gastronomia gallurese.",
+    "participation": {
+      "type": "selected",
+      "note": "Calendario comunale 2026: Notte Sarda e sagra del piatto tipico il 1 agosto dalle 20:00. Le opportunità di banco richiedono selezione specifica; i concerti e la sagra non danno accesso automatico agli ambulanti. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Arzachena",
+    "name": "Estate in Fiore Outdoor – Mercato in Fiore",
+    "months": [
+      9
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://arzachenaturismo.com/eventi/3640795/arzachena-estate-fiore-2026-10-13-settembre",
+      "label": "arzachenaturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://arzachenaturismo.com/eventi/3640795/arzachena-estate-fiore-2026-10-13-settembre",
+      "https://arzachenaturismo.com/eventi/3599953/estate-fiore-outdoor-festival-natura-turismo"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-10",
+        "end": "2026-09-12",
+        "dateType": "confirmed",
+        "sourceUrl": "https://arzachenaturismo.com/eventi/3640795/arzachena-estate-fiore-2026-10-13-settembre"
+      }
+    ],
+    "venue": "Centro storico e piazza Risorgimento",
+    "sectors": "Florovivaismo, piante, prodotti dell’alveare, erbe e olio",
+    "summary": "Manifestazione dedicata a florovivaismo, piante, prodotti dell’alveare, erbe e olio.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma dettagliato: apertura stand il 10, 11 e 12 settembre dalle 10:00; il 13 è passeggiata libera tra installazioni, esclusa dalle giornate di banco. Due voci del calendario descrivono la medesima manifestazione, non due fiere. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Arzachena",
+    "name": "Notturno d’Arte – Notti Bianche",
+    "months": [
+      7,
+      8
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://arzachenaturismo.com/eventi/3598295/notte-bianca-spettacoli-mercatino-notturno-d-arte",
+      "label": "arzachenaturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://arzachenaturismo.com/eventi/3598295/notte-bianca-spettacoli-mercatino-notturno-d-arte",
+      "https://arzachenaturismo.com/eventi/3599637/cannigione-notte-bianca-spettacoli-mercatino"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-24",
+        "end": "2026-07-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://arzachenaturismo.com/eventi/3598295/notte-bianca-spettacoli-mercatino-notturno-d-arte"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-21",
+        "end": "2026-08-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://arzachenaturismo.com/eventi/3599637/cannigione-notte-bianca-spettacoli-mercatino"
+      }
+    ],
+    "venue": "Comune di Arzachena; Cannigione per il 21 agosto",
+    "sectors": "Mercatino artistico e artigianale",
+    "summary": "Manifestazione dedicata a mercatino artistico e artigianale.",
+    "participation": {
+      "type": "selected",
+      "note": "Due serate 24 luglio e 21 agosto, 20:00–23:55, con spettacoli e mercatino. La sede Cannigione è esplicita per il 21 agosto; la pagina del 24 non precisa qui il luogo. Nessun intervallo continuo o ammissione automatica. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Arzachena",
+    "name": "Sagra del Porcetto",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://arzachenaturismo.com/eventi/3619865/sagra-porcetto",
+      "label": "arzachenaturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://arzachenaturismo.com/eventi/3619865/sagra-porcetto"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://arzachenaturismo.com/eventi/3619865/sagra-porcetto"
+      }
+    ],
+    "venue": "Arzachena, sede da verificare",
+    "sectors": "Porcetto e gastronomia tipica",
+    "summary": "Manifestazione dedicata a porcetto e gastronomia tipica.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata pubblicata nel calendario del turismo comunale 2026. La scheda descrive la sagra, senza bando per banchi esterni o quote: la manifestazione non garantisce un’opportunità di vendita aperta. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Arzachena",
+    "name": "Sagra della Zuppa Gallurese – La Suppa Cuata",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://arzachenaturismo.com/eventi/3598268/sagra-zuppa-gallurese-suppa-cuata",
+      "label": "arzachenaturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://arzachenaturismo.com/eventi/3598268/sagra-zuppa-gallurese-suppa-cuata"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-21",
+        "end": "2026-07-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://arzachenaturismo.com/eventi/3598268/sagra-zuppa-gallurese-suppa-cuata"
+      }
+    ],
+    "venue": "Arzachena, sede da verificare",
+    "sectors": "Zuppa gallurese e gastronomia tipica",
+    "summary": "Manifestazione dedicata a zuppa gallurese e gastronomia tipica.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata pubblicata nel calendario del turismo comunale 2026. La scheda descrive la sagra, senza bando per banchi esterni o quote: la manifestazione non garantisce un’opportunità di vendita aperta. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Arzachena",
+    "name": "Sagra delle Cozze di Cannigione",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://arzachenaturismo.com/eventi/3598211/borgo-cannigione-porto-sagra-cozze",
+      "label": "arzachenaturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://arzachenaturismo.com/eventi/3598211/borgo-cannigione-porto-sagra-cozze"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-10",
+        "end": "2026-07-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://arzachenaturismo.com/eventi/3598211/borgo-cannigione-porto-sagra-cozze"
+      }
+    ],
+    "venue": "Porto di Cannigione",
+    "sectors": "Cozze e gastronomia marinara",
+    "summary": "Manifestazione dedicata a cozze e gastronomia marinara.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata pubblicata nel calendario del turismo comunale 2026. La scheda descrive la sagra, senza bando per banchi esterni o quote: la manifestazione non garantisce un’opportunità di vendita aperta. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Badesi",
+    "name": "Sagra della Melanzana",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraoggi.it/eventi-gallura/badesi-sagra-melanzana-27-luglio-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/eventi-gallura/badesi-sagra-melanzana-27-luglio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-31",
+        "end": "2026-07-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/eventi-gallura/badesi-sagra-melanzana-27-luglio-2026/"
+      }
+    ],
+    "venue": "Lungomare Li Junchi",
+    "sectors": "Prodotti gastronomici e mercatini di artigianato",
+    "summary": "Manifestazione dedicata a prodotti gastronomici e mercatini di artigianato.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma 2026 documentato dalla cronaca locale: gastronomia e mercatini. Le vecchie pagine del turismo comunale ora tornano al calendario corrente; questa scheda usa esplicitamente la fonte giornalistica, senza dedurre quote o ammissioni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Badesi",
+    "name": "Sagra della Zuppa Gallurese",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraoggi.it/eventi-gallura/badesi-torna-la-sagra-della-zuppa-gallurese-4-agosto-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/eventi-gallura/badesi-torna-la-sagra-della-zuppa-gallurese-4-agosto-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/eventi-gallura/badesi-torna-la-sagra-della-zuppa-gallurese-4-agosto-2026/"
+      }
+    ],
+    "venue": "Lungomare Li Junchi",
+    "sectors": "Prodotti gastronomici e mercatini di artigianato",
+    "summary": "Manifestazione dedicata a prodotti gastronomici e mercatini di artigianato.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma 2026 documentato dalla cronaca locale: gastronomia e mercatini. Le vecchie pagine del turismo comunale ora tornano al calendario corrente; questa scheda usa esplicitamente la fonte giornalistica, senza dedurre quote o ammissioni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Berchidda",
+    "name": "Notte de Chelu",
+    "months": [
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://saludetrigu.it/2026/07/notte-de-chelu-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/07/notte-de-chelu-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-05",
+        "end": "2026-12-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/07/notte-de-chelu-2026/"
+      }
+    ],
+    "venue": "Presepi rionali e galleria di Natale",
+    "sectors": "Agroalimentare, vino, mercatini e artigianato",
+    "summary": "Manifestazione dedicata a agroalimentare, vino, mercatini e artigianato.",
+    "participation": {
+      "type": "selected",
+      "note": "Due giornate 5–6 dicembre 2026 dal programma camerale. Galleria coperta con mercatini e professionisti; gli intervalli 2027 presenti in altri portali non sono usati come date confermate. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Berchidda",
+    "name": "Sagra del Raviolo Berchiddese",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraoggi.it/eventi-gallura/berchidda-celebra-la-sagra-del-raviolo-8-luglio-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/eventi-gallura/berchidda-celebra-la-sagra-del-raviolo-8-luglio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-18",
+        "end": "2026-07-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/eventi-gallura/berchidda-celebra-la-sagra-del-raviolo-8-luglio-2026/"
+      }
+    ],
+    "venue": "Piazza del Popolo",
+    "sectors": "Prodotti enogastronomici e artigianato sardo",
+    "summary": "Manifestazione dedicata a prodotti enogastronomici e artigianato sardo.",
+    "participation": {
+      "type": "selected",
+      "note": "Stand dalle 20:00 del 18 luglio 2026, dopo presentazione e degustazione delle 19:30. Fonte giornalistica che riporta Comitato e patrocinio comunale; nessuna tariffa di banco dedotta dal costo al pubblico. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Budoni",
+    "name": "Mercato Serale Estivo di Budoni e Porto Ottiolu",
+    "months": [
+      6,
+      9
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.budoni.ss.it/notizie/3400394/richiesta-partecipazione-mercato-serale-estivo",
+      "label": "comune.budoni.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.budoni.ss.it/notizie/3400394/richiesta-partecipazione-mercato-serale-estivo"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-06-13",
+        "end": "2025-09-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.budoni.ss.it/notizie/3400394/richiesta-partecipazione-mercato-serale-estivo"
+      }
+    ],
+    "venue": "Via Nazionale e Porto Ottiolu",
+    "sectors": "Prodotti proposti dagli operatori ammessi al mercato",
+    "summary": "Manifestazione dedicata a prodotti proposti dagli operatori ammessi al mercato.",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione documentata 2025, distinta da una nuova conferma 2026. Domande entro 5 giugno 2025; posteggio indicativo 3×3 m, documentazione dei prodotti e assegnazione temporanea. Due località dello stesso mercato comunale non diventano due duplicati. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio.",
+      "deadline": "2025-06-05",
+      "deadlineLabel": "Edizione 2025, termine storico."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Budoni",
+    "name": "Mercatino Natalizio",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.budoni.ss.it/notizie/3491286/modulo-richiesta-mercatino-natalizio-2025",
+      "label": "comune.budoni.ss.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.budoni.ss.it/notizie/3491286/modulo-richiesta-mercatino-natalizio-2025"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-04",
+        "end": "2026-01-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.budoni.ss.it/notizie/3491286/modulo-richiesta-mercatino-natalizio-2025"
+      }
+    ],
+    "venue": "Budoni",
+    "sectors": "Prodotti degli espositori ammessi e articoli natalizi",
+    "summary": "Manifestazione dedicata a prodotti degli espositori ammessi e articoli natalizi.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso storico 2025/26, domanda entro 1 dicembre 2025. Posteggio provvisorio e fotografie dei prodotti; non sono documentati qui nuova edizione 2026/27, prezzo o disponibilità corrente. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio.",
+      "deadline": "2025-12-01",
+      "deadlineLabel": "Edizione 2025/26, termine storico."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Calangianus",
+    "name": "Sagra del Bovino Gallurese – Notte Bianca",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.sagradelbovinogallurese.it/",
+      "label": "sagradelbovinogallurese.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.sagradelbovinogallurese.it/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.sagradelbovinogallurese.it/"
+      }
+    ],
+    "venue": "Centro cittadino, via Roma e piazza del Popolo",
+    "sectors": "Artigianato e gastronomia del bovino gallurese",
+    "summary": "Manifestazione dedicata a artigianato e gastronomia del bovino gallurese.",
+    "participation": {
+      "type": "selected",
+      "note": "Il programma dell’organizzatore prevede stand di artigiani l’8 agosto dalle 18:30. Il 7 è dedicato a convegno, cena associativa e preparazione: non conteggiato come giornata degli stand. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Calangianus",
+    "name": "San Leonardo Wine Festival del Vermentino DOCG",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://saludetrigu.it/2026/05/san-leonardo-wine-festival-del-vermentino-docg-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/05/san-leonardo-wine-festival-del-vermentino-docg-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-18",
+        "end": "2026-07-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/05/san-leonardo-wine-festival-del-vermentino-docg-2026/"
+      }
+    ],
+    "venue": "Chiesa di San Leonardo",
+    "sectors": "Vino Vermentino DOCG e prodotti tipici galluresi",
+    "summary": "Manifestazione dedicata a vino Vermentino DOCG e prodotti tipici galluresi.",
+    "participation": {
+      "type": "selected",
+      "note": "Serata con stand e degustazioni del 18 luglio; il tavolo tecnico del 17 e le cantine aperte del 19 sono attività distinte. Anche le feste di giugno della Suprastantia non sono nuove date del mercato. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Associazione Festa San Leonardo"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Golfo Aranci",
+    "name": "Taste Sardinia",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.golfoarancimonamour.it/eventi/archiviato/taste-sardinia-a-golfo-aranci/",
+      "label": "golfoarancimonamour.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.golfoarancimonamour.it/eventi/archiviato/taste-sardinia-a-golfo-aranci/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-12",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.golfoarancimonamour.it/eventi/archiviato/taste-sardinia-a-golfo-aranci/"
+      }
+    ],
+    "venue": "Via dei Caduti, Lungomare e piazza Cossiga",
+    "sectors": "Cantine, produttori, street food e artigianato",
+    "summary": "Manifestazione dedicata a cantine, produttori, street food e artigianato.",
+    "participation": {
+      "type": "selected",
+      "note": "Percorso espositivo con apertura alle 17:00 in entrambe le giornate. Il programma comunale conferma il 12 e 13 settembre 2026; nessun intervallo generico 2027 usato come nuova edizione. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Golfo Aranci",
+    "name": "Venerdì al Tramonto – Mercatini",
+    "months": [
+      7,
+      9
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.golfoarancimonamour.it/non-categorizzato/venerdi-al-tramonto-mercatini/",
+      "label": "golfoarancimonamour.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.golfoarancimonamour.it/non-categorizzato/venerdi-al-tramonto-mercatini/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-03",
+        "end": "2026-09-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.golfoarancimonamour.it/non-categorizzato/venerdi-al-tramonto-mercatini/",
+        "periodOnly": true
+      }
+    ],
+    "venue": "Passeggiata della Dolce Vita, Lungomare",
+    "sectors": "Artigiani, artisti, hobbisti e produttori locali",
+    "summary": "Manifestazione dedicata a artigiani, artisti, hobbisti e produttori locali.",
+    "participation": {
+      "type": "selected",
+      "note": "Ogni venerdì dalle 20:00 alle 24:00 nel periodo 3 luglio–11 settembre. Periodo di una ricorrenza settimanale: non indica apertura quotidiana né un elenco di giornate calcolate. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Golfo Aranci",
+    "name": "Sagra del Pesce",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.golfoarancimonamour.it/non-categorizzato/58a-sagra-del-pesce-golfo-aranci/",
+      "label": "golfoarancimonamour.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.golfoarancimonamour.it/non-categorizzato/58a-sagra-del-pesce-golfo-aranci/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-14",
+        "end": "2026-08-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.golfoarancimonamour.it/non-categorizzato/58a-sagra-del-pesce-golfo-aranci/"
+      }
+    ],
+    "venue": "Piazza Cossiga",
+    "sectors": "Frittura di pesce e gastronomia",
+    "summary": "Manifestazione dedicata a frittura di pesce e gastronomia.",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione 2026 dal portale turistico comunale: preparazione e servizio a cura dei volontari della Pro Loco. Non è documentato un bando per banchi esterni o una tariffa espositiva. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Pro Loco Golfo Aranci APS"
+  },
+  {
+    "region": "Sardegna",
+    "city": "La Maddalena",
+    "name": "Mercato Serale Estivo",
+    "months": [
+      6,
+      9
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.lamaddalena.ot.it/media/acfupload/MERCATO_ESTIVO_E_SPETTACOLI_VIAGGIANTI_ESTATE_2026_-_BANDO.pdf",
+      "label": "comune.lamaddalena.ot.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.lamaddalena.ot.it/media/acfupload/MERCATO_ESTIVO_E_SPETTACOLI_VIAGGIANTI_ESTATE_2026_-_BANDO.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-15",
+        "end": "2026-09-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.lamaddalena.ot.it/media/acfupload/MERCATO_ESTIVO_E_SPETTACOLI_VIAGGIANTI_ESTATE_2026_-_BANDO.pdf"
+      }
+    ],
+    "venue": "Piazza Umberto I e piazza Garibaldi",
+    "sectors": "Artigianato, non alimentari originali, prodotti alimentari tipici e dolciumi",
+    "summary": "Manifestazione dedicata a artigianato, non alimentari originali, prodotti alimentari tipici e dolciumi.",
+    "participation": {
+      "type": "selected",
+      "note": "Bando 2026: categorie e orari distinti, esclusi giocattoli, casalinghi e pentolame, tessuti e artigianato di tipo sardo non prodotto in Sardegna. 38 posteggi simultanei per massimo 44 operatori, oltre all’editoria in piazza Garibaldi; non sono posti liberi. Domande 30 aprile–20 maggio ore 12. Proroga al 30 settembre solo eventuale, non confermata dal bando. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio.",
+      "deadline": "2026-05-20",
+      "deadlineLabel": "Entro le ore 12:00; domande dal 30 aprile."
+    },
+    "organizer": "Comune di La Maddalena"
+  },
+  {
+    "region": "Sardegna",
+    "city": "La Maddalena",
+    "name": "Mercatino Multietnico Diurno",
+    "months": [
+      6,
+      9
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.lamaddalena.ot.it/media/acfupload/MERCATO_ESTIVO_E_SPETTACOLI_VIAGGIANTI_ESTATE_2026_-_BANDO.pdf",
+      "label": "comune.lamaddalena.ot.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.lamaddalena.ot.it/media/acfupload/MERCATO_ESTIVO_E_SPETTACOLI_VIAGGIANTI_ESTATE_2026_-_BANDO.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-15",
+        "end": "2026-09-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.lamaddalena.ot.it/media/acfupload/MERCATO_ESTIVO_E_SPETTACOLI_VIAGGIANTI_ESTATE_2026_-_BANDO.pdf"
+      }
+    ],
+    "venue": "Piazza Umberto I",
+    "sectors": "Prodotti multietnici non alimentari",
+    "summary": "Manifestazione dedicata a prodotti multietnici non alimentari.",
+    "participation": {
+      "type": "selected",
+      "note": "Bando 2026: sette operatori commerciali extracomunitari per prodotti multietnici non alimentari, 09:00–19:30. È una selezione distinta dal mercato serale, non una spunta generica. Domande 30 aprile–20 maggio ore 12. Proroga al 30 settembre solo eventuale, non confermata dal bando. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio.",
+      "deadline": "2026-05-20",
+      "deadlineLabel": "Entro le ore 12:00; domande dal 30 aprile."
+    },
+    "organizer": "Comune di La Maddalena"
+  },
+  {
+    "region": "Sardegna",
+    "city": "La Maddalena",
+    "name": "Mercatino di Natale",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.lamaddalena.ot.it/media/acfupload/Bando_Mercatino_di_Natale_2026.pdf",
+      "label": "comune.lamaddalena.ot.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://comune.lamaddalena.ot.it/media/acfupload/Bando_Mercatino_di_Natale_2026.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-12-01",
+        "end": "2027-01-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.lamaddalena.ot.it/media/acfupload/Bando_Mercatino_di_Natale_2026.pdf",
+        "periodOnly": true
+      }
+    ],
+    "venue": "Civico Mercato, piazza Garibaldi",
+    "sectors": "Artigianato artistico, oggettistica, libri e prodotti non alimentari natalizi",
+    "summary": "Manifestazione dedicata a artigianato artistico, oggettistica, libri e prodotti non alimentari natalizi.",
+    "participation": {
+      "type": "selected",
+      "note": "Bando del 27 ottobre 2026: 12 posteggi, tavoli propri max 1×2 m. Domande dal 27 ottobre alle 13:00 dell’11 novembre 2026 con modello, documenti e bollo. Il mercato si tiene solo in alcuni giorni del periodo: calendario puntuale non ancora pubblicato; possibili sospensioni comunicate dal Comune. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio.",
+      "deadline": "2026-11-11",
+      "deadlineLabel": "Entro le ore 13:00; domande dal 27 ottobre 2026 con le modalità del bando."
+    },
+    "organizer": "Comune di La Maddalena"
+  },
+  {
+    "region": "Sardegna",
+    "city": "La Maddalena",
+    "name": "Vite e Vite – Incontri con i Vignaioli",
+    "months": [
+      5
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://saludetrigu.it/2026/05/giugno-slow-vite-e-vite-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/05/giugno-slow-vite-e-vite-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-23",
+        "end": "2026-05-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/05/giugno-slow-vite-e-vite-2026/"
+      }
+    ],
+    "venue": "Ex Magazzini Ilva",
+    "sectors": "Vino artigianale, cantine e banchi di assaggio",
+    "summary": "Manifestazione dedicata a vino artigianale, cantine e banchi di assaggio.",
+    "participation": {
+      "type": "selected",
+      "note": "Tre giornate con cantine e banchi d’assaggio; il 25 è dedicato agli operatori. Programma selezionato del progetto Giugno Slow: nessuna ammissione automatica per ambulanti generici. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "La Maddalena",
+    "name": "Casa Slow Food Sardegna – Giugno Slow",
+    "months": [
+      5,
+      6
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://saludetrigu.it/2026/05/giugno-slow-vite-e-vite-2026/",
+      "label": "saludetrigu.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://saludetrigu.it/2026/05/giugno-slow-vite-e-vite-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-31",
+        "end": "2026-06-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saludetrigu.it/2026/05/giugno-slow-vite-e-vite-2026/"
+      }
+    ],
+    "venue": "Mercato Civico",
+    "sectors": "Aziende agricole, agroalimentare e degustazioni",
+    "summary": "Manifestazione dedicata a aziende agricole, agroalimentare e degustazioni.",
+    "participation": {
+      "type": "selected",
+      "note": "Esposizioni e incontri con i produttori dal 31 maggio al 2 giugno, distinti da Vite e Vite e dalle escursioni della rassegna. Selezione del circuito Slow Food, non posteggio mercatale aperto. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Loiri Porto San Paolo",
+    "name": "Artigiani sotto le Stelle – Porto San Paolo",
+    "months": [
+      6,
+      7,
+      8
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/",
+      "label": "mambotangohandmade.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/",
+      "https://i0.wp.com/www.mambotangohandmade.com/wp-content/uploads/2026/06/Locandina-Mercato-artigianato-itinerante-Sardegna-Porto-San-paolo-Olbia-Estate-2026.jpg?resize=721%2C1024&ssl=1"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-26",
+        "end": "2026-06-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-06-27",
+        "end": "2026-06-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-06-29",
+        "end": "2026-06-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-03",
+        "end": "2026-07-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-04",
+        "end": "2026-07-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-06",
+        "end": "2026-07-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-10",
+        "end": "2026-07-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-11",
+        "end": "2026-07-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-13",
+        "end": "2026-07-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-17",
+        "end": "2026-07-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-18",
+        "end": "2026-07-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-20",
+        "end": "2026-07-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-24",
+        "end": "2026-07-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-27",
+        "end": "2026-07-27",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-07-31",
+        "end": "2026-07-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-03",
+        "end": "2026-08-03",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-10",
+        "end": "2026-08-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-14",
+        "end": "2026-08-14",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-15",
+        "end": "2026-08-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-08-17",
+        "end": "2026-08-17",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.mambotangohandmade.com/artigiani-sotto-le-stelle-2026-a-porto-san-paolo-il-mercato-dellartigianato-che-illumina-le-notti-della-sardegna/"
+      }
+    ],
+    "venue": "Giardino della Delegazione comunale di Porto San Paolo",
+    "sectors": "Oreficeria, cuoio, tessuti, ceramica, legno, vetro, accessori e manufatti artigianali",
+    "summary": "Manifestazione dedicata a oreficeria, cuoio, tessuti, ceramica, legno, vetro, accessori e manufatti artigianali.",
+    "participation": {
+      "type": "selected",
+      "note": "24 serate elencate dall’espositore per il 2026, 20:00–24:00. La locandina condivisa include anche Puntaldia, in altro comune: quelle domeniche non sono aggiunte alle date di Porto San Paolo. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Loiri Porto San Paolo",
+    "name": "Sagra di li Cjusoni",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.portosanpaoloturismo360.it/1-agosto-4-sagra-de-li-cjusoni/",
+      "label": "portosanpaoloturismo360.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.portosanpaoloturismo360.it/1-agosto-4-sagra-de-li-cjusoni/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.portosanpaoloturismo360.it/1-agosto-4-sagra-de-li-cjusoni/"
+      }
+    ],
+    "venue": "Piazza Isabelle Vambelle, Loiri",
+    "sectors": "Gnocchi galluresi e gastronomia tipica",
+    "summary": "Manifestazione dedicata a gnocchi galluresi e gastronomia tipica.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma dell’Ufficio turistico: sagra della pasta tipica e festival delle fisarmoniche, ore 20:30. Loiri è distinto dalla frazione costiera Porto San Paolo; non risultano qui bandi per esterni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Loiri Porto San Paolo",
+    "name": "Festa del Gusto – Porto San Paolo",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.portosanpaoloturismo360.it/6-7-8-agosto-festa-del-gusto/",
+      "label": "portosanpaoloturismo360.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.portosanpaoloturismo360.it/6-7-8-agosto-festa-del-gusto/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-06",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.portosanpaoloturismo360.it/6-7-8-agosto-festa-del-gusto/"
+      }
+    ],
+    "venue": "Viale Pietro Nenni, Porto San Paolo",
+    "sectors": "Street food internazionale e birre artigianali",
+    "summary": "Manifestazione dedicata a street food internazionale e birre artigianali.",
+    "participation": {
+      "type": "selected",
+      "note": "Avviso dell’Ufficio turistico pubblicato il 30 luglio 2026: tre giornate 6–8 agosto dalle 18:00. Selezione commerciale da verificare con gli organizzatori; spettacoli e accesso del pubblico non equivalgono ad ammissione. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Luras",
+    "name": "Domos Abbeltas",
+    "months": [
+      6
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://www.unionesarda.it/en/sardinia/domos-abbeltas-2026-luras-opens-its-homes-to-the-culture-traditions-and-flavors-of-gallura-u2xg5o8v",
+      "label": "unionesarda.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.unionesarda.it/en/sardinia/domos-abbeltas-2026-luras-opens-its-homes-to-the-culture-traditions-and-flavors-of-gallura-u2xg5o8v",
+      "https://egov.halleysardegna.com/luras/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5WpVd0TERT0-A"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-19",
+        "end": "2026-06-21",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.unionesarda.it/en/sardinia/domos-abbeltas-2026-luras-opens-its-homes-to-the-culture-traditions-and-flavors-of-gallura-u2xg5o8v"
+      }
+    ],
+    "venue": "Centro storico e piazza del Popolo",
+    "sectors": "Vino, gastronomia lurese, artigianato e antichi mestieri",
+    "summary": "Manifestazione dedicata a vino, gastronomia lurese, artigianato e antichi mestieri.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma 2026 dalla cronaca, patrocinio e collaborazione attestati dall’atto comunale 42/2026. Il 19 percorso del vino, dal 20 case e laboratori. Pagina e graduatoria della Pro Loco oggi non disponibili: nessuna quota o nuova candidatura dedotte. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Luras",
+    "name": "Sagra degli Gnocchetti e… Liscio",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://egov.halleysardegna.com/luras/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G5WpVeUTEWT0-A",
+      "label": "egov.halleysardegna.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://egov.halleysardegna.com/luras/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G5WpVeUTEWT0-A"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-31",
+        "end": "2026-07-31",
+        "dateType": "confirmed",
+        "sourceUrl": "https://egov.halleysardegna.com/luras/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/G5WpVeUTEWT0-A"
+      }
+    ],
+    "venue": "Luras",
+    "sectors": "Gnocchetti e gastronomia tipica",
+    "summary": "Manifestazione dedicata a gnocchetti e gastronomia tipica.",
+    "participation": {
+      "type": "selected",
+      "note": "L’ordinanza comunale 21 del 22 luglio 2026 documenta l’occupazione temporanea per la sagra del 31 luglio. È una conferma della manifestazione, non un bando o una prova di ammissione di banchi esterni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Luras",
+    "name": "Luras in Fabula – Mini Fiera del Libro",
+    "months": [
+      10
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.insardegnacondani.it/eventi/sagre-weekend-sardegna-16-18-ottobre-2026/",
+      "label": "insardegnacondani.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.insardegnacondani.it/eventi/sagre-weekend-sardegna-16-18-ottobre-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-16",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.insardegnacondani.it/eventi/sagre-weekend-sardegna-16-18-ottobre-2026/"
+      }
+    ],
+    "venue": "Spazio espositivo di via Nazionale, fronte Poste",
+    "sectors": "Libri ed editoria",
+    "summary": "Manifestazione dedicata a libri ed editoria.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte editoriale con programma e vendita di libri nello spazio della fiera. Manifestazione curata con librerie e biblioteca: non sono documentati spazi disponibili per altri venditori né prezzi degli stand. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Monti",
+    "name": "Monti Produce e Artigiani di Sardegna",
+    "months": [
+      7
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.galluraoggi.it/eventi-gallura/monti-celebra-le-eccellenze-del-territorio-con-monti-produce-17-luglio-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/eventi-gallura/monti-celebra-le-eccellenze-del-territorio-con-monti-produce-17-luglio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-26",
+        "end": "2026-07-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/eventi-gallura/monti-celebra-le-eccellenze-del-territorio-con-monti-produce-17-luglio-2026/"
+      }
+    ],
+    "venue": "Centro storico",
+    "sectors": "Produzioni agroalimentari e artigianato sardo",
+    "summary": "Manifestazione dedicata a produzioni agroalimentari e artigianato sardo.",
+    "participation": {
+      "type": "selected",
+      "note": "Stand espositivi domenica 26 luglio dalle 18:00. Il 25 è presentazione alla stampa, esclusa dai giorni di banco. XVIII Monti Produce e X Artigiani di Sardegna sono un’unica manifestazione con due componenti. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Comune e Pro Loco di Monti"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Monti",
+    "name": "Fiera del Miele e del Miele Amaro",
+    "months": [
+      8
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://cittadelmiele.it/eventi-citta-del-miele/",
+      "label": "cittadelmiele.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://cittadelmiele.it/eventi-citta-del-miele/",
+      "https://www.lanuovasardegna.it/olbia/cronaca/2026/07/31/news/monti-tutto-pronto-per-la-storica-sagra-del-vermentino-attesi-migliaia-di-visitatori-1.100901694"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-02",
+        "end": "2026-08-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://cittadelmiele.it/eventi-citta-del-miele/"
+      }
+    ],
+    "venue": "Monti, Casa del Miele e spazi della fiera",
+    "sectors": "Miele e prodotti dell’alveare",
+    "summary": "Manifestazione dedicata a miele e prodotti dell’alveare.",
+    "participation": {
+      "type": "selected",
+      "note": "Calendario nazionale Città del Miele: 2 agosto 2026. Convegno al mattino e stand nel pomeriggio secondo cronaca locale; distinta dalla Sagra del Vermentino nella stessa giornata. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Pro Loco di Monti"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Monti",
+    "name": "Sagra del Vermentino",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.lanuovasardegna.it/olbia/cronaca/2026/07/31/news/monti-tutto-pronto-per-la-storica-sagra-del-vermentino-attesi-migliaia-di-visitatori-1.100901694",
+      "label": "lanuovasardegna.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.lanuovasardegna.it/olbia/cronaca/2026/07/31/news/monti-tutto-pronto-per-la-storica-sagra-del-vermentino-attesi-migliaia-di-visitatori-1.100901694"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-02",
+        "end": "2026-08-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.lanuovasardegna.it/olbia/cronaca/2026/07/31/news/monti-tutto-pronto-per-la-storica-sagra-del-vermentino-attesi-migliaia-di-visitatori-1.100901694"
+      }
+    ],
+    "venue": "Cantina del Vermentino",
+    "sectors": "Vino e prodotti gastronomici locali",
+    "summary": "Manifestazione dedicata a vino e prodotti gastronomici locali.",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione 2026 con apertura alle 19:00, degustazioni della cantina e prodotti tipici. Distinta dalla fiera del miele: la partecipazione come produttore o venditore esterno va concordata, non è una spunta pubblica. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    },
+    "organizer": "Cantina del Vermentino di Monti"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Oschiri",
+    "name": "Sagra della Panada",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraturismo.eu/en/evento/sagra-della-panada-2026-24a-edizione/",
+      "label": "galluraturismo.eu",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraturismo.eu/en/evento/sagra-della-panada-2026-24a-edizione/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraturismo.eu/en/evento/sagra-della-panada-2026-24a-edizione/"
+      }
+    ],
+    "venue": "Centro storico, corso Umberto I",
+    "sectors": "Panadas, prodotti del territorio e stand gastronomici",
+    "summary": "Manifestazione dedicata a panadas, prodotti del territorio e stand gastronomici.",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione 2026: apertura stand alle 18:30 del 25 luglio nel programma riportato dal portale territoriale. La degustazione gratuita al pubblico non significa posto gratuito per gli espositori; non si usa il generico mese di agosto della scheda regionale. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Palau",
+    "name": "Mercatino Estivo Serale di Valorizzazione Territoriale",
+    "months": [
+      6,
+      10
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://trasparenza.palau.it/L190/atto/download/553417?search=&idSezione=385&activePage=&sort=",
+      "label": "trasparenza.palau.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://trasparenza.palau.it/L190/atto/download/553417?search=&idSezione=385&activePage=&sort=",
+      "https://comune.palau.ss.it/notizie/3646672/mercatino-estivo-serale-anche-consiglio-stato"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-01",
+        "end": "2026-10-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://trasparenza.palau.it/L190/atto/download/553417?search=&idSezione=385&activePage=&sort="
+      }
+    ],
+    "venue": "Via Nazionale, tratto iniziale di via Capo d’Orso e piazza Fresi",
+    "sectors": "Artigianato, tipicità e agroalimentare",
+    "summary": "Manifestazione dedicata a artigianato, tipicità e agroalimentare.",
+    "participation": {
+      "type": "selected",
+      "note": "Bando 2026: 43 stalli, selezione qualitativa, ripartizione 70% artigianato e 30% agroalimentare, domande entro 26 maggio ore 12. Nuova disciplina stagionale; non si applica la spunta del mercato ordinario. Provvedimenti cautelari successivi consentono la prosecuzione, senza decisione definitiva di merito. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio.",
+      "deadline": "2026-05-26",
+      "deadlineLabel": "Entro le ore 12:00."
+    },
+    "organizer": "Comune di Palau"
+  },
+  {
+    "region": "Sardegna",
+    "city": "San Teodoro",
+    "name": "Mercatino Arti e Mestieri",
+    "months": [
+      3,
+      4
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://santeodoroturismo.it/mercatino-arti-e-mestieri-2026/",
+      "label": "santeodoroturismo.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://santeodoroturismo.it/mercatino-arti-e-mestieri-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-28",
+        "end": "2026-03-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://santeodoroturismo.it/mercatino-arti-e-mestieri-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-03-29",
+        "end": "2026-03-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://santeodoroturismo.it/mercatino-arti-e-mestieri-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-04-04",
+        "end": "2026-04-04",
+        "dateType": "confirmed",
+        "sourceUrl": "https://santeodoroturismo.it/mercatino-arti-e-mestieri-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-04-05",
+        "end": "2026-04-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://santeodoroturismo.it/mercatino-arti-e-mestieri-2026/"
+      },
+      {
+        "year": 2026,
+        "start": "2026-04-06",
+        "end": "2026-04-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://santeodoroturismo.it/mercatino-arti-e-mestieri-2026/"
+      }
+    ],
+    "venue": "Piazze del centro",
+    "sectors": "Manufatti e artigianato locale",
+    "summary": "Manifestazione dedicata a manufatti e artigianato locale.",
+    "participation": {
+      "type": "selected",
+      "note": "Prime cinque giornate esplicite, dalle 15:30. L’Ufficio turistico annuncia poi tutti i fine settimana senza termine finale: mantenuto testuale, senza calcolare altri giorni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "San Teodoro",
+    "name": "Mercatino Serale Coclearia",
+    "months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.santeodorovacanza.com/eventi/mercatino-coclearia/",
+      "label": "santeodorovacanza.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.santeodorovacanza.com/eventi/mercatino-coclearia/",
+      "https://comune.santeodoro.ss.it/it/news/bando-comunale-per-lassegnazione-temporanea-di-12-posteggi-nel-mercatino-serale-hobbisti-e-creativi-edizione-2026"
+    ],
+    "editions": [],
+    "venue": "Vie Sardegna, dei Gerani, piazza Gallura e centro cittadino",
+    "sectors": "Abbigliamento, saponi, accessori, benessere, souvenir, bigiotteria e manufatti",
+    "summary": "Manifestazione dedicata a abbigliamento, saponi, accessori, benessere, souvenir, bigiotteria e manufatti.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte ricettiva descrittiva: periodo usuale giugno–settembre, 20:00–02:00 circa, senza annualità. La graduatoria comunale 2026 per 12 hobbisti/creativi è un comparto specifico e non prova ammissione degli ambulanti a tutta Coclearia. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "San Teodoro",
+    "name": "Artigiani sotto le Stelle – Puntaldia",
+    "months": [
+      7,
+      8
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://i0.wp.com/www.mambotangohandmade.com/wp-content/uploads/2026/06/Locandina-Mercato-artigianato-itinerante-Sardegna-Porto-San-paolo-Olbia-Estate-2026.jpg?resize=721%2C1024&ssl=1",
+      "label": "i0.wp.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://i0.wp.com/www.mambotangohandmade.com/wp-content/uploads/2026/06/Locandina-Mercato-artigianato-itinerante-Sardegna-Porto-San-paolo-Olbia-Estate-2026.jpg?resize=721%2C1024&ssl=1",
+      "https://www.comune.santeodoro.ss.it/it/page/puntaldia"
+    ],
+    "editions": [],
+    "venue": "Darsena di Puntaldia",
+    "sectors": "Oreficeria, cuoio, tessuti, ceramica, legno, vetro e manufatti artigianali",
+    "summary": "Manifestazione dedicata a oreficeria, cuoio, tessuti, ceramica, legno, vetro e manufatti artigianali.",
+    "participation": {
+      "type": "selected",
+      "note": "Locandina dell’esposizione itinerante: domenica a Puntaldia, luglio e agosto, 20:00–24:00. Non stampa un anno o un elenco di date: ricorrenza testuale senza nuove giornate calcolate. Puntaldia appartiene a San Teodoro, distinta da Porto San Paolo. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sant'Antonio di Gallura",
+    "name": "Sagra delle Seadas",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-10",
+        "end": "2026-07-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+      }
+    ],
+    "venue": "Sant’Antonio di Gallura",
+    "sectors": "Gastronomia tradizionale gallurese",
+    "summary": "Manifestazione dedicata a gastronomia tradizionale gallurese.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata del calendario estivo 2026 riportata dalla cronaca con dichiarazioni dell’amministrazione. Organizzazione delle associazioni locali: non è documentato un bando per commercianti esterni o una quota espositiva. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sant'Antonio di Gallura",
+    "name": "Sagra delle Cozze di Priatu",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-11",
+        "end": "2026-07-11",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+      }
+    ],
+    "venue": "Priatu",
+    "sectors": "Gastronomia tradizionale gallurese",
+    "summary": "Manifestazione dedicata a gastronomia tradizionale gallurese.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata del calendario estivo 2026 riportata dalla cronaca con dichiarazioni dell’amministrazione. Organizzazione delle associazioni locali: non è documentato un bando per commercianti esterni o una quota espositiva. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sant'Antonio di Gallura",
+    "name": "Sagra Estiva della Grucitta",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-30",
+        "end": "2026-07-30",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+      }
+    ],
+    "venue": "Sant’Antonio di Gallura",
+    "sectors": "Gastronomia tradizionale gallurese",
+    "summary": "Manifestazione dedicata a gastronomia tradizionale gallurese.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata del calendario estivo 2026 riportata dalla cronaca con dichiarazioni dell’amministrazione. Organizzazione delle associazioni locali: non è documentato un bando per commercianti esterni o una quota espositiva. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sant'Antonio di Gallura",
+    "name": "Chjiusunata",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+      }
+    ],
+    "venue": "Sant’Antonio di Gallura",
+    "sectors": "Gastronomia tradizionale gallurese",
+    "summary": "Manifestazione dedicata a gastronomia tradizionale gallurese.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata del calendario estivo 2026 riportata dalla cronaca con dichiarazioni dell’amministrazione. Organizzazione delle associazioni locali: non è documentato un bando per commercianti esterni o una quota espositiva. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sant'Antonio di Gallura",
+    "name": "Sagra delle Frittelle",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/",
+      "label": "galluraoggi.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-06",
+        "end": "2026-08-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraoggi.it/sant-antonio-di-gallura/estate-2026-sant-antonio-di-gallura-9-luglio-2026/"
+      }
+    ],
+    "venue": "Sant’Antonio di Gallura",
+    "sectors": "Gastronomia tradizionale gallurese",
+    "summary": "Manifestazione dedicata a gastronomia tradizionale gallurese.",
+    "participation": {
+      "type": "selected",
+      "note": "Giornata del calendario estivo 2026 riportata dalla cronaca con dichiarazioni dell’amministrazione. Organizzazione delle associazioni locali: non è documentato un bando per commercianti esterni o una quota espositiva. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Sant'Antonio di Gallura",
+    "name": "Bruttea in Carrera",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.galluraturismo.eu/en/evento/bruttea-in-carrera-2026/",
+      "label": "galluraturismo.eu",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.galluraturismo.eu/en/evento/bruttea-in-carrera-2026/",
+      "https://www.galluraoggi.it/eventi-gallura/sant-antonio-di-gallura-estemporanea-di-pittura-26-agosto-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-06",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.galluraturismo.eu/en/evento/bruttea-in-carrera-2026/"
+      }
+    ],
+    "venue": "Vie e piazze del centro",
+    "sectors": "Enogastronomia, artigianato e mercato in strada",
+    "summary": "Manifestazione dedicata a enogastronomia, artigianato e mercato in strada.",
+    "participation": {
+      "type": "selected",
+      "note": "Edizione 2026 del portale territoriale, corroborata dalla notizia comunale sull’estemporanea. Il concorso di pittura del 5 non è un bando per banchi; non annualizzare il successivo intervallo generico 2027. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Santa Teresa Gallura",
+    "name": "P.I.G. – Festival Enogastronomico",
+    "months": [
+      5,
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.santateresagalluraturismo.com/news/p-i-g-2026-viii-edizione/",
+      "label": "santateresagalluraturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.santateresagalluraturismo.com/news/p-i-g-2026-viii-edizione/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-30",
+        "end": "2026-06-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.santateresagalluraturismo.com/news/p-i-g-2026-viii-edizione/"
+      }
+    ],
+    "venue": "Piazza della Libertà",
+    "sectors": "Cibo tradizionale, birrifici artigianali e cantine",
+    "summary": "Manifestazione dedicata a cibo tradizionale, birrifici artigianali e cantine.",
+    "participation": {
+      "type": "selected",
+      "note": "Tre giornate con percorso enogastronomico dalle 11:00; il calendario specifico 2026 prevale sul generico richiamo al Primo Maggio. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Santa Teresa Gallura",
+    "name": "Sapori e Sensazioni sulle Bocche",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.santateresagalluraturismo.com/news/sapori-e-sensazioni-dulle-bocche/",
+      "label": "santateresagalluraturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.santateresagalluraturismo.com/news/sapori-e-sensazioni-dulle-bocche/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-01",
+        "end": "2026-05-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.santateresagalluraturismo.com/news/sapori-e-sensazioni-dulle-bocche/"
+      }
+    ],
+    "venue": "Piazza Vittorio Emanuele I",
+    "sectors": "Prodotti tipici, enogastronomia e arte locale",
+    "summary": "Manifestazione dedicata a prodotti tipici, enogastronomia e arte locale.",
+    "participation": {
+      "type": "selected",
+      "note": "Evento 1–2 maggio documentato dall’Ufficio turistico, distinto dal P.I.G. del 30 maggio–1 giugno: non si duplicano i due programmi. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Santa Teresa Gallura",
+    "name": "Sagra del Pesce",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://welcometosantateresagallura.com/evento/sagra-del-pesce-2026/",
+      "label": "welcometosantateresagallura.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://welcometosantateresagallura.com/evento/sagra-del-pesce-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-25",
+        "dateType": "confirmed",
+        "sourceUrl": "https://welcometosantateresagallura.com/evento/sagra-del-pesce-2026/"
+      }
+    ],
+    "venue": "Porto Turistico",
+    "sectors": "Pesce e prodotti gastronomici del territorio",
+    "summary": "Manifestazione dedicata a pesce e prodotti gastronomici del territorio.",
+    "participation": {
+      "type": "selected",
+      "note": "Programma della Pro Loco: percorso enogastronomico dalle 19:00. Selezione e condizioni dei banchi non sono pubblicate nella pagina. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Santa Teresa Gallura",
+    "name": "Sagra di li Pulicioni",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.santateresagalluraturismo.com/news/sagra-di-li-pulicioni/",
+      "label": "santateresagalluraturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.santateresagalluraturismo.com/news/sagra-di-li-pulicioni/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-28",
+        "end": "2026-08-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.santateresagalluraturismo.com/news/sagra-di-li-pulicioni/"
+      }
+    ],
+    "venue": "Piazza Vittorio Emanuele I",
+    "sectors": "Pulicioni dolci alla lungunesa e gastronomia",
+    "summary": "Manifestazione dedicata a pulicioni dolci alla lungunesa e gastronomia.",
+    "participation": {
+      "type": "selected",
+      "note": "Evento dei Fidali ’82 con patrocinio comunale, dalle 19:30. Il programma riguarda la degustazione e la musica, senza bando per espositori esterni. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Santa Teresa Gallura",
+    "name": "Festival Eno-Gastronomico",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.santateresagalluraturismo.com/news/iv-festival-eno-gastronomico/",
+      "label": "santateresagalluraturismo.com",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.santateresagalluraturismo.com/news/iv-festival-eno-gastronomico/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-13",
+        "end": "2026-09-13",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.santateresagalluraturismo.com/news/iv-festival-eno-gastronomico/"
+      }
+    ],
+    "venue": "Piazza Vittorio Emanuele I",
+    "sectors": "Prodotti tipici, vino e gastronomia gallurese",
+    "summary": "Manifestazione dedicata a prodotti tipici, vino e gastronomia gallurese.",
+    "participation": {
+      "type": "selected",
+      "note": "Quarta edizione dalle 20:00, con show culinario fino alle 22:00. Collaborano associazioni professionali di cucina e sommelier; non è un mercato ad accesso libero. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Telti",
+    "name": "Sagra del Mirto",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/5185783/BANDO-per-l'assegnazione-posteggi--Sagra-del-mirto-2026.pdf",
+      "label": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://mycity.s3.sbg.io.cloud.ovh.net/5185783/BANDO-per-l'assegnazione-posteggi--Sagra-del-mirto-2026.pdf",
+      "https://saludetrigu.it/2026/08/sagra-del-mirto-di-telti-2026/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5185783/BANDO-per-l'assegnazione-posteggi--Sagra-del-mirto-2026.pdf"
+      }
+    ],
+    "venue": "Via e piazza Duomo, piazza Rinascita, vie Kennedy, Roma e Manzoni",
+    "sectors": "Mirto, pietanze galluresi e prodotti tipici sardi",
+    "summary": "Manifestazione dedicata a mirto, pietanze galluresi e prodotti tipici sardi.",
+    "participation": {
+      "type": "selected",
+      "note": "Bando 2026: 20 posteggi fuori mercato, domande 8–25 luglio. Somministrazione per tutti i tre giorni, massimo tre pietanze per operatore, regolarizzazione SUAPE e occupazione. I 20 stalli previsti non rappresentano disponibilità residua. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio.",
+      "deadline": "2026-07-25",
+      "deadlineLabel": "Domande dal 8 al 25 luglio 2026."
+    },
+    "organizer": "Comune e Pro Loco di Telti"
+  },
+  {
+    "region": "Sardegna",
+    "city": "Tempio Pausania",
+    "name": "Mercatino di Natale – Piazza Don Minzoni",
+    "months": [
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/4826710/Tempio---Bando.pdf",
+      "label": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://mycity.s3.sbg.io.cloud.ovh.net/4826710/Tempio---Bando.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-07",
+        "end": "2025-12-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/4826710/Tempio---Bando.pdf"
+      }
+    ],
+    "venue": "Piazza Don Minzoni",
+    "sectors": "Artigianato, produzioni proprie e prodotti alimentari",
+    "summary": "Manifestazione dedicata a artigianato, produzioni proprie e prodotti alimentari.",
+    "participation": {
+      "type": "selected",
+      "note": "Storico 2025: sette casette da 6 m², artigiani, produttori agricoli e opere dell’ingegno, domanda entro 1 dicembre ore 12. Esclusi prodotti seriali, souvenir e mero assemblaggio secondo bando. Aggiornamento pagina 2026 non rinnova l’edizione. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio.",
+      "deadline": "2025-12-01",
+      "deadlineLabel": "Entro le ore 12:00; storico 2025."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Tempio Pausania",
+    "name": "Mercatino di Natale di Bassacutena",
+    "months": [
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/4826712/Bassacutena---Bando.pdf",
+      "label": "mycity.s3.sbg.io.cloud.ovh.net",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://mycity.s3.sbg.io.cloud.ovh.net/4826712/Bassacutena---Bando.pdf"
+    ],
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-04",
+        "end": "2025-12-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/4826712/Bassacutena---Bando.pdf"
+      }
+    ],
+    "venue": "Bassacutena, vie Luogosanto ed Eleonora d’Arborea",
+    "sectors": "Artigianato, produzioni proprie e prodotti alimentari",
+    "summary": "Manifestazione dedicata a artigianato, produzioni proprie e prodotti alimentari.",
+    "participation": {
+      "type": "selected",
+      "note": "Storico 2025: 15 spazi da 6 m², domanda entro 26 novembre ore 12. Il bando cita anche commercianti su area pubblica nell’oggetto, mentre l’articolo requisiti elenca artigiani, opere dell’ingegno e produttori: chiedere conferma della propria categoria. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio.",
+      "deadline": "2025-11-26",
+      "deadlineLabel": "Entro le ore 12:00; storico 2025."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Tempio Pausania",
+    "name": "Calici di Stelle",
+    "months": [
+      8
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://www.lanuovasardegna.it/olbia/cronaca/2026/08/05/news/a-tempio-31-anni-di-calici-di-stelle-in-vetrina-i-vini-di-tredici-cantine-1.100903202",
+      "label": "lanuovasardegna.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://www.lanuovasardegna.it/olbia/cronaca/2026/08/05/news/a-tempio-31-anni-di-calici-di-stelle-in-vetrina-i-vini-di-tredici-cantine-1.100903202"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.lanuovasardegna.it/olbia/cronaca/2026/08/05/news/a-tempio-31-anni-di-calici-di-stelle-in-vetrina-i-vini-di-tredici-cantine-1.100903202"
+      }
+    ],
+    "venue": "Chiostro degli Scolopi",
+    "sectors": "Vini delle cantine del territorio",
+    "summary": "Manifestazione dedicata a vini delle cantine del territorio.",
+    "participation": {
+      "type": "selected",
+      "note": "Fonte giornalistica 2026: percorso del gusto con cantine ed esperti ONAV dalle 20:00 del 7 agosto. Selezione del comparto vino, senza ammissione documentata di banchi generici. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
+  },
+  {
+    "region": "Sardegna",
+    "city": "Trinità d'Agultu e Vignola",
+    "name": "Mercatini d’Estate",
+    "months": [
+      7
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://festeinpaese.it/eventi/mercatini-destate-2026-trinita-dagultu-e-vignola/",
+      "label": "festeinpaese.it",
+      "checkedAt": "2026-10-29"
+    },
+    "sourceRecordIds": [
+      "https://festeinpaese.it/eventi/mercatini-destate-2026-trinita-dagultu-e-vignola/"
+    ],
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-09",
+        "end": "2026-07-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://festeinpaese.it/eventi/mercatini-destate-2026-trinita-dagultu-e-vignola/"
+      }
+    ],
+    "venue": "Trinità d’Agultu e Vignola",
+    "sectors": "Esposizione e vendita nei mercatini estivi",
+    "summary": "Manifestazione dedicata a esposizione e vendita nei mercatini estivi.",
+    "participation": {
+      "type": "selected",
+      "note": "Portale per espositori: appuntamento del 9 luglio 2026 dalle 19:30, attribuito al Comune. La candidatura sul portale non è un’ammissione. Non confondere con la Fiera serale di Isola Rossa, il cui bando oggi non è accessibile. Verifica con l’organizzazione requisiti, selezione, costi e disponibilità: il programma non assegna un posteggio."
+    }
   }
 ]

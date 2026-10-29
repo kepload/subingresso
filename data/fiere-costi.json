@@ -2510,6 +2510,51 @@
       "sourceUrl": "https://www.comune.sennori.ss.it/novita/calendario-presentazione-domande-per-richiesta-occupazione-suolo-pubblico-eventi-2026/",
       "checkedAt": "2026-10-29",
       "review": "provincial-original-review"
+    },
+    "sardegna-budoni-mercato-serale-estivo-di-budoni-e-porto-ottiolu": {
+      "label": "2025: gazebo e canone da 310 € al mese",
+      "details": "Listino comunale 2025: un gazebo 3×3 m, noleggio 256/353/439 € per 1/2/3 mesi più canone 54/107/161 €, totali 310/460/600 €. Cauzione 250 € separata. Due gazebo: totali 619/921/1.200 €, cauzione 500 €. Noleggio giornaliero 25 € per un gazebo e 50 € per due, senza totale giornaliero comprensivo di canone. IVA, energia e altri servizi non precisati; non è un listino 2026.",
+      "kind": "partial",
+      "period": "2025",
+      "sourceUrl": "https://comune.budoni.ss.it/notizie/3400394/richiesta-partecipazione-mercato-serale-estivo",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-la-maddalena-mercato-serale-estivo": {
+      "label": "2026: 25 € di diritti, altri oneri da verificare",
+      "details": "Bando estate 2026, pagina 4: ricevuta di 25 € per diritti di segreteria da allegare alla domanda. Non è il totale del posteggio: canone, eventuali ulteriori oneri, IVA e servizi non sono quantificati nel bando letto. Numero degli stalli e graduatoria non provano disponibilità attuale.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://comune.lamaddalena.ot.it/media/acfupload/MERCATO_ESTIVO_E_SPETTACOLI_VIAGGIANTI_ESTATE_2026_-_BANDO.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-la-maddalena-mercatino-multietnico-diurno": {
+      "label": "2026: 25 € di diritti, altri oneri da verificare",
+      "details": "Bando estate 2026, pagina 4: ricevuta di 25 € per diritti di segreteria da allegare alla domanda. Non è il totale del posteggio: canone, eventuali ulteriori oneri, IVA e servizi non sono quantificati nel bando letto. Numero degli stalli e graduatoria non provano disponibilità attuale.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://comune.lamaddalena.ot.it/media/acfupload/MERCATO_ESTIVO_E_SPETTACOLI_VIAGGIANTI_ESTATE_2026_-_BANDO.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-la-maddalena-mercatino-di-natale": {
+      "label": "2026/27: bollo 16 € più canone giornaliero",
+      "details": "Bando Natale 2026: bollo di 16 € sulla domanda, oltre al canone di concessione su tariffazione giornaliera non quantificata nel documento. Allestimento natalizio e pulizia a carico dell’espositore; tavolo massimo 1×2 m. IVA ed energia non precisate. I 16 € non sono il costo totale dello stallo.",
+      "kind": "partial",
+      "period": "2026/2027",
+      "sourceUrl": "https://comune.lamaddalena.ot.it/media/acfupload/Bando_Mercatino_di_Natale_2026.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
+    },
+    "sardegna-telti-sagra-del-mirto": {
+      "label": "2026: iscrizione 500 €, altri oneri separati",
+      "details": "Bando Mirto 2026, pagina 2: quota di iscrizione di 500 € a favore della Pro Loco per le spese di gestione. Domanda in bollo e richiesta di occupazione del suolo; importo del bollo e canone non quantificati nel bando. IVA, energia, acqua e allestimenti inclusi non precisati. Non è un preventivo totale; prescritte strutture e dotazioni idonee a carico degli operatori.",
+      "kind": "partial",
+      "period": "2026",
+      "sourceUrl": "https://mycity.s3.sbg.io.cloud.ovh.net/5185783/BANDO-per-l'assegnazione-posteggi--Sagra-del-mirto-2026.pdf",
+      "checkedAt": "2026-10-29",
+      "review": "provincial-original-review"
     }
   }
 }
