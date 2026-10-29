@@ -1,5 +1,15 @@
 # Calendario fiere — fonti e aggiornamento
 
+## Ragusa — ricerca e pubblicazione, 29 ottobre 2026
+
+**Ricerca attuale conclusa con limiti, pubblicata e verificata online.** Audit `data/fiere-ragusa.json`: **52 schede nei 12 comuni**, ricognizione nominale completa dei comuni; 49 aggiunte e tre ID conservati. Dossier `.local/ricerche/fiere-ragusa-20261029`: 482 ricevute tecniche, non altrettante letture; 471 file verificati SHA256, comprese risposte di errore; 279 ricevute pubbliche. Originali/PDF pertinenti letti, locandine e tabelle controllate visivamente; albi 500/interfacce vuote e recuperi TLS/HTTP documentati, senza dedurre assenza di eventi.
+
+**Cinque sintesi economiche**, con anno, IVA, servizi e limiti: Scacciapensieri e Formaggi gratuità della postazione; Pizza al Taglio 20 € di suolo; Pozzallo circa 59,28 € IVA inclusa di sicurezza più CUP; Ibla Natale storico 2025/26, 600/700/900 € + IVA, cauzione separata e 1 kW. Saldo Ibla 2026 nell’avviso contro 2025 nel modulo esplicito. Pozzallo: ordinanza successiva alla Capitaneria, 25 giugno solo smontaggio. Chocomodica 2026 rinviata senza giorni attivi; quattro schede solo storiche e quattordici senza edizione. Ricorrenze, date editoriali, bandi e ammissione distinti; nessuna disponibilità promessa. Manutenzione futura separata.
+
+Dati `c4518e1`, [Vercel completato](https://vercel.com/kycykuardit-9234s-projects/subingresso/EC6HHKEgqYdtMjLb7pPAFqJZBZMM): sei asset identici ai blob Git e **52 pagine HTTP 200** con canonical, partecipazione e costi. `PLAYWRIGHT_MODULE`: Chromium 1440/320 e WebKit 390 locali/live, tutti i 52 dettagli e cinque prezzi, elenco/mappa e sei pagine senza JS per formato; pagina reale con font/icone e scritture intercettate. Build ripetibile, generale cinque formati, settori, 8.578 pagine/3.741 sitemap e gitleaks passati. Altre 8.526 schede, 982 fonti editoriali e 348 prezzi precedenti invariati; cache JS137/JSON104.
+
+Spuntata esclusivamente **casella 75 dopo le prove live: 82 concluse/28 aperte su 110**, contando le province uniche, comprese otto già concluse fuori numerazione. Pavia, controller, altre province e file estranei preservati.
+
 ## Messina — ricerca e pubblicazione, 29 ottobre 2026
 
 **Ricerca attuale conclusa con limiti, pubblicata e verificata online.** Audit `data/fiere-messina.json`: **142 schede in 67 comuni**, ricognizione nominale di tutti i **108 comuni**, 141 aggiunte e ID storico Sant’Agata conservato. Dossier `.local/ricerche/fiere-messina-20261029`: 1.213 ricevute tecniche, non altrettante letture; 1.182 file HTTP verificati SHA256 (anche pagine di errore), 496 ricevute pubbliche.
