@@ -12,6 +12,12 @@ generalizzato. Contratto completo in `data/FIERE.md`; GSC e limiti in
 `data/SEARCH_CONSOLE.md`, prove private nel dossier `seo-fiere-20261031`.
 Backup sessione e ramo remoto verificati; noto errore cleanup dell’helper dopo
 tag riuscito. Modifiche estranee (temp Supabase, PDF e pycache) preservate.
+Pubblicato `0f882a0`, Vercel READY `dpl_HXneRZpMvGcBjGUr7c3wRsGMJagy`;
+30pagine, quattroasset Git, redirect e sitemap4.827URL verificati. Suite
+catalogo/pagine/accesso/salvataggi e noJS passate. **Reinvio sitemap GSC negato
+HTTP403**: account non autorizzato, nessun permesso modificato; reinvio manuale
+da proprietario/utente completo ancora necessario. Richiesta singola di
+indicizzazione non disponibile nell’API usata. Nessuna promessa di indicizzazione.
 
 ## Search Console diretto, senza intermediari — 30 ottobre 2026
 

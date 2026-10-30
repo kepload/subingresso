@@ -23,8 +23,16 @@ vecchio `indexed=0` non è una misura corrente del catalogo. Prove private:
 
 La normale CLI rimane in sola lettura. Il reinvio esplicitamente autorizzato
 usa un’operazione locale una tantum con scope sitemap in scrittura, senza
-conservare token o cambiare utenti/ruoli Google. Esito da registrare dopo verifica
-della sitemap pubblicata. Le API URL Inspection consultano lo stato ma non
+conservare token o cambiare utenti/ruoli Google. **Reinvio tentato il 31 ottobre
+alle 00:25 Europe/Rome: HTTP403, non eseguito.** Account non autorizzato
+all’operazione; nessun ruolo modificato. Il rilevamento GSC successivo conserva
+le date di aprile e i 42 URL storici. Il proprietario/un utente completo deve
+reinviare `https://subingresso.it/sitemap.xml` dall’interfaccia Search Console.
+La sitemap pubblicata e verificata contiene ora **4.827 URL**, di cui 4.322
+schede, tre raccolte regionali, elenco e calendario fiere. 30 pagine controllate
+online, canonical/robots corretti e quattro redirect308; quattro asset identici
+ai blob del commit `0f882a0`. Prove `live-http.json` e `submission.json`.
+Le API URL Inspection consultano lo stato ma non
 offrono il comando «Richiedi indicizzazione»: serve l’interfaccia Google con
 accesso completo/proprietario. Nessuna Indexing API impropria per le fiere,
 nessuna richiesta dichiarata eseguita e nessuna garanzia di acquisizione.

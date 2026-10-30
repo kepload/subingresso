@@ -42,6 +42,14 @@ dossier privato `.local/ricerche/seo-fiere-20261031/` con audit iniziale,
 aggiornamento GSC, campione stratificato, screenshot e verifiche pubblicazione.
 Esiti Google e limiti operativi nel contratto `data/SEARCH_CONSOLE.md`.
 
+Pubblicato `0f882a0`, Vercel READY `dpl_HXneRZpMvGcBjGUr7c3wRsGMJagy`:
+30 pagine HTTP200 con canonical/robots verificati, tre raccolte e pagine2,
+quattro asset identici ai blob Git, redirect308 per HTML/www/http/slash.
+Sitemap4.827URL con tutte e sole le4.322schede ammissibili, più tre territori.
+Tutte le suite sopra passate; salvataggi/promemoria in quattro formati con
+scritture ed email simulate. Reinvio GSC tentato ma negato HTTP403: nessuna
+acquisizione o richiesta singola d’indicizzazione dichiarata eseguita.
+
 ## Enna — ricerca documentale, 30 ottobre 2026
 
 **Ricerca accessibile attuale conclusa con limiti, pubblicata e verificata online.** Audit `data/fiere-enna.json`: **37 schede nei 20 comuni**, tutte nuove; una sintesi economica. Dossier `.local/ricerche/fiere-enna-20261030`: 120 acquisizioni tecniche con originali SHA256 verificati, non altrettante letture integrali. Ricognizione nominale dei comuni, letture mirate di calendari e organizzatori, otto pagine dell’indice provinciale editoriale e repertorio ACI. Non censimento certificato né consultazione integrale di ogni albo; fonti editoriali e repertori datati dichiarati.
