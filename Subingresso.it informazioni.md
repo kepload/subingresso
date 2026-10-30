@@ -1,5 +1,12 @@
 # Subingresso.it — informazioni e TO DO
 
+## Enna — singola provincia pubblicata e verificata, 30 ottobre 2026
+
+- **37 nuove schede nei20comuni**, una sintesi economica; ricerca accessibile attuale conclusa con limiti, storico e mesi usuali separati dalle date correnti. Audit `data/fiere-enna.json`, fonti/esclusioni `data/FIERE.md`, originali/prove `.local/ricerche/fiere-enna-20261030`:120acquisizioni tecniche SHA256, non altrettante letture integrali. Nessun censimento certificato o posteggio promesso.
+- Dati `52125fb`, [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Kt4TwDECbwVn44KW6mLkjisMXRuw): cinque asset identici e **37pagine HTTP200** con canonical/partecipazione/costi. Chromium1440/320 e WebKit390 locali/live:37dettagli, elenco/mappa, costo e sei pagine senzaJS per formato; smoke reale font/icone e scritture intercettate passato. Generale cinqueformati, settori, build ripetibile e8.769pagine/3.753sitemap passati; gitleaks pulito. Primo browser live partito prima del deploy concluso, ripetuto dopo readiness.
+- Lavoro in checkout isolato; integrati entrambi i commit BAT prima del push. **Altre8.732schede e tariffe precedenti identiche, comprese48schede BAT**; pubblicazione attesa fino al termine delle sue prove live. CacheJS141/JSON108. Backup remoto tag213900 e ramo `backup/pre-fiere-enna-20261030` verificati; interrotto solo cleanuphelper noto.
+- Spuntata **solo casella98 dopo prove live:86concluse/24aperte su110**. Pavia, file estranei, controller e stop automatico preservati; nessuna ripresa ai rinnovi, altra provincia o comunicazione a terzi.
+
 ## Barletta-Andria-Trani — singola provincia pubblicata e verificata, 30 ottobre 2026
 
 - **48 nuove schede nei dieci comuni**, prima nessuna; **otto sintesi economiche**. Ricerca attuale conclusa con limiti espliciti; ricorrenze storiche, anni2025 e periodi annunciati distinti dalle date confermate. Audit `data/fiere-bat.json`, fonti/limiti `data/FIERE.md`, originali e prove `.local/ricerche/fiere-bat-20261030`.
@@ -3148,7 +3155,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 85 province completate, 25 da fare su 110**, aggiornate il 30 ottobre dopo Barletta-Andria-Trani, contando le caselle provinciali uniche. Ciclo automatico fermato su richiesta. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna 2026.
+**Ricerca approfondita: 86 province completate, 24 da fare su 110**, aggiornate il30ottobre dopo Enna, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3717,7 +3724,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [ ] **95. Vibo Valentia** — Calabria
 - [ ] **96. Crotone** — Calabria
 - [ ] **97. Caltanissetta** — Sicilia
-- [ ] **98. Enna** — Sicilia
+- [x] **98. Enna** — Sicilia — ricerca accessibile attuale conclusa con limiti: 37 schede nei20comuni, una sintesi economica; pubblicata e verificata online il30ottobre2026. Audit `data/fiere-enna.json` e prove nel dossier. Storico e ricorrenze distinti dalle date correnti.
 - [ ] **99. Ogliastra** — Sardegna
 - [ ] **100. Sulcis Iglesiente** — Sardegna
 - [ ] **101. Medio Campidano** — Sardegna

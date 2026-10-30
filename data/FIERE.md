@@ -2,7 +2,7 @@
 
 ## Enna — ricerca documentale, 30 ottobre 2026
 
-**Ricerca accessibile attuale conclusa con limiti; pubblicazione ancora da verificare.** Audit `data/fiere-enna.json`: **37 schede nei 20 comuni**, tutte nuove; una sintesi economica. Dossier `.local/ricerche/fiere-enna-20261030`: 120 acquisizioni tecniche con originali SHA256 verificati, non altrettante letture integrali. Ricognizione nominale dei comuni, letture mirate di calendari e organizzatori, otto pagine dell’indice provinciale editoriale e repertorio ACI. Non censimento certificato né consultazione integrale di ogni albo; fonti editoriali e repertori datati dichiarati.
+**Ricerca accessibile attuale conclusa con limiti, pubblicata e verificata online.** Audit `data/fiere-enna.json`: **37 schede nei 20 comuni**, tutte nuove; una sintesi economica. Dossier `.local/ricerche/fiere-enna-20261030`: 120 acquisizioni tecniche con originali SHA256 verificati, non altrettante letture integrali. Ricognizione nominale dei comuni, letture mirate di calendari e organizzatori, otto pagine dell’indice provinciale editoriale e repertorio ACI. Non censimento certificato né consultazione integrale di ogni albo; fonti editoriali e repertori datati dichiarati.
 
 Leonforte2026: 100€ OPI/associazioni,150€ scuole,200€ ordinari,350€ food con stand/luce/servizi/CUP;75€ senza noleggio nelle piazze ammesse; artisti autorizzati senza stand fino4m² gratuiti. IVA non indicata, termine28settembre ore12; prezzi di panini/musei non sono canoni. Pagina espositori2025 e allegati Troina2024 non sostituiscono bandi2026. AgriArt: gratuità del pubblico non estesa agli stand.
 
@@ -10,7 +10,7 @@ Cassatella13–15novembre2026 da ProLoco; PiazzaArmerina maggio30maggio–1giugn
 
 Nissoria: dettaglio avviso/allegato404 anche con alternative; nessuna quota o scadenza ricostruita. PDFValguarnera404; decretoPietraperzia letto via web ma non acquisito200, contributo all’organizzatore non è tariffa e non basta per una scheda operativa. Esclusi Ruralia ordinario, semplici processioni/concerti, distribuzioni, bandi ai gestori e piste senza mese documentato; esiti per comune nell’audit. Nessuna disponibilità promessa o contatto a terzi. Nuove edizioni, avvisi e riaperture documentali sono manutenzione futura.
 
-Checkout isolato `.local/worktrees/fiere-enna-20261030`; altre8.732schede e tariffe precedenti identiche, incluse le48schede BAT appena integrate. Pavia, controller, stop automatico e lavoro concorrente preservati. La casella98 resta aperta fino alle prove live.
+Checkout isolato `.local/worktrees/fiere-enna-20261030`; altre8.732schede e tariffe precedenti identiche, incluse le48schede BAT appena integrate. Pavia, controller, stop automatico e lavoro concorrente preservati. Dati `52125fb`, [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/Kt4TwDECbwVn44KW6mLkjisMXRuw): cinque asset identici ai blob Git,37pagine HTTP200/canonical/partecipazione/costi; Chromium1440/320 e WebKit390 locali/live, tutti37dettagli, elenco/mappa, tariffa e sei pagine senzaJS per formato. Smoke reale font/icone e scritture intercettate passato. Generale cinqueformati, settori, build ripetibile,8.769pagine/3.753sitemap e gitleaks passati. CacheJS141/JSON108. Spuntata solo casella98 dopo queste prove:86concluse/24aperte. Pubblicazione effettuata dopo le prove live BAT; nessun lavoro concorrente sovrascritto.
 
 ## Barletta-Andria-Trani — ricerca documentale, 30 ottobre 2026
 
