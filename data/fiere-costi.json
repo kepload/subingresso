@@ -3140,6 +3140,78 @@
       "period": "2026",
       "kind": "partial",
       "review": "original-document-review"
+    },
+    "puglia-andria-fiera-d-aprile": {
+      "label": "Canone 2026: 1,56–2,23 €/m² per categoria",
+      "details": "Canone 2026 comunicato dal Comune per le due fiere maggiori: 2,23 €/m² in prima categoria, 1,90 €/m² in seconda e 1,56 €/m² in terza. La pagina non precisa l’unità temporale, IVA o altri servizi: non è un totale per l’intera fiera; verificare categoria, durata e importo dovuto con l’ufficio.",
+      "sourceUrl": "https://comune.andria.bt.it/it/news/fiere-maggiori-ridotte-del-40-le-tariffe-per-le-occupazioni-temporanee-per-sostenere-le-attivita-e-rendere-le-manifestazioni-sempre-piu-attrattive",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
+    },
+    "puglia-andria-fiera-dei-santi-patroni": {
+      "label": "Canone 2026: 1,56–2,23 €/m² per categoria",
+      "details": "Canone 2026 comunicato dal Comune per le due fiere maggiori: 2,23 €/m² in prima categoria, 1,90 €/m² in seconda e 1,56 €/m² in terza. La pagina non precisa l’unità temporale, IVA o altri servizi: non è un totale per l’intera fiera; verificare categoria, durata e importo dovuto con l’ufficio.",
+      "sourceUrl": "https://comune.andria.bt.it/it/news/fiere-maggiori-ridotte-del-40-le-tariffe-per-le-occupazioni-temporanee-per-sostenere-le-attivita-e-rendere-le-manifestazioni-sempre-piu-attrattive",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
+    },
+    "puglia-barletta-fiera-della-festa-patronale": {
+      "label": "77 €: istruttoria dell’istanza unica",
+      "details": "Avviso 2026: 77 € di diritto di istruttoria per l’istanza unica relativa a Festa Patronale e/o Santa Lucia. Non è il canone del posteggio e non è 77 € per ciascuna festa. Suolo, servizi, eventuale bollo e altri oneri non quantificati nell’avviso.",
+      "sourceUrl": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
+    },
+    "puglia-barletta-fiera-di-sant-antonio": {
+      "label": "22 €: istruttoria per festa rionale",
+      "details": "Avviso 2026: 22 € di istruttoria per ogni festa rionale indicata nell’istanza unica delle altre feste, escluse patronale e Santa Lucia. Importo amministrativo, non totale del posteggio; suolo, servizi e altri oneri da verificare.",
+      "sourceUrl": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
+    },
+    "puglia-barletta-fiera-di-santa-lucia": {
+      "label": "77 €: istruttoria dell’istanza unica",
+      "details": "Avviso 2026: 77 € di diritto di istruttoria per l’istanza unica relativa a Festa Patronale e/o Santa Lucia. Non è il canone del posteggio e non è 77 € per ciascuna festa. Suolo, servizi, eventuale bollo e altri oneri non quantificati nell’avviso.",
+      "sourceUrl": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
+    },
+    "puglia-san-ferdinando-di-puglia-fiera-nazionale-del-carciofo-mediterraneo-e-del-prodotto-ortofrutticolo": {
+      "label": "250–1.000 € secondo tipo e dimensione dello spazio",
+      "details": "Modulo 2026, intera manifestazione: gazebo 4×4 m (16 m²) 550 €; tensostruttura 4×3 m (12 m²) 750 €; area espositiva libera 80/90/150 m² rispettivamente 640/720/1.000 €. Area commerciale libera 5×4 m (20 m²): generica 250 €, alimentare 300 €, «Track» 400 €. Quote comprendenti RCT obbligatoria, luce e vigilanza; potenza, acqua e IVA non specificate. Totale via PagoPA; nessuna somma tra alternative.",
+      "sourceUrl": "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/domanda-di-partecipazione-fiera-2026-2/",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
+    },
+    "puglia-trani-fiera-della-madonna-del-carmine": {
+      "label": "16 € di bollo; canone da verificare",
+      "details": "Bando 2026: domanda in carta da bollo da 16 €. Si tratta del costo amministrativo indicato, non del canone o del totale del posteggio. Tariffa suolo, IVA e servizi non quantificati nel bando letto.",
+      "sourceUrl": "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
+    },
+    "puglia-trani-fiera-di-san-nicola-il-pellegrino": {
+      "label": "16 € di bollo; canone da verificare",
+      "details": "Bando 2026: domanda in carta da bollo da 16 €. Si tratta del costo amministrativo indicato, non del canone o del totale del posteggio. Tariffa suolo, IVA e servizi non quantificati nel bando letto.",
+      "sourceUrl": "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
     }
   }
 }

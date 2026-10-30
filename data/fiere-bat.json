@@ -1,0 +1,2200 @@
+{
+  "province": "Barletta-Andria-Trani",
+  "checkedAt": "2026-10-30",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti",
+    "baselineCommit": "27d4a8920d01f69fdaf566e93a91d12857cccac8",
+    "privateArchive": ".local/ricerche/fiere-bat-20261030",
+    "statistics": {
+      "events": 48,
+      "municipalitiesCovered": 10,
+      "municipalitiesWithEvents": 10,
+      "baselineEvents": 0,
+      "addedEvents": 48,
+      "pricingSummaries": 8,
+      "technicalReceipts": 81,
+      "hashVerifiedOriginals": 80
+    },
+    "municipalities": [
+      {
+        "city": "Andria",
+        "eventCount": 8,
+        "events": [
+          "puglia-andria-fiera-d-aprile",
+          "puglia-andria-fiera-dei-santi-patroni",
+          "puglia-andria-fiera-dell-epifania",
+          "puglia-andria-fiera-della-vigilia-di-natale",
+          "puglia-andria-fiera-di-fine-anno",
+          "puglia-andria-fiera-promozionale-dell-antiquariato-e-dell-usato",
+          "puglia-andria-sagra-del-pane-della-bruschetta-e-dei-balli-popolari",
+          "puglia-andria-festa-della-zucca"
+        ],
+        "sources": [
+          "https://comune.andria.bt.it/it/news/fiere-maggiori-ridotte-del-40-le-tariffe-per-le-occupazioni-temporanee-per-sostenere-le-attivita-e-rendere-le-manifestazioni-sempre-piu-attrattive",
+          "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/234/allegati/regolamenti/regolamento-vendita-antiquariato.pdf",
+          "https://www.comune.andria.bt.it/index.php/it/news/2043418",
+          "https://www.comune.andria.bt.it/it/events/727825",
+          "https://www.comune.andria.bt.it/it/news/145040/torna-la-tradizionale-fiera-daprile-589esima-edizione",
+          "https://www.comune.andria.bt.it/it/news/1936773",
+          "https://www.comune.andria.bt.it/it/news/1940149",
+          "https://www.comune.andria.bt.it/it/news/2069771",
+          "https://www.comune.andria.bt.it/it/news/2071560"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "Fiere maggiori e riduzione canoni 2026 da Comune; nessun totale senza durata tariffaria. Epifania solo piano viabilità, Natale/fine anno solo 2025. Regolamento antiquario 2005 letto visivamente, non prova di attività 2026. Montegrosso attribuito ad Andria. Zucca rinviata al 7 novembre dalla notizia odierna. Avviso Radici del Natale riguarda progetti, non posteggi."
+      },
+      {
+        "city": "Barletta",
+        "eventCount": 4,
+        "events": [
+          "puglia-barletta-fiera-della-festa-patronale",
+          "puglia-barletta-fiera-di-sant-antonio",
+          "puglia-barletta-fiera-di-santa-lucia",
+          "puglia-barletta-fiera-dell-assunta"
+        ],
+        "sources": [
+          "https://www.barlettaviva.it/notizie/nasce-la-fiera-dell-assunta-a-barletta-un-ponte-tra-centro-storico-e-periferie/",
+          "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553",
+          "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a22a5dd973b657973486601",
+          "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a4d13299b5d787a7da2c89a"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "SUAP, portale nuovo renderizzato e tre PDF scansionati letti visivamente: orari patronale/Antonio e avviso annuale con istruttoria77/22 euro. Santa Lucia senza giornate inferite. Assunta da comunicato Pro Loco in stampa. Graduatorie nominative 2022 acquisite tecnicamente per le piste rionali, non lette integralmente né ripubblicate o usate per nuove date."
+      },
+      {
+        "city": "Bisceglie",
+        "eventCount": 12,
+        "events": [
+          "puglia-bisceglie-fiera-di-zappino",
+          "puglia-bisceglie-fiera-di-giano",
+          "puglia-bisceglie-fiera-di-san-lorenzo",
+          "puglia-bisceglie-fiera-di-sant-agostino",
+          "puglia-bisceglie-fiera-di-santa-maria-della-misericordia",
+          "puglia-bisceglie-fiera-di-madonna-di-passavia",
+          "puglia-bisceglie-fiera-di-sant-adoeno",
+          "puglia-bisceglie-fiera-dei-tre-santi-patroni",
+          "puglia-bisceglie-fiera-dell-addolorata",
+          "puglia-bisceglie-fiera-delle-autoproduzioni",
+          "puglia-bisceglie-bicomix-fiera-del-fumetto",
+          "puglia-bisceglie-calici-nel-borgo-antico"
+        ],
+        "sources": [
+          "https://bisceglie.news24.city/2026/09/09/festa-delladdolorata-ecco-il-piano-traffico-dal-13-al-16-settembre/",
+          "https://www.bisceglieviva.it/notizie/calici-nel-borgo-antico-torna-a-bisceglie-dal-6-all-8-novembre-tre-serate-tra-vini-pugliesi-gastronomia-e-musica/",
+          "https://www.bisceglieviva.it/notizie/domenica-13-settembre-torna-fiera-autoproduzioni/",
+          "https://www.bisceglieviva.it/notizie/successo-per-la-settima-edizione-del-bicomix/",
+          "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "Sette fiere tradizionali e Tre Santi da descrizione comunale, non date annuali. PDF DSC170pagine acquisito e sottoposto a ricerca mirata, non lettura integrale. Addolorata da cronaca viabilità con limite; errata sede Camping di aggregatore respinta. ARCI, BiComix e Calici da stampa locale; anteprime, concerti e mostre non moltiplicati in fiere."
+      },
+      {
+        "city": "Canosa di Puglia",
+        "eventCount": 6,
+        "events": [
+          "puglia-canosa-di-puglia-fiera-mercato-di-san-sabino",
+          "puglia-canosa-di-puglia-sagra-della-percoca-di-loconia",
+          "puglia-canosa-di-puglia-tipicamente-canosa",
+          "puglia-canosa-di-puglia-strascinando",
+          "puglia-canosa-di-puglia-sagra-della-sfogliatella",
+          "puglia-canosa-di-puglia-mercatini-di-natale-in-villa-comunale"
+        ],
+        "sources": [
+          "https://www.comune.canosa.bt.it/it/news/110978/il-mercato-settimanale-di-giovedi-30-luglio-2026-si-svolgera-presso-la-zona-167",
+          "https://www.comune.canosa.bt.it/it/news/1925316",
+          "https://www.comune.canosa.bt.it/it/news/2018385",
+          "https://www.comune.canosa.bt.it/it/news/2019762",
+          "https://www.comune.canosa.bt.it/it/news/2034468"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "San Sabino documentata nel comunicato sul mercato30luglio, senza intervallo commerciale ricostruito. Loconia distinta da Gaudiano/Lavello; tre sagre2026 e due eventi natalizi solo2025. Vecchio piano2008/2013 reperito via indice web ma hostwww2 non risolvibile direttamente: non adottati vecchi organici, procedure o fiere ulteriori senza calendario attuale."
+      },
+      {
+        "city": "Margherita di Savoia",
+        "eventCount": 3,
+        "events": [
+          "puglia-margherita-di-savoia-cipolla-in-festa",
+          "puglia-margherita-di-savoia-sagra-del-grano-cotto",
+          "puglia-margherita-di-savoia-mostra-mercato-estiva-del-modernariato-vintage-e-artigianato"
+        ],
+        "sources": [
+          "https://www.cosedicasa.com/mercatini/margherita-di-savoia",
+          "https://www.margheritaviva.it/notizie/un-chicco-di-grano-mille-storie-da-raccontare-a-margherita-torna-la-sagra-del-grano-cotto/",
+          "https://www.qualivita.it/news/cipolla-in-festa-conto-alla-rovescia-per-il-weekend-a-margherita-di-savoia/"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "Cipolla da comunicato Consorzio in Qualivita; Grano Cotto dal comunicato odierno in stampa. Mercatino estivo da fonte editoriale con ricorrenza e limiti; sito Pro Loco consultato senza riscontro puntuale. Sagra Mare/Sale e Aquiloni non inseriti senza prova commerciale sufficiente."
+      },
+      {
+        "city": "Minervino Murge",
+        "eventCount": 3,
+        "events": [
+          "puglia-minervino-murge-sagra-del-fungo-cardoncello",
+          "puglia-minervino-murge-sagra-del-panzerotto",
+          "puglia-minervino-murge-festa-dell-uva-e-del-vino"
+        ],
+        "sources": [
+          "https://www.caminvattin.it/event/a-minervino-murge-torna-la-sagra-del-panzerotto/",
+          "https://www.halleyweb.com/c110006/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5WpBeUT6QT0-A/provvedimenti/2/categoria/114",
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2409-cardoncello-on-the-road-minervino-murge-2026",
+          "https://www.minervinoviva.it/notizie/tra-sapori-tipici-e-tradizioni-grande-successo-a-minervino-per-la-festa-dell-uva-e-del-vino/"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "Cardoncello da comunicazione Pro Loco nel portale territoriale. Panzerotto da calendario locale e atto comunale che conferma evento realizzato, non prezzo banco. Uva da resoconto2026. Minervino di Lecce e Madonna Uragano esclusi per omonimia; feste religiose e Notte Bianca non automaticamente mercati."
+      },
+      {
+        "city": "San Ferdinando di Puglia",
+        "eventCount": 1,
+        "events": [
+          "puglia-san-ferdinando-di-puglia-fiera-nazionale-del-carciofo-mediterraneo-e-del-prodotto-ortofrutticolo"
+        ],
+        "sources": [
+          "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/",
+          "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/domanda-di-partecipazione-fiera-2026-2/"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "Comune e moduloDOC originale concordano19–22novembre2026; parsing effettivo dei piece-table Word, non stringhe binarie. Scadenza17novembre e prezzi/tipologie/servizi letti. Gli aggregatori8–9/12–15/13–16non prevalgono. Sagra Maiale senza prova locale e San FerdinandoRC esclusi."
+      },
+      {
+        "city": "Spinazzola",
+        "eventCount": 2,
+        "events": [
+          "puglia-spinazzola-sagra-del-fungo-cardoncello",
+          "puglia-spinazzola-festa-della-salsiccia-a-punta-di-coltello"
+        ],
+        "sources": [
+          "https://www.caminvattin.it/event/spinazzola-sagra-del-fungo-cardoncello-2026/",
+          "https://www.spinazzolaviva.it/notizie/festa-della-salsiccia-torna-a-spinazzola-appuntamento-il-4-e-5-settembre-nel-quartiere-san-vito/"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "Cardoncello7–8novembre da comunicato Pro Loco ripreso nel portale locale; Salsiccia4–5settembre in piazzaSanVito dal comunicato Comune/ProLoco. Calendario comunale e indice consultati; spettacoli non aggiunti come mercati e vecchie sedi non proiettate."
+      },
+      {
+        "city": "Trani",
+        "eventCount": 7,
+        "events": [
+          "puglia-trani-fiera-della-madonna-del-carmine",
+          "puglia-trani-fiera-di-san-nicola-il-pellegrino",
+          "puglia-trani-trani-nell-arte-mercatino-di-antiquariato-e-modernariato",
+          "puglia-trani-primavera-tranese-antichi-ricordi",
+          "puglia-trani-festa-del-cioccolato-artigianale",
+          "puglia-trani-mercatini-di-natale-le-vie-del-natale",
+          "puglia-trani-la-biblioteca-degli-oggetti-mercatino-dell-economia-circolare"
+        ],
+        "sources": [
+          "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf",
+          "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf",
+          "https://www.comune.trani.bt.it/it/news/136224/posteggi-temporanei-per-festa-del-carmine-e-san-nicola-proroga-scadenza",
+          "https://www.comune.trani.bt.it/it/news/le-vie-del-natale-tutti-gli-eventi-programmati-a-trani",
+          "https://www.traniviva.it/notizie/autunno-nell-arte-il-fascino-del-vintage-torna-in-piazza-della-repubblica-a-trani/",
+          "https://www.traniviva.it/notizie/trani-celebra-il-fascino-del-tempo-con-trani-nell-arte/",
+          "https://www.traniviva.it/notizie/trani-celebra-la-tradizione-torna-primavera-tranese-antichi-ricordi-il-19-aprile/",
+          "https://www.traniviva.it/notizie/trani-nell-arte-l-appuntamento-di-agosto-con-l-antiquariato-e-il-modernariato/",
+          "https://www.traniviva.it/notizie/trani-ospita-la-prima-edizione-della-festa-del-cioccolato-artigianale/"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "Avviso originale2026, modulo, planimetrie e proroga24giugno letti: Carmine16luglio e SanNicola1–3agosto, bollo16euro non canone. Mercatino estivo/autunnale consolidato senza duplicare eventi; Primavera distinto. Natale2025: manifesto visto con cinque giornate mercatini e tre EconomiaCircolare, non l’intero cartellone e non2026."
+      },
+      {
+        "city": "Trinitapoli",
+        "eventCount": 2,
+        "events": [
+          "puglia-trinitapoli-sagra-del-carciofo-violetto",
+          "puglia-trinitapoli-natale-a-trinitapoli-stand-gastronomici"
+        ],
+        "sources": [
+          "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Natale-a-Trinitapoli",
+          "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Sagra-del-carciofo",
+          "https://www.trinitapoliviva.it/notizie/sagra-del-carciofo-trinitapoli-avviso-per-la-costituzione-della-consulta-istituizonale/"
+        ],
+        "coverage": "Ricognizione nominale mirata con Comune/SUAP, organizzatori, fonti territoriali e stampa; non censimento esaustivo né lettura integrale di tutti gli albi.",
+        "outcome": "Calendario comunale gennaio2026 indica Carciofo27–29novembre e Natale20dicembre–6gennaio, periodi annunciati con rimando ai futuri dettagli: periodOnly. Consulta ottobre non selezione stand; delibera di rinvio istituzionalizzazione agosto non annullamento della sagra. Date degli aggregatori non usate."
+      }
+    ],
+    "exclusions": [
+      {
+        "candidate": "Mercati settimanali, straordinari e fuori mercato stagionali",
+        "reason": "Barletta25aprile, Canosa30luglio/zona167 e Trani concessioni60giorni sono mercati ordinari o posteggi diffusi, non nuove fiere."
+      },
+      {
+        "candidate": "Partecipazioni a fiere di Bari/Gravina/Milano",
+        "reason": "La presenza istituzionale di città BAT non trasferisce in provincia Evolio, SanGiorgio, BIT o Cersaie."
+      },
+      {
+        "candidate": "Barletta rionali archivio2022",
+        "reason": "SantaRita, SanFilippo, CuoreImmacolato e SanPaolo sono piste da graduatorie vecchie; nessuna nuova annualità o data dalla sola acquisizione tecnica."
+      },
+      {
+        "candidate": "Canosa Costantinopoli e altri mercati occasionali",
+        "reason": "Piani e atti2013/2016 storici indicizzati non bastano a confermare attività/date correnti; originali hostwww2non risolvibile, limite documentato."
+      },
+      {
+        "candidate": "Feste religiose senza banchi documentati",
+        "reason": "Non ogni processione, novena, concerto o festa patronale costituisce un evento commerciale autonomo."
+      },
+      {
+        "candidate": "Camping La Batteria/Addolorata Bisceglie",
+        "reason": "Scheda automatica con luogo non corroborato respinta; adottata cronaca del piano traffico con limite dichiarato."
+      },
+      {
+        "candidate": "Notte dei Sospiri2026",
+        "reason": "Titoli di aggregatori e rubrica promozionale non risolvono date annuali; nessun20settembre2026 da proiezione del2025."
+      },
+      {
+        "candidate": "SanFerdinando SagraMaiale e Cardoncello",
+        "reason": "Attribuzioni automatiche omonime non corroborate da fonti locali; esclusa anche Caserotota di SanFerdinandoRC."
+      },
+      {
+        "candidate": "Date future automatiche mercatini",
+        "reason": "Non usate date generate2027 per Margherita né22novembre/13dicembreTrani dalla sola scheda aggregatore."
+      },
+      {
+        "candidate": "Le Radici del Natale Andria2026",
+        "reason": "Manifestazione di interesse per progetti culturali/enogastronomici; non calendario di mercatino né bando posteggi."
+      },
+      {
+        "candidate": "Interi cartelloni estivi e natalizi",
+        "reason": "Spettacoli, visite e laboratori non sono fiere aggiuntive; giorni di traffico e periodo generale non sono apertura di ogni banco."
+      },
+      {
+        "candidate": "Sagre senza prova operativa Margherita/Spinazzola",
+        "reason": "SagraMare/Sale, AntichiSapori e altre piste generiche non adottate da calendari stimati senza elementi sufficienti."
+      }
+    ],
+    "limitations": [
+      "Ricerca documentale accessibile attuale con limiti, non censimento certificato o prova di esaustività. Nessun invio o contatto a terzi e nessuna ammissione ottenuta.",
+      "Ricevute tecniche, screening e letture editoriali sono distinti. Documenti lunghi e graduatorie non sono dichiarati letti integralmente per il solo download.",
+      "Fonti comunali prioritarie; comunicati ripresi in stampa e calendari editoriali attribuiti. I mesi usuali e gli anni storici non confermano nuove edizioni.",
+      "Sette fiere rionali Bisceglie e antiquarioAndria sono ricorrenze storiche: attività attuale da riconfermare, nessun programma annuale inventato.",
+      "NataleCanosa/Trani e due fiereAndria solo2025. BiComix senza intervallo espositivo dedotto; cronaca viabilitàAddolorata non sostituisce ordinanza originale.",
+      "Trinitapoli contiene date nel calendario comunale ma rinvia il dettaglio operativo: usati periodi annunciati, non banchi continuativi o posti prenotabili.",
+      "TariffeAndria senza unitàtemporale esplicita non moltiplicate per giorni e metri;77/22Barletta sono istruttoria,16Trani bollo, non canoni.",
+      "SanFerdinando moduloDOC originale letto con strutturaWord;250/300/400/550/750/640/720/1000euro sono alternative per aree diverse. RCT, luce e vigilanza dichiarate; IVA, potenza e acqua non specificate.",
+      "Vecchio hostwww2Canosa non risolvibile; indice public_documents410, pagina tagCamin202nessun testo utile, pagineBarletta necessitanoJavaScript e recuperate con browser. Non prova di assenza di eventi.",
+      "Catalogo geografico dieci comuni verificato; sedi frazioni e centri indicativi non geolocalizzano il singolo banco.",
+      "Albi non censiti integralmente, social non autenticati e nuovi bandi futuri richiedono manutenzione distinta. Nessun prezzo mancante trasformato in zero.",
+      "Una sola provincia, checklist78. Altre province, task, controller e stop persistente non modificati; Pavia resta riservata."
+    ],
+    "sourceReceipts": [
+      {
+        "url": "https://www.comune.andria.bt.it/it/news/145040/torna-la-tradizionale-fiera-daprile-589esima-edizione",
+        "status": 200,
+        "finalUrl": "https://www.comune.andria.bt.it/it/news/145040/torna-la-tradizionale-fiera-daprile-589esima-edizione",
+        "sha256": "e54bea5af8813cc1d90cfc923e3c7ce879c0375f887901581aad0e33aeb5e551",
+        "retrievedAt": "2026-10-30T20:39:10.503819+00:00"
+      },
+      {
+        "url": "https://comune.andria.bt.it/it/news/fiere-maggiori-ridotte-del-40-le-tariffe-per-le-occupazioni-temporanee-per-sostenere-le-attivita-e-rendere-le-manifestazioni-sempre-piu-attrattive",
+        "status": 200,
+        "finalUrl": "https://comune.andria.bt.it/it/news/fiere-maggiori-ridotte-del-40-le-tariffe-per-le-occupazioni-temporanee-per-sostenere-le-attivita-e-rendere-le-manifestazioni-sempre-piu-attrattive",
+        "sha256": "3d6a173d228396170b219c923b52b60c419386057d5f6e6a372355018adb30aa",
+        "retrievedAt": "2026-10-30T20:39:10.504190+00:00"
+      },
+      {
+        "url": "https://www.comune.andria.bt.it/index.php/it/news/2043418",
+        "status": 200,
+        "finalUrl": "https://www.comune.andria.bt.it/index.php/it/news/2043418",
+        "sha256": "7b5dd30fd6f7184be8270f4ef8a335002b24081656b7b50ef40636b871b47041",
+        "retrievedAt": "2026-10-30T20:39:10.505147+00:00"
+      },
+      {
+        "url": "https://www.comune.canosa.bt.it/it/news/110978/il-mercato-settimanale-di-giovedi-30-luglio-2026-si-svolgera-presso-la-zona-167",
+        "status": 200,
+        "finalUrl": "https://www.comune.canosa.bt.it/it/news/110978/il-mercato-settimanale-di-giovedi-30-luglio-2026-si-svolgera-presso-la-zona-167",
+        "sha256": "93f08943d7c50ac2ae3f3b3590226767cc3d516a9b034764118014b5988cab89",
+        "retrievedAt": "2026-10-30T20:39:10.511288+00:00"
+      },
+      {
+        "url": "https://www.bisceglieviva.it/notizie/domenica-13-settembre-torna-fiera-autoproduzioni/",
+        "status": 200,
+        "finalUrl": "https://www.bisceglieviva.it/notizie/domenica-13-settembre-torna-fiera-autoproduzioni/",
+        "sha256": "55d2d41f3dc17597897112ffe480790fa5e2ff5f34f03a894f06d78a7a7c32dd",
+        "retrievedAt": "2026-10-30T20:39:12.577418+00:00"
+      },
+      {
+        "url": "https://www.caminvattin.it/event/spinazzola-sagra-del-fungo-cardoncello-2026/",
+        "status": 200,
+        "finalUrl": "https://www.caminvattin.it/event/spinazzola-sagra-del-fungo-cardoncello-2026/",
+        "sha256": "4e0b1654d7e1a5adb63b025f2d88eb3c5a5b99812610f8e22eb996cc5fb5958c",
+        "retrievedAt": "2026-10-30T20:39:13.499965+00:00"
+      },
+      {
+        "url": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a4d13299b5d787a7da2c89a",
+        "status": 200,
+        "finalUrl": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a4d13299b5d787a7da2c89a",
+        "sha256": "a7b15cf632ffe0a2235c0f30eb27e9506f23ee8c9c3d20532df3017219113ec2",
+        "retrievedAt": "2026-10-30T20:39:43.296403+00:00"
+      },
+      {
+        "url": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a22a5dd973b657973486601",
+        "status": 200,
+        "finalUrl": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a22a5dd973b657973486601",
+        "sha256": "b0cb2bac41c3e2403c8562423b95a56b099408e25469d97ea244e93c9789f31b",
+        "retrievedAt": "2026-10-30T20:39:43.296885+00:00"
+      },
+      {
+        "url": "https://www.comune.andria.bt.it/it/news/1940149",
+        "status": 200,
+        "finalUrl": "https://www.comune.andria.bt.it/it/news/1940149",
+        "sha256": "a61ba697c6e09eba2ff791746112e4418d763f9f9e19c131372dc1c33025c6ca",
+        "retrievedAt": "2026-10-30T20:39:43.301068+00:00"
+      },
+      {
+        "url": "https://www.comune.andria.bt.it/it/news/1936773",
+        "status": 200,
+        "finalUrl": "https://www.comune.andria.bt.it/it/news/1936773",
+        "sha256": "12c2511712bf8790464ab3b33f4303a92bd040d14078d530a2e77b9b0c942186",
+        "retrievedAt": "2026-10-30T20:39:43.302810+00:00"
+      },
+      {
+        "url": "https://www.comune.andria.bt.it/it/events/727825",
+        "status": 200,
+        "finalUrl": "https://www.comune.andria.bt.it/it/eventi/727825",
+        "sha256": "b4085c99795b9c0bbb964b233a19b63521fafc194dc56f7340980a4523d13d06",
+        "retrievedAt": "2026-10-30T20:39:43.304644+00:00"
+      },
+      {
+        "url": "https://www.comune.canosa.bt.it/it/news/2034468",
+        "status": 200,
+        "finalUrl": "https://www.comune.canosa.bt.it/it/news/2034468",
+        "sha256": "2915fd1ebe997a5d0ebb8bea190571ac75040dc7f5a2d09e0992ccfcb49d5258",
+        "retrievedAt": "2026-10-30T20:39:43.305161+00:00"
+      },
+      {
+        "url": "https://www.comune.canosa.bt.it/it/news/2019762",
+        "status": 200,
+        "finalUrl": "https://www.comune.canosa.bt.it/it/news/2019762",
+        "sha256": "3d719c20b1b5c2e2ed89263236f8df1c5e63775b217500c44da0cc4c0425b159",
+        "retrievedAt": "2026-10-30T20:39:44.341892+00:00"
+      },
+      {
+        "url": "https://www.comune.canosa.bt.it/it/news/2018385",
+        "status": 200,
+        "finalUrl": "https://www.comune.canosa.bt.it/it/news/2018385",
+        "sha256": "b28f319e29c867d1c27f12e48789b508143cc1004fe25d94486de98db9522ffa",
+        "retrievedAt": "2026-10-30T20:39:44.512724+00:00"
+      },
+      {
+        "url": "https://www.comune.canosa.bt.it/it/news/1925316",
+        "status": 200,
+        "finalUrl": "https://www.comune.canosa.bt.it/it/news/1925316",
+        "sha256": "f6017841f097e2125b9f3e91469a92c2c6f10bd2da571b284f81e35c29d192ee",
+        "retrievedAt": "2026-10-30T20:39:44.558085+00:00"
+      },
+      {
+        "url": "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Natale-a-Trinitapoli",
+        "status": 200,
+        "finalUrl": "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Natale-a-Trinitapoli",
+        "sha256": "e0997548dc765bd46e2191b7732b661b6ca513bf8d2d3551f02e7abc9f6141b1",
+        "retrievedAt": "2026-10-30T20:39:44.619276+00:00"
+      },
+      {
+        "url": "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Sagra-del-carciofo",
+        "status": 200,
+        "finalUrl": "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Sagra-del-carciofo",
+        "sha256": "17155e617e74f18a774cb9cc9fdce275ed039b5ddbd81164039ef29ed03b9b0b",
+        "retrievedAt": "2026-10-30T20:39:44.696336+00:00"
+      },
+      {
+        "url": "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/",
+        "status": 200,
+        "finalUrl": "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/",
+        "sha256": "9b1a77f96c2370551e2be51e6ce20d1a08f9ce63c242948cd3c88c4be74e3661",
+        "retrievedAt": "2026-10-30T20:39:44.699205+00:00"
+      },
+      {
+        "url": "https://www.margheritaviva.it/notizie/un-chicco-di-grano-mille-storie-da-raccontare-a-margherita-torna-la-sagra-del-grano-cotto/",
+        "status": 200,
+        "finalUrl": "https://www.margheritaviva.it/notizie/un-chicco-di-grano-mille-storie-da-raccontare-a-margherita-torna-la-sagra-del-grano-cotto/",
+        "sha256": "69b0307752ce477b8f8afda5b5994e172cdcf3404a6ca45347ab3584eab9d2b9",
+        "retrievedAt": "2026-10-30T20:39:44.719885+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2409-cardoncello-on-the-road-minervino-murge-2026",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2409-cardoncello-on-the-road-minervino-murge-2026",
+        "sha256": "027f79c9cf1e4f9251dfd37350a93620906249d3d6a8c42b6a6d6443df325f4f",
+        "retrievedAt": "2026-10-30T20:39:44.727415+00:00"
+      },
+      {
+        "url": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "status": 200,
+        "finalUrl": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "sha256": "32bdf7884895ba33849415e5a4777ab2a44d9e2faa007a9887bbcd3e56654a9c",
+        "retrievedAt": "2026-10-30T20:40:27.964432+00:00"
+      },
+      {
+        "url": "https://www.qualivita.it/news/cipolla-in-festa-conto-alla-rovescia-per-il-weekend-a-margherita-di-savoia/",
+        "status": 200,
+        "finalUrl": "https://www.qualivita.it/news/cipolla-in-festa-conto-alla-rovescia-per-il-weekend-a-margherita-di-savoia/",
+        "sha256": "2e38987c6cbb3fc5f34f80e238d18d6b7de8c09db573735f23ebba7b6549f0df",
+        "retrievedAt": "2026-10-30T20:40:27.964936+00:00"
+      },
+      {
+        "url": "https://www.spinazzolaviva.it/notizie/festa-della-salsiccia-torna-a-spinazzola-appuntamento-il-4-e-5-settembre-nel-quartiere-san-vito/",
+        "status": 200,
+        "finalUrl": "https://www.spinazzolaviva.it/notizie/festa-della-salsiccia-torna-a-spinazzola-appuntamento-il-4-e-5-settembre-nel-quartiere-san-vito/",
+        "sha256": "6978c6f08c98f2f411382788a2b7b96aa9068a0fd4f32b660ca2195f723b8b23",
+        "retrievedAt": "2026-10-30T20:40:27.965424+00:00"
+      },
+      {
+        "url": "https://www.comune.trani.bt.it/it/news/le-vie-del-natale-tutti-gli-eventi-programmati-a-trani",
+        "status": 200,
+        "finalUrl": "https://www.comune.trani.bt.it/it/news/le-vie-del-natale-tutti-gli-eventi-programmati-a-trani",
+        "sha256": "55c6e56a10b5d25dc8a88e97ca68a8c6192457e185d2072652cd6a155a8d6448",
+        "retrievedAt": "2026-10-30T20:40:27.965770+00:00"
+      },
+      {
+        "url": "https://www.cosedicasa.com/mercatini/margherita-di-savoia",
+        "status": 200,
+        "finalUrl": "https://www.cosedicasa.com/mercatini/margherita-di-savoia",
+        "sha256": "ee40db973642e18bc28fd0106e393806c9e839e9705c4d7eb8c3a3922bd76b25",
+        "retrievedAt": "2026-10-30T20:40:27.970341+00:00"
+      },
+      {
+        "url": "https://www.traniviva.it/notizie/trani-celebra-il-fascino-del-tempo-con-trani-nell-arte/",
+        "status": 200,
+        "finalUrl": "https://www.traniviva.it/notizie/trani-celebra-il-fascino-del-tempo-con-trani-nell-arte/",
+        "sha256": "4341930eaefbdf93ff2fcd46bf6d0bf371ca0a4c783628e085971acdbaafb2b6",
+        "retrievedAt": "2026-10-30T20:40:27.971791+00:00"
+      },
+      {
+        "url": "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/domanda-di-partecipazione-fiera-2026-2/",
+        "status": 200,
+        "finalUrl": "https://comune.sanferdinandodipuglia.bt.it/wp-content/uploads/2026/10/DOMANDA-DI-PARTECIPAZIONE-Fiera-2026-1.doc",
+        "sha256": "437ce2a2536b31f0f67de290db4a9de6be654c844bf5ac476e68972a0c436f70",
+        "retrievedAt": "2026-10-30T20:40:29.040890+00:00"
+      },
+      {
+        "url": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553",
+        "status": 200,
+        "finalUrl": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553",
+        "sha256": "cbc456b65c196e4567355ffbd91307c410f8f085d035fb8515eff0bec5a2ee41",
+        "retrievedAt": "2026-10-30T20:41:29.886178+00:00"
+      },
+      {
+        "url": "https://www.comune.trani.bt.it/it/news/136224/posteggi-temporanei-per-festa-del-carmine-e-san-nicola-proroga-scadenza",
+        "status": 200,
+        "finalUrl": "https://www.comune.trani.bt.it/it/news/136224/posteggi-temporanei-per-festa-del-carmine-e-san-nicola-proroga-scadenza",
+        "sha256": "e0b577cbc8beb882769d7f420fffe597a983aef71b4e95c8ca0b31108f1993fb",
+        "retrievedAt": "2026-10-30T20:41:29.887079+00:00"
+      },
+      {
+        "url": "https://www.trinitapoliviva.it/notizie/sagra-del-carciofo-trinitapoli-avviso-per-la-costituzione-della-consulta-istituizonale/",
+        "status": 200,
+        "finalUrl": "https://www.trinitapoliviva.it/notizie/sagra-del-carciofo-trinitapoli-avviso-per-la-costituzione-della-consulta-istituizonale/",
+        "sha256": "2952f5764f891f174ac52f1cd7b2b83058faf5bb4548b4a8b79b41df013e9329",
+        "retrievedAt": "2026-10-30T20:41:29.889844+00:00"
+      },
+      {
+        "url": "https://www.halleyweb.com/c110006/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5WpBeUT6QT0-A/provvedimenti/2/categoria/114",
+        "status": 200,
+        "finalUrl": "https://www.halleyweb.com/c110006/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5WpBeUT6QT0-A/provvedimenti/2/categoria/114",
+        "sha256": "4536212238e3a2e0e84f9ed52e0ddd85c2f819c6c9dc2cc1947c791bfa1aa06d",
+        "retrievedAt": "2026-10-30T20:41:29.891953+00:00"
+      },
+      {
+        "url": "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/234/allegati/regolamenti/regolamento-vendita-antiquariato.pdf",
+        "status": 200,
+        "finalUrl": "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/234/allegati/regolamenti/regolamento-vendita-antiquariato.pdf",
+        "sha256": "0ba7aa6908de7fa6a3760bbd68c15fea9504df350c58fc85991e22b43483f1bc",
+        "retrievedAt": "2026-10-30T20:41:55.878207+00:00"
+      },
+      {
+        "url": "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf",
+        "status": 200,
+        "finalUrl": "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf",
+        "sha256": "c1f779ff4824e7378e75d602bfc7f6095cd0a9afba2c1c181105d06cd0ca6488",
+        "retrievedAt": "2026-10-30T20:41:55.878684+00:00"
+      },
+      {
+        "url": "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf",
+        "status": 200,
+        "finalUrl": "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf",
+        "sha256": "dbbce0f6cc98f23706d893781aea57006ed06b0b0a8370b5a5e4d2c83ac4b08c",
+        "retrievedAt": "2026-10-30T20:41:55.879118+00:00"
+      },
+      {
+        "url": "https://www.comune.andria.bt.it/it/news/2069771",
+        "status": 200,
+        "finalUrl": "https://www.comune.andria.bt.it/it/news/2069771",
+        "sha256": "5686991e5579730c60f2b0fe2c72d9d90635564bc0a4e8c09a1b59bff2ff68e1",
+        "retrievedAt": "2026-10-30T20:42:47.248978+00:00"
+      },
+      {
+        "url": "https://www.comune.andria.bt.it/it/news/2071560",
+        "status": 200,
+        "finalUrl": "https://www.comune.andria.bt.it/it/news/2071560",
+        "sha256": "1b5eed7b1924edbe483b539ac92bea2220b783b1f71387ea6245ab29c1d28f9e",
+        "retrievedAt": "2026-10-30T20:42:47.249496+00:00"
+      },
+      {
+        "url": "https://www.minervinoviva.it/notizie/tra-sapori-tipici-e-tradizioni-grande-successo-a-minervino-per-la-festa-dell-uva-e-del-vino/",
+        "status": 200,
+        "finalUrl": "https://www.minervinoviva.it/notizie/tra-sapori-tipici-e-tradizioni-grande-successo-a-minervino-per-la-festa-dell-uva-e-del-vino/",
+        "sha256": "b2ee4071419b4fef77475fe49d449722b943fd048ce191c2c824fcafcd735105",
+        "retrievedAt": "2026-10-30T20:42:47.252995+00:00"
+      },
+      {
+        "url": "https://www.traniviva.it/notizie/autunno-nell-arte-il-fascino-del-vintage-torna-in-piazza-della-repubblica-a-trani/",
+        "status": 200,
+        "finalUrl": "https://www.traniviva.it/notizie/autunno-nell-arte-il-fascino-del-vintage-torna-in-piazza-della-repubblica-a-trani/",
+        "sha256": "2cc080c7dbc9c8569eb747c11e50418c8e50058c699d10eb2420b36f50449993",
+        "retrievedAt": "2026-10-30T20:43:15.937263+00:00"
+      },
+      {
+        "url": "https://www.traniviva.it/notizie/trani-nell-arte-l-appuntamento-di-agosto-con-l-antiquariato-e-il-modernariato/",
+        "status": 200,
+        "finalUrl": "https://www.traniviva.it/notizie/trani-nell-arte-l-appuntamento-di-agosto-con-l-antiquariato-e-il-modernariato/",
+        "sha256": "1a8b7adb8c7f97532c7a349a012bed8ab9d148333ee1b68231dd8b20efa68d05",
+        "retrievedAt": "2026-10-30T20:43:15.937809+00:00"
+      },
+      {
+        "url": "https://www.barlettaviva.it/notizie/nasce-la-fiera-dell-assunta-a-barletta-un-ponte-tra-centro-storico-e-periferie/",
+        "status": 200,
+        "finalUrl": "https://www.barlettaviva.it/notizie/nasce-la-fiera-dell-assunta-a-barletta-un-ponte-tra-centro-storico-e-periferie/",
+        "sha256": "b6fc2bfbce775ba155945e1c9821ca8ccaa1bba9a5d5a55297121537361238c8",
+        "retrievedAt": "2026-10-30T20:43:15.938246+00:00"
+      },
+      {
+        "url": "https://www.bisceglieviva.it/notizie/successo-per-la-settima-edizione-del-bicomix/",
+        "status": 200,
+        "finalUrl": "https://www.bisceglieviva.it/notizie/successo-per-la-settima-edizione-del-bicomix/",
+        "sha256": "b5403e0c958e2e5e53f91820f3840a95dd8c5b7bdc356f3085518a952731b7c4",
+        "retrievedAt": "2026-10-30T20:43:15.938548+00:00"
+      },
+      {
+        "url": "https://bisceglie.news24.city/2026/09/09/festa-delladdolorata-ecco-il-piano-traffico-dal-13-al-16-settembre/",
+        "status": 200,
+        "finalUrl": "https://bisceglie.news24.city/2026/09/09/festa-delladdolorata-ecco-il-piano-traffico-dal-13-al-16-settembre/",
+        "sha256": "062c2be458cdf9c4d7bda707cfb2cc05665601392e8674e34c7513ebb130e16b",
+        "retrievedAt": "2026-10-30T20:43:15.938846+00:00"
+      },
+      {
+        "url": "https://www.caminvattin.it/event/a-minervino-murge-torna-la-sagra-del-panzerotto/",
+        "status": 200,
+        "finalUrl": "https://www.caminvattin.it/event/a-minervino-murge-torna-la-sagra-del-panzerotto/",
+        "sha256": "875c2de2c29cce8a5c2c302d12b51d3dffde66dbc0b9aac976f0e773cdc63e2e",
+        "retrievedAt": "2026-10-30T20:43:15.939417+00:00"
+      },
+      {
+        "url": "https://www.bisceglieviva.it/notizie/calici-nel-borgo-antico-torna-a-bisceglie-dal-6-all-8-novembre-tre-serate-tra-vini-pugliesi-gastronomia-e-musica/",
+        "status": 200,
+        "finalUrl": "https://www.bisceglieviva.it/notizie/calici-nel-borgo-antico-torna-a-bisceglie-dal-6-all-8-novembre-tre-serate-tra-vini-pugliesi-gastronomia-e-musica/",
+        "sha256": "0abef565602c5ac44685e802321319ea4829377691a1e048e23cb551d0cb1b9e",
+        "retrievedAt": "2026-10-30T20:44:00.156503+00:00"
+      },
+      {
+        "url": "https://www.traniviva.it/notizie/trani-celebra-la-tradizione-torna-primavera-tranese-antichi-ricordi-il-19-aprile/",
+        "status": 200,
+        "finalUrl": "https://www.traniviva.it/notizie/trani-celebra-la-tradizione-torna-primavera-tranese-antichi-ricordi-il-19-aprile/",
+        "sha256": "a5541efaada486b1c5a2e8f5777712ad07cdab05e08442014da94f513f3da15d",
+        "retrievedAt": "2026-10-30T20:44:00.156985+00:00"
+      },
+      {
+        "url": "https://www.traniviva.it/notizie/trani-ospita-la-prima-edizione-della-festa-del-cioccolato-artigianale/",
+        "status": 200,
+        "finalUrl": "https://www.traniviva.it/notizie/trani-ospita-la-prima-edizione-della-festa-del-cioccolato-artigianale/",
+        "sha256": "a3b1c0d35dee93a41db59f243639086b4351172f2c8bd239da623e076e1a80cd",
+        "retrievedAt": "2026-10-30T20:44:00.157390+00:00"
+      }
+    ],
+    "originalChecks": {
+      "hashVerified": 80,
+      "errors": [],
+      "visual": [
+        "c068a3f54c3ca2b7.bin-p1.png",
+        "c068a3f54c3ca2b7.bin-p2.png",
+        "6e07b24263aa5ecd.bin-p1.png",
+        "6e07b24263aa5ecd.bin-p2.png",
+        "079811dcbe5a0d71.bin-p1.png",
+        "antiquariato-p1.png",
+        "antiquariato-p2.png",
+        "natale-trani.png"
+      ]
+    },
+    "futureMaintenance": "Nuovi bandi, edizioni, canoni e disponibilità sono manutenzione futura distinta."
+  },
+  "events": [
+    {
+      "region": "Puglia",
+      "city": "Andria",
+      "name": "Fiera d’Aprile",
+      "months": [
+        4
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.andria.bt.it/it/news/145040/torna-la-tradizionale-fiera-daprile-589esima-edizione",
+        "label": "Comune di Andria",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera primaverile commerciale con bancarelle; il programma 2026 distingue le tre giornate dei banchi dalla ricorrenza storica 23–30 aprile.",
+      "venue": "Corso Cavour",
+      "sectors": "Alimentari e non alimentari, artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-24",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.andria.bt.it/it/news/145040/torna-la-tradizionale-fiera-daprile-589esima-edizione"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Banchi dal 24 al 26 aprile 2026 nel programma comunale. L’antica esenzione concessa nel Quattrocento non è gratuità odierna. Per le prossime edizioni verificare graduatoria, titolo commerciale, settore, superficie e canone; nessuna domanda attualmente aperta dedotta dal programma.",
+        "costs": "Canone 2026 comunicato dal Comune per le due fiere maggiori: 2,23 €/m² in prima categoria, 1,90 €/m² in seconda e 1,56 €/m² in terza. La pagina non precisa l’unità temporale, IVA o altri servizi: non è un totale per l’intera fiera; verificare categoria, durata e importo dovuto con l’ufficio."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.andria.bt.it/it/news/145040/torna-la-tradizionale-fiera-daprile-589esima-edizione",
+        "https://comune.andria.bt.it/it/news/fiere-maggiori-ridotte-del-40-le-tariffe-per-le-occupazioni-temporanee-per-sostenere-le-attivita-e-rendere-le-manifestazioni-sempre-piu-attrattive"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Andria",
+      "name": "Fiera dei Santi Patroni",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.andria.bt.it/index.php/it/news/2043418",
+        "label": "Comune di Andria",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera commerciale collegata alla festa patronale; il Comune pubblica una mappa con le aree dei banchi e il calendario generale 2026.",
+      "venue": "Aree commerciali indicate nella mappa comunale della festa",
+      "sectors": "Alimentari e non alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Festa patronale 19–21 settembre 2026; singole giornate e orari dei banchi da verificare",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.andria.bt.it/index.php/it/news/2043418"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte conferma la presenza della fiera nella mappa della festa 19–21 settembre, senza dettagliare l’apertura di ogni posteggio. Verificare piano commerciale, graduatorie, settore, canone e titolo con il SUAP. La riduzione tariffaria non costituisce assegnazione né prova di posti liberi.",
+        "costs": "Canone 2026 comunicato dal Comune per le due fiere maggiori: 2,23 €/m² in prima categoria, 1,90 €/m² in seconda e 1,56 €/m² in terza. La pagina non precisa l’unità temporale, IVA o altri servizi: non è un totale per l’intera fiera; verificare categoria, durata e importo dovuto con l’ufficio."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.andria.bt.it/index.php/it/news/2043418",
+        "https://comune.andria.bt.it/it/news/fiere-maggiori-ridotte-del-40-le-tariffe-per-le-occupazioni-temporanee-per-sostenere-le-attivita-e-rendere-le-manifestazioni-sempre-piu-attrattive"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Andria",
+      "name": "Fiera dell’Epifania",
+      "months": [
+        1
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.andria.bt.it/it/news/1940149",
+        "label": "Comune di Andria",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera con ricollocazione dei posteggi e limitazioni alla viabilità pubblicate per il 2026.",
+      "venue": "Piazza Vittorio Emanuele II e via Porta Castello",
+      "sectors": "Merci secondo ripartizione del piano comunale",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Fiera Epifania 2026; provvedimento viabilità 4–6 gennaio, orari commerciali da verificare",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.andria.bt.it/it/news/1940149"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "L’ordinanza riguarda chiusure al traffico dal 4 al 6 gennaio 2026 e rinvia al piano dei posteggi. Gli orari di viabilità non sono automaticamente orari di vendita. Assegnazioni e nuova edizione vanno confermate al SUAP, senza ripetere le date nel 2027 per ipotesi."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.andria.bt.it/it/news/1940149",
+        "https://www.comune.andria.bt.it/it/news/1936773"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Andria",
+      "name": "Fiera della Vigilia di Natale",
+      "months": [
+        12
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.andria.bt.it/it/news/1936773",
+        "label": "Comune di Andria",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Manifestazione commerciale natalizia con ricollocazione dei posteggi disposta dal Comune; documentata soltanto l’annualità 2025.",
+      "venue": "Via Porta Castello e piazza Vittorio Emanuele II",
+      "sectors": "Merci secondo piano comunale",
+      "editions": [
+        {
+          "year": 2025,
+          "label": "Dicembre 2025: ordinanza di ricollocazione; giornate e nuova edizione da verificare",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.andria.bt.it/it/news/1936773"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La pagina è del 19 dicembre 2025 e riguarda Natale/fine anno 2025 ed Epifania 2026. Non conferma Natale 2026. Verificare col SUAP nuova edizione, giornate di apertura, concessione, settori e importi; il titolo che cita il 2026 non sposta automaticamente tutte le fiere di un anno."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.andria.bt.it/it/news/1936773"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Andria",
+      "name": "Fiera di Fine Anno",
+      "months": [
+        12
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.andria.bt.it/it/news/1936773",
+        "label": "Comune di Andria",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Manifestazione commerciale natalizia con ricollocazione dei posteggi disposta dal Comune; documentata soltanto l’annualità 2025.",
+      "venue": "Via Porta Castello e piazza Vittorio Emanuele II",
+      "sectors": "Merci secondo piano comunale",
+      "editions": [
+        {
+          "year": 2025,
+          "label": "Dicembre 2025: ordinanza di ricollocazione; giornate e nuova edizione da verificare",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.andria.bt.it/it/news/1936773"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La pagina è del 19 dicembre 2025 e riguarda Natale/fine anno 2025 ed Epifania 2026. Non conferma Natale 2026. Verificare col SUAP nuova edizione, giornate di apertura, concessione, settori e importi; il titolo che cita il 2026 non sposta automaticamente tutte le fiere di un anno."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.andria.bt.it/it/news/1936773"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Andria",
+      "name": "Fiera promozionale dell’Antiquariato e dell’Usato",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/234/allegati/regolamenti/regolamento-vendita-antiquariato.pdf",
+        "label": "Comune di Andria",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mostra mercato prevista dal regolamento comunale 2005 la seconda domenica del mese, escluso agosto; ricorrenza normativa storica, non calendario 2026 verificato.",
+      "venue": "Area parcheggio dietro il Liceo Classico e strada di accesso, sede del regolamento storico",
+      "sectors": "Antiquariato, oggettistica, arte e usato; regole specifiche da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Regolamento storico 2005 letto visivamente: vieta fra l’altro preziosi, armi, oggetti nuovi moderni e vestiario/scarpe anche usati; hobbisti e collezionisti indicati per esposizione e scambio. Nessun voto negativo automatico da regole così vecchie. Confermare attuale svolgimento, sede, requisiti e procedura al SUAP; vecchi termini postali non presentati come domanda corrente."
+      },
+      "sourceRecordIds": [
+        "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/234/allegati/regolamenti/regolamento-vendita-antiquariato.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Andria",
+      "name": "Sagra del Pane, della Bruschetta e dei Balli Popolari",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.andria.bt.it/it/events/727825",
+        "label": "Comune di Andria",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Serata gastronomica della Cooperativa Sociale S. Agostino nel borgo di Montegrosso, con pane, bruschette e musica popolare.",
+      "venue": "Borgo di Montegrosso",
+      "sectors": "Pane, bruschette e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.andria.bt.it/it/events/727825"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, non posti disponibili per ogni ambulante. Contattare organizzatore e SUAP per nuova edizione, categorie ammesse, selezione, autorizzazioni, costi e dotazioni. Ingresso libero e degustazioni gratuite per il pubblico non significano posteggio gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.andria.bt.it/it/events/727825"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Andria",
+      "name": "Festa della Zucca",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.andria.bt.it/it/news/2071560",
+        "label": "Comune di Andria",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Percorso gastronomico in tre tappe con ristoratori e produttori locali. Rinviato per maltempo dal 31 ottobre al 7 novembre 2026.",
+      "venue": "Ex Mercato via Flavio Giugno, Largo Grotte e Largo Toniolo",
+      "sectors": "Zucca, piatti preparati e dolci",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-07",
+          "end": "2026-11-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.andria.bt.it/it/news/2071560"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il rinvio comunale del 30 ottobre prevale sul primo annuncio: nuova data 7 novembre 2026, programma e modalità conservati. L’iniziativa coinvolge operatori del territorio; carnet e ticket riguardano il pubblico, non il banco. Contattare Condividere & Crescere e SUAP per ammissione, spazi, tariffe e autorizzazioni."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.andria.bt.it/it/news/2071560",
+        "https://www.comune.andria.bt.it/it/news/2069771"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Barletta",
+      "name": "Fiera della Festa Patronale",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a4d13299b5d787a7da2c89a",
+        "label": "Comune di Barletta",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera di merci alimentari e non alimentari e automarket; ordinanza originale 2026 letta sulle due pagine scansionate.",
+      "venue": "Via Cavour, via C. d’Asburgo, piazza Castello e via Mura San Cataldo; automarket sul litorale di Ponente",
+      "sectors": "Alimentari e non alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-11",
+          "end": "2026-07-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a4d13299b5d787a7da2c89a"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ordinanza: 11 luglio dalle 12 alle 2 del 12; 12 luglio dalle 8 alle 2 del 13; 13 luglio dalle 8 alle 24. Avviso 2026: domanda telematica almeno 60 giorni prima tramite Sportello Unico Digitale, indicando titolo e merceologia. Istanza unica per patronale e/o Santa Lucia; nessuna disponibilità residua dedotta.",
+        "costs": "Avviso 2026: 77 € di diritto di istruttoria per l’istanza unica relativa a Festa Patronale e/o Santa Lucia. Non è il canone del posteggio e non è 77 € per ciascuna festa. Suolo, servizi, eventuale bollo e altri oneri non quantificati nell’avviso."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a4d13299b5d787a7da2c89a",
+        "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Barletta",
+      "name": "Fiera di Sant’Antonio",
+      "months": [
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a22a5dd973b657973486601",
+        "label": "Comune di Barletta",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera rionale legata alla parrocchia del Buon Pastore, spostata dalla precedente sede di via Vitrani.",
+      "venue": "Via Medaglie d’Oro e via Boccassini, tratti dell’ordinanza",
+      "sectors": "Merci secondo concessione comunale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-13",
+          "end": "2026-06-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a22a5dd973b657973486601"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ordinanza originale letta: banchi il 13 giugno 2026 dalle 15 alle 23; collocazione affidata alla Polizia Locale. Il vigente avviso annuale richiede domanda telematica almeno 60 giorni prima e titolo commerciale; prossima data e ammissione non sono automatiche.",
+        "costs": "Avviso 2026: 22 € di istruttoria per ogni festa rionale indicata nell’istanza unica delle altre feste, escluse patronale e Santa Lucia. Importo amministrativo, non totale del posteggio; suolo, servizi e altri oneri da verificare."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/6a22a5dd973b657973486601",
+        "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Barletta",
+      "name": "Fiera di Santa Lucia",
+      "months": [
+        12
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553",
+        "label": "Comune di Barletta",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera commerciale richiamata nell’avviso comunale di partecipazione alle feste 2026; singole giornate non indicate nel documento letto.",
+      "venue": "Barletta, sede e planimetria annuali da verificare",
+      "sectors": "Merci secondo concessione comunale",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Fiera richiamata nell’avviso 2026; giornate di dicembre da confermare",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso firmato 8 gennaio 2026: domanda soltanto sullo Sportello Unico Digitale almeno 60 giorni prima della festa, con titolo e merceologia. Non ricostruiti 12–14 dicembre dalle precedenti edizioni; verificare calendario corrente e assegnazione con SUAP.",
+        "costs": "Avviso 2026: 77 € di diritto di istruttoria per l’istanza unica relativa a Festa Patronale e/o Santa Lucia. Non è il canone del posteggio e non è 77 € per ciascuna festa. Suolo, servizi, eventuale bollo e altri oneri non quantificati nell’avviso."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.barletta.bt.it/kapi/api/static/resource/5831/695f84937eed3b66675fb553"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Barletta",
+      "name": "Fiera dell’Assunta",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.barlettaviva.it/notizie/nasce-la-fiera-dell-assunta-a-barletta-un-ponte-tra-centro-storico-e-periferie/",
+        "label": "barlettaviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Prima edizione commerciale e artigianale promossa dalla Pro Loco nel borgo di Santa Maria; la comunicazione documenta il 14 agosto.",
+      "venue": "Borgo di Santa Maria; area banco da verificare",
+      "sectors": "Artigianato e attività commerciali locali",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-14",
+          "end": "2026-08-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.barlettaviva.it/notizie/nasce-la-fiera-dell-assunta-a-barletta-un-ponte-tra-centro-storico-e-periferie/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comunicato Pro Loco ripreso dalla stampa locale, non bando espositori. Documentato il 14 agosto 2026, non un intervallo prolungato né edizione 2027. Verificare con Pro Loco e SUAP l’eventuale nuova selezione, le merceologie, la sede e i costi."
+      },
+      "sourceRecordIds": [
+        "https://www.barlettaviva.it/notizie/nasce-la-fiera-dell-assunta-a-barletta-un-ponte-tra-centro-storico-e-periferie/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera di Zappino",
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "label": "Comune di Bisceglie",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera campestre o rionale ricordata dal Comune nel ciclo dalla Pasqua alla Pentecoste. Aprile–giugno è finestra indicativa, senza calendario annuale verificato.",
+      "venue": "Casale di Zappino",
+      "sectors": "Merci della tradizione locale, categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale descrive la tradizione, non un avviso commerciale 2026. Pasqua e Pentecoste sono riferimenti mobili: i mesi sono una finestra indicativa e non giorni autorizzati. Chiedere al SUAP se la fiera sia oggi attiva, sede, giorni dei banchi, selezione e canoni; nessun calendario ricostruito automaticamente."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera di Giano",
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "label": "Comune di Bisceglie",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera campestre o rionale ricordata dal Comune nel ciclo dalla Pasqua alla Pentecoste. Aprile–giugno è finestra indicativa, senza calendario annuale verificato.",
+      "venue": "Casale di Giano",
+      "sectors": "Merci della tradizione locale, categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale descrive la tradizione, non un avviso commerciale 2026. Pasqua e Pentecoste sono riferimenti mobili: i mesi sono una finestra indicativa e non giorni autorizzati. Chiedere al SUAP se la fiera sia oggi attiva, sede, giorni dei banchi, selezione e canoni; nessun calendario ricostruito automaticamente."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera di San Lorenzo",
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "label": "Comune di Bisceglie",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera campestre o rionale ricordata dal Comune nel ciclo dalla Pasqua alla Pentecoste. Aprile–giugno è finestra indicativa, senza calendario annuale verificato.",
+      "venue": "Area della chiesa di San Lorenzo",
+      "sectors": "Merci della tradizione locale, categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale descrive la tradizione, non un avviso commerciale 2026. Pasqua e Pentecoste sono riferimenti mobili: i mesi sono una finestra indicativa e non giorni autorizzati. Chiedere al SUAP se la fiera sia oggi attiva, sede, giorni dei banchi, selezione e canoni; nessun calendario ricostruito automaticamente."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera di Sant’Agostino",
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "label": "Comune di Bisceglie",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera campestre o rionale ricordata dal Comune nel ciclo dalla Pasqua alla Pentecoste. Aprile–giugno è finestra indicativa, senza calendario annuale verificato.",
+      "venue": "Area della chiesa di Sant’Agostino",
+      "sectors": "Merci della tradizione locale, categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale descrive la tradizione, non un avviso commerciale 2026. Pasqua e Pentecoste sono riferimenti mobili: i mesi sono una finestra indicativa e non giorni autorizzati. Chiedere al SUAP se la fiera sia oggi attiva, sede, giorni dei banchi, selezione e canoni; nessun calendario ricostruito automaticamente."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera di Santa Maria della Misericordia",
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "label": "Comune di Bisceglie",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera campestre o rionale ricordata dal Comune nel ciclo dalla Pasqua alla Pentecoste. Aprile–giugno è finestra indicativa, senza calendario annuale verificato.",
+      "venue": "Area della chiesa di Santa Maria della Misericordia",
+      "sectors": "Merci della tradizione locale, categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale descrive la tradizione, non un avviso commerciale 2026. Pasqua e Pentecoste sono riferimenti mobili: i mesi sono una finestra indicativa e non giorni autorizzati. Chiedere al SUAP se la fiera sia oggi attiva, sede, giorni dei banchi, selezione e canoni; nessun calendario ricostruito automaticamente."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera di Madonna di Passavia",
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "label": "Comune di Bisceglie",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera campestre o rionale ricordata dal Comune nel ciclo dalla Pasqua alla Pentecoste. Aprile–giugno è finestra indicativa, senza calendario annuale verificato.",
+      "venue": "Area della chiesa della Madonna di Passavia",
+      "sectors": "Merci della tradizione locale, categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale descrive la tradizione, non un avviso commerciale 2026. Pasqua e Pentecoste sono riferimenti mobili: i mesi sono una finestra indicativa e non giorni autorizzati. Chiedere al SUAP se la fiera sia oggi attiva, sede, giorni dei banchi, selezione e canoni; nessun calendario ricostruito automaticamente."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera di Sant’Adoeno",
+      "months": [
+        4,
+        5,
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "label": "Comune di Bisceglie",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera campestre o rionale ricordata dal Comune nel ciclo dalla Pasqua alla Pentecoste. Aprile–giugno è finestra indicativa, senza calendario annuale verificato.",
+      "venue": "Area della chiesa di Sant’Adoeno",
+      "sectors": "Merci della tradizione locale, categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La pagina comunale descrive la tradizione, non un avviso commerciale 2026. Pasqua e Pentecoste sono riferimenti mobili: i mesi sono una finestra indicativa e non giorni autorizzati. Chiedere al SUAP se la fiera sia oggi attiva, sede, giorni dei banchi, selezione e canoni; nessun calendario ricostruito automaticamente."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera dei Tre Santi Patroni",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/",
+        "label": "Comune di Bisceglie",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercato con bancarelle nel contesto della festa dei Santi Mauro, Sergio e Pantaleone; fonte comunale sulla ricorrenza di agosto.",
+      "venue": "Palazzuolo, piazza Vittorio Emanuele II",
+      "sectors": "Alimentari e non alimentari, secondo autorizzazione",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Il Comune descrive tre giorni attorno alla seconda domenica di agosto e il mercato del sabato. È una consuetudine, non un calendario operativo 2026. Verificare con SUAP e comitato la nuova edizione, i soli giorni dei banchi, i settori e le condizioni economiche."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.bisceglie.bt.it/vivere-il-comune/conoscere-il-territorio/tradizioni-e-folclore/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera dell’Addolorata",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://bisceglie.news24.city/2026/09/09/festa-delladdolorata-ecco-il-piano-traffico-dal-13-al-16-settembre/",
+        "label": "bisceglie.news24.city · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera della co-patrona con banchi nell’area centrale, descritta nella cronaca del piano viabilità 2026.",
+      "venue": "Piazza Vittorio Emanuele II",
+      "sectors": "Merci della fiera secondo autorizzazione",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Settembre 2026: piano viabilità 13–16 settembre; giornate e orari commerciali da verificare",
+          "dateType": "calendar",
+          "sourceUrl": "https://bisceglie.news24.city/2026/09/09/festa-delladdolorata-ecco-il-piano-traffico-dal-13-al-16-settembre/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte giornalistica sul piano traffico, non ordinanza originale recuperata. La fiera è indicata nelle giornate di settembre, ma chiusure stradali e ore dei banchi non sono equiparate. La scheda automatica che colloca tutto al Camping La Batteria non è adottata. Verificare posteggio, titoli e tariffe al SUAP."
+      },
+      "sourceRecordIds": [
+        "https://bisceglie.news24.city/2026/09/09/festa-delladdolorata-ecco-il-piano-traffico-dal-13-al-16-settembre/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Fiera delle Autoproduzioni",
+      "months": [
+        9
+      ],
+      "category": "artigianato",
+      "source": {
+        "url": "https://www.bisceglieviva.it/notizie/domenica-13-settembre-torna-fiera-autoproduzioni/",
+        "label": "bisceglieviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Manifestazione ARCI Oltre i Confini con stand alimentari e artigianali locali, cucina contadina e scambio di sementi.",
+      "venue": "Via La Spiaggia",
+      "sectors": "Produzioni agricole e alimentari locali, artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.bisceglieviva.it/notizie/domenica-13-settembre-torna-fiera-autoproduzioni/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La comunicazione ripresa dalla stampa indica l’avvio alle 18 del 13 settembre 2026. Rivolgersi al circolo ARCI Oltre i Confini per selezione coerente con autoproduzione e biodiversità, requisiti commerciali, dotazioni e quote. Non è ammissione indistinta per ambulanti generici."
+      },
+      "sourceRecordIds": [
+        "https://www.bisceglieviva.it/notizie/domenica-13-settembre-torna-fiera-autoproduzioni/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "BiComix · Fiera del Fumetto",
+      "months": [
+        8
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.bisceglieviva.it/notizie/successo-per-la-settima-edizione-del-bicomix/",
+        "label": "bisceglieviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Settima edizione con espositori, fumetti, collezionismo e Artist Harbor sul waterfront; anteprima e mostra non coincidono con i giorni di vendita.",
+      "venue": "Waterfront di Bisceglie",
+      "sectors": "Fumetti, editoria, collezionismo e creazioni artistiche",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Edizione 2026, due serate di fiera concluse il 23 agosto; mostra e anteprima distinte",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.bisceglieviva.it/notizie/successo-per-la-settima-edizione-del-bicomix/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Resoconto locale dell’edizione conclusa il 23 agosto 2026: non pubblicato un intervallo commerciale dedotto dal solo festival 21–23 agosto. L’Associazione Urca seleziona espositori e artisti: verificare prossima edizione, requisiti tematici, spazi, quote e orari."
+      },
+      "sourceRecordIds": [
+        "https://www.bisceglieviva.it/notizie/successo-per-la-settima-edizione-del-bicomix/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Bisceglie",
+      "name": "Calici nel Borgo Antico",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.bisceglieviva.it/notizie/calici-nel-borgo-antico-torna-a-bisceglie-dal-6-all-8-novembre-tre-serate-tra-vini-pugliesi-gastronomia-e-musica/",
+        "label": "bisceglieviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Diciottesima edizione con cantine e aziende agricole pugliesi, gastronomia e musica nel borgo medievale.",
+      "venue": "Centro storico di Bisceglie",
+      "sectors": "Vini pugliesi, prodotti tipici e street food",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-06",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.bisceglieviva.it/notizie/calici-nel-borgo-antico-torna-a-bisceglie-dal-6-all-8-novembre-tre-serate-tra-vini-pugliesi-gastronomia-e-musica/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comunicazione dell’Associazione Borgo Antico ripresa dalla stampa il 30 ottobre 2026. Partecipano cantine e ristoratori del territorio: contattare l’organizzazione per requisiti, disponibilità e quote. I ticket acquistabili in loco sono degustazioni per i visitatori, non il costo degli espositori."
+      },
+      "sourceRecordIds": [
+        "https://www.bisceglieviva.it/notizie/calici-nel-borgo-antico-torna-a-bisceglie-dal-6-all-8-novembre-tre-serate-tra-vini-pugliesi-gastronomia-e-musica/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Canosa di Puglia",
+      "name": "Fiera Mercato di San Sabino",
+      "months": [
+        7,
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.canosa.bt.it/it/news/110978/il-mercato-settimanale-di-giovedi-30-luglio-2026-si-svolgera-presso-la-zona-167",
+        "label": "Comune di Canosa di Puglia",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera patronale distinta dal mercato settimanale spostato in zona 167; il Comune ne documenta la coincidenza col 30 luglio 2026.",
+      "venue": "Area centrale della fiera San Sabino; stallo da confermare al SUAP",
+      "sectors": "Merci secondo piano comunale",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Fiera San Sabino 2026 documentata il 30 luglio; intervallo completo dei banchi da verificare",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.canosa.bt.it/it/news/110978/il-mercato-settimanale-di-giovedi-30-luglio-2026-si-svolgera-presso-la-zona-167"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il comunicato è relativo allo spostamento del mercato ordinario del 30 luglio per la concomitanza con la fiera. Non conferma per ogni banco il vecchio calendario 31 luglio–2 agosto né l’organico del piano 2008/2013. Verificare con SUAP piano aggiornato, giornate commerciali, selezione e canone."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.canosa.bt.it/it/news/110978/il-mercato-settimanale-di-giovedi-30-luglio-2026-si-svolgera-presso-la-zona-167"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Canosa di Puglia",
+      "name": "Sagra della Percoca di Loconia",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.canosa.bt.it/it/news/2019762",
+        "label": "Comune di Canosa di Puglia",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra del frutto locale con aziende agricole e Pro Loco; Loconia appartiene a Canosa, non al comune confinante di Lavello.",
+      "venue": "Piazza Roma, borgata di Loconia",
+      "sectors": "Percoche e prodotti agricoli locali",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-26",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.canosa.bt.it/it/news/2019762"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, non posti disponibili per ogni ambulante. Contattare organizzatore e SUAP per nuova edizione, categorie ammesse, selezione, autorizzazioni, costi e dotazioni. Ingresso libero e degustazioni gratuite per il pubblico non significano posteggio gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.canosa.bt.it/it/news/2019762"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Canosa di Puglia",
+      "name": "Tipicamente Canosa",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.canosa.bt.it/it/news/2018385",
+        "label": "Comune di Canosa di Puglia",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Percorso enogastronomico del borgo antico con prodotti tipici, attività di somministrazione e musica; nona edizione.",
+      "venue": "Borgo Antico",
+      "sectors": "Prodotti tipici e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-08",
+          "end": "2026-08-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.canosa.bt.it/it/news/2018385"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, non posti disponibili per ogni ambulante. Contattare organizzatore e SUAP per nuova edizione, categorie ammesse, selezione, autorizzazioni, costi e dotazioni. Ingresso libero e degustazioni gratuite per il pubblico non significano posteggio gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.canosa.bt.it/it/news/2018385",
+        "https://www.comune.canosa.bt.it/it/news/2034468"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Canosa di Puglia",
+      "name": "Strascinando",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.canosa.bt.it/it/news/2018385",
+        "label": "Comune di Canosa di Puglia",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Terza edizione dedicata allo strascinato di grano arso, con Pro Loco e operatori enogastronomici.",
+      "venue": "Piazza Vittorio Veneto, corso San Sabino e piazza della Repubblica",
+      "sectors": "Pasta, prodotti da forno e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-09",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.canosa.bt.it/it/news/2018385"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, non posti disponibili per ogni ambulante. Contattare organizzatore e SUAP per nuova edizione, categorie ammesse, selezione, autorizzazioni, costi e dotazioni. Ingresso libero e degustazioni gratuite per il pubblico non significano posteggio gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.canosa.bt.it/it/news/2018385",
+        "https://www.comune.canosa.bt.it/it/news/2034468"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Canosa di Puglia",
+      "name": "Sagra della Sfogliatella",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.canosa.bt.it/it/news/1925316",
+        "label": "Comune di Canosa di Puglia",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Tre giornate con casette gastronomiche per la sfogliatella canosina PAT; documentata solo l’edizione 2025.",
+      "venue": "Piazza Vittorio Veneto",
+      "sectors": "Sfogliatelle e dolci locali",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-06",
+          "end": "2025-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.canosa.bt.it/it/news/1925316"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte comunale del novembre 2025: 6 dicembre ore 18–22; 7 e 8 ore 9–12 e 18–22. Nessuna conferma 2026 ricavata da titoli di aggregatori. Per nuova edizione e ingresso tra gli operatori rivolgersi a Pro Loco e SUAP; nessuna tariffa espositore pubblicata nella pagina."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.canosa.bt.it/it/news/1925316"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Canosa di Puglia",
+      "name": "Mercatini di Natale in Villa Comunale",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.canosa.bt.it/it/news/1925316",
+        "label": "Comune di Canosa di Puglia",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatino artigianale con 18 stand nell’edizione comunale 2025, distinto dalle casette gastronomiche della Sfogliatella.",
+      "venue": "Villa Comunale",
+      "sectors": "Artigianato, creazioni e idee regalo",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-06",
+          "end": "2025-12-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.canosa.bt.it/it/news/1925316"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Documentata solo l’edizione 2025 con 18 stand; numero storico, non posti liberi. Il programma 2026 non è verificato. Chiedere a Pro Loco/SUAP prossime date, selezione per artigiani e creativi, titolo richiesto, costo, allestimento e servizi; nessuna gratuità banco dall’accesso del pubblico."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.canosa.bt.it/it/news/1925316"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Margherita di Savoia",
+      "name": "Cipolla in Festa",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.qualivita.it/news/cipolla-in-festa-conto-alla-rovescia-per-il-weekend-a-margherita-di-savoia/",
+        "label": "qualivita.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Ottava edizione del Consorzio della Cipolla Bianca di Margherita IGP, con degustazioni, produttori e attività territoriali.",
+      "venue": "Piazza Marconi, piazza Libertà e stabilimenti aderenti",
+      "sectors": "Cipolla Bianca IGP e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-13",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.qualivita.it/news/cipolla-in-festa-conto-alla-rovescia-per-il-weekend-a-margherita-di-savoia/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comunicato del Consorzio pubblicato da Qualivita. Programma di degustazioni e ristorazione, non libero accesso ai posteggi. Verificare con Consorzio e SUAP eventuale selezione commerciale, categorie e quote; ticket vini e piatti sono prezzi al pubblico, non tariffe stand."
+      },
+      "sourceRecordIds": [
+        "https://www.qualivita.it/news/cipolla-in-festa-conto-alla-rovescia-per-il-weekend-a-margherita-di-savoia/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Margherita di Savoia",
+      "name": "Sagra del Grano Cotto",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.margheritaviva.it/notizie/un-chicco-di-grano-mille-storie-da-raccontare-a-margherita-torna-la-sagra-del-grano-cotto/",
+        "label": "margheritaviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Manifestazione di Pro Loco, Fare Natura e Consorzio Cipolla Bianca con convegno e percorso di degustazione.",
+      "venue": "Ex Palazzo di Città per il convegno; percorso gastronomico da verificare",
+      "sectors": "Grano cotto e dolci tradizionali",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-07",
+          "end": "2026-11-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.margheritaviva.it/notizie/un-chicco-di-grano-mille-storie-da-raccontare-a-margherita-torna-la-sagra-del-grano-cotto/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Notizia locale del 30 ottobre 2026: convegno alle 17 e percorso degustazione dalle 19 il 7 novembre. La fonte descrive una collaborazione di associazioni, non un bando per ambulanti. Verificare con Pro Loco e SUAP eventuale ammissione esterna, area, requisiti e costi."
+      },
+      "sourceRecordIds": [
+        "https://www.margheritaviva.it/notizie/un-chicco-di-grano-mille-storie-da-raccontare-a-margherita-torna-la-sagra-del-grano-cotto/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Margherita di Savoia",
+      "name": "Mostra Mercato estiva del Modernariato, Vintage e Artigianato",
+      "months": [
+        6,
+        7,
+        8
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.cosedicasa.com/mercatini/margherita-di-savoia",
+        "label": "cosedicasa.com · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatino specializzato segnalato dalla fonte editoriale venerdì, sabato e domenica nei mesi estivi; nessun calendario giornaliero confermato.",
+      "venue": "Lungomare Cristoforo Colombo",
+      "sectors": "Modernariato, collezionismo, vintage e artigianato",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Cose di Casa indica Antiquarius ONLUS con Pro Loco, periodo giugno–agosto ore 18–24. Il sito Pro Loco è stato consultato senza conferma puntuale 2026; le prossime date automatiche 2027 non sono usate. Confermare attività, giornate, categoria, autorizzazioni e quote con organizzatori/SUAP."
+      },
+      "sourceRecordIds": [
+        "https://www.cosedicasa.com/mercatini/margherita-di-savoia"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Minervino Murge",
+      "name": "Sagra del Fungo Cardoncello",
+      "months": [
+        10
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2409-cardoncello-on-the-road-minervino-murge-2026",
+        "label": "istintoprimitivo.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Tappa del circuito gastronomico murgiano con prodotti tipici e Pro Loco di Minervino Murge.",
+      "venue": "Borgo antico e centro cittadino",
+      "sectors": "Funghi cardoncelli e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-24",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2409-cardoncello-on-the-road-minervino-murge-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pagina territoriale Istinto Primitivo con comunicazione attribuita alla Pro Loco. Per future edizioni contattare Pro Loco e SUAP per ammissione, settori, stand, titoli e servizi. Nessuna tariffa o gratuità del posteggio dedotta dalla descrizione della festa."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2409-cardoncello-on-the-road-minervino-murge-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Minervino Murge",
+      "name": "Sagra del Panzerotto",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.caminvattin.it/event/a-minervino-murge-torna-la-sagra-del-panzerotto/",
+        "label": "caminvattin.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Serata gastronomica dei Volontari per Minervino in Villa Faro; l’atto comunale di liquidazione conferma la realizzazione dell’evento.",
+      "venue": "Villa Faro",
+      "sectors": "Panzerotti e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-12",
+          "end": "2026-07-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.caminvattin.it/event/a-minervino-murge-torna-la-sagra-del-panzerotto/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La data è nella comunicazione dell’evento; l’atto comunale 793/2026 documenta un contributo all’associazione per evento e palco, non una tariffa banco. Chiedere ai Volontari per Minervino e al SUAP eventuale accesso di operatori esterni, titoli, quote e nuova edizione."
+      },
+      "sourceRecordIds": [
+        "https://www.caminvattin.it/event/a-minervino-murge-torna-la-sagra-del-panzerotto/",
+        "https://www.halleyweb.com/c110006/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5WpBeUT6QT0-A/provvedimenti/2/categoria/114"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Minervino Murge",
+      "name": "Festa dell’Uva e del Vino",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.minervinoviva.it/notizie/tra-sapori-tipici-e-tradizioni-grande-successo-a-minervino-per-la-festa-dell-uva-e-del-vino/",
+        "label": "minervinoviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sesta edizione dei Volontari per Minervino, con standisti e valorizzazione delle produzioni vitivinicole locali.",
+      "venue": "Villa Faro e centro storico",
+      "sectors": "Uva, vino e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-20",
+          "end": "2026-08-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.minervinoviva.it/notizie/tra-sapori-tipici-e-tradizioni-grande-successo-a-minervino-per-la-festa-dell-uva-e-del-vino/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, non posti disponibili per ogni ambulante. Contattare organizzatore e SUAP per nuova edizione, categorie ammesse, selezione, autorizzazioni, costi e dotazioni. Ingresso libero e degustazioni gratuite per il pubblico non significano posteggio gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.minervinoviva.it/notizie/tra-sapori-tipici-e-tradizioni-grande-successo-a-minervino-per-la-festa-dell-uva-e-del-vino/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Ferdinando di Puglia",
+      "name": "Fiera Nazionale del Carciofo Mediterraneo e del Prodotto Ortofrutticolo",
+      "months": [
+        11
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/",
+        "label": "Comune di San Ferdinando di Puglia",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sessantaseiesima edizione con spazi espositivi, produttori, commercio generico e alimentare; date del Comune e del modulo originale prevalgono sui calendari discordanti.",
+      "venue": "San Ferdinando di Puglia; sede e postazione da confermare all’Ufficio Fiera",
+      "sectors": "Prodotti agricoli, alimentari e non alimentari, ristorazione e servizi",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-19",
+          "end": "2026-11-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Domanda entro 17 novembre 2026, con prodotti/servizi, spazio richiesto e dichiarazione antimafia; pagamento totale tramite PagoPA, sezione Fiere, indicando lo spazio. Assegnazione dell’Ufficio Fiera, non posto garantito. Il modulo conferma 19–22 novembre; non usate le date 8–9, 12–15 o 13–16 dei calendari esterni.",
+        "deadline": "2026-11-17",
+        "contact": "Ufficio Fiera / Servizio Agricoltura",
+        "email": "protocollo@pec.comune.sanferdinandodipuglia.bt.it",
+        "costs": "Modulo 2026, intera manifestazione: gazebo 4×4 m (16 m²) 550 €; tensostruttura 4×3 m (12 m²) 750 €; area espositiva libera 80/90/150 m² rispettivamente 640/720/1.000 €. Area commerciale libera 5×4 m (20 m²): generica 250 €, alimentare 300 €, «Track» 400 €. Quote comprendenti RCT obbligatoria, luce e vigilanza; potenza, acqua e IVA non specificate. Totale via PagoPA; nessuna somma tra alternative."
+      },
+      "sourceRecordIds": [
+        "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/",
+        "https://comune.sanferdinandodipuglia.bt.it/novita/fiera-nazionale-del-carciofo-edizione-2026/domanda-di-partecipazione-fiera-2026-2/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Spinazzola",
+      "name": "Sagra del Fungo Cardoncello",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.caminvattin.it/event/spinazzola-sagra-del-fungo-cardoncello-2026/",
+        "label": "caminvattin.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Ventisettesima edizione della Pro Loco dedicata al cardoncello e alle produzioni murgiane, con percorso gastronomico nel centro storico.",
+      "venue": "Centro storico di Spinazzola",
+      "sectors": "Funghi cardoncelli e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-07",
+          "end": "2026-11-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.caminvattin.it/event/spinazzola-sagra-del-fungo-cardoncello-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, non posti disponibili per ogni ambulante. Contattare organizzatore e SUAP per nuova edizione, categorie ammesse, selezione, autorizzazioni, costi e dotazioni. Ingresso libero e degustazioni gratuite per il pubblico non significano posteggio gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.caminvattin.it/event/spinazzola-sagra-del-fungo-cardoncello-2026/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Spinazzola",
+      "name": "Festa della Salsiccia a Punta di Coltello",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.spinazzolaviva.it/notizie/festa-della-salsiccia-torna-a-spinazzola-appuntamento-il-4-e-5-settembre-nel-quartiere-san-vito/",
+        "label": "spinazzolaviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Nona edizione del Comune con Pro Loco Torre e Pino e macellai locali; nuova sede e giornate anticipate a venerdì/sabato.",
+      "venue": "Piazza San Vito",
+      "sectors": "Salsiccia a punta di coltello e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-04",
+          "end": "2026-09-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.spinazzolaviva.it/notizie/festa-della-salsiccia-torna-a-spinazzola-appuntamento-il-4-e-5-settembre-nel-quartiere-san-vito/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, non posti disponibili per ogni ambulante. Contattare organizzatore e SUAP per nuova edizione, categorie ammesse, selezione, autorizzazioni, costi e dotazioni. Ingresso libero e degustazioni gratuite per il pubblico non significano posteggio gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.spinazzolaviva.it/notizie/festa-della-salsiccia-torna-a-spinazzola-appuntamento-il-4-e-5-settembre-nel-quartiere-san-vito/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Trani",
+      "name": "Fiera della Madonna del Carmine",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf",
+        "label": "Comune di Trani",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Posteggi temporanei alimentari, non alimentari e artigianali assegnati per graduatoria; il bando 2026 prevede 40 posteggi per questa festa.",
+      "venue": "Piazza Plebiscito",
+      "sectors": "Alimentari, non alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-16",
+          "end": "2026-07-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Modello A in bollo da 16 € via PEC al protocollo, con titolo commercio aree pubbliche, CCIAA e allegati richiesti. Termine prorogato al 24 giugno 2026, ormai trascorso; graduatoria e successivo titolo autorizzatorio necessari. Il numero del bando non indica posti rimasti disponibili. Regole e nuova annualità da verificare al SUAP.",
+        "deadline": "2026-06-24",
+        "costs": "Bando 2026: domanda in carta da bollo da 16 €. Si tratta del costo amministrativo indicato, non del canone o del totale del posteggio. Tariffa suolo, IVA e servizi non quantificati nel bando letto."
+      },
+      "sourceRecordIds": [
+        "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf",
+        "https://www.comune.trani.bt.it/it/news/136224/posteggi-temporanei-per-festa-del-carmine-e-san-nicola-proroga-scadenza"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Trani",
+      "name": "Fiera di San Nicola il Pellegrino",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf",
+        "label": "Comune di Trani",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Posteggi temporanei alimentari, non alimentari e artigianali assegnati per graduatoria; il bando 2026 prevede 50 posteggi per questa festa.",
+      "venue": "Piazza Plebiscito",
+      "sectors": "Alimentari, non alimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-01",
+          "end": "2026-08-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Modello A in bollo da 16 € via PEC al protocollo, con titolo commercio aree pubbliche, CCIAA e allegati richiesti. Termine prorogato al 24 giugno 2026, ormai trascorso; graduatoria e successivo titolo autorizzatorio necessari. Il numero del bando non indica posti rimasti disponibili. Regole e nuova annualità da verificare al SUAP.",
+        "deadline": "2026-06-24",
+        "costs": "Bando 2026: domanda in carta da bollo da 16 €. Si tratta del costo amministrativo indicato, non del canone o del totale del posteggio. Tariffa suolo, IVA e servizi non quantificati nel bando letto."
+      },
+      "sourceRecordIds": [
+        "https://trani-api.municipiumapp.it/s3/7382/allegati/avviso-pubblico-posteggi-feste-2026.pdf",
+        "https://www.comune.trani.bt.it/it/news/136224/posteggi-temporanei-per-festa-del-carmine-e-san-nicola-proroga-scadenza"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Trani",
+      "name": "Trani nell’Arte · Mercatino di Antiquariato e Modernariato",
+      "months": [
+        7,
+        8,
+        10
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.traniviva.it/notizie/trani-celebra-il-fascino-del-tempo-con-trani-nell-arte/",
+        "label": "traniviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatino di oggetti d’epoca, libri, vinili e artigianato; conservati tre appuntamenti documentati con i titoli estivi e Autunno nell’Arte.",
+      "venue": "Piazza della Repubblica",
+      "sectors": "Antiquariato, modernariato, collezionismo, vintage e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-26",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.traniviva.it/notizie/trani-celebra-il-fascino-del-tempo-con-trani-nell-arte/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-23",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.traniviva.it/notizie/trani-nell-arte-l-appuntamento-di-agosto-con-l-antiquariato-e-il-modernariato/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-25",
+          "end": "2026-10-25",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.traniviva.it/notizie/autunno-nell-arte-il-fascino-del-vintage-torna-in-piazza-della-repubblica-a-trani/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Tre giornate documentate da TraniViva, ore 8–21; il titolo autunnale non moltiplica la stessa manifestazione. Date future 22 novembre/13 dicembre viste su un aggregatore ma non confermate nelle fonti lette, quindi non pubblicate. Per partecipare verificare calendario, organizzatore, selezione, costo e autorizzazioni al SUAP."
+      },
+      "sourceRecordIds": [
+        "https://www.traniviva.it/notizie/trani-celebra-il-fascino-del-tempo-con-trani-nell-arte/",
+        "https://www.traniviva.it/notizie/trani-nell-arte-l-appuntamento-di-agosto-con-l-antiquariato-e-il-modernariato/",
+        "https://www.traniviva.it/notizie/autunno-nell-arte-il-fascino-del-vintage-torna-in-piazza-della-repubblica-a-trani/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Trani",
+      "name": "Primavera Tranese · Antichi Ricordi",
+      "months": [
+        4
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.traniviva.it/notizie/trani-celebra-la-tradizione-torna-primavera-tranese-antichi-ricordi-il-19-aprile/",
+        "label": "traniviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatino di antichi mestieri, prodotti artigianali e oggetti d’epoca; appuntamento tematico distinto dal mercatino estivo.",
+      "venue": "Piazza della Repubblica",
+      "sectors": "Artigianato, oggetti d’epoca e creazioni",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.traniviva.it/notizie/trani-celebra-la-tradizione-torna-primavera-tranese-antichi-ricordi-il-19-aprile/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte documenta la manifestazione, non posti disponibili per ogni ambulante. Contattare organizzatore e SUAP per nuova edizione, categorie ammesse, selezione, autorizzazioni, costi e dotazioni. Ingresso libero e degustazioni gratuite per il pubblico non significano posteggio gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.traniviva.it/notizie/trani-celebra-la-tradizione-torna-primavera-tranese-antichi-ricordi-il-19-aprile/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Trani",
+      "name": "Festa del Cioccolato Artigianale",
+      "months": [
+        2,
+        3
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.traniviva.it/notizie/trani-ospita-la-prima-edizione-della-festa-del-cioccolato-artigianale/",
+        "label": "traniviva.it · fonte pubblica",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Prima edizione con maestri cioccolatieri e vendita di cioccolato artigianale, accompagnata da laboratori e attività.",
+      "venue": "Piazza della Repubblica",
+      "sectors": "Cioccolato e dolci artigianali",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-27",
+          "end": "2026-03-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.traniviva.it/notizie/trani-ospita-la-prima-edizione-della-festa-del-cioccolato-artigianale/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comunicazione ripresa dalla stampa locale: selezione tematica di maestri cioccolatieri, non mercato generico. I laboratori gratuiti per le scuole non provano stand gratuito. Contattare l’organizzazione Feste del Cioccolato e SUAP per prossima edizione, requisiti, costi e servizi."
+      },
+      "sourceRecordIds": [
+        "https://www.traniviva.it/notizie/trani-ospita-la-prima-edizione-della-festa-del-cioccolato-artigianale/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Trani",
+      "name": "Mercatini di Natale · Le Vie del Natale",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf",
+        "label": "Comune di Trani",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera natalizia e mercatini del cartellone comunale 2025, con giornate esplicite nel manifesto originale; non tutto il cartellone è attività commerciale.",
+      "venue": "Piazza della Repubblica",
+      "sectors": "Artigianato e prodotti natalizi",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-21",
+          "end": "2025-12-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf"
+        },
+        {
+          "year": 2025,
+          "start": "2025-12-28",
+          "end": "2025-12-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Manifesto comunale 2025 letto visivamente: fiera il 21 dicembre, mercatini il 22, 23, 24 e 28. Non è mercatino continuativo 5 dicembre–6 gennaio e non conferma il 2026/27. Per nuova edizione verificare organizzatore, selezione, categorie, quote e dotazioni al SUAP."
+      },
+      "sourceRecordIds": [
+        "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf",
+        "https://www.comune.trani.bt.it/it/news/le-vie-del-natale-tutti-gli-eventi-programmati-a-trani"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Trani",
+      "name": "La Biblioteca degli Oggetti · Mercatino dell’Economia Circolare",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf",
+        "label": "Comune di Trani",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatino tematico dell’economia circolare distinto dai banchi natalizi di piazza della Repubblica; documentato nel cartellone comunale 2025.",
+      "venue": "Piazza Scolanova",
+      "sectors": "Oggetti per riuso ed economia circolare",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-19",
+          "end": "2025-12-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il manifesto indica tre appuntamenti dal 19 al 21 dicembre 2025 alle 17. Non è prova di mercato commerciale aperto a ogni ambulante: verificare con organizzatore natura di scambio/vendita, condizioni di partecipazione, titoli e costi. Nessuna edizione 2026 dedotta."
+      },
+      "sourceRecordIds": [
+        "https://trani-api.municipiumapp.it/s3/7382/allegati/novita/notizie/manifesto-70x100-4.pdf",
+        "https://www.comune.trani.bt.it/it/news/le-vie-del-natale-tutti-gli-eventi-programmati-a-trani"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Trinitapoli",
+      "name": "Sagra del Carciofo Violetto",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Sagra-del-carciofo",
+        "label": "Comune di Trinitapoli",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra gastronomica con prodotti al carciofo, vino, artigianato e musica; il calendario comunale indica 27–29 novembre 2026 ma rimanda ai successivi dettagli operativi.",
+      "venue": "Trinitapoli; sede degli stand da confermare al Comune",
+      "sectors": "Carciofi, vini, gastronomia e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-27",
+          "end": "2026-11-29",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Sagra-del-carciofo",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Periodo annunciato nella scheda comunale aggiornata a gennaio 2026, non giorni dei singoli banchi o avviso espositore. La Consulta istituzionale di ottobre è un organismo di collaborazione, non assegnazione di stand. Non adottati 3 agosto né 28 novembre–1 dicembre degli aggregatori. Verificare programma e selezione con Comune/organizzatori."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Sagra-del-carciofo",
+        "https://www.trinitapoliviva.it/notizie/sagra-del-carciofo-trinitapoli-avviso-per-la-costituzione-della-consulta-istituizonale/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Trinitapoli",
+      "name": "Natale a Trinitapoli · Stand Gastronomici",
+      "months": [
+        12,
+        1
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Natale-a-Trinitapoli",
+        "label": "Comune di Trinitapoli",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna natalizia comunale che prevede stand gastronomici e street food; il periodo generale non è apertura continuativa degli stand.",
+      "venue": "Piazza Umberto I e aree cittadine da confermare",
+      "sectors": "Gastronomia e street food",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-12-20",
+          "end": "2027-01-06",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Natale-a-Trinitapoli",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Periodo 20 dicembre 2026–6 gennaio 2027 annunciato nel calendario comunale; la stessa pagina rinvia date e dettagli alla programmazione successiva. Non attribuiti ai banchi tutti i giorni del cartellone. Chiedere a Comune e SUAP programma commerciale, eventuale selezione, requisiti, costi e servizi; ingresso gratuito riferito al pubblico."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.trinitapoli.bt.it/Vivere-il-comune/Eventi/Natale-a-Trinitapoli"
+      ]
+    }
+  ]
+}
