@@ -15,8 +15,16 @@
   30settembre–27ottobre contro2–29settembre,28giorni osservati per periodo:
   `.local/search-console/reports/2026-10-30T22-40-12-255Z-415244`.
   Credenziale cifrata, precedente configurazione cifrata conservata; nessun
-  segreto pubblicato. Due JSON originali in chiaro conservati fino ad autorizzazione
-  alla rimozione. AGENTS indirizza le future analisi alla CLI; nessun cron/task.
+  segreto pubblicato. Due JSON originali in chiaro eliminati su autorizzazione
+  esplicita e assenza verificata; credenziale cifrata ancora funzionante.
+  AGENTS indirizza le future analisi alla CLI; nessun cron/task.
+- Aggiornamento reale22:41UTC: clic554contro523 (+5,9%), impressioni8180contro6537
+  (+25,1%), posizione5,83contro6,10, CTR6,77%contro8%. Totali coerenti con giorni
+  e dispositivi. **Dettagli URL/query incompleti**: pagine73clic contro554totali;
+  ulteriore richiesta byPage senza filtro567, filtro su tutteURL73. Non equiparare
+ 37clic blog/32posteggi filtrati ai loro totali completi, né attribuire il divario
+  a una causa certa. Limite di estrazione Google documentato; nessun sorpasso
+  concorrenti dedotto. File rapporto privato `2026-10-30T22-41-35-364Z-2436f8`.
 - Backup remoto tag `backup/session-20261030-232148-search-console-diretta`
   verificato; helper con errore cleanup noto. File estranei preservati.
 
