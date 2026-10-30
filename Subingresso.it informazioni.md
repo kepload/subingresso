@@ -8,9 +8,15 @@
   Credenziale account di servizio cifrata DPAPI utenteWindows, rapporti privati
   `.local/search-console/`; nessun tracker, cron/task o modifica DB.
 - Otto prove automatiche passate: date/fuso, firmaJWT readonly, paginazione,
-  permessi/errori simulati, assenti/zeri, persistenza e DPAPI reale. **NON collegato
-  a Google**: manca creazione/autorizzazione iniziale della credenziale; nessuna
-  prova API live o dato GSC acquisito. AGENTS indirizza le future analisi alla CLI.
+  permessi/errori simulati, assenti/zeri, persistenza e DPAPI reale. **Collegato
+  e verificato live alle22:40UTC**: account dedicato con permesso Limitato,
+  proprietà `https://subingresso.it/`. Primo403 risolto selezionando la proprietà
+  prefissoURL effettivamente autorizzata invece di sc-domain. Rapporto completo
+  30settembre–27ottobre contro2–29settembre,28giorni osservati per periodo:
+  `.local/search-console/reports/2026-10-30T22-40-12-255Z-415244`.
+  Credenziale cifrata, precedente configurazione cifrata conservata; nessun
+  segreto pubblicato. Due JSON originali in chiaro conservati fino ad autorizzazione
+  alla rimozione. AGENTS indirizza le future analisi alla CLI; nessun cron/task.
 - Backup remoto tag `backup/session-20261030-232148-search-console-diretta`
   verificato; helper con errore cleanup noto. File estranei preservati.
 
