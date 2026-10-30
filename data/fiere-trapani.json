@@ -1,0 +1,3041 @@
+{
+  "province": "Trapani",
+  "checkedAt": "2026-10-30",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti",
+    "baselineCommit": "e148ab8a4b537eaa4379bc0953cb256ac829a935",
+    "privateArchive": ".local/ricerche/fiere-trapani-20261030",
+    "statistics": {
+      "events": 50,
+      "municipalitiesCovered": 25,
+      "municipalitiesWithEvents": 25,
+      "baselineEvents": 1,
+      "addedEvents": 49,
+      "pricingSummaries": 2,
+      "technicalReceipts": 236,
+      "hashVerifiedOriginals": 228,
+      "screenedEditorialCandidates": 151,
+      "publicSourceReceipts": 60
+    },
+    "scope": "Una sola provincia, checklist 77; ciclo automatico e task restano fermi, Pavia riservata.",
+    "municipalities": [
+      {
+        "city": "Alcamo",
+        "eventCount": 3,
+        "events": [
+          "sicilia-alcamo-ciokowine-fest",
+          "sicilia-alcamo-festival-della-pasta-fresca-siciliana",
+          "sicilia-alcamo-expocasa"
+        ],
+        "sources": [
+          "https://comune.alcamo.tp.it/it/news/1740917",
+          "https://comune.alcamo.tp.it/it/news/1959412",
+          "https://comune.alcamo.tp.it/it/news/2024607"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Ciokowine e Pasta Fresca da comunicati 2026; Expocasa solo 2024. Mercati settimanali e fiera Medicipolla a Medicina esclusi."
+      },
+      {
+        "city": "Buseto Palizzolo",
+        "eventCount": 3,
+        "events": [
+          "sicilia-buseto-palizzolo-mostra-mercato-e-sagra-della-busiata-busiate-buseto",
+          "sicilia-buseto-palizzolo-chiccassateddi-sagra-della-cassatella",
+          "sicilia-buseto-palizzolo-sagra-pasta-cu-l-agghia-e-sasizza-arrustuta"
+        ],
+        "sources": [
+          "https://buseto-palizzolo-api.municipiumapp.it/s3/1005/allegati/avviso-pubblico-manifestazione-interesse-xii-sagra-busiata.pdf",
+          "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_a_buseto_palizzolo.htm",
+          "https://www.siciliainfesta.com/sagre/sagra_pasta_cu_l_agghia_e_sasizza_arrustuta_buseto_palizzolo.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Busiata/Mostra Mercato verificata sull’avviso 2024: volontariato gratuito non è tariffa espositore. Pista 2026 indicizzata ma atto provinciale non recuperato, portale 403. Due sagre con periodi usuali documentati."
+      },
+      {
+        "city": "Calatafimi-Segesta",
+        "eventCount": 2,
+        "events": [
+          "sicilia-calatafimi-segesta-sagra-del-maccherone",
+          "sicilia-calatafimi-segesta-sagra-della-cassatella"
+        ],
+        "sources": [
+          "https://www.segestawelcome.com/main/sagra_maccherone_calatafimi/",
+          "https://www.siciliainfesta.com/sagre/sagra-della-cassatella-a-calatafimi-segesta.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Maccherone 2026 da portale locale; Cassatella solo mese usuale. Processioni del calendario comunale e Segesta Teatro non sono fiere aggiuntive."
+      },
+      {
+        "city": "Campobello di Mazara",
+        "eventCount": 1,
+        "events": [
+          "sicilia-campobello-di-mazara-sagra-della-nocellara-del-belice-olio-e-oliva"
+        ],
+        "sources": [
+          "https://www.westofsicily.com/it/eventi/campobello-mazara/sagra-della-nocellara-del-belice-2026-iv-edizione"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Nocellara 14–15 novembre 2026 da portale territoriale, conferma editoriale; scartate date stimate discordanti. Portale comunale in timeout, non assenza di eventi."
+      },
+      {
+        "city": "Castellammare del Golfo",
+        "eventCount": 3,
+        "events": [
+          "sicilia-castellammare-del-golfo-gustorie-di-sicilia",
+          "sicilia-castellammare-del-golfo-seacily-salone-nautico-di-sicilia",
+          "sicilia-castellammare-del-golfo-cuntu-n-cantu-e-manciu-la-cassatella"
+        ],
+        "sources": [
+          "https://saloneseacily.it/",
+          "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/",
+          "https://www.siciliainfesta.com/manifestazioni/gustorie-di-sicilia-castellammare-del-golfo.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Cartellone comunale e originale PDF: Cassatella e SEACILY; per il salone verificato sito attuale dell’organizzatore. Concerti, cinema e aquiloni non moltiplicati in mercati."
+      },
+      {
+        "city": "Castelvetrano",
+        "eventCount": 3,
+        "events": [
+          "sicilia-castelvetrano-fiera-della-madonna-della-tagliata",
+          "sicilia-castelvetrano-sagra-del-pane-nero",
+          "sicilia-castelvetrano-fiera-di-san-giovanni"
+        ],
+        "sources": [
+          "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-della-tagliata-27-8-2026.docx",
+          "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-san-giovanni-10-06-2025-1.pdf",
+          "https://www.comune.castelvetrano.tp.it/it/news/6485136",
+          "https://www.comune.castelvetrano.tp.it/it/news/6485463"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Tagliata 2026 e tabella CUP dal DOCX originale: scadenza stampata 2025 mantenuta come discordanza. Pane Nero 2026 distinto dal bando ETS e dall’avviso espositori 2025. San Giovanni solo storico 2025; mercati ordinari frazioni esclusi."
+      },
+      {
+        "city": "Custonaci",
+        "eventCount": 2,
+        "events": [
+          "sicilia-custonaci-spincia-fest",
+          "sicilia-custonaci-i-saperi-del-borgo-odori-e-sapori-di-sicilia"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/manifestazioni/odori_e_sapori_di_sicilia_custonaci.htm",
+          "https://www.siciliainfesta.com/sagre/spincia_fest_custonaci.htm",
+          "https://www.visitsicily.info/alla-scoperta-di-custonaci-dal-borgo-al-mare/"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Spincia con periodi discordanti, nessuna edizione 2026 ricostruita; Saperi del Borgo solo settembre indicativo. Natale al Borgo è titolo/programma non sufficiente senza lettura commerciale completa; Tuna Fish Fest 2026 attribuito a Bonagia/Valderice, non Cornino."
+      },
+      {
+        "city": "Erice",
+        "eventCount": 1,
+        "events": [
+          "sicilia-erice-ericenatale-mercatini-dell-artigianato-e-villaggio-del-gusto"
+        ],
+        "sources": [
+          "https://www.comune.erice.tp.it/it/news/119790/ericenatale-il-programma-degli-eventi-natalizi-del-comune-di-erice"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Letto il programma EricèNatale 2025/26 con interruzioni e orari distinti; l’avviso presepi ottobre 2026 non conferma mercatini 2026/27."
+      },
+      {
+        "city": "Favignana",
+        "eventCount": 3,
+        "events": [
+          "sicilia-favignana-sagra-delle-cassatelle",
+          "sicilia-favignana-sagra-del-cannolo-siciliano",
+          "sicilia-favignana-festa-del-borgo-marinaro-di-punta-lunga-sagra-del-tonno"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/sagre/sagra_del_cannolo_siciliano_a_favignana.htm",
+          "https://www.siciliainfesta.com/sagre/sagra_delle_cassatelle_favignana.htm",
+          "https://www.tp24.it/2026/09/03/agroalimentare/favignana-da-oggi-tre-giorni-di-festa-a-punta-lunga-arte-cinema-musica-e-sagra-del-tonno/238945"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Punta Lunga 2026: solo 5 settembre per la sagra, non tutto il festival 3–5 settembre. Cassatelle e Cannolo mantenuti come periodi usuali; musei, processioni ed eventi senza mercato non aggiunti."
+      },
+      {
+        "city": "Gibellina",
+        "eventCount": 2,
+        "events": [
+          "sicilia-gibellina-la-notte-gialla-sagra-del-melone-giallo",
+          "sicilia-gibellina-natale-street-food-sagra-del-cibo-di-strada"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/manifestazioni/natale-street-food-sagra-del-cibo-di-strada-gibellina.htm",
+          "https://www.siciliainfesta.com/sagre/la_notte_gialla_sagra_del_melone_giallo_di_gibellina.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Notte Gialla senza anno nel corpo, Natale Street Food senza edizione corrente. Comune in timeout; portale Gibellina2026/eventi 404, calendario estivo territoriale 410. Manifestazioni artistiche e storico CioccoFest itinerante non proiettati al 2026."
+      },
+      {
+        "city": "Marsala",
+        "eventCount": 2,
+        "events": [
+          "sicilia-marsala-fiera-di-maggio",
+          "sicilia-marsala-saperi-e-sapori-di-matarocco-matarocco-fest"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/sagre/saperi_e_sapori_di_matarocco_marsala.htm",
+          "https://www.tp24.it/2026/04/27/dai-comuni/c-e-la-fiera-si-sposta-il-mercatino-di-marsala-ecco-dove/233121"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Fiera di Maggio distinta dai martedì del mercato trasferito; intervallo completo non ricostruito. Matarocco solo periodo usuale. Natale 2026 in fase di raccolta proposte, non apertura certa dei mercatini; Insolito professionale escluso senza selezione commerciale pubblica."
+      },
+      {
+        "city": "Mazara del Vallo",
+        "eventCount": 2,
+        "events": [
+          "sicilia-mazara-del-vallo-cosi-di-na-vota-mercatino-delle-pulci-e-dell-antiquariato",
+          "sicilia-mazara-del-vallo-festa-del-pane-e-della-pasta"
+        ],
+        "sources": [
+          "https://comune.mazaradelvallo.tp.it/it/news/1852766",
+          "https://www.siciliainfesta.com/sagre/festa_del_pane_e_della_civilta_contadina_mazara_del_vallo.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Mercatino specializzato da comunicato comunale 2025; non dodici date automatiche 2026. Festa del Pane e Pasta con fonte editoriale 2026. Nessun rinnovo dedotto dalle sole ordinanze viabilistiche indicizzate."
+      },
+      {
+        "city": "Misiliscemi",
+        "eventCount": 1,
+        "events": [
+          "sicilia-misiliscemi-sagra-del-pane-cunzato"
+        ],
+        "sources": [
+          "https://www.comune.misiliscemi.tp.it/2a-sagra-del-pane-cunzato/"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "25° comune reale, assente dal vecchio catalogo geografico: override circoscritto nel builder con centro indicativo Wikidata Q105582817, nessuna modifica all’anagrafica generale. Pane Cunzato dal Comune, Locogrande non attribuita a Trapani. Anguria nel cartellone ma ricerca comunale vuota: nessuna data da solo indice."
+      },
+      {
+        "city": "Paceco",
+        "eventCount": 2,
+        "events": [
+          "sicilia-paceco-dattilo-cibus-fest-cannolo-fest",
+          "sicilia-paceco-sagra-del-melone-giallo"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/feste/dattilo-cannolo-fest.htm",
+          "https://www.siciliainfesta.com/sagre/sagra-del.melone-di-paceco.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Dattilo Cibus Fest 2026 esplicito; Melone senza anno nel testo è solo periodo. Cuccia è distribuzione/ricorrenza senza accesso commerciale autonomo dimostrato, esclusa. Indice comunale 410 non prova assenza."
+      },
+      {
+        "city": "Pantelleria",
+        "eventCount": 1,
+        "events": [
+          "sicilia-pantelleria-calici-di-stelle"
+        ],
+        "sources": [
+          "https://pantelleriaexperience.it/it/experiences-item/calici_di_stelle_2026_10_agosto-220"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Calici di Stelle: letto sito del coorganizzatore, 10 agosto nella descrizione e non data automatica del widget. Carnet visitatori 20 euro non è prezzo espositori. Passitaly e Cappero senza calendario verificato non ricostruiti."
+      },
+      {
+        "city": "Partanna",
+        "eventCount": 1,
+        "events": [
+          "sicilia-partanna-tipicu-arte-sagra-della-cipolla-rossa"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_rossa_a_partanna.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Cipolla Rossa 2026 da fonte editoriale. Ciocco/Birra/WineFest solo piste storiche senza mese verificato; Madonna della Libera da aggregatore automatico non sostituisce avviso originale commerciale."
+      },
+      {
+        "city": "Petrosino",
+        "eventCount": 1,
+        "events": [
+          "sicilia-petrosino-sagra-dell-uva-e-del-vino"
+        ],
+        "sources": [
+          "https://www.marsalalive.it/2026/09/10/petrosino-celebra-uva-vino-sagra-2026/amp/"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Sagra Uva: cronaca operativa 18–20 settembre prevale sul cartellone 19–21 non più accessibile. Mercato estivo Biscione del lunedì e relativa tariffa esclusi dal catalogo fiere perché proseguimento/spostamento del mercato ordinario; originali letti e conservati."
+      },
+      {
+        "city": "Poggioreale",
+        "eventCount": 2,
+        "events": [
+          "sicilia-poggioreale-mostra-dei-formaggi-della-valle-del-belice",
+          "sicilia-poggioreale-il-gusto-delle-radici-sagra-della-nfigghiulata-e-muffuletta"
+        ],
+        "sources": [
+          "https://trasparenza.comune.poggioreale.tp.it/poggioreale/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GT1RBNU31PT0-H",
+          "https://trasparenza.comune.poggioreale.tp.it/zf/index.php/atti-amministrativi/delibere/dettaglio/table-delibere-public-page/6/atto/GT0RNe5k3PT0-F",
+          "https://www.siciliainfesta.com/sagre/sagra_della_muffuletta_poggioreale.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Mostra Formaggi: determina comunale 23 maggio 2026, non stime autunnali. Nfigghiulata/Muffuletta ricondotta alla stessa rassegna, atto organizzatore 2025 distinto dalle domande dei banchi."
+      },
+      {
+        "city": "Salaparuta",
+        "eventCount": 3,
+        "events": [
+          "sicilia-salaparuta-fiera-paesana",
+          "sicilia-salaparuta-sagra-di-primavera",
+          "sicilia-salaparuta-wine-christmas-sagra-del-vino-e-dei-prodotti-tipici-natalizi"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/sagre/sagra-del-vino-e-dei-prodotti-tipici-natalizi-salaparuta.htm",
+          "https://www.visitbelice.it/en/esperienze/fiera-paesana-di-salaparuta/",
+          "https://www.visitbelice.it/en/esperienze/sagra-di-primavera/"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Fiera Paesana solo 2023; Primavera 25 marzo senza anno, solo mese usuale; Wine Christmas periodo natalizio storico. Home comunale senza eventi non prova assenza; progetti e pasti non diventano tariffe posteggio."
+      },
+      {
+        "city": "Salemi",
+        "eventCount": 1,
+        "events": [
+          "sicilia-salemi-sagra-della-busiata-nel-borgo"
+        ],
+        "sources": [
+          "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-a1-pubblico-assegnazione-spazicategoria-ristoratori-1.pdf",
+          "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-b1-pubblico-assegnazione-spazi-food-beverage.pdf",
+          "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso_c_hobbisti_artigiani_ets_v2.pdf",
+          "https://salemi-api.municipiumapp.it/s3/6063/allegati/food-e-beverage10800220260717121311.pdf",
+          "https://salemi-api.municipiumapp.it/s3/6063/allegati/verbale-assegnazione-spazi-hobbisti-artigiani-sagra-dellea-busiata-2026.pdf",
+          "https://www.comune.salemi.trapani.it/it/news/avviso-sagra-della-busiata-nel-borgo-2026"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Avvisi originali letti per tre categorie e graduatorie scansionate viste: 300/100/20 euro, esenzione ETS, vincoli prodotti e termini distinti. Nessuna disponibilità corrente dedotta dalle graduatorie."
+      },
+      {
+        "city": "San Vito Lo Capo",
+        "eventCount": 2,
+        "events": [
+          "sicilia-san-vito-lo-capo-cous-cous-fest",
+          "sicilia-san-vito-lo-capo-terr-emare-castelluzzo-tra-saperi-e-sapori"
+        ],
+        "sources": [
+          "https://couscousfest.it/",
+          "https://www.siciliainfesta.com/manifestazioni/terre-e-mare-castelluzzo-tra-saperi-e-sapori-san-vito-lo-capo.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Conservato ID Cous Cous Fest; home organizzatore già annuncia 17–26 settembre 2027, non inferenza da anno precedente. Terr’emare a Castelluzzo da pagina editoriale 2026. Concerti non diventano mercati autonomi."
+      },
+      {
+        "city": "Santa Ninfa",
+        "eventCount": 2,
+        "events": [
+          "sicilia-santa-ninfa-un-giorno-da-pecora-sagra-della-pecora-della-valle-del-belice",
+          "sicilia-santa-ninfa-sagra-della-salsiccia"
+        ],
+        "sources": [
+          "https://www.comune.santaninfa.tp.it/novita/avviso-per-la-partecipazione-allevento-un-giorno-da-pecora-2026-sagra-della-pecora-della-valle-del-belice/",
+          "https://www.comune.santaninfa.tp.it/wp-content/uploads/2026/10/Prot_Int-0017479-del-27-10-2026-Documento.pdf",
+          "https://www.siciliainfesta.com/sagre/sagra_della_salsiccia_a_santa_ninfa.htm"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Originale scansionato Pecora 2026 letto visivamente: sede legale locale, ATECO, termine 11 novembre, nessuna quota indicata. Salsiccia 2026 da fonte editoriale; nessuna gratuità commerciale ricostruita."
+      },
+      {
+        "city": "Trapani",
+        "eventCount": 3,
+        "events": [
+          "sicilia-trapani-fiera-d-agosto-artigiani-per-sant-alberto",
+          "sicilia-trapani-natale-mediterraneo-mercatini-di-natale",
+          "sicilia-trapani-stragusto"
+        ],
+        "sources": [
+          "https://comune.trapani.it/wp-content/uploads/2025/12/ProgrammaNataleMediterraneo_PDF-1.pdf",
+          "https://prolocotrapaniaps.it/feste-patronali-citta-di-trapani-manifestazioni-esterne/",
+          "https://stragusto.it/"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Stragusto annullato dal sito organizzatore, descrizioni promozionali e calendario regionale non superano lo stop. Artigiani Sant’Alberto distinta da Expo Ferragosto fermata. Natale solo 2025/26 con singole giornate e luoghi. www del Comune errore TLS, recuperato host senza www."
+      },
+      {
+        "city": "Valderice",
+        "eventCount": 3,
+        "events": [
+          "sicilia-valderice-sagra-a-fico-antichi-sapori",
+          "sicilia-valderice-tuna-fish-fest-bonagia",
+          "sicilia-valderice-sagra-dell-ulivo"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/sagre/sagra_dell_ulivo_a_valderice.htm",
+          "https://www.valderice.online/evento/21-sagra-del-fico-valderice-2026/",
+          "https://www.valderice.online/evento/tuna-fish-fest-bonagia-2026/"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Fico e Tuna Fish Fest 2026 da portale locale; Tuna a Bonagia non Custonaci. Ulivo solo novembre usuale. Regole visitatori e biglietti mai convertiti in quote banco."
+      },
+      {
+        "city": "Vita",
+        "eventCount": 1,
+        "events": [
+          "sicilia-vita-sagra-della-dieta-mediterranea"
+        ],
+        "sources": [
+          "https://www.consorziocomunale.trapani.it/provinciatp/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5XpnNUTUTT0-A"
+        ],
+        "coverage": "Ricognizione nominale con Comuni, fonti territoriali, organizzatori e screening editoriale; non lettura integrale di tutti gli albi né censimento certificato.",
+        "outcome": "Dettaglio atto Consorzio 2344 letto tramite strumento web, connessione diretta resettata. Solo settembre/ottobre e contributo all’organizzatore: nessun calendario giornaliero o ammissione dedotti dalla scheda automatica."
+      }
+    ],
+    "exclusions": [
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_maria_ss_della_cava_marsala.htm",
+        "title": "Festa di Maria Santissima della Cava a Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_biagio_salemi.htm",
+        "title": "Festa di San Biagio a Salemi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/carnevale_valderice.htm",
+        "title": "Carnevale di Valderice",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/carnevale_egadino_trapani.htm",
+        "title": "Carnevale Egadino",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/carnevale_di_petrosino.htm",
+        "title": "Carnevale di Petrosino",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/altare-di-san-giuseppe-a-campobello-di-mazara.htm",
+        "title": "Altare di San Giuseppe a Campobello di Mazara",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_giuseppe_salemi.htm",
+        "title": "Festa di San Giuseppe a Salemi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_giuseppe_marettimo.htm",
+        "title": "Festa di San Giuseppe a Marettimo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_giuseppe_a_poggioreale.htm",
+        "title": "Festa di San Giuseppe a Poggioreale",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/altare_di_san_giuseppe_a_campobello_di_mazara.htm",
+        "title": "Altare di San Giuseppe a Campobello di Mazara",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_giuseppe_gibellina.htm",
+        "title": "Festa di San Giuseppe a Gibellina",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_giuseppe_a_dattilo_paceco.htm",
+        "title": "Festa di San Giuseppe a Dattilo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_giuseppe_a_castelvetrano.htm",
+        "title": "Festa di San Giuseppe a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_giuseppe_patrono_di_salaparuta.htm",
+        "title": "Festa di San Giuseppe Patrono di Salaparuta",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/ciokowin-fest-ad-alcamo.htm",
+        "title": "Ciokowine Fest ad Alcamo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_giuseppe_calatafimi.htm",
+        "title": "Festa di San Giuseppe a Calatafimi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/pasqua_a_trapani_la_processione_dei_misteri.htm",
+        "title": "Pasqua a Trapani La Processione dei Misteri",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/settimana_santa_a_salemi.htm",
+        "title": "Settimana Santa a Salemi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/pasqua_castelvetrano.htm",
+        "title": "Pasqua a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/pasqua_a_marsala.htm",
+        "title": "Pasqua a Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/pasqua-a-favignana.htm",
+        "title": "Settimana Santa a Favignana",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/pasqua_buseto_palizzolo.htm",
+        "title": "Pasqua a Buseto Palizzolo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/pasqua_a_erice_la_processione_dei_misteri.htm",
+        "title": "Pasqua a Erice, La Processione dei Misteri",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_del_ss_crocifisso_castelvetrano.htm",
+        "title": "Festa del SS. Crocifisso a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_del_santissimo_crocifisso_calatafimi.htm",
+        "title": "Festa del Santissimo Crocifisso a Calatafimi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_del_ss_crocifisso_a_gibellina.htm",
+        "title": "Festa del SS. Crocifisso a Gibellina",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/manifestazioni_garibaldine_marsala.htm",
+        "title": "Manifestazioni Garibaldine a Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_della_madonna_di_tagliavia_vita.htm",
+        "title": "Festa della Madonna di Tagliavia a Vita",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/borghi-dei-tesori-fest-custonaci.htm",
+        "title": "Borghi dei Tesori Fest a Custonaci",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festino_di_san_nicola_di_bari_a_salemi.htm",
+        "title": "Festino di San Nicola di Bari a Salemi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/mostra_mercato_dei_formaggi_e_sagra_della_ricotta_poggioreale.htm",
+        "title": "Festival del Formaggio della Valle del Belice a Poggioreale",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/scalinata_di_san_domenico_trapani_art_e_fiori_trapani.htm",
+        "title": "Scalinata di San Domenico Trapani Art&Fiori",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/corteo_storico_di_santa_rita_castelvetrano.htm",
+        "title": "Corteo Storico di Santa Rita a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_s_antonio_da_padova_a_poggioreale.htm",
+        "title": "Festa di Sant'Antonio da Padova a Poggioreale",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_san_vito_martire_partanna.htm",
+        "title": "Festa di San Vito Martire a Partanna",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_vito_san_vito_lo_capo.htm",
+        "title": "Festa di San Vito a San Vito Lo Capo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_della_madonna_maria_ss_dei_miracoli_alcamo.htm",
+        "title": "Festa della Madonna Maria SS. dei Miracoli ad Alcamo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/naturalmente_a_tangi_buseto_palizzolo.htm",
+        "title": "Naturalmente a Tangi a Buseto Palizzolo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/rievocazione_storica_di_san_giovanni_battista_castelvetrano.htm",
+        "title": "Rievocazione storica di San Giovanni Battista Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/mazara-del-pesce-a-mazara-del-vallo.htm",
+        "title": "Mazara del Pesce a Mazara del Vallo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/infiorata_di_calatafimi_segesta.htm",
+        "title": "Infiorata di Calatafimi Segesta",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/stragusto_a_trapani.htm",
+        "title": "Stragusto a Trapani",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festeggiamenti_in_onore_del_ss_crocifisso_a_bonagia_valderice.htm",
+        "title": "Festeggiamenti in onore del SS. Crocifisso a Bonagia",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-del_maccherone_calatafimi_segesta.htm",
+        "title": "Sagra del Maccherone a Calatafimi Segesta",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/sagra_della_busiata_salemi.htm",
+        "title": "Sagra della Busiata a Salemi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_s_alberto_e_della_madonna_di_trapani.htm",
+        "title": "Festa di Sant'Alberto e della Madonna di Trapani",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_domenico_trapani.htm",
+        "title": "Festa di San Domenico a Trapani",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/rievocazione_storica_nostra_principalissima_patrona_castellammare_del_golfo.htm",
+        "title": "Rievocazione Storica Nostra Principalissima Patrona a Castellammare del Golfo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/sarduzzafest_a_castelvetrano.htm",
+        "title": "SarduzzaFEST a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_maria_ss_di_custonaci_custonaci.htm",
+        "title": "Festa Maria SS. di Custonaci",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_di_san_vito_mazara_del_vallo.htm",
+        "title": "Festa di San Vito a Mazara del Vallo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_maria_ss_dell_alto_alcamo.htm",
+        "title": "Festa Maria SS. dell'Alto ad Alcamo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festeggiamenti_in_onore_di_maria_ss_bambina_calatafimi.htm",
+        "title": "Festeggiamenti in onore di Maria SS. Bambina a Calatafimi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/festa_federicina_erice.htm",
+        "title": "Festa FedEricina a Erice",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/fiera_della_tagliata_castelvetrano.htm",
+        "title": "Fiera della Tagliata a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/tempo_ri_capuna_san_vito_lo_capo.htm",
+        "title": "Tempu ri Capuna a San Vito Lo Capo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/pane_nero_fest_a_castelvetrano.htm",
+        "title": "Pane Nero Fest a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-dell-olio-e-dell-oliva-campobello-di-mazara.htm",
+        "title": "Sagra dell'Olio e dell'Oliva a Campobello di Mazara",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/gusta_la_pecora_a_santa_ninfa.htm",
+        "title": "Gusta la Pecora a Santa Ninfa",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/feste_patronali_salemi.htm ",
+        "title": "Feste patronali a Salemi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/trapani_medievale_rievocazione_storica_manfredi_di_trinacria.htm",
+        "title": "Trapani Medievale - Rievocazione Storica Manfredi di Trinacria",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/natale_a_trapani.htm",
+        "title": "Natale a Trapani",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/natale_ad_erice.htm",
+        "title": "Natale ad Erice",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/natale_a_custonaci.htm",
+        "title": "Natale a Custonaci",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_immacolata_concezione_calatafimi.htm",
+        "title": "Festa Immacolata Concezione a Calatafimi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/natale_a_san_vito_lo_capo.htm",
+        "title": "Natale a San Vito Lo Capo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/natale_castellammare_del_golfo.htm",
+        "title": "Natale a Castellammare del Golfo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/natale_a_marsala.htm",
+        "title": "Natale a Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della:cuccia_a_paceco.htm",
+        "title": "Sagra della Cuccia a Paceco",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/festa-dell-agricoltura-a-santa-ninfa.htm",
+        "title": "Festa dell'Agricoltura a Santa Ninfa",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/cappero-fest-a-pantelleria.htm",
+        "title": "Cappero Fest a Pantelleria",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/ciocco_fest_a_partanna.htm",
+        "title": "Ciocco Fest a Partanna",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/cantine_aperte_a_gibellina.htm",
+        "title": "Cantine Aperte a Gibellina",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/Nncellara-fest-a-castelvetrano.htm",
+        "title": "Nocellara Fest a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/castelvetrano-e-villaggio-gastronomico.htm",
+        "title": "Castelvetrano e', Villaggio Gastronomico",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-della-nfigghiulata-a-poggioreale.htm",
+        "title": "Sagra della 'Nfigghiulata a Poggioreale",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/fishtuna-il-festival-del-tonno-a-marsala.htm",
+        "title": "Fishtuna a Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_del_carciofo_a_castelvetrano_castelvetrano.htm",
+        "title": "Sagra del Carciofo a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/birra_fest_partanna.htm",
+        "title": "Birra Fest a Partanna",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/liccati_sicily_food_fest_castellammare_del_golfo.htm",
+        "title": "Liccati Sicily Food Fest a Castellammare del Golfo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/settimana_della_sardina_a_selinunte.htm",
+        "title": "Settimana della Sardina di Selinunte",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/festa_del_cioccolato_a_castellammare_del_golfo.htm",
+        "title": "Festa del Cioccolato a Castellammare del Golfo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/gnam_a_mazara_del_vallo.htm",
+        "title": "Gnam! a Mazara del Vallo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/blue_sea_land_a_mazara_del_vallo.htm",
+        "title": "Blue Sea Land  Mazara del Vallo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_di_lu_cannatuni_a_salaparuta_salaparuta.htm",
+        "title": "Sagra di lu Cannatuni a Salaparuta",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/settimana_santa_a_valderice.htm",
+        "title": "Settimana Santa a Valderice",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_sfincia_a_petrosino.htm",
+        "title": "Sagra della Sfincia a Petrosino",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_a_fico_valderice.htm",
+        "title": "Sagra a Fico, Valderice",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa_del_i_maggio_a_paceco.htm",
+        "title": "Festa del 1 Maggio a Paceco",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_dell_uva_alcamo.htm",
+        "title": "Sagra dell'Uva a Alcamo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/tuna-fish-fest-a-custonaci.htm",
+        "title": "Tuna Fish Fest a Custonaci",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/regina_pacis_faro_di_pace_nel_mediterraneo_a_custonaci.htm",
+        "title": "Regina Pacis, Faro di Pace nel Mediterraneo a Custonaci",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/salaparuta-wine-and-jazz.htm",
+        "title": "Salaparuta Wine and Jazz",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/l-agora-l-isola-del-gusto-alcamo.htm",
+        "title": "L'Agora' L'isola del gusto ad Alcamo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/altari_votivi_nella_valle_del_belice_castelvetrano.htm",
+        "title": "Altari votivi nella Valle del Belice",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/ciocco_fest_nel_belice_a_gibellina.htm",
+        "title": "Ciocco Fest nel Belice a Gibellina",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_nfigghiulata_gibellina.htm",
+        "title": "Sagra della Nfigghiulata a Gibellina",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/festival_internazionale_del_folclore_citta_di_vita.htm",
+        "title": "Festival internazionale del Folklore Citta' di Vita",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/giornate_europee_dei_mulini_castelvetrano.htm",
+        "title": "Giornate Europee dei Mulini a Castelvetrano",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/chocomoments_marsala.htm",
+        "title": "Chocomoments Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/spincia_days_custonaci.htm",
+        "title": "Spincia Days a Custonaci",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/wineup_expo_a_marsala .htm",
+        "title": "WineUp Expo a Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/mostra_del_dolce_e_del_gelato_siciliano_a_marsala.htm",
+        "title": "Mostra del Dolce e del Gelato siciliano a Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/i_porcini_di_scorace_e_sapori_di_autunno_a_buseto_palizzolo.htm",
+        "title": "I Porcini di Scorace e Sapori di Autunno a Buseto Palizzolo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/festa_du_gnocculo_petrosino.htm",
+        "title": "Festa Du Gnocculo a Petrosino",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/mazara_food_fest_a_mazara_del_vallo.htm",
+        "title": "Mazara Food Fest a Mazara del Vallo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/tipicamente_sapori_e_tradizioni_a_calatafimi.htm",
+        "title": "Tipicamente Sapori e Tradizioni a Calatafimi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/sicily_bike_week_a_gibellina_gibellina.htm",
+        "title": "Sicily Bike Week a Gibellina",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/scirocco_wine_fest_a_gibellina.htm",
+        "title": "Scirocco Wine Fest a Gibellina",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/calatafimi_in_festa.htm",
+        "title": "Calatafimi in Festa",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/pescebello_fish_tour_delle_isole_favignana.htm",
+        "title": "Pescebello Fish Tour delle Isole",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_del_panino_ca_sasizza_arrustuta_a_ballata_erice.htm",
+        "title": "Sagra del Panino ca sasizza arrustuta a Ballata di Erice",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/tour_de_forst_a_trapani.htm",
+        "title": "Tour de Forst a Trapani",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/cuordisale_week_a_trapani_trapani.htm",
+        "title": "Cuordisale Week a Trapani",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_dell_orto_pantesco_a_pantelleria.htm",
+        "title": "Sagra dell'Orto Pantesco a Pantelleria",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/amare_fest_marsala.htm",
+        "title": "aMareFest a Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/circo_paniko_a_marsala.htm",
+        "title": "Circo Paniko a Marsala",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/gustare_scopello_castellammare_del_golfo.htm",
+        "title": "Gustare Scopello",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/l_augghia_pesce_povero,_ricchezza_del_mediterraneo_a_favignana.htm",
+        "title": "L'augghia pesce povero, ricchezza del Mediterraneo a Favignana",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/marsalawine_at_christmastime.htm",
+        "title": "MarsalaWine at ChristmasTime",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/la_sfincia_di_natale_a_salemi_salemi.htm",
+        "title": "La Sfincia di Natale a Salemi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_di_lu_maccarruni_a_santa_ninfa.htm",
+        "title": "Sagra di lu Maccarruni a Santa Ninfa",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/porchetta_e_motori_a_calatafimi_segesta_calatafimi.htm",
+        "title": "Porchetta & motori a Calatafimi Segesta",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/wine_fest_a_partanna.htm",
+        "title": "Wine Fest a Partanna",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/saperi_e_sapori_dautunno_a_campobello_di_mazara_campobello_di_mazara.htm",
+        "title": "Saperi e sapori d'autunno a Campobello di Mazara",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/sicilialleva_a_calatafimi_segesta.htm",
+        "title": "Sicilia Alleva a Calatafimi Segesta",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_custonaci.htm",
+        "title": "Sagra della Cassatella a Custonaci",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/panicunzatu_fest_castellammare_del_golfo.htm",
+        "title": "PaniCunzatu Fest a Scopello",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/festival_del_gusto_a_calatafimi.htm",
+        "title": "Festival del Gusto a Calatafimi",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_melanzana_petrosino.htm",
+        "title": "Sagra della Melanzana a Petrosino",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/la_padellata_a_mazara_del_vallo.htm",
+        "title": "La Padellata a Mazara del Vallo",
+        "reason": "Screening della pista: non selezionata senza periodo commerciale sufficientemente documentato, oppure spettacolo/visita/ricorrenza senza prova di mercato autonomo. Titoli, date stimate e aggiornamento pagina non provano edizione corrente. Lettura integrale non dichiarata per tutte le piste; vedere decisioni comunali."
+      }
+    ],
+    "limitations": [
+      "Ricerca accessibile attuale con limiti espliciti; non censimento esaustivo certificato, nessun contatto a terzi o assegnazione ottenuta.",
+      "Acquisizioni tecniche, risultati indicizzati e letture di supporto sono distinti: le ricevute non sono altrettante letture integrali.",
+      "Fonti editoriali attribuite; annualità solo quando esplicita nel testo, mesi usuali e storico distinti dalle date confermate. Nessuna estrapolazione automatica.",
+      "Stragusto 2026 annullato; Expo Ferragosto fermata non confusa con Fiera Artigiani Sant’Alberto. Nessuna disponibilità promessa.",
+      "Otto programmi territoriali passati rispondono 410; diversi portali e atti resettano o vanno in timeout. L’indicizzazione non è recupero dell’originale e non prova assenza di eventi.",
+      "Campobello/Gibellina in timeout, vecchi URL 404, indice Paceco 410, portale Buseto secondario 403. Dossier conserva gli errori e i recuperi.",
+      "Tagliata 2026 conserva termine 2025 nell’originale; prezzi di canone non sommano servizi non indicati. IVA assente dichiarata, non ipotizzata.",
+      "Salemi: quote per categorie distinte, esenzione ETS e tetto prezzo al pubblico separati; bandi scaduti e graduatorie non equivalgono a spazi attuali.",
+      "Biscione Petrosino: mercato ordinario/stagionale non nuova fiera; 150/250 euro di suolo dal documento conservati privatamente e non aggiunti al catalogo fiere.",
+      "Misiliscemi distinto da Trapani, 25 comuni reali contro 24 nell’anagrafica storica. Coordinate indicative del comune, non geolocalizzazione dei singoli banchi.",
+      "Calici di Stelle: widget/data e prezzi visitatori non determinano date o tariffe banco. Feste del borgo e giornate gastronomiche distinte.",
+      "Pavia, altre province, account, quota, task e stop persistente invariati. Nuove edizioni, disponibilità e nuovi bandi sono manutenzione futura distinta."
+    ],
+    "sourceReceipts": [
+      {
+        "url": "https://comune.trapani.it/wp-content/uploads/2025/12/ProgrammaNataleMediterraneo_PDF-1.pdf",
+        "status": 200,
+        "finalUrl": "https://comune.trapani.it/wp-content/uploads/2025/12/ProgrammaNataleMediterraneo_PDF-1.pdf",
+        "sha256": "b1afbc47d72065ad1e0eda143991023b6d4694a0dded36e308ff5a5aa787bca6",
+        "retrievedAt": "2026-10-30T17:14:54.364112+00:00"
+      },
+      {
+        "url": "https://www.comune.erice.tp.it/it/news/119790/ericenatale-il-programma-degli-eventi-natalizi-del-comune-di-erice",
+        "status": 200,
+        "finalUrl": "https://www.comune.erice.tp.it/it/news/119790/ericenatale-il-programma-degli-eventi-natalizi-del-comune-di-erice",
+        "sha256": "53e61b6796a37ac704b7a3bc50fb0d666afb5e24667b3aefb29fbf39f57cc538",
+        "retrievedAt": "2026-10-30T17:14:54.373474+00:00"
+      },
+      {
+        "url": "https://couscousfest.it/",
+        "status": 200,
+        "finalUrl": "https://couscousfest.it/",
+        "sha256": "b0eb164ddd6dd5cbe02948015b88f1b8ed1d263b911c03532846eb0ac3d4c791",
+        "retrievedAt": "2026-10-30T17:14:54.375917+00:00"
+      },
+      {
+        "url": "https://www.segestawelcome.com/main/sagra_maccherone_calatafimi/",
+        "status": 200,
+        "finalUrl": "https://www.segestawelcome.com/main/sagra_maccherone_calatafimi/",
+        "sha256": "025934b6536b088e886a1a72d0efe5ab810f18ada0e39ea4a6cb5d369219e759",
+        "retrievedAt": "2026-10-30T17:14:56.918696+00:00"
+      },
+      {
+        "url": "https://prolocotrapaniaps.it/feste-patronali-citta-di-trapani-manifestazioni-esterne/",
+        "status": 200,
+        "finalUrl": "https://prolocotrapaniaps.it/feste-patronali-citta-di-trapani-manifestazioni-esterne/",
+        "sha256": "4404aa54ed052722696fe1938fafdfe8c367bc85d85bc333ab4d1ddef58bd435",
+        "retrievedAt": "2026-10-30T17:15:53.546791+00:00"
+      },
+      {
+        "url": "https://stragusto.it/",
+        "status": 200,
+        "finalUrl": "https://www.stragusto.it/it/",
+        "sha256": "078f16126d7db1cbbb43c90699326561ed1a4a70169ed2c5f03d9dfb5a88a035",
+        "retrievedAt": "2026-10-30T17:15:53.548568+00:00"
+      },
+      {
+        "url": "https://comune.mazaradelvallo.tp.it/it/news/1852766",
+        "status": 200,
+        "finalUrl": "https://comune.mazaradelvallo.tp.it/it/news/1852766",
+        "sha256": "f3912ea7ef8c55f50ead7a05411a01cf7d4f2d50fb1c52c06a247fde59ee6d40",
+        "retrievedAt": "2026-10-30T17:15:53.554062+00:00"
+      },
+      {
+        "url": "https://comune.alcamo.tp.it/it/news/1959412",
+        "status": 200,
+        "finalUrl": "https://comune.alcamo.tp.it/it/news/1959412",
+        "sha256": "12e66e613fb8cf60403f809e88b6bed0189d7310990cac97875414803ad89a31",
+        "retrievedAt": "2026-10-30T17:15:53.555209+00:00"
+      },
+      {
+        "url": "https://comune.alcamo.tp.it/it/news/2024607",
+        "status": 200,
+        "finalUrl": "https://comune.alcamo.tp.it/it/news/2024607",
+        "sha256": "efe47933a14604105c057ac76744f39cd226285f30191c03a7a4c6cd5052bd52",
+        "retrievedAt": "2026-10-30T17:15:53.556106+00:00"
+      },
+      {
+        "url": "https://comune.alcamo.tp.it/it/news/1740917",
+        "status": 200,
+        "finalUrl": "https://comune.alcamo.tp.it/it/news/1740917",
+        "sha256": "19a5f3153857faa797e82393340bd25b74b39d0f889aeb271be4900e58151873",
+        "retrievedAt": "2026-10-30T17:15:54.711515+00:00"
+      },
+      {
+        "url": "https://www.comune.santaninfa.tp.it/novita/avviso-per-la-partecipazione-allevento-un-giorno-da-pecora-2026-sagra-della-pecora-della-valle-del-belice/",
+        "status": 200,
+        "finalUrl": "https://www.comune.santaninfa.tp.it/novita/avviso-per-la-partecipazione-allevento-un-giorno-da-pecora-2026-sagra-della-pecora-della-valle-del-belice/",
+        "sha256": "5f7d7b194687ac8d05b0799ee0ed9c639c6e869c0cbfb72048a4f6a88cde1fd4",
+        "retrievedAt": "2026-10-30T17:15:55.069992+00:00"
+      },
+      {
+        "url": "https://trasparenza.comune.poggioreale.tp.it/poggioreale/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GT1RBNU31PT0-H",
+        "status": 200,
+        "finalUrl": "https://trasparenza.comune.poggioreale.tp.it/poggioreale/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GT1RBNU31PT0-H",
+        "sha256": "4c16503972de81f977053189910ac1f66beb50c3e57264395a8fed6a65039b53",
+        "retrievedAt": "2026-10-30T17:15:55.497320+00:00"
+      },
+      {
+        "url": "https://salemi-api.municipiumapp.it/s3/6063/allegati/verbale-assegnazione-spazi-hobbisti-artigiani-sagra-dellea-busiata-2026.pdf",
+        "status": 200,
+        "finalUrl": "https://salemi-api.municipiumapp.it/s3/6063/allegati/verbale-assegnazione-spazi-hobbisti-artigiani-sagra-dellea-busiata-2026.pdf",
+        "sha256": "5cffcafa27a5369dcce736f48fa7c8c29b77056b3d739c168b47517ad0e62112",
+        "retrievedAt": "2026-10-30T17:15:55.823382+00:00"
+      },
+      {
+        "url": "https://www.valderice.online/evento/21-sagra-del-fico-valderice-2026/",
+        "status": 200,
+        "finalUrl": "https://www.valderice.online/evento/21-sagra-del-fico-valderice-2026/",
+        "sha256": "7324f8b2c038a5cd0fe234cd067200283c68d73deb6d935eeedf844bce10d5c1",
+        "retrievedAt": "2026-10-30T17:15:56.317483+00:00"
+      },
+      {
+        "url": "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/",
+        "status": 200,
+        "finalUrl": "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/",
+        "sha256": "00e2c24307356b7b6e6509014810b6f9bbcd5e8ce64d9bf50628d214e54725b4",
+        "retrievedAt": "2026-10-30T17:17:13.132995+00:00"
+      },
+      {
+        "url": "https://www.comune.salemi.trapani.it/it/news/avviso-sagra-della-busiata-nel-borgo-2026",
+        "status": 200,
+        "finalUrl": "https://www.comune.salemi.trapani.it/it/news/avviso-sagra-della-busiata-nel-borgo-2026",
+        "sha256": "cc2329b232c430fb8e9fd1c728099453f772bcc539c53594d8890e017b3efce2",
+        "retrievedAt": "2026-10-30T17:17:13.142131+00:00"
+      },
+      {
+        "url": "https://www.comune.castelvetrano.tp.it/it/news/6485463",
+        "status": 200,
+        "finalUrl": "https://www.comune.castelvetrano.tp.it/it/news/6485463",
+        "sha256": "9657f42e7db25829eb2ca47177623159c502f6f8b559c07f98326f3c856b9a47",
+        "retrievedAt": "2026-10-30T17:17:15.356011+00:00"
+      },
+      {
+        "url": "https://www.comune.castelvetrano.tp.it/it/news/6485136",
+        "status": 200,
+        "finalUrl": "https://www.comune.castelvetrano.tp.it/it/news/6485136",
+        "sha256": "bac9c9ee30b8aa90d9f7e5467871b1fab79aae2bf27be6f76e836cfb495539f1",
+        "retrievedAt": "2026-10-30T17:17:15.818751+00:00"
+      },
+      {
+        "url": "https://www.visitbelice.it/en/esperienze/fiera-paesana-di-salaparuta/",
+        "status": 200,
+        "finalUrl": "https://www.visitbelice.it/en/esperienze/fiera-paesana-di-salaparuta/",
+        "sha256": "70e39245dd4ab15f2ad521a4d2db472083c4c586535ac48aee071b0161e5c52d",
+        "retrievedAt": "2026-10-30T17:17:21.307593+00:00"
+      },
+      {
+        "url": "https://www.visitbelice.it/en/esperienze/sagra-di-primavera/",
+        "status": 200,
+        "finalUrl": "https://www.visitbelice.it/en/esperienze/sagra-di-primavera/",
+        "sha256": "86d3698307c4511e0c30f9a713c94e6f6c15a5648f11b038b2fd0b87dff683c9",
+        "retrievedAt": "2026-10-30T17:17:22.029633+00:00"
+      },
+      {
+        "url": "https://www.comune.santaninfa.tp.it/wp-content/uploads/2026/10/Prot_Int-0017479-del-27-10-2026-Documento.pdf",
+        "status": 200,
+        "finalUrl": "https://www.comune.santaninfa.tp.it/wp-content/uploads/2026/10/Prot_Int-0017479-del-27-10-2026-Documento.pdf",
+        "sha256": "3d95030c98dc64cfd2ae7b357f0d0ba7d2a04272f741bc8af3823ac285be41b4",
+        "retrievedAt": "2026-10-30T17:17:22.119903+00:00"
+      },
+      {
+        "url": "https://www.tp24.it/2026/09/03/agroalimentare/favignana-da-oggi-tre-giorni-di-festa-a-punta-lunga-arte-cinema-musica-e-sagra-del-tonno/238945",
+        "status": 200,
+        "finalUrl": "https://www.tp24.it/2026/09/03/agroalimentare/favignana-da-oggi-tre-giorni-di-festa-a-punta-lunga-arte-cinema-musica-e-sagra-del-tonno/238945",
+        "sha256": "413581515f750aa34484c1c2c3ad826bc593d92898ecf5cff4d7d7c520a37dad",
+        "retrievedAt": "2026-10-30T17:17:26.337729+00:00"
+      },
+      {
+        "url": "https://trasparenza.comune.poggioreale.tp.it/zf/index.php/atti-amministrativi/delibere/dettaglio/table-delibere-public-page/6/atto/GT0RNe5k3PT0-F",
+        "status": 200,
+        "finalUrl": "https://trasparenza.comune.poggioreale.tp.it/zf/index.php/atti-amministrativi/delibere/dettaglio/table-delibere-public-page/6/atto/GT0RNe5k3PT0-F",
+        "sha256": "9f34841af757b41eb7a42756aff23872bfa00e528b57b5379c44c884c3483a31",
+        "retrievedAt": "2026-10-30T17:17:29.047686+00:00"
+      },
+      {
+        "url": "https://www.visitsicily.info/alla-scoperta-di-custonaci-dal-borgo-al-mare/",
+        "status": 200,
+        "finalUrl": "https://www.visitsicily.info/alla-scoperta-di-custonaci-dal-borgo-al-mare/",
+        "sha256": "dac2630bb46d9eb943bd5915eb35c17abc9cda2aacfd3ca35d7e0ded116ba020",
+        "retrievedAt": "2026-10-30T17:17:29.675603+00:00"
+      },
+      {
+        "url": "https://salemi-api.municipiumapp.it/s3/6063/allegati/food-e-beverage10800220260717121311.pdf",
+        "status": 200,
+        "finalUrl": "https://salemi-api.municipiumapp.it/s3/6063/allegati/food-e-beverage10800220260717121311.pdf",
+        "sha256": "973d9dd1fae4fd88858181549e1f20fedd04e35d18e08e787748be88867e46ac",
+        "retrievedAt": "2026-10-30T17:18:29.740926+00:00"
+      },
+      {
+        "url": "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-a1-pubblico-assegnazione-spazicategoria-ristoratori-1.pdf",
+        "status": 200,
+        "finalUrl": "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-a1-pubblico-assegnazione-spazicategoria-ristoratori-1.pdf",
+        "sha256": "e5ae3b721a31e62dff520b7ae1d81a665aed64b1a704f7e09b8760e3c0531872",
+        "retrievedAt": "2026-10-30T17:18:29.743029+00:00"
+      },
+      {
+        "url": "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-b1-pubblico-assegnazione-spazi-food-beverage.pdf",
+        "status": 200,
+        "finalUrl": "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-b1-pubblico-assegnazione-spazi-food-beverage.pdf",
+        "sha256": "1f17e37b4d7356c7d3c9657ff7321455eb1a20a0a214a0fefb61eff9264312bf",
+        "retrievedAt": "2026-10-30T17:18:29.744332+00:00"
+      },
+      {
+        "url": "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso_c_hobbisti_artigiani_ets_v2.pdf",
+        "status": 200,
+        "finalUrl": "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso_c_hobbisti_artigiani_ets_v2.pdf",
+        "sha256": "231bbf5b7e866ccf40037e74634d49e208d4ae08a0c2137aa7140397626328d8",
+        "retrievedAt": "2026-10-30T17:18:30.918736+00:00"
+      },
+      {
+        "url": "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-san-giovanni-10-06-2025-1.pdf",
+        "status": 200,
+        "finalUrl": "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-san-giovanni-10-06-2025-1.pdf",
+        "sha256": "06479c71c787d70c95d4cc830506d0e04ff8d85eeb070a7dc122c382bf49b5c8",
+        "retrievedAt": "2026-10-30T17:18:31.812606+00:00"
+      },
+      {
+        "url": "https://buseto-palizzolo-api.municipiumapp.it/s3/1005/allegati/avviso-pubblico-manifestazione-interesse-xii-sagra-busiata.pdf",
+        "status": 200,
+        "finalUrl": "https://buseto-palizzolo-api.municipiumapp.it/s3/1005/allegati/avviso-pubblico-manifestazione-interesse-xii-sagra-busiata.pdf",
+        "sha256": "12e7f8d89758d4452bc436d02a14943c963dac13ec742f8e29c8ae2092ac8254",
+        "retrievedAt": "2026-10-30T17:18:32.256171+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_delle_cassatelle_favignana.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_delle_cassatelle_favignana.htm",
+        "sha256": "0b114faef92f691283a083708c1c37e076a6dda0c8f2421fb3d094ac45d5c7d9",
+        "retrievedAt": "2026-10-30T17:19:23.078513+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/gustorie-di-sicilia-castellammare-del-golfo.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/manifestazioni/gustorie-di-sicilia-castellammare-del-golfo.htm",
+        "sha256": "0e8c074d7636d4c7c0f00484718c5821240d6769656bf4e8a9b49e616c7eeccf",
+        "retrievedAt": "2026-10-30T17:19:23.079222+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/dattilo-cannolo-fest.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/feste/dattilo-cannolo-fest.htm",
+        "sha256": "d925c29a1eda93ca3999e95bf16e165a4b0c436232201bc36ca36ffd2f2d8290",
+        "retrievedAt": "2026-10-30T17:19:23.079709+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/terre-e-mare-castelluzzo-tra-saperi-e-sapori-san-vito-lo-capo.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/manifestazioni/terre-e-mare-castelluzzo-tra-saperi-e-sapori-san-vito-lo-capo.htm",
+        "sha256": "c773a4c9ef7c5d36a86478534123f089c3ed4eef59bee98686b9a72dfb766eb2",
+        "retrievedAt": "2026-10-30T17:19:23.081718+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/saperi_e_sapori_di_matarocco_marsala.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/saperi_e_sapori_di_matarocco_marsala.htm",
+        "sha256": "8f61db3b84ef65474d4642fe907172e7c0b53fbd600defdf90409cc9e5c089ec",
+        "retrievedAt": "2026-10-30T17:19:23.083477+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_rossa_a_partanna.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_rossa_a_partanna.htm",
+        "sha256": "4e4624985fe037587a91d4a043ff10341b6dda09160a3298159aabaa87cbd8b0",
+        "retrievedAt": "2026-10-30T17:19:23.087512+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-del.melone-di-paceco.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra-del.melone-di-paceco.htm",
+        "sha256": "e25c2ca2f51c04c9579466cf4a1f9cfa09c75bb6a35963c489a0f9b23346455f",
+        "retrievedAt": "2026-10-30T17:19:23.088639+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/festa_del_pane_e_della_civilta_contadina_mazara_del_vallo.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/festa_del_pane_e_della_civilta_contadina_mazara_del_vallo.htm",
+        "sha256": "57f1c38bdbd41e98de053b214fc929a0f946f868a3df1d345fc02cd452732460",
+        "retrievedAt": "2026-10-30T17:19:24.431451+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_salsiccia_a_santa_ninfa.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_della_salsiccia_a_santa_ninfa.htm",
+        "sha256": "a633136c4cea02f2b79aa34781908af4deb2c95803d026db785aea3f5552d55e",
+        "retrievedAt": "2026-10-30T17:19:24.436979+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/la_notte_gialla_sagra_del_melone_giallo_di_gibellina.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/la_notte_gialla_sagra_del_melone_giallo_di_gibellina.htm",
+        "sha256": "e190c29792d3af41bbc4f6cf9149c8e27030b9ca23a0097e4fbb3faa60fc3333",
+        "retrievedAt": "2026-10-30T17:19:24.440649+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_pasta_cu_l_agghia_e_sasizza_arrustuta_buseto_palizzolo.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_pasta_cu_l_agghia_e_sasizza_arrustuta_buseto_palizzolo.htm",
+        "sha256": "493301d5604c10a32d4cdc3c4e6e5006ded084724dd6f04891135e8264e0ad59",
+        "retrievedAt": "2026-10-30T17:19:24.494789+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/odori_e_sapori_di_sicilia_custonaci.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/manifestazioni/odori_e_sapori_di_sicilia_custonaci.htm",
+        "sha256": "6201801385ffbbe1f9779b2f3da673a40e81e4a45705a80ee18ed46718f91ed2",
+        "retrievedAt": "2026-10-30T17:19:24.538726+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_muffuletta_poggioreale.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_della_muffuletta_poggioreale.htm",
+        "sha256": "86f5a834451a1f4c6a9871f8e2bdeb18bb1d62c95babbb3fdb944d09400ec863",
+        "retrievedAt": "2026-10-30T17:19:25.509726+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-del-vino-e-dei-prodotti-tipici-natalizi-salaparuta.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra-del-vino-e-dei-prodotti-tipici-natalizi-salaparuta.htm",
+        "sha256": "adc77996ac5ec880e07ae3de8c267efdf62d10fadde50de121b9cba3a68a1458",
+        "retrievedAt": "2026-10-30T17:19:25.522712+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-della-cassatella-a-calatafimi-segesta.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra-della-cassatella-a-calatafimi-segesta.htm",
+        "sha256": "0f35ac6493c617440f63e40eefa61d84a56f1fdb5695be943ad7fdc282e5786f",
+        "retrievedAt": "2026-10-30T17:19:25.565953+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/natale-street-food-sagra-del-cibo-di-strada-gibellina.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/manifestazioni/natale-street-food-sagra-del-cibo-di-strada-gibellina.htm",
+        "sha256": "d27c80a6d69528bb28594b10e2d91900a1f81ff1835c6c25eb9ff45a46d57cb0",
+        "retrievedAt": "2026-10-30T17:19:25.600889+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_del_cannolo_siciliano_a_favignana.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_del_cannolo_siciliano_a_favignana.htm",
+        "sha256": "d9549dd12efc4e2d8826c4f78296dc8a346311149089403002fb934774a4b7f9",
+        "retrievedAt": "2026-10-30T17:19:26.897300+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_dell_ulivo_a_valderice.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_dell_ulivo_a_valderice.htm",
+        "sha256": "21777b09d932eb5713bd438f1546f1d6384ccd0806ef38b8b98f327b3c3208b6",
+        "retrievedAt": "2026-10-30T17:19:26.905326+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_a_buseto_palizzolo.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_a_buseto_palizzolo.htm",
+        "sha256": "0eb875cc8e5744e9eac9e7a8cf4fdf473fdbf78b1bb8cb6442b5a6d1c80fbcf4",
+        "retrievedAt": "2026-10-30T17:19:27.719642+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/spincia_fest_custonaci.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/spincia_fest_custonaci.htm",
+        "sha256": "c4055c6546c7d2d07212885eb04301c2d35b73b8ba3990060ffad0fc9a967ca7",
+        "retrievedAt": "2026-10-30T17:19:27.842087+00:00"
+      },
+      {
+        "url": "https://saloneseacily.it/",
+        "status": 200,
+        "finalUrl": "https://saloneseacily.it/",
+        "sha256": "eb95226cb73705f3df24eb7ce2db3333dc125c2f10bff649e3567b4262bd4fd8",
+        "retrievedAt": "2026-10-30T17:20:39.552451+00:00"
+      },
+      {
+        "url": "https://www.valderice.online/evento/tuna-fish-fest-bonagia-2026/",
+        "status": 200,
+        "finalUrl": "https://www.valderice.online/evento/tuna-fish-fest-bonagia-2026/",
+        "sha256": "21dc7ab4ba9fd0abe18a3fbe8f767768f7fb5eddd1916d70914a59cf4a4139ec",
+        "retrievedAt": "2026-10-30T17:20:39.557353+00:00"
+      },
+      {
+        "url": "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-della-tagliata-27-8-2026.docx",
+        "status": 200,
+        "finalUrl": "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-della-tagliata-27-8-2026.docx",
+        "sha256": "a96c8c7b1a644d47f147bd05592a31e3e4ed384b694ac72e265c95e24a643477",
+        "retrievedAt": "2026-10-30T17:20:39.558287+00:00"
+      },
+      {
+        "url": "https://www.tp24.it/2026/04/27/dai-comuni/c-e-la-fiera-si-sposta-il-mercatino-di-marsala-ecco-dove/233121",
+        "status": 200,
+        "finalUrl": "https://www.tp24.it/2026/04/27/dai-comuni/c-e-la-fiera-si-sposta-il-mercatino-di-marsala-ecco-dove/233121",
+        "sha256": "92bb98cf940da08b8c3985cece5d66dd864486eb06ff07083bde222241d0972f",
+        "retrievedAt": "2026-10-30T17:20:39.560313+00:00"
+      },
+      {
+        "url": "https://www.comune.misiliscemi.tp.it/2a-sagra-del-pane-cunzato/",
+        "status": 200,
+        "finalUrl": "https://www.comune.misiliscemi.tp.it/2a-sagra-del-pane-cunzato/",
+        "sha256": "531f29c91ca870f08d4834ce81e946b663274bd174257642c078297144d8a669",
+        "retrievedAt": "2026-10-30T17:23:43.640230+00:00"
+      },
+      {
+        "url": "https://www.consorziocomunale.trapani.it/provinciatp/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5XpnNUTUTT0-A",
+        "retrievedAt": "2026-10-30T17:23:43.641111+00:00",
+        "error": "('Connection aborted.', ConnectionResetError(10054, \"Connessione in corso interrotta forzatamente dall'host remoto\", None, 10054, None))"
+      },
+      {
+        "url": "https://www.marsalalive.it/2026/09/10/petrosino-celebra-uva-vino-sagra-2026/amp/",
+        "status": 200,
+        "finalUrl": "https://www.marsalalive.it/2026/09/10/petrosino-celebra-uva-vino-sagra-2026/amp/",
+        "sha256": "ad12219adbcf3c16079b21548043319e4bcb58108a72d4c75a43a8ffab4db572",
+        "retrievedAt": "2026-10-30T17:23:43.641427+00:00"
+      },
+      {
+        "url": "https://www.westofsicily.com/it/eventi/campobello-mazara/sagra-della-nocellara-del-belice-2026-iv-edizione",
+        "status": 200,
+        "finalUrl": "https://www.westofsicily.com/it/eventi/campobello-mazara/sagra-della-nocellara-del-belice-2026-iv-edizione",
+        "sha256": "131c9a81b0be85c974fff154a76313ffbb52ab55941fbdd271883a14bc0319e8",
+        "retrievedAt": "2026-10-30T17:25:36.369929+00:00"
+      },
+      {
+        "url": "https://pantelleriaexperience.it/it/experiences-item/calici_di_stelle_2026_10_agosto-220",
+        "status": 200,
+        "finalUrl": "https://pantelleriaexperience.it/it/experiences-item/calici_di_stelle_2026_10_agosto-220",
+        "sha256": "6b2c93f4e1937168f8e5a6cb86427350daccdbfd6b739202ff53a33c0a3e4e95",
+        "retrievedAt": "2026-10-30T17:25:37.862217+00:00"
+      },
+      {
+        "url": "https://www.consorziocomunale.trapani.it/provinciatp/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5XpnNUTUTT0-A",
+        "retrievedVia": "web-search-result-full-page",
+        "checkedAt": "2026-10-30",
+        "read": "Letti oggetto, registro generale 2344 del 27/10/2026, atto particolare 86 del 26/10/2026, pubblicazione 30/10–13/11/2026: patrocinio per Sagra della Dieta Mediterranea del Comune di Vita da settembre/ottobre 2026, impegno 25.000 euro. Non recuperato documento firmato né programma giornaliero. Il tentativo requests fallisce con reset della connessione, conservato separatamente: nessun HTTP 200 locale inventato."
+      }
+    ],
+    "originalChecks": {
+      "hashVerified": 228,
+      "errors": [],
+      "visual": [
+        "santa-ninfa-1.png",
+        "santa-ninfa-2.png",
+        "2d0fbf74602610cd.bin-p1.png",
+        "2d0fbf74602610cd.bin-p2.png",
+        "3702ec3e09896f10.bin-p1.png",
+        "3702ec3e09896f10.bin-p2.png"
+      ]
+    },
+    "futureMaintenance": "Nuovi avvisi, edizioni, tariffe e riaperture degli archivi sono manutenzione futura distinta."
+  },
+  "events": [
+    {
+      "region": "Sicilia",
+      "city": "Alcamo",
+      "name": "Ciokowine Fest",
+      "months": [
+        3
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.alcamo.tp.it/it/news/1959412",
+        "label": "Comune di Alcamo",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Festival del vino e del cioccolato con village enogastronomico nel centro storico; quarta edizione documentata dal Comune.",
+      "venue": "Piazza Ciullo, Collegio dei Gesuiti, Castello dei Conti di Modica e Corso VI Aprile",
+      "sectors": "Vino, cioccolato e prodotti enogastronomici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-19",
+          "end": "2026-03-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.alcamo.tp.it/it/news/1959412"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://comune.alcamo.tp.it/it/news/1959412"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Alcamo",
+      "name": "Festival della Pasta Fresca Siciliana",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.alcamo.tp.it/it/news/2024607",
+        "label": "Comune di Alcamo",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Decima edizione con degustazioni, esposizione di prodotti locali e cucina dal vivo, organizzata da Tesori Nascosti con il Comune.",
+      "venue": "Piazza Ciullo, Collegio dei Gesuiti e Corso stretto",
+      "sectors": "Pasta fresca, dolci e vini",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.alcamo.tp.it/it/news/2024607"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://comune.alcamo.tp.it/it/news/2024607"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Alcamo",
+      "name": "Expocasa",
+      "months": [
+        9
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://comune.alcamo.tp.it/it/news/1740917",
+        "label": "Comune di Alcamo",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera dedicata a edilizia, design e arredamento; conservata soltanto l’edizione ufficiale 2024, senza presumere un rinnovo.",
+      "venue": "Cittadella dei Giovani",
+      "sectors": "Edilizia, arredamento, design e servizi per la casa",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-09-27",
+          "end": "2024-09-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.alcamo.tp.it/it/news/1740917"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Scheda storica 2024. L’ingresso gratuito riguarda i visitatori, non lo spazio espositivo. La fiera è professionale: verificare con Effegi Pubblicità e Servizi se sia prevista una nuova edizione e l’ammissione della propria categoria; nessuna data 2026 dedotta."
+      },
+      "sourceRecordIds": [
+        "https://comune.alcamo.tp.it/it/news/1740917"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Buseto Palizzolo",
+      "name": "Mostra Mercato e Sagra della Busiata · Busiate Buseto",
+      "months": [
+        8,
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://buseto-palizzolo-api.municipiumapp.it/s3/1005/allegati/avviso-pubblico-manifestazione-interesse-xii-sagra-busiata.pdf",
+        "label": "buseto-palizzolo-api.municipiumapp.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mostra mercato delle produzioni locali abbinata alla sagra; documentata direttamente l’edizione comunale 2024.",
+      "venue": "Buseto Palizzolo; area e posteggio della nuova edizione da verificare",
+      "sectors": "Prodotti locali, gastronomia, artigianato e servizi",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-08-30",
+          "end": "2024-09-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://buseto-palizzolo-api.municipiumapp.it/s3/1005/allegati/avviso-pubblico-manifestazione-interesse-xii-sagra-busiata.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il documento letto riguarda il 2024 e il coinvolgimento gratuito di associazioni volontarie, non la gratuità dei banchi. Un calendario indicizzato segnala 28–30 agosto 2026, ma l’atto provinciale non è stato recuperato e il portale secondario risponde 403: nessuna nuova data confermata o tariffa ricostruita."
+      },
+      "sourceRecordIds": [
+        "https://buseto-palizzolo-api.municipiumapp.it/s3/1005/allegati/avviso-pubblico-manifestazione-interesse-xii-sagra-busiata.pdf"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Buseto Palizzolo",
+      "name": "Chiccassateddi · Sagra della Cassatella",
+      "months": [
+        5
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_a_buseto_palizzolo.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Cassatelle in brodo e fritte con intrattenimento; la fonte indica come consuetudine l’ultima domenica di maggio, non un calendario annuale confermato.",
+      "venue": "Piazza Battaglia",
+      "sectors": "Cassatelle e gastronomia locale",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_a_buseto_palizzolo.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Buseto Palizzolo",
+      "name": "Sagra Pasta cu l’Agghia e Sasizza Arrustuta",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_pasta_cu_l_agghia_e_sasizza_arrustuta_buseto_palizzolo.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra della frazione Battaglia dedicata al pesto trapanese, alla salsiccia e alle produzioni locali; agosto è periodo usuale senza nuova edizione verificata.",
+      "venue": "Frazione Battaglia",
+      "sectors": "Pasta al pesto trapanese, salsiccia e prodotti tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_pasta_cu_l_agghia_e_sasizza_arrustuta_buseto_palizzolo.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Calatafimi-Segesta",
+      "name": "Sagra del Maccherone",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.segestawelcome.com/main/sagra_maccherone_calatafimi/",
+        "label": "segestawelcome.com",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra del maccherone calatafimese con ricette locali; il portale territoriale documenta le due serate dell’edizione 2026.",
+      "venue": "Centro storico di Calatafimi",
+      "sectors": "Pasta fresca e specialità gastronomiche",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-01",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.segestawelcome.com/main/sagra_maccherone_calatafimi/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.segestawelcome.com/main/sagra_maccherone_calatafimi/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Calatafimi-Segesta",
+      "name": "Sagra della Cassatella",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-della-cassatella-a-calatafimi-segesta.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Manifestazione dedicata alla cassatella nel contesto della festa di Giubino; agosto è indicativo, la pagina avverte che può riferirsi a un evento passato.",
+      "venue": "Calatafimi; sede della prossima edizione da verificare",
+      "sectors": "Cassatelle e dolci tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra-della-cassatella-a-calatafimi-segesta.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Campobello di Mazara",
+      "name": "Sagra della Nocellara del Belìce · Olio e Oliva",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.westofsicily.com/it/eventi/campobello-mazara/sagra-della-nocellara-del-belice-2026-iv-edizione",
+        "label": "westofsicily.com",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Quarta edizione con degustazione e vendita diretta dei prodotti olivicoli. Il portale territoriale conferma 14–15 novembre; non usate le date stimate 7–8 o 8–9 novembre.",
+      "venue": "Campobello di Mazara; postazioni da confermare con l’organizzazione",
+      "sectors": "Olio extravergine, olive e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-14",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.westofsicily.com/it/eventi/campobello-mazara/sagra-della-nocellara-del-belice-2026-iv-edizione"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.westofsicily.com/it/eventi/campobello-mazara/sagra-della-nocellara-del-belice-2026-iv-edizione"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Castellammare del Golfo",
+      "name": "Gustorie di Sicilia",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/manifestazioni/gustorie-di-sicilia-castellammare-del-golfo.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna di cucina siciliana, degustazioni e musica; il calendario editoriale riporta esplicitamente l’edizione 2026.",
+      "venue": "Castellammare del Golfo; aree commerciali da verificare",
+      "sectors": "Specialità gastronomiche siciliane",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-25",
+          "end": "2026-06-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.siciliainfesta.com/manifestazioni/gustorie-di-sicilia-castellammare-del-golfo.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/manifestazioni/gustorie-di-sicilia-castellammare-del-golfo.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Castellammare del Golfo",
+      "name": "SEACILY · Salone Nautico di Sicilia",
+      "months": [
+        10,
+        11
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://saloneseacily.it/",
+        "label": "saloneseacily.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Nona edizione del salone nautico con esposizione a terra e in acqua, aziende e servizi della filiera. Non è un mercato generico per ambulanti.",
+      "venue": "Porto e Piazzale Porto",
+      "sectors": "Imbarcazioni, attrezzature nautiche e servizi; ristoro solo se ammesso",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-29",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://saloneseacily.it/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Le aziende interessate devono rivolgersi alla segreteria commerciale per selezione, spazi e tariffe. Pass gratuito riferito al pubblico; nessun costo espositore o posto residuo dedotto. Nel sito restano blocchi dimostrativi e orari discordanti: fare riferimento al programma operativo dell’organizzatore."
+      },
+      "sourceRecordIds": [
+        "https://saloneseacily.it/",
+        "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Castellammare del Golfo",
+      "name": "Cuntu, N’cantu e Manciu · La Cassatella",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/",
+        "label": "Comune di Castellammare del Golfo",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Appuntamento gastronomico della cassatella nel cartellone comunale 2026. La programmazione generale non costituisce bando per espositori.",
+      "venue": "Centro storico, zona pedonale",
+      "sectors": "Cassatelle e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-13",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Castelvetrano",
+      "name": "Fiera della Madonna della Tagliata",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.castelvetrano.tp.it/it/news/6485136",
+        "label": "Comune di Castelvetrano",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera commerciale con stalli alimentari e non alimentari lungo via Tagliata; date 2026 confermate dal Comune e dall’avviso originale.",
+      "venue": "Via Tagliata",
+      "sectors": "Alimentari e non alimentari, artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castelvetrano.tp.it/it/news/6485136"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Istanza tramite Impresa in un giorno e graduatoria cronologica, a partire dal lotto 31 nell’avviso 2026. Il documento conserva la scadenza 10 settembre 2025 pur indicando la fiera 2026: discordanza esplicita, non corretta per ipotesi. Nessuna domanda corrente o postazione disponibile promessa.",
+        "costs": "Avviso 2026: stallo di 19,50 m², 13,65 € al giorno, 27,30 € per due giorni; eccedenza 0,70 €/m²/giorno. Solo canone di suolo, non prezzo complessivo di servizi/allestimento; IVA non indicata. Il termine di domanda stampato è ancora 10/09/2025: da chiarire con il Comune, senza modificare l’anno per ipotesi."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.castelvetrano.tp.it/it/news/6485136",
+        "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-della-tagliata-27-8-2026.docx"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Castelvetrano",
+      "name": "Sagra del Pane Nero",
+      "months": [
+        10
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.castelvetrano.tp.it/it/news/6485463",
+        "label": "Comune di Castelvetrano",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Terza edizione dedicata al pane nero, alle produzioni locali e ai vicoli dell’artigianato. Il bando letto riguarda co-organizzatori ETS, non assegnazione automatica di banchi.",
+      "venue": "Via Vittorio Emanuele, Sistema delle Piazze e vicoli Militello, Bassi e Geraci",
+      "sectors": "Pane nero, olio, prodotti agroalimentari e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.castelvetrano.tp.it/it/news/6485463"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "L’avviso 2026 seleziona ETS per la co-organizzazione; quello espositori 2025 resta storico e non abilita alla nuova edizione. Verificare selezione specifica, spazi, servizi e oneri. Il contributo pubblico all’organizzatore non è una tariffa di partecipazione degli ambulanti."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.castelvetrano.tp.it/it/news/6485463"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Castelvetrano",
+      "name": "Fiera di San Giovanni",
+      "months": [
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-san-giovanni-10-06-2025-1.pdf",
+        "label": "castelvetrano-api.cloud.municipiumapp.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera comunale documentata soltanto per il 2025, con gazebi 4×4 e area spuntisti nell’avviso storico.",
+      "venue": "Piazza Regina Margherita",
+      "sectors": "Categorie ammesse dal bando comunale, da verificare per settore",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-06-22",
+          "end": "2025-06-24",
+          "dateType": "confirmed",
+          "sourceUrl": "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-san-giovanni-10-06-2025-1.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso del 2025: 19 gazebi e area spuntisti, non posti residui attuali. La domanda storica era sul portale Impresa in un giorno; non è stato recuperato un bando San Giovanni 2026. Nuove date, categorie, canone e disponibilità da verificare."
+      },
+      "sourceRecordIds": [
+        "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-san-giovanni-10-06-2025-1.pdf"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Custonaci",
+      "name": "Spincia Fest",
+      "months": [
+        7,
+        9,
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/spincia_fest_custonaci.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra della spincia a Cornino. Le fonti descrivono ricorrenze estive e natalizie; il portale regionale cita settembre contro luglio della fonte comunale storica: mesi indicativi, non aperture continue.",
+      "venue": "Piazza Riviera, Cornino; sede da riconfermare",
+      "sectors": "Spincia e specialità gastronomiche",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Nessuna edizione datata 2026 verificata. Le fonti divergono sui mesi e descrivono anche ricorrenze natalizie: non ricostruiti giorni esatti. Accesso degli operatori, categoria, quota e servizi richiedono conferma specifica; la descrizione della sagra non equivale a un bando."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/spincia_fest_custonaci.htm",
+        "https://www.visitsicily.info/alla-scoperta-di-custonaci-dal-borgo-al-mare/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Custonaci",
+      "name": "I Saperi del Borgo · Odori e Sapori di Sicilia",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/manifestazioni/odori_e_sapori_di_sicilia_custonaci.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna gastronomica del centro storico; la pagina riporta settembre senza annualità esplicita nel corpo, quindi non è una data 2026 confermata.",
+      "venue": "Centro storico",
+      "sectors": "Prodotti tipici e piatti locali",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/manifestazioni/odori_e_sapori_di_sicilia_custonaci.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Erice",
+      "name": "EricèNatale · Mercatini dell’Artigianato e Villaggio del Gusto",
+      "months": [
+        12,
+        1
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.erice.tp.it/it/news/119790/ericenatale-il-programma-degli-eventi-natalizi-del-comune-di-erice",
+        "label": "Comune di Erice",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatini e villaggio gastronomico nel programma comunale 2025/26. Il solo bando presepi di ottobre 2026 non conferma il calendario commerciale 2026/27.",
+      "venue": "Piazza della Loggia",
+      "sectors": "Artigianato, prodotti tipici e idee regalo",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-06",
+          "end": "2026-01-06",
+          "periodOnly": true,
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.erice.tp.it/it/news/119790/ericenatale-il-programma-degli-eventi-natalizi-del-comune-di-erice"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Programma 2025/26: 6–8 e 13–14 dicembre, quindi 18 dicembre–6 gennaio con esclusione di 24 e 25 dicembre; 31 dicembre e 1 gennaio con orari ridotti. Non apertura continua. Nessuna tariffa espositore dedotta dai ticket di concerti o musei; nuova selezione e calendario da verificare."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.erice.tp.it/it/news/119790/ericenatale-il-programma-degli-eventi-natalizi-del-comune-di-erice"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Favignana",
+      "name": "Sagra delle Cassatelle",
+      "months": [
+        4
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_delle_cassatelle_favignana.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra isolana dedicata alle cassatelle, con animazione. Aprile è il periodo indicato dalla fonte storica; nessuna edizione corrente confermata.",
+      "venue": "Favignana; piazza e organizzazione da verificare",
+      "sectors": "Cassatelle e dolci tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_delle_cassatelle_favignana.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Favignana",
+      "name": "Sagra del Cannolo Siciliano",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_del_cannolo_siciliano_a_favignana.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra di degustazione con intrattenimento; il primo fine settimana di giugno è una consuetudine della pagina storica, non conferma annuale.",
+      "venue": "Favignana; sede da verificare",
+      "sectors": "Cannoli e dolci siciliani",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_del_cannolo_siciliano_a_favignana.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Favignana",
+      "name": "Festa del Borgo Marinaro di Punta Lunga · Sagra del Tonno",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.tp24.it/2026/09/03/agroalimentare/favignana-da-oggi-tre-giorni-di-festa-a-punta-lunga-arte-cinema-musica-e-sagra-del-tonno/238945",
+        "label": "tp24.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "La festa dura 3–5 settembre 2026, ma la sagra gastronomica è documentata soltanto nella serata conclusiva del 5 settembre; non tre giorni di vendita dedotti.",
+      "venue": "Borgo di Punta Lunga",
+      "sectors": "Tonno e cucina marinara",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-05",
+          "end": "2026-09-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.tp24.it/2026/09/03/agroalimentare/favignana-da-oggi-tre-giorni-di-festa-a-punta-lunga-arte-cinema-musica-e-sagra-del-tonno/238945"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte giornalistica del 3 settembre 2026: sagra del tonno il 5 settembre alle 21:30, all’interno della festa del borgo. Il programma comunale 2024 è solo confronto storico. Nessun avviso pubblico per operatori esterni o costo di banco recuperato; contattare l’organizzazione prima di programmare la partecipazione."
+      },
+      "sourceRecordIds": [
+        "https://www.tp24.it/2026/09/03/agroalimentare/favignana-da-oggi-tre-giorni-di-festa-a-punta-lunga-arte-cinema-musica-e-sagra-del-tonno/238945"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Gibellina",
+      "name": "La Notte Gialla · Sagra del Melone Giallo",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/la_notte_gialla_sagra_del_melone_giallo_di_gibellina.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna di prodotti del territorio, melone giallo e vini. La pagina indica agosto senza un anno verificabile nel testo: mantenuto il solo periodo usuale.",
+      "venue": "Gibellina; aree commerciali da verificare",
+      "sectors": "Melone giallo, vini e prodotti tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/la_notte_gialla_sagra_del_melone_giallo_di_gibellina.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Gibellina",
+      "name": "Natale Street Food · Sagra del Cibo di Strada",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/manifestazioni/natale-street-food-sagra-del-cibo-di-strada-gibellina.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Villaggio natalizio di gastronomia di strada nel Sistema delle Piazze. La fonte avverte che può riferirsi al passato: nessun rinnovo automatico 2026.",
+      "venue": "Sistema delle Piazze",
+      "sectors": "Street food, vini e birre locali",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/manifestazioni/natale-street-food-sagra-del-cibo-di-strada-gibellina.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Marsala",
+      "name": "Fiera di Maggio",
+      "months": [
+        4,
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.tp24.it/2026/04/27/dai-comuni/c-e-la-fiera-si-sposta-il-mercatino-di-marsala-ecco-dove/233121",
+        "label": "tp24.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera tradizionale documentata nel 2026; distinta dal normale mercato del martedì, temporaneamente trasferito vicino allo stadio.",
+      "venue": "Area comunale tra via degli Atleti e via della Gioventù",
+      "sectors": "Categorie commerciali previste dalla fiera, da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La notizia del 27 aprile 2026 riporta la fiera fino all’11 maggio, altre cronache parlano di circa tre settimane; non ricostruito un intervallo completo. I trasferimenti del mercato del 28 aprile, 5 e 12 maggio non sono tre nuove fiere né provano giornate commerciali aggiuntive. Nuove concessioni e canoni da verificare."
+      },
+      "sourceRecordIds": [
+        "https://www.tp24.it/2026/04/27/dai-comuni/c-e-la-fiera-si-sposta-il-mercatino-di-marsala-ecco-dove/233121"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Marsala",
+      "name": "Saperi e Sapori di Matarocco · Matarocco Fest",
+      "months": [
+        7,
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/saperi_e_sapori_di_matarocco_marsala.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna gastronomica e folkloristica della contrada Matarocco; il calendario presenta luglio/agosto senza una sequenza annuale completa verificabile.",
+      "venue": "Contrada Matarocco",
+      "sectors": "Prodotti tipici, formaggi, miele, dolci e vini",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Mesi indicativi della fonte editoriale, non apertura continua fra luglio e agosto. Tavolate e degustazioni offerte dalla comunità non attestano accesso di ambulanti esterni. Verificare programma della nuova edizione, selezione commerciale, sede e oneri con gli organizzatori."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/saperi_e_sapori_di_matarocco_marsala.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Mazara del Vallo",
+      "name": "Cosi di ’na Vota · Mercatino delle Pulci e dell’Antiquariato",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://comune.mazaradelvallo.tp.it/it/news/1852766",
+        "label": "Comune di Mazara del Vallo",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatino specializzato avviato il 1 giugno 2025, con ricorrenza indicata nella prima domenica del mese; non un mercato alimentare generico.",
+      "venue": "Piazze Immacolata, Chinea ed Ettore Ditta",
+      "sectors": "Antiquariato, piccolo collezionismo, usato e hobbistica",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-06-01",
+          "end": "2025-06-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.mazaradelvallo.tp.it/it/news/1852766"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte comunale del 2025: prima domenica del mese, ore 8:30–18, gestione Amazar APS con Funduq. I mesi sono un filtro della ricorrenza mensile, non un calendario confermato di dodici aperture 2026. Per le singole giornate e l’ammissione verificare organizzatore e regolamento; nessuna disponibilità attuale dedotta."
+      },
+      "sourceRecordIds": [
+        "https://comune.mazaradelvallo.tp.it/it/news/1852766"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Mazara del Vallo",
+      "name": "Festa del Pane e della Pasta",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/festa_del_pane_e_della_civilta_contadina_mazara_del_vallo.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mostra mercato del pane e dei prodotti cerealicoli, degustazioni e spettacoli; la pagina editoriale indica esplicitamente 7–9 agosto 2026.",
+      "venue": "Mazara del Vallo; area espositiva da verificare",
+      "sectors": "Pane, pasta, cereali e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-07",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.siciliainfesta.com/sagre/festa_del_pane_e_della_civilta_contadina_mazara_del_vallo.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/festa_del_pane_e_della_civilta_contadina_mazara_del_vallo.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Paceco",
+      "name": "Dattilo Cibus Fest · Cannolo Fest",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/feste/dattilo-cannolo-fest.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Manifestazione di Dattilo dedicata al cannolo e ai prodotti del territorio, con associazione CIURI e compartecipazione comunale secondo la fonte editoriale.",
+      "venue": "Dattilo",
+      "sectors": "Cannoli, pasticceria e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-26",
+          "end": "2026-06-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.siciliainfesta.com/feste/dattilo-cannolo-fest.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/feste/dattilo-cannolo-fest.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Paceco",
+      "name": "Sagra del Melone Giallo",
+      "months": [
+        7,
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-del.melone-di-paceco.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra dedicata al melone cartucciaru e alle produzioni locali. Il corpo della pagina non esplicita l’anno dei giorni 31 luglio–2 agosto: conservato il periodo, non una data certa.",
+      "venue": "Paceco; piazza e aree espositive da confermare",
+      "sectors": "Melone giallo e prodotti tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra-del.melone-di-paceco.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Pantelleria",
+      "name": "Calici di Stelle",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://pantelleriaexperience.it/it/experiences-item/calici_di_stelle_2026_10_agosto-220",
+        "label": "pantelleriaexperience.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Manifestazione del Comune con Agenzia Gira L’Isola, con vini e prodotti panteschi. La descrizione conferma il 10 agosto 2026; ignorata la data automatica del giorno corrente nel widget.",
+      "venue": "Piazzetta Messina",
+      "sectors": "Vini, passiti e prodotti gastronomici panteschi",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-10",
+          "end": "2026-08-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://pantelleriaexperience.it/it/experiences-item/calici_di_stelle_2026_10_agosto-220"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Le quote di 20 € e gli importi discordanti del widget riguardano il carnet degustazioni visitatori, non il banco espositore. Evento dalle ore 20 nella descrizione dell’organizzatore. Verificare selezione degli operatori, nuova edizione, tariffe commerciali e servizi: nessun posteggio aperto a tutti dedotto."
+      },
+      "sourceRecordIds": [
+        "https://pantelleriaexperience.it/it/experiences-item/calici_di_stelle_2026_10_agosto-220"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Partanna",
+      "name": "Tipicu’Arte · Sagra della Cipolla Rossa",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_rossa_a_partanna.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna dei prodotti locali dedicata alla cipolla rossa partannese; la fonte editoriale riporta esplicitamente i due giorni dell’edizione 2026.",
+      "venue": "Partanna; spazi espositivi da verificare",
+      "sectors": "Cipolla rossa e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_rossa_a_partanna.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_rossa_a_partanna.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Petrosino",
+      "name": "Sagra dell’Uva e del Vino",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.marsalalive.it/2026/09/10/petrosino-celebra-uva-vino-sagra-2026/amp/",
+        "label": "marsalalive.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna di prodotti tipici, stand e degustazioni: cronaca operativa 18–20 settembre 2026, successiva al cartellone indicizzato che riportava 19–21 settembre.",
+      "venue": "Viale Francesco De Vita e viale Giacomo Licari",
+      "sectors": "Uva, vino e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-18",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.marsalalive.it/2026/09/10/petrosino-celebra-uva-vino-sagra-2026/amp/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Preferita la notizia operativa del 10 settembre rispetto al calendario territoriale non più accessibile (410), con date diverse. Nessuna quota espositore o disponibilità garantita ricavata dal programma pubblico; per la prossima edizione verificare selezione, autorizzazioni, oneri e servizi."
+      },
+      "sourceRecordIds": [
+        "https://www.marsalalive.it/2026/09/10/petrosino-celebra-uva-vino-sagra-2026/amp/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Poggioreale",
+      "name": "Mostra dei Formaggi della Valle del Belice",
+      "months": [
+        5
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://trasparenza.comune.poggioreale.tp.it/poggioreale/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GT1RBNU31PT0-H",
+        "label": "Comune di Poggioreale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Ventottesima mostra delle produzioni locali documentata dalla determina comunale per il 23 maggio 2026. Non adottate le date autunnali stimate dei calendari automatici.",
+      "venue": "Poggioreale; postazioni da verificare",
+      "sectors": "Formaggi, ricotta e prodotti locali",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-23",
+          "end": "2026-05-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://trasparenza.comune.poggioreale.tp.it/poggioreale/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GT1RBNU31PT0-H"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La determina n. 324 del 18 maggio 2026 finanzia la realizzazione della manifestazione, non assegna automaticamente banchi agli operatori. Nessun canone di partecipazione ricostruito dal contributo pubblico; nuova edizione e requisiti da verificare con il Comune."
+      },
+      "sourceRecordIds": [
+        "https://trasparenza.comune.poggioreale.tp.it/poggioreale/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GT1RBNU31PT0-H"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Poggioreale",
+      "name": "Il Gusto delle Radici · Sagra della ’Nfigghiulata e Muffuletta",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_muffuletta_poggioreale.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna con prodotti da forno, artigianato e degustazioni. L’atto comunale recuperato riguarda l’organizzazione 2025; novembre resta periodo usuale, non conferma delle stime 2026.",
+      "venue": "Poggioreale; sede da verificare",
+      "sectors": "Muffuletta, ’nfigghiulata, prodotti tipici e artigianato",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_della_muffuletta_poggioreale.htm",
+        "https://trasparenza.comune.poggioreale.tp.it/zf/index.php/atti-amministrativi/delibere/dettaglio/table-delibere-public-page/6/atto/GT0RNe5k3PT0-F"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Salaparuta",
+      "name": "Fiera Paesana",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.visitbelice.it/en/esperienze/fiera-paesana-di-salaparuta/",
+        "label": "visitbelice.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera in Piazza Mercato documentata dal portale territoriale per il 27–28 agosto 2023; non prorogata automaticamente al 2026.",
+      "venue": "Piazza Mercato",
+      "sectors": "Categorie della fiera da verificare con il Comune",
+      "editions": [
+        {
+          "year": 2023,
+          "start": "2023-08-27",
+          "end": "2023-08-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.visitbelice.it/en/esperienze/fiera-paesana-di-salaparuta/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.visitbelice.it/en/esperienze/fiera-paesana-di-salaparuta/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Salaparuta",
+      "name": "Sagra di Primavera",
+      "months": [
+        3
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.visitbelice.it/en/esperienze/sagra-di-primavera/",
+        "label": "visitbelice.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Stand di degustazione e preparazioni tradizionali all’auditorium comunale. Il 25 marzo della scheda non ha annualità esplicita: solo mese indicativo.",
+      "venue": "Auditorium Centro Sociale Nick La Rocca, via Trentino 15",
+      "sectors": "Prodotti tipici, carni e dolci tradizionali",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Il prezzo del pacchetto e le opzioni del portale turistico riguardano visitatori e bambini, non gli espositori. Non confermata un’edizione 2026 né l’accesso di ambulanti esterni; verificare programma, ammissione e costi commerciali con gli organizzatori."
+      },
+      "sourceRecordIds": [
+        "https://www.visitbelice.it/en/esperienze/sagra-di-primavera/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Salaparuta",
+      "name": "Wine Christmas · Sagra del Vino e dei Prodotti Tipici Natalizi",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-del-vino-e-dei-prodotti-tipici-natalizi-salaparuta.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna natalizia di vino e gastronomia locale; la fonte la segnala come potenzialmente passata. Dicembre è periodo indicativo, non rinnovo 2026.",
+      "venue": "Salaparuta; sede da verificare",
+      "sectors": "Vino e prodotti gastronomici natalizi",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra-del-vino-e-dei-prodotti-tipici-natalizi-salaparuta.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Salemi",
+      "name": "Sagra della Busiata… nel Borgo",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.salemi.trapani.it/it/news/avviso-sagra-della-busiata-nel-borgo-2026",
+        "label": "Comune di Salemi",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna del centro storico con categorie separate per ristoratori di busiata, food & beverage e hobbisti/artigiani/ETS; avvisi e graduatorie comunali letti.",
+      "venue": "Centro storico; aree secondo la categoria e la graduatoria",
+      "sectors": "Busiata, prodotti food & beverage e artigianato non alimentare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-04",
+          "end": "2026-08-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.salemi.trapani.it/it/news/avviso-sagra-della-busiata-nel-borgo-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Procedure 2026 già concluse: ristoratori e food & beverage entro 13 luglio ore 12, hobbisti/artigiani/ETS entro 20 luglio ore 9. Solo i ristoratori ammessi possono somministrare busiata; altre categorie con prodotti limitati. Gli ETS esenti non equivalgono ad ammissione libera; le graduatorie non indicano posti oggi disponibili.",
+        "costs": "Quote per tutti i quattro giorni: 20 € hobbisti e artigiani non alimentari, ETS senza scopo di lucro esenti; 100 € food & beverage con prodotti ammessi diversi dalla busiata; 300 € ristoratori di busiata. IVA sulle quote non indicata. Contributi parziali ai costi organizzativi, allestimento autonomo ove previsto e pratica SUAP a carico dell’operatore. Il limite di 8 € IVA inclusa per piatto e vino è prezzo al pubblico, non canone. Bandi 2026 scaduti."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.salemi.trapani.it/it/news/avviso-sagra-della-busiata-nel-borgo-2026",
+        "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-a1-pubblico-assegnazione-spazicategoria-ristoratori-1.pdf",
+        "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-b1-pubblico-assegnazione-spazi-food-beverage.pdf",
+        "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso_c_hobbisti_artigiani_ets_v2.pdf",
+        "https://salemi-api.municipiumapp.it/s3/6063/allegati/food-e-beverage10800220260717121311.pdf",
+        "https://salemi-api.municipiumapp.it/s3/6063/allegati/verbale-assegnazione-spazi-hobbisti-artigiani-sagra-dellea-busiata-2026.pdf"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "San Vito Lo Capo",
+      "name": "Cous Cous Fest",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://couscousfest.it/",
+        "label": "couscousfest.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Festival con Expo Village di artigianato e agroalimentare sul lungomare e nel centro. La home annuncia direttamente 17–26 settembre 2027; non proiezione automatica del 2026.",
+      "venue": "Lungomare e centro storico",
+      "sectors": "Agroalimentare mediterraneo, artigianato e prodotti tipici",
+      "editions": [
+        {
+          "year": 2027,
+          "start": "2027-09-17",
+          "end": "2027-09-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://couscousfest.it/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "L’Expo Village è distinto dalle Case del Cous Cous e dai concorsi degli chef. La quota dei menù è per visitatori, non per i banchi. Per la nuova edizione verificare con l’ufficio commerciale selezione, settori, tariffe, servizi e sede assegnata; nessun posto residuo garantito. La home conserva ancora blocchi e concerti 2026."
+      },
+      "sourceRecordIds": [
+        "https://couscousfest.it/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "San Vito Lo Capo",
+      "name": "Terr’emare · Castelluzzo tra Saperi e Sapori",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/manifestazioni/terre-e-mare-castelluzzo-tra-saperi-e-sapori-san-vito-lo-capo.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna di Castelluzzo con villaggio del gusto, degustazioni e cucina dal vivo; date 2026 esplicite nella fonte editoriale.",
+      "venue": "Castelluzzo",
+      "sectors": "Prodotti tipici e cucina siciliana",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-03",
+          "end": "2026-07-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.siciliainfesta.com/manifestazioni/terre-e-mare-castelluzzo-tra-saperi-e-sapori-san-vito-lo-capo.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/manifestazioni/terre-e-mare-castelluzzo-tra-saperi-e-sapori-san-vito-lo-capo.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Santa Ninfa",
+      "name": "Un Giorno da Pecora · Sagra della Pecora della Valle del Belìce",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.santaninfa.tp.it/novita/avviso-per-la-partecipazione-allevento-un-giorno-da-pecora-2026-sagra-della-pecora-della-valle-del-belice/",
+        "label": "Comune di Santa Ninfa",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Edizione 21–22 novembre 2026 con avviso comunale del 27 ottobre rivolto agli operatori locali delle categorie espressamente indicate.",
+      "venue": "Santa Ninfa; stand da assegnare dal Comune",
+      "sectors": "Pecora e derivati, formaggi, prodotti affini e bevande",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-21",
+          "end": "2026-11-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.santaninfa.tp.it/novita/avviso-per-la-partecipazione-allevento-un-giorno-da-pecora-2026-sagra-della-pecora-della-valle-del-belice/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domande entro 11 novembre 2026 via email, PEC o protocollo; solo operatori con sede legale a Santa Ninfa e codici ATECO ammessi. Allegare descrizione dell’offerta, menù, listino e documento. Nessun diritto automatico allo stand; esclusi prodotti estranei al format. L’avviso non indica una quota: non significa partecipazione gratuita.",
+        "deadline": "2026-11-11"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.santaninfa.tp.it/novita/avviso-per-la-partecipazione-allevento-un-giorno-da-pecora-2026-sagra-della-pecora-della-valle-del-belice/",
+        "https://www.comune.santaninfa.tp.it/wp-content/uploads/2026/10/Prot_Int-0017479-del-27-10-2026-Documento.pdf"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Santa Ninfa",
+      "name": "Sagra della Salsiccia",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_salsiccia_a_santa_ninfa.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra del prodotto locale con stand lungo il viale e intrattenimento; giorni 8–9 agosto 2026 espliciti nel calendario editoriale.",
+      "venue": "Santa Ninfa; viale e postazioni da verificare",
+      "sectors": "Salsiccia locale e prodotti gastronomici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-08",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_della_salsiccia_a_santa_ninfa.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_della_salsiccia_a_santa_ninfa.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Trapani",
+      "name": "Fiera d’Agosto · Artigiani per Sant’Alberto",
+      "months": [
+        8
+      ],
+      "category": "artigianato",
+      "source": {
+        "url": "https://prolocotrapaniaps.it/feste-patronali-citta-di-trapani-manifestazioni-esterne/",
+        "label": "prolocotrapaniaps.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera di artigianato alla Casina delle Palme nel programma ufficiale della Pro Loco; non coincide con Expo Trapani di Ferragosto.",
+      "venue": "Casina delle Palme",
+      "sectors": "Artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-03",
+          "end": "2026-08-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://prolocotrapaniaps.it/feste-patronali-citta-di-trapani-manifestazioni-esterne/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://prolocotrapaniaps.it/feste-patronali-citta-di-trapani-manifestazioni-esterne/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Trapani",
+      "name": "Natale Mediterraneo · Mercatini di Natale",
+      "months": [
+        12,
+        1
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://comune.trapani.it/wp-content/uploads/2025/12/ProgrammaNataleMediterraneo_PDF-1.pdf",
+        "label": "Comune di Trapani",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatini di artigiani e creativi a Villa Margherita e iniziative commerciali all’ex Mercato del Pesce nel programma 2025/26; non conferma del Natale 2026.",
+      "venue": "Villa Margherita e piazza Ex Mercato del Pesce, secondo il singolo programma",
+      "sectors": "Artigianato, prodotti creativi e idee regalo",
+      "editions": [
+        {
+          "year": 2025,
+          "label": "Programma natalizio 2025/26: giornate e sedi distinte, non apertura continua",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.trapani.it/wp-content/uploads/2025/12/ProgrammaNataleMediterraneo_PDF-1.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Programma 2025/26: Villa Margherita con orari feriali/festivi distinti; ex Mercato del Pesce con Natale Solidale 6–15 dicembre e mercatini 18–24 dicembre. Non dedotte aperture di tutte le sedi per l’intera rassegna. Nessun calendario o bando espositori 2026/27 verificato; costi e autorizzazioni da confermare."
+      },
+      "sourceRecordIds": [
+        "https://comune.trapani.it/wp-content/uploads/2025/12/ProgrammaNataleMediterraneo_PDF-1.pdf"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Trapani",
+      "name": "Stragusto",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://stragusto.it/",
+        "label": "stragusto.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Festival del cibo di strada: l’organizzatore annuncia l’annullamento dell’edizione 2026 per indisponibilità della sede. Calendari che riportano 22–26 luglio non sono conferma di svolgimento.",
+      "venue": "Piazza dell’Antico Mercato del Pesce, sede storica",
+      "sectors": "Cibo di strada e vini",
+      "editions": [
+        {
+          "year": 2026,
+          "label": "Edizione annullata: indisponibilità della sede",
+          "dateType": "confirmed",
+          "sourceUrl": "https://stragusto.it/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "EDIZIONE 2026 ANNULLATA secondo l’avviso in apertura del sito dell’organizzatore. Nessuna data attiva, iscrizione o posto disponibile. La descrizione storica e le vecchie notizie restano nel sito, ma non superano l’annullamento; attendere una nuova comunicazione prima di organizzare la partecipazione."
+      },
+      "sourceRecordIds": [
+        "https://stragusto.it/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Valderice",
+      "name": "Sagra a Fico · Antichi Sapori",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.valderice.online/evento/21-sagra-del-fico-valderice-2026/",
+        "label": "valderice.online",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Ventunesima sagra della contrada Fico con stand gastronomici, ricette locali e intrattenimento nelle due serate.",
+      "venue": "Piazza Don G. Gigli, contrada Fico",
+      "sectors": "Gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-01",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.valderice.online/evento/21-sagra-del-fico-valderice-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.valderice.online/evento/21-sagra-del-fico-valderice-2026/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Valderice",
+      "name": "Tuna Fish Fest · Bonagia",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.valderice.online/evento/tuna-fish-fest-bonagia-2026/",
+        "label": "valderice.online",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sesta edizione a Bonagia con villaggio gastronomico di tonno e pesce azzurro, cucina dal vivo e incontri. Non attribuita alla vecchia sede di Cornino/Custonaci.",
+      "venue": "Tonnara di Bonagia",
+      "sectors": "Tonno, pesce azzurro e gastronomia marinara",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-06",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.valderice.online/evento/tuna-fish-fest-bonagia-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Organizzazione Bonagia Eventi & Promotion APS, patrocinio comunale. Il calendario storico di Cornino è fuori dalla sede 2026 documentata. Ingresso gratuito riferito ai visitatori, non al posteggio: ammissione, costi e servizi da verificare con l’organizzatore."
+      },
+      "sourceRecordIds": [
+        "https://www.valderice.online/evento/tuna-fish-fest-bonagia-2026/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Valderice",
+      "name": "Sagra dell’Ulivo",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_dell_ulivo_a_valderice.htm",
+        "label": "Sicilia in Festa · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra di Casalbianco con prodotti olivicoli, attrezzi della raccolta e degustazioni. Novembre è periodo usuale; la pagina avverte che può riferirsi al passato.",
+      "venue": "Ex scuola elementare di Casalbianco",
+      "sectors": "Olive, olio e prodotti tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_dell_ulivo_a_valderice.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Vita",
+      "name": "Sagra della Dieta Mediterranea",
+      "months": [
+        9,
+        10
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.consorziocomunale.trapani.it/provinciatp/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5XpnNUTUTT0-A",
+        "label": "consorziocomunale.trapani.it",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Manifestazione di valorizzazione territoriale indicata nell’atto del Libero Consorzio per settembre/ottobre 2026. Il sostegno economico pubblico non è canone del banco.",
+      "venue": "Vita; sedi e giornate commerciali da verificare",
+      "sectors": "Produzioni della dieta mediterranea da verificare nel programma",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La determina pubblicata il 30 ottobre 2026 indica settembre/ottobre, senza calendario giornaliero commerciale. Le date esatte 28 settembre–4 ottobre di una scheda automatica non sono confermate dall’originale. Nessuna assegnazione, apertura agli ambulanti o quota espositore dedotta dai 25.000 € di patrocinio."
+      },
+      "sourceRecordIds": [
+        "https://www.consorziocomunale.trapani.it/provinciatp/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5XpnNUTUTT0-A"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Misiliscemi",
+      "name": "Sagra del Pane Cunzato",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.misiliscemi.tp.it/2a-sagra-del-pane-cunzato/",
+        "label": "Comune di Misiliscemi",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Seconda edizione documentata dal Comune a Locogrande; il luogo appartiene a Misiliscemi, non a Trapani.",
+      "venue": "Piazza Filippo Asaro, Locogrande",
+      "sectors": "Pane cunzato e prodotti gastronomici locali",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-01",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.misiliscemi.tp.it/2a-sagra-del-pane-cunzato/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.misiliscemi.tp.it/2a-sagra-del-pane-cunzato/"
+      ],
+      "lat": 37.885151,
+      "lng": 12.635307,
+      "coordinateSource": {
+        "url": "https://www.wikidata.org/wiki/Q105582817",
+        "note": "Centro comunale indicativo, non coordinate del singolo banco o della piazza."
+      }
+    }
+  ]
+}

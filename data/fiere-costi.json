@@ -3122,6 +3122,24 @@
       "sourceUrl": "https://web9.immediaspa.com/portopalo/mc/mc_attachment.php?mc=30355",
       "checkedAt": "2026-10-29",
       "review": "original-document-review"
+    },
+    "sicilia-castelvetrano-fiera-della-madonna-della-tagliata": {
+      "label": "CUP 2026: 27,30 € per stallo nei due giorni",
+      "details": "Avviso 2026: stallo di 19,50 m², 13,65 € al giorno, 27,30 € per due giorni; eccedenza 0,70 €/m²/giorno. Solo canone di suolo, non prezzo complessivo di servizi/allestimento; IVA non indicata. Il termine di domanda stampato è ancora 10/09/2025: da chiarire con il Comune, senza modificare l’anno per ipotesi.",
+      "sourceUrl": "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-della-tagliata-27-8-2026.docx",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
+    },
+    "sicilia-salemi-sagra-della-busiata-nel-borgo": {
+      "label": "2026: 20 € hobbisti/artigiani, 100 € food, 300 € busiata",
+      "details": "Quote per tutti i quattro giorni: 20 € hobbisti e artigiani non alimentari, ETS senza scopo di lucro esenti; 100 € food & beverage con prodotti ammessi diversi dalla busiata; 300 € ristoratori di busiata. IVA sulle quote non indicata. Contributi parziali ai costi organizzativi, allestimento autonomo ove previsto e pratica SUAP a carico dell’operatore. Il limite di 8 € IVA inclusa per piatto e vino è prezzo al pubblico, non canone. Bandi 2026 scaduti.",
+      "sourceUrl": "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso_c_hobbisti_artigiani_ets_v2.pdf",
+      "checkedAt": "2026-10-30",
+      "period": "2026",
+      "kind": "partial",
+      "review": "original-document-review"
     }
   }
 }

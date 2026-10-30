@@ -19,7 +19,7 @@ REGION_ALIASES = {
     "Valle d'Aosta/Vallée d'Aoste": "Valle d'Aosta",
 }
 CATEGORIES = {"tradizionale", "artigianato", "sagra", "espositiva", "mercatino"}
-CATALOG_DATE = "2026-10-29"
+CATALOG_DATE = "2026-10-30"
 MERCHANDISE_SECTORS = ("alimentare", "non-alimentare", "antiquariato", "artigianato")
 ARTICLE_IDS = set("abbigliamento intimo calzature pelletteria bigiotteria casalinghi biancheria-casa cosmetici detergenti giocattoli libri elettronica piante animali salumi-formaggi forno dolciumi agricoli tipici bevande street-food cioccolato olio ceramica legno tessili gioielli-artigianali decorazioni antiquariato modernariato vintage usato collezionismo abbigliamento-vintage libri-antichi".split())
 
@@ -177,6 +177,7 @@ def build_catalog():
     comuni = [dict(c, regione="Emilia-Romagna", provincia="Rimini")
               if c["nome"] in {"Montecopiolo", "Sassofeltrio"} else c for c in comuni]
     locations = {(key(c["nome"]), REGION_ALIASES.get(c["regione"], c["regione"])): c for c in comuni}
+    locations[(key("Misiliscemi"), "Sicilia")] = dict(provincia="Trapani", lat=37.885151, lng=12.635307)
     # Calendar-only alias for the 2024 merger; Quero is the municipal seat.
     locations[(key("Setteville"), "Veneto")] = dict(locations[(key("Quero Vas"), "Veneto")], nome="Setteville")
     # Missing municipal coordinates: Mel, municipal seat, from the original DMO

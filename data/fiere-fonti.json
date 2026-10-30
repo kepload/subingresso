@@ -2457,17 +2457,6 @@
     }
   },
   {
-    "region": "Sicilia",
-    "name": "Cous Cous Fest",
-    "city": "San Vito Lo Capo",
-    "months": "9",
-    "category": "sagra",
-    "source": {
-      "url": "https://couscousfest.it/",
-      "label": "couscousfest.it"
-    }
-  },
-  {
     "region": "Sardegna",
     "name": "Fiera dell'Artigianato artistico della Sardegna",
     "city": "Mogoro",
@@ -31532,5 +31521,1558 @@
     "sourceRecordIds": [
       "https://www.siciliainfesta.com/manifestazioni/gran-gala-del-pizzolo-sortino.htm"
     ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Alcamo",
+    "name": "Ciokowine Fest",
+    "months": [
+      3
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.alcamo.tp.it/it/news/1959412",
+      "label": "Comune di Alcamo",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Festival del vino e del cioccolato con village enogastronomico nel centro storico; quarta edizione documentata dal Comune.",
+    "venue": "Piazza Ciullo, Collegio dei Gesuiti, Castello dei Conti di Modica e Corso VI Aprile",
+    "sectors": "Vino, cioccolato e prodotti enogastronomici",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-03-19",
+        "end": "2026-03-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.alcamo.tp.it/it/news/1959412"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://comune.alcamo.tp.it/it/news/1959412"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Alcamo",
+    "name": "Festival della Pasta Fresca Siciliana",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://comune.alcamo.tp.it/it/news/2024607",
+      "label": "Comune di Alcamo",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Decima edizione con degustazioni, esposizione di prodotti locali e cucina dal vivo, organizzata da Tesori Nascosti con il Comune.",
+    "venue": "Piazza Ciullo, Collegio dei Gesuiti e Corso stretto",
+    "sectors": "Pasta fresca, dolci e vini",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.alcamo.tp.it/it/news/2024607"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://comune.alcamo.tp.it/it/news/2024607"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Alcamo",
+    "name": "Expocasa",
+    "months": [
+      9
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://comune.alcamo.tp.it/it/news/1740917",
+      "label": "Comune di Alcamo",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Fiera dedicata a edilizia, design e arredamento; conservata soltanto l’edizione ufficiale 2024, senza presumere un rinnovo.",
+    "venue": "Cittadella dei Giovani",
+    "sectors": "Edilizia, arredamento, design e servizi per la casa",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-09-27",
+        "end": "2024-09-29",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.alcamo.tp.it/it/news/1740917"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Scheda storica 2024. L’ingresso gratuito riguarda i visitatori, non lo spazio espositivo. La fiera è professionale: verificare con Effegi Pubblicità e Servizi se sia prevista una nuova edizione e l’ammissione della propria categoria; nessuna data 2026 dedotta."
+    },
+    "sourceRecordIds": [
+      "https://comune.alcamo.tp.it/it/news/1740917"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Buseto Palizzolo",
+    "name": "Mostra Mercato e Sagra della Busiata · Busiate Buseto",
+    "months": [
+      8,
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://buseto-palizzolo-api.municipiumapp.it/s3/1005/allegati/avviso-pubblico-manifestazione-interesse-xii-sagra-busiata.pdf",
+      "label": "buseto-palizzolo-api.municipiumapp.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Mostra mercato delle produzioni locali abbinata alla sagra; documentata direttamente l’edizione comunale 2024.",
+    "venue": "Buseto Palizzolo; area e posteggio della nuova edizione da verificare",
+    "sectors": "Prodotti locali, gastronomia, artigianato e servizi",
+    "editions": [
+      {
+        "year": 2024,
+        "start": "2024-08-30",
+        "end": "2024-09-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://buseto-palizzolo-api.municipiumapp.it/s3/1005/allegati/avviso-pubblico-manifestazione-interesse-xii-sagra-busiata.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Il documento letto riguarda il 2024 e il coinvolgimento gratuito di associazioni volontarie, non la gratuità dei banchi. Un calendario indicizzato segnala 28–30 agosto 2026, ma l’atto provinciale non è stato recuperato e il portale secondario risponde 403: nessuna nuova data confermata o tariffa ricostruita."
+    },
+    "sourceRecordIds": [
+      "https://buseto-palizzolo-api.municipiumapp.it/s3/1005/allegati/avviso-pubblico-manifestazione-interesse-xii-sagra-busiata.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Buseto Palizzolo",
+    "name": "Chiccassateddi · Sagra della Cassatella",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_a_buseto_palizzolo.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Cassatelle in brodo e fritte con intrattenimento; la fonte indica come consuetudine l’ultima domenica di maggio, non un calendario annuale confermato.",
+    "venue": "Piazza Battaglia",
+    "sectors": "Cassatelle e gastronomia locale",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_a_buseto_palizzolo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Buseto Palizzolo",
+    "name": "Sagra Pasta cu l’Agghia e Sasizza Arrustuta",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_pasta_cu_l_agghia_e_sasizza_arrustuta_buseto_palizzolo.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Sagra della frazione Battaglia dedicata al pesto trapanese, alla salsiccia e alle produzioni locali; agosto è periodo usuale senza nuova edizione verificata.",
+    "venue": "Frazione Battaglia",
+    "sectors": "Pasta al pesto trapanese, salsiccia e prodotti tipici",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_pasta_cu_l_agghia_e_sasizza_arrustuta_buseto_palizzolo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Calatafimi-Segesta",
+    "name": "Sagra del Maccherone",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.segestawelcome.com/main/sagra_maccherone_calatafimi/",
+      "label": "segestawelcome.com",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Sagra del maccherone calatafimese con ricette locali; il portale territoriale documenta le due serate dell’edizione 2026.",
+    "venue": "Centro storico di Calatafimi",
+    "sectors": "Pasta fresca e specialità gastronomiche",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.segestawelcome.com/main/sagra_maccherone_calatafimi/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.segestawelcome.com/main/sagra_maccherone_calatafimi/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Calatafimi-Segesta",
+    "name": "Sagra della Cassatella",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra-della-cassatella-a-calatafimi-segesta.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Manifestazione dedicata alla cassatella nel contesto della festa di Giubino; agosto è indicativo, la pagina avverte che può riferirsi a un evento passato.",
+    "venue": "Calatafimi; sede della prossima edizione da verificare",
+    "sectors": "Cassatelle e dolci tipici",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra-della-cassatella-a-calatafimi-segesta.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Campobello di Mazara",
+    "name": "Sagra della Nocellara del Belìce · Olio e Oliva",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.westofsicily.com/it/eventi/campobello-mazara/sagra-della-nocellara-del-belice-2026-iv-edizione",
+      "label": "westofsicily.com",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Quarta edizione con degustazione e vendita diretta dei prodotti olivicoli. Il portale territoriale conferma 14–15 novembre; non usate le date stimate 7–8 o 8–9 novembre.",
+    "venue": "Campobello di Mazara; postazioni da confermare con l’organizzazione",
+    "sectors": "Olio extravergine, olive e prodotti tipici",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-14",
+        "end": "2026-11-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.westofsicily.com/it/eventi/campobello-mazara/sagra-della-nocellara-del-belice-2026-iv-edizione"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.westofsicily.com/it/eventi/campobello-mazara/sagra-della-nocellara-del-belice-2026-iv-edizione"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Castellammare del Golfo",
+    "name": "Gustorie di Sicilia",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/manifestazioni/gustorie-di-sicilia-castellammare-del-golfo.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna di cucina siciliana, degustazioni e musica; il calendario editoriale riporta esplicitamente l’edizione 2026.",
+    "venue": "Castellammare del Golfo; aree commerciali da verificare",
+    "sectors": "Specialità gastronomiche siciliane",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-25",
+        "end": "2026-06-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/manifestazioni/gustorie-di-sicilia-castellammare-del-golfo.htm"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/manifestazioni/gustorie-di-sicilia-castellammare-del-golfo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Castellammare del Golfo",
+    "name": "SEACILY · Salone Nautico di Sicilia",
+    "months": [
+      10,
+      11
+    ],
+    "category": "espositiva",
+    "source": {
+      "url": "https://saloneseacily.it/",
+      "label": "saloneseacily.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Nona edizione del salone nautico con esposizione a terra e in acqua, aziende e servizi della filiera. Non è un mercato generico per ambulanti.",
+    "venue": "Porto e Piazzale Porto",
+    "sectors": "Imbarcazioni, attrezzature nautiche e servizi; ristoro solo se ammesso",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-29",
+        "end": "2026-11-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://saloneseacily.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Le aziende interessate devono rivolgersi alla segreteria commerciale per selezione, spazi e tariffe. Pass gratuito riferito al pubblico; nessun costo espositore o posto residuo dedotto. Nel sito restano blocchi dimostrativi e orari discordanti: fare riferimento al programma operativo dell’organizzatore."
+    },
+    "sourceRecordIds": [
+      "https://saloneseacily.it/",
+      "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Castellammare del Golfo",
+    "name": "Cuntu, N’cantu e Manciu · La Cassatella",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/",
+      "label": "Comune di Castellammare del Golfo",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Appuntamento gastronomico della cassatella nel cartellone comunale 2026. La programmazione generale non costituisce bando per espositori.",
+    "venue": "Centro storico, zona pedonale",
+    "sectors": "Cassatelle e gastronomia locale",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-13",
+        "end": "2026-11-15",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.comune.castellammare.tp.it/vivere-il-comune/eventi/cartellone-grandi-eventi-2026/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Castelvetrano",
+    "name": "Fiera della Madonna della Tagliata",
+    "months": [
+      9
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.comune.castelvetrano.tp.it/it/news/6485136",
+      "label": "Comune di Castelvetrano",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Fiera commerciale con stalli alimentari e non alimentari lungo via Tagliata; date 2026 confermate dal Comune e dall’avviso originale.",
+    "venue": "Via Tagliata",
+    "sectors": "Alimentari e non alimentari, artigianato",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-19",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.castelvetrano.tp.it/it/news/6485136"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Istanza tramite Impresa in un giorno e graduatoria cronologica, a partire dal lotto 31 nell’avviso 2026. Il documento conserva la scadenza 10 settembre 2025 pur indicando la fiera 2026: discordanza esplicita, non corretta per ipotesi. Nessuna domanda corrente o postazione disponibile promessa.",
+      "costs": "Avviso 2026: stallo di 19,50 m², 13,65 € al giorno, 27,30 € per due giorni; eccedenza 0,70 €/m²/giorno. Solo canone di suolo, non prezzo complessivo di servizi/allestimento; IVA non indicata. Il termine di domanda stampato è ancora 10/09/2025: da chiarire con il Comune, senza modificare l’anno per ipotesi."
+    },
+    "sourceRecordIds": [
+      "https://www.comune.castelvetrano.tp.it/it/news/6485136",
+      "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-della-tagliata-27-8-2026.docx"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Castelvetrano",
+    "name": "Sagra del Pane Nero",
+    "months": [
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.castelvetrano.tp.it/it/news/6485463",
+      "label": "Comune di Castelvetrano",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Terza edizione dedicata al pane nero, alle produzioni locali e ai vicoli dell’artigianato. Il bando letto riguarda co-organizzatori ETS, non assegnazione automatica di banchi.",
+    "venue": "Via Vittorio Emanuele, Sistema delle Piazze e vicoli Militello, Bassi e Geraci",
+    "sectors": "Pane nero, olio, prodotti agroalimentari e artigianato",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-10-17",
+        "end": "2026-10-18",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.castelvetrano.tp.it/it/news/6485463"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "L’avviso 2026 seleziona ETS per la co-organizzazione; quello espositori 2025 resta storico e non abilita alla nuova edizione. Verificare selezione specifica, spazi, servizi e oneri. Il contributo pubblico all’organizzatore non è una tariffa di partecipazione degli ambulanti."
+    },
+    "sourceRecordIds": [
+      "https://www.comune.castelvetrano.tp.it/it/news/6485463"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Castelvetrano",
+    "name": "Fiera di San Giovanni",
+    "months": [
+      6
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-san-giovanni-10-06-2025-1.pdf",
+      "label": "castelvetrano-api.cloud.municipiumapp.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Fiera comunale documentata soltanto per il 2025, con gazebi 4×4 e area spuntisti nell’avviso storico.",
+    "venue": "Piazza Regina Margherita",
+    "sectors": "Categorie ammesse dal bando comunale, da verificare per settore",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-06-22",
+        "end": "2025-06-24",
+        "dateType": "confirmed",
+        "sourceUrl": "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-san-giovanni-10-06-2025-1.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Avviso del 2025: 19 gazebi e area spuntisti, non posti residui attuali. La domanda storica era sul portale Impresa in un giorno; non è stato recuperato un bando San Giovanni 2026. Nuove date, categorie, canone e disponibilità da verificare."
+    },
+    "sourceRecordIds": [
+      "https://castelvetrano-api.cloud.municipiumapp.it/s3/1775/allegati/avvisi-notizie/avviso-fiera-san-giovanni-10-06-2025-1.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Custonaci",
+    "name": "Spincia Fest",
+    "months": [
+      7,
+      9,
+      12
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/spincia_fest_custonaci.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Sagra della spincia a Cornino. Le fonti descrivono ricorrenze estive e natalizie; il portale regionale cita settembre contro luglio della fonte comunale storica: mesi indicativi, non aperture continue.",
+    "venue": "Piazza Riviera, Cornino; sede da riconfermare",
+    "sectors": "Spincia e specialità gastronomiche",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Nessuna edizione datata 2026 verificata. Le fonti divergono sui mesi e descrivono anche ricorrenze natalizie: non ricostruiti giorni esatti. Accesso degli operatori, categoria, quota e servizi richiedono conferma specifica; la descrizione della sagra non equivale a un bando."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/spincia_fest_custonaci.htm",
+      "https://www.visitsicily.info/alla-scoperta-di-custonaci-dal-borgo-al-mare/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Custonaci",
+    "name": "I Saperi del Borgo · Odori e Sapori di Sicilia",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/manifestazioni/odori_e_sapori_di_sicilia_custonaci.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna gastronomica del centro storico; la pagina riporta settembre senza annualità esplicita nel corpo, quindi non è una data 2026 confermata.",
+    "venue": "Centro storico",
+    "sectors": "Prodotti tipici e piatti locali",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/manifestazioni/odori_e_sapori_di_sicilia_custonaci.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Erice",
+    "name": "EricèNatale · Mercatini dell’Artigianato e Villaggio del Gusto",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://www.comune.erice.tp.it/it/news/119790/ericenatale-il-programma-degli-eventi-natalizi-del-comune-di-erice",
+      "label": "Comune di Erice",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Mercatini e villaggio gastronomico nel programma comunale 2025/26. Il solo bando presepi di ottobre 2026 non conferma il calendario commerciale 2026/27.",
+    "venue": "Piazza della Loggia",
+    "sectors": "Artigianato, prodotti tipici e idee regalo",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-12-06",
+        "end": "2026-01-06",
+        "periodOnly": true,
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.erice.tp.it/it/news/119790/ericenatale-il-programma-degli-eventi-natalizi-del-comune-di-erice"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Programma 2025/26: 6–8 e 13–14 dicembre, quindi 18 dicembre–6 gennaio con esclusione di 24 e 25 dicembre; 31 dicembre e 1 gennaio con orari ridotti. Non apertura continua. Nessuna tariffa espositore dedotta dai ticket di concerti o musei; nuova selezione e calendario da verificare."
+    },
+    "sourceRecordIds": [
+      "https://www.comune.erice.tp.it/it/news/119790/ericenatale-il-programma-degli-eventi-natalizi-del-comune-di-erice"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Favignana",
+    "name": "Sagra delle Cassatelle",
+    "months": [
+      4
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_delle_cassatelle_favignana.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Sagra isolana dedicata alle cassatelle, con animazione. Aprile è il periodo indicato dalla fonte storica; nessuna edizione corrente confermata.",
+    "venue": "Favignana; piazza e organizzazione da verificare",
+    "sectors": "Cassatelle e dolci tipici",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_delle_cassatelle_favignana.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Favignana",
+    "name": "Sagra del Cannolo Siciliano",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_del_cannolo_siciliano_a_favignana.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Sagra di degustazione con intrattenimento; il primo fine settimana di giugno è una consuetudine della pagina storica, non conferma annuale.",
+    "venue": "Favignana; sede da verificare",
+    "sectors": "Cannoli e dolci siciliani",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_del_cannolo_siciliano_a_favignana.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Favignana",
+    "name": "Festa del Borgo Marinaro di Punta Lunga · Sagra del Tonno",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.tp24.it/2026/09/03/agroalimentare/favignana-da-oggi-tre-giorni-di-festa-a-punta-lunga-arte-cinema-musica-e-sagra-del-tonno/238945",
+      "label": "tp24.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "La festa dura 3–5 settembre 2026, ma la sagra gastronomica è documentata soltanto nella serata conclusiva del 5 settembre; non tre giorni di vendita dedotti.",
+    "venue": "Borgo di Punta Lunga",
+    "sectors": "Tonno e cucina marinara",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-05",
+        "end": "2026-09-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.tp24.it/2026/09/03/agroalimentare/favignana-da-oggi-tre-giorni-di-festa-a-punta-lunga-arte-cinema-musica-e-sagra-del-tonno/238945"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Fonte giornalistica del 3 settembre 2026: sagra del tonno il 5 settembre alle 21:30, all’interno della festa del borgo. Il programma comunale 2024 è solo confronto storico. Nessun avviso pubblico per operatori esterni o costo di banco recuperato; contattare l’organizzazione prima di programmare la partecipazione."
+    },
+    "sourceRecordIds": [
+      "https://www.tp24.it/2026/09/03/agroalimentare/favignana-da-oggi-tre-giorni-di-festa-a-punta-lunga-arte-cinema-musica-e-sagra-del-tonno/238945"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Gibellina",
+    "name": "La Notte Gialla · Sagra del Melone Giallo",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/la_notte_gialla_sagra_del_melone_giallo_di_gibellina.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna di prodotti del territorio, melone giallo e vini. La pagina indica agosto senza un anno verificabile nel testo: mantenuto il solo periodo usuale.",
+    "venue": "Gibellina; aree commerciali da verificare",
+    "sectors": "Melone giallo, vini e prodotti tipici",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/la_notte_gialla_sagra_del_melone_giallo_di_gibellina.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Gibellina",
+    "name": "Natale Street Food · Sagra del Cibo di Strada",
+    "months": [
+      12
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/manifestazioni/natale-street-food-sagra-del-cibo-di-strada-gibellina.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Villaggio natalizio di gastronomia di strada nel Sistema delle Piazze. La fonte avverte che può riferirsi al passato: nessun rinnovo automatico 2026.",
+    "venue": "Sistema delle Piazze",
+    "sectors": "Street food, vini e birre locali",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/manifestazioni/natale-street-food-sagra-del-cibo-di-strada-gibellina.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Marsala",
+    "name": "Fiera di Maggio",
+    "months": [
+      4,
+      5
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.tp24.it/2026/04/27/dai-comuni/c-e-la-fiera-si-sposta-il-mercatino-di-marsala-ecco-dove/233121",
+      "label": "tp24.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Fiera tradizionale documentata nel 2026; distinta dal normale mercato del martedì, temporaneamente trasferito vicino allo stadio.",
+    "venue": "Area comunale tra via degli Atleti e via della Gioventù",
+    "sectors": "Categorie commerciali previste dalla fiera, da verificare",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La notizia del 27 aprile 2026 riporta la fiera fino all’11 maggio, altre cronache parlano di circa tre settimane; non ricostruito un intervallo completo. I trasferimenti del mercato del 28 aprile, 5 e 12 maggio non sono tre nuove fiere né provano giornate commerciali aggiuntive. Nuove concessioni e canoni da verificare."
+    },
+    "sourceRecordIds": [
+      "https://www.tp24.it/2026/04/27/dai-comuni/c-e-la-fiera-si-sposta-il-mercatino-di-marsala-ecco-dove/233121"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Marsala",
+    "name": "Saperi e Sapori di Matarocco · Matarocco Fest",
+    "months": [
+      7,
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/saperi_e_sapori_di_matarocco_marsala.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna gastronomica e folkloristica della contrada Matarocco; il calendario presenta luglio/agosto senza una sequenza annuale completa verificabile.",
+    "venue": "Contrada Matarocco",
+    "sectors": "Prodotti tipici, formaggi, miele, dolci e vini",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Mesi indicativi della fonte editoriale, non apertura continua fra luglio e agosto. Tavolate e degustazioni offerte dalla comunità non attestano accesso di ambulanti esterni. Verificare programma della nuova edizione, selezione commerciale, sede e oneri con gli organizzatori."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/saperi_e_sapori_di_matarocco_marsala.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Mazara del Vallo",
+    "name": "Cosi di ’na Vota · Mercatino delle Pulci e dell’Antiquariato",
+    "months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.mazaradelvallo.tp.it/it/news/1852766",
+      "label": "Comune di Mazara del Vallo",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Mercatino specializzato avviato il 1 giugno 2025, con ricorrenza indicata nella prima domenica del mese; non un mercato alimentare generico.",
+    "venue": "Piazze Immacolata, Chinea ed Ettore Ditta",
+    "sectors": "Antiquariato, piccolo collezionismo, usato e hobbistica",
+    "editions": [
+      {
+        "year": 2025,
+        "start": "2025-06-01",
+        "end": "2025-06-01",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.mazaradelvallo.tp.it/it/news/1852766"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Fonte comunale del 2025: prima domenica del mese, ore 8:30–18, gestione Amazar APS con Funduq. I mesi sono un filtro della ricorrenza mensile, non un calendario confermato di dodici aperture 2026. Per le singole giornate e l’ammissione verificare organizzatore e regolamento; nessuna disponibilità attuale dedotta."
+    },
+    "sourceRecordIds": [
+      "https://comune.mazaradelvallo.tp.it/it/news/1852766"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Mazara del Vallo",
+    "name": "Festa del Pane e della Pasta",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/festa_del_pane_e_della_civilta_contadina_mazara_del_vallo.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Mostra mercato del pane e dei prodotti cerealicoli, degustazioni e spettacoli; la pagina editoriale indica esplicitamente 7–9 agosto 2026.",
+    "venue": "Mazara del Vallo; area espositiva da verificare",
+    "sectors": "Pane, pasta, cereali e prodotti tipici",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-07",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/festa_del_pane_e_della_civilta_contadina_mazara_del_vallo.htm"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/festa_del_pane_e_della_civilta_contadina_mazara_del_vallo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Paceco",
+    "name": "Dattilo Cibus Fest · Cannolo Fest",
+    "months": [
+      6
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/feste/dattilo-cannolo-fest.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Manifestazione di Dattilo dedicata al cannolo e ai prodotti del territorio, con associazione CIURI e compartecipazione comunale secondo la fonte editoriale.",
+    "venue": "Dattilo",
+    "sectors": "Cannoli, pasticceria e prodotti tipici",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-06-26",
+        "end": "2026-06-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/feste/dattilo-cannolo-fest.htm"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/feste/dattilo-cannolo-fest.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Paceco",
+    "name": "Sagra del Melone Giallo",
+    "months": [
+      7,
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra-del.melone-di-paceco.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Sagra dedicata al melone cartucciaru e alle produzioni locali. Il corpo della pagina non esplicita l’anno dei giorni 31 luglio–2 agosto: conservato il periodo, non una data certa.",
+    "venue": "Paceco; piazza e aree espositive da confermare",
+    "sectors": "Melone giallo e prodotti tipici",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra-del.melone-di-paceco.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Pantelleria",
+    "name": "Calici di Stelle",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://pantelleriaexperience.it/it/experiences-item/calici_di_stelle_2026_10_agosto-220",
+      "label": "pantelleriaexperience.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Manifestazione del Comune con Agenzia Gira L’Isola, con vini e prodotti panteschi. La descrizione conferma il 10 agosto 2026; ignorata la data automatica del giorno corrente nel widget.",
+    "venue": "Piazzetta Messina",
+    "sectors": "Vini, passiti e prodotti gastronomici panteschi",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-10",
+        "end": "2026-08-10",
+        "dateType": "confirmed",
+        "sourceUrl": "https://pantelleriaexperience.it/it/experiences-item/calici_di_stelle_2026_10_agosto-220"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Le quote di 20 € e gli importi discordanti del widget riguardano il carnet degustazioni visitatori, non il banco espositore. Evento dalle ore 20 nella descrizione dell’organizzatore. Verificare selezione degli operatori, nuova edizione, tariffe commerciali e servizi: nessun posteggio aperto a tutti dedotto."
+    },
+    "sourceRecordIds": [
+      "https://pantelleriaexperience.it/it/experiences-item/calici_di_stelle_2026_10_agosto-220"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Partanna",
+    "name": "Tipicu’Arte · Sagra della Cipolla Rossa",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_rossa_a_partanna.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna dei prodotti locali dedicata alla cipolla rossa partannese; la fonte editoriale riporta esplicitamente i due giorni dell’edizione 2026.",
+    "venue": "Partanna; spazi espositivi da verificare",
+    "sectors": "Cipolla rossa e prodotti tipici",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-25",
+        "end": "2026-07-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_rossa_a_partanna.htm"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_cipolla_rossa_a_partanna.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Petrosino",
+    "name": "Sagra dell’Uva e del Vino",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.marsalalive.it/2026/09/10/petrosino-celebra-uva-vino-sagra-2026/amp/",
+      "label": "marsalalive.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna di prodotti tipici, stand e degustazioni: cronaca operativa 18–20 settembre 2026, successiva al cartellone indicizzato che riportava 19–21 settembre.",
+    "venue": "Viale Francesco De Vita e viale Giacomo Licari",
+    "sectors": "Uva, vino e prodotti tipici",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-09-18",
+        "end": "2026-09-20",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.marsalalive.it/2026/09/10/petrosino-celebra-uva-vino-sagra-2026/amp/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Preferita la notizia operativa del 10 settembre rispetto al calendario territoriale non più accessibile (410), con date diverse. Nessuna quota espositore o disponibilità garantita ricavata dal programma pubblico; per la prossima edizione verificare selezione, autorizzazioni, oneri e servizi."
+    },
+    "sourceRecordIds": [
+      "https://www.marsalalive.it/2026/09/10/petrosino-celebra-uva-vino-sagra-2026/amp/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Poggioreale",
+    "name": "Mostra dei Formaggi della Valle del Belice",
+    "months": [
+      5
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://trasparenza.comune.poggioreale.tp.it/poggioreale/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GT1RBNU31PT0-H",
+      "label": "Comune di Poggioreale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Ventottesima mostra delle produzioni locali documentata dalla determina comunale per il 23 maggio 2026. Non adottate le date autunnali stimate dei calendari automatici.",
+    "venue": "Poggioreale; postazioni da verificare",
+    "sectors": "Formaggi, ricotta e prodotti locali",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-05-23",
+        "end": "2026-05-23",
+        "dateType": "confirmed",
+        "sourceUrl": "https://trasparenza.comune.poggioreale.tp.it/poggioreale/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GT1RBNU31PT0-H"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La determina n. 324 del 18 maggio 2026 finanzia la realizzazione della manifestazione, non assegna automaticamente banchi agli operatori. Nessun canone di partecipazione ricostruito dal contributo pubblico; nuova edizione e requisiti da verificare con il Comune."
+    },
+    "sourceRecordIds": [
+      "https://trasparenza.comune.poggioreale.tp.it/poggioreale/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GT1RBNU31PT0-H"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Poggioreale",
+    "name": "Il Gusto delle Radici · Sagra della ’Nfigghiulata e Muffuletta",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_muffuletta_poggioreale.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna con prodotti da forno, artigianato e degustazioni. L’atto comunale recuperato riguarda l’organizzazione 2025; novembre resta periodo usuale, non conferma delle stime 2026.",
+    "venue": "Poggioreale; sede da verificare",
+    "sectors": "Muffuletta, ’nfigghiulata, prodotti tipici e artigianato",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_muffuletta_poggioreale.htm",
+      "https://trasparenza.comune.poggioreale.tp.it/zf/index.php/atti-amministrativi/delibere/dettaglio/table-delibere-public-page/6/atto/GT0RNe5k3PT0-F"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Salaparuta",
+    "name": "Fiera Paesana",
+    "months": [
+      8
+    ],
+    "category": "tradizionale",
+    "source": {
+      "url": "https://www.visitbelice.it/en/esperienze/fiera-paesana-di-salaparuta/",
+      "label": "visitbelice.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Fiera in Piazza Mercato documentata dal portale territoriale per il 27–28 agosto 2023; non prorogata automaticamente al 2026.",
+    "venue": "Piazza Mercato",
+    "sectors": "Categorie della fiera da verificare con il Comune",
+    "editions": [
+      {
+        "year": 2023,
+        "start": "2023-08-27",
+        "end": "2023-08-28",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.visitbelice.it/en/esperienze/fiera-paesana-di-salaparuta/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.visitbelice.it/en/esperienze/fiera-paesana-di-salaparuta/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Salaparuta",
+    "name": "Sagra di Primavera",
+    "months": [
+      3
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.visitbelice.it/en/esperienze/sagra-di-primavera/",
+      "label": "visitbelice.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Stand di degustazione e preparazioni tradizionali all’auditorium comunale. Il 25 marzo della scheda non ha annualità esplicita: solo mese indicativo.",
+    "venue": "Auditorium Centro Sociale Nick La Rocca, via Trentino 15",
+    "sectors": "Prodotti tipici, carni e dolci tradizionali",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "Il prezzo del pacchetto e le opzioni del portale turistico riguardano visitatori e bambini, non gli espositori. Non confermata un’edizione 2026 né l’accesso di ambulanti esterni; verificare programma, ammissione e costi commerciali con gli organizzatori."
+    },
+    "sourceRecordIds": [
+      "https://www.visitbelice.it/en/esperienze/sagra-di-primavera/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Salaparuta",
+    "name": "Wine Christmas · Sagra del Vino e dei Prodotti Tipici Natalizi",
+    "months": [
+      12
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra-del-vino-e-dei-prodotti-tipici-natalizi-salaparuta.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna natalizia di vino e gastronomia locale; la fonte la segnala come potenzialmente passata. Dicembre è periodo indicativo, non rinnovo 2026.",
+    "venue": "Salaparuta; sede da verificare",
+    "sectors": "Vino e prodotti gastronomici natalizi",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra-del-vino-e-dei-prodotti-tipici-natalizi-salaparuta.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Salemi",
+    "name": "Sagra della Busiata… nel Borgo",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.salemi.trapani.it/it/news/avviso-sagra-della-busiata-nel-borgo-2026",
+      "label": "Comune di Salemi",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna del centro storico con categorie separate per ristoratori di busiata, food & beverage e hobbisti/artigiani/ETS; avvisi e graduatorie comunali letti.",
+    "venue": "Centro storico; aree secondo la categoria e la graduatoria",
+    "sectors": "Busiata, prodotti food & beverage e artigianato non alimentare",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-04",
+        "end": "2026-08-07",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.salemi.trapani.it/it/news/avviso-sagra-della-busiata-nel-borgo-2026"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Procedure 2026 già concluse: ristoratori e food & beverage entro 13 luglio ore 12, hobbisti/artigiani/ETS entro 20 luglio ore 9. Solo i ristoratori ammessi possono somministrare busiata; altre categorie con prodotti limitati. Gli ETS esenti non equivalgono ad ammissione libera; le graduatorie non indicano posti oggi disponibili.",
+      "costs": "Quote per tutti i quattro giorni: 20 € hobbisti e artigiani non alimentari, ETS senza scopo di lucro esenti; 100 € food & beverage con prodotti ammessi diversi dalla busiata; 300 € ristoratori di busiata. IVA sulle quote non indicata. Contributi parziali ai costi organizzativi, allestimento autonomo ove previsto e pratica SUAP a carico dell’operatore. Il limite di 8 € IVA inclusa per piatto e vino è prezzo al pubblico, non canone. Bandi 2026 scaduti."
+    },
+    "sourceRecordIds": [
+      "https://www.comune.salemi.trapani.it/it/news/avviso-sagra-della-busiata-nel-borgo-2026",
+      "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-a1-pubblico-assegnazione-spazicategoria-ristoratori-1.pdf",
+      "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso-b1-pubblico-assegnazione-spazi-food-beverage.pdf",
+      "https://salemi-api.municipiumapp.it/s3/6063/allegati/avviso_c_hobbisti_artigiani_ets_v2.pdf",
+      "https://salemi-api.municipiumapp.it/s3/6063/allegati/food-e-beverage10800220260717121311.pdf",
+      "https://salemi-api.municipiumapp.it/s3/6063/allegati/verbale-assegnazione-spazi-hobbisti-artigiani-sagra-dellea-busiata-2026.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "San Vito Lo Capo",
+    "name": "Cous Cous Fest",
+    "months": [
+      9
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://couscousfest.it/",
+      "label": "couscousfest.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Festival con Expo Village di artigianato e agroalimentare sul lungomare e nel centro. La home annuncia direttamente 17–26 settembre 2027; non proiezione automatica del 2026.",
+    "venue": "Lungomare e centro storico",
+    "sectors": "Agroalimentare mediterraneo, artigianato e prodotti tipici",
+    "editions": [
+      {
+        "year": 2027,
+        "start": "2027-09-17",
+        "end": "2027-09-26",
+        "dateType": "confirmed",
+        "sourceUrl": "https://couscousfest.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "L’Expo Village è distinto dalle Case del Cous Cous e dai concorsi degli chef. La quota dei menù è per visitatori, non per i banchi. Per la nuova edizione verificare con l’ufficio commerciale selezione, settori, tariffe, servizi e sede assegnata; nessun posto residuo garantito. La home conserva ancora blocchi e concerti 2026."
+    },
+    "sourceRecordIds": [
+      "https://couscousfest.it/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "San Vito Lo Capo",
+    "name": "Terr’emare · Castelluzzo tra Saperi e Sapori",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/manifestazioni/terre-e-mare-castelluzzo-tra-saperi-e-sapori-san-vito-lo-capo.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Rassegna di Castelluzzo con villaggio del gusto, degustazioni e cucina dal vivo; date 2026 esplicite nella fonte editoriale.",
+    "venue": "Castelluzzo",
+    "sectors": "Prodotti tipici e cucina siciliana",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-07-03",
+        "end": "2026-07-05",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/manifestazioni/terre-e-mare-castelluzzo-tra-saperi-e-sapori-san-vito-lo-capo.htm"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/manifestazioni/terre-e-mare-castelluzzo-tra-saperi-e-sapori-san-vito-lo-capo.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Santa Ninfa",
+    "name": "Un Giorno da Pecora · Sagra della Pecora della Valle del Belìce",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.santaninfa.tp.it/novita/avviso-per-la-partecipazione-allevento-un-giorno-da-pecora-2026-sagra-della-pecora-della-valle-del-belice/",
+      "label": "Comune di Santa Ninfa",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Edizione 21–22 novembre 2026 con avviso comunale del 27 ottobre rivolto agli operatori locali delle categorie espressamente indicate.",
+    "venue": "Santa Ninfa; stand da assegnare dal Comune",
+    "sectors": "Pecora e derivati, formaggi, prodotti affini e bevande",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-11-21",
+        "end": "2026-11-22",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.santaninfa.tp.it/novita/avviso-per-la-partecipazione-allevento-un-giorno-da-pecora-2026-sagra-della-pecora-della-valle-del-belice/"
+      }
+    ],
+    "participation": {
+      "type": "selected",
+      "note": "Domande entro 11 novembre 2026 via email, PEC o protocollo; solo operatori con sede legale a Santa Ninfa e codici ATECO ammessi. Allegare descrizione dell’offerta, menù, listino e documento. Nessun diritto automatico allo stand; esclusi prodotti estranei al format. L’avviso non indica una quota: non significa partecipazione gratuita.",
+      "deadline": "2026-11-11"
+    },
+    "sourceRecordIds": [
+      "https://www.comune.santaninfa.tp.it/novita/avviso-per-la-partecipazione-allevento-un-giorno-da-pecora-2026-sagra-della-pecora-della-valle-del-belice/",
+      "https://www.comune.santaninfa.tp.it/wp-content/uploads/2026/10/Prot_Int-0017479-del-27-10-2026-Documento.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Santa Ninfa",
+    "name": "Sagra della Salsiccia",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_della_salsiccia_a_santa_ninfa.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Sagra del prodotto locale con stand lungo il viale e intrattenimento; giorni 8–9 agosto 2026 espliciti nel calendario editoriale.",
+    "venue": "Santa Ninfa; viale e postazioni da verificare",
+    "sectors": "Salsiccia locale e prodotti gastronomici",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-08",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_della_salsiccia_a_santa_ninfa.htm"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_della_salsiccia_a_santa_ninfa.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Trapani",
+    "name": "Fiera d’Agosto · Artigiani per Sant’Alberto",
+    "months": [
+      8
+    ],
+    "category": "artigianato",
+    "source": {
+      "url": "https://prolocotrapaniaps.it/feste-patronali-citta-di-trapani-manifestazioni-esterne/",
+      "label": "prolocotrapaniaps.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Fiera di artigianato alla Casina delle Palme nel programma ufficiale della Pro Loco; non coincide con Expo Trapani di Ferragosto.",
+    "venue": "Casina delle Palme",
+    "sectors": "Artigianato",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-03",
+        "end": "2026-08-08",
+        "dateType": "confirmed",
+        "sourceUrl": "https://prolocotrapaniaps.it/feste-patronali-citta-di-trapani-manifestazioni-esterne/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://prolocotrapaniaps.it/feste-patronali-citta-di-trapani-manifestazioni-esterne/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Trapani",
+    "name": "Natale Mediterraneo · Mercatini di Natale",
+    "months": [
+      12,
+      1
+    ],
+    "category": "mercatino",
+    "source": {
+      "url": "https://comune.trapani.it/wp-content/uploads/2025/12/ProgrammaNataleMediterraneo_PDF-1.pdf",
+      "label": "Comune di Trapani",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Mercatini di artigiani e creativi a Villa Margherita e iniziative commerciali all’ex Mercato del Pesce nel programma 2025/26; non conferma del Natale 2026.",
+    "venue": "Villa Margherita e piazza Ex Mercato del Pesce, secondo il singolo programma",
+    "sectors": "Artigianato, prodotti creativi e idee regalo",
+    "editions": [
+      {
+        "year": 2025,
+        "label": "Programma natalizio 2025/26: giornate e sedi distinte, non apertura continua",
+        "dateType": "confirmed",
+        "sourceUrl": "https://comune.trapani.it/wp-content/uploads/2025/12/ProgrammaNataleMediterraneo_PDF-1.pdf"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Programma 2025/26: Villa Margherita con orari feriali/festivi distinti; ex Mercato del Pesce con Natale Solidale 6–15 dicembre e mercatini 18–24 dicembre. Non dedotte aperture di tutte le sedi per l’intera rassegna. Nessun calendario o bando espositori 2026/27 verificato; costi e autorizzazioni da confermare."
+    },
+    "sourceRecordIds": [
+      "https://comune.trapani.it/wp-content/uploads/2025/12/ProgrammaNataleMediterraneo_PDF-1.pdf"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Trapani",
+    "name": "Stragusto",
+    "months": [
+      7
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://stragusto.it/",
+      "label": "stragusto.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Festival del cibo di strada: l’organizzatore annuncia l’annullamento dell’edizione 2026 per indisponibilità della sede. Calendari che riportano 22–26 luglio non sono conferma di svolgimento.",
+    "venue": "Piazza dell’Antico Mercato del Pesce, sede storica",
+    "sectors": "Cibo di strada e vini",
+    "editions": [
+      {
+        "year": 2026,
+        "label": "Edizione annullata: indisponibilità della sede",
+        "dateType": "confirmed",
+        "sourceUrl": "https://stragusto.it/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "EDIZIONE 2026 ANNULLATA secondo l’avviso in apertura del sito dell’organizzatore. Nessuna data attiva, iscrizione o posto disponibile. La descrizione storica e le vecchie notizie restano nel sito, ma non superano l’annullamento; attendere una nuova comunicazione prima di organizzare la partecipazione."
+    },
+    "sourceRecordIds": [
+      "https://stragusto.it/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Valderice",
+    "name": "Sagra a Fico · Antichi Sapori",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.valderice.online/evento/21-sagra-del-fico-valderice-2026/",
+      "label": "valderice.online",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Ventunesima sagra della contrada Fico con stand gastronomici, ricette locali e intrattenimento nelle due serate.",
+    "venue": "Piazza Don G. Gigli, contrada Fico",
+    "sectors": "Gastronomia locale",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.valderice.online/evento/21-sagra-del-fico-valderice-2026/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.valderice.online/evento/21-sagra-del-fico-valderice-2026/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Valderice",
+    "name": "Tuna Fish Fest · Bonagia",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.valderice.online/evento/tuna-fish-fest-bonagia-2026/",
+      "label": "valderice.online",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Sesta edizione a Bonagia con villaggio gastronomico di tonno e pesce azzurro, cucina dal vivo e incontri. Non attribuita alla vecchia sede di Cornino/Custonaci.",
+    "venue": "Tonnara di Bonagia",
+    "sectors": "Tonno, pesce azzurro e gastronomia marinara",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-06",
+        "end": "2026-08-09",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.valderice.online/evento/tuna-fish-fest-bonagia-2026/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "Organizzazione Bonagia Eventi & Promotion APS, patrocinio comunale. Il calendario storico di Cornino è fuori dalla sede 2026 documentata. Ingresso gratuito riferito ai visitatori, non al posteggio: ammissione, costi e servizi da verificare con l’organizzatore."
+    },
+    "sourceRecordIds": [
+      "https://www.valderice.online/evento/tuna-fish-fest-bonagia-2026/"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Valderice",
+    "name": "Sagra dell’Ulivo",
+    "months": [
+      11
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.siciliainfesta.com/sagre/sagra_dell_ulivo_a_valderice.htm",
+      "label": "Sicilia in Festa · fonte editoriale",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Sagra di Casalbianco con prodotti olivicoli, attrezzi della raccolta e degustazioni. Novembre è periodo usuale; la pagina avverte che può riferirsi al passato.",
+    "venue": "Ex scuola elementare di Casalbianco",
+    "sectors": "Olive, olio e prodotti tipici",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.siciliainfesta.com/sagre/sagra_dell_ulivo_a_valderice.htm"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Vita",
+    "name": "Sagra della Dieta Mediterranea",
+    "months": [
+      9,
+      10
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.consorziocomunale.trapani.it/provinciatp/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5XpnNUTUTT0-A",
+      "label": "consorziocomunale.trapani.it",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Manifestazione di valorizzazione territoriale indicata nell’atto del Libero Consorzio per settembre/ottobre 2026. Il sostegno economico pubblico non è canone del banco.",
+    "venue": "Vita; sedi e giornate commerciali da verificare",
+    "sectors": "Produzioni della dieta mediterranea da verificare nel programma",
+    "editions": [],
+    "participation": {
+      "type": "check",
+      "note": "La determina pubblicata il 30 ottobre 2026 indica settembre/ottobre, senza calendario giornaliero commerciale. Le date esatte 28 settembre–4 ottobre di una scheda automatica non sono confermate dall’originale. Nessuna assegnazione, apertura agli ambulanti o quota espositore dedotta dai 25.000 € di patrocinio."
+    },
+    "sourceRecordIds": [
+      "https://www.consorziocomunale.trapani.it/provinciatp/zf/index.php/atti-amministrativi/determine/dettaglio/atto/G5XpnNUTUTT0-A"
+    ]
+  },
+  {
+    "region": "Sicilia",
+    "city": "Misiliscemi",
+    "name": "Sagra del Pane Cunzato",
+    "months": [
+      8
+    ],
+    "category": "sagra",
+    "source": {
+      "url": "https://www.comune.misiliscemi.tp.it/2a-sagra-del-pane-cunzato/",
+      "label": "Comune di Misiliscemi",
+      "checkedAt": "2026-10-30"
+    },
+    "summary": "Seconda edizione documentata dal Comune a Locogrande; il luogo appartiene a Misiliscemi, non a Trapani.",
+    "venue": "Piazza Filippo Asaro, Locogrande",
+    "sectors": "Pane cunzato e prodotti gastronomici locali",
+    "editions": [
+      {
+        "year": 2026,
+        "start": "2026-08-01",
+        "end": "2026-08-02",
+        "dateType": "confirmed",
+        "sourceUrl": "https://www.comune.misiliscemi.tp.it/2a-sagra-del-pane-cunzato/"
+      }
+    ],
+    "participation": {
+      "type": "check",
+      "note": "La fonte descrive la manifestazione e le sue attività gastronomiche o espositive, non un posto disponibile per ogni ambulante. Verificare con organizzatore e SUAP nuova edizione, categorie, selezione, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non equivalgono a gratuità del posteggio."
+    },
+    "sourceRecordIds": [
+      "https://www.comune.misiliscemi.tp.it/2a-sagra-del-pane-cunzato/"
+    ],
+    "lat": 37.885151,
+    "lng": 12.635307,
+    "coordinateSource": {
+      "url": "https://www.wikidata.org/wiki/Q105582817",
+      "note": "Centro comunale indicativo, non coordinate del singolo banco o della piazza."
+    }
   }
 ]
