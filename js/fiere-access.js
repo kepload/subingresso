@@ -25,10 +25,12 @@
             if (!/^https:\/\//i.test(url)) return;
             // Organizer events point to an internal page, not an editorial source.
             if (['https://subingresso.it', location.origin].includes(new URL(url).origin)) return;
+            // Official sources are public; authentication is for saving/reminders.
             link.dataset.fiereSource = url;
             link.dataset.fiereId = id;
-            link.href = fallback(id, url);
-            link.removeAttribute('target');
+            link.href = url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
         });
     }
     function feedback(text, trigger) {
@@ -67,7 +69,7 @@
         window.__onLoginSuccess = callback;
         window.openAuthModal(tab, request?.context || (request
             ? 'Registrati gratis o accedi per consultare la fonte e verificare come partecipare. Dopo l’accesso apriamo la fonte che hai scelto.'
-            : 'Registrati gratis per vedere come partecipare alle fiere. Puoi anche salvarle e scegliere un promemoria via email.'), 'direct');
+            : 'Registrati gratis per salvare le fiere e scegliere un promemoria via email. Fonti e procedure restano consultabili liberamente.'), 'direct');
         // The site's auth modal is outside the native fair dialog's top layer.
         const overlay = document.getElementById('authOverlay');
         overlay.setAttribute('role', 'dialog');
@@ -123,6 +125,11 @@
     document.addEventListener('click', event => {
         const trigger = event.target.closest('a[data-fiere-source], [data-fiere-register], [data-fiere-login]');
         if (!trigger) return;
+        if (trigger.hasAttribute('data-fiere-source') && /^https:\/\//i.test(trigger.getAttribute('href') || '')
+            && trigger.href === trigger.dataset.fiereSource) {
+            window.SiteAnalytics?.track('fair_source', {success: true}, trigger.dataset.fiereId);
+            return; // Native link: works without a session, including modifier clicks.
+        }
         event.preventDefault();
         if (trigger.getAttribute('aria-busy') === 'true') return;
         if (trigger.hasAttribute('data-fiere-source')) {

@@ -178,7 +178,9 @@ async function run(engine, name, width, height, base) {
         stage = 'registration'; await page.goto(base + '/fiere/' + sample.id);
         await page.locator('[data-remind-fair]').click(); await page.locator('#registerForm').waitFor({ state: 'visible' });
         await page.locator('#regNome').fill('Prova'); await page.locator('#regCognome').fill('Promemoria');
+        await page.locator('#regTelefono').fill('3471234567');
         await page.locator('#regEmail').fill('qa@example.invalid'); await page.locator('#regPassword').fill('fixture-password');
+        await page.locator('#regTermsAccepted').check();
         await page.locator('#registerBtn').click(); await page.locator('#sf-form').waitFor({ state: 'visible' });
         assert.equal(state.writes.length, before, 'Registration resumes the chosen fair without saving or subscribing automatically');
         await page.keyboard.press('Escape');

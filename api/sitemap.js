@@ -9,7 +9,9 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Iq_aEMAdzRnu9sig32B4WQ_bmez4bgN';
 const SITE              = 'https://subingresso.it';
 
 const { CAPOLUOGHI } = require('./_capoluoghi.js');
-const { events: fairEvents, fairPath, isIndexable, catalog: fairCatalog } = require('./_fiere.js');
+const { events: fairEvents, fairPath, isIndexable, catalog: fairCatalog, territories } = require('./_fiere.js');
+// Actual revision of the fair templates/SEO policy, not the time of every fetch.
+const FAIR_UPDATED_AT = [fairCatalog.catalogUpdatedAt, '2026-10-31'].sort().at(-1);
 
 // "Reggio Emilia" → "reggio-emilia"
 function cityToSlug(city) {
@@ -84,9 +86,10 @@ module.exports = async function handler(req, res) {
 
     const parts = [
         ...managedEvents.map(event => urlTag(`${SITE}/evento?id=${event.id}`, event.updated_at ? event.updated_at.split('T')[0] : today, 'weekly', '0.6')),
-        urlTag(SITE + '/fiere/elenco', fairCatalog.catalogUpdatedAt, 'weekly', '0.7'),
+        urlTag(SITE + '/fiere/elenco', FAIR_UPDATED_AT, 'weekly', '0.7'),
+        ...territories.map(area => urlTag(SITE + '/fiere/' + area.slug, FAIR_UPDATED_AT, 'weekly', '0.7')),
         ...fairEvents.filter(isIndexable).map(event =>
-            urlTag(SITE + fairPath(event), fairCatalog.catalogUpdatedAt, 'weekly', '0.6')
+            urlTag(SITE + fairPath(event), FAIR_UPDATED_AT, 'weekly', '0.6')
         ),
         // Pagine statiche
         ...STATIC_PAGES.map(p =>

@@ -1,5 +1,36 @@
 # Google Search Console diretto — Subingresso
 
+## Verifica fiere — 31 ottobre 2026
+
+Rapporto rinnovato `2026-10-30T23:07:28Z`: Italia/web, 30 settembre–27 ottobre,
+confronto 2–29 settembre, 28 giorni osservati per periodo. Sezione fiere senza
+impressioni rilevate nel rapporto; non esiste una posizione media interpretabile
+con zero impressioni. Aggregati e righe sono misure distinte con i limiti sotto.
+
+Ispezioni aggiornate: calendario, elenco e tre schede dell’audit ancora sconosciuti;
+home indicizzata, ultima scansione 24 ottobre. Campione aggiuntivo **21 schede**
+in Lombardia, Piemonte, Emilia-Romagna, Lazio, Puglia, Sicilia e Sardegna, per
+ciascuna una scheda mantenuta, una nuova ammissibile e una esclusa secondo la
+revisione SEO: tutte sconosciute. Campione stratificato diagnostico, non stima
+statistica delle 8.769 schede. L’assenza di dati di scansione non è un rifiuto di
+indicizzazione né dimostra un blocco robots; posizionamento non dimostrato.
+
+Prima dell’intervento: sitemap live HTTP200 con 4.255 URL totali, 3.754 sotto
+`/fiere/`, più `/fiere`; robots permette la scansione. Endpoint sitemap GSC ancora
+inviata 24 aprile/letta 27 aprile, 42 URL allora, senza errori registrati. Il
+vecchio `indexed=0` non è una misura corrente del catalogo. Prove private:
+`.local/ricerche/seo-fiere-20261031/refresh-before.json` e `sample-inspection.json`.
+
+La normale CLI rimane in sola lettura. Il reinvio esplicitamente autorizzato
+usa un’operazione locale una tantum con scope sitemap in scrittura, senza
+conservare token o cambiare utenti/ruoli Google. Esito da registrare dopo verifica
+della sitemap pubblicata. Le API URL Inspection consultano lo stato ma non
+offrono il comando «Richiedi indicizzazione»: serve l’interfaccia Google con
+accesso completo/proprietario. Nessuna Indexing API impropria per le fiere,
+nessuna richiesta dichiarata eseguita e nessuna garanzia di acquisizione.
+[Reinvio sitemap](https://developers.google.com/webmaster-tools/v1/sitemaps/submit),
+[richiesta di scansione](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl).
+
 Connettore locale in sola lettura, senza Windsor, abbonamenti o intermediari dati.
 Google resta il fornitore dei dati. L'AI li tratta quando si esegue l'analisi:
 non significa che nessuna piattaforma AI possa vedere i risultati richiesti.

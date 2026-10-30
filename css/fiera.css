@@ -8,3 +8,8 @@
 @keyframes fiere-attendance-glow{50%{box-shadow:0 0 8px #e7b52a,0 0 18px #e7b52a88}}
 @keyframes fiere-attendance-shine{0%,25%{transform:translateX(-150%)}75%,100%{transform:translateX(150%)}}
 @media(prefers-reduced-motion:reduce){.fiere-attendance[data-attendance=exceptional],.fiere-attendance[data-attendance=exceptional]::after{animation:none}}
+
+/* Territorial directory: readable facts before the application action. */
+.territory-fairs>li{padding:20px 0}.territory-fairs h3{font-size:20px;font-weight:700;margin:0}.territory-fairs p{margin:6px 0;max-width:65ch}main>section>dl{margin:0}.sf-fair-actions{display:flex;gap:12px}button:focus-visible{outline:3px solid #c58a25;outline-offset:4px}
+
+h1{font-weight:800}h2{font-weight:700}.territory-fairs{padding-left:24px}main>p{max-width:65ch}

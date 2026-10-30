@@ -1,5 +1,14 @@
 # Organizzatori, eventi e prenotazioni future — 18 ottobre 2026
 
+## Percorso dal catalogo documentale — 31 ottobre 2026
+
+Fonti e procedure esterne delle fiere sono consultabili liberamente; accesso
+richiesto per salvare e impostare promemoria. Nessuna modifica a pubblicazione,
+approvazione o disponibilità degli eventi organizzatore, né a prenotazioni o
+pagamenti. Le schede documentali distinguono candidatura esterna, eventuale
+prenotazione e assegnazione: il catalogo non certifica posti residui. Il bundle
+di accesso condiviso cambia versione anche in evento e dashboard per coerenza.
+
 ## Gestione admin nell’area organizzatore — 26 ottobre 2026
 
 «Fiere e organizzatori» e il dialog di revisione sono in `/organizzatore`,

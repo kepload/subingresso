@@ -1033,7 +1033,7 @@ async function run(engine,name,viewport,base) {
         const carru = events.find(e => e.city === 'Carrù');
         await page.locator('.fiere-card[data-event-id="' + carru.id + '"] .fiere-card-button').click();
         assert.equal(await page.locator('#fair-dialog').evaluate(d => d.open),true);
-        assert.equal(await page.locator('#detail-source').getAttribute('data-fiere-source'),events.find(e => e.city === 'Carrù').source.url);
+        assert.equal(await page.locator('#detail-source').getAttribute('href'),events.find(e => e.city === 'Carrù').source.url);
         assert((await page.locator('#detail-editions').textContent()).includes('17 dic 2026'));
         assert((await page.locator('#detail-participation-note').textContent()).length > 20);
         await page.keyboard.press('Escape');
@@ -1041,10 +1041,10 @@ async function run(engine,name,viewport,base) {
         await page.locator('#fair-search').fill('Fiera dei Morti');
         await matches(api.filterEvents(events,{province:'',category:'',months:[],query:'Fiera dei Morti'}));
         await page.locator('.fiere-card[data-event-id="' + perugia.id + '"] .fiere-card-button').click();
-        assert.equal(await page.locator('#detail-participation-link').getAttribute('data-fiere-source'),perugia.participation.url);
+        assert.equal(await page.locator('#detail-participation-link').getAttribute('href'),perugia.participation.url);
         assert((await page.locator('#detail-deadline').textContent()).includes('1 lug 2026'));
         assert((await page.locator('#detail-contacts').textContent()).includes('suape@pec.comune.perugia.it'));
-        assert.equal(await page.locator('#detail-editions a').getAttribute('data-fiere-source'),perugia.editions[0].sourceUrl);
+        assert.equal(await page.locator('#detail-editions a').getAttribute('href'),perugia.editions[0].sourceUrl);
         assert.equal(await page.locator('#fair-dialog').evaluate(d => d.scrollWidth > d.clientWidth),false,'Detail overflow');
         await page.locator('#fair-dialog').screenshot({path:path.join(os.tmpdir(),'subingresso-fiere-detail-'+name+'-'+viewport.width+'.png')});
         await page.keyboard.press('Escape');
@@ -1092,7 +1092,7 @@ async function run(engine,name,viewport,base) {
         await page.locator('.fiere-card-button').click();
         assert((await page.locator('#detail-deadline').textContent()).includes('20 nov 2026'));
         assert((await page.locator('#detail-costs').textContent()).includes('Nessuna quota'));
-        assert.equal(await page.locator('#detail-participation-link').getAttribute('data-fiere-source'),secugnago.participation.url);
+        assert.equal(await page.locator('#detail-participation-link').getAttribute('href'),secugnago.participation.url);
         await page.locator('#close-detail').click();
         for (const id of ['piemonte-cuneo-mercati-straordinari-del-marrone',
             'valle-d-aosta-aosta-marche-vert-noel', 'trentino-alto-adige-bolzano-klimahouse',
@@ -1105,7 +1105,7 @@ async function run(engine,name,viewport,base) {
             assert.equal(await card.locator('.fiere-card-cost').textContent(), api.feeLabel(event));
             await card.locator('.fiere-card-button').click();
             assert.equal(await page.locator('#detail-costs').textContent(), event.pricing.details);
-            assert.equal(await page.locator('#detail-costs-source').getAttribute('data-fiere-source'), event.pricing.sourceUrl);
+            assert.equal(await page.locator('#detail-costs-source').getAttribute('href'), event.pricing.sourceUrl);
             assert(await page.locator('#detail-costs-source').isVisible());
             if (event.pricing.period) assert((await page.locator('#detail-costs-meta').textContent()).includes(event.pricing.period));
             assert(await page.locator('#fair-dialog').evaluate(d => d.scrollWidth <= d.clientWidth + 1));
@@ -1131,7 +1131,7 @@ async function run(engine,name,viewport,base) {
         await page.locator('.fiere-card-button').click();
         assert((await page.locator('#detail-deadline').textContent()).includes('31 ott 2026'));
         assert((await page.locator('#detail-participation-note').textContent()).includes('GPL'));
-        assert.equal(await page.locator('#detail-participation-link').getAttribute('data-fiere-source'),arNatale.participation.url);
+        assert.equal(await page.locator('#detail-participation-link').getAttribute('href'),arNatale.participation.url);
         await page.locator('#close-detail').click();
         await page.goto(base + '/fiere?provincia=Arezzo&settore=alimentare&mesi=10');
         await matches(ar.filter(e => e.merchandiseSectors.includes('alimentare') && e.months.includes(10)));

@@ -25,7 +25,7 @@ const listed = [];
 for(let page=1;page<=Math.ceil(events.length/100);page++) {
     const result=render({slug:'elenco',pagina:String(page)});
     assert.equal(result.code,200);
-    listed.push(...[...result.html.matchAll(/href="\/fiere\/([^"?]+)"/g)].map(m=>decodeURIComponent(m[1])).filter(id=>id!=='elenco'));
+    listed.push(...[...result.html.matchAll(/href="\/fiere\/([^"?]+)"/g)].map(m=>decodeURIComponent(m[1])).filter(id=>require('../api/_fiere').byId.has(id)));
 }
 assert.deepEqual([...new Set(listed)].sort(),events.map(e=>e.id).sort());
 assert.equal(listed.length,events.length);
@@ -69,8 +69,8 @@ const server=http.createServer((req,res)=>{
             }
             const nojs=await browser.newContext({javaScriptEnabled:false,viewport:{width,height:900}});
             const staticPage=await nojs.newPage();await staticPage.goto(base+'/fiere/elenco');
-            assert.equal(await staticPage.locator('main li').count(),100);
-            await staticPage.locator('main li a').first().click();assert.equal(await staticPage.locator('h1').count(),1);
+            assert.equal(await staticPage.locator('main > ul > li').count(),100);
+            await staticPage.locator('main > ul > li a').first().click();assert.equal(await staticPage.locator('h1').count(),1);
             await page.goto(base+'/fiere?provincia=Milano');
             await page.locator('.fiere-card-button').first().click();
             assert(await page.locator('#fair-dialog').isVisible());

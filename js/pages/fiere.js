@@ -830,11 +830,11 @@
     }
     function prepareSources(dialog, event) {
         if (global.FiereAccess) { global.FiereAccess.prepare(dialog, event.id); return; }
-        // Missing access script must never expose a direct external source link.
+        // Documentary links remain usable even if authentication is unavailable.
         dialog.querySelectorAll('a[href^="https://"]').forEach(link => {
             if (new URL(link.href).origin === 'https://subingresso.it') return;
-            link.href = '/fiere?fiera=' + encodeURIComponent(event.id);
-            link.removeAttribute('target');
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
         });
     }
     function openDetail(event) {

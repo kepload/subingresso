@@ -131,85 +131,32 @@ async function run(engine, name, width, height, base) {
         assert(await page.locator('#registerForm').isVisible());
         await close();
         await page.locator('.fiere-card-button').first().click();
-        const chosen = await page.locator('#detail-title').innerText();
         const source = page.locator('#detail-source');
-        const destination = await source.getAttribute('data-fiere-source');
+        const destination = await source.getAttribute('href');
         assert(destination?.startsWith('https://'));
-        assert((await source.getAttribute('href')).startsWith('/fiere?fiera='));
-        assert.equal(await page.locator('#fair-dialog a[href^="https://"]').count(), 0);
-        const before = opened.length;
-        await source.click();
-        assert.equal(await page.locator('#fair-dialog').evaluate(dialog => dialog.open), false);
-        assert(await page.locator('#registerForm').isVisible());
-        assert((await page.locator('#authContextMsg').innerText()).includes('fonte che hai scelto'));
-        assert.equal(opened.length, before);
-        await overflow();
-        if (process.env.FIERE_ACCESS_QA_DIR) {
-            fs.mkdirSync(process.env.FIERE_ACCESS_QA_DIR, { recursive: true });
-            await page.screenshot({ path: path.join(process.env.FIERE_ACCESS_QA_DIR, name + '-' + width + '-accesso.png'), fullPage: true });
-        }
-        await close();
+        assert.equal(await source.getAttribute('data-fiere-source'), destination);
+        const popupPromise = context.waitForEvent('page');
+        await source.click(); const popup = await popupPromise;
+        await popup.waitForURL(destination); await popup.close();
+        assert.equal(await page.locator('#authOverlay:not(.hidden)').count(), 0);
         assert(await page.locator('#fair-dialog').isVisible());
-        assert.equal(await page.locator('#detail-title').innerText(), chosen);
-        assert.equal(await page.evaluate(() => window.__onLoginSuccess), null);
-        assert.equal(new URL(page.url()).searchParams.get('provincia'), sample.province);
-        // Login errors stay in place; successful login continues the chosen source.
-        await source.click(); await page.locator('#tabLogin').click();
-        await page.locator('#loginEmail').fill('qa@example.invalid');
-        await page.locator('#loginPassword').fill('qa-password');
-        await page.evaluate(() => { qaLoginFails = true; });
-        await page.locator('#loginBtn').click();
-        await page.locator('#authError').waitFor({ state: 'visible' });
-        assert.equal(opened.length, before);
-        await page.evaluate(() => { qaLoginFails = false; });
-        await page.locator('#loginBtn').click();
-        await page.waitForURL(destination);
-        // Pages reached from Google have the same gate, including without JS.
+        await overflow();
         await page.goto(base + '/fiere/' + sample.id);
         await page.waitForFunction(() => window.FiereAccess);
-        assert(await page.locator('[data-fiere-register]').first().isVisible());
-        assert.equal(await page.locator('main a[href^="https://"]').count(), 0);
-        const tariff = page.locator('a[data-fiere-source]').filter({ hasText: 'Fonte delle tariffe' });
-        await tariff.click(); assert(await page.locator('#registerForm').isVisible());
-        await close();
+        const tariff = page.locator('a').filter({hasText:'Fonte delle tariffe'});
+        assert.equal(await tariff.getAttribute('href'), sample.pricing.sourceUrl);
+        assert.equal(await tariff.getAttribute('target'), '_blank');
         await page.locator('[data-fiere-login]').first().click();
         assert(await page.locator('#loginForm').isVisible()); await close();
-        await overflow();
-        if (process.env.FIERE_ACCESS_QA_DIR) await page.screenshot({ path: path.join(process.env.FIERE_ACCESS_QA_DIR, name + '-' + width + '-scheda.png'), fullPage: true });
-        // An already authenticated user opens a validated source directly.
         await page.evaluate(() => qaLogin());
         assert.equal(await page.locator('[data-fiere-guest]').first().isVisible(), false);
-        const popupPromise = context.waitForEvent('page');
-        await tariff.click(); const popup = await popupPromise;
-        await popup.waitForURL(sample.pricing.sourceUrl); await popup.close();
-        // Failure stays closed and can be retried. Logout restores the invitation.
-        authMode = 'offline'; await tariff.click();
-        await page.locator('[data-fiere-feedback]').waitFor({ state: 'visible' });
-        assert((await page.locator('[data-fiere-feedback]').innerText()).includes('Riprova'));
-        authMode = 'expired'; await tariff.click();
-        await page.locator('#loginForm').waitFor({ state: 'visible' }); await close();
-        authMode = 'valid'; await page.evaluate(() => qaSetSession(null));
-        assert(await page.locator('[data-fiere-guest]').first().isVisible());
-        // Signup uses the actual registration handler, then opens the exact source.
-        await tariff.click();
-        await page.locator('#regNome').fill('Prova');
-        await page.locator('#regCognome').fill('Iscrizione');
-        await page.locator('#regEmail').fill('qa@example.invalid');
-        await page.locator('#regTelefono').fill('3471234567');
-        await page.locator('#regTermsAccepted').check();
-        await page.locator('#regPassword').fill('qa-password');
-        await page.locator('#registerForm button[type="submit"]').click();
-        await page.waitForURL(sample.pricing.sourceUrl);
-        // Opening the internal fallback in another tab still requires authentication.
-        await page.goto(base + '/fiere?provincia=' + encodeURIComponent(sample.province) + '&fiera=' + encodeURIComponent(sample.id) + '&fonte=' + encodeURIComponent(sample.source.url));
-        await page.locator('#registerForm').waitFor({ state: 'visible' });
-        await close();
-        assert.equal(await page.locator('#detail-title').innerText(), sample.name);
+        assert.equal(await tariff.getAttribute('href'), sample.pricing.sourceUrl);
+        await overflow();
         await context.close();
         const nojs = await browser.newContext({ javaScriptEnabled: false, viewport: { width, height } });
         const staticPage = await nojs.newPage(); await staticPage.goto(base + '/fiere/' + sample.id);
         assert.equal(await staticPage.locator('.fiere-access').isVisible(), false, 'HTML starts with invitation hidden even without JavaScript');
-        assert.equal(await staticPage.locator('main a[href^="https://"]').count(), 0);
+        assert(await staticPage.locator('main a[href^="https://"]').count() > 0);
         assert.equal(await staticPage.locator('h1').innerText(), sample.name);
         const unavailable = await browser.newContext({ viewport: { width, height } });
         await unavailable.route('**/*', route => {
@@ -219,10 +166,10 @@ async function run(engine, name, width, height, base) {
         const partial = await unavailable.newPage();
         await partial.goto(base + '/fiere'); await partial.locator('.fiere-card-button').first().click();
         assert.equal(await partial.locator('.fiere-access').isVisible(), false, 'Unavailable auth does not show a misleading invitation');
-        assert.equal(await partial.locator('#fair-dialog a[href^="https://"]').count(), 0, 'Unavailable access script fails closed');
+        assert(await partial.locator('#fair-dialog a[href^="https://"]').count() > 0, 'Official sources work when the access script is unavailable');
         await unavailable.close();
         assert.equal(errors.length, 0, errors.join('\n'));
-        console.log(name + ' ' + width + ': no invitation flash or layout jump, delayed session, guest/login/logout, calendar, Google page, signup/login, cancellation, exact source, auth errors, fallback, no-JS and overflow passed');
+        console.log(name + ' ' + width + ': delayed session, guest/login/logout, public sources, optional login, no-JS and overflow passed');
     } finally { authMode = 'valid'; await browser.close(); }
 }
 (async () => {

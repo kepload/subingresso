@@ -1,5 +1,18 @@
 # Subingresso.it — informazioni e TO DO
 
+## SEO fiere e percorso di partecipazione — 31 ottobre 2026
+
+Revisione sul catalogo esistente, senza aggiunte: 4.322 schede ammissibili e
+4.447 noindex con soglia documentale indipendente dalla candidatura; escluse
+anche descrizioni seriali. Prime raccolte HTML Lombardia/Piemonte/Emilia-Romagna,
+riepilogo operativo nelle schede, fonti e procedure esterne libere anche senza
+JS, accesso per salvataggi/promemoria. Candidatura e assegnazione distinte;
+nessuna disponibilità o data futura dedotta. Breadcrumb JSON-LD, nessun Event
+generalizzato. Contratto completo in `data/FIERE.md`; GSC e limiti in
+`data/SEARCH_CONSOLE.md`, prove private nel dossier `seo-fiere-20261031`.
+Backup sessione e ramo remoto verificati; noto errore cleanup dell’helper dopo
+tag riuscito. Modifiche estranee (temp Supabase, PDF e pycache) preservate.
+
 ## Search Console diretto, senza intermediari — 30 ottobre 2026
 
 - Richiesto collegamento proprio senza Windsor/abbonamenti esterni: CLI locale
