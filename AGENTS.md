@@ -30,6 +30,7 @@ leggere soltanto codice, sezioni e contratti pertinenti.
 | Decisioni dell'utente, attività aperte e pubblicazioni | `Subingresso.it informazioni.md` |
 | Fiere, fonti, copertura e limiti provinciali | `data/FIERE.md`, audit `data/fiere-*.json` e checklist nel registro |
 | Organizzatori ed eventi | `data/ORGANIZZATORI_EVENTI.md` |
+| SEO, traffico Google e risultati del blog | `data/SEARCH_CONSOLE.md`: verificare `node scripts/search-console.cjs status`; se configurato aggiornare con `report` prima dell'analisi, altrimenti segnalare che manca il collegamento Google. Non confondere referrer o ricerche pubbliche con posizioni certificate. |
 | Vetrine e pacchetti | `data/VETRINE_PREMIUM.md`, `data/SELLER_PREMIUM_ANALYTICS.md` |
 | Offerte email, consensi e misura | `data/VETRINA_EMAIL.md`, `data/EMAIL_CONVERSION_ANALYTICS.md` |
 | Tema, immagini, luoghi e fiere salvate | Rispettivi contratti `data/THEME_PREFERENCES.md`, `data/IMAGE_PREVIEWS.md`, `data/LOCALITA.md`, `data/FIERE_SALVATE.md` |

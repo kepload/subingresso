@@ -1,5 +1,19 @@
 # Subingresso.it — informazioni e TO DO
 
+## Search Console diretto, senza intermediari — 30 ottobre 2026
+
+- Richiesto collegamento proprio senza Windsor/abbonamenti esterni: CLI locale
+  `scripts/search-console.cjs`, guida `data/SEARCH_CONSOLE.md`. Lettura API Google,
+  Italia/web, periodi28giorni, query/pagine/dispositivi e sezioni posteggi/blog/fiere.
+  Credenziale account di servizio cifrata DPAPI utenteWindows, rapporti privati
+  `.local/search-console/`; nessun tracker, cron/task o modifica DB.
+- Otto prove automatiche passate: date/fuso, firmaJWT readonly, paginazione,
+  permessi/errori simulati, assenti/zeri, persistenza e DPAPI reale. **NON collegato
+  a Google**: manca creazione/autorizzazione iniziale della credenziale; nessuna
+  prova API live o dato GSC acquisito. AGENTS indirizza le future analisi alla CLI.
+- Backup remoto tag `backup/session-20261030-232148-search-console-diretta`
+  verificato; helper con errore cleanup noto. File estranei preservati.
+
 ## Enna — singola provincia pubblicata e verificata, 30 ottobre 2026
 
 - **37 nuove schede nei20comuni**, una sintesi economica; ricerca accessibile attuale conclusa con limiti, storico e mesi usuali separati dalle date correnti. Audit `data/fiere-enna.json`, fonti/esclusioni `data/FIERE.md`, originali/prove `.local/ricerche/fiere-enna-20261030`:120acquisizioni tecniche SHA256, non altrettante letture integrali. Nessun censimento certificato o posteggio promesso.
