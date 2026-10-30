@@ -1,0 +1,1743 @@
+{
+  "province": "Enna",
+  "checkedAt": "2026-10-30",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti",
+    "baselineCommit": "27d4a89",
+    "privateArchive": ".local/ricerche/fiere-enna-20261030",
+    "statistics": {
+      "events": 37,
+      "municipalitiesCovered": 20,
+      "municipalitiesWithEvents": 20,
+      "baselineEvents": 0,
+      "addedEvents": 37,
+      "pricingSummaries": 1,
+      "technicalReceipts": 120,
+      "hashVerifiedOriginals": 120,
+      "otherEventsPreserved": 8732
+    },
+    "scope": "Singola provincia autorizzata; checkout isolato, Pavia e lavoro concorrente preservati. Nessun ciclo/task riattivato.",
+    "methodology": "Ricognizione nominale dei20comuni, calendari comunali/organizzatori, repertorio ACI e otto pagine provinciali editoriali; letture mirate degli originali pertinenti. Non lettura integrale degli albi né censimento certificato. Ricevute tecniche non sono eventi o letture integrali. Storico e periodi usuali non sono date correnti.",
+    "municipalities": [
+      {
+        "city": "Agira",
+        "eventCount": 1,
+        "events": [
+          "sicilia-agira-sagra-della-cassatella"
+        ],
+        "sources": [
+          "https://www.comune.agira.en.it/it/news/sagra-della-cassatella",
+          "https://www.prolocoagira.it/wp/2026/10/20/sagra-della-cassatella-dal-13-al-15-novembre-2026/",
+          "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_e_le_vie_dei_sapori_agira.htm"
+        ],
+        "outcome": "Cassatella 13–15 novembre 2026 da Pro Loco; vecchio programma comunale 2025 e date stimate distinti."
+      },
+      {
+        "city": "Aidone",
+        "eventCount": 2,
+        "events": [
+          "sicilia-aidone-festa-degli-antichi-sapori-aidonesi",
+          "sicilia-aidone-fiera-di-natale"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/feste/festa-degli-antichi-sapori-aidonesi-ad-aidone.htm",
+          "https://www.siciliainfesta.com/fiere_e_mercatini/fiera_di_natale_a_aidone.htm"
+        ],
+        "outcome": "Antichi Sapori calendario editoriale 2026; Natale solo storico 2024. Pasta nta maidda senza mese verificato esclusa."
+      },
+      {
+        "city": "Assoro",
+        "eventCount": 2,
+        "events": [
+          "sicilia-assoro-sagra-dell-arancino",
+          "sicilia-assoro-festa-delle-tradizioni-agricole-di-san-giorgio"
+        ],
+        "sources": [
+          "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2014",
+          "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2018",
+          "https://www.siciliainfesta.com/sagre/sagra_dell_arancino_assoro.htm"
+        ],
+        "outcome": "Arancino 2014 e Tradizioni agricole 2018 solo storiche; archivio 2026 consultato, concerti e processioni non diventano mercati."
+      },
+      {
+        "city": "Barrafranca",
+        "eventCount": 2,
+        "events": [
+          "sicilia-barrafranca-agriart",
+          "sicilia-barrafranca-mercatini-di-natale"
+        ],
+        "sources": [
+          "https://www.comune.barrafranca.en.it/eventi/2026-1.html",
+          "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_a_barrafranca.htm"
+        ],
+        "outcome": "AgriArt da Comune 2026, gratuità del pubblico non estesa agli stand; Natale senza nuova edizione. Biodiversità senza mese attuale verificato esclusa."
+      },
+      {
+        "city": "Calascibetta",
+        "eventCount": 2,
+        "events": [
+          "sicilia-calascibetta-sagra-della-salsiccia-di-buonriposo",
+          "sicilia-calascibetta-mercatini-di-natale"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini-di-natale-a-calascibetta.htm",
+          "https://www.vivasicilia.com/festa-della-madonna-di-buonriposo-calascibetta/"
+        ],
+        "outcome": "Salsiccia solo sabato 5 settembre da fonte territoriale; festa fino al 7 non diventa sagra continua. Natale senza edizione. Torrone escluso senza mese documentato nelle fonti lette."
+      },
+      {
+        "city": "Catenanuova",
+        "eventCount": 1,
+        "events": [
+          "sicilia-catenanuova-sagra-del-grano-e-del-pane"
+        ],
+        "sources": [
+          "https://www.ennamagazine.it/Turismo/TabId/105/ArtMID/617/ArticleID/2062/Lasciati-catturare-dal-profumo-del-pane.aspx",
+          "https://www.siciliainfesta.com/sagre/sagra_del_grano_e_del_pane_catenanuova.htm"
+        ],
+        "outcome": "Grano e Pane solo 2015 da ufficio stampa provinciale; fonti storiche discordanti giugno/settembre non proiettate."
+      },
+      {
+        "city": "Centuripe",
+        "eventCount": 1,
+        "events": [
+          "sicilia-centuripe-sagra-dell-arancia-rossa-di-sicilia-igp"
+        ],
+        "sources": [
+          "https://www.centuripecittaimperiale.it/news/xii-sagra-dellarancia-rossa-di-sicilia-igp-a-centuripe/",
+          "https://www.siciliainfesta.com/sagre/sagra_arancia_rossa_di_sicilia_igp_centuripe.htm"
+        ],
+        "outcome": "Arancia 24–26 aprile 2026 da portale turistico comunale; Ruralia mercato agricolo ordinario escluso, feste religiose e teatro non sono sagre."
+      },
+      {
+        "city": "Cerami",
+        "eventCount": 1,
+        "events": [
+          "sicilia-cerami-sagra-dei-prodotti-tipici-pipi-e-cavatieddi"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/sagre/sagra_del_cavatello_e_del_peperone_a_cerami.htm"
+        ],
+        "outcome": "Pipi e Cavatieddi 26–27 settembre 2026 editoriale; Saperi e Sapori senza mese/anno verificati esclusa."
+      },
+      {
+        "city": "Enna",
+        "eventCount": 4,
+        "events": [
+          "sicilia-enna-fiera-di-maggio",
+          "sicilia-enna-fiera-di-settembre",
+          "sicilia-enna-mercatini-di-natale",
+          "sicilia-enna-sagra-dell-arancino"
+        ],
+        "sources": [
+          "https://enna.aci.it/IMG/pdf/EVENTI_ENNA.pdf",
+          "https://www.comune.enna.it/vivere-enna/luoghi/Monumento-o-complesso-monumentale/it/29/Piazza-Europa",
+          "https://www.ennalive.it/enna-torna-la-tradizionale-fiera-di-settembre/",
+          "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_enna.htm",
+          "https://www.siciliainfesta.com/sagre/sagra_dell_arancino_ad_enna.htm"
+        ],
+        "outcome": "Due fiere stagionali distinte; nessun intervallo completo 2026 ricostruito dalla cronaca. Natale e Arancino solo periodi. Buccellato distribuzione natalizia non catalogata come mercato autonomo."
+      },
+      {
+        "city": "Gagliano Castelferrato",
+        "eventCount": 1,
+        "events": [
+          "sicilia-gagliano-castelferrato-sagra-della-mostarda-di-ficodindia"
+        ],
+        "sources": [
+          "https://www.ennalive.it/gagliano-castelferrato-sapori-e-tradizione-alla-sagra-della-mostarda-di-fico-dindia/",
+          "https://www.siciliainfesta.com/sagre/sagra_della_mostarda_gagliano_castelferrato.htm"
+        ],
+        "outcome": "Mostarda 11–13 settembre da cronaca in corso, scartate stime 27–29 settembre; festività e appalti spettacolo non diventano bando espositori."
+      },
+      {
+        "city": "Leonforte",
+        "eventCount": 1,
+        "events": [
+          "sicilia-leonforte-sagra-della-pesca-igp-e-dei-prodotti-tipici"
+        ],
+        "sources": [
+          "https://www.sagradellepesche.it/2026/09/21/xliv-edizione-sagra-della-pesca-igp-e-notte-gialla-2026-disposizioni-e-modalita-di-partecipazione/"
+        ],
+        "outcome": "Disposizioni 2026 prevalgono sulla pagina espositori 2025; costi categoria/servizi distinti, Notte Gialla compresa senza duplicare."
+      },
+      {
+        "city": "Nicosia",
+        "eventCount": 5,
+        "events": [
+          "sicilia-nicosia-fiera-di-maggio",
+          "sicilia-nicosia-fiera-di-ottobre",
+          "sicilia-nicosia-sagra-del-nocattolo-e-dei-prodotti-tipici",
+          "sicilia-nicosia-sagra-del-biscotto",
+          "sicilia-nicosia-sagra-da-piciota-e-mercatini-di-natale"
+        ],
+        "sources": [
+          "https://comune.nicosia.en.it/wp-content/uploads/2026/05/memdoc_creapdf_3686952392946267771114221650986052.pdf",
+          "https://www.siciliainfesta.com/sagre/sagra-del-biscotto-a-nicosia.htm",
+          "https://www.siciliainfesta.com/sagre/sagra_da_piciota_a_nicosia.htm",
+          "https://www.siciliainfesta.com/sagre/sagra_del_nocattolo_e_dei_prodotti_tipici_a_nicosia.htm"
+        ],
+        "outcome": "Ordinanza originale 41: fiera 8–9 maggio, preparazione il 7; ottobre solo mese. Tre sagre da fonti editoriali; ulivo/pizza senza mese verificato escluse."
+      },
+      {
+        "city": "Nissoria",
+        "eventCount": 1,
+        "events": [
+          "sicilia-nissoria-sagra-della-rametta-e-dei-sapori-nissorini"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/sagre/sagra-della-rametta-a-nissoria.htm"
+        ],
+        "outcome": "Rametta 17–18 ottobre da fonte editoriale; dettaglio avviso comunale e allegato 404 anche con percorsi alternativi, nessuna quota o scadenza inventata."
+      },
+      {
+        "city": "Piazza Armerina",
+        "eventCount": 3,
+        "events": [
+          "sicilia-piazza-armerina-fiera-di-maggio",
+          "sicilia-piazza-armerina-fiera-di-settembre",
+          "sicilia-piazza-armerina-international-street-food"
+        ],
+        "sources": [
+          "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03FU8L0202656&p7m=1&mosdoc=0",
+          "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03LLRK0202694&p7m=1&mosdoc=0",
+          "https://servizi.comune.piazzaarmerina.en.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVekE5WT0-H",
+          "https://www.siciliainfesta.com/festival/international-street-food-a.piazza-armerina.htm"
+        ],
+        "outcome": "Originali maggio 30 maggio–1 giugno e assegnazione settembre 5–7 letti; nessuna disponibilità dalle graduatorie. Street food senza anno non proiettato al novembre 2026."
+      },
+      {
+        "city": "Pietraperzia",
+        "eventCount": 1,
+        "events": [
+          "sicilia-pietraperzia-festa-della-minnula-pirzisa"
+        ],
+        "sources": [
+          "https://oplasicilia.it/festa-della-minnula-pirzisa-a-pietraperzia"
+        ],
+        "outcome": "Minnula solo 2022; data automatica 2026 scartata. Gusto e tradizione 2 maggio 2026 letto via web nel decreto regionale, originale locale404: contributo organizzatore non è tariffa; non inserito senza programma operativo commerciale. Fiera agricola senza mese verificato esclusa."
+      },
+      {
+        "city": "Regalbuto",
+        "eventCount": 2,
+        "events": [
+          "sicilia-regalbuto-festa-dell-olio-d-oliva-regalbutese",
+          "sicilia-regalbuto-regalcomics"
+        ],
+        "sources": [
+          "https://www.italiancosplay.it/eventi-cosplay/regalcomics",
+          "https://www.siciliainfesta.com/feste/festa-dell-olio-d-oliva-a-regalbuto.htm"
+        ],
+        "outcome": "Olio solo dicembre usuale; RegalComics calendario editoriale 20–21 giugno, prezzo stand non pubblicato. Campi scout e finanziamento Borgusto senza calendario non diventano nuove fiere."
+      },
+      {
+        "city": "Sperlinga",
+        "eventCount": 1,
+        "events": [
+          "sicilia-sperlinga-sagra-del-tortone-e-dama-dei-castelli"
+        ],
+        "sources": [
+          "https://www.medianewsweb.com/2026/08/12/il-tortone-dolce-simbolo-di-sperlinga-torna-la-festa-del-16-agosto/",
+          "https://www.siciliainfesta.com/manifestazioni/sagra_del_tortone_e_corteo_storico_della_castellana_sperlinga.htm"
+        ],
+        "outcome": "Tortone 16 agosto 2026 da cronaca editoriale; programma 2027 non assunto come conferma primaria. Residenza artistica non catalogata come mercato."
+      },
+      {
+        "city": "Troina",
+        "eventCount": 3,
+        "events": [
+          "sicilia-troina-sagra-della-vastedda-cu-sammucu",
+          "sicilia-troina-troina-buona-in-tutti-i-sensi",
+          "sicilia-troina-sagra-dei-cudduruna"
+        ],
+        "sources": [
+          "https://enna.aci.it/IMG/pdf/EVENTI_ENNA.pdf",
+          "https://www.comune.troina.en.it/it/eventi/631398",
+          "https://www.comune.troina.en.it/it/news/al-via-la-terza-edizione-di-troina-buona-in-tutti-i-sensi",
+          "https://www.comune.troina.en.it/it/news/sagra-della-vastedda-cu-sammucu-pronto-il-programma-della-xxviii-edizione"
+        ],
+        "outcome": "Vastedda 13–14 giugno da Comune, allegati2024 distinti; Buona 31ottobre–1novembre da comunicato odierno. Cudduruna solo mese storico ACI; prezzi museo non sono quote stand."
+      },
+      {
+        "city": "Valguarnera Caropepe",
+        "eventCount": 1,
+        "events": [
+          "sicilia-valguarnera-caropepe-sagra-dello-zafferano-e-festa-dell-agricoltura"
+        ],
+        "sources": [
+          "https://www.siciliainfesta.com/sagre/sagra_dello_zafferano_a_valguarnera_caropepe.htm"
+        ],
+        "outcome": "Zafferano solo settembre: fonti secondarie27–28/27–29 discordanti, PDF comunale2024 non recuperato. Santa Lucia/cuccia senza mercato commerciale autonomo esclusa."
+      },
+      {
+        "city": "Villarosa",
+        "eventCount": 2,
+        "events": [
+          "sicilia-villarosa-sagra-della-guastella-di-villapriolo",
+          "sicilia-villarosa-festa-di-san-martino-l-osteria-in-piazza"
+        ],
+        "sources": [
+          "https://www.comune.villarosa.en.it/novita/regolamentazione-della-circolazione-stradale-a-villapriolo-per-la-sagra-della-guastella-18-luglio-2026/",
+          "https://www.siciliainfesta.com/manifestazioni/festa_di_san_martino_a_villarosa.htm"
+        ],
+        "outcome": "Guastella18luglio da Comune con refuso protocollo successivo dichiarato; SanMartino solo periodo. SchiavataFest contributo senza calendario e Pecora senza mese verificato escluse."
+      }
+    ],
+    "sourceReceipts": [
+      {
+        "url": "https://enna.aci.it/IMG/pdf/EVENTI_ENNA.pdf",
+        "status": 200,
+        "finalUrl": "https://enna.aci.it/IMG/pdf/EVENTI_ENNA.pdf",
+        "sha256": "803c8337e1f6dedf6a0cd7c4854755049298dc334d0cbd7b7647ce117c47d7fc",
+        "retrievedAt": "2026-10-30T20:40:05.868273+00:00"
+      },
+      {
+        "url": "https://www.comune.troina.en.it/it/news/al-via-la-terza-edizione-di-troina-buona-in-tutti-i-sensi",
+        "status": 200,
+        "finalUrl": "https://www.comune.troina.en.it/it/news/al-via-la-terza-edizione-di-troina-buona-in-tutti-i-sensi",
+        "sha256": "72ddd4dc31354935dfeae5a99879fbc6a40cb45556640c2bb987f5d43ee06caa",
+        "retrievedAt": "2026-10-30T20:40:05.869299+00:00"
+      },
+      {
+        "url": "https://www.comune.enna.it/vivere-enna/luoghi/Monumento-o-complesso-monumentale/it/29/Piazza-Europa",
+        "status": 200,
+        "finalUrl": "https://www.comune.enna.it/vivere-enna/luoghi/Monumento-o-complesso-monumentale/it/29/Piazza-Europa",
+        "sha256": "4cf92bc2b97e409c32f78b08df358567690374fc0cc5a4025023cfe70617e005",
+        "retrievedAt": "2026-10-30T20:40:05.871578+00:00"
+      },
+      {
+        "url": "https://www.ennalive.it/enna-torna-la-tradizionale-fiera-di-settembre/",
+        "status": 200,
+        "finalUrl": "https://www.ennalive.it/enna-torna-la-tradizionale-fiera-di-settembre/",
+        "sha256": "4ef4ebf249a29d33f9b81ba132ef4c9abad5bfeb14baef45bb2755889baefe38",
+        "retrievedAt": "2026-10-30T20:40:05.874195+00:00"
+      },
+      {
+        "url": "https://comune.nicosia.en.it/wp-content/uploads/2026/05/memdoc_creapdf_3686952392946267771114221650986052.pdf",
+        "status": 200,
+        "finalUrl": "https://comune.nicosia.en.it/wp-content/uploads/2026/05/memdoc_creapdf_3686952392946267771114221650986052.pdf",
+        "sha256": "fa0c09b2536ffe38825ef6f8452867459dcefcf58c66a8a35ba30fcd3c3b15b6",
+        "retrievedAt": "2026-10-30T20:40:05.876334+00:00"
+      },
+      {
+        "url": "https://www.comune.agira.en.it/it/news/sagra-della-cassatella",
+        "status": 200,
+        "finalUrl": "https://www.comune.agira.en.it/it/news/sagra-della-cassatella",
+        "sha256": "f385b1917d597e71f366ac64676288a6d8a89baec663e1d962ca5b45dfca7dbd",
+        "retrievedAt": "2026-10-30T20:40:39.068748+00:00"
+      },
+      {
+        "url": "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2018",
+        "status": 200,
+        "finalUrl": "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2018",
+        "sha256": "550278ce429c2b76c1e033443f4005b293177b4dd9c6599aab558980c588a50e",
+        "retrievedAt": "2026-10-30T20:40:40.480954+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_arancia_rossa_di_sicilia_igp_centuripe.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_arancia_rossa_di_sicilia_igp_centuripe.htm",
+        "sha256": "960682b907f6560da544b1b3acda88143cbdd1cfd8fdeb30794b962594e93f0a",
+        "retrievedAt": "2026-10-30T20:40:54.690777+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_del_nocattolo_e_dei_prodotti_tipici_a_nicosia.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_del_nocattolo_e_dei_prodotti_tipici_a_nicosia.htm",
+        "sha256": "0b47679e554dfc6e5f706d3d209fbdd2bfe53ffec3809f1321b48817d6b064cf",
+        "retrievedAt": "2026-10-30T20:40:54.691758+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_mostarda_gagliano_castelferrato.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_della_mostarda_gagliano_castelferrato.htm",
+        "sha256": "d20269693708980dd9973f738d4af0fdd2a3e08c208fe2469d010ebddc9a4809",
+        "retrievedAt": "2026-10-30T20:40:54.692170+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_del_cavatello_e_del_peperone_a_cerami.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_del_cavatello_e_del_peperone_a_cerami.htm",
+        "sha256": "f8c0639f6f738ff4548d7f16ee89a3eddccd58cb6e7c8628051e6508f36b8e94",
+        "retrievedAt": "2026-10-30T20:40:54.692790+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-della-rametta-a-nissoria.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra-della-rametta-a-nissoria.htm",
+        "sha256": "891af451954442ec4933b398c63c3b01b45674a40800789e7b3465d9f14519cf",
+        "retrievedAt": "2026-10-30T20:40:54.696448+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_e_le_vie_dei_sapori_agira.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_e_le_vie_dei_sapori_agira.htm",
+        "sha256": "85f7ed3e64305d196e881b717690887c3bf8d0980b7e31dbb257fcb28e5cbbb9",
+        "retrievedAt": "2026-10-30T20:40:54.698818+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_dello_zafferano_a_valguarnera_caropepe.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_dello_zafferano_a_valguarnera_caropepe.htm",
+        "sha256": "b6cb9a49f5f528d23d8ddb942bb008458270c79d590dbbf1c4ab3c7bda36e332",
+        "retrievedAt": "2026-10-30T20:40:54.701645+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_del_grano_e_del_pane_catenanuova.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_del_grano_e_del_pane_catenanuova.htm",
+        "sha256": "f8bafda566d0b592d8647fc4a34c6b4c1fce41c733d781a7a8c91b422db7dddc",
+        "retrievedAt": "2026-10-30T20:40:54.702463+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_da_piciota_a_nicosia.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_da_piciota_a_nicosia.htm",
+        "sha256": "9d07fb216a6ef52afd6a74818ccb6cab1cfb3d6e9ec307c6db5f00d45e08beea",
+        "retrievedAt": "2026-10-30T20:40:56.150891+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-del-biscotto-a-nicosia.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra-del-biscotto-a-nicosia.htm",
+        "sha256": "3e21eda7a706326c113f8a63b24a15be0a35abad4d7031a96c2d64422298925e",
+        "retrievedAt": "2026-10-30T20:40:56.169009+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_dell_arancino_assoro.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_dell_arancino_assoro.htm",
+        "sha256": "5860f9a67eb8bb9281d9a514c3a1c82d82613ad564a9512c94d9d9098594a7a9",
+        "retrievedAt": "2026-10-30T20:40:56.191535+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_dell_arancino_ad_enna.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/sagre/sagra_dell_arancino_ad_enna.htm",
+        "sha256": "03600ec3ae34a03ade628598a162ed7031fd0488b8cca93c02671ba152c8b06a",
+        "retrievedAt": "2026-10-30T20:40:57.326915+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa-degli-antichi-sapori-aidonesi-ad-aidone.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/feste/festa-degli-antichi-sapori-aidonesi-ad-aidone.htm",
+        "sha256": "594c81cdd6efe5466761bb3c8a3b8e8fc71d19373c4658774ef1d870d1296274",
+        "retrievedAt": "2026-10-30T20:41:12.830513+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/sagra_del_tortone_e_corteo_storico_della_castellana_sperlinga.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/manifestazioni/sagra_del_tortone_e_corteo_storico_della_castellana_sperlinga.htm",
+        "sha256": "2fdd7e676cd0e22a11ae8431a2b53aff17e3e59fe93fd13fdf4b50baf549ef21",
+        "retrievedAt": "2026-10-30T20:41:12.830992+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/manifestazioni/festa_di_san_martino_a_villarosa.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/manifestazioni/festa_di_san_martino_a_villarosa.htm",
+        "sha256": "0ab6074477eb6cf037268fbbc809fb8f9d4431e12c39beebe1275fa60bac59a8",
+        "retrievedAt": "2026-10-30T20:41:12.832411+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/feste/festa-dell-olio-d-oliva-a-regalbuto.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/feste/festa-dell-olio-d-oliva-a-regalbuto.htm",
+        "sha256": "878c5222d72eabf5ba353f60c975ace877052d23c8bbbcc2de6eeb2ea2b76532",
+        "retrievedAt": "2026-10-30T20:41:12.835045+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_enna.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_enna.htm",
+        "sha256": "1dde983cd6b600e49bac54d5a58d987371fe16e7f687be4ed264ea63dee529a9",
+        "retrievedAt": "2026-10-30T20:41:12.835832+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini-di-natale-a-calascibetta.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini-di-natale-a-calascibetta.htm",
+        "sha256": "17d34589653ffc21c2bdd6cc4d5ece357004875600941b06ae19d8a3b18a3112",
+        "retrievedAt": "2026-10-30T20:41:12.836803+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/festival/international-street-food-a.piazza-armerina.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/festival/international-street-food-a.piazza-armerina.htm",
+        "sha256": "43e9158bb907ca81d53500a7e1ee494eee3956312d6ac63795ee7e743dcd99de",
+        "retrievedAt": "2026-10-30T20:41:12.838090+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/fiere_e_mercatini/fiera_di_natale_a_aidone.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/fiere_e_mercatini/fiera_di_natale_a_aidone.htm",
+        "sha256": "f84384cc7c1fcc8e6baf7c5801e02840c2057fd3a77efda5ae985190ca35e8c3",
+        "retrievedAt": "2026-10-30T20:41:12.839322+00:00"
+      },
+      {
+        "url": "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_a_barrafranca.htm",
+        "status": 200,
+        "finalUrl": "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_a_barrafranca.htm",
+        "sha256": "69ed61478ca0e6d2fb261fc728634855c95e52730fe9d311bed62198312f73b7",
+        "retrievedAt": "2026-10-30T20:41:12.840456+00:00"
+      },
+      {
+        "url": "https://www.sagradellepesche.it/2026/09/21/xliv-edizione-sagra-della-pesca-igp-e-notte-gialla-2026-disposizioni-e-modalita-di-partecipazione/",
+        "status": 200,
+        "finalUrl": "https://www.sagradellepesche.it/2026/09/21/xliv-edizione-sagra-della-pesca-igp-e-notte-gialla-2026-disposizioni-e-modalita-di-partecipazione/",
+        "sha256": "5fc9f7f3f807a6e0df24e3c86c960199f2a05a2da4ad827ea2c4853601e3d9e0",
+        "retrievedAt": "2026-10-30T20:41:14.511255+00:00"
+      },
+      {
+        "url": "https://www.comune.villarosa.en.it/novita/regolamentazione-della-circolazione-stradale-a-villapriolo-per-la-sagra-della-guastella-18-luglio-2026/",
+        "status": 200,
+        "finalUrl": "https://www.comune.villarosa.en.it/novita/regolamentazione-della-circolazione-stradale-a-villapriolo-per-la-sagra-della-guastella-18-luglio-2026/",
+        "sha256": "caeefc9be9ab5323002b6d21abec0b21741216a09968300ba646a29f4e65bebc",
+        "retrievedAt": "2026-10-30T20:41:14.517976+00:00"
+      },
+      {
+        "url": "https://www.prolocoagira.it/wp/2026/10/20/sagra-della-cassatella-dal-13-al-15-novembre-2026/",
+        "status": 200,
+        "finalUrl": "https://www.prolocoagira.it/wp/2026/10/20/sagra-della-cassatella-dal-13-al-15-novembre-2026/",
+        "sha256": "489ff14648a3374aba1db352b7d6fce3852dca7c1ad7c6f514f96254f997237f",
+        "retrievedAt": "2026-10-30T20:42:01.697567+00:00"
+      },
+      {
+        "url": "https://www.centuripecittaimperiale.it/news/xii-sagra-dellarancia-rossa-di-sicilia-igp-a-centuripe/",
+        "status": 200,
+        "finalUrl": "https://www.centuripecittaimperiale.it/news/xii-sagra-dellarancia-rossa-di-sicilia-igp-a-centuripe/",
+        "sha256": "835d6c214f642855af768fe2efb35058163c316a3ea6349f1206bae0acdb9d39",
+        "retrievedAt": "2026-10-30T20:42:01.698181+00:00"
+      },
+      {
+        "url": "https://www.comune.troina.en.it/it/eventi/631398",
+        "status": 200,
+        "finalUrl": "https://www.comune.troina.en.it/it/eventi/631398",
+        "sha256": "52d6a8210c8f836c4cfedf0c4b1bf7b2a631850cde6fd557a34eafe69600bc11",
+        "retrievedAt": "2026-10-30T20:42:01.698807+00:00"
+      },
+      {
+        "url": "https://www.comune.troina.en.it/it/news/sagra-della-vastedda-cu-sammucu-pronto-il-programma-della-xxviii-edizione",
+        "status": 200,
+        "finalUrl": "https://www.comune.troina.en.it/it/news/sagra-della-vastedda-cu-sammucu-pronto-il-programma-della-xxviii-edizione",
+        "sha256": "608fafca1c5455ddc0de0d4823340d06f81ed1a36920414695c4f30b53ec548e",
+        "retrievedAt": "2026-10-30T20:42:01.699431+00:00"
+      },
+      {
+        "url": "https://www.ennalive.it/gagliano-castelferrato-sapori-e-tradizione-alla-sagra-della-mostarda-di-fico-dindia/",
+        "status": 200,
+        "finalUrl": "https://www.ennalive.it/gagliano-castelferrato-sapori-e-tradizione-alla-sagra-della-mostarda-di-fico-dindia/",
+        "sha256": "e6c4e14614d6561070449b56bfa25d7b986cb8a9e69f01aba7ceb97a9d93a30e",
+        "retrievedAt": "2026-10-30T20:42:01.704751+00:00"
+      },
+      {
+        "url": "https://www.vivasicilia.com/festa-della-madonna-di-buonriposo-calascibetta/",
+        "status": 200,
+        "finalUrl": "https://www.vivasicilia.com/festa-della-madonna-di-buonriposo-calascibetta/",
+        "sha256": "6d218d0b14b0d21a18b2c6e7b4cf8dfddb841ad13c27cac9bc5325388400c5bc",
+        "retrievedAt": "2026-10-30T20:42:01.706384+00:00"
+      },
+      {
+        "url": "https://oplasicilia.it/festa-della-minnula-pirzisa-a-pietraperzia",
+        "status": 200,
+        "finalUrl": "https://oplasicilia.it/festa-della-minnula-pirzisa-a-pietraperzia",
+        "sha256": "38b8c6e1d365d1614eb69f458b6cc99d176bb9e3f1efb1cd6d14b745a4188583",
+        "retrievedAt": "2026-10-30T20:42:01.709288+00:00"
+      },
+      {
+        "url": "https://www.comune.barrafranca.en.it/eventi/2026-1.html",
+        "status": 200,
+        "finalUrl": "https://www.comune.barrafranca.en.it/eventi/2026-1.html",
+        "sha256": "089d2cda3b45844df25ed40d333349c5b92b995b14e85532ecde2b869e5104a1",
+        "retrievedAt": "2026-10-30T20:42:42.227245+00:00"
+      },
+      {
+        "url": "https://www.medianewsweb.com/2026/08/12/il-tortone-dolce-simbolo-di-sperlinga-torna-la-festa-del-16-agosto/",
+        "status": 200,
+        "finalUrl": "https://www.medianewsweb.com/2026/08/12/il-tortone-dolce-simbolo-di-sperlinga-torna-la-festa-del-16-agosto/",
+        "sha256": "117aa9b7c8beea889dd96af6b7e41c548cb7c04b43a6b9f14cf4bca8f963a0c0",
+        "retrievedAt": "2026-10-30T20:42:42.235688+00:00"
+      },
+      {
+        "url": "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03FU8L0202656&p7m=1&mosdoc=0",
+        "status": 200,
+        "finalUrl": "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03FU8L0202656&p7m=1&mosdoc=0",
+        "sha256": "5b1bcd182a601f93141ead6d90bc5bdac306b31dbc923f93d5b34bc47500c4f4",
+        "retrievedAt": "2026-10-30T20:43:14.395438+00:00"
+      },
+      {
+        "url": "https://www.ennamagazine.it/Turismo/TabId/105/ArtMID/617/ArticleID/2062/Lasciati-catturare-dal-profumo-del-pane.aspx",
+        "status": 200,
+        "finalUrl": "https://www.ennamagazine.it/Turismo/TabId/105/ArtMID/617/ArticleID/2062/Lasciati-catturare-dal-profumo-del-pane.aspx",
+        "sha256": "15b23f79dd0e30209edafe0aa36bc9e505cba0ad18e5bb2bf8687826fd75112b",
+        "retrievedAt": "2026-10-30T20:43:14.396656+00:00"
+      },
+      {
+        "url": "https://www.italiancosplay.it/eventi-cosplay/regalcomics",
+        "status": 200,
+        "finalUrl": "https://www.italiancosplay.it/eventi-cosplay/regalcomics",
+        "sha256": "5edb84e17598fa5c398c2018d3b83a8d286f2a2384dc787bd9d1b431638282ba",
+        "retrievedAt": "2026-10-30T20:43:14.399552+00:00"
+      },
+      {
+        "url": "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2014",
+        "status": 200,
+        "finalUrl": "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2014",
+        "sha256": "c96a6bd367b54eb30ab2856281216e3181f9d19804b6fc7dadf2648aa4706ded",
+        "retrievedAt": "2026-10-30T20:43:14.401176+00:00"
+      },
+      {
+        "url": "https://servizi.comune.piazzaarmerina.en.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVekE5WT0-H",
+        "status": 200,
+        "finalUrl": "https://servizi.comune.piazzaarmerina.en.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVekE5WT0-H",
+        "sha256": "591674578c793a0089a33d4ff80bb83c2ea9b24512f7b401bca7df77b6a3d12e",
+        "retrievedAt": "2026-10-30T20:44:10.126695+00:00"
+      },
+      {
+        "url": "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03LLRK0202694&p7m=1&mosdoc=0",
+        "status": 200,
+        "finalUrl": "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03LLRK0202694&p7m=1&mosdoc=0",
+        "sha256": "e9fb0d160d8d17ca02ebc89aa4618236b5d9b70a4e81195d012edd96991d0de1",
+        "retrievedAt": "2026-10-30T20:44:10.127173+00:00"
+      }
+    ],
+    "limitations": [
+      "Nessuna garanzia di esaustività, disponibilità o ammissione. Le coordinate sono centri comunali, non ubicazioni dei banchi.",
+      "Albi e calendari dinamici non consultati integralmente. Eventi non documentati non equivalgono ad assenza di iniziative.",
+      "Originali pubblici con codifica deteriorata conservati senza normalizzare date per ipotesi.",
+      "Fonti editoriali, stime e storico separati dalle conferme comunali; nessuna quota mancante presentata come gratuita.",
+      "Nissoria404 e PDFValguarnera404 espliciti; decretoPietraperzia letto via web ma non scaricato200.",
+      "Ricerca corrente chiusa sul materiale accessibile; nuovi bandi, tariffe e annualità sono manutenzione futura distinta."
+    ],
+    "openLeads": [],
+    "futureMaintenance": [
+      "Nuovi avvisi e programmi annuali, costi/servizi, graduatorie e disponibilità; riapertura originali Nissoria/Valguarnera e verifica delle ricorrenze solo storiche."
+    ],
+    "integratedOriginCommit": "2771d1b"
+  },
+  "events": [
+    {
+      "region": "Sicilia",
+      "city": "Agira",
+      "name": "Sagra della Cassatella",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.prolocoagira.it/wp/2026/10/20/sagra-della-cassatella-dal-13-al-15-novembre-2026/",
+        "label": "Pro Loco Agira",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "La Pro Loco annuncia la rassegna 2026 dedicata alla cassatella, con gastronomia e iniziative nel borgo.",
+      "venue": "Agira; collocazione del proprio banco da concordare",
+      "sectors": "Cassatelle, dolci e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-13",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.prolocoagira.it/wp/2026/10/20/sagra-della-cassatella-dal-13-al-15-novembre-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Le date 13–15 novembre 2026 prevalgono sulle stime 14–16 degli aggregatori. Il programma comunale 14–16 novembre riguarda il 2025. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.prolocoagira.it/wp/2026/10/20/sagra-della-cassatella-dal-13-al-15-novembre-2026/",
+        "https://www.siciliainfesta.com/sagre/sagra_della_cassatella_e_le_vie_dei_sapori_agira.htm",
+        "https://www.comune.agira.en.it/it/news/sagra-della-cassatella"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Aidone",
+      "name": "Festa degli Antichi Sapori Aidonesi",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/feste/festa-degli-antichi-sapori-aidonesi-ad-aidone.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna gastronomica con prodotti del territorio, cucina di strada e intrattenimento; calendario editoriale 2026.",
+      "venue": "Borgo di Aidone",
+      "sectors": "Prodotti tipici, cicerchia, formaggi e street food",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-27",
+          "end": "2026-06-28",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.siciliainfesta.com/feste/festa-degli-antichi-sapori-aidonesi-ad-aidone.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/feste/festa-degli-antichi-sapori-aidonesi-ad-aidone.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Aidone",
+      "name": "Fiera di Natale",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.siciliainfesta.com/fiere_e_mercatini/fiera_di_natale_a_aidone.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatino con artigianato e gastronomia: verificata soltanto la descrizione dell’edizione 2024, senza nuova data confermata.",
+      "venue": "Centro storico",
+      "sectors": "Artigianato, idee regalo e street food",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-12-20",
+          "end": "2024-12-22",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.siciliainfesta.com/fiere_e_mercatini/fiera_di_natale_a_aidone.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Storico 2024. La fonte descrive tre date ma parla anche di quattro giorni: non estendere il periodo e non proiettarlo al 2026. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/fiere_e_mercatini/fiera_di_natale_a_aidone.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Assoro",
+      "name": "Sagra dell’Arancino",
+      "months": [
+        3
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2014",
+        "label": "Comune di Assoro",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Prima edizione documentata nell’archivio comunale 2014; degustazione e concorso, non un nuovo calendario annuale.",
+      "venue": "Piazza Umberto I",
+      "sectors": "Arancini e gastronomia",
+      "editions": [
+        {
+          "year": 2014,
+          "start": "2014-03-20",
+          "end": "2014-03-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2014"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2014; il concorso aperto ai cittadini non è un bando per ambulanti. Il mese di settembre di altri portali non prova una nuova edizione. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2014",
+        "https://www.siciliainfesta.com/sagre/sagra_dell_arancino_assoro.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Assoro",
+      "name": "Festa delle Tradizioni Agricole di San Giorgio",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2018",
+        "label": "Comune di Assoro",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra della frazione San Giorgio conservata nell’archivio comunale: 21ª edizione nel 2018, da riconfermare.",
+      "venue": "Frazione San Giorgio",
+      "sectors": "Produzioni agricole e gastronomia locale",
+      "editions": [
+        {
+          "year": 2018,
+          "start": "2018-08-25",
+          "end": "2018-08-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2018"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2018. Nessuna prosecuzione annuale, data 2026 o ammissione commerciale ricostruita dall’archivio. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.assoro.en.it/it-it/vivere-il-comune/eventi/storico/2018"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Barrafranca",
+      "name": "AgriArt",
+      "months": [
+        7
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.comune.barrafranca.en.it/eventi/2026-1.html",
+        "label": "Comune di Barrafranca",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Esposizione comunale delle produzioni agricole e dell’artigianato locale, con promozione e vendita dei prodotti trasformati.",
+      "venue": "Piazza Regina Margherita",
+      "sectors": "Agroalimentare, artigianato e tecnologie agricole",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-24",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.barrafranca.en.it/eventi/2026-1.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La pagina pubblica indica partecipazione gratuita per il pubblico; non chiarisce che il noleggio o il posteggio siano gratuiti per gli espositori. Contatto SUAP: suap@comune.barrafranca.en.it. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.barrafranca.en.it/eventi/2026-1.html"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Barrafranca",
+      "name": "Mercatini di Natale",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_a_barrafranca.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Esposizioni natalizie di manufatti creativi e hobbisti, distinte dalla sola visita ai presepi; nessuna edizione corrente verificata.",
+      "venue": "Barrafranca; area della nuova edizione da verificare",
+      "sectors": "Artigianato e decorazioni natalizie",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Dicembre è soltanto il periodo natalizio descritto; non sono pubblicate giornate 2026 verificate. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_a_barrafranca.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Calascibetta",
+      "name": "Sagra della Salsiccia di Buonriposo",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.vivasicilia.com/festa-della-madonna-di-buonriposo-calascibetta/",
+        "label": "vivasicilia.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Appuntamento gastronomico associato alla festa di Buonriposo: il programma editoriale colloca la sagra nella giornata di sabato.",
+      "venue": "Area del Santuario della Madonna di Buonriposo",
+      "sectors": "Salsiccia e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-05",
+          "end": "2026-09-05",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.vivasicilia.com/festa-della-madonna-di-buonriposo-calascibetta/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La festa religiosa prosegue fino al 7 settembre, ma non è assunta come apertura commerciale continua della sagra. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.vivasicilia.com/festa-della-madonna-di-buonriposo-calascibetta/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Calascibetta",
+      "name": "Mercatini di Natale",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini-di-natale-a-calascibetta.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatini di piccoli produttori, artisti e artigiani, con degustazioni; dicembre è periodo usuale, senza edizione annuale verificata.",
+      "venue": "Calascibetta; sede da verificare",
+      "sectors": "Artigianato e prodotti tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini-di-natale-a-calascibetta.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Catenanuova",
+      "name": "Sagra del Grano e del Pane",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.ennamagazine.it/Turismo/TabId/105/ArtMID/617/ArticleID/2062/Lasciati-catturare-dal-profumo-del-pane.aspx",
+        "label": "ennamagazine.it · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rievocazione della civiltà contadina con degustazioni: l’ufficio stampa provinciale documenta le giornate del 2015.",
+      "venue": "Catenanuova",
+      "sectors": "Pane, cereali e prodotti tipici",
+      "editions": [
+        {
+          "year": 2015,
+          "start": "2015-09-18",
+          "end": "2015-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.ennamagazine.it/Turismo/TabId/105/ArtMID/617/ArticleID/2062/Lasciati-catturare-dal-profumo-del-pane.aspx"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2015. Date di giugno o settembre riportate da calendari generici non sono un programma attuale; nessuna edizione 2026 dedotta. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.ennamagazine.it/Turismo/TabId/105/ArtMID/617/ArticleID/2062/Lasciati-catturare-dal-profumo-del-pane.aspx",
+        "https://www.siciliainfesta.com/sagre/sagra_del_grano_e_del_pane_catenanuova.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Centuripe",
+      "name": "Sagra dell’Arancia Rossa di Sicilia IGP",
+      "months": [
+        4
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.centuripecittaimperiale.it/news/xii-sagra-dellarancia-rossa-di-sicilia-igp-a-centuripe/",
+        "label": "Comune di Centuripe",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Dodicesima edizione annunciata dal portale turistico comunale, dedicata alla produzione agrumicola e alle specialità locali.",
+      "venue": "Centuripe; area espositori da verificare",
+      "sectors": "Arance e prodotti agroalimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-24",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.centuripecittaimperiale.it/news/xii-sagra-dellarancia-rossa-di-sicilia-igp-a-centuripe/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il calendario comunale 2026 prevale sulle vecchie numerazioni e sulle date 2027 stimate. Ruralia è un mercato agricolo ordinario e non una seconda sagra. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.centuripecittaimperiale.it/news/xii-sagra-dellarancia-rossa-di-sicilia-igp-a-centuripe/",
+        "https://www.siciliainfesta.com/sagre/sagra_arancia_rossa_di_sicilia_igp_centuripe.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Cerami",
+      "name": "Sagra dei Prodotti Tipici · Pipi e Cavatieddi",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_del_cavatello_e_del_peperone_a_cerami.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna gastronomica dei peperoni locali e del cavatieddu dolce, con folklore e degustazioni; calendario editoriale 2026.",
+      "venue": "Centro di Cerami",
+      "sectors": "Peperoni, biscotti e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-27",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_del_cavatello_e_del_peperone_a_cerami.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_del_cavatello_e_del_peperone_a_cerami.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Enna",
+      "name": "Fiera di Maggio",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.enna.it/vivere-enna/luoghi/Monumento-o-complesso-monumentale/it/29/Piazza-Europa",
+        "label": "Comune di Enna",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera commerciale stagionale descritta dal Comune, oggi dedicata a merci e oggetti; non è l’antica compravendita di bestiame.",
+      "venue": "Enna; area e posteggio da verificare nel nuovo provvedimento",
+      "sectors": "Merci varie e articoli per la casa",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Maggio è il mese tradizionale. Le giornate storiche 17–18 indicate nel testo turistico non sono trasformate in date 2026; per ammissione e CUP serve il provvedimento operativo. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.enna.it/vivere-enna/luoghi/Monumento-o-complesso-monumentale/it/29/Piazza-Europa"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Enna",
+      "name": "Fiera di Settembre",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.ennalive.it/enna-torna-la-tradizionale-fiera-di-settembre/",
+        "label": "ennalive.it · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera di ambulanti lungo viale Diaz e viale IV Novembre, riscontrata dalla cronaca locale nel settembre 2026.",
+      "venue": "Viale Diaz e viale IV Novembre",
+      "sectors": "Abbigliamento, accessori, casalinghi, gioielli e gastronomia",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La cronaca del 12 settembre 2026 conferma lo svolgimento e la conclusione domenicale, ma non precisa la data iniziale: nessun intervallo completo ricostruito. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.ennalive.it/enna-torna-la-tradizionale-fiera-di-settembre/",
+        "https://www.comune.enna.it/vivere-enna/luoghi/Monumento-o-complesso-monumentale/it/29/Piazza-Europa"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Enna",
+      "name": "Mercatini di Natale",
+      "months": [
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_enna.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mercatini di artigianato, creativi e collezionismo descritti dalla fonte editoriale, senza giornate della nuova edizione confermate.",
+      "venue": "Enna; sede da verificare",
+      "sectors": "Artigianato, decorazioni e collezionismo",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/fiere_e_mercatini/mercatini_di_natale_enna.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Enna",
+      "name": "Sagra dell’Arancino",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_dell_arancino_ad_enna.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra con mercatino artigianale nell’area di Montesalvo, associata alla ricorrenza della Visitazione; descrizione storica senza nuova edizione.",
+      "venue": "Piazza ed Eremo di Montesalvo",
+      "sectors": "Arancini e artigianato",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Luglio è il periodo collegato alla festa patronale, non una data 2026. Le quantità distribuite nella vecchia descrizione non misurano l’affluenza attuale. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_dell_arancino_ad_enna.htm",
+        "https://enna.aci.it/IMG/pdf/EVENTI_ENNA.pdf"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Gagliano Castelferrato",
+      "name": "Sagra della Mostarda di Ficodindia",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.ennalive.it/gagliano-castelferrato-sapori-e-tradizione-alla-sagra-della-mostarda-di-fico-dindia/",
+        "label": "ennalive.it · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "La cronaca del 12 settembre 2026 riscontra bancarelle alimentari e artigianali alla manifestazione dedicata al ficodindia.",
+      "venue": "Gagliano Castelferrato",
+      "sectors": "Mostarda di ficodindia, prodotti tipici e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-11",
+          "end": "2026-09-13",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.ennalive.it/gagliano-castelferrato-sapori-e-tradizione-alla-sagra-della-mostarda-di-fico-dindia/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Tre giornate 11–13 settembre, riscontrate dalla cronaca in corso e dal calendario editoriale. Scartate le stime 27–29 settembre di altri portali. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.ennalive.it/gagliano-castelferrato-sapori-e-tradizione-alla-sagra-della-mostarda-di-fico-dindia/",
+        "https://www.siciliainfesta.com/sagre/sagra_della_mostarda_gagliano_castelferrato.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Leonforte",
+      "name": "Sagra della Pesca IGP e dei Prodotti Tipici",
+      "months": [
+        10
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.sagradellepesche.it/2026/09/21/xliv-edizione-sagra-della-pesca-igp-e-notte-gialla-2026-disposizioni-e-modalita-di-partecipazione/",
+        "label": "Sagra delle Pesche · Comune di Leonforte",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Mostra mercato comunale con prodotti tipici e area food; Notte Gialla compresa nella stessa manifestazione.",
+      "venue": "Corso Umberto e piazze IV Novembre, Carella, Tribuno, Annunziata, Margherita e Branciforti",
+      "sectors": "Pesche IGP, prodotti agricoli e tipici, artigianato e opere dell’ingegno",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.sagradellepesche.it/2026/09/21/xliv-edizione-sagra-della-pesca-igp-e-notte-gialla-2026-disposizioni-e-modalita-di-partecipazione/"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Massimo 40 stand; istanze a Yellow ETS entro le ore 12 del 28 settembre 2026. Ammessi produttori, OPI, commercianti e artigiani coerenti con la sagra, enti e scuole; esclusa propaganda politica. Contatto: associazioneyellow@gmail.com. Il vecchio modulo 2025 non sostituisce le disposizioni 2026. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco.",
+        "deadline": "2026-09-28",
+        "costs": "Edizione 2026: OPI e associazioni 100 €, scuole 150 €, operatori ordinari 200 €, area food 350 €; quote con noleggio stand, punto luce, servizi e CUP. Spazi senza noleggio stand nelle piazze ammesse 75 €; artisti autorizzati senza stand fino a 4 m² gratuiti. IVA non specificata nella pagina. I limiti al prezzo di panini, bevande e menu sono prezzi per i visitatori, non tariffe di posteggio. Termine domande concluso; nessuna disponibilità attuale garantita."
+      },
+      "sourceRecordIds": [
+        "https://www.sagradellepesche.it/2026/09/21/xliv-edizione-sagra-della-pesca-igp-e-notte-gialla-2026-disposizioni-e-modalita-di-partecipazione/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Nicosia",
+      "name": "Fiera di Maggio",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.nicosia.en.it/wp-content/uploads/2026/05/memdoc_creapdf_3686952392946267771114221650986052.pdf",
+        "label": "Comune di Nicosia",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera stagionale con posteggi commerciali disciplinati dall’ordinanza comunale 41 del 4 maggio 2026.",
+      "venue": "Viale Itria, via e piazzale San Gabriele dell’Addolorata",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-08",
+          "end": "2026-05-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.nicosia.en.it/wp-content/uploads/2026/05/memdoc_creapdf_3686952392946267771114221650986052.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Assegnazione su istanza e pagamento; recupero dei posti mediante sorteggio il 7 maggio. Lo spazio sotto la chiesa è riservato al non alimentare. L’ordinanza non pubblica la tariffa. Il divieto stradale dal 7 maggio non anticipa l’apertura della fiera. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://comune.nicosia.en.it/wp-content/uploads/2026/05/memdoc_creapdf_3686952392946267771114221650986052.pdf"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Nicosia",
+      "name": "Fiera di Ottobre",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.nicosia.en.it/wp-content/uploads/2026/05/memdoc_creapdf_3686952392946267771114221650986052.pdf",
+        "label": "Comune di Nicosia",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "L’ordinanza di maggio richiama espressamente la seconda fiera stagionale di ottobre; non specifica il calendario della sua edizione 2026.",
+      "venue": "Viale Itria e area San Gabriele dell’Addolorata; assetto annuale da verificare",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Ottobre è il mese regolamentare richiamato dall’atto, senza giornate 2026 verificate. Non applicare automaticamente sorteggio e scadenze della fiera di maggio. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://comune.nicosia.en.it/wp-content/uploads/2026/05/memdoc_creapdf_3686952392946267771114221650986052.pdf"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Nicosia",
+      "name": "Sagra del Nocattolo e dei Prodotti Tipici",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_del_nocattolo_e_dei_prodotti_tipici_a_nicosia.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Percorso gastronomico dedicato al dolce alle mandorle e alle produzioni nicosiane; calendario editoriale 2026.",
+      "venue": "Nicosia",
+      "sectors": "Nocattoli, dolci e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-20",
+          "end": "2026-06-21",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra_del_nocattolo_e_dei_prodotti_tipici_a_nicosia.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_del_nocattolo_e_dei_prodotti_tipici_a_nicosia.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Nicosia",
+      "name": "Sagra del Biscotto",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-del-biscotto-a-nicosia.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Appuntamento con il biscotto tradizionale a forma di S nella ricorrenza dell’Assunta; periodo usuale senza nuova edizione verificata.",
+      "venue": "Piazza dell’Orologio, quartiere Santa Maria Maggiore",
+      "sectors": "Biscotti e dolci tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La sera del 14 agosto è una consuetudine descritta dalla fonte, non un avviso operativo 2026. La processione del 15 non è un giorno aggiuntivo della sagra. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra-del-biscotto-a-nicosia.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Nicosia",
+      "name": "Sagra dà Piciòta e Mercatini di Natale",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_da_piciota_a_nicosia.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna invernale della piciòta a base di cicerchia, abbinata ai mercatini natalizi; nessun calendario corrente verificato.",
+      "venue": "Nicosia; sede da verificare",
+      "sectors": "Gastronomia locale, prodotti tipici e artigianato",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Dicembre indica il periodo natalizio del titolo. Non è stata verificata una nuova edizione con date puntuali. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_da_piciota_a_nicosia.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Nissoria",
+      "name": "Sagra della Rametta e dei Sapori Nissorini",
+      "months": [
+        10
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra-della-rametta-a-nissoria.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Seconda edizione dedicata al dolce nissorino, con stand gastronomici e artigianali e laboratori; calendario editoriale 2026.",
+      "venue": "Centro di Nissoria",
+      "sectors": "Ramette, dolci, prodotti tipici e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-18",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.siciliainfesta.com/sagre/sagra-della-rametta-a-nissoria.htm"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso comunale per assegnare postazioni individuato nell’indice web, ma dettaglio e allegato non recuperati (404). Non sono dedotte quote, scadenze o gratuità del banco. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra-della-rametta-a-nissoria.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Piazza Armerina",
+      "name": "Fiera di Maggio",
+      "months": [
+        5,
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03FU8L0202656&p7m=1&mosdoc=0",
+        "label": "Comune di Piazza Armerina",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fiera stagionale autorizzata dall’ordinanza sindacale 19/2026; percorso di banchi commerciali nel centro cittadino.",
+      "venue": "Vie Lo Giudice, Intorcetta, Roccella, Chiarandà, Guccio, Caltanissetta e piazze Giuliano e Marescalchi",
+      "sectors": "Commercio su aree pubbliche, settori secondo autorizzazione",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-30",
+          "end": "2026-06-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03FU8L0202656&p7m=1&mosdoc=0"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Riservata a titolari di autorizzazione per aree pubbliche; priorità secondo titolo e presenze, graduatoria e pagamento del suolo. L’atto non indica una tariffa numerica e vieta cessioni anche gratuite. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03FU8L0202656&p7m=1&mosdoc=0"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Piazza Armerina",
+      "name": "Fiera di Settembre",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03LLRK0202694&p7m=1&mosdoc=0",
+        "label": "Comune di Piazza Armerina",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Assegnazione definitiva dei posteggi per la fiera 2026, verificata sulla determina comunale 2375 del 4 settembre.",
+      "venue": "Piazza Armerina; posteggio assegnato dal Comune",
+      "sectors": "Commercio su aree pubbliche, settori secondo autorizzazione",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-05",
+          "end": "2026-09-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03LLRK0202694&p7m=1&mosdoc=0"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Date anticipate al 5–7 settembre, non l’8–10 della tradizione. La determina registra assegnazioni e obblighi CUP: non è una nuova offerta di posti. Nessuna tariffa ricavata dai pagamenti degli operatori. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://servizi.comune.piazzaarmerina.en.it/de/attachment.php?serialDocumento=03LLRK0202694&p7m=1&mosdoc=0",
+        "https://servizi.comune.piazzaarmerina.en.it/zf/index.php/atti-amministrativi/ordinanze/dettaglio/atto/GTVRVekE5WT0-H"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Piazza Armerina",
+      "name": "International Street Food",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/festival/international-street-food-a.piazza-armerina.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Tappa del festival itinerante con food truck e cucina internazionale in piazza Falcone e Borsellino; nuova edizione da verificare.",
+      "venue": "Piazza Falcone e Borsellino, area mercato",
+      "sectors": "Street food e bevande",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La descrizione cita 13–16 novembre senza anno e reca avviso di evento passato. Non conferma le date 1–4 novembre 2026 diffuse da aggregatori. Ingresso gratuito per i visitatori non è gratuità dei food truck. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/festival/international-street-food-a.piazza-armerina.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Pietraperzia",
+      "name": "Festa della Minnula Pirzisa",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://oplasicilia.it/festa-della-minnula-pirzisa-a-pietraperzia",
+        "label": "oplasicilia.it · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Festa della mandorla con prodotti gastronomici, dolci e artigianato: la scheda editoriale conserva una data storica del 2022.",
+      "venue": "Pietraperzia",
+      "sectors": "Mandorle, dolci, prodotti tipici e artigianato",
+      "editions": [
+        {
+          "year": 2022,
+          "start": "2022-11-09",
+          "end": "2022-11-09",
+          "dateType": "calendar",
+          "sourceUrl": "https://oplasicilia.it/festa-della-minnula-pirzisa-a-pietraperzia"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2022. Il riquadro automatico del portale mostra il 2026 con data da confermare, mentre il campo evento riporta 09/11/2022; non proiettare il giorno al 2026. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://oplasicilia.it/festa-della-minnula-pirzisa-a-pietraperzia"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Regalbuto",
+      "name": "Festa dell’Olio d’Oliva Regalbutese",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/feste/festa-dell-olio-d-oliva-a-regalbuto.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Esposizione e vendita di olio e prodotti locali, con hobbisti e artigiani; dicembre è il periodo usuale, non un’edizione confermata.",
+      "venue": "Regalbuto; sede da verificare",
+      "sectors": "Olio, prodotti tipici e artigianato",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La pagina avverte che può riferirsi a un evento passato. Le date 12–14 dicembre 2026 di altri aggregatori sono stime e non vengono pubblicate come confermate. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/feste/festa-dell-olio-d-oliva-a-regalbuto.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Regalbuto",
+      "name": "RegalComics",
+      "months": [
+        6
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.italiancosplay.it/eventi-cosplay/regalcomics",
+        "label": "italiancosplay.it · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Manifestazione di fumetti, cosplay e cultura pop con stand di autori, artigiani ed esercizi specializzati; calendario editoriale 2026.",
+      "venue": "Regalbuto; sede e stand da verificare con NytaVerse APS",
+      "sectors": "Fumetti, gadget, collezionismo e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-20",
+          "end": "2026-06-21",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.italiancosplay.it/eventi-cosplay/regalcomics"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Partecipazione espositiva su accordo con l’organizzatore, non accesso libero al commercio per ogni ambulante. Quote stand non pubblicate nella fonte letta. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.italiancosplay.it/eventi-cosplay/regalcomics"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Sperlinga",
+      "name": "Sagra del Tortone e Dama dei Castelli",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.medianewsweb.com/2026/08/12/il-tortone-dolce-simbolo-di-sperlinga-torna-la-festa-del-16-agosto/",
+        "label": "medianewsweb.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna del dolce fritto locale nel borgo rupestre, collegata alla rievocazione storica e alle produzioni artigianali.",
+      "venue": "Centro storico e area del castello",
+      "sectors": "Tortone, prodotti tipici e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-16",
+          "end": "2026-08-16",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.medianewsweb.com/2026/08/12/il-tortone-dolce-simbolo-di-sperlinga-torna-la-festa-del-16-agosto/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Cronaca editoriale 2026 distinta dal titolo 2027 già aggiornato su altri portali. Nessuna nuova data 2027 assunta come conferma dell’organizzatore. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.medianewsweb.com/2026/08/12/il-tortone-dolce-simbolo-di-sperlinga-torna-la-festa-del-16-agosto/",
+        "https://www.siciliainfesta.com/manifestazioni/sagra_del_tortone_e_corteo_storico_della_castellana_sperlinga.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Troina",
+      "name": "Sagra della Vastedda cu Sammucu",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.troina.en.it/it/eventi/631398",
+        "label": "Comune di Troina",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Fine settimana comunale dedicato alla focaccia farcita con tuma e salame e aromatizzata al sambuco.",
+      "venue": "Piazza Giacomo Matteotti",
+      "sectors": "Vastedda, prodotti da forno e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-13",
+          "end": "2026-06-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.troina.en.it/it/eventi/631398"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Le date esplicite 2026 prevalgono sulla formula generica della penultima domenica di giugno. Gli allegati di adesione presenti nella pagina sono del 2024: non valgono come bando 2026 o quota attuale. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.troina.en.it/it/eventi/631398",
+        "https://www.comune.troina.en.it/it/news/sagra-della-vastedda-cu-sammucu-pronto-il-programma-della-xxviii-edizione"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Troina",
+      "name": "Troina Buona in Tutti i Sensi",
+      "months": [
+        10,
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.troina.en.it/it/news/al-via-la-terza-edizione-di-troina-buona-in-tutti-i-sensi",
+        "label": "Comune di Troina",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna promossa dal Comune con produttori, ristoratori e artigiani locali, laboratori del gusto e stand espositivi.",
+      "venue": "Piazza Falcone e Borsellino",
+      "sectors": "Formaggi, dolci, gastronomia e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-31",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.troina.en.it/it/news/al-via-la-terza-edizione-di-troina-buona-in-tutti-i-sensi"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avvio sabato alle 17; selezione dei produttori e condizioni del posteggio da verificare con l’organizzatore. I prezzi 4/8 euro riguardano i musei, non gli stand. Contatto informativo: enjoytroina@gmail.com. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.troina.en.it/it/news/al-via-la-terza-edizione-di-troina-buona-in-tutti-i-sensi"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Troina",
+      "name": "Sagra dei Cudduruna",
+      "months": [
+        2
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://enna.aci.it/IMG/pdf/EVENTI_ENNA.pdf",
+        "label": "enna.aci.it · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Appuntamento gastronomico riportato nel calendario storico ACI per febbraio; nessun programma della nuova edizione verificato.",
+      "venue": "Troina; sede da verificare",
+      "sectors": "Cudduruna e gastronomia locale",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Il PDF ACI è un repertorio senza annualità corrente e contiene collegamenti molto vecchi. Febbraio è soltanto il mese storico, non una conferma 2026. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://enna.aci.it/IMG/pdf/EVENTI_ENNA.pdf"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Valguarnera Caropepe",
+      "name": "Sagra dello Zafferano e Festa dell’Agricoltura",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/sagre/sagra_dello_zafferano_a_valguarnera_caropepe.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Rassegna gastronomica dello zafferano con prodotti locali e attività nel borgo; periodo autunnale da riconfermare.",
+      "venue": "Valguarnera Caropepe",
+      "sectors": "Zafferano, formaggi, dolci e prodotti tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Settembre è il periodo delle segnalazioni territoriali. Le fonti secondarie discordano tra 27–28 e 27–29 settembre 2026; nessuna di queste date è assunta come calendario ufficiale. Piano comunale 2024 indicizzato ma originale non recuperato. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/sagre/sagra_dello_zafferano_a_valguarnera_caropepe.htm"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Villarosa",
+      "name": "Sagra della Guastella di Villapriolo",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.villarosa.en.it/novita/regolamentazione-della-circolazione-stradale-a-villapriolo-per-la-sagra-della-guastella-18-luglio-2026/",
+        "label": "Comune di Villarosa",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Sagra nella frazione Villapriolo documentata dall’avviso comunale, con iniziativa della parrocchia San Giuseppe.",
+      "venue": "Piazza Lafuria, Villapriolo",
+      "sectors": "Guastella e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-18",
+          "end": "2026-07-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.villarosa.en.it/novita/regolamentazione-della-circolazione-stradale-a-villapriolo-per-la-sagra-della-guastella-18-luglio-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Titolo e dispositivo indicano 18 luglio 2026. L’avviso contiene un richiamo a protocollo del 30 luglio successivo all’evento: discordanza non corretta per ipotesi. Il patrocinio non costituisce un bando espositori. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.villarosa.en.it/novita/regolamentazione-della-circolazione-stradale-a-villapriolo-per-la-sagra-della-guastella-18-luglio-2026/"
+      ]
+    },
+    {
+      "region": "Sicilia",
+      "city": "Villarosa",
+      "name": "Festa di San Martino · L’Osteria in Piazza",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.siciliainfesta.com/manifestazioni/festa_di_san_martino_a_villarosa.htm",
+        "label": "siciliainfesta.com · fonte editoriale",
+        "checkedAt": "2026-10-30"
+      },
+      "summary": "Degustazioni e stand di cucina tradizionale in piazza; novembre è il periodo usuale indicato, senza calendario annuale verificato.",
+      "venue": "Villarosa; piazza e postazioni da verificare",
+      "sectors": "Vino novello, legumi e gastronomia locale",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "La scheda segnala possibile evento passato. L’11 novembre 2026 indicato altrove non è una conferma dell’organizzatore e non viene assunto come data attiva. La scheda non garantisce posteggi disponibili. Verificare con organizzatore e SUAP nuova edizione, categorie ammesse, domanda, autorizzazioni, costi e servizi; ingresso libero e degustazioni gratuite non indicano gratuità del banco."
+      },
+      "sourceRecordIds": [
+        "https://www.siciliainfesta.com/manifestazioni/festa_di_san_martino_a_villarosa.htm"
+      ]
+    }
+  ]
+}

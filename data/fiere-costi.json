@@ -3212,6 +3212,14 @@
       "period": "2026",
       "kind": "partial",
       "review": "original-document-review"
+    },
+    "sicilia-leonforte-sagra-della-pesca-igp-e-dei-prodotti-tipici": {
+      "kind": "conditional",
+      "label": "75–350 € secondo spazio e categoria · 2026",
+      "details": "Edizione 2026: OPI e associazioni 100 €, scuole 150 €, operatori ordinari 200 €, area food 350 €; quote con noleggio stand, punto luce, servizi e CUP. Spazi senza noleggio stand nelle piazze ammesse 75 €; artisti autorizzati senza stand fino a 4 m² gratuiti. IVA non specificata nella pagina. I limiti al prezzo di panini, bevande e menu sono prezzi per i visitatori, non tariffe di posteggio. Termine domande concluso; nessuna disponibilità attuale garantita.",
+      "sourceUrl": "https://www.sagradellepesche.it/2026/09/21/xliv-edizione-sagra-della-pesca-igp-e-notte-gialla-2026-disposizioni-e-modalita-di-partecipazione/",
+      "checkedAt": "2026-10-30",
+      "period": "2026"
     }
   }
 }
