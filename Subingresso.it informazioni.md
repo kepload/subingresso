@@ -1,5 +1,23 @@
 # Subingresso.it — informazioni e TO DO
 
+## Ripresa loop in due sessioni — 31 ottobre 2026
+
+- Richiesta corrente supera lo stop del30ottobre: due sessioni contemporanee,
+  account Secondo e preferenze modello conservati, Pavia riservata. Venti
+  province avviabili divise in due code disgiunte, prime Foggia e Avellino.
+- Task `Subingresso Province Dual A/B` avviati e verificati, controller8736/6504;
+  entrambi `waiting_reset`: API live quota breve100%, settimanale0%. Nessuna
+  ricerca partita: attesa rinnovo naturale con controllo45secondi e ripresa
+  automatica; nessun acquisto o cambio account. Vecchio task restaDisabled.
+- Stato/helper/log privati `.local/lavori/province-dual-20261031`, checkout
+  `.local/worktrees/province-loop-a-20261031` e `province-loop-b-20261031`.
+  Assegnazioni fisse, lock controller separati e pubblicazione serializzata
+  tramite directory `publication.lock` comune secondo istruzioni dei worker.
+  Stop morbido: creare `STOP_NEW_STARTS` in ENTRAMBE le cartelle lane-a/lane-b.
+- Backup remoto `backup/session-20261031-171757-ripresa-province-due-sessioni`
+  verificato dopo primo push fallito per rete e ritentato riuscito; cleanup
+  helper con errori noti. File estranei preservati. Nessuna provincia spuntata.
+
 ## Isernia — singola provincia pubblicata e verificata, 31 ottobre 2026
 
 - **145 schede in47comuni**,52ricogniti,139aggiunte e6IDconservati; cinque sintesi economiche, quattro da moduli2025 distinti dai prezzi2026. **35schede con date,110con periodi da confermare;101descrizioni seriali noindex/44schede ammesse in sitemap**. Audit data/fiere-isernia.json, fonti/limiti data/FIERE.md, originali e prove .local/ricerche/fiere-isernia-20261031;124acquisizioni tecniche/123originali SHA256, non altrettante letture.
