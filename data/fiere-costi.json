@@ -3300,6 +3300,46 @@
       "sourceUrl": "https://www.pessima.it/vuoi-esporre/",
       "checkedAt": "2026-10-31",
       "period": "2026"
+    },
+    "molise-isernia-fiera-di-san-pietro-celestino": {
+      "kind": "partial",
+      "label": "30 € istruttoria + bollo e CUP · modulo 2025",
+      "details": "Il modulo comunale del gennaio 2025, con anno da compilare, richiede 30 € di diritti istruttori e marca da bollo 16 € per la domanda unica che consente di selezionare le tre fiere. Non sono 30 € per ciascuna fiera né un prezzo completo del banco; CUP separato, importo e servizi non indicati. Verificare disposizioni dell’edizione richiesta; non tariffa 2026 certificata.",
+      "sourceUrl": "https://isernia-api.municipiumapp.it/s3/3372/allegati/2025/01/21/modello-di-domanda-partecipazione-fiere.pdf",
+      "checkedAt": "2026-10-31",
+      "period": "2025"
+    },
+    "molise-isernia-fiera-delle-cipolle": {
+      "kind": "partial",
+      "label": "30 € istruttoria + bollo e CUP · modulo 2025",
+      "details": "Il modulo comunale del gennaio 2025, con anno da compilare, richiede 30 € di diritti istruttori e marca da bollo 16 € per la domanda unica che consente di selezionare le tre fiere. Non sono 30 € per ciascuna fiera né un prezzo completo del banco; CUP separato, importo e servizi non indicati. Verificare disposizioni dell’edizione richiesta; non tariffa 2026 certificata.",
+      "sourceUrl": "https://isernia-api.municipiumapp.it/s3/3372/allegati/2025/01/21/modello-di-domanda-partecipazione-fiere.pdf",
+      "checkedAt": "2026-10-31",
+      "period": "2025"
+    },
+    "molise-isernia-fiera-dei-santi-cosma-e-damiano": {
+      "kind": "partial",
+      "label": "30 € istruttoria + bollo e CUP · modulo 2025",
+      "details": "Il modulo comunale del gennaio 2025, con anno da compilare, richiede 30 € di diritti istruttori e marca da bollo 16 € per la domanda unica che consente di selezionare le tre fiere. Non sono 30 € per ciascuna fiera né un prezzo completo del banco; CUP separato, importo e servizi non indicati. Verificare disposizioni dell’edizione richiesta; non tariffa 2026 certificata.",
+      "sourceUrl": "https://isernia-api.municipiumapp.it/s3/3372/allegati/2025/01/21/modello-di-domanda-partecipazione-fiere.pdf",
+      "checkedAt": "2026-10-31",
+      "period": "2025"
+    },
+    "molise-san-pietro-avellana-mostra-mercato-del-tartufo-bianco": {
+      "kind": "conditional",
+      "label": "Suolo 40 / 60 / 80 € · 2026",
+      "details": "Modulo per il 31 ottobre–1 novembre 2026: 40 € per suolo pubblico fino a 10 m², 60 € oltre 10 e fino a 15 m², 80 € oltre 15 m². Sono importi per le tre opzioni del modulo, senza moltiplicazione giornaliera. Fattura elettronica prevista; IVA, corrente, acqua, gazebo e altri servizi non specificati. Copia bonifico entro 28 ottobre 2026; assegnazione e disponibilità da confermare.",
+      "sourceUrl": "https://www.comune.sanpietroavellana.is.it/novita/notizie/novita_229.html",
+      "checkedAt": "2026-10-31",
+      "period": "2026"
+    },
+    "molise-san-pietro-avellana-fiera-del-tartufo-nero": {
+      "kind": "conditional",
+      "label": "Stand 60 € o suolo 40–60 € · storico 2025",
+      "details": "Modulo 9–10 agosto 2025, letto visivamente: stand a 60 € solo per commercianti di prodotti alimentari; in alternativa suolo pubblico 40 € fino a 15 m² e 60 € oltre 15 m². Fattura elettronica prevista; IVA, corrente e altri servizi non specificati. Copia bonifico entro 8 agosto 2025. Prezzi esclusivamente storici, non trasferiti all’edizione 2026.",
+      "sourceUrl": "https://www.comune.sanpietroavellana.is.it/vivere_il_comune/eventi/evento_1.html",
+      "checkedAt": "2026-10-31",
+      "period": "2025"
     }
   }
 }

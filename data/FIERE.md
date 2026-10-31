@@ -1,3 +1,19 @@
+## Isernia — ricerca documentale, 31 ottobre 2026
+
+**145 schede in 47 comuni**, ricognizione nominale dei **52 comuni**: 139 aggiunte e sei ID conservati. **35 schede con edizioni puntuali, 110 con soli periodi documentati**; cinque sintesi economiche, quattro delle quali riferite a moduli storici 2025. Ricerca accessibile attuale conclusa con limiti, non censimento certificato. Audit data/fiere-isernia.json; originali, letture, errori e prove .local/ricerche/fiere-isernia-20261031. 124 acquisizioni tecniche, 123 originali SHA256 verificati: non altrettante letture integrali o fonti indipendenti.
+
+Repertorio provinciale: 52 schede lette, quattro pagine indice; mesi usuali senza proiezioni annuali. PDF regionale **Anno2011**, non calendario2026. Guida originale comunale **Feste d’Estate2026**, 28pagine estratte e lette con campioni visivi: la sezione finale **SETTEMBRE2025** non diventa conferma2026. Sagre, mercatini e frazioni distinti da processioni, concerti, pranzi sociali e mostre senza vendita. Cinque comuni senza schede non dichiarati privi di eventi.
+
+**Isernia:** FieraCipolle28–29giugno2026 distinta da FestaCipollaBianca26–27. Modulo gennaio2025 con anno aperto: domanda unica e scelta delle tre fiere, **30€istruttoria+16€bollo**, CUP e servizi separati, non costo completo e non quota per ogni fiera. Terminegenerale1marzo, proroga comunale **20marzo2025** solo per quell’anno; nessuna scadenza2026/2027 ricostruita. Fiere storiche1858/1931 non reintrodotte.
+
+**SanPietroAvellana:** moduloBianco scansionato letto visivamente: **31ottobre–1novembre2026**, 40€suolo fino10m²,60€oltre10fino15m²,80€oltre15m²; copia bonifico entro28ottobre. Nessuna moltiplicazione giornaliera né IVA/servizi dedotti. Nero **8–9agosto2026** dalla guida e comunicato; pagina/moduloComune ancora **9–10agosto2025**, con storico stand60€soloalimentari oppure suolo40/60€ fino/oltre15m², non prezzi2026. Le due tabelle scansionate verificate visivamente, collegamenti di recupero e originali conservati.
+
+Casearia28–30agosto2026, domanda30giugno e successiva selezione; **menu12/18€e pass non costo stand**. FrosoloneColtelli **5–6settembre**, non agosto del testo turistico; seiID conservati. Miranda23–27luglio daANSA, TartufoinPiazza26luglio11; RaviolataScapoli15febbraio da gruppo ospite, nessun doppioneagosto. FrittataMontaquila23–24maggio da comunicato ripreso, sitoorganizzatore403; Mela10–11ottobre daComune, avviso2025rimosso410. Longano soloagosto con discordanza10–12/15–16; FrammentiAntico sitoancora2024, solo ricorrenza18agosto. MortazzaTintilia soloagosto senza giorno dedotto. SagraFuturo7–9agosto con mercatinoautoproduzioni riservato ai soci: contributi15/35€ingresso e10€tenda non quotaespositore.
+
+Limiti: ConcaCasaleerrorecertificato, indiceSanPietro404; albi e social non letti integralmente. Aggregatori senza mese affidabile e Natalegenerico esclusi. NuoveIdeeperNataleCapracotta sono laboratori preparatori benefici, non mercato continuo. ModelloMacchiaFIERA riguarda immobili, non espositori. Agrimol e altre iniziative dal solo nome non ampliate senza componente mercatale chiara. Coordinatecentri comunali, nessun posto libero promesso o contatto a terzi; nuovi bandi, quote, programmi e rinvii sono manutenzione futura.
+
+Checkout isolato, **Taranto già integrata e verificata dall’altra sessione**, Pavia riservata, task e stopautomatico preservati. Altre **8.889schede e381tariffe precedenti identiche**; catalogo9.034schede, cacheJS145/JSON111. ArrosticiniSantAgapitoScalo11–12settembre2026 dal programma ripreso daisNews. Locale: 145dettagli, cinque costi, elenco/mappa e sei pagine senzaJS per formato passati su Chromium1440/320 e WebKit390. Settori, build ripetibile, 9.034pagine/4.596sitemap e gitleaks passati; suite generale finale in corso. Provincia non ancora spuntata: pubblicazione e verifiche live da completare.
+
 # Calendario fiere — fonti e aggiornamento
 
 ## Taranto — ricerca documentale, 31 ottobre 2026
