@@ -2,6 +2,13 @@
 
 ## Ripresa loop in due sessioni — 31 ottobre 2026
 
+- **Correzione corrente dell'utente:** entrambe le sessioni su **Codex1**, profilo
+  `C:\Users\utente\.codex`; Codex2 inutilizzato fino a nuova istruzione. I due
+  controller in attesa sulSecondo fermati senza worker attivi; configurazione,
+  monitor quota e prompt corretti alPrincipale, con sue preferenze modello.
+  APIlive17:22: quota breve94%, settimanale52%. Code Foggia/Avellino e isolamento
+  invariati. Backup remoto `backup/session-20261031-172153-province-dual-codex1`
+  verificato. I riferimenti alSecondo qui sotto descrivono il primo avvio errato.
 - Richiesta corrente supera lo stop del30ottobre: due sessioni contemporanee,
   account Secondo e preferenze modello conservati, Pavia riservata. Venti
   province avviabili divise in due code disgiunte, prime Foggia e Avellino.
