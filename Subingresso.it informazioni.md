@@ -1,5 +1,12 @@
 # Subingresso.it — informazioni e TO DO
 
+## Isernia — singola provincia pubblicata e verificata, 31 ottobre 2026
+
+- **145 schede in47comuni**,52ricogniti,139aggiunte e6IDconservati; cinque sintesi economiche, quattro da moduli2025 distinti dai prezzi2026. **35schede con date,110con periodi da confermare;101descrizioni seriali noindex/44schede ammesse in sitemap**. Audit data/fiere-isernia.json, fonti/limiti data/FIERE.md, originali e prove .local/ricerche/fiere-isernia-20261031;124acquisizioni tecniche/123originali SHA256, non altrettante letture.
+- Dati `fd26d9c`, [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/5Vaiwdmtz5ZM8pFterBH9mYkmpYw): cinqueasset identici, **145pagine HTTP200** con canonical/partecipazione/costi; Chromium1440/320 e WebKit390 locali/live,145dettagli/cinquecosti/elenco/mappa/seinoJS per formato e smoke reale font/icone passati. Generale5formati,settori,buildripetibile,9.034pagine/4.495sitemap e gitleaks passati. **8.889schede esterne e381tariffe precedenti invariate**, incluse64schedeTaranto integrate prima del lavoro. CacheJS146/JSON112.
+- FieraCipolle28–29giugno distinta da Festa26–27; Isernia30€istruttoria+16€bollo domandaunica,noncanone. BiancoSanPietro40/60/80€suolo2026; Nero40/60€suolo o60€stand **solo2025**. Frosolone5–6settembre,Miranda23–27luglio,Raviolata15febbraio. Guida finaleSETTEMBRE2025,Frammentiancora2024,Longano date discordanti e fonti403/410/certificato espliciti; nessuna disponibilità promessa.
+- **Solo casella102 dopo prove live:89concluse/21aperte su110**. Taranto,Pavia,fileestranei e stopautomatico preservati; nessun task o contatto a terzi. Backupremoto113316 e ramo pre verificati,cleanuphelper noto interrotto; copia privataSHA256283file/45.337.110byte senzaerrori più supplementofinale nella root. Primo generale partito prima dell’ultimaaggiunta ripetuto sui dati definitivi e passato.
+
 ## Taranto — singola provincia pubblicata e verificata, 31 ottobre 2026
 
 - **64 schede in 27 comuni**, 62 aggiunte e due ID conservati; ricognizione dei29comuni e **otto sintesi economiche** (Pessima e sette istanzeLaterza, non otto tariffari indipendenti). Ricerca corrente conclusa con limiti, storico e ricorrenze distinti; Monteparano/SanGiorgio senza schede non dichiarati privi di eventi. Audit `data/fiere-taranto.json`, fonti/limiti `data/FIERE.md`, originali/prove `.local/ricerche/fiere-taranto-20261031`:125acquisizioniHTTP,121fileSHA256, cinque tentativibrowser, non altrettante letture.
@@ -3216,7 +3223,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 88 province completate, 22 da fare su 110**, aggiornate il31ottobre dopo Taranto, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
+**Ricerca approfondita: 89 province completate, 21 da fare su 110**, aggiornate il31ottobre dopo Isernia, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3789,7 +3796,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [ ] **99. Ogliastra** — Sardegna
 - [ ] **100. Sulcis Iglesiente** — Sardegna
 - [ ] **101. Medio Campidano** — Sardegna
-- [ ] **102. Isernia** — Molise
+- [x] **102. Isernia** — Molise; 145 schede in47comuni,52ricogniti,139aggiunte/6IDconservati,cinque sintesi economiche; pubblicata e verificata il31ottobre2026, limiti in data/fiere-isernia.json.
 
 
 ## ⚡ Velocità e visibilità su Google
