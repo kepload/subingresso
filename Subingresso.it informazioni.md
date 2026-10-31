@@ -1,5 +1,19 @@
 # Subingresso.it — informazioni e TO DO
 
+## Terza sessione province su Codex1 — 31 ottobre 2026
+
+- Autorizzata terza sessione contemporanea e consumo fino a0%; poi attesa del
+  rinnovo naturale, senza cambio account. Codex2 resta inutilizzato, Pavia riservata.
+- Verificati tre worker suCodex1: Foggia1568 (stesso processo riadottato dal
+  controller4476), Avellino13528 e **Benevento12184**, nuovo thread avviato.
+  Task `Subingresso Province Dual C` attivo, checkout isolato
+  `.local/worktrees/province-loop-c-20261031`; stato/log in
+  `.local/lavori/province-dual-20261031/lane-c`. Code A/B/C disgiunte su20province;
+  assegnazioni aggiornate senza interrompere i worker. Lock pubblicazione comune.
+- Stop morbido corrente: `STOP_NEW_STARTS` in tutte e tre le cartelle lane-a/b/c.
+  Backup remoto `backup/session-20261031-172358-province-terza-codex1` verificato;
+  errori cleanuphelper noti, file estranei preservati. Nessuna nuova casella spuntata.
+
 ## Ripresa loop in due sessioni — 31 ottobre 2026
 
 - **Correzione corrente dell'utente:** entrambe le sessioni su **Codex1**, profilo
