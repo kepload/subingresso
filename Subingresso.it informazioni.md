@@ -1,5 +1,11 @@
 # Subingresso.it — informazioni e TO DO
 
+## Avellino verificata e chiusa — 31 ottobre 2026
+
+- Ricerca corrente conclusa con limiti:240schede/104comuni, copertura nominale118comuni, treID conservati e237aggiunte; storico, periodi, edizioni, bandi e ammissione distinti. 13sintesi costo, bollo distinto dal canone;730ricevute e719originali SHA256. Audit `data/fiere-avellino.json`, fonti/limiti in `data/FIERE.md`, dossier `.local/ricerche/fiere-avellino-20261031`.
+- Dati `0ffc3af`, [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/uNLLNPVdwQt87msiMUNv4AiUirLB):5asset identici,240pagine HTTP200 con canonical/partecipazione/prezzi/SEO; sitemap173incluse/67escluse. Chromium1440/320 eWebKit390 locali/live:240dettagli,13costi,elenco/mappa e8pagine senzaJS per formato; smoke reale font/icone e scritture intercettate passato. Generale5formati,settori,9381pagine/4778sitemap,buildripetibile e gitleaksmanuale passati. Altre9141schede e399prezzi invariati.
+- Spuntata solo82 dopo prove live: **91concluse/19aperte su110**, contando le caselle provinciali uniche. Foggia e riepilogo concorrente conservati. Lock esclusivo rispettato; backupremoto session172303 e ramo pre-avellino verificati. Corretto solo testo tariffario Venticano per overflow320, importi invariati; conflitto dossier risolto conservando entrambe sezioni, stash preservato. Hook senza binario nel checkout, scansione manuale pulita; nessun bypass. Nessun contatto, altra provincia o modifica controller. Stop dopo Avellino; Pavia riservata.
+
 ## Foggia — chiusura documentale verificata, 31 ottobre 2026
 
 - Pubblicate111schede in52comuni, ricognizione61comuni,13sintesi economiche con limiti; audit `data/fiere-foggia.json`, fonti/esclusioni/prove in `data/FIERE.md` e `.local/ricerche/fiere-foggia-20261031`. Dati26b5aa7, deploy riuscito,cinqueasset identici e111pagineHTTP200; Chromium1440/320 eWebKit390 locali/live e smoke reale passati, scritture intercettate. Altre9.033schede e386prezzi precedenti identici.
@@ -3290,7 +3296,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 90 province completate, 20 da fare su 110**, aggiornate il31ottobre dopo Foggia, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
+**Ricerca approfondita: 91 province completate, 19 da fare su 110**, aggiornate il31ottobre dopo Avellino, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3843,7 +3849,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **79. Brindisi** — Puglia — ricerca attuale conclusa con limiti:65schede nei20comuni,64aggiunte, pubblicata e verificata online il31ottobre2026. Audit `data/fiere-brindisi.json` e fonti/prove nel dossier.
 - [x] **80. Taranto** — Puglia — ricerca corrente conclusa con limiti:64schede in27comuni,29ricogniti eotto sintesi costo; pubblicata e verificata online il31ottobre2026. Audit `data/fiere-taranto.json`, fonti/prove nel dossier; intervento singolo, ciclo fermo.
 - [x] **81. Foggia** — Puglia; ricerca documentale conclusa con limiti e pubblicazione verificata il31ottobre2026:111schede,61comuni coperti. Audit `data/fiere-foggia.json` e prove `data/FIERE.md`.
-- [ ] **82. Avellino** — Campania
+- [x] **82. Avellino** — Campania; ricerca attuale conclusa con limiti e pubblicazione verificata il31ottobre2026:240schede in104comuni, ricognizione nominale118comuni. Audit `data/fiere-avellino.json` e prove `data/FIERE.md`.
 - [ ] **83. Benevento** — Campania
 - [ ] **84. L'Aquila** — Abruzzo
 - [ ] **85. Matera** — Basilicata
