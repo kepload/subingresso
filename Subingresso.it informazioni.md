@@ -9,6 +9,10 @@
   APIlive17:22: quota breve94%, settimanale52%. Code Foggia/Avellino e isolamento
   invariati. Backup remoto `backup/session-20261031-172153-province-dual-codex1`
   verificato. I riferimenti alSecondo qui sotto descrivono il primo avvio errato.
+- Avvio corretto verificato17:22: entrambi `running` suCodex1, **Foggia**
+  worker1568/controller7308 e **Avellino** worker13528/controller8396;
+  due eventi `thread.started` distinti, nessun errore iniziale. TaskA/B Running,
+  vecchio taskSecondoDisabled. Nessuna provincia ancora dichiarata conclusa.
 - Richiesta corrente supera lo stop del30ottobre: due sessioni contemporanee,
   account Secondo e preferenze modello conservati, Pavia riservata. Venti
   province avviabili divise in due code disgiunte, prime Foggia e Avellino.
