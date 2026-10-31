@@ -1,5 +1,11 @@
 # Subingresso.it — informazioni e TO DO
 
+## Foggia — chiusura documentale verificata, 31 ottobre 2026
+
+- Pubblicate111schede in52comuni, ricognizione61comuni,13sintesi economiche con limiti; audit `data/fiere-foggia.json`, fonti/esclusioni/prove in `data/FIERE.md` e `.local/ricerche/fiere-foggia-20261031`. Dati26b5aa7, deploy riuscito,cinqueasset identici e111pagineHTTP200; Chromium1440/320 eWebKit390 locali/live e smoke reale passati, scritture intercettate. Altre9.033schede e386prezzi precedenti identici.
+- Spuntata solo81 dopo prove: **90concluse/20aperte su110**, contando province uniche; storico/ricorrenze e candidature distinti, manutenzione futura separata. Pavia e lavoro concorrente preservati,nessun contatto o modifica controller; stop dopo questa provincia.
+
+
 ## Chiusura province dalle18:10 — 31 ottobre 2026
 
 - Richiesta prevalente: alle18:10 riprendere eventuali province rimaste a metà,
@@ -3284,7 +3290,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 89 province completate, 21 da fare su 110**, aggiornate il31ottobre dopo Isernia, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
+**Ricerca approfondita: 90 province completate, 20 da fare su 110**, aggiornate il31ottobre dopo Foggia, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3836,7 +3842,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **78. Barletta-Andria-Trani** — Puglia — ricerca attuale conclusa con limiti: 48 schede nei dieci comuni e otto sintesi costo; pubblicata e verificata online il 30 ottobre 2026. Audit `data/fiere-bat.json`, fonti e prove nel dossier; intervento singolo, ciclo fermo.
 - [x] **79. Brindisi** — Puglia — ricerca attuale conclusa con limiti:65schede nei20comuni,64aggiunte, pubblicata e verificata online il31ottobre2026. Audit `data/fiere-brindisi.json` e fonti/prove nel dossier.
 - [x] **80. Taranto** — Puglia — ricerca corrente conclusa con limiti:64schede in27comuni,29ricogniti eotto sintesi costo; pubblicata e verificata online il31ottobre2026. Audit `data/fiere-taranto.json`, fonti/prove nel dossier; intervento singolo, ciclo fermo.
-- [ ] **81. Foggia** — Puglia
+- [x] **81. Foggia** — Puglia; ricerca documentale conclusa con limiti e pubblicazione verificata il31ottobre2026:111schede,61comuni coperti. Audit `data/fiere-foggia.json` e prove `data/FIERE.md`.
 - [ ] **82. Avellino** — Campania
 - [ ] **83. Benevento** — Campania
 - [ ] **84. L'Aquila** — Abruzzo
