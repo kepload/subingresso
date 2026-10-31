@@ -1,0 +1,3037 @@
+{
+  "province": "Taranto",
+  "checkedAt": "2026-10-31",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti",
+    "baselineCommit": "33f6f26",
+    "privateArchive": ".local/ricerche/fiere-taranto-20261031",
+    "statistics": {
+      "events": 64,
+      "municipalitiesCovered": 29,
+      "municipalitiesWithEvents": 27,
+      "baselineEvents": 2,
+      "addedEvents": 62,
+      "pricingSummaries": 8,
+      "technicalReceipts": 125,
+      "hashVerifiedOriginals": 121,
+      "otherEventsPreserved": 8831
+    },
+    "scope": "Singola provincia richiesta. Pavia riservata, controller fermo, stop persistente e file estranei preservati. Nessun invio, candidatura o contatto a terzi.",
+    "methodology": "Ricerche nominali e tematiche, calendari comunali, portali turistici, documenti originali e comunicati organizzatori. Lettura mirata DSC, BURP e graduatoriaStatte; programmi e tabella prezzi visti. Fonti editoriali dichiarate, nessun calendario automatico assunto come conferma.",
+    "municipalities": [
+      {
+        "city": "Avetrana",
+        "eventCount": 1,
+        "events": [
+          "puglia-avetrana-sagra-della-polpetta"
+        ],
+        "sources": [
+          "https://www.tammurria.it/news/tammurria-live-agosto-2026/"
+        ],
+        "outcome": "Polpetta13agosto2026 dal calendario direttoTammurria. AvvisoSTP12luglio non usato per duplicare:403 via requests e browser; numerazione24/25 discordante. SanBiagio e Fricennu senza originale operativo corrente esclusi."
+      },
+      {
+        "city": "Carosino",
+        "eventCount": 1,
+        "events": [
+          "puglia-carosino-sagra-del-vino"
+        ],
+        "sources": [
+          "https://www.lasagradelvino.it/",
+          "https://www.lasagradelvino.it/download/60SagraDelVino_programma.pdf"
+        ],
+        "outcome": "ProgrammaPDF originale scansionato visto:10–12agosto2026. Vecchio progetto28–30agosto e consuetudine luglio respinti. Nessun nuovo evento dalla fontana o dal solo concerto."
+      },
+      {
+        "city": "Castellaneta",
+        "eventCount": 1,
+        "events": [
+          "puglia-castellaneta-sagra-da-far-nedd-e-dei-sapori-di-puglia"
+        ],
+        "sources": [
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2183-sagra-da-farnedd-e-dei-sapori-di-puglia-2026/2026-08-09-19-00"
+        ],
+        "outcome": "Far’nedd9agosto2026 da comunicatoUniComArt ripreso da IstintoPrimitivo. Sito originale503 anchebrowser; biglietti pubblico non quota banco, nessun primato o affluenza certificati."
+      },
+      {
+        "city": "Crispiano",
+        "eventCount": 2,
+        "events": [
+          "puglia-crispiano-sagra-del-fegatino",
+          "puglia-crispiano-sagra-del-pomodoro-giallorosso"
+        ],
+        "sources": [
+          "https://www.crispianoturismo.it/event/sagra-del-fegatino-3/",
+          "https://www.crispianoturismo.it/event/sagra-del-pomodoro-giallorosso-2/"
+        ],
+        "outcome": "Fegatino24–26luglio e Pomodoro19–20settembre da portale turistico con organizzatore. CrispianoComix pagina turismo storica e comunicato2025di sospensione ripreso da mirror: nessun ritorno2026 dedotto. Campionato pizza soltanto pista promozionale, nessun mercato documentato."
+      },
+      {
+        "city": "Faggiano",
+        "eventCount": 1,
+        "events": [
+          "puglia-faggiano-festa-della-vendemmia"
+        ],
+        "sources": [
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2297-festa-della-vendemmia-2026"
+        ],
+        "outcome": "Vendemmia28–29agosto2026 da comunicatoassociazione ripreso nel portalePrimitivo. Presepe, Natale e feste senza nuova prova commerciale non ampliati."
+      },
+      {
+        "city": "Fragagnano",
+        "eventCount": 1,
+        "events": [
+          "puglia-fragagnano-fiera-agricola-di-san-giuseppe"
+        ],
+        "sources": [
+          "https://www.bigitalia.com/it/puglia/taranto/fragagnano/eventi-e-sagre/san-giuseppe-patrono-della-fiera-agricola-fragagnano-3457/"
+        ],
+        "outcome": "FieraAgricola solo marzo/ricorrenza13–14 da repertorio secondario: niente automatiche2027. URLvecchio fiere ritorna alla home; Coloris12dicembre e standistituzionali al SaloneTaranto non prove sufficienti di evento commerciale corrente."
+      },
+      {
+        "city": "Ginosa",
+        "eventCount": 3,
+        "events": [
+          "puglia-ginosa-fico-beer-fest",
+          "puglia-ginosa-fiera-di-santa-maria-d-attoli-e-san-giuseppe",
+          "puglia-ginosa-fiera-della-madonna-del-rosario-e-dei-ss-medici"
+        ],
+        "sources": [
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2257-fico-beer-fest-2026",
+          "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+        ],
+        "outcome": "FICO31luglio–2agosto da comunicato e PDF, dominioorganizzatoreDNS. Duefiere daBURP2013 solo mesi, non processioni2026; Comune403. SagraPesce/Anguria solo segnalazioneaggregatore senza programma diretto sufficiente non aggiunta."
+      },
+      {
+        "city": "Grottaglie",
+        "eventCount": 5,
+        "events": [
+          "puglia-grottaglie-fiera-di-san-ciro",
+          "puglia-grottaglie-fiera-della-madonna-di-mutata",
+          "puglia-grottaglie-fiera-di-san-francesco-de-geronimo",
+          "puglia-grottaglie-fiera-delle-grotte",
+          "puglia-grottaglie-orecchiette-nelle-nchiosce"
+        ],
+        "sources": [
+          "https://comune.grottaglie.ta.it/it/news/1948218",
+          "https://www.a-taranto.it/eventi/orecchiette-nelle-nchiosce",
+          "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+        ],
+        "outcome": "Orecchiette4–5agosto fonteeditoriale, quattrofiereBURP2013 mantenute come ricorrenze senza giorni attuali. SanCiroordinanza30–31gennaio non prova posteggi. Grotte13settembre2026 solo schedaIA non usata come conferma. GrottaglieinFiera solo archivio2012 non riattivato."
+      },
+      {
+        "city": "Laterza",
+        "eventCount": 8,
+        "events": [
+          "puglia-laterza-fiera-mater-domini",
+          "puglia-laterza-fiera-madonna-del-carmine",
+          "puglia-laterza-fiera-dei-ss-medici",
+          "puglia-laterza-festa-madonna-delle-grazie-posteggi",
+          "puglia-laterza-festa-mater-domini-posteggi",
+          "puglia-laterza-festa-madonna-del-carmine-posteggi",
+          "puglia-laterza-festa-ss-medici-posteggi",
+          "puglia-laterza-sagra-dell-arrosto"
+        ],
+        "sources": [
+          "https://www.a-taranto.it/eventi/sagra-dellarrosto",
+          "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+        ],
+        "outcome": "Settemanifestazioni da avviso2026 con istanzedistinte, 16€bollo e5€diritti non canone. Refuso15luglio giovedì/mercoledì preservato. Arrosto2agosto da portaleeditoriale, non3 stimato. LinkmoduliJavaScript non dichiarati letti."
+      },
+      {
+        "city": "Leporano",
+        "eventCount": 1,
+        "events": [
+          "puglia-leporano-sagra-della-bombetta"
+        ],
+        "sources": [
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2318-sagra-della-bombetta/2026-08-29-19-00"
+        ],
+        "outcome": "Bombetta29agosto2026 con mercatini da comunicatoProLoco. Mortadella solo consuetudine senza programma corrente operativo non aggiunta."
+      },
+      {
+        "city": "Lizzano",
+        "eventCount": 1,
+        "events": [
+          "puglia-lizzano-wine-tour-fest"
+        ],
+        "sources": [
+          "https://www.comune.lizzano.ta.it/evento/wine-tour-fest-2026/"
+        ],
+        "outcome": "WineTour11–13agosto2026 daComune. Tavolate, falò e SanPasquale con intervallo editoriale ambiguo non trasformati in banchi o date plurime."
+      },
+      {
+        "city": "Manduria",
+        "eventCount": 1,
+        "events": [
+          "puglia-manduria-fiera-pessima"
+        ],
+        "sources": [
+          "https://www.mailticket.it/manifestazione/RM44/fiera-pessima-2026",
+          "https://www.pessima.it/espositori-2/",
+          "https://www.pessima.it/news-2026/conferenza-stampa-di-presentazione-della-283-edizione-di-pessima/",
+          "https://www.pessima.it/vuoi-esporre/"
+        ],
+        "outcome": "PessimaIDconservato,6–12marzo2026 daMailticket. Listino corpo283ª/titoloHTML2024 e footer2023 espliciti:650gazebo con700barrato,truck300,energia120 separata,IVA senza aliquota. Gara2027gestione non bando stand e nessuna data2027inventata."
+      },
+      {
+        "city": "Martina Franca",
+        "eventCount": 11,
+        "events": [
+          "puglia-martina-franca-fiera-di-san-martino",
+          "puglia-martina-franca-fiera-della-candelora",
+          "puglia-martina-franca-festa-madonna-della-sanita-posteggi",
+          "puglia-martina-franca-festa-sant-antonio-posteggi",
+          "puglia-martina-franca-festa-patronale-di-san-martino-posteggi",
+          "puglia-martina-franca-festa-madonna-del-carmine-posteggi",
+          "puglia-martina-franca-festa-cristo-spirante-posteggi",
+          "puglia-martina-franca-mercatino-dell-antiquariato-di-ortolini",
+          "puglia-martina-franca-antiquariato-in-valle-d-itria",
+          "puglia-martina-franca-apuliasposi-fiera-del-matrimonio",
+          "puglia-martina-franca-expocasa"
+        ],
+        "sources": [
+          "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+          "https://www.comune.martinafranca.ta.it/Novita/Comunicati/L-antiquariato-torna-a-primavera-a-Martina-Franca",
+          "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Martina-festeggia-i-suoi-Patroni-San-Martino-e-Santa-Comasia",
+          "https://www.comune.martinafranca.ta.it/Novita/Comunicati/XXV-Edizione-di-Antiquariato-in-Valle-d-Itria-a-Martina-Franca-dall-8-al-16-agosto",
+          "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo",
+          "https://www.eventofiera.it/"
+        ],
+        "outcome": "IDSanMartino preservato: solo2025, Candelora2febbraio2026. Cinquefesteestive solo2025;11date mensileOrtolini daComune, nienteagosto. Mostramercato23–26aprile/8–16agosto sedi diverse. APULIASPOSI2–4ottobre2026 ed EXPOCASA9–12aprile2026/8–11aprile2027 dall’organizzatore."
+      },
+      {
+        "city": "Maruggio",
+        "eventCount": 3,
+        "events": [
+          "puglia-maruggio-la-strada-dei-saperi-e-dei-sapori",
+          "puglia-maruggio-la-notte-della-pecora-nera",
+          "puglia-maruggio-calici-e-pettole"
+        ],
+        "sources": [
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2247-la-notte-della-pecora-nera/2026-07-24-20-00",
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2299-la-strada-dei-saperi-e-dei-sapori-2026",
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2311-calici-e-pettole-2/2026-08-10-20-00"
+        ],
+        "outcome": "Strada18–19agosto, Calici10agosto e PecoraNera24luglio da comunicati ripresi; artigiani/hobbisti espliciti per PecoraNera. Feste religiose e AspettandoSanMartino non ampliate senza provaoperativa."
+      },
+      {
+        "city": "Massafra",
+        "eventCount": 4,
+        "events": [
+          "puglia-massafra-fiera-madonna-della-scala",
+          "puglia-massafra-fiera-san-michele-e-ss-medici",
+          "puglia-massafra-sagra-del-tornerai",
+          "puglia-massafra-festa-della-birra"
+        ],
+        "sources": [
+          "https://www.comune.massafra.ta.it/novita/provvedimenti-a-tutela-della-sicurezza-pubblica-in-occasione-della-festa-della-birra-1-2-agosto-2026-divieti-per-i-contenitori-in-vetro-e-regolamentazione-delle-attivita-di-vendit/",
+          "https://www.comune.massafra.ta.it/novita/sagra-del-tornerai/",
+          "https://www.comune.massafra.ta.it/novita/viabilita-stradale-sagra-del-tornerai-2/",
+          "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+        ],
+        "outcome": "Birra1–2agosto2026 daComune; sanzioni non quote. Tornerai18–20luglio2024 non2026 (data tecnica sito), duefiereBURP2013 solo ricorrenze. Antiquariato2023 non proiettato; Carnevalebando carri non espositori; Natale2026raccoltaproposte non calendario mercatini."
+      },
+      {
+        "city": "Monteiasi",
+        "eventCount": 1,
+        "events": [
+          "puglia-monteiasi-sagra-della-frisella"
+        ],
+        "sources": [
+          "https://www.cronachetarantine.it/index.php/cultura-eventi-spettacoli/17318-a-monteiasi-torna-la-sagra-della-frisella-una-serata-tra-tradizione-musica-e-convivialita"
+        ],
+        "outcome": "Frisella7agosto2026 da comunicatoComune ripreso daCronacheTarantine; offerta di vino/friselle al pubblico non banco gratuito. Altre ricorrenze non convertite in mercati."
+      },
+      {
+        "city": "Montemesola",
+        "eventCount": 1,
+        "events": [
+          "puglia-montemesola-montemesola-beer-fest"
+        ],
+        "sources": [
+          "https://www.a-taranto.it/eventi/montemesola-beer-fest"
+        ],
+        "outcome": "BeerFest7–8agosto2026 fonteeditoriale. Baffi/fave con descrizioni e numerazioni discordanti senza originale primario sufficiente esclusi; Natale2025sponsor non listino banco. CastelloHalloween è aPulsano non Montemesola."
+      },
+      {
+        "city": "Monteparano",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "HomeComune e ricerca interna consultate; repertorioExpoAspettandoSanMartino senza anno, ubicazione e offerta commerciale sufficiente: escluso. OrdinanzaSantiMedici sola processione non mercato. Nessuna scheda non significa assenzaeventi."
+      },
+      {
+        "city": "Mottola",
+        "eventCount": 2,
+        "events": [
+          "puglia-mottola-festa-della-trebbiatura-e-della-cuccagna",
+          "puglia-mottola-festa-della-trebbiatura-del-grano-senatore-cappelli"
+        ],
+        "sources": [
+          "https://mottola-api.municipiumapp.it/s3/4540/allegati/estate-2026.jpeg",
+          "https://www.lostradone.eu/domenica-9-agosto-la-3a-festa-della-trebbiatura-del-grano-senatore-cappelli/",
+          "https://www.mapulia.org/eventi/festa-della-trebbiatura-e-della-cuccagna-evt_8b9ee332ddfc7f2f4e95"
+        ],
+        "outcome": "ManifestoEstate2026 visto, TrebbiaturaQuisisana25–26luglio con stand da ripresa programma; distinta festaSenatoreCappelli9agostoSanBasilio. Trebbiatura10ª da atto liquidazione non tariffa. Programmi sportivi e solo concerti esclusi."
+      },
+      {
+        "city": "Palagianello",
+        "eventCount": 1,
+        "events": [
+          "puglia-palagianello-fiera-di-san-martino"
+        ],
+        "sources": [
+          "https://www.comune.palagianello.ta.it/vivere-il-comune/eventi/fiera-di-san-martino-2024/"
+        ],
+        "outcome": "SanMartino9novembre2025 daComune, domanda26ottobre e bollo16 non canone. Pagina inURL2024 reca2025, datebanner settembre–ottobre sono domanda.8novembre2026 degliaggregatori senza originale non importato. Vecchie fieresperimentali e Natale non nuoveedizioni."
+      },
+      {
+        "city": "Palagiano",
+        "eventCount": 1,
+        "events": [
+          "puglia-palagiano-sagra-del-mandarino"
+        ],
+        "sources": [
+          "https://www.expotaranto.com/tour/fiere-e-sagre"
+        ],
+        "outcome": "SagraMandarino solo dicembre da repertorioturistico, senza data2026. Programmaestate letto come contenitore non mercatounico; progettoPaeseArancio e contributoProLoco non provano nuove concessioni."
+      },
+      {
+        "city": "Pulsano",
+        "eventCount": 1,
+        "events": [
+          "puglia-pulsano-t-fest-la-sagra-delle-tipicita"
+        ],
+        "sources": [
+          "https://www.vivipulsano.it/4a-edizione-del-t%e2%80%91fest-la-sagra-delle-tipicita/"
+        ],
+        "outcome": "T-Fest24–26luglio2026 da portaleufficiale. Halloween30–31ottobre daProLoco è evento diintrattenimento senza mercato documentato: non aggiunto. Feste e programmi teatrali non esposizioni commerciali automatiche."
+      },
+      {
+        "city": "Roccaforzata",
+        "eventCount": 1,
+        "events": [
+          "puglia-roccaforzata-sagra-della-frisedda"
+        ],
+        "sources": [
+          "https://prolocoroccaforzata.wixsite.com/proloco-roccaforzata/dettagli-e-registrazioni/20-edizione-della-sagra-della-frisedda"
+        ],
+        "outcome": "SitoProLoco: Frisedda8settembre2023 e periodo usuale; non2026. SagreSapori24–28luglio2024 senza dettagli commerciali sufficienti non ampliato. SantElia e Camera soli riti non nuovefiere."
+      },
+      {
+        "city": "San Giorgio Ionico",
+        "eventCount": 0,
+        "events": [],
+        "sources": [],
+        "outcome": "PaginaEstate2026 e allegato acquisizione403 anchebrowser; lettura web del testo introduttivo non lettura della locandina. ComeAquiloni èlaboratorio/picnic nonmercato; FiorinoFutureFestival solo musica senza candidatura recuperata escluso. Nessuna scheda non significa assenzaeventi."
+      },
+      {
+        "city": "San Marzano di San Giuseppe",
+        "eventCount": 3,
+        "events": [
+          "puglia-san-marzano-di-san-giuseppe-frittella-festival",
+          "puglia-san-marzano-di-san-giuseppe-fiera-di-san-giuseppe",
+          "puglia-san-marzano-di-san-giuseppe-fiera-di-san-cosimo"
+        ],
+        "sources": [
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2284-frittella-festival-edizione-0/2026-08-29-20-30",
+          "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+        ],
+        "outcome": "Frittella29agosto2026 da comunicatoProLoco, non fino30 dalla viabilità; duefiereBURP2013 solo ricorrenze, Giuseppe prima domenicamarzo non falò18–19. MED2026 dominioDNS/ricerca senza programma, non dedotto dal richiamo Frittella."
+      },
+      {
+        "city": "Sava",
+        "eventCount": 2,
+        "events": [
+          "puglia-sava-calici-di-stelle",
+          "puglia-sava-cibusava-food-experience"
+        ],
+        "sources": [
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2181-cibus-food-experience-2026/2026-07-25-20-00",
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2274-calici-di-stelle-2026-sava/2026-08-10-19-00"
+        ],
+        "outcome": "Calici10agosto e CibuSava25luglio2026 da comunicatiComune ripresi; no bando o costo. Patronale, Natale2026 e presunto festival2027 senza posteggi verificati esclusi."
+      },
+      {
+        "city": "Statte",
+        "eventCount": 1,
+        "events": [
+          "puglia-statte-fiera-straordinaria-madonna-del-rosario"
+        ],
+        "sources": [
+          "https://www.comune.statte.ta.it/sites/default/files/articolo/DETERMINA_Num_597_Atto%20copia%20conforme.PDF"
+        ],
+        "outcome": "Determina597originale letta:6–7ottobre2026,13ammissibili/17istanze e graduatoria giàapprovata, non postiliberti. Allegatograduatorianominativa non ripubblicato. SitoComune e avviso letti, nessunaquota inventata."
+      },
+      {
+        "city": "Taranto",
+        "eventCount": 5,
+        "events": [
+          "puglia-taranto-fiera-dell-epifania",
+          "puglia-taranto-fiera-di-san-cataldo",
+          "puglia-taranto-taranto-beer-fest",
+          "puglia-taranto-taranto-comix",
+          "puglia-taranto-mercatino-della-befana-area-ex-camper"
+        ],
+        "sources": [
+          "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/7152/allegati/documenti-pubblici/documenti-strategici-commercio/documento_strategico_del_commercio_taranto_.pdf",
+          "https://taranto-api.municipiumapp.it/s3/7152/allegati/fiera-epifania.pdf",
+          "https://www.a-taranto.it/eventi/taranto-comix-2026",
+          "https://www.comune.taranto.it/it/news/1939149",
+          "https://www.comune.taranto.it/it/news/natale-a-taranto-calendario-degli-eventi-dall-1-al-6-gennaio-2026",
+          "https://www.grafitefumetto.it/2026/05/05/taranto-comix-2026-programma/",
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2197-taranto-beer-fest-4",
+          "https://www.kymamobilita.it/tag/processione-a-mare/"
+        ],
+        "outcome": "Epifania4–6gennaio da rettificaPDF, assegnazione4gennaio9. MercatinoBefana6gennaioexcamper autonomo, non duplicato. SanCataldo periodo usuale8–10maggio daDSC e fiera8maggioLungomare daKyma: nessun intero2026 confermato da403 stampa. Beer6–9agosto,Comix9–10maggio con partner diretto, prezzi biglietto distinti."
+      },
+      {
+        "city": "Torricella",
+        "eventCount": 1,
+        "events": [
+          "puglia-torricella-sagra-medievale"
+        ],
+        "sources": [
+          "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2174-sagra-medievale-2026/2026-07-25-19-00"
+        ],
+        "outcome": "Medievale25luglio2026 da comunicatoProLoco e BorgodelGusto21. SagreRioni e MadonnaGrazie solo consuetudini senza programmaoperativo sufficiente non ampliate; omonimiTorricellaSicura/Pizzo esclusi."
+      }
+    ],
+    "sourceReceipts": [
+      {
+        "url": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html",
+        "status": 200,
+        "finalUrl": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html",
+        "sha256": "f7a49f0d2682713030b98cb5f60f3006c6673396d6cdee4de38ae764d29c45ad",
+        "retrievedAt": "2026-10-31T10:14:05.466273+00:00"
+      },
+      {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "status": 200,
+        "finalUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "sha256": "27a6f70fbc204e35a3f5855d487a32d9f0e17dd9d3c6cbc0d285550e51424598",
+        "retrievedAt": "2026-10-31T10:14:05.466804+00:00"
+      },
+      {
+        "url": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo",
+        "status": 200,
+        "finalUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo",
+        "sha256": "31862fef03c46174dbef58c48dc0b7450ea75806028be1fe7f802b30e52ff205",
+        "retrievedAt": "2026-10-31T10:14:05.467489+00:00"
+      },
+      {
+        "url": "https://www.lasagradelvino.it/",
+        "status": 200,
+        "finalUrl": "https://www.lasagradelvino.it/",
+        "sha256": "99c42733c9a2b6a477c42f2b5bd0230e70a904ca0aa6bd0e734a1de02581a32b",
+        "retrievedAt": "2026-10-31T10:14:05.473943+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2318-sagra-della-bombetta/2026-08-29-19-00",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2318-sagra-della-bombetta/2026-08-29-19-00",
+        "sha256": "0c5e934680b075922af75a4a50a86918f14f9d15cc428ea0f9fbc33b2f6b6b82",
+        "retrievedAt": "2026-10-31T10:14:07.865496+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2297-festa-della-vendemmia-2026",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2297-festa-della-vendemmia-2026",
+        "sha256": "9dabdbad79f49a9c06a15294864c3cf4671e44000c5f7f7a4bf9689b59858518",
+        "retrievedAt": "2026-10-31T10:14:07.942894+00:00"
+      },
+      {
+        "url": "https://www.expotaranto.com/tour/fiere-e-sagre",
+        "status": 200,
+        "finalUrl": "https://www.expotaranto.com/tour/fiere-e-sagre",
+        "sha256": "3e1e351a5e81a6d5b14fed0ade80849be7c3fbd2cd2587cd8da55d37ca841865",
+        "retrievedAt": "2026-10-31T10:14:08.082289+00:00"
+      },
+      {
+        "url": "https://www.lasagradelvino.it/download/60SagraDelVino_programma.pdf",
+        "status": 200,
+        "finalUrl": "https://www.lasagradelvino.it/download/60SagraDelVino_programma.pdf",
+        "sha256": "ba6c5113a341d778052a1ed4a012d12901f13661c0d90a5fd7d469ca6e89f149",
+        "retrievedAt": "2026-10-31T10:14:32.708731+00:00"
+      },
+      {
+        "url": "https://www.crispianoturismo.it/event/sagra-del-pomodoro-giallorosso-2/",
+        "status": 200,
+        "finalUrl": "https://www.crispianoturismo.it/event/sagra-del-pomodoro-giallorosso-2/",
+        "sha256": "42749f7f4dc82299f027d02039211476d3042597a23b1ba1d8e1092f6b836d99",
+        "retrievedAt": "2026-10-31T10:14:32.709205+00:00"
+      },
+      {
+        "url": "https://www.crispianoturismo.it/event/sagra-del-fegatino-3/",
+        "status": 200,
+        "finalUrl": "https://www.crispianoturismo.it/event/sagra-del-fegatino-3/",
+        "sha256": "1f393d2d715e793ab5eb47fa2fee6b9022e858f59b952c0adbc74d43614043da",
+        "retrievedAt": "2026-10-31T10:14:32.709658+00:00"
+      },
+      {
+        "url": "https://www.comune.lizzano.ta.it/evento/wine-tour-fest-2026/",
+        "status": 200,
+        "finalUrl": "https://www.comune.lizzano.ta.it/evento/wine-tour-fest-2026/",
+        "sha256": "7f7020ff104c390e49b745dbefb529f12ce60136f031cd3ed46d2c6faadf6dc9",
+        "retrievedAt": "2026-10-31T10:14:32.710232+00:00"
+      },
+      {
+        "url": "https://mottola-api.municipiumapp.it/s3/4540/allegati/estate-2026.jpeg",
+        "status": 200,
+        "finalUrl": "https://mottola-api.municipiumapp.it/s3/4540/allegati/estate-2026.jpeg",
+        "sha256": "19edc18158987e80be528351d100b141bff22a447fa8af1361307b197c968e70",
+        "retrievedAt": "2026-10-31T10:14:32.712131+00:00"
+      },
+      {
+        "url": "https://www.comune.statte.ta.it/sites/default/files/articolo/DETERMINA_Num_597_Atto%20copia%20conforme.PDF",
+        "status": 200,
+        "finalUrl": "https://www.comune.statte.ta.it/sites/default/files/articolo/DETERMINA_Num_597_Atto%20copia%20conforme.PDF",
+        "sha256": "35352314094f925ec7be78ebbcfcaa5e3a4adacb83e57bb9e045244d3553da46",
+        "retrievedAt": "2026-10-31T10:14:32.714673+00:00"
+      },
+      {
+        "url": "https://www.vivipulsano.it/4a-edizione-del-t%e2%80%91fest-la-sagra-delle-tipicita/",
+        "status": 200,
+        "finalUrl": "https://www.vivipulsano.it/4a-edizione-del-t%E2%80%91fest-la-sagra-delle-tipicita/",
+        "sha256": "ae2399117846a503a5d8d51bb50af9c17f04aa40e9a62d0f4b913fa16af8a30a",
+        "retrievedAt": "2026-10-31T10:14:32.715599+00:00"
+      },
+      {
+        "url": "https://www.pessima.it/espositori-2/",
+        "status": 200,
+        "finalUrl": "https://www.pessima.it/espositori-2/",
+        "sha256": "faddf8d042f978abf57f0931813e6ddd1381234c85d22bd8144f66a7b4200330",
+        "retrievedAt": "2026-10-31T10:14:32.717309+00:00"
+      },
+      {
+        "url": "https://www.pessima.it/news-2026/conferenza-stampa-di-presentazione-della-283-edizione-di-pessima/",
+        "status": 200,
+        "finalUrl": "https://www.pessima.it/news-2026/conferenza-stampa-di-presentazione-della-283-edizione-di-pessima/",
+        "sha256": "095d8facd8e1a3265bb99773f5398228c81fdf32f46579ba6fc83d6668ec3038",
+        "retrievedAt": "2026-10-31T10:14:32.717675+00:00"
+      },
+      {
+        "url": "https://www.eventofiera.it/",
+        "status": 200,
+        "finalUrl": "https://www.eventofiera.it/",
+        "sha256": "b813b88baf5be8ad001ce75560d1403e50fe420012325e9817cff73e818b8bcd",
+        "retrievedAt": "2026-10-31T10:15:06.960111+00:00"
+      },
+      {
+        "url": "https://www.pessima.it/vuoi-esporre/",
+        "status": 200,
+        "finalUrl": "https://www.pessima.it/vuoi-esporre/",
+        "sha256": "9ee27da390508861956fdf360c14cf5ac20f0a43bdb17510f777cfae44ffd8e2",
+        "retrievedAt": "2026-10-31T10:15:06.960615+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2299-la-strada-dei-saperi-e-dei-sapori-2026",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2299-la-strada-dei-saperi-e-dei-sapori-2026",
+        "sha256": "4d83e84e893115171677714c303b70998a8f6579043d826093f0c7c9ce5ef9ec",
+        "retrievedAt": "2026-10-31T10:15:06.968643+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2274-calici-di-stelle-2026-sava/2026-08-10-19-00",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2274-calici-di-stelle-2026-sava/2026-08-10-19-00",
+        "sha256": "88995d9b3ed8b48f5eda0aa5c272836f5c8d51acbb00f744ffc4522d6c7bc2ca",
+        "retrievedAt": "2026-10-31T10:15:06.970700+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2174-sagra-medievale-2026/2026-07-25-19-00",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2174-sagra-medievale-2026/2026-07-25-19-00",
+        "sha256": "eca82aa96ba28c988d46a8952cdd73d601d0ab8b7cb9bbd67be182afd33eeb17",
+        "retrievedAt": "2026-10-31T10:15:06.971983+00:00"
+      },
+      {
+        "url": "https://www.a-taranto.it/eventi/sagra-dellarrosto",
+        "status": 200,
+        "finalUrl": "https://www.a-taranto.it/eventi/sagra-dellarrosto",
+        "sha256": "4ea04469dbad49733abced256c38ae827a9768670d0037354ff609c0157865f3",
+        "retrievedAt": "2026-10-31T10:15:08.610862+00:00"
+      },
+      {
+        "url": "https://www.a-taranto.it/eventi/orecchiette-nelle-nchiosce",
+        "status": 200,
+        "finalUrl": "https://www.a-taranto.it/eventi/orecchiette-nelle-nchiosce",
+        "sha256": "6bdfe2340cc5ed502ef7de4028e68ef799861df06eb8aaf9e5cbe73f900a4018",
+        "retrievedAt": "2026-10-31T10:15:08.771903+00:00"
+      },
+      {
+        "url": "https://www.comune.palagianello.ta.it/vivere-il-comune/eventi/fiera-di-san-martino-2024/",
+        "status": 200,
+        "finalUrl": "https://www.comune.palagianello.ta.it/vivere-il-comune/eventi/fiera-di-san-martino-2024/",
+        "sha256": "532b18204d47a8a3fcadd2ef240a5d94a4538a7f58ec473209c82fafa7fd44ba",
+        "retrievedAt": "2026-10-31T10:15:46.871385+00:00"
+      },
+      {
+        "url": "https://www.comune.taranto.it/it/news/1939149",
+        "status": 200,
+        "finalUrl": "https://www.comune.taranto.it/it/news/1939149",
+        "sha256": "8dcbf3d45500b7617afec88247f632e8235cb9eb1866c21d321d5f4fdf71bcdb",
+        "retrievedAt": "2026-10-31T10:15:46.872326+00:00"
+      },
+      {
+        "url": "https://www.a-taranto.it/eventi/montemesola-beer-fest",
+        "status": 200,
+        "finalUrl": "https://www.a-taranto.it/eventi/montemesola-beer-fest",
+        "sha256": "e733d92e020c28c3f59fcbf245dc75d85001863fb3cd574c41ecda87d8d371dd",
+        "retrievedAt": "2026-10-31T10:15:46.876339+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2257-fico-beer-fest-2026",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2257-fico-beer-fest-2026",
+        "sha256": "57ca35ad7e4f35a7e6a277d486de94ca04353e4be113ffeed33c163921bab3c6",
+        "retrievedAt": "2026-10-31T10:15:46.877180+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2247-la-notte-della-pecora-nera/2026-07-24-20-00",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2247-la-notte-della-pecora-nera/2026-07-24-20-00",
+        "sha256": "121c48cabeb47900b186c763ff790cf279b9b15c8caa2d64bfecd6903dfdf427",
+        "retrievedAt": "2026-10-31T10:15:46.878000+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2284-frittella-festival-edizione-0/2026-08-29-20-30",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2284-frittella-festival-edizione-0/2026-08-29-20-30",
+        "sha256": "e6be8b2ea67689572ddc838329f611121193fe77f9ba151e9851fe0a2adaf95e",
+        "retrievedAt": "2026-10-31T10:16:13.757698+00:00"
+      },
+      {
+        "url": "https://prolocoroccaforzata.wixsite.com/proloco-roccaforzata/dettagli-e-registrazioni/20-edizione-della-sagra-della-frisedda",
+        "status": 200,
+        "finalUrl": "https://prolocoroccaforzata.wixsite.com/proloco-roccaforzata/dettagli-e-registrazioni/20-edizione-della-sagra-della-frisedda",
+        "sha256": "96126d4f7003a8c2d80ea58d01f29a29f01019c65945bb8117ae092185a76459",
+        "retrievedAt": "2026-10-31T10:16:14.176160+00:00"
+      },
+      {
+        "url": "https://www.comune.massafra.ta.it/novita/provvedimenti-a-tutela-della-sicurezza-pubblica-in-occasione-della-festa-della-birra-1-2-agosto-2026-divieti-per-i-contenitori-in-vetro-e-regolamentazione-delle-attivita-di-vendit/",
+        "status": 200,
+        "finalUrl": "https://www.comune.massafra.ta.it/novita/provvedimenti-a-tutela-della-sicurezza-pubblica-in-occasione-della-festa-della-birra-1-2-agosto-2026-divieti-per-i-contenitori-in-vetro-e-regolamentazione-delle-attivita-di-vendit/",
+        "sha256": "356d399dc5682da445ad5df837c2bc3dd00e720e33c1027dbdbffc8a68336087",
+        "retrievedAt": "2026-10-31T10:16:36.139047+00:00"
+      },
+      {
+        "url": "https://www.comune.massafra.ta.it/novita/viabilita-stradale-sagra-del-tornerai-2/",
+        "status": 200,
+        "finalUrl": "https://www.comune.massafra.ta.it/novita/viabilita-stradale-sagra-del-tornerai-2/",
+        "sha256": "05ac07aec079601d34ce5e3a5695aa180ffc1923a770925b7e5b1efff64a3979",
+        "retrievedAt": "2026-10-31T10:16:36.139538+00:00"
+      },
+      {
+        "url": "https://www.comune.massafra.ta.it/novita/sagra-del-tornerai/",
+        "status": 200,
+        "finalUrl": "https://www.comune.massafra.ta.it/novita/sagra-del-tornerai/",
+        "sha256": "4575447b5c2adbc038c10909ce570439063a8dfe1d828ee26aa22c29edfb8b3b",
+        "retrievedAt": "2026-10-31T10:16:36.143163+00:00"
+      },
+      {
+        "url": "https://taranto-api.municipiumapp.it/s3/7152/allegati/fiera-epifania.pdf",
+        "status": 200,
+        "finalUrl": "https://taranto-api.municipiumapp.it/s3/7152/allegati/fiera-epifania.pdf",
+        "sha256": "42f029de58a1a696c87aef0c32eb346357ef13f64ad6b1a9c265d61ebfc63c01",
+        "retrievedAt": "2026-10-31T10:16:36.146731+00:00"
+      },
+      {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/L-antiquariato-torna-a-primavera-a-Martina-Franca",
+        "status": 200,
+        "finalUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/L-antiquariato-torna-a-primavera-a-Martina-Franca",
+        "sha256": "126dc9d63df799dedb73b8b79829ba248dbe49981ed9d6fee72b912069adab4b",
+        "retrievedAt": "2026-10-31T10:16:36.149108+00:00"
+      },
+      {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/XXV-Edizione-di-Antiquariato-in-Valle-d-Itria-a-Martina-Franca-dall-8-al-16-agosto",
+        "status": 200,
+        "finalUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/XXV-Edizione-di-Antiquariato-in-Valle-d-Itria-a-Martina-Franca-dall-8-al-16-agosto",
+        "sha256": "829d051387be2b2cae00371c65932e28068817e2f50f0669960fae494360a327",
+        "retrievedAt": "2026-10-31T10:16:37.117541+00:00"
+      },
+      {
+        "url": "https://comune.grottaglie.ta.it/it/news/1948218",
+        "status": 200,
+        "finalUrl": "https://comune.grottaglie.ta.it/it/news/1948218",
+        "sha256": "68f57adf2469a3780c184257bde704f80c2b418f77ad2dcd5f9f27f7a6ae3df9",
+        "retrievedAt": "2026-10-31T10:17:31.718221+00:00"
+      },
+      {
+        "url": "https://www.tammurria.it/news/tammurria-live-agosto-2026/",
+        "status": 200,
+        "finalUrl": "https://www.tammurria.it/news/tammurria-live-agosto-2026/",
+        "sha256": "39fd0869f549477aaaa6bcf3e578722ddcde4194820f15f5b83d6452d0bc779d",
+        "retrievedAt": "2026-10-31T10:17:31.719139+00:00"
+      },
+      {
+        "url": "https://www.cronachetarantine.it/index.php/cultura-eventi-spettacoli/17318-a-monteiasi-torna-la-sagra-della-frisella-una-serata-tra-tradizione-musica-e-convivialita",
+        "status": 200,
+        "finalUrl": "https://www.cronachetarantine.it/index.php/cultura-eventi-spettacoli/17318-a-monteiasi-torna-la-sagra-della-frisella-una-serata-tra-tradizione-musica-e-convivialita",
+        "sha256": "76447530a7c8a5ba5493ef22d8c27c38045be6c693aea0e353aebf30b3ce2260",
+        "retrievedAt": "2026-10-31T10:17:31.720307+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2197-taranto-beer-fest-4",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2197-taranto-beer-fest-4",
+        "sha256": "055c2a0a8230adf14fd8523b95f690c2134aeb403ba64e842159d5c292a54c2b",
+        "retrievedAt": "2026-10-31T10:17:31.723327+00:00"
+      },
+      {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Martina-festeggia-i-suoi-Patroni-San-Martino-e-Santa-Comasia",
+        "status": 200,
+        "finalUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Martina-festeggia-i-suoi-Patroni-San-Martino-e-Santa-Comasia",
+        "sha256": "9dbe4ec562cb156e6e7196f31cee5658e6487cce0fa185f511a39885c2fcbabd",
+        "retrievedAt": "2026-10-31T10:17:31.724322+00:00"
+      },
+      {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "status": 200,
+        "finalUrl": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "sha256": "77179a0dcafdc00739d7e35c8e8da2c87d8f2283d808783035f0389db81f2a0c",
+        "retrievedAt": "2026-10-31T10:18:17.546152+00:00"
+      },
+      {
+        "url": "https://www.kymamobilita.it/tag/processione-a-mare/",
+        "status": 200,
+        "finalUrl": "https://www.kymamobilita.it/tag/processione-a-mare/",
+        "sha256": "0e6c15062f6c822edc18ff49cd8d1caff7fa292c19c7b0925ab013bedc05aee0",
+        "retrievedAt": "2026-10-31T10:18:17.547029+00:00"
+      },
+      {
+        "url": "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/7152/allegati/documenti-pubblici/documenti-strategici-commercio/documento_strategico_del_commercio_taranto_.pdf",
+        "status": 200,
+        "finalUrl": "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/7152/allegati/documenti-pubblici/documenti-strategici-commercio/documento_strategico_del_commercio_taranto_.pdf",
+        "sha256": "b428c7b2469cccf2f6ae05880f494139b7f3c69a3258646e4daf3db734703a57",
+        "retrievedAt": "2026-10-31T10:18:17.547419+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2311-calici-e-pettole-2/2026-08-10-20-00",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2311-calici-e-pettole-2/2026-08-10-20-00",
+        "sha256": "6e2461e0e3cfbce193675de20d5ddba942d048ee7cdb096d1dc9a2d5a26e33ea",
+        "retrievedAt": "2026-10-31T10:18:17.550095+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2183-sagra-da-farnedd-e-dei-sapori-di-puglia-2026/2026-08-09-19-00",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2183-sagra-da-farnedd-e-dei-sapori-di-puglia-2026/2026-08-09-19-00",
+        "sha256": "3fcd7d6316b8c8bbf4f5a0c1f72869b019219d8e2a14a7bfbc9a078b071eaeda",
+        "retrievedAt": "2026-10-31T10:23:46.729557+00:00"
+      },
+      {
+        "url": "https://www.mailticket.it/manifestazione/RM44/fiera-pessima-2026",
+        "status": 200,
+        "finalUrl": "https://www.mailticket.it/manifestazione/RM44/fiera-pessima-2026",
+        "sha256": "43c853ce845ee0d5a02ee0d3522a9757198d44f99afa725d75857afab03a10f5",
+        "retrievedAt": "2026-10-31T10:23:46.730008+00:00"
+      },
+      {
+        "url": "https://www.mapulia.org/eventi/festa-della-trebbiatura-e-della-cuccagna-evt_8b9ee332ddfc7f2f4e95",
+        "status": 200,
+        "finalUrl": "https://www.mapulia.org/eventi/festa-della-trebbiatura-e-della-cuccagna-evt_8b9ee332ddfc7f2f4e95",
+        "sha256": "1663b7a96477a34adab9780c38fa55bf146796ffaf80decbece09a8d98a27aa7",
+        "retrievedAt": "2026-10-31T10:23:46.730402+00:00"
+      },
+      {
+        "url": "https://www.lostradone.eu/domenica-9-agosto-la-3a-festa-della-trebbiatura-del-grano-senatore-cappelli/",
+        "status": 200,
+        "finalUrl": "https://www.lostradone.eu/domenica-9-agosto-la-3a-festa-della-trebbiatura-del-grano-senatore-cappelli/",
+        "sha256": "dfa8133eafc2b6b0a5860dc015dac6ae06c77990b2f7347fc74940fb7fbd6ed2",
+        "retrievedAt": "2026-10-31T10:23:46.730755+00:00"
+      },
+      {
+        "url": "https://www.bigitalia.com/it/puglia/taranto/fragagnano/eventi-e-sagre/san-giuseppe-patrono-della-fiera-agricola-fragagnano-3457/",
+        "status": 200,
+        "finalUrl": "https://www.bigitalia.com/it/puglia/taranto/fragagnano/eventi-e-sagre/san-giuseppe-patrono-della-fiera-agricola-fragagnano-3457/",
+        "sha256": "d01b8255101c0e158126b2b292b96671af0c7cf4d1cf03d0b2a89becac592401",
+        "retrievedAt": "2026-10-31T10:23:46.733097+00:00"
+      },
+      {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2181-cibus-food-experience-2026/2026-07-25-20-00",
+        "status": 200,
+        "finalUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2181-cibus-food-experience-2026/2026-07-25-20-00",
+        "sha256": "de7e86ad6d059434c7b190049a560b7c3643994acaca227e501e3ac495356c6d",
+        "retrievedAt": "2026-10-31T10:24:47.534562+00:00"
+      },
+      {
+        "url": "https://www.a-taranto.it/eventi/taranto-comix-2026",
+        "status": 200,
+        "finalUrl": "https://www.a-taranto.it/eventi/taranto-comix-2026",
+        "sha256": "2e9217ab006d86f10c35b932e2b8e88e215df61c95e1431edebcc25a91d6c02a",
+        "retrievedAt": "2026-10-31T10:24:47.535037+00:00"
+      },
+      {
+        "url": "https://www.comune.taranto.it/it/news/natale-a-taranto-calendario-degli-eventi-dall-1-al-6-gennaio-2026",
+        "status": 200,
+        "finalUrl": "https://www.comune.taranto.it/it/news/natale-a-taranto-calendario-degli-eventi-dall-1-al-6-gennaio-2026",
+        "sha256": "30eca2b8a9ce2157652db8728c777c23ddf04f7d60e8de513212b76aa3a84ead",
+        "retrievedAt": "2026-10-31T10:24:47.536194+00:00"
+      },
+      {
+        "url": "https://www.grafitefumetto.it/2026/05/05/taranto-comix-2026-programma/",
+        "status": 200,
+        "finalUrl": "https://www.grafitefumetto.it/2026/05/05/taranto-comix-2026-programma/",
+        "sha256": "9d4484a2342dc0fe921b2679b290fca07083cd7c516f568b96e8044446bedd68",
+        "retrievedAt": "2026-10-31T10:25:09.473937+00:00"
+      }
+    ],
+    "failedAcquisitions": [
+      {
+        "url": "https://www.corriereditaranto.it/2026/05/06/festa-di-san-cataldo-viabilita-divieti-e-la-fiera/",
+        "status": 403,
+        "finalUrl": "https://www.corriereditaranto.it/2026/05/06/festa-di-san-cataldo-viabilita-divieti-e-la-fiera/",
+        "retrievedAt": "2026-10-31T10:14:05.472700+00:00"
+      },
+      {
+        "url": "https://sagradafarnedd.it/",
+        "status": 503,
+        "finalUrl": "https://sagradafarnedd.it/",
+        "retrievedAt": "2026-10-31T10:14:05.475501+00:00"
+      },
+      {
+        "url": "https://www.comune.sangiorgioionico.ta.it/Novita/Notizie/ESTATE-SANGIORGESE-2026",
+        "status": 403,
+        "finalUrl": "https://www.comune.sangiorgioionico.ta.it/Novita/Notizie/ESTATE-SANGIORGESE-2026",
+        "retrievedAt": "2026-10-31T10:14:06.989116+00:00"
+      },
+      {
+        "url": "https://www.corriereditaranto.it/2026/08/06/monteiasi-torna-la-sagra-della-frisella-tra-gusto-musica-e-tradizione/",
+        "status": 403,
+        "finalUrl": "https://www.corriereditaranto.it/2026/08/06/monteiasi-torna-la-sagra-della-frisella-tra-gusto-musica-e-tradizione/",
+        "retrievedAt": "2026-10-31T10:15:08.183693+00:00"
+      },
+      {
+        "url": "https://www.stplecce.it/it/index.php?Itemid=101&catid=2&id=1374%3Acomune-di-avetrana-variazione-provvisoria-di-itinerario&option=com_content&view=article",
+        "status": 403,
+        "finalUrl": "https://www.stplecce.it/it/index.php?Itemid=101&catid=2&id=1374%3Acomune-di-avetrana-variazione-provvisoria-di-itinerario&option=com_content&view=article",
+        "retrievedAt": "2026-10-31T10:15:09.093366+00:00"
+      },
+      {
+        "url": "https://sagradafarnedd.it/?verifica=20261031",
+        "status": 503,
+        "finalUrl": "https://sagradafarnedd.it/?verifica=20261031",
+        "retrievedAt": "2026-10-31T10:15:09.258490+00:00"
+      },
+      {
+        "url": "https://www.comune.ginosa.ta.it/",
+        "status": 403,
+        "finalUrl": "https://www.comune.ginosa.ta.it/",
+        "retrievedAt": "2026-10-31T10:16:13.644404+00:00"
+      },
+      {
+        "url": "https://www.manduriaoggi.it/?news=75996",
+        "status": 999,
+        "finalUrl": "https://www.manduriaoggi.it/?news=75996",
+        "retrievedAt": "2026-10-31T10:16:36.147353+00:00"
+      },
+      {
+        "url": "https://www.a-taranto.it/eventi/sagra-da-farnedd",
+        "status": 404,
+        "finalUrl": "https://www.a-taranto.it/eventi/sagra-da-farnedd",
+        "retrievedAt": "2026-10-31T10:18:17.548081+00:00"
+      },
+      {
+        "url": "https://www.ficobeerfest.it/",
+        "error": "HTTPSConnectionPool(host='www.ficobeerfest.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.ficobeerfest.it', port=443): Failed to resolve 'www.ficobeerfest.it' ([Errno 11001] getaddrinfo failed)\"))",
+        "retrievedAt": "2026-10-31T10:19:05.349046+00:00"
+      },
+      {
+        "url": "https://www.apuliasposi.it/",
+        "status": 999,
+        "finalUrl": "https://www.apuliasposi.it/",
+        "retrievedAt": "2026-10-31T10:19:05.351425+00:00"
+      },
+      {
+        "url": "https://www.expocasapuglia.it/",
+        "error": "HTTPSConnectionPool(host='www.expocasapuglia.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.expocasapuglia.it', port=443): Failed to resolve 'www.expocasapuglia.it' ([Errno 11001] getaddrinfo failed)\"))",
+        "retrievedAt": "2026-10-31T10:19:05.353778+00:00"
+      },
+      {
+        "url": "https://www.sagradafarnedd.it/",
+        "status": 503,
+        "finalUrl": "https://www.sagradafarnedd.it/",
+        "retrievedAt": "2026-10-31T10:23:28.786024+00:00"
+      },
+      {
+        "url": "https://comune.sangiorgioionico.ta.it/ocmultibinary/download/1974/39819/2/bd420bb1dc4a28b3e40d7fa9aec19f30.pdf/file/LOCANDINA%2BESTATE%2B2026.pdf",
+        "status": 403,
+        "finalUrl": "https://www.comune.sangiorgioionico.ta.it/ocmultibinary/download/1974/39819/2/bd420bb1dc4a28b3e40d7fa9aec19f30.pdf/file/LOCANDINA%2BESTATE%2B2026.pdf",
+        "retrievedAt": "2026-10-31T10:23:28.786508+00:00"
+      },
+      {
+        "url": "https://static.comune.sangiorgioionico.ta.it/ocmultibinary/download/1974/39819/2/bd420bb1dc4a28b3e40d7fa9aec19f30.pdf/file/LOCANDINA%2BESTATE%2B2026.pdf",
+        "status": 403,
+        "finalUrl": "https://static.comune.sangiorgioionico.ta.it/ocmultibinary/download/1974/39819/2/bd420bb1dc4a28b3e40d7fa9aec19f30.pdf/file/LOCANDINA%2BESTATE%2B2026.pdf",
+        "retrievedAt": "2026-10-31T10:23:28.786848+00:00"
+      },
+      {
+        "url": "https://www.comune.sangiorgioionico.ta.it/ocmultibinary/download/1974/39819/2/bd420bb1dc4a28b3e40d7fa9aec19f30.pdf/file/LOCANDINA%2BESTATE%2B2026.pdf",
+        "status": 403,
+        "finalUrl": "https://www.comune.sangiorgioionico.ta.it/ocmultibinary/download/1974/39819/2/bd420bb1dc4a28b3e40d7fa9aec19f30.pdf/file/LOCANDINA%2BESTATE%2B2026.pdf",
+        "retrievedAt": "2026-10-31T10:23:28.787207+00:00"
+      },
+      {
+        "url": "https://www.tarantocomix.it/",
+        "error": "HTTPSConnectionPool(host='www.tarantocomix.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.tarantocomix.it', port=443): Failed to resolve 'www.tarantocomix.it' ([Errno 11001] getaddrinfo failed)\"))",
+        "retrievedAt": "2026-10-31T10:24:47.535471+00:00"
+      },
+      {
+        "url": "https://www.medfestival.it/",
+        "error": "HTTPSConnectionPool(host='www.medfestival.it', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.medfestival.it', port=443): Failed to resolve 'www.medfestival.it' ([Errno 11001] getaddrinfo failed)\"))",
+        "retrievedAt": "2026-10-31T10:24:47.535854+00:00"
+      }
+    ],
+    "exclusions": [
+      "Mercati ordinari, trasferimenti e aperturestraordinarie; vecchia GrottaglieinFiera non riattivata.",
+      "Processioni, concerti, laboratoriComeAquiloni, soli presepi/mostre senza vendita e Halloween senza bancarelle documentate.",
+      "DateautomaticheGrotte/Palagianello/Fragagnano, numerazioni e calendari ricostruiti non confermati da originali.",
+      "CrispianoComixsospeso2025 senza nuovaedizione verificata; MED2026privo di programma; Nataleprogettuale non mercato già assegnato.",
+      "Bando carriCarnevaleMassafra, gara gestionePessima2027, contributi/sponsor e SaloneImpresa fuoriComune non candidature ambulanti.",
+      "MonteparanoAspettando, ColorisFragagnano e altre piste con offerta/periodo insufficienti non trasformati in schede."
+    ],
+    "limitations": [
+      "Ricognizione nominale dei29comuni con ricerche mirate, non censimento certificato né consultazione integrale degli albi. Acquisizioni tecniche e hash non equivalgono a fonti indipendenti o letture integrali.",
+      "Storico2013/2023/2024/2025 esplicito, ricorrenze senza giorni calcolati; solo date2026/2027 con fonte specifica. Nuove edizioni e disponibilità non garantite.",
+      "HTTP403SanGiorgio/Ginosa/STP/stampa e503Far’nedd, dominiDNS e pagine che reindirizzano alla home non sono assenza di eventi. Fonti secondarie e riprese di comunicati dichiarate nelle schede.",
+      "Il DSC Taranto ha367pagine: letture mirate paginecontenentifiere e artt27–29, non lettura integrale. BURP2013intere3pagine lette, non calendario2026. ManifestiCarosino/Mottola e tabellaPessima controllati visivamente.",
+      "Pessimalistino con titoloHTML2024 e corpo283ª2026: importi da riconfermare, non preventivo2027. IVA non quantificata, energia120 separata,650gazebo dopo700barrato. Bolli/dirittiLaterza non canoni.",
+      "Duecomuni senza schede(Monteparano/SanGiorgioIonico) non dichiarati privi di eventi. Limiti di recupero e piste escluse sono descritti per comune. Ticket pubblico, sanzioni, sponsor, contributi al gestore e costi banco distinti.",
+      "Ricerca corrente conclusa con limiti sul materiale accessibile; aggiornamenti di bandi, disponibilità, costi, calendari e fonti inaccessibili sono manutenzione futura, non motivo per proiettare ricorrenze."
+    ],
+    "openLeads": [],
+    "futureMaintenance": [
+      "Nuovi avvisi2027 e SanMartino2026, tariffe e disponibilità; recupero fonti403/503, programmiMED/CrispianoComix/Natale e calendari definitivi delle ricorrenze."
+    ]
+  },
+  "events": [
+    {
+      "region": "Puglia",
+      "city": "Laterza",
+      "name": "Fiera Mater Domini",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html",
+        "label": "Comune di Laterza",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera commerciale di maggio inserita nell’avviso annuale del Comune, separata dai quattro giorni dei festeggiamenti patronali. Il posteggio richiede una domanda telematica e il possesso di un titolo per il commercio su area pubblica.",
+      "venue": "Laterza; area fieristica da verificare nel titolo",
+      "sectors": "Alimentare e non alimentare, secondo titolo A/B",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-21",
+          "end": "2026-05-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domanda esclusivamente dal servizio digitale comunale Partecipazioni a fiere, entro 60 giorni prima, con titolo A/B, documento e notifica sanitaria per alimentari. Un bollo da 16 € e ricevuta PagoPA dei diritti. Nell’avviso il 15 luglio è chiamato giovedì nella sezione fiere e mercoledì in quella feste: mantenuta la data numerica, senza correggere il documento. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito.",
+        "costs": "Avviso 2026: 5 € di diritti di segreteria tramite PagoPA-MyPay, causale SUAP Diritti di segreteria, e una marca da bollo da 16 € annullata sull’istanza. Sono oneri di domanda, non prezzo totale del posteggio. Il canone di occupazione e i servizi del banco non sono quantificati nella pagina; IVA non indicata e nessun totale commerciale dedotto."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Laterza",
+      "name": "Fiera Madonna del Carmine",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html",
+        "label": "Comune di Laterza",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Appuntamento fieristico di luglio disciplinato dal calendario commerciale comunale. La giornata della fiera è distinta dalla festa del Carmine, per la quale il medesimo avviso indica due giornate e una richiesta di partecipazione specifica.",
+      "venue": "Laterza; area fieristica da verificare nel titolo",
+      "sectors": "Alimentare e non alimentare, secondo titolo A/B",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-15",
+          "end": "2026-07-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domanda esclusivamente dal servizio digitale comunale Partecipazioni a fiere, entro 60 giorni prima, con titolo A/B, documento e notifica sanitaria per alimentari. Un bollo da 16 € e ricevuta PagoPA dei diritti. Nell’avviso il 15 luglio è chiamato giovedì nella sezione fiere e mercoledì in quella feste: mantenuta la data numerica, senza correggere il documento. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito.",
+        "costs": "Avviso 2026: 5 € di diritti di segreteria tramite PagoPA-MyPay, causale SUAP Diritti di segreteria, e una marca da bollo da 16 € annullata sull’istanza. Sono oneri di domanda, non prezzo totale del posteggio. Il canone di occupazione e i servizi del banco non sono quantificati nella pagina; IVA non indicata e nessun totale commerciale dedotto."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Laterza",
+      "name": "Fiera dei SS. Medici",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html",
+        "label": "Comune di Laterza",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera autunnale dei Santi Medici prevista nel calendario comunale per gli operatori commerciali. La presenza è subordinata alla procedura di assegnazione e non coincide automaticamente con entrambe le giornate dei festeggiamenti religiosi e civili.",
+      "venue": "Laterza; area fieristica da verificare nel titolo",
+      "sectors": "Alimentare e non alimentare, secondo titolo A/B",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domanda esclusivamente dal servizio digitale comunale Partecipazioni a fiere, entro 60 giorni prima, con titolo A/B, documento e notifica sanitaria per alimentari. Un bollo da 16 € e ricevuta PagoPA dei diritti. Nell’avviso il 15 luglio è chiamato giovedì nella sezione fiere e mercoledì in quella feste: mantenuta la data numerica, senza correggere il documento. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito.",
+        "costs": "Avviso 2026: 5 € di diritti di segreteria tramite PagoPA-MyPay, causale SUAP Diritti di segreteria, e una marca da bollo da 16 € annullata sull’istanza. Sono oneri di domanda, non prezzo totale del posteggio. Il canone di occupazione e i servizi del banco non sono quantificati nella pagina; IVA non indicata e nessun totale commerciale dedotto."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Laterza",
+      "name": "Festa Madonna delle Grazie · posteggi",
+      "months": [
+        4
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html",
+        "label": "Comune di Laterza",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festa primaverile per la quale il Comune raccoglie istanze di partecipazione degli ambulanti. Il calendario delle concessioni indica una sola giornata, da non ampliare alla settimana pasquale o ad altri eventi devozionali del territorio.",
+      "venue": "Laterza; collocazione del banco secondo assegnazione",
+      "sectors": "Alimentare e non alimentare, secondo titolo A/B",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-07",
+          "end": "2026-04-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domanda esclusivamente dal servizio digitale comunale Partecipazioni a fiere, entro 60 giorni prima, con titolo A/B, documento e notifica sanitaria per alimentari. Un bollo da 16 € e ricevuta PagoPA dei diritti. Nell’avviso il 15 luglio è chiamato giovedì nella sezione fiere e mercoledì in quella feste: mantenuta la data numerica, senza correggere il documento. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito.",
+        "costs": "Avviso 2026: 5 € di diritti di segreteria tramite PagoPA-MyPay, causale SUAP Diritti di segreteria, e una marca da bollo da 16 € annullata sull’istanza. Sono oneri di domanda, non prezzo totale del posteggio. Il canone di occupazione e i servizi del banco non sono quantificati nella pagina; IVA non indicata e nessun totale commerciale dedotto."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Laterza",
+      "name": "Festa Mater Domini · posteggi",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html",
+        "label": "Comune di Laterza",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Posteggi per le giornate della festa patronale di Mater Domini, inclusi nell’avviso commerciale annuale. La domanda per la festa è distinta da quella della fiera del 21 maggio; le due schede non rappresentano due posti garantiti allo stesso operatore.",
+      "venue": "Laterza; postazioni stabilite dal Comune",
+      "sectors": "Alimentare e non alimentare, secondo titolo A/B",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-18",
+          "end": "2026-05-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domanda esclusivamente dal servizio digitale comunale Partecipazioni a fiere, entro 60 giorni prima, con titolo A/B, documento e notifica sanitaria per alimentari. Un bollo da 16 € e ricevuta PagoPA dei diritti. Nell’avviso il 15 luglio è chiamato giovedì nella sezione fiere e mercoledì in quella feste: mantenuta la data numerica, senza correggere il documento. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito.",
+        "costs": "Avviso 2026: 5 € di diritti di segreteria tramite PagoPA-MyPay, causale SUAP Diritti di segreteria, e una marca da bollo da 16 € annullata sull’istanza. Sono oneri di domanda, non prezzo totale del posteggio. Il canone di occupazione e i servizi del banco non sono quantificati nella pagina; IVA non indicata e nessun totale commerciale dedotto."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Laterza",
+      "name": "Festa Madonna del Carmine · posteggi",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html",
+        "label": "Comune di Laterza",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Partecipazione commerciale alle due giornate della festa estiva del Carmine, prevista espressamente nell’avviso del SUAP. L’istanza deve individuare la manifestazione e consentire la verifica della documentazione amministrativa e sanitaria pertinente alla merceologia.",
+      "venue": "Laterza; postazioni stabilite dal Comune",
+      "sectors": "Alimentare e non alimentare, secondo titolo A/B",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-15",
+          "end": "2026-07-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domanda esclusivamente dal servizio digitale comunale Partecipazioni a fiere, entro 60 giorni prima, con titolo A/B, documento e notifica sanitaria per alimentari. Un bollo da 16 € e ricevuta PagoPA dei diritti. Nell’avviso il 15 luglio è chiamato giovedì nella sezione fiere e mercoledì in quella feste: mantenuta la data numerica, senza correggere il documento. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito.",
+        "costs": "Avviso 2026: 5 € di diritti di segreteria tramite PagoPA-MyPay, causale SUAP Diritti di segreteria, e una marca da bollo da 16 € annullata sull’istanza. Sono oneri di domanda, non prezzo totale del posteggio. Il canone di occupazione e i servizi del banco non sono quantificati nella pagina; IVA non indicata e nessun totale commerciale dedotto."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Laterza",
+      "name": "Festa SS. Medici · posteggi",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html",
+        "label": "Comune di Laterza",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Concessioni temporanee per la festa dei Santi Medici nell’ultimo fine settimana di settembre. Il calendario comunale distingue l’intero periodo della festa dalla sola fiera del sabato e richiede un titolo commerciale valido per candidarsi.",
+      "venue": "Laterza; postazioni stabilite dal Comune",
+      "sectors": "Alimentare e non alimentare, secondo titolo A/B",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-26",
+          "end": "2026-09-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Domanda esclusivamente dal servizio digitale comunale Partecipazioni a fiere, entro 60 giorni prima, con titolo A/B, documento e notifica sanitaria per alimentari. Un bollo da 16 € e ricevuta PagoPA dei diritti. Nell’avviso il 15 luglio è chiamato giovedì nella sezione fiere e mercoledì in quella feste: mantenuta la data numerica, senza correggere il documento. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito.",
+        "costs": "Avviso 2026: 5 € di diritti di segreteria tramite PagoPA-MyPay, causale SUAP Diritti di segreteria, e una marca da bollo da 16 € annullata sull’istanza. Sono oneri di domanda, non prezzo totale del posteggio. Il canone di occupazione e i servizi del banco non sono quantificati nella pagina; IVA non indicata e nessun totale commerciale dedotto."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.laterza.ta.it/novita/avvisi/novita_109.html"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Laterza",
+      "name": "Sagra dell’Arrosto",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.a-taranto.it/eventi/sagra-dellarrosto",
+        "label": "a-taranto.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Rassegna gastronomica curata dall’Associazione Macellai di Laterza, con preparazioni di carne del territorio e intrattenimento. La pagina editoriale colloca la serata lungo via Roma e cita salsicciotti, fegatini e bombette.",
+      "venue": "Via Roma",
+      "sectors": "Carni e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-02",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.a-taranto.it/eventi/sagra-dellarrosto"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte editoriale a-taranto.it: data 2 agosto, senza usare stime 3 agosto di altri calendari. Partecipazione di macellai e altri operatori da concordare con l’associazione; nessun bando o tariffa stand recuperati. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.a-taranto.it/eventi/sagra-dellarrosto"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "Fiera di San Martino",
+      "months": [
+        11
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "label": "Comune di Martina Franca",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La storica fiera di novembre riunisce ambulanti di diversi settori nelle vie del centro urbano. Il comunicato del Comune documenta l’edizione 2025 e la procedura commerciale, senza confermare automaticamente lo svolgimento o le concessioni per il 2026.",
+      "venue": "Martina Franca; ubicazione secondo assegnazione comunale",
+      "sectors": "Commercio ambulante; categorie da verificare nel titolo",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-11",
+          "end": "2025-11-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025; nuova edizione non verificata. Avviso 2025/26: un’istanza per entrambe le fiere invernali su Impresa in un giorno, tre marche da bollo, 60 giorni prima; importi dei bolli non specificati. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Martina-festeggia-i-suoi-Patroni-San-Martino-e-Santa-Comasia"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "Fiera della Candelora",
+      "months": [
+        2
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "label": "Comune di Martina Franca",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera invernale inserita nel calendario comunale 2025/2026 insieme a San Martino. La candidatura è presentata per le due fiere mediante un’istanza unica, ma le scadenze dipendono dalla singola manifestazione indicata nell’avviso.",
+      "venue": "Martina Franca; ubicazione secondo assegnazione comunale",
+      "sectors": "Commercio ambulante; categorie da verificare nel titolo",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-02-02",
+          "end": "2026-02-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Termine riportato dal Comune: 5 dicembre 2025 per Candelora 2 febbraio 2026. Avviso 2025/26: un’istanza per entrambe le fiere invernali su Impresa in un giorno, tre marche da bollo, 60 giorni prima; importi dei bolli non specificati. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "Festa Madonna della Sanità · posteggi",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "label": "Comune di Martina Franca",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festa di maggio compresa fra le manifestazioni per cui il Comune disciplina l’accesso commerciale. La scheda conserva l’edizione 2025 dell’avviso operatori e non trasforma il giorno tradizionale in una nuova assegnazione di posteggi.",
+      "venue": "Martina Franca; ubicazione secondo assegnazione comunale",
+      "sectors": "Commercio ambulante; categorie da verificare nel titolo",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-05-11",
+          "end": "2025-05-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025; nuova edizione non verificata. Avviso 2025: una domanda per ciascuna festa estiva, due marche da bollo, 60 giorni prima; non estendere termini e importi a nuove edizioni. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "Festa Sant’Antonio · posteggi",
+      "months": [
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "label": "Comune di Martina Franca",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Posteggi commerciali collegati alla festa di giugno di Sant’Antonio, elencata dal Comune nel calendario per gli ambulanti. L’avviso richiede una domanda autonoma per questa festa, distinta dalle altre ricorrenze estive martinesi.",
+      "venue": "Martina Franca; ubicazione secondo assegnazione comunale",
+      "sectors": "Commercio ambulante; categorie da verificare nel titolo",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-06-13",
+          "end": "2025-06-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025; nuova edizione non verificata. Avviso 2025: una domanda per ciascuna festa estiva, due marche da bollo, 60 giorni prima; non estendere termini e importi a nuove edizioni. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "Festa patronale di San Martino · posteggi",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "label": "Comune di Martina Franca",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Manifestazione commerciale collegata alla festa estiva dei patroni di Martina Franca, distinta dalla fiera invernale. La fonte operativa recuperata riguarda il 2025; un programma religioso del 2026 non prova lo stesso intervallo di apertura dei banchi.",
+      "venue": "Martina Franca; ubicazione secondo assegnazione comunale",
+      "sectors": "Commercio ambulante; categorie da verificare nel titolo",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-07-05",
+          "end": "2025-07-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025; nuova edizione non verificata. Avviso 2025: una domanda per ciascuna festa estiva, due marche da bollo, 60 giorni prima; non estendere termini e importi a nuove edizioni. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "Festa Madonna del Carmine · posteggi",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "label": "Comune di Martina Franca",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La festa del Carmine figura nell’avviso comunale che stabilisce termini e modalità per i commercianti. Le due giornate conservate sono quelle pubblicate per il 2025, senza calcolare un nuovo fine settimana o una disponibilità attuale.",
+      "venue": "Martina Franca; ubicazione secondo assegnazione comunale",
+      "sectors": "Commercio ambulante; categorie da verificare nel titolo",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-07-19",
+          "end": "2025-07-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025; nuova edizione non verificata. Avviso 2025: una domanda per ciascuna festa estiva, due marche da bollo, 60 giorni prima; non estendere termini e importi a nuove edizioni. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "Festa Cristo Spirante · posteggi",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore",
+        "label": "Comune di Martina Franca",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Ricorrenza estiva ammessa al calendario delle domande commerciali del Comune. L’avviso documenta le due giornate del 2025 e l’obbligo di un’istanza specifica, da non confondere con la richiesta cumulativa delle fiere invernali.",
+      "venue": "Martina Franca; ubicazione secondo assegnazione comunale",
+      "sectors": "Commercio ambulante; categorie da verificare nel titolo",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-07-27",
+          "end": "2025-07-28",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025; nuova edizione non verificata. Avviso 2025: una domanda per ciascuna festa estiva, due marche da bollo, 60 giorni prima; non estendere termini e importi a nuove edizioni. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/Feste-e-Fiere-info-per-gli-operatori-del-Settore"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "Mercatino dell’Antiquariato di Ortolini",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo",
+        "label": "Comune di Martina Franca",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mercatino specializzato in antiquariato, modernariato, collezionismo e artigianato nel padiglione del foro boario. Il Comune pubblica undici appuntamenti del 2026, escludendo agosto: le date sono quelle dell’elenco ufficiale e non un calcolo delle domeniche.",
+      "venue": "Padiglione fieristico del foro boario, Parco Ortolini",
+      "sectors": "Antiquariato, modernariato, collezionismo e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-18",
+          "end": "2026-01-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-02-15",
+          "end": "2026-02-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-03-15",
+          "end": "2026-03-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-04-19",
+          "end": "2026-04-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-05-17",
+          "end": "2026-05-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-06-21",
+          "end": "2026-06-21",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-07-19",
+          "end": "2026-07-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-18",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-11-15",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-20",
+          "end": "2026-12-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Arca Antica: 3494208225, 3473892204, 3889332676; arcaantica2024@gmail.com. Orario indicato 8–14. Gratuito patrocinio e ingresso pubblico non sono esenzione del banco. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.martinafranca.ta.it/Vivere-il-comune/Eventi/Torna-ogni-terza-domenica-del-mese-il-mercatino-dell-antiquariato-e-del-collezionismo"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "Antiquariato in Valle d’Itria",
+      "months": [
+        4,
+        8
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/L-antiquariato-torna-a-primavera-a-Martina-Franca",
+        "label": "Comune di Martina Franca",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mostra mercato di mobili d’epoca, modernariato, vintage e collezionismo promossa da Arca Promoter. Nel 2026 l’edizione di primavera si svolge a Ortolini; quella estiva torna negli spazi interni ed esterni dell’Istituto Marconi, con mercatino nelle vie vicine.",
+      "venue": "Primavera: Centro fieristico Ortolini; estate: Istituto Marconi e vie limitrofe",
+      "sectors": "Antiquariato, modernariato, vintage e collezionismo",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-23",
+          "end": "2026-04-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/L-antiquariato-torna-a-primavera-a-Martina-Franca"
+        },
+        {
+          "year": 2026,
+          "start": "2026-08-08",
+          "end": "2026-08-16",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.martinafranca.ta.it/Novita/Comunicati/L-antiquariato-torna-a-primavera-a-Martina-Franca"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Arca Promoter; infoline pubblicate 3389332676 e 3683653391. Il testo primaverile ha un refuso 2025 nella riga degli orari, ma testo e riepilogo confermano 23–26 aprile 2026. Orari diversi secondo giornata, non apertura continuativa. Preventivo e selezione da concordare. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/L-antiquariato-torna-a-primavera-a-Martina-Franca",
+        "https://www.comune.martinafranca.ta.it/Novita/Comunicati/XXV-Edizione-di-Antiquariato-in-Valle-d-Itria-a-Martina-Franca-dall-8-al-16-agosto"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "APULIASPOSI · Fiera del Matrimonio",
+      "months": [
+        10
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.eventofiera.it/",
+        "label": "eventofiera.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera specializzata per imprese e professionisti del matrimonio, con spazi espositivi al centro Ortolini. L’organizzatore Eventofiera documenta la tredicesima edizione del 2026 come conclusa; le aziende interessate devono concordare categoria e contratto per una successiva partecipazione.",
+      "venue": "Centro Fieristico Ortolini",
+      "sectors": "Wedding, abiti, cerimonia, servizi e arredi per eventi",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-02",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.eventofiera.it/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Eventofiera / JAPIGIA SERVICE: 3287482293, info@eventofiera.it. Richiedere preventivo, dotazioni, IVA, selezione e contratto. Fonte diretta dell’organizzatore, nessun prezzo pubblicato nella pagina. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.eventofiera.it/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Martina Franca",
+      "name": "EXPOCASA",
+      "months": [
+        4
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.eventofiera.it/",
+        "label": "eventofiera.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Rassegna dedicata a edilizia, ristrutturazione, progettazione, arredamento e abitare. Eventofiera conserva l’edizione 2026 nell’archivio e annuncia espressamente quella dell’8–11 aprile 2027, senza che tale annuncio equivalga a un posto assegnato alle imprese.",
+      "venue": "Centro Fieristico Ortolini",
+      "sectors": "Edilizia, progettazione, arredamento e soluzioni per la casa",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-09",
+          "end": "2026-04-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.eventofiera.it/"
+        },
+        {
+          "year": 2027,
+          "start": "2027-04-08",
+          "end": "2027-04-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.eventofiera.it/"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Eventofiera / JAPIGIA SERVICE: 3287482293, info@eventofiera.it. Richiedere preventivo, dotazioni, IVA, selezione e contratto. Fonte diretta dell’organizzatore, nessun prezzo pubblicato nella pagina. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.eventofiera.it/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Manduria",
+      "name": "Fiera Pessima",
+      "months": [
+        3
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.pessima.it/vuoi-esporre/",
+        "label": "pessima.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Campionaria nell’area fieristica di Manduria con padiglioni per commercio, artigianato, casa, wedding, prodotti tipici e spazi esterni per agricoltura e food truck. Il sito dell’organizzatore presenta la 283ª edizione e un listino distinto per formato e settore.",
+      "venue": "Area mercatale e fieristica, via Giuseppe de Nittis 3",
+      "sectors": "Artigianato, commercio, arredo, wedding, prodotti tipici, agricoltura e food truck",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-06",
+          "end": "2026-03-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.mailticket.it/manifestazione/RM44/fiera-pessima-2026"
+        }
+      ],
+      "participation": {
+        "type": "exhibitors",
+        "note": "Biglietteria Mailticket: 6–12 marzo 2026, vendita online conclusa; il footer dell’organizzatore reca ancora orari 2023 e non viene usato per le date. Richiedere adesione a espositori@pessima.it o 3513749478 / 3761173264. Titolo HTML ancora 2024: il corpo indica 283ª edizione; tariffe da riconfermare, non preventivo 2027. La gara gestione 2027 non è una candidatura stand. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito.",
+        "costs": "Pagina riferita nel corpo alla 283ª edizione (2026), con titolo HTML residuo 2024: riconfermare preventivo e validità. Prezzi imponibili, IVA da aggiungere senza aliquota indicata: P4/P5/P6 stand 4×3 m lineare 615 €, angolare 640 €; P7 prodotti tipici interregionali 800/850 €. Area libera agricoltura 14 €/m²; artigianato/commercio/edile 18,50 €/m². Gazebo 4×4 m mostra 700 € barrato e 650 € corrente, con pedana, moquette, punto luce e presa. Truck alimenti e truck food 300 €. Quota energia separata 120 €, senza sommarla automaticamente a ogni opzione né inventare potenza o consumi inclusi. Iscrizione, durata tariffaria e altri servizi non esplicitati; non listino 2027."
+      },
+      "sourceRecordIds": [
+        "https://www.pessima.it/vuoi-esporre/",
+        "https://www.pessima.it/news-2026/conferenza-stampa-di-presentazione-della-283-edizione-di-pessima/",
+        "https://www.pessima.it/espositori-2/",
+        "https://www.mailticket.it/manifestazione/RM44/fiera-pessima-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Taranto",
+      "name": "Fiera dell’Epifania",
+      "months": [
+        1
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://taranto-api.municipiumapp.it/s3/7152/allegati/fiera-epifania.pdf",
+        "label": "taranto-api.municipiumapp.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera cittadina di inizio gennaio con posteggi assegnati secondo graduatoria. La rettifica originale estende espressamente l’accesso commerciale fino al 6 gennaio e corregge l’orario del primo giorno; il vecchio regolamento 4–5 gennaio non sostituisce questo avviso.",
+      "venue": "Taranto; luogo della manifestazione da verificare nel titolo",
+      "sectors": "Alimentari e non alimentari secondo graduatoria",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-04",
+          "end": "2026-01-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://taranto-api.municipiumapp.it/s3/7152/allegati/fiera-epifania.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso prot. 325212/2025: assegnazione 4 gennaio 2026 ore 9 nel luogo della manifestazione e accesso subito dopo; 5 gennaio 9–24, 6 gennaio 9–19. SUAP 0994581831, suap.comunetaranto@pec.rupar.puglia.it. Il documento non pubblica costi o nuova disponibilità. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://taranto-api.municipiumapp.it/s3/7152/allegati/fiera-epifania.pdf",
+        "https://www.comune.taranto.it/it/news/1939149"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Taranto",
+      "name": "Fiera di San Cataldo",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/7152/allegati/documenti-pubblici/documenti-strategici-commercio/documento_strategico_del_commercio_taranto_.pdf",
+        "label": "municipium-images-production.s3-eu-west-1.amazonaws.com",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera patronale per alimentari e merci varie prevista dal Documento strategico del commercio. La sede è stabilita ogni anno con ordinanza; la comunicazione di Kyma Mobilità documenta la presenza sul Lungomare nel maggio 2026, distinta dai soli percorsi processionali.",
+      "venue": "Lungomare Vittorio Emanuele III nel 2026; sede annuale fissata con ordinanza",
+      "sectors": "Alimentare, non alimentare e somministrazione",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Periodo usuale 8–10 maggio dal regolamento, senza estendere la conferma dell’8 maggio all’intero intervallo 2026. Titolo A/B, domanda unica per le fiere e graduatoria; articolo 28 usa la formula «entro 60 gg. dalla data», da chiarire col SUAP. Concessione soggetta a oneri di occupazione e rifiuti, importi non recuperati. Vecchia sede via Garibaldi e consistenza 104 posteggi sono dati 2018, non disponibilità attuale. Articolo stampa 2026 non acquisibile (403). La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/7152/allegati/documenti-pubblici/documenti-strategici-commercio/documento_strategico_del_commercio_taranto_.pdf",
+        "https://www.kymamobilita.it/tag/processione-a-mare/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Taranto",
+      "name": "Taranto Beer Fest",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2197-taranto-beer-fest-4",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festival birrario con area gastronomica, musica e intrattenimento nella nuova sede di piazzale Fellini. Il comunicato ripreso dal portale del Primitivo descrive quattro serate estive e identifica il comitato organizzatore, senza aprire automaticamente la vendita a tutti gli ambulanti.",
+      "venue": "Piazzale Federico Fellini",
+      "sectors": "Birra, street food e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-06",
+          "end": "2026-08-09",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2197-taranto-beer-fest-4"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comitato Taranto Beer Fest: 3494779160, l.attanasio@posizioninote.com. Vecchia area camper via Mascherpa non usata come sede 2026; preventivo, ammissione e requisiti da richiedere. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2197-taranto-beer-fest-4"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carosino",
+      "name": "Sagra del Vino",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.lasagradelvino.it/download/60SagraDelVino_programma.pdf",
+        "label": "lasagradelvino.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Percorso del vino e delle produzioni locali attorno alla fontana monumentale e al Palazzo Ducale d’Ayala Valva. Il programma originale della sessantesima edizione prevede degustazioni ed enogastronomia ogni sera, affiancate da incontri e spettacoli.",
+      "venue": "Piazza Vittorio Emanuele III e Palazzo Ducale d’Ayala Valva",
+      "sectors": "Vino, cantine e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-10",
+          "end": "2026-08-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.lasagradelvino.it/download/60SagraDelVino_programma.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Programma originale scansionato letto visivamente: 10–12 agosto 2026; non luglio né 28–30 agosto dei precedenti progetti. Percorsi serali dalle 21; contatti info@lasagradelvino.it. Nessun listino espositori acquisito. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.lasagradelvino.it/download/60SagraDelVino_programma.pdf",
+        "https://www.lasagradelvino.it/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Crispiano",
+      "name": "Sagra del Fegatino",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.crispianoturismo.it/event/sagra-del-fegatino-3/",
+        "label": "crispianoturismo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La Pro Loco di Crispiano propone tre serate dedicate alla carne alla brace, con fegatini, bombette, salsicce e stand gastronomici. L’iniziativa si svolge presso la scuola Severi e affianca degustazioni, animazione e musica dal vivo.",
+      "venue": "Istituto F. Severi, via Bari",
+      "sectors": "Carni alla brace e stand gastronomici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-24",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.crispianoturismo.it/event/sagra-del-fegatino-3/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pro Loco Crispiano: 3283330187, crispianoproloco@gmail.com. Tre giorni dal portale turistico locale, non due dalla sola cronaca. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.crispianoturismo.it/event/sagra-del-fegatino-3/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Crispiano",
+      "name": "Sagra del Pomodoro Giallorosso",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.crispianoturismo.it/event/sagra-del-pomodoro-giallorosso-2/",
+        "label": "crispianoturismo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Il Borgo San Simone ospita produttori locali, stand gastronomici e il Mercato di Campagna Amica in occasione della sagra del pomodoro giallorosso. Il programma turistico documenta due giornate di promozione della produzione agricola crispianese.",
+      "venue": "Borgo San Simone",
+      "sectors": "Produttori agricoli, pomodoro e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-19",
+          "end": "2026-09-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.crispianoturismo.it/event/sagra-del-pomodoro-giallorosso-2/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pro Loco Crispiano: 3283330187, crispianoproloco@gmail.com. L’accesso al mercato agricolo non è un’autorizzazione generale per il commercio non alimentare. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.crispianoturismo.it/event/sagra-del-pomodoro-giallorosso-2/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Faggiano",
+      "name": "Festa della Vendemmia",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2297-festa-della-vendemmia-2026",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festa dedicata alla cultura della vendemmia, alle produzioni vitivinicole e alle tradizioni contadine di Faggiano. L’associazione per le Tradizioni Popolari annuncia due serate in piazza Aldo Moro; l’offerta gastronomica è distinta dal solo programma musicale.",
+      "venue": "Piazza Aldo Moro",
+      "sectors": "Vino e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-28",
+          "end": "2026-08-29",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2297-festa-della-vendemmia-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Associazione per le Tradizioni Popolari, 3347730253. Comunicazione ripresa dal portale territoriale; categorie e costi di ammissione non pubblicati. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2297-festa-della-vendemmia-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Lizzano",
+      "name": "Wine Tour Fest",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.lizzano.ta.it/evento/wine-tour-fest-2026/",
+        "label": "Comune di Lizzano",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Percorso dedicato al vino, alla musica e all’arte nel centro storico di Lizzano, presentato dal Comune con il sostegno della Regione. La valorizzazione delle cantine e delle produzioni del territorio accompagna tre serate estive.",
+      "venue": "Centro storico, Largo Chiesa",
+      "sectors": "Vino e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-11",
+          "end": "2026-08-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.lizzano.ta.it/evento/wine-tour-fest-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Contatti comunali: 0999558610, segretaria@comune.lizzano.ta.it. Selezione operatori e quote non specificate nella scheda pubblica; patrocinio e contributi al progetto non sono tariffe espositive. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.lizzano.ta.it/evento/wine-tour-fest-2026/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Leporano",
+      "name": "Sagra della Bombetta",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2318-sagra-della-bombetta/2026-08-29-19-00",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La Pro Loco di Leporano porta in piazza bombette pugliesi, vino del territorio e mercatini artigianali. Il programma abbina gastronomia e musica popolare, con la partecipazione commerciale da concordare in base ai settori previsti dall’organizzazione.",
+      "venue": "Piazza Maria Immacolata",
+      "sectors": "Carne alla brace, vino e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-29",
+          "end": "2026-08-29",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2318-sagra-della-bombetta/2026-08-29-19-00"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pro Loco Leporano: leporanoaps@gmail.com; avvio ore 19. Comunicazione dell’organizzatore ripresa da Istinto Primitivo, non bando aperto. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2318-sagra-della-bombetta/2026-08-29-19-00"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Pulsano",
+      "name": "T-Fest · La Sagra delle Tipicità",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.vivipulsano.it/4a-edizione-del-t%e2%80%91fest-la-sagra-delle-tipicita/",
+        "label": "vivipulsano.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Rassegna della Pro Loco dedicata alle specialità del territorio e ospitata nel Convento dei Padri Riformati. La quarta edizione comprende tre serate con spettacoli e musica, secondo il portale turistico ufficiale del Comune.",
+      "venue": "Convento dei Padri Riformati",
+      "sectors": "Gastronomia e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-24",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.vivipulsano.it/4a-edizione-del-t%e2%80%91fest-la-sagra-delle-tipicita/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pro Loco Pulsano: 0995938961, WhatsApp 3715751022, info@prolocopulsano.com. L’annuncio turistico non pubblica un bando di partecipazione o una quota banco. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.vivipulsano.it/4a-edizione-del-t%e2%80%91fest-la-sagra-delle-tipicita/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Statte",
+      "name": "Fiera straordinaria Madonna del Rosario",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.statte.ta.it/sites/default/files/articolo/DETERMINA_Num_597_Atto%20copia%20conforme.PDF",
+        "label": "Comune di Statte",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera temporanea della festa patronale con selezione comunale di operatori alimentari, preparazioni per consumo immediato e non alimentari. La determina approva le domande ammissibili e riorganizza i settori per le postazioni delle due giornate, senza attestare posti oggi liberi.",
+      "venue": "Vie Bainsizza e Asmara; piazzetta Sant’Antonio, vie Don Paolo Zigrino e Armando Diaz",
+      "sectors": "Alimentari, preparazioni alimentari e non alimentari",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-06",
+          "end": "2026-10-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.statte.ta.it/sites/default/files/articolo/DETERMINA_Num_597_Atto%20copia%20conforme.PDF"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Determina 597 del 5 ottobre 2026: 17 istanze, 13 ammissibili; 16 postazioni per ciascuna delle aree/giornate dell’avviso. Titolo abilitativo commercio su aree pubbliche. Graduatoria e assegnazione già approvate, non candidatura attualmente aperta. Non pubblicati dati personali delle graduatorie. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.statte.ta.it/sites/default/files/articolo/DETERMINA_Num_597_Atto%20copia%20conforme.PDF"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ginosa",
+      "name": "FICO! Beer Fest",
+      "months": [
+        7,
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2257-fico-beer-fest-2026",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festival della Bassa Murgia che torna a Ginosa con birre, street food e musica dal vivo. Il comunicato della nona edizione individua tre serate nello stesso piazzale, distinguendo l’area gastronomica dagli spettacoli che la accompagnano.",
+      "venue": "Piazzale Padre Pio",
+      "sectors": "Birra e street food",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-31",
+          "end": "2026-08-02",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2257-fico-beer-fest-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "FICO Beer Fest: 3761622722. Comunicato PDF originale acquisito, sito diretto non risolvibile; quote espositori da richiedere. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2257-fico-beer-fest-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Maruggio",
+      "name": "La Strada dei Saperi e dei Sapori",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2299-la-strada-dei-saperi-e-dei-sapori-2026",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La Pro Loco propone un percorso nel centro storico di Maruggio dedicato alla cucina locale, all’artigianato e alla cultura del territorio. La ventiduesima edizione comprende due serate fra vicoli, corti e piazze, con spettacoli a completamento dell’offerta gastronomica.",
+      "venue": "Centro storico",
+      "sectors": "Gastronomia, prodotti tipici e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-18",
+          "end": "2026-08-19",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2299-la-strada-dei-saperi-e-dei-sapori-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pro Loco Maruggio: 3735212127, proloco.maruggio@gmail.com. Comunicato ripreso sul portale territoriale. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2299-la-strada-dei-saperi-e-dei-sapori-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Maruggio",
+      "name": "La Notte della Pecora Nera",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2247-la-notte-della-pecora-nera/2026-07-24-20-00",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Prima edizione organizzata da The Black Sheep APS in piazza del Popolo. L’iniziativa unisce stand gastronomici, artigiani e hobbisti con la promozione del Primitivo di Manduria, oltre a musica popolare e intrattenimento serale.",
+      "venue": "Piazza del Popolo",
+      "sectors": "Enogastronomia, artigianato e hobbistica",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-24",
+          "end": "2026-07-24",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2247-la-notte-della-pecora-nera/2026-07-24-20-00"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "The Black Sheep APS; presenza del Consorzio di Tutela del Primitivo. Nessuna apertura generalizzata a operatori esterni dedotta. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2247-la-notte-della-pecora-nera/2026-07-24-20-00"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Maruggio",
+      "name": "Calici e Pettole",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2311-calici-e-pettole-2/2026-08-10-20-00",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La Pro Loco di Maruggio propone vino e pettole in via Malta come appuntamento distinto dalla Strada dei Saperi e dei Sapori. La comunicazione della notte di San Lorenzo documenta una sola serata; altre date richiedono un annuncio separato.",
+      "venue": "Via Malta, centro storico",
+      "sectors": "Vino e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-10",
+          "end": "2026-08-10",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2311-calici-e-pettole-2/2026-08-10-20-00"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pro Loco Maruggio; pagina indica intestazione ore 20 e testo dalle 19:30, senza uniformare l’orario per ipotesi. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2311-calici-e-pettole-2/2026-08-10-20-00"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Sava",
+      "name": "Calici di Stelle",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2274-calici-di-stelle-2026-sava/2026-08-10-19-00",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Manifestazione dedicata al Primitivo di Manduria e alle produzioni vitivinicole di Sava. La ventiduesima edizione è presentata dall’assessorato alle Attività Produttive e coinvolge le realtà del vino, con musica a sostegno della promozione locale.",
+      "venue": "Piazza San Giovanni",
+      "sectors": "Cantine, vino e produzioni locali",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-10",
+          "end": "2026-08-10",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2274-calici-di-stelle-2026-sava/2026-08-10-19-00"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comune di Sava / Calici di Stelle: 0999727932. Comunicazione istituzionale ripresa da Istinto Primitivo, non tariffario né prova di ammissione. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2274-calici-di-stelle-2026-sava/2026-08-10-19-00"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Marzano di San Giuseppe",
+      "name": "Frittella Festival",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2284-frittella-festival-edizione-0/2026-08-29-20-30",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Itinerario gastronomico diffuso della Pro Loco Marciana, nato come iniziativa collegata al MED Festival. Le attività del centro e lo stand della Pro Loco propongono interpretazioni della frittella fra piazze e via Roma; non è documentato un mercato aperto a tutti.",
+      "venue": "Piazza Milite Ignoto, piazza Don Franco Venneri, via Roma e corso Umberto I",
+      "sectors": "Gastronomia; Pro Loco e attività aderenti",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-29",
+          "end": "2026-08-29",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2284-frittella-festival-edizione-0/2026-08-29-20-30"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pro Loco Marciana: 3281689221, prolocomarciana@gmail.com. Fonte del programma: una serata 29 agosto, non due giorni di attività dal divieto viabilità fino all’una del 30. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2284-frittella-festival-edizione-0/2026-08-29-20-30"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Torricella",
+      "name": "Sagra Medievale",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2174-sagra-medievale-2026/2026-07-25-19-00",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La Pro Loco di Torricella allestisce un borgo storico con street food e specialità locali presso il Castello Muscettola. La dodicesima edizione comprende corteo, falconeria e spettacoli; il percorso gastronomico apre nella serata della manifestazione.",
+      "venue": "Castello Muscettola, via Principe Umberto",
+      "sectors": "Street food e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-25",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2174-sagra-medievale-2026/2026-07-25-19-00"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pro Loco Torricella: 3285755688, prolocotorricellataranto@gmail.com. Apertura Borgo del Gusto ore 21; eventuali espositori da concordare, non solo partecipazione al corteo. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2174-sagra-medievale-2026/2026-07-25-19-00"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Montemesola",
+      "name": "Montemesola Beer Fest",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.a-taranto.it/eventi/montemesola-beer-fest",
+        "label": "a-taranto.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Rassegna dedicata alle birre artigianali pugliesi in Largo Osanna, con musica dal vivo e intrattenimento. La pagina editoriale colloca la terza edizione in due serate di agosto e ne descrive la vocazione gastronomica e di promozione del territorio.",
+      "venue": "Largo Osanna",
+      "sectors": "Birre artigianali e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-07",
+          "end": "2026-08-08",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.a-taranto.it/eventi/montemesola-beer-fest"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte editoriale a-taranto.it, programma dalle ore 21; non ricavare un prezzo del banco dall’ingresso gratuito. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.a-taranto.it/eventi/montemesola-beer-fest"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Monteiasi",
+      "name": "Sagra della Frisella",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.cronachetarantine.it/index.php/cultura-eventi-spettacoli/17318-a-monteiasi-torna-la-sagra-della-frisella-una-serata-tra-tradizione-musica-e-convivialita",
+        "label": "cronachetarantine.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Manifestazione promossa dall’Amministrazione comunale con stand gastronomici fra piazza Maria Immacolata e via Roma. Il comunicato della quarta edizione valorizza friselle, vino e tradizioni locali, con esibizioni musicali a completamento della festa.",
+      "venue": "Piazza Maria Immacolata e via Roma",
+      "sectors": "Gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-07",
+          "end": "2026-08-07",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.cronachetarantine.it/index.php/cultura-eventi-spettacoli/17318-a-monteiasi-torna-la-sagra-della-frisella-una-serata-tra-tradizione-musica-e-convivialita"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comunicato comunale ripreso da Cronache Tarantine. Friselle e vino offerti dal Comune ai visitatori, non posteggi gratuiti per gli espositori. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.cronachetarantine.it/index.php/cultura-eventi-spettacoli/17318-a-monteiasi-torna-la-sagra-della-frisella-una-serata-tra-tradizione-musica-e-convivialita"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Avetrana",
+      "name": "Sagra della Polpetta",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.tammurria.it/news/tammurria-live-agosto-2026/",
+        "label": "tammurria.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra estiva dedicata alle polpette e alla gastronomia locale nel centro di Avetrana. Il calendario diretto del gruppo Tammurria documenta la propria partecipazione alla serata in piazza Vittorio Veneto, fornendo un riscontro specifico della data.",
+      "venue": "Piazza Vittorio Veneto",
+      "sectors": "Polpette e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-13",
+          "end": "2026-08-13",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.tammurria.it/news/tammurria-live-agosto-2026/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte diretta del gruppo musicale: 13 agosto, 25ª edizione; altri portali riportano 24ª e un avviso trasporti cita 12 luglio. Quest’ultimo non è usato per ampliare automaticamente la sagra di agosto o duplicarla. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.tammurria.it/news/tammurria-live-agosto-2026/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ginosa",
+      "name": "Fiera di Santa Maria d’Attoli e San Giuseppe",
+      "months": [
+        4,
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera riportata nel repertorio regionale del commercio su aree pubbliche per Ginosa, distinta dalla festa del Rosario. La registrazione storica identifica una ricorrenza primaverile, ma non prova la data di una nuova edizione né disponibilità per gli operatori.",
+      "venue": "Ginosa; ubicazione da riconfermare",
+      "sectors": "Merci varie, categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. Lunedì dopo l’ultima domenica di aprile; potrebbe ricadere a maggio. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ginosa",
+      "name": "Fiera della Madonna del Rosario e dei SS. Medici",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera di ottobre censita dal repertorio regionale per il commercio, distinta dal lungo calendario delle celebrazioni dei patroni. La scheda conserva l’identità commerciale e il periodo usuale senza trasformare i giorni religiosi del 2026 in aperture dei banchi.",
+      "venue": "Ginosa; ubicazione da riconfermare",
+      "sectors": "Merci varie, categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. Lunedì dopo la prima domenica di ottobre. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Grottaglie",
+      "name": "Fiera di San Ciro",
+      "months": [
+        1
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera patronale registrata dal repertorio regionale del commercio in gennaio. Il Comune documenta i festeggiamenti di San Ciro nel 2026, ma l’ordinanza di viabilità recuperata non equivale a un bando commerciale né prova l’apertura dei posteggi per entrambe le giornate.",
+      "venue": "Grottaglie; aree commerciali da verificare",
+      "sectors": "Merci varie; categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. 30–31 gennaio nel repertorio storico. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "https://comune.grottaglie.ta.it/it/news/1948218"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Grottaglie",
+      "name": "Fiera della Madonna di Mutata",
+      "months": [
+        3,
+        4
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera primaverile presente nel repertorio regionale delle manifestazioni commerciali. Il documento descrive una ricorrenza mobile collegata alla Pasqua: il calendario conserva solo i mesi compatibili e richiede una nuova conferma del Comune prima di organizzare il banco.",
+      "venue": "Grottaglie; area della ricorrenza da verificare",
+      "sectors": "Merci varie; categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. Domenica dopo Pasqua, senza calcolo del giorno 2026 o 2027. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Grottaglie",
+      "name": "Fiera di San Francesco de Geronimo",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera commerciale di maggio censita nel repertorio regionale, distinta dalla Fiera delle Grotte di settembre. La registrazione è storica: non viene trasformata in una data giornaliera corrente o in una procedura di assegnazione ancora utilizzabile.",
+      "venue": "Grottaglie; ubicazione da riconfermare",
+      "sectors": "Merci varie; categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. Seconda domenica di maggio nel repertorio 2013. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Grottaglie",
+      "name": "Fiera delle Grotte",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera tradizionale di settembre registrata nel repertorio regionale del commercio. La fonte istituzionale storica documenta identità e ricorrenza; la segnalazione automatica del 13 settembre 2026 non è trattata come un originale comunale verificato.",
+      "venue": "Grottaglie; sede attuale da confermare col SUAP",
+      "sectors": "Commercio e zootecnia; requisiti da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. Seconda domenica di settembre; nessuna data corrente calcolata. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Massafra",
+      "name": "Fiera Madonna della Scala",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera mercato legata alla ricorrenza primaverile della Madonna della Scala, presente nel repertorio regionale del commercio. La classificazione commerciale consente di distinguerla dalle sole celebrazioni religiose, ma non certifica un’edizione corrente o un contingente di posteggi.",
+      "venue": "Massafra; aree commerciali da confermare",
+      "sectors": "Alimentare e non alimentare da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. Prima domenica di maggio nel repertorio storico. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Massafra",
+      "name": "Fiera San Michele e SS. Medici",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera mercato patronale di settembre censita nella documentazione regionale per gli ambulanti. È conservata come ricorrenza storica, distinta dagli orari delle processioni e dalle attrazioni viaggianti che possono accompagnare il programma religioso e civile.",
+      "venue": "Massafra; aree commerciali da confermare",
+      "sectors": "Alimentare e non alimentare da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. Ultima domenica di settembre nel repertorio storico. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Marzano di San Giuseppe",
+      "name": "Fiera di San Giuseppe",
+      "months": [
+        3
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera di marzo censita nel repertorio regionale del commercio, distinta dal falò e dalle celebrazioni del 18–19 marzo. L’originale riporta un riferimento esplicito al 2014: non viene sostituito con il giorno della festa patronale di un altro anno.",
+      "venue": "San Marzano di San Giuseppe; ubicazione da riconfermare",
+      "sectors": "Merci varie; categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. Prima domenica di marzo, con esempio 2 marzo 2014 nel documento. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Marzano di San Giuseppe",
+      "name": "Fiera di San Cosimo",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti",
+        "label": "sistema.puglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera autunnale riportata nel repertorio regionale e legata alla ricorrenza dei Santi Medici. La scheda conserva l’identità commerciale senza dedurre dai festeggiamenti una data attuale di mercato o una nuova possibilità di assegnazione dei posteggi.",
+      "venue": "San Marzano di San Giuseppe; ubicazione da riconfermare",
+      "sectors": "Merci varie; categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo repertorio storico BURP n.124 del 19 settembre 2013, non avviso attuale. Ultima domenica di settembre nel repertorio storico. Chiedere al SUAP se la manifestazione è tuttora attiva e con quali regole. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.sistema.puglia.it/portal/pls/portal/sispuglia.ges_blob.p_retrieve?p_cname=testo&p_cname_mime=mime_type_testo&p_esito=0&p_name_allegato=&p_rowid=AAAh67AAPAAIPHiAAC&p_tname=sispuglia.documenti"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Palagianello",
+      "name": "Fiera di San Martino",
+      "months": [
+        11
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.palagianello.ta.it/vivere-il-comune/eventi/fiera-di-san-martino-2024/",
+        "label": "Comune di Palagianello",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera commerciale di novembre disciplinata dal Comune per operatori autorizzati su aree pubbliche. La pagina conserva l’avviso del 2025 nonostante l’URL contenga 2024: le date della domanda non sono il periodo di apertura del mercato.",
+      "venue": "Palagianello; posteggio secondo assegnazione comunale",
+      "sectors": "Operatori con autorizzazione o SCIA tipo A/B",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-11-09",
+          "end": "2025-11-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.palagianello.ta.it/vivere-il-comune/eventi/fiera-di-san-martino-2024/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025: domanda su autorizzo.com entro 26 ottobre 2025, identificativo bollo 16 €, pagamento su PagoPA non quantificato. Non confermata la data 8 novembre 2026 degli aggregatori, priva di originale recuperato. SUAP 0998434206; Polizia Locale 0998494164. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.palagianello.ta.it/vivere-il-comune/eventi/fiera-di-san-martino-2024/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Roccaforzata",
+      "name": "Sagra della Frisedda",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://prolocoroccaforzata.wixsite.com/proloco-roccaforzata/dettagli-e-registrazioni/20-edizione-della-sagra-della-frisedda",
+        "label": "prolocoroccaforzata.wixsite.com",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La Pro Loco di Roccaforzata descrive una sagra di inizio settembre con stand gastronomici dedicati ai prodotti locali e musica dal vivo. La pagina diretta documenta la ventesima edizione del 2023, senza confermare un nuovo appuntamento giornaliero.",
+      "venue": "Via Vittorio Emanuele, 3; sede dell’edizione storica",
+      "sectors": "Gastronomia e prodotti locali",
+      "editions": [
+        {
+          "year": 2023,
+          "start": "2023-09-08",
+          "end": "2023-09-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://prolocoroccaforzata.wixsite.com/proloco-roccaforzata/dettagli-e-registrazioni/20-edizione-della-sagra-della-frisedda"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2023 e periodo usuale; Pro Loco 3296663133, info@prolocoroccaforzata.it. Iscrizione visitatori sul vecchio sito non è domanda espositore. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://prolocoroccaforzata.wixsite.com/proloco-roccaforzata/dettagli-e-registrazioni/20-edizione-della-sagra-della-frisedda"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Massafra",
+      "name": "Sagra del Tornerai",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.massafra.ta.it/novita/viabilita-stradale-sagra-del-tornerai-2/",
+        "label": "Comune di Massafra",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra urbana per la quale il Comune documenta l’allestimento e le modifiche alla circolazione sul Lungovalle. La terza edizione recuperata è del luglio 2024: la data tecnica di aggiornamento della pagina nel 2026 non cambia l’anno della manifestazione.",
+      "venue": "Area pedonale Lungovalle Niccolò Andria, edizione 2024",
+      "sectors": "Gastronomia; categorie da verificare",
+      "editions": [
+        {
+          "year": 2024,
+          "start": "2024-07-18",
+          "end": "2024-07-20",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.massafra.ta.it/novita/viabilita-stradale-sagra-del-tornerai-2/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2024. Precedente edizione 21–23 luglio 2023 in piazza Vittorio Emanuele, non duplicata. Richiedere nuova sede, programma commerciale e ammissione. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.massafra.ta.it/novita/viabilita-stradale-sagra-del-tornerai-2/",
+        "https://www.comune.massafra.ta.it/novita/sagra-del-tornerai/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Massafra",
+      "name": "Festa della Birra",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.massafra.ta.it/novita/provvedimenti-a-tutela-della-sicurezza-pubblica-in-occasione-della-festa-della-birra-1-2-agosto-2026-divieti-per-i-contenitori-in-vetro-e-regolamentazione-delle-attivita-di-vendit/",
+        "label": "Comune di Massafra",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Manifestazione birraria per la quale il Comune dispone regole specifiche di vendita per asporto e somministrazione. L’ordinanza distingue le condizioni dei contenitori dalle autorizzazioni commerciali: il rispetto dei divieti non assegna un posteggio alla festa.",
+      "venue": "Massafra; collocazione dell’area evento da verificare",
+      "sectors": "Birra e somministrazione",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-01",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.massafra.ta.it/novita/provvedimenti-a-tutela-della-sicurezza-pubblica-in-occasione-della-festa-della-birra-1-2-agosto-2026-divieti-per-i-contenitori-in-vetro-e-regolamentazione-delle-attivita-di-vendit/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Avviso 28 luglio 2026: divieti vetro e regole per contenitori e distributori H24, secondo ordinanza. Sanzioni 25–500 € non sono tariffe del banco; non dedotti orari dei singoli stand dalla validità del provvedimento. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.massafra.ta.it/novita/provvedimenti-a-tutela-della-sicurezza-pubblica-in-occasione-della-festa-della-birra-1-2-agosto-2026-divieti-per-i-contenitori-in-vetro-e-regolamentazione-delle-attivita-di-vendit/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Palagiano",
+      "name": "Sagra del Mandarino",
+      "months": [
+        12
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.expotaranto.com/tour/fiere-e-sagre",
+        "label": "expotaranto.com",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra dedicata alla produzione agrumicola della Conca d’Oro di Palagiano, presente nel repertorio turistico provinciale. La fonte conserva una vecchia edizione numerata e un giorno di dicembre: la scheda usa soltanto il mese, richiedendo il programma dell’organizzatore per una nuova partecipazione.",
+      "venue": "Palagiano; sede e percorso da verificare",
+      "sectors": "Agrumi e prodotti tipici",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Fonte turistica senza anno corrente; nessuna data 2026 o 2027 dedotta dal 21 dicembre del repertorio. Non acquisito un bando espositori; aggiornamenti e quota da chiedere al Comune o alla Pro Loco. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.expotaranto.com/tour/fiere-e-sagre"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Grottaglie",
+      "name": "Orecchiette nelle ’nchiosce",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.a-taranto.it/eventi/orecchiette-nelle-nchiosce",
+        "label": "a-taranto.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Percorso gastronomico dedicato alle orecchiette nelle corti e nei vicoli di Grottaglie. L’associazione Le Idee non Mancano APS coordina le postazioni della rassegna, che affianca cucina e musica; l’accesso degli operatori richiede un accordo con l’organizzazione.",
+      "venue": "Centro storico e ’nchiosce di Grottaglie",
+      "sectors": "Cucina, pasta, vino e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-04",
+          "end": "2026-08-05",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.a-taranto.it/eventi/orecchiette-nelle-nchiosce"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Associazione Le Idee non Mancano APS; fonte editoriale a-taranto.it. Ticket di degustazione per il pubblico distinti dalle quote espositore, che non risultano pubblicate. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.a-taranto.it/eventi/orecchiette-nelle-nchiosce"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Castellaneta",
+      "name": "Sagra da Far’nèdd e dei Sapori di Puglia",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2183-sagra-da-farnedd-e-dei-sapori-di-puglia-2026/2026-08-09-19-00",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Percorso gastronomico di UniComArt nel centro storico di Castellaneta, dedicato alla farinella e alle produzioni pugliesi. La ventunesima edizione abbina postazioni di degustazione e musica distribuite nel borgo, con accesso commerciale da concordare con l’associazione.",
+      "venue": "Centro storico di Castellaneta",
+      "sectors": "Prodotti tipici, gastronomia e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-09",
+          "end": "2026-08-09",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2183-sagra-da-farnedd-e-dei-sapori-di-puglia-2026/2026-08-09-19-00"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "UniComArt: 3513145633, castellanetaunicomart@gmail.com. Comunicato dell’organizzatore ripreso da Istinto Primitivo; sito diretto sagradafarnedd.it 503 anche in browser, non dichiarato acquisito. Ticket visitatore non costo banco; primati e affluenze promozionali non trasformati in dati certificati. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2183-sagra-da-farnedd-e-dei-sapori-di-puglia-2026/2026-08-09-19-00"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Mottola",
+      "name": "Festa della Trebbiatura e della Cuccagna",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://mottola-api.municipiumapp.it/s3/4540/allegati/estate-2026.jpeg",
+        "label": "mottola-api.municipiumapp.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Rievocazione della trebbiatura alla Masseria Quisisana, inserita nel cartellone ufficiale dell’estate mottolese. L’associazione Agricoltura e Storia in Masseria affianca tradizioni agricole, stand gastronomici e musica, con il gioco della cuccagna nella seconda giornata.",
+      "venue": "Masseria Quisisana",
+      "sectors": "Prodotti tipici e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://mottola-api.municipiumapp.it/s3/4540/allegati/estate-2026.jpeg"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Date e orario dalle 19 nel manifesto comunale letto visivamente; stand documentati anche dalla ripresa editoriale del programma. Nessuna selezione aperta o quota espositore pubblicata. Distinta dalla festa del grano Senatore Cappelli del 9 agosto. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://mottola-api.municipiumapp.it/s3/4540/allegati/estate-2026.jpeg",
+        "https://www.mapulia.org/eventi/festa-della-trebbiatura-e-della-cuccagna-evt_8b9ee332ddfc7f2f4e95"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Mottola",
+      "name": "Festa della Trebbiatura del grano Senatore Cappelli",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.lostradone.eu/domenica-9-agosto-la-3a-festa-della-trebbiatura-del-grano-senatore-cappelli/",
+        "label": "lostradone.eu",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La Famiglia Curci organizza una festa rurale dedicata al grano Senatore Cappelli, con macchinari d’epoca, rievocazione della trebbiatura e stand gastronomici. La terza edizione si svolge nella zona industriale di San Basilio ed è distinta dall’appuntamento di luglio a Quisisana.",
+      "venue": "Zona industriale San Basilio",
+      "sectors": "Prodotti tipici e stand gastronomici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-09",
+          "end": "2026-08-09",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.lostradone.eu/domenica-9-agosto-la-3a-festa-della-trebbiatura-del-grano-senatore-cappelli/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte giornalistica Lo Stradone, avvio dalle 18:30. Contingente, selezione e costi stand non recuperati; ingresso gratuito non esteso agli espositori. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.lostradone.eu/domenica-9-agosto-la-3a-festa-della-trebbiatura-del-grano-senatore-cappelli/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Fragagnano",
+      "name": "Fiera Agricola di San Giuseppe",
+      "months": [
+        3
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.bigitalia.com/it/puglia/taranto/fragagnano/eventi-e-sagre/san-giuseppe-patrono-della-fiera-agricola-fragagnano-3457/",
+        "label": "bigitalia.com",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera tradizionale di Fragagnano dedicata alle produzioni agricole e all’artigianato locale, con esposizione di attrezzature meccaniche. Il repertorio territoriale la lega alla ricorrenza di San Giuseppe; la data futura generata dalla pagina non costituisce un nuovo calendario comunale.",
+      "venue": "Fragagnano; sede operativa da confermare",
+      "sectors": "Agricoltura, attrezzature e artigianato locale",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Solo ricorrenza 13–14 marzo da fonte secondaria; non importate le date automatiche 2027. Il sito comunale non ha restituito un avviso operativo attuale; un vecchio URL fiere reindirizza alla home e non prova alcun bando. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.bigitalia.com/it/puglia/taranto/fragagnano/eventi-e-sagre/san-giuseppe-patrono-della-fiera-agricola-fragagnano-3457/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Sava",
+      "name": "CibuSava Food Experience",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2181-cibus-food-experience-2026/2026-07-25-20-00",
+        "label": "istintoprimitivo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La rassegna gastronomica di Sava valorizza le produzioni del territorio con stand nel centro cittadino. Il programma della quarta edizione distingue l’apertura della gastronomia dallo spettacolo serale, senza presentare la partecipazione del pubblico come accesso commerciale libero.",
+      "venue": "Centro storico, piazza San Giovanni",
+      "sectors": "Gastronomia e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-25",
+          "end": "2026-07-25",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2181-cibus-food-experience-2026/2026-07-25-20-00"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comune di Sava / Sava Food Experience: 0999727932. Stand dalle 20, spettacolo dalle 22; selezione e quota operatore non pubblicate nella comunicazione ripresa. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.istintoprimitivo.it/index.php/tutti-gli-eventi/2181-cibus-food-experience-2026/2026-07-25-20-00"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Taranto",
+      "name": "Taranto Comix",
+      "months": [
+        5
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.grafitefumetto.it/2026/05/05/taranto-comix-2026-programma/",
+        "label": "grafitefumetto.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera del fumetto e della cultura pop con espositori di fumetti, gadget, carte collezionabili e artigianato, oltre all’Artist Alley. Il programma del partner Grafite documenta la presenza commerciale per due giornate al Mon Reve, accanto a incontri e attività di gioco.",
+      "venue": "Mon Reve Ecogreen Resort",
+      "sectors": "Fumetti, gadget, collezionismo, carte e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-09",
+          "end": "2026-05-10",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.grafitefumetto.it/2026/05/05/taranto-comix-2026-programma/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Fonte diretta del partner Grafite; la pagina editoriale a-taranto.it conferma date e sede. Prezzi 10/13 € citati dal portale sono biglietti visitatori, non stand. Richiedere ammissione e contratto al Taranto Comix; il dominio diretto provato non risolve. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.grafitefumetto.it/2026/05/05/taranto-comix-2026-programma/",
+        "https://www.a-taranto.it/eventi/taranto-comix-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Taranto",
+      "name": "Mercatino della Befana · area ex camper",
+      "months": [
+        1
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.taranto.it/it/news/natale-a-taranto-calendario-degli-eventi-dall-1-al-6-gennaio-2026",
+        "label": "Comune di Taranto",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mercatino inserito nel cartellone ufficiale di Natale del Comune con consegna di doni ai bambini. È un appuntamento autonomo organizzato da Athena nell’area ex parcheggio camper, distinto dalla Fiera dell’Epifania e dagli spettacoli del programma cittadino.",
+      "venue": "Area ex parcheggio camper di via Mascherpa",
+      "sectors": "Mercatino; categorie ammesse da verificare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-01-06",
+          "end": "2026-01-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.taranto.it/it/news/natale-a-taranto-calendario-degli-eventi-dall-1-al-6-gennaio-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale: 6 gennaio 2026 dalle 9:30 alle 23, organizzazione Athena srl come indicato nella fonte. Non nuova edizione gennaio 2027 né bando espositori; nessuna duplicazione del concerto del 3 gennaio. La scheda non garantisce posteggi disponibili o ammissione. Verificare con organizzatore e SUAP nuova edizione, categorie, domanda, requisiti, costi e servizi. Ingresso libero al pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.taranto.it/it/news/natale-a-taranto-calendario-degli-eventi-dall-1-al-6-gennaio-2026"
+      ]
+    }
+  ]
+}
