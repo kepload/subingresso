@@ -1,5 +1,12 @@
 # Subingresso.it — informazioni e TO DO
 
+## Taranto — singola provincia pubblicata e verificata, 31 ottobre 2026
+
+- **64 schede in 27 comuni**, 62 aggiunte e due ID conservati; ricognizione dei29comuni e **otto sintesi economiche** (Pessima e sette istanzeLaterza, non otto tariffari indipendenti). Ricerca corrente conclusa con limiti, storico e ricorrenze distinti; Monteparano/SanGiorgio senza schede non dichiarati privi di eventi. Audit `data/fiere-taranto.json`, fonti/limiti `data/FIERE.md`, originali/prove `.local/ricerche/fiere-taranto-20261031`:125acquisizioniHTTP,121fileSHA256, cinque tentativibrowser, non altrettante letture.
+- Dati `19dc12f`, [Vercel riuscito](https://vercel.com/kycykuardit-9234s-projects/subingresso/8y21jqKNtnyFaYTFC755EJN1F48V): cinqueasset identici ai blobGit, **64pagineHTTP200** con canonical/partecipazione/costi. Chromium1440/320 e WebKit390 locali/live:64dettagli,otto costi,elenco/mappa e sei paginesenzaJS per formato; smoke reale font/icone e scrittureintercettate passato. Generale5formati,settori,buildripetibile,8.895pagine/4.451schede sitemap,gitleaks passati. **Altre8.831schede e373prezzi precedenti identici**. Sitemaplive4956URL, tutte64schede incluse; cacheJS144/JSON110.
+- Pessima6–12marzo2026 daMailticket; listino corpo283ª/titoloresiduo2024,IVA senzaaliquota,truck300€/stand615–850€,gazebo650dopo700barrato,energia120separata, non prezzi2027. Laterza5€diritti+16€bollo non canone. Carosino10–12agosto da programma visto; Statte6–7ottobre graduatoria non disponibilità; Frittella29agosto non30. PalagianelloSanMartino2025, Tornerai2024, Frisedda2023 e repertorioBURP2013 espliciti. Fonti403/503/DNS e proposteNatale non trasformati in conferme.
+- Spuntata **solo casella80 dopo prove live:88concluse/22aperte su110**. Pavia, stopautomatico e fileestranei preservati; nessuna altra provincia, task o comunicazione a terzi. Backupremoto tag111246 e ramo `backup/pre-fiere-taranto-20261031` verificati; cleanuphelper noto. Copia privataSHA256291file/59.446.294byte senzaerrori più supplementofinale nella root.
+
 ## Brindisi — singola provincia pubblicata e verificata, 31 ottobre 2026
 
 - **65 schede nei20comuni**,64aggiunte e IDSanCosimo conservato; **due sintesi economiche**. Ricerca mirata attuale conclusa con limiti espliciti, non censimento certificato; storico, ricorrenze e progetti condizionati distinti. Audit `data/fiere-brindisi.json`, fonti/limiti `data/FIERE.md`, originali e prove `.local/ricerche/fiere-brindisi-20261031`:181acquisizioni tecniche,176file con hash verificato e173nonvuoti, non altrettante letture.
@@ -3209,7 +3216,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 87 province completate, 23 da fare su 110**, aggiornate il31ottobre dopo Brindisi, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
+**Ricerca approfondita: 88 province completate, 22 da fare su 110**, aggiornate il31ottobre dopo Taranto, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3760,7 +3767,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **77. Trapani** — Sicilia — ricerca attuale conclusa con limiti: 50 schede nei 25 comuni attuali, incluso Misiliscemi; pubblicata e verificata online il 30 ottobre 2026. Audit `data/fiere-trapani.json`, fonti e prove nel dossier; ciclo fermo.
 - [x] **78. Barletta-Andria-Trani** — Puglia — ricerca attuale conclusa con limiti: 48 schede nei dieci comuni e otto sintesi costo; pubblicata e verificata online il 30 ottobre 2026. Audit `data/fiere-bat.json`, fonti e prove nel dossier; intervento singolo, ciclo fermo.
 - [x] **79. Brindisi** — Puglia — ricerca attuale conclusa con limiti:65schede nei20comuni,64aggiunte, pubblicata e verificata online il31ottobre2026. Audit `data/fiere-brindisi.json` e fonti/prove nel dossier.
-- [ ] **80. Taranto** — Puglia
+- [x] **80. Taranto** — Puglia — ricerca corrente conclusa con limiti:64schede in27comuni,29ricogniti eotto sintesi costo; pubblicata e verificata online il31ottobre2026. Audit `data/fiere-taranto.json`, fonti/prove nel dossier; intervento singolo, ciclo fermo.
 - [ ] **81. Foggia** — Puglia
 - [ ] **82. Avellino** — Campania
 - [ ] **83. Benevento** — Campania
