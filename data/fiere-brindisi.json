@@ -1,0 +1,2819 @@
+{
+  "province": "Brindisi",
+  "checkedAt": "2026-10-31",
+  "research": {
+    "status": "ricerca-documentale-conclusa-con-limiti",
+    "baselineCommit": "aaa15d3",
+    "privateArchive": ".local/ricerche/fiere-brindisi-20261031",
+    "statistics": {
+      "events": 65,
+      "municipalitiesCovered": 20,
+      "municipalitiesWithEvents": 20,
+      "baselineEvents": 1,
+      "addedEvents": 64,
+      "pricingSummaries": 2,
+      "technicalReceipts": 181,
+      "hashVerifiedOriginals": 176,
+      "nonemptyOriginals": 173,
+      "otherEventsPreserved": 8768
+    },
+    "scope": "Singola provincia richiesta; checkout isolato. Pavia, lavoro altrui, stop persistente e task automatico preservati. Nessun contatto o candidatura a terzi.",
+    "methodology": "Ricognizione nominale dei20comuni con ricerche tematiche e portali istituzionali, calendari e organizzatori; letture mirate di avvisi originali, DOCXOria, PDF e brochure. Carovigno e tabellaSNIM controllati visivamente, paginaSagraOstuni vista. Fonti editoriali e comunicati ripresi dichiarati, programmi condizionati non certificati come svolti.",
+    "municipalities": [
+      {
+        "city": "Brindisi",
+        "eventCount": 4,
+        "events": [
+          "puglia-brindisi-fiera-dei-santi-patroni",
+          "puglia-brindisi-appia-wine",
+          "puglia-brindisi-snim-salone-nautico-di-puglia",
+          "puglia-brindisi-mercatino-artigianale-accoglienza-crociere"
+        ],
+        "sources": [
+          "https://www.comune.brindisi.it/novita/accoglienza-crociere-2026-organizzazione-mercatino-artigianale/",
+          "https://www.comune.brindisi.it/novita/appia-wine-vino-food-e-musica-nel-cuore-di-brindisi/",
+          "https://www.comune.brindisi.it/wp-content/uploads/2026/03/Avviso-Mercatino-accoglienza-Crociere-2026.pdf",
+          "https://www.comune.brindisi.it/wp-content/uploads/2026/03/Calendario-approdi-Crociere-2026.pdf",
+          "https://www.comune.brindisi.it/wp-content/uploads/2026/07/avviso_santi_patroni_2026A20260724110123611Z.pdf",
+          "https://www.snimpuglia.it/diventa-espositore/",
+          "https://www.snimpuglia.it/wp-content/uploads/2026/05/EDITABILE_SNIM-2026-domanda-di-adesione.pdf"
+        ],
+        "outcome": "Patronale4–7settembre e domanda5agosto da PDF; AppiaWine26–27giugno; mercatino crociere solo approdi aprile–novembre e bando al gestore. SNIM listino originale7pagine letto, tabella vista; vecchio URL storage reindirizza alla home."
+      },
+      {
+        "city": "Carovigno",
+        "eventCount": 9,
+        "events": [
+          "puglia-carovigno-fiera-delle-palme",
+          "puglia-carovigno-mercato-delle-festivita-pasquali",
+          "puglia-carovigno-festa-della-madonna-del-belvedere-posteggi",
+          "puglia-carovigno-festa-del-crocifisso-posteggi",
+          "puglia-carovigno-festa-di-santa-maria-goretti-posteggi",
+          "puglia-carovigno-fiera-del-bestiame-di-serranova",
+          "puglia-carovigno-ferragosto-carovignese-posteggi",
+          "puglia-carovigno-festa-di-santa-sabina-posteggi",
+          "puglia-carovigno-festa-della-conella-posteggi"
+        ],
+        "sources": [
+          "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        ],
+        "outcome": "Calendario2026 originale duepagine letto, tabella vista. Nove schede; Belvedere aprile/settembre unita. Polinisso4–7aprile zona giostre distinta dai banchi centro5–7; Goretti e bestiame separati. Bollo16 non canone; termine28febbraio."
+      },
+      {
+        "city": "Ceglie Messapica",
+        "eventCount": 2,
+        "events": [
+          "puglia-ceglie-messapica-ceglie-food-festival",
+          "puglia-ceglie-messapica-il-mercatino-antiquariato-e-collezionismo"
+        ],
+        "sources": [
+          "https://halleyweb.com/ceglie/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5WpZd0TqTT0-A",
+          "https://lovojo.it/sagre/puglia/brindisi/ceglie-food-festival-patrimonio-vivo-ceglie-messapica/",
+          "https://www.arcapromoter.it/eventi/",
+          "https://www.cosedicasa.com/mercatini/ceglie-messapica-piazza-santantonio"
+        ],
+        "outcome": "FoodFestival21–23agosto da progetto comunale e comunicazioni. Mercatino novembre/dicembre da calendarioArca; ultima domenica e mesi con cinque domeniche non proiettati. FieraAssunta solo pista editoriale non integrata senza originale operativo."
+      },
+      {
+        "city": "Cellino San Marco",
+        "eventCount": 1,
+        "events": [
+          "puglia-cellino-san-marco-sagra-beddhra-cilinu"
+        ],
+        "sources": [
+          "https://www.comune.cellinosanmarco.br.it/vivere-il-comune/eventi/sagra-beddrha-cilinu-3/",
+          "https://www.festivalinitalia.it/festival/festa-san-marco-santa-caterina-beddhra-cilinu-cellino-san-marco"
+        ],
+        "outcome": "Beddhra: pagina comunale identità senza calendario, luglio consuetudine secondaria. Le date automatiche2026 non sono conferme. FestaVendemmia portale403 e nessuna fonte primaria recuperata: esclusa."
+      },
+      {
+        "city": "Cisternino",
+        "eventCount": 9,
+        "events": [
+          "puglia-cisternino-borgo-divino",
+          "puglia-cisternino-ecocentrica",
+          "puglia-cisternino-sagra-delle-produzioni-locali",
+          "puglia-cisternino-agrifest-trisole",
+          "puglia-cisternino-cisternino-beer-fest",
+          "puglia-cisternino-sagra-dei-sapori-della-valle-d-itria",
+          "puglia-cisternino-sagra-dell-uva-di-casalini",
+          "puglia-cisternino-fiera-della-bomminella",
+          "puglia-cisternino-il-mercatino-antiquariato-e-artigianato"
+        ],
+        "sources": [
+          "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+          "https://www.arcapromoter.it/eventi/",
+          "https://www.cosedicasa.com/mercatini/cisternino"
+        ],
+        "outcome": "Nove schede; programma comunale completo letto: produzioni5–6agosto, Agrifest17, Beer21–22, Figazzano22–23,Uva29–30,Bomminella8settembre distinta da5–7. Ecocentrica solo periodo; due mercatiniArca annuali verificati senza ricorrenze automatiche. OlioVino e Orecchiette con sole stime esclusi."
+      },
+      {
+        "city": "Erchie",
+        "eventCount": 1,
+        "events": [
+          "puglia-erchie-fiera-di-santa-lucia-i-profumi-della-terra"
+        ],
+        "sources": [
+          "https://comune.erchie.br.it/it/news/148038/i-profumi-della-terra-fiera-di-santa-lucia",
+          "https://erchie-api.municipiumapp.it/s3/2647/allegati/invito-stakeholders.pdf"
+        ],
+        "outcome": "FieraSantaLucia/ProfumiTerra solo2025 da invito e pagina comunale. Piano commerciale403 e alternativaAPI200vuota, non letto. Luminarie2026 non sono mercato; trasferimento mercato settimanale escluso."
+      },
+      {
+        "city": "Fasano",
+        "eventCount": 1,
+        "events": [
+          "puglia-fasano-sagra-del-fiorone-di-pezze-di-greco"
+        ],
+        "sources": [
+          "https://gofasano.com/attualita/tutto-pronto-per-la-sagra-del-fiorone-a-pezze-di-greco/"
+        ],
+        "outcome": "Fiorone6giugno aPezze da comunicatoProLoco ripreso in stampa. PortaleComune consultato, pagina dedicata fiere404; bandi foodtruck ordinari non diventano fiere. Nessun censimento integrale albi o assenza di altri eventi dichiarati."
+      },
+      {
+        "city": "Francavilla Fontana",
+        "eventCount": 2,
+        "events": [
+          "puglia-francavilla-fontana-sagra-del-comitato-festa-patronale",
+          "puglia-francavilla-fontana-mercatino-dell-antiquariato-della-festa-patronale"
+        ],
+        "sources": [
+          "https://www.festapatronaleff.it/programma/"
+        ],
+        "outcome": "ProgrammaComitato2026 letto: sagra7settembre e antiquariato12settembre distinti, non11giorni di banchi. FieraAscensione storica e presunte altre fiere prive di programma corrente non proiettate."
+      },
+      {
+        "city": "Latiano",
+        "eventCount": 1,
+        "events": [
+          "puglia-latiano-fiera-di-ottobre-la-fera"
+        ],
+        "sources": [
+          "https://www.comune.latiano.br.it/dam/jcr:7eff775a-5d82-4514-bcb7-af3953a2ce01/avviso%20settore%20alimentare.pdf",
+          "https://www.comune.latiano.br.it/notizie/AVVISO-PUBBLICO-PER-L-ASSEGNAZIONE-TEMPORANEA-DEI-POSTEGGI-DESTINATI-ALLA-SOMMINISTRAZIONE-DI-ALIMENTI-E-BEVANDE-NELL-AMBITO-DELLA--FIERA-DI-OTTOBRE-2026-.html",
+          "https://www.weareinbrindisi.it/la-fera-latiano-2026/"
+        ],
+        "outcome": "Avviso originale2026: areafood2–4ottobre,13posteggi e domanda8settembre. LaFera dal18settembre non è banco continuo; Stacchioddi4ottobre compresa senza duplicare. CUP senza prezzo. Ricerca interna portale recuperata tramite parametroq dopo tentativi query/cerca inefficaci."
+      },
+      {
+        "city": "Mesagne",
+        "eventCount": 3,
+        "events": [
+          "puglia-mesagne-fiera-medievale-franca",
+          "puglia-mesagne-fiera-del-cappotto",
+          "puglia-mesagne-rosso-salentino"
+        ],
+        "sources": [
+          "https://www.comune.mesagne.br.it/novita/fiera-del-cappotto-2/",
+          "https://www.comune.mesagne.br.it/novita/incontri-dautore-musica-spettacoli-e-la-fiera-medioevale-franca/",
+          "https://www.comune.mesagne.br.it/wp-content/uploads/2026/09/Avviso_fiera_2026_.pdf",
+          "https://www.mesagnesera.it/rosso-salentino-rinviato/",
+          "https://www.turismo.comune.mesagne.br.it/evento/rosso-salentino-al-via-la-iii-edizione-tra-buon-vino-pugliese-e-sapori-locali/",
+          "https://www.turismo.comune.mesagne.br.it/evento/xxii-edizione-della-fiera-medievale-franca/"
+        ],
+        "outcome": "Medievale3–4ottobre da Comune. Cappotto15novembre, domanda25ottobre, bollo16 e refuso2025 nelPDF; graduatoria già provvisoria27ottobre. Rosso rinviato7–8novembre dalla notizia30ottobre, vecchia schedaComune ancora30–31ottobre. Mercato ordinario mensile e trasferimento1novembre esclusi."
+      },
+      {
+        "city": "Oria",
+        "eventCount": 13,
+        "events": [
+          "puglia-oria-fiera-di-san-cosimo",
+          "puglia-oria-sagra-di-san-cosimo",
+          "puglia-oria-sagra-della-madonna-della-scala",
+          "puglia-oria-sagra-di-san-francesco-di-paola",
+          "puglia-oria-sagra-di-sant-antonio",
+          "puglia-oria-fiera-della-maddalena",
+          "puglia-oria-sagra-di-san-lorenzo",
+          "puglia-oria-sagra-della-madonna-di-gallana",
+          "puglia-oria-fiera-di-san-barsanofrio",
+          "puglia-oria-sagra-di-san-barsanofrio",
+          "puglia-oria-sagra-dell-uva",
+          "puglia-oria-sagra-dei-santi-medici",
+          "puglia-oria-sagra-ti-la-sasizza"
+        ],
+        "sources": [
+          "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+          "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf",
+          "https://www.oriaestate.it/eventi/184-fiera-di-san-barsanofio"
+        ],
+        "outcome": "DOCX integrale2026 letto tramiteXMLWord:13manifestazioni, non soltanto nove della determina. Date tutte dichiarate indicative: niente calcolo Pasqua/domeniche; Barsanofrio29agosto ha programma specifico. Domanda30giorni e CUP10giorni prima, nessun importo inventato; planimetrie acquisite non tutte lette integralmente."
+      },
+      {
+        "city": "Ostuni",
+        "eventCount": 5,
+        "events": [
+          "puglia-ostuni-fiera-di-san-giuseppe",
+          "puglia-ostuni-fiera-di-sant-oronzo",
+          "puglia-ostuni-sagra-dei-vecchi-tempi",
+          "puglia-ostuni-hortus-mostra-mercato-dell-orto-e-del-giardino",
+          "puglia-ostuni-zagaredde-artigianato-e-antiquariato"
+        ],
+        "sources": [
+          "https://www.comune.ostuni.br.it/novita/zagaredde/",
+          "https://www.comune.ostuni.br.it/vivere-il-comune/eventi/festa-di-santoronzo/",
+          "https://www.comune.ostuni.br.it/wp-content/uploads/2026/01/1-Avviso-pubblico.pdf",
+          "https://www.comune.ostuni.br.it/wp-content/uploads/2026/07/Programma-Estate-2026-low.pdf",
+          "https://www.weareinbrindisi.it/hortus-ostuni-autunno-2026-parco-luigi-greco/"
+        ],
+        "outcome": "SanGiuseppe18–19marzo da bando; bollo/diritti/CUP distinti. VecchiTempi14–15agosto da brochure vista. Hortus nuova sedeParcoLuigiGreco30ott–1nov. SantOronzo solo2025: avviso2026 citato nell’indice non recuperato, redirecthome non prova. Zagaredde conserva refuso «ogni seconda del mese», nessun giorno inferito."
+      },
+      {
+        "city": "San Donaci",
+        "eventCount": 1,
+        "events": [
+          "puglia-san-donaci-antichi-sapori-fest"
+        ],
+        "sources": [
+          "https://antichisaporifest.it/"
+        ],
+        "outcome": "AntichiSaporiFest6agosto dalla storia/XXIIIedizione sul sito organizzatore e cronaca; contributi/luminarie non sono tariffe. FestaPanino e SanLuigi piste secondarie non ampliate senza programma operativo; nessun evento musicale convertito in mercato."
+      },
+      {
+        "city": "San Michele Salentino",
+        "eventCount": 3,
+        "events": [
+          "puglia-san-michele-salentino-sagra-de-li-gnummariedd",
+          "puglia-san-michele-salentino-festival-del-fico-mandorlato",
+          "puglia-san-michele-salentino-oktoberfesct"
+        ],
+        "sources": [
+          "https://www.idearadionelmondo.it/2026/10/02/59699/",
+          "https://www.masserianova.it/estate-2026-gli-eventi-organizzati-e-patrocinati-dallamministrazione-comunale-di-san-michele-salentino/",
+          "https://www.puglianews24.eu/festival-fico-mandorlato-san-michele-salentino-103485.html",
+          "https://www.rtmweb.it/festival-del-fico-mandorlato-24-anni-di-tradizione-a-san-michele-salentino/"
+        ],
+        "outcome": "Fico29–30agosto prevale su stime28–29 o2settembre; Gnummariedd solo luglio da comunicatoComune. Oktober9–11/16–18/23–25 non continuo. SitoComune403, comunicati ripresi e stampa dichiarati."
+      },
+      {
+        "city": "San Pancrazio Salentino",
+        "eventCount": 3,
+        "events": [
+          "puglia-san-pancrazio-salentino-sagra-ti-lu-pizzu-all-ampa",
+          "puglia-san-pancrazio-salentino-sagra-dei-sapori",
+          "puglia-san-pancrazio-salentino-forum-wine-festival"
+        ],
+        "sources": [
+          "https://forumaperto.it/news/",
+          "https://www.rtmweb.it/a-san-pancrazio-salentino-il-forum-wine-festival-iv-edizione/",
+          "https://www.senzacolonnenews.it/spettacolo/item/san-pancrazio-due-notti-tra-sapori-e-musica-torna-la-sagra-ti-lu-pizzu-allampa.html",
+          "https://www.vivalapuglia.it/eventi/sagra-sapori-san-pancrazio-salentino/"
+        ],
+        "outcome": "Pizzu12–13agosto da cronaca; Sapori solo2agosto2025 nonostante titolo2026. ForumWine25–27giugno; ForumAperto area autonoma non seconda fiera. ProcessioneFrancesco e eventi teatrali esclusi."
+      },
+      {
+        "city": "San Pietro Vernotico",
+        "eventCount": 1,
+        "events": [
+          "puglia-san-pietro-vernotico-fiera-di-san-pietro"
+        ],
+        "sources": [
+          "https://www.vivalapuglia.it/eventi/festa-patronale-di-san-pietro-vernotico/"
+        ],
+        "outcome": "Fiera29giugno da fonteeditoriale; novena19–30 e Matthra non usate come periodo di banchi. TentativiComune errorecertificato/DNS; programmaEstate dinamico non letto come calendario integrale."
+      },
+      {
+        "city": "San Vito dei Normanni",
+        "eventCount": 2,
+        "events": [
+          "puglia-san-vito-dei-normanni-san-vito-food-drink-festa-patronale",
+          "puglia-san-vito-dei-normanni-sagra-del-maiale"
+        ],
+        "sources": [
+          "https://comitatofestasanvitoesanvincenzo.it/"
+        ],
+        "outcome": "SitoComitato primario: FoodDrink ogni giorno9–13luglio e Maiale17–18ottobre. Comune403, nessuna gratuità banco dall’ingresso pubblico. StelleNatale solo pista automatica senza bando recuperato esclusa."
+      },
+      {
+        "city": "Torchiarolo",
+        "eventCount": 1,
+        "events": [
+          "puglia-torchiarolo-messapian-wine-summer-fest"
+        ],
+        "sources": [
+          "https://www.halleyweb.com/c074018/de/attachment.php?serialDocumento=00RMQN020266P&mosdoc=0",
+          "https://www.halleyweb.com/c074018/de/attachment.php?serialDocumento=00S0NE020267M"
+        ],
+        "outcome": "Delibera105 e progetto originali letti: Lendinuso11–13luglio e TorreSanGennaro12–14agosto sono proposte subordinate al finanziamento. Scheda solo mesi, non conferme né intervallo continuo11luglio–29agosto. Budget15.400 non quota banco."
+      },
+      {
+        "city": "Torre Santa Susanna",
+        "eventCount": 2,
+        "events": [
+          "puglia-torre-santa-susanna-fiera-di-santa-susanna",
+          "puglia-torre-santa-susanna-fiera-torrese"
+        ],
+        "sources": [
+          "https://www.comune.torresantasusanna.br.it/fiere-e-mercati/"
+        ],
+        "outcome": "Duefiere da paginaComune2022: maggio e prima domenicasettembre, nessun giorno2026 calcolato. Schedeautomatiche e numerazionistoriche non sostituiscono avviso; mercati settimanali esclusi."
+      },
+      {
+        "city": "Villa Castelli",
+        "eventCount": 1,
+        "events": [
+          "puglia-villa-castelli-fiera-della-festa-patronale"
+        ],
+        "sources": [
+          "https://www.prolocovillacastelli.it/tradizioni/"
+        ],
+        "outcome": "ProLoco descrive fiera1ottobre distinta da festa2 e concerto3; solo consuetudine. AvvisoComune per proposte spettacoli estivi non bando espositori. Altre feste senza commercio documentato non aggiunte."
+      }
+    ],
+    "sourceReceipts": [
+      {
+        "url": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "status": 200,
+        "finalUrl": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "sha256": "f257efbaadf6ef93c462dc80c263325b737116909d076601796bfd70858a57f8",
+        "retrievedAt": "2026-10-30T23:41:43.841771+00:00"
+      },
+      {
+        "url": "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf",
+        "status": 200,
+        "finalUrl": "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf",
+        "sha256": "a6589460270efaed1c0706e44a53da894109ed42cda3b51da222291fb1f9c843",
+        "retrievedAt": "2026-10-30T23:41:43.843870+00:00"
+      },
+      {
+        "url": "https://www.turismo.comune.mesagne.br.it/evento/xxii-edizione-della-fiera-medievale-franca/",
+        "status": 200,
+        "finalUrl": "https://www.turismo.comune.mesagne.br.it/evento/xxii-edizione-della-fiera-medievale-franca/",
+        "sha256": "f6bd792373d10ddc67852e7c04e981c68d599d79ff2b47544d7fc75381a92e21",
+        "retrievedAt": "2026-10-30T23:41:45.051214+00:00"
+      },
+      {
+        "url": "https://www.masserianova.it/estate-2026-gli-eventi-organizzati-e-patrocinati-dallamministrazione-comunale-di-san-michele-salentino/",
+        "status": 200,
+        "finalUrl": "https://www.masserianova.it/estate-2026-gli-eventi-organizzati-e-patrocinati-dallamministrazione-comunale-di-san-michele-salentino/",
+        "sha256": "f41e2c9c9bd009da0f25bc2f954617795be9d6bc70472164d3cbdba021bcd031",
+        "retrievedAt": "2026-10-30T23:41:45.345625+00:00"
+      },
+      {
+        "url": "https://www.idearadionelmondo.it/2026/10/02/59699/",
+        "status": 200,
+        "finalUrl": "https://www.idearadionelmondo.it/2026/10/02/59699/",
+        "sha256": "aa664846b18a47c7ecf4755f4e1229765e158ba602359db67be5c38f7819679c",
+        "retrievedAt": "2026-10-30T23:41:45.513962+00:00"
+      },
+      {
+        "url": "https://www.weareinbrindisi.it/hortus-ostuni-autunno-2026-parco-luigi-greco/",
+        "status": 200,
+        "finalUrl": "https://www.weareinbrindisi.it/hortus-ostuni-autunno-2026-parco-luigi-greco/",
+        "sha256": "ff32a09a42a84c78d46efafa05df8b0c20354e9553224419c810178692600ce0",
+        "retrievedAt": "2026-10-30T23:41:45.929876+00:00"
+      },
+      {
+        "url": "https://www.senzacolonnenews.it/spettacolo/item/san-pancrazio-due-notti-tra-sapori-e-musica-torna-la-sagra-ti-lu-pizzu-allampa.html",
+        "status": 200,
+        "finalUrl": "https://www.senzacolonnenews.it/spettacolo/item/san-pancrazio-due-notti-tra-sapori-e-musica-torna-la-sagra-ti-lu-pizzu-allampa.html",
+        "sha256": "c554e76c9baf30abec5d960cfb4bf1de40c6d6d1cefff0143cf38554246b4045",
+        "retrievedAt": "2026-10-30T23:41:46.123396+00:00"
+      },
+      {
+        "url": "https://www.vivalapuglia.it/eventi/sagra-sapori-san-pancrazio-salentino/",
+        "status": 200,
+        "finalUrl": "https://www.vivalapuglia.it/eventi/sagra-sapori-san-pancrazio-salentino/",
+        "sha256": "340e99b08a353cac05bb7543587f7c3bd46dbd748679a6707a69aa7f903d6636",
+        "retrievedAt": "2026-10-30T23:41:46.290322+00:00"
+      },
+      {
+        "url": "https://www.comune.brindisi.it/novita/accoglienza-crociere-2026-organizzazione-mercatino-artigianale/",
+        "status": 200,
+        "finalUrl": "https://www.comune.brindisi.it/novita/accoglienza-crociere-2026-organizzazione-mercatino-artigianale/",
+        "sha256": "f70b036da8f910e8577d6d5e5343679bd6b48c2508b4412b9599bd37f13ab342",
+        "retrievedAt": "2026-10-30T23:42:36.792979+00:00"
+      },
+      {
+        "url": "https://www.comune.brindisi.it/novita/appia-wine-vino-food-e-musica-nel-cuore-di-brindisi/",
+        "status": 200,
+        "finalUrl": "https://www.comune.brindisi.it/novita/appia-wine-vino-food-e-musica-nel-cuore-di-brindisi/",
+        "sha256": "1ee696efeaafdab1dde32236e846d069c065990a7179c7e18ec1a09d3e9247c4",
+        "retrievedAt": "2026-10-30T23:42:36.796343+00:00"
+      },
+      {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "status": 200,
+        "finalUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "sha256": "f28bc69f50467d88bd56d6274d100a1bd1a98c1920420347a161fe17d8bfbfb1",
+        "retrievedAt": "2026-10-30T23:42:40.010000+00:00"
+      },
+      {
+        "url": "https://www.comune.cellinosanmarco.br.it/vivere-il-comune/eventi/sagra-beddrha-cilinu-3/",
+        "status": 200,
+        "finalUrl": "https://www.comune.cellinosanmarco.br.it/vivere-il-comune/eventi/sagra-beddrha-cilinu-3/",
+        "sha256": "f54e0aa4072818be82afa9a2c002ea02628d714b029e4164abbdcefa8dd05a42",
+        "retrievedAt": "2026-10-30T23:42:41.776614+00:00"
+      },
+      {
+        "url": "https://lovojo.it/sagre/puglia/brindisi/ceglie-food-festival-patrimonio-vivo-ceglie-messapica/",
+        "status": 200,
+        "finalUrl": "https://lovojo.it/sagre/puglia/brindisi/ceglie-food-festival-patrimonio-vivo-ceglie-messapica/",
+        "sha256": "d7ec6b12328eabee1af3f291589bc57583d276bc71c5100fd9ba3d224db99d01",
+        "retrievedAt": "2026-10-30T23:42:42.345414+00:00"
+      },
+      {
+        "url": "https://comitatofestasanvitoesanvincenzo.it/",
+        "status": 200,
+        "finalUrl": "https://comitatofestasanvitoesanvincenzo.it/",
+        "sha256": "2f15a9c5677f8c7c54fb109980978f93a9c8ab098f96eff6f63a7aee4ccba048",
+        "retrievedAt": "2026-10-30T23:42:43.541416+00:00"
+      },
+      {
+        "url": "https://www.comune.torresantasusanna.br.it/fiere-e-mercati/",
+        "status": 200,
+        "finalUrl": "https://www.comune.torresantasusanna.br.it/fiere-e-mercati/",
+        "sha256": "255b079c783bd6481112c74ae8a84e6b02d26e2cd20b4b9f45ee43bf98e0b282",
+        "retrievedAt": "2026-10-30T23:42:43.577469+00:00"
+      },
+      {
+        "url": "https://www.prolocovillacastelli.it/tradizioni/",
+        "status": 200,
+        "finalUrl": "https://www.prolocovillacastelli.it/tradizioni/",
+        "sha256": "538e8767f39847d150d685fb0646209cdbc4a1e6a7f793405b0b113b4be7591b",
+        "retrievedAt": "2026-10-30T23:42:43.810220+00:00"
+      },
+      {
+        "url": "https://gofasano.com/attualita/tutto-pronto-per-la-sagra-del-fiorone-a-pezze-di-greco/",
+        "status": 200,
+        "finalUrl": "https://gofasano.com/attualita/tutto-pronto-per-la-sagra-del-fiorone-a-pezze-di-greco/",
+        "sha256": "92788133b201b3929eabaa2b2efdf54a77a73b699a10795e51403395695e37ce",
+        "retrievedAt": "2026-10-30T23:42:43.835173+00:00"
+      },
+      {
+        "url": "https://halleyweb.com/ceglie/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5WpZd0TqTT0-A",
+        "status": 200,
+        "finalUrl": "https://halleyweb.com/ceglie/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5WpZd0TqTT0-A",
+        "sha256": "12be9ff7fb89422b89139cdb2d265defd2e731121a36ca3f12bd99c6bad04f4e",
+        "retrievedAt": "2026-10-30T23:42:44.111037+00:00"
+      },
+      {
+        "url": "https://www.oriaestate.it/eventi/184-fiera-di-san-barsanofio",
+        "status": 200,
+        "finalUrl": "https://www.oriaestate.it/eventi/184-fiera-di-san-barsanofio",
+        "sha256": "33feb8e29a6065b67819871aa18fc707bfdc6fc483f0bd36cfc8869226990f32",
+        "retrievedAt": "2026-10-30T23:42:44.446311+00:00"
+      },
+      {
+        "url": "https://www.vivalapuglia.it/eventi/festa-patronale-di-san-pietro-vernotico/",
+        "status": 200,
+        "finalUrl": "https://www.vivalapuglia.it/eventi/festa-patronale-di-san-pietro-vernotico/",
+        "sha256": "86f6d2d9fde776d7899d5c10d542e4eae909e813f3a42e200e3a9575305aee33",
+        "retrievedAt": "2026-10-30T23:42:44.454350+00:00"
+      },
+      {
+        "url": "https://www.weareinbrindisi.it/la-fera-latiano-2026/",
+        "status": 200,
+        "finalUrl": "https://www.weareinbrindisi.it/la-fera-latiano-2026/",
+        "sha256": "e9a2774f29b8f923fa5e91dfaa698ec0b7eea48669d3b316d0c02b3b5d452eac",
+        "retrievedAt": "2026-10-30T23:42:44.703615+00:00"
+      },
+      {
+        "url": "https://www.comune.brindisi.it/wp-content/uploads/2026/07/avviso_santi_patroni_2026A20260724110123611Z.pdf",
+        "status": 200,
+        "finalUrl": "https://www.comune.brindisi.it/wp-content/uploads/2026/07/avviso_santi_patroni_2026A20260724110123611Z.pdf",
+        "sha256": "9b4cd66c10f502d166fb51fb3be812ff769c6eed48fd0472825169b29648c899",
+        "retrievedAt": "2026-10-30T23:43:17.404189+00:00"
+      },
+      {
+        "url": "https://www.comune.brindisi.it/wp-content/uploads/2026/03/Avviso-Mercatino-accoglienza-Crociere-2026.pdf",
+        "status": 200,
+        "finalUrl": "https://www.comune.brindisi.it/wp-content/uploads/2026/03/Avviso-Mercatino-accoglienza-Crociere-2026.pdf",
+        "sha256": "dc5e42fdc75d062059ded18765269cada9a71c9178d835b5631047bac8547021",
+        "retrievedAt": "2026-10-30T23:43:17.406958+00:00"
+      },
+      {
+        "url": "https://www.comune.brindisi.it/wp-content/uploads/2026/03/Calendario-approdi-Crociere-2026.pdf",
+        "status": 200,
+        "finalUrl": "https://www.comune.brindisi.it/wp-content/uploads/2026/03/Calendario-approdi-Crociere-2026.pdf",
+        "sha256": "37e697b429abe90e83e5990409a39cfec6275c5b2896cbe34e8f9235c47aac59",
+        "retrievedAt": "2026-10-30T23:43:17.410502+00:00"
+      },
+      {
+        "url": "https://www.comune.mesagne.br.it/novita/fiera-del-cappotto-2/",
+        "status": 200,
+        "finalUrl": "https://www.comune.mesagne.br.it/novita/fiera-del-cappotto-2/",
+        "sha256": "45c5e4c1aaef5f790ae0d080c6bcff20cc556fa1d8938f394c19fd1efd76a223",
+        "retrievedAt": "2026-10-30T23:43:32.060992+00:00"
+      },
+      {
+        "url": "https://www.snimpuglia.it/diventa-espositore/",
+        "status": 200,
+        "finalUrl": "https://www.snimpuglia.it/diventa-espositore/",
+        "sha256": "fdd0287317ec5f7aef8d8b8b19962e184cbe3dab55b0c70cb4dacbd7b1a1101e",
+        "retrievedAt": "2026-10-30T23:43:32.062611+00:00"
+      },
+      {
+        "url": "https://www.comune.ostuni.br.it/vivere-il-comune/eventi/festa-di-santoronzo/",
+        "status": 200,
+        "finalUrl": "https://www.comune.ostuni.br.it/vivere-il-comune/eventi/festa-di-santoronzo/",
+        "sha256": "bb46da8168ca0f4b15592260473d6328dddb33c5ec4fb1fbd76d009819c645b8",
+        "retrievedAt": "2026-10-30T23:43:32.064651+00:00"
+      },
+      {
+        "url": "https://www.comune.mesagne.br.it/wp-content/uploads/2026/09/Avviso_fiera_2026_.pdf",
+        "status": 200,
+        "finalUrl": "https://www.comune.mesagne.br.it/wp-content/uploads/2026/09/Avviso_fiera_2026_.pdf",
+        "sha256": "b7efd764ad76ac54d59da47b90c8e7e548d5c78154f949405a45b7c4a1a93c94",
+        "retrievedAt": "2026-10-30T23:43:54.206109+00:00"
+      },
+      {
+        "url": "https://antichisaporifest.it/",
+        "status": 200,
+        "finalUrl": "https://antichisaporifest.it/",
+        "sha256": "ab0515d0a45ce18fadba11576fc99edb1540ec9bc368cad7a03d38ebec3a7e77",
+        "retrievedAt": "2026-10-30T23:43:54.207382+00:00"
+      },
+      {
+        "url": "https://www.comune.mesagne.br.it/novita/incontri-dautore-musica-spettacoli-e-la-fiera-medioevale-franca/",
+        "status": 200,
+        "finalUrl": "https://www.comune.mesagne.br.it/novita/incontri-dautore-musica-spettacoli-e-la-fiera-medioevale-franca/",
+        "sha256": "c226da9ef7901438e5041922e47aca09968a466f3341ce720f2c14152524c7cb",
+        "retrievedAt": "2026-10-30T23:43:54.216127+00:00"
+      },
+      {
+        "url": "https://www.festapatronaleff.it/programma/",
+        "status": 200,
+        "finalUrl": "https://www.festapatronaleff.it/programma/",
+        "sha256": "9bcb7f95f95bfc008b3547af87f39e46144691d76af1ad0af168f51210546de4",
+        "retrievedAt": "2026-10-30T23:44:19.374139+00:00"
+      },
+      {
+        "url": "https://www.turismo.comune.mesagne.br.it/evento/rosso-salentino-al-via-la-iii-edizione-tra-buon-vino-pugliese-e-sapori-locali/",
+        "status": 200,
+        "finalUrl": "https://www.turismo.comune.mesagne.br.it/evento/rosso-salentino-al-via-la-iii-edizione-tra-buon-vino-pugliese-e-sapori-locali/",
+        "sha256": "dff8bd89e0164ab3a8b7f2854633f57cd880cc31c3f5f1681057a49861330d02",
+        "retrievedAt": "2026-10-30T23:44:31.852817+00:00"
+      },
+      {
+        "url": "https://www.comune.ostuni.br.it/wp-content/uploads/2026/01/1-Avviso-pubblico.pdf",
+        "status": 200,
+        "finalUrl": "https://www.comune.ostuni.br.it/wp-content/uploads/2026/01/1-Avviso-pubblico.pdf",
+        "sha256": "4439776eda3c177d2cd141c5327d15420bf37f02f98a7dba049f9b1005412ab3",
+        "retrievedAt": "2026-10-30T23:44:31.853415+00:00"
+      },
+      {
+        "url": "https://www.comune.ostuni.br.it/wp-content/uploads/2026/07/Programma-Estate-2026-low.pdf",
+        "status": 200,
+        "finalUrl": "https://www.comune.ostuni.br.it/wp-content/uploads/2026/07/Programma-Estate-2026-low.pdf",
+        "sha256": "b10ce637f2a7de1e5302007abe02b34e3c30cfcf77e3be86de62dfb579b9069e",
+        "retrievedAt": "2026-10-30T23:44:31.858052+00:00"
+      },
+      {
+        "url": "https://comune.erchie.br.it/it/news/148038/i-profumi-della-terra-fiera-di-santa-lucia",
+        "status": 200,
+        "finalUrl": "https://comune.erchie.br.it/it/news/148038/i-profumi-della-terra-fiera-di-santa-lucia",
+        "sha256": "09dc3c5ada101b4f41baeb1dcdee71b250d509abfddb3a9cdaf1b6a7dc29701d",
+        "retrievedAt": "2026-10-30T23:44:31.859120+00:00"
+      },
+      {
+        "url": "https://www.mesagnesera.it/rosso-salentino-rinviato/",
+        "status": 200,
+        "finalUrl": "https://www.mesagnesera.it/rosso-salentino-rinviato/",
+        "sha256": "e5292e09deb696c5b05786bc77078a1f6817971e382a900047797fe30623fef5",
+        "retrievedAt": "2026-10-30T23:44:31.863448+00:00"
+      },
+      {
+        "url": "https://www.rtmweb.it/festival-del-fico-mandorlato-24-anni-di-tradizione-a-san-michele-salentino/",
+        "status": 200,
+        "finalUrl": "https://www.rtmweb.it/festival-del-fico-mandorlato-24-anni-di-tradizione-a-san-michele-salentino/",
+        "sha256": "0c89887e4f4ecb046e8af17c49869bd8aa96b19b20dbface62da06d2ecdcb48d",
+        "retrievedAt": "2026-10-30T23:44:32.843643+00:00"
+      },
+      {
+        "url": "https://www.puglianews24.eu/festival-fico-mandorlato-san-michele-salentino-103485.html",
+        "status": 200,
+        "finalUrl": "https://www.puglianews24.eu/festival-fico-mandorlato-san-michele-salentino-103485.html",
+        "sha256": "762f484281ddd8703a2a4dd36a116e140e04ef473c607ceb811b438e2064fa97",
+        "retrievedAt": "2026-10-30T23:44:33.093963+00:00"
+      },
+      {
+        "url": "https://www.comune.latiano.br.it/notizie/AVVISO-PUBBLICO-PER-L-ASSEGNAZIONE-TEMPORANEA-DEI-POSTEGGI-DESTINATI-ALLA-SOMMINISTRAZIONE-DI-ALIMENTI-E-BEVANDE-NELL-AMBITO-DELLA--FIERA-DI-OTTOBRE-2026-.html",
+        "status": 200,
+        "finalUrl": "https://www.comune.latiano.br.it/notizie/AVVISO-PUBBLICO-PER-L-ASSEGNAZIONE-TEMPORANEA-DEI-POSTEGGI-DESTINATI-ALLA-SOMMINISTRAZIONE-DI-ALIMENTI-E-BEVANDE-NELL-AMBITO-DELLA--FIERA-DI-OTTOBRE-2026-.html",
+        "sha256": "b7b3cf1dc2455d8e6eaebc9cc7eeb1340ce23fb839a836c733e4183c0f3d3678",
+        "retrievedAt": "2026-10-30T23:44:52.918125+00:00"
+      },
+      {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "status": 200,
+        "finalUrl": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "sha256": "5df882f89bf54cf7009d274bde2f68fc97ee7082bcc9796a901c63c6f24062e5",
+        "retrievedAt": "2026-10-30T23:44:52.922150+00:00"
+      },
+      {
+        "url": "https://erchie-api.municipiumapp.it/s3/2647/allegati/invito-stakeholders.pdf",
+        "status": 200,
+        "finalUrl": "https://erchie-api.municipiumapp.it/s3/2647/allegati/invito-stakeholders.pdf",
+        "sha256": "322193a1f2e275441d200aeaeffc343c0101b479817d1a550631a1733af3eaa1",
+        "retrievedAt": "2026-10-30T23:44:53.972573+00:00"
+      },
+      {
+        "url": "https://www.comune.latiano.br.it/dam/jcr:7eff775a-5d82-4514-bcb7-af3953a2ce01/avviso%20settore%20alimentare.pdf",
+        "status": 200,
+        "finalUrl": "https://www.comune.latiano.br.it/dam/jcr:7eff775a-5d82-4514-bcb7-af3953a2ce01/avviso%20settore%20alimentare.pdf",
+        "sha256": "75d36d50e2c876d8d99bb1691a2a79b5f6f06495aa92ee61746381547c531ba7",
+        "retrievedAt": "2026-10-30T23:45:17.138778+00:00"
+      },
+      {
+        "url": "https://www.cosedicasa.com/mercatini/ceglie-messapica-piazza-santantonio",
+        "status": 200,
+        "finalUrl": "https://www.cosedicasa.com/mercatini/ceglie-messapica-piazza-santantonio",
+        "sha256": "b371b720e3ca40c0d47e87a4c87e7da6f2e25e44224948a5fb74c8c8adf727f0",
+        "retrievedAt": "2026-10-30T23:45:17.140063+00:00"
+      },
+      {
+        "url": "https://www.comune.ostuni.br.it/novita/zagaredde/",
+        "status": 200,
+        "finalUrl": "https://www.comune.ostuni.br.it/novita/zagaredde/",
+        "sha256": "5742ceccfa78d5d0064439ab4b82d220ea2aa6d2170d4a98419862de5883cb47",
+        "retrievedAt": "2026-10-30T23:45:17.143719+00:00"
+      },
+      {
+        "url": "https://www.festivalinitalia.it/festival/festa-san-marco-santa-caterina-beddhra-cilinu-cellino-san-marco",
+        "status": 200,
+        "finalUrl": "https://www.festivalinitalia.it/festival/festa-san-marco-santa-caterina-beddhra-cilinu-cellino-san-marco",
+        "sha256": "6f518ee857aa3012b84e02fa7b1b99f2e40799581fbc16e8a3c4d2db72b7212d",
+        "retrievedAt": "2026-10-30T23:46:15.047349+00:00"
+      },
+      {
+        "url": "https://www.arcapromoter.it/eventi/",
+        "status": 200,
+        "finalUrl": "https://www.arcapromoter.it/eventi-2026-mostre-mercatini-antiquariato-modernariato-collezionismo-artigianato-turismo-sociale-martina-franca-taranto-grottaglie-cisternino-locorotondo-alberobello-ceglie-messapica-bari-puglia/",
+        "sha256": "50a232542063d287c92a702ff263feee82ef8a3cd80cfbcc7e4d4fbffc8c0c8f",
+        "retrievedAt": "2026-10-30T23:46:15.049310+00:00"
+      },
+      {
+        "url": "https://www.snimpuglia.it/wp-content/uploads/2026/05/EDITABILE_SNIM-2026-domanda-di-adesione.pdf",
+        "status": 200,
+        "finalUrl": "https://www.snimpuglia.it/wp-content/uploads/2026/05/EDITABILE_SNIM-2026-domanda-di-adesione.pdf",
+        "sha256": "a217b2a4548ea35abba9d9856b412cfab94a06c6f34cba5f4157a5fd4ba056c0",
+        "retrievedAt": "2026-10-30T23:46:25.539269+00:00"
+      },
+      {
+        "url": "https://forumaperto.it/news/",
+        "status": 200,
+        "finalUrl": "https://forumaperto.it/news/",
+        "sha256": "fa4acf6846e4e2c3cc79260c716171fbba59e431d9ed3056607bb24ea6ec6008",
+        "retrievedAt": "2026-10-30T23:46:51.287021+00:00"
+      },
+      {
+        "url": "https://www.rtmweb.it/a-san-pancrazio-salentino-il-forum-wine-festival-iv-edizione/",
+        "status": 200,
+        "finalUrl": "https://www.rtmweb.it/a-san-pancrazio-salentino-il-forum-wine-festival-iv-edizione/",
+        "sha256": "ccc4c54eb0f10607b8f48a4b2cd18cd2bde88addb8dc99a237d6df68f65d81d0",
+        "retrievedAt": "2026-10-30T23:46:51.287467+00:00"
+      },
+      {
+        "url": "https://www.cosedicasa.com/mercatini/cisternino",
+        "status": 200,
+        "finalUrl": "https://www.cosedicasa.com/mercatini/cisternino-via-san-quirico",
+        "sha256": "307c4c21abc656dda0dd91496eb0e5162dea4c4d9b000b0d3c38055af5ab669f",
+        "retrievedAt": "2026-10-30T23:46:51.287960+00:00"
+      },
+      {
+        "url": "https://www.halleyweb.com/c074018/de/attachment.php?serialDocumento=00S0NE020267M",
+        "status": 200,
+        "finalUrl": "https://www.halleyweb.com/c074018/de/attachment.php?serialDocumento=00S0NE020267M",
+        "sha256": "131322917cd345e6bb333a7a73d83e095c10b02224800e55a13814409b7167b5",
+        "retrievedAt": "2026-10-30T23:47:04.503797+00:00"
+      },
+      {
+        "url": "https://www.halleyweb.com/c074018/de/attachment.php?serialDocumento=00RMQN020266P&mosdoc=0",
+        "status": 200,
+        "finalUrl": "https://www.halleyweb.com/c074018/de/attachment.php?serialDocumento=00RMQN020266P&mosdoc=0",
+        "sha256": "c4a89615dabd6f4a43f353cacc76730344b8be33a0f44c185cfa4f111af447fe",
+        "retrievedAt": "2026-10-30T23:47:04.504281+00:00"
+      }
+    ],
+    "exclusions": [
+      "Mercati ordinari settimanali e mensile genericoMesagne; aperture straordinarie e trasferimenti non nuove fiere.",
+      "Concerti, processioni, mostre senza vendita, pranzi solidali, visite e pettolate senza accesso commerciale documentato.",
+      "FestaVendemmiaCellino403; OlioVino/OrecchietteCisternino solo stime; FieraAscensioneFrancavilla priva di calendario corrente; FieraAssuntaCeglie e StelleNataleSanVito prive di originale operativo recuperato.",
+      "LuminarieErchie, stand istituzionali allaBITMilano, finanziamenti ai gestori e bandi foodtruck ordinari non catalogati come nuove fiere.",
+      "GiostrePolinisso non scheda mercantile autonoma; ForumAperto e Matthra non duplicati; programmaLaFera non banco continuo."
+    ],
+    "limitations": [
+      "Ricerca mirata nei20comuni, non censimento certificato né consultazione integrale di ogni albo. I materiali tecnici acquisiti non equivalgono a letture integrali, eventi unici o fonti indipendenti.",
+      "Nessun posto libero, ammissione o futuro bando garantito. Le coordinate del catalogo sono centri comunali, non la collocazione esatta dei banchi.",
+      "Date storiche, ricorrenze, progetti condizionati e conferme puntuali restano distinti. Le date indicative del bandoOria non vengono trasformate automaticamente in giorni confermati.",
+      "Tariffe e servizi pubblicati solo perSNIM e dirittiSanGiuseppe; bollo non canone, ticketpubblico non quota espositore, contributo al gestore non tariffa.",
+      "SitiSanMichele/SanVito403, SanPietro errorecertificato/DNS; pianoErchie403 o vuoto; CameraCommercioBrindisi nonrisolvibile. Non sono prove di assenza di eventi.",
+      "AvvisoSantOronzo2026 non recuperato: redirect alla home escluso dalle prove. ProgrammaEstateSampietrana dinamico non estratto integralmente. Documenti planimetriciOria scaricati ma non tutti letti.",
+      "Ricerca attuale conclusa sul materiale accessibile con esclusioni esplicite; aggiornamenti di edizioni, rinvii, quote e nuove fonti sono manutenzione futura distinta."
+    ],
+    "openLeads": [],
+    "futureMaintenance": [
+      "Nuovi avvisi annuali e date definitiveOria/Torchiarolo; originaliSantOronzo/Erchie; programmi delle ricorrenze, bandi e costi per gli espositori, disponibilità e ulteriori rinvii."
+    ]
+  },
+  "events": [
+    {
+      "region": "Puglia",
+      "city": "Brindisi",
+      "name": "Fiera dei Santi Patroni",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.brindisi.it/wp-content/uploads/2026/07/avviso_santi_patroni_2026A20260724110123611Z.pdf",
+        "label": "Comune di Brindisi",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Posteggi temporanei alimentari e non alimentari per le festività patronali. L’avviso comunale disciplina la selezione degli operatori, con graduatoria e successiva scelta della postazione.",
+      "venue": "Brindisi; ubicazione dei singoli stalli stabilita dal Comune",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-04",
+          "end": "2026-09-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.brindisi.it/wp-content/uploads/2026/07/avviso_santi_patroni_2026A20260724110123611Z.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Licenza tipo B; modello via PEC a ufficioprotocollo@pec.comune.brindisi.it entro il 5 agosto 2026 ore 12. Anzianità e sorteggio per la prelazione; contributo festa determinato successivamente, importo non presente nell’avviso. La convocazione PEC e il pagamento precedono il titolo autorizzativo. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-08-05"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.brindisi.it/wp-content/uploads/2026/07/avviso_santi_patroni_2026A20260724110123611Z.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Brindisi",
+      "name": "Appia Wine",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.brindisi.it/novita/appia-wine-vino-food-e-musica-nel-cuore-di-brindisi/",
+        "label": "Comune di Brindisi",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Percorso urbano tra cantine e prodotti pugliesi, con un mercatino di produttori e presìdi Slow Food in via Tarantini. Le degustazioni e la musica accompagnano la valorizzazione dell’antica via Appia.",
+      "venue": "Largo Gianni D’Errico, piazza Duomo, via Tarantini ed ex convento Scuole Pie",
+      "sectors": "Vino e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-26",
+          "end": "2026-06-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.brindisi.it/novita/appia-wine-vino-food-e-musica-nel-cuore-di-brindisi/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comune e Fondazione Nuovo Teatro Verdi con Brindisi e le Antiche Strade, Yeahjasi e Polo Biblio-Museale. I ticket 10/15 € sono degustazioni del pubblico, non costi per esporre. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.brindisi.it/novita/appia-wine-vino-food-e-musica-nel-cuore-di-brindisi/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Brindisi",
+      "name": "SNIM · Salone Nautico di Puglia",
+      "months": [
+        10
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.snimpuglia.it/wp-content/uploads/2026/05/EDITABILE_SNIM-2026-domanda-di-adesione.pdf",
+        "label": "snimpuglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Salone specializzato al Marina di Brindisi per imbarcazioni, accessori, pesca e servizi nautici. Il regolamento ammette anche abbigliamento di settore, editoria e food and beverage, previa accettazione dell’organizzatore.",
+      "venue": "Porto turistico Marina di Brindisi",
+      "sectors": "Nautica, pesca, accessori, abbigliamento nautico, editoria e food and beverage",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-22",
+          "end": "2026-10-26",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.snimpuglia.it/wp-content/uploads/2026/05/EDITABILE_SNIM-2026-domanda-di-adesione.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Domanda firmata e regolamento a snim@snimpuglia.it; acconto 30% + IVA alla sottoscrizione e saldo entro il 30 settembre 2026. SEA Event Agency decide l’ammissione e gli spazi. Il vecchio URL storage reindirizza alla home e non è stato trattato come PDF. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "costs": "Listino 2026, IVA 22% da aggiungere: area terra 4×4/4×8/4×12 m a 2.000/3.500/4.500 €; fronte mare 2.500/4.000/5.000 € con ormeggi inclusi; settore accessori 1.500/2.800/4.000 €. Area aggiuntiva davanti allo stand 10 €/m², non un banco completo. Iscrizione separata 300 € + IVA con RC, allaccio e consumo fino a 3 kW, 5 pass e 15 inviti. Stand con pareti, moquette, tavoli, sedie e ciabatta come da modulo; ripostiglio senza prezzo indicato. Ospitalità azienda aggiuntiva soggetta ad autorizzazione e quota 500 € comprensiva dell’iscrizione 300 €, senza sommarla due volte. Acconto 30% + IVA, saldo entro 30 settembre; nessuna disponibilità attuale dedotta."
+      },
+      "sourceRecordIds": [
+        "https://www.snimpuglia.it/wp-content/uploads/2026/05/EDITABILE_SNIM-2026-domanda-di-adesione.pdf",
+        "https://www.snimpuglia.it/diventa-espositore/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Brindisi",
+      "name": "Mercatino artigianale Accoglienza Crociere",
+      "months": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.brindisi.it/wp-content/uploads/2026/03/Avviso-Mercatino-accoglienza-Crociere-2026.pdf",
+        "label": "Comune di Brindisi",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mercatino di oggettistica artigianale e souvenir collegato agli approdi crocieristici, con massimo trenta postazioni. Il bando seleziona un organizzatore incaricato di strutture, espositori e adempimenti.",
+      "venue": "Viale Regina Margherita davanti alla Capitaneria; piazza Vittoria in alternativa per maltempo",
+      "sectors": "Artigianato e souvenir; vietati alimentari e bevande",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Allestimento solo nei giorni di approdo, non continuativo da aprile a novembre: mesi dell’allegato approdi, non date di apertura garantite. Termine 27 marzo 2026 ore 10 riguarda la proposta del gestore; gli espositori sono selezionati da quest’ultimo. CUP a carico dell’organizzatore, nessuna tariffa individuale pubblicata. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.brindisi.it/wp-content/uploads/2026/03/Avviso-Mercatino-accoglienza-Crociere-2026.pdf",
+        "https://www.comune.brindisi.it/wp-content/uploads/2026/03/Calendario-approdi-Crociere-2026.pdf",
+        "https://www.comune.brindisi.it/novita/accoglienza-crociere-2026-organizzazione-mercatino-artigianale/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carovigno",
+      "name": "Fiera delle Palme",
+      "months": [
+        3
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "label": "Comune di Carovigno",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera primaverile inserita dal Comune nel calendario commerciale annuale; la concessione temporanea permette la presenza degli ambulanti secondo la merceologia dichiarata nella domanda.",
+      "venue": "Piazza Giovanni XXIII, rione Conella",
+      "sectors": "Merceologia dichiarata nell’istanza; categorie da verificare col SUAP",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-29",
+          "end": "2026-03-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso annuale 2026: titolo per commercio su aree pubbliche e unica istanza per le manifestazioni espressamente indicate, solo su impresainungiorno.gov.it entro il 28 febbraio. Bollo 16 € sull’istanza, distinto dal canone di occupazione quantificato dopo la graduatoria; nessuna quota per singola festa dedotta. SUAP 0831 997238. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-02-28"
+      },
+      "sourceRecordIds": [
+        "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carovigno",
+      "name": "Mercato delle Festività Pasquali",
+      "months": [
+        4
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "label": "Comune di Carovigno",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Area commerciale delle festività pasquali nel centro di Carovigno. Il calendario separa i banchi nelle vie centrali dalla zona giostre Polinisso, che comincia un giorno prima.",
+      "venue": "Corso Vittorio Emanuele, via Adua e piazza della Libertà",
+      "sectors": "Merceologia dichiarata nell’istanza; categorie da verificare col SUAP",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-05",
+          "end": "2026-04-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso annuale 2026: titolo per commercio su aree pubbliche e unica istanza per le manifestazioni espressamente indicate, solo su impresainungiorno.gov.it entro il 28 febbraio. Bollo 16 € sull’istanza, distinto dal canone di occupazione quantificato dopo la graduatoria; nessuna quota per singola festa dedotta. SUAP 0831 997238. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito. Il 4–7 aprile indicato per Polinisso riguarda la zona giostre, non anticipa al 4 aprile tutti i banchi del centro.",
+        "deadline": "2026-02-28"
+      },
+      "sourceRecordIds": [
+        "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carovigno",
+      "name": "Festa della Madonna del Belvedere · posteggi",
+      "months": [
+        4,
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "label": "Comune di Carovigno",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Due ricorrenze presso il santuario, entrambe comprese nell’avviso comunale che disciplina la partecipazione commerciale. Le edizioni di aprile e settembre sono raccolte nella stessa scheda.",
+      "venue": "Santuario del Belvedere",
+      "sectors": "Merceologia dichiarata nell’istanza; categorie da verificare col SUAP",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-04-11",
+          "end": "2026-04-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        },
+        {
+          "year": 2026,
+          "start": "2026-09-13",
+          "end": "2026-09-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso annuale 2026: titolo per commercio su aree pubbliche e unica istanza per le manifestazioni espressamente indicate, solo su impresainungiorno.gov.it entro il 28 febbraio. Bollo 16 € sull’istanza, distinto dal canone di occupazione quantificato dopo la graduatoria; nessuna quota per singola festa dedotta. SUAP 0831 997238. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-02-28"
+      },
+      "sourceRecordIds": [
+        "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carovigno",
+      "name": "Festa del Crocifisso · posteggi",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "label": "Comune di Carovigno",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Manifestazione di Serranova ammessa al calendario comunale delle concessioni temporanee per ambulanti; la presenza dei banchi richiede domanda, verifica del titolo e collocazione in graduatoria.",
+      "venue": "Borgata Serranova",
+      "sectors": "Merceologia dichiarata nell’istanza; categorie da verificare col SUAP",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-05-03",
+          "end": "2026-05-03",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso annuale 2026: titolo per commercio su aree pubbliche e unica istanza per le manifestazioni espressamente indicate, solo su impresainungiorno.gov.it entro il 28 febbraio. Bollo 16 € sull’istanza, distinto dal canone di occupazione quantificato dopo la graduatoria; nessuna quota per singola festa dedotta. SUAP 0831 997238. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-02-28"
+      },
+      "sourceRecordIds": [
+        "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carovigno",
+      "name": "Festa di Santa Maria Goretti · posteggi",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "label": "Comune di Carovigno",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Posteggi commerciali associati alla festa estiva della borgata, indicati nel calendario comunale. La ricorrenza è distinta dalla Fiera del Bestiame prevista lo stesso giorno a Serranova.",
+      "venue": "Borgata Serranova",
+      "sectors": "Merceologia dichiarata nell’istanza; categorie da verificare col SUAP",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso annuale 2026: titolo per commercio su aree pubbliche e unica istanza per le manifestazioni espressamente indicate, solo su impresainungiorno.gov.it entro il 28 febbraio. Bollo 16 € sull’istanza, distinto dal canone di occupazione quantificato dopo la graduatoria; nessuna quota per singola festa dedotta. SUAP 0831 997238. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-02-28"
+      },
+      "sourceRecordIds": [
+        "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carovigno",
+      "name": "Fiera del Bestiame di Serranova",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "label": "Comune di Carovigno",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera tematica della borgata di Serranova inserita nell’avviso annuale del Comune. Il nome identifica il settore, ma non sostituisce le condizioni sanitarie e autorizzative per la vendita degli animali.",
+      "venue": "Borgata Serranova",
+      "sectors": "Bestiame; categorie e requisiti sanitari da verificare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-02",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso annuale 2026: titolo per commercio su aree pubbliche e unica istanza per le manifestazioni espressamente indicate, solo su impresainungiorno.gov.it entro il 28 febbraio. Bollo 16 € sull’istanza, distinto dal canone di occupazione quantificato dopo la graduatoria; nessuna quota per singola festa dedotta. SUAP 0831 997238. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-02-28"
+      },
+      "sourceRecordIds": [
+        "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carovigno",
+      "name": "Ferragosto Carovignese · posteggi",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "label": "Comune di Carovigno",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Quattro giornate della manifestazione estiva cittadina figurano nel calendario ufficiale destinato ai commercianti. La domanda deve indicare espressamente questa festa e la merceologia trattata.",
+      "venue": "Corso Vittorio Emanuele, via Adua e piazza della Libertà",
+      "sectors": "Merceologia dichiarata nell’istanza; categorie da verificare col SUAP",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-15",
+          "end": "2026-08-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso annuale 2026: titolo per commercio su aree pubbliche e unica istanza per le manifestazioni espressamente indicate, solo su impresainungiorno.gov.it entro il 28 febbraio. Bollo 16 € sull’istanza, distinto dal canone di occupazione quantificato dopo la graduatoria; nessuna quota per singola festa dedotta. SUAP 0831 997238. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-02-28"
+      },
+      "sourceRecordIds": [
+        "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carovigno",
+      "name": "Festa di Santa Sabina · posteggi",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "label": "Comune di Carovigno",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Appuntamento della marina di Santa Sabina con partecipazione commerciale disciplinata dal Comune. La data dell’avviso annuale riguarda il singolo evento, senza estenderla all’intera stagione balneare.",
+      "venue": "Santa Sabina, via della Torre",
+      "sectors": "Merceologia dichiarata nell’istanza; categorie da verificare col SUAP",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-30",
+          "end": "2026-08-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso annuale 2026: titolo per commercio su aree pubbliche e unica istanza per le manifestazioni espressamente indicate, solo su impresainungiorno.gov.it entro il 28 febbraio. Bollo 16 € sull’istanza, distinto dal canone di occupazione quantificato dopo la graduatoria; nessuna quota per singola festa dedotta. SUAP 0831 997238. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-02-28"
+      },
+      "sourceRecordIds": [
+        "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Carovigno",
+      "name": "Festa della Conella · posteggi",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf",
+        "label": "Comune di Carovigno",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Ricorrenza autunnale del rione Conella compresa fra le fiere e feste per cui il Comune forma graduatorie di operatori. La concessione vale soltanto per il giorno della manifestazione.",
+      "venue": "Piazza Giovanni XXIII, rione Conella",
+      "sectors": "Merceologia dichiarata nell’istanza; categorie da verificare col SUAP",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-11",
+          "end": "2026-10-11",
+          "dateType": "confirmed",
+          "sourceUrl": "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Avviso annuale 2026: titolo per commercio su aree pubbliche e unica istanza per le manifestazioni espressamente indicate, solo su impresainungiorno.gov.it entro il 28 febbraio. Bollo 16 € sull’istanza, distinto dal canone di occupazione quantificato dopo la graduatoria; nessuna quota per singola festa dedotta. SUAP 0831 997238. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-02-28"
+      },
+      "sourceRecordIds": [
+        "https://carovigno-api.municipiumapp.it/s3/1403/allegati/notizieeventi/2026/avviso-fiere-2026.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ceglie Messapica",
+      "name": "Ceglie Food Festival",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://halleyweb.com/ceglie/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5WpZd0TqTT0-A",
+        "label": "Comune di Ceglie Messapica",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festival dei prodotti e della cucina pugliese nel centro storico, documentato dalla candidatura comunale della sedicesima edizione. L’atto di finanziamento non costituisce domanda per un singolo banco.",
+      "venue": "Centro storico di Ceglie Messapica",
+      "sectors": "Prodotti agroalimentari, cucina locale e vino",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-21",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://halleyweb.com/ceglie/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5WpZd0TqTT0-A"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Date dal progetto comunale 2026; ulteriori riscontri nella comunicazione del festival. Le cifre di finanziamento del Comune non sono tariffe per gli espositori. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://halleyweb.com/ceglie/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G5WpZd0TqTT0-A",
+        "https://lovojo.it/sagre/puglia/brindisi/ceglie-food-festival-patrimonio-vivo-ceglie-messapica/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ceglie Messapica",
+      "name": "Il Mercatino · antiquariato e collezionismo",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.arcapromoter.it/eventi/",
+        "label": "arcapromoter.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mostra mercato di Arca Antica e Arca Promoter tra piazza Sant’Antonio e via San Rocco. Il calendario dell’organizzatore pubblica due appuntamenti autunnali; la ricorrenza editoriale più ampia va sempre riconfermata.",
+      "venue": "Piazza Sant’Antonio e via San Rocco",
+      "sectors": "Antiquariato, modernariato, collezionismo, vintage e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-29",
+          "end": "2026-11-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.arcapromoter.it/eventi/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-27",
+          "end": "2026-12-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.arcapromoter.it/eventi/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Organizzatore: calendario novembre/dicembre con orario 9–14. Cose di Casa riporta ultima domenica e, nei mesi con cinque domeniche, anche quarta: nessuna data aggiuntiva calcolata. Contatti arcaantica2024@gmail.com e info@arcapromoter.it; espositori selezionati. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.arcapromoter.it/eventi/",
+        "https://www.cosedicasa.com/mercatini/ceglie-messapica-piazza-santantonio"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cellino San Marco",
+      "name": "Sagra Beddhra Cilinu",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.cellinosanmarco.br.it/vivere-il-comune/eventi/sagra-beddrha-cilinu-3/",
+        "label": "Comune di Cellino San Marco",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festa popolare collegata ai patroni, con gastronomia e dimensione commerciale in piazza Aldo Moro. La pagina comunale conserva l’identità della manifestazione, senza un programma annuale corrente verificato.",
+      "venue": "Piazza Aldo Moro",
+      "sectors": "Gastronomia e prodotti locali",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Luglio è il periodo tradizionale descritto dalla fonte editoriale; le date automatiche 25–27 luglio 2026 non sono confermate e non vengono riproposte come edizione. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.cellinosanmarco.br.it/vivere-il-comune/eventi/sagra-beddrha-cilinu-3/",
+        "https://www.festivalinitalia.it/festival/festa-san-marco-santa-caterina-beddhra-cilinu-cellino-san-marco"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cisternino",
+      "name": "Borgo Divino",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "label": "Comune di Cisternino",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Manifestazione enogastronomica con concerti nel programma estivo comunale; il borgo ospita un percorso dedicato ai vini e alla cultura del territorio, distinto dai soli spettacoli musicali.",
+      "venue": "Borgo di Cisternino",
+      "sectors": "Vino e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-03",
+          "end": "2026-07-05",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale 2026; Infopoint 393 0084805. Le tariffe espositori e le procedure di ammissione non sono pubblicate nel calendario. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cisternino",
+      "name": "Ecocentrica",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "label": "Comune di Cisternino",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festival estivo con enogastronomia, mostre e iniziative nei giardini del Giannettino. Il calendario comunale ne indica il periodo generale, senza documentare un’apertura commerciale continua dei banchi.",
+      "venue": "Giardini del Giannettino, via XXIV Maggio",
+      "sectors": "Enogastronomia e proposte del festival da verificare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-02",
+          "end": "2026-08-09",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+          "periodOnly": true
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale 2026; Infopoint 393 0084805. Le tariffe espositori e le procedure di ammissione non sono pubblicate nel calendario. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cisternino",
+      "name": "Sagra delle Produzioni Locali",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "label": "Comune di Cisternino",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Due serate dedicate alle produzioni agricole negli spazi UPAL. Il programma di Cisternino colloca la sagra in via Fasano dalle 20:30, con una valorizzazione delle specialità del territorio.",
+      "venue": "UPAL, via Fasano",
+      "sectors": "Olio, vino e prodotti agricoli locali",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-05",
+          "end": "2026-08-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale 2026; Infopoint 393 0084805. Le tariffe espositori e le procedure di ammissione non sono pubblicate nel calendario. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cisternino",
+      "name": "Agrifest Trisole",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "label": "Comune di Cisternino",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra nel frantoio di contrada Tesoro, riportata dal programma dell’Estate Cistranese. L’appuntamento delle 20:30 è distinto dalle altre iniziative culturali e dalle sagre delle frazioni.",
+      "venue": "Frantoio D’Amico, contrada Tesoro",
+      "sectors": "Prodotti agricoli e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-17",
+          "end": "2026-08-17",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale 2026; Infopoint 393 0084805. Le tariffe espositori e le procedure di ammissione non sono pubblicate nel calendario. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cisternino",
+      "name": "Cisternino Beer Fest",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "label": "Comune di Cisternino",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festival della birra in due serate nel parcheggio Miravalle. Il calendario comunale documenta luogo e giornate, mentre domanda, gestione degli stand e condizioni economiche richiedono conferma diretta.",
+      "venue": "Parcheggio Miravalle, Sottovilla",
+      "sectors": "Birra e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-21",
+          "end": "2026-08-22",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale 2026; Infopoint 393 0084805. Le tariffe espositori e le procedure di ammissione non sono pubblicate nel calendario. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cisternino",
+      "name": "Sagra dei Sapori della Valle d’Itria",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "label": "Comune di Cisternino",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Appuntamento gastronomico della contrada Figazzano, inserito dal Comune nel programma estivo. La scheda si riferisce alla sagra delle due giornate, senza inglobare le altre attività della frazione.",
+      "venue": "Contrada Figazzano",
+      "sectors": "Gastronomia e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-22",
+          "end": "2026-08-23",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale 2026; Infopoint 393 0084805. Le tariffe espositori e le procedure di ammissione non sono pubblicate nel calendario. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cisternino",
+      "name": "Sagra dell’Uva di Casalini",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "label": "Comune di Cisternino",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra della vendemmia di Casalini con appuntamento serale dalle 20:30 nel calendario comunale. La fonte primaria riporta due giornate, senza includere il 28 agosto stimato da alcuni repertori.",
+      "venue": "Frazione Casalini",
+      "sectors": "Uva e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-29",
+          "end": "2026-08-30",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale 2026; Infopoint 393 0084805. Le tariffe espositori e le procedure di ammissione non sono pubblicate nel calendario. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cisternino",
+      "name": "Fiera della Bomminella",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026",
+        "label": "Comune di Cisternino",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera tradizionale dell’8 settembre, indicata separatamente dal Comune rispetto alla rassegna Intorno alla Bomminella. Gli eventi culturali del 5–7 settembre non anticipano automaticamente l’apertura dei posteggi.",
+      "venue": "Cisternino; aree commerciali da verificare col SUAP",
+      "sectors": "Merci della fiera tradizionale; merceologie da verificare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-08",
+          "end": "2026-09-08",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Calendario comunale 2026; Infopoint 393 0084805. Le tariffe espositori e le procedure di ammissione non sono pubblicate nel calendario. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.cisternino.br.it/notizie/3582744/estate-cistranese-2026"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Cisternino",
+      "name": "Il Mercatino · antiquariato e artigianato",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.arcapromoter.it/eventi/",
+        "label": "arcapromoter.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mercatino specializzato di antiquariato e opere artigianali in via Francesco Clarizia. L’organizzatore pubblica le giornate di novembre e dicembre; la ricorrenza mensile non viene trasformata in un calendario futuro automatico.",
+      "venue": "Via Francesco Clarizia; area del Palazzetto dello Sport",
+      "sectors": "Antiquariato, modernariato, collezionismo e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-01",
+          "end": "2026-11-01",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.arcapromoter.it/eventi/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-12-06",
+          "end": "2026-12-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.arcapromoter.it/eventi/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Organizzatore: 9–14 nelle date pubblicate. Cose di Casa riporta prima domenica escluso agosto e orario 8–15: prevale il calendario specifico per novembre e dicembre; riconfermare prima dell’arrivo. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.arcapromoter.it/eventi/",
+        "https://www.cosedicasa.com/mercatini/cisternino"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Erchie",
+      "name": "Fiera di Santa Lucia · I Profumi della Terra",
+      "months": [
+        12
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.erchie.br.it/it/news/148038/i-profumi-della-terra-fiera-di-santa-lucia",
+        "label": "Comune di Erchie",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera e percorso promozionale dei prodotti locali a cui il Comune invita imprese, produttori e associazioni. È documentata l’edizione 2025 con esposizione e degustazioni; non risulta una nuova ammissione verificata.",
+      "venue": "Erchie; ubicazione operativa del banco da verificare",
+      "sectors": "Prodotti agricoli, gastronomia e produzioni locali",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-12-13",
+          "end": "2025-12-14",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comune.erchie.br.it/it/news/148038/i-profumi-della-terra-fiera-di-santa-lucia"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025: disponibilità da presentare entro il 30 novembre 2025, non scadenza 2026. PDF del piano commerciale sul sito pubblico 403; copia sul dominio API restituisce 200 ma vuota, non letta né usata come prova. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.erchie.br.it/it/news/148038/i-profumi-della-terra-fiera-di-santa-lucia",
+        "https://erchie-api.municipiumapp.it/s3/2647/allegati/invito-stakeholders.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Fasano",
+      "name": "Sagra del Fiorone di Pezze di Greco",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://gofasano.com/attualita/tutto-pronto-per-la-sagra-del-fiorone-a-pezze-di-greco/",
+        "label": "gofasano.com",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "La Pro Loco Ulivo Vivo promuove il fiorone con produttori e stand gastronomici nella piazza di Pezze di Greco. La comunicazione pubblicata dalla stampa locale descrive panzerotti, pettole e altri assaggi.",
+      "venue": "Piazza XX Settembre, Pezze di Greco",
+      "sectors": "Fioroni e gastronomia locale",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-06",
+          "end": "2026-06-06",
+          "dateType": "calendar",
+          "sourceUrl": "https://gofasano.com/attualita/tutto-pronto-per-la-sagra-del-fiorone-a-pezze-di-greco/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comunicato della Pro Loco ripreso il 31 maggio 2026; patrocinio comunale e collaborazione GAL. Nessun numero di posteggi disponibili o costo per espositori pubblicato. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://gofasano.com/attualita/tutto-pronto-per-la-sagra-del-fiorone-a-pezze-di-greco/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Francavilla Fontana",
+      "name": "Sagra del Comitato Festa Patronale",
+      "months": [
+        9
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.festapatronaleff.it/programma/",
+        "label": "festapatronaleff.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Serata gastronomica presso la sede del Comitato durante la preparazione della festa della Madonna della Fontana. Il programma civile separa questa sagra dagli appuntamenti religiosi e dai concerti successivi.",
+      "venue": "Comitato Festa Patronale, via Roma",
+      "sectors": "Gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-07",
+          "end": "2026-09-07",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.festapatronaleff.it/programma/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ore 21 dal programma dell’organizzatore; l’intera festa 5–15 settembre non è assunta come durata della sagra. Contatto comitato_festa_patronale@pec.it. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.festapatronaleff.it/programma/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Francavilla Fontana",
+      "name": "Mercatino dell’Antiquariato della Festa Patronale",
+      "months": [
+        9
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.festapatronaleff.it/programma/",
+        "label": "festapatronaleff.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mercatino curato da Zacaredde nell’area Vintage & Heritage del programma civile. La presenza di antiquariato è documentata in via San Salvatore in una specifica serata della festa cittadina.",
+      "venue": "Via San Salvatore",
+      "sectors": "Antiquariato e collezionismo",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-09-12",
+          "end": "2026-09-12",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.festapatronaleff.it/programma/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Dalle 19; curatore Zacaredde. Le altre giornate della festa, i laboratori e le mostre non diventano ulteriori aperture commerciali del mercatino. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.festapatronaleff.it/programma/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Latiano",
+      "name": "Fiera di Ottobre · La Fera",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.latiano.br.it/dam/jcr:7eff775a-5d82-4514-bcb7-af3953a2ce01/avviso%20settore%20alimentare.pdf",
+        "label": "Comune di Latiano",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera autunnale con tredici posteggi per somministrazione in piazza Montanaro e via Ercole D’Ippolito. La grande giornata mercatale e la Sagra ti li Stacchioddi fanno parte del più ampio programma La Fera.",
+      "venue": "Piazza Montanaro e via Ercole D’Ippolito per l’area food",
+      "sectors": "Alimentare e somministrazione nell’area food; altri settori da verificare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-02",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.latiano.br.it/dam/jcr:7eff775a-5d82-4514-bcb7-af3953a2ce01/avviso%20settore%20alimentare.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "L’allegato comunale fissa 2–4 ottobre per l’area food: non tutto il cartellone 18 settembre–4 ottobre. Domanda su modello entro l’8 settembre ore 12 via PEC segreteria@pec.comune.latiano.br.it o protocollo. 13 spazi da 40/32/24/16 m². CUP dovuto ma senza importo; necessità elettrica da dichiarare, nessun allaccio gratuito dedotto. Titolo per somministrazione distinto dall’assegnazione. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-09-08"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.latiano.br.it/dam/jcr:7eff775a-5d82-4514-bcb7-af3953a2ce01/avviso%20settore%20alimentare.pdf",
+        "https://www.comune.latiano.br.it/notizie/AVVISO-PUBBLICO-PER-L-ASSEGNAZIONE-TEMPORANEA-DEI-POSTEGGI-DESTINATI-ALLA-SOMMINISTRAZIONE-DI-ALIMENTI-E-BEVANDE-NELL-AMBITO-DELLA--FIERA-DI-OTTOBRE-2026-.html",
+        "https://www.weareinbrindisi.it/la-fera-latiano-2026/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Mesagne",
+      "name": "Fiera Medievale Franca",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.turismo.comune.mesagne.br.it/evento/xxii-edizione-della-fiera-medievale-franca/",
+        "label": "Comune di Mesagne",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mercato medievale di artigiani, prodotti tipici e antichi mestieri nel borgo antico. Gruppo Storico Città di Mesagne e Meghy Costumes D’Epoque organizzano la manifestazione con cortei e spettacoli.",
+      "venue": "Centro storico e Castello Normanno Svevo",
+      "sectors": "Artigianato e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-03",
+          "end": "2026-10-04",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.turismo.comune.mesagne.br.it/evento/xxii-edizione-della-fiera-medievale-franca/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il programma comunale 2026 conferma la ripresa dopo le notizie sulla possibile pausa. Figuranti e pubblico non coincidono con gli operatori commerciali: chiedere separatamente ammissione e condizioni. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.turismo.comune.mesagne.br.it/evento/xxii-edizione-della-fiera-medievale-franca/",
+        "https://www.comune.mesagne.br.it/novita/incontri-dautore-musica-spettacoli-e-la-fiera-medioevale-franca/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Mesagne",
+      "name": "Fiera del Cappotto",
+      "months": [
+        11
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.mesagne.br.it/wp-content/uploads/2026/09/Avviso_fiera_2026_.pdf",
+        "label": "Comune di Mesagne",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera commerciale di novembre con graduatorie distinte per settore e assegnazione di un solo posteggio a operatore. Il bando ammette merci non alimentari, artigianato, alimentari come torroni e noccioline ed esposizioni senza vendita.",
+      "venue": "Mesagne; tratti e collocazione secondo assegnazione comunale",
+      "sectors": "Non alimentare, artigianato, torroni, noccioline ed esposizioni",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-15",
+          "end": "2026-11-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.mesagne.br.it/wp-content/uploads/2026/09/Avviso_fiera_2026_.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Titolo A/B o SCIA B e impresa attiva; domanda via suap@pec.comune.mesagne.br.it oppure impresainungiorno entro il 25 ottobre 2026, bollo 16 € distinto dal canone non quantificato. Il PDF reca un refuso «edizione 2025» all’articolo sulla durata: intestazione e data evento sono 2026; chiedere chiarimento. Graduatoria provvisoria già pubblicata il 27 ottobre, non disponibilità attuale. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-10-25"
+      },
+      "sourceRecordIds": [
+        "https://www.comune.mesagne.br.it/wp-content/uploads/2026/09/Avviso_fiera_2026_.pdf",
+        "https://www.comune.mesagne.br.it/novita/fiera-del-cappotto-2/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Mesagne",
+      "name": "Rosso Salentino",
+      "months": [
+        11
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.mesagnesera.it/rosso-salentino-rinviato/",
+        "label": "mesagnesera.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Rassegna di vini pugliesi, caldarroste, gastronomia e mercatini in piazza Orsini del Balzo. La terza edizione è stata rinviata per maltempo, secondo la comunicazione pubblicata il 30 ottobre.",
+      "venue": "Piazza Orsini del Balzo",
+      "sectors": "Vino, gastronomia e artigianato",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-11-07",
+          "end": "2026-11-08",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.mesagnesera.it/rosso-salentino-rinviato/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Il rinvio al 7–8 novembre sostituisce le date 30–31 ottobre ancora presenti nel portale turistico comunale. Appia Street Eventi e Confesercenti Brindisi; richiedere condizioni per banchi e categorie. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.mesagnesera.it/rosso-salentino-rinviato/",
+        "https://www.turismo.comune.mesagne.br.it/evento/rosso-salentino-al-via-la-iii-edizione-tra-buon-vino-pugliese-e-sapori-locali/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Fiera di San Cosimo",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera diurna con 150 posteggi previsti nel bando annuale: 118 in via Torre Santa Susanna e 32 in viale Grande Europa. È distinta dalla sagra nelle vie del centro.",
+      "venue": "Via Torre Santa Susanna e viale Grande Europa",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "Un mese e due giorni dopo Pasqua: mese maggio, senza giorno calcolato. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra di San Cosimo",
+      "months": [
+        5
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Cinquanta posteggi previsti nelle vie e nella piazza del centro per la sagra di San Cosimo. Le dimensioni del contingente non sono una dichiarazione di posti ancora liberi.",
+      "venue": "Via Dragonetti Bonifacio, piazza Lorch e via Mario Pagano",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "Un mese e due giorni dopo Pasqua; distinta dalla fiera diurna. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra della Madonna della Scala",
+      "months": [
+        4
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Manifestazione della contrada per cui l’avviso comunale prevede diciotto spazi temporanei, otto alimentari e dieci non alimentari. Serve un titolo espresso nell’autorizzazione annuale.",
+      "venue": "Contrada Madonna della Scala",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "Secondo giovedì dopo Pasqua: nessuna data puntuale ricostruita. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra di San Francesco di Paola",
+      "months": [
+        4
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra primaverile con quarantuno posteggi indicati dal bando allegato al Comune, sedici alimentari e venticinque non alimentari. La determina sintetica non elenca tutte le voci presenti nel documento esteso.",
+      "venue": "Piazza Donnolo e via Dragonetti Bonifacio",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "Seconda metà di aprile, soltanto periodo indicativo. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra di Sant’Antonio",
+      "months": [
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Appuntamento di giugno con ventitré posteggi programmati, dei quali sette alimentari. Il bando conserva la ripartizione per merci e subordina l’occupazione al pagamento e alla procedura annuale.",
+      "venue": "Via Annibale Maria Di Francia",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "12–13 giugno nel bando, espressamente indicativi e non conferma definitiva. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Fiera della Maddalena",
+      "months": [
+        7
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera estiva descritta nel bando integrale 2026 con la stessa ripartizione di spazi della fiera di San Cosimo. Il documento allegato integra il riepilogo più breve della determina.",
+      "venue": "Via Torre Santa Susanna e viale Grande Europa",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "21 luglio nel bando, data espressamente indicativa. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra di San Lorenzo",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra della contrada con quarantasei posteggi previsti, venti alimentari e ventisei non alimentari. Il calendario della procedura indica la ricorrenza, ma riserva la fissazione definitiva al Comune.",
+      "venue": "Contrada San Lorenzo, presso la chiesetta",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "10 agosto nel bando, data espressamente indicativa. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra della Madonna di Gallana",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Trenta spazi commerciali previsti per la ricorrenza di Gallana, distinti fra dodici alimentari e diciotto non alimentari. La partecipazione richiede ammissione alla manifestazione specifica.",
+      "venue": "Contrada Gallana, presso la chiesetta",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "14–15 agosto nel bando, espressamente indicativi. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Fiera di San Barsanofrio",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera di bancarelle e merci nell’area dello stadio, separata dalla sagra serale di San Barsanofrio. Il programma Oria Estate pubblica la giornata del 29 agosto 2026.",
+      "venue": "Via Torre Santa Susanna e viale Grande Europa, area stadio",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-29",
+          "end": "2026-08-29",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.oriaestate.it/eventi/184-fiera-di-san-barsanofio"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Il programma specifico conferma il 29 agosto, oltre al bando indicativo. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf",
+        "https://www.oriaestate.it/eventi/184-fiera-di-san-barsanofio"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra di San Barsanofrio",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra serale nel centro con cinquanta posteggi programmati. Non coincide con la fiera presso lo stadio: il documento comunale assegna aree e contingenti distinti alle due manifestazioni.",
+      "venue": "Via Dragonetti Bonifacio, piazza Lorch e via Mario Pagano",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "29–30 agosto nel bando, espressamente indicativi. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra dell’Uva",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Manifestazione della vendemmia prevista nella prima parte di settembre dal bando commerciale. Sono programmati cinquanta spazi con ripartizione alimentare e non alimentare, senza giorni annuali definitivi.",
+      "venue": "Piazza Lorch, via Mario Pagano e via Dragonetti Bonifacio",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "Prima decade di settembre, non dieci giorni continuativi di sagra. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra dei Santi Medici",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Ricorrenza di contrada Tripoli elencata nel bando integrale 2026 con cinquanta posteggi. La ripartizione è di ventidue spazi alimentari e ventotto non alimentari, subordinati all’autorizzazione.",
+      "venue": "Contrada Tripoli, tratto dalla SP 57",
+      "sectors": "Alimentare e non alimentare",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "26 settembre nel bando, data espressamente indicativa. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Oria",
+      "name": "Sagra Ti la Sasizza",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "label": "Comune di Oria",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra autunnale con un contingente programmato di 135 posteggi, sessantadue alimentari e settantatré non alimentari. La procedura annuale definisce selezione e obblighi, senza garantire spazi residui.",
+      "venue": "Via Francavilla e vie limitrofe",
+      "sectors": "Alimentare e non alimentare; salsiccia e prodotti tipici",
+      "editions": [],
+      "participation": {
+        "type": "selected",
+        "note": "Seconda domenica di ottobre, senza giorno calcolato automaticamente. Bando 2026 originale: date espressamente indicative, da fissare definitivamente per esigenze liturgiche, organizzative e di sicurezza. Istanza unica tramite impresainungiorno.gov.it, con manifestazioni elencate, almeno 30 giorni prima della prima; CUP per ogni evento entro 10 giorni dall’inizio, importo non indicato. Operatori autorizzati, artigiani, creativi e hobbisti con tesserino secondo requisiti; assegnazione per presenze, anzianità e ordine di domanda. SUAP 0831 846515/846514/846535. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comune.oria.br.it/wp-content/uploads/2025/03/Bando-Fiere-2026-Oria.docx",
+        "https://trasparenza.parsec326.it/repo/docs/G098/56/3969141_Det_2026_449_v2.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ostuni",
+      "name": "Fiera di San Giuseppe",
+      "months": [
+        3
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.ostuni.br.it/wp-content/uploads/2026/01/1-Avviso-pubblico.pdf",
+        "label": "Comune di Ostuni",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera di marzo distribuita in due aree secondo l’avviso comunale. Il 18 marzo sono previsti cento spazi in via Peppino Orlando; il 19 marzo 223 posteggi nelle aree mercatali individuate dal bando.",
+      "venue": "18 marzo via Peppino Orlando; 19 marzo via degli Emigranti, via R. Braico e via dei Calzolai",
+      "sectors": "Commercio su aree pubbliche; merceologie secondo posteggio",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-03-18",
+          "end": "2026-03-19",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.ostuni.br.it/wp-content/uploads/2026/01/1-Avviso-pubblico.pdf"
+        }
+      ],
+      "participation": {
+        "type": "selected",
+        "note": "Istanza unica su impresainungiorno entro il 10 febbraio 2026, indicando una o entrambe le giornate. Graduatoria e convocazione per la scelta; posteggi residui eventualmente assegnati dalla Polizia Locale nella prima mattina, senza garanzia di disponibilità. SUAP 0831 307316/307330. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito.",
+        "deadline": "2026-02-10",
+        "costs": "Il bando 2026 richiede 30 € di diritti di segreteria e istruttoria via PagoPA e bollo 16 € nella presentazione dell’istanza. Per il rilascio prescrive assolvimento del bollo 16 € e pagamento CUP quantificato in base alla dimensione del posteggio, entro 5 giorni dall’invio del PagoPA. Le due fasi di bollo sono riportate senza dedurre esenzioni o un totale automatico. Energia elettrica a carico dell’espositore; IVA, acqua e altri servizi non precisati. I 30 € non sono il prezzo completo del posteggio."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.ostuni.br.it/wp-content/uploads/2026/01/1-Avviso-pubblico.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ostuni",
+      "name": "Fiera di Sant’Oronzo",
+      "months": [
+        8
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.ostuni.br.it/vivere-il-comune/eventi/festa-di-santoronzo/",
+        "label": "Comune di Ostuni",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Bancarelle e stand enogastronomici accompagnano i festeggiamenti di Sant’Oronzo nelle vie cittadine. La pagina comunale consultata riguarda il 2025; il programma culturale 2026 non sostituisce il nuovo avviso commerciale.",
+      "venue": "Vie del centro di Ostuni; postazione da verificare nel nuovo avviso",
+      "sectors": "Prodotti enogastronomici e merci della fiera",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-25",
+          "end": "2025-08-27",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.ostuni.br.it/vivere-il-comune/eventi/festa-di-santoronzo/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025. Il vecchio indice di ricerca cita un avviso 2026 ma il dettaglio non è più recuperato: il tentativo reindirizza alla home e non viene presentato come lettura del nuovo bando. Nessuna scadenza o quota 2026 ricostruita. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.ostuni.br.it/vivere-il-comune/eventi/festa-di-santoronzo/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ostuni",
+      "name": "Sagra dei Vecchi Tempi",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.comune.ostuni.br.it/wp-content/uploads/2026/07/Programma-Estate-2026-low.pdf",
+        "label": "Comune di Ostuni",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Rassegna gastronomica a cura del gruppo folk La Stella sul viale Oronzo Quaranta. Il programma estivo originale di Ostuni ne colloca le due serate dal 14 al 15 agosto a partire dalle 18.",
+      "venue": "Viale Oronzo Quaranta",
+      "sectors": "Cucina tradizionale e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-14",
+          "end": "2026-08-15",
+          "dateType": "confirmed",
+          "sourceUrl": "https://www.comune.ostuni.br.it/wp-content/uploads/2026/07/Programma-Estate-2026-low.pdf"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Pagina 15 della brochure comunale letta anche visivamente. Partecipazione degli operatori e tariffe non specificate; non ricostruire quote dalle degustazioni. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.ostuni.br.it/wp-content/uploads/2026/07/Programma-Estate-2026-low.pdf"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ostuni",
+      "name": "Hortus · Mostra Mercato dell’Orto e del Giardino",
+      "months": [
+        10,
+        11
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.weareinbrindisi.it/hortus-ostuni-autunno-2026-parco-luigi-greco/",
+        "label": "weareinbrindisi.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mostra mercato autunnale di piante, fiori e giardinaggio promossa da Hortus Puglia e GAL Alto Salento. La comunicazione aggiornata sposta l’evento nel parco Luigi Greco, con espositori e incontri dedicati al verde.",
+      "venue": "Parco Prof. Luigi Greco",
+      "sectors": "Piante, fiori e prodotti per orto e giardino",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-30",
+          "end": "2026-11-01",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.weareinbrindisi.it/hortus-ostuni-autunno-2026-parco-luigi-greco/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Nuova sede nel parco Luigi Greco; la Villa Comunale Sandro Pertini di vecchi repertori non è mantenuta come sede attuale. Venerdì 15–20, sabato e domenica 9–20; ingresso pubblico gratuito, non tariffa stand. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.weareinbrindisi.it/hortus-ostuni-autunno-2026-parco-luigi-greco/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Ostuni",
+      "name": "Zagaredde · artigianato e antiquariato",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "category": "mercatino",
+      "source": {
+        "url": "https://www.comune.ostuni.br.it/novita/zagaredde/",
+        "label": "Comune di Ostuni",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Mercato specializzato comunale di artigianato e antiquariato presso l’area mercatale. La pagina SUAP del 27 agosto descrive appuntamenti mensili e giornate festive con collocazione diversa, senza singole date annuali strutturate.",
+      "venue": "Viale degli Emigranti; festività indicate in viale Oronzo Quaranta",
+      "sectors": "Artigianato e antiquariato",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Orario 7–15. La pagina scrive «ogni seconda del mese», senza completare il giorno della settimana; da giugno a settembre aggiunge la quarta domenica. Conservare l’ambiguità e chiedere conferma, senza generare date. Pasqua, Pasquetta, 25 aprile, 1 maggio e 2 giugno nella sede alternativa. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.ostuni.br.it/novita/zagaredde/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Donaci",
+      "name": "Antichi Sapori Fest",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://antichisaporifest.it/",
+        "label": "antichisaporifest.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Percorso fra piazze e vicoli del centro storico con cantine e operatori gastronomici, dedicato alle ricette locali. La manifestazione della Pro Loco collega le Vie degli Antichi Sapori alla Piazza del Vino.",
+      "venue": "Centro storico e Piazza del Vino",
+      "sectors": "Vino, gastronomia e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-06",
+          "end": "2026-08-06",
+          "dateType": "confirmed",
+          "sourceUrl": "https://antichisaporifest.it/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Ventitreesima edizione: il sito ricostruisce la tradizione del 6 agosto. Le spese comunali per luminarie e i prezzi del menu non sono tariffe espositive; contattare Pro Loco per la selezione. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://antichisaporifest.it/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Michele Salentino",
+      "name": "Sagra de li Gnummariedd",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.masserianova.it/estate-2026-gli-eventi-organizzati-e-patrocinati-dallamministrazione-comunale-di-san-michele-salentino/",
+        "label": "masserianova.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra delle specialità di carne inclusa nel Festival Salentino comunale. Il comunicato dell’amministrazione, ripreso da Masserianova, la colloca a luglio ma non fornisce giornate puntuali della manifestazione.",
+      "venue": "San Michele Salentino; luogo operativo da verificare",
+      "sectors": "Gastronomia e gnummarieddi",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Luglio dal comunicato comunale ripubblicato; non adottata la data 28 agosto di repertori generici. L’intero cartellone estivo non è una sagra continuativa. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.masserianova.it/estate-2026-gli-eventi-organizzati-e-patrocinati-dallamministrazione-comunale-di-san-michele-salentino/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Michele Salentino",
+      "name": "Festival del Fico Mandorlato",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.puglianews24.eu/festival-fico-mandorlato-san-michele-salentino-103485.html",
+        "label": "puglianews24.eu",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festival dedicato al fico mandorlato e ai prodotti del territorio, con stand di degustazione e vendita, fichi freschi e abbinamenti enologici. La ventiquattresima edizione è organizzata da Hortus Puglia con il Comune.",
+      "venue": "Piazza Marconi e centro storico",
+      "sectors": "Fico mandorlato, fichi freschi, prodotti tipici e vini",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-29",
+          "end": "2026-08-30",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.puglianews24.eu/festival-fico-mandorlato-san-michele-salentino-103485.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Comunicato 27 agosto e cronaca locale concordano sul 29–30 agosto; non adottate le date 28–29 agosto o 2 settembre di altri calendari. Il bando di contributo al gestore non è una domanda banco. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.puglianews24.eu/festival-fico-mandorlato-san-michele-salentino-103485.html",
+        "https://www.rtmweb.it/festival-del-fico-mandorlato-24-anni-di-tradizione-a-san-michele-salentino/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Michele Salentino",
+      "name": "OktoberFesct",
+      "months": [
+        10
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.idearadionelmondo.it/2026/10/02/59699/",
+        "label": "idearadionelmondo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festa della birra e dello street food della Pro Loco nella tensostruttura del campo sportivo. Il comunicato di presentazione distingue tre fine settimana, con apertura anche a pranzo la domenica.",
+      "venue": "Campo sportivo comunale",
+      "sectors": "Birra e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-09",
+          "end": "2026-10-11",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.idearadionelmondo.it/2026/10/02/59699/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-16",
+          "end": "2026-10-18",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.idearadionelmondo.it/2026/10/02/59699/"
+        },
+        {
+          "year": 2026,
+          "start": "2026-10-23",
+          "end": "2026-10-25",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.idearadionelmondo.it/2026/10/02/59699/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Nove giornate, non intervallo continuo 9–25 ottobre. L’ingresso gratuito riguarda i visitatori; verificare con Pro Loco l’eventuale accesso di operatori esterni. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.idearadionelmondo.it/2026/10/02/59699/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Pancrazio Salentino",
+      "name": "Sagra ti lu Pizzu all’Ampa",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.senzacolonnenews.it/spettacolo/item/san-pancrazio-due-notti-tra-sapori-e-musica-torna-la-sagra-ti-lu-pizzu-allampa.html",
+        "label": "senzacolonnenews.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Due serate della Pro Loco dedicate al pizzu e alle specialità locali in piazza Umberto I, accompagnate da musica e spettacolo. La cronaca del 12 agosto documenta gli stand aperti dalle 20:30.",
+      "venue": "Piazza Umberto I",
+      "sectors": "Pizzu e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-08-12",
+          "end": "2026-08-13",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.senzacolonnenews.it/spettacolo/item/san-pancrazio-due-notti-tra-sapori-e-musica-torna-la-sagra-ti-lu-pizzu-allampa.html"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Evento Pro Loco con patrocinio istituzionale; nessuna domanda per espositori o tariffa banco pubblicata nella comunicazione consultata. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.senzacolonnenews.it/spettacolo/item/san-pancrazio-due-notti-tra-sapori-e-musica-torna-la-sagra-ti-lu-pizzu-allampa.html"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Pancrazio Salentino",
+      "name": "Sagra dei Sapori",
+      "months": [
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.vivalapuglia.it/eventi/sagra-sapori-san-pancrazio-salentino/",
+        "label": "vivalapuglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Sagra gastronomica con intrattenimento e prodotti del territorio. La fonte conserva il programma 2025 pur avendo un titolo aggiornato al 2026: l’edizione documentata resta quindi soltanto storica.",
+      "venue": "San Pancrazio Salentino; area della nuova edizione da verificare",
+      "sectors": "Gastronomia e prodotti tipici",
+      "editions": [
+        {
+          "year": 2025,
+          "start": "2025-08-02",
+          "end": "2025-08-02",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.vivalapuglia.it/eventi/sagra-sapori-san-pancrazio-salentino/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Solo storico 2025: il sito annuncia un futuro programma 2026 senza pubblicarlo. Non convertire il 2 agosto in una conferma annuale. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.vivalapuglia.it/eventi/sagra-sapori-san-pancrazio-salentino/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Pancrazio Salentino",
+      "name": "Forum Wine Festival",
+      "months": [
+        6
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.rtmweb.it/a-san-pancrazio-salentino-il-forum-wine-festival-iv-edizione/",
+        "label": "rtmweb.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Festival enologico nei Giardini Forum Eventi con cantine, degustazioni e area food. L’iniziativa Forum Aperto si affianca al festival con uno spazio civico autonomo: non costituisce un secondo mercato da duplicare.",
+      "venue": "Giardini Forum Eventi",
+      "sectors": "Vini e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-25",
+          "end": "2026-06-27",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.rtmweb.it/a-san-pancrazio-salentino-il-forum-wine-festival-iv-edizione/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Quarta edizione organizzata da TGC Eventi; date confermate anche dal progetto collegato Forum Aperto. Ticket degustazione e accesso all’area civica non sono prezzo dello stand. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.rtmweb.it/a-san-pancrazio-salentino-il-forum-wine-festival-iv-edizione/",
+        "https://forumaperto.it/news/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Pietro Vernotico",
+      "name": "Fiera di San Pietro",
+      "months": [
+        6
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.vivalapuglia.it/eventi/festa-patronale-di-san-pietro-vernotico/",
+        "label": "vivalapuglia.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera di artigianato e prodotti locali nella giornata del patrono, distinta dal più ampio ciclo religioso di giugno. La tradizione conviviale della Matthra è collegata alla festa e non viene duplicata come un ulteriore mercato.",
+      "venue": "San Pietro Vernotico; area commerciale da verificare",
+      "sectors": "Artigianato e prodotti tipici",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-06-29",
+          "end": "2026-06-29",
+          "dateType": "calendar",
+          "sourceUrl": "https://www.vivalapuglia.it/eventi/festa-patronale-di-san-pietro-vernotico/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "29 giugno dalla fonte editoriale: novena 19–30 giugno e degustazione gratuita di gnocchi non descrivono apertura continua dei banchi o gratuità del suolo. Sito comunale con errore certificato/DNS nei tentativi documentati. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.vivalapuglia.it/eventi/festa-patronale-di-san-pietro-vernotico/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Vito dei Normanni",
+      "name": "San Vito Food & Drink · Festa Patronale",
+      "months": [
+        7
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comitatofestasanvitoesanvincenzo.it/",
+        "label": "comitatofestasanvitoesanvincenzo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Area gastronomica di via San Giovanni nel programma ufficiale del Comitato Festa Patronale. Il calendario specifica la presenza quotidiana del percorso Food & Drink durante le cinque giornate di luglio.",
+      "venue": "Via San Giovanni",
+      "sectors": "Gastronomia e bevande",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-07-09",
+          "end": "2026-07-13",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comitatofestasanvitoesanvincenzo.it/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Food & Drink ogni giorno 9–13 luglio dal programma dell’organizzatore. Pranzo solidale e luna park hanno funzioni distinte e non costituiscono disponibilità per ambulanti. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comitatofestasanvitoesanvincenzo.it/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "San Vito dei Normanni",
+      "name": "Sagra del Maiale",
+      "months": [
+        10
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://comitatofestasanvitoesanvincenzo.it/",
+        "label": "comitatofestasanvitoesanvincenzo.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Due serate gastronomiche nella Villa Comunale per il patrocinio di San Vincenzo Ferreri, con stand, musica e luna park. Il Comitato distingue l’apertura della sagra dalle celebrazioni religiose della domenica.",
+      "venue": "Villa Comunale",
+      "sectors": "Carne di maiale e gastronomia",
+      "editions": [
+        {
+          "year": 2026,
+          "start": "2026-10-17",
+          "end": "2026-10-18",
+          "dateType": "confirmed",
+          "sourceUrl": "https://comitatofestasanvitoesanvincenzo.it/"
+        }
+      ],
+      "participation": {
+        "type": "check",
+        "note": "Apertura sabato alle 21; nessun costo o numero di posteggi commerciali liberi pubblicato. Rivolgersi al Comitato per eventuale partecipazione esterna. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://comitatofestasanvitoesanvincenzo.it/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Torchiarolo",
+      "name": "Messapian Wine Summer Fest",
+      "months": [
+        7,
+        8
+      ],
+      "category": "sagra",
+      "source": {
+        "url": "https://www.halleyweb.com/c074018/de/attachment.php?serialDocumento=00RMQN020266P&mosdoc=0",
+        "label": "Comune di Torchiarolo",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Progetto comunale diffuso nelle marine con percorso vitivinicolo e banchi d’assaggio di cantine locali a Lendinuso. La delibera collega il festival a incontri civici e attività culturali, subordinando il progetto al finanziamento.",
+      "venue": "Marine di Lendinuso e Torre San Gennaro",
+      "sectors": "Vino e gastronomia del territorio",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Progetto 2026: tappa Lendinuso prevista 11–13 luglio, Torre San Gennaro 12–14 agosto; nessuna edizione confermata dal solo atto progettuale. Delibera105 subordina attività a valutazione e finanziamento e consente rimodulazioni. Non usare l’intervallo generale 11luglio–29agosto né il calendario automatico 1luglio–31agosto come apertura dei banchi. Finanziamenti e sponsorizzazioni non sono quote espositori. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.halleyweb.com/c074018/de/attachment.php?serialDocumento=00RMQN020266P&mosdoc=0",
+        "https://www.halleyweb.com/c074018/de/attachment.php?serialDocumento=00S0NE020267M"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Torre Santa Susanna",
+      "name": "Fiera di Santa Susanna",
+      "months": [
+        5
+      ],
+      "category": "espositiva",
+      "source": {
+        "url": "https://www.comune.torresantasusanna.br.it/fiere-e-mercati/",
+        "label": "Comune di Torre Santa Susanna",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera campionaria descritta dal Comune con produzioni agricole, attrezzature e artigianato tradizionale. La scheda istituzionale indica la consuetudine di maggio, senza un programma annuale operativo verificato.",
+      "venue": "Torre Santa Susanna; spazi della nuova edizione da verificare",
+      "sectors": "Bestiame, attrezzature agricole, artigianato, agroalimentare e articoli vari",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Fonte comunale del 2022: primo maggio come consuetudine. Non vengono attribuiti giorni 2026 sulla sola base del vecchio calendario; verificare eventuale nuova formula, autorizzazioni e categorie. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.torresantasusanna.br.it/fiere-e-mercati/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Torre Santa Susanna",
+      "name": "Fiera Torrese",
+      "months": [
+        9
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.comune.torresantasusanna.br.it/fiere-e-mercati/",
+        "label": "Comune di Torre Santa Susanna",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera tradizionale di settembre distinta dalla Fiera di Santa Susanna di primavera. La pagina comunale ne registra la ricorrenza annuale, separandola dai normali mercati settimanali del giovedì e sabato.",
+      "venue": "Torre Santa Susanna; area da verificare col Comune",
+      "sectors": "Merci della fiera; categorie da verificare",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Prima domenica di settembre come consuetudine, senza calcolare automaticamente il giorno 2026. La scheda automatica che parla del 6 settembre è una pista editoriale, non un nuovo bando letto. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.comune.torresantasusanna.br.it/fiere-e-mercati/"
+      ]
+    },
+    {
+      "region": "Puglia",
+      "city": "Villa Castelli",
+      "name": "Fiera della Festa Patronale",
+      "months": [
+        10
+      ],
+      "category": "tradizionale",
+      "source": {
+        "url": "https://www.prolocovillacastelli.it/tradizioni/",
+        "label": "prolocovillacastelli.it",
+        "checkedAt": "2026-10-31"
+      },
+      "summary": "Fiera commerciale che apre le ricorrenze della Madonna della Fontana e del Sacro Cuore. La Pro Loco distingue il giorno della fiera da quello religioso e dal concerto conclusivo, citando il repertorio storico locale.",
+      "venue": "Villa Castelli; sede del banco da verificare",
+      "sectors": "Bestiame, casalinghi e abbigliamento",
+      "editions": [],
+      "participation": {
+        "type": "check",
+        "note": "Primo ottobre nella descrizione tradizionale della Pro Loco; non è una conferma puntuale 2026. Il 2 è la festa religiosa e il 3 il concerto: non estendere automaticamente la fiera a tre giorni. La scheda non garantisce disponibilità o ammissione. Chiedere a organizzatore e SUAP categorie ammesse, nuova edizione, domanda, autorizzazioni, costi e servizi; ingresso libero per il pubblico non significa banco gratuito."
+      },
+      "sourceRecordIds": [
+        "https://www.prolocovillacastelli.it/tradizioni/"
+      ]
+    }
+  ]
+}

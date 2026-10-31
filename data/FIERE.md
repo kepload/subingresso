@@ -1,5 +1,19 @@
 # Calendario fiere — fonti e aggiornamento
 
+## Brindisi ? ricerca documentale, 31 ottobre 2026
+
+Ricerca mirata attuale conclusa con limiti espliciti: **65 schede nei20comuni**,64aggiunte e ID della FieraSanCosimo conservato. Audit `data/fiere-brindisi.json`; originali, tentativi, letture e prove `.local/ricerche/fiere-brindisi-20261031`. Sono181acquisizioni tecniche,176file con hash verificato,173nonvuoti: non altrettante letture o fonti indipendenti. Nessun censimento certificato, ammissione o disponibilit? promessa; aggiornamenti futuri distinti.
+
+Carovigno: calendario originale visto,9schede; centroPasqua5?7aprile distinto da giostrePolinisso4?7. Domanda28febbraio,16?bollo non canone. Oria: DOCXintegrale13manifestazioni, date espressamente indicative non trasformate in giornate certe; solo Barsanofrio29agosto con programma specifico. Domanda30giorni prima della prima manifestazione, CUP10giorni prima di ogni evento, senza importo. Cisternino: Bomminella8settembre distinta da eventi5?7, Uva29?30agosto; Ecocentrica solo periodo generale. MercatiniArca novembre/dicembre da calendario organizzatore senza proiezioni automatiche.
+
+Latiano areafood2?4ottobre e domanda8settembre; non tutto il cartellone18settembre?4ottobre. Mesagne Cappotto15novembre, domanda25ottobre e refuso2025nelPDF; bollo16?noncanone, graduatoria provvisoria non posti liberi. **RossoSalentino rinviato7?8novembre** dal comunicato30ottobre, rispetto alla vecchia paginaComune30?31ottobre. FicoMandorlato29?30agosto, OktoberFesct treweekend distinti. Hortus30ottobre?1novembre nuova sedeParcoLuigiGreco; vecchia VillaPertini scartata.
+
+Due sintesi economiche: **SNIM** stand1.500?5.000? secondo settore/formato, iscrizione separata300?,IVA22%;RC/allaccio/consumo fino3kW,5pass/15inviti nella quota, ormeggi nei soli standfrontemare. Areaaggiuntiva10?/m? non banco completo; ospitalit?500? include iscrizione300?. **SanGiuseppeOstuni**30?diritti, bolli nelle fasi prescritte eCUPdimensionale non quantificato; energia a carico operatore. Nessun totale o gratuit? dedotti.
+
+Storico esplicitoSantaLuciaErchie/SaporiSanPancrazio/SantOronzo2025; consuetudini Torre/Villa/Cellino senza nuove date. Torchiarolo progetto subordinato al finanziamento, solo mesi; budget non quota banco. Errori403/certificato/DNS, pianoErchie200vuoto e redirectSantOronzo2026 dichiarati nell?audit; non provano assenza di eventi. Fonti editoriali e comunicati ripresi dichiarati; planimetrieOria acquisite non tutte lette. Mercati ordinari, soli concerti/processioni e bandi ai gestori esclusi. Nessun contatto a terzi, task/controller e stop preservati, Pavia riservata.
+
+Verifiche locali provinciali Chromium1440/320 e WebKit390:65dettagli,2costi,elenco/mappa,sei pagine senzaJS per formato passati; build ripetuta e settori passati. **Altre8.768schede e371prezzi precedenti identici**. CacheJS143/JSON109. Pubblicazione e verifiche online ancora da registrare, checklist non spuntata prima dell?esito.
+
 ## SEO e percorso documentale — 31 ottobre 2026
 
 Priorità al catalogo esistente; nessuna nuova fiera o proiezione di edizioni.

@@ -3220,6 +3220,22 @@
       "sourceUrl": "https://www.sagradellepesche.it/2026/09/21/xliv-edizione-sagra-della-pesca-igp-e-notte-gialla-2026-disposizioni-e-modalita-di-partecipazione/",
       "checkedAt": "2026-10-30",
       "period": "2026"
+    },
+    "puglia-brindisi-snim-salone-nautico-di-puglia": {
+      "kind": "conditional",
+      "label": "Stand 1.500–5.000 € + iscrizione e IVA · 2026",
+      "details": "Listino 2026, IVA 22% da aggiungere: area terra 4×4/4×8/4×12 m a 2.000/3.500/4.500 €; fronte mare 2.500/4.000/5.000 € con ormeggi inclusi; settore accessori 1.500/2.800/4.000 €. Area aggiuntiva davanti allo stand 10 €/m², non un banco completo. Iscrizione separata 300 € + IVA con RC, allaccio e consumo fino a 3 kW, 5 pass e 15 inviti. Stand con pareti, moquette, tavoli, sedie e ciabatta come da modulo; ripostiglio senza prezzo indicato. Ospitalità azienda aggiuntiva soggetta ad autorizzazione e quota 500 € comprensiva dell’iscrizione 300 €, senza sommarla due volte. Acconto 30% + IVA, saldo entro 30 settembre; nessuna disponibilità attuale dedotta.",
+      "sourceUrl": "https://www.snimpuglia.it/wp-content/uploads/2026/05/EDITABILE_SNIM-2026-domanda-di-adesione.pdf",
+      "checkedAt": "2026-10-31",
+      "period": "2026"
+    },
+    "puglia-ostuni-fiera-di-san-giuseppe": {
+      "kind": "partial",
+      "label": "30 € diritti + bolli e CUP da quantificare · 2026",
+      "details": "Il bando 2026 richiede 30 € di diritti di segreteria e istruttoria via PagoPA e bollo 16 € nella presentazione dell’istanza. Per il rilascio prescrive assolvimento del bollo 16 € e pagamento CUP quantificato in base alla dimensione del posteggio, entro 5 giorni dall’invio del PagoPA. Le due fasi di bollo sono riportate senza dedurre esenzioni o un totale automatico. Energia elettrica a carico dell’espositore; IVA, acqua e altri servizi non precisati. I 30 € non sono il prezzo completo del posteggio.",
+      "sourceUrl": "https://www.comune.ostuni.br.it/wp-content/uploads/2026/01/1-Avviso-pubblico.pdf",
+      "checkedAt": "2026-10-31",
+      "period": "2026"
     }
   }
 }
