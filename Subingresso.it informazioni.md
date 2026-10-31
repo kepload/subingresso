@@ -1,5 +1,23 @@
 # Subingresso.it — informazioni e TO DO
 
+## Chiusura province dalle18:10 — 31 ottobre 2026
+
+- Richiesta prevalente: alle18:10 riprendere eventuali province rimaste a metà,
+  completare esclusivamente quelle e poi stop. Nessuna nuova provincia dopo
+  quel controllo; Codex1, quota fino a0 e rinnovo naturale conservati.
+- Task una tantum `Subingresso Province Chiusura 1810`, prossima esecuzione
+  verificata31ottobre18:10 Europe/Rome. Helper privato
+  `.local/lavori/province-dual-20261031/finish-at-1810.py`: fotografa la provincia
+  attiva di ciascuna sessione, riavvia solo il coordinatore conservando il worker,
+  recupera checkpoint fermati e limita permanentemente gli avvii a quella provincia.
+  Sessioni senza provincia attiva fermate; dopo esito verificato nessuna successiva,
+  anche ai rinnovi/task periodici. Esito futuro `cutoff-1810-result.json`, policy
+  per sessione `finish-only.json`. Non dichiarato ancora eseguito.
+- Verifica simulata: processo corrente preservato, parziale recuperato, sessione
+  senza provincia fermata e idempotenza passati; prove private `verification-1810`.
+  Backup remoto `backup/session-20261031-173927-province-stop-1810` verificato;
+  errori cleanuphelper noti. Nessun worker di ricerca interrotto ora.
+
 ## Terza sessione province su Codex1 — 31 ottobre 2026
 
 - Autorizzata terza sessione contemporanea e consumo fino a0%; poi attesa del
