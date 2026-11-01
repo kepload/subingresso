@@ -4140,3 +4140,13 @@ formati, settori, 7.127 pagine/3.094 sitemap e build ripetibile passati. TO DO
 `Documents/ricerca-fiere-macerata-20261025`; backup completo SHA256 e supplemento
 finale documentati in FIERE.md. Cache JS117/JSON85, file estranei e commit blog
 concorrenti preservati; nessuna altra provincia e nessuna comunicazione a terzi.
+
+
+## Benevento ? integrazione documentale, 1 novembre 2026
+
+95 schede/57 comuni, tutti i78comuni ricogniti, sei sintesi costo; ricerca attuale
+conclusa con limiti espliciti nell'audit `data/fiere-benevento.json`. Dossier
+`.local/ricerche/fiere-benevento-20261031`, backup provinciale e ramo pre-integrazione
+remoti gi? verificati. ID e altre province preservati; catalogo9474. Browser locale
+Chromium1440/320 e WebKit390 superati. Riga83 aperta fino alle prove live;
+nessun altro intervento, contatto o provincia avviati.

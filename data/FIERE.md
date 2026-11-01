@@ -1,3 +1,17 @@
+## Benevento ? ricerca documentale, 1 novembre 2026
+
+Ricerca attuale conclusa con limiti: **95 schede in 57 comuni**, ricognizione
+nominale dei **78 comuni**, **sei sintesi costo**. Audit `data/fiere-benevento.json`;
+originali, letture, esclusioni e prove in `.local/ricerche/fiere-benevento-20261031`.
+57 schede con edizioni documentate e 38 con soli periodi: storico e repertori
+secondari non costituiscono conferme 2026. Annullamenti e date discordanti esclusi
+o qualificati nell'audit; fonti inaccessibili ed esiti negativi non provano assenza
+di eventi. Prezzi con anno, condizioni e limiti; nessuna disponibilit? inferita.
+Preservati i due ID precedenti e tutte le 9.379 schede delle altre province;
+catalogo 9.474. Build ripetibile; browser locale Chromium1440/320 e WebKit390:
+95 dettagli, elenco/mappa e sette pagine senza JS per formato superati.
+Pubblicazione e chiusura della riga83 subordinate alle verifiche online.
+
 ## Foggia — ricerca documentale, 31 ottobre 2026
 
 Ricerca attuale conclusa con limiti: **111 schede in 52 comuni, ricognizione nominale di tutti i 61 comuni**; 110 aggiunte, ID precedente conservato, 59 schede con edizioni documentate e 52 con soli periodi. Audit `data/fiere-foggia.json`, originali/ricevute/letture/prove in `.local/ricerche/fiere-foggia-20261031`: 309 ricevute tecniche e 288 file verificati con hash, non altrettante letture integrali. Nove comuni senza schede non sono dichiarati privi di eventi. Nessun contatto a terzi.

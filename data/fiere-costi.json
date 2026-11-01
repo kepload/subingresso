@@ -3561,6 +3561,54 @@
       "sourceUrl": "https://www.comune.caposele.av.it/page/domanda-di-autorizzazione-per-commercio-su-aree-pu",
       "checkedAt": "2026-10-31",
       "review": "provincial-original-document-review"
+    },
+    "campania-benevento-fiera-di-san-giuseppe": {
+      "kind": "partial",
+      "label": "5,40–7 €/m² + oneri · edizione2026",
+      "details": "Edizione 2026, intera fiera: 5,40 €/m² merceologico oppure 7 €/m² food, più 100 € di istruttoria e 16 € di bollo. Gazebo 5×5 m: 500 €; casette 3×2 m: importo dell’allestitore non pubblicato. IVA e utenze non precisate.",
+      "sourceUrl": "https://web.comune.benevento.it/zf/index.php/atti-amministrativi-bandi/determine/dettaglio/atto/GTlRrMUU5VT0-H",
+      "checkedAt": "2026-10-31",
+      "period": "2026"
+    },
+    "campania-morcone-fiera-di-morcone-e-dell-alto-tammaro": {
+      "kind": "unit",
+      "label": "Tariffari per settore +100 € e IVA22% · 2026",
+      "details": "Tariffari 2026 più IVA 22% e iscrizione 100 €: agricoltura esterna 10 €/m²; zootecnia coperta e Sun Gallery esterna 15 €/m²; shopping prefabbricato 4×4 m 300 € o 7×4 m 400 €. Casa 40 €/m² allestito o 25 nudo, minimo 9 m²; gastronomia 45/20 €/m², minimo 9; industria 45/25 €/m², minimo 12. Allaccio 220 V per 1 kW incluso; potenza extra 50 €/kW, non tariffa di consumo. Gazebo dove previsto 350/400/450 € per 3×3/4×4/5×5 m. Conferma aree nude entro 21 agosto nei moduli indicati.",
+      "sourceUrl": "https://fieradimorcone.com/area-espositori/",
+      "checkedAt": "2026-10-31",
+      "period": "2026"
+    },
+    "campania-castelpagano-sagra-del-fungo-porcino": {
+      "kind": "fee",
+      "label": "150–500 € intera manifestazione · 2026",
+      "details": "Edizione 2026, intera manifestazione: Piazza Municipio, vendita alimentare 500 €; Via e Piazza Umberto I, alimentari 300 €, non alimentari e artigianato 150 €. Compresi piano di sicurezza, TARI, suolo, fornitura elettrica e manutenzione. IVA non precisata.",
+      "sourceUrl": "https://www.comune.castelpagano.bn.it/novita/notizie/novita_67.html",
+      "checkedAt": "2026-10-31",
+      "period": "2026"
+    },
+    "campania-buonalbergo-sagra-de-lo-ciammarruchiello": {
+      "kind": "conditional",
+      "label": "Gratuito, senza somministrazione · 2026",
+      "details": "Edizione 2026: partecipazione gratuita per entrambe le giornate, area nuda 4×3 m, sorveglianza generale notturna, occupazione suolo e permessi. Fornitura e illuminazione generale dell’organizzazione; illuminazione dello stand a carico dell’espositore. Vigilanza non equivale ad assicurazione individuale.",
+      "sourceUrl": "https://www.prolocobuonalbergo.org/sagra-de-lo-ciammarruchiello-2026-domanda-di-partecipazione-espositori/",
+      "checkedAt": "2026-10-31",
+      "period": "2026"
+    },
+    "campania-torrecuso-novello-e-castagne": {
+      "kind": "fee",
+      "label": "200–500 € secondo area/settore · 2026",
+      "details": "Edizione 2026: stand gastronomico 350 € senza casetta oppure 500 € con casetta; produttori/espositori 350 € con casetta; altri non alimentari 200 €. IVA, metrature, utenze e servizi ulteriori non precisati nel comunicato: nessun tutto incluso dedotto.",
+      "sourceUrl": "https://portaleventi.it/allegato/20049",
+      "checkedAt": "2026-10-31",
+      "period": "2026"
+    },
+    "campania-san-lorenzello-mercantico": {
+      "kind": "partial",
+      "label": "Storico:13 €/mese, modulo senza anno",
+      "details": "Modulistica comunale senza anno, collegata alla scheda 2025: tassa di partecipazione di 13 € per ciascun mese, da versare solo dopo accoglimento. Importo non verificato come tariffa 2026; IVA, metrature e utenze non precisate. La gratuità della pagina evento non sostituisce questa quota per espositori.",
+      "sourceUrl": "https://www.comune.sanlorenzello.bn.it/it/eventi/fiera-del-mercantico-2022",
+      "checkedAt": "2026-10-31",
+      "period": null
     }
   }
 }
