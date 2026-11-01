@@ -1,5 +1,17 @@
 # Subingresso.it — informazioni e TO DO
 
+## Tre loop conclusi e arrestati — 1 novembre 2026
+
+- Richiesta corrente: finire soltanto i lavori iniziati, poi stop. Verifica10:23:
+  Foggia111schede conclusa31ottobre23:20, Avellino240schede23:37,
+  Benevento95schede1novembre04:21; tre esiti con prove live e commit verificati
+  suorigin/main. Nessun worker attivo, nessuna provincia iniziata ancora a metà.
+- **92 concluse,18 aperte su110**, inclusa Pavia riservata. Disabilitati i tre
+  taskDualA/B/C e il taskChiusura1810; vecchioAuto giàDisabled. Nessun nuovo
+  avvio o rinnovo automatico. Checkout principale allineato in fast-forward,
+  file estranei preservati; backup remoto `backup/session-20261101-102330-chiusura-tre-province-verificate`
+  verificato. Dossier, checkpoint e prove conservati.
+
 ## Avellino verificata e chiusa — 31 ottobre 2026
 
 - Ricerca corrente conclusa con limiti:240schede/104comuni, copertura nominale118comuni, treID conservati e237aggiunte; storico, periodi, edizioni, bandi e ammissione distinti. 13sintesi costo, bollo distinto dal canone;730ricevute e719originali SHA256. Audit `data/fiere-avellino.json`, fonti/limiti in `data/FIERE.md`, dossier `.local/ricerche/fiere-avellino-20261031`.
