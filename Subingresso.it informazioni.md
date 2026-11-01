@@ -3296,7 +3296,7 @@ come registrato sopra; la prova precedente resta conservata. Il catalogo Padova 
   Nuove fonti per esclusioni e condizioni non pubblicate: manutenzione futura
   distinta dalla ricerca corrente conclusa, senza avviare altre province.
 
-**Ricerca approfondita: 91 province completate, 19 da fare su 110**, aggiornate il31ottobre dopo Avellino, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
+**Ricerca approfondita: 92 province completate, 18 da fare su 110**, aggiornate il1novembre dopo Benevento, contando le caselle provinciali uniche. Ciclo automatico fermo; Pavia riservata. Manutenzione distinta; schede importate ≠ ricerca approfondita. Unità territoriali del calendario, inclusa Sardegna2026.
 
 **Ordine operativo aggiornato il 12 ottobre 2026, dalla più importante alla meno
 importante per subingresso.it.** Prima fiere e mercati utili agli ambulanti,
@@ -3850,7 +3850,7 @@ La fama dei grandi saloni espositivi da sola non misura l’utilità per ambulan
 - [x] **80. Taranto** — Puglia — ricerca corrente conclusa con limiti:64schede in27comuni,29ricogniti eotto sintesi costo; pubblicata e verificata online il31ottobre2026. Audit `data/fiere-taranto.json`, fonti/prove nel dossier; intervento singolo, ciclo fermo.
 - [x] **81. Foggia** — Puglia; ricerca documentale conclusa con limiti e pubblicazione verificata il31ottobre2026:111schede,61comuni coperti. Audit `data/fiere-foggia.json` e prove `data/FIERE.md`.
 - [x] **82. Avellino** — Campania; ricerca attuale conclusa con limiti e pubblicazione verificata il31ottobre2026:240schede in104comuni, ricognizione nominale118comuni. Audit `data/fiere-avellino.json` e prove `data/FIERE.md`.
-- [ ] **83. Benevento** — Campania
+- [x] **83. Benevento** — Campania; ricerca attuale conclusa con limiti:95schede in57comuni,78comuni ricogniti e6sintesi costo; pubblicata e verificata online il1novembre2026. Audit `data/fiere-benevento.json` e prove nel dossier.
 - [ ] **84. L'Aquila** — Abruzzo
 - [ ] **85. Matera** — Basilicata
 - [ ] **86. Cosenza** — Calabria
@@ -4142,11 +4142,17 @@ finale documentati in FIERE.md. Cache JS117/JSON85, file estranei e commit blog
 concorrenti preservati; nessuna altra provincia e nessuna comunicazione a terzi.
 
 
-## Benevento ? integrazione documentale, 1 novembre 2026
+## Benevento — integrazione documentale, 1 novembre 2026
 
 95 schede/57 comuni, tutti i78comuni ricogniti, sei sintesi costo; ricerca attuale
 conclusa con limiti espliciti nell'audit `data/fiere-benevento.json`. Dossier
 `.local/ricerche/fiere-benevento-20261031`, backup provinciale e ramo pre-integrazione
-remoti gi? verificati. ID e altre province preservati; catalogo9474. Browser locale
-Chromium1440/320 e WebKit390 superati. Riga83 aperta fino alle prove live;
-nessun altro intervento, contatto o provincia avviati.
+remoti già verificati. ID e altre province preservati; catalogo9474. Browser locale
+Chromium1440/320 e WebKit390 superati. Pubblicati5dd9bb3/e23a6eb,
+Vercel riuscito2bCNKHeHnzurECnKxuyXcYox47uM:5asset identici ai blobGit e95pagine
+HTTP200 con fonti/note/costi/canonical. Live Chromium1440/320 e WebKit390:
+95dialoghi,elenco/mappa e7SSR per formato; smoke reale passato, scritture abortite.
+Suite generale5formati,9474SSR/4847sitemap eSEO passati. Gitleaks:26identificativi
+ricevuta verificati come hash URL pubbliche, rinominati receiptId; hook successivo
+passato. Spuntata esclusivamente83 dopo prove:92concluse/18aperte su110,
+conteggiate per provincia unica. Nessun contatto o altra provincia; stop definitivo.
