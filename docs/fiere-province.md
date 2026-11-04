@@ -1,11 +1,11 @@
 # Fiere: stato della ricerca provinciale
 
-Stato aggiornato il **4 novembre 2026**: **93 concluse, 17 aperte su 110**.
-Matera verificata online il 4 novembre; le altre caselle conservano gli esiti
+Stato aggiornato il **4 novembre 2026**: **94 concluse, 16 aperte su 110**.
+Matera e Medio Campidano verificati online il 4 novembre; le altre caselle conservano gli esiti
 precedenti. Ricerca conclusa con limiti espliciti, manutenzione futura e mera
 importazione di schede sono stati differenti.
 
-**Automazioni ferme; Matera completata su richiesta. Pavia riservata.**
+**Automazioni ferme; Matera e Medio Campidano completati su richieste singole. Pavia riservata.**
 La richiesta del 4 novembre riguarda una provincia e non avvia altre ricerche.
 I vecchi cicli, rinnovi quota e ordini di priorità non autorizzano ripartenze.
 Prima di riprendere una provincia verificare richiesta corrente, checkout e fonti.
@@ -132,5 +132,7 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 - [x] **98. Enna**
 - [ ] **99. Ogliastra**
 - [ ] **100. Sulcis Iglesiente**
-- [ ] **101. Medio Campidano**
+- [x] **101. Medio Campidano**
 - [x] **102. Isernia**
+
+Medio Campidano: nove schede verificate online, ricognizione limitata dei 28 comuni; [dossier](../data/fiere-dossier/119-medio-campidano-20261104.md).

@@ -8,7 +8,7 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 ## Stato e vincoli da conservare
 
 - [Checklist unica](../docs/fiere-province.md): aggiornata il 4 novembre,
-  93 concluse e 17 aperte su 110; Matera verificata online su richiesta,
+  94 concluse e 16 aperte su 110; Matera e Medio Campidano verificati online su richieste singole,
   Pavia riservata, automazioni ferme.
   Nessuna ripresa autorizzata dal presente indice o dai vecchi resoconti.
 - Verificare dati e commit effettivi, preservare ID, fonti e province estranee.

@@ -21,9 +21,9 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito **4 novembre 2026**: **93 province concluse e 17 aperte su 110**,
+Ultimo esito **4 novembre 2026**: **94 province concluse e 16 aperte su 110**,
 Pavia inclusa tra le aperte e **riservata**. Matera completata su richiesta e
-verificata online: 55 nuove schede, catalogo **9.529**. Le altre caselle mantengono
+verificata online: 55 nuove schede, catalogo dopo Medio Campidano **9.538**. Le altre caselle mantengono
 gli esiti precedenti. Ricerca con limiti espliciti, non censimento certificato.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
@@ -98,6 +98,14 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **4 novembre 2026 ? Medio Campidano:** nove schede in nove comuni da fonti
+  ufficiali/organizzatori; ricognizione web in gruppi dei 28 comuni con limiti.
+  Commit `04d94df`, produzione Ready e nove pagine pi? filtro/dialogo verificati
+  in Chromium 1440/320 e WebKit 390. Catalogo 9.538, precedenti 9.529 invariati.
+  Stato 94/16; Pavia riservata e automazioni ferme. Fonti e limiti nel
+  [dossier](data/fiere-dossier/119-medio-campidano-20261104.md).
+
 
 - **4 novembre 2026 — Matera:** aggiunte e verificate online 55 schede in
   20 comuni, ricognizione nominale dei 31 comuni e tre riscontri economici;
