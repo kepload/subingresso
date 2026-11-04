@@ -21,10 +21,12 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito **4 novembre 2026**: **94 province concluse e 16 aperte su 110**,
-Pavia inclusa tra le aperte e **riservata**. Matera completata su richiesta e
-verificata online: 55 nuove schede, catalogo dopo Medio Campidano **9.538**. Le altre caselle mantengono
-gli esiti precedenti. Ricerca con limiti espliciti, non censimento certificato.
+Ultimo esito **4 novembre 2026**: **96 province concluse e 14 aperte su 110**,
+Pavia inclusa tra le aperte e **riservata**. Ogliastra e Sulcis Iglesiente
+completati da due sessioni isolate su richiesta: 23 schede ciascuna, catalogo
+**9.584**, pubblicazione verificata. Entrambe le sessioni ferme dopo la propria
+provincia. Le altre caselle mantengono gli esiti precedenti. Ricerca con limiti
+espliciti, non censimento certificato.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
 disabilitati; vecchio Auto già disabilitato. La richiesta singola per Matera
@@ -98,6 +100,15 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **4 novembre 2026 ? due sessioni singole:** Ogliastra e Sulcis Iglesiente,
+  23 schede ciascuna; ricognizione dei rispettivi 23 e 24 comuni con limiti.
+  Commit `bd2aa19`, produzione Ready e catalogo identico online; pagine, filtri
+  e dettagli verificati in Chromium 1440/320 e WebKit 390. Tutte le 9.538
+  schede precedenti invariate; cinque riscontri economici aggiunti. Backup
+  remoto verificato, nessuna ripresa dei loop. Entrambe le sessioni terminate.
+  Dossier [Ogliastra](data/fiere-dossier/120-ogliastra-20261104.md) e
+  [Sulcis](data/fiere-dossier/121-sulcis-iglesiente-20261104.md).
 
 - **4 novembre 2026 ? Medio Campidano:** nove schede in nove comuni da fonti
   ufficiali/organizzatori; ricognizione web in gruppi dei 28 comuni con limiti.

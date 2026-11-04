@@ -1,12 +1,14 @@
 # Fiere: stato della ricerca provinciale
 
-Stato aggiornato il **4 novembre 2026**: **94 concluse, 16 aperte su 110**.
-Matera e Medio Campidano verificati online il 4 novembre; le altre caselle conservano gli esiti
+Stato aggiornato il **4 novembre 2026**: **96 concluse, 14 aperte su 110**.
+Matera, Medio Campidano, Ogliastra e Sulcis Iglesiente verificati online il 4 novembre; le altre caselle conservano gli esiti
 precedenti. Ricerca conclusa con limiti espliciti, manutenzione futura e mera
 importazione di schede sono stati differenti.
 
-**Automazioni ferme; Matera e Medio Campidano completati su richieste singole. Pavia riservata.**
-La richiesta del 4 novembre riguarda una provincia e non avvia altre ricerche.
+**Automazioni ferme. Pavia riservata.**
+Matera e Medio Campidano completati su richieste singole. Ogliastra e Sulcis
+Iglesiente completati da due sessioni parallele isolate, entrambe terminate
+dopo la propria provincia come richiesto. Nessuna prosecuzione automatica.
 I vecchi cicli, rinnovi quota e ordini di priorità non autorizzano ripartenze.
 Prima di riprendere una provincia verificare richiesta corrente, checkout e fonti.
 Spuntare soltanto dopo le verifiche locali e della pubblicazione.
@@ -130,9 +132,11 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 - [ ] **96. Crotone**
 - [ ] **97. Caltanissetta**
 - [x] **98. Enna**
-- [ ] **99. Ogliastra**
-- [ ] **100. Sulcis Iglesiente**
+- [x] **99. Ogliastra**
+- [x] **100. Sulcis Iglesiente**
 - [x] **101. Medio Campidano**
 - [x] **102. Isernia**
 
 Medio Campidano: nove schede verificate online, ricognizione limitata dei 28 comuni; [dossier](../data/fiere-dossier/119-medio-campidano-20261104.md).
+
+Ogliastra e Sulcis Iglesiente: 23 schede ciascuna verificate online; fonti e limiti nei dossier [Ogliastra](../data/fiere-dossier/120-ogliastra-20261104.md) e [Sulcis Iglesiente](../data/fiere-dossier/121-sulcis-iglesiente-20261104.md).
