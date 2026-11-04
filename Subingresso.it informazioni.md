@@ -52,6 +52,9 @@ Non avviare controller, task o ricerche dalle istruzioni archiviate.
   `data/THEME_PREFERENCES.md`. Logo testuale e menu mobile rimosso su richiesta.
 - Registrazione: telefono e termini obbligatori; consenso promozionale separato
   e facoltativo. Non ripristinare vecchie ipotesi di raccolta progressiva.
+- Recensioni fiere: quattro passaggi liberi e account solo alla fine;
+  bozza locale per 30 giorni, recensioni pubbliche nelle schede e nel calendario.
+  Contratto e sincronizzazione dei nuovi ID: `data/FIERE_RECENSIONI.md`.
 - Vetrine: giorni acquistati conservati, selezione esplicita fino a 10 posteggi,
   sconto progressivo; giorni evidenti, opzioni e totale leggibili. Contratti
   `data/VETRINE_PREMIUM.md`, `data/SELLER_PREMIUM_ANALYTICS.md`.
@@ -100,6 +103,15 @@ Il registro storico non va letto integralmente. Nuove decisioni vanno nel
 documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa.
 
 ## Registro recente
+
+- **4 novembre 2026 — recensioni fiere:** pubblicato `ce50ce9`, produzione
+  Ready e file online verificati. Percorso a quattro passaggi, recupero bozza,
+  registrazione finale, voti e testimonianze nelle schede del catalogo e degli
+  organizzatori. Schema applicato con 9.584 ID ammessi; lettura anonima 200 e
+  pubblicazione anonima 401. SQL in ROLLBACK, flussi completi sui file online
+  Chromium 1440/820/320 e WebKit 390, controlli anonimi reali e regressioni
+  fiere/fonti/salvataggi passati. Nessun account, recensione o email reale di
+  prova. Dettagli in `data/FIERE_RECENSIONI.md`.
 
 - **4 novembre 2026 ? due sessioni singole:** Ogliastra e Sulcis Iglesiente,
   23 schede ciascuna; ricognizione dei rispettivi 23 e 24 comuni con limiti.

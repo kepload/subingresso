@@ -80,4 +80,13 @@ Screenshot e revisione visiva diretta in `.local/verifiche/recensioni-fiere/`.
 Conservati font, blu/inchiostro, controlli e temi del sistema esistente;
 nessuna modifica a `DESIGN.md` o al suo sidecar necessaria.
 
-Pubblicazione e controlli online: da registrare al termine del deploy.
+Pubblicato `ce50ce9`, produzione Ready
+`dpl_HkuKxf2K7v1mKh5XgHehMFb9PaN6`, alias `https://subingresso.it`.
+Cinque asset online identici al commit, dettaglio SSR con componente presente,
+API reale lettura pubblica 200/conteggio zero, pubblicazione anonima 401,
+fiera inesistente 404 e metodo non ammesso 405. Percorso completo ripassato
+sui file online nelle quattro combinazioni browser/formato, sessioni/backend
+di scrittura simulati. Ulteriore controllo senza simulazioni su Chromium
+1440/320 e WebKit 390: SDK reale, lettura pubblica e primi passi ospite,
+nessun errore browser o overflow. Nessun account, recensione o invio reale
+di collaudo. Backup remoto di sessione e ramo preventivo verificati.
