@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/css/fiere.css?v=32">
     <link rel="stylesheet" href="/css/fiere-access.css?v=1">
     <link rel="stylesheet" href="/css/saved-fairs.css?v=3">
+<link rel="stylesheet" href="/css/fair-reviews.css?v=1">
     <link rel="stylesheet" href="/css/design-system.css?v=15">
 <link rel="stylesheet" href="/css/admin-theme.css?v=7">
 </head>
@@ -98,12 +99,14 @@
     <div class="fiere-dialog-top"><span id="detail-category" class="fiere-tag"></span><button id="close-detail" type="button" aria-label="Chiudi la scheda">×</button></div>
     <h2 id="detail-title"></h2><p id="detail-location"></p><p><a id="detail-page-link">Apri la pagina della fiera →</a></p><p id="detail-description" hidden></p>
     <div class="sf-fair-actions"><button id="detail-save-fair" type="button" class="saved-fair-button" aria-label="Salva la fiera" title="Salva" data-save-fair><i class="far fa-bookmark" aria-hidden="true"></i></button><button type="button" class="saved-fair-button" aria-label="Avvisami" title="Avvisami" data-remind-fair aria-haspopup="dialog"><i class="far fa-bell" aria-hidden="true"></i></button></div>
+    <p><a href="#detail-reviews">Recensioni degli ambulanti ↓</a></p>
     <section id="detail-attendance" class="fiere-detail-info" hidden></section>
     <section class="fiere-detail-info"><h3>Date delle edizioni</h3><div id="detail-editions" class="fiere-editions"></div><p id="detail-editions-empty">La prossima edizione non ha ancora una data pubblicata in questa scheda. Consulta la fonte o contatta l’organizzatore.</p></section>
     <div class="fiere-detail-period"><span>MESI DI RIFERIMENTO</span><strong id="detail-months"></strong><p id="detail-frequency"></p></div>
     <dl id="detail-facts" class="fiere-detail-facts"></dl>
     <section class="fiere-detail-info fiere-detail-cost-box"><h3>Costi per partecipare con il banco</h3><p id="detail-costs"></p><p id="detail-costs-meta" hidden></p><a id="detail-costs-source" class="fiere-detail-link" target="_blank" rel="noopener noreferrer" hidden>Fonte delle tariffe ↗</a></section>
     <section class="fiere-detail-info"><h3>Per partecipare con il tuo banco</h3><p id="detail-participation-label" class="fiere-participation-label"></p><p id="detail-participation-note"></p><p id="detail-deadline" class="fiere-deadline" hidden></p><a id="detail-participation-link" class="fiere-detail-link" target="_blank" rel="noopener noreferrer" hidden>Consulta la procedura di partecipazione ↗</a><div id="detail-contacts" class="fiere-contacts"></div></section>
+    <section id="detail-reviews" class="fr" aria-label="Recensioni degli ambulanti"></section>
     <p class="fiere-access-note" data-fiere-guest hidden>Vuoi ritrovare questa fiera? <a href="/fiere?iscrizione=1" data-fiere-register>Registrati gratis</a> o <a href="/fiere?iscrizione=1" data-fiere-login>accedi</a> per salvarla e scegliere un promemoria. Le fonti sono consultabili liberamente.</p>
     <a id="detail-source" class="fiere-primary" target="_blank" rel="noopener noreferrer">Consulta la fonte ↗</a><p id="detail-source-label" class="fiere-source-label"></p><a id="detail-calendar-source" class="fiere-detail-link" target="_blank" rel="noopener noreferrer" hidden></a><a id="detail-annunci" class="fiere-detail-annunci">Cerca posteggi in questa regione →</a>
 </dialog>
@@ -126,7 +129,8 @@
 <script src="/js/event-data.js?v=2"></script>
 <script src="/js/event-engagement.js?v=2"></script>
 <script src="/js/fiere-access.js?v=5"></script>
-<script src="/js/pages/fiere.js?v=150"></script>
+<script src="/js/fair-reviews.js?v=1"></script>
+<script src="/js/pages/fiere.js?v=151"></script>
 <script type="module" src="/js/saved-fairs.js?v=4"></script>
 </body>
 </html>

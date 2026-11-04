@@ -23,6 +23,9 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 - Prima della chiusura verificare fonti, build ripetibile, date, filtri,
   dettaglio e pubblicazione con i controlli pertinenti. Importazioni non
   equivalgono a ricerca approfondita. Organizzatori: `ORGANIZZATORI_EVENTI.md`.
+- Recensioni degli ambulanti: [percorso e contratto](FIERE_RECENSIONI.md).
+  Dopo nuove aggiunte al catalogo sincronizzare gli ID ammessi alle recensioni:
+  `node scripts/fair-reviews-db.cjs --sync-catalog` (solo inserimenti mancanti).
 
 Ricerca mirata: `node scripts/project-context.cjs "nome provincia"`.
 

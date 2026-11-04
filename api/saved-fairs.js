@@ -31,6 +31,7 @@ function unsubscribePage(token, message = '') {
     return `<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Promemoria fiera — Subingresso.it</title><style>body{font:16px/1.6 system-ui;margin:0;padding:24px;background:#f3f6fa;color:#17324f}main{max-width:520px;margin:10vh auto;background:white;border:1px solid #dae2eb;border-radius:18px;padding:26px}h1{font-size:25px}button{background:#194c82;color:white;border:0;border-radius:9px;padding:13px 18px;font:inherit;cursor:pointer}a{color:#194c82}</style></head><body><main><a href="/">Subingresso.it</a><h1>Promemoria della fiera</h1>${message ? `<p role="status">${esc(message)}</p>` : `<p>Vuoi disattivare il promemoria collegato a questa email? La fiera resterà tra quelle salvate.</p><form method="post" action="/api/saved-fairs?unsubscribe=${esc(token)}"><button type="submit">Disattiva questo promemoria</button></form>`}<p><a href="/dashboard?area=normale#fiere">Gestisci le mie fiere →</a></p></main></body></html>`;
 }
 module.exports = async function handler(req, res) {
+    if (req.query?.reviews === '1') return require('../lib/fair-reviews.cjs')(req, res);
     res.setHeader('Cache-Control', 'private, no-store');
     res.setHeader('Vary', 'Authorization');
     res.setHeader('X-Robots-Tag', 'noindex');
