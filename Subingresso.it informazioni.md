@@ -21,14 +21,14 @@ Ristoranti, bar e generiche attività commerciali sono fuori dal verticale attua
 
 ## Stato delle fiere e automazioni
 
-Ultimo esito documentato **1 novembre 2026**, non nuova verifica live:
-**92 province concluse e 18 aperte su 110**, Pavia inclusa tra le aperte e
-**riservata**. Foggia, Avellino e Benevento concluse con prove della pubblicazione.
-Catalogo allora 9.474 schede; ricerca con limiti espliciti, non censimento certificato.
+Ultimo esito **4 novembre 2026**: **93 province concluse e 17 aperte su 110**,
+Pavia inclusa tra le aperte e **riservata**. Matera completata su richiesta e
+verificata online: 55 nuove schede, catalogo **9.529**. Le altre caselle mantengono
+gli esiti precedenti. Ricerca con limiti espliciti, non censimento certificato.
 
 **I tre loop sono conclusi e arrestati.** Task Dual A/B/C e Chiusura1810
-disabilitati; vecchio Auto già disabilitato. Nessuna provincia da terminare,
-nessuna ripresa al rinnovo e nessun nuovo avvio autorizzato. Le vecchie
+disabilitati; vecchio Auto già disabilitato. La richiesta singola per Matera
+non riavvia i cicli né autorizza altre province o riprese al rinnovo. Le vecchie
 autorizzazioni a usare quota, account o sessioni parallele sono storico.
 Non avviare controller, task o ricerche dalle istruzioni archiviate.
 
@@ -99,6 +99,11 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **4 novembre 2026 — Matera:** aggiunte e verificate online 55 schede in
+  20 comuni, ricognizione nominale dei 31 comuni e tre riscontri economici;
+  9.474 schede precedenti invariate. Date, periodi e storico distinti.
+  Commit `820892d`, produzione Ready; casella 85 chiusa dopo le prove live,
+  stato 93/17. [Fonti, limiti e verifiche](data/fiere-dossier/118-matera-ricerca-documentale-4-novembre-2026.md).
 - **4 novembre 2026 — verifica successiva:** sei ricerche reali recuperano
   correttamente i riferimenti; nessuna modifica al codice applicativo o ai dati.
   Adeguato anche `scripts/backup-fiere-research.py` ai dossier separati e al

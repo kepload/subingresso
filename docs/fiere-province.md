@@ -1,13 +1,17 @@
 # Fiere: stato della ricerca provinciale
 
-Snapshot documentale del **1 novembre 2026**: **92 concluse, 18 aperte su 110**.
-Non è una verifica live del 4 novembre. Ricerca conclusa con limiti espliciti,
-manutenzione futura e mera importazione di schede sono stati differenti.
+Stato aggiornato il **4 novembre 2026**: **93 concluse, 17 aperte su 110**.
+Matera verificata online il 4 novembre; le altre caselle conservano gli esiti
+precedenti. Ricerca conclusa con limiti espliciti, manutenzione futura e mera
+importazione di schede sono stati differenti.
 
-**Automazioni ferme; nessuna nuova provincia autorizzata. Pavia riservata.**
+**Automazioni ferme; Matera completata su richiesta. Pavia riservata.**
+La richiesta del 4 novembre riguarda una provincia e non avvia altre ricerche.
 I vecchi cicli, rinnovi quota e ordini di priorità non autorizzano ripartenze.
 Prima di riprendere una provincia verificare richiesta corrente, checkout e fonti.
 Spuntare soltanto dopo le verifiche locali e della pubblicazione.
+
+Matera: 55 schede pubblicate, prove e limiti nel [dossier del 4 novembre](../data/fiere-dossier/118-matera-ricerca-documentale-4-novembre-2026.md).
 
 Le prime otto voci erano senza numero; gli ID storici delle altre 102 restano
 invariati; regioni e dettagli restano nello snapshot integrale. Fonti e limiti: [indice dossier](../data/FIERE.md), audit
@@ -112,7 +116,7 @@ nello [snapshot integrale](archivio/informazioni-fino-20261101.md).
 - [x] **82. Avellino**
 - [x] **83. Benevento**
 - [ ] **84. L'Aquila**
-- [ ] **85. Matera**
+- [x] **85. Matera**
 - [ ] **86. Cosenza**
 - [ ] **87. Catanzaro**
 - [ ] **88. Reggio Calabria**

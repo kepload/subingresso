@@ -7,8 +7,9 @@ e degli originali citati nei dossier sono relativi alla root del progetto.
 
 ## Stato e vincoli da conservare
 
-- [Checklist unica](../docs/fiere-province.md): snapshot 1 novembre,
-  92 concluse e 18 aperte su 110; Pavia riservata, automazioni ferme.
+- [Checklist unica](../docs/fiere-province.md): aggiornata il 4 novembre,
+  93 concluse e 17 aperte su 110; Matera verificata online su richiesta,
+  Pavia riservata, automazioni ferme.
   Nessuna ripresa autorizzata dal presente indice o dai vecchi resoconti.
 - Verificare dati e commit effettivi, preservare ID, fonti e province estranee.
   Non rigenerare da snapshot precedenti. Build: `scripts/build-fiere.py`;

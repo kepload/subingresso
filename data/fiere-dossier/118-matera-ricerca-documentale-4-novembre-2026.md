@@ -65,7 +65,25 @@ non sono nuovi eventi confermati. Notorietà e affluenza non stimate.
 Nuovi bandi, programmi, tariffe e rinvii restano manutenzione futura.
 Nessun contatto, invio o candidatura; Pavia riservata e automazioni ferme.
 
-Pubblicazione e chiusura della checklist: da registrare dopo le prove online.
+Pubblicato il commit `820892d3e02de658150ede9089e60bef3e735ea2`:
+Vercel produzione **Ready**, deployment `dpl_GNGxnL27FtKhtdh61m5GTVswtfyk`
+(`subingresso-7d7hi99ig-kycykuardit-9234s-projects.vercel.app`).
+Su `https://subingresso.it` cinque asset identici byte per byte al commit,
+tutte le 55 pagine HTTP 200 con titolo, canonical, fonte e costi presenti.
+Tutti i 55 dialoghi, elenco/mappa, tre costi e sette pagine senza JavaScript
+superati anche online in Chromium 1440/320 e WebKit 390. Ulteriore controllo
+con asset reali: font locale Jakarta, icone e impaginazione regolari nei tre
+formati; richieste diverse da GET/HEAD e analytics bloccati nei test, perciò
+il caricamento separato degli eventi organizzatori non è stato verificato.
+Prove `published.json`, `browser-live.json`, `real-assets.json`, deployment
+e schermate nella cartella privata delle verifiche. Casella 85 chiusa solo
+dopo queste prove: **93 province concluse, 17 aperte su 110**.
+
+Primo push rifiutato da GitHub per errore interno del server; remoto verificato
+ancora al commit precedente, secondo push ordinario riuscito e SHA remoto
+confermato. Nessun force push. Prima asserzione del controllo font troppo
+specifica per il vecchio nome Google: verificato il font locale effettivo
+`Subingresso Jakarta`, caricato correttamente; nessuna modifica al sito.
 
 Verifiche locali superate: build ripetibile, settori, SEO, 9.529 pagine SSR
 e 4.897 voci sitemap; 50 schede Matera indicizzabili e cinque escluse per
