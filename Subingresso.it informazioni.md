@@ -106,13 +106,16 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **4 novembre 2026 — verifica clic ADS:** totale 80 ricostruito dalle righe;
-  passaggio 9→80 dovuto a 71 richieste con forte evidenza di automazione,
-  abbinate singolarmente ai log. Solo 3 clic con sessione e impressione
-  precedente; altre 6 richieste non verificabili. Difetto di misurazione aperto,
-  nessuna modifica a codice pubblicato o storico. Nessun indizio di intrusione
-  nei controlli disponibili, origine finale non identificata. Prove private:
-  `.local/verifiche/audit-clic-ads-20261104/rapporto.md`.
+- **4 novembre 2026 — contatori ADS:** su richiesta corretta la raccolta e
+  ripuliti i report da 80 a 3 clic misurati: escluse 71 richieste del picco
+  abbinate ai log e 6 altre non verificabili, con ragioni distinte. Tutti i
+  205 eventi originali invariati e recuperabili, backup verificato. Migrazione
+  applicata: firme server, ricevuta dell'impressione, deduplica e limiti;
+  vecchie RPC chiuse, GET senza scritture. Prove SQL in ROLLBACK e browser
+  Chromium/WebKit passate; pubblicazione codice in verifica. Contratto e
+  limiti per future campagne: `data/PERSONAL_AD_INTEGRITY.md`. Prove private
+  in `.local/verifiche/ads-counter-20261104`; audit iniziale nella cartella
+  `audit-clic-ads-20261104`. Nessun indizio di intrusione nei controlli svolti.
 
 - **4 novembre 2026 — anteprime recensioni e card show:** aggiunti media /5,
   conteggio e accesso diretto alle recensioni nelle anteprime del calendario.

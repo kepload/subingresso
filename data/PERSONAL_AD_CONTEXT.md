@@ -36,6 +36,16 @@ La privacy descrive i metadati; finalità, scelte e tempi esistenti conservati.
 
 ## Scrittura e compatibilità
 
+Dal 4 novembre 2026 `personal_ad_event` e `personal_ad_event_v2` non sono
+eseguibili da anon/authenticated: rimangono implementazioni interne e firme
+storiche. Il nuovo ingresso `personal_ad_event_v3` richiede una firma server
+non disponibile al browser. L'API registra le impressioni via POST e restituisce
+una ricevuta limitata alla sessione/banner/articolo/versione/formato/posizione;
+un clic richiede quella ricevuta e la corrispondente impressione nel DB.
+Il normale GET naviga sempre senza scrivere. Eventi storici esclusi sono
+conservati fuori dai report e non sono rivendicabili dopo il login.
+Dettagli: [PERSONAL_AD_INTEGRITY.md](PERSONAL_AD_INTEGRITY.md).
+
 RPC `personal_ad_event_v2(..., p_context jsonb)` con allowlist, tipi, enum,
 limiti numerici/8KB e verifica dello slug in `blog_posts`. Titolo copiato
 dal server: non accetta testo libero del client per tale campo. RLS e privilegi

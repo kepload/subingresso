@@ -3,8 +3,8 @@
  'use strict';
  if(window.__personalAdsTracker||typeof _supabase==='undefined')return;
  window.__personalAdsTracker=true;
- const automated=navigator.webdriver===true,seen=new Set(),timers=new Map(),bound=new WeakSet(),observedAnchors=new WeakMap(),observedKeys=new WeakMap(),visibility=new WeakMap();
- let owner=null,revision=0,admin=false,authReady=false;
+ const automated=navigator.webdriver===true,seen=new Set(),timers=new Map(),bound=new WeakSet(),observedAnchors=new WeakMap(),observedKeys=new WeakMap(),visibility=new WeakMap(),receipts=new WeakMap();
+ let owner=null,revision=0,admin=false,authReady=false,bearer=null;
  const storage='_pa_last_click_v1',uuid=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
  function read(){try{const value=JSON.parse(sessionStorage.getItem(storage));return value&&uuid.test(value.id)&&Date.now()-value.at<7*86400000?value:null;}catch(_){return null;}}
  function save(value){try{value?sessionStorage.setItem(storage,JSON.stringify(value)):sessionStorage.removeItem(storage);}catch(_){}}
@@ -35,13 +35,33 @@
    if(!wrapped){const dest={vendi:'/vendi',compra:'/annunci',fiere:'/fiere'}[anchor.dataset.personalAd.split('-')[0]];if(target.origin!==location.origin||target.pathname!==dest)return;const tracked=new URL('/api/personal-ads',location.origin);tracked.search=new URLSearchParams({action:'click',ad:anchor.dataset.personalAd,format:anchor.dataset.paFormat||'editoriale',placement:placement(anchor)});if(target.searchParams.has('regione'))tracked.searchParams.set('region',target.searchParams.get('regione'));anchor.href=tracked.href;}
    bound.add(anchor);
    for(const eventName of ['pointerdown','focus','click','auxclick'])anchor.addEventListener(eventName,()=>{const href=new URL(anchor.href),sid=sessionId();href.searchParams.set('ctx',JSON.stringify(context(anchor)));if(admin||automated||!authReady||window.AnalyticsIdentity?.preview())href.searchParams.set('preview','1');else{href.searchParams.delete('preview');if(sid)href.searchParams.set('sid',sid);}anchor.href=href.toString();});
+   anchor.addEventListener('click',event=>navigate(anchor,event));
+   anchor.addEventListener('auxclick',event=>{if(event.button===1)navigate(anchor,event);});
   }
   const current=key(anchor);if(observedKeys.get(anchor)!==current){clearTimeout(timers.get(anchor));timers.delete(anchor);visibility.delete(anchor);observedKeys.set(anchor,current);const measured=measurementTarget(anchor);observedAnchors.set(measured,anchor);observer?.unobserve(measured);observer?.observe(measured);}
  }
  async function impression(anchor){
   const id=key(anchor),sid=sessionId();if(automated||admin||!authReady||document.hidden||seen.has(id)||!sid)return;
   seen.add(id);const rev=revision;
-  try{const result=await _supabase.rpc('personal_ad_event_v2',{p_ad:anchor.dataset.personalAd,p_format:anchor.dataset.paFormat||'editoriale',p_placement:placement(anchor),p_kind:'impression',p_session:sid,p_context:context(anchor)});if(result.error||rev!==revision)seen.delete(id);}catch(_){seen.delete(id);}
+  try{
+   const response=await fetch('/api/personal-ads?action=impression',{method:'POST',headers:{'Content-Type':'application/json',...(bearer?{Authorization:'Bearer '+bearer}:{})},credentials:'same-origin',body:JSON.stringify({ad:anchor.dataset.personalAd,format:anchor.dataset.paFormat||'editoriale',placement:placement(anchor),sid,ctx:JSON.stringify(context(anchor))}),signal:AbortSignal.timeout(5000)});
+   const result=response.status===200?await response.json():null;
+   if(!result||typeof result.ticket!=='string'||!Number.isFinite(result.until)||rev!==revision||id!==key(anchor)){seen.delete(id);return;}
+   receipts.set(anchor,{...result,key:id,revision:rev,sid});
+  }catch(_){seen.delete(id);}
+ }
+ function navigate(anchor,event){
+  const receipt=receipts.get(anchor);
+  if(!event.isTrusted||event.defaultPrevented||event.type==='click'&&event.button!==0||automated||admin||!authReady||document.hidden||window.AnalyticsIdentity?.preview()||!receipt||receipt.until<=Date.now()||receipt.key!==key(anchor)||receipt.revision!==revision||receipt.sid!==sessionId())return;
+  // A native POST navigation keeps attribution ready before the 303 redirect,
+  // including keyboard activation and opening a new tab. Plain links stay usable.
+  const form=document.createElement('form');form.method='POST';form.action='/api/personal-ads?action=click';form.hidden=true;form.rel='noopener';
+  form.target=event.type==='auxclick'||event.ctrlKey||event.metaKey||event.shiftKey||anchor.target==='_blank'?'_blank':'_self';
+  const href=new URL(anchor.href),fields={ad:anchor.dataset.personalAd,format:anchor.dataset.paFormat||'editoriale',placement:placement(anchor),sid:receipt.sid,ctx:JSON.stringify(context(anchor)),ticket:receipt.ticket};
+  if(href.searchParams.has('region'))fields.region=href.searchParams.get('region');
+  for(const [name,value]of Object.entries(fields)){const input=document.createElement('input');input.type='hidden';input.name=name;input.value=value;form.append(input);}
+  document.body.append(form);
+  try{HTMLFormElement.prototype.submit.call(form);event.preventDefault();}catch(_){}finally{form.remove();}
  }
  const observer=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{for(const entry of entries){const anchor=observedAnchors.get(entry.target);if(!anchor)continue;clearTimeout(timers.get(anchor));timers.delete(anchor);const shown=entry.isIntersecting&&entry.intersectionRatio>=.5&&!document.hidden;visible(anchor,shown);if(shown)timers.set(anchor,setTimeout(()=>{timers.delete(anchor);impression(anchor);},1000));}},{threshold:[0,.5]}):null;
  function scan(){
@@ -61,7 +81,7 @@
    if(session.error){authReady=false;return;}
    const checked=session.data?.session?await _supabase.auth.getUser():{data:{user:null}};if(rev!==revision)return;const user=checked.data?.user;
    if(checked.error){authReady=false;return;}
-   const next=user?.id||null;if(owner&&owner!==next){save(null);seen.clear();}owner=next;admin=false;
+   const next=user?.id||null;if(session.data?.session&&session.data.session.user?.id!==next){authReady=false;return;}if(owner&&owner!==next){save(null);seen.clear();}owner=next;admin=false;bearer=session.data?.session?.access_token||null;
    if(user){const profile=await _supabase.from('profiles').select('is_admin,is_demo').eq('id',user.id).single();if(rev!==revision)return;if(profile.error){authReady=false;return;}admin=profile.data?.is_admin===true||profile.data?.is_demo===true;}
    if(window.AnalyticsIdentity){const measurement=await window.AnalyticsIdentity.context();if(rev!==revision)return;admin=admin||!measurement.allowed;}
    if(rev!==revision)return;authReady=true;
@@ -69,7 +89,7 @@
    scan();if(observer)document.querySelectorAll('a[data-personal-ad]').forEach(anchor=>{const target=measurementTarget(anchor);observedAnchors.set(target,anchor);observer.unobserve(target);observer.observe(target);});
   }catch(_){authReady=false;}
  }
- _supabase.auth.onAuthStateChange((event,session)=>{const next=session?.user?.id||null;if(event==='SIGNED_OUT'||(owner&&next!==owner)){save(null);owner=null;admin=false;seen.clear();}++revision;authReady=false;setTimeout(identity,0);});
+ _supabase.auth.onAuthStateChange((event,session)=>{const next=session?.user?.id||null;if(event==='SIGNED_OUT'||(owner&&next!==owner)){save(null);owner=null;admin=false;}seen.clear();bearer=null;++revision;authReady=false;setTimeout(identity,0);});
  document.addEventListener('visibilitychange',()=>{if(document.hidden){timers.forEach(clearTimeout);timers.clear();document.querySelectorAll('a[data-personal-ad]').forEach(a=>visible(a,false));}else identity();});
  window.addEventListener('pagehide',()=>{timers.forEach(clearTimeout);timers.clear();document.querySelectorAll('a[data-personal-ad]').forEach(a=>visible(a,false));});
  window.addEventListener('pageshow',event=>{if(event.persisted)identity();});

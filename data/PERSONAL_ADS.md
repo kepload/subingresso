@@ -1,5 +1,16 @@
 # ADS personali — 24 ottobre 2026
 
+## Integrità dei contatori — 4 novembre 2026
+
+Il clic principale è un'interazione misurata sul sito, dopo un'impressione
+valida dello stesso banner. GET/HEAD, link copiati o scansionati e immagini
+pubblicate altrove non creano clic. Il browser richiede una ricevuta firmata
+per l'impressione e la usa soltanto per un clic/tocco o attivazione da tastiera;
+il server controlla firma, contesto, sessione, impressione precedente e limiti.
+Le vecchie RPC di scrittura sono chiuse ai browser. Deduplica e attribuzione
+restano sul server; nessuna promessa di identificare ogni bot evoluto.
+Contratto, pulizia reversibile e prove: [PERSONAL_AD_INTEGRITY.md](PERSONAL_AD_INTEGRITY.md).
+
 Dal 26 ottobre la raccolta comprende anche una sezione distinta per gli
 spazi Vetrina del blog, con anteprima, clic/impressioni e CSV per articolo.
 Contratto `BLOG_VETRINE_ADS.md`; non sommare queste serie ai banner propri.
@@ -213,12 +224,14 @@ già esistente ed eventuale account verificato al claim. Nessun IP/email/UA
 salvato. RLS senza accessi diretti anon/auth; soleRPC validate e autorizzate.
 Dedup server per(sessione,articolo,ADS,versione,formato,posizione,tipo),
 prima dell'estensione senza articolo/versione; limite250eventi/ora
-per sessione. Clic esterni senza sessione contati per richiesta,mai chiamati
-visitatori unici. Crawler/prefetch/HEAD/anteprime riconosciuti esclusi.
+per sessione. Dal 4 novembre 2026 le richieste senza sessione non entrano
+nei contatori; massimo 20 nuovi clic/ora per sessione. Crawler/prefetch/HEAD/
+anteprime riconosciuti esclusi, GET senza alcuna scrittura.
 
 Tracker su blog e destinazioni principali; nessun nuovo ID persistente.
 Impressione:almeno50%banner visibile per1secondo con documento attivo.
-Link decorato al clic/focus con sessione esistente;API303 verso una delle
+Link decorato al clic/focus con sessione esistente; solo un'attivazione del
+browser con ricevuta valida usa POST e API303 verso una delle
 tre destinazioni fissate a catalogo,regione solo da whitelist. Su errore
 statistiche la navigazione continua. RiferimentoUUIDdel clic nellaquery,
 rimosso subito dal browser e conservato in sessionStorage,massimo7giorni.
