@@ -80,8 +80,13 @@ def main():
         for source in sorted((ROOT / folder).iterdir()):
             if "fiere" in source.name.casefold() and source.is_file():
                 collect(source, Path("repository") / folder / source.name)
-    for name in ("AGENTS.md", "CLAUDE.md", "istruzioni.md", "Subingresso.it informazioni.md", "fiere.html", "js/pages/fiere.js", "css/fiere.css", "api/fiera.js"):
+    for name in ("AGENTS.md", "CLAUDE.md", "istruzioni.md", "Subingresso.it informazioni.md", "fiere.html", "js/pages/fiere.js", "css/fiere.css", "api/fiera.js", "scripts/project-context.cjs"):
         collect(ROOT / name, Path("repository") / name)
+
+    # Gli indici brevi rimandano ai dossier separati dal 4 novembre 2026.
+    # Includere i riferimenti completi, la checklist e lo storico nel backup.
+    for folder in ("docs", "data/fiere-dossier"):
+        collect(ROOT / folder, Path("repository") / folder)
 
     print(f"Copying and verifying {len(files)} files from {len(folders)} research entries.", flush=True)
     def copy_verified(source, relative):

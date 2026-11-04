@@ -13,6 +13,7 @@ conservando informazioni utili, decisioni e futuro del progetto.
 | Totale dei tre documenti | 1.205.134 | 28.521 | 97,63% |
 
 Sono misure dei file, non token o un benchmark delle prestazioni del modello.
+Si riferiscono al primo intervento `e143e28`, prima dell'annotazione di verifica.
 Il risparmio effettivo dipende dai documenti necessari alla singola attività.
 Lo spazio complessivo su disco non è diminuito: i dettagli restano conservati.
 AGENTS passa da 8.493 a 9.215 byte per aggiornare i rimandi e prevenire la
@@ -100,3 +101,30 @@ e il passaggio tra due batch. Output inferiore a 2.000 caratteri per prova,
 nessun errore ripetitivo, tutti i tag remoti precedenti conservati.
 
 Metodo permanente e fonti ufficiali: [gestione del contesto](../CONTESTO.md).
+
+## Verifica successiva: compatibilità dei consumatori
+
+Il confronto con `37aff37` conferma che la riorganizzazione non ha modificato
+HTML, CSS, JavaScript dell'applicazione, API, dati o configurazioni di produzione.
+L'audit dei riferimenti nel codice ha individuato un consumatore da adeguare:
+`scripts/backup-fiere-research.py` selezionava i vecchi documenti monolitici,
+ma non le nuove sottocartelle. La copia Git conservava già tutti i riferimenti;
+il backup dedicato alle ricerche ora include anche `docs/`,
+`data/fiere-dossier/` e `scripts/project-context.cjs`.
+
+Eseguito lo script su una fixture interamente privata dentro il progetto,
+con Documents e directory temporanea simulate: **16 file copiati e verificati
+con SHA256**, inclusi manuale separato, dossier provinciale, checklist,
+archivio e helper. Nessun backup reale delle ricerche, accesso produzione,
+contatto o invio. Esito in
+`.local/verifiche/contesto-20261104/backup-compatibilita.json`.
+
+Sei ricerche reali passate, tutte entro 6.000 caratteri: Benevento,
+Saved Listings, get_listing_contact, Trattativa Protetta, contatori con storico,
+16. Pavia. Prove `reperibilita.json` nella stessa cartella privata.
+
+Backup remoto della verifica confermato:
+`backup/session-20261104-103433-verifica-contesto-backup` su `e143e28`.
+La redirezione del log PowerShell aveva interrotto l'helper dopo il push per
+il trattamento di stderr nativo; il tag remoto è stato verificato separatamente.
+Nessuna pulizia dei tag effettuata da quella chiamata.

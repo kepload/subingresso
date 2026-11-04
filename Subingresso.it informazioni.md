@@ -99,6 +99,11 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
+- **4 novembre 2026 — verifica successiva:** sei ricerche reali recuperano
+  correttamente i riferimenti; nessuna modifica al codice applicativo o ai dati.
+  Adeguato anche `scripts/backup-fiere-research.py` ai dossier separati e al
+  nuovo helper: copia e SHA256 di 16 file verificati in una fixture locale.
+  Dettagli nel rapporto dell'ottimizzazione; nessun backup reale delle ricerche avviato.
 - **4 novembre 2026 — ottimizzazione contesto:** stato corrente separato dallo
   storico integrale; manuale e dossier fiere divisi per letture mirate,
   checklist provinciale deduplicata e ricerca con output limitato. Originali
