@@ -106,14 +106,14 @@ documento pertinente; questo riepilogo contiene solo lo stato utile alla ripresa
 
 ## Registro recente
 
-- **4 novembre 2026 — recensioni fiere:** pubblicato `ce50ce9`, produzione
-  Ready e file online verificati. Percorso a quattro passaggi, recupero bozza,
-  registrazione finale, voti e testimonianze nelle schede del catalogo e degli
-  organizzatori. Schema applicato con 9.584 ID ammessi; lettura anonima 200 e
-  pubblicazione anonima 401. SQL in ROLLBACK, flussi completi sui file online
-  Chromium 1440/820/320 e WebKit 390, controlli anonimi reali e regressioni
-  fiere/fonti/salvataggi passati. Nessun account, recensione o email reale di
-  prova. Dettagli in `data/FIERE_RECENSIONI.md`.
+- **4 novembre 2026 — recensioni fiere:** versione iniziale `ce50ce9`, poi
+  semplificata su richiesta con `e7cff2a`, produzione Ready e file verificati.
+  Tre schermate, edizione rapida/anno manuale, più date nello stesso anno,
+  stelle senza riquadri e commento facoltativo; account soltanto alla fine.
+  Recensione preesistente invariata in ogni campo, vecchie bozze recuperabili.
+  SQL in ROLLBACK, flussi online Chromium 1440/820/320 e WebKit 390, controlli
+  anonimi reali e regressioni passati. Nessun account, recensione o email
+  reale di prova. Contratto e prove in `data/FIERE_RECENSIONI.md`.
 
 - **4 novembre 2026 ? due sessioni singole:** Ogliastra e Sulcis Iglesiente,
   23 schede ciascuna; ricognizione dei rispettivi 23 e 24 comuni con limiti.

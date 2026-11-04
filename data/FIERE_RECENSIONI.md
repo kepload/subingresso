@@ -114,4 +114,15 @@ L’unica recensione preesistente è invariata in ogni campo: conteggio e impron
 MD5 prima/dopo identici, senza stampare il testo. Bozze della versione a quattro
 passaggi recuperate nella schermata finale; mese e testo originali preservati.
 Controlli delle tre schermate e stelle in Chromium 1440/820/320 e WebKit 390;
-prove in `.local/verifiche/recensioni-semplici/`. Esito pubblicazione da aggiornare.
+prove in `.local/verifiche/recensioni-semplici/`.
+
+Semplificazione pubblicata `e7cff2a`, produzione Ready
+`dpl_GwEnPbcbnAKWBArveQSGjx69UiV3`, alias `https://subingresso.it`.
+Sei asset online identici ai sorgenti, date canoniche presenti nell’HTML SSR,
+lettura pubblica 200 e pubblicazione anonima 401. Percorso completo sui file
+online Chromium 1440/820/320 e WebKit 390 con sessioni/scritture simulate;
+ulteriori tre controlli con SDK e lettura anonima reali confermano le tre
+schermate, assenza del calendario da compilare, stelle normali e commento
+facoltativo. Nessuna recensione, registrazione o email reale di collaudo.
+Regressioni fiere, fonti e salvataggi passate. Regola di concisione dei moduli
+salvata anche in `AGENTS.md`; sistema grafico esistente preservato.
